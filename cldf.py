@@ -113,9 +113,9 @@ with open('cldf/forms.csv', 'w') as fout, open('errors.txt', 'w') as errors:
                     i += 1
 
     dravidian_entries = {}
-    for file in glob.glob("dedr/dedr.tsv"):
+    for file in glob.glob("dedr/dedr.csv"):
         with open(file, 'r') as fin:
-            read = csv.reader(fin, delimiter='\t')
+            read = csv.reader(fin, delimiter=',', quotechar="'", skipinitialspace=True)
             for row in read:
                 row = [x.strip(' "') for x in row]
                 num = 'd' + row[1]
