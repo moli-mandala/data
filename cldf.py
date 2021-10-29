@@ -23,31 +23,33 @@ for file in glob.glob("cdial/ipa/cdial/*.txt"):
 with open('cdial/all.json', 'r') as fin:
     data = json.load(fin)
 
-with open('cldf/cognates.csv', 'w') as fout, open('cldf/parameters.csv', 'w') as fout2, open('other/extensions_ia.csv', 'r') as fin:
-    write = csv.writer(fout)
-    write2 = csv.writer(fout2)
-    read = csv.reader(fin)
-    write.writerow(['Cognateset_ID', 'Language_ID', 'Form', 'Description', 'Source'])
-    write2.writerow(['ID', 'Name', 'Concepticon_ID', 'Description'])
-    for entry in data:
-        headword = data[entry][0]['words'][0].replace('ˊ', '́').replace(' --', '-').replace('-- ', '-')
-        write.writerow([entry, 'Indo-Aryan', headword, data[entry][0]['ref'], 'cdial'])
-        write2.writerow([entry, headword, '', data[entry][0]['ref']])
-    for row in read:
-        write.writerow(row)
-        write2.writerow([row[0], row[2], '', row[3]])
+change = {
+    'khaś': 'khash',
+    'Māl': 'Malw',
+    'Brah': 'Brahui',
+    'Drav': 'Pdr.',
+    'Ga': 'Gadaba',
+    'Kan': 'Kannada',
+    'Kol': 'Kolami',
+    'Kur': 'Kurux',
+    'Mal': 'Malayalam',
+    'Nk': 'Naikri',
+    'Prj': 'Parji',
+    'Tam': 'Tamil',
+    'Tel': 'Telugu',
+    'Tu': 'Tulu'
+}
 
 a = set()
 with open('cldf/forms.csv', 'w') as fout, open('errors.txt', 'w') as errors:
     num = 0
     write = csv.writer(fout)
+    result = []
     write.writerow(['ID', 'Language_ID', 'Parameter_ID', 'Form', 'Gloss', 'Native', 'Phonemic', 'Cognateset', 'Description', 'Source'])
     for entry in data:
         headword = data[entry][0]
         for form in data[entry]:
             lang = form['lang'].replace('.', '')
-            if lang == 'khaś': lang = 'khash'
-            if lang == 'Māl': lang = 'Malw'
 
             lang = unidecode.unidecode(lang)
             a.add(lang)
@@ -99,7 +101,7 @@ with open('cldf/forms.csv', 'w') as fout, open('errors.txt', 'w') as errors:
                         if lang in ['A']: errors.write(f'{lang} {oldest} {word[0]} {ipa}\n')
                         ipa = ''
 
-                write.writerow([num, lang, entry, word[0], word[1], '', ipa, entry, '', 'CDIAL'])
+                result.append([num, lang, entry, word[0], word[1], '', ipa, entry, '', 'CDIAL'])
     
     i = 0
     for file in glob.glob("other/ia/*.csv"):
@@ -107,10 +109,44 @@ with open('cldf/forms.csv', 'w') as fout, open('errors.txt', 'w') as errors:
             read = csv.reader(fin)
             for row in read:
                 if row[1]:
-                    write.writerow([f'e{i}', row[0], row[1], row[2], row[3], row[4], row[5], row[1], row[6], row[7]])
+                    result.append([f'e{i}', row[0], row[1], row[2], row[3], row[4], row[5], row[1], row[6], row[7]])
                     i += 1
 
-print(sorted(list(a)))
+    dravidian_entries = {}
+    for file in glob.glob("dedr/dedr.tsv"):
+        with open(file, 'r') as fin:
+            read = csv.reader(fin, delimiter='\t')
+            for row in read:
+                row = [x.strip(' "') for x in row]
+                num = 'd' + row[1]
+                if num not in dravidian_entries:
+                    dravidian_entries[num] = ''
+                if row[3] == 'PDr.':
+                    dravidian_entries[num] = row[4]
+                result.append([f'dedr{row[0]}', row[3], num, row[4], row[5], '', '', 'd' + row[1], row[6] if row[6] != 'NULL' else '', 'dedr'])
+
+    for row in result:
+        write.writerow(row)
+
+with open('cldf/cognates.csv', 'w') as fout, open('cldf/parameters.csv', 'w') as fout2:
+    write = csv.writer(fout)
+    write2 = csv.writer(fout2)
+    write.writerow(['Cognateset_ID', 'Language_ID', 'Form', 'Description', 'Source'])
+    write2.writerow(['ID', 'Name', 'Concepticon_ID', 'Description'])
+    for entry in data:
+        headword = data[entry][0]['words'][0].replace('ˊ', '́').replace(' --', '-').replace('-- ', '-')
+        write.writerow([entry, 'Indo-Aryan', headword, data[entry][0]['ref'], 'cdial'])
+        write2.writerow([entry, headword, '', data[entry][0]['ref']])
+    with open('other/extensions_ia.csv', 'r') as fin:
+        read = csv.reader(fin)
+        for row in read:
+            write.writerow(row)
+            write2.writerow([row[0], row[2], '', row[3]])
+    for entry in dravidian_entries:
+        write.writerow([entry, 'Dravidian', dravidian_entries[entry], '', 'dedr'])
+        write2.writerow([entry,  dravidian_entries[entry], '', ''])
+
+# print(sorted(list(a)))
 b = set()
 with open('cldf/languages.csv', 'r') as fin:
     for row in fin.readlines():
