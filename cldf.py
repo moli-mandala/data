@@ -125,8 +125,12 @@ with open('cldf/forms.csv', 'w') as fout, open('errors.txt', 'w') as errors:
                     dravidian_entries[num] = row[4]
                 result.append([f'dedr{row[0]}', row[3], num, row[4], row[5], '', '', 'd' + row[1], row[6] if row[6] != 'NULL' else '', 'dedr'])
 
+    done = set()
     for row in result:
-        write.writerow(row)
+        key = tuple(row[1:])
+        if key not in done:
+            write.writerow(row)
+        done.add(key)
 
 with open('cldf/cognates.csv', 'w') as fout, open('cldf/parameters.csv', 'w') as fout2:
     write = csv.writer(fout)
