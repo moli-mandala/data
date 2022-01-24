@@ -5,6 +5,8 @@ import re
 import glob
 from segments.tokenizer import Tokenizer, Profile
 import unicodedata
+from tqdm import tqdm
+from collections import Counter
 
 superscript = {
     'a': 'ᵃ', 'e': 'ᵉ', 'i': 'ᶦ',
@@ -46,17 +48,18 @@ with open('cldf/forms.csv', 'w') as fout, open('errors.txt', 'w') as errors:
     write = csv.writer(fout)
     result = []
     write.writerow(['ID', 'Language_ID', 'Parameter_ID', 'Form', 'Gloss', 'Native', 'Phonemic', 'Cognateset', 'Description', 'Source'])
-    for entry in data:
+    for entry in tqdm(data):
         headword = data[entry][0]
         for form in data[entry]:
             lang = form['lang'].replace('.', '')
+            cognateset = form['cognateset']
 
             lang = unidecode.unidecode(lang)
             a.add(lang)
             reference = ''
             for i, word in enumerate(form['words']):
-                num += 1
                 if word[0] == '': continue
+                num += 1
                 if lang == 'Indo-Aryan':
                     diffs = re.search(r'ʻ(.*?)ʼ', form['ref'])
                     desc = ''
@@ -68,6 +71,7 @@ with open('cldf/forms.csv', 'w') as fout, open('errors.txt', 'w') as errors:
                 word[0] = word[0].strip('.,;-: ')
                 word[0] = word[0].replace('<? >', '')
                 word[0] = word[0].lower()
+                word[0] = word[0].replace('˜', '̃')
 
                 for i in superscript:
                     word[0] = word[0].replace('ˊ', '́').replace('ˋ', '̀').replace(' -- ', '-')
@@ -101,7 +105,7 @@ with open('cldf/forms.csv', 'w') as fout, open('errors.txt', 'w') as errors:
                         if lang in ['A']: errors.write(f'{lang} {oldest} {word[0]} {ipa}\n')
                         ipa = ''
 
-                result.append([num, lang, entry, word[0], word[1], '', ipa, entry, '', 'CDIAL'])
+                result.append([num, lang, entry, word[0], word[1], '', ipa, cognateset, '', 'CDIAL'])
     
     i = 0
     for file in glob.glob("other/ia/*.csv"):
@@ -139,6 +143,10 @@ with open('cldf/cognates.csv', 'w') as fout, open('cldf/parameters.csv', 'w') as
     write2.writerow(['ID', 'Name', 'Concepticon_ID', 'Description'])
     for entry in data:
         headword = data[entry][0]['words'][0].replace('ˊ', '́').replace(' --', '-').replace('-- ', '-')
+        headword = headword.strip('.,;-: ')
+        headword = headword.replace('<? >', '')
+        headword = headword.lower()
+        headword = headword.replace('˜', '̃')
         write.writerow([entry, 'Indo-Aryan', headword, data[entry][0]['ref'], 'cdial'])
         write2.writerow([entry, headword, '', data[entry][0]['ref']])
     with open('other/extensions_ia.csv', 'r') as fin:
