@@ -17,12 +17,17 @@ superscript = {
 }
 
 tokenizers = {}
+convertors = {}
 
-for file in glob.glob("cdial/ipa/cdial/*.txt"):
+for file in glob.glob("data/cdial/ipa/cdial/*.txt"):
     lang = file.split('/')[-1].split('.')[0]
     tokenizers[lang] = Tokenizer(file)
 
-with open('cdial/all.json', 'r') as fin:
+for file in glob.glob("conversion/*.txt"):
+    lang = file.split('/')[-1].split('.')[0]
+    convertors[lang] = Tokenizer(file)
+
+with open('data/cdial/all.json', 'r') as fin:
     data = json.load(fin)
 
 change = {
@@ -47,7 +52,7 @@ with open('cldf/forms.csv', 'w') as fout, open('errors.txt', 'w') as errors:
     num = 0
     write = csv.writer(fout)
     result = []
-    write.writerow(['ID', 'Language_ID', 'Parameter_ID', 'Form', 'Gloss', 'Native', 'Phonemic', 'Cognateset', 'Description', 'Source'])
+    write.writerow(['ID', 'Language_ID', 'Parameter_ID', 'Form', 'Gloss', 'Native', 'Phonemic', 'Original', 'Cognateset', 'Description', 'Source'])
     for entry in tqdm(data):
         headword = data[entry][0]
         for form in data[entry]:
@@ -73,6 +78,8 @@ with open('cldf/forms.csv', 'w') as fout, open('errors.txt', 'w') as errors:
                 word[0] = word[0].lower()
                 word[0] = word[0].replace('˜', '̃')
 
+                word[0] = word[0].replace(f'<smallcaps>i</smallcaps>', 'ɪ')
+                word[0] = word[0].replace('*l', 'ʌ')
                 for i in superscript:
                     word[0] = word[0].replace('ˊ', '́').replace('ˋ', '̀').replace(' -- ', '-')
                     word[0] = word[0].replace(f'<superscript>{i}</superscript>', superscript[i])
@@ -102,22 +109,33 @@ with open('cldf/forms.csv', 'w') as fout, open('errors.txt', 'w') as errors:
                 if lang in tokenizers and '˚' not in word[0]:
                     ipa = tokenizers[lang](word[0], column='IPA').replace(' ', '').replace('#', ' ')
                     if '�' in ipa:
-                        if lang in ['A']: errors.write(f'{lang} {oldest} {word[0]} {ipa}\n')
+                        # if lang in ['A']: errors.write(f'{lang} {oldest} {word[0]} {ipa}\n')
                         ipa = ''
+                
+                reformed = ''
+                if '˚' not in word[0]:
+                    reformed = convertors['cdial'](word[0].strip('-123456,;'), column='IPA').replace(' ', '').replace('#', ' ')
+                    if '�' in reformed:
+                        errors.write(f'{lang} {oldest} {word[0]} {ipa} {reformed}\n')
+                        reformed = ''
 
-                result.append([num, lang, entry, word[0], word[1], '', ipa, cognateset, '', 'CDIAL'])
+                result.append([num, lang, entry, reformed, word[1], '', ipa, word[0], cognateset, '', 'CDIAL'])
     
     i = 0
-    for file in glob.glob("other/ia/*.csv"):
+    for file in glob.glob("data/other/ia/*.csv"):
         with open(file, 'r') as fin:
             read = csv.reader(fin)
             for row in read:
                 if row[1]:
-                    result.append([f'e{i}', row[0], row[1], row[2], row[3], row[4], row[5], row[1], row[6], row[7]])
+                    # handle subentries
+                    if '.' in row[1]:
+                        row[6] = row[1]
+                        row[1] = row[1].split('.')[0]
+                    result.append([f'e{i}', row[0], row[1], row[2], row[3], row[4], row[5], row[2], row[1], row[6], row[7]])
                     i += 1
 
     dravidian_entries = {}
-    for file in glob.glob("dedr/dedr.csv"):
+    for file in glob.glob("data/dedr/dedr.csv"):
         with open(file, 'r') as fin:
             read = csv.reader(fin, delimiter=',', quotechar="'", skipinitialspace=True)
             for row in read:
@@ -127,7 +145,7 @@ with open('cldf/forms.csv', 'w') as fout, open('errors.txt', 'w') as errors:
                     dravidian_entries[num] = ''
                 if row[3] == 'PDr.':
                     dravidian_entries[num] = row[4]
-                result.append([f'dedr{row[0]}', row[3], num, row[4], row[5], '', '', 'd' + row[1], row[6] if row[6] != 'NULL' else '', 'dedr'])
+                result.append([f'dedr{row[0]}', row[3], num, row[4], row[5], '', row[4], '', 'd' + row[1], row[6] if row[6] != 'NULL' else '', 'dedr'])
 
     done = set()
     for row in result:
@@ -142,14 +160,21 @@ with open('cldf/cognates.csv', 'w') as fout, open('cldf/parameters.csv', 'w') as
     write.writerow(['Cognateset_ID', 'Language_ID', 'Form', 'Description', 'Source'])
     write2.writerow(['ID', 'Name', 'Concepticon_ID', 'Description'])
     for entry in data:
-        headword = data[entry][0]['words'][0].replace('ˊ', '́').replace(' --', '-').replace('-- ', '-')
+        headword = data[entry][0]['words'][0].replace('ˊ', '́').replace('`', '̀').replace(' --', '-').replace('-- ', '-')
         headword = headword.strip('.,;-: ')
         headword = headword.replace('<? >', '')
         headword = headword.lower()
         headword = headword.replace('˜', '̃')
-        write.writerow([entry, 'Indo-Aryan', headword, data[entry][0]['ref'], 'cdial'])
+        headword = headword.split()[0]
+        reformed = ''
+        if '˚' not in headword:
+            reformed = convertors['cdial'](headword.strip('-123456,;'), column='IPA').replace(' ', '').replace('#', ' ')
+            # if '�' in reformed:
+            #     errors.write(f'{lang} {oldest} {word[0]} {ipa} {reformed}\n')
+            #     reformed = ''
+        write.writerow([entry, 'Indo-Aryan', reformed if reformed else headword, data[entry][0]['ref'], 'cdial'])
         write2.writerow([entry, headword, '', data[entry][0]['ref']])
-    with open('other/extensions_ia.csv', 'r') as fin:
+    with open('data/other/extensions_ia.csv', 'r') as fin:
         read = csv.reader(fin)
         for row in read:
             write.writerow(row)

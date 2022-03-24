@@ -6,6 +6,9 @@ import math, copy, time
 import matplotlib.pyplot as plt
 from torch.nn.utils.rnn import pack_padded_sequence, pad_packed_sequence
 import csv
+from tqdm import tqdm
+import random
+from decode import *
 # from IPython.core.debugger import set_trace
 
 # we will use CUDA if it is available
@@ -15,6 +18,7 @@ print("CUDA:", USE_CUDA)
 print(DEVICE)
 
 seed = 42
+random.seed(seed)
 np.random.seed(seed)
 torch.manual_seed(seed)
 torch.cuda.manual_seed(seed)
@@ -262,8 +266,9 @@ def run_epoch(data_iter, model, loss_compute, print_every=50):
     total_loss = 0
     print_tokens = 0
 
-    print(len(data_iter))
-    for i, batch in enumerate(data_iter, 1):
+    # print(len(data_iter))
+    for i, batch in enumerate(tqdm(data_iter), 1):
+        # print(i, batch.ntokens, total_tokens)
         out, _, pre_output = model.forward(batch.src, batch.trg,
                                            batch.src_mask, batch.trg_mask,
                                            batch.src_lengths, batch.trg_lengths)
@@ -272,13 +277,14 @@ def run_epoch(data_iter, model, loss_compute, print_every=50):
         total_tokens += batch.ntokens
         print_tokens += batch.ntokens
         
-        if model.training and i % print_every == 0:
-            elapsed = time.time() - start
-            print("Epoch Step: %d Loss: %f Tokens per Sec: %f" %
-                    (i, loss / batch.nseqs, print_tokens / elapsed))
-            start = time.time()
-            print_tokens = 0
+        # if model.training and i % print_every == 0:
+        #     elapsed = time.time() - start
+        #     print("Epoch Step: %d Loss: %f Tokens per Sec: %f" %
+        #             (i, loss / batch.nseqs, print_tokens / elapsed))
+        #     start = time.time()
+        #     print_tokens = 0
 
+    # print(total_tokens)
     return math.exp(total_loss / float(total_tokens))
 
 def get_data(batch_size=16, length=20, pad_index=0, sos_index=1, eos_index=2):
@@ -286,23 +292,33 @@ def get_data(batch_size=16, length=20, pad_index=0, sos_index=1, eos_index=2):
     chars = set()
 
     # collect Sanskrit etyma headwords
-    with open('../cldf/parameters.csv', 'r') as fin:
+    with open('../cldf/cognates.csv', 'r') as fin:
         reader = csv.reader(fin)
         for row in reader:
-            sanskrit[row[0]] = row[1]
+            if row[1] == 'Indo-Aryan':
+                sanskrit[row[0]] = row[2]
     
     # get reflexes from Hindi only, and pair with first word span in Sanskrit etymon
     data = []
+    print('Reading data')
     with open('../cldf/forms.csv', 'r') as fin:
         reader = csv.reader(fin)
-        for row in reader:
-            if row[1] == 'H':
-                for i in sanskrit[row[2]]: chars.add(i)
-                for i in row[3]: chars.add(i)
-                if len(row[3]) > 1:
-                    data.append([sanskrit[row[2]].split(',')[0].strip(',- '), row[3]])
+        for row in tqdm(reader):
+            if 'dedr' in row[0] or row[2] not in sanskrit or not row[3]:
+                continue
+            lang = f'[{row[1]}]'
+            if lang != '[Sh]':
+                continue
+            chars.add(lang)
+            for i in sanskrit[row[2]]: chars.add(i)
+            for i in row[3]: chars.add(i)
+            if len(row[3]) > 1:
+                src = list(sanskrit[row[2]].split(',')[0].strip(',- 1234567890')) + [lang]
+                trg = list(row[3])
+                data.append([src, trg])
+    print(data[:10])
     
-    # encoding sounds to numbers for embeddings
+    # make encoding to numbers
     to_num = {}
     to_char = {}
     for i, j in enumerate(chars):
@@ -312,29 +328,45 @@ def get_data(batch_size=16, length=20, pad_index=0, sos_index=1, eos_index=2):
     to_char[1] = 'SOS'
     to_char[0] = 'PAD'
     
+    # encoding sounds to numbers for embeddings, add padding
+    # basically we want the pattern SOS [word] EOS PAD...
+    # encoder input doesn't need SOS (start of string) tag
     dat = []
     for i, j in enumerate(data):
         if len(j[0]) > length or len(j[1]) > (length - 1) or len(j[0]) == 0 or len(j[1]) == 0:
-            print(len(j[0]), len(j[1]))
+            # print(len(j[0]), len(j[1]))
             continue
         dat.append([[sos_index] + [to_num[x] for x in j[0]] + [eos_index] + [pad_index] * (length - len(j[0])),
             [sos_index] + [to_num[x] for x in j[1]] + [eos_index] + [pad_index] * (length - len(j[1]))])
+    random.shuffle(dat)
     # print(data[:5])
     # input()
 
-    tot = []
-    for i in range(0, len(dat), batch_size):
-        if len(dat) < i + batch_size:
-            continue
-        batch = torch.LongTensor(dat[i:i + batch_size])
+    tot, eval_data = [], []
+    sp = len(dat) // 5
+    for i in range(0, sp, batch_size):
+        if i >= len(dat): continue
+        sz = min(batch_size, len(dat) - i)
+        batch = torch.LongTensor(dat[i:i + sz])
         # print(batch.size())
         batch = batch.cuda() if USE_CUDA else batch
         src, trg = batch[:, 0, 1:], batch[:, 1]
-        src_lengths = [length + 1] * batch_size
-        trg_lengths = [length + 2] * batch_size
+        src_lengths = [length + 1] * sz
+        trg_lengths = [length + 2] * sz
+        ret = Batch((src, src_lengths), (trg, trg_lengths), pad_index=pad_index)
+        eval_data.append(ret)
+    for i in range(sp, len(dat), batch_size):
+        if i >= len(dat): continue
+        sz = min(batch_size, len(dat) - i)
+        batch = torch.LongTensor(dat[i:i + sz])
+        # print(batch.size())
+        batch = batch.cuda() if USE_CUDA else batch
+        src, trg = batch[:, 0, 1:], batch[:, 1]
+        src_lengths = [length + 1] * sz
+        trg_lengths = [length + 2] * sz
         ret = Batch((src, src_lengths), (trg, trg_lengths), pad_index=pad_index)
         tot.append(ret)
-    return tot, to_char
+    return tot, eval_data, to_char
 
 def data_gen(num_words=11, batch_size=16, num_batches=100, length=10, pad_index=0, sos_index=1):
     """Generate random data for a src-tgt copy task."""
@@ -375,45 +407,6 @@ class SimpleLossCompute:
             self.opt.zero_grad()
 
         return loss.data.item() * norm
-
-def greedy_decode(model, src, src_mask, src_lengths, max_len=100, sos_index=1, eos_index=None):
-    """Greedily decode a sentence."""
-
-    with torch.no_grad():
-        encoder_hidden, encoder_final = model.encode(src, src_mask, src_lengths)
-        prev_y = torch.ones(1, 1).fill_(sos_index).type_as(src)
-        trg_mask = torch.ones_like(prev_y)
-
-    output = []
-    attention_scores = []
-    hidden = None
-
-    for i in range(max_len):
-        with torch.no_grad():
-            out, hidden, pre_output = model.decode(
-              encoder_hidden, encoder_final, src_mask,
-              prev_y, trg_mask, hidden)
-
-            # we predict from the pre-output layer, which is
-            # a combination of Decoder state, prev emb, and context
-            prob = model.generator(pre_output[:, -1])
-
-        _, next_word = torch.max(prob, dim=1)
-        next_word = next_word.data.item()
-        output.append(next_word)
-        prev_y = torch.ones(1, 1).type_as(src).fill_(next_word)
-        attention_scores.append(model.decoder.attention.alphas.cpu().numpy())
-    
-    output = np.array(output)
-        
-    # cut off everything starting from </s> 
-    # (only when eos_index provided)
-    if eos_index is not None:
-        first_eos = np.where(output==eos_index)[0]
-        if len(first_eos) > 0:
-            output = output[:first_eos[0]]      
-    
-    return output, np.concatenate(attention_scores, axis=1)
   
 
 def lookup_words(x, vocab=None):
@@ -422,7 +415,7 @@ def lookup_words(x, vocab=None):
 
     return [str(t) for t in x]
 
-def print_examples(example_iter, model, n=2, max_len=100, 
+def print_examples(example_iter, model, fout, n=2, max_len=100, 
                    sos_index=1, 
                    src_eos_index=2, 
                    trg_eos_index=2, mapping=None):
@@ -431,58 +424,64 @@ def print_examples(example_iter, model, n=2, max_len=100,
     model.eval()
     count = 0
     print()
+    fout.write('\n')
         
-    for i, batch in enumerate(example_iter):
-      
-        src = batch.src.cpu().numpy()[0, :]
-        trg = batch.trg_y.cpu().numpy()[0, :]
-        print(src, trg)
+    for i, batch in enumerate(tqdm(example_iter)):    
 
-        # remove </s> (if it is there)
-        src = src[:-1] if src[-1] == src_eos_index else src
-        trg = trg[:-1] if trg[-1] == trg_eos_index else trg      
+        for i in range(1):
+            src = batch.src.cpu().numpy()[i, :]
+            trg = batch.trg_y.cpu().numpy()[i, :]
+            # print(src, trg)
 
-        print(batch.src_lengths)
-        result, _ = greedy_decode(
-          model, torch.reshape(batch.src[0], (1, -1)), torch.reshape(batch.src_mask[0], (1, -1)),
-          [batch.src_lengths[0]],
-          max_len=max_len, sos_index=sos_index, eos_index=trg_eos_index)
-        print("Example #%d" % (i+1))
-        print("Src : ", " ".join(lookup_words(src, vocab=mapping)))
-        print("Trg : ", " ".join(lookup_words(trg, vocab=mapping)))
-        print("Pred: ", " ".join(lookup_words(result, vocab=mapping)))
-        print()
+            # remove </s> (if it is there)
+            src = src[:-1] if src[-1] == src_eos_index else src
+            trg = trg[:-1] if trg[-1] == trg_eos_index else trg  
+
+            beam = beam_decode(
+            model, torch.reshape(batch.src[i], (1, -1)), torch.reshape(batch.src_mask[i], (1, -1)),
+            [batch.src_lengths[i]],
+            max_len=max_len, sos_index=sos_index, eos_index=trg_eos_index, beam_size=10)
+            result, attentions, prob = greedy_decode(
+            model, torch.reshape(batch.src[i], (1, -1)), torch.reshape(batch.src_mask[i], (1, -1)),
+            [batch.src_lengths[i]],
+            max_len=max_len, sos_index=sos_index, eos_index=trg_eos_index)
+            src_text = "".join([x for x in lookup_words(src, vocab=mapping) if x not in ['EOS', 'PAD']])
+            trg_text = "".join([x for x in lookup_words(trg, vocab=mapping) if x not in ['EOS', 'PAD']])
+            result_text = "".join(lookup_words(result, vocab=mapping))
+            fout.write(f'{src_text}\t{trg_text}\t{result_text}\t({prob.item()})\n')
+            for x, pr in beam:
+                fout.write(f'\t\t{"".join(lookup_words(x, vocab=mapping))}\t({pr})\n')
+
         
-        count += 1
-        if count == n:
-            break
+        # count += 1
+        # if count == n:
+        #     break
 
 def train_copy_task():
     """Train the simple copy task."""
-    num_words = 88
     batch_size = 128
+    data, eval_data, to_char = get_data(batch_size=batch_size)
+    num_words = len(to_char)
     criterion = nn.NLLLoss(reduction="sum", ignore_index=0)
-    model = make_model(num_words, num_words, emb_size=32, hidden_size=64)
-    optim = torch.optim.Adam(model.parameters(), lr=0.0003)
-    all_data, to_char = get_data(batch_size=batch_size)
-    # all_data = all_data[:100]
+    model = make_model(num_words, num_words, emb_size=64, hidden_size=64)
+    optim = torch.optim.Adam(model.parameters(), lr=0.03)
     print(to_char)
-    sp = len(all_data) // 5
-    eval_data = all_data[:sp]
  
     dev_perplexities = []
+
+    fout = open('result.txt', 'w')
     
     if USE_CUDA:
         model.cuda()
 
-    for epoch in range(10):
+    for epoch in range(15):
         
         print("Epoch %d" % epoch)
+        fout.write("Epoch %d\n" % epoch)
 
         # train
         model.train()
         # data = data_gen(num_words=num_words, batch_size=32, num_batches=100)
-        data = all_data[sp:]
         run_epoch(data, model,
                   SimpleLossCompute(model.generator, criterion, optim))
 
@@ -493,8 +492,9 @@ def train_copy_task():
                                    SimpleLossCompute(model.generator, criterion, None))
             print("Evaluation perplexity: %f" % perplexity)
             dev_perplexities.append(perplexity)
-            print_examples(eval_data, model, n=2, max_len=20, mapping=to_char)
-        
+            print_examples(eval_data, model, fout, n=1, max_len=20, mapping=to_char)
+    
+    fout.close()
     return dev_perplexities
 
 # train the copy task
@@ -508,3 +508,4 @@ def plot_perplexity(perplexities):
     plt.plot(perplexities)
     
 plot_perplexity(dev_perplexities)
+plt.show()
