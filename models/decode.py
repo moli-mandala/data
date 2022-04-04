@@ -114,3 +114,44 @@ def greedy_decode(model, src, src_mask, src_lengths, max_len=100, sos_index=1, e
             output = output[:first_eos[0]]      
     
     return output, np.concatenate(attention_scores, axis=1), prod
+def force_decode(model, src, src_mask, src_lengths, trg, trg_mask, trg_lengths, max_len=100, sos_index=1, eos_index=None):
+    """Force decode a sentence, returning log probability."""
+
+    with torch.no_grad():
+        encoder_hidden, encoder_final = model.encode(src, src_mask, src_lengths)
+        prev_y = torch.ones(1, 1).fill_(sos_index).type_as(src)
+        trg_mask = torch.ones_like(prev_y)
+
+    output = []
+    attention_scores = []
+    prod = 0
+    hidden = None
+
+    for n in trg[0]:
+        with torch.no_grad():
+            out, hidden, pre_output = model.decode(
+              encoder_hidden, encoder_final, src_mask,
+              prev_y, trg_mask, hidden)
+
+            # we predict from the pre-output layer, which is
+            # a combination of Decoder state, prev emb, and context
+            prob = model.generator(pre_output[:, -1])
+
+        _, next_word = prob[0][n], n
+        prod -= _
+        output.append(next_word)
+        prev_y = torch.ones(1, 1).type_as(src).fill_(next_word)
+        attention_scores.append(model.decoder.attention.alphas.cpu().numpy())
+        if next_word == eos_index:
+            break
+    
+    output = np.array(output)
+        
+    # cut off everything starting from </s> 
+    # (only when eos_index provided)
+    if eos_index is not None:
+        first_eos = np.where(output==eos_index)[0]
+        if len(first_eos) > 0:
+            output = output[:first_eos[0]]      
+    
+    return output, np.concatenate(attention_scores, axis=1), prod

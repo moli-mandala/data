@@ -3,6 +3,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import math, copy, time
+from plotnine import *
 import matplotlib.pyplot as plt
 from torch.nn.utils.rnn import pack_padded_sequence, pad_packed_sequence
 import csv
@@ -10,6 +11,13 @@ from tqdm import tqdm
 import random
 from decode import *
 # from IPython.core.debugger import set_trace
+from sparsemax import Sparsemax
+import argparse
+from sklearn.decomposition import PCA
+import pandas as pd
+
+global args
+sparsemax = Sparsemax(dim=-1)
 
 # we will use CUDA if it is available
 USE_CUDA = torch.cuda.is_available()
@@ -194,12 +202,18 @@ class BahdanauAttention(nn.Module):
         scores = self.energy_layer(torch.tanh(query + proj_key))
         scores = scores.squeeze(2).unsqueeze(1)
         
-        # Mask out invalid positions.
-        # The mask marks valid positions so we invert it using `mask & 0`.
-        scores.data.masked_fill_(mask == 0, -float('inf'))
+        if args.sparsemax:
+            # Mask out invalid positions.
+            # The mask marks valid positions so we invert it using `mask & 0`.
+            scores.data.masked_fill_(mask == 0, -1000000000000)
+            
+            # Turn scores to probabilities.
+            alphas = sparsemax(scores)
+        else:
+            # SOFTMAX VERSION
+            scores.data.masked_fill_(mask == 0, -float('inf'))
+            alphas = F.softmax(scores, dim=-1)
         
-        # Turn scores to probabilities.
-        alphas = F.softmax(scores, dim=-1)
         self.alphas = alphas        
         
         # The context vector is the weighted sum of the values.
@@ -306,9 +320,10 @@ def get_data(batch_size=16, length=20, pad_index=0, sos_index=1, eos_index=2):
         for row in tqdm(reader):
             if 'dedr' in row[0] or row[2] not in sanskrit or not row[3]:
                 continue
+            if args.langs:
+                if row[1] not in args.langs:
+                    continue
             lang = f'[{row[1]}]'
-            if lang != '[Sh]':
-                continue
             chars.add(lang)
             for i in sanskrit[row[2]]: chars.add(i)
             for i in row[3]: chars.add(i)
@@ -415,6 +430,41 @@ def lookup_words(x, vocab=None):
 
     return [str(t) for t in x]
 
+def print_probs(example_iter, model, fout, n=2, max_len=100, 
+                   sos_index=1, 
+                   src_eos_index=2, 
+                   trg_eos_index=2, mapping=None):
+    """Print probabilities"""
+
+    model.eval()
+    count = 0
+    print()
+    fout.write('\n')
+    res = []
+        
+    for _, batch in enumerate(tqdm(example_iter)):    
+
+        for i in range(len(batch.src)):
+            src = batch.src.cpu().numpy()[i, :]
+            trg = batch.trg_y.cpu().numpy()[i, :]
+            # print(src, trg)
+
+            # remove </s> (if it is there)
+            src = src[:-1] if src[-1] == src_eos_index else src
+            trg = trg[:-1] if trg[-1] == trg_eos_index else trg  
+
+            _, _, true_prob = force_decode(
+                model, torch.reshape(batch.src[i], (1, -1)), torch.reshape(batch.src_mask[i], (1, -1)),
+                [batch.src_lengths[i]], torch.reshape(batch.trg_y[i], (1, -1)),
+                torch.reshape(batch.trg_mask[i], (1, -1)), [batch.trg_lengths[i]],
+                max_len=max_len, sos_index=sos_index, eos_index=trg_eos_index)
+            src_text = "".join([x for x in lookup_words(src, vocab=mapping) if x not in ['EOS', 'PAD']])
+            trg_text = "".join([x for x in lookup_words(trg, vocab=mapping) if x not in ['EOS', 'PAD']])
+            res.append([src_text, trg_text, true_prob.item(), true_prob.item() / len(src_text)])
+    
+    for x in sorted(res, key=lambda x: x[3]):
+        fout.write(f'{x[0]}\t{x[1]}\t{x[2]}\t{x[3]}\n')
+
 def print_examples(example_iter, model, fout, n=2, max_len=100, 
                    sos_index=1, 
                    src_eos_index=2, 
@@ -426,45 +476,55 @@ def print_examples(example_iter, model, fout, n=2, max_len=100,
     print()
     fout.write('\n')
         
-    for i, batch in enumerate(tqdm(example_iter)):    
+    for i, batch in enumerate(tqdm(example_iter)):
 
-        for i in range(1):
+        for i in range(len(batch.src)):
             src = batch.src.cpu().numpy()[i, :]
             trg = batch.trg_y.cpu().numpy()[i, :]
             # print(src, trg)
 
             # remove </s> (if it is there)
             src = src[:-1] if src[-1] == src_eos_index else src
-            trg = trg[:-1] if trg[-1] == trg_eos_index else trg  
+            trg = trg[:-1] if trg[-1] == trg_eos_index else trg
 
-            beam = beam_decode(
-            model, torch.reshape(batch.src[i], (1, -1)), torch.reshape(batch.src_mask[i], (1, -1)),
-            [batch.src_lengths[i]],
-            max_len=max_len, sos_index=sos_index, eos_index=trg_eos_index, beam_size=10)
+            if args.beam:
+                beam = beam_decode(
+                    model, torch.reshape(batch.src[i], (1, -1)), torch.reshape(batch.src_mask[i], (1, -1)),
+                    [batch.src_lengths[i]],
+                    max_len=max_len, sos_index=sos_index, eos_index=trg_eos_index, beam_size=10)
             result, attentions, prob = greedy_decode(
-            model, torch.reshape(batch.src[i], (1, -1)), torch.reshape(batch.src_mask[i], (1, -1)),
-            [batch.src_lengths[i]],
-            max_len=max_len, sos_index=sos_index, eos_index=trg_eos_index)
+                model, torch.reshape(batch.src[i], (1, -1)), torch.reshape(batch.src_mask[i], (1, -1)),
+                [batch.src_lengths[i]],
+                max_len=max_len, sos_index=sos_index, eos_index=trg_eos_index)
+            _, _, true_prob = force_decode(
+                model, torch.reshape(batch.src[i], (1, -1)), torch.reshape(batch.src_mask[i], (1, -1)),
+                [batch.src_lengths[i]], torch.reshape(batch.trg_y[i], (1, -1)),
+                torch.reshape(batch.trg_mask[i], (1, -1)), [batch.trg_lengths[i]],
+                max_len=max_len, sos_index=sos_index, eos_index=trg_eos_index)
             src_text = "".join([x for x in lookup_words(src, vocab=mapping) if x not in ['EOS', 'PAD']])
             trg_text = "".join([x for x in lookup_words(trg, vocab=mapping) if x not in ['EOS', 'PAD']])
             result_text = "".join(lookup_words(result, vocab=mapping))
-            fout.write(f'{src_text}\t{trg_text}\t{result_text}\t({prob.item()})\n')
-            for x, pr in beam:
-                fout.write(f'\t\t{"".join(lookup_words(x, vocab=mapping))}\t({pr})\n')
+            fout.write(f'{src_text}\t{trg_text}\t({true_prob.item()})\t{result_text}\t({prob.item()})\n')
+            if args.beam:
+                for x, pr in beam:
+                    fout.write(f'\t\t{"".join(lookup_words(x, vocab=mapping))}\t({pr})\n') 
+            count += 1  
+            if count == n:
+                break 
 
-        
-        # count += 1
-        # if count == n:
-        #     break
+        if count == n:
+            break
 
 def train_copy_task():
     """Train the simple copy task."""
-    batch_size = 128
+    batch_size = 1024
     data, eval_data, to_char = get_data(batch_size=batch_size)
+    # data = data[:1]
+    # eval_data = eval_data[:1]
     num_words = len(to_char)
     criterion = nn.NLLLoss(reduction="sum", ignore_index=0)
     model = make_model(num_words, num_words, emb_size=64, hidden_size=64)
-    optim = torch.optim.Adam(model.parameters(), lr=0.03)
+    optim = torch.optim.Adam(model.parameters(), lr=0.01)
     print(to_char)
  
     dev_perplexities = []
@@ -487,25 +547,64 @@ def train_copy_task():
 
         # evaluate
         model.eval()
+        X = model.src_embed.weight.detach().numpy()
+        pca = PCA(n_components=2)
+        X_r = pca.fit(X).transform(X).tolist()
+        for i in to_char:
+            y = to_char[i]
+            X_r[i].append(y)
+            if '[' in y:
+                X_r[i].append('special')
+            else:
+                X_r[i].append('sound')
+        print(X_r[:5])
+        print(
+            "explained variance ratio (first two components): %s"
+            % str(pca.explained_variance_ratio_)
+        )
+        df = pd.DataFrame(X_r, columns=['1', '2', 'Label', 'Type'])
+        p = ggplot(df, aes(x='1', y='2', label='Label', color='Type')) + geom_text()
+        p.draw()
+        plt.show()
+        
+        input()
         with torch.no_grad(): 
             perplexity = run_epoch(eval_data, model,
                                    SimpleLossCompute(model.generator, criterion, None))
             print("Evaluation perplexity: %f" % perplexity)
             dev_perplexities.append(perplexity)
-            print_examples(eval_data, model, fout, n=1, max_len=20, mapping=to_char)
+            if args.check_probs:
+                print_probs(eval_data, model, fout, n=50, max_len=20, mapping=to_char)
+            else:
+                print_examples(eval_data, model, fout, n=50, max_len=20, mapping=to_char)
     
     fout.close()
     return dev_perplexities
 
-# train the copy task
-dev_perplexities = train_copy_task()
+def main():
 
-def plot_perplexity(perplexities):
-    """plot perplexities"""
-    plt.title("Perplexity per Epoch")
-    plt.xlabel("Epoch")
-    plt.ylabel("Perplexity")
-    plt.plot(perplexities)
-    
-plot_perplexity(dev_perplexities)
-plt.show()
+    # train the copy task
+    dev_perplexities = train_copy_task()
+
+    def plot_perplexity(perplexities):
+        """plot perplexities"""
+        plt.title("Perplexity per Epoch")
+        plt.xlabel("Epoch")
+        plt.ylabel("Perplexity")
+        plt.plot(perplexities)
+        
+    plot_perplexity(dev_perplexities)
+    plt.show()
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description='Train encoder-decoder model.')
+    parser.add_argument('-l', '--langs', dest='langs', nargs='+', help='Languages')
+    parser.add_argument('--sparsemax', dest='sparsemax', action='store_true',
+                   help='Use sparsemax in attention probability calculation instead of softmax.')
+    parser.add_argument('--beam', dest='beam', action='store_true',
+                   help='Show beam search outputs on eval set as well.')
+    parser.add_argument('--check-probs', dest='check_probs', action='store_true',
+                   help='Check probabilities of input data to find anomalies.')
+    args = parser.parse_args()
+    print(args)
+    main()
