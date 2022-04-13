@@ -2,6 +2,27 @@ import torch
 import numpy as np
 from heapq import heappop, heappush
 from collections import defaultdict
+import matplotlib.pyplot as plt
+
+
+def plot_heatmap(src, trg, scores):
+
+    fig, ax = plt.subplots()
+    print(scores)
+    heatmap = ax.pcolor(scores, cmap='viridis', linewidths=1)
+
+    ax.set_xticklabels(trg, minor=False, rotation='vertical')
+    ax.set_yticklabels(src, minor=False)
+
+    # put the major ticks at the middle of each cell
+    # and the x-ticks on top
+    ax.xaxis.tick_top()
+    ax.set_xticks(np.arange(scores.shape[1]) + 0.5, minor=False)
+    ax.set_yticks(np.arange(scores.shape[0]) + 0.5, minor=False)
+    ax.invert_yaxis()
+
+    plt.colorbar(heatmap)
+    plt.show()
 
 def beam_decode(model, src, src_mask, src_lengths, beam_size=10, max_len=30, sos_index=1, eos_index=None):
     """Greedily decode a sentence."""
@@ -105,7 +126,8 @@ def greedy_decode(model, src, src_mask, src_lengths, max_len=100, sos_index=1, e
             break
     
     output = np.array(output)
-        
+    # plot_heatmap(src, output, np.concatenate(attention_scores, axis=1)[0].T[:, :len(output)])
+     
     # cut off everything starting from </s> 
     # (only when eos_index provided)
     if eos_index is not None:
@@ -114,6 +136,7 @@ def greedy_decode(model, src, src_mask, src_lengths, max_len=100, sos_index=1, e
             output = output[:first_eos[0]]      
     
     return output, np.concatenate(attention_scores, axis=1), prod
+
 def force_decode(model, src, src_mask, src_lengths, trg, trg_mask, trg_lengths, max_len=100, sos_index=1, eos_index=None):
     """Force decode a sentence, returning log probability."""
 

@@ -35,6 +35,7 @@ for page in tqdm(range(1, total_pages + 1)):
                 data = str(entry).replace('\n', '')
                 data = data.replace('</i><at>', '').replace('</at><i>', '').replace('<at>', '<i>').replace('</at>', '</i>')
                 data = data.replace('</i>(<i>', '').replace('</i>)<i>', '')
+                data = data.replace('*<b>', '<b>*')
                 data = re.split(r'(<br/>|Ext.)', data)
 
                 for lemma in lemmas:
@@ -78,6 +79,8 @@ for page in tqdm(range(1, total_pages + 1)):
                             if langs:
                                 if langs[-1] == 'S':
                                     langs.pop()
+                        if lang == 'mald':
+                            lang = 'Md'
 
                         # langs is a stack of langs, if there are no forms
                         # we just add to the stack and continue (means later

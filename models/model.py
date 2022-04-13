@@ -15,6 +15,12 @@ from sparsemax import Sparsemax
 import argparse
 from sklearn.decomposition import PCA
 import pandas as pd
+import unicodedata
+import torchsparseattn
+import os
+
+checkpoint = str(time.time())
+os.mkdir(f'checkpoints/{checkpoint}')
 
 global args
 sparsemax = Sparsemax(dim=-1)
@@ -68,11 +74,12 @@ class Generator(nn.Module):
 
 class Encoder(nn.Module):
     """Encodes a sequence of word embeddings"""
-    def __init__(self, input_size, hidden_size, num_layers=1, dropout=0.):
+    def __init__(self, input_size, hidden_size, num_layers=1, dropout=0., bidirectional=False):
         super(Encoder, self).__init__()
+        self.bidirectional = bidirectional
         self.num_layers = num_layers
         self.rnn = nn.GRU(input_size, hidden_size, num_layers, 
-                          batch_first=True, bidirectional=True, dropout=dropout)
+                          batch_first=True, bidirectional=self.bidirectional, dropout=dropout)
         
     def forward(self, x, mask, lengths):
         """
@@ -83,11 +90,17 @@ class Encoder(nn.Module):
         packed = pack_padded_sequence(x, lengths, batch_first=True)
         output, final = self.rnn(packed)
         output, _ = pad_packed_sequence(output, batch_first=True)
+        # print('GRU output:', output.size(), final.size())
+        # torch.Size([10, 21, 128]) torch.Size([2, 10, 64])
+        # torch.Size([10, 21, 64]) torch.Size([1, 10, 64])
 
         # we need to manually concatenate the final states for both directions
-        fwd_final = final[0:final.size(0):2]
-        bwd_final = final[1:final.size(0):2]
-        final = torch.cat([fwd_final, bwd_final], dim=2)  # [num_layers, batch, 2*dim]
+        if self.bidirectional:
+            fwd_final = final[0:final.size(0):2]
+            bwd_final = final[1:final.size(0):2]
+            final = torch.cat([fwd_final, bwd_final], dim=2)  # [num_layers, batch, 2*dim]
+        # print('GRU output:', output.size(), final.size())
+        # input()
 
         return output, final
 
@@ -95,22 +108,24 @@ class Decoder(nn.Module):
     """A conditional RNN decoder with attention."""
     
     def __init__(self, emb_size, hidden_size, attention, num_layers=1, dropout=0.5,
-                 bridge=True):
+                 bridge=True, bidirectional=False):
         super(Decoder, self).__init__()
         
         self.hidden_size = hidden_size
         self.num_layers = num_layers
         self.attention = attention
         self.dropout = dropout
+        self.bidirectional = bidirectional
+        bridge = bidirectional
                  
-        self.rnn = nn.GRU(emb_size + 2*hidden_size, hidden_size, num_layers,
+        self.rnn = nn.GRU(emb_size + (2*hidden_size if bidirectional else hidden_size), hidden_size, num_layers,
                           batch_first=True, dropout=dropout)
                  
         # to initialize from the final encoder state
-        self.bridge = nn.Linear(2*hidden_size, hidden_size, bias=True) if bridge else None
+        self.bridge = nn.Linear((2*hidden_size if bidirectional else hidden_size), hidden_size, bias=True) if bridge else None
 
         self.dropout_layer = nn.Dropout(p=dropout)
-        self.pre_output_layer = nn.Linear(hidden_size + 2*hidden_size + emb_size,
+        self.pre_output_layer = nn.Linear(hidden_size + (2*hidden_size if bidirectional else hidden_size) + emb_size,
                                           hidden_size, bias=False)
         
     def forward_step(self, prev_embed, encoder_hidden, src_mask, proj_key, hidden):
@@ -139,6 +154,9 @@ class Decoder(nn.Module):
         # the maximum number of steps to unroll the RNN
         if max_len is None:
             max_len = trg_mask.size(-1)
+
+        # print("Encoder final:", encoder_final.size())
+        # print("Encoder hidden:", encoder_hidden.size())
 
         # initialize decoder hidden state
         if hidden is None:
@@ -172,16 +190,19 @@ class Decoder(nn.Module):
         if encoder_final is None:
             return None  # start with zeros
 
-        return torch.tanh(self.bridge(encoder_final))
+        if self.bridge:
+            return torch.tanh(self.bridge(encoder_final))
+        else:
+            return encoder_final
 
 class BahdanauAttention(nn.Module):
     """Implements Bahdanau (MLP) attention"""
     
-    def __init__(self, hidden_size, key_size=None, query_size=None):
+    def __init__(self, hidden_size, key_size=None, query_size=None, bidirectional=False):
         super(BahdanauAttention, self).__init__()
         
         # We assume a bi-directional encoder so key_size is 2*hidden_size
-        key_size = 2 * hidden_size if key_size is None else key_size
+        key_size = (2 * hidden_size if bidirectional else hidden_size) if key_size is None else key_size
         query_size = hidden_size if query_size is None else query_size
 
         self.key_layer = nn.Linear(key_size, hidden_size, bias=False)
@@ -208,6 +229,7 @@ class BahdanauAttention(nn.Module):
             scores.data.masked_fill_(mask == 0, -1000000000000)
             
             # Turn scores to probabilities.
+            # print(scores.size())
             alphas = sparsemax(scores)
         else:
             # SOFTMAX VERSION
@@ -222,14 +244,14 @@ class BahdanauAttention(nn.Module):
         # context shape: [B, 1, 2D], alphas shape: [B, 1, M]
         return context, alphas
 
-def make_model(src_vocab, tgt_vocab, emb_size=256, hidden_size=512, num_layers=1, dropout=0.1):
+def make_model(src_vocab, tgt_vocab, emb_size=256, hidden_size=512, num_layers=1, dropout=0.1, bidirectional=True):
     "Helper: Construct a model from hyperparameters."
 
-    attention = BahdanauAttention(hidden_size)
+    attention = BahdanauAttention(hidden_size, bidirectional=bidirectional)
 
     model = EncoderDecoder(
-        Encoder(emb_size, hidden_size, num_layers=num_layers, dropout=dropout),
-        Decoder(emb_size, hidden_size, attention, num_layers=num_layers, dropout=dropout),
+        Encoder(emb_size, hidden_size, num_layers=num_layers, dropout=dropout, bidirectional=bidirectional),
+        Decoder(emb_size, hidden_size, attention, num_layers=num_layers, dropout=dropout, bidirectional=bidirectional),
         nn.Embedding(src_vocab, emb_size),
         nn.Embedding(tgt_vocab, emb_size),
         Generator(hidden_size, tgt_vocab))
@@ -300,6 +322,63 @@ def run_epoch(data_iter, model, loss_compute, print_every=50):
 
     # print(total_tokens)
     return math.exp(total_loss / float(total_tokens))
+
+def get_buru_data(batch_size=16, length=20, pad_index=0, sos_index=1, eos_index=2):
+    data = []
+    chars = set()
+
+    with open('../data/burushaski.tsv', 'r') as fin:
+        reader = csv.reader(fin, delimiter='\t')
+        next(reader)
+        for row in reader:
+            row = [unicodedata.normalize('NFC', x) for x in row]
+            data.append([list(row[0]) + ['+'] + list(row[5].replace('nc', 'uc')), list(row[1])])
+            for i in data[-1][0] + data[-1][1]:
+                chars.add(i)
+    
+    # make encoding to numbers
+    to_num = {}
+    to_char = {}
+    for i, j in enumerate(chars):
+        to_num[j] = i + 3
+        to_char[i + 3] = j
+    to_char[2] = 'EOS'
+    to_char[1] = 'SOS'
+    to_char[0] = 'PAD'
+
+    dat = []
+    for i, j in enumerate(data):
+        dat.append([[sos_index] + [to_num[x] for x in j[0]] + [eos_index] + [pad_index] * (length - len(j[0])),
+            [sos_index] + [to_num[x] for x in j[1]] + [eos_index] + [pad_index] * (length - len(j[1]))])
+    random.shuffle(dat)
+
+    tot, eval_data = [], []
+    sp = len(dat) // 5
+    for i in range(0, sp, batch_size):
+        if i >= len(dat): continue
+        sz = min(batch_size, len(dat) - i)
+        batch = torch.LongTensor(dat[i:i + sz])
+        # print(batch.size())
+        batch = batch.cuda() if USE_CUDA else batch
+        src, trg = batch[:, 0, 1:], batch[:, 1]
+        src_lengths = [length + 1] * sz
+        trg_lengths = [length + 2] * sz
+        ret = Batch((src, src_lengths), (trg, trg_lengths), pad_index=pad_index)
+        eval_data.append(ret)
+    for i in range(sp, len(dat), batch_size):
+        if i >= len(dat): continue
+        sz = min(batch_size, len(dat) - i)
+        batch = torch.LongTensor(dat[i:i + sz])
+        # print(batch.size())
+        batch = batch.cuda() if USE_CUDA else batch
+        src, trg = batch[:, 0, 1:], batch[:, 1]
+        src_lengths = [length + 1] * sz
+        trg_lengths = [length + 2] * sz
+        ret = Batch((src, src_lengths), (trg, trg_lengths), pad_index=pad_index)
+        tot.append(ret)
+    return tot, eval_data, to_char
+    
+
 
 def get_data(batch_size=16, length=20, pad_index=0, sos_index=1, eos_index=2):
     sanskrit = {}
@@ -468,13 +547,14 @@ def print_probs(example_iter, model, fout, n=2, max_len=100,
 def print_examples(example_iter, model, fout, n=2, max_len=100, 
                    sos_index=1, 
                    src_eos_index=2, 
-                   trg_eos_index=2, mapping=None):
+                   trg_eos_index=2, mapping=None, plot=0):
     """Prints N examples. Assumes batch size of 1."""
 
     model.eval()
     count = 0
     print()
     fout.write('\n')
+    plotted = 0
         
     for i, batch in enumerate(tqdm(example_iter)):
 
@@ -496,6 +576,10 @@ def print_examples(example_iter, model, fout, n=2, max_len=100,
                 model, torch.reshape(batch.src[i], (1, -1)), torch.reshape(batch.src_mask[i], (1, -1)),
                 [batch.src_lengths[i]],
                 max_len=max_len, sos_index=sos_index, eos_index=trg_eos_index)
+            src_clean = [x for x in lookup_words(src, vocab=mapping) if x not in ['EOS', 'PAD']]
+            if plotted < plot:
+                plot_heatmap(src_clean, lookup_words(result, vocab=mapping), attentions[0].T[:len(src_clean), :len(result)])
+                plotted += 1
             _, _, true_prob = force_decode(
                 model, torch.reshape(batch.src[i], (1, -1)), torch.reshape(batch.src_mask[i], (1, -1)),
                 [batch.src_lengths[i]], torch.reshape(batch.trg_y[i], (1, -1)),
@@ -523,9 +607,17 @@ def train_copy_task():
     # eval_data = eval_data[:1]
     num_words = len(to_char)
     criterion = nn.NLLLoss(reduction="sum", ignore_index=0)
-    model = make_model(num_words, num_words, emb_size=64, hidden_size=64)
-    optim = torch.optim.Adam(model.parameters(), lr=0.01)
+    model = make_model(num_words, num_words, emb_size=64, hidden_size=64, bidirectional=True if args.bidirectional else False)
+    optim = torch.optim.Adam(model.parameters(), lr=args.lr)
     print(to_char)
+    with open(f'checkpoints/{checkpoint}/README.txt', 'w') as fout:
+        fout.write(f'Bidirectional: {args.bidirectional}\n')
+        fout.write(f'Embedding size: 64\n')
+        fout.write(f'Hidden size: 64\n')
+        fout.write(f'Batch size: {batch_size}\n')
+        fout.write(f'Learning rate: {args.lr}\n')
+        fout.write(f'Langs: {str(args.langs)}\n')
+        fout.write(f'Sparsemax: {args.sparsemax}\n')
  
     dev_perplexities = []
 
@@ -547,27 +639,27 @@ def train_copy_task():
 
         # evaluate
         model.eval()
-        X = model.src_embed.weight.detach().numpy()
-        pca = PCA(n_components=2)
-        X_r = pca.fit(X).transform(X).tolist()
-        for i in to_char:
-            y = to_char[i]
-            X_r[i].append(y)
-            if '[' in y:
-                X_r[i].append('special')
-            else:
-                X_r[i].append('sound')
-        print(X_r[:5])
-        print(
-            "explained variance ratio (first two components): %s"
-            % str(pca.explained_variance_ratio_)
-        )
-        df = pd.DataFrame(X_r, columns=['1', '2', 'Label', 'Type'])
-        p = ggplot(df, aes(x='1', y='2', label='Label', color='Type')) + geom_text()
-        p.draw()
-        plt.show()
+        # X = model.src_embed.weight.detach().numpy()
+        # pca = PCA(n_components=2)
+        # X_r = pca.fit(X).transform(X).tolist()
+        # for i in to_char:
+        #     y = to_char[i]
+        #     X_r[i].append(y)
+        #     if '[' in y:
+        #         X_r[i].append('special')
+        #     else:
+        #         X_r[i].append('sound')
+        # print(X_r[:5])
+        # print(
+        #     "explained variance ratio (first two components): %s"
+        #     % str(pca.explained_variance_ratio_)
+        # )
+        # df = pd.DataFrame(X_r, columns=['1', '2', 'Label', 'Type'])
+        # p = ggplot(df, aes(x='1', y='2', label='Label', color='Type')) + geom_text()
+        # p.draw()
+        # plt.show()
         
-        input()
+        # input()
         with torch.no_grad(): 
             perplexity = run_epoch(eval_data, model,
                                    SimpleLossCompute(model.generator, criterion, None))
@@ -576,7 +668,10 @@ def train_copy_task():
             if args.check_probs:
                 print_probs(eval_data, model, fout, n=50, max_len=20, mapping=to_char)
             else:
-                print_examples(eval_data, model, fout, n=50, max_len=20, mapping=to_char)
+                print_examples(eval_data, model, fout, n=50, max_len=20, mapping=to_char, plot=2)
+        
+        # save model
+        torch.save(model.state_dict(), f"checkpoints/{checkpoint}/model_all_{epoch}.pt")
     
     fout.close()
     return dev_perplexities
@@ -596,6 +691,7 @@ def main():
     plot_perplexity(dev_perplexities)
     plt.show()
 
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Train encoder-decoder model.')
     parser.add_argument('-l', '--langs', dest='langs', nargs='+', help='Languages')
@@ -603,8 +699,11 @@ if __name__ == "__main__":
                    help='Use sparsemax in attention probability calculation instead of softmax.')
     parser.add_argument('--beam', dest='beam', action='store_true',
                    help='Show beam search outputs on eval set as well.')
+    parser.add_argument('--bidirectional', dest='bidirectional', action='store_true',
+                   help='Bidirectional RNN.')
     parser.add_argument('--check-probs', dest='check_probs', action='store_true',
                    help='Check probabilities of input data to find anomalies.')
+    parser.add_argument('-lr', '--learning-rate', dest='lr', type=float, default=0.01)
     args = parser.parse_args()
     print(args)
     main()
