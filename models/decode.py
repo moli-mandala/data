@@ -125,7 +125,7 @@ def greedy_decode(model, src, src_mask, src_lengths, max_len=100, sos_index=1, e
         if next_word == eos_index:
             break
     
-    output = np.array(output)
+    output = np.array(output.cpu())
     # plot_heatmap(src, output, np.concatenate(attention_scores, axis=1)[0].T[:, :len(output)])
      
     # cut off everything starting from </s> 
@@ -168,7 +168,7 @@ def force_decode(model, src, src_mask, src_lengths, trg, trg_mask, trg_lengths, 
         if next_word == eos_index:
             break
     
-    output = np.array(output)
+    output = np.array(output.cpu())
         
     # cut off everything starting from </s> 
     # (only when eos_index provided)
