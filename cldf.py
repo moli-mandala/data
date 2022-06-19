@@ -63,7 +63,7 @@ with open('cldf/forms.csv', 'w') as fout, open('errors.txt', 'w') as errors:
             a.add(lang)
             reference = ''
             for i, word in enumerate(form['words']):
-                if word[0] == '': continue
+                if (len(word[0]) <= 1 or (len(word[0]) == 2 and word[0][0] == word[0][1])) and (len(word) > 1 and word[1] == ''): continue
                 num += 1
                 if lang == 'Indo-Aryan':
                     diffs = re.search(r'ʻ(.*?)ʼ', form['ref'])
@@ -119,19 +119,39 @@ with open('cldf/forms.csv', 'w') as fout, open('errors.txt', 'w') as errors:
                         errors.write(f'{lang} {oldest} {word[0]} {ipa} {reformed}\n')
                         reformed = ''
 
-                result.append([num, lang, entry, reformed, word[1], '', ipa, word[0], cognateset, '', 'CDIAL'])
+                if word[0] or reformed:
+                    result.append([num, lang, entry, reformed if reformed else word[0], word[1], '', ipa, word[0], cognateset, '', 'CDIAL'])
     
     i = 0
+    mapping = {
+        'patyal': 'cdial', 'thari': 'cdial', 'kvari': 'cdial', 'dhivehi': 'none', 'kholosi': 'none',
+        'konkani': 'none', 'khetrani': 'none'
+    }
     for file in glob.glob("data/other/ia/*.csv"):
+        # get filename
+        name = file.split('/')[-1].split('.')[0]
+        print(name)
+        convert = name in convertors or name in mapping
+        name = mapping.get(name, name)
         with open(file, 'r') as fin:
             read = csv.reader(fin)
-            for row in read:
+            for row in tqdm(read):
                 if row[1]:
                     # handle subentries
                     if '.' in row[1]:
                         row[6] = row[1]
                         row[1] = row[1].split('.')[0]
-                    result.append([f'e{i}', row[0], row[1], row[2], row[3], row[4], row[5], row[2], row[1], row[6], row[7]])
+                    reformed = row[2]
+                    if name != 'none':
+                        reformed = re.sub(r'ʹ(.)', r'\1ʹ', row[2])
+                        reformed = re.sub(r'`(.)', r'\1`', reformed)
+                        reformed = re.sub(r'´(.)', r'\1´', reformed)
+                        if '˚' not in row[2] and convert:
+                            reformed = convertors[name](reformed.strip('-123456,;'), column='IPA').replace(' ', '').replace('#', ' ')
+                        if '�' in reformed:
+                            errors.write(f'{row[0]} {row[2]} {row[2]} {row[5]} {reformed}\n')
+                            reformed = ''
+                    result.append([f'e{i}', row[0], row[1], reformed if reformed else row[2], row[3], row[4], row[5], row[2], row[1], row[6], row[7]])
                     i += 1
 
     dravidian_entries = {}
@@ -144,8 +164,10 @@ with open('cldf/forms.csv', 'w') as fout, open('errors.txt', 'w') as errors:
                 if num not in dravidian_entries:
                     dravidian_entries[num] = ''
                 if row[3] == 'PDr.':
+                    row[3] = 'PDr'
                     dravidian_entries[num] = row[4]
-                result.append([f'dedr{row[0]}', row[3], num, row[4], row[5], '', row[4], '', 'd' + row[1], row[6] if row[6] != 'NULL' else '', 'dedr'])
+                row[3] = row[3].replace(' ', '')
+                result.append([f'dedr{row[0]}', row[3], num, row[4], row[5], '', '', row[4], 'd' + row[1], row[6] if row[6] != 'NULL' else '', 'dedr'])
 
     done = set()
     for row in result:
@@ -180,8 +202,8 @@ with open('cldf/cognates.csv', 'w') as fout, open('cldf/parameters.csv', 'w') as
             write.writerow(row)
             write2.writerow([row[0], row[2], '', row[3]])
     for entry in dravidian_entries:
-        write.writerow([entry, 'Dravidian', dravidian_entries[entry], '', 'dedr'])
-        write2.writerow([entry,  dravidian_entries[entry], '', ''])
+        write.writerow([entry, 'PDr', dravidian_entries[entry], '', 'dedr'])
+        write2.writerow([entry,  dravidian_entries[entry], '', '?'])
 
 # print(sorted(list(a)))
 b = set()

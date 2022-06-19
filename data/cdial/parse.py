@@ -18,6 +18,22 @@ reflexes = defaultdict(list)
 
 regex = r'(?<=[\W\.])(' + f'{"|".join(list(abbrevs.keys()))}' + r')\.'
 
+at_map = {
+    'l': 'ɬ',
+    'e_': 'ɛ̄',
+    'e': 'ɛ',
+    'e/': 'ɛ́',
+    'e\\': 'ɛ̀',
+    'g': 'ɣ',
+    '*l': 'ʌ',
+    '*l/': 'ʌ́',
+    '*l\\': 'ʌ̀',
+    '*l_': 'ʌ̄',
+    'b': 'β',
+    'd': 'δ',
+    'x': 'x'
+}
+al = str(at_map.values())
 
 # this is such a big brain regex
 
@@ -33,9 +49,18 @@ for page in tqdm(range(1, total_pages + 1)):
                 lemmas = entry.find_all('b')
                 number = entry.find('number').text
                 data = str(entry).replace('\n', '')
-                data = data.replace('</i><at>', '').replace('</at><i>', '').replace('<at>', '<i>').replace('</at>', '</i>')
+                for i in at_map:
+                    data = data.replace(f'<at>{i}</at>', f'<at>{at_map[i]}</at>')
+                # if '<at>' in data and '@' not in data:
+                #     print(data)
+                #     input()
+                # data = data.replace('<at>@', '<at>')
+                data = data.replace('</i><at>', '').replace('</at><i>', '')
+                data = data.replace('<at>', '<i>').replace('</at>', '</i>')
                 data = data.replace('</i>(<i>', '').replace('</i>)<i>', '')
                 data = data.replace('*<b>', '<b>*')
+                data = data.replace('*<i>', '<i>*')
+                data = data.replace('<i>\'</i>', '\'')
                 data = re.split(r'(<br/>|Ext.)', data)
 
                 for lemma in lemmas:
@@ -65,6 +90,9 @@ for page in tqdm(range(1, total_pages + 1)):
                             word = subentry[matches[i].start():]
                         else:
                             word = subentry[matches[i].start():matches[i + 1].start()]
+                        word = word.split('&lt;')[0]
+                        if '*' in word:
+                            print(word)
                         
                         # formatting
                         word = word.replace('ˊ', '́')

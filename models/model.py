@@ -18,9 +18,10 @@ import pandas as pd
 import unicodedata
 import torchsparseattn
 import os
+from collections import Counter
+import nltk
 
 checkpoint = str(time.time())
-os.mkdir(f'checkpoints/{checkpoint}')
 
 global args
 sparsemax = Sparsemax(dim=-1)
@@ -382,7 +383,7 @@ def get_buru_data(batch_size=16, length=20, pad_index=0, sos_index=1, eos_index=
 
 def get_data(batch_size=16, length=20, pad_index=0, sos_index=1, eos_index=2):
     sanskrit = {}
-    chars = set()
+    chars = []
 
     # collect Sanskrit etyma headwords
     with open('../cldf/cognates.csv', 'r') as fin:
@@ -402,10 +403,14 @@ def get_data(batch_size=16, length=20, pad_index=0, sos_index=1, eos_index=2):
             if args.langs:
                 if row[1] not in args.langs:
                     continue
+            if row[1] == 'Indo-Aryan':
+                continue
             lang = f'[{row[1]}]'
-            chars.add(lang)
-            for i in sanskrit[row[2]]: chars.add(i)
-            for i in row[3]: chars.add(i)
+            if lang not in chars: chars.append(lang)
+            for i in sanskrit[row[2]]:
+                if i not in chars: chars.append(i)
+            for i in row[3]:
+                if i not in chars: chars.append(i)
             if len(row[3]) > 1:
                 src = list(sanskrit[row[2]].split(',')[0].strip(',- 1234567890')) + [lang]
                 trg = list(row[3])
@@ -555,8 +560,9 @@ def print_examples(example_iter, model, fout, n=2, max_len=100,
     print()
     fout.write('\n')
     plotted = 0
-        
-    for i, batch in enumerate(tqdm(example_iter)):
+    results = []
+
+    for i, batch in enumerate(example_iter):
 
         for i in range(len(batch.src)):
             src = batch.src.cpu().numpy()[i, :]
@@ -577,59 +583,137 @@ def print_examples(example_iter, model, fout, n=2, max_len=100,
                 [batch.src_lengths[i]],
                 max_len=max_len, sos_index=sos_index, eos_index=trg_eos_index)
             src_clean = [x for x in lookup_words(src, vocab=mapping) if x not in ['EOS', 'PAD']]
-            if plotted < plot:
-                plot_heatmap(src_clean, lookup_words(result, vocab=mapping), attentions[0].T[:len(src_clean), :len(result)])
-                plotted += 1
-            _, _, true_prob = force_decode(
+            true_result, true_attentions, true_prob = force_decode(
                 model, torch.reshape(batch.src[i], (1, -1)), torch.reshape(batch.src_mask[i], (1, -1)),
                 [batch.src_lengths[i]], torch.reshape(batch.trg_y[i], (1, -1)),
                 torch.reshape(batch.trg_mask[i], (1, -1)), [batch.trg_lengths[i]],
                 max_len=max_len, sos_index=sos_index, eos_index=trg_eos_index)
+            if plotted < plot:
+                plot_heatmap(src_clean, lookup_words(true_result, vocab=mapping), true_attentions[0].T[:len(src_clean), :len(result)])
+                plotted += 1
             src_text = "".join([x for x in lookup_words(src, vocab=mapping) if x not in ['EOS', 'PAD']])
             trg_text = "".join([x for x in lookup_words(trg, vocab=mapping) if x not in ['EOS', 'PAD']])
             result_text = "".join(lookup_words(result, vocab=mapping))
             fout.write(f'{src_text}\t{trg_text}\t({true_prob.item()})\t{result_text}\t({prob.item()})\n')
             if args.beam:
-                for x, pr in beam:
-                    fout.write(f'\t\t{"".join(lookup_words(x, vocab=mapping))}\t({pr})\n') 
-            count += 1  
+                print("".join(lookup_words(beam[0][0], vocab=mapping)), result_text)
+                results.append([trg_text, "".join(lookup_words(beam[0][0], vocab=mapping))])
+            else:
+                results.append([trg_text, result_text])
+                # for x, pr in beam:
+                #     fout.write(f'\t\t{"".join(lookup_words(x, vocab=mapping))}\t({pr})\n') 
+            count += 1
+            if count % 10 == 0:
+                print(count)
             if count == n:
                 break 
 
         if count == n:
             break
+    return results
+
+def eval_model():
+    batch_size = args.bs
+    data, eval_data, to_char = get_data(batch_size=batch_size)
+    num_words = len(to_char)
+    criterion = nn.NLLLoss(reduction="sum", ignore_index=0)
+    model = make_model(num_words, num_words, emb_size=args.emb, hidden_size=args.emb, bidirectional=True if args.bidirectional else False)
+
+    data = []
+    fout = open('results.txt', 'w')
+    for i in tqdm(range(30, 30)):
+        model.load_state_dict(torch.load(f"checkpoints/1649910095.3520331/model_all_{i}.pt"))
+        model.eval()
+        per, wer = 0, 0
+        with torch.no_grad(): 
+            # perplexity = run_epoch(eval_data, model,
+            #                         SimpleLossCompute(model.generator, criterion, None))
+            # print("Evaluation perplexity: %f" % perplexity)
+            result = print_examples(eval_data, model, fout, n=100, max_len=20, mapping=to_char, plot=0)
+            for x, y in result:
+                per += nltk.edit_distance(x, y) / max(len(x), len(y))
+                wer += (x != y)
+            per /= len(result)
+            wer /= len(result)
+        data.append([i, 64, per, wer])
+    model = make_model(num_words, num_words, emb_size=32, hidden_size=32, bidirectional=True if args.bidirectional else False)
+    for i in tqdm(range(13, 13)):
+        model.load_state_dict(torch.load(f"checkpoints/1649955551.0526102/model_all_{i}.pt"))
+        model.eval()
+        per, wer = 0, 0
+        with torch.no_grad(): 
+            # perplexity = run_epoch(eval_data, model,
+            #                         SimpleLossCompute(model.generator, criterion, None))
+            # print("Evaluation perplexity: %f" % perplexity)
+            result = print_examples(eval_data, model, fout, n=1000, max_len=20, mapping=to_char, plot=0)
+            for x, y in result:
+                per += nltk.edit_distance(x, y) / max(len(x), len(y))
+                wer += (x != y)
+            per /= len(result)
+            wer /= len(result)
+        data.append([i, 32, per, wer])
+    model = make_model(num_words, num_words, emb_size=128, hidden_size=128, bidirectional=True if args.bidirectional else False)
+    for i in tqdm(range(0, 7)):
+        model.load_state_dict(torch.load(f"checkpoints/1649957496.844018/model_all_{i}.pt"))
+        model.eval()
+        per, wer = 0, 0
+        with torch.no_grad(): 
+            # perplexity = run_epoch(eval_data, model,
+            #                         SimpleLossCompute(model.generator, criterion, None))
+            # print("Evaluation perplexity: %f" % perplexity)
+            result = print_examples(eval_data, model, fout, n=100, max_len=20, mapping=to_char, plot=0)
+            for x, y in result:
+                per += nltk.edit_distance(x, y) / max(len(x), len(y))
+                wer += (x != y)
+            per /= len(result)
+            wer /= len(result)
+        data.append([i, 128, per, wer])
+    fout.close()
+    print(data)
+    df = pd.DataFrame(data, columns=['Epoch', 'Emb', 'PER', 'WER'])
+    a = (
+        ggplot(df, aes(x='Epoch', y='PER', color='Emb'))
+        + geom_line() # add an arrow to the end of the line
+        + labs(x='epoch', y='PER')
+    )
+    a.draw()
+    plt.show()
 
 def train_copy_task():
     """Train the simple copy task."""
-    batch_size = 1024
+    batch_size = args.bs
     data, eval_data, to_char = get_data(batch_size=batch_size)
     # data = data[:1]
     # eval_data = eval_data[:1]
     num_words = len(to_char)
     criterion = nn.NLLLoss(reduction="sum", ignore_index=0)
-    model = make_model(num_words, num_words, emb_size=64, hidden_size=64, bidirectional=True if args.bidirectional else False)
+    model = make_model(num_words, num_words, emb_size=args.emb, hidden_size=args.emb, bidirectional=True if args.bidirectional else False)
     optim = torch.optim.Adam(model.parameters(), lr=args.lr)
     print(to_char)
-    with open(f'checkpoints/{checkpoint}/README.txt', 'w') as fout:
-        fout.write(f'Bidirectional: {args.bidirectional}\n')
-        fout.write(f'Embedding size: 64\n')
-        fout.write(f'Hidden size: 64\n')
-        fout.write(f'Batch size: {batch_size}\n')
-        fout.write(f'Learning rate: {args.lr}\n')
-        fout.write(f'Langs: {str(args.langs)}\n')
-        fout.write(f'Sparsemax: {args.sparsemax}\n')
+    if not args.no_save:
+        with open(f'checkpoints/{checkpoint}/README.txt', 'w') as fout:
+            fout.write(f'Bidirectional: {args.bidirectional}\n')
+            fout.write(f'Embedding size: {args.emb}\n')
+            fout.write(f'Hidden size: {args.emb}\n')
+            fout.write(f'Batch size: {batch_size}\n')
+            fout.write(f'Learning rate: {args.lr}\n')
+            fout.write(f'Langs: {str(args.langs)}\n')
+            fout.write(f'Sparsemax: {args.sparsemax}\n')
  
     dev_perplexities = []
 
-    fout = open('result.txt', 'w')
+    if not args.no_save:
+        fout = open(f'checkpoints/{checkpoint}/result.txt', 'w')
     
     if USE_CUDA:
         model.cuda()
 
-    for epoch in range(15):
+    for epoch in range(300):
         
         print("Epoch %d" % epoch)
-        fout.write("Epoch %d\n" % epoch)
+
+        if not args.no_save:
+            fout.write("Epoch %d\n" % epoch)
 
         # train
         model.train()
@@ -665,18 +749,37 @@ def train_copy_task():
                                    SimpleLossCompute(model.generator, criterion, None))
             print("Evaluation perplexity: %f" % perplexity)
             dev_perplexities.append(perplexity)
-            if args.check_probs:
-                print_probs(eval_data, model, fout, n=50, max_len=20, mapping=to_char)
+            if not args.no_save:
+                if args.check_probs:
+                    print_probs(eval_data, model, fout, n=50, max_len=20, mapping=to_char)
+                else:
+                    per, wer = 0, 0
+                    result = print_examples(eval_data, model, fout, n=100, max_len=20, mapping=to_char, plot=0)
+                    for x, y in result:
+                        per += nltk.edit_distance(x, y) / max(len(x), len(y))
+                        wer += (x != y)
+                    per /= len(result)
+                    wer /= len(result)
+            
+        with open('stats.tsv', 'a') as stats:
+            if args.no_save:
+                stats.write('\t'.join(list(map(str, ([f"{checkpoint}/model_all_{epoch}.pt", epoch, args.bidirectional, args.emb, batch_size, args.lr,
+                    str(args.langs), args.sparsemax, epoch, perplexity])))) + '\n')
             else:
-                print_examples(eval_data, model, fout, n=50, max_len=20, mapping=to_char, plot=2)
-        
+                stats.write('\t'.join(list(map(str, ([f"{checkpoint}/model_all_{epoch}.pt", epoch, args.bidirectional, args.emb, batch_size, args.lr,
+                    str(args.langs), args.sparsemax, epoch, perplexity, per, wer])))) + '\n')
+
         # save model
-        torch.save(model.state_dict(), f"checkpoints/{checkpoint}/model_all_{epoch}.pt")
+        if not args.no_save:
+            torch.save(model.state_dict(), f"checkpoints/{checkpoint}/model_all_{epoch}.pt")
     
-    fout.close()
+    if not args.no_save:
+        fout.close()
     return dev_perplexities
 
 def main():
+    if not args.no_save:
+        os.mkdir(f'checkpoints/{checkpoint}')
 
     # train the copy task
     dev_perplexities = train_copy_task()
@@ -703,7 +806,20 @@ if __name__ == "__main__":
                    help='Bidirectional RNN.')
     parser.add_argument('--check-probs', dest='check_probs', action='store_true',
                    help='Check probabilities of input data to find anomalies.')
+    parser.add_argument('--no-save', dest='no_save', action='store_true',
+                   help='Don\'t save models.')
     parser.add_argument('-lr', '--learning-rate', dest='lr', type=float, default=0.01)
+    parser.add_argument('-emb', '--embedding-hidden-size', dest='emb', type=int, default=64)
+    parser.add_argument('-bs', '--batch-size', dest='bs', type=int, default=1024)
+    parser.add_argument('-eval', '--evaluate', dest='eval', action='store_true',
+                   help='Evaluate.')
+    # parser.add_argument('-eval', '--evaluate', dest='eval', type=str)
     args = parser.parse_args()
     print(args)
-    main()
+    
+    if args.eval:
+        eval_model()
+        # eval_model("checkpoints/1649957496.844018/model_all_1.pt")
+        # eval_model("checkpoints/1649955551.0526102/model_all_13.pt")
+    else:
+        main()
