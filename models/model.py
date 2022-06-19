@@ -3,25 +3,22 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import math, copy, time
-from plotnine import *
-import matplotlib.pyplot as plt
 from torch.nn.utils.rnn import pack_padded_sequence, pad_packed_sequence
 import csv
 from tqdm import tqdm
 import random
 from decode import *
-# from IPython.core.debugger import set_trace
 from sparsemax import Sparsemax
 import argparse
 from sklearn.decomposition import PCA
-import pandas as pd
 import unicodedata
-import torchsparseattn
 import os
 from collections import Counter
 import nltk
+from torch.utils.tensorboard import SummaryWriter
 
 checkpoint = str(time.time())
+writer = SummaryWriter()
 
 global args
 sparsemax = Sparsemax(dim=-1)
@@ -247,7 +244,6 @@ class BahdanauAttention(nn.Module):
 
 def make_model(src_vocab, tgt_vocab, emb_size=256, hidden_size=512, num_layers=1, dropout=0.1, bidirectional=True):
     "Helper: Construct a model from hyperparameters."
-
     attention = BahdanauAttention(hidden_size, bidirectional=bidirectional)
 
     model = EncoderDecoder(
@@ -256,6 +252,7 @@ def make_model(src_vocab, tgt_vocab, emb_size=256, hidden_size=512, num_layers=1
         nn.Embedding(src_vocab, emb_size),
         nn.Embedding(tgt_vocab, emb_size),
         Generator(hidden_size, tgt_vocab))
+    print(model)
 
     return model.cuda() if USE_CUDA else model
 
@@ -617,7 +614,7 @@ def eval_model():
     data, eval_data, to_char = get_data(batch_size=batch_size)
     num_words = len(to_char)
     criterion = nn.NLLLoss(reduction="sum", ignore_index=0)
-    model = make_model(num_words, num_words, emb_size=args.emb, hidden_size=args.emb, bidirectional=True if args.bidirectional else False)
+    model = make_model(num_words, num_words, emb_size=args.emb, hidden_size=args.emb, num_layers=args.layers, bidirectional=True if args.bidirectional else False)
 
     data = []
     fout = open('results.txt', 'w')
@@ -670,14 +667,14 @@ def eval_model():
         data.append([i, 128, per, wer])
     fout.close()
     print(data)
-    df = pd.DataFrame(data, columns=['Epoch', 'Emb', 'PER', 'WER'])
-    a = (
-        ggplot(df, aes(x='Epoch', y='PER', color='Emb'))
-        + geom_line() # add an arrow to the end of the line
-        + labs(x='epoch', y='PER')
-    )
-    a.draw()
-    plt.show()
+    # df = pd.DataFrame(data, columns=['Epoch', 'Emb', 'PER', 'WER'])
+    # a = (
+    #     ggplot(df, aes(x='Epoch', y='PER', color='Emb'))
+    #     + geom_line() # add an arrow to the end of the line
+    #     + labs(x='epoch', y='PER')
+    # )
+    # a.draw()
+    # plt.show()
 
 def train_copy_task():
     """Train the simple copy task."""
@@ -687,7 +684,7 @@ def train_copy_task():
     # eval_data = eval_data[:1]
     num_words = len(to_char)
     criterion = nn.NLLLoss(reduction="sum", ignore_index=0)
-    model = make_model(num_words, num_words, emb_size=args.emb, hidden_size=args.emb, bidirectional=True if args.bidirectional else False)
+    model = make_model(num_words, num_words, emb_size=args.emb, hidden_size=args.emb, num_layers=args.layers, bidirectional=True if args.bidirectional else False)
     optim = torch.optim.Adam(model.parameters(), lr=args.lr)
     print(to_char)
     if not args.no_save:
@@ -699,7 +696,6 @@ def train_copy_task():
             fout.write(f'Learning rate: {args.lr}\n')
             fout.write(f'Langs: {str(args.langs)}\n')
             fout.write(f'Sparsemax: {args.sparsemax}\n')
- 
     dev_perplexities = []
 
     if not args.no_save:
@@ -708,7 +704,7 @@ def train_copy_task():
     if USE_CUDA:
         model.cuda()
 
-    for epoch in range(300):
+    for epoch in range(args.epochs):
         
         print("Epoch %d" % epoch)
 
@@ -718,8 +714,9 @@ def train_copy_task():
         # train
         model.train()
         # data = data_gen(num_words=num_words, batch_size=32, num_batches=100)
-        run_epoch(data, model,
+        train_loss = run_epoch(data, model,
                   SimpleLossCompute(model.generator, criterion, optim))
+        writer.add_scalar("train / loss", train_loss, epoch)
 
         # evaluate
         model.eval()
@@ -747,6 +744,7 @@ def train_copy_task():
         with torch.no_grad(): 
             perplexity = run_epoch(eval_data, model,
                                    SimpleLossCompute(model.generator, criterion, None))
+            writer.add_scalar("dev / loss", perplexity, epoch)
             print("Evaluation perplexity: %f" % perplexity)
             dev_perplexities.append(perplexity)
             if not args.no_save:
@@ -768,13 +766,21 @@ def train_copy_task():
             else:
                 stats.write('\t'.join(list(map(str, ([f"{checkpoint}/model_all_{epoch}.pt", epoch, args.bidirectional, args.emb, batch_size, args.lr,
                     str(args.langs), args.sparsemax, epoch, perplexity, per, wer])))) + '\n')
+                writer.add_scalar("dev / per", per, epoch)
+                writer.add_scalar("dev / wer", wer, epoch)
 
         # save model
         if not args.no_save:
             torch.save(model.state_dict(), f"checkpoints/{checkpoint}/model_all_{epoch}.pt")
-    
+
     if not args.no_save:
         fout.close()
+        writer.add_hparams({
+            "bidirectional": args.bidirectional, "embedding_size": args.emb, "hidden_size": args.emb,
+            "batch_size": batch_size, "lr": args.lr, "langs": str(args.langs), "sparsemax": args.sparsemax,
+            "layers": args.layers, "epochs": args.epochs
+        }, {"loss": perplexity, "per": per, "wer": wer})
+    
     return dev_perplexities
 
 def main():
@@ -784,15 +790,15 @@ def main():
     # train the copy task
     dev_perplexities = train_copy_task()
 
-    def plot_perplexity(perplexities):
-        """plot perplexities"""
-        plt.title("Perplexity per Epoch")
-        plt.xlabel("Epoch")
-        plt.ylabel("Perplexity")
-        plt.plot(perplexities)
+    # def plot_perplexity(perplexities):
+    #     """plot perplexities"""
+    #     plt.title("Perplexity per Epoch")
+    #     plt.xlabel("Epoch")
+    #     plt.ylabel("Perplexity")
+    #     plt.plot(perplexities)
         
-    plot_perplexity(dev_perplexities)
-    plt.show()
+    # plot_perplexity(dev_perplexities)
+    # plt.show()
 
 
 if __name__ == "__main__":
@@ -811,6 +817,8 @@ if __name__ == "__main__":
     parser.add_argument('-lr', '--learning-rate', dest='lr', type=float, default=0.01)
     parser.add_argument('-emb', '--embedding-hidden-size', dest='emb', type=int, default=64)
     parser.add_argument('-bs', '--batch-size', dest='bs', type=int, default=1024)
+    parser.add_argument('-e', '--epochs', dest='epochs', type=int, default=20)
+    parser.add_argument('-la', '--layers', dest='layers', type=int, default=1)
     parser.add_argument('-eval', '--evaluate', dest='eval', action='store_true',
                    help='Evaluate.')
     # parser.add_argument('-eval', '--evaluate', dest='eval', type=str)
@@ -823,3 +831,4 @@ if __name__ == "__main__":
         # eval_model("checkpoints/1649955551.0526102/model_all_13.pt")
     else:
         main()
+    writer.close()
