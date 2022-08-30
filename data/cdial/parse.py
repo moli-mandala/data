@@ -8,6 +8,8 @@ import copy
 from tqdm import tqdm
 from abbrevs import abbrevs
 
+TOTAL_PAGES = 836
+
 def remove_text_between_parens(text): # lazy: https://stackoverflow.com/questions/37528373/how-to-remove-all-text-between-the-outer-parentheses-in-a-string
     n = 1  # run at least once
     while n:
@@ -16,6 +18,7 @@ def remove_text_between_parens(text): # lazy: https://stackoverflow.com/question
 
 reflexes = defaultdict(list)
 
+# this is such a big brain regex
 regex = r'(?<=[\W\.])(' + f'{"|".join(list(abbrevs.keys()))}' + r')\.'
 
 at_map = {
@@ -35,15 +38,22 @@ at_map = {
 }
 al = str(at_map.values())
 
-# this is such a big brain regex
-
-total_pages = 836
-for page in tqdm(range(1, total_pages + 1)):
+# go through each entire digitised page
+for page in tqdm(range(1, TOTAL_PAGES + 1)):
+    
+    # get content
     link = "https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=" + str(page)
     with urllib.request.urlopen(link) as resp:
+        
+        # html parse, split into entries
         soup = BeautifulSoup(resp, 'html.parser')
         soup = str(soup).split('<number>')
+
+        # for each entry on the page, parse
         for entry in soup:
+
+            # rectify artifacts of the transcription process that hurt parsing
+            # e.g. punctuation marks that break italics
             entry = str(entry).replace('\n', '')
             entry = entry.replace('</i><at>', '').replace('</at><i>', '')
             entry = entry.replace('<at>', '<i>').replace('</at>', '</i>')
@@ -55,14 +65,20 @@ for page in tqdm(range(1, total_pages + 1)):
                 entry = entry.replace(f'<at>{i}</at>', f'<at>{at_map[i]}</at>')
             entry = BeautifulSoup('<number>' + entry)
 
+            # add entry only if it has a bold member (the headword[s])
             if entry.find('b'):
                 lemmas = entry.find_all('b')
                 number = entry.find('number').text
+
+                # reflexes are grouped into paragraphs or marked by Ext. when they share
+                # a common origin that is a derived form from the headword (e.g. -kk- extensions)
                 data = re.split(r'(<br/>|Ext.)', str(entry))
 
+                # store headwords
                 for lemma in lemmas:
                     reflexes[number].append({'lang': 'Indo-Aryan', 'words': [lemma.text], 'ref': data[0], 'cognateset': f'{number}.0'})
 
+                # ignore headword from rest of parsing; if no other reflexes ignore this entry
                 if (len(data) == 1): continue
                 data = [x for x in data[1:] if x]
 
@@ -70,14 +86,18 @@ for page in tqdm(range(1, total_pages + 1)):
                 langs = []
                 subnum = 0
                 for subentry in data[1:]:
-                    # ignore text under parentheses for now
+
+                    # ignore text inside parentheses for now
                     # TODO: recover information from here while still assigning to right lang
                     subentry = remove_text_between_parens(subentry)
-                    # find lemmas
+
+                    # find lemmas in current subgroup
                     matches = list(re.finditer(regex, subentry))
                     if len(matches) != 0:
                         subnum += 1
+                    
                     for i in range(len(matches)):
+
                         # generate row template
                         lang = matches[i].group(1)
                         lang_entry = {'lang': lang, 'words': [], 'cognateset': f'{number}.{subnum}'}
@@ -97,6 +117,7 @@ for page in tqdm(range(1, total_pages + 1)):
                         
                         # forms are the actual words (italicised)
                         forms = list(re.finditer(r'(<i>(.*?)</i>|ʻ(.*?)ʼ)', word))
+                        
                         # handling Kutchi data getting duplicated to Sindhi
                         # TODO: West Pahari data might be similarly flawed
                         if lang == 'kcch':
@@ -129,12 +150,14 @@ for page in tqdm(range(1, total_pages + 1)):
                                 cur = form.group(2)
                             else:
                                 defs.append(form.group(3).strip())
-                        
                         if cur:
                             for each in cur.split(','):
+                                each = each.replace('\*l', 'ʌ')
+                                each = each.replace('<smallcaps>i</smallcaps>', 'ɪ')
                                 definition = '; '.join(defs) if defs != [] else ''
                                 lang_entry['words'].append([each.strip(), definition])
 
+                        # for each language on the stack, add this entry
                         for l in langs:
                             lang_entry['lang'] = l
                             reflexes[number].append(copy.deepcopy(lang_entry))
