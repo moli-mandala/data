@@ -70,7 +70,8 @@ with open('errors.txt', 'w') as errors:
 
                 # ignore 1- or 2- character forms (usually mistakes)
                 # TODO: check how many of these are actually valid reflexes
-                if (len(word[0]) <= 1 or (len(word[0]) == 2 and word[0][0] == word[0][1])) and (len(word) > 1 and word[1] == ''): continue
+                if len(word) == 0: continue
+                if type(word) == list and (len(word[0]) <= 1 or (len(word[0]) == 2 and word[0][0] == word[0][1])) and (len(word) > 1 and word[1] == ''): continue
 
                 form_count += 1
 

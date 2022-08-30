@@ -59,6 +59,7 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
             entry = entry.replace('<at>', '<i>').replace('</at>', '</i>')
             entry = entry.replace('</i>(<i>', '').replace('</i>)<i>', '')
             entry = entry.replace('*<b>', '<b>*')
+            entry = entry.replace(':</b>', '</b><br>')
             entry = entry.replace('*<i>', '<i>*')
             entry = entry.replace('<i>\'</i>', '\'')
             for i in at_map:
