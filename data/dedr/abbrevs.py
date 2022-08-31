@@ -32,5 +32,10 @@ abbrevs = {
     'Pali': 'Pa',
     'Mar': 'M',
     'H\.': 'H',
-    'Beng': 'B'
+    # 'Beng': 'B',
+    # 'Pkt': 'Pk',
+    # 'Halbi': 'hal',
+    # 'O\.': 'Or',
+    # 'Nahali': 'Ni',
+    # 'Apabhraṃśa': 'Ap'
 }

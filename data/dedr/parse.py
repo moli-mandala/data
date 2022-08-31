@@ -22,8 +22,8 @@ def remove_text_between_parens(text): # lazy: https://stackoverflow.com/question
     return text
 
 # useful regexes
-langs = '(' + "|".join(list(abbrevs.keys())) + r')\.?'
-regex = re.compile(r'(<i>|<b>|^)+' + langs + r'(([^\(\)]*?(\(.*?\)))*?[^\(\)]*?)(?=((<i>|<b>)*' + langs + r'|DED))')
+langs = '(' + "|".join(sorted(list(abbrevs.keys()), key=lambda x: -len(x))) + r')\.?'
+regex = re.compile(r'(<i>|<b>|^)+' + langs + r'(([^\(\)]*?(\(.*?\)))*?[^\(\)]*?)(?=((<i>|<b>)*' + langs + r'|DED|$))')
 lemmata = re.compile(r'(<b>|^)(.*?)</b>(.*?)((?=<b>)|$)')
 formatter = re.compile(r'<.*?>')
 
