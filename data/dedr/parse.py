@@ -91,7 +91,7 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
                     for form in forms:
                         if ERR: print('        form', form)
                         form = formatter.sub('', form).strip()
-                        writer.writerow([count, abbrevs[lang.replace('.', '\.')], number, form, gloss, '', '', form, '', '', 'dedr'])
+                        writer.writerow([abbrevs[lang.replace('.', '\.')], number, form, gloss, '', '', form, '', '', 'dedr'])
                         count += 1
                     if ERR: print('        done with forms')
                 if ERR: print('    done with spans')
