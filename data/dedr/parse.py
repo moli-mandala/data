@@ -81,7 +81,7 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
                     gloss = y.group(3).strip(' ;,')
 
                     for form in forms:
-                        form = formatter.sub('', form)
+                        form = formatter.sub('', form).strip()
                         writer.writerow([count, abbrevs[lang.replace('.', '\.')], number, form, gloss, '', '', form, '', '', 'dedr'])
                         count += 1
     
