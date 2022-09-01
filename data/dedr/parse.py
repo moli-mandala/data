@@ -91,10 +91,14 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
                     for form in forms:
                         if ERR: print('        form', form)
                         form = formatter.sub('', form).strip()
+
+                        # handle parse fails for Turner cognates
                         if lang == 'OIA' and (form == '' or 'no.' in form):
                             continue
-                        writer.writerow([lang, number, form, gloss, '', '', form, '', '', 'dedr'])
-                        count += 1
+
+                        for altform in form.split('/'):
+                            writer.writerow([lang, number, altform, gloss, '', '', form, '', '', 'dedr'])
+                            count += 1
 
                     if ERR: print('        done with forms')
                 if ERR: print('    done with spans')
