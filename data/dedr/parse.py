@@ -15,17 +15,12 @@ from abbrevs import abbrevs
 TOTAL_PAGES = 514
 ERR = False
 
-def remove_text_between_parens(text): # lazy: https://stackoverflow.com/questions/37528373/how-to-remove-all-text-between-the-outer-parentheses-in-a-string
-    n = 1  # run at least once
-    while n:
-        text, n = re.subn(r'[\(\[][^()]*[\)\]]', '', text)  # remove non-nested/flat balanced parts
-    return text
-
 # useful regexes
 langs = '(' + "|".join(sorted(list(abbrevs.keys()), key=lambda x: -len(x))) + r')\.?'
 regex = re.compile(r'(<i>|<b>|^)*' + langs + r'(([^\(\)\[\]]*?(\[.*?\]|\(.*?\)))*?[^\(\)\[\]]*?)(?=((<i>|<b>)*' + langs + r'|DED|$))')
 lemmata = re.compile(r'(<b>|^)(.*?)</b>(.*?)((?=<b>)|$)')
 formatter = re.compile(r'<.*?>')
+comma_split = re.compile(r',(?![^\(]*?\))')
 
 # response caching logic
 soups = []
@@ -85,7 +80,7 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
                 # get every forms + gloss pairing (delineated by bold tags)
                 for y in lemmata.finditer(span):
                     if ERR: print('    lemma', y)
-                    forms = [form.strip().replace(' /', '/').replace('/ ', '/') for form in y.group(2).split(',')]
+                    forms = [form.strip() for form in comma_split.split(y.group(2))]
                     gloss = y.group(3).strip(' ;,')
 
                     for form in forms:
@@ -97,7 +92,7 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
                             continue
 
                         for altform in form.split('/'):
-                            writer.writerow([lang, number, altform, gloss, '', '', form, '', '', 'dedr'])
+                            writer.writerow([lang, number, altform.strip(), gloss, '', '', '', '', '', 'dedr'])
                             count += 1
 
                     if ERR: print('        done with forms')
