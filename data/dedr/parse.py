@@ -23,7 +23,7 @@ def remove_text_between_parens(text): # lazy: https://stackoverflow.com/question
 
 # useful regexes
 langs = '(' + "|".join(sorted(list(abbrevs.keys()), key=lambda x: -len(x))) + r')\.?'
-regex = re.compile(r'(<i>|<b>|^)+' + langs + r'(([^\(\)]*?(\(.*?\)))*?[^\(\)]*?)(?=((<i>|<b>)*' + langs + r'|DED|$))')
+regex = re.compile(r'(<i>|<b>|^)*' + langs + r'(([^\(\)\[\]]*?(\[.*?\]|\(.*?\)))*?[^\(\)\[\]]*?)(?=((<i>|<b>)*' + langs + r'|DED|$))')
 lemmata = re.compile(r'(<b>|^)(.*?)</b>(.*?)((?=<b>)|$)')
 formatter = re.compile(r'<.*?>')
 
@@ -79,7 +79,7 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
             # go through each span: one span has only one language tag at the start
             for x in regex.findall(entry):
                 span = x[2]
-                lang = x[1]
+                lang = abbrevs[x[1].replace('.', '\.')]
                 if ERR: print('lang', x)
                 
                 # get every forms + gloss pairing (delineated by bold tags)
@@ -91,8 +91,11 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
                     for form in forms:
                         if ERR: print('        form', form)
                         form = formatter.sub('', form).strip()
-                        writer.writerow([abbrevs[lang.replace('.', '\.')], number, form, gloss, '', '', form, '', '', 'dedr'])
+                        if lang == 'OIA' and (form == '' or 'no.' in form):
+                            continue
+                        writer.writerow([lang, number, form, gloss, '', '', form, '', '', 'dedr'])
                         count += 1
+
                     if ERR: print('        done with forms')
                 if ERR: print('    done with spans')
             if ERR: print('done with lang')

@@ -29,13 +29,17 @@ abbrevs = {
     'Malt': 'Malto',
     'Br': 'Brah',
     'Skt': 'OIA',
+    'Turner': 'OIA',
+    'CDIAL': 'OIA',
     'Pali': 'Pa',
     'Mar': 'M',
     'H\.': 'H',
-    # 'Beng': 'B',
-    # 'Pkt': 'Pk',
-    # 'Halbi': 'hal',
-    # 'O\.': 'Or',
-    # 'Nahali': 'Ni',
-    # 'Apabhraṃśa': 'Ap'
+    'Beng': 'B',
+    'Pkt': 'Pk',
+    'Halbi': 'hal',
+    'O\.': 'Or',
+    'Or\.': 'Or',
+    'Nahali': 'Ni',
+    'Apabhraṃśa': 'Ap',
+    'Guj\.': 'G'
 }
