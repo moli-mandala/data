@@ -81,7 +81,7 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
                 for y in lemmata.finditer(span):
                     if ERR: print('    lemma', y)
                     forms = [form.strip() for form in comma_split.split(y.group(2))]
-                    gloss = y.group(3).strip(' ;,')
+                    gloss = y.group(3).strip(' ;,./')
 
                     for form in forms:
                         if ERR: print('        form', form)
