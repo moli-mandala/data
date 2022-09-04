@@ -17,7 +17,7 @@ ERR = False
 
 # useful regexes
 langs = '(' + "|".join(sorted(list(abbrevs.keys()), key=lambda x: -len(x))) + r')\.?'
-regex = re.compile(r'(<i>|<b>|^)*' + langs + r'(([^\(\)\[\]]*?(\[.*?\]|\(.*?\)))*?[^\(\)\[\]]*?)(?=((<i>|<b>)*' + langs + r'|DED|$))')
+regex = re.compile(r'(<i>|<b>|^)*' + langs + r'(([^\(\)\[\]]*?(\[.*?\]|\(.*?\)))*?[^\(\)\[\]]*?)(?=((<i>|<b>)*' + langs + r'|DED|DEN|</div>|$))')
 lemmata = re.compile(r'(<b>|^)(.*?)</b>(.*?)((?=<b>)|$)')
 formatter = re.compile(r'<.*?>')
 comma_split = re.compile(r',(?![^\(]*?\))')
@@ -58,7 +58,6 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
 
     # for each entry on the page, parse
     for entry in soup:
-
         # prettify
         entry = BeautifulSoup('<number>' + entry, 'html5lib')
 
@@ -68,7 +67,7 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
             # store and get rid of number
             number = entry.find('number').text
             entry.find('number').decompose()
-            entry = str(entry)
+            entry = str(entry) + '</div>'
             if ERR: print(entry)
 
             # go through each span: one span has only one language tag at the start
