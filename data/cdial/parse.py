@@ -86,6 +86,8 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
         if entry.find('b'):
             lemmas = entry.find_all('b')
             number = entry.find('number').text
+            if number.startswith('A Comparative Dictionary of Indo-Aryan Languages'):
+                continue
 
             # reflexes are grouped into paragraphs or marked by Ext. when they share
             # a common origin that is a derived form from the headword (e.g. -kk- extensions)
