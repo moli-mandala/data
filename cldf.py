@@ -143,7 +143,7 @@ with open('errors.txt', 'w') as errors:
     i = 0
     mapping = {
         'patyal': 'cdial', 'thari': 'cdial', 'kvari': 'cdial', 'dhivehi': None, 'kholosi': None,
-        'konkani': None, 'khetrani': None
+        'konkani': None, 'khetrani': None, 'vaagri': 'cdial'
     }
     for file in glob.glob("data/other/ia/*.csv"):
         # get filename

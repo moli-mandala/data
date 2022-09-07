@@ -4,6 +4,7 @@ import urllib.request
 import re
 import json
 import copy
+import csv
 from bs4 import BeautifulSoup
 from collections import defaultdict
 from enum import Enum
@@ -40,6 +41,9 @@ at_map = {
     'x': 'x'
 }
 al = str(at_map.values())
+
+fout = open('cdial.csv', 'w')
+writer = csv.writer(fout)
 
 # response caching logic
 soups = []
@@ -179,13 +183,13 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
                     # for each language on the stack, add this entry
                     for l in langs:
                         lang_entry['lang'] = l
+                        writer.writerow([l, number, each.strip(), definition, '', '', '', f'{number}.{subnum}', '', 'CDIAL'])
                         reflexes[number].append(copy.deepcopy(lang_entry))
                     langs = []
     
     if not cached: del resp
 
-with open(f'all.json', 'w') as fout:
-    json.dump(reflexes, fout, indent=4)
+fout.close()
 
 if not cached:
     with open('cdial.pickle', 'wb') as fout:
