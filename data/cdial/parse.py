@@ -74,7 +74,7 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
 
         # rectify artifacts of the transcription process that hurt parsing
         # e.g. punctuation marks that break italics
-        entry = str(entry).replace('\n', '')
+        entry = str(entry).replace('\n', ' ')
         entry = entry.replace('</i><at>', '').replace('</at><i>', '')
         entry = entry.replace('<at>', '<i>').replace('</at>', '</i>')
         entry = entry.replace('</i>(<i>', '').replace('</i>)<i>', '')
@@ -190,6 +190,9 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
     if not cached: del resp
 
 fout.close()
+
+with open(f'all.json', 'w') as fout:
+    json.dump(reflexes, fout, indent=4)
 
 if not cached:
     with open('cdial.pickle', 'wb') as fout:
