@@ -135,7 +135,7 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
                     word = word.replace('--', '–')
                     
                     # forms are the actual words (italicised)
-                    forms = list(re.finditer(r'(<i>(.*?)</i>|ʻ(.*?)ʼ)', word))
+                    forms = list(re.finditer(r'(<i>(.*?)</i>|\'(.*?)\')', word))
                     
                     # handling Kutchi data getting duplicated to Sindhi
                     # TODO: West Pahari data might be similarly flawed
