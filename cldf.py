@@ -200,13 +200,19 @@ with open('cldf/forms.csv', 'w') as fout:
             forms.writerow(row)
         done.add(key)
 
+etyma = {}
+with open('data/etymologies.csv', 'r') as fin:
+    reader = csv.reader(fin)
+    for row in reader:
+        etyma[row[0]] = row[1]
+
 # finally, cognates (unused so far) and parameters
 with open('cldf/cognates.csv', 'w') as f, open('cldf/parameters.csv', 'w') as g:
     cognates = csv.writer(f)
     params = csv.writer(g)
 
     cognates.writerow(['Cognateset_ID', 'Language_ID', 'Form', 'Description', 'Source'])
-    params.writerow(['ID', 'Name', 'Concepticon_ID', 'Description'])
+    params.writerow(['ID', 'Name', 'Concepticon_ID', 'Description', 'Etyma'])
 
     for entry in data:
         headword = data[entry][0]['words'][0].replace('ˊ', '́').replace('`', '̀').replace(' --', '-').replace('-- ', '-')
@@ -223,17 +229,17 @@ with open('cldf/cognates.csv', 'w') as f, open('cldf/parameters.csv', 'w') as g:
             #     reformed = ''
         
         cognates.writerow([entry, 'Indo-Aryan', reformed if reformed else headword, data[entry][0]['ref'], 'cdial'])
-        params.writerow([entry, reformed if reformed else headword, '', data[entry][0]['ref']])
+        params.writerow([entry, reformed if reformed else headword, '', data[entry][0]['ref'], etyma.get(entry, '')])
 
     with open('data/other/extensions_ia.csv', 'r') as fin:
         read = csv.reader(fin)
         for row in read:
             cognates.writerow(row)
-            params.writerow([row[0], row[2], '', row[3]])
+            params.writerow([row[0], row[2], '', row[3], etyma.get(row[0], '')])
 
     for entry in dravidian_entries:
         cognates.writerow([entry, 'PDr', dravidian_entries[entry], '', 'dedr'])
-        params.writerow([entry,  dravidian_entries[entry], '', '?'])
+        params.writerow([entry,  dravidian_entries[entry], '', '', etyma.get(entry, '')])
 
 
 # ensure that all languages in forms.csv are also in languages.csv
