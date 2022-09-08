@@ -90,7 +90,7 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
         if entry.find('b'):
             lemmas = entry.find_all('b')
             number = entry.find('number').text
-            if number.startswith('A Comparative Dictionary of Indo-Aryan Languages'):
+            if 'A Comparative Dictionary of Indo-Aryan Languages' in number:
                 continue
 
             # reflexes are grouped into paragraphs or marked by Ext. when they share
