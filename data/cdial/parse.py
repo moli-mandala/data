@@ -5,6 +5,7 @@ import re
 import json
 import copy
 import csv
+import unicodedata
 from bs4 import BeautifulSoup
 from collections import defaultdict
 from enum import Enum
@@ -14,16 +15,12 @@ from abbrevs import abbrevs
 
 TOTAL_PAGES = 836
 
-def remove_text_between_parens(text): # lazy: https://stackoverflow.com/questions/37528373/how-to-remove-all-text-between-the-outer-parentheses-in-a-string
-    n = 1  # run at least once
-    while n:
-        text, n = re.subn(r'[\(\[][^()]*[\)\]]', '', text)  # remove non-nested/flat balanced parts
-    return text
-
 reflexes = defaultdict(list)
 
 # this is such a big brain regex
-regex = r'(?<=[\W\.])(' + f'{"|".join(list(abbrevs.keys()))}' + r')\.'
+langs = '(' + "|".join(sorted(list(abbrevs.keys()), key=lambda x: -len(x))) + r')\.'
+regex = re.compile(r'(<i>|<b>|^| )+' + langs + r'(([^\(\)\[\]]*?(\[.*?\]|\(.*?\)))*?[^\(\)\[\]]*?)(?=(( )+' + langs + r'|DED|DEN|</div>|$))')
+formatter = re.compile(r'(<i>([^\(\)]*?)</i>|\'([^\(\)]*?)\')(([^\(\)\[\]]*?(\[.*?\]|\(.*?\)))*?[^\(\)\[\]]*?)(?=(<i>([^\(\)]*?)</i>|\'([^\(\)]*?)\'|$|</div>))')
 
 at_map = {
     'l': 'ɬ',
@@ -42,8 +39,7 @@ at_map = {
 }
 al = str(at_map.values())
 
-fout = open('cdial.csv', 'w')
-writer = csv.writer(fout)
+rows = []
 
 # response caching logic
 soups = []
@@ -95,11 +91,12 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
 
             # reflexes are grouped into paragraphs or marked by Ext. when they share
             # a common origin that is a derived form from the headword (e.g. -kk- extensions)
-            data = re.split(r'(<br/>|Ext.)', str(entry))
+            data = re.split(r'(<br/>|Ext.| — )', str(entry))
 
             # store headwords
             for lemma in lemmas:
                 reflexes[number].append({'lang': 'Indo-Aryan', 'words': [lemma.text], 'ref': data[0], 'cognateset': f'{number}.0'})
+                rows.append(['Indo-Aryan', number, lemma.text, '', '', '', '', f'{number}.0', '', 'CDIAL'])
 
             # ignore headword from rest of parsing; if no other reflexes ignore this entry
             if (len(data) == 1): continue
@@ -110,36 +107,26 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
             subnum = 0
             for subentry in data[1:]:
 
-                # ignore text inside parentheses for now
-                # TODO: recover information from here while still assigning to right lang
-                subentry = remove_text_between_parens(subentry)
-
                 # find lemmas in current subgroup
-                matches = list(re.finditer(regex, subentry))
+                matches = list(regex.finditer(subentry))
                 if len(matches) != 0:
                     subnum += 1
                 
                 for i in range(len(matches)):
 
                     # generate row template
-                    lang = matches[i].group(1)
-                    lang_entry = {'lang': lang, 'words': [], 'cognateset': f'{number}.{subnum}'}
+                    lang = matches[i].group(2)
 
                     # word is actually the data of the current lang, not just the word
-                    word = None
-                    if i == len(matches) - 1:
-                        word = subentry[matches[i].start():]
-                    else:
-                        word = subentry[matches[i].start():matches[i + 1].start()]
-                    word = word.split('&lt;')[0]
+                    span = matches[i].group(3).split('&lt;')[0]
                     
                     # formatting
-                    word = word.replace('ˊ', '́')
-                    word = word.replace(' -- ', '–')
-                    word = word.replace('--', '–')
+                    span = span.replace('ˊ', '́')
+                    span = span.replace(' -- ', '–')
+                    span = span.replace('--', '–')
                     
                     # forms are the actual words (italicised)
-                    forms = list(re.finditer(r'(<i>(.*?)</i>|\'(.*?)\')', word))
+                    forms = list(formatter.finditer(span))
                     
                     # handling Kutchi data getting duplicated to Sindhi
                     # TODO: West Pahari data might be similarly flawed
@@ -161,6 +148,8 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
                     # TODO: get morphological labels, notes
                     cur = None
                     defs = []
+                    words = []
+
                     for form in forms:
                         if form.group(0).startswith('<i>'):
                             if cur:
@@ -168,31 +157,63 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
                                     each = each.replace('\*l', 'ʌ')
                                     each = each.replace('<smallcaps>i</smallcaps>', 'ɪ')
                                     definition = '; '.join(defs) if defs != [] else ''
-                                    lang_entry['words'].append([each.strip(), definition])
+                                    words.append([each.strip(), definition])
                             defs = []
                             cur = form.group(2)
                         else:
                             defs.append(form.group(3).strip())
                     if cur:
                         for each in cur.split(','):
-                            each = each.replace('\*l', 'ʌ')
-                            each = each.replace('<smallcaps>i</smallcaps>', 'ɪ')
                             definition = '; '.join(defs) if defs != [] else ''
-                            lang_entry['words'].append([each.strip(), definition])
+                            words.append([each.strip(), definition])
 
                     # for each language on the stack, add this entry
                     for l in langs:
-                        lang_entry['lang'] = l
-                        writer.writerow([l, number, each.strip(), definition, '', '', '', f'{number}.{subnum}', '', 'CDIAL'])
-                        reflexes[number].append(copy.deepcopy(lang_entry))
+                        for word, defn in words:
+
+                            if '°' in word and word != '°':
+                                old = word[:]
+                                reference = rows[-1][2]
+                                if word[-1] == '°':
+                                    word = re.sub(r'^.*?' + word[-2], word[:-1], reference)
+                                elif word[0] == '°':
+                                    word = re.sub(word[1] + r'[^' + word[1] + r']*?$', word[1:], reference)
+                                if reference == word:
+                                    word = old[:]
+
+                            # normalisation
+                            word = word.strip('.,;-: ')
+                            word = word.replace('<? >', '')
+                            word = word.lower()
+                            word = word.replace('˜', '̃')
+                            word = word.replace(f'<smallcaps>i</smallcaps>', 'ɪ')
+                            if l != "Indo-Aryan":
+                                word = word.replace('*l', 'ʌ')
+
+                            # handle macron/breve combo, which we store as two forms (long vowel, short vowel)
+                            oldest = unicodedata.normalize('NFD', word)
+                            oldest = oldest.replace('̄˘', '̄̆')
+                            oldest = oldest.replace('̆̄', '̄̆')
+                            oldest = oldest.replace('̄̆', '̄̆')
+                            if '̄̆' in oldest:
+                                words.append([oldest.replace('̄̆', '̄'), defn])
+                                oldest = oldest.replace('̄̆', '')
+                                word = oldest
+                            word = unicodedata.normalize('NFC', word)
+                                    
+                            rows.append([l, number, word, defn, '', '', '', f'{number}.{subnum}', '', 'CDIAL'])
+
                     langs = []
     
     if not cached: del resp
 
-fout.close()
 
 with open(f'all.json', 'w') as fout:
     json.dump(reflexes, fout, indent=4)
+
+with open(f'cdial.csv', 'w') as fout:
+    writer = csv.writer(fout)
+    writer.writerows(rows)
 
 if not cached:
     with open('cdial.pickle', 'wb') as fout:
