@@ -101,7 +101,7 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
 
             # store headwords
             for lemma in lemmas:
-                rows.append(['Indo-Aryan', number, lemma.text, '', '', '', '', f'{number}.0', '', 'CDIAL'])
+                rows.append(['Indo-Aryan', number, lemma.text, '', '', '', '', 'CDIAL', f'{number}.0'])
             params.append([number, lemmas[0].text, '', data[0], ''])
 
             # ignore headword from rest of parsing; if no other reflexes ignore this entry
@@ -214,7 +214,7 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
                                 word = oldest
                             word = unicodedata.normalize('NFC', word)
                                     
-                            rows.append([l, number, word, defn, '', '', '', f'{number}.{subnum}', '', 'CDIAL'])
+                            rows.append([l, number, word, defn, '', '', '', 'CDIAL', f'{number}.{subnum}'])
 
                     langs = []
     

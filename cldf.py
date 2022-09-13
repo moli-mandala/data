@@ -55,97 +55,13 @@ with open('errors.txt', 'w') as errors:
     form_count = 0
     result = []
 
-    for entry in tqdm(data):
-        headword = data[entry][0]
-
-        for form in data[entry]:
-            lang = form['lang'].replace('.', '')
-            cognateset = form['cognateset']
-
-            lang = unidecode.unidecode(lang)
-            lang_set.add(lang)
-            reference = ''
-
-            for i, word in enumerate(form['words']):
-
-                # ignore 1- or 2- character forms (usually mistakes)
-                # TODO: check how many of these are actually valid reflexes
-                if len(word) == 0: continue
-                if type(word) == list and (len(word[0]) <= 1 or (len(word[0]) == 2 and word[0][0] == word[0][1])) and (len(word) > 1 and word[1] == ''): continue
-
-                form_count += 1
-
-                # extract definitions from Sanskrit line in CDIAL
-                if lang == 'Indo-Aryan':
-                    definitions = re.search(r'ʻ(.*?)ʼ', form['ref'])
-                    desc = ''
-                    if definitions != None:
-                        desc = definitions.groups(2)[0].strip()
-                    if isinstance(word, str):
-                        word = [word, desc]
-
-                # text normalisation
-                word[0] = word[0].strip('.,;-: ')
-                word[0] = word[0].replace('<? >', '')
-                word[0] = word[0].lower()
-                word[0] = word[0].replace('˜', '̃')
-                word[0] = word[0].replace(f'<smallcaps>i</smallcaps>', 'ɪ')
-                if lang != "Indo-Aryan":
-                    word[0] = word[0].replace('*l', 'ʌ')
-                for i in superscript:
-                    word[0] = word[0].replace('ˊ', '́').replace('ˋ', '̀').replace(' -- ', '-')
-                    word[0] = word[0].replace(f'<superscript>{i}</superscript>', superscript[i])
-                
-                # handle macron/breve combo, which we store as two forms (long vowel, short vowel)
-                oldest = unicodedata.normalize('NFD', word[0])
-                oldest = oldest.replace('̄˘', '̄̆')
-                oldest = oldest.replace('̆̄', '̄̆')
-                oldest = oldest.replace('̄̆', '̄̆')
-                if '̄̆' in oldest:
-                    form['words'].append([oldest.replace('̄̆', '̄'), word[1]])
-                    oldest = oldest.replace('̄̆', '')
-                    word[0] = oldest
-                word[0] = unicodedata.normalize('NFC', word[0])
-
-                # handle ˚ symbol, indicating shared prefix/suffix with previous word
-                if '˚' not in word[0]: reference = word[0]
-                else:
-                    old = word[0]
-                    if word[0] != '˚':
-                        if word[0][-1] == '˚':
-                            word[0] = re.sub(r'^.*?' + word[0][-2], word[0][:-1], reference)
-                        elif word[0][0] == '˚':
-                            word[0] = re.sub(word[0][1] + r'[^' + word[0][1] + r']*?$', word[0][1:], reference)
-                        if reference == word[0]:
-                            word[0] = old
-
-                # generate ipa
-                ipa = ''
-                if lang in tokenizers and '˚' not in word[0]:
-                    ipa = tokenizers[lang](word[0], column='IPA').replace(' ', '').replace('#', ' ')
-                    if '�' in ipa:
-                        # if lang in ['A']: errors.write(f'{lang} {oldest} {word[0]} {ipa}\n')
-                        ipa = ''
-                
-                # generate Samopriya-n transcription
-                reformed = ''
-                if '˚' not in word[0]:
-                    reformed = convertors['cdial'](word[0].strip('-123456,;'), column='IPA').replace(' ', '').replace('#', ' ')
-                    if '�' in reformed:
-                        errors.write(f'{lang} {oldest} {word[0]} {ipa} {reformed}\n')
-                        reformed = ''
-
-                # word is ready to be added!
-                if word[0] or reformed:
-                    result.append([form_count, lang, entry, reformed if reformed else word[0], word[1], '', ipa, word[0], cognateset, '', 'CDIAL'])
-    
     # now do the same thing for non-CDIAL IA languages
     i = 0
     mapping = {
         'patyal': 'cdial', 'thari': 'cdial', 'kvari': 'cdial', 'dhivehi': None, 'kholosi': None,
-        'konkani': None, 'khetrani': None, 'vaagri': 'cdial'
+        'konkani': None, 'khetrani': None, 'vaagri': 'cdial', 'cdial': 'cdial'
     }
-    for file in glob.glob("data/other/ia/*.csv"):
+    for file in ['data/cdial/cdial.csv'] + glob.glob("data/other/ia/*.csv"):
         # get filename
         name = file.split('/')[-1].split('.')[0]
         print(name)
@@ -169,7 +85,7 @@ with open('errors.txt', 'w') as errors:
                         if '�' in reformed:
                             errors.write(f'{row[0]} {row[2]} {row[2]} {row[5]} {reformed}\n')
                             reformed = ''
-                    result.append([f'e{i}', row[0], row[1], reformed if reformed else row[2], row[3], row[4], row[5], row[2], row[1], row[6], row[7]])
+                    result.append([f'{i}', row[0], row[1], reformed if reformed else row[2], row[3], row[4], row[5], row[2], row[8 if 'cdial' in file else 1], row[6], row[7]])
                     i += 1
 
     # dravidian languages
@@ -214,22 +130,24 @@ with open('cldf/cognates.csv', 'w') as f, open('cldf/parameters.csv', 'w') as g:
     cognates.writerow(['Cognateset_ID', 'Language_ID', 'Form', 'Description', 'Source'])
     params.writerow(['ID', 'Name', 'Concepticon_ID', 'Description', 'Etyma'])
 
-    for entry in data:
-        headword = data[entry][0]['words'][0].replace('ˊ', '́').replace('`', '̀').replace(' --', '-').replace('-- ', '-')
-        headword = headword.strip('.,;-: ')
-        headword = headword.replace('<? >', '')
-        headword = headword.lower()
-        headword = headword.replace('˜', '̃')
-        headword = headword.split()[0]
-        reformed = ''
-        if '˚' not in headword:
-            reformed = convertors['cdial'](headword.strip('-123456,;'), column='IPA').replace(' ', '').replace('#', ' ')
-            # if '�' in reformed:
-            #     errors.write(f'{lang} {oldest} {word[0]} {ipa} {reformed}\n')
-            #     reformed = ''
-        
-        cognates.writerow([entry, 'Indo-Aryan', reformed if reformed else headword, data[entry][0]['ref'], 'cdial'])
-        params.writerow([entry, reformed if reformed else headword, '', data[entry][0]['ref'], etyma.get(entry, '')])
+    with open('data/cdial/params.csv', 'r') as fin:
+        read = csv.reader(fin)
+        for row in read:
+            headword = row[1].replace('ˊ', '́').replace('`', '̀').replace(' --', '-').replace('-- ', '-')
+            headword = headword.strip('.,;-: ')
+            headword = headword.replace('<? >', '')
+            headword = headword.lower()
+            headword = headword.replace('˜', '̃')
+            headword = headword.split()[0]
+            reformed = ''
+            if '˚' not in headword:
+                reformed = convertors['cdial'](headword.strip('-123456,;'), column='IPA').replace(' ', '').replace('#', ' ')
+                if '�' in reformed:
+                    # errors.write(f'{lang} {headword} {"?"} {"?"} {reformed}\n')
+                    reformed = ''
+            
+            cognates.writerow([row[0], 'Indo-Aryan', reformed if reformed else headword, row[3], 'cdial'])
+            params.writerow([row[0], reformed if reformed else headword, '', row[3], etyma.get(row[0], '')])
 
     with open('data/other/extensions_ia.csv', 'r') as fin:
         read = csv.reader(fin)
