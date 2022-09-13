@@ -18,9 +18,10 @@ TOTAL_PAGES = 836
 reflexes = defaultdict(list)
 
 # this is such a big brain regex
-langs = '(' + "|".join(sorted(list(abbrevs.keys()), key=lambda x: -len(x))) + r')\.'
-regex = re.compile(r'(<i>|<b>|^| )+' + langs + r'(([^\(\)\[\]]*?(\[.*?\]|\(.*?\)))*?[^\(\)\[\]]*?)(?=(( )+' + langs + r'|DED|DEN|</div>|$))')
-formatter = re.compile(r'(<i>([^\(\)]*?)</i>|\'([^\(\)]*?)\')(([^\(\)\[\]]*?(\[.*?\]|\(.*?\)))*?[^\(\)\[\]]*?)(?=(<i>([^\(\)]*?)</i>|\'([^\(\)]*?)\'|$|</div>))')
+langs = r'([OM]?(' + "|".join(sorted(list(abbrevs.keys()), key=lambda x: -len(x))) + r'))\.'
+langs = unicodedata.normalize('NFC', langs)
+regex = re.compile(r'(?<!\w)' + langs + r'(([^\(\)\[\]]*?(\[.*?\]|\(.*?\)))*?[^\(\)\[\]]*?)(?=([^\(]?' + langs + r'|</div>|$))')
+formatter = re.compile(r'(<i>([^\(\)]*?)</i>|\'([^\(\)]*?)\')(([^\(\)\[\]]*?(\[.*?\]|\(.*?\)))*?[^\(\)\[\]]*?)(?=$|<i>([^\(\)]*?)</i>|\'([^\(\)]*?)\'|\.)')
 
 at_map = {
     'l': 'ɬ',
@@ -81,6 +82,7 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
         entry = entry.replace('<i>\'</i>', '\'')
         for i in at_map:
             entry = entry.replace(f'<at>{i}</at>', f'<at>{at_map[i]}</at>')
+        entry = unicodedata.normalize('NFC', entry)
         entry = BeautifulSoup('<number>' + entry)
 
         # add entry only if it has a bold member (the headword[s])
@@ -115,11 +117,9 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
                 
                 for i in range(len(matches)):
 
-                    # generate row template
-                    lang = matches[i].group(2)
-
-                    # word is actually the data of the current lang, not just the word
-                    span = matches[i].group(3).split('&lt;')[0]
+                    # grab lang and rest of span
+                    lang = matches[i].group(1)
+                    span = matches[i].group(3)
                     
                     # formatting
                     span = span.replace('ˊ', '́')
@@ -128,6 +128,11 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
                     
                     # forms are the actual words (italicised)
                     forms = list(formatter.finditer(span))
+
+                    # if number == '22':
+                    #     print(lang, matches[i].groups())
+                    #     for i in forms:
+                    #         print('    ', i.groups())
                     
                     # handling Kutchi data getting duplicated to Sindhi
                     # TODO: West Pahari data might be similarly flawed
