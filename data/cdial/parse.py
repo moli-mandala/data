@@ -73,9 +73,12 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
         # rectify artifacts of the transcription process that hurt parsing
         # e.g. punctuation marks that break italics
         entry = str(entry).replace('\n', ' ')
+        entry = re.sub(r'</i>\(<i>([\w]*?)</i>\)<i>', r'{\1}', entry)
+        entry = re.sub(r'</i>\(<i>([\w]*?)</i>\)', r'{\1}</i>', entry)
+        entry = re.sub(r'\(<i>([\w]*?)</i>\)<i>', r'<i>{\1}', entry)
         entry = entry.replace('</i><at>', '').replace('</at><i>', '')
         entry = entry.replace('<at>', '<i>').replace('</at>', '</i>')
-        entry = entry.replace('</i>(<i>', '').replace('</i>)<i>', '')
+        entry = entry.replace('</i><i>', '')
         entry = entry.replace('*<b>', '<b>*')
         entry = entry.replace(':</b>', '</b><br>')
         entry = entry.replace('*<i>', '<i>*')
@@ -204,6 +207,10 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
                             if '̄̆' in oldest:
                                 words.append([oldest.replace('̄̆', '̄'), defn])
                                 oldest = oldest.replace('̄̆', '')
+                                word = oldest
+                            if '{' in oldest:
+                                words.append([re.sub(r'{.*?}', '', oldest), defn])
+                                oldest = oldest.replace('{', '').replace('}', '')
                                 word = oldest
                             word = unicodedata.normalize('NFC', word)
                                     
