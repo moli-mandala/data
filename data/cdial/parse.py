@@ -40,6 +40,7 @@ at_map = {
 al = str(at_map.values())
 
 rows = []
+params = []
 
 # response caching logic
 soups = []
@@ -95,8 +96,8 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
 
             # store headwords
             for lemma in lemmas:
-                reflexes[number].append({'lang': 'Indo-Aryan', 'words': [lemma.text], 'ref': data[0], 'cognateset': f'{number}.0'})
                 rows.append(['Indo-Aryan', number, lemma.text, '', '', '', '', f'{number}.0', '', 'CDIAL'])
+            params.append([number, lemmas[0].text, '', data[0], ''])
 
             # ignore headword from rest of parsing; if no other reflexes ignore this entry
             if (len(data) == 1): continue
@@ -214,6 +215,10 @@ with open(f'all.json', 'w') as fout:
 with open(f'cdial.csv', 'w') as fout:
     writer = csv.writer(fout)
     writer.writerows(rows)
+
+with open(f'params.csv', 'w') as fout:
+    writer = csv.writer(fout)
+    writer.writerows(params)
 
 if not cached:
     with open('cdial.pickle', 'wb') as fout:

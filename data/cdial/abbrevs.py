@@ -81,6 +81,7 @@ abbrevs = {
     "IE": "Indo-european",
     "Ind": "Indo-aryan of India proper excluding Kafiri and Dardic",
     "Indo-ir": "Indo-iranian or Aryan",
+    "Indo-Aryan": "",
     "Ir": "Iranian",
     "ish": "Ishpi dialect of Pashai",
     "Ishk": "Ishkāshmī (Iranian)",
