@@ -110,9 +110,9 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
             data = [x for x in data[1:] if x]
 
             # a subentry is a block of descendants; these are separated by newlines in CDIAL
-            langs = []
             subnum = 0
             for subentry in data[1:]:
+                langs = []
 
                 # find lemmas in current subgroup
                 matches = list(regex.finditer(subentry))
