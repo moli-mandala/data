@@ -20,7 +20,7 @@ change = {
     'khaś': 'khash',
     'Māl': 'Malw',
     'Brah': 'Brahui',
-    'Drav': 'Pdr.',
+    'Drav': 'PDr',
     'Ga': 'Gadaba',
     'Kan': 'Kannada',
     'Kol': 'Kolami',
@@ -30,7 +30,12 @@ change = {
     'Prj': 'Parji',
     'Tam': 'Tamil',
     'Tel': 'Telugu',
-    'Tu': 'Tulu'
+    'Tu': 'Tulu',
+    'Go': 'Gondi',
+    'OIA': 'Sk',
+    'J': 'kiũth',
+    'mald': 'Md',
+    'kua': 'kvar'
 }
 
 # read in tokenizer/convertors for IPA and form normalisation
@@ -42,10 +47,6 @@ for file in glob.glob("data/cdial/ipa/cdial/*.txt"):
 for file in glob.glob("conversion/*.txt"):
     lang = file.split('/')[-1].split('.')[0]
     convertors[lang] = Tokenizer(file)
-
-# load in CDIAL scraped data for processing
-with open('data/cdial/all.json', 'r') as fin:
-    data = json.load(fin)
 
 # a set to track what languages are included
 lang_set = set()
@@ -70,6 +71,7 @@ with open('errors.txt', 'w') as errors:
         with open(file, 'r') as fin:
             read = csv.reader(fin)
             for row in tqdm(read):
+                if row[0] == 'Drav': continue
                 if row[1]:
                     # handle subentries
                     if '.' in row[1]:
@@ -111,6 +113,10 @@ with open('cldf/forms.csv', 'w') as fout:
 
     done = set()
     for row in result:
+        if row[1] in change:
+            row[1] = change[row[1]]
+        row[1] = unidecode.unidecode(row[1])
+        lang_set.add(row[1])
         key = tuple(row[1:])
         if key not in done:
             forms.writerow(row)
@@ -167,6 +173,6 @@ with open('cldf/languages.csv', 'r') as fin:
         x = row.split(',')[0]
         cldf_langs.add(x)
 
-for i in lang_set:
+for i in sorted(lang_set):
     if i not in cldf_langs:
         print(i)
