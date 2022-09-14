@@ -15,8 +15,6 @@ from abbrevs import abbrevs
 
 TOTAL_PAGES = 836
 
-reflexes = defaultdict(list)
-
 # this is such a big brain regex
 langs = r'([OM]?(' + "|".join(sorted(list(abbrevs.keys()), key=lambda x: -len(x))) + r'))\.'
 langs = unicodedata.normalize('NFC', langs)
@@ -42,6 +40,7 @@ al = str(at_map.values())
 
 rows = []
 params = []
+done = set()
 
 # response caching logic
 soups = []
@@ -102,7 +101,9 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
             # store headwords
             for lemma in lemmas:
                 rows.append(['Indo-Aryan', number, lemma.text, '', '', '', '', 'CDIAL', f'{number}.0'])
-            params.append([number, lemmas[0].text, '', data[0], ''])
+            if number not in done:
+                params.append([number, lemmas[0].text, '', data[0], ''])
+            done.add(number)
 
             # ignore headword from rest of parsing; if no other reflexes ignore this entry
             if (len(data) == 1): continue
@@ -219,10 +220,6 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
                     langs = []
     
     if not cached: del resp
-
-
-with open(f'all.json', 'w') as fout:
-    json.dump(reflexes, fout, indent=4)
 
 with open(f'cdial.csv', 'w') as fout:
     writer = csv.writer(fout)

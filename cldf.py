@@ -113,10 +113,13 @@ with open('cldf/forms.csv', 'w') as fout:
 
     done = set()
     for row in result:
+        if not row[3]: continue
         if row[1] in change:
             row[1] = change[row[1]]
         row[1] = unidecode.unidecode(row[1])
+        row[1] = row[1].replace('.', '')
         lang_set.add(row[1])
+
         key = tuple(row[1:])
         if key not in done:
             forms.writerow(row)
