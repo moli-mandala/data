@@ -21,23 +21,6 @@ langs = unicodedata.normalize('NFC', langs)
 regex = re.compile(r'(?<!\w)' + langs + r'(([^\(\)\[\]]*?(\[.*?\]|\(.*?\)))*?[^\(\)\[\]]*?)(?=([^\(]?' + langs + r'|</div>|$))')
 formatter = re.compile(r'(<i>([^\(\)]*?)</i>|\'([^\(\)]*?)\')(([^\(\)\[\]]*?(\[.*?\]|\(.*?\)))*?[^\(\)\[\]]*?)(?=$|<i>([^\(\)]*?)</i>|\'([^\(\)]*?)\'|\.)')
 
-at_map = {
-    'l': 'ɬ',
-    'e_': 'ɛ̄',
-    'e': 'ɛ',
-    'e/': 'ɛ́',
-    'e\\': 'ɛ̀',
-    'g': 'ɣ',
-    '*l': 'ʌ',
-    '*l/': 'ʌ́',
-    '*l\\': 'ʌ̀',
-    '*l_': 'ʌ̄',
-    'b': 'β',
-    'd': 'δ',
-    'x': 'x'
-}
-al = str(at_map.values())
-
 rows = []
 params = []
 done = set()
@@ -75,15 +58,12 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
         entry = re.sub(r'</i>\(<i>([\w]*?)</i>\)<i>', r'{\1}', entry)
         entry = re.sub(r'</i>\(<i>([\w]*?)</i>\)', r'{\1}</i>', entry)
         entry = re.sub(r'\(<i>([\w]*?)</i>\)<i>', r'<i>{\1}', entry)
-        entry = entry.replace('</i><at>', '').replace('</at><i>', '')
-        entry = entry.replace('<at>', '<i>').replace('</at>', '</i>')
         entry = entry.replace('</i><i>', '')
         entry = entry.replace('*<b>', '<b>*')
         entry = entry.replace(':</b>', '</b><br>')
         entry = entry.replace('*<i>', '<i>*')
         entry = entry.replace('<i>\'</i>', '\'')
-        for i in at_map:
-            entry = entry.replace(f'<at>{i}</at>', f'<at>{at_map[i]}</at>')
+
         entry = unicodedata.normalize('NFC', entry)
         entry = BeautifulSoup('<number>' + entry)
 
@@ -164,8 +144,6 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
                         if form.group(0).startswith('<i>'):
                             if cur:
                                 for each in cur.split(','):
-                                    each = each.replace('\*l', 'ʌ')
-                                    each = each.replace('<smallcaps>i</smallcaps>', 'ɪ')
                                     definition = '; '.join(defs) if defs != [] else ''
                                     words.append([each.strip(), definition])
                             defs = []
@@ -192,13 +170,13 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
                                     word = old[:]
 
                             # normalisation
+                            word = word.replace('λ', 'ɬ')
+                            word = word.replace('Λ', 'ʌ')
                             word = word.strip('.,;-: ')
                             word = word.replace('<? >', '')
                             word = word.lower()
                             word = word.replace('˜', '̃')
                             word = word.replace(f'<smallcaps>i</smallcaps>', 'ɪ')
-                            if l != "Indo-Aryan":
-                                word = word.replace('*l', 'ʌ')
 
                             # handle macron/breve combo, which we store as two forms (long vowel, short vowel)
                             oldest = unicodedata.normalize('NFD', word)
