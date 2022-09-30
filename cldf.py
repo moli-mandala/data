@@ -35,7 +35,8 @@ change = {
     'OIA': 'Sk',
     'J': 'kiũth',
     'mald': 'Md',
-    'kua': 'kvar'
+    'kua': 'kvar',
+    'Sant': 'sa'
 }
 
 # read in tokenizer/convertors for IPA and form normalisation
@@ -62,7 +63,7 @@ with open('errors.txt', 'w') as errors:
         'patyal': 'cdial', 'thari': 'cdial', 'kvari': 'cdial', 'dhivehi': None, 'kholosi': None,
         'konkani': None, 'khetrani': None, 'vaagri': 'cdial', 'cdial': 'cdial'
     }
-    for file in ['data/cdial/cdial.csv'] + glob.glob("data/other/ia/*.csv"):
+    for file in ['data/cdial/cdial.csv', 'data/munda/forms.csv'] + glob.glob("data/other/ia/*.csv"):
         # get filename
         name = file.split('/')[-1].split('.')[0]
         print(name)
@@ -158,11 +159,17 @@ with open('cldf/cognates.csv', 'w') as f, open('cldf/parameters.csv', 'w') as g:
             cognates.writerow([row[0], 'Indo-Aryan', reformed if reformed else headword, row[3], 'cdial'])
             params.writerow([row[0], reformed if reformed else headword, '', row[3], etyma.get(row[0], '')])
 
-    with open('data/other/extensions_ia.csv', 'r') as fin:
-        read = csv.reader(fin)
+    with open('data/other/extensions_ia.csv', 'r') as f:
+        read = csv.reader(f)
         for row in read:
             cognates.writerow(row)
             params.writerow([row[0], row[2], '', row[3], etyma.get(row[0], '')])
+
+    with open('data/munda/params.csv', 'r') as f:
+        read = csv.reader(f)
+        for row in read:
+            cognates.writerow([row[0], 'PMu', row[1], row[3], 'rau'])
+            params.writerow(row)
 
     for entry in dravidian_entries:
         cognates.writerow([entry, 'PDr', dravidian_entries[entry], '', 'dedr'])
