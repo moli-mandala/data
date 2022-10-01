@@ -73,6 +73,7 @@ with open('errors.txt', 'w') as errors:
             read = csv.reader(fin)
             for row in tqdm(read):
                 if row[0] == 'Drav': continue
+                if row[0] == 'Indo-Aryan': row[2] = row[2].lower()
                 if row[1]:
                     # handle subentries
                     if '.' in row[1]:
