@@ -81,9 +81,6 @@ with open('errors.txt', 'w') as errors:
                         row[1] = row[1].split('.')[0]
                     reformed = row[2]
                     if name is not None:
-                        reformed = re.sub(r'ʹ(.)', r'\1ʹ', row[2])
-                        reformed = re.sub(r'`(.)', r'\1`', reformed)
-                        reformed = re.sub(r'´(.)', r'\1´', reformed)
                         if '˚' not in row[2] and convert:
                             reformed = convertors[name](reformed.strip('-123456,;'), column='IPA').replace(' ', '').replace('#', ' ')
                         if '�' in reformed:
