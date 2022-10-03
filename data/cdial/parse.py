@@ -76,7 +76,7 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
 
             # reflexes are grouped into paragraphs or marked by Ext. when they share
             # a common origin that is a derived form from the headword (e.g. -kk- extensions)
-            data = re.split(r'(<br/>|Ext.| — )', str(entry))
+            data = re.split(r'(<br/>|Ext.|[;\.,:\?] — )', str(entry))
 
             # store headwords
             for lemma in lemmas:
@@ -126,6 +126,10 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
                                 langs.pop()
                     if lang == 'mald':
                         lang = 'Md'
+                    if lang[0].islower():
+                        if langs:
+                            if langs[-1] == 'WPah':
+                                langs.pop()
 
                     # langs is a stack of langs, if there are no forms
                     # we just add to the stack and continue (means later

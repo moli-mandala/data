@@ -120,6 +120,7 @@ with open('cldf/forms.csv', 'w') as fout:
             row[1] = change[row[1]]
         row[1] = unidecode.unidecode(row[1])
         row[1] = row[1].replace('.', '')
+        row[3] = unicodedata.normalize('NFC', row[3])
         lang_set.add(row[1])
 
         key = tuple(row[1:])
