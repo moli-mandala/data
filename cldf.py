@@ -61,7 +61,8 @@ with open('errors.txt', 'w') as errors:
     i = 0
     mapping = {
         'patyal': 'cdial', 'thari': 'cdial', 'kvari': 'cdial', 'dhivehi': None, 'kholosi': None,
-        'konkani': None, 'khetrani': None, 'vaagri': 'cdial', 'cdial': 'cdial', 'palula': 'liljegren'
+        'konkani': None, 'khetrani': None, 'vaagri': 'cdial', 'cdial': 'cdial', 'palula': 'liljegren',
+        'strand2': 'strand'
     }
     for file in ['data/cdial/cdial.csv', 'data/munda/forms.csv'] + glob.glob("data/other/ia/*.csv"):
         # get filename
