@@ -64,7 +64,7 @@ with open('errors.txt', 'w') as errors:
         'konkani': None, 'khetrani': None, 'vaagri': 'cdial', 'cdial': 'cdial', 'palula': 'liljegren',
         'strand2': 'strand'
     }
-    for file in ['data/cdial/cdial.csv', 'data/munda/forms.csv'] + glob.glob("data/other/ia/*.csv"):
+    for file in ['data/cdial/cdial.csv', 'data/munda/forms.csv'] + glob.glob("data/other/forms/*.csv"):
         # get filename
         name = file.split('/')[-1].split('.')[0]
         print(name)
@@ -106,74 +106,92 @@ with open('errors.txt', 'w') as errors:
                 row[3] = row[3].replace(' ', '')
                 result.append([f'dedr{row[0]}', row[3], form_count, row[4], row[5], '', '', row[4], 'd' + row[1], row[6] if row[6] != 'NULL' else '', 'dedr'])
 
-# write out all the forms
-with open('cldf/forms.csv', 'w') as fout:
-    forms = csv.writer(fout)
-    forms.writerow(['ID', 'Language_ID', 'Parameter_ID', 'Form', 'Gloss', 'Native', 'Phonemic', 'Original', 'Cognateset', 'Description', 'Source'])
+    # write out all the forms
+    with open('cldf/forms.csv', 'w') as fout:
+        forms = csv.writer(fout)
+        forms.writerow(['ID', 'Language_ID', 'Parameter_ID', 'Form', 'Gloss', 'Native', 'Phonemic', 'Original', 'Cognateset', 'Description', 'Source'])
 
-    done = set()
-    for row in result:
-        if not row[3]: continue
-        if row[1] in change:
-            row[1] = change[row[1]]
-        row[1] = unidecode.unidecode(row[1])
-        row[1] = row[1].replace('.', '')
-        row[3] = unicodedata.normalize('NFC', row[3])
-        lang_set.add(row[1])
+        done = set()
+        for row in result:
+            if not row[3]: continue
+            if row[1] in change:
+                row[1] = change[row[1]]
+            row[1] = unidecode.unidecode(row[1])
+            row[1] = row[1].replace('.', '')
+            row[3] = unicodedata.normalize('NFC', row[3])
+            lang_set.add(row[1])
 
-        key = tuple(row[1:])
-        if key not in done:
-            forms.writerow(row)
-        done.add(key)
+            key = tuple(row[1:])
+            if key not in done:
+                forms.writerow(row)
+            done.add(key)
 
-etyma = {}
-with open('data/etymologies.csv', 'r') as fin:
-    reader = csv.reader(fin)
-    for row in reader:
-        etyma[row[0]] = row[1]
+    etyma = {}
+    with open('data/etymologies.csv', 'r') as fin:
+        reader = csv.reader(fin)
+        for row in reader:
+            etyma[row[0]] = row[1]
 
-# finally, cognates (unused so far) and parameters
-with open('cldf/cognates.csv', 'w') as f, open('cldf/parameters.csv', 'w') as g:
-    cognates = csv.writer(f)
-    params = csv.writer(g)
+    # finally, cognates (unused so far) and parameters
+    with open('cldf/cognates.csv', 'w') as f, open('cldf/parameters.csv', 'w') as g:
+        
+        mapping = {'cdial': 'cdial', 'extensions_ia': 'cdial', 'strand3': 'strand'}
 
-    cognates.writerow(['Cognateset_ID', 'Language_ID', 'Form', 'Description', 'Source'])
-    params.writerow(['ID', 'Name', 'Concepticon_ID', 'Description', 'Etyma'])
+        cognates = csv.writer(f)
+        params = csv.writer(g)
 
-    with open('data/cdial/params.csv', 'r') as fin:
-        read = csv.reader(fin)
-        for row in read:
-            headword = row[1].replace('ˊ', '́').replace('`', '̀').replace(' --', '-').replace('-- ', '-')
-            headword = headword.strip('.,;-: ')
-            headword = headword.replace('<? >', '')
-            headword = headword.lower()
-            headword = headword.replace('˜', '̃')
-            headword = headword.split()[0]
-            reformed = ''
-            if '˚' not in headword:
-                reformed = convertors['cdial'](headword.strip('-123456,;'), column='IPA').replace(' ', '').replace('#', ' ')
-                if '�' in reformed:
-                    # errors.write(f'{lang} {headword} {"?"} {"?"} {reformed}\n')
-                    reformed = ''
-            
-            cognates.writerow([row[0], 'Indo-Aryan', reformed if reformed else headword, row[3], 'cdial'])
-            params.writerow([row[0], reformed if reformed else headword, '', row[3], etyma.get(row[0], '')])
+        cognates.writerow(['Cognateset_ID', 'Language_ID', 'Form', 'Description', 'Source'])
+        params.writerow(['ID', 'Name', 'Concepticon_ID', 'Description', 'Etyma'])
 
-    with open('data/other/extensions_ia.csv', 'r') as f:
-        read = csv.reader(f)
-        for row in read:
-            cognates.writerow(row)
-            params.writerow([row[0], row[2], '', row[3], etyma.get(row[0], '')])
+        with open('data/cdial/params.csv', 'r') as fin:
+            read = csv.reader(fin)
+            for row in read:
+                headword = row[1].replace('ˊ', '́').replace('`', '̀').replace(' --', '-').replace('-- ', '-')
+                headword = headword.strip('.,;-: ')
+                headword = headword.replace('<? >', '')
+                headword = headword.lower()
+                headword = headword.replace('˜', '̃')
+                headword = headword.split()[0]
+                reformed = ''
+                if '˚' not in headword:
+                    reformed = convertors['cdial'](headword.strip('-123456,;'), column='IPA').replace(' ', '').replace('#', ' ')
+                    if '�' in reformed:
+                        errors.write(f'{name} {headword} {"?"} {"?"} {reformed}\n')
+                        reformed = ''
+                
+                cognates.writerow([row[0], 'Indo-Aryan', reformed if reformed else headword, row[3], 'cdial'])
+                params.writerow([row[0], reformed if reformed else headword, '', row[3], etyma.get(row[0], '')])
 
-    with open('data/munda/params.csv', 'r') as f:
-        read = csv.reader(f)
-        for row in read:
-            cognates.writerow([row[0], 'PMu', row[1], row[3], 'rau'])
-            params.writerow(row)
+        for file in glob.glob("data/other/params/*.csv"):
+            # get filename
+            name = file.split('/')[-1].split('.')[0]
+            convert = name in convertors or name in mapping
+            print(name)
+            name = mapping.get(name, name)
+            with open(file, 'r') as f:
+                read = csv.reader(f)
+                for row in tqdm(read):
+                    if name == 'strand':
+                        if row[1] in ['PNur', 'PA']: row[2] = '*' + row[2]
+                        row[2] = row[2].replace('′', 'ʹ').replace('-', '')
+                    if convert:
+                        reformed = convertors[name](row[2].strip('-123456,;'), column='IPA').replace(' ', '').replace('#', ' ')
+                        if '�' in reformed:
+                            errors.write(f'{name} {row[2]} {"?"} {"?"} {reformed}\n')
+                            reformed = ''
+                        else: row[2] = reformed
+                    cognates.writerow(row)
+                    params.writerow([row[0], row[2], '', row[3], etyma.get(row[0], '')])
 
-    for entry in dravidian_entries:
-        cognates.writerow([entry, 'PDr', dravidian_entries[entry], '', 'dedr'])
-        params.writerow([entry,  dravidian_entries[entry], '', '', etyma.get(entry, '')])
+        with open('data/munda/params.csv', 'r') as f:
+            read = csv.reader(f)
+            for row in read:
+                cognates.writerow([row[0], 'PMu', row[1], row[3], 'rau'])
+                params.writerow(row)
+
+        for entry in dravidian_entries:
+            cognates.writerow([entry, 'PDr', dravidian_entries[entry], '', 'dedr'])
+            params.writerow([entry,  dravidian_entries[entry], '', '', etyma.get(entry, '')])
 
 
 # ensure that all languages in forms.csv are also in languages.csv
