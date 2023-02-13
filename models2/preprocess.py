@@ -7,12 +7,9 @@ PAD = 0
 SOS = 1
 EOS = 2
 
-def make_data(length=20, saveto="", filter=None, lang_label="none"):
+def make_data(forms, length=20, saveto="", filter=None, lang_label="none", asterisk=True):
     """Save a dataset to a pickle."""
-    dataset = Dataset.from_metadata("../cldf/Wordlist-metadata.json")
-    forms, cognates, langs = dataset.objects('FormTable'), dataset.objects('CognateTable'), dataset.objects('LanguageTable')
-
-    tokenizer = Tokenizer("../conversion/cdial.txt")
+    tokenizer = Tokenizer("../conversion/cdial-post.txt")
 
     # create mapping from char to num
     mapping = {'<pad>': PAD, '<sos>': SOS, '<eos>': EOS}
@@ -28,6 +25,10 @@ def make_data(length=20, saveto="", filter=None, lang_label="none"):
         if lang is not None:
             if lang not in mapping: mapping[lang] = len(mapping)
             lang = mapping[lang]
+        
+        # reconstruction label (yes or no)
+        if not asterisk:
+            if form[0] == '*': form = form[1:]
 
         # padding and stuff
         if len(form) > length: return None
@@ -67,13 +68,21 @@ def make_data(length=20, saveto="", filter=None, lang_label="none"):
         pickle.dump((mapping, length, data), fout)
 
 def make_datas(length: int=20):
+    dataset = Dataset.from_metadata("../cldf/Wordlist-metadata.json")
+    forms = dataset.objects('FormTable')
+
     # all Indo-Aryan data
-    make_data(length, saveto="pickles/all-left.pickle", lang_label="left")
-    make_data(length, saveto="pickles/all-right.pickle", lang_label="right")
-    make_data(length, saveto="pickles/all-both.pickle", lang_label="both")
+    make_data(forms, length, saveto="pickles/all-left.pickle", lang_label="left")
+    make_data(forms, length, saveto="pickles/all-right.pickle", lang_label="right")
+    make_data(forms, length, saveto="pickles/all-both.pickle", lang_label="both")
+
+    # all Indo-Aryan data
+    make_data(forms, length, saveto="pickles/all-left-nostar.pickle", lang_label="left", asterisk=False)
+    make_data(forms, length, saveto="pickles/all-right-nostar.pickle", lang_label="right", asterisk=False)
+    make_data(forms, length, saveto="pickles/all-both-nostar.pickle", lang_label="both", asterisk=False)
 
     # only Hindi data
-    make_data(length, saveto="pickles/hindi.pickle", filter=["H"], lang_label="none")
+    make_data(forms, length, saveto="pickles/hindi.pickle", filter=["H"], lang_label="none")
 
 def main():
     make_datas()

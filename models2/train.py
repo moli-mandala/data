@@ -7,11 +7,9 @@ import random
 import pickle
 
 from model import *
+from eval import *
 
 import wandb
-import pandas as pd
-from plotnine import ggplot, aes, geom_line
-import matplotlib.pyplot as plt
 
 PAD = 0
 SOS = 1
@@ -22,6 +20,9 @@ def load_data(batch_size=16, file="pickles/all.pickle"):
     # load data
     with open(file, "rb") as fin:
         mapping, length, data = pickle.load(fin)
+    reverse_mapping = {}
+    for i in mapping:
+        reverse_mapping[mapping[i]] = i
     
     # shuffle data
     random.seed(42)
@@ -43,7 +44,7 @@ def load_data(batch_size=16, file="pickles/all.pickle"):
     # split into train and test
     train, test = batched[len(batched) // 5:], batched[:len(batched) // 5]
 
-    return train, test, mapping
+    return train, test, mapping, reverse_mapping
 
 def run_epoch(data_iter, model, loss_compute, print_every=50):
     """Standard Training and Logging Function"""
@@ -72,27 +73,6 @@ def run_epoch(data_iter, model, loss_compute, print_every=50):
 
     return math.exp(total_loss / float(total_tokens))
 
-class SimpleLossCompute:
-    """A simple loss compute and train function."""
-
-    def __init__(self, generator, criterion, opt=None):
-        self.generator = generator
-        self.criterion = criterion
-        self.opt = opt
-
-    def __call__(self, x, y, norm):
-        x = self.generator(x)
-        loss = self.criterion(x.contiguous().view(-1, x.size(-1)),
-                              y.contiguous().view(-1))
-        loss = loss / norm
-
-        if self.opt is not None:
-            loss.backward()          
-            self.opt.step()
-            self.opt.zero_grad()
-
-        return loss.data.item() * norm
-
 def train(
     file: str,
     architecture: str,
@@ -107,7 +87,7 @@ def train(
 ):
     """Train the simple copy task."""
     # get data
-    train, test, mapping = load_data(batch_size=batch_size, file=file)
+    train, test, mapping, reverse_mapping = load_data(batch_size=batch_size, file=file)
 
     # make model and optimiser
     num_words = len(mapping)
@@ -131,26 +111,32 @@ def train(
         # evaluate
         model.eval()
         with torch.no_grad(): 
+
+            # dev perplexity
             perplexity = run_epoch(test, model,
                                    SimpleLossCompute(model.generator, criterion, None))
             print("Evaluation perplexity: %f" % perplexity)
             dev_perplexities.append(perplexity)
             wandb.log({"dev_perplexity": perplexity})
+
+            # BLEU
+            get_predictions(model, test[0], reverse_mapping)
     
     return dev_perplexities
 
 def main():
     # set hyperparameters for training
     hyperparams = {
-        "file": "pickles/all-both.pickle",
+        "file": "pickles/hindi.pickle",
         "architecture": "GRU",
-        "batch_size": 128,
+        "batch_size": 32,
         "length": 20, # do not change this, it does nothing (is defined when preprocessing dataset)
         "emb_size": 32,
         "hidden_size": 32,
         "lr": 0.0003,
         "num_layers": 1,
         "epochs": 20,
+        "lang_labelling": "none"
     }
 
     # logging
