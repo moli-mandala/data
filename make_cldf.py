@@ -36,7 +36,10 @@ change = {
     'J': 'kiũth',
     'mald': 'Md',
     'kua': 'kvar',
-    'Sant': 'sa'
+    'Sant': 'sa',
+    'Arb': 'Ar',
+    'Prs': 'Pers',
+    'Arb-Prs': 'Ar'
 }
 
 # read in tokenizer/convertors for IPA and form normalisation
@@ -62,7 +65,7 @@ with open('errors.txt', 'w') as errors:
     mapping = {
         'patyal': 'cdial', 'thari': 'cdial', 'kvari': 'cdial', 'dhivehi': None, 'kholosi': None,
         'konkani': None, 'khetrani': None, 'vaagri': 'cdial', 'cdial': 'cdial', 'palula': 'liljegren',
-        'strand2': 'strand', 'strand3': 'strand'
+        'strand': 'strand', 'strand2': 'strand', 'strand3': 'strand'
     }
     for file in ['data/cdial/cdial.csv', 'data/munda/forms.csv'] + glob.glob("data/other/forms/*.csv"):
         # get filename
@@ -117,6 +120,7 @@ with open('errors.txt', 'w') as errors:
         done = set()
         for row in result:
             if not row[3]: continue
+            if row[2] == '?' or not row[2]: continue
             if row[1] in change:
                 row[1] = change[row[1]]
             row[1] = unidecode.unidecode(row[1])

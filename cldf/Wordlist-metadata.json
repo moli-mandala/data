@@ -112,7 +112,7 @@
                         },
                         "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#glottocode",
                         "required": false,
-                        "valueUrl": "http://glottolog.org/resource/languoid/id/{glottocode}",
+                        "valueUrl": "http://glottolog.org/resource/languoid/id/{Glottocode}",
                         "name": "Glottocode"
                     },
                     {
@@ -178,7 +178,7 @@
                     },
                     {
                         "datatype": "string",
-                        "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#description",
+                        "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#comment",
                         "name": "Etyma"
                     }
                 ],
@@ -196,7 +196,7 @@
                     {
                         "name": "Cognateset_ID",
                         "datatype": "string",
-                        "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#id"
+                        "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#cognatesetReference"
                     },
                     {
                         "name": "Language_ID",
@@ -223,6 +223,9 @@
                         },
                         "separator": ";"
                     }
+                ],
+                "primaryKey": [
+                    "Cognateset_ID"
                 ]
             }
         }
