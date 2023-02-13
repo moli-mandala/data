@@ -17,79 +17,28 @@ PAD = 0
 SOS = 1
 EOS = 2
 
-def load_data(batch_size=16, length=20, file=None, saveto="", filter=None):
-    # load cldf dataset
-    if file is None:
-        dataset = Dataset.from_metadata("../cldf/Wordlist-metadata.json")
-        forms, cognates, langs = dataset.objects('FormTable'), dataset.objects('CognateTable'), dataset.objects('LanguageTable')
+def load_data(batch_size=16, file="pickles/all.pickle"):
+    """Load training data from a pickle."""
+    # load data
+    with open(file, "rb") as fin:
+        mapping, length, data = pickle.load(fin)
+    
+    # shuffle data
+    random.seed(42)
+    random.shuffle(data)
+    
+    # make batches
+    batched: list[Batch] = []
+    for i in range(0, len(data), batch_size):
+        # partition batch
+        sz = min(batch_size, len(data) - i)
+        batch = torch.LongTensor(data[i : i + batch_size])
+        if USE_CUDA: batch.cuda()
 
-        tokenizer = Tokenizer("../conversion/cdial.txt")
-
-        # create mapping from char to num
-        mapping = {'<pad>': PAD, '<sos>': SOS, '<eos>': EOS}
-
-        def normalise(form, lang=None):
-            # tokenize
-            form = list(tokenizer(form).split())
-
-            # convert chars to ints, lang to int
-            for i, c in enumerate(form):
-                if c not in mapping: mapping[c] = len(mapping)
-                form[i] = mapping[c]
-            if lang is not None:
-                if lang not in mapping: mapping[lang] = len(mapping)
-                lang = mapping[lang]
-
-            # padding and stuff
-            if len(form) > length: return None
-            form = ([lang if lang is not None else SOS] + form +
-                [EOS] + [PAD for _ in range(length - len(form))])
-            return form
-        
-        # for each form, get source form
-        data: list[list[list[int]]] = []
-        for form in tqdm(forms):
-            try:
-                # get cognateset
-                source = form.parameter
-                lang = form.data["Language_ID"]
-
-                # append only Indo-Aryan data
-                if source and source.id[0].isdigit() and (lang in filter if filter is not None else True):
-                    # get input (OIA form) and output (MIA/NIA form)
-                    X = normalise(source.data["Name"], lang)
-                    Y = normalise(form.data["Form"])
-                    
-                    # append
-                    if X and Y: data.append([X, Y])
-
-            except Exception as e:
-                continue
-        
-        print(f"{len(data)} data items loaded.")
-        print(data[0])
-        random.shuffle(data)
-
-        # make batches
-        batched: list[Batch] = []
-        for i in range(0, len(data), batch_size):
-            # partition batch
-            sz = min(batch_size, len(data) - i)
-            batch = torch.LongTensor(data[i : i + batch_size])
-            if USE_CUDA: batch.cuda()
-
-            # get out src and trg tensors
-            src, trg = batch[:, 0], batch[:, 1]
-            ret = Batch((src, [length + 2] * sz), (trg, [length + 2] * sz), pad_index=PAD)
-            batched.append(ret)
-        
-        # save data
-        with open(saveto, "wb") as fout:
-            pickle.dump((mapping, batched), fout)
-    else:
-        # load data
-        with open(file, "rb") as fin:
-            mapping, batched = pickle.load(fin)
+        # get out src and trg tensors
+        src, trg = batch[:, 0], batch[:, 1]
+        ret = Batch((src, [length + 2] * sz), (trg, [length + 2] * sz), pad_index=PAD)
+        batched.append(ret)
     
     # split into train and test
     train, test = batched[len(batched) // 5:], batched[:len(batched) // 5]
@@ -153,11 +102,12 @@ def train(
     hidden_size: int,
     lr: float,
     num_layers: int,
-    lang_labelling: str
+    lang_labelling: str,
+    epochs: int
 ):
     """Train the simple copy task."""
     # get data
-    train, test, mapping = load_data(batch_size=batch_size, length=length, file=file)
+    train, test, mapping = load_data(batch_size=batch_size, file=file)
 
     # make model and optimiser
     num_words = len(mapping)
@@ -170,7 +120,7 @@ def train(
     if USE_CUDA:
         model.cuda()
 
-    for epoch in range(10):
+    for epoch in range(epochs):
         
         print("Epoch %d" % epoch)
 
@@ -190,26 +140,26 @@ def train(
     return dev_perplexities
 
 def main():
-    length = 20
-    batch_size = 32
-    # load_data(length=length, batch_size=batch_size, saveto="pickles/all.pickle")
+    # set hyperparameters for training
     hyperparams = {
-        "file": "pickles/all.pickle",
+        "file": "pickles/all-both.pickle",
         "architecture": "GRU",
-        "batch_size": batch_size,
-        "length": length,
+        "batch_size": 128,
+        "length": 20, # do not change this, it does nothing (is defined when preprocessing dataset)
         "emb_size": 32,
         "hidden_size": 32,
         "lr": 0.0003,
         "num_layers": 1,
-        "lang_labelling": "left"
+        "epochs": 20,
     }
 
+    # logging
     wandb.init(
         project="Jambu",
         config=hyperparams
     )
 
+    # train
     train(**hyperparams)
 
 if __name__ == "__main__":
