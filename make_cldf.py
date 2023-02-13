@@ -62,14 +62,14 @@ with open('errors.txt', 'w') as errors:
     mapping = {
         'patyal': 'cdial', 'thari': 'cdial', 'kvari': 'cdial', 'dhivehi': None, 'kholosi': None,
         'konkani': None, 'khetrani': None, 'vaagri': 'cdial', 'cdial': 'cdial', 'palula': 'liljegren',
-        'strand2': 'strand'
+        'strand2': 'strand', 'strand3': 'strand'
     }
     for file in ['data/cdial/cdial.csv', 'data/munda/forms.csv'] + glob.glob("data/other/forms/*.csv"):
         # get filename
         name = file.split('/')[-1].split('.')[0]
         print(name)
         convert = name in convertors or name in mapping
-        name = mapping.get(name, name)
+        name = mapping.get(name, None)
         with open(file, 'r') as fin:
             read = csv.reader(fin)
             for row in tqdm(read):
@@ -83,6 +83,9 @@ with open('errors.txt', 'w') as errors:
                     reformed = row[2]
                     if name is not None:
                         if '˚' not in row[2] and convert:
+                            if name == "strand":
+                                reformed = reformed.replace("′", "´")
+                                reformed = re.sub(r"([`´])(.)", r"\2\1", reformed)
                             reformed = convertors[name](reformed.strip('-123456,;'), column='IPA').replace(' ', '').replace('#', ' ')
                         if '�' in reformed:
                             errors.write(f'{row[0]} {row[2]} {row[2]} {row[5]} {reformed}\n')
