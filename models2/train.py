@@ -124,9 +124,8 @@ def train(
             dev_perplexities.append(perplexity)
 
             # BLEU
-            res = get_predictions(model, test[0], reverse_mapping, maxi=100)
-            gold, pred = [[' '.join(x[1][1:-1])] for x in res], [' '.join(x[2]) for x in res]
-            print(gold[0], pred[0])
+            res = get_predictions(model, test[0], reverse_mapping, maxi=100, pr=True)
+            gold, pred = [[' '.join(x[1][1:-1]) for x in res]], [' '.join(x[2]) for x in res]
             b, c, t = bleu.corpus_score(pred, gold), chrf.corpus_score(pred, gold), ter.corpus_score(pred, gold)
 
             # log
