@@ -6,6 +6,8 @@ from tqdm import tqdm
 import random
 import pickle
 
+from sacrebleu.metrics import BLEU, CHRF, TER
+
 from model import *
 from eval import *
 
@@ -14,6 +16,10 @@ import wandb
 PAD = 0
 SOS = 1
 EOS = 2
+
+bleu = BLEU()
+chrf = CHRF()
+ter = TER()
 
 def load_data(batch_size=16, file="pickles/all.pickle"):
     """Load training data from a pickle."""
@@ -115,12 +121,23 @@ def train(
             # dev perplexity
             perplexity = run_epoch(test, model,
                                    SimpleLossCompute(model.generator, criterion, None))
-            print("Evaluation perplexity: %f" % perplexity)
             dev_perplexities.append(perplexity)
-            wandb.log({"dev_perplexity": perplexity})
 
             # BLEU
-            get_predictions(model, test[0], reverse_mapping)
+            res = get_predictions(model, test[0], reverse_mapping, maxi=100)
+            gold, pred = [[' '.join(x[1][1:-1])] for x in res], [' '.join(x[2]) for x in res]
+            print(gold[0], pred[0])
+            b, c, t = bleu.corpus_score(pred, gold), chrf.corpus_score(pred, gold), ter.corpus_score(pred, gold)
+
+            # log
+            print(f"Evaluation perplexity: {perplexity} ({b} / {c} / {t})")
+            wandb.log({
+                "dev_perplexity": perplexity,
+                "eval/bleu": b.score,
+                "eval/chr": c.score,
+                "eval/ter": t.score
+            })
+
     
     return dev_perplexities
 

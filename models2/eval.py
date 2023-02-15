@@ -70,13 +70,24 @@ def greedy_decode(model, src, src_mask, src_lengths, max_len=100):
     
     return output, np.concatenate(attention_scores, axis=1), prod
 
-def get_predictions(model, batch: Batch, reverse_mapping: dict):
-    print(batch.src, batch.src_lengths)
-    for i in range(len(batch.src_lengths)):
+def get_predictions(model, batch: Batch, reverse_mapping: dict, maxi=None, pr=False):
+    """Greedy decode predictions from a batch."""
+    length = len(batch.src_lengths)
+    res = []
+    if maxi is not None:
+        length = min(maxi, length)
+    for i in range(length):
+        # greedy decode
         pred, attns, probs = greedy_decode(
             model, batch.src[i].reshape(1, -1), batch.src_mask[i].reshape(1, -1), [batch.src_lengths[i]]
         )
         src = [reverse_mapping[x.item()] for x in batch.src[i] if x.item() != PAD]
         trg = [reverse_mapping[x.item()] for x in batch.trg[i] if x.item() != PAD]
         pred = [reverse_mapping[x.item()] for x in pred if x.item() != PAD]
-        print(src, trg, pred)
+        res.append([src, trg, pred])
+
+        # print
+        if pr:
+            print(src, trg, pred)
+    
+    return res
