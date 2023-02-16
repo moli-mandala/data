@@ -5,13 +5,14 @@ from segments.tokenizer import Tokenizer, Profile
 from tqdm import tqdm
 import random
 import pickle
+import argparse
+from torch.optim.lr_scheduler import LambdaLR
 
 from sacrebleu.metrics import BLEU, CHRF, TER
+import wandb
 
 from model import *
 from eval import *
-
-import wandb
 
 PAD = 0
 SOS = 1
@@ -21,7 +22,7 @@ bleu = BLEU()
 chrf = CHRF()
 ter = TER()
 
-def load_data(batch_size=16, file="pickles/all.pickle"):
+def load_data(batch_size=16, file="pickles/all.pickle", unsq=False):
     """Load training data from a pickle."""
     # load data
     with open(file, "rb") as fin:
@@ -44,7 +45,7 @@ def load_data(batch_size=16, file="pickles/all.pickle"):
 
         # get out src and trg tensors
         src, trg = batch[:, 0], batch[:, 1]
-        ret = Batch((src, [length + 2] * sz), (trg, [length + 2] * sz), pad_index=PAD)
+        ret = Batch((src, [length + 2] * sz), (trg, [length + 2] * sz), pad_index=PAD, unsq=unsq)
         batched.append(ret)
     
     # split into train and test
@@ -52,7 +53,7 @@ def load_data(batch_size=16, file="pickles/all.pickle"):
 
     return train, test, mapping, reverse_mapping
 
-def run_epoch(data_iter, model, loss_compute, print_every=50):
+def run_epoch(data_iter: list[Batch], model, loss_compute: SimpleLossCompute, print_every: int=50):
     """Standard Training and Logging Function"""
 
     start = time.time()
@@ -61,10 +62,11 @@ def run_epoch(data_iter, model, loss_compute, print_every=50):
     print_tokens = 0
 
     for i, batch in enumerate(data_iter, 1):
-        
-        out, _, pre_output = model.forward(batch.src, batch.trg,
+        pre_output = model.forward(batch.src, batch.trg,
                                            batch.src_mask, batch.trg_mask,
                                            batch.src_lengths, batch.trg_lengths)
+        if isinstance(model, GRUEncoderDecoder):
+            out, _, pre_output = pre_output
         loss = loss_compute(pre_output, batch.trg_y, batch.nseqs)
         total_loss += loss
         total_tokens += batch.ntokens
@@ -79,6 +81,17 @@ def run_epoch(data_iter, model, loss_compute, print_every=50):
 
     return math.exp(total_loss / float(total_tokens))
 
+def rate(step, model_size, factor, warmup):
+    """
+    we have to default the step to 1 for LambdaLR function
+    to avoid zero raising to negative power.
+    """
+    if step == 0:
+        step = 1
+    return factor * (
+        model_size ** (-0.5) * min(step ** (-0.5), step * warmup ** (-1.5))
+    )
+
 def train(
     file: str,
     architecture: str,
@@ -89,17 +102,27 @@ def train(
     lr: float,
     num_layers: int,
     lang_labelling: str,
+    heads: int,
     epochs: int
 ):
     """Train the simple copy task."""
     # get data
-    train, test, mapping, reverse_mapping = load_data(batch_size=batch_size, file=file)
+    train, test, mapping, reverse_mapping = load_data(batch_size=batch_size, file=file, unsq=(architecture=="Transformer"))
+    scheduler = None
 
     # make model and optimiser
     num_words = len(mapping)
-    criterion = nn.NLLLoss(reduction="sum", ignore_index=0)
-    model = make_model(num_words, num_words, emb_size=emb_size, num_layers=num_layers, hidden_size=hidden_size)
-    optim = torch.optim.Adam(model.parameters(), lr=lr)
+    if architecture == "GRU":
+        model = make_gru_model(num_words, num_words, emb_size=emb_size, num_layers=num_layers, hidden_size=hidden_size)
+        criterion = nn.NLLLoss(reduction="sum", ignore_index=PAD)
+        optim = torch.optim.Adam(model.parameters(), lr=lr)
+    else:
+        model = make_model(num_words, num_words, num_layers, emb_size, hidden_size, heads)
+        criterion = LabelSmoothing(size=num_words, padding_idx=PAD, smoothing=0.0)
+        optim = torch.optim.Adam(model.parameters(), lr=lr, betas=(0.9, 0.98), eps=1e-9)
+        scheduler = LambdaLR(
+            optimizer=optim, lr_lambda=lambda step: rate(step, emb_size, 1, 1000)
+        )
  
     dev_perplexities = []
     
@@ -112,7 +135,8 @@ def train(
 
         # train
         model.train()
-        run_epoch(train, model, SimpleLossCompute(model.generator, criterion, optim))
+        print("Learning rate:", optim.param_groups[0]["lr"])
+        train_perplexity = run_epoch(train, model, SimpleLossCompute(model.generator, criterion, optim, scheduler))
 
         # evaluate
         model.eval()
@@ -132,6 +156,7 @@ def train(
             print(f"Evaluation perplexity: {perplexity} ({b} / {c} / {t})")
             wandb.log({
                 "dev_perplexity": perplexity,
+                "train_perplexity": train_perplexity,
                 "eval/bleu": b.score,
                 "eval/chr": c.score,
                 "eval/ter": t.score
@@ -140,19 +165,41 @@ def train(
     
     return dev_perplexities
 
+def label_type(file: str):
+    if "-both-" in file: return "both"
+    if "-left-" in file: return "left"
+    if "-right-" in file: return "right"
+    return "none"
+
 def main():
+    parser = argparse.ArgumentParser(description='Train models on reflex prediction.')
+    parser.add_argument('-a', '--architecture', dest='arch', type=int, default=0)
+    parser.add_argument('-f', '--file', dest='file', type=str, default="hindi.pickle")
+    parser.add_argument('-lr', '--learning-rate', dest='lr', type=float, default=0.0003)
+    parser.add_argument('-emb', '--embedding-hidden-size', dest='emb', type=int, default=32)
+    parser.add_argument('-bs', '--batch-size', dest='bs', type=int, default=32)
+    parser.add_argument('-e', '--epochs', dest='epochs', type=int, default=20)
+    parser.add_argument('-la', '--layers', dest='layers', type=int, default=1)
+    parser.add_argument('-he', '--heads', dest='heads', type=int, default=8)
+    args = parser.parse_args()
+
+    # check only pickles dir
+    args.file = "pickles/" + args.file
+    print(args)
+
     # set hyperparameters for training
     hyperparams = {
-        "file": "pickles/hindi.pickle",
-        "architecture": "GRU",
-        "batch_size": 32,
+        "file": args.file,
+        "architecture": "GRU" if args.arch == 0 else "Transformer",
+        "batch_size": args.bs,
         "length": 20, # do not change this, it does nothing (is defined when preprocessing dataset)
-        "emb_size": 32,
-        "hidden_size": 32,
-        "lr": 0.0003,
-        "num_layers": 1,
-        "epochs": 20,
-        "lang_labelling": "none"
+        "emb_size": args.emb,
+        "hidden_size": args.emb,
+        "lr": args.lr,
+        "num_layers": args.layers,
+        "heads": args.heads,
+        "epochs": args.epochs,
+        "lang_labelling": label_type(args.file)
     }
 
     # logging
