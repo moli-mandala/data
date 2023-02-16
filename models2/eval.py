@@ -2,6 +2,7 @@ import torch
 import torch.nn as nn
 import numpy as np
 from model import Batch, GRUEncoderDecoder, EncoderDecoder
+import matplotlib.pyplot as plt
 
 PAD = 0
 SOS = 1
@@ -107,6 +108,7 @@ def greedy_decode(model, src, src_mask, src_lengths, max_len=100):
             out = model.decode(
                 memory, src_mask, ys, subsequent_mask(ys.size(1)).type_as(src.data)
             )
+            
             prob = model.generator(out[:, -1])
             _, next_word = torch.max(prob, dim=1)
             prod += _
@@ -118,6 +120,12 @@ def greedy_decode(model, src, src_mask, src_lengths, max_len=100):
             )
             if next_word == EOS:
                 break
+        
+        for i in range(len(model.encoder.layers)):
+            attention_scores.append([model.encoder.layers[i].self_attn.attn]).cpu().numpy()
+        for i in range(len(model.decoder.layers)):
+            attention_scores.append([model.decoder.layers[i].self_attn.attn]).cpu().numpy()
+            attention_scores.append([model.decoder.layers[i].src_attn.attn]).cpu().numpy()
      
     # cut off everything starting from </s> 
     # (only when EOS provided)

@@ -7,7 +7,7 @@ PAD = 0
 SOS = 1
 EOS = 2
 
-def make_data(forms, length=20, saveto="", filter=None, lang_label="none", asterisk=True):
+def make_data(forms, length=20, saveto="", filter=None, lang_label="none", asterisk=True, pad=True):
     """Save a dataset to a pickle."""
     tokenizer = Tokenizer("../conversion/cdial-post.txt")
 
@@ -37,7 +37,8 @@ def make_data(forms, length=20, saveto="", filter=None, lang_label="none", aster
             if lang_label in ["left", "both"]: start = lang
             if lang_label in ["right", "both"]: end = lang
 
-        form = ([start] + form + [end] + [PAD for _ in range(length - len(form))])
+        form = ([start] + form + [end])
+        if pad: form += [PAD for _ in range(length - len(form))]
         return form
     
     # for each form, get source form
@@ -75,6 +76,9 @@ def make_datas(length: int=20):
     make_data(forms, length, saveto="pickles/all-left.pickle", lang_label="left")
     make_data(forms, length, saveto="pickles/all-right.pickle", lang_label="right")
     make_data(forms, length, saveto="pickles/all-both.pickle", lang_label="both")
+
+    # unpadded
+    make_data(forms, length, saveto="pickles/all-both-unpadded.pickle", lang_label="both", pad=False)
 
     # all Indo-Aryan data
     make_data(forms, length, saveto="pickles/all-left-nostar.pickle", lang_label="left", asterisk=False)
