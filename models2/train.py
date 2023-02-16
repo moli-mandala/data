@@ -31,6 +31,9 @@ def load_data(batch_size=16, file="pickles/all.pickle", unsq=False):
     for i in mapping:
         reverse_mapping[mapping[i]] = i
     
+    print(len(data[0][0]), len(data[0][1]), data[0])
+    print("vocab size:", len(mapping))
+    
     # shuffle data
     random.seed(42)
     random.shuffle(data)
@@ -118,6 +121,7 @@ def train(
         optim = torch.optim.Adam(model.parameters(), lr=lr)
     else:
         model = make_model(num_words, num_words, num_layers, emb_size, hidden_size, heads)
+        # criterion = nn.CrossEntropyLoss(reduction="sum", ignore_index=PAD)
         criterion = LabelSmoothing(size=num_words, padding_idx=PAD, smoothing=0.0)
         optim = torch.optim.Adam(model.parameters(), lr=lr, betas=(0.9, 0.98), eps=1e-9)
         scheduler = LambdaLR(
@@ -166,9 +170,9 @@ def train(
     return dev_perplexities
 
 def label_type(file: str):
-    if "-both-" in file: return "both"
-    if "-left-" in file: return "left"
-    if "-right-" in file: return "right"
+    if "-both" in file: return "both"
+    if "-left" in file: return "left"
+    if "-right" in file: return "right"
     return "none"
 
 def main():
@@ -176,7 +180,8 @@ def main():
     parser.add_argument('-a', '--architecture', dest='arch', type=int, default=0)
     parser.add_argument('-f', '--file', dest='file', type=str, default="hindi.pickle")
     parser.add_argument('-lr', '--learning-rate', dest='lr', type=float, default=0.0003)
-    parser.add_argument('-emb', '--embedding-hidden-size', dest='emb', type=int, default=32)
+    parser.add_argument('-emb', '--embedding-size', dest='emb', type=int, default=32)
+    parser.add_argument('-hid', '--hidden-size', dest='hid', type=int, default=None)
     parser.add_argument('-bs', '--batch-size', dest='bs', type=int, default=32)
     parser.add_argument('-e', '--epochs', dest='epochs', type=int, default=20)
     parser.add_argument('-la', '--layers', dest='layers', type=int, default=1)
@@ -194,7 +199,7 @@ def main():
         "batch_size": args.bs,
         "length": 20, # do not change this, it does nothing (is defined when preprocessing dataset)
         "emb_size": args.emb,
-        "hidden_size": args.emb,
+        "hidden_size": args.hid if args.hid is not None else args.emb,
         "lr": args.lr,
         "num_layers": args.layers,
         "heads": args.heads,

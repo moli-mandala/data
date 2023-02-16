@@ -38,7 +38,7 @@ def make_data(forms, length=20, saveto="", filter=None, lang_label="none", aster
             if lang_label in ["right", "both"]: end = lang
 
         form = ([start] + form + [end])
-        if pad: form += [PAD for _ in range(length - len(form))]
+        if pad: form += [PAD for _ in range(length + 2 - len(form))]
         return form
     
     # for each form, get source form

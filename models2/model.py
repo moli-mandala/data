@@ -253,9 +253,10 @@ class Batch:
             self.trg = trg[:, :-1]
             self.trg_lengths = trg_lengths
             self.trg_y = trg[:, 1:]
-            self.trg_mask = (self.trg_y != pad_index)
             if unsq:
-                self.trg_mask = self.trg_mask.unsqueeze(-2)
+                self.trg_mask = self.make_std_mask(self.trg, pad_index)
+            else:
+                self.trg_mask = (self.trg_y != pad_index)
             self.ntokens = (self.trg_y != pad_index).data.sum().item()
         
         if USE_CUDA:
@@ -266,6 +267,15 @@ class Batch:
                 self.trg = self.trg.cuda()
                 self.trg_y = self.trg_y.cuda()
                 self.trg_mask = self.trg_mask.cuda()
+
+    @staticmethod
+    def make_std_mask(trg, pad):
+        "Create a mask to hide padding and future words."
+        trg_mask = (trg != pad).unsqueeze(-2)
+        trg_mask = trg_mask & subsequent_mask(trg.size(-1)).type_as(
+            trg_mask.data
+        )
+        return trg_mask
 
 ###############
 # Transformer #

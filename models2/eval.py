@@ -122,10 +122,10 @@ def greedy_decode(model, src, src_mask, src_lengths, max_len=100):
                 break
         
         for i in range(len(model.encoder.layers)):
-            attention_scores.append([model.encoder.layers[i].self_attn.attn]).cpu().numpy()
+            attention_scores.append([model.encoder.layers[i].self_attn.attn.cpu().numpy()])
         for i in range(len(model.decoder.layers)):
-            attention_scores.append([model.decoder.layers[i].self_attn.attn]).cpu().numpy()
-            attention_scores.append([model.decoder.layers[i].src_attn.attn]).cpu().numpy()
+            attention_scores.append([model.decoder.layers[i].self_attn.attn.cpu().numpy()])
+            attention_scores.append([model.decoder.layers[i].src_attn.attn.cpu().numpy()])
      
     # cut off everything starting from </s> 
     # (only when EOS provided)
@@ -134,7 +134,7 @@ def greedy_decode(model, src, src_mask, src_lengths, max_len=100):
         if len(first_eos) > 0:
             output = output[:first_eos[0]]      
     
-    return output, np.concatenate(attention_scores, axis=1) if attention_scores else [], prod
+    return output, attention_scores, prod
 
 def get_predictions(model, batch: Batch, reverse_mapping: dict, maxi=None, pr=False):
     """Greedy decode predictions from a batch."""
