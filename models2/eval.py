@@ -110,8 +110,8 @@ def greedy_decode(model, src, src_mask, src_lengths, max_len=100):
             prob = model.generator(out[:, -1])
             _, next_word = torch.max(prob, dim=1)
             prod += _
+            output.append(next_word.data.item())
             next_word = next_word.data[0]
-            output.append(next_word)
 
             ys = torch.cat(
                 [ys, torch.zeros(1, 1).type_as(src.data).fill_(next_word)], dim=1
