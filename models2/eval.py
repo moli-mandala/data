@@ -98,8 +98,6 @@ def greedy_decode(model, src, src_mask, src_lengths, max_len=100):
             if next_word == EOS:
                 break
         
-        output = np.array(output)
-        
     elif isinstance(model, EncoderDecoder):
         memory = model.encode(src, src_mask, src_lengths)
         ys = torch.zeros(1, 1).fill_(SOS).type_as(src.data)
@@ -126,7 +124,9 @@ def greedy_decode(model, src, src_mask, src_lengths, max_len=100):
         for i in range(len(model.decoder.layers)):
             attention_scores.append([model.decoder.layers[i].self_attn.attn.cpu().numpy()])
             attention_scores.append([model.decoder.layers[i].src_attn.attn.cpu().numpy()])
-     
+    
+    output = np.array(output)
+
     # cut off everything starting from </s> 
     # (only when EOS provided)
     if EOS is not None:

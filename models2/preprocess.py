@@ -23,6 +23,7 @@ def make_data(forms, length=20, saveto="", filter=None, lang_label="none", aster
             if c not in mapping: mapping[c] = len(mapping)
             form[i] = mapping[c]
         if lang is not None:
+            lang = "[" + lang + "]"
             if lang not in mapping: mapping[lang] = len(mapping)
             lang = mapping[lang]
         

@@ -9,7 +9,7 @@ for file in glob.glob("pickles/*.pickle"):
     reverse_mapping = {}
     for i in mapping:
         reverse_mapping[mapping[i]] = i
-
+    
     OHNO = mapping['�']
 
     random.shuffle(data)
@@ -21,4 +21,4 @@ for file in glob.glob("pickles/*.pickle"):
             # print([reverse_mapping[x] for x in src if x != PAD], [reverse_mapping[x] for x in trg if x != PAD])
             # input()
 
-    print(f"{file:<50} {ct:<10} {ct / len(data):<10.5%}")
+    print(f"{file:<50} {len(mapping):<10} {ct:<10} {ct / len(data):<10.5%}")
