@@ -4,6 +4,8 @@ import numpy as np
 from model import Batch, GRUEncoderDecoder, EncoderDecoder
 import matplotlib.pyplot as plt
 
+from decode import greedy_decode, beam_decode
+
 PAD = 0
 SOS = 1
 EOS = 2
@@ -64,96 +66,44 @@ def subsequent_mask(size):
     )
     return subsequent_mask == 0
 
-def greedy_decode(model, src, src_mask, src_lengths, max_len=100):
-    """Greedily decode a sentence."""
-    output = []
-    attention_scores = []
-    prod = 0
-
-    if isinstance(model, GRUEncoderDecoder):
-        with torch.no_grad():
-            encoder_hidden, encoder_final = model.encode(src, src_mask, src_lengths)
-            prev_y = torch.ones(1, 1).fill_(SOS).type_as(src)
-            trg_mask = torch.ones_like(prev_y)
-
-        hidden = None
-
-        for i in range(max_len):
-            with torch.no_grad():
-                out, hidden, pre_output = model.decode(
-                encoder_hidden, encoder_final, src_mask,
-                prev_y, trg_mask, hidden)
-
-                # we predict from the pre-output layer, which is
-                # a combination of Decoder state, prev emb, and context
-                prob = model.generator(pre_output[:, -1])
-
-            _, next_word = torch.max(prob, dim=1)
-            prod += _
-            next_word = next_word.data.item()
-            output.append(next_word)
-
-            prev_y = torch.ones(1, 1).type_as(src).fill_(next_word)
-            attention_scores.append(model.decoder.attention.alphas.cpu().numpy())
-            if next_word == EOS:
-                break
-        
-    elif isinstance(model, EncoderDecoder):
-        memory = model.encode(src, src_mask, src_lengths)
-        ys = torch.zeros(1, 1).fill_(SOS).type_as(src.data)
-
-        for i in range(max_len):
-            out = model.decode(
-                memory, src_mask, ys, subsequent_mask(ys.size(1)).type_as(src.data)
-            )
-            
-            prob = model.generator(out[:, -1])
-            _, next_word = torch.max(prob, dim=1)
-            prod += _
-            output.append(next_word.data.item())
-            next_word = next_word.data[0]
-
-            ys = torch.cat(
-                [ys, torch.zeros(1, 1).type_as(src.data).fill_(next_word)], dim=1
-            )
-            if next_word == EOS:
-                break
-        
-        for i in range(len(model.encoder.layers)):
-            attention_scores.append([model.encoder.layers[i].self_attn.attn.cpu().numpy()])
-        for i in range(len(model.decoder.layers)):
-            attention_scores.append([model.decoder.layers[i].self_attn.attn.cpu().numpy()])
-            attention_scores.append([model.decoder.layers[i].src_attn.attn.cpu().numpy()])
-    
-    output = np.array(output)
-
-    # cut off everything starting from </s> 
-    # (only when EOS provided)
-    if EOS is not None:
-        first_eos = np.where(output==EOS)[0]
-        if len(first_eos) > 0:
-            output = output[:first_eos[0]]      
-    
-    return output, attention_scores, prod
-
-def get_predictions(model, batch: Batch, reverse_mapping: dict, maxi=None, pr=False):
+def get_predictions(model, batch: Batch, reverse_mapping: dict, maxi=None, pr=False, beam=None):
     """Greedy decode predictions from a batch."""
     length = len(batch.src_lengths)
     res = []
     if maxi is not None:
         length = min(maxi, length)
     for i in range(length):
-        # greedy decode
-        pred, attns, probs = greedy_decode(
-            model, batch.src[i].reshape(1, -1), batch.src_mask[i].reshape(1, -1), [batch.src_lengths[i]]
-        )
         src = [reverse_mapping[x.item()] for x in batch.src[i] if x.item() != PAD]
         trg = [reverse_mapping[x.item()] for x in batch.trg[i] if x.item() != PAD]
-        pred = [reverse_mapping[x.item()] for x in pred if x.item() != PAD]
-        res.append([src, trg, pred])
 
-        # print
-        if pr:
-            print(src, trg, pred, probs.exp())
+        # greedy decode
+        if beam is not None:
+            pred = beam_decode(
+                model, batch.src[i].reshape(1, -1), batch.src_mask[i].reshape(1, -1),
+                [batch.src_lengths[i]], beam_size=beam
+            )
+            beam_res = []
+            print(i)
+            print(' '.join(src))
+            print(' '.join(trg))
+            for i, (out, prob) in enumerate(pred):
+                output = [reverse_mapping[x.item()] for x in out if x.item() != PAD]
+                if i == 0: res.append([src, trg, output])
+                print(' '.join(output), f"({prob.exp().detach().item():.6%})")
+            print()
+        else:
+            pred, attns, probs = greedy_decode(
+                model, batch.src[i].reshape(1, -1), batch.src_mask[i].reshape(1, -1),
+                [batch.src_lengths[i]]
+            )
+            pred = [reverse_mapping[x.item()] for x in pred if x.item() != PAD]
+            res.append([src, trg, pred])
+
+            # print
+            if pr:
+                print(' '.join(src))
+                print(' '.join(trg))
+                print(' '.join(pred), f"({probs.exp().detach().item():.6%})")
+                print()
     
     return res

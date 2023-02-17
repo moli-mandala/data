@@ -7,9 +7,11 @@ import random
 import pickle
 import argparse
 from torch.optim.lr_scheduler import LambdaLR
+import os
 
 from sacrebleu.metrics import BLEU, CHRF, TER
 import wandb
+from typing import Optional, List
 
 from model import *
 from eval import *
@@ -39,7 +41,7 @@ def load_data(batch_size=16, file="pickles/all.pickle", unsq=False):
     random.shuffle(data)
     
     # make batches
-    batched: list[Batch] = []
+    batched: List[Batch] = []
     for i in range(0, len(data), batch_size):
         # partition batch
         sz = min(batch_size, len(data) - i)
@@ -56,7 +58,7 @@ def load_data(batch_size=16, file="pickles/all.pickle", unsq=False):
 
     return train, test, mapping, reverse_mapping
 
-def run_epoch(data_iter: list[Batch], model, loss_compute: SimpleLossCompute, print_every: int=50):
+def run_epoch(data_iter: List[Batch], model, loss_compute: SimpleLossCompute, print_every: int=50):
     """Standard Training and Logging Function"""
 
     start = time.time()
@@ -106,9 +108,16 @@ def train(
     num_layers: int,
     lang_labelling: str,
     heads: int,
-    epochs: int
+    epochs: int,
+    beam: Optional[int],
+    save: bool
 ):
-    """Train the simple copy task."""
+    # save
+    if save:
+        checkpoint = str(time.time())
+        if not os.path.exists("checkpoints/"): os.mkdir("checkpoints/")
+        os.mkdir(f"checkpoints/{checkpoint}/")
+
     # get data
     train, test, mapping, reverse_mapping = load_data(batch_size=batch_size, file=file, unsq=(architecture=="Transformer"))
     scheduler = None
@@ -152,7 +161,7 @@ def train(
             dev_perplexities.append(perplexity)
 
             # BLEU
-            res = get_predictions(model, test[0], reverse_mapping, maxi=100, pr=True)
+            res = get_predictions(model, test[0], reverse_mapping, maxi=100, pr=True, beam=beam)
             gold, pred = [[' '.join(x[1][1:-1]) for x in res]], [' '.join(x[2]) for x in res]
             print(f"[{gold[0][0]}] [{pred[0]}]")
             b, c, t = bleu.corpus_score(pred, gold), chrf.corpus_score(pred, gold), ter.corpus_score(pred, gold)
@@ -166,6 +175,9 @@ def train(
                 "eval/chr": c.score,
                 "eval/ter": t.score
             })
+        
+        if save:
+            torch.save(model.state_dict(), f"checkpoints/{checkpoint}/model_all_{epoch}.pt")
 
     
     return dev_perplexities
@@ -187,6 +199,8 @@ def main():
     parser.add_argument('-e', '--epochs', dest='epochs', type=int, default=20)
     parser.add_argument('-la', '--layers', dest='layers', type=int, default=1)
     parser.add_argument('-he', '--heads', dest='heads', type=int, default=8)
+    parser.add_argument('--save', dest='save', action='store_true')
+    parser.add_argument('-be', '--beam', dest='beam', type=int, default=None)
     args = parser.parse_args()
 
     # check only pickles dir
@@ -205,6 +219,7 @@ def main():
         "num_layers": args.layers,
         "heads": args.heads,
         "epochs": args.epochs,
+        "beam": args.beam,
         "lang_labelling": label_type(args.file)
     }
 
@@ -215,7 +230,7 @@ def main():
     )
 
     # train
-    train(**hyperparams)
+    train(**hyperparams, save=args.save)
 
 if __name__ == "__main__":
     main()
