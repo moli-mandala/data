@@ -110,6 +110,8 @@ def train(
     heads: int,
     epochs: int,
     beam: Optional[int],
+    eval_batches: int,
+    eval_ct: int,
     save: bool
 ):
     # save
@@ -161,7 +163,9 @@ def train(
             dev_perplexities.append(perplexity)
 
             # BLEU
-            res = get_predictions(model, test[0], reverse_mapping, maxi=100, pr=True, beam=beam)
+            res = []
+            for i in range(eval_batches):
+                res.append(get_predictions(model, test[i], reverse_mapping, maxi=eval_ct, pr=True, beam=beam))
             gold, pred = [[' '.join(x[1][1:-1]) for x in res]], [' '.join(x[2]) for x in res]
             print(f"[{gold[0][0]}] [{pred[0]}]")
             b, c, t = bleu.corpus_score(pred, gold), chrf.corpus_score(pred, gold), ter.corpus_score(pred, gold)
@@ -201,6 +205,8 @@ def main():
     parser.add_argument('-he', '--heads', dest='heads', type=int, default=8)
     parser.add_argument('--save', dest='save', action='store_true')
     parser.add_argument('-be', '--beam', dest='beam', type=int, default=None)
+    parser.add_argument('-eb', '--eval-batches', dest='beam', type=int, default=1)
+    parser.add_argument('-ec', '--eval-ct', dest='beam', type=int, default=100)
     args = parser.parse_args()
 
     # check only pickles dir
