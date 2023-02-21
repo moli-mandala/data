@@ -76,7 +76,7 @@ def get_predictions(model, batch: Batch, reverse_mapping: dict, maxi=None, pr=Fa
         src = [reverse_mapping[x.item()] for x in batch.src[i] if x.item() != PAD]
         trg = [reverse_mapping[x.item()] for x in batch.trg[i] if x.item() != PAD]
 
-        # greedy decode
+        # beam decode
         if beam is not None:
             pred = beam_decode(
                 model, batch.src[i].reshape(1, -1), batch.src_mask[i].reshape(1, -1),
@@ -91,6 +91,7 @@ def get_predictions(model, batch: Batch, reverse_mapping: dict, maxi=None, pr=Fa
                 if i == 0: res.append([src, trg, output])
                 print(' '.join(output), f"({prob.exp().detach().item():.6%})")
             print()
+        # greedy decode
         else:
             pred, attns, probs = greedy_decode(
                 model, batch.src[i].reshape(1, -1), batch.src_mask[i].reshape(1, -1),
@@ -101,6 +102,7 @@ def get_predictions(model, batch: Batch, reverse_mapping: dict, maxi=None, pr=Fa
 
             # print
             if pr:
+                print(i)
                 print(' '.join(src))
                 print(' '.join(trg))
                 print(' '.join(pred), f"({probs.exp().detach().item():.6%})")
