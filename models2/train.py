@@ -205,8 +205,8 @@ def main():
     parser.add_argument('-he', '--heads', dest='heads', type=int, default=8)
     parser.add_argument('--save', dest='save', action='store_true')
     parser.add_argument('-be', '--beam', dest='beam', type=int, default=None)
-    parser.add_argument('-eb', '--eval-batches', dest='beam', type=int, default=1)
-    parser.add_argument('-ec', '--eval-ct', dest='beam', type=int, default=100)
+    parser.add_argument('-eb', '--eval-batches', dest='eval_batches', type=int, default=1)
+    parser.add_argument('-ec', '--eval-ct', dest='eval_ct', type=int, default=100)
     args = parser.parse_args()
 
     # check only pickles dir
@@ -226,7 +226,9 @@ def main():
         "heads": args.heads,
         "epochs": args.epochs,
         "beam": args.beam,
-        "lang_labelling": label_type(args.file)
+        "lang_labelling": label_type(args.file),
+        "eval_batches": args.eval_batches,
+        "eval_ct": args.eval_ct
     }
 
     # logging
