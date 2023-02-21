@@ -24,6 +24,12 @@ bleu = BLEU()
 chrf = CHRF()
 ter = TER()
 
+def label_type(file: str):
+    if "-both" in file: return "both"
+    if "-left" in file: return "left"
+    if "-right" in file: return "right"
+    return "none"
+
 def load_data(batch_size=16, file="pickles/all.pickle", unsq=False):
     """Load training data from a pickle."""
     # load data
@@ -45,12 +51,15 @@ def load_data(batch_size=16, file="pickles/all.pickle", unsq=False):
     for i in range(0, len(data), batch_size):
         # partition batch
         sz = min(batch_size, len(data) - i)
-        batch = torch.LongTensor(data[i : i + batch_size])
-        if USE_CUDA: batch.cuda()
-
+        
         # get out src and trg tensors
-        src, trg = batch[:, 0], batch[:, 1]
-        ret = Batch((src, [length + 2] * sz), (trg, [length + 2] * sz), pad_index=PAD, unsq=unsq)
+        src = torch.LongTensor([x[0] for x in data[i : i + batch_size]])
+        trg = torch.LongTensor([x[1] for x in data[i : i + batch_size]])
+        if USE_CUDA:
+            src.cuda()
+            trg.cuda()
+
+        ret = Batch((src, [src.shape[-1]] * sz), (trg, [trg.shape[-1]] * sz), pad_index=PAD, unsq=unsq)
         batched.append(ret)
     
     # split into train and test
@@ -185,12 +194,6 @@ def train(
 
     
     return dev_perplexities
-
-def label_type(file: str):
-    if "-both" in file: return "both"
-    if "-left" in file: return "left"
-    if "-right" in file: return "right"
-    return "none"
 
 def main():
     parser = argparse.ArgumentParser(description='Train models on reflex prediction.')
