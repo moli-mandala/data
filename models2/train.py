@@ -173,7 +173,7 @@ def train(
 
             # BLEU
             res = []
-            for i in range(eval_batches):
+            for i in range(min(len(test), eval_batches)):
                 res.extend(get_predictions(model, test[i], reverse_mapping, maxi=eval_ct, pr=True, beam=beam))
             gold, pred = [[' '.join(x[1][1:-1]) for x in res]], [' '.join(x[2]) for x in res]
             b, c, t = bleu.corpus_score(pred, gold), chrf.corpus_score(pred, gold), ter.corpus_score(pred, gold)
