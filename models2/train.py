@@ -176,7 +176,7 @@ def train(
             # on last epoch eval on all data
             if epoch == epochs - 1:
                 eval_batches = len(test)
-                eval_ct = len(batch_size)
+                eval_ct = batch_size
             for i in range(min(len(test), eval_batches)):
                 res.extend(get_predictions(model, test[i], reverse_mapping, maxi=eval_ct, pr=True, beam=beam))
             gold, pred = [[' '.join(x[1][1:-1]) for x in res]], [' '.join(x[2]) for x in res]
