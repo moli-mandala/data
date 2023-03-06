@@ -39,7 +39,13 @@ change = {
     'Sant': 'sa',
     'Arb': 'Ar',
     'Prs': 'Pers',
-    'Arb-Prs': 'Ar'
+    'Arb-Prs': 'Ar',
+    'gamb': 'Gmb',
+    'Kmd': 'Kamd',
+    'Kan': 'Kannada',
+    'Tam': 'Tamil',
+    'Tel': 'Telugu',
+    'Mal': 'Malayalam'
 }
 
 # read in tokenizer/convertors for IPA and form normalisation
@@ -83,18 +89,24 @@ with open('errors.txt', 'w') as errors:
                     if '.' in row[1]:
                         row[6] = row[1]
                         row[1] = row[1].split('.')[0]
-                    reformed = row[2]
-                    if name is not None:
-                        if '˚' not in row[2] and convert:
-                            if name == "strand":
-                                reformed = reformed.replace("′", "´")
-                                reformed = re.sub(r"([`´])(.)", r"\2\1", reformed)
-                            reformed = convertors[name](reformed.strip('-123456,;'), column='IPA').replace(' ', '').replace('#', ' ')
-                        if '�' in reformed:
-                            errors.write(f'{row[0]} {row[2]} {row[2]} {row[5]} {reformed}\n')
-                            reformed = ''
-                    result.append([f'{i}', row[0], row[1], reformed if reformed else row[2], row[3], row[4], row[5], row[2], row[8 if 'cdial' in file else 1], row[6], row[7]])
-                    i += 1
+
+                    for form in row[2].split(','):
+                        reformed = form
+
+                        # convert to Samopriyan system
+                        if name is not None:
+                            if '˚' not in form and convert:
+                                # fix accentuation from Strand
+                                if name == "strand":
+                                    reformed = reformed.replace("′", "´")
+                                    reformed = re.sub(r"([`´])(.)", r"\2\1", reformed)
+                                reformed = convertors[name](reformed.strip('-1234⁴5⁵67⁷,;.'), column='IPA').replace(' ', '').replace('#', ' ')
+                            if '�' in reformed:
+                                errors.write(f'{row[0]} {form} {form} {row[5]} {reformed}\n')
+                                reformed = ''
+
+                        result.append([f'{i}', row[0], row[1], reformed if reformed else form, row[3], row[4], row[5], form, row[8 if 'cdial' in file else 1], row[6], row[7]])
+                        i += 1
 
     # dravidian languages
     dravidian_entries = {}
