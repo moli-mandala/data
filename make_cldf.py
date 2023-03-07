@@ -8,45 +8,7 @@ import unicodedata
 from tqdm import tqdm
 from collections import Counter
 
-superscript = {
-    'a': 'ᵃ', 'e': 'ᵉ', 'i': 'ᶦ',
-    'o': 'ᵒ', 'u': 'ᵘ', 'ü': 'ᵘ̈',
-    'y': 'ʸ', 'ə': 'ᵊ', 'ŭ': 'ᵘ̆',
-    'z': 'ᶻ', 'gy': 'ᵍʸ', 'h': 'ʰ',
-    'ŕ': 'ʳ́', 'ĕ': 'ᵉ̆', 'n': 'ⁿ'
-}
-
-change = {
-    'khaś': 'khash',
-    'Māl': 'Malw',
-    'Brah': 'Brahui',
-    'Drav': 'PDr',
-    'Ga': 'Gadaba',
-    'Kan': 'Kannada',
-    'Kol': 'Kolami',
-    'Kur': 'Kurux',
-    'Mal': 'Malayalam',
-    'Nk': 'Naikri',
-    'Prj': 'Parji',
-    'Tam': 'Tamil',
-    'Tel': 'Telugu',
-    'Tu': 'Tulu',
-    'Go': 'Gondi',
-    'OIA': 'Sk',
-    'J': 'kiũth',
-    'mald': 'Md',
-    'kua': 'kvar',
-    'Sant': 'sa',
-    'Arb': 'Ar',
-    'Prs': 'Pers',
-    'Arb-Prs': 'Ar',
-    'gamb': 'Gmb',
-    'Kmd': 'Kamd',
-    'Kan': 'Kannada',
-    'Tam': 'Tamil',
-    'Tel': 'Telugu',
-    'Mal': 'Malayalam'
-}
+from utils import mapping, superscript, change
 
 # read in tokenizer/convertors for IPA and form normalisation
 tokenizers = {}
@@ -68,11 +30,6 @@ with open('errors.txt', 'w') as errors:
 
     # now do the same thing for non-CDIAL IA languages
     i = 0
-    mapping = {
-        'patyal': 'cdial', 'thari': 'cdial', 'kvari': 'cdial', 'dhivehi': None, 'kholosi': None,
-        'konkani': None, 'khetrani': None, 'vaagri': 'cdial', 'cdial': 'cdial', 'palula': 'liljegren',
-        'strand': 'strand', 'strand2': 'strand', 'strand3': 'strand'
-    }
     for file in ['data/cdial/cdial.csv', 'data/munda/forms.csv'] + glob.glob("data/other/forms/*.csv"):
         # get filename
         name = file.split('/')[-1].split('.')[0]
