@@ -38,7 +38,7 @@ def plot_top_counts(df: pd.DataFrame):
     df = df.assign(lang_order = cat)
     df = df[df['lang'].isin(order[:50])]
     g = (ggplot(df) + geom_bar(aes(x='lang_order', fill='Grouping')) +
-        theme(text=element_text(family="Times New Roman"), axis_text_x=element_text(rotation=90, size=8), axis_title_x=element_blank()) + scale_y_log10() +
+        theme(axis_text_x=element_text(rotation=45, size=6, hjust=1), axis_title_x=element_blank()) + scale_y_log10() +
         ylab("Lemmata"))
     g.draw()
     g.save('bar.pdf', width=7.5, height=1.5)
@@ -54,6 +54,7 @@ def summary_table(df: pd.DataFrame, langs: dict[str, list[str]]):
 
 def main():
     df, langs = load_data()
+    plot_top_counts(df)
     summary_table(df, langs)
 
 if __name__ == "__main__":

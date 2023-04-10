@@ -121,6 +121,7 @@ def train(
     beam: Optional[int],
     eval_batches: int,
     eval_ct: int,
+    dropout: float,
     save: bool
 ):
     # save
@@ -140,7 +141,15 @@ def train(
         criterion = nn.NLLLoss(reduction="sum", ignore_index=PAD)
         optim = torch.optim.Adam(model.parameters(), lr=lr)
     else:
-        model = make_model(num_words, num_words, num_layers, emb_size, hidden_size, heads)
+        model = make_model(
+            src_vocab=num_words,
+            tgt_vocab=num_words,
+            N=num_layers,
+            d_model=emb_size,
+            d_ff=hidden_size,
+            h=heads,
+            dropout=dropout
+        )
         # criterion = nn.CrossEntropyLoss(reduction="sum", ignore_index=PAD)
         criterion = LabelSmoothing(size=num_words, padding_idx=PAD, smoothing=0.0)
         optim = torch.optim.Adam(model.parameters(), lr=lr, betas=(0.9, 0.98), eps=1e-9)
@@ -213,6 +222,7 @@ def main():
     parser.add_argument('-be', '--beam', dest='beam', type=int, default=None)
     parser.add_argument('-eb', '--eval-batches', dest='eval_batches', type=int, default=1)
     parser.add_argument('-ec', '--eval-ct', dest='eval_ct', type=int, default=100)
+    parser.add_argument('-d', '--dropout', dest='dropout', type=float, default=0.1)
     args = parser.parse_args()
 
     # check only pickles dir
@@ -234,7 +244,8 @@ def main():
         "beam": args.beam,
         "lang_labelling": label_type(args.file),
         "eval_batches": args.eval_batches,
-        "eval_ct": args.eval_ct
+        "eval_ct": args.eval_ct,
+        "dropout": args.dropout
     }
 
     # logging

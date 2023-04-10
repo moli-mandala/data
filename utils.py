@@ -51,5 +51,6 @@ change = {
     'Nk': 'Naikri',
     'Prj': 'Parji',
     'Sant': 'sa',
-    'Tu': 'Tulu'
+    'Tu': 'Tulu',
+    'Brah': 'Brahui'
 }
