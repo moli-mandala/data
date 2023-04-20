@@ -28,9 +28,9 @@ with open('errors.txt', 'w') as errors:
     form_count = 0
     result = []
 
-    # now do the same thing for non-CDIAL IA languages
+    # now do the same thing for non-CDIAL languages
     i = 0
-    for file in ['data/cdial/cdial.csv', 'data/munda/forms.csv'] + glob.glob("data/other/forms/*.csv"):
+    for file in ['data/cdial/cdial.csv', 'data/munda/forms.csv', 'data/dedr/dedr_new.csv', 'data/dedr/pdr.csv'] + glob.glob("data/other/forms/*.csv"):
         # get filename
         name = file.split('/')[-1].split('.')[0]
         print(name)
@@ -64,22 +64,6 @@ with open('errors.txt', 'w') as errors:
 
                         result.append([f'{i}', row[0], row[1], reformed if reformed else form, row[3], row[4], row[5], form, row[8 if 'cdial' in file else 1], row[6], row[7]])
                         i += 1
-
-    # dravidian languages
-    dravidian_entries = {}
-    for file in glob.glob("data/dedr/dedr.csv"):
-        with open(file, 'r') as fin:
-            read = csv.reader(fin, delimiter=',', quotechar="'", skipinitialspace=True)
-            for row in tqdm(read):
-                row = [x.strip(' "') for x in row]
-                form_count = 'd' + row[1]
-                if form_count not in dravidian_entries:
-                    dravidian_entries[form_count] = ''
-                if row[3] == 'PDr.':
-                    row[3] = 'PDr'
-                    dravidian_entries[form_count] = row[4]
-                row[3] = row[3].replace(' ', '')
-                result.append([f'dedr{row[0]}', row[3], form_count, row[4], row[5], '', '', row[4], 'd' + row[1], row[6] if row[6] != 'NULL' else '', 'dedr'])
 
     # write out all the forms
     with open('cldf/forms.csv', 'w') as fout:
@@ -165,10 +149,11 @@ with open('errors.txt', 'w') as errors:
                 cognates.writerow([row[0], 'PMu', row[1], row[3], 'rau'])
                 params.writerow(row)
 
-        for entry in dravidian_entries:
-            cognates.writerow([entry, 'PDr', dravidian_entries[entry], '', 'dedr'])
-            params.writerow([entry,  dravidian_entries[entry], '', '', etyma.get(entry, '')])
-
+        with open('data/dedr/params.csv', 'r') as f:
+            read = csv.reader(f)
+            for row in read:
+                cognates.writerow([row[0], 'PDr', row[1], row[3], 'krishnamurti'])
+                params.writerow(row)
 
 # ensure that all languages in forms.csv are also in languages.csv
 cldf_langs = set()

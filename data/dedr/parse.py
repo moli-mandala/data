@@ -16,11 +16,16 @@ TOTAL_PAGES = 514
 ERR = False
 
 # useful regexes
-langs = '(' + "|".join(sorted(list(abbrevs.keys()), key=lambda x: -len(x))) + r')\.?'
-regex = re.compile(r'(<i>|<b>|^)*' + langs + r'(([^\(\)\[\]]*?(\[.*?\]|\(.*?\)))*?[^\(\)\[\]]*?)(?=((<i>|<b>)*' + langs + r'|DED|DEN|</div>|$))')
+l = '(' + "|".join(sorted(list(abbrevs.keys()), key=lambda x: -len(x))) + r')'
+langs_regex = re.compile(r'(' + l + r')(\.|$)')
+l += r'\.?'
+regex = re.compile(r'(<i>|<b>|^)*' + l + r'(([^\(\)\[\]]*?(\[.*?\]|\(.*?\)))*?[^\(\)\[\]]*?)(?=((<i>|<b>)*' + l + r'|DED|DEN|</div>|$))')
 lemmata = re.compile(r'(<b>|^)(.*?)</b>(.*?)((?=<b>)|$)')
 formatter = re.compile(r'<.*?>')
 comma_split = re.compile(r',(?![^\(]*?\))')
+
+def is_bold_or_italic(tag):
+    return tag.name in ('b', 'i')
 
 # response caching logic
 soups = []
@@ -32,7 +37,7 @@ if os.path.exists('dedr.pickle'):
 print('Caching?', cached)
 
 # file
-fout = open('dedr2.csv', 'w')
+fout = open('dedr_new.csv', 'w')
 writer = csv.writer(fout)
 
 count = 1
@@ -59,7 +64,8 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
     # for each entry on the page, parse
     for entry in soup:
         # prettify
-        entry = BeautifulSoup('<number>' + entry, 'html5lib')
+        entry = entry.replace('\n', '')
+        entry = BeautifulSoup('<number>' + entry, 'html.parser')
 
         # only if this is an actual entry
         if entry.find('number'):
@@ -67,21 +73,67 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
             # store and get rid of number
             number = entry.find('number').text
             entry.find('number').decompose()
-            entry = str(entry) + '</div>'
             if ERR: print(entry)
+            entry = BeautifulSoup(str(entry), 'html.parser')
+            entry_str = str(entry)
 
-            # go through each span: one span has only one language tag at the start
-            for x in regex.findall(entry):
-                span = x[2]
-                lang = abbrevs[x[1].replace('.', '\.')]
-                if ERR: print('lang', x)
+            # find all bold+italic tags (includes languages)
+            langs = entry.find_all(is_bold_or_italic)
+            spans = []
+            start = 0
+
+            for lang in langs:
+
+                # append everything up to this tag to the previous tag
+                if spans:
+                    spans[-1][1] += entry_str[start:lang.sourcepos]
                 
+                # append this tag as a new span
+                # but it may not be a real language tag, in which case just expand previous
+                m = langs_regex.search(lang.text)
+                if m:
+                    spans.append([m.group(1), ""])
+                else:
+                    if spans:
+                        spans[-1][1] += str(lang)
+
+                # update start
+                start = lang.sourcepos + len(str(lang))
+
+            # tail of entry
+            if spans:
+                spans[-1][1] += entry_str[start:]
+
+            for span in spans:
+
+                lang = abbrevs[span[0].strip('.')]
+
                 # get every forms + gloss pairing (delineated by bold tags)
-                for y in lemmata.finditer(span):
+                rows = []
+                last_paren = False
+                for y in lemmata.finditer(span[1]):
                     if ERR: print('    lemma', y)
-                    forms = [form.strip() for form in comma_split.split(y.group(2))]
                     gloss = y.group(3).strip(' ;,./')
 
+                    if last_paren:
+                        rows[-1][3] += y.group(2) + gloss
+                        last_paren = rows[-1][3].count('(') > rows[-1][3].count(')')
+                        continue
+
+                    if y.group(2) in ['Voc.', 'n.', 'adj.', 'adv.', 'v.']:
+                        rows[-1][3] += y.group(2) + gloss
+                        last_paren = rows[-1][3].count('(') > rows[-1][3].count(')')
+                        continue
+
+                    rows.append([lang, 'd' + str(number), y.group(2), gloss, '', '', '', 'dedr'])
+
+                    if gloss.count('(') > gloss.count(')'):
+                        last_paren = True
+
+                    if ERR: print('        done with forms')
+                
+                for row in rows:
+                    forms = [form.strip() for form in comma_split.split(row[2])]
                     for form in forms:
                         if ERR: print('        form', form)
                         form = formatter.sub('', form).strip()
@@ -91,12 +143,13 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
                             continue
 
                         for altform in form.split('/'):
-                            writer.writerow([lang, number, altform.strip(), gloss, '', '', '', '', '', 'dedr'])
+                            new_row = row[::]
+                            new_row[2] = altform.strip()
+                            writer.writerow(new_row)
                             count += 1
 
-                    if ERR: print('        done with forms')
                 if ERR: print('    done with spans')
-            if ERR: print('done with lang')
+            
     
     if ERR: print('deleting')
     if not cached: del resp
