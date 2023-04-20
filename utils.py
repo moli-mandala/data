@@ -2,7 +2,8 @@
 mapping = {
     'patyal': 'cdial', 'thari': 'cdial', 'kvari': 'cdial', 'dhivehi': None, 'kholosi': None,
     'konkani': None, 'khetrani': None, 'vaagri': 'cdial', 'cdial': 'cdial', 'palula': 'liljegren',
-    'strand': 'strand', 'strand2': 'strand', 'strand3': 'strand', 'wadiyara': 'wadiyara'
+    'strand': 'strand', 'strand2': 'strand', 'strand3': 'strand', 'wadiyara': 'wadiyara',
+    'northern': 'northern'
 }
 
 # superscript forms of letters
@@ -52,5 +53,8 @@ change = {
     'Prj': 'Parji',
     'Sant': 'sa',
     'Tu': 'Tulu',
-    'Brah': 'Brahui'
+    'Brah': 'Brahui',
+    'Domaaki': 'D',
+    'Dras': 'dr',
+    'Gilgit': 'gil'
 }

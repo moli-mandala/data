@@ -71,7 +71,7 @@ print(ranks.most_common(10))
 
 with open('res.txt', 'w') as fout:
     okay = []
-    for i in exp.most_common(100):
+    for i in exp.most_common(1000):
         if len(i[0]) == 1: continue
         works = True
         s = set(i[0])
