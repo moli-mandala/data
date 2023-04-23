@@ -56,5 +56,7 @@ change = {
     'Brah': 'Brahui',
     'Domaaki': 'D',
     'Dras': 'dr',
-    'Gilgit': 'gil'
+    'Gilgit': 'gil',
+    'Punial': 'punl',
+    'Palas': 'pales'
 }
