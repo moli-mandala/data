@@ -144,24 +144,28 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
                     defs = []
                     words = []
 
+                    def append_to_words(cur, defs):
+                        if cur:
+                            for each in cur[0].split(','):
+                                definition = '; '.join([d[0] for d in defs]) if defs != [] else ''
+                                notes = '; '.join([d[1] for d in defs if d[1] != '']) if defs != [] else ''
+                                notes = cur[1] + ('; ' if (cur[1] and notes) else '') + notes
+                                words.append([each.strip(), definition, notes])
+
                     for form in forms:
                         if form.group(0).startswith('<i>'):
-                            if cur:
-                                for each in cur.split(','):
-                                    definition = '; '.join(defs) if defs != [] else ''
-                                    words.append([each.strip(), definition])
+                            append_to_words(cur, defs)
                             defs = []
-                            cur = form.group(2)
+                            cur = [form.group(2), form.group(4).strip(' -,;.')]
                         else:
-                            defs.append(form.group(3).strip())
+                            defs.append([form.group(3).strip(), form.group(4).strip(' -,;.')])
                     if cur:
-                        for each in cur.split(','):
-                            definition = '; '.join(defs) if defs != [] else ''
-                            words.append([each.strip(), definition])
+                        for each in cur[0].split(','):
+                            append_to_words(cur, defs)
 
                     # for each language on the stack, add this entry
                     for l in langs:
-                        for word, defn in words:
+                        for word, defn, notes in words:
 
                             if '°' in word and word != '°':
                                 old = word[:]
@@ -188,16 +192,16 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
                             oldest = oldest.replace('̆̄', '̄̆')
                             oldest = oldest.replace('̄̆', '̄̆')
                             if '̄̆' in oldest:
-                                words.append([oldest.replace('̄̆', '̄'), defn])
+                                words.append([oldest.replace('̄̆', '̄'), defn, notes])
                                 oldest = oldest.replace('̄̆', '')
                                 word = oldest
                             if '{' in oldest:
-                                words.append([re.sub(r'{.*?}', '', oldest), defn])
+                                words.append([re.sub(r'{.*?}', '', oldest), defn, notes])
                                 oldest = oldest.replace('{', '').replace('}', '')
                                 word = oldest
                             word = unicodedata.normalize('NFC', word)
                                     
-                            rows.append([l, number, word, defn, '', '', '', 'CDIAL', f'{number}.{subnum}'])
+                            rows.append([l, number, word, defn, '', '', notes, 'CDIAL', f'{number}.{subnum}'])
 
                     langs = []
     
