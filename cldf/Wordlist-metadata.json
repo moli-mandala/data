@@ -153,6 +153,7 @@
         },
         {
             "dc:conformsTo": "http://cldf.clld.org/v1.0/terms.rdf#ParameterTable",
+            "url": "parameters.csv",
             "tableSchema": {
                 "columns": [
                     {
@@ -166,10 +167,10 @@
                         "name": "Name"
                     },
                     {
-                        "datatype": "string",
-                        "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#concepticonReference",
-                        "valueUrl": "http://concepticon.clld.org/parameters/{Concepticon_ID}",
-                        "name": "Concepticon_ID"
+                        "name": "Language_ID",
+                        "required": true,
+                        "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#languageReference",
+                        "datatype": "string"
                     },
                     {
                         "datatype": "string",
@@ -184,48 +185,6 @@
                 ],
                 "primaryKey": [
                     "ID"
-                ]
-            },
-            "url": "parameters.csv"
-        },
-        {
-            "dc:conformsTo": "http://cldf.clld.org/v1.0/terms.rdf#CognateTable",
-            "url": "cognates.csv",
-            "tableSchema": {
-                "columns": [
-                    {
-                        "name": "Cognateset_ID",
-                        "datatype": "string",
-                        "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#cognatesetReference"
-                    },
-                    {
-                        "name": "Language_ID",
-                        "required": true,
-                        "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#languageReference",
-                        "datatype": "string"
-                    },
-                    {
-                        "name": "Form",
-                        "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#form",
-                        "datatype": "string"
-                    },
-                    {
-                        "name": "Description",
-                        "datatype": "string",
-                        "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#description"
-                    },
-                    {
-                        "name": "Source",
-                        "required": false,
-                        "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#source",
-                        "datatype": {
-                            "base": "string"
-                        },
-                        "separator": ";"
-                    }
-                ],
-                "primaryKey": [
-                    "Cognateset_ID"
                 ]
             }
         }

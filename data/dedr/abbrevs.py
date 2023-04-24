@@ -43,3 +43,17 @@ abbrevs = {
     'Apabhraṃśa': 'Ap',
     'Guj\.': 'G'
 }
+
+dialects = {
+    ('Su.', 'Kuwi'): 'Sunkarametta',
+    ('P.', 'Kuwi'): 'Bisamkatak (Parja Kondhs)'
+}
+
+refs = {
+    ('S.', 'Kuwi'): 'S-Kuwi',
+    ('F.', 'Kuwi'): 'F-Kuwi',
+    ('Isr.', 'Kuwi'): 'Isr-Kuwi',
+    ('Mah.', 'Kuwi'): 'Mah-Kuwi',
+    ('Ṭ.', 'Kuwi'): 'Ṭ-Kuwi',
+    ('Ḍ.', 'Kuwi'): 'Ḍ-Kuwi',
+}

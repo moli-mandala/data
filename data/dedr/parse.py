@@ -10,7 +10,7 @@ from collections import defaultdict
 from enum import Enum
 from tqdm import tqdm
 
-from abbrevs import abbrevs
+from abbrevs import abbrevs, refs, dialects
 
 TOTAL_PAGES = 514
 APPENDIX = 509
@@ -156,6 +156,12 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
                 for row in rows:
                     forms = [form.strip() for form in comma_split.split(row[2])]
                     row[3] = row[3].strip(';,./ ')
+
+                    # refs
+                    for ref in row[-2].split():
+                        if (ref, row[0]) in refs:
+                            row[-1] += '; ' + refs[(ref, row[0])]
+
                     for form in forms:
                         new_row = row[::]
 

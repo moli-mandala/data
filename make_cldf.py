@@ -94,15 +94,12 @@ with open('errors.txt', 'w') as errors:
             etyma[row[0]] = row[1]
 
     # finally, cognates (unused so far) and parameters
-    with open('cldf/cognates.csv', 'w') as f, open('cldf/parameters.csv', 'w') as g:
+    with open('cldf/parameters.csv', 'w') as g:
         
         mapping = {'cdial': 'cdial', 'extensions_ia': 'cdial', 'strand3': 'strand'}
 
-        cognates = csv.writer(f)
         params = csv.writer(g)
-
-        cognates.writerow(['Cognateset_ID', 'Language_ID', 'Form', 'Description', 'Source'])
-        params.writerow(['ID', 'Name', 'Concepticon_ID', 'Description', 'Etyma'])
+        params.writerow(['ID', 'Name', 'Language_ID', 'Description', 'Etyma'])
 
         with open('data/cdial/params.csv', 'r') as fin:
             read = csv.reader(fin)
@@ -120,8 +117,7 @@ with open('errors.txt', 'w') as errors:
                         errors.write(f'{name} {headword} {"?"} {"?"} {reformed}\n')
                         reformed = ''
                 
-                cognates.writerow([row[0], 'Indo-Aryan', reformed if reformed else headword, row[3], 'cdial'])
-                params.writerow([row[0], reformed if reformed else headword, '', row[3], etyma.get(row[0], '')])
+                params.writerow([row[0], reformed if reformed else headword, 'Indo-Aryan', row[3], etyma.get(row[0], '')])
 
         for file in glob.glob("data/other/params/*.csv"):
             # get filename
@@ -141,19 +137,18 @@ with open('errors.txt', 'w') as errors:
                             errors.write(f'{name} {row[2]} {"?"} {"?"} {reformed}\n')
                             reformed = ''
                         else: row[2] = reformed
-                    cognates.writerow(row)
-                    params.writerow([row[0], row[2], '', row[3], etyma.get(row[0], '')])
+                    params.writerow([row[0], row[2], row[1], row[3], etyma.get(row[0], '')])
 
         with open('data/munda/params.csv', 'r') as f:
             read = csv.reader(f)
             for row in read:
-                cognates.writerow([row[0], 'PMu', row[1], row[3], 'rau'])
+                row[2] = 'PMu'
                 params.writerow(row)
 
         with open('data/dedr/params.csv', 'r') as f:
             read = csv.reader(f)
             for row in read:
-                cognates.writerow([row[0], 'PDr', row[1], row[3], 'krishnamurti'])
+                row[2] = 'PDr'
                 params.writerow(row)
 
 # ensure that all languages in forms.csv are also in languages.csv
