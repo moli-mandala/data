@@ -13,6 +13,7 @@ from tqdm import tqdm
 from abbrevs import abbrevs
 
 TOTAL_PAGES = 514
+APPENDIX = 509
 ERR = False
 
 # useful regexes
@@ -71,8 +72,11 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
         if entry.find('number'):
 
             # store and get rid of number
-            number = entry.find('number').text
+            number: str = entry.find('number').text
             entry.find('number').decompose()
+            if page >= APPENDIX:
+                number = 'a' + number
+
             if ERR: print(entry)
             entry = BeautifulSoup(str(entry), 'html.parser')
             entry_str = str(entry)
