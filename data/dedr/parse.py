@@ -126,6 +126,8 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
                         continue
                     
                     row = [lang, 'd' + str(number), y.group(2).strip(), gloss, '', '', '', 'dedr']
+                    row[2] = row[2].replace('</i>', '').replace('</b>', '').replace('<i>', '').replace('<b>', '')
+                    row[2] = row[2].strip()
 
                     # extract parentheticals from previous row--they are sources or notes about this one
                     if rows:
@@ -151,15 +153,22 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
                     forms = [form.strip() for form in comma_split.split(row[2])]
                     row[3] = row[3].strip(';,./ ')
                     for form in forms:
+                        new_row = row[::]
+
                         if ERR: print('        form', form)
                         form = formatter.sub('', form).strip()
+
+                        # extract parentheticals from this row
+                        if form.startswith('('):
+                            paren = form.find(')')
+                            new_row[6] += (' ' if new_row[6] else '') + form[:paren].strip(' ()')
+                            form = form[paren + 1:].strip()
 
                         # handle parse fails for Turner cognates
                         if lang == 'OIA' and (form == '' or 'no.' in form):
                             continue
 
                         for altform in form.split('/'):
-                            new_row = row[::]
                             new_row[2] = altform.strip()
                             writer.writerow(new_row)
                             count += 1
