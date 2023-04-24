@@ -25,7 +25,7 @@ formatter = re.compile(r'<.*?>')
 comma_split = re.compile(r',(?![^\(]*?\))')
 
 def is_bold_or_italic(tag):
-    return tag.name in ('b', 'i') and tag.parent.name not in ('b', 'i')
+    return tag.name in ('b', 'i')
 
 # response caching logic
 soups = []
