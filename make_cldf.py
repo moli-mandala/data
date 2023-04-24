@@ -46,8 +46,9 @@ with open('errors.txt', 'w') as errors:
                     if '.' in row[1]:
                         row[6] = row[1]
                         row[1] = row[1].split('.')[0]
-
-                    for form in row[2].split(','):
+                    
+                    forms = list(row[2].split(',')) if 'dedr' not in file else [row[2]]
+                    for form in forms:
                         reformed = form
 
                         # convert to Samopriyan system
