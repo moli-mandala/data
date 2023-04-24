@@ -25,7 +25,7 @@ formatter = re.compile(r'<.*?>')
 comma_split = re.compile(r',(?![^\(]*?\))')
 
 def is_bold_or_italic(tag):
-    return tag.name in ('b', 'i')
+    return tag.name in ('b', 'i') and tag.parent.name not in ('b', 'i')
 
 # response caching logic
 soups = []
@@ -113,7 +113,7 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
                 last_paren = False
                 for y in lemmata.finditer(span[1]):
                     if ERR: print('    lemma', y)
-                    gloss = y.group(3).strip(' ;,./')
+                    gloss = y.group(3).strip(' ')
 
                     if last_paren:
                         rows[-1][3] += y.group(2) + gloss
@@ -124,8 +124,23 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
                         rows[-1][3] += y.group(2) + gloss
                         last_paren = rows[-1][3].count('(') > rows[-1][3].count(')')
                         continue
+                    
+                    row = [lang, 'd' + str(number), y.group(2).strip(), gloss, '', '', '', 'dedr']
 
-                    rows.append([lang, 'd' + str(number), y.group(2), gloss, '', '', '', 'dedr'])
+                    # extract parentheticals from previous row--they are sources or notes about this one
+                    if rows:
+                        if rows[-1][3].endswith(')'):
+                            paren = rows[-1][3].rfind('(')
+                            row[6] = rows[-1][3][paren:][1:-1]
+                            rows[-1][3] = rows[-1][3][:paren]
+                    
+                    # extract parentheticals from this row
+                    if row[2].startswith('('):
+                        paren = row[2].find(')')
+                        row[6] += (' ' if row[6] else '') + row[2][:paren].strip(' ()')
+                        row[2] = row[2][paren + 1:].strip()
+
+                    rows.append(row)
 
                     if gloss.count('(') > gloss.count(')'):
                         last_paren = True
@@ -134,6 +149,7 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
                 
                 for row in rows:
                     forms = [form.strip() for form in comma_split.split(row[2])]
+                    row[3] = row[3].strip(';,./ ')
                     for form in forms:
                         if ERR: print('        form', form)
                         form = formatter.sub('', form).strip()
