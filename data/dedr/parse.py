@@ -153,7 +153,12 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
 
                     if ERR: print('        done with forms')
                 
-                for row in rows:
+                for pos, row in enumerate(rows):
+                    # fix Tamil (-pp-, -tt-)
+                    if row[0] == 'Tam' and row[2] == '' and row[6] == '-pp-, -tt-':
+                        row[2] = rows[pos - 1][2].split(' (')[0] + ' (-pp-, -tt-)'
+                        row[6] = ""
+
                     forms = [form.strip() for form in comma_split.split(row[2])]
                     row[3] = row[3].strip(';,./ ')
 
@@ -179,7 +184,7 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
                             continue
 
                         for altform in form.split('/'):
-                            new_row[2] = altform.strip()
+                            new_row[2] = altform.strip(" ;.,/")
                             writer.writerow(new_row)
                             count += 1
 
