@@ -44,17 +44,22 @@ def plot_top_counts(df: pd.DataFrame):
     g.save('figures/bar.pdf', width=7.5, height=1.5)
 
 def summary_table(df: pd.DataFrame, langs: dict[str, list[str]]):
-    print('Total:', len(df))
-    print(df.groupby(['Grouping']).count())
-    print(df.groupby(['cogset', 'Grouping']).count().groupby(['Grouping']).count())
-    print(len(df.groupby(['cogset']).count()))
-    l = [categorise(lang[5]) for lang in langs.values()]
-    print(Counter(l))
-    print(len(l))
+    total_lemmata = len(df)
+    lemmata_counts = df.groupby(['Grouping']).count()['lang']
+    cols = lemmata_counts.index.tolist()
+    lemmata_counts = {cols[i]: x for i, x in enumerate(lemmata_counts)}
+    cogset_counts = {cols[i]: x for i, x in enumerate(df.groupby(['cogset', 'Grouping']).count().groupby(['Grouping']).count()['lang'])}
+    total_cogsets = len(df.groupby(['cogset']).count())
+    lang_counts = Counter([categorise(lang[5]) for lang in langs.values()])
+
+    for lang in lang_counts:
+        print(f"{lang:<15} & {lang_counts[lang]:>10} & {cogset_counts[lang]:>10} & {lemmata_counts[lang]:>10} \\\\")
+    t = '\\textbf{Total}'
+    print(f"\\midrule\n{t:<15} & {sum(lang_counts.values()):>10} & {total_cogsets:>10} & {total_lemmata:>10} \\\\")
 
 def main():
     df, langs = load_data()
-    plot_top_counts(df)
+    # plot_top_counts(df)
     summary_table(df, langs)
 
 if __name__ == "__main__":

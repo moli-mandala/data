@@ -160,7 +160,7 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
                     # refs
                     for ref in row[-2].split():
                         if (ref, row[0]) in refs:
-                            row[-1] += '; ' + refs[(ref, row[0])]
+                            row[-1] += ';' + refs[(ref, row[0])]
 
                     for form in forms:
                         new_row = row[::]
