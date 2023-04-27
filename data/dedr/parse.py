@@ -17,11 +17,11 @@ APPENDIX = 509
 ERR = False
 
 # useful regexes
-l = '(' + "|".join(sorted(list(abbrevs.keys()), key=lambda x: -len(x))) + r')'
+l = '(' + "|".join(sorted([x.replace('(', '\(').replace(')', '\)') for x in abbrevs.keys()], key=lambda x: -len(x))) + r')'
 langs_regex = re.compile(r'(' + l + r')(\.|$)')
 l += r'\.?'
 regex = re.compile(r'(<i>|<b>|^)*' + l + r'(([^\(\)\[\]]*?(\[.*?\]|\(.*?\)))*?[^\(\)\[\]]*?)(?=((<i>|<b>)*' + l + r'|DED|DEN|</div>|$))')
-lemmata = re.compile(r'(<b>|^)(.*?)</b>(.*?)((?=<b>)|$)')
+lemmata = re.compile(r'(<b>|^)(.*?)(</b>|$)(.*?)((?=<b>)|$)')
 formatter = re.compile(r'<.*?>')
 comma_split = re.compile(r',(?![^\(]*?\))')
 
@@ -109,15 +109,15 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
                 spans[-1][1] += entry_str[start:]
 
             for span in spans:
-
                 lang = abbrevs[span[0].strip('.')]
+                span[1] = span[1].strip()
 
                 # get every forms + gloss pairing (delineated by bold tags)
                 rows = []
                 last_paren = False
                 for y in lemmata.finditer(span[1]):
                     if ERR: print('    lemma', y)
-                    gloss = y.group(3).strip(' ')
+                    gloss = y.group(4).strip(' ')
 
                     if last_paren:
                         rows[-1][3] += y.group(2) + gloss

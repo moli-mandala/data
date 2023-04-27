@@ -14,6 +14,7 @@ abbrevs = {
     'Kor': 'Koraga',
     'Te': 'Telugu',
     'Kol': 'Kolami',
+    'Nk. (Ch.)': 'Naiki',
     'Nk': 'Naikri',
     'Pa': 'Parji',
     'Ga': 'Gadaba',
