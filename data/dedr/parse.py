@@ -10,7 +10,7 @@ from collections import defaultdict
 from enum import Enum
 from tqdm import tqdm
 
-from abbrevs import abbrevs, refs, dialects
+from abbrevs import abbrevs, dialects, replacements
 
 TOTAL_PAGES = 514
 APPENDIX = 509
@@ -26,7 +26,7 @@ formatter = re.compile(r'<.*?>')
 comma_split = re.compile(r',(?![^\(]*?\))')
 
 def is_bold_or_italic(tag):
-    return tag.name in ('b', 'i') and tag.parent.name in ('b', 'i')
+    return tag.name in ('b', 'i') and not (any([x.name in ('b', 'i') for x in tag.children]))
 
 # response caching logic
 soups = []
@@ -162,19 +162,24 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
                     forms = [form.strip() for form in comma_split.split(row[2])]
                     row[3] = row[3].strip(';,./ ')
 
-                    # refs
+                    for replacement in replacements:
+                        row[-2] = row[-2].replace(replacement[0], replacement[1])
+
+                    # refs and dialects
                     dial_forms = []
+                    row[-2] = row[-2].replace(';', ' ')
                     for ref in row[-2].split():
-                        if (ref, row[0]) in refs:
-                            row[-1] += ';' + refs[(ref, row[0])]
                         if (ref, row[0]) in dialects:
-                            dial = dialects[(ref, row[0])]
+                            ref, dial = dialects[(ref, row[0])]
                             if dial:
                                 dial_forms.append(dial)
+                            if ref:
+                                row[-1] += ';' + ref
 
                     if not dial_forms:
                         dial_forms.append(row[0])
 
+                    # add forms for each dialect
                     for dial in dial_forms:
                         for form in forms:
                             new_row = row[::]

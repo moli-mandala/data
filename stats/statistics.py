@@ -59,7 +59,7 @@ def summary_table(df: pd.DataFrame, langs: dict[str, list[str]]):
 
 def main():
     df, langs = load_data()
-    # plot_top_counts(df)
+    plot_top_counts(df)
     summary_table(df, langs)
 
 if __name__ == "__main__":
