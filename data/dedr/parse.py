@@ -163,30 +163,40 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
                     row[3] = row[3].strip(';,./ ')
 
                     # refs
+                    dial_forms = []
                     for ref in row[-2].split():
                         if (ref, row[0]) in refs:
                             row[-1] += ';' + refs[(ref, row[0])]
+                        if (ref, row[0]) in dialects:
+                            dial = dialects[(ref, row[0])]
+                            if dial:
+                                dial_forms.append(dial)
 
-                    for form in forms:
-                        new_row = row[::]
+                    if not dial_forms:
+                        dial_forms.append(row[0])
 
-                        if ERR: print('        form', form)
-                        form = formatter.sub('', form).strip()
+                    for dial in dial_forms:
+                        for form in forms:
+                            new_row = row[::]
+                            new_row[0] = dial
 
-                        # extract parentheticals from this row
-                        if form.startswith('('):
-                            paren = form.find(')')
-                            new_row[6] += (' ' if new_row[6] else '') + form[:paren].strip(' ()')
-                            form = form[paren + 1:].strip()
+                            if ERR: print('        form', form)
+                            form = formatter.sub('', form).strip()
 
-                        # handle parse fails for Turner cognates
-                        if lang == 'OIA' and (form == '' or 'no.' in form):
-                            continue
+                            # extract parentheticals from this row
+                            if form.startswith('('):
+                                paren = form.find(')')
+                                new_row[6] += (' ' if new_row[6] else '') + form[:paren].strip(' ()')
+                                form = form[paren + 1:].strip()
 
-                        for altform in form.split('/'):
-                            new_row[2] = altform.strip(" ;.,/")
-                            writer.writerow(new_row)
-                            count += 1
+                            # handle parse fails for Turner cognates
+                            if lang == 'OIA' and (form == '' or 'no.' in form):
+                                continue
+
+                            for altform in form.split('/'):
+                                new_row[2] = altform.strip(" ;.,/")
+                                writer.writerow(new_row)
+                                count += 1
 
                 if ERR: print('    done with spans')
             
