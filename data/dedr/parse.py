@@ -43,6 +43,8 @@ writer = csv.writer(fout)
 
 count = 1
 
+ref_ct = defaultdict(int)
+
 # go through each entire digitised page
 for page in tqdm(range(1, TOTAL_PAGES + 1)):
     if ERR: print(page)
@@ -175,6 +177,8 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
                                 dial_forms.append(dial)
                             if ref:
                                 row[-1] += ';' + ref
+                        else:
+                            ref_ct[(ref, row[0])] += 1
 
                     if not dial_forms:
                         dial_forms.append(row[0])
@@ -208,6 +212,10 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
     if ERR: print('deleting')
     if not cached: del resp
     if ERR: print('deleted')
+
+# print top values in ref_ct
+for key in sorted(ref_ct, key=lambda x: ref_ct[x], reverse=True)[:100]:
+    print(key, ref_ct[key])
 
 # close file
 fout.close()

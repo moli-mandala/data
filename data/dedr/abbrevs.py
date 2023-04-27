@@ -74,11 +74,13 @@ dialects = {
     ('LuS.', 'Gondi'):                      [None, 'chanda'],
     ('Tr.', 'Gondi'):                       ['Tr-Gondi', 'betul'],
     ('W.', 'Gondi'):                        ['W-Gondi', 'mandla'],
+    ('mand.', 'Gondi'):                     [None, 'mandla'],
     ('M.', 'Gondi'):                        ['M-Gondi', 'maria'],
     ('L.', 'Gondi'):                        ['L-Gondi', 'maria'],
     ('SR.', 'Gondi'):                       ['SR-Gondi', 'adil'],
     ('A.', 'Gondi'):                        ['A-Gondi', 'adil'],
     ('KoyaT.', 'Gondi'):                    ['KoyaT-Gondi', 'gommu'],
+    ('Hislop', 'Gondi'):                    ['Hislop-Drav', None],
 
     ('LuS.', 'Gondi'):                      ['LuS-Gondi', None],
     ('<i>DGG</i>', 'Gondi'):                ['DGG-Gondi', None],
@@ -112,8 +114,10 @@ dialects = {
     ('SR', 'Kolami'):                       ['SR-Kolami', None],
     ('Pat.', 'Kolami'):                     ['Pat-Kolami', None],
     ('Pat.,', 'Kolami'):                    ['Pat-Kolami', None],
+    ('Hislop', 'Kolami'):                    ['Hislop-Drav', None],
     # Konda
     ('BB', 'Konda'):                        ['BB-Konda', None],
+    ('Sova', 'Konda'):                      [None, 'sova'],
     # Koraga
     ('O.', 'Koraga'):                       [None, 'onti'],
     ('T.', 'Koraga'):                       [None, 'tappu'],
@@ -150,7 +154,7 @@ dialects = {
     ('K.', 'Telugu'):                       ['K-Telugu', None],
     ('also', 'Telugu'):                     ['K-also-Telugu', None],
     ('B.', 'Telugu'):                       ['B-Telugu', None],
-    ('inscr', 'Telugu'):                    ['Inscr1-Telugu', None],
+    ('inscr.', 'Telugu'):                    ['Inscr1-Telugu', None],
     ('Inscr.', 'Telugu'):                   ['Inscr-Telugu', None],
     ('<i>VPK</i>', 'Telugu'):               ['VPK-Telugu', None],
     ('Merolu', 'Telugu'):                   ['Merolu-Telugu', 'merolu'],
