@@ -106,6 +106,8 @@ dialects = {
     ('Shanmugam', 'Kodagu'):                ['Shanmugam-Kodagu', None],
     # Kolami
     ('Kin.', 'Kolami'):                     [None, 'kinwat'],
+    ('P.', 'Kolami'):                       [None, 'pandh'],
+    ('Wagh.', 'Kolami'):                    [None, 'wagh'],
     ('SR.', 'Kolami'):                      ['SR-Kolami', None],
     ('SR', 'Kolami'):                       ['SR-Kolami', None],
     ('Pat.', 'Kolami'):                     ['Pat-Kolami', None],
@@ -120,6 +122,10 @@ dialects = {
     ('K.', 'Kui'):                          ['K-Kui', None],
     # Kurux
     ('Hahn', 'Kurux'):                      ['Hahn-Kurux', None],
+    ('Grignard', 'Kurux'):                  ['Grignard-Kurux', None],
+    ('Bleses', 'Kurux'):                    ['Bleses-Kurux', None],
+    ('Tiga', 'Kurux'):                      ['Tiga-Kurux', None],
+    ('BB', 'Kurux'):                        ['Mirdha-Kurux', 'mirdha'],
     # Kuwi
     ('Su.', 'Kuwi'):                        [None, 'sunkar'],
     ('P.', 'Kuwi'):                         [None, 'bisam'],
@@ -133,12 +139,21 @@ dialects = {
     ('Tiyya', 'Mal'):                       ['Tiyya-Mal', 'tiyya'],
     # Tamil
     ('Tinn.', 'Tam'):                       ['Tinn-Tam', 'tinn'],
+    ('Koll.', 'Tam'):                       ['Koll-Tam', 'kollimalai'],
+    ('NTD', 'Tam'):                         ['Koll-Tam', 'nancil'],
+    ('SATD', 'Tam'):                        ['Koll-Tam', 'southarcot'],
+    ('TATD', 'Tam'):                        ['Koll-Tam', 'thanjavur'],
+    ('STD', 'Tam'):                         ['Koll-Tam', 'salem'],
+    ('CTD', 'Tam'):                         ['Koll-Tam', 'coimbatore'],
+    ('RS', 'Tam'):                          ['Koll-Tam', 'lowerperak'],
     # Telugu
     ('K.', 'Telugu'):                       ['K-Telugu', None],
     ('also', 'Telugu'):                     ['K-also-Telugu', None],
     ('B.', 'Telugu'):                       ['B-Telugu', None],
+    ('inscr', 'Telugu'):                    ['Inscr1-Telugu', None],
     ('Inscr.', 'Telugu'):                   ['Inscr-Telugu', None],
     ('<i>VPK</i>', 'Telugu'):               ['VPK-Telugu', None],
+    ('Merolu', 'Telugu'):                   ['Merolu-Telugu', 'merolu'],
     # Tulu
     ('B-K.', 'Tulu'):                       ['B-K-Tulu', None],
 }

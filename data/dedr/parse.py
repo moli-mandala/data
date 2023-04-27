@@ -163,12 +163,12 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
                     row[3] = row[3].strip(';,./ ')
 
                     for replacement in replacements:
-                        row[-2] = row[-2].replace(replacement[0], replacement[1])
+                        row[-2] = row[-2].replace(replacement, replacements[replacement])
 
                     # refs and dialects
                     dial_forms = []
-                    row[-2] = row[-2].replace(';', ' ')
                     for ref in row[-2].split():
+                        ref = ref.strip(' ,;')
                         if (ref, row[0]) in dialects:
                             ref, dial = dialects[(ref, row[0])]
                             if dial:
@@ -204,7 +204,6 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
                                 count += 1
 
                 if ERR: print('    done with spans')
-            
     
     if ERR: print('deleting')
     if not cached: del resp
