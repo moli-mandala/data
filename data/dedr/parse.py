@@ -10,7 +10,7 @@ from collections import defaultdict
 from enum import Enum
 from tqdm import tqdm
 
-from abbrevs import abbrevs, dialects, replacements
+from abbrevs import abbrevs, dialects, replacements, fixes
 
 TOTAL_PAGES = 514
 APPENDIX = 509
@@ -80,8 +80,15 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
                 number = 'a' + number
 
             if ERR: print(entry)
-            entry = BeautifulSoup(str(entry), 'html.parser')
-            entry_str = str(entry)
+            entry_str = str(entry).split(' / ')
+            if len(entry_str) == 1:
+                entry_str = entry_str[0]
+            else:
+                entry_str[1] = ' / '.join(entry_str[1:])
+                for f in sorted(fixes, key=lambda x: -len(x)):
+                    entry_str[1] = entry_str[1].replace(f, f'<b><i>{f}</i></b>')
+                entry_str = ' / '.join(entry_str)
+            entry = BeautifulSoup(entry_str, 'html.parser')
 
             # find all bold+italic tags (includes languages)
             langs = entry.find_all(is_bold_or_italic)
@@ -119,7 +126,7 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
                 last_paren = False
                 for y in lemmata.finditer(span[1]):
                     if ERR: print('    lemma', y)
-                    gloss = y.group(4).strip(' ')
+                    gloss = y.group(4).strip(' ').split('\t')[0]
 
                     if last_paren:
                         rows[-1][3] += y.group(2) + gloss
@@ -204,7 +211,8 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
 
                             for altform in form.split('/'):
                                 new_row[2] = altform.strip(" ;.,/")
-                                writer.writerow(new_row)
+                                if new_row[2]:
+                                    writer.writerow(new_row)
                                 count += 1
 
                 if ERR: print('    done with spans')

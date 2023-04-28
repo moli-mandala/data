@@ -1,3 +1,8 @@
+fixes = [
+    'Skt.', 'Pkt.', 'Panj.', 'OMar.', 'Pali', 'H.', 'Apabhraṃśa', 'Guj.',
+    'O.', 'Or.', 'Nahali', 'Mar.', 'Beng.', 'Halbi', 'Nep.'
+]
+
 abbrevs = {
     'Ta': 'Tam',
     'Ma': 'Mal',
@@ -34,15 +39,17 @@ abbrevs = {
     'CDIAL': 'OIA',
     'Pali': 'Pa',
     'Mar': 'M',
-    'H\.': 'H',
+    'H': 'H',
     'Beng': 'B',
     'Pkt': 'Pk',
     'Halbi': 'hal',
-    'O\.': 'Or',
-    'Or\.': 'Or',
+    'O': 'Or',
+    'Or': 'Or',
     'Nahali': 'Ni',
     'Apabhraṃśa': 'Ap',
-    'Guj\.': 'G'
+    'Guj': 'G',
+    'OMar': 'OM',
+    'Nep': 'N',
 }
 
 replacements = {
@@ -51,6 +58,8 @@ replacements = {
 }
 
 dialects = {
+    # Betta Kurumba
+    ('LSB', 'BettaKurumba'):                ['LSB-BettaKurumba', None],
     # Gadaba
     ('P.', 'Gadaba'):                       [None, 'pottangi'],
     ('Oll.', 'Gadaba'):                     ['Oll-Gadaba', None],
@@ -81,9 +90,11 @@ dialects = {
     ('A.', 'Gondi'):                        ['A-Gondi', 'adil'],
     ('KoyaT.', 'Gondi'):                    ['KoyaT-Gondi', 'gommu'],
     ('Hislop', 'Gondi'):                    ['Hislop-Drav', None],
-
     ('LuS.', 'Gondi'):                      ['LuS-Gondi', None],
     ('<i>DGG</i>', 'Gondi'):                ['DGG-Gondi', None],
+    # Irula
+    ('Z.', 'Irula'):                        ['Z-Irula;Z2-Irula', None],
+    ('Zvelebil', 'Irula'):                  ['Zvelebil1980-Irula', None],
     # Kannada
     ('Hal.', 'Kannada'):                    ['Hal-Kannada', 'halakki'],
     ('Hav.', 'Kannada'):                    ['Hav-Kannada', 'havyaka'],
@@ -95,11 +106,11 @@ dialects = {
     ('Bark.', 'Kannada'):                   ['Bark-Kannada', 'barkur'],
     ('Tipt.', 'Kannada'):                   ['Tipt-Kannada', 'tiptur'],
     ('Coorg', 'Kannada'):                   ['Coorg-Kannada', 'coorg'],
+    ('Kuruba', 'Kannada'):                  [None, 'coorg'],
     ('Rabakavi', 'Kannada'):                ['Rabakavi-Kannada', 'rabakavi'],
     ('Sholiga', 'Kannada'):                 ['Sholiga-Kannada', 'Sholaga'],
     ('Badaga', 'Kannada'):                  ['Badaga-Kannada', 'Badaga'],
     ('Hock.', 'Kannada'):                   ['Hock-Kannada', 'Badaga'],
-    
     ('Kitt.', 'Kannada'):                   ['Kitt-Kannada', None],
     ('K.<super>2</super>', 'Kannada'):      ['K2-Kannada', None],
     ('UNR', 'Kannada'):                     ['UNR-Kannada', None],
@@ -141,6 +152,8 @@ dialects = {
     ('Ḍ.', 'Kuwi'):                         ['Ḍ-Kuwi', None],
     # Malayalam
     ('Tiyya', 'Mal'):                       ['Tiyya-Mal', 'tiyya'],
+    ('Kauṭ.', 'Mal'):                       ['Kauṭ-Mal', 'OMal'],
+    ('Menon', 'Mal'):                       ['Menon-Mal', 'OMal'],
     # Tamil
     ('Tinn.', 'Tam'):                       ['Tinn-Tam', 'tinn'],
     ('Koll.', 'Tam'):                       ['Koll-Tam', 'kollimalai'],
@@ -149,15 +162,28 @@ dialects = {
     ('TATD', 'Tam'):                        ['Koll-Tam', 'thanjavur'],
     ('STD', 'Tam'):                         ['Koll-Tam', 'salem'],
     ('CTD', 'Tam'):                         ['Koll-Tam', 'coimbatore'],
+    ('Coimbatore', 'Tam'):                  [None, 'coimbatore'],
     ('RS', 'Tam'):                          ['Koll-Tam', 'lowerperak'],
+    ('PR', 'Tam'):                          ['PR-Tam', None],
+    ('Devanesan', 'Tam'):                   ['Devanesan-Tam', None],
+    ('PPTI', 'Tam'):                        ['PPTI-Tam', None],
+    ('PN', 'Tam'):                          ['PN-Tam', None],
+    ('Ag.', 'Tam'):                         ['Ag-Tam', 'nanv'],
+    ('Andronov', 'Tam'):                    ['Andronov-Tam', None],
+    ('Annamalai', 'Tam'):                   ['Annamalai-Tam', None],
+    ('Ramnad', 'Tam'):                      [None, 'ramnad'],
+    ('Asher-Radhakrishnan', 'Tam'):         ['Asher-Radhakrishnan-Tam', None],
     # Telugu
     ('K.', 'Telugu'):                       ['K-Telugu', None],
     ('also', 'Telugu'):                     ['K-also-Telugu', None],
     ('B.', 'Telugu'):                       ['B-Telugu', None],
-    ('inscr.', 'Telugu'):                    ['Inscr1-Telugu', None],
-    ('Inscr.', 'Telugu'):                   ['Inscr-Telugu', None],
+    ('inscr.', 'Telugu'):                   ['Inscr1-Telugu', 'OTelugu'],
+    ('Inscr.', 'Telugu'):                   ['Inscr-Telugu', 'OTelugu'],
+    ('Inscr.<super>2</super>', 'Telugu'):   ['Inscr2-Telugu', 'OTelugu'],
     ('<i>VPK</i>', 'Telugu'):               ['VPK-Telugu', None],
     ('Merolu', 'Telugu'):                   ['Merolu-Telugu', 'merolu'],
+    # Toda
+    ('Sak.', 'Toda'):                       ['Sak-Toda', None],
     # Tulu
     ('B-K.', 'Tulu'):                       ['B-K-Tulu', None],
 }
