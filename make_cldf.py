@@ -114,7 +114,7 @@ with open('errors.txt', 'w') as errors:
                 if '˚' not in headword:
                     reformed = convertors['cdial'](headword.strip('-123456,;'), column='IPA').replace(' ', '').replace('#', ' ')
                     if '�' in reformed:
-                        errors.write(f'{name} {headword} {"?"} {"?"} {reformed}\n')
+                        errors.write(f'{row[2]} {headword} {"?"} {"?"} {reformed}\n')
                         reformed = ''
                 
                 params.writerow([row[0], reformed if reformed else headword, 'Indo-Aryan', row[3], etyma.get(row[0], '')])
