@@ -20,5 +20,5 @@ with open('rau_2019.csv', 'r') as f, open('params.csv', 'w') as p, open('forms.c
             if not entry.endswith('_form') or 'mkcd' in entry: continue
             if row[entry] == '—': continue
             lang = entry.split('_')[0]
-            source = row[f'{lang}_source'].replace('.', '[') + ']' if '.' in row[f'{lang}_source'] else row[f'{lang}_source']
+            source = row[f'{lang}_source'].replace('.', ':') if '.' in row[f'{lang}_source'] else row[f'{lang}_source']
             forms.writerow([lang, f'm{num}', row[entry], row['gloss'], '', '', '', source])
