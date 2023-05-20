@@ -7,3 +7,5 @@ Format for the CSVs:
 - IPA
 - Notes
 - Source
+
+\d+.*?[ɦh]\n

@@ -3,7 +3,7 @@ mapping = {
     'patyal': 'cdial', 'thari': 'cdial', 'kvari': 'cdial', 'dhivehi': None, 'kholosi': None,
     'konkani': None, 'khetrani': None, 'vaagri': 'cdial', 'cdial': 'cdial', 'palula': 'liljegren',
     'strand': 'strand', 'strand2': 'strand', 'strand3': 'strand', 'wadiyara': 'wadiyara',
-    'northern': 'northern', 'toulmin': 'toulmin', 'chattisgarhi': 'chattisgarhi'
+    'northern': 'northern', 'toulmin': 'toulmin', 'chattisgarhi': 'chattisgarhi', 'rajasthani': 'rajasthani'
 }
 
 # superscript forms of letters
