@@ -44,7 +44,7 @@ lects = {
         'k': 'Kherwa',
         'N': 'Bagra',
         'F': 'Falna',
-        'B': 'Bhagatpura',
+        'B': 'Bhagatpur',
         'A': 'Badagaon',
         'P': 'Chalkoi',
         'h': None
@@ -133,7 +133,10 @@ for file in lects:
             
             for dialect in dialects:
                 if lects[file][dialect] == None: continue
-                rows.append((file + '_' + lects[file][dialect].lower(), '', lemma, gloss, '', lemma, '', file))
+                lang = file + '_' + lects[file][dialect].lower()
+                if file == 'marwari' and dialect in ['A', 'B', 'P']:
+                    lang = 'dhundari_' + lects['dhundari'][dialect].lower()
+                rows.append((lang, '', lemma, gloss, '', lemma, '', file))
 
 rows = list(set(rows))
 rows.sort(key=lambda x: (x[3], x[2]))
