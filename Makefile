@@ -1,9 +1,12 @@
-parse_punjabi:
+punjabi:
 	cd data/other/forms/raw_data && python old_punjabi.py && mv old_punjabi.csv ../20230521-old_punjabi.csv && cd ../../../..
 
-make_cldf:
+cldf:
 	python make_cldf.py
 
-parse: parse_punjabi make_cldf
+ia:
+	cd data/cdial && python parse.py && cd ../..
+
+parse: cldf ia
 
 all: parse

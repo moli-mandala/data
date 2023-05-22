@@ -82,7 +82,7 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
             for lemma in lemmas:
                 rows.append(['Indo-Aryan', number, lemma.text, '', '', '', '', 'CDIAL', ''])
             if number not in done:
-                params.append([number, lemmas[0].text, '', data[0], ''])
+                params.append([number, lemmas[0].text, '', str(entry).split('<br/>')[0], ''])
             done.add(number)
 
             # ignore headword from rest of parsing; if no other reflexes ignore this entry
@@ -204,7 +204,7 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
                                 word = oldest
                             word = unicodedata.normalize('NFC', word)
                                     
-                            rows.append([l, number, word, defn, '', '', notes, 'CDIAL', f'{number}.{subnum}' if info is None else f'{info}'])
+                            rows.append([l, number, word, defn, '', '', notes, 'CDIAL', f'{number}.{subnum}' if info is None else f'{subnum}: {info}'])
 
                     langs = []
     
