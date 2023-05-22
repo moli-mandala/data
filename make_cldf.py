@@ -1,4 +1,3 @@
-import json
 import csv
 import unidecode
 import re
@@ -6,7 +5,8 @@ import glob
 from segments.tokenizer import Tokenizer, Profile
 import unicodedata
 from tqdm import tqdm
-from collections import Counter
+import os
+from copy import deepcopy
 
 from utils import mapping, superscript, change
 
@@ -25,77 +25,127 @@ lang_set = set()
 param_set = set()
 included_params = set()
 
-# write out forms.csv
-with open("errors.txt", "w") as errors:
-    form_count = 0
+
+class Row:
+    def __init__(self, row, id):
+        self.id = id
+        self.lang = row[0]
+        self.param = row[1]
+        self.form = row[2]
+        self.old_form = self.form
+        self.gloss = row[3]
+        self.native = row[4]
+        self.ipa = row[5]
+        self.notes = row[6]
+        self.source = row[7]
+        self.cognateset = self.param.split(".")[0] if len(row) < 9 else row[8]
+        if '.' in self.cognateset:
+            parts = list(self.cognateset.split("."))
+            if parts[1] == '0':
+                self.cognateset = parts[0]
+
+    @property
+    def formatted(self):
+        rows = [
+            self.id,
+            self.lang,
+            self.param,
+            self.form,
+            self.gloss,
+            self.native,
+            self.ipa,
+            self.old_form,
+            self.cognateset,
+            self.notes,
+            self.source,
+        ]
+        return rows
+
+    def __repr__(self):
+        return f"<Row {self.lang} {self.param} {self.form} {self.gloss}>"
+
+
+def parse_file(file: str, errors, name=None, file_num=0):
+    # get filename
+    if name is None:
+        name = os.path.splitext(os.path.basename(file))[0]
+        if "-" in name:
+            name = name.split("-")[1]
+
+    # check if convertible
+    convert = name in convertors or name in mapping
+    ipa = mapping.get(name, None)
+
+    fin = open(file, "r")
+    lines = fin.readlines()
+    read = csv.reader(lines)
     result = []
 
-    # now do the same thing for non-CDIAL languages
     i = 0
-    for file in [
+    for row in tqdm(read, total=len(lines)):
+        row = Row(row, id=f"{file_num}-{i}")
+        if row.lang == "Drav" or not row.param:
+            continue
+        if row.lang == "Indo-Aryan":
+            row.form = row.form.lower()
+
+        # param fix if .
+        if "." in row.param:
+            row.param = row.param.split(".")[0]
+
+        # split multiple forms into separate rows
+        forms = list(row.form.split(",")) if "dedr" not in file else [row.form]
+        for form in forms:
+            reformed = form
+            row.old_form = form
+            row.form = form
+            row.id = f"{file_num}-{i}"
+
+            # convert IPA
+            if ipa is not None and "˚" not in form and convert:
+                # fix accentuation from Strand
+                if ipa == "strand":
+                    reformed = reformed.replace("′", "´")
+                    reformed = re.sub(r"([`´])(.)", r"\2\1", reformed)
+
+                # do the conversion
+                reformed = reformed.strip("-1234⁴5⁵67⁷,;.")
+                reformed = convertors[ipa](reformed, column="IPA")
+                reformed = reformed.replace(" ", "").replace("#", " ")
+
+            # if conversion error then log it
+            if "�" in reformed:
+                errors.write(str(row) + " " + reformed + "\n")
+            else:
+                row.form = reformed
+
+            # add the result
+            result.append(deepcopy(row))
+            i += 1
+
+    fin.close()
+    return result, i
+
+
+def main():
+    # write out forms.csv
+    errors = open("errors.txt", "w")
+
+    form_count = 0
+    results: list[Row] = []
+    files = [
         "data/cdial/cdial.csv",
         "data/munda/forms.csv",
         "data/dedr/dedr_new.csv",
         "data/dedr/pdr.csv",
-    ] + glob.glob("data/other/forms/*.csv"):
-        # get filename
-        name = file.split("/")[-1].split(".")[0]
-        print(name)
-        convert = name in convertors or name in mapping
-        name = mapping.get(name, None)
-        with open(file, "r") as fin:
-            read = csv.reader(fin)
-            for row in tqdm(read):
-                if row[0] == "Drav":
-                    continue
-                if row[0] == "Indo-Aryan":
-                    row[2] = row[2].lower()
-                if row[1]:
-                    # handle subentries
-                    if "." in row[1]:
-                        row[6] = row[1]
-                        row[1] = row[1].split(".")[0]
+    ] + glob.glob("data/other/forms/*.csv")
+    files.sort()
 
-                    forms = list(row[2].split(",")) if "dedr" not in file else [row[2]]
-                    for form in forms:
-                        reformed = form
-
-                        # convert to Samopriyan system
-                        if name is not None:
-                            if "˚" not in form and convert:
-                                # fix accentuation from Strand
-                                if name == "strand":
-                                    reformed = reformed.replace("′", "´")
-                                    reformed = re.sub(r"([`´])(.)", r"\2\1", reformed)
-                                reformed = (
-                                    convertors[name](
-                                        reformed.strip("-1234⁴5⁵67⁷,;."), column="IPA"
-                                    )
-                                    .replace(" ", "")
-                                    .replace("#", " ")
-                                )
-                            if "�" in reformed:
-                                errors.write(
-                                    f"{row[0]} {form} {form} {row[5]} {reformed}\n"
-                                )
-                                reformed = ""
-
-                        result.append(
-                            [
-                                f"{i}",
-                                row[0],
-                                row[1],
-                                reformed if reformed else form,
-                                row[3],
-                                row[4],
-                                row[5],
-                                form,
-                                row[8 if "cdial" in file else 1],
-                                row[6],
-                                row[7],
-                            ]
-                        )
-                        i += 1
+    # now do the same thing for non-CDIAL languages
+    for file_num, file in enumerate(files):
+        print(file)
+        result, i = parse_file(file, errors=errors, file_num=file_num)
+        results.extend(result)
 
     # write out all the forms
     with open("cldf/forms.csv", "w") as fout:
@@ -117,22 +167,22 @@ with open("errors.txt", "w") as errors:
         )
 
         done = set()
-        for row in result:
-            if not row[3]:
+        for row in results:
+            if not row.form:
                 continue
-            if row[2] == "?" or not row[2]:
+            if row.param == "?" or not row.param:
                 continue
-            if row[1] in change:
-                row[1] = change[row[1]]
-            row[1] = unidecode.unidecode(row[1])
-            row[1] = row[1].replace(".", "")
-            row[3] = unicodedata.normalize("NFC", row[3])
-            param_set.add(row[2])
-            lang_set.add(row[1])
+            if row.lang in change:
+                row.lang = change[row.lang]
+            row.lang = unidecode.unidecode(row.lang)
+            row.lang = row.lang.replace(".", "")
+            row.form = unicodedata.normalize("NFC", row.form)
+            param_set.add(row.param)
+            lang_set.add(row.lang)
 
-            key = tuple(row[1:])
+            key = tuple(row.formatted[1:])
             if key not in done:
-                forms.writerow(row)
+                forms.writerow(row.formatted)
             done.add(key)
 
     etyma = {}
@@ -185,15 +235,15 @@ with open("errors.txt", "w") as errors:
                 )
                 included_params.add(row[0])
 
-        for file in glob.glob("data/other/params/*.csv"):
+        for file in tqdm(glob.glob("data/other/params/*.csv")):
             # get filename
             name = file.split("/")[-1].split(".")[0]
             convert = name in convertors or name in mapping
-            print(name)
             name = mapping.get(name, name)
             with open(file, "r") as f:
-                read = csv.reader(f)
-                for row in tqdm(read):
+                lines = f.readlines()
+                read = csv.reader(lines)
+                for row in read:
                     if name == "strand":
                         if row[1] in ["PNur", "PA"]:
                             row[2] = "*" + row[2]
@@ -228,18 +278,24 @@ with open("errors.txt", "w") as errors:
                 params.writerow(row)
                 included_params.add(row[0])
 
-# ensure that all languages in forms.csv are also in languages.csv
-cldf_langs = set()
-with open("cldf/languages.csv", "r") as fin:
-    for row in fin.readlines():
-        x = row.split(",")[0]
-        cldf_langs.add(x)
+    # ensure that all languages in forms.csv are also in languages.csv
+    cldf_langs = set()
+    with open("cldf/languages.csv", "r") as fin:
+        for row in fin.readlines():
+            x = row.split(",")[0]
+            cldf_langs.add(x)
 
-for i in sorted(lang_set):
-    if i not in cldf_langs:
-        print(i)
+    for i in sorted(lang_set):
+        if i not in cldf_langs:
+            print(i)
 
-# check params
-for i in sorted(param_set):
-    if i not in included_params:
-        print(i)
+    # check params
+    for i in sorted(param_set):
+        if i not in included_params:
+            print(i)
+
+    errors.close()
+
+
+if __name__ == "__main__":
+    main()

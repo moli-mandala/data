@@ -82,9 +82,9 @@ def map(df: pd.DataFrame, langs: dict[str, list[str]]):
 
 def main():
     df, langs = load_data()
-    # plot_top_counts(df)
+    plot_top_counts(df)
     summary_table(df, langs)
-    # map(df, langs)
+    map(df, langs)
 
 if __name__ == "__main__":
     main()
