@@ -30,7 +30,7 @@ class Row:
     def __init__(self, row, id):
         self.id = id
         self.lang = row[0]
-        self.param = row[1]
+        self.param = row[1].split('.')[0]
         self.form = row[2]
         self.old_form = self.form
         self.gloss = row[3]
@@ -38,7 +38,7 @@ class Row:
         self.ipa = row[5]
         self.notes = row[6]
         self.source = row[7]
-        self.cognateset = self.param.split(".")[0] if len(row) < 9 else row[8]
+        self.cognateset = '' if len(row) < 9 else row[8]
         if '.' in self.cognateset:
             parts = list(self.cognateset.split("."))
             if parts[1] == '0':

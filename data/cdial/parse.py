@@ -80,7 +80,7 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
 
             # store headwords
             for lemma in lemmas:
-                rows.append(['Indo-Aryan', number, lemma.text, '', '', '', '', 'CDIAL', f'{number}.0'])
+                rows.append(['Indo-Aryan', number, lemma.text, '', '', '', '', 'CDIAL', ''])
             if number not in done:
                 params.append([number, lemmas[0].text, '', data[0], ''])
             done.add(number)
@@ -91,6 +91,7 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
 
             # a subentry is a block of descendants; these are separated by newlines in CDIAL
             subnum = 0
+            info = None
             for subentry in data[1:]:
                 langs = []
 
@@ -98,6 +99,8 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
                 matches = list(regex.finditer(subentry))
                 if len(matches) != 0:
                     subnum += 1
+                    info = subentry[:matches[0].span()[0]].strip()
+                    info = info.strip(':.;')
                 
                 for i in range(len(matches)):
 
@@ -201,7 +204,7 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
                                 word = oldest
                             word = unicodedata.normalize('NFC', word)
                                     
-                            rows.append([l, number, word, defn, '', '', notes, 'CDIAL', f'{number}.{subnum}'])
+                            rows.append([l, number, word, defn, '', '', notes, 'CDIAL', f'{number}.{subnum}' if info is None else f'{info}'])
 
                     langs = []
     
