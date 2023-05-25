@@ -1,6 +1,7 @@
 fixes = [
-    'Skt.', 'Pkt.', 'Panj.', 'OMar.', 'Pali', 'H.', 'Apabhraṃśa', 'Guj.',
-    'O.', 'Or.', 'Nahali', 'Mar.', 'Beng.', 'Halbi', 'Nep.'
+    'Skt.', 'Pkt.',
+    'Panj.', 'OMar.', 'Pali', 'H.', 'Apabhraṃśa', 'Guj.',
+    'O.', 'Or.', 'Nahali', 'Mar.', 'Beng.', 'Halbi', 'Nep.', 'Ta.', 'Sgh.'
 ]
 
 abbrevs = {
@@ -50,6 +51,7 @@ abbrevs = {
     'Guj': 'G',
     'OMar': 'OM',
     'Nep': 'N',
+    'Sgh': 'Si'
 }
 
 replacements = {
@@ -63,10 +65,10 @@ dialects = {
     # Gadaba
     ('P.', 'Gadaba'):                       [None, 'pottangi'],
     ('Oll.', 'Gadaba'):                     ['Oll-Gadaba', None],
-    ('S.<super>3</super>', 'Gadaba'):       ['S3-Gadaba', None],
-    ('S.', 'Gadaba'):                       ['S-Gadaba', None],
-    ('S', 'Gadaba'):                        ['S-Gadaba', None],
-    ('S.<super>2</super>', 'Gadaba'):       ['S2-Gadaba', None],
+    ('S.<super>3</super>', 'Gadaba'):       ['S3-Gadaba', 'salur'],
+    ('S.', 'Gadaba'):                       ['S-Gadaba', 'salur'],
+    ('S', 'Gadaba'):                        ['S-Gadaba', 'salur'],
+    ('S.<super>2</super>', 'Gadaba'):       ['S2-Gadaba', 'salur'],
     # Gondi
     ('ASu.', 'Gondi'):                      [None, 'adil'],
     ('S.', 'Gondi'):                        [None, 'seoni'],

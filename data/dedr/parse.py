@@ -44,6 +44,7 @@ writer = csv.writer(fout)
 count = 1
 
 ref_ct = defaultdict(int)
+compares = []
 
 # go through each entire digitised page
 for page in tqdm(range(1, TOTAL_PAGES + 1)):
@@ -85,6 +86,7 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
                 entry_str = entry_str[0]
             else:
                 entry_str[1] = ' / '.join(entry_str[1:])
+                compares.append([number, entry_str[1]])
                 for f in sorted(fixes, key=lambda x: -len(x)):
                     entry_str[1] = entry_str[1].replace(f, f'<b><i>{f}</i></b>')
                 entry_str = ' / '.join(entry_str)
@@ -227,6 +229,12 @@ for key in sorted(ref_ct, key=lambda x: ref_ct[x], reverse=True)[:100]:
 
 # close file
 fout.close()
+
+# etyms
+with open('etymologies.csv', 'w') as fout:
+    writer = csv.writer(fout)
+    for row in compares:
+        writer.writerow(row)
 
 if not cached:
     with open('dedr.pickle', 'wb') as fout:
