@@ -44,7 +44,6 @@ writer = csv.writer(fout)
 count = 1
 
 ref_ct = defaultdict(int)
-compares = []
 
 # go through each entire digitised page
 for page in tqdm(range(1, TOTAL_PAGES + 1)):
@@ -81,143 +80,146 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
                 number = 'a' + number
 
             if ERR: print(entry)
-            entry_str = str(entry).split(' / ')
-            if len(entry_str) == 1:
-                entry_str = entry_str[0]
-            else:
-                entry_str[1] = ' / '.join(entry_str[1:])
-                compares.append([number, entry_str[1]])
+            entry_str = re.split(r'( / |(?=Cf. \d))', str(entry))
+            for i in range(1, len(entry_str)):
                 for f in sorted(fixes, key=lambda x: -len(x)):
-                    entry_str[1] = entry_str[1].replace(f, f'<b><i>{f}</i></b>')
-                entry_str = ' / '.join(entry_str)
-            entry = BeautifulSoup(entry_str, 'html.parser')
+                    entry_str[i] = entry_str[i].replace(f, f'<b><i>{f}</i></b>')
+            
+            for section_num, section in enumerate(entry_str):
+                entry = BeautifulSoup(section, 'html.parser')
 
-            # find all bold+italic tags (includes languages)
-            langs = entry.find_all(is_bold_or_italic)
-            spans = []
-            start = 0
+                # find all bold+italic tags (includes languages)
+                langs = entry.find_all(is_bold_or_italic)
+                section_label = ""
+                spans = []
+                start = 0
 
-            for lang in langs:
+                for lang in langs:
 
-                # append everything up to this tag to the previous tag
-                if spans:
-                    spans[-1][1] += entry_str[start:lang.sourcepos]
-                
-                # append this tag as a new span
-                # but it may not be a real language tag, in which case just expand previous
-                m = langs_regex.search(lang.text)
-                if m:
-                    spans.append([m.group(1), ""])
-                else:
+                    # append everything up to this tag to the previous tag
                     if spans:
-                        spans[-1][1] += str(lang)
-
-                # update start
-                start = lang.sourcepos + len(str(lang))
-
-            # tail of entry
-            if spans:
-                spans[-1][1] += entry_str[start:]
-
-            for span in spans:
-                lang = abbrevs[span[0].strip('.')]
-                span[1] = span[1].strip()
-
-                # get every forms + gloss pairing (delineated by bold tags)
-                rows = []
-                last_paren = False
-                for y in lemmata.finditer(span[1]):
-                    if ERR: print('    lemma', y)
-                    gloss = y.group(4).strip(' ').split('\t')[0]
-
-                    if last_paren:
-                        rows[-1][3] += y.group(2) + gloss
-                        last_paren = rows[-1][3].count('(') > rows[-1][3].count(')')
-                        continue
-
-                    if y.group(2) in ['Voc.', 'n.', 'adj.', 'adv.', 'v.']:
-                        rows[-1][3] += y.group(2) + gloss
-                        last_paren = rows[-1][3].count('(') > rows[-1][3].count(')')
-                        continue
+                        spans[-1][1] += section[start:lang.sourcepos]
+                    else:
+                        section_label += section[start:lang.sourcepos]
                     
-                    row = [lang, 'd' + str(number), y.group(2).strip(), gloss, '', '', '', 'dedr']
-                    row[2] = row[2].replace('</i>', '').replace('</b>', '').replace('<i>', '').replace('<b>', '')
-                    row[2] = row[2].strip()
+                    # append this tag as a new span
+                    # but it may not be a real language tag, in which case just expand previous
+                    m = langs_regex.search(lang.text)
+                    if m:
+                        spans.append([m.group(1), ""])
+                    else:
+                        if spans:
+                            spans[-1][1] += str(lang)
 
-                    # extract parentheticals from previous row--they are sources or notes about this one
-                    if rows:
-                        if rows[-1][3].endswith(')'):
-                            paren = rows[-1][3].rfind('(')
-                            row[6] = rows[-1][3][paren:][1:-1]
-                            rows[-1][3] = rows[-1][3][:paren]
-                    
-                    # extract parentheticals from this row
-                    if row[2].startswith('('):
-                        paren = row[2].find(')')
-                        row[6] += (' ' if row[6] else '') + row[2][:paren].strip(' ()')
-                        row[2] = row[2][paren + 1:].strip()
-
-                    rows.append(row)
-
-                    if gloss.count('(') > gloss.count(')'):
-                        last_paren = True
-
-                    if ERR: print('        done with forms')
+                    # update start
+                    start = lang.sourcepos + len(str(lang))
                 
-                for pos, row in enumerate(rows):
-                    # fix Tamil (-pp-, -tt-)
-                    if row[0] == 'Tam' and row[2] == '' and row[6] == '-pp-, -tt-':
-                        row[2] = rows[pos - 1][2].split(' (')[0] + ' (-pp-, -tt-)'
-                        row[6] = ""
+                section_label = section_label.strip()
+                section_label = section_label.replace('<i>', '').replace('</i>', '').replace('<b>', '').replace('</b>', '')
 
-                    forms = [form.strip() for form in comma_split.split(row[2])]
-                    row[3] = row[3].strip(';,./ ')
+                # tail of entry
+                if spans:
+                    spans[-1][1] += section[start:]
 
-                    for replacement in replacements:
-                        row[-2] = row[-2].replace(replacement, replacements[replacement])
+                for span in spans:
+                    lang = abbrevs[span[0].strip('.')]
+                    span[1] = span[1].strip()
 
-                    # refs and dialects
-                    dial_forms = []
-                    for ref in row[-2].split():
-                        ref = ref.strip(' ,;')
-                        if (ref, row[0]) in dialects:
-                            ref, dial = dialects[(ref, row[0])]
-                            if dial:
-                                dial_forms.append(dial)
-                            if ref:
-                                row[-1] += ';' + ref
-                        else:
-                            ref_ct[(ref, row[0])] += 1
+                    # get every forms + gloss pairing (delineated by bold tags)
+                    rows = []
+                    last_paren = False
+                    for y in lemmata.finditer(span[1]):
+                        if ERR: print('    lemma', y)
+                        gloss = y.group(4).strip(' ').split('\t')[0]
 
-                    if not dial_forms:
-                        dial_forms.append(row[0])
+                        if last_paren:
+                            rows[-1][3] += y.group(2) + gloss
+                            last_paren = rows[-1][3].count('(') > rows[-1][3].count(')')
+                            continue
 
-                    # add forms for each dialect
-                    for dial in dial_forms:
-                        for form in forms:
-                            new_row = row[::]
-                            new_row[0] = dial
+                        if y.group(2) in ['Voc.', 'n.', 'adj.', 'adv.', 'v.']:
+                            rows[-1][3] += y.group(2) + gloss
+                            last_paren = rows[-1][3].count('(') > rows[-1][3].count(')')
+                            continue
+                        
+                        row = [lang, 'd' + str(number), y.group(2).strip(), gloss, '', '', '', 'dedr', f'{section_num}:{section_label}']
+                        row[2] = row[2].replace('</i>', '').replace('</b>', '').replace('<i>', '').replace('<b>', '')
+                        row[2] = row[2].strip()
 
-                            if ERR: print('        form', form)
-                            form = formatter.sub('', form).strip()
+                        # extract parentheticals from previous row--they are sources or notes about this one
+                        if rows:
+                            if rows[-1][3].endswith(')'):
+                                paren = rows[-1][3].rfind('(')
+                                row[6] = rows[-1][3][paren:][1:-1]
+                                rows[-1][3] = rows[-1][3][:paren]
+                        
+                        # extract parentheticals from this row
+                        if row[2].startswith('('):
+                            paren = row[2].find(')')
+                            row[6] += (' ' if row[6] else '') + row[2][:paren].strip(' ()')
+                            row[2] = row[2][paren + 1:].strip()
 
-                            # extract parentheticals from this row
-                            if form.startswith('('):
-                                paren = form.find(')')
-                                new_row[6] += (' ' if new_row[6] else '') + form[:paren].strip(' ()')
-                                form = form[paren + 1:].strip()
+                        rows.append(row)
 
-                            # handle parse fails for Turner cognates
-                            if lang == 'OIA' and (form == '' or 'no.' in form):
-                                continue
+                        if gloss.count('(') > gloss.count(')'):
+                            last_paren = True
 
-                            for altform in form.split('/'):
-                                new_row[2] = altform.strip(" ;.,/")
-                                if new_row[2]:
-                                    writer.writerow(new_row)
-                                count += 1
+                        if ERR: print('        done with forms')
+                    
+                    for pos, row in enumerate(rows):
+                        # fix Tamil (-pp-, -tt-)
+                        if row[0] == 'Tam' and row[2] == '' and row[6] == '-pp-, -tt-':
+                            row[2] = rows[pos - 1][2].split(' (')[0] + ' (-pp-, -tt-)'
+                            row[6] = ""
 
-                if ERR: print('    done with spans')
+                        forms = [form.strip() for form in comma_split.split(row[2])]
+                        row[3] = row[3].strip(';,./ ')
+
+                        for replacement in replacements:
+                            row[6] = row[6].replace(replacement, replacements[replacement])
+
+                        # refs and dialects
+                        dial_forms = []
+                        for ref in row[6].split():
+                            ref = ref.strip(' ,;')
+                            if (ref, row[0]) in dialects:
+                                ref, dial = dialects[(ref, row[0])]
+                                if dial:
+                                    dial_forms.append(dial)
+                                if ref:
+                                    row[7] += ';' + ref
+                            else:
+                                ref_ct[(ref, row[0])] += 1
+
+                        if not dial_forms:
+                            dial_forms.append(row[0])
+
+                        # add forms for each dialect
+                        for dial in dial_forms:
+                            for form in forms:
+                                new_row = row[::]
+                                new_row[0] = dial
+
+                                if ERR: print('        form', form)
+                                form = formatter.sub('', form).strip()
+
+                                # extract parentheticals from this row
+                                if form.startswith('('):
+                                    paren = form.find(')')
+                                    new_row[6] += (' ' if new_row[6] else '') + form[:paren].strip(' ()')
+                                    form = form[paren + 1:].strip()
+
+                                # handle parse fails for Turner cognates
+                                if lang == 'OIA' and (form == '' or 'no.' in form):
+                                    continue
+
+                                for altform in form.split('/'):
+                                    new_row[2] = altform.strip(" ;.,/")
+                                    if new_row[2]:
+                                        writer.writerow(new_row)
+                                    count += 1
+
+                    if ERR: print('    done with spans')
     
     if ERR: print('deleting')
     if not cached: del resp
@@ -229,12 +231,6 @@ for key in sorted(ref_ct, key=lambda x: ref_ct[x], reverse=True)[:100]:
 
 # close file
 fout.close()
-
-# etyms
-with open('etymologies.csv', 'w') as fout:
-    writer = csv.writer(fout)
-    for row in compares:
-        writer.writerow(row)
 
 if not cached:
     with open('dedr.pickle', 'wb') as fout:
