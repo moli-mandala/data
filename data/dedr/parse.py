@@ -114,8 +114,8 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
                     # update start
                     start = lang.sourcepos + len(str(lang))
                 
-                section_label = section_label.strip()
                 section_label = section_label.replace('<i>', '').replace('</i>', '').replace('<b>', '').replace('</b>', '')
+                section_label = section_label.strip()
 
                 # tail of entry
                 if spans:

@@ -215,7 +215,7 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
                                 word = oldest
                             word = unicodedata.normalize('NFC', word)
                                     
-                            rows.append([l, number, word, defn, '', '', notes, 'CDIAL', f'{number}.{subnum}' if info is None else f'{subnum}: {info}'])
+                            rows.append([l, number, word, defn, '', '', notes, 'CDIAL', f'{number}.{subnum}' if info is None else f'{subnum}:{info}'])
 
                     langs = []
     
