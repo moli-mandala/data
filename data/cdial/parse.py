@@ -19,7 +19,10 @@ TOTAL_PAGES = 836
 langs = r'([OM]?(' + "|".join(sorted(list(abbrevs.keys()), key=lambda x: -len(x))) + r'))\.'
 langs = unicodedata.normalize('NFC', langs)
 regex = re.compile(r'(?<!\w)' + langs + r'(([^\(\)\[\]]*?(\[.*?\]|\(.*?\)))*?[^\(\)\[\]]*?)(?=([^\(]?' + langs + r'|</div>|$))')
-formatter = re.compile(r'(<i>([^\(\)]*?)</i>|\'([^\(\)]*?)\')(([^\(\)\[\]]*?(\[.*?\]|\(.*?\)))*?[^\(\)\[\]]*?)(?=$|<i>([^\(\)]*?)</i>|\'([^\(\)]*?)\'|\.)')
+oia = r'((Indo-Aryan))\.'
+regex_head = re.compile(r'(?<!\w)' + oia + r'(([^\(\)\[\]]*?(\[.*?\]|\(.*?\)))*?[^\(\)\[\]]*?)(?=([^\(]?' + oia + r'|</div>|$))')
+formatter = re.compile(r'(<i>([^\(\)]*?)</i>|\'([^\(\)]*?)\'(?=[^s]|$))(([^\(\)\[\]]*?(\[.*?\]|\(.*?\)))*?[^\(\)\[\]]*?)(?=$|<i>([^\(\)]*?)</i>|\'([^\(\)]*?)\'|\.)')
+formatter_head = re.compile(r'(<b>([^\(\)]*?)</b>|\'([^\(\)]*?)\'(?=[^s]|$))(([^\(\)\[\]]*?(\[.*?\]|\(.*?\)))*?[^\(\)\[\]]*?)(?=$|<b>([^\(\)]*?)</b>|\'([^\(\)]*?)\'|\.)')
 
 rows = []
 params = []
@@ -76,27 +79,36 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
 
             # reflexes are grouped into paragraphs or marked by Ext. when they share
             # a common origin that is a derived form from the headword (e.g. -kk- extensions)
-            data = re.split(r'(<br/>|Ext.|[;\.,:\?] — )', str(entry))
+            head_split = list(re.split(r'(<br/>)', str(entry)))
+            data = head_split
+            if len(head_split) > 1:
+                data = [head_split[0]] + list(re.split(r'(<br/>|Ext.|[;\.,:\?] — )', '<br/>'.join(head_split[1:])))
 
             # store headwords
-            for lemma in lemmas:
-                rows.append(['Indo-Aryan', number, lemma.text, '', '', '', '', 'CDIAL', ''])
+            # for lemma in lemmas:
+            #     rows.append(['Indo-Aryan', number, lemma.text, '', '', '', '', 'CDIAL', ''])
             if number not in done:
-                params.append([number, lemmas[0].text, '', str(entry).split('<br/>')[0], ''])
+                params.append([number, lemmas[0].text, '', data[0], ''])
             done.add(number)
 
             # ignore headword from rest of parsing; if no other reflexes ignore this entry
             if (len(data) == 1): continue
-            data = [x for x in data[1:] if x]
 
             # a subentry is a block of descendants; these are separated by newlines in CDIAL
             subnum = 0
             info = None
-            for subentry in data[1:]:
+            last_defn = ''
+            data[0] = 'Indo-Aryan. ' + data[0]
+            for subentry_num, subentry in enumerate(data):
                 langs = []
 
                 # find lemmas in current subgroup
-                matches = list(regex.finditer(subentry))
+                matches = []
+                if subentry_num != 0:
+                    matches = list(regex.finditer(subentry))
+                else:
+                    matches = list(regex_head.finditer(subentry))
+
                 if len(matches) != 0:
                     subnum += 1
                     info = subentry[:matches[0].span()[0]].strip()
@@ -114,12 +126,11 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
                     span = span.replace('--', '–')
                     
                     # forms are the actual words (italicised)
-                    forms = list(formatter.finditer(span))
-
-                    # if number == '22':
-                    #     print(lang, matches[i].groups())
-                    #     for i in forms:
-                    #         print('    ', i.groups())
+                    forms = []
+                    if lang == 'Indo-Aryan':
+                        forms = list(formatter_head.finditer(span))
+                    else:
+                        forms = list(formatter.finditer(span))
                     
                     # handling Kutchi data getting duplicated to Sindhi
                     # TODO: West Pahari data might be similarly flawed
@@ -156,7 +167,7 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
                                 words.append([each.strip(), definition, notes])
 
                     for form in forms:
-                        if form.group(0).startswith('<i>'):
+                        if form.group(0).startswith('<i>') or form.group(0).startswith('<b>'):
                             append_to_words(cur, defs)
                             defs = []
                             cur = [form.group(2), form.group(4).strip(' -,;.')]
@@ -169,7 +180,7 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
                     # for each language on the stack, add this entry
                     for l in langs:
                         for word, defn, notes in words:
-
+                            
                             if '°' in word and word != '°':
                                 old = word[:]
                                 reference = rows[-1][2]

@@ -29,12 +29,11 @@ def load_data():
 
     data = []
     with open('../cldf/forms.csv') as fin:
-        reader = csv.reader(fin)
-        next(reader)
+        reader = csv.DictReader(fin)
         for x in tqdm(reader):
-            if x[3]: data.append([langs[x[1]][1], x[3], x[2], categorise(langs[x[1]][5])])
+            if x["Form"]: data.append([langs[x["Language_ID"]][1], x["Form"], x["Parameter_ID"], categorise(langs[x["Language_ID"]][5]), x["Gloss"]])
 
-    df = pd.DataFrame(data, columns=['lang', 'word', 'cogset', 'Grouping'])
+    df = pd.DataFrame(data, columns=['lang', 'word', 'cogset', 'Grouping', 'gloss'])
     return df, langs
 
 def plot_top_counts(df: pd.DataFrame):
@@ -80,11 +79,18 @@ def map(df: pd.DataFrame, langs: dict[str, list[str]]):
     g.draw()
     g.save('figures/map.pdf', width=6, height=8.25)
 
+def top_glosses(df: pd.DataFrame):
+    # get top counts from df['gloss']
+    gloss_counts = df['gloss'].value_counts()
+    gloss_counts = gloss_counts[gloss_counts > 10]
+    print(gloss_counts, sum(gloss_counts))
+
 def main():
     df, langs = load_data()
-    plot_top_counts(df)
+    top_glosses(df)
+    # plot_top_counts(df)
     summary_table(df, langs)
-    map(df, langs)
+    # map(df, langs)
 
 if __name__ == "__main__":
     main()

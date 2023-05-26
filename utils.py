@@ -4,7 +4,8 @@ mapping = {
     'konkani': None, 'khetrani': None, 'vaagri': 'cdial', 'cdial': 'cdial', 'palula': 'liljegren',
     'strand': 'strand', 'strand2': 'strand', 'strand3': 'strand', 'wadiyara': 'wadiyara',
     'northern': 'northern', 'toulmin': 'toulmin', 'chattisgarhi': 'chattisgarhi',
-    'rajasthani': 'rajasthani', 'old_punjabi': 'cdial', 'bundeli': 'chattisgarhi'
+    'rajasthani': 'rajasthani', 'old_punjabi': 'cdial', 'bundeli': 'chattisgarhi',
+    'tharu': 'cdial'
 }
 
 # superscript forms of letters
