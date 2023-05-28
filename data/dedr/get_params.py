@@ -6,8 +6,8 @@ gloss = defaultdict(set)
 with open('pdr.csv', 'r') as f:
     reader = csv.reader(f)
     for row in reader:
-        pdr[row[1]].append(row[2])
-        gloss[row[1]].add(row[3])
+        pdr[row[1]].append(row[2].strip())
+        gloss[row[1]].add(row[3].strip())
 
 
 done = set()
