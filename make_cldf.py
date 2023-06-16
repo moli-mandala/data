@@ -66,6 +66,10 @@ class Row:
 
 
 def parse_file(file: str, errors, name=None, file_num=0):
+    stats = {
+        "converted": 0,
+        "for_conversion": 0
+    }
     # get filename
     if name is None:
         name = os.path.splitext(os.path.basename(file))[0]
@@ -103,6 +107,7 @@ def parse_file(file: str, errors, name=None, file_num=0):
 
             # convert IPA
             if ipa is not None and "˚" not in form and convert:
+                stats["for_conversion"] += 1
                 # fix accentuation from Strand
                 if ipa == "strand":
                     reformed = reformed.replace("′", "´")
@@ -113,18 +118,19 @@ def parse_file(file: str, errors, name=None, file_num=0):
                 reformed = convertors[ipa](reformed, column="IPA")
                 reformed = reformed.replace(" ", "").replace("#", " ")
 
-            # if conversion error then log it
-            if "�" in reformed:
-                errors.write(str(row) + " " + reformed + "\n")
-            else:
-                row.form = reformed
+                # if conversion error then log it
+                if "�" in reformed:
+                    errors.write(str(row) + " " + reformed + "\n")
+                else:
+                    row.form = reformed
+                    stats["converted"] += 1
 
             # add the result
             result.append(deepcopy(row))
             i += 1
 
     fin.close()
-    return result, i
+    return result, stats
 
 
 def main():
@@ -142,10 +148,18 @@ def main():
     files.sort()
 
     # now do the same thing for non-CDIAL languages
+    tot_stats = {
+        "converted": 0,
+        "for_conversion": 0
+    }
     for file_num, file in enumerate(files):
         print(file)
-        result, i = parse_file(file, errors=errors, file_num=file_num)
+        result, stats = parse_file(file, errors=errors, file_num=file_num)
+        tot_stats["converted"] += stats["converted"]
+        tot_stats["for_conversion"] += stats["for_conversion"]
         results.extend(result)
+    
+    print(tot_stats)
 
     # write out all the forms
     with open("cldf/forms.csv", "w") as fout:

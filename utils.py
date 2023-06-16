@@ -5,7 +5,7 @@ mapping = {
     'strand': 'strand', 'strand2': 'strand', 'strand3': 'strand', 'wadiyara': 'wadiyara',
     'northern': 'northern', 'toulmin': 'toulmin', 'chattisgarhi': 'chattisgarhi',
     'rajasthani': 'rajasthani', 'old_punjabi': 'cdial', 'bundeli': 'chattisgarhi',
-    'tharu': 'cdial', 'kannauji': 'rajasthani'
+    'tharu': 'cdial', 'kannauji': 'rajasthani', 'tharu2': 'chattisgarhi'
 }
 
 # superscript forms of letters

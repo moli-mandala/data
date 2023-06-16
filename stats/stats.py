@@ -1,96 +1,216 @@
 import csv
 import pandas as pd
-from plotnine import ggplot, aes, geom_bar, theme, element_text, ylab, xlab, element_blank, geom_map, coord_cartesian,\
-    scale_x_continuous, scale_y_continuous, scale_size_continuous, xlim, ylim, geom_point
+from plotnine import (
+    ggplot,
+    aes,
+    geom_bar,
+    theme,
+    element_text,
+    ylab,
+    xlab,
+    element_blank,
+    geom_map,
+    coord_cartesian,
+    scale_x_continuous,
+    scale_y_continuous,
+    scale_size_continuous,
+    xlim,
+    ylim,
+    geom_point,
+    geom_histogram,
+    scale_x_log10,
+)
 from plotnine.scales import scale_y_log10
 from matplotlib import pyplot as plt
 import geopandas as gp
 from tqdm import tqdm
 from collections import Counter
 
+
 def categorise(clade: str):
-    if clade == "Other": return clade
-    if "Dravidian" in clade: return "Dravidian"
-    if "Munda" in clade: return "Munda"
-    if "Nuristani" in clade: return "Nuristani"
-    if "Burushaski" in clade: return "Burushaski"
+    if clade == "Other":
+        return clade
+    if "Dravidian" in clade:
+        return "Dravidian"
+    if "Munda" in clade:
+        return "Munda"
+    if "Nuristani" in clade:
+        return "Nuristani"
+    if "Burushaski" in clade:
+        return "Burushaski"
     return "Indo-Aryan"
 
+
 def old(row):
-    return 'Old' in row[1] or 'Proto' in row[1] or 'Middle' in row[1] or row[5] in ['OIA', 'MIA']
+    return (
+        "Old" in row[1]
+        or "Proto" in row[1]
+        or "Middle" in row[1]
+        or row[5] in ["OIA", "MIA"]
+    )
+
 
 def load_data():
     langs = {}
-    with open('../cldf/languages.csv') as fin:
+    with open("../cldf/languages.csv") as fin:
         reader = csv.reader(fin)
         next(reader)
         for x in reader:
             langs[x[0]] = x
 
     data = []
-    with open('../cldf/forms.csv') as fin:
+    with open("../cldf/forms.csv") as fin:
         reader = csv.DictReader(fin)
         for x in tqdm(reader):
-            if x["Form"]: data.append([langs[x["Language_ID"]][1], x["Form"], x["Parameter_ID"], categorise(langs[x["Language_ID"]][5]), x["Gloss"]])
+            if x["Form"]:
+                data.append(
+                    [
+                        langs[x["Language_ID"]][1],
+                        x["Form"],
+                        x["Parameter_ID"],
+                        categorise(langs[x["Language_ID"]][5]),
+                        x["Gloss"],
+                    ]
+                )
 
-    df = pd.DataFrame(data, columns=['lang', 'word', 'cogset', 'Grouping', 'gloss'])
+    df = pd.DataFrame(data, columns=["lang", "word", "cogset", "Grouping", "gloss"])
     return df, langs
 
+
 def plot_top_counts(df: pd.DataFrame):
-    order = df['lang'].value_counts().index.tolist()
-    cat = pd.Categorical(df['lang'], categories=order)
-    df = df.assign(lang_order = cat)
-    df = df[df['lang'].isin(order[:50])]
-    g = (ggplot(df) + geom_bar(aes(x='lang_order', fill='Grouping')) +
-        theme(axis_text_x=element_text(rotation=45, size=6, hjust=1), axis_title_x=element_blank()) + scale_y_log10() +
-        ylab("Lemmata"))
+    order = df["lang"].value_counts().index.tolist()
+    cat = pd.Categorical(df["lang"], categories=order)
+    df = df.assign(lang_order=cat)
+    df = df[df["lang"].isin(order[:50])]
+    g = (
+        ggplot(df)
+        + geom_bar(aes(x="lang_order", fill="Grouping"))
+        + theme(
+            axis_text_x=element_text(rotation=45, size=6, hjust=1),
+            axis_title_x=element_blank(),
+            text=element_text(family='Times')
+        )
+        + scale_y_log10()
+        + ylab("Lemmata")
+    )
     g.draw()
-    g.save('figures/bar.pdf', width=7.5, height=1.5)
+    g.save("figures/bar.pdf", width=7.5, height=1.5)
+
+
+def plot_lemma_counts(df: pd.DataFrame):
+    df = df.groupby(["lang", "Grouping"]).count().reset_index()
+    df = df.rename(columns={"word": "Lemmata"})
+    print(df)
+    g = (
+        ggplot(df)
+        + geom_histogram(aes(x="Lemmata", fill="Grouping"), bins=20)
+        + scale_x_log10()
+        + theme(axis_title_y=element_blank(), text=element_text(family="Times"))
+    )
+    g.draw()
+    g.save("figures/lemmas.pdf", width=3, height=2)
+
 
 def summary_table(df: pd.DataFrame, langs: dict[str, list[str]]):
     total_lemmata = len(df)
-    lemmata_counts = df.groupby(['Grouping']).count()['lang']
+    lemmata_counts = df.groupby(["Grouping"]).count()["lang"]
     cols = lemmata_counts.index.tolist()
     lemmata_counts = {cols[i]: x for i, x in enumerate(lemmata_counts)}
-    cogset_counts = {cols[i]: x for i, x in enumerate(df.groupby(['cogset', 'Grouping']).count().groupby(['Grouping']).count()['lang'])}
-    total_cogsets = len(df.groupby(['cogset']).count())
+    cogset_counts = {
+        cols[i]: x
+        for i, x in enumerate(
+            df.groupby(["cogset", "Grouping"])
+            .count()
+            .groupby(["Grouping"])
+            .count()["lang"]
+        )
+    }
+    total_cogsets = len(df.groupby(["cogset"]).count())
     lang_counts = Counter([categorise(lang[5]) for lang in langs.values()])
 
     for lang in lang_counts:
-        print(f"{lang:<15} & {lang_counts[lang]:>10,d} & {cogset_counts[lang]:>10,d} & {lemmata_counts[lang]:>10,d} \\\\")
-    t = '\\textbf{Total}'
-    print(f"\\midrule\n{t:<15} & {sum(lang_counts.values()):>10,d} & {total_cogsets:>10,d} & {total_lemmata:>10,d} \\\\")
+        print(
+            f"{lang:<15} & {lang_counts[lang]:>10,d} & {cogset_counts[lang]:>10,d} & {lemmata_counts[lang]:>10,d} \\\\"
+        )
+    t = "\\textbf{Total}"
+    print(
+        f"\\midrule\n{t:<15} & {sum(lang_counts.values()):>10,d} & {total_cogsets:>10,d} & {total_lemmata:>10,d} \\\\"
+    )
+
 
 def map(df: pd.DataFrame, langs: dict[str, list[str]]):
-    continents = gp.read_file('maps/World_Continents.shp')
+    continents = gp.read_file("maps/World_Continents.shp")
     asia = continents.query('CONTINENT=="Asia"')
     lang_ct = {x[1]: 0 for x in langs.values()}
-    for row in df['lang']:
+    for row in df["lang"]:
         lang_ct[row] += 1
 
     # convert langs to df of short name, full name, glottocode, lat, long, grouping
-    l = [[x[0], x[1], x[2], float(x[3]), float(x[4]), categorise(x[5]), old(x), lang_ct[x[1]]] for x in langs.values()]
+    l = [
+        [
+            x[0],
+            x[1],
+            x[2],
+            float(x[3]),
+            float(x[4]),
+            categorise(x[5]),
+            old(x),
+            lang_ct[x[1]],
+        ]
+        for x in langs.values()
+    ]
     l.sort(key=lambda x: x[-1], reverse=True)
-    lang_df = pd.DataFrame(l, columns=['short', 'name', 'glottocode', 'lat', 'long', 'Family', 'Historical', 'Lemmata'])
+    lang_df = pd.DataFrame(
+        l,
+        columns=[
+            "short",
+            "name",
+            "glottocode",
+            "lat",
+            "long",
+            "Family",
+            "Historical",
+            "Lemmata",
+        ],
+    )
 
-    g = (ggplot() + geom_map(asia, fill='#ddd') + xlim(67, 95) + ylim(0, 37) + xlab('') + ylab('') +
-        geom_point(lang_df, aes(x='long', y='lat', fill='Family', shape='Historical', size='Lemmata')))
+    g = (
+        ggplot()
+        + geom_map(asia, fill="#ddd")
+        + xlim(67, 95)
+        + ylim(0, 37)
+        + xlab("")
+        + ylab("")
+        + geom_point(
+            lang_df,
+            aes(x="long", y="lat", fill="Family", shape="Historical", size="Lemmata"),
+        )
+        + theme(
+            text=element_text(family='Times'),
+            axis_ticks=element_blank(),
+            axis_text=element_blank()
+        )
+    )
 
     g.draw()
-    g.save('figures/map.pdf', width=6, height=8.25)
+    g.save("figures/map.pdf", width=6, height=8.25)
+
 
 def top_glosses(df: pd.DataFrame):
     # get top counts from df['gloss']
-    gloss_counts = df['gloss'].value_counts()
+    gloss_counts = df["gloss"].value_counts()
     gloss_counts = gloss_counts[gloss_counts > 10]
     print(gloss_counts, sum(gloss_counts))
 
+
 def main():
     df, langs = load_data()
-    top_glosses(df)
+    plot_lemma_counts(df)
+    # top_glosses(df)
     # plot_top_counts(df)
-    summary_table(df, langs)
-    # map(df, langs)
+    # summary_table(df, langs)
+    map(df, langs)
+
 
 if __name__ == "__main__":
     main()
