@@ -191,7 +191,7 @@ def main():
             row.lang = unidecode.unidecode(row.lang)
             row.lang = row.lang.replace(".", "")
             row.form = unicodedata.normalize("NFC", row.form)
-            param_set.add(row.param)
+            param_set.add(row.param.lstrip(">~"))
             lang_set.add(row.lang)
 
             key = tuple(row.formatted[1:])
