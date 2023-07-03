@@ -161,6 +161,26 @@ def main():
     
     print(tot_stats)
 
+    # clean up duplicates in results
+    cleaned = {}
+    for i, row in enumerate(tqdm(results)):
+        key = (row.lang, row.param, row.form)
+        if key not in cleaned:
+            cleaned[key] = (row, i)
+        else:
+            orig_row = cleaned[key][0]
+            if row.cognateset is None or row.cognateset == "":
+                orig_row.gloss = '; '.join([x for x in set([orig_row.gloss, row.gloss]) if x])
+                orig_row.native = '; '.join([x for x in set([orig_row.native, row.native]) if x])
+                orig_row.notes = '; '.join([x for x in set([orig_row.notes, row.notes]) if x])
+                orig_row.source = ';'.join([x for x in set([orig_row.source, row.source]) if x])
+                orig_row.ipa = '; '.join([x for x in set([orig_row.ipa, row.ipa]) if x])
+                orig_row.old_form = '; '.join([x for x in set([orig_row.old_form, row.old_form]) if x])
+
+                cleaned[key] = (orig_row, cleaned[key][1])
+                results[cleaned[key][1]] = orig_row
+                results[i] = None
+
     # write out all the forms
     with open("cldf/forms.csv", "w") as fout:
         forms = csv.writer(fout)
@@ -182,7 +202,7 @@ def main():
 
         done = set()
         for row in results:
-            if not row.form:
+            if row is None or not row.form:
                 continue
             if row.param == "?" or not row.param:
                 continue

@@ -23,6 +23,7 @@ oia = r'((Indo-Aryan))\.'
 regex_head = re.compile(r'(?<!\w)' + oia + r'(([^\(\)\[\]]*?(\[.*?\]|\(.*?\)))*?[^\(\)\[\]]*?)(?=([^\(]?' + oia + r'|</div>|$))')
 formatter = re.compile(r'(<i>([^\(\)]*?)</i>|\'([^\(\)]*?)\'(?=[^s]|$))(([^\(\)\[\]]*?(\[.*?\]|\(.*?\)))*?[^\(\)\[\]]*?)(?=$|<i>([^\(\)]*?)</i>|\'([^\(\)]*?)\'|\.)')
 formatter_head = re.compile(r'(<b>([^\(\)]*?)</b>|\'([^\(\)]*?)\'(?=[^s]|$))(([^\(\)\[\]]*?(\[.*?\]|\(.*?\)))*?[^\(\)\[\]]*?)(?=$|<b>([^\(\)]*?)</b>|\'([^\(\)]*?)\'|\.)')
+borrowed_terms = re.compile(r'\(→.*?\)')
 
 rows = []
 params = []
@@ -35,6 +36,129 @@ if os.path.exists('cdial.pickle'):
     with open('cdial.pickle', 'rb') as fin:
         soups = pickle.load(fin)
     cached = True
+
+def parse(subentry, subentry_num, subnum, number, info):
+    langs = []
+    temp_rows = []
+
+    # find lemmas in current subgroup
+    matches = []
+    if subentry_num != 0:
+        matches = list(regex.finditer(subentry))
+    else:
+        matches = list(regex_head.finditer(subentry))
+
+    if len(matches) != 0:
+        subnum += 1
+        info = subentry[:matches[0].span()[0]].strip()
+        info = info.strip(':.;')
+    
+    for i in range(len(matches)):
+
+        # grab lang and rest of span
+        lang = matches[i].group(1)
+        span = matches[i].group(3)
+        
+        # formatting
+        span = span.replace('ˊ', '́')
+        span = span.replace(' -- ', '–')
+        span = span.replace('--', '–')
+        
+        # forms are the actual words (italicised)
+        forms = []
+        if lang == 'Indo-Aryan':
+            forms = list(formatter_head.finditer(span))
+        else:
+            forms = list(formatter.finditer(span))
+        
+        # handling Kutchi data getting duplicated to Sindhi
+        # TODO: West Pahari data might be similarly flawed
+        if lang == 'kcch':
+            if langs:
+                if langs[-1] == 'S':
+                    langs.pop()
+        if lang == 'mald':
+            lang = 'Md'
+        if lang[0].islower():
+            if langs:
+                if langs[-1] == 'WPah':
+                    langs.pop()
+
+        # langs is a stack of langs, if there are no forms
+        # we just add to the stack and continue (means later
+        # lang has relevant data)
+        langs.append(lang)
+        if len(forms) == 0:
+            continue
+
+        # extract definitions
+        # TODO: get morphological labels, notes
+        cur = None
+        defs = []
+        words = []
+
+        def append_to_words(cur, defs):
+            if cur:
+                for each in cur[0].split(','):
+                    definition = '; '.join([d[0] for d in defs]) if defs != [] else ''
+                    notes = '; '.join([d[1] for d in defs if d[1] != '']) if defs != [] else ''
+                    notes = cur[1] + ('; ' if (cur[1] and notes) else '') + notes
+                    words.append([each.strip(), definition, notes])
+
+        for form in forms:
+            if form.group(0).startswith('<i>') or form.group(0).startswith('<b>'):
+                append_to_words(cur, defs)
+                defs = []
+                cur = [form.group(2), form.group(4).strip(' -,;.')]
+            else:
+                defs.append([form.group(3).strip(), form.group(4).strip(' -,;.')])
+        if cur:
+            for each in cur[0].split(','):
+                append_to_words(cur, defs)
+
+        # for each language on the stack, add this entry
+        for l in langs:
+            for word, defn, notes in words:
+                
+                if '°' in word and word != '°':
+                    old = word[:]
+                    reference = temp_rows[-1][2] if len(temp_rows) > 0 else rows[-1][2]
+                    if word[-1] == '°':
+                        word = re.sub(r'^.*?' + word[-2], word[:-1], reference)
+                    elif word[0] == '°':
+                        word = re.sub(word[1] + r'[^' + word[1] + r']*?$', word[1:], reference)
+                    if reference == word:
+                        word = old[:]
+
+                # normalisation
+                word = word.replace('λ', 'ɬ')
+                word = word.replace('Λ', 'ʌ')
+                word = word.strip('.,;-: ')
+                word = word.replace('<? >', '')
+                word = word.lower()
+                word = word.replace('˜', '̃')
+                word = word.replace(f'<smallcaps>i</smallcaps>', 'ɪ')
+
+                # handle macron/breve combo, which we store as two forms (long vowel, short vowel)
+                oldest = unicodedata.normalize('NFD', word)
+                oldest = oldest.replace('̄˘', '̄̆')
+                oldest = oldest.replace('̆̄', '̄̆')
+                oldest = oldest.replace('̄̆', '̄̆')
+                if '̄̆' in oldest:
+                    words.append([oldest.replace('̄̆', '̄'), defn, notes])
+                    oldest = oldest.replace('̄̆', '')
+                    word = oldest
+                if '{' in oldest:
+                    words.append([re.sub(r'{.*?}', '', oldest), defn, notes])
+                    oldest = oldest.replace('{', '').replace('}', '')
+                    word = oldest
+                word = unicodedata.normalize('NFC', word)
+                        
+                temp_rows.append([l, number, word, defn, '', '', notes, 'CDIAL', f'{number}.{subnum}' if info is None else f'{subnum}:{info}'])
+
+        langs = []
+
+    return temp_rows, subnum
 
 # go through each entire digitised page
 for page in tqdm(range(1, TOTAL_PAGES + 1)):
@@ -97,127 +221,19 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
             # a subentry is a block of descendants; these are separated by newlines in CDIAL
             subnum = 0
             info = None
-            last_defn = ''
             data[0] = 'Indo-Aryan. ' + data[0]
             for subentry_num, subentry in enumerate(data):
-                langs = []
 
-                # find lemmas in current subgroup
-                matches = []
-                if subentry_num != 0:
-                    matches = list(regex.finditer(subentry))
-                else:
-                    matches = list(regex_head.finditer(subentry))
+                # parse this subentry
+                rows_sub, subnum = parse(subentry, subentry_num, subnum, number, info)
+                rows.extend(rows_sub)
 
-                if len(matches) != 0:
-                    subnum += 1
-                    info = subentry[:matches[0].span()[0]].strip()
-                    info = info.strip(':.;')
-                
-                for i in range(len(matches)):
-
-                    # grab lang and rest of span
-                    lang = matches[i].group(1)
-                    span = matches[i].group(3)
-                    
-                    # formatting
-                    span = span.replace('ˊ', '́')
-                    span = span.replace(' -- ', '–')
-                    span = span.replace('--', '–')
-                    
-                    # forms are the actual words (italicised)
-                    forms = []
-                    if lang == 'Indo-Aryan':
-                        forms = list(formatter_head.finditer(span))
-                    else:
-                        forms = list(formatter.finditer(span))
-                    
-                    # handling Kutchi data getting duplicated to Sindhi
-                    # TODO: West Pahari data might be similarly flawed
-                    if lang == 'kcch':
-                        if langs:
-                            if langs[-1] == 'S':
-                                langs.pop()
-                    if lang == 'mald':
-                        lang = 'Md'
-                    if lang[0].islower():
-                        if langs:
-                            if langs[-1] == 'WPah':
-                                langs.pop()
-
-                    # langs is a stack of langs, if there are no forms
-                    # we just add to the stack and continue (means later
-                    # lang has relevant data)
-                    langs.append(lang)
-                    if len(forms) == 0:
-                        continue
-
-                    # extract definitions
-                    # TODO: get morphological labels, notes
-                    cur = None
-                    defs = []
-                    words = []
-
-                    def append_to_words(cur, defs):
-                        if cur:
-                            for each in cur[0].split(','):
-                                definition = '; '.join([d[0] for d in defs]) if defs != [] else ''
-                                notes = '; '.join([d[1] for d in defs if d[1] != '']) if defs != [] else ''
-                                notes = cur[1] + ('; ' if (cur[1] and notes) else '') + notes
-                                words.append([each.strip(), definition, notes])
-
-                    for form in forms:
-                        if form.group(0).startswith('<i>') or form.group(0).startswith('<b>'):
-                            append_to_words(cur, defs)
-                            defs = []
-                            cur = [form.group(2), form.group(4).strip(' -,;.')]
-                        else:
-                            defs.append([form.group(3).strip(), form.group(4).strip(' -,;.')])
-                    if cur:
-                        for each in cur[0].split(','):
-                            append_to_words(cur, defs)
-
-                    # for each language on the stack, add this entry
-                    for l in langs:
-                        for word, defn, notes in words:
-                            
-                            if '°' in word and word != '°':
-                                old = word[:]
-                                reference = rows[-1][2]
-                                if word[-1] == '°':
-                                    word = re.sub(r'^.*?' + word[-2], word[:-1], reference)
-                                elif word[0] == '°':
-                                    word = re.sub(word[1] + r'[^' + word[1] + r']*?$', word[1:], reference)
-                                if reference == word:
-                                    word = old[:]
-
-                            # normalisation
-                            word = word.replace('λ', 'ɬ')
-                            word = word.replace('Λ', 'ʌ')
-                            word = word.strip('.,;-: ')
-                            word = word.replace('<? >', '')
-                            word = word.lower()
-                            word = word.replace('˜', '̃')
-                            word = word.replace(f'<smallcaps>i</smallcaps>', 'ɪ')
-
-                            # handle macron/breve combo, which we store as two forms (long vowel, short vowel)
-                            oldest = unicodedata.normalize('NFD', word)
-                            oldest = oldest.replace('̄˘', '̄̆')
-                            oldest = oldest.replace('̆̄', '̄̆')
-                            oldest = oldest.replace('̄̆', '̄̆')
-                            if '̄̆' in oldest:
-                                words.append([oldest.replace('̄̆', '̄'), defn, notes])
-                                oldest = oldest.replace('̄̆', '')
-                                word = oldest
-                            if '{' in oldest:
-                                words.append([re.sub(r'{.*?}', '', oldest), defn, notes])
-                                oldest = oldest.replace('{', '').replace('}', '')
-                                word = oldest
-                            word = unicodedata.normalize('NFC', word)
-                                    
-                            rows.append([l, number, word, defn, '', '', notes, 'CDIAL', f'{number}.{subnum}' if info is None else f'{subnum}:{info}'])
-
-                    langs = []
+                # find terms borrowed into other langs in the notes of each reflex
+                for row in rows_sub:
+                    borrowed = list(borrowed_terms.finditer(row[6]))
+                    for borrow in borrowed:
+                        rows_borrowed, _ = parse(row[0] + ' ' + borrow.group(0)[1:-1], subentry_num, subnum - 1, number, info)
+                        rows.extend(rows_borrowed)
     
     if not cached: del resp
 
