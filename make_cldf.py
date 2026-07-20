@@ -9,6 +9,7 @@ import os
 from copy import deepcopy
 
 from utils import mapping, superscript, change
+from tags import extract_tags
 
 # read in tokenizer/convertors for IPA and form normalisation
 tokenizers = {}
@@ -37,6 +38,7 @@ class Row:
         self.native = row[4]
         self.ipa = row[5]
         self.notes = row[6]
+        self.tags = ""  # structured tokens lifted from notes at write time (see extract_tags)
         self.source = row[7]
         self.cognateset = '' if len(row) < 9 else row[8]
         if '.' in self.cognateset:
@@ -57,6 +59,7 @@ class Row:
             self.old_form,
             self.cognateset,
             self.notes,
+            self.tags,
             self.source,
         ]
         return rows
@@ -196,6 +199,7 @@ def main():
                 "Original",
                 "Cognateset",
                 "Description",
+                "Tags",
                 "Source",
             ]
         )
@@ -213,6 +217,9 @@ def main():
             row.form = unicodedata.normalize("NFC", row.form)
             param_set.add(row.param.lstrip(">~"))
             lang_set.add(row.lang)
+
+            # lift structured tokens (gender, grammatical category) out of notes into Tags
+            row.tags, row.notes = extract_tags(row.notes)
 
             key = tuple(row.formatted[1:])
             if key not in done:
