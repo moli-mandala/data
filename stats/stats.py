@@ -273,6 +273,21 @@ def drav_retro_alternants(df: pd.DataFrame):
                 print(f"{word.cogset:<7} {word.word:<20} {word.lang:<10} {word.gloss}")
             print()
 
+def most_drav_reflexes(df: pd.DataFrame):
+    # filter all Dravidian lemmas
+    data = list(df.itertuples(index=False))
+    drav = [x for x in data if "Dravidian" in x.Grouping]
+
+    # get cogsets
+    cogsets = defaultdict(set)
+    for lemma in tqdm(drav):
+        cogsets[lemma.cogset].add(lemma.lang)
+    
+    # print largest cogsets to file
+    with open("drav_cogsets.txt", "w") as f:
+        for cogset in sorted(cogsets, key=lambda x: len(cogsets[x]), reverse=True):
+            f.write(f"{cogset:<7} {len(cogsets[cogset])}\n")
+
 def main():
     df, langs = load_data()
     # plot_lemma_counts(df)
@@ -281,7 +296,8 @@ def main():
     # summary_table(df, langs)
     # map(df, langs)
     # drav_retro_alternants(df)
-    k_q_counts_ndr(df)
+    # k_q_counts_ndr(df)
+    most_drav_reflexes(df)
 
 
 if __name__ == "__main__":
