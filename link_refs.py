@@ -92,6 +92,24 @@ def linkify(desc, resolve):
     return _REF.sub(repl, desc), n[0]
 
 
+def extract_derivations(param_rows):
+    """Edges (child derived-term → parent/ancestor etymon) from the etymology brackets in headers.
+    Only bare ancestry brackets count: `[<X->]` / `[<X->, <Y->]` — NOT `[√root]` and NOT
+    `[Cf. …]` (see-also). Relies on the descriptions already being linkified (data-entry markers)."""
+    edges = []
+    seen = set()
+    for p in param_rows:
+        for b in re.findall(r"\[([^\[\]]*)\]", p.get("Description") or ""):
+            plain = html.unescape(_TAGS.sub("", b)).strip()
+            if plain.startswith("√") or re.match(r"Cf\.", plain):
+                continue
+            for eid in re.findall(r'data-entry="([^"]+)"', b):
+                if eid != p["ID"] and (p["ID"], eid) not in seen:
+                    seen.add((p["ID"], eid))
+                    edges.append((p["ID"], eid))
+    return edges
+
+
 def process(path, resolve, col="Description"):
     with open(path, encoding="utf-8") as f:
         rows = list(csv.DictReader(f))
@@ -116,6 +134,17 @@ def main():
     for path in ("cldf/parameters.csv", "cldf/forms.csv"):
         n, rows = process(path, resolve)
         print(f"{path}: linked {n} references across {rows} rows", file=sys.stderr)
+
+    # derivation graph: child derived-term → parent etymon (from ancestry brackets)
+    with open("cldf/parameters.csv", encoding="utf-8") as f:
+        params = list(csv.DictReader(f))  # re-read the now-linkified descriptions
+    edges = extract_derivations(params)
+    with open("cldf/derivation.csv", "w", newline="", encoding="utf-8") as f:
+        w = csv.writer(f)
+        w.writerow(["Child_ID", "Parent_ID"])
+        w.writerows(edges)
+    kids = len({c for c, _ in edges})
+    print(f"cldf/derivation.csv: {len(edges)} edges, {kids} derived-term entries", file=sys.stderr)
 
 
 if __name__ == "__main__":
