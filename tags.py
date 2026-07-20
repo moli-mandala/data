@@ -9,6 +9,7 @@ Conservative by design: a ";"-delimited field is only lifted when it consists EN
 tokens, so prose is never mangled. Currently extracts:
   • gender:        m, f, n  (and combos mn, fn, mf)
   • grammatical:   part of speech, valency/voice, number, case, verb forms
+  • source:        attestation loci — Sanskrit text abbreviations (RV, MBh, …) + `lex`
 """
 
 import html
@@ -26,6 +27,19 @@ GRAMMATICAL_TAGS = {
     "nom", "acc", "dat", "gen", "loc", "abl", "instr", "voc", "obl",
     # verb forms
     "pp", "ppp", "pres", "fut", "inf", "impv", "ind", "ger",
+}
+# Attestation sources: Sanskrit text-locus abbreviations (case-sensitive), plus `lex`
+# ("lexicographers only"). Curated from the corpus (single alphabetic tokens, no trailing dot,
+# occurring on the classical layer) — the dotted forms (S., F., Mu.) are per-language dialect codes,
+# not sources, and are deliberately excluded.
+SOURCE_TAGS = {
+    "AV", "AitBr", "Apte", "BHSk", "BhP", "Bhaṭṭ", "Bhpr", "Br", "Bālar", "Car", "Cat", "ChUp",
+    "DNM", "Daś", "Deśīn", "Dhātup", "Divyāv", "Gal", "Gaut", "Gobh", "Gr", "HPariś", "Hariv",
+    "Hcar", "Hcat", "Hit", "Kan", "Kathās", "Kauś", "KaṭhUp", "Kull", "Kād", "Kālid", "KātyŚr",
+    "Kāv", "Kāś", "Kāṭh", "Lalit", "Lāṭy", "MBh", "MW", "MaitrS", "MaitrUp", "Mn", "Mālatīm",
+    "MārkP", "Naigh", "Naiṣ", "Nir", "Pat", "Pañcad", "Pañcat", "Prab", "Pāṇ", "R", "RV", "Rājat",
+    "Suśr", "Sāh", "TBr", "TS", "TĀr", "Up", "Uṇ", "VP", "VS", "Vet", "Vop", "W", "Yājñ", "Āp",
+    "Āpast", "ĀpŚr", "ĀśvŚr", "ŚBr", "Śiś", "ŚrS", "ŚvetUp", "ŚāṅkhŚr", "ṢaḍvBr", "lex",
 }
 
 _ENTITY = re.compile(r"&(?:[a-zA-Z][a-zA-Z0-9]*|#\d+|#x[0-9a-fA-F]+);")
@@ -59,9 +73,19 @@ def _classify(field):
             out.append(base)
         elif base.lower() in GRAMMATICAL_TAGS:
             out.append(base.lower())
+        elif base in SOURCE_TAGS:
+            out.append(base)  # sources keep their case (RV, MBh, ŚBr)
         else:
             return None
     return out
+
+
+def _category(tag):
+    if tag in GENDER_TAGS:
+        return 0
+    if tag in GRAMMATICAL_TAGS:
+        return 1
+    return 2  # source
 
 
 def extract_tags(note):
@@ -80,5 +104,5 @@ def extract_tags(note):
             tags += cls
     seen = set()
     ordered = [t for t in tags if not (t in seen or seen.add(t))]
-    ordered.sort(key=lambda t: 0 if t in GENDER_TAGS else 1)
+    ordered.sort(key=_category)  # gender, then grammatical, then source
     return " ".join(ordered), "; ".join(kept)
