@@ -348,6 +348,15 @@ def main():
                 params.writerow(row)
                 included_params.add(row[0])
 
+        with open("data/nuristani_cognates.csv", encoding="utf-8") as f:
+            ancestor_ids = sorted({row["Ancestor_ID"] for row in csv.DictReader(f)})
+        collisions = sorted(set(ancestor_ids) & included_params)
+        if collisions:
+            raise ValueError(f"Proto-Indo-Iranian ancestor ID collisions: {collisions}")
+        for ancestor_id in ancestor_ids:
+            params.writerow([ancestor_id, "", "Indo-ir", "", ""])
+            included_params.add(ancestor_id)
+
     # ensure that all languages in forms.csv are also in languages.csv
     cldf_langs = set()
     with open("cldf/languages.csv", "r") as fin:

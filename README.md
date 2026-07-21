@@ -46,6 +46,17 @@ Etymological notes for *all* params (as written up/collated by us) are stored in
 
 Cross-dictionary loan relationships are curated in `data/borrowings.csv`. `Borrower_ID` is the borrowed entry and `Source_ID` is its source etymon; `unify_cldf.py` writes these to `Origin_ID`, `Relation`, and `Borrowed_From` in the unified form table.
 
+Proto-Nuristani cognate links are curated in `data/nuristani_cognates.csv`. Each row joins a
+Proto-Nuristani entry and an Indo-Aryan entry through a shared, intentionally blank
+Proto-Indo-Iranian `Ancestor_ID`; `make_cldf.py` creates those placeholder nodes and
+`unify_cldf.py` attaches both descendants as reflexes. Cases without a sufficiently clear parsed
+Indo-Aryan match are recorded in `data/nuristani_cognates_uncertain.csv`.
+When Strand places a Proto-Nuristani head beneath OIA rather than PAr, the reviewed donor is stored
+in `data/nuristani_borrowings.csv`; `unify_cldf.py` attaches the PNur head directly to that
+Indo-Aryan entry with `Relation=borrowed`. Its attested descendants are flattened beside the PNur
+head as direct borrowings from the same Indo-Aryan donor, avoiding a claim that borrowing occurred
+specifically at the Proto-Nuristani stage.
+
 Finally, some sources have unusual orthographies that we need to convert to the Sāmapriya-n system. The profiles used by the `segments` library to do so are stored as `conversions/*.txt`; these give substitution rules for orthographic normalisation.
 
 #### DEDR

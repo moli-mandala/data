@@ -32,6 +32,9 @@ import unicodedata
 from collections import defaultdict
 
 _ADD_PTR = re.compile(r"\s*Add\.\s*\d+\.?")  # the now-defunct "Add. N" pointer after a merge
+# separates a main entry's etymology snippet from a merged addendum's; the webapp splits on it and
+# renders one accented block per snippet (so no snippet is dropped when addenda fold into a main).
+ADD_DELIM = "<!--addendum-->"
 
 UNIFIED = [
     "ID", "Language_ID", "Form", "Gloss", "Native", "Phonemic", "Original", "Cognateset",
@@ -45,6 +48,19 @@ def load_borrowings(path="data/borrowings.csv"):
         return {}
     with open(path, encoding="utf-8") as f:
         return {r["Borrower_ID"]: r["Source_ID"] for r in csv.DictReader(f)}
+
+
+def load_nuristani_cognates(path="data/nuristani_cognates.csv"):
+    with open(path, encoding="utf-8") as f:
+        return list(csv.DictReader(f))
+
+
+def load_nuristani_borrowings(path="data/nuristani_borrowings.csv"):
+    with open(path, encoding="utf-8") as f:
+        return {
+            row["Proto_Nuristani_ID"]: row["Indo_Aryan_ID"]
+            for row in csv.DictReader(f)
+        }
 
 
 def apply_borrowings(rows, borrowings):
@@ -62,6 +78,57 @@ def apply_borrowings(rows, borrowings):
             row[16] = source
             applied += 1
     return applied
+
+
+def apply_nuristani_cognates(rows, cognates):
+    origins = {}
+    for cognate in cognates:
+        ancestor = cognate["Ancestor_ID"]
+        for child in (cognate["Proto_Nuristani_ID"], cognate["Indo_Aryan_ID"]):
+            existing = origins.setdefault(child, ancestor)
+            if existing != ancestor:
+                raise ValueError(f"Conflicting Proto-Indo-Iranian ancestors for {child}: {existing}, {ancestor}")
+
+    by_id = {row[0]: row for row in rows}
+    expected = set(origins) | {r["Ancestor_ID"] for r in cognates}
+    missing = sorted(expected - set(by_id))
+    if missing:
+        raise ValueError(f"Unknown Nuristani cognate IDs: {missing}")
+    for child, ancestor in origins.items():
+        row = by_id[child]
+        if row[11] and row[11] != ancestor:
+            raise ValueError(f"Cannot attach {child} to {ancestor}; it already has origin {row[11]}")
+        row[11] = ancestor
+        row[13] = "reflex"
+    return len(origins)
+
+
+def apply_nuristani_borrowings(rows, borrowings):
+    by_id = {row[0]: row for row in rows}
+    missing = sorted(
+        (nuristani, indo_aryan)
+        for nuristani, indo_aryan in borrowings.items()
+        if nuristani not in by_id or indo_aryan not in by_id
+    )
+    if missing:
+        raise ValueError(f"Unknown Nuristani borrowing IDs: {missing}")
+
+    descendants = 0
+    for nuristani, indo_aryan in borrowings.items():
+        branch = [
+            row
+            for row in rows
+            if row[0] == nuristani or row[11] == nuristani
+        ]
+        if not branch:
+            raise ValueError(f"No Nuristani borrowing branch found for {nuristani}")
+        for row in branch:
+            row[11] = indo_aryan
+            row[13] = "borrowed"
+            row[16] = indo_aryan
+            if row[0] != nuristani:
+                descendants += 1
+    return len(borrowings), descendants
 
 
 def apply_borrowings_to_unified():
@@ -265,12 +332,24 @@ def main():
         for i in (G, NA, PH, OR, TG):
             mrow[i] = mrow[i] or nrow[i]
         mrow[SR_] = ";".join(x for x in (mrow[SR_], nrow[SR_]) if x)
-        m_note = _ADD_PTR.sub("", mrow[ET]) if "[" in mrow[ET] else ""  # keep only a real [Cf. …] note
-        mrow[ET] = (nrow[ET] or "") + m_note
+        # keep BOTH etymology snippets as separate blocks — the main entry's own header, then each
+        # merged addendum's — joined by ADD_DELIM (the webapp renders one accented block each).
+        # Previously the main's snippet was overwritten by the addendum's, silently dropping it for
+        # the ~91 mains whose header lacked a "[Cf. …]" note.
+        add_et = _ADD_PTR.sub("", nrow[ET] or "").strip()
+        mrow[ET] = _ADD_PTR.sub("", mrow[ET] or "").strip()
+        if add_et:
+            mrow[ET] = mrow[ET] + ADD_DELIM + add_et if mrow[ET] else add_et
         nrow[RD] = m  # the addendum redirects to its main entry
         n_merged += 1
 
     n_curated_borrowings = apply_borrowings(etyma_rows, load_borrowings())
+    n_nuristani_reflexes = apply_nuristani_cognates(
+        etyma_rows + reflex_rows, load_nuristani_cognates()
+    )
+    n_nuristani_borrowings, n_nuristani_borrowed_descendants = apply_nuristani_borrowings(
+        etyma_rows + reflex_rows, load_nuristani_borrowings()
+    )
 
     with open("cldf/forms.csv", "w", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
@@ -299,6 +378,9 @@ def main():
         f"({len(folded)} folded self-reflexes, {n_merged} merged addenda) + {n_reflex} reflexes "
         f"+ {n_variant} variants + {n_section} promoted section-forms + {n_borrowed} borrowed; "
         f"applied {n_curated_borrowings} curated cross-dictionary borrowings; "
+        f"attached {n_nuristani_reflexes} PNur/IA nodes as Proto-II reflexes; "
+        f"applied {n_nuristani_borrowings} Strand OIA loan branches "
+        f"with {n_nuristani_borrowed_descendants} direct borrowed descendants; "
         f"removed parameters.csv",
         file=sys.stderr,
     )
