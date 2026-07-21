@@ -241,17 +241,24 @@ def main():
         section_by_num, promoted_id = {}, {}
         if cdial:
             num = 2
+            prev_or = False  # the previous head-form ended in "or" → the next is its alternate
             for r in group:
-                if r["ID"] in self_reflex_ids:
+                if r["Language_ID"] != parent["Language_ID"] or r.get("Variant_Of"):
                     continue
-                if r["Language_ID"] == parent["Language_ID"] and not r.get("Variant_Of"):
-                    new_id = f"{pid}-{num}"
-                    while new_id in all_ids:  # rare clash with a make_cldf `<file>-<row>` id
-                        new_id += "x"
-                    all_ids.add(new_id)
-                    section_by_num[num] = new_id
-                    promoted_id[r["ID"]] = new_id
-                    num += 1
+                # a head-form joined to the previous by "or" (e.g. "*dr̥kṣati or *drakṣati") is an
+                # alternate of the SAME form-slot, not a new numbered form; skip it so CDIAL's own
+                # form numbering — which the reflex sections index into via Cognateset info — is kept.
+                alternate = prev_or
+                prev_or = re.search(r"\bor$", (r.get("Description") or "").strip()) is not None
+                if r["ID"] in self_reflex_ids or alternate:
+                    continue
+                new_id = f"{pid}-{num}"
+                while new_id in all_ids:  # rare clash with a make_cldf `<file>-<row>` id
+                    new_id += "x"
+                all_ids.add(new_id)
+                section_by_num[num] = new_id
+                promoted_id[r["ID"]] = new_id
+                num += 1
 
         last_num = 1  # carry-forward form number within this entry (1 = the head itself)
         for r in group:
