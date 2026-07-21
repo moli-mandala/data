@@ -40,6 +40,7 @@ class Row:
         self.notes = row[6]
         self.tags = ""  # structured tokens lifted from notes at write time (see extract_tags)
         self.source = row[7]
+        self.variant_of = ""  # for a comma-listed alternate: the id of the first (main) form
         self.cognateset = '' if len(row) < 9 else row[8]
         if '.' in self.cognateset:
             parts = list(self.cognateset.split("."))
@@ -61,6 +62,7 @@ class Row:
             self.notes,
             self.tags,
             self.source,
+            self.variant_of,
         ]
         return rows
 
@@ -100,13 +102,20 @@ def parse_file(file: str, errors, name=None, file_num=0):
         if "." in row.param:
             row.param = row.param.split(".")[0]
 
-        # split multiple forms into separate rows
+        # split multiple forms into separate rows; comma-listed alternates share one definition, so
+        # the first is the main reflex and the rest are variants of it (same etymon, own alignment).
         forms = list(row.form.split(",")) if "dedr" not in file else [row.form]
-        for form in forms:
+        main_id = None
+        for fj, form in enumerate(forms):
             reformed = form
             row.old_form = form
             row.form = form
             row.id = f"{file_num}-{i}"
+            if fj == 0:
+                main_id = row.id
+                row.variant_of = ""
+            else:
+                row.variant_of = main_id
 
             # convert IPA
             if ipa is not None and "˚" not in form and convert:
@@ -201,6 +210,7 @@ def main():
                 "Description",
                 "Tags",
                 "Source",
+                "Variant_Of",
             ]
         )
 
@@ -253,9 +263,13 @@ def main():
                 headword = headword.replace("<? >", "")
                 headword = headword.lower()
                 headword = headword.replace("˜", "̃")
-                headword = headword.split()[0]
+                # a comma lists alternate forms — the head-word is the first of them; a space
+                # WITHOUT a comma is a genuine multi-word head-word (e.g. "kaḥ punar"), kept whole.
+                headword = headword.split(",")[0].strip()
                 reformed = ""
-                if "˚" not in headword:
+                if " " in headword:
+                    reformed = headword
+                elif "˚" not in headword:
                     reformed = (
                         convertors["cdial"](headword.strip("-123456,;"), column="IPA")
                         .replace(" ", "")
@@ -301,7 +315,7 @@ def main():
                         else:
                             row[2] = reformed
                     params.writerow(
-                        [row[0], row[2], row[1], row[3], etyma.get(row[0], "")]
+                        [row[0], row[2].split(",")[0].strip(), row[1], row[3], etyma.get(row[0], "")]
                     )
                     included_params.add(row[0])
 
@@ -309,6 +323,7 @@ def main():
             read = csv.reader(f)
             for row in read:
                 row[2] = "PMu"
+                row[1] = row[1].split(",")[0].strip()  # main head-word = first of the listed forms
                 params.writerow(row)
                 included_params.add(row[0])
 
@@ -316,6 +331,7 @@ def main():
             read = csv.reader(f)
             for row in read:
                 row[2] = "PDr"
+                row[1] = row[1].split(",")[0].strip()  # main head-word = first of the listed forms
                 params.writerow(row)
                 included_params.add(row[0])
 
