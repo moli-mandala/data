@@ -21,11 +21,11 @@ The `Makefile` only knows `make_cldf.py`. The current pipeline is a sequence of 
 2. `make_cldf.py` — raw `data/**` → `cldf/{forms,parameters,languages,references}.csv`.
 3. `link_refs.py` — resolve `<smallcaps>` cross-references in the descriptions to
    `<a data-entry="ID">` markers; also touches `derivation.csv` / `merges.csv`. Idempotent.
-4. `align.py` — phonetic etymon→reflex alignments → `cldf/alignments.csv`. Approximate/computed
-   layer, tuned for Indo-Aryan. Reads `parameters.csv`, so it **must run before `unify_cldf.py`**.
-5. `unify_cldf.py` — fold `parameters.csv` (etyma) + `forms.csv` (reflexes) into ONE unified
+4. `unify_cldf.py` — fold `parameters.csv` (etyma) + `forms.csv` (reflexes) into ONE unified
    `cldf/forms.csv`, then **delete `parameters.csv`**. Applies the section-restructure, borrowed
-   forms, and merges. **Always last.**
+   forms, and merges.
+5. `align.py` — phonetic final-origin→child alignments → `cldf/alignments.csv`. Approximate/computed
+   layer, tuned for Indo-Aryan. Reads unified `Origin_ID` relationships, so it **must run last**.
 
 Then, in `../jambu-static`: `npm run db:transform` reads `../data/cldf` directly.
 

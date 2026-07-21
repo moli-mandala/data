@@ -25,6 +25,10 @@ The structure is more formally defined in `cldf/Wordlist-metadata.json`.
 
 **Raw data is organised under `data/`**. The script `make_cldf.py` builds the CLDF database in `cldf/` from the raw data. Raw data is all stored in CSV in order to be easy to edit and parse.
 
+Run the complete data build with `make all`. It executes `make_cldf.py`, `link_refs.py`,
+`unify_cldf.py`, and finally `align.py`; alignment must use the final unified `Origin_ID` graph so
+borrowings and redirected entries are aligned to the same ancestors displayed by the application.
+
 For raw data files that list lemmata, the columns are:
 1. Language ID
 2. Param ID (entry)

@@ -63,6 +63,14 @@ def load_nuristani_borrowings(path="data/nuristani_borrowings.csv"):
         }
 
 
+def load_strand_oia_redirects(path="data/strand_oia_redirects.csv"):
+    with open(path, encoding="utf-8") as f:
+        return {
+            row["Strand_ID"]: row["CDIAL_ID"]
+            for row in csv.DictReader(f)
+        }
+
+
 def apply_borrowings(rows, borrowings):
     ids = {r[0] for r in rows}
     missing = sorted((borrower, source) for borrower, source in borrowings.items()
@@ -129,6 +137,35 @@ def apply_nuristani_borrowings(rows, borrowings):
             if row[0] != nuristani:
                 descendants += 1
     return len(borrowings), descendants
+
+
+def apply_strand_oia_redirects(etyma_rows, reflex_rows, redirects):
+    rows = etyma_rows + reflex_rows
+    by_id = {row[0]: row for row in rows}
+    missing = sorted(
+        (strand, cdial)
+        for strand, cdial in redirects.items()
+        if strand not in by_id or cdial not in by_id
+    )
+    if missing:
+        raise ValueError(f"Unknown Strand OIA redirect IDs: {missing}")
+
+    for strand, cdial in redirects.items():
+        if by_id[strand][1] != "Indo-Aryan" or by_id[cdial][1] != "Indo-Aryan":
+            raise ValueError(f"Strand OIA redirect must join Indo-Aryan entries: {strand}, {cdial}")
+
+    redirected = 0
+    for row in rows:
+        if row[0] in redirects:
+            continue
+        for column in (11, 14, 15, 16):
+            target = redirects.get(row[column])
+            if target:
+                row[column] = target
+                redirected += 1
+
+    etyma_rows[:] = [row for row in etyma_rows if row[0] not in redirects]
+    return len(redirects), redirected
 
 
 def apply_borrowings_to_unified():
@@ -266,6 +303,7 @@ def main():
                 continue
             vof = r.get("Variant_Of", "")
             origin = r["Parameter_ID"]
+            marker = origin[:1] if origin[:1] in (">", "~") else ""
             borrowed_from = ""
 
             # a CDIAL numbered head-form → promote to an entry (id `<etymon>-<n>`) derived from the head
@@ -295,6 +333,17 @@ def main():
                 relation = "borrowed"
                 vof = ""
                 origin = borrowed_from
+                n_borrowed += 1
+            elif marker:
+                origin = strip_marker(origin)
+                relation = "borrowed"
+                borrowed_from = origin
+                vof = ""
+                marker_tag = "semi-tatsama" if marker == "~" else "marked borrowing"
+                tags = [tag for tag in (r.get("Tags", "") or "").split(";") if tag]
+                if marker_tag not in tags:
+                    tags.append(marker_tag)
+                r["Tags"] = ";".join(tags)
                 n_borrowed += 1
             elif vof and vof not in self_reflex_ids:
                 relation = "variant"
@@ -357,6 +406,9 @@ def main():
     n_nuristani_borrowings, n_nuristani_borrowed_descendants = apply_nuristani_borrowings(
         etyma_rows + reflex_rows, load_nuristani_borrowings()
     )
+    n_strand_oia_redirects, n_strand_oia_references = apply_strand_oia_redirects(
+        etyma_rows, reflex_rows, load_strand_oia_redirects()
+    )
 
     with open("cldf/forms.csv", "w", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
@@ -388,6 +440,8 @@ def main():
         f"attached {n_nuristani_reflexes} PNur/IA nodes as Proto-II reflexes; "
         f"applied {n_nuristani_borrowings} Strand OIA loan branches "
         f"with {n_nuristani_borrowed_descendants} direct borrowed descendants; "
+        f"merged {n_strand_oia_redirects} duplicate Strand OIA heads and redirected "
+        f"{n_strand_oia_references} references; "
         f"removed parameters.csv",
         file=sys.stderr,
     )

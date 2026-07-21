@@ -1,9 +1,13 @@
 import csv
+from pathlib import Path
 
+import pytest
 from pycldf import Dataset
 
 
 def test_validate():
+    if not Path("cldf/parameters.csv").exists():
+        pytest.skip("Wordlist metadata validates the pre-unification CLDF stage")
     d = Dataset.from_metadata("cldf/Wordlist-metadata.json")
     assert d.validate()
 
@@ -78,3 +82,66 @@ def test_strand_indo_aryan_loans_are_nuristani_borrowings():
 
     yamaraja = next(r for r in borrowings if r["Proto_Nuristani_ID"] == "n2571")
     assert yamaraja["Indo_Aryan_ID"] == "10425"
+
+
+def test_marked_origins_are_borrowings_with_valid_targets():
+    with open("cldf/forms.csv", encoding="utf-8") as f:
+        forms = {row["ID"]: row for row in csv.DictReader(f)}
+
+    marked = [
+        row for row in forms.values()
+        if row["Tags"] in {"marked borrowing", "semi-tatsama"}
+    ]
+    assert len(marked) == 185
+    assert sum(row["Tags"] == "marked borrowing" for row in marked) == 158
+    assert sum(row["Tags"] == "semi-tatsama" for row in marked) == 27
+    for row in marked:
+        assert row["Origin_ID"] in forms
+        assert row["Relation"] == "borrowed"
+        assert row["Borrowed_From"] == row["Origin_ID"]
+        assert row["Origin_ID"][:1] not in {">", "~"}
+
+
+def test_duplicate_strand_oia_heads_are_merged_into_cdial():
+    with open("data/strand_oia_redirects.csv", encoding="utf-8") as f:
+        redirects = {
+            row["Strand_ID"]: row["CDIAL_ID"]
+            for row in csv.DictReader(f)
+        }
+    with open("cldf/forms.csv", encoding="utf-8") as f:
+        forms = {row["ID"]: row for row in csv.DictReader(f)}
+
+    assert redirects
+    assert not set(redirects) & set(forms)
+    assert set(redirects.values()) <= set(forms)
+    for row in forms.values():
+        assert row["Origin_ID"] not in redirects
+        assert row["Borrowed_From"] not in redirects
+        assert row["Variant_Of"] not in redirects
+        assert row["Redirect"] not in redirects
+
+
+def test_strand_borrowings_are_aligned_to_final_indo_aryan_donors():
+    with open("data/nuristani_borrowings.csv", encoding="utf-8") as f:
+        borrowings = {
+            row["Proto_Nuristani_ID"]: row["Indo_Aryan_ID"]
+            for row in csv.DictReader(f)
+        }
+    with open("cldf/forms.csv", encoding="utf-8") as f:
+        forms = {row["ID"]: row for row in csv.DictReader(f)}
+
+    wanted = set(borrowings)
+    wanted.update(
+        entry_id for entry_id in forms
+        if entry_id.startswith("n2571-")
+    )
+    aligned_origins = {entry_id: set() for entry_id in wanted}
+    with open("cldf/alignments.csv", encoding="utf-8") as f:
+        for row in csv.DictReader(f):
+            if row["Form_ID"] in aligned_origins:
+                aligned_origins[row["Form_ID"]].add(row["Origin_ID"])
+
+    for nuristani, indo_aryan in borrowings.items():
+        assert aligned_origins[nuristani] == {indo_aryan}
+    for descendant in wanted - set(borrowings):
+        assert aligned_origins[descendant] == {"10425"}

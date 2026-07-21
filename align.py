@@ -10,8 +10,12 @@ Segmentation reuses the curated CDIAL grapheme inventory (conversion/cdial-post.
 profile make_cldf.py / models2 use — via longest-match tokenisation. Alignment is a
 feature-weighted Needleman–Wunsch; labelling is a small articulatory-feature rule set.
 
+Run after unify_cldf.py. Each final graph node is aligned to its final Origin_ID, so curated
+borrowings, redirects, promoted section forms, and reparented descendants use the ancestry shown
+by the application.
+
 Output: cldf/alignments.csv, a NORMALISED (queryable) table — one row per aligned column:
-    Form_ID, Parameter_ID, Language_ID, Pos, Etymon_Seg, Reflex_Seg, Type, Label
+    Form_ID, Origin_ID, Pos, Etymon_Idx, Etymon_Seg, Reflex_Seg, Change, Prev_Seg, Next_Seg
 
 This is a computed, approximate layer (no hand-aligned gold standard yet); it's tuned to read
 well on Indo-Aryan and degrade gracefully. A hand-override table can later be merged in here.
@@ -31,7 +35,6 @@ csv.field_size_limit(min(sys.maxsize, 2**31 - 1))
 
 PROFILE = "conversion/cdial-post.txt"
 FORMS = "cldf/forms.csv"
-PARAMS = "cldf/parameters.csv"
 
 # Proto/reconstruction languages whose parameter Name is a true ancestor of the reflexes.
 PROTO_LANGS = {"Indo-Aryan", "PDr", "PMu", "PNur", "PA", "PIA", "OIA"}
@@ -306,30 +309,34 @@ def describe(e: Seg | None, r: Seg | None) -> str:
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--family", default="ALL", help="ALL, or a proto Language_ID e.g. Indo-Aryan")
-    ap.add_argument("--limit", type=int, default=0, help="cap #parameters (0 = all)")
+    ap.add_argument("--limit", type=int, default=0, help="cap #origins (0 = all)")
     ap.add_argument("--out", default="cldf/alignments.csv")
     args = ap.parse_args()
 
     tok = segmenter(load_graphemes(PROFILE))
 
-    # etymon name + family per parameter
-    etymon: dict[str, tuple[str, str]] = {}
-    with open(PARAMS, encoding="utf-8") as f:
-        for row in csv.DictReader(f):
-            etymon[row["ID"]] = (row["Name"], row["Language_ID"])
+    with open(FORMS, encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+        if "Origin_ID" not in (reader.fieldnames or ()):
+            raise ValueError("align.py must run after unify_cldf.py")
+        rows = list(reader)
+    etymon = {
+        row["ID"]: (row["Form"], row["Language_ID"])
+        for row in rows
+    }
 
     keep_family = None if args.family == "ALL" else args.family
-    seen_params: set[str] = set()
+    seen_origins: set[str] = set()
     n_forms = n_pairs = 0
 
-    with open(FORMS, encoding="utf-8") as f, open(args.out, "w", newline="", encoding="utf-8") as g:
+    with open(args.out, "w", newline="", encoding="utf-8") as g:
         w = csv.writer(g)
-        w.writerow(["Form_ID", "Parameter_ID", "Pos", "Etymon_Idx",
+        w.writerow(["Form_ID", "Origin_ID", "Pos", "Etymon_Idx",
                     "Etymon_Seg", "Reflex_Seg", "Change", "Prev_Seg", "Next_Seg"])
         ety_cache: dict[str, list[Seg]] = {}
-        for row in csv.DictReader(f):
-            pid = row["Parameter_ID"]
-            meta = etymon.get(pid)
+        for row in rows:
+            origin = row["Origin_ID"]
+            meta = etymon.get(origin)
             if not meta:
                 continue
             ename, efam = meta
@@ -337,18 +344,18 @@ def main():
                 continue
             if efam not in PROTO_LANGS:
                 continue  # only align where the parameter head is a real proto-form
-            if args.limit and pid not in seen_params and len(seen_params) >= args.limit:
+            if args.limit and origin not in seen_origins and len(seen_origins) >= args.limit:
                 continue
-            seen_params.add(pid)
+            seen_origins.add(origin)
             form = row["Form"]
             if not form or not ename:
                 continue
-            if pid not in ety_cache:
+            if origin not in ety_cache:
                 es0 = segments(tok, ename)
                 for k, s in enumerate(es0):
                     s.idx = k
-                ety_cache[pid] = es0
-            es = ety_cache[pid]
+                ety_cache[origin] = es0
+            es = ety_cache[origin]
             rs = segments(tok, form)
             if not es or not rs:
                 continue
@@ -358,7 +365,7 @@ def main():
                     nxt = es[a.idx + 1].raw if a.idx + 1 < len(es) else "#"
                 else:
                     prev = nxt = ""  # insertion — no etymon context
-                w.writerow([row["ID"], pid, pos, a.idx if a else -1,
+                w.writerow([row["ID"], origin, pos, a.idx if a else -1,
                             a.raw if a else "", b.raw if b else "", describe(a, b), prev, nxt])
                 n_pairs += 1
             n_forms += 1
@@ -366,7 +373,7 @@ def main():
                 print(f"  …{n_forms} forms, {n_pairs} aligned segments", file=sys.stderr)
 
     print(f"[align] wrote {args.out}: {n_forms} reflexes, {n_pairs} aligned segments, "
-          f"{len(seen_params)} etyma", file=sys.stderr)
+          f"{len(seen_origins)} origins", file=sys.stderr)
 
 
 if __name__ == "__main__":
