@@ -19,7 +19,8 @@ from collections import defaultdict
 SUP = {"¹": "1", "²": "2", "³": "3", "⁴": "4", "⁵": "5"}
 _TAGS = re.compile(r"<[^>]+>")
 _SUPCH = re.compile(r"[¹²³⁴⁵]")
-_REF = re.compile(r"(√\s*)?<smallcaps>(.*?)</smallcaps>([¹²³⁴⁵]?)")
+# the homograph superscript may sit after a stem hyphen, e.g. `<smallcaps>varta</smallcaps>-²`
+_REF = re.compile(r"(√\s*\*?\s*)?<smallcaps>(.*?)</smallcaps>(-?)([¹²³⁴⁵]?)")
 
 
 def _base(s):
@@ -32,6 +33,18 @@ def _base(s):
 def _sup(s):
     m = _SUPCH.search(html.unescape(s))
     return SUP[m.group(0)] if m else ""
+
+
+# the headword's homograph superscript may sit inside OR just after the bold: `<b>varta</b>²`
+_HEAD = re.compile(r"<b>(.*?)</b>\s*([¹²³⁴⁵]?)")
+
+
+def _headword(desc):
+    """(base, homograph-sup) of an entry's bold head-word, or None if it has none."""
+    m = _HEAD.search(desc or "")
+    if not m:
+        return None
+    return _base(m.group(1)), (_sup(m.group(1)) or SUP.get(m.group(2), ""))
 
 
 ADDENDA_LO, ADDENDA_HI = 14190, 14845
@@ -48,10 +61,9 @@ def compute_merges(param_rows):
     mains = defaultdict(list)  # (base, sup) -> [non-addendum ids]
     adds = []  # (addendum id, key)
     for p in param_rows:
-        m = re.search(r"<b>(.*?)</b>", p.get("Description") or "")
-        if not m:
+        key = _headword(p.get("Description") or "")
+        if not key:
             continue
-        key = (_base(m.group(1)), _sup(m.group(1)))
         if not key[0]:
             continue
         if _is_addendum(p["ID"]):
@@ -73,10 +85,10 @@ def build_resolver(param_rows, skip=frozenset()):
     for p in param_rows:
         if p["ID"] in skip:
             continue
-        m = re.search(r"<b>(.*?)</b>", p.get("Description") or "")
-        if not m:
+        kh = _headword(p.get("Description") or "")
+        if not kh:
             continue
-        b, h = _base(m.group(1)), _sup(m.group(1))
+        b, h = kh
         if not b:
             continue
         byhom[b].setdefault(h, p["ID"])
@@ -103,7 +115,8 @@ def linkify(desc, resolve, root_map=None):
     n = [0]
 
     def repl(m):
-        root, content, trail = m.group(1), m.group(2), m.group(3)
+        root, content, hyph, trail = m.group(1), m.group(2), m.group(3), m.group(4)
+        tail = hyph + trail  # re-emitted verbatim so display (e.g. "-²") is preserved
         if "data-entry" in content:
             return m.group(0)  # already linked
         if root:
@@ -111,25 +124,36 @@ def linkify(desc, resolve, root_map=None):
             rid = root_map.get((_base(content), SUP.get(trail, ""))) if root_map else None
             if rid:
                 n[0] += 1
-                return f'{root}<smallcaps><a data-entry="{rid}">{content}</a></smallcaps>{trail}'
+                return f'{root}<smallcaps><a data-entry="{rid}">{content}</a></smallcaps>{tail}'
             return m.group(0)
-        parts = re.split(r"(,\s*)", content)  # keep the separators
-        real = [i for i, t in enumerate(parts) if t.strip() and not re.fullmatch(r",\s*", t)]
+        # references inside one <smallcaps> are separated by commas, colons (`X-: √root`), or an
+        # em-dash aside (`samakṣá-. — sa-², ákṣi-`) — split on all three so each ref resolves.
+        parts = re.split(r"(,\s*|:\s*|\s*—\s*)", content)
+        real = [
+            i for i, t in enumerate(parts) if t.strip() and not re.fullmatch(r"[,:]\s*|\s*—\s*", t)
+        ]
         last = real[-1] if real else -1
         out = []
         for i, tok in enumerate(parts):
             if i not in real:
                 out.append(tok)
                 continue
+            rm = re.match(r"(\s*√\s*\*?\s*)(.+)", tok)  # an inline √root reference
+            if rm and root_map:
+                rid = root_map.get((_base(rm.group(2)), _sup(tok)))
+                if rid:
+                    n[0] += 1
+                    out.append(f'{rm.group(1)}<a data-entry="{rid}">{rm.group(2)}</a>')
+                    continue
             b = _base(tok)
-            sup = _sup(tok) or (trail if i == last else "")
+            sup = _sup(tok) or (SUP.get(trail, "") if i == last else "")
             eid = resolve(b, sup)
             if eid:
                 n[0] += 1
                 out.append(f'<a data-entry="{eid}">{tok}</a>')
             else:
                 out.append(tok)
-        return (root or "") + "<smallcaps>" + "".join(out) + "</smallcaps>" + trail
+        return (root or "") + "<smallcaps>" + "".join(out) + "</smallcaps>" + tail
 
     return _REF.sub(repl, desc), n[0]
 
@@ -151,7 +175,12 @@ def extract_derivations(param_rows):
             if "—" in b:
                 frag = b.rsplit("—", 1)[-1]
             elif re.match(r"Cf\.", plain):
-                continue  # pure see-also, no ancestry to record
+                # "[Cf. …aside… : X-, Y-]": a colon likewise splits the see-also from the real
+                # ancestry that follows it; otherwise it's a pure see-also with nothing to record.
+                if ":" in b:
+                    frag = b.rsplit(":", 1)[-1]
+                else:
+                    continue
             for eid in re.findall(r'data-entry="([^"]+)"', frag):
                 if eid != p["ID"] and (p["ID"], eid) not in seen:
                     seen.add((p["ID"], eid))
@@ -159,7 +188,7 @@ def extract_derivations(param_rows):
     return edges
 
 
-ROOT_REF = re.compile(r"√\s*<smallcaps>(.*?)</smallcaps>([¹²³⁴⁵]?)")
+ROOT_REF = re.compile(r"√\s*\*?\s*<smallcaps>(.*?)</smallcaps>([¹²³⁴⁵]?)")
 
 
 def extract_roots(param_rows):
@@ -179,6 +208,21 @@ def extract_roots(param_rows):
                 key = (base, SUP.get(supch, ""))
                 disp[key] = base + supch
                 occ[key].append(p["ID"])
+            # roots also appear *inside* a <smallcaps> span, separated by a comma, colon, or
+            # em-dash aside — e.g. `<smallcaps>X-: √root</smallcaps>` or `<smallcaps>X¹. — √root`
+            for sc in re.findall(r"<smallcaps>(.*?)</smallcaps>", b):
+                for tok in re.split(r"[,:—]", sc):
+                    rm = re.match(r"\s*√\s*\*?\s*(.+)", tok)
+                    if not rm:
+                        continue
+                    base = _base(rm.group(1))
+                    if not base:
+                        continue
+                    scm = _SUPCH.search(tok)
+                    supch = scm.group(0) if scm else ""
+                    key = (base, SUP.get(supch, ""))
+                    disp.setdefault(key, base + supch)
+                    occ[key].append(p["ID"])
     keys = sorted(occ)
     rid = {k: f"r{i}" for i, k in enumerate(keys, 1)}
     edges, seen = [], set()

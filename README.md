@@ -44,6 +44,8 @@ For raw data files that list parameters (entries), the columns are:
 
 Etymological notes for *all* params (as written up/collated by us) are stored in `data/etymologies.csv`. The columns are just the Param ID and Markdown-formatted notes.
 
+Cross-dictionary loan relationships are curated in `data/borrowings.csv`. `Borrower_ID` is the borrowed entry and `Source_ID` is its source etymon; `unify_cldf.py` writes these to `Origin_ID`, `Relation`, and `Borrowed_From` in the unified form table.
+
 Finally, some sources have unusual orthographies that we need to convert to the Sāmapriya-n system. The profiles used by the `segments` library to do so are stored as `conversions/*.txt`; these give substitution rules for orthographic normalisation.
 
 #### DEDR

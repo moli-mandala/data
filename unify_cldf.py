@@ -36,7 +36,47 @@ _ADD_PTR = re.compile(r"\s*Add\.\s*\d+\.?")  # the now-defunct "Add. N" pointer 
 UNIFIED = [
     "ID", "Language_ID", "Form", "Gloss", "Native", "Phonemic", "Original", "Cognateset",
     "Description", "Tags", "Source", "Origin_ID", "Etymology", "Relation", "Redirect", "Variant_Of",
+    "Borrowed_From",
 ]
+
+
+def load_borrowings(path="data/borrowings.csv"):
+    if not os.path.exists(path):
+        return {}
+    with open(path, encoding="utf-8") as f:
+        return {r["Borrower_ID"]: r["Source_ID"] for r in csv.DictReader(f)}
+
+
+def apply_borrowings(rows, borrowings):
+    ids = {r[0] for r in rows}
+    missing = sorted((borrower, source) for borrower, source in borrowings.items()
+                     if borrower not in ids or source not in ids)
+    if missing:
+        raise ValueError(f"Unknown borrowing IDs: {missing}")
+    applied = 0
+    for row in rows:
+        source = borrowings.get(row[0])
+        if source:
+            row[11] = source
+            row[13] = "borrowed"
+            row[16] = source
+            applied += 1
+    return applied
+
+
+def apply_borrowings_to_unified():
+    with open("cldf/forms.csv", encoding="utf-8") as f:
+        reader = csv.reader(f)
+        header = next(reader)
+        rows = list(reader)
+    if header != UNIFIED:
+        raise ValueError("cldf/forms.csv is not in unified format")
+    applied = apply_borrowings(rows, load_borrowings())
+    with open("cldf/forms.csv", "w", newline="", encoding="utf-8") as f:
+        writer = csv.writer(f)
+        writer.writerow(header)
+        writer.writerows(rows)
+    print(f"applied {applied} curated borrowings", file=sys.stderr)
 
 
 def strip_marker(pid: str) -> str:
@@ -82,9 +122,10 @@ def main():
     etyma_rows, etyma_by_id = [], {}
     for p in params:
         header = p["Description"]
-        is_html = header.startswith("<html")
-        # CDIAL entries carry the full dictionary entry HTML as the "header"; other sources
-        # (Dravidian/Munda/Nuristani) put the plain meaning there instead.
+        # CDIAL entries carry the full dictionary entry as HTML (starting with a tag — <html><body>
+        # or a bare <number>/<b> depending on the bs4 parser); other sources (Dravidian/Munda/
+        # Nuristani) put the plain meaning there instead.
+        is_html = header.lstrip().startswith("<")
         gloss = "" if is_html else header
         etymology = header if is_html else ""
         native = phonemic = original = tags = source = ""
@@ -97,41 +138,123 @@ def main():
             original = original or sr["Original"]
             source = source or sr["Source"]
         row = [p["ID"], p["Language_ID"], p["Name"], gloss, native, phonemic, original,
-               "", p.get("Etyma", ""), tags, source, "", etymology, "", "", ""]
+               "", p.get("Etyma", ""), tags, source, "", etymology, "", "", "", ""]
         etyma_rows.append(row)
         etyma_by_id[p["ID"]] = row
 
     # ---- build reflex rows (self-reflexes dropped; addenda reflexes re-parented) ------
-    n_reflex = n_variant = 0
+    # A CDIAL entry's header lists numbered derived forms (`2. *kṣata-². 3. *kṣaṇana-. …`); each is a
+    # lexeme in its own right, so we promote it to an entry derived from the head (form 1 = the
+    # etymon). Reflexes are grouped into those forms by the `info` half of their Cognateset
+    # ("subnum:info" → info is the form number). Non-numeric info carries forward the most recent
+    # form number; form 1 (or no numbered form) stays on the head.
+    n_reflex = n_variant = n_section = n_borrowed = 0
     reflex_rows = []
+    section_edges = []  # (numbered-form id -> head etymon id)
+    all_ids = {r["ID"] for r in forms}  # to keep promoted `<etymon>-<n>` ids collision-free
+
+    # Borrowed sub-reflexes: a CDIAL note "(→ H. …, B. …)" lists forms borrowed FROM that reflex.
+    # parse.py already split them into rows tagged with Cognateset "<subnum>:<parent-lang> →"; here we
+    # link each back to its parent reflex — the one on the same etymon + section number, in the named
+    # language, whose note carries the "(→" marker.
+    borrow_parent = {}  # (pid, subnum, lang) -> parent reflex id
     for r in forms:
-        if r["ID"] in self_reflex_ids:
-            continue
-        pid = strip_marker(r["Parameter_ID"])
+        if "(→" in (r["Description"] or ""):
+            key = (strip_marker(r["Parameter_ID"]), (r["Cognateset"] or "").split(":", 1)[0],
+                   r["Language_ID"])
+            borrow_parent.setdefault(key, r["ID"])
+
+    for pid_key, group in forms_by_param.items():
+        pid = strip_marker(pid_key)
         parent = params_by_id.get(pid)
-        # two kinds of variant: a comma-listed alternate of a main reflex (Variant_Of set by
-        # make_cldf), or a same-language non-head-word form (a variant of the etymon head itself).
-        vof = r.get("Variant_Of", "")
-        if vof and vof not in self_reflex_ids:  # alternate of a main reflex
-            relation = "variant"
-            n_variant += 1
-        elif parent and r["Language_ID"] == parent["Language_ID"]:  # head variant (of the etymon)
-            relation = "variant"
-            vof = ""
-            n_variant += 1
-        else:
-            relation = "reflex"
-            vof = ""
-            n_reflex += 1
-        origin = r["Parameter_ID"]
-        if pid in merges:  # this reflex belongs to a merged addendum → hang it on the main entry
-            mk = origin[0] if origin and origin[0] in ">~" else ""
-            origin = mk + merges[pid]
-        reflex_rows.append([
-            r["ID"], r["Language_ID"], r["Form"], r["Gloss"], r["Native"], r["Phonemic"],
-            r["Original"], r["Cognateset"], r["Description"], r.get("Tags", ""), r["Source"],
-            origin, "", relation, "", vof,
-        ])
+        cdial = parent is not None and parent["Language_ID"] == "Indo-Aryan" and pid not in merges
+
+        # enumerate the numbered head-forms (same language as the etymon, not the self-reflex, not a
+        # comma-alternate) in header order → form 2, 3, …. A promoted form is re-id'd `<etymon>-<n>`.
+        section_by_num, promoted_id = {}, {}
+        if cdial:
+            num = 2
+            for r in group:
+                if r["ID"] in self_reflex_ids:
+                    continue
+                if r["Language_ID"] == parent["Language_ID"] and not r.get("Variant_Of"):
+                    new_id = f"{pid}-{num}"
+                    while new_id in all_ids:  # rare clash with a make_cldf `<file>-<row>` id
+                        new_id += "x"
+                    all_ids.add(new_id)
+                    section_by_num[num] = new_id
+                    promoted_id[r["ID"]] = new_id
+                    num += 1
+
+        last_num = 1  # carry-forward form number within this entry (1 = the head itself)
+        for r in group:
+            if r["ID"] in self_reflex_ids:
+                continue
+            vof = r.get("Variant_Of", "")
+            origin = r["Parameter_ID"]
+            borrowed_from = ""
+
+            # a CDIAL numbered head-form → promote to an entry (id `<etymon>-<n>`) derived from the head
+            if r["ID"] in promoted_id:
+                new_id = promoted_id[r["ID"]]
+                section_edges.append((new_id, pid))
+                n_section += 1
+                reflex_rows.append([
+                    new_id, r["Language_ID"], r["Form"], r["Gloss"], r["Native"], r["Phonemic"],
+                    r["Original"], "", r["Description"], r.get("Tags", ""), r["Source"],
+                    "", "", "", "", "", "",
+                ])
+                continue
+
+            cog = r["Cognateset"] or ""
+            # a borrowed sub-reflex ("<subnum>:<lang> →") → child of the reflex it was borrowed from
+            if "→" in cog:
+                sub, _, rest = cog.partition(":")
+                plang = rest.split("→")[0].strip()
+                borrowed_from = borrow_parent.get((pid, sub, plang), "")
+
+            # two kinds of variant: a comma-listed alternate of a main reflex (Variant_Of set by
+            # make_cldf), or a same-language non-head-word form on a non-CDIAL etymon.
+            if borrowed_from:
+                # the reflex it was borrowed from becomes its parent (origin) — a proper node with
+                # this form as a child — so ancestry recurses through it and it owns its borrowings.
+                relation = "borrowed"
+                vof = ""
+                origin = borrowed_from
+                n_borrowed += 1
+            elif vof and vof not in self_reflex_ids:
+                relation = "variant"
+                n_variant += 1
+            elif parent and r["Language_ID"] == parent["Language_ID"]:
+                relation = "variant"
+                vof = ""
+                n_variant += 1
+            else:
+                relation = "reflex"
+                vof = ""
+                n_reflex += 1
+                if cdial:  # re-home to its numbered head-form via the Cognateset info
+                    info = cog.split(":", 1)[1].strip() if ":" in cog else ""
+                    m_add = re.match(r"Addenda.*?(\d+)\s*$", info)  # "Addenda: *X. N" → form N
+                    if info.isdigit():
+                        last_num = int(info)
+                    elif m_add:
+                        last_num = int(m_add.group(1))
+                    elif info == "":
+                        last_num = 1  # section-less paragraph → the main entry (the head)
+                    # else: a non-numeric label (e.g. "prob") carries forward the last form number
+                    if last_num in section_by_num:
+                        mk = origin[0] if origin and origin[0] in ">~" else ""
+                        origin = mk + section_by_num[last_num]
+
+            if pid in merges and not borrowed_from:  # merged addendum → hang on the main entry
+                mk = origin[0] if origin and origin[0] in ">~" else ""
+                origin = mk + merges[pid]
+            reflex_rows.append([
+                r["ID"], r["Language_ID"], r["Form"], r["Gloss"], r["Native"], r["Phonemic"],
+                r["Original"], r["Cognateset"], r["Description"], r.get("Tags", ""), r["Source"],
+                origin, "", relation, "", vof, borrowed_from,
+            ])
 
     # ---- fold each addendum's content up onto its main entry, then redirect it -------
     n_merged = 0
@@ -147,20 +270,42 @@ def main():
         nrow[RD] = m  # the addendum redirects to its main entry
         n_merged += 1
 
+    n_curated_borrowings = apply_borrowings(etyma_rows, load_borrowings())
+
     with open("cldf/forms.csv", "w", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
         w.writerow(UNIFIED)
         w.writerows(etyma_rows)
         w.writerows(reflex_rows)
 
+    # add the promoted numbered-form → head edges to the derivation graph (link_refs.py wrote it)
+    if section_edges:
+        deriv_path = "cldf/derivation.csv"
+        existing = []
+        if os.path.exists(deriv_path):
+            with open(deriv_path, encoding="utf-8") as f:
+                existing = list(csv.reader(f))[1:]  # drop header
+        seen = set(map(tuple, existing))
+        added = [e for e in section_edges if e not in seen]
+        with open(deriv_path, "w", newline="", encoding="utf-8") as f:
+            w = csv.writer(f)
+            w.writerow(["Child_ID", "Parent_ID"])
+            w.writerows(existing)
+            w.writerows(added)
+
     os.remove("cldf/parameters.csv")
     print(
         f"unified cldf/forms.csv: {len(etyma_rows)} etyma "
         f"({len(folded)} folded self-reflexes, {n_merged} merged addenda) + {n_reflex} reflexes "
-        f"+ {n_variant} variants; removed parameters.csv",
+        f"+ {n_variant} variants + {n_section} promoted section-forms + {n_borrowed} borrowed; "
+        f"applied {n_curated_borrowings} curated cross-dictionary borrowings; "
+        f"removed parameters.csv",
         file=sys.stderr,
     )
 
 
 if __name__ == "__main__":
-    main()
+    if sys.argv[1:] == ["--borrowings-only"]:
+        apply_borrowings_to_unified()
+    else:
+        main()

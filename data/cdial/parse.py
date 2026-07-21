@@ -37,7 +37,7 @@ if os.path.exists('cdial.pickle'):
         soups = pickle.load(fin)
     cached = True
 
-def parse(subentry, subentry_num, subnum, number, info):
+def parse(subentry, subentry_num, subnum, number, info, carried=""):
     langs = []
     temp_rows = []
 
@@ -52,7 +52,18 @@ def parse(subentry, subentry_num, subnum, number, info):
         subnum += 1
         info = subentry[:matches[0].span()[0]].strip()
         info = info.strip(':.;')
-    
+        # CDIAL addenda split a numbered sub-heading (`4. *kṣāṇayati:`) off with a <br>, leaving the
+        # reflex paragraph label-less — fall back to the form number carried from that sub-heading.
+        if not info and carried:
+            info = carried
+        carried = ""
+    else:
+        # a bare numbered sub-heading with no reflexes → remember its number for the next paragraph
+        plain = re.sub(r"<[^>]+>", "", subentry).strip()
+        mm = re.match(r"(\d+)\s*[.:]", plain)
+        if mm:
+            carried = mm.group(1)
+
     for i in range(len(matches)):
 
         # grab lang and rest of span
@@ -158,7 +169,7 @@ def parse(subentry, subentry_num, subnum, number, info):
 
         langs = []
 
-    return temp_rows, subnum
+    return temp_rows, subnum, info, carried
 
 # go through each entire digitised page
 for page in tqdm(range(1, TOTAL_PAGES + 1)):
@@ -221,18 +232,19 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
             # a subentry is a block of descendants; these are separated by newlines in CDIAL
             subnum = 0
             info = None
+            carried = ""  # a numbered sub-heading's form number, held for the next paragraph
             data[0] = 'Indo-Aryan. ' + data[0]
             for subentry_num, subentry in enumerate(data):
 
                 # parse this subentry
-                rows_sub, subnum = parse(subentry, subentry_num, subnum, number, info)
+                rows_sub, subnum, info, carried = parse(subentry, subentry_num, subnum, number, info, carried)
                 rows.extend(rows_sub)
 
                 # find terms borrowed into other langs in the notes of each reflex
                 for row in rows_sub:
                     borrowed = list(borrowed_terms.finditer(row[6]))
                     for borrow in borrowed:
-                        rows_borrowed, _ = parse(row[0] + ' ' + borrow.group(0)[1:-1], subentry_num, subnum - 1, number, info)
+                        rows_borrowed, _, _, _ = parse(row[0] + ' ' + borrow.group(0)[1:-1], subentry_num, subnum - 1, number, info)
                         rows.extend(rows_borrowed)
     
     if not cached: del resp

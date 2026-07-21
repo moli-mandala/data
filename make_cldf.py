@@ -70,11 +70,14 @@ class Row:
         return f"<Row {self.lang} {self.param} {self.form} {self.gloss}>"
 
 
-def parse_file(file: str, errors, name=None, file_num=0):
+def parse_file(file: str, errors, name=None, file_num=0, param_counter=None):
     stats = {
         "converted": 0,
         "for_conversion": 0
     }
+    is_cdial = "cdial" in file
+    if param_counter is None:
+        param_counter = {}
     # get filename
     if name is None:
         name = os.path.splitext(os.path.basename(file))[0]
@@ -110,7 +113,16 @@ def parse_file(file: str, errors, name=None, file_num=0):
             reformed = form
             row.old_form = form
             row.form = form
-            row.id = f"{file_num}-{i}"
+            # Forms on a CDIAL-style numeric etymon (CDIAL itself, plus other-source additions that
+            # hang reflexes on a CDIAL entry by its number) keep <file>-<row> ids, so the <etymon>-<n>
+            # space stays free for promoted section forms. Every other source (Munda m1, Dravidian d1,
+            # …) namespaces its reflexes under their etymon, e.g. m1-1, d1-2.
+            epid = row.param.lstrip(">~")
+            if is_cdial or re.fullmatch(r"\d+[a-z]?", epid):
+                row.id = f"{file_num}-{i}"
+            else:
+                param_counter[epid] = param_counter.get(epid, 0) + 1
+                row.id = f"{epid}-{param_counter[epid]}"
             if fj == 0:
                 main_id = row.id
                 row.variant_of = ""
@@ -164,9 +176,10 @@ def main():
         "converted": 0,
         "for_conversion": 0
     }
+    param_counter: dict = {}  # shared <etymon>-<n> reflex counter across all non-CDIAL source files
     for file_num, file in enumerate(files):
         print(file)
-        result, stats = parse_file(file, errors=errors, file_num=file_num)
+        result, stats = parse_file(file, errors=errors, file_num=file_num, param_counter=param_counter)
         tot_stats["converted"] += stats["converted"]
         tot_stats["for_conversion"] += stats["for_conversion"]
         results.extend(result)

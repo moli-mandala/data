@@ -56,7 +56,8 @@ def load_graphemes(path: str) -> list[str]:
 
 def segmenter(graphemes: list[str]):
     def tok(form: str) -> list[str]:
-        s = unicodedata.normalize("NFC", form).split("-")[0].split("/")[0].strip()
+        # a hyphen marks a stem/affix boundary — strip it but keep the material on both sides
+        s = unicodedata.normalize("NFC", form).replace("-", "").split("/")[0].strip()
         out: list[str] = []
         i = 0
         while i < len(s):

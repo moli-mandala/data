@@ -2,17 +2,20 @@
 tags.py — lift structured tokens out of the free-text `Description` (notes) field.
 
 CDIAL notes pack a leading, semicolon-delimited run of structured tokens (gender, grammatical
-category) ahead of any prose. This module separates those into a `Tags` field so `Description`
-keeps only free text (etymological cross-references, source citations, etc.).
+category, and attestation loci) ahead of any prose. This module separates those into a `Tags` field
+so `Description` keeps only free text (etymological cross-references, source citations, etc.).
 
 Conservative by design: a ";"-delimited field is only lifted when it consists ENTIRELY of known
-tokens, so prose is never mangled. Currently extracts:
+tokens, so prose is never mangled. Extracts:
   • gender:        m, f, n  (and combos mn, fn, mf)
   • grammatical:   part of speech, valency/voice, number, case, verb forms
-  • source:        attestation loci — Sanskrit text abbreviations (RV, MBh, …) + `lex`
+  • source:        attestation loci — every Sanskrit work abbreviation in sanskrit.txt, plus a few
+                   dictionaries/lexicographers; a cited work also contributes an ERA tag
+                   (Early-Vedic / Late-Vedic / Epic / Classical / Medieval) from sanskrit_works.tsv.
 """
 
 import html
+import os
 import re
 
 GENDER_TAGS = {"m", "f", "n", "mn", "fn", "mf"}
@@ -28,19 +31,41 @@ GRAMMATICAL_TAGS = {
     # verb forms
     "pp", "ppp", "pres", "fut", "inf", "impv", "ind", "ger",
 }
-# Attestation sources: Sanskrit text-locus abbreviations (case-sensitive), plus `lex`
-# ("lexicographers only"). Curated from the corpus (single alphabetic tokens, no trailing dot,
-# occurring on the classical layer) — the dotted forms (S., F., Mu.) are per-language dialect codes,
-# not sources, and are deliberately excluded.
-SOURCE_TAGS = {
-    "AV", "AitBr", "Apte", "BHSk", "BhP", "Bhaṭṭ", "Bhpr", "Br", "Bālar", "Car", "Cat", "ChUp",
-    "DNM", "Daś", "Deśīn", "Dhātup", "Divyāv", "Gal", "Gaut", "Gobh", "Gr", "HPariś", "Hariv",
-    "Hcar", "Hcat", "Hit", "Kan", "Kathās", "Kauś", "KaṭhUp", "Kull", "Kād", "Kālid", "KātyŚr",
-    "Kāv", "Kāś", "Kāṭh", "Lalit", "Lāṭy", "MBh", "MW", "MaitrS", "MaitrUp", "Mn", "Mālatīm",
-    "MārkP", "Naigh", "Naiṣ", "Nir", "Pat", "Pañcad", "Pañcat", "Prab", "Pāṇ", "R", "RV", "Rājat",
-    "Suśr", "Sāh", "TBr", "TS", "TĀr", "Up", "Uṇ", "VP", "VS", "Vet", "Vop", "W", "Yājñ", "Āp",
-    "Āpast", "ĀpŚr", "ĀśvŚr", "ŚBr", "Śiś", "ŚrS", "ŚvetUp", "ŚāṅkhŚr", "ṢaḍvBr", "lex",
-}
+
+# Non-work attestation sources kept explicitly: dictionaries / lexicographers not listed as
+# individual works in sanskrit.txt.
+_EXTRA_SOURCES = {"MW", "Apte", "W", "Gal", "Cat", "lex", "DNM", "Uṇ", "BHSk", "Bhpr", "Naigh"}
+
+
+def _load_works():
+    """(work abbreviations, {abbrev: era-tag}) from sanskrit.txt + sanskrit_works.tsv (data dir)."""
+    here = os.path.dirname(os.path.abspath(__file__))
+    abbrevs = set()
+    try:
+        with open(os.path.join(here, "sanskrit.txt"), encoding="utf-8") as f:
+            for line in f:
+                line = line.rstrip("\n")
+                if line.strip() and " " in line:
+                    abbrevs.add(line.split(" ", 1)[0].rstrip("."))
+    except FileNotFoundError:
+        pass
+    era = {}
+    try:
+        with open(os.path.join(here, "sanskrit_works.tsv"), encoding="utf-8") as f:
+            for line in f:
+                parts = line.rstrip("\n").split("\t")
+                if len(parts) == 2 and parts[0]:
+                    era[parts[0]] = parts[1]
+    except FileNotFoundError:
+        pass
+    return abbrevs, era
+
+
+_WORK_ABBREVS, WORK_ERA = _load_works()
+# Attestation sources keep their case (RV, MBh, ŚBr). The dotted per-language dialect codes
+# (S., F., Mu.) are excluded because _classify strips only a single trailing dot then matches.
+SOURCE_TAGS = _EXTRA_SOURCES | _WORK_ABBREVS
+ERA_TAGS = set(WORK_ERA.values())
 
 _ENTITY = re.compile(r"&(?:[a-zA-Z][a-zA-Z0-9]*|#\d+|#x[0-9a-fA-F]+);")
 _HOLE = re.compile(r"\x00(\d+)\x00")
@@ -61,7 +86,7 @@ def _split_fields(note):
 
 
 def _classify(field):
-    """Return the tag list for a field if it is ENTIRELY gender/grammatical tokens, else None."""
+    """Tag list for a field if it is ENTIRELY gender/grammatical/source tokens, else None."""
     plain = html.unescape(_TAGS.sub("", field)).strip()
     toks = plain.split()
     if not toks:
@@ -85,11 +110,13 @@ def _category(tag):
         return 0
     if tag in GRAMMATICAL_TAGS:
         return 1
-    return 2  # source
+    if tag in ERA_TAGS:
+        return 3
+    return 2  # attestation source
 
 
 def extract_tags(note):
-    """(tags, cleaned_notes): `tags` is a space-separated list (gender first, then grammatical);
+    """(tags, cleaned_notes): `tags` is a space-separated list (gender, grammatical, source, era);
     `cleaned_notes` keeps every field that was not purely structured tokens."""
     if not note:
         return "", note or ""
@@ -102,7 +129,12 @@ def extract_tags(note):
             kept.append(field.strip())
         else:
             tags += cls
+    # a cited Sanskrit work also contributes the era of that work
+    for t in list(tags):
+        e = WORK_ERA.get(t)
+        if e:
+            tags.append(e)
     seen = set()
     ordered = [t for t in tags if not (t in seen or seen.add(t))]
-    ordered.sort(key=_category)  # gender, then grammatical, then source
+    ordered.sort(key=_category)  # gender, grammatical, source, then era
     return " ".join(ordered), "; ".join(kept)
