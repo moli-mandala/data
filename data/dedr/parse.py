@@ -11,6 +11,7 @@ from enum import Enum
 from tqdm import tqdm
 
 from abbrevs import abbrevs, dialects, replacements, fixes
+from cleanup import footer_note, is_footer_misparse
 
 TOTAL_PAGES = 514
 APPENDIX = 509
@@ -40,6 +41,7 @@ print('Caching?', cached)
 # file
 fout = open('dedr_new.csv', 'w')
 writer = csv.writer(fout)
+footer_notes = defaultdict(list)
 
 count = 1
 
@@ -201,6 +203,7 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
                                 new_row[0] = dial
 
                                 if ERR: print('        form', form)
+                                raw_form = form.strip()
                                 form = formatter.sub('', form).strip()
 
                                 # extract parentheticals from this row
@@ -215,8 +218,13 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
 
                                 for altform in form.split('/'):
                                     new_row[2] = altform.strip(" ;.,/")
-                                    if new_row[2]:
+                                    if new_row[2] and not is_footer_misparse(new_row[2]):
                                         writer.writerow(new_row)
+                                    elif new_row[2]:
+                                        note = footer_note(raw_form, new_row[3])
+                                        param = 'd' + str(number)
+                                        if note and note not in footer_notes[param]:
+                                            footer_notes[param].append(note)
                                     count += 1
 
                     if ERR: print('    done with spans')
@@ -231,6 +239,11 @@ for key in sorted(ref_ct, key=lambda x: ref_ct[x], reverse=True)[:100]:
 
 # close file
 fout.close()
+
+with open('footer_notes.csv', 'w') as fout:
+    writer = csv.writer(fout, lineterminator='\n')
+    for param, notes in footer_notes.items():
+        writer.writerow([param, f"<html><body>{'<br>'.join(notes)}</body></html>"])
 
 if not cached:
     with open('dedr.pickle', 'wb') as fout:

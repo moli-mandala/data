@@ -11,6 +11,8 @@ from copy import deepcopy
 from utils import mapping, superscript, change
 from tags import extract_tags
 from tamil_morphology import append_note, extract_tamil_verb_morphology
+from dedr_variants import expand_attached_sound_variants
+from data.dedr.cleanup import is_footer_misparse
 
 # read in tokenizer/convertors for IPA and form normalisation
 tokenizers = {}
@@ -97,6 +99,8 @@ def parse_file(file: str, errors, name=None, file_num=0, param_counter=None):
     i = 0
     for row in tqdm(read, total=len(lines)):
         row = Row(row, id=f"{file_num}-{i}")
+        if "dedr" in file and is_footer_misparse(row.form):
+            continue
         if row.lang == "Drav" or not row.param:
             continue
         if row.lang == "Indo-Aryan":
@@ -108,11 +112,16 @@ def parse_file(file: str, errors, name=None, file_num=0, param_counter=None):
 
         # split multiple forms into separate rows; comma-listed alternates share one definition, so
         # the first is the main reflex and the rest are variants of it (same etymon, own alignment).
-        forms = list(row.form.split(",")) if "dedr" not in file else [row.form]
+        source_form = row.form
+        forms = (
+            expand_attached_sound_variants(row.form)
+            if "dedr" in file
+            else list(row.form.split(","))
+        )
         main_id = None
         for fj, form in enumerate(forms):
             reformed = form
-            row.old_form = form
+            row.old_form = source_form if "dedr" in file and len(forms) > 1 else form
             row.form = form
             # Forms on a CDIAL-style numeric etymon (CDIAL itself, plus other-source additions that
             # hang reflexes on a CDIAL entry by its number) keep <file>-<row> ids, so the <etymon>-<n>
@@ -288,7 +297,7 @@ def main():
         mapping = {"cdial": "cdial", "extensions_ia": "cdial", "strand3": "strand"}
 
         params = csv.writer(g)
-        params.writerow(["ID", "Name", "Language_ID", "Description", "Etyma"])
+        params.writerow(["ID", "Name", "Language_ID", "Description", "Etyma", "Etymology"])
 
         with open("data/cdial/params.csv", "r") as fin:
             read = csv.reader(fin)
@@ -327,6 +336,7 @@ def main():
                         "Indo-Aryan",
                         row[3],
                         etyma.get(row[0], ""),
+                        "",
                     ]
                 )
                 included_params.add(row[0])
@@ -356,7 +366,7 @@ def main():
                         else:
                             row[2] = reformed
                     params.writerow(
-                        [row[0], row[2].split(",")[0].strip(), row[1], row[3], etyma.get(row[0], "")]
+                        [row[0], row[2].split(",")[0].strip(), row[1], row[3], etyma.get(row[0], ""), ""]
                     )
                     included_params.add(row[0])
 
@@ -365,15 +375,18 @@ def main():
             for row in read:
                 row[2] = "PMu"
                 row[1] = row[1].split(",")[0].strip()  # main head-word = first of the listed forms
-                params.writerow(row)
+                params.writerow(row + [""])
                 included_params.add(row[0])
+
+        with open("data/dedr/footer_notes.csv", "r") as f:
+            dedr_footer_notes = dict(csv.reader(f))
 
         with open("data/dedr/params.csv", "r") as f:
             read = csv.reader(f)
             for row in read:
                 row[2] = "PDr"
                 row[1] = row[1].split(",")[0].strip()  # main head-word = first of the listed forms
-                params.writerow(row)
+                params.writerow(row[:5] + [dedr_footer_notes.get(row[0], "")])
                 included_params.add(row[0])
 
         with open("data/nuristani_cognates.csv", encoding="utf-8") as f:
@@ -382,7 +395,7 @@ def main():
         if collisions:
             raise ValueError(f"Proto-Indo-Iranian ancestor ID collisions: {collisions}")
         for ancestor_id in ancestor_ids:
-            params.writerow([ancestor_id, "", "Indo-ir", "", ""])
+            params.writerow([ancestor_id, "", "Indo-ir", "", "", ""])
             included_params.add(ancestor_id)
 
     # ensure that all languages in forms.csv are also in languages.csv

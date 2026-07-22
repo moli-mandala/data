@@ -231,7 +231,7 @@ def main():
         # Nuristani) put the plain meaning there instead.
         is_html = header.lstrip().startswith("<")
         gloss = "" if is_html else header
-        etymology = header if is_html else ""
+        etymology = p.get("Etymology", "") or (header if is_html else "")
         native = phonemic = original = tags = source = ""
         sr = folded.get(p["ID"])
         if sr:  # fold the self-reflex's parsed data into empty etymon fields

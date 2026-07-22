@@ -4,12 +4,42 @@ from pathlib import Path
 import pytest
 from pycldf import Dataset
 
+from data.dedr.cleanup import is_footer_misparse
+
 
 def test_validate():
     if not Path("cldf/parameters.csv").exists():
         pytest.skip("Wordlist metadata validates the pre-unification CLDF stage")
     d = Dataset.from_metadata("cldf/Wordlist-metadata.json")
     assert d.validate()
+
+
+def test_dedr_attached_parenthetical_is_a_variant():
+    with open("cldf/forms.csv", encoding="utf-8") as f:
+        forms = {row["ID"]: row for row in csv.DictReader(f)}
+
+    assert forms["d4993-33"]["Form"] == "mur̤ku"
+    assert forms["d4993-33"]["Relation"] == "reflex"
+    assert forms["d4993-34"]["Form"] == "mur̤uku"
+    assert forms["d4993-34"]["Relation"] == "variant"
+    assert forms["d4993-34"]["Variant_Of"] == "d4993-33"
+    assert forms["d4993-33"]["Original"] == "mur̤(u)ku"
+    assert forms["d4993-34"]["Original"] == "mur̤(u)ku"
+
+
+def test_dedr_footer_references_are_not_forms():
+    with open("cldf/forms.csv", encoding="utf-8") as f:
+        forms = csv.DictReader(f)
+        leaked = [row["Form"] for row in forms if is_footer_misparse(row["Form"])]
+
+    assert leaked == []
+
+
+def test_dedr_footer_references_are_preserved_on_entry():
+    with open("cldf/forms.csv", encoding="utf-8") as f:
+        rows = {row["ID"]: row for row in csv.DictReader(f)}
+
+    assert "DEDS 687" in rows["d4229"]["Etymology"]
 
 
 def test_curated_borrowings_are_applied():

@@ -8,7 +8,7 @@ all:
 	uv run python align.py
 
 dedr:
-	cd data/dedr && python parse.py && python get_params.py && cd ../..
+	cd data/dedr && uv run --with beautifulsoup4 --with html5lib --with tqdm python parse.py && uv run python get_params.py && cd ../..
 
 dedr_params:
 	cd data/dedr && python get_params.py && cd ../..
