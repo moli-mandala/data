@@ -14,6 +14,7 @@ import csv
 import html
 import re
 import sys
+import unicodedata
 from collections import defaultdict
 
 SUP = {"¹": "1", "²": "2", "³": "3", "⁴": "4", "⁵": "5"}
@@ -24,9 +25,14 @@ _REF = re.compile(r"(√\s*\*?\s*)?<smallcaps>(.*?)</smallcaps>(-?)([¹²³⁴�
 
 
 def _base(s):
-    """Normalised headword key: strip markup, superscripts/numbers, edge punctuation; lowercase."""
+    """Normalised headword key: strip markup, superscripts/numbers, edge punctuation; lowercase.
+    Also strip the Vedic pitch accents (acute udātta / grave anudātta) — a reference usually omits
+    them (`akṣa-²`) while the headword carries them (`akṣá²`), so keep them out of the match key.
+    Other combining marks (macron, dot-below, …) are phonemic and preserved."""
     s = html.unescape(_TAGS.sub("", s))
     s = re.sub(r"[¹²³⁴⁵\d]", "", s)
+    s = unicodedata.normalize("NFD", s).replace("́", "").replace("̀", "")
+    s = unicodedata.normalize("NFC", s)
     return s.strip().strip("-–—*°,;. ").lower()
 
 

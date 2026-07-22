@@ -220,7 +220,10 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
         entry = entry.replace('<i>\'</i>', '\'')
 
         entry = unicodedata.normalize('NFC', entry)
-        entry = BeautifulSoup('<number>' + entry)
+        # Pin the parser: the default picks lxml when installed, which wraps the fragment in
+        # <html><body>…</body></html> and leaks that wrapper into every entry's stored etymology.
+        # html.parser keeps it a bare fragment (matching the historical output).
+        entry = BeautifulSoup('<number>' + entry, 'html.parser')
 
         # add entry only if it has a bold member (the headword[s])
         if entry.find('b'):
