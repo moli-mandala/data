@@ -26,12 +26,14 @@ _REF = re.compile(r"(√\s*\*?\s*)?<smallcaps>(.*?)</smallcaps>(-?)([¹²³⁴�
 
 def _base(s):
     """Normalised headword key: strip markup, superscripts/numbers, edge punctuation; lowercase.
-    Also strip the Vedic pitch accents (acute udātta / grave anudātta) — a reference usually omits
-    them (`akṣa-²`) while the headword carries them (`akṣá²`), so keep them out of the match key.
-    Other combining marks (macron, dot-below, …) are phonemic and preserved."""
+    Strip the Vedic pitch accents (acute udātta / grave anudātta) FROM VOWELS only — a reference
+    usually omits them (`akṣa-²`) while the headword carries them (`akṣá²`). The SAME combining
+    acute on a consonant is phonemic (ś, ć, ń — distinct letters, not pitch), so it must be kept:
+    only strip acute/grave when it sits on a vowel. Other marks (macron, dot-below) are preserved."""
     s = html.unescape(_TAGS.sub("", s))
     s = re.sub(r"[¹²³⁴⁵\d]", "", s)
-    s = unicodedata.normalize("NFD", s).replace("́", "").replace("̀", "")
+    s = unicodedata.normalize("NFD", s)
+    s = re.sub(r"([aeiouAEIOU][̧̣̱̄̆]*)[́̀]", r"\1", s)
     s = unicodedata.normalize("NFC", s)
     return s.strip().strip("-–—*°,;. ").lower()
 
@@ -211,6 +213,9 @@ def extract_derivations(param_rows):
                     frag = b.rsplit(":", 1)[-1]
                 else:
                     continue
+            # italic references (`<i>…</i>`) inside a bracket are cross-links only, never ancestry —
+            # only the <smallcaps> ancestry refs become derivation edges. Drop italics first.
+            frag = re.sub(r"<i>.*?</i>", "", frag)
             for eid in re.findall(r'data-entry="([^"]+)"', frag):
                 if eid != p["ID"] and (p["ID"], eid) not in seen:
                     seen.add((p["ID"], eid))
