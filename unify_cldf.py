@@ -282,6 +282,11 @@ def main():
             for r in group:
                 if r["Language_ID"] != parent["Language_ID"] or r.get("Variant_Of"):
                     continue
+                # italic head-forms (parse.py marks them "@variant") are alternate spellings of the
+                # head, never numbered section forms — skip promotion; they fall through to the
+                # same-language branch below and become variants of the etymon.
+                if (r.get("Cognateset") or "").endswith("@variant"):
+                    continue
                 # a head-form joined to the previous by "or" (e.g. "*dr̥kṣati or *drakṣati") is an
                 # alternate of the SAME form-slot, not a new numbered form; skip it so CDIAL's own
                 # form numbering — which the reflex sections index into via Cognateset info — is kept.
@@ -348,11 +353,13 @@ def main():
             elif vof and vof not in self_reflex_ids:
                 relation = "variant"
                 n_variant += 1
-            elif parent and r["Language_ID"] == parent["Language_ID"]:
+            elif parent and r["Language_ID"] == parent["Language_ID"] and not cog.endswith("@variant"):
                 relation = "variant"
                 vof = ""
                 n_variant += 1
             else:
+                # italic head-forms (cog "@variant") fall through here: they attach as reflexes of
+                # the head (their non-numeric info carries last_num=1, so they home to the etymon).
                 relation = "reflex"
                 vof = ""
                 n_reflex += 1

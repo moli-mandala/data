@@ -21,8 +21,14 @@ langs = unicodedata.normalize('NFC', langs)
 regex = re.compile(r'(?<!\w)' + langs + r'(([^\(\)\[\]]*?(\[.*?\]|\(.*?\)))*?[^\(\)\[\]]*?)(?=([^\(]?' + langs + r'|</div>|$))')
 oia = r'((Indo-Aryan))\.'
 regex_head = re.compile(r'(?<!\w)' + oia + r'(([^\(\)\[\]]*?(\[.*?\]|\(.*?\)))*?[^\(\)\[\]]*?)(?=([^\(]?' + oia + r'|</div>|$))')
-formatter = re.compile(r'(<i>([^\(\)]*?)</i>|\'([^\(\)]*?)\'(?=[^s]|$))(([^\(\)\[\]]*?(\[.*?\]|\(.*?\)))*?[^\(\)\[\]]*?)(?=$|<i>([^\(\)]*?)</i>|\'([^\(\)]*?)\'|\.)')
-formatter_head = re.compile(r'(<b>([^\(\)]*?)</b>|\'([^\(\)]*?)\'(?=[^s]|$))(([^\(\)\[\]]*?(\[.*?\]|\(.*?\)))*?[^\(\)\[\]]*?)(?=$|<b>([^\(\)]*?)</b>|\'([^\(\)]*?)\'|\.)')
+# The quoted definition may itself contain parentheses (e.g. 'walnut (or pistacio nut ?)'); match
+# any content up to the next definition-closing quote — one NOT followed by "s" (a possessive) —
+# rather than forbidding parens, which used to mis-pair quotes onto the inter-gloss source citations.
+formatter = re.compile(r'(<i>([^\(\)]*?)</i>|\'(.*?)\'(?=[^s]|$))(([^\(\)\[\]]*?(\[.*?\]|\(.*?\)))*?[^\(\)\[\]]*?)(?=$|<i>([^\(\)]*?)</i>|\'(.*?)\'|\.)')
+# In the head, a form is bold (<b>headword / numbered section form) OR italic (<i>alternate spelling
+# of the preceding bold form). Match either as a form (char class keeps the capture groups stable);
+# the parse loop tags italic head-forms so they become variants and are never promoted to sections.
+formatter_head = re.compile(r'(<[bi]>([^\(\)]*?)</[bi]>|\'(.*?)\'(?=[^s]|$))(([^\(\)\[\]]*?(\[.*?\]|\(.*?\)))*?[^\(\)\[\]]*?)(?=$|<[bi]>([^\(\)]*?)</[bi]>|\'(.*?)\'|\.)')
 borrowed_terms = re.compile(r'\(→.*?\)')
 
 rows = []
@@ -69,7 +75,14 @@ def parse(subentry, subentry_num, subnum, number, info, carried=""):
         # grab lang and rest of span
         lang = matches[i].group(1)
         span = matches[i].group(3)
-        
+
+        # In the head paragraph the head-forms (headword, numbered forms, italic alternate spellings)
+        # all precede the etymological note ("[…]") and the loan note (" — …"). Italic forms inside
+        # those (reconstructed donors, examples, cross-references) are NOT OIA variants, so cut the
+        # span there before extracting head-forms.
+        if subentry_num == 0 and lang == 'Indo-Aryan':
+            span = re.split(r'\[|—', span, 1)[0]
+
         # formatting
         span = span.replace('ˊ', '́')
         span = span.replace(' -- ', '–')
@@ -114,13 +127,16 @@ def parse(subentry, subentry_num, subnum, number, info, carried=""):
                     definition = '; '.join([d[0] for d in defs]) if defs != [] else ''
                     notes = '; '.join([d[1] for d in defs if d[1] != '']) if defs != [] else ''
                     notes = cur[1] + ('; ' if (cur[1] and notes) else '') + notes
-                    words.append([each.strip(), definition, notes])
+                    words.append([each.strip(), definition, notes, cur[2]])
 
         for form in forms:
             if form.group(0).startswith('<i>') or form.group(0).startswith('<b>'):
                 append_to_words(cur, defs)
                 defs = []
-                cur = [form.group(2), form.group(4).strip(' -,;.')]
+                # an italic form in the head paragraph is an alternate spelling of the preceding bold
+                # form → a variant, never a numbered section header (see cognateset marker below)
+                is_variant = form.group(0).startswith('<i>') and lang == 'Indo-Aryan'
+                cur = [form.group(2), form.group(4).strip(' -,;.'), is_variant]
             else:
                 defs.append([form.group(3).strip(), form.group(4).strip(' -,;.')])
         if cur:
@@ -129,7 +145,7 @@ def parse(subentry, subentry_num, subnum, number, info, carried=""):
 
         # for each language on the stack, add this entry
         for l in langs:
-            for word, defn, notes in words:
+            for word, defn, notes, is_variant in words:
                 
                 if '°' in word and word != '°':
                     old = word[:]
@@ -156,16 +172,17 @@ def parse(subentry, subentry_num, subnum, number, info, carried=""):
                 oldest = oldest.replace('̆̄', '̄̆')
                 oldest = oldest.replace('̄̆', '̄̆')
                 if '̄̆' in oldest:
-                    words.append([oldest.replace('̄̆', '̄'), defn, notes])
+                    words.append([oldest.replace('̄̆', '̄'), defn, notes, is_variant])
                     oldest = oldest.replace('̄̆', '')
                     word = oldest
                 if '{' in oldest:
-                    words.append([re.sub(r'{.*?}', '', oldest), defn, notes])
+                    words.append([re.sub(r'{.*?}', '', oldest), defn, notes, is_variant])
                     oldest = oldest.replace('{', '').replace('}', '')
                     word = oldest
                 word = unicodedata.normalize('NFC', word)
                         
-                temp_rows.append([l, number, word, defn, '', '', notes, 'CDIAL', f'{number}.{subnum}' if info is None else f'{subnum}:{info}'])
+                cog = f'{subnum}:@variant' if is_variant else (f'{number}.{subnum}' if info is None else f'{subnum}:{info}')
+                temp_rows.append([l, number, word, defn, '', '', notes, 'CDIAL', cog])
 
         langs = []
 

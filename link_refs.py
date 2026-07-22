@@ -38,6 +38,10 @@ def _sup(s):
 # the headword's homograph superscript may sit inside OR just after the bold: `<b>varta</b>²`
 _HEAD = re.compile(r"<b>(.*?)</b>\s*([¹²³⁴⁵]?)")
 
+# an italic form inside an [etymology bracket]; a homograph superscript may trail it (`<i>akṣa</i>-²`)
+_IREF = re.compile(r"<i>([^<]*?)</i>(-?)([¹²³⁴⁵]?)")
+_BRACKET = re.compile(r"\[([^\[\]]*)\]")
+
 
 def _headword(desc):
     """(base, homograph-sup) of an entry's bold head-word, or None if it has none."""
@@ -155,7 +159,27 @@ def linkify(desc, resolve, root_map=None):
                 out.append(tok)
         return (root or "") + "<smallcaps>" + "".join(out) + "</smallcaps>" + tail
 
-    return _REF.sub(repl, desc), n[0]
+    linked, count = _REF.sub(repl, desc), n[0]
+
+    # Also link italic head-word references inside [etymology brackets] to their entry, best-effort:
+    # only unambiguous resolutions are linked (inflected examples that don't resolve stay plain).
+    def bracket(bm):
+        def irepl(im):
+            form = im.group(1)
+            if not form.strip() or "data-entry" in form:
+                return im.group(0)
+            eid = resolve(_base(form), _sup(im.group(0)))
+            if eid:
+                n[0] += 1
+                return f'<i><a data-entry="{eid}">{form}</a></i>{im.group(2)}{im.group(3)}'
+            return im.group(0)
+        return "[" + _IREF.sub(irepl, bm.group(1)) + "]"
+
+    if "[" in linked:
+        n[0] = count
+        linked = _BRACKET.sub(bracket, linked)
+        count = n[0]
+    return linked, count
 
 
 def extract_derivations(param_rows):

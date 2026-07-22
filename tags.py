@@ -29,7 +29,10 @@ GRAMMATICAL_TAGS = {
     # case
     "nom", "acc", "dat", "gen", "loc", "abl", "instr", "voc", "obl",
     # verb forms
-    "pp", "ppp", "pres", "fut", "inf", "impv", "ind", "ger",
+    "pp", "ppp", "pres", "fut", "inf", "impv", "ind", "ger", "verb",
+    # Tamil verb morphology
+    "weak", "middle", "strong", "Tamil-class-1", "Tamil-class-2", "Tamil-class-3",
+    "Tamil-class-4", "Tamil-class-5", "Tamil-class-6", "Tamil-class-7",
 }
 
 # Non-work attestation sources kept explicitly: dictionaries / lexicographers not listed as
