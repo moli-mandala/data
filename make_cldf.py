@@ -10,6 +10,7 @@ from copy import deepcopy
 
 from utils import mapping, superscript, change
 from tags import extract_tags
+from tamil_morphology import append_note, extract_tamil_verb_morphology
 
 # read in tokenizer/convertors for IPA and form normalisation
 tokenizers = {}
@@ -206,6 +207,8 @@ def main():
                 results[cleaned[key][1]] = orig_row
                 results[i] = None
 
+    tamil_morphology_review = []
+
     # write out all the forms
     with open("cldf/forms.csv", "w") as fout:
         forms = csv.writer(fout)
@@ -244,10 +247,35 @@ def main():
             # lift structured tokens (gender, grammatical category) out of notes into Tags
             row.tags, row.notes = extract_tags(row.notes)
 
+            if row.lang == "Tamil" and row.source == "dedr":
+                morphology = extract_tamil_verb_morphology(row.form)
+                if morphology:
+                    row.form = morphology.citation_form
+                    row.notes = append_note(row.notes, morphology.note)
+                    row.tags = " ".join(
+                        dict.fromkeys(filter(None, row.tags.split() + list(morphology.tags)))
+                    )
+                    if morphology.review_reason:
+                        tamil_morphology_review.append(
+                            [
+                                row.id,
+                                row.param,
+                                row.form,
+                                morphology.note,
+                                row.gloss,
+                                morphology.review_reason,
+                            ]
+                        )
+
             key = tuple(row.formatted[1:])
             if key not in done:
                 forms.writerow(row.formatted)
             done.add(key)
+
+    with open("data/tamil_verb_morphology_review.csv", "w") as fout:
+        review = csv.writer(fout, lineterminator="\n")
+        review.writerow(["ID", "Parameter_ID", "Form", "Morphology", "Gloss", "Reason"])
+        review.writerows(tamil_morphology_review)
 
     etyma = {}
     with open("data/etymologies.csv", "r") as fin:
