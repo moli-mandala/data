@@ -38,6 +38,14 @@ def _base(s):
     return s.strip().strip("-–—*°,;. ").lower()
 
 
+def _base_acc(s):
+    """Like _base but KEEPS the pitch accent, so it can disambiguate accent-only homograph pairs
+    (uṣṇá¹ vs uṣṇa²) when a reference actually carries the accent."""
+    s = html.unescape(_TAGS.sub("", s))
+    s = re.sub(r"[¹²³⁴⁵\d]", "", s)
+    return s.strip().strip("-–—*°,;. ").lower()
+
+
 def _sup(s):
     m = _SUPCH.search(html.unescape(s))
     return SUP[m.group(0)] if m else ""
@@ -91,27 +99,37 @@ def compute_merges(param_rows):
 
 
 def build_resolver(param_rows, skip=frozenset()):
-    """headword-base → {homograph: id}, plus base → {all ids}. Returns a resolve(base, sup) fn."""
+    """headword-base → {homograph: id}, base → {all ids}, and accent-preserving base → {ids}.
+    Returns a resolve(base, sup, acc) fn (acc = the accent-preserving reference base, optional)."""
     byhom = defaultdict(dict)
     bybase = defaultdict(set)
+    byacc = defaultdict(set)
     for p in param_rows:
         if p["ID"] in skip:
             continue
-        kh = _headword(p.get("Description") or "")
-        if not kh:
+        m = _HEAD.search(p.get("Description") or "")
+        if not m:
             continue
-        b, h = kh
+        b = _base(m.group(1))
         if not b:
             continue
+        h = _sup(m.group(1)) or SUP.get(m.group(2), "")
         byhom[b].setdefault(h, p["ID"])
         bybase[b].add(p["ID"])
+        byacc[_base_acc(m.group(1))].add(p["ID"])
 
-    def resolve(base, sup):
+    def resolve(base, sup, acc=None):
         if not base or base not in bybase:
             return None
         ids = bybase[base]
         if sup and sup in byhom[base]:
-            return byhom[base][sup]  # homograph-disambiguated
+            return byhom[base][sup]  # homograph-disambiguated by superscript
+        # if the reference carries an accent (or lacks one) and that pins exactly one candidate,
+        # use it — the accent disambiguates uṣṇá¹ from uṣṇa² without a superscript
+        if acc and len(byacc.get(acc, ())) == 1:
+            only = next(iter(byacc[acc]))
+            if only in ids:
+                return only
         if len(ids) == 1:
             return next(iter(ids))  # unambiguous
         return None  # ambiguous and undisambiguated → leave unlinked
@@ -159,7 +177,7 @@ def linkify(desc, resolve, root_map=None):
                     continue
             b = _base(tok)
             sup = _sup(tok) or (SUP.get(trail, "") if i == last else "")
-            eid = resolve(b, sup)
+            eid = resolve(b, sup, _base_acc(tok))
             if eid:
                 n[0] += 1
                 out.append(f'<a data-entry="{eid}">{tok}</a>')
@@ -176,7 +194,7 @@ def linkify(desc, resolve, root_map=None):
             form = im.group(1)
             if not form.strip() or "data-entry" in form:
                 return im.group(0)
-            eid = resolve(_base(form), _sup(im.group(0)))
+            eid = resolve(_base(form), _sup(im.group(0)), _base_acc(form))
             if eid:
                 n[0] += 1
                 return f'<i><a data-entry="{eid}">{form}</a></i>{im.group(2)}{im.group(3)}'
