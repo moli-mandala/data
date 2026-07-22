@@ -146,7 +146,11 @@ def parse(subentry, subentry_num, subnum, number, info, carried=""):
         # for each language on the stack, add this entry
         for l in langs:
             for word, defn, notes, is_variant in words:
-                
+                # drop empty forms (e.g. from a trailing comma inside <b>aṅkōla-,</b>) so they neither
+                # emit a blank row nor stand in as the reference for a following "°suffix" expansion
+                if not word.strip('.,;-: '):
+                    continue
+
                 if '°' in word and word != '°':
                     old = word[:]
                     reference = temp_rows[-1][2] if len(temp_rows) > 0 else rows[-1][2]
