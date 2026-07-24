@@ -12,13 +12,16 @@ from enum import Enum
 from tqdm import tqdm
 
 from abbrevs import abbrevs
+from references import source_field
 
 TOTAL_PAGES = 836
 
 # this is such a big brain regex
 langs = r'([OM]?(' + "|".join(sorted(list(abbrevs.keys()), key=lambda x: -len(x))) + r'))\.'
 langs = unicodedata.normalize('NFC', langs)
-regex = re.compile(r'(?<!\w)' + langs + r'(([^\(\)\[\]]*?(\[.*?\]|\(.*?\)))*?[^\(\)\[\]]*?)(?=([^\(]?' + langs + r'|</div>|$))')
+# A language abbreviation directly followed by another capital initial ("H. W. Bailey") is an
+# author citation, not a reflex — the negative lookahead skips it.
+regex = re.compile(r'(?<!\w)' + langs + r'(?! ?[A-Z]\.)(([^\(\)\[\]]*?(\[.*?\]|\(.*?\)))*?[^\(\)\[\]]*?)(?=([^\(]?' + langs + r'|</div>|$))')
 oia = r'((Indo-Aryan))\.'
 regex_head = re.compile(r'(?<!\w)' + oia + r'(([^\(\)\[\]]*?(\[.*?\]|\(.*?\)))*?[^\(\)\[\]]*?)(?=([^\(]?' + oia + r'|</div>|$))')
 # The quoted definition may itself contain parentheses (e.g. 'walnut (or pistacio nut ?)'); match
@@ -186,7 +189,8 @@ def parse(subentry, subentry_num, subnum, number, info, carried=""):
                 word = unicodedata.normalize('NFC', word)
                         
                 cog = f'{subnum}:@variant' if is_variant else (f'{number}.{subnum}' if info is None else f'{subnum}:{info}')
-                temp_rows.append([l, number, word, defn, '', '', notes, 'CDIAL', cog])
+                citations = " ".join(filter(None, (defn, notes)))
+                temp_rows.append([l, number, word, defn, '', '', notes, source_field(citations), cog])
 
         langs = []
 

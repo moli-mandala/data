@@ -36,6 +36,18 @@ _ADD_PTR = re.compile(r"\s*Add\.\s*\d+\.?")  # the now-defunct "Add. N" pointer 
 # renders one accented block per snippet (so no snippet is dropped when addenda fold into a main).
 ADD_DELIM = "<!--addendum-->"
 
+DRAVIDIAN_CLADES = {
+    "Old Dravidian", "S. Dravidian I", "S. Dravidian II", "C. Dravidian",
+    "N. Dravidian", "Brahui",
+}
+INDO_ARYAN_CLADES = {
+    "OIA", "MIA", "Early NIA", "Nuristani", "Pashai", "Chitrali", "Shinaic",
+    "Kohistani", "Kunar", "Kashmiric", "Sindhic", "Lahndic", "Punjabic",
+    "W. Pahari", "C. Pahari", "E. Pahari", "Eastern", "Bihari", "E. Hindi",
+    "W. Hindi", "Rajasthanic", "Gujaratic", "Bhil", "Khandeshi",
+    "Marathi-Konkani", "Halbic", "Insular", "Migratory",
+}
+
 UNIFIED = [
     "ID", "Language_ID", "Form", "Gloss", "Native", "Phonemic", "Original", "Cognateset",
     "Description", "Tags", "Source", "Origin_ID", "Etymology", "Relation", "Redirect", "Variant_Of",
@@ -168,6 +180,42 @@ def apply_strand_oia_redirects(etyma_rows, reflex_rows, redirects):
     return len(redirects), redirected
 
 
+def load_language_clades(path="cldf/languages.csv"):
+    with open(path, encoding="utf-8") as f:
+        return {row["ID"]: row["Clade"] for row in csv.DictReader(f)}
+
+
+def mark_cross_family_borrowings(rows, language_clades):
+    """Classify structurally impossible inheritance edges as loans.
+
+    Dravidian forms only inherit from Proto-Dravidian; forms in all other families cannot inherit
+    from an Indo-Aryan node. Existing curated loans remain unchanged, while newly detected edges
+    receive the same Relation/Borrowed_From representation as every other borrowing.
+    """
+    by_id = {row[0]: row for row in rows}
+    newly_marked = 0
+    for row in rows:
+        origin_id = row[11]
+        origin = by_id.get(origin_id)
+        if not origin:
+            continue
+        child_clade = language_clades.get(row[1])
+        origin_clade = language_clades.get(origin[1])
+        dravidian_from_non_proto = (
+            child_clade in DRAVIDIAN_CLADES and origin[1] != "PDr"
+        )
+        non_ia_from_ia = (
+            origin_clade in INDO_ARYAN_CLADES and child_clade not in INDO_ARYAN_CLADES
+        )
+        if not (dravidian_from_non_proto or non_ia_from_ia):
+            continue
+        if row[13] != "borrowed":
+            newly_marked += 1
+        row[13] = "borrowed"
+        row[16] = origin_id
+    return newly_marked
+
+
 def apply_borrowings_to_unified():
     with open("cldf/forms.csv", encoding="utf-8") as f:
         reader = csv.reader(f)
@@ -252,7 +300,7 @@ def main():
     # etymon). Reflexes are grouped into those forms by the `info` half of their Cognateset
     # ("subnum:info" → info is the form number). Non-numeric info carries forward the most recent
     # form number; form 1 (or no numbered form) stays on the head.
-    n_reflex = n_variant = n_section = n_borrowed = 0
+    n_reflex = n_variant = n_section = n_borrowed = n_lone = 0
     reflex_rows = []
     section_edges = []  # (numbered-form id -> head etymon id)
     all_ids = {r["ID"] for r in forms}  # to keep promoted `<etymon>-<n>` ids collision-free
@@ -305,6 +353,16 @@ def main():
         last_num = 1  # carry-forward form number within this entry (1 = the head itself)
         for r in group:
             if r["ID"] in self_reflex_ids:
+                continue
+            # Unetymologised manual-import form (blank Param_ID) → standalone "lone" node: kept in the
+            # DB and searchable, empty Origin_ID, Relation="local" so it never enters the entries list.
+            if not pid:
+                reflex_rows.append([
+                    r["ID"], r["Language_ID"], r["Form"], r["Gloss"], r["Native"], r["Phonemic"],
+                    r["Original"], r["Cognateset"], r["Description"], r.get("Tags", ""), r["Source"],
+                    "", "", "local", "", r.get("Variant_Of", ""), "",
+                ])
+                n_lone += 1
                 continue
             vof = r.get("Variant_Of", "")
             origin = r["Parameter_ID"]
@@ -416,6 +474,9 @@ def main():
     n_strand_oia_redirects, n_strand_oia_references = apply_strand_oia_redirects(
         etyma_rows, reflex_rows, load_strand_oia_redirects()
     )
+    n_cross_family_borrowings = mark_cross_family_borrowings(
+        etyma_rows + reflex_rows, load_language_clades()
+    )
 
     with open("cldf/forms.csv", "w", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
@@ -442,13 +503,15 @@ def main():
     print(
         f"unified cldf/forms.csv: {len(etyma_rows)} etyma "
         f"({len(folded)} folded self-reflexes, {n_merged} merged addenda) + {n_reflex} reflexes "
-        f"+ {n_variant} variants + {n_section} promoted section-forms + {n_borrowed} borrowed; "
+        f"+ {n_variant} variants + {n_section} promoted section-forms + {n_borrowed} borrowed "
+        f"+ {n_lone} lone (unetymologised) nodes; "
         f"applied {n_curated_borrowings} curated cross-dictionary borrowings; "
         f"attached {n_nuristani_reflexes} PNur/IA nodes as Proto-II reflexes; "
         f"applied {n_nuristani_borrowings} Strand OIA loan branches "
         f"with {n_nuristani_borrowed_descendants} direct borrowed descendants; "
         f"merged {n_strand_oia_redirects} duplicate Strand OIA heads and redirected "
         f"{n_strand_oia_references} references; "
+        f"marked {n_cross_family_borrowings} inferred cross-family borrowings; "
         f"removed parameters.csv",
         file=sys.stderr,
     )

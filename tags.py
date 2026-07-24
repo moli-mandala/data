@@ -30,6 +30,7 @@ GRAMMATICAL_TAGS = {
     "nom", "acc", "dat", "gen", "loc", "abl", "instr", "voc", "obl",
     # verb forms
     "pp", "ppp", "pres", "fut", "inf", "impv", "ind", "ger", "verb",
+    "poss", "conditional", "suffix", "emph", "interr", "dir", "3sg",
     # Tamil verb morphology
     "weak", "middle", "strong", "Tamil-class-1", "Tamil-class-2", "Tamil-class-3",
     "Tamil-class-4", "Tamil-class-5", "Tamil-class-6", "Tamil-class-7",
@@ -73,6 +74,10 @@ ERA_TAGS = set(WORK_ERA.values())
 _ENTITY = re.compile(r"&(?:[a-zA-Z][a-zA-Z0-9]*|#\d+|#x[0-9a-fA-F]+);")
 _HOLE = re.compile(r"\x00(\d+)\x00")
 _TAGS = re.compile(r"<[^>]+>")
+_WORK_IN_PROSE = re.compile(
+    r"(?<!\w)(" + "|".join(re.escape(x) for x in sorted(_WORK_ABBREVS, key=len, reverse=True))
+    + r")\."
+)
 
 
 def _split_fields(note):
@@ -123,7 +128,12 @@ def extract_tags(note):
     `cleaned_notes` keeps every field that was not purely structured tokens."""
     if not note:
         return "", note or ""
-    kept, tags = [], []
+    # A work locus can be embedded in a parenthetical or other scholarly prose, e.g.
+    # ``('devotion' Prab.com.)`` or ``(sudhyatē ṢaḍvBr.)``.  Discover dotted work markers there,
+    # but retain the prose verbatim; only wholly structured fields are removed below.
+    plain_note = html.unescape(_TAGS.sub("", note))
+    tags = [m.group(1) for m in _WORK_IN_PROSE.finditer(plain_note)]
+    kept = []
     for field in _split_fields(note):
         if not field.strip():
             continue

@@ -289,7 +289,7 @@ def extract_roots(param_rows):
             "ID": rid[k],
             "Name": "√" + disp[k],
             "Language_ID": "Indo-Aryan",
-            "Description": f"<html><body><b>√{disp[k]}</b></body></html>",
+            "Description": f"<b>√{disp[k]}</b>",
             "Etyma": "",
         }
         for k in keys
@@ -297,7 +297,30 @@ def extract_roots(param_rows):
     return root_params, edges, rid  # rid: (base, sup) -> root id, for linking √ refs
 
 
-def process(path, resolve, root_map=None, col="Description"):
+# Free-text Turner (CDIAL) citations, e.g. Morgenstierne's notes in strand3: "T. 9051", and the
+# id-shaped variants the user flagged — "T. 12681.1" → entry 12681-1, "T. 1660a" → entry 1660a.
+_TURNER = re.compile(r"\bT\.\s?(\d+[a-z]?)(?:\.(\d+))?")
+
+
+def link_turner(text, entry_ids):
+    """Wrap "T. <n>" Turner references in <a data-entry> when the target entry exists. Idempotent:
+    a match already sitting inside an anchor (preceded by '">') is left alone."""
+    if not text or "T." not in text:
+        return text
+
+    def repl(m):
+        base, sub = m.group(1), m.group(2)
+        # Validate the base CDIAL entry (a ".n" section-form id like 12681-1 is only synthesised
+        # later in unify_cldf, so it isn't in the id set yet — but its base 12681 is).
+        if base not in entry_ids or text[: m.start()].rstrip().endswith('">'):
+            return m.group(0)
+        eid = f"{base}-{sub}" if sub else base
+        return f'<a data-entry="{eid}">{m.group(0)}</a>'
+
+    return _TURNER.sub(repl, text)
+
+
+def process(path, resolve, root_map=None, entry_ids=frozenset(), col="Description"):
     with open(path, encoding="utf-8") as f:
         rows = list(csv.DictReader(f))
     if not rows:
@@ -305,7 +328,7 @@ def process(path, resolve, root_map=None, col="Description"):
     fields = list(rows[0].keys())
     total = 0
     for r in rows:
-        r[col], k = linkify(r.get(col, ""), resolve, root_map)
+        r[col], k = linkify(link_turner(r.get(col, ""), entry_ids), resolve, root_map)
         total += k
     with open(path, "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=fields)
@@ -329,8 +352,9 @@ def main():
     # root entries + the (base, sup)→root-id map so √root references get linked in the text too
     root_params, root_edges, root_map = extract_roots(params)
 
+    entry_ids = {p["ID"] for p in params}  # valid link targets for bare "T. <n>" citations
     for path in ("cldf/parameters.csv", "cldf/forms.csv"):
-        n, rows = process(path, resolve, root_map)
+        n, rows = process(path, resolve, root_map, entry_ids)
         print(f"{path}: linked {n} references across {rows} rows", file=sys.stderr)
 
     # append the synthesised √root entries to parameters.csv

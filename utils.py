@@ -5,7 +5,8 @@ mapping = {
     'strand': 'strand', 'strand2': 'strand', 'strand3': 'strand', 'wadiyara': 'wadiyara',
     'northern': 'northern', 'toulmin': 'toulmin', 'chattisgarhi': 'chattisgarhi',
     'rajasthani': 'rajasthani', 'old_punjabi': 'cdial', 'bundeli': 'chattisgarhi',
-    'tharu': 'cdial', 'kannauji': 'rajasthani', 'tharu2': 'chattisgarhi', 'shina': 'liljegren'
+    'tharu': 'cdial', 'kannauji': 'rajasthani', 'tharu2': 'chattisgarhi', 'shina': 'liljegren', 'berger': 'berger',
+    'markodi': 'markodi'  # Toulmin-style Dravidian consonants + Markodi vowels/length
 }
 
 # superscript forms of letters
@@ -61,5 +62,7 @@ change = {
     'Gilgit': 'gil',
     'Punial': 'punl',
     'Palas': 'pales',
-    'pach': 'pch'
+    'pach': 'pch',
+    'Urdu': 'H',
+    'Pashto': 'Psht',
 }

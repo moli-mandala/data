@@ -79,6 +79,7 @@ def parse_file(file: str, errors, name=None, file_num=0, param_counter=None):
         "for_conversion": 0
     }
     is_cdial = "cdial" in file
+    is_manual = "other/forms" in file  # hand-curated source CSVs may carry unetymologised forms
     if param_counter is None:
         param_counter = {}
     # get filename
@@ -99,10 +100,24 @@ def parse_file(file: str, errors, name=None, file_num=0, param_counter=None):
     i = 0
     for row in tqdm(read, total=len(lines)):
         row = Row(row, id=f"{file_num}-{i}")
+        # Both hand-entered and OCR-derived Shackle rows use the same CDIAL-style
+        # romanisation. The auto filename does not reduce to ``old_punjabi`` via
+        # the legacy filename heuristic, so select its phonetic parser by source.
+        row_ipa = "cdial" if row.source in {"shackle", "shackle-auto"} else ipa
+        row_convert = row_ipa is not None and (row.source in {"shackle", "shackle-auto"} or convert)
+        # Backstrom's Urdu and Pashto lists are survey controls rather than the
+        # northern locality varieties we want to publish in Jambu.
+        if os.path.basename(file) == "20230416-northern.csv" and row.lang in {"Urdu", "Pashto"}:
+            continue
         if "dedr" in file and is_footer_misparse(row.form):
             continue
-        if row.lang == "Drav" or not row.param:
+        if row.lang == "Drav":
             continue
+        # cdial/dedr/munda rows without an etymon are parse junk and dropped; a blank Param_ID in a
+        # manual import instead means "attested but unetymologised" — keep it as a lone node.
+        if not row.param and not is_manual:
+            continue
+        row.is_lone = not row.param  # a surviving blank Param_ID ⇒ manual-import lone node
         if row.lang == "Indo-Aryan":
             row.form = row.form.lower()
 
@@ -128,7 +143,13 @@ def parse_file(file: str, errors, name=None, file_num=0, param_counter=None):
             # space stays free for promoted section forms. Every other source (Munda m1, Dravidian d1,
             # …) namespaces its reflexes under their etymon, e.g. m1-1, d1-2.
             epid = row.param.lstrip(">~")
-            if is_cdial or re.fullmatch(r"\d+[a-z]?", epid):
+            # Schmidt rows are one-form manual records and historically keep
+            # their stable <file>-<row> IDs.  Preserve those IDs when a later
+            # audit attaches them to a nonnumeric Proto-II/Dravidian root;
+            # otherwise an ID such as pii-4147-2 can collide with the promoted
+            # Proto-II reflex occupying that same namespace.
+            stable_manual_id = is_manual and row.source == "schmidt"
+            if is_cdial or stable_manual_id or not epid or re.fullmatch(r"\d+[a-z]?", epid):
                 row.id = f"{file_num}-{i}"
             else:
                 param_counter[epid] = param_counter.get(epid, 0) + 1
@@ -140,16 +161,16 @@ def parse_file(file: str, errors, name=None, file_num=0, param_counter=None):
                 row.variant_of = main_id
 
             # convert IPA
-            if ipa is not None and "˚" not in form and convert:
+            if row_ipa is not None and "˚" not in form and row_convert:
                 stats["for_conversion"] += 1
                 # fix accentuation from Strand
-                if ipa == "strand":
+                if row_ipa == "strand":
                     reformed = reformed.replace("′", "´")
                     reformed = re.sub(r"([`´])(.)", r"\2\1", reformed)
 
                 # do the conversion
                 reformed = reformed.strip("-1234⁴5⁵67⁷,;.")
-                reformed = convertors[ipa](reformed, column="IPA")
+                reformed = convertors[row_ipa](reformed, column="IPA")
                 reformed = reformed.replace(" ", "").replace("#", " ")
 
                 # if conversion error then log it
@@ -243,14 +264,16 @@ def main():
         for row in results:
             if row is None or not row.form:
                 continue
-            if row.param == "?" or not row.param:
+            # drop "?" and blank-param junk, but keep manual-import lone nodes (blank param, flagged)
+            if row.param == "?" or (not row.param and not getattr(row, "is_lone", False)):
                 continue
             if row.lang in change:
                 row.lang = change[row.lang]
             row.lang = unidecode.unidecode(row.lang)
             row.lang = row.lang.replace(".", "")
             row.form = unicodedata.normalize("NFC", row.form)
-            param_set.add(row.param.lstrip(">~"))
+            if row.param:
+                param_set.add(row.param.lstrip(">~"))
             lang_set.add(row.lang)
 
             # lift structured tokens (gender, grammatical category) out of notes into Tags

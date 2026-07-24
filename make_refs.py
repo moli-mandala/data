@@ -8,10 +8,62 @@ Run:  uv run --with pybtex python make_refs.py
 """
 
 import csv
+import glob
 import sys
+from collections import defaultdict
+from pathlib import Path
 
 import pybtex
 import pybtex.database
+
+
+FORM_INPUTS = [
+    "data/cdial/cdial.csv",
+    "data/dedr/dedr_new.csv",
+    "data/dedr/pdr.csv",
+    "data/munda/forms.csv",
+    "data/other/forms/*.csv",
+]
+
+DEFAULT_JAMBU_EDITOR = "Aryaman Arora"
+JAMBU_EDITOR_OVERRIDES = {
+    "fritz": "Adam Farris",
+    "backstrom1992": "Aryaman Arora; OpenAI Codex",
+    "lehr": "Aryaman Arora; OpenAI Codex",
+    "schmidt": "Aryaman Arora; OpenAI Codex",
+    "canvin2025": "Aryaman Arora; OpenAI Codex; Claude Opus 4.8",
+    "zoller2005": "OpenAI Codex",
+}
+
+
+def source_ids(value):
+    """Yield bare bibliography IDs from a CLDF Source cell (dropping optional [pages])."""
+    for token in (value or "").split(";"):
+        key = token.split("[", 1)[0].strip()
+        if key:
+            yield key
+
+
+def collect_provenance():
+    """Map each citation key to the source-data files through which it entered Jambu."""
+    paths_by_ref = defaultdict(set)
+    for pattern in FORM_INPUTS:
+        for filename in glob.glob(pattern):
+            with open(filename, encoding="utf-8") as f:
+                for row in csv.reader(f):
+                    if len(row) < 8:
+                        continue
+                    for key in source_ids(row[7]):
+                        paths_by_ref[key].add(Path(filename).as_posix())
+    return paths_by_ref
+
+
+def used_references(path="cldf/forms.csv"):
+    used = set()
+    with open(path, encoding="utf-8") as f:
+        for row in csv.DictReader(f):
+            used.update(source_ids(row.get("Source", "")))
+    return used
 
 
 def create_short_ref(entry):
@@ -31,6 +83,8 @@ def create_short_ref(entry):
 def main():
     sources = pybtex.database.parse_file("cldf/sources.bib")
     engine = pybtex.PybtexEngine()
+    provenance_by_ref = collect_provenance()
+    used_refs = used_references()
     used = set()
     rows = []
     for key in sources.entries:  # insertion (file) order → stable dedup suffixes
@@ -50,11 +104,30 @@ def main():
             else:
                 short = short[:-1] + chr(ord(short[-1]) + 1)
         used.add(short)
-        rows.append([key, short, formatted, entry.fields.get("included", "No")])
+        provenance = entry.fields.get("provenance", "").strip() or "; ".join(
+            sorted(provenance_by_ref.get(key, ()))
+        )
+        if key in used_refs and not provenance:
+            provenance = "cldf/forms.csv (upstream import path unavailable)"
+        editor = entry.fields.get("jambu_editor", "").strip() or JAMBU_EDITOR_OVERRIDES.get(
+            key, DEFAULT_JAMBU_EDITOR
+        )
+        rows.append(
+            [key, short, formatted, entry.fields.get("included", "No"), provenance, editor]
+        )
+
+    # A cited key without a BibTeX record must still be a first-class, traceable reference rather
+    # than an id-only row silently synthesised by the database transform.
+    for key in sorted(used_refs - set(sources.entries)):
+        provenance = "; ".join(sorted(provenance_by_ref.get(key, ())))
+        if not provenance:
+            provenance = "cldf/forms.csv (upstream import path unavailable)"
+        editor = JAMBU_EDITOR_OVERRIDES.get(key, DEFAULT_JAMBU_EDITOR)
+        rows.append([key, key, "", "No", provenance, editor])
 
     with open("cldf/references.csv", "w", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
-        w.writerow(["ID", "Short", "Source", "Progress"])
+        w.writerow(["ID", "Short", "Source", "Progress", "Provenance", "Editor"])
         w.writerows(rows)
     print(f"wrote cldf/references.csv ({len(rows)} references)", file=sys.stderr)
 

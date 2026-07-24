@@ -1,5 +1,7 @@
 import csv
 
+from shackle import tagged_notes
+
 with open("old_punjabi", "r") as fin, open("old_punjabi.csv", "w") as fout:
     reader = csv.reader(fin)
     writer = csv.writer(fout)
@@ -8,9 +10,9 @@ with open("old_punjabi", "r") as fin, open("old_punjabi.csv", "w") as fout:
             "OP",
             row[3],
             row[0],
-            (f"({row[1]}) " if row[1] else '') + row[2],
+            row[2],
             '',
             '',
-            row[4],
+            tagged_notes(row[1], row[4]),
             'shackle'
         ])

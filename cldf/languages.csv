@@ -1,4 +1,4 @@
-ID,Name,Glottocode,Latitude,Longitude,Clade
+ID,Name,Glottocode,Latitude,Longitude,Clade,Location,Quality
 A,Assamese,assa1263,26.7509,94.2037,Eastern
 add,Dhivehi: Addu,dhiv1236,0.6333,73.1667,Insular
 al,Pashai: Alashai,nort2665,34.95,69.76,Pashai
@@ -96,6 +96,7 @@ Gmb,Tregami,treg1243,34.75,70.96,Nuristani
 gng,Kumaoni: Gangoi,kuma1273,29.8150,79.2902,C. Pahari
 go,Gorum,pare1266,19.07,83.97,Munda
 Gondi,Gondi,gond1265,20.10,80.28,S. Dravidian II
+Gowro,Gowro,gowr1239,35.1243,73.1233,Kohistani
 koya,Gondi: Koya,koya1251,17.68,81.21,S. Dravidian II
 gommu,Gondi: Koya (Gommu),koya1251,17.611837,81.032816,S. Dravidian II
 adil,Gondi: Adilabad,gond1265,19.67,78.53,S. Dravidian II
@@ -241,6 +242,9 @@ ludh,Punjabi: Ludhiana,panj1256,30.9010,75.8573,Punjabic
 M,Marathi,mara1378,18.5204,73.8567,Marathi-Konkani
 mag,Bihari: Magahi,maga1260,25.09,85.33,Bihari
 Mai,Indus Kohistani,indu1241,35.34,73.02,Kohistani
+Mai-Jijal,Indus Kohistani: Jijālī,indu1241,,,Kohistani
+Mai-Shatot,Indus Kohistani: Šāṭōṭī,indu1241,,,Kohistani
+Mai-Seo,Indus Kohistani: Seo,indu1241,,,Kohistani
 Malayalam,Malayalam,mala1464,9.59,76.77,S. Dravidian I
 tiyya,Malayalam: Thiyya,mala1464,12.0167,75.2833,S. Dravidian I
 OMal,Old Malayalam,mala1464,9.59,76.77,S. Dravidian I
@@ -555,6 +559,10 @@ mewati_hathiya,Mewati: Hathiya,mewa1250,27.594175,77.367500,Rajasthanic
 mewati_jakhopur,Mewati: Jakhopur,mewa1250,28.060783,76.854105,Rajasthanic
 mewati_jhambaus,Ahirwadi: Jhambaus,mewa1250,28.235628,76.927847,Rajasthanic
 mewati_udaka,Mewati: Udaka,mewa1250,27.6742931,77.303667,Rajasthanic
+markodi,Markodi,,,,S. Dravidian I
+markodi_pannithadam,Markodi: Pannithadam,,12.356,75.276,S. Dravidian I
+markodi_vannarkadav,Markodi: Vannarkadav,,12.342,75.263,S. Dravidian I
+markodi_ennappara,Markodi: Ennappara,,12.3537,75.17665,S. Dravidian I
 bagheli_lakshman,Bagheli: Lakshman,bagh1251,24.482879,81.356341,E. Hindi
 braj_bundi,Braj: Bundi,braj1242,27.448669, 77.630042,W. Hindi
 braj_gokul,Braj: Gokul,braj1242,27.435564,77.718540,W. Hindi
@@ -571,15 +579,15 @@ bundeli_kurra,Bundeli: Kurra,bund1253,25.985303,79.989131,W. Hindi
 bundeli_kuthupur,Bundeli: Kuthupur,bund1253,26.005678, 79.965142,W. Hindi
 bundeli_malupur,Bundeli: Malupur,bund1253,25.1893815,80.2516574,W. Hindi
 bundeli_sakera,Bundeli: Sakera,bund1253,25.1599603,78.8467579,W. Hindi
-chaurasi_lautna,Chaurasi: Lautna,bund1253,25.37524125,77.82811932629714,W. Hindi
-dehati_asoh,Dehati: Asoh,bund1253,25.302473,80.947466,W. Hindi
-dehati_bijana,Dehati: Bijana Tola,bund1253,22.330512,79.652554,W. Hindi
-dehati_chand,Dehati: Chand,bund1253,21.945633,79.1219902,W. Hindi
-jatbara_katva,Jatbara: Katva,bund1253,26.463266,78.725542,W. Hindi
-lodhi_gara,Lodhi: Garra,lodh1244,21.801867,80.139710,W. Hindi
-mugalai_panjarakala,Mugalai: Panjara Kalan,bund1253,22.684078, 77.808801,W. Hindi
+chaurasi_lautna,Bundeli: Lautna,bund1253,25.37524125,77.82811932629714,W. Hindi
+dehati_asoh,Bundeli: Asoh,bund1253,25.302473,80.947466,W. Hindi
+dehati_bijana,Bundeli: Bijana Tola,bund1253,22.330512,79.652554,W. Hindi
+dehati_chand,Bundeli: Chand,bund1253,21.945633,79.1219902,W. Hindi
+jatbara_katva,Bundeli: Katva,bund1253,26.463266,78.725542,W. Hindi
+lodhi_gara,Bundeli: Garra,lodh1244,21.801867,80.139710,W. Hindi
+mugalai_panjarakala,Bundeli: Panjara Kalan,bund1253,22.684078, 77.808801,W. Hindi
 nagpuri_beradi,Marathi: Beradi (Nagpuri Hindi),nagp1248,21.636227,78.825327,Marathi-Konkani
-pawar_kashpur,Pawar: Kashpur,pawa1253,21.754465,80.111659,W. Hindi
+pawar_kashpur,Bundeli: Kashpur,pawa1253,21.754465,80.111659,W. Hindi
 salur,Gadaba: Salur,mudh1235,18.5204941,83.195972,C. Dravidian
 maimani,Maimani,luwa1238,23.616667,58.566667,Sindhic
 luwati,Luwati,luwa1238,23.621347,58.561492,Sindhic
@@ -588,10 +596,10 @@ Dang,Dangaura Tharu,dang1260,27.88,81.78,Bihari
 Chitwan,Chitwania Tharu,chit1274,27.58,84.41,Bihari
 Morang,Morangia Tharu,thar1284,26.666667,87.5,Bihari
 sambalpuri,Sambalpuri,samb1261,21.22,83.93,Eastern
-Dehati-Badeli,Dehati: Badeli,hind1269,27.3685,79.9127,W. Hindi
-Dehati-Kirkkichiyapur,Dehati: Kirkkichiyapur,hind1269,26.770130299999998,79.53700402186251,W. Hindi
-Dehati-Madnapur,Dehati: Madnapur,hind1269,27.42927085,79.80075325342546,W. Hindi
-Dehati-Sikandarpur,Dehati: Sikandarpur,hind1269,27.527816,79.421944,W. Hindi
+Dehati-Badeli,Bundeli: Badeli,hind1269,27.3685,79.9127,W. Hindi
+Dehati-Kirkkichiyapur,Bundeli: Kirkkichiyapur,hind1269,26.770130299999998,79.53700402186251,W. Hindi
+Dehati-Madnapur,Bundeli: Madnapur,hind1269,27.42927085,79.80075325342546,W. Hindi
+Dehati-Sikandarpur,Bundeli: Sikandarpur,hind1269,27.527816,79.421944,W. Hindi
 Hindi-Dhubar,Hindi: Dhubar,hind1269,27.195966149999997,79.2224341248529,W. Hindi
 Hindi-Gabchariyapur,Hindi: Gabchariyapur,hind1269,26.770130299999998,79.53700402186251,W. Hindi
 Hindi-Gohaniya,Hindi: Gohaniya,hind1269,28.613788,79.832231,W. Hindi
@@ -614,3 +622,25 @@ Tharu-DKS,Dangaura Tharu: Shivratanpur,thar1284,28.528757,80.859858,Bihari
 Tharu-DDK,Dang Tharu: Kothari,thar1284,28.040015,82.331800,Bihari
 Tharu-DGC,Dangaura Tharu: Chandanpur,thar1284,27.065873,81.897985,Bihari
 Tharu-DkR,Dangaura Tharu: Rajipur,thar1284,28.9801,80.19983,Bihari
+Balti,Balti,balt1258,,,Other,,
+RonduBalti,Balti: Rondu (Basho),balt1258,35.468685,75.358422,Other,"Rondu Valley, Basho village",B
+ShigarBalti,Balti: Shigar,balt1258,35.422616,75.737108,Other,"Shigar Valley, Shigar and Churka villages",B
+SkarduBalti,Balti: Skardu,balt1258,35.289137,75.607395,Other,"Skardu Valley, Skardu town and Hussainabad village",A
+KhapaluBalti,Balti: Khapalu (Konewa),balt1258,35.163409,76.342552,Other,"Khapalu Valley, Konewa village",B
+KharmangBalti,Balti: Kharmang,balt1258,34.968679,76.213849,Other,Kharmang Valley,B
+ChorbatBalti,Balti: Chorbat (Siksa),balt1258,34.93128,76.61652,Other,"Chorbat, Siksa village",B
+SkarduPurki,Balti: Skardu Purki,puri1258,34.5593048,76.1255767,Other,"Collected in Skardu from a speaker originally from the Kargil area",C
+Hussainabad,Burushaski: Hussainabad (Hunza),hunz1248,36.6865546,74.8234606,Burushaski,"Hunza, Hussainabad",B
+Murtazabad,Burushaski: Murtazabad (Hunza),hunz1248,36.2821952,74.5889064,Burushaski,"Hunza, Murtazabad",B
+Haiderabad,Burushaski: Haiderabad (Hunza),hunz1248,36.2969008,74.5985662,Burushaski,"Hunza, Haiderabad",B
+Ganish,Burushaski: Ganish (Hunza),hunz1248,36.312159,74.6626353,Burushaski,"Hunza, Ganish",B
+NazimabadUpperSust,Burushaski: Nazimabad (Upper Sust),hunz1248,36.6717915,74.8337469,Burushaski,"Hunza (Gojal), Nazimabad",B
+UyumNagar,Burushaski: Uyum Nagar,naga1398,36.1528358,74.8461621,Burushaski,"Nagar, Uyum Nagar",B
+Hoper,Burushaski: Hoper (Nagar),naga1398,36.1528358,74.8461621,Burushaski,"Nagar, Hoper",B
+YasinCenter,Burushaski: Central Yasin (Yasin Bala),yasi1237,36.4092359,73.0214217,Burushaski,"Central Yasin, Yasin Bala",B
+ThuiYasin,Burushaski: Northern Yasin (Thui),yasi1237,,,Burushaski,"Northern Yasin, Thui",B
+Passu,Wakhi: Central Gojal (Passu),goja1238,36.4658158,74.8943261,Other,"Central Gojal, Passu",B
+Shimshal,Wakhi: Shimshal,wakh1245,36.435521,75.325492,Other,"Shimshal, Shimshal",B
+Chapursan,Wakhi: Chapursan (Shar-e-savz),wakh1245,36.494474,74.294484,Other,"Chapursan, Shar-e-savz",B
+Yasin,Wakhi: Yasin (Darkot),yasi1244,,,Other,"Yasin, Darkot",B
+Ishkoman,Wakhi: Ishkoman (Imit),ishk1245,,,Other,"Ishkoman, Imit",B
