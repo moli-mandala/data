@@ -9,6 +9,7 @@ Run:  uv run --with pybtex python make_refs.py
 
 import csv
 import glob
+import json
 import sys
 from collections import defaultdict
 from pathlib import Path
@@ -34,6 +35,16 @@ JAMBU_EDITOR_OVERRIDES = {
     "canvin2025": "Aryaman Arora; OpenAI Codex; Claude Opus 4.8",
     "zoller2005": "OpenAI Codex",
 }
+
+CDIAL_REFERENCE_CATALOG = Path("data/cdial/reference_catalog.json")
+
+
+def cdial_reference_catalog():
+    """Descriptions transcribed from the main and addenda CDIAL prefaces."""
+    if not CDIAL_REFERENCE_CATALOG.exists():
+        return {}
+    with CDIAL_REFERENCE_CATALOG.open(encoding="utf-8") as f:
+        return json.load(f)
 
 
 def source_ids(value):
@@ -85,6 +96,7 @@ def main():
     engine = pybtex.PybtexEngine()
     provenance_by_ref = collect_provenance()
     used_refs = used_references()
+    cdial_catalog = cdial_reference_catalog()
     used = set()
     rows = []
     for key in sources.entries:  # insertion (file) order → stable dedup suffixes
@@ -123,7 +135,11 @@ def main():
         if not provenance:
             provenance = "cldf/forms.csv (upstream import path unavailable)"
         editor = JAMBU_EDITOR_OVERRIDES.get(key, DEFAULT_JAMBU_EDITOR)
-        rows.append([key, key, "", "No", provenance, editor])
+        description = cdial_catalog.get(
+            key,
+            f"Reference abbreviation `{key}` cited in the source data; full citation not yet catalogued.",
+        )
+        rows.append([key, key, description, "No", provenance, editor])
 
     with open("cldf/references.csv", "w", newline="", encoding="utf-8") as f:
         w = csv.writer(f)

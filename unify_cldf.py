@@ -236,6 +236,130 @@ def strip_marker(pid: str) -> str:
     return pid[1:] if pid and pid[0] in ">~" else pid
 
 
+_EXT_MORPH = re.compile(r"<i>([^<]+)</i>")
+
+
+def ext_morpheme(info: str) -> str | None:
+    """The extension suffix in a CDIAL section header — ``ext. -<i>kk</i>-`` or a bare
+    ``-<i>kk</i>-`` — returned as ``-kk-`` (tags stripped), else None. These sections mark reflexes
+    descending from a morphologically extended stem of the headword."""
+    if not (re.search(r"\bext\b", info, re.I) or re.fullmatch(r"-<i>[^<]+</i>-", info)):
+        return None
+    m = _EXT_MORPH.search(info)
+    return f"-{m.group(1)}-" if m else None
+
+
+def section_kind(info: str):
+    """Classify a section header as a derived-form section that we promote to its own entry →
+    (kind, suffix, tag). Extensions carry a morpheme; causatives/derivatives don't, so a fixed
+    label suffix is used for the constructed headword. Returns (None, None, None) otherwise."""
+    m = ext_morpheme(info)
+    if m:
+        return ("ext", m, "ext:" + m.strip("-"))
+    plain = re.sub(r"<[^>]+>", "", info).strip()
+    if re.match(r"(?i)^caus", plain):
+        return ("caus", "-áya-", "caus")  # OIA causative morpheme
+    if re.match(r"(?i)^deriv", plain):
+        return ("deriv", " (deriv.)", "deriv")
+    return (None, None, None)
+
+
+_CROSS = re.compile(r"\bX\b[^<]*<smallcaps>([^<]+)</smallcaps>")
+
+
+def contamination(info: str) -> str | None:
+    """A CDIAL "X ⟨Y⟩" header marks reflexes crossed/blended with another etymon Y (contamination);
+    return Y's head-word (NFC), else None."""
+    m = _CROSS.search(info)
+    return nfc(m.group(1).strip().rstrip("-").strip()) if m else None
+
+
+_OIA_VOWELS = set("aāiīuūeēoōṛṝḷ")
+
+_UNCERTAIN = re.compile(r"(?i)^(poss|prob|perh|dub|doubtful|maybe|uncertain)\b")  # \b excludes "Possessive"
+_REDUP = re.compile(r"(?i)^redup")
+# a leading grammatical label on a section header ("Adj. forms", "f. *X", "tr. with e") → tag token.
+# 'caus'/'deriv' are omitted: those sections are promoted to their own entries, not tagged here.
+# a leading grammatical label → canonical tag token ('caus'/'deriv' omitted — those are promoted)
+_GRAM_TAG = {
+    "adj": "adj", "adv": "adv", "tr": "tr", "intr": "intr", "pron": "pron", "postp": "postp",
+    "num": "num", "fem": "f", "masc": "m", "neut": "n", "f": "f", "m": "m", "n": "n",
+    "pres": "pres", "pret": "pret", "pp": "pp", "ppp": "ppp", "pass": "pass", "fut": "fut",
+    "inf": "inf", "ger": "ger", "impv": "impv", "opt": "opt",
+    "sg": "sg", "pl": "pl", "du": "du",
+    "nom": "nom", "acc": "acc", "gen": "gen", "dat": "dat", "loc": "loc", "abl": "abl",
+    "instr": "instr", "voc": "voc", "obl": "obl",
+}
+
+
+def section_flags(info: str) -> list[str]:
+    """Structured flags a section header carries: etymological hedge (uncertain), reduplication,
+    alternate form, and a leading grammatical label (Adj., pres., pp., obl., …). Additive tags."""
+    p = re.sub(r"<[^>]+>", "", info).strip()
+    out = []
+    if _UNCERTAIN.match(p):
+        out.append("uncertain")
+    if _REDUP.match(p):
+        out.append("reduplicated")
+    if re.match(r"(?i)^altern", p):
+        out.append("alternate")
+    m = re.match(r"(?i)^([a-z]+)\.", p)  # a grammatical abbreviation followed by a period
+    if m and _GRAM_TAG.get(m.group(1).lower()):
+        out.append(_GRAM_TAG[m.group(1).lower()])
+    return out
+
+
+def strip_accent(s: str) -> str:
+    """Drop the Vedic pitch accent (combining acute / grave) from an OIA head-word."""
+    d = unicodedata.normalize("NFD", s)
+    d = "".join(c for c in d if c not in ("́", "̀"))
+    return unicodedata.normalize("NFC", d)
+
+
+_WITH_SUB = re.compile(r"(?i)-?<i>([^<]+)</i>-?\s+in place of\s+-?<i>([^<]+)</i>-?")
+_WITH_INIT = re.compile(r"(?i)^with\s+<i>([^<]+)</i>-")
+# a "< <form>" reference (italic or smallcaps) — the source of an alternate/replacement etymology
+_ETYM_REF = re.compile(r"(?:&lt;|<)\s*-?(?:<i>(\*?[^<]+?)</i>|<smallcaps>(\*?[^<]+?)</smallcaps>)")
+_REPLACED_BY = re.compile(
+    r"(?i)^replaced\s+by\b[^<]*?(?:<i>(\*?[^<]+?)</i>|<smallcaps>(\*?[^<]+?)</smallcaps>)"
+)
+
+
+def _ref_form(m) -> str | None:
+    """The head-word captured by an _ETYM_REF / _REPLACED_BY match (either group), tidied."""
+    if not m:
+        return None
+    w = (m.group(1) or m.group(2) or "").strip().rstrip("-").strip()
+    return nfc(w) or None
+
+
+def sound_variant(info: str, base_bare: str):
+    """Generate a sound-variant proto-form from a section header applied to the (accent-stripped)
+    base head-word: 'with A in place of B' → substitute B→A; initial 'With X-' → prepend a consonant,
+    or replace the leading vowel with a vowel. Returns (word, short-label) or None."""
+    m = _WITH_SUB.search(info)
+    if m:
+        new = strip_accent(m.group(1)).strip("-").strip()
+        old = strip_accent(m.group(2)).strip("-").strip()
+        if new and old and old in base_bare:
+            return ("*" + base_bare.replace(old, new), f"with {new} for {old}")
+        return None
+    m = _WITH_INIT.match(info)
+    if m:
+        x = strip_accent(m.group(1)).strip("-").strip()
+        if not x or not base_bare:
+            return None
+        has_vowel = any(c in _OIA_VOWELS for c in x)
+        has_cons = any(c.isalpha() and c not in _OIA_VOWELS for c in x)
+        base_vowel_initial = base_bare[0] in _OIA_VOWELS
+        if has_vowel and not has_cons and base_vowel_initial:
+            return ("*" + x + base_bare[1:], f"with {x}-")  # vowel: replace the leading vowel
+        if has_cons and not has_vowel and base_vowel_initial:
+            return ("*" + x + base_bare, f"with {x}-")  # single consonant onto a vowel-initial base
+        return None  # CV syllable (a compound member) or would form a consonant cluster — skip
+    return None
+
+
 def nfc(s: str) -> str:
     """Head-words and forms can disagree on Unicode normalisation (precomposed vs combining); compare
     them NFC-folded so a self-reflex like OIA aṅgúli is recognised as the head-word."""
@@ -300,9 +424,16 @@ def main():
     # etymon). Reflexes are grouped into those forms by the `info` half of their Cognateset
     # ("subnum:info" → info is the form number). Non-numeric info carries forward the most recent
     # form number; form 1 (or no numbered form) stays on the head.
-    n_reflex = n_variant = n_section = n_borrowed = n_lone = 0
+    n_reflex = n_variant = n_section = n_borrowed = n_lone = n_ext = n_crossed = n_svar = 0
+    n_replaced = n_altern = 0
     reflex_rows = []
-    section_edges = []  # (numbered-form id -> head etymon id)
+    ext_entry_rows = []  # synthetic extension/caus/deriv entries + the shared morpheme entries
+    morpheme_id = {}  # suffix -> shared morpheme entry id (one `-kk-`/`-áya-`/… entry, reused)
+    section_edges = []  # (derived-form id -> parent id); an extension has TWO (base + morpheme)
+    # contaminating-etymon head-word -> its id, for "X ⟨Y⟩" cross links
+    oia_id_by_form = {
+        nfc(p.get("Name", "")): p["ID"] for p in params if p.get("Language_ID") == "Indo-Aryan"
+    }
     all_ids = {r["ID"] for r in forms}  # to keep promoted `<etymon>-<n>` ids collision-free
 
     # Borrowed sub-reflexes: a CDIAL note "(→ H. …, B. …)" lists forms borrowed FROM that reflex.
@@ -323,7 +454,9 @@ def main():
 
         # enumerate the numbered head-forms (same language as the etymon, not the self-reflex, not a
         # comma-alternate) in header order → form 2, 3, …. A promoted form is re-id'd `<etymon>-<n>`.
-        section_by_num, promoted_id = {}, {}
+        section_by_num, promoted_id, ext_by_morph, variant_by_info = {}, {}, {}, {}
+        variant_tag = {}  # info -> the tag for its generated entry ('sound-variant' | 'replaced')
+        section_word = {}  # CDIAL form number -> its head-word (for the "altern. < N" link text)
         if cdial:
             num = 2
             prev_or = False  # the previous head-form ended in "or" → the next is its alternate
@@ -347,8 +480,124 @@ def main():
                     new_id += "x"
                 all_ids.add(new_id)
                 section_by_num[num] = new_id
+                section_word[num] = r.get("Form", "")
                 promoted_id[r["ID"]] = new_id
                 num += 1
+
+            # promote derived-form sections (extension "ext. -kk-", causative "caus", derivative
+            # "Deriv") to entries — one node per distinct suffix, headword = base head-word + suffix.
+            # The suffix morpheme is itself a shared entry (one "-kk-" reused everywhere), so each
+            # derived entry has a COMPOUND etymology: base + morpheme (two derivation edges).
+            _MLABEL = {"ext": "extension suffix", "caus": "causative suffix", "deriv": "derivative"}
+            _MTAG = {"ext": "morpheme:extension", "caus": "morpheme:causative", "deriv": "morpheme:derivative"}
+            base_row = etyma_by_id.get(pid)
+            base_form = base_row[2] if base_row else ""
+            for r in group:
+                cg = r.get("Cognateset") or ""
+                kind, suffix, tag = section_kind(cg.split(":", 1)[1] if ":" in cg else "")
+                if not kind or suffix in ext_by_morph:
+                    continue
+                new_id = f"{pid}-{num}"
+                while new_id in all_ids:
+                    new_id += "x"
+                all_ids.add(new_id)
+                ext_by_morph[suffix] = new_id
+                num += 1
+                # the shared morpheme entry — extensions/causatives compound with a real suffix;
+                # derivatives carry no morpheme, so they're plain derived terms (no morpheme entry).
+                mo_id = None
+                if kind != "deriv":
+                    mo_id = morpheme_id.get(suffix)
+                    if mo_id is None:
+                        clean = re.sub(r"[\s().\-]+", "", suffix) or f"m{len(morpheme_id)}"
+                        mo_id = f"mo-{clean}"
+                        while mo_id in all_ids:
+                            mo_id += "x"
+                        all_ids.add(mo_id)
+                        morpheme_id[suffix] = mo_id
+                        ext_entry_rows.append([
+                            mo_id, "Indo-Aryan", suffix.strip(), _MLABEL[kind],
+                            "", "", "", "", "", _MTAG[kind], "CDIAL", "", "", "", "", "", "",
+                        ])
+                # construct the headword: accent-stripped base + morpheme, always reconstructed (*).
+                # An extension of an Indo-Aryan -ati verb infixes the morpheme into the present stem
+                # (dravati + -ḍ- -> *dravaḍati, a complete verb); otherwise it is a bound stem and
+                # keeps a trailing hyphen (*katukk-). Derivatives carry no morpheme, only a label.
+                base_bare = strip_accent(base_form).lstrip("*")
+                morph_bare = strip_accent(suffix).strip().strip("-")  # 'kk', 'ḍ', 'aya'
+                if kind == "deriv":
+                    word = "*" + base_bare + " (deriv.)"
+                else:
+                    is_verb = parent["Language_ID"] == "Indo-Aryan" and base_bare.endswith("ati")
+                    root = base_bare[:-3] if is_verb else base_bare  # strip the -ati verb ending
+                    if not is_verb and root.endswith("n") and not strip_accent(base_form).startswith("*"):
+                        root = root[:-1]  # attested an-/in-stem noun: drop -n (reconstructed roots keep it)
+                    if root.endswith("ā"):
+                        root = root[:-1] + "a"  # shorten a stem-final long ā to short a
+                    # break a root(C)+morpheme(C) cluster with an epenthetic -a-
+                    sep = (
+                        "a"
+                        if root and root[-1] not in _OIA_VOWELS
+                        and morph_bare and morph_bare[0] not in _OIA_VOWELS
+                        else ""
+                    )
+                    if is_verb:
+                        word = ("*" + root + sep + morph_bare + "ati").replace("aati", "ati")
+                    else:
+                        word = "*" + root + sep + morph_bare + "-"
+                # readable, linked etymology (data-entry links render like CDIAL cross-refs), e.g.
+                # "kk-extension of ⟨kaṭu⟩" with both the morpheme and the base head clickable.
+                base_link = f'<smallcaps><a data-entry="{pid}">{strip_accent(base_form)}</a></smallcaps>'
+                mo_link = f'<a data-entry="{mo_id}">{morph_bare}</a>' if mo_id else ""
+                etym = {
+                    "ext": f"{mo_link}-extension of {base_link}",
+                    "caus": f"{mo_link}-causative of {base_link}",
+                    "deriv": f"derivative of {base_link}",
+                }[kind]
+                ext_entry_rows.append([
+                    new_id, parent["Language_ID"], word, base_row[3] if base_row else "",
+                    "", "", "", "", "", tag, "CDIAL", "", etym, "", "", "", "",
+                ])
+                section_edges.append((new_id, pid))     # derived from the base head
+                if mo_id:
+                    section_edges.append((new_id, mo_id))  # …and from the morpheme (ext/caus compound)
+                n_ext += 1
+
+            # promote sound-variant sections ("with A in place of B", initial "With X-") — head-word
+            # generated from the base — and "Replaced by ⟨Y⟩" sections (head-word = the named
+            # replacement Y) to their own entries; the section's reflexes home to them below.
+            blink = f'<smallcaps><a data-entry="{pid}">{strip_accent(base_form)}</a></smallcaps>'
+            for r in group:
+                cg = r.get("Cognateset") or ""
+                info = cg.split(":", 1)[1] if ":" in cg else ""
+                if info in variant_by_info or not info:
+                    continue
+                v = sound_variant(info, strip_accent(base_form).lstrip("*"))
+                rep = None if v else _ref_form(_REPLACED_BY.match(info))
+                if not v and not rep:
+                    continue
+                new_id = f"{pid}-{num}"
+                while new_id in all_ids:
+                    new_id += "x"
+                all_ids.add(new_id)
+                variant_by_info[info] = new_id
+                variant_tag[info] = "sound-variant" if v else "replaced"
+                num += 1
+                if v:
+                    word, label = v
+                    tag, etym = "sound-variant", f"{label} of {blink}"
+                else:
+                    word = rep if rep.startswith("*") else "*" + rep
+                    tag, etym = "replaced", f"replaced {blink}"
+                ext_entry_rows.append([
+                    new_id, "Indo-Aryan", word, base_row[3] if base_row else "",
+                    "", "", "", "", "", tag, "CDIAL", "", etym, "", "", "", "",
+                ])
+                section_edges.append((new_id, pid))
+                if tag == "sound-variant":
+                    n_svar += 1
+                else:
+                    n_replaced += 1
 
         last_num = 1  # carry-forward form number within this entry (1 = the head itself)
         for r in group:
@@ -383,10 +632,11 @@ def main():
 
             cog = r["Cognateset"] or ""
             # a borrowed sub-reflex ("<subnum>:<lang> →") → child of the reflex it was borrowed from
+            arrow_lang = ""
             if "→" in cog:
                 sub, _, rest = cog.partition(":")
-                plang = rest.split("→")[0].strip()
-                borrowed_from = borrow_parent.get((pid, sub, plang), "")
+                arrow_lang = rest.split("→")[0].strip()
+                borrowed_from = borrow_parent.get((pid, sub, arrow_lang), "")
 
             # two kinds of variant: a comma-listed alternate of a main reflex (Variant_Of set by
             # make_cldf), or a same-language non-head-word form on a non-CDIAL etymon.
@@ -403,10 +653,22 @@ def main():
                 borrowed_from = origin
                 vof = ""
                 marker_tag = "semi-tatsama" if marker == "~" else "marked borrowing"
-                tags = [tag for tag in (r.get("Tags", "") or "").split(";") if tag]
+                tags = [tag for tag in (r.get("Tags", "") or "").split() if tag]
                 if marker_tag not in tags:
                     tags.append(marker_tag)
-                r["Tags"] = ";".join(tags)
+                r["Tags"] = " ".join(tags)
+                n_borrowed += 1
+            elif arrow_lang:
+                # a "X →" borrowing section whose exact source reflex wasn't matched — still a loan;
+                # parent it on the etymon as a fallback and tag its target (borrowed-into) language.
+                relation = "borrowed"
+                origin = pid
+                borrowed_from = pid
+                vof = ""
+                tags = [tag for tag in (r.get("Tags", "") or "").split() if tag]
+                if f"loan:{arrow_lang}" not in tags:
+                    tags.append(f"loan:{arrow_lang}")
+                r["Tags"] = " ".join(tags)
                 n_borrowed += 1
             elif vof and vof not in self_reflex_ids:
                 relation = "variant"
@@ -421,23 +683,89 @@ def main():
                 relation = "reflex"
                 vof = ""
                 n_reflex += 1
-                if cdial:  # re-home to its numbered head-form via the Cognateset info
+                if cdial:  # re-home to its numbered head-form or derived node via the Cognateset info
                     info = cog.split(":", 1)[1].strip() if ":" in cog else ""
-                    m_add = re.match(r"Addenda.*?(\d+)\s*$", info)  # "Addenda: *X. N" → form N
-                    if info.isdigit():
-                        last_num = int(info)
-                    elif m_add:
-                        last_num = int(m_add.group(1))
-                    elif info == "":
-                        last_num = 1  # section-less paragraph → the main entry (the head)
-                    # else: a non-numeric label (e.g. "prob") carries forward the last form number
-                    if last_num in section_by_num:
+                    _k, sfx, sfx_tag = section_kind(info)
+                    raw_info = cog.split(":", 1)[1] if ":" in cog else ""
+                    if sfx and sfx in ext_by_morph:
                         mk = origin[0] if origin and origin[0] in ">~" else ""
-                        origin = mk + section_by_num[last_num]
+                        origin = mk + ext_by_morph[sfx]  # home to the promoted extension/caus/deriv entry
+                        rtags = [t for t in (r.get("Tags", "") or "").split() if t]
+                        if sfx_tag not in rtags:  # the extension morpheme as a searchable tag on the reflex
+                            rtags.append(sfx_tag)
+                        r["Tags"] = " ".join(rtags)
+                    elif raw_info in variant_by_info:
+                        mk = origin[0] if origin and origin[0] in ">~" else ""
+                        origin = mk + variant_by_info[raw_info]  # generated sound-variant / replacement
+                        vt = variant_tag.get(raw_info, "sound-variant")
+                        rtags = [t for t in (r.get("Tags", "") or "").split() if t]
+                        if vt not in rtags:
+                            rtags.append(vt)
+                        r["Tags"] = " ".join(rtags)
+                    else:
+                        m_add = re.match(r"Addenda.*?(\d+)\s*$", info)  # "Addenda: *X. N" → form N
+                        if info.isdigit():
+                            last_num = int(info)
+                        elif m_add:
+                            last_num = int(m_add.group(1))
+                        elif info == "":
+                            last_num = 1  # section-less paragraph → the main entry (the head)
+                        # else: a non-numeric label (e.g. "prob") carries forward the last form number
+                        if last_num in section_by_num:
+                            mk = origin[0] if origin and origin[0] in ">~" else ""
+                            origin = mk + section_by_num[last_num]
 
             if pid in merges and not borrowed_from:  # merged addendum → hang on the main entry
                 mk = origin[0] if origin and origin[0] in ">~" else ""
                 origin = mk + merges[pid]
+
+            # "X ⟨Y⟩" contamination: these reflexes are crossed/blended with another etymon Y (a
+            # secondary origin). Tag it (queryable) and, when Y resolves to an OIA etymon, add a
+            # navigable "× ⟨Y⟩" note (the webapp turns data-entry into a link, as for Turner refs).
+            cross = contamination(cog.split(":", 1)[1] if ":" in cog else "")
+            if cross:
+                tags = [t for t in (r.get("Tags", "") or "").split() if t]
+                if "contaminated" not in tags:  # flag only; the crossing etymon is in the note below
+                    tags.append("contaminated")
+                r["Tags"] = " ".join(tags)
+                cid = oia_id_by_form.get(cross)
+                if cid:
+                    note = f'× <smallcaps><a data-entry="{cid}">{cross}</a></smallcaps>'
+                    desc = r.get("Description") or ""
+                    if cid not in desc:
+                        r["Description"] = (desc + " " if desc else "") + note
+                n_crossed += 1
+
+            # alternate etymology: "altern. < N" (another CDIAL sub-form of this entry) or
+            # "altern./or/poss. < ⟨form⟩" (another etymon) — a second, competing derivation. The
+            # primary origin stays in Origin_ID; the alternate is a real second parent in the
+            # derivation graph, so getAncestryChain shows BOTH etyma (as it does for compounds).
+            araw = cog.split(":", 1)[1] if ":" in cog else ""
+            aplain = re.sub(r"<[^>]+>", "", araw)
+            alt_id = None
+            mN = re.match(r"(?i)^altern\.?\s*(?:&lt;|<)\s*(\d+)", aplain)
+            if cdial and mN and int(mN.group(1)) in section_by_num:
+                alt_id = section_by_num[int(mN.group(1))]  # CDIAL sub-form N of this entry
+            elif re.match(r"(?i)^(altern|or|poss|perh)\b.*(?:&lt;|<)", aplain):
+                alt_id = oia_id_by_form.get(_ref_form(_ETYM_REF.search(araw)))
+            if alt_id and alt_id != strip_marker(origin):
+                atags = [t for t in (r.get("Tags", "") or "").split() if t]
+                if "alternate" not in atags:
+                    atags.append("alternate")
+                r["Tags"] = " ".join(atags)
+                section_edges.append((r["ID"], alt_id))  # second parent in the derivation graph
+                n_altern += 1
+
+            # structured flags from the section header: etymological hedge (uncertain), reduplication,
+            # and a grammatical POS label — added as searchable tags on the section's reflexes.
+            flags = section_flags(cog.split(":", 1)[1] if ":" in cog else "")
+            if flags:
+                rtags = [t for t in (r.get("Tags", "") or "").split() if t]
+                for fl in flags:
+                    if fl not in rtags:
+                        rtags.append(fl)
+                r["Tags"] = " ".join(rtags)
+
             reflex_rows.append([
                 r["ID"], r["Language_ID"], r["Form"], r["Gloss"], r["Native"], r["Phonemic"],
                 r["Original"], r["Cognateset"], r["Description"], r.get("Tags", ""), r["Source"],
@@ -483,6 +811,7 @@ def main():
         w.writerow(UNIFIED)
         w.writerows(etyma_rows)
         w.writerows(reflex_rows)
+        w.writerows(ext_entry_rows)
 
     # add the promoted numbered-form → head edges to the derivation graph (link_refs.py wrote it)
     if section_edges:
@@ -503,8 +832,10 @@ def main():
     print(
         f"unified cldf/forms.csv: {len(etyma_rows)} etyma "
         f"({len(folded)} folded self-reflexes, {n_merged} merged addenda) + {n_reflex} reflexes "
-        f"+ {n_variant} variants + {n_section} promoted section-forms + {n_borrowed} borrowed "
-        f"+ {n_lone} lone (unetymologised) nodes; "
+        f"+ {n_variant} variants + {n_section} promoted section-forms + {n_ext} derived (ext/caus/deriv) "
+        f"entries + {n_svar} generated sound-variants + {n_replaced} replacement entries "
+        f"+ {n_altern} alternate-etymology links + {n_borrowed} borrowed "
+        f"+ {n_crossed} contamination-tagged + {n_lone} lone nodes; "
         f"applied {n_curated_borrowings} curated cross-dictionary borrowings; "
         f"attached {n_nuristani_reflexes} PNur/IA nodes as Proto-II reflexes; "
         f"applied {n_nuristani_borrowings} Strand OIA loan branches "

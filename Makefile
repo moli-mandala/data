@@ -9,6 +9,7 @@ all:
 	UV_CACHE_DIR=$${UV_CACHE_DIR:-/tmp/uv-cache} uv run --with segments --with unidecode --with tqdm python make_cldf.py
 	uv run python link_refs.py
 	uv run python unify_cldf.py
+	UV_CACHE_DIR=$${UV_CACHE_DIR:-/tmp/uv-cache} uv run --with pysem python concepts.py
 	uv run python align.py
 
 dedr:

@@ -11,7 +11,11 @@ from copy import deepcopy
 from utils import mapping, superscript, change
 from tags import extract_tags
 from tamil_morphology import append_note, extract_tamil_verb_morphology
-from dedr_variants import expand_attached_sound_variants
+from dedr_variants import (
+    expand_attached_sound_variants,
+    expand_length_variants,
+    normalize_dedr_marks,
+)
 from data.dedr.cleanup import is_footer_misparse
 
 # read in tokenizer/convertors for IPA and form normalisation
@@ -105,6 +109,13 @@ def parse_file(file: str, errors, name=None, file_num=0, param_counter=None):
         # the legacy filename heuristic, so select its phonetic parser by source.
         row_ipa = "cdial" if row.source in {"shackle", "shackle-auto"} else ipa
         row_convert = row_ipa is not None and (row.source in {"shackle", "shackle-auto"} or convert)
+        # DEDR forms (incl. the PDr reconstructions in pdr.csv, whose source is "krishnamurti")
+        # are already in a Dravidianist transcription; the shared profile only normalises house
+        # conventions (ழ r̤ -> ṛ̆, ṅ -> ŋ, aspirates -> superscript, anusvara -> ṁ, marked vowels
+        # -> IPA). Length-ambiguous vowels are split into variants below, not here.
+        if "dedr" in file:
+            row_ipa = "dedr"
+            row_convert = True
         # Backstrom's Urdu and Pashto lists are survey controls rather than the
         # northern locality varieties we want to publish in Jambu.
         if os.path.basename(file) == "20230416-northern.csv" and row.lang in {"Urdu", "Pashto"}:
@@ -129,7 +140,11 @@ def parse_file(file: str, errors, name=None, file_num=0, param_counter=None):
         # the first is the main reflex and the rest are variants of it (same etymon, own alignment).
         source_form = row.form
         forms = (
-            expand_attached_sound_variants(row.form)
+            [
+                normalize_dedr_marks(length_variant)
+                for base in expand_attached_sound_variants(row.form)
+                for length_variant in expand_length_variants(base)
+            ]
             if "dedr" in file
             else list(row.form.split(","))
         )
@@ -161,7 +176,26 @@ def parse_file(file: str, errors, name=None, file_num=0, param_counter=None):
                 row.variant_of = main_id
 
             # convert IPA
-            if row_ipa is not None and "˚" not in form and row_convert:
+            if row_ipa == "zoller" and row_convert:
+                # Zoller's tonal pseudo-IPA. NFD so precomposed vowels split into base + marks the
+                # profile matches (acute->caron rising, grave->circumflex falling); the "IPA" column
+                # is the normalised transcription (a-allophones merged), the "Phon" column the IPA
+                # pronunciation which is kept in the Phonemic field.
+                stats["for_conversion"] += 1
+                src = unicodedata.normalize("NFD", reformed.strip("-1234,;."))
+                form_out = unicodedata.normalize(
+                    "NFC", convertors["zoller"](src, column="IPA").replace(" ", "").replace("#", " ")
+                )
+                phon_out = unicodedata.normalize(
+                    "NFC", convertors["zoller"](src, column="Phon").replace(" ", "").replace("#", " ")
+                )
+                if "�" in form_out:
+                    errors.write(str(row) + " " + form_out + "\n")
+                else:
+                    row.form = form_out
+                    row.ipa = phon_out
+                    stats["converted"] += 1
+            elif row_ipa is not None and "˚" not in form and row_convert:
                 stats["for_conversion"] += 1
                 # fix accentuation from Strand
                 if row_ipa == "strand":

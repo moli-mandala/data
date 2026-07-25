@@ -6,7 +6,8 @@ mapping = {
     'northern': 'northern', 'toulmin': 'toulmin', 'chattisgarhi': 'chattisgarhi',
     'rajasthani': 'rajasthani', 'old_punjabi': 'cdial', 'bundeli': 'chattisgarhi',
     'tharu': 'cdial', 'kannauji': 'rajasthani', 'tharu2': 'chattisgarhi', 'shina': 'liljegren', 'berger': 'berger',
-    'markodi': 'markodi'  # Toulmin-style Dravidian consonants + Markodi vowels/length
+    'markodi': 'markodi',  # Toulmin-style Dravidian consonants + Markodi vowels/length
+    'zoller': 'zoller'  # Zoller's tonal Indus Kohistani pseudo-IPA -> transcription + IPA pronunciation
 }
 
 # superscript forms of letters

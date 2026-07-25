@@ -1,4 +1,5 @@
 import importlib.util
+import json
 from pathlib import Path
 import sys
 
@@ -53,3 +54,10 @@ def test_sanskrit_works_embedded_in_prose_are_tagged_without_mangling_note():
         tags.split()
     )
     assert note == "('devotion' Prab.com.); (<i>sudhyatē</i> ṢaḍvBr.); compare ŚrS."
+
+
+def test_every_cdial_bibliography_abbreviation_has_display_metadata():
+    catalog_path = MODULE.with_name("reference_catalog.json")
+    catalog = json.loads(catalog_path.read_text(encoding="utf-8"))
+    assert references.REFERENCE_ABBREVS <= catalog.keys()
+    assert all(catalog[key].strip() for key in references.REFERENCE_ABBREVS)
