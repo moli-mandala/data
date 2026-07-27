@@ -25,15 +25,19 @@ GRAMMATICAL_TAGS = {
     # number
     "sg", "pl", "du",
     # part of speech
-    "adj", "adv", "pron", "num", "postp", "prep", "conj", "interj", "part", "indecl", "ord",
+    "noun", "adj", "adv", "pron", "num", "postp", "prep", "conj", "interj", "part", "indecl", "ord",
     # case
     "nom", "acc", "dat", "gen", "loc", "abl", "instr", "voc", "obl",
     # verb forms
     "pp", "ppp", "pres", "fut", "inf", "impv", "ind", "ger", "verb",
-    "poss", "conditional", "suffix", "emph", "interr", "dir", "3sg",
-    # Tamil verb morphology
+    "poss", "conditional", "suffix", "emph", "interr", "dir", "3sg", "uncertain",
+    "derived", "inherited", "loanword", "diminutive", "intensive", "compound",
+    # Language-specific inflection / noun classes
     "weak", "middle", "strong", "Tamil-class-1", "Tamil-class-2", "Tamil-class-3",
     "Tamil-class-4", "Tamil-class-5", "Tamil-class-6", "Tamil-class-7",
+    "Kalasha-class-1", "Kalasha-class-2", "Kalasha-class-3", "Kalasha-class-4",
+    "Burushaski-class-H", "Burushaski-class-HM", "Burushaski-class-HF",
+    "Burushaski-class-X", "Burushaski-class-Y", "Burushaski-class-Z",
 }
 
 # Non-work attestation sources kept explicitly: dictionaries / lexicographers not listed as

@@ -12,8 +12,10 @@ Run AFTER make_cldf.py:  python link_refs.py
 
 import csv
 import html
+import os
 import re
 import sys
+import tempfile
 import unicodedata
 from collections import defaultdict
 
@@ -357,10 +359,28 @@ def main():
         n, rows = process(path, resolve, root_map, entry_ids)
         print(f"{path}: linked {n} references across {rows} rows", file=sys.stderr)
 
-    # append the synthesised √root entries to parameters.csv
+    # Replace any previously synthesised √root entries, then write the complete
+    # parameter table atomically.  This keeps the stage idempotent (and prevents a
+    # repeated/interrupted build from appending a second r1…rN block).
     if root_params:
-        with open("cldf/parameters.csv", "a", newline="", encoding="utf-8") as f:
-            csv.DictWriter(f, fieldnames=fields).writerows(root_params)
+        root_ids = {r["ID"] for r in root_params}
+        with open("cldf/parameters.csv", encoding="utf-8") as f:
+            processed_params = [
+                r for r in csv.DictReader(f)
+                if not (r["ID"] in root_ids and r.get("Language_ID") == "Indo-Aryan"
+                        and r.get("Name", "").startswith("√"))
+            ]
+        cache_dir = os.path.join(".cache", "link_refs")
+        os.makedirs(cache_dir, exist_ok=True)
+        with tempfile.NamedTemporaryFile(
+            "w", newline="", encoding="utf-8", dir=cache_dir, delete=False
+        ) as f:
+            tmp_path = f.name
+            writer = csv.DictWriter(f, fieldnames=fields)
+            writer.writeheader()
+            writer.writerows(processed_params)
+            writer.writerows(root_params)
+        os.replace(tmp_path, "cldf/parameters.csv")
 
     # derivation graph: child derived-term → parent etymon (from ancestry brackets) + root edges
     with open("cldf/parameters.csv", encoding="utf-8") as f:

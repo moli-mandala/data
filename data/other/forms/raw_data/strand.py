@@ -1,11 +1,24 @@
 from bs4 import BeautifulSoup
 from urllib.request import Request, urlopen
 from urllib.error import HTTPError
+from urllib.parse import quote
 import csv
 import re
+from pathlib import Path
 from segments.tokenizer import Tokenizer, Profile
 
-t = Tokenizer('ipa/strand.txt')
+DATA_ROOT = Path(__file__).resolve().parents[4]
+t = Tokenizer(str(Path(__file__).resolve().parents[1] / 'ipa/strand.txt'))
+
+
+def cached_soup(url, cache_path, parser):
+    """Read a cached Strand page, downloading it once when the cache is absent."""
+    cache_path = DATA_ROOT / cache_path
+    if not cache_path.exists():
+        cache_path.parent.mkdir(parents=True, exist_ok=True)
+        with urlopen(Request(url, headers={'User-Agent': 'Mozilla/5.0'})) as resp:
+            cache_path.write_bytes(resp.read())
+    return BeautifulSoup(cache_path.read_bytes(), parser)
 
 chars = ['p', 'b', 'bAsp', 'f', 'v', 'w', 'm', 'uFrn', 'u', 'o', 'oFrn', 'uTns', 'oTns',
          'cDen', 'zDen', 't', 'd', 'dAsp', 's', 'z', 'l', 'lVls', 'n', 'cRet', 'jRet',
@@ -31,9 +44,101 @@ lang_mapping = {
     'Vâsi.ṣu': 'supu', 'Kmkt.ktv': 'ktivi', 'Kmkt.km': 'Kam', 'Aṣk.s': 'sanu',
     'Kal.n': 'nis', 'Kal.v': 'vagal', 'Kal.a': 'ames', 'Treg.g': 'gamb', 'Vâsi.?': 'Pr'
 }
+DIALECT_NAMES = {
+    'Vâsi.u': 'Prasun: Usut', 'Vâsi.z': 'Prasun: Zumu', 'Vâsi.üć': 'Prasun: Ucu',
+    'Vâsi.s': 'Prasun: Sec', 'Vâsi.ṣu': 'Prasun: Supu', 'Vâsi.?': 'Prasun',
+    'Kmkt.ktv': 'Katavari: Ktivi', 'Kmkt.km': 'Kamviri', 'Aṣk.s': 'Ashkun: Sanu',
+    'Kal.n': 'Nuristani Kalasha: Nisheigram', 'Kal.v': 'Nuristani Kalasha: Vagal',
+    'Kal.a': 'Nuristani Kalasha: Amesdes', 'Treg.g': 'Tregami: Gambir',
+    'deg': 'Pashai: Gorayk (Degano)', 'Kam': 'Kamviri', 'Kata': 'Katavari',
+    'Ash': 'Ashkun', 'Wg': 'Nuristani Kalasha', 'Kho': 'Khowar', 'Phal': 'Palula',
+    'bhatr': 'Bhateri', 'ktivi': 'Katavari: Ktivi', 'sanu': 'Ashkun: Sanu',
+    'nis': 'Nuristani Kalasha: Nisheigram', 'vagal': 'Nuristani Kalasha: Vagal',
+    'ames': 'Nuristani Kalasha: Amesdes', 'gamb': 'Tregami: Gambir',
+    'sec': 'Prasun: Sec', 'usut': 'Prasun: Usut', 'supu': 'Prasun: Supu',
+    'zumu': 'Prasun: Zumu', 'ucu': 'Prasun: Ucu', 'Pr': 'Prasun',
+}
 src_mapping = {
     'S': 'strand', 'M': 'morgenstierne', 'B': 'buddruss', 'L': 'lentz', 'LSI': 'LSI'
 }
+
+# Strand uses the same compact grammatical notation throughout these lexica. Convert the labels
+# to Jambu's shared structured vocabulary instead of discarding them with the surrounding HTML.
+_POS_TOKEN = re.compile(
+    r"(?<![A-Za-z])(?:VT|VI|V|N[A-Za-z0-9?+<*`]*|Aj[A-Za-z0-9?+<*`]*|AJ|"
+    r"Av[A-Za-z0-9?+<*`]*|Pn[A-Za-z0-9?+<*`]*|Cj|Id|I|Neg|Emp|Mod|St|"
+    r"D[`*]?|L[A-Za-z0-9?+<*`]*|M|En)(?![A-Za-z])",
+    re.IGNORECASE,
+)
+
+
+def strand_pos_tags(label):
+    """Translate a Strand grammatical code into canonical, searchable Jambu tags."""
+    match = _POS_TOKEN.search(label or "")
+    if not match:
+        return ""
+    raw_code = match.group(0)
+    code = {
+        "vt": "VT", "vi": "VI", "v": "V", "aj": "Aj", "cj": "Cj",
+        "id": "Id", "i": "I", "neg": "Neg", "emp": "Emp", "mod": "Mod",
+        "st": "St", "m": "M", "en": "En",
+    }.get(raw_code.casefold(), raw_code)
+    tags = []
+    if code == "VT":
+        tags = ["verb", "tr"]
+    elif code == "VI":
+        tags = ["verb", "intr"]
+    elif code == "V":
+        tags = ["verb"]
+    elif code.startswith("N"):
+        tags = ["num"] if "Qt" in code else (["adj"] if "Ql" in code else ["noun"])
+        if "F" in code:
+            tags.append("f")
+        if "Pl" in code:
+            tags.append("pl")
+    elif code.startswith(("Aj", "AJ")):
+        tags = ["adj"]
+        if "Qt" in code:
+            tags.append("num")
+    elif code.startswith("Av"):
+        tags = ["adv"]
+    elif code.startswith("Pn"):
+        tags = ["pron"]
+        if "Pl" in code:
+            tags.append("pl")
+        if "?" in code:
+            tags.append("interr")
+    elif code == "Cj":
+        tags = ["conj"]
+    elif code in {"I", "Id"}:
+        tags = ["interj"]
+    elif code == "Neg":
+        tags = ["part"]
+    elif code == "Emp":
+        tags = ["part", "emph"]
+    elif code == "Mod":
+        tags = ["part"]
+    elif code == "St":
+        tags = ["part", "interr"]
+    elif code.startswith("D"):
+        tags = ["dir"]
+    elif code in {"M", "En"}:
+        tags = ["suffix"]
+    # L... distinguishes many spatial/temporal locatives and place-name classes. Its prefix alone
+    # does not safely imply adverb, postposition, or noun, so those codes remain untagged.
+    return " ".join(dict.fromkeys(tags))
+
+
+def strand_row(language, parameter, form, definition, ipa, notes, source, pos, location):
+    """Return the 15-column manual-import shape, with structured tags in column 15."""
+    tags = strand_pos_tags(pos).split()
+    dialect = DIALECT_NAMES.get(location, location)
+    if dialect:
+        tags.append("dialect:" + quote(dialect, safe=""))
+    return [
+        language, parameter, form, definition, "", ipa, notes, source,
+        "", "", "", "", "", "", " ".join(dict.fromkeys(tags)),
+    ]
 
 def strand3():
     with open('strand3.csv', 'w') as f, open('../params/strand3.csv', 'w') as p:
@@ -47,8 +152,8 @@ def strand3():
             link = f'https://nuristan.info/Nuristani/Nuristani/Nuristani/NuristaniLanguage/Lexicon/alph-{char}.html'
             print(link)
             try:
-                with urlopen(Request(link, headers={'User-Agent': 'Mozilla/5.0'})) as resp:
-                    soup = BeautifulSoup(resp, 'html5lib')
+                soup = cached_soup(link, Path('.cache/strand') / f'alph-{char}.html', 'html5lib')
+                if soup:
                     last_head = {}
                     for table in soup.find_all('table'):
                         for row in table.find_all('tr'):
@@ -92,9 +197,20 @@ def strand3():
                                 text = tds[-1].text.replace('\n', '')
                                 defns = re.findall(r'‘(.*?)’', text)
                                 lang, dial, src = tds[-2].find('em').text.split('.')
-                                r = [lang_mapping[lang + '.' + dial], last_head['id'],
-                                    tds[-1].find('em').text, defns[0] if defns else '', '', '', comment.text if comment else '',
-                                    src_mapping[src]]
+                                location = lang + '.' + dial
+                                form = tds[-1].find('em').text
+                                # Broken legacy table markup occasionally makes html.parser omit
+                                # the repeated form from ``.text``. Do not abort the page; in that
+                                # rare case the POS cannot be recovered safely from this row.
+                                before_gloss = (
+                                    text.split(form, 1)[1].split('‘', 1)[0]
+                                    if form in text else ""
+                                )
+                                r = strand_row(
+                                    lang_mapping[location], last_head['id'], form,
+                                    defns[0] if defns else '', '', comment.text if comment else '',
+                                    src_mapping[src], before_gloss, location,
+                                )
                                 # print(stack)
                                 # print(r)
                                 # input()
@@ -114,8 +230,8 @@ def strand2():
         writer = csv.writer(fout)
         link = f'http://nuristan.info/IndoAryan/SwatIndus/Bhatera/BhateraLanguage/Lexicon/lex.html'
         try:
-            with urlopen(Request(link, headers={'User-Agent': 'Mozilla/5.0'})) as resp:
-                soup = BeautifulSoup(resp, 'html.parser')
+            soup = cached_soup(link, '.cache/strand-legacy/bhatera.html', 'html.parser')
+            if soup:
                 for data in soup.find_all(class_='dic'):
                     word = data.find(class_='l')
                     if word:
@@ -130,13 +246,15 @@ def strand2():
                             l = re.search(r'</span>[\xa0 ]+(.*?)\.\xa0\xa0([^\.]+)\.', data)
                         print(l)
                         if l:
-                            pos = l.group(1).lower()
+                            pos = l.group(1)
                             definition = l.group(2).lower()
                             turner = re.search(r'T\..(\d+)', data)
                             if turner:
                                 turner = turner.group(1)
                                 ipa = t(word2, column='IPA').replace(' ', '').replace('#', ' ')
-                                writer.writerow(['bhatr', turner, word, definition, '', ipa, '', 'strand'])
+                                writer.writerow(strand_row(
+                                    'bhatr', turner, word, definition, ipa, '', 'strand', pos, 'bhatr'
+                                ))
 
         except HTTPError as e:
             pass
@@ -149,8 +267,9 @@ def strand():
                 link = f'http://nuristan.info/{language}/Lexicon/alph-{char}.html'
                 print(link)
                 try:
-                    with urlopen(Request(link, headers={'User-Agent': 'Mozilla/5.0'})) as resp:
-                        soup = BeautifulSoup(resp, 'html.parser')
+                    cache = Path('.cache/strand-legacy') / f'{codes[i]}-{char}.html'
+                    soup = cached_soup(link, cache, 'html.parser')
+                    if soup:
                         for data in soup.find_all(class_='dic'):
                             word = data.find(class_='l')
                             if word:
@@ -160,18 +279,22 @@ def strand():
                                 if not l:
                                     l = re.search(r'</span>\xa0 (.*?)\.\xa0 (.*?)\.', str(data))
                                 if l:
-                                    pos = l.group(1).lower()
+                                    pos = l.group(1)
                                     definition = l.group(2).lower()
                                     turner = re.search(r'T\. (\d+)', str(data))
                                     if turner:
                                         turner = turner.group(1)
                                         ipa = t(word2, column='IPA').replace(' ', '').replace('#', ' ')
-                                        writer.writerow([codes[i], turner, word, definition, '', ipa, '', 'strand'])
+                                        writer.writerow(strand_row(
+                                            codes[i], turner, word, definition, ipa, '', 'strand', pos, codes[i]
+                                        ))
 
                 except HTTPError as e:
                     pass
 
 def main():
+    strand()
+    strand2()
     strand3()
 
 if __name__ == "__main__":

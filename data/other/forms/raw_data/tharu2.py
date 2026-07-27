@@ -5,6 +5,7 @@ lines = []
 labels = ['HIN', 'RNS', 'RNK', 'BNM', 'SkP', 'TkN', 'RNS', 'RkM', 'RKB', 'BNT', 'BNM', 'BNT', 'DGC', 'RKB', 'DKS', 'KkP', 'DkR', 'DDK', 'CCC']
 
 match_str = r'^(\*)?\d+\. ?'
+parenthesized_number = re.compile(r'^\(\d+\)$')
 
 with open('tharu2', 'r') as fin:
     for line in fin:
@@ -33,7 +34,9 @@ with open('tharu2.csv', 'w') as fout:
             if lang in ['HIN']: continue
             for tok in toks[1:]:
                 tok = tok.strip(' ,.')
-                if not tok.isdigit() and tok != '——':
+                if (
+                    not tok.isdigit()
+                    and not parenthesized_number.fullmatch(tok)
+                    and tok != '——'
+                ):
                     writer.writerow([lang, '', tok, cur_gloss, '', tok, '', 'webster'])
-
-

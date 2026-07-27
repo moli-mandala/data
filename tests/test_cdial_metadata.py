@@ -56,6 +56,12 @@ def test_sanskrit_works_embedded_in_prose_are_tagged_without_mangling_note():
     assert note == "('devotion' Prab.com.); (<i>sudhyatē</i> ṢaḍvBr.); compare ŚrS."
 
 
+def test_uncertain_is_a_structured_grammatical_tag():
+    tags, note = extract_tags("uncertain; noun; uncertain Turner etymology T-111?")
+    assert tags == "uncertain noun"
+    assert note == "uncertain Turner etymology T-111?"
+
+
 def test_every_cdial_bibliography_abbreviation_has_display_metadata():
     catalog_path = MODULE.with_name("reference_catalog.json")
     catalog = json.loads(catalog_path.read_text(encoding="utf-8"))

@@ -7,7 +7,12 @@ mapping = {
     'rajasthani': 'rajasthani', 'old_punjabi': 'cdial', 'bundeli': 'chattisgarhi',
     'tharu': 'cdial', 'kannauji': 'rajasthani', 'tharu2': 'chattisgarhi', 'shina': 'liljegren', 'berger': 'berger',
     'markodi': 'markodi',  # Toulmin-style Dravidian consonants + Markodi vowels/length
-    'zoller': 'zoller'  # Zoller's tonal Indus Kohistani pseudo-IPA -> transcription + IPA pronunciation
+    'kalasha': 'kalasha',  # Trail & Cooper's Kalasha orthography
+    'zoller': 'zoller',  # Zoller's tonal Indus Kohistani pseudo-IPA -> transcription + IPA pronunciation
+    'bashir': 'khowar',  # Bashir 2023 Khowar romanisation -> house transcription + phonemic IPA
+    # SSNP's extractor decodes the legacy font to IPA; this profile then maps
+    # that IPA into Jambu's house transcription while retaining IPA separately.
+    'ssnp': 'ssnp'
 }
 
 # superscript forms of letters

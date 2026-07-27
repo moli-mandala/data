@@ -45,10 +45,18 @@ class Row:
         self.native = row[4]
         self.ipa = row[5]
         self.notes = row[6]
-        self.tags = ""  # structured tokens lifted from notes at write time (see extract_tags)
+        # Structured tokens may be supplied by richer manual importers.
+        self.tags = "" if len(row) < 15 else row[14]
         self.source = row[7]
         self.variant_of = ""  # for a comma-listed alternate: the id of the first (main) form
         self.cognateset = '' if len(row) < 9 else row[8]
+        # Optional tenth manual-import column: source-specific etymological analysis.
+        self.etymology = '' if len(row) < 10 else row[9]
+        # Stable source-local graph keys, resolved to generated IDs by unify_cldf.py.
+        self.entry_key = '' if len(row) < 11 else row[10]
+        self.variant_of_key = '' if len(row) < 12 else row[11]
+        self.borrowed_from_key = '' if len(row) < 13 else row[12]
+        self.derivation_parent_keys = '' if len(row) < 14 else row[13]
         if '.' in self.cognateset:
             parts = list(self.cognateset.split("."))
             if parts[1] == '0':
@@ -70,11 +78,97 @@ class Row:
             self.tags,
             self.source,
             self.variant_of,
+            self.etymology,
+            self.entry_key,
+            self.variant_of_key,
+            self.borrowed_from_key,
+            self.derivation_parent_keys,
         ]
         return rows
 
     def __repr__(self):
         return f"<Row {self.lang} {self.param} {self.form} {self.gloss}>"
+
+
+STRAND3_FILE = "20221003-strand3.csv"
+LEGACY_STRAND_FILES = {"20220913-strand.csv", "20220913-strand2.csv"}
+
+
+def _append_distinct(primary, secondary, separator="; "):
+    """Keep the preferred value first and append genuinely new fallback metadata."""
+    values = []
+    for value in (primary, secondary):
+        for part in value.split(separator) if value else ():
+            part = part.strip()
+            if part and part not in values:
+                values.append(part)
+    return separator.join(values)
+
+
+def _strand_gloss(value):
+    """A deliberately strict gloss key used only to disambiguate exact-form collisions."""
+    return re.sub(r"[^a-z]+", " ", value.casefold()).strip()
+
+
+def merge_redundant_strand_rows(results):
+    """Fold legacy Strand duplicates into Strand3 while keeping Strand3's etymology.
+
+    A duplicate must have the same language and post-conversion form. If Strand3 contains
+    homophones, select a target only when the old Parameter_ID agrees, the normalized gloss
+    uniquely identifies one Parameter_ID, or every Strand3 candidate has the same Parameter_ID.
+    Ambiguous homophones remain separate rather than acquiring an arbitrary etymology.
+    """
+    strand3 = {}
+    for row in results:
+        if getattr(row, "input_file", "") != STRAND3_FILE:
+            continue
+        key = (row.lang, unicodedata.normalize("NFC", row.form).strip())
+        strand3.setdefault(key, []).append(row)
+
+    removed = set()
+    merged = 0
+    for row in results:
+        if getattr(row, "input_file", "") not in LEGACY_STRAND_FILES:
+            continue
+        key = (row.lang, unicodedata.normalize("NFC", row.form).strip())
+        candidates = strand3.get(key, ())
+        if not candidates:
+            continue
+
+        candidate_params = {candidate.param for candidate in candidates}
+        same_param = [candidate for candidate in candidates if candidate.param == row.param]
+        gloss = _strand_gloss(row.gloss)
+        same_gloss = [
+            candidate
+            for candidate in candidates
+            if gloss and _strand_gloss(candidate.gloss) == gloss
+        ]
+
+        if same_param:
+            eligible = same_param
+        elif same_gloss and len({candidate.param for candidate in same_gloss}) == 1:
+            eligible = same_gloss
+        elif len(candidate_params) == 1:
+            eligible = list(candidates)
+        else:
+            continue
+
+        # Multiple Strand3 rows can repeat the same analysis. Prefer its exact gloss when possible;
+        # the ordinary (language, parameter, form) deduper below will fold the remaining copies.
+        target = next(
+            (candidate for candidate in eligible if gloss and _strand_gloss(candidate.gloss) == gloss),
+            eligible[0],
+        )
+        target.gloss = _append_distinct(target.gloss, row.gloss)
+        target.native = _append_distinct(target.native, row.native)
+        target.notes = _append_distinct(target.notes, row.notes)
+        target.source = _append_distinct(target.source, row.source, separator=";")
+        target.ipa = _append_distinct(target.ipa, row.ipa)
+        target.old_form = _append_distinct(target.old_form, row.old_form)
+        removed.add(id(row))
+        merged += 1
+
+    return [row for row in results if id(row) not in removed], merged
 
 
 def parse_file(file: str, errors, name=None, file_num=0, param_counter=None):
@@ -104,11 +198,20 @@ def parse_file(file: str, errors, name=None, file_num=0, param_counter=None):
     i = 0
     for row in tqdm(read, total=len(lines)):
         row = Row(row, id=f"{file_num}-{i}")
+        row.input_file = os.path.basename(file)
         # Both hand-entered and OCR-derived Shackle rows use the same CDIAL-style
         # romanisation. The auto filename does not reduce to ``old_punjabi`` via
         # the legacy filename heuristic, so select its phonetic parser by source.
         row_ipa = "cdial" if row.source in {"shackle", "shackle-auto"} else ipa
         row_convert = row_ipa is not None and (row.source in {"shackle", "shackle-auto"} or convert)
+        # Synthetic donor-language category nodes emitted by the Kalasha
+        # importer are English labels, not Trail orthography.
+        if name == "kalasha" and row.lang not in {"Kal", "bumb", "rumb", "bir", "urt"}:
+            row_convert = False
+        # Bashir donor nodes retain the source language's cited spelling; only
+        # Khowar and its contributor/regional dialect rows use the Khowar profile.
+        if name == "bashir" and not row.lang.startswith("Kho"):
+            row_convert = False
         # DEDR forms (incl. the PDr reconstructions in pdr.csv, whose source is "krishnamurti")
         # are already in a Dravidianist transcription; the shared profile only normalises house
         # conventions (ழ r̤ -> ṛ̆, ṅ -> ŋ, aspirates -> superscript, anusvara -> ṁ, marked vowels
@@ -195,6 +298,47 @@ def parse_file(file: str, errors, name=None, file_num=0, param_counter=None):
                     row.form = form_out
                     row.ipa = phon_out
                     stats["converted"] += 1
+            elif row_ipa == "khowar" and row_convert:
+                # Bashir marks stress on the vowel and low tone with a doubled
+                # vowel whose second member is stressed (aá). NFD lets the
+                # profile match these marks consistently. Keep bound-form
+                # hyphens and homonym superscripts in the display form.
+                stats["for_conversion"] += 1
+                src = unicodedata.normalize("NFD", reformed.strip(",;."))
+                form_out = unicodedata.normalize(
+                    "NFC",
+                    convertors["khowar"](src, column="IPA")
+                    .replace(" ", "")
+                    .replace("#", " "),
+                )
+                phon_out = unicodedata.normalize(
+                    "NFC",
+                    convertors["khowar"](src, column="Phon")
+                    .replace(" ", "")
+                    .replace("#", " "),
+                )
+                if "�" in form_out or "�" in phon_out:
+                    errors.write(str(row) + " " + form_out + " " + phon_out + "\n")
+                else:
+                    row.form = form_out
+                    row.ipa = phon_out
+                    stats["converted"] += 1
+            elif row_ipa == "ssnp" and row_convert:
+                # The SSNP extractor supplies Unicode IPA in both source columns. Convert only
+                # the display Form to Jambu transcription and retain the decoded IPA in Phonemic.
+                stats["for_conversion"] += 1
+                src = unicodedata.normalize("NFD", reformed.strip(","))
+                form_out = unicodedata.normalize(
+                    "NFC",
+                    convertors["ssnp"](src, column="IPA")
+                    .replace(" ", "")
+                    .replace("#", " "),
+                )
+                if "�" in form_out:
+                    errors.write(str(row) + " " + form_out + "\n")
+                else:
+                    row.form = form_out
+                    stats["converted"] += 1
             elif row_ipa is not None and "˚" not in form and row_convert:
                 stats["for_conversion"] += 1
                 # fix accentuation from Strand
@@ -251,10 +395,24 @@ def main():
     
     print(tot_stats)
 
+    # The older Strand scrape and Strand3 overlap heavily, but often disagree on the etymon.
+    # Strand3 preserves the source hierarchy, so keep its row/Parameter_ID and use the older row
+    # only to fill metadata. This must precede the generic deduper, whose key includes Parameter_ID.
+    results, strand_merged = merge_redundant_strand_rows(results)
+    print(f"merged {strand_merged} legacy Strand rows into Strand3")
+
     # clean up duplicates in results
     cleaned = {}
     for i, row in enumerate(tqdm(results)):
-        key = (row.lang, row.param, row.form)
+        # SSNP survey lists are intentionally unetymologised. The same short
+        # form can answer several different prompts, so collapsing blank-param
+        # rows on form alone silently merges distinct lexical entries.
+        key = (
+            row.lang,
+            row.param,
+            row.form,
+            row.gloss if row.lang.startswith("SSNP-") and not row.param else "",
+        )
         if key not in cleaned:
             cleaned[key] = (row, i)
         else:
@@ -266,6 +424,10 @@ def main():
                 orig_row.source = ';'.join([x for x in set([orig_row.source, row.source]) if x])
                 orig_row.ipa = '; '.join([x for x in set([orig_row.ipa, row.ipa]) if x])
                 orig_row.old_form = '; '.join([x for x in set([orig_row.old_form, row.old_form]) if x])
+                # Long source analyses are already deduplicated by their
+                # extractor; do not recursively concatenate a growing block
+                # when normalised duplicate forms collapse here.
+                orig_row.etymology = orig_row.etymology or row.etymology
 
                 cleaned[key] = (orig_row, cleaned[key][1])
                 results[cleaned[key][1]] = orig_row
@@ -291,6 +453,11 @@ def main():
                 "Tags",
                 "Source",
                 "Variant_Of",
+                "Etymology",
+                "Entry_Key",
+                "Variant_Of_Key",
+                "Borrowed_From_Key",
+                "Derivation_Parent_Keys",
             ]
         )
 
@@ -311,7 +478,10 @@ def main():
             lang_set.add(row.lang)
 
             # lift structured tokens (gender, grammatical category) out of notes into Tags
-            row.tags, row.notes = extract_tags(row.notes)
+            parsed_tags, row.notes = extract_tags(row.notes)
+            row.tags = " ".join(
+                dict.fromkeys(filter(None, row.tags.split() + parsed_tags.split()))
+            )
 
             if row.lang == "Tamil" and row.source == "dedr":
                 morphology = extract_tamil_verb_morphology(row.form)

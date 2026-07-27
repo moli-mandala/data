@@ -924,12 +924,13 @@ def parse_page_spec(spec: str | None) -> list[int]:
 def main(argv: Sequence[str] | None = None) -> int:
     here = Path(__file__).resolve().parent
     data_root = here.parents[3]
+    work_dir = data_root / ".cache/ocr/shackle"
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--pdf", type=Path, default=DEFAULT_PDF)
     parser.add_argument("--pages", help="PDF pages, e.g. 36-40,315")
     parser.add_argument("--workers", type=int, default=min(4, os.cpu_count() or 1))
-    parser.add_argument("--cache-dir", type=Path, default=data_root / "tmp/pdfs/shackle-ocr")
-    parser.add_argument("--output-dir", type=Path, default=here / "shackle_output")
+    parser.add_argument("--cache-dir", type=Path, default=work_dir / "pages")
+    parser.add_argument("--output-dir", type=Path, default=work_dir / "output")
     parser.add_argument("--no-native", action="store_true", help="skip Gurmukhi OCR")
     parser.add_argument(
         "--install",

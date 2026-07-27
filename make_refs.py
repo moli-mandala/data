@@ -35,6 +35,9 @@ JAMBU_EDITOR_OVERRIDES = {
     "canvin2025": "Aryaman Arora; OpenAI Codex; Claude Opus 4.8",
     "zoller2005": "OpenAI Codex",
 }
+OCR_OVERRIDES = {
+    "berger-auto",
+}
 
 CDIAL_REFERENCE_CATALOG = Path("data/cdial/reference_catalog.json")
 
@@ -124,8 +127,13 @@ def main():
         editor = entry.fields.get("jambu_editor", "").strip() or JAMBU_EDITOR_OVERRIDES.get(
             key, DEFAULT_JAMBU_EDITOR
         )
+        ocr = (
+            entry.fields.get("ocr", "").strip().lower() in {"yes", "true", "1"}
+            or key in OCR_OVERRIDES
+        )
         rows.append(
-            [key, short, formatted, entry.fields.get("included", "No"), provenance, editor]
+            [key, short, formatted, entry.fields.get("included", "No"), provenance, editor,
+             "Yes" if ocr else "No"]
         )
 
     # A cited key without a BibTeX record must still be a first-class, traceable reference rather
@@ -139,11 +147,14 @@ def main():
             key,
             f"Reference abbreviation `{key}` cited in the source data; full citation not yet catalogued.",
         )
-        rows.append([key, key, description, "No", provenance, editor])
+        rows.append([
+            key, key, description, "No", provenance, editor,
+            "Yes" if key in OCR_OVERRIDES else "No",
+        ])
 
     with open("cldf/references.csv", "w", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
-        w.writerow(["ID", "Short", "Source", "Progress", "Provenance", "Editor"])
+        w.writerow(["ID", "Short", "Source", "Progress", "Provenance", "Editor", "OCR"])
         w.writerows(rows)
     print(f"wrote cldf/references.csv ({len(rows)} references)", file=sys.stderr)
 

@@ -1,11 +1,30 @@
 import csv
 import re
+import unicodedata
+from collections import Counter
 from pathlib import Path
 
 import pytest
 from pycldf import Dataset
+from segments.tokenizer import Tokenizer
 
 from data.dedr.cleanup import is_footer_misparse
+
+
+def test_bashir_khowar_sound_profile():
+    profile = Tokenizer("conversion/khowar.txt")
+    cases = {
+        "bac̣hóɫ": ("baʦ̣ʰóḷ", "bɑʈ͡ʂʰɔ́ɫ"),
+        "baɫéik": ("baḷéik", "bɑɫɛ́ik"),
+        "aáγ": ("ā̌ɣ", "ɑ̌ːɣ"),
+        "a̍tešxaná": ("a̍teśxaná", "ɑ̍t̪ɛɕxɑnɑ́"),
+    }
+    for source, (form, phonemic) in cases.items():
+        source = unicodedata.normalize("NFD", source)
+        parsed_form = profile(source, column="IPA").replace(" ", "").replace("#", " ")
+        parsed_phon = profile(source, column="Phon").replace(" ", "").replace("#", " ")
+        assert unicodedata.normalize("NFC", parsed_form) == form
+        assert unicodedata.normalize("NFC", parsed_phon) == phonemic
 
 
 def test_validate():
@@ -35,9 +54,9 @@ def test_dedr_attached_parenthetical_is_a_variant():
     with open("cldf/forms.csv", encoding="utf-8") as f:
         forms = {row["ID"]: row for row in csv.DictReader(f)}
 
-    assert forms["d4993-33"]["Form"] == "mur̤ku"
+    assert forms["d4993-33"]["Form"] == "muṛ̆ku"
     assert forms["d4993-33"]["Relation"] == "reflex"
-    assert forms["d4993-34"]["Form"] == "mur̤uku"
+    assert forms["d4993-34"]["Form"] == "muṛ̆uku"
     assert forms["d4993-34"]["Relation"] == "variant"
     assert forms["d4993-34"]["Variant_Of"] == "d4993-33"
     assert forms["d4993-33"]["Original"] == "mur̤(u)ku"
@@ -229,6 +248,52 @@ def test_audited_schmidt_assignments_are_applied_to_source_rows():
         assert not source[int(row["Row"]) - 1][1]
 
 
+def test_schmidt_table_includes_drasi_and_brokskat_columns():
+    with open("data/other/forms/20230621-shina.csv", encoding="utf-8") as f:
+        rows = list(csv.reader(f))
+
+    assert len(rows) == 2050
+    by_language = Counter(row[0] for row in rows)
+    assert by_language["dr"] == 321
+    assert by_language["bro"] == 287
+    assert any(row[0] == "dr" and row[3] == "to write" for row in rows)
+    assert any(row[0] == "bro" and row[3] == "you (pl.)" for row in rows)
+
+    with open(
+        "data/other/forms/raw_data/schmidt_missing_dialects.csv",
+        encoding="utf-8",
+    ) as f:
+        supplement = list(csv.DictReader(f))
+    assert len(supplement) == 607
+    assert not any("no data" in row["Form"].lower() for row in supplement)
+    assert not any(re.search(r"[A-Z0-9\[\]*]", row["Form"]) for row in supplement)
+
+
+def test_schmidt_table_includes_all_four_kashmiri_related_columns():
+    with open(
+        "data/other/forms/raw_data/schmidt_kashmiri.csv", encoding="utf-8"
+    ) as f:
+        source = list(csv.DictReader(f))
+    with open(
+        "data/other/forms/20260725-schmidt-kashmiri.csv", encoding="utf-8"
+    ) as f:
+        rows = list(csv.reader(f))
+
+    assert len(source) == 285
+    assert {row["Item"] for row in source} >= {"1", "97", "97g", "102l", "267"}
+    assert len(rows) == 1149
+    assert Counter(row[0] for row in rows) == {
+        "K": 303,
+        "kash": 285,
+        "pog": 273,
+        "sir": 288,
+    }
+    assert all(row[7] == "schmidt" for row in rows)
+    assert not any("no data" in row[2].casefold() for row in rows)
+    assert any(row[0] == "K" and row[3] == "armpit" for row in rows)
+    assert any(row[0] == "sir" and row[3] == "you pl." for row in rows)
+
+
 def test_unified_form_ids_are_unique():
     with open("cldf/forms.csv", encoding="utf-8") as f:
         ids = [row["ID"] for row in csv.DictReader(f)]
@@ -246,6 +311,18 @@ def test_reference_editor_credits_for_assisted_sources():
     assert references["canvin2025"]["Editor"] == (
         "Aryaman Arora; OpenAI Codex; Claude Opus 4.8"
     )
+
+
+def test_ocr_provenance_is_explicit_on_references():
+    with open("cldf/references.csv", encoding="utf-8") as f:
+        references = {row["ID"]: row for row in csv.DictReader(f)}
+
+    assert {key for key, row in references.items() if row["OCR"] == "Yes"} == {
+        "berger-auto",
+        "paranavitana",
+        "shackle-auto",
+    }
+    assert set(row["OCR"] for row in references.values()) <= {"Yes", "No"}
 
 
 def test_both_shackle_sources_use_cdial_phonetic_conversion_and_tags():

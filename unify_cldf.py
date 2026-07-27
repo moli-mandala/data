@@ -372,7 +372,24 @@ def main():
     with open("cldf/forms.csv", encoding="utf-8") as f:
         forms = list(csv.DictReader(f))
 
+    # Rich manual sources can describe graph relations with stable source-local
+    # keys before make_cldf assigns numeric IDs. Resolve those keys here.
+    source_id_by_key = {}
+    for r in forms:
+        if r.get("Entry_Key"):
+            source_id_by_key.setdefault(r["Entry_Key"], r["ID"])
+
     params_by_id = {p["ID"]: p for p in params}
+    graph_node_ids = set(params_by_id) | {r["ID"] for r in forms}
+
+    def resolve_graph_ref(value):
+        if not value:
+            return ""
+        if value.startswith("id:"):
+            target = value[3:]
+            return target if target in graph_node_ids else ""
+        return source_id_by_key.get(value, "")
+
     forms_by_param = defaultdict(list)
     for r in forms:
         forms_by_param[r["Parameter_ID"]].append(r)
@@ -430,6 +447,11 @@ def main():
     ext_entry_rows = []  # synthetic extension/caus/deriv entries + the shared morpheme entries
     morpheme_id = {}  # suffix -> shared morpheme entry id (one `-kk-`/`-áya-`/… entry, reused)
     section_edges = []  # (derived-form id -> parent id); an extension has TWO (base + morpheme)
+    for r in forms:
+        for parent_key in (r.get("Derivation_Parent_Keys") or "").split("|"):
+            parent_id = resolve_graph_ref(parent_key)
+            if parent_id and parent_id != r["ID"]:
+                section_edges.append((r["ID"], parent_id))
     # contaminating-etymon head-word -> its id, for "X ⟨Y⟩" cross links
     oia_id_by_form = {
         nfc(p.get("Name", "")): p["ID"] for p in params if p.get("Language_ID") == "Indo-Aryan"
@@ -606,14 +628,36 @@ def main():
             # Unetymologised manual-import form (blank Param_ID) → standalone "lone" node: kept in the
             # DB and searchable, empty Origin_ID, Relation="local" so it never enters the entries list.
             if not pid:
+                source_variant = resolve_graph_ref(r.get("Variant_Of_Key", ""))
+                source_donor = resolve_graph_ref(r.get("Borrowed_From_Key", ""))
+                if source_donor:
+                    local_origin, local_relation = source_donor, "borrowed"
+                    local_variant, local_borrowed = "", source_donor
+                    n_borrowed += 1
+                elif source_variant:
+                    local_origin, local_relation = source_variant, "variant"
+                    local_variant, local_borrowed = source_variant, ""
+                    n_variant += 1
+                else:
+                    local_origin, local_relation = "", "local"
+                    legacy_variant = r.get("Variant_Of", "")
+                    local_variant = legacy_variant if legacy_variant in graph_node_ids else ""
+                    local_borrowed = ""
+                    n_lone += 1
                 reflex_rows.append([
                     r["ID"], r["Language_ID"], r["Form"], r["Gloss"], r["Native"], r["Phonemic"],
                     r["Original"], r["Cognateset"], r["Description"], r.get("Tags", ""), r["Source"],
-                    "", "", "local", "", r.get("Variant_Of", ""), "",
+                    local_origin, r.get("Etymology", ""), local_relation, "",
+                    local_variant, local_borrowed,
                 ])
-                n_lone += 1
                 continue
-            vof = r.get("Variant_Of", "")
+            vof = (
+                resolve_graph_ref(r.get("Variant_Of_Key", ""))
+                or r.get("Variant_Of", "")
+            )
+            if vof not in graph_node_ids:
+                vof = ""
+            source_donor = resolve_graph_ref(r.get("Borrowed_From_Key", ""))
             origin = r["Parameter_ID"]
             marker = origin[:1] if origin[:1] in (">", "~") else ""
             borrowed_from = ""
@@ -626,7 +670,7 @@ def main():
                 reflex_rows.append([
                     new_id, r["Language_ID"], r["Form"], r["Gloss"], r["Native"], r["Phonemic"],
                     r["Original"], "", r["Description"], r.get("Tags", ""), r["Source"],
-                    "", "", "", "", "", "",
+                    "", r.get("Etymology", ""), "", "", "", "",
                 ])
                 continue
 
@@ -640,7 +684,13 @@ def main():
 
             # two kinds of variant: a comma-listed alternate of a main reflex (Variant_Of set by
             # make_cldf), or a same-language non-head-word form on a non-CDIAL etymon.
-            if borrowed_from:
+            if source_donor:
+                relation = "borrowed"
+                origin = source_donor
+                borrowed_from = source_donor
+                vof = ""
+                n_borrowed += 1
+            elif borrowed_from:
                 # the reflex it was borrowed from becomes its parent (origin) — a proper node with
                 # this form as a child — so ancestry recurses through it and it owns its borrowings.
                 relation = "borrowed"
@@ -769,7 +819,7 @@ def main():
             reflex_rows.append([
                 r["ID"], r["Language_ID"], r["Form"], r["Gloss"], r["Native"], r["Phonemic"],
                 r["Original"], r["Cognateset"], r["Description"], r.get("Tags", ""), r["Source"],
-                origin, "", relation, "", vof, borrowed_from,
+                origin, r.get("Etymology", ""), relation, "", vof, borrowed_from,
             ])
 
     # ---- fold each addendum's content up onto its main entry, then redirect it -------
@@ -803,7 +853,7 @@ def main():
         etyma_rows, reflex_rows, load_strand_oia_redirects()
     )
     n_cross_family_borrowings = mark_cross_family_borrowings(
-        etyma_rows + reflex_rows, load_language_clades()
+        etyma_rows + reflex_rows + ext_entry_rows, load_language_clades()
     )
 
     with open("cldf/forms.csv", "w", newline="", encoding="utf-8") as f:
@@ -828,7 +878,12 @@ def main():
             w.writerows(existing)
             w.writerows(added)
 
-    os.remove("cldf/parameters.csv")
+    # Another watcher may already have removed the split-stage table after the
+    # unified file is atomically written; final cleanup is intentionally idempotent.
+    try:
+        os.remove("cldf/parameters.csv")
+    except FileNotFoundError:
+        pass
     print(
         f"unified cldf/forms.csv: {len(etyma_rows)} etyma "
         f"({len(folded)} folded self-reflexes, {n_merged} merged addenda) + {n_reflex} reflexes "

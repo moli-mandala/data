@@ -1,6 +1,15 @@
 punjabi:
 	cd data/other/forms/raw_data && python old_punjabi.py && mv old_punjabi.csv ../20230521-old_punjabi.csv && cd ../../../..
 
+ssnp:
+	python3 data/other/forms/raw_data/ssnp.py
+
+berger:
+	UV_CACHE_DIR=$${UV_CACHE_DIR:-/tmp/uv-cache} uv run --with pypdfium2 --with pillow python data/other/forms/raw_data/berger.py --install
+
+sigiri:
+	UV_CACHE_DIR=$${UV_CACHE_DIR:-/tmp/uv-cache} uv run --with pypdfium2 --with pillow python data/other/forms/raw_data/sigiri.py --install
+
 all:
 	@if [ -f tmp/pdfs/JLSR2025-005.pdf ]; then \
 		echo "regenerating Markodi forms from markodi_etyma.csv"; \
@@ -11,6 +20,7 @@ all:
 	uv run python unify_cldf.py
 	UV_CACHE_DIR=$${UV_CACHE_DIR:-/tmp/uv-cache} uv run --with pysem python concepts.py
 	uv run python align.py
+	UV_CACHE_DIR=$${UV_CACHE_DIR:-/tmp/uv-cache} uv run --with pybtex python make_refs.py
 
 dedr:
 	cd data/dedr && uv run --with beautifulsoup4 --with html5lib --with tqdm python parse.py && uv run python get_params.py && cd ../..

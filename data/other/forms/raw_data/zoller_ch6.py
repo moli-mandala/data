@@ -402,7 +402,10 @@ def rhs_forms(rhs: str) -> list[tuple[str, set[str]]]:
         if dialect_match:
             segment = segment[:dialect_match.start()].strip()
         # The index's "in X" is metalinguistic context, not part of X.
-        variants = re.split(r"\s+and\s+in\s+|\s+or\s+", segment)
+        segment = re.split(r"\.\s+(?:See|Cf\.)\b", segment, 1)[0]
+        if re.match(r"^(?:connected with|same as)\b", segment, re.IGNORECASE):
+            continue
+        variants = re.split(r"\s+and\s+in\s+|\s+(?:or|and)\s+", segment)
         for form in variants:
             form = re.sub(r"^in\s+", "", form.strip())
             form = re.sub(r"\s*\(see(?: also)?[^)]*\)\s*", "", form)
