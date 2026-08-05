@@ -62,7 +62,8 @@ def test_finish_links_every_valid_cdial_reference():
     assert [row[1] for row in rows] == ["9170", "11334"]
     assert all(row[0] == "Kho" for row in rows)
     assert all(row[3] == "to overcome by force" for row in rows)
-    assert all(row[6].startswith("tr verb;") for row in rows)
+    assert all(not row[6] for row in rows)
+    assert all(row[7] == "bashir2023[p. 23 (printed p. 10)]" for row in rows)
     assert all(len(row) == khowar.RICH_COLUMNS for row in rows)
 
 
@@ -101,7 +102,9 @@ def test_generated_khowar_source_has_linked_and_unlinked_entries():
     assert len(rows) > 3000
     assert sum(bool(row[1]) for row in rows) > 200
     assert any(not row[1] for row in rows)
-    assert all(row[7] == "bashir2023" and len(row) == khowar.RICH_COLUMNS for row in rows)
+    assert all(row[7].split("[", 1)[0] == "bashir2023" for row in rows)
+    assert all(len(row) == khowar.RICH_COLUMNS for row in rows)
+    assert sum("[p. " in row[7] for row in rows) > 3000
     assert any(row[0].startswith("Kho-Bashir-") for row in rows)
     assert any(row[11] for row in rows)  # alternate pronunciations
     assert any(row[13] for row in rows)  # derivational parents

@@ -26,8 +26,14 @@ The structure is more formally defined in `cldf/Wordlist-metadata.json`.
 **Raw data is organised under `data/`**. The script `make_cldf.py` builds the CLDF database in `cldf/` from the raw data. Raw data is all stored in CSV in order to be easy to edit and parse.
 
 Run the complete data build with `make all`. It executes `make_cldf.py`, `link_refs.py`,
-`unify_cldf.py`, and finally `align.py`; alignment must use the final unified `Origin_ID` graph so
+`unify_cldf.py`, `assign_form_ids.py`, and finally `align.py`; alignment must use the final unified `Origin_ID` graph so
 borrowings and redirected entries are aligned to the same ancestors displayed by the application.
+
+Attested forms receive persistent opaque IDs in `assign_form_ids.py`. The committed
+`data/form-identities.csv` registry keeps those IDs stable across input reordering, etymological
+reassignment, and transcription-profile changes; legacy generated IDs remain resolvable through
+`cldf/form-id-aliases.csv`. Manual etymology links are stored separately in
+`data/etymology-assignments.csv` and applied against persistent form IDs.
 
 For raw data files that list lemmata, the columns are:
 1. Language ID
@@ -38,6 +44,12 @@ For raw data files that list lemmata, the columns are:
 6. Phonemic form (in IPA)
 7. Notes/comments
 8. References
+
+References use CLDF source locators when a citation points to a particular page, column, entry, or
+item: `source-id[p. 42]` or `source-id[p. 42, col. 2]`. Multiple citations are separated with `;`.
+Keep source location, raw OCR, parser-review flags, alternate-form labels, and other reproducible
+parse metadata in the reference locator, audit output, relation columns, or tags as appropriate.
+The Notes column is reserved for genuine editorial information that is not represented elsewhere.
 
 For raw data files that list parameters (entries), the columns are:
 1. Param ID
@@ -76,6 +88,14 @@ Headwords for entries are to be stored in `data/dedr/params.csv`. Finally, Proto
 #### CDIAL
 
 The CDIAL directory is `data/cdial/` and is basically identically structured to the DEDR directory. Cache at `data/cdial/cdial.pickle`, parse script is `data/cdial/parse.py`, helper info in `data/cdial/abbrevs.py`, and params are at `data/cdial/params.csv`.
+
+#### Dictionary of Gāndhārī
+
+`data/other/forms/raw_data/gandhari_org.py` snapshots the Sanskrit-bearing articles exposed by
+the public Gandhari.org dictionary API. It emits only unique, accent-normalized Sanskrit → CDIAL
+head matches into `data/other/forms/20260805-gandhari-org.csv`; ambiguous and unmatched articles
+are written to `tmp/gandhari-org-audit.csv`. Article JSON is cached under
+`tmp/gandhari-org-cache/`, so refreshes and interrupted downloads are resumable.
 
 #### DBIA
 

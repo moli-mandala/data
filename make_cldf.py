@@ -110,6 +110,21 @@ def _strand_gloss(value):
     return re.sub(r"[^a-z]+", " ", value.casefold()).strip()
 
 
+SCHMIDT_VOWELS = "aeiouəæãẽõũ"
+SCHMIDT_PROFILE_LANGUAGES = {"K", "kash", "pog", "sir"}
+
+
+def normalize_schmidt_stress(value):
+    """Move Schmidt & Kaul's pre-syllable apostrophe onto its vowel.
+
+    Table 3 prints stress before the onset of a non-initial stressed syllable.
+    Profiles substitute graphemes locally, so make the mark combining first;
+    the profile can then retain it while converting colon length to macrons.
+    """
+    pattern = rf"'([^{SCHMIDT_VOWELS}\s]*)([{SCHMIDT_VOWELS}])(:?)"
+    return re.sub(pattern, rf"\1\2\3́", value)
+
+
 def merge_redundant_strand_rows(results):
     """Fold legacy Strand duplicates into Strand3 while keeping Strand3's etymology.
 
@@ -204,6 +219,13 @@ def parse_file(file: str, errors, name=None, file_num=0, param_counter=None):
         # the legacy filename heuristic, so select its phonetic parser by source.
         row_ipa = "cdial" if row.source in {"shackle", "shackle-auto"} else ipa
         row_convert = row_ipa is not None and (row.source in {"shackle", "shackle-auto"} or convert)
+        # Schmidt & Kaul use one transcription system for the four Table 3
+        # Table 3 varieties. Route by provenance and language rather than the
+        # dated filename, whose legacy parser reduces both Schmidt imports to
+        # the ambiguous name ``schmidt``.
+        if row.source == "schmidt" and row.lang in SCHMIDT_PROFILE_LANGUAGES:
+            row_ipa = "schmidt-kashmiri"
+            row_convert = True
         # Synthetic donor-language category nodes emitted by the Kalasha
         # importer are English labels, not Trail orthography.
         if name == "kalasha" and row.lang not in {"Kal", "bumb", "rumb", "bir", "urt"}:
@@ -345,6 +367,8 @@ def parse_file(file: str, errors, name=None, file_num=0, param_counter=None):
                 if row_ipa == "strand":
                     reformed = reformed.replace("′", "´")
                     reformed = re.sub(r"([`´])(.)", r"\2\1", reformed)
+                elif row_ipa == "schmidt-kashmiri":
+                    reformed = normalize_schmidt_stress(reformed)
 
                 # do the conversion
                 reformed = reformed.strip("-1234⁴5⁵67⁷,;.")
@@ -406,12 +430,24 @@ def main():
     for i, row in enumerate(tqdm(results)):
         # SSNP survey lists are intentionally unetymologised. The same short
         # form can answer several different prompts, so collapsing blank-param
-        # rows on form alone silently merges distinct lexical entries.
+        # rows on form alone silently merges distinct lexical entries. The
+        # Andersen concordance likewise has true homographs (e.g. sa- 'six'
+        # and pronominal sa-), which must remain separate dictionary senses.
         key = (
             row.lang,
             row.param,
             row.form,
-            row.gloss if row.lang.startswith("SSNP-") and not row.param else "",
+            # Gandhari.org has genuine homographic articles, including senses with the same
+            # Sanskrit etymon and English gloss.  Its stable article key keeps those dictionary
+            # entries distinct while retaining the legacy dedupe behaviour for other sources.
+            row.entry_key if row.source == "gandhari" else "",
+            row.gloss
+            if not row.param and (
+                row.lang.startswith("SSNP-")
+                or row.notes.startswith("SSNP ")
+                or row.source == "andersen1990"
+            )
+            else "",
         )
         if key not in cleaned:
             cleaned[key] = (row, i)

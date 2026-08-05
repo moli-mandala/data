@@ -11,6 +11,11 @@ from segments.tokenizer import Tokenizer
 from data.dedr.cleanup import is_footer_misparse
 
 
+def form_aliases():
+    with open("cldf/form-id-aliases.csv", encoding="utf-8") as f:
+        return {row["Legacy_ID"]: row["Form_ID"] for row in csv.DictReader(f)}
+
+
 def test_bashir_khowar_sound_profile():
     profile = Tokenizer("conversion/khowar.txt")
     cases = {
@@ -54,13 +59,15 @@ def test_dedr_attached_parenthetical_is_a_variant():
     with open("cldf/forms.csv", encoding="utf-8") as f:
         forms = {row["ID"]: row for row in csv.DictReader(f)}
 
-    assert forms["d4993-33"]["Form"] == "muṛ̆ku"
-    assert forms["d4993-33"]["Relation"] == "reflex"
-    assert forms["d4993-34"]["Form"] == "muṛ̆uku"
-    assert forms["d4993-34"]["Relation"] == "variant"
-    assert forms["d4993-34"]["Variant_Of"] == "d4993-33"
-    assert forms["d4993-33"]["Original"] == "mur̤(u)ku"
-    assert forms["d4993-34"]["Original"] == "mur̤(u)ku"
+    aliases = form_aliases()
+    main, variant = aliases["d4993-33"], aliases["d4993-34"]
+    assert forms[main]["Form"] == "muṛ̆ku"
+    assert forms[main]["Relation"] == "reflex"
+    assert forms[variant]["Form"] == "muṛ̆uku"
+    assert forms[variant]["Relation"] == "variant"
+    assert forms[variant]["Variant_Of"] == main
+    assert forms[main]["Original"] == "mur̤(u)ku"
+    assert forms[variant]["Original"] == "mur̤(u)ku"
 
 
 def test_dedr_footer_references_are_not_forms():
@@ -83,6 +90,11 @@ def test_curated_borrowings_are_applied():
         borrowings = {r["Borrower_ID"]: r["Source_ID"] for r in csv.DictReader(f)}
     with open("cldf/forms.csv", encoding="utf-8") as f:
         forms = {r["ID"]: r for r in csv.DictReader(f)}
+    aliases = form_aliases()
+    borrowings = {
+        aliases.get(borrower, borrower): aliases.get(source, source)
+        for borrower, source in borrowings.items()
+    }
 
     assert borrowings
     assert all(source in forms for source in borrowings.values())
@@ -99,13 +111,14 @@ def test_nuristani_cognates_are_proto_indo_iranian_reflexes():
         forms = {r["ID"]: r for r in csv.DictReader(f)}
     with open("cldf/derivation.csv", encoding="utf-8") as f:
         edges = {(r["Child_ID"], r["Parent_ID"]) for r in csv.DictReader(f)}
+    aliases = form_aliases()
 
     assert cognates
     assert len({r["Proto_Nuristani_ID"] for r in cognates}) == len(cognates)
     for row in cognates:
-        ancestor = row["Ancestor_ID"]
-        nuristani = row["Proto_Nuristani_ID"]
-        indo_aryan = row["Indo_Aryan_ID"]
+        ancestor = aliases.get(row["Ancestor_ID"], row["Ancestor_ID"])
+        nuristani = aliases.get(row["Proto_Nuristani_ID"], row["Proto_Nuristani_ID"])
+        indo_aryan = aliases.get(row["Indo_Aryan_ID"], row["Indo_Aryan_ID"])
         assert forms[ancestor]["Language_ID"] == "Indo-ir"
         assert forms[ancestor]["Form"] == ""
         assert forms[nuristani]["Language_ID"] == "PNur"
@@ -124,16 +137,18 @@ def test_strand_indo_aryan_loans_are_nuristani_borrowings():
         borrowings = list(csv.DictReader(f))
     with open("cldf/forms.csv", encoding="utf-8") as f:
         forms = {r["ID"]: r for r in csv.DictReader(f)}
+    aliases = form_aliases()
 
     assert borrowings
     assert len({r["Proto_Nuristani_ID"] for r in borrowings}) == len(borrowings)
-    borrowed_nuristani = {r["Proto_Nuristani_ID"] for r in borrowings}
+    borrowed_nuristani = {aliases.get(r["Proto_Nuristani_ID"], r["Proto_Nuristani_ID"]) for r in borrowings}
     for row in borrowings:
-        nuristani = row["Proto_Nuristani_ID"]
-        indo_aryan = row["Indo_Aryan_ID"]
+        legacy_nuristani = row["Proto_Nuristani_ID"]
+        nuristani = aliases.get(legacy_nuristani, legacy_nuristani)
+        indo_aryan = aliases.get(row["Indo_Aryan_ID"], row["Indo_Aryan_ID"])
         descendants = [
-            form for entry_id, form in forms.items()
-            if entry_id.startswith(f"{nuristani}-")
+            forms[canonical] for legacy, canonical in aliases.items()
+            if legacy.startswith(f"{legacy_nuristani}-") and canonical in forms
         ]
         assert forms[nuristani]["Language_ID"] == "PNur"
         assert forms[indo_aryan]["Language_ID"] == "Indo-Aryan"
@@ -318,6 +333,7 @@ def test_ocr_provenance_is_explicit_on_references():
         references = {row["ID"]: row for row in csv.DictReader(f)}
 
     assert {key for key, row in references.items() if row["OCR"] == "Yes"} == {
+        "andersen1990",
         "berger-auto",
         "paranavitana",
         "shackle-auto",
@@ -359,7 +375,8 @@ def test_shina_etymologisers_target_indo_aryan_not_indo_iranian():
         languages = {row["ID"]: row["Language_ID"] for row in csv.DictReader(f)}
     with open(reviews[1], encoding="utf-8") as f:
         schmidt = [row for row in csv.DictReader(f) if row["Decision"] == "yes"]
-    assert {languages[row["Parameter_ID"]] for row in schmidt} == {"Indo-Aryan"}
+    aliases = form_aliases()
+    assert {languages[aliases.get(row["Parameter_ID"], row["Parameter_ID"])] for row in schmidt} == {"Indo-Aryan"}
 
 
 def test_duplicate_strand_oia_heads_are_merged_into_cdial():
@@ -389,11 +406,16 @@ def test_strand_borrowings_are_aligned_to_final_indo_aryan_donors():
         }
     with open("cldf/forms.csv", encoding="utf-8") as f:
         forms = {row["ID"]: row for row in csv.DictReader(f)}
+    aliases = form_aliases()
+    borrowings = {
+        aliases.get(nuristani, nuristani): aliases.get(indo_aryan, indo_aryan)
+        for nuristani, indo_aryan in borrowings.items()
+    }
 
     wanted = set(borrowings)
     wanted.update(
-        entry_id for entry_id in forms
-        if entry_id.startswith("n2571-")
+        canonical for legacy, canonical in aliases.items()
+        if legacy.startswith("n2571-") and canonical in forms
     )
     aligned_origins = {entry_id: set() for entry_id in wanted}
     with open("cldf/alignments.csv", encoding="utf-8") as f:
@@ -404,4 +426,4 @@ def test_strand_borrowings_are_aligned_to_final_indo_aryan_donors():
     for nuristani, indo_aryan in borrowings.items():
         assert aligned_origins[nuristani] == {indo_aryan}
     for descendant in wanted - set(borrowings):
-        assert aligned_origins[descendant] == {"10425"}
+        assert aligned_origins[descendant] == {aliases.get("10425", "10425")}

@@ -84,7 +84,46 @@ POS_TAGS = {
     "PRN": ("pron",),
     "TR": ("verb", "tr"),
 }
-NOUN_CLASSES = {"H", "HM", "HF", "X", "Y", "Z", "XY", "YZ", "HXY"}
+GRAMMATICAL_TAGS = {
+    # Number and inflection.  Yoshioka's ``DOUBLE PL`` denotes a second
+    # plural formation, not dual number.
+    "SG": ("sg",),
+    "PL": ("pl",),
+    "DOUBLE": ("double-plural",),
+    # Verbal categories.
+    "IPFV": ("ipfv",),
+    "PFV": ("pfv",),
+    "CP": ("participle", "conjunctive-participle"),
+    "P": ("participle",),
+    "PP": ("participle",),
+    "INF": ("inf",),
+    "IMP": ("impv",),
+    "NEG": ("neg",),
+    # Syntactic roles.
+    "SUBJ": ("subj",),
+    "OBJ": ("obj",),
+    "DO": ("obj", "direct-object"),
+    "IO": ("obj", "indirect-object"),
+    # Case.
+    "ABS": ("abs",),
+    "ERG": ("erg",),
+    "NOM": ("nom",),
+    "GEN": ("gen",),
+    "DAT": ("dat",),
+    "ABL": ("abl",),
+    "LOC": ("loc",),
+    "INS": ("instr",),
+    "OBL": ("obl",),
+    "ADE": ("ade",),
+    "INE": ("ine",),
+    "ESS": ("ess",),
+    # Deixis and other dictionary labels found in Appendix II.
+    "PROX": ("prox",),
+    "DIST": ("dist",),
+    "INDEF": ("indef",),
+    "FINALIS": ("finalis",),
+}
+NOUN_CLASSES = {"H", "HM", "HF", "X", "Y", "Z", "HX", "XY", "XZ", "YZ", "HXY"}
 NOUN_CLASS_MEMBERS = {
     "H": ("H",),
     "HM": ("HM",),
@@ -92,14 +131,14 @@ NOUN_CLASS_MEMBERS = {
     "X": ("X",),
     "Y": ("Y",),
     "Z": ("Z",),
+    "HX": ("H", "X"),
     "XY": ("X", "Y"),
+    "XZ": ("X", "Z"),
     "YZ": ("Y", "Z"),
     "HXY": ("H", "X", "Y"),
 }
-GRAMMAR_CODES = set(POS_TAGS) | NOUN_CLASSES | set(DIALECTS) | {
-    "SG", "PL", "DOUBLE", "SUBJ", "OBJ", "DO", "IO", "IPFV", "PFV",
-    "CP", "NEG", "GEN", "ABL", "DAT", "ESS", "ADE", "INE", "LOC",
-    "INS", "ABS", "ERG", "NOM", "OBL", "INF", "IMP", "P", "ONO",
+GRAMMAR_CODES = set(POS_TAGS) | set(GRAMMATICAL_TAGS) | NOUN_CLASSES | set(DIALECTS) | {
+    "ONO",
     "RF", "RMND", "WB", "YS", "EB", "SH", "UR", "PE", "EN", "AR",
 }
 
@@ -412,10 +451,9 @@ def grammatical_tags(text: str) -> list[str]:
     for token in POS_TAGS:
         if token in tokens:
             tags.extend(POS_TAGS[token])
-    if "SG" in tokens:
-        tags.append("sg")
-    if "PL" in tokens:
-        tags.append("pl")
+    for token in GRAMMATICAL_TAGS:
+        if token in tokens:
+            tags.extend(GRAMMATICAL_TAGS[token])
     # ONO has no dedicated canonical Jambu token; retain it verbatim in Notes
     # and use the system's indeclinable grammatical category.
     if "ONO" in tokens:
@@ -519,12 +557,9 @@ def import_rows(entries: Iterable[Entry]) -> Iterable[list[str]]:
         # parenthetical continuation fragments, not lexical entries.
         if entry.review_reasons:
             continue
-        note = (
-            f"Yoshioka 2012 Appendix II, PDF p. {entry.pdf_page} "
-            f"(printed p. {entry.printed_page}); dictionary entry: {entry.raw_entry}"
-        )
+        source = f"{SOURCE_ID}[p. {entry.pdf_page} (printed p. {entry.printed_page})]"
         yield [
-            "Bur", "", entry.form, entry.gloss, "", "", note, SOURCE_ID, "",
+            "Bur", "", entry.form, entry.gloss, "", "", "", source, "",
             entry.etymology, entry.entry_key, "", "", "",
             " ".join(entry.tags),
         ]
@@ -560,7 +595,7 @@ def write_outputs(output_dir: Path, entries: Sequence[Entry]) -> None:
 - Vocabulary range: PDF pp. 505--618 (printed pp. 179--292)
 - Parsed lexical entries: {len(entries):,}
 - Installed ingestion rows: {sum(not entry.review_reasons for entry in entries):,}
-- Entries with grammatical tags: {sum(bool(set(entry.tags) & set(sum(POS_TAGS.values(), ()))) for entry in entries):,}
+- Entries with grammatical tags: {sum(any(not tag.startswith(('dialect:', 'loan:')) and tag != 'loanword' for tag in entry.tags) for entry in entries):,}
 - Entries with explicit locality/dialect tags: {sum(any(tag != 'dialect:Eastern%20Burushaski' and tag.startswith('dialect:') for tag in entry.tags) for entry in entries):,}
 - Entries marked as loanwords: {counts['loanword']:,}
 - Entries with source etymology/cognate notes: {sum(bool(entry.etymology) for entry in entries):,}

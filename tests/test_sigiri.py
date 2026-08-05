@@ -25,6 +25,26 @@ def test_extract_gloss_after_etymology_and_before_citations():
     assert sigiri.extract_gloss(entry, "a") == "come, arrived"
 
 
+def test_extracts_sanskrit_etyma_and_matches_only_unique_cdial_heads():
+    assert sigiri.extract_sanskrit_etyma(
+        "agu, s. [Skt. agra+ka], border, 366"
+    ) == ["agra+ka"]
+    assert sigiri.extract_sanskrit_etyma(
+        "a, prt. [Skt. āgata, e.f. ā°], come"
+    ) == ["āgata"]
+
+    index = {
+        sigiri.normalize_sanskrit_etymon("āgata"): {"1045"},
+        sigiri.normalize_sanskrit_etymon("ṭaṅka"): {"5426", "5427"},
+    }
+    assert sigiri.match_cdial_ids(["agata"], index) == (["1045"], False)
+    assert sigiri.match_cdial_ids(["taṅka"], index) == ([], True)
+
+    cdial = sigiri.load_cdial_headword_index()
+    assert sigiri.match_cdial_ids(["āgata"], cdial) == (["1045"], False)
+    assert sigiri.match_cdial_ids(["kasta"], cdial) == ([], True)
+
+
 def test_parse_pages_keeps_column_and_page_provenance():
     pages = [
         {
@@ -86,10 +106,13 @@ def test_generated_sigiri_import_has_complete_ingestion_schema():
     with source.open(encoding="utf-8", newline="") as handle:
         rows = list(csv.reader(handle))
 
-    assert len(rows) == 2869
+    # Five entries cite two independently matchable Sanskrit alternatives.
+    assert len(rows) == 2874
     assert {len(row) for row in rows} == {8}
     assert {row[0] for row in rows} == {"OSi"}
-    assert {row[7] for row in rows} == {"paranavitana"}
+    assert all(row[7].startswith("paranavitana[p. ") for row in rows)
+    assert all(not row[6] for row in rows)
     assert all(row[2] for row in rows)
-    assert any("Sigiri PDF p. 431" in row[6] for row in rows)
-    assert any("Sigiri PDF p. 480" in row[6] for row in rows)
+    assert any(row[1] for row in rows)
+    assert any("[p. 431 " in row[7] for row in rows)
+    assert any("[p. 480 " in row[7] for row in rows)

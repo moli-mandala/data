@@ -23,13 +23,17 @@ GRAMMATICAL_TAGS = {
     # valency / voice
     "tr", "intr", "caus", "pass", "refl", "denom",
     # number
-    "sg", "pl", "du",
+    "sg", "pl", "du", "double-plural",
     # part of speech
     "noun", "adj", "adv", "pron", "num", "postp", "prep", "conj", "interj", "part", "indecl", "ord",
     # case
     "nom", "acc", "dat", "gen", "loc", "abl", "instr", "voc", "obl",
     # verb forms
     "pp", "ppp", "pres", "fut", "inf", "impv", "ind", "ger", "verb",
+    "ipfv", "pfv", "neg", "participle", "conjunctive-participle",
+    "subj", "obj", "direct-object", "indirect-object",
+    "abs", "erg", "ade", "ine", "ess",
+    "prox", "dist", "indef", "finalis",
     "poss", "conditional", "suffix", "emph", "interr", "dir", "3sg", "uncertain",
     "derived", "inherited", "loanword", "diminutive", "intensive", "compound",
     # Language-specific inflection / noun classes

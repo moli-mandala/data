@@ -20,8 +20,8 @@ Column mapping:
     reflex : Form=form, Gloss=meaning, Description=notes, Origin_ID=<etymon id>,
              Relation="reflex" | "variant"
 
-Run LAST in the data pipeline (after make_cldf.py, align.py, link_refs.py), since those read the
-split files.
+Run after make_cldf.py and link_refs.py. ``assign_form_ids.py`` follows this pass, then alignment
+runs against the final persistent-ID graph.
 """
 
 import csv
@@ -371,6 +371,22 @@ def main():
         params = list(csv.DictReader(f))
     with open("cldf/forms.csv", encoding="utf-8") as f:
         forms = list(csv.DictReader(f))
+
+    # Preserve rich importers' immutable source-local record keys outside the unified CLDF table.
+    # assign_form_ids.py consumes this sidecar after graph construction; keeping it separate avoids
+    # exposing ingestion bookkeeping as linguistic columns in the published wordlist.
+    source_key_counts = defaultdict(int)
+    for row in forms:
+        if row.get("Entry_Key"):
+            source_key_counts[row["Entry_Key"]] += 1
+    source_keys = [
+        (row["ID"], row["Entry_Key"])
+        for row in forms
+        # A key identifies a form only when it is unique. Some compound analyses repeat one lexical
+        # entry once per proposed etymon; those need a future edge-model migration, so retain their
+        # existing registry identity instead of pretending the shared entry key is node-unique.
+        if row.get("Entry_Key") and source_key_counts[row["Entry_Key"]] == 1
+    ]
 
     # Rich manual sources can describe graph relations with stable source-local
     # keys before make_cldf assigns numeric IDs. Resolve those keys here.
@@ -862,6 +878,11 @@ def main():
         w.writerows(etyma_rows)
         w.writerows(reflex_rows)
         w.writerows(ext_entry_rows)
+
+    with open("cldf/form-source-keys.csv", "w", newline="", encoding="utf-8") as f:
+        w = csv.writer(f)
+        w.writerow(["Legacy_ID", "Source_Key"])
+        w.writerows(source_keys)
 
     # add the promoted numbered-form → head edges to the derivation graph (link_refs.py wrote it)
     if section_edges:

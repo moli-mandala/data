@@ -45,6 +45,13 @@ TABLE_SOURCES = {
     "indus kohistani": "KAN DUB SEO PAT JIJ CHM CHJ GAB BAT".split(),
 }
 
+# Survey location BAT is the same language represented elsewhere by the
+# canonical Jambu language ID ``bhatr``. Keep the survey location in Notes,
+# but attach its forms to Bhateri rather than creating a duplicate language.
+LANGUAGE_ALIASES = {
+    "SSNP-indus-kohistani-BAT": "bhatr",
+}
+
 PAGE_LINE = re.compile(
     r"^(?:\d+\s+)?(?:APPENDIX\b|Appendix\b|HINDKO SURVEY DATA\b|"
     r"[BD]\.1\s+(?:Hindko|Swat Kohistan|Indus Kohistan)\s+Word Lists\b|"
@@ -388,7 +395,8 @@ def extract() -> list[Entry]:
 def language_id(entry: Entry) -> str:
     """Namespace survey codes, which are only unique within an appendix."""
     source = re.sub(r"[^a-z0-9]+", "-", entry.source_file.lower()).strip("-")
-    return f"SSNP-{source}-{entry.location}"
+    survey_id = f"SSNP-{source}-{entry.location}"
+    return LANGUAGE_ALIASES.get(survey_id, survey_id)
 
 
 def write(entries: list[Entry], audit_path: Path, forms_path: Path) -> None:
@@ -401,14 +409,14 @@ def write(entries: list[Entry], audit_path: Path, forms_path: Path) -> None:
     with forms_path.open("w", newline="", encoding="utf-8") as handle:
         writer = csv.writer(handle)
         for entry in entries:
-            notes = f"SSNP {entry.source_file}, location {entry.location}, item {entry.number}"
-            if entry.split in {"heuristic", "short"}:
-                notes += f"; {entry.split} automatic table split"
+            source = (
+                f"{SOURCE_BY_FILE[entry.source_file]}"
+                f"[{entry.source_file}, location {entry.location}, item {entry.number}]"
+            )
             ipa = decode_legacy(entry.form)
             if ipa:
                 writer.writerow([
-                    language_id(entry), "", ipa, entry.gloss, "", ipa, notes,
-                    SOURCE_BY_FILE[entry.source_file],
+                    language_id(entry), "", ipa, entry.gloss, "", ipa, "", source,
                 ])
 
 

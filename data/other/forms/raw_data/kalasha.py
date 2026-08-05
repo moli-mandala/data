@@ -50,27 +50,6 @@ POS = {
     "Vsfx.",
 }
 
-POS_NOTES = {
-    "Adj": "adj",
-    "Adv": "adv",
-    "Aux": "auxiliary",
-    "Cnj": "conj",
-    "Id": "idiom",
-    "Intj": "interj",
-    "KT": "kinship term",
-    "N": "noun",
-    "Num": "num",
-    "Pfx": "prefix",
-    "Ppl": "participle",
-    "Pron": "pron",
-    "Rel": "relator",
-    "RootVb": "verb root",
-    "Sfx": "suffix",
-    "V": "verb",
-    "Vpfx": "verbal prefix",
-    "Vsfx": "verbal suffix",
-}
-
 # The delimiter lookahead keeps ``T-111?`` out of the secure-reference set;
 # it is captured separately and linked with an ``uncertain`` tag.
 TURNER_REFERENCE = re.compile(r"\bT-\s*(\d+[a-z]?)(?=[^\w?]|$)")
@@ -352,6 +331,9 @@ def _row(
     derivation_parent_keys: str = "",
     tags: str = "",
 ) -> list[str]:
+    source = SOURCE_ID
+    if entry.printed_page >= 0:
+        source += f"[p. {entry.pdf_page} (printed p. {entry.printed_page})]"
     return [
         language_id,
         parameter_id,
@@ -360,7 +342,7 @@ def _row(
         "",
         "",
         notes,
-        SOURCE_ID,
+        source,
         "",  # Cognateset
         etymology,
         key or entry.key,
@@ -381,18 +363,10 @@ def _finish(
         return
     ids, uncertain_ids = _turner_ids(entry, valid_cdial)
     metadata = metadata or {}
-    pos_note = POS_NOTES.get(entry.part_of_speech, entry.part_of_speech)
-    base_note = (
-        (f"{pos_note}; " if pos_note else "")
-        + f"Trail & Cooper PDF p. {entry.pdf_page} "
-        + f"(printed p. {entry.printed_page})"
-    )
-
-    details = metadata.get("details", [])
-    if details:
-        base_note += "; " + "; ".join(details)
-
-    def append_row(parameter_id: str, notes: str) -> None:
+    def append_row(parameter_id: str, notes: str, *, uncertain: bool = False) -> None:
+        tags = list(metadata.get("tags", []))
+        if uncertain:
+            tags.append("uncertain")
         rows.append(_row(
             entry,
             parameter_id,
@@ -401,22 +375,19 @@ def _finish(
             borrowed_from_key=metadata.get("borrowed_from_key", ""),
             etymology=metadata.get("etymology", ""),
             derivation_parent_keys="|".join(metadata.get("parents", [])),
-            tags=" ".join(metadata.get("tags", [])),
+            tags=" ".join(tags),
         ))
 
     for number in ids:
-        append_row(number, f"{base_note}; Turner etymology T-{number}")
+        append_row(number, "")
 
     # Preserve uncertain Turner citations as qualified Origin_ID edges. Each
     # candidate gets its own row because Parameter_ID is scalar.
     if uncertain_ids:
         for number in uncertain_ids:
-            append_row(
-                number,
-                f"uncertain; {base_note}; uncertain Turner etymology T-{number}?",
-            )
+            append_row(number, "", uncertain=True)
     elif not ids:
-        append_row("", base_note)
+        append_row("", "")
 
 
 def _head_forms(form: str) -> list[str]:
@@ -549,15 +520,10 @@ def _dialect_variants(
         for dialect in dialects:
             index += 1
             for parameter_id, is_uncertain in params:
-                note = (
-                    ("uncertain; " if is_uncertain else "")
-                    + f"dialect variant of {entry.form}; {dialect}; Trail & Cooper PDF p. "
-                    f"{entry.pdf_page} (printed p. {entry.printed_page}); Variant: {variants}"
-                )
                 output.append(_row(
                     entry,
                     parameter_id,
-                    note,
+                    "",
                     language_id=DIALECT_IDS[dialect],
                     form=form,
                     key=f"{entry.key}-variant-{index}",
@@ -662,7 +628,7 @@ def main() -> None:
     with args.output.open("w", encoding="utf-8", newline="") as stream:
         csv.writer(stream, lineterminator="\n").writerows(rows)
     linked = sum(bool(row[1]) for row in rows)
-    uncertain = sum(row[6].startswith("uncertain;") for row in rows)
+    uncertain = sum("uncertain" in row[14].split() for row in rows)
     print(
         f"wrote {args.output} ({len(rows)} rows: {linked} linked, "
         f"{len(rows) - linked} unlinked, {uncertain} uncertain)"

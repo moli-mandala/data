@@ -12,7 +12,10 @@ mapping = {
     'bashir': 'khowar',  # Bashir 2023 Khowar romanisation -> house transcription + phonemic IPA
     # SSNP's extractor decodes the legacy font to IPA; this profile then maps
     # that IPA into Jambu's house transcription while retaining IPA separately.
-    'ssnp': 'ssnp'
+    'ssnp': 'ssnp',
+    # Andersen's Ashokan forms use conventional digraph aspiration and
+    # underdotted anusvara; normalize both to Jambu's house transcription.
+    'andersen': 'andersen'
 }
 
 # superscript forms of letters

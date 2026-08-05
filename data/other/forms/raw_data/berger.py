@@ -831,15 +831,6 @@ def assess(entries: Sequence[Entry]) -> None:
         entry.confidence = max(0.0, min(1.0, score))
 
 
-def notes(entry: Entry) -> str:
-    pieces = [f"Berger PDF p. {entry.pdf_page} (printed p. {entry.printed_page})"]
-    if entry.dialects:
-        pieces.append(f"labels: {entry.dialects}")
-    if entry.review_reasons:
-        pieces.append("auto-review: " + ", ".join(entry.review_reasons))
-    return "; ".join(pieces)
-
-
 def import_rows(entries: Sequence[Entry]) -> Iterable[list[str]]:
     eligible = [
         entry for entry in entries
@@ -869,9 +860,10 @@ def import_rows(entries: Sequence[Entry]) -> Iterable[list[str]]:
         derivation_parent_keys = " ".join(
             resolved(key) for key in entry.derivation_parent_keys.split() if resolved(key)
         )
+        source = f"berger-auto[p. {entry.pdf_page} (printed p. {entry.printed_page})]"
         yield [
             entry.language, entry.cdial_id, entry.form, entry.gloss, "", "",
-            notes(entry), "berger-auto", "", entry.etymology, entry.entry_key,
+            "", source, "", entry.etymology, entry.entry_key,
             variant_of_key, "", derivation_parent_keys,
             " ".join(dict.fromkeys(entry.tags)),
         ]

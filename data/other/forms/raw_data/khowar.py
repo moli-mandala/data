@@ -566,9 +566,10 @@ def _rich_row(
     borrowed_from_key: str = "",
     derivation_parent_keys: list[str] | tuple[str, ...] = (),
     tags: list[str] | tuple[str, ...] = (),
+    source: str = SOURCE_ID,
 ) -> list[str]:
     return [
-        language, parameter, form, gloss, "", "", notes, SOURCE_ID, "",
+        language, parameter, form, gloss, "", "", notes, source, "",
         etymology, entry_key, variant_of_key, borrowed_from_key,
         "|".join(dict.fromkeys(filter(None, derivation_parent_keys))),
         " ".join(dict.fromkeys(filter(None, tags))),
@@ -585,29 +586,26 @@ def _finish(entry: Entry | None, rows: list[list[str]], valid_cdial: set[str]) -
     invalid = [number for number in cited if number not in valid_cdial]
     pos = _part_of_speech(text, entry.form)
     gloss = _gloss(text, entry.form)
-    page_note = (
-        f"Bashir PDF p. {entry.pdf_page} (printed p. {entry.printed_page})"
-    )
+    source = f"{SOURCE_ID}[p. {entry.pdf_page} (printed p. {entry.printed_page})]"
 
     def append_row(parameter_id: str, note: str) -> None:
-        structured = f"{pos}; " if pos else ""
         rows.append(
             _rich_row(
-                LANGUAGE_ID, parameter_id, entry.form, gloss, structured + note,
+                LANGUAGE_ID, parameter_id, entry.form, gloss, note,
                 etymology=_bracket_etymology(text), entry_key=_entry_key(entry),
-                tags=[pos] if pos else [],
+                tags=[pos] if pos else [], source=source,
             )
         )
 
     for number in valid:
-        append_row(number, f"{page_note}; Turner etymology T{number}")
+        append_row(number, "")
     if not valid:
         unresolved = ""
         if invalid:
-            unresolved = "; unresolved Turner citation(s) " + ", ".join(
+            unresolved = "unresolved Turner citation(s) " + ", ".join(
                 f"T{number}" for number in invalid
             )
-        append_row("", page_note + unresolved)
+        append_row("", unresolved)
 
 
 def read_cdial_ids(path: Path) -> set[str]:
@@ -729,7 +727,7 @@ def build_rows(
         parameters = valid or [""]
         pos = _part_of_speech(text, entry.form)
         gloss = _gloss(text, entry.form)
-        page_note = f"Bashir PDF p. {entry.pdf_page} (printed p. {entry.printed_page})"
+        source_ref = f"{SOURCE_ID}[p. {entry.pdf_page} (printed p. {entry.printed_page})]"
         source_tokens = _source_tokens(text)
         languages = _entry_languages(entry, dialects)
         morph = _morphology_notes(text)
@@ -747,13 +745,11 @@ def build_rows(
             )
             borrowed_from = donor_key(donor_language, donor_form, donor_gloss, note)
 
-        notes = [page_note]
+        notes = []
         if source_tokens:
             notes.append("contributors: " + ", ".join(source_tokens))
         if invalid:
             notes.append("unresolved Turner citation(s) " + ", ".join(f"T{x}" for x in invalid))
-        if pos:
-            notes.insert(0, pos)
         tags = [pos] if pos else []
         if borrowed_from:
             tags.append("loanword")
@@ -772,7 +768,7 @@ def build_rows(
                         language, parameter, entry.form, gloss, "; ".join(notes),
                         etymology=etymology, entry_key=key,
                         borrowed_from_key=borrowed_from,
-                        derivation_parent_keys=parents, tags=tags,
+                        derivation_parent_keys=parents, tags=tags, source=source_ref,
                     )
                 )
         audit.append({
@@ -795,10 +791,10 @@ def build_rows(
                 rows.append(
                     _rich_row(
                         language, "", form, gloss,
-                        f"sound-variant; {page_note}; Other pronunciation: {block}",
+                        "",
                         etymology=variant_etymology, entry_key=variant_key,
                         variant_of_key=key, derivation_parent_keys=[key],
-                        tags=["sound-variant", "variant"],
+                        tags=["sound-variant", "variant"], source=source_ref,
                     )
                 )
             audit.append({
@@ -831,9 +827,9 @@ def build_rows(
                 rows.append(
                     _rich_row(
                         language, "", form, subentry["gloss"],
-                        f"derived; {subentry['pos']}; {page_note}; subentry of {entry.form}",
+                        "",
                         etymology=sub_etymology, entry_key=sub_key,
-                        derivation_parent_keys=parents, tags=sub_tags,
+                        derivation_parent_keys=parents, tags=sub_tags, source=source_ref,
                     )
                 )
             audit.append({

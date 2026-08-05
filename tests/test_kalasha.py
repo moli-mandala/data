@@ -57,8 +57,8 @@ def test_finish_keeps_linked_unlinked_and_uncertain_entries():
     kalasha._finish(linked, rows, {"919"})
     assert rows[0][:8] == [
         "bumb", "919", "ástru", "Tears", "", "",
-        "noun; Trail & Cooper PDF p. 41 (printed p. 11); Turner etymology T-919",
-        "trail-cooper1999",
+        "",
+        "trail-cooper1999[p. 41 (printed p. 11)]",
     ]
     assert len(rows[0]) == 15
 
@@ -66,8 +66,8 @@ def test_finish_keeps_linked_unlinked_and_uncertain_entries():
     uncertain.text = ["Etym:", "ankusa-", "T-111?."]
     kalasha._finish(uncertain, rows, {"111"})
     assert rows[-1][1] == "111"
-    assert rows[-1][6].startswith("uncertain;")
-    assert "T-111?" in rows[-1][6]
+    assert rows[-1][6] == ""
+    assert "uncertain" in rows[-1][14]
 
     unlinked = kalasha.Entry("ajáp", "Adj", 31, 1, gloss=["Remarkable"])
     kalasha._finish(unlinked, rows, {"111", "919"})
@@ -121,7 +121,7 @@ def test_enriched_kalasha_cldf_graph_is_resolved():
         all_rows = list(csv.DictReader(stream))
     rows = [
         row for row in all_rows
-        if "trail-cooper1999" in row["Source"].split(";")
+        if any(source.strip().startswith("trail-cooper1999") for source in row["Source"].split(";"))
     ]
     by_id = {row["ID"]: row for row in all_rows}
 

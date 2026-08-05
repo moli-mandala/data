@@ -22,6 +22,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import html
 import io
 import json
 import re
@@ -45,6 +46,7 @@ SCALE = 300 / 72
 
 LANGUAGE = "OSi"
 SOURCE = "paranavitana"
+CDIAL_PARAMS = HERE.parents[3] / "data/cdial/params.csv"
 
 ENTRY_START_MIN_LEFT = 0
 ENTRY_START_MAX_LEFT = round(63 * SCALE)
@@ -93,6 +95,93 @@ class Entry:
     raw_entry: str
     confidence: float
     review_reasons: list[str] = field(default_factory=list)
+    sanskrit_etyma: list[str] = field(default_factory=list)
+    cdial_ids: list[str] = field(default_factory=list)
+
+
+def normalize_sanskrit_etymon(text: str) -> str:
+    """Return a forgiving key shared by Sigiri OCR and CDIAL headwords.
+
+    Accent, vowel length, homonym numbers, and punctuation are removed, but
+    segmental spelling is retained. A match is accepted only when this key
+    identifies one CDIAL entry, so normalization cannot choose a homonym.
+    """
+    text = html.unescape(text).casefold()
+    text = text.translate(
+        str.maketrans({
+            "ı": "i", "ſ": "s", "ʰ": "h", "ṃ": "m", "ṁ": "m",
+            "ŋ": "n", "ṅ": "n", "ñ": "n", "ṇ": "n",
+        })
+    )
+    text = unicodedata.normalize("NFKD", text).encode("ascii", "ignore").decode()
+    text = re.sub(r"m(?=[kg])", "n", text)
+    return re.sub(r"[^a-z]+", "", text)
+
+
+def extract_sanskrit_etyma(raw_entry: str) -> list[str]:
+    """Extract Sanskrit source forms from Paranavitana's bracketed note."""
+    match = re.search(r"\bSkt\s*[.,:]\s*", raw_entry, re.IGNORECASE)
+    if not match:
+        return []
+    tail = raw_entry[match.end() :].split("]", 1)[0]
+    # Pali/comparative citations and inflectional explanations start a new
+    # part of the bracket. Plus signs and hyphens belong to compounds.
+    tail = re.split(
+        r"\s*;\s*|,\s*(?:e\.f|l\.f|lit|var)\.|"
+        r"\b(?:cf|P|Pk|Pr|T|mod\.\s*S)\s*[.,:]",
+        tail,
+        maxsplit=1,
+        flags=re.IGNORECASE,
+    )[0]
+    tail = tail.split("=", 1)[0]
+    tail = re.sub(r"\([^)]*\)", " ", tail)
+    result = []
+    for part in re.split(r"\s+or\s+|/", tail, flags=re.IGNORECASE):
+        part = part.strip(" ,;:.[]{}()")
+        if part and normalize_sanskrit_etymon(part):
+            result.append(part)
+    return result
+
+
+def load_cdial_headword_index(path: Path = CDIAL_PARAMS) -> dict[str, set[str]]:
+    """Map normalized Sanskrit headwords to all compatible CDIAL IDs."""
+    index: dict[str, set[str]] = {}
+    with path.open(encoding="utf-8", newline="") as handle:
+        for row in csv.reader(handle):
+            if len(row) < 2 or not row[0]:
+                continue
+            forms = [part.strip() for part in row[1].split(",")]
+            if len(row) > 3:
+                forms.extend(html.unescape(x) for x in re.findall(r"<b>(.*?)</b>", row[3]))
+            for form in forms:
+                key = normalize_sanskrit_etymon(form)
+                if key:
+                    index.setdefault(key, set()).add(row[0].lower())
+    return index
+
+
+def match_cdial_ids(
+    sanskrit_etyma: list[str], index: dict[str, set[str]]
+) -> tuple[list[str], bool]:
+    """Return unique exact-headword matches and whether a key was ambiguous."""
+    result: list[str] = []
+    ambiguous = False
+    for etymon in sanskrit_etyma:
+        key = normalize_sanskrit_etymon(etymon)
+        # In this scan the initial h of hasta is consistently OCRed as k
+        # (both occurrences gloss 'hand'). Do not accidentally attach those
+        # rows to unrelated CDIAL kaṣṭa; repaired hasta remains ambiguous in
+        # CDIAL and is therefore correctly left for review.
+        if key == "kasta" and "ṣ" not in etymon:
+            key = "hasta"
+        candidates = index.get(key, set())
+        if len(candidates) > 1:
+            ambiguous = True
+        elif len(candidates) == 1:
+            candidate = next(iter(candidates))
+            if candidate not in result:
+                result.append(candidate)
+    return result, ambiguous
 
 
 def plausible_rules(rules: tuple[int, int] | list[int], width: int, pdf_page: int) -> bool:
@@ -326,7 +415,9 @@ def extract_gloss(raw_entry: str, headword: str) -> str:
     return candidate[:300]
 
 
-def parse_pages(pages: list[dict]) -> list[Entry]:
+def parse_pages(
+    pages: list[dict], cdial_index: dict[str, set[str]] | None = None
+) -> list[Entry]:
     entries: list[Entry] = []
     current: dict | None = None
 
@@ -346,6 +437,12 @@ def parse_pages(pages: list[dict]) -> list[Entry]:
             headword = "a"
         confidence = sum(current["confidences"]) / len(current["confidences"])
         gloss = extract_gloss(raw_entry, headword)
+        sanskrit_etyma = extract_sanskrit_etyma(raw_entry)
+        cdial_ids, ambiguous_etymon = (
+            match_cdial_ids(sanskrit_etyma, cdial_index)
+            if cdial_index is not None
+            else ([], False)
+        )
         reasons: list[str] = []
         if not gloss:
             reasons.append("missing_gloss")
@@ -355,6 +452,8 @@ def parse_pages(pages: list[dict]) -> list[Entry]:
             reasons.append("suspicious_headword")
         if re.search(r"[?®ð]", headword):
             reasons.append("uncertain_glyph")
+        if ambiguous_etymon:
+            reasons.append("ambiguous_sanskrit_etymon")
         entries.append(
             Entry(
                 pdf_page=current["pdf_page"],
@@ -366,6 +465,8 @@ def parse_pages(pages: list[dict]) -> list[Entry]:
                 raw_entry=raw_entry,
                 confidence=confidence,
                 review_reasons=reasons,
+                sanskrit_etyma=sanskrit_etyma,
+                cdial_ids=cdial_ids,
             )
         )
         current = None
@@ -402,7 +503,7 @@ def write_outputs(entries: list[Entry], output_dir: Path, install: bool) -> None
 
     fields = [
         "pdf_page", "printed_page", "column", "top", "headword", "gloss",
-        "confidence", "review_reasons", "raw_entry",
+        "confidence", "review_reasons", "raw_entry", "sanskrit_etyma", "cdial_ids",
     ]
     with audit_path.open("w", encoding="utf-8", newline="") as handle:
         writer = csv.DictWriter(handle, fieldnames=fields)
@@ -410,6 +511,8 @@ def write_outputs(entries: list[Entry], output_dir: Path, install: bool) -> None
         for entry in entries:
             row = asdict(entry)
             row["review_reasons"] = ";".join(entry.review_reasons)
+            row["sanskrit_etyma"] = ";".join(entry.sanskrit_etyma)
+            row["cdial_ids"] = ";".join(entry.cdial_ids)
             writer.writerow(row)
 
     with review_path.open("w", encoding="utf-8", newline="") as handle:
@@ -419,28 +522,32 @@ def write_outputs(entries: list[Entry], output_dir: Path, install: bool) -> None
             if entry.review_reasons:
                 row = asdict(entry)
                 row["review_reasons"] = ";".join(entry.review_reasons)
+                row["sanskrit_etyma"] = ";".join(entry.sanskrit_etyma)
+                row["cdial_ids"] = ";".join(entry.cdial_ids)
                 writer.writerow(row)
 
     with import_path.open("w", encoding="utf-8", newline="") as handle:
         writer = csv.writer(handle)
+        import_rows = 0
         for entry in entries:
-            review = ";".join(entry.review_reasons)
-            notes = (
-                f"Sigiri PDF p. {entry.pdf_page} (printed p. {entry.printed_page}), "
-                f"column {entry.column}; OCR entry: {entry.raw_entry}"
+            source = (
+                f"{SOURCE}[p. {entry.pdf_page} (printed p. {entry.printed_page}), "
+                f"col. {entry.column}]"
             )
-            if review:
-                notes += f"; auto-review: {review}"
-            writer.writerow(
-                [LANGUAGE, "", entry.headword, entry.gloss, "", "", notes, SOURCE]
-            )
+            for cdial_id in entry.cdial_ids or [""]:
+                writer.writerow(
+                    [LANGUAGE, cdial_id, entry.headword, entry.gloss, "", "", "", source]
+                )
+                import_rows += 1
 
     if install:
         shutil.copyfile(import_path, INSTALL_PATH)
-        print(f"Installed {len(entries)} rows at {INSTALL_PATH}")
+        print(f"Installed {import_rows} rows at {INSTALL_PATH}")
     print(
         f"Wrote {len(entries)} entries; "
-        f"{sum(bool(entry.review_reasons) for entry in entries)} need review"
+        f"{sum(bool(entry.review_reasons) for entry in entries)} need review; "
+        f"{sum(bool(entry.sanskrit_etyma) for entry in entries)} have Sanskrit etyma and "
+        f"{sum(bool(entry.cdial_ids) for entry in entries)} link to CDIAL"
     )
 
 
@@ -461,7 +568,7 @@ def main() -> None:
     if args.refresh and cache_dir.exists():
         shutil.rmtree(cache_dir)
     pages = [ocr_page(args.pdf, page, cache_dir) for page in PDF_PAGES]
-    entries = parse_pages(pages)
+    entries = parse_pages(pages, load_cdial_headword_index())
     write_outputs(entries, args.output_dir, args.install)
 
 

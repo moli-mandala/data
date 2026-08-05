@@ -15,7 +15,21 @@ def test_nominal_classes_and_valency_use_canonical_grammar_tags():
     assert yoshioka.grammatical_tags("word HM PL man") == [
         "noun", "Burushaski-class-HM", "m", "pl"
     ]
-    assert yoshioka.grammatical_tags("root DITR IPFV give") == ["verb", "tr"]
+    assert yoshioka.grammatical_tags("root DITR IPFV give") == [
+        "verb", "tr", "ipfv"
+    ]
+
+
+def test_inflection_case_and_argument_codes_become_grammatical_tags():
+    assert yoshioka.grammatical_tags("root TR PFV CP NEG form") == [
+        "verb", "tr", "pfv", "participle", "conjunctive-participle", "neg"
+    ]
+    assert yoshioka.grammatical_tags("word DOUBLE PL GEN ADE form") == [
+        "pl", "double-plural", "gen", "ade"
+    ]
+    assert yoshioka.grammatical_tags("form SUBJ DO IO") == [
+        "subj", "obj", "direct-object", "indirect-object"
+    ]
 
 
 def test_combined_nominal_classes_expand_to_filterable_class_tags():
@@ -27,6 +41,9 @@ def test_combined_nominal_classes_expand_to_filterable_class_tags():
     ]
     assert yoshioka.grammatical_tags("word YZ form") == [
         "noun", "Burushaski-class-Y", "Burushaski-class-Z"
+    ]
+    assert yoshioka.grammatical_tags("word HX form") == [
+        "noun", "Burushaski-class-H", "Burushaski-class-X"
     ]
 
 
@@ -76,5 +93,6 @@ def test_import_rows_have_rich_ingestion_schema():
     row = list(yoshioka.import_rows([entry]))[0]
     assert len(row) == 15
     assert row[0:4] == ["Bur", "", "aabáad", "resident, residence"]
-    assert row[7] == "yoshioka2012"
+    assert row[6] == ""
+    assert row[7] == "yoshioka2012[p. 505 (printed p. 179)]"
     assert "dialect:Eastern%20Burushaski" in row[14]
