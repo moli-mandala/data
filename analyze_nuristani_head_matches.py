@@ -8,12 +8,11 @@ from analyze_nuristani_overlaps import comparable_form, gloss_tokens
 
 
 def main():
+    from edges_util import attach_legacy_graph
     with open("cldf/forms.csv", encoding="utf-8") as file:
-        entries = {
-            row["ID"]: row
-            for row in csv.DictReader(file)
-            if not row["Origin_ID"]
-        }
+        _form_rows = list(csv.DictReader(file))
+    attach_legacy_graph(_form_rows)
+    entries = {row["ID"]: row for row in _form_rows if not row["Origin_ID"]}
     cdial = [
         row for row in entries.values()
         if row["Language_ID"] == "Indo-Aryan" and row["ID"][0].isdigit()

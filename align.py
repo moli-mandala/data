@@ -317,13 +317,20 @@ def main():
 
     with open(FORMS, encoding="utf-8") as f:
         reader = csv.DictReader(f)
-        if "Origin_ID" not in (reader.fieldnames or ()):
-            raise ValueError("align.py must run after unify_cldf.py")
+        if "Status" not in (reader.fieldnames or ()):
+            raise ValueError("align.py must run after unify_cldf.py (edge-model forms.csv)")
         rows = list(reader)
     etymon = {
         row["ID"]: (row["Form"], row["Language_ID"])
         for row in rows
     }
+
+    # the attestation graph lives in cldf/edges.csv; each form aligns against its
+    # aligned_parent (immediate target for reflex/borrowed, nearest proto ancestor for variants)
+    from edges_util import aligned_parent, load_edges, rank1_map
+
+    rank1 = rank1_map(load_edges())
+    lang_of = {row["ID"]: row["Language_ID"] for row in rows}
 
     keep_family = None if args.family == "ALL" else args.family
     seen_origins: set[str] = set()
@@ -335,7 +342,9 @@ def main():
                     "Etymon_Seg", "Reflex_Seg", "Change", "Prev_Seg", "Next_Seg"])
         ety_cache: dict[str, list[Seg]] = {}
         for row in rows:
-            origin = row["Origin_ID"]
+            origin = aligned_parent(rank1, lang_of, row["ID"], PROTO_LANGS)
+            if not origin:
+                continue
             meta = etymon.get(origin)
             if not meta:
                 continue

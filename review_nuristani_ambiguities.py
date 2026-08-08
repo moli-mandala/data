@@ -9,7 +9,11 @@ from analyze_nuristani_overlaps import comparable_form, gloss_tokens
 
 def read(path):
     with open(path, encoding="utf-8") as file:
-        return list(csv.DictReader(file))
+        rows = list(csv.DictReader(file))
+    if path.endswith("forms.csv"):
+        from edges_util import attach_legacy_graph
+        attach_legacy_graph(rows)
+    return rows
 
 
 def main():

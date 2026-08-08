@@ -16,6 +16,32 @@ def form_aliases():
         return {row["Legacy_ID"]: row["Form_ID"] for row in csv.DictReader(f)}
 
 
+def unified_forms():
+    """forms.csv rows with the legacy graph fields synthesized from cldf/edges.csv."""
+    import sys as _sys
+    _sys.path.insert(0, ".")
+    from edges_util import attach_legacy_graph
+
+    with open("cldf/forms.csv", encoding="utf-8") as handle:
+        rows = list(csv.DictReader(handle))
+    attach_legacy_graph(rows)
+    return {row["ID"]: row for row in rows}
+
+
+def derivation_like_edges():
+    """(child, parent) pairs of the non-attestation graph (component/derived + alternates) —
+    the closest analogue of the retired derivation.csv."""
+    import sys as _sys
+    _sys.path.insert(0, ".")
+    from edges_util import load_edges
+
+    return {
+        (e["Child_ID"], e["Parent_ID"])
+        for e in load_edges()
+        if e["Kind"] in ("component", "derived") or e["Rank"] != "1"
+    }
+
+
 def test_bashir_khowar_sound_profile():
     profile = Tokenizer("conversion/khowar.txt")
     cases = {
@@ -56,8 +82,7 @@ def test_every_used_reference_has_provenance():
 
 
 def test_dedr_attached_parenthetical_is_a_variant():
-    with open("cldf/forms.csv", encoding="utf-8") as f:
-        forms = {row["ID"]: row for row in csv.DictReader(f)}
+    forms = unified_forms()
 
     aliases = form_aliases()
     main, variant = aliases["d4993-33"], aliases["d4993-34"]
@@ -88,8 +113,7 @@ def test_dedr_footer_references_are_preserved_on_entry():
 def test_curated_borrowings_are_applied():
     with open("data/borrowings.csv", encoding="utf-8") as f:
         borrowings = {r["Borrower_ID"]: r["Source_ID"] for r in csv.DictReader(f)}
-    with open("cldf/forms.csv", encoding="utf-8") as f:
-        forms = {r["ID"]: r for r in csv.DictReader(f)}
+    forms = unified_forms()
     aliases = form_aliases()
     borrowings = {
         aliases.get(borrower, borrower): aliases.get(source, source)
@@ -107,10 +131,8 @@ def test_curated_borrowings_are_applied():
 def test_nuristani_cognates_are_proto_indo_iranian_reflexes():
     with open("data/nuristani_cognates.csv", encoding="utf-8") as f:
         cognates = list(csv.DictReader(f))
-    with open("cldf/forms.csv", encoding="utf-8") as f:
-        forms = {r["ID"]: r for r in csv.DictReader(f)}
-    with open("cldf/derivation.csv", encoding="utf-8") as f:
-        edges = {(r["Child_ID"], r["Parent_ID"]) for r in csv.DictReader(f)}
+    forms = unified_forms()
+    edges = derivation_like_edges()
     aliases = form_aliases()
 
     assert cognates
@@ -135,8 +157,7 @@ def test_nuristani_cognates_are_proto_indo_iranian_reflexes():
 def test_strand_indo_aryan_loans_are_nuristani_borrowings():
     with open("data/nuristani_borrowings.csv", encoding="utf-8") as f:
         borrowings = list(csv.DictReader(f))
-    with open("cldf/forms.csv", encoding="utf-8") as f:
-        forms = {r["ID"]: r for r in csv.DictReader(f)}
+    forms = unified_forms()
     aliases = form_aliases()
 
     assert borrowings
@@ -166,8 +187,7 @@ def test_strand_indo_aryan_loans_are_nuristani_borrowings():
 
 
 def test_marked_origins_are_borrowings_with_valid_targets():
-    with open("cldf/forms.csv", encoding="utf-8") as f:
-        forms = {row["ID"]: row for row in csv.DictReader(f)}
+    forms = unified_forms()
 
     marked = [
         row for row in forms.values()
@@ -186,8 +206,7 @@ def test_marked_origins_are_borrowings_with_valid_targets():
 def test_cross_family_descendants_are_borrowings():
     with open("cldf/languages.csv", encoding="utf-8") as f:
         clades = {row["ID"]: row["Clade"] for row in csv.DictReader(f)}
-    with open("cldf/forms.csv", encoding="utf-8") as f:
-        forms = {row["ID"]: row for row in csv.DictReader(f)}
+    forms = unified_forms()
 
     dravidian = {
         "Old Dravidian", "S. Dravidian I", "S. Dravidian II", "C. Dravidian",
@@ -202,6 +221,11 @@ def test_cross_family_descendants_are_borrowings():
     }
     matched = []
     for row in forms.values():
+        # a variant inherits its loan status from its chain target (asserted independently);
+        # its own origin is now the sibling/parent, so the cross-family predicate is evaluated
+        # only on non-variant rows
+        if row["Relation"] == "variant":
+            continue
         origin = forms.get(row["Origin_ID"])
         if not origin:
             continue
@@ -231,8 +255,7 @@ def test_backstrom_control_wordlists_are_excluded():
 
 
 def test_backstrom_poc_cloth_forms_link_to_pota_not_avajjharati():
-    with open("cldf/forms.csv", encoding="utf-8") as f:
-        forms = list(csv.DictReader(f))
+    forms = list(unified_forms().values())
 
     cloth = [
         row for row in forms
@@ -385,8 +408,7 @@ def test_duplicate_strand_oia_heads_are_merged_into_cdial():
             row["Strand_ID"]: row["CDIAL_ID"]
             for row in csv.DictReader(f)
         }
-    with open("cldf/forms.csv", encoding="utf-8") as f:
-        forms = {row["ID"]: row for row in csv.DictReader(f)}
+    forms = unified_forms()
 
     assert redirects
     assert not set(redirects) & set(forms)
@@ -404,8 +426,7 @@ def test_strand_borrowings_are_aligned_to_final_indo_aryan_donors():
             row["Proto_Nuristani_ID"]: row["Indo_Aryan_ID"]
             for row in csv.DictReader(f)
         }
-    with open("cldf/forms.csv", encoding="utf-8") as f:
-        forms = {row["ID"]: row for row in csv.DictReader(f)}
+    forms = unified_forms()
     aliases = form_aliases()
     borrowings = {
         aliases.get(nuristani, nuristani): aliases.get(indo_aryan, indo_aryan)

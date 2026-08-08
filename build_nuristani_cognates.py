@@ -151,7 +151,10 @@ def main():
         )
 
     with open("cldf/forms.csv", encoding="utf-8") as file:
-        entries = {row["ID"]: row for row in csv.DictReader(file)}
+        _form_rows = list(csv.DictReader(file))
+    from edges_util import attach_legacy_graph
+    attach_legacy_graph(_form_rows)
+    entries = {row["ID"]: row for row in _form_rows}
     with open("cldf/merges.csv", encoding="utf-8") as file:
         merges = {row["Addendum_ID"]: row["Main_ID"] for row in csv.DictReader(file)}
 

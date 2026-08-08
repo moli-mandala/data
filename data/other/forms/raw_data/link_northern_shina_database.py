@@ -116,6 +116,10 @@ def root_id(row: dict[str, str], forms: dict[str, dict[str, str]]) -> str:
 def generate_review() -> None:
     with FORMS.open(encoding="utf-8") as handle:
         form_rows = list(csv.DictReader(handle))
+    import sys as _sys
+    _sys.path.insert(0, str(DATA))
+    from edges_util import attach_legacy_graph
+    attach_legacy_graph(form_rows, str(DATA / "cldf/edges.csv"))
     forms = {row["ID"]: row for row in form_rows}
     with LANGUAGES.open(encoding="utf-8") as handle:
         clades = {row["ID"]: row["Clade"] for row in csv.DictReader(handle)}

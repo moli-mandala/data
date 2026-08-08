@@ -31,6 +31,8 @@ import sys
 import unicodedata
 from collections import defaultdict
 
+from edges_build import build_edges, write_edges
+
 _ADD_PTR = re.compile(r"\s*Add\.\s*\d+\.?")  # the now-defunct "Add. N" pointer after a merge
 # separates a main entry's etymology snippet from a merged addendum's; the webapp splits on it and
 # renders one accented block per snippet (so no snippet is dropped when addenda fold into a main).
@@ -48,10 +50,17 @@ INDO_ARYAN_CLADES = {
     "Marathi-Konkani", "Halbic", "Insular", "Migratory",
 }
 
+# Internal row layout (positional): the graph columns (Origin_ID/Relation/Variant_Of/
+# Borrowed_From) exist only in memory — the serialized forms.csv drops them in favour of
+# cldf/edges.csv (see edges_build.py), keeping Redirect plus a node Status column.
 UNIFIED = [
     "ID", "Language_ID", "Form", "Gloss", "Native", "Phonemic", "Original", "Cognateset",
     "Description", "Tags", "Source", "Origin_ID", "Etymology", "Relation", "Redirect", "Variant_Of",
     "Borrowed_From",
+]
+UNIFIED_SERIALIZED = [
+    "ID", "Language_ID", "Form", "Gloss", "Native", "Phonemic", "Original", "Cognateset",
+    "Description", "Tags", "Source", "Etymology", "Redirect", "Status",
 ]
 
 
@@ -217,18 +226,48 @@ def mark_cross_family_borrowings(rows, language_clades):
 
 
 def apply_borrowings_to_unified():
-    with open("cldf/forms.csv", encoding="utf-8") as f:
+    """Standalone re-apply of data/borrowings.csv onto the built cldf/ (edge-model form).
+
+    Post-cutover the unified file carries no graph columns, so the curated borrowings are
+    patched directly into cldf/edges.csv: the borrower's rank-1 attestation edge is replaced
+    by (borrower, source, borrowed, 1). Node Status is untouched (an etymon that gains a loan
+    source stays an entry — matching the in-pipeline behaviour of apply_borrowings, which only
+    rewrites the graph columns of etyma rows)."""
+    import edges_build
+
+    with open("cldf/edges.csv", encoding="utf-8") as f:
         reader = csv.reader(f)
         header = next(reader)
-        rows = list(reader)
-    if header != UNIFIED:
-        raise ValueError("cldf/forms.csv is not in unified format")
-    applied = apply_borrowings(rows, load_borrowings())
-    with open("cldf/forms.csv", "w", newline="", encoding="utf-8") as f:
-        writer = csv.writer(f)
-        writer.writerow(header)
-        writer.writerows(rows)
-    print(f"applied {applied} curated borrowings", file=sys.stderr)
+        if header != edges_build.EDGES_HEADER:
+            raise ValueError("cldf/edges.csv is not in edge-table format")
+        edges = list(reader)
+    borrowings = load_borrowings()
+    node_ids = set()
+    with open("cldf/forms.csv", encoding="utf-8") as f:
+        for row in csv.DictReader(f):
+            node_ids.add(row["ID"])
+    applied = 0
+    by_child_rank1 = {}
+    for e in edges:
+        if e[3] == "1" and e[2] in ("reflex", "borrowed", "variant"):
+            by_child_rank1[e[0]] = e
+    for borrower, source in borrowings.items():
+        if borrower not in node_ids or source not in node_ids:
+            continue
+        existing = by_child_rank1.get(borrower)
+        if existing is not None:
+            existing[1], existing[2] = source, "borrowed"
+        else:
+            edge = [borrower, source, "borrowed", "1", "", "", ""]
+            edges.append(edge)
+            by_child_rank1[borrower] = edge
+        applied += 1
+    edges.sort(key=lambda e: (e[0], e[2], int(e[3]), int(e[4]) if e[4] else 0, e[1]))
+    with open("cldf/edges.csv", "w", newline="", encoding="utf-8") as f:
+        w = csv.writer(f)
+        w.writerow(edges_build.EDGES_HEADER)
+        w.writerows(edges)
+    print(f"re-applied {applied} curated borrowings to cldf/edges.csv", file=sys.stderr)
 
 
 def strip_marker(pid: str) -> str:
@@ -872,32 +911,63 @@ def main():
         etyma_rows + reflex_rows + ext_entry_rows, load_language_clades()
     )
 
+    # ---- derive the single typed edge table + serialize ------------------------------------
+    # link_refs.py wrote cldf/derivation.csv; append the promoted numbered-form → head edges,
+    # then classify everything into cldf/edges.csv (edges_build.py is the serialization
+    # boundary of the edge model; classification + invariants live there). derivation.csv is a
+    # build intermediate from this point on — consumed here and removed like parameters.csv.
+    deriv_path = "cldf/derivation.csv"
+    existing = []
+    if os.path.exists(deriv_path):
+        with open(deriv_path, encoding="utf-8") as f:
+            existing = list(csv.reader(f))[1:]  # drop header
+    seen = set(map(tuple, existing))
+    added = [e for e in section_edges if e not in seen]
+    combined_deriv = [tuple(e) for e in existing] + list(added)
+
+    all_rows = etyma_rows + reflex_rows + ext_entry_rows
+    edge_rows, edge_status, edge_stats = build_edges(all_rows, combined_deriv)
+    write_edges(edge_rows)
+
+    def serialize(row):
+        # attested rows shed a stale Redirect (the v1/v2 DB builders already dropped it there)
+        redirect = row[RD] if not row[13] else ""
+        return row[:11] + [row[12], redirect, edge_status[row[0]]]
+
     with open("cldf/forms.csv", "w", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
-        w.writerow(UNIFIED)
-        w.writerows(etyma_rows)
-        w.writerows(reflex_rows)
-        w.writerows(ext_entry_rows)
+        w.writerow(UNIFIED_SERIALIZED)
+        w.writerows(serialize(r) for r in all_rows)
 
     with open("cldf/form-source-keys.csv", "w", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
         w.writerow(["Legacy_ID", "Source_Key"])
         w.writerows(source_keys)
 
-    # add the promoted numbered-form → head edges to the derivation graph (link_refs.py wrote it)
-    if section_edges:
-        deriv_path = "cldf/derivation.csv"
-        existing = []
-        if os.path.exists(deriv_path):
-            with open(deriv_path, encoding="utf-8") as f:
-                existing = list(csv.reader(f))[1:]  # drop header
-        seen = set(map(tuple, existing))
-        added = [e for e in section_edges if e not in seen]
+    if "--legacy-cols" in sys.argv:
+        # development cross-check: the pre-cutover 17-column format + the raw derivation list,
+        # so tests/test_edges.py can diff every edge against the legacy encoding
+        with open("cldf/forms-legacy.csv", "w", newline="", encoding="utf-8") as f:
+            w = csv.writer(f)
+            w.writerow(UNIFIED)
+            w.writerows(all_rows)
         with open(deriv_path, "w", newline="", encoding="utf-8") as f:
             w = csv.writer(f)
             w.writerow(["Child_ID", "Parent_ID"])
-            w.writerows(existing)
-            w.writerows(added)
+            w.writerows(combined_deriv)
+    else:
+        try:
+            os.remove(deriv_path)
+        except FileNotFoundError:
+            pass
+
+    print(
+        f"cldf/edges.csv: {len(edge_rows)} typed edges "
+        f"({edge_stats.get('component_groups', 0)} compounds, "
+        f"{edge_stats.get('alt_edges', 0)} alternate hypotheses, "
+        f"{edge_stats.get('alt_reviewable', 0)} flagged for review)",
+        file=sys.stderr,
+    )
 
     # Another watcher may already have removed the split-stage table after the
     # unified file is atomically written; final cleanup is intentionally idempotent.

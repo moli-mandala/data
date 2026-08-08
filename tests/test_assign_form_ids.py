@@ -2,6 +2,8 @@ from assign_form_ids import apply_assignments, assign_ids, fingerprint, has_dict
 
 
 def form(legacy_id, original, *, rendered=None, gloss="water", relation="local"):
+    # relation kept as a fixture parameter; the edge-model row carries only Status
+    status = {"local": "unlinked", "": "entry"}.get(relation, "")
     return {
         "ID": legacy_id,
         "Language_ID": "x",
@@ -10,9 +12,8 @@ def form(legacy_id, original, *, rendered=None, gloss="water", relation="local")
         "Native": "",
         "Original": original,
         "Source": "example-source",
-        "Origin_ID": "",
-        "Relation": relation,
-        "Borrowed_From": "",
+        "Redirect": "",
+        "Status": status,
     }
 
 
@@ -31,25 +32,75 @@ def test_registry_survives_reordering_and_profile_changes():
     assert {row["Status"] for row in next_registry} == {"active"}
 
 
-def test_graph_assignment_uses_persistent_form_id():
+def test_graph_assignment_patches_edges(tmp_path):
+    import csv
+
+    from assign_form_ids import EDGES_FIELDS, migrate_assignment_schema, validate_assignments
+
     local = form("f_example", "pani")
     etymon = form("123", "*paniya", relation="")
     forms = [local, etymon]
+    edges_path = tmp_path / "edges.csv"
+    with edges_path.open("w", newline="", encoding="utf-8") as handle:
+        writer = csv.DictWriter(handle, fieldnames=EDGES_FIELDS)
+        writer.writeheader()
 
-    changed = apply_assignments(
-        forms,
-        [{"Form_ID": "f_example", "Etymon_ID": "123", "Relation": "reflex", "Status": "accepted"}],
-    )
+    assignments = [
+        {"Form_ID": "f_example", "Etymon_ID": "123", "Relation": "reflex", "Status": "accepted"}
+    ]
+    migrate_assignment_schema(assignments)
+    validate_assignments(forms, assignments)
+    changed = apply_assignments(edges_path, forms, assignments)
+
+    assert changed == 2  # new rank-1 edge + Status cleared
+    assert local["Status"] == ""
+    with edges_path.open(encoding="utf-8") as handle:
+        rows = list(csv.DictReader(handle))
+    assert rows == [
+        {
+            "Child_ID": "f_example", "Parent_ID": "123", "Kind": "reflex", "Rank": "1",
+            "Pos": "", "Source": "", "Note": "",
+        }
+    ]
+
+
+def test_rejected_assignment_deletes_generated_alternate(tmp_path):
+    import csv
+
+    from assign_form_ids import EDGES_FIELDS, migrate_assignment_schema, validate_assignments
+
+    local = form("f_example", "pani")
+    forms = [local, form("123", "*paniya", relation=""), form("456", "*panya", relation="")]
+    edges_path = tmp_path / "edges.csv"
+    with edges_path.open("w", newline="", encoding="utf-8") as handle:
+        writer = csv.DictWriter(handle, fieldnames=EDGES_FIELDS)
+        writer.writeheader()
+        writer.writerow({
+            "Child_ID": "f_example", "Parent_ID": "123", "Kind": "reflex", "Rank": "1",
+            "Pos": "", "Source": "", "Note": "",
+        })
+        writer.writerow({
+            "Child_ID": "f_example", "Parent_ID": "456", "Kind": "reflex", "Rank": "2",
+            "Pos": "", "Source": "", "Note": "review:auto-alternate",
+        })
+
+    assignments = [
+        {"Form_ID": "f_example", "Etymon_ID": "456", "Kind": "reflex", "Rank": "2",
+         "Status": "rejected"}
+    ]
+    migrate_assignment_schema(assignments)
+    validate_assignments(forms, assignments)
+    changed = apply_assignments(edges_path, forms, assignments)
 
     assert changed == 1
-    assert local["Origin_ID"] == "123"
-    assert local["Relation"] == "reflex"
+    with edges_path.open(encoding="utf-8") as handle:
+        rows = list(csv.DictReader(handle))
+    assert [r["Parent_ID"] for r in rows] == ["123"]
 
 
 def test_fingerprint_ignores_generated_transcription_and_graph_assignment():
     before = form("1-2", "kaal", rendered="kāl")
     after = form("99-8", "kaal", rendered="kɑːl", relation="reflex")
-    after["Origin_ID"] = "456"
 
     assert fingerprint(before) == fingerprint(after)
 

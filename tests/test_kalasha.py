@@ -119,6 +119,10 @@ def test_posless_cross_reference_is_an_entry():
 def test_enriched_kalasha_cldf_graph_is_resolved():
     with (DATA_DIR / "cldf/forms.csv").open(encoding="utf-8") as stream:
         all_rows = list(csv.DictReader(stream))
+    import sys as _sys
+    _sys.path.insert(0, str(DATA_DIR))
+    from edges_util import attach_legacy_graph
+    attach_legacy_graph(all_rows, str(DATA_DIR / "cldf/edges.csv"))
     rows = [
         row for row in all_rows
         if any(source.strip().startswith("trail-cooper1999") for source in row["Source"].split(";"))
@@ -136,12 +140,20 @@ def test_enriched_kalasha_cldf_graph_is_resolved():
     assert all(not row["Variant_Of"] or row["Variant_Of"] in by_id for row in rows)
     assert all(not row["Borrowed_From"] or row["Borrowed_From"] in by_id for row in rows)
 
-    with (DATA_DIR / "cldf/derivation.csv").open(encoding="utf-8") as stream:
-        edges = list(csv.DictReader(stream))
+    import sys as _sys
+    _sys.path.insert(0, str(DATA_DIR))
+    from edges_util import load_edges
+    edges = [
+        {"Child_ID": e["Child_ID"], "Parent_ID": e["Parent_ID"]}
+        for e in load_edges(str(DATA_DIR / "cldf/edges.csv"))
+        if e["Kind"] in ("component", "derived") or e["Rank"] != "1"
+    ]
     source_ids = {row["ID"] for row in rows}
     source_edges = [
         edge for edge in edges
         if edge["Child_ID"] in source_ids or edge["Parent_ID"] in source_ids
     ]
-    assert len(source_edges) == 239
+    # 239 legacy derivation edges + 7 contradictory cross-entry variant pointers that the edge
+    # model surfaces as reviewable rank-2 hypotheses instead of silent Variant_Of columns
+    assert len(source_edges) == 246
     assert all(edge["Child_ID"] in by_id and edge["Parent_ID"] in by_id for edge in source_edges)

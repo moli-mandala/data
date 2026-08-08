@@ -24,7 +24,12 @@ The `Makefile` only knows `make_cldf.py`. The current pipeline is a sequence of 
 4. `unify_cldf.py` — fold `parameters.csv` (etyma) + `forms.csv` (reflexes) into ONE unified
    `cldf/forms.csv`, then **delete `parameters.csv`**. Applies the section-restructure, borrowed
    forms, and merges.
-5. `align.py` — phonetic final-origin→child alignments → `cldf/alignments.csv`. Approximate/computed
+5. `assign_form_ids.py` — replace order-dependent IDs on attested forms with persistent `f_…` IDs,
+   rewrite graph references, preserve old IDs in `cldf/form-id-aliases.csv`, and apply the curated
+   `data/etymology-assignments.csv` overlay. Its committed `data/form-identities.csv` registry is
+   identity state: do not regenerate or discard it during a re-ingestion. Rich importers' immutable
+   `Entry_Key` values reach this pass through generated `cldf/form-source-keys.csv`.
+6. `align.py` — phonetic final-origin→child alignments → `cldf/alignments.csv`. Approximate/computed
    layer, tuned for Indo-Aryan. Reads unified `Origin_ID` relationships, so it **must run last**.
 
 Then, in `../jambu-static`: `npm run db:transform` reads `../data/cldf` directly.
@@ -51,13 +56,26 @@ full entry HTML. This is silent — the run "succeeds" — and later manifests a
 etymology vanishing** on the site. Always include `--with lxml`. (Downstream, `unify_cldf.py`
 guards with `is_html = header.lstrip().startswith("<")`, but don't rely on that; parse it right.)
 
-## Data-model invariants (the unified `cldf/forms.csv`)
+## Data-model invariants (edge model, 2026-08)
 
-- **One row per node** in the etymon graph. Etyma have empty `Origin_ID` and empty `Relation`.
-- `Origin_ID` — self-referential FK to a form's parent/etymon.
-- `Relation` — `reflex` (daughter-language reflex), `variant` (same-language non-headword form),
-  `borrowed` (cross-dictionary loan; `Origin_ID` points at the **source reflex**, not the etymon,
-  and `Borrowed_From` records it — so ancestry chains recurse correctly), or `''` for etyma.
+- **One row per node** in `cldf/forms.csv` (content only: no graph columns). Parentless nodes
+  carry `Status` — `entry` (curated etymon) or `unlinked` (unetymologised import); attested
+  rows have an empty Status. `Redirect` (addendum → main) stays on forms.csv.
+- **All relations live in `cldf/edges.csv`**: `(Child_ID, Parent_ID, Kind, Rank, Pos, Source,
+  Note)` with Kind ∈ {reflex, borrowed, variant, component, derived}. Rank 1 = the accepted
+  etymology (≤1 per node across reflex/borrowed/variant); Rank ≥2 = alternate hypotheses
+  (`Note` carries `review:*` markers for auto-classified ones). `Pos` orders compound members
+  on `component` edges. A variant's rank-1 edge points at its **true target** (parent or
+  sibling); the etymon is reached transitively — there is no separate Variant_Of pointer.
+- `unify_cldf.py` still synthesizes the legacy columns internally; `edges_build.py` is the
+  serialization boundary (classification rules + invariants live there, cross-checked by
+  `tests/test_edges.py` via `unify_cldf.py --legacy-cols`). Read edges with `edges_util.py`
+  (`rank1_map`, `effective_etymon`, `aligned_parent`, `attach_legacy_graph` shim).
+- `data/etymology-assignments.csv` overlay is keyed `(Form_ID, Etymon_ID)` with
+  `Kind/Rank/Status/Source/Notes`; `Status=rejected` deletes a generated hypothesis edge.
+- `make_cldf.py` merge-joins are **order-deterministic** (dict.fromkeys) — set-based joins
+  once re-minted ~650 durable f_ ids per rebuild; `reconcile_form_ids.py` repaired the
+  historic drift once and is a no-op on current builds.
 - **Section forms**: CDIAL entries with numbered sub-headers (`2. *kṣata-²`, `3. …`) are promoted
   to their own entries with IDs `{cdial-id}-{n}`, derived from the head via a `derivation.csv`
   edge (their `Origin_ID` is NULL — they're etyma). Reflexes are re-homed onto them by the `info`

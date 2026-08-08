@@ -35,7 +35,10 @@ ALIASES = ROOT / "cldf/form-id-aliases.csv"
 ASSIGNMENTS = ROOT / "data/etymology-assignments.csv"
 SOURCE_KEYS = ROOT / "cldf/form-source-keys.csv"
 GRAPH_FILE_COLUMNS = {
+    "edges.csv": ("Child_ID", "Parent_ID"),
+    # build intermediate; present only under `unify_cldf.py --legacy-cols` (else a no-op)
     "derivation.csv": ("Child_ID", "Parent_ID"),
+    "forms-legacy.csv": ("ID", "Origin_ID", "Redirect", "Variant_Of", "Borrowed_From"),
     "merges.csv": ("Addendum_ID", "Main_ID"),
     # These are normally regenerated later in the pipeline. Rewriting them too keeps a checkout
     # internally consistent immediately after the one-time ID migration.
@@ -47,7 +50,8 @@ REGISTRY_FIELDS = [
     "Form_ID", "Legacy_ID", "Source_Key", "Fingerprint", "Source", "Language_ID", "Original",
     "Gloss", "Status",
 ]
-ASSIGNMENT_FIELDS = ["Form_ID", "Etymon_ID", "Relation", "Status", "Notes"]
+ASSIGNMENT_FIELDS = ["Form_ID", "Etymon_ID", "Kind", "Rank", "Status", "Source", "Notes"]
+EDGES_FIELDS = ["Child_ID", "Parent_ID", "Kind", "Rank", "Pos", "Source", "Note"]
 
 
 def normalized(value: str) -> str:
@@ -114,7 +118,7 @@ def has_dictionary_entry_id(row: dict[str, str]) -> bool:
     sources = {part.strip() for part in row.get("Source", "").split(";")}
     is_cdial = language_id == "Indo-Aryan" and (
         bool(re.fullmatch(r"\d+[a-z]?", form_id))
-        or (not row.get("Relation") and "CDIAL" in sources)
+        or (row.get("Status") == "entry" and "CDIAL" in sources)
     )
     is_dedr = language_id == "PDr" and bool(re.fullmatch(r"d\d+", form_id))
     return is_cdial or is_dedr
@@ -201,28 +205,111 @@ def rewrite_graph_file(path: Path, columns: tuple[str, ...], mapping: dict[str, 
     write_rows(path, fields, rows)
 
 
-def apply_assignments(forms: list[dict[str, str]], assignments: list[dict[str, str]]) -> int:
+ACCEPTED = {"accepted", "yes", "active"}
+REJECTED = {"rejected", "no"}
+
+
+def migrate_assignment_schema(assignments: list[dict[str, str]]) -> None:
+    """One-time upgrade of legacy overlay rows (Relation column, implicit rank 1)."""
+    for row in assignments:
+        if "Kind" not in row or not row.get("Kind"):
+            row["Kind"] = (row.get("Relation") or "reflex").strip() or "reflex"
+        if not row.get("Rank"):
+            row["Rank"] = "1"
+
+
+def validate_assignments(forms: list[dict[str, str]], assignments: list[dict[str, str]]) -> None:
+    """Hard-fail before any file is mutated (same contract as the legacy overlay)."""
     by_id = {row["ID"]: row for row in forms}
-    active = {row["ID"] for row in forms if row.get("Relation") != "local"}
-    changed = 0
+    linkable = {row["ID"] for row in forms if row.get("Status") != "unlinked"}
     for assignment in assignments:
-        if assignment.get("Status", "accepted").strip().lower() not in {"accepted", "yes", "active"}:
-            continue
+        status = assignment.get("Status", "accepted").strip().lower()
+        if status not in ACCEPTED | REJECTED:
+            raise ValueError(f"unsupported assignment status {status!r}")
         form_id = assignment.get("Form_ID", "").strip()
         etymon_id = assignment.get("Etymon_ID", "").strip()
-        relation = assignment.get("Relation", "reflex").strip() or "reflex"
         if form_id not in by_id:
             raise ValueError(f"etymology assignment references missing form {form_id}")
-        if etymon_id not in active:
+        if status in REJECTED:
+            continue
+        if etymon_id not in linkable:
             raise ValueError(f"etymology assignment for {form_id} references missing etymon {etymon_id}")
-        if relation not in {"reflex", "borrowed"}:
-            raise ValueError(f"unsupported assignment relation {relation!r} for {form_id}")
-        row = by_id[form_id]
-        if row.get("Origin_ID") != etymon_id or row.get("Relation") != relation:
-            row["Origin_ID"] = etymon_id
-            row["Relation"] = relation
-            row["Borrowed_From"] = etymon_id if relation == "borrowed" else ""
-            changed += 1
+        if assignment.get("Kind") not in {"reflex", "borrowed"}:
+            raise ValueError(f"unsupported assignment kind {assignment.get('Kind')!r} for {form_id}")
+        if not re.fullmatch(r"[1-9]\d*", assignment.get("Rank", "1")):
+            raise ValueError(f"bad assignment rank {assignment.get('Rank')!r} for {form_id}")
+
+
+def apply_assignments(
+    edges_path: Path, forms: list[dict[str, str]], assignments: list[dict[str, str]]
+) -> int:
+    """Patch the curated overlay into cldf/edges.csv (rank-1 upserts replace the accepted
+    etymology; rank≥2 upserts add hypotheses; rejected rows delete generated non-primary edges).
+    A form gaining a rank-1 edge stops being `unlinked`."""
+    fields, edges = read_rows(edges_path)
+    if not fields:
+        raise ValueError(f"{edges_path} missing — run unify_cldf.py first")
+    by_form = {row["ID"]: row for row in forms}
+    rank1_by_child = {}
+    for edge in edges:
+        if edge.get("Rank") == "1" and edge.get("Kind") in {"reflex", "borrowed", "variant"}:
+            rank1_by_child[edge["Child_ID"]] = edge
+    changed = 0
+    for assignment in assignments:
+        status = assignment.get("Status", "accepted").strip().lower()
+        form_id = assignment.get("Form_ID", "").strip()
+        etymon_id = assignment.get("Etymon_ID", "").strip()
+        kind = assignment.get("Kind", "reflex")
+        rank = assignment.get("Rank", "1")
+        if status in REJECTED:
+            before = len(edges)
+            edges = [
+                e for e in edges
+                if not (e["Child_ID"] == form_id and e["Parent_ID"] == etymon_id and e["Rank"] != "1")
+            ]
+            changed += before - len(edges)
+            continue
+        if rank == "1":
+            existing = rank1_by_child.get(form_id)
+            if existing is not None:
+                if (existing["Parent_ID"], existing["Kind"]) != (etymon_id, kind):
+                    existing.update(
+                        Parent_ID=etymon_id, Kind=kind,
+                        Source=assignment.get("Source", ""), Note="",
+                    )
+                    changed += 1
+            else:
+                edge = dict(
+                    Child_ID=form_id, Parent_ID=etymon_id, Kind=kind, Rank="1", Pos="",
+                    Source=assignment.get("Source", ""), Note="",
+                )
+                edges.append(edge)
+                rank1_by_child[form_id] = edge
+                changed += 1
+            row = by_form.get(form_id)
+            if row is not None and row.get("Status") == "unlinked":
+                row["Status"] = ""
+                changed += 1
+        else:
+            match = [
+                e for e in edges
+                if e["Child_ID"] == form_id and e["Parent_ID"] == etymon_id and e["Rank"] != "1"
+            ]
+            if match:
+                for e in match:
+                    if e.get("Note", "").startswith("review:") or e.get("Kind") != kind:
+                        e.update(Kind=kind, Rank=rank, Source=assignment.get("Source", ""), Note="")
+                        changed += 1
+            else:
+                edges.append(dict(
+                    Child_ID=form_id, Parent_ID=etymon_id, Kind=kind, Rank=rank, Pos="",
+                    Source=assignment.get("Source", ""), Note="",
+                ))
+                changed += 1
+    edges.sort(key=lambda e: (
+        e["Child_ID"], e["Kind"], int(e["Rank"] or 1), int(e["Pos"] or 0), e["Parent_ID"]
+    ))
+    write_rows(edges_path, EDGES_FIELDS, edges)
     return changed
 
 
@@ -240,8 +327,8 @@ def main() -> None:
     args = parser.parse_args()
 
     fields, forms = read_rows(args.forms)
-    if not forms or "Relation" not in fields:
-        raise ValueError(f"{args.forms} is not a unified Jambu forms table")
+    if not forms or "Status" not in fields or "Redirect" not in fields:
+        raise ValueError(f"{args.forms} is not a unified Jambu forms table (edge-model format)")
     _, registry = read_rows(args.registry)
     if args.fresh:
         reverse = {
@@ -249,11 +336,9 @@ def main() -> None:
             for row in registry
             if row.get("Form_ID") and row.get("Legacy_ID") and row.get("Status") == "active"
         }
-        reference_columns = ("Origin_ID", "Redirect", "Variant_Of", "Borrowed_From")
         for row in forms:
             row["ID"] = reverse.get(row["ID"], row["ID"])
-            for column in reference_columns:
-                row[column] = reverse.get(row.get(column, ""), row.get(column, ""))
+            row["Redirect"] = reverse.get(row.get("Redirect", ""), row.get("Redirect", ""))
         for name, columns in GRAPH_FILE_COLUMNS.items():
             rewrite_graph_file(args.forms.parent / name, columns, reverse)
         registry = []
@@ -271,11 +356,9 @@ def main() -> None:
     aliases = {row["Legacy_ID"]: row["Form_ID"] for row in old_aliases if row.get("Legacy_ID")}
     aliases.update({old: new for old, new in mapping.items() if old != new})
 
-    reference_columns = ("Origin_ID", "Redirect", "Variant_Of", "Borrowed_From")
     for row in forms:
         row["ID"] = mapping.get(row["ID"], row["ID"])
-        for column in reference_columns:
-            row[column] = mapping.get(row.get(column, ""), row.get(column, ""))
+        row["Redirect"] = mapping.get(row.get("Redirect", ""), row.get("Redirect", ""))
 
     active_ids = {row["ID"] for row in forms}
     # A policy migration may restore a source-owned dictionary ID that an earlier run aliased to
@@ -294,12 +377,15 @@ def main() -> None:
         for column in ("Form_ID", "Etymon_ID"):
             value = restored_ids.get(assignment.get(column, ""), assignment.get(column, ""))
             assignment[column] = value if value in active_ids else aliases.get(value, value)
-    changed = apply_assignments(forms, assignments)
+    migrate_assignment_schema(assignments)
+    validate_assignments(forms, assignments)
 
     # Do not mutate sidecar graph files until every assignment has validated. A bad assignment
     # must leave the whole pre-ID build intact rather than producing a half-rewritten graph.
     for name, columns in GRAPH_FILE_COLUMNS.items():
         rewrite_graph_file(args.forms.parent / name, columns, mapping)
+
+    changed = apply_assignments(args.forms.parent / "edges.csv", forms, assignments)
 
     write_rows(args.forms, fields, forms)
     write_rows(args.registry, REGISTRY_FIELDS, next_registry)

@@ -236,7 +236,13 @@ def load_cdial(repo: Path):
     # and point to their CDIAL Origin_ID, never to generated ``0-N`` row IDs.
     variant_rows = []
     with (repo / "cldf/forms.csv").open(encoding="utf-8") as stream:
-        for row in csv.DictReader(stream):
+        _form_rows = list(csv.DictReader(stream))
+    import sys as _sys
+    _sys.path.insert(0, str(repo))
+    from edges_util import attach_legacy_graph
+    attach_legacy_graph(_form_rows, str(repo / "cldf/edges.csv"))
+    if True:
+        for row in _form_rows:
             if row["Language_ID"] != "Indo-Aryan" or "CDIAL" not in row["Source"]:
                 continue
             direct = not row["Origin_ID"]

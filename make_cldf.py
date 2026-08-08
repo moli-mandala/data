@@ -454,12 +454,17 @@ def main():
         else:
             orig_row = cleaned[key][0]
             if row.cognateset is None or row.cognateset == "":
-                orig_row.gloss = '; '.join([x for x in set([orig_row.gloss, row.gloss]) if x])
-                orig_row.native = '; '.join([x for x in set([orig_row.native, row.native]) if x])
-                orig_row.notes = '; '.join([x for x in set([orig_row.notes, row.notes]) if x])
-                orig_row.source = ';'.join([x for x in set([orig_row.source, row.source]) if x])
-                orig_row.ipa = '; '.join([x for x in set([orig_row.ipa, row.ipa]) if x])
-                orig_row.old_form = '; '.join([x for x in set([orig_row.old_form, row.old_form]) if x])
+                # dict.fromkeys, NOT set: set iteration order is hash-randomised per run, and
+                # these joined fields feed the durable-ID fingerprint — a nondeterministic order
+                # here silently re-minted ~650 f_ ids on every rebuild
+                def _merge(*values, sep='; '):
+                    return sep.join(dict.fromkeys(x for x in values if x))
+                orig_row.gloss = _merge(orig_row.gloss, row.gloss)
+                orig_row.native = _merge(orig_row.native, row.native)
+                orig_row.notes = _merge(orig_row.notes, row.notes)
+                orig_row.source = _merge(orig_row.source, row.source, sep=';')
+                orig_row.ipa = _merge(orig_row.ipa, row.ipa)
+                orig_row.old_form = _merge(orig_row.old_form, row.old_form)
                 # Long source analyses are already deduplicated by their
                 # extractor; do not recursively concatenate a growing block
                 # when normalised duplicate forms collapse here.
@@ -604,7 +609,7 @@ def main():
                 )
                 included_params.add(row[0])
 
-        for file in tqdm(glob.glob("data/other/params/*.csv")):
+        for file in tqdm(sorted(glob.glob("data/other/params/*.csv"))):
             # get filename
             name = file.split("/")[-1].split(".")[0]
             convert = name in convertors or name in mapping

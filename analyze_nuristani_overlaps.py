@@ -33,6 +33,8 @@ def gloss_tokens(value):
 def main():
     with open("cldf/forms.csv", encoding="utf-8") as file:
         rows = list(csv.DictReader(file))
+    from edges_util import attach_legacy_graph
+    attach_legacy_graph(rows)
     entries = {row["ID"]: row for row in rows if not row["Origin_ID"]}
     signatures = defaultdict(set)
     for row in rows:
