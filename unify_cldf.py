@@ -32,6 +32,8 @@ import unicodedata
 from collections import defaultdict
 
 from edges_build import build_edges, write_edges
+from burushaski_cognates import apply_catalog as apply_burushaski_catalog
+from burushaski_cognates import load_catalog as load_burushaski_catalog
 
 _ADD_PTR = re.compile(r"\s*Add\.\s*\d+\.?")  # the now-defunct "Add. N" pointer after a merge
 # separates a main entry's etymology snippet from a merged addendum's; the webapp splits on it and
@@ -904,6 +906,14 @@ def main():
     n_nuristani_borrowings, n_nuristani_borrowed_descendants = apply_nuristani_borrowings(
         etyma_rows + reflex_rows, load_nuristani_borrowings()
     )
+    burushaski_catalog = load_burushaski_catalog()
+    burushaski_rows, burushaski_source_keys = apply_burushaski_catalog(
+        etyma_rows + reflex_rows + ext_entry_rows,
+        source_id_by_key,
+        burushaski_catalog,
+    )
+    ext_entry_rows.extend(burushaski_rows)
+    source_keys.extend(burushaski_source_keys)
     n_strand_oia_redirects, n_strand_oia_references = apply_strand_oia_redirects(
         etyma_rows, reflex_rows, load_strand_oia_redirects()
     )
@@ -984,6 +994,8 @@ def main():
         f"+ {n_crossed} contamination-tagged + {n_lone} lone nodes; "
         f"applied {n_curated_borrowings} curated cross-dictionary borrowings; "
         f"attached {n_nuristani_reflexes} PNur/IA nodes as Proto-II reflexes; "
+        f"built {len(burushaski_rows)} Proto-Burushaski entries from "
+        f"{sum(len(row['Evidence_Keys'].split('|')) for row in burushaski_catalog)} dialect attestations; "
         f"applied {n_nuristani_borrowings} Strand OIA loan branches "
         f"with {n_nuristani_borrowed_descendants} direct borrowed descendants; "
         f"merged {n_strand_oia_redirects} duplicate Strand OIA heads and redirected "

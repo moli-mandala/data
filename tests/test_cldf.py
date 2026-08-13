@@ -191,11 +191,14 @@ def test_marked_origins_are_borrowings_with_valid_targets():
 
     marked = [
         row for row in forms.values()
-        if row["Tags"] in {"marked borrowing", "semi-tatsama"}
+        if (
+            {"marked", "borrowing"} <= set(row["Tags"].split())
+            or "semi-tatsama" in row["Tags"].split()
+        )
     ]
-    assert len(marked) == 221
-    assert sum(row["Tags"] == "marked borrowing" for row in marked) == 158
-    assert sum(row["Tags"] == "semi-tatsama" for row in marked) == 63
+    assert len(marked) == 457
+    assert sum({"marked", "borrowing"} <= set(row["Tags"].split()) for row in marked) == 394
+    assert sum("semi-tatsama" in row["Tags"].split() for row in marked) == 63
     for row in marked:
         assert row["Origin_ID"] in forms
         assert row["Relation"] == "borrowed"
@@ -360,6 +363,7 @@ def test_ocr_provenance_is_explicit_on_references():
         "berger-auto",
         "paranavitana",
         "shackle-auto",
+        "srinivasa",
     }
     assert set(row["OCR"] for row in references.values()) <= {"Yes", "No"}
 

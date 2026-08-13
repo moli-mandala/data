@@ -9,6 +9,7 @@ import os
 from copy import deepcopy
 
 from utils import mapping, superscript, change
+from dialects import load_dialect_aliases, normalize_dialect
 from tags import extract_tags
 from tamil_morphology import append_note, extract_tamil_verb_morphology
 from dedr_variants import (
@@ -219,6 +220,12 @@ def parse_file(file: str, errors, name=None, file_num=0, param_counter=None):
         # the legacy filename heuristic, so select its phonetic parser by source.
         row_ipa = "cdial" if row.source in {"shackle", "shackle-auto"} else ipa
         row_convert = row_ipa is not None and (row.source in {"shackle", "shackle-auto"} or convert)
+        # Hindu Kush Areal Typology supplies canonical IPA, unlike Liljegren's Palula dictionary
+        # (practical orthography). The dated filename heuristic reduces both to ``liljegren``;
+        # route this source explicitly through its IPA-to-house-transcription profile.
+        if row.source.split("[", 1)[0] == "liljegren-hindukush":
+            row_ipa = "liljegren-hindukush"
+            row_convert = True
         # Schmidt & Kaul use one transcription system for the four Table 3
         # Table 3 varieties. Route by provenance and language rather than the
         # dated filename, whose legacy parser reduces both Schmidt imports to
@@ -361,6 +368,22 @@ def parse_file(file: str, errors, name=None, file_num=0, param_counter=None):
                 else:
                     row.form = form_out
                     stats["converted"] += 1
+            elif row_ipa == "liljegren-hindukush" and row_convert:
+                # Keep upstream canonical IPA in Phonemic and convert only the display form.
+                # NFC matches the source's CLDF grapheme inventory; underscores are word spaces.
+                stats["for_conversion"] += 1
+                src = unicodedata.normalize("NFC", reformed.strip(",;."))
+                form_out = unicodedata.normalize(
+                    "NFC",
+                    convertors["liljegren-hindukush"](src, column="IPA")
+                    .replace(" ", "")
+                    .replace("#", " "),
+                )
+                if "�" in form_out:
+                    errors.write(str(row) + " " + form_out + "\n")
+                else:
+                    row.form = form_out
+                    stats["converted"] += 1
             elif row_ipa is not None and "˚" not in form and row_convert:
                 stats["for_conversion"] += 1
                 # fix accentuation from Strand
@@ -393,6 +416,7 @@ def parse_file(file: str, errors, name=None, file_num=0, param_counter=None):
 def main():
     # write out forms.csv
     errors = open("errors.txt", "w")
+    dialect_aliases = load_dialect_aliases()
 
     form_count = 0
     results: list[Row] = []
@@ -437,10 +461,14 @@ def main():
             row.lang,
             row.param,
             row.form,
-            # Gandhari.org has genuine homographic articles, including senses with the same
-            # Sanskrit etymon and English gloss.  Its stable article key keeps those dictionary
-            # entries distinct while retaining the legacy dedupe behaviour for other sources.
-            row.entry_key if row.source == "gandhari" else "",
+            # Rich source-keyed imports can contain genuine homographs or the same form under
+            # several elicitation prompts. Their immutable record keys keep those entries distinct
+            # while retaining the legacy dedupe behaviour for other sources.
+            row.entry_key
+            if row.source.split("[", 1)[0] in {
+                "gandhari", "kullui-org", "liljegren-hindukush", "tulpule1999"
+            }
+            else "",
             row.gloss
             if not row.param and (
                 row.lang.startswith("SSNP-")
@@ -516,13 +544,22 @@ def main():
             row.form = unicodedata.normalize("NFC", row.form)
             if row.param:
                 param_set.add(row.param.lstrip(">~"))
-            lang_set.add(row.lang)
 
-            # lift structured tokens (gender, grammatical category) out of notes into Tags
-            parsed_tags, row.notes = extract_tags(row.notes)
+            # Normalize source lects before creating language-qualified regional dialect tags.
+            row.lang, row.tags = normalize_dialect(row.lang, row.tags, dialect_aliases)
+
+            # Regional labels are a CDIAL convention. Other sources can contain the same place
+            # names in bibliographic prose, so only CDIAL rows receive regional dialect tags.
+            regional_language_id = (
+                row.lang if row.source.split(";", 1)[0].split("[", 1)[0] == "CDIAL" else None
+            )
+            parsed_tags, row.notes = extract_tags(
+                row.notes, language_id=regional_language_id
+            )
             row.tags = " ".join(
                 dict.fromkeys(filter(None, row.tags.split() + parsed_tags.split()))
             )
+            lang_set.add(row.lang)
 
             if row.lang == "Tamil" and row.source == "dedr":
                 morphology = extract_tamil_verb_morphology(row.form)
@@ -666,16 +703,12 @@ def main():
             params.writerow([ancestor_id, "", "Indo-ir", "", "", ""])
             included_params.add(ancestor_id)
 
-    # ensure that all languages in forms.csv are also in languages.csv
-    cldf_langs = set()
-    with open("cldf/languages.csv", "r") as fin:
-        for row in fin.readlines():
-            x = row.split(",")[0]
-            cldf_langs.add(x)
-
-    for i in sorted(lang_set):
-        if i not in cldf_langs:
-            print(i)
+    # A dangling Language_ID makes the CLDF invalid and used to pass as an easily missed print.
+    with open("cldf/languages.csv", encoding="utf-8", newline="") as fin:
+        cldf_langs = {row["ID"] for row in csv.DictReader(fin)}
+    missing_languages = sorted(lang_set - cldf_langs)
+    if missing_languages:
+        raise ValueError(f"Forms reference missing languages: {missing_languages}")
 
     # check params
     for i in sorted(param_set):

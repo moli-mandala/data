@@ -15,7 +15,8 @@ To recreate the CLDF database from raw data, just run `make parse` in root. To v
 The final CLDF database is in `cldf/`. It includes the following:
 
 - `forms.csv`: Lemmata.
-- `languages.csv`: List of languages, metadata (coordinates, Glottolog ID) for each.
+- `languages.csv`: Base languages and their metadata (coordinates, Glottolog ID).
+- `dialects.csv`: Dialect-tag metadata and the source lect IDs normalized to each base language.
 - `parameters.csv`: Entries, including headwords and etymological notes.
 - `sources.bib`: References in BibTeX format.
 
@@ -96,6 +97,15 @@ the public Gandhari.org dictionary API. It emits only unique, accent-normalized 
 head matches into `data/other/forms/20260805-gandhari-org.csv`; ambiguous and unmatched articles
 are written to `tmp/gandhari-org-audit.csv`. Article JSON is cached under
 `tmp/gandhari-org-cache/`, so refreshes and interrupted downloads are resumable.
+
+#### Kullui dictionary
+
+`data/other/forms/raw_data/kullui_org.py` snapshots the public JSON API used by
+`kullui.org`. The live database (version 3.1.0 when ingested) is newer and richer than the July
+2023 PDF export, so it is the canonical input. Every article is retained, including
+unetymologised entries; explicitly identified Old Indo-Aryan and Sanskrit protoforms are linked
+only when they have one exact, accent-normalized CDIAL head match. Article JSON is cached under
+`tmp/kullui-org-cache/`, and all match outcomes are written to `tmp/kullui-org-audit.csv`.
 
 #### DBIA
 

@@ -130,7 +130,10 @@ def test_enriched_kalasha_cldf_graph_is_resolved():
     by_id = {row["ID"]: row for row in all_rows}
 
     assert sum("dialect-variant" in row["Tags"].split() for row in rows) == 146
-    assert {"bumb", "rumb", "bir", "urt"} <= {row["Language_ID"] for row in rows}
+    assert {"dialect:Kal:bumb:Bumburet", "dialect:Kal:rumb:Rambur",
+            "dialect:Kal:bir:Birir", "dialect:Kal:urt:Urtsun"} <= {
+        tag for row in rows for tag in row["Tags"].split()
+    }
     assert sum(row["Relation"] == "borrowed" for row in rows) == 956
     assert sum("loan-source" in row["Tags"].split() for row in rows) == 9
     assert sum(bool(row["Etymology"]) for row in rows) == 878

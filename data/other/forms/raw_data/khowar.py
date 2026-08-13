@@ -23,6 +23,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 
 import pdfplumber
+from dialects import dialect_tag
 
 
 SOURCE_ID = "bashir2023"
@@ -854,22 +855,32 @@ def extract(
     return rows
 
 
-def sync_languages(path: Path, dialects: dict[str, dict], need_turkic: bool) -> None:
+def sync_dialects(path: Path, dialects: dict[str, dict]) -> None:
     with path.open(encoding="utf-8", newline="") as stream:
         reader = csv.DictReader(stream)
         fields = reader.fieldnames or [
-            "ID", "Name", "Glottocode", "Latitude", "Longitude", "Clade", "Location", "Quality"
+            "ID", "Tag", "Language_ID", "Source_Language_ID", "Name", "Glottocode",
+            "Latitude", "Longitude", "Clade", "Location", "Quality",
         ]
         rows = [
             row for row in reader
-            if not row["ID"].startswith("Kho-Bashir-") and row["ID"] != "TurkicUnspec"
+            if not row["Source_Language_ID"].startswith("Kho-Bashir-")
         ]
-    rows.extend(dialects[key] for key in sorted(dialects))
-    if need_turkic:
+    for key in sorted(dialects):
+        source = dialects[key]
+        name = source["Name"].split(": ", 1)[1]
         rows.append({
-            "ID": "TurkicUnspec", "Name": "Turkic (unspecified)", "Glottocode": "",
-            "Latitude": "", "Longitude": "", "Clade": "Other",
-            "Location": "", "Quality": "C",
+            "ID": source["ID"],
+            "Tag": dialect_tag(LANGUAGE_ID, source["ID"], name),
+            "Language_ID": LANGUAGE_ID,
+            "Source_Language_ID": source["ID"],
+            "Name": name,
+            "Glottocode": source["Glottocode"],
+            "Latitude": source["Latitude"],
+            "Longitude": source["Longitude"],
+            "Clade": source["Clade"],
+            "Location": source["Location"],
+            "Quality": source["Quality"],
         })
     with path.open("w", encoding="utf-8", newline="") as stream:
         writer = csv.DictWriter(stream, fieldnames=fields, lineterminator="\n")
@@ -896,6 +907,9 @@ def main() -> None:
     parser.add_argument(
         "--languages", type=Path, default=Path("cldf/languages.csv")
     )
+    parser.add_argument(
+        "--dialects", type=Path, default=Path("cldf/dialects.csv")
+    )
     args = parser.parse_args()
     existing = _existing_source_index(Path("cldf/forms.csv"))
     entries = extract_entries(args.pdf)
@@ -908,11 +922,22 @@ def main() -> None:
         writer = csv.DictWriter(stream, fieldnames=list(audit[0]), lineterminator="\n")
         writer.writeheader()
         writer.writerows(audit)
-    sync_languages(
-        args.languages,
-        dialects,
-        any(row[0] == "TurkicUnspec" for row in rows),
-    )
+    sync_dialects(args.dialects, dialects)
+    if any(row[0] == "TurkicUnspec" for row in rows):
+        with args.languages.open(encoding="utf-8", newline="") as stream:
+            reader = csv.DictReader(stream)
+            language_fields = reader.fieldnames
+            language_rows = list(reader)
+        if not any(row["ID"] == "TurkicUnspec" for row in language_rows):
+            language_rows.append({
+                "ID": "TurkicUnspec", "Name": "Turkic (unspecified)", "Glottocode": "",
+                "Latitude": "", "Longitude": "", "Clade": "Other",
+                "Location": "", "Quality": "C",
+            })
+            with args.languages.open("w", encoding="utf-8", newline="") as stream:
+                writer = csv.DictWriter(stream, fieldnames=language_fields, lineterminator="\n")
+                writer.writeheader()
+                writer.writerows(language_rows)
     linked = sum(bool(row[1]) for row in rows)
     unresolved = sum("unresolved Turner" in row[6] for row in rows)
     roles = {role: sum(item["Role"] == role for item in audit) for role in ("head", "variant", "subentry")}

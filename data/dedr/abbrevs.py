@@ -4,6 +4,35 @@ fixes = [
     'O.', 'Or.', 'Nahali', 'Mar.', 'Beng.', 'Halbi', 'Nep.', 'Ta.', 'Sgh.'
 ]
 
+# A small set of source entries has an unclosed initial ``<b>`` tag, making
+# the first language's English definition look like more comma-separated
+# headwords.  These are exact definition boundaries in the published text.
+shared_gloss_boundaries = {
+    '23': 'wife of an elder brother',
+    '360': 'id.',
+    '1075': 'desire',
+    '1315': 'unhusk with the teeth',
+    '1347': 'bonduc nut',
+    '1699': 'munch',
+    '2367': 'in the dry bed of a river or a dried-up tank',
+    '3252': 'essential part',
+    '3594': 'moist',
+    '4251': 'hands',
+}
+
+source_markup_repairs = {
+    '4428': [('bē salt, piquancy, spirit, flavour.',
+              '<b>bē</b> salt, piquancy, spirit, flavour.')],
+}
+
+# Definitions stated once for a whole compact subsection whose remaining
+# forms are bare equivalents.  The section indices come from the source's
+# slash-separated layout.
+shared_section_glosses = {
+    ('1159', 2): 'tears',
+    ('5496', 6): 'butter',
+}
+
 abbrevs = {
     'Ta': 'Tam',
     'Ma': 'Mal',
@@ -15,6 +44,8 @@ abbrevs = {
     'To': 'Toda',
     'Ka': 'Kannada',
     'Koḍ': 'Kodagu',
+    # A handful of entries use the non-diacritic spelling.
+    'Kod': 'Kodagu',
     'Tu': 'Tulu',
     'Bel': 'Belari',
     'Kor': 'Koraga',

@@ -37,6 +37,13 @@ languages = ['IndoAryan/Pashai/Degan/DeganLanguage',
              'IndoAryan/Indus/Atsaret/AtsaretLanguage']
 
 codes = ['deg', 'Kam', 'Kata', 'Ash', 'Wg', 'Kho', 'Phal']
+legacy_output_languages = {
+    'deg': 'deg', 'Kam': 'Kam', 'Kata': 'ktivi', 'Ash': 'sanu',
+    'Wg': 'nis', 'Kho': 'Kho', 'Phal': 'Phal',
+}
+legacy_locations = {
+    'Kata': 'Kmkt.ktv', 'Ash': 'Aṣk.s', 'Wg': 'Kal.n',
+}
 CHECK = '�'
 
 lang_mapping = {
@@ -65,73 +72,178 @@ src_mapping = {
 # Strand uses the same compact grammatical notation throughout these lexica. Convert the labels
 # to Jambu's shared structured vocabulary instead of discarding them with the surrounding HTML.
 _POS_TOKEN = re.compile(
-    r"(?<![A-Za-z])(?:VT|VI|V|N[A-Za-z0-9?+<*`]*|Aj[A-Za-z0-9?+<*`]*|AJ|"
-    r"Av[A-Za-z0-9?+<*`]*|Pn[A-Za-z0-9?+<*`]*|Cj|Id|I|Neg|Emp|Mod|St|"
-    r"D[`*]?|L[A-Za-z0-9?+<*`]*|M|En)(?![A-Za-z])",
+    r"(?<![A-Za-z])(?:VT[A-Za-z0-9?+<*`>~ḍṭ&;!:-]*|VI[A-Za-z0-9?+<*`>~ḍṭ&;!:-]*|"
+    r"V[A-Za-z0-9?+<*`>~ḍṭ&;-]*|NP[A-Za-z0-9?+<*`>~ḍṭ&;-]*|"
+    r"N[A-Za-z0-9?+<*`>~ḍṭ&;-]*|Aj[A-Za-z0-9?+<*`>~ḍṭ&;-]*|"
+    r"AJ[A-Za-z0-9?+<*`>~ḍṭ&;-]*|Av[A-Za-z0-9?+<*`>~ḍṭ&;-]*|"
+    r"Pn[A-Za-z0-9?+<*`>~ḍṭ&;-]*|Cj[A-Za-z0-9?+<*`>~ḍṭ&;-]*|C|"
+    r"Id[A-Za-z0-9?+<*`>~ḍṭ&;-]*|I|Neg|Emp|Mode?[A-Za-z0-9?+<*`>~ḍṭ&;-]*|"
+    r"Stat|St|D[A-Za-z0-9?+<*`>~ḍṭ&;-]*|L[A-Za-z0-9?+<*`>~ḍṭ&;!:-]*|"
+    r"M[A-Za-z0-9?+<*`>~ḍṭ&;-]*|En[A-Za-z0-9?+<*`>~ḍṭ&;-]*|"
+    r"Qt[A-Za-z0-9?+<*`>~ḍṭ&;-]*)"
+    r"(?![A-Za-z])",
+)
+
+
+def clean_strand_text(value):
+    """Collapse source line wrapping and non-breaking whitespace without changing spelling."""
+    return re.sub(r"\s+", " ", value or "").strip()
+
+
+_GENDER_WORD = re.compile(
+    r"(?<![A-Za-z])(?:m\.?|masc\.?|masculine|male|f\.?|fem\.?|feminine|female|"
+    r"n\.?|neut\.?|neuter)(?![A-Za-z])",
     re.IGNORECASE,
 )
 
 
-def strand_pos_tags(label):
-    """Translate a Strand grammatical code into canonical, searchable Jambu tags."""
-    match = _POS_TOKEN.search(label or "")
-    if not match:
-        return ""
-    raw_code = match.group(0)
-    code = {
-        "vt": "VT", "vi": "VI", "v": "V", "aj": "Aj", "cj": "Cj",
-        "id": "Id", "i": "I", "neg": "Neg", "emp": "Emp", "mod": "Mod",
-        "st": "St", "m": "M", "en": "En",
-    }.get(raw_code.casefold(), raw_code)
+def strand_definition_tags(definition):
+    """Extract bracketed Strand gender labels from a definition.
+
+    A bare marker such as ``[m.]`` is structured metadata and is removed from the gloss. More
+    descriptive brackets such as ``[fem. form only]`` still contribute a gender tag, but remain in
+    the gloss so the non-gender information is not lost.
+    """
     tags = []
-    if code == "VT":
+
+    def replace(match):
+        content = clean_strand_text(match.group(1))
+        found = _GENDER_WORD.findall(content)
+        for word in found:
+            folded = word.rstrip(".").casefold()
+            if folded in {"m", "masc", "masculine", "male"}:
+                tags.append("m")
+            elif folded in {"f", "fem", "feminine", "female"}:
+                tags.append("f")
+            elif folded in {"n", "neut", "neuter"}:
+                tags.append("n")
+        if not found:
+            return match.group(0)
+
+        remainder = _GENDER_WORD.sub("", content)
+        remainder = re.sub(r"(?<![A-Za-z])(?:s|sg|singular|pl|plural)\.?(?![A-Za-z])", "", remainder, flags=re.IGNORECASE)
+        remainder = re.sub(r"[\s./,;|]+", "", remainder)
+        return "" if not remainder else match.group(0)
+
+    cleaned = re.sub(r"\[([^]]+)\]", replace, definition or "")
+    cleaned = re.sub(r"\s+([,;:.!?])", r"\1", clean_strand_text(cleaned))
+    return cleaned, list(dict.fromkeys(tags))
+
+
+def _strand_code_tags(code):
+    folded = code.casefold()
+    tags = []
+    if folded.startswith("vt"):
         tags = ["verb", "tr"]
-    elif code == "VI":
+    elif folded.startswith("vi"):
         tags = ["verb", "intr"]
-    elif code == "V":
+    elif folded.startswith("v"):
         tags = ["verb"]
-    elif code.startswith("N"):
-        tags = ["num"] if "Qt" in code else (["adj"] if "Ql" in code else ["noun"])
-        if "F" in code:
-            tags.append("f")
-        if "Pl" in code:
-            tags.append("pl")
-    elif code.startswith(("Aj", "AJ")):
-        tags = ["adj"]
-        if "Qt" in code:
-            tags.append("num")
-    elif code.startswith("Av"):
-        tags = ["adv"]
-    elif code.startswith("Pn"):
+    elif folded.startswith("pn") or re.match(r"np(?:n|d|[1234]|$)", folded):
         tags = ["pron"]
-        if "Pl" in code:
+        if "pl" in folded:
             tags.append("pl")
         if "?" in code:
             tags.append("interr")
-    elif code == "Cj":
+    elif folded.startswith("n"):
+        tags = ["num"] if "qt" in folded else (["adj"] if "ql" in folded else ["noun"])
+        if "F" in code:
+            tags.append("f")
+        if "pl" in folded:
+            tags.append("pl")
+    elif folded.startswith("aj"):
+        tags = ["adj"]
+        if "qt" in folded:
+            tags.append("num")
+        if "F" in code:
+            tags.append("f")
+        if "pl" in folded:
+            tags.append("pl")
+    elif folded.startswith("av"):
+        tags = ["adv"]
+    elif folded.startswith("cj") or folded == "c":
         tags = ["conj"]
-    elif code in {"I", "Id"}:
+    elif folded == "i" or folded.startswith("id"):
         tags = ["interj"]
-    elif code == "Neg":
-        tags = ["part"]
-    elif code == "Emp":
+    elif folded == "neg" or folded.endswith("neg"):
+        tags = ["part", "neg"]
+    elif folded == "emp":
         tags = ["part", "emph"]
-    elif code == "Mod":
+    elif folded.startswith("mod"):
         tags = ["part"]
-    elif code == "St":
+    elif folded in {"st", "stat"}:
         tags = ["part", "interr"]
-    elif code.startswith("D"):
+    elif folded.startswith("d"):
         tags = ["dir"]
-    elif code in {"M", "En"}:
+        if "neg" in folded:
+            tags.append("neg")
+    elif folded.startswith("man"):
+        tags = ["adv", "manner"]
+    elif folded.startswith(("m", "en")):
         tags = ["suffix"]
-    # L... distinguishes many spatial/temporal locatives and place-name classes. Its prefix alone
-    # does not safely imply adverb, postposition, or noun, so those codes remain untagged.
+    elif folded.startswith("qt"):
+        tags = ["num"]
+    elif folded.startswith("l"):
+        # L... spans locative adverbs, suffixes, and place-name classes. ``spatial`` is the safe
+        # shared grammatical feature; only the explicitly temporal LTm subtype gets more detail.
+        tags = ["spatial"]
+        if "tm" in folded:
+            tags.append("temporal")
+    return tags
+
+
+def strand_pos_tags(label):
+    """Translate Strand grammatical codes into canonical, searchable Jambu tags."""
+    tags = []
+    label = re.sub(r"\(\s*via\b.*?\)", "", label or "", flags=re.IGNORECASE)
+    for match in _POS_TOKEN.finditer(label):
+        tags.extend(_strand_code_tags(match.group(0)))
     return " ".join(dict.fromkeys(tags))
+
+
+_LEGACY_POS = re.compile(
+    rf"(({_POS_TOKEN.pattern})(?:\|({_POS_TOKEN.pattern}))*)"
+    rf"(?:\s+(?:Z|\d+))?\.(?:\s|&nbsp;|\xa0)*"
+)
+_LEGACY_ANALYSIS = re.compile(
+    r"\.\s*(?:\xa0|&nbsp;| )*\[<span[^>]*class=[\"']dic[\"'][^>]*>", re.IGNORECASE
+)
+
+
+def parse_legacy_entry(data):
+    """Extract one old-style Strand dictionary paragraph.
+
+    Definitions end at the bracketed morphological analysis, not at the first full stop: the
+    latter truncates common source text such as ``[m.]`` and leaks inline ``span`` markup.
+    """
+    word_node = data.find(class_="l")
+    if not word_node:
+        return None
+    word = word_node.find(string=True, recursive=False) or word_node.get_text()
+    html = str(data).replace("\n", " ")
+    pos_match = _LEGACY_POS.search(html)
+    if not pos_match:
+        return None
+    definition_start = pos_match.end()
+    analysis_match = _LEGACY_ANALYSIS.search(html, definition_start)
+    if not analysis_match:
+        return None
+    definition_html = html[definition_start:analysis_match.start()]
+    definition = BeautifulSoup(definition_html, "html.parser").get_text()
+    turner = re.search(r"T\.\s*(\d+)", html)
+    return {
+        "word": clean_strand_text(word),
+        "pos": pos_match.group(1),
+        "definition": clean_strand_text(definition).lower(),
+        "turner": turner.group(1) if turner else "",
+    }
 
 
 def strand_row(language, parameter, form, definition, ipa, notes, source, pos, location):
     """Return the 15-column manual-import shape, with structured tags in column 15."""
     tags = strand_pos_tags(pos).split()
+    definition, definition_tags = strand_definition_tags(definition)
+    tags.extend(definition_tags)
     dialect = DIALECT_NAMES.get(location, location)
     if dialect:
         tags.append("dialect:" + quote(dialect, safe=""))
@@ -142,8 +254,8 @@ def strand_row(language, parameter, form, definition, ipa, notes, source, pos, l
 
 def strand3():
     with open('strand3.csv', 'w') as f, open('../params/strand3.csv', 'w') as p:
-        forms = csv.writer(f)
-        params = csv.writer(p)
+        forms = csv.writer(f, lineterminator="\r\n")
+        params = csv.writer(p, lineterminator="\r\n")
         ct = 0
         done = False
         stack = []
@@ -162,7 +274,7 @@ def strand3():
                             # store headwords
                             if row.find(class_='lng1') or row.find(class_='lng2'):
                                 comment = tds[-1].find(class_='mid')
-                                text = tds[-1].text.replace('\n', '')
+                                text = clean_strand_text(tds[-1].get_text())
                                 defns = re.findall(r'‘(.*?)’', text)
                                 level = int(tds[0].get('colspan', 1) or 1 if row.find(class_='lng2') else 0)
                                 while stack and level <= stack[-1]['level']:
@@ -181,12 +293,12 @@ def strand3():
                                     ct += 1
 
                                 l = {
-                                    'lang': tds[-2].find('em').text,
+                                    'lang': clean_strand_text(tds[-2].find('em').text),
                                     'level': int(level),
-                                    'form': tds[-1].find('em').text,
-                                    'defn': defns[0] if defns else '',
+                                    'form': clean_strand_text(tds[-1].find('em').text),
+                                    'defn': clean_strand_text(defns[0]) if defns else '',
                                     'id': turner if turner else f'n{ct}',
-                                    'comment': comment.text if comment else ''}
+                                    'comment': clean_strand_text(comment.text) if comment else ''}
                                 last_head = l
                                 stack.append(l)
                                 done = False
@@ -194,11 +306,12 @@ def strand3():
                             # forms    
                             elif row.find(class_='lng'):
                                 comment = tds[-1].find(class_='sm')
-                                text = tds[-1].text.replace('\n', '')
+                                text = clean_strand_text(tds[-1].get_text())
                                 defns = re.findall(r'‘(.*?)’', text)
-                                lang, dial, src = tds[-2].find('em').text.split('.')
-                                location = lang + '.' + dial
-                                form = tds[-1].find('em').text
+                                location, src = clean_strand_text(
+                                    tds[-2].find('em').text
+                                ).rsplit('.', 1)
+                                form = clean_strand_text(tds[-1].find('em').text)
                                 # Broken legacy table markup occasionally makes html.parser omit
                                 # the repeated form from ``.text``. Do not abort the page; in that
                                 # rare case the POS cannot be recovered safely from this row.
@@ -208,7 +321,8 @@ def strand3():
                                 )
                                 r = strand_row(
                                     lang_mapping[location], last_head['id'], form,
-                                    defns[0] if defns else '', '', comment.text if comment else '',
+                                    clean_strand_text(defns[0]) if defns else '', '',
+                                    clean_strand_text(comment.text) if comment else '',
                                     src_mapping[src], before_gloss, location,
                                 )
                                 # print(stack)
@@ -227,41 +341,31 @@ def strand3():
 
 def strand2():
     with open('strand2.csv', 'w') as fout:
-        writer = csv.writer(fout)
+        writer = csv.writer(fout, lineterminator="\r\n")
         link = f'http://nuristan.info/IndoAryan/SwatIndus/Bhatera/BhateraLanguage/Lexicon/lex.html'
         try:
             soup = cached_soup(link, '.cache/strand-legacy/bhatera.html', 'html.parser')
             if soup:
                 for data in soup.find_all(class_='dic'):
-                    word = data.find(class_='l')
-                    if word:
-                        print(word)
-                        word = word.find(text=True, recursive=False)
+                    parsed = parse_legacy_entry(data)
+                    if parsed:
+                        word = parsed["word"]
                         word2 = re.sub(r'ʹ(.)', r'\1ʹ', word)
                         word2 = re.sub(r'`(.)', r'\1`', word2)
                         word2 = re.sub(r'´(.)', r'\1´', word2)
-                        data = str(data).replace('\n', ' ')
-                        l = re.search(r'<b>]</b>\xa0 (.*?)\.\xa0 (.*?)\.', data)
-                        if not l:
-                            l = re.search(r'</span>[\xa0 ]+(.*?)\.\xa0\xa0([^\.]+)\.', data)
-                        print(l)
-                        if l:
-                            pos = l.group(1)
-                            definition = l.group(2).lower()
-                            turner = re.search(r'T\..(\d+)', data)
-                            if turner:
-                                turner = turner.group(1)
-                                ipa = t(word2, column='IPA').replace(' ', '').replace('#', ' ')
-                                writer.writerow(strand_row(
-                                    'bhatr', turner, word, definition, ipa, '', 'strand', pos, 'bhatr'
-                                ))
+                        if parsed["turner"]:
+                            ipa = t(word2, column='IPA').replace(' ', '').replace('#', ' ')
+                            writer.writerow(strand_row(
+                                'bhatr', parsed["turner"], word, parsed["definition"], ipa, '',
+                                'strand', parsed["pos"], 'bhatr'
+                            ))
 
         except HTTPError as e:
             pass
 
 def strand():
     with open('strand.csv', 'w') as fout:
-        writer = csv.writer(fout)
+        writer = csv.writer(fout, lineterminator="\r\n")
         for i, language in enumerate(languages):
             for char in chars:
                 link = f'http://nuristan.info/{language}/Lexicon/alph-{char}.html'
@@ -271,23 +375,18 @@ def strand():
                     soup = cached_soup(link, cache, 'html.parser')
                     if soup:
                         for data in soup.find_all(class_='dic'):
-                            word = data.find(class_='l')
-                            if word:
-                                word = word.find(text=True, recursive=False)
+                            parsed = parse_legacy_entry(data)
+                            if parsed:
+                                word = parsed["word"]
                                 word2 = re.sub(r'ʹ(.)', r'\1ʹ', word)
-                                l = re.search(r'<b>]</b>\xa0 (.*?)\.\xa0 (.*?)\.', str(data))
-                                if not l:
-                                    l = re.search(r'</span>\xa0 (.*?)\.\xa0 (.*?)\.', str(data))
-                                if l:
-                                    pos = l.group(1)
-                                    definition = l.group(2).lower()
-                                    turner = re.search(r'T\. (\d+)', str(data))
-                                    if turner:
-                                        turner = turner.group(1)
-                                        ipa = t(word2, column='IPA').replace(' ', '').replace('#', ' ')
-                                        writer.writerow(strand_row(
-                                            codes[i], turner, word, definition, ipa, '', 'strand', pos, codes[i]
-                                        ))
+                                if parsed["turner"]:
+                                    ipa = t(word2, column='IPA').replace(' ', '').replace('#', ' ')
+                                    writer.writerow(strand_row(
+                                        legacy_output_languages[codes[i]], parsed["turner"], word,
+                                        parsed["definition"], ipa,
+                                        '', 'strand', parsed["pos"],
+                                        legacy_locations.get(codes[i], codes[i])
+                                    ))
 
                 except HTTPError as e:
                     pass

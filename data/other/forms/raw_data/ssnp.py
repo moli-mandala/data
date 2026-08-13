@@ -420,14 +420,14 @@ def write(entries: list[Entry], audit_path: Path, forms_path: Path) -> None:
                 ])
 
 
-def update_language_coordinates(language_path: Path, coordinate_path: Path) -> None:
+def update_dialect_coordinates(dialect_path: Path, coordinate_path: Path) -> None:
     """Apply audited SSNP coordinates without normalizing unrelated CSV lines."""
     with coordinate_path.open(encoding="utf-8") as handle:
         coordinates = {row["Language_ID"]: row for row in csv.DictReader(handle)}
-    with language_path.open(encoding="utf-8", newline="") as handle:
+    with dialect_path.open(encoding="utf-8", newline="") as handle:
         lines = handle.readlines()
     if not lines:
-        raise ValueError(f"missing header in {language_path}")
+        raise ValueError(f"missing header in {dialect_path}")
 
     def split_ending(line: str) -> tuple[str, str]:
         if line.endswith("\r\n"):
@@ -445,10 +445,11 @@ def update_language_coordinates(language_path: Path, coordinate_path: Path) -> N
         values = next(csv.reader([body]))
         row = dict.fromkeys(fieldnames, "")
         row.update(zip(fieldnames, values))
-        if row["ID"] in coordinates:
-            row["Latitude"] = coordinates[row["ID"]]["Latitude"]
-            row["Longitude"] = coordinates[row["ID"]]["Longitude"]
-            seen.add(row["ID"])
+        source_id = row["Source_Language_ID"]
+        if source_id in coordinates:
+            row["Latitude"] = coordinates[source_id]["Latitude"]
+            row["Longitude"] = coordinates[source_id]["Longitude"]
+            seen.add(source_id)
             buffer = io.StringIO(newline="")
             csv.DictWriter(
                 buffer, fieldnames=fieldnames, lineterminator=ending or "\n"
@@ -457,8 +458,8 @@ def update_language_coordinates(language_path: Path, coordinate_path: Path) -> N
         output.append(line)
     missing = coordinates.keys() - seen
     if missing:
-        raise ValueError(f"coordinate IDs missing from LanguageTable: {sorted(missing)}")
-    with language_path.open("w", newline="", encoding="utf-8") as handle:
+        raise ValueError(f"coordinate IDs missing from dialect registry: {sorted(missing)}")
+    with dialect_path.open("w", newline="", encoding="utf-8") as handle:
         handle.writelines(output)
 
 
@@ -470,8 +471,8 @@ def main() -> None:
         help="forms import consumed by make_cldf.py",
     )
     parser.add_argument(
-        "--languages", type=Path, default=HERE.parents[3] / "cldf/languages.csv",
-        help="CLDF LanguageTable whose SSNP coordinates should be refreshed",
+        "--dialects", type=Path, default=HERE.parents[3] / "cldf/dialects.csv",
+        help="dialect registry whose SSNP coordinates should be refreshed",
     )
     parser.add_argument(
         "--coordinates", type=Path, default=HERE / "ssnp_locations.csv",
@@ -480,7 +481,7 @@ def main() -> None:
     args = parser.parse_args()
     entries = extract()
     write(entries, args.audit, args.forms)
-    update_language_coordinates(args.languages, args.coordinates)
+    update_dialect_coordinates(args.dialects, args.coordinates)
     print(f"wrote {len(entries):,} forms to {args.forms}")
 
 

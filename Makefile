@@ -5,26 +5,32 @@ ssnp:
 	python3 data/other/forms/raw_data/ssnp.py
 
 berger:
-	UV_CACHE_DIR=$${UV_CACHE_DIR:-/tmp/uv-cache} uv run --with pypdfium2 --with pillow python data/other/forms/raw_data/berger.py --install
+	uv run python data/other/forms/raw_data/berger.py --install
 
 sigiri:
-	UV_CACHE_DIR=$${UV_CACHE_DIR:-/tmp/uv-cache} uv run --with pypdfium2 --with pillow python data/other/forms/raw_data/sigiri.py --install
+	uv run python data/other/forms/raw_data/sigiri.py --install
+
+kullui:
+	uv run python data/other/forms/raw_data/kullui_org.py
 
 all:
 	@if [ -f tmp/pdfs/JLSR2025-005.pdf ]; then \
 		echo "regenerating Markodi forms from markodi_etyma.csv"; \
-		cd data/other/forms/raw_data && UV_CACHE_DIR=$${UV_CACHE_DIR:-/tmp/uv-cache} uv run --with pypdf python markodi.py; \
+		cd data/other/forms/raw_data && uv run python markodi.py; \
 	else echo "skipping Markodi regen (working PDF tmp/pdfs/JLSR2025-005.pdf absent)"; fi
-	UV_CACHE_DIR=$${UV_CACHE_DIR:-/tmp/uv-cache} uv run --with segments --with unidecode --with tqdm python make_cldf.py
+	uv run python make_cldf.py
 	uv run python link_refs.py
 	uv run python unify_cldf.py
 	uv run python assign_form_ids.py
-	UV_CACHE_DIR=$${UV_CACHE_DIR:-/tmp/uv-cache} uv run --with pysem python concepts.py
+	uv run python concepts.py
 	uv run python align.py
-	UV_CACHE_DIR=$${UV_CACHE_DIR:-/tmp/uv-cache} uv run --with pybtex python make_refs.py
+	uv run python make_refs.py
+
+burushaski-cognates:
+	python3 burushaski_cognates.py
 
 dedr:
-	cd data/dedr && uv run --with beautifulsoup4 --with html5lib --with tqdm python parse.py && uv run python get_params.py && cd ../..
+	cd data/dedr && uv run python parse.py && uv run python get_params.py && cd ../..
 
 dedr_params:
 	cd data/dedr && python get_params.py && cd ../..

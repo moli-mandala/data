@@ -61,6 +61,72 @@ _IREF = re.compile(r"<i>([^<]*?)</i>(-?)([¹²³⁴⁵]?)")
 _BRACKET = re.compile(r"\[([^\[\]]*)\]")
 
 
+def _cf_ancestry_fragment(bracket):
+    """Return the structured ancestry suffix of a ``[Cf. …]`` bracket, if it has one.
+
+    Turner uses an em dash, a spaced transcription hyphen, or a colon as a real divider in notes
+    such as the following (a semicolon also occasionally introduces an explicit ``√root``)
+    ``[Cf. X. — <smallcaps>A</smallcaps>-, <smallcaps>B</smallcaps>-]``.  The suffix is ancestry
+    only when it starts directly with CDIAL's ancestry markup (optionally preceded by symbols such
+    as ``√`` or ``*``).  Prose continuations like ``— perh. belongs to group of *X-`` and
+    ``— See list s.v. X-`` remain comparisons, not graph edges.
+
+    Non-``Cf.`` brackets are returned unchanged. ``None`` means a pure comparison bracket.
+    """
+    plain = html.unescape(_TAGS.sub("", bracket)).strip()
+    if not re.match(r"(?i)^cf\.", plain):
+        return bracket
+
+    def candidate(cut, end, root_only=False):
+        frag = bracket[cut + 1:end].strip()
+        if not frag:
+            return None
+        # CDIAL often puts the comparison and analysis in one smallcaps span:
+        # ``<smallcaps>comparison — component, component</smallcaps>``. Preserve that inherited
+        # context so pre-link root extraction can still recognize the structured segment.
+        before = bracket[:cut]
+        inside_smallcaps = before.rfind("<smallcaps>") > before.rfind("</smallcaps>")
+        if inside_smallcaps:
+            wrapped = "<smallcaps>" + frag + "</smallcaps>"
+            if root_only and not re.match(r"^\s*√", html.unescape(_TAGS.sub("", frag))):
+                return None
+            return wrapped
+        markers = [i for i in (frag.find("<smallcaps>"), frag.find('<a data-entry="')) if i >= 0]
+        marker = min(markers) if markers else -1
+        if marker < 0:
+            return None
+        prefix = html.unescape(_TAGS.sub("", frag[:marker])).strip()
+        if root_only and not re.match(r"^\s*√", prefix):
+            return None
+        return frag if re.fullmatch(r"[\s*†‡√~≈≃=<>?+×.,;:/()&-]*", prefix) else None
+
+    divider_positions = [m.start() for m in re.finditer(r"—|(?<=\s)-(?=\s)", bracket)]
+    # Rare transcription: ``comparison. -component, component`` (the leading hyphen also marks the
+    # first bound component). Treat that hyphen as the divider.
+    divider_positions.extend(m.end() - 1 for m in re.finditer(r"\.\s+-(?=\S)", bracket))
+    dash = max(divider_positions, default=-1)
+    if dash >= 0:
+        frag = candidate(dash, len(bracket))
+        if frag is not None:
+            return frag
+        # A real root analysis can precede a final prose alternative:
+        # ``[Cf. X: √Y. — Or poss. Z]``. Recover only the explicitly root-marked colon segment;
+        # broader prose/list segments before the dash remain comparisons.
+        root_dividers = [m.start() for m in re.finditer(r"[:;]", bracket[:dash])]
+        for divider in reversed(root_dividers):
+            frag = candidate(divider, dash, root_only=True)
+            if frag is not None:
+                return frag
+        return None
+    colon = bracket.rfind(":")
+    if colon >= 0:
+        return candidate(colon, len(bracket))
+    semicolon = bracket.rfind(";")
+    if semicolon >= 0:
+        return candidate(semicolon, len(bracket), root_only=True)
+    return None
+
+
 def _headword(desc):
     """(base, homograph-sup) of an entry's bold head-word, or None if it has none."""
     m = _HEAD.search(desc or "")
@@ -221,18 +287,13 @@ def extract_derivations(param_rows):
             plain = html.unescape(_TAGS.sub("", b)).strip()
             if plain.startswith("√"):
                 continue
-            frag = b
-            # "[Cf. …commentary… — X-, Y-]": the em-dash splits a see-also aside from the actual
-            # ancestry that follows it — parse only the part after the dash.
-            if "—" in b:
+            frag = _cf_ancestry_fragment(b)
+            if frag is None:
+                continue
+            # In a non-Cf ancestry bracket, an em dash can likewise separate commentary from the
+            # ancestry refs that follow it. Cf brackets were already split and validated above.
+            if not re.match(r"(?i)^cf\.", plain) and "—" in b:
                 frag = b.rsplit("—", 1)[-1]
-            elif re.match(r"Cf\.", plain):
-                # "[Cf. …aside… : X-, Y-]": a colon likewise splits the see-also from the real
-                # ancestry that follows it; otherwise it's a pure see-also with nothing to record.
-                if ":" in b:
-                    frag = b.rsplit(":", 1)[-1]
-                else:
-                    continue
             # italic references (`<i>…</i>`) inside a bracket are cross-links only, never ancestry —
             # only the <smallcaps> ancestry refs become derivation edges. Drop italics first.
             frag = re.sub(r"<i>.*?</i>", "", frag)
@@ -249,36 +310,48 @@ ROOT_REF = re.compile(r"√\s*\*?\s*<smallcaps>(.*?)</smallcaps>([¹²³⁴⁵]?
 def extract_roots(param_rows):
     """CDIAL cites verbal roots as `[√<smallcaps>X</smallcaps>]` inside the etymology bracket.
     Roots are not attested entries, so we synthesise one node per distinct root (base + optional
-    homograph superscript) and record a derivation edge from every citing entry to it — the root
-    then surfaces its citing entries as 'derived terms'. Returns (root_param_rows, edges)."""
-    occ = defaultdict(list)  # (base, sup) -> [citing entry ids]
+    homograph superscript). Accepted ancestry citations create derivation edges; comparison-only
+    citations remain linkable without making the citing entry a derived term. Returns
+    (root_param_rows, edges)."""
+    occ = defaultdict(list)  # accepted ancestry (base, sup) -> [citing entry ids]
     disp = {}  # (base, sup) -> display string ("aś¹")
-    for p in param_rows:
-        for b in re.findall(r"\[([^\[\]]*)\]", p.get("Description") or ""):
-            for m in ROOT_REF.finditer(b):
-                base = _base(m.group(1))
-                if not base:
-                    continue
+
+    def mentions(fragment):
+        """Root keys/display forms mentioned in one bracket fragment."""
+        found = []
+        for m in ROOT_REF.finditer(fragment):
+            base = _base(m.group(1))
+            if base:
                 supch = m.group(2)
-                key = (base, SUP.get(supch, ""))
-                disp[key] = base + supch
-                occ[key].append(p["ID"])
-            # roots also appear *inside* a <smallcaps> span, separated by a comma, colon, or
-            # em-dash aside — e.g. `<smallcaps>X-: √root</smallcaps>` or `<smallcaps>X¹. — √root`
-            for sc in re.findall(r"<smallcaps>(.*?)</smallcaps>", b):
-                for tok in re.split(r"[,:—]", sc):
-                    rm = re.match(r"\s*√\s*\*?\s*(.+)", tok)
-                    if not rm:
-                        continue
-                    base = _base(rm.group(1))
-                    if not base:
-                        continue
+                found.append(((base, SUP.get(supch, "")), base + supch))
+        # Roots also appear *inside* a <smallcaps> span, separated by a comma, colon, or
+        # em-dash aside — e.g. `<smallcaps>X-: √root</smallcaps>` or `<smallcaps>X¹. — √root`.
+        for sc in re.findall(r"<smallcaps>(.*?)</smallcaps>", fragment):
+            for tok in re.split(r"[,:—]", sc):
+                rm = re.match(r"\s*√\s*\*?\s*(.+)", tok)
+                if not rm:
+                    continue
+                base = _base(rm.group(1))
+                if base:
                     scm = _SUPCH.search(tok)
                     supch = scm.group(0) if scm else ""
-                    key = (base, SUP.get(supch, ""))
-                    disp.setdefault(key, base + supch)
-                    occ[key].append(p["ID"])
-    keys = sorted(occ)
+                    found.append(((base, SUP.get(supch, "")), base + supch))
+        return found
+
+    for p in param_rows:
+        for b in re.findall(r"\[([^\[\]]*)\]", p.get("Description") or ""):
+            # Keep every mentioned root as a stable, linkable cross-reference target. Whether this
+            # particular mention creates an ancestry edge is decided independently below; this
+            # prevents filtering a Cf-only mention from renumbering all later synthetic r… IDs.
+            for key, display in mentions(b):
+                disp.setdefault(key, display)
+            frag = _cf_ancestry_fragment(b)
+            if frag is None:
+                continue
+            for key, display in mentions(frag):
+                disp.setdefault(key, display)
+                occ[key].append(p["ID"])
+    keys = sorted(disp)
     rid = {k: f"r{i}" for i, k in enumerate(keys, 1)}
     edges, seen = [], set()
     for k in keys:

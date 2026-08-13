@@ -1,5 +1,13 @@
+from bs4 import BeautifulSoup
+
 from make_cldf import Row, merge_redundant_strand_rows
-from data.other.forms.raw_data.strand import strand_pos_tags, strand_row as build_strand_row
+from data.other.forms.raw_data.strand import (
+    clean_strand_text,
+    parse_legacy_entry,
+    strand_definition_tags,
+    strand_pos_tags,
+    strand_row as build_strand_row,
+)
 
 
 def strand_row(input_file, language, parameter, form, gloss, ipa=""):
@@ -55,6 +63,65 @@ def test_strand_grammatical_codes_become_canonical_tags():
     assert strand_pos_tags("NQt") == "num"
     assert strand_pos_tags("AjQt") == "adj num"
     assert strand_pos_tags("Pn?An") == "pron interr"
+    assert strand_pos_tags("VTAn") == "verb tr"
+    assert strand_pos_tags("VIAn") == "verb intr"
+    assert strand_pos_tags("NPd2?Pl") == "pron pl interr"
+    assert strand_pos_tags("NQtFPl") == "num f pl"
+    assert strand_pos_tags("ModeNeg") == "part neg"
+    assert strand_pos_tags("LTm") == "spatial temporal"
+    assert strand_pos_tags("LObj") == "spatial"
+    assert strand_pos_tags("Stat") == "part interr"
+    assert strand_pos_tags("(via MIA) N") == "noun"
+    assert strand_pos_tags("NPl") == "noun pl"
+    assert strand_pos_tags("NSb|I") == "noun interj"
+    assert strand_pos_tags("Man") == "adv manner"
+
+
+def test_legacy_strand_definition_uses_analysis_boundary_not_first_period():
+    entry = BeautifulSoup(
+        '<p class="dic"><span class="l">karʹâṛu</span> '
+        '<b>[</b><span class="dic">-a</span><b>]</b> N. Leopard [m.]. '
+        '[<span class="dic">karʹâṛ-u</span>] <b>[</b>OIA. '
+        '<span class="dic">kʹaḍâra-</span> ‘having projecting teeth’ T. 2655<b>]</b></p>',
+        "html.parser",
+    ).p
+
+    assert parse_legacy_entry(entry) == {
+        "word": "karʹâṛu",
+        "pos": "N",
+        "definition": "leopard [m.]",
+        "turner": "2655",
+    }
+
+
+def test_legacy_strand_definition_strips_inline_markup():
+    entry = BeautifulSoup(
+        '<p class="dic"><span class="l">x</span> N. Compare '
+        '<span class="dic">y</span>, etc. [<span class="dic">x</span>] T. 12</p>',
+        "html.parser",
+    ).p
+
+    assert parse_legacy_entry(entry)["definition"] == "compare y, etc"
+
+
+def test_strand_source_line_wrapping_becomes_spaces():
+    assert clean_strand_text("vâř′o \n  mânaři") == "vâř′o mânaři"
+
+
+def test_strand_definition_genders_become_tags_and_leave_lexical_glosses():
+    assert strand_definition_tags("leopard [m.]") == ("leopard", ["m"])
+    assert strand_definition_tags("jackal [f]; fox?") == ("jackal; fox?", ["f"])
+    assert strand_definition_tags("cat [m./f.]") == ("cat", ["m", "f"])
+    assert strand_definition_tags("baby [fem.; not usually used]") == (
+        "baby [fem.; not usually used]", ["f"]
+    )
+    assert strand_definition_tags("wane [moon]") == ("wane [moon]", [])
+
+
+def test_strand_row_combines_pos_and_definition_gender_tags():
+    row = build_strand_row("Phal", "2655", "karʹâṛu", "leopard [m.]", "", "", "strand", "N", "Phal")
+    assert row[3] == "leopard"
+    assert row[14].split() == ["noun", "m", "dialect:Palula"]
 
 
 def test_strand_locations_become_dialect_tags():

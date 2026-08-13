@@ -99,11 +99,13 @@ def test_each_volume_has_its_own_bibliographic_source():
 
 
 def test_every_survey_variety_has_language_metadata():
-    language_file = Path(__file__).parents[1] / "cldf/languages.csv"
-    with language_file.open(encoding="utf-8") as handle:
+    root = Path(__file__).parents[1]
+    with (root / "cldf/languages.csv").open(encoding="utf-8") as handle:
         language_ids = {row["ID"] for row in csv.DictReader(handle)}
+    with (root / "cldf/dialects.csv").open(encoding="utf-8") as handle:
+        source_ids = {row["Source_Language_ID"] for row in csv.DictReader(handle)}
     extracted_ids = {ssnp.language_id(row) for row in ssnp.extract()}
-    assert extracted_ids <= language_ids
+    assert extracted_ids <= language_ids | source_ids
 
 
 def test_batera_is_canonical_bhateri():
@@ -132,12 +134,17 @@ def test_all_import_rows_survive_cldf_ingestion():
         ]
     # A small number coalesce with an already-present identical form during unification.
     assert len(ingested_rows) >= 0.99 * len(source_rows)
+    with (Path(__file__).parents[1] / "cldf/dialects.csv").open(encoding="utf-8") as handle:
+        canonical = {
+            row["Source_Language_ID"]: row["Language_ID"]
+            for row in csv.DictReader(handle) if row["Source_Language_ID"]
+        }
     ingested = {
         (row["Language_ID"], row["Phonemic"], row["Gloss"])
         for row in ingested_rows
     }
     source = {
-        (row[0], row[5], row[3])
+        (canonical.get(row[0], row[0]), row[5], row[3])
         for row in source_rows
     }
     assert len(ingested & source) >= 0.99 * len(source)
@@ -145,8 +152,11 @@ def test_all_import_rows_survive_cldf_ingestion():
 
 
 def test_every_survey_location_has_coordinates():
-    language_file = Path(__file__).parents[1] / "cldf/languages.csv"
-    with language_file.open(encoding="utf-8") as handle:
-        rows = [row for row in csv.DictReader(handle) if row["ID"].startswith("SSNP-")]
+    dialect_file = Path(__file__).parents[1] / "cldf/dialects.csv"
+    with dialect_file.open(encoding="utf-8") as handle:
+        rows = [
+            row for row in csv.DictReader(handle)
+            if row["Source_Language_ID"].startswith("SSNP-")
+        ]
     assert rows
     assert all(row["Latitude"] and row["Longitude"] for row in rows)

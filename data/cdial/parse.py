@@ -17,22 +17,179 @@ from references import source_field
 TOTAL_PAGES = 836
 
 # this is such a big brain regex
-langs = r'([OM]?(' + "|".join(sorted(list(abbrevs.keys()), key=lambda x: -len(x))) + r'))\.'
+lang_alternation = "|".join(sorted(list(abbrevs.keys()), key=lambda x: -len(x)))
+langs = r'([OM]?(' + lang_alternation + r'))\.'
 langs = unicodedata.normalize('NFC', langs)
 # A language abbreviation directly followed by another capital initial ("H. W. Bailey") is an
-# author citation, not a reflex — the negative lookahead skips it.
-regex = re.compile(r'(?<!\w)' + langs + r'(?! ?[A-Z]\.)(([^\(\)\[\]]*?(\[.*?\]|\(.*?\)))*?[^\(\)\[\]]*?)(?=([^\(]?' + langs + r'|</div>|$))')
+# author citation, not a reflex. Consecutive *known* one-letter language codes ("S. L. P."),
+# however, are a normal CDIAL shorthand and must remain available to the language stack.
+next_language = r'[OM]?(?:' + lang_alternation + r')\.'
+author_guard = r'(?! ?(?!(?:' + next_language + r'))[A-Z]\.)'
+regex = re.compile(r'(?<!\w)(?<!← )(?<!→ )' + langs + author_guard + r'(([^\(\)\[\]]*?(\[.*?\]|\(.*?\)))*?[^\(\)\[\]]*?)(?=([^\(]?(?<!\w)' + langs + r'|</div>|$))')
+# Borrower lists begin with an arrow by definition, so their dedicated recursive parse permits a
+# language code after the marker while ordinary parsing treats arrow-following codes as donors.
+regex_borrowed = re.compile(r'(?<!\w)' + langs + author_guard + r'(([^\(\)\[\]]*?(\[.*?\]|\(.*?\)))*?[^\(\)\[\]]*?)(?=([^\(]?(?<!\w)' + langs + r'|</div>|$))')
 oia = r'((Indo-Aryan))\.'
-regex_head = re.compile(r'(?<!\w)' + oia + r'(([^\(\)\[\]]*?(\[.*?\]|\(.*?\)))*?[^\(\)\[\]]*?)(?=([^\(]?' + oia + r'|</div>|$))')
+regex_head = re.compile(r'(?<!\w)' + oia + r'(([^\(\)\[\]]*?(\[.*?\]|\(.*?\)))*?[^\(\)\[\]]*?)(?=([^\(]?(?<!\w)' + oia + r'|</div>|$))')
 # The quoted definition may itself contain parentheses (e.g. 'walnut (or pistacio nut ?)'); match
 # any content up to the next definition-closing quote — one NOT followed by "s" (a possessive) —
 # rather than forbidding parens, which used to mis-pair quotes onto the inter-gloss source citations.
-formatter = re.compile(r'(<i>([^\(\)]*?)</i>|\'(.*?)\'(?=[^s]|$))(([^\(\)\[\]]*?(\[.*?\]|\(.*?\)))*?[^\(\)\[\]]*?)(?=$|<i>([^\(\)]*?)</i>|\'(.*?)\'|\.)')
+formatter = re.compile(r'(<i>(.*?)</i>|\'(.*?)\'(?=[^s]|$))(([^\(\)\[\]]*?(\[.*?\]|\(.*?\)))*?[^\(\)\[\]]*?)(?=$|<i>(.*?)</i>|\'(.*?)\'|\.)')
 # In the head, a form is bold (<b>headword / numbered section form) OR italic (<i>alternate spelling
 # of the preceding bold form). Match either as a form (char class keeps the capture groups stable);
 # the parse loop tags italic head-forms so they become variants and are never promoted to sections.
-formatter_head = re.compile(r'(<[bi]>([^\(\)]*?)</[bi]>|\'(.*?)\'(?=[^s]|$))(([^\(\)\[\]]*?(\[.*?\]|\(.*?\)))*?[^\(\)\[\]]*?)(?=$|<[bi]>([^\(\)]*?)</[bi]>|\'(.*?)\'|\.)')
+formatter_head = re.compile(r'(<[bi]>(.*?)</[bi]>|\'(.*?)\'(?=[^s]|$))(([^\(\)\[\]]*?(\[.*?\]|\(.*?\)))*?[^\(\)\[\]]*?)(?=$|<[bi]>(.*?)</[bi]>|\'(.*?)\'|\.)')
 borrowed_terms = re.compile(r'\(→.*?\)')
+
+_QUOTE_SENTINEL = "\ue000"
+_INNER_DASH_SENTINEL = "\ue001"
+
+
+def _protect_note_markup(text):
+    """Hide note-only italics and quotes from the form/gloss tokenizer."""
+    return (text.replace("<i>", "<note-i>")
+                .replace("</i>", "</note-i>")
+                .replace("'", _QUOTE_SENTINEL))
+
+
+def _restore_note_markup(text):
+    return (text.replace("<note-i>", "<i>")
+                .replace("</note-i>", "</i>")
+                .replace(_QUOTE_SENTINEL, "'"))
+
+
+def protect_explanatory_markup(span):
+    """Distinguish cited forms/glosses in prose from the reflexes being parsed."""
+    # Parenthetical notes use the same italics and quotes as real forms and definitions. Work from
+    # innermost parentheses outward; two passes cover the nesting found in the source corpus.
+    for _ in range(2):
+        span = re.sub(r'\([^()]*\)', lambda match: _protect_note_markup(match.group(0)), span)
+
+    # Explicit prose cues introduce a cited comparison/base form rather than another reflex.
+    cue = re.search(
+        r"(?:\bdoubtful\b|\bbut\s+<i>|\bposs\.?\s+have\b|\bhave\s+prob\b|\b(?:pret|past tense|pres)\.?\s+(?:tense\s+)?of\b)",
+        span,
+        re.IGNORECASE,
+    )
+    if cue:
+        span = span[:cue.start()] + _protect_note_markup(span[cue.start():])
+
+    # After a gloss, an etymological relation begins explanatory prose. Demote later markup while
+    # retaining the prose in Notes (e.g. "ḍippaï 'rots' < *dīpyatē ... cf. dāpayati 'causes ...'").
+    for marker in ("&lt;", "&gt;", "←"):
+        start = span.find(marker)
+        # Relations inside a parenthetical note are already protected above; do not let one hide
+        # the real forms which follow the closing parenthesis.
+        inside_parentheses = start >= 0 and span[:start].count("(") > span[:start].count(")")
+        if start >= 0 and not inside_parentheses and "'" in span[:start]:
+            span = span[:start] + _protect_note_markup(span[start:])
+            break
+    return span
+
+
+def _base_character(character):
+    return "".join(
+        value for value in unicodedata.normalize("NFD", character)
+        if not unicodedata.combining(value)
+    )
+
+
+def expand_degree_abbreviation(word, reference):
+    """Expand CDIAL's degree-sign ditto notation against the preceding form."""
+    if not reference or word == "°":
+        return word
+    if word.endswith("°") and len(word) > 1:
+        target = _base_character(word[-2])
+        for index, character in enumerate(reference):
+            if _base_character(character) == target:
+                return word[:-1] + reference[index + 1:]
+    if word.startswith("°") and len(word) > 1:
+        target = _base_character(word[1])
+        for index in range(len(reference) - 1, -1, -1):
+            if _base_character(reference[index]) == target:
+                return reference[:index] + word[1:]
+    return word
+
+
+def protect_parenthetical_group_separators(text):
+    """Prevent a ``? —`` (etc.) inside a note from splitting the reflex paragraph."""
+    depth = 0
+    output = []
+    for index, character in enumerate(text):
+        if character == "(":
+            depth += 1
+        elif character == ")" and depth:
+            depth -= 1
+        if character == "—" and depth and index >= 2 and text[index - 2] in ";.,:?":
+            output.append(_INNER_DASH_SENTINEL)
+        else:
+            output.append(character)
+    return "".join(output)
+
+
+_MORPHOLOGICAL_BOUNDARY = re.compile(
+    r"(?:pass|caus|intr|trans|refl|denom|pres|pret|aor|fut|perf|pp|part|ger|inf|imper|subj|opt)",
+    re.IGNORECASE,
+)
+
+
+def is_morphological_boundary_note(note):
+    """Whether bare text between two forms changes their grammatical derivation."""
+    plain = re.sub(r"<[^>]+>", "", note or "").strip(" ,;:.")
+    return bool(_MORPHOLOGICAL_BOUNDARY.fullmatch(plain))
+
+
+def propagate_single_printed_definition(words):
+    """Scope following definitions backward over comma-listed forms in their run.
+
+    CDIAL commonly prints ``<i>x</i>, <i>y</i> 'definition'``. The final quote scopes over both
+    forms, not just the immediately preceding italic token. With multiple definitions, each quote
+    scopes backward only to the previous quote (``x, y 'A', z 'B'`` gives x/y A and z B).
+    """
+    start = 0
+    segments = []
+    for index, word in enumerate(words[:-1]):
+        # Inter-form text is stored with the preceding word. ``pass.`` in
+        # ``ōvahati, pass. ōvuyhati 'is carried down'`` therefore ends its segment here.
+        if is_morphological_boundary_note(word[2]):
+            segments.append(words[start:index + 1])
+            start = index + 1
+    segments.append(words[start:])
+
+    for segment in segments:
+        definitions = list(dict.fromkeys(word[1] for word in segment if word[1]))
+        if len(definitions) == 1:
+            for word in segment:
+                if not word[1]:
+                    word[1] = definitions[0]
+        elif len(definitions) > 1:
+            following_definition = ""
+            for word in reversed(segment):
+                if word[1]:
+                    following_definition = word[1]
+                elif following_definition:
+                    word[1] = following_definition
+
+
+def terminal_separator(span):
+    """Return the top-level punctuation joining this language span to the next one."""
+    plain = re.sub(r"<[^>]+>", "", _restore_note_markup(span)).rstrip()
+    return plain[-1] if plain and plain[-1] in ",;." else ""
+
+
+def blocks_shared_definition(span, forms):
+    """Whether leading morphology marks this form as a new semantic/derivational run."""
+    prefix = re.sub(r"<[^>]+>", "", span[:forms[0].start()]) if forms else ""
+    return bool(re.search(r"\b(?:caus|intr|trans|pass|refl)\.?\b", prefix, re.IGNORECASE))
+
+
+def blocks_head_definition_propagation(span):
+    """Numbered or explicitly derived OIA heads are separate dictionary senses."""
+    plain = re.sub(r"<[^>]+>", "", _restore_note_markup(span))
+    return bool(
+        re.search(r"\b\d+\.\s", plain)
+        or re.search(r"\b(?:caus|intr|trans|pass|refl|denom)\.?\b", plain, re.IGNORECASE)
+    )
 
 rows = []
 params = []
@@ -46,14 +203,26 @@ if os.path.exists('cdial.pickle'):
         soups = pickle.load(fin)
     cached = True
 
-def parse(subentry, subentry_num, subnum, number, info, carried=""):
+def parse(
+    subentry,
+    subentry_num,
+    subnum,
+    number,
+    info,
+    carried="",
+    allow_arrow_language=False,
+    head_definition="",
+):
     langs = []
     temp_rows = []
+    shared_definition = ""
+    head_definition_overridden = False
 
     # find lemmas in current subgroup
     matches = []
     if subentry_num != 0:
-        matches = list(regex.finditer(subentry))
+        matcher = regex_borrowed if allow_arrow_language else regex
+        matches = list(matcher.finditer(subentry))
     else:
         matches = list(regex_head.finditer(subentry))
 
@@ -90,6 +259,7 @@ def parse(subentry, subentry_num, subnum, number, info, carried=""):
         span = span.replace('ˊ', '́')
         span = span.replace(' -- ', '–')
         span = span.replace('--', '–')
+        span = protect_explanatory_markup(span)
         
         # forms are the actual words (italicised)
         forms = []
@@ -98,18 +268,13 @@ def parse(subentry, subentry_num, subnum, number, info, carried=""):
         else:
             forms = list(formatter.finditer(span))
         
-        # handling Kutchi data getting duplicated to Sindhi
-        # TODO: West Pahari data might be similarly flawed
-        if lang == 'kcch':
-            if langs:
-                if langs[-1] == 'S':
-                    langs.pop()
         if lang == 'mald':
             lang = 'Md'
+        # A lowercase code is a dialect qualifier for the immediately preceding parent language,
+        # not an additional language sharing the form (Gy. eur., L.awāṇ., Paš.pach., WPah.kṭg.).
         if lang[0].islower():
             if langs:
-                if langs[-1] == 'WPah':
-                    langs.pop()
+                langs.pop()
 
         # langs is a stack of langs, if there are no forms
         # we just add to the stack and continue (means later
@@ -139,12 +304,47 @@ def parse(subentry, subentry_num, subnum, number, info, carried=""):
                 # an italic form in the head paragraph is an alternate spelling of the preceding bold
                 # form → a variant, never a numbered section header (see cognateset marker below)
                 is_variant = form.group(0).startswith('<i>') and lang == 'Indo-Aryan'
-                cur = [form.group(2), form.group(4).strip(' -,;.'), is_variant]
+                cur = [
+                    _restore_note_markup(form.group(2)),
+                    _restore_note_markup(form.group(4)).strip(' -,;.'),
+                    is_variant,
+                ]
             else:
-                defs.append([form.group(3).strip(), form.group(4).strip(' -,;.')])
+                defs.append([
+                    _restore_note_markup(form.group(3)).strip(),
+                    _restore_note_markup(form.group(4)).strip(' -,;.'),
+                ])
         if cur:
             for each in cur[0].split(','):
                 append_to_words(cur, defs)
+
+        # A definition printed once scopes over all comma-listed forms in this language span.
+        # If the preceding language span ended in a comma, it also scopes forward across language
+        # labels until a stronger boundary. Morphological labels start a new run and block carryover.
+        printed_definitions = list(dict.fromkeys(word[1] for word in words if word[1]))
+        if printed_definitions:
+            head_definition_overridden = True
+        if not (lang == "Indo-Aryan" and blocks_head_definition_propagation(span)):
+            propagate_single_printed_definition(words)
+        shared_definition_blocked = blocks_shared_definition(span, forms)
+        if shared_definition and not printed_definitions and not shared_definition_blocked:
+            for word in words:
+                if not word[1]:
+                    word[1] = shared_definition
+        # The first descendant group often omits quotes because its forms retain the headword's
+        # meaning (``jananī 'mother': Pa. jananī-, Pk. jaṇaṇī-, P. jaṇṇī``). Apply that
+        # fallback only to wholly unglossed spans in the direct-reflex group. Later numbered,
+        # extended, causative, and comparison groups are semantically independent.
+        if (
+            head_definition
+            and subnum == 2
+            and not printed_definitions
+            and not head_definition_overridden
+            and not shared_definition_blocked
+        ):
+            for word in words:
+                if not word[1]:
+                    word[1] = head_definition
 
         # for each language on the stack, add this entry
         for l in langs:
@@ -157,10 +357,7 @@ def parse(subentry, subentry_num, subnum, number, info, carried=""):
                 if '°' in word and word != '°':
                     old = word[:]
                     reference = temp_rows[-1][2] if len(temp_rows) > 0 else rows[-1][2]
-                    if word[-1] == '°':
-                        word = re.sub(r'^.*?' + word[-2], word[:-1], reference)
-                    elif word[0] == '°':
-                        word = re.sub(word[1] + r'[^' + word[1] + r']*?$', word[1:], reference)
+                    word = expand_degree_abbreviation(word, reference)
                     if reference == word:
                         word = old[:]
 
@@ -192,6 +389,19 @@ def parse(subentry, subentry_num, subnum, number, info, carried=""):
                 citations = " ".join(filter(None, (defn, notes)))
                 temp_rows.append([l, number, word, defn, '', '', notes, source_field(citations), cog])
 
+        separator = terminal_separator(span)
+        if separator == ",":
+            # A span with several meanings does not establish which one a following unglossed
+            # language form shares (e.g. OAw. ``citerā 'painter', citeraï 'paints', lakh. citērā``).
+            if len(printed_definitions) == 1:
+                shared_definition = printed_definitions[0]
+            elif len(printed_definitions) > 1 or shared_definition_blocked:
+                shared_definition = ""
+            # With no newly printed gloss, keep carrying the established meaning through another
+            # comma-linked language span (Mth. ... 'to cut', Aw. ..., H. ..., G. ...).
+        else:
+            shared_definition = ""
+
         langs = []
 
     return temp_rows, subnum, info, carried
@@ -218,10 +428,19 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
         # rectify artifacts of the transcription process that hurt parsing
         # e.g. punctuation marks that break italics
         entry = str(entry).replace('\n', ' ')
+        # Each chunk ends at </hw>; page-layout tags after it are not dictionary-entry notes.
+        if '</hw>' in entry:
+            entry = entry.split('</hw>', 1)[0]
         entry = re.sub(r'</i>\(<i>([\w]*?)</i>\)<i>', r'{\1}', entry)
         entry = re.sub(r'</i>\(<i>([\w]*?)</i>\)', r'{\1}</i>', entry)
         entry = re.sub(r'\(<i>([\w]*?)</i>\)<i>', r'<i>{\1}', entry)
         entry = entry.replace('</i><i>', '')
+        entry = entry.replace("</i>'<i>", "'")
+        # Split italics sometimes surround literal transcription text rather than markup boundaries.
+        entry = re.sub(r'</i>([A-Za-z]/[A-Za-z])<i>', r'\1', entry)
+        # A few source lines omit the period on a language label immediately before an italic form.
+        entry = re.sub(r'(?<!\w)(Si)(?=\s+<i>)', r'\1.', entry)
+        entry = entry.replace('WH.bāng.', 'WH.bāṅg.')
         entry = entry.replace('*<b>', '<b>*')
         entry = entry.replace(':</b>', '</b><br>')
         entry = entry.replace('*<i>', '<i>*')
@@ -245,7 +464,11 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
             head_split = list(re.split(r'(<br/>)', str(entry)))
             data = head_split
             if len(head_split) > 1:
-                data = [head_split[0]] + list(re.split(r'(<br/>|Ext.|[;\.,:\?] — )', '<br/>'.join(head_split[1:])))
+                tail = protect_parenthetical_group_separators('<br/>'.join(head_split[1:]))
+                data = [head_split[0]] + [
+                    chunk.replace(_INNER_DASH_SENTINEL, '—')
+                    for chunk in re.split(r'(<br/>|Ext.|[;\.,:\?] — )', tail)
+                ]
 
             # store headwords
             # for lemma in lemmas:
@@ -261,18 +484,43 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
             subnum = 0
             info = None
             carried = ""  # a numbered sub-heading's form number, held for the next paragraph
+            head_definition = ""
             data[0] = 'Indo-Aryan. ' + data[0]
             for subentry_num, subentry in enumerate(data):
 
                 # parse this subentry
-                rows_sub, subnum, info, carried = parse(subentry, subentry_num, subnum, number, info, carried)
+                rows_sub, subnum, info, carried = parse(
+                    subentry,
+                    subentry_num,
+                    subnum,
+                    number,
+                    info,
+                    carried,
+                    head_definition=head_definition,
+                )
                 rows.extend(rows_sub)
+                if subentry_num == 0:
+                    head_definition = next(
+                        (row[3] for row in rows_sub if row[0] == "Indo-Aryan" and row[3]),
+                        "",
+                    )
 
                 # find terms borrowed into other langs in the notes of each reflex
                 for row in rows_sub:
                     borrowed = list(borrowed_terms.finditer(row[6]))
                     for borrow in borrowed:
-                        rows_borrowed, _, _, _ = parse(row[0] + ' ' + borrow.group(0)[1:-1], subentry_num, subnum - 1, number, info)
+                        borrowed_text = borrow.group(0)[1:-1]
+                        # A colon followed by contrastive prose ends the borrower list; parsing that
+                        # tail creates fake forms from comparison morphemes and language examples.
+                        borrowed_text = re.split(r':\s*(?:but|though|while)\b', borrowed_text, 1)[0]
+                        rows_borrowed, _, _, _ = parse(
+                            row[0] + ' ' + borrowed_text,
+                            subentry_num,
+                            subnum - 1,
+                            number,
+                            info,
+                            allow_arrow_language=True,
+                        )
                         rows.extend(rows_borrowed)
     
     if not cached: del resp

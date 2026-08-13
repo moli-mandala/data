@@ -10,15 +10,35 @@ from collections import defaultdict
 from enum import Enum
 from tqdm import tqdm
 
-from abbrevs import abbrevs, dialects, replacements, fixes
+from abbrevs import (
+    abbrevs, dialects, replacements, fixes, shared_gloss_boundaries,
+    shared_section_glosses, source_markup_repairs,
+)
 from cleanup import footer_note, is_footer_misparse
+from parser_utils import (
+    clean_form_html,
+    detach_leading_grammatical_note,
+    detach_trailing_forward_grammatical_note,
+    grammatical_tag,
+    grammatical_tags,
+    is_prose_misparse,
+    marker_only_tags,
+    mark_unbolded_compact_forms,
+    mark_unbolded_gender_forms,
+    propagate_shared_glosses,
+    split_alternatives,
+    split_forms,
+    split_language_spans,
+    split_tagged_forms,
+    strip_grammatical_markers,
+)
 
 TOTAL_PAGES = 514
 APPENDIX = 509
 ERR = False
 
 # useful regexes
-l = '(' + "|".join(sorted([x.replace('(', '\(').replace(')', '\)') for x in abbrevs.keys()], key=lambda x: -len(x))) + r')'
+l = '(' + "|".join(sorted([re.escape(x) for x in abbrevs], key=lambda x: -len(x))) + r')'
 langs_regex = re.compile(r'(' + l + r')(\.|$)')
 l += r'\.?'
 regex = re.compile(r'(<i>|<b>|^)*' + l + r'(([^\(\)\[\]]*?(\[.*?\]|\(.*?\)))*?[^\(\)\[\]]*?)(?=((<i>|<b>)*' + l + r'|DED|DEN|</div>|$))')
@@ -42,6 +62,11 @@ print('Caching?', cached)
 fout = open('dedr_new.csv', 'w')
 writer = csv.writer(fout)
 footer_notes = defaultdict(list)
+if os.path.exists('footer_notes.csv'):
+    with open('footer_notes.csv') as fin:
+        for param, note_html in csv.reader(fin):
+            note_soup = BeautifulSoup(note_html, 'html.parser')
+            footer_notes[param].extend(str(note_soup.body or note_soup).removeprefix('<body>').removesuffix('</body>').split('<br>'))
 
 count = 1
 
@@ -67,7 +92,7 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
     if ERR: print('made soup')
 
     # for each entry on the page, parse
-    for entry in soup:
+    for entry_index, entry in enumerate(soup):
         # prettify
         entry = entry.replace('\n', '')
         entry = BeautifulSoup('<number>' + entry, 'html.parser')
@@ -81,85 +106,140 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
             if page >= APPENDIX:
                 number = 'a' + number
 
+            # Some page snapshots contain a short entry followed by a longer
+            # continuation carrying the same number.  Parse only the final,
+            # complete occurrence to avoid duplicate rows.
+            later_numbers = [
+                chunk.split('</number>', 1)[0].strip()
+                for chunk in soup[entry_index + 1:]
+                if '</number>' in chunk
+            ]
+            raw_number = number[1:] if page >= APPENDIX else number
+            if raw_number in later_numbers:
+                continue
+
             if ERR: print(entry)
-            entry_str = re.split(r'( / |(?=Cf. \d))', str(entry))
+            entry_str = re.split(r'( / |(?=Cf\.))', str(entry))
             for i in range(1, len(entry_str)):
                 for f in sorted(fixes, key=lambda x: -len(x)):
                     entry_str[i] = entry_str[i].replace(f, f'<b><i>{f}</i></b>')
             
             for section_num, section in enumerate(entry_str):
+                # Numeric ``Cf.`` tails point to another DEDR entry; their
+                # bold headword is not another reflex in the current entry.
+                preceded_by_slash = section_num > 0 and entry_str[section_num - 1] == ' / '
+                if re.match(r'\s*Cf\.', section) and not preceded_by_slash:
+                    next_subsection = re.search(r'(?=<i>\([a-z]\))', section)
+                    if not next_subsection:
+                        continue
+                    section = section[next_subsection.start():]
                 entry = BeautifulSoup(section, 'html.parser')
 
-                # find all bold+italic tags (includes languages)
-                langs = entry.find_all(is_bold_or_italic)
-                section_label = ""
-                spans = []
-                start = 0
-
-                for lang in langs:
-
-                    # append everything up to this tag to the previous tag
-                    if spans:
-                        spans[-1][1] += section[start:lang.sourcepos]
-                    else:
-                        section_label += section[start:lang.sourcepos]
-                    
-                    # append this tag as a new span
-                    # but it may not be a real language tag, in which case just expand previous
-                    m = langs_regex.search(lang.text)
-                    if m:
-                        spans.append([m.group(1), ""])
-                    else:
-                        if spans:
-                            spans[-1][1] += str(lang)
-
-                    # update start
-                    start = lang.sourcepos + len(str(lang))
-                
-                section_label = section_label.replace('<i>', '').replace('</i>', '').replace('<b>', '').replace('</b>', '')
-                section_label = section_label.strip()
-
-                # tail of entry
-                if spans:
-                    spans[-1][1] += section[start:]
+                section_label, spans = split_language_spans(section, abbrevs)
+                section_rows = []
 
                 for span in spans:
                     lang = abbrevs[span[0].strip('.')]
-                    span[1] = span[1].strip()
+                    for old, new in source_markup_repairs.get(str(number), []):
+                        span[1] = span[1].replace(old, new)
+                    span[1] = mark_unbolded_gender_forms(span[1].strip())
+                    boundary = shared_gloss_boundaries.get(str(number))
+                    if boundary and f', {boundary}' in span[1]:
+                        span[1] = span[1].replace(f', {boundary}', f'</b> {boundary}', 1)
+                    span[1] = mark_unbolded_compact_forms(span[1])
 
                     # get every forms + gloss pairing (delineated by bold tags)
                     rows = []
                     last_paren = False
+                    pending_tags = []
+                    pending_form_tags = []
                     for y in lemmata.finditer(span[1]):
                         if ERR: print('    lemma', y)
                         gloss = y.group(4).strip(' ').split('\t')[0]
 
                         if last_paren:
-                            rows[-1][3] += y.group(2) + gloss
+                            lemma_tags = marker_only_tags(y.group(2))
+                            extra_tags = list(dict.fromkeys(
+                                lemma_tags + grammatical_tags(gloss)
+                            ))
+                            rows[-1][14] = " ".join(
+                                dict.fromkeys(rows[-1][14].split() + extra_tags)
+                            )
+                            marker = '' if lemma_tags else y.group(2)
+                            rows[-1][3] += marker + strip_grammatical_markers(gloss)
                             last_paren = rows[-1][3].count('(') > rows[-1][3].count(')')
                             continue
 
-                        if y.group(2) in ['Voc.', 'n.', 'adj.', 'adv.', 'v.']:
-                            rows[-1][3] += y.group(2) + gloss
-                            last_paren = rows[-1][3].count('(') > rows[-1][3].count(')')
+                        marker_tags = marker_only_tags(y.group(2))
+                        if y.group(2) == 'Voc.' or marker_tags:
+                            if rows:
+                                rows[-1][14] = " ".join(
+                                    dict.fromkeys(rows[-1][14].split() + marker_tags)
+                                )
+                            else:
+                                pending_tags = list(dict.fromkeys(pending_tags + marker_tags))
+                            marker = y.group(2) if not marker_tags else ''
+                            if rows:
+                                rows[-1][3] += marker + strip_grammatical_markers(gloss)
+                                last_paren = rows[-1][3].count('(') > rows[-1][3].count(')')
                             continue
                         
-                        row = [lang, 'd' + str(number), y.group(2).strip(), gloss, '', '', '', 'dedr', f'{section_num}:{section_label}']
-                        row[2] = row[2].replace('</i>', '').replace('</b>', '').replace('<i>', '').replace('<b>', '')
-                        row[2] = row[2].strip()
+                        form_html = y.group(2).strip()
+                        previous_tags, form_html = detach_leading_grammatical_note(form_html)
+                        if previous_tags and rows:
+                            rows[-1][14] = " ".join(
+                                dict.fromkeys(rows[-1][14].split() + previous_tags)
+                            )
+                        initial_form_tags = pending_form_tags
+                        pending_form_tags, gloss = detach_trailing_forward_grammatical_note(gloss)
+                        if initial_form_tags and re.fullmatch(
+                            r"[^\s<>]+\.", formatter.sub('', form_html).strip()
+                        ):
+                            form_html = form_html.rstrip().removesuffix('.')
+                        tags = list(dict.fromkeys(pending_tags + grammatical_tags(gloss)))
+                        pending_tags = []
+                        gloss = strip_grammatical_markers(gloss)
+                        cleaned_form, gloss = clean_form_html(form_html, gloss)
+                        is_gender_form = re.match(
+                            r'(?:fem|masc)\.', formatter.sub('', form_html).strip()
+                        )
+                        if is_gender_form and rows and not gloss.strip(';,./ '):
+                            gloss = rows[-1][3]
+                        if is_prose_misparse(form_html):
+                            if rows:
+                                rows[-1][3] += (' ' if rows[-1][3] else '') + cleaned_form
+                            continue
+                        row = [
+                            lang, 'd' + str(number), cleaned_form, gloss, '', '', '', 'dedr',
+                            f'{section_num}:{section_label}', '', '', '', '', '', ' '.join(tags),
+                            split_tagged_forms(form_html, initial_form_tags),
+                        ]
 
                         # extract parentheticals from previous row--they are sources or notes about this one
                         if rows:
                             if rows[-1][3].endswith(')'):
                                 paren = rows[-1][3].rfind('(')
-                                row[6] = rows[-1][3][paren:][1:-1]
-                                rows[-1][3] = rows[-1][3][:paren]
+                                trailing = rows[-1][3][paren:]
+                                trailing_tags = grammatical_tags(trailing)
+                                if trailing_tags:
+                                    rows[-1][14] = " ".join(
+                                        dict.fromkeys(rows[-1][14].split() + trailing_tags)
+                                    )
+                                    rows[-1][3] = rows[-1][3][:paren].rstrip()
+                                else:
+                                    row[6] = trailing[1:-1]
+                                    rows[-1][3] = rows[-1][3][:paren]
                         
                         # extract parentheticals from this row
                         if row[2].startswith('('):
                             paren = row[2].find(')')
                             row[6] += (' ' if row[6] else '') + row[2][:paren].strip(' ()')
                             row[2] = row[2][paren + 1:].strip()
+
+                        note_tag = grammatical_tag(row[6])
+                        if note_tag:
+                            row[14] = " ".join(dict.fromkeys(filter(None, row[14].split() + [note_tag])))
+                            row[6] = ""
 
                         rows.append(row)
 
@@ -168,14 +248,29 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
 
                         if ERR: print('        done with forms')
                     
+                    # Source/dialect markers sometimes sit between a group of
+                    # forms and their shared gloss.  Carry that gloss backwards
+                    # over otherwise empty rows in the same language span.
+                    for row in rows:
+                        row[3] = re.sub(r'<([ib])>\s*</\1>', '', row[3])
+                        row[3] = re.sub(r'\(\s*\)', '', row[3])
+                        row[3] = re.sub(r' {2,}', ' ', row[3])
+                        row[3] = row[3].strip(';,./ ').lstrip(') ')
+                    for pos, row in enumerate(rows):
+                        if not row[3]:
+                            for later in rows[pos + 1:]:
+                                if later[3]:
+                                    row[3] = later[3]
+                                    break
+
                     for pos, row in enumerate(rows):
                         # fix Tamil (-pp-, -tt-)
                         if row[0] == 'Tam' and row[2] == '' and row[6] == '-pp-, -tt-':
                             row[2] = rows[pos - 1][2].split(' (')[0] + ' (-pp-, -tt-)'
                             row[6] = ""
 
-                        forms = [form.strip() for form in comma_split.split(row[2])]
-                        row[3] = row[3].strip(';,./ ')
+                        forms = row[15] or [(form, []) for form in split_forms(row[2])]
+                        row[3] = re.sub(r'\s*\?\s*$', '', row[3]).strip(';,./ ')
 
                         for replacement in replacements:
                             row[6] = row[6].replace(replacement, replacements[replacement])
@@ -193,17 +288,23 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
                             else:
                                 ref_ct[(ref, row[0])] += 1
 
+                        dial_forms = list(dict.fromkeys(dial_forms))
                         if not dial_forms:
                             dial_forms.append(row[0])
 
                         # add forms for each dialect
                         for dial in dial_forms:
-                            for form in forms:
+                            for form, form_tags in forms:
                                 new_row = row[::]
                                 new_row[0] = dial
+                                new_row[14] = " ".join(
+                                    dict.fromkeys(new_row[14].split() + form_tags)
+                                )
 
                                 if ERR: print('        form', form)
                                 raw_form = form.strip()
+                                if is_prose_misparse(raw_form):
+                                    continue
                                 form = formatter.sub('', form).strip()
 
                                 # extract parentheticals from this row
@@ -216,10 +317,16 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
                                 if lang == 'OIA' and (form == '' or 'no.' in form):
                                     continue
 
-                                for altform in form.split('/'):
+                                # Repair a common source typo where the closing
+                                # parenthesis falls just outside the bold lemma.
+                                if form.count('(') == form.count(')') + 1 and new_row[3].startswith(')'):
+                                    form += ')'
+                                    new_row[3] = new_row[3][1:].lstrip()
+
+                                for altform in split_alternatives(form):
                                     new_row[2] = altform.strip(" ;.,/")
                                     if new_row[2] and not is_footer_misparse(new_row[2]):
-                                        writer.writerow(new_row)
+                                        section_rows.append(new_row[:15])
                                     elif new_row[2]:
                                         note = footer_note(raw_form, new_row[3])
                                         param = 'd' + str(number)
@@ -227,7 +334,11 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
                                             footer_notes[param].append(note)
                                     count += 1
 
-                    if ERR: print('    done with spans')
+                shared_fallback = shared_section_glosses.get((str(number), section_num), '')
+                for output_row in propagate_shared_glosses(section_rows, shared_fallback):
+                    writer.writerow(output_row)
+
+                if ERR: print('    done with spans')
     
     if ERR: print('deleting')
     if not cached: del resp

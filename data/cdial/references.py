@@ -76,18 +76,43 @@ _REFERENCE_RE = re.compile(
 )
 _GROUP_TO_ABBREV = {f"r{i}": _SPELLINGS[abbrev] for i, abbrev in enumerate(_ORDERED)}
 
+# CDIAL citations normally put a volume/page or item locator immediately after the abbreviation:
+# ``NTS xvii 227``, ``IIFL iii 3, 9``, ``LM 427``, ``IL 17, 158``. Keep the printed locator rather
+# than trying to reinterpret its numbering system.
+_LOCATOR_RE = re.compile(
+    r"^\s+(?P<locator>(?:(?:vol\.?\s*)?[ivxlcdm]+\s+)?"
+    r"\d+(?:\s*[,.:–-]\s*\d+)*(?:\s*[a-z])?)(?![\w])",
+    re.IGNORECASE,
+)
 
-def extract_reference_ids(text):
-    """Return distinct CDIAL bibliography IDs found in *text*, in citation order."""
+
+def extract_references(text):
+    """Return distinct ``(source ID, printed locator)`` citations in source order."""
     text = re.sub(r"<[^>]+>", "", unicodedata.normalize("NFC", text or ""))
     found = []
     for match in _REFERENCE_RE.finditer(text):
         abbrev = _GROUP_TO_ABBREV[match.lastgroup]
+        locator_match = _LOCATOR_RE.match(text[match.end():])
+        locator = locator_match.group("locator").strip() if locator_match else ""
+        citation = (abbrev, locator)
+        if citation not in found:
+            found.append(citation)
+    return found
+
+
+def extract_reference_ids(text):
+    """Return distinct CDIAL bibliography IDs found in *text*, in citation order."""
+    found = []
+    for abbrev, _ in extract_references(text):
         if abbrev not in found:
             found.append(abbrev)
     return found
 
 
 def source_field(notes):
-    """Build the raw-CDIAL Source cell, retaining CDIAL itself as primary provenance."""
-    return ";".join(["CDIAL", *extract_reference_ids(notes)])
+    """Build raw-CDIAL CLDF citations, retaining CDIAL itself as primary provenance."""
+    citations = [
+        f"{source}[{locator}]" if locator else source
+        for source, locator in extract_references(notes)
+    ]
+    return ";".join(["CDIAL", *citations])
