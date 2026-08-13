@@ -140,9 +140,21 @@
                             "base": "string",
                             "format": ".*?"
                         },
-                        "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#macroarea",
                         "required": false,
                         "name": "Clade"
+                    },
+                    {
+                        "datatype": "string",
+                        "required": false,
+                        "name": "Location"
+                    },
+                    {
+                        "datatype": {
+                            "base": "string",
+                            "format": "[ABC]"
+                        },
+                        "required": false,
+                        "name": "Quality"
                     }
                 ],
                 "primaryKey": [
@@ -150,6 +162,40 @@
                 ]
             },
             "url": "languages.csv"
+        },
+        {
+            "tableSchema": {
+                "columns": [
+                    {"name": "ID", "datatype": "string", "required": true},
+                    {"name": "Tag", "datatype": "string", "required": true},
+                    {
+                        "name": "Language_ID",
+                        "datatype": "string",
+                        "required": true,
+                        "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#languageReference"
+                    },
+                    {"name": "Source_Language_ID", "datatype": "string", "required": false},
+                    {"name": "Name", "datatype": "string", "required": true},
+                    {
+                        "name": "Glottocode",
+                        "datatype": {"base": "string", "format": "[a-z0-9]{4}[1-9][0-9]{3}"},
+                        "required": false
+                    },
+                    {"name": "Latitude", "datatype": {"base": "decimal", "minimum": -90, "maximum": 90}, "required": false},
+                    {"name": "Longitude", "datatype": {"base": "decimal", "minimum": -180, "maximum": 180}, "required": false},
+                    {"name": "Clade", "datatype": "string", "required": false},
+                    {"name": "Location", "datatype": "string", "required": false},
+                    {"name": "Quality", "datatype": {"base": "string", "format": "[ABC]"}, "required": false}
+                ],
+                "primaryKey": ["Tag"],
+                "foreignKeys": [
+                    {
+                        "columnReference": ["Language_ID"],
+                        "reference": {"resource": "languages.csv", "columnReference": ["ID"]}
+                    }
+                ]
+            },
+            "url": "dialects.csv"
         },
         {
             "dc:conformsTo": "http://cldf.clld.org/v1.0/terms.rdf#ParameterTable",
