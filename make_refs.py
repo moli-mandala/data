@@ -34,9 +34,11 @@ JAMBU_EDITOR_OVERRIDES = {
     "schmidt": "Aryaman Arora; OpenAI Codex",
     "canvin2025": "Aryaman Arora; OpenAI Codex; Claude Opus 4.8",
     "zoller2005": "OpenAI Codex",
+    "bhaskararao-toda2025": "OpenAI Codex",
 }
 OCR_OVERRIDES = {
     "berger-auto",
+    "dbia",
 }
 
 CDIAL_REFERENCE_CATALOG = Path("data/cdial/reference_catalog.json")

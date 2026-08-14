@@ -40,6 +40,8 @@ GRAPH_FILE_COLUMNS = {
     "derivation.csv": ("Child_ID", "Parent_ID"),
     "forms-legacy.csv": ("ID", "Origin_ID", "Redirect", "Variant_Of", "Borrowed_From"),
     "merges.csv": ("Addendum_ID", "Main_ID"),
+    # Optional structured source-prose sidecar consumed by jambu-static's DB builder.
+    "entry-texts.csv": ("Form_ID",),
     # These are normally regenerated later in the pipeline. Rewriting them too keeps a checkout
     # internally consistent immediately after the one-time ID migration.
     "form_concepts.csv": ("Form_ID",),

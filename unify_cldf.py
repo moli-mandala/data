@@ -94,6 +94,49 @@ def load_strand_oia_redirects(path="data/strand_oia_redirects.csv"):
         }
 
 
+def load_dbia_redirects(path="data/dbia/cdial_redirects.csv"):
+    with open(path, encoding="utf-8") as f:
+        return {
+            row["DBIA_ID"]: row["CDIAL_ID"]
+            for row in csv.DictReader(f)
+        }
+
+
+def apply_dbia_redirects(etyma_rows, reflex_rows, redirects):
+    """Re-home DBIA loans on CDIAL heads while retaining cited DBIA redirect stubs."""
+    by_id = {row[0]: row for row in etyma_rows + reflex_rows}
+    missing = sorted(
+        (dbia, cdial) for dbia, cdial in redirects.items()
+        if dbia not in by_id or cdial not in by_id
+    )
+    if missing:
+        raise ValueError(f"Unknown DBIA/CDIAL redirects: {missing}")
+
+    references = 0
+    for row in etyma_rows + reflex_rows:
+        if row[0] in redirects:
+            continue
+        for column in (11, 14, 15, 16):
+            target = redirects.get(row[column])
+            if target:
+                row[column] = target
+                references += 1
+
+    for dbia, cdial in redirects.items():
+        source_row = by_id[dbia]
+        target_row = by_id[cdial]
+        if source_row[1] != "Indo-Aryan" or target_row[1] != "Indo-Aryan":
+            raise ValueError(f"DBIA redirect must join Indo-Aryan entries: {dbia}, {cdial}")
+        source_etymology = (source_row[12] or "").strip()
+        if source_etymology and source_etymology not in (target_row[12] or ""):
+            target_row[12] = (
+                target_row[12] + ADD_DELIM + source_etymology
+                if target_row[12] else source_etymology
+            )
+        source_row[14] = cdial
+    return len(redirects), references
+
+
 def apply_borrowings(rows, borrowings):
     ids = {r[0] for r in rows}
     missing = sorted((borrower, source) for borrower, source in borrowings.items()
@@ -917,6 +960,9 @@ def main():
     n_strand_oia_redirects, n_strand_oia_references = apply_strand_oia_redirects(
         etyma_rows, reflex_rows, load_strand_oia_redirects()
     )
+    n_dbia_redirects, n_dbia_references = apply_dbia_redirects(
+        etyma_rows, reflex_rows, load_dbia_redirects()
+    )
     n_cross_family_borrowings = mark_cross_family_borrowings(
         etyma_rows + reflex_rows + ext_entry_rows, load_language_clades()
     )
@@ -1000,6 +1046,7 @@ def main():
         f"with {n_nuristani_borrowed_descendants} direct borrowed descendants; "
         f"merged {n_strand_oia_redirects} duplicate Strand OIA heads and redirected "
         f"{n_strand_oia_references} references; "
+        f"redirected {n_dbia_redirects} DBIA heads and {n_dbia_references} references; "
         f"marked {n_cross_family_borrowings} inferred cross-family borrowings; "
         f"removed parameters.csv",
         file=sys.stderr,

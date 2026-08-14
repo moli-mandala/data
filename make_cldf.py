@@ -114,6 +114,39 @@ def _strand_gloss(value):
 SCHMIDT_VOWELS = "aeiouəæãẽõũ"
 SCHMIDT_PROFILE_LANGUAGES = {"K", "kash", "pog", "sir"}
 
+# These profiles operate on source forms whose boundary marks, homonym numbers, and internal
+# punctuation are meaningful source data.  The legacy generic converter strips such characters
+# before tokenization because many older wordlists used them as disposable list notation.
+PRESERVE_SOURCE_PROFILE_INPUT = {
+    "house", "drasi", "yoshioka", "gandhari", "kullui", "toda", "rabha",
+    "western-tamang",
+    "humla",
+    "gurung",
+    "dotyali",
+    "kudiya",
+    "majhi-bote",
+    "kochila-tharu",
+    "pyangaun-newar",
+    "maikoti-kham",
+    "thakali",
+    "mustang-loke",
+    "kurux-nepal",
+    "north-gorkha",
+    "weinreich-domaaki",
+    "brahui",
+    "kannauji",
+    "pahari",
+    "naaba",
+    "magar-2024",
+    "dewas-rai",
+    "hajong-survey",
+    "santali-cluster",
+    "sampang",
+    "mewahang",
+    "chhulung",
+    "magahi-survey",
+}
+
 
 def normalize_schmidt_stress(value):
     """Move Schmidt & Kaul's pre-syllable apostrophe onto its vowel.
@@ -226,6 +259,108 @@ def parse_file(file: str, errors, name=None, file_num=0, param_counter=None):
         if row.source.split("[", 1)[0] == "liljegren-hindukush":
             row_ipa = "liljegren-hindukush"
             row_convert = True
+        # Abraham & Sako's sixteen Arunachal Pradesh wordlists supply Unicode IPA.
+        # Convert only the display Form to Jambu transcription and retain the
+        # source transcription unchanged in Phonemic.
+        if row.source.split("[", 1)[0] == "abraham-sako2021":
+            row_ipa = "tagin-puroik"
+            row_convert = True
+
+        if row.source.split("[", 1)[0] == "kondakov2013rabha":
+            row_ipa = "rabha"
+            row_convert = True
+        # Hilty & Mitchell's nine comparative wordlists are Unicode IPA.
+        # Keep the source IPA in Phonemic and normalize only the display Form.
+        if row.source.split("[", 1)[0] == "hilty-mitchell2014":
+            row_ipa = "yamphu"
+            row_convert = True
+        if row.source.split("[", 1)[0] == "hilty2013eastern-magar":
+            row_ipa = "eastern-magar"
+            row_convert = True
+        # Lipp's three Western Tamang survey wordlists use Unicode IPA. Keep
+        # that source value in Phonemic and convert only the display Form.
+        if row.source.split("[", 1)[0] == "lipp2014western-tamang":
+            row_ipa = "western-tamang"
+            row_convert = True
+        if row.source.split("[", 1)[0] == "devries2020humla":
+            row_ipa = "humla"
+            row_convert = True
+        if row.source.split("[", 1)[0] == "swenson2019gurung":
+            row_ipa = "gurung"
+            row_convert = True
+        if row.source.split("[", 1)[0] == "eichentopf-tupper2019dotyali":
+            row_ipa = "dotyali"
+            row_convert = True
+        if row.source.split("[", 1)[0] == "joseph2024kudiya":
+            row_ipa = "kudiya"
+            row_convert = True
+        if row.source.split("[", 1)[0] == "page2024majhi-bote":
+            row_ipa = "majhi-bote"
+            row_convert = True
+        if row.source.split("[", 1)[0] == "eichentopf-mitchell2020kochila":
+            row_ipa = "kochila-tharu"
+            row_convert = True
+        if row.source.split("[", 1)[0] == "smith2021pyangaun":
+            row_ipa = "pyangaun-newar"
+            row_convert = True
+        if row.source.split("[", 1)[0] == "leman2020maikoti":
+            row_ipa = "maikoti-kham"
+            row_convert = True
+        if row.source.split("[", 1)[0] == "webster2021thakali":
+            row_ipa = "thakali"
+            row_convert = True
+        if row.source.split("[", 1)[0] == "khadgi-marcuson-marcuson2021mustang":
+            row_ipa = "mustang-loke"
+            row_convert = True
+        if row.source.split("[", 1)[0] == "shackelford-swenson-chaudhary-maggard2022kurux":
+            row_ipa = "kurux-nepal"
+            row_convert = True
+        if row.source.split("[", 1)[0] == "webster2022north-gorkha":
+            row_ipa = "north-gorkha"
+            row_convert = True
+        if row.source.split("[", 1)[0] == "weinreich2008":
+            row_ipa = "weinreich-domaaki"
+            row_convert = True
+        if row.source.split("[", 1)[0] == "ali-kobayashi2024":
+            row_ipa = "brahui"
+            row_convert = True
+        # John & Varghese's thirteen target wordlists use Unicode IPA. The
+        # source value remains in Phonemic while the display form is converted.
+        if row.source.split("[", 1)[0] == "kannauji":
+            row_ipa = "kannauji"
+            row_convert = True
+        # Smith's five Pahari field-site wordlists use Unicode IPA. Preserve
+        # that source value in Phonemic and convert only the display Form.
+        if row.source.split("[", 1)[0] == "smith2022pahari":
+            row_ipa = "pahari"
+            row_convert = True
+        if row.source.split("[", 1)[0] == "swenson2025naaba":
+            row_ipa = "naaba"
+            row_convert = True
+        if row.source.split("[", 1)[0] == "swenson2024magar":
+            row_ipa = "magar-2024"
+            row_convert = True
+        if row.source.split("[", 1)[0] == "shackelford2019dewas-rai":
+            row_ipa = "dewas-rai"
+            row_convert = True
+        if row.source.split("[", 1)[0] == "kim-ahmad-kim-sangma2011hajong":
+            row_ipa = "hajong-survey"
+            row_convert = True
+        if row.source.split("[", 1)[0] == "kim-kim-ahmad-sangma2010santali-cluster":
+            row_ipa = "santali-cluster"
+            row_convert = True
+        if row.source.split("[", 1)[0] == "rai-rai-thokar2015sampang":
+            row_ipa = "sampang"
+            row_convert = True
+        if row.source.split("[", 1)[0] == "rai-rai-thokar2014mewahang":
+            row_ipa = "mewahang"
+            row_convert = True
+        if row.source.split("[", 1)[0] == "rai-rai-thokar2014chhulung":
+            row_ipa = "chhulung"
+            row_convert = True
+        if row.source.split("[", 1)[0] == "thakur-thakur2016magahi":
+            row_ipa = "magahi-survey"
+            row_convert = True
         # Schmidt & Kaul use one transcription system for the four Table 3
         # Table 3 varieties. Route by provenance and language rather than the
         # dated filename, whose legacy parser reduces both Schmidt imports to
@@ -308,7 +443,21 @@ def parse_file(file: str, errors, name=None, file_num=0, param_counter=None):
                 row.variant_of = main_id
 
             # convert IPA
-            if row_ipa == "zoller" and row_convert:
+            if row_ipa in PRESERVE_SOURCE_PROFILE_INPUT and row_convert:
+                stats["for_conversion"] += 1
+                src = unicodedata.normalize("NFC", reformed)
+                form_out = unicodedata.normalize(
+                    "NFC",
+                    convertors[row_ipa](src, column="IPA")
+                    .replace(" ", "")
+                    .replace("#", " "),
+                )
+                if "�" in form_out:
+                    errors.write(str(row) + " " + form_out + "\n")
+                else:
+                    row.form = form_out
+                    stats["converted"] += 1
+            elif row_ipa == "zoller" and row_convert:
                 # Zoller's tonal pseudo-IPA. NFD so precomposed vowels split into base + marks the
                 # profile matches (acute->caron rising, grave->circumflex falling); the "IPA" column
                 # is the normalised transcription (a-allophones merged), the "Phon" column the IPA
@@ -427,6 +576,10 @@ def main():
         "data/dedr/pdr.csv",
     ] + glob.glob("data/other/forms/*.csv")
     files.sort()
+    # Append new imports after sorting so adding DBIA cannot renumber every existing source's
+    # legacy <file>-<row> IDs. Persistent IDs normally absorb ordering changes, but curated graph
+    # overlays must also remain valid during the pre-ID build.
+    files.append("data/dbia/forms.csv")
 
     # now do the same thing for non-CDIAL languages
     tot_stats = {
@@ -466,7 +619,19 @@ def main():
             # while retaining the legacy dedupe behaviour for other sources.
             row.entry_key
             if row.source.split("[", 1)[0] in {
-                "gandhari", "kullui-org", "liljegren-hindukush", "tulpule1999"
+                "gandhari", "grierson-lsi1928", "kullui-org", "liljegren-hindukush", "tulpule1999",
+                "wolf-kota", "bhaskararao-toda2025", "weinreich2008", "yoshioka2012",
+                "kannauji",
+                "smith2022pahari",
+                "swenson2025naaba",
+                "swenson2024magar",
+                "shackelford2019dewas-rai",
+                "kim-ahmad-kim-sangma2011hajong",
+                "kim-kim-ahmad-sangma2010santali-cluster",
+                "rai-rai-thokar2015sampang",
+                "rai-rai-thokar2014mewahang",
+                "rai-rai-thokar2014chhulung",
+                "thakur-thakur2016magahi",
             }
             else "",
             row.gloss
@@ -681,6 +846,14 @@ def main():
                 row[2] = "PMu"
                 row[1] = row[1].split(",")[0].strip()  # main head-word = first of the listed forms
                 params.writerow(row + [""])
+                included_params.add(row[0])
+
+        # DBIA entries keep their cited source IDs even when unify_cldf.py redirects them to a
+        # canonical CDIAL etymon. Their HTML Description contains the full OCR transcription.
+        with open("data/dbia/params.csv", "r") as f:
+            read = csv.reader(f)
+            for row in read:
+                params.writerow(row[:5] + [""])
                 included_params.add(row[0])
 
         with open("data/dedr/footer_notes.csv", "r") as f:

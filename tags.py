@@ -58,7 +58,7 @@ GRAMMATICAL_TAGS = {
     "honorific", "proper-noun", "multiword-expression", "demonstrative",
     "personal", "reciprocal", "copula", "modal", "conjunct-verb",
     "incorporating", "non-incorporating", "temporal", "spatial", "manner",
-    "degree", "sentential",
+    "degree", "sentential", "onomatopoeia",
 }
 
 # CDIAL abbreviations normalized into the shared schema. They are applied only when the complete

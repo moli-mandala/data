@@ -22,6 +22,12 @@ The final CLDF database is in `cldf/`. It includes the following:
 
 The structure is more formally defined in `cldf/Wordlist-metadata.json`.
 
+Source prose may additionally be supplied in the optional `cldf/entry-texts.csv` sidecar with
+columns `Form_ID, Position, Kind, Format, Content, Source`. `Position` orders blocks on an entry;
+`Kind` is a semantic label such as `etymology`, `comparison`, or `usage`; `Format` is `text`,
+`markdown`, or trusted `html`; and `Source` uses the same CLDF citation syntax as forms. The web
+database materializes legacy `Etymology` values into this shape when no explicit blocks exist.
+
 ### Raw data
 
 **Raw data is organised under `data/`**. The script `make_cldf.py` builds the CLDF database in `cldf/` from the raw data. Raw data is all stored in CSV in order to be easy to edit and parse.
@@ -107,9 +113,46 @@ unetymologised entries; explicitly identified Old Indo-Aryan and Sanskrit protof
 only when they have one exact, accent-normalized CDIAL head match. Article JSON is cached under
 `tmp/kullui-org-cache/`, and all match outcomes are written to `tmp/kullui-org-audit.csv`.
 
+#### Linguistic Survey of India comparative vocabulary
+
+`data/other/forms/raw_data/grierson_lsi.py` imports the CC-BY-4.0 Lexibank v1.0
+retrostandardization of Grierson's 1928 *Linguistic Survey of India: Comparative Vocabulary*
+into `data/other/forms/20260813-grierson-lsi.csv`. All 60,533 forms, 168 concepts, and 363
+historical source varieties are retained. The varieties use `LSI-`-prefixed IDs because the
+printed tables distinguish lects which may now share a Glottocode. Forms are unetymologised,
+carry immutable upstream keys, and cite the printed page range plus upstream form and concept IDs.
+The importer also updates the corresponding `LSI-` slice of `cldf/languages.csv` idempotently.
+
+#### Toda dictionary
+
+`data/other/forms/raw_data/bhaskararao_toda.py` extracts all 7,560 entries in Bhaskararao and
+Kobayashi's 2025 *Toda Dictionary* into
+`data/other/forms/20260813-bhaskararao-toda.csv`. The repository PDF appears image-only to ordinary
+PDF libraries, but contains a Unicode text layer outside its visible crop box. The importer uses
+Ghostscript's `txtwrite` XML output and page coordinates to recover that layer without OCR, retain
+Toda's underlines, ogoneks, retroflex dots, and vowel length, and discard the duplicated adjacent
+page outside the crop box. Printed S2/alternate stems become variant rows; every DEDR citation is
+resolved to its etymon. The complete source text and parse decisions are preserved in
+`data/other/forms/raw_data/20260813-bhaskararao-toda-audit.csv`.
+
+#### Brahui texts glossary
+
+`data/other/forms/raw_data/ali_kobayashi_brahui.py` extracts all 3,483 entries in the glossary
+to Ali and Kobayashi's 2024 *Brahui Texts* (minor revision, 2025) into
+`data/other/forms/20260813-ali-kobayashi-brahui.csv`. The importer reads the PDF's two-column
+Unicode text layer without OCR, using bold spans to separate headwords from grammatical labels
+and definitions. It retains the source transcription in `Phonemic`, printed page locators,
+loan-language labels, and the three entries explicitly marked Rakhshān. Parse decisions are
+preserved in `data/other/forms/raw_data/20260813-ali-kobayashi-brahui-audit.csv`.
+
 #### DBIA
 
-Under development at `data/dbia/`.
+`data/dbia/parse.py` conservatively extracts Emeneau and Burrow's *Dravidian Borrowings from
+Indo-Aryan* into `forms.csv` and `params.csv`. It preserves each complete OCR entry, records
+two-column boundary repairs and match decisions in `parse_audit.csv`, and writes high-confidence
+normalized headword matches to `cdial_redirects.csv`. During unification, matched `dbiaN` entries remain as
+resolvable redirect stubs while their Dravidian loans and source transcription are folded into the
+canonical CDIAL entry.
 
 #### Munda
 - `data/munda/forms.csv`

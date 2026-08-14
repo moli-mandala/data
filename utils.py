@@ -1,7 +1,14 @@
 # data files -> transcription conversion filess
 mapping = {
-    'patyal': 'cdial', 'thari': 'cdial', 'dhivehi': None, 'kholosi': None,
-    'konkani': None, 'khetrani': None, 'vaagri': 'cdial', 'cdial': 'cdial', 'palula': 'liljegren',
+    # These older imports were manually normalized when they were ingested.  Route them through
+    # an explicit preservation profile so that their transcription contract is checked rather
+    # than silently bypassing the sound-profile layer.
+    'dhivehi': 'house', 'gawri': 'house', 'kalkoti': 'house', 'khetrani': 'house',
+    'kholosi': 'house', 'konkani': 'house', 'kundalshahi': 'house', 'kvari': 'house',
+    'zadjali': 'house', 'arora': 'house', 'punjabi': 'house', 'sindhic': 'house',
+    'pashai': 'house', 'paranavitana': 'house', 'tulpule': 'house', 'wolf': 'house',
+    'patyal': 'cdial', 'thari': 'cdial',
+    'vaagri': 'cdial', 'cdial': 'cdial', 'palula': 'liljegren',
     'strand': 'strand', 'strand2': 'strand', 'strand3': 'strand', 'wadiyara': 'wadiyara',
     'northern': 'northern', 'toulmin': 'toulmin', 'chattisgarhi': 'chattisgarhi',
     'rajasthani': 'rajasthani', 'old_punjabi': 'cdial', 'bundeli': 'chattisgarhi',
@@ -15,7 +22,39 @@ mapping = {
     'ssnp': 'ssnp',
     # Andersen's Ashokan forms use conventional digraph aspiration and
     # underdotted anusvara; normalize both to Jambu's house transcription.
-    'andersen': 'andersen'
+    'andersen': 'andersen',
+    'schmidt': 'schmidt-kashmiri',
+    'drasi': 'drasi',
+    'yoshioka': 'yoshioka',
+    'gandhari': 'gandhari',
+    'kullui': 'kullui',
+    'bhaskararao': 'toda',
+    'rabha': 'rabha',
+    'eastern': 'eastern-magar',
+    'western': 'western-tamang',
+    'humla': 'humla',
+    'gurung': 'gurung',
+    'dotyali': 'dotyali',
+    'kudiya': 'kudiya',
+    'majhi': 'majhi-bote',
+    'majhi-bote': 'majhi-bote',
+    'kochila': 'kochila-tharu',
+    'pyangaun': 'pyangaun-newar',
+    'maikoti': 'maikoti-kham',
+    'thakali': 'thakali',
+    'mustang': 'mustang-loke',
+    'kurux': 'kurux-nepal',
+    'north': 'north-gorkha',
+    'weinreich': 'weinreich-domaaki',
+    'ali': 'brahui',
+    'dewas': 'dewas-rai',
+    'hajong': 'hajong-survey',
+    'santali': 'santali-cluster',
+    'sampang': 'sampang',
+    'mewahang': 'mewahang',
+    'chhulung': 'chhulung',
+    'magahi': 'magahi-survey',
+    'magar': 'magar-2024',
 }
 
 # superscript forms of letters
