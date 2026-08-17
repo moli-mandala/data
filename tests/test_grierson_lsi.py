@@ -31,14 +31,54 @@ def fixture_cldf(tmp_path: Path) -> Path:
         "ID,Local_ID,Language_ID,Parameter_ID,Value,Form,Segments,Comment,Source,"
         "Cognacy,Loan,Graphemes,Profile\n"
         "MALAYALAM-1_one-1,,MALAYALAM,1_one,onnu,onnu,o n̪ n u,printed note,"
-        "Grierson1928,,,,MALAYALAM\n",
+        "Grierson1928,,,,MALAYALAM\n"
+        "MISSING-1_one-1,,MISSING,1_one,unknown,unknown,u n k n o w n,,"
+        "Grierson1928,,,,MISSING\n",
         encoding="utf-8",
     )
     return cldf
 
 
-def test_import_rows_preserves_source_identity_and_page(tmp_path):
-    rows = list(MODULE.import_rows(fixture_cldf(tmp_path)))
+def fixture_registry(tmp_path: Path) -> Path:
+    registry = tmp_path / "languages.csv"
+    registry.write_text(
+        "ID,Name,Glottocode,Latitude,Longitude,Clade,Location,Quality\n"
+        "Mal,Malayalam,mala1464,9.0,76.0,S. Dravidian I,,A\n"
+        "LSI-OLD,Old,,,,Other,,B\n",
+        encoding="utf-8",
+    )
+    return registry
+
+
+def test_parent_resolution_uses_existing_language_and_skips_unmatched(tmp_path):
+    parents, decisions = MODULE.resolve_parents(
+        fixture_cldf(tmp_path), fixture_registry(tmp_path)
+    )
+    assert parents["MALAYALAM"]["ID"] == "Mal"
+    assert "MISSING" not in parents
+    assert decisions["MALAYALAM"] == "unique existing-language name"
+    assert decisions["MISSING"] == "no existing parent"
+
+
+def test_historical_name_outranks_conflicting_modern_glottocode(tmp_path):
+    cldf = fixture_cldf(tmp_path)
+    with (cldf / "languages.csv").open("a", encoding="utf-8") as stream:
+        stream.write(
+            "CONFLICT,CONFLICT,modern1234,Modern Name,zzz,Eurasia,1,2,Family,"
+            "Historical Name,,3,,\n"
+        )
+    registry = fixture_registry(tmp_path)
+    with registry.open("a", encoding="utf-8") as stream:
+        stream.write("Historical,Historical Name,other1234,,,Other,,C\n")
+        stream.write("Modern,Modern Name,modern1234,,,Other,,C\n")
+    parents, _ = MODULE.resolve_parents(cldf, registry)
+    assert parents["CONFLICT"]["ID"] == "Historical"
+
+
+def test_import_rows_preserves_alias_identity_and_page(tmp_path):
+    cldf = fixture_cldf(tmp_path)
+    parents, _ = MODULE.resolve_parents(cldf, fixture_registry(tmp_path))
+    rows = list(MODULE.import_rows(cldf, parents))
     assert rows == [[
         "LSI-MALAYALAM",
         "",
@@ -58,36 +98,41 @@ def test_import_rows_preserves_source_identity_and_page(tmp_path):
     ]]
 
 
-def test_import_languages_inherits_known_clade_and_falls_back(tmp_path):
+def test_import_dialects_attaches_source_lect_to_parent(tmp_path):
     cldf = fixture_cldf(tmp_path)
-    registry = tmp_path / "languages.csv"
-    registry.write_text(
-        "ID,Name,Glottocode,Latitude,Longitude,Clade,Location,Quality\n"
-        "Mal,Malayalam,mala1464,9.0,76.0,S. Dravidian I,,A\n",
-        encoding="utf-8",
-    )
-    rows = list(MODULE.import_languages(cldf, registry))
-    assert rows[0][0] == "LSI-MALAYALAM"
-    assert rows[0][1] == "LSI — Malayāḷam"
-    assert rows[0][5] == "S. Dravidian I"
-    assert rows[0][6].startswith("Lexibank LSI v1.0 coordinate")
-    assert rows[1][1] == "LSI — Missing of Nowhere"
-    assert rows[1][5] == "Other"
+    parents, _ = MODULE.resolve_parents(cldf, fixture_registry(tmp_path))
+    rows = list(MODULE.import_dialects(cldf, parents))
+    assert len(rows) == 1
+    assert rows[0][0] == "lsi_malayalam"
+    assert rows[0][2:5] == [
+        "Mal", "LSI-MALAYALAM", "Malayāḷam (LSI 1928)"
+    ]
+    assert rows[0][8] == "S. Dravidian I"
+    assert rows[0][9].startswith("Lexibank LSI v1.0 coordinate")
 
 
-def test_registry_update_replaces_only_lsi_slice(tmp_path):
-    registry = tmp_path / "languages.csv"
-    registry.write_text(
-        "ID,Name,Glottocode,Latitude,Longitude,Clade,Location,Quality\n"
-        "Keep,Keep,keep1234,,,Other,,C\n"
-        "LSI-OLD,Old,,,,Other,,B\n",
+def test_registry_updates_remove_languages_and_replace_dialect_slice(tmp_path):
+    registry = fixture_registry(tmp_path)
+    assert MODULE.remove_legacy_languages(registry) == 1
+    with registry.open(encoding="utf-8", newline="") as stream:
+        assert [row["ID"] for row in csv.DictReader(stream)] == ["Mal"]
+
+    dialects = tmp_path / "dialects.csv"
+    dialects.write_text(
+        "ID,Tag,Language_ID,Source_Language_ID,Name,Glottocode,Latitude,Longitude,"
+        "Clade,Location,Quality\n"
+        "keep,dialect:Mal:keep:Keep,Mal,keep,Keep,mala1464,,,S. Dravidian I,,C\n"
+        "old,dialect:Mal:LSI-OLD:Old,Mal,LSI-OLD,Old,mala1464,,,S. Dravidian I,,B\n",
         encoding="utf-8",
     )
-    count = MODULE.update_language_registry(
-        registry,
-        [["LSI-NEW", "New", "", "", "", "Other", "", "B"]],
+    count = MODULE.update_dialect_registry(
+        dialects,
+        [[
+            "new", "dialect:Mal:LSI-NEW:New", "Mal", "LSI-NEW", "New",
+            "mala1464", "", "", "S. Dravidian I", "", "B",
+        ]],
     )
     assert count == 1
-    with registry.open(encoding="utf-8", newline="") as stream:
+    with dialects.open(encoding="utf-8", newline="") as stream:
         rows = list(csv.DictReader(stream))
-    assert [row["ID"] for row in rows] == ["Keep", "LSI-NEW"]
+    assert [row["ID"] for row in rows] == ["keep", "new"]

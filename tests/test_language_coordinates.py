@@ -28,27 +28,4 @@ def test_only_geographically_undefined_languages_lack_coordinates():
             row["ID"] for row in csv.DictReader(stream)
             if not row["Latitude"] or not row["Longitude"]
         }
-    # The Lexibank LSI release assigns coordinates only through its Glottolog
-    # mappings. Preserve its genuinely undefined historical/control varieties
-    # instead of inventing survey localities for them.
-    lsi_without_upstream_points = {
-        "LSI-AHI",
-        "LSI-CHAM",
-        "LSI-EASTERNBENGALI",
-        "LSI-GYPSYEUROPEAN",
-        "LSI-HAURPA",
-        "LSI-HEMIAO",
-        "LSI-KATURR",
-        "LSI-KHAMUK",
-        "LSI-MARAN",
-        "LSI-MEGYAO",
-        "LSI-MOENGLWE",
-        "LSI-MONGOLIAN",
-        "LSI-OLDMEITHEI",
-        "LSI-PEMIAO",
-        "LSI-SAKAI",
-        "LSI-SAKUPA",
-        "LSI-SEMANG",
-        "LSI-THAUCHU",
-    }
-    assert missing == {"PBr", "TurkicUnspec"} | lsi_without_upstream_points
+    assert missing == {"PBr", "TurkicUnspec"}

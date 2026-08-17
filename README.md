@@ -117,11 +117,14 @@ only when they have one exact, accent-normalized CDIAL head match. Article JSON 
 
 `data/other/forms/raw_data/grierson_lsi.py` imports the CC-BY-4.0 Lexibank v1.0
 retrostandardization of Grierson's 1928 *Linguistic Survey of India: Comparative Vocabulary*
-into `data/other/forms/20260813-grierson-lsi.csv`. All 60,533 forms, 168 concepts, and 363
-historical source varieties are retained. The varieties use `LSI-`-prefixed IDs because the
-printed tables distinguish lects which may now share a Glottocode. Forms are unetymologised,
-carry immutable upstream keys, and cite the printed page range plus upstream form and concept IDs.
-The importer also updates the corresponding `LSI-` slice of `cldf/languages.csv` idempotently.
+into `data/other/forms/20260813-grierson-lsi.csv`. Historical source varieties are retained as
+`LSI-` aliases in `cldf/dialects.csv`, normalized onto existing Jambu parent languages during the
+build, and tagged with their exact LSI lect label. The current mapping admits 28,552 forms from
+153 varieties; unmatched comparative controls and distinct languages with no existing parent are
+documented in `data/other/forms/raw_data/20260813-grierson-lsi-audit.csv` rather than forced into
+an inappropriate language. Forms are unetymologised, carry immutable upstream keys, and cite the
+printed page range plus upstream form and concept IDs. Upstream Glottolog-derived coordinates are
+retained as dialect metadata with an explicit warning that they are not historical survey sites.
 
 #### Toda dictionary
 
