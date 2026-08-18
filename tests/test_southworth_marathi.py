@@ -160,3 +160,11 @@ def test_reference_metadata_records_partial_scope_and_ocr():
     assert "Tables 1--2" in entry
     assert "ocr" in entry.casefold()
     assert "licen" in entry.casefold()
+
+    references = {
+        row["ID"]: row
+        for row in read_rows(ROOT / "cldf/references.csv")
+    }
+    formatted = references["southworth2005m"]["Source"]
+    assert r"\textasciitilde" not in formatted
+    assert "https://ccat.sas.upenn.edu/~fsouth/DravidianElement.pdf" in formatted

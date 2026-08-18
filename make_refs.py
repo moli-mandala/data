@@ -10,6 +10,7 @@ Run:  uv run --with pybtex python make_refs.py
 import csv
 import glob
 import json
+import re
 import sys
 from collections import defaultdict
 from pathlib import Path
@@ -111,6 +112,9 @@ def main():
                 entry.to_string("bibtex"), "plain", output_backend="markdown"
             )
             formatted = formatted[3:].strip()
+            # Pybtex preserves a URL tilde as a LaTeX command, including a separator space that
+            # breaks the generated Markdown destination. Emit the actual URL character instead.
+            formatted = re.sub(r"\\+textasciitilde\s*", "~", formatted)
         except Exception as e:  # noqa: BLE001
             print(f"format error for {key}: {e}", file=sys.stderr)
             formatted = ""
