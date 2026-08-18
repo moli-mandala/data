@@ -39,7 +39,7 @@ GRAMMATICAL_TAGS = {
     "poss", "conditional", "prefix", "suffix", "emph", "interr", "dir", "uncertain",
     "1sg", "2sg", "3sg", "1pl", "2pl", "3pl",
     "pret", "aor", "opt", "perfect", "stem",
-    "derived", "inherited", "loanword", "diminutive", "intensive", "compound",
+    "derived", "loanword", "diminutive", "intensive", "compound",
     "alternate", "replaced", "reduplicated", "sound-variant",
     "poetic", "dialectal", "archaic", "modern", "colloquial", "vulgar",
     # Language-specific inflection / noun classes
@@ -54,7 +54,7 @@ GRAMMATICAL_TAGS = {
     "Palula-verb-class-L-consonant", "Palula-verb-class-L-minor",
     "Palula-verb-class-T", "Palula-verb-class-suppletive",
     # Additional lexical subclasses used by rich dictionary importers.
-    "determiner", "discourse-marker", "auxiliary", "negator", "mood-marker",
+    "determiner", "discourse-marker", "auxiliary", "negator", "mood-marker", "relative",
     "honorific", "proper-noun", "multiword-expression", "demonstrative",
     "personal", "reciprocal", "copula", "modal", "conjunct-verb",
     "incorporating", "non-incorporating", "temporal", "spatial", "manner",

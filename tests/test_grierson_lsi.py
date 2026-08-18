@@ -1,4 +1,5 @@
 import csv
+import io
 import importlib.util
 from pathlib import Path
 
@@ -96,6 +97,25 @@ def test_import_rows_preserves_alias_identity_and_page(tmp_path):
         "",
         "",
     ]]
+
+
+def test_build_converts_clts_ipa_and_preserves_grierson_form(tmp_path):
+    from make_cldf import parse_file
+
+    source = tmp_path / "lsi.csv"
+    source.write_text(
+        "LSI-KHETRANI,x,ch’ī,Six,,tʃʰiː,,"
+        "grierson-lsi1928[p. 12-13],,,key,,,,\n",
+        encoding="utf-8",
+    )
+    rows, stats = parse_file(
+        str(source), io.StringIO(), name="grierson"
+    )
+    assert stats == {"converted": 1, "for_conversion": 1}
+    assert len(rows) == 1
+    assert rows[0].form == "cʰī"
+    assert rows[0].ipa == "tʃʰiː"
+    assert rows[0].old_form == "ch’ī"
 
 
 def test_import_dialects_attaches_source_lect_to_parent(tmp_path):

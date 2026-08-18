@@ -17,7 +17,6 @@ from utils import mapping
 # transcription, so routing them through a Jambu source-orthography profile
 # would discard upstream analysis rather than add normalization.
 EXCLUDED_FILES = {
-    "20260813-grierson-lsi.csv",
     "20260813-tagin-puroik.csv",
 }
 
@@ -44,12 +43,22 @@ CHECKED_PROFILE_FILES = {
     "dotyali": ["20260813-dotyali.csv"],
     "kudiya": ["20260813-kudiya.csv"],
     "brahui": ["20260813-ali-kobayashi-brahui.csv"],
+    "southworth-marathi": ["20260818-southworth-marathi.csv"],
     "hajong-survey": ["20260813-hajong.csv"],
     "santali-cluster": ["20260813-santali-cluster.csv"],
     "sampang": ["20260813-sampang.csv"],
     "mewahang": ["20260813-mewahang.csv"],
     "chhulung": ["20260813-chhulung.csv"],
     "magahi-survey": ["20260813-magahi.csv"],
+    "ghatage": ["20260817-ghatage-marati-kasargod.csv"],
+    "vaagri": ["20220913-vaagri.csv"],
+    "nihali": [
+        "20260817-mundlay-nihali.csv",
+        "20260817-nagaraja-nihali-wiktionary.csv",
+        "20260817-nihali-database-bhattacharya.csv",
+        "20260817-nihali-database-konow.csv",
+    ],
+    "badaga-hockings": ["20260818-hockings-badaga.csv"],
 }
 
 
@@ -97,6 +106,33 @@ def test_preservation_profile_repairs_only_known_legacy_notation():
 
 
 def test_new_source_profiles_cover_source_specific_transcription():
+    assert convert("ghatage", "tã:ŋkɨ") == "tā̃ŋkɨ"
+    assert convert("ghatage", "pɛ:ṇṭɛ") == "pɛ̄ṇṭɛ"
+    assert convert("ghatage", "goṭṭe") == "goṭṭe"
+    assert convert("ghatage", "ǰagrutɛ") == "jagrutɛ"
+    assert convert("southworth-marathi", "phaḷ") == "pʰaḷ"
+    assert convert("southworth-marathi", "āi") == "āī"
+    assert convert("southworth-marathi", "māṇḍi") == "māṇḍī"
+    assert convert("southworth-marathi", "niṭ") == "nīṭ"
+    assert convert("southworth-marathi", "bāḷant(iṇ)") == "bāḷant(īṇ)"
+    assert convert("southworth-marathi", "ḍokə") == "ḍokə̄"
+    assert convert("southworth-marathi", "buṭṭ@") == "buṭṭ@"
+    assert convert("ghatage", "tilače te:lɨ") == "tilace tēlɨ"
+    assert convert("vaagri", "iga:ri") == "igāri"
+    assert convert("vaagri", "iJalbiJal") == "iẓalbiẓal"
+    assert convert("vaagri", "uba:Sa") == "ubāśa"
+    assert convert("vaagri", "phu:k") == "pʰūk"
+    assert convert("vaagri", "be:Ra:d#") == "bēʀādɨ"
+    assert convert("lsi", "tʃʰiː") == "cʰī"
+    assert convert("lsi", "pʰʌn̪tʃʰ") == "pʰancʰ"
+    assert convert("lsi", "prʌː¹²") == "prā¹²"
+    assert convert("nihali", "caːgo") == "cāgo"
+    assert convert("nihali", "ãːpo") == "ā̃po"
+    assert convert("nihali", "dhāblā") == "dʰāblā"
+    assert convert("nihali", "aɖɖo") == "aḍḍo"
+    assert convert("nihali", "aᵑgarako") == "aⁿgarako"
+    assert convert("nihali", "chhirī") == "cʰirī"
+    assert convert("nihali", "ʈoːl") == "ṭōl"
     assert convert("drasi", "ó:ʃ") == "ṓś"
     assert convert("drasi", "ʧhúp") == "cʰúp"
     assert convert("yoshioka", "aabáad") == "ābā̂d"
@@ -140,6 +176,8 @@ def test_new_source_profiles_cover_source_specific_transcription():
     assert convert("kudiya", "maᶚe") == "maṛ̆e"
     assert convert("brahui", "zunḍ-ing") == "zunḍ-ing"
     assert convert("brahui", "ḍʰāḍarī") == "ḍʰāḍarī"
+    assert convert("badaga-hockings", "Eḍeka:ḍu") == "Eḍekāḍu"
+    assert convert("badaga-hockings", "ka:ḷu") == "kāḷu"
 
 
 def test_new_profiles_cover_every_installed_source_form():
@@ -157,3 +195,13 @@ def test_new_profiles_cover_every_installed_source_form():
                         source,
                         result,
                     )
+
+
+def test_lsi_profile_covers_every_upstream_phonemic_form():
+    tokenizer = Tokenizer("conversion/lsi.txt")
+    path = Path("data/other/forms/20260813-grierson-lsi.csv")
+    with path.open(encoding="utf-8", newline="") as stream:
+        for row_number, row in enumerate(csv.reader(stream), 1):
+            source = unicodedata.normalize("NFC", row[5])
+            result = tokenizer(source, column="IPA")
+            assert "�" not in result, (row_number, source, result)

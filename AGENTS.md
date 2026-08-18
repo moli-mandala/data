@@ -10,6 +10,18 @@ DBIA, "other") lives under `data/`; the pipeline compiles it into a CLDF wordlis
 The sibling `../jambu-static` consumes `cldf/` to build the browser DB. **Nothing here runs at
 serve time** — it's all an offline build.
 
+## Mandatory source-ingestion checklist
+
+For every request to ingest, import, add, OCR, snapshot, re-ingest, or substantially reparse a
+lexical/linguistic source, read `SOURCE_INGESTION_CHECKLIST.md` completely before taking ingestion
+actions. Announce that it is active, use its standing editorial policy and applicable source-type
+addendum, and treat its definition of done as mandatory. Do not silently skip gates. Record
+inapplicable or explicitly deferred gates in the audit/final handoff, and do not call an ingestion
+complete until the applicable focused tests, full data build, and browser-database QA pass.
+
+Pure source discovery does not activate the installation/build portion until the user selects a
+source for ingestion.
+
 ## The pipeline (run order matters; it is NOT in the Makefile)
 
 The `Makefile` only knows `make_cldf.py`. The current pipeline is a sequence of scripts you run

@@ -31,6 +31,30 @@ def test_dedr_parser_retains_multi_entry_citations_and_repairs_leading_zero():
     assert invalid == []
 
 
+def test_definition_parser_separates_pos_gloss_and_source_references():
+    gloss, tags, references = toda._definition_parts(
+        "vt. to dig. DEDR 11, TGT 122, PB 5"
+    )
+    assert gloss == "to dig"
+    assert tags == ("verb", "tr")
+    assert references == (
+        "emeneau-toda1984[p. 122]",
+        "bhaskararao-toda-notes[p. 5]",
+    )
+
+    gloss, tags, references = toda._definition_parts(
+        "n. food; abak ïḍ- ‘to put in the mouth’. PB 5"
+    )
+    assert gloss == "food; abak ïḍ- ‘to put in the mouth’"
+    assert tags == ("noun",)
+    assert references == ("bhaskararao-toda-notes[p. 5]",)
+
+
+def test_compound_grammatical_labels_become_canonical_tags():
+    assert toda._definition_parts("vt., vi. to move")[1] == ("verb", "tr", "intr")
+    assert toda._definition_parts("dem.adv. there")[1] == ("demonstrative", "adv")
+
+
 def test_generated_toda_dictionary_is_complete_and_unicode_preserving():
     source = ROOT / "data/other/forms/20260813-bhaskararao-toda.csv"
     audit_path = ROOT / "data/other/forms/raw_data/20260813-bhaskararao-toda-audit.csv"
@@ -48,7 +72,12 @@ def test_generated_toda_dictionary_is_complete_and_unicode_preserving():
     assert all(row[7].startswith("bhaskararao-toda2025[p. ") for row in forms)
     assert len({row[10] for row in forms}) == len(forms)
     assert all(row["Definition"] for row in audit)
+    assert all(row["Tags"] for row in audit)
     assert not any(row["Unresolved_DEDR_IDs"] for row in audit)
+    assert sum(row["Status"] == "ingested" for row in audit) == 7558
+    assert sum(row["Status"] == "corrupt" for row in audit) == 2
+    assert all(row["Reason"] for row in audit if row["Status"] == "corrupt")
+    assert not any("�" in row[2] for row in forms)
 
     by_form = {}
     for row in audit:
@@ -58,6 +87,7 @@ def test_generated_toda_dictionary_is_complete_and_unicode_preserving():
 
     ark = [row for row in by_form["ark-"] if row["Printed_Page"] == "4"]
     assert [row["Definition"] for row in ark] == [
-        "vt. (1) to chip, cut square (end of plank or post). DEDR 212, TGT 120",
-        "vt. (2) to file, rub (to be checked). PB 8",
+        "(1) to chip, cut square (end of plank or post)",
+        "(2) to file, rub (to be checked)",
     ]
+    assert all(row["Tags"] == "verb tr" for row in ark)

@@ -288,7 +288,7 @@ def apply_catalog(
         note = item["Notes"]
         proto = [
             proto_id, "PBr", item["Proto_Form"], item["Gloss"], "", "", item["Proto_Form"],
-            "", "", "inherited uncertain", "Jambu comparative reconstruction", "", note,
+            "", "", "uncertain", "Jambu comparative reconstruction", "", note,
             "", "", "", "",
         ]
         proto_rows.append(proto)

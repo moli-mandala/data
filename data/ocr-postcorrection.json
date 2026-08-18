@@ -1,0 +1,135 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "id": "thari",
+      "label": "Bhawnani's Thari vocabulary",
+      "audit": "data/other/forms/raw_data/20260817-thari-audit.csv",
+      "corrections": "data/other/forms/raw_data/20260817-thari-corrections.csv",
+      "pendingStatuses": ["needs_review"],
+      "fields": {
+        "form": "Form",
+        "pos": "POS",
+        "gloss": "Gloss",
+        "raw": [
+          "Raw_Form_POS",
+          "Raw_Gloss",
+          "Duplicate_Raw_Form_POS",
+          "Duplicate_Raw_Gloss",
+          "Reviewed_Form"
+        ],
+        "metadata": [
+          "Printed_Page",
+          "Column",
+          "Column_Entry",
+          "Duplicate_Agrees",
+          "Review_Match_Score"
+        ]
+      },
+      "candidateFiles": [
+        {
+          "path": "data/other/forms/raw_data/20260817-thari-calibration.csv",
+          "key": "Entry_Key",
+          "fields": [
+            "Gold_Form",
+            "Embedded_ABBYY",
+            "Fresh_Tesseract_Base",
+            "Tuned_Base_OCR",
+            "Kraken_Unicode_OCR"
+          ]
+        }
+      ],
+      "documents": [
+        {
+          "id": "vocabulary",
+          "label": "Standalone vocabulary",
+          "filename": "11_vocabulary.pdf",
+          "environment": "JAMBU_THARI_VOCABULARY_PDF",
+          "pageField": "PDF_Page"
+        },
+        {
+          "id": "annexures",
+          "label": "Annexures duplicate",
+          "filename": "09_annexures.pdf",
+          "environment": "JAMBU_THARI_ANNEXURES_PDF",
+          "pageField": "Printed_Page",
+          "pageOffset": -160,
+          "cropColumnBounds": {
+            "1": [25, 334],
+            "2": [332, 602]
+          }
+        }
+      ],
+      "crop": {
+        "topField": "Top",
+        "columnField": "Column",
+        "columnBounds": {
+          "1": [82, 334],
+          "2": [332, 602]
+        },
+        "height": 50,
+        "verticalPadding": 16,
+        "referenceWidth": 697.9,
+        "referenceHeight": 993.1
+      }
+    },
+    {
+      "id": "hockings-badaga",
+      "label": "Hockings & Pilot-Raichoor's Badaga-English dictionary",
+      "audit": "data/other/forms/raw_data/20260818-hockings-badaga-audit.csv",
+      "corrections": "data/other/forms/raw_data/20260818-hockings-badaga-corrections.csv",
+      "pendingStatuses": ["ingested"],
+      "fields": {
+        "form": "Form",
+        "pos": "POS",
+        "gloss": "Gloss",
+        "raw": ["Raw_Head", "Raw_OCR"],
+        "metadata": [
+          "Printed_Page",
+          "PDF_Page",
+          "Column",
+          "Top",
+          "DEDR_IDs",
+          "Unresolved_DEDR_IDs",
+          "OCR_Confidence",
+          "Review_Reason"
+        ]
+      },
+      "candidateFiles": [
+        {
+          "path": "data/other/forms/raw_data/20260818-hockings-badaga-calibration.csv",
+          "key": "Entry_Key",
+          "fields": [
+            "Gold_Head",
+            "Embedded_OCR_Head",
+            "Fresh_Tesseract_Head",
+            "Structural_Parse",
+            "Transcription_Decision",
+            "Final_Result"
+          ]
+        }
+      ],
+      "documents": [
+        {
+          "id": "dictionary",
+          "label": "Badaga-English dictionary scan",
+          "filename": "Paul Hockings_ Christiane Pilot-Raichoor - A Badaga-English Dictionary-Walter de Gruyter (1992).pdf",
+          "environment": "JAMBU_HOCKINGS_BADAGA_PDF",
+          "pageField": "PDF_Page"
+        }
+      ],
+      "crop": {
+        "topField": "Top",
+        "columnField": "Column",
+        "columnBounds": {
+          "1": [48, 220],
+          "2": [220, 438]
+        },
+        "height": 52,
+        "verticalPadding": 14,
+        "referenceWidth": 439.44,
+        "referenceHeight": 652.08
+      }
+    }
+  ]
+}

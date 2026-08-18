@@ -47,7 +47,12 @@ class Row:
         self.ipa = row[5]
         self.notes = row[6]
         # Structured tokens may be supplied by richer manual importers.
-        self.tags = "" if len(row) < 15 else row[14]
+        # ``inherited`` used to duplicate the graph's reflex relationship.  Drop the
+        # retired token while reading legacy importer output; unresolved rows remain
+        # unlinked rather than gaining an implied etymology.
+        self.tags = "" if len(row) < 15 else " ".join(
+            tag for tag in row[14].split() if tag != "inherited"
+        )
         self.source = row[7]
         self.variant_of = ""  # for a comma-listed alternate: the id of the first (main) form
         self.cognateset = '' if len(row) < 9 else row[8]
@@ -111,6 +116,26 @@ def _strand_gloss(value):
     return re.sub(r"[^a-z]+", " ", value.casefold()).strip()
 
 
+def format_munda_parameter(row):
+    """Map Rau's Munda parameter row onto the compiled parameter schema.
+
+    The legacy five-column file stores the lexical gloss in column four and the
+    Pinnow/MKCD comparison prose in column five.  The latter is entry-level
+    etymology, not the generic ``Etyma``/description field.
+    """
+    if len(row) != 5:
+        raise ValueError(f"Munda parameter row has {len(row)} columns, expected 5: {row!r}")
+    entry_id, headword, _legacy_language, gloss, etymology = row
+    return [
+        entry_id,
+        headword.split(",")[0].strip(),
+        "PMu",
+        gloss,
+        "",
+        etymology,
+    ]
+
+
 SCHMIDT_VOWELS = "aeiouəæãẽõũ"
 SCHMIDT_PROFILE_LANGUAGES = {"K", "kash", "pog", "sir"}
 
@@ -118,7 +143,7 @@ SCHMIDT_PROFILE_LANGUAGES = {"K", "kash", "pog", "sir"}
 # punctuation are meaningful source data.  The legacy generic converter strips such characters
 # before tokenization because many older wordlists used them as disposable list notation.
 PRESERVE_SOURCE_PROFILE_INPUT = {
-    "house", "drasi", "yoshioka", "gandhari", "kullui", "toda", "rabha",
+    "house", "vaagri", "drasi", "yoshioka", "gandhari", "kullui", "toda", "rabha", "lsi",
     "western-tamang",
     "humla",
     "gurung",
@@ -138,6 +163,7 @@ PRESERVE_SOURCE_PROFILE_INPUT = {
     "pahari",
     "naaba",
     "magar-2024",
+    "nihali",
     "dewas-rai",
     "hajong-survey",
     "santali-cluster",
@@ -145,6 +171,7 @@ PRESERVE_SOURCE_PROFILE_INPUT = {
     "mewahang",
     "chhulung",
     "magahi-survey",
+    "badaga-hockings",
 }
 
 
@@ -361,6 +388,12 @@ def parse_file(file: str, errors, name=None, file_num=0, param_counter=None):
         if row.source.split("[", 1)[0] == "thakur-thakur2016magahi":
             row_ipa = "magahi-survey"
             row_convert = True
+        # Hockings and Pilot-Raichoor mark vowel length with a colon and use
+        # Dravidianist underdots. Preserve the source transcription in
+        # Original while normalising the display form through its own profile.
+        if row.source.split("[", 1)[0] == "hockings-pilotraichoor1992":
+            row_ipa = "badaga-hockings"
+            row_convert = True
         # Schmidt & Kaul use one transcription system for the four Table 3
         # Table 3 varieties. Route by provenance and language rather than the
         # dated filename, whose legacy parser reduces both Schmidt imports to
@@ -445,7 +478,12 @@ def parse_file(file: str, errors, name=None, file_num=0, param_counter=None):
             # convert IPA
             if row_ipa in PRESERVE_SOURCE_PROFILE_INPUT and row_convert:
                 stats["for_conversion"] += 1
-                src = unicodedata.normalize("NFC", reformed)
+                # LSI's Form is Grierson's historical transcription, while its
+                # Phonemic column is upstream's canonical CLTS segmentation.
+                # Drive the display conversion from that analysis and leave
+                # old_form untouched so it is emitted as Original.
+                source_value = row.ipa if row_ipa == "lsi" else reformed
+                src = unicodedata.normalize("NFC", source_value)
                 form_out = unicodedata.normalize(
                     "NFC",
                     convertors[row_ipa](src, column="IPA")
@@ -632,6 +670,12 @@ def main():
                 "rai-rai-thokar2014mewahang",
                 "rai-rai-thokar2014chhulung",
                 "thakur-thakur2016magahi",
+                "mundlay1996",
+                "nagaraja2014",
+                "bhattacharya1957",
+                "konow1906",
+                "wiktionary-nihali",
+                "hockings-pilotraichoor1992",
             }
             else "",
             row.gloss
@@ -840,13 +884,16 @@ def main():
                     )
                     included_params.add(row[0])
 
+        munda_entry_texts = []
         with open("data/munda/params.csv", "r") as f:
             read = csv.reader(f)
             for row in read:
-                row[2] = "PMu"
-                row[1] = row[1].split(",")[0].strip()  # main head-word = first of the listed forms
-                params.writerow(row + [""])
-                included_params.add(row[0])
+                compiled = format_munda_parameter(row)
+                params.writerow(compiled)
+                munda_entry_texts.append(
+                    [compiled[0], 0, "etymology", "markdown", compiled[5], "rau"]
+                )
+                included_params.add(compiled[0])
 
         # DBIA entries keep their cited source IDs even when unify_cldf.py redirects them to a
         # canonical CDIAL etymon. Their HTML Description contains the full OCR transcription.
@@ -875,6 +922,20 @@ def main():
         for ancestor_id in ancestor_ids:
             params.writerow([ancestor_id, "", "Indo-ir", "", "", ""])
             included_params.add(ancestor_id)
+
+    # Preserve source-level prose as explicitly typed blocks. ``assign_form_ids.py`` rewrites
+    # source-local entry IDs (including Strand PNur IDs) to their durable public Form_IDs.
+    for file in sorted(glob.glob("data/other/entry_texts/*.csv")):
+        with open(file, encoding="utf-8", newline="") as fin:
+            for row in csv.DictReader(fin):
+                munda_entry_texts.append([
+                    row["Form_ID"], row["Position"], row["Kind"], row["Format"],
+                    row["Content"], row["Source"],
+                ])
+    with open("cldf/entry-texts.csv", "w", encoding="utf-8", newline="") as fout:
+        texts = csv.writer(fout)
+        texts.writerow(["Form_ID", "Position", "Kind", "Format", "Content", "Source"])
+        texts.writerows(munda_entry_texts)
 
     # A dangling Language_ID makes the CLDF invalid and used to pass as an easily missed print.
     with open("cldf/languages.csv", encoding="utf-8", newline="") as fin:

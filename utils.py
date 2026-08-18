@@ -7,8 +7,10 @@ mapping = {
     'kholosi': 'house', 'konkani': 'house', 'kundalshahi': 'house', 'kvari': 'house',
     'zadjali': 'house', 'arora': 'house', 'punjabi': 'house', 'sindhic': 'house',
     'pashai': 'house', 'paranavitana': 'house', 'tulpule': 'house', 'wolf': 'house',
+    'southworth': 'southworth-marathi',
+    'ghatage': 'ghatage',
     'patyal': 'cdial', 'thari': 'cdial',
-    'vaagri': 'cdial', 'cdial': 'cdial', 'palula': 'liljegren',
+    'vaagri': 'vaagri', 'cdial': 'cdial', 'palula': 'liljegren',
     'strand': 'strand', 'strand2': 'strand', 'strand3': 'strand', 'wadiyara': 'wadiyara',
     'northern': 'northern', 'toulmin': 'toulmin', 'chattisgarhi': 'chattisgarhi',
     'rajasthani': 'rajasthani', 'old_punjabi': 'cdial', 'bundeli': 'chattisgarhi',
@@ -29,6 +31,7 @@ mapping = {
     'gandhari': 'gandhari',
     'kullui': 'kullui',
     'bhaskararao': 'toda',
+    'hockings': 'badaga-hockings',
     'rabha': 'rabha',
     'eastern': 'eastern-magar',
     'western': 'western-tamang',
@@ -55,6 +58,13 @@ mapping = {
     'chhulung': 'chhulung',
     'magahi': 'magahi-survey',
     'magar': 'magar-2024',
+    # Lexibank LSI supplies canonical CLTS segments separately from Grierson's
+    # historical spelling. Convert those segments to house transcription.
+    'grierson': 'lsi',
+    # Mundlay's scan and the Nagaraja-derived Wiktionary list use closely
+    # related Nihali transcription; the shared profile preserves source
+    # diacritics while normalizing colon length and w/v.
+    'mundlay': 'nihali', 'nagaraja': 'nihali',
 }
 
 # superscript forms of letters

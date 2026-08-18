@@ -19,6 +19,13 @@ def strand_row(input_file, language, parameter, form, gloss, ipa=""):
     return row
 
 
+def test_row_drops_the_retired_inherited_tag_from_legacy_imports():
+    values = ["Kho", "1", "word", "gloss", "", "", "", "source"]
+    values.extend(["", "", "", "", "", "", "noun inherited"])
+    row = Row(values, id="legacy-inherited")
+    assert row.tags == "noun"
+
+
 def test_strand3_etymology_wins_for_an_exact_form_duplicate():
     old = strand_row("20220913-strand.csv", "Kam", "7621", "puk", "ripening", "puk")
     new = strand_row("20221003-strand3.csv", "Kam", "n88", "puk", "ripening")

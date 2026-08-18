@@ -754,8 +754,6 @@ def build_rows(
         tags = [pos] if pos else []
         if borrowed_from:
             tags.append("loanword")
-        elif valid:
-            tags.append("inherited")
         if morph_parents:
             tags.append("compound" if any("+" in value for value in morph) else "derived")
 

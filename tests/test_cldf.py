@@ -154,6 +154,59 @@ def test_nuristani_cognates_are_proto_indo_iranian_reflexes():
         assert (indo_aryan, ancestor) not in edges
 
 
+def test_cdial_nuristani_reflexes_are_rehomed_under_strand_pnur():
+    with open("data/nuristani_cognates.csv", encoding="utf-8") as f:
+        cognates = list(csv.DictReader(f))
+    with open("cldf/languages.csv", encoding="utf-8") as f:
+        clades = {row["ID"]: row["Clade"] for row in csv.DictReader(f)}
+    forms = unified_forms()
+    aliases = form_aliases()
+
+    pnur_to_ia = {
+        aliases.get(row["Proto_Nuristani_ID"], row["Proto_Nuristani_ID"]):
+        aliases.get(row["Indo_Aryan_ID"], row["Indo_Aryan_ID"])
+        for row in cognates
+    }
+    inherited_ia = set(pnur_to_ia.values())
+    cdial_nuristani = [
+        row for row in forms.values()
+        if (
+            row["Language_ID"] != "PNur"
+            and clades.get(row["Language_ID"]) == "Nuristani"
+            and "CDIAL" in row["Source"].split(";")
+            and row["Relation"] == "reflex"
+        )
+    ]
+    residue = [row for row in cdial_nuristani if row["Origin_ID"] in inherited_ia]
+    rehomed = [row for row in cdial_nuristani if row["Origin_ID"] in pnur_to_ia]
+
+    assert residue == []
+    assert len(rehomed) == 1109
+
+    # CDIAL 14024 hásta previously duplicated these forms on its IA branch.  Strand's inherited
+    # PNur *dast branch is now their immediate parent; the derived *dast-sta head receives none.
+    dast = aliases["n2939"]
+    dast_sta = aliases["n2940"]
+    hand_reflexes = [
+        row for row in rehomed
+        if row["Origin_ID"] in {dast, dast_sta}
+    ]
+    assert len(hand_reflexes) == 8
+    assert {row["Origin_ID"] for row in hand_reflexes} == {dast}
+    assert any(row["Language_ID"] == "Ash" and row["Form"] == "dost" for row in hand_reflexes)
+    assert any(row["Language_ID"] == "Pr" and row["Form"] == "lust" for row in hand_reflexes)
+
+    # The otherwise score-tied Katë form follows the Wg/Kata/Kam *voi branch rather than Ashkun
+    # *vo; keeping this explicit prevents source-row order from changing the analysis.
+    voi = aliases["n3371"]
+    kate_down = [
+        row for row in rehomed
+        if row["Language_ID"] == "Kt" and row["Form"] == "ū" and row["Gloss"] == "down"
+    ]
+    assert len(kate_down) == 1
+    assert kate_down[0]["Origin_ID"] == voi
+
+
 def test_strand_indo_aryan_loans_are_nuristani_borrowings():
     with open("data/nuristani_borrowings.csv", encoding="utf-8") as f:
         borrowings = list(csv.DictReader(f))
@@ -196,9 +249,10 @@ def test_marked_origins_are_borrowings_with_valid_targets():
             or "semi-tatsama" in row["Tags"].split()
         )
     ]
-    assert len(marked) == 429
-    assert sum({"marked", "borrowing"} <= set(row["Tags"].split()) for row in marked) == 381
+    assert len(marked) == 597
+    assert sum({"marked", "borrowing"} <= set(row["Tags"].split()) for row in marked) == 549
     assert sum("semi-tatsama" in row["Tags"].split() for row in marked) == 48
+    assert sum(row["Language_ID"] == "Ni" for row in marked) == 138
     for row in marked:
         assert row["Origin_ID"] in forms
         assert row["Relation"] == "borrowed"
@@ -362,8 +416,11 @@ def test_ocr_provenance_is_explicit_on_references():
         "andersen1990",
         "berger-auto",
         "dbia",
+        "ghatage-kasargod1970",
+        "hockings-pilotraichoor1992",
         "paranavitana",
         "shackle-auto",
+        "southworth2005m",
         "srinivasa",
     }
     assert set(row["OCR"] for row in references.values()) <= {"Yes", "No"}

@@ -96,6 +96,12 @@ def test_uncertain_is_a_structured_grammatical_tag():
     assert note == "uncertain Turner etymology T-111?"
 
 
+def test_inherited_is_not_a_schema_tag():
+    tags, note = extract_tags("inherited")
+    assert tags == ""
+    assert note == "inherited"
+
+
 def test_cdial_grammatical_abbreviations_are_normalized_to_schema_tags():
     tags, note = extract_tags(
         "pret.; absol.; inst.; imper.; vb.; subst.; sb.; st.; opt.; aor.; perf.; part."

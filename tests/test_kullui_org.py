@@ -54,7 +54,8 @@ def test_rich_row_preserves_native_form_etymology_and_source_key():
     assert row[7] == "kullui-org[article 1119]"
     assert "Protoform: *bōll" in row[9]
     assert row[10] == "kullui:1119"
-    assert {"verb", "tr", "inherited"} <= set(row[14].split())
+    assert {"verb", "tr"} <= set(row[14].split())
+    assert "inherited" not in row[14].split()
 
     borrowed = article("Sanskrit", "bhāga")
     borrowed["origin"]["english"] = "Loanword from"

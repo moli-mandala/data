@@ -1,0 +1,52 @@
+name: Refresh NurED snapshot
+
+on:
+  schedule:
+    # NurED is a live dictionary. Open one reviewable update PR every Monday when revisions change.
+    - cron: "27 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+          python-version: "3.12"
+
+      - name: Install the locked build environment
+        run: uv sync --locked --dev
+
+      - name: Refresh the revisioned NurED snapshot
+        run: uv run python data/other/forms/raw_data/nured_org.py --refresh --install
+
+      - name: Rebuild the complete dataset
+        run: make all
+
+      - name: Validate the NurED snapshot
+        run: PYTHONPATH=. uv run pytest -q tests/test_nured_org.py
+
+      - name: Open or update the review PR
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: automation/nured-refresh
+          delete-branch: true
+          commit-message: "data: refresh NurED snapshot"
+          title: "data: refresh NurED snapshot"
+          body: |
+            Automated weekly snapshot of the live NurED MediaWiki.
+
+            Every article retains its stable page ID, exact revision ID/date, raw wikitext,
+            rendered prose, and target-match audit. New ambiguous or unmatched articles remain
+            audit-only for review; existing reviewed target overrides are preserved.
+
+      - name: Run the repository test suite
+        run: |
+          PYTHONPATH=. uv run pytest -q

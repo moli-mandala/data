@@ -392,12 +392,11 @@ def build_rows(
             etymology_parts = [morphology] if morphology else []
             if number:
                 etymology_parts.append(f"Wolf's {relation} reference to DEDR {number}")
-            tags = ("inherited",) if number else ()
             rows.append(
                 _rich_row(
                     f"d{number}" if number else "", form, gloss, source,
                     notes=notes, etymology="; ".join(etymology_parts),
-                    entry_key=key, tags=tags,
+                    entry_key=key,
                 )
             )
         for index, variant in enumerate(variants, 1):

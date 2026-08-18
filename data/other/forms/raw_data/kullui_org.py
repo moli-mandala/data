@@ -340,8 +340,6 @@ def grammar_tags(article: dict) -> list[str]:
         tags.append("pl")
     if "loan" in origin.casefold():
         tags.append("loanword")
-    elif IA_SOURCE.search(source):
-        tags.append("inherited")
     return list(dict.fromkeys(tags))
 
 

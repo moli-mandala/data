@@ -40,11 +40,17 @@ DEDR = re.compile(r"\bDEDR\s+(\d+[a-z]?(?:\s*,\s*\d+[a-z]?)*)(?!\d)", re.I)
 S2_OF = re.compile(r"\bS\s*2\s+of\s+([^,;.)]+-)", re.I)
 POS = re.compile(
     r"\s+(?:"
-    r"dem\.(?:a|adv|n|pron)\.|int\.(?:adv|pron)\.|idf\.(?:adv|pron)\."
+    r"dem\.adv\.,\s*int\.adv\.|dem\.a\.,\s*adv\."
+    r"|vi\.,\s*v\.impers\.|n\.,\s*adv\.,\s*postp\."
+    r"|a\.,\s*adv\.,\s*n\.|int\.,\s*idf\.pron\."
+    r"|num,?\s*pref\.?|dem\.a(?=\s)|dem\.(?:a|adv|n|pron)\.|int\.(?:a|adv|pron|v)\."
+    r"|idf\.(?:a|adv|pron)\."
     r"|int\.(?:n|phr)\.|prop\.n\.|rel\.adv\.|med-caus\."
-    r"|n\.,(?:a|adv|echo|vi)\.|a\.,(?:n|adv)\.|kin\.,n\."
-    r"|postp\.,suff\.|adv\.,(?:conj|postp)\.|pron\.,adv\."
-    r"|vt\.,vi\.|vi\.,vt\.|n\.,\s*echo|n\.echo|abl\.|onom\.|n(?=\s)"
+    r"|n\.,\s*(?:a|adv|echo|vi)\.|a\.,\s*(?:n|adv)\.|adv\.,\s*a\.|kin\.,\s*n\."
+    r"|postp\.,\s*suff\.|adv\.,\s*(?:conj|postp)\.|pron\.,\s*adv\."
+    r"|vt\.,\s*vi\.|vi\.,\s*vt\.|vi\.n\.|vi\.vt\.|v\.impers\."
+    r"|pron\.adv\.|adv\.a\.|n\.,\s*echo|n\.echo|suffix\.|aux\."
+    r"|post\.|prefix|pref\.|int\.|abl\.|onom\.|n,|n(?=\s)"
     r"|adj\.|adv\.|caus\.|conj\.|echo\.|emph\.|excl\.|idf\.|imp\."
     r"|impers\.|inst\.|itj\.|kin\.|loc\.|n\.|neg\.|num\.|obl\."
     r"|part\.|pers\.|phr\.|pl\.|postp\.|pron\.|prop\.|rel\.|sg\."
@@ -52,6 +58,71 @@ POS = re.compile(
     r")(?=\s|$)",
     re.I,
 )
+SOURCE_CITATION = re.compile(
+    r"\b(?P<source>DEDR|TGT|PB|RSLST|Sak\.)\s+"
+    r"(?P<locator>\d+[a-z]?(?:\s*[–-]\s*\d+[a-z]?)?"
+    r"(?:\s*,\s*(?:\d+[a-z]?(?:\s*[–-]\s*\d+[a-z]?)?|passim))*)",
+    re.I,
+)
+REFERENCE_KEYS = {
+    "tgt": "emeneau-toda1984",
+    "pb": "bhaskararao-toda-notes",
+}
+POS_TAGS = {
+    "a.": ("adj",),
+    "abl.": ("abl",),
+    "adj.": ("adj",),
+    "adv.": ("adv",),
+    "adv.a.": ("adv", "adj"),
+    "aux.": ("verb", "auxiliary"),
+    "caus.": ("caus",),
+    "conj.": ("conj",),
+    "dem.a": ("demonstrative", "adj"),
+    "echo.": ("onomatopoeia",),
+    "emph.": ("emph",),
+    "excl.": ("interj",),
+    "idf.": ("indef",),
+    "idf.a.": ("indef", "adj"),
+    "imp.": ("impv",),
+    "impers.": ("verb",),
+    "inst.": ("instr",),
+    "int.": ("interr",),
+    "itj.": ("interj",),
+    "kin.": ("noun",),
+    "loc.": ("loc",),
+    "med-caus.": ("caus",),
+    "n": ("noun",),
+    "n,": ("noun",),
+    "n.": ("noun",),
+    "n.echo": ("noun", "onomatopoeia"),
+    "neg.": ("neg",),
+    "num.": ("num",),
+    "num": ("num",),
+    "obl.": ("obl",),
+    "onom.": ("onomatopoeia",),
+    "part.": ("part",),
+    "pers.": ("personal",),
+    "phr.": ("multiword-expression",),
+    "pl.": ("pl",),
+    "postp.": ("postp",),
+    "post.": ("postp",),
+    "pref.": ("prefix",),
+    "prefix": ("prefix",),
+    "pron.": ("pron",),
+    "pron.adv.": ("pron", "adv"),
+    "prop.": ("proper-noun",),
+    "rel.": ("pron",),
+    "sg.": ("sg",),
+    "suff.": ("suffix",),
+    "suffix.": ("suffix",),
+    "v.": ("verb",),
+    "vi.": ("verb", "intr"),
+    "vi.n.": ("verb", "intr", "noun"),
+    "vi.vt.": ("verb", "intr", "tr"),
+    "v.impers.": ("verb",),
+    "voc.": ("voc",),
+    "vt.": ("verb", "tr"),
+}
 
 
 @dataclass
@@ -289,6 +360,59 @@ def _definition(entry: Entry) -> str:
     return _clean_spacing(" ".join([remainder, *entry.lines[1:]]))
 
 
+def _definition_parts(definition: str) -> tuple[str, tuple[str, ...], tuple[str, ...]]:
+    """Separate the dictionary's POS label and source loci from its English gloss."""
+    definition = _clean_spacing(definition)
+    tags: list[str] = []
+    match = POS.match(f" {definition}")
+    if match and match.start() == 0:
+        label = match.group().strip().lower()
+        definition = definition[len(match.group()) - 1 :].lstrip()
+        if label == "prop.n.":
+            tags.extend(("noun", "proper-noun"))
+        elif re.fullmatch(r"(?:dem|int|idf)\.(?:a|adv|n|phr|pron|v)\.", label):
+            family, category = label.split(".", 1)
+            tags.append({"dem": "demonstrative", "int": "interr", "idf": "indef"}[family])
+            tags.extend(POS_TAGS.get(category, ()))
+        elif label in POS_TAGS:
+            tags.extend(POS_TAGS[label])
+        else:
+            for part in re.split(r"\s*,\s*", label.rstrip(",")):
+                if re.fullmatch(r"(?:dem|int|idf)\.(?:a|adv|n|phr|pron|v)\.", part):
+                    family, category = part.split(".", 1)
+                    tags.append(
+                        {"dem": "demonstrative", "int": "interr", "idf": "indef"}[family]
+                    )
+                    tags.extend(POS_TAGS.get(category, ()))
+                    continue
+                tags.extend(POS_TAGS.get(part, ()))
+
+    references: list[str] = []
+    for citation in SOURCE_CITATION.finditer(definition):
+        source = citation.group("source").lower().rstrip(".")
+        key = REFERENCE_KEYS.get(source)
+        if key:
+            locator = re.sub(r"\s+", " ", citation.group("locator")).strip()
+            locator = re.sub(r"\s*,\s*", ", ", locator)
+            reference = f"{key}[p. {locator}]"
+            if reference not in references:
+                references.append(reference)
+
+    # Printed citations form a terminal run. Drop that run while retaining source-like
+    # strings inside explanatory prose (for example ``cf. DEDR 3196 Ta. tāṉ``).
+    for citation in SOURCE_CITATION.finditer(definition):
+        suffix = definition[citation.start() :]
+        residue = SOURCE_CITATION.sub("", suffix)
+        # A bare trailing digit is a PDF-extracted footnote marker, not another locator
+        # (real multi-page loci are comma-separated in the dictionary).
+        residue = re.sub(r"[\d\s,;:.()]+", "", residue)
+        if not residue:
+            definition = definition[: citation.start()].rstrip(" ,;:.")
+            break
+
+    return definition, tuple(dict.fromkeys(tags)), tuple(references)
+
+
 def _rich_row(
     parameter: str,
     form: str,
@@ -316,10 +440,14 @@ def build_rows(
     previous_keys: dict[str, list[str]] = {}
     for entry in entries:
         form, variants, sense = _head_forms(entry.head)
-        definition = _definition(entry)
+        raw_definition = _definition(entry)
+        definition, grammatical_tags, cited_sources = _definition_parts(raw_definition)
         links, invalid = _dedr_links(entry.text, valid_dedr)
-        source = f"{SOURCE_ID}[p. {entry.printed_page}, entry {entry.ordinal}]"
-        s2 = S2_OF.search(definition)
+        source = ";".join((
+            f"{SOURCE_ID}[p. {entry.printed_page}, entry {entry.ordinal}]",
+            *cited_sources,
+        ))
+        s2 = S2_OF.search(raw_definition)
         target_form = _clean_spacing(s2.group(1)) if s2 else ""
         target_candidates = previous_keys.get(target_form, [])
         variant_of = target_candidates[-1] if target_candidates else ""
@@ -327,44 +455,46 @@ def build_rows(
         if invalid:
             notes = "Unresolved DEDR citation(s): " + ", ".join(f"DEDR {item}" for item in invalid)
 
-        parameters = links or [""]
-        for index, parameter in enumerate(parameters, 1):
-            key = entry.key if index == 1 else f"{entry.key}:link:{index}"
-            etymology = ""
-            tags: tuple[str, ...] = ()
-            parent_key = ""
-            parents: tuple[str, ...] = ()
-            if variant_of and not links:
-                etymology = f"Printed S2 stem of {target_form}"
-                tags = ("variant",)
-                parent_key = variant_of
-                parents = (variant_of,)
-            elif parameter:
-                etymology = f"Bhaskararao and Kobayashi cite DEDR {parameter}"
-                tags = ("inherited",)
-            rows.append(
-                _rich_row(
-                    f"d{parameter}" if parameter else "", form, definition, source,
-                    notes=notes, etymology=etymology, entry_key=key,
-                    variant_of_key=parent_key, derivation_parent_keys=parents, tags=tags,
+        corrupt_head = "�" in form
+        if not corrupt_head:
+            parameters = links or [""]
+            for index, parameter in enumerate(parameters, 1):
+                key = entry.key if index == 1 else f"{entry.key}:link:{index}"
+                etymology = ""
+                tags = grammatical_tags
+                parent_key = ""
+                parents: tuple[str, ...] = ()
+                if variant_of and not links:
+                    etymology = f"Printed S2 stem of {target_form}"
+                    tags = grammatical_tags + ("variant",)
+                    parent_key = variant_of
+                    parents = (variant_of,)
+                elif parameter:
+                    etymology = f"Bhaskararao and Kobayashi cite DEDR {parameter}"
+                rows.append(
+                    _rich_row(
+                        f"d{parameter}" if parameter else "", form, definition, source,
+                        notes=notes, etymology=etymology, entry_key=key,
+                        variant_of_key=parent_key, derivation_parent_keys=parents, tags=tags,
+                    )
                 )
-            )
 
-        previous_keys.setdefault(form, []).append(entry.key)
-        for index, variant in enumerate(variants, 1):
-            variant_key = f"{entry.key}:variant:{index}"
-            rows.append(
-                _rich_row(
-                    "", variant, definition, source,
-                    etymology=f"Printed S2 or alternate stem of {form}",
-                    entry_key=variant_key, variant_of_key=entry.key,
-                    derivation_parent_keys=(entry.key,), tags=("variant",),
+            previous_keys.setdefault(form, []).append(entry.key)
+            for index, variant in enumerate(variants, 1):
+                variant_key = f"{entry.key}:variant:{index}"
+                rows.append(
+                    _rich_row(
+                        "", variant, definition, source,
+                        etymology=f"Printed S2 or alternate stem of {form}",
+                        entry_key=variant_key, variant_of_key=entry.key,
+                        derivation_parent_keys=(entry.key,), tags=grammatical_tags + ("variant",),
+                    )
                 )
-            )
-            previous_keys.setdefault(variant, []).append(variant_key)
+                previous_keys.setdefault(variant, []).append(variant_key)
 
         audit.append({
-            "Status": "ingested",
+            "Status": "corrupt" if corrupt_head else "ingested",
+            "Reason": "replacement characters in printed head extraction" if corrupt_head else "",
             "Entry_Key": entry.key,
             "PDF_Page": str(entry.pdf_page),
             "Printed_Page": str(entry.printed_page),
@@ -373,6 +503,8 @@ def build_rows(
             "Variants": "|".join(variants),
             "Sense": sense,
             "Definition": definition,
+            "Tags": " ".join(grammatical_tags),
+            "References": "|".join(cited_sources),
             "DEDR_IDs": "|".join(links),
             "Unresolved_DEDR_IDs": "|".join(invalid),
             "Variant_Of_Key": variant_of if not links else "",
