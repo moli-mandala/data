@@ -57,10 +57,41 @@ POS_TAGS = {
     "vintr, vtr": "intr tr verb",
 }
 
-# The front matter's Table 1 maps contributor codes to home regions.  These
-# become dialect/provenance labels in the static DB; they are deliberately
-# distinct from explicit regional labels such as "Laspur" attached to an
-# alternate pronunciation.
+# The front matter's Table 1 maps contributor codes to people and home regions.
+# People are provenance, never dialects.  A contributor therefore selects a
+# canonical place-based dialect below, while the exact source label remains in
+# Notes and in the audit.
+SOURCE_PERSON = {
+    "AR": "Abdur Rauf", "AK": "Adina Khan", "A": "Amanullah",
+    "ARC": "Amin ur Rahman Chughtai", "AKM": "Amir Khan Mir",
+    "BA": "Baba Ayub", "BM": "Babu Muhammad", "BKA": "Bulbul Khan Ayub",
+    "CKT": "Changez Khan Tareqi", "DAT": "Dinar Ali Taj",
+    "FQ": "Fazal Qayyum", "GMKH": "Gul Murad Khan Hasrat",
+    "GNK": "Gul Nawaz Khaki", "HAS": "Haider Ali Shah", "HS": "Hasil Shah",
+    "HUR": "Hidayat ur Rahman", "IWK": "Ibrahim Wali Kamil",
+    "IA": "Inayatullah Aseer", "ICS": "Inayatullah Chishti Sabri",
+    "IF": "Inayatullah Faizi", "IFM": "Inayatullah Faizi's mother",
+    "IS": "Islam Shah", "IWA": "Ismail Wali Akhgar",
+    "MHH": "Mahbub ul Haq Haqqi", "MNN": "Maula Nigah Nigah",
+    "MA": "Mir Ahmed", "MAK": "Muhammad Arap Khan",
+    "MII": "Muhammad Irfan Irfan", "MYS": "Muhammad Yousuf Shahzad",
+    "MY": "Muhammad Younus", "MS": "Mukarram Shah",
+    "MWT": "Murad Wali Taj", "MK": "Mustafa Kamal", "N": "Naseer",
+    "NKN": "Naji Khan Naji", "NR": "Naqibullah Razi",
+    "RAKR": "Rahmat Akbar Khan Rahmat",
+    "RAKRW": "Rahmat Akbar Khan Rahmat's wife",
+    "RKB": "Rahmat Karim Baig", "RK": "Rozgar Khan",
+    "SN-M": "Saeed Nazir", "SN-C": "Sahib Nadir", "S": "Safitullah",
+    "SG": "Samad Gul", "SH": "Sardar Hussain",
+    "SSM": "Shahzada Sikandar ul Mulk", "SAS": "Sher Akbar Saba",
+    "SWKA": "Sher Wali Khan Aseer", "TMF": "Taj Muhammad Figar",
+    "TMFW": "Taj Muhammad Figar's wife", "TMFD": "Taj Muhammad Figar's daughter",
+    "WUR": "Wali ur Rahman", "WSiC": "woman storyteller in Chapali",
+    "WSiM": "woman storyteller in Mastuj", "ZP": "Zafarullah Parwaz",
+    "ZHD": "Zahoor ul Haq Danish", "ZHDM": "Zahoor ul Haq Danish's mother",
+    "ZMZ": "Zakir Muhammad Zakhmi", "ZK": "Zarkoti Khan",
+}
+
 SOURCE_HOME = {
     "AR": "Parwak, Tehsil Mastuj",
     "AK": "Chapali, Tehsil Mastuj",
@@ -123,12 +154,75 @@ SOURCE_HOME = {
     "ZK": "Mahrting, Yarkhun",
 }
 
+# Canonical source-locality records.  Several contributors share these points;
+# they must consequently share a dialect tag.  Coordinates are reviewed
+# source-locality/gazetteer points (quality B), not speaker-specific points.
+PLACE_COORDINATES = {
+    "Ayun": (35.72168, 71.77158),
+    "Balim": (36.07012, 72.43959),
+    "Bang": (36.52283, 72.76388),
+    "Booni": (36.25392, 72.22284),
+    "Chapali": (36.33570, 72.60138),
+    "Chitral town": (35.850889, 71.79019),
+    "Chumurkun": (35.79784, 71.78801),
+    "Drosh": (35.56163, 71.79756),
+    "Jughoor": (35.82708, 71.78633),
+    "Karimabad": (35.99193, 71.81522),
+    "Khairabad": (36.78961, 73.04180),
+    "Khost": (36.30044, 72.21299),
+    "Khot": (36.50216, 72.53267),
+    "Laspur": (36.04784, 72.46796),
+    "Lutkoh": (36.01231, 71.65609),
+    "Lower Chitral": (35.75000, 71.78000),
+    "Madaglasht": (35.77558, 72.03137),
+    "Mahrting": (36.49059, 72.72128),
+    "Mastuj": (36.28356, 72.51942),
+    "Meragram": (36.26364, 72.37142),
+    "Mogh": (36.01231, 71.65609),
+    "Mroi": (35.93000, 71.82000),
+    "Mulkhow": (36.30044, 72.21299),
+    "Parkusap": (36.28880, 72.52920),
+    "Parwak": (36.27759, 72.39010),
+    "Pasum": (36.30426, 72.55493),
+    "Proper Chitral": (35.850889, 71.79019),
+    "Rayin": (36.39233, 72.37763),
+    "Reshun": (36.15365, 72.09928),
+    "Shagram": (36.398835, 72.277695),
+    "Shogram": (36.32251, 72.17305),
+    "Shyaqotek": (35.85000, 71.79000),
+    "Singoor": (35.89778, 71.79791),
+    "Sonoghor": (36.30000, 72.18000),
+    "Sor Laspur": (36.04784, 72.46796),
+    "Sor Rech": (36.542845, 72.49219),
+    "Thingshen": (35.8512345, 71.78495),
+    "Terich": (36.39444, 72.22829),
+    "Torkhow": (36.45309, 72.42228),
+    "Upper Chitral": (36.33000, 72.29000),
+    "Uthul": (36.30442, 72.18117),
+    "Uzhnu": (36.49925, 72.44552),
+    "Warijun": (36.30044, 72.21299),
+    "Yarkhun": (36.52283, 72.76388),
+    "Zargarandeh": (35.8507445, 71.791345),
+    "Zondrangram": (36.3631067, 72.22319),
+}
+
+PLACE_ALIASES = {
+    "Chitral Museum": "Chitral town", "Chitral Town": "Chitral town",
+    "Karimabad valley": "Karimabad", "Lotkoh": "Lutkoh",
+    "Mastuj town": "Mastuj", "Rayin Torkhow": "Rayin",
+    "Sonogor": "Sonoghor", "Tehsil Torkhow": "Torkhow",
+}
+
 REGIONS = (
     "Upper Chitral", "Lower Chitral", "Proper Chitral", "Chitral town",
     "Torkhow", "Mulkhow", "Laspur", "Yarkhun", "Mastuj", "Drosh",
     "Lutkoh", "Madaglasht", "Parwak", "Chapali", "Booni", "Terich",
     "Sonoghor", "Shagram", "Shogram", "Sor Rech", "Zondrangram",
-    "Bang", "Warijun", "Balim", "Pasum", "Uzhnu", "Rayin",
+    "Bang", "Warijun", "Balim", "Pasum", "Uzhnu", "Rayin", "Reshun",
+    "Uthul", "Karimabad valley", "Khairabad", "Khot", "Chitral Museum",
+    "Mastuj town", "Chumurkun", "Mroi", "Khost", "Parkusap", "Singoor",
+    "Jughoor", "Mogh", "Thingshen", "Zargarandeh", "Mahrting", "Sor Laspur",
+    "Ayun", "Meragram",
 )
 
 DONOR_LANGUAGE = {
@@ -377,21 +471,84 @@ def _slug(value: str) -> str:
     return value[:48] or hashlib.sha1(value.encode()).hexdigest()[:10]
 
 
-def _register_source_dialect(token: str, registry: dict[str, dict]) -> str:
-    home = SOURCE_HOME.get(token, token)
-    did = f"Kho-Bashir-src-{_slug(token)}"
-    label = f"{token} ({home})" if token in SOURCE_HOME else token
+def _canonical_place(value: str) -> str:
+    value = re.sub(r"^(?:Village|Tehsil)\s+", "", value.strip(), flags=re.I)
+    value = re.sub(r"\s+women$", "", value, flags=re.I)
+    value = value.strip(" ()?,.;")
+    value = PLACE_ALIASES.get(value, value)
+    if value in PLACE_COORDINATES:
+        return value
+    first = PLACE_ALIASES.get(value.split(",", 1)[0].strip(), value.split(",", 1)[0].strip())
+    return first if first in PLACE_COORDINATES else value
+
+
+def _register_place(place: str, registry: dict[str, dict]) -> str:
+    place = _canonical_place(place)
+    did = f"Kho-Bashir-place-{_slug(place)}"
+    latitude, longitude = PLACE_COORDINATES.get(place, ("", ""))
     registry[did] = {
         "ID": did,
-        "Name": f"Khowar: {label}",
+        "Name": f"Khowar: {place}",
         "Glottocode": "khow1242",
-        "Latitude": "",
-        "Longitude": "",
+        "Latitude": latitude,
+        "Longitude": longitude,
         "Clade": "Chitrali",
-        "Location": home,
-        "Quality": "B" if token in SOURCE_HOME else "C",
+        "Location": place,
+        "Quality": "B" if latitude != "" else "C",
     }
     return did
+
+
+def _speaker_codes(text: str) -> list[str]:
+    alternatives = "|".join(re.escape(code) for code in sorted(SOURCE_HOME, key=len, reverse=True))
+    return list(dict.fromkeys(
+        match.group(0)
+        for match in re.finditer(rf"(?<![\w-])(?:{alternatives})(?![\w-])", text)
+    ))
+
+
+def _source_dialect_ids(text: str, registry: dict[str, dict]) -> list[str]:
+    """Map a curly-brace source label to places without promoting people/texts."""
+    codes = _speaker_codes(text)
+    if codes:
+        return list(dict.fromkeys(
+            _register_place(SOURCE_HOME[code], registry) for code in codes
+        ))
+    places = _regions_in(text)
+    return list(dict.fromkeys(_register_place(place, registry) for place in places))
+
+
+def _provenance_notes(tokens: list[str]) -> list[str]:
+    codes = []
+    locality_labels = []
+    residual_labels = []
+    for token in tokens:
+        found = _speaker_codes(token)
+        codes.extend(code for code in found if code not in codes)
+        if found:
+            stripped = token
+            for code in found:
+                stripped = re.sub(
+                    rf"(?<![\w-]){re.escape(code)}(?![\w-])", "", stripped
+                )
+            if stripped.strip(" ()?,.;:-"):
+                residual_labels.append(token)
+        elif _regions_in(token):
+            locality_labels.append(token.strip())
+        else:
+            residual_labels.append(token.strip())
+
+    notes = []
+    if codes:
+        notes.append(
+            "contributors: "
+            + ", ".join(f"{SOURCE_PERSON[code]} ({code})" for code in codes)
+        )
+    if locality_labels:
+        notes.append("source localities: " + ", ".join(dict.fromkeys(locality_labels)))
+    if residual_labels:
+        notes.append("source labels: " + ", ".join(dict.fromkeys(residual_labels)))
+    return notes
 
 
 def _regions_in(text: str) -> list[str]:
@@ -399,22 +556,13 @@ def _regions_in(text: str) -> list[str]:
 
 
 def _register_region(region: str, registry: dict[str, dict]) -> str:
-    did = f"Kho-Bashir-reg-{_slug(region)}"
-    registry[did] = {
-        "ID": did,
-        "Name": f"Khowar: {region}",
-        "Glottocode": "khow1242",
-        "Latitude": "",
-        "Longitude": "",
-        "Clade": "Chitrali",
-        "Location": region,
-        "Quality": "B",
-    }
-    return did
+    return _register_place(region, registry)
 
 
 def _entry_languages(entry: Entry, registry: dict[str, dict]) -> list[str]:
-    languages = [_register_source_dialect(token, registry) for token in _source_tokens(entry.text)]
+    languages = []
+    for token in _source_tokens(entry.text):
+        languages.extend(_source_dialect_ids(token, registry))
     gloss = _gloss(entry.text, entry.form)
     is_place_definition = re.search(
         r"\b(?:village|town|region|valley|stream|place|tribe|clan)\b", gloss, re.I
@@ -746,9 +894,7 @@ def build_rows(
             )
             borrowed_from = donor_key(donor_language, donor_form, donor_gloss, note)
 
-        notes = []
-        if source_tokens:
-            notes.append("contributors: " + ", ".join(source_tokens))
+        notes = _provenance_notes(source_tokens)
         if invalid:
             notes.append("unresolved Turner citation(s) " + ", ".join(f"T{x}" for x in invalid))
         tags = [pos] if pos else []
@@ -775,16 +921,22 @@ def build_rows(
             "Form": entry.form, "Language_IDs": "|".join(languages), "POS": pos,
             "Gloss": gloss, "Etymology": etymology, "PDF_Page": entry.pdf_page,
             "Printed_Page": entry.printed_page,
+            "Source_Labels": "|".join(source_tokens),
+            "Contributor_Codes": "|".join(
+                dict.fromkeys(
+                    code for token in source_tokens for code in _speaker_codes(token)
+                )
+            ),
         })
 
         blocks = _other_pronunciation_blocks(text)
         for number, (form, block) in enumerate(_variant_forms(entry, blocks), 1):
             variant_key = f"{key}:variant:{number}"
-            variant_languages = list(languages)
+            variant_languages = _source_dialect_ids(block, dialects)
             variant_languages.extend(
                 _register_region(region, dialects) for region in _regions_in(block)
             )
-            variant_languages = list(dict.fromkeys(variant_languages))
+            variant_languages = list(dict.fromkeys(variant_languages)) or list(languages)
             variant_etymology = f"Other pronunciation of {entry.form}: {block}"
             for language in variant_languages:
                 rows.append(
@@ -886,9 +1038,87 @@ def sync_dialects(path: Path, dialects: dict[str, dict]) -> None:
         writer.writerows(rows)
 
 
+def migrate_existing(output: Path, audit_path: Path, dialect_path: Path) -> tuple[int, int]:
+    """Reclassify an installed extract without needing the source PDF again."""
+    with dialect_path.open(encoding="utf-8", newline="") as stream:
+        old_dialects = {
+            row["Source_Language_ID"]: row for row in csv.DictReader(stream)
+        }
+    with output.open(encoding="utf-8", newline="") as stream:
+        old_rows = list(csv.reader(stream))
+
+    dialects: dict[str, dict] = {}
+    migrated = []
+    source_labels_by_key: dict[str, str] = {}
+    for original in old_rows:
+        row = list(original)
+        if row[0].startswith("Kho-Bashir-"):
+            metadata = old_dialects.get(row[0], {})
+            label = metadata.get("Name", row[0]).split(" (", 1)[0]
+            mapped = _source_dialect_ids(label, dialects)
+            if not mapped:
+                mapped = [LANGUAGE_ID]
+        else:
+            mapped = [row[0]]
+
+        already_expanded = any(
+            f"{name} ({code})" in row[6]
+            for code, name in SOURCE_PERSON.items()
+        )
+        if row[6].startswith("contributors: ") and not already_expanded:
+            raw_labels = row[6].removeprefix("contributors: ")
+            source_labels_by_key.setdefault(row[10], raw_labels)
+            row[6] = "; ".join(
+                _provenance_notes([part.strip() for part in raw_labels.split(",")])
+            )
+        for language in mapped:
+            copy = list(row)
+            copy[0] = language
+            migrated.append(copy)
+
+    # Several contributor-specific rows now intentionally converge on one
+    # place attestation.  Preserve the first occurrence's deterministic order.
+    migrated = list(dict.fromkeys(tuple(row) for row in migrated))
+    with output.open("w", encoding="utf-8", newline="") as stream:
+        csv.writer(stream, lineterminator="\n").writerows(migrated)
+
+    with audit_path.open(encoding="utf-8", newline="") as stream:
+        reader = csv.DictReader(stream)
+        audit_rows = list(reader)
+        fields = list(reader.fieldnames or [])
+    for field in ("Source_Labels", "Contributor_Codes"):
+        if field not in fields:
+            fields.append(field)
+    for item in audit_rows:
+        mapped = []
+        for language in item["Language_IDs"].split("|"):
+            if language.startswith("Kho-Bashir-"):
+                metadata = old_dialects.get(language, {})
+                label = metadata.get("Name", language).split(" (", 1)[0]
+                targets = _source_dialect_ids(label, dialects)
+                mapped.extend(targets or [LANGUAGE_ID])
+            else:
+                mapped.append(language)
+        item["Language_IDs"] = "|".join(dict.fromkeys(mapped))
+        labels = source_labels_by_key.get(item["Entry_Key"], "")
+        item["Source_Labels"] = labels.replace(", ", "|")
+        item["Contributor_Codes"] = "|".join(_speaker_codes(labels))
+    with audit_path.open("w", encoding="utf-8", newline="") as stream:
+        writer = csv.DictWriter(stream, fieldnames=fields, lineterminator="\n")
+        writer.writeheader()
+        writer.writerows(audit_rows)
+
+    sync_dialects(dialect_path, dialects)
+    return len(old_rows), len(migrated)
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("pdf", type=Path)
+    parser.add_argument("pdf", type=Path, nargs="?")
+    parser.add_argument(
+        "--migrate-existing", action="store_true",
+        help="normalize the installed CSV/audit without re-extracting the PDF",
+    )
     parser.add_argument(
         "--cdial-params", type=Path, default=Path("data/cdial/params.csv")
     )
@@ -909,6 +1139,12 @@ def main() -> None:
         "--dialects", type=Path, default=Path("cldf/dialects.csv")
     )
     args = parser.parse_args()
+    if args.migrate_existing:
+        before, after = migrate_existing(args.output, args.audit, args.dialects)
+        print(f"migrated {before} rows to {after} place-based provenance rows")
+        return
+    if args.pdf is None:
+        parser.error("pdf is required unless --migrate-existing is used")
     existing = _existing_source_index(Path("cldf/forms.csv"))
     entries = extract_entries(args.pdf)
     rows, dialects, audit = build_rows(entries, read_cdial_ids(args.cdial_params), existing)

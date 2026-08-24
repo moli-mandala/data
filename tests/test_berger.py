@@ -1,4 +1,5 @@
 import importlib.util
+import csv
 import sys
 from pathlib import Path
 
@@ -64,6 +65,31 @@ def test_full_lexicon_keeps_unlinked_rows_and_rich_metadata():
     assert list(berger.import_rows(entries))[0][1] == ""
 
 
+def test_explicit_noun_class_is_kept_alongside_adverb_use():
+    tags = berger._grammar_tags(
+        "abáś y hz.ng. Schwierigkeit, Unglück; adv. schwierig", "abáś"
+    )
+    assert {"noun", "adv", "dialect:Hunza", "dialect:Nager"} <= set(tags)
+
+
+def test_installed_gold_tranche_has_rich_rows_and_grammar_audit():
+    root = Path(__file__).parents[1]
+    gold_path = root / "data/other/forms/20220930-berger.csv"
+    audit_path = root / "data/other/forms/raw_data/20220930-berger-grammar-audit.csv"
+    if not audit_path.exists():
+        return
+    gold = list(csv.reader(gold_path.open(encoding="utf-8")))
+    audit = list(csv.DictReader(audit_path.open(encoding="utf-8")))
+    assert len(gold) == len(audit) == 39
+    assert {len(row) for row in gold} == {15}
+    assert any("noun" in row[14].split() for row in gold)
+    assert any("verb" in row[14].split() for row in gold)
+    assert {row["Strategy"] for row in audit} <= {
+        "aligned-source", "exact-form-source", "fuzzy-form-source",
+        "legacy-printed-evidence",
+    }
+
+
 def test_yasin_variant_has_language_dialect_and_parent_key():
     pages = [{
         "pdf_page": 8,
@@ -124,3 +150,22 @@ def test_import_drops_relation_to_parent_supplied_by_legacy_gold_row():
     assert len(rows) == 1
     assert rows[0][2] == "áḍe"
     assert rows[0][11] == ""
+
+
+def test_scan_verified_ruus_entry_boundary_repair():
+    entries = [
+        berger.Entry("Bur", 187, 369, "rúu-rúu ét-", "(Flugzeug)", "", "", "", "", 90, "unlinked", entry_key="berger-entry-7806"),
+        berger.Entry("Bur", 187, 369, "brummen", "dröhnen. rúus, ng. rúuś Vergeltung, Rache, Heimzahlen", "10856", "", "", "", 90, "exact", entry_key="berger-entry-7807"),
+        berger.Entry("Bur", 187, 369, "rúuś", "dröhnen. rúus, ng. rúuś Vergeltung, Rache, Heimzahlen", "10856", "", "", "", 90, "exact", entry_key="berger-entry-7807-dialect-1"),
+    ]
+
+    berger.apply_reviewed_repairs(entries)
+
+    assert (entries[0].form, entries[0].gloss) == (
+        "rúu-rúu ét-", "(Flugzeug) brummen, dröhnen"
+    )
+    assert [(entry.form, entry.gloss) for entry in entries[1:]] == [
+        ("rúus", "Vergeltung, Rache, Heimzahlen"),
+        ("rúuś", "Vergeltung, Rache, Heimzahlen"),
+    ]
+    assert {entry.printed_page for entry in entries} == {367}

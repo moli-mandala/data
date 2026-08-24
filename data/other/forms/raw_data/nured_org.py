@@ -1,23 +1,25 @@
 #!/usr/bin/env python3
-"""Snapshot NurED and attach revisioned article prose to Jambu CDIAL/PNur entries.
+"""Snapshot NurED as Proto-Nuristani commentary plus structured Nuristani reflexes.
 
 NurED is a live MediaWiki dictionary.  Namespace-0 page IDs are stable while titles and content
 can change, so this importer inventories every page, stores exact revision IDs and raw wikitext in
 the audit, and caches the rendered response for each ``(page ID, revision ID)`` pair.  Only the two
 article classes that have a conservative Jambu home are installed:
 
-* ``Category:Middle Indo-Aryan loanwords`` -> a CDIAL head;
-* ``Category:Proto-Nuristani`` -> an existing Strand Proto-Nuristani head.
+* ``Category:Middle Indo-Aryan loanwords`` -> a PNur borrowing head corresponding to CDIAL;
+* ``Category:Proto-Nuristani`` -> an existing or newly created PNur head.
 
 Printed Turner IDs take precedence for CDIAL articles.  Otherwise matching is exact after removing
 accent marks and source notation, while retaining segmental and length distinctions.  PNur articles
 are routed through Jambu's reviewed CDIAL/PNur correspondences or an exact reconstructed-head match.
-Ambiguous and unmatched pages remain audit-only.  Reviewed exceptional mappings live in the small
-``20260818-nured-org-targets.csv`` overlay rather than in parser code.
+Reviewed exceptional source-head mappings live in the small ``20260818-nured-org-targets.csv``
+overlay rather than in parser code.  If the reviewed CDIAL head has no existing PNur borrowing
+branch, the importer creates a stable ``nured-<page ID>`` PNur entry and records the borrowing.
 
-The installed artifact is an entry-text sidecar, not a forms wordlist.  It preserves the complete
-rendered source article as attributed HTML on the corresponding headword and therefore introduces
-no new transcription or graph claim.
+Only the article's Commentary section (and footnotes it actually references) is installed as entry
+text.  The Nuristani section's explicit ``Form`` templates become rich lexical rows beneath the
+PNur entry.  Early spellings, untemplated examples, and comparison prose remain in the per-page
+audit instead of being mistaken for lexical forms.
 
 Preview the live source (run from the data repository root)::
 
@@ -48,6 +50,7 @@ import urllib.parse
 import urllib.request
 from collections import defaultdict
 from datetime import datetime, timezone
+from difflib import SequenceMatcher
 from pathlib import Path
 
 from bs4 import BeautifulSoup, Comment
@@ -65,24 +68,95 @@ DEFAULT_CACHE = ROOT / "tmp/nured-org-cache"
 DEFAULT_AUDIT = RAW_DIR / "20260818-nured-org-audit.csv"
 DEFAULT_MANIFEST = RAW_DIR / "20260818-nured-org-manifest.json"
 DEFAULT_TARGETS = RAW_DIR / "20260818-nured-org-targets.csv"
-DEFAULT_OUTPUT = ROOT / "data/other/entry_texts/20260818-nured-org.csv"
+DEFAULT_TEXT_OUTPUT = ROOT / "data/other/entry_texts/20260818-nured-org.csv"
+DEFAULT_FORM_OUTPUT = ROOT / "data/other/forms/20260818-nured-org.csv"
+DEFAULT_PARAM_OUTPUT = ROOT / "data/other/params/nured.csv"
 PREVIEW_DIR = ROOT / "tmp/nured-org-preview"
 DEFAULT_CDIAL = ROOT / "data/cdial/params.csv"
 DEFAULT_MERGES = ROOT / "cldf/merges.csv"
 DEFAULT_STRAND = ROOT / "data/other/params/strand3.csv"
+DEFAULT_STRAND_FORMS = ROOT / "data/other/forms/20221003-strand3.csv"
 DEFAULT_COGNATES = ROOT / "data/nuristani_cognates.csv"
+DEFAULT_BORROWINGS = ROOT / "data/nuristani_borrowings.csv"
 
-AUDIT_FIELDS = [
+BASE_AUDIT_FIELDS = [
     "Snapshot_Date", "Page_ID", "Revision_ID", "Revision_Timestamp", "Entry_Key", "Title",
     "Article_Type", "Categories", "Status", "Reason", "Accepted_Targets",
     "Target_Candidates", "Candidate_Evidence", "Source_Citation", "Article_URL",
     "Wikitext_SHA256", "Raw_Wikitext", "Rendered_HTML", "Output_Blocks",
 ]
+AUDIT_FIELDS = BASE_AUDIT_FIELDS + [
+    "PNur_Targets", "PNur_Target_Status", "Form_Template_Count", "Reflex_Rows",
+    "Unparsed_Form_Templates", "Commentary_Targets",
+]
 TEXT_FIELDS = ["Form_ID", "Position", "Kind", "Format", "Content", "Source"]
+FORM_FIELDS = [
+    "Language_ID", "Parameter_ID", "Form", "Gloss", "Native", "Phonemic", "Notes",
+    "Source", "Cognateset", "Etymology", "Entry_Key", "Variant_Of_Key",
+    "Borrowed_From_Key", "Derivation_Parent_Keys", "Tags",
+]
+BORROWING_FIELDS = ["Proto_Nuristani_ID", "Indo_Aryan_ID", "Evidence"]
 
 ARTICLE_CATEGORIES = {
     "Middle Indo-Aryan loanwords": "cdial",
     "Proto-Nuristani": "pnur",
+}
+
+LANGUAGE_IDS = {
+    "Katë": "Kt",
+    "Nur. Kalasha": "Wg",
+    "Tregami": "Gmb",
+    "Ashkun": "Ash",
+    "Prasun": "Pr",
+    "Dameli": "Dm",
+}
+
+# The rendered wiki supplies these names through ``abbr[title]``.  Keep stable Jambu-owned source
+# IDs so the forms can carry registered, language-qualified dialect tags without treating villages
+# or broad source divisions as top-level languages.
+DIALECTS = {
+    "Kt": {
+        "w": ("nured-Kt-w", "Western Katë"),
+        "ne": ("nured-Kt-ne", "Northeastern Katë"),
+        "se": ("nured-Kt-se", "Southeastern Katë"),
+        "kt": ("nured-Kt-kt", "Ktívi (Kantiwā)"),
+        "kl": ("nured-Kt-kl", "Kulém"),
+        "r̆m": ("nured-Kt-rm", "R̆amgël"),
+        "mm": ("nured-Kt-mm", "Mumṓgr̆om (Maṇḍagal Suflā)"),
+        "br": ("nured-Kt-br", "Br̆ëgémaṭol (Barg-i Maṭāl)"),
+        "mr": ("nured-Kt-mr", "Mumrét (Bumboret Šēkhāndeh)"),
+        "kun": ("nured-Kt-kun", "Kuniṣṭ (Rumbur Šēkhāndeh)"),
+    },
+    "Wg": {
+        "ẓ": ("nured-Wg-z", "Ẓönčigal (Arans)"),
+        "n": ("nured-Wg-n", "Nišeygrām"),
+        "wg": ("nured-Wg-wg", "Waigal"),
+        "kg": ("nured-Wg-kg", "Kegal"),
+    },
+    "Gmb": {
+        "gm": ("nured-Gmb-gm", "Gimirí (Gambīr)"),
+        "dv": ("nured-Gmb-dv", "Deví (Devoz)"),
+    },
+    "Ash": {
+        "s": ("nured-Ash-s", "Samë́ (Wāmā)"),
+        "tt": ("nured-Ash-tt", "Titín"),
+    },
+    "Pr": {
+        "p": ("nured-Pr-p", "Wuṣǘt (Paṣkí)"),
+        "k": ("nured-Pr-k", "Kaḍár (Kaṭār)"),
+        "d": ("nured-Pr-d", "Wüċǘ (Dewa)"),
+        "pr": ("nured-Pr-pr", "Seč (Pronj̈)"),
+        "i": ("nured-Pr-i", "Ṣupú (Iṣṭewi)"),
+        "z": ("nured-Pr-z", "Zumú"),
+    },
+}
+
+STRAND_LANGUAGE_GROUPS = {
+    "ktivi": "Kt", "Kam": "Kt", "kulem": "Kt", "barg": "Kt",
+    "nis": "Wg", "vagal": "Wg", "ames": "Wg",
+    "sanu": "Ash", "titin": "Ash",
+    "gamb": "Gmb", "devoz": "Gmb",
+    "sec": "Pr", "usut": "Pr", "supu": "Pr", "zumu": "Pr", "ucu": "Pr",
 }
 
 # Vedic accents and generic combining stress marks are irrelevant to exact dictionary-head
@@ -529,6 +603,455 @@ def source_citation(page: dict) -> str:
     return f"{SOURCE_ID}[page {page['pageid']}, revision {page['revid']}, {date}]"
 
 
+def split_targets(value: str) -> list[str]:
+    return [item.strip() for item in (value or "").split("|") if item.strip()]
+
+
+def split_top_level(value: str) -> list[str]:
+    """Split MediaWiki template arguments without splitting nested templates or wiki links."""
+    parts: list[str] = []
+    start = 0
+    braces = brackets = 0
+    index = 0
+    while index < len(value):
+        pair = value[index : index + 2]
+        if pair == "{{":
+            braces += 1
+            index += 2
+            continue
+        if pair == "}}" and braces:
+            braces -= 1
+            index += 2
+            continue
+        if pair == "[[":
+            brackets += 1
+            index += 2
+            continue
+        if pair == "]]" and brackets:
+            brackets -= 1
+            index += 2
+            continue
+        if value[index] == "|" and not braces and not brackets:
+            parts.append(value[start:index])
+            start = index + 1
+        index += 1
+    parts.append(value[start:])
+    return parts
+
+
+def form_templates(value: str) -> list[tuple[int, int, list[str]]]:
+    """Return balanced outer ``Form`` templates as ``(start, end, positional args)``."""
+    templates = []
+    index = 0
+    while index < len(value) - 1:
+        start = value.find("{{", index)
+        if start < 0:
+            break
+        depth = 1
+        cursor = start + 2
+        while cursor < len(value) - 1 and depth:
+            pair = value[cursor : cursor + 2]
+            if pair == "{{":
+                depth += 1
+                cursor += 2
+            elif pair == "}}":
+                depth -= 1
+                cursor += 2
+            else:
+                cursor += 1
+        if depth:
+            break
+        content = value[start + 2 : cursor - 2]
+        parts = split_top_level(content)
+        if parts and parts[0].strip().casefold() == "form":
+            positional = [
+                part.strip() for part in parts[1:]
+                if part.strip() and not re.match(r"^[A-Za-z][A-Za-z0-9_-]*\s*=", part.strip())
+            ]
+            templates.append((start, cursor, positional))
+        index = cursor
+    return templates
+
+
+def clean_wiki_text(value: str) -> str:
+    """Conservatively flatten the small amount of wiki markup allowed inside lexical fields."""
+    value = html.unescape(value or "")
+    previous = None
+    while previous != value:
+        previous = value
+        value = re.sub(r"\[\[[^\]|]+\|([^\]]+)\]\]", r"\1", value)
+        value = re.sub(r"\[\[([^\]]+)\]\]", r"\1", value)
+    language_names = {
+        "Prs.": "Persian", "Kt.": "Katë", "NKal.": "Nuristani Kalasha",
+        "Pr.": "Prasun", "A.": "Ashkun", "Tr.": "Tregami", "IA": "Indo-Aryan",
+        "MIA": "Middle Indo-Aryan", "OIA": "Old Indo-Aryan", "PNur.": "Proto-Nuristani",
+    }
+    value = re.sub(
+        r"\{\{\s*([^{}|]+?)\s*\}\}",
+        lambda match: language_names.get(match.group(1).strip(), match.group(1).strip()),
+        value,
+    )
+    value = re.sub(r"<[^>]+>", "", value)
+    value = value.replace("''", "").strip()
+    return re.sub(r"\s+", " ", value)
+
+
+def lemma_fields(wikitext: str) -> tuple[str, str, str]:
+    for _start, _end, positional in form_templates(
+        re.sub(r"\{\{\s*Lemma\b", "{{Form", wikitext, count=1, flags=re.I)
+    ):
+        if positional:
+            return (
+                clean_wiki_text(positional[0]),
+                clean_wiki_text(positional[1]) if len(positional) > 1 else "",
+                clean_wiki_text(positional[2]) if len(positional) > 2 else "",
+            )
+    return source_lemma(wikitext), "", ""
+
+
+def dialect_tag(language: str, marker: str) -> str:
+    source_id, name = DIALECTS[language][marker]
+    return (
+        f"dialect:{urllib.parse.quote(language, safe='')}:"
+        f"{urllib.parse.quote(source_id, safe='')}:"
+        f"{urllib.parse.quote(name, safe='')}"
+    )
+
+
+def grammatical_tags(pos: str, form: str, gloss: str) -> list[str]:
+    plain = pos.casefold()
+    tags = []
+    mappings = (
+        (r"\bn\.", "noun"), (r"\badj\.", "adj"), (r"\bv\.", "verb"),
+        (r"\bnum\.", "num"), (r"\badv\.", "adv"), (r"\bpron\.", "pron"),
+        (r"\btr\.", "tr"), (r"\bitr\.", "intr"),
+        (r"\bm\.", "m"), (r"\bf\.", "f"),
+    )
+    for pattern, tag in mappings:
+        if re.search(pattern, plain) and tag not in tags:
+            tags.append(tag)
+    if form.startswith("-"):
+        tags.append("suffix")
+    if " " in form.strip():
+        tags.append("multiword-expression")
+    if re.search(r"\bname of\b", gloss, flags=re.I):
+        tags.append("proper-noun")
+    return tags
+
+
+def dialect_markers(segment: str, language: str) -> list[str]:
+    # A preceding ``<big>alternate</big>`` closes the scope of earlier dialect labels.  The source
+    # Form template then represents the labels following that alternate, not every form on the line.
+    boundary = segment.casefold().rfind("</big>")
+    segment = segment[boundary + len("</big>") :] if boundary >= 0 else segment
+    names = re.findall(r"\{\{\s*([^{}|]+?)\s*\}\}", segment)
+    return list(dict.fromkeys(name.strip() for name in names if name.strip() in DIALECTS.get(language, {})))
+
+
+def comparable_form(value: str) -> str:
+    value = clean_wiki_text(value).casefold()
+    value = unicodedata.normalize("NFD", value)
+    value = "".join(char for char in value if not unicodedata.combining(char))
+    value = value.translate(str.maketrans({
+        "ʦ": "ts", "ʣ": "dz", "č": "c", "ċ": "c", "ć": "c", "ǰ": "j",
+        "š": "s", "ž": "z", "ṣ": "s", "ṭ": "t", "ḍ": "d", "ṇ": "n", "ŋ": "n",
+        "ṅ": "n", "ñ": "n", "ṛ": "r", "ṝ": "r", "ḷ": "l", "ʹ": "", "′": "",
+    }))
+    return re.sub(r"[^a-z]", "", value)
+
+
+def lexical_similarity(left: str, right: str) -> float:
+    left, right = comparable_form(left), comparable_form(right)
+    return SequenceMatcher(None, left, right).ratio() if left and right else 0.0
+
+
+def gloss_similarity(left: str, right: str) -> float:
+    words = lambda text: set(re.findall(r"[a-z]+", clean_wiki_text(text).casefold()))
+    a, b = words(left), words(right)
+    return len(a & b) / len(a | b) if a and b else 0.0
+
+
+def branch_evidence(path: Path, param_path: Path) -> tuple[dict[str, list[dict]], dict[str, str]]:
+    evidence: dict[str, list[dict]] = defaultdict(list)
+    heads = {}
+    if param_path.exists():
+        with param_path.open(encoding="utf-8", newline="") as handle:
+            for row in csv.reader(handle):
+                if len(row) >= 3:
+                    heads[row[0]] = row[2]
+    if path.exists():
+        with path.open(encoding="utf-8", newline="") as handle:
+            for row in csv.reader(handle):
+                if len(row) < 4:
+                    continue
+                evidence[row[1]].append({
+                    "language": STRAND_LANGUAGE_GROUPS.get(row[0], row[0]),
+                    "form": row[2],
+                    "gloss": row[3],
+                })
+    return dict(evidence), heads
+
+
+def route_target(
+    language: str, form: str, gloss: str, targets: list[str],
+    evidence: dict[str, list[dict]], heads: dict[str, str],
+) -> str:
+    if len(targets) == 1:
+        return targets[0]
+    ranked = []
+    for target in targets:
+        rows = evidence.get(target, [])
+        same_language = [row for row in rows if row["language"] == language]
+        pool = same_language or rows
+        form_score = max((lexical_similarity(form, row["form"]) for row in pool), default=0.0)
+        meaning_score = max((gloss_similarity(gloss, row["gloss"]) for row in pool), default=0.0)
+        head_score = lexical_similarity(form, heads.get(target, ""))
+        ranked.append(((bool(same_language), form_score + meaning_score, meaning_score, head_score), target))
+    return max(ranked, key=lambda item: (item[0], item[1]))[1]
+
+
+def compatible_existing_target(
+    forms: list[dict[str, str]], target: str, evidence: dict[str, list[dict]], heads: dict[str, str]
+) -> bool:
+    """Require lexical or semantic overlap before reusing a same-CDIAL Strand borrowing branch."""
+    branch = evidence.get(target, [])
+    for form in forms:
+        same_language = [row for row in branch if row["language"] == form["Language_ID"]]
+        for candidate in same_language:
+            if lexical_similarity(form["Form"], candidate["form"]) >= 0.75:
+                return True
+            if gloss_similarity(form["Gloss"], candidate["gloss"]) >= 0.5:
+                return True
+    # A head match is useful only as a final fallback when the branch lacks descendant evidence.
+    return not branch and any(
+        lexical_similarity(form["Form"], heads.get(target, "")) >= 0.85 for form in forms
+    )
+
+
+def parse_nuristani_forms(
+    row: dict[str, str], targets: list[str], evidence: dict[str, list[dict]], heads: dict[str, str]
+) -> tuple[list[dict[str, str]], int, int]:
+    section = extract_section(row["Raw_Wikitext"], "Nuristani")
+    section = re.sub(r"<ref\b[^>]*>[\s\S]*?</ref\s*>", "", section, flags=re.I)
+    section = re.sub(r"<ref\b[^>]*/\s*>", "", section, flags=re.I)
+    output = []
+    template_count = unparsed = ordinal = 0
+    language_stack: dict[int, str] = {}
+    last_language = ""
+    for line in section.splitlines():
+        templates = form_templates(line)
+        prefix = line[: templates[0][0]] if templates else line
+        depth = max(1, prefix.count("*"))
+        explicit = next(
+            (LANGUAGE_IDS[label] for label in re.findall(r"'''([^']+)'''", prefix) if label in LANGUAGE_IDS),
+            "",
+        )
+        if explicit:
+            language_stack[depth] = explicit
+            language_stack = {level: lang for level, lang in language_stack.items() if level <= depth}
+            last_language = explicit
+        language = explicit or next(
+            (language_stack[level] for level in sorted(language_stack, reverse=True) if level <= depth),
+            last_language,
+        )
+        if not templates:
+            continue
+        template_count += len(templates)
+        previous_end = 0
+        for start, end, positional in templates:
+            ordinal += 1
+            if not language or len(positional) < 3:
+                unparsed += 1
+                previous_end = end
+                continue
+            raw_form = clean_wiki_text(positional[0]).strip("⟨⟩ ")
+            pos = clean_wiki_text(positional[1])
+            gloss = clean_wiki_text(positional[2])
+            if not raw_form:
+                unparsed += 1
+                previous_end = end
+                continue
+            alternatives = [item.strip() for item in re.split(r"\s+~\s+", raw_form) if item.strip()]
+            target = route_target(language, alternatives[0], gloss, targets, evidence, heads)
+            segment = line[previous_end:start]
+            tags = grammatical_tags(pos, alternatives[0], gloss)
+            tags.extend(dialect_tag(language, marker) for marker in dialect_markers(segment, language))
+            bullet = re.sub(r"^[:*]+\s*", "", line[:start])
+            if bullet.lstrip().startswith("?"):
+                tags.append("uncertain")
+            relation_context = line[end:]
+            if "⇐" in relation_context or re.search(r"\bborrow", relation_context, flags=re.I):
+                tags.append("loanword")
+                if "?" in relation_context:
+                    tags.append("uncertain")
+            tags = list(dict.fromkeys(tags))
+            main_key = f"nured:{row['Page_ID']}:form:{ordinal}"
+            for alt_index, alternative in enumerate(alternatives, 1):
+                key = main_key if alt_index == 1 else f"{main_key}:alt:{alt_index}"
+                alt_tags = tags + (["alternate"] if alt_index > 1 else [])
+                output.append({
+                    "Language_ID": language,
+                    "Parameter_ID": target,
+                    "Form": alternative,
+                    "Gloss": gloss,
+                    "Native": "",
+                    "Phonemic": "",
+                    "Notes": "",
+                    "Source": row["Source_Citation"],
+                    "Cognateset": "",
+                    "Etymology": "",
+                    "Entry_Key": key,
+                    "Variant_Of_Key": main_key if alt_index > 1 else "",
+                    "Borrowed_From_Key": "",
+                    "Derivation_Parent_Keys": "",
+                    "Tags": " ".join(dict.fromkeys(alt_tags)),
+                })
+            previous_end = end
+    return output, template_count, unparsed
+
+
+def commentary_html(rendered: str, row: dict[str, str]) -> str:
+    """Keep only Commentary and the footnotes referenced from that section."""
+    soup = BeautifulSoup(rendered, "html.parser")
+    heading = soup.find("h2", id=f"nured-{row['Page_ID']}-Commentary")
+    if heading is None:
+        raise ValueError(f"NurED page {row['Page_ID']} has no rendered Commentary section")
+    start = heading.parent if heading.parent and heading.parent.name == "div" else heading
+    nodes = [start]
+    for sibling in start.next_siblings:
+        if getattr(sibling, "find_all", None) and sibling.find("h2") is not None:
+            break
+        nodes.append(sibling)
+    fragment = BeautifulSoup("".join(str(node) for node in nodes), "html.parser")
+    note_ids = list(dict.fromkeys(
+        link.get("href", "").removeprefix("#")
+        for link in fragment.find_all("a", href=True)
+        if link["href"].startswith(f"#nured-{row['Page_ID']}-cite_note-")
+    ))
+    notes = []
+    for note_id in note_ids:
+        note = soup.find(id=note_id)
+        if note is not None:
+            notes.append(str(note))
+    note_html = (
+        '<div class="nured-commentary-notes"><h4>Commentary notes</h4><ol>'
+        + "".join(notes) + "</ol></div>"
+        if notes else ""
+    )
+    url = html.escape(
+        revision_url({"title": row["Title"], "revid": int(row["Revision_ID"])}), quote=True
+    )
+    title = html.escape(row["Title"])
+    article = (
+        f'<article class="nured-commentary" data-page-id="{row["Page_ID"]}" '
+        f'data-revision-id="{row["Revision_ID"]}">'
+        f'<h3>NurED commentary: <a href="{url}">{title}</a> '
+        f'<small>(revision {row["Revision_ID"]})</small></h3>'
+        f'{"".join(str(node) for node in nodes)}{note_html}</article>'
+    )
+    return "\n".join(line.rstrip() for line in article.splitlines())
+
+
+def load_borrowings(path: Path) -> list[dict[str, str]]:
+    if not path.exists():
+        return []
+    with path.open(encoding="utf-8", newline="") as handle:
+        rows = list(csv.DictReader(handle))
+    if rows and set(rows[0]) != set(BORROWING_FIELDS):
+        raise ValueError(f"unexpected Nuristani borrowing schema in {path}")
+    return rows
+
+
+def plan_outputs(
+    audit_rows: list[dict[str, str]], borrowing_rows: list[dict[str, str]],
+    strand_forms: Path, strand_params: Path,
+) -> tuple[list[dict[str, str]], list[list[str]], list[dict[str, str]], dict[str, str]]:
+    """Resolve every scoped article to PNur, then emit forms, generated heads, and commentary."""
+    retained_borrowings = [
+        row for row in borrowing_rows if not row["Evidence"].startswith("NurED page ")
+    ]
+    by_cdial: dict[str, list[str]] = defaultdict(list)
+    for borrowing in retained_borrowings:
+        by_cdial[borrowing["Indo_Aryan_ID"]].append(borrowing["Proto_Nuristani_ID"])
+    evidence, heads = branch_evidence(strand_forms, strand_params)
+    forms: list[dict[str, str]] = []
+    params: list[list[str]] = []
+    commentaries: dict[str, str] = {}
+    generated = set()
+    for row in audit_rows:
+        for field in AUDIT_FIELDS:
+            row.setdefault(field, "")
+        kind = row["Article_Type"]
+        if not kind:
+            continue
+        original_targets = split_targets(row["Accepted_Targets"])
+        if kind == "cdial" and not original_targets:
+            # A PNur entry cannot responsibly be made without the article's reviewed CDIAL home.
+            continue
+        if kind == "cdial":
+            targets = sorted({target for cdial in original_targets for target in by_cdial.get(cdial, [])})
+        else:
+            targets = original_targets
+        target_status = "existing"
+        if kind == "cdial" and targets:
+            provisional, _templates, _unparsed = parse_nuristani_forms(
+                row, targets, evidence, heads
+            )
+            targets = [
+                target for target in targets
+                if compatible_existing_target(provisional, target, evidence, heads)
+            ]
+        if not targets:
+            targets = [f"nured-{row['Page_ID']}"]
+            target_status = "generated"
+            lemma, _pos, gloss = lemma_fields(row["Raw_Wikitext"])
+            lemma = lemma if lemma.startswith("*") else f"*{lemma}"
+            params.append([targets[0], "PNur", lemma, gloss, SOURCE_ID])
+            heads[targets[0]] = lemma
+            generated.add(targets[0])
+            if kind == "cdial":
+                if len(original_targets) != 1:
+                    raise ValueError(f"cannot create one PNur borrowing for CDIAL targets {original_targets}")
+                retained_borrowings.append({
+                    "Proto_Nuristani_ID": targets[0],
+                    "Indo_Aryan_ID": original_targets[0],
+                    "Evidence": (
+                        f"NurED page {row['Page_ID']}, revision {row['Revision_ID']}; "
+                        "Middle Indo-Aryan loanword article with no existing PNur borrowing entry"
+                    ),
+                })
+                by_cdial[original_targets[0]].append(targets[0])
+        parsed, template_count, unparsed = parse_nuristani_forms(row, targets, evidence, heads)
+        if unparsed or not parsed:
+            raise ValueError(
+                f"NurED page {row['Page_ID']} parsed {len(parsed)} rows from {template_count} "
+                f"templates with {unparsed} unparsed"
+            )
+        used_targets = sorted({form["Parameter_ID"] for form in parsed})
+        forms.extend(parsed)
+        commentaries[row["Page_ID"]] = commentary_html(row["Rendered_HTML"], row)
+        row["PNur_Targets"] = " | ".join(targets)
+        row["PNur_Target_Status"] = target_status
+        row["Form_Template_Count"] = str(template_count)
+        row["Reflex_Rows"] = str(len(parsed))
+        row["Unparsed_Form_Templates"] = str(unparsed)
+        row["Commentary_Targets"] = " | ".join(used_targets)
+        row["Output_Blocks"] = str(len(used_targets))
+        row["Status"] = "ingested"
+        row["Reason"] = (
+            row["Reason"] + "; " if row["Reason"] else ""
+        ) + ("created stable PNur entry" if target_status == "generated" else "routed through existing PNur entry")
+    if len(generated) != len(params):
+        raise ValueError("duplicate generated NurED PNur parameter ID")
+    params.sort(key=lambda param: int(param[0].split("-", 1)[1]))
+    retained_borrowings.sort(key=lambda row: (
+        1 if row["Proto_Nuristani_ID"].startswith("nured-") else 0,
+        int(row["Proto_Nuristani_ID"].split("-", 1)[1])
+        if row["Proto_Nuristani_ID"].startswith("nured-") else row["Proto_Nuristani_ID"],
+    ))
+    return forms, params, retained_borrowings, commentaries
+
+
 def retain_snapshot_date_when_unchanged(
     rows: list[dict[str, str]], manifest: dict, previous_path: Path = DEFAULT_MANIFEST
 ) -> None:
@@ -641,7 +1164,7 @@ def audit_from_live(
 def read_audit(path: Path) -> list[dict[str, str]]:
     with path.open(encoding="utf-8", newline="") as handle:
         rows = list(csv.DictReader(handle))
-    missing = set(AUDIT_FIELDS) - set(rows[0] if rows else {})
+    missing = set(BASE_AUDIT_FIELDS) - set(rows[0] if rows else {})
     if missing:
         raise ValueError(f"NurED audit missing fields {sorted(missing)}")
     for row in rows:
@@ -651,15 +1174,18 @@ def read_audit(path: Path) -> list[dict[str, str]]:
     return rows
 
 
-def text_rows(audit_rows: list[dict[str, str]]) -> list[dict[str, str]]:
+def text_rows(
+    audit_rows: list[dict[str, str]], commentaries: dict[str, str]
+) -> list[dict[str, str]]:
     output = []
     seen = set()
     for row in audit_rows:
         if row["Status"] != "ingested":
             continue
-        targets = [value.strip() for value in row["Accepted_Targets"].split("|") if value.strip()]
-        if not row["Rendered_HTML"].strip():
-            raise ValueError(f"ingested NurED page {row['Page_ID']} has no rendered HTML")
+        targets = split_targets(row["Commentary_Targets"])
+        content = commentaries.get(row["Page_ID"], "")
+        if not content:
+            raise ValueError(f"ingested NurED page {row['Page_ID']} has no parsed commentary")
         for target in targets:
             key = (target, row["Page_ID"])
             if key in seen:
@@ -671,7 +1197,7 @@ def text_rows(audit_rows: list[dict[str, str]]) -> list[dict[str, str]]:
                 "Position": str(100000 + int(row["Page_ID"])),
                 "Kind": "etymology",
                 "Format": "html",
-                "Content": row["Rendered_HTML"],
+                "Content": content,
                 "Source": row["Source_Citation"],
             })
     return sorted(output, key=lambda row: (row["Form_ID"], int(row["Position"])))
@@ -687,17 +1213,30 @@ def write_csv(path: Path, fields: list[str], rows: list[dict[str, str]]) -> None
     temporary.replace(path)
 
 
+def write_plain_csv(path: Path, rows: list[list[str]]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    temporary = path.with_suffix(path.suffix + ".tmp")
+    with temporary.open("w", encoding="utf-8", newline="") as handle:
+        csv.writer(handle, lineterminator="\n").writerows(rows)
+    temporary.replace(path)
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--cache", type=Path, default=DEFAULT_CACHE)
     parser.add_argument("--audit", type=Path)
     parser.add_argument("--manifest", type=Path)
-    parser.add_argument("--output", type=Path)
+    parser.add_argument("--output", type=Path, help="deprecated alias for --text-output")
+    parser.add_argument("--text-output", type=Path)
+    parser.add_argument("--form-output", type=Path)
+    parser.add_argument("--param-output", type=Path)
     parser.add_argument("--targets", type=Path, default=DEFAULT_TARGETS)
     parser.add_argument("--cdial", type=Path, default=DEFAULT_CDIAL)
     parser.add_argument("--merges", type=Path, default=DEFAULT_MERGES)
     parser.add_argument("--strand", type=Path, default=DEFAULT_STRAND)
+    parser.add_argument("--strand-forms", type=Path, default=DEFAULT_STRAND_FORMS)
     parser.add_argument("--cognates", type=Path, default=DEFAULT_COGNATES)
+    parser.add_argument("--borrowings", type=Path, default=DEFAULT_BORROWINGS)
     parser.add_argument("--refresh", action="store_true", help="query the current live wiki")
     parser.add_argument("--offline", action="store_true", help="rebuild from the checked-in audit")
     parser.add_argument("--install", action="store_true", help="replace canonical snapshot outputs")
@@ -708,11 +1247,17 @@ def main() -> None:
     if args.install:
         audit_path = args.audit or DEFAULT_AUDIT
         manifest_path = args.manifest or DEFAULT_MANIFEST
-        output_path = args.output or DEFAULT_OUTPUT
+        text_path = args.text_output or args.output or DEFAULT_TEXT_OUTPUT
+        form_path = args.form_output or DEFAULT_FORM_OUTPUT
+        param_path = args.param_output or DEFAULT_PARAM_OUTPUT
+        borrowing_path = args.borrowings
     else:
         audit_path = args.audit or PREVIEW_DIR / DEFAULT_AUDIT.name
         manifest_path = args.manifest or PREVIEW_DIR / DEFAULT_MANIFEST.name
-        output_path = args.output or PREVIEW_DIR / DEFAULT_OUTPUT.name
+        text_path = args.text_output or args.output or PREVIEW_DIR / "entry-texts.csv"
+        form_path = args.form_output or PREVIEW_DIR / "forms.csv"
+        param_path = args.param_output or PREVIEW_DIR / "params.csv"
+        borrowing_path = PREVIEW_DIR / DEFAULT_BORROWINGS.name
 
     if args.offline:
         source_audit = DEFAULT_AUDIT if audit_path != DEFAULT_AUDIT else audit_path
@@ -723,7 +1268,10 @@ def main() -> None:
             args.cache, args.cdial, args.merges, args.strand, args.cognates, args.targets
         )
 
-    blocks = text_rows(audit_rows)
+    forms, params, borrowings, commentaries = plan_outputs(
+        audit_rows, load_borrowings(args.borrowings), args.strand_forms, args.strand
+    )
+    blocks = text_rows(audit_rows, commentaries)
     counts: dict[str, int] = defaultdict(int)
     article_counts: dict[str, int] = defaultdict(int)
     for row in audit_rows:
@@ -736,13 +1284,28 @@ def main() -> None:
     manifest["audit_status_counts"] = dict(sorted(counts.items()))
     manifest["installed_text_blocks"] = len(blocks)
     manifest["accepted_target_count"] = len({row["Form_ID"] for row in blocks})
+    manifest["installed_reflex_rows"] = len(forms)
+    manifest["generated_pnur_entries"] = len(params)
+    manifest["generated_pnur_borrowings"] = sum(
+        row["Evidence"].startswith("NurED page ") for row in borrowings
+    )
+    manifest["form_template_count"] = sum(
+        int(row["Form_Template_Count"] or 0) for row in audit_rows
+    )
+    manifest["unparsed_form_templates"] = sum(
+        int(row["Unparsed_Form_Templates"] or 0) for row in audit_rows
+    )
 
     write_csv(audit_path, AUDIT_FIELDS, audit_rows)
-    write_csv(output_path, TEXT_FIELDS, blocks)
+    write_csv(text_path, TEXT_FIELDS, blocks)
+    write_plain_csv(form_path, [[row[field] for field in FORM_FIELDS] for row in forms])
+    write_plain_csv(param_path, params)
+    write_csv(borrowing_path, BORROWING_FIELDS, borrowings)
     atomic_json(manifest_path, manifest)
     print(
-        f"audited {len(audit_rows)} nonredirect pages; wrote {len(blocks)} entry-text blocks; "
-        f"statuses: {dict(sorted(counts.items()))}; output: {output_path}"
+        f"audited {len(audit_rows)} nonredirect pages; wrote {len(blocks)} commentary blocks, "
+        f"{len(forms)} reflex rows, and {len(params)} generated PNur entries; "
+        f"statuses: {dict(sorted(counts.items()))}; forms: {form_path}"
     )
 
 

@@ -90,6 +90,11 @@ def clean_strand_text(value):
     return re.sub(r"\s+", " ", value or "").strip()
 
 
+def normalize_legacy_stress(value):
+    """Move Strand's pre-vowel stress symbols after the vowel for combining output."""
+    return re.sub(r"([ʹ`´ˊ'])(.)", r"\2\1", value)
+
+
 _GENDER_WORD = re.compile(
     r"(?<![A-Za-z])(?:m\.?|masc\.?|masculine|male|f\.?|fem\.?|feminine|female|"
     r"n\.?|neut\.?|neuter)(?![A-Za-z])",
@@ -350,9 +355,7 @@ def strand2():
                     parsed = parse_legacy_entry(data)
                     if parsed:
                         word = parsed["word"]
-                        word2 = re.sub(r'ʹ(.)', r'\1ʹ', word)
-                        word2 = re.sub(r'`(.)', r'\1`', word2)
-                        word2 = re.sub(r'´(.)', r'\1´', word2)
+                        word2 = normalize_legacy_stress(word)
                         if parsed["turner"]:
                             ipa = t(word2, column='IPA').replace(' ', '').replace('#', ' ')
                             writer.writerow(strand_row(
@@ -378,7 +381,7 @@ def strand():
                             parsed = parse_legacy_entry(data)
                             if parsed:
                                 word = parsed["word"]
-                                word2 = re.sub(r'ʹ(.)', r'\1ʹ', word)
+                                word2 = normalize_legacy_stress(word)
                                 if parsed["turner"]:
                                     ipa = t(word2, column='IPA').replace(' ', '').replace('#', ' ')
                                     writer.writerow(strand_row(

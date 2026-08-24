@@ -52,3 +52,19 @@ def test_cdial_regional_dialects_are_georeferenced():
     assert all(row["Tag"].startswith("dialect:") for row in regional)
     assert all(row["Latitude"] and row["Longitude"] for row in regional)
     assert all(row["Location"] and row["Quality"] in {"A", "B", "C"} for row in regional)
+
+
+def test_every_dialect_has_human_readable_location_metadata():
+    dialects = rows("dialects.csv")
+
+    assert all(row["Location"].strip() for row in dialects)
+    assert all(row["Quality"] in {"A", "B", "C"} for row in dialects)
+    assert all(bool(row["Latitude"].strip()) == bool(row["Longitude"].strip()) for row in dialects)
+
+
+def test_every_dialect_has_coordinates_in_range():
+    dialects = rows("dialects.csv")
+
+    assert all(row["Latitude"].strip() and row["Longitude"].strip() for row in dialects)
+    assert all(-90 <= float(row["Latitude"]) <= 90 for row in dialects)
+    assert all(-180 <= float(row["Longitude"]) <= 180 for row in dialects)

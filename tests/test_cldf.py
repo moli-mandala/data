@@ -103,11 +103,20 @@ def test_dedr_footer_references_are_not_forms():
     assert leaked == []
 
 
-def test_dedr_footer_references_are_preserved_on_entry():
+def test_dedr_old_edition_references_are_structured_on_entry():
     with open("cldf/forms.csv", encoding="utf-8") as f:
         rows = {row["ID"]: row for row in csv.DictReader(f)}
 
-    assert "DEDS 687" in rows["d4229"]["Etymology"]
+    assert rows["d4229"]["Etymology"] == ""
+    assert rows["d4229"]["Source"] == "dedr[entry 4229, DEDS 687]"
+
+
+def test_cdial_headword_references_are_structured_on_entry_not_only_reflexes():
+    with open("cldf/forms.csv", encoding="utf-8") as f:
+        rows = {row["ID"]: row for row in csv.DictReader(f)}
+
+    assert rows["49"]["Source"] == "CDIAL;EWA[i 17]"
+    assert rows["1111"]["Source"] == "CDIAL;EWA[i 26];Kuiper PMWS[76]"
 
 
 def test_curated_borrowings_are_applied():
@@ -215,7 +224,6 @@ def test_strand_indo_aryan_loans_are_nuristani_borrowings():
 
     assert borrowings
     assert len({r["Proto_Nuristani_ID"] for r in borrowings}) == len(borrowings)
-    borrowed_nuristani = {aliases.get(r["Proto_Nuristani_ID"], r["Proto_Nuristani_ID"]) for r in borrowings}
     for row in borrowings:
         legacy_nuristani = row["Proto_Nuristani_ID"]
         nuristani = aliases.get(legacy_nuristani, legacy_nuristani)
@@ -230,10 +238,16 @@ def test_strand_indo_aryan_loans_are_nuristani_borrowings():
         assert forms[nuristani]["Relation"] == "borrowed"
         assert forms[nuristani]["Borrowed_From"] == indo_aryan
         assert descendants
-        assert all(form["Origin_ID"] == indo_aryan for form in descendants)
-        assert all(form["Relation"] == "borrowed" for form in descendants)
-        assert all(form["Borrowed_From"] == indo_aryan for form in descendants)
-    assert all(form["Origin_ID"] not in borrowed_nuristani for form in forms.values())
+        descendant_ids = {form["ID"] for form in descendants}
+        assert any(form["Relation"] == "reflex" for form in descendants)
+        assert all(form["Relation"] in {"reflex", "variant"} for form in descendants)
+        assert all(
+            form["Origin_ID"] == nuristani
+            if form["Relation"] == "reflex"
+            else form["Origin_ID"] in descendant_ids
+            for form in descendants
+        )
+        assert all(not form["Borrowed_From"] for form in descendants)
 
     yamaraja = next(r for r in borrowings if r["Proto_Nuristani_ID"] == "n2571")
     assert yamaraja["Indo_Aryan_ID"] == "10425"
@@ -414,8 +428,8 @@ def test_ocr_provenance_is_explicit_on_references():
 
     assert {key for key, row in references.items() if row["OCR"] == "Yes"} == {
         "andersen1990",
-        "berger-auto",
-        "dbia",
+            "berger-auto",
+            "dbia",
         "ghatage-kasargod1970",
         "hockings-pilotraichoor1992",
         "paranavitana",
@@ -424,6 +438,25 @@ def test_ocr_provenance_is_explicit_on_references():
         "srinivasa",
     }
     assert set(row["OCR"] for row in references.values()) <= {"Yes", "No"}
+
+
+def test_etymology_provenance_is_explicit_for_audited_reference_types():
+    with open("cldf/references.csv", encoding="utf-8") as f:
+        references = {row["ID"]: row for row in csv.DictReader(f)}
+
+    assert references["bashir2023"]["Etymology_Provenance"] == "source"
+    assert references["gandhari"]["Etymology_Provenance"] == "source-mapped"
+    assert references["backstrom1992"]["Etymology_Provenance"] == "jambu"
+    assert references["chattisgarhi"]["Etymology_Provenance"] == "jambu"
+    assert references["kannauji"]["Etymology_Provenance"] == "jambu"
+    for reference in {"mewari", "hadothi", "dhundari", "marwari", "mewati", "bagri"}:
+        assert references[reference]["Etymology_Provenance"] == "jambu"
+    for reference in {"krishnamurti", "pfeiffer2018", "rau", "southworth2006proto", "kobayashi2022"}:
+        assert references[reference]["Etymology_Provenance"] == "source"
+    assert references["strand"]["Etymology_Provenance"] == "mixed"
+    assert set(row["Etymology_Provenance"] for row in references.values()) <= {
+        "", "source", "source-mapped", "jambu", "mixed", "none",
+    }
 
 
 def test_both_shackle_sources_use_cdial_phonetic_conversion_and_tags():
@@ -482,7 +515,7 @@ def test_duplicate_strand_oia_heads_are_merged_into_cdial():
         assert row["Redirect"] not in redirects
 
 
-def test_strand_borrowings_are_aligned_to_final_indo_aryan_donors():
+def test_strand_borrowing_heads_align_to_ia_and_descendants_to_pnur():
     with open("data/nuristani_borrowings.csv", encoding="utf-8") as f:
         borrowings = {
             row["Proto_Nuristani_ID"]: row["Indo_Aryan_ID"]
@@ -509,4 +542,4 @@ def test_strand_borrowings_are_aligned_to_final_indo_aryan_donors():
     for nuristani, indo_aryan in borrowings.items():
         assert aligned_origins[nuristani] == {indo_aryan}
     for descendant in wanted - set(borrowings):
-        assert aligned_origins[descendant] == {aliases.get("10425", "10425")}
+        assert aligned_origins[descendant] == {aliases.get("n2571", "n2571")}

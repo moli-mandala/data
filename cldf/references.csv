@@ -1,973 +1,1035 @@
-ID,Short,Source,Progress,Provenance,Editor,OCR
+ID,Short,Source,Progress,Provenance,Editor,OCR,Etymology_Provenance
 gandhari,B2002—,"Stefan Baums and Andrew Glass\.
 A dictionary of gāndhārī\.
 2002–\.
 Public website/API snapshot captured 2026\-08\-05; reuse terms not stated\.
-URL: [https://gandhari\.org/dictionary](https://gandhari.org/dictionary)\.","1,512 articles with a unique exact accent-normalized Sanskrit match in CDIAL",data/other/forms/20260805-gandhari-org.csv; data/other/forms/raw_data/20260805-gandhari-org-audit.csv,Aryaman Arora; OpenAI Codex,No
+URL: [https://gandhari\.org/dictionary](https://gandhari.org/dictionary)\.","1,512 articles with a unique exact accent-normalized Sanskrit match in CDIAL",data/other/forms/20260805-gandhari-org.csv; data/other/forms/raw_data/20260805-gandhari-org-audit.csv,Aryaman Arora; OpenAI Codex,No,source-mapped
 tulpule1999,T1999,"Shankar Gopal Tulpule and Anne Feldhaus\.
 *A Dictionary of Old Marathi*\.
 Popular Prakashan, Mumbai, 1999\.
-URL: [https://dsal\.uchicago\.edu/dictionaries/tulpule/](https://dsal.uchicago.edu/dictionaries/tulpule/)\.",Partial,data/other/forms/20260810-tulpule-old-marathi.csv,Aryaman Arora; OpenAI Codex,No
+URL: [https://dsal\.uchicago\.edu/dictionaries/tulpule/](https://dsal.uchicago.edu/dictionaries/tulpule/)\.",Partial,data/other/forms/20260810-tulpule-old-marathi.csv,Aryaman Arora; OpenAI Codex,No,source-mapped
 wolf-kota,W2014,"Richard K\. Wolf\.
 Kota dictionary\.
 Working dictionary based on field material collected 1990–2003, 2014\.
-URL: [https://richardkwolf\.com/wp\-content/uploads/2016/12/Kota\-dictionary\-9\-2014\.pdf](https://richardkwolf.com/wp-content/uploads/2016/12/Kota-dictionary-9-2014.pdf)\.",Full,data/other/forms/20260813-wolf-kota.csv,OpenAI Codex,No
+URL: [https://richardkwolf\.com/wp\-content/uploads/2016/12/Kota\-dictionary\-9\-2014\.pdf](https://richardkwolf.com/wp-content/uploads/2016/12/Kota-dictionary-9-2014.pdf)\.",Full,data/other/forms/20260813-wolf-kota.csv,OpenAI Codex,No,
 CDIAL,T1962—1966,"Ralph Lilley Turner\.
 *A comparative dictionary of the Indo\-Aryan languages*\.
 Oxford University Press, 1962–1966\.
-URL: [https://dsal\.uchicago\.edu/dictionaries/soas/](https://dsal.uchicago.edu/dictionaries/soas/)\.",Yes,data/cdial/cdial.csv,Aryaman Arora,No
+URL: [https://dsal\.uchicago\.edu/dictionaries/soas/](https://dsal.uchicago.edu/dictionaries/soas/)\.",Yes,data/cdial/cdial.csv,Aryaman Arora,No,source
+mayrhofer-kewa,M1953—1980,"Manfred Mayrhofer\.
+*Kurzgefasstes etymologisches Wörterbuch des Altindischen*\.
+Indogermanische Bibliothek\. Zweite Reihe: Wörterbücher\.
+Carl Winter Universitätsverlag, Heidelberg, 1953–1980\.
+Per\-article image edition, copyright 2021 version 1\.0; the site states that scanning was performed with the author's permission; reuse terms are not stated\.
+URL: [https://samskrtam\.ru/sanskrit\-lexicon/KEWA/](https://samskrtam.ru/sanskrit-lexicon/KEWA/)\.","All 9,587 indexed articles are image- and OCR-audited; conservatively matched articles are included as exact linked source-scan blocks on canonical CDIAL entries; OCR is audit-only and is neither displayed nor used for matching",data/other/entry_texts/20260818-kewa.csv; data/other/forms/raw_data/20260818-kewa-audit.csv; data/other/forms/raw_data/20260818-kewa-manifest.json; data/other/forms/raw_data/20260818-kewa-sample.csv; data/other/forms/raw_data/20260818-kewa-checklist.md,OpenAI Codex,No,
 dedr,B1984,"Thomas Burrow and Murray Barnson Emeneau\.
 *A Dravidian Etymological Dictionary*\.
 Clarendon Press, Oxford, 2 edition, 1984\.
-URL: [https://dsal\.uchicago\.edu/dictionaries/burrow/](https://dsal.uchicago.edu/dictionaries/burrow/)\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No
+URL: [https://dsal\.uchicago\.edu/dictionaries/burrow/](https://dsal.uchicago.edu/dictionaries/burrow/)\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No,source
 dbia,E1962,"M\. B\. Emeneau and T\. Burrow\.
 *Dravidian Borrowings from Indo\-Aryan*\.
 Volume 26 of University of California Publications in Linguistics\.
-University of California Press, Berkeley and Los Angeles, 1962\.",Yes,cldf/forms.csv (upstream import path unavailable),Aryaman Arora,Yes
+University of California Press, Berkeley and Los Angeles, 1962\.",Yes,cldf/forms.csv (upstream import path unavailable),Aryaman Arora,Yes,source-mapped
 thari,B1979,"Murli D\. Bhawnani\.
 *Descriptive analysis of Thari: A dialect of Sindhi language*\.
-PhD thesis, Deccan College Post Graduate and Research Institute Pune, 1979\.",Yes,data/other/forms/20220913-thari.csv,Aryaman Arora,No
+PhD thesis, Deccan College Post Graduate and Research Institute Pune, 1979\.",Yes,data/other/forms/20220913-thari.csv,Aryaman Arora,No,jambu
 jouanne,J2014,"Thomas Jouanne\.
 *A Preliminary Analysis of the Phonological System of the Western Pahāṛī Language of Kvār*\.
 PhD thesis, University of Oslo, 2014\.
-URL: [https://www\.duo\.uio\.no/bitstream/handle/10852/43094/Masteroppgave\-Sr\-Adia\-studier\.pdf?isAllowed=y\\&amp;sequence=1](https://www.duo.uio.no/bitstream/handle/10852/43094/Masteroppgave-Sr-Adia-studier.pdf?isAllowed=y\&sequence=1)\.",Yes,data/other/forms/20220913-kvari.csv,Aryaman Arora,No
+URL: [https://www\.duo\.uio\.no/bitstream/handle/10852/43094/Masteroppgave\-Sr\-Adia\-studier\.pdf?isAllowed=y\\&amp;sequence=1](https://www.duo.uio.no/bitstream/handle/10852/43094/Masteroppgave-Sr-Adia-studier.pdf?isAllowed=y\&sequence=1)\.",Yes,data/other/forms/20220913-kvari.csv,Aryaman Arora,No,
 kholosi,A2021,"Aryaman Arora and Ahmed Etebari\.
 *Kholosi Dictionary*\.
 Zenodo, 2021\.
-[doi:10\.5281/zenodo\.7901554](https://doi.org/10.5281/zenodo.7901554)\.",Yes,data/other/forms/20220913-kholosi.csv,Aryaman Arora,No
+[doi:10\.5281/zenodo\.7901554](https://doi.org/10.5281/zenodo.7901554)\.",Yes,data/other/forms/20220913-kholosi.csv,Aryaman Arora,No,jambu
 liljegren,L2019,"Henrik Liljegren\.
 Palula dictionary\.
 *Dictionaria*, pages 1&ndash;2700, 2019\.
-URL: [https://dictionaria\.clld\.org/contributions/palula](https://dictionaria.clld.org/contributions/palula)\.",Yes,data/other/forms/20220913-kalkoti.csv; data/other/forms/20220913-palula.csv,Aryaman Arora,No
+URL: [https://dictionaria\.clld\.org/contributions/palula](https://dictionaria.clld.org/contributions/palula)\.",Yes,data/other/forms/20220913-kalkoti.csv; data/other/forms/20220913-palula.csv,Aryaman Arora,No,source
 grierson-lsi1928,G2023,"George Abraham Grierson\.
 Linguistic survey of india\. volume 1\. part 2\. comparative vocabulary: cldf dataset\.
 2023\.
 Digital edition of Grierson's 1928 comparative vocabulary; data curation by Patrick Lundberg and Christoph Rzymski\.
-URL: [https://github\.com/lexibank/lsi/tree/v1\.0](https://github.com/lexibank/lsi/tree/v1.0), [doi:10\.5281/zenodo\.8361936](https://doi.org/10.5281/zenodo.8361936)\.",Full,data/other/forms/20260813-grierson-lsi.csv,OpenAI Codex,No
+URL: [https://github\.com/lexibank/lsi/tree/v1\.0](https://github.com/lexibank/lsi/tree/v1.0), [doi:10\.5281/zenodo\.8361936](https://doi.org/10.5281/zenodo.8361936)\.",Full,data/other/forms/20260813-grierson-lsi.csv,OpenAI Codex,No,
 liljegren-hindukush,L2026,"Henrik Liljegren, Robert Forkel, Nina Knobloch, and Noa Lange\.
 Hindu kush areal typology\.
 2026\.
-URL: [https://github\.com/cldf\-datasets/liljegrenhindukush/tree/v1\.1\.0](https://github.com/cldf-datasets/liljegrenhindukush/tree/v1.1.0), [doi:10\.5281/zenodo\.21406260](https://doi.org/10.5281/zenodo.21406260)\.",Full,data/other/forms/20260810-liljegren-hindukush.csv,Aryaman Arora; OpenAI Codex,No
+URL: [https://github\.com/cldf\-datasets/liljegrenhindukush/tree/v1\.1\.0](https://github.com/cldf-datasets/liljegrenhindukush/tree/v1.1.0), [doi:10\.5281/zenodo\.21406260](https://doi.org/10.5281/zenodo.21406260)\.",Full,data/other/forms/20260810-liljegren-hindukush.csv,Aryaman Arora; OpenAI Codex,No,
 patyal2,P1982,"Hukam Chand Patyal\.
 Etymological notes on some maṇḍyāḷī words \(indo\-aryan studies ii\)\.
 *Indo\-Iranian Journal*, 24\(4\):289–294, 1982\.
-URL: [https://www\.jstor\.org/stable/24653654](https://www.jstor.org/stable/24653654)\.",Yes,data/other/forms/20220913-patyal.csv,Aryaman Arora,No
+URL: [https://www\.jstor\.org/stable/24653654](https://www.jstor.org/stable/24653654)\.",Yes,data/other/forms/20220913-patyal.csv,Aryaman Arora,No,source
 patyal3,P1991,"Hukam Chand Patyal\.
 Etymological notes on some ḍogri words \(indo\-aryan studies iii\)\.
 *Indo\-Iranian Journal*, 34\(2\):123–124, 1991\.
-URL: [http://www\.jstor\.org/stable/24655313](http://www.jstor.org/stable/24655313)\.",Yes,data/other/forms/20220913-patyal.csv,Aryaman Arora,No
+URL: [http://www\.jstor\.org/stable/24655313](http://www.jstor.org/stable/24655313)\.",Yes,data/other/forms/20220913-patyal.csv,Aryaman Arora,No,source
 patyal4,P1983,"Hukam Chand Patyal\.
 Etymological notes on some maṇḍyāḷī words \(indo\-aryan studies iv\)\.
 *Indo\-Iranian Journal*, 25\(1\):41–49, 1983\.
-URL: [https://www\.jstor\.org/stable/24654118](https://www.jstor.org/stable/24654118)\.",Yes,data/other/forms/20220913-patyal.csv,Aryaman Arora,No
+URL: [https://www\.jstor\.org/stable/24654118](https://www.jstor.org/stable/24654118)\.",Yes,data/other/forms/20220913-patyal.csv,Aryaman Arora,No,source
 patyal5,P1984,"Hukam Chand Patyal\.
 Etymological notes on some maṇḍyāḷī words \(indo\-aryan studies v\)\.
 *Indo\-Iranian Journal*, 27\(2\):121–132, 1984\.
-URL: [https://www\.jstor\.org/stable/24653985](https://www.jstor.org/stable/24653985)\.",Yes,data/other/forms/20220913-patyal.csv,Aryaman Arora,No
+URL: [https://www\.jstor\.org/stable/24653985](https://www.jstor.org/stable/24653985)\.",Yes,data/other/forms/20220913-patyal.csv,Aryaman Arora,No,source
 toulmin,T2006,"Matthew William Stirling Toulmin\.
 *Reconstructing linguistic history in a dialect continuum: The Kamta, Rajbanshi, and Northern Deshi Bangla subgroup of Indo\-Aryan*\.
-PhD thesis, The Australian National University, 2006\.",Yes,data/other/forms/20230517-toulmin.csv,Aryaman Arora,No
+PhD thesis, The Australian National University, 2006\.",Yes,data/other/forms/20230517-toulmin.csv,Aryaman Arora,No,source
 karunatillake2,K1999,"Walimunidevage Sisil Karunatillake\.
 *Sinhala Etymological Index*\.
-Department of Linguistics, University of Kelaniya, 1999\.",No,,Aryaman Arora,No
+Department of Linguistics, University of Kelaniya, 1999\.",No,,Aryaman Arora,No,
 paranavitana,P1956,"Senarat Paranavitana\.
 *Sigiri graffiti, Sinhalese verses of the eighth, ninth and tenth centuries\.*
-Oxford University Press, 1956\.",Yes,data/other/forms/20260726-paranavitana-sigiri.csv,Aryaman Arora; OpenAI Codex,Yes
+Oxford University Press, 1956\.",Yes,data/other/forms/20260726-paranavitana-sigiri.csv,Aryaman Arora; OpenAI Codex,Yes,source-mapped
 karunatillake,K1969,"Walimunidevage Sisil Karunatillake\.
 *Historical Phonology of Sinhalese from Old Indo\-Aryan to the 14th century A\.D\.*
-PhD thesis, Cornell University, 1969\.",No,,Aryaman Arora,No
+PhD thesis, Cornell University, 1969\.",No,,Aryaman Arora,No,
 cain,C2000,"Bruce Dwayne Cain\.
 *Dhivehi \(Maldivian\): A Synchronic and Diachronic Study*\.
-PhD thesis, Faculty of the Graduate School\. Cornell University, 2000\.",No,,Aryaman Arora,No
+PhD thesis, Faculty of the Graduate School\. Cornell University, 2000\.",No,,Aryaman Arora,No,
 fritz,F2002,"Sonja Fritz\.
 *The Dhivehi language: a descriptive and historical grammar of Maldivian and its dialects*\.
-Ergon\-Verlag, 2002\.",Yes,data/other/forms/20220913-dhivehi.csv,Adam Farris,No
+Ergon\-Verlag, 2002\.",Yes,data/other/forms/20220913-dhivehi.csv,Adam Farris,No,
 IndoLanguages,B2021,"Shashank Shenoy Basty\.
-Personal communication, 2021\.",Yes,data/other/forms/20220913-konkani.csv,Aryaman Arora,No
+Personal communication, 2021\.",Yes,data/other/forms/20220913-konkani.csv,Aryaman Arora,No,
 arora,A2021a,"Aryaman Arora\.
-Personal communication, 2021\.",Yes,data/other/forms/20220913-thari.csv; data/other/forms/20230403-arora.csv,Aryaman Arora,No
+Personal communication, 2021\.",Yes,data/other/forms/20220913-thari.csv; data/other/forms/20230403-arora.csv,Aryaman Arora,No,
 strand,S1997—2021,"Richard F\. Strand\.
 Nuristân: hidden land of the hindu\-kush\.
 1997–2021\.
-URL: [http://nuristan\.info/](http://nuristan.info/)\.",Yes,data/other/forms/20220913-strand.csv; data/other/forms/20220913-strand2.csv; data/other/forms/20221003-strand3.csv,Aryaman Arora,No
+URL: [http://nuristan\.info/](http://nuristan.info/)\.",Yes,data/other/forms/20220913-strand.csv; data/other/forms/20220913-strand2.csv; data/other/forms/20221003-strand3.csv,Aryaman Arora,No,mixed
 zadjali,A2017,"Said Al Jahdhami\.
 Zadjali: the dying language\.
 *International Journal of Language and Linguistics*, 2017\.
-URL: [https://ijllnet\.com/journals/Vol\\\_4\\\_No\\\_3\\\_September\\\_2017/6\.pdf](https://ijllnet.com/journals/Vol\_4\_No\_3\_September\_2017/6.pdf)\.",Yes,data/other/forms/20220913-zadjali.csv,Aryaman Arora,No
+URL: [https://ijllnet\.com/journals/Vol\\\_4\\\_No\\\_3\\\_September\\\_2017/6\.pdf](https://ijllnet.com/journals/Vol\_4\_No\_3\_September\_2017/6.pdf)\.",Yes,data/other/forms/20220913-zadjali.csv,Aryaman Arora,No,
 elfenbein,E1994,"Josef Elfenbein\.
 Notes on khetrāni phonology\.
-*Studien zur Indologie und Iranistik*, 19:71–82, 1994\.",Yes,data/other/forms/20220913-khetrani.csv,Aryaman Arora,No
+*Studien zur Indologie und Iranistik*, 19:71–82, 1994\.",Yes,data/other/forms/20220913-khetrani.csv,Aryaman Arora,No,
 srinivasa,S1970,"Govindaswamy Srinivasa Varma\.
 *Vaagri boli, an Indo\-Aryan language*\.
 PhD thesis, Annamalai University, Annamalai Nagar, 1970\.
-URL: [https://www\.tamildigitallibrary\.in/book\-detail?id=jZY9lup2kZl6TuXGlZQdjZt2lJU1\\&amp;tag=Vaagri\\%20boli\\\#book1](https://www.tamildigitallibrary.in/book-detail?id=jZY9lup2kZl6TuXGlZQdjZt2lJU1\&tag=Vaagri\%20boli\#book1)\.",Yes,data/other/forms/20220913-vaagri.csv,Aryaman Arora,Yes
+URL: [https://www\.tamildigitallibrary\.in/book\-detail?id=jZY9lup2kZl6TuXGlZQdjZt2lJU1\\&amp;tag=Vaagri\\%20boli\\\#book1](https://www.tamildigitallibrary.in/book-detail?id=jZY9lup2kZl6TuXGlZQdjZt2lJU1\&tag=Vaagri\%20boli\#book1)\.",Yes,data/other/forms/20220913-vaagri.csv,Aryaman Arora,Yes,jambu
 gawri,B1997,"Joan L\. G\. Baart\.
 *The sounds and tones of Kalam Kohistani: with wordlist and texts*\.
-National Institute of Pakistan Studies, Quaid\-i\-Azam University and Summer Institute of Linguistics, Islamabad, 1997\.",Yes,data/other/forms/20220913-gawri.csv,Aryaman Arora,No
+National Institute of Pakistan Studies, Quaid\-i\-Azam University and Summer Institute of Linguistics, Islamabad, 1997\.",Yes,data/other/forms/20220913-gawri.csv,Aryaman Arora,No,
 kalkoti,L2013,"Henrik Liljegren\.
 Notes on Kalkoti: a Shina language with strong Kohistani influences\.
-*Linguistic Discovery*, 11\(1\):129&ndash;160, 2013\.",Yes,data/other/forms/20220913-kalkoti.csv,Aryaman Arora,No
+*Linguistic Discovery*, 11\(1\):129&ndash;160, 2013\.",Yes,data/other/forms/20220913-kalkoti.csv,Aryaman Arora,No,
 kund,R2005,"Khawaja A\. Rehman and Joan L\. G\. Baart\.
 A first look at the language of kundal shahi in azad kashmir\.
 *SIL Electronic Working Papers*, 2005\.
-URL: [http://www\.sil\.org/silewp/abstract\.asp?ref=2005\-008](http://www.sil.org/silewp/abstract.asp?ref=2005-008)\.",Yes,data/other/forms/20220913-kundalshahi.csv,Aryaman Arora,No
+URL: [http://www\.sil\.org/silewp/abstract\.asp?ref=2005\-008](http://www.sil.org/silewp/abstract.asp?ref=2005-008)\.",Yes,data/other/forms/20220913-kundalshahi.csv,Aryaman Arora,No,
 rau,R2019,"Felix Rau\.
 Munda cognate set with proto\-munda reconstructions\.
 Aug 2019\.
-[doi:10\.5281/zenodo\.3380874](https://doi.org/10.5281/zenodo.3380874)\.",Yes,data/munda/forms.csv,Aryaman Arora,No
+[doi:10\.5281/zenodo\.3380874](https://doi.org/10.5281/zenodo.3380874)\.",Yes,data/munda/forms.csv,Aryaman Arora,No,source
 FR,A2008,"Gregory DS Anderson and Felix Rau\.
 Gorum\.
-*The Munda languages*, pages 381–433, 2008\.",Partial,data/munda/forms.csv,Aryaman Arora,No
+*The Munda languages*, pages 381–433, 2008\.",Partial,data/munda/forms.csv,Aryaman Arora,No,
 berger,B1998,"Hermann Berger\.
 *Die Burushaski\-Sprache von Hunza und Nager*\.
-Harrassowitz, 1998\.",Partial,data/other/forms/20220930-berger.csv,Aryaman Arora,No
+Harrassowitz, 1998\.",Partial,data/other/forms/20220930-berger.csv,Aryaman Arora,No,source
 morgenstierne,M1929—1944,"Georg Morgenstierne\.
 *Indo\-Iranian Frontier Languages*\.
-Instituttet for Sammenlignende Kulturforskning, Oslo, 1929–1944\.",Partial,data/other/forms/20221003-strand3.csv,Aryaman Arora,No
+Instituttet for Sammenlignende Kulturforskning, Oslo, 1929–1944\.",Partial,data/other/forms/20221003-strand3.csv,Aryaman Arora,No,
 buddruss,B2015,"Georg Buddruss and Almuth Degener\.
 *Materialien zur Prasun\-Sprache des afghanischen Hindukusch\. Teil 1: Texte und Glossar*\.
 Harvard Oriental Series\.
-Harvard University Press, Cambridge, Mass\., 2015\.",Partial,data/other/forms/20221003-strand3.csv,Aryaman Arora,No
+Harvard University Press, Cambridge, Mass\., 2015\.",Partial,data/other/forms/20221003-strand3.csv,Aryaman Arora,No,
+buddruss-grangali1979,B1979a,"Georg Buddruss\.
+Gṛaṅgali\. ein nachtrag zum atlas der dardsprachen\.
+*Münchener Studien zur Sprachwissenschaft*, 38:21–39, 1979\.","Complete: all Grangali answers to Atlas questionnaire items 1--167; items 47, 110, and 166 are explicitly unattested",Stanford Interlibrary Loan request 446721; scan SHA-256 175737c74b49630badf88d62f7dca3b199884365556f8345b7f9aebe56e0525a; all 173 records manually collated against 300 dpi renders on 2026-08-20; reproducible extraction and audit in data/other/forms/raw_data/buddruss_grangali_1979.py,Aryaman Arora and OpenAI,No,source
 LSI,G1903—1928,"George A\. Grierson\.
 *Linguistic Survey of India*\.
 Office of the Superintendent of Government Printing, India, 1903–1928\.
-URL: [https://dsal\.uchicago\.edu/books/lsi/](https://dsal.uchicago.edu/books/lsi/)\.",Yes,data/cdial/cdial.csv; data/other/forms/20221003-strand3.csv,Aryaman Arora,No
+URL: [https://dsal\.uchicago\.edu/books/lsi/](https://dsal.uchicago.edu/books/lsi/)\.",Yes,data/cdial/cdial.csv; data/other/forms/20221003-strand3.csv,Aryaman Arora,No,
 lentz,L1937,"Wolfgang Lentz\.
 Sprachwissenschaftliche und völkerkundliche studien in nuristan\.
-*Deutsche im Hindukusch\. Bericht der deutschen Hindukusch\-Expedition 1935 der Deutschen Forschungsgemeinschaft*, pages 247–284, 1937\.",No,data/other/forms/20221003-strand3.csv,Aryaman Arora,No
+*Deutsche im Hindukusch\. Bericht der deutschen Hindukusch\-Expedition 1935 der Deutschen Forschungsgemeinschaft*, pages 247–284, 1937\.",No,data/other/forms/20221003-strand3.csv,Aryaman Arora,No,
 zubair,Z2016,"Saeed Zubair\.
 A phonological description of wadiyari, a language spoken in pakistan\.
 Master's thesis, Payap University, 2016\.
-URL: [https://www\.ialtrust\.org/resources/A\-Phonological\-Description\-of\-Wadiyari\.pdf](https://www.ialtrust.org/resources/A-Phonological-Description-of-Wadiyari.pdf)\.",Partial,data/other/forms/20230306-wadiyara.csv,Aryaman Arora,No
-rajapurohit2012,R2012,,Yes,data/other/forms/20260725-drasi.csv,Aryaman Arora,No
+URL: [https://www\.ialtrust\.org/resources/A\-Phonological\-Description\-of\-Wadiyari\.pdf](https://www.ialtrust.org/resources/A-Phonological-Description-of-Wadiyari.pdf)\.",Partial,data/other/forms/20230306-wadiyara.csv,Aryaman Arora,No,jambu
+rajapurohit2012,R2012,,Yes,data/other/forms/20260725-drasi.csv,Aryaman Arora,No,
 krishnamurti,K2003,"Bhadriraju Krishnamurti\.
 *The Dravidian Languages*\.
 Cambridge University Press, 2003\.
 ISBN 978\-1\-139\-43533\-8\.
-[arXiv:54fV7Lwu3fMC](https://arxiv.org/abs/54fV7Lwu3fMC)\.",Partial,data/dedr/pdr.csv,Aryaman Arora,No
+[arXiv:54fV7Lwu3fMC](https://arxiv.org/abs/54fV7Lwu3fMC)\.",Partial,data/dedr/pdr.csv; data/other/forms/20260718-merriam-dravidian-db.csv,Aryaman Arora,No,source
+merriam2026dravidiandb,M2026,"Louis L\. Merriam and Andreas Fuls\.
+The dravidian database: reconstructed lexicon of the dravidian subgroups linked to the dravidian etymological dictionary\.
+2026\.
+URL: [https://doi\.org/10\.5281/zenodo\.21433491](https://doi.org/10.5281/zenodo.21433491), [doi:10\.5281/zenodo\.21433491](https://doi.org/10.5281/zenodo.21433491)\.",Partial: reconstruction table pdr_03.csv; ambiguous collapsed lettered DEDR entries and invalid DEDR targets excluded,data/other/forms/20260718-merriam-dravidian-db.csv; data/other/forms/raw_data/20260718-merriam-dravidian-db-audit.csv.gz; data/other/forms/raw_data/20260718-merriam-dravidian-db-manifest.json; data/other/forms/raw_data/20260718-merriam-dravidian-db-sample.csv,Aryaman Arora,No,
+starostin2006dravidian,S2006—2013,"George Starostin\.
+Dravidian etymological database\.
+2006–2013\.
+URL: [https://starlingdb\.org/cgi\-bin/main\.cgi?flags=eygtnnl](https://starlingdb.org/cgi-bin/main.cgi?flags=eygtnnl)\.",Partial: reconstructions redistributed and keyed to DEDR by Merriam 2026,data/other/forms/20260718-merriam-dravidian-db.csv; data/other/forms/raw_data/20260718-merriam-dravidian-db-audit.csv.gz,Aryaman Arora,No,
 backstrom1992,B1992,"Peter C\. Backstrom and Carla F\. Radloff\.
 *Sociolinguistic Survey of Northern Pakistan, Volume 2\. Languages of Northern Areas*\.
-National Institute of Pakistan Studies, Islamabad, 1992\.",Partial,data/other/forms/20230416-northern.csv,Aryaman Arora; OpenAI Codex,No
+National Institute of Pakistan Studies, Islamabad, 1992\.",Partial,data/other/forms/20230416-northern.csv,Aryaman Arora; OpenAI Codex,No,jambu
 rensch-decker-hallberg1992,R1992,"Calvin R\. Rensch, Sandra J\. Decker, and Daniel G\. Hallberg\.
 *Sociolinguistic Survey of Northern Pakistan, Volume 1\. Languages of Kohistan*\.
 National Institute of Pakistan Studies and Summer Institute of Linguistics, Islamabad, 1992\.
-ISBN 969\-8023\-11\-9\.",Partial,data/other/forms/20260725-ssnp.csv,Aryaman Arora,No
+ISBN 969\-8023\-11\-9\.",Partial,data/other/forms/20260725-ssnp.csv,Aryaman Arora,No,
 rensch-hallberg-oleary1992,R1992a,"Calvin R\. Rensch, Calinda E\. Hallberg, and Clare F\. O'Leary\.
 *Sociolinguistic Survey of Northern Pakistan, Volume 3\. Hindko and Gujari*\.
 National Institute of Pakistan Studies and Summer Institute of Linguistics, Islamabad, 1992\.
-ISBN 969\-8023\-13\-5\.",Partial,data/other/forms/20260725-ssnp.csv,Aryaman Arora,No
+ISBN 969\-8023\-13\-5\.",Partial,data/other/forms/20260725-ssnp.csv,Aryaman Arora,No,
 decker1992,D1992,"Kendall D\. Decker\.
 *Sociolinguistic Survey of Northern Pakistan, Volume 5\. Languages of Chitral*\.
 National Institute of Pakistan Studies and Summer Institute of Linguistics, Islamabad, 1992\.
-ISBN 969\-8023\-15\-1\.",Partial,data/other/forms/20260725-ssnp.csv,Aryaman Arora,No
+ISBN 969\-8023\-15\-1\.",Partial,data/other/forms/20260725-ssnp.csv,Aryaman Arora,No,
 S-Kuwi,S1913,"F\. V\. P\. Schulze\.
 *Vocabulary of Kuvi\-Kond Language*\.
-Graves, Madras, 1913\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No
+Graves, Madras, 1913\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No,
 Isr-Kuwi,I1979,"M\. Israel\.
 *A Grammar of the Kuvi Language \(with Texts and Vocabulary\)*\.
-Dravidian Linguistics Association, Trivandrum, 1979\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No
+Dravidian Linguistics Association, Trivandrum, 1979\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No,
 F-Kuwi,F1913,"A\. G\. Fitzgerald\.
 *Kuvinḡa Bassa\. The Kondh Language as spoken by the Paṛjas of the Madras Presidency*\.
-Catholic Orphan Press, Calcutta, 1913\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No
+Catholic Orphan Press, Calcutta, 1913\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No,
 Mah-Kuwi,M1956,"Gōpīnāth \[G\. N\. Mohanty\] Mahānti\.
 *Kūbhi Kandha Bhāṣā Tattva*\.
-Unknown, Wardha and Cuttack, 1956\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No
+Unknown, Wardha and Cuttack, 1956\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No,
 Ṭ-Kuwi,B1964,"T\. Burrow and S\. Bhattacharya\.
 Fieldnotes on ṭēkriya kondh \(navrangpur district\)\.
 1964\.
-Unpublished fieldnotes\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No
+Unpublished fieldnotes\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No,
 Ḍ-Kuwi,B1966,"T\. Burrow and S\. Bhattacharya\.
 Fieldnotes on the dialect of the ḍongriya kondhs\.
 1966\.
-Unpublished fieldnotes\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No
+Unpublished fieldnotes\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No,
 Tr-Gondi,T1919—1921,"C\. G\. Chenevix Trench\.
 *Grammar of Gondi as spoken in the Betul District, Central Provinces, India*\.
 Madras, 1919–1921\.
-Vol\. 1 – Grammar, vol\. II – Vocabulary, Folk\-tales, etc\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No
+Vol\. 1 – Grammar, vol\. II – Vocabulary, Folk\-tales, etc\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No,
 B-K-Tulu,B1967,"M\. Mariappa Bhat and A\. Shanker Kedilaya\.
 *Tuḷu\-English Dictionary*\.
 Number 15 in Madras University Kannada Series\.
-Madras, 1967\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No
+Madras, 1967\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No,
 K-Telugu,K1961,"Bhadriraju Krishnamurti\.
 *Telugu Verbal Bases: A Comparative and Descriptive Study*\.
 Number 24 in UCPL\.
-University of California Press, 1961\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No
+University of California Press, 1961\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No,
 Oll-Gadaba,B1957,"Sudhibhushan Bhattacharya\.
 *Ollari, a Dravidian Speech*\.
 Number 3 in Memoir\.
 Department of Anthropology, Government of India, Delhi, 1957\.
-Abbreviated as Oll\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No
+Abbreviated as Oll\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No,
 S3-Gadaba,R1972,"Peri Bhaskara Rao\.
 *Kondekor Gadaba: a Dravidian Language*\.
-PhD thesis, Deccan College, 1972\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No
+PhD thesis, Deccan College, 1972\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No,
 M-Gondi,M1942,"A\. N\. Mitchell\.
 *A Grammar of Maria Gondi as spoken by the Bison Horn or Dandami Marias of Bastar State*\.
-Bastar State Press, Jagdalpur, 1942\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No
+Bastar State Press, Jagdalpur, 1942\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No,
 SR-Gondi,R1954,"P\. Setumadhava Rao\.
 *A Grammar of the Gondi Language*\.
 Jai Hind Printing Press, Hyderabad, 1954\.
-Adilabad dialect\. Abbreviated as SR\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No
+Adilabad dialect\. Abbreviated as SR\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No,
 K-also-Telugu,K?,"Bhadriraju Krishnamurti\.
 Personal communication from bhadriraju krishnamurti\.
-Personal communication, n\.d\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No
+Personal communication, n\.d\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No,
 S-Gadaba,K1951,"Bhadriraju Krishnamurti and Sudhibhushan Bhattacharya\.
 Fieldnotes collected by bh\. krishnamurti and by s\. bhattacharya\.
-1951\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No
+1951\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No,
 SR-Kolami,R1950,"P\. Setumadhava Rao\.
 *A Grammar of the Kolami Language*\.
 The Co\-operative Press, Hyderabad, 1950\.
-Included in W\. Abbreviated as SR\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No
+Included in W\. Abbreviated as SR\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No,
 Hav-Kannada,B1971,"D\. N\. Shankara Bhat\.
 *An Outline Grammar of Havyaka*\.
 5\.
 Linguistic Survey of India Series, Poona, 1971\.
-Abbreviated as Hav\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No
+Abbreviated as Hav\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No,
 W-Kolami,E1955,"M\. B\. Emeneau\.
 *Kolami, a Dravidian Language*\.
 Number 12 in UCPL\.
 University of California Press, Berkeley, 1955\.
-Reprinted, Annamalai University Department of Linguistics, Publication No\. 2, Annamalainagar, 1961\. Wardha dialect\. Abbreviated as W\.",Yes,,Aryaman Arora,No
+Reprinted, Annamalai University Department of Linguistics, Publication No\. 2, Annamalainagar, 1961\. Wardha dialect\. Abbreviated as W\.",Yes,,Aryaman Arora,No,
 W-Gondi,W1890,"H\. D\. Williamson\.
 *Gondi Grammar and Vocabulary*\.
 Society for Promoting Christian Knowledge, London, 1890\.
 Mandla dialect\. Abbreviated as W\.
-URL: [https://archive\.org/details/gondigrammarvoca00willrich](https://archive.org/details/gondigrammarvoca00willrich)\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No
+URL: [https://archive\.org/details/gondigrammarvoca00willrich](https://archive.org/details/gondigrammarvoca00willrich)\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No,
 BB-Konda,B1957—1958,"T\. Burrow and S\. Bhattacharya\.
 Fieldnotes collected by t\. burrow and s\. bhattacharya\.
 1957–1958\.
-Unpublished fieldnotes abbreviated as BB\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No
+Unpublished fieldnotes abbreviated as BB\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No,
 B-Telugu,B1852/1907,"Charles Philip Brown, M\. Venkata Ratnam, W\. H\. Campbell, and K\. Veeresalingam Pantulu Garu\.
 *A Dictionary, Telugu and English / A Telugu\-English Dictionary*\.
-Madras, 1852/1907\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No
+Madras, 1852/1907\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No,
 L-Gondi,L1913,"Abraham A\. Lind\.
 *A Manual of the Mardia Language*\.
 Mukti Mission Press, Kedgaon, 1913\.
-Maria dialect\. Abbreviated as L\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No
+Maria dialect\. Abbreviated as L\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No,
 K-Kui,B1961,"T\. Burrow and S\. Bhattacharya\.
 Some notes on the kui dialect as spoken by the kuṭṭia kandhs of north\-east koraput\.
 *IIJ*, 5:118–135, 1961\.
-Abbreviated as K\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No
+Abbreviated as K\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No,
 A-Gondi,B1951,"T\. Burrow and S\. Bhattacharya\.
 Fieldnotes collected in adilabad by t\. burrow and s\. bhattacharya\.
 1951\.
-Unpublished fieldnotes\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No
+Unpublished fieldnotes\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No,
 Hahn-Kurux,H1903,"Ferd\. Hahn\.
 *Kurukh \(Orāō̃\)\-English Dictionary, Part I*\.
 Bengal Secretariat Press, Calcutta, 1903\.
-URL: [https://archive\.org/details/in\.ernet\.dli\.2015\.280761](https://archive.org/details/in.ernet.dli.2015.280761)\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No
+URL: [https://archive\.org/details/in\.ernet\.dli\.2015\.280761](https://archive.org/details/in.ernet.dli.2015.280761)\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No,
 S2-Gadaba,B1962,"T\. Burrow and S\. Bhattacharya\.
 Gadba supplement\.
 *IIJ*, 6:45–51, 1962\.
-Fieldnotes collected in 1957\. Abbreviated as S\.2\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No
+Fieldnotes collected in 1957\. Abbreviated as S\.2\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No,
 PBh-Kannada,R1972a,"R\. Ramachandra Rao\.
 *A Descriptive Grammar of Pampa Bharata*\.
 Mysore, 1972\.
-Abbreviated as PBh\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No
+Abbreviated as PBh\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No,
 LuS-Gondi,L1870,"C\. B\. Lucie Smith\.
 *Report on the Land Revenue Settlement of the Chanda District*\.
 Unknown, Nagpore, 1870\.
 Contains a vocabulary of some 600 Maṛia words; those that have been entered are not indexed, since the Anglicizing transcription cannot be easily matched with the transcription of Voc\. or of most of the other sources\. Abbreviated as LuS\.
-URL: [https://www\.google\.com/books/edition/Report\\\_on\\\_the\\\_land\\\_revenue\\\_of\\\_the\\\_Chanda/tQ4IAAAAQAAJ?hl=en\\&amp;gbpv=0](https://www.google.com/books/edition/Report\_on\_the\_land\_revenue\_of\_the\_Chanda/tQ4IAAAAQAAJ?hl=en\&gbpv=0)\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No
+URL: [https://www\.google\.com/books/edition/Report\\\_on\\\_the\\\_land\\\_revenue\\\_of\\\_the\\\_Chanda/tQ4IAAAAQAAJ?hl=en\\&amp;gbpv=0](https://www.google.com/books/edition/Report\_on\_the\_land\_revenue\_of\_the\_Chanda/tQ4IAAAAQAAJ?hl=en\&gbpv=0)\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No,
 Pat-Kolami,?,"Ronald L\. Trail, editor\.
 *Patterns in Clause, Sentence, and Discourse in Selected Languages of India and Nepal, Part IV, Word Lists*\.
 Summer Institute of Linguistics and Tribhuvan University, Norman, Oklahoma and Kathmandu, 1973\.
-From Wani and Yeotmal taluqs, Maharashtra\. Abbreviated as Pat\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No
+From Wani and Yeotmal taluqs, Maharashtra\. Abbreviated as Pat\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No,
 trail-cooper1999,T1999a,"Ronald L\. Trail and Gregory R\. Cooper\.
 *Kalasha Dictionary—with English and Urdu*\.
 National Institute of Pakistan Studies and Summer Institute of Linguistics, Islamabad and High Wycombe, 1999\.
-ISBN 969\-8023\-09\-7\.",Yes,data/other/forms/20260725-kalasha-trail-cooper.csv,Aryaman Arora; OpenAI Codex,No
+ISBN 969\-8023\-09\-7\.",Yes,data/other/forms/20260725-kalasha-trail-cooper.csv,Aryaman Arora; OpenAI Codex,No,source
 Shanmugam-Kodagu,S1971,"S\. V\. Shanmugam\.
 *Dravidian Nouns \(a comparative study\)*\.
 Annamalai University Department of Linguistics, Annamalainagar, 1971\.
-pp\. 389\-98 have additions to DED and DEDS, mainly Koḍagu items\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No
+pp\. 389\-98 have additions to DED and DEDS, mainly Koḍagu items\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No,
 Inscr-Telugu,S1969,"Korada Mahadeva Sastri\.
 *Historical Grammar of Telugu \(with special reference to Old Telugu, c\. 200 B\.C\.\-1000 A\.D\.\)*\.
 Anantapur, Andhra Pradesh, 1969\.
-Abbreviated as inscr\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No
+Abbreviated as inscr\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No,
 Pat-Gondi,P1935,"S\. B\. Patwardhan\.
 *First Gondi Manual*\.
 Society for Promoting Christian Knowledge, London, 1935\.
-Chanda dialect\. Abbreviated as Pat\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No
+Chanda dialect\. Abbreviated as Pat\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No,
 VPK-Telugu,K1962,"Bhadriraju Krishnamurti\.
 *Māṇḍalika Vṛittipadakōśam \(A Telugu Dialect Dictionary of Occupational Vocabularies\), Vol\. I\. Agriculture*\.
 Hyderabad, 1962\.
-Most of the items from this source were provided by the author\. Abbreviated as VPK\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No
+Most of the items from this source were provided by the author\. Abbreviated as VPK\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No,
 Kitt-Kannada,K1894,"F\. Kittel\.
 *A Kannaḍa\-English Dictionary*\.
 Mangalore, 1894\.
-Abbreviated as Kitt\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No
+Abbreviated as Kitt\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No,
 K2-Kannada,K1968-71,"F\. Kittel and M\. Mariappa Bhat\.
 *A Kannaḍa\-English Dictionary*\.
 Madras, 1968\-71\.
-Revised and enlarged by M\. Mariappa Bhat\. Abbreviated as K\.2\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No
+Revised and enlarged by M\. Mariappa Bhat\. Abbreviated as K\.2\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No,
 Gowda-Kannada,G1970,"K\. Kushalappa Gowda\.
 *Gowda Kannada*\.
 Annamalai University Department of Linguistics, Annamalainagar, 1970\.
-Includes the article ""Gowda Kannada and standard Kannada"" published in Dr\. Ling\. 85\-105\. Abbreviated as Gowda\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No
+Includes the article ""Gowda Kannada and standard Kannada"" published in Dr\. Ling\. 85\-105\. Abbreviated as Gowda\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No,
 Tiyya-Mal,R1969,"C\. J\. Roy\.
 *The Tiyya Dialect*\.
 PhD thesis, University of Kerala, Trivandrum, 1969\.
-Ph\.D\. thesis\. Abbreviated as Tiyya\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No
+Ph\.D\. thesis\. Abbreviated as Tiyya\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No,
 Hal-Kannada,A1967,"A\. Sriramana Acharya\.
 *Halakki Kannada*\.
 Linguistic Survey of India Series, Poona, 1967\.
-Abbreviated as Hal\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No
+Abbreviated as Hal\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No,
 Tinn-Tam,K1969a,"A\. Kamatchinathan\.
 *The Tirunelvāli Tamil Dialect*\.
 Annamalai University Department of Linguistics, Annamalainagar, 1969\.
-Abbreviated as Tinn\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No
+Abbreviated as Tinn\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No,
 kobayashi2022,K2022,"Masato Kobayashi\.
 Proto\-dravidian origins of the kuṛux\-malto past stems\.
-*Bhasha\. Journal of South Asian Linguistics, Philology and Grammatical Traditions*, 1\(2\):263–282, 2022\.",No,data/dedr/pdr.csv,Aryaman Arora,No
+*Bhasha\. Journal of South Asian Linguistics, Philology and Grammatical Traditions*, 1\(2\):263–282, 2022\.",No,data/dedr/pdr.csv,Aryaman Arora,No,source
 DGG-Gondi,S1968,"P\. S\. Subrahmanyam\.
 *A Descriptive Grammar of Gondi*\.
 Annamalai University Department of Linguistics, Annamalainagar, 1968\.
-Abbreviated as DGG\.",Yes,,Aryaman Arora,No
+Abbreviated as DGG\.",Yes,,Aryaman Arora,No,
 KoyaT-Gondi,T1969,"Stephen A\. Tyler\.
 *Koya: An Outline Grammar \(Gommu Dialect\)*\.
 University of California Press, Berkeley, 1969\.
-Abbreviated as Koya T\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No
+Abbreviated as Koya T\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No,
 Ph-Gondi,P1963,"Padari Phailbus\.
 *Gondi Grammar \(Gondi Self Taught\): The Mandla Dialect*\.
 Alok Press, Bhopal, 1963\.
-2 volumes\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No
+2 volumes\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No,
 UNR-Kannada,R1891,"Ullal Narasinga Rao\.
 *A Kisamwār Glossary of Kanarese Words*\.
 Mangalore, 1891\.
 Abbreviated as UNR\.
-URL: [https://archive\.org/details/dli\.ministry\.03551](https://archive.org/details/dli.ministry.03551)\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No
+URL: [https://archive\.org/details/dli\.ministry\.03551](https://archive.org/details/dli.ministry.03551)\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No,
 UPU-Kannada,U1976,"U\. P\. Upadhyaya\.
 *A Comparative Study of Kannada Dialects*\.
 University of Mysore, Mysore, 1976\.
-A selection of items from the Bellary, Gulbarga, Kumta, and Nanjangud dialects\. Abbreviated as U\.P\.U\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No
+A selection of items from the Bellary, Gulbarga, Kumta, and Nanjangud dialects\. Abbreviated as U\.P\.U\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No,
 HavS-Kannada,S1971a,"K\. G\. Shastri\.
 *The Havyaka Dialect of North Kanara*\.
 Karnatak University, Dharwar, 1971\.
-Abbreviated as HavS\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No
+Abbreviated as HavS\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No,
 Gul-Kannada,M1968,"R\. Mahadevan\.
 *Gulbarga Kannada \(Brahmin Dialect\)*\.
 Deccan College Postgraduate and Research Institute, Poona, 1968\.
-Abbreviated as Gul\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No
+Abbreviated as Gul\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No,
 Nanj-Kannada,U1968,"U\. Padmanabha Upadhyaya\.
 *Nanjangud Kannada \(Vakkaliga Dialect\)*\.
 Deccan College Postgraduate and Research Institute, Poona, 1968\.
-Abbreviated as Nanj\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No
+Abbreviated as Nanj\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No,
 Bark-Kannada,A1971,"A\. S\. Acharya\.
 *Barkur Kannada*\.
 Deccan College Postgraduate and Research Institute, Poona, 1971\.
-Abbreviated as Bark\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No
+Abbreviated as Bark\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No,
 Tipt-Kannada,A1971a,"A\. S\. Acharya\.
 *Tiptur Kannada*\.
 Deccan College Postgraduate and Research Institute, Poona, 1971\.
-Abbreviated as Tipt\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No
+Abbreviated as Tipt\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No,
 Coorg-Kannada,U1971,"U\. P\. Upadhyaya\.
 *Coorg Kannada \(Jenu Kuruba Dialect\)*\.
 Deccan College Postgraduate and Research Institute, Poona, 1971\.
-Abbreviated as Coorg\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No
+Abbreviated as Coorg\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No,
 Rabakavi-Kannada,A1968,"A\. S\. Acharya\.
 Rabakavi kannada\.
-*Linguistic Survey Bulletin*, 5:14–19, 1968\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No
+*Linguistic Survey Bulletin*, 5:14–19, 1968\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No,
 Sholiga-Kannada,G1968,"K\. S\. Gurubasave Gowda\.
 The sholiga dialect of kannada\.
-*Linguistic Survey Bulletin*, 6:13&ndash;18, 1968\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No
+*Linguistic Survey Bulletin*, 6:13&ndash;18, 1968\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No,
 Badaga-Kannada,E?,"M\. B\. Emeneau\.
 Badaga, selected items from fieldnotes collected by m\. b\. emeneau\.
-n\.d\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No
+n\.d\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No,
 Hock-Kannada,H?,"Paul Hockings\.
 Hock\. = items communicated by paul hockings\.
-n\.d\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No
+n\.d\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No,
 Koll-Tam,K1971,"K\. Karunakaran\.
 *The Kollimalai Tamil Dialect*\.
 Number Publication No\. 26\.
 Annamalai University Department of Linguistics, Annamalainagar, 1971\.
-An appendix gives select words from other Ta\. dialects, viz\. Nāñcil\-nāṭu \(NTD\), South Arcot \(SATD\), Tañjāvur \(TATD\), Salem \(STD\), and Coimbatore \(CTD\); a few forms are quoted from these lists, with these abbreviations\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No
+An appendix gives select words from other Ta\. dialects, viz\. Nāñcil\-nāṭu \(NTD\), South Arcot \(SATD\), Tañjāvur \(TATD\), Salem \(STD\), and Coimbatore \(CTD\); a few forms are quoted from these lists, with these abbreviations\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No,
 RS-Tam,S1966,"Rama Subbiah\.
 *A Lexical Study of Tamil Dialects in Lower Perak*\.
-University of Malaya, Kuala Lumpur, 1966\.",Yes,,Aryaman Arora,No
+University of Malaya, Kuala Lumpur, 1966\.",Yes,,Aryaman Arora,No,
 Grignard-Kurux,G1924,"A\. Grignard\.
 *An Oraon\-English Dictionary*\.
 The Catholic Orphan Press Calcutta, Calcutta and Vienna, 1924\.
-URL: [https://archive\.org/details/in\.ernet\.dli\.2015\.211105](https://archive.org/details/in.ernet.dli.2015.211105)\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No
+URL: [https://archive\.org/details/in\.ernet\.dli\.2015\.211105](https://archive.org/details/in.ernet.dli.2015.211105)\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No,
 Bleses-Kurux,B1956,"C\. Bleses\.
 *An English\-Uraon Dictionary*\.
 Dharmik Sahitya Samiti, Ranchi, 1956\.
-Based on Grignard and of little independent use\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No
+Based on Grignard and of little independent use\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No,
 Tiga-Kurux,T1958,"Kh\. M\. Tiiga\.
 *An Uraon to Hindi English Dictionary*\.
-Baptist Church Press, Ranchi, 1958\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No
+Baptist Church Press, Ranchi, 1958\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No,
 Mirdha-Kurux,B1958,"T\. Burrow and S\. Bhattacharya\.
 Fieldnotes on the mirdha dialect\.
-1958\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No
+1958\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No,
 Merolu-Telugu,P1971,"D\. B\. Polkam\.
 *Merolu Telugu*\.
 Number 4 in Linguistic Survey of India Series\.
-Deccan College Postgraduate and Research Institute, Poona, 1971\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No
+Deccan College Postgraduate and Research Institute, Poona, 1971\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No,
 Inscr1-Telugu,S1969a,"Korada Mahadeva Sastri\.
 *Historical Grammar of Telugu \(with special reference to Old Telugu, c\. 200 B\.C\.\-1000 A\.D\.\)*\.
 Sri Venkateswara University, Anantapur \(Andhra Pradesh\), 1969\.
 Abbreviation: inscr\.
-URL: [https://archive\.org/details/in\.ernet\.dli\.2015\.169957](https://archive.org/details/in.ernet.dli.2015.169957)\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No
+URL: [https://archive\.org/details/in\.ernet\.dli\.2015\.169957](https://archive.org/details/in.ernet.dli.2015.169957)\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No,
 Hislop-Drav,H1866,"Stephen Hislop\.
 *Papers relating to the Aboriginal Tribes of the Central Provinces*\.
 Chief Commissioner of the Central Provinces, Nagpore, Nagpur, 1866\.
 Included in W\.
-URL: [https://www\.indianculture\.gov\.in/rarebooks/papers\-relating\-aboriginal\-tribes\-central\-provinces](https://www.indianculture.gov.in/rarebooks/papers-relating-aboriginal-tribes-central-provinces)\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No
-PR-Tam,P1960,,Yes,data/dedr/dedr_new.csv,Aryaman Arora,No
+URL: [https://www\.indianculture\.gov\.in/rarebooks/papers\-relating\-aboriginal\-tribes\-central\-provinces](https://www.indianculture.gov.in/rarebooks/papers-relating-aboriginal-tribes-central-provinces)\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No,
+PR-Tam,P1960,,Yes,data/dedr/dedr_new.csv,Aryaman Arora,No,
 Devanesan-Tam,D1955,"G\. Devanesan\.
 *A Critical Survey of the Madras University Tamil Lexicon*\.
 Salem Co\-operative Printing Works, Salem, 1955\.
-Abbreviation: Devanesan\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No
+Abbreviation: Devanesan\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No,
 PPTI-Tam,S1966a,"N\. Subrahmanian\.
 *Pre\-Pallavan Tamil Index*\.
 University of Madras, Madras, 1966\.
 Abbreviation: PPTI\.
-URL: [https://www\.tamildigitallibrary\.in/marc\\\_view?id=jZY9lup2kZl6TuXGlZQdjZt9kZt6](https://www.tamildigitallibrary.in/marc\_view?id=jZY9lup2kZl6TuXGlZQdjZt9kZt6)\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No
+URL: [https://www\.tamildigitallibrary\.in/marc\\\_view?id=jZY9lup2kZl6TuXGlZQdjZt9kZt6](https://www.tamildigitallibrary.in/marc\_view?id=jZY9lup2kZl6TuXGlZQdjZt9kZt6)\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No,
 PN-Tam,S1962,"V\. I\. Subramoniam\.
 *Index of Puṟanaanuuṟu*\.
 University of Kerala, Trivandrum, 1962\.
 Abbreviation: PN\.
-URL: [https://archive\.org/details/dli\.jZY9lup2kZl6TuXGlZQdjZI3lJQy](https://archive.org/details/dli.jZY9lup2kZl6TuXGlZQdjZI3lJQy)\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No
+URL: [https://archive\.org/details/dli\.jZY9lup2kZl6TuXGlZQdjZI3lJQy](https://archive.org/details/dli.jZY9lup2kZl6TuXGlZQdjZI3lJQy)\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No,
 Ag-Tam,A1967a,"S\. Agesthialingom\.
 *A Generative Grammar of Tamil*\.
 Annamalai University, Annamalai, 1967\.
-Nanjilnad Vellala dialect \(p\. x\)\. Abbreviation: Ag\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No
+Nanjilnad Vellala dialect \(p\. x\)\. Abbreviation: Ag\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No,
 Andronov-Tam,A1969,"M\. Andronov\.
 *A Standard Grammar of Modern and Classical Tamil*\.
 New Century Book House \(Pvt\.\) Ltd\., Madras, 1969\.
 Abbreviation: Andronov\.
-URL: [https://archive\.org/details/agrammarofmodernclassicaltamilandronovm\.s\.\\\_927\\\_h](https://archive.org/details/agrammarofmodernclassicaltamilandronovm.s.\_927\_h)\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No
+URL: [https://archive\.org/details/agrammarofmodernclassicaltamilandronovm\.s\.\\\_927\\\_h](https://archive.org/details/agrammarofmodernclassicaltamilandronovm.s.\_927\_h)\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No,
 Annamalai-Tam,A1969a,"E\. Annamalai\.
 Review of deds\.
 *Journal of Asian Studies*, 28\(4\):875–876, 1969\.
-Includes also some items from the Ramnad dialect of Tamil\. Abbreviation: Annamalai\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No
+Includes also some items from the Ramnad dialect of Tamil\. Abbreviation: Annamalai\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No,
 Asher-Radhakrishnan-Tam,A1971b,"R\. E\. Asher and R\. Radhakrishnan\.
 *A Tamil Prose Reader*\.
 Cambridge University Press, 1971\.
-Abbreviation: Asher\-Radhakrishnan\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No
+Abbreviation: Asher\-Radhakrishnan\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No,
 Kauṭ-Mal,?,"K\. N\. Ezhuttachan, editor\.
 *Bhāṣā Kauṭalīyam, Adhikaraṇas 4\-7*\.
 Number 15 in Madras University Malayalam Series\.
 Madras University, Madras, 1960\.
-Word List in Appendix C, separately paginated, 20 pp\. Abbreviation: Kauṭ\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No
+Word List in Appendix C, separately paginated, 20 pp\. Abbreviation: Kauṭ\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No,
 Menon-Mal,M1965,"K\. M\. Narayana Menon\.
 *Historical Grammar of Early Old Malayalam*\.
 PhD thesis, Deccan College, Poona, 1965\.
-Thesis\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No
+Thesis\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No,
 Z-Irula,Z1973,"Kamil V\. Zvelebil\.
 *The Iruḷa Language*\.
 Harrassowitz, Wiesbaden, 1973\.
-Abbreviation: Z\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No
+Abbreviation: Z\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No,
 Z2-Irula,Z1979,"Kamil V\. Zvelebil\.
 *The Irula \(Ëṟla\) Language, part II*\.
 Harrassowitz, Wiesbaden, 1979\.
-The vocabularies of these two form a combined whole\. Abbreviation: Z\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No
+The vocabularies of these two form a combined whole\. Abbreviation: Z\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No,
 Zvelebil1980-Irula,Z1980,"Kamil V\. Zvelebil\.
 A plea for nilgiri areal studies\.
 *IJDL*, 9\(1\):1–22, 1980\.
-Abbreviation: Zvelebil 1980\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No
+Abbreviation: Zvelebil 1980\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No,
 LSB-BettaKurumba,U1968a,"U\. P\. Upadhyaya\.
 The kuruba language\.
-*LSB*, 1:7–12, 1968\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No
+*LSB*, 1:7–12, 1968\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No,
 Sak-Toda,S1976,"S\. Sakthivel\.
 *Phonology of Toda with Vocabulary*\.
 Number 41 in Annamalai University Department of Linguistics Publication\.
 Annamalai University, Annamalainagar, 1976\.
-Abbreviation: Sak\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No
+Abbreviation: Sak\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No,
 bhaskararao-toda2025,B2025,"Peri Bhaskararao\.
 *Toda Dictionary*\.
 Number 68 in Asian and African Lexicon\.
 Research Institute for Languages and Cultures of Asia and Africa, Tokyo University of Foreign Studies, Tokyo, 2025\.
 ISBN 978\-4\-86337\-600\-7\.
-URL: [https://doi\.org/10\.15026/0002001277](https://doi.org/10.15026/0002001277), [doi:10\.15026/0002001277](https://doi.org/10.15026/0002001277)\.",Yes,data/other/forms/20260813-bhaskararao-toda.csv,OpenAI Codex,No
+URL: [https://doi\.org/10\.15026/0002001277](https://doi.org/10.15026/0002001277), [doi:10\.15026/0002001277](https://doi.org/10.15026/0002001277)\.",Yes,data/other/forms/20260813-bhaskararao-toda.csv,OpenAI Codex,No,
 hockings-pilotraichoor1992,H1992,"Paul Hockings and Christiane Pilot\-Raichoor\.
 *A Badaga\-English Dictionary*\.
 Number 8 in Trends in Linguistics\. Documentation\.
 Mouton de Gruyter, Berlin and New York, 1992\.
 ISBN 978\-3\-11\-012677\-8\.
 All rights reserved; Jambu distributes extracted lexical facts, not the source PDF\. The scan has a lossy hidden OCR layer, so the Badaga\-English section was re\-OCRed from page images\.
-URL: [https://doi\.org/10\.1515/9783110846058](https://doi.org/10.1515/9783110846058), [doi:10\.1515/9783110846058](https://doi.org/10.1515/9783110846058)\.","Badaga-English dictionary and incorporated gazetteer, printed pages 1--621; front matter, blank leaves, the English-Badaga reverse glossary, appendices, references, and publisher advertisement excluded",data/other/forms/20260818-hockings-badaga.csv; data/other/forms/raw_data/20260818-hockings-badaga-audit.csv,OpenAI Codex,Yes
+URL: [https://doi\.org/10\.1515/9783110846058](https://doi.org/10.1515/9783110846058), [doi:10\.1515/9783110846058](https://doi.org/10.1515/9783110846058)\.","Badaga-English dictionary and incorporated gazetteer, printed pages 1--621; front matter, blank leaves, the English-Badaga reverse glossary, appendices, references, and publisher advertisement excluded",data/other/forms/20260818-hockings-badaga.csv; data/other/forms/raw_data/20260818-hockings-badaga-audit.csv,OpenAI Codex,Yes,
 emeneau-toda1984,E1984,"Murray B\. Emeneau\.
 *Toda Grammar and Texts*\.
 American Philosophical Society, Philadelphia, 1984\.
-Abbreviated as TGT in Bhaskararao and Kobayashi's Toda Dictionary\.",Partial,data/other/forms/20260813-bhaskararao-toda.csv,OpenAI Codex,No
+Abbreviated as TGT in Bhaskararao and Kobayashi's Toda Dictionary\.",Partial,data/other/forms/20260813-bhaskararao-toda.csv,OpenAI Codex,No,
 bhaskararao-toda-notes,B2025a,"Peri Bhaskararao\.
 Toda notes and toda ritual notes\.
 2025\.
 Unpublished field notes, abbreviated as PB in Bhaskararao and Kobayashi's Toda Dictionary\.
-URL: [https://bkm\.aa\-ken\.jp/](https://bkm.aa-ken.jp/)\.",Partial,data/other/forms/20260813-bhaskararao-toda.csv,OpenAI Codex,No
+URL: [https://bkm\.aa\-ken\.jp/](https://bkm.aa-ken.jp/)\.",Partial,data/other/forms/20260813-bhaskararao-toda.csv,OpenAI Codex,No,
 Inscr2-Telugu,R1971,"Budaraju Radha Krishna\.
 *Early Telugu Inscriptions \(up to 1100 A\.D\.\)*\.
 Andhra Pradesh Sahitya Akademi, Hyderabad, 1971\.
-With texts, glossary and brief linguistic history\. Abbreviation: Inscr\.2\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No
+With texts, glossary and brief linguistic history\. Abbreviation: Inscr\.2\.",Yes,data/dedr/dedr_new.csv,Aryaman Arora,No,
 Buddruss-Wot,B1960,"Georg Buddruss\.
 Die sprache von woṭapur und kaṭārqalā: linguistische studien im afghanischen hindukusch \(bonner orientalistische studien\)\.
-1960\.",Partial,,Aryaman Arora,No
+1960\.",Partial,,Aryaman Arora,No,
 chattisgarhi,B2002,"Kelly Kilgo Boehm\.
 *A Preliminary Sociolinguistic Survey of the Chhattisgarhi\-Speaking Peoples of India*\.
 SIL International, Dallas, Texas, 2002\.
-URL: [https://www\.sil\.org/resources/archives/93126](https://www.sil.org/resources/archives/93126)\.",Yes,data/other/forms/20230517-chattisgarhi.csv,Aryaman Arora,No
+URL: [https://www\.sil\.org/resources/archives/93126](https://www.sil.org/resources/archives/93126)\.",Yes,data/other/forms/20230517-chattisgarhi.csv,Aryaman Arora,No,jambu
 gill,G1973,"Harjeet Singh Gill\.
 *Linguistic atlas of the Punjab*\.
-Munshiram Manoharlal Publishers, Delhi, 1973\.",Partial,data/other/forms/20230519-punjabi.csv,Aryaman Arora,No
+Munshiram Manoharlal Publishers, Delhi, 1973\.",Partial,data/other/forms/20230519-punjabi.csv,Aryaman Arora,No,jambu
 mewari,A2012,"Binny Abraham, Binoy Koshy, and Vimal Raj R\.
 Sociolinguistic survey of selected rajasthani speech varieties of rajasthan, india, volume 2: mewari\.
 *Journal of Language Survey Reports*, 2012\.
-URL: [https://www\.sil\.org/resources/archives/50807](https://www.sil.org/resources/archives/50807)\.",Yes,data/other/forms/20230521-rajasthani.csv,Aryaman Arora,No
+URL: [https://www\.sil\.org/resources/archives/50807](https://www.sil.org/resources/archives/50807)\.",Yes,data/other/forms/20230521-rajasthani.csv,Aryaman Arora,No,jambu
 hadothi,K2012,"Binoy Koshy\.
 Sociolinguistic survey of selected rajasthani speech varieties of rajasthan, india, volume 3: hadothi\.
 *Journal of Language Survey Reports*, 2012\.
-URL: [https://www\.sil\.org/resources/archives/50808](https://www.sil.org/resources/archives/50808)\.",Yes,data/other/forms/20230521-rajasthani.csv,Aryaman Arora,No
+URL: [https://www\.sil\.org/resources/archives/50808](https://www.sil.org/resources/archives/50808)\.",Yes,data/other/forms/20230521-rajasthani.csv,Aryaman Arora,No,jambu
 dhundari,B2012,"Theodor Gipson Benjamin and Liahey Ngwazah\.
 Sociolinguistic survey of selected rajasthani speech varieties of rajasthan, india, volume 5: dhundari and shekhawati\.
 *Journal of Language Survey Reports*, 2012\.
-URL: [https://www\.sil\.org/resources/archives/50814](https://www.sil.org/resources/archives/50814)\.",Yes,data/other/forms/20230521-rajasthani.csv,Aryaman Arora,No
+URL: [https://www\.sil\.org/resources/archives/50814](https://www.sil.org/resources/archives/50814)\.",Yes,data/other/forms/20230521-rajasthani.csv,Aryaman Arora,No,jambu
 marwari,C2012,"Sajayan Chacko and Liahey Ngwazah\.
 Sociolinguistic survey of selected rajasthani speech varieties of rajasthan, india, volume 6: marwari, merwari, and godwari\.
 *Journal of Language Survey Reports*, 2012\.
-URL: [https://www\.sil\.org/resources/archives/50815](https://www.sil.org/resources/archives/50815)\.",Yes,data/other/forms/20230521-rajasthani.csv,Aryaman Arora,No
+URL: [https://www\.sil\.org/resources/archives/50815](https://www.sil.org/resources/archives/50815)\.",Yes,data/other/forms/20230521-rajasthani.csv,Aryaman Arora,No,jambu
 mewati,M2012,"Eldose K\. Mathai\.
 Sociolinguistic survey of selected rajasthani speech varieties of rajasthan, india, volume 4: mewati\.
 *Journal of Language Survey Reports*, 2012\.
-URL: [https://www\.sil\.org/resources/archives/50813](https://www.sil.org/resources/archives/50813)\.",Yes,data/other/forms/20230521-rajasthani.csv,Aryaman Arora,No
+URL: [https://www\.sil\.org/resources/archives/50813](https://www.sil.org/resources/archives/50813)\.",Yes,data/other/forms/20230521-rajasthani.csv,Aryaman Arora,No,jambu
 bagri,M2011,"Eldose K\. Mathai\.
 Bagri of rajasthan, punjab, and haryana: a sociolinguistic survey\.
 *Journal of Language Survey Reports*, 2011\.
-URL: [https://www\.sil\.org/resources/archives/43105](https://www.sil.org/resources/archives/43105)\.",Yes,data/other/forms/20230521-rajasthani.csv,Aryaman Arora,No
+URL: [https://www\.sil\.org/resources/archives/43105](https://www.sil.org/resources/archives/43105)\.",Yes,data/other/forms/20230521-rajasthani.csv,Aryaman Arora,No,jambu
 shackle,S1995,"Christopher Shackle\.
 *A Guru Nanak Glossary*\.
-Routledge, 1995\.",Partial,data/other/forms/20230521-old_punjabi.csv,Aryaman Arora,No
+Routledge, 1995\.",Partial,data/other/forms/20230521-old_punjabi.csv,Aryaman Arora,No,source
 shackle-auto,S1995a,"Christopher Shackle\.
 *A Guru Nanak Glossary \(automated extraction\)*\.
-Routledge, 1995\.",Partial,data/other/forms/20260724-old-punjabi-shackle-auto.csv,OpenAI Codex,Yes
+Routledge, 1995\.",Partial,data/other/forms/20260724-old-punjabi-shackle-auto.csv,OpenAI Codex,Yes,source
 schmidt,S2008,"Ruth Laila Schmidt and Vijay Kumar Kaul\.
 A comparative analysis of shina and kashmiri vocabularies\.
-*Acta Orientalia*, 69:231–302, 2008\.",Partial,data/other/forms/20230621-shina.csv; data/other/forms/20260725-schmidt-kashmiri.csv,Aryaman Arora; OpenAI Codex,No
+*Acta Orientalia*, 69:231–302, 2008\.",Partial,data/other/forms/20230621-shina.csv; data/other/forms/20260725-schmidt-kashmiri.csv,Aryaman Arora; OpenAI Codex,No,source
 bundeli,B2017,"Ed Boehm\.
 *A Sociolinguistic Profile of Bundeli*\.
 Journal of Language Survey Reports\.
 SIL International, Dallas, Texas, 2017\.
-URL: [https://www\.sil\.org/resources/archives/69271](https://www.sil.org/resources/archives/69271)\.",Yes,data/other/forms/20230522-bundeli.csv,Aryaman Arora,No
+URL: [https://www\.sil\.org/resources/archives/69271](https://www.sil.org/resources/archives/69271)\.",Yes,data/other/forms/20230522-bundeli.csv,Aryaman Arora,No,jambu
 mcgregor,M1993,"R\. S\. McGregor\.
 *The Oxford Hindi\-English Dictionary*\.
 Oxford University Press, Oxford, England; New York, 1993\.
-URL: [https://dsal\.uchicago\.edu/dictionaries/mcgregor/](https://dsal.uchicago.edu/dictionaries/mcgregor/)\.",No,data/other/forms/20230403-arora.csv,Aryaman Arora,No
+URL: [https://dsal\.uchicago\.edu/dictionaries/mcgregor/](https://dsal.uchicago.edu/dictionaries/mcgregor/)\.",No,data/other/forms/20230403-arora.csv,Aryaman Arora,No,
 singh,S1895,"Maya Singh\.
 *The Panjabi Dictionary*\.
 Munshi Gulab Singh \\\\&amp; Sons, Lahore, 1895\.
-URL: [https://dsal\.uchicago\.edu/dictionaries/singh/](https://dsal.uchicago.edu/dictionaries/singh/)\.",No,data/other/forms/20230403-arora.csv,Aryaman Arora,No
+URL: [https://dsal\.uchicago\.edu/dictionaries/singh/](https://dsal.uchicago.edu/dictionaries/singh/)\.",No,data/other/forms/20230403-arora.csv,Aryaman Arora,No,
 boehm,B1998a,"Edward Daniel Boehm\.
 A phonological reconstruction of proto\-tharu\.
-Master's thesis, The University of Texas at Arlington, 1998\.",Yes,data/other/forms/20230524-tharu.csv,Aryaman Arora,No
+Master's thesis, The University of Texas at Arlington, 1998\.",Yes,data/other/forms/20230524-tharu.csv,Aryaman Arora,No,jambu
 bhildhule,W2013,"Stephen Watters\.
 A sociolinguistic profile of the bhils of northern dhule district\.
 *Journal of Language Survey Reports*, 2013\.
-URL: [https://www\.sil\.org/resources/archives/52641](https://www.sil.org/resources/archives/52641)\.",No,,Aryaman Arora,No
+URL: [https://www\.sil\.org/resources/archives/52641](https://www.sil.org/resources/archives/52641)\.",No,,Aryaman Arora,No,
 abraham-sako2021,A2021b,"Binny Abraham and Kara Sako\.
 Tagin and puroik tribes of arunachal pradesh: a sociolinguistic survey\.
 *Journal of Language Survey Reports*, pages 1–83, 2021\.
-URL: [https://www\.sil\.org/system/files/reapdata/32/86/21/32862163327139405050656221738030995011/JLSR2021\\\_063\.pdf](https://www.sil.org/system/files/reapdata/32/86/21/32862163327139405050656221738030995011/JLSR2021\_063.pdf)\.",Yes,data/other/forms/20260813-tagin-puroik.csv,OpenAI Codex,No
+URL: [https://www\.sil\.org/system/files/reapdata/32/86/21/32862163327139405050656221738030995011/JLSR2021\\\_063\.pdf](https://www.sil.org/system/files/reapdata/32/86/21/32862163327139405050656221738030995011/JLSR2021\_063.pdf)\.",Yes,data/other/forms/20260813-tagin-puroik.csv,OpenAI Codex,No,
 kondakov2013rabha,K2013,"Alexander Kondakov\.
 A sociolinguistic survey of the rabha dialects of meghalaya and assam\.
 *SIL Electronic Survey Reports*, 2013\.
-URL: [https://www\.sil\.org/system/files/reapdata/60/15/05/60150532552704819364367866518979515262/silesr2013\\\_016\.pdf](https://www.sil.org/system/files/reapdata/60/15/05/60150532552704819364367866518979515262/silesr2013\_016.pdf)\.",Yes,data/other/forms/20260813-rabha.csv,OpenAI Codex,No
+URL: [https://www\.sil\.org/system/files/reapdata/60/15/05/60150532552704819364367866518979515262/silesr2013\\\_016\.pdf](https://www.sil.org/system/files/reapdata/60/15/05/60150532552704819364367866518979515262/silesr2013\_016.pdf)\.",Yes,data/other/forms/20260813-rabha.csv,OpenAI Codex,No,
 hilty-mitchell2014,H2014,"Holly J\. Hilty and Jessica R\. Mitchell\.
 Yamphu: a sociolinguistic survey\.
 *SIL Electronic Survey Reports*, 2014\.
-URL: [https://www\.sil\.org/system/files/reapdata/39/87/23/39872354340493988124485710717937538249/silesr2014\\\_007\.pdf](https://www.sil.org/system/files/reapdata/39/87/23/39872354340493988124485710717937538249/silesr2014\_007.pdf)\.",Yes,data/other/forms/20260813-yamphu.csv,OpenAI Codex,No
+URL: [https://www\.sil\.org/system/files/reapdata/39/87/23/39872354340493988124485710717937538249/silesr2014\\\_007\.pdf](https://www.sil.org/system/files/reapdata/39/87/23/39872354340493988124485710717937538249/silesr2014\_007.pdf)\.",Yes,data/other/forms/20260813-yamphu.csv,OpenAI Codex,No,
 hilty2013eastern-magar,H2013,"Holly J\. Hilty\.
 Sociolinguistic survey of eastern magar in nepal\.
 Technical Report, SIL International and Linguistic Survey of Nepal, Kathmandu, 2013\.
-URL: [https://nepal\.sil\.org/resources/archives/53996](https://nepal.sil.org/resources/archives/53996)\.",Yes,data/other/forms/20260813-eastern-magar.csv,OpenAI Codex,No
+URL: [https://nepal\.sil\.org/resources/archives/53996](https://nepal.sil.org/resources/archives/53996)\.",Yes,data/other/forms/20260813-eastern-magar.csv,OpenAI Codex,No,
 maimani,A2022,"Said Humaid Al Jahdhami\.
 Maimani language and lawati language: two sides of the same coin?
-*Journal of Modern Languages*, 32\(1\):37–57, 2022\.",Partial,data/other/forms/20230524-sindhic.csv,Aryaman Arora,No
+*Journal of Modern Languages*, 32\(1\):37–57, 2022\.",Partial,data/other/forms/20230524-sindhic.csv,Aryaman Arora,No,jambu
 kannauji,J2021,"Mathews John and Bezily P\. Varghese\.
 *The Kannauji\-speaking People of Uttar Pradesh: A Sociolinguistic Profile*\.
 Journal of Language Survey Reports\.
 SIL International, Dallas, Texas, 2021\.
-URL: [https://www\.sil\.org/resources/archives/88544](https://www.sil.org/resources/archives/88544)\.",Yes,data/other/forms/20230526-kannauji.csv,OpenAI Codex,No
+URL: [https://www\.sil\.org/resources/archives/88544](https://www.sil.org/resources/archives/88544)\.",Yes,data/other/forms/20230526-kannauji.csv,OpenAI Codex,No,jambu
 southworth2006proto,S2006,"Franklin C Southworth\.
 Proto\-dravidian agriculture\.
-In *Proceedings of the Pre\-symposium of Rihn and 7th ESCA Harvard\-Kyoto Roundtable\. Research Institute for Humanity and Nature, Kyoto*, 121–150\. 2006\.",Yes,data/dedr/pdr.csv,Aryaman Arora,No
+In *Proceedings of the Pre\-symposium of Rihn and 7th ESCA Harvard\-Kyoto Roundtable\. Research Institute for Humanity and Nature, Kyoto*, 121–150\. 2006\.",Yes,data/dedr/pdr.csv,Aryaman Arora,No,source
 pfeiffer2018,P2018,"Martin Pfeiffer\.
 *Kurux Historical Phonology Reconsidered: With a Reconstruction of Pre\-Kurux\-Malto Phonology*\.
 PubliQation, 2018\.
-ISBN 9783745869866\.",Yes,data/dedr/pdr.csv,Aryaman Arora,No
+ISBN 9783745869866\.",Yes,data/dedr/pdr.csv,Aryaman Arora,No,source
 southworth2005m,S2005,"Franklin C\. Southworth\.
 Prehistoric implications of the dravidian element in the nia lexicon with special reference to marathi\.
 *International journal of Dravidian linguistics*, 34\(1\):17–28, 2005\.
-URL: [https://ccat\.sas\.upenn\.edu/~fsouth/DravidianElement\.pdf](https://ccat.sas.upenn.edu/~fsouth/DravidianElement.pdf)\.","Partial: author-hosted preprint pp. 9--10, Tables 1--2",data/other/forms/20260818-southworth-marathi.csv; data/other/entry_texts/20260818-southworth2005m.csv; data/other/forms/raw_data/20260818-southworth2005m-audit.csv,OpenAI Codex,Yes
+URL: [https://ccat\.sas\.upenn\.edu/~fsouth/DravidianElement\.pdf](https://ccat.sas.upenn.edu/~fsouth/DravidianElement.pdf)\.","Partial: author-hosted preprint pp. 9--10, Tables 1--2",data/other/forms/20260818-southworth-marathi.csv; data/other/entry_texts/20260818-southworth2005m.csv; data/other/forms/raw_data/20260818-southworth2005m-audit.csv; data/cross-family-comparisons.csv; data/cross-family-comparisons-audit.csv,OpenAI Codex,Yes,source
 webster,W2017,"Jeffrey D\. Webster\.
 *A Sociolinguistic Profile of the Tharu Dialects of the Western Indo\-Nepal Tarai*\.
 Journal of Language Survey Reports\.
 SIL International, Dallas, Texas, 2017\.
-URL: [https://www\.sil\.org/resources/archives/70672](https://www.sil.org/resources/archives/70672)\.",Yes,data/other/forms/20230530-tharu2.csv,Aryaman Arora,No
-RSED,?,,No,data/munda/forms.csv,Aryaman Arora,No
-BDBH,?,,No,data/munda/forms.csv,Aryaman Arora,No
-ZG63,?,,No,data/munda/forms.csv,Aryaman Arora,No
-PKED,?,,No,data/munda/forms.csv,Aryaman Arora,No
-PJDW,?,,No,data/munda/forms.csv,Aryaman Arora,No
-PGEG,?,,No,data/munda/forms.csv,Aryaman Arora,No
-CDES,?,,No,data/munda/forms.csv,Aryaman Arora,No
-BMED,?,,No,data/munda/forms.csv,Aryaman Arora,No
-DHED,?,,No,data/munda/forms.csv,Aryaman Arora,No
-BAHL,?,,No,data/munda/forms.csv,Aryaman Arora,No
-NKEV,?,,No,data/munda/forms.csv,Aryaman Arora,No
-HOGV,?,,No,data/munda/forms.csv,Aryaman Arora,No
-AG08,?,,No,data/munda/forms.csv,Aryaman Arora,No
-JV,?,,No,data/munda/forms.csv,Aryaman Arora,No
-BSD1,?,,No,data/munda/forms.csv,Aryaman Arora,No
-GZ65,?,,No,data/munda/forms.csv,Aryaman Arora,No
-CDSE,?,,No,data/munda/forms.csv,Aryaman Arora,No
-GZ63,?,,No,data/munda/forms.csv,Aryaman Arora,No
-ZKPM,?,,No,data/munda/forms.csv,Aryaman Arora,No
-HLKS,?,,No,data/munda/forms.csv,Aryaman Arora,No
-EMV5,?,,No,data/munda/forms.csv,Aryaman Arora,No
-DSGU,?,,No,data/munda/forms.csv,Aryaman Arora,No
-soratxt,?,,No,data/munda/forms.csv,Aryaman Arora,No
-GGEG,?,,No,data/munda/forms.csv,Aryaman Arora,No
-JLIC,?,,No,data/munda/forms.csv,Aryaman Arora,No
-EM,?,,No,data/munda/forms.csv,Aryaman Arora,No
-BSDV2,?,,No,data/munda/forms.csv,Aryaman Arora,No
-korkutxt,?,,No,data/munda/forms.csv,Aryaman Arora,No
-MJTL,?,,No,data/munda/forms.csv,Aryaman Arora,No
-ZG65,?,,No,data/munda/forms.csv,Aryaman Arora,No
-EMV13,?,,No,data/munda/forms.csv,Aryaman Arora,No
-DSKH,?,,No,data/munda/forms.csv,Aryaman Arora,No
-PJED,?,,No,data/munda/forms.csv,Aryaman Arora,No
-BSDV5,?,,No,data/munda/forms.csv,Aryaman Arora,No
-BSD2,?,,No,data/munda/forms.csv,Aryaman Arora,No
-DSKO,?,,No,data/munda/forms.csv,Aryaman Arora,No
-DSKW,?,,No,data/munda/forms.csv,Aryaman Arora,No
-DSBO,?,,No,data/munda/forms.csv,Aryaman Arora,No
-GTXT,?,,No,data/munda/forms.csv,Aryaman Arora,No
-CSED,?,,No,data/munda/forms.csv,Aryaman Arora,No
-BSD3,?,,No,data/munda/forms.csv,Aryaman Arora,No
-Z1965,?,,No,data/munda/forms.csv,Aryaman Arora,No
-SAAW,?,,No,data/munda/forms.csv,Aryaman Arora,No
-DSJU,?,,No,data/munda/forms.csv,Aryaman Arora,No
-BSDV1,?,,No,data/munda/forms.csv,Aryaman Arora,No
-EMV12,?,,No,data/munda/forms.csv,Aryaman Arora,No
-Z1975,?,,No,data/munda/forms.csv,Aryaman Arora,No
-AG,?,,No,data/munda/forms.csv,Aryaman Arora,No
-PKEV,?,,No,data/munda/forms.csv,Aryaman Arora,No
-DSGT,?,,No,data/munda/forms.csv,Aryaman Arora,No
-A,?,,No,data/munda/forms.csv,Aryaman Arora,No
-PKEP,?,,No,data/munda/forms.csv,Aryaman Arora,No
-DSRE,?,,No,data/munda/forms.csv,Aryaman Arora,No
-Zide,?,,No,data/munda/forms.csv,Aryaman Arora,No
-MVOL,?,,No,data/munda/forms.csv,Aryaman Arora,No
-Z1982,?,,No,data/munda/forms.csv,Aryaman Arora,No
+URL: [https://www\.sil\.org/resources/archives/70672](https://www.sil.org/resources/archives/70672)\.",Yes,data/other/forms/20230530-tharu2.csv,Aryaman Arora,No,jambu
+RSED,?,,No,data/munda/forms.csv,Aryaman Arora,No,
+BDBH,?,,No,data/munda/forms.csv,Aryaman Arora,No,
+ZG63,?,,No,data/munda/forms.csv,Aryaman Arora,No,
+PKED,?,,No,data/munda/forms.csv,Aryaman Arora,No,
+PJDW,?,,No,data/munda/forms.csv,Aryaman Arora,No,
+PGEG,?,,No,data/munda/forms.csv,Aryaman Arora,No,
+CDES,?,,No,data/munda/forms.csv,Aryaman Arora,No,
+BMED,?,,No,data/munda/forms.csv,Aryaman Arora,No,
+DHED,?,,No,data/munda/forms.csv,Aryaman Arora,No,
+BAHL,?,,No,data/munda/forms.csv,Aryaman Arora,No,
+NKEV,?,,No,data/munda/forms.csv,Aryaman Arora,No,
+HOGV,?,,No,data/munda/forms.csv,Aryaman Arora,No,
+AG08,?,,No,data/munda/forms.csv,Aryaman Arora,No,
+JV,?,,No,data/munda/forms.csv,Aryaman Arora,No,
+BSD1,?,,No,data/munda/forms.csv,Aryaman Arora,No,
+GZ65,?,,No,data/munda/forms.csv,Aryaman Arora,No,
+CDSE,?,,No,data/munda/forms.csv,Aryaman Arora,No,
+GZ63,?,,No,data/munda/forms.csv,Aryaman Arora,No,
+ZKPM,?,,No,data/munda/forms.csv,Aryaman Arora,No,
+HLKS,?,,No,data/munda/forms.csv,Aryaman Arora,No,
+EMV5,?,,No,data/munda/forms.csv,Aryaman Arora,No,
+DSGU,?,,No,data/munda/forms.csv,Aryaman Arora,No,
+soratxt,?,,No,data/munda/forms.csv,Aryaman Arora,No,
+GGEG,?,,No,data/munda/forms.csv,Aryaman Arora,No,
+JLIC,?,,No,data/munda/forms.csv,Aryaman Arora,No,
+EM,?,,No,data/munda/forms.csv,Aryaman Arora,No,
+BSDV2,?,,No,data/munda/forms.csv,Aryaman Arora,No,
+korkutxt,?,,No,data/munda/forms.csv,Aryaman Arora,No,
+MJTL,?,,No,data/munda/forms.csv,Aryaman Arora,No,
+ZG65,?,,No,data/munda/forms.csv,Aryaman Arora,No,
+EMV13,?,,No,data/munda/forms.csv,Aryaman Arora,No,
+DSKH,?,,No,data/munda/forms.csv,Aryaman Arora,No,
+PJED,?,,No,data/munda/forms.csv,Aryaman Arora,No,
+BSDV5,?,,No,data/munda/forms.csv,Aryaman Arora,No,
+BSD2,?,,No,data/munda/forms.csv,Aryaman Arora,No,
+DSKO,?,,No,data/munda/forms.csv,Aryaman Arora,No,
+DSKW,?,,No,data/munda/forms.csv,Aryaman Arora,No,
+DSBO,?,,No,data/munda/forms.csv,Aryaman Arora,No,
+GTXT,?,,No,data/munda/forms.csv,Aryaman Arora,No,
+CSED,?,,No,data/munda/forms.csv,Aryaman Arora,No,
+BSD3,?,,No,data/munda/forms.csv,Aryaman Arora,No,
+Z1965,?,,No,data/munda/forms.csv,Aryaman Arora,No,
+SAAW,?,,No,data/munda/forms.csv,Aryaman Arora,No,
+DSJU,?,,No,data/munda/forms.csv,Aryaman Arora,No,
+BSDV1,?,,No,data/munda/forms.csv,Aryaman Arora,No,
+EMV12,?,,No,data/munda/forms.csv,Aryaman Arora,No,
+Z1975,?,,No,data/munda/forms.csv,Aryaman Arora,No,
+AG,?,,No,data/munda/forms.csv,Aryaman Arora,No,
+PKEV,?,,No,data/munda/forms.csv,Aryaman Arora,No,
+DSGT,?,,No,data/munda/forms.csv,Aryaman Arora,No,
+A,?,,No,data/munda/forms.csv,Aryaman Arora,No,
+PKEP,?,,No,data/munda/forms.csv,Aryaman Arora,No,
+DSRE,?,,No,data/munda/forms.csv,Aryaman Arora,No,
+Zide,?,,No,data/munda/forms.csv,Aryaman Arora,No,
+MVOL,?,,No,data/munda/forms.csv,Aryaman Arora,No,
+Z1982,?,,No,data/munda/forms.csv,Aryaman Arora,No,
 canvin2025,C2025,"Maggie Canvin, Nidhin Joseph, and M\. R\. Manoj\.
 A sociolinguistic survey of the mavilan tulu language in northern kerala\.
 *Journal of Language Survey Reports*, 2025\.
-URL: [https://www\.sil\.org/system/files/reapdata/other/JLSR2025\-005\.pdf](https://www.sil.org/system/files/reapdata/other/JLSR2025-005.pdf)\.",Yes,data/other/forms/20260723-markodi.csv,Aryaman Arora; OpenAI Codex; Claude Opus 4.8,No
+URL: [https://www\.sil\.org/system/files/reapdata/other/JLSR2025\-005\.pdf](https://www.sil.org/system/files/reapdata/other/JLSR2025-005.pdf)\.",Yes,data/other/forms/20260723-markodi.csv,Aryaman Arora; OpenAI Codex; Claude Opus 4.8,No,
 lehr,L2014,"Rachel Lehr\.
 *A Descriptive Grammar of Pashai: The Language and Speech Community of Darrai Nur*\.
-PhD thesis, University of Chicago, Chicago, Illinois, August 2014\.",Partial,data/other/forms/20230705-pashai.csv,Aryaman Arora; OpenAI Codex,No
+PhD thesis, University of Chicago, Chicago, Illinois, August 2014\.",Partial,data/other/forms/20230705-pashai.csv,Aryaman Arora; OpenAI Codex,No,jambu
 zoller2005,Z2005,"Claus Peter Zoller\.
 *A Grammar and Dictionary of Indus Kohistani\. Volume 1: Dictionary*\.
 Number 21\-1 in Trends in Linguistics\. Documentation\.
 Mouton de Gruyter, Berlin and New York, 2005\.
 ISBN 9783110179477\.
-[doi:10\.1515/9783110197303](https://doi.org/10.1515/9783110197303)\.",Partial,data/other/forms/20260724-zoller-indus-kohistani.csv,OpenAI Codex,No
+[doi:10\.1515/9783110197303](https://doi.org/10.1515/9783110197303)\.",Partial,data/other/forms/20260724-zoller-indus-kohistani.csv,OpenAI Codex,No,source-mapped
 bashir2023,B2023,"Elena Bashir\.
 A Khowar\-English lexicon: with cultural and etymological notes\.
 *Himalayan Linguistics*, pages i–xi, 1–160, 2023\.
-URL: [https://escholarship\.org/uc/item/955239w9](https://escholarship.org/uc/item/955239w9), [doi:10\.5070/H90057297](https://doi.org/10.5070/H90057297)\.",Partial,data/other/forms/20260725-bashir-khowar.csv,Aryaman Arora; OpenAI Codex,No
+URL: [https://escholarship\.org/uc/item/955239w9](https://escholarship.org/uc/item/955239w9), [doi:10\.5070/H90057297](https://doi.org/10.5070/H90057297)\.",Partial,data/other/forms/20260725-bashir-khowar.csv,Aryaman Arora; OpenAI Codex,No,source
 yoshioka2012,Y2012,"Noboru Yoshioka\.
 *A Reference Grammar of Eastern Burushaski*\.
-PhD thesis, Tokyo University of Foreign Studies, Tokyo, September 2012\.",Full,data/other/forms/20260726-yoshioka-eastern-burushaski.csv,Aryaman Arora; OpenAI Codex,No
+PhD thesis, Tokyo University of Foreign Studies, Tokyo, September 2012\.",Full,data/other/forms/20260726-yoshioka-eastern-burushaski.csv,Aryaman Arora; OpenAI Codex,No,
 andersen1990,A1990,"Paul Kent Andersen\.
 *Studies in the Minor Rock Edicts of Aśoka\. I: Critical Edition*\.
-Hedwig Falk, Freiburg, 1990\.",Full,data/other/forms/20260804-andersen-mre.csv,Aryaman Arora; OpenAI Codex,Yes
+Hedwig Falk, Freiburg, 1990\.",Full,data/other/forms/20260804-andersen-mre.csv,Aryaman Arora; OpenAI Codex,Yes,source-mapped
 weinreich2008,W2008,"Matthias Weinreich\.
 Two varieties of Ḍomaakí\.
 *Zeitschrift der Deutschen Morgenländischen Gesellschaft*, 158\(2\):299–316, 2008\.
-URL: [https://www\.jstor\.org/stable/10\.13173/zeitdeutmorggese\.158\.2\.0299](https://www.jstor.org/stable/10.13173/zeitdeutmorggese.158.2.0299)\.",Section 8 vocabulary,data/other/forms/20260813-weinreich-domaaki.csv,OpenAI Codex,No
+URL: [https://www\.jstor\.org/stable/10\.13173/zeitdeutmorggese\.158\.2\.0299](https://www.jstor.org/stable/10.13173/zeitdeutmorggese.158.2.0299)\.",Section 8 vocabulary,data/other/forms/20260813-weinreich-domaaki.csv,OpenAI Codex,No,source
 kullui-org,K2026,"Anastasia S\. Krylova and A\. B\. Ioannissiani\.
 Kullui\-english\-russian dictionary\.
 2026\.
 Online database, version 3\.1\.0; created as part of Russian Science Foundation project 24\-78\-10052\.
-URL: [https://kullui\.org/](https://kullui.org/)\.",Full,data/other/forms/20260813-kullui-org.csv,Aryaman Arora; OpenAI Codex,No
+URL: [https://kullui\.org/](https://kullui.org/)\.",Full,data/other/forms/20260813-kullui-org.csv,Aryaman Arora; OpenAI Codex,No,source-mapped
 lipp2014western-tamang,L2014a,"Timothy Lipp\.
 A sociolinguistic study of western tamang in nepal\.
 Technical Report, SIL International and Linguistic Survey of Nepal, Kathmandu, 2014\.
-URL: [https://nepal\.sil\.org/resources/archives/59839](https://nepal.sil.org/resources/archives/59839)\.",Yes,data/other/forms/20260813-western-tamang.csv,OpenAI Codex,No
+URL: [https://nepal\.sil\.org/resources/archives/59839](https://nepal.sil.org/resources/archives/59839)\.",Yes,data/other/forms/20260813-western-tamang.csv,OpenAI Codex,No,
 devries2020humla,V2020,"Klaas de Vries\.
 A sociolinguistic survey of humla tibetan in northwest nepal\.
 *Journal of Language Survey Reports*, 2020\.
-URL: [https://nepal\.sil\.org/resources/archives/86809](https://nepal.sil.org/resources/archives/86809)\.",Yes,data/other/forms/20260813-humla.csv,OpenAI Codex,No
+URL: [https://nepal\.sil\.org/resources/archives/86809](https://nepal.sil.org/resources/archives/86809)\.",Yes,data/other/forms/20260813-humla.csv,OpenAI Codex,No,
 swenson2019gurung,S2019,"Janel Swenson\.
 A sociolinguistic study of gurung in nepal\.
 *Journal of Language Survey Reports*, 2019\.
-URL: [https://nepal\.sil\.org/resources/archives/83990](https://nepal.sil.org/resources/archives/83990)\.",Yes,data/other/forms/20260813-gurung.csv,OpenAI Codex,No
+URL: [https://nepal\.sil\.org/resources/archives/83990](https://nepal.sil.org/resources/archives/83990)\.",Yes,data/other/forms/20260813-gurung.csv,OpenAI Codex,No,
 eichentopf-tupper2019dotyali,E2019,"Stephanie R\. Eichentopf and Katharina Tupper\.
 A sociolinguistic study of dotyali\.
 *Journal of Language Survey Reports*, 2019\.
-URL: [https://nepal\.sil\.org/resources/archives/81187](https://nepal.sil.org/resources/archives/81187)\.",Yes,data/other/forms/20260813-dotyali.csv,OpenAI Codex,No
+URL: [https://nepal\.sil\.org/resources/archives/81187](https://nepal.sil.org/resources/archives/81187)\.",Yes,data/other/forms/20260813-dotyali.csv,OpenAI Codex,No,
 joseph2024kudiya,J2024,"Nidhin Joseph\.
 A sociolinguistic survey of the kudiya language in karnataka and kerala\.
 *Journal of Language Survey Reports*, 2024\.
-URL: [https://www\.sil\.org/resources/publications/entry/100247](https://www.sil.org/resources/publications/entry/100247)\.",Kudiya target wordlists KDG and KDK; comparison lists excluded,data/other/forms/20260813-kudiya.csv,OpenAI Codex,No
+URL: [https://www\.sil\.org/resources/publications/entry/100247](https://www.sil.org/resources/publications/entry/100247)\.",Kudiya target wordlists KDG and KDK; comparison lists excluded,data/other/forms/20260813-kudiya.csv,OpenAI Codex,No,
 page2024majhi-bote,P2024,"Jessica Page\.
 A comparative study of majhi and bote in nepal\.
 *Journal of Language Survey Reports*, 2024\.
-URL: [https://nepal\.sil\.org/resources/archives/99073](https://nepal.sil.org/resources/archives/99073)\.",All four Majhi and both Bote target wordlists,data/other/forms/20260813-majhi-bote.csv,OpenAI Codex,No
+URL: [https://nepal\.sil\.org/resources/archives/99073](https://nepal.sil.org/resources/archives/99073)\.",All four Majhi and both Bote target wordlists,data/other/forms/20260813-majhi-bote.csv,OpenAI Codex,No,
 eichentopf-mitchell2020kochila,E2020,"Stephanie R\. Eichentopf and Jessica R\. Mitchell\.
 A sociolinguistic study of kochila tharu in southeast nepal\.
 *Journal of Language Survey Reports*, 2020\.
-URL: [https://nepal\.sil\.org/resources/archives/85355](https://nepal.sil.org/resources/archives/85355)\.",All three Kochila Tharu target wordlists,data/other/forms/20260813-kochila-tharu.csv,OpenAI Codex,No
+URL: [https://nepal\.sil\.org/resources/archives/85355](https://nepal.sil.org/resources/archives/85355)\.",All three Kochila Tharu target wordlists,data/other/forms/20260813-kochila-tharu.csv,OpenAI Codex,No,
 smith2021pyangaun,S2021,"Brianne J\. Smith\.
 A sociolinguistic study of pyangaun newar: a variety of newar\.
 *Journal of Language Survey Reports*, 2021\.
-URL: [https://nepal\.sil\.org/resources/archives/90591](https://nepal.sil.org/resources/archives/90591)\.",Pyangaun Newar target wordlist only; seven comparison lists excluded,data/other/forms/20260813-pyangaun-newar.csv,OpenAI Codex,No
+URL: [https://nepal\.sil\.org/resources/archives/90591](https://nepal.sil.org/resources/archives/90591)\.",Pyangaun Newar target wordlist only; seven comparison lists excluded,data/other/forms/20260813-pyangaun-newar.csv,OpenAI Codex,No,
 leman2020maikoti,L2020,"Joseph D\. Leman\.
 Sociolinguistic profile of maikoti kham\.
 *SIL Electronic Survey Reports*, 2020\.
-URL: [https://nepal\.sil\.org/resources/archives/86060](https://nepal.sil.org/resources/archives/86060)\.","Maikot, Ranma, Arjal, and Hukam target wordlists; Taka, Thabang, and Jangkot comparison lists excluded",data/other/forms/20260813-maikoti-kham.csv,OpenAI Codex,No
+URL: [https://nepal\.sil\.org/resources/archives/86060](https://nepal.sil.org/resources/archives/86060)\.","Maikot, Ranma, Arjal, and Hukam target wordlists; Taka, Thabang, and Jangkot comparison lists excluded",data/other/forms/20260813-maikoti-kham.csv,OpenAI Codex,No,
 webster2021thakali,W2021,"Jeffrey D\. Webster\.
 Preliminary sociolinguistic survey of thakali\.
 *Journal of Language Survey Reports*, 2021\.
 Fieldwork and original report completed in 1993\.
-URL: [https://nepal\.sil\.org/resources/archives/90239](https://nepal.sil.org/resources/archives/90239)\.","Tukuche, Marpha, Thini, and Syang target wordlists; Western Tamang, Gorkha Gurung, and Nepali controls excluded",data/other/forms/20260813-thakali.csv,OpenAI Codex,No
+URL: [https://nepal\.sil\.org/resources/archives/90239](https://nepal.sil.org/resources/archives/90239)\.","Tukuche, Marpha, Thini, and Syang target wordlists; Western Tamang, Gorkha Gurung, and Nepali controls excluded",data/other/forms/20260813-thakali.csv,OpenAI Codex,No,
 khadgi-marcuson-marcuson2021mustang,K2021,"Mari\-Sisko Khadgi, Lori Marcuson, and Mark Marcuson\.
 Mustang survey: a sociolinguistic study of tibetan\-related language varieties spoken in upper mustang and bahragaun areas\.
 *Journal of Language Survey Reports*, 2021\.
 The report itself credits Mari\-Sisko under the name Mari\-Sisko Japola and is dated June 2003\.
-URL: [https://nepal\.sil\.org/resources/archives/90781](https://nepal.sil.org/resources/archives/90781)\.","Lo Manthang, Ghiling, Chhosher, Jharkot, and Kagbeni Loke target wordlists; Mugali, Karani, Drokpa, Dolpo, and Tibetan comparison lists excluded",data/other/forms/20260813-mustang-loke.csv,OpenAI Codex,No
+URL: [https://nepal\.sil\.org/resources/archives/90781](https://nepal.sil.org/resources/archives/90781)\.","Lo Manthang, Ghiling, Chhosher, Jharkot, and Kagbeni Loke target wordlists; Mugali, Karani, Drokpa, Dolpo, and Tibetan comparison lists excluded",data/other/forms/20260813-mustang-loke.csv,OpenAI Codex,No,
 shackelford-swenson-chaudhary-maggard2022kurux,S2022,"Sarah R\. Shackelford, Janel Swenson, Ram Bahadur Chaudhary, and Loren Maggard\.
 The kurux \(uranw\) language in nepal and its relationship to kurukh in india: a sociolinguistic study\.
 *Journal of Language Survey Reports*, 2022\.
 Research completed in 2019\.
-URL: [https://nepal\.sil\.org/resources/archives/93057](https://nepal.sil.org/resources/archives/93057)\.","Lochani, Bhokraha, Siddhapur, and Tokla Nepal Kurux target wordlists; Pathibari, West Bengal, and Ranchi, Jharkhand, comparison lists excluded",data/other/forms/20260813-kurux-nepal.csv,OpenAI Codex,No
+URL: [https://nepal\.sil\.org/resources/archives/93057](https://nepal.sil.org/resources/archives/93057)\.","Lochani, Bhokraha, Siddhapur, and Tokla Nepal Kurux target wordlists; Pathibari, West Bengal, and Ranchi, Jharkhand, comparison lists excluded",data/other/forms/20260813-kurux-nepal.csv,OpenAI Codex,No,
 webster2022north-gorkha,W2022,"Jeffrey D\. Webster\.
 A sociolinguistic survey of the tibeto\-burman dialects of north gorkha district, nepal\.
 *Journal of Language Survey Reports*, 2022\.
 Fieldwork and original report completed in 1992\.
-URL: [https://nepal\.sil\.org/resources/archives/92450](https://nepal.sil.org/resources/archives/92450)\.","Nubri Sama, Lho, Namrung, and Prok; Tsum Chekampar; Southern, Northern, and Kutang Ghale survey sites; Eastern Gorkha Tamang Kashigaun and Keraunja; and Western Tamang Lamagara target wordlists. Kyirong, Central Tibetan, and Banspur controls excluded",data/other/forms/20260813-north-gorkha.csv,OpenAI Codex,No
+URL: [https://nepal\.sil\.org/resources/archives/92450](https://nepal.sil.org/resources/archives/92450)\.","Nubri Sama, Lho, Namrung, and Prok; Tsum Chekampar; Southern, Northern, and Kutang Ghale survey sites; Eastern Gorkha Tamang Kashigaun and Keraunja; and Western Tamang Lamagara target wordlists. Kyirong, Central Tibetan, and Banspur controls excluded",data/other/forms/20260813-north-gorkha.csv,OpenAI Codex,No,
 smith2022pahari,S2022a,"Brianne J\. Smith\.
 A sociolinguistic study of pahari: a language of nepal\.
 *Journal of Language Survey Reports*, 2022\.
-URL: [https://nepal\.sil\.org/resources/archives/92594](https://nepal.sil.org/resources/archives/92594)\.","Salintar, Sikharpa, Maasdada, Sakhatar, and Jamune Pahari target wordlists; seven Newar comparison lists excluded",data/other/forms/20260813-pahari.csv,OpenAI Codex,No
+URL: [https://nepal\.sil\.org/resources/archives/92594](https://nepal.sil.org/resources/archives/92594)\.","Salintar, Sikharpa, Maasdada, Sakhatar, and Jamune Pahari target wordlists; seven Newar comparison lists excluded",data/other/forms/20260813-pahari.csv,OpenAI Codex,No,
 swenson2025naaba,S2025,"Janel J\. Swenson\.
 A sociolinguistic study of naaba in nepal\.
 *Journal of Language Survey Reports*, 2025\.
-URL: [https://nepal\.sil\.org/resources/archives/111010](https://nepal.sil.org/resources/archives/111010)\.",Pibu and Kimathanka Naaba target wordlists; all neighboring-language comparison lists excluded,data/other/forms/20260813-naaba.csv,OpenAI Codex,No
+URL: [https://nepal\.sil\.org/resources/archives/111010](https://nepal.sil.org/resources/archives/111010)\.",Pibu and Kimathanka Naaba target wordlists; all neighboring-language comparison lists excluded,data/other/forms/20260813-naaba.csv,OpenAI Codex,No,
 ali-kobayashi2024,A2024,"Liaquat Ali and Masato Kobayashi\.
 *Brahui Texts: Glossed and Translated Short Stories and Folktales*\.
 Research Institute for Languages and Cultures of Asia and Africa, Tokyo University of Foreign Studies, Tokyo, 2024\.
 ISBN 978\-4\-86337\-532\-1\.
 Minor revision, November 2025\.
-URL: [https://bkm\.aa\-ken\.jp/brahui/BrahuiTexts\.pdf](https://bkm.aa-ken.jp/brahui/BrahuiTexts.pdf)\.","All 3,483 entries in the corpus-derived glossary on printed pages 687--733",data/other/forms/20260813-ali-kobayashi-brahui.csv,OpenAI Codex,No
+URL: [https://bkm\.aa\-ken\.jp/brahui/BrahuiTexts\.pdf](https://bkm.aa-ken.jp/brahui/BrahuiTexts.pdf)\.","All 3,483 entries in the corpus-derived glossary on printed pages 687--733",data/other/forms/20260813-ali-kobayashi-brahui.csv,OpenAI Codex,No,
 swenson2024magar,S2024,"Janel J\. Swenson\.
 A sociolinguistic study of magar in palpa, syangja, tanahu, and nawalpur districts of nepal\.
 Technical Report, Central Department of Linguistics, Tribhuvan University and SIL International, Kathmandu, Nepal, 2024\.
 Research conducted by Lisa M\. Larson, Lokendra Gharti Magar, Sarah Shackelford Payne, Brianne J\. Smith, and Janel J\. Swenson\.
-URL: [https://nepal\.sil\.org/resources/archives/101475](https://nepal.sil.org/resources/archives/101475)\.","Twelve Western and Central Magar target wordlists from Lasargha, Mathagadhi, Jhokedi, Siluwa, Mityal, Dhardh, Inaskot, Michhurlung, Rhising, Arkhala, Raikot, and Bhadari; the reused Mudhebas Eastern Magar comparison list excluded",data/other/forms/20260813-magar-2024.csv,OpenAI Codex,No
+URL: [https://nepal\.sil\.org/resources/archives/101475](https://nepal.sil.org/resources/archives/101475)\.","Twelve Western and Central Magar target wordlists from Lasargha, Mathagadhi, Jhokedi, Siluwa, Mityal, Dhardh, Inaskot, Michhurlung, Rhising, Arkhala, Raikot, and Bhadari; the reused Mudhebas Eastern Magar comparison list excluded",data/other/forms/20260813-magar-2024.csv,OpenAI Codex,No,
 shackelford2019dewas-rai,S2019a,"Sarah Shackelford\.
 A sociolinguistic study of dewas rai and danuwar\.
 Technical Report 2019\-009, SIL International, Dallas, Texas, 2019\.
-URL: [https://nepal\.sil\.org/resources/archives/82486](https://nepal.sil.org/resources/archives/82486)\.","Six target wordlists from Mahendra Jhyadi, Singoul (Rai), Majhgaun, Jaretar, Chandanpur, and Singoul (Kochariya); the Nepali comparison list excluded",data/other/forms/20260813-dewas-rai.csv,OpenAI Codex,No
+URL: [https://nepal\.sil\.org/resources/archives/82486](https://nepal.sil.org/resources/archives/82486)\.","Six target wordlists from Mahendra Jhyadi, Singoul (Rai), Majhgaun, Jaretar, Chandanpur, and Singoul (Kochariya); the Nepali comparison list excluded",data/other/forms/20260813-dewas-rai.csv,OpenAI Codex,No,
 kim-ahmad-kim-sangma2011hajong,K2011,"Amy Kim, Sayed Ahmad, Seung Kim, and Mridul Sangma\.
 The hajong of bangladesh: a sociolinguistic survey\.
 Technical Report 2011\-042, SIL International, Dallas, Texas, 2011\.
-URL: [https://www\.sil\.org/resources/archives/42943](https://www.sil.org/resources/archives/42943)\.","Ten Hajong target wordlists from Nugapara, Chilapara, Nirghini, Dalugau, Balachanda, Dhamor, Gopalbari, Gopalpur, Bhalukapara, and Nokshi; the Standard Bangla dictionary comparator excluded",data/other/forms/20260813-hajong.csv,OpenAI Codex,No
+URL: [https://www\.sil\.org/resources/archives/42943](https://www.sil.org/resources/archives/42943)\.","Ten Hajong target wordlists from Nugapara, Chilapara, Nirghini, Dalugau, Balachanda, Dhamor, Gopalbari, Gopalpur, Bhalukapara, and Nokshi; the Standard Bangla dictionary comparator excluded",data/other/forms/20260813-hajong.csv,OpenAI Codex,No,
 kim-kim-ahmad-sangma2010santali-cluster,K2010,"Seung Kim, Amy Kim, Sayed Ahmad, and Mridul Sangma\.
 The santali cluster in bangladesh: a sociolinguistic survey\.
 Technical Report 2010\-006, SIL International, Dallas, Texas, 2010\.
-URL: [https://www\.silbangladesh\.org/resources/archives/9037](https://www.silbangladesh.org/resources/archives/9037)\.","Sixteen Bangladesh target wordlists from seven Santali, three Mahali, three Mundari, two Koda, and one Kol village; two Indian Mundari comparison lists and the Standard Bangla dictionary list excluded",data/other/forms/20260813-santali-cluster.csv,OpenAI Codex,No
+URL: [https://www\.silbangladesh\.org/resources/archives/9037](https://www.silbangladesh.org/resources/archives/9037)\.","Sixteen Bangladesh target wordlists from seven Santali, three Mahali, three Mundari, two Koda, and one Kol village; two Indian Mundari comparison lists and the Standard Bangla dictionary list excluded",data/other/forms/20260813-santali-cluster.csv,OpenAI Codex,No,
 rai-rai-thokar2015sampang,R2015,"Novel Kishore Rai, Netra Mani Dumi Rai, and Rajendra Thokar\.
 A sociolinguistic survey of sampang\.
 Technical Report, Linguistic Survey of Nepal, Central Department of Linguistics, Tribhuvan University, Kathmandu, 2015\.
-URL: [https://giwmscdnone\.gov\.np/media/app/public/62/posts/1709447492\\\_68\.pdf](https://giwmscdnone.gov.np/media/app/public/62/posts/1709447492\_68.pdf)\.",All four target wordlists in Annex B; no comparator list,data/other/forms/20260813-sampang.csv,OpenAI Codex,No
+URL: [https://giwmscdnone\.gov\.np/media/app/public/62/posts/1709447492\\\_68\.pdf](https://giwmscdnone.gov.np/media/app/public/62/posts/1709447492\_68.pdf)\.",All four target wordlists in Annex B; no comparator list,data/other/forms/20260813-sampang.csv,OpenAI Codex,No,
 rai-rai-thokar2014mewahang,R2014,"Novel Kishore Rai, Netra Mani Dumi Rai, and Rajendra Thokar\.
 A sociolinguistic survey of the mewahang language\.
 Technical Report, Linguistic Survey of Nepal, Central Department of Linguistics, Tribhuvan University, Kathmandu, 2014\.
 Survey program supported by SIL International Nepal\.
-URL: [https://giwmscdnone\.gov\.np/media/app/public/62/posts/1709446923\\\_89\.pdf](https://giwmscdnone.gov.np/media/app/public/62/posts/1709446923\_89.pdf)\.",All five target wordlists in Annex E; no comparator list,data/other/forms/20260813-mewahang.csv,OpenAI Codex,No
+URL: [https://giwmscdnone\.gov\.np/media/app/public/62/posts/1709446923\\\_89\.pdf](https://giwmscdnone.gov.np/media/app/public/62/posts/1709446923\_89.pdf)\.",All five target wordlists in Annex E; no comparator list,data/other/forms/20260813-mewahang.csv,OpenAI Codex,No,
 rai-rai-thokar2014chhulung,R2014a,"Novel Kishore Rai, Netra Mani Dumi Rai, and Rajendra Thokar\.
 A sociolinguistic survey of chhulung: a tibeto\-burman language\.
 Technical Report, Linguistic Survey of Nepal, Central Department of Linguistics, Tribhuvan University, Kathmandu, 2014\.
 Survey program supported by SIL International Nepal\.
-URL: [https://giwmscdnone\.gov\.np/media/app/public/62/posts/1709444764\\\_3\.pdf](https://giwmscdnone.gov.np/media/app/public/62/posts/1709444764\_3.pdf)\.",All five target wordlists in Annex E; no comparator list,data/other/forms/20260813-chhulung.csv,OpenAI Codex,No
+URL: [https://giwmscdnone\.gov\.np/media/app/public/62/posts/1709444764\\\_3\.pdf](https://giwmscdnone.gov.np/media/app/public/62/posts/1709444764\_3.pdf)\.",All five target wordlists in Annex E; no comparator list,data/other/forms/20260813-chhulung.csv,OpenAI Codex,No,
 thakur-thakur2016magahi,T2016,"Indresh Thakur and Gopal Thakur\.
 A sociolinguistic survey of magahi\.
 Technical Report, Linguistic Survey of Nepal, Central Department of Linguistics, Tribhuvan University, Kathmandu, 2016\.
 LinSuN survey program received technical support from SIL International Nepal\.
-URL: [https://giwmscdnone\.gov\.np/media/app/public/62/posts/1709445624\\\_71\.pdf](https://giwmscdnone.gov.np/media/app/public/62/posts/1709445624\_71.pdf)\.",All five target wordlists in Annex E; no comparator list,data/other/forms/20260813-magahi.csv,OpenAI Codex,No
+URL: [https://giwmscdnone\.gov\.np/media/app/public/62/posts/1709445624\\\_71\.pdf](https://giwmscdnone.gov.np/media/app/public/62/posts/1709445624\_71.pdf)\.",All five target wordlists in Annex E; no comparator list,data/other/forms/20260813-magahi.csv,OpenAI Codex,No,
 ghatage-kasargod1970,G1970a,"Amrit Madhav Ghatage\.
 *Marati of Kasargod*\.
 Volume 6 of A Survey of Marathi Dialects\.
 State Board for Literature and Culture, Bombay, 1970\.
 OCR from a public scan mirror; the title page spells the variety Marati\.
-URL: [https://fliphtml5\.com/ezwcd/ozvp/Marathi\\\_of\\\_Kasargod\\\_\\%281\\%29/](https://fliphtml5.com/ezwcd/ozvp/Marathi\_of\_Kasargod\_\%281\%29/)\.","Vocabulary, pp. 136--168",data/other/forms/20260817-ghatage-marati-kasargod.csv,OpenAI Codex,Yes
+URL: [https://fliphtml5\.com/ezwcd/ozvp/Marathi\\\_of\\\_Kasargod\\\_\\%281\\%29/](https://fliphtml5.com/ezwcd/ozvp/Marathi\_of\_Kasargod\_\%281\%29/)\.","Vocabulary, pp. 136--168",data/other/forms/20260817-ghatage-marati-kasargod.csv,OpenAI Codex,Yes,
 mundlay1996,M1996,"Asha Mundlay\.
 Nihali lexicon\.
 *Mother Tongue: Journal of the Association for the Study of Language in Prehistory*, pages 17–40, 1996\.
-URL: [https://www\.mother\-tongue\-journal\.org/wp\-content/uploads/2025/08/2\-Mother\-Tongue\-II\-1996\\\_text\.pdf](https://www.mother-tongue-journal.org/wp-content/uploads/2025/08/2-Mother-Tongue-II-1996\_text.pdf)\.","Main numbered Nihali lexicon, pp. 17--40, in the reviewed transcription from The Nihali database; Supplements I--III excluded",data/other/forms/20260817-mundlay-nihali.csv; data/other/forms/raw_data/20260817-nihali-database-audit.csv; superseded OCR audit retained at data/other/forms/raw_data/20260817-mundlay-nihali-audit.csv,OpenAI Codex,No
+URL: [https://www\.mother\-tongue\-journal\.org/wp\-content/uploads/2025/08/2\-Mother\-Tongue\-II\-1996\\\_text\.pdf](https://www.mother-tongue-journal.org/wp-content/uploads/2025/08/2-Mother-Tongue-II-1996\_text.pdf)\.","Main numbered Nihali lexicon, pp. 17--40, in the reviewed transcription from The Nihali database; Supplements I--III excluded",data/other/forms/20260817-mundlay-nihali.csv; data/other/forms/raw_data/20260817-nihali-database-audit.csv; superseded OCR audit retained at data/other/forms/raw_data/20260817-mundlay-nihali-audit.csv,OpenAI Codex,No,
 nagaraja2014,N2014,"K\. S\. Nagaraja\.
 *The Nihali Language \(Grammar, Texts and Vocabulary\)*\.
 Central Institute of Indian Languages, Mysore, 2014\.
-URL: [https://hdl\.handle\.net/20\.500\.14705/8151](https://hdl.handle.net/20.500.14705/8151)\.","Vocabulary, pp. 250--332, in the reviewed transcription from The Nihali database",data/other/forms/20260817-nagaraja-nihali-wiktionary.csv; data/other/forms/raw_data/20260817-nihali-database-audit.csv,OpenAI Codex,No
+URL: [https://hdl\.handle\.net/20\.500\.14705/8151](https://hdl.handle.net/20.500.14705/8151)\.","Vocabulary, pp. 250--332, in the reviewed transcription from The Nihali database",data/other/forms/20260817-nagaraja-nihali-wiktionary.csv; data/other/forms/raw_data/20260817-nihali-database-audit.csv,OpenAI Codex,No,
 wiktionary-nihali,{2025,"Wiktionary contributors\.
 Appendix:nihali word list\.
 2025\.
 Revision 88143027, 2025\-11\-12T18:53:49Z; derived from Nagaraja 2014: 250–332\.
-URL: [https://en\.wiktionary\.org/w/index\.php?title=Appendix:Nihali\\\_word\\\_list\\&amp;oldid=88143027](https://en.wiktionary.org/w/index.php?title=Appendix:Nihali\_word\_list\&oldid=88143027)\.","All 1,694 table rows; comma- and semicolon-delimited source variants expanded",Superseded snapshot audit retained at data/other/forms/raw_data/20260817-nagaraja-nihali-wiktionary-audit.csv,OpenAI Codex,No
+URL: [https://en\.wiktionary\.org/w/index\.php?title=Appendix:Nihali\\\_word\\\_list\\&amp;oldid=88143027](https://en.wiktionary.org/w/index.php?title=Appendix:Nihali\_word\_list\&oldid=88143027)\.","All 1,694 table rows; comma- and semicolon-delimited source variants expanded",Superseded snapshot audit retained at data/other/forms/raw_data/20260817-nagaraja-nihali-wiktionary-audit.csv,OpenAI Codex,No,
 bhattacharya1957,B1957a,"Sudhibhushan Bhattacharya\.
 Field\-notes on nahālī\.
 *Indian Linguistics*, 17:245–258, 1957\.
-URL: [https://lsi\.org\.in/pub\\\_articles](https://lsi.org.in/pub\_articles)\.","Lexical forms on pp. 252--257, transcribed in The Nihali database",data/other/forms/20260817-nihali-database-bhattacharya.csv; data/other/forms/raw_data/20260817-nihali-database-audit.csv,OpenAI Codex,No
+URL: [https://lsi\.org\.in/pub\\\_articles](https://lsi.org.in/pub\_articles)\.","Lexical forms on pp. 252--257, transcribed in The Nihali database",data/other/forms/20260817-nihali-database-bhattacharya.csv; data/other/forms/raw_data/20260817-nihali-database-audit.csv,OpenAI Codex,No,
 konow1906,K1906,"Sten Konow\.
 Nahālī\.
 In George A\. Grierson, editor, *Linguistic Survey of India*, volume IV: Munda and Dravidian Languages, pages 185–189\.
-Office of the Superintendent of Government Printing, Calcutta, 1906\.",All lexical forms transcribed in The Nihali database,data/other/forms/20260817-nihali-database-konow.csv; data/other/forms/raw_data/20260817-nihali-database-audit.csv,OpenAI Codex,No
+Office of the Superintendent of Government Printing, Calcutta, 1906\.",All lexical forms transcribed in The Nihali database,data/other/forms/20260817-nihali-database-konow.csv; data/other/forms/raw_data/20260817-nihali-database-audit.csv,OpenAI Codex,No,
 nihali-database2026,E2026,"Nihali Database Editors\.
 The nihali database\.
 2026\.
 Workbook exported 2026\-08\-17; Drive modified 2026\-04\-22T02:38:24\.316Z; SHA\-256 a2525d858969c84eb36c4f5a43857a893b89baa1e0bee16974bc4e8a9d46524d; reuse terms not specified\.
-URL: [https://docs\.google\.com/spreadsheets/d/1Mas3uqXcpXAFPV\\\_\\\_OMv\\\_uGPXb\\\_d67iaMhqAQGITisrg/edit](https://docs.google.com/spreadsheets/d/1Mas3uqXcpXAFPV\_\_OMv\_uGPXb\_d67iaMhqAQGITisrg/edit)\.","Lexical records from Nagaraja, Mundlay, Bhattacharya, and Konow; Contact, Roots, and Dravidian retained as audited analysis sidecars",data/other/forms/20260817-mundlay-nihali.csv; data/other/forms/20260817-nagaraja-nihali-wiktionary.csv; data/other/forms/20260817-nihali-database-bhattacharya.csv; data/other/forms/20260817-nihali-database-konow.csv; data/other/forms/raw_data/20260817-nihali-database-audit.csv; data/other/forms/raw_data/20260817-nihali-database-key-map.csv,OpenAI Codex,No
+URL: [https://docs\.google\.com/spreadsheets/d/1Mas3uqXcpXAFPV\\\_\\\_OMv\\\_uGPXb\\\_d67iaMhqAQGITisrg/edit](https://docs.google.com/spreadsheets/d/1Mas3uqXcpXAFPV\_\_OMv\_uGPXb\_d67iaMhqAQGITisrg/edit)\.","Lexical records from Nagaraja, Mundlay, Bhattacharya, and Konow; Contact, Roots, and Dravidian retained as audited analysis sidecars",data/other/forms/20260817-mundlay-nihali.csv; data/other/forms/20260817-nagaraja-nihali-wiktionary.csv; data/other/forms/20260817-nihali-database-bhattacharya.csv; data/other/forms/20260817-nihali-database-konow.csv; data/other/forms/raw_data/20260817-nihali-database-audit.csv; data/other/forms/raw_data/20260817-nihali-database-key-map.csv,OpenAI Codex,No,
 nured,H2026,"Jakob Halfmann\.
 The nuristani etymological dictionary \(nured\)\.
 2026\.
-Live MediaWiki dictionary; each installed block records its immutable page and revision IDs and revision date\.
-URL: [https://nured\.org/wiki/Main\\\_Page](https://nured.org/wiki/Main\_Page)\.","All current nonredirect Proto-Nuristani and Middle Indo-Aryan loanword articles; the initial 2026-08-18 snapshot contains 47 articles, with 45 attached to 46 corresponding CDIAL or PNur heads and two reviewed unmatched articles retained in the audit",data/other/entry_texts/20260818-nured-org.csv; data/other/forms/raw_data/20260818-nured-org-audit.csv; data/other/forms/raw_data/20260818-nured-org-manifest.json; data/other/forms/raw_data/20260818-nured-org-targets.csv,OpenAI Codex,No
-ABORI,ABORI,Annals of the Bhandarkar Oriental Research Institute. Poona.,No,data/cdial/cdial.csv,Aryaman Arora,No
-AFD,AFD,"Banikanta Kakati, Assamese: its Formation and Development. Ed. G. C. Goswami. 3rd ed. Gauhati, 1972.",No,data/cdial/cdial.csv,Aryaman Arora,No
-AKŚ,AKŚ,"Śāntibhāi Ācārya, Kacchī śabdāvali. Gujarāt Vidyāpīṭh Granthāvali No. 147. Ahmedabad (Navajīvan Trust), 1966.",No,data/cdial/cdial.csv,Aryaman Arora,No
-AO,AO,"Acta Orientalia. Leiden. [Unless otherwise stated, the author of the article referred to is G. Morgenstierne.]",No,data/cdial/cdial.csv,Aryaman Arora,No
-BHS,BHS,"Franklin Edgerton, Buddhist Hybrid Sanskrit Grammar and Dictionary. Newhaven, 1953.",No,data/cdial/cdial.csv,Aryaman Arora,No
-BKPD,BKPD,"Georg Buddruss, Beiträge zur Kenntnis der Pašai-Dialekte. [Abhandlungen für die Kunde des Morgenlandes xxxiii, 2.]",No,data/cdial/cdial.csv,Aryaman Arora,No
-BKhoT,BKhoT,"Georg Buddruss, Khowar-Texte in arabischer Schrift, 1982.",No,data/cdial/cdial.csv,Aryaman Arora,No
-BR,BR,See PW.,No,data/cdial/cdial.csv,Aryaman Arora,No
-BSBU,BSBU,See Lüders BSBU.,No,data/cdial/cdial.csv,Aryaman Arora,No
-BSL,BSL,Bulletin de la Société de Linguistique de Paris.,No,data/cdial/cdial.csv,Aryaman Arora,No
-BSOAS,BSOAS,Bulletin of the School of Oriental and African Studies. London.,No,data/cdial/cdial.csv,Aryaman Arora,No
-BSOS,BSOS,Bulletin of the School of Oriental Studies. London.—Since 1943 = BSOAS.,No,data/cdial/cdial.csv,Aryaman Arora,No
-Bailey ShGr,Bailey ShGr,"T. Grahame Bailey, Grammar of the Shina (Ṣiṇā) Language. London, 1924.",No,data/cdial/cdial.csv,Aryaman Arora,No
-BelvalkarVol,BelvalkarVol,"Dr. S. K. Belvalkar Felicitation Volume. [All references, unless otherwise stated, are to the article by G. Morgenstierne.]",No,data/cdial/cdial.csv,Aryaman Arora,No
-Bender Nal,Bender Nal,"The Nalarāyadavadantīcarita. Edited and translated by Ernest Bender. [Transactions of the American Philosophical Society, New Series, Vol. 40, Part 4. 1950.]",No,data/cdial/cdial.csv,Aryaman Arora,No
-Bloch IA,Bloch IA,"Jules Bloch, L'Indo-Aryen du Veda aux temps modernes. Paris, 1934.",No,data/cdial/cdial.csv,Aryaman Arora,No
-Bloch LM,Bloch LM,See LM.,No,data/cdial/cdial.csv,Aryaman Arora,No
-Brough Dhp,Brough Dhp,"J. Brough, The Gāndhārī Dharmapada. Oxford, 1962.",No,data/cdial/cdial.csv,Aryaman Arora,No
-Buddruss,Buddruss,(or G.B.) Personally communicated by Professor G. Buddruss.,No,data/cdial/cdial.csv,Aryaman Arora,No
-Buddruss Kan,Buddruss Kan,"Georg Buddruss, Kanyawali: Proben eines Maiyã̄-Dialektes aus Tangir (Hindukusch). München, 1959.",No,data/cdial/cdial.csv,Aryaman Arora,No
-Buddruss Woṭ,Buddruss Woṭ,"Georg Buddruss, Die Sprache von Woṭapūr und Kaṭārqalā. Bonn, 1960.",No,data/cdial/cdial.csv,Aryaman Arora,No
-Burrow KharDoc,Burrow KharDoc,"T. Burrow, The Language of the Kharoṣṭhi Documents from Chinese Turkestan. Cambridge, 1937.",No,data/cdial/cdial.csv,Aryaman Arora,No
-Burrow Shwa,Burrow Shwa,"T. Burrow, The Problem of Shwa in Sanskrit. Oxford, 1978.",No,data/cdial/cdial.csv,Aryaman Arora,No
-C.Shackle,C.Shackle,"A Gutu Nānak Glossary. London, 1981 (supplement in BSOAS xlvii).",No,data/cdial/cdial.csv,Aryaman Arora,No
-CII,CII,"Corpus Inscriptionum Indicarum. Volume I Oxford, 1925. Volume II Calcutta, 1929.",No,data/cdial/cdial.csv,Aryaman Arora,No
-COJ,COJ,Calcutta Oriental Journal.,No,data/cdial/cdial.csv,Aryaman Arora,No
-CPD,CPD,"A Critical Pali Dictionary. Begun by V. Trenckner, revised, continued and edited by Dines Andersen and Helmer Smith. Copenhagen, 1924-.",No,data/cdial/cdial.csv,Aryaman Arora,No
-Childers DPL,Childers DPL,"R. C. Childers, A Dictionary of the Pâli Language. London, 1875 (reprint 1923).",No,data/cdial/cdial.csv,Aryaman Arora,No
-ColPa,ColPa,"R. L. Turner, Collected Papers 1912–1973. Oxford, 1975.",No,data/cdial/cdial.csv,Aryaman Arora,No
-DED,DED,"T. Burrow and M. B. Emeneau, A Dravidian Etymological Dictionary. Oxford, 1961. [References to numbered entries.]",No,data/cdial/cdial.csv,Aryaman Arora,No
-DEDS,DEDS,"T. Burrow and M. B. Emeneau, A Dravidian Etymological Dictionary Supplement. Oxford, 1968.",No,data/cdial/cdial.csv,Aryaman Arora,No
-DGW,DGW,"(or Sampson) John Sampson, The Dialect of the Gypsies of Wales. Oxford, 1926.",No,data/cdial/cdial.csv,Aryaman Arora,No
-DSL,DSL,"A Dictionary of the Sinhalese Language. Colombo, 1935-.",No,data/cdial/cdial.csv,Aryaman Arora,No
-Dave,Dave,Personally communicated by Dr. T. N. Dave.,No,data/cdial/cdial.csv,Aryaman Arora,No
-Dave GujLg,Dave GujLg,"T. N. Dave, A Study of the Gujarati Language in the 16th century (V.S.). London, 1935.",No,data/cdial/cdial.csv,Aryaman Arora,No
-EA,EA,"Baburam Saksena, Evolution of Awadhi. Allahabad, 1937.",No,data/cdial/cdial.csv,Aryaman Arora,No
-EGS,EGS,"Wilhelm Geiger, An Etymological Glossary of the Sinhalese Language. Colombo, 1941.",No,data/cdial/cdial.csv,Aryaman Arora,No
-EOL,EOL,"K. B. Tripathi, The Evolution of Oriya Language and Script. Cuttack, 1962.",No,data/cdial/cdial.csv,Aryaman Arora,No
-ES,ES,"Wilhelm Geiger, Etymologie des Singhalesischen. München, 1897. Aus den Abhandlungen der k. bayer. Akademie der Wiss. I Cl. XXI Bd. II Abth. [Page references to separate offprint in which pp. 3-99 = pp. 177-273.]",No,data/cdial/cdial.csv,Aryaman Arora,No
-EVP,EVP,"G. Morgenstierne, An Etymological Vocabulary of Pashto. Oslo. [Skrifter utgitt av Det Norske VidenskapsAkademi i Oslo II Hist.-Filos. Klasse, 1927, No. 3.]",No,data/cdial/cdial.csv,Aryaman Arora,No
-EVSh,EVSh,"Georg Morgenstierne, Etymological Vocabulary of the Shughni Group. Wiesbaden, 1974.",No,data/cdial/cdial.csv,Aryaman Arora,No
-EWA,EWA,"Manfred Mayrhofer, Kurzgefasstes etymologisches Wörterbuch des Altindischen. Heidelberg, 1953-.",No,data/cdial/cdial.csv,Aryaman Arora,No
-EZ,EZ,Epigraphia Zeylanica. Colombo.,No,data/cdial/cdial.csv,Aryaman Arora,No
-El,El,"W. J. Elmslie, A Vocabulary of the Kashmiri Language. London, 1872.",No,data/cdial/cdial.csv,Aryaman Arora,No
-Emeneau Sk. bhōgin-,Emeneau Sk. bhōgin-,"“Sk. bhōgin-”, in American, Indian and Indo-European Studies: Papers to honor Madison S. Beeler. Trends in Linguistics: Studies and Monographs 16. The Hague, 1980.",No,data/cdial/cdial.csv,Aryaman Arora,No
-FOK,FOK,"(or Katre FKo) S. M. Katre, The Formation of Koṅkaṇī. Bombay, 1942.",No,data/cdial/cdial.csv,Aryaman Arora,No
-FestskrBroch,FestskrBroch,"Festskrift til Professor Olaf Broch. Oslo, 1947.",No,data/cdial/cdial.csv,Aryaman Arora,No
-Finck AZ,Finck AZ,"F. N. Finck, Die Sprache der armenischen Zigeuner. Mémoires de l'Académie imperiale des Sciences de St.-Pétersbourg, VIIIe series, Classe Historico-philologique Vol. viii 5.",No,data/cdial/cdial.csv,Aryaman Arora,No
-G.M,G.M,See Morgenstierne.,No,data/cdial/cdial.csv,Aryaman Arora,No
-GHA,GHA,Göteborgs Högskolas Årsskrift.,No,data/cdial/cdial.csv,Aryaman Arora,No
-GS,GS,"Wilhelm Geiger, A Grammar of the Sinhalese Language. Colombo, 1938.",No,data/cdial/cdial.csv,Aryaman Arora,No
-GWZS,GWZS,"S. A. Wolf, Grosses Wörterbuch der Zigeuner-Sprache. Mannheim, 1960. [References to numbers of articles.]",No,data/cdial/cdial.csv,Aryaman Arora,No
-Geiger PLS,Geiger PLS,"Wilhelm Geiger, Pali Literatur und Sprache. Strassburg, 1916.",No,data/cdial/cdial.csv,Aryaman Arora,No
-Grahame Bailey,Grahame Bailey,Personally communicated by Dr. T. Grahame Bailey.,No,data/cdial/cdial.csv,Aryaman Arora,No
-Grierson BPL,Grierson BPL,"George A. Grierson, Bihar Peasant Life. Patna, 1885. 2nd edition 1926.",No,data/cdial/cdial.csv,Aryaman Arora,No
-Grierson KD,Grierson KD,"George A. Grierson, A Dictionary of Kāshmīrī Language. Calcutta, 1932.",No,data/cdial/cdial.csv,Aryaman Arora,No
-Grierson Tor,Grierson Tor,"George A. Grierson, Torwali: An account of a Dardic language of the Swat Kohistan. London, 1929.",No,data/cdial/cdial.csv,Aryaman Arora,No
-Grām,Grām,See Gupta Grām.,No,data/cdial/cdial.csv,Aryaman Arora,No
-Gupta Grām,Gupta Grām,"Hariprasād Gupta, Grāmodyog aur unkī śabdāvalī. Delhi, 1958.",No,data/cdial/cdial.csv,Aryaman Arora,No
-HJ,HJ,"H. Yule and A. C. Burnell, HobsonJobson: A glossary of Colloquial Anglo-Indian Words and Phrases. New edition by W. Crooke. London, 1903.",No,data/cdial/cdial.csv,Aryaman Arora,No
-Hendriksen,Hendriksen,Personally communicated by Professor H. Hendriksen.,No,data/cdial/cdial.csv,Aryaman Arora,No
-Hettiaratchi Indeclinables,Hettiaratchi Indeclinables,"D. E. Hettiaratchi, Indeclinables in Sinhalese.",No,data/cdial/cdial.csv,Aryaman Arora,No
-Him.I,Him.I,"Hans Hendriksen, Himachali Studies I: Vocabulary. København, 1976.",No,data/cdial/cdial.csv,Aryaman Arora,No
-Hultzsch As,Hultzsch As,"E. Hultzsch, Inscriptions of Asoka. [Corpus Inscriptionum Indicarum, vol. i.] Oxford, 1925.",No,data/cdial/cdial.csv,Aryaman Arora,No
-HŚS,HŚS,"Śyām Sundar Dās, Hindīśabdasāgara. Allahabad, 1929.",No,data/cdial/cdial.csv,Aryaman Arora,No
-IEW,IEW,"(or Pokorny) Julius Pokorny, Indogermanisches etymologisches Wörterbuch. Bern, 1959.",No,data/cdial/cdial.csv,Aryaman Arora,No
-IF,IF,Indogermanische Forschungen. Zeitschrift für Indogermanistik und allgemeine Sprachwissenschaft. Berlin.,No,data/cdial/cdial.csv,Aryaman Arora,No
-IIFL,IIFL,"G. Morgenstierne, Indo-Iranian Frontier Languages. Oslo, 1929-56.",No,data/cdial/cdial.csv,Aryaman Arora,No
-IIJ,IIJ,Indo-Iranian Journal.,No,data/cdial/cdial.csv,Aryaman Arora,No
-IL,IL,Indian Linguistics. Bulletin of the Linguistic Society of India. Poona.,No,data/cdial/cdial.csv,Aryaman Arora,No
-JA,JA,Journal Asiatique. Paris.,No,data/cdial/cdial.csv,Aryaman Arora,No
-JAOS,JAOS,Journal of the American Oriental Society. New Haven.,No,data/cdial/cdial.csv,Aryaman Arora,No
-JGLS,JGLS,Journal of the Gypsy Lore Society. Edinburgh.,No,data/cdial/cdial.csv,Aryaman Arora,No
-Jambu comparative reconstruction,Jambu comparative reconstruction,Reference abbreviation `Jambu comparative reconstruction` cited in the source data; full citation not yet catalogued.,No,cldf/forms.csv (upstream import path unavailable),Aryaman Arora,No
-Ju,Ju,"(or Jukes) A. Jukes, Dictionary of the Jatki or Western Panjábi Language. Lahore, 1900.",No,data/cdial/cdial.csv,Aryaman Arora,No
-KZ,KZ,Zeitschrift für vergleichende Sprachforschung auf dem Gebiete der indogermanischen Sprachen. Begründet von A. Kuhn. Göttingen.,No,data/cdial/cdial.csv,Aryaman Arora,No
-Kern Toev,Kern Toev,"H. Kern, Toevoegselen op 't Woordenboek van Childers; 2 pts. [Verhandlingen Kon. Ak. von Weetenschappen te Amsterdam N.R. xvi 5.] Amsterdam, 1916.",No,data/cdial/cdial.csv,Aryaman Arora,No
-KhubSD,KhubSD,"Lachman M. Khubcandani, A Comprehensive Sindhi Dictionary. Mimeographed specimen pages, Sindhi Linguistics Department, Deccan College, Poona, received 20 January 1969.",No,data/cdial/cdial.csv,Aryaman Arora,No
-LFG,LFG,"Mahavir Prasad Lakhera, The Formation of Gaṛhwāḷī. D.Litt. thesis, Calcutta, submitted September 1964.",No,data/cdial/cdial.csv,Aryaman Arora,No
-LM,LM,"Jules Bloch, La Formation de la Langue Marathe. Paris, 1920.",No,data/cdial/cdial.csv,Aryaman Arora,No
-LNH,LNH,"T. Grahame Bailey, Languages of the Northern Himalayas. Asiatic Society’s Monographs XII. London, 1908.",No,data/cdial/cdial.csv,Aryaman Arora,No
-LOL,LOL,"G. C. Praharaja, A Lexicon of the Oriya Language: Pūrṇṇachandra Orḍiā Bhāshā-kosha. Cuttack, 1931–1940.",No,data/cdial/cdial.csv,Aryaman Arora,No
-LStH,LStH,"T. Grahame Bailey, Linguistic Studies from the Himalayas. London, 1920.",No,data/cdial/cdial.csv,Aryaman Arora,No
-Lor,Lor,(or Lorimer) Personally communicated by Lt. Col. D. L. R. Lorimer C.I.E.,No,data/cdial/cdial.csv,Aryaman Arora,No
-Lorimer BurLg,Lorimer BurLg,"D. L. R. Lorimer, The Burushaski Language. Oslo, 1935.",No,data/cdial/cdial.csv,Aryaman Arora,No
-Lorimer ḌumLg,Lorimer ḌumLg,"D. L. R. Lorimer, The Ḍumāki Language: Outlines of the Speech of the Ḍoma or Bēricho of Hunza. [Publications de la Commission d'Enquête Linguistique, iv.] Nijmegen, 1939.",No,data/cdial/cdial.csv,Aryaman Arora,No
-Lüders BSBU,Lüders BSBU,"H. Lüders, Beobachtungen über die Sprache des buddhistischen Urkanons (aus dem Nachlass herausgegeben von B. Waldschmidt). Berlin, 1954.",No,data/cdial/cdial.csv,Aryaman Arora,No
-Lüders PhilInd,Lüders PhilInd,"Philologica Indica. Ausgewählte kleine Schriften von Heinrich Lüders. Göttingen, 1940.",No,data/cdial/cdial.csv,Aryaman Arora,No
-MO,MO,"Le Monde Oriental. Archives pour l'Histoire et l'Ethnographie, les Langues et Littératures, Religions et Traditions de l'Europe Orientale et de l'Asie. Uppsala.",No,data/cdial/cdial.csv,Aryaman Arora,No
-MSL,MSL,Mémoires de la Société de Linguistique de Paris.,No,data/cdial/cdial.csv,Aryaman Arora,No
-Master GrOM,Master GrOM,"A. Master, A Grammar of Old Marāṭhī. Oxford, 1964.",No,data/cdial/cdial.csv,Aryaman Arora,No
-Maya Singh PD,Maya Singh PD,"Bhai Maya Singh, The Panjábi Dictionary. Lahore, 1895.",No,data/cdial/cdial.csv,Aryaman Arora,No
-Mayrhofer HPa,Mayrhofer HPa,"M. Mayrhofer, Handbuch des Pali. Heidelberg, 1951.",No,data/cdial/cdial.csv,Aryaman Arora,No
-Miklosich Mund,Miklosich Mund,"Franz Miklosich, Über die Mundarten und die Wanderungen der Zigeuner Europa's. Wien, 1872-80.",No,data/cdial/cdial.csv,Aryaman Arora,No
-Molesworth MD,Molesworth MD,"J. T. Molesworth, A Dictionary Marāṭhī and English. 2nd edition. Bombay, 1857.",No,data/cdial/cdial.csv,Aryaman Arora,No
-Morgenstierne,Morgenstierne,(or G.M.) Personally communicated by Professor G. Morgenstierne.,No,data/cdial/cdial.csv,Aryaman Arora,No
-Morgenstierne ID,Morgenstierne ID,"G. Morgenstierne, Irano-Dardica. Beiträge zur Iranistik 5. Wiesbaden, 1973.",No,data/cdial/cdial.csv,Aryaman Arora,No
-ND,ND,"R. L. Turner, A Comparative and Etymological Dictionary of the Nepali Language. London, 1931.",No,data/cdial/cdial.csv,Aryaman Arora,No
-NIA,NIA,New Indian Antiquary. Poona.,No,data/cdial/cdial.csv,Aryaman Arora,No
-NOGaw,NOGaw,"Georg Morgenstierne, Notes on Gawar-Bati. [Skrifter utgitt av Det Norske Videnskaps-Akademi i Oslo, II Hist.-Filos. Klasse. 1950 No. 1.] Oslo, 1950.",No,data/cdial/cdial.csv,Aryaman Arora,No
-NOPhal,NOPhal,"Georg Morgenstierne, Notes on Phalūṛa an unknown Dardic language of Chitral. [Skrifter utgitt av Det Norske Videnskaps-Akademi i Oslo, II Hist.-Filos. Klasse. 1940 No. 5.] Oslo, 1941.",No,data/cdial/cdial.csv,Aryaman Arora,No
-NTS,NTS,"Norsk Tidsskrift for Sprogvidenskap. Oslo. [Unless otherwise stated, the author of the article referred to is G. Morgenstierne.]",No,data/cdial/cdial.csv,Aryaman Arora,No
-ODBL,ODBL,"Suniti Kumar Chatterji, The Origin and Development of the Bengali Language. Calcutta, 1926.",No,data/cdial/cdial.csv,Aryaman Arora,No
-PMWS,PMWS,"F. B. J. Kuiper, Proto-Munda Words in Sanskrit. [Verhandeling der Koninklijke Nederlandsche Akademie van Wetenschappen, Afd. Letterkunde, Nieuwe Reeks Deel LI, No. 3.] Amsterdam, 1948.",No,data/cdial/cdial.csv,Aryaman Arora,No
-PSM,PSM,"Hargovind Das T. Sheth, Pāiasaddamahaṇṇava: a Comprehensive Prakrit Hindi Dictionary. Calcutta, 1923-8.",No,data/cdial/cdial.csv,Aryaman Arora,No
-PTSD,PTSD,"T. W. Rhys Davids and W. Stede, The Pali Text Society's Pali-English Dictionary. Chipstead, 1925.",No,data/cdial/cdial.csv,Aryaman Arora,No
-PW,PW,"(or BR) Sanskrit-Wörterbuch, bearbeitet von Otto Böhtlingk und Rudolph Roth. St. Petersburg, 1855-75.",No,data/cdial/cdial.csv,Aryaman Arora,No
-Panse Jñān,Panse Jñān,"Murlidhar Gajanan Panse, Linguistic Peculiarities of Jñāneśvarī. Poona, 1953.",No,data/cdial/cdial.csv,Aryaman Arora,No
-PhonPj,PhonPj,"Banarsi Das Jain, A Phonology of Panjabi and a Ludhiani Phonetic Reader. Lahore, 1934.",No,data/cdial/cdial.csv,Aryaman Arora,No
-Pischel GrPk,Pischel GrPk,"R. Pischel, Grammatik der PrakritSprachen. Strassburg, 1900.",No,data/cdial/cdial.csv,Aryaman Arora,No
-Platts UD,Platts UD,"John T. Platts, A Dictionary of Urdū, Classical Hindī, and English. 4th imp. London, 1911.",No,data/cdial/cdial.csv,Aryaman Arora,No
-Pokorny,Pokorny,See IEW.,No,data/cdial/cdial.csv,Aryaman Arora,No
-RM,RM,"PHMA: Mitteilungen zur idg. vornemlich indo-iranischen Wortkunde sowie zur holothetischen Sprachtheorie. München, 1955-.",No,data/cdial/cdial.csv,Aryaman Arora,No
-RTMV2,RTMV2,"C. H. B. Reynolds, Maldivian Vocabulary Supplement. Typescript, 1979.",No,data/cdial/cdial.csv,Aryaman Arora,No
-Raghu Vira,Raghu Vira,Personally communicated by Dr. Raghu Vira.,No,data/cdial/cdial.csv,Aryaman Arora,No
-Risley,Risley,"H. H. Risley, The Tribes and Castes of Bengal. Calcutta, 1892.",No,data/cdial/cdial.csv,Aryaman Arora,No
-S. K. Chatterji,S. K. Chatterji,Personally communicated by Professor Suniti Kumar Chatterji.,No,data/cdial/cdial.csv,Aryaman Arora,No
-S. Varma,S. Varma,Personally communicated by Professor Siddheshwar Varma.,No,data/cdial/cdial.csv,Aryaman Arora,No
-S.M.Katre,S.M.Katre,"S. M. Katre, review of R. L. Turner, A Comparative Dictionary of the Indo-Aryan Languages, BSOAS XXX, 701–704.",No,data/cdial/cdial.csv,Aryaman Arora,No
-SBAW,SBAW,Sitzungsberichte der Berliner Akademie der Wissenschaften.,No,data/cdial/cdial.csv,Aryaman Arora,No
-SED,SED,"B. Clough, A Sinhalese-English Dictionary. New and enlarged edition. Colombo, 1892.",No,data/cdial/cdial.csv,Aryaman Arora,No
-SN,SN,"Saddanīti: La Grammaire palie d’Aggavaṁsa. Texte établi par Helmer Smith. Lund, 1966.",No,data/cdial/cdial.csv,Aryaman Arora,No
-SSS,SSS,"Sorata Thera, Srisumaṅgala Sabdakosaya. Colombo, 1952.",No,data/cdial/cdial.csv,Aryaman Arora,No
-Saksena,Saksena,Personally communicated by Professor Baburam Saksena.,No,data/cdial/cdial.csv,Aryaman Arora,No
-Sampson,Sampson,See DGW.,No,data/cdial/cdial.csv,Aryaman Arora,No
-Schmidt Nachtr,Schmidt Nachtr,"Nachträge zum Sanskrit-Wörterbuch in kürzerer Fassung von Otto Böhtlingk, bearbeitet von Richard Schmidt. I-VI Hannover 1924-6, VII-VIII Leipzig 1928.",No,data/cdial/cdial.csv,Aryaman Arora,No
-ShahidullahPresVol,ShahidullahPresVol,"Shahidullah Presentation Volume. Ed. A. S. Dil. Pakistani Linguistics Series VII. Lahore, 1966.",No,data/cdial/cdial.csv,Aryaman Arora,No
-SigGr,SigGr,"S. Paranavitana, Sigiri Graffiti. Oxford, 1956.",No,data/cdial/cdial.csv,Aryaman Arora,No
-Stein RājatTrans,Stein RājatTrans,Rājataraṅginī: translated by Aurel Stein.,No,data/cdial/cdial.csv,Aryaman Arora,No
-TPS,TPS,Transactions of the Philological Society. London.,No,data/cdial/cdial.csv,Aryaman Arora,No
-Tulpule OMR,Tulpule OMR,"S. G. Tulpule, An Old Marathi Reader. Poona, 1960.",No,data/cdial/cdial.csv,Aryaman Arora,No
-Vīsaḷa,Vīsaḷa,"J. D. Smith, The Vīsaḷadevarāsa: A Restoration of the Text. Cambridge, 1976.",No,data/cdial/cdial.csv,Aryaman Arora,No
-WP,WP,"A. Walde, Vergleichendes Wörterbuch der Indogermanischen Sprachen: herausgegeben und bearbeitet von J. Pokorny. Berlin and Leipzig, 1927.",No,data/cdial/cdial.csv,Aryaman Arora,No
-WR,WR,"P. B. F. Wijeratne, MS. of Etymological Index attached to Phonology of the Sinhalese Inscriptions up to the end of the 10th Century A.D. [Thesis for the degree of Ph.D. University of London, 1944.] BSOAS xi 580-94, 823-36, xii 163-83, xiii 166-81, xiv 263-98, xix 479-514.",No,data/cdial/cdial.csv,Aryaman Arora,No
-Woolner Gloss,Woolner Gloss,"A. C. Woolner, Asoka Text and Glossary. Lahore, 1924.",No,data/cdial/cdial.csv,Aryaman Arora,No
-ZDMG,ZDMG,Zeitschrift der Deutschen Morgenländischen Gesellschaft.,No,data/cdial/cdial.csv,Aryaman Arora,No
-berger-auto,berger-auto,Reference abbreviation `berger-auto` cited in the source data; full citation not yet catalogued.,No,data/other/forms/20260726-berger-auto.csv,Aryaman Arora,Yes
-ŚSB,ŚSB,Śabdasaṁgraha of Bālaśikṣā. Prācīna Gujarātī Gadyasaṁgraha.,No,data/cdial/cdial.csv,Aryaman Arora,No
+Live MediaWiki dictionary; every reflex and commentary block records its immutable page and revision IDs and revision date\.
+URL: [https://nured\.org/wiki/Main\\\_Page](https://nured.org/wiki/Main\_Page)\.","All 47 current nonredirect Proto-Nuristani and Middle Indo-Aryan loanword articles: 263 explicit Nuristani Form-template reflex rows beneath corresponding PNur entries and 50 PNur commentary blocks; 18 stable PNur entries are generated where no compatible sibling exists, including 16 reconstructed borrowing heads attached to CDIAL",data/other/forms/20260818-nured-org.csv; data/other/params/nured.csv; data/other/entry_texts/20260818-nured-org.csv; data/nuristani_borrowings.csv; data/other/forms/raw_data/20260818-nured-org-audit.csv; data/other/forms/raw_data/20260818-nured-org-manifest.json; data/other/forms/raw_data/20260818-nured-org-targets.csv; data/other/forms/raw_data/20260818-nured-org-sample.csv; conversion/nured.txt,OpenAI Codex,No,source-mapped
+emeneau1997brahui,E1997,"Murray B\. Emeneau\.
+Brahui etymologies and phonetic developments: new items\.
+*Bulletin of the School of Oriental and African Studies*, 60\(3\):440–447, 1997\.
+Copyright SOAS 1997; the publisher PDF is not redistributed\.
+URL: [https://www\.jstor\.org/stable/619537](https://www.jstor.org/stable/619537), [doi:10\.1017/S0041977X00032481](https://doi.org/10.1017/S0041977X00032481)\.","All lexical, etymological, dictionary-correction, and phonological claims on pp. 440--447; reference list excluded as non-lexical",data/other/forms/20260819-emeneau-brahui-1997.csv; data/other/entry_texts/20260819-emeneau-brahui-1997.csv; data/other/forms/raw_data/20260819-emeneau-brahui-1997-audit.csv; data/other/forms/raw_data/20260819-emeneau-brahui-1997-manifest.json; data/other/forms/raw_data/20260819-emeneau-brahui-1997-reconciliation.json; conversion/emeneau-brahui.txt,OpenAI Codex,No,source
+burrow-emeneau1972den1,B1972,"Thomas Burrow and Murray B\. Emeneau\.
+Dravidian etymological notes: supplement to ded, deds, and dbia, pt\. i\.
+*Journal of the American Oriental Society*, 92\(3\):397–418, 1972\.
+The publisher PDF is not redistributed\.
+URL: [https://www\.jstor\.org/stable/600566](https://www.jstor.org/stable/600566), [doi:10\.2307/600566](https://doi.org/10.2307/600566)\.",Every numbered additions-and-corrections segment on pp. 399--418; pp. 397--399 preliminaries and bibliography retained only as extraction context,data/other/forms/20260819-burrow-emeneau-den1.csv; data/other/entry_texts/20260819-burrow-emeneau-den1.csv; data/other/forms/raw_data/burrow_emeneau_1972_den1_agent; data/other/forms/raw_data/20260819-burrow-emeneau-den1-audit.csv; data/other/forms/raw_data/20260819-burrow-emeneau-den1-manifest.json; data/other/forms/raw_data/20260819-burrow-emeneau-den1-reconciliation.json; conversion/dedr.txt,OpenAI Codex,No,source
+burrow-emeneau1972den2,B1972a,"Thomas Burrow and Murray B\. Emeneau\.
+Dravidian etymological notes: supplement to ded, deds, and dbia, pt\. ii\.
+*Journal of the American Oriental Society*, 92\(4\):475–491, 1972\.
+The publisher PDF is not redistributed\.
+URL: [https://www\.jstor\.org/stable/599958](https://www.jstor.org/stable/599958), [doi:10\.2307/599958](https://doi.org/10.2307/599958)\.",Every numbered DEDS and DBIA addition or correction on pp. 475--479; indexes on pp. 480--491 retained only as extraction context,data/other/forms/20260819-burrow-emeneau-den2.csv; data/other/entry_texts/20260819-burrow-emeneau-den2.csv; data/other/forms/raw_data/burrow_emeneau_1972_den2_agent; data/other/forms/raw_data/20260819-burrow-emeneau-den2-audit.csv; data/other/forms/raw_data/20260819-burrow-emeneau-den2-manifest.json; data/other/forms/raw_data/20260819-burrow-emeneau-den2-reconciliation.json; conversion/dedr.txt,OpenAI Codex,No,source
+torwali2023student,T2023,"Zubair Torwali\.
+*Torwali English Dictionary for Students with Pictures*\.
+Idara Baraye Taleem\-o\-Taraqi, Bahrain, Swat, 2023\.
+ISBN 978\-969\-9665\-01\-1\.
+Author\-uploaded PDF snapshot; SHA\-256 da338088c2674f0eccdb426fbcac210ebd9d258b2cfa7f2870171b228f42e33f\. The corresponding Webonary edition at https://www\.webonary\.org/torwali/en/ reported 2,271 entries and a 2023\-08\-21 upload; it was used for representative validation, not bulk extraction\. The PDF typography yields 2,269 headword records\.
+URL: [https://commons\.wikimedia\.org/wiki/File:Torwali\\\_Dictionary\\\_PDF\.pdf](https://commons.wikimedia.org/wiki/File:Torwali\_Dictionary\_PDF.pdf)\.","Every headword record on PDF pp. 14--230 with an explicit source IPA pronunciation: 1,943 installed forms, comprising 1,922 unmarked Sinkaen/Bahrain forms and 21 forms explicitly marked Chail; 326 pronunciation-less records retained in the audit only",data/other/forms/20260820-torwali-student-2023.csv; data/other/forms/raw_data/torwali_student_2023.py; data/other/forms/raw_data/20260820-torwali-student-2023-audit.csv; data/other/forms/raw_data/20260820-torwali-student-2023-sample.csv; data/other/forms/raw_data/20260820-torwali-student-2023-manifest.json; conversion/torwali-student.txt,OpenAI Codex,No,
+ABORI,ABORI,Annals of the Bhandarkar Oriental Research Institute. Poona.,No,data/cdial/cdial.csv,Aryaman Arora,No,
+AFD,AFD,"Banikanta Kakati, Assamese: its Formation and Development. Ed. G. C. Goswami. 3rd ed. Gauhati, 1972.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+AKŚ,AKŚ,"Śāntibhāi Ācārya, Kacchī śabdāvali. Gujarāt Vidyāpīṭh Granthāvali No. 147. Ahmedabad (Navajīvan Trust), 1966.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+AO,AO,"Acta Orientalia. Leiden. [Unless otherwise stated, the author of the article referred to is G. Morgenstierne.]",No,data/cdial/cdial.csv,Aryaman Arora,No,
+ArchOr,ArchOr,Archiv Orientální. Journal of the Czecho-slovak Oriental Institute. Praha.,No,cldf/forms.csv (upstream import path unavailable),Aryaman Arora,No,
+BB,BB,Beiträge zur Kunde der indogermanischen Sprachen. Herausgegeben von A. Bezzenberge und W. Prellwitz. Göttingen.,No,cldf/forms.csv (upstream import path unavailable),Aryaman Arora,No,
+BDCRI,BDCRI,Bulletin of the Deccan College Research Institute. Poona.,No,cldf/forms.csv (upstream import path unavailable),Aryaman Arora,No,
+BEFEO,BEFEO,Bulletin de l'École Francaise de l'Extrême Orient.,No,cldf/forms.csv (upstream import path unavailable),Aryaman Arora,No,
+BHS,BHS,"Franklin Edgerton, Buddhist Hybrid Sanskrit Grammar and Dictionary. Newhaven, 1953.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+BKPD,BKPD,"Georg Buddruss, Beiträge zur Kenntnis der Pašai-Dialekte. [Abhandlungen für die Kunde des Morgenlandes xxxiii, 2.]",No,data/cdial/cdial.csv,Aryaman Arora,No,
+BKhoT,BKhoT,"Georg Buddruss, Khowar-Texte in arabischer Schrift, 1982.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+BR,BR,See PW.,No,data/cdial/cdial.csv,Aryaman Arora,No,
+BSBU,BSBU,See Lüders BSBU.,No,data/cdial/cdial.csv,Aryaman Arora,No,
+BSL,BSL,Bulletin de la Société de Linguistique de Paris.,No,data/cdial/cdial.csv,Aryaman Arora,No,
+BSOAS,BSOAS,Bulletin of the School of Oriental and African Studies. London.,No,data/cdial/cdial.csv,Aryaman Arora,No,
+BSOS,BSOS,Bulletin of the School of Oriental Studies. London.—Since 1943 = BSOAS.,No,data/cdial/cdial.csv,Aryaman Arora,No,
+Bailey ShGr,Bailey ShGr,"T. Grahame Bailey, Grammar of the Shina (Ṣiṇā) Language. London, 1924.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+BelvalkarVol,BelvalkarVol,"Dr. S. K. Belvalkar Felicitation Volume. [All references, unless otherwise stated, are to the article by G. Morgenstierne.]",No,data/cdial/cdial.csv,Aryaman Arora,No,
+Bender Nal,Bender Nal,"The Nalarāyadavadantīcarita. Edited and translated by Ernest Bender. [Transactions of the American Philosophical Society, New Series, Vol. 40, Part 4. 1950.]",No,data/cdial/cdial.csv,Aryaman Arora,No,
+Bloch IA,Bloch IA,"Jules Bloch, L'Indo-Aryen du Veda aux temps modernes. Paris, 1934.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+Bloch LM,Bloch LM,See LM.,No,data/cdial/cdial.csv,Aryaman Arora,No,
+Bray Brah,Bray Brah,"Denis Bray, The Brāhūī Language, Parts II and III. Delhi, 1934.",No,cldf/forms.csv (upstream import path unavailable),Aryaman Arora,No,
+Brough Dhp,Brough Dhp,"J. Brough, The Gāndhārī Dharmapada. Oxford, 1962.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+Buddruss,Buddruss,(or G.B.) Personally communicated by Professor G. Buddruss.,No,data/cdial/cdial.csv,Aryaman Arora,No,
+Buddruss Kan,Buddruss Kan,"Georg Buddruss, Kanyawali: Proben eines Maiyã̄-Dialektes aus Tangir (Hindukusch). München, 1959.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+Buddruss Woṭ,Buddruss Woṭ,"Georg Buddruss, Die Sprache von Woṭapūr und Kaṭārqalā. Bonn, 1960.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+Burrow KharDoc,Burrow KharDoc,"T. Burrow, The Language of the Kharoṣṭhi Documents from Chinese Turkestan. Cambridge, 1937.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+Burrow Shwa,Burrow Shwa,"T. Burrow, The Problem of Shwa in Sanskrit. Oxford, 1978.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+C.Shackle,C.Shackle,"A Gutu Nānak Glossary. London, 1981 (supplement in BSOAS xlvii).",No,data/cdial/cdial.csv,Aryaman Arora,No,
+CII,CII,"Corpus Inscriptionum Indicarum. Volume I Oxford, 1925. Volume II Calcutta, 1929.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+COJ,COJ,Calcutta Oriental Journal.,No,data/cdial/cdial.csv,Aryaman Arora,No,
+CPD,CPD,"A Critical Pali Dictionary. Begun by V. Trenckner, revised, continued and edited by Dines Andersen and Helmer Smith. Copenhagen, 1924-.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+Childers DPL,Childers DPL,"R. C. Childers, A Dictionary of the Pâli Language. London, 1875 (reprint 1923).",No,data/cdial/cdial.csv,Aryaman Arora,No,
+ColPa,ColPa,"R. L. Turner, Collected Papers 1912–1973. Oxford, 1975.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+DED,DED,"T. Burrow and M. B. Emeneau, A Dravidian Etymological Dictionary. Oxford, 1961. [References to numbered entries.]",No,data/cdial/cdial.csv,Aryaman Arora,No,
+DGW,DGW,"(or Sampson) John Sampson, The Dialect of the Gypsies of Wales. Oxford, 1926.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+DSL,DSL,"A Dictionary of the Sinhalese Language. Colombo, 1935-.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+Dave,Dave,Personally communicated by Dr. T. N. Dave.,No,data/cdial/cdial.csv,Aryaman Arora,No,
+Dave GujLg,Dave GujLg,"T. N. Dave, A Study of the Gujarati Language in the 16th century (V.S.). London, 1935.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+EA,EA,"Baburam Saksena, Evolution of Awadhi. Allahabad, 1937.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+EGS,EGS,"Wilhelm Geiger, An Etymological Glossary of the Sinhalese Language. Colombo, 1941.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+EI,EI,Epigraphia Indica. Calcutta.,No,cldf/forms.csv (upstream import path unavailable),Aryaman Arora,No,
+EOL,EOL,"K. B. Tripathi, The Evolution of Oriya Language and Script. Cuttack, 1962.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+ES,ES,"Wilhelm Geiger, Etymologie des Singhalesischen. München, 1897. Aus den Abhandlungen der k. bayer. Akademie der Wiss. I Cl. XXI Bd. II Abth. [Page references to separate offprint in which pp. 3-99 = pp. 177-273.]",No,data/cdial/cdial.csv,Aryaman Arora,No,
+EVP,EVP,"G. Morgenstierne, An Etymological Vocabulary of Pashto. Oslo. [Skrifter utgitt av Det Norske VidenskapsAkademi i Oslo II Hist.-Filos. Klasse, 1927, No. 3.]",No,data/cdial/cdial.csv,Aryaman Arora,No,
+EVSh,EVSh,"Georg Morgenstierne, Etymological Vocabulary of the Shughni Group. Wiesbaden, 1974.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+EWA,EWA,"Manfred Mayrhofer, Kurzgefasstes etymologisches Wörterbuch des Altindischen. Heidelberg, 1953-.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+EZ,EZ,Epigraphia Zeylanica. Colombo.,No,data/cdial/cdial.csv,Aryaman Arora,No,
+El,El,"W. J. Elmslie, A Vocabulary of the Kashmiri Language. London, 1872.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+Emeneau Sk. bhōgin-,Emeneau Sk. bhōgin-,"“Sk. bhōgin-”, in American, Indian and Indo-European Studies: Papers to honor Madison S. Beeler. Trends in Linguistics: Studies and Monographs 16. The Hague, 1980.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+FOK,FOK,"(or Katre FKo) S. M. Katre, The Formation of Koṅkaṇī. Bombay, 1942.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+FestskrBroch,FestskrBroch,"Festskrift til Professor Olaf Broch. Oslo, 1947.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+Finck AZ,Finck AZ,"F. N. Finck, Die Sprache der armenischen Zigeuner. Mémoires de l'Académie imperiale des Sciences de St.-Pétersbourg, VIIIe series, Classe Historico-philologique Vol. viii 5.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+G.M,G.M,See Morgenstierne.,No,data/cdial/cdial.csv,Aryaman Arora,No,
+GHA,GHA,Göteborgs Högskolas Årsskrift.,No,data/cdial/cdial.csv,Aryaman Arora,No,
+GS,GS,"Wilhelm Geiger, A Grammar of the Sinhalese Language. Colombo, 1938.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+GWZS,GWZS,"S. A. Wolf, Grosses Wörterbuch der Zigeuner-Sprache. Mannheim, 1960. [References to numbers of articles.]",No,data/cdial/cdial.csv,Aryaman Arora,No,
+Ge,Ge,"K. F. Geldner, Der Rigveda übersetzt und erläutert.",No,cldf/forms.csv (upstream import path unavailable),Aryaman Arora,No,
+Geiger PLS,Geiger PLS,"Wilhelm Geiger, Pali Literatur und Sprache. Strassburg, 1916.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+Grahame Bailey,Grahame Bailey,Personally communicated by Dr. T. Grahame Bailey.,No,data/cdial/cdial.csv,Aryaman Arora,No,
+Grierson BPL,Grierson BPL,"George A. Grierson, Bihar Peasant Life. Patna, 1885. 2nd edition 1926.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+Grierson KD,Grierson KD,"George A. Grierson, A Dictionary of Kāshmīrī Language. Calcutta, 1932.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+Grierson Tor,Grierson Tor,"George A. Grierson, Torwali: An account of a Dardic language of the Swat Kohistan. London, 1929.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+Grām,Grām,See Gupta Grām.,No,data/cdial/cdial.csv,Aryaman Arora,No,
+Gupta Grām,Gupta Grām,"Hariprasād Gupta, Grāmodyog aur unkī śabdāvalī. Delhi, 1958.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+HJ,HJ,"H. Yule and A. C. Burnell, HobsonJobson: A glossary of Colloquial Anglo-Indian Words and Phrases. New edition by W. Crooke. London, 1903.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+Hendriksen,Hendriksen,Personally communicated by Professor H. Hendriksen.,No,data/cdial/cdial.csv,Aryaman Arora,No,
+Hettiaratchi Indeclinables,Hettiaratchi Indeclinables,"D. E. Hettiaratchi, Indeclinables in Sinhalese.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+Him.I,Him.I,"Hans Hendriksen, Himachali Studies I: Vocabulary. København, 1976.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+Horn NPE,Horn NPE,"Paul Horn, Grundriss der Neupersischen Etymologie. Strassburg, 1893.",No,cldf/forms.csv (upstream import path unavailable),Aryaman Arora,No,
+Hultzsch As,Hultzsch As,"E. Hultzsch, Inscriptions of Asoka. [Corpus Inscriptionum Indicarum, vol. i.] Oxford, 1925.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+HŚS,HŚS,"Śyām Sundar Dās, Hindīśabdasāgara. Allahabad, 1929.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+IEW,IEW,"(or Pokorny) Julius Pokorny, Indogermanisches etymologisches Wörterbuch. Bern, 1959.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+IF,IF,Indogermanische Forschungen. Zeitschrift für Indogermanistik und allgemeine Sprachwissenschaft. Berlin.,No,data/cdial/cdial.csv,Aryaman Arora,No,
+IIFL,IIFL,"G. Morgenstierne, Indo-Iranian Frontier Languages. Oslo, 1929-56.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+IIJ,IIJ,Indo-Iranian Journal.,No,data/cdial/cdial.csv,Aryaman Arora,No,
+IL,IL,Indian Linguistics. Bulletin of the Linguistic Society of India. Poona.,No,data/cdial/cdial.csv,Aryaman Arora,No,
+JA,JA,Journal Asiatique. Paris.,No,data/cdial/cdial.csv,Aryaman Arora,No,
+JAOS,JAOS,Journal of the American Oriental Society. New Haven.,No,data/cdial/cdial.csv,Aryaman Arora,No,
+JBORS,JBORS,Journal of the Bihar and Orissa Research Society. Patna.,No,cldf/forms.csv (upstream import path unavailable),Aryaman Arora,No,
+JGIS,JGIS,Journal of the Greater India Society.,No,cldf/forms.csv (upstream import path unavailable),Aryaman Arora,No,
+JGLS,JGLS,Journal of the Gypsy Lore Society. Edinburgh.,No,data/cdial/cdial.csv,Aryaman Arora,No,
+Ju,Ju,"(or Jukes) A. Jukes, Dictionary of the Jatki or Western Panjábi Language. Lahore, 1900.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+KZ,KZ,Zeitschrift für vergleichende Sprachforschung auf dem Gebiete der indogermanischen Sprachen. Begründet von A. Kuhn. Göttingen.,No,data/cdial/cdial.csv,Aryaman Arora,No,
+Kern Toev,Kern Toev,"H. Kern, Toevoegselen op 't Woordenboek van Childers; 2 pts. [Verhandlingen Kon. Ak. von Weetenschappen te Amsterdam N.R. xvi 5.] Amsterdam, 1916.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+KharI,KharI,"Sten Konow, Kharoṣṭhī Inscriptions. [Corpus Inscriptionum Indicarum, vol. ii, part 1.] Calcutta, 1929.",No,cldf/forms.csv (upstream import path unavailable),Aryaman Arora,No,
+KhubSD,KhubSD,"Lachman M. Khubcandani, A Comprehensive Sindhi Dictionary. Mimeographed specimen pages, Sindhi Linguistics Department, Deccan College, Poona, received 20 January 1969.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+Kuiper Myth,Kuiper Myth,"F. B. J. Kuiper, An Austro-Asiatic Myth in the Rigveda. [Mededelingen der Koninklijke Nederlandsche Akademie . . . Deel 13, No. 7.] Amsterdam, 1950.",No,cldf/forms.csv (upstream import path unavailable),Aryaman Arora,No,
+Kuiper PMWS,Kuiper PMWS,See PMWS,No,cldf/forms.csv (upstream import path unavailable),Aryaman Arora,No,
+LFG,LFG,"Mahavir Prasad Lakhera, The Formation of Gaṛhwāḷī. D.Litt. thesis, Calcutta, submitted September 1964.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+LM,LM,"Jules Bloch, La Formation de la Langue Marathe. Paris, 1920.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+LNH,LNH,"T. Grahame Bailey, Languages of the Northern Himalayas. Asiatic Society’s Monographs XII. London, 1908.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+LOL,LOL,"G. C. Praharaja, A Lexicon of the Oriya Language: Pūrṇṇachandra Orḍiā Bhāshā-kosha. Cuttack, 1931–1940.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+LStH,LStH,"T. Grahame Bailey, Linguistic Studies from the Himalayas. London, 1920.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+Laufer,Laufer,"Bernard Laufer, Sino-Iranica: Chinese Contributions to the History of Civilisation in Ancient Iran. Chicago, 1919.",No,cldf/forms.csv (upstream import path unavailable),Aryaman Arora,No,
+Lor,Lor,(or Lorimer) Personally communicated by Lt. Col. D. L. R. Lorimer C.I.E.,No,data/cdial/cdial.csv,Aryaman Arora,No,
+Lorimer BurLg,Lorimer BurLg,"D. L. R. Lorimer, The Burushaski Language. Oslo, 1935.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+Lorimer ḌumLg,Lorimer ḌumLg,"D. L. R. Lorimer, The Ḍumāki Language: Outlines of the Speech of the Ḍoma or Bēricho of Hunza. [Publications de la Commission d'Enquête Linguistique, iv.] Nijmegen, 1939.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+Lüders BSBU,Lüders BSBU,"H. Lüders, Beobachtungen über die Sprache des buddhistischen Urkanons (aus dem Nachlass herausgegeben von B. Waldschmidt). Berlin, 1954.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+Lüders PhilInd,Lüders PhilInd,"Philologica Indica. Ausgewählte kleine Schriften von Heinrich Lüders. Göttingen, 1940.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+MO,MO,"Le Monde Oriental. Archives pour l'Histoire et l'Ethnographie, les Langues et Littératures, Religions et Traditions de l'Europe Orientale et de l'Asie. Uppsala.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+MSL,MSL,Mémoires de la Société de Linguistique de Paris.,No,data/cdial/cdial.csv,Aryaman Arora,No,
+Master GrOM,Master GrOM,"A. Master, A Grammar of Old Marāṭhī. Oxford, 1964.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+Maya Singh PD,Maya Singh PD,"Bhai Maya Singh, The Panjábi Dictionary. Lahore, 1895.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+Mayrhofer HPa,Mayrhofer HPa,"M. Mayrhofer, Handbuch des Pali. Heidelberg, 1951.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+Miklosich Mund,Miklosich Mund,"Franz Miklosich, Über die Mundarten und die Wanderungen der Zigeuner Europa's. Wien, 1872-80.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+Miscellany,Miscellany,A Miscellany of Papers published by the Rao Sahib G. V. Ramamurti Pantulu's Birthday Celebration Committee.,No,cldf/forms.csv (upstream import path unavailable),Aryaman Arora,No,
+Molesworth MD,Molesworth MD,"J. T. Molesworth, A Dictionary Marāṭhī and English. 2nd edition. Bombay, 1857.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+Morgenstierne,Morgenstierne,(or G.M.) Personally communicated by Professor G. Morgenstierne.,No,data/cdial/cdial.csv,Aryaman Arora,No,
+Morgenstierne ID,Morgenstierne ID,"G. Morgenstierne, Irano-Dardica. Beiträge zur Iranistik 5. Wiesbaden, 1973.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+ND,ND,"R. L. Turner, A Comparative and Etymological Dictionary of the Nepali Language. London, 1931.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+NIA,NIA,New Indian Antiquary. Poona.,No,data/cdial/cdial.csv,Aryaman Arora,No,
+NOGaw,NOGaw,"Georg Morgenstierne, Notes on Gawar-Bati. [Skrifter utgitt av Det Norske Videnskaps-Akademi i Oslo, II Hist.-Filos. Klasse. 1950 No. 1.] Oslo, 1950.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+NOPhal,NOPhal,"Georg Morgenstierne, Notes on Phalūṛa an unknown Dardic language of Chitral. [Skrifter utgitt av Det Norske Videnskaps-Akademi i Oslo, II Hist.-Filos. Klasse. 1940 No. 5.] Oslo, 1941.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+NTS,NTS,"Norsk Tidsskrift for Sprogvidenskap. Oslo. [Unless otherwise stated, the author of the article referred to is G. Morgenstierne.]",No,data/cdial/cdial.csv,Aryaman Arora,No,
+ODBL,ODBL,"Suniti Kumar Chatterji, The Origin and Development of the Bengali Language. Calcutta, 1926.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+PMWS,PMWS,"F. B. J. Kuiper, Proto-Munda Words in Sanskrit. [Verhandeling der Koninklijke Nederlandsche Akademie van Wetenschappen, Afd. Letterkunde, Nieuwe Reeks Deel LI, No. 3.] Amsterdam, 1948.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+POBh,POBh,"G. C. Praharaj, Pūrṇṇachandra Orḍiā Bhāshākosha. Cuttack, 1931-40.",No,cldf/forms.csv (upstream import path unavailable),Aryaman Arora,No,
+PSM,PSM,"Hargovind Das T. Sheth, Pāiasaddamahaṇṇava: a Comprehensive Prakrit Hindi Dictionary. Calcutta, 1923-8.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+PTSD,PTSD,"T. W. Rhys Davids and W. Stede, The Pali Text Society's Pali-English Dictionary. Chipstead, 1925.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+PW,PW,"(or BR) Sanskrit-Wörterbuch, bearbeitet von Otto Böhtlingk und Rudolph Roth. St. Petersburg, 1855-75.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+Panse Jñān,Panse Jñān,"Murlidhar Gajanan Panse, Linguistic Peculiarities of Jñāneśvarī. Poona, 1953.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+PhonPj,PhonPj,"Banarsi Das Jain, A Phonology of Panjabi and a Ludhiani Phonetic Reader. Lahore, 1934.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+Pischel GrPk,Pischel GrPk,"R. Pischel, Grammatik der PrakritSprachen. Strassburg, 1900.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+Platts UD,Platts UD,"John T. Platts, A Dictionary of Urdū, Classical Hindī, and English. 4th imp. London, 1911.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+Pokorny,Pokorny,See IEW.,No,data/cdial/cdial.csv,Aryaman Arora,No,
+Pre-Aryan,Pre-Aryan,"Pre-Aryan and Pre-Dravidian in India. By Sylvain Lévi, Jean Przyluski, and Jules Bloch. Translated from French by Prabodh Chandra Bagchi. Calcutta, 1929.",No,cldf/forms.csv (upstream import path unavailable),Aryaman Arora,No,
+RM,RM,"PHMA: Mitteilungen zur idg. vornemlich indo-iranischen Wortkunde sowie zur holothetischen Sprachtheorie. München, 1955-.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+RTMV2,RTMV2,"C. H. B. Reynolds, Maldivian Vocabulary Supplement. Typescript, 1979.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+Raghu Vira,Raghu Vira,Personally communicated by Dr. Raghu Vira.,No,data/cdial/cdial.csv,Aryaman Arora,No,
+Risley,Risley,"H. H. Risley, The Tribes and Castes of Bengal. Calcutta, 1892.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+RoczOrj,RoczOrj,Rocznik Orjentalistyczny. Kraków.,No,cldf/forms.csv (upstream import path unavailable),Aryaman Arora,No,
+S. K. Chatterji,S. K. Chatterji,Personally communicated by Professor Suniti Kumar Chatterji.,No,data/cdial/cdial.csv,Aryaman Arora,No,
+S. Varma,S. Varma,Personally communicated by Professor Siddheshwar Varma.,No,data/cdial/cdial.csv,Aryaman Arora,No,
+S.M.Katre,S.M.Katre,"S. M. Katre, review of R. L. Turner, A Comparative Dictionary of the Indo-Aryan Languages, BSOAS XXX, 701–704.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+SBAW,SBAW,Sitzungsberichte der Berliner Akademie der Wissenschaften.,No,data/cdial/cdial.csv,Aryaman Arora,No,
+SED,SED,"B. Clough, A Sinhalese-English Dictionary. New and enlarged edition. Colombo, 1892.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+SN,SN,"Saddanīti: La Grammaire palie d’Aggavaṁsa. Texte établi par Helmer Smith. Lund, 1966.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+SSS,SSS,"Sorata Thera, Srisumaṅgala Sabdakosaya. Colombo, 1952.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+Saksena,Saksena,Personally communicated by Professor Baburam Saksena.,No,data/cdial/cdial.csv,Aryaman Arora,No,
+Sampson,Sampson,See DGW.,No,data/cdial/cdial.csv,Aryaman Arora,No,
+Schmidt Nachtr,Schmidt Nachtr,"Nachträge zum Sanskrit-Wörterbuch in kürzerer Fassung von Otto Böhtlingk, bearbeitet von Richard Schmidt. I-VI Hannover 1924-6, VII-VIII Leipzig 1928.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+ShahidullahPresVol,ShahidullahPresVol,"Shahidullah Presentation Volume. Ed. A. S. Dil. Pakistani Linguistics Series VII. Lahore, 1966.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+SigGr,SigGr,"S. Paranavitana, Sigiri Graffiti. Oxford, 1956.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+Stein RājatTrans,Stein RājatTrans,Rājataraṅginī: translated by Aurel Stein.,No,data/cdial/cdial.csv,Aryaman Arora,No,
+SternbachVol,SternbachVol,"Ludwik Sternbach Felicitation Volume. Ed. J. P. Sinha. Lucknow, 1979.",No,cldf/forms.csv (upstream import path unavailable),Aryaman Arora,No,
+StudII,StudII,"Studia Indo-iranica. Ehrengabe für Wilhelm Geiger. Leipzig, 1931.",No,cldf/forms.csv (upstream import path unavailable),Aryaman Arora,No,
+TPS,TPS,Transactions of the Philological Society. London.,No,data/cdial/cdial.csv,Aryaman Arora,No,
+Tau,Tau,Indologia Taurinensia.,No,cldf/forms.csv (upstream import path unavailable),Aryaman Arora,No,
+Tulpule OMR,Tulpule OMR,"S. G. Tulpule, An Old Marathi Reader. Poona, 1960.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+Uhlenbeck,Uhlenbeck,"C. C. Uhlenbeck, Kurzgefasstes Etymologisches Wörterbuch der Altindischen Sprache. Amsterdam, 1899.",No,cldf/forms.csv (upstream import path unavailable),Aryaman Arora,No,
+Varma BhalDial,Varma BhalDial,"Siddheshwar Varma, The Bhalesī Dialect. [Royal Asiatic Society Monograph Series, vol. iv.] Calcutta, 1948.",No,cldf/forms.csv (upstream import path unavailable),Aryaman Arora,No,
+Vīsaḷa,Vīsaḷa,"J. D. Smith, The Vīsaḷadevarāsa: A Restoration of the Text. Cambridge, 1976.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+WP,WP,"A. Walde, Vergleichendes Wörterbuch der Indogermanischen Sprachen: herausgegeben und bearbeitet von J. Pokorny. Berlin and Leipzig, 1927.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+WR,WR,"P. B. F. Wijeratne, MS. of Etymological Index attached to Phonology of the Sinhalese Inscriptions up to the end of the 10th Century A.D. [Thesis for the degree of Ph.D. University of London, 1944.] BSOAS xi 580-94, 823-36, xii 163-83, xiii 166-81, xiv 263-98, xix 479-514.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+Wackernagel AiGr,Wackernagel AiGr,"J. Wackernagel, Altindische Grammatik. Göttingen, 1896-.",No,cldf/forms.csv (upstream import path unavailable),Aryaman Arora,No,
+Whitney SkGr,Whitney SkGr,"William Dwight Whitney, A Sanskrit Grammar. Boston, 1896.",No,cldf/forms.csv (upstream import path unavailable),Aryaman Arora,No,
+Woolner Gloss,Woolner Gloss,"A. C. Woolner, Asoka Text and Glossary. Lahore, 1924.",No,data/cdial/cdial.csv,Aryaman Arora,No,
+ZDMG,ZDMG,Zeitschrift der Deutschen Morgenländischen Gesellschaft.,No,data/cdial/cdial.csv,Aryaman Arora,No,
+ZII,ZII,Zeitschrift für Indologie und Iranistik. Leipzig.,No,cldf/forms.csv (upstream import path unavailable),Aryaman Arora,No,
+berger-auto,berger-auto,Reference abbreviation `berger-auto` cited in the source data; full citation not yet catalogued.,No,data/other/forms/20260726-berger-auto.csv,Aryaman Arora,Yes,
+ŚSB,ŚSB,Śabdasaṁgraha of Bālaśikṣā. Prācīna Gujarātī Gadyasaṁgraha.,No,data/cdial/cdial.csv,Aryaman Arora,No,

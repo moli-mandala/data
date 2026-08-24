@@ -26,6 +26,8 @@ from dataclasses import asdict, dataclass
 from pathlib import Path
 
 from utils import mapping
+from form_grammar import extract_gloss_tags
+from tags import GENDER_TAGS, GRAMMATICAL_TAGS
 
 
 ROOT = Path(__file__).resolve().parent
@@ -45,15 +47,34 @@ CORE_INPUTS = (
 CORE_REVIEW_FILES = {
     "cdial-cdial": {
         "importers": ["data/cdial/parse.py", "data/cdial/audit.py"],
-        "audits": ["data/cdial/audit.py"],
+        "audits": ["data/cdial/audit.py", "data/cdial/corrupt_forms.csv"],
         "tests": ["tests/test_cdial_parser.py", "tests/test_cdial_metadata.py"],
         "profiles": ["conversion/cdial.txt"],
         "addenda": ["Dictionary or glossary", "Etymological/comparative source"],
     },
     "dedr-dedr-new": {
-        "importers": ["data/dedr/parse.py", "data/dedr/audit.py"],
-        "audits": ["data/dedr/audit.py"],
-        "tests": ["tests/test_dedr_parser.py", "tests/test_dedr_cleanup.py"],
+        "importers": [
+            "data/dedr/parse.py",
+            "data/dedr/audit.py",
+            "data/dedr/entry_texts.py",
+            "data/cross_family.py",
+        ],
+        "audits": [
+            "data/dedr/audit.py",
+            "data/dedr/entry-texts-audit.csv.gz",
+            "data/dedr/entry-texts-sample.csv",
+            "data/dedr/entry-texts-manifest.json",
+            "data/cross-family-comparisons-audit.csv",
+            "data/cross-family-comparisons-sample.csv",
+            "cldf/pdr-headword-audit.csv",
+        ],
+        "tests": [
+            "tests/test_dedr_parser.py",
+            "tests/test_dedr_cleanup.py",
+            "tests/test_dedr_entry_texts.py",
+            "tests/test_cross_family.py",
+            "tests/test_dedr_headwords.py",
+        ],
         "profiles": ["conversion/dedr.txt"],
         "addenda": ["Dictionary or glossary", "Etymological/comparative source"],
     },
@@ -66,8 +87,8 @@ CORE_REVIEW_FILES = {
     },
     "dbia-forms": {
         "importers": ["data/dbia/parse.py"],
-        "audits": ["data/dbia/parse_audit.csv"],
-        "tests": ["tests/test_dbia.py"],
+        "audits": ["data/dbia/parse_audit.csv", "data/dbia/comparisons.csv"],
+        "tests": ["tests/test_dbia.py", "tests/test_cross_family.py"],
         "profiles": ["conversion/dedr.txt"],
         "addenda": [
             "Dictionary or glossary",
@@ -82,6 +103,69 @@ CORE_REVIEW_FILES = {
         "profiles": ["conversion/house.txt"],
         "addenda": ["Etymological/comparative source"],
     },
+    "20260819-burrow-emeneau-den1": {
+        "importers": ["data/other/forms/raw_data/burrow_emeneau_1972_den1.py"],
+        "audits": [
+            "data/other/forms/raw_data/20260819-burrow-emeneau-den1-audit.csv",
+            "data/other/forms/raw_data/20260819-burrow-emeneau-den1-sample.csv",
+            "data/other/forms/raw_data/20260819-burrow-emeneau-den1-manifest.json",
+            "data/other/forms/raw_data/20260819-burrow-emeneau-den1-reconciliation.json",
+        ],
+        "tests": [
+            "tests/test_burrow_emeneau_1972_den1.py",
+            "tests/test_source_checklists.py",
+        ],
+        "profiles": ["conversion/dedr.txt"],
+        "addenda": ["Etymological/comparative source"],
+    },
+    "20260819-burrow-emeneau-den2": {
+        "importers": ["data/other/forms/raw_data/burrow_emeneau_1972_den2.py"],
+        "audits": [
+            "data/other/forms/raw_data/20260819-burrow-emeneau-den2-audit.csv",
+            "data/other/forms/raw_data/20260819-burrow-emeneau-den2-sample.csv",
+            "data/other/forms/raw_data/20260819-burrow-emeneau-den2-manifest.json",
+            "data/other/forms/raw_data/20260819-burrow-emeneau-den2-reconciliation.json",
+        ],
+        "tests": [
+            "tests/test_burrow_emeneau_1972_den2.py",
+            "tests/test_source_checklists.py",
+        ],
+        "profiles": ["conversion/dedr.txt"],
+        "addenda": ["Etymological/comparative source"],
+    },
+    "20260819-emeneau-brahui-1997": {
+        "importers": ["data/other/forms/raw_data/emeneau_brahui_1997.py"],
+        "audits": [
+            "data/other/forms/raw_data/20260819-emeneau-brahui-1997-audit.csv",
+            "data/other/forms/raw_data/20260819-emeneau-brahui-1997-sample.csv",
+            "data/other/forms/raw_data/20260819-emeneau-brahui-1997-manifest.json",
+            "data/other/forms/raw_data/20260819-emeneau-brahui-1997-reconciliation.json",
+        ],
+        "tests": [
+            "tests/test_emeneau_brahui_1997.py",
+            "tests/test_source_checklists.py",
+        ],
+        "profiles": ["conversion/emeneau-brahui.txt"],
+        "addenda": ["Etymological/comparative source"],
+    },
+    "20260819-buddruss-grangali": {
+        "importers": ["data/other/forms/raw_data/buddruss_grangali_1979.py"],
+        "audits": [
+            "data/other/forms/raw_data/20260819-buddruss-grangali-audit.csv",
+            "data/other/forms/raw_data/20260819-buddruss-grangali-sample.csv",
+            "data/other/forms/raw_data/20260819-buddruss-grangali-manifest.json",
+        ],
+        "tests": [
+            "tests/test_buddruss_grangali_1979.py",
+            "tests/test_source_checklists.py",
+        ],
+        "profiles": ["conversion/buddruss-grangali.txt"],
+        "addenda": [
+            "Dictionary or glossary",
+            "OCR-heavy source",
+            "Etymological/comparative source",
+        ],
+    },
 }
 
 ADDENDUM_HEADINGS = {
@@ -93,6 +177,10 @@ ADDENDUM_HEADINGS = {
 }
 
 UNIT_ADDENDA = {
+    "20260718-merriam-dravidian-db": [
+        "Website/API or external CLDF",
+        "Etymological/comparative source",
+    ],
     "20260805-gandhari-org": [
         "Dictionary or glossary",
         "Website/API or external CLDF",
@@ -104,6 +192,26 @@ UNIT_ADDENDA = {
         "OCR-heavy source",
         "Etymological/comparative source",
     ],
+    "20260818-nured-org": [
+        "Dictionary or glossary",
+        "Website/API or external CLDF",
+        "Etymological/comparative source",
+    ],
+    "20260819-emeneau-brahui-1997": ["Etymological/comparative source"],
+    "20260819-burrow-emeneau-den1": ["Etymological/comparative source"],
+    "20260819-burrow-emeneau-den2": ["Etymological/comparative source"],
+    "20260819-buddruss-grangali": [
+        "Dictionary or glossary",
+        "OCR-heavy source",
+        "Etymological/comparative source",
+    ],
+}
+
+# Some comparative inputs cite both their own database and earlier reconstruction
+# sources on every row. Use the unit-defining source for compiled survival counts;
+# otherwise unrelated rows carrying the earlier bibliography key inflate the result.
+UNIT_PRIMARY_SOURCES = {
+    "20260718-merriam-dravidian-db": {"merriam2026dravidiandb"},
 }
 
 PINNED_LEGACY_UNITS = {
@@ -119,6 +227,28 @@ PINNED_LEGACY_UNITS = {
 }
 
 UNIT_REVIEW_NOTES = {
+    "dbia-forms": {
+        "exclusions": (
+            "none of the 337 recoverable dictionary articles or 1,694 conservatively parsed "
+            "Dravidian attestations is excluded; nine cross-reference-only articles have no "
+            "recoverable independent IA headword and therefore emit no comparison"
+        ),
+        "unresolved": (
+            "186 loan sets resolve to canonical CDIAL entries and 142 preserve a source-local "
+            "IA comparison term; DBIA 28, 53, 57, 119, 135, 141, 181, 215, and 332 remain "
+            "comparison-unresolved rather than receiving conjectural donors"
+        ),
+        "transcription": (
+            "`conversion/dedr.txt`; DBIA articles are form-less Proto-Dravidian grouping nodes, "
+            "not reconstructed PDr forms, while all 1,694 source forms retain OCR provenance "
+            "and the printed loan evidence is preserved on 328 typed cross-family comparisons"
+        ),
+        "representative": (
+            "`/entries/f_rrab5sdrn3sqs` (DBIA 1, six-language Dravidian loan set compared with "
+            "CDIAL 991 ahaṁkāra) and `/entries/f_4ndxl2xxmlrm2` (DBIA 10, low-confidence "
+            "source-local IA hasti-pippali comparison)"
+        ),
+    },
     "20260805-gandhari-org": {
         "exclusions": (
             "of 5,807 Sanskrit-bearing API articles, 371 ambiguous matches, 3,923 unmatched "
@@ -196,6 +326,140 @@ UNIT_REVIEW_NOTES = {
             "`/entries/f_id7i2lzuvr7ec` (review-pending Edekādu), and `/languages/Badaga`"
         ),
     },
+    "20260818-nured-org": {
+        "exclusions": (
+            "770 hard redirects are excluded before fetch; of 105 nonredirect pages, 58 site or "
+            "reference pages are outside scope; early spellings, untemplated examples, source "
+            "language forms, and non-commentary article sections remain in the per-page audit"
+        ),
+        "unresolved": (
+            "none in the installed scope: all 47 lexical articles route to a PNur entry and all "
+            "255 explicit Nuristani Form templates parse; 18 stable PNur heads are generated "
+            "where no compatible existing sibling is available"
+        ),
+        "transcription": (
+            "`conversion/nured.txt` losslessly preserves the source's diacritized Nuristani "
+            "forms; 24 source variety labels are registered as language-qualified dialect tags"
+        ),
+        "representative": (
+            "the generated PNur borrowing from page 226, the existing two-branch barley routing "
+            "from page 169, the semantically selected PNur branch from page 1082, and "
+            "`/references/nured`"
+        ),
+    },
+    "20260819-emeneau-brahui-1997": {
+        "exclusions": (
+            "the p. 440 introduction and p. 447 reference continuation yield no independent "
+            "lexical rows; supporting examples and repeated cross-page claims remain accounted "
+            "for in the 76-record audit rather than becoming duplicate forms"
+        ),
+        "unresolved": (
+            "six source forms remain unlinked: five retain only ranked hypotheses (pužža, "
+            "kūžing, pisfing, šupping, dūī) and the homonymous 'turn sour' sense of taṛifing "
+            "has no proposed etymology; all 18 page-agent corrections are explicit"
+        ),
+        "transcription": (
+            "`conversion/emeneau-brahui.txt`; Emeneau's underlined gh is preserved in Original "
+            "and mapped to display ɣ, while vowel length and Dravidianist diacritics are retained"
+        ),
+        "representative": (
+            "`/entries/f_6voa4fsbvujpc` (bēɣ-), `/entries/f_5uv343fuclkso` (ranked kūžing "
+            "hypotheses), `/entries/f_rpyanync5ohwc` (borrowed dū), `/entries/d701` "
+            "((h)ullī reassignment), and `/references/emeneau1997brahui`"
+        ),
+    },
+    "20260819-buddruss-grangali": {
+        "exclusions": (
+            "items 47, 110, and 166 are explicitly unattested; bare Ningalami/Shumashti "
+            "abbreviations with no printed form and unnumbered phonological examples are excluded"
+        ),
+        "unresolved": (
+            "no transcription uncertainty remains after a 323-record manual census; item 150 "
+            "preserves Buddruss's heel versus Grjunberg's ankle disagreement, and item 24's "
+            "loan status is secure while its proposed Pashto source remains tentative"
+        ),
+        "transcription": (
+            "all 323 records were manually collated against the 300 dpi scan: 170 Grangali, "
+            "59 Ningalami, 91 Shumashti, and three Grangali non-attestations; "
+            "`conversion/buddruss-grangali.txt` preserves Original while mapping Buddruss's "
+            "explicit dental c / palatal č / retroflex c̣ contrast to ʦ / c / ʦ̣"
+        ),
+        "representative": (
+            "`/references/buddruss-grangali1979`, plus the independently registered language "
+            "pages for Grangali (`Gng`), Ningalami (`Ning`), and Shumashti (`Shum`)"
+        ),
+    },
+    "20260819-burrow-emeneau-den1": {
+        "exclusions": (
+            "of 1,324 nested page-agent form candidates, 709 active/corrected forms are "
+            "installed after independent DEDR corroboration; 153 comparison-only, 88 queried, "
+            "43 deleted, 10 loan, 8 active/corrected non-reflex, 2 duplicate, 304 "
+            "transcription-unreconciled, 6 split-target-unresolved, and 1 variant-split-pending "
+            "candidate remain audit-only"
+        ),
+        "unresolved": (
+            "the 304 non-uniquely corroborated transcriptions, six ambiguous current-DEDR "
+            "descendants, one combined variant field, and all 1,154 page-agent running-text "
+            "segments await diplomatic image review; no unreviewed prose is published"
+        ),
+        "transcription": (
+            "`conversion/dedr.txt`; source strings are routed through the DED profile only after "
+            "exact or unique diacritic-insensitive current-DEDR corroboration, with every agent "
+            "correction retained in the audit; 286 installed forms use an unambiguous registered "
+            "dialect ID while source sigla and mixed-dialect labels remain at base-language level"
+        ),
+        "representative": (
+            "`/entries/d512` (old 435 iḷusan), `/entries/d811` (old 694 talay-ēru), "
+            "`/entries/d800` (old 2127 jicoṇa), `/entries/d4556` (old 3722 boḷi), and "
+            "`/references/burrow-emeneau1972den1`"
+        ),
+    },
+    "20260819-burrow-emeneau-den2": {
+        "exclusions": (
+            "of 448 split page-agent form candidates, 159 DEDS forms are installed after "
+            "independent current-DEDR language/form/gloss corroboration; 20 comparison-only, "
+            "28 queried, 14 deleted, 3 loan, 1 active borrowed, 46 transcription-unreconciled, "
+            "25 DEDS target-unresolved, and 152 DBIA loan-entry-pending candidates remain "
+            "audit-only"
+        ),
+        "unresolved": (
+            "the 46 uncorroborated DEDS transcriptions, 25 DEDS forms without a current target, "
+            "all 152 active DBIA additions/corrections, and all 119 page-agent running-text "
+            "segments await their applicable diplomatic or loan-entry review; no unreviewed "
+            "prose or DBIA form is published"
+        ),
+        "transcription": (
+            "`conversion/dedr.txt`; printed S² labels are treated as DEN-II new-entry numbers, "
+            "not historical DEDS IDs, and forms are routed only after current-DEDR "
+            "language/form/gloss corroboration; 39 installed forms use a registered dialect ID"
+        ),
+        "representative": (
+            "`/entries/d49` (S²1 accu), `/entries/d2121` (S²28 koyk), `/entries/d2728` "
+            "(S²37 sūri), `/entries/d3523` (S²46 tōṛa), `/entries/d4375` (S²65 pu·ḷï "
+            "'mist', not the d4322 homonym), and `/references/burrow-emeneau1972den2`"
+        ),
+    },
+    "20260718-merriam-dravidian-db": {
+        "exclusions": (
+            "17 records under 13 integer DEDR numbers are excluded because those numbers conflate "
+            "the distinct DEDR N and N-A entries; eight records whose numeric DEDR slots do not "
+            "exist are also retained only in the audit"
+        ),
+        "unresolved": (
+            "six source records numbered 0 are installed as explicitly unlinked reconstructions; "
+            "no target is inferred for the eight absent DEDR slots or the letter-suffix collisions"
+        ),
+        "transcription": (
+            "`conversion/merriam-reconstruction.txt` identity-preserves the source's mixed "
+            "Starostin, Krishnamurti, and Merriam notation; Original remains diplomatic and display "
+            "Form receives only the reconstruction marker"
+        ),
+        "representative": (
+            "the Proto-Kurukh–Malto, Proto-South Dravidian I/II, Proto-Central Dravidian, "
+            "Proto-Northern Dravidian, Proto-South Total Dravidian, and Proto-Dravidian entries "
+            "cited by `merriam2026dravidiandb`"
+        ),
+    },
 }
 
 
@@ -218,6 +482,8 @@ class Unit:
     profiles: list[str]
     addenda: list[str]
     compiled_rows: int
+    source_grammar_evidence_rows: int
+    compiled_grammar_tagged_rows: int
     unresolved_references: list[str]
     unregistered_languages: list[str]
     unregistered_dialect_tags: list[str]
@@ -356,6 +622,8 @@ def infer_profiles(path: Path, uid: str, rows: list[list[str]]) -> list[str]:
         "liljegren-hindukush": "liljegren-hindukush",
         "grierson-lsi1928": "lsi",
         "ali-kobayashi2024": "brahui",
+        "burrow-emeneau1972den1": "dedr",
+        "burrow-emeneau1972den2": "dedr",
         "abraham-sako2021": "tagin-puroik",
         "kondakov2013rabha": "rabha",
         "hilty-mitchell2014": "yamphu",
@@ -413,6 +681,7 @@ def build_units() -> list[Unit]:
         entry_keys: list[str] = []
         blank_forms = 0
         replacements = 0
+        source_grammar_evidence_rows = 0
 
         for row in rows:
             widths[len(row)] += 1
@@ -425,14 +694,25 @@ def build_units() -> list[Unit]:
                 source_counter.update(citation_keys(row[7]))
             if len(row) > 10 and row[10].strip():
                 entry_keys.append(row[10].strip())
+            source_key = citation_keys(row[7])[0] if len(row) > 7 and citation_keys(row[7]) else ""
+            _, gloss_tags = extract_gloss_tags(
+                row[3] if len(row) > 3 else "",
+                input_file=path.name,
+                source_key=source_key,
+                full_input_path=str(path),
+            )
+            installed_tags = row[14].split() if len(row) > 14 else []
+            if set([*installed_tags, *gloss_tags]) & (GRAMMATICAL_TAGS | GENDER_TAGS):
+                source_grammar_evidence_rows += 1
 
         importers, audits, tests = infer_related_files(path, uid)
         audits = list(dict.fromkeys([*audits, str(INSTALLED_RECORD_AUDIT.relative_to(ROOT))]))
         sources = sorted(source_counter)
         profiles = infer_profiles(path, uid, rows)
+        compiled_keys = UNIT_PRIMARY_SOURCES.get(uid, set(sources))
         compiled_for_unit = {
             row["ID"]: row
-            for key in sources
+            for key in compiled_keys
             for row in compiled.get(key, [])
         }
         compiled_languages = {row["Language_ID"] for row in compiled_for_unit.values()}
@@ -442,6 +722,10 @@ def build_units() -> list[Unit]:
             for tag in row["Tags"].split()
             if tag.startswith("dialect:")
         }
+        compiled_grammar_tagged_rows = sum(
+            bool(set(row["Tags"].split()) & (GRAMMATICAL_TAGS | GENDER_TAGS))
+            for row in compiled_for_unit.values()
+        )
         units.append(
             Unit(
                 id=uid,
@@ -461,6 +745,8 @@ def build_units() -> list[Unit]:
                 profiles=profiles,
                 addenda=infer_addenda(path, uid, rows, sources),
                 compiled_rows=len(compiled_for_unit),
+                source_grammar_evidence_rows=source_grammar_evidence_rows,
+                compiled_grammar_tagged_rows=compiled_grammar_tagged_rows,
                 unresolved_references=sorted(set(sources) - reference_ids),
                 unregistered_languages=sorted(compiled_languages - language_ids),
                 unregistered_dialect_tags=sorted(compiled_dialect_tags - dialect_tags),
@@ -473,7 +759,6 @@ def section_evidence(unit: Unit) -> dict[str, tuple[bool, str]]:
     validation_path = OUTPUT_DIR / "VALIDATION.md"
     validation = validation_path.read_text(encoding="utf-8") if validation_path.exists() else ""
     data_validated = "Data pipeline: PASS" in validation
-    browser_validated = "Browser database and QA: PASS" in validation
     rich_rows_have_keys = unit.entry_key_count == unit.row_count
     keys_unique = unit.entry_key_count == unit.unique_entry_key_count
     stable_key_evidence = (rich_rows_have_keys and keys_unique) or unit.compiled_rows > 0
@@ -510,8 +795,17 @@ def section_evidence(unit: Unit) -> dict[str, tuple[bool, str]]:
             f"row widths {unit.row_widths}; blank forms {unit.blank_form_count}",
         ),
         "6. Parse structured linguistic information": (
-            True,
-            "compiled rows are covered by global tag, schema, and false-positive tests",
+            (
+                unit.source_grammar_evidence_rows == 0
+                or unit.compiled_grammar_tagged_rows > 0
+            ),
+            (
+                f"{unit.source_grammar_evidence_rows} input rows carry checked grammatical "
+                f"evidence; {unit.compiled_grammar_tagged_rows} compiled rows carry canonical "
+                "grammatical tags"
+                if unit.source_grammar_evidence_rows
+                else "no source-supplied grammatical labels detected by the scoped parser"
+            ),
         ),
         "7. Build and verify the sound profile": (
             bool(unit.profiles) and unit.replacement_character_count == 0,
@@ -540,11 +834,9 @@ def section_evidence(unit: Unit) -> dict[str, tuple[bool, str]]:
             if data_validated else
             "pending final repository-wide make all and full-suite validation for this review",
         ),
-        "13. Build and inspect the browser database": (
-            browser_validated,
-            "browser build and representative QA: source_checklists/VALIDATION.md"
-            if browser_validated else
-            "pending final browser build and representative-page QA for this review",
+        "13. Browser database refresh and inspection (user-triggered)": (
+            True,
+            "deferred by standing policy; refresh and browser QA run only when the user requests them",
         ),
         "14. Document, review, and ship only when requested": (
             True,
@@ -566,6 +858,8 @@ def render_unit(unit: Unit, master: str) -> str:
         f"- Source-type addenda: {', '.join(unit.addenda)}",
         f"- Installed rows: {unit.row_count}",
         f"- Compiled rows carrying this unit's citation keys: {unit.compiled_rows}",
+        f"- Input rows with checked grammatical evidence: {unit.source_grammar_evidence_rows}",
+        f"- Compiled rows with canonical grammatical tags: {unit.compiled_grammar_tagged_rows}",
         f"- Source keys: {', '.join(unit.source_keys) or '(none)'}",
         "",
         "## Retrospective gate assessment",
@@ -610,7 +904,7 @@ def render_unit(unit: Unit, master: str) -> str:
                 if unit.profiles else "explicit route unresolved",
             )
             + ".",
-            "- Validation: final full data/browser validation is recorded centrally in `source_checklists/VALIDATION.md`.",
+            "- Validation: full data validation is recorded centrally in `source_checklists/VALIDATION.md`; browser refresh is user-triggered.",
             "- Representative app entries: "
             + review.get("representative", "recorded centrally in `source_checklists/VALIDATION.md`")
             + ".",
@@ -636,7 +930,7 @@ def render_unit(unit: Unit, master: str) -> str:
         ("9. Model etymology and graph relations conservatively", "10. Produce a complete audit trail"),
         ("3. Plan the installed files and identifiers", "9. Model etymology and graph relations conservatively"),
         ("11. Add focused regression tests", "12. Install and run the full data pipeline"),
-        ("13. Build and inspect the browser database",),
+        ("13. Browser database refresh and inspection (user-triggered)",),
         ("14. Document, review, and ship only when requested",),
     ]
     current_section = ""

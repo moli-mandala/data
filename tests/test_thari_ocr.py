@@ -26,6 +26,8 @@ def test_thari_ocr_cleanup():
     assert module.split_form_pos("g&d(n.ffi)") == ("gad", "noun")
     assert module.split_form_pos("sfebhr&n(tr)") == ("sfebhran", "verb tr")
     assert module.clean_gloss("to hear ,  to listen") == "to hear, to listen"
+    assert module.tags_for_pos("noun feminine") == ["noun", "f"]
+    assert module.tags_for_pos("verb tr") == ["verb", "tr"]
 
 
 def test_unreviewed_thari_ocr_cannot_be_installed(tmp_path):
@@ -68,6 +70,20 @@ def test_reviewed_thari_correction_can_be_installed(tmp_path):
     assert row[2] == "khetrī"
     assert row[3] == "field"
     assert row[10] == entry.key
+    assert row[14] == "noun f"
+
+
+def test_reviewed_thari_rows_recover_printed_pos_from_audit(tmp_path):
+    module = load_module()
+    output = tmp_path / "thari.csv"
+    aligned, tagged = module.enrich_reviewed_tags(
+        ROOT / "data/other/forms/20220913-thari.csv", AUDIT, output
+    )
+    rows = list(csv.reader(output.open(encoding="utf-8")))
+    assert aligned == 258
+    assert tagged == 205
+    assert {len(row) for row in rows} == {15}
+    assert any(row[2] == "ãkh" and row[14] == "noun f" for row in rows)
 
 
 def test_thari_audit_covers_both_pdf_copies():

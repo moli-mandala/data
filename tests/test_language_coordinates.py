@@ -28,4 +28,8 @@ def test_only_geographically_undefined_languages_lack_coordinates():
             row["ID"] for row in csv.DictReader(stream)
             if not row["Latitude"] or not row["Longitude"]
         }
-    assert missing == {"PBr", "TurkicUnspec"}
+    # Reconstructed nodes represent language stages or subgroup ancestors rather
+    # than point locations, so they deliberately have no map coordinates.
+    assert missing == {
+        "PBr", "TurkicUnspec", "PSTDr", "PSD1", "PSD2", "PCDr", "PKMDr", "PNDr",
+    }

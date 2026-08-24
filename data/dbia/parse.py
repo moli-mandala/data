@@ -5,10 +5,12 @@ entries are linear; a small set of entry numbers were placed after their text
 by the PDF extractor.  Exact, unique opening phrases repair those boundaries,
 and ``parse_audit.csv`` records the result of every extraction and match.
 
-Outputs are the ordinary Jambu raw-data tables plus a conservative map from a
-DBIA source ID to a canonical CDIAL entry.  A redirect is emitted only for a
-unique normalized headword match (or a uniquely best gloss-disambiguated
-homonym); everything else remains an independent ``dbiaN`` entry for review.
+Outputs are ordinary Jambu raw-data tables and article-level cross-family loan
+comparisons.  Each DBIA article is represented as a form-less Proto-Dravidian
+grouping entry: DBIA supplies loan sets, not Proto-Dravidian reconstructions.
+When the printed IA comparison can be reconciled with a canonical CDIAL entry,
+the comparison points there.  Otherwise a source-local IA comparison entry is
+preserved rather than pretending that the Dravidian set itself is IA.
 """
 
 from __future__ import annotations
@@ -91,6 +93,16 @@ ENGLISH_STARTERS = {
     "one", "kind", "state", "act", "that", "which", "this", "same",
 }
 
+# Four donor heads are joined directly to the following English gloss in the
+# PDF text layer.  These are mechanical repairs verified from the surrounding
+# source transcription, not linguistic normalizations.
+DONOR_HEAD_REPAIRS = {
+    "samayaopportunity": "samaya",
+    "arthaaim": "artha",
+    "vihārawalking": "vihāra",
+    "piņdārareligious": "piņdāra",
+}
+
 
 def folded(value: str) -> str:
     """Accent/punctuation-insensitive key, including recurring OCR glyphs."""
@@ -171,6 +183,7 @@ def first_form(clause: str) -> str:
     if not match:
         return ""
     form = match.group(1).strip("?.,")
+    form = DONOR_HEAD_REPAIRS.get(form, form)
     if folded(form) in ENGLISH_STARTERS or len(folded(form)) < 1:
         return ""
     return unicodedata.normalize("NFC", form)
@@ -234,6 +247,20 @@ def reconcile(candidates, index):
     return "", candidates[0][1] if candidates else "", "no safe CDIAL match"
 
 
+def comparison_confidence(text: str) -> str:
+    """Represent DBIA's own degree of commitment without strengthening it."""
+    boundary = donor_boundary(text)
+    # Qualifiers such as "Prob. Skt." normally occur immediately before the
+    # donor label, so retain a short left context without scanning unrelated
+    # question marks in the Dravidian citation spans.
+    donor = text[max(0, boundary - 40):]
+    if re.search(r"(?:^|[/[(;]\s*)\?", donor, re.IGNORECASE):
+        return "low"
+    if re.search(r"\b(?:perhaps|prob(?:ably)?\.?|possible|possibly)\b", donor, re.IGNORECASE):
+        return "medium"
+    return "high"
+
+
 def write_outputs():
     raw = (HERE / "dbia.txt").read_text(encoding="utf-8")
     entries = extract_entries(raw)
@@ -242,7 +269,8 @@ def write_outputs():
 
     params = []
     forms = []
-    redirects = []
+    matches = []
+    comparisons = []
     audit = []
     for number, letter, page, text in entries:
         entry_id = f"dbia{number}{letter}"
@@ -251,9 +279,44 @@ def write_outputs():
         source = f"dbia[p. {page}, no. {number}{letter}]" if page else f"dbia[no. {number}{letter}]"
         escaped = html.escape(text)
         etymology = f"<html><body><p>{escaped}</p></body></html>"
-        params.append([entry_id, donor_form or f"DBIA {number}{letter}", "Indo-Aryan", etymology, ""])
+        # This is a grouping node for the attested Dravidian loan reflexes.  A
+        # donor form in this field would incorrectly display an IA item as a
+        # Proto-Dravidian reconstruction, so its headword is intentionally blank.
+        params.append([entry_id, "", "PDr", etymology, ""])
         if cdial_id:
-            redirects.append([entry_id, cdial_id, donor_form, decision])
+            matches.append([entry_id, cdial_id, donor_form, decision])
+
+        compared_entry_id = cdial_id
+        comparison_status = "matched-cdial" if cdial_id else ""
+        if not compared_entry_id and donor_form:
+            compared_entry_id = f"{entry_id}-ia"
+            comparison_status = "source-local-ia"
+            donor_description = html.escape(
+                f"Indo-Aryan comparison term in DBIA {number}{letter}; "
+                "no unique canonical CDIAL match was accepted."
+            )
+            params.append([
+                compared_entry_id,
+                donor_form,
+                "Indo-Aryan",
+                f"<html><body><p>{donor_description}</p></body></html>",
+                "",
+            ])
+
+        confidence = comparison_confidence(text)
+        if compared_entry_id:
+            comparisons.append([
+                f"dbia:{entry_id}:{compared_entry_id}",
+                entry_id,
+                compared_entry_id,
+                "loan",
+                "entry-from-compared",
+                confidence,
+                source,
+                text,
+            ])
+        else:
+            comparison_status = "unresolved-no-ia-headword"
 
         emitted = 0
         for form_index, (language, form, span) in enumerate(borrower_forms(text), 1):
@@ -264,13 +327,15 @@ def write_outputs():
             ])
             emitted += 1
         audit.append([
-            entry_id, number, letter, page, donor_form, cdial_id, decision, emitted,
+            entry_id, number, letter, page, donor_form, cdial_id, compared_entry_id,
+            decision, comparison_status, confidence if compared_entry_id else "", emitted,
             " | ".join(form for _lang, form, _context in candidates),
         ])
 
     for missing in sorted(set(range(1, 338)) - found_numbers):
         audit.append([
-            f"dbia{missing}", missing, "", "", "", "", "OCR entry boundary not recoverable", 0, "",
+            f"dbia{missing}", missing, "", "", "", "", "",
+            "OCR entry boundary not recoverable", "unresolved-boundary", "", 0, "",
         ])
 
     def write(name, header, rows):
@@ -282,15 +347,26 @@ def write_outputs():
 
     write("params.csv", None, params)
     write("forms.csv", None, forms)
-    write("cdial_redirects.csv", ["DBIA_ID", "CDIAL_ID", "Headword", "Reason"], redirects)
+    # Retain the historical filename as a reviewed match table; it no longer
+    # drives graph redirects in unify_cldf.py.
+    write("cdial_redirects.csv", ["DBIA_ID", "CDIAL_ID", "Headword", "Reason"], matches)
+    write("comparisons.csv", [
+        "ID", "Entry_ID", "Compared_Entry_ID", "Relation", "Direction",
+        "Confidence", "Source", "Evidence",
+    ], comparisons)
     write(
         "parse_audit.csv",
-        ["DBIA_ID", "Number", "Letter", "Page", "Donor", "CDIAL_ID", "Decision", "Forms", "Candidates"],
+        [
+            "DBIA_ID", "Number", "Letter", "Page", "Donor", "CDIAL_ID",
+            "Compared_Entry_ID", "Decision", "Comparison_Status", "Confidence",
+            "Forms", "Candidates",
+        ],
         audit,
     )
     print(
         f"wrote {len(params)} entries, {len(forms)} conservative forms, "
-        f"and {len(redirects)} CDIAL redirects; {337 - len(found_numbers)} boundaries need review"
+        f"and {len(comparisons)} loan comparisons ({len(matches)} matched to CDIAL); "
+        f"{337 - len(found_numbers)} boundaries need review"
     )
 
 

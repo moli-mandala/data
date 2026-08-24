@@ -570,6 +570,64 @@ def definition_parts(entry: Entry) -> tuple[str, tuple[str, ...], str, str]:
     )
 
 
+def cross_reference_key(value: str, *, collapse_geminates: bool = False) -> str:
+    """Normalize a printed head only enough to match OCR variants of a cross-reference."""
+    value = unicodedata.normalize("NFD", canonical(value).casefold())
+    value = "".join(character for character in value if not unicodedata.combining(character))
+    value = re.sub(r"[^a-z0-9]+", "", value)
+    if collapse_geminates:
+        value = re.sub(r"([bcdfghjklmnpqrstvwxyz])\1+", r"\1", value)
+    return value
+
+
+def above_reference_forms(entry: Entry, gloss: str) -> list[str]:
+    """Return heads named by the dictionary's ``cf. above`` convention."""
+    source_text = join_lines(definition_lines(entry))
+    if not re.search(r"\bcf\.\s*above\b", source_text, re.I):
+        return []
+    match = re.match(r"above\s*,\s*(.*)", gloss, re.I)
+    if not match:
+        return []
+    value = re.split(r"\b(?:DEDR|DBIA)\b|\(", match.group(1), maxsplit=1)[0]
+    return [canonical(form).strip(" ,;") for form in value.split("/") if form.strip(" ,;")]
+
+
+def preceding_gloss(
+    entry: Entry,
+    forms: Sequence[str],
+    gloss: str,
+    preceding: Sequence[tuple[Entry, Sequence[str], str]],
+) -> tuple[str, str]:
+    """Resolve a printed ``cf. above`` to the nearest named preceding article."""
+    references = above_reference_forms(entry, gloss)
+    if not references:
+        return gloss, ""
+
+    targets = [*references, *forms]
+    for collapse_geminates in (False, True):
+        wanted = {
+            cross_reference_key(value, collapse_geminates=collapse_geminates)
+            for value in targets
+        } - {""}
+        for prior_entry, prior_forms, prior_gloss in reversed(preceding):
+            keys = {
+                cross_reference_key(value, collapse_geminates=collapse_geminates)
+                for value in prior_forms
+            }
+            if wanted & keys:
+                return prior_gloss, prior_entry.key
+
+    # Two articles in the OCR cache have a named cross-reference embedded in a
+    # preceding article that was fused with another head. Preserve the source's
+    # explicit match rather than treating the printed word "above" as a gloss.
+    wanted = [cross_reference_key(value) for value in references]
+    for prior_entry, _prior_forms, prior_gloss in reversed(preceding):
+        raw = cross_reference_key(prior_entry.raw_entry)
+        if any(len(key) >= 5 and key in raw for key in wanted):
+            return prior_gloss, prior_entry.key
+    return gloss, ""
+
+
 def rich_row(
     parameter: str,
     form: str,
@@ -596,9 +654,11 @@ def build_rows(
     corrections = corrections or {}
     rows: list[list[str]] = []
     audit: list[dict[str, str]] = []
+    preceding: list[tuple[Entry, Sequence[str], str]] = []
     for entry in entries:
         forms = split_forms(entry.head)
         gloss, parsed_tags, analysis, notes = definition_parts(entry)
+        gloss, _ = preceding_gloss(entry, forms, gloss, preceding)
         correction = corrections.get(entry.key)
         reviewed = bool(
             correction and correction.status in {"accepted", "corrected"}
@@ -679,6 +739,8 @@ def build_rows(
             "Etymology": source_etymology,
             "OCR_Confidence": f"{entry.confidence:.2f}",
         })
+        if gloss:
+            preceding.append((entry, forms, gloss))
     return rows, audit
 
 

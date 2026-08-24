@@ -1,0 +1,42 @@
+{
+  "source": "The Dravidian Database: Reconstructed Lexicon of the Dravidian Subgroups Linked to the Dravidian Etymological Dictionary",
+  "doi": "10.5281/zenodo.21433491",
+  "version": "1.0 (July 2026)",
+  "license": "CC BY 4.0",
+  "url": "https://zenodo.org/records/21433491/files/pdr_03.csv?download=1",
+  "source_sha256": "c84ae03df331fecb39ba6eaec8f652bd2a41010c55b21e45e7ba08c390061936",
+  "source_records": 6697,
+  "installed_rows": 6672,
+  "audit_statuses": {
+    "ambiguous": 17,
+    "ingested": 6666,
+    "unlinked": 6,
+    "unresolved": 8
+  },
+  "installed_language_ids": {
+    "PCDr": 89,
+    "PDr": 2576,
+    "PKMDr": 184,
+    "PNDr": 11,
+    "PSD1": 1677,
+    "PSD2": 398,
+    "PSTDr": 1737
+  },
+  "installed_upstream_references": {
+    "Krishnamurti, 2003": 887,
+    "Merriam, 2025": 1865,
+    "Starostin, 2006–2013": 3920
+  },
+  "seeded_audit": {
+    "seed": 20260821,
+    "records": 20,
+    "material_errors": 0
+  },
+  "policy": {
+    "display": "source transcription is preserved in Original; make_cldf prefixes display Form with *",
+    "sound_profile": "conversion/merriam-reconstruction.txt identity-preserves the mixed scholarly transcriptions without phonological reinterpretation",
+    "dedr_zero": "installed as an unlinked protoform",
+    "lettered_entries": "excluded because integer IDs conflate DEDR N and N-A",
+    "missing_dedr_targets": "excluded; no target is inferred from form or meaning"
+  }
+}

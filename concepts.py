@@ -10,43 +10,120 @@ import re
 import sys
 
 from pysem import to_concepticon
+from pysem.glosses import parse_gloss
 
 # minimum mapper similarity to accept a Concepticon match (pysem's score; higher = better)
 MIN_SCORE = 3
 
+# Disable pysem's own splitting after we have split only at top-level separators.
+# Its splitter runs before bracket parsing and would otherwise split citations or
+# etymological notes containing commas and semicolons.
+NEVER_SPLIT = r"(?!x)x"
 
-def senses(gloss):
-    """Split a gloss into candidate senses: drop markup and parenthetical citations,
-    then split on ';', ',' and ' or '."""
-    g = re.sub(r"<[^>]+>", "", gloss)
-    g = re.sub(r"\([^)]*\)", " ", g)
-    g = re.sub(r"\[[^\]]*\]", " ", g)
-    parts = re.split(r"[;,]| or ", g)
-    return [p.strip(" .?") for p in parts if p.strip(" .?")]
+
+def _split_top_level(text):
+    """Split enumerated senses without splitting inside brackets."""
+    closers = {"(": ")", "[": "]", "{": "}", "（": "）"}
+    expected = []
+    parts = []
+    start = 0
+    i = 0
+    while i < len(text):
+        char = text[i]
+        if char in closers:
+            expected.append(closers[char])
+        elif expected and char == expected[-1]:
+            expected.pop()
+        elif not expected:
+            separator_length = 0
+            if char in ",;":
+                separator_length = 1
+            elif text[i : i + 4].casefold() == " or ":
+                separator_length = 4
+            if separator_length:
+                part = text[start:i].strip(" .?")
+                if part:
+                    parts.append(part)
+                i += separator_length
+                start = i
+                continue
+        i += 1
+    final = text[start:].strip(" .?")
+    if final:
+        parts.append(final)
+    return parts
+
+
+def sense_candidates(gloss):
+    """Return distinct ``(text, pos)`` candidates for a source gloss.
+
+    The complete gloss is retained so pysem can recognize combined Concepticon
+    labels.  Its parsed constituents are also returned so enumerated senses can
+    each receive a concept.  Unlike the old regular-expression splitter, this
+    preserves bracketed context and lets pysem infer parts of speech from markers
+    such as ``to`` and ``(v.)``.
+    """
+    text = re.sub(r"<[^>]+>", "", gloss).strip(" .?")
+    if not text:
+        return []
+
+    candidates = [(text, "")]
+    for constituent in _split_top_level(text):
+        item = parse_gloss(constituent, language="en", splitter=NEVER_SPLIT)[0]
+        candidates.append((item.gloss.strip(" .?"), item.pos))
+    return list(dict.fromkeys(candidate for candidate in candidates if candidate[0]))
+
+
+def _legacy_senses(gloss):
+    """Return candidates produced by the pre-parse_gloss compatibility path."""
+    text = re.sub(r"<[^>]+>", "", gloss)
+    text = re.sub(r"\([^)]*\)", " ", text)
+    text = re.sub(r"\[[^\]]*\]", " ", text)
+    parts = re.split(r"[;,]| or ", text)
+    return [part.strip(" .?") for part in parts if part.strip(" .?")]
 
 
 def map_glosses(glosses):
     """Return {gloss: [(concepticon_id, label, pos), ...]} for a list of raw gloss strings.
     Distinct senses are mapped in one batch; multiple concepts per gloss are kept."""
-    # collect the distinct senses across all glosses, map them once
-    sense_set = {}
+    # Collect distinct (text, POS) candidates across all glosses.  to_concepticon
+    # keys its output only by text, so batch separately by POS to avoid collisions.
+    candidates_by_gloss = {}
+    candidate_groups = {}
     for g in glosses:
-        for s in senses(g):
-            sense_set.setdefault(s.lower(), s)
-    keys = list(sense_set)
-    hits = to_concepticon([{"gloss": sense_set[k]} for k in keys], language="en")
-    sense_concepts = {}
-    for k in keys:
-        res = hits.get(sense_set[k]) or []
-        sense_concepts[k] = [
-            (cid, label, pos) for (cid, label, pos, score) in res if score >= MIN_SCORE
+        candidates = [
+            (text, pos, NEVER_SPLIT) for text, pos in sense_candidates(g)
         ]
+        # Keep the former mapper as a compatibility channel.  Its default pysem
+        # splitter is significant for some slash-delimited historical glosses.
+        candidates.extend((text, "", None) for text in _legacy_senses(g))
+        candidates = list(dict.fromkeys(candidates))
+        candidates_by_gloss[g] = candidates
+        for text, pos, splitter in candidates:
+            candidate_groups.setdefault((pos, splitter), {}).setdefault(
+                text.casefold(), text
+            )
+
+    sense_concepts = {}
+    for (pos, splitter), texts_by_key in candidate_groups.items():
+        concepts = [{"gloss": text, "pos": pos} for text in texts_by_key.values()]
+        kwargs = {"splitter": splitter} if splitter is not None else {}
+        hits = to_concepticon(concepts, language="en", pos_ref="pos", **kwargs)
+        for key, text in texts_by_key.items():
+            res = hits.get(text) or []
+            sense_concepts[(key, pos, splitter)] = [
+                (cid, label, match_pos)
+                for cid, label, match_pos, score in res
+                if score >= MIN_SCORE
+            ]
+
     out = {}
     for g in glosses:
         seen = {}
-        for s in senses(g):
-            for cid, label, pos in sense_concepts.get(s.lower(), []):
-                seen[cid] = (cid, label, pos)
+        for text, pos, splitter in candidates_by_gloss[g]:
+            key = (text.casefold(), pos, splitter)
+            for cid, label, match_pos in sense_concepts.get(key, []):
+                seen[cid] = (cid, label, match_pos)
         out[g] = list(seen.values())
     return out
 

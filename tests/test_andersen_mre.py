@@ -34,6 +34,13 @@ def test_verified_ocr_repairs_preserve_dictionary_spelling():
     assert andersen.normalize_headword("Saca-") == "śaca-"
 
 
+def test_printed_dictionary_descriptors_become_canonical_tags():
+    assert andersen.tags_for_pos("m") == ["noun", "m"]
+    assert andersen.tags_for_pos("a") == ["adj"]
+    assert andersen.tags_for_pos("pres") == ["verb", "pres"]
+    assert andersen.tags_for_pos("cf") == []
+
+
 def test_minor_edict_findspots_become_dialect_labels():
     raw = "-e (NomSg) 1H [(Ms)], 1N [Br,(Ni),Ud,Ru,Pn,Ga,P1]"
     assert andersen.extract_dialects(raw) == [
@@ -79,5 +86,7 @@ def test_generated_andersen_import_is_complete_and_auditable():
         "dialect:As:as-jatinga-ramesvara:Jatinga-Ramesvara" in row[14].split()
         for row in rows
     )
+    assert any("noun" in row[14].split() for row in rows)
+    assert any("adj" in row[14].split() for row in rows)
     assert any("[p. 134 (printed p. 136)]" in row[7] for row in rows)
     assert any("[p. 177 (printed p. 179)]" in row[7] for row in rows)

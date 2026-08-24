@@ -42,6 +42,12 @@ GRAPH_FILE_COLUMNS = {
     "merges.csv": ("Addendum_ID", "Main_ID"),
     # Optional structured source-prose sidecar consumed by jambu-static's DB builder.
     "entry-texts.csv": ("Form_ID",),
+    # Records which evidence row supplied each DEDR display head. Keep the pointer durable even
+    # when its source form receives an opaque public ID in this pass.
+    "pdr-headword-audit.csv": ("Source_Form_ID",),
+    # Article-level cross-family links normally retain native DEDR/CDIAL IDs, but keeping them in
+    # the generic rewrite map makes the sidecar safe if either endpoint is ever canonicalized.
+    "comparisons.csv": ("Entry_ID", "Compared_Entry_ID"),
     # These are normally regenerated later in the pipeline. Rewriting them too keeps a checkout
     # internally consistent immediately after the one-time ID migration.
     "form_concepts.csv": ("Form_ID",),
@@ -131,7 +137,16 @@ def assign_ids(
 ) -> tuple[dict[str, str], list[dict[str, str]]]:
     source_keys = source_keys or {}
     by_form_id = {row["Form_ID"]: row for row in registry if row.get("Form_ID")}
-    by_legacy = {row["Legacy_ID"]: row for row in registry if row.get("Legacy_ID")}
+    # A retired tombstone can legitimately retain a positional legacy ID that was later reused.
+    # Prefer the active identity regardless of CSV sort order; otherwise a retired row can steal
+    # the lookup and cause curated assignments to appear to reference a missing form.
+    by_legacy: dict[str, dict[str, str]] = {}
+    for row in registry:
+        legacy_id = row.get("Legacy_ID", "")
+        if legacy_id and (
+            legacy_id not in by_legacy or row.get("Status") == "active"
+        ):
+            by_legacy[legacy_id] = row
     by_fp: dict[str, list[dict[str, str]]] = defaultdict(list)
     for row in registry:
         if row.get("Fingerprint"):

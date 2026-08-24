@@ -37,3 +37,15 @@ def test_source_checklist_machine_gates_are_clean_before_full_validation():
         assert unit.profiles, unit.id
         assert unit.audits, unit.id
         assert unit.tests, unit.id
+
+
+def test_grammar_gate_is_evidence_based_and_only_verified_tagless_units_are_empty():
+    units = source_audits.build_units()
+    assert all(
+        unit.source_grammar_evidence_rows == 0
+        or unit.compiled_grammar_tagged_rows > 0
+        for unit in units
+    )
+    assert {
+        unit.id for unit in units if unit.compiled_grammar_tagged_rows == 0
+    } == {"20220913-dhivehi", "20220913-kvari", "20230403-arora"}

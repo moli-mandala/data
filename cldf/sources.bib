@@ -42,6 +42,21 @@
   included  = {Yes}
 }
 
+@book{mayrhofer-kewa,
+  author       = {Mayrhofer, Manfred},
+  title        = {Kurzgefasstes etymologisches Wörterbuch des Altindischen},
+  publisher    = {Carl Winter Universitätsverlag},
+  address      = {Heidelberg},
+  series       = {Indogermanische Bibliothek. Zweite Reihe: Wörterbücher},
+  year         = {1953--1980},
+  url          = {https://samskrtam.ru/sanskrit-lexicon/KEWA/},
+  note         = {Per-article image edition, copyright 2021 version 1.0; the site states that scanning was performed with the author's permission; reuse terms are not stated},
+  included     = {All 9,587 indexed articles are image- and OCR-audited; conservatively matched articles are included as exact linked source-scan blocks on canonical CDIAL entries; OCR is audit-only and is neither displayed nor used for matching},
+  provenance   = {data/other/entry_texts/20260818-kewa.csv; data/other/forms/raw_data/20260818-kewa-audit.csv; data/other/forms/raw_data/20260818-kewa-manifest.json; data/other/forms/raw_data/20260818-kewa-sample.csv; data/other/forms/raw_data/20260818-kewa-checklist.md},
+  jambu_editor = {OpenAI Codex},
+  ocr          = {No}
+}
+
 @book{dedr,
   author    = {Burrow, Thomas and Emeneau, Murray Barnson},
   publisher = {Clarendon Press},
@@ -373,6 +388,23 @@
   included     = {Partial}
 }
 
+@article{buddruss-grangali1979,
+  title        = {Gṛaṅgali. Ein Nachtrag zum Atlas der Dardsprachen},
+  author       = {Buddruss, Georg},
+  journal      = {Münchener Studien zur Sprachwissenschaft},
+  volume       = {38},
+  pages        = {21--39},
+  year         = {1979},
+  address      = {München},
+  issn         = {0077-1910},
+  included     = {Complete: all Grangali answers to Atlas questionnaire items 1--167; items 47, 110, and 166 are explicitly unattested},
+  provenance   = {Stanford Interlibrary Loan request 446721; scan SHA-256 175737c74b49630badf88d62f7dca3b199884365556f8345b7f9aebe56e0525a; all 173 records manually collated against 300 dpi renders on 2026-08-20; reproducible extraction and audit in data/other/forms/raw_data/buddruss_grangali_1979.py},
+  ocr          = {No},
+  etymology_provenance = {source},
+  jambu_editor = {Aryaman Arora and OpenAI},
+  license      = {Copyrighted interlibrary-loan scan not redistributed; extracted linguistic facts used for scholarship and research}
+}
+
 @book{LSI,
   title     = {Linguistic Survey of India},
   author    = {Grierson, George A.},
@@ -427,6 +459,31 @@
   pagetotal  = {575},
   keywords   = {Foreign Language Study / Indic Languages,Language Arts & Disciplines / Linguistics / Historical & Comparative,Social Science / Regional Studies},
   included   = {Partial}
+}
+
+@dataset{merriam2026dravidiandb,
+  author       = {Merriam, Louis L. and Fuls, Andreas},
+  title        = {The Dravidian Database: Reconstructed Lexicon of the Dravidian Subgroups Linked to the Dravidian Etymological Dictionary},
+  year         = {2026},
+  version      = {1.0},
+  date         = {2026-07-18},
+  doi          = {10.5281/zenodo.21433491},
+  url          = {https://doi.org/10.5281/zenodo.21433491},
+  license      = {CC BY 4.0},
+  included     = {Partial: reconstruction table pdr_03.csv; ambiguous collapsed lettered DEDR entries and invalid DEDR targets excluded},
+  provenance   = {data/other/forms/20260718-merriam-dravidian-db.csv; data/other/forms/raw_data/20260718-merriam-dravidian-db-audit.csv.gz; data/other/forms/raw_data/20260718-merriam-dravidian-db-manifest.json; data/other/forms/raw_data/20260718-merriam-dravidian-db-sample.csv},
+  jambu_editor = {Aryaman Arora}
+}
+
+@online{starostin2006dravidian,
+  author       = {Starostin, George},
+  title        = {Dravidian Etymological Database},
+  year         = {2006--2013},
+  organization = {The Tower of Babel},
+  url          = {https://starlingdb.org/cgi-bin/main.cgi?flags=eygtnnl},
+  included     = {Partial: reconstructions redistributed and keyed to DEDR by Merriam 2026},
+  provenance   = {data/other/forms/20260718-merriam-dravidian-db.csv; data/other/forms/raw_data/20260718-merriam-dravidian-db-audit.csv.gz},
+  jambu_editor = {Aryaman Arora}
 }
 
 @book{backstrom1992,
@@ -1604,7 +1661,7 @@
   version      = {Author-hosted revised preprint; PDF SHA-256 14242247d0bec684febbb34b2a44c8530d010497150ebec11800a5a02a236260},
   license      = {Not stated; extracted lexical facts only; source PDF not redistributed},
   included     = {Partial: author-hosted preprint pp. 9--10, Tables 1--2},
-  provenance   = {data/other/forms/20260818-southworth-marathi.csv; data/other/entry_texts/20260818-southworth2005m.csv; data/other/forms/raw_data/20260818-southworth2005m-audit.csv},
+  provenance   = {data/other/forms/20260818-southworth-marathi.csv; data/other/entry_texts/20260818-southworth2005m.csv; data/other/forms/raw_data/20260818-southworth2005m-audit.csv; data/cross-family-comparisons.csv; data/cross-family-comparisons-audit.csv},
   jambu_editor = {OpenAI Codex},
   ocr          = {Yes}
 }
@@ -2360,9 +2417,72 @@
   title        = {The Nuristani Etymological Dictionary (NurED)},
   year         = {2026},
   url          = {https://nured.org/wiki/Main_Page},
-  note         = {Live MediaWiki dictionary; each installed block records its immutable page and revision IDs and revision date},
+  note         = {Live MediaWiki dictionary; every reflex and commentary block records its immutable page and revision IDs and revision date},
   license      = {CC BY-SA 4.0},
-  included     = {All current nonredirect Proto-Nuristani and Middle Indo-Aryan loanword articles; the initial 2026-08-18 snapshot contains 47 articles, with 45 attached to 46 corresponding CDIAL or PNur heads and two reviewed unmatched articles retained in the audit},
-  provenance   = {data/other/entry_texts/20260818-nured-org.csv; data/other/forms/raw_data/20260818-nured-org-audit.csv; data/other/forms/raw_data/20260818-nured-org-manifest.json; data/other/forms/raw_data/20260818-nured-org-targets.csv},
+  included     = {All 47 current nonredirect Proto-Nuristani and Middle Indo-Aryan loanword articles: 263 explicit Nuristani Form-template reflex rows beneath corresponding PNur entries and 50 PNur commentary blocks; 18 stable PNur entries are generated where no compatible sibling exists, including 16 reconstructed borrowing heads attached to CDIAL},
+  provenance   = {data/other/forms/20260818-nured-org.csv; data/other/params/nured.csv; data/other/entry_texts/20260818-nured-org.csv; data/nuristani_borrowings.csv; data/other/forms/raw_data/20260818-nured-org-audit.csv; data/other/forms/raw_data/20260818-nured-org-manifest.json; data/other/forms/raw_data/20260818-nured-org-targets.csv; data/other/forms/raw_data/20260818-nured-org-sample.csv; conversion/nured.txt},
+  jambu_editor = {OpenAI Codex}
+}
+
+@article{emeneau1997brahui,
+  author       = {Emeneau, Murray B.},
+  title        = {Brahui Etymologies and Phonetic Developments: New Items},
+  year         = {1997},
+  journal      = {Bulletin of the School of Oriental and African Studies},
+  volume       = {60},
+  number       = {3},
+  pages        = {440--447},
+  doi          = {10.1017/S0041977X00032481},
+  url          = {https://www.jstor.org/stable/619537},
+  note         = {Copyright SOAS 1997; the publisher PDF is not redistributed},
+  included     = {All lexical, etymological, dictionary-correction, and phonological claims on pp. 440--447; reference list excluded as non-lexical},
+  provenance   = {data/other/forms/20260819-emeneau-brahui-1997.csv; data/other/entry_texts/20260819-emeneau-brahui-1997.csv; data/other/forms/raw_data/20260819-emeneau-brahui-1997-audit.csv; data/other/forms/raw_data/20260819-emeneau-brahui-1997-manifest.json; data/other/forms/raw_data/20260819-emeneau-brahui-1997-reconciliation.json; conversion/emeneau-brahui.txt},
+  jambu_editor = {OpenAI Codex}
+}
+
+@article{burrow-emeneau1972den1,
+  author       = {Burrow, Thomas and Emeneau, Murray B.},
+  title        = {Dravidian Etymological Notes: Supplement to DED, DEDS, and DBIA, Pt. I},
+  year         = {1972},
+  journal      = {Journal of the American Oriental Society},
+  volume       = {92},
+  number       = {3},
+  pages        = {397--418},
+  doi          = {10.2307/600566},
+  url          = {https://www.jstor.org/stable/600566},
+  note         = {The publisher PDF is not redistributed},
+  included     = {Every numbered additions-and-corrections segment on pp. 399--418; pp. 397--399 preliminaries and bibliography retained only as extraction context},
+  provenance   = {data/other/forms/20260819-burrow-emeneau-den1.csv; data/other/entry_texts/20260819-burrow-emeneau-den1.csv; data/other/forms/raw_data/burrow_emeneau_1972_den1_agent; data/other/forms/raw_data/20260819-burrow-emeneau-den1-audit.csv; data/other/forms/raw_data/20260819-burrow-emeneau-den1-manifest.json; data/other/forms/raw_data/20260819-burrow-emeneau-den1-reconciliation.json; conversion/dedr.txt},
+  jambu_editor = {OpenAI Codex}
+}
+
+@article{burrow-emeneau1972den2,
+  author       = {Burrow, Thomas and Emeneau, Murray B.},
+  title        = {Dravidian Etymological Notes: Supplement to DED, DEDS, and DBIA, Pt. II},
+  year         = {1972},
+  journal      = {Journal of the American Oriental Society},
+  volume       = {92},
+  number       = {4},
+  pages        = {475--491},
+  doi          = {10.2307/599958},
+  url          = {https://www.jstor.org/stable/599958},
+  note         = {The publisher PDF is not redistributed},
+  included     = {Every numbered DEDS and DBIA addition or correction on pp. 475--479; indexes on pp. 480--491 retained only as extraction context},
+  provenance   = {data/other/forms/20260819-burrow-emeneau-den2.csv; data/other/entry_texts/20260819-burrow-emeneau-den2.csv; data/other/forms/raw_data/burrow_emeneau_1972_den2_agent; data/other/forms/raw_data/20260819-burrow-emeneau-den2-audit.csv; data/other/forms/raw_data/20260819-burrow-emeneau-den2-manifest.json; data/other/forms/raw_data/20260819-burrow-emeneau-den2-reconciliation.json; conversion/dedr.txt},
+  jambu_editor = {OpenAI Codex}
+}
+
+@book{torwali2023student,
+  author       = {Torwali, Zubair},
+  title        = {Torwali English Dictionary for Students with Pictures},
+  year         = {2023},
+  publisher    = {Idara Baraye Taleem-o-Taraqi},
+  address      = {Bahrain, Swat},
+  isbn         = {978-969-9665-01-1},
+  url          = {https://commons.wikimedia.org/wiki/File:Torwali_Dictionary_PDF.pdf},
+  license      = {CC BY 4.0},
+  note         = {Author-uploaded PDF snapshot; SHA-256 da338088c2674f0eccdb426fbcac210ebd9d258b2cfa7f2870171b228f42e33f. The corresponding Webonary edition at https://www.webonary.org/torwali/en/ reported 2,271 entries and a 2023-08-21 upload; it was used for representative validation, not bulk extraction. The PDF typography yields 2,269 headword records.},
+  included     = {Every headword record on PDF pp. 14--230 with an explicit source IPA pronunciation: 1,943 installed forms, comprising 1,922 unmarked Sinkaen/Bahrain forms and 21 forms explicitly marked Chail; 326 pronunciation-less records retained in the audit only},
+  provenance   = {data/other/forms/20260820-torwali-student-2023.csv; data/other/forms/raw_data/torwali_student_2023.py; data/other/forms/raw_data/20260820-torwali-student-2023-audit.csv; data/other/forms/raw_data/20260820-torwali-student-2023-sample.csv; data/other/forms/raw_data/20260820-torwali-student-2023-manifest.json; conversion/torwali-student.txt},
   jambu_editor = {OpenAI Codex}
 }

@@ -73,12 +73,15 @@ guards with `is_html = header.lstrip().startswith("<")`, but don't rely on that;
 - **One row per node** in `cldf/forms.csv` (content only: no graph columns). Parentless nodes
   carry `Status` — `entry` (curated etymon) or `unlinked` (unetymologised import); attested
   rows have an empty Status. `Redirect` (addendum → main) stays on forms.csv.
-- **All relations live in `cldf/edges.csv`**: `(Child_ID, Parent_ID, Kind, Rank, Pos, Source,
+- **All ancestry/derivation relations live in `cldf/edges.csv`**: `(Child_ID, Parent_ID, Kind, Rank, Pos, Source,
   Note)` with Kind ∈ {reflex, borrowed, variant, component, derived}. Rank 1 = the accepted
   etymology (≤1 per node across reflex/borrowed/variant); Rank ≥2 = alternate hypotheses
   (`Note` carries `review:*` markers for auto-classified ones). `Pos` orders compound members
   on `component` edges. A variant's rank-1 edge points at its **true target** (parent or
   sibling); the etymon is reached transitively — there is no separate Variant_Of pointer.
+- Source-attributed article comparisons that do not assert an accepted ancestry relation live in
+  `cldf/comparisons.csv`, never `edges.csv` or ordinary reflex rows. Their direction and confidence
+  describe the printed claim and may remain explicitly undetermined/low.
 - `unify_cldf.py` still synthesizes the legacy columns internally; `edges_build.py` is the
   serialization boundary (classification rules + invariants live there, cross-checked by
   `tests/test_edges.py` via `unify_cldf.py --legacy-cols`). Read edges with `edges_util.py`

@@ -116,3 +116,19 @@ def source_field(notes):
         for source, locator in extract_references(notes)
     ]
     return ";".join(["CDIAL", *citations])
+
+
+def entry_source_field(description):
+    """Build citations for a CDIAL headword entry's own description.
+
+    Keep every recognized work in the article's etymological discussion, including its printed
+    locator, while retaining CDIAL as the primary provenance. Return an empty field when the
+    discussion has no auxiliary reference so the ordinary self-reflex fallback stays unchanged.
+    """
+    citations = extract_references(description)
+    if not citations:
+        return ""
+    return ";".join([
+        "CDIAL",
+        *(f"{source}[{locator}]" if locator else source for source, locator in citations),
+    ])

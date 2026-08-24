@@ -1,0 +1,82 @@
+{
+  "source_id": "torwali2023student",
+  "snapshot_date": "2026-08-20",
+  "canonical_title": "Torwali English Dictionary for Students with pictures",
+  "compiler": "Zubair Torwali",
+  "edition_year": 2023,
+  "isbn": "978-969-9665-01-1",
+  "license": "CC BY 4.0",
+  "license_evidence": "Wikimedia Commons file page; author uploaded own work",
+  "dialect_evidence": [
+    {
+      "pdf_page": 8,
+      "printed_page": 7,
+      "description": "English abbreviations define black [چ] as Chail dialect and name the other dialect Sinkaen or Bahrain."
+    },
+    {
+      "pdf_page": 11,
+      "printed_page": 10,
+      "description": "Urdu usage notes explain that [چ] marks the Chail realization in dialect-variant entries."
+    }
+  ],
+  "webonary": {
+    "url": "https://www.webonary.org/torwali/en/",
+    "reported_entries": 2271,
+    "last_upload": "2023-08-21",
+    "role": "live-edition validation only; not bulk-crawled"
+  },
+  "pdf": {
+    "url": "https://commons.wikimedia.org/wiki/File:Torwali_Dictionary_PDF.pdf",
+    "local_input": "../tmp/pdfs/torwali/Torwali_Dictionary_PDF.pdf",
+    "sha256": "da338088c2674f0eccdb426fbcac210ebd9d258b2cfa7f2870171b228f42e33f",
+    "pages": 232,
+    "entry_pdf_pages": [
+      14,
+      230
+    ],
+    "redistributed": false
+  },
+  "extraction": {
+    "method": "deterministic PDF glyph font/color/coordinate extraction; no OCR",
+    "raw_headword_records": 2269,
+    "status_counts": {
+      "installed": 1943,
+      "excluded_no_ipa": 326
+    },
+    "relation_counts": {
+      "none": 1966,
+      "free-variant": 109,
+      "spelling-variant": 123,
+      "variant": 4,
+      "dialect-variant": 26,
+      "inflection-of": 23,
+      "plural-of": 18
+    },
+    "unrecognized_pos_counts": {},
+    "unresolved_relation_targets": 105,
+    "dialect_counts": {
+      "Sinkaen/Bahrain": 2225,
+      "Chail": 44
+    },
+    "installed_dialect_counts": {
+      "Sinkaen/Bahrain": 1922,
+      "Chail": 21
+    },
+    "seeded_sample_size": 20,
+    "seed": 20260820,
+    "seeded_sample_material_errors": 0,
+    "seeded_sample_review_scope": "IPA, gloss, POS, dialect marker, and inclusion status against rendered PDF pages; ToUnicode headword candidates are noncanonical"
+  },
+  "outputs": {
+    "installed_forms": 1943,
+    "forms": "data/other/forms/20260820-torwali-student-2023.csv",
+    "audit": "data/other/forms/raw_data/20260820-torwali-student-2023-audit.csv",
+    "sample": "data/other/forms/raw_data/20260820-torwali-student-2023-sample.csv"
+  },
+  "scope": {
+    "included": "IPA, POS, English definition, source-explicit Chail versus default Sinkaen/Bahrain dialect assignment, and explicit source relations on PDF pp. 14-230 (printed pp. 13-229); PDF ToUnicode headword candidates retained in the audit as locators",
+    "excluded": "Canonical Native values because the PDF ToUnicode map demonstrably corrupts some rendered Torwali headwords; front matter; illustrations; example sentences and scientific names from installed form fields (preserved in audit); source entries without IPA",
+    "etymology_policy": "No etymological links inferred; the dictionary makes lexical and variant/inflection claims only",
+    "dialect_policy": "The dictionary states that Torwali has Chail and Sinkaen/Bahrain dialects. Black [چ] marks Chail; unmarked records are assigned to the default Sinkaen/Bahrain variety. Source-specific dialect tags are deliberately distinct from SSNP survey tags."
+  }
+}

@@ -1,4 +1,4 @@
-"""Build and apply conservative Proto-Burushaski comparative sets.
+"""Build and apply conservative, form-less Proto-Burushaski comparative sets.
 
 The important distinction in this module is between a shared *meaning* and a
 shared lexeme.  A concept prompt is never sufficient on its own.  We accept
@@ -8,8 +8,9 @@ belongs in a review file, not in the etymology graph.
 
 The checked-in ``data/burushaski_cognates.csv`` is the auditable boundary.
 Its members are immutable source keys rather than generated Jambu form IDs.
-During ``unify_cldf.py`` each accepted set becomes a Proto-Burushaski entry
-and each cited source form becomes a reflex of it.
+During ``unify_cldf.py`` each accepted set becomes a Proto-Burushaski grouping
+entry and each cited source form becomes a reflex of it. The grouping entry has
+no reconstructed form: Jambu does not reconstruct Proto-Burushaski.
 """
 
 from __future__ import annotations
@@ -111,12 +112,12 @@ def discover_berger_sets(rows: Sequence[SourceForm]) -> list[dict[str, str]]:
             continue
         out.append({
             "Set_ID": _safe_set_id("berger", parent.key),
-            "Proto_Form": "*" + parent.form.lstrip("*"),
+            "Proto_Form": "",
             "Gloss": parent.gloss,
             "Evidence_Keys": "|".join(keys),
             "Method": "source-explicit-dialect-correspondence",
             "Status": "accepted",
-            "Notes": "Provisional starred Hunza citation form; Berger explicitly supplies the Yasin correspondence.",
+            "Notes": "Form intentionally blank; Berger explicitly supplies the Hunza/Yasin correspondence.",
         })
     return out
 
@@ -154,12 +155,12 @@ def discover_hkat_sets(rows: Sequence[SourceForm], threshold: float = 0.72) -> l
             seen.update(x.key for x in members)
             out.append({
                 "Set_ID": _safe_set_id("hkat", concept + "-" + h.key.rsplit("-", 1)[-1]),
-                "Proto_Form": "*" + h.form.lstrip("*"),
+                "Proto_Form": "",
                 "Gloss": h.gloss,
                 "Evidence_Keys": "|".join(x.key for x in members),
                 "Method": f"same-concept-form-similarity>={threshold:.2f}",
                 "Status": "accepted",
-                "Notes": "Provisional starred Hunza citation form; semantic identity plus phonological similarity required.",
+                "Notes": "Form intentionally blank; semantic identity plus phonological similarity establishes only set membership.",
             })
     return out
 
@@ -266,6 +267,10 @@ def apply_catalog(
     proto_source_keys: list[tuple[str, str]] = []
     for item in catalog:
         set_id = item["Set_ID"]
+        if item.get("Proto_Form"):
+            raise ValueError(
+                f"Proto-Burushaski {set_id}: Proto_Form must be blank; no reconstruction is proposed"
+            )
         proto_id = "pbsk-" + set_id
         keys = [key for key in item["Evidence_Keys"].split("|") if key]
         evidence_ids = [source_id_by_key.get(key, "") for key in keys]
@@ -287,8 +292,8 @@ def apply_catalog(
 
         note = item["Notes"]
         proto = [
-            proto_id, "PBr", item["Proto_Form"], item["Gloss"], "", "", item["Proto_Form"],
-            "", "", "uncertain", "Jambu comparative reconstruction", "", note,
+            proto_id, "PBr", "", item["Gloss"], "", "", "",
+            "", "", "uncertain", "", "", note,
             "", "", "", "",
         ]
         proto_rows.append(proto)

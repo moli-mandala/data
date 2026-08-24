@@ -1,0 +1,57 @@
+{
+  "acquisition": "Stanford Interlibrary Loan request 446721, delivered as a web scan",
+  "article_printed_pages": [
+    21,
+    39
+  ],
+  "bibliography": "Buddruss, Georg. 1979. Gṛaṅgali. Ein Nachtrag zum Atlas der Dardsprachen. Münchener Studien zur Sprachwissenschaft 38:21–39.",
+  "extraction": {
+    "atlas_number_coverage": [
+      1,
+      167
+    ],
+    "checked_in_layer": "the RAW table in data/other/forms/raw_data/buddruss_grangali_1979.py",
+    "comparison_lect_counts": {
+      "Ningalami": 59,
+      "Shumashti": 91
+    },
+    "comparison_record_count": 150,
+    "forms_corrected_after_census": 104,
+    "manual_census_count": 323,
+    "method": "full record-by-record manual collation against 300 dpi page renders; two Tesseract passes were used only for page navigation and comparison",
+    "ocr_reproducibility": [
+      "tesseract -l deu+eng --psm 4",
+      "tesseract -l deu+eng --psm 6"
+    ],
+    "raw_record_count": 173,
+    "transcription_uncertainties_remaining": 0
+  },
+  "lexical_printed_pages": [
+    24,
+    35
+  ],
+  "outputs": {
+    "audit": "data/other/forms/raw_data/20260819-buddruss-grangali-audit.csv",
+    "audit_count": 323,
+    "form_count": 320,
+    "forms": "data/other/forms/20260819-buddruss-grangali.csv",
+    "sample": "data/other/forms/raw_data/20260819-buddruss-grangali-sample.csv",
+    "sample_count": 25
+  },
+  "pdf_pages": 23,
+  "pdf_redistributed": false,
+  "pdf_sha256": "175737c74b49630badf88d62f7dca3b199884365556f8345b7f9aebe56e0525a",
+  "rights": "ILL scan supplied for private study, scholarship, or research; the scan is not checked in.",
+  "scope": {
+    "cdial_policy": "only direct source assignments are linked; comparisons attached to secondary forms or hedged parallels remain prose",
+    "excluded": "three explicit Grangali non-attestations (47, 110, 166); bare lect abbreviations with no printed form; unnumbered phonological examples outside the lexical section",
+    "included": "all main Grangali answers to Atlas questionnaire numbers 1–167, plus every Ningalami and Shumashti form printed in the numbered lexical section, including accurately glossed commentary examples",
+    "language_model": "Grangali (Gng) and Ningalami (Ning) are independent Jambu languages. Both retain Glottolog's umbrella gran1245 because Glottolog does not provide separate codes; Shumashti remains Shum/shum1235."
+  },
+  "snapshot_date": "2026-08-19",
+  "source_id": "buddruss-grangali1979",
+  "unresolved": [
+    "item 150 has a source-level semantic disagreement: Buddruss glosses the Grangali form as heel, while Grjunberg glosses the comparison as ankle; the transcription itself is resolved",
+    "item 24 is certainly called a loan by Buddruss, but his proposed Pashto source is tentative"
+  ]
+}

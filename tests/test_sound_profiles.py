@@ -1,5 +1,7 @@
 import csv
 import glob
+import importlib.util
+import io
 import os
 import sys
 import unicodedata
@@ -11,6 +13,14 @@ DATA_DIR = Path(__file__).parents[1]
 sys.path.insert(0, str(DATA_DIR))
 
 from utils import mapping
+import make_cldf
+
+
+STRAND_SCRIPT = DATA_DIR / "data/other/forms/raw_data/strand.py"
+STRAND_SPEC = importlib.util.spec_from_file_location("strand_profile_source", STRAND_SCRIPT)
+assert STRAND_SPEC and STRAND_SPEC.loader
+strand_source = importlib.util.module_from_spec(STRAND_SPEC)
+STRAND_SPEC.loader.exec_module(strand_source)
 
 
 # These imports already supply a canonical CLTS/IPA column alongside the source
@@ -43,6 +53,7 @@ CHECKED_PROFILE_FILES = {
     "dotyali": ["20260813-dotyali.csv"],
     "kudiya": ["20260813-kudiya.csv"],
     "brahui": ["20260813-ali-kobayashi-brahui.csv"],
+    "emeneau-brahui": ["20260819-emeneau-brahui-1997.csv"],
     "southworth-marathi": ["20260818-southworth-marathi.csv"],
     "hajong-survey": ["20260813-hajong.csv"],
     "santali-cluster": ["20260813-santali-cluster.csv"],
@@ -59,6 +70,9 @@ CHECKED_PROFILE_FILES = {
         "20260817-nihali-database-konow.csv",
     ],
     "badaga-hockings": ["20260818-hockings-badaga.csv"],
+    "nured": ["20260818-nured-org.csv"],
+    "buddruss-grangali": ["20260819-buddruss-grangali.csv"],
+    "merriam-reconstruction": ["20260718-merriam-dravidian-db.csv"],
 }
 
 
@@ -106,6 +120,8 @@ def test_preservation_profile_repairs_only_known_legacy_notation():
 
 
 def test_new_source_profiles_cover_source_specific_transcription():
+    assert convert("merriam-reconstruction", "kaṭ-/kaḍ-") == "kaṭ-/kaḍ-"
+    assert convert("merriam-reconstruction", "agáḍ-") == "agáḍ-"
     assert convert("ghatage", "tã:ŋkɨ") == "tā̃ŋkɨ"
     assert convert("ghatage", "pɛ:ṇṭɛ") == "pɛ̄ṇṭɛ"
     assert convert("ghatage", "goṭṭe") == "goṭṭe"
@@ -117,6 +133,9 @@ def test_new_source_profiles_cover_source_specific_transcription():
     assert convert("southworth-marathi", "bāḷant(iṇ)") == "bāḷant(īṇ)"
     assert convert("southworth-marathi", "ḍokə") == "ḍokə̄"
     assert convert("southworth-marathi", "buṭṭ@") == "buṭṭ@"
+    assert convert("emeneau-brahui", "bēg̲h̲-") == "bēɣ-"
+    assert convert("emeneau-brahui", "hōg̲h̲-") == "hōɣ-"
+    assert convert("emeneau-brahui", "taṛifing") == "taṛifing"
     assert convert("ghatage", "tilače te:lɨ") == "tilace tēlɨ"
     assert convert("vaagri", "iga:ri") == "igāri"
     assert convert("vaagri", "iJalbiJal") == "iẓalbiẓal"
@@ -178,6 +197,21 @@ def test_new_source_profiles_cover_source_specific_transcription():
     assert convert("brahui", "ḍʰāḍarī") == "ḍʰāḍarī"
     assert convert("badaga-hockings", "Eḍeka:ḍu") == "Eḍekāḍu"
     assert convert("badaga-hockings", "ka:ḷu") == "kāḷu"
+    assert convert("nured", "ačẽ́") == "ačẽ́"
+    assert convert("nured", "puṇḍrë́/-í") == "puṇḍrë́/-í"
+    assert convert("buddruss-grangali", "cōr") == "ʦōr"
+    assert convert("buddruss-grangali", "čar") == "car"
+    assert convert("buddruss-grangali", "ãc̣") == "ãʦ̣"
+    assert convert("buddruss-grangali", "kaširə") == "kaśirə"
+    assert convert("buddruss-grangali", "goā́t") == "goā́t"
+    assert convert("buddruss-grangali", "naṅacə́") == "naŋaʦə́"
+    assert convert("buddruss-grangali", "brəṣpā̃re") == "brəṣpā̃re"
+    assert convert("magar-2024", "sṳm") == "sṳm"
+    assert convert("pyangaun-newar", "ṳ") == "ṳ"
+    assert convert("tagin-puroik", "ʃĕandəkhau") == "śeandəkʰau"
+    assert convert("rajasthani", "ʂɐgɭaji") == "ṣagḷāyī"
+    assert convert("markodi", "nakʰːam") == "nakkʰam"
+    assert convert("strand", "uː") == "ū"
 
 
 def test_new_profiles_cover_every_installed_source_form():
@@ -195,6 +229,138 @@ def test_new_profiles_cover_every_installed_source_form():
                         source,
                         result,
                     )
+
+
+def test_every_build_routed_form_converts_without_replacement(monkeypatch):
+    """Exercise the exact routing and preprocessing used by the complete CLDF build."""
+    monkeypatch.setattr(make_cldf, "tqdm", lambda iterable, **_kwargs: iterable)
+    files = [
+        DATA_DIR / "data/cdial/cdial.csv",
+        DATA_DIR / "data/munda/forms.csv",
+        DATA_DIR / "data/dedr/dedr_new.csv",
+        DATA_DIR / "data/dedr/pdr.csv",
+        *sorted((DATA_DIR / "data/other/forms").glob("*.csv")),
+        DATA_DIR / "data/dbia/forms.csv",
+    ]
+    param_counter = {}
+    converted = 0
+    for file_number, path in enumerate(files):
+        errors = io.StringIO()
+        _, stats = make_cldf.parse_file(
+            str(path.relative_to(DATA_DIR)),
+            errors,
+            file_num=file_number,
+            param_counter=param_counter,
+        )
+        assert not errors.getvalue(), (path.name, errors.getvalue().splitlines()[:10])
+        converted += stats["for_conversion"]
+
+    # Guard against a path-selection mistake turning this into a vacuous test.
+    assert converted > 500_000
+
+
+def test_every_build_routed_parameter_converts_without_replacement():
+    checked = 0
+    with Path("data/cdial/params.csv").open(encoding="utf-8", newline="") as stream:
+        for row in csv.reader(stream):
+            headword = (
+                row[1]
+                .replace("ˊ", "́")
+                .replace("`", "̀")
+                .replace(" --", "-")
+                .replace("-- ", "-")
+                .strip(".,;-: ")
+                .replace("<? >", "")
+                .lower()
+                .replace("˜", "̃")
+                .split(",", 1)[0]
+                .strip()
+            )
+            if " " in headword or "˚" in headword:
+                continue
+            result = make_cldf.convertors["cdial"](
+                headword.strip("-123456,;"), column="IPA"
+            )
+            assert "�" not in result, ("cdial", row[0], headword, result)
+            checked += 1
+
+    aliases = {"extensions_ia": "cdial", "strand3": "strand"}
+    for path in sorted(Path("data/other/params").glob("*.csv")):
+        raw_name = path.stem
+        convertible = raw_name in make_cldf.convertors or raw_name in aliases
+        profile = aliases.get(raw_name, raw_name)
+        if not convertible:
+            continue
+        with path.open(encoding="utf-8", newline="") as stream:
+            for row in csv.reader(stream):
+                value = row[2]
+                if profile == "strand":
+                    if row[1] in {"PNur", "PA"}:
+                        value = "*" + value
+                    value = value.replace("′", "ʹ").replace("-", "")
+                result = make_cldf.convertors[profile](
+                    value.strip("-123456,;"), column="IPA"
+                )
+                assert "�" not in result, (path.name, row[0], value, result)
+                checked += 1
+
+    assert checked > 17_000
+
+
+def test_strand_phonemic_profile_covers_every_legacy_form():
+    tokenizer = Tokenizer("data/other/forms/ipa/strand.txt")
+    for filename in ("20220913-strand.csv", "20220913-strand2.csv"):
+        path = Path("data/other/forms") / filename
+        with path.open(encoding="utf-8", newline="") as stream:
+            for row_number, row in enumerate(csv.reader(stream), 1):
+                source = strand_source.normalize_legacy_stress(row[2])
+                result = tokenizer(source, column="IPA")
+                assert "�" not in result, (filename, row_number, source, result)
+                assert "�" not in row[5], (filename, row_number, row[5])
+
+
+def test_sound_profiles_have_unique_graphemes():
+    for path in sorted(Path("conversion").glob("*.txt")):
+        with path.open(encoding="utf-8", newline="") as stream:
+            rows = list(csv.reader(stream, delimiter="\t"))
+        graphemes = [row[0] for row in rows[1:] if row]
+        assert len(graphemes) == len(set(graphemes)), path.name
+
+
+def test_installed_form_inputs_have_no_replacement_characters():
+    paths = [
+        Path("data/cdial/cdial.csv"),
+        Path("data/munda/forms.csv"),
+        Path("data/dedr/dedr_new.csv"),
+        Path("data/dedr/pdr.csv"),
+        *sorted(Path("data/other/forms").glob("*.csv")),
+        Path("data/dbia/forms.csv"),
+    ]
+    for path in paths:
+        with path.open(encoding="utf-8", newline="") as stream:
+            for row_number, row in enumerate(csv.reader(stream), 1):
+                assert all("�" not in value for value in row), (path.name, row_number, row)
+
+
+def test_legacy_survey_placeholders_and_ocr_intrusions_are_not_forms():
+    with Path("data/other/forms/20230521-rajasthani.csv").open(
+        encoding="utf-8", newline=""
+    ) as stream:
+        rajasthani = list(csv.reader(stream))
+    assert all(row[2].casefold() != "no entry" for row in rajasthani)
+    assert all(not (row[2].startswith("(") and row[2].endswith(")")) for row in rajasthani)
+    small_axe = next(
+        row for row in rajasthani
+        if row[0] == "mewati_akera" and row[2] == "tʃãʈja" and row[3] == "axe"
+    )
+    assert (small_axe[2], small_axe[6]) == ("tʃãʈja", "(small)")
+
+    with Path("data/other/forms/20230517-chattisgarhi.csv").open(
+        encoding="utf-8", newline=""
+    ) as stream:
+        chattisgarhi = list(csv.reader(stream))
+    assert any(row[2] == "ɐnɐ̆̃" for row in chattisgarhi)
+    assert all("another" not in row[2] for row in chattisgarhi)
 
 
 def test_lsi_profile_covers_every_upstream_phonemic_form():

@@ -4,6 +4,7 @@ from pathlib import Path
 
 
 CDIAL = Path(__file__).parents[1] / "data" / "cdial" / "cdial.csv"
+CORRUPT = Path(__file__).parents[1] / "data" / "cdial" / "corrupt_forms.csv"
 
 
 def parsed_entries():
@@ -16,6 +17,27 @@ def parsed_entries():
 
 def forms(rows, language):
     return [row[2] for row in rows if row[0] == language]
+
+
+def test_undecodable_source_forms_are_audited_instead_of_installed():
+    with CORRUPT.open(encoding="utf-8", newline="") as handle:
+        corrupt = list(csv.DictReader(handle))
+
+    assert {(row["Entry_ID"], row["Language_ID"]) for row in corrupt} == {
+        ("1979", "Ash"),
+        ("6498", "K"),
+    }
+    assert all(row["Status"] == "excluded" for row in corrupt)
+    assert all(
+        any(0x7F <= ord(character) < 0xA0 for character in row["Raw_Form"])
+        for row in corrupt
+    )
+
+    for rows in parsed_entries().values():
+        assert all(
+            not any(ord(character) < 0x20 or 0x7F <= ord(character) < 0xA0 for character in row[2])
+            for row in rows
+        )
 
 
 def test_dialect_qualifiers_do_not_duplicate_parent_language_rows():

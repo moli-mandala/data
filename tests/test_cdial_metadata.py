@@ -34,6 +34,17 @@ def test_cdial_reference_locators_keep_printed_volume_and_item_structure():
     )
 
 
+def test_cdial_entry_sources_preserve_all_references_with_printed_locators():
+    description = (
+        "[← Drav. Burrow BSOAS 12, 365; Mayrhofer EWA I 17; "
+        "compare EWA iii 626 and PMWS 76]"
+    )
+    assert references.entry_source_field(description) == (
+        "CDIAL;BSOAS[12, 365];EWA[I 17];EWA[iii 626];PMWS[76]"
+    )
+    assert references.entry_source_field("[No auxiliary bibliography]") == ""
+
+
 def test_reference_matching_respects_boundaries_and_optional_full_stops():
     assert references.extract_reference_ids("NTS vii 110; G.M.; S.M.Katre") == [
         "NTS", "G.M", "S.M.Katre"

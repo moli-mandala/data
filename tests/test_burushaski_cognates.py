@@ -5,6 +5,7 @@ from burushaski_cognates import (
     comparison_form,
     discover_berger_sets,
     discover_hkat_sets,
+    load_catalog,
 )
 
 
@@ -23,6 +24,7 @@ def test_berger_requires_an_explicit_cross_dialect_link():
     unrelated = form("Werch", "bá", "remaining", "berger-entry-2")
     sets = discover_berger_sets([base, yasin, unrelated])
     assert len(sets) == 1
+    assert sets[0]["Proto_Form"] == ""
     assert sets[0]["Evidence_Keys"] == "berger-entry-1|berger-entry-1-y"
 
 
@@ -45,6 +47,7 @@ def test_hkat_accepts_same_concept_with_phonological_evidence():
     )
     sets = discover_hkat_sets([hunza, nagar])
     assert len(sets) == 1
+    assert sets[0]["Proto_Form"] == ""
     assert sets[0]["Evidence_Keys"] == "h-hand|n-hand"
 
 
@@ -64,15 +67,38 @@ def test_catalog_makes_proto_entry_and_reflex_edges():
     right = ["r", "Werch", "áḍe", "remaining", "", "", "", "", "", "", "berger", "l", "", "variant", "", "l", ""]
     catalog = [{
         "Set_ID": "ada",
-        "Proto_Form": "*áḍa",
+        "Proto_Form": "",
         "Gloss": "remaining",
         "Evidence_Keys": "left|right",
         "Method": "test",
         "Status": "accepted",
-        "Notes": "test reconstruction",
+        "Notes": "form intentionally blank",
     }]
     proto, keys = apply_catalog([left, right], {"left": "l", "right": "r"}, catalog)
-    assert proto[0][0:4] == ["pbsk-ada", "PBr", "*áḍa", "remaining"]
+    assert proto[0][0:4] == ["pbsk-ada", "PBr", "", "remaining"]
+    assert proto[0][6] == ""
     assert (left[11], left[13]) == ("pbsk-ada", "reflex")
     assert (right[11], right[13], right[15]) == ("pbsk-ada", "reflex", "")
     assert keys == [("pbsk-ada", "proto-burushaski:ada")]
+
+
+def test_catalog_rejects_proto_burushaski_reconstruction():
+    left = ["l", "Bur", "áḍa", "remaining", "", "", "", "", "", "", "berger", "", "", "local", "", "", ""]
+    right = ["r", "Werch", "áḍe", "remaining", "", "", "", "", "", "", "berger", "l", "", "variant", "", "l", ""]
+    catalog = [{
+        "Set_ID": "ada", "Proto_Form": "*áḍa", "Gloss": "remaining",
+        "Evidence_Keys": "left|right", "Method": "test", "Status": "accepted", "Notes": "",
+    }]
+
+    try:
+        apply_catalog([left, right], {"left": "l", "right": "r"}, catalog)
+    except ValueError as error:
+        assert "Proto_Form must be blank" in str(error)
+    else:
+        raise AssertionError("a Proto-Burushaski reconstruction was accepted")
+
+
+def test_checked_in_proto_burushaski_catalog_has_no_reconstructed_forms():
+    catalog = load_catalog()
+    assert len(catalog) == 706
+    assert all(row["Proto_Form"] == "" for row in catalog)

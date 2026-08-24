@@ -12,7 +12,7 @@ from enum import Enum
 from tqdm import tqdm
 
 from abbrevs import abbrevs
-from references import source_field
+from references import entry_source_field, source_field
 
 TOTAL_PAGES = 836
 
@@ -40,6 +40,13 @@ formatter = re.compile(r'(<i>(.*?)</i>|\'(.*?)\'(?=[^s]|$))(([^\(\)\[\]]*?(\[.*?
 # the parse loop tags italic head-forms so they become variants and are never promoted to sections.
 formatter_head = re.compile(r'(<[bi]>(.*?)</[bi]>|\'(.*?)\'(?=[^s]|$))(([^\(\)\[\]]*?(\[.*?\]|\(.*?\)))*?[^\(\)\[\]]*?)(?=$|<[bi]>(.*?)</[bi]>|\'(.*?)\'|\.)')
 borrowed_terms = re.compile(r'\(→.*?\)')
+
+# CDIAL cites Dravidian forms as comparison/donor evidence.  They belong in the article-level
+# cross-family comparison table built by data/cross_family.py, never in the ordinary reflex table.
+# ``Go`` (Gondi) lacks the parenthetical family label in abbrevs.py but is Dravidian too.
+DRAVIDIAN_COMPARISON_LANGS = {
+    "Brah", "Drav", "Ga", "Go", "Kan", "Kol", "Kur", "Mal", "Nk", "Prj", "Tam", "Tel", "Tu",
+}
 
 _QUOTE_SENTINEL = "\ue000"
 _INNER_DASH_SENTINEL = "\ue001"
@@ -193,6 +200,7 @@ def blocks_head_definition_propagation(span):
 
 rows = []
 params = []
+corrupt_forms = []
 done = set()
 
 # response caching logic
@@ -348,6 +356,10 @@ def parse(
 
         # for each language on the stack, add this entry
         for l in langs:
+            # Preserve the parser's stack and definition state above, but do not emit cited
+            # Dravidian comparison forms as ordinary Indo-Aryan reflexes.
+            if l in DRAVIDIAN_COMPARISON_LANGS:
+                continue
             for word, defn, notes, is_variant in words:
                 # drop empty forms (e.g. from a trailing comma inside <b>aṅkōla-,</b>) so they neither
                 # emit a blank row nor stand in as the reference for a following "°suffix" expansion
@@ -369,6 +381,24 @@ def parse(
                 word = word.lower()
                 word = word.replace('˜', '̃')
                 word = word.replace(f'<smallcaps>i</smallcaps>', 'ɪ')
+
+                # Two DDSA transcriptions contain embedded C1 control characters from a broken
+                # HTML-entity decode.  The affected spellings cannot be reconstructed safely from
+                # the cached text, while a separate readable form remains in each article.  Keep
+                # the source evidence in an audit instead of teaching the sound profile that C1
+                # controls and the trailing mojibake are legitimate CDIAL graphemes.
+                if any(unicodedata.category(character) == "Cc" for character in word):
+                    corrupt_forms.append([
+                        number,
+                        l,
+                        word,
+                        defn,
+                        notes,
+                        source_field(" ".join(filter(None, (defn, notes)))),
+                        "excluded",
+                        "cached DDSA HTML contains undecodable C1-control mojibake",
+                    ])
+                    continue
 
                 # handle macron/breve combo, which we store as two forms (long vowel, short vowel)
                 oldest = unicodedata.normalize('NFD', word)
@@ -474,7 +504,13 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
             # for lemma in lemmas:
             #     rows.append(['Indo-Aryan', number, lemma.text, '', '', '', '', 'CDIAL', ''])
             if number not in done:
-                params.append([number, lemmas[0].text, '', data[0], ''])
+                params.append([
+                    number,
+                    lemmas[0].text,
+                    '',
+                    data[0],
+                    entry_source_field(data[0]),
+                ])
             done.add(number)
 
             # ignore headword from rest of parsing; if no other reflexes ignore this entry
@@ -526,12 +562,19 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
     if not cached: del resp
 
 with open(f'cdial.csv', 'w') as fout:
-    writer = csv.writer(fout)
+    writer = csv.writer(fout, lineterminator='\n')
     writer.writerows(rows)
 
 with open(f'params.csv', 'w') as fout:
-    writer = csv.writer(fout)
+    writer = csv.writer(fout, lineterminator='\n')
     writer.writerows(params)
+
+with open('corrupt_forms.csv', 'w') as fout:
+    writer = csv.writer(fout, lineterminator='\n')
+    writer.writerow([
+        'Entry_ID', 'Language_ID', 'Raw_Form', 'Gloss', 'Notes', 'Source', 'Status', 'Reason'
+    ])
+    writer.writerows(corrupt_forms)
 
 if not cached:
     with open('cdial.pickle', 'wb') as fout:

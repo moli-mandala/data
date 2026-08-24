@@ -11,6 +11,7 @@ from copy import deepcopy
 from utils import mapping, superscript, change
 from dialects import load_dialect_aliases, normalize_dialect
 from tags import extract_tags
+from form_grammar import extract_gloss_tags
 from tamil_morphology import append_note, extract_tamil_verb_morphology
 from dedr_variants import (
     expand_attached_sound_variants,
@@ -33,6 +34,72 @@ for file in glob.glob("conversion/*.txt"):
 lang_set = set()
 param_set = set()
 included_params = set()
+
+CROSS_FAMILY_COLUMNS = [
+    "ID",
+    "Entry_ID",
+    "Compared_Entry_ID",
+    "Relation",
+    "Direction",
+    "Confidence",
+    "Source",
+    "Evidence",
+]
+CROSS_FAMILY_RELATIONS = {"loan", "influence", "related"}
+CROSS_FAMILY_DIRECTIONS = {
+    "entry-from-compared",
+    "compared-from-entry",
+    "undetermined",
+}
+CROSS_FAMILY_CONFIDENCES = {"high", "medium", "low"}
+
+
+def write_cross_family_comparisons(parameter_ids):
+    """Validate and install article-level DEDR/CDIAL comparisons as a CLDF sidecar."""
+    source_paths = [
+        "data/cross-family-comparisons.csv",
+        "data/manual-cross-family-comparisons.csv",
+        "data/dbia/comparisons.csv",
+    ]
+    target_path = "cldf/comparisons.csv"
+    rows = []
+    for source_path in source_paths:
+        with open(source_path, encoding="utf-8", newline="") as fin:
+            reader = csv.DictReader(fin)
+            if reader.fieldnames != CROSS_FAMILY_COLUMNS:
+                raise ValueError(
+                    f"{source_path} columns are {reader.fieldnames!r}, "
+                    f"expected {CROSS_FAMILY_COLUMNS!r}"
+                )
+            rows.extend(reader)
+
+    seen = set()
+    for row in rows:
+        comparison_id = row["ID"]
+        if not comparison_id or comparison_id in seen:
+            raise ValueError(f"Missing or duplicate cross-family comparison ID: {comparison_id!r}")
+        seen.add(comparison_id)
+        endpoints = (row["Entry_ID"], row["Compared_Entry_ID"])
+        missing = [entry_id for entry_id in endpoints if entry_id not in parameter_ids]
+        if missing:
+            raise ValueError(f"Comparison {comparison_id} references missing entries: {missing}")
+        if endpoints[0] == endpoints[1]:
+            raise ValueError(f"Comparison {comparison_id} links an entry to itself")
+        if row["Relation"] not in CROSS_FAMILY_RELATIONS:
+            raise ValueError(f"Comparison {comparison_id} has invalid relation {row['Relation']!r}")
+        if row["Direction"] not in CROSS_FAMILY_DIRECTIONS:
+            raise ValueError(f"Comparison {comparison_id} has invalid direction {row['Direction']!r}")
+        if row["Confidence"] not in CROSS_FAMILY_CONFIDENCES:
+            raise ValueError(f"Comparison {comparison_id} has invalid confidence {row['Confidence']!r}")
+        if not re.fullmatch(r"[A-Za-z0-9_-]+\[[^\]]+\]", row["Source"]):
+            raise ValueError(f"Comparison {comparison_id} has invalid source locator {row['Source']!r}")
+        if not row["Evidence"].strip():
+            raise ValueError(f"Comparison {comparison_id} lacks printed evidence")
+
+    with open(target_path, "w", encoding="utf-8", newline="") as fout:
+        writer = csv.DictWriter(fout, fieldnames=CROSS_FAMILY_COLUMNS)
+        writer.writeheader()
+        writer.writerows(rows)
 
 
 class Row:
@@ -98,6 +165,7 @@ class Row:
 
 STRAND3_FILE = "20221003-strand3.csv"
 LEGACY_STRAND_FILES = {"20220913-strand.csv", "20220913-strand2.csv"}
+MERRIAM_DRAVIDIAN_DB_FILE = "data/other/forms/20260718-merriam-dravidian-db.csv"
 
 
 def _append_distinct(primary, secondary, separator="; "):
@@ -159,6 +227,7 @@ PRESERVE_SOURCE_PROFILE_INPUT = {
     "north-gorkha",
     "weinreich-domaaki",
     "brahui",
+    "emeneau-brahui",
     "kannauji",
     "pahari",
     "naaba",
@@ -167,11 +236,14 @@ PRESERVE_SOURCE_PROFILE_INPUT = {
     "dewas-rai",
     "hajong-survey",
     "santali-cluster",
+    "torwali-student",
     "sampang",
     "mewahang",
     "chhulung",
     "magahi-survey",
     "badaga-hockings",
+    "nured",
+    "merriam-reconstruction",
 }
 
 
@@ -275,6 +347,22 @@ def parse_file(file: str, errors, name=None, file_num=0, param_counter=None):
     for row in tqdm(read, total=len(lines)):
         row = Row(row, id=f"{file_num}-{i}")
         row.input_file = os.path.basename(file)
+        source_key = row.source.split(";", 1)[0].split("[", 1)[0]
+        row.gloss, gloss_tags = extract_gloss_tags(
+            row.gloss,
+            input_file=row.input_file,
+            source_key=source_key,
+            full_input_path=file,
+        )
+        row.tags = " ".join(
+            dict.fromkeys(filter(None, [*row.tags.split(), *gloss_tags]))
+        )
+        # Merriam's reconstruction column omits the conventional leading asterisk. Preserve that
+        # exact upstream spelling in Original, but mark the display Form as reconstructed. Some
+        # cited Krishnamurti records already include ``*`` and are left unchanged.
+        is_merriam_reconstruction = row.source.split("[", 1)[0] == "merriam2026dravidiandb"
+        if is_merriam_reconstruction and not row.form.startswith("*"):
+            row.form = "*" + row.form
         # Both hand-entered and OCR-derived Shackle rows use the same CDIAL-style
         # romanisation. The auto filename does not reduce to ``old_punjabi`` via
         # the legacy filename heuristic, so select its phonetic parser by source.
@@ -285,6 +373,11 @@ def parse_file(file: str, errors, name=None, file_num=0, param_counter=None):
         # route this source explicitly through its IPA-to-house-transcription profile.
         if row.source.split("[", 1)[0] == "liljegren-hindukush":
             row_ipa = "liljegren-hindukush"
+            row_convert = True
+        # The dictionary supplies Unicode IPA. This source-key route keeps the
+        # transcription contract stable if the dated snapshot filename changes.
+        if row.source.split("[", 1)[0] == "torwali2023student":
+            row_ipa = "torwali-student"
             row_convert = True
         # Abraham & Sako's sixteen Arunachal Pradesh wordlists supply Unicode IPA.
         # Convert only the display Form to Jambu transcription and retain the
@@ -350,6 +443,19 @@ def parse_file(file: str, errors, name=None, file_num=0, param_counter=None):
             row_convert = True
         if row.source.split("[", 1)[0] == "ali-kobayashi2024":
             row_ipa = "brahui"
+            row_convert = True
+        # Emeneau underlines the digraph ``gh`` for the Brahui voiced velar fricative. Preserve
+        # the article transcription in Original while rendering that digraph as Jambu ɣ.
+        if row.source.split("[", 1)[0] == "emeneau1997brahui":
+            row_ipa = "emeneau-brahui"
+            row_convert = True
+        # Burrow & Emeneau's 1972 DEN supplement follows the DED transcription conventions.
+        # Route by bibliographic source ID because this is a manual, article-level import rather
+        # than a file inside data/dedr; Original remains the exact printed form.
+        if row.source.split("[", 1)[0] in {
+            "burrow-emeneau1972den1", "burrow-emeneau1972den2",
+        }:
+            row_ipa = "dedr"
             row_convert = True
         # John & Varghese's thirteen target wordlists use Unicode IPA. The
         # source value remains in Phonemic while the display form is converted.
@@ -439,19 +545,30 @@ def parse_file(file: str, errors, name=None, file_num=0, param_counter=None):
         # split multiple forms into separate rows; comma-listed alternates share one definition, so
         # the first is the main reflex and the rest are variants of it (same etymon, own alignment).
         source_form = row.form
+        uses_dedr_transcription = (
+            "dedr" in file
+            or row.source.split("[", 1)[0] in {
+                "burrow-emeneau1972den1", "burrow-emeneau1972den2",
+            }
+        )
         forms = (
             [
                 normalize_dedr_marks(length_variant)
                 for base in expand_attached_sound_variants(row.form)
                 for length_variant in expand_length_variants(base)
             ]
-            if "dedr" in file
+            if uses_dedr_transcription
+            # Commas and slashes inside a reconstruction are source notation, not the legacy
+            # manual-import convention for expanded attested alternates. One upstream record must
+            # remain one stable reconstruction node.
+            else [row.form] if is_merriam_reconstruction
             else list(row.form.split(","))
         )
         main_id = None
         for fj, form in enumerate(forms):
             reformed = form
-            row.old_form = source_form if "dedr" in file and len(forms) > 1 else form
+            if not is_merriam_reconstruction:
+                row.old_form = source_form if uses_dedr_transcription and len(forms) > 1 else form
             row.form = form
             # Forms on a CDIAL-style numeric etymon (CDIAL itself, plus other-source additions that
             # hang reflexes on a CDIAL entry by its number) keep <file>-<row> ids, so the <etymon>-<n>
@@ -577,6 +694,11 @@ def parse_file(file: str, errors, name=None, file_num=0, param_counter=None):
                 if row_ipa == "strand":
                     reformed = reformed.replace("′", "´")
                     reformed = re.sub(r"([`´])(.)", r"\2\1", reformed)
+                    # Strand prints stress before the syllable, while this legacy normalization
+                    # moves it after the vowel and deliberately drops it in the profile. Keep a
+                    # following length sign adjacent to that vowel so the existing long-vowel
+                    # graphemes (iː -> ī, âː -> āā, etc.) can still match.
+                    reformed = re.sub(r"([`´])([ː:])", r"\2\1", reformed)
                 elif row_ipa == "schmidt-kashmiri":
                     reformed = normalize_schmidt_stress(reformed)
 
@@ -612,11 +734,16 @@ def main():
         "data/munda/forms.csv",
         "data/dedr/dedr_new.csv",
         "data/dedr/pdr.csv",
-    ] + glob.glob("data/other/forms/*.csv")
+    ] + [
+        path for path in glob.glob("data/other/forms/*.csv")
+        if path != MERRIAM_DRAVIDIAN_DB_FILE
+    ]
     files.sort()
-    # Append new imports after sorting so adding DBIA cannot renumber every existing source's
-    # legacy <file>-<row> IDs. Persistent IDs normally absorb ordering changes, but curated graph
-    # overlays must also remain valid during the pre-ID build.
+    # Append new imports after sorting so they cannot renumber every existing source's legacy
+    # <file>-<row> IDs. Persistent IDs normally absorb ordering changes, but curated graph overlays
+    # must also remain valid during the pre-ID build. Merriam has immutable Entry_Key values, so
+    # its own identity does not depend on this append position.
+    files.append(MERRIAM_DRAVIDIAN_DB_FILE)
     files.append("data/dbia/forms.csv")
 
     # now do the same thing for non-CDIAL languages
@@ -676,6 +803,11 @@ def main():
                 "konow1906",
                 "wiktionary-nihali",
                 "hockings-pilotraichoor1992",
+                "nured",
+                "emeneau1997brahui",
+                "buddruss-grangali1979",
+                "torwali2023student",
+                "merriam2026dravidiandb",
             }
             else "",
             row.gloss
@@ -683,6 +815,14 @@ def main():
                 row.lang.startswith("SSNP-")
                 or row.notes.startswith("SSNP ")
                 or row.source == "andersen1990"
+                # These survey lists received hand-curated etymologies after import.  A form
+                # repeated under different elicitation prompts is a distinct lexical sense;
+                # merging it here loses the ability to retain both ancestry assignments (e.g.
+                # Chhattisgarhi nā̃v 'name' versus nā̃v 'nine').
+                or row.source.split("[", 1)[0] in {
+                    "chattisgarhi", "bagri", "dhundari", "hadothi", "marwari", "mewari",
+                    "mewati",
+                }
             )
             else "",
         )
@@ -811,7 +951,9 @@ def main():
         mapping = {"cdial": "cdial", "extensions_ia": "cdial", "strand3": "strand"}
 
         params = csv.writer(g)
-        params.writerow(["ID", "Name", "Language_ID", "Description", "Etyma", "Etymology"])
+        params.writerow([
+            "ID", "Name", "Language_ID", "Description", "Etyma", "Etymology", "Source"
+        ])
 
         with open("data/cdial/params.csv", "r") as fin:
             read = csv.reader(fin)
@@ -851,6 +993,7 @@ def main():
                         row[3],
                         etyma.get(row[0], ""),
                         "",
+                        row[4] if len(row) > 4 else "",
                     ]
                 )
                 included_params.add(row[0])
@@ -880,7 +1023,10 @@ def main():
                         else:
                             row[2] = reformed
                     params.writerow(
-                        [row[0], row[2].split(",")[0].strip(), row[1], row[3], etyma.get(row[0], ""), ""]
+                        [
+                            row[0], row[2].split(",")[0].strip(), row[1], row[3],
+                            etyma.get(row[0], ""), "", "",
+                        ]
                     )
                     included_params.add(row[0])
 
@@ -889,29 +1035,29 @@ def main():
             read = csv.reader(f)
             for row in read:
                 compiled = format_munda_parameter(row)
-                params.writerow(compiled)
+                params.writerow(compiled + [""])
                 munda_entry_texts.append(
                     [compiled[0], 0, "etymology", "markdown", compiled[5], "rau"]
                 )
                 included_params.add(compiled[0])
 
-        # DBIA entries keep their cited source IDs even when unify_cldf.py redirects them to a
-        # canonical CDIAL etymon. Their HTML Description contains the full OCR transcription.
+        # DBIA articles are form-less PDr loan-set entries.  Unmatched printed IA
+        # terms are retained as source-local IA comparison entries in the same file.
+        # Their HTML Description contains the full OCR transcription or a typed stub.
         with open("data/dbia/params.csv", "r") as f:
             read = csv.reader(f)
             for row in read:
-                params.writerow(row[:5] + [""])
+                params.writerow(row[:5] + ["", ""])
                 included_params.add(row[0])
-
-        with open("data/dedr/footer_notes.csv", "r") as f:
-            dedr_footer_notes = dict(csv.reader(f))
 
         with open("data/dedr/params.csv", "r") as f:
             read = csv.reader(f)
             for row in read:
                 row[2] = "PDr"
                 row[1] = row[1].split(",")[0].strip()  # main head-word = first of the listed forms
-                params.writerow(row[:5] + [dedr_footer_notes.get(row[0], "")])
+                # Residual DEDR prose and old-edition locators now have typed, independently
+                # sourced sidecars; do not retain parser fragments in the legacy scalar field.
+                params.writerow(row[:5] + ["", ""])
                 included_params.add(row[0])
 
         with open("data/nuristani_cognates.csv", encoding="utf-8") as f:
@@ -920,8 +1066,10 @@ def main():
         if collisions:
             raise ValueError(f"Proto-Indo-Iranian ancestor ID collisions: {collisions}")
         for ancestor_id in ancestor_ids:
-            params.writerow([ancestor_id, "", "Indo-ir", "", "", ""])
+            params.writerow([ancestor_id, "", "Indo-ir", "", "", "", ""])
             included_params.add(ancestor_id)
+
+    write_cross_family_comparisons(included_params)
 
     # Preserve source-level prose as explicitly typed blocks. ``assign_form_ids.py`` rewrites
     # source-local entry IDs (including Strand PNur IDs) to their durable public Form_IDs.

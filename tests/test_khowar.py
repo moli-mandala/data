@@ -86,11 +86,33 @@ def test_rich_rows_create_regional_variant_donor_and_derivation():
     rows, dialects, audit = khowar.build_rows([entry], set())
 
     assert {item["Role"] for item in audit} == {"head", "variant"}
-    assert "Kho-Bashir-reg-laspur" in dialects
-    assert "Kho-Bashir-src-if" in dialects
+    assert "Kho-Bashir-place-laspur" in dialects
+    assert "Kho-Bashir-place-balim" in dialects
+    assert not any("src-if" in dialect for dialect in dialects)
     assert any(row[0] == "H" and row[14] == "source-form" for row in rows)
     assert any(row[11] and row[13] for row in rows)  # variant + derivation-parent keys
     assert any(row[12] for row in rows if row[2] == "aldú")  # donor key
+    head = next(row for row in rows if row[2] == "aldú")
+    assert "Inayatullah Faizi (IF)" in head[6]
+    variant = next(row for row in rows if row[2] == "aʋdú")
+    assert variant[0] in {"Kho-Bashir-place-laspur", "Kho-Bashir-place-balim"}
+
+
+def test_speakers_share_place_dialects_and_remain_provenance():
+    entry = khowar.Entry("x", 20, 7, sequence=1)
+    entry.lines = ["x (n) ‘example’ {MNN, RKB, ZHD, TMF, TMFW}"]
+    rows, dialects, audit = khowar.build_rows([entry], set())
+
+    assert {row[0] for row in rows} == {
+        "Kho-Bashir-place-zondrangram", "Kho-Bashir-place-zargarandeh"
+    }
+    assert set(dialects) == {
+        "Kho-Bashir-place-zondrangram", "Kho-Bashir-place-zargarandeh"
+    }
+    assert all("Maula Nigah Nigah (MNN)" in row[6] for row in rows)
+    assert all("Rahmat Karim Baig (RKB)" in row[6] for row in rows)
+    assert all("Taj Muhammad Figar's wife (TMFW)" in row[6] for row in rows)
+    assert audit[0]["Contributor_Codes"] == "MNN|RKB|ZHD|TMF|TMFW"
 
 
 def test_generated_khowar_source_has_linked_and_unlinked_entries():
@@ -105,7 +127,16 @@ def test_generated_khowar_source_has_linked_and_unlinked_entries():
     assert all(row[7].split("[", 1)[0] == "bashir2023" for row in rows)
     assert all(len(row) == khowar.RICH_COLUMNS for row in rows)
     assert sum("[p. " in row[7] for row in rows) > 3000
-    assert any(row[0].startswith("Kho-Bashir-") for row in rows)
+    assert any(row[0].startswith("Kho-Bashir-place-") for row in rows)
+    assert not any(row[0].startswith("Kho-Bashir-src-") for row in rows)
     assert any(row[11] for row in rows)  # alternate pronunciations
     assert any(row[13] for row in rows)  # derivational parents
     assert not any("unresolved Turner" in row[6] for row in rows)
+
+    source_keys = Path(__file__).parents[1] / "cldf/form-source-keys.csv"
+    if source_keys.exists():
+        with source_keys.open(encoding="utf-8", newline="") as stream:
+            keys = [row["Source_Key"] for row in csv.DictReader(stream)]
+        assert sum(
+            ":attestation:dialect:Kho:Kho-Bashir-place-" in key for key in keys
+        ) > 10000

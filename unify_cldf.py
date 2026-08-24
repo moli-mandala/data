@@ -35,6 +35,9 @@ from difflib import SequenceMatcher
 from edges_build import build_edges, write_edges
 from burushaski_cognates import apply_catalog as apply_burushaski_catalog
 from burushaski_cognates import load_catalog as load_burushaski_catalog
+from burushaski_comparisons import append_comparisons as append_burushaski_comparisons
+from burushaski_comparisons import project_claims as project_burushaski_comparisons
+from burushaski_comparisons import write_audit as write_burushaski_comparison_audit
 
 _ADD_PTR = re.compile(r"\s*Add\.\s*\d+\.?")  # the now-defunct "Add. N" pointer after a merge
 # separates a main entry's etymology snippet from a merged addendum's; the webapp splits on it and
@@ -103,47 +106,11 @@ def load_strand_oia_redirects(path="data/strand_oia_redirects.csv"):
         }
 
 
-def load_dbia_redirects(path="data/dbia/cdial_redirects.csv"):
-    with open(path, encoding="utf-8") as f:
-        return {
-            row["DBIA_ID"]: row["CDIAL_ID"]
-            for row in csv.DictReader(f)
-        }
-
-
-def apply_dbia_redirects(etyma_rows, reflex_rows, redirects):
-    """Re-home DBIA loans on CDIAL heads while retaining cited DBIA redirect stubs."""
-    by_id = {row[0]: row for row in etyma_rows + reflex_rows}
-    missing = sorted(
-        (dbia, cdial) for dbia, cdial in redirects.items()
-        if dbia not in by_id or cdial not in by_id
-    )
-    if missing:
-        raise ValueError(f"Unknown DBIA/CDIAL redirects: {missing}")
-
-    references = 0
-    for row in etyma_rows + reflex_rows:
-        if row[0] in redirects:
-            continue
-        for column in (11, 14, 15, 16):
-            target = redirects.get(row[column])
-            if target:
-                row[column] = target
-                references += 1
-
-    for dbia, cdial in redirects.items():
-        source_row = by_id[dbia]
-        target_row = by_id[cdial]
-        if source_row[1] != "Indo-Aryan" or target_row[1] != "Indo-Aryan":
-            raise ValueError(f"DBIA redirect must join Indo-Aryan entries: {dbia}, {cdial}")
-        source_etymology = (source_row[12] or "").strip()
-        if source_etymology and source_etymology not in (target_row[12] or ""):
-            target_row[12] = (
-                target_row[12] + ADD_DELIM + source_etymology
-                if target_row[12] else source_etymology
-            )
-        source_row[14] = cdial
-    return len(redirects), references
+def load_entry_references(path="data/dedr/entry-references.csv"):
+    if not os.path.exists(path):
+        return {}
+    with open(path, encoding="utf-8", newline="") as handle:
+        return {row["Form_ID"]: row["Source"] for row in csv.DictReader(handle)}
 
 
 def apply_borrowings(rows, borrowings):
@@ -312,6 +279,12 @@ def reparent_cdial_nuristani_reflexes(rows, cognates, language_clades):
 
 
 def apply_nuristani_borrowings(rows, borrowings):
+    """Attach each borrowed PNur head to IA without flattening its reflex branch.
+
+    The Indo-Aryan source is the parent of the reconstructed Proto-Nuristani
+    entry. Individual Nuristani attestations remain reflexes of that PNur
+    entry, which preserves the intermediate historical analysis in the graph.
+    """
     by_id = {row[0]: row for row in rows}
     missing = sorted(
         (nuristani, indo_aryan)
@@ -330,12 +303,11 @@ def apply_nuristani_borrowings(rows, borrowings):
         ]
         if not branch:
             raise ValueError(f"No Nuristani borrowing branch found for {nuristani}")
-        for row in branch:
-            row[11] = indo_aryan
-            row[13] = "borrowed"
-            row[16] = indo_aryan
-            if row[0] != nuristani:
-                descendants += 1
+        head = by_id[nuristani]
+        head[11] = indo_aryan
+        head[13] = "borrowed"
+        head[16] = indo_aryan
+        descendants += len(branch) - 1
     return len(borrowings), descendants
 
 
@@ -606,26 +578,164 @@ def nfc(s: str) -> str:
     return unicodedata.normalize("NFC", s)
 
 
+# Main entries include occasional lettered supplements (d583A, d4896(a)). Keep this deliberately
+# narrower than every PDr parameter: da1...da61 are addenda folded into main DEDR entries during
+# unification, while DBIA's form-less comparison groupings are not DEDR entries at all.
+DEDR_PARAMETER_ID = re.compile(r"d\d+(?:[A-Za-z]|\([a-z]\))?")
+PDR_HEADWORD_AUDIT = "cldf/pdr-headword-audit.csv"
+
+
+def citation_keys(source: str) -> set[str]:
+    """Return bibliography keys from a semicolon-delimited CLDF citation string."""
+    return {
+        chunk.strip().split("[", 1)[0]
+        for chunk in (source or "").split(";")
+        if chunk.strip()
+    }
+
+
+def select_pdr_headwords(params, forms_by_param):
+    """Apply the editorial headword hierarchy to DEDR Proto-Dravidian entries.
+
+    Existing parameter heads come from the curated Krishnamurti/Pfeiffer reconstruction file and
+    always win. A blank head next takes the first source-ordered Merriam database row explicitly
+    classified as Proto-Dravidian. If neither exists, the first surviving DEDR reflex supplies a
+    visibly non-reconstructed display head. Obsolete DEDR slots without any of those evidence
+    layers remain blank and are reported as unresolved.
+
+    The function mutates only the in-memory parameter names and returns a complete decision audit;
+    independently keyed Merriam rows remain graph nodes and are never folded into the entry.
+    """
+    decisions = {}
+    for p in params:
+        parameter_id = p["ID"]
+        if p.get("Language_ID") != "PDr" or not DEDR_PARAMETER_ID.fullmatch(parameter_id):
+            continue
+
+        group = forms_by_param.get(parameter_id, ())
+        strategy = "krishnamurti-pfeiffer"
+        selected = next(
+            (
+                row for row in group
+                if row.get("Language_ID") == "PDr"
+                and nfc(row.get("Form", "")) == nfc(p.get("Name", ""))
+                and citation_keys(row.get("Source", "")) & {"krishnamurti", "pfeiffer2018"}
+            ),
+            None,
+        )
+        tags = ""
+        note = "Existing curated Krishnamurti/Pfeiffer reconstruction retained."
+
+        if not p.get("Name", "").strip():
+            selected = next(
+                (
+                    row for row in group
+                    if row.get("Language_ID") == "PDr"
+                    and "merriam2026dravidiandb" in citation_keys(row.get("Source", ""))
+                ),
+                None,
+            )
+            if selected:
+                strategy = "merriam-pdr"
+                p["Name"] = selected["Form"]
+                note = "First source-ordered Merriam database reconstruction classified as PDr."
+            else:
+                selected = next(
+                    (
+                        row for row in group
+                        if "dedr" in citation_keys(row.get("Source", ""))
+                        and row.get("Form", "").strip()
+                    ),
+                    None,
+                )
+                if selected:
+                    strategy = "dedr-reflex"
+                    p["Name"] = selected["Form"]
+                    tags = "not-reconstructed"
+                    note = (
+                        "No PDr reconstruction is available; the display head is the first "
+                        "surviving DEDR reflex and is not a reconstruction."
+                    )
+                else:
+                    strategy = "unresolved"
+                    note = "No curated PDr head, Merriam PDr row, or surviving DEDR reflex exists."
+
+        decisions[parameter_id] = {
+            "Parameter_ID": parameter_id,
+            "Headword": p.get("Name", ""),
+            "Strategy": strategy,
+            # Curated PDr self-reflexes are folded into the etymon later in this function, so they
+            # cannot serve as durable graph pointers. Merriam and DEDR fallbacks remain nodes.
+            "Source_Form_ID": (
+                selected.get("ID", "")
+                if selected and strategy != "krishnamurti-pfeiffer"
+                else ""
+            ),
+            "Source_Language_ID": selected.get("Language_ID", "") if selected else "",
+            "Source": selected.get("Source", "") if selected else "",
+            "Tags": tags,
+            "Note": note,
+        }
+    return decisions
+
+
+def write_pdr_headword_audit(decisions, path=PDR_HEADWORD_AUDIT):
+    fields = [
+        "Parameter_ID", "Headword", "Strategy", "Source_Form_ID",
+        "Source_Language_ID", "Source", "Tags", "Note",
+    ]
+    with open(path, "w", encoding="utf-8", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=fields, lineterminator="\n")
+        writer.writeheader()
+        writer.writerows(
+            decisions[key]
+            for key in sorted(
+                decisions,
+                key=lambda value: (int(re.search(r"\d+", value).group()), value),
+            )
+        )
+
+
 def main():
     with open("cldf/parameters.csv", encoding="utf-8") as f:
         params = list(csv.DictReader(f))
     with open("cldf/forms.csv", encoding="utf-8") as f:
         forms = list(csv.DictReader(f))
+    source_entry_by_id = {
+        row["ID"]: row.get("Parameter_ID", "") for row in forms if row.get("Parameter_ID")
+    }
+    entry_references = load_entry_references()
 
     # Preserve rich importers' immutable source-local record keys outside the unified CLDF table.
     # assign_form_ids.py consumes this sidecar after graph construction; keeping it separate avoids
     # exposing ingestion bookkeeping as linguistic columns in the published wordlist.
+    def stable_source_key(row):
+        key = row.get("Entry_Key", "")
+        if not key:
+            return ""
+        if (row.get("Source") or "").split("[", 1)[0] == "bashir2023":
+            dialects = sorted(
+                tag for tag in (row.get("Tags") or "").split()
+                if tag.startswith("dialect:Kho:")
+            )
+            if dialects:
+                return key + ":attestation:" + "|".join(dialects)
+        return key
+
     source_key_counts = defaultdict(int)
     for row in forms:
-        if row.get("Entry_Key"):
-            source_key_counts[row["Entry_Key"]] += 1
+        if key := stable_source_key(row):
+            source_key_counts[key] += 1
     source_keys = [
-        (row["ID"], row["Entry_Key"])
+        (row["ID"], stable_source_key(row))
         for row in forms
         # A key identifies a form only when it is unique. Some compound analyses repeat one lexical
         # entry once per proposed etymon; those need a future edge-model migration, so retain their
         # existing registry identity instead of pretending the shared entry key is node-unique.
-        if row.get("Entry_Key") and source_key_counts[row["Entry_Key"]] == 1
+        if stable_source_key(row) and (
+            (row.get("Source") or "").split("[", 1)[0] == "bashir2023"
+            or source_key_counts[stable_source_key(row)] == 1
+        )
     ]
 
     # Rich manual sources can describe graph relations with stable source-local
@@ -650,13 +760,24 @@ def main():
     for r in forms:
         forms_by_param[r["Parameter_ID"]].append(r)
 
+    pdr_headwords = select_pdr_headwords(params, forms_by_param)
+    write_pdr_headword_audit(pdr_headwords)
+
     # For each etymon, locate its self-reflex: the form in the etymon's own language whose Form is
     # the head-word. Its parsed data folds up onto the etymon and the reflex row is then dropped.
     self_reflex_ids = set()
     folded = {}  # etymon ID -> the self-reflex form row
     for p in params:
         for r in forms_by_param.get(p["ID"], ()):
-            if r["Language_ID"] == p["Language_ID"] and nfc(r["Form"]) == nfc(p["Name"]):
+            # Merriam's rows are independently keyed reconstruction claims. Even when a PDr form
+            # equals the legacy DEDR display head, keep that sourced node rather than folding it
+            # into the dictionary entry and losing its upstream record identity.
+            is_merriam_reconstruction = "merriam2026dravidiandb[" in r.get("Source", "")
+            if (
+                not is_merriam_reconstruction
+                and r["Language_ID"] == p["Language_ID"]
+                and nfc(r["Form"]) == nfc(p["Name"])
+            ):
                 self_reflex_ids.add(r["ID"])
                 folded.setdefault(p["ID"], r)
 
@@ -677,7 +798,16 @@ def main():
         is_html = header.lstrip().startswith("<")
         gloss = "" if is_html else header
         etymology = p.get("Etymology", "") or (header if is_html else "")
-        native = phonemic = original = tags = source = ""
+        native = phonemic = original = tags = ""
+        source = p.get("Source", "") or entry_references.get(p["ID"], "")
+        headword_decision = pdr_headwords.get(p["ID"])
+        if headword_decision:
+            tags = headword_decision["Tags"]
+            headword_source = headword_decision["Source"]
+            if headword_source:
+                source = ";".join(dict.fromkeys(
+                    chunk for chunk in (source, headword_source) if chunk
+                ))
         sr = folded.get(p["ID"])
         if sr:  # fold the self-reflex's parsed data into empty etymon fields
             gloss = gloss or sr["Gloss"]
@@ -1139,9 +1269,22 @@ def main():
     n_strand_oia_redirects, n_strand_oia_references = apply_strand_oia_redirects(
         etyma_rows, reflex_rows, load_strand_oia_redirects()
     )
-    n_dbia_redirects, n_dbia_references = apply_dbia_redirects(
-        etyma_rows, reflex_rows, load_dbia_redirects()
+    (
+        burushaski_comparison_rows,
+        burushaski_comparison_source_keys,
+        burushaski_comparisons,
+        burushaski_comparison_audit,
+    ) = project_burushaski_comparisons(
+        etyma_rows + reflex_rows + ext_entry_rows,
+        language_clades,
+        source_id_by_key,
+        INDO_ARYAN_CLADES,
+        source_entry_by_id,
     )
+    ext_entry_rows.extend(burushaski_comparison_rows)
+    source_keys.extend(burushaski_comparison_source_keys)
+    append_burushaski_comparisons(burushaski_comparisons)
+    write_burushaski_comparison_audit(burushaski_comparison_audit)
     n_cross_family_borrowings = mark_cross_family_borrowings(
         etyma_rows + reflex_rows + ext_entry_rows, language_clades
     )
@@ -1227,11 +1370,13 @@ def main():
         f"{nuristani_reparented['tied']} unresolved score ties); "
         f"built {len(burushaski_rows)} Proto-Burushaski entries from "
         f"{sum(len(row['Evidence_Keys'].split('|')) for row in burushaski_catalog)} dialect attestations; "
+        f"projected {len(burushaski_comparison_audit)} Burushaski attestations into "
+        f"{len(burushaski_comparison_rows)} Proto-Burushaski/CDIAL sets with "
+        f"{len(burushaski_comparisons)} source-attributed comparisons; "
         f"applied {n_nuristani_borrowings} Strand OIA loan branches "
-        f"with {n_nuristani_borrowed_descendants} direct borrowed descendants; "
+        f"while preserving {n_nuristani_borrowed_descendants} PNur descendant reflexes; "
         f"merged {n_strand_oia_redirects} duplicate Strand OIA heads and redirected "
         f"{n_strand_oia_references} references; "
-        f"redirected {n_dbia_redirects} DBIA heads and {n_dbia_references} references; "
         f"marked {n_cross_family_borrowings} inferred cross-family borrowings; "
         f"removed parameters.csv",
         file=sys.stderr,

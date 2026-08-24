@@ -33,7 +33,7 @@ def test_dbia_extraction_is_conservative_and_audited():
     }
 
 
-def test_dbia_cdial_redirects_are_unique_and_valid():
+def test_dbia_cdial_matches_and_loan_comparisons_are_unique_and_valid():
     with (DBIA / "cdial_redirects.csv").open(encoding="utf-8") as handle:
         redirects = list(csv.DictReader(handle))
     with (ROOT / "data" / "cdial" / "params.csv").open(encoding="utf-8") as handle:
@@ -43,3 +43,31 @@ def test_dbia_cdial_redirects_are_unique_and_valid():
     assert len({row["DBIA_ID"] for row in redirects}) == len(redirects)
     assert {row["CDIAL_ID"] for row in redirects} <= cdial_ids
     assert all(row["Reason"] in {"unique normalized headword", "homonym disambiguated by gloss"} for row in redirects)
+
+    with (DBIA / "params.csv").open(encoding="utf-8") as handle:
+        params = {row[0]: row for row in csv.reader(handle)}
+    with (DBIA / "comparisons.csv").open(encoding="utf-8") as handle:
+        comparisons = list(csv.DictReader(handle))
+
+    assert len(comparisons) == 328
+    assert len({row["ID"] for row in comparisons}) == len(comparisons)
+    assert sum(row[2] == "PDr" for row in params.values()) == 337
+    assert sum(row[2] == "Indo-Aryan" for row in params.values()) == 142
+    assert all(not row[1] for row in params.values() if row[2] == "PDr")
+    assert {row["Relation"] for row in comparisons} == {"loan"}
+    assert {row["Direction"] for row in comparisons} == {"entry-from-compared"}
+    assert {row["Confidence"] for row in comparisons} <= {"high", "medium", "low"}
+    assert all(row["Evidence"].strip() for row in comparisons)
+    assert all(params[row["Entry_ID"]][2] == "PDr" for row in comparisons)
+    assert all(
+        row["Compared_Entry_ID"] in cdial_ids
+        or params[row["Compared_Entry_ID"]][2] == "Indo-Aryan"
+        for row in comparisons
+    )
+    assert params["dbia251-ia"][1] == "piņdāra"
+    by_entry = {row["Entry_ID"]: row for row in comparisons}
+    assert by_entry["dbia16"]["Compared_Entry_ID"] == "13185"
+    assert by_entry["dbia20"]["Compared_Entry_ID"] == "638"
+    assert by_entry["dbia60"]["Compared_Entry_ID"] == "12033"
+    assert by_entry["dbia10"]["Confidence"] == "low"
+    assert by_entry["dbia29"]["Confidence"] == "medium"

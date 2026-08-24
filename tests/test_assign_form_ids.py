@@ -32,6 +32,24 @@ def test_registry_survives_reordering_and_profile_changes():
     assert {row["Status"] for row in next_registry} == {"active"}
 
 
+def test_active_identity_wins_when_retired_tombstone_reuses_legacy_id():
+    original = form("8-1", "pani")
+    initial_mapping, registry = assign_ids([original], [])
+    active_id = initial_mapping["8-1"]
+    retired = dict(registry[0])
+    retired.update({
+        "Form_ID": "f_retired",
+        "Fingerprint": "different",
+        "Original": "other",
+        "Status": "retired",
+    })
+
+    corrected = form("8-1", "pani", gloss="drinking water")
+    mapping, _ = assign_ids([corrected], [registry[0], retired])
+
+    assert mapping["8-1"] == active_id
+
+
 def test_graph_assignment_patches_edges(tmp_path):
     import csv
 

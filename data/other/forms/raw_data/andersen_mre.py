@@ -303,6 +303,30 @@ def parse_head(first_line: str) -> tuple[str, str]:
     return normalize_headword(head), (pos.group(0).rstrip(".").lower() if pos else "")
 
 
+def tags_for_pos(pos: str) -> list[str]:
+    """Map Andersen's printed dictionary descriptors to canonical Jambu tags."""
+    return {
+        "m": ["noun", "m"],
+        "f": ["noun", "f"],
+        "n": ["noun", "n"],
+        "a": ["adj"],
+        "adv": ["adv"],
+        "conj": ["conj"],
+        "pron": ["pron"],
+        "num": ["num"],
+        "part": ["part"],
+        "prep": ["prep"],
+        "interj": ["interj"],
+        "indec": ["indecl"],
+        "vb": ["verb"],
+        "pres": ["verb", "pres"],
+        "aor": ["verb", "aor"],
+        "pp": ["verb", "pp"],
+        "cf": [],
+        "": [],
+    }[pos]
+
+
 def extract_gloss(first_line: str) -> str:
     match = re.search(r'["\u201c]([^"\u201d]{1,240})["\u201d]', first_line)
     return re.sub(r"\s+", " ", match.group(1)).strip() if match else ""
@@ -424,7 +448,10 @@ def write_outputs(entries: list[Entry], output_dir: Path, install: bool) -> None
         writer = csv.writer(handle)
         for entry in entries:
             source = f"{SOURCE}[p. {entry.pdf_page} (printed p. {entry.printed_page})]"
-            tags = " ".join(dialect_tag(dialect) for dialect in entry.dialects)
+            tags = " ".join([
+                *tags_for_pos(entry.pos),
+                *(dialect_tag(dialect) for dialect in entry.dialects),
+            ])
             writer.writerow([
                 LANGUAGE, entry.cdial_id, entry.headword, entry.gloss, "", "",
                 "", source, "", "", "", "", "", "", tags,

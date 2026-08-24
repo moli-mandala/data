@@ -21,6 +21,8 @@
   these to 30 installed form rows: 25 Marathi (`M`) and 5 Old Marathi (`OM`).
 - Table 2 has 23 comparative records. It produces 25 structured comparison blocks: item 11 has no
   Turner target, item 17 maps conservatively to two targets, and item 18 maps to three targets.
+  Seven Table 2A records also have a checked Table 1 DEDR counterpart and therefore produce seven
+  source-attributed cross-family comparison rows.
 - The per-record audit accounts for all 48 source records (25 Table 1 + 23 Table 2). The seeded
   final sample contains 20 records and has 0 material errors.
 - All 30 emitted keys are unique and stable. All 30 forms survive the compiled CLDF and have a
@@ -47,6 +49,12 @@
 - Table 2’s `+`, `-`, `?`, and blank cells are distribution evidence, not printed language forms.
   They are preserved verbatim in the audit and comparison prose; no unattested reflexes were
   fabricated from column marks.
+- Cross-family rows are limited to items 1, 2, 6, 7, 8, 9, and 10, where the checked tables print
+  both a Table 1 DEDR source and a Table 2 Turner/CDIAL target for the same item. They are modelled
+  as Southworth-attributed Dravidian-to-Indo-Aryan loan claims, not independent confirmation.
+  Item 2 (`phaḷ` / CDIAL 9051) is low-confidence because Southworth prints `(?)`; the other six
+  are high-confidence descriptions of the paper’s explicit classification. No DEDR target is
+  inferred for the remaining Table 2 rows, and item 11 has no Turner target.
 - Headers, running prose, notation notes, and column labels are not lexical records. Table 2 item
   11 is retained on the page 9 Marathi `dāṭ` form because the source prints no Turner number.
 - Item 20 prints Turner 5634 for `taḍāga` ‘pool’. CDIAL 5634 is `*taḍapphaḍ` ‘agitate’, while the
@@ -61,20 +69,27 @@
 
 ## Validation
 
-- Importer output: 30 forms, 48 audited records, 25 comparison blocks, 20 sampled records.
-- Focused tests: `16 passed` across the source, sound-profile, and dialect suites.
+- Importer output: 30 forms, 48 audited records, 25 comparison blocks, 20 sampled records; the
+  comparison extractor adds seven audited cross-family claims (six high-confidence, one low).
+- Focused tests: `23 passed` across the source, cross-family, sound-profile, and dialect suites.
 - `make all`: passed all seven CLDF stages. The source contributes no row to `errors.txt`, no
   replacement character, and no unregistered language, dialect, or reference.
 - Compiled assertions: 30 stable source keys, 30 durable forms, 30 borrowed DEDR edges, 25 Table 2
-  blocks, and the corrected 5635 attachment.
+  blocks, seven cross-family comparison rows with resolvable endpoints and citations, and the
+  corrected 5635 attachment.
 - Checklist generator: 92 ingestion units; the Southworth unit and installed-row audit are fresh.
-- Full repository suite: 432 passed, 10 skipped, 1 failed. The sole failure is the pre-existing
-  Majhi Bote `kan` ‘ear’ row, which is compiled as a cross-family reflex of Indo-Aryan 2830 rather
-  than a borrowing. It is unrelated to this source and was left untouched.
-- Browser database: isolated rebuild produced 470,190 lemmas and 391 references in a 78,430,208
-  byte SQLite file. `PRAGMA integrity_check` returned `ok`, `foreign_key_check` returned no rows,
-  and the size guard passed. `npm run check` reported 0 errors and 6 pre-existing warnings.
+- Full repository suite: `448 passed, 10 skipped`.
+- Browser database: isolated rebuild produced 469,787 lemmas, 391 references, and 604 total
+  cross-family comparisons in a 79,495,168-byte SQLite file. `PRAGMA integrity_check` returned
+  `ok`, `foreign_key_check` returned no rows, and the size guard passed. `npm run check` reported
+  0 errors and 6 pre-existing warnings.
 - Browser QA had no console warnings/errors. Representative pages:
+  - `/entries/d1494`: the paper’s high-confidence `*kāẓ-` → CDIAL 3083 loan comparison appears
+    with Southworth’s exact cross-table locator and evidence, alongside the independent DEDR claim.
+  - `/entries/d4004`: `phaḷ` / CDIAL 9051 is visibly low-confidence and retains the controversial
+    origin wording.
+  - `/entries/2639`: reverse-endpoint rendering says the Indo-Aryan entry was possibly borrowed
+    from DEDR 1109 and links back to the Proto-Dravidian entry.
   - `/entries/f_cxg3ioej4emr2`: Marathi `pʰaḷ`, uncertain borrowing from DEDR 4004, with combined
     page 9 and page 10 citation and Table 2 distribution.
   - `/entries/f_u4mq6fmjsatzq`: Old Marathi `mecū`, borrowed from DEDR 4722, with page 9 locator.

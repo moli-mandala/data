@@ -7,8 +7,9 @@ evidence, normalize only in explicit layers, structure everything the schema can
 uncertain claims reviewable, and prove the installed rows survive the complete build.
 
 The source ingest is not complete when an extractor produces a CSV. It is complete when the raw
-source is reproducibly represented, its language and reference metadata are correct, the full
-CLDF and browser database build cleanly, and representative entries look right in the app.
+source is reproducibly represented, its language and reference metadata are correct, and the full
+CLDF build is clean. Browser-database construction and representative app inspection become
+completion gates only after the user explicitly requests that refresh.
 
 ## Definition of done
 
@@ -39,8 +40,9 @@ Before calling an ingest complete, all of these should be true:
       while protecting same-lect homonyms and source-defined distinct records.
 - [ ] Focused importer tests, registry/profile tests, the complete data build, and the full test
       suite pass.
-- [ ] The browser database builds, passes its integrity/size checks, and representative entry,
-      language, dialect, reference, search, and concept views have been inspected.
+- [ ] When the user requests a browser-database refresh, it builds, passes its integrity/size
+      checks, and representative entry, language, dialect, reference, search, and concept views
+      have been inspected. Routine source ingestion does not rebuild the browser database.
 - [ ] The final handoff reports counts, exclusions, unresolved cases, transcription decisions,
       test results, and files changed.
 
@@ -432,27 +434,13 @@ comparison text must not become ancestry.
 - [ ] Confirm the source-specific assertions against compiled CLDF, not only the raw importer
   output.
 
-## 13. Build and inspect the browser database
+## 13. Browser database refresh and inspection (user-triggered)
 
-- [ ] Build the browser database from the sibling CLDF:
-
-  ```bash
-  cd ../jambu-static
-  npm run db:transform
-  npm run check
-  ```
-
-- [ ] Confirm the builder's SQLite integrity and compact-database size guards pass.
-- [ ] For local inspection, stage and serve the new database:
-
-  ```bash
-  npm run db:stage
-  npm run dev
-  ```
-
-  Restart the dev server if it retained a stale SQLite handle after the database file was
-  replaced.
-- [ ] Inspect representative pages in the app:
+- [ ] Do not rebuild, stage, or serve the browser database during routine ingestion. The user
+      decides when to pay the cost of refreshing it.
+- [ ] When the user explicitly requests a refresh, use the browser project's documented build
+      workflow and confirm its SQLite integrity and compact-database size guards pass.
+- [ ] After a requested refresh, inspect representative pages in the app:
   - one ordinary entry;
   - a linked etymon/reflex or borrowing;
   - an unlinked entry;
@@ -461,9 +449,9 @@ comparison text must not become ancestry.
   - the source's reference page and locator display;
   - grammatical/register/dialect tag rendering and filtering;
   - source search and concept membership/counts.
-- [ ] Inspect at least one example that combines several ingestion features; record it in the
-  handoff so another person can verify the work quickly.
-- [ ] Check that independently sourced, identical unlinked forms merge across dialects and
+- [ ] After a requested refresh, inspect at least one example that combines several ingestion
+      features; record it in the handoff so another person can verify the work quickly.
+- [ ] After a requested refresh, check that independently sourced, identical unlinked forms merge across dialects and
   bibliographic sources when canonical language and complete lexical analysis agree. All source
   attestations, citations, dialect tags, and ID aliases must be retained; same-lect homonyms and
   source-defined distinct senses/records must remain distinguishable.

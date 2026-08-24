@@ -37,7 +37,10 @@ PROFILE = "conversion/cdial-post.txt"
 FORMS = "cldf/forms.csv"
 
 # Proto/reconstruction languages whose parameter Name is a true ancestor of the reflexes.
-PROTO_LANGS = {"Indo-Aryan", "PDr", "PMu", "PNur", "PA", "PIA", "OIA"}
+PROTO_LANGS = {
+    "Indo-Aryan", "PDr", "PSTDr", "PSD1", "PSD2", "PCDr", "PKMDr", "PNDr",
+    "PMu", "PNur", "PA", "PIA", "OIA",
+}
 
 
 # ─────────────────────────────────────────────────────────────────────────────

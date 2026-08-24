@@ -1,6 +1,6 @@
 {
-  "checklist_sha256": "c0254863d2a149b3fdfd6ea9c155d957d24fb61e74c2a53c3e0e90e455da0063",
-  "unit_count": 92,
+  "checklist_sha256": "23516ba5c7caeaa5310f6a32d92b86e4b9ae5e4479e792926b61dd0689129f05",
+  "unit_count": 99,
   "units": [
     {
       "addenda": [
@@ -9,10 +9,12 @@
       ],
       "audits": [
         "data/cdial/audit.py",
+        "data/cdial/corrupt_forms.csv",
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
-      "compiled_rows": 160193,
+      "compiled_grammar_tagged_rows": 52566,
+      "compiled_rows": 160176,
       "entry_key_count": 0,
       "id": "cdial-cdial",
       "importers": [
@@ -34,7 +36,6 @@
         "Bhoj",
         "Bi",
         "Bj",
-        "Brah",
         "Brj",
         "Brt",
         "Bshk",
@@ -43,7 +44,6 @@
         "Dard",
         "Dhp",
         "Dm",
-        "Drav",
         "EMIA",
         "Eng",
         "Fr",
@@ -53,7 +53,6 @@
         "Gaw",
         "Gk",
         "Gmb",
-        "Go",
         "Goth",
         "Gy",
         "H",
@@ -68,7 +67,6 @@
         "Kaf",
         "Kal",
         "Kamd",
-        "Kan",
         "Kand",
         "Kaṭ",
         "KharI",
@@ -78,7 +76,6 @@
         "Ko",
         "Kt",
         "Ku",
-        "Kur",
         "L",
         "Lat",
         "Lith",
@@ -86,7 +83,6 @@
         "MB",
         "MIA",
         "Mai",
-        "Mal",
         "Marw",
         "Md",
         "Mj",
@@ -142,13 +138,10 @@
         "Sogd",
         "Sv",
         "Swed",
-        "Tam",
-        "Tel",
         "Tib",
         "Tir",
         "Toch",
         "Tor",
-        "Tu",
         "WPah",
         "WPah.poet",
         "Werch",
@@ -311,10 +304,11 @@
         "conversion/cdial.txt"
       ],
       "replacement_character_count": 0,
-      "row_count": 159811,
+      "row_count": 159756,
       "row_widths": {
-        "9": 159811
+        "9": 159756
       },
+      "source_grammar_evidence_rows": 0,
       "source_key_counts": {
         "ABORI": 11,
         "AFD": 330,
@@ -340,14 +334,13 @@
         "Burrow KharDoc": 29,
         "Burrow Shwa": 2,
         "C.Shackle": 2,
-        "CDIAL": 159811,
+        "CDIAL": 159756,
         "CII": 1,
         "COJ": 1,
         "CPD": 3,
         "Childers DPL": 1,
         "ColPa": 1,
-        "DED": 9,
-        "DEDS": 1,
+        "DED": 1,
         "DGW": 13,
         "DSL": 40,
         "Dave": 3,
@@ -358,7 +351,7 @@
         "ES": 108,
         "EVP": 10,
         "EVSh": 6,
-        "EWA": 16,
+        "EWA": 15,
         "EZ": 4,
         "El": 2,
         "Emeneau Sk. bhōgin-": 1,
@@ -392,7 +385,7 @@
         "JGLS": 24,
         "Ju": 308,
         "KZ": 2,
-        "Kern Toev": 3,
+        "Kern Toev": 2,
         "KhubSD": 10,
         "LFG": 1,
         "LM": 158,
@@ -487,7 +480,6 @@
         "Childers DPL",
         "ColPa",
         "DED",
-        "DEDS",
         "DGW",
         "DSL",
         "Dave",
@@ -612,6 +604,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 483,
       "compiled_rows": 1348,
       "entry_key_count": 0,
       "id": "munda-forms",
@@ -642,6 +635,7 @@
       "row_widths": {
         "8": 1346
       },
+      "source_grammar_evidence_rows": 482,
       "source_key_counts": {
         "A": 1,
         "AG": 1,
@@ -778,29 +772,34 @@
       ],
       "audits": [
         "data/dedr/audit.py",
+        "data/dedr/entry-texts-audit.csv.gz",
+        "data/dedr/entry-texts-sample.csv",
+        "data/dedr/entry-texts-manifest.json",
+        "data/cross-family-comparisons-audit.csv",
+        "data/cross-family-comparisons-sample.csv",
+        "cldf/pdr-headword-audit.csv",
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
-      "compiled_rows": 77577,
+      "compiled_grammar_tagged_rows": 11211,
+      "compiled_rows": 82831,
       "entry_key_count": 0,
       "id": "dedr-dedr-new",
       "importers": [
         "data/dedr/parse.py",
-        "data/dedr/audit.py"
+        "data/dedr/audit.py",
+        "data/dedr/entry_texts.py",
+        "data/cross_family.py"
       ],
       "installed_file": "data/dedr/dedr_new.csv",
       "languages": [
         "AluKurumba",
-        "Ap",
-        "B",
         "Badaga",
         "Belari",
         "BettaKurumba",
         "Brah",
-        "G",
         "Gadaba",
         "Gondi",
-        "H",
         "Irula",
         "Kannada",
         "Kodagu",
@@ -811,22 +810,17 @@
         "Kui",
         "Kurux",
         "Kuwi",
-        "M",
         "Mal",
         "Malto",
         "Manda",
-        "N",
         "Naiki",
         "Naikri",
-        "OIA",
         "OMal",
         "OTelugu",
         "Or",
-        "Pa",
         "PaluKurumba",
         "Parji",
         "Pengo",
-        "Pk",
         "Sholaga",
         "Tam",
         "Telugu",
@@ -843,7 +837,6 @@
         "gommu",
         "gowda",
         "gulbarga",
-        "hal",
         "halakki",
         "havyaka",
         "kinwat",
@@ -882,10 +875,11 @@
         "conversion/dedr.txt"
       ],
       "replacement_character_count": 0,
-      "row_count": 76663,
+      "row_count": 76303,
       "row_widths": {
-        "15": 76663
+        "15": 76303
       },
+      "source_grammar_evidence_rows": 5366,
       "source_key_counts": {
         "A-Gondi": 661,
         "Ag-Tam": 3,
@@ -961,7 +955,7 @@
         "Z-Irula": 1,
         "Z2-Irula": 1,
         "Zvelebil1980-Irula": 2,
-        "dedr": 76663,
+        "dedr": 76303,
         "Ḍ-Kuwi": 67,
         "Ṭ-Kuwi": 107
       },
@@ -1046,7 +1040,10 @@
       ],
       "tests": [
         "tests/test_dedr_parser.py",
-        "tests/test_dedr_cleanup.py"
+        "tests/test_dedr_cleanup.py",
+        "tests/test_dedr_entry_texts.py",
+        "tests/test_cross_family.py",
+        "tests/test_dedr_headwords.py"
       ],
       "unique_entry_key_count": 0,
       "unregistered_dialect_tags": [],
@@ -1061,7 +1058,8 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
-      "compiled_rows": 1405,
+      "compiled_grammar_tagged_rows": 59,
+      "compiled_rows": 2389,
       "entry_key_count": 0,
       "id": "dedr-pdr",
       "importers": [
@@ -1079,6 +1077,7 @@
       "row_widths": {
         "9": 1365
       },
+      "source_grammar_evidence_rows": 0,
       "source_key_counts": {
         "kobayashi2022": 35,
         "krishnamurti": 965,
@@ -1111,6 +1110,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 0,
       "compiled_rows": 128,
       "entry_key_count": 128,
       "id": "20220913-dhivehi",
@@ -1129,6 +1129,7 @@
       "row_widths": {
         "15": 128
       },
+      "source_grammar_evidence_rows": 0,
       "source_key_counts": {
         "fritz": 128
       },
@@ -1151,6 +1152,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 4,
       "compiled_rows": 500,
       "entry_key_count": 0,
       "id": "20220913-gawri",
@@ -1169,6 +1171,7 @@
       "row_widths": {
         "8": 499
       },
+      "source_grammar_evidence_rows": 4,
       "source_key_counts": {
         "gawri": 499
       },
@@ -1191,6 +1194,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 3293,
       "compiled_rows": 3458,
       "entry_key_count": 0,
       "id": "20220913-kalkoti",
@@ -1210,6 +1214,7 @@
       "row_widths": {
         "8": 139
       },
+      "source_grammar_evidence_rows": 0,
       "source_key_counts": {
         "kalkoti": 136,
         "liljegren": 3
@@ -1235,6 +1240,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 3,
       "compiled_rows": 108,
       "entry_key_count": 126,
       "id": "20220913-khetrani",
@@ -1255,6 +1261,7 @@
       "row_widths": {
         "15": 126
       },
+      "source_grammar_evidence_rows": 4,
       "source_key_counts": {
         "elfenbein": 126
       },
@@ -1278,6 +1285,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 4,
       "compiled_rows": 198,
       "entry_key_count": 198,
       "id": "20220913-kholosi",
@@ -1296,6 +1304,7 @@
       "row_widths": {
         "15": 198
       },
+      "source_grammar_evidence_rows": 4,
       "source_key_counts": {
         "kholosi": 198
       },
@@ -1319,6 +1328,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 2,
       "compiled_rows": 55,
       "entry_key_count": 55,
       "id": "20220913-konkani",
@@ -1337,6 +1347,7 @@
       "row_widths": {
         "15": 55
       },
+      "source_grammar_evidence_rows": 2,
       "source_key_counts": {
         "IndoLanguages": 55
       },
@@ -1360,6 +1371,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 4,
       "compiled_rows": 161,
       "entry_key_count": 163,
       "id": "20220913-kundalshahi",
@@ -1378,6 +1390,7 @@
       "row_widths": {
         "15": 163
       },
+      "source_grammar_evidence_rows": 4,
       "source_key_counts": {
         "kund": 163
       },
@@ -1401,6 +1414,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 0,
       "compiled_rows": 215,
       "entry_key_count": 216,
       "id": "20220913-kvari",
@@ -1419,6 +1433,7 @@
       "row_widths": {
         "15": 216
       },
+      "source_grammar_evidence_rows": 0,
       "source_key_counts": {
         "jouanne": 216
       },
@@ -1441,6 +1456,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 3293,
       "compiled_rows": 3322,
       "entry_key_count": 3493,
       "id": "20220913-palula",
@@ -1460,6 +1476,7 @@
       "row_widths": {
         "15": 3493
       },
+      "source_grammar_evidence_rows": 3492,
       "source_key_counts": {
         "liljegren": 3493
       },
@@ -1483,6 +1500,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 2,
       "compiled_rows": 640,
       "entry_key_count": 644,
       "id": "20220913-patyal",
@@ -1519,6 +1537,7 @@
       "row_widths": {
         "15": 644
       },
+      "source_grammar_evidence_rows": 0,
       "source_key_counts": {
         "patyal2": 66,
         "patyal3": 18,
@@ -1547,6 +1566,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 7514,
       "compiled_rows": 7589,
       "entry_key_count": 0,
       "id": "20220913-strand",
@@ -1572,6 +1592,7 @@
       "row_widths": {
         "15": 3951
       },
+      "source_grammar_evidence_rows": 3951,
       "source_key_counts": {
         "strand": 3951
       },
@@ -1595,6 +1616,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 7514,
       "compiled_rows": 7589,
       "entry_key_count": 0,
       "id": "20220913-strand2",
@@ -1613,6 +1635,7 @@
       "row_widths": {
         "15": 156
       },
+      "source_grammar_evidence_rows": 156,
       "source_key_counts": {
         "strand": 156
       },
@@ -1637,8 +1660,9 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
-      "compiled_rows": 328,
-      "entry_key_count": 0,
+      "compiled_grammar_tagged_rows": 204,
+      "compiled_rows": 332,
+      "entry_key_count": 258,
       "id": "20220913-thari",
       "importers": [
         "data/other/forms/raw_data/thari.py"
@@ -1655,12 +1679,12 @@
       "replacement_character_count": 0,
       "row_count": 320,
       "row_widths": {
-        "8": 316,
-        "9": 4
+        "15": 320
       },
+      "source_grammar_evidence_rows": 205,
       "source_key_counts": {
         "arora": 2,
-        "thari": 314
+        "thari": 318
       },
       "source_keys": [
         "arora",
@@ -1670,7 +1694,7 @@
         "tests/test_thari_ocr.py",
         "tests/test_source_checklists.py"
       ],
-      "unique_entry_key_count": 0,
+      "unique_entry_key_count": 257,
       "unregistered_dialect_tags": [],
       "unregistered_languages": [],
       "unresolved_references": []
@@ -1684,6 +1708,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 2382,
       "compiled_rows": 2427,
       "entry_key_count": 2301,
       "id": "20220913-vaagri",
@@ -1702,6 +1727,7 @@
       "row_widths": {
         "15": 2456
       },
+      "source_grammar_evidence_rows": 2408,
       "source_key_counts": {
         "srinivasa": 2456
       },
@@ -1726,6 +1752,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 14,
       "compiled_rows": 65,
       "entry_key_count": 65,
       "id": "20220913-zadjali",
@@ -1744,6 +1771,7 @@
       "row_widths": {
         "15": 65
       },
+      "source_grammar_evidence_rows": 14,
       "source_key_counts": {
         "zadjali": 65
       },
@@ -1764,11 +1792,13 @@
         "Etymological/comparative source"
       ],
       "audits": [
+        "data/other/forms/raw_data/20220930-berger-grammar-audit.csv",
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 23,
       "compiled_rows": 39,
-      "entry_key_count": 0,
+      "entry_key_count": 31,
       "id": "20220930-berger",
       "importers": [
         "data/other/forms/raw_data/berger.py"
@@ -1784,8 +1814,9 @@
       "replacement_character_count": 0,
       "row_count": 39,
       "row_widths": {
-        "8": 39
+        "15": 39
       },
+      "source_grammar_evidence_rows": 23,
       "source_key_counts": {
         "berger": 39
       },
@@ -1796,7 +1827,7 @@
         "tests/test_berger.py",
         "tests/test_source_checklists.py"
       ],
-      "unique_entry_key_count": 0,
+      "unique_entry_key_count": 29,
       "unregistered_dialect_tags": [],
       "unregistered_languages": [],
       "unresolved_references": []
@@ -1810,7 +1841,8 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
-      "compiled_rows": 8685,
+      "compiled_grammar_tagged_rows": 8582,
+      "compiled_rows": 8686,
       "entry_key_count": 0,
       "id": "20221003-strand3",
       "importers": [
@@ -1840,6 +1872,7 @@
       "row_widths": {
         "15": 5486
       },
+      "source_grammar_evidence_rows": 5486,
       "source_key_counts": {
         "LSI": 4,
         "buddruss": 159,
@@ -1871,6 +1904,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 266,
       "compiled_rows": 2307,
       "entry_key_count": 0,
       "id": "20230306-wadiyara",
@@ -1889,6 +1923,7 @@
       "row_widths": {
         "8": 2632
       },
+      "source_grammar_evidence_rows": 302,
       "source_key_counts": {
         "zubair": 2632
       },
@@ -1911,6 +1946,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 0,
       "compiled_rows": 15,
       "entry_key_count": 0,
       "id": "20230403-arora",
@@ -1934,6 +1970,7 @@
       "row_widths": {
         "8": 13
       },
+      "source_grammar_evidence_rows": 0,
       "source_key_counts": {
         "arora": 13,
         "mcgregor": 1,
@@ -1961,6 +1998,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 83,
       "compiled_rows": 10629,
       "entry_key_count": 0,
       "id": "20230416-northern",
@@ -2032,6 +2070,7 @@
       "row_widths": {
         "8": 11343
       },
+      "source_grammar_evidence_rows": 94,
       "source_key_counts": {
         "backstrom1992": 11343
       },
@@ -2048,13 +2087,14 @@
     },
     {
       "addenda": [
-        "Etymological/comparative source"
+        "Dictionary or glossary"
       ],
       "audits": [
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
-      "compiled_rows": 2682,
+      "compiled_grammar_tagged_rows": 23,
+      "compiled_rows": 2730,
       "entry_key_count": 0,
       "id": "20230517-chattisgarhi",
       "importers": [
@@ -2082,6 +2122,7 @@
       "row_widths": {
         "8": 2733
       },
+      "source_grammar_evidence_rows": 24,
       "source_key_counts": {
         "chattisgarhi": 2733
       },
@@ -2104,6 +2145,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 25,
       "compiled_rows": 5372,
       "entry_key_count": 0,
       "id": "20230517-toulmin",
@@ -2129,6 +2171,7 @@
       "row_widths": {
         "8": 5402
       },
+      "source_grammar_evidence_rows": 26,
       "source_key_counts": {
         "toulmin": 5402
       },
@@ -2151,6 +2194,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 1,
       "compiled_rows": 825,
       "entry_key_count": 0,
       "id": "20230519-punjabi",
@@ -2205,6 +2249,7 @@
       "row_widths": {
         "8": 825
       },
+      "source_grammar_evidence_rows": 0,
       "source_key_counts": {
         "gill": 825
       },
@@ -2227,6 +2272,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 1362,
       "compiled_rows": 1376,
       "entry_key_count": 0,
       "id": "20230521-old_punjabi",
@@ -2246,6 +2292,7 @@
       "row_widths": {
         "8": 1034
       },
+      "source_grammar_evidence_rows": 0,
       "source_key_counts": {
         "shackle": 1034
       },
@@ -2269,7 +2316,8 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
-      "compiled_rows": 15752,
+      "compiled_grammar_tagged_rows": 582,
+      "compiled_rows": 15876,
       "entry_key_count": 0,
       "id": "20230521-rajasthani",
       "importers": [
@@ -2345,16 +2393,17 @@
         "conversion/rajasthani.txt"
       ],
       "replacement_character_count": 0,
-      "row_count": 16564,
+      "row_count": 16522,
       "row_widths": {
-        "8": 16564
+        "8": 16522
       },
+      "source_grammar_evidence_rows": 653,
       "source_key_counts": {
-        "bagri": 2650,
-        "dhundari": 1806,
-        "hadothi": 2456,
-        "marwari": 2800,
-        "mewari": 4869,
+        "bagri": 2643,
+        "dhundari": 1796,
+        "hadothi": 2440,
+        "marwari": 2799,
+        "mewari": 4861,
         "mewati": 1983
       },
       "source_keys": [
@@ -2366,6 +2415,7 @@
         "mewati"
       ],
       "tests": [
+        "tests/test_rajasthani.py",
         "tests/test_source_checklists.py"
       ],
       "unique_entry_key_count": 0,
@@ -2381,7 +2431,8 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
-      "compiled_rows": 5563,
+      "compiled_grammar_tagged_rows": 68,
+      "compiled_rows": 5562,
       "entry_key_count": 0,
       "id": "20230522-bundeli",
       "importers": [
@@ -2423,6 +2474,7 @@
       "row_widths": {
         "8": 5759
       },
+      "source_grammar_evidence_rows": 79,
       "source_key_counts": {
         "bundeli": 5759
       },
@@ -2446,6 +2498,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 38,
       "compiled_rows": 202,
       "entry_key_count": 203,
       "id": "20230524-sindhic",
@@ -2465,6 +2518,7 @@
       "row_widths": {
         "15": 203
       },
+      "source_grammar_evidence_rows": 38,
       "source_key_counts": {
         "maimani": 203
       },
@@ -2488,6 +2542,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 3,
       "compiled_rows": 1874,
       "entry_key_count": 0,
       "id": "20230524-tharu",
@@ -2511,6 +2566,7 @@
       "row_widths": {
         "8": 1921
       },
+      "source_grammar_evidence_rows": 0,
       "source_key_counts": {
         "boehm": 1921
       },
@@ -2535,6 +2591,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 92,
       "compiled_rows": 3033,
       "entry_key_count": 3033,
       "id": "20230526-kannauji",
@@ -2565,6 +2622,7 @@
       "row_widths": {
         "11": 3033
       },
+      "source_grammar_evidence_rows": 92,
       "source_key_counts": {
         "kannauji": 3033
       },
@@ -2590,6 +2648,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 35,
       "compiled_rows": 3217,
       "entry_key_count": 0,
       "id": "20230530-tharu2",
@@ -2621,6 +2680,7 @@
       "row_widths": {
         "8": 3571
       },
+      "source_grammar_evidence_rows": 49,
       "source_key_counts": {
         "webster": 3571
       },
@@ -2643,6 +2703,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 17,
       "compiled_rows": 3129,
       "entry_key_count": 0,
       "id": "20230621-shina",
@@ -2668,6 +2729,7 @@
       "row_widths": {
         "8": 2050
       },
+      "source_grammar_evidence_rows": 0,
       "source_key_counts": {
         "schmidt": 2050
       },
@@ -2690,6 +2752,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 3,
       "compiled_rows": 543,
       "entry_key_count": 0,
       "id": "20230705-pashai",
@@ -2708,6 +2771,7 @@
       "row_widths": {
         "8": 562
       },
+      "source_grammar_evidence_rows": 3,
       "source_key_counts": {
         "lehr": 562
       },
@@ -2724,12 +2788,67 @@
     },
     {
       "addenda": [
+        "Website/API or external CLDF",
         "Etymological/comparative source"
       ],
       "audits": [
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 2,
+      "compiled_rows": 7943,
+      "entry_key_count": 6672,
+      "id": "20260718-merriam-dravidian-db",
+      "importers": [
+        "data/other/forms/raw_data/merriam_dravidian_db.py"
+      ],
+      "installed_file": "data/other/forms/20260718-merriam-dravidian-db.csv",
+      "languages": [
+        "PCDr",
+        "PDr",
+        "PKMDr",
+        "PNDr",
+        "PSD1",
+        "PSD2",
+        "PSTDr"
+      ],
+      "profiles": [
+        "conversion/merriam-reconstruction.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 6672,
+      "row_widths": {
+        "15": 6672
+      },
+      "source_grammar_evidence_rows": 0,
+      "source_key_counts": {
+        "krishnamurti": 887,
+        "merriam2026dravidiandb": 6672,
+        "starostin2006dravidian": 3920
+      },
+      "source_keys": [
+        "krishnamurti",
+        "merriam2026dravidiandb",
+        "starostin2006dravidian"
+      ],
+      "tests": [
+        "tests/test_merriam_dravidian_db.py",
+        "tests/test_source_checklists.py"
+      ],
+      "unique_entry_key_count": 6672,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Etymological/comparative source"
+      ],
+      "audits": [
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 21,
       "compiled_rows": 612,
       "entry_key_count": 0,
       "id": "20260723-markodi",
@@ -2750,6 +2869,7 @@
       "row_widths": {
         "8": 615
       },
+      "source_grammar_evidence_rows": 21,
       "source_key_counts": {
         "canvin2025": 615
       },
@@ -2772,6 +2892,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 5608,
       "compiled_rows": 5730,
       "entry_key_count": 0,
       "id": "20260724-old-punjabi-shackle-auto",
@@ -2792,6 +2913,7 @@
       "row_widths": {
         "8": 5778
       },
+      "source_grammar_evidence_rows": 0,
       "source_key_counts": {
         "shackle-auto": 5778
       },
@@ -2817,7 +2939,8 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
-      "compiled_rows": 12369,
+      "compiled_grammar_tagged_rows": 9294,
+      "compiled_rows": 12365,
       "entry_key_count": 0,
       "id": "20260724-zoller-indus-kohistani",
       "importers": [
@@ -2840,6 +2963,7 @@
       "row_widths": {
         "10": 13003
       },
+      "source_grammar_evidence_rows": 0,
       "source_key_counts": {
         "zoller2005": 13003
       },
@@ -2864,8 +2988,9 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
-      "compiled_rows": 16071,
-      "entry_key_count": 16225,
+      "compiled_grammar_tagged_rows": 14654,
+      "compiled_rows": 15018,
+      "entry_key_count": 15172,
       "id": "20260725-bashir-khowar",
       "importers": [
         "data/other/forms/raw_data/khowar.py"
@@ -2876,142 +3001,52 @@
         "Eng",
         "H",
         "Kho",
-        "Kho-Bashir-reg-balim",
-        "Kho-Bashir-reg-bang",
-        "Kho-Bashir-reg-booni",
-        "Kho-Bashir-reg-chapali",
-        "Kho-Bashir-reg-chitral-town",
-        "Kho-Bashir-reg-drosh",
-        "Kho-Bashir-reg-laspur",
-        "Kho-Bashir-reg-lower-chitral",
-        "Kho-Bashir-reg-lutkoh",
-        "Kho-Bashir-reg-mastuj",
-        "Kho-Bashir-reg-mulkhow",
-        "Kho-Bashir-reg-parwak",
-        "Kho-Bashir-reg-pasum",
-        "Kho-Bashir-reg-proper-chitral",
-        "Kho-Bashir-reg-rayin",
-        "Kho-Bashir-reg-shagram",
-        "Kho-Bashir-reg-sonoghor",
-        "Kho-Bashir-reg-terich",
-        "Kho-Bashir-reg-torkhow",
-        "Kho-Bashir-reg-upper-chitral",
-        "Kho-Bashir-reg-uzhnu",
-        "Kho-Bashir-reg-warijun",
-        "Kho-Bashir-reg-yarkhun",
-        "Kho-Bashir-reg-zondrangram",
-        "Kho-Bashir-src-a",
-        "Kho-Bashir-src-ak",
-        "Kho-Bashir-src-akm",
-        "Kho-Bashir-src-akm-ifm",
-        "Kho-Bashir-src-ar",
-        "Kho-Bashir-src-arc",
-        "Kho-Bashir-src-ayun",
-        "Kho-Bashir-src-ba",
-        "Kho-Bashir-src-bka",
-        "Kho-Bashir-src-bm",
-        "Kho-Bashir-src-booni",
-        "Kho-Bashir-src-chapali",
-        "Kho-Bashir-src-chitral-museum",
-        "Kho-Bashir-src-chitral-town",
-        "Kho-Bashir-src-ckt",
-        "Kho-Bashir-src-da39a3ee5e",
-        "Kho-Bashir-src-dat",
-        "Kho-Bashir-src-drosh",
-        "Kho-Bashir-src-fq",
-        "Kho-Bashir-src-gmkh",
-        "Kho-Bashir-src-gnk",
-        "Kho-Bashir-src-has",
-        "Kho-Bashir-src-hs",
-        "Kho-Bashir-src-hur",
-        "Kho-Bashir-src-ia",
-        "Kho-Bashir-src-ics",
-        "Kho-Bashir-src-if",
-        "Kho-Bashir-src-ifm",
-        "Kho-Bashir-src-ifm-laspur",
-        "Kho-Bashir-src-is",
-        "Kho-Bashir-src-iwa",
-        "Kho-Bashir-src-iwk",
-        "Kho-Bashir-src-karimabad-valley",
-        "Kho-Bashir-src-khairabad",
-        "Kho-Bashir-src-khot",
-        "Kho-Bashir-src-laspur",
-        "Kho-Bashir-src-laspur-women",
-        "Kho-Bashir-src-lotkoh",
-        "Kho-Bashir-src-ma",
-        "Kho-Bashir-src-mak",
-        "Kho-Bashir-src-mastuj",
-        "Kho-Bashir-src-meragram",
-        "Kho-Bashir-src-mhh",
-        "Kho-Bashir-src-mii",
-        "Kho-Bashir-src-mk",
-        "Kho-Bashir-src-mn",
-        "Kho-Bashir-src-mnn",
-        "Kho-Bashir-src-mnn-chitral-town",
-        "Kho-Bashir-src-mnn-if",
-        "Kho-Bashir-src-mnn-iwa",
-        "Kho-Bashir-src-mnn-wsic",
-        "Kho-Bashir-src-mnn-wsic-rkb",
-        "Kho-Bashir-src-ms",
-        "Kho-Bashir-src-ms-ma",
-        "Kho-Bashir-src-mulkhow",
-        "Kho-Bashir-src-mwt",
-        "Kho-Bashir-src-my",
-        "Kho-Bashir-src-mys",
-        "Kho-Bashir-src-n",
-        "Kho-Bashir-src-nkn",
-        "Kho-Bashir-src-nr",
-        "Kho-Bashir-src-parwak",
-        "Kho-Bashir-src-pasum",
-        "Kho-Bashir-src-proper-chitral",
-        "Kho-Bashir-src-prs",
-        "Kho-Bashir-src-rakr",
-        "Kho-Bashir-src-rakr-1988",
-        "Kho-Bashir-src-rakr-iwa",
-        "Kho-Bashir-src-rakr-wsic",
-        "Kho-Bashir-src-rakrw",
-        "Kho-Bashir-src-rakw",
-        "Kho-Bashir-src-rayin",
-        "Kho-Bashir-src-rayin-torkhow",
-        "Kho-Bashir-src-reshun",
-        "Kho-Bashir-src-rk",
-        "Kho-Bashir-src-rk-story",
-        "Kho-Bashir-src-rkb",
-        "Kho-Bashir-src-rkb-if",
-        "Kho-Bashir-src-rkb-ma",
-        "Kho-Bashir-src-rmf",
-        "Kho-Bashir-src-s",
-        "Kho-Bashir-src-sas",
-        "Kho-Bashir-src-sg",
-        "Kho-Bashir-src-sh",
-        "Kho-Bashir-src-short-story-rajuli",
-        "Kho-Bashir-src-sn-c",
-        "Kho-Bashir-src-sn-m",
-        "Kho-Bashir-src-sonoghor",
-        "Kho-Bashir-src-sonogor",
-        "Kho-Bashir-src-source-mnn",
-        "Kho-Bashir-src-ssm",
-        "Kho-Bashir-src-swka",
-        "Kho-Bashir-src-swka-ms",
-        "Kho-Bashir-src-swka-rkb",
-        "Kho-Bashir-src-tmf",
-        "Kho-Bashir-src-tmfd",
-        "Kho-Bashir-src-tmfw",
-        "Kho-Bashir-src-torkhow",
-        "Kho-Bashir-src-uthul",
-        "Kho-Bashir-src-warijun-women",
-        "Kho-Bashir-src-wsic",
-        "Kho-Bashir-src-wsim",
-        "Kho-Bashir-src-wur",
-        "Kho-Bashir-src-zhd",
-        "Kho-Bashir-src-zhdm",
-        "Kho-Bashir-src-zk",
-        "Kho-Bashir-src-zk-in-story",
-        "Kho-Bashir-src-zk-in-tale",
-        "Kho-Bashir-src-zk-story",
-        "Kho-Bashir-src-zk-tale",
-        "Kho-Bashir-src-zmz",
-        "Kho-Bashir-src-zp",
+        "Kho-Bashir-place-ayun",
+        "Kho-Bashir-place-balim",
+        "Kho-Bashir-place-bang",
+        "Kho-Bashir-place-booni",
+        "Kho-Bashir-place-chapali",
+        "Kho-Bashir-place-chitral-town",
+        "Kho-Bashir-place-chumurkun",
+        "Kho-Bashir-place-drosh",
+        "Kho-Bashir-place-jughoor",
+        "Kho-Bashir-place-karimabad",
+        "Kho-Bashir-place-khairabad",
+        "Kho-Bashir-place-khost",
+        "Kho-Bashir-place-khot",
+        "Kho-Bashir-place-laspur",
+        "Kho-Bashir-place-lower-chitral",
+        "Kho-Bashir-place-lutkoh",
+        "Kho-Bashir-place-madaglasht",
+        "Kho-Bashir-place-mahrting",
+        "Kho-Bashir-place-mastuj",
+        "Kho-Bashir-place-meragram",
+        "Kho-Bashir-place-mogh",
+        "Kho-Bashir-place-mroi",
+        "Kho-Bashir-place-mulkhow",
+        "Kho-Bashir-place-parkusap",
+        "Kho-Bashir-place-parwak",
+        "Kho-Bashir-place-pasum",
+        "Kho-Bashir-place-proper-chitral",
+        "Kho-Bashir-place-rayin",
+        "Kho-Bashir-place-reshun",
+        "Kho-Bashir-place-shagram",
+        "Kho-Bashir-place-shogram",
+        "Kho-Bashir-place-shyaqotek",
+        "Kho-Bashir-place-singoor",
+        "Kho-Bashir-place-sonoghor",
+        "Kho-Bashir-place-sor-laspur",
+        "Kho-Bashir-place-sor-rech",
+        "Kho-Bashir-place-terich",
+        "Kho-Bashir-place-thingshen",
+        "Kho-Bashir-place-torkhow",
+        "Kho-Bashir-place-upper-chitral",
+        "Kho-Bashir-place-uthul",
+        "Kho-Bashir-place-uzhnu",
+        "Kho-Bashir-place-warijun",
+        "Kho-Bashir-place-yarkhun",
+        "Kho-Bashir-place-zargarandeh",
+        "Kho-Bashir-place-zondrangram",
         "Pers",
         "TurkicUnspec",
         "Wkh"
@@ -3020,12 +3055,13 @@
         "conversion/khowar.txt"
       ],
       "replacement_character_count": 0,
-      "row_count": 16225,
+      "row_count": 15172,
       "row_widths": {
-        "15": 16225
+        "15": 15172
       },
+      "source_grammar_evidence_rows": 14810,
       "source_key_counts": {
-        "bashir2023": 16225
+        "bashir2023": 15172
       },
       "source_keys": [
         "bashir2023"
@@ -3047,6 +3083,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 508,
       "compiled_rows": 3021,
       "entry_key_count": 0,
       "id": "20260725-drasi",
@@ -3065,6 +3102,7 @@
       "row_widths": {
         "8": 3551
       },
+      "source_grammar_evidence_rows": 0,
       "source_key_counts": {
         "rajapurohit2012": 3551
       },
@@ -3089,6 +3127,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 318,
       "compiled_rows": 6092,
       "entry_key_count": 6102,
       "id": "20260725-kalasha-trail-cooper",
@@ -3119,6 +3158,7 @@
       "row_widths": {
         "15": 6102
       },
+      "source_grammar_evidence_rows": 320,
       "source_key_counts": {
         "trail-cooper1999": 6102
       },
@@ -3142,6 +3182,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 17,
       "compiled_rows": 3129,
       "entry_key_count": 0,
       "id": "20260725-schmidt-kashmiri",
@@ -3168,6 +3209,7 @@
       "row_widths": {
         "8": 1149
       },
+      "source_grammar_evidence_rows": 0,
       "source_key_counts": {
         "schmidt": 1149
       },
@@ -3191,6 +3233,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 4,
       "compiled_rows": 12767,
       "entry_key_count": 0,
       "id": "20260725-ssnp",
@@ -3271,6 +3314,7 @@
       "row_widths": {
         "8": 12779
       },
+      "source_grammar_evidence_rows": 0,
       "source_key_counts": {
         "decker1992": 3752,
         "rensch-decker-hallberg1992": 3871,
@@ -3296,10 +3340,12 @@
         "Etymological/comparative source"
       ],
       "audits": [
+        "data/other/forms/raw_data/20220930-berger-grammar-audit.csv",
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
-      "compiled_rows": 8965,
+      "compiled_grammar_tagged_rows": 5112,
+      "compiled_rows": 8964,
       "entry_key_count": 9154,
       "id": "20260726-berger-auto",
       "importers": [
@@ -3318,6 +3364,7 @@
       "row_widths": {
         "15": 9154
       },
+      "source_grammar_evidence_rows": 5244,
       "source_key_counts": {
         "berger-auto": 9154
       },
@@ -3342,6 +3389,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 1949,
       "compiled_rows": 2743,
       "entry_key_count": 0,
       "id": "20260726-paranavitana-sigiri",
@@ -3358,8 +3406,9 @@
       "replacement_character_count": 0,
       "row_count": 2874,
       "row_widths": {
-        "8": 2874
+        "15": 2874
       },
+      "source_grammar_evidence_rows": 2058,
       "source_key_counts": {
         "paranavitana": 2874
       },
@@ -3383,6 +3432,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 2539,
       "compiled_rows": 3239,
       "entry_key_count": 3183,
       "id": "20260726-yoshioka-eastern-burushaski",
@@ -3402,6 +3452,7 @@
       "row_widths": {
         "15": 3183
       },
+      "source_grammar_evidence_rows": 2506,
       "source_key_counts": {
         "yoshioka2012": 3183
       },
@@ -3410,6 +3461,7 @@
       ],
       "tests": [
         "tests/test_burushaski_cognates.py",
+        "tests/test_burushaski_comparisons.py",
         "tests/test_eastern_magar.py",
         "tests/test_yoshioka.py",
         "tests/test_source_checklists.py"
@@ -3428,6 +3480,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 116,
       "compiled_rows": 279,
       "entry_key_count": 0,
       "id": "20260804-andersen-mre",
@@ -3446,6 +3499,7 @@
       "row_widths": {
         "15": 287
       },
+      "source_grammar_evidence_rows": 117,
       "source_key_counts": {
         "andersen1990": 287
       },
@@ -3472,6 +3526,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 1512,
       "compiled_rows": 1512,
       "entry_key_count": 1512,
       "id": "20260805-gandhari-org",
@@ -3490,6 +3545,7 @@
       "row_widths": {
         "15": 1512
       },
+      "source_grammar_evidence_rows": 1512,
       "source_key_counts": {
         "gandhari": 1512
       },
@@ -3513,6 +3569,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 11600,
       "compiled_rows": 11600,
       "entry_key_count": 11600,
       "id": "20260810-liljegren-hindukush",
@@ -3590,6 +3647,7 @@
       "row_widths": {
         "15": 11600
       },
+      "source_grammar_evidence_rows": 11600,
       "source_key_counts": {
         "liljegren-hindukush": 11600
       },
@@ -3614,6 +3672,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 4718,
       "compiled_rows": 4718,
       "entry_key_count": 4718,
       "id": "20260810-tulpule-old-marathi",
@@ -3633,6 +3692,7 @@
       "row_widths": {
         "15": 4718
       },
+      "source_grammar_evidence_rows": 4718,
       "source_key_counts": {
         "tulpule1999": 4718
       },
@@ -3655,14 +3715,17 @@
       ],
       "audits": [
         "data/other/forms/raw_data/20260813-ali-kobayashi-brahui-audit.csv",
+        "data/other/forms/raw_data/20260819-emeneau-brahui-1997-audit.csv",
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 3368,
       "compiled_rows": 3368,
       "entry_key_count": 3483,
       "id": "20260813-ali-kobayashi-brahui",
       "importers": [
-        "data/other/forms/raw_data/ali_kobayashi_brahui.py"
+        "data/other/forms/raw_data/ali_kobayashi_brahui.py",
+        "data/other/forms/raw_data/emeneau_brahui_1997.py"
       ],
       "installed_file": "data/other/forms/20260813-ali-kobayashi-brahui.csv",
       "languages": [
@@ -3676,6 +3739,7 @@
       "row_widths": {
         "15": 3483
       },
+      "source_grammar_evidence_rows": 3483,
       "source_key_counts": {
         "ali-kobayashi2024": 3483
       },
@@ -3684,6 +3748,7 @@
       ],
       "tests": [
         "tests/test_ali_kobayashi_brahui.py",
+        "tests/test_emeneau_brahui_1997.py",
         "tests/test_source_checklists.py"
       ],
       "unique_entry_key_count": 3483,
@@ -3701,6 +3766,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 8879,
       "compiled_rows": 8879,
       "entry_key_count": 8859,
       "id": "20260813-bhaskararao-toda",
@@ -3719,6 +3785,7 @@
       "row_widths": {
         "15": 8859
       },
+      "source_grammar_evidence_rows": 8859,
       "source_key_counts": {
         "bhaskararao-toda-notes": 4228,
         "bhaskararao-toda2025": 8859,
@@ -3746,6 +3813,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 15,
       "compiled_rows": 970,
       "entry_key_count": 970,
       "id": "20260813-chhulung",
@@ -3768,6 +3836,7 @@
       "row_widths": {
         "11": 970
       },
+      "source_grammar_evidence_rows": 15,
       "source_key_counts": {
         "rai-rai-thokar2014chhulung": 970
       },
@@ -3791,6 +3860,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 489,
       "compiled_rows": 1922,
       "entry_key_count": 1922,
       "id": "20260813-dewas-rai",
@@ -3814,6 +3884,7 @@
       "row_widths": {
         "11": 1922
       },
+      "source_grammar_evidence_rows": 489,
       "source_key_counts": {
         "shackelford2019dewas-rai": 1922
       },
@@ -3837,6 +3908,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 23,
       "compiled_rows": 1247,
       "entry_key_count": 1270,
       "id": "20260813-dotyali",
@@ -3858,6 +3930,7 @@
       "row_widths": {
         "11": 1270
       },
+      "source_grammar_evidence_rows": 24,
       "source_key_counts": {
         "eichentopf-tupper2019dotyali": 1270
       },
@@ -3881,6 +3954,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 4,
       "compiled_rows": 842,
       "entry_key_count": 865,
       "id": "20260813-eastern-magar",
@@ -3903,6 +3977,7 @@
       "row_widths": {
         "11": 865
       },
+      "source_grammar_evidence_rows": 4,
       "source_key_counts": {
         "hilty2013eastern-magar": 865
       },
@@ -3929,6 +4004,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 898,
       "compiled_rows": 28552,
       "entry_key_count": 28552,
       "id": "20260813-grierson-lsi",
@@ -4099,6 +4175,7 @@
       "row_widths": {
         "15": 28552
       },
+      "source_grammar_evidence_rows": 898,
       "source_key_counts": {
         "grierson-lsi1928": 28552
       },
@@ -4122,6 +4199,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 141,
       "compiled_rows": 1379,
       "entry_key_count": 1574,
       "id": "20260813-gurung",
@@ -4145,6 +4223,7 @@
       "row_widths": {
         "11": 1574
       },
+      "source_grammar_evidence_rows": 253,
       "source_key_counts": {
         "swenson2019gurung": 1574
       },
@@ -4168,6 +4247,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 49,
       "compiled_rows": 3311,
       "entry_key_count": 3311,
       "id": "20260813-hajong",
@@ -4195,6 +4275,7 @@
       "row_widths": {
         "11": 3311
       },
+      "source_grammar_evidence_rows": 49,
       "source_key_counts": {
         "kim-ahmad-kim-sangma2011hajong": 3311
       },
@@ -4218,6 +4299,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 46,
       "compiled_rows": 1413,
       "entry_key_count": 1512,
       "id": "20260813-humla",
@@ -4242,6 +4324,7 @@
       "row_widths": {
         "11": 1512
       },
+      "source_grammar_evidence_rows": 54,
       "source_key_counts": {
         "devries2020humla": 1512
       },
@@ -4265,6 +4348,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 22,
       "compiled_rows": 810,
       "entry_key_count": 833,
       "id": "20260813-kochila-tharu",
@@ -4287,6 +4371,7 @@
       "row_widths": {
         "11": 833
       },
+      "source_grammar_evidence_rows": 24,
       "source_key_counts": {
         "eichentopf-mitchell2020kochila": 833
       },
@@ -4311,6 +4396,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 11,
       "compiled_rows": 397,
       "entry_key_count": 409,
       "id": "20260813-kudiya",
@@ -4330,6 +4416,7 @@
       "row_widths": {
         "11": 409
       },
+      "source_grammar_evidence_rows": 12,
       "source_key_counts": {
         "joseph2024kudiya": 409
       },
@@ -4355,6 +4442,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 2000,
       "compiled_rows": 2003,
       "entry_key_count": 2003,
       "id": "20260813-kullui-org",
@@ -4373,6 +4461,7 @@
       "row_widths": {
         "15": 2003
       },
+      "source_grammar_evidence_rows": 2000,
       "source_key_counts": {
         "kullui-org": 2003
       },
@@ -4396,6 +4485,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 186,
       "compiled_rows": 1319,
       "entry_key_count": 1336,
       "id": "20260813-kurux-nepal",
@@ -4417,6 +4507,7 @@
       "row_widths": {
         "11": 1336
       },
+      "source_grammar_evidence_rows": 189,
       "source_key_counts": {
         "shackelford-swenson-chaudhary-maggard2022kurux": 1336
       },
@@ -4440,6 +4531,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 25,
       "compiled_rows": 1050,
       "entry_key_count": 1050,
       "id": "20260813-magahi",
@@ -4462,6 +4554,7 @@
       "row_widths": {
         "11": 1050
       },
+      "source_grammar_evidence_rows": 25,
       "source_key_counts": {
         "thakur-thakur2016magahi": 1050
       },
@@ -4485,6 +4578,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 41,
       "compiled_rows": 1769,
       "entry_key_count": 1769,
       "id": "20260813-magar-2024",
@@ -4515,6 +4609,7 @@
       "row_widths": {
         "11": 1769
       },
+      "source_grammar_evidence_rows": 41,
       "source_key_counts": {
         "swenson2024magar": 1769
       },
@@ -4539,6 +4634,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 157,
       "compiled_rows": 1090,
       "entry_key_count": 1147,
       "id": "20260813-maikoti-kham",
@@ -4560,6 +4656,7 @@
       "row_widths": {
         "11": 1147
       },
+      "source_grammar_evidence_rows": 180,
       "source_key_counts": {
         "leman2020maikoti": 1147
       },
@@ -4583,6 +4680,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 239,
       "compiled_rows": 1546,
       "entry_key_count": 1590,
       "id": "20260813-majhi-bote",
@@ -4606,6 +4704,7 @@
       "row_widths": {
         "11": 1590
       },
+      "source_grammar_evidence_rows": 263,
       "source_key_counts": {
         "page2024majhi-bote": 1590
       },
@@ -4629,6 +4728,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 15,
       "compiled_rows": 1164,
       "entry_key_count": 1164,
       "id": "20260813-mewahang",
@@ -4651,6 +4751,7 @@
       "row_widths": {
         "11": 1164
       },
+      "source_grammar_evidence_rows": 15,
       "source_key_counts": {
         "rai-rai-thokar2014mewahang": 1164
       },
@@ -4674,6 +4775,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 79,
       "compiled_rows": 1802,
       "entry_key_count": 1996,
       "id": "20260813-mustang-loke",
@@ -4696,6 +4798,7 @@
       "row_widths": {
         "11": 1996
       },
+      "source_grammar_evidence_rows": 83,
       "source_key_counts": {
         "khadgi-marcuson-marcuson2021mustang": 1996
       },
@@ -4719,6 +4822,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 165,
       "compiled_rows": 665,
       "entry_key_count": 665,
       "id": "20260813-naaba",
@@ -4738,6 +4842,7 @@
       "row_widths": {
         "11": 665
       },
+      "source_grammar_evidence_rows": 165,
       "source_key_counts": {
         "swenson2025naaba": 665
       },
@@ -4761,6 +4866,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 53,
       "compiled_rows": 3953,
       "entry_key_count": 4269,
       "id": "20260813-north-gorkha",
@@ -4801,6 +4907,7 @@
       "row_widths": {
         "11": 4269
       },
+      "source_grammar_evidence_rows": 56,
       "source_key_counts": {
         "webster2022north-gorkha": 4269
       },
@@ -4824,6 +4931,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 213,
       "compiled_rows": 1452,
       "entry_key_count": 1452,
       "id": "20260813-pahari",
@@ -4846,6 +4954,7 @@
       "row_widths": {
         "11": 1452
       },
+      "source_grammar_evidence_rows": 213,
       "source_key_counts": {
         "smith2022pahari": 1452
       },
@@ -4869,6 +4978,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 54,
       "compiled_rows": 317,
       "entry_key_count": 338,
       "id": "20260813-pyangaun-newar",
@@ -4887,6 +4997,7 @@
       "row_widths": {
         "11": 338
       },
+      "source_grammar_evidence_rows": 57,
       "source_key_counts": {
         "smith2021pyangaun": 338
       },
@@ -4910,6 +5021,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 9,
       "compiled_rows": 390,
       "entry_key_count": 400,
       "id": "20260813-rabha",
@@ -4929,6 +5041,7 @@
       "row_widths": {
         "11": 400
       },
+      "source_grammar_evidence_rows": 10,
       "source_key_counts": {
         "kondakov2013rabha": 400
       },
@@ -4952,6 +5065,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 21,
       "compiled_rows": 907,
       "entry_key_count": 907,
       "id": "20260813-sampang",
@@ -4973,6 +5087,7 @@
       "row_widths": {
         "11": 907
       },
+      "source_grammar_evidence_rows": 21,
       "source_key_counts": {
         "rai-rai-thokar2015sampang": 907
       },
@@ -4996,6 +5111,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 81,
       "compiled_rows": 4882,
       "entry_key_count": 4882,
       "id": "20260813-santali-cluster",
@@ -5029,6 +5145,7 @@
       "row_widths": {
         "11": 4882
       },
+      "source_grammar_evidence_rows": 81,
       "source_key_counts": {
         "kim-kim-ahmad-sangma2010santali-cluster": 4882
       },
@@ -5052,6 +5169,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 49,
       "compiled_rows": 4648,
       "entry_key_count": 4939,
       "id": "20260813-tagin-puroik",
@@ -5085,6 +5203,7 @@
       "row_widths": {
         "11": 4939
       },
+      "source_grammar_evidence_rows": 83,
       "source_key_counts": {
         "abraham-sako2021": 4939
       },
@@ -5108,6 +5227,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 8,
       "compiled_rows": 832,
       "entry_key_count": 866,
       "id": "20260813-thakali",
@@ -5129,6 +5249,7 @@
       "row_widths": {
         "11": 866
       },
+      "source_grammar_evidence_rows": 9,
       "source_key_counts": {
         "webster2021thakali": 866
       },
@@ -5153,6 +5274,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 95,
       "compiled_rows": 135,
       "entry_key_count": 135,
       "id": "20260813-weinreich-domaaki",
@@ -5172,6 +5294,7 @@
       "row_widths": {
         "15": 135
       },
+      "source_grammar_evidence_rows": 95,
       "source_key_counts": {
         "weinreich2008": 135
       },
@@ -5195,6 +5318,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 90,
       "compiled_rows": 867,
       "entry_key_count": 901,
       "id": "20260813-western-tamang",
@@ -5215,6 +5339,7 @@
       "row_widths": {
         "11": 901
       },
+      "source_grammar_evidence_rows": 96,
       "source_key_counts": {
         "lipp2014western-tamang": 901
       },
@@ -5240,6 +5365,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 51,
       "compiled_rows": 2152,
       "entry_key_count": 2152,
       "id": "20260813-wolf-kota",
@@ -5258,6 +5384,7 @@
       "row_widths": {
         "15": 2152
       },
+      "source_grammar_evidence_rows": 51,
       "source_key_counts": {
         "wolf-kota": 2152
       },
@@ -5280,6 +5407,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 382,
       "compiled_rows": 2099,
       "entry_key_count": 2188,
       "id": "20260813-yamphu",
@@ -5306,6 +5434,7 @@
       "row_widths": {
         "11": 2188
       },
+      "source_grammar_evidence_rows": 397,
       "source_key_counts": {
         "hilty-mitchell2014": 2188
       },
@@ -5331,6 +5460,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 1173,
       "compiled_rows": 1247,
       "entry_key_count": 1271,
       "id": "20260817-ghatage-marati-kasargod",
@@ -5349,6 +5479,7 @@
       "row_widths": {
         "15": 1271
       },
+      "source_grammar_evidence_rows": 1195,
       "source_key_counts": {
         "ghatage-kasargod1970": 1271
       },
@@ -5376,6 +5507,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 2377,
       "compiled_rows": 4065,
       "entry_key_count": 1707,
       "id": "20260817-mundlay-nihali",
@@ -5395,6 +5527,7 @@
       "row_widths": {
         "15": 1707
       },
+      "source_grammar_evidence_rows": 793,
       "source_key_counts": {
         "mundlay1996": 1707,
         "nihali-database2026": 1707
@@ -5425,6 +5558,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 2377,
       "compiled_rows": 4065,
       "entry_key_count": 1761,
       "id": "20260817-nagaraja-nihali-wiktionary",
@@ -5444,6 +5578,7 @@
       "row_widths": {
         "15": 1761
       },
+      "source_grammar_evidence_rows": 1388,
       "source_key_counts": {
         "nagaraja2014": 1761,
         "nihali-database2026": 1761
@@ -5472,6 +5607,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 2377,
       "compiled_rows": 4065,
       "entry_key_count": 407,
       "id": "20260817-nihali-database-bhattacharya",
@@ -5493,6 +5629,7 @@
       "row_widths": {
         "15": 407
       },
+      "source_grammar_evidence_rows": 173,
       "source_key_counts": {
         "bhattacharya1957": 407,
         "nihali-database2026": 407
@@ -5521,6 +5658,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 2377,
       "compiled_rows": 4065,
       "entry_key_count": 190,
       "id": "20260817-nihali-database-konow",
@@ -5542,6 +5680,7 @@
       "row_widths": {
         "15": 190
       },
+      "source_grammar_evidence_rows": 23,
       "source_key_counts": {
         "konow1906": 190,
         "nihali-database2026": 190
@@ -5570,6 +5709,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 16706,
       "compiled_rows": 16706,
       "entry_key_count": 16706,
       "id": "20260818-hockings-badaga",
@@ -5588,6 +5728,7 @@
       "row_widths": {
         "15": 16706
       },
+      "source_grammar_evidence_rows": 16706,
       "source_key_counts": {
         "hockings-pilotraichoor1992": 16706
       },
@@ -5605,6 +5746,57 @@
     },
     {
       "addenda": [
+        "Dictionary or glossary",
+        "Website/API or external CLDF",
+        "Etymological/comparative source"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/20260818-nured-org-audit.csv",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 263,
+      "compiled_rows": 263,
+      "entry_key_count": 263,
+      "id": "20260818-nured-org",
+      "importers": [
+        "data/other/forms/raw_data/nured_org.py"
+      ],
+      "installed_file": "data/other/forms/20260818-nured-org.csv",
+      "languages": [
+        "Ash",
+        "Dm",
+        "Gmb",
+        "Kt",
+        "Pr",
+        "Wg"
+      ],
+      "profiles": [
+        "conversion/nured.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 263,
+      "row_widths": {
+        "15": 263
+      },
+      "source_grammar_evidence_rows": 263,
+      "source_key_counts": {
+        "nured": 263
+      },
+      "source_keys": [
+        "nured"
+      ],
+      "tests": [
+        "tests/test_nured_org.py",
+        "tests/test_source_checklists.py"
+      ],
+      "unique_entry_key_count": 263,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
         "Etymological/comparative source"
       ],
       "audits": [
@@ -5612,7 +5804,8 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
-      "compiled_rows": 62,
+      "compiled_grammar_tagged_rows": 30,
+      "compiled_rows": 61,
       "entry_key_count": 30,
       "id": "20260818-southworth-marathi",
       "importers": [
@@ -5631,6 +5824,7 @@
       "row_widths": {
         "15": 30
       },
+      "source_grammar_evidence_rows": 30,
       "source_key_counts": {
         "southworth2005m": 30
       },
@@ -5653,10 +5847,324 @@
         "Etymological/comparative source"
       ],
       "audits": [
-        "data/dbia/parse_audit.csv",
+        "data/other/forms/raw_data/20260819-buddruss-grangali-audit.csv",
+        "data/other/forms/raw_data/20260819-buddruss-grangali-sample.csv",
+        "data/other/forms/raw_data/20260819-buddruss-grangali-manifest.json",
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 268,
+      "compiled_rows": 320,
+      "entry_key_count": 320,
+      "id": "20260819-buddruss-grangali",
+      "importers": [
+        "data/other/forms/raw_data/buddruss_grangali_1979.py"
+      ],
+      "installed_file": "data/other/forms/20260819-buddruss-grangali.csv",
+      "languages": [
+        "Gng",
+        "Ning",
+        "Shum"
+      ],
+      "profiles": [
+        "conversion/buddruss-grangali.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 320,
+      "row_widths": {
+        "15": 320
+      },
+      "source_grammar_evidence_rows": 268,
+      "source_key_counts": {
+        "buddruss-grangali1979": 320
+      },
+      "source_keys": [
+        "buddruss-grangali1979"
+      ],
+      "tests": [
+        "tests/test_buddruss_grangali_1979.py",
+        "tests/test_source_checklists.py"
+      ],
+      "unique_entry_key_count": 320,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Etymological/comparative source"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/20260819-burrow-emeneau-den1-audit.csv",
+        "data/other/forms/raw_data/20260819-burrow-emeneau-den1-sample.csv",
+        "data/other/forms/raw_data/20260819-burrow-emeneau-den1-manifest.json",
+        "data/other/forms/raw_data/20260819-burrow-emeneau-den1-reconciliation.json",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 299,
+      "compiled_rows": 718,
+      "entry_key_count": 709,
+      "id": "20260819-burrow-emeneau-den1",
+      "importers": [
+        "data/other/forms/raw_data/burrow_emeneau_1972_den1.py"
+      ],
+      "installed_file": "data/other/forms/20260819-burrow-emeneau-den1.csv",
+      "languages": [
+        "Brahui",
+        "Gondi",
+        "Kannada",
+        "Kodagu",
+        "Kolami",
+        "Konda",
+        "Koraga",
+        "Kota",
+        "Kui",
+        "Kurux",
+        "Kuwi",
+        "Malayalam",
+        "Malto",
+        "Manda",
+        "Parji",
+        "Pengo",
+        "Tamil",
+        "Telugu",
+        "Toda",
+        "Tulu",
+        "adil",
+        "barkur",
+        "betul",
+        "chanda",
+        "durg",
+        "gommu",
+        "gowda",
+        "gulbarga",
+        "halakki",
+        "kinwat",
+        "koya",
+        "mandla",
+        "maria",
+        "mudu",
+        "muria",
+        "nanjangud",
+        "onti",
+        "pottangi",
+        "ramnad",
+        "salur",
+        "seoni",
+        "sova",
+        "tappu",
+        "tiptur",
+        "tiyya",
+        "yavatmal"
+      ],
+      "profiles": [
+        "conversion/dedr.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 709,
+      "row_widths": {
+        "15": 709
+      },
+      "source_grammar_evidence_rows": 65,
+      "source_key_counts": {
+        "burrow-emeneau1972den1": 709
+      },
+      "source_keys": [
+        "burrow-emeneau1972den1"
+      ],
+      "tests": [
+        "tests/test_burrow_emeneau_1972_den1.py",
+        "tests/test_source_checklists.py"
+      ],
+      "unique_entry_key_count": 709,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Etymological/comparative source"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/20260819-burrow-emeneau-den2-audit.csv",
+        "data/other/forms/raw_data/20260819-burrow-emeneau-den2-sample.csv",
+        "data/other/forms/raw_data/20260819-burrow-emeneau-den2-manifest.json",
+        "data/other/forms/raw_data/20260819-burrow-emeneau-den2-reconciliation.json",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 80,
+      "compiled_rows": 178,
+      "entry_key_count": 159,
+      "id": "20260819-burrow-emeneau-den2",
+      "importers": [
+        "data/other/forms/raw_data/burrow_emeneau_1972_den2.py"
+      ],
+      "installed_file": "data/other/forms/20260819-burrow-emeneau-den2.csv",
+      "languages": [
+        "Brahui",
+        "Gondi",
+        "Kannada",
+        "Kodagu",
+        "Kolami",
+        "Konda",
+        "Kota",
+        "Kui",
+        "Kurux",
+        "Kuwi",
+        "Malto",
+        "Manda",
+        "Parji",
+        "Pengo",
+        "Tamil",
+        "Telugu",
+        "Toda",
+        "Tulu",
+        "adil",
+        "betul",
+        "gommu",
+        "halakki",
+        "kinwat",
+        "koya",
+        "mandla",
+        "maria",
+        "mudu",
+        "muria",
+        "salur",
+        "seoni",
+        "tiptur",
+        "tiyya"
+      ],
+      "profiles": [
+        "conversion/dedr.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 159,
+      "row_widths": {
+        "15": 159
+      },
+      "source_grammar_evidence_rows": 7,
+      "source_key_counts": {
+        "burrow-emeneau1972den2": 159
+      },
+      "source_keys": [
+        "burrow-emeneau1972den2"
+      ],
+      "tests": [
+        "tests/test_burrow_emeneau_1972_den2.py",
+        "tests/test_source_checklists.py"
+      ],
+      "unique_entry_key_count": 159,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Etymological/comparative source"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/20260819-emeneau-brahui-1997-audit.csv",
+        "data/other/forms/raw_data/20260819-emeneau-brahui-1997-sample.csv",
+        "data/other/forms/raw_data/20260819-emeneau-brahui-1997-manifest.json",
+        "data/other/forms/raw_data/20260819-emeneau-brahui-1997-reconciliation.json",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 19,
+      "compiled_rows": 19,
+      "entry_key_count": 19,
+      "id": "20260819-emeneau-brahui-1997",
+      "importers": [
+        "data/other/forms/raw_data/emeneau_brahui_1997.py"
+      ],
+      "installed_file": "data/other/forms/20260819-emeneau-brahui-1997.csv",
+      "languages": [
+        "Brahui",
+        "Gadaba"
+      ],
+      "profiles": [
+        "conversion/emeneau-brahui.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 19,
+      "row_widths": {
+        "15": 19
+      },
+      "source_grammar_evidence_rows": 19,
+      "source_key_counts": {
+        "emeneau1997brahui": 19
+      },
+      "source_keys": [
+        "emeneau1997brahui"
+      ],
+      "tests": [
+        "tests/test_emeneau_brahui_1997.py",
+        "tests/test_source_checklists.py"
+      ],
+      "unique_entry_key_count": 19,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Dictionary or glossary"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/20260820-torwali-student-2023-audit.csv",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 1936,
+      "compiled_rows": 1943,
+      "entry_key_count": 1943,
+      "id": "20260820-torwali-student-2023",
+      "importers": [
+        "data/other/forms/raw_data/torwali_student_2023.py"
+      ],
+      "installed_file": "data/other/forms/20260820-torwali-student-2023.csv",
+      "languages": [
+        "Tor"
+      ],
+      "profiles": [
+        "conversion/torwali-student.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 1943,
+      "row_widths": {
+        "15": 1943
+      },
+      "source_grammar_evidence_rows": 1936,
+      "source_key_counts": {
+        "torwali2023student": 1943
+      },
+      "source_keys": [
+        "torwali2023student"
+      ],
+      "tests": [
+        "tests/test_torwali_student_2023.py",
+        "tests/test_source_checklists.py"
+      ],
+      "unique_entry_key_count": 1943,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Dictionary or glossary",
+        "OCR-heavy source",
+        "Etymological/comparative source"
+      ],
+      "audits": [
+        "data/dbia/parse_audit.csv",
+        "data/dbia/comparisons.csv",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 1692,
       "compiled_rows": 1692,
       "entry_key_count": 1694,
       "id": "dbia-forms",
@@ -5690,6 +6198,7 @@
       "row_widths": {
         "15": 1694
       },
+      "source_grammar_evidence_rows": 1694,
       "source_key_counts": {
         "dbia": 1694
       },
@@ -5697,7 +6206,8 @@
         "dbia"
       ],
       "tests": [
-        "tests/test_dbia.py"
+        "tests/test_dbia.py",
+        "tests/test_cross_family.py"
       ],
       "unique_entry_key_count": 1694,
       "unregistered_dialect_tags": [],

@@ -97,6 +97,7 @@ class Entry:
     review_reasons: list[str] = field(default_factory=list)
     sanskrit_etyma: list[str] = field(default_factory=list)
     cdial_ids: list[str] = field(default_factory=list)
+    tags: list[str] = field(default_factory=list)
 
 
 def normalize_sanskrit_etymon(text: str) -> str:
@@ -415,6 +416,27 @@ def extract_gloss(raw_entry: str, headword: str) -> str:
     return candidate[:300]
 
 
+def grammatical_tags(raw_entry: str) -> list[str]:
+    """Return canonical tags for the descriptor following a printed glossary head."""
+    remainder = raw_entry[len(raw_entry.split(",", 1)[0]) + 1 :].strip()
+    match = GRAMMAR_PATTERN.match(remainder)
+    if not match:
+        return []
+    descriptor = match.group(0).strip(" ,.").casefold()
+    nominal = re.fullmatch(r"s(?:\.([fmn]))?", descriptor)
+    if nominal:
+        return ["noun", *([nominal.group(1)] if nominal.group(1) else [])]
+    return {
+        "a": ["adj"], "adv": ["adv"], "vb": ["verb"],
+        "v.l": ["alternate"], "indec": ["indecl"], "prt": ["part"],
+        "pron": ["pron"], "num": ["num"], "pref": ["prefix"],
+        "suf": ["suffix"], "interj": ["interj"], "cond": ["conditional"],
+        "abs": ["abs"], "inf": ["inf"], "nom": ["nom"], "acc": ["acc"],
+        "gen": ["gen"], "dat": ["dat"], "loc": ["loc"],
+        "inst": ["instr"], "abl": ["abl"],
+    }[descriptor]
+
+
 def parse_pages(
     pages: list[dict], cdial_index: dict[str, set[str]] | None = None
 ) -> list[Entry]:
@@ -467,6 +489,7 @@ def parse_pages(
                 review_reasons=reasons,
                 sanskrit_etyma=sanskrit_etyma,
                 cdial_ids=cdial_ids,
+                tags=grammatical_tags(raw_entry),
             )
         )
         current = None
@@ -503,7 +526,7 @@ def write_outputs(entries: list[Entry], output_dir: Path, install: bool) -> None
 
     fields = [
         "pdf_page", "printed_page", "column", "top", "headword", "gloss",
-        "confidence", "review_reasons", "raw_entry", "sanskrit_etyma", "cdial_ids",
+        "confidence", "review_reasons", "raw_entry", "sanskrit_etyma", "cdial_ids", "tags",
     ]
     with audit_path.open("w", encoding="utf-8", newline="") as handle:
         writer = csv.DictWriter(handle, fieldnames=fields)
@@ -513,6 +536,7 @@ def write_outputs(entries: list[Entry], output_dir: Path, install: bool) -> None
             row["review_reasons"] = ";".join(entry.review_reasons)
             row["sanskrit_etyma"] = ";".join(entry.sanskrit_etyma)
             row["cdial_ids"] = ";".join(entry.cdial_ids)
+            row["tags"] = " ".join(entry.tags)
             writer.writerow(row)
 
     with review_path.open("w", encoding="utf-8", newline="") as handle:
@@ -524,6 +548,7 @@ def write_outputs(entries: list[Entry], output_dir: Path, install: bool) -> None
                 row["review_reasons"] = ";".join(entry.review_reasons)
                 row["sanskrit_etyma"] = ";".join(entry.sanskrit_etyma)
                 row["cdial_ids"] = ";".join(entry.cdial_ids)
+                row["tags"] = " ".join(entry.tags)
                 writer.writerow(row)
 
     with import_path.open("w", encoding="utf-8", newline="") as handle:
@@ -535,9 +560,10 @@ def write_outputs(entries: list[Entry], output_dir: Path, install: bool) -> None
                 f"col. {entry.column}]"
             )
             for cdial_id in entry.cdial_ids or [""]:
-                writer.writerow(
-                    [LANGUAGE, cdial_id, entry.headword, entry.gloss, "", "", "", source]
-                )
+                writer.writerow([
+                    LANGUAGE, cdial_id, entry.headword, entry.gloss, "", "", "", source,
+                    "", "", "", "", "", "", " ".join(entry.tags),
+                ])
                 import_rows += 1
 
     if install:

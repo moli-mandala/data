@@ -42,6 +42,68 @@ OCR_OVERRIDES = {
     "dbia",
 }
 
+# Reference-level summary of who supplied the etymological analysis represented in Jambu.
+# ``source-mapped`` means that the publication supplies the etymon/analysis and Jambu only
+# resolves it to a canonical CDIAL/DEDR entry.  Keep this deliberately conservative: an absent
+# value is displayed as "Not recorded" rather than silently crediting either the author or us.
+ETYMOLOGY_PROVENANCE_OVERRIDES = {
+    "CDIAL": "source",
+    "dedr": "source",
+    "dbia": "source-mapped",
+    "bashir2023": "source",
+    "berger": "source",
+    "berger-auto": "source",
+    "liljegren": "source",
+    "trail-cooper1999": "source",
+    "shackle": "source",
+    "shackle-auto": "source",
+    "toulmin": "source",
+    "schmidt": "source",
+    "southworth2005m": "source",
+    "southworth2006proto": "source",
+    "krishnamurti": "source",
+    "pfeiffer2018": "source",
+    "rau": "source",
+    "kobayashi2022": "source",
+    "weinreich2008": "source",
+    "emeneau1997brahui": "source",
+    "burrow-emeneau1972den1": "source",
+    "burrow-emeneau1972den2": "source",
+    "patyal2": "source",
+    "patyal3": "source",
+    "patyal4": "source",
+    "patyal5": "source",
+    "nured": "source-mapped",
+    "gandhari": "source-mapped",
+    "kullui-org": "source-mapped",
+    "andersen1990": "source-mapped",
+    "paranavitana": "source-mapped",
+    "zoller2005": "source-mapped",
+    "tulpule1999": "source-mapped",
+    "backstrom1992": "jambu",
+    "boehm": "jambu",
+    "bundeli": "jambu",
+    "chattisgarhi": "jambu",
+    "kannauji": "jambu",
+    "mewari": "jambu",
+    "hadothi": "jambu",
+    "dhundari": "jambu",
+    "marwari": "jambu",
+    "mewati": "jambu",
+    "bagri": "jambu",
+    "gill": "jambu",
+    "kholosi": "jambu",
+    "lehr": "jambu",
+    "maimani": "jambu",
+    "srinivasa": "jambu",
+    "thari": "jambu",
+    "webster": "jambu",
+    "zubair": "jambu",
+    "strand": "mixed",
+}
+
+ETYMOLOGY_PROVENANCE_VALUES = {"source", "source-mapped", "jambu", "mixed", "none", ""}
+
 CDIAL_REFERENCE_CATALOG = Path("data/cdial/reference_catalog.json")
 
 
@@ -137,9 +199,16 @@ def main():
             entry.fields.get("ocr", "").strip().lower() in {"yes", "true", "1"}
             or key in OCR_OVERRIDES
         )
+        etymology_provenance = entry.fields.get("etymology_provenance", "").strip().lower()
+        if not etymology_provenance:
+            etymology_provenance = ETYMOLOGY_PROVENANCE_OVERRIDES.get(key, "")
+        if etymology_provenance not in ETYMOLOGY_PROVENANCE_VALUES:
+            raise ValueError(
+                f"Invalid etymology_provenance for {key}: {etymology_provenance!r}"
+            )
         rows.append(
             [key, short, formatted, entry.fields.get("included", "No"), provenance, editor,
-             "Yes" if ocr else "No"]
+             "Yes" if ocr else "No", etymology_provenance]
         )
 
     # A cited key without a BibTeX record must still be a first-class, traceable reference rather
@@ -155,12 +224,15 @@ def main():
         )
         rows.append([
             key, key, description, "No", provenance, editor,
-            "Yes" if key in OCR_OVERRIDES else "No",
+            "Yes" if key in OCR_OVERRIDES else "No", "",
         ])
 
     with open("cldf/references.csv", "w", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
-        w.writerow(["ID", "Short", "Source", "Progress", "Provenance", "Editor", "OCR"])
+        w.writerow([
+            "ID", "Short", "Source", "Progress", "Provenance", "Editor", "OCR",
+            "Etymology_Provenance",
+        ])
         w.writerows(rows)
     print(f"wrote cldf/references.csv ({len(rows)} references)", file=sys.stderr)
 

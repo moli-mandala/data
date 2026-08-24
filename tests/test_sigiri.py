@@ -25,6 +25,13 @@ def test_extract_gloss_after_etymology_and_before_citations():
     assert sigiri.extract_gloss(entry, "a") == "come, arrived"
 
 
+def test_printed_glossary_descriptors_become_canonical_tags():
+    assert sigiri.grammatical_tags("ak, s. [Skt. agra], end") == ["noun"]
+    assert sigiri.grammatical_tags("aṅgana, s.f. [Skt. aṅganā]") == ["noun", "f"]
+    assert sigiri.grammatical_tags("a, prt. [Skt. āgata]") == ["part"]
+    assert sigiri.grammatical_tags("x, inst. of y") == ["instr"]
+
+
 def test_extracts_sanskrit_etyma_and_matches_only_unique_cdial_heads():
     assert sigiri.extract_sanskrit_etyma(
         "agu, s. [Skt. agra+ka], border, 366"
@@ -108,7 +115,7 @@ def test_generated_sigiri_import_has_complete_ingestion_schema():
 
     # Five entries cite two independently matchable Sanskrit alternatives.
     assert len(rows) == 2874
-    assert {len(row) for row in rows} == {8}
+    assert {len(row) for row in rows} == {15}
     assert {row[0] for row in rows} == {"OSi"}
     assert all(row[7].startswith("paranavitana[p. ") for row in rows)
     assert all(not row[6] for row in rows)
@@ -116,3 +123,4 @@ def test_generated_sigiri_import_has_complete_ingestion_schema():
     assert any(row[1] for row in rows)
     assert any("[p. 431 " in row[7] for row in rows)
     assert any("[p. 480 " in row[7] for row in rows)
+    assert any("noun" in row[14].split() for row in rows)

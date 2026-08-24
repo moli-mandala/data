@@ -47,6 +47,28 @@ def test_dedr_parser_links_only_existing_targets():
     assert uncertain
 
 
+def test_cf_above_copies_the_named_preceding_definition():
+    def entry(top, text):
+        line = badaga.OCRLine(1, 1, 1, text, 225, top, 1200, top + 40, 95.0)
+        result = badaga.Entry(21, 1, 1, top, [line])
+        result.head, result.label = badaga.head_and_label(result.lines)
+        return result
+
+    entries = [
+        entry(100, "akki n. bird, avifauna"),
+        entry(200, "akki ganje n. barley"),
+        entry(300, "akkilu/hakkilu/hakki/akki cf. above, akki/akkilu/hakki/hakkilu"),
+        entry(400, "me:l ole n. above the hearth"),
+    ]
+    rows, audit = badaga.build_rows(entries, {})
+    by_key = {row[10]: row for row in rows}
+
+    assert by_key[entries[2].key][3] == "bird, avifauna"
+    assert audit[2]["Gloss"] == "bird, avifauna"
+    assert by_key[entries[3].key][3] == "above the hearth"
+    assert audit[3]["Gloss"] == "above the hearth"
+
+
 def test_checked_in_dictionary_is_fully_accounted_and_review_marked():
     forms_path = ROOT / "data/other/forms/20260818-hockings-badaga.csv"
     audit_path = RAW_DATA / "20260818-hockings-badaga-audit.csv"
@@ -88,6 +110,22 @@ def test_checked_in_dictionary_is_fully_accounted_and_review_marked():
     installed_by_key = {row[10]: row for row in forms}
     assert installed_by_key["hockings-pilotraichoor1992:p5:c2:y0229"][2] == "agaṭu madilu"
     assert installed_by_key["hockings-pilotraichoor1992:p5:c2:y0404"][2] == "agaṇḍam"
+    assert installed_by_key["hockings-pilotraichoor1992:p5:c1:y0368"][3] == "bird, avifauna DBIA 233b"
+    assert by_key["hockings-pilotraichoor1992:p5:c1:y0368"]["Gloss"] == (
+        "bird, avifauna DBIA 233b"
+    )
+    leading_above = [row for row in forms if row[3].casefold().startswith("above,")]
+    # This is the inherited lexical definition of osatti/osti, not an
+    # unresolved cross-reference marker.
+    assert {
+        row[10].split(":link:", 1)[0].split(":variant:", 1)[0]
+        for row in leading_above
+    } == {
+        "hockings-pilotraichoor1992:p108:c1:y0267",
+        "hockings-pilotraichoor1992:p108:c2:y0492",
+        "hockings-pilotraichoor1992:p476:c1:y0071",
+        "hockings-pilotraichoor1992:p493:c2:y0257",
+    }
 
 
 def test_scan_backed_calibration_has_twenty_final_passes():

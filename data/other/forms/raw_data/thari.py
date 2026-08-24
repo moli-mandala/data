@@ -183,6 +183,66 @@ def clean_pos(text: str) -> str:
     return ""
 
 
+def tags_for_pos(pos: str) -> list[str]:
+    """Map the source's printed part-of-speech labels to canonical tags."""
+    return {
+        "noun feminine": ["noun", "f"],
+        "noun masculine": ["noun", "m"],
+        "noun": ["noun"],
+        "adjective": ["adj"],
+        "adv": ["adv"],
+        "pronoun": ["pron"],
+        "postposition": ["postp"],
+        "conj": ["conj"],
+        "interj": ["interj"],
+        "verb tr": ["verb", "tr"],
+        "verb intr": ["verb", "intr"],
+        "": [],
+    }[pos]
+
+
+def enrich_reviewed_tags(
+    reviewed_path: Path, audit_path: Path, output_path: Path | None = None
+) -> tuple[int, int]:
+    """Restore POS tags for legacy rows already aligned in the OCR audit."""
+    with audit_path.open(encoding="utf-8", newline="") as stream:
+        audit_rows = [
+            row for row in csv.DictReader(stream) if row["Status"] == "already_reviewed"
+        ]
+    evidence: dict[tuple[str, str], dict[str, str]] = {}
+    for row in audit_rows:
+        key = (row["Reviewed_Form"], row["Reviewed_Parameter_ID"])
+        # One duplicated OCR row maps to khurpī. Prefer the more specific printed
+        # label (noun feminine) and retain a single stable source location.
+        if key not in evidence or len(row["POS"]) > len(evidence[key]["POS"]):
+            evidence[key] = row
+
+    with reviewed_path.open(encoding="utf-8", newline="") as stream:
+        reviewed_rows = list(csv.reader(stream))
+    tagged = 0
+    aligned = 0
+    for row in reviewed_rows:
+        row.extend([""] * (15 - len(row)))
+        match = evidence.get((row[2], row[1]))
+        if not match:
+            continue
+        aligned += 1
+        tags = tags_for_pos(match["POS"])
+        if tags:
+            tagged += 1
+        row[7] = (
+            f"thari[p. {match['Printed_Page']}, col. {match['Column']}, "
+            f"entry {match['Column_Entry']}]"
+        )
+        row[10] = match["Entry_Key"]
+        row[14] = " ".join(tags)
+
+    target = output_path or reviewed_path
+    with target.open("w", encoding="utf-8", newline="") as stream:
+        csv.writer(stream).writerows(reviewed_rows)
+    return aligned, tagged
+
+
 def clean_gloss(text: str) -> str:
     text = compact(text)
     text = text.replace("£", "g").replace("^", "g")
@@ -413,7 +473,7 @@ def write_import(
                     "",
                     "",
                     "",
-                    correction.pos,
+                    " ".join(tags_for_pos(correction.pos)),
                 ]
             )
             count += 1

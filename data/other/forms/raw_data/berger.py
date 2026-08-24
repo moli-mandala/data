@@ -16,6 +16,8 @@ Outputs under ``--output-dir``:
 * ``berger_review.csv``: candidates needing human review;
 * ``berger_auto_import.csv``: rich fifteen-column Jambu rows not already in the manual
   ``20220930-berger.csv`` gold tranche;
+* ``berger_gold_enriched.csv`` and ``berger_gold_grammar_audit.csv``: the manual
+  tranche with grammatical evidence recovered from its aligned source entries;
 * ``berger_report.md``: coverage and quality statistics.
 
 OCR is cached page-by-page.  ``--install`` copies only the import delta into the
@@ -78,6 +80,27 @@ GERMAN_BOUNDARY = re.compile(
     re.I,
 )
 SOURCE_PAREN = re.compile(r"\((?:ys\.|sh\.|kho\.|u\.|pe\.|vgl\.).*?\)", re.I | re.S)
+
+# Source-verified repairs for OCR column/entry-boundary failures. These are keyed by the stable
+# local entry IDs, leave ``raw_entry`` untouched in the audit, and change only text read directly
+# from the cited scan. Printed p. 367 places ``brummen, dröhnen`` at the end of entry 7806 and
+# begins the following Turner-linked entry with ``rúus, ng. rúuś``. Its cached OCR carried a
+# pre-existing two-page printed-locator offset, corrected here for these reviewed records.
+REVIEWED_ENTRY_REPAIRS = {
+    "berger-entry-7806": {
+        "gloss": "(Flugzeug) brummen, dröhnen",
+        "printed_page": 367,
+    },
+    "berger-entry-7807": {
+        "form": "rúus",
+        "gloss": "Vergeltung, Rache, Heimzahlen",
+        "printed_page": 367,
+    },
+    "berger-entry-7807-dialect-1": {
+        "gloss": "Vergeltung, Rache, Heimzahlen",
+        "printed_page": 367,
+    },
+}
 
 
 @dataclass
@@ -488,7 +511,7 @@ def _grammar_tags(text: str, form: str, *, dialect: str = "") -> list[str]:
     nounish = bool(re.search(r"\b(?:[hxy]\b|hm\b|sg\.|pl\.|D\.pl\.|-iṅ|-miċ|-muċ|-anċ)\b", probe, re.I))
     if verbish and "verb" not in tags:
         tags.append("verb")
-    elif nounish and not any(tag in tags for tag in ("adj", "adv", "pron", "num", "postp", "verb")):
+    elif nounish and not any(tag in tags for tag in ("pron", "num", "postp", "verb")):
         tags.append("noun")
     if re.search(r"\bfem\.", probe, re.I):
         tags.append("f")
@@ -737,8 +760,8 @@ def parse_lexicon_pages(page_data: Iterable[dict], valid_ids: set[str]) -> list[
 def load_gold(path: Path) -> list[list[str]]:
     with path.open(encoding="utf-8") as stream:
         rows = list(csv.reader(stream))
-    if any(len(row) != 8 for row in rows):
-        raise ValueError(f"Expected eight columns in Berger gold file: {path}")
+    if any(len(row) not in (8, 15) for row in rows):
+        raise ValueError(f"Expected eight or fifteen columns in Berger gold file: {path}")
     return rows
 
 
@@ -766,6 +789,107 @@ def align_gold(entries: Sequence[Entry], gold: Sequence[Sequence[str]]) -> int:
         used.add(best)
         matched += 1
     return matched
+
+
+def enrich_gold_rows(
+    entries: Sequence[Entry], gold: Sequence[Sequence[str]]
+) -> tuple[list[list[str]], list[list[str]]]:
+    """Recover structured tags for the hand-entered tranche from OCR evidence."""
+    aligned = {entry.gold_row: entry for entry in entries if entry.gold_row}
+    used = {entry.entry_key for entry in aligned.values()}
+    enriched = []
+    audit = []
+    for gold_index, original in enumerate(gold, 1):
+        row = list(original)
+        row.extend([""] * (15 - len(row)))
+        language, cdial_id, form, gloss = row[:4]
+        evidence = aligned.get(gold_index)
+        strategy = "aligned-source" if evidence else ""
+
+        if not evidence:
+            exact = [
+                entry for entry in entries
+                if entry.entry_key not in used
+                and normalize_key(entry.form) == normalize_key(form)
+                and entry.language == language
+            ]
+            if not exact and language == "Werch":
+                exact = [
+                    entry for entry in entries
+                    if normalize_key(entry.form) == normalize_key(form)
+                    and entry.language == "Bur"
+                ]
+            if exact:
+                evidence = max(
+                    exact,
+                    key=lambda entry: (
+                        entry.cdial_id == cdial_id,
+                        difflib.SequenceMatcher(None, gloss, entry.gloss).ratio(),
+                    ),
+                )
+                strategy = "exact-form-source"
+
+        if not evidence:
+            candidates = [
+                entry for entry in entries
+                if entry.language == language and entry.cdial_id == cdial_id
+            ]
+            if candidates:
+                candidate = max(
+                    candidates,
+                    key=lambda entry: difflib.SequenceMatcher(
+                        None, normalize_key(form), normalize_key(entry.form)
+                    ).ratio(),
+                )
+                ratio = difflib.SequenceMatcher(
+                    None, normalize_key(form), normalize_key(candidate.form)
+                ).ratio()
+                if ratio >= 0.78:
+                    evidence = candidate
+                    strategy = "fuzzy-form-source"
+
+        if evidence:
+            used.add(evidence.entry_key)
+            tags = [tag for tag in evidence.tags if not tag.startswith("dialect:")]
+            if language == "Werch":
+                tags.extend(("dialect:Yasin", "alternate"))
+            else:
+                tags.extend(tag for tag in evidence.tags if tag.startswith("dialect:"))
+            row[7] = f"berger[p. {evidence.printed_page}]"
+            row[10] = evidence.entry_key
+            evidence_form = evidence.form
+            evidence_raw = evidence.raw_entry
+        else:
+            dialect = "Yasin" if language == "Werch" else ""
+            probe = " ".join((form, row[6], gloss))
+            tags = _grammar_tags(probe, form, dialect=dialect)
+            if gloss[:1].isupper() and "noun" not in tags:
+                tags.insert(0, "noun")
+            if language == "Werch" and "alternate" not in tags:
+                tags.append("alternate")
+            strategy = "legacy-printed-evidence"
+            evidence_form = ""
+            evidence_raw = probe
+
+        existing = row[14].split()
+        row[14] = " ".join(dict.fromkeys([*existing, *tags]))
+        enriched.append(row)
+        audit.append([
+            gold_index, form, strategy, evidence_form, evidence_raw, row[14]
+        ])
+    return enriched, audit
+
+
+def apply_reviewed_repairs(entries: Sequence[Entry]) -> None:
+    """Apply scan-verified, entry-keyed repairs while preserving raw OCR evidence."""
+    by_key = {entry.entry_key: entry for entry in entries}
+    missing = sorted(set(REVIEWED_ENTRY_REPAIRS) - set(by_key))
+    if missing:
+        raise ValueError(f"Reviewed Berger repair keys disappeared: {missing}")
+    for entry_key, values in REVIEWED_ENTRY_REPAIRS.items():
+        entry = by_key[entry_key]
+        for field_name, value in values.items():
+            setattr(entry, field_name, value)
 
 
 def assess(entries: Sequence[Entry]) -> None:
@@ -892,6 +1016,13 @@ def write_outputs(output_dir: Path, entries: Sequence[Entry], gold: Sequence[Seq
     )
     auto_rows = list(import_rows(entries))
     write_csv(output_dir / "berger_auto_import.csv", auto_rows)
+    enriched_gold, gold_audit = enrich_gold_rows(entries, gold)
+    write_csv(output_dir / "berger_gold_enriched.csv", enriched_gold)
+    write_csv(
+        output_dir / "berger_gold_grammar_audit.csv",
+        gold_audit,
+        ("Gold_Row", "Form", "Strategy", "Evidence_Form", "Evidence_Raw", "Tags"),
+    )
     methods = Counter(entry.id_method for entry in entries)
     report = f"""# Berger extraction report
 
@@ -910,8 +1041,9 @@ def write_outputs(output_dir: Path, entries: Sequence[Entry], gold: Sequence[Seq
 - Rows carrying structured tags: {sum(bool(entry.tags) for entry in entries):,}
 - Review queue: {sum(bool(entry.review_reasons) for entry in entries):,}
 
-The import delta excludes rows aligned to ``20220930-berger.csv``. The hand-entered
-rows remain authoritative and are never overwritten.
+The import delta excludes rows aligned to ``20220930-berger.csv``. Under ``--install``
+the hand-entered lexical content remains authoritative while its rich-schema metadata
+and grammatical tags are refreshed from the row-level alignment audit.
 """
     (output_dir / "berger_report.md").write_text(report, encoding="utf-8")
 
@@ -962,12 +1094,19 @@ def main(argv: Sequence[str] | None = None) -> int:
 
     entries = parse_lexicon_pages(page_data.values(), valid_ids)
     matched = align_gold(entries, gold)
+    apply_reviewed_repairs(entries)
     assess(entries)
     write_outputs(args.output_dir, entries, gold, matched)
     if args.install:
         destination = data_root / "data/other/forms/20260726-berger-auto.csv"
         shutil.copyfile(args.output_dir / "berger_auto_import.csv", destination)
         print(f"Installed {destination}")
+        gold_destination = data_root / "data/other/forms/20220930-berger.csv"
+        shutil.copyfile(args.output_dir / "berger_gold_enriched.csv", gold_destination)
+        audit_destination = here / "20220930-berger-grammar-audit.csv"
+        shutil.copyfile(args.output_dir / "berger_gold_grammar_audit.csv", audit_destination)
+        print(f"Installed {gold_destination}")
+        print(f"Installed {audit_destination}")
     print((args.output_dir / "berger_report.md").read_text(encoding="utf-8"))
     return 0
 

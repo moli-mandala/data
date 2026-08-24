@@ -45,6 +45,99 @@ regex = re.compile(r'(<i>|<b>|^)*' + l + r'(([^\(\)\[\]]*?(\[.*?\]|\(.*?\)))*?[^
 lemmata = re.compile(r'(<b>|^)(.*?)(</b>|$)(.*?)((?=<b>)|$)')
 formatter = re.compile(r'<.*?>')
 comma_split = re.compile(r',(?![^\(]*?\))')
+_LEXICAL_SLASH_SENTINEL = '\ue010'
+
+
+def split_entry_sections(value):
+    """Split source-level slash notes while preserving slashes inside bold lexical forms."""
+    pieces = []
+    cursor = 0
+    for match in re.finditer(r'(?:\s+|(?<=[.;:]))/\s*', value):
+        pieces.append(value[cursor:match.start()])
+        inside_bold = (
+            value.rfind('<b>', 0, match.start())
+            > value.rfind('</b>', 0, match.start())
+        )
+        following = BeautifulSoup(value[match.end():], 'html.parser').get_text(
+            ' ', strip=True
+        )
+        comparison_cue = bool(re.match(
+            r'(?:cf|perhaps|prob|poss|borrow|loan|influenc|relationship|areal)\b',
+            following,
+            re.IGNORECASE,
+        ))
+        source_separator = (
+            not inside_bold
+            and bool(following)
+            and (not following[0].islower() or comparison_cue)
+        )
+        pieces.append(
+            ' / ' if source_separator
+            else match.group().replace('/', _LEXICAL_SLASH_SENTINEL)
+        )
+        cursor = match.end()
+    pieces.append(value[cursor:])
+    protected = ''.join(pieces)
+    return [
+        part.replace(_LEXICAL_SLASH_SENTINEL, '/')
+        for part in re.split(r'( / |(?=Cf\.))', protected)
+    ]
+
+
+def strip_embedded_cross_family_notes(value):
+    """Remove balanced parenthetical/bracketed CDIAL notes but retain their HTML boundaries.
+
+    Several DEDR comparisons occur inside the gloss of the final Dravidian form instead of in a
+    slash section.  Leaving them there both truncates that gloss and can emit the cited IA lemma
+    as another reflex.  The source wording is retained by cross_family.py.
+    """
+    opening = {'(': ')', '[': ']'}
+    closing = {')': '(', ']': '['}
+    stack = []
+    ranges = []
+    for index, character in enumerate(value):
+        if character in opening:
+            stack.append((character, index))
+        elif character in closing:
+            for stack_index in range(len(stack) - 1, -1, -1):
+                if stack[stack_index][0] != closing[character]:
+                    continue
+                _, start = stack[stack_index]
+                del stack[stack_index:]
+                fragment = value[start:index + 1]
+                if re.search(r'\bCDIAL\b', BeautifulSoup(fragment, 'html.parser').get_text(' '), re.I):
+                    ranges.append((start, index + 1))
+                break
+
+    # Prefer the outer comparison group when nested parentheses occur inside the note.
+    selected = []
+    for start, end in sorted(ranges, key=lambda pair: (pair[0], -pair[1])):
+        if selected and selected[-1][0] <= start and end <= selected[-1][1]:
+            continue
+        selected.append((start, end))
+    for start, end in reversed(selected):
+        # Preserve tags which opened or closed inside the note so the surrounding lexical HTML
+        # remains balanced (DEDR 195 closes its headword's <b> inside the comparison bracket).
+        tag_tokens = []
+        open_tags = []
+        for match in re.finditer(r'<(/?)\s*([A-Za-z0-9]+)[^>]*>', value[start:end]):
+            token = [match.group(2).lower(), bool(match.group(1)), match.group(), True]
+            tag_tokens.append(token)
+            if not token[1]:
+                open_tags.append(len(tag_tokens) - 1)
+                continue
+            paired = next(
+                (position for position in reversed(open_tags)
+                 if tag_tokens[position][0] == token[0]),
+                None,
+            )
+            if paired is not None:
+                tag_tokens[paired][3] = False
+                token[3] = False
+                open_tags.remove(paired)
+        tags = ''.join(token[2] for token in tag_tokens if token[3])
+        value = value[:start] + tags + value[end:]
+    return value
 
 def is_bold_or_italic(tag):
     return tag.name in ('b', 'i') and not (any([x.name in ('b', 'i') for x in tag.children]))
@@ -119,7 +212,9 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
                 continue
 
             if ERR: print(entry)
-            entry_str = re.split(r'( / |(?=Cf\.))', str(entry))
+            # Source-level slashes introduce comparison commentary; a slash inside a bold form is
+            # a lexical alternative and must remain in the reflex parser.
+            entry_str = split_entry_sections(str(entry))
             for i in range(1, len(entry_str)):
                 for f in sorted(fixes, key=lambda x: -len(x)):
                     entry_str[i] = entry_str[i].replace(f, f'<b><i>{f}</i></b>')
@@ -127,12 +222,25 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
             for section_num, section in enumerate(entry_str):
                 # Numeric ``Cf.`` tails point to another DEDR entry; their
                 # bold headword is not another reflex in the current entry.
-                preceded_by_slash = section_num > 0 and entry_str[section_num - 1] == ' / '
+                preceded_by_slash = (
+                    section_num > 0 and entry_str[section_num - 1].strip() == '/'
+                )
+                # cross_family.py owns the comparison tail (including its wording and cited
+                # forms). A later explicitly labelled DEDR subsection can follow that note in
+                # the same HTML run, however; resume only at that subsection (e.g. d1110 (b)).
+                if preceded_by_slash:
+                    next_subsection = re.search(
+                        r'(?=(?:<b>)?<i>\([a-z]\)(?:\s|</i>))', section
+                    )
+                    if not next_subsection:
+                        continue
+                    section = section[next_subsection.start():]
                 if re.match(r'\s*Cf\.', section) and not preceded_by_slash:
                     next_subsection = re.search(r'(?=<i>\([a-z]\))', section)
                     if not next_subsection:
                         continue
                     section = section[next_subsection.start():]
+                section = strip_embedded_cross_family_notes(section)
                 entry = BeautifulSoup(section, 'html.parser')
 
                 section_label, spans = split_language_spans(section, abbrevs)
@@ -140,6 +248,12 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
 
                 for span in spans:
                     lang = abbrevs[span[0].strip('.')]
+                    # Indo-Aryan/Sanskrit forms in a DEDR comparison tail are evidence for an
+                    # article-level cross-family claim, not Dravidian reflexes of this etymon.
+                    # data/cross_family.py resolves their printed CDIAL IDs into the dedicated
+                    # comparisons table and audits unresolved prose.
+                    if lang == 'OIA':
+                        continue
                     for old, new in source_markup_repairs.get(str(number), []):
                         span[1] = span[1].replace(old, new)
                     span[1] = mark_unbolded_gender_forms(span[1].strip())
