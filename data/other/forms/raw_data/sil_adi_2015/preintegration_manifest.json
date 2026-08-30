@@ -1,0 +1,179 @@
+{
+  "checklist": {
+    "active": true,
+    "addenda": [
+      "Survey wordlists or comparative tables",
+      "OCR-heavy source"
+    ]
+  },
+  "deferred_gates": [
+    "shared installed CSV",
+    "shared bibliography and formatted reference",
+    "shared language/dialect registries",
+    "shared sound-profile file and source-key route",
+    "focused shared registry/profile tests",
+    "consolidated CLDF/full build and compiled survival checks",
+    "global source-audit regeneration",
+    "browser database refresh and browser QA",
+    "commit and push"
+  ],
+  "frozen_artifacts": {
+    "conversion_profile.tsv": "61f298367f3e9217c170797cc6c4dbebc3c4b86eb90936b3e2f52561ed013d71",
+    "list_registry.tsv": "9c93a777e2196c83a87ca91062b666d67dd785d7fc218c2f0f116e286fe5a3ca",
+    "source_manifest.json": "b28c3fb704dd7a3db0dcfd7d894c761e974f96a7ecbdba5e779b4cf4563f9626",
+    "staged_audit.tsv": "6fb69a145419fff42c6b48d8e965acf2dbd9dc06bd297edf2e19f62e4f88877b",
+    "staged_forms.csv": "edb29a8f65fea0600e3d54bfcf2adef81fd833c47b619de5cd701bd61df4031c",
+    "symbol_inventory.tsv": "a649621372743809a46b6391f11e4abf329016bdf84f8dfa175b94e1b330e886",
+    "unresolved_readings.tsv": "3a4e2be9c39e3b3852e455d59d7a077919e208d536b0c6673c2ec834f1f51803"
+  },
+  "integration_contract": {
+    "etymology": "none; all Parameter_ID values remain blank",
+    "exclude_exactly": {
+      "controls": 0,
+      "source_blank_cells": 93,
+      "unresolved": 0
+    },
+    "install_exactly": 2770,
+    "installed_filename": "data/other/forms/20260829-sil-adi.csv",
+    "profile_rule": "route only the immutable source key; preserve diplomatic Original and map display sequences explicitly from the complete inventory",
+    "reference_key": "padung-sako2015adi"
+  },
+  "lexical_appendix": {
+    "conceptual_cells": 2763,
+    "control_lists": 0,
+    "items": 307,
+    "physical_pages": "17--38",
+    "printed_pages": "13--34",
+    "target_lists": 9
+  },
+  "manual_review": {
+    "bundle_sha256": "a9a1aac22c77c4cf66230c2fa014a7b151cd676db44810744b06748070bd92f0",
+    "chunk_sha256": {
+      "items_001_012_hand_keyed.tsv": "f1d39778ec5b87379724c5dd5ffdc640ac94d6c217c0227370adc3f794429f29",
+      "items_013_026_hand_keyed.tsv": "b81294c59a5999a29a7ba498df339c9bb175bb7c581a6a4641c530a0be45a7f1",
+      "items_027_041_hand_keyed.tsv": "358eb79a623fe7b9f60d9bd53574d9e04f07d71d0c2b2e57d88dd303cd63817d",
+      "items_042_055_hand_keyed.tsv": "246573e8c5d3e3e5f28215777794498f51d6efc497cde479ba15bc3768df0671",
+      "items_056_070_hand_keyed.tsv": "f518737e8c013036dcab34fdbc01a873dd934eedb01d2a69eee5e91021d08b1b",
+      "items_071_084_hand_keyed.tsv": "1bcd6916c5c7eccf9ba1da6386eb4356702d2b27d98fba0a4f64981ab790eef9",
+      "items_085_099_hand_keyed.tsv": "9dc0d972349f54814b879351b16ad0fe8dda925faa8eaa2966f4025418e99e76",
+      "items_100_114_hand_keyed.tsv": "51436daeeddbe2fba5345139f55130b9205824880bd51615de2853afdd86683f",
+      "items_115_128_hand_keyed.tsv": "42925e199003791d7c9a8ee183e0196003cde6e92bcdc789d0db1d6708f3753b",
+      "items_129_158_hand_keyed.tsv": "b9355819bff66ffa61f341afdf22d3cb7c201af2237d81ea817d9384cbf22fde",
+      "items_159_188_hand_keyed.tsv": "df7c297e1bc79dea56cb8c592b4a5f27fa06a0358f60db81a884c43d0896fab6",
+      "items_189_218_hand_keyed.tsv": "ed0aaf8828a3ca8f9a4a2cdc0b41a8afa49d0518765725baa14eafc3ac4b655c",
+      "items_219_248_hand_keyed.tsv": "d4bc3075b00bb5e32f62c73af043166ee45a6fd7953af9669b0cbafca26f0466",
+      "items_249_278_hand_keyed.tsv": "3187772971ff0b6eb2081627d798cbd6150e93e8570eaa06181fc8b1deaed2e5",
+      "items_279_307_hand_keyed.tsv": "5fa34a79b4684c8bfeeb0e10786dbe14ba4994a1a2545e1898cd3403af127284"
+    },
+    "chunks": 15,
+    "method": "every cell manually viewed against a rendered source page; PDF text was character-input scaffold only and supplied or verified no accepted reading",
+    "rows": 2763
+  },
+  "pdf": {
+    "bytes": 743089,
+    "pages": 45,
+    "path": "tmp/pdfs/adi_2015/silesr2015_016.pdf",
+    "sha256": "8e1500383a02445252a3eb6973a1b011fabea71eb25ad79fc43ba5b78bd1135c"
+  },
+  "profile_inventory": {
+    "decision": "lossless NFC diplomatic preservation before any shared display conversion",
+    "literal_source_question_marks": 2,
+    "path": "symbol_inventory.tsv",
+    "replacement_characters": 0,
+    "sha256": "a649621372743809a46b6391f11e4abf329016bdf84f8dfa175b94e1b330e886",
+    "source_local_profile": "conversion_profile.tsv",
+    "source_local_profile_sha256": "61f298367f3e9217c170797cc6c4dbebc3c4b86eb90936b3e2f52561ed013d71",
+    "symbols": 42
+  },
+  "registry_contract": {
+    "base_languages": [
+      "MisingPadamMiriMinyong",
+      "BoriKarko",
+      "BokarRamo",
+      "Milang"
+    ],
+    "dialect_ids": [
+      "sil-adi-2015-minyong-rayang",
+      "sil-adi-2015-bori-bogu-payum",
+      "sil-adi-2015-ramo-ngorlung",
+      "sil-adi-2015-milang-village",
+      "sil-adi-2015-pailibo-irgo",
+      "sil-adi-2015-ashing-ningging",
+      "sil-adi-2015-padam-siluk",
+      "sil-adi-2015-shimong-mobuk",
+      "sil-adi-2015-bokar-manigong"
+    ],
+    "dialect_tags": [
+      "dialect:MisingPadamMiriMinyong:sil-adi-2015-minyong-rayang:Rayang%20%28Minyong%29",
+      "dialect:BoriKarko:sil-adi-2015-bori-bogu-payum:Bogu%2FPayum%20Circle%20%28Bori%29",
+      "dialect:BokarRamo:sil-adi-2015-ramo-ngorlung:Ngorlung%20%28Ramo%29",
+      "dialect:Milang:sil-adi-2015-milang-village:Milang%20village%20%28Milang%29",
+      "dialect:BokarRamo:sil-adi-2015-pailibo-irgo:Irgo%20%28Pailibo%29",
+      "dialect:BokarRamo:sil-adi-2015-ashing-ningging:Ningging%20%28Ashing%2FBogum%20Bokang%29",
+      "dialect:MisingPadamMiriMinyong:sil-adi-2015-padam-siluk:Siluk%20%28Padam%29",
+      "dialect:BoriKarko:sil-adi-2015-shimong-mobuk:Mobuk%20%28Shimong%29",
+      "dialect:BokarRamo:sil-adi-2015-bokar-manigong:Manigong%20%28Bokar%29"
+    ],
+    "shared_registry_state_at_audit": "all four base-language IDs and all nine dialect IDs absent",
+    "site_codes": [
+      "MN",
+      "BR",
+      "RM",
+      "ML",
+      "PL",
+      "AS",
+      "PD",
+      "SM",
+      "BK"
+    ],
+    "site_coordinates": "blank because the source supplies no point coordinates"
+  },
+  "renders": {
+    "artifacts": 22,
+    "bytes": 15131560,
+    "dpi": 400,
+    "manifest_sha256": "85b5dee74f2614b3028c5dce9082476b55abd6f60e0c5a42a72ead9c28d84173",
+    "physical_pages": "17--38",
+    "tree_sha256": "0746c68daf48349570eb0d37e2d69afb79c22571d69a410484b8437e1efd794c"
+  },
+  "source_key": "padung-sako2015adi",
+  "staging": {
+    "audit_rows": 2763,
+    "audit_sha256": "6fb69a145419fff42c6b48d8e965acf2dbd9dc06bd297edf2e19f62e4f88877b",
+    "expanded_attested_cells": {
+      "one_response": 2573,
+      "three_responses": 3,
+      "two_responses": 94
+    },
+    "forms_sha256": "edb29a8f65fea0600e3d54bfcf2adef81fd833c47b619de5cd701bd61df4031c",
+    "language_rows": {
+      "BokarRamo": 1249,
+      "BoriKarko": 610,
+      "Milang": 298,
+      "MisingPadamMiriMinyong": 613
+    },
+    "rows": 2770,
+    "site_rows": {
+      "AS": 309,
+      "BK": 318,
+      "BR": 304,
+      "ML": 298,
+      "MN": 297,
+      "PD": 316,
+      "PL": 310,
+      "RM": 312,
+      "SM": 306
+    },
+    "unique_entry_keys": 2770,
+    "unresolved_sha256": "3a4e2be9c39e3b3852e455d59d7a077919e208d536b0c6673c2ec834f1f51803"
+  },
+  "state": "source-local-preintegration-audit-complete",
+  "statuses": {
+    "ambiguous": 0,
+    "attested": 2670,
+    "illegible": 0,
+    "source_blank": 93,
+    "unresolved": 0,
+    "unreviewed": 0
+  }
+}

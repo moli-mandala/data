@@ -1,0 +1,45 @@
+{
+  "acquisition": "Stanford Interlibrary Loan request 446830, delivered as a web scan",
+  "article_printed_pages": [
+    177,
+    200
+  ],
+  "bibliography": "Buddruss, Georg. 2006. Drei Texte in der Wama-Sprache des afghanischen Hindukusch. In M. N. Bogoljubov (ed.), Indoiranskoe jazykoznanie i tipologija jazykovyx situacij, 177–200. St Petersburg: Nauka.",
+  "extraction": {
+    "checked_in_layer": "the RAW table in data/other/forms/raw_data/buddruss_wama_2006.py",
+    "glossary_headword_record_count": 276,
+    "method": "complete record-by-record manual collation against 400 dpi page renders",
+    "ocr_reproducibility": [
+      "tesseract -l deu+eng --psm 4",
+      "tesseract -l deu+eng --psm 6"
+    ],
+    "transcription_uncertainties_remaining": 0
+  },
+  "lexical_printed_pages": [
+    184,
+    191
+  ],
+  "outputs": {
+    "audit": "data/other/forms/raw_data/20260824-buddruss-wama-audit.csv",
+    "audit_count": 276,
+    "form_count": 276,
+    "forms": "data/other/forms/20260824-buddruss-wama.csv",
+    "sample": "data/other/forms/raw_data/20260824-buddruss-wama-sample.csv",
+    "sample_count": 25
+  },
+  "pdf_pages": 29,
+  "pdf_redistributed": false,
+  "pdf_sha256": "1bd67f12c5e52463549eef0da440fca7aeade8fc7b0344d05e9c24c02f55343d",
+  "rights": "Copyrighted ILL scan supplied for private study, scholarship, or research; the scan is not checked in.",
+  "scope": {
+    "cdial_policy": "direct unambiguous Turner/CDIAL assignments are linked; hedged, alternative, and secondary comparisons remain prose",
+    "excluded": "the three running texts and translations; inflected examples not promoted by Buddruss to headword status; Ashkun, Nuristani Kalasha, Dameli, Kati, Prasun, Pashai, and other-language comparison forms in etymological commentary",
+    "included": "every printed headword and explicit headword alternate in the complete glossary on pp. 184–191",
+    "language_model": "Wama is modeled as a dialect of canonical Ashkun (Ash), following Buddruss's explicit classification, with the registered Wama dialect tag cdial-Ash-wama; Abdul Karim and Taj Mohammad remain speaker provenance rather than dialects"
+  },
+  "snapshot_date": "2026-08-24",
+  "source_id": "buddruss-wama2006",
+  "unresolved": [
+    "Buddruss explicitly reports uncertainty and inconsistency in Wama vowel quantity; the importer preserves his printed headword forms without normalizing those quantities"
+  ]
+}

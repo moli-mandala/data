@@ -1,0 +1,57 @@
+{
+  "acquisition": "Open-access full text downloaded from the DiVA record diva2:1440556 (urn:nbn:se:su:diva-182519) on 2026-08-25",
+  "bibliography": "Knobloch, Nina. 2020. A grammar sketch of Sauji: An Indo-Aryan language of Afghanistan. MA thesis, Department of Linguistics, Stockholm University.",
+  "extraction": {
+    "checked_in_layer": "data/other/forms/raw_data/20260825-knobloch-sauji-extract.psv",
+    "method": "deterministic pdfplumber word-box extraction from the thesis's own LaTeX text layer; no OCR",
+    "prose_layer": "the PROSE table in data/other/forms/raw_data/knobloch_sauji_2020.py",
+    "regions": {
+      "inline": 135,
+      "interlinear": 482,
+      "phonotactics": 6,
+      "prose": 20,
+      "t6": 16,
+      "t7": 38,
+      "t8": 31,
+      "table10": 20,
+      "table11": 14,
+      "table14": 18,
+      "table2": 84,
+      "table4": 16,
+      "table9": 46
+    },
+    "structure_keys": [
+      "object-language material is italic and glosses are roman",
+      "interlinear glosses share their word's x0 within 2.5 pt",
+      "tables are read from fixed column x-ranges"
+    ],
+    "transcription_uncertainties_remaining": 0
+  },
+  "outputs": {
+    "audit": "data/other/forms/raw_data/20260825-knobloch-sauji-audit.csv",
+    "audit_count": 926,
+    "form_count": 573,
+    "forms": "data/other/forms/20260825-knobloch-sauji.csv",
+    "sample": "data/other/forms/raw_data/20260825-knobloch-sauji-sample.csv",
+    "statuses": {
+      "installed": 884,
+      "installed_after_repair": 2,
+      "skipped": 40
+    }
+  },
+  "pdf_pages": 55,
+  "pdf_redistributed": false,
+  "pdf_sha256": "38e02514183aa4b7d6a424e81a06f27d31d99b0935af87a49488ebbab859da38",
+  "pdf_sha512": "74d44376dae060d84819817c919157c439cdc894418dcc52754a303ef5b3097fd2fe0f857f5f8482908cf1a61f4b5ea08d945d8bcd09a23ba0cc35f8bb27905a",
+  "pdf_sha512_matches_diva_record": true,
+  "rights": "Open access student thesis published in DiVA; no explicit reuse licence is stated, so only the extracted lexical facts are installed and the PDF is not checked in.",
+  "scope": {
+    "etymology_policy": "the thesis makes no etymological claim about individual Sauji words, so every row is installed unlinked with a blank Parameter_ID; the donor languages named in section 5.2.3 are recorded as prose plus a loanword tag, not as graph edges",
+    "excluded": "the Palula and Kalkoti comparanda in Table 14 and in the Palula comparisons (secondary citations of Liljegren 2013, 2016); the phoneme-inventory charts in Tables 1 and 3 and the case-suffix chart in Table 5; bare inflectional and derivational affixes cited in the morphological description; the Appendix B index of recordings; free translations; and the bibliography",
+    "included": "every glossed Sauji form the thesis prints: Tables 2, 4, 6, 7, 8, 9, 10, 11 and the Sauji column of Table 14, the syllable-structure examples in (1), all interlinear examples including the three appendix texts, and the italicised citations in running prose",
+    "language_model": "all forms belong to canonical Sauji (Sv) and carry the registered Sau dialect tag; consultants, recording sites and elicitation sessions remain provenance in the locator and audit"
+  },
+  "snapshot_date": "2026-08-25",
+  "source_id": "knobloch2020sauji",
+  "unresolved": []
+}

@@ -1,0 +1,49 @@
+{
+  "state": "shared_source_specific_integration_complete",
+  "policy": "The frozen manual staged forms are authoritative. No manual reading was altered during integration.",
+  "source_key": "kim-ahmad-kim-sangma2011kurux",
+  "source_pdf_sha256": "f2f06c25ac55462d6a40843539d8417e24a647bd1eb0bbe3f24ea3e45f0b9e4b",
+  "manual_manifest_sha256": "7695018c46e2456aaed0f1d00172b8ee2bccecef53d560c679480386e8e5b9a9",
+  "post_freeze_manifest_sha256": "2e500756910deef9495a8e54f5e87857c9bdafa898eb5d653ba1f956063456df",
+  "installed": {
+    "path": "data/other/forms/20260826-sil-kurux.csv",
+    "rows": 1365,
+    "sha256": "1b970fe2e4f873dc9cb4806c104b727b6099b9d57b7e813d46a9f89f1c4531cb",
+    "entry_key_policy": "Immutable silkurux2011:item:site:variant source keys; 1365 unique keys."
+  },
+  "audit": {
+    "path": "data/other/forms/raw_data/sil_kurux_2011_manual/staging_audit.tsv",
+    "rows": 1869,
+    "sha256": "7b7dbc5c7903ca64017151b2c1a6e6ee785ade65e647cbbd4c7430060ddba393",
+    "dispositions": {
+      "staged_target": 1365,
+      "excluded_control": 296,
+      "excluded_blank": 136,
+      "excluded_not_used": 72
+    },
+    "unresolved_lexical_coordinates": []
+  },
+  "profile": {
+    "path": "conversion/sil-kurux.txt",
+    "sha256": "ac76ab83a6d435e384cf7287fb275d3574343c35141409f2298009f97ffeeb23",
+    "route": "kim-ahmad-kim-sangma2011kurux -> sil-kurux",
+    "unresolved_mappings": []
+  },
+  "registry": {
+    "target_site_rows": 5,
+    "audit_only_control_rows": 1,
+    "coordinate_policy": "All six report-defined rows have blank latitude/longitude because the report supplies no exact site coordinates."
+  },
+  "legacy_comparison_snapshots": {
+    "legacy_20260826-sil-kurux.csv": "970973055b1cbf12fbc6ac8cdc3c3de37eb8522ac270921e752d00ff5582b98a",
+    "legacy_20260826-sil-kurux-audit.csv": "001dd6e6b3eb39b9d41299e2fc862bca92459ed53e6638f42c20e443e62f1d4d",
+    "legacy_sound_profile_base.txt": "523b5ac928179b53325d99e63634fa26a3af7598722c13e20620bd284271a16a"
+  },
+  "deferred_gates": [
+    "consolidated CLDF/full build",
+    "opaque f_* identity reconciliation",
+    "repository-wide graph validation and full test suite",
+    "browser database refresh and representative browser QA",
+    "commit and shipping"
+  ]
+}

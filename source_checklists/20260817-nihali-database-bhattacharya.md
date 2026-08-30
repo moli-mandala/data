@@ -12,7 +12,7 @@
 ## Retrospective gate assessment
 
 - [x] 1. Establish the source and scope — source keys: bhattacharya1957, nihali-database2026; 407 installed records
-- [x] 2. Choose the extraction path — importer/raw route: data/other/forms/raw_data/link_northern_shina_database.py, data/other/forms/raw_data/link_schmidt_shina_database.py, data/other/forms/raw_data/nihali.py, data/other/forms/raw_data/nihali_database.py
+- [x] 2. Choose the extraction path — importer/raw route: data/other/forms/raw_data/bhattacharya_bonda_1968.py, data/other/forms/raw_data/link_northern_shina_database.py, data/other/forms/raw_data/link_schmidt_shina_database.py, data/other/forms/raw_data/nihali.py, data/other/forms/raw_data/nihali_database.py
 - [x] 3. Plan the installed files and identifiers — 407 unique immutable Entry_Key values
 - [x] 4. Model languages and dialects before emitting forms — 1 input language/lect IDs; registry gaps: none
 - [x] 5. Emit the rich import schema — row widths {'15': 407}; blank forms 0
@@ -20,8 +20,8 @@
 - [x] 7. Build and verify the sound profile — profile route: conversion/nihali.txt; replacement characters in input forms: 0
 - [x] 8. Parse references and provenance — unresolved keys: none
 - [x] 9. Model etymology and graph relations conservatively — covered by tests/test_edges.py and compiled edge invariants
-- [x] 10. Produce a complete audit trail — audit: data/other/forms/raw_data/20260817-mundlay-nihali-audit.csv, data/other/forms/raw_data/20260817-nagaraja-nihali-wiktionary-audit.csv, data/other/forms/raw_data/20260817-nihali-database-audit.csv, source_checklists/installed-record-audit.csv.gz
-- [x] 11. Add focused regression tests — tests: tests/test_nihali.py, tests/test_source_checklists.py
+- [x] 10. Produce a complete audit trail — audit: data/other/forms/raw_data/20260817-mundlay-nihali-audit.csv, data/other/forms/raw_data/20260817-nagaraja-nihali-wiktionary-audit.csv, data/other/forms/raw_data/20260817-nihali-database-audit.csv, data/other/forms/raw_data/20260828-bhattacharya-bonda-audit.csv, source_checklists/installed-record-audit.csv.gz
+- [x] 11. Add focused regression tests — tests: tests/test_bhattacharya_bonda_1968.py, tests/test_nihali.py, tests/test_source_checklists.py
 - [ ] 12. Install and run the full data pipeline — pending final repository-wide make all and full-suite validation for this review
 - [x] 13. Browser database refresh and inspection (user-triggered) — deferred by standing policy; refresh and browser QA run only when the user requests them
 - [x] 14. Document, review, and ship only when requested — this source-specific checklist is the durable review record; shipping is not requested

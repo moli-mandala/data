@@ -96,7 +96,7 @@ PARENT_OVERRIDES = {
     "SHODOCHI": "sod",
     "GADI": "ga",
     "PANGWALI": "pan",
-    "PADARI": "Pah",
+    "PADARI": "bhad",
     # Dravidian names whose current Glottocodes differ from LSI's mapping
     "KURUXORORAO": "Kurux",
     "MALTOORMALER": "Malto",

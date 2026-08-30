@@ -1,0 +1,96 @@
+#!/usr/bin/env python3
+"""Write visually checked Bhumij Appendix B3 cells for item 187."""
+
+import csv
+import unicodedata
+from pathlib import Path
+
+
+HERE = Path(__file__).parent
+OUT = HERE / "items_187_187_hand_keyed.tsv"
+DECLARATION = "hand-keyed-from-rendered-source; OCR-not-copied"
+METHOD = (
+    "manual visual inspection of the 400-dpi rendered PDF page with repeated "
+    "dental marks, glottal stops, continuations, and the column break rechecked "
+    "at 800 dpi; OCR/PDF text neither supplied nor verified any reading"
+)
+SITES = {
+    "BAI": ("Bhumij", "Baigodia", True), "CHA": ("Bhumij", "Champi", True),
+    "DIG": ("Bhumij", "Dighinuasahi", True), "DUM": ("Bhumij", "Dumadie", True),
+    "LAD": ("Bhumij", "Ladhiramsai", True), "MAD": ("Bhumij", "Madhupur", True),
+    "MOH": ("Bhumij", "Mohuldiha", True), "MUN": ("Bhumij", "Munduy", True),
+    "POD": ("Bhumij", "Podadiha", True), "UDA": ("Bhumij/Mundari", "Udala", True),
+    "MCH": ("Mundari", "Chalagi", False), "MDI": ("Mundari", "Dictionary", False),
+    "MDH": ("Mundari", "Dhungarisai", False), "MJH": ("Mundari", "Jharmunda", False),
+    "HDI": ("Ho", "Dillisore", False), "SDI": ("Santali", "Dictionary", False),
+    "SNA": ("Santali", "Nayarangamotia", False), "ORI": ("Oriya", "Cuttack", False),
+}
+DATA = {
+    "BAI": ("giʔime, git̪ikenɑ", "1"),
+    "CHA": ("git̪itʔme, git̪ilinɑ", "1"),
+    "DIG": ("", ""),
+    "DUM": ("git̪iʔt̪me, git̪iʔt̪linɑ", "1"),
+    "LAD": ("duɾʌmmeʔ, duɾʌmlɛŋɑ", "2"),
+    "MAD": ("git̪itme, git̪itdʒɑnɑe", "1"),
+    "MOH": ("d̪ud̪umke, edʒ d̪ud̪ud̪umlenɑ", "2"),
+    "MUN": ("git̪igme, duduʔmedʒene", "1"),
+    "POD": ("git̪itʔme, git̪ilinɑ", "1"),
+    "UDA": ("git̪iʔime, git̪ijɑnɑ", "1"),
+    "MCH": ("git̪iʔi, git̪iʔidʒɑnɑ", "1"),
+    "MDI": ("git̪i", "1"),
+    "MDH": ("git̪iʔime, git̪ijɑnɑ", "1"),
+    "MJH": ("git̪igme, git̪ignenɑj", "1"),
+    "HDI": ("d̪uʔme, d̪umiɑnɑ", "2"),
+    "SDI": ("git̪itʃʔ | dʒɑpit", "1 | 3"),
+    "SNA": ("git̪ipe, git̪ikinɑj", "1"),
+    "ORI": ("nido", "4"),
+}
+FIELDS = [
+    "Item", "Gloss", "Site_Code", "Language_Label", "Site_Name", "Target",
+    "PDF_Page", "Printed_Page", "Column", "Manual_Transcription",
+    "Source_Cognate_Labels", "Review_Status", "Confidence", "Uncertainty",
+    "Reviewer_Method", "Reviewed_At", "Reviewer_Declaration",
+]
+
+
+def build_rows():
+    assert set(DATA) == set(SITES)
+    rows = []
+    for code, (language, site, target) in SITES.items():
+        form, labels = DATA[code]
+        source_blank = code == "DIG"
+        right = code in {"SNA", "ORI"}
+        row = {
+            "Item": "187", "Gloss": "sleep!, he slept", "Site_Code": code,
+            "Language_Label": language, "Site_Name": site,
+            "Target": "yes" if target else "no", "PDF_Page": "71",
+            "Printed_Page": "66", "Column": "right" if right else "left",
+            "Manual_Transcription": form, "Source_Cognate_Labels": labels,
+            "Review_Status": "source_blank" if source_blank else "attested",
+            "Confidence": "high",
+            "Uncertainty": "source explicitly prints '0 no entry'" if source_blank else "",
+            "Reviewer_Method": METHOD, "Reviewed_At": "2026-08-29",
+            "Reviewer_Declaration": DECLARATION,
+        }
+        assert all(unicodedata.is_normalized("NFC", value) for value in row.values())
+        rows.append(row)
+    return rows
+
+
+def main():
+    rows = build_rows()
+    assert len(rows) == 18
+    assert sum(row["Review_Status"] == "source_blank" for row in rows) == 1
+    assert sum(len(row["Manual_Transcription"].split(" | ")) for row in rows
+               if row["Review_Status"] == "attested") == 18
+    assert sum(len(row["Manual_Transcription"].split(" | ")) for row in rows
+               if row["Review_Status"] == "attested" and row["Target"] == "yes") == 9
+    with OUT.open("w", encoding="utf-8", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=FIELDS, delimiter="\t")
+        writer.writeheader()
+        writer.writerows(rows)
+    print(f"wrote {len(rows)} manually reviewed cells to {OUT}")
+
+
+if __name__ == "__main__":
+    main()

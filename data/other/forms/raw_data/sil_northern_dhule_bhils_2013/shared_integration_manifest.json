@@ -1,0 +1,98 @@
+{
+  "state": "shared-source-specific-integration-complete",
+  "source_key": "watters2013northerndhule",
+  "installed_input": {
+    "path": "data/other/forms/20260829-sil-northern-dhule-bhils.csv",
+    "rows": 2497,
+    "sha256": "5641b9d7ecfb44e6e644efba35e65223260291b7a8724b1fd25fac2fc94d3ed4",
+    "unique_entry_keys": 2497
+  },
+  "frozen_evidence": {
+    "pdf_sha256": "edeeeda98cb76624df1a0d70c765cc816ea463d75bc79ec20883c62e6fc1c482",
+    "manual_cell_bundle_sha256": "046ff03ef2af36c51f1b25538f081aabb7c28d3ccd1776d3ec545fad6463e8c1",
+    "staged_audit_sha256": "4bc5aa3bf41e79622494fea7426b6c77532ab4600c263a32179aa6c248b9c302",
+    "render_tree_sha256": "816261371d0ada57996b2b1135267024629fcb3a7827b07bac4e53bc68f8ec43",
+    "cross_source_reconciliation_sha256": "25e11401d4d89c8698105d1138def1709f298473d00d61c36f0b1e891906f104"
+  },
+  "scope": {
+    "conceptual_cells": 2730,
+    "target_cells": 2520,
+    "installed_target_attestations": 2497,
+    "control_cells_audit_only": 210,
+    "target_blanks_audit_only": 21,
+    "target_ambiguities_audit_only": 2,
+    "control_attestations_audit_only": 206,
+    "control_blanks_audit_only": 3,
+    "control_ambiguities_audit_only": 1
+  },
+  "unresolved": [
+    {
+      "item": 10,
+      "site": "KEL",
+      "pdf_page": 92,
+      "printed_page": 84,
+      "column": "left",
+      "status": "ambiguous",
+      "reading": "1 dʒibh̃"
+    },
+    {
+      "item": 31,
+      "site": "MUN",
+      "pdf_page": 97,
+      "printed_page": 89,
+      "column": "left",
+      "status": "ambiguous",
+      "reading": "2 khaŋʌɖo?"
+    },
+    {
+      "item": 74,
+      "site": "TOR",
+      "pdf_page": 105,
+      "printed_page": 97,
+      "column": "right",
+      "status": "ambiguous-control"
+    }
+  ],
+  "registries": {
+    "new_languages": ["Vasavi", "Noiri"],
+    "new_dialects": [
+      "sil-dhule-2013-vasavi-kelpada",
+      "sil-dhule-2013-vasavi-dhanoura",
+      "sil-dhule-2013-vasavi-digiamba",
+      "sil-dhule-2013-vasavi-amoda",
+      "sil-dhule-2013-noiri-mundalwad",
+      "sil-dhule-2013-noiri-astamba",
+      "sil-dhule-2013-pauri-bhusha",
+      "sil-dhule-2013-rathwi-kangai"
+    ],
+    "reused_dialects": [
+      "sil-bareli-2018-bareli-pauri-mandvi",
+      "sil-bareli-2018-rathwi-pauri-amalwadi",
+      "sil-bareli-2018-rathwi-pauri-segwi",
+      "sil-bareli-2018-bareli-pauri-shahana"
+    ],
+    "coordinates": "blank for all eight new dialect rows because ESR 2013-004 supplies no point coordinates",
+    "control_route": "Toranmal remains audit-only and has no installed language or dialect row"
+  },
+  "sound_profile": {
+    "path": "conversion/sil-northern-dhule-bhils.txt",
+    "sha256": "b0bca6f983bbcf87dc43769c804ae02a73db45d58fad1e86f975fb8b9f7456ce",
+    "route": "watters2013northerndhule",
+    "replacement_characters": 0,
+    "missing_input_characters": []
+  },
+  "reconciliation": {
+    "rows": 1470,
+    "noira_rows": 630,
+    "bareli_rows": 840,
+    "policy": "later publications were compared only after the 2013 package was frozen; they never supply or verify a 2013 reading, and representation differences do not overwrite the primary evidence"
+  },
+  "deferred_gates": [
+    "consolidated CLDF/full build",
+    "global source-audit regeneration",
+    "browser database refresh and browser QA",
+    "opaque compiled f_* identity reconciliation",
+    "repository-wide test suite",
+    "commit"
+  ]
+}

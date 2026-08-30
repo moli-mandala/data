@@ -61,7 +61,14 @@ def test_restored_assignments_survive_in_the_compiled_edge_graph():
             for row in csv.DictReader(handle)
             if row["Notes"] == "Restored from legacy NeoJambu origin_lemma_id"
         }
-    assert len(restored) == 32_635
+    # Chhattisgarhi and Rajasthani now keep their curated Parameter_ID values in the
+    # installed survey CSVs.  Their duplicate, positional-ID restoration records were
+    # deliberately removed; Kannauji and the other durable-ID restorations remain here.
+    # 14,506 self-links were also dropped.  Legacy modelled a headword as two rows — the entry
+    # plus an attested row beneath it — and the edge model collapses both onto one node, so the
+    # importer resolved that pair into a link from the node to itself.  Installing those made
+    # 14,506 CDIAL headwords their own etymon and dropped them from the entry list.
+    assert len(restored) == 4_580
 
     with (ROOT / "cldf/edges.csv").open(encoding="utf-8") as handle:
         accepted = {
@@ -70,7 +77,7 @@ def test_restored_assignments_survive_in_the_compiled_edge_graph():
             if row["Rank"] == "1"
         }
     assert restored <= accepted
-    assert ("f_37lopoca7p77o", "992") in restored  # Bagri hū ‘I’
+    assert ("f_4y2f5moveah5a", "12335") in restored  # Kannauji sarir ‘body’
 
 
 def test_previously_lost_source_groups_have_accepted_edges():
@@ -83,18 +90,25 @@ def test_previously_lost_source_groups_have_accepted_edges():
             if row["Rank"] == "1" and row["Kind"] in {"reflex", "borrowed", "variant"}
         }
     expected = {
-        "bagri": 1_937,
-        "chattisgarhi": 2_111,
-        "dhundari": 1_282,
-        "hadothi": 1_742,
-        "kannauji": 1_985,
-        "marwari": 1_905,
-        "mewari": 3_428,
-        "mewati": 1_443,
-        "rau": 127,
+        "bagri": 1_921,
+        "chattisgarhi": 2_079,
+        "dhundari": 1_264,
+        "hadothi": 1_691,
+        "kannauji": 1_991,
+        "marwari": 1_880,
+        "mewari": 3_368,
+        "mewati": 1_426,
     }
     for reference, count in expected.items():
         form_ids = {
             row["ID"] for row in forms if reference in citation_keys(row.get("Source", ""))
         }
         assert len(form_ids & linked) == count
+
+    # Rau's 127 Proto-Munda forms used to appear here, but all 127 of their restored links were
+    # self-links: legacy held the etymon (`m1`) and its head-form row (`3-0`) separately, and
+    # this model has one node for both.  They are the etyma, so they carry no rank-1 edge.
+    rau_ids = {row["ID"] for row in forms if "rau" in citation_keys(row.get("Source", ""))}
+    assert len(rau_ids) == 127
+    assert not rau_ids & linked
+    assert {row["Status"] for row in forms if row["ID"] in rau_ids} == {"entry"}

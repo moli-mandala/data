@@ -177,6 +177,14 @@ def main():
             # Pybtex preserves a URL tilde as a LaTeX command, including a separator space that
             # breaks the generated Markdown destination. Emit the actual URL character instead.
             formatted = re.sub(r"\\+textasciitilde\s*", "~", formatted)
+            # Pybtex's "plain" style hardcodes the degree of a thesis and ignores
+            # BibTeX's ``type`` field, so it calls a bachelor's thesis a master's
+            # one. Honour the field the entry actually states.
+            degree = entry.fields.get("type", "").strip()
+            if degree and entry.type in {"mastersthesis", "phdthesis"}:
+                formatted = re.sub(
+                    r"(Master's|PhD) thesis", degree.replace("\\", ""), formatted, count=1
+                )
         except Exception as e:  # noqa: BLE001
             print(f"format error for {key}: {e}", file=sys.stderr)
             formatted = ""

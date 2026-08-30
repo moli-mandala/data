@@ -1,0 +1,44 @@
+{
+  "acquisition": "Stanford Interlibrary Loan request 446829, delivered by UC Berkeley as a web scan",
+  "article_printed_pages": [
+    65,
+    80
+  ],
+  "bibliography": "Buddruss, Georg. 1992. Waigali-Sprichwörter. Studien zur Indologie und Iranistik 16/17:65–80.",
+  "extraction": {
+    "checked_in_layer": "the RAW table in data/other/forms/raw_data/buddruss_waigali_1992.py",
+    "glossary_headword_record_count": 158,
+    "method": "complete record-by-record manual collation against 400 dpi page renders",
+    "ocr_reproducibility": [
+      "embedded PDF text layer used for navigation",
+      "tesseract -l deu+eng --psm 4",
+      "tesseract -l deu+eng --psm 6"
+    ],
+    "transcription_uncertainties_remaining": 0
+  },
+  "lexical_printed_pages": [
+    71,
+    78
+  ],
+  "outputs": {
+    "audit": "data/other/forms/raw_data/20260824-buddruss-waigali-audit.csv",
+    "audit_count": 158,
+    "form_count": 158,
+    "forms": "data/other/forms/20260824-buddruss-waigali.csv",
+    "sample": "data/other/forms/raw_data/20260824-buddruss-waigali-sample.csv",
+    "sample_count": 25
+  },
+  "pdf_pages": 22,
+  "pdf_redistributed": false,
+  "pdf_sha256": "ca4a146d1b01e5f940e0b49f863fd1ac33ca873bdda1354b93c32bcd85701b8a",
+  "rights": "Copyrighted ILL scan supplied for private study, scholarship, or research; the scan is not checked in.",
+  "scope": {
+    "cdial_policy": "direct unambiguous Turner/CDIAL assignments are linked; hedged, alternative, and secondary comparisons remain prose",
+    "excluded": "the 25 proverb texts and their running translations; inflected examples not promoted by Buddruss to headword status; comparative Kamviri, Wamai, Tregami, Pashai, and other-language forms in etymological commentary",
+    "included": "every printed headword and explicit headword alternate in the complete glossary on pp. 71–78",
+    "language_model": "all forms belong to canonical Waigali (Wg) and carry the registered Nisheigram dialect tag (nis); informants remain provenance"
+  },
+  "snapshot_date": "2026-08-24",
+  "source_id": "buddruss-waigali1992",
+  "unresolved": []
+}

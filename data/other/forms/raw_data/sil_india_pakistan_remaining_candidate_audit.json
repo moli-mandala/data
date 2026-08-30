@@ -1,0 +1,143 @@
+{
+  "checked_at": "2026-08-29",
+  "scope": "Find the first genuine SIL India or Pakistan survey in census order with affirmative evidence of published lexical or wordlist material that is neither installed nor represented by an active or complete source-local package.",
+  "policy": "Published lexical evidence is a selection condition, not transcription evidence. A primary report must be acquired, checksummed, rendered, and visually inspected before page/list/cell topology is claimed. Image-only or handwritten IPA must be transcribed manually cell by cell; OCR, PDF text, legacy imports, and secondary sources may locate but never supply or verify a reading.",
+  "inputs": [
+    {
+      "path": "data/other/forms/raw_data/sil_survey_sources.md",
+      "full_file_sha256_at_audit": "61a0ba95b76784a5e46430526bb574ab00b07eb4173c0fe2e92e99b3691d568f",
+      "full_file_bytes_at_audit": 53883,
+      "country_tables_sha256": "dd34ae8bcf071f5a0c6dedfef10748764eb647442c435ec7fa33f107d0ba0973",
+      "country_tables_bytes": 23625,
+      "country_table_rows": {
+        "India": 50,
+        "Pakistan": 7
+      }
+    },
+    {
+      "path": "data/other/forms/raw_data/sil_glottolog_candidate_audit.csv",
+      "sha256": "92a5f75664b4bf4401e7f5547e0b2abd54670576fbcf40f1894f3fec93009372",
+      "bytes": 5607,
+      "rows": 32,
+      "dispositions": {
+        "covered_component": 15,
+        "duplicate_reissue": 1,
+        "inspected_no_rows": 2,
+        "installed": 9,
+        "outside_scope": 2,
+        "partial_manual": 3
+      }
+    }
+  ],
+  "census_classification": {
+    "India": {
+      "installed": 25,
+      "complete_source_local_package": 9,
+      "shared_integration_complete": 5,
+      "inspected_no_published_lexical_rows": 10,
+      "active_acquisition_package": 1,
+      "eligible_unrepresented": 0
+    },
+    "Pakistan": {
+      "installed": 7,
+      "complete_source_local_package": 0,
+      "inspected_no_published_lexical_rows": 0,
+      "active_acquisition_package": 0,
+      "eligible_unrepresented": 0
+    }
+  },
+  "complete_source_local_packages_in_census_order": [
+    {
+      "source": "ESR 2012-015 Kurumba dialects",
+      "path": "data/other/forms/raw_data/sil_kurumba_2012"
+    },
+    {
+      "source": "ESR 2013-004 Northern Dhule Bhils",
+      "path": "data/other/forms/raw_data/sil_northern_dhule_bhils_2013"
+    },
+    {
+      "source": "ESR 2015-012 Noira Bhils",
+      "path": "data/other/forms/raw_data/sil_noira_2015"
+    },
+    {
+      "source": "ESR 2015-016 Adi",
+      "path": "data/other/forms/raw_data/sil_adi_2015"
+    },
+    {
+      "source": "ESR 2015-026 Bhumij",
+      "path": "data/other/forms/raw_data/sil_bhumij_2015"
+    },
+    {
+      "source": "ESR 2017-013 Western Indo-Nepal Tharu",
+      "path": "data/other/forms/raw_data/sil_western_tharu_2017"
+    },
+    {
+      "source": "JLSR 2021-009 Kullu District",
+      "path": "data/other/forms/raw_data/sil_kullu_2021"
+    },
+    {
+      "source": "JLSR 2021-029 Koya dialects",
+      "path": "data/other/forms/raw_data/sil_koya_2021"
+    },
+    {
+      "source": "JLSR 2021-034 Dhurwa",
+      "path": "data/other/forms/raw_data/sil_dhurwa_2021"
+    },
+    {
+      "source": "JLSR 2022-014 Korwa and Kodaku",
+      "path": "data/other/forms/raw_data/sil_korwa_kodaku_2022"
+    },
+    {
+      "source": "JLSR 2022-015 Bagheli",
+      "path": "data/other/forms/raw_data/sil_bagheli_2022"
+    },
+    {
+      "source": "JLSR 2024-009 Ho dialects",
+      "path": "data/other/forms/raw_data/sil_ho_2024"
+    },
+    {
+      "source": "JLSR 2024-011 Haryanvi",
+      "path": "data/other/forms/raw_data/sil_haryanvi_2024"
+    },
+    {
+      "source": "JLSR 2025-005 Mavilan Tulu",
+      "path": "data/other/forms/raw_data/sil_mavilan_tulu_2025"
+    }
+  ],
+  "active_acquisition_packages": [
+    {
+      "source": "Chamberlain, Chamberlain & Pavey 1998 Kinnauri manuscript",
+      "path": "data/other/forms/raw_data/sil_kinnauri_1998",
+      "affirmative_lexical_or_wordlist_evidence": true,
+      "primary_report_acquired": false,
+      "state": "exact_source_search_exhausted_acquisition_request_required",
+      "reason_not_selected": "The source is already represented by an active source-local discovery/acquisition package, so it fails the selection condition.",
+      "unresolved_coordinates": "All 79 manuscript pages and every alleged comparative-wordlist page, list, and cell remain unresolved until the exact primary manuscript is acquired."
+    }
+  ],
+  "glottolog_reconciliation": {
+    "unclassified_or_missing_india_pakistan_candidates": 0,
+    "partial_manual_rows": [
+      "ESR 2012-007 Garo",
+      "ESR 2011-023 Koch",
+      "ESR 2011-040 Kurux"
+    ],
+    "partial_manual_scope": "Bangladesh only; none is an India or Pakistan candidate for this lane.",
+    "result": "Every genuine India or Pakistan record in the explicit-country Glottolog audit is installed, a covered component of an installed series, a duplicate reissue, or an inspected report without published lexical rows."
+  },
+  "selection": {
+    "state": "no_eligible_candidate",
+    "eligible_unrepresented_reports": 0,
+    "selected_report": null,
+    "primary_report_acquired": false,
+    "publisher_pdf_sha256": null,
+    "publisher_pdf_rendered": false,
+    "wordlist_pages": [],
+    "wordlist_lists": [],
+    "wordlist_cells": [],
+    "manual_transcription_state": "not_started_no_eligible_candidate",
+    "unresolved_coordinates": "No new report was selected, so no report-page, list, or cell coordinates may be asserted. The Kinnauri coordinates remain explicitly unresolved in its existing source-local discovery package.",
+    "reason": "All 57 India/Pakistan census rows are installed, represented by complete source-local packages, verified to publish no ingestible lexical rows, or—in the sole Kinnauri case—already represented by an active acquisition package."
+  },
+  "next_action": "Do not invent a replacement candidate. Resume the existing Kinnauri acquisition package if the exact 79-page primary manuscript is obtained, or extend the discovery census with a newly evidenced SIL India/Pakistan archival object before beginning extraction. Any new primary report must be checksummed and rendered before topology is frozen and any image-only IPA is manually transcribed."
+}

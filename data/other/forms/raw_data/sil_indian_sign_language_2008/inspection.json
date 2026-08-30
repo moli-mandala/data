@@ -1,0 +1,102 @@
+{
+  "schema": "jambu_sil_source_inspection_v1",
+  "checked_at": "2026-08-29",
+  "checklist": {
+    "path": "data/SOURCE_INGESTION_CHECKLIST.md",
+    "source_type_addenda": [
+      "survey wordlists and comparative tables",
+      "OCR-heavy and image-bearing sources"
+    ]
+  },
+  "source": {
+    "title": "Assessment of Regional Language Varieties in Indian Sign Language",
+    "authors": [
+      "Jane E. Johnson",
+      "Russell J. Johnson"
+    ],
+    "series": "SIL Electronic Survey Report 2008-006",
+    "publication_date": "April 2008",
+    "publisher": "SIL International",
+    "archive_entry": 9033,
+    "archive_url": "https://www.sil.org/resources/archives/9033",
+    "canonical_pdf_url": "https://www.sil.org/system/files/reapdata/95/53/47/95534743464081586996546262623353152613/silesr2008_006.pdf"
+  },
+  "acquisition": {
+    "live_endpoint_state": "cloudflare_403",
+    "wayback_timestamp": "20170516235047",
+    "wayback_original_url": "http://www-01.sil.org:80/silesr/2008/silesr2008-006.pdf",
+    "wayback_replay_url": "https://web.archive.org/web/20170516235047id_/http://www-01.sil.org:80/silesr/2008/silesr2008-006.pdf",
+    "wayback_cdx_digest": "JYVFZNC4SEMUCR5AEWY2NVGL3H6ETRVG",
+    "downloaded_bytes": 1024681,
+    "sha256": "00ae89e7fcfee81dd46c6895f338dd989ed9dd7ebe99cf8604c946eaf18a426f",
+    "pdf_version": "1.6",
+    "encrypted": false,
+    "physical_pages": 121,
+    "page_size": "612 x 792 pt (US Letter)",
+    "redistributed_in_package": false
+  },
+  "inspection": {
+    "text_layer_extracted_pages": 121,
+    "rendered_pages": 121,
+    "render_dpi": 180,
+    "lexical_loci_visually_checked": [
+      {
+        "physical_pages": [
+          11,
+          12
+        ],
+        "label": "Table 2. Wordlist for sign language lexical similarity assessment in India",
+        "content": "245 numbered English elicitation glosses only; superscripts mark picture cues and iconic items"
+      },
+      {
+        "physical_pages": [
+          58,
+          59,
+          60,
+          61,
+          62,
+          63
+        ],
+        "label": "Appendix G. Lexical Similarity Scores for Each Word for All Cities' Comparisons",
+        "content": "the same English glosses, ten pairwise city similarity scores, and a mean; no sign representation"
+      }
+    ],
+    "sites": [
+      "Delhi",
+      "Kolkata",
+      "Chennai",
+      "Mumbai",
+      "Hyderabad"
+    ],
+    "published_prompt_rows": 245,
+    "published_pairwise_judgment_slots": 2450,
+    "published_mean_slots": 245,
+    "underlying_sign_recordings_published": false,
+    "item_level_sign_forms_published": false,
+    "signwriting_published": false,
+    "hamnosys_published": false,
+    "stokoe_notation_published": false,
+    "movement_hold_feature_strings_published": false,
+    "item_keyed_sign_images_published": false,
+    "item_keyed_video_links_published": false,
+    "figure_2_disposition": "generic wordlist elicitation setup silhouette, not an item-level lexical form",
+    "unresolved_published_lexical_readings": [],
+    "unavailable_underlying_material": "The report says elicitation was recorded on video and that representative city lists were compared, but none of those sign tokens or recordings is included or linked in the publication."
+  },
+  "editorial_disposition": {
+    "state": "inspected_no_lexical_forms_to_ingest",
+    "installed_lexical_rows": 0,
+    "excluded_prompt_only_rows": 245,
+    "excluded_pairwise_judgment_slots": 2450,
+    "excluded_mean_slots": 245,
+    "reason": "English meanings and numeric similarity judgments are analysis data, not lexical sign forms. No published representation can be mapped into Jambu without inventing forms or coercing scores into the spoken-form schema.",
+    "transcription_decision": "No transcription is possible or required because the underlying signs are not published. No OCR, PDF text, numeric score, or secondary source supplied a lexical reading.",
+    "sound_profile_gate": "inapplicable_no_forms",
+    "reference_gate": "inapplicable_no_lexical_source_rows; bibliographic identity retained in this inspection and the survey census",
+    "language_dialect_gate": "inapplicable_no_forms; do not create pseudo-varieties from score columns",
+    "graph_gate": "inapplicable_no_forms",
+    "focused_import_test_gate": "inapplicable_no_importer",
+    "full_build_gate": "deferred_to_final_consolidated_build_for_other_active_sources",
+    "browser_entry_gate": "inapplicable_no_forms"
+  }
+}

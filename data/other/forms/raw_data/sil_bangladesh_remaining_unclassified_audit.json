@@ -1,0 +1,102 @@
+{
+  "checked_at": "2026-08-29",
+  "scope": "Select the first unresolved SIL Bangladesh survey-program report with affirmative lexical or wordlist evidence in census order, after excluding Chak, Chittagonian, Chakma-Tanchangya, and Marma-Rakhine because each already has an active acquisition audit.",
+  "policy": "A report may be selected only when it remains outside the excluded active audits and the audit record affirmatively establishes lexical or wordlist evidence. Secondary evidence may classify a candidate but may never supply or verify a lexical or IPA reading. No page, list, cell, or topology may be invented without the complete primary report.",
+  "inputs": [
+    {
+      "path": "data/other/forms/raw_data/sil_bangladesh_survey_program_audit.csv",
+      "sha256": "17617145451ae10c1466a490841d05818cf3eb7de6d7aaa53f07207503deee33",
+      "bytes": 4632,
+      "rows": 29,
+      "dispositions": {
+        "installed": 18,
+        "missing_lexical_candidate": 1,
+        "partial_manual": 5,
+        "unclassified_candidate": 5
+      }
+    },
+    {
+      "path": "data/other/forms/raw_data/sil_bangladesh_archive_candidate_audit.csv",
+      "sha256": "fe730285952f9113694e678184d16c95cafa20c92d4ace3159daef1ae235a3ab",
+      "bytes": 3187,
+      "rows": 11
+    },
+    {
+      "path": "data/other/forms/raw_data/sil_bangladesh_2007_unlisted_reports_discovery.json",
+      "sha256": "2c0e0961e7b9abfc0ae7731c8249efcf5c7b5e3c62de09018f50331ac8494268",
+      "bytes": 14517,
+      "reports": 2
+    }
+  ],
+  "candidate_rows_in_census_order": [
+    {
+      "program_row": 9,
+      "community": "Chittagonian",
+      "cluster": "Chittagonian",
+      "disposition": "unclassified_candidate",
+      "lexical_evidence": "No independent evidence for a lexical or IPA wordlist was found.",
+      "affirmative_lexical_or_wordlist_evidence": false,
+      "excluded_active_audit": "sil_chittagonian_2007"
+    },
+    {
+      "program_row": 10,
+      "community": "Chak",
+      "cluster": "Chak",
+      "disposition": "missing_lexical_candidate",
+      "lexical_evidence": "Secondary descriptive literature says the report primarily presents vocabulary from three Chak varieties and explicitly reports extracting an IPA wordlist.",
+      "affirmative_lexical_or_wordlist_evidence": true,
+      "excluded_active_audit": "sil_chak_2007"
+    },
+    {
+      "program_row": 12,
+      "community": "Chakma",
+      "cluster": "Chakma-Tanchangya",
+      "disposition": "unclassified_candidate",
+      "lexical_evidence": "Secondary evidence establishes use of wordlist comparison as a method, but not that the report publishes forms, an IPA list, or a lexical appendix.",
+      "affirmative_lexical_or_wordlist_evidence": false,
+      "excluded_active_audit": "sil_chakma_tanchangya_2007"
+    },
+    {
+      "program_row": 13,
+      "community": "Tanchangya",
+      "cluster": "Chakma-Tanchangya",
+      "disposition": "unclassified_candidate",
+      "lexical_evidence": "Secondary evidence establishes use of wordlist comparison as a method, but not that the report publishes forms, an IPA list, or a lexical appendix.",
+      "affirmative_lexical_or_wordlist_evidence": false,
+      "excluded_active_audit": "sil_chakma_tanchangya_2007"
+    },
+    {
+      "program_row": 19,
+      "community": "Marma",
+      "cluster": "Marma-Rakhine",
+      "disposition": "unclassified_candidate",
+      "lexical_evidence": "No independent evidence that the 2007 report publishes lexical forms, an IPA wordlist, or a wordlist appendix was found.",
+      "affirmative_lexical_or_wordlist_evidence": false,
+      "excluded_active_audit": "sil_marma_rakhine_2007"
+    },
+    {
+      "program_row": 20,
+      "community": "Rakhaine",
+      "cluster": "Marma-Rakhine",
+      "disposition": "unclassified_candidate",
+      "lexical_evidence": "No independent evidence that the 2007 report publishes lexical forms, an IPA wordlist, or a wordlist appendix was found.",
+      "affirmative_lexical_or_wordlist_evidence": false,
+      "excluded_active_audit": "sil_marma_rakhine_2007"
+    }
+  ],
+  "selection": {
+    "state": "no_eligible_candidate",
+    "eligible_unresolved_reports": 0,
+    "selected_report": null,
+    "primary_report_acquired": false,
+    "publisher_pdf_sha256": null,
+    "publisher_pdf_rendered": false,
+    "wordlist_pages": [],
+    "wordlist_lists": [],
+    "wordlist_cells": [],
+    "manual_transcription_state": "not_started_no_eligible_candidate",
+    "unresolved_coordinates": "No new report was selected, so no report-page, list, or cell coordinates may be asserted. Coordinates within the four excluded report families remain governed by their existing acquisition audits.",
+    "reason": "The only six unresolved program rows belong to the four explicitly excluded active audits. Chak is the only one with affirmative evidence of lexical or IPA content, and it is explicitly excluded. No unresolved report remains after applying the required exclusions."
+  },
+  "next_action": "Do not invent or promote a replacement candidate. Continue one of the four active acquisition audits when its complete primary report becomes available, or obtain explicit authorization to broaden the search beyond unresolved survey-program candidates. Any acquired primary report must be checksummed and rendered before topology is established; image-only or handwritten IPA must then be transcribed manually cell by cell from rendered pages."
+}

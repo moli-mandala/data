@@ -68,7 +68,7 @@ def test_validate():
 def test_every_used_reference_has_provenance():
     with open("cldf/forms.csv", encoding="utf-8") as f:
         used = {
-            token.split("[", 1)[0]
+            token.split("[", 1)[0].strip()
             for row in csv.DictReader(f)
             for token in row["Source"].split(";")
             if token
@@ -409,6 +409,53 @@ def test_unified_form_ids_are_unique():
     assert len(ids) == len(set(ids))
 
 
+def test_reference_metadata_is_complete():
+    with open("cldf/references.csv", encoding="utf-8") as f:
+        references = list(csv.DictReader(f))
+
+    required_fields = {
+        "ID", "Short", "Source", "Progress", "Provenance", "Editor", "OCR",
+    }
+    assert all(
+        row[field].strip()
+        for row in references
+        for field in required_fields
+    )
+    assert not any(
+        "full citation not yet catalogued" in row["Source"].casefold()
+        for row in references
+    )
+
+    from pybtex.database import parse_file
+
+    bibliography = parse_file("cldf/sources.bib")
+    required_by_type = {
+        "article": ("journal",),
+        "book": ("publisher",),
+        "incollection": ("booktitle", "publisher"),
+        "inproceedings": ("booktitle",),
+        "mastersthesis": ("school",),
+        "phdthesis": ("school",),
+        "techreport": ("institution",),
+    }
+    for key, entry in bibliography.entries.items():
+        assert entry.persons.get("author") or entry.persons.get("editor"), key
+        assert entry.fields.get("year", "").strip(), key
+        assert (
+            entry.fields.get("title", "").strip()
+            or entry.fields.get("howpublished", "").strip()
+        ), key
+        for field in required_by_type.get(entry.type, ()):
+            assert entry.fields.get(field, "").strip(), f"{key}: {field}"
+
+    assert not [
+        key
+        for key, entry in bibliography.entries.items()
+        if entry.fields.get("title", "").strip().casefold() == key.casefold()
+        and not entry.persons
+    ]
+
+
 def test_reference_editor_credits_for_assisted_sources():
     with open("cldf/references.csv", encoding="utf-8") as f:
         references = {row["ID"]: row for row in csv.DictReader(f)}
@@ -428,8 +475,9 @@ def test_ocr_provenance_is_explicit_on_references():
 
     assert {key for key, row in references.items() if row["OCR"] == "Yes"} == {
         "andersen1990",
-            "berger-auto",
-            "dbia",
+        "berger",
+        "berger-auto",
+        "dbia",
         "ghatage-kasargod1970",
         "hockings-pilotraichoor1992",
         "paranavitana",

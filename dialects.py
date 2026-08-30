@@ -41,7 +41,10 @@ def load_dialect_aliases(path: str | Path = "cldf/dialects.csv") -> dict[str, di
 
 
 def normalize_dialect(
-    language_id: str, tags: str, aliases: dict[str, dict[str, str]]
+    language_id: str,
+    tags: str,
+    aliases: dict[str, dict[str, str]],
+    registered_language_ids: set[str] | None = None,
 ) -> tuple[str, str]:
     """Map a source lect to its parent language and preserve it as a dialect tag.
 
@@ -50,6 +53,23 @@ def normalize_dialect(
     replace only that same-label tag and retain any genuinely additional dialect
     information.
     """
+    # New importers emit a globally qualified dialect tag. It is source-local and therefore
+    # authoritative even when the raw lect code is a tiny value such as M, L or K that occurs
+    # in several unrelated surveys. The second tag component is the registered parent language.
+    qualified_parents = {
+        unquote(parts[1])
+        for token in (tags or "").split()
+        if token.startswith("dialect:")
+        and len((parts := token.split(":", 3))) == 4
+    }
+    if len(qualified_parents) == 1:
+        return qualified_parents.pop(), tags
+
+    # A real registered language ID must not be reinterpreted as another source's short site
+    # code. Legacy unregistered source lect IDs continue through the alias table below.
+    if registered_language_ids is not None and language_id in registered_language_ids:
+        return language_id, tags
+
     dialect = aliases.get(language_id)
     if not dialect:
         return language_id, tags

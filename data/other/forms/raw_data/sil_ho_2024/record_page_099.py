@@ -1,0 +1,28 @@
+#!/usr/bin/env python3
+"""Record manual source-image transcription for PDF page 99 (items 82-84)."""
+from __future__ import annotations
+import csv
+from pathlib import Path
+HERE=Path(__file__).resolve().parent; LEDGER=HERE/"manual_review.tsv"; SITES="HO1 HTH HKA HKE HCH HCU HSU HSA HJO HDH HBG HO2 HRA HO3 HOP HBA HNI BBG BMA BOP BRA BGH MU1 MU2 SA1 SBA OCU".split()
+PAGE={
+82:("oil",["1 sunum"]*13+[None]+["1 sunum"]*8+[None,"1 sunum","1 sunum","1 sunum","2 ṯelo"]),
+83:("salt",["1 buluŋ"]*13+[None,"1 bulum","1 buluŋ","1 buluŋ","1 bʌluŋ","1 buluŋ","1 buluŋ","1 buluŋ","1 buluŋ",None,"1 buluŋ","1 buluŋ","1 buluŋ","2 luŋa, nɯno"]),
+84:("meat (raw)",["1 dʒilu","1 berʌl dʒilu","1 berʌl dʒilu","1 tʃilu","1 berʌl dʒilu","1 tʃilu","1 dʒilu","1 dʒilu","1 berʌl dʒilu","1 tʃilu","1 dʒilu","1 dʒilu","1 berel dʒilu",None,"1 tʃilu","1 dʒilu","1 dʒilu","1 dʒilu","1 dʒilu","1 tʃilu","1 dzilu","1 dʒilu",None,"1 dʒilu","1 dʒel, berel dʒel","1 dʒil","2 maŋtso"]),
+}
+def main():
+ with LEDGER.open(encoding="utf-8",newline="") as f: rd=csv.DictReader(f,delimiter="\t"); fields=rd.fieldnames; rows=list(rd)
+ assert fields; expected={(i,s) for i in PAGE for s in SITES}; seen=set()
+ for row in rows:
+  key=(int(row["Item"]),row["Site_Code"])
+  if int(row["PDF_Page"])!=99 or key not in expected: continue
+  i,s=key; gloss,forms=PAGE[i]; form=forms[SITES.index(s)]; special=form is not None and any(c in form for c in "̱ʌɯ")
+  vals={"Gloss":gloss,"Manual_Transcription":form or "","Review_Status":"blank" if form is None else "attested","Confidence":"medium" if special else "high","Uncertainty":"diplomatic Unicode rendering of legacy survey-alphabet glyphs" if special else "","Reviewer_Method":"manual-source-image; rendered-180dpi; OCR-not-accepted","Reviewed_At":"2026-08-28"}
+  if row["Review_Status"]=="unreviewed": row.update(vals)
+  else:
+   for k,v in vals.items():
+    if row[k]!=v: raise AssertionError(f"ledger conflict {i}/{s}/{k}")
+  seen.add(key)
+ if seen!=expected: raise AssertionError(f"page topology drift {len(seen)}")
+ with LEDGER.open("w",encoding="utf-8",newline="") as f: wr=csv.DictWriter(f,fieldnames=fields,delimiter="\t"); wr.writeheader(); wr.writerows(rows)
+ print("recorded 81 manually reviewed cells for PDF page 99 (items 82-84)")
+if __name__=="__main__": main()

@@ -27,6 +27,8 @@ import re
 from collections import defaultdict
 from pathlib import Path
 
+from edges_build import validate_edge_dicts
+
 
 ROOT = Path(__file__).resolve().parent
 FORMS = ROOT / "cldf/forms.csv"
@@ -171,14 +173,38 @@ def assign_ids(
             candidates = [candidate for candidate in by_fp.get(fp, []) if candidate["Form_ID"] not in claimed]
             if len(candidates) == 1:
                 match = candidates[0]
+        if not match and source_key:
+            # A source may gain immutable record keys after it has already shipped with
+            # provenance-based identities.  Preserve the existing public ID when the old
+            # fingerprint identifies exactly one unclaimed registry row; the snapshot written
+            # below upgrades that identity to the source key.  Never guess among duplicate
+            # legacy attestations (for example, identical forms at multiple survey sites).
+            legacy_fp = fingerprint(row)
+            candidates = [
+                candidate
+                for candidate in by_fp.get(legacy_fp, [])
+                if candidate["Form_ID"] not in claimed
+            ]
+            if len(candidates) == 1:
+                match = candidates[0]
         if not match and legacy_match:
             # This preserves a corrected source row when its old generated position did not move.
-            same_source_record = bool(source_key and legacy_match.get("Source_Key") == source_key) or (
-                source_identity(legacy_match.get("Source", ""))
-                == source_identity(row.get("Source", ""))
-                and legacy_match.get("Language_ID") == row.get("Language_ID", "")
-                and legacy_match.get("Original") == (row.get("Original", "") or row.get("Form", ""))
-            )
+            registry_source_key = legacy_match.get("Source_Key", "")
+            if source_key and registry_source_key:
+                # Once both records have immutable keys, a reused positional ID must never
+                # capture a neighbouring homograph after rows are inserted or reordered.
+                same_source_record = registry_source_key == source_key
+            else:
+                # Older sources without immutable keys still need editorial corrections to a
+                # gloss to preserve their public ID when provenance, language and source form
+                # identify the same record at the same legacy position.
+                same_source_record = (
+                    source_identity(legacy_match.get("Source", ""))
+                    == source_identity(row.get("Source", ""))
+                    and legacy_match.get("Language_ID") == row.get("Language_ID", "")
+                    and legacy_match.get("Original")
+                    == (row.get("Original", "") or row.get("Form", ""))
+                )
             if same_source_record:
                 match = legacy_match
 
@@ -226,6 +252,37 @@ ACCEPTED = {"accepted", "yes", "active"}
 REJECTED = {"rejected", "no"}
 
 
+# A dictionary sub-entry is identified as ``<entry>-<n>`` (CDIAL 103-2 under
+# etymon 103), which is exactly the shape of the positional pre-ID
+# ``<file>-<row>`` that make_cldf mints for source rows. Those two namespaces
+# overlap, and inserting one source file re-issues every later pre-ID, so a
+# retired sub-entry id can be picked up by an unrelated row and then aliased to
+# it. Following that alias silently moves a curated etymology onto a different
+# word: Zargari ``pani`` 'water' once acquired CDIAL 103 ``aŋkapāli`` 'embrace'
+# this way. An assignment that names a sub-entry of its own etymon can only
+# ever have meant that sub-entry, so when the sub-entry is gone the assignment
+# is stale and is dropped rather than redirected.
+SUBENTRY_SUFFIX = re.compile(r"-\d+[a-z]*$")
+
+
+def is_retired_subentry(assignment: dict[str, str], active_ids: set[str]) -> bool:
+    form_id = (assignment.get("Form_ID") or "").strip()
+    etymon_id = (assignment.get("Etymon_ID") or "").strip()
+    if not form_id or not etymon_id or form_id in active_ids:
+        return False
+    remainder = form_id[len(etymon_id):]
+    return form_id.startswith(etymon_id) and bool(SUBENTRY_SUFFIX.fullmatch(remainder))
+
+
+def drop_stale_subentry_assignments(
+    assignments: list[dict[str, str]], active_ids: set[str]
+) -> tuple[list[dict[str, str]], list[dict[str, str]]]:
+    kept, stale = [], []
+    for assignment in assignments:
+        (stale if is_retired_subentry(assignment, active_ids) else kept).append(assignment)
+    return kept, stale
+
+
 def migrate_assignment_schema(assignments: list[dict[str, str]]) -> None:
     """One-time upgrade of legacy overlay rows (Relation column, implicit rank 1)."""
     for row in assignments:
@@ -255,6 +312,12 @@ def validate_assignments(forms: list[dict[str, str]], assignments: list[dict[str
             raise ValueError(f"unsupported assignment kind {assignment.get('Kind')!r} for {form_id}")
         if not re.fullmatch(r"[1-9]\d*", assignment.get("Rank", "1")):
             raise ValueError(f"bad assignment rank {assignment.get('Rank')!r} for {form_id}")
+        # Legacy modelled a dictionary headword as an entry row plus an attested row beneath it;
+        # both collapse onto one node here, so an importer resolving that pair emits a link from
+        # the node to itself. Installing it makes the node its own etymon and drops it from the
+        # headword list — 14,506 CDIAL entries vanished this way.
+        if form_id == etymon_id:
+            raise ValueError(f"etymology assignment for {form_id} points at itself")
 
 
 def apply_assignments(
@@ -303,8 +366,11 @@ def apply_assignments(
                 edges.append(edge)
                 rank1_by_child[form_id] = edge
                 changed += 1
+            # An accepted rank-1 edge makes the node attested, so clear whichever parentless
+            # Status it carried and keep forms.csv agreeing with edges.csv. `entry` applies to
+            # dictionary sub-entries (CDIAL 9017-2) that the overlay re-homes onto their head.
             row = by_form.get(form_id)
-            if row is not None and row.get("Status") == "unlinked":
+            if row is not None and row.get("Status") in ("unlinked", "entry"):
                 row["Status"] = ""
                 changed += 1
         else:
@@ -326,6 +392,10 @@ def apply_assignments(
     edges.sort(key=lambda e: (
         e["Child_ID"], e["Kind"], int(e["Rank"] or 1), int(e["Pos"] or 0), e["Parent_ID"]
     ))
+    # The last writer of cldf/edges.csv re-checks the shipped table against the same contract
+    # `edges_build` enforces when it first derives the graph — otherwise overlay-only breakage
+    # (self-edges, a headword given a parent) reaches the browser DB unnoticed.
+    validate_edge_dicts(edges, {row["ID"]: row.get("Status", "") for row in forms})
     write_rows(edges_path, EDGES_FIELDS, edges)
     return changed
 
@@ -390,6 +460,7 @@ def main() -> None:
     if not args.assignments.exists():
         write_rows(args.assignments, ASSIGNMENT_FIELDS, [])
     _, assignments = read_rows(args.assignments)
+    assignments, stale = drop_stale_subentry_assignments(assignments, active_ids)
     for assignment in assignments:
         for column in ("Form_ID", "Etymon_ID"):
             value = restored_ids.get(assignment.get(column, ""), assignment.get(column, ""))
@@ -419,6 +490,8 @@ def main() -> None:
     print(
         f"assigned {len(mapping):,} durable form IDs; "
         f"preserved {len(aliases):,} aliases; applied {changed:,} etymology assignments"
+        + (f"; dropped {len(stale):,} assignments on retired dictionary sub-entries"
+           if stale else "")
     )
 
 

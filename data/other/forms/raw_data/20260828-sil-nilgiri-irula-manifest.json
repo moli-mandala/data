@@ -1,0 +1,133 @@
+{
+  "audit_file": "data/other/forms/raw_data/20260828-sil-nilgiri-irula-audit.csv",
+  "comparison_codes": {
+    "ALU": {
+      "name": "Alu Kurumba",
+      "role": "comparison list culled from Blair 2012"
+    },
+    "BAD": {
+      "name": "Badaga",
+      "role": "comparison list culled from Blair 2012"
+    },
+    "BET": {
+      "name": "Betta Kurumba",
+      "role": "comparison list culled from Blair 2012"
+    },
+    "CBT": {
+      "name": "Coimbatore Tamil",
+      "role": "elicited comparison list"
+    },
+    "JEN": {
+      "name": "Jenu Kurumba",
+      "role": "comparison list culled from Blair 2012"
+    },
+    "KAN": {
+      "name": "Kannada",
+      "role": "comparison list culled from Blair 2012"
+    },
+    "MAD": {
+      "name": "MAD (unresolved)",
+      "role": "unresolved comparison list"
+    }
+  },
+  "counts": {
+    "audit_rows": 3417,
+    "excluded_comparison_records": 1319,
+    "installed_target_forms": 2054,
+    "layout_fragments": 29,
+    "parsed_wordlist_responses": 3388,
+    "status": {
+      "excluded": 1363,
+      "installed": 2054
+    },
+    "target_response_records": 2069,
+    "target_source_gaps": 15,
+    "uncertainty_flags": {
+      "source-raster-affricate": 120,
+      "source-raster-coronal": 1001,
+      "source-raster-labial": 9,
+      "source-raster-legacy-glyph-ɪ": 100,
+      "source-raster-length": 1,
+      "source-raster-nasalization": 17,
+      "source-raster-unreadable-segment": 1,
+      "source-raster-vowel": 52
+    }
+  },
+  "installed_file": "data/other/forms/20260828-sil-nilgiri-irula.csv",
+  "scope": "Appendix B, printed pages 25-48, all 187 prompts and 18 lists",
+  "source": "ernest-oleary-kelsall2018irula",
+  "source_archive": 76656,
+  "source_pdf": "silesr2018_010.pdf",
+  "source_pdf_sha256": "2e5a4ef0f4c941437d09a1c8fa49ba01d4fe79e0915ad9248ac7b83280fb4c62",
+  "target_sites": {
+    "ANA": {
+      "dialect_group": "Northern",
+      "dialect_id": "nilgiri-irula-anaikatty",
+      "name": "Anaikatty"
+    },
+    "BOO": {
+      "dialect_group": "Northern",
+      "dialect_id": "nilgiri-irula-bookapuram",
+      "name": "Bookapuram"
+    },
+    "CHE": {
+      "dialect_group": "Mele Nadu",
+      "dialect_id": "nilgiri-irula-chemmanarai",
+      "name": "Chemmanarai"
+    },
+    "CHO": {
+      "dialect_group": "Northern",
+      "dialect_id": "nilgiri-irula-chokkanalli",
+      "name": "Chokkanalli"
+    },
+    "KIL": {
+      "dialect_group": "Mele Nadu",
+      "dialect_id": "nilgiri-irula-kilkupkad",
+      "name": "Kilkupkad"
+    },
+    "KOL": {
+      "dialect_group": "Mele Nadu",
+      "dialect_id": "nilgiri-irula-kolikarai",
+      "name": "Kolikarai"
+    },
+    "KUN": {
+      "dialect_group": "Mele Nadu",
+      "dialect_id": "nilgiri-irula-kunjapanai",
+      "name": "Kunjapanai"
+    },
+    "MAV": {
+      "dialect_group": "Northern",
+      "dialect_id": "nilgiri-irula-mavanalla",
+      "name": "Mavanalla"
+    },
+    "MET": {
+      "dialect_group": "Mele Nadu",
+      "dialect_id": "nilgiri-irula-mettukal",
+      "name": "Mettukal"
+    },
+    "NEL": {
+      "dialect_group": "Vette Kada",
+      "dialect_id": "nilgiri-irula-nellithurai",
+      "name": "Nellithurai"
+    },
+    "THA": {
+      "dialect_group": "Vette Kada",
+      "dialect_id": "nilgiri-irula-thaliyur",
+      "name": "Thaliyur"
+    }
+  },
+  "transcription_policy": [
+    "IPA was manually reviewed against enlarged source raster crops; OCR supplied structure only",
+    "The overlapping 2015 Palakkad Kunjapana list was independent review evidence, never substitution",
+    "Low-resolution distinctions that cannot be guaranteed are preserved as typed uncertainty flags",
+    "The source's 15 printed missing-data target records remain excluded gaps",
+    "No cognate or etymological relationships are inferred from lexical-similarity groups"
+  ],
+  "validation": {
+    "all_187_prompts": true,
+    "all_18_site_codes_per_prompt_in_source_order": true,
+    "unicode_nfc": true,
+    "unique_entry_keys": true,
+    "unparsed_records": 0
+  }
+}

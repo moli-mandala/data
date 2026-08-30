@@ -20,7 +20,7 @@
 - [x] 7. Build and verify the sound profile — profile route: conversion/western-tamang.txt; replacement characters in input forms: 0
 - [x] 8. Parse references and provenance — unresolved keys: none
 - [x] 9. Model etymology and graph relations conservatively — covered by tests/test_edges.py and compiled edge invariants
-- [x] 10. Produce a complete audit trail — audit: source_checklists/installed-record-audit.csv.gz
+- [x] 10. Produce a complete audit trail — audit: data/other/forms/raw_data/20260828-sil-western-arunachal-monpa-audit.csv, source_checklists/installed-record-audit.csv.gz
 - [x] 11. Add focused regression tests — tests: tests/test_western_tamang.py, tests/test_source_checklists.py
 - [ ] 12. Install and run the full data pipeline — pending final repository-wide make all and full-suite validation for this review
 - [x] 13. Browser database refresh and inspection (user-triggered) — deferred by standing policy; refresh and browser QA run only when the user requests them

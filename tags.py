@@ -37,6 +37,9 @@ GRAMMATICAL_TAGS = {
     "abs", "erg", "ade", "ine", "ess",
     "prox", "dist", "indef", "finalis",
     "poss", "conditional", "prefix", "suffix", "emph", "interr", "dir", "uncertain",
+    # Boretzky & Igla mark weather, sensation and modal verbs "impers"; the category is
+    # printed by other dictionaries too and has no existing equivalent above.
+    "impersonal",
     "1sg", "2sg", "3sg", "1pl", "2pl", "3pl",
     "pret", "aor", "opt", "perfect", "stem",
     "derived", "loanword", "diminutive", "intensive", "compound", "not-reconstructed",
@@ -53,9 +56,18 @@ GRAMMATICAL_TAGS = {
     "Palula-verb-class-L-a", "Palula-verb-class-L-e",
     "Palula-verb-class-L-consonant", "Palula-verb-class-L-minor",
     "Palula-verb-class-T", "Palula-verb-class-suppletive",
+    "Kalkoti-verb-class-L", "Kalkoti-verb-class-T", "Kalkoti-verb-class-suppletive",
+    "Sauji-noun-class-1", "Sauji-noun-class-2", "Sauji-noun-class-3",
+    "Sauji-verb-class-1", "Sauji-verb-class-2", "Sauji-verb-class-3",
+    "Sauji-verb-class-4",
     # Additional lexical subclasses used by rich dictionary importers.
     "determiner", "discourse-marker", "auxiliary", "negator", "mood-marker", "relative",
     "honorific", "formal", "informal", "inclusive", "exclusive", "near-future",
+    # Categories Herin's Domari sketch distinguishes: the Layer II cases beyond the
+    # shared inventory, the subjunctive (distinct from ``subj``, the subject marker),
+    # the progressive extension -št-, and Matras's contextualising and remoteness markers.
+    "comitative", "superessive", "subjunctive", "progressive", "contextualiser",
+    "remoteness", "complementizer", "definite",
     "proper-noun", "multiword-expression", "demonstrative",
     "personal", "reciprocal", "copula", "modal", "conjunct-verb",
     "incorporating", "non-incorporating", "temporal", "spatial", "manner",
@@ -81,6 +93,7 @@ GRAMMATICAL_ALIASES = {
     "colloq": "colloquial",
     "vulg": "vulgar",
     "hon": "honorific",
+    "impers": "impersonal",
 }
 
 _PERSON_NUMBER = re.compile(r"([123])(?:st|nd|rd)?\s+(sg|pl)\.?", re.IGNORECASE)

@@ -1,0 +1,48 @@
+{
+  "source": "Hermann Berger, Die Burushaski-Sprache von Hunza und Nager, Teil III: Wörterbuch (1998)",
+  "source_id": "berger",
+  "snapshot_date": "2026-08-28",
+  "pdf_sha256": "864cd94f8c41237aae2408e154f7b8d9e21c911b90f7d3ff6dd261568f05c0dc",
+  "coverage": "printed pp. 9--486, Burushaski--German dictionary",
+  "included_pdf_pages": "7 right half; 8--50; 52--246; 247 left half",
+  "graph_compatibility": "Pinned legacy evidence keys used by reviewed Burushaski cognate sets are retained as a separately marked compatibility tranche; their locators may include the former proper-name boundary and are not counted as reparsed scan coverage.",
+  "excluded": {
+    "pdf_page_7_left": "dictionary preface, printed p. 8",
+    "pdf_page_51": "weaker duplicate scan of printed pp. 94--95",
+    "pdf_page_247_right": "proper-name appendix",
+    "pdf_pages_248_327": "proper names, German--Burushaski index, and back matter"
+  },
+  "ocr": {
+    "engine": "Tesseract script/Latin",
+    "render_dpi": 300,
+    "segmentation": "line indentation within four printed columns",
+    "cache": ".cache/ocr/berger/pages"
+  },
+  "translation": {
+    "engine": "Argos Translate",
+    "model": "German--English 1.3",
+    "model_url": "https://argos-net.com/v1/translate-de_en-1_3.argosmodel",
+    "model_file": "translate-de_en-1_3.argosmodel",
+    "model_sha256": "becc2b0011f8249fcb89be9ecb75ba0d876b1fab93c28ee6ff0420936897d637",
+    "policy": "dictionary-context wrapper; checked editorial CSV is authoritative; automated translations remain explicitly unreviewed"
+  },
+  "counts": {
+    "raw_units": 9700,
+    "parsed_entries_including_variants": 11039,
+    "audited_records": 11636,
+    "installed_auto_rows": 10664,
+    "preserved_graph_evidence_rows": 597,
+    "gold_rows": 39,
+    "excluded_entries": 939,
+    "untranslated_entries": 0,
+    "direct_turner_links": 431
+  },
+  "files": {
+    "auto": "data/other/forms/20260726-berger-auto.csv",
+    "gold": "data/other/forms/20220930-berger.csv",
+    "editorial": "data/other/forms/raw_data/20260828-berger-editorial.csv",
+    "identity_map": "data/other/forms/raw_data/20260828-berger-entry-map.csv",
+    "audit": "data/other/forms/raw_data/20260828-berger-audit.csv.gz",
+    "sample": "data/other/forms/raw_data/20260828-berger-sample.csv"
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "state": "shared_source_specific_integration_complete",
+  "policy": "The frozen manual staged forms are authoritative. No manual reading or ambiguous modifier was altered or inferred during integration.",
+  "source_key": "kim-ahmad-kim-sangma2011kochbd",
+  "source_pdf_sha256": "d1b2d597c16fd0338ad47d2bf031566192c5ff4e26a6651de14a228df681fc10",
+  "manual_manifest_sha256": "6f686b20c428ddaece4c1c6369cacd605cc514ff926f3842f5507becbf78ab18",
+  "post_freeze_manifest_sha256": "f18b68133e04eba70e875ad0470f6a908084cb2716ae0ba4e67ac609fa8ad453",
+  "installed": {
+    "path": "data/other/forms/20260826-sil-kochbd.csv",
+    "rows": 1017,
+    "sha256": "75a756be9c5b36d3538a3bd936232f7177623cd9067b2b18d5f3f7f2b83923fc",
+    "entry_key_policy": "Immutable silkochbd2011:item:site:variant source keys; 1017 unique target keys. Matching legacy keys remain attached to the same source occurrence."
+  },
+  "audit": {
+    "path": "data/other/forms/raw_data/sil_kochbd_2011_manual/staging_audit.tsv",
+    "rows": 2159,
+    "sha256": "0f4cf6218d7c384094c317c90f5b0cbea8fff6790488cb967a5bce47f04245f1",
+    "dispositions": {
+      "staged_target": 1017,
+      "excluded_control": 772,
+      "excluded_ambiguous": 226,
+      "excluded_blank": 25,
+      "excluded_not_used": 119
+    },
+    "ambiguity_only_conceptual_cells": 225,
+    "coordinates_with_unresolved_variants": 226,
+    "unresolved_expanded_rows": 226,
+    "mixed_resolved_unresolved_coordinates": [
+      "item-241/site-r"
+    ],
+    "coordinate_list": "post_freeze_manifest.json:unresolved_lexical_coordinates"
+  },
+  "profile": {
+    "path": "conversion/sil-bangladesh.txt",
+    "sha256": "bcaf9bcb1098d3dfe394aa2cb0003873c31417e2a50f34643acbbe9a1a349936",
+    "route": "kim-ahmad-kim-sangma2011kochbd -> sil-bangladesh",
+    "inventory_codepoints": 44,
+    "additions": [],
+    "unresolved_mappings": []
+  },
+  "registry": {
+    "target_site_rows": 4,
+    "audit_only_control_rows": 3,
+    "coordinate_policy": "All seven report-defined rows have blank latitude/longitude because the report supplies no exact site coordinates; invented legacy points were removed."
+  },
+  "reference": {
+    "authors_in_source_order": [
+      "Seung Kim",
+      "Sayed Ahmad",
+      "Amy Kim",
+      "Mridul Sangma"
+    ],
+    "number": "2011-023",
+    "publication_date": "2011-03",
+    "manual_only_transcription_provenance": true
+  },
+  "legacy_comparison_snapshots": {
+    "legacy_20260826-sil-kochbd.csv": "3cf231348f97514f960383db38d51a590e85ee03b51445d8f5b789187910b99e",
+    "legacy_20260826-sil-kochbd-audit.csv": "7d9b0106776f6cbfc59d563fbe175826965d76073680cd6273f9eb09099ddd10",
+    "legacy_sound_profile_base.txt": "bcaf9bcb1098d3dfe394aa2cb0003873c31417e2a50f34643acbbe9a1a349936"
+  },
+  "deferred_gates": [
+    "global source-audit/checklist regeneration after concurrent Garo work finishes",
+    "consolidated CLDF/full build",
+    "opaque f_* identity reconciliation",
+    "repository-wide graph validation and full test suite",
+    "browser database refresh and representative browser QA",
+    "commit and shipping"
+  ]
+}

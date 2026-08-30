@@ -1,0 +1,43 @@
+{
+  "source": "Heinz-Jürgen Pinnow 1960 Beiträge zur Kenntnis der Juang-Sprache in the SEAlang Munda Dictionary",
+  "source_key": "pinnow1960beitraege",
+  "citation_key": "PJDW",
+  "url": "http://sealang.net/munda/dictionary/search.pl?caller=database&include=pinnow1960beitraege",
+  "snapshot_date": "2026-08-28",
+  "html_sha256": "6fc00f2689630d5bed5e5c04f6efd15654a40f11cd8a66b186d54fea5aede596",
+  "source_records": 1658,
+  "source_variant_rows": 1824,
+  "installed_rows": 1818,
+  "excluded_rows": 6,
+  "blank_or_query_gloss_records": 185,
+  "note_classes": {
+    "comment": 10,
+    "comparative": 1400,
+    "none": 248
+  },
+  "proto_munda_linked_source_records": 66,
+  "proto_munda_linked_installed_rows": 72,
+  "legacy_pjdw_rows_replaced": 66,
+  "legacy_pjdw_rows_retained": [
+    "m102",
+    "m16",
+    "m31",
+    "m75",
+    "m78",
+    "m79",
+    "m93"
+  ],
+  "seeded_audit": {
+    "seed": 19602026,
+    "records": 20,
+    "material_errors": 0
+  },
+  "policy": {
+    "extraction": "structured HTML record/span extraction; no OCR",
+    "variants": "top-level comma and semicolon alternants are split; six exact repeated alternants are audit-only",
+    "transcription": "source Unicode is NFC-normalized and identity-preserved; terminal ?? markers are audit-preserved, removed from Form, and tagged uncertain; two terminal Elwin/source markers are moved to Notes so their commas cannot become false forms",
+    "language": "the source labels every record Juang; canonical ju is used without inventing a dialect or locality",
+    "notes": "hash-prefixed and explicit Cf. comparison prose is separated as source etymology; examples and grammatical commentary remain Notes",
+    "proto_munda": "66 source records are linked only by unique normalized form plus compatible meaning; seven unresolved legacy PJDW citations remain separate"
+  }
+}

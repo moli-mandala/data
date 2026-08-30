@@ -104,7 +104,7 @@ EXACT = {
 }
 
 
-AFGHANISTAN = {"Pas", "Wg", "Kam", "Kt", "Kata", "Pr", "Gmb", "Ash"}
+AFGHANISTAN = {"Pas", "Wg", "Kam", "Kt", "Pr", "Gmb", "Ash"}
 PAKISTAN = {
     "Sh", "Kho", "Mai", "Bur", "L", "S", "srk", "jhang", "awan", "poth",
     "bhatr", "Psht", "Phal", "Kal",
@@ -117,8 +117,8 @@ INDIA = {
     "dhundari_badagaon", "dhundari_bamore", "had", "hadothi_kelwada", "marwari_bagra",
     "Marw", "mewari_bannoda", "mewari_basad", "mewari_dholpura", "Rj", "mewati_akera",
     "mewati_jhambaus", "markodi", "bagheli_lakshman", "Brj", "bundeli_atarra", "M",
-    "H", "Tharu-BNM", "Rana", "Tharu-TkN", "Tharu-KkP", "Tharu-SkP", "Dang",
-    "Tharu-DDK", "Gadaba", "khash", "bhad",
+    "H", "Buksa", "Rana", "Kathoriya", "Sunha", "Dang",
+    "Gadaba", "khash", "bhad",
 }
 
 

@@ -1,0 +1,1132 @@
+{
+  "report": "ESR 2012-007 The Garos of Bangladesh",
+  "state": "manual_checkpoint_items_001_160_frozen_and_reconciled",
+  "policy": "Rendered pages must supply every reading; OCR, PDF text, legacy glyph strings, installed forms, and earlier audits may locate only and must supply or verify none.",
+  "source_pdf": "tmp/pdfs/garo_manual/silesr2012_007.pdf",
+  "source_pdf_sha256": "4248b409d816c153f95c09e50bf51f9e5ff90d456e3c8d9d13dc2eca6f8c4359",
+  "source_pdf_bytes": 1830802,
+  "source_pdf_pages": 212,
+  "wayback_timestamp": "20170810011246",
+  "wayback_original_url": "http://www-01.sil.org/silesr/2012/silesr2012-007.pdf",
+  "wordlist_physical_pages": [52, 93],
+  "wordlist_printed_pages": [45, 86],
+  "topology_note": "Printed page numbers 45 and 86 were read directly from physical pages 52 and 93; the earlier 51-92 claim was corrected before this checkpoint.",
+  "render_dpi": 300,
+  "rendered_page_count": 42,
+  "first_render_sha256": "149bff1055059affd00f9843eab5eaf67e570a58b79bc30ffa8278b6e21d1eb3",
+  "last_render_sha256": "a99db1ec4ba3f16cfdd10634f899c05ca8b0744954f54d3e789c3802914d0f65",
+  "items": [1, 307],
+  "sites": {
+    "count": 17,
+    "printed_codes": ["0", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p"],
+    "identity_policy": "Printed codes remain neutral in the manual ledger; site names and lect identities are not allowed to influence transcription.",
+    "control_policy": "Printed site code 0 is audit-only; no control response is staged from this checkpoint."
+  },
+  "cells_reviewed": 2720,
+  "pending_items": [161, 307],
+  "manual_review_checkpoint": {
+    "completed_items": [1, 160],
+    "pending_items": [161, 307],
+    "physical_pages": [52, 73],
+    "printed_pages": [45, 66],
+    "printed_response_lines": 1251,
+    "conceptual_cells": 2720,
+    "attested_cells": 2624,
+    "source_conflict_cells": 1,
+    "cells_with_attestations": 2625,
+    "source_blank_cells": 61,
+    "printed_no_entry_coordinates": 62,
+    "not_used_cells": 34,
+    "ambiguous_cells": 0,
+    "illegible_cells": 0,
+    "expanded_attested_responses": 2808,
+    "unresolved_coordinates": [
+      {
+        "item": 12,
+        "site_code": "p",
+        "physical_page": 53,
+        "printed_page": 46,
+        "reason": "source prints both group-0 no entry and group-6 dɔm"
+      }
+    ],
+    "chunks": [
+      {
+        "items": [1, 5],
+        "printed_response_lines": 47,
+        "conceptual_cells": 85,
+        "attested_cells": 84,
+        "source_blank_cells": 1,
+        "expanded_attested_responses": 95,
+        "generator": {
+          "path": "manual_chunks/hand_keyed_items_001_005.py",
+          "sha256": "5811c5dcf6ed0dbf0c84d8c30cad540aff933b78d96cd2d7bfb7456de4575a04"
+        },
+        "frozen_line_ledger": {
+          "path": "manual_chunks/items_001_005_lines.tsv",
+          "sha256": "938ef6b0947f057ea2f3ba187b6b83f60fae159a5acf1536dd04f377e1718e96"
+        },
+        "frozen_cell_ledger": {
+          "path": "manual_chunks/items_001_005_cells.tsv",
+          "sha256": "18cb09f9aeda5d2dfdf47f98f59102e9c31a296500846ee658a59885c07f25c9"
+        },
+        "post_freeze_reconciliation": {
+          "path": "manual_chunks/items_001_005_reconciliation.tsv",
+          "sha256": "fa09298bda488ea8be32d88c3617e538d09c204ccb80e0fb318269b2dcd0b093",
+          "records": 96,
+          "legacy_installed_records": 85,
+          "legacy_excluded_records": 11,
+          "manual_attestations_recovered_from_legacy_exclusions": 10,
+          "source_blank_records": 1,
+          "legacy_exact_codepoint_matches": 46,
+          "legacy_installed_codepoint_differences": 39,
+          "legacy_excluded_codepoint_differences": 11
+        }
+      },
+      {
+        "items": [6, 10],
+        "printed_response_lines": 41,
+        "conceptual_cells": 85,
+        "attested_cells": 76,
+        "source_blank_cells": 9,
+        "expanded_attested_responses": 79,
+        "generator": {
+          "path": "manual_chunks/hand_keyed_items_006_010.py",
+          "sha256": "803682adb658ae609c3add002110db13738ed777435353596890d0e085ae0959"
+        },
+        "frozen_line_ledger": {
+          "path": "manual_chunks/items_006_010_lines.tsv",
+          "sha256": "cd0950f37f1587e044ec8aa678d6309002907469e6a977345db55999e8394aed"
+        },
+        "frozen_cell_ledger": {
+          "path": "manual_chunks/items_006_010_cells.tsv",
+          "sha256": "5aecba4aae2f5edbb8422c797a72815529ac12d755d985e900ae2dd83db6b337"
+        },
+        "post_freeze_reconciliation": {
+          "path": "manual_chunks/items_006_010_reconciliation.tsv",
+          "sha256": "c19ed594e5d4557ab6af9c7081dc8d5b1a3cb3ac5ed61d32ecce21dad732d121",
+          "records": 88,
+          "legacy_installed_records": 64,
+          "legacy_excluded_records": 24,
+          "manual_attestations_recovered_from_legacy_exclusions": 15,
+          "source_blank_records": 9,
+          "legacy_exact_codepoint_matches": 12,
+          "legacy_installed_codepoint_differences": 52,
+          "legacy_excluded_codepoint_differences": 24
+        }
+      },
+      {
+        "items": [11, 15],
+        "printed_response_lines": 34,
+        "conceptual_cells": 85,
+        "attested_cells": 79,
+        "source_conflict_cells": 1,
+        "cells_with_attestations": 80,
+        "source_blank_cells": 5,
+        "printed_no_entry_coordinates": 6,
+        "expanded_attested_responses": 80,
+        "unresolved_coordinates": [
+          {
+            "item": 12,
+            "site_code": "p",
+            "physical_page": 53,
+            "printed_page": 46,
+            "reason": "source prints both group-0 no entry and group-6 dɔm"
+          }
+        ],
+        "generator": {
+          "path": "manual_chunks/hand_keyed_items_011_015.py",
+          "sha256": "250d1715745a70cd8523f1b63c003d865c59fa2de7ddb5395948c5a8128c1455"
+        },
+        "frozen_line_ledger": {
+          "path": "manual_chunks/items_011_015_lines.tsv",
+          "sha256": "3eacb09dda9f6a108741150f35a725d38553f894882d5696c9e38d77fc98a751"
+        },
+        "frozen_cell_ledger": {
+          "path": "manual_chunks/items_011_015_cells.tsv",
+          "sha256": "798064191bbfb60d8b2c8a9ef6deda8231126b07a708c4ca48785dc2f55e4e92"
+        },
+        "post_freeze_reconciliation": {
+          "path": "manual_chunks/items_011_015_reconciliation.tsv",
+          "sha256": "624881327c32442d4de1695bc4a5dcdc752fc54b531d34dbdc2fcda8e052728d",
+          "records": 86,
+          "legacy_installed_records": 72,
+          "legacy_excluded_records": 14,
+          "manual_attestations_recovered_from_legacy_exclusions": 8,
+          "source_blank_records": 6,
+          "legacy_exact_codepoint_matches": 41,
+          "legacy_installed_codepoint_differences": 31,
+          "legacy_excluded_codepoint_differences": 14
+        }
+      },
+      {
+        "items": [16, 20],
+        "printed_response_lines": 49,
+        "conceptual_cells": 85,
+        "attested_cells": 84,
+        "source_blank_cells": 1,
+        "expanded_attested_responses": 99,
+        "generator": {
+          "path": "manual_chunks/hand_keyed_items_016_020.py",
+          "sha256": "18b1093f2fbf227583f3fc09930bf16fcea66fdfe4d18a643cb9b59c75991771"
+        },
+        "frozen_line_ledger": {
+          "path": "manual_chunks/items_016_020_lines.tsv",
+          "sha256": "f23624bd2856ca7ac46b8d314595a928730b2fa2aac1e8b9741044733c2a0a58"
+        },
+        "frozen_cell_ledger": {
+          "path": "manual_chunks/items_016_020_cells.tsv",
+          "sha256": "b8f3d4d35b74deea079506b20090692e54670a591961cdb92bbe5a3de9b597a5"
+        },
+        "post_freeze_reconciliation": {
+          "path": "manual_chunks/items_016_020_reconciliation.tsv",
+          "sha256": "ee92d69d972b021c76046bac99bbbfbd2251def65474d228b14c758d6b2defb0",
+          "records": 100,
+          "legacy_installed_records": 86,
+          "legacy_excluded_records": 14,
+          "manual_attestations_recovered_from_legacy_exclusions": 13,
+          "source_blank_records": 1,
+          "legacy_exact_codepoint_matches": 38,
+          "legacy_installed_codepoint_differences": 48,
+          "legacy_excluded_codepoint_differences": 14
+        }
+      },
+      {
+        "items": [21, 25],
+        "printed_response_lines": 41,
+        "conceptual_cells": 85,
+        "attested_cells": 81,
+        "source_blank_cells": 4,
+        "expanded_attested_responses": 81,
+        "generator": {
+          "path": "manual_chunks/hand_keyed_items_021_025.py",
+          "sha256": "ce2f2e4d11177a6ecb1701d7f16a8d90f4f37349768d0a7fd6497edbc968b436"
+        },
+        "frozen_line_ledger": {
+          "path": "manual_chunks/items_021_025_lines.tsv",
+          "sha256": "6942f1666d7938eafb28b435429357d999aa7a3f947fd00dba27b9692dd21c2b"
+        },
+        "frozen_cell_ledger": {
+          "path": "manual_chunks/items_021_025_cells.tsv",
+          "sha256": "c9c3d36d60bb925658b5b36de8ccc190f6db92bd4f8c49e478d3b03d8645c1ae"
+        },
+        "post_freeze_reconciliation": {
+          "path": "manual_chunks/items_021_025_reconciliation.tsv",
+          "sha256": "a66aab6cb9cfa6cef9682c800a8085be9e27e0dbded519024eedebbab0c68b3e",
+          "records": 85,
+          "legacy_installed_records": 67,
+          "legacy_excluded_records": 18,
+          "manual_attestations_recovered_from_legacy_exclusions": 14,
+          "source_blank_records": 4,
+          "legacy_exact_codepoint_matches": 45,
+          "legacy_installed_codepoint_differences": 22,
+          "legacy_excluded_codepoint_differences": 18
+        }
+      },
+      {
+        "items": [26, 30],
+        "printed_response_lines": 31,
+        "conceptual_cells": 85,
+        "attested_cells": 84,
+        "source_blank_cells": 1,
+        "expanded_attested_responses": 92,
+        "generator": {
+          "path": "manual_chunks/hand_keyed_items_026_030.py",
+          "sha256": "df04cd14d0fb1a1492aa3cc68605d9b10db8c0434cf5065bdb749de4432d10cc"
+        },
+        "frozen_line_ledger": {
+          "path": "manual_chunks/items_026_030_lines.tsv",
+          "sha256": "5f33bc5c2c88f2121595993e035d910ef2bfaedfef173e570933736c79604c6e"
+        },
+        "frozen_cell_ledger": {
+          "path": "manual_chunks/items_026_030_cells.tsv",
+          "sha256": "94d439754d876f919d531e12fa6fc225180b83fd16ee9522b208a7817e999a6f"
+        },
+        "post_freeze_reconciliation": {
+          "path": "manual_chunks/items_026_030_reconciliation.tsv",
+          "sha256": "d06c7de83aa397e116e6232b88826cf4c528e75985636a9fe1d72f0822785a11",
+          "records": 93,
+          "legacy_installed_records": 89,
+          "legacy_excluded_records": 4,
+          "manual_attestations_recovered_from_legacy_exclusions": 3,
+          "source_blank_records": 1,
+          "legacy_exact_codepoint_matches": 65,
+          "legacy_installed_codepoint_differences": 24,
+          "legacy_excluded_codepoint_differences": 4
+        }
+      },
+      {
+        "items": [31, 35],
+        "printed_response_lines": 32,
+        "conceptual_cells": 85,
+        "attested_cells": 85,
+        "source_blank_cells": 0,
+        "expanded_attested_responses": 87,
+        "generator": {
+          "path": "manual_chunks/hand_keyed_items_031_035.py",
+          "sha256": "df138a9eccee448c0ef44c9ffa6c64651522bfc06224dd2420c31be61859ba11"
+        },
+        "frozen_line_ledger": {
+          "path": "manual_chunks/items_031_035_lines.tsv",
+          "sha256": "8056dd177f979822ab3c1bdf7105d076ae75a0c02229e28fd2a3de87609ad514"
+        },
+        "frozen_cell_ledger": {
+          "path": "manual_chunks/items_031_035_cells.tsv",
+          "sha256": "626147e6e2409c0a897b464e8b6d751df0013b8ddc0e78212f62648cef8a0efe"
+        },
+        "post_freeze_reconciliation": {
+          "path": "manual_chunks/items_031_035_reconciliation.tsv",
+          "sha256": "41cb5d5786c78e554225902a492054d712d461ae3d38baf9cd1282930062f91a",
+          "records": 87,
+          "legacy_installed_records": 65,
+          "legacy_excluded_records": 22,
+          "manual_attestations_recovered_from_legacy_exclusions": 22,
+          "source_blank_records": 0,
+          "legacy_exact_codepoint_matches": 37,
+          "legacy_installed_codepoint_differences": 28,
+          "legacy_excluded_codepoint_differences": 22
+        }
+      },
+      {
+        "items": [36, 40],
+        "printed_response_lines": 23,
+        "conceptual_cells": 85,
+        "attested_cells": 82,
+        "source_blank_cells": 3,
+        "expanded_attested_responses": 85,
+        "generator": {
+          "path": "manual_chunks/hand_keyed_items_036_040.py",
+          "sha256": "6eee8a7f348601197d59a76872acdf3f7267c25020e6c11a616f2246ec707c30"
+        },
+        "frozen_line_ledger": {
+          "path": "manual_chunks/items_036_040_lines.tsv",
+          "sha256": "47bd07ff2f18e4b5d5980179bf7d5327897ff97e12a6f6e669a7a3a3ec499945"
+        },
+        "frozen_cell_ledger": {
+          "path": "manual_chunks/items_036_040_cells.tsv",
+          "sha256": "b08479f603dda4896b116da64365cc39a1cd0ddf8794a072b34e7f5db4252b02"
+        },
+        "post_freeze_reconciliation": {
+          "path": "manual_chunks/items_036_040_reconciliation.tsv",
+          "sha256": "819261c335ea938d9d348e261b2943917c7a310cfd42d1c0da3be39d513ff7b1",
+          "records": 88,
+          "legacy_installed_records": 79,
+          "legacy_excluded_records": 9,
+          "manual_attestations_recovered_from_legacy_exclusions": 6,
+          "source_blank_records": 3,
+          "legacy_exact_codepoint_matches": 9,
+          "legacy_installed_codepoint_differences": 70,
+          "legacy_excluded_codepoint_differences": 9
+        }
+      },
+      {
+        "items": [41, 45],
+        "printed_response_lines": 28,
+        "conceptual_cells": 85,
+        "attested_cells": 83,
+        "source_blank_cells": 2,
+        "expanded_attested_responses": 84,
+        "generator": {
+          "path": "manual_chunks/hand_keyed_items_041_045.py",
+          "sha256": "3522bd2a9477e1f410954c3d2945eb5f44554114c509ad6855aa4e0d687be6f7"
+        },
+        "frozen_line_ledger": {
+          "path": "manual_chunks/items_041_045_lines.tsv",
+          "sha256": "eee5522568ef0a005750f09f7889f03a65e01cce74ac8921edf0924691fc23e3"
+        },
+        "frozen_cell_ledger": {
+          "path": "manual_chunks/items_041_045_cells.tsv",
+          "sha256": "9f0aa56406f35534200d20884d97f634abd12479af108bace87d9940dc431e88"
+        },
+        "post_freeze_reconciliation": {
+          "path": "manual_chunks/items_041_045_reconciliation.tsv",
+          "sha256": "4dc4af077718ff5387b3f4b6cc72f348d21c7211521ebe475a2590f09482e769",
+          "records": 86,
+          "legacy_installed_records": 69,
+          "legacy_excluded_records": 17,
+          "manual_attestations_recovered_from_legacy_exclusions": 15,
+          "source_blank_records": 2,
+          "legacy_exact_codepoint_matches": 50,
+          "legacy_installed_codepoint_differences": 19,
+          "legacy_excluded_codepoint_differences": 17
+        }
+      },
+      {
+        "items": [46, 50],
+        "printed_response_lines": 36,
+        "conceptual_cells": 85,
+        "attested_cells": 85,
+        "source_blank_cells": 0,
+        "expanded_attested_responses": 88,
+        "generator": {
+          "path": "manual_chunks/hand_keyed_items_046_050.py",
+          "sha256": "858ce68b0a4739d80ddd342711d3bcc00bc84457b0f86dd40707009eb939e339"
+        },
+        "frozen_line_ledger": {
+          "path": "manual_chunks/items_046_050_lines.tsv",
+          "sha256": "da7feeb72610b8b349eaf67d514055fe887f169c3f86724b588a5264c25ebade"
+        },
+        "frozen_cell_ledger": {
+          "path": "manual_chunks/items_046_050_cells.tsv",
+          "sha256": "21617270877090589b3b0db66f73ddb03ed9551fe4b8488a24d1caee336c574a"
+        },
+        "post_freeze_reconciliation": {
+          "path": "manual_chunks/items_046_050_reconciliation.tsv",
+          "sha256": "904c94272fe748f8cf4b5c51888edd4b42029d581cdf42b9ea5cfcd0f6e7e0f9",
+          "records": 88,
+          "legacy_installed_records": 77,
+          "legacy_excluded_records": 11,
+          "manual_attestations_recovered_from_legacy_exclusions": 11,
+          "source_blank_records": 0,
+          "legacy_exact_codepoint_matches": 38,
+          "legacy_installed_codepoint_differences": 39,
+          "legacy_excluded_codepoint_differences": 11
+        }
+      },
+      {
+        "items": [51, 55],
+        "printed_response_lines": 48,
+        "conceptual_cells": 85,
+        "attested_cells": 82,
+        "source_blank_cells": 3,
+        "expanded_attested_responses": 90,
+        "generator": {
+          "path": "manual_chunks/hand_keyed_items_051_055.py",
+          "sha256": "48d435ac46ffd76c5c9fe5c08ce2d47f3b04fcde9bdb905fc1fbe2f3ca683c39"
+        },
+        "frozen_line_ledger": {
+          "path": "manual_chunks/items_051_055_lines.tsv",
+          "sha256": "4342065d879483cc2e6197f14122c2cfe94638f8db1252835e413e01e3263e89"
+        },
+        "frozen_cell_ledger": {
+          "path": "manual_chunks/items_051_055_cells.tsv",
+          "sha256": "5158ca7583f94121b11c0d98427a7e7b4f7b0b9f6d23beb8c0fda94e05c0ceec"
+        },
+        "post_freeze_reconciliation": {
+          "path": "manual_chunks/items_051_055_reconciliation.tsv",
+          "sha256": "d3944c6ddaef1378927d3cfa2a59b5a6a6ecfe0f2bc0555ea69423b424544687",
+          "records": 93,
+          "legacy_installed_records": 74,
+          "legacy_excluded_records": 19,
+          "manual_attestations_recovered_from_legacy_exclusions": 16,
+          "source_blank_records": 3,
+          "legacy_exact_codepoint_matches": 24,
+          "legacy_installed_codepoint_differences": 50,
+          "legacy_excluded_codepoint_differences": 19
+        }
+      },
+      {
+        "items": [56, 60],
+        "printed_response_lines": 38,
+        "conceptual_cells": 85,
+        "attested_cells": 83,
+        "source_blank_cells": 2,
+        "expanded_attested_responses": 107,
+        "generator": {
+          "path": "manual_chunks/hand_keyed_items_056_060.py",
+          "sha256": "62176a081a509a52b475c8868a34bbbacc388927aac06eaefa3612284a4cab88"
+        },
+        "frozen_line_ledger": {
+          "path": "manual_chunks/items_056_060_lines.tsv",
+          "sha256": "fdef82b2af8e98483258f1969f6d9326e35ca8b8055de88f06a6eac0a646d3c2"
+        },
+        "frozen_cell_ledger": {
+          "path": "manual_chunks/items_056_060_cells.tsv",
+          "sha256": "52602badeea291130e1ca8fea4529429343b70d9499932aa6ddeb45005ca3780"
+        },
+        "post_freeze_reconciliation": {
+          "path": "manual_chunks/items_056_060_reconciliation.tsv",
+          "sha256": "e8e7697c10a83ef7c551523b181fadfe879ae6c84341706e8208e28e99fbde85",
+          "records": 109,
+          "legacy_installed_records": 92,
+          "legacy_excluded_records": 17,
+          "manual_attestations_recovered_from_legacy_exclusions": 15,
+          "source_blank_records": 2,
+          "legacy_exact_codepoint_matches": 32,
+          "legacy_installed_codepoint_differences": 60,
+          "legacy_excluded_codepoint_differences": 17
+        }
+      },
+      {
+        "items": [61, 65],
+        "printed_response_lines": 34,
+        "conceptual_cells": 85,
+        "attested_cells": 83,
+        "source_blank_cells": 2,
+        "expanded_attested_responses": 83,
+        "generator": {
+          "path": "manual_chunks/hand_keyed_items_061_065.py",
+          "sha256": "429b954f3fcf4d7c459fc3eba821e08f94af6252f38e80841333f8e8be15a1fd"
+        },
+        "frozen_line_ledger": {
+          "path": "manual_chunks/items_061_065_lines.tsv",
+          "sha256": "0cf581b3c0130c4f61b1107021210054a608c959267fd8972ec6946e59cdb432"
+        },
+        "frozen_cell_ledger": {
+          "path": "manual_chunks/items_061_065_cells.tsv",
+          "sha256": "330257bfecd41354754894070ae3f49142b96c5f49d61445123895dc8f98f9a8"
+        },
+        "post_freeze_reconciliation": {
+          "path": "manual_chunks/items_061_065_reconciliation.tsv",
+          "sha256": "39aa8a7318daed6db56079cf79370a8cad21843e35aa9b1baef415f368cbe729",
+          "records": 85,
+          "legacy_installed_records": 72,
+          "legacy_excluded_records": 13,
+          "manual_attestations_recovered_from_legacy_exclusions": 11,
+          "source_blank_records": 2,
+          "legacy_exact_codepoint_matches": 47,
+          "legacy_installed_codepoint_differences": 25,
+          "legacy_excluded_codepoint_differences": 13
+        }
+      },
+      {
+        "items": [66, 70],
+        "printed_response_lines": 36,
+        "conceptual_cells": 85,
+        "attested_cells": 83,
+        "source_blank_cells": 2,
+        "expanded_attested_responses": 87,
+        "generator": {
+          "path": "manual_chunks/hand_keyed_items_066_070.py",
+          "sha256": "fd92798956d6a1e95cb35f0157b9d183e9c2281ea6c032b16241d8188cca7b7f"
+        },
+        "frozen_line_ledger": {
+          "path": "manual_chunks/items_066_070_lines.tsv",
+          "sha256": "31fa9ef75b740383d8b142cabb4599340036523c0db41679e856081b3de86fbf"
+        },
+        "frozen_cell_ledger": {
+          "path": "manual_chunks/items_066_070_cells.tsv",
+          "sha256": "d60d6f21861bbd495682396fddeb2c3fb43c1e7fc7ccf6202ed540760f18df16"
+        },
+        "post_freeze_reconciliation": {
+          "path": "manual_chunks/items_066_070_reconciliation.tsv",
+          "sha256": "4d694bed05f66612d387af19111a9bbbf425ac5d226c08dfe93abab1fc581251",
+          "records": 89,
+          "legacy_installed_records": 80,
+          "legacy_excluded_records": 9,
+          "manual_attestations_recovered_from_legacy_exclusions": 7,
+          "source_blank_records": 2,
+          "legacy_exact_codepoint_matches": 12,
+          "legacy_installed_codepoint_differences": 68,
+          "legacy_excluded_codepoint_differences": 9
+        }
+      },
+      {
+        "items": [71, 75],
+        "printed_response_lines": 56,
+        "conceptual_cells": 85,
+        "attested_cells": 78,
+        "source_blank_cells": 7,
+        "expanded_attested_responses": 91,
+        "generator": {
+          "path": "manual_chunks/hand_keyed_items_071_075.py",
+          "sha256": "40585fd529b19f5c9701c0499a735c32baa36ebba41b49d1a3fbb125a32af47f"
+        },
+        "frozen_line_ledger": {
+          "path": "manual_chunks/items_071_075_lines.tsv",
+          "sha256": "1e2cd3d7b78ef0b3ae75dcd66a9c2ff37ab36fc1fa18a4232248f511aba24d07"
+        },
+        "frozen_cell_ledger": {
+          "path": "manual_chunks/items_071_075_cells.tsv",
+          "sha256": "70bcde80a33a1e42596edc23ada60acb4aa1af5143770f3caf18aa871f58a0bf"
+        },
+        "post_freeze_reconciliation": {
+          "path": "manual_chunks/items_071_075_reconciliation.tsv",
+          "sha256": "08ca85d3e1151deae69367537e73be0679f074a04b281d37f55570e2c631f7f9",
+          "records": 98,
+          "legacy_installed_records": 79,
+          "legacy_excluded_records": 18,
+          "legacy_missing_records": 1,
+          "manual_attestations_recovered_from_legacy_exclusions": 11,
+          "source_blank_records": 7,
+          "legacy_exact_codepoint_matches": 18,
+          "legacy_installed_codepoint_differences": 61,
+          "legacy_excluded_codepoint_differences": 18,
+          "manual_records_absent_from_legacy_audit": [
+            {"item": 72, "site_code": "j", "similarity_group": "1"}
+          ]
+        }
+      },
+      {
+        "items": [76, 80],
+        "printed_response_lines": 40,
+        "conceptual_cells": 85,
+        "attested_cells": 85,
+        "source_blank_cells": 0,
+        "expanded_attested_responses": 97,
+        "generator": {
+          "path": "manual_chunks/hand_keyed_items_076_080.py",
+          "sha256": "030a606690b94a4434607f1c5ebabaf7582aca92b9699b88cbeca7d9fba1cfbd"
+        },
+        "frozen_line_ledger": {
+          "path": "manual_chunks/items_076_080_lines.tsv",
+          "sha256": "c3e59a31ab8c000251143236e05b87f69424b186c5397a9e725d261a1e59e4e6"
+        },
+        "frozen_cell_ledger": {
+          "path": "manual_chunks/items_076_080_cells.tsv",
+          "sha256": "175cd971fc73057b2ae3ef8d2744ade4669a8a8a9925f265c4dec748339e3f37"
+        },
+        "post_freeze_reconciliation": {
+          "path": "manual_chunks/items_076_080_reconciliation.tsv",
+          "sha256": "0a7f29e922c4ae0813366fdf42d13681530474fb6a3aa30ebe70652dcd8893d0",
+          "records": 97,
+          "legacy_installed_records": 76,
+          "legacy_excluded_records": 21,
+          "legacy_missing_records": 0,
+          "manual_attestations_recovered_from_legacy_exclusions": 21,
+          "source_blank_records": 0,
+          "legacy_exact_codepoint_matches": 30,
+          "legacy_installed_codepoint_differences": 46,
+          "legacy_excluded_codepoint_differences": 21
+        }
+      },
+      {
+        "items": [81, 85],
+        "printed_response_lines": 34,
+        "conceptual_cells": 85,
+        "attested_cells": 84,
+        "source_blank_cells": 1,
+        "expanded_attested_responses": 86,
+        "generator": {
+          "path": "manual_chunks/hand_keyed_items_081_085.py",
+          "sha256": "9dbf2a332f1341f1b0f22b536ede39c881f5f20e92eec0a9a479f8e6c66d4aaa"
+        },
+        "frozen_line_ledger": {
+          "path": "manual_chunks/items_081_085_lines.tsv",
+          "sha256": "5d14d168343fac96738a569aecfb6fdbd8fd7e62de550294a7a416417e351b02"
+        },
+        "frozen_cell_ledger": {
+          "path": "manual_chunks/items_081_085_cells.tsv",
+          "sha256": "806497e9feb387435869521ae77e7e638a091dcd0494c4ebfad0bd753bae7158"
+        },
+        "post_freeze_reconciliation": {
+          "path": "manual_chunks/items_081_085_reconciliation.tsv",
+          "sha256": "3169cb391feb4d61211a8ba16c0cb6909d299fb9748b7be51c5ea39a842525a5",
+          "records": 87,
+          "legacy_installed_records": 78,
+          "legacy_excluded_records": 9,
+          "legacy_missing_records": 0,
+          "manual_attestations_recovered_from_legacy_exclusions": 8,
+          "source_blank_records": 1,
+          "legacy_exact_codepoint_matches": 22,
+          "legacy_installed_codepoint_differences": 56,
+          "legacy_excluded_codepoint_differences": 9
+        }
+      },
+      {
+        "items": [86, 90],
+        "printed_response_lines": 39,
+        "conceptual_cells": 85,
+        "attested_cells": 84,
+        "source_blank_cells": 1,
+        "expanded_attested_responses": 85,
+        "generator": {
+          "path": "manual_chunks/hand_keyed_items_086_090.py",
+          "sha256": "99edb269a972c566ea79ed9b723231f7310a834c9ac69bc3c0903cadf83ba3d4"
+        },
+        "frozen_line_ledger": {
+          "path": "manual_chunks/items_086_090_lines.tsv",
+          "sha256": "6c8102eca4bc1fa0562f10d9ebea6db9e48faa4671ee0c87d453287922951841"
+        },
+        "frozen_cell_ledger": {
+          "path": "manual_chunks/items_086_090_cells.tsv",
+          "sha256": "c0b9e9c712d8accfc0ebc4fd927ce0c6a0ab1743464199512784b32d0cf3b1de"
+        },
+        "post_freeze_reconciliation": {
+          "path": "manual_chunks/items_086_090_reconciliation.tsv",
+          "sha256": "2993b4738562226847259127f330e65f98c8fb863a5aadcfcd417051effe54d1",
+          "records": 86,
+          "legacy_installed_records": 58,
+          "legacy_excluded_records": 28,
+          "legacy_missing_records": 0,
+          "manual_attestations_recovered_from_legacy_exclusions": 27,
+          "source_blank_records": 1,
+          "legacy_exact_codepoint_matches": 19,
+          "legacy_installed_codepoint_differences": 39,
+          "legacy_excluded_codepoint_differences": 28
+        }
+      },
+      {
+        "items": [91, 95],
+        "printed_response_lines": 44,
+        "conceptual_cells": 85,
+        "attested_cells": 84,
+        "source_blank_cells": 1,
+        "expanded_attested_responses": 89,
+        "generator": {
+          "path": "manual_chunks/hand_keyed_items_091_095.py",
+          "sha256": "549ebe13fb435f01b52c906cd9f4ddb986f40da7a71f1cdbdac945d1b9acfc20"
+        },
+        "frozen_line_ledger": {
+          "path": "manual_chunks/items_091_095_lines.tsv",
+          "sha256": "07891cfdd77c3b8dd795794aa960e4eb0e84c5bd4648ca52163b6738ef142612"
+        },
+        "frozen_cell_ledger": {
+          "path": "manual_chunks/items_091_095_cells.tsv",
+          "sha256": "6df79246e57c34fca7c9b453f59d78afb26a54346306ab636011898b656b5c12"
+        },
+        "post_freeze_reconciliation": {
+          "path": "manual_chunks/items_091_095_reconciliation.tsv",
+          "sha256": "38ce551b57b849b7d0c14cf6e290bc611e41850f3c2a6a95e3337db036b09884",
+          "records": 90,
+          "legacy_installed_records": 67,
+          "legacy_excluded_records": 23,
+          "legacy_missing_records": 0,
+          "manual_attestations_recovered_from_legacy_exclusions": 22,
+          "source_blank_records": 1,
+          "legacy_exact_codepoint_matches": 25,
+          "legacy_installed_codepoint_differences": 42,
+          "legacy_excluded_codepoint_differences": 23
+        }
+      },
+      {
+        "items": [96, 100],
+        "printed_response_lines": 45,
+        "conceptual_cells": 85,
+        "attested_cells": 83,
+        "source_blank_cells": 2,
+        "expanded_attested_responses": 88,
+        "generator": {
+          "path": "manual_chunks/hand_keyed_items_096_100.py",
+          "sha256": "0bccc28eb30fb03d8e82e95857ae93b3fe9a27a7dfd5cdf8018f76cbc9c77dde"
+        },
+        "frozen_line_ledger": {
+          "path": "manual_chunks/items_096_100_lines.tsv",
+          "sha256": "716e7158f56ba0923c070967786e2cabfe440dc25b5da4403062adf3b211acb1"
+        },
+        "frozen_cell_ledger": {
+          "path": "manual_chunks/items_096_100_cells.tsv",
+          "sha256": "077c3601cdd952b5651223897e02e4111cf09294ecfb7f7221ccc173ff571c98"
+        },
+        "post_freeze_reconciliation": {
+          "path": "manual_chunks/items_096_100_reconciliation.tsv",
+          "sha256": "457a0144b32851b74dff23e18457a8167c1a996dc81edace6e8d53de33ef1f69",
+          "records": 90,
+          "legacy_installed_records": 81,
+          "legacy_excluded_records": 9,
+          "legacy_missing_records": 0,
+          "manual_attestations_recovered_from_legacy_exclusions": 7,
+          "source_blank_records": 2,
+          "legacy_exact_codepoint_matches": 27,
+          "legacy_installed_codepoint_differences": 54,
+          "legacy_excluded_codepoint_differences": 9
+        }
+      },
+      {
+        "items": [101, 105],
+        "printed_response_lines": 38,
+        "conceptual_cells": 85,
+        "attested_cells": 85,
+        "source_blank_cells": 0,
+        "expanded_attested_responses": 91,
+        "generator": {
+          "path": "manual_chunks/hand_keyed_items_101_105.py",
+          "sha256": "ab8a082aec08be494ad468008544006d8c9e7e8fb4d8bb61456126b394ed18d2"
+        },
+        "frozen_line_ledger": {
+          "path": "manual_chunks/items_101_105_lines.tsv",
+          "sha256": "f2d5815abb6464c56c8f233ba5065639d44658fee35125d82ada2b325ddfc8f1"
+        },
+        "frozen_cell_ledger": {
+          "path": "manual_chunks/items_101_105_cells.tsv",
+          "sha256": "21674f63024b05a1aaf172b1aab290da0ac89db2f68de7444b38fbbf87cac330"
+        },
+        "post_freeze_reconciliation": {
+          "path": "manual_chunks/items_101_105_reconciliation.tsv",
+          "sha256": "0d830ad11d5902271d3b4759bc850812e5cfbb910e5bb88ebf5abf57729b965d",
+          "records": 91,
+          "legacy_installed_records": 86,
+          "legacy_excluded_records": 5,
+          "legacy_missing_records": 0,
+          "manual_attestations_recovered_from_legacy_exclusions": 5,
+          "source_blank_records": 0,
+          "legacy_exact_codepoint_matches": 38,
+          "legacy_installed_codepoint_differences": 48,
+          "legacy_excluded_codepoint_differences": 5
+        }
+      },
+      {
+        "items": [106, 110],
+        "printed_response_lines": 48,
+        "conceptual_cells": 85,
+        "attested_cells": 84,
+        "source_blank_cells": 1,
+        "expanded_attested_responses": 99,
+        "generator": {
+          "path": "manual_chunks/hand_keyed_items_106_110.py",
+          "sha256": "e7da78d07818ce45d766c0466661498d294202ee89bfe048022c93e456d87778"
+        },
+        "frozen_line_ledger": {
+          "path": "manual_chunks/items_106_110_lines.tsv",
+          "sha256": "d921478d8ced98de6af4aa0513931e2416e0702a365b05ae1fb4ab962ad05b13"
+        },
+        "frozen_cell_ledger": {
+          "path": "manual_chunks/items_106_110_cells.tsv",
+          "sha256": "e4895ceae4dea93311cd6a3692da92f3f9a8eefee5061645081521848ad2de10"
+        },
+        "post_freeze_reconciliation": {
+          "path": "manual_chunks/items_106_110_reconciliation.tsv",
+          "sha256": "7a77a951489761fe2eb058f208456ef1c061d0f57b306ecfff4031d6a7a68a72",
+          "records": 100,
+          "legacy_installed_records": 76,
+          "legacy_excluded_records": 24,
+          "legacy_missing_records": 0,
+          "manual_attestations_recovered_from_legacy_exclusions": 23,
+          "source_blank_records": 1,
+          "legacy_exact_codepoint_matches": 15,
+          "legacy_installed_codepoint_differences": 61,
+          "legacy_excluded_codepoint_differences": 24
+        }
+      },
+      {
+        "items": [111, 115],
+        "printed_response_lines": 44,
+        "conceptual_cells": 85,
+        "attested_cells": 84,
+        "source_blank_cells": 1,
+        "expanded_attested_responses": 91,
+        "generator": {
+          "path": "manual_chunks/hand_keyed_items_111_115.py",
+          "sha256": "1e552cc2b05f0b962fa4bfb068f92a677e31e1d54ad9252b0d5a5119b699cf0a"
+        },
+        "frozen_line_ledger": {
+          "path": "manual_chunks/items_111_115_lines.tsv",
+          "sha256": "d286f91ea25b411c0d9c50803375df9b87d5902404989a0fdd9da9e5d23a61c3"
+        },
+        "frozen_cell_ledger": {
+          "path": "manual_chunks/items_111_115_cells.tsv",
+          "sha256": "3dd71532cbb08a693ef1ba13f2f97e4c2af82a4e96573805e7cf536e88efbcd2"
+        },
+        "post_freeze_reconciliation": {
+          "path": "manual_chunks/items_111_115_reconciliation.tsv",
+          "sha256": "304f00b1ce473398e9a06ffd77d1bac03a7bcd34185cf37c5a99746204ebabaf",
+          "records": 92,
+          "legacy_installed_records": 79,
+          "legacy_excluded_records": 13,
+          "legacy_missing_records": 0,
+          "manual_attestations_recovered_from_legacy_exclusions": 12,
+          "source_blank_records": 1,
+          "legacy_exact_codepoint_matches": 8,
+          "legacy_installed_codepoint_differences": 71,
+          "legacy_excluded_codepoint_differences": 13
+        }
+      },
+      {
+        "items": [116, 120],
+        "printed_response_lines": 45,
+        "conceptual_cells": 85,
+        "attested_cells": 81,
+        "source_blank_cells": 4,
+        "expanded_attested_responses": 85,
+        "generator": {
+          "path": "manual_chunks/hand_keyed_items_116_120.py",
+          "sha256": "6627ad0895437ee76dcf60da4b136b2cca74f30ffc1899f1ed6a8ee3b3d958e2"
+        },
+        "frozen_line_ledger": {
+          "path": "manual_chunks/items_116_120_lines.tsv",
+          "sha256": "e7a6013d725adde0c21c754c04bf96da122aa49f7397268ed99e230336d7be05"
+        },
+        "frozen_cell_ledger": {
+          "path": "manual_chunks/items_116_120_cells.tsv",
+          "sha256": "d1e0bacb0c9226efb4b875afff9294dcc393847119c217800c06a0feb2f77885"
+        },
+        "post_freeze_reconciliation": {
+          "path": "manual_chunks/items_116_120_reconciliation.tsv",
+          "sha256": "3263099a3bdf537273ce7524cac653b484f422791ab806e74f5446175034bbb7",
+          "records": 89,
+          "legacy_installed_records": 74,
+          "legacy_excluded_records": 15,
+          "legacy_missing_records": 0,
+          "manual_attestations_recovered_from_legacy_exclusions": 11,
+          "source_blank_records": 4,
+          "legacy_exact_codepoint_matches": 14,
+          "legacy_installed_codepoint_differences": 60,
+          "legacy_excluded_codepoint_differences": 15
+        }
+      },
+      {
+        "items": [121, 125],
+        "printed_response_lines": 42,
+        "conceptual_cells": 85,
+        "attested_cells": 81,
+        "source_blank_cells": 4,
+        "expanded_attested_responses": 83,
+        "generator": {
+          "path": "manual_chunks/hand_keyed_items_121_125.py",
+          "sha256": "965e42560404412013c8716fd3fd3ebbe5e179ccab7e474262752117c725f567"
+        },
+        "frozen_line_ledger": {
+          "path": "manual_chunks/items_121_125_lines.tsv",
+          "sha256": "daaa170a517e2ddd5d817dca376fbfa6a201d25a25f9294335c00083e58ed168"
+        },
+        "frozen_cell_ledger": {
+          "path": "manual_chunks/items_121_125_cells.tsv",
+          "sha256": "7e51c2e1b55f96f22276938b19c545d6c7c89f048892bb310417ceb4b88051d7"
+        },
+        "post_freeze_reconciliation": {
+          "path": "manual_chunks/items_121_125_reconciliation.tsv",
+          "sha256": "4653a44430eb4c5f2d7b76f1d2a2d7dec08eb97d883d63edbc5182d28a0e5f0b",
+          "records": 87,
+          "legacy_installed_records": 73,
+          "legacy_excluded_records": 14,
+          "legacy_missing_records": 0,
+          "manual_attestations_recovered_from_legacy_exclusions": 10,
+          "source_blank_records": 4,
+          "legacy_exact_codepoint_matches": 11,
+          "legacy_installed_codepoint_differences": 62,
+          "legacy_excluded_codepoint_differences": 14
+        }
+      },
+      {
+        "items": [126, 130],
+        "printed_response_lines": 40,
+        "conceptual_cells": 85,
+        "attested_cells": 84,
+        "source_blank_cells": 1,
+        "expanded_attested_responses": 85,
+        "generator": {
+          "path": "manual_chunks/hand_keyed_items_126_130.py",
+          "sha256": "4faf755adb8823ee67d958885c2fe29de3585d50bc79e224822afff72e133231"
+        },
+        "frozen_line_ledger": {
+          "path": "manual_chunks/items_126_130_lines.tsv",
+          "sha256": "b0553472a7d792971c297157e4f2dfec3b9d0552b6ef16f9eb14ec30813da7ba"
+        },
+        "frozen_cell_ledger": {
+          "path": "manual_chunks/items_126_130_cells.tsv",
+          "sha256": "752d486fa187b7e572d96298753198ceda5a546275b3fe13dbf8cf785de0045d"
+        },
+        "post_freeze_reconciliation": {
+          "path": "manual_chunks/items_126_130_reconciliation.tsv",
+          "sha256": "0879ed1a08df313bd9be34e97bdc68f851ef414e2268245318822c75c4a2f846",
+          "records": 86,
+          "legacy_installed_records": 74,
+          "legacy_excluded_records": 12,
+          "legacy_missing_records": 0,
+          "manual_attestations_recovered_from_legacy_exclusions": 11,
+          "source_blank_records": 1,
+          "legacy_exact_codepoint_matches": 32,
+          "legacy_installed_codepoint_differences": 42,
+          "legacy_excluded_codepoint_differences": 12
+        }
+      },
+      {
+        "items": [131, 135],
+        "printed_response_lines": 49,
+        "conceptual_cells": 85,
+        "attested_cells": 85,
+        "source_blank_cells": 0,
+        "expanded_attested_responses": 86,
+        "generator": {
+          "path": "manual_chunks/hand_keyed_items_131_135.py",
+          "sha256": "e21d7a55063cc9b0d493e9b07e1a5db42b07d592844a23227f339cf36b730213"
+        },
+        "frozen_line_ledger": {
+          "path": "manual_chunks/items_131_135_lines.tsv",
+          "sha256": "6e2fe3d52f10c0c6195d2b617a7a5946313f25a6ede88d97db941e97cddff739"
+        },
+        "frozen_cell_ledger": {
+          "path": "manual_chunks/items_131_135_cells.tsv",
+          "sha256": "507a77bb4485fee980ec04fe3a5121256861385eb077bd44b6d2f37bc33c6a61"
+        },
+        "post_freeze_reconciliation": {
+          "path": "manual_chunks/items_131_135_reconciliation.tsv",
+          "sha256": "8303b2e39ef3f151aa51005ddc1a737e7abf730ce9798c17e02cf60dba3c0d46",
+          "records": 86,
+          "legacy_installed_records": 52,
+          "legacy_excluded_records": 34,
+          "legacy_missing_records": 0,
+          "manual_attestations_recovered_from_legacy_exclusions": 34,
+          "source_blank_records": 0,
+          "legacy_exact_codepoint_matches": 17,
+          "legacy_installed_codepoint_differences": 35,
+          "legacy_excluded_codepoint_differences": 34
+        }
+      },
+      {
+        "items": [136, 140],
+        "printed_response_lines": 41,
+        "conceptual_cells": 85,
+        "attested_cells": 85,
+        "source_blank_cells": 0,
+        "expanded_attested_responses": 89,
+        "generator": {
+          "path": "manual_chunks/hand_keyed_items_136_140.py",
+          "sha256": "db405239fefbd7348c51f6faf59ad9a15534776d20afc06592a5d8573237aca8"
+        },
+        "frozen_line_ledger": {
+          "path": "manual_chunks/items_136_140_lines.tsv",
+          "sha256": "1d9ce5295e306441c43cc8a02a9bd6c50886d5310c1405fb10147268c89ff573"
+        },
+        "frozen_cell_ledger": {
+          "path": "manual_chunks/items_136_140_cells.tsv",
+          "sha256": "f25022fa7b90ee7348048c578d251dbbee31d8ad307b5782be8ab301fb9c0a86"
+        },
+        "post_freeze_reconciliation": {
+          "path": "manual_chunks/items_136_140_reconciliation.tsv",
+          "sha256": "819c7429977d313df812e8f914a682b2b4ac68aecb550092090e0a963bfc08a7",
+          "records": 89,
+          "legacy_installed_records": 71,
+          "legacy_excluded_records": 18,
+          "legacy_missing_records": 0,
+          "manual_attestations_recovered_from_legacy_exclusions": 18,
+          "source_blank_records": 0,
+          "legacy_exact_codepoint_matches": 33,
+          "legacy_installed_codepoint_differences": 38,
+          "legacy_excluded_codepoint_differences": 18
+        }
+      },
+      {
+        "items": [141, 145],
+        "printed_response_lines": 34,
+        "conceptual_cells": 85,
+        "attested_cells": 84,
+        "source_blank_cells": 1,
+        "expanded_attested_responses": 87,
+        "generator": {
+          "path": "manual_chunks/hand_keyed_items_141_145.py",
+          "sha256": "f8eeb102e3465f91d03025c0b59126f5c96010c918d5937e341da539f58105aa"
+        },
+        "frozen_line_ledger": {
+          "path": "manual_chunks/items_141_145_lines.tsv",
+          "sha256": "4c87f15329e87138a41c399c681b1208a65c605413473872daea9baa9b2d1e34"
+        },
+        "frozen_cell_ledger": {
+          "path": "manual_chunks/items_141_145_cells.tsv",
+          "sha256": "9c399b83d4fc149b05ef38da2044869734ddcbc4c4b939e7b623feb56c76bb6b"
+        },
+        "post_freeze_reconciliation": {
+          "path": "manual_chunks/items_141_145_reconciliation.tsv",
+          "sha256": "029136298a0ae02f5a42a9798df2f58b91bc268ebe8c8231da50de221b6924f6",
+          "records": 88,
+          "legacy_installed_records": 80,
+          "legacy_excluded_records": 8,
+          "legacy_missing_records": 0,
+          "manual_attestations_recovered_from_legacy_exclusions": 7,
+          "source_blank_records": 1,
+          "legacy_exact_codepoint_matches": 40,
+          "legacy_installed_codepoint_differences": 40,
+          "legacy_excluded_codepoint_differences": 8
+        }
+      },
+      {
+        "items": [146, 150],
+        "printed_response_lines": 33,
+        "conceptual_cells": 85,
+        "attested_cells": 83,
+        "source_blank_cells": 2,
+        "expanded_attested_responses": 87,
+        "generator": {
+          "path": "manual_chunks/hand_keyed_items_146_150.py",
+          "sha256": "5c582a1001cbd687b62d40580b349acae0c4519ae2991236a52f602944d0e6a8"
+        },
+        "frozen_line_ledger": {
+          "path": "manual_chunks/items_146_150_lines.tsv",
+          "sha256": "cf1d8cc378bb0bda8e43c0b1423a790a1a5be72139641a764d8174ecebd21879"
+        },
+        "frozen_cell_ledger": {
+          "path": "manual_chunks/items_146_150_cells.tsv",
+          "sha256": "1c005924a106851f44ef745f9cfedaab0ce978c6ccf8c51f5a5137fb17d1266f"
+        },
+        "post_freeze_reconciliation": {
+          "path": "manual_chunks/items_146_150_reconciliation.tsv",
+          "sha256": "ae0b653a07d32b210302c6c72c4d9af2fe6280abd27fb62fd6449589660112e0",
+          "records": 89,
+          "legacy_installed_records": 85,
+          "legacy_excluded_records": 4,
+          "legacy_missing_records": 0,
+          "manual_attestations_recovered_from_legacy_exclusions": 2,
+          "source_blank_records": 2,
+          "legacy_exact_codepoint_matches": 40,
+          "legacy_installed_codepoint_differences": 45,
+          "legacy_excluded_codepoint_differences": 4
+        }
+      },
+      {
+        "items": [151, 155],
+        "printed_response_lines": 31,
+        "conceptual_cells": 85,
+        "attested_cells": 68,
+        "source_blank_cells": 0,
+        "not_used_cells": 17,
+        "expanded_attested_responses": 72,
+        "generator": {
+          "path": "manual_chunks/hand_keyed_items_151_155.py",
+          "sha256": "34806b7635d59ac9f85907b45a2d0672643ce49c0c5a159e24b48e35e85b2b97"
+        },
+        "frozen_line_ledger": {
+          "path": "manual_chunks/items_151_155_lines.tsv",
+          "sha256": "4a27e46d006b8ed41aaf9b0eaf91b0512d2c26509e1a41be64a8a59977f0ce8e"
+        },
+        "frozen_cell_ledger": {
+          "path": "manual_chunks/items_151_155_cells.tsv",
+          "sha256": "30a0027ed820e86bd60012401bbbd15ea907436efe0c5faec83cee656f16dbf8"
+        },
+        "post_freeze_reconciliation": {
+          "path": "manual_chunks/items_151_155_reconciliation.tsv",
+          "sha256": "54fe3b2903309427829597b3a422e083a089fa31831ce848930fb46188c739ae",
+          "records": 73,
+          "legacy_installed_records": 68,
+          "legacy_excluded_records": 5,
+          "legacy_missing_records": 0,
+          "manual_attestations_recovered_from_legacy_exclusions": 4,
+          "source_blank_records": 0,
+          "whole_item_not_used_records": 1,
+          "legacy_exact_codepoint_matches": 35,
+          "legacy_installed_codepoint_differences": 33,
+          "legacy_excluded_codepoint_differences": 5
+        }
+      },
+      {
+        "items": [156, 160],
+        "printed_response_lines": 30,
+        "conceptual_cells": 85,
+        "attested_cells": 68,
+        "source_blank_cells": 0,
+        "not_used_cells": 17,
+        "expanded_attested_responses": 80,
+        "generator": {
+          "path": "manual_chunks/hand_keyed_items_156_160.py",
+          "sha256": "53a665d8f0bed815942fb07b2c417e6bfdcd97c0369c2143786ade419daeb5e4"
+        },
+        "frozen_line_ledger": {
+          "path": "manual_chunks/items_156_160_lines.tsv",
+          "sha256": "0802aa773610656505222c096db561e4b87226dff54f0cac0ad785cf6752be67"
+        },
+        "frozen_cell_ledger": {
+          "path": "manual_chunks/items_156_160_cells.tsv",
+          "sha256": "d4c7acd0ca9f571f0cd7890233728337ebc7657fafdcb78bfa8b56437ffa17a1"
+        },
+        "post_freeze_reconciliation": {
+          "path": "manual_chunks/items_156_160_reconciliation.tsv",
+          "sha256": "7c34686ea6f8528b2f84ccc3c1bff8f5c9961dacf2a16a8612481d19205c3313",
+          "records": 81,
+          "legacy_installed_records": 77,
+          "legacy_excluded_records": 4,
+          "legacy_missing_records": 0,
+          "manual_attestations_recovered_from_legacy_exclusions": 3,
+          "source_blank_records": 0,
+          "whole_item_not_used_records": 1,
+          "legacy_exact_codepoint_matches": 47,
+          "legacy_installed_codepoint_differences": 30,
+          "legacy_excluded_codepoint_differences": 4
+        }
+      }
+    ],
+    "post_freeze_reconciliation": {
+      "records": 2872,
+      "legacy_installed_records": 2405,
+      "legacy_excluded_records": 466,
+      "legacy_missing_records": 1,
+      "manual_attestations_recovered_from_legacy_exclusions": 402,
+      "source_blank_records": 62,
+      "whole_item_not_used_records": 2,
+      "legacy_exact_codepoint_matches": 967,
+      "legacy_installed_codepoint_differences": 1438,
+      "legacy_excluded_codepoint_differences": 466,
+      "manual_records_absent_from_legacy_audit": [
+        {"item": 72, "site_code": "j", "similarity_group": "1"}
+      ],
+      "interpretation": "Comparison results are audit-only and neither verify nor alter any manual reading."
+    }
+  }
+}

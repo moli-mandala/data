@@ -3,8 +3,12 @@ mapping = {
     # These older imports were manually normalized when they were ingested.  Route them through
     # an explicit preservation profile so that their transcription contract is checked rather
     # than silently bypassing the sound-profile layer.
-    'dhivehi': 'house', 'gawri': 'house', 'kalkoti': 'house', 'khetrani': 'house',
+    'dhivehi': 'house', 'gawri': 'house', 'khetrani': 'house',
     'kholosi': 'house', 'konkani': 'house', 'kundalshahi': 'house', 'kvari': 'house',
+    # Both Kalkoti sources are read in the broad transcription customary among
+    # Shina scholars, including its tone marking, rather than typed straight into
+    # house transcription as the 2022 snapshot was.
+    'kalkoti': 'kalkoti', 'hultman': 'kalkoti',
     'zadjali': 'house', 'arora': 'house', 'punjabi': 'house', 'sindhic': 'house',
     'pashai': 'house', 'paranavitana': 'house', 'tulpule': 'house', 'wolf': 'house',
     'southworth': 'southworth-marathi',
@@ -16,7 +20,7 @@ mapping = {
     'strand': 'strand', 'strand2': 'strand', 'strand3': 'strand', 'wadiyara': 'wadiyara',
     'northern': 'northern', 'toulmin': 'toulmin', 'chattisgarhi': 'chattisgarhi',
     'rajasthani': 'rajasthani', 'old_punjabi': 'cdial', 'bundeli': 'chattisgarhi',
-    'tharu': 'cdial', 'kannauji': 'rajasthani', 'tharu2': 'chattisgarhi', 'shina': 'liljegren', 'berger': 'berger',
+    'tharu': 'cdial', 'kannauji': 'rajasthani', 'tharu2': 'sil-western-tharu', 'shina': 'liljegren', 'berger': 'berger',
     # Buddruss explicitly contrasts dental c, palatal č, and retroflex c̣; preserve that
     # three-way distinction instead of routing this source through Berger's orthography.
     'buddruss': 'buddruss-grangali',
@@ -32,6 +36,12 @@ mapping = {
     'andersen': 'andersen',
     'schmidt': 'schmidt-kashmiri',
     'drasi': 'drasi',
+    # Degener 2008 writes Gilgit Shina in Berger's orthography with doubled
+    # vowels for length and mora-positioned acutes for the pitch contrast.
+    'degener': 'degener-shina',
+    # Buddruss 1996 uses the same quantity/tone system for Gilgit Shina, with
+    # a few source-specific optional-form and nasal-vowel spellings.
+    'buddruss-shina': 'buddruss-shina',
     'yoshioka': 'yoshioka',
     'gandhari': 'gandhari',
     'kullui': 'kullui',
@@ -54,6 +64,9 @@ mapping = {
     'kurux': 'kurux-nepal',
     'north': 'north-gorkha',
     'weinreich': 'weinreich-domaaki',
+    # Boretzky & Igla write Romani in a Balkanist transcription with two affricate
+    # series (č/dž beside ć/dź), the Vlax rhotic ř and schwa.
+    'boretzky': 'boretzky-romani',
     'ali': 'brahui',
     'dewas': 'dewas-rai',
     'hajong': 'hajong-survey',
@@ -80,6 +93,31 @@ mapping = {
     # Zubair Torwali's student dictionary prints source IPA with ASCII colon
     # length; retain it in Phonemic and normalize only the display Form.
     'torwali': 'torwali-student',
+    # Knobloch's Sauji grammar sketch mixes broad IPA (phonology tables) with a
+    # simplified Indo-Aryanist transcription (everything else); one profile reads
+    # both. make_cldf.py also routes it by citation key.
+    'knobloch': 'knobloch-sauji',
+    # Beine's 46 Gondi survey word lists, digitized by Rama et al., are Unicode IPA;
+    # the profile maps them onto Jambu's Dravidianist house transcription while the
+    # source IPA is retained in Original and Phonemic.
+    'gondi': 'gondi-beine',
+    # Beine's twelve Bhatri/Halbi/Oriya survey word lists are printed in his own
+    # "modified IPA": a raised wedge for retroflexion, a superscript n for dentality,
+    # and look-alike letters with an under-bar for the central vowels. make_cldf.py
+    # also routes this source by citation key.
+    'beine': 'beine-bhatri',
+    # SEAlang's structured Pinnow index supplies Unicode source IPA. Preserve it
+    # exactly while retaining a dedicated, exhaustively tested source profile.
+    'pinnow': 'pinnow-munda',
+    # Munda's structured thesis index likewise supplies source Unicode for
+    # Proto-Kherwarian, pre-Mundari, and Santali comparison records.
+    'munda': 'munda-proto-kherwarian',
+    'zide': 'zide-sora-juray',
+    'bhattacharya': 'bhattacharya-bonda',
+    # Bahl's keyed Korwa vocabulary is Unicode source transcription.  The full
+    # dictionary supersedes the secure BAHL excerpts previously carried in the
+    # Proto-Munda seed while preserving its own stable source-record identity.
+    'bahl': 'bahl-korwa',
 }
 
 # superscript forms of letters

@@ -1,0 +1,66 @@
+{
+  "acquisition": "Open-access full text published in DiVA, Stockholm University",
+  "bibliography": "Hultman, David. 2023. Topics in the grammar of Kalkoti. BA thesis, Department of Linguistics, Stockholm University.",
+  "extraction": {
+    "checked_in_layer": "data/other/forms/raw_data/20260825-hultman-kalkoti-extract.psv",
+    "method": "deterministic pdfplumber extraction from the thesis's XeTeX text layer, read in content-stream order; no OCR",
+    "prose_layer": "the PROSE table in this importer",
+    "regions": {
+      "interlinear": 552,
+      "prose": 48,
+      "t10": 10,
+      "t11": 12,
+      "t12": 8,
+      "t13": 6,
+      "t14": 32,
+      "t15": 6,
+      "t16": 50,
+      "t17": 11,
+      "t19": 21,
+      "t20": 18,
+      "t21": 22,
+      "t23": 12,
+      "t24": 17,
+      "t25": 38,
+      "t26": 4,
+      "t28": 4,
+      "t3": 12,
+      "t4": 14,
+      "t5": 5,
+      "t6": 6,
+      "t7": 4,
+      "t9": 13
+    },
+    "structure_keys": [
+      "the text layer holds no space glyphs, so words are recovered by measuring inter-glyph gaps against the font size",
+      "combining tone accents stay on the vowel they follow in the content stream rather than the one they are drawn over",
+      "each table is a fixed grid whose printed line count is asserted",
+      "interlinear glosses are matched to their form by shared x-position"
+    ]
+  },
+  "outputs": {
+    "audit": "data/other/forms/raw_data/20260825-hultman-kalkoti-audit.csv",
+    "audit_count": 925,
+    "form_count": 475,
+    "forms": "data/other/forms/20260825-hultman-kalkoti.csv",
+    "sample": "data/other/forms/raw_data/20260825-hultman-kalkoti-sample.csv",
+    "statuses": {
+      "installed": 907,
+      "skipped": 18
+    }
+  },
+  "pdf_pages": 65,
+  "pdf_redistributed": false,
+  "pdf_sha256": "fa2245e67a5e715312e698500df8cbd327b04ef1b4cdb4e9e03656ff30399810",
+  "pdf_sha512": "d1857ae14a7f9a340c5596587db7cb33acab29af4efc60f1e31b611fb96cd29e38957b3e85e68eccb37fa957b76d897f83782abe368c2dd140aee7629a5835f0",
+  "rights": "Open-access student thesis; no explicit reuse licence is stated, so only the extracted lexical facts are installed and the PDF is not checked in.",
+  "scope": {
+    "etymology_policy": "the thesis makes no reconstruction and cites no CDIAL number, so every row is installed unlinked; the donor languages of Tables 4, 5 and 13 and the comparanda of Tables 6, 9, 10 and 17 are recorded as prose plus a loanword tag, not as graph edges",
+    "excluded": "the Palula, Gawri, Pashto and Urdu comparanda columns, which are secondary citations of Liljegren (2016), Baart (1997, 1999) and Baart and Sagar (2004) and are kept in the audit and in Etymology prose; Table 1, which lists the datasets rather than words; the phoneme inventories of Tables 2 and 8; Table 18, which prints bare inflectional suffixes; and Tables 22 and 27, whose cells repeat sentences the numbered examples already carry",
+    "included": "every Kalkoti form the thesis prints in Tables 3-7, 9-17 and 19-21 and 23-26 and 28, all 129 numbered interlinear sub-examples, the phonological illustrations of examples (2)-(4), and the phonemic and phonetic citations in running prose",
+    "language_model": "all forms belong to canonical Kalkoti (Kalk) and carry the registered Kalkot dialect tag; the four consultants and eleven datasets remain provenance in the locator and the audit"
+  },
+  "snapshot_date": "2026-08-25",
+  "source_id": "hultman2023kalkoti",
+  "unresolved": []
+}

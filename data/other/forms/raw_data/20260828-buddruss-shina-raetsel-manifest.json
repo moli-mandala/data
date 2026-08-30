@@ -1,0 +1,55 @@
+{
+  "acquisition": "Stanford Interlibrary Loan request 446828; lender Cornell University Library (Olin)",
+  "article_printed_pages": [
+    29,
+    54
+  ],
+  "bibliography": "Buddruss, Georg. 1996. Shina-Rätsel. In Dieter B. Kapp (ed.), Nānāvidhaikatā: Festschrift für Hermann Berger, 29–54. Wiesbaden: Harrassowitz.",
+  "extraction": {
+    "analytical_headword_units": 296,
+    "checked_in_layer": "the RAW table in data/other/forms/raw_data/buddruss_shina_1996.py",
+    "glossary_headword_record_count": 311,
+    "method": "complete record-by-record manual collation against 300 dpi page renders",
+    "navigation_layer": "embedded PDF text, rejected as authoritative because special-glyph mappings are inaccurate",
+    "transcription_uncertainties_remaining": 0
+  },
+  "isbn": "9783447039161",
+  "lexical_printed_pages": [
+    39,
+    50
+  ],
+  "outputs": {
+    "audit": "data/other/forms/raw_data/20260828-buddruss-shina-raetsel-audit.csv",
+    "audit_count": 311,
+    "form_count": 311,
+    "forms": "data/other/forms/20260828-buddruss-shina-raetsel.csv",
+    "sample": "data/other/forms/raw_data/20260828-buddruss-shina-raetsel-sample.csv",
+    "sample_count": 25
+  },
+  "pdf_pages": 31,
+  "pdf_redistributed": false,
+  "pdf_sha256": "2247db7ef88ec280b1e91a0461001ca41b8399d153d2b4e93e2aee88859c9169",
+  "rights": "Copyrighted ILL scan supplied for private study, scholarship, or research; the scan is not checked in.",
+  "scope": {
+    "cdial_policy": "only direct, unambiguous Turner/CDIAL assignments are linked; alternatives, questioned numbers, component-only references, and comparison-only claims remain prose",
+    "excluded": "58 running riddles and translations on pp. 31–39; inflected examples not promoted to headword status; bibliography on pp. 50–53; summary on pp. 53–54; Burushaski, Kalasha, Khowar, Phalura, Maiya, and other comparison-only forms",
+    "excluded_counts": {
+      "bibliography_sections": 1,
+      "running_riddles": 58,
+      "summary_sections": 1
+    },
+    "included": "every analytical glossary headword and explicit headline alternate on pp. 40–50; the glossary preface begins on p. 39",
+    "language_model": "Gilgit Shina is attached to canonical Shina (Sh) with the existing registered dialect tag dialect:Sh:gil:Gilgit"
+  },
+  "snapshot_date": "2026-08-28",
+  "source_id": "buddruss-shina1996",
+  "transcription": {
+    "headword_policy": "explicit headline alternates are rows linked by Variant_Of_Key; feminine, plural, oblique, case, finite, and participial examples remain prose",
+    "jambu_notation": "printed nasal marks are encoded with ~ immediately after the vowel sequence so the source sound profile can parse them",
+    "source_policy": "double vowels preserve quantity; áa is falling tone and aá rising tone; diphthongal i is preserved"
+  },
+  "unresolved": [
+    "wáaku is explicitly called unintelligible by Buddruss; it is retained with that gloss rather than silently omitted",
+    "all questioned or competing etymologies remain unlinked editorial prose"
+  ]
+}

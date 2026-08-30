@@ -1,0 +1,22 @@
+# Source-local ingestion checklist
+
+- [x] Repository checklist reread completely; survey/comparative-table addendum and manual visual policy activated.
+- [x] Canonical 144-page PDF located and pinned to the census SHA-256.
+- [x] Appendix and response page ranges asserted: physical pp.30-68; responses pp.31-68.
+- [x] Exact topology established: 210 prompts x 16 lists = 3,360 cells; 15 targets plus Hindi control.
+- [x] Metadata/list identities transcribed, including duplicate RNS code and RKM/RkM case evidence.
+- [x] Existing legacy overlap inspected without using it as transcription evidence.
+- [x] Bounded blocks items 1-210 completed: 3,360/3,360 cells visually reviewed from rendered pages.
+- [x] Alternatives, group labels, qualifier, blanks, page/column coordinates, confidence, and declaration preserved.
+- [x] Duplicate-RNS site assignment uncertainty recorded for every affected reviewed coordinate.
+- [x] OCR/PDF-text/legacy-blind ledger schema, NFC, duplicate, source-hash, topology, and staging-refusal guards implemented.
+- [x] Literal `(4)` qualifiers on item 8 retained without converting them into forms or analysis.
+- [x] Repeated same-code responses, items 15/20/26/31/35/41/46/52/58/64/70/80/85 page breaks, items 38/49/55/61/73/78/83 column breaks, and literal qualifiers/segmentation preserved.
+- [x] Post-entry legacy reconciliation completed for reviewed targets: 2,794 exact, 766 manual-only and 754 legacy-only multiset occurrences; all paired spelling discrepancies retain the rendered source.
+- [x] Focused tests pass for the current bounded block.
+- [x] Manually review items 206-210 (0 cells pending).
+- [x] Resolve or retain with explicit evidence every blank and RNS site assignment; no lexical ambiguity or illegibility remains.
+- [x] Complete target/control expanded-form accounting and preservation-profile inventory.
+- [x] Source-local staging readiness guard passes with all 3,360 cells decided and no lexical ambiguity/illegibility.
+- [x] Shared reference, canonical-language/dialect, preservation-profile, rich-form, stable-entry-key, audit, and source-checklist integration completed.
+- [ ] Consolidated CLDF/full-suite build, durable opaque-ID reconciliation, graph review, and browser QA (explicitly deferred).

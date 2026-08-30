@@ -1,0 +1,106 @@
+{
+  "state": "shared-source-specific-integration-complete",
+  "source_key": "varghesekumar2015noira",
+  "authority": "frozen manual visual transcription from rendered primary-source pages; OCR/PDF text, legacy data, and installed forms supplied or verified no lexical reading",
+  "source_pdf": {
+    "path": "tmp/pdfs/noira_2015/silesr2015_012.pdf",
+    "bytes": 1676716,
+    "pages": 96,
+    "sha256": "cb93db089a21e55e878f436632d8282c64c98fca85afe18179f8f3383db35280"
+  },
+  "source_local_contract": {
+    "preintegration_manifest": "preintegration_manifest.json",
+    "preintegration_manifest_sha256": "51d0bdb4836f4466dd20f6c381aafeb9f7bf13499a2d0c4fc334ffd36ac3f15e",
+    "manual_ledger_and_generator_bundle_sha256": "7532ec17e39058a0d49920b4462af242744b7d2ab8aeb92739e70d5f2d8ac566",
+    "conceptual_cells": 3570,
+    "attested_cells": 3526,
+    "source_blank_cells": 44,
+    "expanded_responses": 4385,
+    "ambiguous_cells": 0,
+    "illegible_cells": 0,
+    "unresolved_coordinates": []
+  },
+  "installed_target_forms": {
+    "path": "data/other/forms/20260829-sil-noira.csv",
+    "source_local_path": "data/other/forms/raw_data/sil_noira_2015/staged_forms.csv",
+    "byte_for_byte_equal": true,
+    "rows": 2714,
+    "unique_entry_keys": 2714,
+    "sha256": "c82983a319d6d6fbf5c07063f0655ae3e4e8e3890d625e1bfc2a38f95c811746",
+    "parent_language_counts": {
+      "Noiri": 1248,
+      "DungraBhili": 524,
+      "ko": 476,
+      "Ni": 234,
+      "Goj": 232
+    },
+    "site_counts": {
+      "DBM": 273,
+      "NPN": 269,
+      "NCH": 258,
+      "NGO": 256,
+      "DBA": 251,
+      "TKO": 247,
+      "KNA": 239,
+      "NJA": 234,
+      "GTA": 232,
+      "NTE": 229,
+      "KTA": 226
+    }
+  },
+  "audit_only": {
+    "republished_dhule": {
+      "site_codes": ["NAS", "BMU", "NTO"],
+      "conceptual_cells": 630,
+      "expanded_responses": 834,
+      "reconciliation_sha256": "fe0a636c70a7979921b7f5f107a84a7279a1654f24a9aeb964a1be26f0960ee1"
+    },
+    "comparison_controls": {
+      "site_codes": ["GUJ", "MAR", "HIN"],
+      "conceptual_cells": 630,
+      "expanded_responses": 837
+    },
+    "all_source_blank_cells": 44,
+    "new_target_blank_cells": 39
+  },
+  "profile": {
+    "path": "conversion/sil-noira.txt",
+    "source_local_path": "data/other/forms/raw_data/sil_noira_2015/conversion_profile.tsv",
+    "byte_for_byte_equal": true,
+    "rows": 54,
+    "sha256": "3932523f127f4a13a94915dbd88bc21d2cac5867138bec7f2ce03a061e7f0de5",
+    "missing_staged_input_sequences": [],
+    "source_key_route": "varghesekumar2015noira -> sil-noira"
+  },
+  "metadata": {
+    "bibliography_key": "varghesekumar2015noira",
+    "reference_short": "V2015b",
+    "new_parent_languages": ["DungraBhili"],
+    "reused_parent_languages": ["Noiri", "Goj", "ko", "Ni"],
+    "new_dialect_rows": 11,
+    "dialects_with_blank_coordinates": 11,
+    "dialects_with_blank_glottocode": [
+      "sil-noira-2015-kotli-narayanpur",
+      "sil-noira-2015-kotli-taradi"
+    ],
+    "kotli_mapping": "Provisional source-supported Noiri survey-site dialect routing; preserve Kotli and Adivasi Bhil-Taradi labels and uncertainty; no historical Kotali/Khandesi equation; not a genealogical determination"
+  },
+  "shared_files_touched": [
+    "data/other/forms/20260829-sil-noira.csv",
+    "conversion/sil-noira.txt",
+    "cldf/languages.csv",
+    "cldf/dialects.csv",
+    "cldf/sources.bib",
+    "cldf/references.csv",
+    "make_cldf.py",
+    "tests/test_sound_profiles.py",
+    "tests/test_sil_noira_2015.py"
+  ],
+  "deferred": [
+    "consolidated CLDF/full build and compiled-row survival check",
+    "global source-audit/checklist regeneration",
+    "full pytest and graph validation",
+    "browser database refresh and representative-entry QA",
+    "commit and shipping"
+  ]
+}

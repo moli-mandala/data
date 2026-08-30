@@ -2,6 +2,8 @@ import re
 import csv
 from pathlib import Path
 
+from _curated_parameters import apply, load
+
 lines = []
 labels = ['NDu', 'DRp', 'BRg', 'IRp', 'KBp', 'PRj', 'MBs', 'JBp', 'TRp', 'KBs', 'SSr', 'HIn', 'ORi']
 HERE = Path(__file__).parent
@@ -45,21 +47,25 @@ for line in joined_lines:
 
 rows = []
 cur_gloss = None
+for line in lines:
+    if len(line) < 3 or line[:3] not in labels:
+        cur_gloss = line
+    else:
+        toks = list(line.split())
+        # Some multiline OCR joins the response number directly to the three-letter label
+        # (``DRp1,``/``JBp2``). The suffix is a variant number, not part of the lect ID.
+        lang = toks[0][:3]
+        if lang in ['HIn', 'ORi']: continue
+        for tok in toks[1:]:
+            tok = tok.strip(' ,.')
+            if not tok.isdigit() and tok != '——':
+                # The English prompt was inserted between a vowel and its combining tilde in
+                # this one OCR token. Removing that exact intrusion recovers the printed form;
+                # a broad alphabetic cleanup would risk changing genuine transcription.
+                if tok == 'ɐnɐ̆another̃':
+                    tok = 'ɐnɐ̆̃'
+                rows.append([lang, '', tok, cur_gloss, '', tok, '', 'chattisgarhi'])
+
+apply(rows, load(OUTPUT))
 with OUTPUT.open('w', encoding="utf-8", newline="") as fout:
-    writer = csv.writer(fout, lineterminator="\n")
-    for line in lines:
-        if len(line) < 3 or line[:3] not in labels:
-            cur_gloss = line
-        else:
-            toks = list(line.split())
-            lang = toks[0]
-            if lang in ['HIn', 'ORi']: continue
-            for tok in toks[1:]:
-                tok = tok.strip(' ,.')
-                if not tok.isdigit() and tok != '——':
-                    # The English prompt was inserted between a vowel and its combining tilde in
-                    # this one OCR token. Removing that exact intrusion recovers the printed form;
-                    # a broad alphabetic cleanup would risk changing genuine transcription.
-                    if tok == 'ɐnɐ̆another̃':
-                        tok = 'ɐnɐ̆̃'
-                    writer.writerow([lang, '', tok, cur_gloss, '', tok, '', 'chattisgarhi'])
+    csv.writer(fout, lineterminator="\n").writerows(rows)

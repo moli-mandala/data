@@ -1,0 +1,53 @@
+{
+  "deferred_gates": [
+    "consolidated CLDF/full build",
+    "opaque f_* identity reconciliation",
+    "repository-wide graph validation and full test suite",
+    "browser database refresh and QA",
+    "commit and shipping"
+  ],
+  "dispositions": {
+    "excluded_ambiguous_target": 1,
+    "excluded_blank_control": 666,
+    "excluded_blank_target": 5044,
+    "excluded_control": 1534,
+    "excluded_illegible_target": 1,
+    "installed_target": 3204
+  },
+  "frozen_audit": {
+    "rows": 10450,
+    "sha256": "3ed3963bdbc309ec3926589e70942c9b52acb8a17b8687d2e47a503ea2e743bf"
+  },
+  "frozen_forms": {
+    "rows": 4738,
+    "sha256": "71e985690e76497ae276d43ad93b7a44ab75565ba9bd88f11de6a5d04a43b29b"
+  },
+  "installed_target_forms": {
+    "rows": 3204,
+    "sha256": "5ac00f37816119acb13bb2d833070fcf063e9dea0b2ee1c565a5d03281bdf137"
+  },
+  "integration_audit": {
+    "rows": 10450,
+    "sha256": "ef4071daa447af2ff0da731ccd21a9b0236cb7ec67c3ff767982f75786f2fec4"
+  },
+  "policy": "Frozen manual readings are authoritative; install target scope only; controls and unresolved cells remain audit-only.",
+  "post_freeze_reconciliation": {
+    "prior_rows_with_kurumba2012_entry_key": 0,
+    "prior_rows_with_source_key": 0,
+    "result": "new source installation; no pre-existing row competed with the frozen target output"
+  },
+  "sound_profile": {
+    "decisions_sha256": "69d53f43bf00d871450e5499853579766e3095f2f7760b340dc3c8ecb254fe56",
+    "inventory_sha256": "9ee82522e25564fd6c5377016a83f66e351990700bc9a7fe3cd0f7c2acddb0e8",
+    "path": "conversion/sil-kurumba-2012.txt",
+    "sha256": "5ecef5d866fd19e929958fc3c7f9da3d2a44d177ecb7be3621f4b72aa50e013a",
+    "unresolved_mappings": []
+  },
+  "source_key": "blairetal2012kurumba",
+  "source_pdf_sha256": "250dc3d83661227caa66bf16e390e51c2dcb7186fa435252541ed13bbfcd9137",
+  "state": "shared_source_specific_integration_complete",
+  "unresolved_coordinates": [
+    "kurumba2012:pudukkottai:i020",
+    "kurumba2012:kotagiri_alu:i025"
+  ]
+}

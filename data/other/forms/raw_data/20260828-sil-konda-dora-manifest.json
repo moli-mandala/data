@@ -1,0 +1,70 @@
+{
+  "source_key": "blair-george2012kondadora",
+  "title": "Multilingualism Among the Konda Dora",
+  "authors": [
+    "Frank Blair",
+    "Jacob George"
+  ],
+  "researchers": [
+    "Susan George",
+    "Stephen Watters"
+  ],
+  "year": 2012,
+  "created": 1987,
+  "series": "SIL Electronic Survey Reports 2012-016",
+  "archive_url": "https://www.sil.org/resources/archives/49120",
+  "pdf_url": "https://www.sil.org/system/files/reapdata/38/76/91/38769117428458388974018399323322688545/silesr2012_016.pdf",
+  "pdf_sha256": "6e0a3e5522a45752938f8279753d07b4e29d7b76ca73e88f71c4e283dfd0f533",
+  "pdf_bytes": 31978201,
+  "pdf_pages": 106,
+  "scope": "Appendix 9.5, PDF pp. 88-106, printed pp. 83-101; lexical tables PDF pp. 89-106",
+  "review": {
+    "authority": "rendered canonical scan",
+    "manual": "all 856 target and control cells were visually inspected and manually transcribed; every installed expansion was compared against its rendered source cell",
+    "ocr": "the PDF text layer is retained only as a locating/comparison scaffold and never supplies an accepted reading",
+    "unresolved": [],
+    "transcription_decisions": [
+      "Similarity-group digits and a leading source hyphen are structural and are excluded from lexical Form while retained in the audit.",
+      "Typewriter underdots are represented with NFC Unicode retroflex characters where available.",
+      "The visibly distinct source IPA retroflex-flap glyph is retained as ɽ and converted to Jambu display ṛ by the profile.",
+      "The literal source question-mark glyph is retained diplomatically in Form; the source-local profile maps it to glottal stop for conversion.",
+      "Items 182-201 are expanded by the source-defined past/imperative/infinitive slots; other slashes are source-defined lexical alternatives.",
+      "The duplicate printed item number 212 is retained as distinct 212-liver and 212-foot prompt keys."
+    ]
+  },
+  "counts": {
+    "prompts": 214,
+    "lists": 4,
+    "conceptual_source_cells_manually_reviewed": 856,
+    "target_cells_manually_reviewed": 428,
+    "control_cells_manually_reviewed": 428,
+    "attested_cells": 727,
+    "confirmed_blank_cells": 129,
+    "confirmed_blank_target_cells": 43,
+    "confirmed_blank_control_cells": 86,
+    "excluded_control_response_cells": 342,
+    "installed_forms_after_source_defined_expansion": 452,
+    "audit_rows": 856,
+    "unresolved_or_illegible_cells": 0,
+    "source_marked_uncertain_cells": 0
+  },
+  "artifacts": {
+    "reviewed_transcription": {
+      "path": "data/other/forms/raw_data/sil_konda_dora_2012/reviewed_transcription.psv",
+      "sha256": "ae479c2da340809a220ebceeda02ed889e832f8e9224a52cd85e668b9fad96bb"
+    },
+    "ocr_scaffold": {
+      "path": "data/other/forms/raw_data/sil_konda_dora_2012/ocr_scaffold.txt",
+      "sha256": "063c3da6d309519f7e33d8dd8b5422d9d231476866f7711b2ace3e50dee1508d",
+      "authority": "none; locator/comparison only"
+    },
+    "installed": {
+      "path": "data/other/forms/20260828-sil-konda-dora.csv",
+      "sha256": "54de0f622ce5eb2652e10a237d5a80ef65f56d4cc6fb860458ff7976a4880f13"
+    },
+    "audit": {
+      "path": "data/other/forms/raw_data/20260828-sil-konda-dora-audit.csv",
+      "sha256": "a2498496d6e6e31bfd5dcd9ad0c583ad8eb105f61ce1cdc0ae13c82a8dfe17a9"
+    }
+  }
+}

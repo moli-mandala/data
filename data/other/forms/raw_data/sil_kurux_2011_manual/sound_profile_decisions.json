@@ -1,0 +1,56 @@
+{
+  "additions": [
+    {
+      "grapheme": "t͜ʃ",
+      "output": "c",
+      "reason": "manual source uses a tie bar below"
+    },
+    {
+      "grapheme": "d͜ʒ",
+      "output": "j",
+      "reason": "manual source uses a tie bar below"
+    },
+    {
+      "grapheme": "͜",
+      "output": "",
+      "reason": "consume a residual tie bar only after multigraph rules"
+    },
+    {
+      "grapheme": "ⁱ",
+      "output": "ⁱ",
+      "reason": "preserve printed superscript vowel"
+    },
+    {
+      "grapheme": "ᵘ",
+      "output": "ᵘ",
+      "reason": "preserve printed superscript vowel"
+    },
+    {
+      "grapheme": "ü",
+      "output": "ü",
+      "reason": "preserve printed front rounded vowel"
+    },
+    {
+      "grapheme": "ĩ",
+      "output": "ĩ",
+      "reason": "preserve printed precomposed nasal vowel"
+    },
+    {
+      "grapheme": "ʼ",
+      "output": "ʼ",
+      "reason": "preserve printed modifier apostrophe"
+    }
+  ],
+  "base_profile": "conversion/sil-kurux.txt",
+  "base_profile_sha256": "523b5ac928179b53325d99e63634fa26a3af7598722c13e20620bd284271a16a",
+  "input_layer": "manually transcribed source IPA",
+  "inventory_scope": {
+    "all_attested_rows": 1661,
+    "staged_target_rows": 1365,
+    "unique_codepoints": 52
+  },
+  "output_layer": "Jambu display transcription",
+  "phonemic_policy": "Preserve the manual source IPA in Phonemic and raw Form/Original; convert only display Form.",
+  "source_local_profile": "sound_profile.txt",
+  "unresolved_mappings": []
+}

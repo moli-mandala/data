@@ -46,6 +46,17 @@ def test_grammar_gate_is_evidence_based_and_only_verified_tagless_units_are_empt
         or unit.compiled_grammar_tagged_rows > 0
         for unit in units
     )
+    tagless_units = {
+        unit.id: unit for unit in units if unit.compiled_grammar_tagged_rows == 0
+    }
+    assert tagless_units
+    assert all(unit.source_grammar_evidence_rows == 0 for unit in tagless_units.values())
+
+    # Preserve the original regression cases without requiring this list to be updated every
+    # time another bare concept-by-site survey matrix is installed.
     assert {
-        unit.id for unit in units if unit.compiled_grammar_tagged_rows == 0
-    } == {"20220913-dhivehi", "20220913-kvari", "20230403-arora"}
+        "20220913-dhivehi",
+        "20220913-kvari",
+        "20230403-arora",
+        "20260825-gondi-beine",
+    } <= set(tagless_units)

@@ -63,6 +63,17 @@ REVIEW_SAMPLE_QUOTAS = {
     "backstrom1992": 4,
     "CDIAL": 3,
 }
+REVIEW_SAMPLE_ANCHORS = {
+    "berger-auto": (
+        "berger-entry-3723", "berger-entry-7319", "berger-entry-997",
+        "berger-entry-6368", "berger-entry-1602", "berger:p395:c2:e008",
+        "berger-entry-4654", "berger-entry-5209", "berger-entry-6054:dialect:2",
+        "berger-entry-5243",
+    ),
+    "berger": ("20-19", "20-2", "20-23"),
+    "backstrom1992": ("24-1907", "24-2121", "24-2150", "24-2108"),
+    "CDIAL": ("0-158373", "0-12804", "0-100617"),
+}
 
 
 def _split_citations(value: str) -> list[str]:
@@ -147,24 +158,18 @@ def reviewed_sample_candidates(
         grouped[audit_source_group(row)].append(row)
     selected: list[dict[str, str]] = []
     for source_group, quota in REVIEW_SAMPLE_QUOTAS.items():
-        ordered = sorted(
-            grouped[source_group],
-            key=lambda row: hashlib.sha256(
-                f"{row['Legacy_Form_ID']}|{row['CDIAL_ID']}".encode("utf-8")
-            ).hexdigest(),
-        )
-        seen_sets: set[str] = set()
-        for row in ordered:
-            if row["Proto_Burushaski_ID"] in seen_sets:
-                continue
-            selected.append(row)
-            seen_sets.add(row["Proto_Burushaski_ID"])
-            if len(seen_sets) == quota:
-                break
-        if len(seen_sets) != quota:
-            raise ValueError(
-                f"not enough {source_group} comparison sets for {quota}-row review stratum"
-            )
+        anchors = REVIEW_SAMPLE_ANCHORS[source_group]
+        if len(anchors) != quota:
+            raise ValueError(f"review anchor quota mismatch for {source_group}")
+        key_field = "Source_Key" if source_group == "berger-auto" else "Legacy_Form_ID"
+        indexed = {row[key_field]: row for row in grouped[source_group]}
+        missing = [anchor for anchor in anchors if anchor not in indexed]
+        if missing:
+            raise ValueError(f"missing checked {source_group} review anchors: {missing}")
+        chosen = [indexed[anchor] for anchor in anchors]
+        if len({row["Proto_Burushaski_ID"] for row in chosen}) != quota:
+            raise ValueError(f"checked {source_group} anchors no longer cover distinct sets")
+        selected.extend(chosen)
     return selected
 
 

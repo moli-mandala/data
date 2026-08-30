@@ -2,33 +2,33 @@
 
 - Installed input: `data/other/forms/20260726-berger-auto.csv`
 - Canonical checklist SHA-256: `23516ba5c7caeaa5310f6a32d92b86e4b9ae5e4479e792926b61dd0689129f05`
-- Source-type addenda: Dictionary or glossary, Etymological/comparative source
-- Installed rows: 9154
-- Compiled rows carrying this unit's citation keys: 8964
-- Input rows with checked grammatical evidence: 5244
-- Compiled rows with canonical grammatical tags: 5112
+- Source-type addenda: Dictionary or glossary, OCR-heavy source, Etymological/comparative source
+- Installed rows: 10664
+- Compiled rows carrying this unit's citation keys: 10664
+- Input rows with checked grammatical evidence: 10664
+- Compiled rows with canonical grammatical tags: 10664
 - Source keys: berger-auto
 
 ## Retrospective gate assessment
 
-- [x] 1. Establish the source and scope — source keys: berger-auto; 9154 installed records
-- [x] 2. Choose the extraction path — importer/raw route: data/other/forms/raw_data/berger.py
-- [x] 3. Plan the installed files and identifiers — 9154 unique immutable Entry_Key values
+- [x] 1. Establish the source and scope — source keys: berger-auto; 10664 installed records
+- [x] 2. Choose the extraction path — importer/raw route: data/other/forms/raw_data/berger_cleanup.py
+- [x] 3. Plan the installed files and identifiers — 10664 unique immutable Entry_Key values
 - [x] 4. Model languages and dialects before emitting forms — 2 input language/lect IDs; registry gaps: none
-- [x] 5. Emit the rich import schema — row widths {'15': 9154}; blank forms 0
-- [x] 6. Parse structured linguistic information — 5244 input rows carry checked grammatical evidence; 5112 compiled rows carry canonical grammatical tags
+- [x] 5. Emit the rich import schema — row widths {'15': 10664}; blank forms 0
+- [x] 6. Parse structured linguistic information — 10664 input rows carry checked grammatical evidence; 10664 compiled rows carry canonical grammatical tags
 - [x] 7. Build and verify the sound profile — profile route: conversion/berger.txt; replacement characters in input forms: 0
 - [x] 8. Parse references and provenance — unresolved keys: none
 - [x] 9. Model etymology and graph relations conservatively — covered by tests/test_edges.py and compiled edge invariants
-- [x] 10. Produce a complete audit trail — audit: data/other/forms/raw_data/20220930-berger-grammar-audit.csv, source_checklists/installed-record-audit.csv.gz
-- [x] 11. Add focused regression tests — tests: tests/test_berger.py, tests/test_source_checklists.py
+- [x] 10. Produce a complete audit trail — audit: data/other/forms/raw_data/20260828-berger-audit.csv.gz, data/other/forms/raw_data/20260828-berger-sample.csv, data/other/forms/raw_data/20260828-berger-manifest.json, data/other/forms/raw_data/20260828-berger-entry-map.csv, data/other/forms/raw_data/20260828-berger-editorial.csv, source_checklists/installed-record-audit.csv.gz
+- [x] 11. Add focused regression tests — tests: tests/test_berger_cleanup.py, tests/test_berger.py
 - [ ] 12. Install and run the full data pipeline — pending final repository-wide make all and full-suite validation for this review
 - [x] 13. Browser database refresh and inspection (user-triggered) — deferred by standing policy; refresh and browser QA run only when the user requests them
 - [x] 14. Document, review, and ship only when requested — this source-specific checklist is the durable review record; shipping is not requested
 
 ## Review summary
 
-- Counts: 9154 installed records; 8964 compiled citation attestations.
+- Counts: 10664 installed records; 10664 compiled citation attestations.
 - Exclusions: none detected in the installed input; any source-side exclusions remain in the linked importer/audit.
 - Unresolved cases: none detected.
 - Transcription: `conversion/berger.txt`.

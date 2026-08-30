@@ -1,0 +1,88 @@
+{
+  "base_profile": "conversion/sil-survey.txt",
+  "base_profile_sha256": "26526fb668d42e016e602372396b68c0f77ac5d665d01f0f55bfd198f4874677",
+  "decisions": [
+    {
+      "inputs": [
+        "a:",
+        "ʌ:",
+        "i:",
+        "ɪ:",
+        "u:",
+        "e:",
+        "ɛ:",
+        "o:",
+        "ɔ:",
+        "ə:",
+        "ɨ:"
+      ],
+      "outputs": [
+        "ā",
+        "ā",
+        "ī",
+        "ī",
+        "ū",
+        "ē",
+        "ē",
+        "ō",
+        "ō",
+        "ə̄",
+        "ɨ̄"
+      ],
+      "reason": "The printed ASCII colon is the source length mark when it immediately follows a vowel."
+    },
+    {
+      "inputs": [
+        "'",
+        ":"
+      ],
+      "outputs": [
+        "'",
+        ":"
+      ],
+      "reason": "Preserve the raised apostrophe and the single residual post-apostrophe colon because the scan does not establish a safer phonetic interpretation."
+    },
+    {
+      "inputs": [
+        "c",
+        "z",
+        "y",
+        "ɣ",
+        "β",
+        "ṇ",
+        "ṭ",
+        "-"
+      ],
+      "outputs": [
+        "c",
+        "z",
+        "y",
+        "ɣ",
+        "β",
+        "ṇ",
+        "ṭ",
+        "-"
+      ],
+      "reason": "Identity-preserve visibly distinct source symbols and punctuation not normalized by the survey base profile."
+    },
+    {
+      "inputs": [
+        "ɽ"
+      ],
+      "outputs": [
+        "ṛ"
+      ],
+      "reason": "Apply the established Jambu house symbol for the retroflex flap."
+    }
+  ],
+  "input_layer": "manual source transcription from rendered Appendix C cells",
+  "installed_profile": "conversion/sil-kurumba-2012.txt",
+  "installed_profile_sha256": "5ecef5d866fd19e929958fc3c7f9da3d2a44d177ecb7be3621f4b72aa50e013a",
+  "inventory": {
+    "frozen_attested_forms": 4738,
+    "installed_target_forms": 3204,
+    "unique_codepoints": 54
+  },
+  "output_layer": "Jambu display transcription; source form remains unchanged in Phonemic",
+  "unresolved_profile_mappings": []
+}

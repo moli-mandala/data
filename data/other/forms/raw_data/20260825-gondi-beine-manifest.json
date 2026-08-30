@@ -1,0 +1,45 @@
+{
+  "source_key": "rama-coltekin-sofroniev2017gondi",
+  "fieldwork_key": "beine1994gondi",
+  "upstream": {
+    "repository": "https://github.com/PhyloStar/Gondi-Dialect-Analysis",
+    "release": "v1.0",
+    "commit": "f24fc743a1c72f1b69774450b790cfc4e346f800",
+    "doi": "10.5281/zenodo.1220088",
+    "concept_doi": "10.5281/zenodo.1220087",
+    "license": "Other (Open) as declared on Zenodo; the repository ships no LICENSE file",
+    "retrieved": "2026-08-25"
+  },
+  "files": {
+    "data/gondi_combined_cognates.csv": {
+      "sha256": "738f3a0bb4045d9c256542176aa18e7a96ba4320faed0061f738827d73162ef7"
+    },
+    "data/gondi_combined.tsv": {
+      "sha256": "db68fc7e878c3abe31806ab57a5c909ebcae501ece06d8370e0bd3a20a99edf1"
+    },
+    "maps/gondi.kml": {
+      "sha256": "8fac9b91a69c30e3f97148a6ca3e70a1941c44c4a66915e656107a64b362cbbb"
+    }
+  },
+  "coverage": {
+    "sites": 46,
+    "concepts": 210,
+    "source_cells": 9660,
+    "audit_rows": 10422,
+    "installed_rows": 10264,
+    "statuses": {
+      "ingested": 10264,
+      "missing": 158
+    },
+    "distinct_cognate_class_labels": 28
+  },
+  "excluded": [
+    "data/combined_data.tsv (the same IPA matrix pre-segmented for the PMI scorer)",
+    "ASJP and SCA columns (LingPy recodings; retained in the audit)",
+    "Cognate Class column (Gondi-internal judgments; retained in the audit)",
+    "*.nex, mrbayes/, paper/, and the analysis scripts (results, not lexemes)"
+  ],
+  "installed_file": "data/other/forms/20260825-gondi-beine.csv",
+  "audit_file": "data/other/forms/raw_data/20260825-gondi-beine-audit.csv",
+  "profile": "conversion/gondi-beine.txt"
+}

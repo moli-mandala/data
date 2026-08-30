@@ -7,6 +7,11 @@ relations were not part of the raw lexical CSVs and were therefore omitted when 
 table, falls back to conservative exact source/language/form matching, and installs only links
 whose child currently has no accepted etymology.  Modern accepted links are never overwritten.
 
+Legacy modelled a headword as two rows — the entry plus an attested row beneath it — which the
+edge model collapses into one node.  A link whose child and etymon resolve to that same form
+therefore says nothing new and is skipped (``already-modelled``); installing it would give the
+node a rank-1 edge pointing at itself, dropping it from the headword list.
+
 By default the command is a dry run.  Pass ``--install`` to update the assignment table and write
 the complete compressed audit.
 """
@@ -24,6 +29,7 @@ import sqlite3
 import unicodedata
 from collections import Counter, defaultdict
 from pathlib import Path
+from typing import NamedTuple
 
 
 ROOT = Path(__file__).resolve().parent
@@ -36,6 +42,8 @@ AUDIT = ROOT / "data/other/forms/raw_data/20260820-neojambu-etymology-restoratio
 SUMMARY = ROOT / "data/other/forms/raw_data/20260820-neojambu-etymology-restoration-summary.json"
 
 ASSIGNMENT_FIELDS = ["Form_ID", "Etymon_ID", "Kind", "Rank", "Status", "Source", "Notes"]
+RESTORED_NOTE = "Restored from legacy NeoJambu origin_lemma_id"
+ACCEPTED_STATUSES = {"accepted", "yes", "active"}
 AUDIT_FIELDS = [
     "Status", "Legacy_Form_ID", "Legacy_Etymon_ID", "Resolved_Form_ID",
     "Resolved_Etymon_ID", "Form_Resolution", "Etymon_Resolution", "References",
@@ -80,6 +88,10 @@ def citation_keys(value: str | None) -> set[str]:
         for part in (value or "").split(";")
         if part.strip().split("[", 1)[0]
     }
+
+
+def accepted(row: dict[str, str]) -> bool:
+    return row.get("Status", "accepted").strip().lower() in ACCEPTED_STATUSES
 
 
 def read_csv(path: Path) -> list[dict[str, str]]:
@@ -268,6 +280,16 @@ class Resolver:
         return result
 
 
+class Link(NamedTuple):
+    """One legacy origin_lemma_id row, resolved onto current form IDs."""
+
+    legacy: sqlite3.Row
+    form_id: str
+    etymon_id: str
+    form_method: str
+    etymon_method: str
+
+
 def load_legacy(path: Path):
     connection = sqlite3.connect(path)
     connection.row_factory = sqlite3.Row
@@ -298,6 +320,30 @@ def restored_kind(
     return "reflex"
 
 
+def classify(link, forms, current_rank1, rival_parents) -> tuple[str, str]:
+    """Decide what becomes of one resolved legacy link: (audit status, reason).
+
+    Only ``restored`` installs an assignment; every other status is a recorded no-op."""
+    if not link.form_id:
+        return "unresolved-child", link.form_method
+    if not link.etymon_id:
+        return "unresolved-etymon", link.etymon_method
+    if forms[link.etymon_id].get("Status") == "unlinked":
+        return "unresolved-etymon", "resolved target is itself unlinked"
+    if link.form_id == link.etymon_id:
+        # Legacy stored a headword twice — the entry row plus an attested row beneath it — and
+        # both collapse onto one node here, so the link is already expressed by that node.
+        return "already-modelled", "child and etymon resolve to the same current form"
+    if len(rival_parents[link.form_id]) > 1:
+        return "legacy-merge-conflict", "legacy forms collapsed to one current form with different parents"
+    current = current_rank1.get(link.form_id)
+    if current is None:
+        return "restored", ""
+    if current["Parent_ID"] == link.etymon_id:
+        return "already-present", ""
+    return "current-link-preserved", f"current accepted {current['Kind']} edge takes precedence"
+
+
 def plan_restoration(db_path: Path, restored_existing: set[tuple[str, str]] | None = None):
     restored_existing = restored_existing or set()
     forms = {row["ID"]: row for row in read_csv(FORMS)}
@@ -313,79 +359,56 @@ def plan_restoration(db_path: Path, restored_existing: set[tuple[str, str]] | No
         if row["Rank"] == "1" and row["Kind"] in {"reflex", "borrowed", "variant"}
         and row["Child_ID"] not in restored_children
     }
-    linked = [row for row in old_lemmas.values() if row["origin_lemma_id"]]
-    prepared = []
-    valid_by_child: dict[str, list[dict[str, object]]] = defaultdict(list)
-    for row in linked:
+
+    links: list[Link] = []
+    # Distinct restorable parents per current form: >1 means several legacy rows collapsed onto
+    # one form while disagreeing about its etymology, which no import can settle.
+    rival_parents: dict[str, set[str]] = defaultdict(set)
+    for row in (r for r in old_lemmas.values() if r["origin_lemma_id"]):
+        # A legacy lemma sometimes represented several elicitation senses that the current
+        # source correctly keeps as separate forms. Audit and restore each resolved child.
         form_ids, form_method = resolver.resolve_children(row["id"])
         etymon_id, etymon_method = resolver.resolve(row["origin_lemma_id"])
-        # A legacy lemma sometimes represented several elicitation senses that the current
-        # source correctly keeps as separate entries.  Audit and restore each resolved child.
         for form_id in form_ids or [""]:
-            item: dict[str, object] = {
-                "legacy": row,
-                "form_id": form_id,
-                "etymon_id": etymon_id,
-                "form_method": form_method,
-                "etymon_method": etymon_method,
-            }
-            prepared.append(item)
-            if form_id and etymon_id and forms[etymon_id].get("Status") != "unlinked":
-                valid_by_child[form_id].append(item)
+            links.append(Link(row, form_id, etymon_id, form_method, etymon_method))
+            if (
+                form_id
+                and etymon_id
+                and form_id != etymon_id
+                and forms[etymon_id].get("Status") != "unlinked"
+            ):
+                rival_parents[form_id].add(etymon_id)
 
     restore_edges: set[tuple[str, str]] = set()
     audit_rows = []
     status_counts: Counter[str] = Counter()
     reference_counts: dict[str, Counter[str]] = defaultdict(Counter)
-    for item in prepared:
-        row = item["legacy"]
-        assert isinstance(row, sqlite3.Row)
-        form_id = str(item["form_id"])
-        etymon_id = str(item["etymon_id"])
-        current = current_rank1.get(form_id)
-        reason = ""
-        if not form_id:
-            status = "unresolved-child"
-            reason = str(item["form_method"])
-        elif not etymon_id:
-            status = "unresolved-etymon"
-            reason = str(item["etymon_method"])
-        elif forms[etymon_id].get("Status") == "unlinked":
-            status = "unresolved-etymon"
-            reason = "resolved target is itself unlinked"
-        else:
-            parents = {str(entry["etymon_id"]) for entry in valid_by_child[form_id]}
-            if len(parents) > 1:
-                status = "legacy-merge-conflict"
-                reason = "legacy forms collapsed to one current form with different parents"
-            elif current and current["Parent_ID"] == etymon_id:
-                status = "already-present"
-            elif current:
-                status = "current-link-preserved"
-                reason = f"current accepted {current['Kind']} edge takes precedence"
-            else:
-                status = "restored"
-                restore_edges.add((form_id, etymon_id))
+    for link in links:
+        status, reason = classify(link, forms, current_rank1, rival_parents)
+        if status == "restored":
+            restore_edges.add((link.form_id, link.etymon_id))
 
+        row = link.legacy
         refs = sorted(old_references.get(row["id"], set()))
         status_counts[status] += 1
         for reference in refs:
             reference_counts[reference][status] += 1
+        current = current_rank1.get(link.form_id)
         audit_rows.append(
             {
                 "Status": status,
                 "Legacy_Form_ID": row["id"],
                 "Legacy_Etymon_ID": row["origin_lemma_id"],
-                "Resolved_Form_ID": form_id,
-                "Resolved_Etymon_ID": etymon_id,
-                "Form_Resolution": item["form_method"],
-                "Etymon_Resolution": item["etymon_method"],
+                "Resolved_Form_ID": link.form_id,
+                "Resolved_Etymon_ID": link.etymon_id,
+                "Form_Resolution": link.form_method,
+                "Etymon_Resolution": link.etymon_method,
                 "References": ";".join(refs),
                 "Language_ID": row["language_id"] or "",
                 "Original": row["original"] or row["word"] or "",
                 "Gloss": row["gloss"] or "",
-                "Restored_Kind": restored_kind(form_id, etymon_id, forms, clades)
-                if form_id in forms and etymon_id in forms else "",
+                "Restored_Kind": restored_kind(link.form_id, link.etymon_id, forms, clades)
+                if link.form_id in forms and link.etymon_id in forms else "",
                 "Current_Parent_ID": current["Parent_ID"] if current else "",
                 "Reason": reason,
             }
@@ -407,20 +430,18 @@ def main() -> None:
     restored_existing = {
         (row["Form_ID"], row["Etymon_ID"])
         for row in existing
-        if row.get("Notes") == "Restored from legacy NeoJambu origin_lemma_id"
-        and row.get("Status", "accepted").lower() in {"accepted", "yes", "active"}
+        if row.get("Notes") == RESTORED_NOTE and accepted(row)
     }
     forms, clades, restore_edges, audit_rows, status_counts, reference_counts = plan_restoration(
         args.db, restored_existing
     )
-    existing = [
-        row for row in existing
-        if row.get("Notes") != "Restored from legacy NeoJambu origin_lemma_id"
-    ]
-    existing_keys = {
-        (row["Form_ID"], row["Etymon_ID"], row.get("Kind", "reflex"), row.get("Rank", "1"))
-        for row in existing
-        if row.get("Status", "accepted").lower() in {"accepted", "yes", "active"}
+    # Previous restorations are replaced wholesale; hand-curated rows are never touched, and an
+    # accepted curated rank-1 row for the same pair wins over a re-import of it.
+    curated = [row for row in existing if row.get("Notes") != RESTORED_NOTE]
+    curated_rank1 = {
+        (row["Form_ID"], row["Etymon_ID"])
+        for row in curated
+        if accepted(row) and row.get("Rank", "1") == "1"
     }
     additions = [
         {
@@ -430,10 +451,10 @@ def main() -> None:
             "Rank": "1",
             "Status": "accepted",
             "Source": "",
-            "Notes": "Restored from legacy NeoJambu origin_lemma_id",
+            "Notes": RESTORED_NOTE,
         }
         for form_id, etymon_id in sorted(restore_edges)
-        if not any(key[0] == form_id and key[1] == etymon_id and key[3] == "1" for key in existing_keys)
+        if (form_id, etymon_id) not in curated_rank1
     ]
 
     digest = hashlib.sha256(args.db.read_bytes()).hexdigest()
@@ -455,7 +476,7 @@ def main() -> None:
     if not args.install:
         return
 
-    assignments = existing + additions
+    assignments = curated + additions
     assignments.sort(
         key=lambda row: (
             row["Form_ID"], int(row.get("Rank") or 1), row["Etymon_ID"], row.get("Kind", "")

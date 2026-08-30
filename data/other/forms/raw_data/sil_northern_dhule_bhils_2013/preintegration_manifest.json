@@ -1,0 +1,125 @@
+{
+  "authority": "manual visual transcription from rendered source images; OCR/PDF text/later data supplied or verified no reading",
+  "frozen_artifacts": {
+    "conversion_profile.tsv": "b0bca6f983bbcf87dc43769c804ae02a73db45d58fad1e86f975fb8b9f7456ce",
+    "list_registry.tsv": "635b57460fb9b5a6fa682941ae39a857ef26542271c6e73bf5cbeb7c3631dc62",
+    "manual_cell_bundle_sha256": "046ff03ef2af36c51f1b25538f081aabb7c28d3ccd1776d3ec545fad6463e8c1",
+    "manual_chunks/items_001_035_hand_keyed.tsv": "d2bca4c849e2833fbacfcd16679e68196ad7e6a24e2af08c1a5d645226744aaf",
+    "manual_chunks/items_036_070_hand_keyed.tsv": "2c6b9698957a29f16e8f68a1496f91647b0b8f4a5422d24a076f048aa713ee8a",
+    "manual_chunks/items_071_105_hand_keyed.tsv": "9d7f14859f46d038f8d9bf98220b77da707c71c7a08527e4f6ff6d3694c2891e",
+    "manual_chunks/items_106_140_hand_keyed.tsv": "71e92e01ede2a349d7b8d0a699adc5cfdfa39e6aeb46ed180f09b030758adecf",
+    "manual_chunks/items_141_175_hand_keyed.tsv": "6096457045cb317ba3fb8995b7cb1e7a071e453b0b22117cb779afeb0debf7bf",
+    "manual_chunks/items_176_210_hand_keyed.tsv": "a12bb9e5258dc56d4dc71602824dc28ae1c981853c59e58b622fa8e1054c356a",
+    "manual_review.tsv": "8855fe166c387cdd7bcd87cfea5a7af37890e31bbfcdbf65ff08b5fe94ec3bd5",
+    "staged_audit.tsv": "4bc5aa3bf41e79622494fea7426b6c77532ab4600c263a32179aa6c248b9c302",
+    "staged_forms.csv": "5641b9d7ecfb44e6e644efba35e65223260291b7a8724b1fd25fac2fc94d3ed4",
+    "unresolved_readings.tsv": "c3ab989d0d9d0403d4f60c2edab6ecd5276b8ab583da2536d042752467a18f6c"
+  },
+  "pdf": {
+    "bytes": 9214722,
+    "pages": 133,
+    "sha256": "edeeeda98cb76624df1a0d70c765cc816ea463d75bc79ec20883c62e6fc1c482"
+  },
+  "profile": {
+    "inventory": "profile_inventory.tsv",
+    "inventory_sha256": "7506714d942059bcfb87f82ddd307ef1835e5c04f3aa343b268cb051f7dcb821",
+    "missing_staged_input_characters": [],
+    "path": "conversion_profile.tsv",
+    "rows": 54,
+    "sha256": "b0bca6f983bbcf87dc43769c804ae02a73db45d58fad1e86f975fb8b9f7456ce"
+  },
+  "reconciliation": {
+    "audit": "cross_source_reconciliation.tsv",
+    "audit_sha256": "25e11401d4d89c8698105d1138def1709f298473d00d61c36f0b1e891906f104",
+    "bareli_audit_sha256": "d6336d93714998fc8c41e67da06090fa00d79dc302e20873c8d7a8b4f5ab0bd4",
+    "contract": "ESR 2013-004 remains the primary reading for its independently frozen lists. Later-source evidence is preserved; exact complete lexical identities may merge citations, while differing publication transcriptions remain distinct attestations and never overwrite one another.",
+    "counts": {
+      "varghesekumar2015noira|literal-ledger-exact": 3,
+      "varghesekumar2015noira|same-source-representation-differs": 627,
+      "varkey-vunnamatla2018bareli|both-blank": 8,
+      "varkey-vunnamatla2018bareli|dhule-attested-bareli-excluded": 4,
+      "varkey-vunnamatla2018bareli|exact-single-form": 261,
+      "varkey-vunnamatla2018bareli|same-source-representation-differs": 567
+    },
+    "noira_input_sha256": "fe0a636c70a7979921b7f5f107a84a7279a1654f24a9aeb964a1be26f0960ee1",
+    "rows": 1470
+  },
+  "renders": {
+    "artifacts": 234,
+    "bytes": 127377314,
+    "manifest": "render_hashes.tsv",
+    "manifest_sha256": "e797cf66d3d153a10d4edd9bd98a9d7e0db6911966363199c3bc859dc7c7c4e3",
+    "tree_sha256": "816261371d0ada57996b2b1135267024629fcb3a7827b07bac4e53bc68f8ec43"
+  },
+  "shared_integration_contract": {
+    "deferred": [
+      "shared bibliography/language/dialect/profile routing edits",
+      "durable identity and citation reconciliation",
+      "dated installed CSV",
+      "consolidated CLDF/full build and full tests",
+      "browser refresh/QA",
+      "commit/shipping"
+    ],
+    "dhule_rows_from_four_lists_republished_in_bareli": 832,
+    "exclude_target_ambiguous": 2,
+    "exclude_target_blanks": 21,
+    "exclude_toranmal_control_cells": 210,
+    "existing_base_languages": [
+      "PauriBareli",
+      "RathwiBareli"
+    ],
+    "existing_bibliography_alias_to_retire": "bhildhule",
+    "install_source_local_target_rows": 2497,
+    "new_base_languages": [
+      "Vasavi",
+      "Noiri"
+    ],
+    "new_dialect_ids": 8,
+    "new_target_rows_not_republished_in_bareli": 1665,
+    "reuse_existing_bareli_dialect_ids": 4
+  },
+  "source_key": "watters2013northerndhule",
+  "staged_target_forms": {
+    "rows": 2497,
+    "sha256": "5641b9d7ecfb44e6e644efba35e65223260291b7a8724b1fd25fac2fc94d3ed4",
+    "unique_entry_keys": 2497
+  },
+  "state": "source-local-preintegration-audit-complete",
+  "statuses": {
+    "all": {
+      "ambiguous": 3,
+      "attested": 2703,
+      "blank": 24,
+      "illegible": 0,
+      "unreviewed": 0
+    },
+    "control": {
+      "ambiguous": 1,
+      "attested": 206,
+      "blank": 3,
+      "illegible": 0,
+      "unreviewed": 0
+    },
+    "target": {
+      "ambiguous": 2,
+      "attested": 2497,
+      "blank": 21,
+      "illegible": 0,
+      "unreviewed": 0
+    }
+  },
+  "topology": {
+    "conceptual_cells": 2730,
+    "control_cells": 210,
+    "control_lists": 1,
+    "lists": 13,
+    "prompts": 210,
+    "target_cells": 2520,
+    "target_lists": 12
+  },
+  "unresolved_coordinates": [
+    "item:010/site:KEL/pdf:92/printed:84/column:left",
+    "item:031/site:MUN/pdf:97/printed:89/column:left",
+    "item:074/site:TOR/pdf:105/printed:97/column:right"
+  ]
+}

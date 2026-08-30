@@ -21,7 +21,7 @@
 - [x] 8. Parse references and provenance — unresolved keys: none
 - [x] 9. Model etymology and graph relations conservatively — covered by tests/test_edges.py and compiled edge invariants
 - [x] 10. Produce a complete audit trail — audit: data/other/forms/raw_data/20260817-mundlay-nihali-audit.csv, data/other/forms/raw_data/20260817-nagaraja-nihali-wiktionary-audit.csv, data/other/forms/raw_data/20260817-nihali-database-audit.csv, source_checklists/installed-record-audit.csv.gz
-- [x] 11. Add focused regression tests — tests: tests/test_nihali.py, tests/test_source_checklists.py
+- [x] 11. Add focused regression tests — tests: tests/test_nihali.py, tests/test_wiktionary_piir.py, tests/test_source_checklists.py
 - [ ] 12. Install and run the full data pipeline — pending final repository-wide make all and full-suite validation for this review
 - [x] 13. Browser database refresh and inspection (user-triggered) — deferred by standing policy; refresh and browser QA run only when the user requests them
 - [x] 14. Document, review, and ship only when requested — this source-specific checklist is the durable review record; shipping is not requested

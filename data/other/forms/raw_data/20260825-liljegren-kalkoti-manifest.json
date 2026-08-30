@@ -1,0 +1,64 @@
+{
+  "acquisition": "Open-access article PDF published by the Dartmouth College Library at journals.dartmouth.edu, article 423",
+  "bibliography": "Liljegren, Henrik. 2013. Notes on Kalkoti: A Shina Language with Strong Kohistani Influences. Linguistic Discovery 11(1): 129-160.",
+  "doi": "10.1349/PS1.1537-0852.A.423",
+  "extraction": {
+    "checked_in_layer": "data/other/forms/raw_data/20260825-liljegren-kalkoti-extract.psv",
+    "method": "deterministic pdfplumber extraction from the article's Acrobat text layer, read in content-stream order; no OCR",
+    "prose_layer": "the PROSE and FOOTNOTE_15 tables in this importer",
+    "regions": {
+      "fn15": 5,
+      "interlinear": 97,
+      "prose": 34,
+      "segment": 7,
+      "t1": 24,
+      "t11": 10,
+      "t12": 32,
+      "t13": 8,
+      "t14": 33,
+      "t16": 20,
+      "t17": 6,
+      "t18": 4,
+      "t19": 11,
+      "t2": 26,
+      "t20": 8,
+      "t3": 5,
+      "t4": 12,
+      "t5": 12,
+      "t6": 1,
+      "t8": 6,
+      "t9": 4
+    },
+    "structure_keys": [
+      "each lexical table is a fixed grid of column x-ranges whose printed row count is asserted after extraction",
+      "combining tone accents are kept on the vowel they follow in the content stream rather than the one they are drawn over",
+      "interlinear glosses are matched to their form by shared x-position"
+    ]
+  },
+  "outputs": {
+    "audit": "data/other/forms/raw_data/20260825-liljegren-kalkoti-audit.csv",
+    "audit_count": 365,
+    "form_count": 276,
+    "forms": "data/other/forms/20220913-kalkoti.csv",
+    "sample": "data/other/forms/raw_data/20260825-liljegren-kalkoti-sample.csv",
+    "statuses": {
+      "installed": 358,
+      "skipped": 7
+    }
+  },
+  "pdf_pages": 33,
+  "pdf_redistributed": false,
+  "pdf_sha256": "7eb1d21fb075e8c65b03924ba04b9bea90c2249b61aef56756f47e9f0c8f20c1",
+  "pdf_sha512": "a20b130999cfb82f6f2a2b0aa742dda22a2283708944192043e0b7f408310e56dcbffaaaa001ddf00e9e849fe230174f73f7dee590e53ba129210d2572b817df",
+  "rights": "Copyright is held by the author; the journal is open access. Only the extracted linguistic facts are installed and the PDF is not checked in.",
+  "scope": {
+    "etymology_policy": "Table 13 prints Turner (1966) numbers for eight words and those are linked directly; every other link is an editorial assignment carried over from the 2022 snapshot. No link is inferred from resemblance.",
+    "excluded": "the Palula, Gawri, Sawi and Kohistani Shina comparanda columns, which are secondary citations of Baart (1997, 1999a), Buddruss (1967), Liljegren (2008) and Schmidt & Kohistani (2008) and are ingested from those works directly; the phoneme inventories of Tables 7 and 10; the comparative tense/aspect Tables 15 and 21-24; example (9), which is Biori Palula; and the bibliography",
+    "included": "every Kalkoti form the article prints: the Kalkoti column of Tables 1-6, 8, 9, 13, 18 and 19, all of Tables 11, 12, 14, 16, 17 and 20, the phonetic citations in the prose of pp. 135-137 and p. 144 n. 15, the loanwords of p. 136 n. 5, and all seventeen Kalkoti interlinear examples",
+    "language_model": "all forms belong to canonical Kalkoti (Kalk) and carry the registered Kalkot dialect tag; the three speakers of the acoustic study remain provenance in the audit"
+  },
+  "snapshot_date": "2026-08-25",
+  "source_id": "kalkoti",
+  "supersedes": "the hand-typed 2022 snapshot of the same article at the same installed path; its editorial CDIAL assignments are carried forward through data/other/forms/raw_data/20260825-liljegren-kalkoti-etymology.csv",
+  "unresolved": []
+}

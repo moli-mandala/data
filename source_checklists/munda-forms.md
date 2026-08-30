@@ -3,20 +3,20 @@
 - Installed input: `data/munda/forms.csv`
 - Canonical checklist SHA-256: `23516ba5c7caeaa5310f6a32d92b86e4b9ae5e4479e792926b61dd0689129f05`
 - Source-type addenda: Etymological/comparative source
-- Installed rows: 1346
-- Compiled rows carrying this unit's citation keys: 1348
-- Input rows with checked grammatical evidence: 482
-- Compiled rows with canonical grammatical tags: 483
+- Installed rows: 1223
+- Compiled rows carrying this unit's citation keys: 4873
+- Input rows with checked grammatical evidence: 438
+- Compiled rows with canonical grammatical tags: 759
 - Source keys: A, AG, AG08, BAHL, BDBH, BMED, BSD1, BSD2, BSD3, BSDV1, BSDV2, BSDV5, CDES, CDSE, CSED, DHED, DSBO, DSGT, DSGU, DSJU, DSKH, DSKO, DSKW, DSRE, EM, EMV12, EMV13, EMV5, FR, GGEG, GTXT, GZ63, GZ65, HLKS, HOGV, JLIC, JV, MJTL, MVOL, NKEV, PGEG, PJDW, PJED, PKED, PKEP, PKEV, RSED, SAAW, Z1965, Z1975, Z1982, ZG63, ZG65, ZKPM, Zide, korkutxt, rau, soratxt
 
 ## Retrospective gate assessment
 
-- [x] 1. Establish the source and scope — source keys: A, AG, AG08, BAHL, BDBH, BMED, BSD1, BSD2, BSD3, BSDV1, BSDV2, BSDV5, CDES, CDSE, CSED, DHED, DSBO, DSGT, DSGU, DSJU, DSKH, DSKO, DSKW, DSRE, EM, EMV12, EMV13, EMV5, FR, GGEG, GTXT, GZ63, GZ65, HLKS, HOGV, JLIC, JV, MJTL, MVOL, NKEV, PGEG, PJDW, PJED, PKED, PKEP, PKEV, RSED, SAAW, Z1965, Z1975, Z1982, ZG63, ZG65, ZKPM, Zide, korkutxt, rau, soratxt; 1346 installed records
+- [x] 1. Establish the source and scope — source keys: A, AG, AG08, BAHL, BDBH, BMED, BSD1, BSD2, BSD3, BSDV1, BSDV2, BSDV5, CDES, CDSE, CSED, DHED, DSBO, DSGT, DSGU, DSJU, DSKH, DSKO, DSKW, DSRE, EM, EMV12, EMV13, EMV5, FR, GGEG, GTXT, GZ63, GZ65, HLKS, HOGV, JLIC, JV, MJTL, MVOL, NKEV, PGEG, PJDW, PJED, PKED, PKEP, PKEV, RSED, SAAW, Z1965, Z1975, Z1982, ZG63, ZG65, ZKPM, Zide, korkutxt, rau, soratxt; 1223 installed records
 - [x] 2. Choose the extraction path — importer/raw route: data/munda/rau_2019.csv
 - [x] 3. Plan the installed files and identifiers — 0 unique immutable Entry_Key values
 - [x] 4. Model languages and dialects before emitting forms — 13 input language/lect IDs; registry gaps: none
-- [x] 5. Emit the rich import schema — row widths {'8': 1346}; blank forms 0
-- [x] 6. Parse structured linguistic information — 482 input rows carry checked grammatical evidence; 483 compiled rows carry canonical grammatical tags
+- [x] 5. Emit the rich import schema — row widths {'8': 1223}; blank forms 0
+- [x] 6. Parse structured linguistic information — 438 input rows carry checked grammatical evidence; 759 compiled rows carry canonical grammatical tags
 - [x] 7. Build and verify the sound profile — profile route: conversion/house.txt; replacement characters in input forms: 0
 - [x] 8. Parse references and provenance — unresolved keys: none
 - [x] 9. Model etymology and graph relations conservatively — covered by tests/test_edges.py and compiled edge invariants
@@ -28,7 +28,7 @@
 
 ## Review summary
 
-- Counts: 1346 installed records; 1348 compiled citation attestations.
+- Counts: 1223 installed records; 4873 compiled citation attestations.
 - Exclusions: none detected in the installed input; any source-side exclusions remain in the linked importer/audit.
 - Unresolved cases: none detected.
 - Transcription: `conversion/house.txt`.

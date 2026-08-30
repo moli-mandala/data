@@ -1,6 +1,6 @@
 {
   "checklist_sha256": "23516ba5c7caeaa5310f6a32d92b86e4b9ae5e4479e792926b61dd0689129f05",
-  "unit_count": 99,
+  "unit_count": 155,
   "units": [
     {
       "addenda": [
@@ -13,8 +13,8 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
-      "compiled_grammar_tagged_rows": 52566,
-      "compiled_rows": 160176,
+      "compiled_grammar_tagged_rows": 52568,
+      "compiled_rows": 160237,
       "entry_key_count": 0,
       "id": "cdial-cdial",
       "importers": [
@@ -604,8 +604,8 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
-      "compiled_grammar_tagged_rows": 483,
-      "compiled_rows": 1348,
+      "compiled_grammar_tagged_rows": 759,
+      "compiled_rows": 4873,
       "entry_key_count": 0,
       "id": "munda-forms",
       "importers": [
@@ -631,16 +631,16 @@
         "conversion/house.txt"
       ],
       "replacement_character_count": 0,
-      "row_count": 1346,
+      "row_count": 1223,
       "row_widths": {
-        "8": 1346
+        "8": 1223
       },
-      "source_grammar_evidence_rows": 482,
+      "source_grammar_evidence_rows": 438,
       "source_key_counts": {
         "A": 1,
         "AG": 1,
         "AG08": 32,
-        "BAHL": 67,
+        "BAHL": 10,
         "BDBH": 102,
         "BMED": 97,
         "BSD1": 1,
@@ -678,7 +678,7 @@
         "MVOL": 3,
         "NKEV": 70,
         "PGEG": 109,
-        "PJDW": 73,
+        "PJDW": 7,
         "PJED": 1,
         "PKED": 93,
         "PKEP": 1,
@@ -1111,7 +1111,7 @@
       ],
       "blank_form_count": 0,
       "compiled_grammar_tagged_rows": 0,
-      "compiled_rows": 128,
+      "compiled_rows": 137,
       "entry_key_count": 128,
       "id": "20220913-dhivehi",
       "importers": [
@@ -1191,15 +1191,18 @@
         "Etymological/comparative source"
       ],
       "audits": [
+        "data/other/forms/raw_data/20260825-hultman-kalkoti-audit.csv",
+        "data/other/forms/raw_data/20260825-liljegren-kalkoti-audit.csv",
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
-      "compiled_grammar_tagged_rows": 3293,
-      "compiled_rows": 3458,
-      "entry_key_count": 0,
+      "compiled_grammar_tagged_rows": 3499,
+      "compiled_rows": 3602,
+      "entry_key_count": 276,
       "id": "20220913-kalkoti",
       "importers": [
-        "data/other/forms/20220913-kalkoti.csv"
+        "data/other/forms/raw_data/hultman_kalkoti_2023.py",
+        "data/other/forms/raw_data/liljegren_kalkoti_2013.py"
       ],
       "installed_file": "data/other/forms/20220913-kalkoti.csv",
       "languages": [
@@ -1207,16 +1210,17 @@
         "Phal"
       ],
       "profiles": [
-        "conversion/house.txt"
+        "conversion/kalkoti.txt"
       ],
       "replacement_character_count": 0,
-      "row_count": 139,
+      "row_count": 280,
       "row_widths": {
-        "8": 139
+        "15": 276,
+        "8": 4
       },
-      "source_grammar_evidence_rows": 0,
+      "source_grammar_evidence_rows": 206,
       "source_key_counts": {
-        "kalkoti": 136,
+        "kalkoti": 345,
         "liljegren": 3
       },
       "source_keys": [
@@ -1224,9 +1228,11 @@
         "liljegren"
       ],
       "tests": [
+        "tests/test_hultman_kalkoti.py",
+        "tests/test_liljegren_kalkoti.py",
         "tests/test_source_checklists.py"
       ],
-      "unique_entry_key_count": 0,
+      "unique_entry_key_count": 276,
       "unregistered_dialect_tags": [],
       "unregistered_languages": [],
       "unresolved_references": []
@@ -1241,7 +1247,7 @@
       ],
       "blank_form_count": 0,
       "compiled_grammar_tagged_rows": 3,
-      "compiled_rows": 108,
+      "compiled_rows": 111,
       "entry_key_count": 126,
       "id": "20220913-khetrani",
       "importers": [
@@ -1501,7 +1507,7 @@
       ],
       "blank_form_count": 0,
       "compiled_grammar_tagged_rows": 2,
-      "compiled_rows": 640,
+      "compiled_rows": 655,
       "entry_key_count": 644,
       "id": "20220913-patyal",
       "importers": [
@@ -1567,7 +1573,7 @@
       ],
       "blank_form_count": 0,
       "compiled_grammar_tagged_rows": 7514,
-      "compiled_rows": 7589,
+      "compiled_rows": 9351,
       "entry_key_count": 0,
       "id": "20220913-strand",
       "importers": [
@@ -1617,7 +1623,7 @@
       ],
       "blank_form_count": 0,
       "compiled_grammar_tagged_rows": 7514,
-      "compiled_rows": 7589,
+      "compiled_rows": 9351,
       "entry_key_count": 0,
       "id": "20220913-strand2",
       "importers": [
@@ -1661,7 +1667,7 @@
       ],
       "blank_form_count": 0,
       "compiled_grammar_tagged_rows": 204,
-      "compiled_rows": 332,
+      "compiled_rows": 391,
       "entry_key_count": 258,
       "id": "20220913-thari",
       "importers": [
@@ -1789,19 +1795,24 @@
     {
       "addenda": [
         "Dictionary or glossary",
+        "OCR-heavy source",
         "Etymological/comparative source"
       ],
       "audits": [
-        "data/other/forms/raw_data/20220930-berger-grammar-audit.csv",
+        "data/other/forms/raw_data/20260828-berger-audit.csv.gz",
+        "data/other/forms/raw_data/20260828-berger-sample.csv",
+        "data/other/forms/raw_data/20260828-berger-manifest.json",
+        "data/other/forms/raw_data/20260828-berger-entry-map.csv",
+        "data/other/forms/raw_data/20260828-berger-editorial.csv",
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
-      "compiled_grammar_tagged_rows": 23,
+      "compiled_grammar_tagged_rows": 39,
       "compiled_rows": 39,
-      "entry_key_count": 31,
+      "entry_key_count": 39,
       "id": "20220930-berger",
       "importers": [
-        "data/other/forms/raw_data/berger.py"
+        "data/other/forms/raw_data/berger_cleanup.py"
       ],
       "installed_file": "data/other/forms/20220930-berger.csv",
       "languages": [
@@ -1816,7 +1827,7 @@
       "row_widths": {
         "15": 39
       },
-      "source_grammar_evidence_rows": 23,
+      "source_grammar_evidence_rows": 39,
       "source_key_counts": {
         "berger": 39
       },
@@ -1824,10 +1835,10 @@
         "berger"
       ],
       "tests": [
-        "tests/test_berger.py",
-        "tests/test_source_checklists.py"
+        "tests/test_berger_cleanup.py",
+        "tests/test_berger.py"
       ],
-      "unique_entry_key_count": 29,
+      "unique_entry_key_count": 39,
       "unregistered_dialect_tags": [],
       "unregistered_languages": [],
       "unresolved_references": []
@@ -1842,7 +1853,7 @@
       ],
       "blank_form_count": 0,
       "compiled_grammar_tagged_rows": 8582,
-      "compiled_rows": 8686,
+      "compiled_rows": 10448,
       "entry_key_count": 0,
       "id": "20221003-strand3",
       "importers": [
@@ -1947,7 +1958,7 @@
       ],
       "blank_form_count": 0,
       "compiled_grammar_tagged_rows": 0,
-      "compiled_rows": 15,
+      "compiled_rows": 74,
       "entry_key_count": 0,
       "id": "20230403-arora",
       "importers": [
@@ -2078,6 +2089,8 @@
         "backstrom1992"
       ],
       "tests": [
+        "tests/test_backstrom_northern_pakistan.py",
+        "tests/test_sil_northern_dhule_bhils_2013.py",
         "tests/test_source_checklists.py"
       ],
       "unique_entry_key_count": 0,
@@ -2087,14 +2100,15 @@
     },
     {
       "addenda": [
-        "Dictionary or glossary"
+        "Survey wordlists or comparative tables",
+        "Etymological/comparative source"
       ],
       "audits": [
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
       "compiled_grammar_tagged_rows": 23,
-      "compiled_rows": 2730,
+      "compiled_rows": 2692,
       "entry_key_count": 0,
       "id": "20230517-chattisgarhi",
       "importers": [
@@ -2309,6 +2323,7 @@
     },
     {
       "addenda": [
+        "Survey wordlists or comparative tables",
         "Etymological/comparative source"
       ],
       "audits": [
@@ -2425,6 +2440,7 @@
     },
     {
       "addenda": [
+        "Survey wordlists or comparative tables",
         "Etymological/comparative source"
       ],
       "audits": [
@@ -2585,7 +2601,8 @@
     },
     {
       "addenda": [
-        "Dictionary or glossary"
+        "Survey wordlists or comparative tables",
+        "Etymological/comparative source"
       ],
       "audits": [
         "source_checklists/installed-record-audit.csv.gz"
@@ -2640,57 +2657,51 @@
     },
     {
       "addenda": [
-        "Survey wordlists or comparative tables",
-        "Etymological/comparative source"
+        "Survey wordlists or comparative tables"
       ],
       "audits": [
-        "source_checklists/audits/20230530-tharu2-exclusions.csv",
+        "data/other/forms/raw_data/sil_western_tharu_2017/staged_audit.tsv",
+        "data/other/forms/raw_data/sil_western_tharu_2017/unresolved_readings.tsv",
+        "data/other/forms/raw_data/sil_western_tharu_2017/source_manifest.json",
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
-      "compiled_grammar_tagged_rows": 35,
-      "compiled_rows": 3217,
-      "entry_key_count": 0,
+      "compiled_grammar_tagged_rows": 528,
+      "compiled_rows": 3560,
+      "entry_key_count": 3560,
       "id": "20230530-tharu2",
       "importers": [
-        "data/other/forms/raw_data/tharu2.py"
+        "data/other/forms/raw_data/sil_western_tharu_2017/import_western_tharu_2017.py"
       ],
       "installed_file": "data/other/forms/20230530-tharu2.csv",
       "languages": [
+        "Buksa",
         "Chitwan",
-        "Tharu-BNM",
-        "Tharu-BNT",
-        "Tharu-DDK",
-        "Tharu-DGC",
-        "Tharu-DKS",
-        "Tharu-DkR",
-        "Tharu-KkP",
-        "Tharu-RKB",
-        "Tharu-RNK",
-        "Tharu-RNS",
-        "Tharu-RkM",
-        "Tharu-SkP",
-        "Tharu-TkN"
+        "Dang",
+        "Kathoriya",
+        "Rana",
+        "Sunha"
       ],
       "profiles": [
-        "conversion/chattisgarhi.txt"
+        "conversion/sil-western-tharu.txt"
       ],
       "replacement_character_count": 0,
-      "row_count": 3571,
+      "row_count": 3560,
       "row_widths": {
-        "8": 3571
+        "15": 3560
       },
-      "source_grammar_evidence_rows": 49,
+      "source_grammar_evidence_rows": 528,
       "source_key_counts": {
-        "webster": 3571
+        "webster": 3560
       },
       "source_keys": [
         "webster"
       ],
       "tests": [
-        "tests/test_source_checklists.py"
+        "tests/test_tharu.py",
+        "data/other/forms/raw_data/sil_western_tharu_2017/test_western_tharu_2017.py"
       ],
-      "unique_entry_key_count": 0,
+      "unique_entry_key_count": 3560,
       "unregistered_dialect_tags": [],
       "unregistered_languages": [],
       "unresolved_references": []
@@ -2700,6 +2711,8 @@
         "Etymological/comparative source"
       ],
       "audits": [
+        "data/other/forms/raw_data/20260827-degener-shina-audit.csv",
+        "data/other/forms/raw_data/20260828-buddruss-shina-raetsel-audit.csv",
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
@@ -2708,6 +2721,8 @@
       "entry_key_count": 0,
       "id": "20230621-shina",
       "importers": [
+        "data/other/forms/raw_data/buddruss_shina_1996.py",
+        "data/other/forms/raw_data/degener_shina_2008.py",
         "data/other/forms/raw_data/link_northern_shina_database.py",
         "data/other/forms/raw_data/link_schmidt_shina_database.py",
         "data/other/forms/raw_data/shina.py"
@@ -2737,6 +2752,8 @@
         "schmidt"
       ],
       "tests": [
+        "tests/test_buddruss_shina_1996.py",
+        "tests/test_degener_shina.py",
         "tests/test_source_checklists.py"
       ],
       "unique_entry_key_count": 0,
@@ -3140,9 +3157,9 @@
         "Eng",
         "H",
         "Kho",
+        "Kt",
         "Pers",
         "Psht",
-        "SSNP-chitral-KAT",
         "Tr",
         "Turk",
         "bir",
@@ -3230,6 +3247,7 @@
         "Survey wordlists or comparative tables"
       ],
       "audits": [
+        "data/other/forms/raw_data/20260828-ssnp04-audit.csv",
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
@@ -3327,6 +3345,7 @@
       ],
       "tests": [
         "tests/test_ssnp.py",
+        "tests/test_ssnp04_1992.py",
         "tests/test_source_checklists.py"
       ],
       "unique_entry_key_count": 0,
@@ -3337,19 +3356,24 @@
     {
       "addenda": [
         "Dictionary or glossary",
+        "OCR-heavy source",
         "Etymological/comparative source"
       ],
       "audits": [
-        "data/other/forms/raw_data/20220930-berger-grammar-audit.csv",
+        "data/other/forms/raw_data/20260828-berger-audit.csv.gz",
+        "data/other/forms/raw_data/20260828-berger-sample.csv",
+        "data/other/forms/raw_data/20260828-berger-manifest.json",
+        "data/other/forms/raw_data/20260828-berger-entry-map.csv",
+        "data/other/forms/raw_data/20260828-berger-editorial.csv",
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
-      "compiled_grammar_tagged_rows": 5112,
-      "compiled_rows": 8964,
-      "entry_key_count": 9154,
+      "compiled_grammar_tagged_rows": 10664,
+      "compiled_rows": 10664,
+      "entry_key_count": 10664,
       "id": "20260726-berger-auto",
       "importers": [
-        "data/other/forms/raw_data/berger.py"
+        "data/other/forms/raw_data/berger_cleanup.py"
       ],
       "installed_file": "data/other/forms/20260726-berger-auto.csv",
       "languages": [
@@ -3360,22 +3384,22 @@
         "conversion/berger.txt"
       ],
       "replacement_character_count": 0,
-      "row_count": 9154,
+      "row_count": 10664,
       "row_widths": {
-        "15": 9154
+        "15": 10664
       },
-      "source_grammar_evidence_rows": 5244,
+      "source_grammar_evidence_rows": 10664,
       "source_key_counts": {
-        "berger-auto": 9154
+        "berger-auto": 10664
       },
       "source_keys": [
         "berger-auto"
       ],
       "tests": [
-        "tests/test_berger.py",
-        "tests/test_source_checklists.py"
+        "tests/test_berger_cleanup.py",
+        "tests/test_berger.py"
       ],
-      "unique_entry_key_count": 9154,
+      "unique_entry_key_count": 10664,
       "unregistered_dialect_tags": [],
       "unregistered_languages": [],
       "unresolved_references": []
@@ -3429,6 +3453,7 @@
         "Dictionary or glossary"
       ],
       "audits": [
+        "data/other/forms/raw_data/20260828-sil-eastern-gujari-audit.csv",
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
@@ -3463,6 +3488,7 @@
         "tests/test_burushaski_cognates.py",
         "tests/test_burushaski_comparisons.py",
         "tests/test_eastern_magar.py",
+        "tests/test_sil_eastern_gujari_2023.py",
         "tests/test_yoshioka.py",
         "tests/test_source_checklists.py"
       ],
@@ -3566,6 +3592,7 @@
         "Website/API or external CLDF"
       ],
       "audits": [
+        "data/other/forms/raw_data/20260825-liljegren-kalkoti-audit.csv",
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
@@ -3575,7 +3602,8 @@
       "id": "20260810-liljegren-hindukush",
       "importers": [
         "data/other/forms/raw_data/liljegren.py",
-        "data/other/forms/raw_data/liljegren_hindukush.py"
+        "data/other/forms/raw_data/liljegren_hindukush.py",
+        "data/other/forms/raw_data/liljegren_kalkoti_2013.py"
       ],
       "installed_file": "data/other/forms/20260810-liljegren-hindukush.csv",
       "languages": [
@@ -3657,6 +3685,7 @@
       "tests": [
         "tests/test_liljegren.py",
         "tests/test_liljegren_hindukush.py",
+        "tests/test_liljegren_kalkoti.py",
         "tests/test_source_checklists.py"
       ],
       "unique_entry_key_count": 11600,
@@ -3951,6 +3980,7 @@
         "Survey wordlists or comparative tables"
       ],
       "audits": [
+        "data/other/forms/raw_data/20260828-sil-eastern-gujari-audit.csv",
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
@@ -3987,6 +4017,7 @@
       "tests": [
         "tests/test_eastern_magar.py",
         "tests/test_magar_2024.py",
+        "tests/test_sil_eastern_gujari_2023.py",
         "tests/test_source_checklists.py"
       ],
       "unique_entry_key_count": 865,
@@ -4482,6 +4513,7 @@
         "Dictionary or glossary"
       ],
       "audits": [
+        "data/other/forms/raw_data/20260826-sil-kurux-audit.csv",
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
@@ -4516,6 +4548,7 @@
       ],
       "tests": [
         "tests/test_kurux_nepal.py",
+        "tests/test_sil_kurux_2011_manual.py",
         "tests/test_source_checklists.py"
       ],
       "unique_entry_key_count": 1336,
@@ -4915,7 +4948,9 @@
         "webster2022north-gorkha"
       ],
       "tests": [
+        "tests/test_backstrom_northern_pakistan.py",
         "tests/test_north_gorkha.py",
+        "tests/test_sil_northern_dhule_bhils_2013.py",
         "tests/test_source_checklists.py"
       ],
       "unique_entry_key_count": 4269,
@@ -4928,6 +4963,7 @@
         "Survey wordlists or comparative tables"
       ],
       "audits": [
+        "data/other/forms/raw_data/20260828-sil-pahari-pothwari-audit.csv",
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
@@ -4963,6 +4999,7 @@
       ],
       "tests": [
         "tests/test_pahari.py",
+        "tests/test_sil_pahari_pothwari_2010.py",
         "tests/test_source_checklists.py"
       ],
       "unique_entry_key_count": 1452,
@@ -5050,6 +5087,7 @@
       ],
       "tests": [
         "tests/test_rabha.py",
+        "tests/test_sil_rabha_2013_manual.py",
         "tests/test_source_checklists.py"
       ],
       "unique_entry_key_count": 400,
@@ -5315,6 +5353,7 @@
         "Survey wordlists or comparative tables"
       ],
       "audits": [
+        "data/other/forms/raw_data/20260828-sil-western-arunachal-monpa-audit.csv",
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
@@ -5589,6 +5628,7 @@
       ],
       "tests": [
         "tests/test_nihali.py",
+        "tests/test_wiktionary_piir.py",
         "tests/test_source_checklists.py"
       ],
       "unique_entry_key_count": 1761,
@@ -5604,6 +5644,7 @@
         "data/other/forms/raw_data/20260817-mundlay-nihali-audit.csv",
         "data/other/forms/raw_data/20260817-nagaraja-nihali-wiktionary-audit.csv",
         "data/other/forms/raw_data/20260817-nihali-database-audit.csv",
+        "data/other/forms/raw_data/20260828-bhattacharya-bonda-audit.csv",
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
@@ -5612,6 +5653,7 @@
       "entry_key_count": 407,
       "id": "20260817-nihali-database-bhattacharya",
       "importers": [
+        "data/other/forms/raw_data/bhattacharya_bonda_1968.py",
         "data/other/forms/raw_data/link_northern_shina_database.py",
         "data/other/forms/raw_data/link_schmidt_shina_database.py",
         "data/other/forms/raw_data/nihali.py",
@@ -5639,6 +5681,7 @@
         "nihali-database2026"
       ],
       "tests": [
+        "tests/test_bhattacharya_bonda_1968.py",
         "tests/test_nihali.py",
         "tests/test_source_checklists.py"
       ],
@@ -5756,7 +5799,7 @@
       ],
       "blank_form_count": 0,
       "compiled_grammar_tagged_rows": 263,
-      "compiled_rows": 263,
+      "compiled_rows": 281,
       "entry_key_count": 263,
       "id": "20260818-nured-org",
       "importers": [
@@ -6148,6 +6191,2816 @@
         "tests/test_source_checklists.py"
       ],
       "unique_entry_key_count": 1943,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Dictionary or glossary",
+        "OCR-heavy source",
+        "Etymological/comparative source"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/20260824-buddruss-waigali-audit.csv",
+        "data/other/forms/raw_data/20260824-buddruss-waigali-sample.csv",
+        "data/other/forms/raw_data/20260824-buddruss-waigali-manifest.json",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 158,
+      "compiled_rows": 158,
+      "entry_key_count": 158,
+      "id": "20260824-buddruss-waigali",
+      "importers": [
+        "data/other/forms/raw_data/buddruss_waigali_1992.py"
+      ],
+      "installed_file": "data/other/forms/20260824-buddruss-waigali.csv",
+      "languages": [
+        "Wg"
+      ],
+      "profiles": [
+        "conversion/buddruss-waigali.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 158,
+      "row_widths": {
+        "15": 158
+      },
+      "source_grammar_evidence_rows": 158,
+      "source_key_counts": {
+        "buddruss-waigali1992": 158
+      },
+      "source_keys": [
+        "buddruss-waigali1992"
+      ],
+      "tests": [
+        "tests/test_buddruss_waigali_wama.py",
+        "tests/test_source_checklists.py"
+      ],
+      "unique_entry_key_count": 158,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Dictionary or glossary",
+        "OCR-heavy source",
+        "Etymological/comparative source"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/20260824-buddruss-wama-audit.csv",
+        "data/other/forms/raw_data/20260824-buddruss-wama-sample.csv",
+        "data/other/forms/raw_data/20260824-buddruss-wama-manifest.json",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 276,
+      "compiled_rows": 276,
+      "entry_key_count": 276,
+      "id": "20260824-buddruss-wama",
+      "importers": [
+        "data/other/forms/raw_data/buddruss_wama_2006.py"
+      ],
+      "installed_file": "data/other/forms/20260824-buddruss-wama.csv",
+      "languages": [
+        "Ash"
+      ],
+      "profiles": [
+        "conversion/buddruss-wama.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 276,
+      "row_widths": {
+        "15": 276
+      },
+      "source_grammar_evidence_rows": 276,
+      "source_key_counts": {
+        "buddruss-wama2006": 276
+      },
+      "source_keys": [
+        "buddruss-wama2006"
+      ],
+      "tests": [
+        "tests/test_buddruss_waigali_wama.py",
+        "tests/test_source_checklists.py"
+      ],
+      "unique_entry_key_count": 276,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Dictionary or glossary"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/20260825-beine-bhatri-audit.csv",
+        "data/other/forms/raw_data/20260825-gondi-beine-audit.csv",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 23,
+      "compiled_rows": 2492,
+      "entry_key_count": 2492,
+      "id": "20260825-beine-bhatri",
+      "importers": [
+        "data/other/forms/raw_data/beine_bhatri.py",
+        "data/other/forms/raw_data/gondi_beine.py"
+      ],
+      "installed_file": "data/other/forms/20260825-beine-bhatri.csv",
+      "languages": [
+        "beine_bag",
+        "beine_ban",
+        "beine_bar",
+        "beine_bau",
+        "beine_bcb",
+        "beine_bje",
+        "beine_bkp",
+        "beine_bsa",
+        "beine_bum",
+        "beine_hbh",
+        "beine_oar",
+        "beine_ocu"
+      ],
+      "profiles": [
+        "conversion/beine-bhatri.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 2492,
+      "row_widths": {
+        "15": 2492
+      },
+      "source_grammar_evidence_rows": 23,
+      "source_key_counts": {
+        "beine2017bhatri": 2492
+      },
+      "source_keys": [
+        "beine2017bhatri"
+      ],
+      "tests": [
+        "tests/test_beine_bhatri.py",
+        "tests/test_gondi_beine.py",
+        "tests/test_source_checklists.py"
+      ],
+      "unique_entry_key_count": 2492,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Etymological/comparative source"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/20260825-boretzky-igla-etymologies-audit.csv",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 1065,
+      "compiled_rows": 1129,
+      "entry_key_count": 1140,
+      "id": "20260825-boretzky-igla-etymologies",
+      "importers": [
+        "data/other/forms/raw_data/boretzky_igla_1994.py"
+      ],
+      "installed_file": "data/other/forms/20260825-boretzky-igla-etymologies.csv",
+      "languages": [
+        "RomBalk",
+        "RomSint",
+        "RomVlax",
+        "eur"
+      ],
+      "profiles": [
+        "conversion/boretzky-romani.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 1140,
+      "row_widths": {
+        "15": 1140
+      },
+      "source_grammar_evidence_rows": 1114,
+      "source_key_counts": {
+        "barannikov1934gypsy": 1,
+        "bischoff1827woerterbuch": 1,
+        "boretzky1994romani": 1174,
+        "colocci1889zingari": 5,
+        "finck1903zigeuner": 2,
+        "heinschink1989izmir": 1,
+        "jesina1886romanicib": 2,
+        "lipa1963cikanstina": 1,
+        "paspati1870tchinghianes": 1,
+        "rozwadowski1936zakopane": 11,
+        "sampson1926welsh": 53,
+        "sowa1898zigeuner": 17,
+        "thesleff1901finnland": 17
+      },
+      "source_keys": [
+        "barannikov1934gypsy",
+        "bischoff1827woerterbuch",
+        "boretzky1994romani",
+        "colocci1889zingari",
+        "finck1903zigeuner",
+        "heinschink1989izmir",
+        "jesina1886romanicib",
+        "lipa1963cikanstina",
+        "paspati1870tchinghianes",
+        "rozwadowski1936zakopane",
+        "sampson1926welsh",
+        "sowa1898zigeuner",
+        "thesleff1901finnland"
+      ],
+      "tests": [
+        "tests/test_boretzky_igla.py",
+        "tests/test_manual_survey_etymologies.py",
+        "tests/test_source_checklists.py"
+      ],
+      "unique_entry_key_count": 1140,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Dictionary or glossary"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/20260825-beine-bhatri-audit.csv",
+        "data/other/forms/raw_data/20260825-gondi-beine-audit.csv",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 0,
+      "compiled_rows": 10264,
+      "entry_key_count": 10264,
+      "id": "20260825-gondi-beine",
+      "importers": [
+        "data/other/forms/raw_data/beine_bhatri.py",
+        "data/other/forms/raw_data/gondi_beine.py"
+      ],
+      "installed_file": "data/other/forms/20260825-gondi-beine.csv",
+      "languages": [
+        "beine_bhb",
+        "beine_bhe",
+        "beine_bhm",
+        "beine_bhs",
+        "beine_dog",
+        "beine_gam",
+        "beine_gar",
+        "beine_gba",
+        "beine_gbh",
+        "beine_gch",
+        "beine_gcj",
+        "beine_gdh",
+        "beine_get",
+        "beine_ggg",
+        "beine_ght",
+        "beine_gja",
+        "beine_gka",
+        "beine_gki",
+        "beine_gkt",
+        "beine_glb",
+        "beine_gni",
+        "beine_goa",
+        "beine_gok",
+        "beine_gra",
+        "beine_grp",
+        "beine_gse",
+        "beine_gtd",
+        "beine_gut",
+        "beine_gwa",
+        "beine_khu",
+        "beine_ktg",
+        "beine_lxg",
+        "beine_mad",
+        "beine_mal",
+        "beine_mbh",
+        "beine_mdh",
+        "beine_met",
+        "beine_mku",
+        "beine_mlj",
+        "beine_mso",
+        "beine_mud",
+        "beine_pkh",
+        "beine_pmd",
+        "beine_prg",
+        "beine_psh",
+        "beine_rui"
+      ],
+      "profiles": [
+        "conversion/gondi-beine.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 10264,
+      "row_widths": {
+        "15": 10264
+      },
+      "source_grammar_evidence_rows": 0,
+      "source_key_counts": {
+        "beine1994gondi": 10264,
+        "rama-coltekin-sofroniev2017gondi": 10264
+      },
+      "source_keys": [
+        "beine1994gondi",
+        "rama-coltekin-sofroniev2017gondi"
+      ],
+      "tests": [
+        "tests/test_beine_bhatri.py",
+        "tests/test_gondi_beine.py",
+        "tests/test_source_checklists.py"
+      ],
+      "unique_entry_key_count": 10264,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Etymological/comparative source"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/20260825-herin-domari-aleppo-audit.csv",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 661,
+      "compiled_rows": 1003,
+      "entry_key_count": 1074,
+      "id": "20260825-herin-domari-aleppo",
+      "importers": [
+        "data/other/forms/raw_data/herin_domari_aleppo_2012.py"
+      ],
+      "installed_file": "data/other/forms/20260825-herin-domari-aleppo.csv",
+      "languages": [
+        "as"
+      ],
+      "profiles": [
+        "conversion/domari-aleppo.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 1074,
+      "row_widths": {
+        "15": 1074
+      },
+      "source_grammar_evidence_rows": 696,
+      "source_key_counts": {
+        "herin2012domari": 1267
+      },
+      "source_keys": [
+        "herin2012domari"
+      ],
+      "tests": [
+        "tests/test_herin_domari_aleppo.py",
+        "tests/test_source_checklists.py"
+      ],
+      "unique_entry_key_count": 1074,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Dictionary or glossary"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/20260825-hultman-kalkoti-audit.csv",
+        "data/other/forms/raw_data/20260825-liljegren-kalkoti-audit.csv",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 347,
+      "compiled_rows": 475,
+      "entry_key_count": 475,
+      "id": "20260825-hultman-kalkoti",
+      "importers": [
+        "data/other/forms/raw_data/hultman_kalkoti_2023.py",
+        "data/other/forms/raw_data/liljegren_kalkoti_2013.py"
+      ],
+      "installed_file": "data/other/forms/20260825-hultman-kalkoti.csv",
+      "languages": [
+        "Kalk"
+      ],
+      "profiles": [
+        "conversion/kalkoti.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 475,
+      "row_widths": {
+        "15": 475
+      },
+      "source_grammar_evidence_rows": 347,
+      "source_key_counts": {
+        "hultman2023kalkoti": 889
+      },
+      "source_keys": [
+        "hultman2023kalkoti"
+      ],
+      "tests": [
+        "tests/test_hultman_kalkoti.py",
+        "tests/test_liljegren_kalkoti.py",
+        "tests/test_source_checklists.py"
+      ],
+      "unique_entry_key_count": 475,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Survey wordlists or comparative tables"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/20260825-knobloch-sauji-extract.psv",
+        "data/other/forms/raw_data/20260825-knobloch-sauji-audit.csv",
+        "data/other/forms/raw_data/20260825-knobloch-sauji-sample.csv",
+        "data/other/forms/raw_data/20260825-knobloch-sauji-manifest.json",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 423,
+      "compiled_rows": 573,
+      "entry_key_count": 573,
+      "id": "20260825-knobloch-sauji",
+      "importers": [
+        "data/other/forms/raw_data/knobloch_sauji_2020.py"
+      ],
+      "installed_file": "data/other/forms/20260825-knobloch-sauji.csv",
+      "languages": [
+        "Sv"
+      ],
+      "profiles": [
+        "conversion/knobloch-sauji.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 573,
+      "row_widths": {
+        "15": 573
+      },
+      "source_grammar_evidence_rows": 423,
+      "source_key_counts": {
+        "buddruss1967sau": 44,
+        "knobloch2020sauji": 885
+      },
+      "source_keys": [
+        "buddruss1967sau",
+        "knobloch2020sauji"
+      ],
+      "tests": [
+        "tests/test_knobloch_sauji.py",
+        "tests/test_source_checklists.py"
+      ],
+      "unique_entry_key_count": 573,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Dictionary or glossary",
+        "Etymological/comparative source"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/20260825-rezai-baghbidi-zargari-audit.csv",
+        "data/other/forms/raw_data/20260825-rezai-baghbidi-zargari-sample.csv",
+        "data/other/forms/raw_data/20260825-rezai-baghbidi-zargari-manifest.json",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 522,
+      "compiled_rows": 522,
+      "entry_key_count": 522,
+      "id": "20260825-rezai-baghbidi-zargari",
+      "importers": [
+        "data/other/forms/raw_data/rezai_baghbidi_zargari_2003.py"
+      ],
+      "installed_file": "data/other/forms/20260825-rezai-baghbidi-zargari.csv",
+      "languages": [
+        "Zarg"
+      ],
+      "profiles": [
+        "conversion/zargari.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 522,
+      "row_widths": {
+        "15": 522
+      },
+      "source_grammar_evidence_rows": 522,
+      "source_key_counts": {
+        "rezaibaghbidi2003zargari": 588
+      },
+      "source_keys": [
+        "rezaibaghbidi2003zargari"
+      ],
+      "tests": [
+        "tests/test_rezai_baghbidi_zargari_2003.py",
+        "tests/test_source_checklists.py"
+      ],
+      "unique_entry_key_count": 522,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Survey wordlists or comparative tables",
+        "OCR-heavy source"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/20260826-sil-garobd-audit.csv",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 0,
+      "compiled_rows": 4444,
+      "entry_key_count": 4444,
+      "id": "20260826-sil-garobd",
+      "importers": [
+        "data/other/forms/20260826-sil-garobd.csv"
+      ],
+      "installed_file": "data/other/forms/20260826-sil-garobd.csv",
+      "languages": [
+        "B",
+        "Garo",
+        "Koch",
+        "Lyngngam",
+        "Megam"
+      ],
+      "profiles": [
+        "conversion/sil-bangladesh.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 4444,
+      "row_widths": {
+        "15": 4444
+      },
+      "source_grammar_evidence_rows": 0,
+      "source_key_counts": {
+        "kim-kim-sangma2012garo": 4444
+      },
+      "source_keys": [
+        "kim-kim-sangma2012garo"
+      ],
+      "tests": [
+        "tests/test_source_checklists.py"
+      ],
+      "unique_entry_key_count": 4444,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Dictionary or glossary"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/20260826-sil-idukki-audit.csv",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 0,
+      "compiled_rows": 4630,
+      "entry_key_count": 4630,
+      "id": "20260826-sil-idukki",
+      "importers": [
+        "data/other/forms/20260826-sil-idukki.csv"
+      ],
+      "installed_file": "data/other/forms/20260826-sil-idukki.csv",
+      "languages": [
+        "MalaPulaya",
+        "Mannan",
+        "Muthuvan",
+        "Paliya",
+        "Urali"
+      ],
+      "profiles": [
+        "conversion/sil-survey.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 4630,
+      "row_widths": {
+        "15": 4630
+      },
+      "source_grammar_evidence_rows": 0,
+      "source_key_counts": {
+        "varghese-mathew2015idukki": 4630
+      },
+      "source_keys": [
+        "varghese-mathew2015idukki"
+      ],
+      "tests": [
+        "tests/test_source_checklists.py"
+      ],
+      "unique_entry_key_count": 4630,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Dictionary or glossary"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/20260826-sil-koch-audit.csv",
+        "data/other/forms/raw_data/20260826-sil-kochbd-audit.csv",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 0,
+      "compiled_rows": 2281,
+      "entry_key_count": 2281,
+      "id": "20260826-sil-koch",
+      "importers": [
+        "data/other/forms/raw_data/sil_koch_2011.py"
+      ],
+      "installed_file": "data/other/forms/20260826-sil-koch.csv",
+      "languages": [
+        "Garo",
+        "Koch",
+        "Rabha"
+      ],
+      "profiles": [
+        "conversion/sil-koch.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 2281,
+      "row_widths": {
+        "15": 2281
+      },
+      "source_grammar_evidence_rows": 0,
+      "source_key_counts": {
+        "kondakov2011koch": 2281
+      },
+      "source_keys": [
+        "kondakov2011koch"
+      ],
+      "tests": [
+        "tests/test_sil_koch_2011.py",
+        "tests/test_sil_kochbd_2011_manual.py",
+        "tests/test_sil_kochbd_2011_post_freeze.py",
+        "tests/test_source_checklists.py"
+      ],
+      "unique_entry_key_count": 2281,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Survey wordlists or comparative tables",
+        "OCR-heavy source"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/sil_kochbd_2011_manual/source_manifest.json",
+        "data/other/forms/raw_data/sil_kochbd_2011_manual/post_freeze_manifest.json",
+        "data/other/forms/raw_data/sil_kochbd_2011_manual/reconciliation.tsv",
+        "data/other/forms/raw_data/sil_kochbd_2011_manual/staging_audit.tsv",
+        "data/other/forms/raw_data/sil_kochbd_2011_manual/exclusion_policy.json",
+        "data/other/forms/raw_data/sil_kochbd_2011_manual/shared_integration_manifest.json",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 0,
+      "compiled_rows": 1017,
+      "entry_key_count": 1017,
+      "id": "20260826-sil-kochbd",
+      "importers": [
+        "data/other/forms/raw_data/sil_kochbd_2011_manual/build_manual.py",
+        "data/other/forms/raw_data/sil_kochbd_2011_manual/build_post_freeze_package.py"
+      ],
+      "installed_file": "data/other/forms/20260826-sil-kochbd.csv",
+      "languages": [
+        "Koch"
+      ],
+      "profiles": [
+        "conversion/sil-bangladesh.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 1017,
+      "row_widths": {
+        "15": 1017
+      },
+      "source_grammar_evidence_rows": 0,
+      "source_key_counts": {
+        "kim-ahmad-kim-sangma2011kochbd": 1017
+      },
+      "source_keys": [
+        "kim-ahmad-kim-sangma2011kochbd"
+      ],
+      "tests": [
+        "tests/test_sil_kochbd_2011_manual.py",
+        "tests/test_sil_kochbd_2011_post_freeze.py",
+        "tests/test_sound_profiles.py",
+        "tests/test_dialects.py"
+      ],
+      "unique_entry_key_count": 1017,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Survey wordlists or comparative tables"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/sil_kurux_2011_manual/source_manifest.json",
+        "data/other/forms/raw_data/sil_kurux_2011_manual/reconciliation.tsv",
+        "data/other/forms/raw_data/sil_kurux_2011_manual/staging_audit.tsv",
+        "data/other/forms/raw_data/sil_kurux_2011_manual/exclusion_policy.json",
+        "data/other/forms/raw_data/sil_kurux_2011_manual/post_freeze_manifest.json",
+        "data/other/forms/raw_data/sil_kurux_2011_manual/shared_integration_manifest.json",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 0,
+      "compiled_rows": 1365,
+      "entry_key_count": 1365,
+      "id": "20260826-sil-kurux",
+      "importers": [
+        "data/other/forms/raw_data/sil_kurux_2011_manual/build_manual_chunks.py",
+        "data/other/forms/raw_data/sil_kurux_2011_manual/build_post_freeze_package.py"
+      ],
+      "installed_file": "data/other/forms/20260826-sil-kurux.csv",
+      "languages": [
+        "Kurux"
+      ],
+      "profiles": [
+        "conversion/sil-kurux.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 1365,
+      "row_widths": {
+        "15": 1365
+      },
+      "source_grammar_evidence_rows": 0,
+      "source_key_counts": {
+        "kim-ahmad-kim-sangma2011kurux": 1365
+      },
+      "source_keys": [
+        "kim-ahmad-kim-sangma2011kurux"
+      ],
+      "tests": [
+        "tests/test_sil_kurux_2011_manual.py",
+        "tests/test_source_checklists.py"
+      ],
+      "unique_entry_key_count": 1365,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Dictionary or glossary"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/20260826-sil-palakkad-audit.csv",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 0,
+      "compiled_rows": 4710,
+      "entry_key_count": 4710,
+      "id": "20260826-sil-palakkad",
+      "importers": [
+        "data/other/forms/20260826-sil-palakkad.csv"
+      ],
+      "installed_file": "data/other/forms/20260826-sil-palakkad.csv",
+      "languages": [
+        "AluKurumba",
+        "Eravallan",
+        "Irula",
+        "Kadar",
+        "Kurumba",
+        "MalaMalasar",
+        "Malasar",
+        "Muduga"
+      ],
+      "profiles": [
+        "conversion/sil-survey.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 4710,
+      "row_widths": {
+        "15": 4710
+      },
+      "source_grammar_evidence_rows": 0,
+      "source_key_counts": {
+        "varghese2015palakkad": 4710
+      },
+      "source_keys": [
+        "varghese2015palakkad"
+      ],
+      "tests": [
+        "tests/test_source_checklists.py"
+      ],
+      "unique_entry_key_count": 4710,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Dictionary or glossary"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/20260826-sil-tripura-audit.csv",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 0,
+      "compiled_rows": 8997,
+      "entry_key_count": 8997,
+      "id": "20260826-sil-tripura",
+      "importers": [
+        "data/other/forms/20260826-sil-tripura.csv"
+      ],
+      "installed_file": "data/other/forms/20260826-sil-tripura.csv",
+      "languages": [
+        "B",
+        "Garo",
+        "Kokborok"
+      ],
+      "profiles": [
+        "conversion/sil-tripura.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 8997,
+      "row_widths": {
+        "15": 8997
+      },
+      "source_grammar_evidence_rows": 0,
+      "source_key_counts": {
+        "kim-kim-sangma-ahmad2011tripura": 8997
+      },
+      "source_keys": [
+        "kim-kim-sangma-ahmad2011tripura"
+      ],
+      "tests": [
+        "tests/test_source_checklists.py"
+      ],
+      "unique_entry_key_count": 8997,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Dictionary or glossary",
+        "Website/API or external CLDF"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/20260826-woods-halbi-audit.csv",
+        "data/other/forms/raw_data/20260826-woods-halbi-sample.csv",
+        "data/other/forms/raw_data/20260826-woods-halbi-manifest.json",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 3202,
+      "compiled_rows": 7773,
+      "entry_key_count": 7773,
+      "id": "20260826-woods-halbi",
+      "importers": [
+        "data/other/forms/raw_data/woods_halbi.py"
+      ],
+      "installed_file": "data/other/forms/20260826-woods-halbi.csv",
+      "languages": [
+        "hal"
+      ],
+      "profiles": [
+        "conversion/halbi-woods.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 7773,
+      "row_widths": {
+        "15": 7773
+      },
+      "source_grammar_evidence_rows": 3202,
+      "source_key_counts": {
+        "woods2019halbi": 7773
+      },
+      "source_keys": [
+        "woods2019halbi"
+      ],
+      "tests": [
+        "tests/test_woods_halbi.py",
+        "tests/test_source_checklists.py"
+      ],
+      "unique_entry_key_count": 7773,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Dictionary or glossary",
+        "OCR-heavy source",
+        "Etymological/comparative source"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/20260827-degener-shina-audit.csv",
+        "data/other/forms/raw_data/20260827-degener-shina-sample.csv",
+        "data/other/forms/raw_data/20260827-degener-shina-manifest.json",
+        "data/other/forms/raw_data/20260827-degener-shina-transcription.txt",
+        "data/other/forms/raw_data/20260827-degener-shina-editorial.csv",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 1264,
+      "compiled_rows": 1577,
+      "entry_key_count": 1577,
+      "id": "20260827-degener-shina",
+      "importers": [
+        "data/other/forms/raw_data/degener_shina_2008.py"
+      ],
+      "installed_file": "data/other/forms/20260827-degener-shina.csv",
+      "languages": [
+        "Sh"
+      ],
+      "profiles": [
+        "conversion/degener-shina.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 1577,
+      "row_widths": {
+        "15": 1577
+      },
+      "source_grammar_evidence_rows": 1264,
+      "source_key_counts": {
+        "degener-shina2008": 1577
+      },
+      "source_keys": [
+        "degener-shina2008"
+      ],
+      "tests": [
+        "tests/test_degener_shina.py",
+        "tests/test_source_checklists.py"
+      ],
+      "unique_entry_key_count": 1577,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Dictionary or glossary",
+        "Website/API or external CLDF",
+        "Etymological/comparative source"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/20260828-bahl-korwa-audit.csv",
+        "data/other/forms/raw_data/20260828-bahl-korwa-sample.csv",
+        "data/other/forms/raw_data/20260828-bahl-korwa-manifest.json",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 37,
+      "compiled_rows": 1840,
+      "entry_key_count": 1830,
+      "id": "20260828-bahl-korwa",
+      "importers": [
+        "data/other/forms/raw_data/bahl_korwa_1962.py"
+      ],
+      "installed_file": "data/other/forms/20260828-bahl-korwa.csv",
+      "languages": [
+        "kw"
+      ],
+      "profiles": [
+        "conversion/bahl-korwa.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 1830,
+      "row_widths": {
+        "15": 1830
+      },
+      "source_grammar_evidence_rows": 35,
+      "source_key_counts": {
+        "BAHL": 1830
+      },
+      "source_keys": [
+        "BAHL"
+      ],
+      "tests": [
+        "tests/test_bahl_korwa_1962.py",
+        "tests/test_source_checklists.py"
+      ],
+      "unique_entry_key_count": 1830,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Dictionary or glossary",
+        "Website/API or external CLDF",
+        "Etymological/comparative source"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/20260828-bhattacharya-bonda-audit.csv",
+        "data/other/forms/raw_data/20260828-bhattacharya-bonda-sample.csv",
+        "data/other/forms/raw_data/20260828-bhattacharya-bonda-manifest.json",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 183,
+      "compiled_rows": 3330,
+      "entry_key_count": 3330,
+      "id": "20260828-bhattacharya-bonda",
+      "importers": [
+        "data/other/forms/raw_data/bhattacharya_bonda_1968.py"
+      ],
+      "installed_file": "data/other/forms/20260828-bhattacharya-bonda.csv",
+      "languages": [
+        "re"
+      ],
+      "profiles": [
+        "conversion/bhattacharya-bonda.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 3330,
+      "row_widths": {
+        "15": 3330
+      },
+      "source_grammar_evidence_rows": 183,
+      "source_key_counts": {
+        "bhattacharya1968bonda": 3330
+      },
+      "source_keys": [
+        "bhattacharya1968bonda"
+      ],
+      "tests": [
+        "tests/test_bhattacharya_bonda_1968.py",
+        "tests/test_source_checklists.py"
+      ],
+      "unique_entry_key_count": 3330,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Dictionary or glossary",
+        "OCR-heavy source",
+        "Etymological/comparative source"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/20260828-buddruss-shina-raetsel-audit.csv",
+        "data/other/forms/raw_data/20260828-buddruss-shina-raetsel-sample.csv",
+        "data/other/forms/raw_data/20260828-buddruss-shina-raetsel-manifest.json",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 311,
+      "compiled_rows": 311,
+      "entry_key_count": 311,
+      "id": "20260828-buddruss-shina-raetsel",
+      "importers": [
+        "data/other/forms/raw_data/buddruss_shina_1996.py"
+      ],
+      "installed_file": "data/other/forms/20260828-buddruss-shina-raetsel.csv",
+      "languages": [
+        "Sh"
+      ],
+      "profiles": [
+        "conversion/buddruss-shina.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 311,
+      "row_widths": {
+        "15": 311
+      },
+      "source_grammar_evidence_rows": 311,
+      "source_key_counts": {
+        "buddruss-shina1996": 311
+      },
+      "source_keys": [
+        "buddruss-shina1996"
+      ],
+      "tests": [
+        "tests/test_buddruss_shina_1996.py",
+        "tests/test_source_checklists.py"
+      ],
+      "unique_entry_key_count": 311,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Dictionary or glossary",
+        "Survey wordlists or comparative tables",
+        "Website/API or external CLDF",
+        "Etymological/comparative source"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/20260828-munda-proto-kherwarian-audit.csv",
+        "data/other/forms/raw_data/20260828-munda-proto-kherwarian-sample.csv",
+        "data/other/forms/raw_data/20260828-munda-proto-kherwarian-manifest.json",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 110,
+      "compiled_rows": 2997,
+      "entry_key_count": 2919,
+      "id": "20260828-munda-proto-kherwarian",
+      "importers": [
+        "data/other/forms/raw_data/munda_proto_kherwarian_1968.py"
+      ],
+      "installed_file": "data/other/forms/20260828-munda-proto-kherwarian.csv",
+      "languages": [
+        "PKher",
+        "PreMu",
+        "sa"
+      ],
+      "profiles": [
+        "conversion/munda-proto-kherwarian.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 2919,
+      "row_widths": {
+        "15": 2919
+      },
+      "source_grammar_evidence_rows": 110,
+      "source_key_counts": {
+        "munda1968proto": 2919
+      },
+      "source_keys": [
+        "munda1968proto"
+      ],
+      "tests": [
+        "tests/test_munda_proto_kherwarian_1968.py",
+        "tests/test_source_checklists.py"
+      ],
+      "unique_entry_key_count": 2919,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Dictionary or glossary",
+        "Website/API or external CLDF",
+        "Etymological/comparative source"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/20260828-pinnow-juang-audit.csv",
+        "data/other/forms/raw_data/20260828-pinnow-juang-sample.csv",
+        "data/other/forms/raw_data/20260828-pinnow-juang-manifest.json",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 287,
+      "compiled_rows": 1825,
+      "entry_key_count": 1818,
+      "id": "20260828-pinnow-juang",
+      "importers": [
+        "data/other/forms/raw_data/pinnow_juang_1960.py"
+      ],
+      "installed_file": "data/other/forms/20260828-pinnow-juang.csv",
+      "languages": [
+        "ju"
+      ],
+      "profiles": [
+        "conversion/pinnow-juang.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 1818,
+      "row_widths": {
+        "15": 1818
+      },
+      "source_grammar_evidence_rows": 285,
+      "source_key_counts": {
+        "PJDW": 1818
+      },
+      "source_keys": [
+        "PJDW"
+      ],
+      "tests": [
+        "tests/test_pinnow_juang_1960.py",
+        "tests/test_source_checklists.py"
+      ],
+      "unique_entry_key_count": 1818,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Dictionary or glossary",
+        "Survey wordlists or comparative tables",
+        "Website/API or external CLDF",
+        "Etymological/comparative source"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/20260828-pinnow-munda-audit.csv",
+        "data/other/forms/raw_data/20260828-pinnow-munda-sample.csv",
+        "data/other/forms/raw_data/20260828-pinnow-munda-manifest.json",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 111,
+      "compiled_rows": 4051,
+      "entry_key_count": 4051,
+      "id": "20260828-pinnow-munda",
+      "importers": [
+        "data/other/forms/raw_data/pinnow_munda_1959.py"
+      ],
+      "installed_file": "data/other/forms/20260828-pinnow-munda.csv",
+      "languages": [
+        "Asuri",
+        "Birhor",
+        "Mahali",
+        "Turi",
+        "gu",
+        "ho",
+        "ju",
+        "kh",
+        "ko",
+        "kw",
+        "mu",
+        "re",
+        "sa",
+        "so"
+      ],
+      "profiles": [
+        "conversion/pinnow-munda.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 4051,
+      "row_widths": {
+        "15": 4051
+      },
+      "source_grammar_evidence_rows": 111,
+      "source_key_counts": {
+        "pinnow1959versuch": 4051
+      },
+      "source_keys": [
+        "pinnow1959versuch"
+      ],
+      "tests": [
+        "tests/test_pinnow_munda_1959.py",
+        "tests/test_source_checklists.py"
+      ],
+      "unique_entry_key_count": 4051,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Survey wordlists or comparative tables"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/sil_amri_karbi_2021/reviewed_transcription.tsv",
+        "data/other/forms/raw_data/20260828-sil-amri-karbi-audit.csv",
+        "data/other/forms/raw_data/20260828-sil-amri-karbi-manifest.json",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 0,
+      "compiled_rows": 2092,
+      "entry_key_count": 5092,
+      "id": "20260828-sil-amri-karbi",
+      "importers": [
+        "data/other/forms/raw_data/sil_amri_karbi_2021/extract_amri.py",
+        "data/other/forms/raw_data/sil_amri_karbi_2021/finalize_review.py",
+        "data/other/forms/raw_data/sil_amri_karbi_2021/import_amri.py"
+      ],
+      "installed_file": "data/other/forms/20260828-sil-amri-karbi.csv",
+      "languages": [
+        "amri_karbi",
+        "karbi"
+      ],
+      "profiles": [
+        "conversion/sil-amri-karbi.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 5092,
+      "row_widths": {
+        "15": 5092
+      },
+      "source_grammar_evidence_rows": 0,
+      "source_key_counts": {
+        "abraham-daimary2021amrikarbi": 5092
+      },
+      "source_keys": [
+        "abraham-daimary2021amrikarbi"
+      ],
+      "tests": [
+        "tests/test_sil_amri_karbi_2021.py",
+        "tests/test_source_checklists.py"
+      ],
+      "unique_entry_key_count": 5092,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Survey wordlists or comparative tables",
+        "OCR-heavy source"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/sil_bagheli_2022/manual_transcription.txt",
+        "data/other/forms/raw_data/sil_bagheli_2022/image_manifest.tsv",
+        "data/other/forms/raw_data/20260828-sil-bagheli-audit.csv",
+        "data/other/forms/raw_data/20260828-sil-bagheli-manifest.json",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 0,
+      "compiled_rows": 1628,
+      "entry_key_count": 5828,
+      "id": "20260828-sil-bagheli",
+      "importers": [
+        "data/other/forms/raw_data/sil_bagheli_2022/extract_ocr.py",
+        "data/other/forms/raw_data/sil_bagheli_2022/import_bagheli.py"
+      ],
+      "installed_file": "data/other/forms/20260828-sil-bagheli.csv",
+      "languages": [
+        "bagheli_lakshman"
+      ],
+      "profiles": [
+        "conversion/sil-bagheli.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 5828,
+      "row_widths": {
+        "15": 5828
+      },
+      "source_grammar_evidence_rows": 0,
+      "source_key_counts": {
+        "koshy2022bagheli": 5828
+      },
+      "source_keys": [
+        "koshy2022bagheli"
+      ],
+      "tests": [
+        "tests/test_sil_bagheli_2022.py",
+        "tests/test_source_checklists.py"
+      ],
+      "unique_entry_key_count": 5828,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Survey wordlists or comparative tables"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/20260828-sil-bareli-pauri-audit.csv",
+        "data/other/forms/raw_data/20260828-sil-bareli-pauri-manifest.json",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 0,
+      "compiled_rows": 6320,
+      "entry_key_count": 6320,
+      "id": "20260828-sil-bareli-pauri",
+      "importers": [
+        "data/other/forms/raw_data/sil_bareli_pauri_2018/import_bareli_pauri.py"
+      ],
+      "installed_file": "data/other/forms/20260828-sil-bareli-pauri.csv",
+      "languages": [
+        "Bhilali",
+        "Bhili",
+        "Khandesi",
+        "Nimadi",
+        "PalyaBareli",
+        "PauriBareli",
+        "Rathawi",
+        "RathwiBareli"
+      ],
+      "profiles": [
+        "conversion/sil-bareli-pauri.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 6320,
+      "row_widths": {
+        "15": 6320
+      },
+      "source_grammar_evidence_rows": 0,
+      "source_key_counts": {
+        "varkey-vunnamatla2018bareli": 6320
+      },
+      "source_keys": [
+        "varkey-vunnamatla2018bareli"
+      ],
+      "tests": [
+        "tests/test_sil_bareli_pauri_2018.py",
+        "tests/test_source_checklists.py"
+      ],
+      "unique_entry_key_count": 6320,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Dictionary or glossary"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/20260828-sil-bishnupriya-audit.csv",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 0,
+      "compiled_rows": 1801,
+      "entry_key_count": 1801,
+      "id": "20260828-sil-bishnupriya",
+      "importers": [
+        "data/other/forms/20260828-sil-bishnupriya.csv"
+      ],
+      "installed_file": "data/other/forms/20260828-sil-bishnupriya.csv",
+      "languages": [
+        "Bishnupriya"
+      ],
+      "profiles": [
+        "conversion/sil-bishnupriya.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 1801,
+      "row_widths": {
+        "15": 1801
+      },
+      "source_grammar_evidence_rows": 0,
+      "source_key_counts": {
+        "kim-kim2008bishnupriya": 1801
+      },
+      "source_keys": [
+        "kim-kim2008bishnupriya"
+      ],
+      "tests": [
+        "tests/test_sil_bishnupriya_2008.py",
+        "tests/test_source_checklists.py"
+      ],
+      "unique_entry_key_count": 1801,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Survey wordlists or comparative tables"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/sil_bonda_didayi_2022/extracted_cells.tsv",
+        "data/other/forms/raw_data/20260828-sil-bonda-didayi-audit.csv",
+        "data/other/forms/raw_data/20260828-sil-bonda-didayi-manifest.json",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 0,
+      "compiled_rows": 812,
+      "entry_key_count": 1938,
+      "id": "20260828-sil-bonda-didayi",
+      "importers": [
+        "data/other/forms/raw_data/sil_bonda_didayi_2022/extract_pdf.py",
+        "data/other/forms/raw_data/sil_bonda_didayi_2022/import_bonda_didayi.py"
+      ],
+      "installed_file": "data/other/forms/20260828-sil-bonda-didayi.csv",
+      "languages": [
+        "gt",
+        "re"
+      ],
+      "profiles": [
+        "conversion/sil-bonda-didayi.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 1938,
+      "row_widths": {
+        "15": 1938
+      },
+      "source_grammar_evidence_rows": 0,
+      "source_key_counts": {
+        "mathew-chamberlain2022bonda-didayi": 1938
+      },
+      "source_keys": [
+        "mathew-chamberlain2022bonda-didayi"
+      ],
+      "tests": [
+        "tests/test_sil_bonda_didayi_2022.py",
+        "tests/test_source_checklists.py"
+      ],
+      "unique_entry_key_count": 1938,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Survey wordlists or comparative tables"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/sil_desia_2021/manual_review.tsv",
+        "data/other/forms/raw_data/sil_desia_2021/page_review.tsv",
+        "data/other/forms/raw_data/sil_desia_2021/glyph_order_corrections.tsv",
+        "data/other/forms/raw_data/sil_desia_2021/metadata_discrepancies.tsv",
+        "data/other/forms/raw_data/20260828-sil-desia-audit.csv",
+        "data/other/forms/raw_data/20260828-sil-desia-manifest.json",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 0,
+      "compiled_rows": 1204,
+      "entry_key_count": 4655,
+      "id": "20260828-sil-desia",
+      "importers": [
+        "data/other/forms/raw_data/sil_desia_2021/extract_scaffold.py",
+        "data/other/forms/raw_data/sil_desia_2021/import_desia.py"
+      ],
+      "installed_file": "data/other/forms/20260828-sil-desia.csv",
+      "languages": [
+        "AdivasiOriya"
+      ],
+      "profiles": [
+        "conversion/sil-desia.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 4655,
+      "row_widths": {
+        "15": 4655
+      },
+      "source_grammar_evidence_rows": 0,
+      "source_key_counts": {
+        "behera2021desia": 4655
+      },
+      "source_keys": [
+        "behera2021desia"
+      ],
+      "tests": [
+        "tests/test_sil_desia_2021.py",
+        "tests/test_source_checklists.py"
+      ],
+      "unique_entry_key_count": 4655,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Survey wordlists or comparative tables"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/20260828-sil-dogri-audit.csv",
+        "data/other/forms/raw_data/20260828-sil-dogri-manifest.json",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 0,
+      "compiled_rows": 218,
+      "entry_key_count": 207,
+      "id": "20260828-sil-dogri",
+      "importers": [
+        "data/other/forms/raw_data/sil_dogri_2007/extract_dogri.py",
+        "data/other/forms/raw_data/sil_dogri_2007/import_dogri.py"
+      ],
+      "installed_file": "data/other/forms/20260828-sil-dogri.csv",
+      "languages": [
+        "dog"
+      ],
+      "profiles": [
+        "conversion/sil-dogri.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 207,
+      "row_widths": {
+        "15": 207
+      },
+      "source_grammar_evidence_rows": 0,
+      "source_key_counts": {
+        "brightbill-turner2007dogri": 207
+      },
+      "source_keys": [
+        "brightbill-turner2007dogri"
+      ],
+      "tests": [
+        "tests/test_sil_dogri_2007.py",
+        "tests/test_source_checklists.py"
+      ],
+      "unique_entry_key_count": 207,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Survey wordlists or comparative tables"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/sil_eastern_gujari_2023/reviewed_transcription.tsv",
+        "data/other/forms/raw_data/20260828-sil-eastern-gujari-audit.csv",
+        "data/other/forms/raw_data/20260828-sil-eastern-gujari-manifest.json",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 0,
+      "compiled_rows": 583,
+      "entry_key_count": 1753,
+      "id": "20260828-sil-eastern-gujari",
+      "importers": [
+        "data/other/forms/raw_data/sil_eastern_gujari_2023/extract_eastern_gujari.py",
+        "data/other/forms/raw_data/sil_eastern_gujari_2023/finalize_review.py",
+        "data/other/forms/raw_data/sil_eastern_gujari_2023/import_eastern_gujari.py"
+      ],
+      "installed_file": "data/other/forms/20260828-sil-eastern-gujari.csv",
+      "languages": [
+        "Goj"
+      ],
+      "profiles": [
+        "conversion/sil-eastern-gujari.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 1753,
+      "row_widths": {
+        "15": 1753
+      },
+      "source_grammar_evidence_rows": 0,
+      "source_key_counts": {
+        "hugoniot-polster-ahmad-rajan2023easterngujari": 1753
+      },
+      "source_keys": [
+        "hugoniot-polster-ahmad-rajan2023easterngujari"
+      ],
+      "tests": [
+        "tests/test_sil_eastern_gujari_2023.py",
+        "tests/test_source_checklists.py"
+      ],
+      "unique_entry_key_count": 1753,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Survey wordlists or comparative tables",
+        "OCR-heavy source"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/sil_haryanvi_2024/manual_transcription.tsv",
+        "data/other/forms/raw_data/20260828-sil-haryanvi-audit.csv",
+        "data/other/forms/raw_data/20260828-sil-haryanvi-manifest.json",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 72,
+      "compiled_rows": 1553,
+      "entry_key_count": 1553,
+      "id": "20260828-sil-haryanvi",
+      "importers": [
+        "data/other/forms/raw_data/sil_haryanvi_2024/extract_ocr.py",
+        "data/other/forms/raw_data/sil_haryanvi_2024/import_haryanvi.py"
+      ],
+      "installed_file": "data/other/forms/20260828-sil-haryanvi.csv",
+      "languages": [
+        "kaithal"
+      ],
+      "profiles": [
+        "conversion/sil-haryanvi.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 1553,
+      "row_widths": {
+        "15": 1553
+      },
+      "source_grammar_evidence_rows": 72,
+      "source_key_counts": {
+        "webster2024haryanvi": 1553
+      },
+      "source_keys": [
+        "webster2024haryanvi"
+      ],
+      "tests": [
+        "tests/test_sil_haryanvi_2024.py",
+        "tests/test_source_checklists.py"
+      ],
+      "unique_entry_key_count": 1553,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Survey wordlists or comparative tables"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/20260828-sil-jaunsari-audit.csv",
+        "data/other/forms/raw_data/20260828-sil-jaunsari-manifest.json",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 0,
+      "compiled_rows": 1619,
+      "entry_key_count": 1619,
+      "id": "20260828-sil-jaunsari",
+      "importers": [
+        "data/other/forms/raw_data/sil_jaunsari_2008/extract_jaunsari.py",
+        "data/other/forms/raw_data/sil_jaunsari_2008/import_jaunsari.py"
+      ],
+      "installed_file": "data/other/forms/20260828-sil-jaunsari.csv",
+      "languages": [
+        "jaun"
+      ],
+      "profiles": [
+        "conversion/sil-jaunsari.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 1619,
+      "row_widths": {
+        "15": 1619
+      },
+      "source_grammar_evidence_rows": 0,
+      "source_key_counts": {
+        "john2008jaunsari": 1619
+      },
+      "source_keys": [
+        "john2008jaunsari"
+      ],
+      "tests": [
+        "tests/test_sil_jaunsari_2008.py",
+        "tests/test_source_checklists.py"
+      ],
+      "unique_entry_key_count": 1619,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Survey wordlists or comparative tables",
+        "OCR-heavy source"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/sil_konda_dora_2012/reviewed_transcription.psv",
+        "data/other/forms/raw_data/20260828-sil-konda-dora-audit.csv",
+        "data/other/forms/raw_data/20260828-sil-konda-dora-manifest.json",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 0,
+      "compiled_rows": 289,
+      "entry_key_count": 452,
+      "id": "20260828-sil-konda-dora",
+      "importers": [
+        "data/other/forms/raw_data/sil_konda_dora_2012/extract_scaffold.py",
+        "data/other/forms/raw_data/sil_konda_dora_2012/import_konda_dora.py"
+      ],
+      "installed_file": "data/other/forms/20260828-sil-konda-dora.csv",
+      "languages": [
+        "Konda"
+      ],
+      "profiles": [
+        "conversion/sil-konda-dora.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 452,
+      "row_widths": {
+        "15": 452
+      },
+      "source_grammar_evidence_rows": 0,
+      "source_key_counts": {
+        "blair-george2012kondadora": 452
+      },
+      "source_keys": [
+        "blair-george2012kondadora"
+      ],
+      "tests": [
+        "tests/test_sil_konda_dora_2012.py",
+        "tests/test_source_checklists.py"
+      ],
+      "unique_entry_key_count": 452,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Survey wordlists or comparative tables",
+        "OCR-heavy source"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/sil_korku_2021/manual_review_data.py",
+        "data/other/forms/raw_data/20260828-sil-korku-audit.csv",
+        "data/other/forms/raw_data/20260828-sil-korku-manifest.json",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 39,
+      "compiled_rows": 967,
+      "entry_key_count": 1521,
+      "id": "20260828-sil-korku",
+      "importers": [
+        "data/other/forms/raw_data/sil_korku_2021/extract_ocr.py",
+        "data/other/forms/raw_data/sil_korku_2021/import_korku.py"
+      ],
+      "installed_file": "data/other/forms/20260828-sil-korku.csv",
+      "languages": [
+        "ko"
+      ],
+      "profiles": [
+        "conversion/sil-korku.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 1521,
+      "row_widths": {
+        "15": 1521
+      },
+      "source_grammar_evidence_rows": 50,
+      "source_key_counts": {
+        "stahl2021korku": 1521
+      },
+      "source_keys": [
+        "stahl2021korku"
+      ],
+      "tests": [
+        "tests/test_sil_korku_2021.py",
+        "tests/test_source_checklists.py"
+      ],
+      "unique_entry_key_count": 1521,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Survey wordlists or comparative tables",
+        "OCR-heavy source"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/sil_korwa_kodaku_2022/manual_review.tsv",
+        "data/other/forms/raw_data/sil_korwa_kodaku_2022/page_review.tsv",
+        "data/other/forms/raw_data/sil_korwa_kodaku_2022/unresolved_source_codes.tsv",
+        "data/other/forms/raw_data/20260828-sil-korwa-kodaku-audit.csv",
+        "data/other/forms/raw_data/20260828-sil-korwa-kodaku-manifest.json",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 0,
+      "compiled_rows": 1675,
+      "entry_key_count": 4458,
+      "id": "20260828-sil-korwa-kodaku",
+      "importers": [
+        "data/other/forms/raw_data/sil_korwa_kodaku_2022/extract_scaffolds.py",
+        "data/other/forms/raw_data/sil_korwa_kodaku_2022/import_korwa_kodaku.py"
+      ],
+      "installed_file": "data/other/forms/20260828-sil-korwa-kodaku.csv",
+      "languages": [
+        "Kodaku",
+        "kw"
+      ],
+      "profiles": [
+        "conversion/sil-korwa-kodaku.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 4458,
+      "row_widths": {
+        "15": 4458
+      },
+      "source_grammar_evidence_rows": 0,
+      "source_key_counts": {
+        "behera2022korwakodaku": 4458
+      },
+      "source_keys": [
+        "behera2022korwakodaku"
+      ],
+      "tests": [
+        "tests/test_sil_korwa_kodaku_2022.py",
+        "tests/test_source_checklists.py"
+      ],
+      "unique_entry_key_count": 4458,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Survey wordlists or comparative tables",
+        "OCR-heavy source"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/sil_koya_2021/manual_review_data.py",
+        "data/other/forms/raw_data/20260828-sil-koya-audit.csv",
+        "data/other/forms/raw_data/20260828-sil-koya-manifest.json",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 3,
+      "compiled_rows": 1153,
+      "entry_key_count": 1438,
+      "id": "20260828-sil-koya",
+      "importers": [
+        "data/other/forms/raw_data/sil_koya_2021/extract_ocr.py",
+        "data/other/forms/raw_data/sil_koya_2021/import_koya.py"
+      ],
+      "installed_file": "data/other/forms/20260828-sil-koya.csv",
+      "languages": [
+        "Gondi"
+      ],
+      "profiles": [
+        "conversion/sil-koya.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 1438,
+      "row_widths": {
+        "15": 1438
+      },
+      "source_grammar_evidence_rows": 4,
+      "source_key_counts": {
+        "devagnanavaram-et-al2021koya": 1438
+      },
+      "source_keys": [
+        "devagnanavaram-et-al2021koya"
+      ],
+      "tests": [
+        "tests/test_sil_koya_2021.py",
+        "tests/test_source_checklists.py"
+      ],
+      "unique_entry_key_count": 1438,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Survey wordlists or comparative tables"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/20260828-sil-kuki-chin-bangladesh-audit.csv",
+        "data/other/forms/raw_data/20260828-sil-kuki-chin-bangladesh-manifest.json",
+        "data/other/forms/raw_data/sil_kuki_chin_bangladesh_2011/sag_ipa_used.tsv",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 0,
+      "compiled_rows": 3235,
+      "entry_key_count": 3235,
+      "id": "20260828-sil-kuki-chin-bangladesh",
+      "importers": [
+        "data/other/forms/raw_data/sil_kuki_chin_bangladesh_2011/extract_kuki_chin.py",
+        "data/other/forms/raw_data/sil_kuki_chin_bangladesh_2011/import_kuki_chin.py"
+      ],
+      "installed_file": "data/other/forms/20260828-sil-kuki-chin-bangladesh.csv",
+      "languages": [
+        "AshoChin",
+        "BawmChin",
+        "KhumiChin",
+        "Mizo",
+        "Pangkhua"
+      ],
+      "profiles": [
+        "conversion/sil-bangladesh.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 3235,
+      "row_widths": {
+        "15": 3235
+      },
+      "source_grammar_evidence_rows": 0,
+      "source_key_counts": {
+        "kim-roy-sangma2011kukichin": 3235
+      },
+      "source_keys": [
+        "kim-roy-sangma2011kukichin"
+      ],
+      "tests": [
+        "tests/test_sil_kuki_chin_bangladesh_2011.py",
+        "tests/test_source_checklists.py"
+      ],
+      "unique_entry_key_count": 3235,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Survey wordlists or comparative tables",
+        "OCR-heavy source"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/sil_kullu_2021/manual_pages.tsv",
+        "data/other/forms/raw_data/20260828-sil-kullu-audit.csv",
+        "data/other/forms/raw_data/20260828-sil-kullu-manifest.json",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 4,
+      "compiled_rows": 1725,
+      "entry_key_count": 2963,
+      "id": "20260828-sil-kullu",
+      "importers": [
+        "data/other/forms/raw_data/sil_kullu_2021/extract_kullu.py",
+        "data/other/forms/raw_data/sil_kullu_2021/import_kullu.py"
+      ],
+      "installed_file": "data/other/forms/20260828-sil-kullu.csv",
+      "languages": [
+        "kul"
+      ],
+      "profiles": [
+        "conversion/sil-kullu.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 2963,
+      "row_widths": {
+        "15": 2963
+      },
+      "source_grammar_evidence_rows": 5,
+      "source_key_counts": {
+        "blair2021kullu": 2963
+      },
+      "source_keys": [
+        "blair2021kullu"
+      ],
+      "tests": [
+        "tests/test_sil_kullu_2021.py",
+        "tests/test_source_checklists.py"
+      ],
+      "unique_entry_key_count": 2963,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Survey wordlists or comparative tables",
+        "OCR-heavy source"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/sil_kurumba_2012/source_manifest.json",
+        "data/other/forms/raw_data/sil_kurumba_2012/staged_audit.csv",
+        "data/other/forms/raw_data/sil_kurumba_2012/unresolved_readings.tsv",
+        "data/other/forms/raw_data/sil_kurumba_2012/shared_integration_audit.csv",
+        "data/other/forms/raw_data/sil_kurumba_2012/shared_integration_manifest.json",
+        "data/other/forms/raw_data/sil_kurumba_2012/sound_profile_decisions.json",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 0,
+      "compiled_rows": 3204,
+      "entry_key_count": 3204,
+      "id": "20260828-sil-kurumba",
+      "importers": [
+        "data/other/forms/raw_data/sil_kurumba_2012/import_kurumba.py",
+        "data/other/forms/raw_data/sil_kurumba_2012/install_target_forms.py"
+      ],
+      "installed_file": "data/other/forms/20260828-sil-kurumba.csv",
+      "languages": [
+        "AluKurumba",
+        "BettaKurumba",
+        "Kannada"
+      ],
+      "profiles": [
+        "conversion/sil-kurumba-2012.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 3204,
+      "row_widths": {
+        "15": 3204
+      },
+      "source_grammar_evidence_rows": 0,
+      "source_key_counts": {
+        "blairetal2012kurumba": 3204
+      },
+      "source_keys": [
+        "blairetal2012kurumba"
+      ],
+      "tests": [
+        "tests/test_sil_kurumba_2012.py",
+        "tests/test_sound_profiles.py",
+        "tests/test_source_checklists.py"
+      ],
+      "unique_entry_key_count": 3204,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Survey wordlists or comparative tables"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/20260828-sil-lahul-audit.csv",
+        "data/other/forms/raw_data/20260828-sil-lahul-manifest.json",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 0,
+      "compiled_rows": 3293,
+      "entry_key_count": 5027,
+      "id": "20260828-sil-lahul",
+      "importers": [
+        "data/other/forms/raw_data/sil_lahul_2019/extract_lahul.py",
+        "data/other/forms/raw_data/sil_lahul_2019/import_lahul.py"
+      ],
+      "installed_file": "data/other/forms/20260828-sil-lahul.csv",
+      "languages": [
+        "bfu",
+        "cih",
+        "lae",
+        "lbf",
+        "lhl",
+        "sbu"
+      ],
+      "profiles": [
+        "conversion/sil-lahul.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 5027,
+      "row_widths": {
+        "15": 5027
+      },
+      "source_grammar_evidence_rows": 0,
+      "source_key_counts": {
+        "chamberlain-chamberlain2019lahul": 5027
+      },
+      "source_keys": [
+        "chamberlain-chamberlain2019lahul"
+      ],
+      "tests": [
+        "tests/test_sil_lahul_2019.py",
+        "tests/test_source_checklists.py"
+      ],
+      "unique_entry_key_count": 5027,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Survey wordlists or comparative tables"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/20260828-sil-malvi-audit.csv",
+        "data/other/forms/raw_data/20260828-sil-malvi-manifest.json",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 0,
+      "compiled_rows": 2128,
+      "entry_key_count": 6894,
+      "id": "20260828-sil-malvi",
+      "importers": [
+        "data/other/forms/raw_data/sil_malvi_2009/import_malvi.py"
+      ],
+      "installed_file": "data/other/forms/20260828-sil-malvi.csv",
+      "languages": [
+        "mewari_basad"
+      ],
+      "profiles": [
+        "conversion/sil-malvi.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 6894,
+      "row_widths": {
+        "15": 6894
+      },
+      "source_grammar_evidence_rows": 0,
+      "source_key_counts": {
+        "varghese-john-samuel2009malvi": 6894
+      },
+      "source_keys": [
+        "varghese-john-samuel2009malvi"
+      ],
+      "tests": [
+        "tests/test_sil_malvi_2009.py",
+        "tests/test_source_checklists.py"
+      ],
+      "unique_entry_key_count": 6894,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Dictionary or glossary"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/20260828-sil-meitei-audit.csv",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 0,
+      "compiled_rows": 2406,
+      "entry_key_count": 2406,
+      "id": "20260828-sil-meitei",
+      "importers": [
+        "data/other/forms/20260828-sil-meitei.csv"
+      ],
+      "installed_file": "data/other/forms/20260828-sil-meitei.csv",
+      "languages": [
+        "Manipuri"
+      ],
+      "profiles": [
+        "conversion/sil-meitei.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 2406,
+      "row_widths": {
+        "15": 2406
+      },
+      "source_grammar_evidence_rows": 0,
+      "source_key_counts": {
+        "kim-kim2008meitei": 2406
+      },
+      "source_keys": [
+        "kim-kim2008meitei"
+      ],
+      "tests": [
+        "tests/test_sil_meitei_2008.py",
+        "tests/test_source_checklists.py"
+      ],
+      "unique_entry_key_count": 2406,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Survey wordlists or comparative tables",
+        "OCR-heavy source"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/20260828-sil-mudhili-gadaba-audit.csv",
+        "data/other/forms/raw_data/20260828-sil-mudhili-gadaba-manifest.json",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 0,
+      "compiled_rows": 1538,
+      "entry_key_count": 1538,
+      "id": "20260828-sil-mudhili-gadaba",
+      "importers": [
+        "data/other/forms/raw_data/sil_gadaba_2019/import_gadaba.py"
+      ],
+      "installed_file": "data/other/forms/20260828-sil-mudhili-gadaba.csv",
+      "languages": [
+        "Gadaba"
+      ],
+      "profiles": [
+        "conversion/sil-gadaba.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 1538,
+      "row_widths": {
+        "15": 1538
+      },
+      "source_grammar_evidence_rows": 0,
+      "source_key_counts": {
+        "adimathara2019mudhili": 1538
+      },
+      "source_keys": [
+        "adimathara2019mudhili"
+      ],
+      "tests": [
+        "tests/test_sil_gadaba_2019.py",
+        "tests/test_source_checklists.py"
+      ],
+      "unique_entry_key_count": 1538,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Survey wordlists or comparative tables",
+        "OCR-heavy source"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/20260828-sil-nilgiri-irula-audit.csv",
+        "data/other/forms/raw_data/20260828-sil-nilgiri-irula-manifest.json",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 0,
+      "compiled_rows": 2054,
+      "entry_key_count": 2054,
+      "id": "20260828-sil-nilgiri-irula",
+      "importers": [
+        "data/other/forms/raw_data/sil_irula_2018/import_irula.py"
+      ],
+      "installed_file": "data/other/forms/20260828-sil-nilgiri-irula.csv",
+      "languages": [
+        "Irula"
+      ],
+      "profiles": [
+        "conversion/sil-irula.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 2054,
+      "row_widths": {
+        "15": 2054
+      },
+      "source_grammar_evidence_rows": 0,
+      "source_key_counts": {
+        "ernest-oleary-kelsall2018irula": 2054
+      },
+      "source_keys": [
+        "ernest-oleary-kelsall2018irula"
+      ],
+      "tests": [
+        "tests/test_sil_irula_2018.py",
+        "tests/test_source_checklists.py"
+      ],
+      "unique_entry_key_count": 2054,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Survey wordlists or comparative tables"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/20260828-sil-nimadi-audit.csv",
+        "data/other/forms/raw_data/20260828-sil-nimadi-manifest.json",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 0,
+      "compiled_rows": 2826,
+      "entry_key_count": 2826,
+      "id": "20260828-sil-nimadi",
+      "importers": [
+        "data/other/forms/raw_data/sil_nimadi_2012/import_nimadi.py"
+      ],
+      "installed_file": "data/other/forms/20260828-sil-nimadi.csv",
+      "languages": [
+        "Nimadi"
+      ],
+      "profiles": [
+        "conversion/sil-nimadi.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 2826,
+      "row_widths": {
+        "15": 2826
+      },
+      "source_grammar_evidence_rows": 0,
+      "source_key_counts": {
+        "vunnamatla-john-samuvel2012nimadi": 2826
+      },
+      "source_keys": [
+        "vunnamatla-john-samuvel2012nimadi"
+      ],
+      "tests": [
+        "tests/test_sil_nimadi_2012.py",
+        "tests/test_source_checklists.py"
+      ],
+      "unique_entry_key_count": 2826,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Survey wordlists or comparative tables"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/20260828-sil-pahari-pothwari-audit.csv",
+        "data/other/forms/raw_data/20260828-sil-pahari-pothwari-manifest.json",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 0,
+      "compiled_rows": 3038,
+      "entry_key_count": 3038,
+      "id": "20260828-sil-pahari-pothwari",
+      "importers": [
+        "data/other/forms/raw_data/sil_pahari_pothwari_2010/extract_pahari_pothwari.py",
+        "data/other/forms/raw_data/sil_pahari_pothwari_2010/import_pahari_pothwari.py"
+      ],
+      "installed_file": "data/other/forms/20260828-sil-pahari-pothwari.csv",
+      "languages": [
+        "poth"
+      ],
+      "profiles": [
+        "conversion/sil-pahari-pothwari.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 3038,
+      "row_widths": {
+        "15": 3038
+      },
+      "source_grammar_evidence_rows": 0,
+      "source_key_counts": {
+        "lothers-lothers2010pahari": 3038
+      },
+      "source_keys": [
+        "lothers-lothers2010pahari"
+      ],
+      "tests": [
+        "tests/test_sil_pahari_pothwari_2010.py",
+        "tests/test_source_checklists.py"
+      ],
+      "unique_entry_key_count": 3038,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Survey wordlists or comparative tables"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/20260828-sil-war-jaintia-audit.csv",
+        "data/other/forms/raw_data/20260828-sil-war-jaintia-manifest.json",
+        "data/other/forms/raw_data/sil_war_jaintia_2007/sag_ipa_used.tsv",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 0,
+      "compiled_rows": 2030,
+      "entry_key_count": 2030,
+      "id": "20260828-sil-war-jaintia",
+      "importers": [
+        "data/other/forms/raw_data/sil_war_jaintia_2007/extract_war_jaintia.py",
+        "data/other/forms/raw_data/sil_war_jaintia_2007/import_war_jaintia.py"
+      ],
+      "installed_file": "data/other/forms/20260828-sil-war-jaintia.csv",
+      "languages": [
+        "WarJaintia"
+      ],
+      "profiles": [
+        "conversion/sil-bangladesh.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 2030,
+      "row_widths": {
+        "15": 2030
+      },
+      "source_grammar_evidence_rows": 0,
+      "source_key_counts": {
+        "brightbill-kim-kim2007warjaintia": 2030
+      },
+      "source_keys": [
+        "brightbill-kim-kim2007warjaintia"
+      ],
+      "tests": [
+        "tests/test_sil_war_jaintia_2007.py",
+        "tests/test_source_checklists.py"
+      ],
+      "unique_entry_key_count": 2030,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Survey wordlists or comparative tables",
+        "Website/API or external CLDF"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/20260828-sil-western-arunachal-monpa-audit.csv",
+        "data/other/forms/raw_data/20260828-sil-western-arunachal-monpa-manifest.json",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 0,
+      "compiled_rows": 6319,
+      "entry_key_count": 9279,
+      "id": "20260828-sil-western-arunachal-monpa",
+      "importers": [
+        "data/other/forms/raw_data/abraham_monpa_2018/import_abraham_monpa.py"
+      ],
+      "installed_file": "data/other/forms/20260828-sil-western-arunachal-monpa.csv",
+      "languages": [
+        "Bugun",
+        "Chug",
+        "Dakpakha",
+        "Hruso",
+        "KalaktangMonpa",
+        "Khoina",
+        "Khoitam",
+        "Lish",
+        "Miji",
+        "Sartang",
+        "Sherdukpen",
+        "Tshangla"
+      ],
+      "profiles": [
+        "conversion/tagin-puroik.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 9279,
+      "row_widths": {
+        "15": 9279
+      },
+      "source_grammar_evidence_rows": 0,
+      "source_key_counts": {
+        "abraham-sako-kinny-zeliang2018": 9279
+      },
+      "source_keys": [
+        "abraham-sako-kinny-zeliang2018"
+      ],
+      "tests": [
+        "tests/test_abraham_monpa_2018.py",
+        "tests/test_source_checklists.py"
+      ],
+      "unique_entry_key_count": 9279,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Survey wordlists or comparative tables"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/20260828-ssnp04-audit.csv",
+        "data/other/forms/raw_data/20260828-ssnp04-manifest.json",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 0,
+      "compiled_rows": 2723,
+      "entry_key_count": 7131,
+      "id": "20260828-ssnp04",
+      "importers": [
+        "data/other/forms/raw_data/ssnp04_1992/extract_ssnp04.py",
+        "data/other/forms/raw_data/ssnp04_1992/import_ssnp04.py"
+      ],
+      "installed_file": "data/other/forms/20260828-ssnp04.csv",
+      "languages": [
+        "Orm",
+        "Psht",
+        "wne"
+      ],
+      "profiles": [
+        "conversion/ssnp.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 7131,
+      "row_widths": {
+        "15": 7131
+      },
+      "source_grammar_evidence_rows": 0,
+      "source_key_counts": {
+        "hallberg1992pashto": 7131
+      },
+      "source_keys": [
+        "hallberg1992pashto"
+      ],
+      "tests": [
+        "tests/test_ssnp04_1992.py",
+        "tests/test_source_checklists.py"
+      ],
+      "unique_entry_key_count": 7131,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Dictionary or glossary",
+        "Survey wordlists or comparative tables",
+        "Website/API or external CLDF",
+        "Etymological/comparative source"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/20260828-zide-sora-juray-audit.csv",
+        "data/other/forms/raw_data/20260828-zide-sora-juray-sample.csv",
+        "data/other/forms/raw_data/20260828-zide-sora-juray-manifest.json",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 70,
+      "compiled_rows": 2057,
+      "entry_key_count": 2057,
+      "id": "20260828-zide-sora-juray",
+      "importers": [
+        "data/other/forms/raw_data/zide_sora_gorum_1982.py"
+      ],
+      "installed_file": "data/other/forms/20260828-zide-sora-juray.csv",
+      "languages": [
+        "Juray",
+        "so"
+      ],
+      "profiles": [
+        "conversion/zide-sora-juray.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 2057,
+      "row_widths": {
+        "15": 2057
+      },
+      "source_grammar_evidence_rows": 70,
+      "source_key_counts": {
+        "zide1982reconstruction": 2057
+      },
+      "source_keys": [
+        "zide1982reconstruction"
+      ],
+      "tests": [
+        "tests/test_zide_sora_gorum_1982.py",
+        "tests/test_source_checklists.py"
+      ],
+      "unique_entry_key_count": 2057,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Survey wordlists or comparative tables",
+        "OCR-heavy source"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/sil_adi_2015/source_manifest.json",
+        "data/other/forms/raw_data/sil_adi_2015/staged_audit.tsv",
+        "data/other/forms/raw_data/sil_adi_2015/unresolved_readings.tsv",
+        "data/other/forms/raw_data/sil_adi_2015/render_hashes.tsv",
+        "data/other/forms/raw_data/sil_adi_2015/symbol_inventory.tsv",
+        "data/other/forms/raw_data/sil_adi_2015/preintegration_manifest.json",
+        "data/other/forms/raw_data/sil_adi_2015/shared_integration_manifest.json",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 0,
+      "compiled_rows": 2770,
+      "entry_key_count": 2770,
+      "id": "20260829-sil-adi",
+      "importers": [
+        "data/other/forms/raw_data/sil_adi_2015/import_adi_2015.py",
+        "data/other/forms/raw_data/sil_adi_2015/preintegration_audit.py"
+      ],
+      "installed_file": "data/other/forms/20260829-sil-adi.csv",
+      "languages": [
+        "BokarRamo",
+        "BoriKarko",
+        "Milang",
+        "MisingPadamMiriMinyong"
+      ],
+      "profiles": [
+        "conversion/sil-adi.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 2770,
+      "row_widths": {
+        "15": 2770
+      },
+      "source_grammar_evidence_rows": 0,
+      "source_key_counts": {
+        "padung-sako2015adi": 2770
+      },
+      "source_keys": [
+        "padung-sako2015adi"
+      ],
+      "tests": [
+        "tests/test_sil_adi_2015.py",
+        "tests/test_sound_profiles.py",
+        "tests/test_source_checklists.py"
+      ],
+      "unique_entry_key_count": 2770,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Dictionary or glossary"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/20260828-bhattacharya-bonda-audit.csv",
+        "data/other/forms/raw_data/20260828-sil-bonda-didayi-audit.csv",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 0,
+      "compiled_rows": 305,
+      "entry_key_count": 644,
+      "id": "20260829-sil-bonda-further",
+      "importers": [
+        "data/other/forms/raw_data/bhattacharya_bonda_1968.py"
+      ],
+      "installed_file": "data/other/forms/20260829-sil-bonda-further.csv",
+      "languages": [
+        "re"
+      ],
+      "profiles": [
+        "conversion/sil-bonda-further.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 644,
+      "row_widths": {
+        "15": 644
+      },
+      "source_grammar_evidence_rows": 0,
+      "source_key_counts": {
+        "mathew2022bonda-further": 644
+      },
+      "source_keys": [
+        "mathew2022bonda-further"
+      ],
+      "tests": [
+        "tests/test_bhattacharya_bonda_1968.py",
+        "tests/test_sil_bonda_didayi_2022.py",
+        "tests/test_source_checklists.py"
+      ],
+      "unique_entry_key_count": 644,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Dictionary or glossary"
+      ],
+      "audits": [
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 0,
+      "compiled_rows": 2714,
+      "entry_key_count": 2714,
+      "id": "20260829-sil-noira",
+      "importers": [
+        "data/other/forms/20260829-sil-noira.csv"
+      ],
+      "installed_file": "data/other/forms/20260829-sil-noira.csv",
+      "languages": [
+        "DungraBhili",
+        "Goj",
+        "Ni",
+        "Noiri",
+        "ko"
+      ],
+      "profiles": [
+        "conversion/sil-noira.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 2714,
+      "row_widths": {
+        "15": 2714
+      },
+      "source_grammar_evidence_rows": 0,
+      "source_key_counts": {
+        "varghesekumar2015noira": 2714
+      },
+      "source_keys": [
+        "varghesekumar2015noira"
+      ],
+      "tests": [
+        "tests/test_sil_noira_2015.py",
+        "tests/test_source_checklists.py"
+      ],
+      "unique_entry_key_count": 2714,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Survey wordlists or comparative tables",
+        "OCR-heavy source"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/sil_northern_dhule_bhils_2013/source_manifest.json",
+        "data/other/forms/raw_data/sil_northern_dhule_bhils_2013/staged_audit.tsv",
+        "data/other/forms/raw_data/sil_northern_dhule_bhils_2013/unresolved_readings.tsv",
+        "data/other/forms/raw_data/sil_northern_dhule_bhils_2013/render_hashes.tsv",
+        "data/other/forms/raw_data/sil_northern_dhule_bhils_2013/profile_inventory.tsv",
+        "data/other/forms/raw_data/sil_northern_dhule_bhils_2013/cross_source_reconciliation.tsv",
+        "data/other/forms/raw_data/sil_northern_dhule_bhils_2013/preintegration_manifest.json",
+        "data/other/forms/raw_data/sil_northern_dhule_bhils_2013/shared_integration_manifest.json",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 0,
+      "compiled_rows": 2497,
+      "entry_key_count": 2497,
+      "id": "20260829-sil-northern-dhule-bhils",
+      "importers": [
+        "data/other/forms/raw_data/sil_northern_dhule_bhils_2013/import_northern_dhule_bhils.py",
+        "data/other/forms/raw_data/sil_northern_dhule_bhils_2013/preintegration_audit.py"
+      ],
+      "installed_file": "data/other/forms/20260829-sil-northern-dhule-bhils.csv",
+      "languages": [
+        "Noiri",
+        "PauriBareli",
+        "RathwiBareli",
+        "Vasavi"
+      ],
+      "profiles": [
+        "conversion/sil-northern-dhule-bhils.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 2497,
+      "row_widths": {
+        "15": 2497
+      },
+      "source_grammar_evidence_rows": 0,
+      "source_key_counts": {
+        "watters2013northerndhule": 2497
+      },
+      "source_keys": [
+        "watters2013northerndhule"
+      ],
+      "tests": [
+        "tests/test_sil_northern_dhule_bhils_2013.py",
+        "tests/test_sound_profiles.py",
+        "tests/test_source_checklists.py"
+      ],
+      "unique_entry_key_count": 2497,
       "unregistered_dialect_tags": [],
       "unregistered_languages": [],
       "unresolved_references": []

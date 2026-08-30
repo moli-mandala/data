@@ -68,7 +68,7 @@ LOAN_LANGUAGE_IDS = {
     "English": "Eng",
     "Urdu": "H",
     "Pashto": "Psht",
-    "Kati": "SSNP-chitral-KAT",
+    "Kati": "Kt",
     "Turkish": "Tr",
     "Turkic": "Turk",
 }

@@ -1,0 +1,63 @@
+{
+  "acquisition": "Stanford Interlibrary Loan scan requests 446831 (printed pp. 243–279) and 447377 (printed pp. 280–315), two complementary web deliveries of the complete Glossar",
+  "bibliography": "Degener, Almuth. 2008. Shina-Texte aus Gilgit (Nord-Pakistan): Sprichwörter und Materialien zum Volksglauben, gesammelt von Mohammad Amin Zia. (Beiträge zur Indologie 41.) Wiesbaden: Harrassowitz.",
+  "extraction": {
+    "checked_in_layer": "data/other/forms/raw_data/20260827-degener-shina-transcription.txt",
+    "editorial_layer": "data/other/forms/raw_data/20260827-degener-shina-editorial.csv",
+    "glossary_entry_count": 1561,
+    "method": "complete paragraph-by-paragraph manual collation of the printed glossary against 300 dpi renders with 2x zoomed band verification",
+    "normalizations": [
+      "j + combining breve folded to ǰ (U+01F0): the italic font renders the haček on dotless j as a rounded arc"
+    ],
+    "ocr_reproducibility": [
+      "tesseract -l deu+eng --psm 4 (digit cross-check only)"
+    ],
+    "transcription_uncertain_headword_records": 15,
+    "transcription_uncertain_readings": 16
+  },
+  "glossary_printed_pages": [
+    243,
+    315
+  ],
+  "outputs": {
+    "audit": "data/other/forms/raw_data/20260827-degener-shina-audit.csv",
+    "audit_count": 1561,
+    "form_count": 1577,
+    "forms": "data/other/forms/20260827-degener-shina.csv",
+    "sample": "data/other/forms/raw_data/20260827-degener-shina-sample.csv",
+    "sample_count": 25
+  },
+  "pdf_pages": {
+    "TN446831": 46,
+    "TN447377": 38
+  },
+  "pdf_redistributed": false,
+  "pdf_sha256": {
+    "TN446831": "9589572ce61d21062454cfa54537c881080e9288bc55292f176fc12ca6264fd5",
+    "TN447377": "11bb98531bf601c59f5252d361774320bccd0043c627d8c96094df5320517ec4"
+  },
+  "rights": "Copyrighted ILL scans supplied for private study, scholarship, or research; the scans are not checked in.",
+  "scope": {
+    "cdial_policy": "direct unambiguous [T. N] assignments are linked; hedged (zu/vgl./?), multi-number, and secondary claims remain prose; printed decimal sub-numbers link to their integer CDIAL parent",
+    "excluded": "the proverb and folk-belief texts themselves; attestation numbers and inflected forms in indented sub-paragraphs (kept as audit prose); Burushaski, Indus Kohistani, and other comparanda inside etymology brackets; the Literaturverzeichnis",
+    "included": "every printed headword paragraph of the Glossar, pp. 243–315, including light-verb constructions, proper names, and cross-reference headwords",
+    "language_model": "all forms belong to canonical Shina (Sh) and carry the registered Gilgit dialect tag (dialect:Sh:gil:Gilgit); Mohammad Amin Zia's collection and cited informants remain provenance"
+  },
+  "snapshot_date": "2026-08-27",
+  "source_id": "degener-shina2008",
+  "status_counts": {
+    "audit_only_cross_reference": 8,
+    "installed_cross_reference_variant": 32,
+    "installed_form": 1521
+  },
+  "unresolved": [
+    "p245:e09",
+    "p258:e13",
+    "p264:e06",
+    "p274:e01",
+    "p278:e07",
+    "p294:e21",
+    "p299:e11",
+    "p305:e10"
+  ]
+}

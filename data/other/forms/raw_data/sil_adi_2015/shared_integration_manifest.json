@@ -1,0 +1,90 @@
+{
+  "state": "shared-source-specific-integration-complete",
+  "source_key": "padung-sako2015adi",
+  "installed_input": {
+    "path": "data/other/forms/20260829-sil-adi.csv",
+    "rows": 2770,
+    "sha256": "edb29a8f65fea0600e3d54bfcf2adef81fd833c47b619de5cd701bd61df4031c",
+    "unique_entry_keys": 2770
+  },
+  "frozen_evidence": {
+    "pdf_sha256": "8e1500383a02445252a3eb6973a1b011fabea71eb25ad79fc43ba5b78bd1135c",
+    "manual_bundle_sha256": "a9a1aac22c77c4cf66230c2fa014a7b151cd676db44810744b06748070bd92f0",
+    "staged_audit_sha256": "6fb69a145419fff42c6b48d8e965acf2dbd9dc06bd297edf2e19f62e4f88877b",
+    "unresolved_sha256": "3a4e2be9c39e3b3852e455d59d7a077919e208d536b0c6673c2ec834f1f51803",
+    "render_tree_sha256": "0746c68daf48349570eb0d37e2d69afb79c22571d69a410484b8437e1efd794c",
+    "symbol_inventory_sha256": "a649621372743809a46b6391f11e4abf329016bdf84f8dfa175b94e1b330e886"
+  },
+  "scope": {
+    "conceptual_cells": 2763,
+    "attested_cells": 2670,
+    "source_blank_cells_audit_only": 93,
+    "ambiguous_cells": 0,
+    "illegible_cells": 0,
+    "unresolved_cells": 0,
+    "control_cells": 0,
+    "installed_expanded_forms": 2770,
+    "one_response_cells": 2573,
+    "two_response_cells": 94,
+    "three_response_cells": 3
+  },
+  "installed_counts": {
+    "languages": {
+      "BokarRamo": 1249,
+      "BoriKarko": 610,
+      "Milang": 298,
+      "MisingPadamMiriMinyong": 613
+    },
+    "sites": {
+      "AS": 309,
+      "BK": 318,
+      "BR": 304,
+      "ML": 298,
+      "MN": 297,
+      "PD": 316,
+      "PL": 310,
+      "RM": 312,
+      "SM": 306
+    }
+  },
+  "registries": {
+    "new_languages": [
+      "MisingPadamMiriMinyong",
+      "BoriKarko",
+      "BokarRamo",
+      "Milang"
+    ],
+    "new_dialects": [
+      "sil-adi-2015-minyong-rayang",
+      "sil-adi-2015-bori-bogu-payum",
+      "sil-adi-2015-ramo-ngorlung",
+      "sil-adi-2015-milang-village",
+      "sil-adi-2015-pailibo-irgo",
+      "sil-adi-2015-ashing-ningging",
+      "sil-adi-2015-padam-siluk",
+      "sil-adi-2015-shimong-mobuk",
+      "sil-adi-2015-bokar-manigong"
+    ],
+    "site_coordinates": "blank for all nine dialect rows because ESR 2015-016 supplies no point coordinates",
+    "language_coordinates": "quality-C modern Glottolog representative points, explicitly not historical survey-site coordinates"
+  },
+  "sound_profile": {
+    "path": "conversion/sil-adi.txt",
+    "sha256": "61f298367f3e9217c170797cc6c4dbebc3c4b86eb90936b3e2f52561ed013d71",
+    "route": "padung-sako2015adi",
+    "input_symbols": 42,
+    "replacement_characters": 0,
+    "preservation": "the diplomatic IPA remains Original; only display Form is normalized",
+    "literal_question_marks": "huupe? at item 292/RM and kapə? at item 293/AS are preserved source punctuation"
+  },
+  "transcription_authority": "Every retained reading was visually verified by hand against rendered publisher pages. PDF text was locator/character-input scaffold only and OCR, legacy data, and installed forms supplied or verified no reading.",
+  "etymology": "none; every installed Parameter_ID is blank and numeric lexical-similarity labels remain audit-only",
+  "unresolved_coordinates": [],
+  "deferred_gates": [
+    "consolidated CLDF/full build and compiled survival checks",
+    "global source-audit regeneration",
+    "repository-wide test suite",
+    "browser database refresh and browser QA",
+    "commit and push"
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "source": "Ram Dayal Munda 1968 Proto-Kherwarian records in the SEAlang Munda Dictionary",
+  "source_key": "munda1968proto",
+  "url": "http://sealang.net/munda/dictionary/search.pl?caller=database&include=munda1968proto",
+  "snapshot_date": "2026-08-28",
+  "html_sha256": "5624d596e1baff95c0a8578b65922a903a34f29ef414a58910c7690d44f4402f",
+  "source_records": 2768,
+  "parameter_rows": 920,
+  "form_rows": 2919,
+  "audit_rows": 2919,
+  "excluded_rows": 0,
+  "source_language_records": {
+    "Santali": 925,
+    "pre Mundari": 923,
+    "proto Kherwarian": 920
+  },
+  "installed_language_rows": {
+    "PKher": 998,
+    "PreMu": 971,
+    "sa": 950
+  },
+  "alignment_methods": {
+    "curated-form-meaning": 2,
+    "locator+gloss": 1832,
+    "self": 920,
+    "unique-gloss": 11,
+    "unlinked": 3
+  },
+  "unlinked_source_records": [
+    "munda1968proto:C:c1.p1002.i126-1",
+    "munda1968proto:C:c1.p202.i65",
+    "munda1968proto:R:c2.p202.i65"
+  ],
+  "seeded_audit": {
+    "seed": 20260828,
+    "records": 20,
+    "material_errors": 0
+  },
+  "policy": {
+    "extraction": "structured HTML semantic spans; no OCR",
+    "variants": "only spaced tildes split source-level alternants; slash and optional-segment notation are preserved",
+    "transcription": "source Unicode is NFC-normalized and identity-preserved in Form and Phonemic",
+    "alignment": "shared locator plus gloss, then unique exact gloss; two damaged locators receive documented form-and-meaning corrections",
+    "unlinked": "three comparison records without a source reconstruction remain installed and unlinked",
+    "glosses": "terminal explicit POS labels become tags; one SEAlang scientific-name template marker is removed",
+    "licence": "SEAlang result page states no separate reuse licence; extracted lexical facts and source identifiers are included"
+  }
+}

@@ -2,7 +2,7 @@
 
 - Installed input: `data/other/forms/20230521-rajasthani.csv`
 - Canonical checklist SHA-256: `23516ba5c7caeaa5310f6a32d92b86e4b9ae5e4479e792926b61dd0689129f05`
-- Source-type addenda: Etymological/comparative source
+- Source-type addenda: Survey wordlists or comparative tables, Etymological/comparative source
 - Installed rows: 16522
 - Compiled rows carrying this unit's citation keys: 15876
 - Input rows with checked grammatical evidence: 653

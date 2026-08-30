@@ -1,0 +1,46 @@
+{
+  "coordinate_state": "exact_coordinates_not_printed; source-local metadata leaves them blank",
+  "deferred_shared_actions": [
+    "replace legacy installed source CSV",
+    "update shared dialect registry descriptions/coordinates",
+    "update shared BibTeX entry",
+    "route the source-local sound profile in the shared build",
+    "run consolidated build and graph validation",
+    "run browser database build and QA"
+  ],
+  "legacy_audit_rows": 1809,
+  "legacy_audit_sha256": "001dd6e6b3eb39b9d41299e2fc862bca92459ed53e6638f42c20e443e62f1d4d",
+  "legacy_installed_rows": 1422,
+  "legacy_installed_sha256": "970973055b1cbf12fbc6ac8cdc3c3de37eb8522ac270921e752d00ff5582b98a",
+  "manual_conceptual_cells": 1842,
+  "manual_expanded_rows": 1869,
+  "manual_manifest_sha256": "7695018c46e2456aaed0f1d00172b8ee2bccecef53d560c679480386e8e5b9a9",
+  "outputs": {
+    "exclusion_policy.json": "52694d6406844e234ad9045ecc37b1c2082887c33d5b3e648eb879c21a29bbdc",
+    "reconciliation.tsv": "f0eef8c8c09ddb4de1923b1a2bff1c5b4ac1e6233b807d7aee3c197dcdb26707",
+    "reference_metadata.json": "43847474feec01b55fb8cc53d8e02d49188c3a13dc97f52208e9112401580c7f",
+    "site_metadata.tsv": "2efa325a05588532098bf99ba597c1bc2a4a9bfdad0c66ac91975a8508247079",
+    "sound_inventory.tsv": "522155eb0e41aaf46763d072dbbfc862b6511ddc40e4e93d83a958b34ff3cc08",
+    "sound_profile.txt": "ac76ab83a6d435e384cf7287fb275d3574343c35141409f2298009f97ffeeb23",
+    "sound_profile_decisions.json": "38d72dcfd7bc3c9befb9e29f75009ab6236d916c858d7b449861a546a5411ba3",
+    "staged_forms.csv": "1b970fe2e4f873dc9cb4806c104b727b6099b9d57b7e813d46a9f89f1c4531cb",
+    "staging_audit.tsv": "7b7dbc5c7903ca64017151b2c1a6e6ee785ade65e647cbbd4c7430060ddba393"
+  },
+  "policy": "Manual readings are authoritative; legacy and PDF text are comparison/locator-only.",
+  "reconciliation_counts": {
+    "blank_match": 136,
+    "form_difference": 700,
+    "form_exact": 722,
+    "manual_recovered_legacy_unresolved": 239,
+    "not_used_match": 72
+  },
+  "site_identity_state": "resolved_from_report_table_2",
+  "staging_counts": {
+    "excluded_blank": 136,
+    "excluded_control": 296,
+    "excluded_not_used": 72,
+    "staged_target": 1365
+  },
+  "state": "source_local_post_freeze_complete",
+  "unresolved_lexical_coordinates": []
+}

@@ -1,0 +1,49 @@
+{
+  "acquisition": "Author's PDF of the published article, downloaded from ResearchGate on 2026-08-25",
+  "article_printed_pages": [
+    123,
+    148
+  ],
+  "audit_rows": 706,
+  "bibliography": "Rezai Baghbidi, Hassan. 2003. The Zargari language: An endangered European Romani in Iran. Romani Studies 5th ser. 13(2): 123–148.",
+  "extraction": {
+    "checked_in_layer": "the DECISIONS and EXTRA tables in data/other/forms/raw_data/rezai_baghbidi_zargari_2003.py",
+    "method": "publisher text layer decoded by Type 1 /Differences glyph names",
+    "ocr": false,
+    "why": "the embedded ToUnicode map silently drops the first element of the T_h, f_i, f_l, f_f and f_f_i ligatures and mangles oldstyle figures and small capitals"
+  },
+  "gloss_spans": 575,
+  "installed_rows": 522,
+  "language_model": {
+    "base_language": "Zarg",
+    "dialect_tag": "dialect:Zarg:zargari:Zargari",
+    "note": "Zargari is a Balkan Romani variety spoken in Zargar village, Ābyek district, Qazvin Province, Iran; it is its own Glottolog language (zarg1238) and is modelled as a base language, with the village retained as a dialect tag"
+  },
+  "loanword_rows": 53,
+  "outputs": {
+    "audit": "data/other/forms/raw_data/20260825-rezai-baghbidi-zargari-audit.csv",
+    "forms": "data/other/forms/20260825-rezai-baghbidi-zargari.csv",
+    "sample": "data/other/forms/raw_data/20260825-rezai-baghbidi-zargari-sample.csv"
+  },
+  "pdf_pages": 26,
+  "pdf_redistributed": false,
+  "pdf_sha256": "d8103f0596fb79dfac0019b6728802f409a41ceb846e351ccfd0d01a9c4434ca",
+  "rows_with_etymology": 105,
+  "scope": {
+    "etymology_policy": "donor and comparative statements are kept as Etymology prose; the article prints no CDIAL, DEDR or other etymon identifiers, so every row stays unlinked",
+    "excluded": "clause and phrase examples, unglossed paradigm tables (case suffixes, personal endings, personal pronouns, demonstratives, possessives, reflexives, the copula, and the mediopassive and Turkish-loan conjugations), and Hindi, Sanskrit, Qorbati, Seliyeri, Persian, Arabic, Greek, Armenian and Early Romani comparanda",
+    "included": "every isolated Zargari word the article glosses, plus multi-word Zargari items printed inside its lexical lists"
+  },
+  "snapshot_date": "2026-08-25",
+  "source_id": "rezaibaghbidi2003zargari",
+  "statuses": {
+    "dup": 68,
+    "ingest": 444,
+    "x-clause": 130,
+    "x-compare": 9,
+    "x-donor": 2,
+    "x-meta": 10,
+    "x-phrase": 43
+  },
+  "variant_rows": 78
+}

@@ -214,26 +214,35 @@ def build_edges(rows, deriv_edges):
                 stats["derived_single"] += 1
 
     edges.sort(key=lambda e: (e[0], e[2], e[3], e[4] if e[4] != "" else 0, e[1]))
-    validate_edges(edges, by_id, status_by_id, rank1)
+    validate_edges(edges, status_by_id)
     return edges, status_by_id, dict(stats)
 
 
-def validate_edges(edges, by_id, status_by_id, rank1):
-    """Structural invariants; raises on violation (build-time guard, mirrored in tests)."""
+RANK1_KINDS = ("reflex", "borrowed", "variant")
+
+
+def validate_edges(edges, status_by_id):
+    """Structural invariants over the finished edge list; raises on violation.
+
+    `edges` are EDGES_HEADER-shaped rows (Rank/Pos may be str or int) and `status_by_id` maps
+    every node id to its forms.csv Status. Run by `build_edges` and again by
+    `assign_form_ids.apply_assignments`, which is the LAST writer of cldf/edges.csv — both
+    writers must leave the shipped table satisfying the same contract."""
+    rank1 = {}
     rank1_counts = defaultdict(int)
     for child, parent, kind, rank, pos, _src, _note in edges:
         if child == parent:
             raise ValueError(f"self-edge on {child}")
-        if parent not in by_id:
+        if parent not in status_by_id:
             raise ValueError(f"edge {child} → {parent}: parent not a node")
-        if child not in by_id:
+        if child not in status_by_id:
             raise ValueError(f"edge {child} → {parent}: child not a node")
-        if rank == 1 and kind in ("reflex", "borrowed", "variant"):
+        if int(rank) == 1 and kind in RANK1_KINDS:
             rank1_counts[child] += 1
+            rank1[child] = (parent, kind)
     for child, n in rank1_counts.items():
         if n > 1:
             raise ValueError(f"{child} has {n} rank-1 attestation edges")
-    for child, n in rank1_counts.items():
         if status_by_id.get(child) in ("entry", "unlinked"):
             raise ValueError(f"{child} has Status {status_by_id[child]!r} AND a rank-1 edge")
     # variant chains terminate (cycle guard)
@@ -258,6 +267,15 @@ def validate_edges(edges, by_id, status_by_id, rank1):
     for child, poss in groups.items():
         if sorted(poss) != list(range(1, len(poss) + 1)) or len(poss) < 2:
             raise ValueError(f"component Pos not contiguous for {child}: {sorted(poss)}")
+
+
+def validate_edge_dicts(rows, status_by_id):
+    """`validate_edges` over EDGES_HEADER-keyed dict rows (the shipped cldf/edges.csv shape)."""
+    validate_edges(
+        [[r["Child_ID"], r["Parent_ID"], r["Kind"], int(r["Rank"] or 1),
+          r.get("Pos", ""), r.get("Source", ""), r.get("Note", "")] for r in rows],
+        status_by_id,
+    )
 
 
 def rank1_chain_target(rank1, child, _cache={}):

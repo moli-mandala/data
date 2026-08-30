@@ -12,7 +12,7 @@
 ## Retrospective gate assessment
 
 - [x] 1. Establish the source and scope — source keys: liljegren-hindukush; 11600 installed records
-- [x] 2. Choose the extraction path — importer/raw route: data/other/forms/raw_data/liljegren.py, data/other/forms/raw_data/liljegren_hindukush.py
+- [x] 2. Choose the extraction path — importer/raw route: data/other/forms/raw_data/liljegren.py, data/other/forms/raw_data/liljegren_hindukush.py, data/other/forms/raw_data/liljegren_kalkoti_2013.py
 - [x] 3. Plan the installed files and identifiers — 11600 unique immutable Entry_Key values
 - [x] 4. Model languages and dialects before emitting forms — 59 input language/lect IDs; registry gaps: none
 - [x] 5. Emit the rich import schema — row widths {'15': 11600}; blank forms 0
@@ -20,8 +20,8 @@
 - [x] 7. Build and verify the sound profile — profile route: conversion/liljegren-hindukush.txt; replacement characters in input forms: 0
 - [x] 8. Parse references and provenance — unresolved keys: none
 - [x] 9. Model etymology and graph relations conservatively — covered by tests/test_edges.py and compiled edge invariants
-- [x] 10. Produce a complete audit trail — audit: source_checklists/installed-record-audit.csv.gz
-- [x] 11. Add focused regression tests — tests: tests/test_liljegren.py, tests/test_liljegren_hindukush.py, tests/test_source_checklists.py
+- [x] 10. Produce a complete audit trail — audit: data/other/forms/raw_data/20260825-liljegren-kalkoti-audit.csv, source_checklists/installed-record-audit.csv.gz
+- [x] 11. Add focused regression tests — tests: tests/test_liljegren.py, tests/test_liljegren_hindukush.py, tests/test_liljegren_kalkoti.py, tests/test_source_checklists.py
 - [ ] 12. Install and run the full data pipeline — pending final repository-wide make all and full-suite validation for this review
 - [x] 13. Browser database refresh and inspection (user-triggered) — deferred by standing policy; refresh and browser QA run only when the user requests them
 - [x] 14. Document, review, and ship only when requested — this source-specific checklist is the durable review record; shipping is not requested

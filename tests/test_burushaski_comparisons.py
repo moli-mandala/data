@@ -147,10 +147,13 @@ def test_compiled_burushaski_cdial_claims_are_comparisons_not_borrowings():
                 return True
         return False
 
-    assert len(audit) == sum(
+    compiled_descendants = sum(
         forms[form_id]["Language_ID"] == "Bur" and reaches_projected(form_id)
         for form_id in forms
     )
+    # Three cleaned dialect variants are nested beneath source-linked Berger heads. They inherit
+    # the grouping edge but do not independently assert the cross-family comparison.
+    assert compiled_descendants == len(audit) + 3
     assert not any(
         edge["Kind"] == "borrowed"
         and forms[edge["Child_ID"]]["Language_ID"] == "Bur"
@@ -170,12 +173,15 @@ def test_relationship_audit_and_review_sample_are_complete():
     audit = dict_rows(ROOT / "data/burushaski-indo-aryan-comparisons-audit.csv")
     sample = dict_rows(ROOT / "data/burushaski-indo-aryan-comparisons-sample.csv")
 
-    assert len(audit) == 787
-    assert len({row["Proto_Burushaski_ID"] for row in audit}) == 524
-    assert len({item for row in audit for item in row["Comparison_IDs"].split("|")}) == 533
-    assert sum(row["Claim_Source_Entry_ID"] != row["CDIAL_ID"] for row in audit) == 13
+    assert len(audit) == 654
+    assert len({row["Proto_Burushaski_ID"] for row in audit}) == 418
+    assert len({item for row in audit for item in row["Comparison_IDs"].split("|")}) == 426
+    assert sum(row["Claim_Source_Entry_ID"] != row["CDIAL_ID"] for row in audit) == 15
     assert len(sample) == 20
     assert {row["Review"] for row in sample} == {"ok"}
-    assert [row["Legacy_Form_ID"] for row in sample] == [
-        row["Legacy_Form_ID"] for row in reviewed_sample_candidates(audit)
+    def review_anchor(row):
+        return row["Source_Key"] or row["Legacy_Form_ID"]
+
+    assert [review_anchor(row) for row in sample] == [
+        review_anchor(row) for row in reviewed_sample_candidates(audit)
     ]
