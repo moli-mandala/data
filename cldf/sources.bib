@@ -2877,6 +2877,16 @@
   jambu_editor = {OpenAI Codex}
 }
 
+@misc{nihali-provisional2026,
+  author       = {Jambu editors},
+  title        = {Provisional etymology of the Jambu Nihali lexicon},
+  year         = {2026},
+  note         = {Record-complete editorial hypothesis overlay; source-attributed comparisons, conservative database-wide matching, and explicit no-match residue are kept as separate evidence levels},
+  included     = {All 4,299 attested Nihali records present in Jambu on 2026-09-01},
+  provenance   = {nihali_provisional_etymologies.py; data/other/analysis/nihali-provisional/nihali-provisional-etymology-audit.csv; data/other/analysis/nihali-provisional/REPORT.md},
+  jambu_editor = {OpenAI Codex}
+}
+
 @misc{nured,
   author       = {Halfmann, Jakob},
   title        = {The Nuristani Etymological Dictionary (NurED)},
@@ -4254,4 +4264,53 @@
   jambu_editor = {OpenAI Codex},
   license      = {Copyright 2023 SIL International. The report permits scholarly research and instructional copying under fair-use guidelines and prohibits republication or commercial use without written consent; the PDF is not redistributed and only extracted linguistic facts are installed},
   note         = {Fieldwork conducted in 1996 and report dated 1997. The eight Indian lects attach to canonical Gujari. Six Pakistan lists are explicitly republished from the 1992 SSNP volume and remain audit-only because their primary-source rows already exist. Similarity-group numbers are descriptive notes, not historical cognacy. No cell is ambiguous, clipped, illegible, or unresolved}
+}
+
+@misc{aaley-bodt2020kusunda,
+  author       = {Aaley, Uday Raj and Bodt, Timotheus A.},
+  title        = {New Kusunda Data: A List of 250 Concepts},
+  year         = {2020},
+  howpublished = {Computer-Assisted Language Comparison in Practice 3.4},
+  url          = {https://calc.hypotheses.org/2414},
+  doi          = {10.5281/zenodo.13149034},
+  note         = {Lexibank aaleykusunda release v2.1, commit 09b1e8d0c19e4f9c69352e4abee500212830f396; source elicitation audio and PDFs deposited as doi:10.5281/zenodo.3377537},
+  license      = {CC BY 4.0 for the released Lexibank dataset; source audio/PDF deposit CC BY-NC-SA 4.0},
+  included     = {All 662 released CLDF lexemes from 250 prompts: 224 Gyani Maiya Sen Kusunda attestations, 227 Kamala Khatri (Sen Kusunda) attestations, and 211 tentative reconstructed ground forms. Eighty-eight blank or source-marked-empty cells are retained in the audit only},
+  provenance   = {Pinned upstream snapshots and reproducible importer in data/other/forms/raw_data/aaley_bodt_kusunda_2020; 750-cell audit data/other/forms/raw_data/aaley_bodt_kusunda_2020/20260901-aaley-bodt-kusunda-audit.csv; installed rows data/other/forms/20260901-aaley-bodt-kusunda.csv; transcription profile conversion/kusunda-aaley-bodt.txt},
+  ocr          = {No; the released CLDF and source TSV are Unicode, and the source PDF has a selectable Unicode text layer},
+  etymology_provenance = {none},
+  jambu_editor = {OpenAI Codex}
+}
+
+@article{watters2006kusunda,
+  author       = {Watters, David E.},
+  title        = {Notes on Kusunda Grammar: A Language Isolate of Nepal},
+  journal      = {Himalayan Linguistics Archive},
+  volume       = {3},
+  year         = {2006},
+  pages        = {1--182},
+  url          = {https://escholarship.org/uc/item/83v8d1wv},
+  included     = {Appendix A, printed and physical PDF pages 139--152: all 877 printed vocabulary entries, expanded to 1,387 separately addressable comma-, semicolon-, and slash-delimited attestations},
+  provenance   = {Source PDF SHA-256 3fd0942e1ed860e3c6b27b3d4543ab9f83800aabd4199318173fe4e129198bb2; the PDF is not redistributed. Source-local importer, pinned Wiktionary revision 84645357 used only as a Unicode repair control for the broken STEDT font, complete audit and manifest are in data/other/forms/raw_data/watters_kusunda_2006; installed rows are data/other/forms/20260901-watters-kusunda.csv; profile conversion/kusunda-watters.txt},
+  ocr          = {No OCR-derived form is installed. The born-digital PDF's legacy STEDT encoding is checked against rendered pages and a pinned independently prepared Unicode transcription},
+  etymology_provenance = {none},
+  jambu_editor = {OpenAI Codex},
+  license      = {Copyrighted scholarly article. The PDF is not redistributed; only extracted linguistic facts are installed},
+  note         = {Slash-separated pronunciations are linked as sound variants. Listed finite and imperative forms are separate attestations linked within the printed headword group. Nepali loans are source-marked; no speaker forms are assigned to dialects because the appendix does not consistently identify speakers per entry}
+}
+
+@book{aaley2021kusundagipan,
+  author       = {Aaley, Uday Raj},
+  title        = {Kusunda Gipan},
+  publisher    = {Language Commission, Nepal},
+  address      = {Kathmandu},
+  year         = {2021},
+  edition      = {1},
+  included     = {The complete final Kusunda--Nepali glossary on printed pages 48--50 / physical PDF pages 54--56: 160 table rows, yielding 161 distinct installed attestations after two slash groups are expanded and one exact duplicated five entry is retained in the audit only},
+  provenance   = {Source PDF SHA-256 0b78336d6d7173c2ac18ab153fcda221fa0351cb708b42ad66c784c947b9bcd2; the PDF is not redistributed. Ruled-table extraction, frozen Preeti glyph and Unicode Devanagari ledger, source-local importer, complete audit and manifest are in data/other/forms/raw_data/aaley_kusunda_gipan_2021; installed rows are data/other/forms/20260901-aaley-kusunda-gipan.csv; profile conversion/kusunda-gipan.txt},
+  ocr          = {No. The embedded Preeti legacy-font cells were structurally extracted and decoded to Unicode, then checked against renders of all three glossary pages},
+  etymology_provenance = {none},
+  jambu_editor = {OpenAI Codex},
+  license      = {All rights reserved by the Language Commission, Nepal. The PDF is not redistributed; only extracted linguistic facts are installed},
+  note         = {Printed Devanagari is preserved as Native. Form is a deterministic graphemic romanization using the book's six-vowel chart, with Devanagari अ interpreted as central schwa and आ as low a; it is not narrow IPA. English glosses translate the retained Nepali source glosses}
 }

@@ -117,6 +117,9 @@ CHECKED_PROFILE_FILES = {
         "20260828-sil-war-jaintia.csv",
         "20260828-sil-kuki-chin-bangladesh.csv",
     ],
+    "kusunda-aaley-bodt": ["20260901-aaley-bodt-kusunda.csv"],
+    "kusunda-watters": ["20260901-watters-kusunda.csv"],
+    "kusunda-gipan": ["20260901-aaley-kusunda-gipan.csv"],
 }
 
 
@@ -244,6 +247,12 @@ def test_every_installed_source_has_an_explicit_sound_profile():
             # later Tagin/Puroik report; keep source IPA in Phonemic and convert
             # only the display form.
             profile = "tagin-puroik"
+        elif source_key == "aaley-bodt2020kusunda":
+            profile = "kusunda-aaley-bodt"
+        elif source_key == "watters2006kusunda":
+            profile = "kusunda-watters"
+        elif source_key == "aaley2021kusundagipan":
+            profile = "kusunda-gipan"
         else:
             profile = mapping.get(key, key)
         assert profile in profiles, f"{basename} has no sound profile"
@@ -257,6 +266,13 @@ def test_preservation_profile_repairs_only_known_legacy_notation():
 
 
 def test_new_source_profiles_cover_source_specific_transcription():
+    assert convert("kusunda-aaley-bodt", "ɐ̃ː.ʤi") == "ɐ̄̃ji"
+    assert convert("kusunda-aaley-bodt", "mʲɛ̰kʰ") == "mʸɛ̰kʰ"
+    assert convert("kusunda-aaley-bodt", "d̪əj.ʤiː") == "dəyjī"
+    assert convert("kusunda-watters", "əraχ") == "ərax"
+    assert convert("kusunda-watters", "n̩") == "n̩"
+    assert convert("kusunda-gipan", "əmbyak") == "əmbyak"
+    assert convert("kusunda-gipan", "khaṅgu") == "kʰaŋgu"
     assert convert("merriam-reconstruction", "kaṭ-/kaḍ-") == "kaṭ-/kaḍ-"
     assert convert("merriam-reconstruction", "agáḍ-") == "agáḍ-"
     assert convert("pinnow-munda", "(ə-)ˈlʔuːd-ən") == "(ə-)ˈlʔuːd-ən"

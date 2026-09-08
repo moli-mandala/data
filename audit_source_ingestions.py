@@ -45,6 +45,60 @@ CORE_INPUTS = (
 )
 
 CORE_REVIEW_FILES = {
+    "20260901-watters-kusunda": {
+        "importers": [
+            "data/other/forms/raw_data/watters_kusunda_2006/import_watters.py",
+        ],
+        "audits": [
+            "data/other/forms/raw_data/watters_kusunda_2006/20260901-watters-kusunda-audit.csv",
+            "data/other/forms/raw_data/watters_kusunda_2006/manifest.json",
+            "data/other/forms/raw_data/watters_kusunda_2006/README.md",
+        ],
+        "tests": [
+            "tests/test_watters_kusunda.py",
+            "tests/test_sound_profiles.py",
+            "tests/test_source_checklists.py",
+        ],
+        "profiles": ["conversion/kusunda-watters.txt"],
+        "addenda": ["Dictionary or glossary", "OCR-heavy source"],
+    },
+    "20260901-aaley-kusunda-gipan": {
+        "importers": [
+            "data/other/forms/raw_data/aaley_kusunda_gipan_2021/import_gipan.py",
+        ],
+        "audits": [
+            "data/other/forms/raw_data/aaley_kusunda_gipan_2021/20260901-aaley-kusunda-gipan-audit.csv",
+            "data/other/forms/raw_data/aaley_kusunda_gipan_2021/manifest.json",
+            "data/other/forms/raw_data/aaley_kusunda_gipan_2021/README.md",
+        ],
+        "tests": [
+            "tests/test_aaley_kusunda_gipan.py",
+            "tests/test_sound_profiles.py",
+            "tests/test_source_checklists.py",
+        ],
+        "profiles": ["conversion/kusunda-gipan.txt"],
+        "addenda": ["Dictionary or glossary", "OCR-heavy source"],
+    },
+    "20260901-aaley-bodt-kusunda": {
+        "importers": [
+            "data/other/forms/raw_data/aaley_bodt_kusunda_2020/import_kusunda.py",
+        ],
+        "audits": [
+            "data/other/forms/raw_data/aaley_bodt_kusunda_2020/20260901-aaley-bodt-kusunda-audit.csv",
+            "data/other/forms/raw_data/aaley_bodt_kusunda_2020/manifest.json",
+            "data/other/forms/raw_data/aaley_bodt_kusunda_2020/README.md",
+        ],
+        "tests": [
+            "tests/test_aaley_bodt_kusunda.py",
+            "tests/test_sound_profiles.py",
+            "tests/test_source_checklists.py",
+        ],
+        "profiles": ["conversion/kusunda-aaley-bodt.txt"],
+        "addenda": [
+            "Survey wordlists or comparative tables",
+            "Website/API or external CLDF",
+        ],
+    },
     "20260826-sil-kochbd": {
         "importers": [
             "data/other/forms/raw_data/sil_kochbd_2011_manual/build_manual.py",
@@ -1041,6 +1095,104 @@ PINNED_LEGACY_UNITS = {
 }
 
 UNIT_REVIEW_NOTES = {
+    "20260901-watters-kusunda": {
+        "state": (
+            "all 877 printed Appendix A entries are installed as 1,387 separately addressable "
+            "attestations; the PDF/source-control census, focused tests, profile and consolidated "
+            "CLDF build pass"
+        ),
+        "exclusions": (
+            "running grammar outside Appendix A and Appendix B examples are outside lexical "
+            "scope; no printed Appendix A entry or distinct attested form is omitted"
+        ),
+        "unresolved": (
+            "zero unresolved readings; speaker-level research-team variants remain linked source "
+            "variants rather than being assigned unsupported dialect identities"
+        ),
+        "transcription": (
+            "a pinned CC-BY-SA Unicode control repairs the PDF's broken STEDT mapping; Watters's "
+            "transcription remains in Phonemic, while the profile only removes syllable dots, "
+            "normalizes length and maps chi to Jambu x"
+        ),
+        "validation": (
+            "PDF SHA/page/POS census, 877-entry and 1,387-form counts, stable keys and variant "
+            "edges, 20 rendered-page samples, loans, profiles, citations and compiled survival "
+            "are guarded by tests/test_watters_kusunda.py and tests/test_sound_profiles.py"
+        ),
+        "representative": (
+            "garlic pronunciation variants, the five-form beg paradigm, source-marked Nepali "
+            "potato, the POS-empty hunger expression and sampled entries spanning pp. 139--150"
+        ),
+        "filled_note": (
+            "Checked boxes describe the completed source-specific integration and build stages. "
+            "Browser database refresh/QA remains deferred under the checklist's user-triggered policy."
+        ),
+    },
+    "20260901-aaley-kusunda-gipan": {
+        "state": (
+            "all 160 final-glossary rows are audited and 161 distinct attestations installed; "
+            "the profile, focused tests and consolidated CLDF build pass"
+        ),
+        "exclusions": (
+            "one exact repeated five row is audit-only; lesson sentences, exercises and repeated "
+            "pedagogical vocabulary are not additional glossary entries"
+        ),
+        "unresolved": (
+            "zero unresolved cells; source Nepali spelling errors remain visible in the audit and "
+            "are translated without silently rewriting the source"
+        ),
+        "transcription": (
+            "raw Preeti glyphs and checked Unicode Devanagari are both frozen; Native preserves "
+            "the print, and Form is explicitly graphemic romanization using the book's six-vowel "
+            "chart (अ = schwa, आ = a), not narrow IPA"
+        ),
+        "validation": (
+            "PDF SHA/page/table census, 160-row/162-variant audit and 161-form install counts, "
+            "20 rendered-page samples, translations, duplicate policy, profile, citations and "
+            "compiled survival are guarded by tests/test_aaley_kusunda_gipan.py"
+        ),
+        "representative": (
+            "mango with Native Devanagari, the wound and king slash variants, the repeated five "
+            "row, and sampled entries from all three glossary pages"
+        ),
+        "filled_note": (
+            "Checked boxes describe the completed source-specific integration and build stages. "
+            "Browser database refresh/QA remains deferred under the checklist's user-triggered policy."
+        ),
+    },
+    "20260901-aaley-bodt-kusunda": {
+        "state": (
+            "all 750 prompt-by-layer cells audited and all 662 released CLDF lexemes installed; "
+            "the consolidated CLDF build and focused source/profile tests pass"
+        ),
+        "exclusions": (
+            "eighty-eight source-empty cells remain in the audit only; Watters 2006 and Aaley 2021 "
+            "are installed as separate rights/review sources rather than silently merged into this release"
+        ),
+        "unresolved": (
+            "forty-seven installed rows retain an explicit uncertainty tag; no source reading is "
+            "guessed, and the source makes no historical etymology claims"
+        ),
+        "transcription": (
+            "Original and Phonemic preserve the pinned Lexibank IPA; the source-specific display "
+            "profile normalizes only documented notation, while reconstructed ground forms receive "
+            "a display asterisk"
+        ),
+        "validation": (
+            "the v2.1 snapshot, stable upstream form keys, citation locators, 20-row seeded manual "
+            "sample, language/reference/profile routing, row counts and compiled survival are "
+            "guarded by tests/test_aaley_bodt_kusunda.py and tests/test_sound_profiles.py"
+        ),
+        "representative": (
+            "above (speaker and reconstructed forms), explicitly uncertain readings, and Nepali "
+            "loan-marked entries are covered in the seeded audit sample"
+        ),
+        "filled_note": (
+            "Checked boxes describe the completed source-specific integration and build stages. "
+            "Repository-wide pytest remains non-green for unrelated pre-existing sources; browser "
+            "refresh/QA is deferred under the checklist's user-triggered policy."
+        ),
+    },
     "20260829-sil-adi": {
         "state": (
             "all 2,763 Appendix B cells manually reviewed and exactly 2,770 expanded target "

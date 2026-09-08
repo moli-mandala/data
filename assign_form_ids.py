@@ -28,6 +28,7 @@ from collections import defaultdict
 from pathlib import Path
 
 from edges_build import validate_edge_dicts
+from form_note_policy import apply_form_note_policy
 
 
 ROOT = Path(__file__).resolve().parent
@@ -474,6 +475,20 @@ def main() -> None:
         rewrite_graph_file(args.forms.parent / name, columns, mapping)
 
     changed = apply_assignments(args.forms.parent / "edges.csv", forms, assignments)
+
+    # Local source rows deliberately retain extraction and review prose for auditing. Apply the
+    # public-note boundary only after identity reconciliation, so promoting citation locators or
+    # hiding provenance cannot alter fingerprints, aliases, or durable form IDs.
+    for row in forms:
+        notes, source, etymology, promoted_tags = apply_form_note_policy(
+            row.get("Description", ""), row.get("Source", ""), row.get("Etymology", "")
+        )
+        row["Description"] = notes
+        row["Source"] = source
+        row["Etymology"] = etymology
+        row["Tags"] = " ".join(
+            dict.fromkeys(filter(None, [*row.get("Tags", "").split(), *promoted_tags]))
+        )
 
     write_rows(args.forms, fields, forms)
     write_rows(args.registry, REGISTRY_FIELDS, next_registry)

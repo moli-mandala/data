@@ -210,6 +210,9 @@ SCHMIDT_PROFILE_LANGUAGES = {"K", "kash", "pog", "sir"}
 # Citation key of Knobloch's Sauji grammar sketch; see the profile routing below.
 SAUJI_SOURCE_KEY = "knobloch2020sauji"
 DOMARI_ALEPPO_SOURCE_KEY = "herin2012domari"
+KUSUNDA_SOURCE_KEY = "aaley-bodt2020kusunda"
+KUSUNDA_WATTERS_SOURCE_KEY = "watters2006kusunda"
+KUSUNDA_GIPAN_SOURCE_KEY = "aaley2021kusundagipan"
 
 # These profiles operate on source forms whose boundary marks, homonym numbers, and internal
 # punctuation are meaningful source data.  The legacy generic converter strips such characters
@@ -286,6 +289,9 @@ PRESERVE_SOURCE_PROFILE_INPUT = {
     "sil-meitei",
     "sil-survey",
     "sil-bangladesh",
+    "kusunda-aaley-bodt",
+    "kusunda-watters",
+    "kusunda-gipan",
 }
 
 
@@ -418,6 +424,15 @@ def parse_file(file: str, errors, name=None, file_num=0, param_counter=None):
         is_merriam_reconstruction = row.source.split("[", 1)[0] == "merriam2026dravidiandb"
         if is_merriam_reconstruction and not row.form.startswith("*"):
             row.form = "*" + row.form
+        # Aaley & Bodt's released CLDF stores the two speakers and the authors'
+        # tentative ground form as parallel source lects.  The Jambu importer maps
+        # all three to the canonical Kusunda language, retaining the upstream lect
+        # in Entry_Key.  Add the conventional reconstruction asterisk only to the
+        # display layer; Original and Phonemic remain the exact released IPA.
+        is_kusunda_reconstruction = (
+            source_key == KUSUNDA_SOURCE_KEY
+            and row.entry_key.startswith("ProtoKusunda-")
+        )
         # Both hand-entered and OCR-derived Shackle rows use the same CDIAL-style
         # romanisation. The auto filename does not reduce to ``old_punjabi`` via
         # the legacy filename heuristic, so select its phonetic parser by source.
@@ -759,6 +774,15 @@ def parse_file(file: str, errors, name=None, file_num=0, param_counter=None):
         if row.source.split("[", 1)[0] == "thakur-thakur2016magahi":
             row_ipa = "magahi-survey"
             row_convert = True
+        if source_key == KUSUNDA_SOURCE_KEY:
+            row_ipa = "kusunda-aaley-bodt"
+            row_convert = True
+        if source_key == KUSUNDA_WATTERS_SOURCE_KEY:
+            row_ipa = "kusunda-watters"
+            row_convert = True
+        if source_key == KUSUNDA_GIPAN_SOURCE_KEY:
+            row_ipa = "kusunda-gipan"
+            row_convert = True
         # Hockings and Pilot-Raichoor mark vowel length with a colon and use
         # Dravidianist underdots. Preserve the source transcription in
         # Original while normalising the display form through its own profile.
@@ -847,6 +871,7 @@ def parse_file(file: str, errors, name=None, file_num=0, param_counter=None):
                 "varghesekumar2015noira",
                 "padung-sako2015adi",
                 "webster2024haryanvi",
+                KUSUNDA_SOURCE_KEY,
             }
             else list(row.form.split(","))
         )
@@ -1038,6 +1063,9 @@ def parse_file(file: str, errors, name=None, file_num=0, param_counter=None):
                     row.form = reformed
                     stats["converted"] += 1
 
+            if is_kusunda_reconstruction and not row.form.startswith("*"):
+                row.form = "*" + row.form
+
             # add the result
             result.append(deepcopy(row))
             i += 1
@@ -1221,6 +1249,17 @@ def main():
                 # Zide's index preserves separate source records and homographs inside
                 # explicit Sora–Juray comparison groups.
                 "zide1982reconstruction",
+                # Three source lect columns answer the same 250 prompts independently.
+                # Immutable released CLDF IDs protect prompt distinctions and speaker
+                # attestations even when normalized forms coincide.
+                KUSUNDA_SOURCE_KEY,
+                # Watters's dictionary defines source-local homographs and explicit
+                # paradigm/variant attestations; Gipan is an independently published
+                # orthographic glossary.  Keep every immutable source record distinct
+                # across the two publications instead of folding coincident shapes into
+                # whichever Kusunda source happened to be parsed first.
+                KUSUNDA_WATTERS_SOURCE_KEY,
+                KUSUNDA_GIPAN_SOURCE_KEY,
                 # Bhattacharya's dictionary preserves separate stable records for
                 # homographs and printed cross-reference entries. Keep these apart;
                 # source-internal variant edges already express explicit equivalence.

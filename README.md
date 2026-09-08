@@ -67,6 +67,10 @@ item: `source-id[p. 42]` or `source-id[p. 42, col. 2]`. Multiple citations are s
 Keep source location, raw OCR, parser-review flags, alternate-form labels, and other reproducible
 parse metadata in the reference locator, audit output, relation columns, or tags as appropriate.
 The Notes column is reserved for genuine editorial information that is not represented elsewhere.
+`form_note_policy.py` enforces that boundary for legacy and batch importers whose local source
+rows still retain audit prose in column 7: structured leading tokens are promoted to `Tags`, exact
+page/item IDs remain in `Source`, and the residual provenance is omitted from compiled CLDF and
+the browser database. The checked-in source/audit artifacts remain the reproducibility record.
 
 For raw data files that list parameters (entries), the columns are:
 1. Param ID

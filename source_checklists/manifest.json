@@ -1,6 +1,6 @@
 {
   "checklist_sha256": "23516ba5c7caeaa5310f6a32d92b86e4b9ae5e4479e792926b61dd0689129f05",
-  "unit_count": 155,
+  "unit_count": 158,
   "units": [
     {
       "addenda": [
@@ -1667,7 +1667,7 @@
       ],
       "blank_form_count": 0,
       "compiled_grammar_tagged_rows": 204,
-      "compiled_rows": 391,
+      "compiled_rows": 399,
       "entry_key_count": 258,
       "id": "20220913-thari",
       "importers": [
@@ -1915,7 +1915,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
-      "compiled_grammar_tagged_rows": 266,
+      "compiled_grammar_tagged_rows": 276,
       "compiled_rows": 2307,
       "entry_key_count": 0,
       "id": "20230306-wadiyara",
@@ -1958,7 +1958,7 @@
       ],
       "blank_form_count": 0,
       "compiled_grammar_tagged_rows": 0,
-      "compiled_rows": 74,
+      "compiled_rows": 82,
       "entry_key_count": 0,
       "id": "20230403-arora",
       "importers": [
@@ -5577,6 +5577,7 @@
       ],
       "tests": [
         "tests/test_nihali.py",
+        "tests/test_nihali_provisional_etymologies.py",
         "tests/test_source_checklists.py"
       ],
       "unique_entry_key_count": 1707,
@@ -5628,6 +5629,7 @@
       ],
       "tests": [
         "tests/test_nihali.py",
+        "tests/test_nihali_provisional_etymologies.py",
         "tests/test_wiktionary_piir.py",
         "tests/test_source_checklists.py"
       ],
@@ -5683,6 +5685,7 @@
       "tests": [
         "tests/test_bhattacharya_bonda_1968.py",
         "tests/test_nihali.py",
+        "tests/test_nihali_provisional_etymologies.py",
         "tests/test_source_checklists.py"
       ],
       "unique_entry_key_count": 407,
@@ -5734,6 +5737,7 @@
       ],
       "tests": [
         "tests/test_nihali.py",
+        "tests/test_nihali_provisional_etymologies.py",
         "tests/test_source_checklists.py"
       ],
       "unique_entry_key_count": 190,
@@ -6414,6 +6418,7 @@
       "tests": [
         "tests/test_boretzky_igla.py",
         "tests/test_manual_survey_etymologies.py",
+        "tests/test_nihali_provisional_etymologies.py",
         "tests/test_source_checklists.py"
       ],
       "unique_entry_key_count": 1140,
@@ -9001,6 +9006,150 @@
         "tests/test_source_checklists.py"
       ],
       "unique_entry_key_count": 2497,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Survey wordlists or comparative tables",
+        "Website/API or external CLDF"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/aaley_bodt_kusunda_2020/20260901-aaley-bodt-kusunda-audit.csv",
+        "data/other/forms/raw_data/aaley_bodt_kusunda_2020/manifest.json",
+        "data/other/forms/raw_data/aaley_bodt_kusunda_2020/README.md",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 517,
+      "compiled_rows": 662,
+      "entry_key_count": 662,
+      "id": "20260901-aaley-bodt-kusunda",
+      "importers": [
+        "data/other/forms/raw_data/aaley_bodt_kusunda_2020/import_kusunda.py"
+      ],
+      "installed_file": "data/other/forms/20260901-aaley-bodt-kusunda.csv",
+      "languages": [
+        "Kusunda"
+      ],
+      "profiles": [
+        "conversion/kusunda-aaley-bodt.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 662,
+      "row_widths": {
+        "15": 662
+      },
+      "source_grammar_evidence_rows": 517,
+      "source_key_counts": {
+        "aaley-bodt2020kusunda": 662
+      },
+      "source_keys": [
+        "aaley-bodt2020kusunda"
+      ],
+      "tests": [
+        "tests/test_aaley_bodt_kusunda.py",
+        "tests/test_sound_profiles.py",
+        "tests/test_source_checklists.py"
+      ],
+      "unique_entry_key_count": 662,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Dictionary or glossary",
+        "OCR-heavy source"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/aaley_kusunda_gipan_2021/20260901-aaley-kusunda-gipan-audit.csv",
+        "data/other/forms/raw_data/aaley_kusunda_gipan_2021/manifest.json",
+        "data/other/forms/raw_data/aaley_kusunda_gipan_2021/README.md",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 2,
+      "compiled_rows": 161,
+      "entry_key_count": 161,
+      "id": "20260901-aaley-kusunda-gipan",
+      "importers": [
+        "data/other/forms/raw_data/aaley_kusunda_gipan_2021/import_gipan.py"
+      ],
+      "installed_file": "data/other/forms/20260901-aaley-kusunda-gipan.csv",
+      "languages": [
+        "Kusunda"
+      ],
+      "profiles": [
+        "conversion/kusunda-gipan.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 161,
+      "row_widths": {
+        "15": 161
+      },
+      "source_grammar_evidence_rows": 2,
+      "source_key_counts": {
+        "aaley2021kusundagipan": 161
+      },
+      "source_keys": [
+        "aaley2021kusundagipan"
+      ],
+      "tests": [
+        "tests/test_aaley_kusunda_gipan.py",
+        "tests/test_sound_profiles.py",
+        "tests/test_source_checklists.py"
+      ],
+      "unique_entry_key_count": 161,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Dictionary or glossary",
+        "OCR-heavy source"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/watters_kusunda_2006/20260901-watters-kusunda-audit.csv",
+        "data/other/forms/raw_data/watters_kusunda_2006/manifest.json",
+        "data/other/forms/raw_data/watters_kusunda_2006/README.md",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 1386,
+      "compiled_rows": 1387,
+      "entry_key_count": 1387,
+      "id": "20260901-watters-kusunda",
+      "importers": [
+        "data/other/forms/raw_data/watters_kusunda_2006/import_watters.py"
+      ],
+      "installed_file": "data/other/forms/20260901-watters-kusunda.csv",
+      "languages": [
+        "Kusunda"
+      ],
+      "profiles": [
+        "conversion/kusunda-watters.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 1387,
+      "row_widths": {
+        "15": 1387
+      },
+      "source_grammar_evidence_rows": 1386,
+      "source_key_counts": {
+        "watters2006kusunda": 1387
+      },
+      "source_keys": [
+        "watters2006kusunda"
+      ],
+      "tests": [
+        "tests/test_watters_kusunda.py",
+        "tests/test_sound_profiles.py",
+        "tests/test_source_checklists.py"
+      ],
+      "unique_entry_key_count": 1387,
       "unregistered_dialect_tags": [],
       "unregistered_languages": [],
       "unresolved_references": []

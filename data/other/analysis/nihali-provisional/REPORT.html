@@ -1,0 +1,1907 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A complete provisional etymological audit of 4,299 Nihali records in Jambu and an evidence-weighted hypothesis of Nihali's linguistic origin.">
+  <meta name="color-scheme" content="light dark">
+  <title>Provisional etymology of the Jambu Nihali lexicon · Jambu Research Report</title>
+  <style>
+    :root {
+      --paper: #f4efe4;
+      --paper-raised: #fffaf0;
+      --paper-muted: #e9e1d2;
+      --ink: #20241f;
+      --ink-soft: #5e6259;
+      --rule: #d1c5b3;
+      --accent: #9a3e25;
+      --accent-2: #42604b;
+      --accent-3: #d49a2f;
+      --indigo: #4c536f;
+      --shadow: 0 18px 45px rgb(48 38 24 / 10%);
+      --serif: Iowan Old Style, Palatino Linotype, Book Antiqua, Palatino, Georgia, serif;
+      --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color-scheme: light;
+    }
+
+    html[data-theme="dark"] {
+      --paper: #1d211d;
+      --paper-raised: #252a24;
+      --paper-muted: #30362e;
+      --ink: #eee8db;
+      --ink-soft: #b8b7ad;
+      --rule: #454a41;
+      --accent: #ef9274;
+      --accent-2: #9bbda3;
+      --accent-3: #edbd63;
+      --indigo: #aeb5d6;
+      --shadow: 0 18px 45px rgb(0 0 0 / 24%);
+      color-scheme: dark;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        linear-gradient(90deg, transparent 0 49.9%, rgb(154 62 37 / 3%) 50%, transparent 50.1%),
+        var(--paper);
+      font-family: var(--serif);
+      font-size: 17px;
+      line-height: 1.72;
+      transition: color 180ms ease, background-color 180ms ease;
+    }
+    a { color: var(--accent); text-underline-offset: .16em; }
+    a:hover { text-decoration-thickness: 2px; }
+    button, select { font: inherit; }
+
+    .progress {
+      position: fixed;
+      inset: 0 auto auto 0;
+      z-index: 20;
+      width: 0;
+      height: 3px;
+      background: var(--accent);
+    }
+
+    .masthead {
+      color: #fffaf0;
+      background: #26352b;
+      border-bottom: 5px solid #d49a2f;
+    }
+    .masthead-inner {
+      width: min(1180px, calc(100% - 2rem));
+      margin: 0 auto;
+      padding: 4.5rem 0 3.8rem;
+    }
+    .eyebrow {
+      margin: 0 0 1.1rem;
+      color: #edbd63;
+      font: 700 .76rem/1.2 var(--sans);
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+    h1 {
+      max-width: 880px;
+      margin: 0;
+      font: 500 clamp(2.55rem, 6vw, 5.3rem)/.98 var(--serif);
+      letter-spacing: -.045em;
+    }
+    .dek {
+      max-width: 760px;
+      margin: 1.55rem 0 0;
+      color: #d9ddcf;
+      font-size: clamp(1.05rem, 2vw, 1.3rem);
+      line-height: 1.5;
+    }
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .6rem 1.6rem;
+      margin-top: 2rem;
+      color: #bfc8ba;
+      font: 600 .78rem/1.5 var(--sans);
+      letter-spacing: .04em;
+    }
+
+    .toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 15;
+      border-bottom: 1px solid var(--rule);
+      background: color-mix(in srgb, var(--paper) 92%, transparent);
+      backdrop-filter: blur(14px);
+    }
+    .toolbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: min(1180px, calc(100% - 2rem));
+      min-height: 3.45rem;
+      margin: 0 auto;
+      gap: 1rem;
+    }
+    .toolbar-title {
+      overflow: hidden;
+      color: var(--ink-soft);
+      font: 700 .72rem/1 var(--sans);
+      letter-spacing: .12em;
+      text-overflow: ellipsis;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .toolbar-actions { display: flex; gap: .45rem; }
+    .button {
+      min-height: 2.15rem;
+      padding: .35rem .7rem;
+      color: var(--ink);
+      background: var(--paper-raised);
+      border: 1px solid var(--rule);
+      border-radius: 999px;
+      cursor: pointer;
+      font: 700 .74rem/1 var(--sans);
+      text-decoration: none;
+    }
+    .button:hover { border-color: var(--accent); }
+
+    .overview {
+      width: min(1180px, calc(100% - 2rem));
+      margin: 2.2rem auto 2.8rem;
+    }
+    .thesis {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(240px, .65fr);
+      gap: 2rem;
+      padding: clamp(1.5rem, 4vw, 2.8rem);
+      background: var(--paper-raised);
+      border: 1px solid var(--rule);
+      border-top: 5px solid var(--accent);
+      box-shadow: var(--shadow);
+    }
+    .thesis-label {
+      margin: 0 0 .65rem;
+      color: var(--accent);
+      font: 800 .73rem/1.2 var(--sans);
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    .thesis h2 {
+      margin: 0;
+      font: 500 clamp(1.55rem, 3vw, 2.35rem)/1.18 var(--serif);
+      letter-spacing: -.025em;
+    }
+    .thesis p { margin: .85rem 0 0; color: var(--ink-soft); }
+    .verdict {
+      align-self: stretch;
+      padding: 1.2rem 1.3rem;
+      background: var(--paper-muted);
+      border-left: 3px solid var(--accent-3);
+    }
+    .verdict strong {
+      display: block;
+      margin-bottom: .4rem;
+      color: var(--accent-2);
+      font: 800 .78rem/1.2 var(--sans);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .verdict p { margin: 0; font-size: .96rem; line-height: 1.55; }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      margin-top: 1px;
+      background: var(--rule);
+      border: 1px solid var(--rule);
+    }
+    .metric { padding: 1.25rem 1.35rem; background: var(--paper-raised); }
+    .metric-value { display: block; font: 600 2rem/1 var(--serif); letter-spacing: -.03em; }
+    .metric-label { display: block; margin-top: .45rem; color: var(--ink-soft); font: 650 .72rem/1.35 var(--sans); text-transform: uppercase; letter-spacing: .08em; }
+
+    .composition { padding: 1.35rem; background: var(--paper-raised); border: 1px solid var(--rule); border-top: 0; }
+    .composition h2 { margin: 0 0 .8rem; font: 750 .78rem/1.2 var(--sans); letter-spacing: .1em; text-transform: uppercase; }
+    .bar { display: flex; height: 1.15rem; overflow: hidden; border-radius: 2px; background: var(--paper-muted); }
+    .bar span { min-width: 2px; }
+    .bar .residue { width: 34.6%; background: var(--accent); }
+    .bar .ia { width: 28.5%; background: var(--accent-3); }
+    .bar .korku { width: 17.9%; background: var(--accent-2); }
+    .bar .mixed { width: 9.6%; background: var(--indigo); }
+    .bar .other { width: 9.4%; background: var(--rule); }
+    .legend { display: flex; flex-wrap: wrap; gap: .45rem 1.15rem; margin-top: .85rem; color: var(--ink-soft); font: 600 .76rem/1.4 var(--sans); }
+    .legend span::before { content: ''; display: inline-block; width: .65rem; height: .65rem; margin-right: .4rem; border-radius: 50%; background: var(--key); }
+
+    .report-grid {
+      display: grid;
+      grid-template-columns: 245px minmax(0, 820px);
+      gap: clamp(2rem, 6vw, 5.5rem);
+      justify-content: center;
+      width: min(1180px, calc(100% - 2rem));
+      margin: 0 auto;
+      padding-bottom: 7rem;
+    }
+    .toc { position: sticky; top: 5rem; align-self: start; max-height: calc(100vh - 7rem); overflow: auto; padding: 1rem 0 1.5rem; }
+    .toc-title { margin: 0 0 .65rem; color: var(--ink-soft); font: 800 .7rem/1.2 var(--sans); letter-spacing: .14em; text-transform: uppercase; }
+    .toc-link { display: block; padding: .34rem .65rem; color: var(--ink-soft); border-left: 2px solid var(--rule); font: 600 .78rem/1.35 var(--sans); text-decoration: none; }
+    .toc-link.level-3 { padding-left: 1.25rem; font-size: .72rem; }
+    .toc-link:hover, .toc-link.active { color: var(--accent); border-left-color: var(--accent); background: color-mix(in srgb, var(--accent) 7%, transparent); }
+
+    article { min-width: 0; }
+    article h2, article h3 { position: relative; scroll-margin-top: 5rem; color: var(--ink); }
+    article h2 { margin: 4.1rem 0 1.2rem; padding-top: .6rem; border-top: 1px solid var(--rule); font: 600 clamp(1.8rem, 4vw, 2.55rem)/1.15 var(--serif); letter-spacing: -.035em; }
+    article h2:first-child { margin-top: 0; }
+    article h3 { margin: 2.8rem 0 .8rem; font: 700 1.25rem/1.25 var(--sans); letter-spacing: -.015em; }
+    .heading-anchor { position: absolute; right: 100%; padding-right: .5rem; color: var(--rule); text-decoration: none; opacity: 0; }
+    article h2:hover .heading-anchor, article h3:hover .heading-anchor { opacity: 1; }
+    article p { margin: 0 0 1.2rem; }
+    article strong { color: color-mix(in srgb, var(--ink) 82%, var(--accent)); }
+    article ul, article ol { padding-left: 1.3rem; }
+    article li { margin: .4rem 0; }
+    article blockquote { margin: 1.8rem 0; padding: .9rem 1.3rem; color: var(--ink-soft); background: var(--paper-raised); border-left: 4px solid var(--accent-3); }
+    article code { padding: .12em .32em; font: 600 .78em/1.35 ui-monospace, SFMono-Regular, Menlo, monospace; background: var(--paper-muted); border-radius: 3px; }
+    .audit-link { text-decoration-color: color-mix(in srgb, var(--accent) 45%, transparent); }
+
+    .table-wrap { width: 100%; margin: 1.35rem 0 2rem; overflow-x: auto; border: 1px solid var(--rule); background: var(--paper-raised); box-shadow: 0 7px 18px rgb(48 38 24 / 5%); }
+    table { width: 100%; min-width: 560px; border-collapse: collapse; font: 500 .79rem/1.38 var(--sans); font-variant-numeric: tabular-nums; }
+    th { padding: .75rem .8rem; color: var(--ink); background: var(--paper-muted); border-bottom: 1px solid var(--rule); text-align: left; vertical-align: bottom; }
+    td { padding: .66rem .8rem; border-bottom: 1px solid color-mix(in srgb, var(--rule) 65%, transparent); vertical-align: top; }
+    tbody tr:last-child td { border-bottom: 0; }
+    tbody tr:hover td { background: color-mix(in srgb, var(--accent-3) 7%, transparent); }
+    th[align="right"], td[align="right"] { text-align: right; }
+
+    .report-footer { padding: 2rem 1rem 3rem; color: var(--ink-soft); background: var(--paper-muted); border-top: 1px solid var(--rule); text-align: center; font: 600 .76rem/1.6 var(--sans); }
+    .report-footer a { margin: 0 .45rem; }
+
+    @media (max-width: 860px) {
+      .thesis { grid-template-columns: 1fr; }
+      .metrics { grid-template-columns: repeat(2, 1fr); }
+      .report-grid { grid-template-columns: 1fr; }
+      .toc { position: static; max-height: 17rem; padding: 1rem; background: var(--paper-raised); border: 1px solid var(--rule); }
+      .toc-links { columns: 2; }
+      .toc-link { break-inside: avoid; }
+    }
+    @media (max-width: 560px) {
+      body { font-size: 16px; }
+      .masthead-inner { padding: 3rem 0 2.8rem; }
+      .toolbar-title { display: none; }
+      .toolbar-inner { justify-content: flex-end; }
+      .metrics { grid-template-columns: 1fr 1fr; }
+      .toc-links { columns: 1; }
+      .heading-anchor { display: none; }
+    }
+    @media print {
+      :root { --paper: #fff; --paper-raised: #fff; --paper-muted: #f3f0e9; --ink: #111; --ink-soft: #444; --rule: #bbb; }
+      body { font-size: 10.5pt; background: #fff; }
+      .toolbar, .toc, .progress { display: none !important; }
+      .masthead { color: #111; background: #fff; border-bottom: 2px solid #111; }
+      .masthead-inner { padding: 1cm 0; }
+      .eyebrow, .dek, .meta-row { color: #333; }
+      .overview { margin-top: 1cm; }
+      .thesis { box-shadow: none; }
+      .report-grid { display: block; width: 100%; padding: 0; }
+      article h2 { break-after: avoid; }
+      table { font-size: 8pt; }
+      .table-wrap { overflow: visible; box-shadow: none; break-inside: avoid; }
+      a { color: inherit; text-decoration: none; }
+      .report-footer { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="progress" aria-hidden="true"></div>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <p class="eyebrow">Jambu · Historical linguistics research report</p>
+      <h1>Provisional etymology of the Jambu Nihali lexicon</h1>
+      <p class="dek">A complete, evidence-tiered audit of the database lexicon—and a deliberately provisional account of what its contact layers imply about Nihali’s origin.</p>
+      <div class="meta-row"><span>4,299 records</span><span>3,277 lexeme clusters</span><span>Five lexical sources</span><span>1 September 2026</span></div>
+    </div>
+  </header>
+
+  <nav class="toolbar" aria-label="Report tools">
+    <div class="toolbar-inner">
+      <span class="toolbar-title">Nihali provisional etymology</span>
+      <div class="toolbar-actions">
+        <a class="button" href="./REPORT.md" download>Markdown</a>
+        <button class="button" type="button" data-print>Print / PDF</button>
+        <button class="button" type="button" data-theme-toggle aria-label="Switch color theme">Dark mode</button>
+      </div>
+    </div>
+  </nav>
+
+  <section class="overview" aria-labelledby="headline-finding">
+    <div class="thesis">
+      <div>
+        <p class="thesis-label">Headline finding</p>
+        <h2 id="headline-finding">An independent Central Indian lineage, transformed by layered relexification</h2>
+        <p>Indo-Aryan is the widest attribution; Korku/Munda is the most historically diagnostic contact route; Dravidian is smaller but real. The independent residue is stable, but remains a diagnosis by exclusion rather than a reconstructed family.</p>
+      </div>
+      <aside class="verdict">
+        <strong>Confidence: moderate</strong>
+        <p>Munda descent remains the strongest competing account. It requires regular inherited correspondences and morphological reconstruction that the present lexical database cannot yet supply.</p>
+      </aside>
+    </div>
+    <div class="metrics" aria-label="Key report figures">
+      <div class="metric"><span class="metric-value">65.4%</span><span class="metric-label">Clusters with external attribution</span></div>
+      <div class="metric"><span class="metric-value">34.6%</span><span class="metric-label">Strict Nihali residue</span></div>
+      <div class="metric"><span class="metric-value">56</span><span class="metric-label">Effective core residue roots</span></div>
+      <div class="metric"><span class="metric-value">39 / 91</span><span class="metric-label">Core concepts retaining residue</span></div>
+    </div>
+    <div class="composition">
+      <h2>Lexeme-cluster composition</h2>
+      <div class="bar" role="img" aria-label="Nihali residue 34.6 percent, Indo-Aryan 28.5 percent, Korku 17.9 percent, Korku plus Indo-Aryan 9.6 percent, other strata 9.4 percent">
+        <span class="residue"></span><span class="ia"></span><span class="korku"></span><span class="mixed"></span><span class="other"></span>
+      </div>
+      <div class="legend">
+        <span style="--key: var(--accent)">Residue 34.6%</span>
+        <span style="--key: var(--accent-3)">Indo-Aryan 28.5%</span>
+        <span style="--key: var(--accent-2)">Korku 17.9%</span>
+        <span style="--key: var(--indigo)">Korku + Indo-Aryan 9.6%</span>
+        <span style="--key: var(--rule)">Other strata 9.4%</span>
+      </div>
+    </div>
+  </section>
+
+  <main class="report-grid">
+    <aside class="toc" aria-label="Report contents">
+      <p class="toc-title">Contents</p>
+      <div class="toc-links"><a class="toc-link level-2" href="#scope-units-and-headline">Scope, units, and headline</a>
+<a class="toc-link level-2" href="#lexeme-cluster-results">Lexeme-cluster results</a>
+<a class="toc-link level-3" href="#family-involvement-non-exclusive">Family involvement (non-exclusive)</a>
+<a class="toc-link level-3" href="#contact-evidence-tiers">Contact evidence tiers</a>
+<a class="toc-link level-3" href="#diagnostic-basic-vocabulary">Diagnostic basic vocabulary</a>
+<a class="toc-link level-3" href="#evidence-basis-by-lexeme-cluster">Evidence basis by lexeme cluster</a>
+<a class="toc-link level-3" href="#residue-threshold-sensitivity">Residue threshold sensitivity</a>
+<a class="toc-link level-3" href="#shape-of-resolved-external-links">Shape of resolved external links</a>
+<a class="toc-link level-2" href="#record-level-audit-results">Record-level audit results</a>
+<a class="toc-link level-3" href="#method">Method</a>
+<a class="toc-link level-3" href="#confidence">Confidence</a>
+<a class="toc-link level-3" href="#resolution-quality-within-donor-proxies">Resolution quality within donor proxies</a>
+<a class="toc-link level-3" href="#lexical-sources-and-ascertainment">Lexical sources and ascertainment</a>
+<a class="toc-link level-2" href="#interpretation">Interpretation</a>
+<a class="toc-link level-3" href="#repeated-residue-examples">Repeated residue examples</a>
+<a class="toc-link level-2" href="#method-and-safeguards">Method and safeguards</a>
+<a class="toc-link level-2" href="#comparison-with-kuiper-s-baseline">Comparison with Kuiper's baseline</a>
+<a class="toc-link level-2" href="#evidence-synthesis">Evidence synthesis</a>
+<a class="toc-link level-2" href="#competing-origin-hypotheses">Competing origin hypotheses</a>
+<a class="toc-link level-3" href="#structural-sensitivity-check-not-a-family-test">Structural sensitivity check (not a family test)</a>
+<a class="toc-link level-2" href="#scholarly-context">Scholarly context</a>
+<a class="toc-link level-2" href="#limits-and-next-tests">Limits and next tests</a></div>
+    </aside>
+    <article><h2 id="scope-units-and-headline"><a class="heading-anchor" href="#scope-units-and-headline" aria-label="Link to Scope, units, and headline">#</a>Scope, units, and headline</h2>
+<p>This analysis covers <strong>4,299 attested Nihali database records</strong> and assigns each one a provisional rank-1 hypothesis. A conservative form-plus-meaning comparison across the five lexical sources collapses them to <strong>3,277 normalized lexeme clusters</strong>. These clusters, rather than raw dictionary rows or proxy IDs, are the least misleading unit for historical proportions. The overlay creates 2,743 explicit proxy entries where no existing Jambu etymon can safely carry the claim.</p>
+<p>At lexeme-cluster level, 2,143 (65.4%) have an externally attributed contact source and 1,133 (34.6%) remain in the Nihali residue. The remaining 1 cluster is retained as Other. At record level the corresponding figures are 2,950 (68.6%) external and 1,348 (31.4%) residue, with 1 Other. Source-attributed, cross-dictionary-propagated, manually adjudicated, or previously curated evidence supports 2,979 records.</p>
+<p>The resulting historical hypothesis is that Nihali is best treated as the sole documented survivor of an <strong>independent Central Indian lineage that underwent layered relexification</strong>. Indo-Aryan is the numerically widest attribution in the expanded database, while Korku/Munda is the most historically diagnostic contact channel; other Munda comparisons may include an older layer, and Dravidian is smaller but real. Lexical comparison alone does not locate the independent lineage&#39;s earlier homeland, date it, or demonstrate a relationship to another isolate.</p>
+<h2 id="lexeme-cluster-results"><a class="heading-anchor" href="#lexeme-cluster-results" aria-label="Link to Lexeme-cluster results">#</a>Lexeme-cluster results</h2>
+<table>
+<thead>
+<tr>
+<th>Stratum</th>
+<th align="right">Lexeme clusters</th>
+<th align="right">Share</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Nihali residue</td>
+<td align="right">1,133</td>
+<td align="right">34.6%</td>
+</tr>
+<tr>
+<td>Indo-Aryan</td>
+<td align="right">935</td>
+<td align="right">28.5%</td>
+</tr>
+<tr>
+<td>Korku</td>
+<td align="right">586</td>
+<td align="right">17.9%</td>
+</tr>
+<tr>
+<td>Korku+Indo-Aryan</td>
+<td align="right">315</td>
+<td align="right">9.6%</td>
+</tr>
+<tr>
+<td>Dravidian</td>
+<td align="right">106</td>
+<td align="right">3.2%</td>
+</tr>
+<tr>
+<td>Munda</td>
+<td align="right">70</td>
+<td align="right">2.1%</td>
+</tr>
+<tr>
+<td>Korku+Munda</td>
+<td align="right">56</td>
+<td align="right">1.7%</td>
+</tr>
+<tr>
+<td>Indo-Aryan+Dravidian</td>
+<td align="right">18</td>
+<td align="right">0.5%</td>
+</tr>
+<tr>
+<td>Indo-Aryan+English</td>
+<td align="right">12</td>
+<td align="right">0.4%</td>
+</tr>
+<tr>
+<td>Munda+Indo-Aryan</td>
+<td align="right">10</td>
+<td align="right">0.3%</td>
+</tr>
+<tr>
+<td>Korku+Munda+Indo-Aryan</td>
+<td align="right">10</td>
+<td align="right">0.3%</td>
+</tr>
+<tr>
+<td>Korku+Dravidian</td>
+<td align="right">7</td>
+<td align="right">0.2%</td>
+</tr>
+<tr>
+<td>Munda+Dravidian</td>
+<td align="right">5</td>
+<td align="right">0.2%</td>
+</tr>
+<tr>
+<td>Korku+Indo-Aryan+Dravidian</td>
+<td align="right">5</td>
+<td align="right">0.2%</td>
+</tr>
+<tr>
+<td>English</td>
+<td align="right">4</td>
+<td align="right">0.1%</td>
+</tr>
+<tr>
+<td>Korku+English</td>
+<td align="right">2</td>
+<td align="right">0.1%</td>
+</tr>
+<tr>
+<td>Other</td>
+<td align="right">1</td>
+<td align="right">0.0%</td>
+</tr>
+<tr>
+<td>Munda+Indo-Aryan+Dravidian</td>
+<td align="right">1</td>
+<td align="right">0.0%</td>
+</tr>
+<tr>
+<td>Korku+Munda+Dravidian</td>
+<td align="right">1</td>
+<td align="right">0.0%</td>
+</tr>
+</tbody></table>
+<h3 id="family-involvement-non-exclusive"><a class="heading-anchor" href="#family-involvement-non-exclusive" aria-label="Link to Family involvement (non-exclusive)">#</a>Family involvement (non-exclusive)</h3>
+<p>Mixed labels count under each named family in this table; rows therefore do not sum to the lexeme total.</p>
+<table>
+<thead>
+<tr>
+<th>Named contact family</th>
+<th align="right">Lexeme clusters</th>
+<th align="right">Share of all clusters</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Indo-Aryan</td>
+<td align="right">1,306</td>
+<td align="right">39.9%</td>
+</tr>
+<tr>
+<td>Korku</td>
+<td align="right">982</td>
+<td align="right">30.0%</td>
+</tr>
+<tr>
+<td>Munda</td>
+<td align="right">153</td>
+<td align="right">4.7%</td>
+</tr>
+<tr>
+<td>Dravidian</td>
+<td align="right">143</td>
+<td align="right">4.4%</td>
+</tr>
+<tr>
+<td>English</td>
+<td align="right">18</td>
+<td align="right">0.5%</td>
+</tr>
+</tbody></table>
+<h3 id="contact-evidence-tiers"><a class="heading-anchor" href="#contact-evidence-tiers" aria-label="Link to Contact evidence tiers">#</a>Contact evidence tiers</h3>
+<p>The family counts above preserve all printed attributions. This second view separates resolved parents from recheckable but unresolved comparisons and from explicitly qualified or weak evidence. Families remain non-exclusive.</p>
+<table>
+<thead>
+<tr>
+<th>Family</th>
+<th align="right">Total labelled</th>
+<th align="right">Resolved parent/route</th>
+<th align="right">Recheckable source</th>
+<th align="right">Qualified</th>
+<th align="right">Questioned/weak</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Indo-Aryan</td>
+<td align="right">1,306</td>
+<td align="right">428</td>
+<td align="right">727</td>
+<td align="right">67</td>
+<td align="right">84</td>
+</tr>
+<tr>
+<td>Korku</td>
+<td align="right">982</td>
+<td align="right">10</td>
+<td align="right">808</td>
+<td align="right">85</td>
+<td align="right">79</td>
+</tr>
+<tr>
+<td>Munda</td>
+<td align="right">153</td>
+<td align="right">7</td>
+<td align="right">90</td>
+<td align="right">24</td>
+<td align="right">32</td>
+</tr>
+<tr>
+<td>Dravidian</td>
+<td align="right">143</td>
+<td align="right">87</td>
+<td align="right">26</td>
+<td align="right">13</td>
+<td align="right">17</td>
+</tr>
+<tr>
+<td>English</td>
+<td align="right">18</td>
+<td align="right">5</td>
+<td align="right">11</td>
+<td align="right">0</td>
+<td align="right">2</td>
+</tr>
+</tbody></table>
+<p>Across all families, 557 clusters have an external parent node. An internal variant edge is not counted as external evidence unless its curated chain actually terminates at such a node; otherwise the cluster is graded from its source proxy. The remaining tiers preserve source hypotheses without pretending they are equally resolved. Every cluster and basis is listed in <a class="audit-link" href="./nihali-contact-evidence-tier-audit.csv"><code>nihali-contact-evidence-tier-audit.csv</code></a>; <a class="audit-link" href="./nihali-family-contact-evidence-audit.csv"><code>nihali-family-contact-evidence-audit.csv</code></a> grades each family separately so one resolved member of a mixed label cannot promote the others.</p>
+<p>A sensitivity bracket makes the consequence of those tiers explicit. The floor retains only family-specific resolved parents and manually corroborated proxies. The supported envelope additionally retains qualified resolved links, explicit unqualified and propagated source evidence, and manually plausible or route-ambiguous proxies, but excludes label-only, questioned, and manually weak/unresolved cases. These are evidence thresholds, not statistical confidence intervals.</p>
+<table>
+<thead>
+<tr>
+<th>Family</th>
+<th align="right">High-specificity floor</th>
+<th align="right">Supported envelope</th>
+<th align="right">All labelled</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Indo-Aryan</td>
+<td align="right">452</td>
+<td align="right">1,222</td>
+<td align="right">1,306</td>
+</tr>
+<tr>
+<td>Korku</td>
+<td align="right">30</td>
+<td align="right">903</td>
+<td align="right">982</td>
+</tr>
+<tr>
+<td>Munda</td>
+<td align="right">8</td>
+<td align="right">121</td>
+<td align="right">153</td>
+</tr>
+<tr>
+<td>Dravidian</td>
+<td align="right">96</td>
+<td align="right">126</td>
+<td align="right">143</td>
+</tr>
+<tr>
+<td>English</td>
+<td align="right">5</td>
+<td align="right">16</td>
+<td align="right">18</td>
+</tr>
+</tbody></table>
+<p>The row-level definitions and shares are in <a class="audit-link" href="./nihali-family-evidence-bracket-audit.csv"><code>nihali-family-evidence-bracket-audit.csv</code></a>. The wide gaps, especially for Indo-Aryan and Korku, are a warning against presenting the headline family labels as solved etymologies.</p>
+<p>The contrast is historically informative: non-Korku Munda has only 8 high-specificity claims, compared with 96 Dravidian and 452 Indo-Aryan. Korku&#39;s floor is only 30, but its supported envelope reaches 903: most Korku evidence identifies a proximate route in the lexical sources rather than a terminal Korku parent node. This is why the audit supports profound Korku contact without converting the much smaller non-Korku Munda set into proof of Munda descent.</p>
+<p>A separate route-recovery test checks all 854 Korku-labelled source-proxy clusters against the independently ingested Korku lexicon, excluding the provisional proxy forms themselves. It recovers 86 close form-and-meaning matches and 28 possible matches; 405 have only a close string, 297 remain weak or unmatched, and 38 lack a recoverable printed comparison form. This is deliberately stricter than accepting a dictionary&#39;s donor label at face value.</p>
+<p>Among the 86 strongest route matches, 8 Korku forms have an accepted upstream Munda parent and 78 have no upstream etymology in the current graph. The latter count is a Korku etymological-coverage gap, not evidence that those words originated in Korku. It sharply limits any attempt to convert an immediate Korku route into an ultimate Munda percentage. Every selected Korku form, score, source, and upstream path is in <a class="audit-link" href="./nihali-korku-route-audit.csv"><code>nihali-korku-route-audit.csv</code></a>.</p>
+<p>The Indo-Aryan layer is equally non-monolithic. Of 1,306 Indo-Aryan-involved clusters, 1,032 explicitly name modern Hindi, Marathi, Bengali, or Konkani comparanda, 33 name Sanskrit without a modern IA language, and 24 name both. Another 127 use only a generic IA label, 76 resolve without a specific language in the source note, and 14 remain label-only at that granularity. 330 clusters also mention a Korku route. These labels distinguish comparative evidence, not borrowing dates, but they make a single prehistoric Indo-Aryan layer untenable. Row-level named languages, parents, and cautions are in <a class="audit-link" href="./nihali-indo-aryan-route-profile.csv"><code>nihali-indo-aryan-route-profile.csv</code></a>.</p>
+<h3 id="diagnostic-basic-vocabulary"><a class="heading-anchor" href="#diagnostic-basic-vocabulary" aria-label="Link to Diagnostic basic vocabulary">#</a>Diagnostic basic vocabulary</h3>
+<p>After removing 14 manually verified concept-linking false positives, a fixed 93-domain Swadesh-style screen finds 292 lexeme clusters linked to 91 covered concepts (HEART and SWIM have no linked Nihali record). Exclusions are listed in <a class="audit-link" href="./nihali-core-vocabulary-exclusions.csv"><code>nihali-core-vocabulary-exclusions.csv</code></a>. This is a diagnostic slice, not a replacement-rate calculation: synonyms and multiple source forms can create more than one cluster per concept.</p>
+<table>
+<thead>
+<tr>
+<th>Stratum</th>
+<th align="right">Conservative baseline</th>
+<th align="right">Variant-propagation sensitivity</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Nihali residue</td>
+<td align="right">157 (53.8%)</td>
+<td align="right">91 (31.2%)</td>
+</tr>
+<tr>
+<td>Indo-Aryan</td>
+<td align="right">39 (13.4%)</td>
+<td align="right">50 (17.1%)</td>
+</tr>
+<tr>
+<td>Korku</td>
+<td align="right">37 (12.7%)</td>
+<td align="right">51 (17.5%)</td>
+</tr>
+<tr>
+<td>Dravidian</td>
+<td align="right">18 (6.2%)</td>
+<td align="right">34 (11.6%)</td>
+</tr>
+<tr>
+<td>Korku+Indo-Aryan</td>
+<td align="right">16 (5.5%)</td>
+<td align="right">19 (6.5%)</td>
+</tr>
+<tr>
+<td>Munda</td>
+<td align="right">11 (3.8%)</td>
+<td align="right">25 (8.6%)</td>
+</tr>
+<tr>
+<td>Korku+Munda</td>
+<td align="right">8 (2.7%)</td>
+<td align="right">15 (5.1%)</td>
+</tr>
+<tr>
+<td>Munda+Indo-Aryan</td>
+<td align="right">3 (1.0%)</td>
+<td align="right">3 (1.0%)</td>
+</tr>
+<tr>
+<td>Other</td>
+<td align="right">1 (0.3%)</td>
+<td align="right">1 (0.3%)</td>
+</tr>
+<tr>
+<td>Korku+Munda+Indo-Aryan</td>
+<td align="right">1 (0.3%)</td>
+<td align="right">2 (0.7%)</td>
+</tr>
+<tr>
+<td>Korku+Indo-Aryan+Dravidian</td>
+<td align="right">1 (0.3%)</td>
+<td align="right">1 (0.3%)</td>
+</tr>
+</tbody></table>
+<p>The residue accounts for 157 of 292 core-vocabulary clusters (53.8%), compared with 34.6% of all lexeme clusters under the strict baseline. However, 66 manually reviewed forms are plausible variants or transparent derivational/inflectional relatives of separately clustered source-attributed Nihali forms. Propagating those comparisons only in a sensitivity pass reduces the core residue to 91 (31.2%). The apparent core enrichment is therefore not robust to conservative under-clustering and must not be used as positive evidence for an independent lineage. The repeated residue remains historically important, but its interpretation rests on item-level evidence and the absence of demonstrated regular correspondences rather than this proportion.</p>
+<p>The same under-clustering risk was screened across the full lexicon. An exhaustive review register contains 205 residual-to-contact pairs: 172 are judged lexical variants, 32 remain qualified, and 1 is rejected. Propagating only the clearer variants would reduce the strict residue from 1,133 to 961 clusters; including qualified cases gives a broad sensitivity floor of 929. The 204 supported or qualified rows involve 75 Indo-Aryan, 101 Korku, 39 Munda, and 25 Dravidian reference strata (non-exclusive). This sensitivity does not alter installed graph edges: it measures how much source-level attribution is hidden by conservative lexical clustering. Every pair, score, decision, and rationale is in <a class="audit-link" href="./nihali-global-variant-sensitivity-audit.csv"><code>nihali-global-variant-sensitivity-audit.csv</code></a>.</p>
+<p>Counting each covered basic concept once gives a more stable picture: 17 concepts are residue-only, 22 retain both residue and contact forms, 21 are contact-only with one named family, and 31 are contact-only with multiple named families. Thus 39/91 concepts retain at least one effective residual root, while 52/91 are contact-only under the current hypotheses. Contact involvement is also distributed rather than unitary: Korku occurs in 46 concepts, Indo-Aryan in 42, Munda in 20, and Dravidian in 13. This balance fits layered replacement better than descent from any single donor layer, but residual presence still means unmatched rather than inherited. Crucially, 16/17 residue-only concepts have at least one root attested in multiple sources and 14/17 have a root in Konow or Bhattacharya; the residue-only concepts supported solely by one source are WALK. Among the 22 mixed residue-plus-contact concepts, 11 have a replicated residual root. This establishes a stable residual lexicon without converting it into a demonstrated lineage. The 91 concept-level rows are in <a class="audit-link" href="./nihali-core-concept-origin-profile.csv"><code>nihali-core-concept-origin-profile.csv</code></a>.</p>
+<p>The stricter Korku route-recovery screen contains 54 core-vocabulary proxy clusters: 14 independently recover a close Korku form with compatible meaning, 6 are possible, 18 recover only a misleading or semantically unsupported string, 9 are weak/unmatched, and 7 lack a recoverable form. The source attributions remain recorded, but only the first two categories independently corroborate a Korku route in the current database.</p>
+<p>A second manual sensitivity pass collapses the 91 still-residual clusters to citation-form and dialect-variant root groups within each concept. It yields 56 provisional root hypotheses across 39 concepts. This is not a Proto-Nihali reconstruction: it is a denominator correction that prevents forms such as five separately clustered transcriptions of &#39;head&#39; from counting as five independent roots. Groupings and rationales are in <a class="audit-link" href="./nihali-core-residue-root-audit.csv"><code>nihali-core-residue-root-audit.csv</code></a>; multi-cluster decisions are maintained in <a class="audit-link" href="./nihali-core-residue-root-review.csv"><code>nihali-core-residue-root-review.csv</code></a>.</p>
+<p>The resulting root inventory contains 16 roots attested in four or five sources, 9 in three, 4 in two, and 27 in one. 33 are present in Konow (1906) or Bhattacharya (1957). This measures documentary replication, not linguistic age: old loans can be stable, and single-source items can be genuine. Actual forms, source lists, alternatives, and a caution on every row are in <a class="audit-link" href="./nihali-core-residue-root-inventory.csv"><code>nihali-core-residue-root-inventory.csv</code></a>.</p>
+<p>Closed-class material is not uniformly replaced. The concept-linked inventory gives the following effective-stratum profile after applying the reviewed core-variant sensitivity where available (family columns are non-exclusive):</p>
+<table>
+<thead>
+<tr>
+<th>Domain</th>
+<th align="right">Linked clusters</th>
+<th align="right">Residue</th>
+<th align="right">Indo-Aryan</th>
+<th align="right">Korku</th>
+<th align="right">Munda</th>
+<th align="right">Dravidian</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>pronoun</td>
+<td align="right">22</td>
+<td align="right">17</td>
+<td align="right">0</td>
+<td align="right">3</td>
+<td align="right">2</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>demonstrative</td>
+<td align="right">15</td>
+<td align="right">5</td>
+<td align="right">1</td>
+<td align="right">9</td>
+<td align="right">0</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td>interrogative</td>
+<td align="right">15</td>
+<td align="right">11</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td>polarity</td>
+<td align="right">8</td>
+<td align="right">6</td>
+<td align="right">1</td>
+<td align="right">2</td>
+<td align="right">0</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td>low numeral</td>
+<td align="right">37</td>
+<td align="right">1</td>
+<td align="right">16</td>
+<td align="right">1</td>
+<td align="right">3</td>
+<td align="right">18</td>
+</tr>
+</tbody></table>
+<p>Pronouns, deixis, interrogatives, and polarity retain many residual forms, while the low numerals are much more heavily assigned to Indo-Aryan or Dravidian. This asymmetry is compatible with relexification of a pre-contact grammatical lexicon, but it is not a genetic proof: these linked clusters contain under-merged variants and synonyms, and contact can affect closed classes too. The complete, row-level diagnostic is in <a class="audit-link" href="./nihali-closed-class-diagnostic-audit.csv"><code>nihali-closed-class-diagnostic-audit.csv</code></a>.</p>
+<p>The strict core slice contains 23 Munda-involved clusters covering only 18 concepts. The family-specific audit finds just 2 high-specificity corroborated Munda claims; 1 resolved link is qualified, 1 is manually weak, 15 are explicit unhedged source comparisons, and 3 are label-only. Variant propagation raises the row count to 45 but adds no new concepts (20 total). This is replication of the same proposed comparisons, not an expanding cognate set, and it supplies no regular Nihali–Munda sound correspondence system.</p>
+<h3 id="evidence-basis-by-lexeme-cluster"><a class="heading-anchor" href="#evidence-basis-by-lexeme-cluster" aria-label="Link to Evidence basis by lexeme cluster">#</a>Evidence basis by lexeme cluster</h3>
+<table>
+<thead>
+<tr>
+<th>Evidence basis</th>
+<th align="right">Lexeme clusters</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>record-local source/editorial note</td>
+<td align="right">1,847</td>
+</tr>
+<tr>
+<td>unresolved residue</td>
+<td align="right">1,069</td>
+</tr>
+<tr>
+<td>existing-curated</td>
+<td align="right">211</td>
+</tr>
+<tr>
+<td>manually accepted source-free lead</td>
+<td align="right">114</td>
+</tr>
+<tr>
+<td>manually deferred computational lead</td>
+<td align="right">18</td>
+</tr>
+<tr>
+<td>manually rejected computational lead</td>
+<td align="right">18</td>
+</tr>
+</tbody></table>
+<p>The evidence-basis buckets are mutually exclusive. One of the 115 accepted reviewed leads belongs to a multi-record cluster that already contains a curated edge, so it is counted under <code>existing-curated</code> rather than again under manually accepted leads.</p>
+<p>There are 138 clusters for which the lexical sources preserve different donor labels. In 93 cases one label nests inside another, typically reflecting immediate Korku transmission versus an Indo-Aryan or other ultimate source. The remaining 45 cases have disjoint labels. Manual adjudication treats 26 as plausible staged contact chains, favors Indo-Aryan in 8, Korku in 4, and Munda in 1; 6 remain unresolved. The union labels stay in the audit so this adjudication does not erase the printed alternatives. Full evidence and rationales are in <a class="audit-link" href="./nihali-source-label-variation-audit.csv"><code>nihali-source-label-variation-audit.csv</code></a>.</p>
+<p>Cross-dictionary propagation extends source/editorial evidence to 468 records in 359 conservatively matched clusters.</p>
+<p>All 118 threshold-generated source-free leads received an explicit human decision: 95 had a clear margin over alternatives and 23 were family-level ties. A separate reviewed escape hatch covers 25 transparent cultural loans that string scoring misses. A fourth register manually checks 19 low-fit or semantically deceptive parent resolutions where the donor attribution itself remains source-supported. Across the four registers, 115 were accepted, 29 rejected, and 18 deferred. Decisions and rationales are preserved in the audit tables, including <a class="audit-link" href="./nihali-transparent-loan-review.csv"><code>nihali-transparent-loan-review.csv</code></a> for the cultural-loan exceptions and <a class="audit-link" href="./nihali-source-parent-review.csv"><code>nihali-source-parent-review.csv</code></a> for source-parent corrections. Rejected and deferred source-free leads remain Nihali-residue proxy hypotheses; rejected source-parent matches retain their printed donor stratum as unresolved proxies. Within the parent-head register, 8 links were redirected to the source-supported head and 11 were downgraded to unresolved proxies.</p>
+<p>A separate morpheme-level review finds 23 otherwise residual expressions with recognizable contact material: 18 transparent components, 4 qualified components, and 1 quarantined source/gloss conflict. Layer mentions are non-exclusive (Indo-Aryan 23, Munda 1, Other 1). These rows remain residual in the strict graph because component analysis alone does not create a whole-expression rank-1 edge. Most retain unresolved Nihali material; a fully contact-composed case is removed only in the explicit sensitivity pass. See <a class="audit-link" href="./nihali-residue-contact-component-review.csv"><code>nihali-residue-contact-component-review.csv</code></a>.</p>
+<h3 id="residue-threshold-sensitivity"><a class="heading-anchor" href="#residue-threshold-sensitivity" aria-label="Link to Residue threshold sensitivity">#</a>Residue threshold sensitivity</h3>
+<p>A score-only stress test deliberately relaxes the production gates for clusters that still remain residual. It does not create assignments:</p>
+<table>
+<thead>
+<tr>
+<th>Threshold</th>
+<th align="right">Minimum score</th>
+<th align="right">Minimum margin</th>
+<th align="right">Flagged</th>
+<th align="right">Indo-Aryan</th>
+<th align="right">Dravidian</th>
+<th align="right">Munda</th>
+<th align="right">Unreviewed</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>very loose</td>
+<td align="right">0.650</td>
+<td align="right">0.025</td>
+<td align="right">479</td>
+<td align="right">256</td>
+<td align="right">190</td>
+<td align="right">32</td>
+<td align="right">449</td>
+</tr>
+<tr>
+<td>loose</td>
+<td align="right">0.700</td>
+<td align="right">0.025</td>
+<td align="right">334</td>
+<td align="right">178</td>
+<td align="right">133</td>
+<td align="right">22</td>
+<td align="right">304</td>
+</tr>
+<tr>
+<td>moderate</td>
+<td align="right">0.750</td>
+<td align="right">0.025</td>
+<td align="right">171</td>
+<td align="right">86</td>
+<td align="right">68</td>
+<td align="right">16</td>
+<td align="right">141</td>
+</tr>
+<tr>
+<td>high score, low margin</td>
+<td align="right">0.800</td>
+<td align="right">0.025</td>
+<td align="right">70</td>
+<td align="right">38</td>
+<td align="right">22</td>
+<td align="right">9</td>
+<td align="right">40</td>
+</tr>
+<tr>
+<td>production-like score/margin only</td>
+<td align="right">0.800</td>
+<td align="right">0.045</td>
+<td align="right">65</td>
+<td align="right">36</td>
+<td align="right">22</td>
+<td align="right">6</td>
+<td align="right">39</td>
+</tr>
+<tr>
+<td>very high score</td>
+<td align="right">0.850</td>
+<td align="right">0.045</td>
+<td align="right">16</td>
+<td align="right">9</td>
+<td align="right">5</td>
+<td align="right">1</td>
+<td align="right">0</td>
+</tr>
+</tbody></table>
+<p>At the production-like composite score and margin alone, 65 residual clusters would be flagged, but 39 never passed the required component-level form, meaning, and donor-specific gates. At the very-high score setting, 16 remain, of which 16 were already rejected or deferred by manual review. Looser settings mainly generate Indo-Aryan and Dravidian candidates, reflecting donor-database size as much as history; etymologised Korku coverage is especially sparse. This is why lowering one cutoff cannot convert the residue into evidence for a particular family. Full definitions are in <a class="audit-link" href="./nihali-residue-threshold-sensitivity.csv"><code>nihali-residue-threshold-sensitivity.csv</code></a>.</p>
+<h3 id="shape-of-resolved-external-links"><a class="heading-anchor" href="#shape-of-resolved-external-links" aria-label="Link to Shape of resolved external links">#</a>Shape of resolved external links</h3>
+<p>The following table counts distinct lexeme-to-parent links that reach an actual external Jambu node, excluding unresolved donor proxies. Parent shape compares the Nihali form with the stored parent, which may be reconstructed or ultimate. Surface shape instead uses the best automatically selected observed descendant under that parent. Both are descriptive, not sound-law tests.</p>
+<table>
+<thead>
+<tr>
+<th>Parent family</th>
+<th align="right">Links</th>
+<th align="right">Parent exact/near</th>
+<th align="right">Surface exact/near</th>
+<th align="right">Surface moderate</th>
+<th align="right">Surface distant/unavailable</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Indo-Aryan</td>
+<td align="right">422</td>
+<td align="right">78</td>
+<td align="right">276</td>
+<td align="right">89</td>
+<td align="right">57</td>
+</tr>
+<tr>
+<td>Dravidian</td>
+<td align="right">98</td>
+<td align="right">8</td>
+<td align="right">37</td>
+<td align="right">21</td>
+<td align="right">40</td>
+</tr>
+<tr>
+<td>Munda</td>
+<td align="right">33</td>
+<td align="right">10</td>
+<td align="right">17</td>
+<td align="right">1</td>
+<td align="right">15</td>
+</tr>
+<tr>
+<td>Other</td>
+<td align="right">13</td>
+<td align="right">7</td>
+<td align="right">9</td>
+<td align="right">1</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td>English</td>
+<td align="right">5</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">3</td>
+<td align="right">2</td>
+</tr>
+</tbody></table>
+<p>Resolution is mostly to a comparative index or reconstructed node, not to an observed surface donor: 362 links terminate at the generic Indo-Aryan node, 58 at Proto-Indo-Iranian, all 98 Dravidian links at Proto-Dravidian, and the Munda links split between Proto-Kherwarian (16) and Proto-Munda (17), with 5 direct English and 13 Persian links. Thus &#39;resolved&#39; means that a database etymon was identified; it does not by itself identify the immediate donor, borrowing date, or direction.
+The observed-surface column is a reproducible diagnostic rather than manual donor identification. It can recover a relevant reflex hidden beneath an awkward canonical display form, but dense etymological families can also supply an accidentally attractive surface. The selected IDs, forms, languages, glosses, and both similarity scores remain inspectable in <a class="audit-link" href="./nihali-resolved-contact-shape-audit.csv"><code>nihali-resolved-contact-shape-audit.csv</code></a>.</p>
+<p>The source labels and resolved parents answer different historical questions. The matrix below counts which named route families occur in the source stratum of each resolved ultimate-parent link; route columns are non-exclusive.</p>
+<table>
+<thead>
+<tr>
+<th>Resolved parent family</th>
+<th align="right">Links</th>
+<th align="right">Korku-labelled route</th>
+<th align="right">Munda-labelled route</th>
+<th align="right">Indo-Aryan-labelled route</th>
+<th align="right">Dravidian-labelled route</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Indo-Aryan</td>
+<td align="right">422</td>
+<td align="right">112</td>
+<td align="right">3</td>
+<td align="right">421</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td>Dravidian</td>
+<td align="right">98</td>
+<td align="right">8</td>
+<td align="right">4</td>
+<td align="right">14</td>
+<td align="right">90</td>
+</tr>
+<tr>
+<td>Munda</td>
+<td align="right">33</td>
+<td align="right">24</td>
+<td align="right">23</td>
+<td align="right">6</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Other</td>
+<td align="right">13</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">13</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td>English</td>
+<td align="right">5</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">4</td>
+<td align="right">0</td>
+</tr>
+</tbody></table>
+<p>Most importantly, 112 of the 422 links that resolve to an Indo-Aryan parent carry a Korku route label, and 24 of the 33 Munda-parent links do so. This is direct database evidence that Korku is often the proximate conduit rather than a sufficient statement of ultimate ancestry.</p>
+<p>The Munda subset has 33 resolved links, of which 10 are exact or near. Near identity is compatible with borrowing, while the more distant pairs require recurring correspondences before they can support inheritance. Manual review reduces the 33 links to 28 distinct Munda parent roots and classifies 11 as near contact-compatible, 15 as possible correspondences, and 7 as weak. The only repeated non-identity proposal is initial c~s in 5 links representing four parent roots; one root (&#39;dance&#39;) is duplicated across two Nihali citation clusters. Four semantic sets are too few, and their remaining segments too heterogeneous, to establish a Nihali–Munda sound law. The full form-shape inventory and all 33 rationales are in <a class="audit-link" href="./nihali-resolved-contact-shape-audit.csv"><code>nihali-resolved-contact-shape-audit.csv</code></a> and <a class="audit-link" href="./nihali-munda-correspondence-review.csv"><code>nihali-munda-correspondence-review.csv</code></a>.</p>
+<p>The parallel Dravidian diagnostic collapses 98 resolved links to 66 parent roots. On a deliberately mechanical joint form-and-meaning screen, 22 roots are near contact-compatible and 12 are possible comparisons, while 27 have weak form fit and 5 have weak semantic fit. 45 roots begin with identity mappings; the only repeated non-identity initials are b<del>v (3 roots), h</del>k (2 roots), g~k (2 roots). These sparse patterns mix unrelated meanings and do not establish a Nihali–Dravidian sound law. The diagnostic nevertheless supports a genuine contact layer: close matches such as the low numerals, &#39;dog&#39;, &#39;cat&#39;, and &#39;cotton&#39; are exactly the shapes that borrowing can preserve. Root-level rows and the reproducible thresholds are in <a class="audit-link" href="./nihali-dravidian-correspondence-audit.csv"><code>nihali-dravidian-correspondence-audit.csv</code></a>.</p>
+<h2 id="record-level-audit-results"><a class="heading-anchor" href="#record-level-audit-results" aria-label="Link to Record-level audit results">#</a>Record-level audit results</h2>
+<table>
+<thead>
+<tr>
+<th>Stratum</th>
+<th align="right">Records</th>
+<th align="right">Share</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Nihali residue</td>
+<td align="right">1,348</td>
+<td align="right">31.4%</td>
+</tr>
+<tr>
+<td>Indo-Aryan</td>
+<td align="right">1,174</td>
+<td align="right">27.3%</td>
+</tr>
+<tr>
+<td>Korku</td>
+<td align="right">769</td>
+<td align="right">17.9%</td>
+</tr>
+<tr>
+<td>Korku+Indo-Aryan</td>
+<td align="right">521</td>
+<td align="right">12.1%</td>
+</tr>
+<tr>
+<td>Dravidian</td>
+<td align="right">166</td>
+<td align="right">3.9%</td>
+</tr>
+<tr>
+<td>Korku+Munda</td>
+<td align="right">110</td>
+<td align="right">2.6%</td>
+</tr>
+<tr>
+<td>Munda</td>
+<td align="right">93</td>
+<td align="right">2.2%</td>
+</tr>
+<tr>
+<td>Indo-Aryan+Dravidian</td>
+<td align="right">31</td>
+<td align="right">0.7%</td>
+</tr>
+<tr>
+<td>Korku+Munda+Indo-Aryan</td>
+<td align="right">23</td>
+<td align="right">0.5%</td>
+</tr>
+<tr>
+<td>Munda+Indo-Aryan</td>
+<td align="right">15</td>
+<td align="right">0.3%</td>
+</tr>
+<tr>
+<td>Indo-Aryan+English</td>
+<td align="right">14</td>
+<td align="right">0.3%</td>
+</tr>
+<tr>
+<td>Korku+Dravidian</td>
+<td align="right">13</td>
+<td align="right">0.3%</td>
+</tr>
+<tr>
+<td>Korku+Indo-Aryan+Dravidian</td>
+<td align="right">8</td>
+<td align="right">0.2%</td>
+</tr>
+<tr>
+<td>Munda+Dravidian</td>
+<td align="right">5</td>
+<td align="right">0.1%</td>
+</tr>
+<tr>
+<td>English</td>
+<td align="right">4</td>
+<td align="right">0.1%</td>
+</tr>
+<tr>
+<td>Korku+English</td>
+<td align="right">2</td>
+<td align="right">0.0%</td>
+</tr>
+<tr>
+<td>Other</td>
+<td align="right">1</td>
+<td align="right">0.0%</td>
+</tr>
+<tr>
+<td>Munda+Indo-Aryan+Dravidian</td>
+<td align="right">1</td>
+<td align="right">0.0%</td>
+</tr>
+<tr>
+<td>Korku+Munda+Dravidian</td>
+<td align="right">1</td>
+<td align="right">0.0%</td>
+</tr>
+</tbody></table>
+<h3 id="method"><a class="heading-anchor" href="#method" aria-label="Link to Method">#</a>Method</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th align="right">Records</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>source-proxy</td>
+<td align="right">1,780</td>
+</tr>
+<tr>
+<td>residue-proxy</td>
+<td align="right">1,273</td>
+</tr>
+<tr>
+<td>source-resolved</td>
+<td align="right">387</td>
+</tr>
+<tr>
+<td>cluster-proxy</td>
+<td align="right">343</td>
+</tr>
+<tr>
+<td>existing-curated</td>
+<td align="right">217</td>
+</tr>
+<tr>
+<td>manual-resolved</td>
+<td align="right">127</td>
+</tr>
+<tr>
+<td>cluster-resolved</td>
+<td align="right">125</td>
+</tr>
+<tr>
+<td>manual-rejected</td>
+<td align="right">25</td>
+</tr>
+<tr>
+<td>manual-deferred</td>
+<td align="right">22</td>
+</tr>
+</tbody></table>
+<h3 id="confidence"><a class="heading-anchor" href="#confidence" aria-label="Link to Confidence">#</a>Confidence</h3>
+<table>
+<thead>
+<tr>
+<th>Confidence</th>
+<th align="right">Records</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>low</td>
+<td align="right">2,172</td>
+</tr>
+<tr>
+<td>unresolved</td>
+<td align="right">1,298</td>
+</tr>
+<tr>
+<td>high</td>
+<td align="right">619</td>
+</tr>
+<tr>
+<td>medium</td>
+<td align="right">210</td>
+</tr>
+</tbody></table>
+<p>Low or unresolved analyses account for 3,470 records (80.7%). Confidence grades the resolution of a particular parent, not the mere presence of a donor label in an editorial/source note; these proportions must not be presented as a fully solved etymological dictionary.</p>
+<h3 id="resolution-quality-within-donor-proxies"><a class="heading-anchor" href="#resolution-quality-within-donor-proxies" aria-label="Link to Resolution quality within donor proxies">#</a>Resolution quality within donor proxies</h3>
+<p>The 1,629 lexeme clusters containing at least one unresolved donor proxy are separately graded below. A catalog-indexed or explicit comparison can be rechecked against a named form; a donor-label-only proxy preserves a source judgment but does not reveal the comparison that motivated it.</p>
+<table>
+<thead>
+<tr>
+<th>Proxy evidence</th>
+<th align="right">Clusters</th>
+<th align="right">Share of proxy clusters</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>explicit-comparanda</td>
+<td align="right">1,444</td>
+<td align="right">88.6%</td>
+</tr>
+<tr>
+<td>donor-label-only</td>
+<td align="right">108</td>
+<td align="right">6.6%</td>
+</tr>
+<tr>
+<td>catalog-indexed</td>
+<td align="right">77</td>
+<td align="right">4.7%</td>
+</tr>
+</tbody></table>
+<p>A surface-form check against the best recoverable printed comparandum provides a second, independent triage. It is deliberately descriptive: compounds, historical sound change, and reconstructed citation forms can make genuine contacts look distant, while near identity alone cannot establish direction or inheritance.</p>
+<table>
+<thead>
+<tr>
+<th>Best surface shape</th>
+<th align="right">All proxies</th>
+<th align="right">Unqualified</th>
+<th align="right">Questioned</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>exact</td>
+<td align="right">389</td>
+<td align="right">351</td>
+<td align="right">38</td>
+</tr>
+<tr>
+<td>near</td>
+<td align="right">385</td>
+<td align="right">344</td>
+<td align="right">41</td>
+</tr>
+<tr>
+<td>moderate</td>
+<td align="right">386</td>
+<td align="right">324</td>
+<td align="right">62</td>
+</tr>
+<tr>
+<td>distant</td>
+<td align="right">322</td>
+<td align="right">251</td>
+<td align="right">71</td>
+</tr>
+<tr>
+<td>unscored</td>
+<td align="right">147</td>
+<td align="right">105</td>
+<td align="right">42</td>
+</tr>
+</tbody></table>
+<p>Only 1,299 proxy clusters (79.7%) combine recoverable comparanda with no explicit uncertainty marker. 254 contain an explicit question or hedge; 108 give no recoverable compared form at cluster level. Direction is explicitly asserted for 89, while 56 are comparison-only and the remainder are attributions without a stated direction. These distinctions are tabulated in <a class="audit-link" href="./nihali-source-proxy-quality-audit.csv"><code>nihali-source-proxy-quality-audit.csv</code></a>. The 20 critical-priority rows are weakly supported core-vocabulary proxies. Manual review corroborates contact in 8, finds the route ambiguous in 5, retains 3 as plausible, and leaves 4 unresolved. The unresolved cases do not count as positive evidence for genetic classification; the row-level reasoning is preserved in <a class="audit-link" href="./nihali-core-source-proxy-review.csv"><code>nihali-core-source-proxy-review.csv</code></a> and repeated in the quality audit.</p>
+<p>The 44 high-priority weak proxies involving Munda or Dravidian also received full manual review: 10 corroborated contact items, 11 route-ambiguous items, 15 plausible items, 5 weak comparisons, and 3 unresolved labels. This prevents questioned family tags from being mistaken for equal-strength evidence; preferred donors and full rationales are in <a class="audit-link" href="./nihali-diagnostic-source-proxy-review.csv"><code>nihali-diagnostic-source-proxy-review.csv</code></a>.</p>
+<p>The remaining 200 explicitly hedged proxies were then reviewed one by one: 54 corroborated, 38 route-ambiguous, 57 plausible, 30 weak, and 21 unresolved. Thus no explicitly questioned proxy remains unreviewed. These decisions grade the source comparison without silently rewriting its graph label; the complete register is <a class="audit-link" href="./nihali-questioned-source-proxy-review.csv"><code>nihali-questioned-source-proxy-review.csv</code></a>.</p>
+<h3 id="lexical-sources-and-ascertainment"><a class="heading-anchor" href="#lexical-sources-and-ascertainment" aria-label="Link to Lexical sources and ascertainment">#</a>Lexical sources and ascertainment</h3>
+<p>The sources differ sharply in whether they print or inherit etymological commentary. Rows therefore measure documentation practices as well as the language.</p>
+<table>
+<thead>
+<tr>
+<th>Source</th>
+<th align="right">Records</th>
+<th align="right">Direct donor note</th>
+<th align="right">Current external label</th>
+<th align="right">Residue</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>nagaraja2014</td>
+<td align="right">1,761</td>
+<td align="right">1,386 (78.7%)</td>
+<td align="right">1,411 (80.1%)</td>
+<td align="right">350 (19.9%)</td>
+</tr>
+<tr>
+<td>mundlay1996</td>
+<td align="right">1,707</td>
+<td align="right">781 (45.8%)</td>
+<td align="right">1,090 (63.9%)</td>
+<td align="right">617 (36.1%)</td>
+</tr>
+<tr>
+<td>bhattacharya1957</td>
+<td align="right">407</td>
+<td align="right">170 (41.8%)</td>
+<td align="right">258 (63.4%)</td>
+<td align="right">148 (36.4%)</td>
+</tr>
+<tr>
+<td>varghesekumar2015noira</td>
+<td align="right">234</td>
+<td align="right">0 (0.0%)</td>
+<td align="right">124 (53.0%)</td>
+<td align="right">110 (47.0%)</td>
+</tr>
+<tr>
+<td>konow1906</td>
+<td align="right">190</td>
+<td align="right">23 (12.1%)</td>
+<td align="right">67 (35.3%)</td>
+<td align="right">123 (64.7%)</td>
+</tr>
+</tbody></table>
+<p>Deduplicating within each source gives the following source-normalized profile. Family columns are non-exclusive, and cross-dictionary propagation is retained because the question here is the current hypothesis coverage of each source, not authorship of the label.</p>
+<table>
+<thead>
+<tr>
+<th>Source</th>
+<th align="right">Clusters</th>
+<th align="right">External</th>
+<th align="right">Korku</th>
+<th align="right">Indo-Aryan</th>
+<th align="right">Munda</th>
+<th align="right">Dravidian</th>
+<th align="right">Residue</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>bhattacharya1957</td>
+<td align="right">396</td>
+<td align="right">63.1%</td>
+<td align="right">33.6%</td>
+<td align="right">37.6%</td>
+<td align="right">9.6%</td>
+<td align="right">6.1%</td>
+<td align="right">36.9%</td>
+</tr>
+<tr>
+<td>konow1906</td>
+<td align="right">183</td>
+<td align="right">33.9%</td>
+<td align="right">16.4%</td>
+<td align="right">18.0%</td>
+<td align="right">1.6%</td>
+<td align="right">6.0%</td>
+<td align="right">66.1%</td>
+</tr>
+<tr>
+<td>mundlay1996</td>
+<td align="right">1,687</td>
+<td align="right">63.7%</td>
+<td align="right">25.8%</td>
+<td align="right">44.5%</td>
+<td align="right">5.1%</td>
+<td align="right">2.3%</td>
+<td align="right">36.3%</td>
+</tr>
+<tr>
+<td>nagaraja2014</td>
+<td align="right">1,735</td>
+<td align="right">80.0%</td>
+<td align="right">44.4%</td>
+<td align="right">42.8%</td>
+<td align="right">5.8%</td>
+<td align="right">7.1%</td>
+<td align="right">20.0%</td>
+</tr>
+<tr>
+<td>varghesekumar2015noira</td>
+<td align="right">220</td>
+<td align="right">51.8%</td>
+<td align="right">21.4%</td>
+<td align="right">34.5%</td>
+<td align="right">5.0%</td>
+<td align="right">7.7%</td>
+<td align="right">48.2%</td>
+</tr>
+</tbody></table>
+<p>The normalized contrast is too large to read chronologically. Konow has only 33.9% external coverage, while Nagaraja has 80.0%; Nagaraja also supplies the densest Korku commentary. Non-Korku Munda remains a small share in every source (1.6%–9.6%), rather than becoming a dominant layer when dictionary size is controlled. Location, elicitation scope, and editorial policy remain confounded; complete counts are in <a class="audit-link" href="./nihali-source-normalized-profile.csv"><code>nihali-source-normalized-profile.csv</code></a>.</p>
+<p>Direct attribution agreement is still sparser. Among the 701 clusters attested in at least two sources, only 119 receive the same direct family label from multiple sources and 90 receive compatible nested labels. 48 have disjoint direct labels; 298 are labelled by only one source, and 146 have no direct label in their own replicated rows. Silence is not disagreement, and matching labels are not fully independent because later dictionaries can repeat earlier analyses. The result explains why source hypotheses are retained but not treated as independently replicated cognate judgments; see <a class="audit-link" href="./nihali-cross-source-attribution-agreement.csv"><code>nihali-cross-source-attribution-agreement.csv</code></a>.</p>
+<p>Family-specific replication makes that distinction explicit:</p>
+<table>
+<thead>
+<tr>
+<th>Family</th>
+<th align="right">All labelled</th>
+<th align="right">Lexeme in 2+ sources</th>
+<th align="right">Family directly labelled in 2+ sources</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Korku</td>
+<td align="right">982</td>
+<td align="right">323</td>
+<td align="right">58 (18.0%)</td>
+</tr>
+<tr>
+<td>Munda</td>
+<td align="right">153</td>
+<td align="right">51</td>
+<td align="right">5 (9.8%)</td>
+</tr>
+<tr>
+<td>Indo-Aryan</td>
+<td align="right">1,306</td>
+<td align="right">348</td>
+<td align="right">162 (46.6%)</td>
+</tr>
+<tr>
+<td>Dravidian</td>
+<td align="right">143</td>
+<td align="right">43</td>
+<td align="right">5 (11.6%)</td>
+</tr>
+</tbody></table>
+<p>Only 5 of the 51 replicated Munda-labelled lexemes receive a direct Munda label in two or more sources, compared with 58/323 for Korku and 162/348 for Indo-Aryan. Thus repeated attestation of a proposed Munda item usually replicates the Nihali word, not the Munda analysis. Full zero/one/two-plus counts and the dependency warning are in <a class="audit-link" href="./nihali-family-attribution-replication.csv"><code>nihali-family-attribution-replication.csv</code></a>.</p>
+<p>Cross-source replication by layer is also non-exclusive for the named contact families. ‘Early source’ here means attested in Konow (1906) or Bhattacharya (1957), not that the etymon itself has been dated.</p>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th align="right">Clusters</th>
+<th align="right">In 2+ sources</th>
+<th align="right">Early-source attested</th>
+<th align="right">Nagaraja 2014</th>
+<th align="right">All five</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Nihali residue</td>
+<td align="right">1,133</td>
+<td align="right">140 (12.4%)</td>
+<td align="right">259</td>
+<td align="right">347</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>Korku</td>
+<td align="right">982</td>
+<td align="right">323 (32.9%)</td>
+<td align="right">156</td>
+<td align="right">770</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>Munda</td>
+<td align="right">153</td>
+<td align="right">51 (33.3%)</td>
+<td align="right">39</td>
+<td align="right">101</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>Indo-Aryan</td>
+<td align="right">1,306</td>
+<td align="right">348 (26.6%)</td>
+<td align="right">174</td>
+<td align="right">742</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>Dravidian</td>
+<td align="right">143</td>
+<td align="right">43 (30.1%)</td>
+<td align="right">29</td>
+<td align="right">124</td>
+<td align="right">2</td>
+</tr>
+</tbody></table>
+<p>The contact layers replicate across sources at roughly 27–33%, versus 12% for the strict residue. That does not make the loans older than the residue: named comparisons are easier to propagate across dictionaries, and the five sources sample different places, times, and editorial traditions. The table is therefore a documentation-stability check, not a loan chronology; its rows are in <a class="audit-link" href="./nihali-contact-layer-replication-audit.csv"><code>nihali-contact-layer-replication-audit.csv</code></a>.</p>
+<p>The database&#39;s linked concept categories show that the strata are not distributed uniformly across the lexicon. Categories are non-exclusive.</p>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th align="right">Concept-linked</th>
+<th align="right">Noun</th>
+<th align="right">Verb</th>
+<th align="right">Adjective</th>
+<th align="right">Numeral</th>
+<th align="right">Other</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Nihali residue</td>
+<td align="right">674</td>
+<td align="right">267</td>
+<td align="right">249</td>
+<td align="right">47</td>
+<td align="right">12</td>
+<td align="right">116</td>
+</tr>
+<tr>
+<td>Korku</td>
+<td align="right">680</td>
+<td align="right">391</td>
+<td align="right">198</td>
+<td align="right">65</td>
+<td align="right">4</td>
+<td align="right">50</td>
+</tr>
+<tr>
+<td>Munda</td>
+<td align="right">128</td>
+<td align="right">60</td>
+<td align="right">59</td>
+<td align="right">6</td>
+<td align="right">2</td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td>Indo-Aryan</td>
+<td align="right">857</td>
+<td align="right">533</td>
+<td align="right">180</td>
+<td align="right">94</td>
+<td align="right">21</td>
+<td align="right">46</td>
+</tr>
+<tr>
+<td>Dravidian</td>
+<td align="right">105</td>
+<td align="right">37</td>
+<td align="right">46</td>
+<td align="right">8</td>
+<td align="right">11</td>
+<td align="right">7</td>
+</tr>
+</tbody></table>
+<p>Among concept-linked clusters, Indo-Aryan is strongly noun-heavy (533 nouns versus 180 verbs), as is Korku (391 versus 198), whereas the residue is more predicate-rich (267 nouns versus 249 verbs). This is compatible with layered lexical replacement rather than a single uniform donor process. It is not decisive: concept links are incomplete, source editors differ in coverage, and Dravidian and non-Korku Munda labels are themselves verb-rich. Full counts and cautions are in <a class="audit-link" href="./nihali-layer-category-profile.csv"><code>nihali-layer-category-profile.csv</code></a>.</p>
+<p>Surface word shape likewise fails to isolate a unique residual phonotactic system:</p>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th align="right">Mean folded length</th>
+<th align="right">Final vowel</th>
+<th align="right">Multiword/compound</th>
+<th align="right">Retroflex</th>
+<th align="right">Aspiration</th>
+<th align="right">Nasalization</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Nihali residue</td>
+<td align="right">5.86</td>
+<td align="right">74.9%</td>
+<td align="right">26.1%</td>
+<td align="right">22.9%</td>
+<td align="right">16.1%</td>
+<td align="right">2.3%</td>
+</tr>
+<tr>
+<td>Korku</td>
+<td align="right">6.01</td>
+<td align="right">72.3%</td>
+<td align="right">24.6%</td>
+<td align="right">24.7%</td>
+<td align="right">24.8%</td>
+<td align="right">3.5%</td>
+</tr>
+<tr>
+<td>Munda</td>
+<td align="right">5.54</td>
+<td align="right">68.0%</td>
+<td align="right">23.5%</td>
+<td align="right">20.9%</td>
+<td align="right">21.6%</td>
+<td align="right">3.9%</td>
+</tr>
+<tr>
+<td>Indo-Aryan</td>
+<td align="right">5.80</td>
+<td align="right">71.2%</td>
+<td align="right">18.6%</td>
+<td align="right">20.4%</td>
+<td align="right">25.7%</td>
+<td align="right">2.6%</td>
+</tr>
+<tr>
+<td>Dravidian</td>
+<td align="right">5.59</td>
+<td align="right">75.5%</td>
+<td align="right">33.6%</td>
+<td align="right">28.0%</td>
+<td align="right">12.6%</td>
+<td align="right">1.4%</td>
+</tr>
+</tbody></table>
+<p>Every layer has median folded length 5; residue and contact strata broadly overlap on final vowels, retroflexion, and compounding. Residual aspiration is lower than in the Korku and Indo-Aryan layers, but this unmodelled difference can reflect loan adaptation, morphological suffixes, and transcription practice. The negative result prevents the residue&#39;s surface profile from being used as a surrogate family classifier. Definitions and counts are in <a class="audit-link" href="./nihali-layer-form-shape-profile.csv"><code>nihali-layer-form-shape-profile.csv</code></a>.</p>
+<p>Only 701 of 3,277 clusters are independently attested in at least two lexical sources; 140 of those replicated clusters remain residue throughout. Cross-source stability confirms that these are real Nihali lexical items, but it does not by itself distinguish inheritance from an old unrecognized loan. The complete replicated-residue register contains 12 very-strong, 28 strong, and 100 moderate replication grades; 25 are core clusters that remain residual after variant sensitivity. See <a class="audit-link" href="./nihali-replicated-residue-audit.csv"><code>nihali-replicated-residue-audit.csv</code></a>.</p>
+<h2 id="interpretation"><a class="heading-anchor" href="#interpretation" aria-label="Link to Interpretation">#</a>Interpretation</h2>
+<ol>
+<li><strong>Indo-Aryan is widest; Korku is the diagnostic contact center.</strong> Indo-Aryan appears in the largest number of expanded-database clusters, but Korku dominates Kuiper&#39;s older core sample and supplies the clearest community-specific transmission layer. A Korku-labelled match is best read as the route of transmission, not necessarily the ultimate origin: Korku itself contains Indo-Aryan loans, so counting every such item as ultimately Munda would inflate the Munda layer.</li>
+<li><strong>The Indo-Aryan layer is chronologically mixed.</strong> It contains inherited Indo-Aryan etyma reached through Marathi/Hindi reflexes, recent Hindi/Marathi cultural vocabulary, and English loans often mediated by Indo-Aryan. Surface donor and ultimate etymon must therefore remain separate questions.</li>
+<li><strong>The Dravidian layer is real but comparatively small and heterogeneous.</strong> Some proposed comparisons are explicitly uncertain, and apparent Dravidian material may have passed through neighbouring Indo-Aryan or Munda varieties.</li>
+<li><strong>The residue is historically important.</strong> Repeated basic vocabulary survives there, but this analysis cannot turn a set of unmatched forms into a demonstrated Proto-Nihali lexicon. That requires recurrent sound correspondences across internal dialect evidence or an external relative, neither of which is presently available at the necessary scale.</li>
+<li><strong>An argot-only account is unnecessary.</strong> Some disguising or replacement vocabulary may exist, but a wholesale argot hypothesis predicts neither the persistent basic residue nor the layered, source-specific contact profile as economically as relexification of an independent language does.</li>
+</ol>
+<h3 id="repeated-residue-examples"><a class="heading-anchor" href="#repeated-residue-examples" aria-label="Link to Repeated residue examples">#</a>Repeated residue examples</h3>
+<p>The following are examples attested by at least three distinct lexical sources and not assigned an external source here. Stability across dictionaries supports their reality as Nihali lexemes; it does <strong>not</strong> by itself prove inheritance.</p>
+<table>
+<thead>
+<tr>
+<th>Form</th>
+<th>Gloss</th>
+<th align="right">Records</th>
+<th>Sources</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>cigam</td>
+<td>ear</td>
+<td align="right">5</td>
+<td>bhattacharya1957, konow1906, mundlay1996, nagaraja2014, varghesekumar2015noira</td>
+</tr>
+<tr>
+<td>jiki</td>
+<td>eye</td>
+<td align="right">5</td>
+<td>bhattacharya1957, konow1906, mundlay1996, nagaraja2014, varghesekumar2015noira</td>
+</tr>
+<tr>
+<td>kalen</td>
+<td>egg</td>
+<td align="right">5</td>
+<td>bhattacharya1957, mundlay1996, nagaraja2014, varghesekumar2015noira</td>
+</tr>
+<tr>
+<td>mānḍo</td>
+<td>rain</td>
+<td align="right">5</td>
+<td>bhattacharya1957, mundlay1996, nagaraja2014, varghesekumar2015noira</td>
+</tr>
+<tr>
+<td>nāni</td>
+<td>who</td>
+<td align="right">5</td>
+<td>bhattacharya1957, konow1906, mundlay1996, nagaraja2014</td>
+</tr>
+<tr>
+<td>bay</td>
+<td>today</td>
+<td align="right">4</td>
+<td>bhattacharya1957, mundlay1996, nagaraja2014, varghesekumar2015noira</td>
+</tr>
+<tr>
+<td>cōn</td>
+<td>nose</td>
+<td align="right">4</td>
+<td>bhattacharya1957, mundlay1996, nagaraja2014, varghesekumar2015noira</td>
+</tr>
+<tr>
+<td>jopo</td>
+<td>water</td>
+<td align="right">4</td>
+<td>bhattacharya1957, konow1906, mundlay1996, nagaraja2014</td>
+</tr>
+<tr>
+<td>kajar</td>
+<td>above</td>
+<td align="right">4</td>
+<td>bhattacharya1957, mundlay1996, nagaraja2014, varghesekumar2015noira</td>
+</tr>
+<tr>
+<td>kāggo</td>
+<td>mouth</td>
+<td align="right">4</td>
+<td>bhattacharya1957, konow1906, mundlay1996, nagaraja2014</td>
+</tr>
+<tr>
+<td>kōgo</td>
+<td>snake</td>
+<td align="right">4</td>
+<td>bhattacharya1957, mundlay1996, nagaraja2014, varghesekumar2015noira</td>
+</tr>
+<tr>
+<td>menge</td>
+<td>tooth</td>
+<td align="right">4</td>
+<td>bhattacharya1957, konow1906, nagaraja2014, varghesekumar2015noira</td>
+</tr>
+<tr>
+<td>miān</td>
+<td>how much</td>
+<td align="right">4</td>
+<td>bhattacharya1957, mundlay1996, nagaraja2014, varghesekumar2015noira</td>
+</tr>
+<tr>
+<td>nēto</td>
+<td>ash</td>
+<td align="right">4</td>
+<td>mundlay1996, nagaraja2014, varghesekumar2015noira</td>
+</tr>
+<tr>
+<td>pāgo</td>
+<td>tail</td>
+<td align="right">4</td>
+<td>bhattacharya1957, mundlay1996, nagaraja2014, varghesekumar2015noira</td>
+</tr>
+<tr>
+<td>bakko</td>
+<td>hand and arm together</td>
+<td align="right">3</td>
+<td>mundlay1996, nagaraja2014, varghesekumar2015noira</td>
+</tr>
+<tr>
+<td>bardo</td>
+<td>sickle</td>
+<td align="right">3</td>
+<td>bhattacharya1957, mundlay1996, nagaraja2014</td>
+</tr>
+<tr>
+<td>beʈe</td>
+<td>not</td>
+<td align="right">3</td>
+<td>bhattacharya1957, mundlay1996, nagaraja2014</td>
+</tr>
+<tr>
+<td>biya</td>
+<td>village</td>
+<td align="right">3</td>
+<td>bhattacharya1957, mundlay1996, nagaraja2014</td>
+</tr>
+<tr>
+<td>cekṭo</td>
+<td>axe</td>
+<td align="right">3</td>
+<td>bhattacharya1957, nagaraja2014, varghesekumar2015noira</td>
+</tr>
+</tbody></table>
+<h2 id="method-and-safeguards"><a class="heading-anchor" href="#method-and-safeguards" aria-label="Link to Method and safeguards">#</a>Method and safeguards</h2>
+<p>Existing rank-1 Jambu edges were retained. Repeated attestations were clustered only when their normalized forms and meanings agree, or when a near-identical form has compatible gloss evidence across distinct sources. Record-local donor evidence may propagate within such a cluster. Candidate resolution still requires compatible donor family, semantic overlap, phonological similarity, and a margin over alternatives. Unresolved printed comparisons become donor proxies rather than invented links.
+The clustering deliberately under-merges synonym-only glosses rather than consulting the generated concept table, so a later database build cannot change its own lexical units.</p>
+<p>Source spellings and diacritics are retained in the installed forms; accent folding and Unicode normalization are used only for candidate retrieval and clustering. The one catalog-number emendation made during this audit is <code>tongre/ṭongre</code> &#39;knee(-cup)&#39;: its printed DED(S) 2419 citation corresponds to DEDR 2983, whose Naikri <code>ṭoŋgre</code> is the exact comparison, rather than DEDR 2419 &#39;neck&#39;. The correction is documented in the source row. No printed lexical form was silently respelled. The contradictory <code>katʰarnāk</code> source/gloss case remains quarantined rather than normalized into a convenient etymology.</p>
+<p>Records with no printed or cross-dictionary donor evidence are searched for review leads. Every machine lead that cleared the conservative threshold was then manually accepted, rejected, or deferred in <a class="audit-link" href="./nihali-computational-candidate-review.csv"><code>nihali-computational-candidate-review.csv</code></a> and <a class="audit-link" href="./nihali-low-margin-candidate-review.csv"><code>nihali-low-margin-candidate-review.csv</code></a>. Only accepted leads become external links; rejected and deferred leads remain Nihali-residue proxies. This prevents accidental short-form and remote-language coincidences from driving the historical conclusion. The complete scores, margins, alternatives, source wording, manual rationales, cluster IDs, and record IDs are in <a class="audit-link" href="./nihali-provisional-etymology-audit.csv"><code>nihali-provisional-etymology-audit.csv</code></a>; <a class="audit-link" href="./nihali-provisional-lexeme-audit.csv"><code>nihali-provisional-lexeme-audit.csv</code></a> provides the deduplicated review view.</p>
+<h2 id="comparison-with-kuiper-s-baseline"><a class="heading-anchor" href="#comparison-with-kuiper-s-baseline" aria-label="Link to Comparison with Kuiper's baseline">#</a>Comparison with Kuiper&#39;s baseline</h2>
+<p>Kuiper&#39;s 1962 study classified a 503-item vocabulary as 180 direct Korku loans (36%), about 20 possible remnants of an earlier Munda layer (roughly 4%), 47 Dravidian items (9%), and 123 items without any known Indian correspondence (about 24%). He explicitly warned that incomplete Korku documentation and subjective borderline decisions make these figures approximate. The present database is over eight times larger, combines five partly overlapping sources, and distinguishes immediate donor from ultimate ancestry; its percentages therefore test the shape of his model but are not a direct replication.</p>
+<h2 id="evidence-synthesis"><a class="heading-anchor" href="#evidence-synthesis" aria-label="Link to Evidence synthesis">#</a>Evidence synthesis</h2>
+<p>No single percentage decides the origin question. The matrix below records what each independent diagnostic can and cannot support.</p>
+<table>
+<thead>
+<tr>
+<th>Domain</th>
+<th>Finding</th>
+<th>Evidential weight</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>stable lexical residue</td>
+<td>1133 lexeme clusters remain residual; the reviewed core reduces to 56 root hypotheses, including 29 attested in at least two sources.</td>
+<td>moderate</td>
+</tr>
+<tr>
+<td>concept-level basic vocabulary</td>
+<td>Of 91 covered concepts, 17 are residue-only, 22 mix residue and contact forms, and 52 are contact-only.</td>
+<td>moderate</td>
+</tr>
+<tr>
+<td>Korku transmission route</td>
+<td>Among 854 Korku-labelled proxies, 86 independently recover close Korku forms; only 8 currently trace to an upstream Munda parent.</td>
+<td>moderate</td>
+</tr>
+<tr>
+<td>non-Korku Munda specificity</td>
+<td>Munda has a high-specificity floor of 8 among 153 labelled clusters; only 5 of 51 replicated lexemes receive direct Munda labels in two or more sources.</td>
+<td>moderate negative</td>
+</tr>
+<tr>
+<td>Nihali–Munda correspondences</td>
+<td>33 resolved links represent 28 parent roots: 11 near contact-compatible, 15 possible, and 7 weak; no recurring sound law is demonstrated.</td>
+<td>moderate negative</td>
+</tr>
+<tr>
+<td>Indo-Aryan layer</td>
+<td>The evidence bracket runs from 452 high-specificity to 1222 supported clusters; the layer is noun-heavy and includes Korku-mediated routes.</td>
+<td>strong for contact; weak for origin</td>
+</tr>
+<tr>
+<td>Dravidian layer</td>
+<td>98 resolved links collapse to 66 roots; 22 are near contact-compatible and 32 are weak on form or meaning, without a sound-law system.</td>
+<td>moderate for contact; negative for origin</td>
+</tr>
+<tr>
+<td>closed-class asymmetry</td>
+<td>Pronouns have 17 residual links out of 22, while low numerals have only 1 out of 37.</td>
+<td>moderate</td>
+</tr>
+<tr>
+<td>source dependence</td>
+<td>Among 701 replicated clusters, only 119 have exact direct family-label agreement; 298 are labelled by one source.</td>
+<td>strong methodological caution</td>
+</tr>
+<tr>
+<td>surface word shape</td>
+<td>All five layers have median folded form length 5 and overlapping surface diagnostics.</td>
+<td>negative control</td>
+</tr>
+<tr>
+<td>morphology and pronouns</td>
+<td>Zide reports that Nihali pronouns do not resemble Munda pronouns and that proposed case and verbal analyses do not yield a Proto-Munda-like inherited system.</td>
+<td>moderate</td>
+</tr>
+<tr>
+<td>broad structural typology</td>
+<td>Grambank similarity does not place Nihali uniquely with Munda rather than regional controls.</td>
+<td>negative control</td>
+</tr>
+<tr>
+<td>argot hypothesis</td>
+<td>Stable basic terms recur across early and late sources without a demonstrated productive disguise rule.</td>
+<td>moderate negative</td>
+</tr>
+<tr>
+<td>residue threshold sensitivity</td>
+<td>A production-like score/margin-only relaxation flags 65 residual clusters, but 39 never pass the required component gates; the very-high setting leaves 16.</td>
+<td>strong methodological caution</td>
+</tr>
+<tr>
+<td>whole-lexicon variant sensitivity</td>
+<td>A mechanical exact-gloss and &gt;=0.72 whole-form screen, supplemented by explicitly reviewed derivational and inflectional families, covered 205 residual/contact cluster pairs; 172 are plausible variants and 32 remain qualified leads.</td>
+<td>strong methodological caution</td>
+</tr>
+<tr>
+<td>residual expression decomposition</td>
+<td>A targeted audit of 23 residual expressions finds 18 transparent and 4 qualified contact components, plus one quarantined source/gloss conflict.</td>
+<td>strong methodological caution</td>
+</tr>
+<tr>
+<td>synthesis</td>
+<td>No known donor layer explains the whole core, and no alternative family has a regular inherited correspondence system.</td>
+<td>moderate overall, diagnosis by exclusion</td>
+</tr>
+</tbody></table>
+<p>The full matrix also states the hypothesis supported, the alternative challenged, the limitation, and the underlying audit or publication for every row: <a class="audit-link" href="./nihali-origin-evidence-matrix.csv"><code>nihali-origin-evidence-matrix.csv</code></a>.</p>
+<h2 id="competing-origin-hypotheses"><a class="heading-anchor" href="#competing-origin-hypotheses" aria-label="Link to Competing origin hypotheses">#</a>Competing origin hypotheses</h2>
+<table>
+<thead>
+<tr>
+<th>Hypothesis</th>
+<th>Fit to this lexical audit</th>
+<th>Provisional confidence</th>
+<th>Main unresolved test</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Independent lineage with layered relexification</td>
+<td>Best overall fit: stable residue plus separable Indo-Aryan, Korku/Munda, and Dravidian contact layers</td>
+<td>Moderate, as a diagnosis by exclusion</td>
+<td>Demonstrate internal history or identify an external relative with regular correspondences</td>
+</tr>
+<tr>
+<td>Direct Munda affiliation</td>
+<td>Explains some lexicon and areal/morphological traits, but the resolved lexical set lacks a recurring inherited correspondence system</td>
+<td>Low on present lexical evidence; not excluded</td>
+<td>Reconstruct shared innovations not attributable to Korku contact</td>
+</tr>
+<tr>
+<td>Indo-Aryan or Dravidian affiliation</td>
+<td>Poor fit: both behave as stratified donor layers, not as the source of the whole basic lexicon</td>
+<td>Very low</td>
+<td>Find inherited morphology and regular core cognates outside the known loan strata</td>
+</tr>
+<tr>
+<td>Argot-only origin</td>
+<td>Can explain some substitution or deformation but not the whole cross-source lexical system</td>
+<td>Low as a complete account; plausible as a secondary process</td>
+<td>Identify productive disguise rules and their recoverable base forms</td>
+</tr>
+<tr>
+<td>Relationship to another isolate or macrofamily</td>
+<td>Published comparisons are sparse and non-systematic</td>
+<td>Unsupported</td>
+<td>Establish multiple exclusive, semantically controlled correspondence series</td>
+</tr>
+</tbody></table>
+<ul>
+<li><strong>Independent-lineage/relexification hypothesis.</strong> Kuiper&#39;s unidentified component and Zide&#39;s later appraisal treat the non-loan residue as potentially representing a lineage without a demonstrated living relative. This best predicts a stable core residue together with several donor-specific layers, but it remains a diagnosis by exclusion rather than a comparative reconstruction.</li>
+<li><strong>Munda-branch hypothesis.</strong> Mundlay argued in the same 1996 volume for placing Nihali directly under Proto-Munda but outside the Northern and Southern branches, using lexical, grammatical, and ethnographic evidence. The present lexical audit finds substantial Korku/Munda material, but much of it is explicitly contact-attributed and it does not produce the regular inherited correspondence set needed to choose this genetic account. Ilia Peiros&#39;s independent core-list appraisal in the same volume found only nine Munda comparisons with a scattered distribution and likewise judged the relationship unconvincing. Morphology remains the strongest counterargument to an isolate analysis, but Mundlay&#39;s own presentation says the grammatical evidence is largely negative, the resemblances are not close, and structural erosion obscures the system. The lexical database cannot adjudicate inherited versus contact-induced grammar, so a future morpheme-by-morpheme reconstruction is essential.</li>
+<li><strong>Argot or deliberately disguised register.</strong> Socially restricted vocabulary and semantic replacement may explain some forms, but do not by themselves explain the cross-source stability of residue terms for body parts, natural phenomena, pronouns, and basic predicates. The audit therefore treats argot formation as a secondary process, not a complete origin account.</li>
+</ul>
+<h3 id="structural-sensitivity-check-not-a-family-test"><a class="heading-anchor" href="#structural-sensitivity-check-not-a-family-test" aria-label="Link to Structural sensitivity check (not a family test)">#</a>Structural sensitivity check (not a family test)</h3>
+<p>As an external control on the grammatical argument, 164 coded Nihali features in <a href="https://github.com/grambank/grambank/commit/37f73da55cf8b426c82383f46a972bc59ce6cf76">Grambank</a> were compared with selected regional languages. Pairwise raw agreement is 74.4% with Korku (129 shared coded features), 73.2–77.1% with five other Munda languages, 73.8% with Marathi, 78.5% with Hindi, 77.4–81.0% with four selected Dravidian languages, and 79.6% with Kusunda. Chance-corrected kappa and positive-feature Jaccard measures preserve the same basic warning: no uniquely Munda cluster emerges from this small control.
+Each pair uses only features coded for both languages; kappa corrects for marginal-value agreement and Jaccard compares features whose value is 1. No imputation, feature weighting, or optimization was used.</p>
+<p>These figures cannot identify ancestry. Grambank features are synchronic, structurally dependent, unevenly missing, and highly susceptible to areal convergence; the comparison also lacks a phylogenetic or spatial model. Its value is negative: a broad claim that Nihali &#39;looks Munda&#39; is not by itself discriminating evidence. Only shared innovations and morpheme histories can decide the morphological question. Inputs, shared-feature counts, and all three descriptive measures are preserved in <a class="audit-link" href="./nihali-grambank-structural-sensitivity.csv"><code>nihali-grambank-structural-sensitivity.csv</code></a>.</p>
+<p>The provisional adjudication is consequently <strong>independent lineage with profound Munda contact</strong>, not because Munda affiliation is impossible, but because the positive evidence required to demonstrate it is still missing.</p>
+<h2 id="scholarly-context"><a class="heading-anchor" href="#scholarly-context" aria-label="Link to Scholarly context">#</a>Scholarly context</h2>
+<p>The interpretation agrees in broad outline with Kuiper&#39;s stratified treatment and with Zide&#39;s later caution: massive Korku-mediated relexification can coexist with an independent residue, while isolated similarities to Tibeto-Burman or wider Austroasiatic do not by themselves establish genetic affiliation. Zide further stresses that directionality is not always obvious for the small set of South Munda parallels. Those cautions are built into the proxy and confidence scheme here.
+The current <a href="https://glottolog.org/resource/languoid/id/niha1238">Glottolog 5.3 classification</a> also leaves Nihali as a standalone top-level entry rather than placing it inside Munda. That is corroborating scholarly practice, not independent proof of the hypothesis.
+Shailendra Mohan&#39;s 2016 documentation report likewise describes several historical and local contact layers and says that proposed links to Kusunda, Ainu, Nostratic-Dravidian, and Greater Austric had not yielded conclusive genetic evidence. This audit does not retest those remote proposals form by form; it treats them as unsupported until a regular correspondence system is demonstrated.
+John Peterson&#39;s 2021 areal-typological account treats the Satpura Range as a residual or accretion zone where Nihali, Korku, and Gondi survived successive regional expansions. He explicitly allows that pre-Munda languages were already present in such hill zones. That geography makes survival of an independent Nihali lineage historically plausible, but it is contextual fit rather than comparative proof and cannot date the language.
+A 2025 methodological survey of language isolates uses Nihali as an example of an isolate whose grammar has been extensively remodeled through sustained multilingualism. Its recommended historical toolkit—dialect comparison, internal reconstruction, philological source study, and explicit contact analysis—also explains the boundary of the present result: this lexical audit advances the last two, but cannot substitute for the first two.
+A Mohan-led <a href="https://cultureincrisis.org/projects/documentation-and-description-of-nihali-a-critically-endangered-language-isolate-of-india">Endangered Language Documentation Programme project</a> targets a descriptive grammar, trilingual dictionary, and 20 hours of archived audio/video. Those materials are the right basis for testing shared morphological innovations, but they are not silently treated as part of this five-source lexical database. The distinction matters: this report&#39;s negative finding is absence of a demonstrated relationship in the audited evidence, not proof that no relationship can ever be found.
+A 2017 genome-wide study reports excess haplotype sharing and recent population ancestry between sampled Bhil and Nihali groups. That makes Zide and Shafer&#39;s lost-Bhil-language scenario geographically and demographically interesting, but genes do not classify languages. The result is compatible with regional population continuity or interaction; it neither proves that old Nihali was the Bhils&#39; language nor supports a specific linguistic family. In particular, this report makes no &#39;Paleolithic&#39; or ancestry-component claim from the lexical residue.</p>
+<p>Primary/contextual references: F. B. J. Kuiper, <a href="https://dwc.knaw.nl/DL/publications/PU00009788.pdf"><em>Nahali: A Comparative Study</em> (1962)</a>, especially pp. 48-51; Kuiper, <a href="https://sealang.net/sala/archives/pdf8/kuiper1966sources.pdf"><em>The Sources of the Nahali Vocabulary</em> (1966)</a>; Norman H. Zide, <a href="https://www.mother-tongue-journal.org/wp-content/uploads/2025/08/2-Mother-Tongue-II-1996_text.pdf">&quot;On Nihali&quot; (1996)</a>, pp. 93–100; K. S. Nagaraja, <a href="https://hdl.handle.net/20.500.14705/8151"><em>The Nihali Language</em> (2014)</a>; and Asha Mundlay, &quot;Nihali Lexicon&quot; (1996), in the same <em>Mother Tongue</em> volume, pp. 17–40; and Ilia Peiros, &quot;Nihali and Austroasiatic&quot; (1996), in the same volume, pp. 75–76; Shailendra Mohan, <a href="https://files.core.ac.uk/download/pdf/141880631.pdf">&quot;Describing Endangered Languages: Experiences from Nihali Documentation Project&quot; (2016)</a>, pp. 182–187; John Peterson, <a href="https://www.isfas.uni-kiel.de/de/linguistik-und-phonetik/team/uploads/Peterson_Spread_of_Munda.pdf">&quot;The Spread of Munda in Prehistoric South Asia: The View from Areal Typology&quot; (2021)</a>, pp. 109–130; Iker Salaberri et al., <a href="https://doi.org/10.1075/tsl.135.intro">&quot;State of the Art of Research on Language Isolates&quot; (2025)</a>, pp. 2–19; and Gyaneshwer Chaubey et al., <a href="https://www.isw.unibe.ch/e41142/e41180/e523709/e523717/2017b_ger.pdf">&quot;The Genome-Wide Analysis of the Bhils&quot; (2017)</a>, especially pp. 279–285.</p>
+<h2 id="limits-and-next-tests"><a class="heading-anchor" href="#limits-and-next-tests" aria-label="Link to Limits and next tests">#</a>Limits and next tests</h2>
+<p>This is a hypothesis inventory, not a completed comparative reconstruction. The strongest next lexical step is independent verification of the unqualified source proxies against primary donor lexica, prioritizing the 405 Korku form-only matches and 297 weak/unmatched routes. Korku itself needs etymological expansion for the 78 strongest route forms that currently stop without an upstream parent. The 56 core residue-root hypotheses then need dialectal comparison and correspondence discovery rather than another round of string matching. On the grammatical side, person marking, case allomorphy, and verb morphology require morpheme-by-morpheme reconstruction from the new documentation corpus. Neither the residue percentage nor the typological profile can currently distinguish an ancient isolate from an unrecognized deep relationship whose comparanda have been lost.</p>
+</article>
+  </main>
+
+  <footer class="report-footer">
+    Generated from the reproducible Jambu Nihali audit.
+    <a href="./REPORT.md">Source Markdown</a>
+    <a href="../../../../tmp/pdfs/nihali/kuiper-nahali-1962.pdf">Kuiper 1962 source PDF</a>
+  </footer>
+
+  <script>
+    document.querySelectorAll('table').forEach((table) => {
+      const wrapper = document.createElement('div');
+      wrapper.className = 'table-wrap';
+      table.parentNode.insertBefore(wrapper, table);
+      wrapper.appendChild(table);
+    });
+
+    const root = document.documentElement;
+    const themeButton = document.querySelector('[data-theme-toggle]');
+    const savedTheme = localStorage.getItem('nihali-report-theme');
+    const preferredDark = matchMedia('(prefers-color-scheme: dark)').matches;
+    if (savedTheme === 'dark' || (!savedTheme && preferredDark)) root.dataset.theme = 'dark';
+    const updateThemeLabel = () => { themeButton.textContent = root.dataset.theme === 'dark' ? 'Light mode' : 'Dark mode'; };
+    updateThemeLabel();
+    themeButton.addEventListener('click', () => {
+      root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+      localStorage.setItem('nihali-report-theme', root.dataset.theme);
+      updateThemeLabel();
+    });
+    document.querySelector('[data-print]').addEventListener('click', () => window.print());
+
+    const progress = document.querySelector('.progress');
+    const updateProgress = () => {
+      const available = document.documentElement.scrollHeight - innerHeight;
+      progress.style.width = (available > 0 ? scrollY / available * 100 : 0) + '%';
+    };
+    addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
+
+    const links = [...document.querySelectorAll('.toc-link')];
+    const byId = new Map(links.map((link) => [link.hash.slice(1), link]));
+    const observer = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) continue;
+        links.forEach((link) => link.classList.remove('active'));
+        byId.get(entry.target.id)?.classList.add('active');
+      }
+    }, { rootMargin: '-18% 0px -70% 0px' });
+    document.querySelectorAll('article h2, article h3').forEach((heading) => observer.observe(heading));
+  </script>
+</body>
+</html>

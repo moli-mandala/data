@@ -1,0 +1,773 @@
+{
+  "records": 4299,
+  "existing_rank1": 217,
+  "generated_assignments": 4082,
+  "proxy_entries": 2743,
+  "lexeme_clusters": 3277,
+  "cluster_audit_rows": 3277,
+  "core_audit_rows": 292,
+  "global_variant_sensitivity_rows": 205,
+  "global_variant_sensitivity_assessments": {
+    "variant": 172,
+    "qualified": 32,
+    "reject": 1
+  },
+  "residue_contact_component_review_rows": 23,
+  "residue_contact_component_assessments": {
+    "qualified-component": 4,
+    "transparent-component": 18,
+    "source-gloss-conflict": 1
+  },
+  "closed_class_rows": 97,
+  "closed_class_effective_strata": {
+    "Indo-Aryan": 17,
+    "Dravidian": 21,
+    "Nihali residue": 40,
+    "Korku": 11,
+    "Other": 1,
+    "Indo-Aryan+Dravidian": 1,
+    "Munda": 2,
+    "Korku+Munda": 3,
+    "Korku+Indo-Aryan": 1
+  },
+  "closed_class_by_domain": {
+    "demonstrative": {
+      "Korku": 9,
+      "Nihali residue": 5,
+      "Indo-Aryan": 1
+    },
+    "interrogative": {
+      "Nihali residue": 11,
+      "Dravidian": 3,
+      "Indo-Aryan": 1
+    },
+    "low numeral": {
+      "Indo-Aryan": 15,
+      "Dravidian": 17,
+      "Indo-Aryan+Dravidian": 1,
+      "Munda": 2,
+      "Korku+Munda": 1,
+      "Nihali residue": 1
+    },
+    "polarity": {
+      "Korku": 1,
+      "Nihali residue": 6,
+      "Korku+Indo-Aryan": 1
+    },
+    "pronoun": {
+      "Nihali residue": 17,
+      "Korku": 1,
+      "Other": 1,
+      "Korku+Munda": 2,
+      "Dravidian": 1
+    }
+  },
+  "layer_replication": {
+    "Nihali residue": {
+      "total_clusters": 1133,
+      "multi_source_clusters": 140,
+      "early_source_attested": 259,
+      "nagaraja_attested": 347,
+      "all_five_sources": 2
+    },
+    "Korku": {
+      "total_clusters": 982,
+      "multi_source_clusters": 323,
+      "early_source_attested": 156,
+      "nagaraja_attested": 770,
+      "all_five_sources": 2
+    },
+    "Munda": {
+      "total_clusters": 153,
+      "multi_source_clusters": 51,
+      "early_source_attested": 39,
+      "nagaraja_attested": 101,
+      "all_five_sources": 2
+    },
+    "Indo-Aryan": {
+      "total_clusters": 1306,
+      "multi_source_clusters": 348,
+      "early_source_attested": 174,
+      "nagaraja_attested": 742,
+      "all_five_sources": 1
+    },
+    "Dravidian": {
+      "total_clusters": 143,
+      "multi_source_clusters": 43,
+      "early_source_attested": 29,
+      "nagaraja_attested": 124,
+      "all_five_sources": 2
+    }
+  },
+  "source_normalized_profile": {
+    "bhattacharya1957": {
+      "lexeme_clusters": 396,
+      "external_clusters": 250,
+      "residue_clusters": 146,
+      "korku_clusters": 133,
+      "munda_clusters": 38,
+      "indo_aryan_clusters": 149,
+      "dravidian_clusters": 24
+    },
+    "konow1906": {
+      "lexeme_clusters": 183,
+      "external_clusters": 62,
+      "residue_clusters": 121,
+      "korku_clusters": 30,
+      "munda_clusters": 3,
+      "indo_aryan_clusters": 33,
+      "dravidian_clusters": 11
+    },
+    "mundlay1996": {
+      "lexeme_clusters": 1687,
+      "external_clusters": 1075,
+      "residue_clusters": 612,
+      "korku_clusters": 436,
+      "munda_clusters": 86,
+      "indo_aryan_clusters": 751,
+      "dravidian_clusters": 39
+    },
+    "nagaraja2014": {
+      "lexeme_clusters": 1735,
+      "external_clusters": 1388,
+      "residue_clusters": 347,
+      "korku_clusters": 770,
+      "munda_clusters": 101,
+      "indo_aryan_clusters": 742,
+      "dravidian_clusters": 124
+    },
+    "varghesekumar2015noira": {
+      "lexeme_clusters": 220,
+      "external_clusters": 114,
+      "residue_clusters": 106,
+      "korku_clusters": 47,
+      "munda_clusters": 11,
+      "indo_aryan_clusters": 76,
+      "dravidian_clusters": 17
+    }
+  },
+  "cross_source_agreement_rows": 701,
+  "cross_source_agreement_classes": {
+    "single-labelled-source": 298,
+    "multi-source-exact-agreement": 119,
+    "no-direct-label": 146,
+    "multi-source-nested-compatible": 90,
+    "multi-source-disjoint": 48
+  },
+  "family_attribution_replication": {
+    "Korku": {
+      "all_labelled": 982,
+      "multi_source": 323,
+      "no_direct_family_label": 0,
+      "one_direct_labelled_source": 265,
+      "two_plus_direct_labelled_sources": 58
+    },
+    "Munda": {
+      "all_labelled": 153,
+      "multi_source": 51,
+      "no_direct_family_label": 0,
+      "one_direct_labelled_source": 46,
+      "two_plus_direct_labelled_sources": 5
+    },
+    "Indo-Aryan": {
+      "all_labelled": 1306,
+      "multi_source": 348,
+      "no_direct_family_label": 3,
+      "one_direct_labelled_source": 183,
+      "two_plus_direct_labelled_sources": 162
+    },
+    "Dravidian": {
+      "all_labelled": 143,
+      "multi_source": 43,
+      "no_direct_family_label": 3,
+      "one_direct_labelled_source": 35,
+      "two_plus_direct_labelled_sources": 5
+    }
+  },
+  "layer_category_profile": {
+    "Nihali residue": {
+      "concept_linked_clusters": 674,
+      "noun_clusters": 267,
+      "verb_clusters": 249,
+      "adjective_clusters": 47,
+      "numeral_clusters": 12,
+      "other_clusters": 116
+    },
+    "Korku": {
+      "concept_linked_clusters": 680,
+      "noun_clusters": 391,
+      "verb_clusters": 198,
+      "adjective_clusters": 65,
+      "numeral_clusters": 4,
+      "other_clusters": 50
+    },
+    "Munda": {
+      "concept_linked_clusters": 128,
+      "noun_clusters": 60,
+      "verb_clusters": 59,
+      "adjective_clusters": 6,
+      "numeral_clusters": 2,
+      "other_clusters": 10
+    },
+    "Indo-Aryan": {
+      "concept_linked_clusters": 857,
+      "noun_clusters": 533,
+      "verb_clusters": 180,
+      "adjective_clusters": 94,
+      "numeral_clusters": 21,
+      "other_clusters": 46
+    },
+    "Dravidian": {
+      "concept_linked_clusters": 105,
+      "noun_clusters": 37,
+      "verb_clusters": 46,
+      "adjective_clusters": 8,
+      "numeral_clusters": 11,
+      "other_clusters": 7
+    }
+  },
+  "layer_form_shape_profile": {
+    "Nihali residue": {
+      "total_clusters": 1133,
+      "mean_folded_length": 5.861,
+      "median_folded_length": 5.0,
+      "final_vowel_count": 849,
+      "compound_count": 296,
+      "retroflex_count": 260,
+      "aspiration_count": 182,
+      "nasalization_count": 26
+    },
+    "Korku": {
+      "total_clusters": 982,
+      "mean_folded_length": 6.009,
+      "median_folded_length": 5.0,
+      "final_vowel_count": 710,
+      "compound_count": 242,
+      "retroflex_count": 243,
+      "aspiration_count": 244,
+      "nasalization_count": 34
+    },
+    "Munda": {
+      "total_clusters": 153,
+      "mean_folded_length": 5.542,
+      "median_folded_length": 5.0,
+      "final_vowel_count": 104,
+      "compound_count": 36,
+      "retroflex_count": 32,
+      "aspiration_count": 33,
+      "nasalization_count": 6
+    },
+    "Indo-Aryan": {
+      "total_clusters": 1306,
+      "mean_folded_length": 5.796,
+      "median_folded_length": 5.0,
+      "final_vowel_count": 930,
+      "compound_count": 243,
+      "retroflex_count": 267,
+      "aspiration_count": 336,
+      "nasalization_count": 34
+    },
+    "Dravidian": {
+      "total_clusters": 143,
+      "mean_folded_length": 5.587,
+      "median_folded_length": 5.0,
+      "final_vowel_count": 108,
+      "compound_count": 48,
+      "retroflex_count": 40,
+      "aspiration_count": 18,
+      "nasalization_count": 2
+    }
+  },
+  "core_mapping_exclusions": 14,
+  "core_concept_profile_rows": 91,
+  "core_concept_profile_classes": {
+    "residue-plus-contact": 22,
+    "residue-only": 17,
+    "contact-only-mixed-family": 31,
+    "contact-only-single-family": 21
+  },
+  "core_concept_family_involvement": {
+    "Korku": 46,
+    "Munda": 20,
+    "Indo-Aryan": 42,
+    "Dravidian": 13
+  },
+  "core_concepts_covered": 91,
+  "core_strata": {
+    "Indo-Aryan": 39,
+    "Nihali residue": 157,
+    "Korku+Munda": 8,
+    "Korku": 37,
+    "Dravidian": 18,
+    "Korku+Indo-Aryan": 16,
+    "Munda": 11,
+    "Other": 1,
+    "Korku+Munda+Indo-Aryan": 1,
+    "Munda+Indo-Aryan": 3,
+    "Korku+Indo-Aryan+Dravidian": 1
+  },
+  "core_variant_sensitivity_rows": 66,
+  "core_sensitivity_strata": {
+    "Indo-Aryan": 50,
+    "Korku": 51,
+    "Dravidian": 34,
+    "Korku+Munda": 15,
+    "Nihali residue": 91,
+    "Korku+Indo-Aryan": 19,
+    "Munda": 25,
+    "Other": 1,
+    "Korku+Munda+Indo-Aryan": 2,
+    "Munda+Indo-Aryan": 3,
+    "Korku+Indo-Aryan+Dravidian": 1
+  },
+  "core_residue_root_concepts": 39,
+  "core_residue_root_hypotheses": 56,
+  "core_residue_root_replication": {
+    "single-source": 27,
+    "strong": 9,
+    "very strong": 16,
+    "moderate": 4
+  },
+  "core_residue_root_early_attested": 33,
+  "core_residue_multi_cluster_reviews": 23,
+  "replicated_residue_rows": 140,
+  "replicated_residue_grades": {
+    "moderate": 100,
+    "strong": 28,
+    "very strong": 12
+  },
+  "replicated_effective_core_residue": 25,
+  "resolved_contact_shape_rows": 571,
+  "resolved_contact_parent_families": {
+    "Indo-Aryan": 422,
+    "Munda": 33,
+    "Dravidian": 98,
+    "English": 5,
+    "Other": 13
+  },
+  "resolved_contact_parent_languages": {
+    "Indo-Aryan": 362,
+    "Proto-Indo-Iranian": 58,
+    "Proto-Kherwarian": 16,
+    "Proto-Dravidian": 98,
+    "Proto-Munda": 17,
+    "English": 5,
+    "Persian": 13,
+    "Hindi-Urdu": 1,
+    "Marathi": 1
+  },
+  "resolved_contact_match_shapes": {
+    "Dravidian": {
+      "moderate": 21,
+      "distant": 69,
+      "near": 7,
+      "exact": 1
+    },
+    "English": {
+      "moderate": 3,
+      "distant": 2
+    },
+    "Indo-Aryan": {
+      "moderate": 124,
+      "distant": 220,
+      "near": 65,
+      "exact": 13
+    },
+    "Munda": {
+      "near": 9,
+      "moderate": 3,
+      "distant": 20,
+      "exact": 1
+    },
+    "Other": {
+      "distant": 3,
+      "near": 4,
+      "exact": 3,
+      "moderate": 3
+    }
+  },
+  "resolved_contact_surface_match_shapes": {
+    "Dravidian": {
+      "exact": 15,
+      "moderate": 21,
+      "distant": 40,
+      "near": 22
+    },
+    "English": {
+      "moderate": 3,
+      "distant": 2
+    },
+    "Indo-Aryan": {
+      "moderate": 89,
+      "near": 136,
+      "exact": 140,
+      "distant": 55
+    },
+    "Munda": {
+      "near": 12,
+      "exact": 5,
+      "distant": 15,
+      "moderate": 1
+    },
+    "Other": {
+      "distant": 3,
+      "exact": 6,
+      "near": 3,
+      "moderate": 1
+    }
+  },
+  "resolved_parent_route_family_involvement": {
+    "Dravidian": {
+      "Korku": 8,
+      "Munda": 4,
+      "Indo-Aryan": 14,
+      "Dravidian": 90
+    },
+    "English": {
+      "Korku": 1,
+      "Munda": 0,
+      "Indo-Aryan": 4,
+      "Dravidian": 0
+    },
+    "Indo-Aryan": {
+      "Korku": 112,
+      "Munda": 3,
+      "Indo-Aryan": 421,
+      "Dravidian": 5
+    },
+    "Munda": {
+      "Korku": 24,
+      "Munda": 23,
+      "Indo-Aryan": 6,
+      "Dravidian": 1
+    },
+    "Other": {
+      "Korku": 0,
+      "Munda": 0,
+      "Indo-Aryan": 13,
+      "Dravidian": 0
+    }
+  },
+  "munda_correspondence_review": {
+    "near-contact-compatible": 11,
+    "possible-correspondence": 15,
+    "weak-comparison": 7
+  },
+  "munda_correspondence_series": {
+    "identity-or-near": 11,
+    "other": 10,
+    "none": 7,
+    "c~s": 5
+  },
+  "munda_resolved_parent_roots": 28,
+  "dravidian_correspondence_roots": 66,
+  "dravidian_correspondence_assessments": {
+    "weak-form-link": 27,
+    "possible-comparison": 12,
+    "near-contact-compatible": 22,
+    "weak-semantic-link": 5
+  },
+  "dravidian_correspondence_series_types": {
+    "singleton-nonidentity": 14,
+    "identity-initial": 45,
+    "repeated-nonidentity": 7
+  },
+  "source_variation_rows": 138,
+  "source_variation_relationships": {
+    "nested-route/ultimate": 93,
+    "disjoint": 45
+  },
+  "source_proxy_quality_rows": 1629,
+  "source_proxy_quality": {
+    "explicit-comparanda": 1444,
+    "catalog-indexed": 77,
+    "donor-label-only": 108
+  },
+  "source_proxy_uncertainty": {
+    "unqualified": 1375,
+    "questioned": 254
+  },
+  "source_proxy_directionality": {
+    "attribution without stated direction": 1484,
+    "comparison only": 56,
+    "donor/source asserted": 89
+  },
+  "source_proxy_comparison_shapes": {
+    "near": 385,
+    "distant": 322,
+    "unscored": 147,
+    "exact": 389,
+    "moderate": 386
+  },
+  "source_proxy_review_priority": {
+    "low": 1299,
+    "medium": 266,
+    "critical": 20,
+    "high": 44
+  },
+  "korku_route_rows": 854,
+  "korku_route_assessments": {
+    "weak-or-unmatched": 297,
+    "strong-route-match": 86,
+    "form-only-match": 405,
+    "no-recoverable-comparandum": 38,
+    "possible-route-match": 28
+  },
+  "core_korku_route_assessments": {
+    "strong-route-match": 14,
+    "form-only-match": 18,
+    "weak-or-unmatched": 9,
+    "possible-route-match": 6,
+    "no-recoverable-comparandum": 7
+  },
+  "korku_strong_route_ultimate_families": {
+    "unresolved-korku": 78,
+    "Munda": 8
+  },
+  "indo_aryan_route_rows": 1306,
+  "indo_aryan_period_evidence_classes": {
+    "modern-ia-explicit": 1032,
+    "generic-ia-explicit": 127,
+    "resolved-no-specific-source-language": 76,
+    "sanskrit-explicit": 33,
+    "historical-and-modern-explicit": 24,
+    "ia-label-no-specific-language": 14
+  },
+  "indo_aryan_korku_route_clusters": 330,
+  "core_source_proxy_review": {
+    "corroborated-contact": 8,
+    "route-ambiguous-contact": 5,
+    "unresolved": 4,
+    "plausible-contact": 3
+  },
+  "diagnostic_source_proxy_review": {
+    "plausible-contact": 15,
+    "route-ambiguous-contact": 11,
+    "weak-comparison": 5,
+    "corroborated-contact": 10,
+    "unresolved": 3
+  },
+  "questioned_source_proxy_review": {
+    "weak-comparison": 30,
+    "plausible-contact": 57,
+    "corroborated-contact": 54,
+    "route-ambiguous-contact": 38,
+    "unresolved": 21
+  },
+  "contact_evidence_tier_rows": 2143,
+  "contact_evidence_tiers": {
+    "explicit-unqualified-proxy": 1245,
+    "resolved-parent": 557,
+    "manually-weak-or-unresolved": 62,
+    "label-only-unqualified-proxy": 65,
+    "manually-qualified-proxy": 121,
+    "manually-corroborated-proxy": 70,
+    "internal-variant-explicit-source": 14,
+    "internal-variant-label-only-source": 2,
+    "internal-variant-questioned-source": 7
+  },
+  "contact_family_by_tier": {
+    "Korku": {
+      "explicit-unqualified-source": 776,
+      "questioned-source": 29,
+      "manually-established-route-or-component": 2,
+      "label-only-source": 27,
+      "manually-qualified-proxy": 85,
+      "manually-corroborated-proxy": 30,
+      "resolved-observed-route": 10,
+      "manually-weak-or-unresolved": 23
+    },
+    "Munda": {
+      "label-only-source": 22,
+      "manually-established-route-or-component": 1,
+      "resolved-family-corroborated": 7,
+      "explicit-unqualified-source": 88,
+      "resolved-family-manually-weak": 5,
+      "manually-qualified-proxy": 13,
+      "resolved-family-qualified": 11,
+      "manually-weak-or-unresolved": 3,
+      "questioned-source": 2,
+      "manually-corroborated-proxy": 1
+    },
+    "Indo-Aryan": {
+      "resolved-parent-family": 411,
+      "explicit-unqualified-source": 679,
+      "manually-weak-or-unresolved": 34,
+      "label-only-source": 42,
+      "manually-corroborated-proxy": 41,
+      "resolved-observed-route": 17,
+      "manually-qualified-proxy": 67,
+      "questioned-source": 8,
+      "manually-established-route-or-component": 7
+    },
+    "Dravidian": {
+      "resolved-parent-family": 87,
+      "questioned-source": 4,
+      "explicit-unqualified-source": 17,
+      "manually-weak-or-unresolved": 7,
+      "label-only-source": 6,
+      "manually-corroborated-proxy": 9,
+      "manually-qualified-proxy": 13
+    },
+    "English": {
+      "label-only-source": 2,
+      "explicit-unqualified-source": 11,
+      "resolved-parent-family": 5
+    }
+  },
+  "family_contact_evidence_rows": 2602,
+  "family_evidence_brackets": {
+    "Indo-Aryan": {
+      "all_labelled": 1306,
+      "high_specificity_floor": 452,
+      "supported_envelope": 1222,
+      "weak_or_unresolved_excluded": 84
+    },
+    "Korku": {
+      "all_labelled": 982,
+      "high_specificity_floor": 30,
+      "supported_envelope": 903,
+      "weak_or_unresolved_excluded": 79
+    },
+    "Munda": {
+      "all_labelled": 153,
+      "high_specificity_floor": 8,
+      "supported_envelope": 121,
+      "weak_or_unresolved_excluded": 32
+    },
+    "Dravidian": {
+      "all_labelled": 143,
+      "high_specificity_floor": 96,
+      "supported_envelope": 126,
+      "weak_or_unresolved_excluded": 17
+    },
+    "English": {
+      "all_labelled": 18,
+      "high_specificity_floor": 5,
+      "supported_envelope": 16,
+      "weak_or_unresolved_excluded": 2
+    }
+  },
+  "origin_evidence_matrix_rows": 17,
+  "residue_threshold_sensitivity": {
+    "very loose": {
+      "flagged": 479,
+      "indo_aryan": 256,
+      "dravidian": 190,
+      "munda": 32,
+      "unreviewed": 449
+    },
+    "loose": {
+      "flagged": 334,
+      "indo_aryan": 178,
+      "dravidian": 133,
+      "munda": 22,
+      "unreviewed": 304
+    },
+    "moderate": {
+      "flagged": 171,
+      "indo_aryan": 86,
+      "dravidian": 68,
+      "munda": 16,
+      "unreviewed": 141
+    },
+    "high score, low margin": {
+      "flagged": 70,
+      "indo_aryan": 38,
+      "dravidian": 22,
+      "munda": 9,
+      "unreviewed": 40
+    },
+    "production-like score/margin only": {
+      "flagged": 65,
+      "indo_aryan": 36,
+      "dravidian": 22,
+      "munda": 6,
+      "unreviewed": 39
+    },
+    "very high score": {
+      "flagged": 16,
+      "indo_aryan": 9,
+      "dravidian": 5,
+      "munda": 1,
+      "unreviewed": 0
+    }
+  },
+  "disjoint_source_review": {
+    "compatible-contact-chain": 26,
+    "favor-indo-aryan": 8,
+    "unresolved": 6,
+    "favor-korku": 4,
+    "favor-munda": 1
+  },
+  "lexeme_strata": {
+    "Korku": 586,
+    "Indo-Aryan": 935,
+    "Korku+Indo-Aryan": 315,
+    "Munda": 70,
+    "Nihali residue": 1133,
+    "Korku+Munda+Indo-Aryan": 10,
+    "Korku+Munda": 56,
+    "Dravidian": 106,
+    "Indo-Aryan+English": 12,
+    "English": 4,
+    "Indo-Aryan+Dravidian": 18,
+    "Munda+Indo-Aryan": 10,
+    "Munda+Dravidian": 5,
+    "Korku+English": 2,
+    "Korku+Dravidian": 7,
+    "Munda+Indo-Aryan+Dravidian": 1,
+    "Other": 1,
+    "Korku+Indo-Aryan+Dravidian": 5,
+    "Korku+Munda+Dravidian": 1
+  },
+  "manual_review": {
+    "accept": 115,
+    "reject": 29,
+    "defer": 18
+  },
+  "manual_review_triggers": {
+    "separated-candidate": 95,
+    "low-margin-family-tie": 23,
+    "transparent-cultural-loan": 25,
+    "source-attributed-parent": 19
+  },
+  "methods": {
+    "source-proxy": 1780,
+    "residue-proxy": 1273,
+    "source-resolved": 387,
+    "existing-curated": 217,
+    "manual-resolved": 127,
+    "cluster-proxy": 343,
+    "cluster-resolved": 125,
+    "manual-deferred": 22,
+    "manual-rejected": 25
+  },
+  "strata": {
+    "Munda": 93,
+    "Korku+Indo-Aryan": 521,
+    "Nihali residue": 1348,
+    "Indo-Aryan+Dravidian": 31,
+    "Indo-Aryan": 1174,
+    "Munda+Dravidian": 5,
+    "Korku": 769,
+    "Dravidian": 166,
+    "Korku+Munda": 110,
+    "Korku+Dravidian": 13,
+    "Munda+Indo-Aryan": 15,
+    "Indo-Aryan+English": 14,
+    "Other": 1,
+    "Korku+Munda+Indo-Aryan": 23,
+    "Korku+English": 2,
+    "English": 4,
+    "Korku+Indo-Aryan+Dravidian": 8,
+    "Munda+Indo-Aryan+Dravidian": 1,
+    "Korku+Munda+Dravidian": 1
+  },
+  "confidence": {
+    "low": 2172,
+    "unresolved": 1298,
+    "high": 619,
+    "medium": 210
+  }
+}
