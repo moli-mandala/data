@@ -1,0 +1,149 @@
+{
+  "bibliography": "Perder, Emil. 2013. A Grammatical Description of Dameli. PhD thesis, Stockholm University. ISBN 978-91-7447-770-2.",
+  "checksums": {
+    "conversion/perder-dameli.txt": "f2253033541a184b912e27fac7079829b39af907e5939551f3c97488c3f6eb5a",
+    "data/other/forms/20260909-perder-dameli.csv": "f37cccf59605f48fb33e71b8a5b37f5c4bbc7f1f4dc6dbf1e14d0878b3e5ad7b",
+    "data/other/forms/raw_data/20260909-perder-dameli-audit.csv": "f8758c72aa52f2547530732fbcdee44b9478a8dd06d78adf0ebe6221470e5eeb",
+    "data/other/forms/raw_data/20260909-perder-dameli-curation.json": "c04807b5717917eec7bc31489a0329c1b2d45daffa9410fbc98ce60ce328e142",
+    "data/other/forms/raw_data/20260909-perder-dameli-extract.jsonl": "5b37e7ca73996c724635959dc6c375a10bf99ccfac3677988cc9a87eab4f20d4",
+    "data/other/forms/raw_data/20260909-perder-dameli-sample-round1.csv": "6220cfdef72b5bd3bb8fd527b6c0ae5d16f29678bacfe51c1682593813628f9b",
+    "data/other/forms/raw_data/20260909-perder-dameli-sample-round2.csv": "e02cbc1ec1265ba791b75f13ee5256f178c01f50605e8a0c5eda8f2897635e10",
+    "data/other/forms/raw_data/20260909-perder-dameli-sample.csv": "011ba8c62d137d811b29793725fb3dfc2544966b76485f572c0556bf6af29996",
+    "data/other/forms/raw_data/perder_dameli_2013.py": "0bb61f5b8d2b59538bcdd0e3210ed3ef97b3520ee77beece6a42a8d219b8a7ec"
+  },
+  "dialect_evidence": {
+    "coordinate_reference": "https://mapcarta.com/15180148 (GeoNames-sourced locality; disambiguated from the northern Aspar locality)",
+    "geonames_id": 1417235,
+    "latitude": 35.36798,
+    "location": "Aspar, Domel (Damel) Valley, Chitral, Khyber Pakhtunkhwa, Pakistan",
+    "longitude": 71.70814,
+    "source_pages": [
+      10,
+      67,
+      68,
+      69
+    ],
+    "tag": "dialect:Dm:perder2013-Aspar:Aspar"
+  },
+  "extraction": {
+    "audited_units": 3398,
+    "curated_units": 248,
+    "key_policy": "Source ID plus printed page, table/example, vertical position and column/word; explicit :partN child and :vN variant keys. Keys are independent of lexical spelling/gloss. Exact repeated analyses collapse with all source locators retained and aliases documented in the audit.",
+    "method": "Positioned pdfplumber text with explicit column geometry, x-aligned interlinear tiers and font-aware prose citations; no OCR.",
+    "precedent": "knobloch_sauji_2020.py (Sauji grammar ingestion)",
+    "regions": {
+      "interlinear": 1631,
+      "prose": 819,
+      "table10": 12,
+      "table11": 8,
+      "table12": 15,
+      "table13": 4,
+      "table14": 15,
+      "table15": 9,
+      "table16": 14,
+      "table17": 59,
+      "table18": 22,
+      "table19": 21,
+      "table20": 16,
+      "table21": 4,
+      "table22": 28,
+      "table23": 5,
+      "table24": 14,
+      "table25": 10,
+      "table26": 40,
+      "table27": 158,
+      "table28": 28,
+      "table29": 6,
+      "table30": 4,
+      "table31": 20,
+      "table32": 20,
+      "table34": 3,
+      "table35": 3,
+      "table36": 12,
+      "table38": 38,
+      "table39": 75,
+      "table4": 12,
+      "table40": 21,
+      "table41": 11,
+      "table43": 10,
+      "table44": 13,
+      "table45": 4,
+      "table46": 8,
+      "table47": 11,
+      "table48": 152,
+      "table5": 8,
+      "table6": 8,
+      "table7": 13,
+      "table8": 7,
+      "table9": 7
+    },
+    "snapshot_units": 3386
+  },
+  "outputs": {
+    "audit_count": 3398,
+    "derivation_parent_links": 113,
+    "derivation_rows": 76,
+    "explicit_dialect_rows": 8,
+    "external_etymon_rows": 1,
+    "form_count": 1856,
+    "precollapse_forms": 2900,
+    "statuses": {
+      "installed": 2801,
+      "installed_after_repair": 75,
+      "skipped": 522
+    },
+    "uncertainty_records": 25,
+    "variant_rows": 27
+  },
+  "pdf_pages": 242,
+  "pdf_redistributed": false,
+  "pdf_sha256": "6d740b309f86534157ea8e8c741e2bcc27ac464ac9e9c719e530c3193219fe1c",
+  "pdf_sha512": "5315e4cdbb9c1b104720ca9cbe3d336cedc09239a3f50a7ba4df0e25880f7fae540da77234039ad89adae0f2d87d48c4613e526596265eb24cb11ac46aaa6669",
+  "pdf_sha512_matches_diva_record": true,
+  "pdf_url": "https://su.diva-portal.org/smash/get/diva2:651418/FULLTEXT02.pdf",
+  "printed_to_physical_page_offset": 24,
+  "record_url": "https://urn.kb.se/resolve?urn=urn:nbn:se:su:diva-93888",
+  "rights": "Copyright Emil Perder, Stockholm 2013. Open access in DiVA; no explicit reuse licence stated. Only extracted lexical facts are installed; the PDF is not redistributed.",
+  "scope": {
+    "etymology": "Source-explicit compounds and derivations use source keys. Only explicit Sanskrit strii has a unique CDIAL match (13734). Named or tentative donor languages remain qualified prose without guessed donor edges.",
+    "excluded": "Tables 1–3, 33, 37 and 42 are metadata, transcription conventions, corpus index, affix or grammatical schemas; phoneme inventories, repeated kinship diagrams, bare bound affixes, rejected/hypothetical strings, non-Dameli comparanda, unglossed fragments, free translations, and bibliography are not independent Dameli lexical records.",
+    "included": "Glossed Dameli examples in lexical/phonological/grammatical tables, all 152 verb-root appendix records on pp. 207–208, numbered examples 1–177 (example 38 recovered from prose), Appendix 2 on pp. 210–216 and glossed running-prose citations.",
+    "language": "Canonical Dm, dame1241, Kunar. Only source-explicit Aspar forms receive a dialect tag; consultants and recording sessions remain provenance."
+  },
+  "snapshot_date": "2026-09-09",
+  "source_id": "perder2013dameli",
+  "transcription": {
+    "form": "conversion/perder-dameli.txt: č→c, ċ→ʦ, c̣→ʦ̣, š→ś, ǰ→j, ɡ→g, w→v, ẉ→ɻ; length normalized to macrons; source u/o, ŋ/æ, tone/nasality and ṛ/ẉ distinctions retained.",
+    "original": "Source Standard Orientalist transcription, preserving tone, length, nasality, source segmentation, syllable boundaries and zero markers.",
+    "phonemic": "Only separately bracketed source IPA; no phonetic transcription inferred.",
+    "repairs": "Font splits, combining underdots, caron placement, broken table spans and joint citations are explicit in curation and the per-record audit; source lexical uncertainty is retained, not silently resolved."
+  },
+  "unresolved": "Source-qualified historical azâr numeral interpretation, tentative derivations/donor claims, questioned glosses, and four conjunct complements with no independent lexical gloss remain explicitly marked in the audit. No unresolved source glyph is installed.",
+  "validation_review": "data/other/forms/raw_data/20260909-perder-dameli-review.md",
+  "visual_audits": [
+    {
+      "material_errors": 1,
+      "population": 1859,
+      "resolution": "Question clitic no longer assigns particle POS to its host; copular word class recovered and regression tested.",
+      "round": 1,
+      "sample": 20,
+      "seed": 3662392299860923243
+    },
+    {
+      "material_errors": 0,
+      "population": 1856,
+      "result": "20/20 visually checked against rendered source pages; source-scoped form, meaning and grammar agree.",
+      "round": 2,
+      "sample": 20,
+      "seed": 766152442941636403
+    },
+    {
+      "material_errors": 0,
+      "population": 1856,
+      "result": "Fresh 20/20 rendered-page audit after restoring the mixed-language p. 30 finger citation and retaining Cacopardo’s alternative notation in notes.",
+      "round": 3,
+      "sample": 20,
+      "seed": 7698818706101321111
+    }
+  ]
+}

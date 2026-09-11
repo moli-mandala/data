@@ -1,0 +1,37 @@
+{
+  "checkedAt": "2026-09-10T12:56:39.484332+00:00",
+  "scope": "Pending Shina and Brokskat review manifests, including verified saved-batch dependencies; no overlay write",
+  "pendingProposals": 838,
+  "pendingRecords": 1822,
+  "assignmentRows": 2367,
+  "proposalsByQueue": {
+    "Sh": 175,
+    "Sh/dras": 50,
+    "Sh/remaining": 509,
+    "bro": 104
+  },
+  "recordsByQueue": {
+    "Sh": 224,
+    "Sh/dras": 115,
+    "Sh/remaining": 1297,
+    "bro": 186
+  },
+  "difficultyCounts": {
+    "straightforward": 386,
+    "moderate": 431,
+    "difficult": 21
+  },
+  "checks": [
+    "Unique pending target IDs across all review queues",
+    "Attestation and assignment target sets agree",
+    "Targets exist and are not redirects",
+    "Pending review statuses and difficulty labels are valid; evidence is nonempty",
+    "Combined proposed assignments validate with saved-batch dependencies",
+    "Saved-batch dependency rows verified in current overlay",
+    "No pending target has an accepted overlay row"
+  ],
+  "limitations": [
+    "Structural validation is not independent scholarly approval of each etymology.",
+    "Hard follow-ups and unexamined records remain outside these proposed assignments."
+  ]
+}

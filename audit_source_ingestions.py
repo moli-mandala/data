@@ -45,6 +45,23 @@ CORE_INPUTS = (
 )
 
 CORE_REVIEW_FILES = {
+    "20260909-perder-dameli": {
+        "importers": ["data/other/forms/raw_data/perder_dameli_2013.py"],
+        "audits": [
+            "data/other/forms/raw_data/20260909-perder-dameli-extract.jsonl",
+            "data/other/forms/raw_data/20260909-perder-dameli-curation.json",
+            "data/other/forms/raw_data/20260909-perder-dameli-audit.csv",
+            "data/other/forms/raw_data/20260909-perder-dameli-sample-round1.csv",
+            "data/other/forms/raw_data/20260909-perder-dameli-sample-round2.csv",
+            "data/other/forms/raw_data/20260909-perder-dameli-sample.csv",
+            "data/other/forms/raw_data/20260909-perder-dameli-manifest.json",
+            "data/other/forms/raw_data/20260909-perder-dameli-review.md",
+            "data/other/forms/raw_data/20260909-perder-dameli-validation.json",
+        ],
+        "tests": ["tests/test_perder_dameli.py", "tests/test_sound_profiles.py", "tests/test_source_checklists.py"],
+        "profiles": ["conversion/perder-dameli.txt"],
+        "addenda": ["Dictionary or glossary", "Survey wordlists or comparative tables", "Etymological/comparative source"],
+    },
     "20260901-watters-kusunda": {
         "importers": [
             "data/other/forms/raw_data/watters_kusunda_2006/import_watters.py",
@@ -1095,6 +1112,14 @@ PINNED_LEGACY_UNITS = {
 }
 
 UNIT_REVIEW_NOTES = {
+    "20260909-perder-dameli": {
+        "state": "1,856 lexical records installed from 3,398 audited source units; source review and fresh visual sample complete",
+        "exclusions": "522 audit-only units: affixes, phoneme inventories, non-Dameli comparanda, rejected forms, unglossed/repeated fragments and joint citations split into explicit children",
+        "unresolved": "source-questioned glosses and historical numeral interpretation, tentative donor claims and four independently unglossed conjunct complements are retained with typed audit reasons",
+        "transcription": "source Orientalist transcription preserved as Original; only separately bracketed source IPA in Phonemic; 75-rule perder-dameli profile retains tone, nasality, length and source segmental distinctions",
+        "validation": "fresh PDF sample 0/20 material errors; full build and repository test results recorded in data/other/forms/raw_data/20260909-perder-dameli-review.md",
+        "representative": "ištrii wife (p. 34, CDIAL 13734), c̣ai body with bracketed IPA (p. 40), draakmuṭ vine compound (p. 50), Aspar kinship terms (pp. 10, 67–69), aċap and žup at the appendix boundaries (pp. 207–208); browser refresh deferred at user request",
+    },
     "20260901-watters-kusunda": {
         "state": (
             "all 877 printed Appendix A entries are installed as 1,387 separately addressable "
@@ -2413,6 +2438,14 @@ UNIT_EVIDENCE_OVERRIDES = {
     for unit_id, omitted in {
         "20260826-sil-garobd": 712,
     }.items()
+}
+
+UNIT_EVIDENCE_OVERRIDES["20260909-perder-dameli"] = {
+    "12. Install and run the full data pipeline": (
+        False,
+        "source integration is validated separately; repository-wide build/test results and "
+        "pre-existing failures are recorded in data/other/forms/raw_data/20260909-perder-dameli-review.md",
+    ),
 }
 
 UNIT_EVIDENCE_OVERRIDES["20260826-sil-kochbd"] = {

@@ -1,0 +1,25 @@
+{
+  "newDonorHeads": 94,
+  "registryRowsAdded": 94,
+  "idsComparedWithAttemptedFullBuild": 84,
+  "registryBeforeSHA256": "f01c32041efbb6936eb63ba7f3d833317e241e6f1308556f9350d4a055e02504",
+  "registryAfterSHA256": "6ffd63529a67c94a7d5ea17cda5ff73b6f15078707a03b79b107ee5f25413525",
+  "note": "All 94 new IDs agree with the completed production ID stage; 29 existing parameter heads resolve through the built alias registry. Prior registry bytes were preserved. All 14 donor and Degener focused tests pass; repository-wide validation is qualified below.",
+  "idsComparedWithCompletedIDStage": 94,
+  "reusedHeadsResolvedInBuild": 29,
+  "registeredDonorIDs": 123,
+  "inputReversalPreservesAllIDs": true,
+  "glossCorrectionPreservesID": true,
+  "fullSuite": {
+    "passed": 1650,
+    "failed": 59,
+    "skipped": 19,
+    "seconds": 390.76,
+    "note": "Full isolated suite: 1650 passed, 59 failed, 19 skipped (390.76 s). One failure was the Degener attestation count including 91 newly cited donor heads; the test now scopes that count to Shina. The subsequent complete Degener plus donor focused run passed all 14 tests (5.35 s). The remaining 58 full-suite failures were not all baseline-classified: they include absent PDF/frontend fixtures, stale snapshot/profile/checklist data, and wider graph/schema assertions. Two dialect and two manual-survey failures were independently reproduced in the workspace baseline. No clean repository-wide test result is claimed; the full suite was not rerun after the focused correction."
+  },
+  "finalFocusedTests": {
+    "passed": 14,
+    "failed": 0,
+    "seconds": 5.35
+  }
+}

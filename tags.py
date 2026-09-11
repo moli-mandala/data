@@ -72,6 +72,12 @@ GRAMMATICAL_TAGS = {
     "personal", "reciprocal", "copula", "modal", "conjunct-verb",
     "incorporating", "non-incorporating", "temporal", "spatial", "manner",
     "degree", "sentential", "onomatopoeia", "quantifier",
+    # Distinctions explicitly glossed in Perder's Dameli grammar.
+    "animate", "inanimate", "kinship", "collective", "second-causative",
+    "indirect-past", "potential-past", "inchoative-participle",
+    "topic-same", "topic-shift", "prohibitive", "echo", "epenthetic",
+    "appropriate-place", "first-person", "second-person", "third-person",
+    "quotative", "filler",
 }
 
 # CDIAL abbreviations normalized into the shared schema. They are applied only when the complete

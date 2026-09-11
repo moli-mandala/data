@@ -1,0 +1,121 @@
+{
+  "language": "Dm",
+  "batch": 24,
+  "status": "approved_blocked",
+  "proposals": [
+    {
+      "number": 1,
+      "forms": [
+        {
+          "ID": "f_z2mjwhklyueky",
+          "Form": "gaḍivēla",
+          "Gloss": "having a car",
+          "Source": "perder2013dameli[p. 87, prose, y 101, x 325]"
+        }
+      ],
+      "parents": [],
+      "proposed_donor": {
+        "language": "Dameli",
+        "form": "gaḍi",
+        "gloss": "car",
+        "persistent_id": null
+      },
+      "kind": "derived",
+      "difficulty": "easy",
+      "review_status": "approved",
+      "evidence": "Perder p. 87 explicitly gives gaḍiweela having a car as noun plus possessive -weela. Record the synchronic derivative; the noun’s source history and a standalone Dameli base node are unresolved. Do not jump to Hindi gāṛī solely from the familiar shape.",
+      "citations": [
+        "perder2013dameli[p. 87, sections 9.3.3–9.3.4]"
+      ],
+      "save_blocker": "Standalone Dameli base node not resolved; no lexical node created.",
+      "blocked_assignments": []
+    },
+    {
+      "number": 2,
+      "forms": [
+        {
+          "ID": "f_77cl5setwm5ua",
+          "Form": "havavēla",
+          "Gloss": "windy",
+          "Source": "perder2013dameli[p. 87, prose, y 129, x 91]"
+        }
+      ],
+      "parents": [],
+      "proposed_donor": {
+        "language": "Dameli",
+        "form": "hawa",
+        "gloss": "wind",
+        "persistent_id": null
+      },
+      "kind": "derived",
+      "difficulty": "easy",
+      "review_status": "approved",
+      "evidence": "Perder p. 87 explicitly identifies hawaweela windy as a noun plus -weela adjective. The weather meaning and segmentation are clear; a standalone Dameli hawa node and immediate loan route have not been established.",
+      "citations": [
+        "perder2013dameli[p. 87, sections 9.3.3–9.3.4]"
+      ],
+      "save_blocker": "Standalone Dameli base node not resolved; no lexical node created.",
+      "blocked_assignments": []
+    },
+    {
+      "number": 3,
+      "forms": [
+        {
+          "ID": "f_cccz32clg64de",
+          "Form": "xaṭāpin",
+          "Gloss": "muddy",
+          "Source": "perder2013dameli[p. 87, prose, y 308, x 147]"
+        }
+      ],
+      "parents": [
+        {
+          "ID": "f_5vybacfmul4r6",
+          "Language_ID": "Dm",
+          "Form": "xaṭa",
+          "Gloss": "mud",
+          "Source": "decker1992[chitral, location DML, item 58]"
+        }
+      ],
+      "proposed_donor": {
+        "language": "Dameli",
+        "form": "xaṭa",
+        "gloss": "mud",
+        "persistent_id": "f_5vybacfmul4r6"
+      },
+      "kind": "derived",
+      "difficulty": "easy",
+      "review_status": "approved",
+      "evidence": "Perder p. 87 explicitly analyses xaṭaapin muddy with the full-of/soaked-with suffix -pin. Decker independently attests Dameli xaṭa mud, furnishing the exact lexical base. That base remains unlinked, so this transparent derivative cannot yet pass the accepted-parent constraint.",
+      "citations": [
+        "perder2013dameli[p. 87, sections 9.3.3–9.3.4]"
+      ],
+      "save_blocker": "Existing Dameli base is unlinked.",
+      "blocked_assignments": [
+        {
+          "Form_ID": "f_cccz32clg64de",
+          "Etymon_ID": "f_5vybacfmul4r6",
+          "Kind": "derived",
+          "Rank": "1",
+          "Status": "accepted",
+          "Source": "perder2013dameli[p. 87, sections 9.3.3–9.3.4];perder2013dameli[p. 87, prose, y 308, x 147]",
+          "Notes": "Perder p. 87 explicitly analyses xaṭaapin muddy with the full-of/soaked-with suffix -pin. Decker independently attests Dameli xaṭa mud, furnishing the exact lexical base. That base remains unlinked, so this transparent derivative cannot yet pass the accepted-parent constraint.",
+          "Pos": ""
+        }
+      ],
+      "validation_error": "etymology assignment for f_cccz32clg64de references missing etymon f_5vybacfmul4r6"
+    }
+  ],
+  "assignments": [],
+  "validation": {
+    "proposals": 3,
+    "affected_records": 3,
+    "blocked_assignment_rows": 1,
+    "save_ready_assignment_rows": 0,
+    "db_rebuilt": false
+  },
+  "notes": [
+    "Source-explicit synchronic derivations, pending review and base resolution."
+  ],
+  "approval": "User: approve all; prefer Pashto where best matched, then Urdu for broadly Perso-Arabic terms. Approval includes qualified analyses, not a claim that uncertainties are resolved.",
+  "donor_policy": "Prefer an attested Pashto donor where form and meaning fit best; otherwise prefer Urdu for broadly shared Perso-Arabic loans. Preserve explicit source attribution, phonological uncertainty and possible Nuristani mediation. Do not substitute a different dialect merely because its node is linkable."
+}

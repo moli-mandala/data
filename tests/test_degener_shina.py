@@ -169,7 +169,10 @@ def test_compiled_rows_exist_when_cldf_has_been_built():
     if not forms_path.exists():
         return
     compiled = rows(forms_path)
-    installed = [row for row in compiled if "degener-shina2008" in row["Source"]]
+    # The same source also documents donor heads in other languages.
+    installed = [row for row in compiled
+                 if "degener-shina2008" in row["Source"]
+                 and row["Language_ID"] == "Sh"]
     if not installed or forms_path.stat().st_mtime < (
             ROOT / "data/other/forms/20260827-degener-shina.csv").stat().st_mtime:
         return

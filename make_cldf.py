@@ -209,6 +209,7 @@ SCHMIDT_PROFILE_LANGUAGES = {"K", "kash", "pog", "sir"}
 
 # Citation key of Knobloch's Sauji grammar sketch; see the profile routing below.
 SAUJI_SOURCE_KEY = "knobloch2020sauji"
+PERDER_SOURCE_KEY = "perder2013dameli"
 DOMARI_ALEPPO_SOURCE_KEY = "herin2012domari"
 KUSUNDA_SOURCE_KEY = "aaley-bodt2020kusunda"
 KUSUNDA_WATTERS_SOURCE_KEY = "watters2006kusunda"
@@ -218,6 +219,7 @@ KUSUNDA_GIPAN_SOURCE_KEY = "aaley2021kusundagipan"
 # punctuation are meaningful source data.  The legacy generic converter strips such characters
 # before tokenization because many older wordlists used them as disposable list notation.
 PRESERVE_SOURCE_PROFILE_INPUT = {
+    "perder-dameli",
     "boretzky-romani",
     "house", "vaagri", "drasi", "yoshioka", "gandhari", "kullui", "toda", "rabha", "lsi",
     "domari-aleppo",
@@ -487,6 +489,9 @@ def parse_file(file: str, errors, name=None, file_num=0, param_counter=None):
         # grapheme. Route by citation key so the layer contract survives a rename.
         if source_key == SAUJI_SOURCE_KEY:
             row_ipa = "knobloch-sauji"
+            row_convert = True
+        if source_key == PERDER_SOURCE_KEY:
+            row_ipa = "perder-dameli"
             row_convert = True
         # Herin writes Aleppo Domari in an Arabist/Indo-Aryanist transcription whose
         # morpheme hyphens and clitic boundaries are part of the citation, so the profile
@@ -904,7 +909,19 @@ def parse_file(file: str, errors, name=None, file_num=0, param_counter=None):
                 row.variant_of = main_id
 
             # convert IPA
-            if row_ipa in PRESERVE_SOURCE_PROFILE_INPUT and row_convert:
+            if row.input_file == "20260910-dameli-donors.csv":
+                # Audited donor self-attestations already use display transcription.
+                # Prefer this preservation route over the cited source's decoder.
+                stats["for_conversion"] += 1
+                row.form = unicodedata.normalize(
+                    "NFC", convertors["dameli-donors"](reformed, column="IPA")
+                    .replace(" ", "").replace("#", " ")
+                )
+                if "�" in row.form:
+                    errors.write(str(row) + " " + row.form + "\n")
+                else:
+                    stats["converted"] += 1
+            elif row_ipa in PRESERVE_SOURCE_PROFILE_INPUT and row_convert:
                 stats["for_conversion"] += 1
                 # LSI's Form is Grierson's historical transcription, while its
                 # Phonemic column is upstream's canonical CLTS segmentation.
@@ -1223,6 +1240,10 @@ def main():
                 # gloss. Keeping its keys distinct here protects the homographs that
                 # survive that fold, such as si 'bridge' versus si 'together with'.
                 SAUJI_SOURCE_KEY,
+                # Perder likewise folds only identical complete analyses in its
+                # importer. Preserve distinct senses, grammatical forms and
+                # source-explicit dialect attestations through the CLDF build.
+                PERDER_SOURCE_KEY,
                 # The Kalkoti importer already folds repeated citations of one
                 # lexeme on form plus gloss. Keeping its keys distinct here
                 # protects the senses that survive that fold, such as buun

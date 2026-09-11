@@ -1,0 +1,90 @@
+{
+  "language": "Dm",
+  "batch": 60,
+  "status": "saved",
+  "proposals": [
+    {
+      "number": 1,
+      "forms": [
+        {
+          "ID": "f_w5tf32k2t2peo",
+          "Form": "kitap",
+          "Gloss": "book",
+          "Source": "perder2013dameli[p. 131, example (77), w1, y 468, data Q1001];perder2013dameli[p. 145, example (96), w1, y 348, data Q0017, Q1002]"
+        }
+      ],
+      "parents": [],
+      "proposed_donor": {
+        "language": "Arabic-origin regional loan; immediate donor unresolved",
+        "form": "kitāb",
+        "gloss": "book",
+        "persistent_id": null
+      },
+      "kind": "borrowed",
+      "difficulty": "moderate",
+      "review_status": "approved",
+      "evidence": "Perder examples 77 and 96 gloss kitap book in contrasting under/on the chair constructions. Platts Arabic-origin kitāb book provides the whole-word regional comparison. Final p is compatible with the final devoicing discussed by Perder (pp. 43–44), but vowel length and the immediate donor remain unresolved; do not assign direct Arabic ancestry or an invented Pashto donor node.",
+      "citations": [
+        "perder2013dameli[p. 131, example (77), w1, y 468, data Q1001];perder2013dameli[p. 145, example (96), w1, y 348, data Q0017, Q1002]",
+        "perder2013dameli[pp. 43–44]",
+        "https://www.rekhta.org/urdudictionary?keyword=kitaab"
+      ],
+      "blocked_assignments": [],
+      "preferred_donor_language": "Urdu",
+      "donor_selection_note": "Selected under the user’s donor preference; existing source evidence and uncertainties remain authoritative. This preference alone does not establish historical direction or supply a missing/linkable donor ID.",
+      "save_status": "saved",
+      "assignments": [
+        {
+          "Form_ID": "f_w5tf32k2t2peo",
+          "Etymon_ID": "f_pywmajcmxokwm",
+          "Kind": "borrowed",
+          "Rank": "1",
+          "Status": "accepted",
+          "Source": "perder2013dameli[p. 131, example (77), w1, y 468, data Q1001];perder2013dameli[p. 145, example (96), w1, y 348, data Q0017, Q1002];perder2013dameli[pp. 43–44];liljegren[entry LX001248]",
+          "Notes": "Perder examples 77 and 96 gloss kitap book in contrasting under/on the chair constructions. Platts Arabic-origin kitāb book provides the whole-word regional comparison. Final p is compatible with the final devoicing discussed by Perder (pp. 43–44), but vowel length and the immediate donor remain unresolved; do not assign direct Arabic ancestry or an invented Pashto donor node. Immediate donor represented by the sourced Urdu lemma kitaab ‘book’. Source transcription retained; user-approved donor preference does not remove the qualifications in this analysis. Research links: https://www.rekhta.org/urdudictionary?keyword=kitaab",
+          "Pos": ""
+        }
+      ],
+      "resolved_donor": {
+        "batch": 60,
+        "proposal": 1,
+        "donor_key": "loan-shinaic-phal-220",
+        "reused": true,
+        "donor_language": "H",
+        "donor_form": "kitaab",
+        "donor_source": "liljegren[entry LX001248]",
+        "ID": "f_pywmajcmxokwm"
+      },
+      "save_validation": {
+        "schema": "passed",
+        "second_application_changes": 0
+      }
+    }
+  ],
+  "assignments": [
+    {
+      "Form_ID": "f_w5tf32k2t2peo",
+      "Etymon_ID": "f_pywmajcmxokwm",
+      "Kind": "borrowed",
+      "Rank": "1",
+      "Status": "accepted",
+      "Source": "perder2013dameli[p. 131, example (77), w1, y 468, data Q1001];perder2013dameli[p. 145, example (96), w1, y 348, data Q0017, Q1002];perder2013dameli[pp. 43–44];liljegren[entry LX001248]",
+      "Notes": "Perder examples 77 and 96 gloss kitap book in contrasting under/on the chair constructions. Platts Arabic-origin kitāb book provides the whole-word regional comparison. Final p is compatible with the final devoicing discussed by Perder (pp. 43–44), but vowel length and the immediate donor remain unresolved; do not assign direct Arabic ancestry or an invented Pashto donor node. Immediate donor represented by the sourced Urdu lemma kitaab ‘book’. Source transcription retained; user-approved donor preference does not remove the qualifications in this analysis. Research links: https://www.rekhta.org/urdudictionary?keyword=kitaab",
+      "Pos": ""
+    }
+  ],
+  "validation": {
+    "proposals": 1,
+    "affected_records": 1,
+    "save_ready_assignment_rows": 0,
+    "db_rebuilt": false
+  },
+  "approval": "User: approve all; prefer Pashto where best matched, then Urdu for broadly Perso-Arabic terms. Approval includes qualified analyses, not a claim that uncertainties are resolved.",
+  "donor_policy": "Prefer an attested Pashto donor where form and meaning fit best; otherwise prefer Urdu for broadly shared Perso-Arabic loans. Preserve explicit source attribution, phonological uncertainty and possible Nuristani mediation. Do not substitute a different dialect merely because its node is linkable.",
+  "save_validation": {
+    "schema": "passed",
+    "donor_links_graph_changes": 220,
+    "second_application_changes": 0,
+    "db_rebuilt": false
+  }
+}

@@ -1,0 +1,218 @@
+{
+  "scope": "Curated donor parameter heads and all previously approved overnight links",
+  "date": "2026-09-10",
+  "counts": {
+    "approvedProposals": 741,
+    "savedProposals": 741,
+    "savedRecords": 899,
+    "assignmentRows": 957,
+    "approvedOutstanding": 0,
+    "donorEntries": 406,
+    "newIdentityRows": 406,
+    "newProposals": 418,
+    "newAssignmentRows": 435,
+    "newRecords": 432,
+    "graphChanges": 867,
+    "repeatGraphChanges": 0,
+    "beforeSHA256": "62dc9587a12c8c9737e19f78d0677d5a2688d4a07b76799aca70dd65c2366c96",
+    "afterSHA256": "baaa760fd7d50591033864c16e313a5c83a4cc074c61a1e7cc2a24247554208e",
+    "byLanguage": [
+      {
+        "language": "Sv",
+        "proposals": 42,
+        "records": 54,
+        "assignmentRows": 59,
+        "approvedOutstanding": 0
+      },
+      {
+        "language": "Ush",
+        "proposals": 220,
+        "records": 296,
+        "assignmentRows": 349,
+        "approvedOutstanding": 0
+      },
+      {
+        "language": "Phal",
+        "proposals": 479,
+        "records": 549,
+        "assignmentRows": 549,
+        "approvedOutstanding": 0
+      }
+    ]
+  },
+  "sourceCounts": {
+    "oped2026": 97,
+    "liljegren": 307,
+    "knobloch2020sauji": 2
+  },
+  "languageCounts": {
+    "H": 302,
+    "Psht": 99,
+    "Kho": 3,
+    "Gaw": 2
+  },
+  "sample": {
+    "records": 20,
+    "materialExtractionErrors": 0
+  },
+  "focusedTests": {
+    "passed": 4,
+    "failed": 0
+  },
+  "build": {
+    "directory": "/tmp/shinaic-donor-build/data",
+    "compilation": "All compilation stages completed; concepts disk-space failure recovered; final graph applied and alignments/concepts regenerated",
+    "manualSurveyTests": {
+      "passed": 2,
+      "failed": 2,
+      "failures": [
+        "test_manual_survey_etymologies_reach_the_compiled_graph",
+        "test_source_owned_links_do_not_depend_on_duplicate_overlay_rows"
+      ]
+    },
+    "globalSuite": {
+      "passed": 1633,
+      "failed": 67,
+      "errors": 8,
+      "skipped": 17,
+      "warnings": 4,
+      "seconds": 433.35,
+      "failureSummary": [
+        "FAILED tests/test_assign_form_ids.py::test_the_dictionary_self_reference_assignments_all_point_at_live_sub_entries",
+        "FAILED tests/test_bahl_korwa_1962.py::test_compiled_rows_survive_when_current_cldf_is_built",
+        "FAILED tests/test_beine_bhatri.py::test_compiled_forms_are_unlinked_records_on_canonical_languages",
+        "FAILED tests/test_beine_bhatri.py::test_source_contributes_no_graph_edges - A...",
+        "FAILED tests/test_bhattacharya_bonda_1968.py::test_compiled_rows_survive_when_current_cldf_is_built",
+        "FAILED tests/test_burrow_emeneau_1972_den1.py::test_build_merges_source_citations_without_duplicate_reflexes",
+        "FAILED tests/test_burrow_emeneau_1972_den2.py::test_build_carries_the_source_citation_without_replacement_glyphs",
+        "FAILED tests/test_cldf.py::test_dedr_old_edition_references_are_structured_on_entry",
+        "FAILED tests/test_cldf.py::test_cross_family_descendants_are_borrowings - Ass...",
+        "FAILED tests/test_cldf.py::test_backstrom_poc_cloth_forms_link_to_pota_not_avajjharati",
+        "FAILED tests/test_cldf.py::test_reference_metadata_is_complete - assert not True",
+        "FAILED tests/test_cldf.py::test_reference_editor_credits_for_assisted_sources",
+        "FAILED tests/test_cldf.py::test_ocr_provenance_is_explicit_on_references - As...",
+        "FAILED tests/test_cldf.py::test_both_shackle_sources_use_cdial_phonetic_conversion_and_tags",
+        "FAILED tests/test_dedr_headwords.py::test_compiled_pdr_headword_audit_and_forms_follow_policy",
+        "FAILED tests/test_dialects.py::test_every_dialect_has_human_readable_location_metadata",
+        "FAILED tests/test_dialects.py::test_every_dialect_has_coordinates_in_range - ...",
+        "FAILED tests/test_gondi_beine.py::test_compiled_forms_are_unlinked_gondi_dialect_records",
+        "FAILED tests/test_herin_domari_aleppo.py::test_the_frontend_tag_list_matches_the_python_registry_for_the_new_tags",
+        "FAILED tests/test_knobloch_sauji.py::test_every_installed_row_survives_the_full_build",
+        "FAILED tests/test_language_coordinates.py::test_only_geographically_undefined_languages_lack_coordinates",
+        "FAILED tests/test_liljegren_kalkoti.py::test_the_two_verb_classes_the_article_names_are_canonical_tags",
+        "FAILED tests/test_manual_survey_etymologies.py::test_manual_survey_etymologies_reach_the_compiled_graph",
+        "FAILED tests/test_manual_survey_etymologies.py::test_source_owned_links_do_not_depend_on_duplicate_overlay_rows",
+        "FAILED tests/test_munda_proto_kherwarian_1968.py::test_compiled_rows_survive_when_current_cldf_is_built",
+        "FAILED tests/test_neojambu_etymology_restoration.py::test_restored_assignments_survive_in_the_compiled_edge_graph",
+        "FAILED tests/test_neojambu_etymology_restoration.py::test_previously_lost_source_groups_have_accepted_edges",
+        "FAILED tests/test_perder_dameli.py::test_compiled_source_keeps_original_phonemic_and_resolved_graph",
+        "FAILED tests/test_pinnow_juang_1960.py::test_compiled_rows_survive_when_current_cldf_is_built",
+        "FAILED tests/test_rajasthani.py::test_curated_etymologies_survive_the_compiled_graph",
+        "FAILED tests/test_rezai_baghbidi_zargari_2003.py::test_every_installed_row_survives_the_full_build",
+        "FAILED tests/test_rezai_baghbidi_zargari_2003.py::test_printed_alternates_become_variant_edges",
+        "FAILED tests/test_sil_adi_2015.py::test_frozen_staging_regenerates_exactly_and_has_immutable_locators",
+        "FAILED tests/test_sil_adi_2015.py::test_preintegration_manifest_render_and_registry_contract_are_exact",
+        "FAILED tests/test_sil_bonda_didayi_2022.py::test_rebuild_is_row_equivalent - ...",
+        "FAILED tests/test_sil_eastern_gujari_2023.py::test_source_local_importer_rebuilds_artifacts",
+        "FAILED tests/test_sil_gadaba_2019.py::test_importer_rebuilds_checked_artifacts_without_source_pdf",
+        "FAILED tests/test_sil_haryanvi_2024.py::test_importer_rebuilds_checked_artifacts",
+        "FAILED tests/test_sil_haryanvi_2024.py::test_profile_covers_every_manual_form_and_preserves_source_phonemic",
+        "FAILED tests/test_sil_ho_2024.py::test_source_pin_and_exact_topology - FileNo...",
+        "FAILED tests/test_sil_ho_2024.py::test_base_only_bypass_refuses_staging_and_incomplete_base_is_guarded",
+        "FAILED tests/test_sil_jaunsari_2008.py::test_importer_rebuilds_checked_artifacts_without_source_pdf",
+        "FAILED tests/test_sil_kochbd_2011_manual.py::test_cumulative_generator_is_exact_and_reproducible",
+        "FAILED tests/test_sil_kochbd_2011_post_freeze.py::test_post_freeze_generator_is_exact_and_reproducible",
+        "FAILED tests/test_sil_kochbd_2011_post_freeze.py::test_shared_profile_is_exact_and_parser_route_is_explicit",
+        "FAILED tests/test_sil_konda_dora_2012.py::test_source_local_importer_rebuilds_checked_artifacts",
+        "FAILED tests/test_sil_korwa_kodaku_2022.py::test_shared_profile_language_dialect_and_bibliographic_registration",
+        "FAILED tests/test_sil_koya_2021.py::test_shared_profile_routing_and_metadata_registration",
+        "FAILED tests/test_sil_kuki_chin_bangladesh_2011.py::test_importer_rebuilds_checked_artifacts_without_web_source",
+        "FAILED tests/test_sil_kullu_2021.py::test_shared_profile_routing_and_metadata_registration",
+        "FAILED tests/test_sil_kurumba_2012.py::test_source_is_pinned_and_appendix_topology_is_exact",
+        "FAILED tests/test_sil_kurumba_2012.py::test_importer_reports_complete_and_stages_only_manual_data",
+        "FAILED tests/test_sil_kurux_2011_manual.py::test_generator_is_exact_and_reproducible",
+        "FAILED tests/test_sil_kurux_2011_manual.py::test_post_freeze_generator_is_exact_and_reproducible",
+        "FAILED tests/test_sil_northern_dhule_bhils_2013.py::test_source_pin_full_topology_and_list_roles",
+        "FAILED tests/test_sil_northern_dhule_bhils_2013.py::test_complete_review_stages_only_resolved_targets_and_incomplete_refuses",
+        "FAILED tests/test_sil_northern_dhule_bhils_2013.py::test_preintegration_freeze_reconciliation_and_render_contract_are_exact",
+        "FAILED tests/test_sil_rabha_2013_manual.py::test_source_pin_and_appendix_topology",
+        "FAILED tests/test_source_checklists.py::test_every_installed_ingestion_unit_has_a_fresh_checklist_copy",
+        "FAILED tests/test_tharu.py::test_western_tharu_importer_rebuilds_frozen_integration_deterministically",
+        "FAILED tests/test_zide_sora_gorum_1982.py::test_compiled_rows_survive_when_current_cldf_is_built",
+        "ERROR tests/test_drasi.py::test_drasi_csv_has_ingestion_schema - OSError: cou...",
+        "ERROR tests/test_nured_org.py::test_unchanged_live_inventory_does_not_create_a_date_only_refresh",
+        "ERROR tests/test_ocr_corrections.py::test_correction_overlay_matches_exact_audit_row",
+        "ERROR tests/test_ocr_corrections.py::test_stale_correction_is_rejected - OSEr...",
+        "ERROR tests/test_ocr_corrections.py::test_lowercase_entry_key_from_cached_ocr_is_supported",
+        "ERROR tests/test_perder_dameli.py::test_fresh_visual_sample_has_no_material_errors",
+        "ERROR tests/test_schmidt_kashmiri.py::test_all_schmidt_table_3_languages_are_routed_through_profile",
+        "ERROR tests/test_sil_ho_2024.py::test_overlay_is_keyed_disjoint_coordinate_exact_and_ocr_blind"
+      ],
+      "log": "/tmp/shinaic-full-tests.log",
+      "scope": "Full isolated repository suite; not globally clean. No test_shinaic_donors failure."
+    },
+    "logs": {
+      "initialMake": "/tmp/shinaic-build.log",
+      "finalConcepts": "/tmp/shinaic-final-concepts.log",
+      "align": "/tmp/shinaic-align.log",
+      "references": "/tmp/shinaic-refs.log",
+      "manualSurvey": "/tmp/shinaic-manual-tests.log"
+    }
+  },
+  "preservation": {
+    "oldOverlayRows": "verified unchanged",
+    "oldIdentityRegistryBytes": "verified unchanged",
+    "appendedIdentityRows": 406,
+    "appendedAssignmentRows": 435
+  },
+  "auditSHA256": "c2e51253b3dbb9f8c4b6e30d305f4f020da823a00257aefd42807f8b8a345d92",
+  "browserQA": "Deferred: shared browser DB refresh not requested",
+  "excluded": "All unreviewed/held lemmata and all unselected source records",
+  "remainingRecords": {
+    "unreviewed": 2683,
+    "held": 78
+  },
+  "licensing": "Selected lexical facts and existing source citations; no complete protected works installed",
+  "representativeEntries": [
+    {
+      "ID": "loan-shinaic-sv-321",
+      "Persistent_ID": "f_oatuxm2d4hd4y",
+      "Language_ID": "Psht",
+      "Form": "kumák",
+      "Gloss": "help, support; assistance, contribution; grant, allowance",
+      "Source": "oped2026[entry 31579]"
+    },
+    {
+      "ID": "loan-shinaic-sv-347",
+      "Persistent_ID": "f_xs75czdoxy5be",
+      "Language_ID": "Psht",
+      "Form": "osedə́l",
+      "Gloss": "to live, to reside; to stay; to settle; to be situated, to be located",
+      "Source": "oped2026[entry 7772]"
+    },
+    {
+      "ID": "loan-shinaic-phal-33",
+      "Persistent_ID": "f_5b4aiuss3ro2q",
+      "Language_ID": "Psht",
+      "Form": "laṣ̌kár",
+      "Gloss": "troops; army; detachment of warriors (of a tribe); flock (of locusts); horde; bank (of clouds); Lashkar",
+      "Source": "oped2026[entry 33284]"
+    },
+    {
+      "ID": "loan-shinaic-phal-82",
+      "Persistent_ID": "f_3sutkfwdtldlq",
+      "Language_ID": "H",
+      "Form": "aaǰ-kal",
+      "Gloss": "nowadays",
+      "Source": "liljegren[entry LX000017]"
+    },
+    {
+      "ID": "loan-shinaic-phal-392",
+      "Persistent_ID": "f_lctix2uesrfyo",
+      "Language_ID": "H",
+      "Form": "gor",
+      "Gloss": "grave",
+      "Source": "liljegren[entry LX002575]"
+    }
+  ]
+}

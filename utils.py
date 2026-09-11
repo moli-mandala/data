@@ -1,5 +1,6 @@
 # data files -> transcription conversion filess
 mapping = {
+    'dameli': 'dameli-donors',
     # These older imports were manually normalized when they were ingested.  Route them through
     # an explicit preservation profile so that their transcription contract is checked rather
     # than silently bypassing the sound-profile layer.
@@ -97,6 +98,7 @@ mapping = {
     # simplified Indo-Aryanist transcription (everything else); one profile reads
     # both. make_cldf.py also routes it by citation key.
     'knobloch': 'knobloch-sauji',
+    'perder': 'perder-dameli',
     # Beine's 46 Gondi survey word lists, digitized by Rama et al., are Unicode IPA;
     # the profile maps them onto Jambu's Dravidianist house transcription while the
     # source IPA is retained in Original and Phonemic.

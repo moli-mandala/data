@@ -1,6 +1,6 @@
 {
   "checklist_sha256": "23516ba5c7caeaa5310f6a32d92b86e4b9ae5e4479e792926b61dd0689129f05",
-  "unit_count": 158,
+  "unit_count": 159,
   "units": [
     {
       "addenda": [
@@ -3100,7 +3100,7 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
-      "compiled_grammar_tagged_rows": 508,
+      "compiled_grammar_tagged_rows": 509,
       "compiled_rows": 3021,
       "entry_key_count": 0,
       "id": "20260725-drasi",
@@ -9150,6 +9150,65 @@
         "tests/test_source_checklists.py"
       ],
       "unique_entry_key_count": 1387,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Dictionary or glossary",
+        "Survey wordlists or comparative tables",
+        "Etymological/comparative source"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/20260909-perder-dameli-extract.jsonl",
+        "data/other/forms/raw_data/20260909-perder-dameli-curation.json",
+        "data/other/forms/raw_data/20260909-perder-dameli-audit.csv",
+        "data/other/forms/raw_data/20260909-perder-dameli-sample-round1.csv",
+        "data/other/forms/raw_data/20260909-perder-dameli-sample-round2.csv",
+        "data/other/forms/raw_data/20260909-perder-dameli-sample.csv",
+        "data/other/forms/raw_data/20260909-perder-dameli-manifest.json",
+        "data/other/forms/raw_data/20260909-perder-dameli-review.md",
+        "data/other/forms/raw_data/20260909-perder-dameli-validation.json",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 1307,
+      "compiled_rows": 1856,
+      "entry_key_count": 1856,
+      "id": "20260909-perder-dameli",
+      "importers": [
+        "data/other/forms/raw_data/perder_dameli_2013.py"
+      ],
+      "installed_file": "data/other/forms/20260909-perder-dameli.csv",
+      "languages": [
+        "Dm"
+      ],
+      "profiles": [
+        "conversion/perder-dameli.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 1856,
+      "row_widths": {
+        "15": 1856
+      },
+      "source_grammar_evidence_rows": 1307,
+      "source_key_counts": {
+        "cacopardo2008dameli": 1,
+        "morgenstierne1942dameli": 1,
+        "perder2013dameli": 2900
+      },
+      "source_keys": [
+        "cacopardo2008dameli",
+        "morgenstierne1942dameli",
+        "perder2013dameli"
+      ],
+      "tests": [
+        "tests/test_perder_dameli.py",
+        "tests/test_sound_profiles.py",
+        "tests/test_source_checklists.py"
+      ],
+      "unique_entry_key_count": 1856,
       "unregistered_dialect_tags": [],
       "unregistered_languages": [],
       "unresolved_references": []

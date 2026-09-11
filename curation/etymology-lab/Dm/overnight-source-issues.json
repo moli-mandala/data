@@ -1,0 +1,40 @@
+{
+  "status": "source_repair_required",
+  "affected_records": [
+    {
+      "ID": "f_nuxv5esaaghrw",
+      "Form": "satʰaṣṭʰ",
+      "Gloss": "seven",
+      "Source": "decker1992[chitral, location DML, item 157]"
+    },
+    {
+      "ID": "f_r7zd42ixqhgr6",
+      "Form": "nõ",
+      "Gloss": "eight",
+      "Source": "decker1992[chitral, location DML, item 158]"
+    },
+    {
+      "ID": "f_dot2su2ggptj6",
+      "Form": "biśī sāo / pā̃ź bis",
+      "Gloss": "twenty",
+      "Source": "decker1992[chitral, location DML, item 163]"
+    },
+    {
+      "ID": "f_54cbhvurwlm3q",
+      "Form": "ī",
+      "Gloss": "one hundred",
+      "Source": "decker1992[chitral, location DML, item 164]"
+    }
+  ],
+  "evidence": [
+    "Cached Chitral extract and independently web-extracted publisher PDF place sVth, VS7Th and no3 in separate columns 157 seven, 158 eight, 159 nine. Current importer join_fragments attaches a following vowel-initial token to a preceding h-final token across physical lines, explaining the merged satʰaṣṭʰ seven and subsequent shift.",
+    "For columns 163 twenty, 164 hundred, 165 who, the raw DML line is bIs7i sào / pà3z7 bIs 7i kure. Current records split the numeral phrase into biśī sāo / pā̃ź bis twenty and ī hundred."
+  ],
+  "source": "decker1992[chitral, pp. 203–204, DML, items 157–165]",
+  "source_url": "https://www.zabanha.af/sites/default/files/sites/default/files/print-resource/32850_SSNP05.pdf",
+  "raw_path": "data/data/other/forms/raw_data/chitral",
+  "parser_path": "data/data/other/forms/raw_data/ssnp.py",
+  "visual_verification": "Pending; web PDF screenshots failed to fetch. Cached text, web text and importer logic agree.",
+  "accepted_overlay_rows_affected": 0,
+  "action": "Exclude malformed records from etymology assignments. Source repair and stable-identity reconciliation are deferred; no lexical input, identities, compiled data or importer changed."
+}

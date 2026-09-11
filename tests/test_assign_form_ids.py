@@ -24,6 +24,46 @@ def form(legacy_id, original, *, rendered=None, gloss="water", relation="local")
     }
 
 
+def test_overlay_derivative_can_target_base_assigned_in_same_batch(tmp_path):
+    import csv
+    from assign_form_ids import EDGES_FIELDS, validate_assignments
+    from edges_build import validate_edge_dicts
+
+    forms = [form("root", "cut", relation=""), form("base", "chhin"),
+             form("passive", "chhinjil")]
+    assignments = [
+        dict(Form_ID="passive", Etymon_ID="base", Kind="derived", Rank="1", Status="accepted"),
+        dict(Form_ID="base", Etymon_ID="root", Kind="reflex", Rank="1", Status="accepted"),
+    ]
+    validate_assignments(forms, assignments)
+    path = tmp_path / "edges.csv"
+    path.write_text(",".join(EDGES_FIELDS) + "\n")
+    apply_assignments(path, forms, assignments)
+    with path.open() as handle:
+        edges = list(csv.DictReader(handle))
+    validate_edge_dicts(edges, {f["ID"]: f["Status"] for f in forms})
+    assert {(e["Child_ID"], e["Parent_ID"], e["Kind"]) for e in edges} == {
+        ("passive", "base", "derived"), ("base", "root", "reflex")}
+    assert apply_assignments(path, forms, assignments) == 0
+
+
+def test_overlay_derivative_rejects_unestablished_base():
+    import pytest
+    from assign_form_ids import validate_assignments
+
+    forms = [form("root", "cut", relation=""), form("base", "chhin"),
+             form("passive", "chhinjil")]
+    derivative = dict(Form_ID="passive", Etymon_ID="base", Kind="derived", Rank="1", Status="accepted")
+    for base_assignment in [
+        [],
+        [dict(Form_ID="base", Etymon_ID="root", Kind="reflex", Rank="1", Status="rejected")],
+        [dict(Form_ID="base", Etymon_ID="root", Kind="reflex", Rank="2", Status="accepted")],
+        [dict(Form_ID="base", Etymon_ID="passive", Kind="derived", Rank="1", Status="accepted")],
+    ]:
+        with pytest.raises(ValueError, match="missing etymon"):
+            validate_assignments(forms, [derivative] + base_assignment)
+
+
 def test_registry_survives_reordering_and_profile_changes():
     first = [form("8-1", "pani", rendered="pāni"), form("8-2", "ag", gloss="fire")]
     initial_mapping, registry = assign_ids(first, [])
@@ -87,6 +127,29 @@ def test_graph_assignment_patches_edges(tmp_path):
             "Pos": "", "Source": "", "Note": "",
         }
     ]
+
+
+def test_derived_assignment_survives_reapplication(tmp_path):
+    import csv
+    from assign_form_ids import EDGES_FIELDS, validate_assignments
+
+    local = form("f_needle", "sīlan")
+    parent = form("13444", "sīvyati", relation="")
+    forms = [local, parent]
+    path = tmp_path / "edges.csv"
+    with path.open("w", newline="") as handle:
+        csv.DictWriter(handle, fieldnames=EDGES_FIELDS).writeheader()
+    assignments = [dict(Form_ID="f_needle", Etymon_ID="13444", Kind="derived",
+                        Rank="1", Status="accepted", Source="CDIAL",
+                        Notes="Deverbal noun; suffix uncertain.")]
+    validate_assignments(forms, assignments)
+    assert apply_assignments(path, forms, assignments) == 2
+    assert apply_assignments(path, forms, assignments) == 0
+    rows = list(csv.DictReader(path.open()))
+    assert len(rows) == 1
+    assert rows[0]["Kind"] == "derived"
+    assert rows[0]["Note"] == assignments[0]["Notes"]
+    assert local["Status"] == ""
 
 
 def test_rejected_assignment_deletes_generated_alternate(tmp_path):
@@ -290,3 +353,35 @@ def test_rank1_assignment_clears_a_sub_entry_headword_status(tmp_path):
 
     assert section["Status"] == ""
     assert head["Status"] == "entry"
+
+
+def test_overlay_components_roundtrip_and_require_all_bases(tmp_path):
+    import csv
+    import pytest
+    from assign_form_ids import ASSIGNMENT_FIELDS, EDGES_FIELDS, validate_assignments, write_rows, read_rows
+
+    forms = [form('root', 'twenty', relation=''), form('two', 'two', relation=''),
+             form('forty', 'two-twenty'), form('forty-two', 'two-and-forty')]
+    assignments = [dict(Form_ID=child, Etymon_ID=parent, Kind='component', Rank='1',
+                        Pos=str(pos), Status='accepted', Source='example', Notes='composition')
+                   for child, parents in [('forty-two', ['two', 'forty']), ('forty', ['two', 'root'])]
+                   for pos, parent in enumerate(parents, 1)]
+    overlay = tmp_path / 'assignments.csv'
+    write_rows(overlay, ASSIGNMENT_FIELDS, assignments)
+    _, readback = read_rows(overlay)
+    validate_assignments(forms, readback)
+    edges = tmp_path / 'edges.csv'
+    edges.write_text(','.join(EDGES_FIELDS) + '\n')
+    apply_assignments(edges, forms, readback)
+    rows = list(csv.DictReader(edges.open()))
+    assert [(r['Parent_ID'], r['Pos']) for r in rows if r['Child_ID']=='forty-two'] == [('two', '1'), ('forty', '2')]
+    assert apply_assignments(edges, forms, readback) == 0
+    for f in forms:
+        if f['ID'] in ['forty', 'forty-two', 'root']: f['Status'] = 'unlinked'
+    with pytest.raises(ValueError, match='missing etymon'):
+        validate_assignments(forms, assignments)
+    forms[0]['Status'] = 'entry'
+    bad = [dict(a) for a in assignments]
+    bad[1]['Pos'] = '1'
+    with pytest.raises(ValueError, match='not contiguous'):
+        validate_assignments(forms, bad)

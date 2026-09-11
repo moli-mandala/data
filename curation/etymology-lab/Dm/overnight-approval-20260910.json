@@ -1,0 +1,2019 @@
+{
+  "approved_proposals": 99,
+  "approved_records": 184,
+  "saved_proposals": 25,
+  "saved_records": 60,
+  "saved_assignment_rows": 75,
+  "approved_blocked_proposals": 74,
+  "approved_blocked_records": 124,
+  "donor_policy": "Prefer an attested Pashto donor where form and meaning fit best; otherwise prefer Urdu for broadly shared Perso-Arabic loans. Preserve explicit source attribution, phonological uncertainty and possible Nuristani mediation. Do not substitute a different dialect merely because its node is linkable.",
+  "blocked": [
+    {
+      "batch": 18,
+      "proposal": 1,
+      "forms": [
+        {
+          "ID": "f_5oxfkvtboc2ww",
+          "Form": "abēni",
+          "Gloss": "co-wife",
+          "Source": "liljegren-hindukush[form dml-Kinship-cowife-1, concept Kinship-cowife]"
+        },
+        {
+          "ID": "f_amrpjttpgp4oe",
+          "Form": "abēni",
+          "Gloss": "co-wife",
+          "Source": "perder2013dameli[p. 69, Table 17, cell 1, y 69]"
+        },
+        {
+          "ID": "f_4msnqtfb6n3zi",
+          "Form": "abēni",
+          "Gloss": "through a co-wife or a father’s second wife",
+          "Source": "perder2013dameli[p. 69, prose, y 197, x 64]"
+        }
+      ],
+      "preferred_donor_language": "Pashto",
+      "blocker": "Existing Pashto donor is unlinked; the overlay validator requires a linkable parent. Donor ancestry has not been established.",
+      "proposed_donor": null,
+      "parents": [
+        {
+          "ID": "f_g35eympyrvacm",
+          "Language_ID": "Psht",
+          "Form": "bən",
+          "Gloss": "co-wife",
+          "Source": "liljegren-hindukush[form pbu_a-Kinship-cowife-1, concept Kinship-cowife]",
+          "Status": "unlinked"
+        }
+      ]
+    },
+    {
+      "batch": 18,
+      "proposal": 2,
+      "forms": [
+        {
+          "ID": "f_wcteo4rn2eyge",
+          "Form": "abēni yī",
+          "Gloss": "stepmother",
+          "Source": "liljegren-hindukush[form dml-Kinship-stepmother-1, concept Kinship-stepmother]"
+        }
+      ],
+      "preferred_donor_language": null,
+      "blocker": "Depends on the proposed abēni loan, whose existing Pashto donor is unlinked; no partial compound saved.",
+      "proposed_donor": null,
+      "parents": [
+        {
+          "ID": "f_5oxfkvtboc2ww",
+          "Language_ID": "Dm",
+          "Form": "abēni",
+          "Gloss": "co-wife",
+          "Source": "liljegren-hindukush[form dml-Kinship-cowife-1, concept Kinship-cowife]",
+          "Status": "unlinked"
+        },
+        {
+          "ID": "f_sdqtlbvrjfjms",
+          "Language_ID": "Dm",
+          "Form": "yī",
+          "Gloss": "mother",
+          "Source": "liljegren-hindukush[form dml-Kinship-mother-1, concept Kinship-mother]",
+          "Status": "unlinked"
+        }
+      ]
+    },
+    {
+      "batch": 18,
+      "proposal": 3,
+      "forms": [
+        {
+          "ID": "f_cfcgif6nb5khw",
+          "Form": "abēni dadi",
+          "Gloss": "stepfather",
+          "Source": "liljegren-hindukush[form dml-Kinship-stepfather-1, concept Kinship-stepfather]"
+        }
+      ],
+      "preferred_donor_language": null,
+      "blocker": "Depends on the proposed abēni loan, whose existing Pashto donor is unlinked; no partial compound saved.",
+      "proposed_donor": null,
+      "parents": [
+        {
+          "ID": "f_5oxfkvtboc2ww",
+          "Language_ID": "Dm",
+          "Form": "abēni",
+          "Gloss": "co-wife",
+          "Source": "liljegren-hindukush[form dml-Kinship-cowife-1, concept Kinship-cowife]",
+          "Status": "unlinked"
+        },
+        {
+          "ID": "f_nxzqz5fqt5j4w",
+          "Language_ID": "Dm",
+          "Form": "dadi",
+          "Gloss": "father",
+          "Source": "liljegren-hindukush[form dml-Kinship-father-1, concept Kinship-father]",
+          "Status": "unlinked"
+        }
+      ]
+    },
+    {
+      "batch": 18,
+      "proposal": 4,
+      "forms": [
+        {
+          "ID": "f_hl3kwzee6f6m2",
+          "Form": "abēni put",
+          "Gloss": "stepson",
+          "Source": "liljegren-hindukush[form dml-Kinship-stepson-1, concept Kinship-stepson]"
+        }
+      ],
+      "preferred_donor_language": null,
+      "blocker": "Depends on the proposed abēni loan, whose existing Pashto donor is unlinked; no partial compound saved.",
+      "proposed_donor": null,
+      "parents": [
+        {
+          "ID": "f_5oxfkvtboc2ww",
+          "Language_ID": "Dm",
+          "Form": "abēni",
+          "Gloss": "co-wife",
+          "Source": "liljegren-hindukush[form dml-Kinship-cowife-1, concept Kinship-cowife]",
+          "Status": "unlinked"
+        },
+        {
+          "ID": "f_rlfzfjrlmqije",
+          "Language_ID": "Dm",
+          "Form": "put",
+          "Gloss": "son",
+          "Source": "liljegren-hindukush[form dml-Kinship-son-1, concept Kinship-son]",
+          "Status": "unlinked"
+        }
+      ]
+    },
+    {
+      "batch": 18,
+      "proposal": 5,
+      "forms": [
+        {
+          "ID": "f_2hoxmin7rwucg",
+          "Form": "abēni źu",
+          "Gloss": "stepdaughter",
+          "Source": "liljegren-hindukush[form dml-Kinship-stepdaughter-1, concept Kinship-stepdaughter]"
+        }
+      ],
+      "preferred_donor_language": null,
+      "blocker": "Depends on the proposed abēni loan, whose existing Pashto donor is unlinked; no partial compound saved.",
+      "proposed_donor": null,
+      "parents": [
+        {
+          "ID": "f_5oxfkvtboc2ww",
+          "Language_ID": "Dm",
+          "Form": "abēni",
+          "Gloss": "co-wife",
+          "Source": "liljegren-hindukush[form dml-Kinship-cowife-1, concept Kinship-cowife]",
+          "Status": "unlinked"
+        },
+        {
+          "ID": "f_obzn5vzm65gjw",
+          "Language_ID": "Dm",
+          "Form": "źu",
+          "Gloss": "daughter",
+          "Source": "liljegren-hindukush[form dml-Kinship-daughter-1, concept Kinship-daughter]",
+          "Status": "unlinked"
+        }
+      ]
+    },
+    {
+      "batch": 18,
+      "proposal": 6,
+      "forms": [
+        {
+          "ID": "f_h3utakcxujviy",
+          "Form": "abēni pas",
+          "Gloss": "halfsister (same father, different mother)",
+          "Source": "liljegren-hindukush[form dml-Kinship-halfsistersamefatherdifferentmother-1, concept Kinship-halfsistersamefatherdifferentmother]"
+        },
+        {
+          "ID": "f_26yizhahpuak4",
+          "Form": "abēni pas",
+          "Gloss": "halfsister (same mother, different father)",
+          "Source": "liljegren-hindukush[form dml-Kinship-halfsistersamemotherdifferentfather-1, concept Kinship-halfsistersamemotherdifferentfather]"
+        }
+      ],
+      "preferred_donor_language": null,
+      "blocker": "Depends on the proposed abēni loan, whose existing Pashto donor is unlinked; no partial compound saved.",
+      "proposed_donor": null,
+      "parents": [
+        {
+          "ID": "f_5oxfkvtboc2ww",
+          "Language_ID": "Dm",
+          "Form": "abēni",
+          "Gloss": "co-wife",
+          "Source": "liljegren-hindukush[form dml-Kinship-cowife-1, concept Kinship-cowife]",
+          "Status": "unlinked"
+        },
+        {
+          "ID": "f_fjigdflpvq556",
+          "Language_ID": "Dm",
+          "Form": "pas",
+          "Gloss": "sister",
+          "Source": "liljegren-hindukush[form dml-Kinship-sister-1, concept Kinship-sister]",
+          "Status": "unlinked"
+        }
+      ]
+    },
+    {
+      "batch": 18,
+      "proposal": 7,
+      "forms": [
+        {
+          "ID": "f_6jvd6zyxl27vi",
+          "Form": "abēni brā",
+          "Gloss": "halfbrother (same father, different mother)",
+          "Source": "liljegren-hindukush[form dml-Kinship-halfbrothersamefatherdifferentmother-1, concept Kinship-halfbrothersamefatherdifferentmother]"
+        },
+        {
+          "ID": "f_x2fgmob34us4w",
+          "Form": "abēni brā",
+          "Gloss": "halfbrother (same mother, different father)",
+          "Source": "liljegren-hindukush[form dml-Kinship-halfbrothersamemotherdifferentfather-1, concept Kinship-halfbrothersamemotherdifferentfather]"
+        }
+      ],
+      "preferred_donor_language": null,
+      "blocker": "Depends on the proposed abēni loan, whose existing Pashto donor is unlinked; no partial compound saved.",
+      "proposed_donor": null,
+      "parents": [
+        {
+          "ID": "f_5oxfkvtboc2ww",
+          "Language_ID": "Dm",
+          "Form": "abēni",
+          "Gloss": "co-wife",
+          "Source": "liljegren-hindukush[form dml-Kinship-cowife-1, concept Kinship-cowife]",
+          "Status": "unlinked"
+        },
+        {
+          "ID": "f_6lotp6bpuexhs",
+          "Language_ID": "Dm",
+          "Form": "brā",
+          "Gloss": "brother",
+          "Source": "liljegren-hindukush[form dml-Kinship-brother-1, concept Kinship-brother]",
+          "Status": ""
+        }
+      ]
+    },
+    {
+      "batch": 18,
+      "proposal": 8,
+      "forms": [
+        {
+          "ID": "f_c7mzlf2zpdp6q",
+          "Form": "zara",
+          "Gloss": "thousand",
+          "Source": "perder2013dameli[p. 89, Table 26, cell 2, y 329]"
+        },
+        {
+          "ID": "f_pu43ny6al3422",
+          "Form": "zara",
+          "Gloss": "thousand",
+          "Source": "perder2013dameli[p. 88, prose, y 525, x 287]"
+        },
+        {
+          "ID": "f_7jy3qj3rx5nsg",
+          "Form": "zir",
+          "Gloss": "1000",
+          "Source": "liljegren-hindukush[form dml-Numerals-1000-1, concept Numerals-1000]"
+        }
+      ],
+      "preferred_donor_language": "Pashto",
+      "blocker": "Existing Pashto donor is unlinked; the overlay validator requires a linkable parent. Donor ancestry has not been established.",
+      "proposed_donor": null,
+      "parents": [
+        {
+          "ID": "f_lg6ldgrwyzv42",
+          "Language_ID": "Psht",
+          "Form": "zər",
+          "Gloss": "1000",
+          "Source": "liljegren-hindukush[form pbu_a-Numerals-1000-1, concept Numerals-1000]",
+          "Status": "unlinked"
+        }
+      ]
+    },
+    {
+      "batch": 19,
+      "proposal": 1,
+      "forms": [
+        {
+          "ID": "f_hjlfrdjpwaqqk",
+          "Form": "bardaś",
+          "Gloss": "bear, endure",
+          "Source": "perder2013dameli[p. 42, Table 13, cell 1, y 504]"
+        }
+      ],
+      "preferred_donor_language": "Urdu",
+      "blocker": "Immediate donor is explicitly named in the grammar, but no matching existing donor node was resolved. Source-backed donor ingestion is deferred.",
+      "proposed_donor": {
+        "language": "Urdu",
+        "form": "bardašt",
+        "gloss": "bear, endure",
+        "persistent_id": null
+      },
+      "parents": []
+    },
+    {
+      "batch": 19,
+      "proposal": 2,
+      "forms": [
+        {
+          "ID": "f_dis3iiogz67du",
+          "Form": "sax",
+          "Gloss": "hard",
+          "Source": "perder2013dameli[p. 42, Table 13, cell 1, y 518]"
+        },
+        {
+          "ID": "f_yezmagn2tj3ky",
+          "Form": "sax",
+          "Gloss": "hard",
+          "Source": "perder2013dameli[p. 62, example (15), w1, y 326, data T9030];perder2013dameli[p. 167, example (134), w8, y 499];perder2013dameli[p. 211, Appendix 2, y 172, w4]"
+        }
+      ],
+      "preferred_donor_language": "Urdu",
+      "blocker": "Immediate donor is explicitly named in the grammar, but no matching existing donor node was resolved. Source-backed donor ingestion is deferred.",
+      "proposed_donor": {
+        "language": "Urdu",
+        "form": "saxt",
+        "gloss": "hard",
+        "persistent_id": null
+      },
+      "parents": []
+    },
+    {
+      "batch": 19,
+      "proposal": 3,
+      "forms": [
+        {
+          "ID": "f_fv6r7asbvy5nu",
+          "Form": "vax",
+          "Gloss": "time",
+          "Source": "perder2013dameli[p. 42, Table 13, cell 1, y 532]"
+        },
+        {
+          "ID": "f_uqjaclsk3nphk",
+          "Form": "vaxt-a",
+          "Gloss": "time",
+          "Source": "perder2013dameli[p. 98, example (39), w3, y 309];perder2013dameli[p. 213, Appendix 2, y 503, w2];perder2013dameli[p. 42, prose, y 438, x 375]"
+        },
+        {
+          "ID": "f_c4o4tn5ik4ze2",
+          "Form": "vaxt",
+          "Gloss": "time",
+          "Source": "perder2013dameli[p. 214, Appendix 2, y 54, w2];perder2013dameli[p. 216, Appendix 2, y 197, w5]"
+        }
+      ],
+      "preferred_donor_language": "Urdu",
+      "blocker": "Immediate donor is explicitly named in the grammar, but no matching existing donor node was resolved. Source-backed donor ingestion is deferred.",
+      "proposed_donor": {
+        "language": "Urdu",
+        "form": "waxt",
+        "gloss": "time",
+        "persistent_id": null
+      },
+      "parents": []
+    },
+    {
+      "batch": 19,
+      "proposal": 4,
+      "forms": [
+        {
+          "ID": "f_eudeszkb65dfi",
+          "Form": "dōs",
+          "Gloss": "friend",
+          "Source": "perder2013dameli[p. 42, Table 13, cell 1, y 546]"
+        }
+      ],
+      "preferred_donor_language": "Urdu",
+      "blocker": "Immediate donor is explicitly named in the grammar, but no matching existing donor node was resolved. Source-backed donor ingestion is deferred.",
+      "proposed_donor": {
+        "language": "Urdu",
+        "form": "dost",
+        "gloss": "friend",
+        "persistent_id": null
+      },
+      "parents": []
+    },
+    {
+      "batch": 19,
+      "proposal": 5,
+      "forms": [
+        {
+          "ID": "f_q44d4h77mclno",
+          "Form": "māsum",
+          "Gloss": "child",
+          "Source": "perder2013dameli[p. 57, Table 16, cell 1, y 360]"
+        },
+        {
+          "ID": "f_dwnikeppuqzig",
+          "Form": "masumān",
+          "Gloss": "child",
+          "Source": "perder2013dameli[p. 57, Table 16, cell 3, y 360]"
+        }
+      ],
+      "preferred_donor_language": "Pashto",
+      "blocker": "Existing donor node is unlinked; ancestry has not been established.",
+      "proposed_donor": {
+        "language": "Pashto",
+        "form": "mašum",
+        "gloss": "child",
+        "persistent_id": "f_ekfmubidrezui"
+      },
+      "parents": [
+        {
+          "ID": "f_ekfmubidrezui",
+          "Form": "māśūm",
+          "Gloss": "child",
+          "Language_ID": "Psht",
+          "Source": "hallberg1992pashto[Appendix B, printed p. 113, item 104, PES];hallberg1992pashto[Appendix B, printed p. 113, item 104, CHS];hallberg1992pashto[Appendix B, printed p. 113, item 104, MAR];hallberg1992pashto[Appendix B, printed p. 113, item 104, SWA];hallberg1992pashto[Appendix B, printed p. 113, item 104, DIR];hallberg1992pashto[Appendix B, printed p. 113, item 104, MOH];hallberg1992pashto[Appendix B, printed p. 113, item 104, NIG];hallberg1992pashto[Appendix B, printed p. 113, item 104, SHN];hallberg1992pashto[Appendix B, printed p. 113, item 104, MAL];hallberg1992pashto[Appendix B, printed p. 113, item 104, JAM];hallberg1992pashto[Appendix B, printed p. 113, item 104, JAL]",
+          "Status": "unlinked"
+        }
+      ]
+    },
+    {
+      "batch": 19,
+      "proposal": 6,
+      "forms": [
+        {
+          "ID": "f_52y3jc2f34g7e",
+          "Form": "duśman",
+          "Gloss": "enemy",
+          "Source": "perder2013dameli[p. 57, Table 16, cell 1, y 374]"
+        },
+        {
+          "ID": "f_5zylsa75cigrk",
+          "Form": "duśmanān",
+          "Gloss": "enemy",
+          "Source": "perder2013dameli[p. 57, Table 16, cell 3, y 374]"
+        }
+      ],
+      "preferred_donor_language": "Pashto",
+      "blocker": "Immediate donor is explicitly named in the grammar, but no matching existing donor node was resolved. Source-backed donor ingestion is deferred.",
+      "proposed_donor": {
+        "language": "Pashto",
+        "form": "dušman",
+        "gloss": "enemy",
+        "persistent_id": null
+      },
+      "parents": []
+    },
+    {
+      "batch": 19,
+      "proposal": 7,
+      "forms": [
+        {
+          "ID": "f_iv6lgiwho7kvw",
+          "Form": "musulman",
+          "Gloss": "muslim",
+          "Source": "perder2013dameli[p. 57, Table 16, cell 1, y 388]"
+        },
+        {
+          "ID": "f_3tjuyvmwzkljs",
+          "Form": "musulmanān",
+          "Gloss": "muslim",
+          "Source": "perder2013dameli[p. 57, Table 16, cell 3, y 388]"
+        }
+      ],
+      "preferred_donor_language": "Pashto",
+      "blocker": "Immediate donor is explicitly named in the grammar, but no matching existing donor node was resolved. Source-backed donor ingestion is deferred.",
+      "proposed_donor": {
+        "language": "Pashto",
+        "form": "musulman",
+        "gloss": "Muslim",
+        "persistent_id": null
+      },
+      "parents": []
+    },
+    {
+      "batch": 19,
+      "proposal": 8,
+      "forms": [
+        {
+          "ID": "f_ehghpijypswdm",
+          "Form": "kapʰar",
+          "Gloss": "unbeliever",
+          "Source": "perder2013dameli[p. 57, Table 16, cell 1, y 402]"
+        },
+        {
+          "ID": "f_ydg4mx22auwas",
+          "Form": "kāpʰarān",
+          "Gloss": "unbeliever",
+          "Source": "perder2013dameli[p. 57, Table 16, cell 3, y 402]"
+        }
+      ],
+      "preferred_donor_language": "Pashto",
+      "blocker": "Immediate donor is explicitly named in the grammar, but no matching existing donor node was resolved. Source-backed donor ingestion is deferred.",
+      "proposed_donor": {
+        "language": "Pashto",
+        "form": "kaafer",
+        "gloss": "unbeliever",
+        "persistent_id": null
+      },
+      "parents": []
+    },
+    {
+      "batch": 19,
+      "proposal": 9,
+      "forms": [
+        {
+          "ID": "f_yea7qbrhkcuay",
+          "Form": "pulis",
+          "Gloss": "police(man)",
+          "Source": "perder2013dameli[p. 57, Table 16, cell 1, y 416]"
+        },
+        {
+          "ID": "f_7476t4lsquo7i",
+          "Form": "pulisan",
+          "Gloss": "police(man)",
+          "Source": "perder2013dameli[p. 57, Table 16, cell 3, y 416]"
+        },
+        {
+          "ID": "f_kik3j4vy4g3gy",
+          "Form": "pulis",
+          "Gloss": "police",
+          "Source": "perder2013dameli[p. 185, example (161), w3, y 116, data TW3005]"
+        }
+      ],
+      "preferred_donor_language": "Pashto",
+      "blocker": "Immediate donor is explicitly named in the grammar, but no matching existing donor node was resolved. Source-backed donor ingestion is deferred.",
+      "proposed_donor": {
+        "language": "Pashto",
+        "form": "pulis",
+        "gloss": "police",
+        "persistent_id": null
+      },
+      "parents": []
+    },
+    {
+      "batch": 19,
+      "proposal": 10,
+      "forms": [
+        {
+          "ID": "f_rstvgpu6hhava",
+          "Form": "kom",
+          "Gloss": "people",
+          "Source": "perder2013dameli[p. 57, Table 16, cell 1, y 430]"
+        },
+        {
+          "ID": "f_xtkvvbgfpmcdm",
+          "Form": "kōmuna",
+          "Gloss": "people",
+          "Source": "perder2013dameli[p. 57, Table 16, cell 3, y 430]"
+        },
+        {
+          "ID": "f_mu2t5rwko2dh4",
+          "Form": "kom-una",
+          "Gloss": "tribe",
+          "Source": "perder2013dameli[p. 185, example (162), w3, y 311]"
+        }
+      ],
+      "preferred_donor_language": "Pashto",
+      "blocker": "Immediate donor is explicitly named in the grammar, but no matching existing donor node was resolved. Source-backed donor ingestion is deferred.",
+      "proposed_donor": {
+        "language": "Pashto",
+        "form": "qom",
+        "gloss": "nation, people",
+        "persistent_id": null
+      },
+      "parents": []
+    },
+    {
+      "batch": 20,
+      "proposal": 1,
+      "forms": [
+        {
+          "ID": "f_tmuyizt623oce",
+          "Form": "lag",
+          "Gloss": "do",
+          "Source": "perder2013dameli[p. 125, Table 39, cell 2, y 552];perder2013dameli[p. 125, Table 39, cell 2, y 567];perder2013dameli[p. 126, Table 39, cell 2, y 54];perder2013dameli[p. 125, prose, y 347, x 218]"
+        },
+        {
+          "ID": "f_iinhh35elt2u2",
+          "Form": "lag",
+          "Gloss": "do/put",
+          "Source": "perder2013dameli[p. 207, Table 48, cell 2, y 482]"
+        }
+      ],
+      "preferred_donor_language": "Pashto",
+      "blocker": "Probable source analysis; exact immediate donor attestation/node is unresolved. No assignment rows constructed.",
+      "proposed_donor": {
+        "language": "Pashto",
+        "form": "unresolved light-verb donor",
+        "gloss": "do/put",
+        "persistent_id": null
+      },
+      "parents": []
+    },
+    {
+      "batch": 20,
+      "proposal": 2,
+      "forms": [
+        {
+          "ID": "f_nagcg37ngvbti",
+          "Form": "tēr",
+          "Gloss": "pass",
+          "Source": "perder2013dameli[p. 148, example (103), w5, y 527, data T5017]"
+        },
+        {
+          "ID": "f_poval553pr7oo",
+          "Form": "tēr",
+          "Gloss": "completion marker",
+          "Source": "perder2013dameli[p. 126, prose, y 502, x 64]"
+        }
+      ],
+      "preferred_donor_language": "Pashto",
+      "blocker": "Probable source analysis; exact immediate donor attestation/node is unresolved. No assignment rows constructed.",
+      "proposed_donor": {
+        "language": "Pashto",
+        "form": "unresolved completion-marker donor",
+        "gloss": "pass/complete",
+        "persistent_id": null
+      },
+      "parents": []
+    },
+    {
+      "batch": 20,
+      "proposal": 3,
+      "forms": [
+        {
+          "ID": "f_xi7ntjvrosy2a",
+          "Form": "ravan",
+          "Gloss": "",
+          "Source": "perder2013dameli[p. 126, Table 39, cell 1, y 222]"
+        },
+        {
+          "ID": "f_5ge6k43hxtx5a",
+          "Form": "ravan",
+          "Gloss": "start",
+          "Source": "perder2013dameli[p. 81, example (24), w3, y 85, data TW4006];perder2013dameli[p. 132, example (80), w5, y 351, data TW7002];perder2013dameli[p. 161, example (129), w5, y 386, data Q0044, TW7002]"
+        }
+      ],
+      "preferred_donor_language": "Pashto",
+      "blocker": "Probable source analysis; exact immediate donor attestation/node is unresolved. No assignment rows constructed.",
+      "proposed_donor": {
+        "language": "Pashto",
+        "form": "rawandal (as printed by Perder)",
+        "gloss": "start",
+        "persistent_id": null
+      },
+      "parents": []
+    },
+    {
+      "batch": 20,
+      "proposal": 4,
+      "forms": [
+        {
+          "ID": "f_2nesml2ukdhtk",
+          "Form": "agar",
+          "Gloss": "if",
+          "Source": "perder2013dameli[p. 102, example (43), w1, y 69, data T4037, T5022];perder2013dameli[p. 174, example (144), w1, y 54, data T4037];perder2013dameli[p. 216, Appendix 2, y 284, w2]"
+        },
+        {
+          "ID": "f_cnohdhq6o6hei",
+          "Form": "agar",
+          "Gloss": "if",
+          "Source": "perder2013dameli[p. 136, prose, y 110, x 316]"
+        },
+        {
+          "ID": "f_ih4bvx2gdfqs4",
+          "Form": "agar",
+          "Gloss": "if",
+          "Source": "perder2013dameli[p. 170, prose, y 507, x 234, data T0042]"
+        }
+      ],
+      "preferred_donor_language": "Urdu",
+      "blocker": "Probable source analysis; exact immediate donor attestation/node is unresolved. No assignment rows constructed.",
+      "proposed_donor": {
+        "language": "Urdu",
+        "form": "agar",
+        "gloss": "if",
+        "persistent_id": null
+      },
+      "parents": []
+    },
+    {
+      "batch": 24,
+      "proposal": 1,
+      "forms": [
+        {
+          "ID": "f_z2mjwhklyueky",
+          "Form": "gaḍivēla",
+          "Gloss": "having a car",
+          "Source": "perder2013dameli[p. 87, prose, y 101, x 325]"
+        }
+      ],
+      "preferred_donor_language": null,
+      "blocker": "Standalone Dameli base node not resolved; no lexical node created.",
+      "proposed_donor": {
+        "language": "Dameli",
+        "form": "gaḍi",
+        "gloss": "car",
+        "persistent_id": null
+      },
+      "parents": []
+    },
+    {
+      "batch": 24,
+      "proposal": 2,
+      "forms": [
+        {
+          "ID": "f_77cl5setwm5ua",
+          "Form": "havavēla",
+          "Gloss": "windy",
+          "Source": "perder2013dameli[p. 87, prose, y 129, x 91]"
+        }
+      ],
+      "preferred_donor_language": null,
+      "blocker": "Standalone Dameli base node not resolved; no lexical node created.",
+      "proposed_donor": {
+        "language": "Dameli",
+        "form": "hawa",
+        "gloss": "wind",
+        "persistent_id": null
+      },
+      "parents": []
+    },
+    {
+      "batch": 24,
+      "proposal": 3,
+      "forms": [
+        {
+          "ID": "f_cccz32clg64de",
+          "Form": "xaṭāpin",
+          "Gloss": "muddy",
+          "Source": "perder2013dameli[p. 87, prose, y 308, x 147]"
+        }
+      ],
+      "preferred_donor_language": null,
+      "blocker": "Existing Dameli base is unlinked.",
+      "proposed_donor": {
+        "language": "Dameli",
+        "form": "xaṭa",
+        "gloss": "mud",
+        "persistent_id": "f_5vybacfmul4r6"
+      },
+      "parents": [
+        {
+          "ID": "f_5vybacfmul4r6",
+          "Language_ID": "Dm",
+          "Form": "xaṭa",
+          "Gloss": "mud",
+          "Source": "decker1992[chitral, location DML, item 58]"
+        }
+      ]
+    },
+    {
+      "batch": 27,
+      "proposal": 1,
+      "forms": [
+        {
+          "ID": "f_4vs5tfvlxyn6q",
+          "Form": "xu",
+          "Gloss": "but",
+          "Source": "perder2013dameli[p. 56, example (4), w3, y 186];perder2013dameli[p. 77, example (18), w1, y 197, data E0001];perder2013dameli[p. 92, example (35), w3, y 518, data TW8011];perder2013dameli[p. 167, example (134), w3, y 530];perder2013dameli[p. 168, example (135), w2, y 54];perder2013dameli[p. 168, example (135), w2, y 85];perder2013dameli[p. 136, prose, y 82, x 136]"
+        },
+        {
+          "ID": "f_plccympuhkhrm",
+          "Form": "xu",
+          "Gloss": "but",
+          "Source": "perder2013dameli[p. 167, prose, y 428, x 192]"
+        }
+      ],
+      "preferred_donor_language": "Pashto",
+      "blocker": "Existing immediate donor is unlinked.",
+      "proposed_donor": {
+        "language": "Pashto",
+        "form": "χu",
+        "gloss": "but",
+        "persistent_id": "f_bgcd4yx7vhpak"
+      },
+      "parents": [
+        {
+          "ID": "f_bgcd4yx7vhpak",
+          "Language_ID": "Psht",
+          "Form": "xō",
+          "Gloss": "But",
+          "Source": "grierson-lsi1928[p. 230-231, form PASHTOOFPESHAWAR-115_but-2, concept 115_but]"
+        }
+      ]
+    },
+    {
+      "batch": 27,
+      "proposal": 2,
+      "forms": [
+        {
+          "ID": "f_wvedeae3bdyjw",
+          "Form": "lekin",
+          "Gloss": "but",
+          "Source": "perder2013dameli[p. 118, example (58), w1, y 158, data T4003];perder2013dameli[p. 136, prose, y 82, x 205]"
+        },
+        {
+          "ID": "f_eam35hmnjfq34",
+          "Form": "lēkin",
+          "Gloss": "but",
+          "Source": "perder2013dameli[p. 167, example (133), w2, y 342]"
+        },
+        {
+          "ID": "f_xvugn4evnl7lq",
+          "Form": "lēkin",
+          "Gloss": "but",
+          "Source": "perder2013dameli[p. 167, prose, y 146, x 124]"
+        },
+        {
+          "ID": "f_zbgppbf327fns",
+          "Form": "lēkin",
+          "Gloss": "but",
+          "Source": "perder2013dameli[p. 167, prose, y 255, x 160]"
+        }
+      ],
+      "preferred_donor_language": "Urdu",
+      "blocker": "Existing immediate donor is unlinked.",
+      "proposed_donor": {
+        "language": "Urdu",
+        "form": "lekin",
+        "gloss": "but",
+        "persistent_id": "f_3znpeoni5wioy"
+      },
+      "parents": [
+        {
+          "ID": "f_3znpeoni5wioy",
+          "Language_ID": "H",
+          "Form": "lēkin",
+          "Gloss": "But",
+          "Source": "grierson-lsi1928[p. 230-231, form WESTERNHINDIHINDOSTANI-115_but-1, concept 115_but]"
+        }
+      ]
+    },
+    {
+      "batch": 27,
+      "proposal": 3,
+      "forms": [
+        {
+          "ID": "f_iyu6ebltdyvk2",
+          "Form": "ya",
+          "Gloss": "or",
+          "Source": "perder2013dameli[p. 158, example (121), w1, y 348, data E0015, T3023];perder2013dameli[p. 167, example (132), w4, y 54, data TW5001]"
+        },
+        {
+          "ID": "f_hoffo3aunnxlu",
+          "Form": "ya",
+          "Gloss": "or",
+          "Source": "perder2013dameli[p. 166, prose, y 368, x 124]"
+        },
+        {
+          "ID": "f_neyomdrhq52vk",
+          "Form": "ya",
+          "Gloss": "or",
+          "Source": "perder2013dameli[p. 166, prose, y 420, x 319]"
+        }
+      ],
+      "preferred_donor_language": "Urdu",
+      "blocker": "Immediate Urdu donor node not resolved.",
+      "proposed_donor": {
+        "language": "Urdu",
+        "form": "ya",
+        "gloss": "or",
+        "persistent_id": null
+      },
+      "parents": []
+    },
+    {
+      "batch": 29,
+      "proposal": 1,
+      "forms": [
+        {
+          "ID": "f_cr7unyzecl5z2",
+          "Form": "prambal-āi-i",
+          "Gloss": "burn",
+          "Source": "perder2013dameli[p. 189, example (168), w1, y 167]"
+        }
+      ],
+      "preferred_donor_language": null,
+      "blocker": "Attested simple verb remains unlinked.",
+      "proposed_donor": null,
+      "parents": [
+        {
+          "ID": "f_xuqz2uf2t67eu",
+          "Form": "prambal",
+          "Gloss": "light up, look good, start to burn"
+        }
+      ]
+    },
+    {
+      "batch": 32,
+      "proposal": 1,
+      "forms": [
+        {
+          "ID": "f_2jms2vodnzc3i",
+          "Form": "zyat",
+          "Gloss": "much",
+          "Source": "perder2013dameli[p. 41, Table 10, cell 1, y 257]"
+        },
+        {
+          "ID": "f_bkm7fhef2kx3e",
+          "Form": "ziat",
+          "Gloss": "much",
+          "Source": "perder2013dameli[p. 149, example (105), w4, y 533, data T4050]"
+        },
+        {
+          "ID": "f_hdu7f5e5ep5vu",
+          "Form": "ziat-a",
+          "Gloss": "many",
+          "Source": "perder2013dameli[p. 62, example (14), w5, y 197, data T8061]"
+        }
+      ],
+      "preferred_donor_language": "Pashto",
+      "blocker": "Exact standalone donor node unresolved; existing comparanda are unlinked. No node created.",
+      "proposed_donor": {
+        "language": "Pashto",
+        "form": "ziat",
+        "gloss": "much",
+        "persistent_id": null
+      },
+      "parents": []
+    },
+    {
+      "batch": 32,
+      "proposal": 2,
+      "forms": [
+        {
+          "ID": "f_elmjt2uptmzum",
+          "Form": "rimel",
+          "Gloss": "kerchief",
+          "Source": "perder2013dameli[p. 41, Table 10, cell 1, y 284]"
+        }
+      ],
+      "preferred_donor_language": "Pashto",
+      "blocker": "Exact standalone donor node unresolved; existing comparanda are unlinked. No node created.",
+      "proposed_donor": {
+        "language": "Pashto",
+        "form": "rumaal",
+        "gloss": "kerchief",
+        "persistent_id": null
+      },
+      "parents": []
+    },
+    {
+      "batch": 33,
+      "proposal": 1,
+      "forms": [
+        {
+          "ID": "f_bnzbhfd6vuy5s",
+          "Form": "sāt",
+          "Gloss": "keep",
+          "Source": "perder2013dameli[p. 208, Table 48, cell 1, y 605]"
+        },
+        {
+          "ID": "f_azlhtghh5vap2",
+          "Form": "sāti-tʰē",
+          "Gloss": "keep",
+          "Source": "perder2013dameli[p. 92, example (34), w3, y 420, data T9003]"
+        }
+      ],
+      "preferred_donor_language": "Pashto",
+      "blocker": "No existing Pashto donor node; loan direction remains a research inference.",
+      "proposed_donor": {
+        "language": "Pashto",
+        "form": "sātəl (present sāti)",
+        "gloss": "keep, protect",
+        "persistent_id": null
+      },
+      "parents": []
+    },
+    {
+      "batch": 34,
+      "proposal": 1,
+      "forms": [
+        {
+          "ID": "f_namfmgngogf5w",
+          "Form": "aval",
+          "Gloss": "first",
+          "Source": "perder2013dameli[p. 168, example (135), w1, y 54];perder2013dameli[p. 212, Appendix 2, y 298, w3]"
+        },
+        {
+          "ID": "f_l6ha7xxrofctg",
+          "Form": "aval",
+          "Gloss": "first",
+          "Source": "perder2013dameli[p. 92, prose, y 110, x 230]"
+        }
+      ],
+      "preferred_donor_language": "Urdu",
+      "blocker": "Immediate language and donor node unresolved. Standing numeral approval does not establish the donor.",
+      "proposed_donor": {
+        "language": "Urdu or Pashto (Arabic origin)",
+        "form": "awal / avval",
+        "gloss": "first",
+        "persistent_id": null
+      },
+      "parents": []
+    },
+    {
+      "batch": 36,
+      "proposal": 1,
+      "forms": [
+        {
+          "ID": "f_bvtuxwlxs3kle",
+          "Form": "kuitē",
+          "Gloss": "because",
+          "Source": "perder2013dameli[p. 170, example (137), w1, y 298, data T2004, T2005];perder2013dameli[p. 136, prose, y 96, x 262]"
+        },
+        {
+          "ID": "f_nbwc7s4birsxc",
+          "Form": "kuitē",
+          "Gloss": "because",
+          "Source": "perder2013dameli[p. 170, prose, y 194, x 64]"
+        }
+      ],
+      "preferred_donor_language": null,
+      "blocker": "Existing ku why base is unlinked; no bypass through homographic ku do.",
+      "proposed_donor": null,
+      "parents": [
+        {
+          "ID": "f_5ij5gxl5rolhs",
+          "Form": "ku",
+          "Gloss": "why"
+        },
+        {
+          "ID": "f_2qi4daiyyld3y",
+          "Form": "tē",
+          "Gloss": "that"
+        }
+      ]
+    },
+    {
+      "batch": 37,
+      "proposal": 1,
+      "forms": [
+        {
+          "ID": "f_wmai5d6aewnsm",
+          "Form": "bāt",
+          "Gloss": "after",
+          "Source": "perder2013dameli[p. 135, Table 40, cell 1, y 204]"
+        },
+        {
+          "ID": "f_dtwob4ihyxe7i",
+          "Form": "bāt",
+          "Gloss": "after",
+          "Source": "perder2013dameli[p. 99, example (40), w3, y 116, data T6056-57]"
+        },
+        {
+          "ID": "f_52h5rpdvo7zzq",
+          "Form": "bat",
+          "Gloss": "after",
+          "Source": "perder2013dameli[p. 190, example (170), w4, y 472, data TW3006]"
+        },
+        {
+          "ID": "f_hdrascwinwcbc",
+          "Form": "bat",
+          "Gloss": "after",
+          "Source": "perder2013dameli[p. 190, prose, y 384, x 99]"
+        }
+      ],
+      "preferred_donor_language": "Pashto",
+      "blocker": "Immediate language and persistent donor node unresolved; no direct Arabic edge.",
+      "proposed_donor": {
+        "language": "Regional donor unresolved; Pashto comparison",
+        "form": "baʿd / bād",
+        "gloss": "after, afterward",
+        "persistent_id": null
+      },
+      "parents": []
+    },
+    {
+      "batch": 38,
+      "proposal": 1,
+      "forms": [
+        {
+          "ID": "f_aqaxxp7eo6etk",
+          "Form": "mūbãĩ",
+          "Gloss": "towards me",
+          "Source": "perder2013dameli[p. 27, Table 6, cell 1, y 369]"
+        },
+        {
+          "ID": "f_5ckl3wwuqbwj6",
+          "Form": "mū-bãĩ",
+          "Gloss": "towards",
+          "Source": "perder2013dameli[p. 56, example (4), w1, y 186];perder2013dameli[p. 132, example (79), w4, y 295, data TW7002]"
+        }
+      ],
+      "preferred_donor_language": null,
+      "blocker": "Existing bãĩ towards base is unlinked.",
+      "proposed_donor": null,
+      "parents": [
+        {
+          "ID": "f_rllvrg3qksxhq",
+          "Form": "mū",
+          "Gloss": "me"
+        },
+        {
+          "ID": "f_zimyd3yjp2nys",
+          "Form": "bãĩ",
+          "Gloss": "towards"
+        }
+      ]
+    },
+    {
+      "batch": 38,
+      "proposal": 2,
+      "forms": [
+        {
+          "ID": "f_la32zt5g6jrag",
+          "Form": "yē-bãĩ",
+          "Gloss": "towards",
+          "Source": "perder2013dameli[p. 133, example (82), w5, y 69, data T3083]"
+        }
+      ],
+      "preferred_donor_language": null,
+      "blocker": "Existing bãĩ towards base is unlinked.",
+      "proposed_donor": null,
+      "parents": [
+        {
+          "ID": "f_js62l3ggvr27m",
+          "Form": "yē",
+          "Gloss": "this"
+        },
+        {
+          "ID": "f_zimyd3yjp2nys",
+          "Form": "bãĩ",
+          "Gloss": "towards"
+        }
+      ]
+    },
+    {
+      "batch": 39,
+      "proposal": 1,
+      "forms": [
+        {
+          "ID": "f_htkhrvkvw6m4q",
+          "Form": "cay-may",
+          "Gloss": "tea",
+          "Source": "perder2013dameli[p. 187, prose, y 405, x 315]"
+        }
+      ],
+      "preferred_donor_language": null,
+      "blocker": "Existing base is unlinked.",
+      "proposed_donor": {
+        "language": "Dameli",
+        "form": "cay",
+        "gloss": "tea",
+        "persistent_id": "f_dng2et3dhk3jw"
+      },
+      "parents": [
+        {
+          "ID": "f_dng2et3dhk3jw",
+          "Form": "cay",
+          "Gloss": "tea"
+        }
+      ]
+    },
+    {
+      "batch": 39,
+      "proposal": 2,
+      "forms": [
+        {
+          "ID": "f_pe65zvoyoy7qa",
+          "Form": "boṇḍri~moṇḍri",
+          "Gloss": "border~",
+          "Source": "perder2013dameli[p. 188, example (166), w4, y 69]"
+        }
+      ],
+      "preferred_donor_language": null,
+      "blocker": "Standalone base node unresolved.",
+      "proposed_donor": {
+        "language": "Dameli",
+        "form": "boṇḍri",
+        "gloss": "border",
+        "persistent_id": null
+      },
+      "parents": []
+    },
+    {
+      "batch": 40,
+      "proposal": 1,
+      "forms": [
+        {
+          "ID": "f_r7vmme5xojkxk",
+          "Form": "uźut",
+          "Gloss": "body",
+          "Source": "decker1992[chitral, location DML, item 1]"
+        }
+      ],
+      "preferred_donor_language": "Pashto",
+      "blocker": "Immediate donor unresolved; comparative evidence does not authorize a direct remote-ancestor edge.",
+      "proposed_donor": {
+        "language": "Regional donor unresolved; Pashto comparison",
+        "form": "wuǰud / woǰud",
+        "gloss": "body, existence",
+        "persistent_id": null
+      },
+      "parents": []
+    },
+    {
+      "batch": 40,
+      "proposal": 2,
+      "forms": [
+        {
+          "ID": "f_fpydrnla74z5s",
+          "Form": "āsmān",
+          "Gloss": "sky",
+          "Source": "decker1992[chitral, location DML, item 43]"
+        }
+      ],
+      "preferred_donor_language": "Urdu",
+      "blocker": "Immediate donor unresolved; comparative evidence does not authorize a direct remote-ancestor edge.",
+      "proposed_donor": {
+        "language": "Persian-origin regional loan; immediate donor unresolved",
+        "form": "āsmān",
+        "gloss": "sky",
+        "persistent_id": null
+      },
+      "parents": []
+    },
+    {
+      "batch": 40,
+      "proposal": 3,
+      "forms": [
+        {
+          "ID": "f_sxg4mjb2l2s2w",
+          "Form": "mevā",
+          "Gloss": "fruit",
+          "Source": "decker1992[chitral, location DML, item 66]"
+        }
+      ],
+      "preferred_donor_language": "Pashto",
+      "blocker": "Immediate donor unresolved; comparative evidence does not authorize a direct remote-ancestor edge.",
+      "proposed_donor": {
+        "language": "Regional donor unresolved; Pashto and Khowar comparisons",
+        "form": "mewá",
+        "gloss": "fruit",
+        "persistent_id": null
+      },
+      "parents": []
+    },
+    {
+      "batch": 41,
+      "proposal": 1,
+      "forms": [
+        {
+          "ID": "f_df7o5zridyhao",
+          "Form": "aŋgūśterī",
+          "Gloss": "ring",
+          "Source": "decker1992[chitral, location DML, item 40]"
+        }
+      ],
+      "preferred_donor_language": "Urdu",
+      "blocker": "Immediate language and donor node unresolved; Nuristani comparison does not establish transmission.",
+      "proposed_donor": {
+        "language": "Persian-origin regional loan; immediate donor unresolved",
+        "form": "aṅguštarī",
+        "gloss": "ring",
+        "persistent_id": null
+      },
+      "parents": []
+    },
+    {
+      "batch": 44,
+      "proposal": 1,
+      "forms": [
+        {
+          "ID": "f_jpce3swnrj3fg",
+          "Form": "nikā",
+          "Gloss": "wedding",
+          "Source": "perder2013dameli[p. 53, Table 15, cell 1, y 69]"
+        },
+        {
+          "ID": "f_zvqsai7qal24i",
+          "Form": "nikā",
+          "Gloss": "nika",
+          "Source": "perder2013dameli[p. 79, example (21), w2, y 385, data T1047]"
+        },
+        {
+          "ID": "f_5yqwxlad3b2lu",
+          "Form": "nikā",
+          "Gloss": "nika",
+          "Source": "perder2013dameli[p. 174, example (145), w4, y 252, data T1045];perder2013dameli[p. 180, example (154), w4, y 252, data T1045];perder2013dameli[p. 213, Appendix 2, y 534, w3];perder2013dameli[p. 215, Appendix 2, y 497, w4];perder2013dameli[p. 216, Appendix 2, y 141, w5]"
+        }
+      ],
+      "preferred_donor_language": "Pashto",
+      "blocker": "Immediate donor language and node unresolved; no node invented.",
+      "proposed_donor": {
+        "language": "Regional donor unresolved; Pashto comparison",
+        "form": "nikā / nikāh",
+        "gloss": "marriage, wedding",
+        "persistent_id": null
+      },
+      "parents": []
+    },
+    {
+      "batch": 45,
+      "proposal": 1,
+      "forms": [
+        {
+          "ID": "f_zg4xvwrw5zbgw",
+          "Form": "gulabi",
+          "Gloss": "pink",
+          "Source": "perder2013dameli[p. 85, Table 23, cell 1, y 189]"
+        }
+      ],
+      "preferred_donor_language": "Pashto",
+      "blocker": "Exact immediate language and donor node unresolved.",
+      "proposed_donor": {
+        "language": "Regional donor unresolved; Pashto comparison",
+        "form": "ګلابي (gulābi)",
+        "gloss": "pink, rose-coloured",
+        "persistent_id": null
+      },
+      "parents": []
+    },
+    {
+      "batch": 46,
+      "proposal": 1,
+      "forms": [
+        {
+          "ID": "f_mhyize6ihpndy",
+          "Form": "pak",
+          "Gloss": "pure",
+          "Source": "perder2013dameli[p. 163, Table 44, cell 1, y 357]"
+        },
+        {
+          "ID": "f_qlazugesqoo3o",
+          "Form": "pak",
+          "Gloss": "pure",
+          "Source": "perder2013dameli[p. 135, Table 40, cell 1, y 357]"
+        }
+      ],
+      "preferred_donor_language": "Urdu",
+      "blocker": "Immediate donor unresolved; Persian comparator node exists but is not established as the direct parent.",
+      "proposed_donor": {
+        "language": "Persian-origin regional loan; immediate donor unresolved",
+        "form": "pāk",
+        "gloss": "pure, clean",
+        "persistent_id": null
+      },
+      "parents": []
+    },
+    {
+      "batch": 47,
+      "proposal": 1,
+      "forms": [
+        {
+          "ID": "f_kbsn6msl6dnbi",
+          "Form": "asili",
+          "Gloss": "original",
+          "Source": "perder2013dameli[p. 51, example (2), w1, y 461, data T3040, T3078]"
+        },
+        {
+          "ID": "f_fgfsrlkji3s5w",
+          "Form": "asli",
+          "Gloss": "original",
+          "Source": "perder2013dameli[p. 180, example (153), w3, y 54, data T1053]"
+        }
+      ],
+      "preferred_donor_language": "Urdu",
+      "blocker": "Immediate donor language and supported donor node unresolved.",
+      "proposed_donor": {
+        "language": "Arabic-origin regional loan; immediate donor unresolved",
+        "form": "aṣlī",
+        "gloss": "original",
+        "persistent_id": null
+      },
+      "parents": []
+    },
+    {
+      "batch": 47,
+      "proposal": 2,
+      "forms": [
+        {
+          "ID": "f_yimphiu3zm4la",
+          "Form": "axiri",
+          "Gloss": "final",
+          "Source": "perder2013dameli[p. 85, Table 23, cell 1, y 204]"
+        },
+        {
+          "ID": "f_utbkldp5paqmi",
+          "Form": "axiri",
+          "Gloss": "final",
+          "Source": "perder2013dameli[p. 84, example (30), w3, y 533];perder2013dameli[p. 214, Appendix 2, y 533, w3]"
+        }
+      ],
+      "preferred_donor_language": "Urdu",
+      "blocker": "Immediate donor language and supported donor node unresolved.",
+      "proposed_donor": {
+        "language": "Arabic-origin regional loan; immediate donor unresolved",
+        "form": "āxirī",
+        "gloss": "final, last",
+        "persistent_id": null
+      },
+      "parents": []
+    },
+    {
+      "batch": 47,
+      "proposal": 3,
+      "forms": [
+        {
+          "ID": "f_fjvvtgftfb76o",
+          "Form": "āxir",
+          "Gloss": "finally",
+          "Source": "perder2013dameli[p. 216, Appendix 2, y 228, w1]"
+        }
+      ],
+      "preferred_donor_language": "Urdu",
+      "blocker": "Immediate donor language and supported donor node unresolved.",
+      "proposed_donor": {
+        "language": "Arabic-origin regional loan; immediate donor unresolved",
+        "form": "āxir",
+        "gloss": "finally",
+        "persistent_id": null
+      },
+      "parents": []
+    },
+    {
+      "batch": 48,
+      "proposal": 1,
+      "forms": [
+        {
+          "ID": "f_b6daaukwm2p3k",
+          "Form": "ūgā",
+          "Gloss": "garlic",
+          "Source": "decker1992[chitral, location DML, item 77]"
+        }
+      ],
+      "preferred_donor_language": "Pashto",
+      "blocker": "Existing Pashto comparator is unlinked and rejected as a parent by the assignment validator. Survey page verification and inferred borrowing direction also require review.",
+      "proposed_donor": null,
+      "parents": [
+        {
+          "ID": "f_5a7rkxbdecysk",
+          "Form": "ūgā",
+          "Gloss": "garlic"
+        }
+      ]
+    },
+    {
+      "batch": 48,
+      "proposal": 2,
+      "forms": [
+        {
+          "ID": "f_orz2p23lwztia",
+          "Form": "kūrkāmān",
+          "Gloss": "turmeric",
+          "Source": "decker1992[chitral, location DML, item 76]"
+        }
+      ],
+      "preferred_donor_language": "Pashto",
+      "blocker": "Existing Pashto comparator is unlinked and rejected as a parent by the assignment validator. Survey page verification and inferred borrowing direction also require review.",
+      "proposed_donor": null,
+      "parents": [
+        {
+          "ID": "f_imfuq6lzagv2c",
+          "Form": "kūrkāmān",
+          "Gloss": "turmeric"
+        }
+      ]
+    },
+    {
+      "batch": 49,
+      "proposal": 1,
+      "forms": [
+        {
+          "ID": "f_gcvcrtmvjpuss",
+          "Form": "ālū",
+          "Gloss": "potato",
+          "Source": "decker1992[chitral, location DML, item 72]"
+        }
+      ],
+      "preferred_donor_language": "Pashto",
+      "blocker": "Immediate donor and loan direction unresolved; compiled survey comparisons require original-page verification.",
+      "proposed_donor": {
+        "language": "Regional ālū family; immediate donor unresolved",
+        "form": "ālū",
+        "gloss": "potato",
+        "persistent_id": null
+      },
+      "parents": []
+    },
+    {
+      "batch": 49,
+      "proposal": 2,
+      "forms": [
+        {
+          "ID": "f_gwiywa2ui3ltg",
+          "Form": "pʰalī",
+          "Gloss": "groundnut",
+          "Source": "decker1992[chitral, location DML, item 74]"
+        }
+      ],
+      "preferred_donor_language": "Pashto",
+      "blocker": "Immediate donor and loan direction unresolved; compiled survey comparisons require original-page verification.",
+      "proposed_donor": {
+        "language": "Probable regional loan, compare Pashto",
+        "form": "pʰalī",
+        "gloss": "groundnut",
+        "persistent_id": null
+      },
+      "parents": []
+    },
+    {
+      "batch": 49,
+      "proposal": 3,
+      "forms": [
+        {
+          "ID": "f_wtrfdiwzyg3ma",
+          "Form": "gulgopī",
+          "Gloss": "cauliflower",
+          "Source": "decker1992[chitral, location DML, item 79]"
+        }
+      ],
+      "preferred_donor_language": "Pashto",
+      "blocker": "Immediate donor and loan direction unresolved; compiled survey comparisons require original-page verification.",
+      "proposed_donor": {
+        "language": "Probable Pashto-mediated regional compound; donor unresolved",
+        "form": "gval gopī",
+        "gloss": "cauliflower",
+        "persistent_id": null
+      },
+      "parents": []
+    },
+    {
+      "batch": 50,
+      "proposal": 1,
+      "forms": [
+        {
+          "ID": "f_ydefugld6gbxm",
+          "Form": "sardar",
+          "Gloss": "head of tribe",
+          "Source": "liljegren-hindukush[form dml-Kinship-headoftribe-1, concept Kinship-headoftribe]"
+        }
+      ],
+      "preferred_donor_language": "Urdu",
+      "blocker": "Immediate donor unresolved; no direct ancestry row proposed.",
+      "proposed_donor": {
+        "language": "Persian-origin regional title; immediate donor unresolved",
+        "form": "sardār",
+        "gloss": "chief, headman",
+        "persistent_id": null
+      },
+      "parents": []
+    },
+    {
+      "batch": 50,
+      "proposal": 2,
+      "forms": [
+        {
+          "ID": "f_dh5jygd3gql36",
+          "Form": "sāṇḍu",
+          "Gloss": "wife’s sister’s husband",
+          "Source": "liljegren-hindukush[form dml-Kinship-wifessistershusband-1, concept Kinship-wifessistershusband]"
+        }
+      ],
+      "preferred_donor_language": "Pashto",
+      "blocker": "Immediate donor unresolved; no direct ancestry row proposed.",
+      "proposed_donor": {
+        "language": "Regional Indo-Aryan loan-family; immediate donor unresolved",
+        "form": "sāṇḍū / sāṇḍhū",
+        "gloss": "wife’s sister’s husband",
+        "persistent_id": null
+      },
+      "parents": []
+    },
+    {
+      "batch": 51,
+      "proposal": 1,
+      "forms": [
+        {
+          "ID": "f_ygxvmwyiau7qk",
+          "Form": "taŋ",
+          "Gloss": "trouble",
+          "Source": "perder2013dameli[p. 125, Table 39, cell 1, y 525]"
+        }
+      ],
+      "preferred_donor_language": "Urdu",
+      "blocker": "Immediate donor unresolved; no ancestry row proposed.",
+      "proposed_donor": {
+        "language": "Persian-origin regional loan; immediate donor unresolved",
+        "form": "tang",
+        "gloss": "troubled, vexed",
+        "persistent_id": null
+      },
+      "parents": []
+    },
+    {
+      "batch": 52,
+      "proposal": 1,
+      "forms": [
+        {
+          "ID": "f_6epcj55jti76w",
+          "Form": "sekal",
+          "Gloss": "bicycle",
+          "Source": "perder2013dameli[p. 41, Table 11, cell 1, y 448];perder2013dameli[p. 192, example (173), w7, y 131]"
+        },
+        {
+          "ID": "f_3k7jpclnldq7c",
+          "Form": "sekal-a",
+          "Gloss": "bicycle",
+          "Source": "perder2013dameli[p. 190, example (169), w4, y 127];perder2013dameli[p. 192, example (175), w4, y 454]"
+        }
+      ],
+      "preferred_donor_language": null,
+      "blocker": "Immediate donor and supported donor node unresolved.",
+      "proposed_donor": {
+        "language": "English-origin regional loan; immediate donor unresolved",
+        "form": "cycle / sāikil",
+        "gloss": "bicycle",
+        "persistent_id": null
+      },
+      "parents": []
+    },
+    {
+      "batch": 53,
+      "proposal": 1,
+      "forms": [
+        {
+          "ID": "f_ztyt27gdt2bc6",
+          "Form": "mexā",
+          "Gloss": "buffalo",
+          "Source": "decker1992[chitral, location DML, item 90]"
+        }
+      ],
+      "preferred_donor_language": "Pashto",
+      "blocker": "Existing Pashto comparator is not linkable. Survey-page verification and inferred direction remain pending.",
+      "proposed_donor": null,
+      "parents": [
+        {
+          "ID": "f_5vu2bpzo7cosu",
+          "Form": "mexā",
+          "Gloss": "buffalo"
+        }
+      ]
+    },
+    {
+      "batch": 54,
+      "proposal": 1,
+      "forms": [
+        {
+          "ID": "f_xje6qmez2ftfm",
+          "Form": "andaza",
+          "Gloss": "guess",
+          "Source": "perder2013dameli[p. 125, Table 39, cell 1, y 552]"
+        }
+      ],
+      "preferred_donor_language": "Urdu",
+      "blocker": "Immediate donor unresolved; no ancestry row proposed.",
+      "proposed_donor": {
+        "language": "Persian-origin regional loan; immediate donor unresolved",
+        "form": "andāza",
+        "gloss": "guess, estimate",
+        "persistent_id": null
+      },
+      "parents": []
+    },
+    {
+      "batch": 54,
+      "proposal": 2,
+      "forms": [
+        {
+          "ID": "f_5kyxqdepyhxfm",
+          "Form": "kabza",
+          "Gloss": "",
+          "Source": "perder2013dameli[p. 125, Table 39, cell 1, y 567]"
+        },
+        {
+          "ID": "f_3xi6r7p6tvs7o",
+          "Form": "kabza",
+          "Gloss": "capture",
+          "Source": "perder2013dameli[p. 191, example (172), w5, y 256, data T6043-44]"
+        }
+      ],
+      "preferred_donor_language": "Urdu",
+      "blocker": "Immediate donor unresolved; no ancestry row proposed.",
+      "proposed_donor": {
+        "language": "Arabic-origin regional loan via Persian/Indo-Aryan contact; immediate donor unresolved",
+        "form": "qabẓa",
+        "gloss": "possession, grasp",
+        "persistent_id": null
+      },
+      "parents": []
+    },
+    {
+      "batch": 55,
+      "proposal": 1,
+      "forms": [
+        {
+          "ID": "f_xud762lb5evmu",
+          "Form": "pata",
+          "Gloss": "knowledge",
+          "Source": "perder2013dameli[p. 126, Table 39, cell 1, y 54];perder2013dameli[p. 167, example (134), w3, y 499]"
+        }
+      ],
+      "preferred_donor_language": "Urdu",
+      "blocker": "Immediate donor unresolved; no ancestry row proposed.",
+      "proposed_donor": {
+        "language": "Regional Indo-Aryan loan; immediate donor unresolved",
+        "form": "patā",
+        "gloss": "clue, information",
+        "persistent_id": null
+      },
+      "parents": []
+    },
+    {
+      "batch": 56,
+      "proposal": 1,
+      "forms": [
+        {
+          "ID": "f_j37prnpboiipy",
+          "Form": "śirō",
+          "Gloss": "",
+          "Source": "perder2013dameli[p. 126, Table 39, cell 1, y 237]"
+        },
+        {
+          "ID": "f_doafwruqe4fyy",
+          "Form": "śirō",
+          "Gloss": "beginning",
+          "Source": "perder2013dameli[p. 99, example (40), w2, y 147, data T6056-57]"
+        }
+      ],
+      "preferred_donor_language": "Urdu",
+      "blocker": "Immediate donor and vowel adaptation unresolved; no ancestry row proposed.",
+      "proposed_donor": {
+        "language": "Arabic-origin regional loan; immediate donor unresolved",
+        "form": "shurūʿ",
+        "gloss": "beginning",
+        "persistent_id": null
+      },
+      "parents": []
+    },
+    {
+      "batch": 57,
+      "proposal": 1,
+      "forms": [
+        {
+          "ID": "f_db2poftrazcj2",
+          "Form": "madad",
+          "Gloss": "help",
+          "Source": "perder2013dameli[p. 56, example (5), w1, y 429]"
+        }
+      ],
+      "preferred_donor_language": "Urdu",
+      "blocker": "Immediate donor unresolved; no ancestry row proposed.",
+      "proposed_donor": {
+        "language": "Arabic-origin regional loan; immediate donor unresolved",
+        "form": "madad",
+        "gloss": "help",
+        "persistent_id": null
+      },
+      "parents": []
+    },
+    {
+      "batch": 57,
+      "proposal": 2,
+      "forms": [
+        {
+          "ID": "f_nvp5wfczhnzjy",
+          "Form": "yat",
+          "Gloss": "remembrance",
+          "Source": "perder2013dameli[p. 57, example (7), w3, y 570]"
+        }
+      ],
+      "preferred_donor_language": "Urdu",
+      "blocker": "Immediate donor unresolved; no ancestry row proposed.",
+      "proposed_donor": {
+        "language": "Persian-origin regional loan; immediate donor unresolved",
+        "form": "yād",
+        "gloss": "remembrance",
+        "persistent_id": null
+      },
+      "parents": []
+    },
+    {
+      "batch": 58,
+      "proposal": 1,
+      "forms": [
+        {
+          "ID": "f_5xn7tx5bt6gy4",
+          "Form": "vāpas",
+          "Gloss": "back",
+          "Source": "perder2013dameli[p. 56, example (5), w1, y 398];perder2013dameli[p. 91, example (31), w4, y 127, data T3022];perder2013dameli[p. 192, example (174), w1, y 353]"
+        }
+      ],
+      "preferred_donor_language": "Urdu",
+      "blocker": "Immediate donor unresolved; no ancestry row proposed.",
+      "proposed_donor": {
+        "language": "Persian-origin regional loan; immediate donor unresolved",
+        "form": "wāpas",
+        "gloss": "back",
+        "persistent_id": null
+      },
+      "parents": []
+    },
+    {
+      "batch": 58,
+      "proposal": 2,
+      "forms": [
+        {
+          "ID": "f_mhwlsbeersyvc",
+          "Form": "faisala",
+          "Gloss": "decision",
+          "Source": "perder2013dameli[p. 61, example (11), w3, y 180, data T4021];perder2013dameli[p. 213, Appendix 2, y 329, w5];perder2013dameli[p. 214, Appendix 2, y 533, w4]"
+        },
+        {
+          "ID": "f_jofd6gko5wabe",
+          "Form": "faisala",
+          "Gloss": "decision",
+          "Source": "perder2013dameli[p. 84, example (30), w4, y 533]"
+        }
+      ],
+      "preferred_donor_language": "Urdu",
+      "blocker": "Immediate donor unresolved; no ancestry row proposed.",
+      "proposed_donor": {
+        "language": "Arabic-origin regional loan in Persian form; immediate donor unresolved",
+        "form": "faiṣala",
+        "gloss": "decision",
+        "persistent_id": null
+      },
+      "parents": []
+    },
+    {
+      "batch": 58,
+      "proposal": 3,
+      "forms": [
+        {
+          "ID": "f_4657u2kng43z4",
+          "Form": "madrasa-a",
+          "Gloss": "madrasa",
+          "Source": "perder2013dameli[p. 103, example (47), w5, y 279, data T0028, TW3052]"
+        },
+        {
+          "ID": "f_ykjyymtfesxac",
+          "Form": "madrasā",
+          "Gloss": "madrasah",
+          "Source": "perder2013dameli[p. 39, prose, y 135, x 213]"
+        },
+        {
+          "ID": "f_vwciqtlh33msc",
+          "Form": "madrasa-a",
+          "Gloss": "madrasah",
+          "Source": "perder2013dameli[p. 39, prose, y 135, x 213]"
+        }
+      ],
+      "preferred_donor_language": "Urdu",
+      "blocker": "Immediate donor unresolved; no ancestry row proposed.",
+      "proposed_donor": {
+        "language": "Arabic-origin regional loan in Persian form; immediate donor unresolved",
+        "form": "madrasa",
+        "gloss": "school",
+        "persistent_id": null
+      },
+      "parents": []
+    },
+    {
+      "batch": 59,
+      "proposal": 1,
+      "forms": [
+        {
+          "ID": "f_4ksydqb3oost6",
+          "Form": "bāzar",
+          "Gloss": "bazaar",
+          "Source": "perder2013dameli[p. 154, example (109), w3, y 306, data Q0022]"
+        },
+        {
+          "ID": "f_gdb7wpnotravy",
+          "Form": "bāzar-a",
+          "Gloss": "bazaar",
+          "Source": "perder2013dameli[p. 161, example (128), w2, y 330, data Q0044, TW7002]"
+        }
+      ],
+      "preferred_donor_language": "Urdu",
+      "blocker": "Immediate donor unresolved; no ancestry row proposed.",
+      "proposed_donor": {
+        "language": "Persian-origin regional loan; immediate donor unresolved",
+        "form": "bāzār",
+        "gloss": "market",
+        "persistent_id": null
+      },
+      "parents": []
+    },
+    {
+      "batch": 59,
+      "proposal": 2,
+      "forms": [
+        {
+          "ID": "f_c55zvnyab5giy",
+          "Form": "ɣam",
+          "Gloss": "grief",
+          "Source": "perder2013dameli[p. 186, example (163), w4, y 54];perder2013dameli[p. 213, Appendix 2, y 141, w6];perder2013dameli[p. 213, Appendix 2, y 172, w2]"
+        },
+        {
+          "ID": "f_i6i326sf2m5qq",
+          "Form": "ɣam-a",
+          "Gloss": "grief",
+          "Source": "perder2013dameli[p. 211, Appendix 2, y 461, w4]"
+        }
+      ],
+      "preferred_donor_language": "Urdu",
+      "blocker": "Immediate donor unresolved; no ancestry row proposed.",
+      "proposed_donor": {
+        "language": "Arabic-origin regional loan; immediate donor unresolved",
+        "form": "ġam",
+        "gloss": "grief",
+        "persistent_id": null
+      },
+      "parents": []
+    },
+    {
+      "batch": 59,
+      "proposal": 3,
+      "forms": [
+        {
+          "ID": "f_tnilkg6ymbgnq",
+          "Form": "toti",
+          "Gloss": "parrot",
+          "Source": "perder2013dameli[p. 187, example (165), w2, y 54]"
+        }
+      ],
+      "preferred_donor_language": "Urdu",
+      "blocker": "Immediate donor unresolved; no ancestry row proposed.",
+      "proposed_donor": {
+        "language": "Persian regional loan-family comparison; immediate donor unresolved",
+        "form": "tūtī",
+        "gloss": "parrot",
+        "persistent_id": null
+      },
+      "parents": []
+    },
+    {
+      "batch": 60,
+      "proposal": 1,
+      "forms": [
+        {
+          "ID": "f_w5tf32k2t2peo",
+          "Form": "kitap",
+          "Gloss": "book",
+          "Source": "perder2013dameli[p. 131, example (77), w1, y 468, data Q1001];perder2013dameli[p. 145, example (96), w1, y 348, data Q0017, Q1002]"
+        }
+      ],
+      "preferred_donor_language": "Urdu",
+      "blocker": "Immediate donor unresolved; no ancestry row proposed.",
+      "proposed_donor": {
+        "language": "Arabic-origin regional loan; immediate donor unresolved",
+        "form": "kitāb",
+        "gloss": "book",
+        "persistent_id": null
+      },
+      "parents": []
+    },
+    {
+      "batch": 61,
+      "proposal": 1,
+      "forms": [
+        {
+          "ID": "f_ndnyhgpl2q5re",
+          "Form": "safar",
+          "Gloss": "journey",
+          "Source": "perder2013dameli[p. 191, example (171), w6, y 54]"
+        }
+      ],
+      "preferred_donor_language": "Urdu",
+      "blocker": "Immediate donor unresolved; no ancestry row proposed.",
+      "proposed_donor": {
+        "language": "Arabic-origin regional loan; immediate donor unresolved",
+        "form": "safar",
+        "gloss": "journey",
+        "persistent_id": null
+      },
+      "parents": []
+    },
+    {
+      "batch": 61,
+      "proposal": 2,
+      "forms": [
+        {
+          "ID": "f_bzymcpqnhc62i",
+          "Form": "ẓanẓer",
+          "Gloss": "chain",
+          "Source": "perder2013dameli[p. 29, prose, y 418, x 282]"
+        }
+      ],
+      "preferred_donor_language": "Urdu",
+      "blocker": "Immediate donor unresolved; no ancestry row proposed.",
+      "proposed_donor": {
+        "language": "Persian-origin regional loan-family comparison; immediate donor unresolved",
+        "form": "zanjīr",
+        "gloss": "chain",
+        "persistent_id": null
+      },
+      "parents": []
+    }
+  ],
+  "validation": {
+    "schema": "passed",
+    "temporary_graph_changes": 135,
+    "second_application_changes": 0,
+    "old_rows_preserved": 13341,
+    "new_rows": 13416,
+    "backup": "/tmp/dameli-before-overnight-approval-20260910.csv",
+    "held_ids_untouched": true,
+    "db_rebuilt": false
+  },
+  "saved_at": "2026-09-10T15:28:02.095089+00:00",
+  "followup": "Donor-entry save checkpoint: donor-links-save-20260910.json. Current totals and remaining blockers are in overnight-consistency-audit.json and overnight-review.md; this file preserves the earlier approval-save checkpoint."
+}

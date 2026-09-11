@@ -1,0 +1,33 @@
+{
+  "source_records": 33,
+  "parameter_rows": 33,
+  "rich_self_attestation_rows": 33,
+  "new_donor_languages": {
+    "Psht": 18,
+    "H": 15
+  },
+  "new_persistent_identities": 33,
+  "reused_donor_heads": 22,
+  "new_assignment_rows": 114,
+  "affected_dameli_records": 106,
+  "saved_proposals": 61,
+  "schema_validation": "passed",
+  "temporary_graph_changes": 220,
+  "second_application_changes": 0,
+  "citation_keys": "all resolve",
+  "saved_assignment_uniqueness": "all 114 occur exactly once",
+  "focused_source_and_profiles": {
+    "passed": 15,
+    "skipped": 1,
+    "skipped_reason": "Fresh compiled donor metadata check deferred"
+  },
+  "global_dialect_checks": "2 failures: missing quality / coordinates",
+  "initial_isolated_build": "All pipeline stages ran through references; final manual-survey gate failed 2 tests (Rajasthani counts and source-owned overlay rows).",
+  "corrected_isolated_build": "Blocked by disk exhaustion at make_cldf.py output write",
+  "full_suite": "Started with python -m pytest --import-mode=importlib; did not finish. Failures appeared before termination under disk pressure, exit 120, incomplete traceback and no summary. Not a clean suite.",
+  "compiled_metadata": "Pending after corrected build; initial output had all 33 new heads but 4 missing noun tags. Two subsequent sense-level tag fixes also await compilation.",
+  "source_page_audit": "7 promoted source attestations not visually rechecked against original survey pages",
+  "temporary_cleanup": "Removed only this task’s disposable isolated build and failed temporary compression output to recover space. Primary data, identity and overlay saves retained.",
+  "db_rebuilt": false,
+  "ingestion_complete": false
+}

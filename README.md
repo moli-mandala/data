@@ -1045,3 +1045,39 @@ make the no-OCR import reproducible.
 
 - `data/others/forms/*.csv`: New lemmata extracted from various sources.
 - `data/others/params/*.csv`: New entries.
+
+### Approved Kalkoti donor supplement (2026-09-09)
+
+The 43 donor heads approved in Kalkoti batch 17 are reproducibly emitted by
+`data/other/params/raw_data/kalkoti_donors.py` from its source-attributed audit.
+They support 68 analyses of 84 existing Kalkoti records in the curated assignment overlay,
+including component and derived relations. This is a selected OPED/Platts/Hultman/editorial
+supplement, not a complete dictionary import. Reviewed donor transcription is preserved with
+NFC only; transmission qualifications, source variants and stable donor IDs remain in the audit.
+See `source_checklists/20260909-kalkoti-donors.md` for scope, validation and outstanding global
+suite failures. Browser refresh is separate and user-triggered.
+
+### Shina and Brokskat donor-head supplement (2026-09-10)
+
+`data/other/params/raw_data/sh_bro_donors.py` reproducibly emits 94 selected donor
+heads and audits 29 reuses of the existing Shinaic supplement. The checked audit
+preserves Degener's exact comparisons, CDIAL's Domaaki weaving donor, selected
+Platts/Rekhta senses and two pinned OPED entries. These curated donor heads do
+not by themselves decide unresolved borrowing routes. The 838 approved numbered
+Shina/Brokskat analyses are saved separately in the etymology overlay. See
+`source_checklists/20260910-sh-bro-donors.md` for source scope, transcription,
+stable identities, successful donor-specific checks and the qualified global test results.
+
+### Approved Dameli donor supplement (2026-09-10)
+
+`data/other/params/raw_data/dameli_donors.py` reproduces 33 selected donor heads
+(18 Pashto, 15 Urdu) from the adjacent source-attributed audit. OPED's archived
+XML, Platts, Perder's explicit donor tables and seven existing survey attestations
+supply the evidence. A rich self-attestation file preserves available native text
+and grammatical tags; an explicit preservation profile prevents double conversion.
+Another 22 donor heads are reused, supporting 114 approved overlay rows for 106
+Dameli records, including six co-wife compounds. This is selected donor coverage,
+not a full dictionary import. Uncertain transmission remains qualified.
+See `source_checklists/20260910-dameli-donors.md` for source scope, excluded variants,
+stable IDs, audit and validation limits: corrected full build blocked by disk space,
+global tests not clean, original survey-page checks outstanding. No browser DB refresh.

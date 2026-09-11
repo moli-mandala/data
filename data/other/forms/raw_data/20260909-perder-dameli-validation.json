@@ -1,0 +1,248 @@
+{
+  "additional_tag_normalization": {
+    "change": "Existing animate annotation moves from Description into canonical Tags; form, gloss and ID preserved.",
+    "id": "f_5a6vb3z2pjohi",
+    "source": "rajapurohit2012"
+  },
+  "browser_database": "Not rebuilt, staged or served; explicitly deferred by the user.",
+  "date": "2026-09-09",
+  "existing_record_changes": {
+    "existing_dameli_changes": [
+      {
+        "Form": "dū́ra",
+        "ID": "f_dc2ui57ctitrc",
+        "changes": {
+          "Status": [
+            "unlinked",
+            ""
+          ]
+        }
+      },
+      {
+        "Form": "trapa",
+        "ID": "f_ucylvrd7ogczm",
+        "changes": {
+          "Status": [
+            "unlinked",
+            ""
+          ]
+        }
+      },
+      {
+        "Form": "brā",
+        "ID": "f_6lotp6bpuexhs",
+        "changes": {
+          "Status": [
+            "unlinked",
+            ""
+          ]
+        }
+      }
+    ],
+    "existing_form_changes": [
+      {
+        "count": 442,
+        "fields": [
+          "Status"
+        ]
+      },
+      {
+        "count": 1,
+        "fields": [
+          "Description",
+          "Tags"
+        ]
+      }
+    ]
+  },
+  "final_checklist_freshness": {
+    "failed": 0,
+    "passed": 1,
+    "seconds": 14.13
+  },
+  "frontend": {
+    "command": "npm run check",
+    "errors": 0,
+    "existing_warnings": 7
+  },
+  "full_pipeline_gate": "open: repository-wide failures outside Perder remain",
+  "full_suite": {
+    "command": ".venv/bin/python -m pytest -q --import-mode=importlib",
+    "failed": 30,
+    "failures": [
+      "data/other/forms/raw_data/sil_noira_2015/test_preintegration_contract.py::test_preintegration_artifacts_are_fresh_and_pdf_is_pinned",
+      "data/other/forms/raw_data/sil_noira_2015/test_preintegration_contract.py::test_frozen_hashes_and_manual_census",
+      "tests/test_assign_form_ids.py::test_the_dictionary_self_reference_assignments_all_point_at_live_sub_entries",
+      "tests/test_bahl_korwa_1962.py::test_compiled_rows_survive_when_current_cldf_is_built",
+      "tests/test_beine_bhatri.py::test_compiled_forms_are_unlinked_records_on_canonical_languages",
+      "tests/test_beine_bhatri.py::test_source_contributes_no_graph_edges",
+      "tests/test_bhattacharya_bonda_1968.py::test_compiled_rows_survive_when_current_cldf_is_built",
+      "tests/test_burrow_emeneau_1972_den1.py::test_build_merges_source_citations_without_duplicate_reflexes",
+      "tests/test_burrow_emeneau_1972_den2.py::test_build_carries_the_source_citation_without_replacement_glyphs",
+      "tests/test_cldf.py::test_dedr_old_edition_references_are_structured_on_entry",
+      "tests/test_cldf.py::test_cross_family_descendants_are_borrowings",
+      "tests/test_cldf.py::test_backstrom_poc_cloth_forms_link_to_pota_not_avajjharati",
+      "tests/test_cldf.py::test_reference_editor_credits_for_assisted_sources",
+      "tests/test_cldf.py::test_ocr_provenance_is_explicit_on_references",
+      "tests/test_cldf.py::test_both_shackle_sources_use_cdial_phonetic_conversion_and_tags",
+      "tests/test_dedr_headwords.py::test_compiled_pdr_headword_audit_and_forms_follow_policy",
+      "tests/test_dialects.py::test_every_dialect_has_human_readable_location_metadata",
+      "tests/test_dialects.py::test_every_dialect_has_coordinates_in_range",
+      "tests/test_gondi_beine.py::test_compiled_forms_are_unlinked_gondi_dialect_records",
+      "tests/test_language_coordinates.py::test_only_geographically_undefined_languages_lack_coordinates",
+      "tests/test_manual_survey_etymologies.py::test_manual_survey_etymologies_reach_the_compiled_graph",
+      "tests/test_manual_survey_etymologies.py::test_source_owned_links_do_not_depend_on_duplicate_overlay_rows",
+      "tests/test_munda_proto_kherwarian_1968.py::test_compiled_rows_survive_when_current_cldf_is_built",
+      "tests/test_neojambu_etymology_restoration.py::test_restored_assignments_survive_in_the_compiled_edge_graph",
+      "tests/test_neojambu_etymology_restoration.py::test_previously_lost_source_groups_have_accepted_edges",
+      "tests/test_pinnow_juang_1960.py::test_compiled_rows_survive_when_current_cldf_is_built",
+      "tests/test_rajasthani.py::test_curated_etymologies_survive_the_compiled_graph",
+      "tests/test_rezai_baghbidi_zargari_2003.py::test_every_installed_row_survives_the_full_build",
+      "tests/test_rezai_baghbidi_zargari_2003.py::test_printed_alternates_become_variant_edges",
+      "tests/test_zide_sora_gorum_1982.py::test_compiled_rows_survive_when_current_cldf_is_built"
+    ],
+    "passed": 1668,
+    "seconds": 444.11,
+    "skipped": 14
+  },
+  "initial_baseline_failures": [
+    "tests/test_dialects.py::test_every_dialect_has_human_readable_location_metadata",
+    "tests/test_dialects.py::test_every_dialect_has_coordinates_in_range",
+    "tests/test_manual_survey_etymologies.py::test_source_owned_links_do_not_depend_on_duplicate_overlay_rows"
+  ],
+  "log_sha256": {
+    "build.log": "572f80a9d85364e7866fd1bdb1185d110f05b47016c8e4e3a060d84816d36d3f",
+    "focused-tests.log": "9f3343015ed44b4de992ec37d3f37ba1c8f6d9c5df6c88f77bb7fd28a035ad75",
+    "frontend-check.log": "8db31806b3009d3d421f34a4dcba9ec42bbea7785f5fe14d97f024764d121e6b",
+    "full-tests-importlib.log": "4031ff5441ef45a7602f0ea0dbff2d1cf459a94861c475fead70e1e2d52c309c",
+    "noira-isolated-tests.log": "6882715691d0fed69425bf6c539a6b17e3ada7d5aef454b0308d068b93029776"
+  },
+  "perder_edges": {
+    "component": 74,
+    "derived": 39,
+    "reflex": 1,
+    "variant": 27
+  },
+  "pipeline": "All CLDF data-generation stages completed; make all exits 2 at the final manual-survey test target.",
+  "pipeline_failures": [
+    "tests/test_manual_survey_etymologies.py::test_manual_survey_etymologies_reach_the_compiled_graph",
+    "tests/test_manual_survey_etymologies.py::test_source_owned_links_do_not_depend_on_duplicate_overlay_rows"
+  ],
+  "reconciliation": {
+    "counts": {
+      "cldf/alignments.csv": {
+        "baseline_csv_records": 1978492,
+        "current_csv_records": 1980937,
+        "delta": 2445
+      },
+      "cldf/concepts.csv": {
+        "baseline_csv_records": 3260,
+        "current_csv_records": 3261,
+        "delta": 1
+      },
+      "cldf/edges.csv": {
+        "baseline_csv_records": 357003,
+        "current_csv_records": 357586,
+        "delta": 583
+      },
+      "cldf/form-id-aliases.csv": {
+        "baseline_csv_records": 1024289,
+        "current_csv_records": 1026151,
+        "delta": 1862
+      },
+      "cldf/form-source-keys.csv": {
+        "baseline_csv_records": 327680,
+        "current_csv_records": 329536,
+        "delta": 1856
+      },
+      "cldf/form_concepts.csv": {
+        "baseline_csv_records": 500962,
+        "current_csv_records": 502769,
+        "delta": 1807
+      },
+      "cldf/forms.csv": {
+        "baseline_csv_records": 677797,
+        "current_csv_records": 679653,
+        "delta": 1856
+      },
+      "cldf/references.csv": {
+        "baseline_csv_records": 523,
+        "current_csv_records": 526,
+        "delta": 3
+      },
+      "data/form-identities.csv": {
+        "baseline_csv_records": 847558,
+        "current_csv_records": 849415,
+        "delta": 1857
+      }
+    },
+    "errors_bytes": 0,
+    "etymology_overlay": {
+      "baseline_sha256": "0f6f15e1734cd97d523049a595588b43ce988a70f943e9c37eaea999309013c5",
+      "current_sha256": "f55973a5bb431b7562c83f35ac4ff4f11323fb1858f07b9c6df10c6d862c451c",
+      "note": "Existing and concurrent user edits are preserved; this ingestion does not edit assignments."
+    },
+    "id_reconciliation": {
+      "added_id_count": 1856,
+      "baseline_dm": 1184,
+      "baseline_ids": 677797,
+      "changed_existing_dm_ids": [
+        "f_dc2ui57ctitrc",
+        "f_ucylvrd7ogczm",
+        "f_6lotp6bpuexhs"
+      ],
+      "changed_existing_forms_by_primary_source": {
+        "bagri": 3,
+        "behera2021desia": 4,
+        "beine2017bhatri": 1,
+        "brightbill-turner2007dogri": 1,
+        "buddruss-grangali1979": 2,
+        "decker1992": 3,
+        "dhundari": 1,
+        "eichentopf-mitchell2020kochila": 1,
+        "grierson-lsi1928": 52,
+        "hadothi": 2,
+        "herin2012domari": 1,
+        "hultman2023kalkoti": 95,
+        "kalkoti": 35,
+        "kim-ahmad-kim-sangma2011hajong": 2,
+        "kim-kim2008bishnupriya": 1,
+        "knobloch2020sauji": 25,
+        "koshy2022bagheli": 7,
+        "lehr": 1,
+        "liljegren": 1,
+        "liljegren-hindukush": 67,
+        "lothers-lothers2010pahari": 5,
+        "marwari": 2,
+        "mewari": 3,
+        "page2024majhi-bote": 2,
+        "rajapurohit2012": 1,
+        "rensch-decker-hallberg1992": 93,
+        "rensch-hallberg-oleary1992": 1,
+        "schmidt": 4,
+        "shackelford2019dewas-rai": 1,
+        "thakur-thakur2016magahi": 1,
+        "torwali2023student": 1,
+        "varkey-vunnamatla2018bareli": 1,
+        "webster": 15,
+        "webster2024haryanvi": 6,
+        "zoller2005": 2
+      },
+      "current_dm": 3040,
+      "current_unique_ids": 679653,
+      "lost_ids": [],
+      "perder_compiled_records": 1856
+    }
+  },
+  "source": "perder2013dameli",
+  "source_focused": {
+    "failed": 0,
+    "passed": 11,
+    "seconds": 3.94
+  },
+  "test_collection": {
+    "default_command": "One duplicate test-module basename stops collection (Bhumij/Noira).",
+    "importlib_helper_collision": "Both files also import preintegration_audit by the same bare module name, causing two Noira failures in the combined suite.",
+    "isolated_noira_result": "..                                                                       [100%]\n2 passed in 0.50s"
+  }
+}

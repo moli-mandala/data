@@ -1,0 +1,89 @@
+{
+  "language": "Dm",
+  "batch": 39,
+  "status": "approved_blocked",
+  "proposals": [
+    {
+      "number": 1,
+      "forms": [
+        {
+          "ID": "f_htkhrvkvw6m4q",
+          "Form": "cay-may",
+          "Gloss": "tea",
+          "Source": "perder2013dameli[p. 187, prose, y 405, x 315]"
+        }
+      ],
+      "parents": [
+        {
+          "ID": "f_dng2et3dhk3jw",
+          "Form": "cay",
+          "Gloss": "tea"
+        }
+      ],
+      "proposed_donor": {
+        "language": "Dameli",
+        "form": "cay",
+        "gloss": "tea",
+        "persistent_id": "f_dng2et3dhk3jw"
+      },
+      "kind": "derived",
+      "difficulty": "easy",
+      "review_status": "approved",
+      "evidence": "Perder p187 explicitly uses čay-may to illustrate productive m-echo formation, with expanded meanings such as tea and something to eat or a tea break. The ingested gloss tea is narrower than his explanation; preserve the record while documenting that expansion. The base cay tea is independently attested on p40. Analyse the expression as a synchronic derivative of cay; may is an echo syllable, not an independently borrowed or inherited component. Perder’s discussion of regional contact in the echo pattern does not establish a donor language for this particular tea word.",
+      "citations": [
+        "perder2013dameli[pp. 187–188, section 21.6, example 166]"
+      ],
+      "save_blocker": "Existing base is unlinked.",
+      "blocked_assignments": [
+        {
+          "Form_ID": "f_htkhrvkvw6m4q",
+          "Etymon_ID": "f_dng2et3dhk3jw",
+          "Kind": "derived",
+          "Rank": "1",
+          "Status": "accepted",
+          "Source": "perder2013dameli[pp. 187–188, section 21.6, example 166]",
+          "Notes": "Perder p187 explicitly uses čay-may to illustrate productive m-echo formation, with expanded meanings such as tea and something to eat or a tea break. The ingested gloss tea is narrower than his explanation; preserve the record while documenting that expansion. The base cay tea is independently attested on p40. Analyse the expression as a synchronic derivative of cay; may is an echo syllable, not an independently borrowed or inherited component. Perder’s discussion of regional contact in the echo pattern does not establish a donor language for this particular tea word.",
+          "Pos": ""
+        }
+      ],
+      "validation_error": "etymology assignment for f_htkhrvkvw6m4q references missing etymon f_dng2et3dhk3jw"
+    },
+    {
+      "number": 2,
+      "forms": [
+        {
+          "ID": "f_pe65zvoyoy7qa",
+          "Form": "boṇḍri~moṇḍri",
+          "Gloss": "border~",
+          "Source": "perder2013dameli[p. 188, example (166), w4, y 69]"
+        }
+      ],
+      "parents": [],
+      "proposed_donor": {
+        "language": "Dameli",
+        "form": "boṇḍri",
+        "gloss": "border",
+        "persistent_id": null
+      },
+      "kind": "derived",
+      "difficulty": "easy",
+      "review_status": "approved",
+      "evidence": "Perder p188 example166 explicitly segments boṇḍri~moṇḍri border~ECHO and translates the expanded phrase as the border and all that. This fits the productive replacement of the base initial consonant by m. A standalone boṇḍri donor/base record is not available. Do not invent an independent moṇḍri lexeme or jump from the whole expression to English border/boundary; the history and transmission of the base remain separate questions.",
+      "citations": [
+        "perder2013dameli[pp. 187–188, section 21.6, example 166]"
+      ],
+      "save_blocker": "Standalone base node unresolved.",
+      "blocked_assignments": []
+    }
+  ],
+  "assignments": [],
+  "validation": {
+    "proposals": 2,
+    "affected_records": 2,
+    "blocked_assignment_rows": 1,
+    "save_ready_assignment_rows": 0,
+    "db_rebuilt": false
+  },
+  "approval": "User: approve all; prefer Pashto where best matched, then Urdu for broadly Perso-Arabic terms. Approval includes qualified analyses, not a claim that uncertainties are resolved.",
+  "donor_policy": "Prefer an attested Pashto donor where form and meaning fit best; otherwise prefer Urdu for broadly shared Perso-Arabic loans. Preserve explicit source attribution, phonological uncertainty and possible Nuristani mediation. Do not substitute a different dialect merely because its node is linkable."
+}

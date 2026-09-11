@@ -61,7 +61,7 @@ REGISTRY_FIELDS = [
     "Form_ID", "Legacy_ID", "Source_Key", "Fingerprint", "Source", "Language_ID", "Original",
     "Gloss", "Status",
 ]
-ASSIGNMENT_FIELDS = ["Form_ID", "Etymon_ID", "Kind", "Rank", "Status", "Source", "Notes"]
+ASSIGNMENT_FIELDS = ["Form_ID", "Etymon_ID", "Kind", "Rank", "Status", "Source", "Notes", "Pos"]
 EDGES_FIELDS = ["Child_ID", "Parent_ID", "Kind", "Rank", "Pos", "Source", "Note"]
 
 
@@ -297,6 +297,25 @@ def validate_assignments(forms: list[dict[str, str]], assignments: list[dict[str
     """Hard-fail before any file is mutated (same contract as the legacy overlay)."""
     by_id = {row["ID"]: row for row in forms}
     linkable = {row["ID"] for row in forms if row.get("Status") != "unlinked"}
+    # A base can gain its ancestry in this overlay before a derivative uses it.
+    # Resolve chains to existing linkable nodes without depending on CSV order;
+    # an unassigned base or a cycle of unlinked nodes is still not a valid target.
+    pending = [
+        (a.get("Form_ID", "").strip(), a.get("Etymon_ID", "").strip())
+        for a in assignments
+        if a.get("Status", "accepted").strip().lower() in ACCEPTED
+        and a.get("Rank", "1") == "1"
+        and a.get("Kind") in {"reflex", "borrowed", "derived", "component"}
+    ]
+    parents = defaultdict(set)
+    for child, parent in pending:
+        parents[child].add(parent)
+    while True:
+        additions = {child for child, targets in parents.items()
+                     if child in by_id and targets <= linkable} - linkable
+        if not additions:
+            break
+        linkable.update(additions)
     for assignment in assignments:
         status = assignment.get("Status", "accepted").strip().lower()
         if status not in ACCEPTED | REJECTED:
@@ -309,16 +328,30 @@ def validate_assignments(forms: list[dict[str, str]], assignments: list[dict[str
             continue
         if etymon_id not in linkable:
             raise ValueError(f"etymology assignment for {form_id} references missing etymon {etymon_id}")
-        if assignment.get("Kind") not in {"reflex", "borrowed"}:
+        if assignment.get("Kind") not in {"reflex", "borrowed", "derived", "component"}:
             raise ValueError(f"unsupported assignment kind {assignment.get('Kind')!r} for {form_id}")
         if not re.fullmatch(r"[1-9]\d*", assignment.get("Rank", "1")):
             raise ValueError(f"bad assignment rank {assignment.get('Rank')!r} for {form_id}")
+        pos = assignment.get("Pos", "")
+        if assignment.get("Kind") == "component":
+            if not re.fullmatch(r"[1-9]\d*", pos):
+                raise ValueError(f"bad component position {pos!r} for {form_id}")
+        elif pos:
+            raise ValueError(f"position on non-component assignment for {form_id}")
         # Legacy modelled a dictionary headword as an entry row plus an attested row beneath it;
         # both collapse onto one node here, so an importer resolving that pair emits a link from
         # the node to itself. Installing it makes the node its own etymon and drops it from the
         # headword list — 14,506 CDIAL entries vanished this way.
         if form_id == etymon_id:
             raise ValueError(f"etymology assignment for {form_id} points at itself")
+
+    component_positions = defaultdict(list)
+    for a in assignments:
+        if a.get("Status", "accepted").strip().lower() in ACCEPTED and a.get("Kind") == "component":
+            component_positions[a["Form_ID"]].append(int(a["Pos"]))
+    for child, positions in component_positions.items():
+        if len(positions) < 2 or sorted(positions) != list(range(1, len(positions) + 1)):
+            raise ValueError(f"component Pos not contiguous for {child}: {positions}")
 
 
 def apply_assignments(
@@ -349,6 +382,31 @@ def apply_assignments(
                 if not (e["Child_ID"] == form_id and e["Parent_ID"] == etymon_id and e["Rank"] != "1")
             ]
             changed += before - len(edges)
+            continue
+        if kind in {"derived", "component"}:
+            # Derivations are non-attestation edges, so do not put them in the
+            # reflex/loan rank-1 index or replace an unrelated ancestry edge.
+            match = next((e for e in edges if
+                e["Child_ID"] == form_id and e["Parent_ID"] == etymon_id
+                and e["Kind"] == kind and e["Rank"] == rank
+                and e.get("Pos", "") == assignment.get("Pos", "")), None)
+            if match is None:
+                edges.append(dict(
+                    Child_ID=form_id, Parent_ID=etymon_id, Kind=kind, Rank=rank,
+                    Pos=assignment.get("Pos", ""), Source=assignment.get("Source", ""),
+                    Note=assignment.get("Notes", ""),
+                ))
+                changed += 1
+            else:
+                values = dict(Source=assignment.get("Source", ""),
+                              Note=assignment.get("Notes", ""))
+                if any(match.get(k, "") != v for k, v in values.items()):
+                    match.update(values)
+                    changed += 1
+            row = by_form.get(form_id)
+            if rank == "1" and row is not None and row.get("Status") in ("unlinked", "entry"):
+                row["Status"] = ""
+                changed += 1
             continue
         if rank == "1":
             existing = rank1_by_child.get(form_id)
