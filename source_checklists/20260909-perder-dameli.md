@@ -4,9 +4,9 @@
 - Canonical checklist SHA-256: `23516ba5c7caeaa5310f6a32d92b86e4b9ae5e4479e792926b61dd0689129f05`
 - Source-type addenda: Dictionary or glossary, Survey wordlists or comparative tables, Etymological/comparative source
 - Installed rows: 1856
-- Compiled rows carrying this unit's citation keys: 1856
+- Compiled rows carrying this unit's citation keys: 1864
 - Input rows with checked grammatical evidence: 1307
-- Compiled rows with canonical grammatical tags: 1307
+- Compiled rows with canonical grammatical tags: 1315
 - Source keys: cacopardo2008dameli, morgenstierne1942dameli, perder2013dameli
 - Full-source state: 1,856 lexical records installed from 3,398 audited source units; source review and fresh visual sample complete
 
@@ -17,7 +17,7 @@
 - [x] 3. Plan the installed files and identifiers — 1856 unique immutable Entry_Key values
 - [x] 4. Model languages and dialects before emitting forms — 1 input language/lect IDs; registry gaps: none
 - [x] 5. Emit the rich import schema — row widths {'15': 1856}; blank forms 0
-- [x] 6. Parse structured linguistic information — 1307 input rows carry checked grammatical evidence; 1307 compiled rows carry canonical grammatical tags
+- [x] 6. Parse structured linguistic information — 1307 input rows carry checked grammatical evidence; 1315 compiled rows carry canonical grammatical tags
 - [x] 7. Build and verify the sound profile — profile route: conversion/perder-dameli.txt; replacement characters in input forms: 0
 - [x] 8. Parse references and provenance — unresolved keys: none
 - [x] 9. Model etymology and graph relations conservatively — covered by tests/test_edges.py and compiled edge invariants
@@ -29,7 +29,7 @@
 
 ## Review summary
 
-- Counts: 1856 installed records; 1856 compiled citation attestations.
+- Counts: 1856 installed records; 1864 compiled citation attestations.
 - Exclusions: 522 audit-only units: affixes, phoneme inventories, non-Dameli comparanda, rejected forms, unglossed/repeated fragments and joint citations split into explicit children.
 - Unresolved cases: source-questioned glosses and historical numeral interpretation, tentative donor claims and four independently unglossed conjunct complements are retained with typed audit reasons.
 - Transcription: source Orientalist transcription preserved as Original; only separately bracketed source IPA in Phonemic; 75-rule perder-dameli profile retains tone, nasality, length and source segmental distinctions.

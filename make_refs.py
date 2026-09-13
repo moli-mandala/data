@@ -153,7 +153,8 @@ def create_short_ref(entry):
         year = "?"
     if authors and year:
         fa = authors[0]
-        first_letter = fa.last_names[0][0].upper() if fa.last_names else fa.first()[0].upper()
+        surname = fa.last_names[0] if fa.last_names else fa.first()
+        first_letter = surname.lstrip("{")[0].upper()
         year = year.replace("--", "—")
         return f"{first_letter}{year}"
     return "?"

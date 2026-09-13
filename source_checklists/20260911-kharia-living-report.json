@@ -1,0 +1,30 @@
+{
+  "source": "living-kharia2026",
+  "snapshot_url": "https://snapshots.livingdictionaries.app/dictionaries/kharia.db.gz",
+  "sqlite_sha256": "c0bf44b14565a019de565ca82b45e01da177f2453cda00c460428acaa22ea3d2",
+  "expected_articles": 452,
+  "proposed_rows": 521,
+  "native_only_rows": 6,
+  "variant_rows": 68,
+  "installed_rows": 521,
+  "installation_ready": false,
+  "permission": "User confirmed all selected-source reuse permissions on 2026-09-11",
+  "source_dialects": {
+    "Dhelki/Dudh": 441,
+    "Dhelki": 2,
+    "Dudh": 3
+  },
+  "excluded_material": "438 audio records, 69 photographs, speaker metadata, and 3 example sentences are not lexical headword rows; no media files fetched",
+  "deferred_gates": [
+    "repository-wide-full-build-and-test-failures",
+    "uncompressed-size-warning"
+  ],
+  "validation": {
+    "focused_passed": 52,
+    "full_passed": 1737,
+    "full_failed": 31,
+    "full_skipped": 18,
+    "browser": "Source, variants, native-only, both dialect filters and ELEPHANT concept checked against isolated DB",
+    "complete": false
+  }
+}

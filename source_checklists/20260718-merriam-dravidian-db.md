@@ -12,7 +12,7 @@
 ## Retrospective gate assessment
 
 - [x] 1. Establish the source and scope — source keys: krishnamurti, merriam2026dravidiandb, starostin2006dravidian; 6672 installed records
-- [x] 2. Choose the extraction path — importer/raw route: data/other/forms/raw_data/merriam_dravidian_db.py
+- [x] 2. Choose the extraction path — importer/raw route: data/other/forms/raw_data/ia_dravidian.py, data/other/forms/raw_data/merriam_dravidian_db.py
 - [x] 3. Plan the installed files and identifiers — 6672 unique immutable Entry_Key values
 - [x] 4. Model languages and dialects before emitting forms — 7 input language/lect IDs; registry gaps: none
 - [x] 5. Emit the rich import schema — row widths {'15': 6672}; blank forms 0
@@ -21,7 +21,7 @@
 - [x] 8. Parse references and provenance — unresolved keys: none
 - [x] 9. Model etymology and graph relations conservatively — covered by tests/test_edges.py and compiled edge invariants
 - [x] 10. Produce a complete audit trail — audit: source_checklists/installed-record-audit.csv.gz
-- [x] 11. Add focused regression tests — tests: tests/test_merriam_dravidian_db.py, tests/test_source_checklists.py
+- [x] 11. Add focused regression tests — tests: tests/test_ia_dravidian.py, tests/test_merriam_dravidian_db.py, tests/test_source_checklists.py
 - [ ] 12. Install and run the full data pipeline — pending final repository-wide make all and full-suite validation for this review
 - [x] 13. Browser database refresh and inspection (user-triggered) — deferred by standing policy; refresh and browser QA run only when the user requests them
 - [x] 14. Document, review, and ship only when requested — this source-specific checklist is the durable review record; shipping is not requested

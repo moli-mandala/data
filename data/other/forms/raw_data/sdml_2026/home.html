@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Survey of Dialects of Marathi Language</title>
+        <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+            <META HTTP-EQUIV="Expires" CONTENT="-1">
+        <meta name="keywords" content=" मराठीच्  स्े्ण ">
+        <meta name="description" content="Survey of Dialects of the Marathi Language">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
+        <link rel="stylesheet" type="text/css" href="stylesheets/styles.css?1"/>
+        <link rel="stylesheet" type="text/css" href="stylesheets/d3-tip.css"/>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/owl.carousel@2.3.4/dist/assets/owl.carousel.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/owl.carousel@2.3.4/dist/assets/owl.theme.default.min.css">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+        
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <!--<script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>-->
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.2/howler.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+        <!--<script src="https://cdn.jsdelivr.net/gh/emn178/chartjs-plugin-labels/src/chartjs-plugin-labels.js"></script>-->
+        <script src="https://d3js.org/d3.v4.js"></script>
+        <script src="/libraries/d3-tip.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script>
+        <script src="/libraries/rough.js"></script>
+
+        <script src="javascript/index.js?1.21"></script>
+        <script src="csv/data.js"></script>
+        <script src="javascript/map/makeD3map.js"></script>
+        <script src="libraries/village-time.js"></script>
+        <!-- <script src="javascript/map/map1.js"></script> -->
+        <!-- <script src="javascript/map/landingmap.js"></script> -->
+        <script src="javascript/map/tool_tip_text.js"></script>
+        <script src="javascript/map/setFrequencyColor.js"></script>
+        <script src="javascript/howler/index.js"></script>
+        <script src="javascript/chart/index.js"></script>
+        <script src="javascript/map/moreInfo.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/owl.carousel@2.3.4/dist/owl.carousel.min.js"></script>
+        <link rel="shortcut icon" href="images/favicon.ico">
+        
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131476464-8"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-131476464-8');
+        </script>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-254LB9QEPY"></script>
+	<script>
+  		window.dataLayer = window.dataLayer || [];
+  		function gtag(){dataLayer.push(arguments);}
+  		gtag('js', new Date());
+  		gtag('config', 'G-254LB9QEPY');
+	</script>
+	
+	<script>
+	$(document).ready(function(){
+	    console.log('Custom JS+sb23');
+        $('.left-navbar a[href="/en"]').click(function(e){
+            e.preventDefault();
+            var href = location.href.replace('_mr','');
+            href = href.replace('mr','en');
+
+            location.href = href;
+            console.log(href+'sb11');
+        });
+
+        $('.left-navbar a[href="/mr"]').click(function(e){
+            e.preventDefault();
+            var href = location.href;
+            if(href.indexOf('en') != -1){
+                href.replace('en','mr');
+            }
+
+            if(href.indexOf('?district=') != -1){
+                href = href.replace('features', 'features_mr');
+            }
+
+            if(href.indexOf('mr') == -1){
+                href = href+'_mr';
+            }
+
+            location.href = href;
+            console.log(href+'sb12');
+        });
+        
+        //Fix Notes (24th Nov 2023)
+        $('#concept').on('change', function(){
+        	var title, desc, url;
+        	var choice = $('input[name="choice"]:checked').val();
+            if(choice == 'grammar'){
+              var feature = $('#concept').closest('.dropdown').find('.text').text();
+              if(feature != 'Concepts' && feature != null && feature != ''){
+              	$.post('/api/', {getNote:1, feature:feature, language:'english'}, function(data){
+              		if(data != ''){
+              			data = $.parseJSON(data);
+                		title 	= data['title'];
+                		desc 	= data['description'];
+                		url 	= data['url'];
+		                
+                		setTimeout(function(){
+			                $('#grammermain > h1').text(title);
+			                $('#grammernew').html(`<p style="background-color:#fff;text-align:left;padding:5px;">
+			                <storng>`+desc+`</storng></p>
+			                <div>
+			                <a style="color:#fff; position: relative;bottom: 10px;" href="`+url+`">Download Note</a>
+			                </div>
+			                `);
+			                $('#grammermain').show();
+                		},500);
+              		}
+                });
+              	
+              }  
+            }	
+        });
+	});
+	</script>
+    </head>
+    <body>
+        <script>
+            function openMobileNav(){
+                document.getElementById("mobile-navbar").style.width = "80%";
+                document.getElementById("mobile-navbar-nav").style.display = "block";
+
+            }
+            function closeMobileNav(){
+                document.getElementById("mobile-navbar").style.width = "0";
+                document.getElementById("mobile-navbar-nav").style.display = "none";
+
+            }
+        </script>
+        <style>
+            @media only screen and (min-width: 800px) {
+                .breadcrumb{
+                    display: none;
+                }
+            }
+			.map_legend{display:none!important;}
+			.image_view-button {
+    align-items: center;
+    appearance: none;
+    background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%)!important;
+    border: 0;
+    border-radius: 6px;
+    box-shadow: rgb(45 35 66 / 40%) 0 2px 4px, rgb(45 35 66 / 30%) 0 7px 13px -3px, rgb(58 65 111 / 50%) 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: #fff!important;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: "JetBrains Mono",monospace;
+    height: 48px;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 16px;
+    padding-right: 16px;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow .15s,transform .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow,transform;
+    font-size: 18px;
+}
+        </style>
+    <div style="background-image:url('images/banner_08.jpg'); display: flex; flex-direction: row;" >
+        <button class="breadcrumb" onclick="openMobileNav()" style="background: none; border: 2px solid white; padding: 22px; color: white;height: 80px;padding: 22px;color: white;height: 80px;margin: 25px 5px;"><i class="fas fa-bars fa-2x"></i></button>
+        <div><a href="/">
+            <h1 style="color: white; margin: 10px 0 0 20px; padding-bottom: 10px">  मराठी बोलींचे सर्वेक्षण</h1>
+            <h1 style="color: white;  margin: 0 0 0 20px; padding-top: 10px;">Survey of Dialects of the Marathi Language</h1>
+        </a>
+        </div>
+        
+    </div>
+    <!-- <img style="display: block; width: 100%" src="images/banner_04.jpg" /> -->
+    
+
+<script src="javascript/map/landingmap.js"></script>
+<style>
+  .desktop-navbar{
+      display: none;
+    }
+  @media only screen and (min-width: 800px) {
+    .desktop-navbar{
+      display: block;
+    }
+  }
+
+  
+  .mobile-navbar{
+    
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background: #011527;
+    transition: 0.5s;
+    z-index: 999;
+    box-shadow: 6px 0px 17px 0px #011527;
+  }
+  
+  .mobile-navbar-nav{
+    display: none;
+    transition: 0.7s;
+  }
+
+  @media only screen and (min-width: 800px) {
+    .mobile-navbar{
+      display: none;
+    }
+    .mobile-navbar-nav{
+      display: none;
+    }
+  }
+
+  .mobile-navbar nav ul{
+    list-style-type: none;
+  }
+  .mobile-navbar nav ul li{
+    padding: 10px 0;
+  }
+  .mobile-navbar nav ul li a{
+    color: #fff;
+    font-size: 18px;
+  }
+
+</style>
+
+<div class="desktop-navbar">
+  <div class="left-navbar">
+    &nbsp;
+    <a class='item' href="/en">
+    <span>English</span>
+    </a>
+  
+
+  <a><span>|</span></a>
+
+    <a class='item' href="/mr">
+    <span>मराठी</span>
+    </a>
+
+</div>
+
+<style>
+  .dropbtn {
+    border: none;
+    background-color: #011527;
+    padding: 0.75em 1em;
+    border: none;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    padding: 0.75em 1em;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    width: 220px;
+    position: absolute;
+    left: -30px;
+    background-color: #011527;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 9;
+  }
+  
+  .dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {border-left: 2.5px solid white;border-bottom: none;}
+  
+  .dropdown:hover .dropdown-content {display: block;}
+  
+  .dropdown:hover .dropbtn {background-color: #017EE8;}
+  </style>
+
+<div class="navbar">
+
+  
+          <a class="item" data-active="home" href="/en">
+          <span>Home</span>
+          </a>
+        
+      
+
+
+    <div class="dropdown">
+  
+      <button class="dropbtn">About Project</button>
+      <div class="dropdown-content">
+        
+          <a class="item" data-active="about" href="/about">
+          <span>About</span>
+          </a>
+        
+		
+		
+        
+        
+          <a class="item" data-active="methodology" href="/methodology">
+          <span>Project Methodology</span>
+          </a>
+        
+
+        
+          <a class="item" data-active="stimulus-kit" href="/stimulus-kit">
+          <span>Stimulus Kit</span>
+          </a>
+        
+  
+        
+          <a class="item" data-active="previous-projects" href="/previous-projects">
+          <span>Previous Dialect Surveys of Marathi</span>
+          </a>
+        
+  
+        
+          <a class="item" data-active="our-team" href="/our-team">
+          <span>Project Team</span>
+          </a>
+        
+
+        
+          <a class="item" data-active="committee" href="/committee">
+          <span>Project Committees</span>
+          </a>
+        
+
+        
+          <a class="item" data-active="conference" href="/conference-presentations">
+          <span>Selected Conference Presentations</span>
+          </a>
+        
+        
+          <a class="item" data-active="mediacover" href="/mediacover">
+          <span>Media Coverage</span>
+          </a>
+        
+        
+          <a class="item" data-active="gallery" href="/photo-gallery">
+          <span>Gallery</span>
+          </a>
+        
+
+          </div>
+      </div>
+      
+        <a class="item" data-active="features" href="/features">
+        <span>Linguistic Features</span>
+        </a>
+      
+  
+    
+    <!-- <a class="item" href="http://demo3.testbharati.com/">
+      <span>Blog</span>
+    </a>
+    
+    
+
+  
+      <a class="item" data-active="data" href="/data">
+      <span>Data</span>
+      </a>
+     -->
+
+    
+
+<div class="dropdown">
+  
+  <button class="dropbtn">Community Voices</button>
+  <div class="dropdown-content">
+    
+    
+      <a class="item" data-active="linguist-narrations" href="/linguist-narrations">
+      <span>For Linguists</span>
+      </a>
+    
+
+    
+      <a class="item" data-active="layperson-narrations" href="/layperson-narrations">
+      <span>For Others</span>
+      </a>
+    
+
+  
+ 
+    </div>
+  </div>
+
+    <!-- 
+      <a class="item" data-active="photos" href="/photos">
+      <span>Data</span>
+      </a>
+    
+    
+    
+      <a class="item" data-active="photos" href="/photos">
+      <span>Gallery</span>
+      </a>
+     -->
+
+    
+      <a class="item" data-active="download-data" href="/download-data">
+      <span>Download Data</span>
+      </a>
+    
+
+    
+      <a class="item" data-active="blog" href="/blog">
+      <span>Blog</span>
+      </a>
+    
+    
+    
+      <a class="item" data-active="contact" href="/contact">
+      <span>Contact Us</span>
+      </a>
+    
+    
+    
+    
+    
+ </div>
+
+</div>
+
+<div class="mobile-navbar" id="mobile-navbar">
+  <nav id="mobile-navbar-nav" class="mobile-navbar-nav">
+    <button style="background: none;border:none;color: #fff;padding: 10px; float:right" onclick="closeMobileNav()"><i class="fas fa-times fa-2x"></i></button>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="#">About Project</a>
+        <ul>
+          <li><a data-active="about" href="/about">About</a></li>
+          <li><a data-active="methodology" href="/methodology">Methodology</a></li>
+          <li><a data-active="stimulus-kit" href="/stimulus-kit">Stimulus Kit</a></li>
+          <li><a data-active="previous-projects" href="/previous-projects">Previous Dialect Surveys of Marathi </a></li>
+          <li><a data-active="our-team" href="/our-team">Project Team</a></li>
+          <li><a data-active="committee" href="/project-committee">Project Committees</a></li>
+          <li><a data-active="conference" href="/conference-presentations">Selected conference presentations</a></li>
+          <li><a data-active="about" href="/mediacover">Media Coverage</a></li>
+		  <li><a data-active="gallery" href="/photo-gallery">Gallery</a></li>
+
+        </ul>
+      </li>
+      <li><a data-active="features" href="/features">Features</a></li>
+      <li><a href="">Community Voices</a>
+        <ul>
+          <li><a data-active="linguist-narrations" href="/linguist-narrations">For Linguists</a></li>
+
+          <li><a data-active="layperson-narrations" href="/layperson-narrations">For Others</a></li>
+        </ul>
+      </li>
+      <li><a href="/download-data">Data Download</a></li>
+      <!-- <li><a href="">Gallery</a></li> -->
+      <li><a data-active="contact" href="/contact">Contact Us</a></li>
+
+      <li style="text-align: center;margin: 40px;border-bottom: 1px white solid;">
+        <a href="/en">
+          <span>English</span>
+        </a> 
+        <a><span>&nbsp|&nbsp</span></a> 
+        <a href="/mr">
+          <span>रठ</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+
+<div><marquee direction="left" style="font-size: 18px;/* border:rgb(220, 20, 20) 2px SOLID; */height: 30px;/* text-align: center; */line-height: 1.5;color: #FF004D;">
+
+    This website is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License.<a class="item active" data-active="features" href=" https://creativecommons.org/licenses/by-sa/4.0/"> https://creativecommons.org/licenses/by-sa/4.0/</a></marquee></div>
+
+<div class="wrapper">
+    <div class="mainflex">
+    <div class="map">
+        <svg id="landing" style="margin-top: 5px; max-height:85vh" viewBox="0 0 500 500"></svg>
+        <!--<marquee direction="left" 
+    style="border:rgb(220, 20, 20) 2px SOLID">
+
+The survey data on this website (including audio recordings, lexical and grammar analysis) are available free and open source under the Creative Commons Attribution Share Alike 4.0 International Licence. For details of the licence click https://creativecommons.org/licenses/by-sa/4.0/</marquee>-->
+    </div>
+</div>
+    
+    <div class="asideflex aside1flex" >
+    <div class="info_box" style="margin-top: 6rem;">
+    	<h1>About the project</h1>
+    	<div class="content">    		
+			<p>SDML is a joint project which is designed to create a digital database of contemporary regional variation in the Marathi spoken in Maharashtra state.</p>
+			<p><a class="item active" data-active="about" href="/about">Read more...</a></p>
+    	</div>
+    </div>
+
+    <div class="info_box">
+    	<h1>How to cite the project website</h1>
+    	<div class="content">
+    		<p>Please cite the general website as:</p>
+			<p>Survey of Dialects of the Marathi Language Online. Department of Linguistics, Deccan College (Deemed University), Pune and Rajya Marathi Vikas Sanstha, Mumbai (Available online at https://wwww.sdml.ac.in, OR https://www.marathidialectsurvey.ac.in. Accessed on DD.MM.YYYY)
+			</p>
+    	</div>
+        
+    </div>
+    
+     <!-- <div class="info_box">
+    	<h1>corresponding tab</h1>
+    	<div class="content">
+        <a class="item active" data-active="features" target="_blank" href="/corresponding-tab">For More infomration click here</a>
+			
+    	</div>
+    </div>-->
+</div>
+<style type="text/css">
+	.mainflex{
+		margin-left: 0px;
+	}
+	.mainflex #landing{
+		display: block;
+		margin:auto auto;
+	}
+	.aside2flex {
+	    flex: 1.5 0px;
+	}
+	.info_box{
+		background-color: #3285c5;
+		color:#011527;
+		font-family: Ubuntu;
+		margin-bottom: 30px !important;
+		border-top-right-radius: 10px;
+		border-top-left-radius: 10px;
+	}
+	.info_box a{
+		color: #011527
+	}
+	.info_box h1{
+		font-size: 12px;
+		color:white;
+		padding:10px;
+		margin-bottom: 0px;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		border-top-right-radius: 10px;
+		border-top-left-radius: 10px;
+	}
+	.info_box .content{
+		padding:15px;
+		font-size: 14px;
+		background-color:white;
+		line-height: 20px;
+		text-align: center;
+	}
+	.asideflex .info_box:last-of-type{
+		margin-bottom: 0px !important;
+	}
+</style>
+
+    
+<div class="asideflex aside2flex">
+    <!--Add the Note 07/02/24-->
+    <div class="info_box3">
+    	<h1>NOTE</h1>
+    	<div class="content">
+			<p>N.B. Maps on this website are best viewed on a computer desktop</p>
+    	</div>
+    </div>
+     <!--Add the Note 07/02/24-->
+
+    <div class="info_box2" style="margin-top: 2rem;">
+    	<h1>Today's Word</h1>
+    	<div class="content">
+			<!--<p>Today's Special Word: काल-आज- (yesterday – today  tomorrow) </p>
+			<p>भाेतील निरश संकल्नंपकी दवच दशक अाऱया चा दवस, लून ेला
+                            दिव आि यणरा द ा संल्ांाठ राण रठीमधय अनक्े कल, ज 
+                            या सा तिह भे आढळन ो..</p>
+			<p><a class="item active" data-active="features" href="/blog">Click here to find out more...</a></p>-->
+           <div id="contentnew"></div>
+            <script>
+                     $.ajax({
+                          // Our  url to make request to send email 
+                          url:'../blogs/blog.php?id=en',
+
+                          // Type of Request
+                          type: "GET",
+                          // Function to call when to
+                          // request is ok 
+                          success: function (data) {
+                             //alert(data);
+                             document.getElementById('contentnew').innerHTML=data;
+                          },
+
+                          // Error handling 
+                          error: function (error) {
+                              alert('error');
+                              console.log(`Error ${error}`);
+                          }
+                      });
+                    </script>
+    	</div>
+    </div>
+
+    <div class="info_box2">
+    	<h1>HOW TO USE THE WEBSITE</h1>
+    	<div class="content">
+			<p><a class="item active" data-active="features" href="/user-manual">Click here for User manual</a></p>
+    	</div>
+    </div>
+   <!-- <div class="info_box">
+       
+			<p><a class="item active" target="_blank" href="/item_images/1.jpg">Google Analytics - Visitor details</a></p>
+    	
+    </div>-->
+</div>
+<style type="text/css">
+	.mainflex{
+		margin-left: 0px;
+	}
+	.mainflex #landing{
+		display: block;
+		margin:auto auto;
+	}
+	.aside2flex {
+	    flex: 1.5 0px;
+	}
+    
+	.info_box2{
+		background-color: #3285c5;
+		color:#011527;
+		font-family: Ubuntu;
+		margin-bottom: 30px !important;
+		border-top-right-radius: 10px;
+		border-top-left-radius: 10px;
+	}
+	.info_box2 a{
+		color: #011527
+	}
+	.info_box2 h1{
+		font-size: 12px;
+		color:white;
+		padding:10px;
+		margin-bottom: 0px;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		border-top-right-radius: 10px;
+		border-top-left-radius: 10px;
+	}
+	.info_box2 .content{
+		padding:15px;
+		font-size: 14px;
+		background-color:white;
+		line-height: 20px;
+		text-align: center;
+	}
+	
+	
+	.info_box3{
+		background-color: #3285c5;
+		color:#011527;
+		font-family: Ubuntu;
+		margin-top: 6rem;
+		margin-bottom: 30px !important;
+		border-top-right-radius: 10px;
+		border-top-left-radius: 10px;
+	}
+	.info_box3 a{
+		color: #011527
+	}
+	.info_box3 h1{
+		font-size: 12px;
+		color:white;
+		padding:10px;
+		margin-bottom: 0px;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		border-top-right-radius: 10px;
+		border-top-left-radius: 10px;
+	}
+	.info_box3 .content{
+		padding:15px;
+		font-size: 14px;
+		background-color:white;
+		line-height: 20px;
+		text-align: center;
+	}
+	.asideflex .info_box:last-of-type{
+		margin-bottom: 0px !important;
+	}
+</style>
+</div>
+
+<div class="ui large modal" id="modal">
+    
+</div>
+
+
+<div class="ui bottom menu footbar" style="margin: 0;border-radius: 0;">
+          
+          <div style="display: flex; width: 100%;padding: 1em;">
+            <div>
+          	<a href="/sitemap" style="display: flex;color:#fff">Sitemap</a>
+          </div>
+            <div style=" display: flex; align-items: center;justify-content: center;width: 70%; border-right: 2px solid white;padding: 0 20px"><!-- © COPYRIGHT: 2024 Deccan College (Deemed University), Pune and Rajya Marathi Vikas Sanstha, Mumbai.--></div>
+            <!-- <div style=" display: flex; align-items: center;">
+                <a style="color:white"><i class="big instagram icon"></i></a>
+                <a style="color:white"><i class="big facebook icon"></i></a>
+                <a style="color:white"><i class="big twitter icon"></i></a>
+                <a style="color:white"><i class="big youtube icon"></i></a>
+                <a style="color:white"><i class="big pinterest icon"></i></a>
+            </div> -->
+            <div style="width: 30%;justify-content: space-around;display: flex;margin: auto;max-width: 300px;">
+                <!-- <a style="background-image: url(/images/Logo_02.jpg);"></a>
+                <a style="background-image: url(/images/Logo_01.jpg);"></a> -->
+
+                <img class="footer-logo" src="/images/Logo_01.jpg"/>
+                <img class="footer-logo" src="/images/Logo_02.png"/>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+
+    </body>
+</html>
+

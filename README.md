@@ -4,6 +4,13 @@
 
 This is a CLDF database for the Jambu application, containing historical linguistic data for many languages of South Asia. It also contains the underlying raw data and scripts used to produce/update the CLDF database.
 
+Zoller (2023), *Linguistic data I–III* (pp. 519–1035), contributes 17,754 resolved
+attestations in 328 languages after separating its West Pahari varieties. The importer decodes the PDF's TeX phonetic fonts,
+preserves heterogeneous source transcriptions, and audits all 4,377 source records.
+See the [source package](data/other/forms/raw_data/zoller_2023/README.md) and
+[validation review](source_checklists/20260913-zoller-review.md) for scope, exclusions,
+language decisions and reproducible extraction.
+
 ## How it works
 
 Before doing things, install dependencies in a fresh environment with `pip install -r requirements.txt` (with Python 3.9.12).
@@ -1081,3 +1088,225 @@ not a full dictionary import. Uncertain transmission remains qualified.
 See `source_checklists/20260910-dameli-donors.md` for source scope, excluded variants,
 stable IDs, audit and validation limits: corrected full build blocked by disk space,
 global tests not clean, original survey-page checks outstanding. No browser DB refresh.
+
+### Mewari-reference donor supplement (2026-09-11)
+
+`data/other/params/raw_data/mewari_donors.py` reproduces 13 selected dictionary
+heads and audits 9 existing-head reuses. Platts (1884), Monier-Williams (1899),
+and one Hindi cabbage cell in the CSTT agriculture glossary supply the lexical
+evidence. The adjacent audit preserves native text, original spellings, sense
+exclusions, and explicit transcription choices. This follows the curated
+parameter-head pattern used for Pashto donors; no new survey attestations or
+dialects are fabricated. The authorized overlay adds 94 links for 88 records
+from reference `mewari`, including borrowed Sanskrit saptāha. Ambiguous responses
+remain unlinked. See `source_checklists/20260911-mewari-donors.md` for validation.
+
+### Mewari regional families (2026-09-11)
+
+`data/other/params/raw_data/mewari_families.py` reproduces seven user-reviewed
+regional lexical-family heads from existing Mewari and Marwari records. The
+adjacent audit preserves all members and stable IDs; `data/etymologies.csv`
+explains each grouping. Batch 008 saves 157 links on 151 records. See
+`source_checklists/20260911-mewari-families.md` for scope and data-only validation.
+Builds and browser refreshes were excluded by user instruction.
+
+### Mewari batch 009 heads (2026-09-11)
+
+`data/other/params/raw_data/mewari_batch009_heads.py` reproduces three regional
+family heads, one Sanskrit donor and one extracted borrowed component. Its
+adjacent audit and `source_checklists/20260911-mewari-batch009-heads.md` preserve
+provenance and data-only validation. Batch 009 saves 54 links on 44 survey records
+and one component node; one survey record remains only partly analysed.
+No build or browser refresh was run.
+
+
+### Nirmaan Mewari dictionary (January 2018)
+
+The new `nirmaan2018mewari` source is prepared in
+`data/other/forms/20260911-nirmaan-mewari.csv`: 6,406 articles become 6,535 numbered-sense/
+pronunciation rows and 484 source-asserted variant links. It is distinct from the existing
+`mewari` survey. `raw_data/nirmaan_mewari.py` extracts pinned PDF font spans without OCR;
+its audit retains raw text, IPA, Devanagari, senses and unresolved relations. A dedicated
+IPA-to-house profile, Kapasan-area Mewari dialect, bibliography record, regression fixtures
+and fresh seeded 20-entry visual audit accompany the source. Twenty-seven articles retain
+unresolved variant/compound scope; no new etymologies are inferred. The all-rights-reserved
+PDF is not bundled, and no redistribution licence has been established.
+
+The user subsequently authorized a **local database rebuild**. Compilation and browser DB
+staging succeeded; all 6,535 dictionary IDs and 484 variant links were verified, with no old
+form IDs removed. The compressed artifact is 43.86 MB (cache version 31), and representative
+source, entry, variant and dialect views passed browser QA. Broad test-suite exceptions
+remain documented in the review; nothing was deployed.
+See [the ingestion review](source_checklists/20260911-nirmaan-mewari-review.md) for counts,
+transcription decisions, focused validation, pre-existing dialect-test failures, rights status,
+unresolved cases and reproducible commands.
+
+## Seligmann and Seligmann's Vedda vocabulary (1911)
+
+`data/other/forms/20260911-seligmann-vedda.csv` installs 502 lexical forms from all
+185 numbered articles on pp. 424–450 of *The Veddas* (Cambridge, 1911), including
+numbered subsenses and explicit supplementary attestations. The source package
+`data/other/forms/raw_data/seligmann_vedda_1911/` pins the scan hash, preserves the
+original page OCR, and stores an image-checked transcription. Reproduce a preview
+with `python3 data/other/forms/raw_data/seligmann_vedda.py`; add `--install` to write
+the canonical CSV and per-form JSONL audit, or `--sample 19110911` for the seeded
+audit. This needs no network or PDF download once the checked package is present.
+
+The dedicated sound profile preserves the source's broad field transcription,
+including its occasional diacritics; there is no independent IPA or native-script
+field. Vedda is registered separately (`vedd1240`, existing `Other` clade), with
+11 source-locality dialects. Historical coordinates remain blank. The consultant
+Wannaku of Uniche remains provenance. Forty-four forms carry an unresolved `T.`
+label (the abbreviation key says Tamil, while locality lists also use `Tk.` for
+Tamankaduwa); these are not silently remapped. One source-questioned spelling and
+one disputed bee identification also carry typed uncertainty in the audit. The
+comparative etymological commentary is preserved in the raw evidence, but this
+lexical ingest makes no ancestry or borrowing assertions. Comparative-language
+forms, narrative chapters, songs and the following Kaele-base appendix are outside
+scope. See `source_checklists/20260911-seligmann-vedda-review.md` for validation.
+
+
+### Western dialect survey vocabularies (2026-09-11)
+
+Added the Davar/Dungar columns of *Linguistic Survey of India: Dadra and Nagar
+Haveli* (2003), plus Ghatage's *Konkani of South Kanara* (1963) and *Kudali* (1965).
+The three rich CSVs contain 816, 1,389, and 1,902 forms respectively, all unlinked
+lexical attestations. Davar uses Bhili; Dungar introduces canonical Dungar Varli;
+the Ghatage varieties use existing Konkani/Marathi with named dialect tags.
+Source-defined homographs and every page/item locator survive through stable keys.
+
+Varli was manually transcribed from eight comparative tables; comparison columns
+and blank targets are explicitly audited. Ghatage uses pinned, deskewed 300-DPI
+OCR with `ocr-review uncertain` on every unreviewed form; 50 Konkani and 133 Kudali
+unresolved/nonlexical candidates remain audit-only. These are not fully proofread
+transcriptions. Image audits and corrections are recorded separately from the
+parser's zero-error structural sample. See
+[`source_checklists/20260911-western-surveys-review.md`](source_checklists/20260911-western-surveys-review.md)
+and [`ghatage_western/README.md`](data/other/forms/raw_data/ghatage_western/README.md)
+for reproduction, reference/licence provenance, transcription decisions, and
+outstanding OCR review. The browser database is refreshed only on request.
+
+### Kharia Living Dictionary (2026-09-11)
+
+`20260911-kharia-living.csv` imports all 452 upstream entries from the public
+2026-08-20 Living Dictionaries SQLite snapshot, yielding 521 sense/variant rows.
+`raw_data/kharia_living.py` pins the SQLite hash and emits a complete per-entry
+audit, preserving upstream entry/sense IDs, native spelling, phonetic forms,
+multilingual glosses and dialect evidence. Reuse permission was confirmed by the
+user. This is distinct from Peterson's 2009 lexicon. Dhelki/Dudh labels map to
+registered dialects beneath `kh`; unknown dialect coordinates remain blank.
+The preservation profile retains source breves/glottalization rather than
+inventing a phonological interpretation. Six entries lack pronunciation and
+remain marked native-script attestations. Printed phonetic alternatives produce
+68 variant links; no ancestry is inferred. See the source checklist review for
+coverage, exclusions, audit decisions and validation status.
+
+### Approved Malvi, Nimadi and Bagheli etymologies (2026-09-11)
+
+All 757 reviewed proposals are saved in the etymology overlay: 3,777 links on
+3,731 survey records. At the user's direction, 223 Perso-Arabic loan links
+are nested under Persian/Arabic etymological heads with transmission left
+unspecified. A nine-head dictionary supplement resolves the missing heads;
+`data/other/params/raw_data/central_surveys_donors.py` reproduces its dated
+CSV from the adjacent audit. Existing Hindi heads remain unchanged.
+The isolated complete compilation preserves all approved records and links;
+validation exceptions and the unaccepted held records are documented in
+[the acceptance report](curation/etymology-lab/central-surveys-20260911/ACCEPTED.md)
+and [source checklist](source_checklists/20260911-central-surveys-donors.md).
+The subsequent user-requested shared CLDF/browser rebuild is staged locally as cache version 32. See [rebuild results](curation/etymology-lab/central-surveys-20260911/DB-REBUILD.md).
+
+### SDML online lexical survey
+
+The 2026-09-11 SDML snapshot adds 47,317 Marathi attestations across 269 populated
+village sites (271 source rows) and 73 lexical columns. The importer is
+`data/other/forms/raw_data/sdml.py`; its pinned CC BY-SA 4.0 export, audit, frequencies,
+transcription policy and exclusions are in `data/other/forms/raw_data/sdml_2026/`.
+All responses remain unetymologised. There are 33 excluded ambiguous tokens and 37
+retained unusual-source-symbol forms flagged for review. See the source review for
+build and test results.
+
+### Bajjika and comparative Dravidian datasets (2026-09-11)
+
+`data/other/forms/raw_data/ia_dravidian.py` imports the pinned Bajjika survey
+(Regmi et al. 2014), Lindgren et al.'s Zenodo TSV (2023), and DravLex CLDF.
+The installed files are `20260911-bajjika.csv` (1,208 alternatives from 1,050
+site/concept cells), `20260911-lindgren.csv` (3,754 additional records), and
+`20260911-dravlex.csv` (2,127 records). All 2,127 DravLex records republished by
+Lindgren retain the second publication's IDs and citations without becoming
+independent observations. Complete raw records, language mapping, hashes and
+per-record audits are in `raw_data/ia_dravidian_2026/`.
+Bajjika is extracted from positioned PDF tables without OCR; the Dravidian
+sources retain original transcription and segmented IPA separately. Source
+cognate sets and loan labels are preserved without guessed etymological parents.
+See `source_checklists/20260911-ia-dravidian-review.md` for scope and validation.
+
+### Census comparative lexicons, Danuwar and archived Tharu (2026-09-11)
+
+`data/other/forms/raw_data/census_nepal.py --output /tmp/census-proposal --install`
+reproduces six survey imports from the pinned `census_nepal_2026/` source cells.
+With the original hashed downloads cached, `--extract` reconstructs PDF tables and
+the Tharu XLSX using the bundled OOXML reader. The Census PDFs require structural
+normalization; 148 image-containing cells have manually restored transcriptions.
+
+The batch adds 20,403 records from Tamil Nadu, Uttar Pradesh, Bihar, three regional
+Nepali lists, five Danuwar sites and eight Tharu lists. It reuses 761 exact existing
+Kochila readings with supplemental citations. Source-local IDs, full per-cell
+audits, exclusions, provisional dialect mappings and transcription uncertainties
+are retained. The Census tables contain published gloss inconsistencies and some
+unresolved word-wrap boundaries; affected records are explicitly review-flagged.
+See `source_checklists/20260911-census-nepal-review.md` for scope and validation.
+
+### Additional Census and Nepal surveys (2026-09-11)
+
+`data/other/forms/raw_data/more_surveys.py` ingests the Indo-Aryan/Dravidian comparative
+columns of LSI Jharkhand, Himachal Pradesh, Rajasthan I and West Bengal I, plus Mahato's
+five-site Kisan survey: 18,318 raw installed readings from 17,092 target cells. Cached
+positioned PDF cells, hashes, explicit readings, language maps and per-record audits live
+in `data/other/forms/raw_data/more_surveys_2026/`. Mixed ASCII/IPA transcription uses
+`conversion/more-ascii.txt` and `conversion/more-ipa.txt`; ambiguities are flagged.
+The public Bote and Rajbanshi–Tajpuriya PDFs lack their wordlist appendices, and the Darai
+PDF reproduces the already-ingested Danuwar appendix. These three are excluded with evidence,
+not falsely represented as ingested. See `source_checklists/20260911-more-surveys-review.md`
+for source coverage, omissions, editorial decisions and validation status.
+
+
+### Angika, Majhi, Koraga and Orissa (2026-09-11)
+
+The pinned `data/other/forms/raw_data/selected_surveys.py` importer installs four
+selected sources with `--install`; without that option it stages a review proposal.
+The `selected_surveys_2026/` package contains source URLs/hashes, cached extraction,
+manual collation, per-record JSONL audits, explicit reading decisions, and repeatable
+seeded/targeted crop renderers. Original PDFs and large images remain ignored inputs.
+
+- Regmi (2017), Angika pp. 83–90: 1,050 cells, 1,076 forms, five Nepal sites;
+  exclude two source missing-glyph cells and the English/Nepali controls.
+- Chalise (2014), Majhi pp. 71–77: 1,050 cells, 1,055 forms, five sites;
+  exclude one source missing-glyph cell and controls. Reuse canonical Majhi/Kunauri.
+- Bhat (1971), Koraga pp. 88–118: 1,192 entries, 1,369 forms; reuse Onti, Tappu,
+  Mudu, with four unspecified-lect forms. Exclude grammar examples and the Belari
+  appendix. All 857 candidate short-i glyphs were inspected for plain i versus ɨ.
+- LSI Orissa (2002), comparative vocabulary pp. 192–233: 5,065 cells, 5,713 forms,
+  Standard Oriya/Sambalpuri/Bhatri/Desia/Relli; exclude 21 empty cells and one printed
+  missing-glyph cell. The clear official 300 dpi scan replaces the compressed mirror
+  as OCR input. Other chapters are outside this table ingest.
+
+Installed files are `data/other/forms/20260911-selected-{angika,majhi,koraga,orissa}.csv`.
+The four `conversion/selected-*.txt` profiles convert defensible correspondences;
+ambiguous symbols remain visible in `Original` and are flagged. Comparisons remain
+source prose, with no inferred ancestry or borrowing. Angika and Reli are new base
+languages; survey sites are registered dialects, with no invented point coordinates.
+Gondi and Kui are deliberately excluded from this batch.
+
+All rows retain typed uncertainty. Angika/Majhi/Koraga passed 0/20 seeded checks.
+Orissa remains a legacy OCR source: the latest independent sample found 3/20
+character/noise errors (all corrected), with no row/lect/prompt misalignment. Its
+unreviewed readings are not represented as clean manual transcription. See
+`source_checklists/20260911-selected-surveys-review.md` for audit history, residual
+limitations and full build/test evidence. Routine ingestion does not refresh the
+browser database.
+
+### KEED 2018 and Muduga centralized-vowel examples (2026-09-12)
+
+The Kannada–English Etymological Dictionary (2018 second / first electronic edition, CC BY-NC 4.0) is imported from the canonical ILCAA PDF using glyph IDs and page/font structure, not OCR. Its 28,797 anchors yield 31,250 lexical units plus separately keyed printed variants, paradigms and donors. Native spelling, romanization and IPA remain distinct. Arsenault and Abraham’s Muduga author-preprint Tables 3–19 and glossed prose contribute 91 examples and 18 phonetic realizations (109 rows); the underlying 1,100-word field corpus is not included. The preprint was available as indexed text rather than a downloadable PDF.
+
+Reproduce with `uv run python data/other/forms/raw_data/keed_2018.py --install` and `uv run python data/other/forms/raw_data/muduga_2022.py --install`. The sibling directories contain pinned evidence, complete coverage/record audits and reference/dialect maps. Installed files are `20260912-keed.csv` and `20260912-muduga.csv`. Only source-supported, validated DEDR/CDIAL links and explicit donor/variant/derivation relations are accepted; uncertain or unavailable references remain visible. See [the full review](source_checklists/20260912-keed-muduga-review.md) for transcription, exclusions, unresolved cases and validation.

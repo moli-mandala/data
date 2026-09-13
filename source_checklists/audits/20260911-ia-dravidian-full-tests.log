@@ -1,0 +1,737 @@
+........................................................................ [  3%]
+........................................................................ [  7%]
+....................................FF.................................. [ 11%]
+..............................................................F......... [ 15%]
+.....F..........................................................F.F..... [ 19%]
+.........................F.............................................. [ 23%]
+..............F.......F................................................. [ 27%]
+......s...F......F.F....FFF.F...........................s...........F... [ 31%]
+.............................................................sssssssss.. [ 35%]
+...............................................F........................ [ 39%]
+........................................................................ [ 43%]
+........................................................F............... [ 47%]
+..................F..................................................... [ 51%]
+.........FF..............s.......F.......FF............................. [ 55%]
+.................................................F....F................F [ 59%]
+.......................F.F.............................................. [ 63%]
+...ss................................................................... [ 67%]
+.............................................s.......................... [ 71%]
+........................................................................ [ 75%]
+........................................................................ [ 79%]
+.........................................s.............................. [ 82%]
+..............................s......................................... [ 86%]
+...........................s............................................ [ 90%]
+........................................................................ [ 94%]
+........................................................................ [ 98%]
+.....................F                                                   [100%]
+=================================== FAILURES ===================================
+__________ test_preintegration_artifacts_are_fresh_and_pdf_is_pinned ___________
+
+    def test_preintegration_artifacts_are_fresh_and_pdf_is_pinned() -> None:
+        result = subprocess.run(
+            [sys.executable, str(HERE / "preintegration_audit.py")],
+            check=True,
+            capture_output=True,
+            text=True,
+        )
+        assert "cells=3570" in result.stdout
+        assert "staged_forms=2714" in result.stdout
+        assert "unresolved=0" in result.stdout
+        pdf = pre.pdf_metadata()
+>       assert pdf == {
+            "path": "tmp/pdfs/noira_2015/silesr2015_012.pdf",
+            "bytes": 1676716,
+            "pages": 96,
+            "sha256": pre.PDF_HASH,
+            "title": pre.PDF_TITLE,
+            "author": pre.PDF_AUTHOR,
+            "page_size_points": "612 x 792",
+        }
+E       AssertionError: assert {'author': 'T...2 x 792', ...} == {'author': 'T...ges': 96, ...}
+E         
+E         Omitting 4 identical items, use -vv to show
+E         Differing items:
+E         {'bytes': 2725577} != {'bytes': 1676716}
+E         {'path': 'tmp/pdfs/bhumij_2015/silesr2015_026.pdf'} != {'path': 'tmp/pdfs/noira_2015/silesr2015_012.pdf'}
+E         {'pages': 130} != {'pages': 96}
+E         Left contains 1 more item:
+E         {'page_rotation': 0}
+E         Use -v to get more diff
+
+data/other/forms/raw_data/sil_noira_2015/test_preintegration_contract.py:33: AssertionError
+_____________________ test_frozen_hashes_and_manual_census _____________________
+
+    def test_frozen_hashes_and_manual_census() -> None:
+        rows, audit, forms = pre.verify_frozen_package()
+>       assert len(rows) == len(audit) == 3570
+E       AssertionError: assert 3780 == 3570
+E        +  where 3780 = len([{'Column': 'left', 'Confidence': 'high', 'Dialect_ID': 'bhumij1989-baigodia', 'Disposition': 'target-staged', ...}, {...'Column': 'left', 'Confidence': 'high', 'Dialect_ID': 'bhumij1989-madhupur', 'Disposition': 'target-staged', ...}, ...])
+
+data/other/forms/raw_data/sil_noira_2015/test_preintegration_contract.py:46: AssertionError
+_ test_the_dictionary_self_reference_assignments_all_point_at_live_sub_entries _
+
+    def test_the_dictionary_self_reference_assignments_all_point_at_live_sub_entries():
+        """Guards the corpus against the same capture recurring."""
+        import csv
+        import re
+        from pathlib import Path
+    
+        root = Path(__file__).parents[1]
+        forms_path = root / "cldf/forms.csv"
+        assignments_path = root / "data/etymology-assignments.csv"
+        if not forms_path.exists():
+            return
+        with forms_path.open(encoding="utf-8", newline="") as stream:
+            live = {row["ID"] for row in csv.DictReader(stream)}
+        with assignments_path.open(encoding="utf-8", newline="") as stream:
+            assignments = list(csv.DictReader(stream))
+        captured = [row for row in assignments if is_retired_subentry(row, live)]
+        assert captured == []
+        # Every surviving self-reference names a sub-entry that still exists.
+        self_refs = [
+            row for row in assignments
+            if row["Etymon_ID"]
+            and re.fullmatch(re.escape(row["Etymon_ID"]) + r"-\d+[a-z]*", row["Form_ID"])
+        ]
+>       assert len(self_refs) == 2604
+E       AssertionError: assert 2603 == 2604
+E        +  where 2603 = len([{'Etymon_ID': '10005', 'Form_ID': '10005-2', 'Kind': 'reflex', 'Notes': 'Restored from legacy NeoJambu origin_lemma_i...: '10078', 'Form_ID': '10078-2', 'Kind': 'reflex', 'Notes': 'Restored from legacy NeoJambu origin_lemma_id', ...}, ...])
+
+tests/test_assign_form_ids.py:293: AssertionError
+____________ test_compiled_rows_survive_when_current_cldf_is_built _____________
+
+    def test_compiled_rows_survive_when_current_cldf_is_built():
+        path = ROOT / "cldf/forms.csv"
+        if not path.exists():
+            return
+        with path.open(encoding="utf-8", newline="") as handle:
+            all_rows = list(csv.DictReader(handle))
+        if "Entry_Key" in (all_rows[0] if all_rows else {}):
+            rows = [
+                row for row in all_rows
+                if row.get("Entry_Key", "").startswith(source.SOURCE_KEY + ":")
+            ]
+            linked = sum(bool(row["Parameter_ID"]) for row in rows)
+        else:
+            compiled = {row["ID"]: row for row in all_rows}
+            with (ROOT / "cldf/form-source-keys.csv").open(encoding="utf-8", newline="") as handle:
+                key_rows = [
+                    row for row in csv.DictReader(handle)
+                    if row["Source_Key"].startswith(source.SOURCE_KEY + ":")
+                ]
+            ids = {row["Legacy_ID"] for row in key_rows}
+>           rows = [compiled[form_id] for form_id in ids]
+                    ^^^^^^^^^^^^^^^^^
+E           KeyError: '116-985'
+
+tests/test_bahl_korwa_1962.py:158: KeyError
+_______ test_compiled_forms_are_unlinked_records_on_canonical_languages ________
+
+compiled = [{'Cognateset': '', 'Description': '', 'Etymology': '', 'Form': 'gagoṛ', ...}, {'Cognateset': '', 'Description': '', '...ymology': '', 'Form': 'gagəṛ', ...}, {'Cognateset': '', 'Description': '', 'Etymology': '', 'Form': 'gʌgəṛ', ...}, ...]
+
+    def test_compiled_forms_are_unlinked_records_on_canonical_languages(compiled):
+>       assert all(row["Status"] == "unlinked" for row in compiled)
+E       assert False
+E        +  where False = all(<generator object test_compiled_forms_are_unlinked_records_on_canonical_languages.<locals>.<genexpr> at 0x116558040>)
+
+tests/test_beine_bhatri.py:347: AssertionError
+____________________ test_source_contributes_no_graph_edges ____________________
+
+compiled = [{'Cognateset': '', 'Description': '', 'Etymology': '', 'Form': 'gagoṛ', ...}, {'Cognateset': '', 'Description': '', '...ymology': '', 'Form': 'gagəṛ', ...}, {'Cognateset': '', 'Description': '', 'Etymology': '', 'Form': 'gʌgəṛ', ...}, ...]
+
+    def test_source_contributes_no_graph_edges(compiled):
+        """The survey prints no etymology, so every form stays a first-class unlinked node."""
+        ids = {row["ID"] for row in compiled}
+        with (ROOT / "cldf/edges.csv").open(encoding="utf-8", newline="") as stream:
+            touched = [
+                row for row in csv.DictReader(stream)
+                if row["Child_ID"] in ids or row["Parent_ID"] in ids
+            ]
+>       assert touched == []
+E       AssertionError: assert [{'Child_ID':... '6495', ...}] == []
+E         
+E         Left contains one more item: {'Child_ID': 'f_soe5lbb6ojlqc', 'Kind': 'reflex', 'Note': '', 'Parent_ID': '6495', ...}
+E         Use -v to get more diff
+
+tests/test_beine_bhatri.py:381: AssertionError
+____________ test_compiled_rows_survive_when_current_cldf_is_built _____________
+
+    def test_compiled_rows_survive_when_current_cldf_is_built():
+        path = ROOT / "cldf/forms.csv"
+        if not path.exists():
+            return
+        with path.open(encoding="utf-8", newline="") as handle:
+            rows = [row for row in csv.DictReader(handle) if SOURCE_KEY in row["Source"]]
+        if not rows:
+            return
+        assert len(rows) == 3330
+        assert {row["Language_ID"] for row in rows} == {"re"}
+>       assert all(not row["Parameter_ID"] for row in rows)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_bhattacharya_bonda_1968.py:187: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+.0 = <list_iterator object at 0x112c21f60>
+
+>   assert all(not row["Parameter_ID"] for row in rows)
+                   ^^^^^^^^^^^^^^^^^^^
+E   KeyError: 'Parameter_ID'
+
+tests/test_bhattacharya_bonda_1968.py:187: KeyError
+________ test_build_merges_source_citations_without_duplicate_reflexes _________
+
+    def test_build_merges_source_citations_without_duplicate_reflexes():
+        compiled = [
+            row for row in dict_rows(ROOT / "cldf/forms.csv") if SOURCE in row["Source"]
+        ]
+>       assert len(compiled) == 713
+E       AssertionError: assert 718 == 713
+E        +  where 718 = len([{'Cognateset': '', 'Description': '', 'Etymology': '', 'Form': 'ērg', ...}, {'Cognateset': '', 'Description': '', 'Et...': 'DEN I (1972) records this reflex under old main 8; resolved to current DEDR d7.', 'Form': 'aka-ppeṭuka', ...}, ...])
+
+tests/test_burrow_emeneau_1972_den1.py:146: AssertionError
+______ test_build_carries_the_source_citation_without_replacement_glyphs _______
+
+    def test_build_carries_the_source_citation_without_replacement_glyphs():
+        compiled = [
+            row for row in dict_rows(ROOT / "cldf/forms.csv") if SOURCE in row["Source"]
+        ]
+>       assert len(compiled) == 161
+E       AssertionError: assert 178 == 161
+E        +  where 178 = len([{'Cognateset': '', 'Description': '', 'Etymology': '', 'Form': 'ūdra', ...}, {'Cognateset': '', 'Description': '', 'E...Etymology': '', 'Form': 'gēde', ...}, {'Cognateset': '', 'Description': '', 'Etymology': '', 'Form': 'kopa', ...}, ...])
+
+tests/test_burrow_emeneau_1972_den2.py:142: AssertionError
+___________ test_dedr_old_edition_references_are_structured_on_entry ___________
+
+    def test_dedr_old_edition_references_are_structured_on_entry():
+        with open("cldf/forms.csv", encoding="utf-8") as f:
+            rows = {row["ID"]: row for row in csv.DictReader(f)}
+    
+        assert rows["d4229"]["Etymology"] == ""
+>       assert rows["d4229"]["Source"] == "dedr[entry 4229, DEDS 687]"
+E       AssertionError: assert 'dedr[entry 4...EDS 687];dedr' == 'dedr[entry 4229, DEDS 687]'
+E         
+E         - dedr[entry 4229, DEDS 687]
+E         + dedr[entry 4229, DEDS 687];dedr
+E         ?                           +++++
+
+tests/test_cldf.py:111: AssertionError
+_________________ test_cross_family_descendants_are_borrowings _________________
+
+    def test_cross_family_descendants_are_borrowings():
+        with open("cldf/languages.csv", encoding="utf-8") as f:
+            clades = {row["ID"]: row["Clade"] for row in csv.DictReader(f)}
+        forms = unified_forms()
+    
+        dravidian = {
+            "Old Dravidian", "S. Dravidian I", "S. Dravidian II", "C. Dravidian",
+            "N. Dravidian", "Brahui",
+        }
+        indo_aryan = {
+            "OIA", "MIA", "Early NIA", "Nuristani", "Pashai", "Chitrali", "Shinaic",
+            "Kohistani", "Kunar", "Kashmiric", "Sindhic", "Lahndic", "Punjabic",
+            "W. Pahari", "C. Pahari", "E. Pahari", "Eastern", "Bihari", "E. Hindi",
+            "W. Hindi", "Rajasthanic", "Gujaratic", "Bhil", "Khandeshi",
+            "Marathi-Konkani", "Halbic", "Insular", "Migratory",
+        }
+        matched = []
+        for row in forms.values():
+            # a variant inherits its loan status from its chain target (asserted independently);
+            # its own origin is now the sibling/parent, so the cross-family predicate is evaluated
+            # only on non-variant rows
+            if row["Relation"] == "variant":
+                continue
+            origin = forms.get(row["Origin_ID"])
+            if not origin:
+                continue
+            child_clade = clades.get(row["Language_ID"])
+            origin_clade = clades.get(origin["Language_ID"])
+            dravidian_loan = child_clade in dravidian and origin["Language_ID"] != "PDr"
+            ia_loan = (
+                origin_clade in indo_aryan
+                and child_clade not in indo_aryan
+            )
+            if dravidian_loan or ia_loan:
+                matched.append(row)
+>               assert row["Relation"] == "borrowed"
+E               AssertionError: assert 'reflex' == 'borrowed'
+E                 
+E                 - borrowed
+E                 + reflex
+
+tests/test_cldf.py:312: AssertionError
+_________ test_backstrom_poc_cloth_forms_link_to_pota_not_avajjharati __________
+
+    def test_backstrom_poc_cloth_forms_link_to_pota_not_avajjharati():
+        forms = list(unified_forms().values())
+    
+        cloth = [
+            row for row in forms
+            if "backstrom1992" in row["Source"].split(";")
+            and "cloth" in row["Gloss"].split(";")
+            and row["Origin_ID"] in {"770", "8400"}
+        ]
+>       assert len(cloth) == 19
+E       AssertionError: assert 14 == 19
+E        +  where 14 = len([{'Borrowed_From': '', 'Cognateset': '', 'Description': '', 'Etymology': '', ...}, {'Borrowed_From': '', 'Cognateset':...ion': '', 'Etymology': '', ...}, {'Borrowed_From': '', 'Cognateset': '', 'Description': '', 'Etymology': '', ...}, ...])
+
+tests/test_cldf.py:337: AssertionError
+_____________________ test_reference_metadata_is_complete ______________________
+
+    def test_reference_metadata_is_complete():
+        with open("cldf/references.csv", encoding="utf-8") as f:
+            references = list(csv.DictReader(f))
+    
+        required_fields = {
+            "ID", "Short", "Source", "Progress", "Provenance", "Editor", "OCR",
+        }
+        assert all(
+            row[field].strip()
+            for row in references
+            for field in required_fields
+        )
+>       assert not any(
+            "full citation not yet catalogued" in row["Source"].casefold()
+            for row in references
+        )
+E       assert not True
+E        +  where True = any(<generator object test_reference_metadata_is_complete.<locals>.<genexpr> at 0x1736f60c0>)
+
+tests/test_cldf.py:424: AssertionError
+______________ test_reference_editor_credits_for_assisted_sources ______________
+
+    def test_reference_editor_credits_for_assisted_sources():
+        with open("cldf/references.csv", encoding="utf-8") as f:
+            references = {row["ID"]: row for row in csv.DictReader(f)}
+    
+>       assert references["backstrom1992"]["Editor"] == "Aryaman Arora; OpenAI Codex"
+E       AssertionError: assert 'Aryaman Aror... OpenAI Codex' == 'Aryaman Arora; OpenAI Codex'
+E         
+E         - Aryaman Arora; OpenAI Codex
+E         ?              ^
+E         + Aryaman Arora and OpenAI Codex
+E         ?              ^^^^
+
+tests/test_cldf.py:463: AssertionError
+________________ test_ocr_provenance_is_explicit_on_references _________________
+
+    def test_ocr_provenance_is_explicit_on_references():
+        with open("cldf/references.csv", encoding="utf-8") as f:
+            references = {row["ID"]: row for row in csv.DictReader(f)}
+    
+>       assert {key for key, row in references.items() if row["OCR"] == "Yes"} == {
+            "andersen1990",
+            "berger",
+            "berger-auto",
+            "dbia",
+            "ghatage-kasargod1970",
+            "hockings-pilotraichoor1992",
+            "paranavitana",
+            "shackle-auto",
+            "southworth2005m",
+            "srinivasa",
+            "seligmann1911vedda",
+        }
+E       AssertionError: assert {'adimathara2...18irula', ...} == {'andersen199...oor1992', ...}
+E         
+E         Extra items in the left set:
+E         'ghatage-kudali1965'
+E         'ghatage-konkani1963'
+E         'ernest-oleary-kelsall2018irula'
+E         'adimathara2019mudhili'
+E         Use -v to get more diff
+
+tests/test_cldf.py:476: AssertionError
+_______ test_both_shackle_sources_use_cdial_phonetic_conversion_and_tags _______
+
+    def test_both_shackle_sources_use_cdial_phonetic_conversion_and_tags():
+        with open("cldf/forms.csv", encoding="utf-8") as f:
+            rows = [
+                row for row in csv.DictReader(f)
+                if row["Source"] in {"shackle", "shackle-auto"}
+            ]
+    
+>       assert {row["Source"] for row in rows} == {"shackle", "shackle-auto"}
+E       AssertionError: assert {'shackle'} == {'shackle', 'shackle-auto'}
+E         
+E         Extra items in the right set:
+E         'shackle-auto'
+E         Use -v to get more diff
+
+tests/test_cldf.py:518: AssertionError
+___________ test_compiled_pdr_headword_audit_and_forms_follow_policy ___________
+
+    def test_compiled_pdr_headword_audit_and_forms_follow_policy():
+        audit_path = ROOT / "cldf/pdr-headword-audit.csv"
+        forms_path = ROOT / "cldf/forms.csv"
+        if not audit_path.exists() or not forms_path.exists():
+            return
+    
+        with audit_path.open(encoding="utf-8", newline="") as handle:
+            audit = list(csv.DictReader(handle))
+        with forms_path.open(encoding="utf-8", newline="") as handle:
+            compiled = {row["ID"]: row for row in csv.DictReader(handle)}
+    
+        assert len(audit) == 5562
+        counts = Counter(row["Strategy"] for row in audit)
+        assert counts == {
+            "krishnamurti-pfeiffer": 817,
+            "merriam-pdr": 1166,
+            "dedr-reflex": 3575,
+            "unresolved": 4,
+        }
+        assert {row["Parameter_ID"] for row in audit if row["Strategy"] == "unresolved"} == {
+            "d82", "d92", "d2035", "d3091",
+        }
+    
+        for decision in audit:
+>           entry = compiled[decision["Parameter_ID"]]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           KeyError: 'd583A'
+
+tests/test_dedr_headwords.py:94: KeyError
+____________ test_compiled_forms_are_unlinked_gondi_dialect_records ____________
+
+    def test_compiled_forms_are_unlinked_gondi_dialect_records():
+        with (ROOT / "cldf/forms.csv").open(encoding="utf-8", newline="") as stream:
+            rows = [row for row in csv.DictReader(stream) if SOURCE in row["Source"]]
+        assert len(rows) == INSTALLED_ROWS
+        assert all(row["Language_ID"] == "Gondi" for row in rows)
+>       assert all(row["Status"] == "unlinked" for row in rows)
+E       assert False
+E        +  where False = all(<generator object test_compiled_forms_are_unlinked_gondi_dialect_records.<locals>.<genexpr> at 0x17cc47440>)
+
+tests/test_gondi_beine.py:185: AssertionError
+_______________ test_every_installed_row_survives_the_full_build _______________
+
+    def test_every_installed_row_survives_the_full_build():
+        forms_path = ROOT / "cldf/forms.csv"
+        if not forms_path.exists() or forms_path.stat().st_mtime < sauji.FORM_OUTPUT.stat().st_mtime:
+            return
+        with forms_path.open(encoding="utf-8", newline="") as handle:
+            compiled = [row for row in csv.DictReader(handle) if sauji.SOURCE_ID in row["Source"]]
+>       assert len(compiled) == 573
+E       AssertionError: assert 575 == 573
+E        +  where 575 = len([{'Cognateset': '', 'Description': '', 'Etymology': '', 'Form': 'rupai', ...}, {'Cognateset': '', 'Description': '', '...Etymology': '', 'Form': 'gap', ...}, {'Cognateset': '', 'Description': '', 'Etymology': '', 'Form': 'pʰānt', ...}, ...])
+
+tests/test_knobloch_sauji.py:193: AssertionError
+________ test_only_geographically_undefined_languages_lack_coordinates _________
+
+    def test_only_geographically_undefined_languages_lack_coordinates():
+        with (ROOT / "cldf/languages.csv").open(encoding="utf-8", newline="") as stream:
+            missing = {
+                row["ID"] for row in csv.DictReader(stream)
+                if not row["Latitude"] or not row["Longitude"]
+            }
+        # Reconstructed nodes represent language stages or subgroup ancestors rather
+        # than point locations, so they deliberately have no map coordinates.
+        # Vedda's historical source localities have not yet been georeferenced;
+        # the ingestion checklist permits unknown coordinates rather than invented points.
+>       assert missing == {
+            "PBr", "TurkicUnspec", "PSTDr", "PSD1", "PSD2", "PCDr", "PKMDr", "PNDr",
+            "Vedda", "Pattapu",  # Lindgren supplies no defensible Pattapu locality point.
+        }
+E       AssertionError: assert {'DungraBhili... 'PKMDr', ...} == {'PBr', 'PCDr..., 'PSD2', ...}
+E         
+E         Extra items in the left set:
+E         'Vasavi'
+E         'Kodaku'
+E         'Pattapu'
+E         'PKher'
+E         'DungraBhili'...
+E         
+E         ...Full output truncated (3 lines hidden), use '-vv' to show
+
+tests/test_language_coordinates.py:35: AssertionError
+___________ test_manual_survey_etymologies_reach_the_compiled_graph ____________
+
+    def test_manual_survey_etymologies_reach_the_compiled_graph():
+        with (ROOT / "cldf/forms.csv").open(encoding="utf-8", newline="") as stream:
+            forms = list(csv.DictReader(stream))
+        with (ROOT / "cldf/edges.csv").open(encoding="utf-8", newline="") as stream:
+            accepted = {
+                row["Child_ID"]
+                for row in csv.DictReader(stream)
+                if row["Rank"] == "1" and row["Kind"] in {"reflex", "borrowed", "variant"}
+            }
+    
+        for name, (_filename, references, _rows, _raw_links, form_count, link_count) in SURVEYS.items():
+            survey_forms = {
+                row["ID"] for row in forms if citation_keys(row.get("Source", "")) & references
+            }
+>           assert len(survey_forms) == form_count, name
+E           AssertionError: rajasthani
+E           assert 15887 == 15876
+E            +  where 15887 = len({'f_22563fws7272u', 'f_226hjy7xa6eea', 'f_226uw7bchxmlu', 'f_227tv773kzzwi', 'f_22f3bcfs5rttm', 'f_22jl3wgs43udu', ...})
+
+tests/test_manual_survey_etymologies.py:64: AssertionError
+_______ test_source_owned_links_do_not_depend_on_duplicate_overlay_rows ________
+
+    def test_source_owned_links_do_not_depend_on_duplicate_overlay_rows():
+        with (ROOT / "cldf/forms.csv").open(encoding="utf-8", newline="") as stream:
+            forms = {row["ID"]: row for row in csv.DictReader(stream)}
+        with (ROOT / "data/etymology-assignments.csv").open(
+            encoding="utf-8", newline=""
+        ) as stream:
+            assignments = list(csv.DictReader(stream))
+    
+        source_owned = {"chattisgarhi", "bagri", "dhundari", "hadothi", "marwari", "mewari", "mewati"}
+>       assert not [
+            row for row in assignments
+            if citation_keys(forms[row["Form_ID"]].get("Source", "")) & source_owned
+        ]
+E       AssertionError: assert not [{'Etymon_ID': '3865', 'Form_ID': 'f_3emgvbejwg5ns', 'Kind': 'reflex', 'Notes': '', ...}, {'Etymon_ID': '3865', 'Form_...flex', 'Notes': '', ...}, {'Etymon_ID': '3865', 'Form_ID': 'f_nriaty6b7wtyw', 'Kind': 'reflex', 'Notes': '', ...}, ...]
+
+tests/test_manual_survey_etymologies.py:82: AssertionError
+____________ test_compiled_rows_survive_when_current_cldf_is_built _____________
+
+    def test_compiled_rows_survive_when_current_cldf_is_built():
+        compiled = ROOT / "cldf/forms.csv"
+        if not compiled.exists():
+            return
+        with compiled.open(encoding="utf-8", newline="") as handle:
+            rows = [
+                row for row in csv.DictReader(handle)
+                if "munda1968proto" in row["Source"] and row.get("Status") != "entry"
+            ]
+        if not rows:
+            return
+>       assert len(rows) == 2919
+E       assert 2077 == 2919
+E        +  where 2077 = len([{'Cognateset': '', 'Description': '', 'Etymology': 'Source comparison record has no aligned Proto-Kherwarian reconstr...Description': '', 'Etymology': "Munda's reconstructed pre-Mundari reflex of pkh-726-106.", 'Form': '(h)atu', ...}, ...])
+
+tests/test_munda_proto_kherwarian_1968.py:147: AssertionError
+_________ test_restored_assignments_survive_in_the_compiled_edge_graph _________
+
+    def test_restored_assignments_survive_in_the_compiled_edge_graph():
+        with (ROOT / "data/etymology-assignments.csv").open(encoding="utf-8") as handle:
+            restored = {
+                (row["Form_ID"], row["Etymon_ID"])
+                for row in csv.DictReader(handle)
+                if row["Notes"] == "Restored from legacy NeoJambu origin_lemma_id"
+            }
+        # Chhattisgarhi and Rajasthani now keep their curated Parameter_ID values in the
+        # installed survey CSVs.  Their duplicate, positional-ID restoration records were
+        # deliberately removed; Kannauji and the other durable-ID restorations remain here.
+        # 14,506 self-links were also dropped.  Legacy modelled a headword as two rows — the entry
+        # plus an attested row beneath it — and the edge model collapses both onto one node, so the
+        # importer resolved that pair into a link from the node to itself.  Installing those made
+        # 14,506 CDIAL headwords their own etymon and dropped them from the entry list.
+>       assert len(restored) == 4_580
+E       AssertionError: assert 4579 == 4580
+E        +  where 4579 = len({('10005-2', '10005'), ('10019-2', '10019'), ('10023-2', '10023'), ('10030-2', '10030'), ('10030-3', '10030'), ('10078-2', '10078'), ...})
+
+tests/test_neojambu_etymology_restoration.py:71: AssertionError
+____________ test_previously_lost_source_groups_have_accepted_edges ____________
+
+    def test_previously_lost_source_groups_have_accepted_edges():
+        with (ROOT / "cldf/forms.csv").open(encoding="utf-8") as handle:
+            forms = list(csv.DictReader(handle))
+        with (ROOT / "cldf/edges.csv").open(encoding="utf-8") as handle:
+            linked = {
+                row["Child_ID"]
+                for row in csv.DictReader(handle)
+                if row["Rank"] == "1" and row["Kind"] in {"reflex", "borrowed", "variant"}
+            }
+        expected = {
+            "bagri": 1_921,
+            "chattisgarhi": 2_079,
+            "dhundari": 1_264,
+            "hadothi": 1_691,
+            "kannauji": 1_991,
+            "marwari": 1_880,
+            "mewari": 3_368,
+            "mewati": 1_426,
+        }
+        for reference, count in expected.items():
+            form_ids = {
+                row["ID"] for row in forms if reference in citation_keys(row.get("Source", ""))
+            }
+>           assert len(form_ids & linked) == count
+E           AssertionError: assert 1924 == 1921
+E            +  where 1924 = len(({'f_22jl3wgs43udu', 'f_22zzp6s765uc6', 'f_24b6fjtlblixg', 'f_24hdozzz5f52c', 'f_24pvylke2zbek', 'f_256pwyn3lfq7k', ...} & {'1', '10005-2', '10016', '10019-2', '10023-2', '10030-2', ...}))
+
+tests/test_neojambu_etymology_restoration.py:106: AssertionError
+_______ test_compiled_source_keeps_original_phonemic_and_resolved_graph ________
+
+    def test_compiled_source_keeps_original_phonemic_and_resolved_graph():
+        rows={r['ID']:r for r in csv.DictReader((ROOT/'cldf/forms.csv').open())}
+        aliases={r['Legacy_ID']:r['Form_ID'] for r in csv.DictReader((ROOT/'cldf/form-id-aliases.csv').open())}
+        keys={r['Source_Key']:aliases.get(r['Legacy_ID'],r['Legacy_ID']) for r in csv.DictReader((ROOT/'cldf/form-source-keys.csv').open()) if r['Source_Key'].startswith(source.SOURCE_ID+':')}
+        assert set(keys)==set(BY_KEY)
+        for key,r in BY_KEY.items():
+            compiled=rows[keys[key]]
+            assert compiled['Language_ID']=='Dm'
+            assert compiled['Original']==r['Form']
+            assert compiled['Phonemic']==r['Phonemic']
+            assert set(r['Tags'].split())<=set(compiled['Tags'].split())
+            assert set(r['Source'].split(';'))<=set(compiled['Source'].split(';'))
+        assert rows[keys['perder2013dameli:p40:prose:y269:x284']]['Form']=='ʦ̣ai'
+        edges=list(csv.DictReader((ROOT/'cldf/edges.csv').open()))
+        outgoing={}
+        for e in edges:
+            outgoing.setdefault(e['Child_ID'],[]).append(e)
+        for key,r in BY_KEY.items():
+            actual={(e['Parent_ID'],e['Kind'],e['Rank']) for e in outgoing.get(keys[key],[])}
+            expected=set()
+            if r['Parameter_ID']:
+                expected.add((r['Parameter_ID'],'reflex','1'))
+            if r['Variant_Of_Key']:
+                expected.add((keys[r['Variant_Of_Key']],'variant','1'))
+            parents=[p for p in r['Derivation_Parent_Keys'].split('|') if p]
+            kind='component' if len(parents)>1 else 'derived'
+            for parent in parents:
+                expected.add((keys[parent],kind,'1'))
+>           assert actual==expected,(key,actual,expected)
+E           AssertionError: ('perder2013dameli:p25:t4:y214:c1', {('5110', 'reflex', '1')}, set())
+E           assert {('5110', 'reflex', '1')} == set()
+E             
+E             Extra items in the left set:
+E             ('5110', 'reflex', '1')
+E             Use -v to get more diff
+
+tests/test_perder_dameli.py:210: AssertionError
+____________ test_compiled_rows_survive_when_current_cldf_is_built _____________
+
+    def test_compiled_rows_survive_when_current_cldf_is_built():
+        path = ROOT / "cldf/forms.csv"
+        if not path.exists():
+            return
+        with path.open(encoding="utf-8", newline="") as handle:
+            all_rows = list(csv.DictReader(handle))
+        if "Entry_Key" in (all_rows[0] if all_rows else {}):
+            rows = [r for r in all_rows if r.get("Entry_Key", "").startswith(source.SOURCE_KEY + ":")]
+            linked = sum(bool(row["Parameter_ID"]) for row in rows)
+        else:
+            compiled = {row["ID"]: row for row in all_rows}
+            with (ROOT / "cldf/form-source-keys.csv").open(encoding="utf-8", newline="") as handle:
+                key_rows = [
+                    row for row in csv.DictReader(handle)
+                    if row["Source_Key"].startswith(source.SOURCE_KEY + ":")
+                ]
+            ids = {row["Legacy_ID"] for row in key_rows}
+>           rows = [compiled[form_id] for form_id in ids]
+                    ^^^^^^^^^^^^^^^^^
+E           KeyError: 'm111-8'
+
+tests/test_pinnow_juang_1960.py:152: KeyError
+_____________ test_curated_etymologies_survive_the_compiled_graph ______________
+
+    def test_curated_etymologies_survive_the_compiled_graph():
+        with COMPILED_FORMS.open(encoding="utf-8", newline="") as stream:
+            forms = [
+                row for row in csv.DictReader(stream)
+                if any(
+                    citation.split("[", 1)[0] in SOURCE_KEYS
+                    for citation in row["Source"].split(";")
+                )
+            ]
+        linked_ids = {row["ID"] for row in forms if row["Status"] != "unlinked"}
+        with COMPILED_EDGES.open(encoding="utf-8", newline="") as stream:
+            linked_edges = {
+                row["Child_ID"] for row in csv.DictReader(stream)
+                if row["Child_ID"] in linked_ids
+                and row["Kind"] == "reflex"
+                and row["Rank"] == "1"
+            }
+    
+        # Cross-source deduplication folds some of the 11,749 input attestations into shared nodes.
+>       assert len(linked_ids) == 11_245
+E       AssertionError: assert 12442 == 11245
+E        +  where 12442 = len({'f_22563fws7272u', 'f_226hjy7xa6eea', 'f_226uw7bchxmlu', 'f_227tv773kzzwi', 'f_22f3bcfs5rttm', 'f_22jl3wgs43udu', ...})
+
+tests/test_rajasthani.py:59: AssertionError
+_______________ test_every_installed_row_survives_the_full_build _______________
+
+    @pytest.mark.skipif(not COMPILED.exists(), reason="cldf/forms.csv has not been built")
+    def test_every_installed_row_survives_the_full_build():
+        installed = {field(row, "Entry_Key") for row in FORM_ROWS}
+        compiled_keys = {
+            row["Source_Key"]
+            for row in dict_rows(ROOT / "cldf/form-source-keys.csv")
+            if row["Source_Key"].startswith("rezaibaghbidi2003zargari")
+        }
+        assert installed == compiled_keys
+    
+        compiled = [row for row in dict_rows(COMPILED)
+                    if zargari.DIALECT_TAG in row["Tags"].split()]
+        assert len(compiled) == len(FORM_ROWS)
+        assert all(row["Language_ID"] == "Zarg" for row in compiled)
+        assert all(not row["Cognateset"] for row in compiled)
+        assert all("�" not in row["Form"] for row in compiled)
+        # unlinked heads plus their variant rows
+>       assert Counter(row["Status"] for row in compiled)["unlinked"] == 444
+E       assert 443 == 444
+
+tests/test_rezai_baghbidi_zargari_2003.py:379: AssertionError
+_________________ test_printed_alternates_become_variant_edges _________________
+
+    @pytest.mark.skipif(not COMPILED.exists(), reason="cldf/forms.csv has not been built")
+    def test_printed_alternates_become_variant_edges():
+        compiled = {row["ID"]: row for row in dict_rows(COMPILED)
+                    if zargari.DIALECT_TAG in row["Tags"].split()}
+        edges = [row for row in dict_rows(ROOT / "cldf/edges.csv")
+                 if row["Child_ID"] in compiled or row["Parent_ID"] in compiled]
+>       assert len(edges) == 78
+E       AssertionError: assert 79 == 78
+E        +  where 79 = len([{'Child_ID': 'f_2dmh2ygal2u5o', 'Kind': 'variant', 'Note': '', 'Parent_ID': 'f_tx6nfnifwi5h6', ...}, {'Child_ID': 'f_...rixk2', ...}, {'Child_ID': 'f_4yk74m5j77amc', 'Kind': 'variant', 'Note': '', 'Parent_ID': 'f_try43zl46iqto', ...}, ...])
+
+tests/test_rezai_baghbidi_zargari_2003.py:400: AssertionError
+____________ test_compiled_rows_survive_when_current_cldf_is_built _____________
+
+    def test_compiled_rows_survive_when_current_cldf_is_built():
+        path = ROOT / "cldf/forms.csv"
+        if not path.exists():
+            return
+        with path.open(encoding="utf-8", newline="") as handle:
+            rows = [row for row in csv.DictReader(handle) if "zide1982reconstruction" in row["Source"]]
+        if not rows:
+            return
+        assert len(rows) == 2057
+        assert {row["Language_ID"] for row in rows} == {"so", "Juray"}
+>       assert all(not row["Parameter_ID"] for row in rows)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_zide_sora_gorum_1982.py:114: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+.0 = <list_iterator object at 0x17653afe0>
+
+>   assert all(not row["Parameter_ID"] for row in rows)
+                   ^^^^^^^^^^^^^^^^^^^
+E   KeyError: 'Parameter_ID'
+
+tests/test_zide_sora_gorum_1982.py:114: KeyError
+=========================== short test summary info ============================
+FAILED data/other/forms/raw_data/sil_noira_2015/test_preintegration_contract.py::test_preintegration_artifacts_are_fresh_and_pdf_is_pinned
+FAILED data/other/forms/raw_data/sil_noira_2015/test_preintegration_contract.py::test_frozen_hashes_and_manual_census
+FAILED tests/test_assign_form_ids.py::test_the_dictionary_self_reference_assignments_all_point_at_live_sub_entries
+FAILED tests/test_bahl_korwa_1962.py::test_compiled_rows_survive_when_current_cldf_is_built
+FAILED tests/test_beine_bhatri.py::test_compiled_forms_are_unlinked_records_on_canonical_languages
+FAILED tests/test_beine_bhatri.py::test_source_contributes_no_graph_edges - A...
+FAILED tests/test_bhattacharya_bonda_1968.py::test_compiled_rows_survive_when_current_cldf_is_built
+FAILED tests/test_burrow_emeneau_1972_den1.py::test_build_merges_source_citations_without_duplicate_reflexes
+FAILED tests/test_burrow_emeneau_1972_den2.py::test_build_carries_the_source_citation_without_replacement_glyphs
+FAILED tests/test_cldf.py::test_dedr_old_edition_references_are_structured_on_entry
+FAILED tests/test_cldf.py::test_cross_family_descendants_are_borrowings - Ass...
+FAILED tests/test_cldf.py::test_backstrom_poc_cloth_forms_link_to_pota_not_avajjharati
+FAILED tests/test_cldf.py::test_reference_metadata_is_complete - assert not True
+FAILED tests/test_cldf.py::test_reference_editor_credits_for_assisted_sources
+FAILED tests/test_cldf.py::test_ocr_provenance_is_explicit_on_references - As...
+FAILED tests/test_cldf.py::test_both_shackle_sources_use_cdial_phonetic_conversion_and_tags
+FAILED tests/test_dedr_headwords.py::test_compiled_pdr_headword_audit_and_forms_follow_policy
+FAILED tests/test_gondi_beine.py::test_compiled_forms_are_unlinked_gondi_dialect_records
+FAILED tests/test_knobloch_sauji.py::test_every_installed_row_survives_the_full_build
+FAILED tests/test_language_coordinates.py::test_only_geographically_undefined_languages_lack_coordinates
+FAILED tests/test_manual_survey_etymologies.py::test_manual_survey_etymologies_reach_the_compiled_graph
+FAILED tests/test_manual_survey_etymologies.py::test_source_owned_links_do_not_depend_on_duplicate_overlay_rows
+FAILED tests/test_munda_proto_kherwarian_1968.py::test_compiled_rows_survive_when_current_cldf_is_built
+FAILED tests/test_neojambu_etymology_restoration.py::test_restored_assignments_survive_in_the_compiled_edge_graph
+FAILED tests/test_neojambu_etymology_restoration.py::test_previously_lost_source_groups_have_accepted_edges
+FAILED tests/test_perder_dameli.py::test_compiled_source_keeps_original_phonemic_and_resolved_graph
+FAILED tests/test_pinnow_juang_1960.py::test_compiled_rows_survive_when_current_cldf_is_built
+FAILED tests/test_rajasthani.py::test_curated_etymologies_survive_the_compiled_graph
+FAILED tests/test_rezai_baghbidi_zargari_2003.py::test_every_installed_row_survives_the_full_build
+FAILED tests/test_rezai_baghbidi_zargari_2003.py::test_printed_alternates_become_variant_edges
+FAILED tests/test_zide_sora_gorum_1982.py::test_compiled_rows_survive_when_current_cldf_is_built
+31 failed, 1773 passed, 18 skipped in 539.13s (0:08:59)

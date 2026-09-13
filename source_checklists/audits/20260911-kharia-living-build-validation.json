@@ -1,0 +1,101 @@
+{
+  "source": "living-kharia2026",
+  "compiled_forms": 521,
+  "variant_edges": 68,
+  "unlinked": 453,
+  "concept_links": 408,
+  "generated_deltas": {
+    "cldf/forms.csv": {
+      "before_records": 691400,
+      "after_records": 691921,
+      "delta": 521,
+      "after_sha256": "c9e840202bb421be8c922c91b67c672d299db77775d76d3eef633897e5df096b"
+    },
+    "cldf/edges.csv": {
+      "before_records": 370839,
+      "after_records": 370907,
+      "delta": 68,
+      "after_sha256": "a2dd4f7c935fee06004376adf279c2a5aa2f05585f4c69f70a84bda2773179b8"
+    },
+    "cldf/form-source-keys.csv": {
+      "before_records": 340713,
+      "after_records": 341234,
+      "delta": 521,
+      "after_sha256": "ae5bd0aaaa750a473774d68d2e5ea3fb34fd58474c46a4a5bfae06bdad676f46"
+    },
+    "cldf/form-id-aliases.csv": {
+      "before_records": 1037910,
+      "after_records": 1044445,
+      "delta": 6535,
+      "after_sha256": "ebad439e2e65a25e4f81fce0696f0d134c0f80b6c0fd77b00ae660093fe81f74"
+    },
+    "data/form-identities.csv": {
+      "before_records": 861162,
+      "after_records": 861683,
+      "delta": 521,
+      "after_sha256": "c078fddeb6d6a18d82bb72480b1a21be1df7e7f64d450332fa6860700308537b"
+    },
+    "cldf/concepts.csv": {
+      "before_records": 3270,
+      "after_records": 3270,
+      "delta": 0,
+      "after_sha256": "bc730d17e4664be14b6c81869468a50c668df5f9f0ccd213422509eaa9ded085"
+    },
+    "cldf/form_concepts.csv": {
+      "before_records": 509952,
+      "after_records": 510055,
+      "delta": 103,
+      "after_sha256": "c8fd5ec6b3e34bd01ef7ec80e69865e67a4bf02c1292a8045803d2f8715e7c0d"
+    },
+    "cldf/alignments.csv": {
+      "before_records": 2029107,
+      "after_records": 2029107,
+      "delta": 0,
+      "after_sha256": "77f81f2499fb3f516300609c5ea45ed4b54df6bc790b8be6af474229b28348e0"
+    },
+    "cldf/references.csv": {
+      "before_records": 538,
+      "after_records": 539,
+      "delta": 1,
+      "after_sha256": "5c034e1e5717caaef9ff8b37efb50e3ebab0e0f403b1d25ebc6f07704113f7c6"
+    }
+  },
+  "validation": {
+    "make_all": "Seven pipeline stages completed; final manual survey tests: 2 failed, 2 passed. Rajasthani count and source-owned overlay assertions; no Kharia assertion failed.",
+    "literal_full_suite": "Duplicate test_preintegration_contract module name prevents collection",
+    "importlib_full_suite": {
+      "passed": 1737,
+      "failed": 31,
+      "skipped": 18
+    },
+    "full_validation_complete": false,
+    "focused_passed": 47
+  },
+  "database": {
+    "path": "/private/tmp/jambu-kharia-qa.db",
+    "bytes": 99975168,
+    "compressed_bytes": 44120608,
+    "integrity_check": "ok",
+    "size_warning": "Uncompressed image exceeds 97 MB warning; packed artifact passes strict 50 MB limit."
+  },
+  "browser_checked": [
+    "Source table exactly 521 forms",
+    "maʔgʰrel January variant of makʰrel, both dialect tags",
+    "Kharia 1468 forms, 9 sources",
+    "Dhelki and Dudh each filter 512 forms; no fabricated map coordinates",
+    "Source search elephant returns sole native-only केलुंग; no invented phonemic display",
+    "ELEPHANT atlas: 210 forms; the native-only Kharia entry appears among 113 unetymologised forms"
+  ],
+  "representative_ids": {
+    "variant": "f_dbhiyre32y4do",
+    "variant_parent": "f_afl6zgm74xh2s",
+    "native_only": "f_d5dzsxi43euuw",
+    "ordinary": "f_vexng72lob2ja"
+  },
+  "concept_comparison": {
+    "same_process_old_links_removed": 0,
+    "same_process_old_links_added": 0,
+    "new_links": 408,
+    "note": "Independent mapper processes have known varying results; this compares with and without the new source in one process without altering outputs."
+  }
+}

@@ -4,9 +4,9 @@
 - Canonical checklist SHA-256: `23516ba5c7caeaa5310f6a32d92b86e4b9ae5e4479e792926b61dd0689129f05`
 - Source-type addenda: Website/API or external CLDF
 - Installed rows: 11600
-- Compiled rows carrying this unit's citation keys: 11600
+- Compiled rows carrying this unit's citation keys: 11601
 - Input rows with checked grammatical evidence: 11600
-- Compiled rows with canonical grammatical tags: 11600
+- Compiled rows with canonical grammatical tags: 11601
 - Source keys: liljegren-hindukush
 
 ## Retrospective gate assessment
@@ -16,7 +16,7 @@
 - [x] 3. Plan the installed files and identifiers — 11600 unique immutable Entry_Key values
 - [x] 4. Model languages and dialects before emitting forms — 59 input language/lect IDs; registry gaps: none
 - [x] 5. Emit the rich import schema — row widths {'15': 11600}; blank forms 0
-- [x] 6. Parse structured linguistic information — 11600 input rows carry checked grammatical evidence; 11600 compiled rows carry canonical grammatical tags
+- [x] 6. Parse structured linguistic information — 11600 input rows carry checked grammatical evidence; 11601 compiled rows carry canonical grammatical tags
 - [x] 7. Build and verify the sound profile — profile route: conversion/liljegren-hindukush.txt; replacement characters in input forms: 0
 - [x] 8. Parse references and provenance — unresolved keys: none
 - [x] 9. Model etymology and graph relations conservatively — covered by tests/test_edges.py and compiled edge invariants
@@ -28,7 +28,7 @@
 
 ## Review summary
 
-- Counts: 11600 installed records; 11600 compiled citation attestations.
+- Counts: 11600 installed records; 11601 compiled citation attestations.
 - Exclusions: none detected in the installed input; any source-side exclusions remain in the linked importer/audit.
 - Unresolved cases: none detected.
 - Transcription: `conversion/liljegren-hindukush.txt`.

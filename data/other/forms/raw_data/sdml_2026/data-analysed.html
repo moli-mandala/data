@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Survey of Dialects of Marathi Language</title>
+        <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+            <META HTTP-EQUIV="Expires" CONTENT="-1">
+        <meta name="keywords" content=" मराठीच्  स्े्ण ">
+        <meta name="description" content="Survey of Dialects of the Marathi Language">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
+        <link rel="stylesheet" type="text/css" href="stylesheets/styles.css?1"/>
+        <link rel="stylesheet" type="text/css" href="stylesheets/d3-tip.css"/>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/owl.carousel@2.3.4/dist/assets/owl.carousel.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/owl.carousel@2.3.4/dist/assets/owl.theme.default.min.css">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+        
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <!--<script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>-->
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.2/howler.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+        <!--<script src="https://cdn.jsdelivr.net/gh/emn178/chartjs-plugin-labels/src/chartjs-plugin-labels.js"></script>-->
+        <script src="https://d3js.org/d3.v4.js"></script>
+        <script src="/libraries/d3-tip.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script>
+        <script src="/libraries/rough.js"></script>
+
+        <script src="javascript/index.js?1.21"></script>
+        <script src="csv/data.js"></script>
+        <script src="javascript/map/makeD3map.js"></script>
+        <script src="libraries/village-time.js"></script>
+        <!-- <script src="javascript/map/map1.js"></script> -->
+        <!-- <script src="javascript/map/landingmap.js"></script> -->
+        <script src="javascript/map/tool_tip_text.js"></script>
+        <script src="javascript/map/setFrequencyColor.js"></script>
+        <script src="javascript/howler/index.js"></script>
+        <script src="javascript/chart/index.js"></script>
+        <script src="javascript/map/moreInfo.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/owl.carousel@2.3.4/dist/owl.carousel.min.js"></script>
+        <link rel="shortcut icon" href="images/favicon.ico">
+        
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131476464-8"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-131476464-8');
+        </script>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-254LB9QEPY"></script>
+	<script>
+  		window.dataLayer = window.dataLayer || [];
+  		function gtag(){dataLayer.push(arguments);}
+  		gtag('js', new Date());
+  		gtag('config', 'G-254LB9QEPY');
+	</script>
+	
+	<script>
+	$(document).ready(function(){
+	    console.log('Custom JS+sb23');
+        $('.left-navbar a[href="/en"]').click(function(e){
+            e.preventDefault();
+            var href = location.href.replace('_mr','');
+            href = href.replace('mr','en');
+
+            location.href = href;
+            console.log(href+'sb11');
+        });
+
+        $('.left-navbar a[href="/mr"]').click(function(e){
+            e.preventDefault();
+            var href = location.href;
+            if(href.indexOf('en') != -1){
+                href.replace('en','mr');
+            }
+
+            if(href.indexOf('?district=') != -1){
+                href = href.replace('features', 'features_mr');
+            }
+
+            if(href.indexOf('mr') == -1){
+                href = href+'_mr';
+            }
+
+            location.href = href;
+            console.log(href+'sb12');
+        });
+        
+        //Fix Notes (24th Nov 2023)
+        $('#concept').on('change', function(){
+        	var title, desc, url;
+        	var choice = $('input[name="choice"]:checked').val();
+            if(choice == 'grammar'){
+              var feature = $('#concept').closest('.dropdown').find('.text').text();
+              if(feature != 'Concepts' && feature != null && feature != ''){
+              	$.post('/api/', {getNote:1, feature:feature, language:'english'}, function(data){
+              		if(data != ''){
+              			data = $.parseJSON(data);
+                		title 	= data['title'];
+                		desc 	= data['description'];
+                		url 	= data['url'];
+		                
+                		setTimeout(function(){
+			                $('#grammermain > h1').text(title);
+			                $('#grammernew').html(`<p style="background-color:#fff;text-align:left;padding:5px;">
+			                <storng>`+desc+`</storng></p>
+			                <div>
+			                <a style="color:#fff; position: relative;bottom: 10px;" href="`+url+`">Download Note</a>
+			                </div>
+			                `);
+			                $('#grammermain').show();
+                		},500);
+              		}
+                });
+              	
+              }  
+            }	
+        });
+	});
+	</script>
+    </head>
+    <body>
+        <script>
+            function openMobileNav(){
+                document.getElementById("mobile-navbar").style.width = "80%";
+                document.getElementById("mobile-navbar-nav").style.display = "block";
+
+            }
+            function closeMobileNav(){
+                document.getElementById("mobile-navbar").style.width = "0";
+                document.getElementById("mobile-navbar-nav").style.display = "none";
+
+            }
+        </script>
+        <style>
+            @media only screen and (min-width: 800px) {
+                .breadcrumb{
+                    display: none;
+                }
+            }
+			.map_legend{display:none!important;}
+			.image_view-button {
+    align-items: center;
+    appearance: none;
+    background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%)!important;
+    border: 0;
+    border-radius: 6px;
+    box-shadow: rgb(45 35 66 / 40%) 0 2px 4px, rgb(45 35 66 / 30%) 0 7px 13px -3px, rgb(58 65 111 / 50%) 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: #fff!important;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: "JetBrains Mono",monospace;
+    height: 48px;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 16px;
+    padding-right: 16px;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow .15s,transform .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow,transform;
+    font-size: 18px;
+}
+        </style>
+    <div style="background-image:url('images/banner_08.jpg'); display: flex; flex-direction: row;" >
+        <button class="breadcrumb" onclick="openMobileNav()" style="background: none; border: 2px solid white; padding: 22px; color: white;height: 80px;padding: 22px;color: white;height: 80px;margin: 25px 5px;"><i class="fas fa-bars fa-2x"></i></button>
+        <div><a href="/">
+            <h1 style="color: white; margin: 10px 0 0 20px; padding-bottom: 10px">  मराठी बोलींचे सर्वेक्षण</h1>
+            <h1 style="color: white;  margin: 0 0 0 20px; padding-top: 10px;">Survey of Dialects of the Marathi Language</h1>
+        </a>
+        </div>
+        
+    </div>
+    <!-- <img style="display: block; width: 100%" src="images/banner_04.jpg" /> -->
+    
+
+
+<style>
+  .desktop-navbar{
+      display: none;
+    }
+  @media only screen and (min-width: 800px) {
+    .desktop-navbar{
+      display: block;
+    }
+  }
+
+  
+  .mobile-navbar{
+    
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background: #011527;
+    transition: 0.5s;
+    z-index: 999;
+    box-shadow: 6px 0px 17px 0px #011527;
+  }
+  
+  .mobile-navbar-nav{
+    display: none;
+    transition: 0.7s;
+  }
+
+  @media only screen and (min-width: 800px) {
+    .mobile-navbar{
+      display: none;
+    }
+    .mobile-navbar-nav{
+      display: none;
+    }
+  }
+
+  .mobile-navbar nav ul{
+    list-style-type: none;
+  }
+  .mobile-navbar nav ul li{
+    padding: 10px 0;
+  }
+  .mobile-navbar nav ul li a{
+    color: #fff;
+    font-size: 18px;
+  }
+
+</style>
+
+<div class="desktop-navbar">
+  <div class="left-navbar">
+    &nbsp;
+    <a class='item' href="/en">
+    <span>English</span>
+    </a>
+  
+
+  <a><span>|</span></a>
+
+    <a class='item' href="/mr">
+    <span>मराठी</span>
+    </a>
+
+</div>
+
+<style>
+  .dropbtn {
+    border: none;
+    background-color: #011527;
+    padding: 0.75em 1em;
+    border: none;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    padding: 0.75em 1em;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    width: 220px;
+    position: absolute;
+    left: -30px;
+    background-color: #011527;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 9;
+  }
+  
+  .dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {border-left: 2.5px solid white;border-bottom: none;}
+  
+  .dropdown:hover .dropdown-content {display: block;}
+  
+  .dropdown:hover .dropbtn {background-color: #017EE8;}
+  </style>
+
+<div class="navbar">
+
+  
+          <a class="item" data-active="home" href="/en">
+          <span>Home</span>
+          </a>
+        
+      
+
+
+    <div class="dropdown">
+  
+      <button class="dropbtn">About Project</button>
+      <div class="dropdown-content">
+        
+          <a class="item" data-active="about" href="/about">
+          <span>About</span>
+          </a>
+        
+		
+		
+        
+        
+          <a class="item" data-active="methodology" href="/methodology">
+          <span>Project Methodology</span>
+          </a>
+        
+
+        
+          <a class="item" data-active="stimulus-kit" href="/stimulus-kit">
+          <span>Stimulus Kit</span>
+          </a>
+        
+  
+        
+          <a class="item" data-active="previous-projects" href="/previous-projects">
+          <span>Previous Dialect Surveys of Marathi</span>
+          </a>
+        
+  
+        
+          <a class="item" data-active="our-team" href="/our-team">
+          <span>Project Team</span>
+          </a>
+        
+
+        
+          <a class="item" data-active="committee" href="/committee">
+          <span>Project Committees</span>
+          </a>
+        
+
+        
+          <a class="item" data-active="conference" href="/conference-presentations">
+          <span>Selected Conference Presentations</span>
+          </a>
+        
+        
+          <a class="item" data-active="mediacover" href="/mediacover">
+          <span>Media Coverage</span>
+          </a>
+        
+        
+          <a class="item" data-active="gallery" href="/photo-gallery">
+          <span>Gallery</span>
+          </a>
+        
+
+          </div>
+      </div>
+      
+        <a class="item" data-active="features" href="/features">
+        <span>Linguistic Features</span>
+        </a>
+      
+  
+    
+    <!-- <a class="item" href="http://demo3.testbharati.com/">
+      <span>Blog</span>
+    </a>
+    
+    
+
+  
+      <a class="item" data-active="data" href="/data">
+      <span>Data</span>
+      </a>
+     -->
+
+    
+
+<div class="dropdown">
+  
+  <button class="dropbtn">Community Voices</button>
+  <div class="dropdown-content">
+    
+    
+      <a class="item" data-active="linguist-narrations" href="/linguist-narrations">
+      <span>For Linguists</span>
+      </a>
+    
+
+    
+      <a class="item" data-active="layperson-narrations" href="/layperson-narrations">
+      <span>For Others</span>
+      </a>
+    
+
+  
+ 
+    </div>
+  </div>
+
+    <!-- 
+      <a class="item" data-active="photos" href="/photos">
+      <span>Data</span>
+      </a>
+    
+    
+    
+      <a class="item" data-active="photos" href="/photos">
+      <span>Gallery</span>
+      </a>
+     -->
+
+    
+      <a class="item active" data-active="download-data" href="/download-data">
+      <span>Download Data</span>
+      </a>
+    
+
+    
+      <a class="item" data-active="blog" href="/blog">
+      <span>Blog</span>
+      </a>
+    
+    
+    
+      <a class="item" data-active="contact" href="/contact">
+      <span>Contact Us</span>
+      </a>
+    
+    
+    
+    
+    
+ </div>
+
+</div>
+
+<div class="mobile-navbar" id="mobile-navbar">
+  <nav id="mobile-navbar-nav" class="mobile-navbar-nav">
+    <button style="background: none;border:none;color: #fff;padding: 10px; float:right" onclick="closeMobileNav()"><i class="fas fa-times fa-2x"></i></button>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="#">About Project</a>
+        <ul>
+          <li><a data-active="about" href="/about">About</a></li>
+          <li><a data-active="methodology" href="/methodology">Methodology</a></li>
+          <li><a data-active="stimulus-kit" href="/stimulus-kit">Stimulus Kit</a></li>
+          <li><a data-active="previous-projects" href="/previous-projects">Previous Dialect Surveys of Marathi </a></li>
+          <li><a data-active="our-team" href="/our-team">Project Team</a></li>
+          <li><a data-active="committee" href="/project-committee">Project Committees</a></li>
+          <li><a data-active="conference" href="/conference-presentations">Selected conference presentations</a></li>
+          <li><a data-active="about" href="/mediacover">Media Coverage</a></li>
+		  <li><a data-active="gallery" href="/photo-gallery">Gallery</a></li>
+
+        </ul>
+      </li>
+      <li><a data-active="features" href="/features">Features</a></li>
+      <li><a href="">Community Voices</a>
+        <ul>
+          <li><a data-active="linguist-narrations" href="/linguist-narrations">For Linguists</a></li>
+
+          <li><a data-active="layperson-narrations" href="/layperson-narrations">For Others</a></li>
+        </ul>
+      </li>
+      <li><a href="/download-data">Data Download</a></li>
+      <!-- <li><a href="">Gallery</a></li> -->
+      <li><a data-active="contact" href="/contact">Contact Us</a></li>
+
+      <li style="text-align: center;margin: 40px;border-bottom: 1px white solid;">
+        <a href="/en">
+          <span>English</span>
+        </a> 
+        <a><span>&nbsp|&nbsp</span></a> 
+        <a href="/mr">
+          <span>रठ</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+
+<!--<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" />-->
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.5.6/css/buttons.semanticui.min.css" />
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.semanticui.min.css" />
+
+
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.19/js/dataTables.semanticui.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.5.6/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.semanticui.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.html5.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.print.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.colVis.min.js"></script>
+
+<style>
+    .wrapper > * {
+        padding: 0px;
+    }
+    #example_wrapper{
+        margin-bottom: 10px;
+    }
+    #example_filter{
+        margin-bottom:5px;
+    }
+    #example_filter label{
+        color: #011527 !important;
+    }
+    #example_info{
+        color: #011527 !important;
+    }
+</style>
+
+
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.js"></script>-->
+
+<script>
+    $(document).ready(function() {
+        
+        d3
+    .queue()
+    .defer(d3.csv, "downloads/lexical_data download.csv")
+    .defer(d3.json, "csv/database.json")
+    .await((error, linguisticdata, newData)=>{
+        if(error) throw error;
+        
+        linguisticdata.push(...newData)
+
+    var table = $('#example').DataTable( {
+        dom: 'Bfrtip',
+        buttons: [
+            'copy', 'excel', 'print', 'colvis'
+        ],
+        "pageLength": 15,
+        "aaData": linguisticdata,
+        "columns" : [ 
+                    {"data" : "district_marathi", 'visible' : true},
+                    {"data" : "taluka_marathi", 'visible' : true},
+                    {"data" : "village_marathi", 'visible' : true},
+                    {"data" : "latitudes_marathi", "title": "अक्षांश", 'visible' : true},
+                    {"data" : "longitudes_marathi", "title": "रेखांश", 'visible' : true},
+                    {"data" : "utensil", 'visible' : false},
+                    {"data" : "roof_1", 'visible' : false},
+                    {"data" : "roof_2", 'visible' : false},
+                    {"data" : "bolt_1", 'visible' : false},
+                    {"data" : "bolt_2", 'visible' : false},
+                    {"data" : "broom_1", 'visible' : false},
+                    {"data" : "broom_2", 'visible' : false},
+                    {"data" : "broom_3", 'visible' : false},
+                    {"data" : "broom_4", 'visible' : false},
+                    {"data" : "colocasia_leaves", 'visible' : false},
+                    {"data" : "luffa", 'visible' : false},
+                    {"data" : "bottle_gourd", 'visible' : false},
+                    {"data" : "ridge_gourd", 'visible' : false},
+                    {"data" : "ridge_gourd", 'visible' : false},
+                    {"data" : "pumpkin", 'visible' : false},
+                    {"data" : "green_pepper", 'visible' : false},
+                    {"data" : "drumstick", 'visible' : false},
+                    {"data" : "sweet_potato", 'visible' : false},
+                    {"data" : "in_front_of", 'visible' : false},
+                    {"data" : "behind", 'visible' : false},
+                    {"data" : "up", 'visible' : false},
+                    {"data" : "down", 'visible' : false},
+                    {"data" : "in_the_middle", 'visible' : false},
+                    {"data" : "east", 'visible' : false},
+                    {"data" : "west", 'visible' : false},
+                    {"data" : "today", 'visible' : false},
+                    {"data" : "tomorrow", 'visible' : false},
+                    {"data" : "yesterday", 'visible' : false},
+                    {"data" : "many", 'visible' : false},
+                    {"data" : "a_few", 'visible' : false},
+                    {"data" : "small", 'visible' : false},
+                    {"data" : "big", 'visible' : false},
+                    {"data" : "son", 'visible' : false},
+                    {"data" : "daughter", 'visible' : false},
+                    {"data" : "husband", 'visible' : false},
+                    {"data" : "wife", 'visible' : false},
+                    {"data" : "egos_fathers_younger_sister", 'visible' : false},
+                    {"data" : "egos_fathers_younger_sisters_husband", 'visible' : false},
+                    {"data" : "egos_fathers_elder_sister", 'visible' : false},
+                    {"data" : "egos_fathers_elder_sisters_husband", 'visible' : false},
+                    {"data" : "egos_mothers_younger_brother", 'visible' : false},
+                    {"data" : "egos_mothers_younger_brothers_wife", 'visible' : false},
+                    {"data" : "egos_mothers_elder_brother", 'visible' : false},
+                    {"data" : "egos_mothers_elder_brothers_wife", 'visible' : false},
+                    {"data" : "egos_younger_sisters_husband", 'visible' : false},
+                    {"data" : "egos_elder_sisters_husband", 'visible' : false},
+                    {"data" : "egos_wifes_younger_brother", 'visible' : false},
+                    {"data" : "egos_wifes_elder_brother", 'visible' : false},
+                    {"data" : "egos_fathers_elder_brother", 'visible' : false},
+                    {"data" : "egos_fathers_elder_brothers_wife", 'visible' : false},
+                    {"data" : "egos_fathers_younger_brother", 'visible' : false},
+                    {"data" : "egos_fathers_younger_brothers_wife", 'visible' : false},
+                    {"data" : "egos_mothers_elder_sister", 'visible' : false},
+                    {"data" : "egos_husbands_mothers_brother", 'visible' : false},
+                    {"data" : "egos_husbands_elder_brother", 'visible' : false},
+                    {"data" : "egos_husbands_elder_brothers_wife", 'visible' : false},
+                    {"data" : "egos_husbands_younger_brother", 'visible' : false},
+                    {"data" : "egos_husbands_younger_brothers_wife", 'visible' : false},
+                    {"data" : "male_egos_brothers_son", 'visible' : false},
+                    {"data" : "female_egos_brothers_son", 'visible' : false},
+                    {"data" : "male_egos_brothers_daughter", 'visible' : false},
+                    {"data" : "female_egos_brothers_daughter", 'visible' : false},
+                    {"data" : "male_egos_sisters_son", 'visible' : false},
+                    {"data" : "female_egos_sisters_son", 'visible' : false},
+                    {"data" : "male_egos_sisters_daughter", 'visible' : false},
+                    {"data" : "female_egos_sisters_daughter", 'visible' : false},
+                    {"data" : "egos_husbands_mother", 'visible' : false},
+                    {"data" : "egos_wifes_mother", 'visible' : false},
+                    {"data" : "egos_husbands_father", 'visible' : false},
+                    {"data" : "egos_wifes_father", 'visible' : false},
+                    {"data" : "egos_daughters_father_in_law", 'visible' : false},
+                    {"data" : "egos_sons_father_in_law", 'visible' : false},
+                    {"data" : "egos_daughters_mother_in_law", 'visible' : false},
+                    {"data" : "egos_sons_mother_in_law", 'visible' : false}
+                ]
+    } );
+    
+    table.buttons().container().removeClass('basic')
+    // .appendTo( $('div.eight.column:eq(0)') );
+    })
+} );
+</script>
+<div class="wrapper">
+    
+    <h1 style="color: #011527;margin:0">Click to export the data</h1>
+    <p style="color: #011527;margin:0">Toggle the data from dropdown as required</p>
+    
+    <table id="example" class="ui celled table" style="width:100%;">
+        <thead>
+            <tr>
+                <th>District</th>
+                <th>Taluka</th>
+                <th>Village</th>
+                <th>Latitude</th>
+                <th>Longitude</th>
+                <th>Utensil</th>
+                <th>Roof 1</th>
+                <th>Roof 2</th>
+                <th>Bolt 1</th>
+                <th>Bolt 2</th>
+                <th>Broom 1</th>
+                <th>Broom 2</th>
+                <th>Broom 3</th>
+                <th>Broom 4</th>
+                <th>Colocasia Leaves</th>
+                <th>Luffa</th>
+                <th>Bottle Gourd</th>
+                <th>Shirale / Dodke</th>
+                <th>Ridge gourd</th>
+                <th>Pumpkin</th>
+                <th>Green Pepper</th>
+                <th>Drumstick</th>
+                <th>Sweet Potato</th>
+                <th>In Front Of</th>
+                <th>Behind</th>
+                <th>Up</th>
+                <th>Down</th> 
+                <th>In The Middle</th>
+                <th>East</th>
+                <th>West</th>
+                <th>Today</th>
+                <th>Tommorow</th>
+                <th>Yesterday</th>
+                <th>Many</th>
+                <th>A Few</th>
+                <th>Small</th>
+                <th>Big</th>
+                <th>Boy</th>
+                <th>Daughter</th>
+                <th>Husband</th>
+                <th>Wife</th>
+                <th>Ego's father's younger sister</th>
+                <th>Ego's father's younger sister's husband</th>
+                <th>Ego's father's elder sister</th>
+                <th>Ego's father's elder sister's husband</th>
+                <th>ego's mother's younger brother</th>
+                <th>Ego's mother's younger brother's wife</th>
+                <th>Ego's mother's elder brother</th>
+                <th>Ego's mother's elder brother's wife</th>
+                <th>Ego's younger sister's husband</th>
+                <th>Ego's elder sister's husband</th>
+                <th>Ego's wife's younger brother</th>
+                <th>Ego's wife's elder brother</th>
+                <th>Ego's father's elder brother</th>
+                <th>Ego's father's elder brother's wife</th>
+                <th>Ego's father's younger brother</th>
+                <th>Ego's father's younger brother's wife</th>
+                <th>Ego's mother's elder sister</th>
+                <th>Ego's husband's mother's brother</th>
+                <th>Ego's husband's elder brother</th>
+                <th>Ego's husband's elder brother's wife</th>
+                <th>Ego's husband's younger brother</th>
+                <th>Ego's husband's younger brother's wife</th>
+                <th>Male ego's brother's son</th>
+                <th>female ego's brother's son</th>
+                <th>Male ego's brother's daughter </th>
+                <th>female ego's brother's daughter </th>
+                <th>Male ego's sister's son</th>
+                <th>female ego's sister's son</th>
+                <th>MALE EGO'S SISTER'S DAUGHTER</th>
+                <th>Female EGO'S SISTER'S DAUGHTER</th>
+                <th>husband's Ego's mother</th>
+                <th>wife's Ego's mother</th>
+                <th>Ego's husband's father</th>
+                <th>Ego's wife's father</th>
+                <th>Ego's daughter's father-in-law</th>
+                <th>Ego's son's father-in-law</th>
+                <th>Ego's daughter's mother-in-law</th>
+                <th>Ego's son's mother-in-law</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            
+        </tbody>
+        
+    </table>
+    
+    </div>
+<div class="ui bottom menu footbar" style="margin: 0;border-radius: 0;">
+          
+          <div style="display: flex; width: 100%;padding: 1em;">
+            <div>
+          	<a href="/sitemap" style="display: flex;color:#fff">Sitemap</a>
+          </div>
+            <div style=" display: flex; align-items: center;justify-content: center;width: 70%; border-right: 2px solid white;padding: 0 20px"><!-- © COPYRIGHT: 2024 Deccan College (Deemed University), Pune and Rajya Marathi Vikas Sanstha, Mumbai.--></div>
+            <!-- <div style=" display: flex; align-items: center;">
+                <a style="color:white"><i class="big instagram icon"></i></a>
+                <a style="color:white"><i class="big facebook icon"></i></a>
+                <a style="color:white"><i class="big twitter icon"></i></a>
+                <a style="color:white"><i class="big youtube icon"></i></a>
+                <a style="color:white"><i class="big pinterest icon"></i></a>
+            </div> -->
+            <div style="width: 30%;justify-content: space-around;display: flex;margin: auto;max-width: 300px;">
+                <!-- <a style="background-image: url(/images/Logo_02.jpg);"></a>
+                <a style="background-image: url(/images/Logo_01.jpg);"></a> -->
+
+                <img class="footer-logo" src="/images/Logo_01.jpg"/>
+                <img class="footer-logo" src="/images/Logo_02.png"/>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+
+    </body>
+</html>

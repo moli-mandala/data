@@ -1,0 +1,134 @@
+{
+  "old_forms": 739247,
+  "current_forms": 746336,
+  "new_forms": 7089,
+  "lost_ids": 0,
+  "old_rows_changed": 0,
+  "new_source_counts": {
+    "regmi2014bajjika": 1208,
+    "lindgren2023dravidian": 5881,
+    "kolipakam2018dravlex": 2127
+  },
+  "new_unlinked": 7089,
+  "examples": {
+    "regmi2014bajjika": {
+      "ID": "f_zearherxfrgck",
+      "Language_ID": "Mth",
+      "Form": "deh",
+      "Original": "deh",
+      "Phonemic": "",
+      "Gloss": "body"
+    },
+    "lindgren2023dravidian": {
+      "ID": "f_i6pyihbkicwro",
+      "Language_ID": "Koraga",
+      "Form": "iǰǰi",
+      "Original": "id͡ʒ:i",
+      "Phonemic": "idʒːi",
+      "Gloss": "second-person singular, female"
+    },
+    "kolipakam2018dravlex": {
+      "ID": "f_icy3paasnanja",
+      "Language_ID": "Badaga",
+      "Form": "na",
+      "Original": "na",
+      "Phonemic": "na",
+      "Gloss": "I"
+    }
+  },
+  "unchanged_files": {
+    "edges.csv": true,
+    "alignments.csv": true
+  },
+  "identity_sidecars": {
+    "form-source-keys.csv": {
+      "rows": 395640,
+      "added": 7089,
+      "lost": 0,
+      "changed": 0
+    },
+    "form-id-aliases.csv": {
+      "rows": 1098860,
+      "added": 7089,
+      "lost": 0,
+      "changed": 0
+    },
+    "form-identities.csv": {
+      "rows": 916098,
+      "added": 7089,
+      "lost": 0,
+      "changed": 0
+    }
+  },
+  "references": [
+    {
+      "ID": "regmi2014bajjika",
+      "Short": "R2014b",
+      "Source": "Dan Raj Regmi, Balaram Prasain, and Ambika Regmi\\.\nA sociolinguistic survey of bajjika\\.\nTechnical Report, Linguistic Survey of Nepal, Central Department of Linguistics, Tribhuvan University, Kathmandu, 2014\\.\nPublic university PDF; no explicit redistribution licence found\\. Lexical facts extracted from text layer; original PDF retained as acquisition evidence\\. Legacy embedded font glyphs decoded; no OCR\\.\nURL: [https://portal\\.tu\\.edu\\.np/downloads/Bajjika\\\\\\_2023\\\\\\_09\\\\\\_20\\\\\\_20\\\\\\_15\\\\\\_57\\.pdf](https://portal.tu.edu.np/downloads/Bajjika\\_2023\\_09\\_20\\_20\\_15\\_57.pdf)\\.",
+      "Progress": "Annex D, printed pages 103--110: 210 prompts at five sites; slash-listed alternatives retained separately",
+      "Provenance": "data/other/forms/20260911-bajjika.csv; data/other/forms/raw_data/ia_dravidian_2026/20260911-bajjika-audit.jsonl; source_checklists/20260911-ia-dravidian-review.md",
+      "Editor": "OpenAI Codex",
+      "OCR": "No",
+      "Etymology_Provenance": ""
+    },
+    {
+      "ID": "lindgren2023dravidian",
+      "Short": "L2023",
+      "Source": "Freja Lindgren, Emil Magnus Mannby, Spandana Kotian, and Tiago Tresoldi\\.\nDravidian dataset for the lindgren \\(2023\\) study\\.\n2023\\.\nURL: [https://zenodo\\.org/records/7668297](https://zenodo.org/records/7668297), [doi:10\\.5281/zenodo\\.7668297](https://doi.org/10.5281/zenodo.7668297)\\.",
+      "Progress": "5881 TSV records in 34 doculects; 3754 additional records and 2127 republished DravLex records retained by citations and audited upstream IDs",
+      "Provenance": "data/other/forms/20260911-lindgren.csv; data/other/forms/raw_data/ia_dravidian_2026/20260911-lindgren-audit.jsonl; source_checklists/20260911-ia-dravidian-review.md",
+      "Editor": "OpenAI Codex",
+      "OCR": "No",
+      "Etymology_Provenance": ""
+    },
+    {
+      "ID": "kolipakam2018dravlex",
+      "Short": "K2018",
+      "Source": "Vishnupriya Kolipakam, Michael Dunn, Fiona M\\. Jordan, and Annemarie Verkerk\\.\nDravlex: a dravidian lexical database\\.\n2018\\.\nURL: [https://github\\.com/lexibank/dravlex](https://github.com/lexibank/dravlex)\\.",
+      "Progress": "2127 forms, 100 concepts, 20 source varieties. Source cognate annotations retained without inferred ancestor nodes; loan labels retained without guessed donors",
+      "Provenance": "data/other/forms/20260911-dravlex.csv; data/other/forms/raw_data/ia_dravidian_2026/20260911-dravlex-audit.jsonl; source_checklists/20260911-ia-dravidian-review.md",
+      "Editor": "OpenAI Codex",
+      "OCR": "No",
+      "Etymology_Provenance": ""
+    },
+    {
+      "ID": "kolipakam2018fieldnotes",
+      "Short": "K2018a",
+      "Source": "Vishnupriya Kolipakam\\.\nFieldnotes\\.\nPersonal communication, distributed in DravLex, 2018\\.",
+      "Progress": "Via DravLex",
+      "Provenance": "data/other/forms/raw_data/ia_dravidian_2026/dravlex-sources.bib",
+      "Editor": "OpenAI Codex",
+      "OCR": "No",
+      "Etymology_Provenance": ""
+    },
+    {
+      "ID": "andronov1964lexicostatistics",
+      "Short": "A1964",
+      "Source": "M\\. Andronov\\.\nLexicostatistic analysis of the chronology of disintegration of proto\\-dravidian\\.\n*Indo\\-Iranian Journal*, 7\\(2–3\\):170–186, 1964\\.",
+      "Progress": "Via DravLex",
+      "Provenance": "data/other/forms/raw_data/ia_dravidian_2026/dravlex-sources.bib",
+      "Editor": "OpenAI Codex",
+      "OCR": "No",
+      "Etymology_Provenance": ""
+    },
+    {
+      "ID": "burrow-emeneau1961ded",
+      "Short": "B1961a",
+      "Source": "Thomas Burrow and Murray B\\. Emeneau\\.\n*A Dravidian Etymological Dictionary*\\.\nClarendon Press, Oxford, 1 edition, 1961\\.",
+      "Progress": "Via DravLex; first-edition IDs are not treated as DEDR IDs",
+      "Provenance": "data/other/forms/raw_data/ia_dravidian_2026/dravlex-sources.bib",
+      "Editor": "OpenAI Codex",
+      "OCR": "No",
+      "Etymology_Provenance": ""
+    }
+  ],
+  "concept_mapping": {
+    "mapped_forms": 6942,
+    "memberships": 7318,
+    "distinct_concepts": 331,
+    "invalid_targets": 0,
+    "unmapped_forms": 147,
+    "note": "Unmapped source glosses are retained; automatic concept mapping is not an etymological link."
+  },
+  "loanword_labels": 141
+}

@@ -21,7 +21,7 @@ def test_kochila_import_is_complete_and_target_only():
         "kochila_siraha_central": 280,
     }
     assert all(row[7].startswith("eichentopf-mitchell2020kochila[p. ") for row in rows)
-    assert {int(row[7].split("p. ")[1][:-1]) for row in rows} == set(range(24, 59))
+    assert {int(row[7].split(";", 1)[0].split("p. ", 1)[1][:-1]) for row in rows} == set(range(24, 59))
     assert len({row[10] for row in rows}) == len(rows)
     assert not any("�" in row[2] for row in rows)
 

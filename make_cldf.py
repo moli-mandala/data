@@ -166,6 +166,36 @@ class Row:
 STRAND3_FILE = "20221003-strand3.csv"
 LEGACY_STRAND_FILES = {"20220913-strand.csv", "20220913-strand2.csv"}
 MERRIAM_DRAVIDIAN_DB_FILE = "data/other/forms/20260718-merriam-dravidian-db.csv"
+WESTERN_SURVEY_FILES = (
+    "data/other/forms/20260911-dadra-varli.csv",
+    "data/other/forms/20260911-ghatage-konkani.csv",
+    "data/other/forms/20260911-ghatage-kudali.csv",
+    "data/other/forms/20260911-sdml.csv",
+    "data/other/forms/20260911-bajjika.csv",
+    "data/other/forms/20260911-lindgren.csv",
+    "data/other/forms/20260911-dravlex.csv",
+    "data/other/forms/20260911-census-tamil-nadu.csv",
+    "data/other/forms/20260911-census-uttar-pradesh.csv",
+    "data/other/forms/20260911-census-bihar.csv",
+    "data/other/forms/20260911-census-sikkim2.csv",
+    "data/other/forms/20260911-census-danuwar.csv",
+    "data/other/forms/20260911-census-tharu.csv",
+    "data/other/forms/20260911-more-jharkhand.csv",
+    "data/other/forms/20260911-more-himachal.csv",
+    "data/other/forms/20260911-more-rajasthan.csv",
+    "data/other/forms/20260911-more-west-bengal.csv",
+    "data/other/forms/20260911-more-kisan.csv",
+    "data/other/forms/20260911-selected-angika.csv",
+    "data/other/forms/20260911-selected-majhi.csv",
+    "data/other/forms/20260911-selected-koraga.csv",
+    "data/other/forms/20260911-selected-orissa.csv",
+    "data/other/forms/20260912-keed.csv",
+    "data/other/forms/20260912-muduga.csv",
+    "data/other/forms/20260913-zoller-linguistic-data.csv",
+
+
+
+)
 
 
 def _append_distinct(primary, secondary, separator="; "):
@@ -219,6 +249,11 @@ KUSUNDA_GIPAN_SOURCE_KEY = "aaley2021kusundagipan"
 # punctuation are meaningful source data.  The legacy generic converter strips such characters
 # before tokenization because many older wordlists used them as disposable list notation.
 PRESERVE_SOURCE_PROFILE_INPUT = {
+    "zoller-2023",
+    "keed", "muduga",
+    "kharia-living", "sdml", "bajjika", "ia-dravidian-ipa", "census-ipa", "census-ascii", "census-danuwar", "more-ascii", "more-ipa", "selected-angika", "selected-majhi", "selected-koraga", "selected-orissa",
+    "dadra-varli", "ghatage-western",
+    "seligmann-vedda",
     "perder-dameli",
     "boretzky-romani",
     "house", "vaagri", "drasi", "yoshioka", "gandhari", "kullui", "toda", "rabha", "lsi",
@@ -448,6 +483,28 @@ def parse_file(file: str, errors, name=None, file_num=0, param_counter=None):
             row_convert = True
         # The dictionary supplies Unicode IPA. This source-key route keeps the
         # transcription contract stable if the dated snapshot filename changes.
+        # Nirmaan maps its nine-vowel IPA alphabet to house transcription.
+        if source_key in {"regmi2014bajjika", "lindgren2023dravidian", "kolipakam2018dravlex"}:
+            row_ipa = "bajjika" if source_key == "regmi2014bajjika" else "ia-dravidian-ipa"
+            row_convert = True
+        if source_key in {"census2023tamilnadu", "census2023uttarpradesh", "census2020bihar", "census2012sikkim2", "regmi-thakur2016danuwar", "mitchell-eichentopf2013tharu",}:
+            row_ipa = "census-ascii" if source_key in {"census2020bihar", "census2012sikkim2"} else "census-danuwar" if source_key == "regmi-thakur2016danuwar" else "census-ipa"
+            row_convert = True
+        if source_key in {"regmi2017angika", "chalise2014majhi", "bhat1971koraga", "census2002orissa"}:
+            row_ipa = {"regmi2017angika":"selected-angika", "chalise2014majhi":"selected-majhi", "bhat1971koraga":"selected-koraga", "census2002orissa":"selected-orissa"}[source_key]
+            row_convert = True
+        if source_key in {"census2023jharkhand", "census2023himachal", "census2011rajasthan", "census2016westbengal", "mahato2014kisan"}:
+            row_ipa = "more-ipa" if source_key == "mahato2014kisan" or (source_key == "census2023himachal" and row.lang in {"sirm", "pan", "dog"}) else "more-ascii"
+            row_convert = True
+        if source_key == "sdml2026":
+            row_ipa = "sdml"
+            row_convert = True
+        if source_key == "living-kharia2026":
+            row_ipa = "kharia-living"
+            row_convert = True
+        if source_key == "nirmaan2018mewari":
+            row_ipa = "nirmaan-mewari"
+            row_convert = True
         if row.source.split("[", 1)[0] == "torwali2023student":
             row_ipa = "torwali-student"
             row_convert = True
@@ -516,6 +573,12 @@ def parse_file(file: str, errors, name=None, file_num=0, param_counter=None):
             row_convert = True
         if source_key == "zide1982reconstruction":
             row_ipa = "zide-sora-juray"
+            row_convert = True
+        if source_key == "pattanaik-koul2003varli":
+            row_ipa = "dadra-varli"
+            row_convert = True
+        if source_key in {"ghatage-konkani1963", "ghatage-kudali1965"}:
+            row_ipa = "ghatage-western"
             row_convert = True
         if source_key == "bhattacharya1968bonda":
             row_ipa = "bhattacharya-bonda"
@@ -721,6 +784,9 @@ def parse_file(file: str, errors, name=None, file_num=0, param_counter=None):
         if row.source.split("[", 1)[0] == "weinreich2008":
             row_ipa = "weinreich-domaaki"
             row_convert = True
+        if row.source.split("[", 1)[0] == "zoller2023":
+            row_ipa = "zoller-2023"
+            row_convert = True
         if row.source.split("[", 1)[0] == "ali-kobayashi2024":
             row_ipa = "brahui"
             row_convert = True
@@ -860,6 +926,7 @@ def parse_file(file: str, errors, name=None, file_num=0, param_counter=None):
             # must remain one stable node in both cases.
             else [row.form]
             if is_merriam_reconstruction or source_key in {
+                "zoller2023",
                 "varkey-vunnamatla2018bareli",
                 "vunnamatla-john-samuvel2012nimadi",
                 "behera2022korwakodaku",
@@ -867,6 +934,10 @@ def parse_file(file: str, errors, name=None, file_num=0, param_counter=None):
                 # attestation per immutable Entry_Key. A comma inside the diplomatic
                 # transcription is punctuation/notation, not the legacy CSV shorthand
                 # for multiple rows.
+                "uchida-rajapurohit2018", "arsenault-abraham2022muduga",
+                "regmi2014bajjika", "lindgren2023dravidian", "kolipakam2018dravlex",
+                "regmi2017angika", "chalise2014majhi", "bhat1971koraga", "census2002orissa",
+                "census2023tamilnadu", "census2023uttarpradesh", "census2020bihar", "census2012sikkim2", "regmi-thakur2016danuwar", "mitchell-eichentopf2013tharu",
                 "webster",
                 "ernest-oleary-kelsall2018irula",
                 "kim-ahmad-kim-sangma2011kochbd",
@@ -927,7 +998,7 @@ def parse_file(file: str, errors, name=None, file_num=0, param_counter=None):
                 # Phonemic column is upstream's canonical CLTS segmentation.
                 # Drive the display conversion from that analysis and leave
                 # old_form untouched so it is emitted as Original.
-                source_value = row.ipa if row_ipa == "lsi" else reformed
+                source_value = row.ipa if row_ipa in {"lsi", "ia-dravidian-ipa"} else reformed
                 src = unicodedata.normalize("NFC", source_value)
                 form_out = unicodedata.normalize(
                     "NFC",
@@ -1107,7 +1178,7 @@ def main():
         "data/dedr/pdr.csv",
     ] + [
         path for path in glob.glob("data/other/forms/*.csv")
-        if path != MERRIAM_DRAVIDIAN_DB_FILE
+        if path != MERRIAM_DRAVIDIAN_DB_FILE and path not in WESTERN_SURVEY_FILES
     ]
     files.sort()
     # Append new imports after sorting so they cannot renumber every existing source's legacy
@@ -1116,6 +1187,10 @@ def main():
     # its own identity does not depend on this append position.
     files.append(MERRIAM_DRAVIDIAN_DB_FILE)
     files.append("data/dbia/forms.csv")
+    # These additions must not shift existing numeric legacy aliases. Their
+    # temporary IDs are namespaced too, so old historical numeric redirects
+    # cannot accidentally be reused for a newly installed source.
+    files.extend(WESTERN_SURVEY_FILES)
 
     # now do the same thing for non-CDIAL languages
     tot_stats = {
@@ -1125,7 +1200,8 @@ def main():
     param_counter: dict = {}  # shared <etymon>-<n> reflex counter across all non-CDIAL source files
     for file_num, file in enumerate(files):
         print(file)
-        result, stats = parse_file(file, errors=errors, file_num=file_num, param_counter=param_counter)
+        prefix = os.path.splitext(os.path.basename(file))[0] if file in WESTERN_SURVEY_FILES else file_num
+        result, stats = parse_file(file, errors=errors, file_num=prefix, param_counter=param_counter)
         tot_stats["converted"] += stats["converted"]
         tot_stats["for_conversion"] += stats["for_conversion"]
         results.extend(result)
@@ -1155,9 +1231,15 @@ def main():
             # while retaining the legacy dedupe behaviour for other sources.
             row.entry_key
             if row.source.split("[", 1)[0] in {
+                "zoller2023",
                 "gandhari", "grierson-lsi1928", "kullui-org", "liljegren-hindukush", "tulpule1999",
                 "wolf-kota", "bhaskararao-toda2025", "weinreich2008", "yoshioka2012",
-                "kannauji", "berger-auto",
+                "kannauji", "berger-auto", "living-kharia2026", "sdml2026",
+                "uchida-rajapurohit2018", "arsenault-abraham2022muduga",
+                "regmi2014bajjika", "lindgren2023dravidian", "kolipakam2018dravlex",
+                "regmi2017angika", "chalise2014majhi", "bhat1971koraga", "census2002orissa",
+                "census2023tamilnadu", "census2023uttarpradesh", "census2020bihar", "census2012sikkim2", "regmi-thakur2016danuwar", "mitchell-eichentopf2013tharu",
+                "census2023jharkhand", "census2023himachal", "census2011rajasthan", "census2016westbengal", "mahato2014kisan",
                 "smith2022pahari",
                 "swenson2025naaba",
                 "swenson2024magar",
@@ -1216,6 +1298,9 @@ def main():
                 "buddruss-wama2006",
                 "buddruss-shina1996",
                 "torwali2023student",
+                "nirmaan2018mewari",  # preserve printed homographs and sense keys
+                "seligmann1911vedda",  # preserve numbered senses, e.g. dia tears/water
+                "pattanaik-koul2003varli", "ghatage-konkani1963", "ghatage-kudali1965",
                 # Woods numbers her homographs (आ1 'come', आ2 'oh!', चार1 'four'), so 416 entries
                 # are explicitly distinct records that share a shape; further pairs collide only
                 # after the Devanagari is reduced to IPA. The FLEx GUID keeps all of them apart.

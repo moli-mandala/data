@@ -1,5 +1,17 @@
 # data files -> transcription conversion filess
 mapping = {
+    'zoller-linguistic-data': 'zoller-2023',  # Heterogeneous comparative transcriptions: preserve.
+    "keed": "keed",
+    "muduga": "muduga",
+    "more": "more-ascii",  # Mixed IPA columns override by source and base language.
+    "census": "census-ipa",  # ASCII and Danuwar sources override by bibliography key in make_cldf.
+    "bajjika": "bajjika", "lindgren": "ia-dravidian-ipa", "dravlex": "ia-dravidian-ipa",
+    "sdml": "sdml",
+    'kharia': 'kharia-living',
+    'dadra': 'dadra-varli',
+    'ghatage-western': 'ghatage-western',
+    'seligmann': 'seligmann-vedda',
+    'nirmaan': 'nirmaan-mewari',
     'dameli': 'dameli-donors',
     # These older imports were manually normalized when they were ingested.  Route them through
     # an explicit preservation profile so that their transcription contract is checked rather

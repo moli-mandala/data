@@ -4,7 +4,7 @@
 - Canonical checklist SHA-256: `23516ba5c7caeaa5310f6a32d92b86e4b9ae5e4479e792926b61dd0689129f05`
 - Source-type addenda: Survey wordlists or comparative tables
 - Installed rows: 573
-- Compiled rows carrying this unit's citation keys: 573
+- Compiled rows carrying this unit's citation keys: 575
 - Input rows with checked grammatical evidence: 423
 - Compiled rows with canonical grammatical tags: 423
 - Source keys: buddruss1967sau, knobloch2020sauji
@@ -28,7 +28,7 @@
 
 ## Review summary
 
-- Counts: 573 installed records; 573 compiled citation attestations.
+- Counts: 573 installed records; 575 compiled citation attestations.
 - Exclusions: none detected in the installed input; any source-side exclusions remain in the linked importer/audit.
 - Unresolved cases: none detected.
 - Transcription: `conversion/knobloch-sauji.txt`.

@@ -1,6 +1,6 @@
 {
   "checklist_sha256": "23516ba5c7caeaa5310f6a32d92b86e4b9ae5e4479e792926b61dd0689129f05",
-  "unit_count": 159,
+  "unit_count": 188,
   "units": [
     {
       "addenda": [
@@ -13,8 +13,8 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
-      "compiled_grammar_tagged_rows": 52568,
-      "compiled_rows": 160237,
+      "compiled_grammar_tagged_rows": 53409,
+      "compiled_rows": 161454,
       "entry_key_count": 0,
       "id": "cdial-cdial",
       "importers": [
@@ -781,8 +781,8 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
-      "compiled_grammar_tagged_rows": 11211,
-      "compiled_rows": 82831,
+      "compiled_grammar_tagged_rows": 30726,
+      "compiled_rows": 102732,
       "entry_key_count": 0,
       "id": "dedr-dedr-new",
       "importers": [
@@ -1197,7 +1197,7 @@
       ],
       "blank_form_count": 0,
       "compiled_grammar_tagged_rows": 3499,
-      "compiled_rows": 3602,
+      "compiled_rows": 3912,
       "entry_key_count": 276,
       "id": "20220913-kalkoti",
       "importers": [
@@ -1229,6 +1229,8 @@
       ],
       "tests": [
         "tests/test_hultman_kalkoti.py",
+        "tests/test_kalkoti_donors.py",
+        "tests/test_kalkoti_final_donors.py",
         "tests/test_liljegren_kalkoti.py",
         "tests/test_source_checklists.py"
       ],
@@ -1463,7 +1465,7 @@
       ],
       "blank_form_count": 0,
       "compiled_grammar_tagged_rows": 3293,
-      "compiled_rows": 3322,
+      "compiled_rows": 3629,
       "entry_key_count": 3493,
       "id": "20220913-palula",
       "importers": [
@@ -1667,7 +1669,7 @@
       ],
       "blank_form_count": 0,
       "compiled_grammar_tagged_rows": 204,
-      "compiled_rows": 399,
+      "compiled_rows": 407,
       "entry_key_count": 258,
       "id": "20220913-thari",
       "importers": [
@@ -1958,7 +1960,7 @@
       ],
       "blank_form_count": 0,
       "compiled_grammar_tagged_rows": 0,
-      "compiled_rows": 82,
+      "compiled_rows": 90,
       "entry_key_count": 0,
       "id": "20230403-arora",
       "importers": [
@@ -2332,7 +2334,7 @@
       ],
       "blank_form_count": 0,
       "compiled_grammar_tagged_rows": 582,
-      "compiled_rows": 15876,
+      "compiled_rows": 15887,
       "entry_key_count": 0,
       "id": "20230521-rajasthani",
       "importers": [
@@ -2754,6 +2756,7 @@
       "tests": [
         "tests/test_buddruss_shina_1996.py",
         "tests/test_degener_shina.py",
+        "tests/test_shinaic_donors.py",
         "tests/test_source_checklists.py"
       ],
       "unique_entry_key_count": 0,
@@ -2817,6 +2820,7 @@
       "entry_key_count": 6672,
       "id": "20260718-merriam-dravidian-db",
       "importers": [
+        "data/other/forms/raw_data/ia_dravidian.py",
         "data/other/forms/raw_data/merriam_dravidian_db.py"
       ],
       "installed_file": "data/other/forms/20260718-merriam-dravidian-db.csv",
@@ -2849,6 +2853,7 @@
         "starostin2006dravidian"
       ],
       "tests": [
+        "tests/test_ia_dravidian.py",
         "tests/test_merriam_dravidian_db.py",
         "tests/test_source_checklists.py"
       ],
@@ -2961,6 +2966,7 @@
       "entry_key_count": 0,
       "id": "20260724-zoller-indus-kohistani",
       "importers": [
+        "data/other/forms/raw_data/zoller_2023.py",
         "data/other/forms/raw_data/zoller_ch6.py",
         "data/other/forms/raw_data/zoller_dictionary.py"
       ],
@@ -2988,6 +2994,7 @@
         "zoller2005"
       ],
       "tests": [
+        "tests/test_zoller_2023.py",
         "tests/test_source_checklists.py"
       ],
       "unique_entry_key_count": 0,
@@ -3596,8 +3603,8 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
-      "compiled_grammar_tagged_rows": 11600,
-      "compiled_rows": 11600,
+      "compiled_grammar_tagged_rows": 11601,
+      "compiled_rows": 11601,
       "entry_key_count": 11600,
       "id": "20260810-liljegren-hindukush",
       "importers": [
@@ -4036,7 +4043,7 @@
       ],
       "blank_form_count": 0,
       "compiled_grammar_tagged_rows": 898,
-      "compiled_rows": 28552,
+      "compiled_rows": 28553,
       "entry_key_count": 28552,
       "id": "20260813-grierson-lsi",
       "importers": [
@@ -4380,7 +4387,7 @@
       ],
       "blank_form_count": 0,
       "compiled_grammar_tagged_rows": 22,
-      "compiled_rows": 810,
+      "compiled_rows": 2330,
       "entry_key_count": 833,
       "id": "20260813-kochila-tharu",
       "importers": [
@@ -4404,10 +4411,12 @@
       },
       "source_grammar_evidence_rows": 24,
       "source_key_counts": {
-        "eichentopf-mitchell2020kochila": 833
+        "eichentopf-mitchell2020kochila": 833,
+        "mitchell-eichentopf2013tharu": 761
       },
       "source_keys": [
-        "eichentopf-mitchell2020kochila"
+        "eichentopf-mitchell2020kochila",
+        "mitchell-eichentopf2013tharu"
       ],
       "tests": [
         "tests/test_kochila_tharu.py",
@@ -4522,6 +4531,7 @@
       "entry_key_count": 1336,
       "id": "20260813-kurux-nepal",
       "importers": [
+        "data/other/forms/raw_data/census_nepal.py",
         "data/other/forms/raw_data/kurux_nepal.py"
       ],
       "installed_file": "data/other/forms/20260813-kurux-nepal.csv",
@@ -4547,6 +4557,7 @@
         "shackelford-swenson-chaudhary-maggard2022kurux"
       ],
       "tests": [
+        "tests/test_census_nepal.py",
         "tests/test_kurux_nepal.py",
         "tests/test_sil_kurux_2011_manual.py",
         "tests/test_source_checklists.py"
@@ -5386,6 +5397,7 @@
         "lipp2014western-tamang"
       ],
       "tests": [
+        "tests/test_western_surveys_2026.py",
         "tests/test_western_tamang.py",
         "tests/test_source_checklists.py"
       ],
@@ -6575,7 +6587,7 @@
       ],
       "blank_form_count": 0,
       "compiled_grammar_tagged_rows": 347,
-      "compiled_rows": 475,
+      "compiled_rows": 493,
       "entry_key_count": 475,
       "id": "20260825-hultman-kalkoti",
       "importers": [
@@ -6603,6 +6615,8 @@
       ],
       "tests": [
         "tests/test_hultman_kalkoti.py",
+        "tests/test_kalkoti_donors.py",
+        "tests/test_kalkoti_final_donors.py",
         "tests/test_liljegren_kalkoti.py",
         "tests/test_source_checklists.py"
       ],
@@ -6624,7 +6638,7 @@
       ],
       "blank_form_count": 0,
       "compiled_grammar_tagged_rows": 423,
-      "compiled_rows": 573,
+      "compiled_rows": 575,
       "entry_key_count": 573,
       "id": "20260825-knobloch-sauji",
       "importers": [
@@ -7112,7 +7126,7 @@
       ],
       "blank_form_count": 0,
       "compiled_grammar_tagged_rows": 1264,
-      "compiled_rows": 1577,
+      "compiled_rows": 1668,
       "entry_key_count": 1577,
       "id": "20260827-degener-shina",
       "importers": [
@@ -8717,7 +8731,7 @@
       ],
       "blank_form_count": 0,
       "compiled_grammar_tagged_rows": 0,
-      "compiled_rows": 2723,
+      "compiled_rows": 2728,
       "entry_key_count": 7131,
       "id": "20260828-ssnp04",
       "importers": [
@@ -9173,8 +9187,8 @@
         "source_checklists/installed-record-audit.csv.gz"
       ],
       "blank_form_count": 0,
-      "compiled_grammar_tagged_rows": 1307,
-      "compiled_rows": 1856,
+      "compiled_grammar_tagged_rows": 1315,
+      "compiled_rows": 1864,
       "entry_key_count": 1856,
       "id": "20260909-perder-dameli",
       "importers": [
@@ -9209,6 +9223,1996 @@
         "tests/test_source_checklists.py"
       ],
       "unique_entry_key_count": 1856,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Survey wordlists or comparative tables",
+        "Website/API or external CLDF",
+        "Etymological/comparative source"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/20260909-perder-dameli-audit.csv",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 13832,
+      "compiled_rows": 44908,
+      "entry_key_count": 33,
+      "id": "20260910-dameli-donors",
+      "importers": [
+        "data/other/forms/raw_data/perder_dameli_2013.py"
+      ],
+      "installed_file": "data/other/forms/20260910-dameli-donors.csv",
+      "languages": [
+        "H",
+        "Psht"
+      ],
+      "profiles": [
+        "conversion/dameli-donors.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 33,
+      "row_widths": {
+        "15": 33
+      },
+      "source_grammar_evidence_rows": 27,
+      "source_key_counts": {
+        "grierson-lsi1928": 1,
+        "hallberg1992pashto": 28,
+        "liljegren-hindukush": 1,
+        "oped2026": 6,
+        "perder2013dameli": 8,
+        "platts1884": 12
+      },
+      "source_keys": [
+        "grierson-lsi1928",
+        "hallberg1992pashto",
+        "liljegren-hindukush",
+        "oped2026",
+        "perder2013dameli",
+        "platts1884"
+      ],
+      "tests": [
+        "tests/test_central_surveys_donors.py",
+        "tests/test_dameli_donors.py",
+        "tests/test_kalkoti_donors.py",
+        "tests/test_kalkoti_final_donors.py",
+        "tests/test_mewari_donors.py",
+        "tests/test_perder_dameli.py",
+        "tests/test_sh_bro_donors.py",
+        "tests/test_shinaic_donors.py",
+        "tests/test_source_checklists.py"
+      ],
+      "unique_entry_key_count": 33,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Survey wordlists or comparative tables"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/ia_dravidian_2026/20260911-bajjika-audit.jsonl",
+        "data/other/forms/raw_data/ia_dravidian_2026/snapshot.json",
+        "source_checklists/20260911-ia-dravidian-review.md",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 32,
+      "compiled_rows": 1208,
+      "entry_key_count": 1208,
+      "id": "20260911-bajjika",
+      "importers": [
+        "data/other/forms/raw_data/ia_dravidian.py"
+      ],
+      "installed_file": "data/other/forms/20260911-bajjika.csv",
+      "languages": [
+        "Mth"
+      ],
+      "profiles": [
+        "conversion/bajjika.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 1208,
+      "row_widths": {
+        "15": 1208
+      },
+      "source_grammar_evidence_rows": 32,
+      "source_key_counts": {
+        "regmi2014bajjika": 1208
+      },
+      "source_keys": [
+        "regmi2014bajjika"
+      ],
+      "tests": [
+        "tests/test_ia_dravidian.py",
+        "tests/test_sound_profiles.py",
+        "tests/test_dialects.py"
+      ],
+      "unique_entry_key_count": 1208,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Survey wordlists or comparative tables"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/census_nepal_2026/bihar-audit.jsonl",
+        "data/other/forms/raw_data/census_nepal_2026/snapshot.json",
+        "source_checklists/20260911-census-nepal-review.md",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 4177,
+      "compiled_rows": 4177,
+      "entry_key_count": 4177,
+      "id": "20260911-census-bihar",
+      "importers": [
+        "data/other/forms/raw_data/census_nepal.py"
+      ],
+      "installed_file": "data/other/forms/20260911-census-bihar.csv",
+      "languages": [
+        "Bhoj",
+        "H",
+        "KS",
+        "Kurmali",
+        "MagahiNepal",
+        "Mth"
+      ],
+      "profiles": [
+        "conversion/census-ascii.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 4177,
+      "row_widths": {
+        "15": 4177
+      },
+      "source_grammar_evidence_rows": 4177,
+      "source_key_counts": {
+        "census2020bihar": 4177
+      },
+      "source_keys": [
+        "census2020bihar"
+      ],
+      "tests": [
+        "tests/test_census_nepal.py",
+        "tests/test_sound_profiles.py",
+        "tests/test_dialects.py"
+      ],
+      "unique_entry_key_count": 4177,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Survey wordlists or comparative tables"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/census_nepal_2026/danuwar-audit.jsonl",
+        "data/other/forms/raw_data/census_nepal_2026/snapshot.json",
+        "source_checklists/20260911-census-nepal-review.md",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 1051,
+      "compiled_rows": 1051,
+      "entry_key_count": 1051,
+      "id": "20260911-census-danuwar",
+      "importers": [
+        "data/other/forms/raw_data/census_nepal.py"
+      ],
+      "installed_file": "data/other/forms/20260911-census-danuwar.csv",
+      "languages": [
+        "DewasDoneDanuwar",
+        "KochariyaEastDanuwar"
+      ],
+      "profiles": [
+        "conversion/census-danuwar.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 1051,
+      "row_widths": {
+        "15": 1051
+      },
+      "source_grammar_evidence_rows": 1051,
+      "source_key_counts": {
+        "regmi-thakur2016danuwar": 1051
+      },
+      "source_keys": [
+        "regmi-thakur2016danuwar"
+      ],
+      "tests": [
+        "tests/test_census_nepal.py",
+        "tests/test_sound_profiles.py",
+        "tests/test_dialects.py"
+      ],
+      "unique_entry_key_count": 1051,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Survey wordlists or comparative tables"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/census_nepal_2026/sikkim2-audit.jsonl",
+        "data/other/forms/raw_data/census_nepal_2026/snapshot.json",
+        "source_checklists/20260911-census-nepal-review.md",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 1729,
+      "compiled_rows": 1729,
+      "entry_key_count": 1729,
+      "id": "20260911-census-sikkim2",
+      "importers": [
+        "data/other/forms/raw_data/census_nepal.py"
+      ],
+      "installed_file": "data/other/forms/20260911-census-sikkim2.csv",
+      "languages": [
+        "N"
+      ],
+      "profiles": [
+        "conversion/census-ascii.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 1729,
+      "row_widths": {
+        "15": 1729
+      },
+      "source_grammar_evidence_rows": 1729,
+      "source_key_counts": {
+        "census2012sikkim2": 1729
+      },
+      "source_keys": [
+        "census2012sikkim2"
+      ],
+      "tests": [
+        "tests/test_census_nepal.py",
+        "tests/test_sound_profiles.py",
+        "tests/test_dialects.py"
+      ],
+      "unique_entry_key_count": 1729,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Survey wordlists or comparative tables"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/census_nepal_2026/tamil-nadu-audit.jsonl",
+        "data/other/forms/raw_data/census_nepal_2026/snapshot.json",
+        "source_checklists/20260911-census-nepal-review.md",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 5995,
+      "compiled_rows": 5995,
+      "entry_key_count": 5995,
+      "id": "20260911-census-tamil-nadu",
+      "importers": [
+        "data/other/forms/raw_data/census_nepal.py"
+      ],
+      "installed_file": "data/other/forms/20260911-census-tamil-nadu.csv",
+      "languages": [
+        "Badaga",
+        "Irula",
+        "Kannada",
+        "Katkari",
+        "Kota",
+        "Maliyad",
+        "Paniya",
+        "Saurashtra",
+        "Sholaga",
+        "Tamil",
+        "Toda",
+        "Urali"
+      ],
+      "profiles": [
+        "conversion/census-ipa.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 5995,
+      "row_widths": {
+        "15": 5995
+      },
+      "source_grammar_evidence_rows": 5995,
+      "source_key_counts": {
+        "census2023tamilnadu": 5995
+      },
+      "source_keys": [
+        "census2023tamilnadu"
+      ],
+      "tests": [
+        "tests/test_census_nepal.py",
+        "tests/test_sound_profiles.py",
+        "tests/test_dialects.py"
+      ],
+      "unique_entry_key_count": 5995,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Survey wordlists or comparative tables",
+        "Website/API or external CLDF"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/census_nepal_2026/tharu-audit.jsonl",
+        "data/other/forms/raw_data/census_nepal_2026/snapshot.json",
+        "source_checklists/20260911-census-nepal-review.md",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 16,
+      "compiled_rows": 2262,
+      "entry_key_count": 1520,
+      "id": "20260911-census-tharu",
+      "importers": [
+        "data/other/forms/raw_data/census_nepal.py"
+      ],
+      "installed_file": "data/other/forms/20260911-census-tharu.csv",
+      "languages": [
+        "Dang",
+        "Kathoriya",
+        "KochilaTharu"
+      ],
+      "profiles": [
+        "conversion/census-ipa.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 1520,
+      "row_widths": {
+        "15": 1520
+      },
+      "source_grammar_evidence_rows": 0,
+      "source_key_counts": {
+        "mitchell-eichentopf2013tharu": 1520
+      },
+      "source_keys": [
+        "mitchell-eichentopf2013tharu"
+      ],
+      "tests": [
+        "tests/test_census_nepal.py",
+        "tests/test_sound_profiles.py",
+        "tests/test_dialects.py"
+      ],
+      "unique_entry_key_count": 1520,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Survey wordlists or comparative tables"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/census_nepal_2026/uttar-pradesh-audit.jsonl",
+        "data/other/forms/raw_data/census_nepal_2026/snapshot.json",
+        "source_checklists/20260911-census-nepal-review.md",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 5931,
+      "compiled_rows": 5931,
+      "entry_key_count": 5931,
+      "id": "20260911-census-uttar-pradesh",
+      "importers": [
+        "data/other/forms/raw_data/census_nepal.py"
+      ],
+      "installed_file": "data/other/forms/20260911-census-uttar-pradesh.csv",
+      "languages": [
+        "Aw",
+        "Brj",
+        "H",
+        "P"
+      ],
+      "profiles": [
+        "conversion/census-ipa.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 5931,
+      "row_widths": {
+        "15": 5931
+      },
+      "source_grammar_evidence_rows": 5931,
+      "source_key_counts": {
+        "census2023uttarpradesh": 5931
+      },
+      "source_keys": [
+        "census2023uttarpradesh"
+      ],
+      "tests": [
+        "tests/test_census_nepal.py",
+        "tests/test_sound_profiles.py",
+        "tests/test_dialects.py"
+      ],
+      "unique_entry_key_count": 5931,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Survey wordlists or comparative tables"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/20260911-dadra-varli-audit.jsonl",
+        "data/other/forms/raw_data/20260911-dadra-varli-manifest.json",
+        "source_checklists/20260911-western-surveys-review.md",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 25,
+      "compiled_rows": 816,
+      "entry_key_count": 816,
+      "id": "20260911-dadra-varli",
+      "importers": [
+        "data/other/forms/raw_data/dadra_varli_2003.py"
+      ],
+      "installed_file": "data/other/forms/20260911-dadra-varli.csv",
+      "languages": [
+        "Bhili",
+        "Varli"
+      ],
+      "profiles": [
+        "conversion/dadra-varli.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 816,
+      "row_widths": {
+        "15": 816
+      },
+      "source_grammar_evidence_rows": 25,
+      "source_key_counts": {
+        "pattanaik-koul2003varli": 816
+      },
+      "source_keys": [
+        "pattanaik-koul2003varli"
+      ],
+      "tests": [
+        "tests/test_western_surveys_2026.py",
+        "tests/test_sound_profiles.py",
+        "tests/test_dialects.py"
+      ],
+      "unique_entry_key_count": 816,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Survey wordlists or comparative tables",
+        "Website/API or external CLDF",
+        "Etymological/comparative source"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/ia_dravidian_2026/20260911-dravlex-audit.jsonl",
+        "data/other/forms/raw_data/ia_dravidian_2026/snapshot.json",
+        "source_checklists/20260911-ia-dravidian-review.md",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 365,
+      "compiled_rows": 5881,
+      "entry_key_count": 2127,
+      "id": "20260911-dravlex",
+      "importers": [
+        "data/other/forms/raw_data/ia_dravidian.py"
+      ],
+      "installed_file": "data/other/forms/20260911-dravlex.csv",
+      "languages": [
+        "Badaga",
+        "BettaKurumba",
+        "Brahui",
+        "Gondi",
+        "Kannada",
+        "Kodagu",
+        "Kolami",
+        "Kota",
+        "Kurux",
+        "Kuwi",
+        "Malayalam",
+        "Malto",
+        "OllariGadaba",
+        "Parji",
+        "Ravula",
+        "Tamil",
+        "Telugu",
+        "Toda",
+        "Tulu"
+      ],
+      "profiles": [
+        "conversion/ia-dravidian-ipa.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 2127,
+      "row_widths": {
+        "15": 2127
+      },
+      "source_grammar_evidence_rows": 141,
+      "source_key_counts": {
+        "andronov1964lexicostatistics": 256,
+        "burrow-emeneau1961ded": 8,
+        "kolipakam2018dravlex": 2127,
+        "kolipakam2018fieldnotes": 1866,
+        "lindgren2023dravidian": 2133
+      },
+      "source_keys": [
+        "andronov1964lexicostatistics",
+        "burrow-emeneau1961ded",
+        "kolipakam2018dravlex",
+        "kolipakam2018fieldnotes",
+        "lindgren2023dravidian"
+      ],
+      "tests": [
+        "tests/test_ia_dravidian.py",
+        "tests/test_sound_profiles.py",
+        "tests/test_dialects.py"
+      ],
+      "unique_entry_key_count": 2127,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Dictionary or glossary",
+        "OCR-heavy source"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/20260911-ghatage-konkani-audit.jsonl",
+        "data/other/forms/raw_data/ghatage_western/konkani-manifest.json",
+        "source_checklists/20260911-western-surveys-review.md",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 1276,
+      "compiled_rows": 1389,
+      "entry_key_count": 1389,
+      "id": "20260911-ghatage-konkani",
+      "importers": [
+        "data/other/forms/raw_data/ghatage_western/import_glossaries.py"
+      ],
+      "installed_file": "data/other/forms/20260911-ghatage-konkani.csv",
+      "languages": [
+        "Ko"
+      ],
+      "profiles": [
+        "conversion/ghatage-western.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 1389,
+      "row_widths": {
+        "15": 1389
+      },
+      "source_grammar_evidence_rows": 1276,
+      "source_key_counts": {
+        "ghatage-konkani1963": 1389
+      },
+      "source_keys": [
+        "ghatage-konkani1963"
+      ],
+      "tests": [
+        "tests/test_western_surveys_2026.py",
+        "tests/test_sound_profiles.py",
+        "tests/test_dialects.py"
+      ],
+      "unique_entry_key_count": 1389,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Dictionary or glossary",
+        "OCR-heavy source"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/20260911-ghatage-kudali-audit.jsonl",
+        "data/other/forms/raw_data/ghatage_western/kudali-manifest.json",
+        "source_checklists/20260911-western-surveys-review.md",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 1901,
+      "compiled_rows": 1902,
+      "entry_key_count": 1902,
+      "id": "20260911-ghatage-kudali",
+      "importers": [
+        "data/other/forms/raw_data/ghatage_western/import_glossaries.py"
+      ],
+      "installed_file": "data/other/forms/20260911-ghatage-kudali.csv",
+      "languages": [
+        "M"
+      ],
+      "profiles": [
+        "conversion/ghatage-western.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 1902,
+      "row_widths": {
+        "15": 1902
+      },
+      "source_grammar_evidence_rows": 1901,
+      "source_key_counts": {
+        "ghatage-kudali1965": 1902
+      },
+      "source_keys": [
+        "ghatage-kudali1965"
+      ],
+      "tests": [
+        "tests/test_western_surveys_2026.py",
+        "tests/test_sound_profiles.py",
+        "tests/test_dialects.py"
+      ],
+      "unique_entry_key_count": 1902,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Dictionary or glossary",
+        "Website/API or external CLDF"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/20260911-kharia-living-audit.jsonl",
+        "data/other/forms/raw_data/20260911-kharia-living-manifest.json",
+        "source_checklists/20260911-kharia-living-review.md",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 138,
+      "compiled_rows": 521,
+      "entry_key_count": 521,
+      "id": "20260911-kharia-living",
+      "importers": [
+        "data/other/forms/raw_data/kharia_living.py"
+      ],
+      "installed_file": "data/other/forms/20260911-kharia-living.csv",
+      "languages": [
+        "kh"
+      ],
+      "profiles": [
+        "conversion/kharia-living.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 521,
+      "row_widths": {
+        "15": 521
+      },
+      "source_grammar_evidence_rows": 138,
+      "source_key_counts": {
+        "living-kharia2026": 521
+      },
+      "source_keys": [
+        "living-kharia2026"
+      ],
+      "tests": [
+        "tests/test_kharia_living.py",
+        "tests/test_sound_profiles.py",
+        "tests/test_dialects.py"
+      ],
+      "unique_entry_key_count": 521,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Survey wordlists or comparative tables",
+        "Website/API or external CLDF",
+        "Etymological/comparative source"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/ia_dravidian_2026/20260911-lindgren-audit.jsonl",
+        "data/other/forms/raw_data/ia_dravidian_2026/snapshot.json",
+        "source_checklists/20260911-ia-dravidian-review.md",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 365,
+      "compiled_rows": 5881,
+      "entry_key_count": 3754,
+      "id": "20260911-lindgren",
+      "importers": [
+        "data/other/forms/raw_data/ia_dravidian.py"
+      ],
+      "installed_file": "data/other/forms/20260911-lindgren.csv",
+      "languages": [
+        "Belari",
+        "Kannada",
+        "Koraga",
+        "Malayalam",
+        "Pattapu",
+        "Tamil",
+        "Tulu"
+      ],
+      "profiles": [
+        "conversion/ia-dravidian-ipa.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 3754,
+      "row_widths": {
+        "15": 3754
+      },
+      "source_grammar_evidence_rows": 224,
+      "source_key_counts": {
+        "lindgren2023dravidian": 3754
+      },
+      "source_keys": [
+        "lindgren2023dravidian"
+      ],
+      "tests": [
+        "tests/test_ia_dravidian.py",
+        "tests/test_sound_profiles.py",
+        "tests/test_dialects.py"
+      ],
+      "unique_entry_key_count": 3754,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Survey wordlists or comparative tables"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/more_surveys_2026/himachal-audit.jsonl",
+        "data/other/forms/raw_data/more_surveys_2026/snapshot.json",
+        "source_checklists/20260911-more-surveys-review.md",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 6442,
+      "compiled_rows": 6442,
+      "entry_key_count": 6442,
+      "id": "20260911-more-himachal",
+      "importers": [
+        "data/other/forms/raw_data/more_surveys.py",
+        "data/other/forms/raw_data/more_surveys_2026/extract.py"
+      ],
+      "installed_file": "data/other/forms/20260911-more-himachal.csv",
+      "languages": [
+        "Bilaspuri",
+        "N",
+        "Sanori",
+        "bhat",
+        "cam",
+        "cur",
+        "dog",
+        "ga",
+        "kgr",
+        "kul",
+        "mahasu",
+        "mand",
+        "pan",
+        "sirm"
+      ],
+      "profiles": [
+        "conversion/more-ascii.txt",
+        "conversion/more-ipa.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 6442,
+      "row_widths": {
+        "15": 6442
+      },
+      "source_grammar_evidence_rows": 6442,
+      "source_key_counts": {
+        "census2023himachal": 6442
+      },
+      "source_keys": [
+        "census2023himachal"
+      ],
+      "tests": [
+        "tests/test_more_surveys.py",
+        "tests/test_sound_profiles.py",
+        "tests/test_dialects.py"
+      ],
+      "unique_entry_key_count": 6442,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Survey wordlists or comparative tables"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/more_surveys_2026/jharkhand-audit.jsonl",
+        "data/other/forms/raw_data/more_surveys_2026/snapshot.json",
+        "source_checklists/20260911-more-surveys-review.md",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 4407,
+      "compiled_rows": 4407,
+      "entry_key_count": 4407,
+      "id": "20260911-more-jharkhand",
+      "importers": [
+        "data/other/forms/raw_data/more_surveys.py",
+        "data/other/forms/raw_data/more_surveys_2026/extract.py"
+      ],
+      "installed_file": "data/other/forms/20260911-more-jharkhand.csv",
+      "languages": [
+        "H",
+        "Kurmali",
+        "Kurux",
+        "MagahiNepal",
+        "MalPaharia",
+        "Sadri"
+      ],
+      "profiles": [
+        "conversion/more-ascii.txt",
+        "conversion/more-ipa.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 4407,
+      "row_widths": {
+        "15": 4407
+      },
+      "source_grammar_evidence_rows": 4407,
+      "source_key_counts": {
+        "census2023jharkhand": 4407
+      },
+      "source_keys": [
+        "census2023jharkhand"
+      ],
+      "tests": [
+        "tests/test_more_surveys.py",
+        "tests/test_sound_profiles.py",
+        "tests/test_dialects.py"
+      ],
+      "unique_entry_key_count": 4407,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Survey wordlists or comparative tables"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/more_surveys_2026/kisan-audit.jsonl",
+        "data/other/forms/raw_data/more_surveys_2026/snapshot.json",
+        "source_checklists/20260911-more-surveys-review.md",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 1067,
+      "compiled_rows": 1067,
+      "entry_key_count": 1067,
+      "id": "20260911-more-kisan",
+      "importers": [
+        "data/other/forms/raw_data/more_surveys.py",
+        "data/other/forms/raw_data/more_surveys_2026/extract.py"
+      ],
+      "installed_file": "data/other/forms/20260911-more-kisan.csv",
+      "languages": [
+        "KisanIA"
+      ],
+      "profiles": [
+        "conversion/more-ascii.txt",
+        "conversion/more-ipa.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 1067,
+      "row_widths": {
+        "15": 1067
+      },
+      "source_grammar_evidence_rows": 1067,
+      "source_key_counts": {
+        "mahato2014kisan": 1067
+      },
+      "source_keys": [
+        "mahato2014kisan"
+      ],
+      "tests": [
+        "tests/test_more_surveys.py",
+        "tests/test_sound_profiles.py",
+        "tests/test_dialects.py"
+      ],
+      "unique_entry_key_count": 1067,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Survey wordlists or comparative tables"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/more_surveys_2026/rajasthan-audit.jsonl",
+        "data/other/forms/raw_data/more_surveys_2026/snapshot.json",
+        "source_checklists/20260911-more-surveys-review.md",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 4567,
+      "compiled_rows": 4567,
+      "entry_key_count": 4567,
+      "id": "20260911-more-rajasthan",
+      "importers": [
+        "data/other/forms/raw_data/more_surveys.py",
+        "data/other/forms/raw_data/more_surveys_2026/extract.py"
+      ],
+      "installed_file": "data/other/forms/20260911-more-rajasthan.csv",
+      "languages": [
+        "Brj",
+        "Marw",
+        "Wagdi",
+        "bundeli_atarra",
+        "dhundari_bamore",
+        "mewari_basad",
+        "mewati_akera"
+      ],
+      "profiles": [
+        "conversion/more-ascii.txt",
+        "conversion/more-ipa.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 4567,
+      "row_widths": {
+        "15": 4567
+      },
+      "source_grammar_evidence_rows": 4567,
+      "source_key_counts": {
+        "census2011rajasthan": 4567
+      },
+      "source_keys": [
+        "census2011rajasthan"
+      ],
+      "tests": [
+        "tests/test_more_surveys.py",
+        "tests/test_sound_profiles.py",
+        "tests/test_dialects.py"
+      ],
+      "unique_entry_key_count": 4567,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Survey wordlists or comparative tables"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/more_surveys_2026/west-bengal-audit.jsonl",
+        "data/other/forms/raw_data/more_surveys_2026/snapshot.json",
+        "source_checklists/20260911-more-surveys-review.md",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 1835,
+      "compiled_rows": 1835,
+      "entry_key_count": 1835,
+      "id": "20260911-more-west-bengal",
+      "importers": [
+        "data/other/forms/raw_data/more_surveys.py",
+        "data/other/forms/raw_data/more_surveys_2026/extract.py"
+      ],
+      "installed_file": "data/other/forms/20260911-more-west-bengal.csv",
+      "languages": [
+        "B",
+        "MH",
+        "N"
+      ],
+      "profiles": [
+        "conversion/more-ascii.txt",
+        "conversion/more-ipa.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 1835,
+      "row_widths": {
+        "15": 1835
+      },
+      "source_grammar_evidence_rows": 1835,
+      "source_key_counts": {
+        "census2016westbengal": 1835
+      },
+      "source_keys": [
+        "census2016westbengal"
+      ],
+      "tests": [
+        "tests/test_more_surveys.py",
+        "tests/test_sound_profiles.py",
+        "tests/test_dialects.py"
+      ],
+      "unique_entry_key_count": 1835,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Dictionary or glossary"
+      ],
+      "audits": [
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 6065,
+      "compiled_rows": 6535,
+      "entry_key_count": 6535,
+      "id": "20260911-nirmaan-mewari",
+      "importers": [
+        "data/other/forms/raw_data/nirmaan_mewari.py"
+      ],
+      "installed_file": "data/other/forms/20260911-nirmaan-mewari.csv",
+      "languages": [
+        "mewari_dholpura"
+      ],
+      "profiles": [
+        "conversion/nirmaan-mewari.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 6535,
+      "row_widths": {
+        "15": 6535
+      },
+      "source_grammar_evidence_rows": 6065,
+      "source_key_counts": {
+        "nirmaan2018mewari": 6657
+      },
+      "source_keys": [
+        "nirmaan2018mewari"
+      ],
+      "tests": [
+        "tests/test_mewari_donors.py",
+        "tests/test_nirmaan_mewari.py",
+        "tests/test_source_checklists.py"
+      ],
+      "unique_entry_key_count": 6535,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Survey wordlists or comparative tables",
+        "Website/API or external CLDF"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/sdml_2026/20260911-sdml-audit.jsonl",
+        "data/other/forms/raw_data/sdml_2026/snapshot.json",
+        "source_checklists/20260911-sdml-review.md",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 37,
+      "compiled_rows": 47317,
+      "entry_key_count": 47317,
+      "id": "20260911-sdml",
+      "importers": [
+        "data/other/forms/raw_data/sdml.py"
+      ],
+      "installed_file": "data/other/forms/20260911-sdml.csv",
+      "languages": [
+        "M"
+      ],
+      "profiles": [
+        "conversion/sdml.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 47317,
+      "row_widths": {
+        "15": 47317
+      },
+      "source_grammar_evidence_rows": 37,
+      "source_key_counts": {
+        "sdml2026": 47317
+      },
+      "source_keys": [
+        "sdml2026"
+      ],
+      "tests": [
+        "tests/test_sdml.py",
+        "tests/test_sound_profiles.py",
+        "tests/test_dialects.py"
+      ],
+      "unique_entry_key_count": 47317,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Survey wordlists or comparative tables"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/selected_surveys_2026/angika-audit.jsonl",
+        "data/other/forms/raw_data/selected_surveys_2026/snapshot.json",
+        "source_checklists/20260911-selected-surveys-review.md",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 1076,
+      "compiled_rows": 1076,
+      "entry_key_count": 1076,
+      "id": "20260911-selected-angika",
+      "importers": [
+        "data/other/forms/raw_data/selected_surveys.py",
+        "data/other/forms/raw_data/selected_surveys_2026/extract_tables.py"
+      ],
+      "installed_file": "data/other/forms/20260911-selected-angika.csv",
+      "languages": [
+        "Angika"
+      ],
+      "profiles": [
+        "conversion/selected-angika.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 1076,
+      "row_widths": {
+        "15": 1076
+      },
+      "source_grammar_evidence_rows": 1076,
+      "source_key_counts": {
+        "regmi2017angika": 1076
+      },
+      "source_keys": [
+        "regmi2017angika"
+      ],
+      "tests": [
+        "tests/test_selected_surveys.py",
+        "tests/test_sound_profiles.py",
+        "tests/test_dialects.py"
+      ],
+      "unique_entry_key_count": 1076,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Dictionary or glossary",
+        "OCR-heavy source",
+        "Etymological/comparative source"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/selected_surveys_2026/koraga-audit.jsonl",
+        "data/other/forms/raw_data/selected_surveys_2026/snapshot.json",
+        "source_checklists/20260911-selected-surveys-review.md",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 1369,
+      "compiled_rows": 1369,
+      "entry_key_count": 1369,
+      "id": "20260911-selected-koraga",
+      "importers": [
+        "data/other/forms/raw_data/selected_surveys.py",
+        "data/other/forms/raw_data/selected_surveys_2026/koraga.py"
+      ],
+      "installed_file": "data/other/forms/20260911-selected-koraga.csv",
+      "languages": [
+        "Koraga"
+      ],
+      "profiles": [
+        "conversion/selected-koraga.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 1369,
+      "row_widths": {
+        "15": 1369
+      },
+      "source_grammar_evidence_rows": 1369,
+      "source_key_counts": {
+        "bhat1971koraga": 1369
+      },
+      "source_keys": [
+        "bhat1971koraga"
+      ],
+      "tests": [
+        "tests/test_selected_surveys.py",
+        "tests/test_sound_profiles.py",
+        "tests/test_dialects.py"
+      ],
+      "unique_entry_key_count": 1369,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Survey wordlists or comparative tables"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/selected_surveys_2026/majhi-audit.jsonl",
+        "data/other/forms/raw_data/selected_surveys_2026/snapshot.json",
+        "source_checklists/20260911-selected-surveys-review.md",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 1055,
+      "compiled_rows": 1055,
+      "entry_key_count": 1055,
+      "id": "20260911-selected-majhi",
+      "importers": [
+        "data/other/forms/raw_data/selected_surveys.py",
+        "data/other/forms/raw_data/selected_surveys_2026/extract_tables.py"
+      ],
+      "installed_file": "data/other/forms/20260911-selected-majhi.csv",
+      "languages": [
+        "Majhi"
+      ],
+      "profiles": [
+        "conversion/selected-majhi.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 1055,
+      "row_widths": {
+        "15": 1055
+      },
+      "source_grammar_evidence_rows": 1055,
+      "source_key_counts": {
+        "chalise2014majhi": 1055
+      },
+      "source_keys": [
+        "chalise2014majhi"
+      ],
+      "tests": [
+        "tests/test_selected_surveys.py",
+        "tests/test_sound_profiles.py",
+        "tests/test_dialects.py"
+      ],
+      "unique_entry_key_count": 1055,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Survey wordlists or comparative tables",
+        "OCR-heavy source"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/selected_surveys_2026/orissa-audit.jsonl",
+        "data/other/forms/raw_data/selected_surveys_2026/snapshot.json",
+        "source_checklists/20260911-selected-surveys-review.md",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 5713,
+      "compiled_rows": 5713,
+      "entry_key_count": 5713,
+      "id": "20260911-selected-orissa",
+      "importers": [
+        "data/other/forms/raw_data/selected_surveys.py",
+        "data/other/forms/raw_data/selected_surveys_2026/extract_orissa.py",
+        "data/other/forms/raw_data/selected_surveys_2026/orissa.py"
+      ],
+      "installed_file": "data/other/forms/20260911-selected-orissa.csv",
+      "languages": [
+        "AdivasiOriya",
+        "Bhatri",
+        "Or",
+        "Reli",
+        "sambalpuri"
+      ],
+      "profiles": [
+        "conversion/selected-orissa.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 5713,
+      "row_widths": {
+        "15": 5713
+      },
+      "source_grammar_evidence_rows": 5713,
+      "source_key_counts": {
+        "census2002orissa": 5713
+      },
+      "source_keys": [
+        "census2002orissa"
+      ],
+      "tests": [
+        "tests/test_selected_surveys.py",
+        "tests/test_sound_profiles.py",
+        "tests/test_dialects.py"
+      ],
+      "unique_entry_key_count": 5713,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Dictionary or glossary",
+        "OCR-heavy source",
+        "Survey wordlists or comparative tables"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/20260911-seligmann-vedda-audit.jsonl",
+        "data/other/forms/raw_data/seligmann_vedda_1911/manifest.json",
+        "source_checklists/20260911-seligmann-vedda-review.md",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 144,
+      "compiled_rows": 502,
+      "entry_key_count": 502,
+      "id": "20260911-seligmann-vedda",
+      "importers": [
+        "data/other/forms/raw_data/seligmann_vedda.py"
+      ],
+      "installed_file": "data/other/forms/20260911-seligmann-vedda.csv",
+      "languages": [
+        "Vedda"
+      ],
+      "profiles": [
+        "conversion/seligmann-vedda.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 502,
+      "row_widths": {
+        "15": 502
+      },
+      "source_grammar_evidence_rows": 144,
+      "source_key_counts": {
+        "seligmann1911vedda": 502
+      },
+      "source_keys": [
+        "seligmann1911vedda"
+      ],
+      "tests": [
+        "tests/test_seligmann_vedda.py",
+        "tests/test_sound_profiles.py",
+        "tests/test_dialects.py"
+      ],
+      "unique_entry_key_count": 502,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Dictionary or glossary",
+        "Etymological/comparative source"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/keed_2018/audit.jsonl.gz",
+        "source_checklists/20260912-keed-muduga-review.md",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 105391,
+      "compiled_rows": 286918,
+      "entry_key_count": 43120,
+      "id": "20260912-keed",
+      "importers": [
+        "data/other/forms/raw_data/keed_2018.py"
+      ],
+      "installed_file": "data/other/forms/20260912-keed.csv",
+      "languages": [
+        "Ar",
+        "Eng",
+        "H",
+        "Kannada",
+        "M",
+        "Pers",
+        "Sk"
+      ],
+      "profiles": [
+        "conversion/keed.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 43120,
+      "row_widths": {
+        "15": 43120
+      },
+      "source_grammar_evidence_rows": 41508,
+      "source_key_counts": {
+        "Bark-Kannada": 29,
+        "CDIAL": 889,
+        "Gowda-Kannada": 52,
+        "Hal-Kannada": 30,
+        "Hav-Kannada": 184,
+        "HavS-Kannada": 12,
+        "K2-Kannada": 1,
+        "Kitt-Kannada": 2407,
+        "Nanj-Kannada": 12,
+        "Tipt-Kannada": 14,
+        "UNR-Kannada": 7,
+        "UPU-Kannada": 15,
+        "dedr": 20217,
+        "keed-abh-p": 19,
+        "keed-abha": 2,
+        "keed-adp": 2,
+        "keed-alvc": 3,
+        "keed-amvc": 2,
+        "keed-ap": 1,
+        "keed-b": 64,
+        "keed-bh": 25,
+        "keed-bhn": 4,
+        "keed-bia": 13,
+        "keed-bp": 99,
+        "keed-bv": 11,
+        "keed-c-bp": 2,
+        "keed-cb": 9,
+        "keed-ch": 6,
+        "keed-cpr": 27,
+        "keed-ct": 28,
+        "keed-cv": 1,
+        "keed-dcv": 13,
+        "keed-dh": 23,
+        "keed-dhvanyalo": 1,
+        "keed-dp": 3,
+        "keed-g": 28,
+        "keed-gai-index": 2,
+        "keed-grj": 5,
+        "keed-gz": 1,
+        "keed-hla": 11,
+        "keed-iht": 25,
+        "keed-imp": 515,
+        "keed-j": 32,
+        "keed-jenu-kuruba": 4,
+        "keed-jns": 1,
+        "keed-kavy": 1,
+        "keed-kk": 28,
+        "keed-kks": 1,
+        "keed-kpn": 45,
+        "keed-kr": 6,
+        "keed-ksr": 1,
+        "keed-lush": 4,
+        "keed-m": 26,
+        "keed-mr": 63,
+        "keed-mva": 2,
+        "keed-nn": 2,
+        "keed-nr": 39,
+        "keed-p": 34,
+        "keed-pb": 445,
+        "keed-prll": 1,
+        "keed-ps": 1,
+        "keed-r": 48,
+        "keed-ram": 11,
+        "keed-ram-torave": 5,
+        "keed-rsv": 5,
+        "keed-sd": 7,
+        "keed-si": 102,
+        "keed-sm": 35,
+        "keed-smd": 118,
+        "keed-smd-dh": 17,
+        "keed-ss": 14,
+        "keed-ssv": 3,
+        "keed-st-pl": 32,
+        "keed-t": 46,
+        "keed-te": 26,
+        "keed-v": 80,
+        "keed-vr": 4,
+        "mayrhofer-kewa": 124,
+        "uchida-rajapurohit2018": 43120
+      },
+      "source_keys": [
+        "Bark-Kannada",
+        "CDIAL",
+        "Gowda-Kannada",
+        "Hal-Kannada",
+        "Hav-Kannada",
+        "HavS-Kannada",
+        "K2-Kannada",
+        "Kitt-Kannada",
+        "Nanj-Kannada",
+        "Tipt-Kannada",
+        "UNR-Kannada",
+        "UPU-Kannada",
+        "dedr",
+        "keed-abh-p",
+        "keed-abha",
+        "keed-adp",
+        "keed-alvc",
+        "keed-amvc",
+        "keed-ap",
+        "keed-b",
+        "keed-bh",
+        "keed-bhn",
+        "keed-bia",
+        "keed-bp",
+        "keed-bv",
+        "keed-c-bp",
+        "keed-cb",
+        "keed-ch",
+        "keed-cpr",
+        "keed-ct",
+        "keed-cv",
+        "keed-dcv",
+        "keed-dh",
+        "keed-dhvanyalo",
+        "keed-dp",
+        "keed-g",
+        "keed-gai-index",
+        "keed-grj",
+        "keed-gz",
+        "keed-hla",
+        "keed-iht",
+        "keed-imp",
+        "keed-j",
+        "keed-jenu-kuruba",
+        "keed-jns",
+        "keed-kavy",
+        "keed-kk",
+        "keed-kks",
+        "keed-kpn",
+        "keed-kr",
+        "keed-ksr",
+        "keed-lush",
+        "keed-m",
+        "keed-mr",
+        "keed-mva",
+        "keed-nn",
+        "keed-nr",
+        "keed-p",
+        "keed-pb",
+        "keed-prll",
+        "keed-ps",
+        "keed-r",
+        "keed-ram",
+        "keed-ram-torave",
+        "keed-rsv",
+        "keed-sd",
+        "keed-si",
+        "keed-sm",
+        "keed-smd",
+        "keed-smd-dh",
+        "keed-ss",
+        "keed-ssv",
+        "keed-st-pl",
+        "keed-t",
+        "keed-te",
+        "keed-v",
+        "keed-vr",
+        "mayrhofer-kewa",
+        "uchida-rajapurohit2018"
+      ],
+      "tests": [
+        "tests/test_keed_2018.py",
+        "tests/test_sound_profiles.py",
+        "tests/test_dialects.py"
+      ],
+      "unique_entry_key_count": 43120,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Survey wordlists or comparative tables",
+        "Etymological/comparative source"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/muduga_2022/audit.jsonl",
+        "source_checklists/20260912-keed-muduga-review.md",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 30618,
+      "compiled_rows": 102631,
+      "entry_key_count": 109,
+      "id": "20260912-muduga",
+      "importers": [
+        "data/other/forms/raw_data/muduga_2022.py"
+      ],
+      "installed_file": "data/other/forms/20260912-muduga.csv",
+      "languages": [
+        "Muduga"
+      ],
+      "profiles": [
+        "conversion/muduga.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 109,
+      "row_widths": {
+        "15": 109
+      },
+      "source_grammar_evidence_rows": 28,
+      "source_key_counts": {
+        "arsenault-abraham2022muduga": 109,
+        "dedr": 98,
+        "madras-tamil-lexicon": 2
+      },
+      "source_keys": [
+        "arsenault-abraham2022muduga",
+        "dedr",
+        "madras-tamil-lexicon"
+      ],
+      "tests": [
+        "tests/test_muduga_2022.py",
+        "tests/test_sound_profiles.py",
+        "tests/test_dialects.py"
+      ],
+      "unique_entry_key_count": 109,
+      "unregistered_dialect_tags": [],
+      "unregistered_languages": [],
+      "unresolved_references": []
+    },
+    {
+      "addenda": [
+        "Dictionary or glossary",
+        "Survey wordlists or comparative tables",
+        "Etymological/comparative source"
+      ],
+      "audits": [
+        "data/other/forms/raw_data/zoller_2023/audit.jsonl.gz",
+        "data/other/forms/raw_data/zoller_2023/record-audit.jsonl.gz",
+        "source_checklists/20260913-zoller-review.md",
+        "source_checklists/installed-record-audit.csv.gz"
+      ],
+      "blank_form_count": 0,
+      "compiled_grammar_tagged_rows": 84840,
+      "compiled_rows": 280956,
+      "entry_key_count": 17754,
+      "id": "20260913-zoller-linguistic-data",
+      "importers": [
+        "data/other/forms/raw_data/zoller_2023.py"
+      ],
+      "installed_file": "data/other/forms/20260913-zoller-linguistic-data.csv",
+      "languages": [
+        "A",
+        "Abkhaz",
+        "Akkadian",
+        "Alak",
+        "Andi",
+        "Ap",
+        "Apatani",
+        "Ar",
+        "Arm",
+        "Ash",
+        "Asuri",
+        "Av",
+        "Avar",
+        "Aw",
+        "B",
+        "BHSk",
+        "Bahnar",
+        "Bal",
+        "Balti",
+        "Bangani",
+        "Barari",
+        "Bashg",
+        "Basque",
+        "Bats",
+        "Bauri",
+        "Bhili",
+        "Bhoj",
+        "Bi",
+        "Birhor",
+        "Bolyu",
+        "Brahui",
+        "Brao",
+        "Brj",
+        "Bshk",
+        "Bur",
+        "Burmese",
+        "Bushahari",
+        "Byangsi",
+        "CentralKhmer",
+        "CentralNicobarese",
+        "Chakma",
+        "Chantyal",
+        "Chaudangsi",
+        "Chepang",
+        "Chil",
+        "Chitwan",
+        "Chrau",
+        "Chut",
+        "Cornish",
+        "Cua",
+        "Czech",
+        "D",
+        "Dacian",
+        "Danish",
+        "Darai",
+        "Darma",
+        "Deogari",
+        "Deori",
+        "Dhp",
+        "Dimasa",
+        "Dm",
+        "En",
+        "Eng",
+        "Finnish",
+        "Fr",
+        "G",
+        "Galo",
+        "Garh",
+        "Garo",
+        "Gaw",
+        "Georgian",
+        "Gk",
+        "Gmb",
+        "Goth",
+        "Gowro",
+        "Gy",
+        "H",
+        "Halang",
+        "Himachali",
+        "Hinuq",
+        "Hit",
+        "Hu",
+        "Hung",
+        "Hungarian",
+        "Ingush",
+        "Ir_irrr1240",
+        "Ishk",
+        "Italian",
+        "Jad",
+        "Jeh",
+        "Jirel",
+        "Juray",
+        "K",
+        "Kabardian",
+        "Kachari",
+        "Kal",
+        "Kalk",
+        "Kam",
+        "Kanashi",
+        "Kanjari",
+        "Kannada",
+        "Kassite",
+        "Kensiu",
+        "Khandesi",
+        "Khashdhari",
+        "Khashi",
+        "Khasi",
+        "Khinalug",
+        "Khmu",
+        "Kho",
+        "Khot",
+        "Kinnauri",
+        "Kjl",
+        "Ko",
+        "Koda",
+        "Koho",
+        "Kotguru",
+        "Kotkhai",
+        "KriangKhlor",
+        "Kryz",
+        "Kt",
+        "Ku",
+        "Kund",
+        "Kurd",
+        "Kurux",
+        "Kuy",
+        "L",
+        "Lad",
+        "Lak",
+        "Lamet",
+        "Lat",
+        "Latvian",
+        "Laven",
+        "Limbu",
+        "Lith",
+        "Lom",
+        "LothaNaga",
+        "Lyngngam",
+        "M",
+        "MH",
+        "MPrs",
+        "Mahali",
+        "Mai",
+        "Malayalam",
+        "Maleng",
+        "Malto",
+        "Mang",
+        "Marw",
+        "MiddleChinese",
+        "Milang",
+        "Mingrelian",
+        "Mj",
+        "Mlabri",
+        "Mon",
+        "Mth",
+        "Muak",
+        "Muong",
+        "N",
+        "New",
+        "Ni",
+        "Ning",
+        "NorthernKhmer",
+        "Norwegian",
+        "Nyaheun",
+        "Nyahkur",
+        "OAw",
+        "OB",
+        "OG",
+        "OH",
+        "OM",
+        "OMarw",
+        "OP",
+        "OPers",
+        "OPruss",
+        "OSi",
+        "Odu",
+        "OldChinese",
+        "OldEnglishca4501100",
+        "OldGeorgian",
+        "OldKhmer",
+        "OldMiddleWelsh",
+        "OldMon",
+        "OldNorse",
+        "Or",
+        "Orm",
+        "Oss",
+        "OuterSiraji",
+        "P",
+        "Pa",
+        "Pacoh",
+        "Padri",
+        "Palaic",
+        "Par",
+        "Pas",
+        "Pear",
+        "Pengo",
+        "Pers",
+        "Phal",
+        "Phrygian",
+        "Pk",
+        "Pnar",
+        "Polish",
+        "Pr",
+        "Prk",
+        "Psht",
+        "Raji",
+        "Rengao",
+        "Rj",
+        "RomBalk",
+        "RomSint",
+        "RomVlax",
+        "RomWel",
+        "Rongpo",
+        "Rosh",
+        "Russ",
+        "S",
+        "Sadri",
+        "Sang",
+        "Sansi",
+        "Sapuan",
+        "Sar",
+        "Sedang",
+        "Semai",
+        "SemaqBeri",
+        "Semelai",
+        "Semnam",
+        "Sh",
+        "Shgh",
+        "ShimlaSiraji",
+        "Shoracholi",
+        "Shum",
+        "Si",
+        "Sogd",
+        "SoluKhumbuSherpa",
+        "Sorbung",
+        "Sv",
+        "Svan",
+        "Swed",
+        "Tamil",
+        "Tampuan",
+        "Tangam",
+        "Telugu",
+        "Temiar",
+        "Temoq",
+        "Thavung",
+        "Ths",
+        "Tib",
+        "Tir",
+        "Tor",
+        "Tulu",
+        "Turi",
+        "Ubykh",
+        "Udi",
+        "Ush",
+        "Varli",
+        "Vietnamese",
+        "WPah",
+        "Wagdi",
+        "WarJaintia",
+        "Welsh",
+        "WesternWestPahari",
+        "Wg",
+        "Wkh",
+        "Wot",
+        "Yghn",
+        "Yid",
+        "YimchungruNaga",
+        "as",
+        "awan",
+        "bagheli_lakshman",
+        "bfu",
+        "bhad",
+        "bhal",
+        "bhat",
+        "bhatr",
+        "bro",
+        "bundeli_atarra",
+        "cam",
+        "cih",
+        "cur",
+        "dhundari_badagaon",
+        "dhundari_bamore",
+        "dog",
+        "eur",
+        "ga",
+        "gt",
+        "gu",
+        "had",
+        "hal",
+        "ho",
+        "insir",
+        "jaun",
+        "jhang",
+        "jmag",
+        "ju",
+        "kc",
+        "kcch",
+        "kgr",
+        "kh",
+        "khash",
+        "khet",
+        "kiuth",
+        "ko",
+        "ktg",
+        "kul",
+        "kvar",
+        "kw",
+        "lae",
+        "mand",
+        "mewari_basad",
+        "mewati_akera",
+        "mewati_jhambaus",
+        "mu",
+        "pan",
+        "pog",
+        "poth",
+        "ram",
+        "ramp",
+        "re",
+        "roh",
+        "sa",
+        "sbu",
+        "sir",
+        "sirm",
+        "so",
+        "srk",
+        "surkh",
+        "wne"
+      ],
+      "profiles": [
+        "conversion/zoller-2023.txt"
+      ],
+      "replacement_character_count": 0,
+      "row_count": 17754,
+      "row_widths": {
+        "15": 17754
+      },
+      "source_grammar_evidence_rows": 1099,
+      "source_key_counts": {
+        "CDIAL": 342,
+        "dedr": 328,
+        "zoller2023": 17754
+      },
+      "source_keys": [
+        "CDIAL",
+        "dedr",
+        "zoller2023"
+      ],
+      "tests": [
+        "tests/test_zoller_2023.py",
+        "tests/test_sound_profiles.py",
+        "tests/test_dialects.py"
+      ],
+      "unique_entry_key_count": 17754,
       "unregistered_dialect_tags": [],
       "unregistered_languages": [],
       "unresolved_references": []

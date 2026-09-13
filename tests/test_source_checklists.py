@@ -8,6 +8,19 @@ import audit_source_ingestions as source_audits
 ROOT = Path(__file__).parents[1]
 
 
+def test_cleanup_preserves_authored_reviews(monkeypatch, tmp_path):
+    monkeypatch.setattr(source_audits, 'OUTPUT_DIR', tmp_path)
+    review = tmp_path / 'handwritten-review.md'
+    review.write_text('# Source review\n\nIrreplaceable manual audit.\n')
+    stale = tmp_path / 'old-generated.md'
+    stale.write_text('# Source ingestion checklist — old\n')
+    current = tmp_path / 'new-generated.md'
+    source_audits.write_outputs({current: b'new checklist\n'})
+    assert review.read_text() == '# Source review\n\nIrreplaceable manual audit.\n'
+    assert not stale.exists()
+    assert current.read_bytes() == b'new checklist\n'
+
+
 def test_every_installed_ingestion_unit_has_a_fresh_checklist_copy():
     units, outputs = source_audits.expected_outputs()
     assert units

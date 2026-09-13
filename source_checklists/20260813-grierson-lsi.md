@@ -4,7 +4,7 @@
 - Canonical checklist SHA-256: `23516ba5c7caeaa5310f6a32d92b86e4b9ae5e4479e792926b61dd0689129f05`
 - Source-type addenda: Survey wordlists or comparative tables, Website/API or external CLDF
 - Installed rows: 28552
-- Compiled rows carrying this unit's citation keys: 28552
+- Compiled rows carrying this unit's citation keys: 28553
 - Input rows with checked grammatical evidence: 898
 - Compiled rows with canonical grammatical tags: 898
 - Source keys: grierson-lsi1928
@@ -28,7 +28,7 @@
 
 ## Review summary
 
-- Counts: 28552 installed records; 28552 compiled citation attestations.
+- Counts: 28552 installed records; 28553 compiled citation attestations.
 - Exclusions: none detected in the installed input; any source-side exclusions remain in the linked importer/audit.
 - Unresolved cases: none detected.
 - Transcription: `conversion/lsi.txt`.

@@ -1,0 +1,68 @@
+{
+  "source": "seligmann1911vedda",
+  "edition": "Cambridge University Press, 1911, first edition",
+  "url": "https://archive.org/details/veddas__00seliuoft",
+  "pdf_url": "https://archive.org/download/veddas__00seliuoft/veddas__00seliuoft.pdf",
+  "pdf_sha256": "f02db15621e24d9d9ece0f104d679ddb02d8c14d26cdaa94601f08f426b90fa2",
+  "pdf_pages": 636,
+  "printed_pages": [
+    423,
+    450
+  ],
+  "pdf_page_offset": 168,
+  "snapshot_date": "2026-09-11",
+  "rights": "1911 published work; public domain in the United States; extracted lexical facts and editorial transcription",
+  "extraction": "Existing Internet Archive OCR/PDF text layer; all installed forms, heading glosses and labels visually checked at 1500px page scale. No new OCR engine run.",
+  "render_command": "pdftoppm -f 591 -l 618 -scale-to 1500 -png source.pdf vocab",
+  "coverage": "All 185 numbered lexical headings, their numbered subsenses, and explicit unlocalized bee-nest, old-man/woman and pig alternate attestations.",
+  "exclusions": [
+    "Comparative Sinhala/Tamil/Sanskrit/Pali/etc. etymological words are not Vedda attestations.",
+    "Unnumbered etymological discussion is preserved in pages.json and audit OCR, excluded from graph assertions and display Etymology.",
+    "Songs, narrative word mentions, preceding chapters, and following Kaele-base appendix are outside the vocabulary scope."
+  ],
+  "articles": 185,
+  "sense_records": 196,
+  "forms": 502,
+  "linked": 0,
+  "borrowed": 0,
+  "variants": 0,
+  "review_counts": {
+    "dialect-mapping": 44,
+    "transcription": 1,
+    "gloss": 1
+  },
+  "language_policy": "Separate Vedda base language, Glottocode vedd1240; Other avoids resolving the historical Sinhala-dialect versus isolate/contact-language classification. No historical locality coordinates inferred from a modern language point.",
+  "dialect_policy": "11 unambiguous place labels registered. O names consultant Wannaku of Uniche, retained as provenance. T is ambiguous beside explicit Tk and is retained verbatim with typed review flag; no invented Tamil or Tamankaduwa mapping.",
+  "profile_policy": "Explicit preservation of the historical broad transcription; c already has house affricate value. Do not infer length, retroflexion, or nasal quality from Sinhala comparanda. Phonemic/Native blank because no separate IPA/native-script field is supplied.",
+  "sample": {
+    "seed": 19110911,
+    "articles": [
+      9,
+      14,
+      16,
+      28,
+      65,
+      77,
+      78,
+      82,
+      85,
+      87,
+      88,
+      93,
+      97,
+      106,
+      115,
+      142,
+      151,
+      154,
+      176,
+      179
+    ],
+    "material_errors": 0,
+    "checked": "All emitted forms/glosses/labels compared to the previously rendered original pages."
+  },
+  "input_hashes": {
+    "verified.tsv": "864ace77c371f949896e7791692f53b9541e5e2463170932100bdabbb6a33252",
+    "pages.json": "39c8f529aea96ca85e6b9890594b81de1ab22fdddcd313ad11061d2570060dc1"
+  }
+}

@@ -1,0 +1,61 @@
+FF                                                                       [100%]
+=================================== FAILURES ===================================
+________________ test_ocr_provenance_is_explicit_on_references _________________
+
+    def test_ocr_provenance_is_explicit_on_references():
+        with open("cldf/references.csv", encoding="utf-8") as f:
+            references = {row["ID"]: row for row in csv.DictReader(f)}
+    
+>       assert {key for key, row in references.items() if row["OCR"] == "Yes"} == {
+            "andersen1990",
+            "berger",
+            "berger-auto",
+            "dbia",
+            "ghatage-kasargod1970",
+            "hockings-pilotraichoor1992",
+            "paranavitana",
+            "shackle-auto",
+            "southworth2005m",
+            "srinivasa",
+            "seligmann1911vedda",
+        }
+E       AssertionError: assert {'adimathara2...18irula', ...} == {'andersen199...oor1992', ...}
+E         
+E         Extra items in the left set:
+E         'adimathara2019mudhili'
+E         'ernest-oleary-kelsall2018irula'
+E         Use -v to get more diff
+
+tests/test_cldf.py:476: AssertionError
+________ test_only_geographically_undefined_languages_lack_coordinates _________
+
+    def test_only_geographically_undefined_languages_lack_coordinates():
+        with (ROOT / "cldf/languages.csv").open(encoding="utf-8", newline="") as stream:
+            missing = {
+                row["ID"] for row in csv.DictReader(stream)
+                if not row["Latitude"] or not row["Longitude"]
+            }
+        # Reconstructed nodes represent language stages or subgroup ancestors rather
+        # than point locations, so they deliberately have no map coordinates.
+        # Vedda's historical source localities have not yet been georeferenced;
+        # the ingestion checklist permits unknown coordinates rather than invented points.
+>       assert missing == {
+            "PBr", "TurkicUnspec", "PSTDr", "PSD1", "PSD2", "PCDr", "PKMDr", "PNDr",
+            "Vedda",
+        }
+E       AssertionError: assert {'DungraBhili... 'PKMDr', ...} == {'PBr', 'PCDr..., 'PSD2', ...}
+E         
+E         Extra items in the left set:
+E         'Vasavi'
+E         'Kodaku'
+E         'Noiri'
+E         'DungraBhili'
+E         'PKher'
+E         'PreMu'
+E         Use -v to get more diff
+
+tests/test_language_coordinates.py:35: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_cldf.py::test_ocr_provenance_is_explicit_on_references - As...
+FAILED tests/test_language_coordinates.py::test_only_geographically_undefined_languages_lack_coordinates
+2 failed in 0.29s

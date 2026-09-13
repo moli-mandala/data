@@ -44,7 +44,7 @@ GRAMMATICAL_TAGS = {
     "pret", "aor", "opt", "perfect", "stem",
     "derived", "loanword", "diminutive", "intensive", "compound", "not-reconstructed",
     "alternate", "replaced", "reduplicated", "sound-variant",
-    "poetic", "dialectal", "archaic", "modern", "colloquial", "vulgar",
+    "figurative", "pejorative", "poetic", "dialectal", "archaic", "modern", "colloquial", "vulgar",
     # Language-specific inflection / noun classes
     "weak", "middle", "strong", "Tamil-class-1", "Tamil-class-2", "Tamil-class-3",
     "Tamil-class-4", "Tamil-class-5", "Tamil-class-6", "Tamil-class-7",

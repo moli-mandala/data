@@ -170,6 +170,16 @@ def main() -> None:
                 f"kochila:{number}:{LECTS[variety]}:{variant}",
             ]
         )
+    # The archived workbook republishes these exact lect/gloss/readings. Its
+    # distinct item numbering is resolved in the checked per-reading reuse map.
+    import json
+    reuse_path = HERE / "census_nepal_2026" / "tharu-reuse.json"
+    if reuse_path.exists():
+        reuse = json.loads(reuse_path.read_text())
+        for row in rows:
+            for citation in reuse.get(row[10], []):
+                if citation not in row[7].split(";"):
+                    row[7] += ";" + citation
     with OUTPUT.open("w", encoding="utf-8", newline="") as stream:
         csv.writer(stream).writerows(rows)
     print(f"Wrote {len(rows)} forms from {len(LECTS)} target lects to {OUTPUT}")

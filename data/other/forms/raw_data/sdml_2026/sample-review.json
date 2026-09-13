@@ -1,0 +1,23 @@
+{
+  "seed": 20260911,
+  "sample_file": "20260911-sdml-sample.json",
+  "reviewed": 20,
+  "material_errors": 0,
+  "checks": [
+    "raw comma token versus NFC source form",
+    "concept key versus lexical gloss",
+    "village provenance",
+    "frequency alignment",
+    "separate duplicate responses preserved"
+  ],
+  "edge_cases": [
+    "first and last village",
+    "NA, empty, dot missing markers",
+    "optional/alternative and malformed tokens held in audit",
+    "no per-token frequency inferred when lists differ",
+    "two entirely empty villages retained in locality registry",
+    "frontend kinship labels contain copy errors; use export keys and column headings",
+    "numbered brooms remain separate prompt keys"
+  ],
+  "residuals": "33 ambiguous tokens excluded; 37 unusual-symbol forms preserved and marked uncertain"
+}

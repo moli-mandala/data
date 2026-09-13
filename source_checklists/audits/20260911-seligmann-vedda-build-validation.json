@@ -1,0 +1,145 @@
+{
+  "forms": 502,
+  "keys": 502,
+  "total_forms": 687293,
+  "baseline_total": 686791,
+  "language_deltas": {
+    "Vedda": 502
+  },
+  "new_ids": 502,
+  "missing_prior_ids": 0,
+  "missing_prior_ids_resolved_as_aliases": 0,
+  "source_key_targets_resolve": true,
+  "all_unlinked": true,
+  "all_transcriptions_preserved": true,
+  "source_edges": 0,
+  "uncertain": 46,
+  "examples": [
+    {
+      "ID": "f_aw5odjy4i3h32",
+      "Form": "gaigedi",
+      "Gloss": "Areca-nut",
+      "Source": "seligmann1911vedda[p. 424, entry 1]"
+    },
+    {
+      "ID": "f_7biclweyctray",
+      "Form": "kanda arini",
+      "Gloss": "Bee, bambara (Apis indica)",
+      "Source": "seligmann1911vedda[p. 426, entry 17.i]"
+    },
+    {
+      "ID": "f_g26fhejvsptd4",
+      "Form": "gaigedi",
+      "Gloss": "Coconut",
+      "Source": "seligmann1911vedda[p. 431, entry 47]"
+    },
+    {
+      "ID": "f_s7nb3bzswo3cq",
+      "Form": "naidaṇḍa",
+      "Gloss": "Nose",
+      "Source": "seligmann1911vedda[p. 443, entry 128]"
+    },
+    {
+      "ID": "f_26m3xiszzhwvu",
+      "Form": "dia",
+      "Gloss": "Tears",
+      "Source": "seligmann1911vedda[p. 448, entry 169]"
+    },
+    {
+      "ID": "f_6sjop4tp2fyzg",
+      "Form": "dia",
+      "Gloss": "Water",
+      "Source": "seligmann1911vedda[p. 450, entry 180]"
+    }
+  ],
+  "generated_deltas": {
+    "forms": {
+      "before": 686791,
+      "after": 687293,
+      "delta": 502,
+      "same_bytes": false
+    },
+    "edges": {
+      "before": 370839,
+      "after": 370839,
+      "delta": 0,
+      "same_bytes": true
+    },
+    "form-source-keys": {
+      "before": 336104,
+      "after": 336606,
+      "delta": 502,
+      "same_bytes": false
+    },
+    "form-id-aliases": {
+      "before": 1033295,
+      "after": 1033803,
+      "delta": 508,
+      "same_bytes": false
+    },
+    "concepts": {
+      "before": 3273,
+      "after": 3275,
+      "delta": 2,
+      "same_bytes": false
+    },
+    "form_concepts": {
+      "before": 507061,
+      "after": 506790,
+      "delta": -271,
+      "same_bytes": false
+    },
+    "alignments": {
+      "before": 2029107,
+      "after": 2029107,
+      "delta": 0,
+      "same_bytes": true
+    },
+    "references": {
+      "before": 534,
+      "after": 535,
+      "delta": 1,
+      "same_bytes": false
+    }
+  },
+  "reference": {
+    "ID": "seligmann1911vedda",
+    "Short": "S1911",
+    "Source": "Charles Gabriel Seligmann and Brenda Zara Seligmann\\.\n*The Veddas*\\.\nCambridge University Press, Cambridge, 1911\\.\nWith a chapter by C\\. S\\. Myers and an appendix by A\\. Mendis Gunasekara\\. First edition\\. Vocabulary commentary by A\\. Mendis Gunasekara\\.\nURL: [https://archive\\.org/details/veddas\\\\\\_\\\\\\_00seliuoft](https://archive.org/details/veddas\\_\\_00seliuoft)\\.",
+    "Progress": "Yes: vocabulary pp. 424--450, all 185 numbered entries, 502 lexical forms; abbreviations p. 423. Comparative etymological vocabulary, narrative chapters and the following Kaele-base appendix excluded.",
+    "Provenance": "data/other/forms/20260911-seligmann-vedda.csv; data/other/forms/raw_data/20260911-seligmann-vedda-audit.jsonl; data/other/forms/raw_data/seligmann_vedda_1911/manifest.json",
+    "Editor": "Aryaman Arora; OpenAI Codex",
+    "OCR": "Yes",
+    "Etymology_Provenance": ""
+  },
+  "source_errors": 0,
+  "concept_links": 440,
+  "forms_with_concepts": 439,
+  "concept_diagnostic": {
+    "without_vedda_links": 507001,
+    "with_vedda_links": 507445,
+    "vedda_links": 444,
+    "old_links_lost": 0,
+    "old_links_gained": 0,
+    "lost_examples": [],
+    "gained_examples": [],
+    "interpretation": "With/without Vedda in the same process leaves every pre-existing concept link unchanged. Different process runs produce different legacy mapper totals; the unexpected aggregate delta is pre-existing mapper nondeterminism, not removal by this source."
+  },
+  "validation": {
+    "focused": "23 passed",
+    "checklists": "4 passed",
+    "full_command": "uv run python -m pytest -q --import-mode=importlib",
+    "full_suite": {
+      "passed": 1708,
+      "skipped": 18,
+      "failed": 32
+    },
+    "resolved_after_full_run": [
+      "source checklist freshness (4 fresh tests passed)"
+    ],
+    "remaining_failures_outside_source": 31,
+    "make_all": "all data scripts completed; final manual-survey gate failed 2 unrelated assertions",
+    "browser": "not requested; not refreshed",
+    "completion": "installed; full repository validation blocked"
+  }
+}

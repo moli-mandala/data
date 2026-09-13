@@ -8,8 +8,8 @@ retained so acquisition can be resumed without rediscovery.
 
 | Volume | Year | Publisher scan URL | Local status |
 |---|---:|---|---|
-| Konkani of South Kanara | 1963 | <https://sahitya.marathi.gov.in/scans/Konkani%20of%20South%20Kanara.pdf> | Awaiting publisher/archive recovery |
-| Kudali | 1965 | <https://sahitya.marathi.gov.in/scans/Kudali%20%28II%29.pdf> | Awaiting publisher/archive recovery |
+| Konkani of South Kanara | 1963 | <https://sahitya.marathi.gov.in/scans/Konkani%20of%20South%20Kanara.pdf> | Complete IA mirror recovered 2026-09-11; vocabulary installed with OCR-review flags |
+| Kudali | 1965 | <https://sahitya.marathi.gov.in/scans/Kudali%20%28II%29.pdf> | Complete 2022 publisher archive recovered 2026-09-11; vocabulary installed with OCR-review flags |
 | Kunbi of Mahad | 1966 | <https://msblc.maharashtra.gov.in/pdf/newpdf/Kunbi%20of%20Mahad.pdf> | Awaiting publisher/archive recovery |
 | Cochin | 1967 | <https://msblc.maharashtra.gov.in/pdf/pdf/cochin%20pdf.pdf> | Awaiting publisher/archive recovery |
 | Konkani of Kankon | 1968 | <https://msblc.maharashtra.gov.in/pdf/newpdf/Konkani%20of%20Kankon.pdf> | Awaiting publisher/archive recovery |
@@ -41,3 +41,13 @@ images after OCR omission. The final 20-record review sample passes 20/20, while
 14 of those records had a material error before source-image correction. The remaining unreviewed
 OCR transcriptions stay explicitly tagged `ocr-review`; structural admission is not a claim of
 letter-perfect human verification.
+
+## 2026-09-11 additions
+
+The first two volumes are now installed as `20260911-ghatage-konkani.csv`
+(1,389 rows) and `20260911-ghatage-kudali.csv` (1,902 rows). Their separate
+package `ghatage_western/README.md` records pinned scans, page ranges, OCR snapshots,
+corrections, complete candidate audits, and unresolved transcription review.
+They use the distinct `ghatage-western` sound profile, preserving the source
+č/c and ǰ/j contrasts and capital morphophonemes. The earlier Kasargod importer
+and data have not been reparsed.

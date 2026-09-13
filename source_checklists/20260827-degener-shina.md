@@ -4,7 +4,7 @@
 - Canonical checklist SHA-256: `23516ba5c7caeaa5310f6a32d92b86e4b9ae5e4479e792926b61dd0689129f05`
 - Source-type addenda: Dictionary or glossary, OCR-heavy source, Etymological/comparative source
 - Installed rows: 1577
-- Compiled rows carrying this unit's citation keys: 1577
+- Compiled rows carrying this unit's citation keys: 1668
 - Input rows with checked grammatical evidence: 1264
 - Compiled rows with canonical grammatical tags: 1264
 - Source keys: degener-shina2008
@@ -28,7 +28,7 @@
 
 ## Review summary
 
-- Counts: 1577 installed records; 1577 compiled citation attestations.
+- Counts: 1577 installed records; 1668 compiled citation attestations.
 - Exclusions: the proverb and folk-belief texts, attestation numbers and inflected forms in indented sub-paragraphs, non-Shina comparanda, the bibliography, and eight cross-reference records whose targets are not uniquely resolvable remain audit-only.
 - Unresolved cases: eight printed cross-references remain unlinked; sixteen uncertain readings across fifteen headword records remain explicitly marked, primarily in Burushaski and Indus Kohistani comparanda; no systematic parser error class remains.
 - Transcription: `conversion/degener-shina.txt`; doubled vowels map to macrons and mora-positioned acute marks map to the house pitch accents, while Original preserves Degener's Berger-style spelling; the rising/falling pitch interpretation remains identified for linguistic review.

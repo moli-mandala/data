@@ -4,14 +4,14 @@
 - Canonical checklist SHA-256: `23516ba5c7caeaa5310f6a32d92b86e4b9ae5e4479e792926b61dd0689129f05`
 - Source-type addenda: Survey wordlists or comparative tables
 - Installed rows: 833
-- Compiled rows carrying this unit's citation keys: 810
+- Compiled rows carrying this unit's citation keys: 2330
 - Input rows with checked grammatical evidence: 24
 - Compiled rows with canonical grammatical tags: 22
-- Source keys: eichentopf-mitchell2020kochila
+- Source keys: eichentopf-mitchell2020kochila, mitchell-eichentopf2013tharu
 
 ## Retrospective gate assessment
 
-- [x] 1. Establish the source and scope — source keys: eichentopf-mitchell2020kochila; 833 installed records
+- [x] 1. Establish the source and scope — source keys: eichentopf-mitchell2020kochila, mitchell-eichentopf2013tharu; 833 installed records
 - [x] 2. Choose the extraction path — importer/raw route: data/other/forms/raw_data/kochila_tharu.py, data/other/forms/raw_data/tharu.py, data/other/forms/raw_data/tharu2.py
 - [x] 3. Plan the installed files and identifiers — 833 unique immutable Entry_Key values
 - [x] 4. Model languages and dialects before emitting forms — 3 input language/lect IDs; registry gaps: none
@@ -28,7 +28,7 @@
 
 ## Review summary
 
-- Counts: 833 installed records; 810 compiled citation attestations.
+- Counts: 833 installed records; 2330 compiled citation attestations.
 - Exclusions: none detected in the installed input; any source-side exclusions remain in the linked importer/audit.
 - Unresolved cases: none detected.
 - Transcription: `conversion/kochila-tharu.txt`.

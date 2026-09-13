@@ -827,3 +827,21 @@ These two packages extend Munda coverage directly from structured SEAlang source
   locators. The builder warned that the current repository-wide database is 102.3 MB versus its
   historical 83 MB warning threshold.
 - No release, deployment, commit, or push was requested or performed.
+
+## Bajjika, Lindgren and DravLex — 2026-09-11
+
+- Source review: `20260911-ia-dravidian-review.md`. All 1,208 Bajjika forms, 3,754 additional
+  Lindgren forms and 2,127 DravLex forms are installed and compiled. Lindgren's 2,127
+  republished observations retain citations and upstream IDs without duplicate installation.
+- Source validation: 28 focused checks pass; seeded audits have 0/20 material errors for each
+  source. All seven data-generation stages completed, and `errors.txt` is empty. Existing forms,
+  source keys, aliases and identities are unchanged; graph and alignments are byte-identical.
+  Exactly 7,089 forms, source keys, aliases and identities were added.
+- Repository validation: the final make target has the same two manual-etymology failures as
+  the preceding SDML build. Full suite (`--import-mode=importlib`) reports 1,773 passed,
+  18 skipped and 31 failed in 539.13s, with exactly the same failing test names as that baseline.
+  Default collection still encounters the existing duplicate Bhumij/Noiri test module names.
+  Gate 12 remains open; these are not new-source test failures. See the source-specific build,
+  focused, full-suite and comparison artifacts under `audits/20260911-ia-dravidian-*`.
+- Browser refresh and QA are not applicable to this request under checklist section 13.
+  The currently served browser database predates these additions. No commit, push or deployment.

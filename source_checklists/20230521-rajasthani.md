@@ -4,7 +4,7 @@
 - Canonical checklist SHA-256: `23516ba5c7caeaa5310f6a32d92b86e4b9ae5e4479e792926b61dd0689129f05`
 - Source-type addenda: Survey wordlists or comparative tables, Etymological/comparative source
 - Installed rows: 16522
-- Compiled rows carrying this unit's citation keys: 15876
+- Compiled rows carrying this unit's citation keys: 15887
 - Input rows with checked grammatical evidence: 653
 - Compiled rows with canonical grammatical tags: 582
 - Source keys: bagri, dhundari, hadothi, marwari, mewari, mewati
@@ -28,7 +28,7 @@
 
 ## Review summary
 
-- Counts: 16522 installed records; 15876 compiled citation attestations.
+- Counts: 16522 installed records; 15887 compiled citation attestations.
 - Exclusions: 14 historical blank-form rows were removed from the installed input and retained in `source_checklists/audits/20230521-rajasthani-exclusions.csv`.
 - Unresolved cases: none detected.
 - Transcription: `conversion/rajasthani.txt`.

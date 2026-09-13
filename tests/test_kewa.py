@@ -155,10 +155,18 @@ def test_kewa_contributes_prose_only_and_all_blocks_survive_the_full_build():
         (row["Form_ID"], row["Position"], row["Source"], row["Content"]) in compiled_keys
         for row in raw
     )
-    assert all(
-        "mayrhofer-kewa" not in row["Source"]
-        for row in read_rows(ROOT / "cldf/forms.csv")
-    )
+    # KEWA itself remains prose-only. KEED 2018 legitimately cites Mayrhofer
+    # on lexical attestations owned by KEED; those are secondary references.
+    aliases = {row["Legacy_ID"]: row["Form_ID"] for row in read_rows(ROOT / "cldf/form-id-aliases.csv")}
+    keed_ids = {
+        aliases[row["Legacy_ID"]]
+        for row in read_rows(ROOT / "cldf/form-source-keys.csv")
+        if row["Source_Key"].startswith("keed2018:")
+    }
+    for row in read_rows(ROOT / "cldf/forms.csv"):
+        if "mayrhofer-kewa" in row["Source"]:
+            assert row["ID"] in keed_ids
+            assert row["Source"].startswith("uchida-rajapurohit2018[")
     assert all(
         "mayrhofer-kewa" not in row["Source"]
         for row in read_rows(ROOT / "cldf/edges.csv")

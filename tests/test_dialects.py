@@ -58,13 +58,22 @@ def test_every_dialect_has_human_readable_location_metadata():
     dialects = rows("dialects.csv")
 
     assert all(row["Location"].strip() for row in dialects)
-    assert all(row["Quality"] in {"A", "B", "C"} for row in dialects)
+    # SOURCE_INGESTION_CHECKLIST.md permits unknown historical coordinates.
+    # A missing point must be paired. Older registries also use quality for
+    # source reliability; a blank quality is valid only when there is no point.
+    assert all(
+        row["Quality"] in {"A", "B", "C"}
+        if row["Latitude"].strip()
+        else row["Quality"] in {"", "A", "B", "C"}
+        for row in dialects
+    )
     assert all(bool(row["Latitude"].strip()) == bool(row["Longitude"].strip()) for row in dialects)
 
 
 def test_every_dialect_has_coordinates_in_range():
     dialects = rows("dialects.csv")
 
-    assert all(row["Latitude"].strip() and row["Longitude"].strip() for row in dialects)
-    assert all(-90 <= float(row["Latitude"]) <= 90 for row in dialects)
-    assert all(-180 <= float(row["Longitude"]) <= 180 for row in dialects)
+    assert all(bool(row["Latitude"].strip()) == bool(row["Longitude"].strip()) for row in dialects)
+    located = [row for row in dialects if row["Latitude"].strip()]
+    assert all(-90 <= float(row["Latitude"]) <= 90 for row in located)
+    assert all(-180 <= float(row["Longitude"]) <= 180 for row in located)

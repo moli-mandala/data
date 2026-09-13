@@ -31,6 +31,7 @@ EXCLUDED_FILES = {
 }
 
 CHECKED_PROFILE_FILES = {
+    "zoller-2023": ["20260913-zoller-linguistic-data.csv"],
     "house": [
         "20220913-dhivehi.csv", "20220913-gawri.csv",
         "20220913-khetrani.csv", "20220913-kholosi.csv", "20220913-konkani.csv",
@@ -151,10 +152,14 @@ def test_every_installed_source_has_an_explicit_sound_profile():
             continue
         key = os.path.splitext(basename)[0].split("-")[1]
         source_key = first_row[7].split("[", 1)[0]
-        if source_key in {"shackle", "shackle-auto"}:
+        if source_key in {"regmi2017angika", "chalise2014majhi", "bhat1971koraga", "census2002orissa"}:
+            profile = {"regmi2017angika":"selected-angika", "chalise2014majhi":"selected-majhi", "bhat1971koraga":"selected-koraga", "census2002orissa":"selected-orissa"}[source_key]
+        elif source_key in {"shackle", "shackle-auto"}:
             profile = "cdial"
         elif source_key == "liljegren-hindukush":
             profile = "liljegren-hindukush"
+        elif source_key == "zoller2023":
+            profile = "zoller-2023"
         elif source_key == "buddruss-waigali1992":
             profile = "buddruss-waigali"
         elif source_key == "buddruss-wama2006":

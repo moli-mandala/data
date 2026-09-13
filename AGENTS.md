@@ -129,3 +129,24 @@ The compiled DB is a **GitHub release asset**, not committed:
 2. Upload that as `jambu.db` on a fresh release of the `jambu` repo (the deploy workflow's
    `STATIC_DB_URL` points at `releases/latest/download/jambu.db`).
 3. Commit + push `cldf/` here **only when the user asks.**
+
+## Local resource budget (8 GB RAM laptop)
+
+- Default to focused tests and small smoke checks locally. Run required full data builds,
+  full test suites, production prerendering, and maximum-compression packaging in existing
+  CI or an authorized remote environment. Relocate required gates; do not silently skip them.
+- Before starting expensive work, inspect existing jobs and reuse verified artifacts/checks
+  when their inputs are unchanged. Batch source changes into one full rebuild.
+- Run at most one heavy local job at a time across this workspace. Do not overlap database
+  generation, full tests, compression, and production builds. Do not stop another task's jobs
+  without establishing ownership or authorization.
+- If a heavy local run is necessary, explain why and run it sequentially with one worker/thread
+  where supported. Avoid automatic all-core compression and high-memory compression settings
+  locally. If required asset size/codec gates need those settings, package remotely instead.
+- Prefer streaming reads, scoped SQL queries and bounded samples over loading multiple complete
+  datasets into memory. Reuse one dev server and browser tab; avoid duplicate database loads.
+- CPU priority (`nice`) does not limit RAM, and Node heap limits do not cap total process memory.
+  Do not promise a memory ceiling without measuring and enforcing it.
+- Use existing authorized CI for remote work; do not invent a cluster destination, incur new
+  paid infrastructure, or publish unfinished changes merely to offload a check. If no suitable
+  runner is available, report the deferred full gate and continue lightweight work.

@@ -45,6 +45,59 @@ CORE_INPUTS = (
 )
 
 CORE_REVIEW_FILES = {
+    "20260913-zoller-linguistic-data": {'importers': ['data/other/forms/raw_data/zoller_2023.py'], 'audits': ['data/other/forms/raw_data/zoller_2023/audit.jsonl.gz', 'data/other/forms/raw_data/zoller_2023/record-audit.jsonl.gz', 'source_checklists/20260913-zoller-review.md'], 'tests': ['tests/test_zoller_2023.py', 'tests/test_sound_profiles.py', 'tests/test_dialects.py'], 'profiles': ['conversion/zoller-2023.txt'], 'addenda': ['Dictionary or glossary', 'Survey wordlists or comparative tables', 'Etymological/comparative source']},
+    "20260912-keed": {'importers': ['data/other/forms/raw_data/keed_2018.py'], 'audits': ['data/other/forms/raw_data/keed_2018/audit.jsonl.gz', 'source_checklists/20260912-keed-muduga-review.md'], 'tests': ['tests/test_keed_2018.py', 'tests/test_sound_profiles.py', 'tests/test_dialects.py'], 'profiles': ['conversion/keed.txt'], 'addenda': ['Dictionary or glossary', 'Etymological/comparative source']},
+    "20260912-muduga": {'importers': ['data/other/forms/raw_data/muduga_2022.py'], 'audits': ['data/other/forms/raw_data/muduga_2022/audit.jsonl', 'source_checklists/20260912-keed-muduga-review.md'], 'tests': ['tests/test_muduga_2022.py', 'tests/test_sound_profiles.py', 'tests/test_dialects.py'], 'profiles': ['conversion/muduga.txt'], 'addenda': ['Survey wordlists or comparative tables', 'Etymological/comparative source']},
+
+    '20260911-selected-angika': {'importers': ['data/other/forms/raw_data/selected_surveys.py', 'data/other/forms/raw_data/selected_surveys_2026/extract_tables.py'], 'audits': ['data/other/forms/raw_data/selected_surveys_2026/angika-audit.jsonl', 'data/other/forms/raw_data/selected_surveys_2026/snapshot.json', 'source_checklists/20260911-selected-surveys-review.md'], 'tests': ['tests/test_selected_surveys.py', 'tests/test_sound_profiles.py', 'tests/test_dialects.py'], 'profiles': ['conversion/selected-angika.txt'], 'addenda': ['Survey wordlists or comparative tables']},
+    '20260911-selected-majhi': {'importers': ['data/other/forms/raw_data/selected_surveys.py', 'data/other/forms/raw_data/selected_surveys_2026/extract_tables.py'], 'audits': ['data/other/forms/raw_data/selected_surveys_2026/majhi-audit.jsonl', 'data/other/forms/raw_data/selected_surveys_2026/snapshot.json', 'source_checklists/20260911-selected-surveys-review.md'], 'tests': ['tests/test_selected_surveys.py', 'tests/test_sound_profiles.py', 'tests/test_dialects.py'], 'profiles': ['conversion/selected-majhi.txt'], 'addenda': ['Survey wordlists or comparative tables']},
+    '20260911-selected-koraga': {'importers': ['data/other/forms/raw_data/selected_surveys.py', 'data/other/forms/raw_data/selected_surveys_2026/koraga.py'], 'audits': ['data/other/forms/raw_data/selected_surveys_2026/koraga-audit.jsonl', 'data/other/forms/raw_data/selected_surveys_2026/snapshot.json', 'source_checklists/20260911-selected-surveys-review.md'], 'tests': ['tests/test_selected_surveys.py', 'tests/test_sound_profiles.py', 'tests/test_dialects.py'], 'profiles': ['conversion/selected-koraga.txt'], 'addenda': ['Dictionary or glossary', 'OCR-heavy source', 'Etymological/comparative source']},
+    '20260911-selected-orissa': {'importers': ['data/other/forms/raw_data/selected_surveys.py', 'data/other/forms/raw_data/selected_surveys_2026/extract_orissa.py', 'data/other/forms/raw_data/selected_surveys_2026/orissa.py'], 'audits': ['data/other/forms/raw_data/selected_surveys_2026/orissa-audit.jsonl', 'data/other/forms/raw_data/selected_surveys_2026/snapshot.json', 'source_checklists/20260911-selected-surveys-review.md'], 'tests': ['tests/test_selected_surveys.py', 'tests/test_sound_profiles.py', 'tests/test_dialects.py'], 'profiles': ['conversion/selected-orissa.txt'], 'addenda': ['Survey wordlists or comparative tables', 'OCR-heavy source']},
+    '20260911-more-jharkhand': {'importers': ['data/other/forms/raw_data/more_surveys.py', 'data/other/forms/raw_data/more_surveys_2026/extract.py'], 'audits': ['data/other/forms/raw_data/more_surveys_2026/jharkhand-audit.jsonl', 'data/other/forms/raw_data/more_surveys_2026/snapshot.json', 'source_checklists/20260911-more-surveys-review.md'], 'tests': ['tests/test_more_surveys.py', 'tests/test_sound_profiles.py', 'tests/test_dialects.py'], 'profiles': ['conversion/more-ascii.txt', 'conversion/more-ipa.txt'], 'addenda': ['Survey wordlists or comparative tables']},
+    '20260911-more-himachal': {'importers': ['data/other/forms/raw_data/more_surveys.py', 'data/other/forms/raw_data/more_surveys_2026/extract.py'], 'audits': ['data/other/forms/raw_data/more_surveys_2026/himachal-audit.jsonl', 'data/other/forms/raw_data/more_surveys_2026/snapshot.json', 'source_checklists/20260911-more-surveys-review.md'], 'tests': ['tests/test_more_surveys.py', 'tests/test_sound_profiles.py', 'tests/test_dialects.py'], 'profiles': ['conversion/more-ascii.txt', 'conversion/more-ipa.txt'], 'addenda': ['Survey wordlists or comparative tables']},
+    '20260911-more-rajasthan': {'importers': ['data/other/forms/raw_data/more_surveys.py', 'data/other/forms/raw_data/more_surveys_2026/extract.py'], 'audits': ['data/other/forms/raw_data/more_surveys_2026/rajasthan-audit.jsonl', 'data/other/forms/raw_data/more_surveys_2026/snapshot.json', 'source_checklists/20260911-more-surveys-review.md'], 'tests': ['tests/test_more_surveys.py', 'tests/test_sound_profiles.py', 'tests/test_dialects.py'], 'profiles': ['conversion/more-ascii.txt', 'conversion/more-ipa.txt'], 'addenda': ['Survey wordlists or comparative tables']},
+    '20260911-more-west-bengal': {'importers': ['data/other/forms/raw_data/more_surveys.py', 'data/other/forms/raw_data/more_surveys_2026/extract.py'], 'audits': ['data/other/forms/raw_data/more_surveys_2026/west-bengal-audit.jsonl', 'data/other/forms/raw_data/more_surveys_2026/snapshot.json', 'source_checklists/20260911-more-surveys-review.md'], 'tests': ['tests/test_more_surveys.py', 'tests/test_sound_profiles.py', 'tests/test_dialects.py'], 'profiles': ['conversion/more-ascii.txt', 'conversion/more-ipa.txt'], 'addenda': ['Survey wordlists or comparative tables']},
+    '20260911-more-kisan': {'importers': ['data/other/forms/raw_data/more_surveys.py', 'data/other/forms/raw_data/more_surveys_2026/extract.py'], 'audits': ['data/other/forms/raw_data/more_surveys_2026/kisan-audit.jsonl', 'data/other/forms/raw_data/more_surveys_2026/snapshot.json', 'source_checklists/20260911-more-surveys-review.md'], 'tests': ['tests/test_more_surveys.py', 'tests/test_sound_profiles.py', 'tests/test_dialects.py'], 'profiles': ['conversion/more-ascii.txt', 'conversion/more-ipa.txt'], 'addenda': ['Survey wordlists or comparative tables']},
+    '20260911-census-tamil-nadu': {'importers': ['data/other/forms/raw_data/census_nepal.py'], 'audits': ['data/other/forms/raw_data/census_nepal_2026/tamil-nadu-audit.jsonl', 'data/other/forms/raw_data/census_nepal_2026/snapshot.json', 'source_checklists/20260911-census-nepal-review.md'], 'tests': ['tests/test_census_nepal.py', 'tests/test_sound_profiles.py', 'tests/test_dialects.py'], 'profiles': ['conversion/census-ipa.txt'], 'addenda': ['Survey wordlists or comparative tables']},
+    '20260911-census-uttar-pradesh': {'importers': ['data/other/forms/raw_data/census_nepal.py'], 'audits': ['data/other/forms/raw_data/census_nepal_2026/uttar-pradesh-audit.jsonl', 'data/other/forms/raw_data/census_nepal_2026/snapshot.json', 'source_checklists/20260911-census-nepal-review.md'], 'tests': ['tests/test_census_nepal.py', 'tests/test_sound_profiles.py', 'tests/test_dialects.py'], 'profiles': ['conversion/census-ipa.txt'], 'addenda': ['Survey wordlists or comparative tables']},
+    '20260911-census-bihar': {'importers': ['data/other/forms/raw_data/census_nepal.py'], 'audits': ['data/other/forms/raw_data/census_nepal_2026/bihar-audit.jsonl', 'data/other/forms/raw_data/census_nepal_2026/snapshot.json', 'source_checklists/20260911-census-nepal-review.md'], 'tests': ['tests/test_census_nepal.py', 'tests/test_sound_profiles.py', 'tests/test_dialects.py'], 'profiles': ['conversion/census-ascii.txt'], 'addenda': ['Survey wordlists or comparative tables']},
+    '20260911-census-sikkim2': {'importers': ['data/other/forms/raw_data/census_nepal.py'], 'audits': ['data/other/forms/raw_data/census_nepal_2026/sikkim2-audit.jsonl', 'data/other/forms/raw_data/census_nepal_2026/snapshot.json', 'source_checklists/20260911-census-nepal-review.md'], 'tests': ['tests/test_census_nepal.py', 'tests/test_sound_profiles.py', 'tests/test_dialects.py'], 'profiles': ['conversion/census-ascii.txt'], 'addenda': ['Survey wordlists or comparative tables']},
+    '20260911-census-danuwar': {'importers': ['data/other/forms/raw_data/census_nepal.py'], 'audits': ['data/other/forms/raw_data/census_nepal_2026/danuwar-audit.jsonl', 'data/other/forms/raw_data/census_nepal_2026/snapshot.json', 'source_checklists/20260911-census-nepal-review.md'], 'tests': ['tests/test_census_nepal.py', 'tests/test_sound_profiles.py', 'tests/test_dialects.py'], 'profiles': ['conversion/census-danuwar.txt'], 'addenda': ['Survey wordlists or comparative tables']},
+    '20260911-census-tharu': {'importers': ['data/other/forms/raw_data/census_nepal.py'], 'audits': ['data/other/forms/raw_data/census_nepal_2026/tharu-audit.jsonl', 'data/other/forms/raw_data/census_nepal_2026/snapshot.json', 'source_checklists/20260911-census-nepal-review.md'], 'tests': ['tests/test_census_nepal.py', 'tests/test_sound_profiles.py', 'tests/test_dialects.py'], 'profiles': ['conversion/census-ipa.txt'], 'addenda': ['Survey wordlists or comparative tables', 'Website/API or external CLDF']},
+
+    '20260911-bajjika': {'importers': ['data/other/forms/raw_data/ia_dravidian.py'], 'audits': ['data/other/forms/raw_data/ia_dravidian_2026/20260911-bajjika-audit.jsonl', 'data/other/forms/raw_data/ia_dravidian_2026/snapshot.json', 'source_checklists/20260911-ia-dravidian-review.md'], 'tests': ['tests/test_ia_dravidian.py', 'tests/test_sound_profiles.py', 'tests/test_dialects.py'], 'profiles': ['conversion/bajjika.txt'], 'addenda': ['Survey wordlists or comparative tables']},
+    '20260911-lindgren': {'importers': ['data/other/forms/raw_data/ia_dravidian.py'], 'audits': ['data/other/forms/raw_data/ia_dravidian_2026/20260911-lindgren-audit.jsonl', 'data/other/forms/raw_data/ia_dravidian_2026/snapshot.json', 'source_checklists/20260911-ia-dravidian-review.md'], 'tests': ['tests/test_ia_dravidian.py', 'tests/test_sound_profiles.py', 'tests/test_dialects.py'], 'profiles': ['conversion/ia-dravidian-ipa.txt'], 'addenda': ['Survey wordlists or comparative tables', 'Website/API or external CLDF', 'Etymological/comparative source']},
+    '20260911-dravlex': {'importers': ['data/other/forms/raw_data/ia_dravidian.py'], 'audits': ['data/other/forms/raw_data/ia_dravidian_2026/20260911-dravlex-audit.jsonl', 'data/other/forms/raw_data/ia_dravidian_2026/snapshot.json', 'source_checklists/20260911-ia-dravidian-review.md'], 'tests': ['tests/test_ia_dravidian.py', 'tests/test_sound_profiles.py', 'tests/test_dialects.py'], 'profiles': ['conversion/ia-dravidian-ipa.txt'], 'addenda': ['Survey wordlists or comparative tables', 'Website/API or external CLDF', 'Etymological/comparative source']},
+
+    "20260911-sdml": {
+        "importers": ["data/other/forms/raw_data/sdml.py"],
+        "audits": ["data/other/forms/raw_data/sdml_2026/20260911-sdml-audit.jsonl", "data/other/forms/raw_data/sdml_2026/snapshot.json", "source_checklists/20260911-sdml-review.md"],
+        "tests": ["tests/test_sdml.py", "tests/test_sound_profiles.py", "tests/test_dialects.py"],
+        "profiles": ["conversion/sdml.txt"],
+        "addenda": ["Survey wordlists or comparative tables", "Website/API or external CLDF"],
+    },
+    "20260911-kharia-living": {
+        "importers": ["data/other/forms/raw_data/kharia_living.py"],
+        "audits": ["data/other/forms/raw_data/20260911-kharia-living-audit.jsonl", "data/other/forms/raw_data/20260911-kharia-living-manifest.json", "source_checklists/20260911-kharia-living-review.md"],
+        "tests": ["tests/test_kharia_living.py", "tests/test_sound_profiles.py", "tests/test_dialects.py"],
+        "profiles": ["conversion/kharia-living.txt"],
+        "addenda": ["Dictionary or glossary", "Website/API or external CLDF"],
+    },
+    '20260911-dadra-varli': {'importers': ['data/other/forms/raw_data/dadra_varli_2003.py'], 'audits': ['data/other/forms/raw_data/20260911-dadra-varli-audit.jsonl', 'data/other/forms/raw_data/20260911-dadra-varli-manifest.json', 'source_checklists/20260911-western-surveys-review.md'], 'tests': ['tests/test_western_surveys_2026.py', 'tests/test_sound_profiles.py', 'tests/test_dialects.py'], 'profiles': ['conversion/dadra-varli.txt'], 'addenda': ['Survey wordlists or comparative tables']},
+    '20260911-ghatage-konkani': {'importers': ['data/other/forms/raw_data/ghatage_western/import_glossaries.py'], 'audits': ['data/other/forms/raw_data/20260911-ghatage-konkani-audit.jsonl', 'data/other/forms/raw_data/ghatage_western/konkani-manifest.json', 'source_checklists/20260911-western-surveys-review.md'], 'tests': ['tests/test_western_surveys_2026.py', 'tests/test_sound_profiles.py', 'tests/test_dialects.py'], 'profiles': ['conversion/ghatage-western.txt'], 'addenda': ['Dictionary or glossary', 'OCR-heavy source']},
+    '20260911-ghatage-kudali': {'importers': ['data/other/forms/raw_data/ghatage_western/import_glossaries.py'], 'audits': ['data/other/forms/raw_data/20260911-ghatage-kudali-audit.jsonl', 'data/other/forms/raw_data/ghatage_western/kudali-manifest.json', 'source_checklists/20260911-western-surveys-review.md'], 'tests': ['tests/test_western_surveys_2026.py', 'tests/test_sound_profiles.py', 'tests/test_dialects.py'], 'profiles': ['conversion/ghatage-western.txt'], 'addenda': ['Dictionary or glossary', 'OCR-heavy source']},
+
+    "20260911-seligmann-vedda": {
+        "importers": ["data/other/forms/raw_data/seligmann_vedda.py"],
+        "audits": [
+            "data/other/forms/raw_data/20260911-seligmann-vedda-audit.jsonl",
+            "data/other/forms/raw_data/seligmann_vedda_1911/manifest.json",
+            "source_checklists/20260911-seligmann-vedda-review.md",
+        ],
+        "tests": ["tests/test_seligmann_vedda.py", "tests/test_sound_profiles.py", "tests/test_dialects.py"],
+        "profiles": ["conversion/seligmann-vedda.txt"],
+        "addenda": ["Dictionary or glossary", "OCR-heavy source", "Survey wordlists or comparative tables"],
+    },
     "20260909-perder-dameli": {
         "importers": ["data/other/forms/raw_data/perder_dameli_2013.py"],
         "audits": [
@@ -1112,6 +1165,14 @@ PINNED_LEGACY_UNITS = {
 }
 
 UNIT_REVIEW_NOTES = {
+    "20260911-seligmann-vedda": {
+        "state": "502 lexical forms compiled; full repository validation remains blocked by unrelated failures",
+        "exclusions": "comparative etymological words, narrative chapters, songs, index and following Kaele-base appendix; all 185 numbered vocabulary articles represented",
+        "unresolved": "44 forms with ambiguous T. labels, one source-questioned spelling, one disputed bee identification; typed reasons retained in audit",
+        "transcription": "image-checked historical field spelling preserved by conversion/seligmann-vedda.txt; no inferred IPA or ancestry",
+        "validation": "23 focused tests passed; all 502 source keys survive, no prior IDs lost; detailed build/full-suite limitations in 20260911-seligmann-vedda-review.md",
+        "representative": "compiled IDs f_aw5odjy4i3h32 (areca-nut), f_26m3xiszzhwvu (tears), f_6sjop4tp2fyzg (water); browser refresh not requested",
+    },
     "20260909-perder-dameli": {
         "state": "1,856 lexical records installed from 3,398 audited source units; source review and fresh visual sample complete",
         "exclusions": "522 audit-only units: affixes, phoneme inventories, non-Dameli comparanda, rejected forms, unglossed/repeated fragments and joint citations split into explicit children",
@@ -3068,7 +3129,8 @@ def write_outputs(outputs: dict[Path, bytes]) -> None:
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     expected = set(outputs)
     for stale in OUTPUT_DIR.glob("*.md"):
-        if stale.name != "VALIDATION.md" and stale not in expected:
+        if (stale.name != "VALIDATION.md" and stale not in expected
+                and stale.read_text(encoding="utf-8").startswith("# Source ingestion checklist — ")):
             stale.unlink()
     for path, content in outputs.items():
         path.parent.mkdir(parents=True, exist_ok=True)

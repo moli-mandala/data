@@ -1,0 +1,1713 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Survey of Dialects of Marathi Language</title>
+        <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+            <META HTTP-EQUIV="Expires" CONTENT="-1">
+        <meta name="keywords" content=" मराठीच्  स्े्ण ">
+        <meta name="description" content="Survey of Dialects of the Marathi Language">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
+        <link rel="stylesheet" type="text/css" href="stylesheets/styles.css?1"/>
+        <link rel="stylesheet" type="text/css" href="stylesheets/d3-tip.css"/>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/owl.carousel@2.3.4/dist/assets/owl.carousel.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/owl.carousel@2.3.4/dist/assets/owl.theme.default.min.css">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+        
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <!--<script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>-->
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.2/howler.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+        <!--<script src="https://cdn.jsdelivr.net/gh/emn178/chartjs-plugin-labels/src/chartjs-plugin-labels.js"></script>-->
+        <script src="https://d3js.org/d3.v4.js"></script>
+        <script src="/libraries/d3-tip.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script>
+        <script src="/libraries/rough.js"></script>
+
+        <script src="javascript/index.js?1.21"></script>
+        <script src="csv/data.js"></script>
+        <script src="javascript/map/makeD3map.js"></script>
+        <script src="libraries/village-time.js"></script>
+        <!-- <script src="javascript/map/map1.js"></script> -->
+        <!-- <script src="javascript/map/landingmap.js"></script> -->
+        <script src="javascript/map/tool_tip_text.js"></script>
+        <script src="javascript/map/setFrequencyColor.js"></script>
+        <script src="javascript/howler/index.js"></script>
+        <script src="javascript/chart/index.js"></script>
+        <script src="javascript/map/moreInfo.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/owl.carousel@2.3.4/dist/owl.carousel.min.js"></script>
+        <link rel="shortcut icon" href="images/favicon.ico">
+        
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131476464-8"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-131476464-8');
+        </script>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-254LB9QEPY"></script>
+	<script>
+  		window.dataLayer = window.dataLayer || [];
+  		function gtag(){dataLayer.push(arguments);}
+  		gtag('js', new Date());
+  		gtag('config', 'G-254LB9QEPY');
+	</script>
+	
+	<script>
+	$(document).ready(function(){
+	    console.log('Custom JS+sb23');
+        $('.left-navbar a[href="/en"]').click(function(e){
+            e.preventDefault();
+            var href = location.href.replace('_mr','');
+            href = href.replace('mr','en');
+
+            location.href = href;
+            console.log(href+'sb11');
+        });
+
+        $('.left-navbar a[href="/mr"]').click(function(e){
+            e.preventDefault();
+            var href = location.href;
+            if(href.indexOf('en') != -1){
+                href.replace('en','mr');
+            }
+
+            if(href.indexOf('?district=') != -1){
+                href = href.replace('features', 'features_mr');
+            }
+
+            if(href.indexOf('mr') == -1){
+                href = href+'_mr';
+            }
+
+            location.href = href;
+            console.log(href+'sb12');
+        });
+        
+        //Fix Notes (24th Nov 2023)
+        $('#concept').on('change', function(){
+        	var title, desc, url;
+        	var choice = $('input[name="choice"]:checked').val();
+            if(choice == 'grammar'){
+              var feature = $('#concept').closest('.dropdown').find('.text').text();
+              if(feature != 'Concepts' && feature != null && feature != ''){
+              	$.post('/api/', {getNote:1, feature:feature, language:'english'}, function(data){
+              		if(data != ''){
+              			data = $.parseJSON(data);
+                		title 	= data['title'];
+                		desc 	= data['description'];
+                		url 	= data['url'];
+		                
+                		setTimeout(function(){
+			                $('#grammermain > h1').text(title);
+			                $('#grammernew').html(`<p style="background-color:#fff;text-align:left;padding:5px;">
+			                <storng>`+desc+`</storng></p>
+			                <div>
+			                <a style="color:#fff; position: relative;bottom: 10px;" href="`+url+`">Download Note</a>
+			                </div>
+			                `);
+			                $('#grammermain').show();
+                		},500);
+              		}
+                });
+              	
+              }  
+            }	
+        });
+	});
+	</script>
+    </head>
+    <body>
+        <script>
+            function openMobileNav(){
+                document.getElementById("mobile-navbar").style.width = "80%";
+                document.getElementById("mobile-navbar-nav").style.display = "block";
+
+            }
+            function closeMobileNav(){
+                document.getElementById("mobile-navbar").style.width = "0";
+                document.getElementById("mobile-navbar-nav").style.display = "none";
+
+            }
+        </script>
+        <style>
+            @media only screen and (min-width: 800px) {
+                .breadcrumb{
+                    display: none;
+                }
+            }
+			.map_legend{display:none!important;}
+			.image_view-button {
+    align-items: center;
+    appearance: none;
+    background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%)!important;
+    border: 0;
+    border-radius: 6px;
+    box-shadow: rgb(45 35 66 / 40%) 0 2px 4px, rgb(45 35 66 / 30%) 0 7px 13px -3px, rgb(58 65 111 / 50%) 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: #fff!important;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: "JetBrains Mono",monospace;
+    height: 48px;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 16px;
+    padding-right: 16px;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow .15s,transform .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow,transform;
+    font-size: 18px;
+}
+        </style>
+    <div style="background-image:url('images/banner_08.jpg'); display: flex; flex-direction: row;" >
+        <button class="breadcrumb" onclick="openMobileNav()" style="background: none; border: 2px solid white; padding: 22px; color: white;height: 80px;padding: 22px;color: white;height: 80px;margin: 25px 5px;"><i class="fas fa-bars fa-2x"></i></button>
+        <div><a href="/">
+            <h1 style="color: white; margin: 10px 0 0 20px; padding-bottom: 10px">  मराठी बोलींचे सर्वेक्षण</h1>
+            <h1 style="color: white;  margin: 0 0 0 20px; padding-top: 10px;">Survey of Dialects of the Marathi Language</h1>
+        </a>
+        </div>
+        
+    </div>
+    <!-- <img style="display: block; width: 100%" src="images/banner_04.jpg" /> -->
+    
+
+
+<style>
+  .desktop-navbar{
+      display: none;
+    }
+  @media only screen and (min-width: 800px) {
+    .desktop-navbar{
+      display: block;
+    }
+  }
+
+  
+  .mobile-navbar{
+    
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background: #011527;
+    transition: 0.5s;
+    z-index: 999;
+    box-shadow: 6px 0px 17px 0px #011527;
+  }
+  
+  .mobile-navbar-nav{
+    display: none;
+    transition: 0.7s;
+  }
+
+  @media only screen and (min-width: 800px) {
+    .mobile-navbar{
+      display: none;
+    }
+    .mobile-navbar-nav{
+      display: none;
+    }
+  }
+
+  .mobile-navbar nav ul{
+    list-style-type: none;
+  }
+  .mobile-navbar nav ul li{
+    padding: 10px 0;
+  }
+  .mobile-navbar nav ul li a{
+    color: #fff;
+    font-size: 18px;
+  }
+
+</style>
+
+<div class="desktop-navbar">
+  <div class="left-navbar">
+    &nbsp;
+    <a class='item' href="/en">
+    <span>English</span>
+    </a>
+  
+
+  <a><span>|</span></a>
+
+    <a class='item' href="/mr">
+    <span>मराठी</span>
+    </a>
+
+</div>
+
+<style>
+  .dropbtn {
+    border: none;
+    background-color: #011527;
+    padding: 0.75em 1em;
+    border: none;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    padding: 0.75em 1em;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    width: 220px;
+    position: absolute;
+    left: -30px;
+    background-color: #011527;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 9;
+  }
+  
+  .dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {border-left: 2.5px solid white;border-bottom: none;}
+  
+  .dropdown:hover .dropdown-content {display: block;}
+  
+  .dropdown:hover .dropbtn {background-color: #017EE8;}
+  </style>
+
+<div class="navbar">
+
+  
+          <a class="item" data-active="home" href="/en">
+          <span>Home</span>
+          </a>
+        
+      
+
+
+    <div class="dropdown">
+  
+      <button class="dropbtn">About Project</button>
+      <div class="dropdown-content">
+        
+          <a class="item" data-active="about" href="/about">
+          <span>About</span>
+          </a>
+        
+		
+		
+        
+        
+          <a class="item active" data-active="methodology" href="/methodology">
+          <span>Project Methodology</span>
+          </a>    
+        
+
+        
+          <a class="item" data-active="stimulus-kit" href="/stimulus-kit">
+          <span>Stimulus Kit</span>
+          </a>
+        
+  
+        
+          <a class="item" data-active="previous-projects" href="/previous-projects">
+          <span>Previous Dialect Surveys of Marathi</span>
+          </a>
+        
+  
+        
+          <a class="item" data-active="our-team" href="/our-team">
+          <span>Project Team</span>
+          </a>
+        
+
+        
+          <a class="item" data-active="committee" href="/committee">
+          <span>Project Committees</span>
+          </a>
+        
+
+        
+          <a class="item" data-active="conference" href="/conference-presentations">
+          <span>Selected Conference Presentations</span>
+          </a>
+        
+        
+          <a class="item" data-active="mediacover" href="/mediacover">
+          <span>Media Coverage</span>
+          </a>
+        
+        
+          <a class="item" data-active="gallery" href="/photo-gallery">
+          <span>Gallery</span>
+          </a>
+        
+
+          </div>
+      </div>
+      
+        <a class="item" data-active="features" href="/features">
+        <span>Linguistic Features</span>
+        </a>
+      
+  
+    
+    <!-- <a class="item" href="http://demo3.testbharati.com/">
+      <span>Blog</span>
+    </a>
+    
+    
+
+  
+      <a class="item" data-active="data" href="/data">
+      <span>Data</span>
+      </a>
+     -->
+
+    
+
+<div class="dropdown">
+  
+  <button class="dropbtn">Community Voices</button>
+  <div class="dropdown-content">
+    
+    
+      <a class="item" data-active="linguist-narrations" href="/linguist-narrations">
+      <span>For Linguists</span>
+      </a>
+    
+
+    
+      <a class="item" data-active="layperson-narrations" href="/layperson-narrations">
+      <span>For Others</span>
+      </a>
+    
+
+  
+ 
+    </div>
+  </div>
+
+    <!-- 
+      <a class="item" data-active="photos" href="/photos">
+      <span>Data</span>
+      </a>
+    
+    
+    
+      <a class="item" data-active="photos" href="/photos">
+      <span>Gallery</span>
+      </a>
+     -->
+
+    
+      <a class="item" data-active="download-data" href="/download-data">
+      <span>Download Data</span>
+      </a>
+    
+
+    
+      <a class="item" data-active="blog" href="/blog">
+      <span>Blog</span>
+      </a>
+    
+    
+    
+      <a class="item" data-active="contact" href="/contact">
+      <span>Contact Us</span>
+      </a>
+    
+    
+    
+    
+    
+ </div>
+
+</div>
+
+<div class="mobile-navbar" id="mobile-navbar">
+  <nav id="mobile-navbar-nav" class="mobile-navbar-nav">
+    <button style="background: none;border:none;color: #fff;padding: 10px; float:right" onclick="closeMobileNav()"><i class="fas fa-times fa-2x"></i></button>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="#">About Project</a>
+        <ul>
+          <li><a data-active="about" href="/about">About</a></li>
+          <li><a data-active="methodology" href="/methodology">Methodology</a></li>
+          <li><a data-active="stimulus-kit" href="/stimulus-kit">Stimulus Kit</a></li>
+          <li><a data-active="previous-projects" href="/previous-projects">Previous Dialect Surveys of Marathi </a></li>
+          <li><a data-active="our-team" href="/our-team">Project Team</a></li>
+          <li><a data-active="committee" href="/project-committee">Project Committees</a></li>
+          <li><a data-active="conference" href="/conference-presentations">Selected conference presentations</a></li>
+          <li><a data-active="about" href="/mediacover">Media Coverage</a></li>
+		  <li><a data-active="gallery" href="/photo-gallery">Gallery</a></li>
+
+        </ul>
+      </li>
+      <li><a data-active="features" href="/features">Features</a></li>
+      <li><a href="">Community Voices</a>
+        <ul>
+          <li><a data-active="linguist-narrations" href="/linguist-narrations">For Linguists</a></li>
+
+          <li><a data-active="layperson-narrations" href="/layperson-narrations">For Others</a></li>
+        </ul>
+      </li>
+      <li><a href="/download-data">Data Download</a></li>
+      <!-- <li><a href="">Gallery</a></li> -->
+      <li><a data-active="contact" href="/contact">Contact Us</a></li>
+
+      <li style="text-align: center;margin: 40px;border-bottom: 1px white solid;">
+        <a href="/en">
+          <span>English</span>
+        </a> 
+        <a><span>&nbsp|&nbsp</span></a> 
+        <a href="/mr">
+          <span>रठ</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+<!-- <div class="wrapper" style="margin:0 !important"> -->
+
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.5.6/css/buttons.semanticui.min.css" />
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.semanticui.min.css" />
+	
+	
+	<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+	<script src="https://cdn.datatables.net/1.10.19/js/dataTables.semanticui.min.js"></script>
+	<script src="https://cdn.datatables.net/buttons/1.5.6/js/dataTables.buttons.min.js"></script>
+	<script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.semanticui.min.js"></script>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+	<script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.html5.min.js"></script>
+	<script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.print.min.js"></script>
+	<script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.colVis.min.js"></script>
+
+	<style>
+		#example_wrapper{
+			margin-bottom: 10px;
+		}
+		#example_wrapper *{
+			color: #000;
+		}
+		#example_wrapper label{
+			color:#000 !important;
+		}
+		#example_filter, #example_info, #example_paginate{
+			margin-bottom:5px;
+			text-align: right;
+		}
+	</style>
+
+<div class="methodology_container">
+    <h1 style="color: #011527; margin-top: 1em">Project Methodology</h1>
+    <div class="a-wrapper methodology-background">
+		<p class="methodology-paragraph">
+			This section presents a discussion on the data collection methods used to collect linguistic material for the SDML project. It also includes a discussion of the criteria for selection of lexical concepts for analysis and analysis of lexical features; selection of grammatical features for analysis and analysis of grammatical features; and analysis of narratives.
+		</p>
+		<h2>Data Collection Methods</h2>
+        <p class="methodology-paragraph">
+          The data presented on this website were collected through fieldwork carried out exclusively in rural and semi-urban communities. The data were collected between May 2018 and July 2022; a total of 2962 people in 277 villages across 34 districts of Maharashtra were interviewed. All interviews were audio-recorded using Sony IC recorders. The two urban districts—Mumbai City and Mumbai Suburban—are not included in this survey.
+
+<br>
+<br>
+<h2>Elicitation tools</h2>
+<p class="methodology-paragraph"></p>
+A sociolinguistic questionnaire was designed to collect information about language use within the village community as well as the social and economic linkages of the local community.
+</p>
+<br>
+<br>
+A set of pictures was used to elicit names for household items and vegetables, kinship terms and deictic terms.<a href="https://sdml.ac.in/features"> (https://sdml.ac.in/features)</a><br>
+<br>
+The Deccan College Stimulus Kit (consisting of about seventy videos) was used to elicit information regarding the selected grammatical features <a href="https://sdml.ac.in/stimulus-kit">  (https://sdml.ac.in/stimulus-kit).</a> This stimulus kit contains videos designed to elicit particular grammatical categories and constructions, for example, gender system, case markers, aspectual markers, and agreement patterns.<br>
+<br>
+Two kinds of narrations were recorded to overcome the observer’s paradox (Labov 1972): the narration of a traditional story (Tortoise and Rabbit; The Woodcutter; The Old Woman and Pumpkin) and the narration of a personal experience, a childhood memory, etc.
+
+</p> 
+
+<h2>Transcription</h2>
+<p class="methodology-paragraph">
+	The data elicited using the pictures and videos were transcribed using the IPA. Recordings of the selected traditional stories and personal experiences collected in each village were fully transcribed manually by the research assistants. The narrative data were glossed using the Leipzig glossing rules. (See <a href="https://www.eva.mpg.de/lingua/pdf/Glossing-Rules.pdf" >https://www.eva.mpg.de/lingua/pdf/Glossing-Rules.pdf </a>)
+	
+</p>
+<h2>Selection of talukas, villages, and speakers</h2>
+<p class="methodology-paragraph">
+	The ‘district’ was used as a research heuristic to conduct data collection for the project. The tehsil of the district headquarters and two to three other details were selected depending on considerations such as social demography, proximity to a neighbouring district/state and our understanding of dialectal differentiation within the region. Two villages were selected in each tehsil: one close to a prominent city or town in the tehsil, and the other located away from the town or city.
+
+</p>
+<h2>Example: Sampling in Kolhapur District.</h2>
+<p class="methodology-paragraph">
+	The district is divided into twelve tehsils, or administrative units. Of these, the city of Kolhapur is situated in Karveer tehsil. Hence, Karveer tehsil was sampled in the survey. A village close to the urban centre of Kolhapur (viz. Gadmudshingi) and a village away from the urban centre (viz. Khupire) were selected for data collection. Further, the tehsil close to the neighbouring (Kannada-speaking) state of Karnataka, <br><br>viz. Gadahinglaj; the tehsil close to the neighbouring district of Sindhudurg as well as the state of Karnataka, viz. Chandgad; the tehsil close to the neighbouring district of Ratnagiri in the Konkan, viz. Shahuwadi were also included in the survey. Kolhapur was the first district to be sampled for the survey. At this early stage in the survey, two additional tehsils were sampled – Kagal (situated at the Maharashtra –Karnataka inter-state border) and Radhanagari, close to Sindhudurg district. Thus a total of six tehsils in Kolhapur were sampled.
+
+</p>
+<p class="methodology-paragraph">Details of data collection (until July 2020):</p>
+<table style="padding: 5px; padding: 15px; text-align: center; width:100%;">
+	<thead >
+		<tr>
+			<th style="padding: 5px;border: 1px solid #000">Total no. of Districts sampled</th>
+			<th style="padding: 5px;border: 1px solid #000">Tehsils</th>
+			<th style="padding: 5px;border: 1px solid #000">Villages Sampled</th>
+			<th style="padding: 5px;border: 1px solid #000">Total no. of Interviews</th>
+			<th style="padding: 5px;border: 1px solid #000">No. of Full interviews</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td style="padding: 5px;border: 1px solid #000">34</td>
+			<td style="padding: 5px;border: 1px solid #000">125</td>
+			<td style="padding: 5px;border: 1px solid #000">277</td>
+			<td style="padding: 5px;border: 1px solid #000">2962</td>
+			<td style="padding: 5px;border: 1px solid #000">2261</td>
+		</tr>
+	</tbody>
+	
+</table>  
+
+
+<a href="https://sdml.ac.in/data-analysed"> (https://sdml.ac.in/data-analysed)</a>
+<h2>Selection of speakers</h2>
+<p class="methodology-paragraph">
+	Standard sociolinguistic criteria were used in the selection of individuals for data collection:
+<ul class="methodology-paragraph">
+	<li>Born in the village and brought up in the village or living in the
+		village for the past 20 years or more</li>
+		<li>Represented the major demographic groups in the village (i.e.
+			caste / religion / tribe, age and sex)</li>
+			<li>Reported Marathi to be the mother tongue or the primary
+				contact language in village interactions</li>
+</ul>
+</p>
+<p class="methodology-paragraph">
+	Data were collected from male and female speakers of three age groups (18-30, 31-55, 55+ years), belonging to all major demographic groups in the village. Care was taken to include illiterate as well as literate speakers. There were instances when speakers reporting a mother tongue other than Marathi constituted a major demographic group in the village and reported Marathi to be their contact language in the village. Such speakers were also included in the survey. For example, Bhils in Nandurbar; Kannada speakers in Latur, Solapur, Miraj; Urdu speakers in Ratnagiri and elsewhere; Gondi speakers in Nagpur, etc.
+</p>
+
+
+<table style="padding: 5px; padding: 15px; text-align: center; width:100%;">
+	<thead >
+		<tr>
+			<th style="padding: 5px;border: 1px solid #000">18-30</th>
+			<th style="padding: 5px;border: 1px solid #000">31-50</th>
+			<th style="padding: 5px;border: 1px solid #000">50+</th>
+			
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td style="padding: 5px;border: 1px solid #000">675</td>
+			<td style="padding: 5px;border: 1px solid #000">685
+			</td>
+			<td style="padding: 5px;border: 1px solid #000">903</td>
+			
+		</tr>
+	</tbody>
+	<tbody>
+		<tr>
+			<td colspan="3" style="padding: 5px;border: 1px solid #000">&nbsp;2261</td>
+		</tr>
+	</tbody></table>
+	<table style="padding: 5px; padding: 15px; text-align: center; width:100%;">
+	<thead>
+		<tr>
+			<th colspan="2" style="padding: 5px;border: 1px solid #000">&nbsp;Males</th>
+			<th colspan="2" style="padding: 5px;border: 1px solid #000">&nbsp;Females</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td colspan="2" style="padding: 5px;border: 1px solid #000">&nbsp;1225</td>
+			<td colspan="2" style="padding: 5px;border: 1px solid #000">&nbsp;1036</td>
+		</tr>
+	</tbody>
+	<tbody>
+		<tr>
+			<td colspan="3" style="padding: 5px;border: 1px solid #000">&nbsp;2261</td>
+		</tr>
+	</tbody>
+</table>
+ 
+<h1>Selection of lexical concepts
+</h1>
+<h2>What is meant by lexical concepts?
+
+</h2>
+<p class="methodology-paragraph">
+	Lexical concepts are nomenclature used for specific object-related or person-related things. Regional varieties of a language are immediately recognised in terms of the use of some distinct words as well as the prosody (intonation). For example, mulga, porga, lyok, aṇḍor, ḍikra, ǰʰil, čeḍo, bʰurɡe, poṭə, ṭura, lek, ṭuḍal, lekus, sohəra, pošya are some of the lexical terms referring to “Ego’s son” in Marathi.
+</p>
+<h2>How were the lexical items identified for elicitation in this survey?
+</h2>
+<p class="methodology-paragraph">Lexical items elicited for the SDML were identified based mainly on Dhongde (2013): this study based entirely on lexical evidence, concludes that regional dialects of Marathi vary from the standard dialect of Marathi in approximately 25% of the 2900 lexical items elicited in the study. The SDML uses some of these 25% most distinctive lexical items in addition to other lexical terms gleaned from other dialectal studies. A total of seventy lexical items were elicited for the survey. These belong to the following semantic fields: household items, vegetables, deictic terms, and kinship terms. 
+</p>
+<h2>How were the lexical items elicited?
+</h2>
+<ul class="about_us-paragraph">
+	<li>Local words for household items, fruit and vegetable names were elicited using pictures. (These pictures are shared on the website under ‘Click here to view image’ on the Lexical Features page, <a href="https://sdml.ac.in/features"> https://sdml.ac.in/features)</a></li>
+	<li>Deictic terms (e.g. here, there, tomorrow, yesterday, etc.) were elicited using situational cues / pictures.</li>
+	<li>Kinship terminology was elicited using paraphrases as cues (e.g. What is the relationship between your mother’s brother’s wife and you? What is the relationship between you and your sister’s son? etc.)
+	</li>
+</ul>
+<p class="methodology-paragraph">Lexical items are collected from the village speakers who claimed to be fluent in Marathi, who reported using Marathi as their village contact language, but whose mother tongue was not Marathi. Such words are often words from the speaker's L1 i.e. mother tongue/first language (eg Hindi-Urdu, Telugu, Kannada, Gondi, Bhil language, etc.).</p>
+<h2>How were the lexical items transcribed?</h2>
+<ul class="about_us-paragraph">
+	<li>The elicited lexical items were transcribed using (i) Roman-based International Phonetic Script (IPA) and (ii) modified Devanagari script. E.g. cǝmča – च़मचा ‘spoon’; ja – ज़ा ‚go.IMP‘. [A complete list of the symbols used will be found under ‚Methodology‘. <a href="https://sdml.ac.in/methodology">https://sdml.ac.in/methodology]
+	</a></li>
+	<li>The lexical database captures variation: E.g. In Palghar district,
+		</li>
+	<li>mewʰna, bʰawə, daji, mewʰnas, sala, saḷa, saḍa, hala, haḷa, haro, hara were the lexical variants received for the concept “male ego’s wife’s younger brother”.</li>
+	<li>bʰači, bʰasi, bʰašis, bʰasi, bʰawači porɡi, sun were the variants received for the concept “Female ego’s brother’s daughter”.
+	</li>
+</ul>
+<span>Sound variation as well as semantic shifts have been captured in the lexical database.</span>
+<h1>Selection of grammatical features
+</h1>
+<h2>What is a grammatical feature?
+</h2>
+<p class="methodology-paragraph">A grammatical trait, such as a word formation process or a syntactic relation between words in a sentence is referred to as ‘grammatical feature’. E.g.1 The various case markers which can be attached to the noun rǝsta ‘road’: rǝstyala (accusative), rǝstyat (locative), rǝstyapasun (ablative), rǝstyani (instrumental). E.g.2 Agreement in a sentence bhintǝ pǝḍli OR bhintǝ pǝḍlǝ ‘the wall fell-feminine agreement’ and ‘the wall fell-neuter agreement’ respectively.
+</p>
+<h2>How were grammatical features identified for this survey?
+</h2>
+<p class="methodology-paragraph">About twenty grammatical features were identified on the basis of previous published works and previous experience of data collection in Maharashtra. It was expected that a sub-set of these features would prove to be diagnostic to identify the major dialectal divisions in Marathi. These features include the following: (i) case marking (ii) aspect marking (iii) tense marking (iv) person and number distinction in verbal marking (v) case marking in the transitive perfective clause (vi) agreement in the transitive perfective clause, and so on.
+</p>
+<h2>How were grammatical features elicited? 
+</h2>
+<p class="methodology-paragraph">The ‘Deccan College Stimulus’ consisting of seventy videos was used to elicit particular grammatical features. <a href="https://sdml.ac.in/stimulus-kit"> (https://sdml.ac.in/stimulus-kit) </a></p>
+<h1>Methodology used for analysing and mapping grammatical variation</h1>
+<p class="methodology-paragraph">Considering the social demography of each village included in the survey sample, representative speakers’ interviews (each of 40 to 60 minutes duration) were transcribed using IPA. The occurrences of the selected grammatical features in each transcript were noted. Care was taken to ensure that the speech of male/female speakers, old/young speakers, educated/uneducated speakers were used in the analysis of grammatical features. The use of this method enabled us to capture both inter-speaker and intra-speaker variation within the village. An examination of dialect change is facilitated by this method. The grammatical data culled from individual interviews was aggregated at the village level.</p>
+<br>
+<p class="methodology-paragraph">The alternative realisations of a particular grammatical feature (variable) which were noted across the regions and communities sampled in the survey were examined and assigned values. For example, the following variation was noted in the phonological form of the instrumental suffix across Maharashtra: [-ne/ni/nə/n/na/nu), (2) [-wəri (wər)], (3) [-kʰəl (kʰalə/kʰali/kʰale/kʰal)], (4) [-ɡʰəi (ɡʰi)], (5) [-ši], (6) [-kʰən (kʰun/kən)], (7) [-vowel (i/e/ə)], (8) [kəḍə (kəḍ/kə/kər/kəri)]. The geographical distribution and examples of the variant forms are given below. As shown here, values 1 to 8 were assigned to the observed variants. The geographical distribution of each variant was then displayed in the form of a dialect map.
+</p>
+<h2>Analysis of narrations
+</h2>
+<ul class="about_us-paragraph">
+	<li>Transcription of selected narratives in revised Devanagari script and IPA
+	</li>
+	<li>Linguistic analysis using Leipzig Glossing Conventions
+	</li>
+	<li>Free translation of each sentence into English
+	</li>
+</ul>
+<p class="methodology-paragraph">The details of the district, taluka, village in which each narration was recorded and the details of the narrator's gender, age, education, social group/caste/tribe etc. are given in the tabular form. (See – Chapter 5 – List given in sub-section 3 under each district)
+</p>
+</div>
+	
+	<div style="cursor: pointer;" id="abbreviation-onclick">
+		<h1 style="color: #011527; margin-top: 2em;margin-bottom: 0">Abbreviations</h1>
+		<div style="color: #011527;text-align: center;">(Click to expand)</div>
+	</div>
+	<script>
+		$('#abbreviation-onclick').click(function(){
+			if($('#abbreviation-expand').is(":hidden")){
+				$('#abbreviation-expand').slideDown("slow");
+			}
+			else{
+				$('#abbreviation-expand').slideUp( "slow");
+			}
+		})
+	</script>
+	<div id="abbreviation-expand" style="display: none;">
+		<div class="a-wrapper" style="margin-top: 30px;margin-bottom: 30px; display: flex;">
+			<table class="ui celled table" style="margin: 0 8px;">
+				<thead>
+				<tr><th style="
+					text-align: center;
+				">Abbreviation</th>
+				<th style="
+				text-align: center;
+			">Expanded Form</th>
+				</tr></thead>
+				<tbody>
+				<tr>
+					<td style="
+					text-align: center;
+				" data-label="Abbreviation">
+						ABL
+					</td>
+					<td  style="
+					text-align: center;
+				"data-label="Expanded Form">
+						Ablative
+					</td>
+					
+				</tr>
+				<tr>
+					<td  style="
+					text-align: center;
+				"data-label="Abbreviation">
+						ACC
+					</td>
+					<td  style="
+					text-align: center;
+				"data-label="Expanded Form">
+						Accusative Case
+					</td>
+					
+				</tr>
+				<tr>
+					<td style="
+					text-align: center;
+				" data-label="Abbreviation">
+						AUX
+					</td>
+					<td  style="
+					text-align: center;
+				"data-label="Expanded Form">
+						Auxiliary
+					</td>
+					
+				</tr>
+				<tr>
+					<td  style="
+					text-align: center;
+				"data-label="Abbreviation">
+						COMP
+					</td>
+					<td style="
+					text-align: center;
+				" data-label="Expanded Form">
+						Complementizer
+
+
+					</td>
+					
+				</tr>
+				<tr>
+					<td  style="
+					text-align: center;
+				"data-label="Abbreviation">
+						COREL
+					</td>
+					<td  style="
+					text-align: center;
+				"data-label="Expanded Form">
+						Correlative
+					</td>
+					
+				</tr>
+				<tr>
+					<td  style="
+					text-align: center;
+				"data-label="Abbreviation">
+						CP
+					</td>
+					<td  style="
+					text-align: center;
+				"data-label="Expanded Form">
+						Conjunctive Participle
+					</td>
+					
+				</tr>
+	
+				<tr>
+					<td  style="
+					text-align: center;
+				"data-label="Abbreviation">
+						DAT
+					</td>
+					<td  style="
+					text-align: center;
+				"data-label="Expanded Form">
+						Dative
+
+
+					</td>
+					
+				</tr>
+				<tr>
+					<td style="
+					text-align: center;
+				"data-label="Abbreviation">
+						DEM
+					</td>
+					<td  style="
+					text-align: center;
+				"data-label="Expanded Form">
+						Demonstrative
+					</td>
+					
+				</tr>
+				<tr>
+					<td style="
+					text-align: center;
+				"data-label="Abbreviation">
+						DIST
+					</td>
+					<td  style="
+					text-align: center;
+				"data-label="Expanded Form">
+						Distal 
+					</td>
+					
+				</tr>
+				<tr>
+					<td style="
+					text-align: center;
+				"data-label="Abbreviation">
+						EMPH
+					</td>
+					<td  style="
+					text-align: center;
+				"data-label="Expanded Form">
+						Emphatic
+					</td>
+					
+				</tr>
+				<tr>
+					<td style="
+					text-align: center;
+				"data-label="Abbreviation">
+						ERG
+					</td>
+					<td  style="
+					text-align: center;
+				"data-label="Expanded Form">
+						Ergative
+					</td>
+					
+				</tr>
+				<tr>
+					<td style="
+					text-align: center;
+				"data-label="Abbreviation">
+						EXCL
+					</td>
+					<td  style="
+					text-align: center;
+				"data-label="Expanded Form">
+						Exclusive
+					</td>
+					
+				</tr>
+				<tr>
+					<td style="
+					text-align: center;
+				"data-label="Abbreviation">
+						F
+					</td>
+					<td  style="
+					text-align: center;
+				"data-label="Expanded Form">
+						Feminine
+					</td>
+					
+				</tr>
+				<tr>
+					<td style="
+					text-align: center;
+				"data-label="Abbreviation">
+						FUT
+					</td>
+					<td  style="
+					text-align: center;
+				"data-label="Expanded Form">
+						Future
+					</td>
+					
+				</tr>
+				<tr>
+					<td style="
+					text-align: center;
+				"data-label="Abbreviation">
+						GEN
+					</td>
+					<td  style="
+					text-align: center;
+				"data-label="Expanded Form">
+						Genitive Case
+					</td>
+					
+				</tr>
+				<tr>
+					<td style="
+					text-align: center;
+				"data-label="Abbreviation">
+						HAB
+					</td>
+					<td  style="
+					text-align: center;
+				"data-label="Expanded Form">
+						Habitual
+					</td>
+					
+				</tr>
+				<tr>
+					<td style="
+					text-align: center;
+				"data-label="Abbreviation">
+						HON
+					</td>
+					<td  style="
+					text-align: center;
+				"data-label="Expanded Form">
+						Honorific
+					</td>
+					
+				</tr>
+				
+				<tr>
+					<td style="
+					text-align: center;
+				" data-label="Abbreviation">
+						HORT
+					</td>
+					<td   style="
+					text-align: center;
+				"data-label="Expanded Form">
+						Hortative
+
+
+					</td>
+					
+				</tr>
+				<tr>
+					<td style="
+					text-align: center;
+				"data-label="Abbreviation">
+						IMP
+					</td >
+					<td style="
+					text-align: center;
+				"data-label="Expanded Form">
+						Imperative
+					</td>
+					
+				</tr>
+				<tr>
+					<td style="
+					text-align: center;
+				"data-label="Abbreviation">
+						INF
+					</td>
+					<td  style="
+					text-align: center;
+				"data-label="Expanded Form">
+						Infinitive
+					</td>
+					
+				</tr>
+				<tr>
+					<td style="
+					text-align: center;
+				"data-label="Abbreviation">
+						INS
+					</td>
+					<td style="
+					text-align: center;
+				"data-label="Expanded Form">
+						Instrumental
+					</td>
+					
+				</tr>
+				<tr>
+					<td style="
+					text-align: center;
+				"data-label="Abbreviation">
+						IPFV
+					</td>
+					<td style="
+					text-align: center;
+				"data-label="Expanded Form">
+						Imperfective
+					</td>
+					
+				</tr>
+				<tr>
+					<td style="
+					text-align: center;
+				"data-label="Abbreviation">
+						INCP
+					</td>
+					<td style="
+					text-align: center;
+				"data-label="Expanded Form">
+						Inceptive
+					</td>
+					
+				</tr>
+				<tr>
+					<td style="
+					text-align: center;
+				"data-label="Abbreviation">
+						INCL
+					</td>
+					<td style="
+					text-align: center;
+				"data-label="Expanded Form">
+						Inclusive
+					</td>
+					
+				</tr>
+				
+				</tbody>
+			</table>
+	
+			<table class="ui celled table" style="margin: 0 8px;">
+				<thead>
+				<tr><th style="
+					text-align: center;
+				">Abbreviation</th>
+				<th style="
+				text-align: center;
+			">Expanded Form</th>
+				
+				</tr></thead>
+				<tbody>
+				<tr>
+					<td style="
+					text-align: center;
+				"data-label="Job">
+						LOC
+					</td>
+					<td style="
+					text-align: center;
+				"data-label="Job">
+						Locative
+					</td>
+				</tr>
+				<tr>
+					<td style="
+					text-align: center;
+				"data-label="Job">
+						M
+					</td>
+					<td style="
+					text-align: center;
+				"data-label="Job">
+						Masculine
+					</td>
+				</tr>
+				<tr>
+					<td style="
+					text-align: center;
+				"data-label="Job">
+						N
+					</td>
+					<td style="
+					text-align: center;
+				"data-label="Job">
+						Neuter 
+					</td>
+				</tr>
+				<tr>
+					<td style="
+					text-align: center;
+				"data-label="Job">
+						NEG
+					</td>
+					<td style="
+					text-align: center;
+				"data-label="Job">
+						Negative
+					</td>
+				</tr>
+				<tr>
+					<td style="
+					text-align: center;
+				"data-label="Job">
+						NON.FIN
+					</td>
+					<td style="
+					text-align: center;
+				"data-label="Job">
+						Non-Finite
+					</td>
+				</tr>
+				<tr>
+					<td style="
+					text-align: center;
+				"data-label="Job">
+						OBL
+					</td>
+					<td style="
+					text-align: center;
+				"data-label="Job">
+						Oblique
+					</td>
+				</tr>
+	
+				<tr>
+					<td style="
+					text-align: center;
+				" >
+						PLU.PFV
+					</td>
+					<td style="
+					text-align: center;
+				">
+						Pluperfective
+					</td>
+				</tr>
+				<tr>
+					<td style="
+					text-align: center;
+				">
+						PRT
+					</td>
+					<td style="
+					text-align: center;
+				">
+						Particle
+					</td>
+				</tr>
+				<tr>
+					<td style="
+					text-align: center;
+				">
+						PST
+					</td>
+					<td style="
+					text-align: center;
+				">
+						Past
+					</td>
+				</tr>
+				<tr>
+					<td style="
+					text-align: center;
+				">
+						PFV
+					</td>
+					<td style="
+					text-align: center;
+				">
+						Perfective
+					</td>
+				</tr>
+				<tr>
+					<td style="
+					text-align: center;
+				">
+						PL
+					</td>
+					<td style="
+					text-align: center;
+				">
+						Plural
+					</td>
+				</tr>
+				<tr>
+					<td style="
+					text-align: center;
+				" >
+						PP
+					</td>
+					<td style="
+					text-align: center;
+				">
+						Postposition
+					</td>
+				</tr>
+				<tr>
+					<td style="
+					text-align: center;
+				" >
+						PRS
+					</td>
+					<td style="
+					text-align: center;
+				">
+						Present
+					</td>
+				</tr>
+				<tr>
+					<td style="
+					text-align: center;
+				" >
+						PROG
+					</td>
+					<td style="
+					text-align: center;
+				">
+						Progressive
+					</td>
+				</tr>
+				<tr>
+					<td style="
+					text-align: center;
+				">
+						PROS
+					</td>
+					<td style="
+					text-align: center;
+				">
+						Prospective
+					</td>
+				</tr>
+				<tr>
+					<td style="
+					text-align: center;
+				" >
+						PROX
+					</td>
+					<td style="
+					text-align: center;
+				">
+						Proximate
+					</td>
+				</tr>
+				<tr>
+					<td style="
+					text-align: center;
+				" >
+						PTPL
+					</td>
+					<td style="
+					text-align: center;
+				">
+						Participle
+					</td>
+				</tr>
+				
+				<tr>
+					<td style="
+					text-align: center;
+				" >
+						Q
+					</td>
+					<td  style="
+					text-align: center;
+				">
+						Question Particle
+					</td>
+				</tr>
+				<tr>
+					<td  style="
+					text-align: center;
+				">
+						QUOT
+					</td>
+					<td style="
+					text-align: center;
+				" >
+						Quotative
+					</td>
+				</tr>
+				<tr>
+					<td style="
+					text-align: center;
+				" >
+						REDUP
+					</td>
+					<td  style="
+					text-align: center;
+				">
+						Reduplicative
+					</td>
+				</tr>
+				<tr>
+					<td style="
+					text-align: center;
+				" >
+						REL
+					</td>
+					<td  style="
+					text-align: center;
+				">
+						Relative
+					</td>
+				</tr>
+				<tr>
+					<td  style="
+					text-align: center;
+				">
+						SG
+					</td>
+					<td  style="
+					text-align: center;
+				">
+						Singular
+
+
+					</td>
+				</tr>
+				<tr>
+					<td style="
+					text-align: center;
+				">
+						VOC
+					</td>
+					<td  style="
+					text-align: center;
+				">
+						Vocative
+					</td>
+				</tr>
+				<tr>
+					<td style="
+					text-align: center;
+				">
+						1
+					</td>
+					<td style="
+					text-align: center;
+				" >
+						First Person
+					</td>
+				</tr>
+				<tr>
+					<td style="
+					text-align: center;
+				">
+						2
+					</td>
+					<td  style="
+					text-align: center;
+				">
+						Second Person
+					</td>
+				</tr>
+				<tr>
+					<td style="
+					text-align: center;
+				" >
+						3
+					</td>
+					<td  style="
+					text-align: center;
+				">
+						Third Person
+					</td>
+				</tr>
+			
+				</tbody>
+			</table>
+		</div >
+	</div>
+   <!--Remove the phonetic table and data --> 
+<div style="cursor: pointer;" id="phonetic-onclick">
+		<h1 style="color: #011527; margin-top: 2em;margin-bottom: 0">Phonetic Symbols</h1>
+		<div style="color: #011527;text-align: center;">(Click to expand)</div>
+	</div>
+	<script>
+		$('#phonetic-onclick').click(function(){
+			if($('#phonetic-expand').is(":hidden")){
+				$('#phonetic-expand').slideDown("slow");
+			}
+			else{
+				$('#phonetic-expand').slideUp( "slow");
+			}
+		})
+	</script> 
+	 <div id="phonetic-expand" style="display: none;">
+		<div class="a-wrapper" style="margin-top: 30px;margin-bottom: 30px;">
+			<table class="ui celled table">
+				<thead>
+				<tr><th style="
+					width: 100px;">Sr. No</th>
+				<th style="
+				width: 120px;
+				max-width: 100px;">Phonetic Symbol</th>
+				</tr></thead>
+				<tbody>
+				<tr>
+					<td   data-label="serial">1</td>
+					<td data-label="phonetic-symbol">p</td>
+					
+				</tr>
+				<tr><td data-label="serial">2</td>
+					<td data-label="phonetic-symbol">pʰ</td>
+				
+				</tr>
+				<tr><td data-label="serial">3</td>
+					<td data-label="phonetic-symbol">b</td>
+					
+				</tr>
+				<tr><td data-label="serial">4</td>
+					<td data-label="phonetic-symbol">bʰ</td>
+				
+				</tr>
+				<tr><td data-label="serial">5</td>
+					<td data-label="phonetic-symbol">t</td>
+					
+				</tr>
+				<tr><td data-label="serial">6</td>
+					<td data-label="phonetic-symbol">tʰ</td>
+					
+				</tr>
+				<tr><td data-label="serial">7</td>
+					<td data-label="phonetic-symbol">d</td>
+					
+				</tr>
+				<tr><td data-label="serial">8</td>
+					<td data-label="phonetic-symbol">dʰ</td>
+				
+				</tr>
+				<tr><td data-label="serial">9</td>
+					<td data-label="phonetic-symbol">ṭ</td>
+					
+				</tr>
+				<tr><td data-label="serial">10</td>
+					<td data-label="phonetic-symbol">ṭʰ</td>
+					
+				</tr>
+				<tr><td data-label="serial">11</td>
+					<td data-label="phonetic-symbol">ḍ</td>
+					
+				</tr>
+				<tr><td data-label="serial">12</td>
+					<td data-label="phonetic-symbol">ḍʰ</td>
+					
+				</tr>
+				<tr><td data-label="serial">13</td>
+					<td data-label="phonetic-symbol">k</td>
+			
+				</tr>
+				<tr><td data-label="serial">14</td>
+					<td data-label="phonetic-symbol">kʰ</td>
+				
+				</tr>
+				<tr><td data-label="serial">15</td>
+					<td data-label="phonetic-symbol">g</td>
+				
+				</tr>
+				<tr><td data-label="serial">16</td>
+					<td data-label="phonetic-symbol">gʰ</td>
+					
+				</tr>
+				<tr><td data-label="serial">17</td>
+					<td data-label="phonetic-symbol">m</td>
+				
+				</tr>
+				<tr><td data-label="serial">18</td>
+					<td data-label="phonetic-symbol">n</td>
+					
+				</tr>
+				<tr><td data-label="serial">19</td>
+					<td data-label="phonetic-symbol">ṇ</td>
+				
+				</tr>
+				<tr><td data-label="serial">20</td>
+					<td data-label="phonetic-symbol">ṅ</td>
+					
+				</tr>
+				<tr><td data-label="serial">21</td>
+					<td data-label="phonetic-symbol">r</td>
+					
+				</tr>
+				<tr><td data-label="serial">22</td>
+					<td data-label="phonetic-symbol">l</td>
+					
+				</tr>
+				<tr><td data-label="serial">23</td>
+					<td data-label="phonetic-symbol">ḷ</td>
+					
+				</tr>
+				<tr><td data-label="serial">24</td>
+					<td data-label="phonetic-symbol">s</td>
+			
+				</tr>
+				<tr><td data-label="serial">25</td>
+					<td data-label="phonetic-symbol">š</td>
+				
+				</tr>
+				<tr><td data-label="serial">26</td>
+					<td data-label="phonetic-symbol">ṣ</td>
+				
+				</tr>
+				<tr><td data-label="serial">27</td>
+					<td data-label="phonetic-symbol">h</td>
+					
+				</tr>
+				<tr><td data-label="serial">28</td>
+					<td data-label="phonetic-symbol">c (dental affricate)</td>
+			
+				</tr>
+				<tr><td data-label="serial">29</td>
+					<td data-label="phonetic-symbol">č (palatal affricate)</td>
+				
+				</tr>
+				<tr><td data-label="serial">30</td>
+					<td data-label="phonetic-symbol">čʰ</td>
+					
+				</tr>
+				<tr><td data-label="serial">31</td>
+					<td data-label="phonetic-symbol">j (dental affricate)</td>
+					
+				</tr>
+				<tr><td data-label="serial">32</td>
+					<td data-label="phonetic-symbol">jʰ</td>
+					
+				</tr>
+				<tr><td data-label="serial">33</td>
+					<td data-label="phonetic-symbol">ǰ (palatal affricate)</td>
+				
+				</tr>
+				<tr><td data-label="serial">34</td>
+					<td data-label="phonetic-symbol">ǰʰ</td>
+					
+				</tr>
+				<tr><td data-label="serial">35</td>
+					<td data-label="phonetic-symbol">y</td>
+					
+				</tr>
+				<tr><td data-label="serial">36</td>
+					<td data-label="phonetic-symbol">w</td>
+					
+				</tr>
+				<tr><td data-label="serial">37</td>
+					<td data-label="phonetic-symbol">ə</td>
+					
+				</tr>
+				<tr><td data-label="serial">38</td>
+					<td data-label="phonetic-symbol">a</td>
+					
+				</tr>
+				<tr><td data-label="serial">39</td>
+					<td data-label="phonetic-symbol">i</td>
+					
+				</tr>
+				<tr><td data-label="serial">40</td>
+					<td data-label="phonetic-symbol">u</td>
+					
+				</tr>
+				<tr><td data-label="serial">41</td>
+					<td data-label="phonetic-symbol">e</td>
+					
+				</tr>
+				<tr><td data-label="serial">42</td>
+					<td data-label="phonetic-symbol">ᴂ</td>
+					
+				</tr>
+				<tr><td data-label="serial">43</td>
+					<td data-label="phonetic-symbol">ɔ</td>
+					
+				</tr>
+				<tr><td data-label="serial">44</td>
+					<td data-label="phonetic-symbol">əi</td>
+					
+				</tr>
+				<tr><td data-label="serial">45</td>
+					<td data-label="phonetic-symbol">əu</td>
+					
+				</tr>
+				
+				
+				</tbody>
+			</table>
+			</div >
+	</div> 
+
+	<script>
+		$(document).ready(function() {
+			
+			d3
+		.queue()
+		.defer(d3.csv, "csv/linguistic.csv")
+		.defer(d3.json, "csv/database.json")
+		.await((error, linguisticdata, newData)=>{
+			if(error) throw error;
+			console.log(newData)
+			linguisticdata.push(...newData)
+	
+		var table = $('#example').DataTable( {
+			dom: 'Bfrtip',
+			buttons: [],
+			"pageLength": 15,
+			"aaData": linguisticdata,
+			"columns" : [ {
+						"data" : "district",
+						'visible' : true
+					}, {
+						"data" : "taluka",
+						'visible' : true
+					}, {
+						"data" : "village",
+						'visible' : true
+					}, {
+						"data" : "latitudes",
+						"title": "Latitude",
+						'visible' : true
+						
+					}, {
+						"data" : "longitudes",
+						"title": "Longitude",
+
+						'visible' : true
+					}
+					]
+		} );
+		
+		// table.buttons().container().removeClass('basic')
+		// .appendTo( $('div.eight.column:eq(0)') );
+		})
+	} );
+	</script>
+
+	<h1 style="color: #011527; margin-top: 2em">List of Surveyed Villages</h1>
+	<div class="a-wrapper" style="margin-top: 30px;margin-bottom: 30px;">
+		<table id="example" class="ui celled table" style="width:100%;">
+			<thead>
+				<tr>
+					<th>District</th>
+					<th>Taluka</th>
+					<th>Village</th>
+					<th>Latitudes</th>
+					<th>Longitudes</th>
+				</tr>
+			</thead>
+			<tbody>
+				
+			</tbody>
+			
+		</table>
+	</div >
+    
+</div>
+
+  
+
+<div class="ui bottom menu footbar" style="margin: 0;border-radius: 0;">
+          
+          <div style="display: flex; width: 100%;padding: 1em;">
+            <div>
+          	<a href="/sitemap" style="display: flex;color:#fff">Sitemap</a>
+          </div>
+            <div style=" display: flex; align-items: center;justify-content: center;width: 70%; border-right: 2px solid white;padding: 0 20px"><!-- © COPYRIGHT: 2024 Deccan College (Deemed University), Pune and Rajya Marathi Vikas Sanstha, Mumbai.--></div>
+            <!-- <div style=" display: flex; align-items: center;">
+                <a style="color:white"><i class="big instagram icon"></i></a>
+                <a style="color:white"><i class="big facebook icon"></i></a>
+                <a style="color:white"><i class="big twitter icon"></i></a>
+                <a style="color:white"><i class="big youtube icon"></i></a>
+                <a style="color:white"><i class="big pinterest icon"></i></a>
+            </div> -->
+            <div style="width: 30%;justify-content: space-around;display: flex;margin: auto;max-width: 300px;">
+                <!-- <a style="background-image: url(/images/Logo_02.jpg);"></a>
+                <a style="background-image: url(/images/Logo_01.jpg);"></a> -->
+
+                <img class="footer-logo" src="/images/Logo_01.jpg"/>
+                <img class="footer-logo" src="/images/Logo_02.png"/>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+
+    </body>
+</html>

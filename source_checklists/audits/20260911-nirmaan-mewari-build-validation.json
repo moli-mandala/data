@@ -1,0 +1,85 @@
+{
+  "source": "nirmaan2018mewari",
+  "date": "2026-09-11",
+  "status": "locally rebuilt and staged; broad validation failures remain",
+  "compiled": {
+    "source_rows": 6535,
+    "source_variants": 484,
+    "total_forms": 686791,
+    "added_ids": 6560,
+    "removed_ids": 0,
+    "examples": {
+      "nirmaan2018mewari:p004:c2:e05": "f_alo7glcltiybk",
+      "nirmaan2018mewari:p251:c1:e04:v2": "f_v7k6slu4dag5o",
+      "nirmaan2018mewari:p105:c2:e03:s1": "f_afifmjpwfvfci"
+    }
+  },
+  "database": {
+    "integrity_check": "ok",
+    "dictionary_nodes": 6535,
+    "variant_nodes": 484,
+    "missing_dictionary_ids": 0,
+    "bytes": 99368960,
+    "compressed_bytes": 43861495,
+    "cache_version": 31,
+    "unknown_graph_endpoints_dropped": 0
+  },
+  "full_suite": {
+    "passed": 1699,
+    "failed": 35,
+    "skipped": 18,
+    "command": "PYTHONPATH=. uv run pytest -q --import-mode=importlib",
+    "failures": [
+      "FAILED data/other/forms/raw_data/sil_noira_2015/test_preintegration_contract.py::test_preintegration_artifacts_are_fresh_and_pdf_is_pinned",
+      "FAILED data/other/forms/raw_data/sil_noira_2015/test_preintegration_contract.py::test_frozen_hashes_and_manual_census",
+      "FAILED tests/test_assign_form_ids.py::test_the_dictionary_self_reference_assignments_all_point_at_live_sub_entries",
+      "FAILED tests/test_bahl_korwa_1962.py::test_compiled_rows_survive_when_current_cldf_is_built",
+      "FAILED tests/test_beine_bhatri.py::test_compiled_forms_are_unlinked_records_on_canonical_languages",
+      "FAILED tests/test_beine_bhatri.py::test_source_contributes_no_graph_edges - A...",
+      "FAILED tests/test_bhattacharya_bonda_1968.py::test_compiled_rows_survive_when_current_cldf_is_built",
+      "FAILED tests/test_burrow_emeneau_1972_den1.py::test_build_merges_source_citations_without_duplicate_reflexes",
+      "FAILED tests/test_burrow_emeneau_1972_den2.py::test_build_carries_the_source_citation_without_replacement_glyphs",
+      "FAILED tests/test_cldf.py::test_dedr_old_edition_references_are_structured_on_entry",
+      "FAILED tests/test_cldf.py::test_cross_family_descendants_are_borrowings - Ass...",
+      "FAILED tests/test_cldf.py::test_backstrom_poc_cloth_forms_link_to_pota_not_avajjharati",
+      "FAILED tests/test_cldf.py::test_reference_metadata_is_complete - assert not True",
+      "FAILED tests/test_cldf.py::test_reference_editor_credits_for_assisted_sources",
+      "FAILED tests/test_cldf.py::test_ocr_provenance_is_explicit_on_references - As...",
+      "FAILED tests/test_cldf.py::test_both_shackle_sources_use_cdial_phonetic_conversion_and_tags",
+      "FAILED tests/test_dedr_headwords.py::test_compiled_pdr_headword_audit_and_forms_follow_policy",
+      "FAILED tests/test_dialects.py::test_every_dialect_has_human_readable_location_metadata",
+      "FAILED tests/test_dialects.py::test_every_dialect_has_coordinates_in_range - ...",
+      "FAILED tests/test_gondi_beine.py::test_compiled_forms_are_unlinked_gondi_dialect_records",
+      "FAILED tests/test_knobloch_sauji.py::test_every_installed_row_survives_the_full_build",
+      "FAILED tests/test_language_coordinates.py::test_only_geographically_undefined_languages_lack_coordinates",
+      "FAILED tests/test_manual_survey_etymologies.py::test_manual_survey_etymologies_reach_the_compiled_graph",
+      "FAILED tests/test_manual_survey_etymologies.py::test_source_owned_links_do_not_depend_on_duplicate_overlay_rows",
+      "FAILED tests/test_munda_proto_kherwarian_1968.py::test_compiled_rows_survive_when_current_cldf_is_built",
+      "FAILED tests/test_neojambu_etymology_restoration.py::test_restored_assignments_survive_in_the_compiled_edge_graph",
+      "FAILED tests/test_neojambu_etymology_restoration.py::test_previously_lost_source_groups_have_accepted_edges",
+      "FAILED tests/test_perder_dameli.py::test_compiled_source_keeps_original_phonemic_and_resolved_graph",
+      "FAILED tests/test_pinnow_juang_1960.py::test_compiled_rows_survive_when_current_cldf_is_built",
+      "FAILED tests/test_rajasthani.py::test_curated_etymologies_survive_the_compiled_graph",
+      "FAILED tests/test_rezai_baghbidi_zargari_2003.py::test_every_installed_row_survives_the_full_build",
+      "FAILED tests/test_rezai_baghbidi_zargari_2003.py::test_printed_alternates_become_variant_edges",
+      "FAILED tests/test_source_checklists.py::test_every_installed_ingestion_unit_has_a_fresh_checklist_copy",
+      "FAILED tests/test_source_checklists.py::test_retrospective_audit_accounts_for_every_installed_input_row",
+      "FAILED tests/test_zide_sora_gorum_1982.py::test_compiled_rows_survive_when_current_cldf_is_built"
+    ]
+  },
+  "after_audit_refresh_focused_tests": "............                                                             [100%]\n12 passed in 39.16s\n",
+  "frontend_check": {
+    "errors": 0,
+    "warnings": 7
+  },
+  "browser_qa": [
+    "source table and search",
+    "akkar letter entry",
+    "ɓārī variant parent link",
+    "Mewari Kapasan dialect count",
+    "LETTER concept map loads",
+    "source page visual review"
+  ],
+  "known_display_issue": "Editor-only source heading Short is ?; full bibliography and entry citations render correctly.",
+  "deployment": "not performed"
+}
