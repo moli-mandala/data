@@ -2,6 +2,8 @@
 
 ## Scope, units, and headline
 
+The reviewed cohort is the fixed five-source snapshot below; later ingestions, including Zoller's additional Nihali attestations, are outside this analysis and do not automatically receive its provisional hypotheses.
+
 This analysis covers **4,299 attested Nihali database records** and assigns each one a provisional rank-1 hypothesis. A conservative form-plus-meaning comparison across the five lexical sources collapses them to **3,277 normalized lexeme clusters**. These clusters, rather than raw dictionary rows or proxy IDs, are the least misleading unit for historical proportions. The overlay creates 2,743 explicit proxy entries where no existing Jambu etymon can safely carry the claim.
 
 At lexeme-cluster level, 2,143 (65.4%) have an externally attributed contact source and 1,133 (34.6%) remain in the Nihali residue. The remaining 1 cluster is retained as Other. At record level the corresponding figures are 2,950 (68.6%) external and 1,348 (31.4%) residue, with 1 Other. Source-attributed, cross-dictionary-propagated, manually adjudicated, or previously curated evidence supports 2,979 records.

@@ -463,8 +463,8 @@
   year         = {1998},
   publisher    = {Harrassowitz},
   address      = {Wiesbaden},
-  included     = {Partial: 39 hand-reviewed lexical and component rows retained as the authoritative gold tranche beside the complete OCR-assisted import},
-  provenance   = {data/other/forms/20220930-berger.csv; aligned source evidence in data/other/forms/raw_data/20260828-berger-audit.csv.gz; English definitions in data/other/forms/raw_data/20260828-berger-editorial.csv},
+  included     = {Partial: 39 hand-reviewed lexical and component rows retained as the historical hand-entered tranche beside the complete OCR-assisted import},
+  provenance   = {data/other/forms/20220930-berger.csv; aligned source evidence in data/other/forms/raw_data/20260828-berger-audit.csv.gz; English definitions in data/other/forms/raw_data/20260828-berger-editorial.csv; September 2026 repair package data/other/forms/raw_data/berger_2026/ (native font/position snapshot, source-key protection, reviewed readings, translations, complete audit, references, and manifest)},
   ocr          = {Yes},
   etymology_provenance = {source},
   jambu_editor = {Aryaman Arora and OpenAI Codex},
@@ -477,9 +477,9 @@
   year         = {1998},
   publisher    = {Harrassowitz},
   address      = {Wiesbaden},
-  note         = {OCR-assisted complete Burushaski--German dictionary, with German definitions translated into English in a checked editorial layer},
+  note         = {OCR-assisted complete Burushaski--German dictionary, with source-positioned OCR and font evidence, image-reviewed corrections, and explicitly unreviewed machine translations},
   included     = {Complete lexical dictionary on printed pp. 9--486. The preface on p. 8, the weaker duplicate scan of pp. 94--95, the proper-name appendix, the German--Burushaski index, and back matter are excluded},
-  provenance   = {Pinned source scan SHA-256 864cd94f8c41237aae2408e154f7b8d9e21c911b90f7d3ff6dd261568f05c0dc; 300 dpi OCR in data/other/forms/raw_data/berger.py; line-and-column reconstruction, conservative Turner linking, and installation in data/other/forms/raw_data/berger_cleanup.py; English editorial layer data/other/forms/raw_data/20260828-berger-editorial.csv; identity crosswalk data/other/forms/raw_data/20260828-berger-entry-map.csv; audit, seeded review, and manifest data/other/forms/raw_data/20260828-berger-audit.csv.gz, data/other/forms/raw_data/20260828-berger-sample.csv, and data/other/forms/raw_data/20260828-berger-manifest.json; installed rows data/other/forms/20260726-berger-auto.csv},
+  provenance   = {Pinned source scan SHA-256 864cd94f8c41237aae2408e154f7b8d9e21c911b90f7d3ff6dd261568f05c0dc; 300 dpi OCR in data/other/forms/raw_data/berger.py; line-and-column reconstruction, conservative Turner linking, and installation in data/other/forms/raw_data/berger_cleanup.py; English editorial layer data/other/forms/raw_data/20260828-berger-editorial.csv; identity crosswalk data/other/forms/raw_data/20260828-berger-entry-map.csv; audit, seeded review, and manifest data/other/forms/raw_data/20260828-berger-audit.csv.gz, data/other/forms/raw_data/20260828-berger-sample.csv, and data/other/forms/raw_data/20260828-berger-manifest.json; installed rows data/other/forms/20260726-berger-auto.csv; September 2026 repair package data/other/forms/raw_data/berger_2026/ (native font/position snapshot, source-key protection, reviewed readings, translations, complete audit, references, and manifest)},
   ocr          = {Yes},
   etymology_provenance = {source},
   jambu_editor = {Aryaman Arora and OpenAI Codex},
@@ -2424,8 +2424,27 @@
   address      = {Tokyo},
   year         = {2012},
   month        = sep,
-  included     = {Full},
-  provenance   = {data/other/forms/20260726-yoshioka-eastern-burushaski.csv},
+  doi          = {10.15026/72148},
+  url          = {https://tufs.repo.nii.ac.jp/records/1002},
+  included     = {Partial},
+  ocr          = {No},
+  note         = {Appendix II vocabulary, printed pp. CLXXIX--CCXCII (PDF pp. 505--618). Native PDF glyphs recovered through the embedded Gentium font cmap; supersedes the 2026-07 OCR import. B. references cite Berger 1998, Teil III, indirectly through Yoshioka; AA. numbers cite the 1967 ILCAA questionnaire.},
+  license      = {Open-access thesis; no explicit reuse licence located. Source PDF is not redistributed.},
+  etymology_provenance = {source},
+  provenance   = {data/other/forms/20260726-yoshioka-eastern-burushaski.csv; data/other/forms/raw_data/yoshioka_2026/source-lines.jsonl.gz; data/other/forms/raw_data/yoshioka_2026/audit.csv; source_checklists/20260726-yoshioka-eastern-burushaski.md},
+  jambu_editor = {Aryaman Arora; OpenAI Codex}
+}
+
+@book{ilcaa1967,
+  shorthand    = {AA1967},
+  editor       = {{Research Institute for Languages and Cultures of Asia and Africa}},
+  title        = {Ajia-Afurika gengo-chōsa-hyō, ge [Linguistic Questionnaire for Asia and Africa, 2]},
+  publisher    = {Research Institute for Languages and Cultures of Asia and Africa, Tokyo University of Foreign Studies},
+  address      = {Tokyo},
+  year         = {1967},
+  included     = {No},
+  note         = {Bibliographic and item-number references cited by Yoshioka 2012 as AA.; the questionnaire was not independently ingested.},
+  provenance   = {Yoshioka 2012, Appendix II introductory notes and bibliography},
   jambu_editor = {Aryaman Arora; OpenAI Codex}
 }
 
@@ -5492,4 +5511,67 @@
   provenance = {data/other/forms/20260913-zoller-linguistic-data.csv; data/other/forms/raw_data/zoller_2023/README.md; data/other/forms/raw_data/zoller_2023/audit.jsonl.gz; data/other/forms/raw_data/zoller_2023/record-audit.jsonl.gz},
   jambu_editor = {Arora, Aryaman and OpenAI Codex},
   ocr = {No}
+}
+
+@techreport{varenkamp2024ho,
+  author = {Varenkamp, Bryan},
+  title = {A Study of {Ho} Dialects},
+  year = {2024},
+  number = {2024-009},
+  institution = {SIL International},
+  series = {Journal of Language Survey Reports},
+  url = {https://www.sil.org/resources/archives/100299},
+  included = {Appendix D.3, printed pp. 63--132: 2900 manually reviewed response cells from fourteen 1989 Ho field lists. All 5670 cells audited; 2730 republished/comparison cells, 38 target blanks and two ambiguous target readings excluded},
+  provenance = {data/other/forms/20260914-sil-ho.csv; data/other/forms/raw_data/sil_ho_2024/staged_audit.tsv; data/other/forms/raw_data/20260914-sil-ho-integration-audit.csv; canonical 142-page PDF SHA-256 5ca30882dc5ed0f8480c9710e5fc0e08bf4d92e27d591582e3d953709ec1f9d1; frozen cell-by-cell manual source-image transcription; extracted lexical facts only, no open-data licence asserted, PDF not redistributed},
+  note = {Fieldwork conducted in 1989},
+  jambu_editor = {Aryaman Arora and OpenAI Codex},
+  ocr = {No},
+  etymology_provenance = {none}
+}
+
+@techreport{baileymaggard2015bhumij,
+  author = {Bailey, Troy and Maggard, Loren},
+  title = {A Sociolinguistic Survey of the {Bhumij} People of {India}},
+  year = {2015},
+  number = {2015-026},
+  institution = {SIL International},
+  series = {SIL Electronic Survey Reports},
+  url = {https://www.sil.org/resources/archives/68990},
+  included = {Appendix B.3, printed pp. 29--71: 2100 target attestations from 2054 attested cells across ten Bhumij/Bhumij-Mundari lists; 46 target blanks and 1680 comparison cells excluded. All 3780 cells manually reviewed. Five same-elicitation lists republished in Ho 2024 use this canonical publication route},
+  provenance = {data/other/forms/20260914-sil-bhumij.csv; data/other/forms/raw_data/sil_bhumij_2015/staged_audit.tsv; data/other/forms/raw_data/20260914-sil-bhumij-integration-audit.csv; data/other/forms/raw_data/sil_bhumij_2015/ho_2024_overlap_reconciliation.tsv; canonical 130-page PDF SHA-256 1dadbe266842c5e07e4efc4d937f2d3f09daacbe10052db6a715635db018e395; frozen cell-by-cell manual source-image transcription; extracted lexical facts only, no open-data licence asserted, PDF not redistributed},
+  note = {Fieldwork conducted in 1989 and 1996; Udala retains the report's mixed Mundari/Bhumij label},
+  jambu_editor = {Aryaman Arora and OpenAI Codex},
+  ocr = {No},
+  etymology_provenance = {none}
+}
+
+@article{josephmichael2021dhurwa,
+  author = {Joseph, D. Selwyn and Joseph, Selvi},
+  title = {A Sociolinguistic Survey among the {Dhurwa} of {Madhya Pradesh} and {Orissa}},
+  journal = {Journal of Language Survey Reports},
+  volume = {2021-034},
+  year = {2021},
+  pages = {1--19},
+  url = {https://www.sil.org/resources/archives/89899},
+  included = {Appendix B, printed pp. 12--16: 809 target attestations across Tiriya, Nethanar, Dharba and Kukanar, from 797 attested target cells. All 1000 cells manually reviewed; three target blanks and all 200 cells of the unidentified fifth column (199 responses and two blanks) excluded},
+  provenance = {data/other/forms/20260914-sil-dhurwa.csv; data/other/forms/raw_data/sil_dhurwa_2021/checkpoint_audit.tsv; data/other/forms/raw_data/20260914-sil-dhurwa-integration-audit.csv; canonical 24-page PDF SHA-256 92965cbf77b88685a3f46e59053ce027b4a600037c8043d518c477ac7eac341e; frozen cell-by-cell manual source-image transcription; extracted lexical facts only, no open-data licence asserted, PDF not redistributed},
+  note = {Data collected in 1986},
+  jambu_editor = {Aryaman Arora and OpenAI Codex},
+  ocr = {No},
+  etymology_provenance = {none}
+}
+
+@book{sheth1923,
+  author = {Sheth, Hargovind Das T.},
+  title = {Paia-sadda-mahannavo},
+  year = {1923--1928},
+  address = {Calcutta},
+  publisher = {Published by the author},
+  url = {https://dsal.uchicago.edu/dictionaries/sheth/},
+  included = {DDSA digital transcription, snapshot 11 September 2026: 42118 headword/sense/alternate records from 31501 structurally resolved articles. Additionally, 26191 source-local Sanskrit equivalents and 27484 lexical comparison links are extracted; these are not asserted historical ancestry. All 41638 articles across 952 digital pages audited; 10137 unresolved articles excluded. The printed edition and supplement are not claimed complete},
+  provenance = {data/other/forms/20260914-sheth-sanskrit.csv; data/other/comparisons/20260914-sheth-sanskrit.csv; data/other/forms/raw_data/sheth_2026/etymology-audit.jsonl.gz; data/other/forms/20260914-sheth.csv; data/other/forms/raw_data/sheth_2026/audit.jsonl.gz; data/other/forms/raw_data/sheth_2026/report.json; source_checklists/20260911-sheth-acquisition-manifest.json; source_checklists/20260914-sheth-review.md. DDSA HTML transcription with pinned page hashes, no new OCR. Extracted lexical facts; no open-data licence asserted for the digital transcription. Verified auxiliary work names are source tags; unknown codes and edition-level references remain audited},
+  jambu_editor = {Aryaman Arora and OpenAI Codex},
+  ocr = {No},
+  etymology_provenance = {source},
+  note = {Digital Dictionaries of South Asia transcription; digital page locators differ from the linked printed scans}
 }

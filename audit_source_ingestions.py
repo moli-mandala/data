@@ -45,6 +45,13 @@ CORE_INPUTS = (
 )
 
 CORE_REVIEW_FILES = {
+    "20260726-yoshioka-eastern-burushaski": {
+        "importers": ["data/other/forms/raw_data/yoshioka_cleanup.py", "data/other/forms/raw_data/yoshioka.py"],
+        "audits": ["data/other/forms/raw_data/yoshioka_2026/audit.csv", "data/other/forms/raw_data/yoshioka_2026/manifest.json", "data/other/forms/raw_data/yoshioka_2026/crossreference-decisions.json", "data/other/forms/raw_data/yoshioka_2026/crossreference-audit.csv", "source_checklists/20260914-yoshioka-review.md", "source_checklists/20260914-yoshioka-crossreferences.md"],
+        "tests": ["tests/test_yoshioka.py", "tests/test_yoshioka_cleanup.py", "tests/test_yoshioka_crossreferences.py", "tests/test_burushaski_cognates.py", "tests/test_assign_form_ids.py"],
+        "profiles": ["conversion/yoshioka.txt"],
+        "addenda": ["Dictionary or glossary", "Etymological/comparative source"],
+    },
     "20260913-zoller-linguistic-data": {'importers': ['data/other/forms/raw_data/zoller_2023.py'], 'audits': ['data/other/forms/raw_data/zoller_2023/audit.jsonl.gz', 'data/other/forms/raw_data/zoller_2023/record-audit.jsonl.gz', 'source_checklists/20260913-zoller-review.md'], 'tests': ['tests/test_zoller_2023.py', 'tests/test_sound_profiles.py', 'tests/test_dialects.py'], 'profiles': ['conversion/zoller-2023.txt'], 'addenda': ['Dictionary or glossary', 'Survey wordlists or comparative tables', 'Etymological/comparative source']},
     "20260912-keed": {'importers': ['data/other/forms/raw_data/keed_2018.py'], 'audits': ['data/other/forms/raw_data/keed_2018/audit.jsonl.gz', 'source_checklists/20260912-keed-muduga-review.md'], 'tests': ['tests/test_keed_2018.py', 'tests/test_sound_profiles.py', 'tests/test_dialects.py'], 'profiles': ['conversion/keed.txt'], 'addenda': ['Dictionary or glossary', 'Etymological/comparative source']},
     "20260912-muduga": {'importers': ['data/other/forms/raw_data/muduga_2022.py'], 'audits': ['data/other/forms/raw_data/muduga_2022/audit.jsonl', 'source_checklists/20260912-keed-muduga-review.md'], 'tests': ['tests/test_muduga_2022.py', 'tests/test_sound_profiles.py', 'tests/test_dialects.py'], 'profiles': ['conversion/muduga.txt'], 'addenda': ['Survey wordlists or comparative tables', 'Etymological/comparative source']},
@@ -268,13 +275,16 @@ CORE_REVIEW_FILES = {
     "20260726-berger-auto": {
         "importers": ["data/other/forms/raw_data/berger_cleanup.py"],
         "audits": [
+            "data/other/forms/raw_data/berger_2026/audit.jsonl.gz",
+            "data/other/forms/raw_data/berger_2026/summary.json",
+            "source_checklists/20260914-berger-repair.md",
             "data/other/forms/raw_data/20260828-berger-audit.csv.gz",
             "data/other/forms/raw_data/20260828-berger-sample.csv",
             "data/other/forms/raw_data/20260828-berger-manifest.json",
             "data/other/forms/raw_data/20260828-berger-entry-map.csv",
             "data/other/forms/raw_data/20260828-berger-editorial.csv",
         ],
-        "tests": ["tests/test_berger_cleanup.py", "tests/test_berger.py"],
+        "tests": ["tests/test_berger_repair.py", "tests/test_berger_cleanup.py", "tests/test_berger.py"],
         "profiles": ["conversion/berger.txt"],
         "addenda": [
             "Dictionary or glossary",
@@ -285,13 +295,16 @@ CORE_REVIEW_FILES = {
     "20220930-berger": {
         "importers": ["data/other/forms/raw_data/berger_cleanup.py"],
         "audits": [
+            "data/other/forms/raw_data/berger_2026/audit.jsonl.gz",
+            "data/other/forms/raw_data/berger_2026/summary.json",
+            "source_checklists/20260914-berger-repair.md",
             "data/other/forms/raw_data/20260828-berger-audit.csv.gz",
             "data/other/forms/raw_data/20260828-berger-sample.csv",
             "data/other/forms/raw_data/20260828-berger-manifest.json",
             "data/other/forms/raw_data/20260828-berger-entry-map.csv",
             "data/other/forms/raw_data/20260828-berger-editorial.csv",
         ],
-        "tests": ["tests/test_berger_cleanup.py", "tests/test_berger.py"],
+        "tests": ["tests/test_berger_repair.py", "tests/test_berger_cleanup.py", "tests/test_berger.py"],
         "profiles": ["conversion/berger.txt"],
         "addenda": [
             "Dictionary or glossary",
@@ -1062,6 +1075,58 @@ CORE_REVIEW_FILES = {
     },
 }
 
+CORE_REVIEW_FILES.update({'20260914-sil-ho': {'importers': ['data/other/forms/raw_data/integrate_manual_surveys_2026.py',
+                                   'data/other/forms/raw_data/sil_ho_2024/import_ho.py'],
+                     'audits': ['data/other/forms/raw_data/sil_ho_2024/staged_audit.tsv',
+                                'data/other/forms/raw_data/sil_ho_2024/source_manifest.json',
+                                'data/other/forms/raw_data/20260914-sil-ho-integration-audit.csv',
+                                'source_checklists/audits/20260914-manual-surveys-sample.json'],
+                     'tests': ['tests/test_manual_surveys_integration.py',
+                               'tests/test_sound_profiles.py',
+                               'tests/test_sil_ho_2024.py'],
+                     'profiles': ['conversion/sil-ho.txt'],
+                     'addenda': ['Survey wordlists or comparative tables', 'OCR-heavy source']},
+ '20260914-sil-bhumij': {'importers': ['data/other/forms/raw_data/integrate_manual_surveys_2026.py',
+                                       'data/other/forms/raw_data/sil_bhumij_2015/import_bhumij_2015.py'],
+                         'audits': ['data/other/forms/raw_data/sil_bhumij_2015/staged_audit.tsv',
+                                    'data/other/forms/raw_data/sil_bhumij_2015/source_manifest.json',
+                                    'data/other/forms/raw_data/20260914-sil-bhumij-integration-audit.csv',
+                                    'source_checklists/audits/20260914-manual-surveys-sample.json'],
+                         'tests': ['tests/test_manual_surveys_integration.py',
+                                   'tests/test_sound_profiles.py',
+                                   'tests/test_sil_bhumij_2015.py'],
+                         'profiles': ['conversion/sil-bhumij.txt'],
+                         'addenda': ['Survey wordlists or comparative tables', 'OCR-heavy source']},
+ '20260914-sil-dhurwa': {'importers': ['data/other/forms/raw_data/integrate_manual_surveys_2026.py',
+                                       'data/other/forms/raw_data/sil_dhurwa_2021/import_dhurwa_2021.py'],
+                         'audits': ['data/other/forms/raw_data/sil_dhurwa_2021/checkpoint_audit.tsv',
+                                    'data/other/forms/raw_data/sil_dhurwa_2021/source_manifest.json',
+                                    'data/other/forms/raw_data/20260914-sil-dhurwa-integration-audit.csv',
+                                    'source_checklists/audits/20260914-manual-surveys-sample.json'],
+                         'tests': ['tests/test_manual_surveys_integration.py',
+                                   'tests/test_sound_profiles.py'],
+                         'profiles': ['conversion/sil-dhurwa-2021.txt'],
+                         'addenda': ['Survey wordlists or comparative tables', 'OCR-heavy source']}})
+
+CORE_REVIEW_FILES["20260914-sheth"] = {
+    "importers": ["data/other/forms/raw_data/sheth.py",
+                  "data/other/forms/raw_data/sheth_parse.py",
+                  "data/other/forms/raw_data/sheth_integrate.py", "sheth_sources.py", "sheth_sources.tsv",
+                  "data/other/forms/raw_data/sheth_etyma.py"],
+    "audits": ["data/other/forms/raw_data/sheth_2026/audit.jsonl.gz",
+               "data/other/forms/raw_data/sheth_2026/integration-manifest.json",
+               "source_checklists/20260911-sheth-acquisition-manifest.json",
+               "source_checklists/audits/20260914-sheth-integration-audit.json",
+               "source_checklists/audits/20260914-sheth-source-tags.json",
+               "source_checklists/audits/20260914-sheth-sanskrit-review.json",
+               "data/other/forms/raw_data/sheth_2026/etymology-audit.jsonl.gz"],
+    "tests": ["tests/test_sheth_parser.py", "tests/test_sheth_integration.py",
+              "tests/test_sheth_source_tags.py", "tests/test_sheth_etyma.py"],
+    "profiles": ["conversion/sheth-ddsa.txt"],
+    "addenda": ["Dictionary or glossary", "Website/API or external CLDF",
+                "Etymological/comparative source"],
+}
+
 ADDENDUM_HEADINGS = {
     "Dictionary or glossary",
     "Survey wordlists or comparative tables",
@@ -1149,6 +1214,7 @@ UNIT_ADDENDA = {
 # sources on every row. Use the unit-defining source for compiled survival counts;
 # otherwise unrelated rows carrying the earlier bibliography key inflate the result.
 UNIT_PRIMARY_SOURCES = {
+    "20260726-yoshioka-eastern-burushaski": {"yoshioka2012"},
     "20260718-merriam-dravidian-db": {"merriam2026dravidiandb"},
 }
 
@@ -1165,6 +1231,27 @@ PINNED_LEGACY_UNITS = {
 }
 
 UNIT_REVIEW_NOTES = {
+    "20260726-berger-auto": {
+        "exclusions": "per-record excluded readings and reasons are counted in berger_2026/summary.json; scan scope excludes the preface, duplicate spread and back matter",
+        "unresolved": "OCR, translation, g versus ġ, unresolved source references/relations and legacy crosswalk identities remain explicitly audited; see source_checklists/20260914-berger-repair.md",
+        "transcription": "conversion/berger.txt; source grammar is retained in full; font/position evidence scopes forms and labels; image-reviewed readings are pinned separately",
+        "validation": "focused source, profile, graph and alias checks are recorded in the repair report; consolidated full build/full suite require an authorized suitable remote runner",
+        "representative": "source entries trin (p. 431), -phíliṣ (p. 329) and ámin (pp. 17–18); browser refresh not requested",
+    },
+    "20220930-berger": {
+        "exclusions": "39 historical hand-entered rows retained and covered by the September per-record audit",
+        "unresolved": "source-wide OCR/translation and reference exceptions are counted in berger_2026/summary.json; the formerly blank balaneéś man-́ definition is restored",
+        "validation": "focused checks are recorded in source_checklists/20260914-berger-repair.md; consolidated full build/full suite deferred to an authorized suitable remote runner",
+        "representative": "balán man-́ and balaneéś man-́, printed p. 33; browser refresh not requested",
+    },
+    "20260726-yoshioka-eastern-burushaski": {
+        "state": "4,886 source rows installed from the font-decoded vocabulary; global compiled data still awaits a full rebuild",
+        "exclusions": "nine printed bare headings retained audit-only; 25 old parse fragments rejoined; all 3,212 legacy keys accounted for",
+        "unresolved": "six ambiguous forms remain unlinked after image review of all 57 index entries (56/62 forms resolved); overall 214 entries fully resolved, two partial, four unresolved; 10 donor statements retain source uncertainty",
+        "transcription": "native Gentium cmap recovery; c/č/c̣ distinct; full printed grammar, noun classes and plural suffixes retained alongside scoped tags",
+        "validation": "60 focused tests pass; unrelated assignment-count test deselected (previously 2603 vs 2604); fresh source sample 0/20 plus exhaustive 57-entry cross-reference image review; full-build and full-suite gates remain pending; see 20260914-yoshioka-review.md",
+        "representative": "source keys yoshioka-entry-3 (aalú/aaloínc), 43 (alét), 3049 (yuúṭis/yuúṭiŋ); browser refresh not requested",
+    },
     "20260911-seligmann-vedda": {
         "state": "502 lexical forms compiled; full repository validation remains blocked by unrelated failures",
         "exclusions": "comparative etymological words, narrative chapters, songs, index and following Kaele-base appendix; all 185 numbered vocabulary articles represented",
@@ -2499,6 +2586,11 @@ UNIT_EVIDENCE_OVERRIDES = {
     for unit_id, omitted in {
         "20260826-sil-garobd": 712,
     }.items()
+}
+
+UNIT_EVIDENCE_OVERRIDES["20260726-yoshioka-eastern-burushaski"] = {
+    "9. Model etymology and graph relations conservatively": (True, "Source-local variant endpoints/cycles and durable-ID/alias preservation pass in test_yoshioka_cleanup.py; global graph build pending"),
+    "12. Install and run the full data pipeline": (False, "Only the bounded Yoshioka parse and ID assignment have run; full build and full suite deferred under the 8 GB local-resource policy; see 20260914-yoshioka-review.md"),
 }
 
 UNIT_EVIDENCE_OVERRIDES["20260909-perder-dameli"] = {
