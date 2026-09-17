@@ -99,7 +99,7 @@ C = {
     "ɲ": ("palatal", "nasal", 1), "ñ": ("palatal", "nasal", 1), "y": ("palatal", "approximant", 1),
     "ś": ("palatal", "fricative", 0), "ʃ": ("palatal", "fricative", 0), "ź": ("palatal", "fricative", 1),
     "k": ("velar", "stop", 0), "g": ("velar", "stop", 1), "ɠ": ("velar", "stop", 1),
-    "ŋ": ("velar", "nasal", 1), "x": ("velar", "fricative", 0), "ɣ": ("velar", "fricative", 1),
+    "ŋ": ("velar", "nasal", 1), "ṅ": ("velar", "nasal", 1), "x": ("velar", "fricative", 0), "ɣ": ("velar", "fricative", 1),
     "h": ("glottal", "fricative", 0), "ɦ": ("glottal", "fricative", 1), "ḣ": ("glottal", "fricative", 0),
 }
 # retroflex counterparts (base letter + dot-below)
@@ -139,6 +139,8 @@ class Seg:
             self.aspirated = True
             s = s.replace("ʰ", "")
         nfd = unicodedata.normalize("NFD", s)
+        syllabic = any(mark in nfd for mark in ("̩", "̥")) and nfd[:1] in ("r", "l")
+        nonsyllabic = "̯" in nfd
         base = None
         for ch in nfd:
             cat = unicodedata.category(ch)
@@ -163,10 +165,12 @@ class Seg:
         elif self.retroflex and base in RETRO:
             base = RETRO[base]
 
-        if base in V or base in "aeiouəɛεɔæɐʌʊɪ":
+        if (base in V or base in "aeiouəɛεɔæɐʌʊɪ" or syllabic) and not nonsyllabic:
             self.kind = "V"
             self.height, self.back, rnd = V.get(base, ("mid", "central", 0))
             self.voice = True
+            if "".join(ch for ch in nfd if ch not in "\u0300\u0301") in ("ai", "au"):
+                self.long = True  # these inventory tokens denote single OIA diphthong nuclei
         elif base in C:
             self.kind = "C"
             self.place, self.manner, self.voice = C[base]
@@ -176,6 +180,16 @@ class Seg:
 
 def segments(tok, form: str) -> list[Seg]:
     return [Seg(g) for g in tok(form)]
+
+
+def segment_identity(seg: Seg) -> str:
+    """Pool vowel prosody, never consonantal diacritics such as the acute in ś."""
+    if seg.kind != "V":
+        return unicodedata.normalize("NFC", seg.raw)
+    return unicodedata.normalize("NFC", "".join(
+        ch for ch in unicodedata.normalize("NFD", seg.raw)
+        if ch not in "\u0300\u0301\u0302\u030c\u030b\u030f"
+    ))
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -193,7 +207,7 @@ def _near(m, n):
 
 
 def score(a: Seg, b: Seg) -> float:
-    if a.raw == b.raw:
+    if segment_identity(a) == segment_identity(b):
         return 2.4
     if a.kind == "V" and b.kind == "V":
         s = 0.8
@@ -271,7 +285,7 @@ def describe(e: Seg | None, r: Seg | None) -> str:
         return "loss"
     if r and not e:
         return "add"
-    if e.raw == r.raw:
+    if segment_identity(e) == segment_identity(r):
         return "kept"
     if e.kind == "V" and r.kind == "V":
         if not e.nasal and r.nasal:

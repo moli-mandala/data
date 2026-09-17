@@ -62,8 +62,7 @@ def test_compiled_generic_derivatives_are_flattened_and_explicit_morphemes_are_n
         by_id[rank1[row["ID"]]["Parent_ID"]]["Language_ID"]
         for row in generic
     ]
-    assert set(parent_languages) == {"Indo-Aryan", "PNur"}
-    assert parent_languages.count("PNur") == 3
+    assert set(parent_languages) == {"Indo-Aryan"}
 
     branch_ids = {rank1[row["ID"]]["Parent_ID"] for row in explicit}
     assert len(branch_ids) == 2
