@@ -6,8 +6,16 @@ plus form->concept links (cldf/form_concepts.csv).
 """
 
 import csv
+import os
 import re
 import sys
+
+# pysem resolves competing Concepticon matches by comparing Python sets of gloss parts, so tie
+# order follows per-process string-hash randomisation and concepts.csv used to drift between
+# otherwise identical builds. Re-exec under a fixed seed before pysem is imported.
+if os.environ.get("PYTHONHASHSEED") != "0":
+    os.environ["PYTHONHASHSEED"] = "0"
+    os.execv(sys.executable, [sys.executable, *sys.argv])
 
 from pysem import to_concepticon
 from pysem.glosses import parse_gloss
