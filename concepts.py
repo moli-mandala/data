@@ -12,8 +12,9 @@ import sys
 
 # pysem resolves competing Concepticon matches by comparing Python sets of gloss parts, so tie
 # order follows per-process string-hash randomisation and concepts.csv used to drift between
-# otherwise identical builds. Re-exec under a fixed seed before pysem is imported.
-if os.environ.get("PYTHONHASHSEED") != "0":
+# otherwise identical builds. When run as the pipeline stage, re-exec under a fixed seed before
+# pysem is imported. Importers (tests) get the module as-is.
+if __name__ == "__main__" and os.environ.get("PYTHONHASHSEED") != "0":
     os.environ["PYTHONHASHSEED"] = "0"
     os.execv(sys.executable, [sys.executable, *sys.argv])
 
