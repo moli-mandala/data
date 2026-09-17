@@ -1,0 +1,16 @@
+file: 20260825-beine-bhatri.csv
+defaults:
+  transcription:
+  - profile: beine-bhatri
+  importer:
+    commands:
+    - - data/other/forms/raw_data/beine_bhatri.py
+      - --install
+    note: Needs the SIL ESR 2017-005 PDF at tmp/pdfs/beine-bhatri/source.pdf; the importer checks its
+      hash.
+sources:
+  beine2017bhatri:
+    transcription:
+    - profile: beine-bhatri
+    identity:
+      dedupe_by_entry_key: true

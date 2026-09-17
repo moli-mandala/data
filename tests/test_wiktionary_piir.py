@@ -19,7 +19,8 @@ PARAMS = ROOT / "data/other/params/20260827-wiktionary-piir.csv"
 TEXTS = ROOT / "data/other/entry_texts/20260827-wiktionary-piir.csv"
 AUDIT = ROOT / "data/other/params/raw_data/20260827-wiktionary-piir-audit.csv"
 REGISTER = ROOT / "data/other/params/raw_data/20260827-indo-iranian-source-register.csv"
-ASSIGNMENTS = ROOT / "data/etymology-assignments.csv"
+# Curated etymology rows live in per-source sidecars; this source's rows have CDIAL children.
+from etymology_assignments import read_assignments  # noqa: E402
 
 
 def _module():
@@ -47,7 +48,7 @@ def our_assignments():
     importer's own merge keys on.
     """
     return [
-        r for r in rows(ASSIGNMENTS)
+        r for r in read_assignments()
         if f"{W.SOURCE_KEY}[" in (r.get("Source") or "")
         or r["Etymon_ID"].startswith("wiir-")
     ]

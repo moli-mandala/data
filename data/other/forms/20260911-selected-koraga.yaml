@@ -1,0 +1,13 @@
+file: 20260911-selected-koraga.csv
+defaults:
+  identity:
+    legacy_ids: stem
+    append_order: 20
+sources:
+  bhat1971koraga:
+    transcription:
+    - profile: selected-koraga
+    identity:
+      dedupe_by_entry_key: true
+    forms:
+      split_alternates: false

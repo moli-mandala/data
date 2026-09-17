@@ -1,0 +1,13 @@
+file: 20260828-sil-bishnupriya.csv
+defaults:
+  importer:
+    commands:
+    - - data/other/forms/raw_data/sil_bishnupriya_2008/import_bishnupriya.py
+sources:
+  kim-kim2008bishnupriya:
+    transcription:
+    - profile: sil-bishnupriya
+    identity:
+      dedupe_by_entry_key: true
+    notes:
+      audit_only: true

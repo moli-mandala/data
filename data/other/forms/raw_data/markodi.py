@@ -1,17 +1,18 @@
 """Extract Appendix A of Canvin, Joseph & Manoj (2025) and build Jambu rows.
 
 This is the Markodi (formerly labelled "Mavilan Tulu") wordlist. The PDF (kept in
-``tmp/pdfs`` as a working source) fixes the forms; the etymology decisions are
-hand-curated in ``markodi_etyma.csv`` — one row per attested site-form, with an
-``Etymon`` column you edit:
+``tmp/pdfs`` as a working source) fixes the forms. Every row carries an immutable
+``Entry_Key`` (``canvin2025:<site>:<concept>``) naming its wordlist cell, so a form
+elicited for two concepts stays two attestations.
 
-    * a DEDR / Proto-Dravidian id (e.g. ``d1159``)          -> inherited reflex
-    * a CDIAL id prefixed with ``~`` (e.g. ``~4661``)       -> Indo-Aryan borrowing
-    * blank                                                 -> kept as a lone
-                                                              (unetymologised) node
+Etymologies are *not* written here. They live in the standard per-source sidecar
+``data/other/forms/etymologies/20260723-markodi.csv`` (see ``etymology_assignments.py``),
+keyed by persistent form ID, and are applied by ``assign_form_ids.py`` during the build.
+``markodi_etyma.csv`` beside this script keeps the comparison forms (Tulu, Malayalam,
+Kodava) and the curator's notes as a research record only.
 
-Re-run this script (then ``make stage``) to regenerate the Jambu forms from the PDF
-plus that CSV. The CSV is the source of truth for etyma; this script never overwrites it.
+Re-run this script (``make markodi``) only when the PDF extraction changes; the CLDF
+build no longer regenerates the forms.
 """
 
 from __future__ import annotations
@@ -25,7 +26,7 @@ from pypdf import PdfReader
 HERE = Path(__file__).resolve().parent
 PDF = HERE.parents[3] / "tmp" / "pdfs" / "JLSR2025-005.pdf"
 OUTPUT = HERE.parent / "20260723-markodi.csv"
-ETYMA = HERE / "markodi_etyma.csv"
+SOURCE_KEY = "canvin2025"
 
 LANGUAGES = {
     "MTP": "markodi_pannithadam",
@@ -68,47 +69,33 @@ def extract_wordlist(pdf_path: Path = PDF) -> list[tuple[str, dict[str, str]]]:
     return items
 
 
-def load_etyma() -> dict[tuple[str, str], str]:
-    """(Gloss, Site) -> etymon id, from the hand-curated CSV. Blank / absent = unresolved."""
-    if not ETYMA.exists():
-        raise FileNotFoundError(f"missing etymon table {ETYMA}; see the module docstring")
-    etyma: dict[tuple[str, str], str] = {}
-    with ETYMA.open(encoding="utf-8") as handle:
-        for row in csv.DictReader(handle):
-            etymon = (row.get("Etymon") or "").strip()
-            if etymon:
-                etyma[(row["Gloss"], row["Site"])] = etymon
-    return etyma
+def entry_key(site: str, gloss: str) -> str:
+    """Immutable per-cell record key: the site code and the concept label as printed."""
+    return f"{SOURCE_KEY}:{site}:{gloss}"
 
 
 def main() -> None:
     items = extract_wordlist()
-    etyma = load_etyma()
     output_rows: list[list[str]] = []
-    resolved = borrowed = 0
     for gloss, forms in items:
         for code, language_id in LANGUAGES.items():
             form = forms[code]
             if form.lower() in NA_FORMS:
                 continue
-            etymon = etyma.get((gloss, code), "")  # blank Param_ID → a lone node in the DB build
-            if etymon:
-                resolved += 1
-                borrowed += etymon.startswith("~")
+            # 15-column source layout; Parameter_ID stays blank because etymologies come from
+            # the sidecar. Column 11 is the Entry_Key.
             output_rows.append(
-                [language_id, etymon, form, gloss, "", form, "", "canvin2025"]
+                [language_id, "", form, gloss, "", form, "", SOURCE_KEY, "", "",
+                 entry_key(code, gloss), "", "", "", ""]
             )
 
+    keys = [row[10] for row in output_rows]
+    if len(set(keys)) != len(keys):
+        raise ValueError("Entry_Key collision: a concept label repeats within a site")
     output_rows.sort(key=lambda row: (row[3], row[0], row[2]))
     with OUTPUT.open("w", newline="", encoding="utf-8") as handle:
         csv.writer(handle).writerows(output_rows)
-
-    unresolved_forms = len(output_rows) - resolved
     print(f"Wrote {len(output_rows)} forms to {OUTPUT}")
-    print(
-        f"  {resolved} linked to an etymon ({borrowed} as borrowings); "
-        f"{unresolved_forms} left blank → lone (unetymologised) nodes"
-    )
 
 
 if __name__ == "__main__":

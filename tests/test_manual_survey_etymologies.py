@@ -1,6 +1,8 @@
 import csv
 from pathlib import Path
 
+from etymology_assignments import read_assignments
+
 
 ROOT = Path(__file__).resolve().parents[1]
 FORMS_DIR = ROOT / "data/other/forms"
@@ -73,10 +75,7 @@ def test_manual_survey_etymologies_reach_the_compiled_graph():
 def test_source_owned_links_do_not_depend_on_duplicate_overlay_rows():
     with (ROOT / "cldf/forms.csv").open(encoding="utf-8", newline="") as stream:
         forms = {row["ID"]: row for row in csv.DictReader(stream)}
-    with (ROOT / "data/etymology-assignments.csv").open(
-        encoding="utf-8", newline=""
-    ) as stream:
-        assignments = list(csv.DictReader(stream))
+    assignments = read_assignments()
 
     source_owned = {"chattisgarhi", "bagri", "dhundari", "hadothi", "marwari", "mewari", "mewati"}
     assert not [

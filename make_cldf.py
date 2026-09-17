@@ -9,6 +9,7 @@ import os
 from copy import deepcopy
 
 from utils import mapping, superscript, change
+import source_meta
 from dialects import load_dialect_aliases, normalize_dialect
 from tags import extract_tags
 from form_grammar import extract_gloss_tags
@@ -73,6 +74,29 @@ def write_cross_family_comparisons(parameter_ids):
                 )
             rows.extend(reader)
 
+    # Rich importers may cite source-local sense keys rather than persistent IDs.
+    # Resolve before validation; assign_form_ids later rewrites generated form IDs.
+    keyed_paths = sorted(glob.glob("data/other/comparisons/*.csv"))
+    valid_ids = set(parameter_ids)
+    if keyed_paths:
+        with open("cldf/forms.csv", encoding="utf-8", newline="") as stream:
+            key_ids = {}
+            for form in csv.DictReader(stream):
+                valid_ids.add(form["ID"])
+                if form.get("Entry_Key"):
+                    key_ids[form["Entry_Key"]] = form["ID"]
+        for path in keyed_paths:
+            with open(path, encoding="utf-8", newline="") as stream:
+                reader = csv.DictReader(stream)
+                if reader.fieldnames != CROSS_FAMILY_COLUMNS:
+                    raise ValueError(f"{path}: invalid comparison columns")
+                for row in reader:
+                    for column in ("Entry_ID", "Compared_Entry_ID"):
+                        if row[column] not in key_ids:
+                            raise ValueError(f"{path}: unresolved comparison source key {row[column]}")
+                        row[column] = key_ids[row[column]]
+                    rows.append(row)
+
     seen = set()
     for row in rows:
         comparison_id = row["ID"]
@@ -80,7 +104,7 @@ def write_cross_family_comparisons(parameter_ids):
             raise ValueError(f"Missing or duplicate cross-family comparison ID: {comparison_id!r}")
         seen.add(comparison_id)
         endpoints = (row["Entry_ID"], row["Compared_Entry_ID"])
-        missing = [entry_id for entry_id in endpoints if entry_id not in parameter_ids]
+        missing = [entry_id for entry_id in endpoints if entry_id not in valid_ids]
         if missing:
             raise ValueError(f"Comparison {comparison_id} references missing entries: {missing}")
         if endpoints[0] == endpoints[1]:
@@ -163,38 +187,19 @@ class Row:
         return f"<Row {self.lang} {self.param} {self.form} {self.gloss}>"
 
 
-STRAND3_FILE = "20221003-strand3.csv"
-LEGACY_STRAND_FILES = {"20220913-strand.csv", "20220913-strand2.csv"}
-MERRIAM_DRAVIDIAN_DB_FILE = "data/other/forms/20260718-merriam-dravidian-db.csv"
-WESTERN_SURVEY_FILES = (
-    "data/other/forms/20260911-dadra-varli.csv",
-    "data/other/forms/20260911-ghatage-konkani.csv",
-    "data/other/forms/20260911-ghatage-kudali.csv",
-    "data/other/forms/20260911-sdml.csv",
-    "data/other/forms/20260911-bajjika.csv",
-    "data/other/forms/20260911-lindgren.csv",
-    "data/other/forms/20260911-dravlex.csv",
-    "data/other/forms/20260911-census-tamil-nadu.csv",
-    "data/other/forms/20260911-census-uttar-pradesh.csv",
-    "data/other/forms/20260911-census-bihar.csv",
-    "data/other/forms/20260911-census-sikkim2.csv",
-    "data/other/forms/20260911-census-danuwar.csv",
-    "data/other/forms/20260911-census-tharu.csv",
-    "data/other/forms/20260911-more-jharkhand.csv",
-    "data/other/forms/20260911-more-himachal.csv",
-    "data/other/forms/20260911-more-rajasthan.csv",
-    "data/other/forms/20260911-more-west-bengal.csv",
-    "data/other/forms/20260911-more-kisan.csv",
-    "data/other/forms/20260911-selected-angika.csv",
-    "data/other/forms/20260911-selected-majhi.csv",
-    "data/other/forms/20260911-selected-koraga.csv",
-    "data/other/forms/20260911-selected-orissa.csv",
-    "data/other/forms/20260912-keed.csv",
-    "data/other/forms/20260912-muduga.csv",
-    "data/other/forms/20260913-zoller-linguistic-data.csv",
-
-
-
+# Source-file ordering and the appended-survey lists live in source_files.py so the etymology
+# sidecar tooling can resolve legacy <file>-<row> IDs without importing this module.
+from source_files import (  # noqa: E402  (re-exported: tests import these names from here)
+    APPENDED_SURVEY_FILES,
+    LEGACY_STRAND_FILES,
+    MANUAL_SURVEY_FILES,
+    MERRIAM_DRAVIDIAN_DB_FILE,
+    SHETH_FILE,
+    SHETH_SANSKRIT_FILE,
+    STRAND3_FILE,
+    WESTERN_SURVEY_FILES,
+    legacy_prefix,
+    ordered_source_files,
 )
 
 
@@ -235,6 +240,7 @@ def format_munda_parameter(row):
 
 
 SCHMIDT_VOWELS = "aeiouəæãẽõũ"
+# Retained for tests; the routing itself is declared in data/other/forms/20230621-shina.yaml.
 SCHMIDT_PROFILE_LANGUAGES = {"K", "kash", "pog", "sir"}
 
 # Citation key of Knobloch's Sauji grammar sketch; see the profile routing below.
@@ -249,6 +255,8 @@ KUSUNDA_GIPAN_SOURCE_KEY = "aaley2021kusundagipan"
 # punctuation are meaningful source data.  The legacy generic converter strips such characters
 # before tokenization because many older wordlists used them as disposable list notation.
 PRESERVE_SOURCE_PROFILE_INPUT = {
+    "sheth-ddsa",
+    "sil-ho", "sil-bhumij", "sil-dhurwa-2021",
     "zoller-2023",
     "keed", "muduga",
     "kharia-living", "sdml", "bajjika", "ia-dravidian-ipa", "census-ipa", "census-ascii", "census-danuwar", "more-ascii", "more-ipa", "selected-angika", "selected-majhi", "selected-koraga", "selected-orissa",
@@ -419,9 +427,9 @@ def parse_file(file: str, errors, name=None, file_num=0, param_counter=None):
         if "-" in name:
             name = name.split("-")[1]
 
-    # check if convertible
-    convert = name in convertors or name in mapping
-    ipa = mapping.get(name, None)
+    # Per-source settings (transcription profiles, dedupe rules, exclusions) live in YAML files
+    # beside the source CSVs; see source_meta.py.
+    meta = source_meta.load()
 
     fin = open(file, "r")
     lines = fin.readlines()
@@ -470,421 +478,13 @@ def parse_file(file: str, errors, name=None, file_num=0, param_counter=None):
             source_key == KUSUNDA_SOURCE_KEY
             and row.entry_key.startswith("ProtoKusunda-")
         )
-        # Both hand-entered and OCR-derived Shackle rows use the same CDIAL-style
-        # romanisation. The auto filename does not reduce to ``old_punjabi`` via
-        # the legacy filename heuristic, so select its phonetic parser by source.
-        row_ipa = "cdial" if row.source in {"shackle", "shackle-auto"} else ipa
-        row_convert = row_ipa is not None and (row.source in {"shackle", "shackle-auto"} or convert)
-        # Hindu Kush Areal Typology supplies canonical IPA, unlike Liljegren's Palula dictionary
-        # (practical orthography). The dated filename heuristic reduces both to ``liljegren``;
-        # route this source explicitly through its IPA-to-house-transcription profile.
-        if row.source.split("[", 1)[0] == "liljegren-hindukush":
-            row_ipa = "liljegren-hindukush"
-            row_convert = True
-        # The dictionary supplies Unicode IPA. This source-key route keeps the
-        # transcription contract stable if the dated snapshot filename changes.
-        # Nirmaan maps its nine-vowel IPA alphabet to house transcription.
-        if source_key in {"regmi2014bajjika", "lindgren2023dravidian", "kolipakam2018dravlex"}:
-            row_ipa = "bajjika" if source_key == "regmi2014bajjika" else "ia-dravidian-ipa"
-            row_convert = True
-        if source_key in {"census2023tamilnadu", "census2023uttarpradesh", "census2020bihar", "census2012sikkim2", "regmi-thakur2016danuwar", "mitchell-eichentopf2013tharu",}:
-            row_ipa = "census-ascii" if source_key in {"census2020bihar", "census2012sikkim2"} else "census-danuwar" if source_key == "regmi-thakur2016danuwar" else "census-ipa"
-            row_convert = True
-        if source_key in {"regmi2017angika", "chalise2014majhi", "bhat1971koraga", "census2002orissa"}:
-            row_ipa = {"regmi2017angika":"selected-angika", "chalise2014majhi":"selected-majhi", "bhat1971koraga":"selected-koraga", "census2002orissa":"selected-orissa"}[source_key]
-            row_convert = True
-        if source_key in {"census2023jharkhand", "census2023himachal", "census2011rajasthan", "census2016westbengal", "mahato2014kisan"}:
-            row_ipa = "more-ipa" if source_key == "mahato2014kisan" or (source_key == "census2023himachal" and row.lang in {"sirm", "pan", "dog"}) else "more-ascii"
-            row_convert = True
-        if source_key == "sdml2026":
-            row_ipa = "sdml"
-            row_convert = True
-        if source_key == "living-kharia2026":
-            row_ipa = "kharia-living"
-            row_convert = True
-        if source_key == "nirmaan2018mewari":
-            row_ipa = "nirmaan-mewari"
-            row_convert = True
-        if row.source.split("[", 1)[0] == "torwali2023student":
-            row_ipa = "torwali-student"
-            row_convert = True
-        # Buddruss's three lexical publications use distinct source transcriptions.
-        # The dated filenames all reduce to the legacy key ``buddruss``, so route the
-        # two new glossaries by immutable citation key rather than filename.
-        if source_key == "buddruss-waigali1992":
-            row_ipa = "buddruss-waigali"
-            row_convert = True
-        if source_key == "buddruss-wama2006":
-            row_ipa = "buddruss-wama"
-            row_convert = True
-        if source_key == "buddruss-shina1996":
-            row_ipa = "buddruss-shina"
-            row_convert = True
-        # Rezai Baghbidi writes Zargari in a Persianist/Romanist transcription: caron
-        # letters, the digraphs čh/dž and the aspirates ph/th/kh, γ for the voiced velar
-        # fricative, and ``j`` for the palatal glide. The dated filename reduces to the
-        # useless legacy key ``rezai``, so route by immutable citation key.
-        if source_key == "rezaibaghbidi2003zargari":
-            row_ipa = "zargari"
-            row_convert = True
-        # Boretzky & Igla's Romani transcription adds a second affricate series
-        # (ć/ćh/dź beside č/čh/dž), the Vlax rhotic ř and schwa to the notation the
-        # Zargari profile already covers, and its bound forms keep their hyphens.
-        # Route by immutable citation key rather than the dated filename.
-        if source_key == "boretzky1994romani":
-            row_ipa = "boretzky-romani"
-            row_convert = True
-        # Liljegren's Kalkoti article is read in his own broad transcription, but the
-        # same installed file carries four comparanda in other languages that were
-        # normalised by hand in 2022. Keep those on the preservation profile.
-        if row.input_file.startswith("20220913-kalkoti") and row.lang != "Kalk":
-            row_ipa = "house"
-            row_convert = True
-        # Knobloch's Sauji thesis prints two layers: broad IPA in the phonology
-        # tables and a simplified Indo-Aryanist transcription everywhere else. One
-        # profile covers both, since the two notations never disagree about a
-        # grapheme. Route by citation key so the layer contract survives a rename.
-        if source_key == SAUJI_SOURCE_KEY:
-            row_ipa = "knobloch-sauji"
-            row_convert = True
-        if source_key == PERDER_SOURCE_KEY:
-            row_ipa = "perder-dameli"
-            row_convert = True
-        # Herin writes Aleppo Domari in an Arabist/Indo-Aryanist transcription whose
-        # morpheme hyphens and clitic boundaries are part of the citation, so the profile
-        # is a preservation profile and the dated filename (which reduces to the useless
-        # legacy key ``herin``) is bypassed in favour of the immutable citation key.
-        if source_key == DOMARI_ALEPPO_SOURCE_KEY:
-            row_ipa = "domari-aleppo"
-            row_convert = True
-        # Beine's Bhatri survey word lists are printed in his own modified IPA. The dated
-        # filename reduces to the key ``beine``, which the Gondi digitization could also
-        # claim, so route this source by its immutable citation key as well.
-        if source_key == "beine2017bhatri":
-            row_ipa = "beine-bhatri"
-            row_convert = True
-        # SEAlang's Pinnow index exposes a source-authored IPA field. Route by
-        # immutable citation key so the transcription contract survives renames.
-        if source_key == "pinnow1959versuch":
-            row_ipa = "pinnow-munda"
-            row_convert = True
-        if source_key == "munda1968proto":
-            row_ipa = "munda-proto-kherwarian"
-            row_convert = True
-        if source_key == "zide1982reconstruction":
-            row_ipa = "zide-sora-juray"
-            row_convert = True
-        if source_key == "pattanaik-koul2003varli":
-            row_ipa = "dadra-varli"
-            row_convert = True
-        if source_key in {"ghatage-konkani1963", "ghatage-kudali1965"}:
-            row_ipa = "ghatage-western"
-            row_convert = True
-        if source_key == "bhattacharya1968bonda":
-            row_ipa = "bhattacharya-bonda"
-            row_convert = True
-        if source_key == "BAHL":
-            row_ipa = "bahl-korwa"
-            row_convert = True
-        if source_key == "PJDW":
-            row_ipa = "pinnow-juang"
-            row_convert = True
-        # ESR 2018-010 is an image-only survey whose manually reviewed IPA is
-        # retained in Phonemic while the display form is normalised through a
-        # source-specific profile.  Route by citation key, not the dated file.
-        if source_key == "ernest-oleary-kelsall2018irula":
-            row_ipa = "sil-irula"
-            row_convert = True
-        if source_key in {"varghese-mathew2015idukki", "varghese2015palakkad"}:
-            row_ipa = "sil-survey"
-            row_convert = True
-        # ESR 2012-015 Appendix C was manually keyed from rendered scans. Keep
-        # that diplomatic IPA in Phonemic and normalize only display Form.
-        if source_key == "blairetal2012kurumba":
-            row_ipa = "sil-kurumba-2012"
-            row_convert = True
-        # ESR 2013-004 Appendix C was manually transcribed cell by cell from
-        # rendered pages. Preserve its diplomatic IPA and normalize only the
-        # display Form through the source-specific profile.
-        if source_key == "watters2013northerndhule":
-            row_ipa = "sil-northern-dhule-bhils"
-            row_convert = True
-        # ESR 2015-012 Appendix A3 was manually transcribed cell by cell from
-        # rendered pages. Preserve diplomatic IPA in Phonemic and normalize
-        # only the display form through its exact source-specific profile.
-        if source_key == "varghesekumar2015noira":
-            row_ipa = "sil-noira"
-            row_convert = True
-        # ESR 2015-016 Appendix B was manually checked cell by cell against
-        # rendered pages. Preserve its diplomatic IPA and normalize only the
-        # display form through the dedicated source profile.
-        if source_key == "padung-sako2015adi":
-            row_ipa = "sil-adi"
-            row_convert = True
-        if source_key == "adimathara2019mudhili":
-            row_ipa = "sil-gadaba"
-            row_convert = True
-        if source_key == "john2008jaunsari":
-            row_ipa = "sil-jaunsari"
-            row_convert = True
-        if source_key == "varkey-vunnamatla2018bareli":
-            row_ipa = "sil-bareli-pauri"
-            row_convert = True
-        if source_key == "vunnamatla-john-samuvel2012nimadi":
-            row_ipa = "sil-nimadi"
-            row_convert = True
-        if source_key == "varghese-john-samuel2009malvi":
-            row_ipa = "sil-malvi"
-            row_convert = True
-        if source_key == "brightbill-turner2007dogri":
-            row_ipa = "sil-dogri"
-            row_convert = True
-        if source_key == "chamberlain-chamberlain2019lahul":
-            row_ipa = "sil-lahul"
-            row_convert = True
-        if source_key == "hallberg1992pashto":
-            row_ipa = "ssnp"
-            row_convert = True
-        if source_key == "lothers-lothers2010pahari":
-            row_ipa = "sil-pahari-pothwari"
-            row_convert = True
-        if source_key == "webster2024haryanvi":
-            row_ipa = "sil-haryanvi"
-            row_convert = True
-        # Webster's Appendix B was re-keyed cell by cell from rendered pages.
-        # Its source IPA is preserved exactly; the explicit profile prevents the
-        # historical filename route from treating the survey as Chattisgarhi.
-        if source_key == "webster":
-            row_ipa = "sil-western-tharu"
-            row_convert = True
-        if source_key == "devagnanavaram-et-al2021koya":
-            row_ipa = "sil-koya"
-            row_convert = True
-        if source_key == "blair2021kullu":
-            row_ipa = "sil-kullu"
-            row_convert = True
-        if source_key == "koshy2022bagheli":
-            row_ipa = "sil-bagheli"
-            row_convert = True
-        if source_key == "behera2022korwakodaku":
-            row_ipa = "sil-korwa-kodaku"
-            row_convert = True
-        if source_key == "abraham-daimary2021amrikarbi":
-            row_ipa = "sil-amri-karbi"
-            row_convert = True
-        if source_key == "behera2021desia":
-            row_ipa = "sil-desia"
-            row_convert = True
-        if source_key == "stahl2021korku":
-            row_ipa = "sil-korku"
-            row_convert = True
-        if source_key == "blair-george2012kondadora":
-            row_ipa = "sil-konda-dora"
-            row_convert = True
-        if source_key == "mathew-chamberlain2022bonda-didayi":
-            row_ipa = "sil-bonda-didayi"
-            row_convert = True
-        if source_key == "mathew2022bonda-further":
-            row_ipa = "sil-bonda-further"
-            row_convert = True
-        if source_key == "hugoniot-polster-ahmad-rajan2023easterngujari":
-            row_ipa = "sil-eastern-gujari"
-            row_convert = True
-        if source_key == "kim-kim2008bishnupriya":
-            row_ipa = "sil-bishnupriya"
-            row_convert = True
-        if source_key == "kim-kim2008meitei":
-            row_ipa = "sil-meitei"
-            row_convert = True
-        if source_key == "brightbill-kim-kim2007warjaintia":
-            row_ipa = "sil-bangladesh"
-            row_convert = True
-        if source_key == "kim-roy-sangma2011kukichin":
-            row_ipa = "sil-bangladesh"
-            row_convert = True
-        # ESR 2011-023 was re-keyed cell by cell from rendered pages. Preserve
-        # the manual source IPA in Phonemic and convert only the display layer.
-        if source_key == "kim-ahmad-kim-sangma2011kochbd":
-            row_ipa = "sil-bangladesh"
-            row_convert = True
-        # ESR 2011-040 was re-keyed cell by cell from rendered pages. Preserve
-        # the manual source IPA in Phonemic and convert only the display layer.
-        if source_key == "kim-ahmad-kim-sangma2011kurux":
-            row_ipa = "sil-kurux"
-            row_convert = True
-        if source_key == "kim-kim-sangma2012garo":
-            row_ipa = "sil-bangladesh"
-            row_convert = True
-        # Abraham & Sako's sixteen Arunachal Pradesh wordlists supply Unicode IPA.
-        # Convert only the display Form to Jambu transcription and retain the
-        # source transcription unchanged in Phonemic.
-        if row.source.split("[", 1)[0] in {
-            "abraham-sako2021", "abraham-sako-kinny-zeliang2018",
-        }:
-            row_ipa = "tagin-puroik"
-            row_convert = True
-
-        if row.source.split("[", 1)[0] == "kondakov2013rabha":
-            row_ipa = "rabha"
-            row_convert = True
-        # Hilty & Mitchell's nine comparative wordlists are Unicode IPA.
-        # Keep the source IPA in Phonemic and normalize only the display Form.
-        if row.source.split("[", 1)[0] == "hilty-mitchell2014":
-            row_ipa = "yamphu"
-            row_convert = True
-        if row.source.split("[", 1)[0] == "hilty2013eastern-magar":
-            row_ipa = "eastern-magar"
-            row_convert = True
-        # Lipp's three Western Tamang survey wordlists use Unicode IPA. Keep
-        # that source value in Phonemic and convert only the display Form.
-        if row.source.split("[", 1)[0] == "lipp2014western-tamang":
-            row_ipa = "western-tamang"
-            row_convert = True
-        if row.source.split("[", 1)[0] == "devries2020humla":
-            row_ipa = "humla"
-            row_convert = True
-        if row.source.split("[", 1)[0] == "swenson2019gurung":
-            row_ipa = "gurung"
-            row_convert = True
-        if row.source.split("[", 1)[0] == "eichentopf-tupper2019dotyali":
-            row_ipa = "dotyali"
-            row_convert = True
-        if row.source.split("[", 1)[0] == "joseph2024kudiya":
-            row_ipa = "kudiya"
-            row_convert = True
-        # Beine's Gondi survey word lists are Unicode IPA. Route by citation key so the
-        # transcription contract survives a rename of the dated snapshot filename.
-        if row.source.split("[", 1)[0] == "rama-coltekin-sofroniev2017gondi":
-            row_ipa = "gondi-beine"
-            row_convert = True
-        if row.source.split("[", 1)[0] == "page2024majhi-bote":
-            row_ipa = "majhi-bote"
-            row_convert = True
-        if row.source.split("[", 1)[0] == "eichentopf-mitchell2020kochila":
-            row_ipa = "kochila-tharu"
-            row_convert = True
-        if row.source.split("[", 1)[0] == "smith2021pyangaun":
-            row_ipa = "pyangaun-newar"
-            row_convert = True
-        if row.source.split("[", 1)[0] == "leman2020maikoti":
-            row_ipa = "maikoti-kham"
-            row_convert = True
-        if row.source.split("[", 1)[0] == "webster2021thakali":
-            row_ipa = "thakali"
-            row_convert = True
-        if row.source.split("[", 1)[0] == "khadgi-marcuson-marcuson2021mustang":
-            row_ipa = "mustang-loke"
-            row_convert = True
-        if row.source.split("[", 1)[0] == "shackelford-swenson-chaudhary-maggard2022kurux":
-            row_ipa = "kurux-nepal"
-            row_convert = True
-        if row.source.split("[", 1)[0] == "webster2022north-gorkha":
-            row_ipa = "north-gorkha"
-            row_convert = True
-        if row.source.split("[", 1)[0] == "weinreich2008":
-            row_ipa = "weinreich-domaaki"
-            row_convert = True
-        if row.source.split("[", 1)[0] == "zoller2023":
-            row_ipa = "zoller-2023"
-            row_convert = True
-        if row.source.split("[", 1)[0] == "ali-kobayashi2024":
-            row_ipa = "brahui"
-            row_convert = True
-        # Emeneau underlines the digraph ``gh`` for the Brahui voiced velar fricative. Preserve
-        # the article transcription in Original while rendering that digraph as Jambu ɣ.
-        if row.source.split("[", 1)[0] == "emeneau1997brahui":
-            row_ipa = "emeneau-brahui"
-            row_convert = True
-        # Burrow & Emeneau's 1972 DEN supplement follows the DED transcription conventions.
-        # Route by bibliographic source ID because this is a manual, article-level import rather
-        # than a file inside data/dedr; Original remains the exact printed form.
-        if row.source.split("[", 1)[0] in {
-            "burrow-emeneau1972den1", "burrow-emeneau1972den2",
-        }:
-            row_ipa = "dedr"
-            row_convert = True
-        # John & Varghese's thirteen target wordlists use Unicode IPA. The
-        # source value remains in Phonemic while the display form is converted.
-        if row.source.split("[", 1)[0] == "kannauji":
-            row_ipa = "kannauji"
-            row_convert = True
-        # Smith's five Pahari field-site wordlists use Unicode IPA. Preserve
-        # that source value in Phonemic and convert only the display Form.
-        if row.source.split("[", 1)[0] == "smith2022pahari":
-            row_ipa = "pahari"
-            row_convert = True
-        # Woods' Webonary citation forms are her phonemic transcription in Unicode IPA. Keep that
-        # value in Phonemic and convert only the display Form; the Devanagari headword is Native.
-        if row.source.split("[", 1)[0] == "woods2019halbi":
-            row_ipa = "halbi-woods"
-            row_convert = True
-        if row.source.split("[", 1)[0] == "swenson2025naaba":
-            row_ipa = "naaba"
-            row_convert = True
-        if row.source.split("[", 1)[0] == "swenson2024magar":
-            row_ipa = "magar-2024"
-            row_convert = True
-        if row.source.split("[", 1)[0] == "shackelford2019dewas-rai":
-            row_ipa = "dewas-rai"
-            row_convert = True
-        if row.source.split("[", 1)[0] == "kim-ahmad-kim-sangma2011hajong":
-            row_ipa = "hajong-survey"
-            row_convert = True
-        if row.source.split("[", 1)[0] == "kim-kim-ahmad-sangma2010santali-cluster":
-            row_ipa = "santali-cluster"
-            row_convert = True
-        if row.source.split("[", 1)[0] == "rai-rai-thokar2015sampang":
-            row_ipa = "sampang"
-            row_convert = True
-        if row.source.split("[", 1)[0] == "rai-rai-thokar2014mewahang":
-            row_ipa = "mewahang"
-            row_convert = True
-        if row.source.split("[", 1)[0] == "rai-rai-thokar2014chhulung":
-            row_ipa = "chhulung"
-            row_convert = True
-        if row.source.split("[", 1)[0] == "thakur-thakur2016magahi":
-            row_ipa = "magahi-survey"
-            row_convert = True
-        if source_key == KUSUNDA_SOURCE_KEY:
-            row_ipa = "kusunda-aaley-bodt"
-            row_convert = True
-        if source_key == KUSUNDA_WATTERS_SOURCE_KEY:
-            row_ipa = "kusunda-watters"
-            row_convert = True
-        if source_key == KUSUNDA_GIPAN_SOURCE_KEY:
-            row_ipa = "kusunda-gipan"
-            row_convert = True
-        # Hockings and Pilot-Raichoor mark vowel length with a colon and use
-        # Dravidianist underdots. Preserve the source transcription in
-        # Original while normalising the display form through its own profile.
-        if row.source.split("[", 1)[0] == "hockings-pilotraichoor1992":
-            row_ipa = "badaga-hockings"
-            row_convert = True
-        # Schmidt & Kaul use one transcription system for the four Table 3
-        # Table 3 varieties. Route by provenance and language rather than the
-        # dated filename, whose legacy parser reduces both Schmidt imports to
-        # the ambiguous name ``schmidt``.
-        if row.source == "schmidt" and row.lang in SCHMIDT_PROFILE_LANGUAGES:
-            row_ipa = "schmidt-kashmiri"
-            row_convert = True
-        # Synthetic donor-language category nodes emitted by the Kalasha
-        # importer are English labels, not Trail orthography.
-        if name == "kalasha" and row.lang not in {"Kal", "bumb", "rumb", "bir", "urt"}:
-            row_convert = False
-        # Bashir donor nodes retain the source language's cited spelling; only
-        # Khowar and its contributor/regional dialect rows use the Khowar profile.
-        if name == "bashir" and not row.lang.startswith("Kho"):
-            row_convert = False
-        # DEDR forms (incl. the PDr reconstructions in pdr.csv, whose source is "krishnamurti")
-        # are already in a Dravidianist transcription; the shared profile only normalises house
-        # conventions (ழ r̤ -> ṛ̆, ṅ -> ŋ, aspirates -> superscript, anusvara -> ṁ, marked vowels
-        # -> IPA). Length-ambiguous vowels are split into variants below, not here.
-        if "dedr" in file:
-            row_ipa = "dedr"
-            row_convert = True
+        # Transcription profile and conversion flag come from the source's YAML settings
+        # (source_meta.py; `<stem>.yaml` beside each source CSV): the citation key's rules are
+        # tried first, then the input file's defaults. Conversion mechanics stay below.
+        row_ipa, row_convert = meta.transcription(source_key, file, row.lang)
         # Backstrom's Urdu and Pashto lists are survey controls rather than the
         # northern locality varieties we want to publish in Jambu.
-        if os.path.basename(file) == "20230416-northern.csv" and row.lang in {"Urdu", "Pashto"}:
+        if row.lang in meta.file_flag(file, "forms", "exclude_languages", ()):
             continue
         if "dedr" in file and is_footer_misparse(row.form):
             continue
@@ -925,30 +525,8 @@ def parse_file(file: str, errors, name=None, file_num=0, param_counter=None):
             # prompt's source-defined phrase parts, not lexical alternatives. One upstream record
             # must remain one stable node in both cases.
             else [row.form]
-            if is_merriam_reconstruction or source_key in {
-                "zoller2023",
-                "varkey-vunnamatla2018bareli",
-                "vunnamatla-john-samuvel2012nimadi",
-                "behera2022korwakodaku",
-                # These completed manual survey packages already expand one source
-                # attestation per immutable Entry_Key. A comma inside the diplomatic
-                # transcription is punctuation/notation, not the legacy CSV shorthand
-                # for multiple rows.
-                "uchida-rajapurohit2018", "arsenault-abraham2022muduga",
-                "regmi2014bajjika", "lindgren2023dravidian", "kolipakam2018dravlex",
-                "regmi2017angika", "chalise2014majhi", "bhat1971koraga", "census2002orissa",
-                "census2023tamilnadu", "census2023uttarpradesh", "census2020bihar", "census2012sikkim2", "regmi-thakur2016danuwar", "mitchell-eichentopf2013tharu",
-                "webster",
-                "ernest-oleary-kelsall2018irula",
-                "kim-ahmad-kim-sangma2011kochbd",
-                "kim-ahmad-kim-sangma2011kurux",
-                "blairetal2012kurumba",
-                "watters2013northerndhule",
-                "varghesekumar2015noira",
-                "padung-sako2015adi",
-                "webster2024haryanvi",
-                KUSUNDA_SOURCE_KEY,
-            }
+            if is_merriam_reconstruction
+            or meta.flag(source_key, "forms", "split_alternates", True) is False
             else list(row.form.split(","))
         )
         main_id = None
@@ -967,7 +545,9 @@ def parse_file(file: str, errors, name=None, file_num=0, param_counter=None):
             # audit attaches them to a nonnumeric Proto-II/Dravidian root;
             # otherwise an ID such as pii-4147-2 can collide with the promoted
             # Proto-II reflex occupying that same namespace.
-            stable_manual_id = is_manual and row.source == "schmidt"
+            stable_manual_id = (
+                is_manual and meta.flag(source_key, "identity", "legacy_ids") == "file-order"
+            )
             if is_cdial or stable_manual_id or not epid or re.fullmatch(r"\d+[a-z]?", epid):
                 row.id = f"{file_num}-{i}"
             else:
@@ -1171,36 +751,20 @@ def main():
 
     form_count = 0
     results: list[Row] = []
-    files = [
-        "data/cdial/cdial.csv",
-        "data/munda/forms.csv",
-        "data/dedr/dedr_new.csv",
-        "data/dedr/pdr.csv",
-    ] + [
-        path for path in glob.glob("data/other/forms/*.csv")
-        if path != MERRIAM_DRAVIDIAN_DB_FILE and path not in WESTERN_SURVEY_FILES
-    ]
-    files.sort()
-    # Append new imports after sorting so they cannot renumber every existing source's legacy
-    # <file>-<row> IDs. Persistent IDs normally absorb ordering changes, but curated graph overlays
-    # must also remain valid during the pre-ID build. Merriam has immutable Entry_Key values, so
-    # its own identity does not depend on this append position.
-    files.append(MERRIAM_DRAVIDIAN_DB_FILE)
-    files.append("data/dbia/forms.csv")
-    # These additions must not shift existing numeric legacy aliases. Their
-    # temporary IDs are namespaced too, so old historical numeric redirects
-    # cannot accidentally be reused for a newly installed source.
-    files.extend(WESTERN_SURVEY_FILES)
+    # Ordering rules (dictionaries first, sorted survey files, then appended sources that must
+    # not renumber older legacy <file>-<row> IDs) live in source_files.ordered_source_files.
+    files = ordered_source_files()
 
     # now do the same thing for non-CDIAL languages
     tot_stats = {
         "converted": 0,
         "for_conversion": 0
     }
+    meta = source_meta.load()
     param_counter: dict = {}  # shared <etymon>-<n> reflex counter across all non-CDIAL source files
     for file_num, file in enumerate(files):
         print(file)
-        prefix = os.path.splitext(os.path.basename(file))[0] if file in WESTERN_SURVEY_FILES else file_num
+        prefix = legacy_prefix(file, file_num)
         result, stats = parse_file(file, errors=errors, file_num=prefix, param_counter=param_counter)
         tot_stats["converted"] += stats["converted"]
         tot_stats["for_conversion"] += stats["for_conversion"]
@@ -1230,155 +794,7 @@ def main():
             # several elicitation prompts. Their immutable record keys keep those entries distinct
             # while retaining the legacy dedupe behaviour for other sources.
             row.entry_key
-            if row.source.split("[", 1)[0] in {
-                "zoller2023",
-                "gandhari", "grierson-lsi1928", "kullui-org", "liljegren-hindukush", "tulpule1999",
-                "wolf-kota", "bhaskararao-toda2025", "weinreich2008", "yoshioka2012",
-                "kannauji", "berger-auto", "living-kharia2026", "sdml2026",
-                "uchida-rajapurohit2018", "arsenault-abraham2022muduga",
-                "regmi2014bajjika", "lindgren2023dravidian", "kolipakam2018dravlex",
-                "regmi2017angika", "chalise2014majhi", "bhat1971koraga", "census2002orissa",
-                "census2023tamilnadu", "census2023uttarpradesh", "census2020bihar", "census2012sikkim2", "regmi-thakur2016danuwar", "mitchell-eichentopf2013tharu",
-                "census2023jharkhand", "census2023himachal", "census2011rajasthan", "census2016westbengal", "mahato2014kisan",
-                "smith2022pahari",
-                "swenson2025naaba",
-                "swenson2024magar",
-                "shackelford2019dewas-rai",
-                "kim-ahmad-kim-sangma2011hajong",
-                "kim-kim-ahmad-sangma2010santali-cluster",
-                # SIL India Appendix B3 wordlists: one form is elicited at many survey sites, so
-                # the per-site record key must keep those attestations distinct.
-                "varghese-mathew2015idukki",
-                "varghese2015palakkad",
-                "ernest-oleary-kelsall2018irula",
-                "adimathara2019mudhili",
-                "john2008jaunsari",
-                "varkey-vunnamatla2018bareli",
-                "vunnamatla-john-samuvel2012nimadi",
-                "kondakov2011koch",
-                "kim-kim-sangma-ahmad2011tripura",
-                "kim-ahmad-kim-sangma2011kurux",
-                "kim-ahmad-kim-sangma2011kochbd",
-                "kim-kim-sangma2012garo",
-                # Completed render-first survey packages preserve one immutable record per
-                # elicitation site. Identical shapes at different villages remain distinct
-                # dialect attestations rather than inheriting only the first site's tag.
-                "webster",
-                "blairetal2012kurumba",
-                "watters2013northerndhule",
-                "varghesekumar2015noira",
-                "padung-sako2015adi",
-                "webster2024haryanvi",
-                # ESR 2008-003 prints one bracketed response for every village code that
-                # supplied it. Expansion creates a source-defined per-site attestation, so keep
-                # all six immutable site keys even when the phonetic shape is identical.
-                "kim-kim2008bishnupriya",
-                "kim-kim2008meitei",
-                "brightbill-kim-kim2007warjaintia",
-                "kim-roy-sangma2011kukichin",
-                # ESR 2010-012 elicits the same 217 prompts independently at fourteen
-                # Pahari/Pothwari/Mirpuri sites.  Each response is a source-defined
-                # dialect attestation; folding identical shapes here would retain all
-                # citation locators but attach them to only the first site's dialect tag.
-                "lothers-lothers2010pahari",
-                "rai-rai-thokar2015sampang",
-                "rai-rai-thokar2014mewahang",
-                "rai-rai-thokar2014chhulung",
-                "thakur-thakur2016magahi",
-                "mundlay1996",
-                "nagaraja2014",
-                "bhattacharya1957",
-                "konow1906",
-                "wiktionary-nihali",
-                "hockings-pilotraichoor1992",
-                "nured",
-                "emeneau1997brahui",
-                "buddruss-grangali1979",
-                "buddruss-waigali1992",
-                "buddruss-wama2006",
-                "buddruss-shina1996",
-                "torwali2023student",
-                "nirmaan2018mewari",  # preserve printed homographs and sense keys
-                "seligmann1911vedda",  # preserve numbered senses, e.g. dia tears/water
-                "pattanaik-koul2003varli", "ghatage-konkani1963", "ghatage-kudali1965",
-                # Woods numbers her homographs (आ1 'come', आ2 'oh!', चार1 'four'), so 416 entries
-                # are explicitly distinct records that share a shape; further pairs collide only
-                # after the Devanagari is reduced to IPA. The FLEx GUID keeps all of them apart.
-                "woods2019halbi",
-                "merriam2026dravidiandb",
-                # Beine elicited 210 prompts at each of 46 sites, so 299 site-plus-shape
-                # pairs answer unrelated prompts (grp puro 'above'/'all', rui pir
-                # 'belly'/'rain'). Its per-response keys keep those records apart.
-                "rama-coltekin-sofroniev2017gondi",
-                # Beine's Bhatri survey is the same shape: 210 prompts at each of 12 sites, so
-                # 76 site-plus-shape pairs answer unrelated prompts (OAR nak 'nose'/'nail' from
-                # nāk and nakh, OAR aṭ 'arm'/'week'/'eight'). Its per-response keys keep those
-                # homophones apart instead of folding them into one glossed-together node.
-                "beine2017bhatri",
-                # Rezai Baghbidi's sketch cites the same shape in several sections with
-                # genuinely different lexical analyses: ruv 'wolf' beside the imperative ruv
-                # 'cry!', the adverb/postposition pairs opro, teli, ānglo, ānvro, bāšu, pālo,
-                # anvri and sar, and kāšt 'wood' beside kāšt 'tree'. Its immutable span keys
-                # keep those apart.
-                "rezaibaghbidi2003zargari",
-                # The Sauji importer already folds repeated attestations on form plus
-                # gloss. Keeping its keys distinct here protects the homographs that
-                # survive that fold, such as si 'bridge' versus si 'together with'.
-                SAUJI_SOURCE_KEY,
-                # Perder likewise folds only identical complete analyses in its
-                # importer. Preserve distinct senses, grammatical forms and
-                # source-explicit dialect attestations through the CLDF build.
-                PERDER_SOURCE_KEY,
-                # The Kalkoti importer already folds repeated citations of one
-                # lexeme on form plus gloss. Keeping its keys distinct here
-                # protects the senses that survive that fold, such as buun
-                # 'becomes' beside buun 'goes' and raat 'blood' beside raat
-                # 'night'.
-                "kalkoti",
-                # Hultman's Kalkoti sketch folds its repeated citations on form
-                # plus gloss too, so its keys protect the senses that survive,
-                # such as thä 'to' beside thä 'do!'.
-                "hultman2023kalkoti",
-                # Degener's glossary has immutable printed page/entry keys.  Preserve
-                # separately defined headword records (including homographs and
-                # cross-reference variants) even when their normalized lexical fields
-                # coincide downstream.
-                "degener-shina2008",
-                # Pinnow's comparison index contains homographs and repeated shapes under
-                # distinct stable database records and set memberships. Preserve those records;
-                # only the one exact alternant repeated inside a single record is filtered by
-                # the source importer and retained audit-only.
-                "pinnow1959versuch",
-                # Munda's thesis index contains source-defined homographs and alternate
-                # comparisons with stable identifiers; keep them distinct across the build.
-                "munda1968proto",
-                # Zide's index preserves separate source records and homographs inside
-                # explicit Sora–Juray comparison groups.
-                "zide1982reconstruction",
-                # Three source lect columns answer the same 250 prompts independently.
-                # Immutable released CLDF IDs protect prompt distinctions and speaker
-                # attestations even when normalized forms coincide.
-                KUSUNDA_SOURCE_KEY,
-                # Watters's dictionary defines source-local homographs and explicit
-                # paradigm/variant attestations; Gipan is an independently published
-                # orthographic glossary.  Keep every immutable source record distinct
-                # across the two publications instead of folding coincident shapes into
-                # whichever Kusunda source happened to be parsed first.
-                KUSUNDA_WATTERS_SOURCE_KEY,
-                KUSUNDA_GIPAN_SOURCE_KEY,
-                # Bhattacharya's dictionary preserves separate stable records for
-                # homographs and printed cross-reference entries. Keep these apart;
-                # source-internal variant edges already express explicit equivalence.
-                "bhattacharya1968bonda",
-                # Bahl's keyed Korwa dictionary contains stable homograph and
-                # alternant records. Preserve those source identities; the importer
-                # separately replaced only the 57 securely resolved legacy excerpts.
-                "BAHL",
-                # Pinnow's keyed Juang manuscript index likewise preserves stable
-                # homographs and source-record alternants. Six exact within-record
-                # repetitions are already excluded by its importer.
-                "PJDW",
-            }
+            if meta.flag(row.source.split("[", 1)[0], "identity", "dedupe_by_entry_key")
             else "",
             row.gloss
             if not row.param and (
@@ -1642,6 +1058,8 @@ def main():
                 params.writerow(row[:5] + ["", ""])
                 included_params.add(row[0])
 
+        # Compatibility stubs only: the final Nuristani grouping pass redirects these old
+        # public IDs to CDIAL; no PII ancestry is constructed from this historical catalog.
         with open("data/nuristani_cognates.csv", encoding="utf-8") as f:
             ancestor_ids = sorted({row["Ancestor_ID"] for row in csv.DictReader(f)})
         collisions = sorted(set(ancestor_ids) & included_params)

@@ -40,13 +40,15 @@ from difflib import SequenceMatcher
 from pathlib import Path
 
 
+import etymology_assignments as overlay
+
 ROOT = Path(__file__).resolve().parent
 FORMS = ROOT / "cldf/forms.csv"
 EDGES = ROOT / "cldf/edges.csv"
 LANGUAGES = ROOT / "cldf/languages.csv"
 CONCEPTS = ROOT / "cldf/concepts.csv"
 FORM_CONCEPTS = ROOT / "cldf/form_concepts.csv"
-ASSIGNMENTS = ROOT / "data/etymology-assignments.csv"
+# Curated etymology rows live in per-source sidecars; see etymology_assignments.py.
 ETYMOLOGIES = ROOT / "data/etymologies.csv"
 PARAMS_NAME = "20260901-nihali-provisional.csv"
 AUDIT_NAME = "nihali-provisional-etymology-audit.csv"
@@ -1931,7 +1933,7 @@ def build_resolved_contact_shape_audit(
         if row["Rank"] == "1" and row["Kind"] in {"reflex", "borrowed", "variant"}
     }
     provisional_children = {
-        row["Form_ID"] for row in read_dicts(ASSIGNMENTS)
+        row["Form_ID"] for row in overlay.read_assignments()
         if row.get("Notes", "").startswith(ASSIGNMENT_MARKER)
     }
     curated_rank1 = {
@@ -4784,7 +4786,7 @@ def build(output_dir: Path, install: bool) -> dict[str, object]:
     languages = {row["ID"]: row for row in read_dicts(LANGUAGES)}
     by_id = {row["ID"]: row for row in forms}
     provisional_children = {
-        row["Form_ID"] for row in read_dicts(ASSIGNMENTS)
+        row["Form_ID"] for row in overlay.read_assignments()
         if row.get("Notes", "").startswith(ASSIGNMENT_MARKER)
     }
     rank1 = {
@@ -5621,17 +5623,17 @@ def build(output_dir: Path, install: bool) -> dict[str, object]:
         canonical_params.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(params_path, canonical_params)
 
-        # Replace only this script's earlier rows.  The central files remain the build inputs, so
-        # no pipeline special-case or generated side table is required.
-        assignment_fields = ["Form_ID", "Etymon_ID", "Kind", "Rank", "Status", "Source", "Notes"]
+        # Replace only this script's earlier rows.  The per-source sidecars remain the build
+        # inputs, so no pipeline special-case or generated side table is required; new rows are
+        # filed under the Nihali source that owns each form.
         existing_assignments = [
-            row for row in read_dicts(ASSIGNMENTS)
+            row for row in overlay.read_assignments()
             if not row.get("Notes", "").startswith(ASSIGNMENT_MARKER)
             and not row.get("Etymon_ID", "").startswith("nihprov-")
         ]
         combined = existing_assignments + assignments
         combined.sort(key=lambda row: (row["Form_ID"], int(row["Rank"] or 1), row["Etymon_ID"]))
-        write_dicts(ASSIGNMENTS, assignment_fields, combined)
+        overlay.write_assignments(combined, overlay.SidecarResolver())
 
         existing_etyma = []
         with ETYMOLOGIES.open(encoding="utf-8", newline="") as stream:

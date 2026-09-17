@@ -1,0 +1,13 @@
+file: 20260813-kullui-org.csv
+defaults:
+  transcription:
+  - profile: kullui
+  importer:
+    commands:
+    - - data/other/forms/raw_data/kullui_org.py
+sources:
+  kullui-org:
+    identity:
+      dedupe_by_entry_key: true
+    reference:
+      etymology_provenance: source-mapped

@@ -1,0 +1,10 @@
+file: 20260825-knobloch-sauji.csv
+defaults:
+  transcription:
+  - profile: knobloch-sauji
+sources:
+  knobloch2020sauji:
+    transcription:
+    - profile: knobloch-sauji
+    identity:
+      dedupe_by_entry_key: true

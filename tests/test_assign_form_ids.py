@@ -24,6 +24,27 @@ def form(legacy_id, original, *, rendered=None, gloss="water", relation="local")
     }
 
 
+def test_overlay_variant_replaces_ancestry_and_is_idempotent(tmp_path):
+    import csv
+    from assign_form_ids import EDGES_FIELDS, validate_assignments, write_rows
+
+    forms = [form("head", "phulgobi", relation=""),
+             form("old", "gobi", relation=""), form("survey", "fulgobi")]
+    assignments = [dict(Form_ID="survey", Etymon_ID="head", Kind="variant",
+                        Rank="1", Status="accepted", Source="example-source")]
+    validate_assignments(forms, assignments)
+    path = tmp_path / "edges.csv"
+    write_rows(path, EDGES_FIELDS, [dict(Child_ID="survey", Parent_ID="old",
+                                       Kind="reflex", Rank="1", Pos="", Source="", Note="")])
+    assert apply_assignments(path, forms, assignments) == 2
+    with path.open() as handle:
+        edges = list(csv.DictReader(handle))
+    assert [(e["Child_ID"], e["Parent_ID"], e["Kind"]) for e in edges] == [
+        ("survey", "head", "variant")]
+    assert forms[-1]["Status"] == ""
+    assert apply_assignments(path, forms, assignments) == 0
+
+
 def test_overlay_derivative_can_target_base_assigned_in_same_batch(tmp_path):
     import csv
     from assign_form_ids import EDGES_FIELDS, validate_assignments
@@ -273,15 +294,15 @@ def test_the_dictionary_self_reference_assignments_all_point_at_live_sub_entries
     import re
     from pathlib import Path
 
+    from etymology_assignments import read_assignments
+
     root = Path(__file__).parents[1]
     forms_path = root / "cldf/forms.csv"
-    assignments_path = root / "data/etymology-assignments.csv"
     if not forms_path.exists():
         return
     with forms_path.open(encoding="utf-8", newline="") as stream:
         live = {row["ID"] for row in csv.DictReader(stream)}
-    with assignments_path.open(encoding="utf-8", newline="") as stream:
-        assignments = list(csv.DictReader(stream))
+    assignments = read_assignments()
     captured = [row for row in assignments if is_retired_subentry(row, live)]
     assert captured == []
     # Every surviving self-reference names a sub-entry that still exists.

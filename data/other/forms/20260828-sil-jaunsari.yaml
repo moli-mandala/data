@@ -1,0 +1,13 @@
+file: 20260828-sil-jaunsari.csv
+defaults:
+  importer:
+    commands:
+    - - data/other/forms/raw_data/sil_jaunsari_2008/import_jaunsari.py
+sources:
+  john2008jaunsari:
+    transcription:
+    - profile: sil-jaunsari
+    identity:
+      dedupe_by_entry_key: true
+    notes:
+      audit_only: true

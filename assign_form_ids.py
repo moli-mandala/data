@@ -27,6 +27,7 @@ import re
 from collections import defaultdict
 from pathlib import Path
 
+import etymology_assignments as overlay
 from edges_build import validate_edge_dicts
 from form_note_policy import apply_form_note_policy
 
@@ -35,7 +36,8 @@ ROOT = Path(__file__).resolve().parent
 FORMS = ROOT / "cldf/forms.csv"
 REGISTRY = ROOT / "data/form-identities.csv"
 ALIASES = ROOT / "cldf/form-id-aliases.csv"
-ASSIGNMENTS = ROOT / "data/etymology-assignments.csv"
+# Curated etymology decisions live in per-source sidecars (see etymology_assignments.py); a single
+# overlay file is still accepted through --assignments for tests and one-off tools.
 SOURCE_KEYS = ROOT / "cldf/form-source-keys.csv"
 GRAPH_FILE_COLUMNS = {
     "edges.csv": ("Child_ID", "Parent_ID"),
@@ -151,7 +153,10 @@ def assign_ids(
         ):
             by_legacy[legacy_id] = row
     by_fp: dict[str, list[dict[str, str]]] = defaultdict(list)
+    by_source_key: dict[str, list[dict[str, str]]] = defaultdict(list)
     for row in registry:
+        if row.get("Source_Key"):
+            by_source_key[row["Source_Key"]].append(row)
         if row.get("Fingerprint"):
             by_fp[row["Fingerprint"]].append(row)
 
@@ -168,6 +173,15 @@ def assign_ids(
         fp = fingerprint(row, source_key)
         match = by_form_id.get(old_id)
         legacy_match = by_legacy.get(old_id)
+        if not match and source_key:
+            # Some historical snapshots gained keys without updating their old
+            # content fingerprint. The immutable key still identifies the row.
+            candidates = [candidate for candidate in by_source_key.get(source_key, [])
+                          if candidate["Form_ID"] not in claimed]
+            active_candidates = [candidate for candidate in candidates if candidate.get("Status") == "active"]
+            candidates = active_candidates or candidates
+            if len(candidates) == 1:
+                match = candidates[0]
         if not match and legacy_match and legacy_match.get("Fingerprint") == fp:
             match = legacy_match
         if not match:
@@ -328,7 +342,7 @@ def validate_assignments(forms: list[dict[str, str]], assignments: list[dict[str
             continue
         if etymon_id not in linkable:
             raise ValueError(f"etymology assignment for {form_id} references missing etymon {etymon_id}")
-        if assignment.get("Kind") not in {"reflex", "borrowed", "derived", "component"}:
+        if assignment.get("Kind") not in {"reflex", "borrowed", "variant", "derived", "component"}:
             raise ValueError(f"unsupported assignment kind {assignment.get('Kind')!r} for {form_id}")
         if not re.fullmatch(r"[1-9]\d*", assignment.get("Rank", "1")):
             raise ValueError(f"bad assignment rank {assignment.get('Rank')!r} for {form_id}")
@@ -464,7 +478,10 @@ def main() -> None:
     parser.add_argument("--forms", type=Path, default=FORMS)
     parser.add_argument("--registry", type=Path, default=REGISTRY)
     parser.add_argument("--aliases", type=Path, default=ALIASES)
-    parser.add_argument("--assignments", type=Path, default=ASSIGNMENTS)
+    parser.add_argument(
+        "--assignments", type=Path, default=None,
+        help="a single overlay CSV instead of the per-source sidecars (tests / one-off tools)",
+    )
     parser.add_argument("--source-keys", type=Path, default=SOURCE_KEYS)
     parser.add_argument(
         "--fresh", action="store_true",
@@ -516,9 +533,15 @@ def main() -> None:
     }
     aliases = {legacy: form_id for legacy, form_id in aliases.items() if legacy not in active_ids}
 
-    if not args.assignments.exists():
-        write_rows(args.assignments, ASSIGNMENT_FIELDS, [])
-    _, assignments = read_rows(args.assignments)
+    from source_key_aliases import apply_source_key_aliases
+    apply_source_key_aliases(aliases, registry, next_registry, active_ids)
+
+    if args.assignments is not None:
+        if not args.assignments.exists():
+            write_rows(args.assignments, ASSIGNMENT_FIELDS, [])
+        _, assignments = read_rows(args.assignments)
+    else:
+        assignments = overlay.read_assignments()
     assignments, stale = drop_stale_subentry_assignments(assignments, active_ids)
     for assignment in assignments:
         for column in ("Form_ID", "Etymon_ID"):
@@ -533,6 +556,9 @@ def main() -> None:
         rewrite_graph_file(args.forms.parent / name, columns, mapping)
 
     changed = apply_assignments(args.forms.parent / "edges.csv", forms, assignments)
+
+    from nuristani_grouping import apply_to_build
+    grouped = apply_to_build(forms, args.forms.parent / "edges.csv", aliases)
 
     # Local source rows deliberately retain extraction and review prose for auditing. Apply the
     # public-note boundary only after identity reconciliation, so promoting citation locators or
@@ -550,7 +576,13 @@ def main() -> None:
 
     write_rows(args.forms, fields, forms)
     write_rows(args.registry, REGISTRY_FIELDS, next_registry)
-    write_rows(args.assignments, ASSIGNMENT_FIELDS, assignments)
+    if args.assignments is not None:
+        write_rows(args.assignments, ASSIGNMENT_FIELDS, assignments)
+    else:
+        # Every row returns to the sidecar it was read from. Rows from the inbox
+        # (data/other/forms/etymologies/_pending.csv) are filed under the source that owns their
+        # child, resolved against the registry this build has just produced.
+        overlay.write_assignments(assignments, overlay.SidecarResolver(next_registry))
     write_rows(
         args.aliases,
         ["Legacy_ID", "Form_ID"],
@@ -562,7 +594,8 @@ def main() -> None:
     )
     print(
         f"assigned {len(mapping):,} durable form IDs; "
-        f"preserved {len(aliases):,} aliases; applied {changed:,} etymology assignments"
+        f"preserved {len(aliases):,} aliases; applied {changed:,} etymology assignments; "
+        f"updated {len(grouped):,} Nuristani/CDIAL grouping records"
         + (f"; dropped {len(stale):,} assignments on retired dictionary sub-entries"
            if stale else "")
     )

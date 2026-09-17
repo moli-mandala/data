@@ -46,10 +46,13 @@ differences. Replace/reconcile by stable item + site identity; do not append a
 second 615-row source.
 
 The source asserts no etymological assignments, so source-local staged
-`Parameter_ID` is blank. Preserve the independently curated assignments in
-`data/other/forms/raw_data/markodi_etyma.csv` by joining them to item/gloss +
-site after selecting the manual source transcription. Do not treat survey
-similarity percentages as cognacy.
+`Parameter_ID` is blank. The independently curated assignments now live in the
+standard sidecar `data/other/forms/etymologies/20260723-markodi.csv`, keyed by
+durable form ID; each installed row carries `Entry_Key`
+`canvin2025:<site>:<concept>`, so replacing a transcription for the same item +
+site keeps the form ID and its assignments without any join. Keep those keys
+when reconciling. (`markodi_etyma.csv` retains only comparison forms and notes.)
+Do not treat survey similarity percentages as cognacy.
 
 Source-local accounting is exact: 615 staged target forms; 615 attested control
 cells excluded; 18 literal source blanks excluded (9 target, 9 control); 0

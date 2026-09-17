@@ -1,0 +1,13 @@
+file: 20260828-sil-meitei.csv
+defaults:
+  importer:
+    commands:
+    - - data/other/forms/raw_data/sil_meitei_2008/import_meitei.py
+sources:
+  kim-kim2008meitei:
+    transcription:
+    - profile: sil-meitei
+    identity:
+      dedupe_by_entry_key: true
+    notes:
+      audit_only: true

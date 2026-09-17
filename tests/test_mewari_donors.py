@@ -62,7 +62,8 @@ def test_saved_overlay_scope_and_relations():
     rows = [r for p in m['analyses'] for r in p['assignments']]
     assert len(rows) == 94
     assert len({r['Form_ID'] for r in rows}) == 88
-    existing = {(r['Form_ID'], r['Etymon_ID'], r['Kind'], r['Pos']) for r in csv.DictReader((ROOT / 'data/etymology-assignments.csv').open()) if r['Status'] == 'accepted'}
+    from etymology_assignments import read_assignments
+    existing = {(r['Form_ID'], r['Etymon_ID'], r['Kind'], r['Pos']) for r in read_assignments() if r['Status'] == 'accepted'}
     assert all((r['Form_ID'], r['Etymon_ID'], r['Kind'], r['Pos']) in existing for r in rows)
     week = next(p for p in m['analyses'] if p['key'] == 'saptaha')
     assert week['parents'] == ['13161'] and week['kind'] == 'borrowed'

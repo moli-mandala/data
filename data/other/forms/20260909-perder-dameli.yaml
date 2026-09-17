@@ -1,0 +1,10 @@
+file: 20260909-perder-dameli.csv
+defaults:
+  transcription:
+  - profile: perder-dameli
+sources:
+  perder2013dameli:
+    transcription:
+    - profile: perder-dameli
+    identity:
+      dedupe_by_entry_key: true

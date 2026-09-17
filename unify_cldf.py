@@ -30,7 +30,7 @@ import re
 import sys
 import unicodedata
 from collections import defaultdict
-from difflib import SequenceMatcher
+import source_meta
 
 from edges_build import build_edges, write_edges
 from burushaski_cognates import apply_catalog as apply_burushaski_catalog
@@ -56,14 +56,6 @@ INDO_ARYAN_CLADES = {
     "Marathi-Konkani", "Halbic", "Insular", "Migratory",
 }
 
-# Three multi-head routes have identical automatic evidence and are resolved from the lexical
-# semantics/topology rather than whichever PNur row happens to occur first in the catalog.
-NURISTANI_REFLEX_ROUTE_OVERRIDES = {
-    ("125", "Wg", "æ̃r̆"): "n1090",   # 'fire': general *āŋā branch, not Prasun-only n1091
-    ("726", "Kt", "ū"): "n3371",       # 'down': *voi with Wg/Kata/Kam, not Ashkun-only *vo
-    ("13969", "Kt", "jut"): "n3779",  # 'panther': leopard branch, not 'brown speckled goat'
-}
-
 # Internal row layout (positional): the graph columns (Origin_ID/Relation/Variant_Of/
 # Borrowed_From) exist only in memory — the serialized forms.csv drops them in favour of
 # cldf/edges.csv (see edges_build.py), keeping Redirect plus a node Status column.
@@ -83,19 +75,6 @@ def load_borrowings(path="data/borrowings.csv"):
         return {}
     with open(path, encoding="utf-8") as f:
         return {r["Borrower_ID"]: r["Source_ID"] for r in csv.DictReader(f)}
-
-
-def load_nuristani_cognates(path="data/nuristani_cognates.csv"):
-    with open(path, encoding="utf-8") as f:
-        return list(csv.DictReader(f))
-
-
-def load_nuristani_borrowings(path="data/nuristani_borrowings.csv"):
-    with open(path, encoding="utf-8") as f:
-        return {
-            row["Proto_Nuristani_ID"]: row["Indo_Aryan_ID"]
-            for row in csv.DictReader(f)
-        }
 
 
 def load_strand_oia_redirects(path="data/strand_oia_redirects.csv"):
@@ -128,187 +107,6 @@ def apply_borrowings(rows, borrowings):
             row[16] = source
             applied += 1
     return applied
-
-
-def apply_nuristani_cognates(rows, cognates):
-    origins = {}
-    for cognate in cognates:
-        ancestor = cognate["Ancestor_ID"]
-        for child in (cognate["Proto_Nuristani_ID"], cognate["Indo_Aryan_ID"]):
-            existing = origins.setdefault(child, ancestor)
-            if existing != ancestor:
-                raise ValueError(f"Conflicting Proto-Indo-Iranian ancestors for {child}: {existing}, {ancestor}")
-
-    by_id = {row[0]: row for row in rows}
-    expected = set(origins) | {r["Ancestor_ID"] for r in cognates}
-    missing = sorted(expected - set(by_id))
-    if missing:
-        raise ValueError(f"Unknown Nuristani cognate IDs: {missing}")
-    for child, ancestor in origins.items():
-        row = by_id[child]
-        if row[11] and row[11] != ancestor:
-            raise ValueError(f"Cannot attach {child} to {ancestor}; it already has origin {row[11]}")
-        row[11] = ancestor
-        row[13] = "reflex"
-    return len(origins)
-
-
-def comparable_nuristani_form(value):
-    """A deliberately light comparison key for routing duplicate Nuristani reflexes.
-
-    This is not used to infer cognacy: ``nuristani_cognates.csv`` already supplies that reviewed
-    relationship.  It only distinguishes between two or more Strand PNur branches already linked
-    to the same Indo-Aryan entry.  Diacritics and the house/source affricate spellings are folded so
-    that, for example, CDIAL ``dost`` can be compared with Strand ``dost``/``dast`` evidence.
-    """
-    value = re.sub(r"<[^>]+>", "", value)
-    value = unicodedata.normalize("NFD", value.lower())
-    value = "".join(char for char in value if not unicodedata.combining(char))
-    value = value.translate(str.maketrans({
-        "ʦ": "ts", "ʣ": "dz", "č": "c", "ǰ": "j", "š": "s", "ž": "z",
-        "ṣ": "s", "ṭ": "t", "ḍ": "d", "ṇ": "n", "ṅ": "n", "ñ": "n",
-        "ṛ": "r", "ṝ": "r", "ḷ": "l", "ʹ": "", "′": "", "˜": "",
-    }))
-    return re.sub(r"[^a-z]", "", value)
-
-
-def nuristani_form_similarity(left, right):
-    left, right = comparable_nuristani_form(left), comparable_nuristani_form(right)
-    return SequenceMatcher(None, left, right).ratio() if left and right else 0
-
-
-def _pnur_order(entry_id):
-    match = re.fullmatch(r"n(\d+)", entry_id)
-    return (0, int(match.group(1))) if match else (1, entry_id)
-
-
-def reparent_cdial_nuristani_reflexes(rows, cognates, language_clades):
-    """Move CDIAL's inherited Nuristani reflexes from IA heads to Strand PNur heads.
-
-    Turner groups Nuristani forms inside Indo-Aryan entries.  For the reviewed cases where Strand
-    instead reconstructs inheritance from Proto-Indo-Iranian through Proto-Nuristani, keeping those
-    forms on the Indo-Aryan sibling duplicates the Nuristani branch and asserts the wrong immediate
-    ancestor.  A single PNur sibling is unambiguous.  When several PNur reconstructions share one IA
-    comparison, route each CDIAL form using, in order: a Strand descendant in the same language,
-    similarity to that same-language evidence, similarity to any evidence in the branch, and
-    similarity to the PNur head.  Source order is only the final deterministic tie-break.
-
-    Only direct ``reflex`` rows cited to CDIAL are changed.  Variants remain transitively attached
-    to their lemma, and PNur heads that Strand places beneath OIA are handled separately as loans.
-    """
-    by_id = {row[0]: row for row in rows}
-    pnur_by_ia = defaultdict(list)
-    for cognate in cognates:
-        ia = cognate["Indo_Aryan_ID"]
-        pnur = cognate["Proto_Nuristani_ID"]
-        if pnur not in pnur_by_ia[ia]:
-            pnur_by_ia[ia].append(pnur)
-
-    # Snapshot the Strand branches before any CDIAL form is moved into them, so routing one form
-    # cannot influence the score of the next.
-    pnur_ids = {pnur for candidates in pnur_by_ia.values() for pnur in candidates}
-    branch_rows = defaultdict(list)
-    for row in rows:
-        if row[11] in pnur_ids:
-            branch_rows[row[11]].append(row)
-
-    moved = single = multi = overridden = tied = 0
-    for row in rows:
-        ia = row[11]
-        candidates = pnur_by_ia.get(ia, ())
-        if (
-            not candidates
-            or row[13] != "reflex"
-            or row[1] == "PNur"
-            or language_clades.get(row[1]) != "Nuristani"
-            or "CDIAL" not in row[10].split(";")
-        ):
-            continue
-
-        if len(candidates) == 1:
-            target = candidates[0]
-            single += 1
-        else:
-            override_key = (ia, row[1], unicodedata.normalize("NFC", row[2]))
-            target = NURISTANI_REFLEX_ROUTE_OVERRIDES.get(override_key)
-            if target is not None:
-                if target not in candidates:
-                    raise ValueError(
-                        f"Nuristani reflex override {override_key} targets unrelated PNur {target}"
-                    )
-                overridden += 1
-                multi += 1
-                row[11] = target
-                moved += 1
-                continue
-
-            ranked = []
-            for pnur in candidates:
-                branch = branch_rows[pnur]
-                same_language = [child for child in branch if child[1] == row[1]]
-                score = (
-                    bool(same_language),
-                    max(
-                        (nuristani_form_similarity(row[2], child[2]) for child in same_language),
-                        default=0,
-                    ),
-                    max(
-                        (nuristani_form_similarity(row[2], child[2]) for child in branch),
-                        default=0,
-                    ),
-                    nuristani_form_similarity(row[2], by_id[pnur][2]),
-                )
-                ranked.append((score, pnur))
-            best_score = max(score for score, _ in ranked)
-            winners = [pnur for score, pnur in ranked if score == best_score]
-            if len(winners) > 1:
-                tied += 1
-            target = min(winners, key=_pnur_order)
-            multi += 1
-
-        row[11] = target
-        moved += 1
-
-    return {
-        "moved": moved,
-        "single": single,
-        "multi": multi,
-        "overridden": overridden,
-        "tied": tied,
-    }
-
-
-def apply_nuristani_borrowings(rows, borrowings):
-    """Attach each borrowed PNur head to IA without flattening its reflex branch.
-
-    The Indo-Aryan source is the parent of the reconstructed Proto-Nuristani
-    entry. Individual Nuristani attestations remain reflexes of that PNur
-    entry, which preserves the intermediate historical analysis in the graph.
-    """
-    by_id = {row[0]: row for row in rows}
-    missing = sorted(
-        (nuristani, indo_aryan)
-        for nuristani, indo_aryan in borrowings.items()
-        if nuristani not in by_id or indo_aryan not in by_id
-    )
-    if missing:
-        raise ValueError(f"Unknown Nuristani borrowing IDs: {missing}")
-
-    descendants = 0
-    for nuristani, indo_aryan in borrowings.items():
-        branch = [
-            row
-            for row in rows
-            if row[0] == nuristani or row[11] == nuristani
-        ]
-        if not branch:
-            raise ValueError(f"No Nuristani borrowing branch found for {nuristani}")
-        head = by_id[nuristani]
-        head[11] = indo_aryan
-        head[13] = "borrowed"
-        head[16] = indo_aryan
-        descendants += len(branch) - 1
-    return len(borrowings), descendants
 
 
 def apply_strand_oia_redirects(etyma_rows, reflex_rows, redirects):
@@ -709,14 +507,19 @@ def main():
     # Preserve rich importers' immutable source-local record keys outside the unified CLDF table.
     # assign_form_ids.py consumes this sidecar after graph construction; keeping it separate avoids
     # exposing ingestion bookkeeping as linguistic columns in the published wordlist.
+    meta = source_meta.load()
+
     def stable_source_key(row):
         key = row.get("Entry_Key", "")
         if not key:
             return ""
-        if (row.get("Source") or "").split("[", 1)[0] == "bashir2023":
+        dialect_prefix = meta.flag(
+            (row.get("Source") or "").split("[", 1)[0], "identity", "key_dialect_prefix"
+        )
+        if dialect_prefix:
             dialects = sorted(
                 tag for tag in (row.get("Tags") or "").split()
-                if tag.startswith("dialect:Kho:")
+                if tag.startswith(dialect_prefix)
             )
             if dialects:
                 return key + ":attestation:" + "|".join(dialects)
@@ -733,7 +536,9 @@ def main():
         # entry once per proposed etymon; those need a future edge-model migration, so retain their
         # existing registry identity instead of pretending the shared entry key is node-unique.
         if stable_source_key(row) and (
-            (row.get("Source") or "").split("[", 1)[0] == "bashir2023"
+            meta.flag(
+                (row.get("Source") or "").split("[", 1)[0], "identity", "keyed_duplicates_allowed"
+            )
             or source_key_counts[stable_source_key(row)] == 1
         )
     ]
@@ -1248,16 +1053,7 @@ def main():
 
     n_curated_borrowings = apply_borrowings(etyma_rows, load_borrowings())
     language_clades = load_language_clades()
-    nuristani_cognates = load_nuristani_cognates()
-    n_nuristani_reflexes = apply_nuristani_cognates(
-        etyma_rows + reflex_rows, nuristani_cognates
-    )
-    nuristani_reparented = reparent_cdial_nuristani_reflexes(
-        etyma_rows + reflex_rows, nuristani_cognates, language_clades
-    )
-    n_nuristani_borrowings, n_nuristani_borrowed_descendants = apply_nuristani_borrowings(
-        etyma_rows + reflex_rows, load_nuristani_borrowings()
-    )
+    # Nuristani/CDIAL grouping runs after durable IDs and editorial overlays.
     burushaski_catalog = load_burushaski_catalog()
     burushaski_rows, burushaski_source_keys = apply_burushaski_catalog(
         etyma_rows + reflex_rows + ext_entry_rows,
@@ -1362,19 +1158,11 @@ def main():
         f"+ {n_altern} alternate-etymology links + {n_borrowed} borrowed "
         f"+ {n_crossed} contamination-tagged + {n_lone} lone nodes; "
         f"applied {n_curated_borrowings} curated cross-dictionary borrowings; "
-        f"attached {n_nuristani_reflexes} PNur/IA nodes as Proto-II reflexes; "
-        f"moved {nuristani_reparented['moved']} CDIAL Nuristani reflexes from IA to PNur "
-        f"({nuristani_reparented['single']} unambiguous, "
-        f"{nuristani_reparented['multi']} routed among multiple PNur heads, "
-        f"{nuristani_reparented['overridden']} manually disambiguated, "
-        f"{nuristani_reparented['tied']} unresolved score ties); "
         f"built {len(burushaski_rows)} Proto-Burushaski entries from "
         f"{sum(len(row['Evidence_Keys'].split('|')) for row in burushaski_catalog)} dialect attestations; "
         f"projected {len(burushaski_comparison_audit)} Burushaski attestations into "
         f"{len(burushaski_comparison_rows)} Proto-Burushaski/CDIAL sets with "
         f"{len(burushaski_comparisons)} source-attributed comparisons; "
-        f"applied {n_nuristani_borrowings} Strand OIA loan branches "
-        f"while preserving {n_nuristani_borrowed_descendants} PNur descendant reflexes; "
         f"merged {n_strand_oia_redirects} duplicate Strand OIA heads and redirected "
         f"{n_strand_oia_references} references; "
         f"marked {n_cross_family_borrowings} inferred cross-family borrowings; "

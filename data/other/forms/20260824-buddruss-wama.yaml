@@ -1,0 +1,10 @@
+file: 20260824-buddruss-wama.csv
+defaults:
+  transcription:
+  - profile: buddruss-grangali
+sources:
+  buddruss-wama2006:
+    transcription:
+    - profile: buddruss-wama
+    identity:
+      dedupe_by_entry_key: true

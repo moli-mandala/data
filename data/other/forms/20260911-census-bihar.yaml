@@ -1,0 +1,15 @@
+file: 20260911-census-bihar.csv
+defaults:
+  transcription:
+  - profile: census-ipa
+  identity:
+    legacy_ids: stem
+    append_order: 9
+sources:
+  census2020bihar:
+    transcription:
+    - profile: census-ascii
+    identity:
+      dedupe_by_entry_key: true
+    forms:
+      split_alternates: false

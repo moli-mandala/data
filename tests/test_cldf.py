@@ -137,90 +137,45 @@ def test_curated_borrowings_are_applied():
         assert forms[borrower]["Borrowed_From"] == source
 
 
-def test_nuristani_cognates_are_proto_indo_iranian_reflexes():
-    with open("data/nuristani_cognates.csv", encoding="utf-8") as f:
-        cognates = list(csv.DictReader(f))
+def test_nuristani_reconstructions_and_attestations_share_cdial_groups():
+    from nuristani_grouping import GROUP_TAG, read_catalog
+    groups, redirects = read_catalog()
     forms = unified_forms()
-    edges = derivation_like_edges()
     aliases = form_aliases()
 
-    assert cognates
-    assert len({r["Proto_Nuristani_ID"] for r in cognates}) == len(cognates)
-    for row in cognates:
-        ancestor = aliases.get(row["Ancestor_ID"], row["Ancestor_ID"])
-        nuristani = aliases.get(row["Proto_Nuristani_ID"], row["Proto_Nuristani_ID"])
-        indo_aryan = aliases.get(row["Indo_Aryan_ID"], row["Indo_Aryan_ID"])
-        assert forms[ancestor]["Language_ID"] == "Indo-ir"
-        assert forms[ancestor]["Form"] == ""
-        assert forms[nuristani]["Language_ID"] == "PNur"
-        assert forms[indo_aryan]["Language_ID"] == "Indo-Aryan"
-        assert forms[indo_aryan]["Relation"] != "borrowed"
-        assert forms[nuristani]["Origin_ID"] == ancestor
-        assert forms[nuristani]["Relation"] == "reflex"
-        assert forms[indo_aryan]["Origin_ID"] == ancestor
-        assert forms[indo_aryan]["Relation"] == "reflex"
-        assert (nuristani, ancestor) not in edges
-        assert (indo_aryan, ancestor) not in edges
+    def canonical(i):
+        i = aliases.get(i, i)
+        while forms[i]["Redirect"]:
+            i = forms[i]["Redirect"]
+        return i
 
-
-def test_cdial_nuristani_reflexes_are_rehomed_under_strand_pnur():
-    with open("data/nuristani_cognates.csv", encoding="utf-8") as f:
-        cognates = list(csv.DictReader(f))
+    mapped = {aliases.get(child, child): canonical(parent) for child, parent in groups.items()}
+    for child, parent in mapped.items():
+        assert forms[child]["Origin_ID"] == parent
+        assert forms[child]["Relation"] == "reflex"
+        assert GROUP_TAG in forms[child]["Tags"].split()
+    for legacy, parent in redirects.items():
+        stub = forms[aliases.get(legacy, legacy)]
+        assert stub["Redirect"] == canonical(parent)
+        assert not stub["Origin_ID"]
     with open("cldf/languages.csv", encoding="utf-8") as f:
-        clades = {row["ID"]: row["Clade"] for row in csv.DictReader(f)}
-    forms = unified_forms()
-    aliases = form_aliases()
-
-    pnur_to_ia = {
-        aliases.get(row["Proto_Nuristani_ID"], row["Proto_Nuristani_ID"]):
-        aliases.get(row["Indo_Aryan_ID"], row["Indo_Aryan_ID"])
-        for row in cognates
-    }
-    inherited_ia = set(pnur_to_ia.values())
-    cdial_nuristani = [
-        row for row in forms.values()
-        if (
-            row["Language_ID"] != "PNur"
-            and clades.get(row["Language_ID"]) == "Nuristani"
-            and "CDIAL" in row["Source"].split(";")
-            and row["Relation"] == "reflex"
-        )
-    ]
-    residue = [row for row in cdial_nuristani if row["Origin_ID"] in inherited_ia]
-    rehomed = [row for row in cdial_nuristani if row["Origin_ID"] in pnur_to_ia]
-
-    assert residue == []
-    assert len(rehomed) == 1109
-
-    # CDIAL 14024 hásta previously duplicated these forms on its IA branch.  Strand's inherited
-    # PNur *dast branch is now their immediate parent; the derived *dast-sta head receives none.
-    dast = aliases["n2939"]
-    dast_sta = aliases["n2940"]
-    hand_reflexes = [
-        row for row in rehomed
-        if row["Origin_ID"] in {dast, dast_sta}
-    ]
-    assert len(hand_reflexes) == 8
-    assert {row["Origin_ID"] for row in hand_reflexes} == {dast}
-    assert any(row["Language_ID"] == "Ash" and row["Form"] == "dost" for row in hand_reflexes)
-    assert any(row["Language_ID"] == "Pr" and row["Form"] == "lust" for row in hand_reflexes)
-
-    # The otherwise score-tied Katë form follows the Wg/Kata/Kam *voi branch rather than Ashkun
-    # *vo; keeping this explicit prevents source-row order from changing the analysis.
-    voi = aliases["n3371"]
-    kate_down = [
-        row for row in rehomed
-        if row["Language_ID"] == "Kt" and row["Form"] == "ū" and row["Gloss"] == "down"
-    ]
-    assert len(kate_down) == 1
-    assert kate_down[0]["Origin_ID"] == voi
+        nuristani = {r["ID"] for r in csv.DictReader(f) if r["Clade"] == "Nuristani"}
+    assert not any(r["Language_ID"] in nuristani and r["Origin_ID"] in mapped for r in forms.values())
+    # Both source spellings for 'twelve' and their reconstruction occur together.
+    twelve = [forms[i] for i in ("f_bkkvy5zkipp54", "f_rn5radwepaqv2")]
+    assert {r["Origin_ID"] for r in twelve[:2]} == {"6658"}
 
 
-def test_strand_indo_aryan_loans_are_nuristani_borrowings():
+def test_former_strand_loan_branches_are_neutral_cdial_groups():
     with open("data/nuristani_borrowings.csv", encoding="utf-8") as f:
         borrowings = list(csv.DictReader(f))
     forms = unified_forms()
     aliases = form_aliases()
+
+    descendants_by_head = {}
+    for legacy, canonical in aliases.items():
+        if legacy.startswith("n") and "-" in legacy and canonical in forms:
+            descendants_by_head.setdefault(legacy.rsplit("-", 1)[0], set()).add(canonical)
 
     assert borrowings
     assert len({r["Proto_Nuristani_ID"] for r in borrowings}) == len(borrowings)
@@ -228,21 +183,20 @@ def test_strand_indo_aryan_loans_are_nuristani_borrowings():
         legacy_nuristani = row["Proto_Nuristani_ID"]
         nuristani = aliases.get(legacy_nuristani, legacy_nuristani)
         indo_aryan = aliases.get(row["Indo_Aryan_ID"], row["Indo_Aryan_ID"])
-        descendants = [
-            forms[canonical] for legacy, canonical in aliases.items()
-            if legacy.startswith(f"{legacy_nuristani}-") and canonical in forms
-        ]
+        while forms[indo_aryan]["Redirect"]:
+            indo_aryan = forms[indo_aryan]["Redirect"]
+        descendants = [forms[i] for i in descendants_by_head.get(legacy_nuristani, ())]
         assert forms[nuristani]["Language_ID"] == "PNur"
         assert forms[indo_aryan]["Language_ID"] == "Indo-Aryan"
         assert forms[nuristani]["Origin_ID"] == indo_aryan
-        assert forms[nuristani]["Relation"] == "borrowed"
-        assert forms[nuristani]["Borrowed_From"] == indo_aryan
+        assert forms[nuristani]["Relation"] == "reflex"
+        assert not forms[nuristani]["Borrowed_From"]
         assert descendants
         descendant_ids = {form["ID"] for form in descendants}
         assert any(form["Relation"] == "reflex" for form in descendants)
         assert all(form["Relation"] in {"reflex", "variant"} for form in descendants)
         assert all(
-            form["Origin_ID"] == nuristani
+            form["Origin_ID"] == indo_aryan
             if form["Relation"] == "reflex"
             else form["Origin_ID"] in descendant_ids
             for form in descendants
@@ -263,9 +217,11 @@ def test_marked_origins_are_borrowings_with_valid_targets():
             or "semi-tatsama" in row["Tags"].split()
         )
     ]
-    assert len(marked) == 597
+    # Markodi's 36 Indo-Aryan loans moved from `~`-marked Parameter_IDs into the per-source
+    # etymology sidecar (Kind=borrowed), so they no longer carry the marker-derived tag.
+    assert len(marked) == 561
     assert sum({"marked", "borrowing"} <= set(row["Tags"].split()) for row in marked) == 549
-    assert sum("semi-tatsama" in row["Tags"].split() for row in marked) == 48
+    assert sum("semi-tatsama" in row["Tags"].split() for row in marked) == 12
     assert sum(row["Language_ID"] == "Ni" for row in marked) == 138
     for row in marked:
         assert row["Origin_ID"] in forms
@@ -484,6 +440,7 @@ def test_ocr_provenance_is_explicit_on_references():
         "shackle-auto",
         "southworth2005m",
         "srinivasa",
+        "seligmann1911vedda",
     }
     assert set(row["OCR"] for row in references.values()) <= {"Yes", "No"}
 
@@ -563,7 +520,7 @@ def test_duplicate_strand_oia_heads_are_merged_into_cdial():
         assert row["Redirect"] not in redirects
 
 
-def test_strand_borrowing_heads_align_to_ia_and_descendants_to_pnur():
+def test_nuristani_group_heads_and_attestations_align_to_cdial():
     with open("data/nuristani_borrowings.csv", encoding="utf-8") as f:
         borrowings = {
             row["Proto_Nuristani_ID"]: row["Indo_Aryan_ID"]
@@ -571,10 +528,13 @@ def test_strand_borrowing_heads_align_to_ia_and_descendants_to_pnur():
         }
     forms = unified_forms()
     aliases = form_aliases()
-    borrowings = {
-        aliases.get(nuristani, nuristani): aliases.get(indo_aryan, indo_aryan)
-        for nuristani, indo_aryan in borrowings.items()
-    }
+    def canonical(i):
+        i = aliases.get(i, i)
+        while forms[i]["Redirect"]:
+            i = forms[i]["Redirect"]
+        return i
+
+    borrowings = {aliases.get(n, n): canonical(ia) for n, ia in borrowings.items()}
 
     wanted = set(borrowings)
     wanted.update(
@@ -590,4 +550,4 @@ def test_strand_borrowing_heads_align_to_ia_and_descendants_to_pnur():
     for nuristani, indo_aryan in borrowings.items():
         assert aligned_origins[nuristani] == {indo_aryan}
     for descendant in wanted - set(borrowings):
-        assert aligned_origins[descendant] == {aliases.get("n2571", "n2571")}
+        assert aligned_origins[descendant] == {borrowings[aliases.get("n2571", "n2571")]}

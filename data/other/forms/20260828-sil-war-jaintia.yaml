@@ -1,0 +1,13 @@
+file: 20260828-sil-war-jaintia.csv
+defaults:
+  importer:
+    commands:
+    - - data/other/forms/raw_data/sil_war_jaintia_2007/import_war_jaintia.py
+sources:
+  brightbill-kim-kim2007warjaintia:
+    transcription:
+    - profile: sil-bangladesh
+    identity:
+      dedupe_by_entry_key: true
+    notes:
+      audit_only: true

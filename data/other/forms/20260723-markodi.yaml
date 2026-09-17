@@ -1,0 +1,17 @@
+file: 20260723-markodi.csv
+defaults:
+  transcription:
+  - profile: markodi
+  gloss:
+    grammar_tags: true
+  importer:
+    commands:
+    - - data/other/forms/raw_data/markodi.py
+    note: Needs the working PDF tmp/pdfs/JLSR2025-005.pdf. Etymologies live in etymologies/20260723-markodi.csv,
+      not in the importer.
+sources:
+  canvin2025:
+    identity:
+      dedupe_by_entry_key: true
+    reference:
+      editor: Aryaman Arora; OpenAI Codex; Claude Opus 4.8

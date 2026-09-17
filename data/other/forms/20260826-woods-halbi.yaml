@@ -1,0 +1,14 @@
+file: 20260826-woods-halbi.csv
+defaults:
+  importer:
+    commands:
+    - - data/other/forms/raw_data/woods_halbi.py
+      - --offline
+      - --install
+    note: Rebuilds from the pinned page cache. Pass --refresh (with curl_cffi) to re-crawl Webonary.
+sources:
+  woods2019halbi:
+    transcription:
+    - profile: halbi-woods
+    identity:
+      dedupe_by_entry_key: true

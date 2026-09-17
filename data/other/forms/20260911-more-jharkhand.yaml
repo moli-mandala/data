@@ -1,0 +1,13 @@
+file: 20260911-more-jharkhand.csv
+defaults:
+  transcription:
+  - profile: more-ascii
+  identity:
+    legacy_ids: stem
+    append_order: 13
+sources:
+  census2023jharkhand:
+    transcription:
+    - profile: more-ascii
+    identity:
+      dedupe_by_entry_key: true

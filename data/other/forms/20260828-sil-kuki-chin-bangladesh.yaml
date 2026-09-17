@@ -1,0 +1,13 @@
+file: 20260828-sil-kuki-chin-bangladesh.csv
+defaults:
+  importer:
+    commands:
+    - - data/other/forms/raw_data/sil_kuki_chin_bangladesh_2011/import_kuki_chin.py
+sources:
+  kim-roy-sangma2011kukichin:
+    transcription:
+    - profile: sil-bangladesh
+    identity:
+      dedupe_by_entry_key: true
+    notes:
+      audit_only: true

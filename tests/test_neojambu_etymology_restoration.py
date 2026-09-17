@@ -55,12 +55,13 @@ def test_legacy_etymology_restoration_is_installed_and_audited():
 
 
 def test_restored_assignments_survive_in_the_compiled_edge_graph():
-    with (ROOT / "data/etymology-assignments.csv").open(encoding="utf-8") as handle:
-        restored = {
-            (row["Form_ID"], row["Etymon_ID"])
-            for row in csv.DictReader(handle)
-            if row["Notes"] == "Restored from legacy NeoJambu origin_lemma_id"
-        }
+    from etymology_assignments import read_assignments
+
+    restored = {
+        (row["Form_ID"], row["Etymon_ID"])
+        for row in read_assignments()
+        if row["Notes"] == "Restored from legacy NeoJambu origin_lemma_id"
+    }
     # Chhattisgarhi and Rajasthani now keep their curated Parameter_ID values in the
     # installed survey CSVs.  Their duplicate, positional-ID restoration records were
     # deliberately removed; Kannauji and the other durable-ID restorations remain here.

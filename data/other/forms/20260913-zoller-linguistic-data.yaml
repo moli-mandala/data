@@ -1,0 +1,15 @@
+file: 20260913-zoller-linguistic-data.csv
+defaults:
+  transcription:
+  - profile: zoller
+  identity:
+    legacy_ids: stem
+    append_order: 24
+sources:
+  zoller2023:
+    transcription:
+    - profile: zoller-2023
+    identity:
+      dedupe_by_entry_key: true
+    forms:
+      split_alternates: false

@@ -37,7 +37,8 @@ def test_saved_graph():
  b=os.environ.get('SHINAIC_BUILD')
  if not b:pytest.skip('Requires isolated compiled build')
  E={(r['Child_ID'],r['Parent_ID'],r['Kind'],r['Rank'],r['Pos']) for r in csv.DictReader(open(Path(b)/'cldf/edges.csv'))}
- A=list(csv.DictReader((ROOT/'data/etymology-assignments.csv').open()))
+ from etymology_assignments import read_assignments
+ A=read_assignments()
  for l,batch in [('Sv','010'),('Ush','001'),('Phal','001')]:
   m=json.loads((ROOT/f'curation/etymology-lab/{l}/batch-{batch}.json').read_text())
   assert m['status']=='saved'

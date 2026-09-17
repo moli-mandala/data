@@ -1,0 +1,15 @@
+file: 20260911-bajjika.csv
+defaults:
+  transcription:
+  - profile: bajjika
+  identity:
+    legacy_ids: stem
+    append_order: 4
+sources:
+  regmi2014bajjika:
+    transcription:
+    - profile: bajjika
+    identity:
+      dedupe_by_entry_key: true
+    forms:
+      split_alternates: false

@@ -1,0 +1,13 @@
+file: 20260911-sdml.csv
+defaults:
+  transcription:
+  - profile: sdml
+  identity:
+    legacy_ids: stem
+    append_order: 3
+sources:
+  sdml2026:
+    transcription:
+    - profile: sdml
+    identity:
+      dedupe_by_entry_key: true

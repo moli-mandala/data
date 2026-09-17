@@ -1,0 +1,12 @@
+file: 20260813-weinreich-domaaki.csv
+defaults:
+  transcription:
+  - profile: weinreich-domaaki
+sources:
+  weinreich2008:
+    transcription:
+    - profile: weinreich-domaaki
+    identity:
+      dedupe_by_entry_key: true
+    reference:
+      etymology_provenance: source

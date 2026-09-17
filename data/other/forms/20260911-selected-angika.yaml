@@ -1,0 +1,13 @@
+file: 20260911-selected-angika.csv
+defaults:
+  identity:
+    legacy_ids: stem
+    append_order: 18
+sources:
+  regmi2017angika:
+    transcription:
+    - profile: selected-angika
+    identity:
+      dedupe_by_entry_key: true
+    forms:
+      split_alternates: false

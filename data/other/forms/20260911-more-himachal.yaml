@@ -1,0 +1,18 @@
+file: 20260911-more-himachal.csv
+defaults:
+  transcription:
+  - profile: more-ascii
+  identity:
+    legacy_ids: stem
+    append_order: 14
+sources:
+  census2023himachal:
+    transcription:
+    - profile: more-ipa
+      languages:
+      - sirm
+      - pan
+      - dog
+    - profile: more-ascii
+    identity:
+      dedupe_by_entry_key: true

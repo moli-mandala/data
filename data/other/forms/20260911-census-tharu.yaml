@@ -1,0 +1,15 @@
+file: 20260911-census-tharu.csv
+defaults:
+  transcription:
+  - profile: census-ipa
+  identity:
+    legacy_ids: stem
+    append_order: 12
+sources:
+  mitchell-eichentopf2013tharu:
+    transcription:
+    - profile: census-ipa
+    identity:
+      dedupe_by_entry_key: true
+    forms:
+      split_alternates: false

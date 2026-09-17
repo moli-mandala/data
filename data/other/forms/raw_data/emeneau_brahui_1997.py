@@ -484,7 +484,7 @@ def main() -> None:
                     "reconciliation": str(RECONCILIATION_OUTPUT.relative_to(ROOT)),
                 },
                 "graph_overlay": {
-                    "path": "data/etymology-assignments.csv",
+                    "path": "data/other/forms/etymologies/20260819-emeneau-brahui-1997.csv",
                     "assignment_count": 11,
                     "status": "installed after stable source keys were resolved by the first CLDF build",
                 },

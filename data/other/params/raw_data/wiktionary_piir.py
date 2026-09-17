@@ -548,11 +548,26 @@ def gloss_tokens(gloss: str) -> set:
 # --------------------------------------------------------------------------
 
 SOURCE_KEY = "wiktionary-piir"
+
+
+def _overlay():
+    """The repo-root etymology sidecar module (this importer lives four directories down)."""
+    import importlib
+    import sys
+    from pathlib import Path
+
+    root = str(Path(__file__).resolve().parents[3])
+    if root not in sys.path:
+        sys.path.insert(0, root)
+    return importlib.import_module("etymology_assignments")
+
+
 STAMP = "20260827"
 PARAMS_OUT = f"data/other/params/{STAMP}-wiktionary-piir.csv"
 TEXTS_OUT = f"data/other/entry_texts/{STAMP}-wiktionary-piir.csv"
 AUDIT_OUT = f"data/other/params/raw_data/{STAMP}-wiktionary-piir-audit.csv"
-ASSIGNMENTS_FILE = "data/etymology-assignments.csv"
+# Curated etymology rows live in per-source sidecars (see etymology_assignments.py at the repo
+# root); this source's own rows have CDIAL children and land in data/cdial/etymologies.csv.
 FORMS = "cldf/forms.csv"
 EDGES = "cldf/edges.csv"
 MERGES = "cldf/merges.csv"
@@ -643,17 +658,15 @@ def _cdial_index():
             rank1[row["Child_ID"]] = row["Parent_ID"]
     # cldf/edges.csv is a build product: an interrupted or pre-overlay build would
     # under-report the accepted etymologies and this source would then claim rank-1
-    # slots that belong to curated links. data/etymology-assignments.csv is the
-    # durable record of those decisions, so it is unioned in and wins.
-    if os.path.exists(ASSIGNMENTS_FILE):
-        with open(ASSIGNMENTS_FILE, encoding="utf-8", newline="") as handle:
-            for row in _csv.DictReader(handle):
-                etymon = row.get("Etymon_ID", "")
-                if row.get("Rank") != "1" or etymon.startswith("wiir-") or etymon in ours:
-                    continue
-                if (row.get("Status") or "accepted").strip().lower() != "accepted":
-                    continue
-                rank1.setdefault(row["Form_ID"], etymon)
+    # slots that belong to curated links. The etymology sidecars are the durable
+    # record of those decisions, so they are unioned in and win.
+    for row in _overlay().read_assignments():
+        etymon = row.get("Etymon_ID", "")
+        if row.get("Rank") != "1" or etymon.startswith("wiir-") or etymon in ours:
+            continue
+        if (row.get("Status") or "accepted").strip().lower() != "accepted":
+            continue
+        rank1.setdefault(row["Form_ID"], etymon)
     return heads, gloss, redirect, rank1, language
 
 
@@ -1086,21 +1099,15 @@ def install():
     Overlay rows are keyed on ``Etymon_ID``, so re-running replaces this source's
     own rows and leaves every other curated decision untouched.
     """
-    import csv as _csv
-
     stats, params_rows, assignments, audit_rows = build()
-    fields = ["Form_ID", "Etymon_ID", "Kind", "Rank", "Status", "Source", "Notes"]
     # `Etymon_ID` is rewritten from `wiir-…` to a durable `f_…` by the first
     # assign_form_ids.py run, so it cannot identify this source's own rows on a
     # rebuild. The citation string can: it survives the rewrite untouched.
-    with open(ASSIGNMENTS_FILE, encoding="utf-8", newline="") as handle:
-        kept = [
-            r for r in _csv.DictReader(handle)
-            if f"{SOURCE_KEY}[" not in (r.get("Source") or "")
-            and not r["Etymon_ID"].startswith("wiir-")
-        ]
-    with open(ASSIGNMENTS_FILE, "w", encoding="utf-8", newline="") as handle:
-        writer = _csv.DictWriter(handle, fieldnames=fields, lineterminator="\n")
-        writer.writeheader()
-        writer.writerows(kept + assignments)
+    overlay = _overlay()
+    kept = [
+        r for r in overlay.read_assignments()
+        if f"{SOURCE_KEY}[" not in (r.get("Source") or "")
+        and not r["Etymon_ID"].startswith("wiir-")
+    ]
+    overlay.write_assignments(kept + assignments, overlay.SidecarResolver())
     return stats, params_rows, assignments, audit_rows

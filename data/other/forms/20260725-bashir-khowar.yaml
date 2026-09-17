@@ -1,0 +1,16 @@
+file: 20260725-bashir-khowar.csv
+defaults:
+  transcription:
+  - profile: khowar
+    language_prefixes:
+    - Kho
+  - convert: false
+sources:
+  bashir2023:
+    reference:
+      etymology_provenance: source
+    notes:
+      audit_only: true
+    identity:
+      key_dialect_prefix: 'dialect:Kho:'
+      keyed_duplicates_allowed: true

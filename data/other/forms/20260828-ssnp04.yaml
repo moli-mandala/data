@@ -1,0 +1,12 @@
+file: 20260828-ssnp04.csv
+defaults:
+  importer:
+    commands:
+    - - data/other/forms/raw_data/ssnp04_1992/extract_ssnp04.py
+    - - data/other/forms/raw_data/ssnp04_1992/import_ssnp04.py
+sources:
+  hallberg1992pashto:
+    transcription:
+    - profile: ssnp
+    notes:
+      audit_only: true

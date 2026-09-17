@@ -1,0 +1,13 @@
+file: 20260914-sheth.csv
+defaults:
+  identity:
+    legacy_ids: stem
+    append_order: 28
+sources:
+  sheth1923:
+    transcription:
+    - profile: sheth-ddsa
+    identity:
+      dedupe_by_entry_key: true
+    forms:
+      split_alternates: false

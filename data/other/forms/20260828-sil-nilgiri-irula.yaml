@@ -1,0 +1,17 @@
+file: 20260828-sil-nilgiri-irula.csv
+defaults:
+  importer:
+    commands:
+    - - data/other/forms/raw_data/sil_irula_2018/import_irula.py
+      - --install
+    note: Rebuilds the checked Irula transcription and complete audit from the pinned OCR scaffold.
+sources:
+  ernest-oleary-kelsall2018irula:
+    transcription:
+    - profile: sil-irula
+    identity:
+      dedupe_by_entry_key: true
+    forms:
+      split_alternates: false
+    notes:
+      audit_only: true

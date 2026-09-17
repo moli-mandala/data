@@ -16,59 +16,13 @@ from __future__ import annotations
 import re
 
 
-# These imports use Notes exclusively for reproducible extraction/audit metadata.  Page, item,
-# site, and upstream record identifiers already live in their CLDF citation locators, except for
-# the three legacy sources normalized specially below.
-AUDIT_ONLY_NOTE_SOURCES = frozenset(
-    {
-        "abraham-daimary2021amrikarbi",
-        "abraham-sako-kinny-zeliang2018",
-        "adimathara2019mudhili",
-        "bashir2023",
-        "behera2021desia",
-        "behera2022korwakodaku",
-        "blair-george2012kondadora",
-        "blair2021kullu",
-        "blairetal2012kurumba",
-        "brightbill-kim-kim2007warjaintia",
-        "brightbill-turner2007dogri",
-        "chamberlain-chamberlain2019lahul",
-        "devagnanavaram-et-al2021koya",
-        "eichentopf-mitchell2020kochila",
-        "ernest-oleary-kelsall2018irula",
-        "hallberg1992pashto",
-        "hugoniot-polster-ahmad-rajan2023easterngujari",
-        "john2008jaunsari",
-        "khadgi-marcuson-marcuson2021mustang",
-        "kim-ahmad-kim-sangma2011hajong",
-        "kim-ahmad-kim-sangma2011kochbd",
-        "kim-ahmad-kim-sangma2011kurux",
-        "kim-kim-ahmad-sangma2010santali-cluster",
-        "kim-kim-sangma-ahmad2011tripura",
-        "kim-kim-sangma2012garo",
-        "kim-kim2008bishnupriya",
-        "kim-kim2008meitei",
-        "kim-roy-sangma2011kukichin",
-        "koshy2022bagheli",
-        "lothers-lothers2010pahari",
-        "mathew-chamberlain2022bonda-didayi",
-        "mathew2022bonda-further",
-        "shackle-auto",
-        "smith2021pyangaun",
-        "srinivasa",
-        "stahl2021korku",
-        "varghese-john-samuel2009malvi",
-        "varghese-mathew2015idukki",
-        "varghese2015palakkad",
-        "varghesekumar2015noira",
-        "varkey-vunnamatla2018bareli",
-        "vunnamatla-john-samuvel2012nimadi",
-        "webster",
-        "webster2024haryanvi",
-        "zoller2005",
-        "zubair",
-    }
-)
+# Sources whose Notes are exclusively reproducible extraction/audit metadata declare
+# ``notes.audit_only: true`` in their YAML settings (source_meta.py).  Page, item, site, and
+# upstream record identifiers already live in their CLDF citation locators, except for the three
+# legacy sources normalized specially below.
+import source_meta
+
+AUDIT_ONLY_NOTE_SOURCES = source_meta.load().keys_where("notes", "audit_only")
 
 
 def citation_keys(citation: str) -> tuple[str, ...]:

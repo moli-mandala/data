@@ -1,0 +1,11 @@
+file: 20260828-sil-lahul.csv
+defaults:
+  importer:
+    commands:
+    - - data/other/forms/raw_data/sil_lahul_2019/import_lahul.py
+sources:
+  chamberlain-chamberlain2019lahul:
+    transcription:
+    - profile: sil-lahul
+    notes:
+      audit_only: true

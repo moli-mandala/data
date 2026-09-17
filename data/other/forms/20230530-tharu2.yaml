@@ -1,0 +1,18 @@
+file: 20230530-tharu2.csv
+defaults:
+  transcription:
+  - profile: sil-western-tharu
+  gloss:
+    grammar_tags: true
+sources:
+  webster:
+    transcription:
+    - profile: sil-western-tharu
+    identity:
+      dedupe_by_entry_key: true
+    forms:
+      split_alternates: false
+    reference:
+      etymology_provenance: jambu
+    notes:
+      audit_only: true

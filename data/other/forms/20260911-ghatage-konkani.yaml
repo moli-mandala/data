@@ -1,0 +1,13 @@
+file: 20260911-ghatage-konkani.csv
+defaults:
+  transcription:
+  - profile: ghatage
+  identity:
+    legacy_ids: stem
+    append_order: 1
+sources:
+  ghatage-konkani1963:
+    transcription:
+    - profile: ghatage-western
+    identity:
+      dedupe_by_entry_key: true

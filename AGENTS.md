@@ -22,15 +22,22 @@ complete until the applicable focused tests, full data build, and browser-databa
 Pure source discovery does not activate the installation/build portion until the user selects a
 source for ingestion.
 
-## The pipeline (run order matters; it is NOT in the Makefile)
+## The pipeline (run order matters)
 
-The `Makefile` only knows `make_cldf.py`. The current pipeline is a sequence of scripts you run
-**by hand, in this order**:
+`make all` runs stages 2–7 below in order (then `make_refs.py` and the manual-survey etymology
+test gate). Per-source importers, including `make markodi`, are separate targets and are never run
+by `make all`. The stages, for when you need to run one by hand:
 
 1. `data/cdial/parse.py` — regenerate `data/cdial/cdial.csv` from the CDIAL HTML.
    **Only when CDIAL parsing logic changes.** Slow; caches to `data/cdial/cdial.pickle`.
    (DEDR has a parallel `data/dedr/parse.py` + `get_params.py`.)
 2. `make_cldf.py` — raw `data/**` → `cldf/{forms,parameters,languages,references}.csv`.
+   Per-source settings (transcription profile, dedupe-by-key, alternates splitting, excluded
+   languages, gloss handling, audit-only notes, reference metadata) come from the YAML beside each
+   source CSV (`data/other/forms/<stem>.yaml`; dictionaries: `data/<dict>/source.yaml`) via
+   `source_meta.py`. Do not add `if source_key == …` branches; add a YAML key. Validate with
+   `uv run python source_meta.py`. Appended-source ordering is declared there too
+   (`defaults.identity.legacy_ids: stem` + `append_order`).
 3. `link_refs.py` — resolve `<smallcaps>` cross-references in the descriptions to
    `<a data-entry="ID">` markers; also touches `derivation.csv` / `merges.csv`. Idempotent.
 4. `unify_cldf.py` — fold `parameters.csv` (etyma) + `forms.csv` (reflexes) into ONE unified
@@ -38,13 +45,30 @@ The `Makefile` only knows `make_cldf.py`. The current pipeline is a sequence of 
    forms, and merges.
 5. `assign_form_ids.py` — replace order-dependent IDs on attested forms with persistent `f_…` IDs,
    rewrite graph references, preserve old IDs in `cldf/form-id-aliases.csv`, and apply the curated
-   `data/etymology-assignments.csv` overlay. Its committed `data/form-identities.csv` registry is
+   etymology sidecars (`etymology_assignments.py`: one `data/other/forms/etymologies/<source>.csv`
+   per lexical source, plus `data/<dictionary>/etymologies.csv` for dictionary-entry children).
+   Rows in the `_pending.csv` inbox are filed under the source that owns their child on every
+   build. Its committed `data/form-identities.csv` registry is
    identity state: do not regenerate or discard it during a re-ingestion. Rich importers' immutable
    `Entry_Key` values reach this pass through generated `cldf/form-source-keys.csv`.
 6. `align.py` — phonetic final-origin→child alignments → `cldf/alignments.csv`. Approximate/computed
    layer, tuned for Indo-Aryan. Reads unified `Origin_ID` relationships, so it **must run last**.
 
 Then, in `../jambu-static`: `npm run db:transform` reads `../data/cldf` directly.
+
+## Importers, scratch, and research passes
+
+- Regenerate a source CSV with `make ingest SOURCE=<stem>`; `make sources` lists the sources whose
+  YAML declares `defaults.importer.commands`. Do not add per-source Makefile targets.
+- Validate an etymology-lab research pass with `make check-pass DECISIONS=<json> PASS=<name>` and
+  save it with `make save-pass DECISIONS=<json> PASS=<name> NOTE="…" AUTH="…"` (both wrap
+  `etymology_lab.py`). The helper performs the historical `*_save.py` checks, files rows into the
+  per-source sidecars, and records sha256 ledgers instead of copying overlay files into `backups/`.
+  Do not write new `*_save.py` scripts.
+- `make check-sources` validates the per-source YAML settings and sidecar placement; run it before
+  a build and after saving a pass.
+- `make clean-scratch` at the workspace root shows (and with `FORCE=1` deletes) task scratch under
+  `tmp/`, `data/tmp/`, and stale `.dbwork` builds; `make prune-lfs` drops superseded LFS blobs.
 
 ## Run incantations
 
@@ -79,6 +103,10 @@ guards with `is_html = header.lstrip().startswith("<")`, but don't rely on that;
   (`Note` carries `review:*` markers for auto-classified ones). `Pos` orders compound members
   on `component` edges. A variant's rank-1 edge points at its **true target** (parent or
   sibling); the etymon is reached transitively — there is no separate Variant_Of pointer.
+- Nuristani/CDIAL editorial groupings use the existing rank-1 `reflex` slot with
+  `grouping:cdial` in the edge Note and `etymology-group` in Tags. They assert neither inheritance
+  nor borrowing. `nuristani_grouping.py`, called after curated assignments, keeps mapped PNur
+  reconstructions and attestations as siblings under CDIAL; obsolete blank PII nodes redirect.
 - Source-attributed article comparisons that do not assert an accepted ancestry relation live in
   `cldf/comparisons.csv`, never `edges.csv` or ordinary reflex rows. Their direction and confidence
   describe the printed claim and may remain explicitly undetermined/low.
@@ -86,8 +114,12 @@ guards with `is_html = header.lstrip().startswith("<")`, but don't rely on that;
   serialization boundary (classification rules + invariants live there, cross-checked by
   `tests/test_edges.py` via `unify_cldf.py --legacy-cols`). Read edges with `edges_util.py`
   (`rank1_map`, `effective_etymon`, `aligned_parent`, `attach_legacy_graph` shim).
-- `data/etymology-assignments.csv` overlay is keyed `(Form_ID, Etymon_ID)` with
-  `Kind/Rank/Status/Source/Notes`; `Status=rejected` deletes a generated hypothesis edge.
+- The etymology overlay is keyed `(Form_ID, Etymon_ID)` with `Kind/Rank/Status/Source/Notes/Pos`
+  and split into per-source sidecars next to the source CSVs (`data/other/forms/etymologies/`);
+  a row belongs to the sidecar of the source that owns its *child*. Read them with
+  `etymology_assignments.read_assignments()`, write with `write_assignments(rows, SidecarResolver())`,
+  and audit placement with `uv run python etymology_assignments.py check`. `Status=rejected` deletes a
+  generated hypothesis edge.
 - `make_cldf.py` merge-joins are **order-deterministic** (dict.fromkeys) — set-based joins
   once re-minted ~650 durable f_ ids per rebuild; `reconcile_form_ids.py` repaired the
   historic drift once and is a no-op on current builds.

@@ -1,0 +1,15 @@
+file: 20260911-census-tamil-nadu.csv
+defaults:
+  transcription:
+  - profile: census-ipa
+  identity:
+    legacy_ids: stem
+    append_order: 7
+sources:
+  census2023tamilnadu:
+    transcription:
+    - profile: census-ipa
+    identity:
+      dedupe_by_entry_key: true
+    forms:
+      split_alternates: false

@@ -1,0 +1,15 @@
+file: 20260911-census-danuwar.csv
+defaults:
+  transcription:
+  - profile: census-ipa
+  identity:
+    legacy_ids: stem
+    append_order: 11
+sources:
+  regmi-thakur2016danuwar:
+    transcription:
+    - profile: census-danuwar
+    identity:
+      dedupe_by_entry_key: true
+    forms:
+      split_alternates: false

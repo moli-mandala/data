@@ -3,7 +3,7 @@
 
 The legacy web database stored manual ancestry directly in ``lemmas.origin_lemma_id``.  Those
 relations were not part of the raw lexical CSVs and were therefore omitted when Jambu moved to
-``data/etymology-assignments.csv``.  This importer resolves legacy IDs through the durable alias
+the per-source etymology sidecars (``etymology_assignments.py``).  This importer resolves legacy IDs through the durable alias
 table, falls back to conservative exact source/language/form matching, and installs only links
 whose child currently has no accepted etymology.  Modern accepted links are never overwritten.
 
@@ -32,12 +32,13 @@ from pathlib import Path
 from typing import NamedTuple
 
 
+import etymology_assignments as overlay
+
 ROOT = Path(__file__).resolve().parent
 DEFAULT_DB = ROOT.parents[1] / "neojambu" / "data.db"
 FORMS = ROOT / "cldf/forms.csv"
 EDGES = ROOT / "cldf/edges.csv"
 ALIASES = ROOT / "cldf/form-id-aliases.csv"
-ASSIGNMENTS = ROOT / "data/etymology-assignments.csv"
 AUDIT = ROOT / "data/other/forms/raw_data/20260820-neojambu-etymology-restoration-audit.csv.gz"
 SUMMARY = ROOT / "data/other/forms/raw_data/20260820-neojambu-etymology-restoration-summary.json"
 
@@ -426,7 +427,7 @@ def main() -> None:
     if not args.db.exists():
         raise FileNotFoundError(f"legacy NeoJambu database not found: {args.db}")
 
-    existing = read_csv(ASSIGNMENTS)
+    existing = overlay.read_assignments()
     restored_existing = {
         (row["Form_ID"], row["Etymon_ID"])
         for row in existing
@@ -482,7 +483,9 @@ def main() -> None:
             row["Form_ID"], int(row.get("Rank") or 1), row["Etymon_ID"], row.get("Kind", "")
         )
     )
-    write_csv(ASSIGNMENTS, ASSIGNMENT_FIELDS, assignments)
+    # Restored rows are filed under the source that owns each child (CDIAL section forms go to
+    # data/cdial/etymologies.csv); curated rows return to the sidecar they came from.
+    overlay.write_assignments(assignments, overlay.SidecarResolver())
     write_gzip_csv(AUDIT, AUDIT_FIELDS, audit_rows)
     SUMMARY.write_text(json.dumps(summary, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     print(f"installed {len(additions):,} assignments; wrote {len(audit_rows):,} audit rows")

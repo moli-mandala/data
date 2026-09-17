@@ -1,0 +1,15 @@
+file: 20260911-dravlex.csv
+defaults:
+  transcription:
+  - profile: ia-dravidian-ipa
+  identity:
+    legacy_ids: stem
+    append_order: 6
+sources:
+  kolipakam2018dravlex:
+    transcription:
+    - profile: ia-dravidian-ipa
+    identity:
+      dedupe_by_entry_key: true
+    forms:
+      split_alternates: false

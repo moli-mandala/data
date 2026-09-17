@@ -14,6 +14,7 @@ import re
 import sys
 from collections import defaultdict
 from pathlib import Path
+import source_meta
 
 import pybtex
 import pybtex.database
@@ -28,78 +29,23 @@ FORM_INPUTS = [
 ]
 
 DEFAULT_JAMBU_EDITOR = "Aryaman Arora"
+# Per-source reference metadata (editor credit, OCR provenance, etymology provenance) is declared
+# in each source's YAML settings under ``reference``; see source_meta.py.
+_META = source_meta.load()
 JAMBU_EDITOR_OVERRIDES = {
-    "fritz": "Adam Farris",
-    "backstrom1992": "Aryaman Arora; OpenAI Codex",
-    "lehr": "Aryaman Arora; OpenAI Codex",
-    "schmidt": "Aryaman Arora; OpenAI Codex",
-    "canvin2025": "Aryaman Arora; OpenAI Codex; Claude Opus 4.8",
-    "zoller2005": "OpenAI Codex",
-    "bhaskararao-toda2025": "OpenAI Codex",
+    key: block["reference"]["editor"]
+    for key, block in _META.sources.items() if block.get("reference", {}).get("editor")
 }
-OCR_OVERRIDES = {
-    "berger-auto",
-    "dbia",
-}
+OCR_OVERRIDES = set(_META.keys_where("reference", "ocr"))
 
 # Reference-level summary of who supplied the etymological analysis represented in Jambu.
 # ``source-mapped`` means that the publication supplies the etymon/analysis and Jambu only
 # resolves it to a canonical CDIAL/DEDR entry.  Keep this deliberately conservative: an absent
 # value is displayed as "Not recorded" rather than silently crediting either the author or us.
 ETYMOLOGY_PROVENANCE_OVERRIDES = {
-    "CDIAL": "source",
-    "dedr": "source",
-    "dbia": "source-mapped",
-    "bashir2023": "source",
-    "berger": "source",
-    "berger-auto": "source",
-    "liljegren": "source",
-    "trail-cooper1999": "source",
-    "shackle": "source",
-    "shackle-auto": "source",
-    "toulmin": "source",
-    "schmidt": "source",
-    "southworth2005m": "source",
-    "southworth2006proto": "source",
-    "krishnamurti": "source",
-    "pfeiffer2018": "source",
-    "rau": "source",
-    "kobayashi2022": "source",
-    "weinreich2008": "source",
-    "emeneau1997brahui": "source",
-    "burrow-emeneau1972den1": "source",
-    "burrow-emeneau1972den2": "source",
-    "patyal2": "source",
-    "patyal3": "source",
-    "patyal4": "source",
-    "patyal5": "source",
-    "nured": "source-mapped",
-    "gandhari": "source-mapped",
-    "kullui-org": "source-mapped",
-    "andersen1990": "source-mapped",
-    "paranavitana": "source-mapped",
-    "zoller2005": "source-mapped",
-    "tulpule1999": "source-mapped",
-    "backstrom1992": "jambu",
-    "boehm": "jambu",
-    "bundeli": "jambu",
-    "chattisgarhi": "jambu",
-    "kannauji": "jambu",
-    "mewari": "jambu",
-    "hadothi": "jambu",
-    "dhundari": "jambu",
-    "marwari": "jambu",
-    "mewati": "jambu",
-    "bagri": "jambu",
-    "gill": "jambu",
-    "kholosi": "jambu",
-    "lehr": "jambu",
-    "maimani": "jambu",
-    "srinivasa": "jambu",
-    "thari": "jambu",
-    "webster": "jambu",
-    "zubair": "jambu",
-    "strand": "mixed",
+    key: block["reference"]["etymology_provenance"]
+    for key, block in _META.sources.items()
+    if block.get("reference", {}).get("etymology_provenance")
 }
 
 ETYMOLOGY_PROVENANCE_VALUES = {"source", "source-mapped", "jambu", "mixed", "none", ""}
@@ -147,6 +93,8 @@ def used_references(path="cldf/forms.csv"):
 
 def create_short_ref(entry):
     """Short key like 'T1962' from first-author initial + year (deduped downstream)."""
+    if entry.fields.get("shorthand", "").strip():
+        return entry.fields["shorthand"].strip()
     year = entry.fields.get("year")
     authors = entry.persons.get("author", [])
     if year == "n.d.":

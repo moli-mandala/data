@@ -1,0 +1,13 @@
+file: 20260914-sil-ho.csv
+defaults:
+  identity:
+    legacy_ids: stem
+    append_order: 25
+sources:
+  varenkamp2024ho:
+    transcription:
+    - profile: sil-ho
+    identity:
+      dedupe_by_entry_key: true
+    forms:
+      split_alternates: false

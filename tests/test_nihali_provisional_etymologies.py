@@ -4,10 +4,28 @@ import re
 from collections import Counter
 from pathlib import Path
 
+from etymology_assignments import read_assignments
+
 
 ROOT = Path(__file__).parents[1]
 ANALYSIS = ROOT / "data/other/analysis/nihali-provisional"
 MARKER = "Nihali provisional 2026"
+
+# The reviewed September 2026 cohort is fixed to these five lexical sources.
+# Later attestations (e.g. Zoller 2023) do not acquire its provisional hypotheses.
+STUDY_SOURCES = {
+    "nagaraja2014", "mundlay1996", "bhattacharya1957",
+    "varghesekumar2015noira", "konow1906",
+}
+
+
+def is_study_attestation(row):
+    sources = {part.split("[", 1)[0].strip() for part in row["Source"].split(";")}
+    return (
+        row["Language_ID"] == "Ni" and row["Status"] != "entry"
+        and not row["ID"].startswith("nihprov-")
+        and bool(sources & STUDY_SOURCES)
+    )
 
 
 def dicts(path):
@@ -19,8 +37,7 @@ def test_audit_covers_every_attested_nihali_record_once():
     forms = dicts(ROOT / "cldf/forms.csv")
     targets = [
         row for row in forms
-        if row["Language_ID"] == "Ni" and row["Status"] != "entry"
-        and not row["ID"].startswith("nihprov-")
+        if is_study_attestation(row)
     ]
     audit = dicts(ANALYSIS / "nihali-provisional-etymology-audit.csv")
     summary = json.loads((ANALYSIS / "nihali-provisional-etymology-summary.json").read_text())
@@ -125,7 +142,7 @@ def test_resolved_numbered_source_citations_route_to_the_cited_head():
     audit = dicts(ANALYSIS / "nihali-provisional-etymology-audit.csv")
     assignments = {
         row["Form_ID"]: row["Etymon_ID"]
-        for row in dicts(ROOT / "data/etymology-assignments.csv")
+        for row in read_assignments()
         if row["Rank"] == "1" and row["Status"] == "accepted"
     }
     upstream_only = set()
@@ -973,7 +990,7 @@ def test_residue_score_sensitivity_does_not_bypass_component_gates():
 def test_generated_overlay_is_complete_and_explicitly_provisional():
     summary = json.loads((ANALYSIS / "nihali-provisional-etymology-summary.json").read_text())
     assignments = [
-        row for row in dicts(ROOT / "data/etymology-assignments.csv")
+        row for row in read_assignments()
         if row["Notes"].startswith(MARKER)
     ]
     params = list(csv.reader(
@@ -997,8 +1014,7 @@ def test_built_graph_has_a_rank_one_hypothesis_for_every_target():
     forms = dicts(ROOT / "cldf/forms.csv")
     target_ids = {
         row["ID"] for row in forms
-        if row["Language_ID"] == "Ni" and row["Status"] != "entry"
-        and not row["ID"].startswith("nihprov-")
+        if is_study_attestation(row)
     }
     edges = dicts(ROOT / "cldf/edges.csv")
     rank1 = Counter(

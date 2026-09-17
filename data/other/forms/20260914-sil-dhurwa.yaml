@@ -1,0 +1,13 @@
+file: 20260914-sil-dhurwa.csv
+defaults:
+  identity:
+    legacy_ids: stem
+    append_order: 27
+sources:
+  josephmichael2021dhurwa:
+    transcription:
+    - profile: sil-dhurwa-2021
+    identity:
+      dedupe_by_entry_key: true
+    forms:
+      split_alternates: false

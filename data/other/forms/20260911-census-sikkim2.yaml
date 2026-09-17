@@ -1,0 +1,15 @@
+file: 20260911-census-sikkim2.csv
+defaults:
+  transcription:
+  - profile: census-ipa
+  identity:
+    legacy_ids: stem
+    append_order: 10
+sources:
+  census2012sikkim2:
+    transcription:
+    - profile: census-ascii
+    identity:
+      dedupe_by_entry_key: true
+    forms:
+      split_alternates: false

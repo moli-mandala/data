@@ -1,0 +1,13 @@
+file: 20260828-sil-mudhili-gadaba.csv
+defaults:
+  importer:
+    commands:
+    - - data/other/forms/raw_data/sil_gadaba_2019/import_gadaba.py
+sources:
+  adimathara2019mudhili:
+    transcription:
+    - profile: sil-gadaba
+    identity:
+      dedupe_by_entry_key: true
+    notes:
+      audit_only: true

@@ -33,6 +33,7 @@ from assign_form_ids import (
     read_rows,
     write_rows,
 )
+import etymology_assignments as overlay
 
 ROOT = Path(__file__).resolve().parent
 
@@ -111,7 +112,8 @@ def main() -> None:
                      ("ID", "Origin_ID", "Redirect", "Variant_Of", "Borrowed_From"), mapping)
     n += rewrite_csv(ROOT / "cldf/derivation.csv", ("Child_ID", "Parent_ID"), mapping)
     n += rewrite_csv(ALIASES, ("Legacy_ID", "Form_ID"), mapping)
-    n += rewrite_csv(ROOT / "data/etymology-assignments.csv", ("Form_ID", "Etymon_ID"), mapping)
+    for sidecar in overlay.assignment_files():
+        n += rewrite_csv(sidecar, ("Form_ID", "Etymon_ID"), mapping)
 
     # registry: drop the minted rows, restore the historic rows with refreshed fingerprints
     _, registry = read_rows(REGISTRY)

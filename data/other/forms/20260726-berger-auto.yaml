@@ -1,0 +1,15 @@
+file: 20260726-berger-auto.csv
+defaults:
+  transcription:
+  - profile: berger
+  importer:
+    commands:
+    - - data/other/forms/raw_data/berger_cleanup.py
+      - --install
+sources:
+  berger-auto:
+    identity:
+      dedupe_by_entry_key: true
+    reference:
+      ocr: true
+      etymology_provenance: source

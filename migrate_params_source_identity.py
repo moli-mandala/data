@@ -7,7 +7,7 @@ dropped it, so Strand's Proto-Indo-Iranian and Persian etyma reached
 ``Source`` is part of the durable-ID fingerprint, so on the next build every one
 of those rows fingerprints differently, fails to match its registry entry, and is
 re-minted with a fresh ``f_`` id.  That silently breaks the curated
-``data/etymology-assignments.csv`` rows that point at them.
+etymology sidecar rows (``etymology_assignments.py``) that point at them.
 
 This script updates the affected registry rows *in place* — same ``Form_ID``, same
 ``Legacy_ID`` — to the source and fingerprint the corrected build produces.  It

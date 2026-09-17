@@ -56,8 +56,10 @@ borrowings and redirected entries are aligned to the same ancestors displayed by
 Attested forms receive persistent opaque IDs in `assign_form_ids.py`. The committed
 `data/form-identities.csv` registry keeps those IDs stable across input reordering, etymological
 reassignment, and transcription-profile changes; legacy generated IDs remain resolvable through
-`cldf/form-id-aliases.csv`. Manual etymology links are stored separately in
-`data/etymology-assignments.csv` and applied against persistent form IDs.
+`cldf/form-id-aliases.csv`. Manual etymology links are stored next to the source they annotate,
+one `data/other/forms/etymologies/<source>.csv` per lexical source (dictionary-entry children go
+to `data/<dictionary>/etymologies.csv`), and applied against persistent form IDs. See
+`etymology_assignments.py`.
 
 For raw data files that list lemmata, the columns are:
 1. Language ID
@@ -105,39 +107,50 @@ CDIAL cross-reference chains cite both the article that prints the Burushaski it
 comparison endpoint. Backstrom contributes lexical attestations, but its legacy Jambu targets are
 explicitly marked as editorial links rather than claims made by the wordlist source.
 
-The current migration accounts for 654 direct Burushaski claim attestations in 418 PBr grouping
+The earlier compiled migration snapshot accounts for 654 direct Burushaski claim attestations in 418 PBr grouping
 sets and 426 source-attributed comparisons: 431 attestations from the cleaned Berger OCR ingest, 39 from the
 hand-entered Berger tranche, 162 from Backstrom, and 22 printed by CDIAL. The complete decision log
 is `data/burushaski-indo-aryan-comparisons-audit.csv`; the deterministic, source-stratified checked
 sample is `data/burushaski-indo-aryan-comparisons-sample.csv`.
+These are historical build counts; the September Berger source repairs, including withheld
+tentative manual links, await the consolidated full rebuild.
 
 Berger's complete Burushaski--German dictionary (1998, printed pp. 9--486) is reconstructed by
 `data/other/forms/raw_data/berger_cleanup.py` from the 300 dpi cache produced by `berger.py`.
-Entry boundaries come from the four columns' line indentation rather than unstable OCR paragraph
-blocks. The importer restores printed p. 9, excludes the weaker of the duplicate pp. 94--95 scans,
-and derives locators on both sides of that duplication. German source definitions remain in
-`20260828-berger-audit.csv.gz`; the installed English glosses are pinned in
-`20260828-berger-editorial.csv`. Automated OCR and translations carry explicit review markers,
-while direct Turner links exclude hedged `vgl.`, `zu`, and question-marked comparisons. The
-identity crosswalk, deterministic source-image sample, and complete scope/count manifest sit beside
-those files under `data/other/forms/raw_data/`. A separately tagged compatibility tranche retains
-597 legacy Berger evidence keys already used by reviewed cognate sets; these rows preserve graph
-continuity but are not counted as newly reparsed scan coverage.
+The September repair measures the four column margins on each scan and uses native PDF fonts
+to distinguish lexical text from German definitions and grammatical labels. Surviving keys are
+anchored to their original physical lines; retired parsing fragments have reviewed source-key
+redirects. The original August crosswalk, translations and audit remain historical evidence.
+Current source notes, full grammar, class/number tags, attested paradigms, checked corrections,
+translation hashes, per-record audit, unresolved references and counts live in
+`data/other/forms/raw_data/berger_2026/`. Questionable accepted cognate bindings use explicitly
+tagged original evidence instead of uncertain article matches. OCR and machine translation
+remain unreviewed outside the recorded image checks, including the old cache's conflation of
+`g` and `ġ`. See [the repair report](source_checklists/20260914-berger-repair.md) for validation
+and deferred integration gates. `make berger` uses the canonical repair importer; a run without
+`--install` is read-only unless an explicit proposal output directory is supplied.
 
-Proto-Nuristani cognate links are curated in `data/nuristani_cognates.csv`. Each row joins a
-Proto-Nuristani entry and an Indo-Aryan entry through a shared, intentionally blank
-Proto-Indo-Iranian `Ancestor_ID`; `make_cldf.py` creates those placeholder nodes and
-`unify_cldf.py` attaches both descendants as reflexes. Because CDIAL classifies Nuristani inside
-Indo-Aryan, its Nuristani reflexes on these inherited entries are reparented from the Indo-Aryan
-sibling to Strand's Proto-Nuristani head. When several reviewed PNur heads correspond to one CDIAL
-entry, the build routes each CDIAL reflex using same-language Strand evidence before normalized
-form similarity. Cases without a sufficiently clear parsed Indo-Aryan match are recorded in
-`data/nuristani_cognates_uncertain.csv`.
-When Strand places a Proto-Nuristani head beneath OIA rather than PAr, the reviewed donor is stored
-in `data/nuristani_borrowings.csv`; `unify_cldf.py` attaches the PNur head directly to that
-Indo-Aryan entry with `Relation=borrowed`. Its attested descendants are flattened beside the PNur
-head as direct borrowings from the same Indo-Aryan donor, avoiding a claim that borrowing occurred
-specifically at the Proto-Nuristani stage.
+Nuristani evidence uses CDIAL entries as editorial grouping points wherever a correspondence is
+available. `nuristani_grouping.py` runs at the end of `assign_form_ids.py`, after durable IDs and
+curated assignments. Proto-Nuristani reconstructions and their former attested descendants become
+siblings directly beneath the corresponding Indo-Aryan entry. Attested variants retain their
+lexical variant target. The grouping leaves inheritance from PII versus borrowing from IA
+undetermined; its schema-compatible `reflex` edge has `grouping:cdial` in `Note`, and the form has
+an `etymology-group` tag which the site renders as “Grouped with.”
+
+`data/nuristani_cognates.csv` and `data/nuristani_borrowings.csv` retain the previously reviewed
+correspondences and historical source interpretations; they no longer generate contrasting trees.
+`data/nuristani_cdial_groups.csv` supplies additional CDIAL correspondences for Strand's standalone
+PII heads, with the matching inventory in `data/other/analysis/nuristani-grouping/`. Real
+reconstructions retain their text and source attribution as grouped siblings. The old blank
+`pii-*` grouping nodes become redirects to CDIAL, preserving public IDs without retaining artificial
+ancestry. Heads without a resolved CDIAL correspondence keep their existing groups.
+
+For an existing built checkout, `python nuristani_grouping.py --install` applies the same pass with
+bounded form loading, validates all graph endpoints and accepted ancestry cycles, checks
+idempotence, and regenerates only alignments whose targets changed. It keeps pre-migration files
+and a change audit in `tmp/nuristani-cdial-grouping/`. This is a graph migration, not a re-ingestion
+or automatic merger of independent source records.
 
 Finally, some sources have unusual orthographies that we need to convert to the Sāmapriya-n system. The profiles used by the `segments` library to do so are stored as `conversions/*.txt`; these give substitution rules for orthographic normalisation.
 
@@ -1310,3 +1323,50 @@ browser database.
 The Kannada–English Etymological Dictionary (2018 second / first electronic edition, CC BY-NC 4.0) is imported from the canonical ILCAA PDF using glyph IDs and page/font structure, not OCR. Its 28,797 anchors yield 31,250 lexical units plus separately keyed printed variants, paradigms and donors. Native spelling, romanization and IPA remain distinct. Arsenault and Abraham’s Muduga author-preprint Tables 3–19 and glossed prose contribute 91 examples and 18 phonetic realizations (109 rows); the underlying 1,100-word field corpus is not included. The preprint was available as indexed text rather than a downloadable PDF.
 
 Reproduce with `uv run python data/other/forms/raw_data/keed_2018.py --install` and `uv run python data/other/forms/raw_data/muduga_2022.py --install`. The sibling directories contain pinned evidence, complete coverage/record audits and reference/dialect maps. Installed files are `20260912-keed.csv` and `20260912-muduga.csv`. Only source-supported, validated DEDR/CDIAL links and explicit donor/variant/derivation relations are accepted; uncertain or unavailable references remain visible. See [the full review](source_checklists/20260912-keed-muduga-review.md) for transcription, exclusions, unresolved cases and validation.
+
+## Ho, Bhumij and Dhurwa survey integration (14 September 2026)
+
+`20260914-sil-ho.csv`, `20260914-sil-bhumij.csv`, and `20260914-sil-dhurwa.csv`
+add 2,900 Ho, 2,100 Bhumij and 809 Dhurwa records to shared lexical inputs.
+They reuse canonical parents `ho`, `mu` and `Parji`, register 28 source sites,
+and supply explicit conversion profiles and complete references. Frozen manual
+ledgers and all exclusions are preserved. Ho item 93 is corrected to *tail*;
+Bhumij source qualifiers and Udala's uncertain language label remain explicit.
+
+All 5,809 records survive source-only compilation and graph checks, with 46
+source-defined variant edges. The full shared CLDF build and full test suite
+remain deferred under the workspace resource policy; the app database has not
+been refreshed. See the [integration review](source_checklists/20260914-manual-surveys-review.md).
+
+## Sheth's Prakrit–Hindi dictionary (14 September 2026)
+
+`data/other/forms/20260914-sheth.csv` installs 42,118 structurally resolved
+headword/sense/alternate records from the pinned DDSA transcription of Sheth's
+*Paia-sadda-mahannavo* (1923–1928). All 41,638 digital articles are audited;
+31,501 articles are represented and 10,137 unresolved articles remain audit-only.
+The import preserves native Devanagari and source romanization, scoped grammar,
+See references and etymological prose, and explicit alternate-head relationships.
+It reuses Prakrit, Apabhramsha and Ashokan Prakrit plus existing literary dialects.
+The Sanskrit follow-up adds 26,191 source-local counterpart records and 27,484
+source-attributed lexical comparison links; no automatic ancestry is asserted.
+Verified quoted-source tags now cover 30,147 records, with full work names registered
+for frontend filters and pills. Unknown codes and exact locators remain audited.
+
+This is a partial dictionary integration. Embedded compounds/paradigms, damaged
+heads, remaining auxiliary reference identities and printed-supplement reconciliation remain
+open. The full CLDF build and full suite are deferred under the workspace resource
+policy; no browser refresh is included. See the [source package](data/other/forms/raw_data/sheth_2026/README.md)
+and [integration review](source_checklists/20260914-sheth-review.md).
+
+## Yoshioka's Eastern Burushaski vocabulary (14 September 2026)
+
+The corrected Yoshioka source has 4,886 rows from 3,233 entries/senses. Native
+Gentium font decoding replaces OCR repair, restores indented entries, and preserves
+grammatical labels, noun classes, full plural forms and suffix paradigms. Exact
+cross-references become variant links. Follow-up image review resolves 56 of 62
+forms in the 57 previously unresolved index entries; six ambiguous forms
+retain their candidate senses without an accepted edge. Historical
+entry keys and aliases preserve existing identities. Source-local validation passes;
+the full CLDF build, full suite and browser refresh remain pending. See the
+[source package](data/other/forms/raw_data/yoshioka_2026/README.md) and
+[review](source_checklists/20260914-yoshioka-review.md).

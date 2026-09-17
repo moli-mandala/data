@@ -1,0 +1,11 @@
+file: 20220913-kalkoti.csv
+defaults:
+  transcription:
+  - profile: house
+    exclude_languages:
+    - Kalk
+  - profile: kalkoti
+sources:
+  kalkoti:
+    identity:
+      dedupe_by_entry_key: true

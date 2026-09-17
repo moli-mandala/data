@@ -1,0 +1,14 @@
+file: 20260726-paranavitana-sigiri.csv
+defaults:
+  transcription:
+  - profile: house
+  gloss:
+    grammar_tags: true
+  importer:
+    commands:
+    - - data/other/forms/raw_data/sigiri.py
+      - --install
+sources:
+  paranavitana:
+    reference:
+      etymology_provenance: source-mapped

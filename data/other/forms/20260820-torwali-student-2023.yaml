@@ -1,0 +1,10 @@
+file: 20260820-torwali-student-2023.csv
+defaults:
+  transcription:
+  - profile: torwali-student
+sources:
+  torwali2023student:
+    transcription:
+    - profile: torwali-student
+    identity:
+      dedupe_by_entry_key: true
