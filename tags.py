@@ -17,6 +17,7 @@ tokens, so prose is never mangled. Extracts:
 import html
 import os
 import re
+from sheth_sources import SOURCE_TAGS as SHETH_SOURCE_TAGS
 
 from dialects import dialect_tag
 
@@ -43,7 +44,7 @@ GRAMMATICAL_TAGS = {
     "1sg", "2sg", "3sg", "1pl", "2pl", "3pl",
     "pret", "aor", "opt", "perfect", "stem",
     "derived", "loanword", "diminutive", "intensive", "compound", "not-reconstructed",
-    "alternate", "replaced", "reduplicated", "sound-variant",
+    "alternate", "replaced", "reduplicated", "sound-variant", "etymology-group",
     "figurative", "pejorative", "poetic", "dialectal", "archaic", "modern", "colloquial", "vulgar",
     # Language-specific inflection / noun classes
     "weak", "middle", "strong", "Tamil-class-1", "Tamil-class-2", "Tamil-class-3",
@@ -182,7 +183,7 @@ def _load_works():
 _WORK_ABBREVS, WORK_ERA = _load_works()
 # Attestation sources keep their case (RV, MBh, ŚBr). The dotted per-language dialect codes
 # (S., F., Mu.) are excluded because _classify strips only a single trailing dot then matches.
-SOURCE_TAGS = _EXTRA_SOURCES | _WORK_ABBREVS
+SOURCE_TAGS = _EXTRA_SOURCES | _WORK_ABBREVS | SHETH_SOURCE_TAGS
 ERA_TAGS = set(WORK_ERA.values())
 
 _ENTITY = re.compile(r"&(?:[a-zA-Z][a-zA-Z0-9]*|#\d+|#x[0-9a-fA-F]+);")

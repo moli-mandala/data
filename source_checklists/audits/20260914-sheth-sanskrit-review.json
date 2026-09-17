@@ -1,0 +1,53 @@
+{
+  "counts": {
+    "articles": 41638,
+    "sanskrit-equivalent": 27484,
+    "sanskrit_rows": 26191,
+    "comparisons": 27484,
+    "absent": 6866,
+    "desya-label": 6583,
+    "excluded_articles": 10137,
+    "unresolved-expression": 1032,
+    "compound-analysis": 140,
+    "unresolved-transcription": 13
+  },
+  "seed": 20260915,
+  "historical_ancestry_links": 0,
+  "policy": "Exact source-local Sanskrit equivalents; no fuzzy CDIAL matching or automatic ancestry",
+  "input_sha256": "6900104dc3d678eb2f29e16f060439c31b3a92234e2fcb572ce94b467da35fd3",
+  "review": {
+    "seed": 20260915,
+    "sample_size": 20,
+    "material_extraction_errors": 0,
+    "method": "Reviewed all sampled raw articles against Sanskrit spelling, transliteration, sense scope and variant sharing. Source spellings such as द्बन्द्व are preserved, not silently emended.",
+    "deliberate_cases": [
+      "bare दे is a deśya label, not a Sanskrit form",
+      "दे. with a full Sanskrit equivalent retains deśya context",
+      "compound sums and abbreviated alternants stay unresolved",
+      "source-local sense keys prevent cross-sense conflation",
+      "Hindi Prakrit definitions remain context, not Sanskrit glosses"
+    ],
+    "source_conventions": "DDSA describes Sanskrit equivalents; frontmatter physical PDF p. 2 explicitly defines [दे] as देश्य-शब्द.",
+    "source_url": "https://dsal.uchicago.edu/dictionaries/sheth/",
+    "frontmatter_url": "https://dsal.uchicago.edu/dictionaries/sheth/frontmatter/frontmatter.pdf",
+    "focused_tests": "60 passed; full suite deferred under local resource policy; prior unrelated manual-survey failures remain open"
+  },
+  "artifacts": {
+    "data/other/forms/20260914-sheth-sanskrit.csv": {
+      "bytes": 6425828,
+      "sha256": "64c1ad340826f2497488ab4bba2655602e84db6ae7782c15f193e7173b2e269d"
+    },
+    "data/other/comparisons/20260914-sheth-sanskrit.csv": {
+      "bytes": 8805519,
+      "sha256": "f86899e3bf29730927f341131e2808f2eeda6d130f0938c77a5bd01d6e531ffd"
+    },
+    "data/other/forms/raw_data/sheth_etyma.py": {
+      "bytes": 6396,
+      "sha256": "8291ecc87b732002a8886989e082ccd9359ee4b309c618ff76bc9d08b89cc63d"
+    },
+    "data/other/forms/raw_data/sheth_2026/etymology-audit.jsonl.gz": {
+      "bytes": 6921330,
+      "sha256": "f863e261127fa372df5a35016e80ee2997c91d2ee17c28a879774af29f838c22"
+    }
+  }
+}

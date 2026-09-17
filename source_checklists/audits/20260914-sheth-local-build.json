@@ -1,0 +1,41 @@
+{
+  "counts": {
+    "rows": 42118,
+    "tagged": 30147,
+    "status:unlinked": 39850,
+    "status:": 2268,
+    "edge:variant": 2268
+  },
+  "examples": [
+    {
+      "ID": "f_d6h7tkmrqxfhc",
+      "Form": "aaṅkha",
+      "Tags": "adj Sheth:दे",
+      "Source": "sheth1923[DDSA web page 1, article 7]"
+    },
+    {
+      "ID": "f_ms3s4i6jvszli",
+      "Form": "aigaya",
+      "Tags": "adj Sheth:दे Sheth:उप:commentary",
+      "Source": "sheth1923[DDSA web page 2, article 15, sense २]"
+    },
+    {
+      "ID": "f_fkvosauf76ol6",
+      "Form": "aigaya",
+      "Tags": "noun n Sheth:दे",
+      "Source": "sheth1923[DDSA web page 2, article 15, sense ३]"
+    }
+  ],
+  "sqlite_quick_check": "ok",
+  "browser_db_bytes": 134578176,
+  "packed_bytes": 69026419,
+  "compression": "zstd -6 -T1; browser decoder SHA256 roundtrip passed",
+  "broader_tests": "33 passed, 2 failed: existing Rajasthani count/overlay expectations",
+  "url": "http://127.0.0.1:5173",
+  "browser_qa": {
+    "source_page_forms": 42115,
+    "desinamamala_filter_forms": 4449,
+    "expanded_names_and_commentary_labels": "passed",
+    "local_loader": "passed after updating dbMeta exact sizes"
+  }
+}
