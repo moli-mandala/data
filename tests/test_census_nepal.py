@@ -69,7 +69,10 @@ def test_compiled_rows_and_graph():
    if any(s+'[' in r['Source'] for s in m.SOURCES.values()):
     assert r['Form'] and r['Original'] and '�' not in r['Form'];ids.add(r['ID'])
     if any(s+'[' in r['Source'] for s in list(m.SOURCES.values())[:-1]):assert r['Status']=='unlinked'
- with (ROOT/'cldf/edges.csv').open() as f:assert not any(r['Child_ID'] in new_ids for r in csv.DictReader(f))
+ # The census surveys assert no etymologies; edges on their forms may only come from the reviewed per-source sidecar (the 2026-09 joint SIL review linked Tharu cells).
+ import sys;sys.path.insert(0,str(ROOT));from etymology_assignments import read_assignments
+ reviewed={r['Form_ID'] for r in read_assignments()}
+ with (ROOT/'cldf/edges.csv').open() as f:assert not any(r['Child_ID'] in new_ids and r['Child_ID'] not in reviewed for r in csv.DictReader(f))
 
 def test_workbook_extraction():
  assert m.extract_workbook()==m.load("tharu-cells.json")

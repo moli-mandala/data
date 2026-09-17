@@ -43,6 +43,15 @@ THARU_LANGUAGE_IDS = {
 }
 
 
+
+def _routed(source_key: str, profile: str, file: str) -> None:
+    """The source's YAML settings must route `source_key` to `profile` with conversion on."""
+    import source_meta
+
+    meta = source_meta.load()
+    assert meta.transcription(source_key, file, "") == (profile, True), (source_key, profile)
+    assert (source_meta.ROOT / "conversion" / f"{profile}.txt").exists(), profile
+
 def test_webster_tharu_excludes_bracketed_reference_numbers():
     with INSTALLED.open(encoding="utf-8", newline="") as stream:
         rows = list(csv.reader(stream))
@@ -138,10 +147,7 @@ def test_western_tharu_sites_reference_profile_and_checklist_are_integrated():
     assert "ocr          = {No}" in bib
     assert "a060adebc3c7508b541522ac19b9b7d068ae9ca59c04f7f8e1078eab09e0486c" in bib
     assert (ROOT / "conversion/sil-western-tharu.txt").exists()
-    assert "'tharu2': 'sil-western-tharu'" in (ROOT / "utils.py").read_text(encoding="utf-8")
-    make_cldf = (ROOT / "make_cldf.py").read_text(encoding="utf-8")
-    assert 'if source_key == "webster":' in make_cldf
-    assert 'row_ipa = "sil-western-tharu"' in make_cldf
+    _routed("webster", "sil-western-tharu", "data/other/forms/20230530-tharu2.csv")
     audit_registry = (ROOT / "audit_source_ingestions.py").read_text(encoding="utf-8")
     assert '"20230530-tharu2": {' in audit_registry
     assert '"profiles": ["conversion/sil-western-tharu.txt"]' in audit_registry

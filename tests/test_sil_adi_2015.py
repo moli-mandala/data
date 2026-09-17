@@ -28,6 +28,15 @@ def load_module(name, path):
 guard = load_module("adi_guard", PACKAGE / "import_adi_2015.py")
 
 
+
+def _routed(source_key: str, profile: str, file: str) -> None:
+    """The source's YAML settings must route `source_key` to `profile` with conversion on."""
+    import source_meta
+
+    meta = source_meta.load()
+    assert meta.transcription(source_key, file, "") == (profile, True), (source_key, profile)
+    assert (source_meta.ROOT / "conversion" / f"{profile}.txt").exists(), profile
+
 def test_complete_visually_reviewed_first_chunk():
     rows = guard.load_manual_cells(LEDGER)
     assert len(rows) == 12 * 9 == 108
@@ -242,10 +251,7 @@ def test_shared_source_specific_installation_is_exact_and_fully_routed():
     assert reference["OCR"] == "No"
     assert reference["Etymology_Provenance"] == "none"
 
-    build = (ROOT / "make_cldf.py").read_text(encoding="utf-8")
-    assert 'if source_key == "padung-sako2015adi":' in build
-    assert 'row_ipa = "sil-adi"' in build
-    assert '"sil-adi",' in build
+    _routed("padung-sako2015adi", "sil-adi", "data/other/forms/20260829-sil-adi.csv")
 
     manifest = json.loads((PACKAGE / "shared_integration_manifest.json").read_text(encoding="utf-8"))
     assert manifest["state"] == "shared-source-specific-integration-complete"

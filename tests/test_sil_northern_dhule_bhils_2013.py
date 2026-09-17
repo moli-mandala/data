@@ -50,6 +50,15 @@ def chunk_row(base: dict[str, str], **updates: str) -> dict[str, str]:
     return row
 
 
+
+def _routed(source_key: str, profile: str, file: str) -> None:
+    """The source's YAML settings must route `source_key` to `profile` with conversion on."""
+    import source_meta
+
+    meta = source_meta.load()
+    assert meta.transcription(source_key, file, "") == (profile, True), (source_key, profile)
+    assert (source_meta.ROOT / "conversion" / f"{profile}.txt").exists(), profile
+
 def test_source_pin_full_topology_and_list_roles():
     assert PDF.stat().st_size == 9_214_722
     assert hashlib.sha256(PDF.read_bytes()).hexdigest() == dhule.PDF_SHA256
@@ -381,10 +390,7 @@ def test_shared_source_specific_installation_is_exact_and_fully_routed():
     assert reference["OCR"] == "No"
     assert reference["Etymology_Provenance"] == "none"
 
-    build = (ROOT / "make_cldf.py").read_text(encoding="utf-8")
-    assert 'if source_key == "watters2013northerndhule":' in build
-    assert 'row_ipa = "sil-northern-dhule-bhils"' in build
-    assert '"sil-northern-dhule-bhils",' in build
+    _routed("watters2013northerndhule", "sil-northern-dhule-bhils", "data/other/forms/20260829-sil-northern-dhule-bhils.csv")
 
     manifest = json.loads((PACKAGE / "shared_integration_manifest.json").read_text(encoding="utf-8"))
     assert manifest["state"] == "shared-source-specific-integration-complete"

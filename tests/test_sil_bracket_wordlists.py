@@ -305,4 +305,8 @@ def test_every_installed_row_survives_the_full_build(name):
         )
     assert len(compiled) == len(installed(name))
     assert {row["Language_ID"] for row in compiled} == set(REPORTS[name][3])
-    assert all(row["Status"] == "unlinked" for row in compiled)
+    # The source itself asserts no etymologies; later etymology review may link some of these
+    # attestations through the per-source sidecar, so only check that the install carries none.
+    from etymology_assignments import read_assignments
+    reviewed = {row["Form_ID"] for row in read_assignments()}
+    assert all(row["Status"] == "unlinked" or row["ID"] in reviewed for row in compiled)

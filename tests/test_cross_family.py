@@ -153,8 +153,10 @@ def test_compiled_comparison_sidecar_has_cross_family_entries_and_valid_referenc
     references = {row["ID"] for row in dict_rows(CLDF / "references.csv")}
 
     assert len(comparisons) > 604
+    # Sheth's Sanskrit equivalents are compiled as comparisons too (data/other/comparisons/).
+    sheth = sum(row["Source"].split("[", 1)[0] == "sheth1923" for row in comparisons)
     assert sum(not row["ID"].startswith("burushaski:") for row in comparisons) == (
-        len(extracted) + len(manual) + len(dbia)
+        len(extracted) + len(manual) + len(dbia) + sheth
     )
     assert len(manual) == 91
     assert {row["ID"] for row in manual} <= {row["ID"] for row in comparisons}
@@ -164,9 +166,13 @@ def test_compiled_comparison_sidecar_has_cross_family_entries_and_valid_referenc
     for row in comparisons:
         left = forms[row["Entry_ID"]]
         right = forms[row["Compared_Entry_ID"]]
-        assert {left["Language_ID"], right["Language_ID"]} in (
-            {"PDr", "Indo-Aryan"},
-            {"PBr", "Indo-Aryan"},
-        )
+        if row["Source"].split("[", 1)[0] == "sheth1923":
+            # Sheth's own Sanskrit equivalents: Prakrit article vs. its source-local Sanskrit node.
+            assert {left["Language_ID"], right["Language_ID"]} <= {"Pk", "Ap", "As", "Sk"}
+        else:
+            assert {left["Language_ID"], right["Language_ID"]} in (
+                {"PDr", "Indo-Aryan"},
+                {"PBr", "Indo-Aryan"},
+            )
         assert row["Source"].split("[", 1)[0] in references
         assert row["Evidence"].strip()

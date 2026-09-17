@@ -44,6 +44,15 @@ def read_tsv(path):
         return list(csv.DictReader(stream, delimiter="\t"))
 
 
+
+def _routed(source_key: str, profile: str, file: str) -> None:
+    """The source's YAML settings must route `source_key` to `profile` with conversion on."""
+    import source_meta
+
+    meta = source_meta.load()
+    assert meta.transcription(source_key, file, "") == (profile, True), (source_key, profile)
+    assert (source_meta.ROOT / "conversion" / f"{profile}.txt").exists(), profile
+
 def test_post_freeze_generator_is_exact_and_reproducible():
     subprocess.run([sys.executable, str(SCRIPT)], check=True)
     first_manifest = POST_FREEZE_MANIFEST.read_bytes()
@@ -237,12 +246,7 @@ def test_shared_profile_is_exact_and_parser_route_is_explicit():
     assert sha256(SHARED_PROFILE) == (
         "bcaf9bcb1098d3dfe394aa2cb0003873c31417e2a50f34643acbbe9a1a349936"
     )
-    build = BUILD_SCRIPT.read_text(encoding="utf-8")
-    route = 'if source_key == "kim-ahmad-kim-sangma2011kochbd":'
-    assert route in build
-    route_block = build[build.index(route):build.index(route) + 180]
-    assert 'row_ipa = "sil-bangladesh"' in route_block
-    assert "row_convert = True" in route_block
+    _routed("kim-ahmad-kim-sangma2011kochbd", "sil-bangladesh", "data/other/forms/20260826-sil-kochbd.csv")
 
     sys.path.insert(0, str(ROOT))
     from make_cldf import parse_file

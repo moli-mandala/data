@@ -105,6 +105,15 @@ def read_tsv(path):
         return list(csv.DictReader(stream, delimiter="\t"))
 
 
+
+def _routed(source_key: str, profile: str, file: str) -> None:
+    """The source's YAML settings must route `source_key` to `profile` with conversion on."""
+    import source_meta
+
+    meta = source_meta.load()
+    assert meta.transcription(source_key, file, "") == (profile, True), (source_key, profile)
+    assert (source_meta.ROOT / "conversion" / f"{profile}.txt").exists(), profile
+
 def test_generator_is_exact_and_reproducible():
     subprocess.run([sys.executable, str(PACKAGE / "build_manual_chunks.py")], check=True)
     lines_1 = read_tsv(LINES_001_010)
@@ -966,12 +975,7 @@ def test_shared_profile_is_exact_and_explicitly_routed():
     assert sha256(SHARED_PROFILE) == (
         "ac76ab83a6d435e384cf7287fb275d3574343c35141409f2298009f97ffeeb23"
     )
-    build = BUILD_SCRIPT.read_text(encoding="utf-8")
-    route = 'if source_key == "kim-ahmad-kim-sangma2011kurux":'
-    assert route in build
-    route_block = build[build.index(route):build.index(route) + 180]
-    assert 'row_ipa = "sil-kurux"' in route_block
-    assert "row_convert = True" in route_block
+    _routed("kim-ahmad-kim-sangma2011kurux", "sil-kurux", "data/other/forms/20260826-sil-kurux.csv")
 
 
 def test_shared_site_registry_matches_the_frozen_source_metadata():

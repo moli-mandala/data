@@ -47,6 +47,15 @@ def rows(path: Path) -> list[dict[str, str]]:
         return list(csv.DictReader(stream, delimiter="\t"))
 
 
+
+def _routed(source_key: str, profile: str, file: str) -> None:
+    """The source's YAML settings must route `source_key` to `profile` with conversion on."""
+    import source_meta
+
+    meta = source_meta.load()
+    assert meta.transcription(source_key, file, "") == (profile, True), (source_key, profile)
+    assert (source_meta.ROOT / "conversion" / f"{profile}.txt").exists(), profile
+
 def test_source_is_pinned_and_appendix_topology_is_exact():
     assert PDF.stat().st_size == 128_831_439
     assert hashlib.sha256(PDF.read_bytes()).hexdigest() == "250dc3d83661227caa66bf16e390e51c2dcb7186fa435252541ed13bbfcd9137"
@@ -352,12 +361,7 @@ def test_shared_profile_route_and_coverage_are_complete():
     assert tokenizer("ku:rʌ'", column="IPA", segment_separator="", separator="") == "kūra'"
     assert tokenizer("aɽɽja", column="IPA", segment_separator="", separator="") == "aṛṛya"
     assert tokenizer("na':", column="IPA", segment_separator="", separator="") == "na':"
-    build = BUILD_SCRIPT.read_text(encoding="utf-8")
-    route = 'if source_key == "blairetal2012kurumba":'
-    assert route in build
-    block = build[build.index(route):build.index(route) + 180]
-    assert 'row_ipa = "sil-kurumba-2012"' in block
-    assert "row_convert = True" in block
+    _routed("blairetal2012kurumba", "sil-kurumba-2012", str(INSTALLED_FORMS))
     errors = io.StringIO()
     parsed, stats = make_cldf.parse_file(
         str(INSTALLED_FORMS), errors, file_num=1, param_counter={}

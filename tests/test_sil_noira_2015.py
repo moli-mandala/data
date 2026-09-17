@@ -20,6 +20,15 @@ def dict_rows(path: Path, delimiter: str = ",") -> list[dict[str, str]]:
         return list(csv.DictReader(stream, delimiter=delimiter))
 
 
+
+def _routed(source_key: str, profile: str, file: str) -> None:
+    """The source's YAML settings must route `source_key` to `profile` with conversion on."""
+    import source_meta
+
+    meta = source_meta.load()
+    assert meta.transcription(source_key, file, "") == (profile, True), (source_key, profile)
+    assert (source_meta.ROOT / "conversion" / f"{profile}.txt").exists(), profile
+
 def test_noira_installed_target_rows_are_exact_and_immutable() -> None:
     assert INSTALLED.read_bytes() == (PACKAGE / "staged_forms.csv").read_bytes()
     assert hashlib.sha256(INSTALLED.read_bytes()).hexdigest() == STAGED_SHA256
@@ -72,11 +81,7 @@ def test_noira_profile_is_exact_and_routed_by_source_key() -> None:
     inventory = dict_rows(PACKAGE / "profile_inventory.tsv", "\t")
     assert len(inventory) == 54
     assert all(row["Present_In_Staged_Targets"] == "yes" for row in inventory)
-    build = (ROOT / "make_cldf.py").read_text(encoding="utf-8")
-    assert '"sil-noira",' in build
-    assert 'if source_key == "varghesekumar2015noira":' in build
-    assert 'row_ipa = "sil-noira"' in build
-    assert "row_convert = True" in build
+    _routed("varghesekumar2015noira", "sil-noira", "data/other/forms/20260829-sil-noira.csv")
 
 
 def test_noira_language_and_dialect_metadata_match_installed_tags() -> None:

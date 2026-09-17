@@ -428,8 +428,26 @@ def parse_file(file: str, errors, name=None, file_num=0, param_counter=None):
             name = name.split("-")[1]
 
     # Per-source settings (transcription profiles, dedupe rules, exclusions) live in YAML files
-    # beside the source CSVs; see source_meta.py.
+    # beside the source CSVs; see source_meta.py. File-level defaults are looked up by the
+    # input's stem, so a caller parsing a copy elsewhere (tests, importer previews) names the
+    # installed source through `name`: either its stem or the legacy filename key it used to
+    # pass, which resolves to the installed file whose stem contains it.
     meta = source_meta.load()
+    settings_file = file
+    if not meta.file_defaults(file):
+        candidates = [
+            stem for stem in meta.files
+            if stem == name or (
+                "/" not in stem and name and (name in stem.split("-", 1)[-1].split("-")
+                                              or stem.split("-", 1)[-1] == name)
+            )
+        ]
+        # Several installed files may share a legacy key (Berger's gold and auto tranches);
+        # that is fine when they declare the same transcription defaults.
+        if candidates and len({
+            repr(meta.files[stem].get("transcription")) for stem in candidates
+        }) == 1:
+            settings_file = f"{source_meta.FORMS_DIR.name}/{candidates[0]}.csv"
 
     fin = open(file, "r")
     lines = fin.readlines()
@@ -481,10 +499,10 @@ def parse_file(file: str, errors, name=None, file_num=0, param_counter=None):
         # Transcription profile and conversion flag come from the source's YAML settings
         # (source_meta.py; `<stem>.yaml` beside each source CSV): the citation key's rules are
         # tried first, then the input file's defaults. Conversion mechanics stay below.
-        row_ipa, row_convert = meta.transcription(source_key, file, row.lang)
+        row_ipa, row_convert = meta.transcription(source_key, settings_file, row.lang)
         # Backstrom's Urdu and Pashto lists are survey controls rather than the
         # northern locality varieties we want to publish in Jambu.
-        if row.lang in meta.file_flag(file, "forms", "exclude_languages", ()):
+        if row.lang in meta.file_flag(settings_file, "forms", "exclude_languages", ()):
             continue
         if "dedr" in file and is_footer_misparse(row.form):
             continue
