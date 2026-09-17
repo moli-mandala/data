@@ -31,6 +31,10 @@ EXCLUDED_FILES = {
 }
 
 CHECKED_PROFILE_FILES = {
+    "sheth-ddsa": ["20260914-sheth.csv", "20260914-sheth-sanskrit.csv"],
+    "sil-ho": ["20260914-sil-ho.csv"],
+    "sil-bhumij": ["20260914-sil-bhumij.csv"],
+    "sil-dhurwa-2021": ["20260914-sil-dhurwa.csv"],
     "zoller-2023": ["20260913-zoller-linguistic-data.csv"],
     "house": [
         "20220913-dhivehi.csv", "20220913-gawri.csv",
@@ -185,6 +189,14 @@ def test_every_installed_source_has_an_explicit_sound_profile():
             profile = "sil-noira"
         elif source_key == "padung-sako2015adi":
             profile = "sil-adi"
+        elif source_key == "varenkamp2024ho":
+            profile = "sil-ho"
+        elif source_key == "baileymaggard2015bhumij":
+            profile = "sil-bhumij"
+        elif source_key == "josephmichael2021dhurwa":
+            profile = "sil-dhurwa-2021"
+        elif source_key == "sheth1923":
+            profile = "sheth-ddsa"
         elif source_key == "adimathara2019mudhili":
             profile = "sil-gadaba"
         elif source_key == "john2008jaunsari":
