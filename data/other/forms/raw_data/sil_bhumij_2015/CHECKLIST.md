@@ -1,5 +1,15 @@
 # Bhumij 2015 ingestion checklist
 
+## Shared integration update — 14 September 2026
+
+The frozen staging is now adapted into `data/other/forms/20260914-sil-bhumij.csv`: 2,100 rows under canonical language `mu`, with shared dialects, bibliography, formatted references and explicit profile routing. Source-only compilation and graph tests pass. The full shared CLDF build and full suite remain deferred under the workspace resource policy; the app database has not been refreshed. See the [shared review](../../../../../source_checklists/20260914-manual-surveys-review.md) for counts, corrections, validation and remaining gates.
+
+The source manifests and staged files remain frozen as extraction evidence. The
+following text records that earlier source-local stage; its pending shared gates
+are superseded only to the extent documented in the shared review.
+
+## Frozen source-local documentation
+
 - [x] Read and activate the repository ingestion checklist and survey addendum.
 - [x] Pin canonical PDF URL/bytes/pages/SHA-256.
 - [x] Establish exhaustive 210 x 18 topology and target/control split.

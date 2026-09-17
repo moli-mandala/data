@@ -1,5 +1,15 @@
 # Bhumij 2015 integration status
 
+## Shared integration update — 14 September 2026
+
+The frozen staging is now adapted into `data/other/forms/20260914-sil-bhumij.csv`: 2,100 rows under canonical language `mu`, with shared dialects, bibliography, formatted references and explicit profile routing. Source-only compilation and graph tests pass. The full shared CLDF build and full suite remain deferred under the workspace resource policy; the app database has not been refreshed. See the [shared review](../../../../../source_checklists/20260914-manual-surveys-review.md) for counts, corrections, validation and remaining gates.
+
+The source manifests and staged files remain frozen as extraction evidence. The
+following text records that earlier source-local stage; its pending shared gates
+are superseded only to the extent documented in the shared review.
+
+## Frozen source-local documentation
+
 Source-local extraction and overlap reconciliation are complete. No shared
 registry, conversion profile, bibliography, generated CLDF, or browser database
 has yet been changed for this source.

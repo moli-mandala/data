@@ -1,5 +1,15 @@
 # Dhurwa 2021 guarded source package — exhaustive source-local review
 
+## Shared integration update — 14 September 2026
+
+The frozen staging is now adapted into `data/other/forms/20260914-sil-dhurwa.csv`: 809 rows under canonical language `Parji`, with shared dialects, bibliography, formatted references and explicit profile routing. Source-only compilation and graph tests pass. The full shared CLDF build and full suite remain deferred under the workspace resource policy; the app database has not been refreshed. See the [shared review](../../../../../source_checklists/20260914-manual-surveys-review.md) for counts, corrections, validation and remaining gates.
+
+The source manifests and staged files remain frozen as extraction evidence. The
+following text records that earlier source-local stage; its pending shared gates
+are superseded only to the extent documented in the shared review.
+
+## Frozen source-local documentation
+
 This package records an exhaustive, guarded manual review and source-local staging of Joseph and Joseph's *A Sociolinguistic Survey among the Dhurwa of Madhya Pradesh and Orissa* (JLSR 2021-034). It deliberately does not alter shared registries, shared staging, or generated CLDF.
 
 ## Source and current accounting

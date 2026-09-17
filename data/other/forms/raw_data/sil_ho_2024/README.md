@@ -1,5 +1,15 @@
 # SIL Ho survey (JLSR 2024-009)
 
+## Shared integration update — 14 September 2026
+
+The frozen staging is now adapted into `data/other/forms/20260914-sil-ho.csv`: 2,900 rows under canonical language `ho`, with shared dialects, bibliography, formatted references and explicit profile routing. Source-only compilation and graph tests pass. The full shared CLDF build and full suite remain deferred under the workspace resource policy; the app database has not been refreshed. See the [shared review](../../../../../source_checklists/20260914-manual-surveys-review.md) for counts, corrections, validation and remaining gates.
+
+The source manifests and staged files remain frozen as extraction evidence. The
+following text records that earlier source-local stage; its pending shared gates
+are superseded only to the extent documented in the shared review.
+
+## Frozen source-local documentation
+
 This source-local package captures Appendix D.3 of Bryan Varenkamp's *A Study
 of Ho Dialects*. The source topology is 210 prompts by 27 lists: fourteen new
 1989 Ho field lists, three republished Ho controls, and ten non-Ho controls.
