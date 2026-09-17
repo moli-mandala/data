@@ -1,0 +1,13 @@
+# Dangaura Tharu: joint SIL review, batch 28
+
+**Saved: 1 proposals covering 7 assignment rows on 7 records.** The user authorized saving supported analyses jointly; these are accepted overlay rows, not pending proposals.
+
+Language ID: `Dang`. [Joint status and scope](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/REVIEW.md) · [Difficult cases](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/AUDIT.md) · [Exact manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Dang/batch-028.json)
+
+| # | Dangaura Tharu | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **mʊɾɡi** ‘chicken’, **murghi** ‘chicken’, **murgi** ‘chicken’ | Borrowed from **murgi**, [kannauji[p. 75];platts1884[s.v. murg̠ī]](https://dsal.uchicago.edu/cgi-bin/app/platts_query.py?qs=murg%CC%A0%C4%AB&searchhws=yes&matchtype=exact) | Platts p. 1024 explicitly gives Hindi murgī “hen”, derived from murg plus -ikā, while p. 1023 gives the Persian bird/cock base. The feminine survey forms select the complete Hindi murgi donor rather than dropping the gender suffix. Hindi murgi “chicken” is used as an attested provisional donor under the user’s preference to link supported intra-IA borrowing families. The recorded donor locality is not asserted to be the historical source locality. An intermediate Indo-Aryan language remains possible. (7 records.) |
+
+All 7 rows use rank 1 and status `accepted`. Relation kinds: borrowed: 7. Transmission uncertainty recorded in the evidence remains unresolved; a provisional family link does not prove uninterrupted inheritance. Exact IDs, source locations, dialect tags and assignment rows are retained in the manifest.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/loan-fourth-validation.json). The compiled/browser database was not refreshed. Responses not listed in the exact manifest are outside these saved proposals; they have not been declared etymologically unresolved merely because the shortlist omitted them.

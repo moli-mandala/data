@@ -1,0 +1,16 @@
+# Dangaura Tharu: joint SIL review, batch 37
+
+**Saved: 4 proposals covering 7 assignment rows on 7 records.** The user authorized saving supported analyses jointly; these are accepted overlay rows, not pending proposals.
+
+Language ID: `Dang`. [Joint status and scope](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/REVIEW.md) · [Difficult cases](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/AUDIT.md) · [Exact manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Dang/batch-037.json)
+
+| # | Dangaura Tharu | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **gʰam** ‘hot’ | Reflex of **gʰarmá**, [CDIAL[4445]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=240) | CDIAL 4445 gharma explicitly gives Assamese/Bengali ghām heat/sweat and Hindi ghām heat/sunshine/sweat. The survey ghām sweat forms and Dangaura hot sense fit the same heat family. Exact survey form gʰam is retained; possible cross-Indo-Aryan transmission does not exclude this lexical-family link. (1 records.) |
+| 2 | **ʌlʌgʌlʌg** ‘different’ | Reflex of **alagna**, [CDIAL[700]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=31) | CDIAL 700 alagna explicitly lists Hindi/Nepali alag and regional alag/ālag separate. The different responses include transparent distributive repetition alag-alag; both repeated parts continue this same lexeme, not an unrelated second component. Exact survey form ʌlʌgʌlʌg is retained; possible cross-Indo-Aryan transmission does not exclude this lexical-family link. (1 records.) |
+| 3 | **ṭopi** ‘hat’ | Reflex of **\*ṭōppa**, [CDIAL[5481]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=305) | CDIAL 5481 *ṭoppa explicitly gives Nepali ṭopi hat/cap and Hindi/Bhojpuri ṭopī. These whole hat responses match that feminine noun, with regional transmission unresolved and remote connections left as Turner’s doubtful alternatives. Exact survey form ṭopi is retained; possible cross-Indo-Aryan transmission does not exclude this lexical-family link. (4 records.) |
+| 4 | **sukhail** ‘dry’ | Reflex of **\*suṣkall-**, [CDIAL[12548.2]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=727) | CDIAL 12548 śuṣka lists Hindi sūkhā and Gujarati sūku dry, and its -ll extension lists Oriya sukhilā. The l-bearing dry forms are assigned to the specific stored extension 12548-2; other phonological or verbal extensions require separate review. Exact survey form sukhail is retained; possible cross-Indo-Aryan transmission does not exclude this lexical-family link. (1 records.) |
+
+All 7 rows use rank 1 and status `accepted`. Relation kinds: reflex: 7. Transmission uncertainty recorded in the evidence remains unresolved; a provisional family link does not prove uninterrupted inheritance. Exact IDs, source locations, dialect tags and assignment rows are retained in the manifest.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/global-seventh-validation.json). The compiled/browser database was not refreshed. Responses not listed in the exact manifest are outside these saved proposals; they have not been declared etymologically unresolved merely because the shortlist omitted them.

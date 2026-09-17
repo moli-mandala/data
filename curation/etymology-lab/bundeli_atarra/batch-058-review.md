@@ -1,0 +1,14 @@
+# Bundeli: joint SIL review, batch 58
+
+**Saved: 2 proposals covering 11 assignment rows on 11 records.** The user authorized saving supported analyses jointly; these are accepted overlay rows, not pending proposals.
+
+Language ID: `bundeli_atarra`. [Joint status and scope](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/REVIEW.md) · [Difficult cases](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/AUDIT.md) · [Exact manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/bundeli_atarra/batch-058.json)
+
+| # | Bundeli | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **laḍaka** ‘child’, **laḍaka** ‘son’, **laḍaka** ‘boy’, **laḍaki** ‘girl’ | Reflex of **\*laḍikka**, [CDIAL[10924,1]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=633) | User explicitly selects laḍikka for this reviewed child group on 2026-09-15. Turner gives Punjabi laṛkā and Awadhi/Bhojpuri larikā in this branch, while allowing several other regional forms to derive alternatively from laḍḍikka with shortening. Retain that published alternative and qualified regional transmission; the selected branch is an editorial choice, not proof that the competing reconstruction is excluded. Prior hold, now resolved by user choice: CDIAL 10924 leaves many larikā/laṛkā forms between *laḍikka and *laḍḍikka with shortening. An older identical link does not settle that branch choice. (9 records.) |
+| 2 | **laḍaki** ‘daughter’ | Reflex of **\*laḍikka**, [CDIAL[10924,1]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=633) | User explicitly selects laḍikka for this reviewed child group on 2026-09-15. Turner gives Punjabi laṛkā and Awadhi/Bhojpuri larikā in this branch, while allowing several other regional forms to derive alternatively from laḍḍikka with shortening. Retain that published alternative and qualified regional transmission; the selected branch is an editorial choice, not proof that the competing reconstruction is excluded. Prior hold, now resolved by user choice: CDIAL 10924 leaves many larika/laṛka forms between *laḍikka and *laḍḍikka with shortening. The older exact links do not settle that reconstruction/subsection choice. (2 records.) |
+
+All 11 rows use rank 1 and status `accepted`. Relation kinds: reflex: 11. Transmission uncertainty recorded in the evidence remains unresolved; a provisional family link does not prove uninterrupted inheritance. Exact IDs, source locations, dialect tags and assignment rows are retained in the manifest.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/pass310-validation.json). The compiled/browser database was not refreshed. Responses not listed in the exact manifest are outside these saved proposals; they have not been declared etymologically unresolved merely because the shortlist omitted them.

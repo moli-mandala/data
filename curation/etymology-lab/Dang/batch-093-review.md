@@ -1,0 +1,14 @@
+# Dangaura Tharu: joint SIL review, batch 93
+
+**Saved: 2 proposals covering 2 assignment rows on 2 records.** The user authorized saving supported analyses jointly; these are accepted overlay rows, not pending proposals.
+
+Language ID: `Dang`. [Joint status and scope](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/REVIEW.md) · [Difficult cases](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/AUDIT.md) · [Exact manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Dang/batch-093.json)
+
+| # | Dangaura Tharu | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **bənḍəra** ‘monkey’ | Reflex of **vānara**, [CDIAL[11515]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=672) | Full CDIAL vānara gives both bānar and bā̃dar-type monkey reflexes, Oriya bāndara, Hindi bā̃dar/bā̃drā, Marwari bā̃dro and Gujarati vā̃dar/vā̃drɔ. The selected Bengali/Bishnupriya banor/banoɾ/bador, Bhatri bẽdṛa/bendṛa/be̩ndra and western/Tharu banḍar/baṇḍro/baṇḍorõ/bənḍra forms belong to this family. Preserve the eastern front-vowel notation, presence or absence of nasal spelling, dental/retroflex stops, schwa and final nasalization. These phonological qualifications and local IA transmission remain open; no new etymon or single borrowing route is asserted. The b(u)y-/buj- family and mixed monkey responses are excluded. Exact response: bənḍəra. (1 records.) |
+| 2 | **bənḍra** ‘monkey’ | Reflex of **vānara**, [CDIAL[11515]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=672) | Full CDIAL vānara gives both bānar and bā̃dar-type monkey reflexes, Oriya bāndara, Hindi bā̃dar/bā̃drā, Marwari bā̃dro and Gujarati vā̃dar/vā̃drɔ. The selected Bengali/Bishnupriya banor/banoɾ/bador, Bhatri bẽdṛa/bendṛa/be̩ndra and western/Tharu banḍar/baṇḍro/baṇḍorõ/bənḍra forms belong to this family. Preserve the eastern front-vowel notation, presence or absence of nasal spelling, dental/retroflex stops, schwa and final nasalization. These phonological qualifications and local IA transmission remain open; no new etymon or single borrowing route is asserted. The b(u)y-/buj- family and mixed monkey responses are excluded. Exact response: bənḍra. (1 records.) |
+
+All 2 rows use rank 1 and status `accepted`. Relation kinds: reflex: 2. Transmission uncertainty recorded in the evidence remains unresolved; a provisional family link does not prove uninterrupted inheritance. Exact IDs, source locations, dialect tags and assignment rows are retained in the manifest.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/pass221-validation.json). The compiled/browser database was not refreshed. Responses not listed in the exact manifest are outside these saved proposals; they have not been declared etymologically unresolved merely because the shortlist omitted them.

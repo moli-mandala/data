@@ -1,0 +1,16 @@
+# Noiri: joint SIL review, batch 33
+
+**Saved: 4 proposals covering 7 assignment rows on 7 records.** The user authorized saving supported analyses jointly; these are accepted overlay rows, not pending proposals.
+
+Language ID: `Noiri`. [Joint status and scope](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/REVIEW.md) · [Difficult cases](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/AUDIT.md) · [Exact manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Noiri/batch-033.json)
+
+| # | Noiri | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **vihi** ‘twenty’ | Reflex of **viṁśatí**, [CDIAL[11616]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=677) | CDIAL 11616 viṃśati gives Gujarati/Marathi vīs, Punjabi/Lahnda vīh and regional bīs. The western survey βis forms preserve the labial fricative; βih/βihi/vihi/vĩhi/vih̃i match the h-final series with final vowel and nasalization retained. These local forms are linked to the numeral family without settling internal Indo-Aryan transmission. Exact response: vihi. (3 records.) |
+| 2 | **sambar** ‘one hundred’ | Reflex of **\*śatambʰara**, [CDIAL[12284]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=712) | CDIAL 12284 *śatambhara full hundred gives Marathi śẽbhar and Konkani śembhari/śembor. Khandesi śambɦar and Noiri sambar fit this whole extended hundred noun, retaining vowel and aspiration differences and leaving Marathi-area contact open. Exact response: sambar. (2 records.) |
+| 3 | **βihi** ‘twenty’ | Reflex of **viṁśatí**, [CDIAL[11616]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=677) | CDIAL 11616 viṃśati gives Gujarati/Marathi vīs, Punjabi/Lahnda vīh and regional bīs. The western survey βis forms preserve the labial fricative; βih/βihi/vihi/vĩhi/vih̃i match the h-final series with final vowel and nasalization retained. These local forms are linked to the numeral family without settling internal Indo-Aryan transmission. Exact response: βihi. (1 records.) |
+| 4 | **βis** ‘twenty’ | Reflex of **viṁśatí**, [CDIAL[11616]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=677) | CDIAL 11616 viṃśati gives Gujarati/Marathi vīs, Punjabi/Lahnda vīh and regional bīs. The western survey βis forms preserve the labial fricative; βih/βihi/vihi/vĩhi/vih̃i match the h-final series with final vowel and nasalization retained. These local forms are linked to the numeral family without settling internal Indo-Aryan transmission. Exact response: βis. (1 records.) |
+
+All 7 rows use rank 1 and status `accepted`. Relation kinds: reflex: 7. Transmission uncertainty recorded in the evidence remains unresolved; a provisional family link does not prove uninterrupted inheritance. Exact IDs, source locations, dialect tags and assignment rows are retained in the manifest.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/pass84-validation.json). The compiled/browser database was not refreshed. Responses not listed in the exact manifest are outside these saved proposals; they have not been declared etymologically unresolved merely because the shortlist omitted them.

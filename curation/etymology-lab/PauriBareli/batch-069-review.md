@@ -1,0 +1,14 @@
+# Pauri Bareli: joint SIL review, batch 69
+
+**Saved: 2 proposals covering 5 assignment rows on 5 records.** The user authorized saving supported analyses jointly; these are accepted overlay rows, not pending proposals.
+
+Language ID: `PauriBareli`. [Joint status and scope](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/REVIEW.md) · [Difficult cases](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/AUDIT.md) · [Exact manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/PauriBareli/batch-069.json)
+
+| # | Pauri Bareli | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **tsambaḍo** ‘skin’ | Reflex of **\*carmaḍa-**, [CDIAL[4701]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=255) | Full CDIAL carman separately labels a -ḍa extension, including Punjabi camṛā, Hindi camṛā, Gujarati cāmḍũ/cāmḍī and Marathi cāmḍẽ/cāmḍī skin/hide. The existing node 4701-2 represents that unnumbered extension. The selected cambaḍ-/cambṛ-/sambaḍ- skin forms are provisionally grouped here, retaining the local medial b (an extra stop alongside m), vowels, affricate/sibilant notation and retroflex stop/rhotic variation. No independent b morpheme or ancient b-bearing reconstruction is asserted. Regional transmission and exact phonetic developments remain qualified. Complete same-family slash responses retain both forms. Exact response: tsambaḍo. (3 records.) |
+| 2 | **tsambaḍi** ‘skin’ | Reflex of **\*carmaḍa-**, [CDIAL[4701]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=255) | Full CDIAL carman separately labels a -ḍa extension, including Punjabi camṛā, Hindi camṛā, Gujarati cāmḍũ/cāmḍī and Marathi cāmḍẽ/cāmḍī skin/hide. The existing node 4701-2 represents that unnumbered extension. The selected cambaḍ-/cambṛ-/sambaḍ- skin forms are provisionally grouped here, retaining the local medial b (an extra stop alongside m), vowels, affricate/sibilant notation and retroflex stop/rhotic variation. No independent b morpheme or ancient b-bearing reconstruction is asserted. Regional transmission and exact phonetic developments remain qualified. Complete same-family slash responses retain both forms. Exact response: tsambaḍi. (2 records.) |
+
+All 5 rows use rank 1 and status `accepted`. Relation kinds: reflex: 5. Transmission uncertainty recorded in the evidence remains unresolved; a provisional family link does not prove uninterrupted inheritance. Exact IDs, source locations, dialect tags and assignment rows are retained in the manifest.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/pass241-validation.json). The compiled/browser database was not refreshed. Responses not listed in the exact manifest are outside these saved proposals; they have not been declared etymologically unresolved merely because the shortlist omitted them.

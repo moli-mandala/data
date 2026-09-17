@@ -1,0 +1,15 @@
+# Kullui: joint SIL review, batch 55
+
+**Saved: 3 proposals covering 3 assignment rows on 3 records.** The user authorized saving supported analyses jointly; these are accepted overlay rows, not pending proposals.
+
+Language ID: `kul`. [Joint status and scope](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/REVIEW.md) · [Difficult cases](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/AUDIT.md) · [Exact manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/kul/batch-055.json)
+
+| # | Kullui | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **tʰəɳaːli** ‘palm’ | Reflex of **hastatala**, [CDIAL[14029]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=811) | CDIAL hastatala addendum explicitly gives West Pahari hath-naḷe and thənɔḷi palm of hand, explaining th-t to th-n dissimilation together with tāḍa influence. Selected hatanali/thəṇal(i) palm forms match that documented nasal-lateral variant, preserving vowels and dental/retroflex notation. This retains the source’s compound/contact explanation, not an invented regular change of tala to nala; local IA transmission remains unresolved. Exact response: tʰəɳaːli. (1 records.) |
+| 2 | **tʰəɳaːl** ‘palm’ | Reflex of **hastatala**, [CDIAL[14029]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=811) | CDIAL hastatala addendum explicitly gives West Pahari hath-naḷe and thənɔḷi palm of hand, explaining th-t to th-n dissimilation together with tāḍa influence. Selected hatanali/thəṇal(i) palm forms match that documented nasal-lateral variant, preserving vowels and dental/retroflex notation. This retains the source’s compound/contact explanation, not an invented regular change of tala to nala; local IA transmission remains unresolved. Exact response: tʰəɳaːl. (1 records.) |
+| 3 | **tʰəɳali** ‘palm’ | Reflex of **hastatala**, [CDIAL[14029]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=811) | CDIAL hastatala addendum explicitly gives West Pahari hath-naḷe and thənɔḷi palm of hand, explaining th-t to th-n dissimilation together with tāḍa influence. Selected hatanali/thəṇal(i) palm forms match that documented nasal-lateral variant, preserving vowels and dental/retroflex notation. This retains the source’s compound/contact explanation, not an invented regular change of tala to nala; local IA transmission remains unresolved. Exact response: tʰəɳali. (1 records.) |
+
+All 3 rows use rank 1 and status `accepted`. Relation kinds: reflex: 3. Transmission uncertainty recorded in the evidence remains unresolved; a provisional family link does not prove uninterrupted inheritance. Exact IDs, source locations, dialect tags and assignment rows are retained in the manifest.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/pass182-validation.json). The compiled/browser database was not refreshed. Responses not listed in the exact manifest are outside these saved proposals; they have not been declared etymologically unresolved merely because the shortlist omitted them.

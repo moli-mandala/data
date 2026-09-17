@@ -1,0 +1,8 @@
+from research_helpers import Batch
+b=Batch(35)
+b.add('Bagheli','head','mūḍ|muḍ|muḍi|muḍe|mur','10247','CDIAL 10247 mūrdhan includes Prakrit muṃḍa, Maithili mūṛ/muṛī, Hindi mū̃ḍ and Gujarati mūḍī ‘head’. Turner explicitly allows the unaspirated forms to derive from, or be crossed with, muṇḍa ‘shaven’ (10191); that competing analysis, local nasalization and ḍ/r variation remain qualified rather than resolved by the existing database link.',tier='qualified')
+b.add('Bagheli','head','muḍh|muḍhi|muḍhə','10247','CDIAL 10247 explicitly gives Prakrit muḍḍha/muṃḍha ‘head’, Sindhi muṇḍhī and Marathi mũḍhī ‘head’. Retained aspiration favours the mūrdhan continuation over a bare muṇḍa analysis, although contact with that family, missing nasalization and local endings remain qualified.',tier='qualified')
+b.add('Bagheli','head','kepar','2744-4','CDIAL 2744.4 *kappāla gives Bihari/Maithili kapār ‘head, forehead’, Old Awadhi kapāru ‘head’ and Hindi kapār. The retained p and final r select this section rather than *kabhalla; Bagheli e-vowels and possible interaction with the karpara/*kōppara skull family noted in the addendum remain qualified.',tier='qualified',locator='2744.4')
+for lang,words in [('Malvi','gāj'),('Bagheli','gāj|gej|gaj')]:
+ b.add(lang,'lightning',words,'4048','CDIAL 4048 garjā lists Prakrit gajji ‘thunder’, Hindi gāj ‘thunderbolt’ and Gujarati gāj-vīj ‘thunder and lightning’. The rj→jj/j development supports this family, but the survey’s lightning meaning versus the article’s thunder/thunderbolt distinction'+(' and Bagheli e-vowel' if lang=='Bagheli' else '')+' remain explicitly qualified.',tier='qualified')
+b.save()

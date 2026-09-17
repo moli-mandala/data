@@ -1,0 +1,15 @@
+# Dungra Bhil: joint SIL review, batch 5
+
+**Saved: 3 proposals covering 7 assignment rows on 7 records.** The user authorized saving supported analyses jointly; these are accepted overlay rows, not pending proposals.
+
+Language ID: `DungraBhili`. [Joint status and scope](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/REVIEW.md) · [Difficult cases](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/AUDIT.md) · [Exact manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/DungraBhili/batch-005.json)
+
+| # | Dungra Bhil | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **paĩ** ‘water’ | Reflex of **pānī́ya**, [CDIAL[8082]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=456) | CDIAL 8082 pānīya documents pāni/pāṇi “water”; its addendum explicitly includes Western Pahari “water, rain”. Where a survey uses the same local form for water and rain, that recorded polysemy supports the rain response’s link to the water family. Same language, locality tags and normalized form are recorded for water: f_azqvaqufgbzm4. The exact regional route may include borrowing between Indo-Aryan languages; the supported family is linked under the user’s preference. (1 records.) |
+| 2 | **phol** ‘fruit’ | Reflex of **pʰála**, [CDIAL[9051]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=508) | CDIAL 9051 phala gives eastern phol/phar and Gujarati/Marathi phaḷ “fruit”, with phali “pod” separately discussed. Fruit responses fit directly; groundnut responses may involve specialization or shortening of a modern compound and remain under review. The exact regional route may include borrowing between Indo-Aryan languages; the supported family is linked under the user’s preference. (2 records.) |
+| 3 | **kelo** ‘banana’ | Reflex of **kadala**, [CDIAL[2712]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=136) | CDIAL 2712.1 kadala gives Prakrit kēla, Bengali kalā, Hindi kelā, Gujarati keḷ and Punjabi kellā “banana”. These survey l-bearing banana forms select the base branch, not the separately numbered retroflex kaḍalī. The exact regional route may include borrowing between Indo-Aryan languages; the supported family is linked under the user’s preference. (4 records.) |
+
+All 7 rows use rank 1 and status `accepted`. Relation kinds: reflex: 7. Transmission uncertainty recorded in the evidence remains unresolved; a provisional family link does not prove uninterrupted inheritance. Exact IDs, source locations, dialect tags and assignment rows are retained in the manifest.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/global-second-validation.json). The compiled/browser database was not refreshed. Responses not listed in the exact manifest are outside these saved proposals; they have not been declared etymologically unresolved merely because the shortlist omitted them.

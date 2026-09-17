@@ -1,0 +1,18 @@
+# Haryanvi: joint SIL review, batch 34
+
+**Saved: 6 proposals covering 12 assignment rows on 12 records.** The user authorized saving supported analyses jointly; these are accepted overlay rows, not pending proposals.
+
+Language ID: `kaithal`. [Joint status and scope](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/REVIEW.md) · [Difficult cases](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/AUDIT.md) · [Exact manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/kaithal/batch-034.json)
+
+| # | Haryanvi | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **balo** ‘hair’ | Reflex of **vā́la**, [CDIAL[11572]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=674) | CDIAL 11572 vāla explicitly gives Palula bōla/būla hair, Oriya bāḷa and WPah. bā. The survey bāl-/būl-/bā forms fit this hair family, with any regional transmission retained as uncertain. Exact survey form balo is preserved; intra-Indo-Aryan transmission remains open. (1 records.) |
+| 2 | **lat** ‘leg’ | Reflex of **\*lattā**, [CDIAL[10931]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=634) | CDIAL 10931.1 *lattā explicitly gives Lahnda/Punjabi latt leg and awāṇ lat. These leg responses select section 1 rather than *latthā kick. Exact survey form lat is preserved; intra-Indo-Aryan transmission remains open. (2 records.) |
+| 3 | **ruk** ‘tree’ | Reflex of **\*rukṣa**, [CDIAL[10757]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=622) | CDIAL 10757 *rukṣa gives Punjabi rukkh and eastern rūkh tree. Simple ruk is provisionally assigned to that family; extended/nasalized rũkəḍo forms need their own suffix analysis. Exact survey form ruk is preserved; intra-Indo-Aryan transmission remains open. (3 records.) |
+| 4 | **kaṇak** ‘wheat’ | Reflex of **kaṇika**, [CDIAL[2665]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=133) | CDIAL 2665 kaṇika, replaced by *kaṇikka, explicitly gives Lahnda/Punjabi kaṇak and WPah. kaṇak wheat. These survey wheat forms fit that precise grain family. Exact survey form kaṇak is preserved; intra-Indo-Aryan transmission remains open. (2 records.) |
+| 5 | **bẽs** ‘buffalo’ | Reflex of **mahiṣá**, [CDIAL[9964]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=573) | CDIAL 9964 mahiṣa explicitly gives maīś/mẽṣ/maĩś and regional bhẽs buffalo. These sibilant-bearing variants fit the buffalo family; very reduced me and unexplained bhās remain separate review cases. Exact survey form bẽs is preserved; intra-Indo-Aryan transmission remains open. (1 records.) |
+| 6 | **bahu** ‘wife’ | Reflex of **vadʰū́**, [CDIAL[11250]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=656) | CDIAL 11250 vadhū explicitly gives Hindi bahū bride/wife and Maithili bahu wife. The Khowar bok comparison has a specifically qualified *vadhukkā extension in the addendum and is held for exact-parent review. Exact survey form bahu is preserved; intra-Indo-Aryan transmission remains open. (3 records.) |
+
+All 12 rows use rank 1 and status `accepted`. Relation kinds: reflex: 12. Transmission uncertainty recorded in the evidence remains unresolved; a provisional family link does not prove uninterrupted inheritance. Exact IDs, source locations, dialect tags and assignment rows are retained in the manifest.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/global-tenth-validation.json). The compiled/browser database was not refreshed. Responses not listed in the exact manifest are outside these saved proposals; they have not been declared etymologically unresolved merely because the shortlist omitted them.

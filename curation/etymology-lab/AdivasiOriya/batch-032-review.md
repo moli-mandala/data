@@ -1,0 +1,18 @@
+# Adivasi Oriya: joint SIL review, batch 32
+
+**Saved: 6 proposals covering 6 assignment rows on 6 records.** The user authorized saving supported analyses jointly; these are accepted overlay rows, not pending proposals.
+
+Language ID: `AdivasiOriya`. [Joint status and scope](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/REVIEW.md) · [Difficult cases](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/AUDIT.md) · [Exact manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/AdivasiOriya/batch-032.json)
+
+| # | Adivasi Oriya | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **buk** ‘breast’ | Reflex of **bukka**, [CDIAL[12064.3]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=698) | CDIAL 12064.3 bukka gives Oriya buka breast and buku heart/chest, with Assamese buk/buku breast. These eastern breast forms belong to the bukka branch, not the vṛkka kidney head; Turner discusses a non-Aryan deeper origin and semantic contamination. Exact survey form buk is preserved. (1 records.) |
+| 2 | **būk** ‘breast’ | Reflex of **bukka**, [CDIAL[12064.3]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=698) | CDIAL 12064.3 bukka gives Oriya buka breast and buku heart/chest, with Assamese buk/buku breast. These eastern breast forms belong to the bukka branch, not the vṛkka kidney head; Turner discusses a non-Aryan deeper origin and semantic contamination. Exact survey form būk is preserved. (1 records.) |
+| 3 | **buku** ‘breast’ | Reflex of **bukka**, [CDIAL[12064.3]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=698) | CDIAL 12064.3 bukka gives Oriya buka breast and buku heart/chest, with Assamese buk/buku breast. These eastern breast forms belong to the bukka branch, not the vṛkka kidney head; Turner discusses a non-Aryan deeper origin and semantic contamination. Exact survey form buku is preserved. (1 records.) |
+| 4 | **paṭi** ‘cloth’ | Reflex of **paṭa**, [CDIAL[7692]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=433) | CDIAL 7692 paṭa cloth includes paṭī and paṭikā, and Pali paṭi cloth/garment. Adivasi Oriya paṭi cloth is compared with this feminine cloth family; its precise regional or learned transmission remains open. Exact survey form paṭi is preserved. (1 records.) |
+| 5 | **joi** ‘fire’ | Reflex of **jyṓtis**, [CDIAL[5300]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=292) | CDIAL 5300 jyotis explicitly gives Oriya joe/joi/jui fire. Adivasi Oriya joi fire is a direct match. Exact survey form joi is preserved. (1 records.) |
+| 6 | **kʰaṇḍia** ‘broken’ | Reflex of **kʰaṇḍitá**, [CDIAL[3797]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=199) | CDIAL 3797 khaṇḍita explicitly gives Oriya khaṇḍiā maimed and khāṇḍiā broken. The Adivasi Oriya survey form matches that participial adjective. Exact survey form kʰaṇḍia is preserved. (1 records.) |
+
+All 6 rows use rank 1 and status `accepted`. Relation kinds: reflex: 6. Transmission uncertainty recorded in the evidence remains unresolved; a provisional family link does not prove uninterrupted inheritance. Exact IDs, source locations, dialect tags and assignment rows are retained in the manifest.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/global-twentieth-validation.json). The compiled/browser database was not refreshed. Responses not listed in the exact manifest are outside these saved proposals; they have not been declared etymologically unresolved merely because the shortlist omitted them.

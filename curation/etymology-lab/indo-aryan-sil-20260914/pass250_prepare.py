@@ -1,0 +1,13 @@
+import csv,json
+from pathlib import Path
+P=Path('/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914');stem='pass250';assert not (P/(stem+'-decisions.json')).exists()
+rules=[dict(parent='5082',citation='CDIAL[5082]',evidence='Full CDIAL jaṅghā explicitly gives Lahnda jaṅgh leg from hip down, West Pahari jhaṅg/zhaṅg leg and related thigh/shank forms. Selected Gojri jaŋg/jeŋg and Kului affricate-initial forms fit this regional family, preserving source aspiration, vowels, final inflection and stress. The leg gloss is directly supported and is not replaced with thigh. Regional IA transmission remains unresolved.'),dict(parent='7766',citation='CDIAL[7766]',evidence='Full CDIAL padga explicitly gives Gujarati pāg foot/leg, Old Marwari paga foot and Marathi pagḍā foot. Six Bhil-area pog leg responses and Mewari pagəḍā leg fit the documented regional family and extension, preserving the source o vowel and internal schwa. Local transmission and the foot/leg range are qualified; Turner’s unexplained single g and a developments are retained as uncertainty rather than presented as regular deductions.'),dict(parent='10931',citation='CDIAL[10931.1]',evidence='Full CDIAL lattā subsection 1 explicitly gives Lahnda latt leg from hip to foot, Awankari lat and Punjabi latt leg; Kashmiri lath is also in this branch with kick sense. The selected northwestern lath/latʰ/ləṭʰ leg responses follow this regional leg family, preserving aspiration and dental/retroflex notation. The eastern latthā kick branch is not selected solely from surface h spelling. Regional transmission and phonetic history remain qualified, and no stick-to-leg semantic guess is required.')]
+sets=[{'jaŋg','jeŋg','ˈdʒoŋgʰə','ˈdʒoŋgə','ˈdʒəŋgə','ˈdʒəŋg'}, {'pog','pagəḍā'}, {'ləṭʰ','lath','latʰ'}]
+remaining={r['ID'] for r in csv.DictReader((P/'unresearched-records.csv').open())};acc=[]
+for r in json.loads((P/'inventory.json').read_text()):
+ if r['ID'] not in remaining or r['Gloss']!='leg':continue
+ for i,forms in enumerate(sets):
+  if r['Form'] in forms:
+   q=rules[i];acc.append(dict(record=r,parent=q['parent'],family=i,kind='reflex',citation=q['citation'],evidence=q['evidence']+' Exact response: '+r['Form']+'.'));break
+for suffix,obj in [('rules',rules),('decisions',dict(accepted=acc,held=[]))]:(P/(stem+'-'+suffix+'.json')).write_text(json.dumps(obj,ensure_ascii=False,indent=1)+'\n')
+(P/(stem+'_save.py')).write_text((P/'global_sixteenth_save.py').read_text().replace('global-sixteenth',stem));(P/(stem+'_prepare.py')).write_text(Path('/tmp/prepare250.py').read_text());print('accepted',len(acc))

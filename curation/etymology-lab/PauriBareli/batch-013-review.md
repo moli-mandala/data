@@ -1,0 +1,16 @@
+# Pauri Bareli: joint SIL review, batch 13
+
+**Saved: 4 proposals covering 17 assignment rows on 17 records.** The user authorized saving supported analyses jointly; these are accepted overlay rows, not pending proposals.
+
+Language ID: `PauriBareli`. [Joint status and scope](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/REVIEW.md) · [Difficult cases](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/AUDIT.md) · [Exact manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/PauriBareli/batch-013.json)
+
+| # | Pauri Bareli | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **mui** ‘face’, **mui** ‘mouth’ | Reflex of **múkʰa**, [CDIAL[10158]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=585) | CDIAL 10158 mukha gives Prakrit muha “mouth, face” and northern/eastern mu/muh/mui, with Khowar mux. The survey contracted mu/moh/mui forms fit the mouth/face family; unaspirated muk needs separate review of the retained stop. The comparative family link retains uncertainty about transfer between Indo-Aryan languages. (8 records.) |
+| 2 | **nao** ‘nine’ | Reflex of **náva**, [CDIAL[6984]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=401) | CDIAL 6984 nava “nine” lists eastern na, northern nau/nao and western nao/nau. The survey numeral meanings distinguish them from the nava “new” homonym despite similar forms. The comparative family link retains uncertainty about transfer between Indo-Aryan languages. (5 records.) |
+| 3 | **pet** ‘belly’ | Reflex of **\*pēṭṭa**, [CDIAL[8376]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=475) | CDIAL 8376.1 *peṭṭa gives Hindi/Bengali peṭ and Oriya peṭa “belly”, distinct from poṭṭa and peḍḍuka. The survey pet spellings preserve the diagnostic e-vowel belly family, with the source’s dental-versus-retroflex transcription retained for audit rather than silently normalized in the data. The comparative family link retains uncertainty about transfer between Indo-Aryan languages. (3 records.) |
+| 4 | **ath** ‘arm’ | Reflex of **hásta**, [CDIAL[14024]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=811) | CDIAL 14024 hasta explicitly gives Maiya hā and regional hath/ath “hand, arm”, including initial-h loss in Kashmiri and Romani. Survey retroflex stop spelling is preserved as an audit qualification; the hand/arm family remains well identified. The comparative family link retains uncertainty about transfer between Indo-Aryan languages. (1 records.) |
+
+All 17 rows use rank 1 and status `accepted`. Relation kinds: reflex: 17. Transmission uncertainty recorded in the evidence remains unresolved; a provisional family link does not prove uninterrupted inheritance. Exact IDs, source locations, dialect tags and assignment rows are retained in the manifest.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/global-third-validation.json). The compiled/browser database was not refreshed. Responses not listed in the exact manifest are outside these saved proposals; they have not been declared etymologically unresolved merely because the shortlist omitted them.

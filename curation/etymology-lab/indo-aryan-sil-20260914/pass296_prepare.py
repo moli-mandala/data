@@ -1,0 +1,14 @@
+import csv,json
+from pathlib import Path
+P=Path('/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914');stem='pass296';assert not (P/(stem+'-decisions.json')).exists()
+rules=[dict(parent='6333',citation='CDIAL[6333]',evidence='Full divasa documents regional divas/dīs/dūs and dīh, then Sindhi ḍihāṛo, Punjabi dihāṛā/dihāṛī, Old Marwari dihāḍo/dhyāḍo, Gujarati dahāṛo and Pahari dhèṛo/dhyaṛhi. These support selected d/t-initial day forms, including local breathiness/tone spellings, syncope and retroflex endings. Turner proposes crossing with ahar for MIA h and regional transmission for extended forms; retain those qualifications and do not assert regular s-to-h development. Slash alternatives are included only when both are this extended family.'),dict(parent='6328',citation='CDIAL[6328]',evidence='Full dina gives regional din/dinā day, Kashmiri den and Sindhi ḍiṇu. These support d n, ḍine and denː with source spacing, vowel and gemination intact. Cross-IA transmission and learned reinforcement remain qualified.'),dict(parent='10702',citation='CDIAL[10702]',evidence='Full rātrī gives Torwali žāt, regional rāt and Kotgarhi/Koci rāc in the addendum. These support ẓād/ẓātʰ, ṛat and Kullu raːtʃʊ/ratʰʊə/raːtʃə night with source retroflexion, aspiration and endings preserved. Exact local phonetics and cross-IA transmission remain qualified; unexplained prefixes and second words are excluded.')]
+days={'divas','ḍihi','ḍih','ḍisa','dusa','dahaḍu','dahḍo','dāhaḍo','ḍahaḍu','dɦaḍu','dɦāhḍu','dāhəṛu','dāhḍo','dāhaḍā','dāhḍu','ḍaḍo','ḍihaḍu','tīāṛā','tīār','dīāṛā','dīāṛ','dīāṛā / dīāṛ','diāṛ','dʰeṛā','tīāṛī','tīāṛī / tīāṛā','dīāṛī','dʰīāṛī','tīāṛī / dīāṛī','tero / deṛo','tīāṛo','teāṛo','tere','tyāṛə','teyāṛi','dʰiˈhaːɽi','di(h)aɽə','dihaːɽ','diaːɽə','ˈdiaɽə','diaɖə','dihaɖə','ˈdiaːɽə','dehaɖ','dʰiaɽə','dijaɖə','dʰeɽo','te̤aṛa','te̤aṛi','te̤āṛ','te̤ṛa','teyaṛ','teyāṛ','teyaṛa','dēaṛ','deaṛa'}
+sets=[('day',days),('day',{'d n','ḍine','denː'}),('night',{'ẓād','ẓātʰ','ṛat','raːtʃʊ','ˈratʰʊə','raːtʃə'})]
+remaining={r['ID'] for r in csv.DictReader((P/'unresearched-records.csv').open())};acc=[]
+for r in json.loads((P/'inventory.json').read_text()):
+ if r['ID'] not in remaining:continue
+ for i,(g,fs) in enumerate(sets):
+  if r['Gloss']==g and r['Form'] in fs:
+   q=rules[i];acc.append(dict(record=r,parent=q['parent'],family=i,kind='reflex',citation=q['citation'],evidence=q['evidence']+' Exact response: '+r['Form']+'.'))
+for suffix,obj in [('rules',rules),('decisions',dict(accepted=acc,held=[]))]:(P/(stem+'-'+suffix+'.json')).write_text(json.dumps(obj,ensure_ascii=False,indent=1)+'\n')
+(P/(stem+'_save.py')).write_text((P/'global_sixteenth_save.py').read_text().replace('global-sixteenth',stem));(P/(stem+'_prepare.py')).write_text(Path('/tmp/prepare296.py').read_text());print('accepted',len(acc))

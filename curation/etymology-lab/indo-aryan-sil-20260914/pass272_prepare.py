@@ -1,0 +1,14 @@
+import csv,json
+from pathlib import Path
+P=Path('/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914');stem='pass272';assert not (P/(stem+'-decisions.json')).exists()
+rules=[dict(parent='2668-2',citation='CDIAL[2668.2]',evidence='Full kaṇṭaka subsection 2 explicitly gives Palula kāṇḍu/kā̃ṛo, Punjabi/Lahnda kaṇḍā, Sindhi kaṇḍo, Kotgarhi kaṇḍɔ and Jaunsari kā̃ḍā thorn. These support the selected northern thorn forms and complete same-family slash responses. Source aspiration, uvular notation, vowels, nasalization, dental/retroflex stops and ordinary final inflection remain intact; local phonetic development and cross-IA transmission are qualified. The shorter kaṇṭa branch was inspected separately.'),dict(parent='2668',citation='CDIAL[2668.1]',evidence='Full kaṇṭa subsection 1 explicitly gives Maithili/Bhojpuri kā̃ṭ thorn, supporting Kochila Tharu kãṭʰ. Source final aspiration and vowel nasalization remain intact, with local development and transmission qualified. The absence of a following vowel follows the direct eastern comparison rather than assigning every thorn form to kaṇṭaka.'),dict(parent='12575',citation='CDIAL[12575]',evidence='Full śūla explicitly gives Punjabi sūl spike/thorn/colic, supporting Kaithal sulə thorn through its direct regional thorn sense. Source final vowel remains intact; local inflection and transmission are qualified. This is not a meaning inferred only from the Sanskrit impaling-stake gloss.')]
+sets=[{'kʰā́ṇḍo','qaṇḍā','kaṇḍū','qaṇḍo / qaṇḍā','kāṇḍa / kānḍo','kʰaṇḍa','kāṇḍa / kāṇḍo','kaiṭa','konˈɖe','konɖə','ˈkoɳɖə','koɳɖə','kʊɳɖə'},{'kãṭʰ'},{'sulə'}]
+remaining={r['ID'] for r in csv.DictReader((P/'unresearched-records.csv').open())};acc=[];held=[]
+for r in json.loads((P/'inventory.json').read_text()):
+ if r['ID'] not in remaining or r['Gloss']!='thorn':continue
+ for i,fs in enumerate(sets):
+  if r['Form'] in fs:
+   q=rules[i];acc.append(dict(record=r,parent=q['parent'],family=i,kind='reflex',citation=q['citation'],evidence=q['evidence']+' Exact response: '+r['Form']+'.'))
+ if r['Form'] in {'kʰyaṇṭ','kʰeṇṭ','ā̃ṇṭ'}:held.append(dict(record=r,families=[0,1],passNumber=272,reason='Both kaṇṭa and kaṇṭaka branches provide northern thorn comparanda, but the full article does not give these Bshk short forms. Their vowel/initial reduction and exact branch require a local lexical comparison; unknown IA transmission alone is not the issue.'))
+for suffix,obj in [('rules',rules),('decisions',dict(accepted=acc,held=held))]:(P/(stem+'-'+suffix+'.json')).write_text(json.dumps(obj,ensure_ascii=False,indent=1)+'\n')
+(P/(stem+'_save.py')).write_text((P/'global_sixteenth_save.py').read_text().replace('global-sixteenth',stem));(P/(stem+'_prepare.py')).write_text(Path('/tmp/prepare272.py').read_text());print('accepted',len(acc),'held',len(held))

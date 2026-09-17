@@ -1,0 +1,43 @@
+{
+  "savedAt": "2026-09-15T05:09:39.129529+00:00",
+  "assignmentRows": 74,
+  "affectedRecords": 74,
+  "parentNodes": 14,
+  "previousOverlayRows": 48329,
+  "firstApplicationChanges": 148,
+  "secondApplicationChanges": 0,
+  "unrelatedEdgesPreserved": true,
+  "sourceFormsPreserved": true,
+  "identityRegistryPreserved": true,
+  "hashesBefore": {
+    "/Users/aryamanarora/Documents/Code/jambu-all/data/data/etymology-assignments.csv": "215120535c0992b256a9636c4eb8585f8850b4450958942a1ca6b65158a2ac37",
+    "/Users/aryamanarora/Documents/Code/jambu-all/data/data/form-identities.csv": "c19b95f7592e9b21df3158432bb270ac70894fd9b1a8de311a5a832c8a8541a6",
+    "/Users/aryamanarora/Documents/Code/jambu-all/data/cldf/forms.csv": "5778286f2f27111ee5c89a94ae2835d5f46d6efb502461ae53e317cac842d52c",
+    "/Users/aryamanarora/Documents/Code/jambu-all/data/cldf/edges.csv": "d7c75ac475f5c8b5229a5205941b819cdaa6a434397d0cad62c5c1f29cf6818c"
+  },
+  "overlayHashAfter": "f3b1b585b14adac2fbe8738d0d7c9e7255ef454c1e6a8ebe1b618fbccf62e6fa",
+  "checks": [
+    "validate_assignments",
+    "persistent registry membership",
+    "exact target content/source/tags",
+    "all unrelated graph edges identical",
+    "exact intended rank-1 edges",
+    "repeat application changes zero",
+    "all original overlay rows identical",
+    "compiled forms/edges and registry hashes unchanged"
+  ],
+  "postSaveEvidenceCorrection": {
+    "reason": "Remove an unsupported geographic qualifier from CDIAL 5110 evidence; primary entry names Pashai and Torwali, not Tirahi.",
+    "affectedRecords": [
+      "f_ikr3fw6xd7uty",
+      "f_mpjinryyncftq",
+      "f_wvdzba72kjopm",
+      "f_yhatv4a732qwc",
+      "f_6qw6rslzyr332"
+    ],
+    "relationshipsUnchanged": true,
+    "allOtherRowsAndColumnsPreserved": true,
+    "overlayHashBefore": "f3b1b585b14adac2fbe8738d0d7c9e7255ef454c1e6a8ebe1b618fbccf62e6fa",
+    "overlayHashAfter": "9166493e16c02464c9037a5450d16c687e756d37642a70fb7f849e920bb4cb4d"
+  }
+}

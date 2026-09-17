@@ -1,0 +1,15 @@
+# Pahari-Pothwari: joint SIL review, batch 29
+
+**Saved: 3 proposals covering 8 assignment rows on 8 records.** The user authorized saving supported analyses jointly; these are accepted overlay rows, not pending proposals.
+
+Language ID: `poth`. [Joint status and scope](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/REVIEW.md) · [Difficult cases](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/AUDIT.md) · [Exact manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/poth/batch-029.json)
+
+| # | Pahari-Pothwari | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **mũ pʰali** ‘groundnut’ | Borrowed from **muŋphali**, Platts[p. 1095];kannauji[p. 72] | Platts p. 1095 identifies Hindi mūṅg-phalī groundnut; the Hindi Saraiyya survey records muŋphali (kannauji p. 72). The whole matching compound is linked to that existing Hindi attestation as a provisional regional borrowing route. The attestation village is not asserted to be the historical donor locality; intermediate Indo-Aryan transmission remains open. Both components of the Hindi donor are linked in this same pass. Survey compound: mũ pʰali. (5 records.) |
+| 2 | **mũŋ pʰali** ‘groundnut’ | Borrowed from **muŋphali**, Platts[p. 1095];kannauji[p. 72] | Platts p. 1095 identifies Hindi mūṅg-phalī groundnut; the Hindi Saraiyya survey records muŋphali (kannauji p. 72). The whole matching compound is linked to that existing Hindi attestation as a provisional regional borrowing route. The attestation village is not asserted to be the historical donor locality; intermediate Indo-Aryan transmission remains open. Both components of the Hindi donor are linked in this same pass. Survey compound: mũŋ pʰali. (2 records.) |
+| 3 | **mõ pʰali** ‘groundnut’ | Borrowed from **muŋphali**, Platts[p. 1095];kannauji[p. 72] | Platts p. 1095 identifies Hindi mūṅg-phalī groundnut; the Hindi Saraiyya survey records muŋphali (kannauji p. 72). The whole matching compound is linked to that existing Hindi attestation as a provisional regional borrowing route. The attestation village is not asserted to be the historical donor locality; intermediate Indo-Aryan transmission remains open. Both components of the Hindi donor are linked in this same pass. Survey compound: mõ pʰali. (1 records.) |
+
+All 8 rows use rank 1 and status `accepted`. Relation kinds: borrowed: 8. Transmission uncertainty recorded in the evidence remains unresolved; a provisional family link does not prove uninterrupted inheritance. Exact IDs, source locations, dialect tags and assignment rows are retained in the manifest.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/groundnut-validation.json). The compiled/browser database was not refreshed. Responses not listed in the exact manifest are outside these saved proposals; they have not been declared etymologically unresolved merely because the shortlist omitted them.

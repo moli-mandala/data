@@ -1,0 +1,15 @@
+# Gujari: joint SIL review, batch 67
+
+**Saved: 3 proposals covering 8 assignment rows on 8 records.** The user authorized saving supported analyses jointly; these are accepted overlay rows, not pending proposals.
+
+Language ID: `Goj`. [Joint status and scope](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/REVIEW.md) · [Difficult cases](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/AUDIT.md) · [Exact manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Goj/batch-067.json)
+
+| # | Gujari | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **tī** ‘daughter’ | Reflex of **duhitŕ̩**, [CDIAL[6481]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=370) | CDIAL 6481 duhitṛ explicitly gives Lahnda/Punjabi dhī daughter and Punjabi dhīā; Turner discusses the shortened Middle Indo-Aryan kinship forms. The selected northern tī/ti/ti̤(ː), tī̃ and thī variants fit this daughter family with initial devoicing, aspiration/breathy-vowel notation and nasalisation retained as regional qualifications. The link identifies the comparative family without settling local Indo-Aryan transmission. Exact response: tī. (3 records.) |
+| 2 | **pāro** ‘heavy’ | Reflex of **bʰārá**, [CDIAL[9459]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=539) | CDIAL 9459 bhāra explicitly gives Lahnda/Punjabi bhārā heavy beside bhār load. Selected pārā/pāro/phārā and Pothwari pa̤ra/pa̤r forms fit this adjectival family with initial devoicing and aspiration/breathy-vowel notation retained; final ā/o or its absence is a regional qualification. This does not use the separate rhotic-retroflex or -ī derivative candidates. Local Indo-Aryan transmission remains open. Exact response: pāro. (4 records.) |
+| 3 | **ti** ‘daughter’ | Reflex of **duhitŕ̩**, [CDIAL[6481]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=370) | CDIAL 6481 duhitṛ explicitly gives Lahnda/Punjabi dhī daughter and Punjabi dhīā; Turner discusses the shortened Middle Indo-Aryan kinship forms. The selected northern tī/ti/ti̤(ː), tī̃ and thī variants fit this daughter family with initial devoicing, aspiration/breathy-vowel notation and nasalisation retained as regional qualifications. The link identifies the comparative family without settling local Indo-Aryan transmission. Exact response: ti. (1 records.) |
+
+All 8 rows use rank 1 and status `accepted`. Relation kinds: reflex: 8. Transmission uncertainty recorded in the evidence remains unresolved; a provisional family link does not prove uninterrupted inheritance. Exact IDs, source locations, dialect tags and assignment rows are retained in the manifest.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/pass98-validation.json). The compiled/browser database was not refreshed. Responses not listed in the exact manifest are outside these saved proposals; they have not been declared etymologically unresolved merely because the shortlist omitted them.

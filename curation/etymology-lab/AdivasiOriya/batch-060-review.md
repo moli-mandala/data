@@ -1,0 +1,15 @@
+# Adivasi Oriya: joint SIL review, batch 60
+
+**Saved: 3 proposals covering 4 assignment rows on 4 records.** The user authorized saving supported analyses jointly; these are accepted overlay rows, not pending proposals.
+
+Language ID: `AdivasiOriya`. [Joint status and scope](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/REVIEW.md) · [Difficult cases](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/AUDIT.md) · [Exact manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/AdivasiOriya/batch-060.json)
+
+| # | Adivasi Oriya | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **sakal** ‘morning’ | Reflex of **sakāla**, [CDIAL[13067];platts1884[663]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=756) | CDIAL 13067 sakāla has early-in-the-morning sense and Oriya saaḷa early. Platts 663 explicitly gives sa-kāl/su-kāl dawn, sakālī early morning, and sakār/sakārī/sakāre as equivalents. The survey l/ḷ/r forms and regional o/a vowels thus match the morning family; aspiration, s/ś/h and retroflex-liquid spellings are retained and qualified. The precise regional transmission is unresolved. Exact response: sakal. (2 records.) |
+| 2 | **sokal** ‘morning’ | Reflex of **sakāla**, [CDIAL[13067];platts1884[663]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=756) | CDIAL 13067 sakāla has early-in-the-morning sense and Oriya saaḷa early. Platts 663 explicitly gives sa-kāl/su-kāl dawn, sakālī early morning, and sakār/sakārī/sakāre as equivalents. The survey l/ḷ/r forms and regional o/a vowels thus match the morning family; aspiration, s/ś/h and retroflex-liquid spellings are retained and qualified. The precise regional transmission is unresolved. Exact response: sokal. (1 records.) |
+| 3 | **sekal** ‘morning’ | Reflex of **sakāla**, [CDIAL[13067];platts1884[663]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=756) | CDIAL 13067 sakāla has early-in-the-morning sense and Oriya saaḷa early. Platts 663 explicitly gives sa-kāl/su-kāl dawn, sakālī early morning, and sakār/sakārī/sakāre as equivalents. The survey l/ḷ/r forms and regional o/a vowels thus match the morning family; aspiration, s/ś/h and retroflex-liquid spellings are retained and qualified. The precise regional transmission is unresolved. Exact response: sekal. (1 records.) |
+
+All 4 rows use rank 1 and status `accepted`. Relation kinds: reflex: 4. Transmission uncertainty recorded in the evidence remains unresolved; a provisional family link does not prove uninterrupted inheritance. Exact IDs, source locations, dialect tags and assignment rows are retained in the manifest.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/pass148-validation.json). The compiled/browser database was not refreshed. Responses not listed in the exact manifest are outside these saved proposals; they have not been declared etymologically unresolved merely because the shortlist omitted them.

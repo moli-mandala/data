@@ -1,0 +1,17 @@
+# Bengali: joint SIL review, batch 26
+
+**Saved: 5 proposals covering 7 assignment rows on 7 records.** The user authorized saving supported analyses jointly; these are accepted overlay rows, not pending proposals.
+
+Language ID: `B`. [Joint status and scope](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/REVIEW.md) · [Difficult cases](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/AUDIT.md) · [Exact manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/B/batch-026.json)
+
+| # | Bengali | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **mul** ‘root’ | Reflex of **mū́la**, [CDIAL[10250]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=592) | CDIAL 10250 mūla explicitly includes Bengali mul and Gujarati mūḷ/mūḷī root. The whole l-bearing root forms select section 1, retaining the remote-origin qualifications; Khandesi mui needs a local l-loss check. Exact survey form mul is preserved; uncertain intra-Indo-Aryan transmission remains open. (2 records.) |
+| 2 | **poka** ‘insect’ | Reflex of **\*pōkka**, [CDIAL[8393]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=476) | CDIAL 8393 *pokka explicitly gives Bengali pokā and Oriya poka insect/worm. These whole insect responses fit that precise family. Exact survey form poka is preserved; uncertain intra-Indo-Aryan transmission remains open. (2 records.) |
+| 3 | **pahaɽ** ‘mountain’ | Reflex of **\*pāhāḍa**, [CDIAL[8141]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=459) | CDIAL 8141 *pāhāḍa explicitly gives Bengali pāhāṛ hill/mountain. These eastern pahar responses fit that family; the deeper pāṣāṇa connection remains Turner’s qualified comparison. Exact survey form pahaɽ is preserved; uncertain intra-Indo-Aryan transmission remains open. (1 records.) |
+| 4 | **bãʃ** ‘bamboo’ | Reflex of **vaṁśá**, [CDIAL[11175]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=652) | CDIAL 11175 vaṃśa explicitly gives Bengali bā̃s and related bamboo forms. Nasal bãś responses fit section 1; plain bas still needs a local nasal-loss or transcription check. Exact survey form bãʃ is preserved; uncertain intra-Indo-Aryan transmission remains open. (1 records.) |
+| 5 | **hoɾɪn** ‘deer’ | Reflex of **hariṇá**, [CDIAL[13982, meaning 2]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=809) | CDIAL 13982 hariṇa, meaning section 2, expressly gives Bengali harin deer. The surveyed horin forms fit that animal word. No separate stored section-2 node exists, so the containing entry is cited precisely. Exact survey form hoɾɪn is preserved; uncertain intra-Indo-Aryan transmission remains open. (1 records.) |
+
+All 7 rows use rank 1 and status `accepted`. Relation kinds: reflex: 7. Transmission uncertainty recorded in the evidence remains unresolved; a provisional family link does not prove uninterrupted inheritance. Exact IDs, source locations, dialect tags and assignment rows are retained in the manifest.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/global-ninth-validation.json). The compiled/browser database was not refreshed. Responses not listed in the exact manifest are outside these saved proposals; they have not been declared etymologically unresolved merely because the shortlist omitted them.

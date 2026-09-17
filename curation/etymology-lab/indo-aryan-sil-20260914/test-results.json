@@ -1,0 +1,13 @@
+{
+  "command": ".venv/bin/python -m pytest -q tests/test_assign_form_ids.py",
+  "passed": 16,
+  "failed": 1,
+  "failure": "test_the_dictionary_self_reference_assignments_all_point_at_live_sub_entries",
+  "assertion": "Expected 2604 self-reference rows; observed 2603.",
+  "preExistingVerified": true,
+  "backupSelfReferences": 2603,
+  "finalSelfReferences": 2603,
+  "selfReferenceRowsUnchanged": true,
+  "allSelfReferenceTargetsLive": true,
+  "note": "Test suite output was observed in the task tool log. This JSON records the result and the independently verified backup comparison; it is not a fabricated raw pytest log."
+}

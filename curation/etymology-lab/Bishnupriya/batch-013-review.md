@@ -1,0 +1,16 @@
+# Bishnupriya Manipuri: joint SIL review, batch 13
+
+**Saved: 4 proposals covering 19 assignment rows on 19 records.** The user authorized saving supported analyses jointly; these are accepted overlay rows, not pending proposals.
+
+Language ID: `Bishnupriya`. [Joint status and scope](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/REVIEW.md) · [Difficult cases](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/AUDIT.md) · [Exact manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Bishnupriya/batch-013.json)
+
+| # | Bishnupriya Manipuri | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **bandor** ‘monkey’ | Reflex of **vānara**, [CDIAL[11515]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=672) | CDIAL 11515 vānara explicitly gives eastern bandara/bāndar and Nepali bā̃dar “monkey”, alongside regional transfer arrows. Survey bandor/bandara forms fit this family, with the borrowing route left open. The comparative family link retains uncertainty about transfer between Indo-Aryan languages. (1 records.) |
+| 2 | **at** ‘hand’ | Reflex of **hásta**, [CDIAL[14024]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=811) | CDIAL 14024 hasta explicitly gives Maiya hā and regional hath/ath “hand, arm”, including initial-h loss in Kashmiri and Romani. Survey retroflex stop spelling is preserved as an audit qualification; the hand/arm family remains well identified. The comparative family link retains uncertainty about transfer between Indo-Aryan languages. (6 records.) |
+| 3 | **pet** ‘belly’ | Reflex of **\*pēṭṭa**, [CDIAL[8376]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=475) | CDIAL 8376.1 *peṭṭa gives Hindi/Bengali peṭ and Oriya peṭa “belly”, distinct from poṭṭa and peḍḍuka. The survey pet spellings preserve the diagnostic e-vowel belly family, with the source’s dental-versus-retroflex transcription retained for audit rather than silently normalized in the data. The comparative family link retains uncertainty about transfer between Indo-Aryan languages. (6 records.) |
+| 4 | **baṛo** ‘twelve’ | Reflex of **dvā́daśa**, [CDIAL[6658]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=380) | CDIAL 6658.1 dvādaśa gives northern bāra/bāh and eastern bāra “twelve”. It explicitly separates Torwali/Maiya duāš under 6658.2 duvādaśa; those survey forms are assigned to the latter node. The comparative family link retains uncertainty about transfer between Indo-Aryan languages. (6 records.) |
+
+All 19 rows use rank 1 and status `accepted`. Relation kinds: reflex: 19. Transmission uncertainty recorded in the evidence remains unresolved; a provisional family link does not prove uninterrupted inheritance. Exact IDs, source locations, dialect tags and assignment rows are retained in the manifest.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/global-third-validation.json). The compiled/browser database was not refreshed. Responses not listed in the exact manifest are outside these saved proposals; they have not been declared etymologically unresolved merely because the shortlist omitted them.

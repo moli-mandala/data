@@ -1,0 +1,16 @@
+# Halbi: joint SIL review, batch 13
+
+**Saved: 4 proposals covering 4 assignment rows on 4 records.** The user authorized saving supported analyses jointly; these are accepted overlay rows, not pending proposals.
+
+Language ID: `hal`. [Joint status and scope](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/REVIEW.md) · [Difficult cases](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/AUDIT.md) · [Exact manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/hal/batch-013.json)
+
+| # | Halbi | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **jiu** ‘heart’ | Reflex of **jīvá**, [CDIAL[5239]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=288) | CDIAL 5239 jīva explicitly includes Nepali jiu “body, life”, Oriya jī “heart” and the addendum’s Western Pahari jiu “mind, heart, person”. The survey jiv/jiu body/heart polysemy therefore has primary comparative support. Uncertain transfer between Indo-Aryan languages does not prevent this supported family link under the user’s preference. (1 records.) |
+| 2 | **jon** ‘moon’ | Reflex of **jyṓtsnā**, [CDIAL[5301]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=292) | CDIAL 5301.1 jyotsnā explicitly gives Nepali jun, Assamese zon and Halbi jon “moon”, contrasting the separately numbered initial-y *yotsnā branch. The j/z-bearing survey forms select the base branch. Uncertain transfer between Indo-Aryan languages does not prevent this supported family link under the user’s preference. (1 records.) |
+| 3 | **baru** ‘sand’ | Reflex of **vālukā**, [CDIAL[11580]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=675) | CDIAL 11580 vālukā gives Hindi bārū, regional bālu and an explicit suffix replacement vālikā accounting for Bengali/Oriya bāli “sand”. No separate stored vālikā subsection exists; the evidence specifies that replacement for i-ending forms. Uncertain transfer between Indo-Aryan languages does not prevent this supported family link under the user’s preference. (1 records.) |
+| 4 | **miri** ‘chili’ | Reflex of **marīca**, [CDIAL[9875]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=567) | CDIAL 9875.1 marīca gives miri “pepper”, while section 2 *maricca gives Assamese maris, Bihari mirca/miric and Maithili mircāi. The selected chili terms must preserve this distinction; modern pepper-to-chili semantic transfer is explicitly represented by the cited comparanda. Uncertain transfer between Indo-Aryan languages does not prevent this supported family link under the user’s preference. (1 records.) |
+
+All 4 rows use rank 1 and status `accepted`. Relation kinds: reflex: 4. Transmission uncertainty recorded in the evidence remains unresolved; a provisional family link does not prove uninterrupted inheritance. Exact IDs, source locations, dialect tags and assignment rows are retained in the manifest.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/global-fifth-validation.json). The compiled/browser database was not refreshed. Responses not listed in the exact manifest are outside these saved proposals; they have not been declared etymologically unresolved merely because the shortlist omitted them.

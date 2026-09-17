@@ -1,0 +1,17 @@
+# Bengali: joint SIL review, batch 27
+
+**Saved: 5 proposals covering 6 assignment rows on 6 records.** The user authorized saving supported analyses jointly; these are accepted overlay rows, not pending proposals.
+
+Language ID: `B`. [Joint status and scope](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/REVIEW.md) · [Difficult cases](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/AUDIT.md) · [Exact manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/B/batch-027.json)
+
+| # | Bengali | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **rośun** ‘garlic’ | Reflex of **\*raśuna**, [CDIAL[10990.2]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=637) | CDIAL 10990 distinguishes l-initial laśuna from section 2 raśuna, explicitly including Bengali rasun. The survey initial consonant selects the branch, with regional vowel colouring retained. Exact survey form rośun is preserved; intra-Indo-Aryan transmission remains open. (1 records.) |
+| 2 | **mośa** ‘mosquito’ | Reflex of **maśáka**, [CDIAL[9917]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=570) | CDIAL 9917 maśaka explicitly gives Gawri masa, Bengali maśā and Hindi masā mosquito, with nasal variants elsewhere in the article. These mosquito responses fit that insect family. Exact survey form mośa is preserved; intra-Indo-Aryan transmission remains open. (1 records.) |
+| 3 | **ɾɔʃun** ‘garlic’ | Reflex of **\*raśuna**, [CDIAL[10990.2]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=637) | CDIAL 10990 distinguishes l-initial laśuna from section 2 raśuna, explicitly including Bengali rasun. The survey initial consonant selects the branch, with regional vowel colouring retained. Exact survey form ɾɔʃun is preserved; intra-Indo-Aryan transmission remains open. (2 records.) |
+| 4 | **mɔʃa** ‘mosquito’ | Reflex of **maśáka**, [CDIAL[9917]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=570) | CDIAL 9917 maśaka explicitly gives Gawri masa, Bengali maśā and Hindi masā mosquito, with nasal variants elsewhere in the article. These mosquito responses fit that insect family. Exact survey form mɔʃa is preserved; intra-Indo-Aryan transmission remains open. (1 records.) |
+| 5 | **moʈa** ‘fat’ | Reflex of **\*mōṭṭa-**, [CDIAL[10187.11]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=587) | CDIAL 10187.11 *moṭṭa explicitly gives Gujarati moṭũ and Old Marwari moṭaü big/fat, alongside Bengali moṭā fat. These o-vowel adjectives select section 11, not unextended *muṭṭa defective. Exact survey form moʈa is preserved; intra-Indo-Aryan transmission remains open. (1 records.) |
+
+All 6 rows use rank 1 and status `accepted`. Relation kinds: reflex: 6. Transmission uncertainty recorded in the evidence remains unresolved; a provisional family link does not prove uninterrupted inheritance. Exact IDs, source locations, dialect tags and assignment rows are retained in the manifest.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/global-tenth-validation.json). The compiled/browser database was not refreshed. Responses not listed in the exact manifest are outside these saved proposals; they have not been declared etymologically unresolved merely because the shortlist omitted them.

@@ -1,0 +1,14 @@
+# Bhili: joint SIL review, batch 28
+
+**Saved: 2 proposals covering 2 assignment rows on 2 records.** The user authorized saving supported analyses jointly; these are accepted overlay rows, not pending proposals.
+
+Language ID: `Bhili`. [Joint status and scope](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/REVIEW.md) · [Difficult cases](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/AUDIT.md) · [Exact manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Bhili/batch-028.json)
+
+| # | Bhili | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **ceharo** ‘face’ | Borrowed from **cehra**, [Platts[pp. 461, 472];kannauji[p. 55]](https://dsal.uchicago.edu/cgi-bin/app/platts_query.py?qs=%DA%86%DB%81%D8%B1%D9%87&searchhws=yes&matchtype=default) | Platts p. 472 identifies Hindi cehrā with Persian cehra, defined as face on p. 461. The existing Hindi cehra attestation provides the immediate regional donor hypothesis; surveyed expanded and contracted cehr- face forms retain uncertain intervening local transmission. Exact source form ceharo is preserved. The donor locality is an attestation, not an assertion of historical transmission from that village. (1 records.) |
+| 2 | **māhənu** ‘month’ | Borrowed from **mahina**, [Platts[p. 1103];kannauji[p. 85]](https://dsal.uchicago.edu/cgi-bin/app/platts_query.py?qs=%E0%A4%AE%E0%A4%B9%E0%A5%80%E0%A4%A8%E0%A4%BE&searchhws=yes&matchtype=default) | Platts p. 1103 gives Persian/Hindi mahīnā month from māh plus īna. The existing Hindi mahina attestation supplies the whole regional donor. Survey mah-/mih-/min- forms are provisionally analysed as contractions of this month word; the h-loss, vowel contraction and actual intervening Indo-Aryan donor remain qualifications, not independently demonstrated local sound laws. Exact source form māhənu is preserved. The donor locality is an attestation, not an assertion of historical transmission from that village. (1 records.) |
+
+All 2 rows use rank 1 and status `accepted`. Relation kinds: borrowed: 2. Transmission uncertainty recorded in the evidence remains unresolved; a provisional family link does not prove uninterrupted inheritance. Exact IDs, source locations, dialect tags and assignment rows are retained in the manifest.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/loan-fifth-validation.json). The compiled/browser database was not refreshed. Responses not listed in the exact manifest are outside these saved proposals; they have not been declared etymologically unresolved merely because the shortlist omitted them.

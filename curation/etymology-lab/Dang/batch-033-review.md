@@ -1,0 +1,16 @@
+# Dangaura Tharu: joint SIL review, batch 33
+
+**Saved: 4 proposals covering 10 assignment rows on 10 records.** The user authorized saving supported analyses jointly; these are accepted overlay rows, not pending proposals.
+
+Language ID: `Dang`. [Joint status and scope](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/REVIEW.md) · [Difficult cases](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/AUDIT.md) · [Exact manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Dang/batch-033.json)
+
+| # | Dangaura Tharu | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **tʃʰʌt** ‘roof’ | Reflex of **\*cʰatti**, [CDIAL[4971]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=272) | CDIAL 4971 *chatti expressly lists chatt/chat/chāt roof across the region. CDIAL 4981 chadman instead gives Bengali chād and nasal/voiced alternatives. These t-final roof forms select *chatti. Discovery comparator: awan cʰat “roof” (f_lffw5gp5b4ygs). The full primary entry was reviewed independently of the existing match. Exact survey forms are preserved. (2 records.) |
+| 2 | **kaka** ‘father's younger brother’ | Reflex of **\*kākka**, [CDIAL[2998]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=153) | CDIAL 2998 *kākka expressly gives Nepali kāko and B./H. kākā father’s younger brother. The survey kin term matches this exact relationship without collapsing other uncle terms. Discovery comparator: B kākā “father's younger brother” (f_r2t32hkqm4xou). The full primary entry was reviewed independently of the existing match. Exact survey forms are preserved. (3 records.) |
+| 3 | **həluk** ‘light’, **haluk** ‘light’ | Reflex of **\*lagʰukk-**, [CDIAL[10896.5]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=631) | CDIAL 10896 explicitly lists the -kk extension with metathesis halkā/haluko/haluk light. These k-bearing forms select the stored *laghukk- extension, not unextended laghu. Discovery comparator: Mth haluk “light” (f_vqpgqth3jfqni). The full primary entry was reviewed independently of the existing match. Exact survey forms are preserved. (3 records.) |
+| 4 | **bhərəl** ‘full’ | Reflex of **bʰárati**, [CDIAL[9397]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=535) | CDIAL 9397 bharati includes bharita full and Bhojpuri bharal fill. The survey bharal/bhora full forms fit ordinary participial continuations of that fill verb. Discovery comparator: MH bʰarāl “full, complete” (f_l234azwey7v4g). The full primary entry was reviewed independently of the existing match. Exact survey forms are preserved. (2 records.) |
+
+All 10 rows use rank 1 and status `accepted`. Relation kinds: reflex: 10. Transmission uncertainty recorded in the evidence remains unresolved; a provisional family link does not prove uninterrupted inheritance. Exact IDs, source locations, dialect tags and assignment rows are retained in the manifest.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/global-sixth-validation.json). The compiled/browser database was not refreshed. Responses not listed in the exact manifest are outside these saved proposals; they have not been declared etymologically unresolved merely because the shortlist omitted them.

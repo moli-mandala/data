@@ -1,0 +1,14 @@
+# Bhilali: joint SIL review, batch 77
+
+**Saved: 2 proposals covering 2 assignment rows on 2 records.** The user authorized saving supported analyses jointly; these are accepted overlay rows, not pending proposals.
+
+Language ID: `Bhilali`. [Joint status and scope](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/REVIEW.md) · [Difficult cases](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/AUDIT.md) · [Exact manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Bhilali/batch-077.json)
+
+| # | Bhilali | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **dɦoḷo** ‘dust’ | Reflex of **\*dʰūḍi**, [CDIAL[6835]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=391) | Full CDIAL *dhūḍi/dhūli gives Phalura duṛi and Pashai duṛī/dūri, Punjabi dhūṛ/dhūl/dhor/dhūṛā, Oriya dhuḷi/dhūḷā, Gujarati dhūṛ/dhūḷ and Marathi dhūḷ. The addendum gives West Pahari dhvḷɔ, Jaunsari dhūḷ and Garhwali dhūḷū. Selected simple dust forms match these documented liquid/retroflex and aspiration variants; source vowels and initial retroflex notation are preserved as qualifications. Turner discusses competing deeper origins and possible influence of tuṣa; no new resolution of that issue or local IA transmission is asserted. Extended duṛli/dhudur and mixed responses are excluded. Exact response: dɦoḷo. (1 records.) |
+| 2 | **dhuḷu** ‘dust’ | Reflex of **\*dʰūḍi**, [CDIAL[6835]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=391) | Full CDIAL *dhūḍi/dhūli gives Phalura duṛi and Pashai duṛī/dūri, Punjabi dhūṛ/dhūl/dhor/dhūṛā, Oriya dhuḷi/dhūḷā, Gujarati dhūṛ/dhūḷ and Marathi dhūḷ. The addendum gives West Pahari dhvḷɔ, Jaunsari dhūḷ and Garhwali dhūḷū. Selected simple dust forms match these documented liquid/retroflex and aspiration variants; source vowels and initial retroflex notation are preserved as qualifications. Turner discusses competing deeper origins and possible influence of tuṣa; no new resolution of that issue or local IA transmission is asserted. Extended duṛli/dhudur and mixed responses are excluded. Exact response: dhuḷu. (1 records.) |
+
+All 2 rows use rank 1 and status `accepted`. Relation kinds: reflex: 2. Transmission uncertainty recorded in the evidence remains unresolved; a provisional family link does not prove uninterrupted inheritance. Exact IDs, source locations, dialect tags and assignment rows are retained in the manifest.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/pass174-validation.json). The compiled/browser database was not refreshed. Responses not listed in the exact manifest are outside these saved proposals; they have not been declared etymologically unresolved merely because the shortlist omitted them.

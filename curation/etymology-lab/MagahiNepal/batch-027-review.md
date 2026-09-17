@@ -1,0 +1,16 @@
+# Magahi (Nepal survey): joint SIL review, batch 27
+
+**Saved: 4 proposals covering 15 assignment rows on 15 records.** The user authorized saving supported analyses jointly; these are accepted overlay rows, not pending proposals.
+
+Language ID: `MagahiNepal`. [Joint status and scope](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/REVIEW.md) · [Difficult cases](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/AUDIT.md) · [Exact manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/MagahiNepal/batch-027.json)
+
+| # | Magahi (Nepal survey) | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **kes** ‘hair’ | Reflex of **kḗśa**, [CDIAL[3471]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=180) | CDIAL 3471 keśa explicitly gives Nepali/Hindi kes and Gawri khẽs hair. The exact kes/keś family fits, with contact transmission unresolved. Exact survey form kes is retained; possible cross-Indo-Aryan transmission does not exclude this lexical-family link. (5 records.) |
+| 2 | **haddī** ‘bone’ | Reflex of **haḍḍa**, [CDIAL[13952]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=807) | CDIAL 13952 haḍḍa lists Oriya hāṛa, Hindi haḍḍī, Gujarati hāḍ and Marathi hāḍ bone; the addendum explicitly includes hāṛkɔ and hāḍkī. These bone forms fit that family, including k-extended forms. The remote connection to asthi is explicitly very doubtful. Exact survey form haddī is retained; possible cross-Indo-Aryan transmission does not exclude this lexical-family link. (5 records.) |
+| 3 | **cāūr** ‘rice (husked)’ | Reflex of **\*cāmala**, [CDIAL[4749]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=257) | CDIAL 4749 *cāmala or *cāvala explicitly gives Lahnda/Punjabi cāval, awāṇ cāvul and Bhojpuri/Maithili cāur husked rice. These survey responses match that family; the ultimate non-Aryan source remains unsettled. Exact survey form cāūr is retained; possible cross-Indo-Aryan transmission does not exclude this lexical-family link. (3 records.) |
+| 4 | **caūr** ‘rice (husked)’ | Reflex of **\*cāmala**, [CDIAL[4749]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=257) | CDIAL 4749 *cāmala or *cāvala explicitly gives Lahnda/Punjabi cāval, awāṇ cāvul and Bhojpuri/Maithili cāur husked rice. These survey responses match that family; the ultimate non-Aryan source remains unsettled. Exact survey form caūr is retained; possible cross-Indo-Aryan transmission does not exclude this lexical-family link. (2 records.) |
+
+All 15 rows use rank 1 and status `accepted`. Relation kinds: reflex: 15. Transmission uncertainty recorded in the evidence remains unresolved; a provisional family link does not prove uninterrupted inheritance. Exact IDs, source locations, dialect tags and assignment rows are retained in the manifest.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/global-seventh-validation.json). The compiled/browser database was not refreshed. Responses not listed in the exact manifest are outside these saved proposals; they have not been declared etymologically unresolved merely because the shortlist omitted them.

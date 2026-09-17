@@ -1,0 +1,16 @@
+# Pahari-Pothwari: joint SIL review, batch 21
+
+**Saved: 4 proposals covering 19 assignment rows on 19 records.** The user authorized saving supported analyses jointly; these are accepted overlay rows, not pending proposals.
+
+Language ID: `poth`. [Joint status and scope](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/REVIEW.md) · [Difficult cases](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/AUDIT.md) · [Exact manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/poth/batch-021.json)
+
+| # | Pahari-Pothwari | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **taga** ‘thread’ | Reflex of **\*trāgga**, [CDIAL[6010]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=343) | CDIAL 6010 gives Punjabi tāgā/taggā, Hindi/Bengali tāgā and Nepali tāgā “thread”, from a reconstructed *trāgga/*tārga/*tāgra family. The alternatives concern the reconstructed cluster; all selected survey forms continue the same documented thread family. Uncertain transfer between Indo-Aryan languages does not prevent this supported family link under the user’s preference. (3 records.) |
+| 2 | **gara** ‘mud’ | Reflex of **\*gāra**, [CDIAL[4137]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=221) | CDIAL 4137 *gāra explicitly gives Hindi gārā, Nepali gāro and regional gārā “mud, mortar”, retaining a conjectural deeper formation. The survey mud sense fits the documented material noun. Uncertain transfer between Indo-Aryan languages does not prevent this supported family link under the user’s preference. (8 records.) |
+| 3 | **pe** ‘father’ | Reflex of **pitŕ̩**, [CDIAL[8179]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=462) | CDIAL 8179 pitṛ explicitly gives nominative pitā and Middle Indo-Aryan piu, followed by Punjabi peo/piu and Lahnda pio “father”. The survey pe/pio and learned pitā forms identify this kinship family without equating them with unrelated nursery terms. Uncertain transfer between Indo-Aryan languages does not prevent this supported family link under the user’s preference. (7 records.) |
+| 4 | **kya** ‘what’ | Reflex of **kím**, [CDIAL[3164]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=161) | CDIAL 3164 kim explicitly gives northern and eastern ki/kī “what”, Hindi and Kumauni kyā, and Middle Indo-Aryan ki/kiṃ. The interrogative sense excludes the borrowed Persian conjunction ki. Uncertain transfer between Indo-Aryan languages does not prevent this supported family link under the user’s preference. (1 records.) |
+
+All 19 rows use rank 1 and status `accepted`. Relation kinds: reflex: 19. Transmission uncertainty recorded in the evidence remains unresolved; a provisional family link does not prove uninterrupted inheritance. Exact IDs, source locations, dialect tags and assignment rows are retained in the manifest.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/global-fifth-validation.json). The compiled/browser database was not refreshed. Responses not listed in the exact manifest are outside these saved proposals; they have not been declared etymologically unresolved merely because the shortlist omitted them.

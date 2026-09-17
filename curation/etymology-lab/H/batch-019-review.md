@@ -1,0 +1,16 @@
+# Hindi-Urdu: joint SIL review, batch 19
+
+**Saved: 4 proposals covering 5 assignment rows on 5 records.** The user authorized saving supported analyses jointly; these are accepted overlay rows, not pending proposals.
+
+Language ID: `H`. [Joint status and scope](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/REVIEW.md) · [Difficult cases](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/AUDIT.md) · [Exact manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/H/batch-019.json)
+
+| # | Hindi-Urdu | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **bahay** ‘arm’ | Reflex of **bāhú**, [CDIAL[9229]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=521) | CDIAL 9229 bāhu gives Hindi bāh/bāhā arm. It explicitly marks Kalasha baza/Khowar bazu as loans from Nuristani or Iranian, so bājū/bāzā are not assigned directly to bāhu in this pass. Reviewed comparator: Bhatri bãha “arm” (f_ru44lq7dz5a6s). Uncertain intra-IA transmission remains open; exact source text is preserved. (2 records.) |
+| 2 | **kaye** ‘what?’ | Reflex of **\*kādr̥k**, [CDIAL[3196.2]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=163) | CDIAL 3196 identifies *kādṛk as the remodelled what interrogative behind Gujarati kaya and Marathi kāy. The kay/kaye forms fit; koī/kɔī needs distinguishing the indefinite pronoun. Reviewed comparator: dhundari_bamore kāy “what?” (f_azbuu5crzsicm). Uncertain intra-IA transmission remains open; exact source text is preserved. (1 records.) |
+| 3 | **bʰajo** ‘run!’ | Reflex of **bʰajyátē**, [CDIAL[9361]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=532) | CDIAL 9361 distinguishes bhajyate with bhaj-/bhāj- flee from section 2 bhagna with bhag-/bhāg-. The affricate-j survey run forms belong to the first branch, correcting the candidate’s bhagna parent. Reviewed comparator: H bʰago “run!” (f_hixipp5umcokc). Uncertain intra-IA transmission remains open; exact source text is preserved. (1 records.) |
+| 4 | **dauḍ** ‘run!’ | Reflex of **\*dravaḍati**, [CDIAL[6624.2]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=378) | CDIAL 6624 dravati explicitly gives the -ḍ extension dauṛ-/doṛ- run, including Marwari doṛṇo. These survey imperative and verbal endings attach to that extension; aspiration may reflect dhāvati influence and remains qualified. Reviewed comparator: H dauḍo “run!” (f_5csova3anrkug). Uncertain intra-IA transmission remains open; exact source text is preserved. (1 records.) |
+
+All 5 rows use rank 1 and status `accepted`. Relation kinds: reflex: 5. Transmission uncertainty recorded in the evidence remains unresolved; a provisional family link does not prove uninterrupted inheritance. Exact IDs, source locations, dialect tags and assignment rows are retained in the manifest.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/near-fifth-validation.json). The compiled/browser database was not refreshed. Responses not listed in the exact manifest are outside these saved proposals; they have not been declared etymologically unresolved merely because the shortlist omitted them.

@@ -1,0 +1,13 @@
+# Khandesi: joint SIL review, batch 47
+
+**Saved: 1 proposals covering 1 assignment rows on 1 records.** The user authorized saving supported analyses jointly; these are accepted overlay rows, not pending proposals.
+
+Language ID: `Khandesi`. [Joint status and scope](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/REVIEW.md) · [Difficult cases](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/AUDIT.md) · [Exact manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Khandesi/batch-047.json)
+
+| # | Khandesi | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **candani** ‘star’ | Reflex of **\*cāndraṇa**, [CDIAL[4745]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=257) | Full candrana entry explicitly includes Marathi candni star alongside regional candani/candni moonlight and Multani candni light of moon or stars. This supports the selected candaini/candani/cadani star forms, including the lost nasal in cadani and expanded vocalism in candaini, as qualified regional members of this family. Preserve the source star gloss; neither a gloss error nor a specific borrowing route is asserted. Exact response: candani. (1 records.) |
+
+All 1 rows use rank 1 and status `accepted`. Relation kinds: reflex: 1. Transmission uncertainty recorded in the evidence remains unresolved; a provisional family link does not prove uninterrupted inheritance. Exact IDs, source locations, dialect tags and assignment rows are retained in the manifest.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/pass300-validation.json). The compiled/browser database was not refreshed. Responses not listed in the exact manifest are outside these saved proposals; they have not been declared etymologically unresolved merely because the shortlist omitted them.

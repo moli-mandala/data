@@ -1,0 +1,22 @@
+import json,csv,re
+from pathlib import Path
+P=Path(__file__).resolve().parent
+exec((P/'sixth_prepare.py').read_text().split('qs=[]')[0])
+qs=[
+ dict(parent='f_6c2yhuvaobjbo',glosses=['fruit'],words='meva|mevā|mevã|mẽvã|mevo',citation='Platts[p. 1109];degener-shina2008[p. 285, glossary entry 1]',evidence='Platts p. 1109 explicitly identifies Hindi mewā fruit with Persian mewa/mīwa. The existing Hindi mewa entry is independently recorded in Degener’s glossary. These whole mev- fruit words are provisionally linked through that attested Hindi donor; Persian, Pashto and other Indo-Aryan routes remain possible locally.'),
+ dict(parent='f_n4lkgn2ws3cvw',glosses=['month'],words='mena|mina|mino|mīnna|mīnõ|mīna|mīnã|mīnā̃|minːə|mayna|mihno|minːa|mɪnə|ˈminə|mahī̃ṇã|maⁱhinə|mohina|māhənu|mʌhʌna',citation='Platts[p. 1103];kannauji[p. 85]',evidence='Platts p. 1103 gives Persian/Hindi mahīnā month from māh plus īna. The existing Hindi mahina attestation supplies the whole regional donor. Survey mah-/mih-/min- forms are provisionally analysed as contractions of this month word; the h-loss, vowel contraction and actual intervening Indo-Aryan donor remain qualifications, not independently demonstrated local sound laws.'),
+ dict(parent='f_6evf2sjblndc4',glosses=['face'],words='cehara|ceharo|ceharā|cehera|cehere|cehra|cehre|cehrā|cehəra|cehɛrā|cɛharā|tʃehʌɾa|tʃerə|ce̤ra',citation='Platts[pp. 461, 472];kannauji[p. 55]',evidence='Platts p. 472 identifies Hindi cehrā with Persian cehra, defined as face on p. 461. The existing Hindi cehra attestation provides the immediate regional donor hypothesis; surveyed expanded and contracted cehr- face forms retain uncertain intervening local transmission.'),
+ dict(parent='f_pj6a2gkr746bm',glosses=['rain'],words='bāriś|bʌɾiʃ|baris|bariś|bāris',citation='Platts[p. 120];kannauji[p. 65]',evidence='Platts p. 120 identifies bārish rain as a Persian abstract noun from bārīdan. The existing Hindi bariś attestation supplies a supported whole regional donor for these baris/bariś responses. This does not conflate the separate Indo-Aryan baras/varsā rain/year family.'),
+ dict(parent='f_qbahea6yfb6qm',glosses=['meat','meat (raw)'],words='gos|gosh|goś|gośat|gośt|gost',citation='Platts[p. 925];kannauji[p. 75]',evidence='Platts p. 925 explicitly gives Persian gosht meat/flesh. The Hindi survey independently records gost and reduced gos/goś (kannauji p. 75). The whole regional word is used as the immediate donor hypothesis; loss of final t and intervening Indo-Aryan transmission are retained as qualifications.')]
+wordsets=[{norm(z) for z in q['words'].split('|')} for q in qs];raw={r['ID']:r for r in json.loads((P/'inventory.json').read_text())};acc=[];held=[]
+for rr in csv.DictReader(open(P/'unresearched-records.csv')):
+ r=raw[rr['ID']];w=norm(r['Form'])
+ for i,q in enumerate(qs):
+  if r['Gloss'] not in q['glosses'] or w not in wordsets[i]:continue
+  if r['Language_ID']=='H':held.append(dict(record=r,families=[i],reason='Hindi target requires its Persian ancestry reviewed directly, not a borrowing edge to another Hindi survey record.',passNumber=44));continue
+  if re.search('uncertain|unresolved|illegible|unreadable',r['Tags']+' '+r['Description'],re.I) and r['Language_ID']!='Rana':held.append(dict(record=r,families=[i],reason='Source uncertainty needs lexical-reading verification.',passNumber=44));continue
+  acc.append(dict(record=r,family=i,parent=q['parent'],kind='borrowed',citation=q['citation'],evidence=q['evidence']+' Exact source form '+r['Form']+' is preserved. The donor locality is an attestation, not an assertion of historical transmission from that village.'))
+(P/'loan-fifth-rules.json').write_text(json.dumps(qs,ensure_ascii=False,indent=1));(P/'loan-fifth-decisions.json').write_text(json.dumps(dict(accepted=acc,held=held),ensure_ascii=False,indent=1));s=(P/'week_mother_save.py').read_text().replace('week-mother','loan-fifth');(P/'loan_fifth_save.py').write_text(s)
+records=json.loads((P/'platts-loan-fifth-research.json').read_text())+json.loads((P/'platts-loan-fifth-followup.json').read_text())+json.loads((P/'platts-groundnut-research.json').read_text());prim={q['parent']:[x for x in records if x['word']==w] for q,w in zip(qs,['mewa','महीना','چہره','بارش','گوشت'])};(P/'loan-fifth-primary-articles.json').write_text(json.dumps(prim,ensure_ascii=False,indent=1))
+print('accepted',len(acc),'held',len(held))
+for i in range(len(qs)):print(i,len([x for x in acc if x['family']==i]),sorted({x['record']['Language_ID']+' '+x['record']['Form'] for x in acc if x['family']==i}))

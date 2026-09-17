@@ -1,0 +1,16 @@
+# Bote: joint SIL review, batch 20
+
+**Saved: 4 proposals covering 7 assignment rows on 7 records.** The user authorized saving supported analyses jointly; these are accepted overlay rows, not pending proposals.
+
+Language ID: `Bote`. [Joint status and scope](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/REVIEW.md) · [Difficult cases](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/AUDIT.md) · [Exact manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Bote/batch-020.json)
+
+| # | Bote | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **dʰago** ‘thread’ | Reflex of **\*dʰāgga**, [CDIAL[6770]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=387) | CDIAL 6770.1 *dhāgga gives Hindi dhāgā, Nepali dhāgo and Punjabi dhāggā “thread”. The addendum revises the deeper reconstruction toward *dhārga/*dharga; this family link retains that uncertainty and any intra-IA diffusion. Uncertain transfer between Indo-Aryan languages does not prevent this supported family link under the user’s preference. (2 records.) |
+| 2 | **jon** ‘moon’ | Reflex of **jyṓtsnā**, [CDIAL[5301]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=292) | CDIAL 5301.1 jyotsnā explicitly gives Nepali jun, Assamese zon and Halbi jon “moon”, contrasting the separately numbered initial-y *yotsnā branch. The j/z-bearing survey forms select the base branch. Uncertain transfer between Indo-Aryan languages does not prevent this supported family link under the user’s preference. (1 records.) |
+| 3 | **makuri** ‘spider’ | Reflex of **markaṭa**, [CDIAL[9883]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=568) | CDIAL 9883 markaṭa² explicitly gives Hindi makṛī, Punjabi makkaṛī, Nepali mākuro and Oriya makaṛā “spider”. The survey k-r/ḍ spider variants fit the documented family; its relation to other insect-name reconstructions remains qualified. Uncertain transfer between Indo-Aryan languages does not prevent this supported family link under the user’s preference. (2 records.) |
+| 4 | **bʰasa** ‘language’ | Reflex of **bʰāṣā**, [CDIAL[9479]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=540) | CDIAL 9479 bhāṣā gives Middle Indo-Aryan bhāsā “speech, language” and modern bhās/bhāś. Full bhāsā may be learned or renewed across Indo-Aryan; the family link leaves that route open. Uncertain transfer between Indo-Aryan languages does not prevent this supported family link under the user’s preference. (2 records.) |
+
+All 7 rows use rank 1 and status `accepted`. Relation kinds: reflex: 7. Transmission uncertainty recorded in the evidence remains unresolved; a provisional family link does not prove uninterrupted inheritance. Exact IDs, source locations, dialect tags and assignment rows are retained in the manifest.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/global-fifth-validation.json). The compiled/browser database was not refreshed. Responses not listed in the exact manifest are outside these saved proposals; they have not been declared etymologically unresolved merely because the shortlist omitted them.

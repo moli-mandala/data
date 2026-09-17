@@ -1,0 +1,17 @@
+# Pahari-Pothwari: joint SIL review, batch 11
+
+**Saved: 5 proposals covering 68 assignment rows on 68 records.** The user authorized saving supported analyses jointly; these are accepted overlay rows, not pending proposals.
+
+Language ID: `poth`. [Joint status and scope](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/REVIEW.md) · [Difficult cases](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/AUDIT.md) · [Exact manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/poth/batch-011.json)
+
+| # | Pahari-Pothwari | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **rasːi** ‘rope’ | Reflex of **raśmí**, [CDIAL[10648]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=616) | CDIAL 10648 raśmi “rope” gives Prakrit rassi/rāsi and Punjabi rassī, explicitly transmitted to Hindi and several other IA languages. Under the user’s policy this family is linked while the survey lect’s immediate transmission remains unresolved; no uninterrupted inheritance is asserted. (14 records.) |
+| 2 | **miṭːi** ‘dust’ | Reflex of **mŕ̩ttikā**, [CDIAL[10286]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=594) | CDIAL 10286 mṛttikā gives Pali mattikā, Prakrit maṭṭī/mittiā, Punjabi/Hindi miṭṭī and eastern māṭi “earth, clay”; its Kachchi addendum explicitly includes “dust”. Clay/earth used for mud is the same material family, with local transmission left open. (14 records.) |
+| 3 | **manj** ‘buffalo’ | Reflex of **\*mahyā**, [CDIAL[9980.1]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=574) | CDIAL 9980.1 *mahyā compares Sindhi mañjh, Lahnda mañjh/majjh and Punjabi majjh “buffalo”. Turner records an alternative derivation through mahiṃśī &gt; mahiñjhī; the link retains that uncertainty and selects the buffalo family rather than the long-vowel adjective *māhya. (14 records.) |
+| 4 | **caŋga** ‘good’ | Reflex of **caŋga**, [CDIAL[4564]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=247) | CDIAL 4564 caṅga gives Punjabi caṅgā, Western Pahari caṅgo and Marathi cā̃glā “good”. Explicit Hindi-to-Nepali/Marathi borrowing and the -l- extension are retained in the article; the provisional family link leaves local transmission open. (11 records.) |
+| 5 | **sara** ‘whole’, **sare** ‘all’, **sara** ‘all’, **sarã** ‘all’ | Reflex of **sā́ra**, [CDIAL[13355]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=771) | CDIAL 13355 sāra explicitly gives Lahnda/Punjabi sārā, Marwari sāro, Gujarati sārũ and Marathi sārā “all, whole”. The article argues for development from “best part”, while recording the competing older account; regional borrowing remains possible. (15 records.) |
+
+All 68 rows use rank 1 and status `accepted`. Relation kinds: reflex: 68. Transmission uncertainty recorded in the evidence remains unresolved; a provisional family link does not prove uninterrupted inheritance. Exact IDs, source locations, dialect tags and assignment rows are retained in the manifest.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/eleventh-validation.json). The compiled/browser database was not refreshed. Responses not listed in the exact manifest are outside these saved proposals; they have not been declared etymologically unresolved merely because the shortlist omitted them.

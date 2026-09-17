@@ -1,0 +1,13 @@
+import csv,json
+from pathlib import Path
+P=Path('/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914');stem='pass275';assert not (P/(stem+'-decisions.json')).exists()
+rules=[dict(parent='4749',citation='CDIAL[4749]',evidence='Full cāmala/cāvala explicitly gives Bihari/Maithili/Bhojpuri cāur, Bengali cāul/cāl, Oriya cāura/cāuḷa, Punjabi caul and Jaunsari cau husked rice. These support the selected affricate, rhotic/lateral and reduced rice responses. Source spacing, aspiration, vowels, nasalization and the exact rice/uncooked-rice gloss remain unchanged; local reductions and cross-IA transmission are qualified. Turner’s uncertain ultimate origin is not replaced with a new donor claim.'),dict(parent='5637',citation='CDIAL[5637]',evidence='Full taṇḍula explicitly gives Gawri tōṇḍul, Bshk talun, Mai ṭalåⁿ and regional tā̃duḷ rice. These support the selected northern nasal/reordered forms and the Khandesi tānduviḷ lateral form. Source consonants, vowel sequences and nasalization remain intact; Khandesi medial v and exact local phonetics are qualified rather than explained through an invented suffix. Survey rice glosses are preserved, and mixed alū responses remain separate.'),dict(parent='9331',citation='CDIAL[9331]',evidence='Full bhakta explicitly gives regional bhāt/bhatt boiled rice and Kotgarhi/Jaunsari bhāt in the addenda. These support the selected Kului and Dang bhāt-type responses. Source aspiration, vowels and dental/retroflex notation remain intact, with exact local developments and transmission qualified. The original rice or cooked-rice gloss is preserved.')]
+sets=[{'tsaur','tśal','tśa ul','tśul','cəᵒr','caor','cau̯ṛ','cʰauṛ','cauṛ','cor','caoḍ','coul','col̃','colə','co','cavel','čour','čaor'},{'ṭūnḍul','telūn','tālõ','tālū̃','tālō̃','tānduviḷ'},{'bʰaːtʰ','bʰʊtʰ','bhaṭ'}]
+remaining={r['ID'] for r in csv.DictReader((P/'unresearched-records.csv').open())};acc=[]
+for r in json.loads((P/'inventory.json').read_text()):
+ if r['ID'] not in remaining or r['Gloss'] not in {'rice','uncooked rice','cooked rice'}:continue
+ for i,fs in enumerate(sets):
+  if r['Form'] in fs:
+   q=rules[i];acc.append(dict(record=r,parent=q['parent'],family=i,kind='reflex',citation=q['citation'],evidence=q['evidence']+' Exact response: '+r['Form']+'.'))
+for suffix,obj in [('rules',rules),('decisions',dict(accepted=acc,held=[]))]:(P/(stem+'-'+suffix+'.json')).write_text(json.dumps(obj,ensure_ascii=False,indent=1)+'\n')
+(P/(stem+'_save.py')).write_text((P/'global_sixteenth_save.py').read_text().replace('global-sixteenth',stem));(P/(stem+'_prepare.py')).write_text(Path('/tmp/prepare275.py').read_text());print('accepted',len(acc))

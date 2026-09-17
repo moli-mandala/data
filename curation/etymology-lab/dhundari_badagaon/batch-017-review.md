@@ -1,0 +1,16 @@
+# Shekhawati: joint SIL review, batch 17
+
+**Saved: 4 proposals covering 5 assignment rows on 5 records.** The user authorized saving supported analyses jointly; these are accepted overlay rows, not pending proposals.
+
+Language ID: `dhundari_badagaon`. [Joint status and scope](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/REVIEW.md) · [Difficult cases](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/AUDIT.md) · [Exact manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/dhundari_badagaon/batch-017.json)
+
+| # | Shekhawati | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **pīvɛ** ‘drink!, he drank’ | Reflex of **píbati**, [CDIAL[8209]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=464) | CDIAL 8209 pibati explicitly gives Hindi pīnā, Maithili piab and Gujarati pīvũ drink. Forms with -le may include a light verb rather than an inflection and are held for segmentation. Exact survey form pīvɛ is preserved; uncertain intra-Indo-Aryan transmission remains open. (1 records.) |
+| 2 | **pīve** ‘drink!, he drank’ | Reflex of **píbati**, [CDIAL[8209]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=464) | CDIAL 8209 pibati explicitly gives Hindi pīnā, Maithili piab and Gujarati pīvũ drink. Forms with -le may include a light verb rather than an inflection and are held for segmentation. Exact survey form pīve is preserved; uncertain intra-Indo-Aryan transmission remains open. (1 records.) |
+| 3 | **bʰāgɔ** ‘run!, he ran’ | Reflex of **bʰagna**, [CDIAL[9361.2]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=532) | CDIAL 9361.2 bhagna explicitly gives Old Marwari bhāgaï runs and Hindi bhāgnā flee. Its prose discusses break/flee and a competing historical root which would have merged completely. These g-bearing run forms select section 2, unlike j-bearing bhāj- in section 1. Exact survey form bʰāgɔ is preserved; uncertain intra-Indo-Aryan transmission remains open. (2 records.) |
+| 4 | **bʰag** ‘run!, he ran’ | Reflex of **bʰagna**, [CDIAL[9361.2]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=532) | CDIAL 9361.2 bhagna explicitly gives Old Marwari bhāgaï runs and Hindi bhāgnā flee. Its prose discusses break/flee and a competing historical root which would have merged completely. These g-bearing run forms select section 2, unlike j-bearing bhāj- in section 1. Exact survey form bʰag is preserved; uncertain intra-Indo-Aryan transmission remains open. (1 records.) |
+
+All 5 rows use rank 1 and status `accepted`. Relation kinds: reflex: 5. Transmission uncertainty recorded in the evidence remains unresolved; a provisional family link does not prove uninterrupted inheritance. Exact IDs, source locations, dialect tags and assignment rows are retained in the manifest.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/global-ninth-validation.json). The compiled/browser database was not refreshed. Responses not listed in the exact manifest are outside these saved proposals; they have not been declared etymologically unresolved merely because the shortlist omitted them.

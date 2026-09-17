@@ -1,0 +1,46 @@
+.FF.                                                                     [100%]
+=================================== FAILURES ===================================
+___________ test_manual_survey_etymologies_reach_the_compiled_graph ____________
+
+    def test_manual_survey_etymologies_reach_the_compiled_graph():
+        with (ROOT / "cldf/forms.csv").open(encoding="utf-8", newline="") as stream:
+            forms = list(csv.DictReader(stream))
+        with (ROOT / "cldf/edges.csv").open(encoding="utf-8", newline="") as stream:
+            accepted = {
+                row["Child_ID"]
+                for row in csv.DictReader(stream)
+                if row["Rank"] == "1" and row["Kind"] in {"reflex", "borrowed", "variant"}
+            }
+    
+        for name, (_filename, references, _rows, _raw_links, form_count, link_count) in SURVEYS.items():
+            survey_forms = {
+                row["ID"] for row in forms if citation_keys(row.get("Source", "")) & references
+            }
+>           assert len(survey_forms) == form_count, name
+E           AssertionError: rajasthani
+E           assert 15887 == 15876
+E            +  where 15887 = len({'f_22563fws7272u', 'f_226hjy7xa6eea', 'f_226uw7bchxmlu', 'f_227tv773kzzwi', 'f_22f3bcfs5rttm', 'f_22jl3wgs43udu', ...})
+
+tests/test_manual_survey_etymologies.py:64: AssertionError
+_______ test_source_owned_links_do_not_depend_on_duplicate_overlay_rows ________
+
+    def test_source_owned_links_do_not_depend_on_duplicate_overlay_rows():
+        with (ROOT / "cldf/forms.csv").open(encoding="utf-8", newline="") as stream:
+            forms = {row["ID"]: row for row in csv.DictReader(stream)}
+        with (ROOT / "data/etymology-assignments.csv").open(
+            encoding="utf-8", newline=""
+        ) as stream:
+            assignments = list(csv.DictReader(stream))
+    
+        source_owned = {"chattisgarhi", "bagri", "dhundari", "hadothi", "marwari", "mewari", "mewati"}
+>       assert not [
+            row for row in assignments
+            if citation_keys(forms[row["Form_ID"]].get("Source", "")) & source_owned
+        ]
+E       AssertionError: assert not [{'Etymon_ID': '3865', 'Form_ID': 'f_3emgvbejwg5ns', 'Kind': 'reflex', 'Notes': '', ...}, {'Etymon_ID': '3865', 'Form_...flex', 'Notes': '', ...}, {'Etymon_ID': '3865', 'Form_ID': 'f_nriaty6b7wtyw', 'Kind': 'reflex', 'Notes': '', ...}, ...]
+
+tests/test_manual_survey_etymologies.py:82: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_manual_survey_etymologies.py::test_manual_survey_etymologies_reach_the_compiled_graph
+FAILED tests/test_manual_survey_etymologies.py::test_source_owned_links_do_not_depend_on_duplicate_overlay_rows
+2 failed, 2 passed in 5.21s

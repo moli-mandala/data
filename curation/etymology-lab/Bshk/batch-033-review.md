@@ -1,0 +1,18 @@
+# Bashkarik: joint SIL review, batch 33
+
+**Saved: 6 proposals covering 12 assignment rows on 12 records.** The user authorized saving supported analyses jointly; these are accepted overlay rows, not pending proposals.
+
+Language ID: `Bshk`. [Joint status and scope](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/REVIEW.md) · [Difficult cases](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/AUDIT.md) · [Exact manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Bshk/batch-033.json)
+
+| # | Bashkarik | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **makār** ‘monkey’ | Reflex of **markáṭa**, [CDIAL[9882]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=568) | CDIAL 9882 markaṭa gives Bashkarik makīr monkey beside regional makeṛ/makäṛ and Palula mākaṛ. Survey makār matches this consonantal family; the article questions whether Bashkarik continues feminine markaṭī, so the deeper gender formation remains qualified. Exact survey form makār is preserved. (1 records.) |
+| 2 | **pīlīl** ‘ant’ | Reflex of **\*pilīla**, [CDIAL[8201.6]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=463) | CDIAL 8201.6 *pilīla explicitly gives Khowar pilili and Bashkarik pilil ant. These l-l forms select section 6 rather than the pipīla head; Turner notes contamination and uncertain deeper origins throughout this insect family. Exact survey form pīlīl is preserved. (3 records.) |
+| 3 | **rān** ‘good’ | Reflex of **rājana**, [CDIAL[10680]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=618) | CDIAL 10680 rājana explicitly gives Bashkarik rān, feminine rēn good. The unusual royal-to-good semantic relation is directly documented; the Prakrit rāṇa formation is itself qualified against rājñ in the article. Exact survey form rān is preserved. (2 records.) |
+| 4 | **ran** ‘good’ | Reflex of **rājana**, [CDIAL[10680]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=618) | CDIAL 10680 rājana explicitly gives Bashkarik rān, feminine rēn good. The unusual royal-to-good semantic relation is directly documented; the Prakrit rāṇa formation is itself qualified against rājñ in the article. Exact survey form ran is preserved. (1 records.) |
+| 5 | **ūgūr** ‘heavy’ | Reflex of **\*udguru**, [CDIAL[1962]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=91) | CDIAL 1962 *udguru explicitly gives Bashkarik ugūr and Torwali ūgū heavy. Both survey shapes directly match the named regional comparanda. Exact survey form ūgūr is preserved. (2 records.) |
+| 6 | **co** ‘walk! / to walk’ | Reflex of **cyávatē**, [CDIAL[4939]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=269) | CDIAL 4939 cyavate explicitly gives Bashkarik čō in the walk/go series. Survey co walk!/to walk matches that stem; the slash joins glosses, not separate source forms. Exact survey form co is preserved. (3 records.) |
+
+All 12 rows use rank 1 and status `accepted`. Relation kinds: reflex: 12. Transmission uncertainty recorded in the evidence remains unresolved; a provisional family link does not prove uninterrupted inheritance. Exact IDs, source locations, dialect tags and assignment rows are retained in the manifest.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/global-sixteenth-validation.json). The compiled/browser database was not refreshed. Responses not listed in the exact manifest are outside these saved proposals; they have not been declared etymologically unresolved merely because the shortlist omitted them.

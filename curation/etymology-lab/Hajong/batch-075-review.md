@@ -1,0 +1,14 @@
+# Hajong: joint SIL review, batch 75
+
+**Saved: 2 proposals covering 20 assignment rows on 10 records.** The user authorized saving supported analyses jointly; these are accepted overlay rows, not pending proposals.
+
+Language ID: `Hajong`. [Joint status and scope](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/REVIEW.md) · [Difficult cases](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/AUDIT.md) · [Exact manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Hajong/batch-075.json)
+
+| # | Hajong | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **maśipoka** ‘fly’ | Compound components: **mákṣā + \*pōkka**, [CDIAL[9696];CDIAL[8393]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=554) | Hajong masipoka/maśipoka fly is analysed as fly plus insect, in that order. Full CDIAL makṣā includes makṣikā, Bengali/Oriya māchi and other regional māśī/māsi fly forms; pōkka 8393 explicitly gives Bengali pokā and Oriya poka insect/worm. The source s/ś representation and vowel length remain unchanged and the first component is compared with the eastern fly family without asserting identical articulation to every cited reflex. Save both lexical components of the modern compound, with local IA transmission unresolved; no ancient compound node is invented. Exact response: maśipoka. (2 records.) |
+| 2 | **masipoka** ‘fly’ | Compound components: **mákṣā + \*pōkka**, [CDIAL[9696];CDIAL[8393]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=554) | Hajong masipoka/maśipoka fly is analysed as fly plus insect, in that order. Full CDIAL makṣā includes makṣikā, Bengali/Oriya māchi and other regional māśī/māsi fly forms; pōkka 8393 explicitly gives Bengali pokā and Oriya poka insect/worm. The source s/ś representation and vowel length remain unchanged and the first component is compared with the eastern fly family without asserting identical articulation to every cited reflex. Save both lexical components of the modern compound, with local IA transmission unresolved; no ancient compound node is invented. Exact response: masipoka. (8 records.) |
+
+All 20 rows use rank 1 and status `accepted`. Relation kinds: component: 20. Transmission uncertainty recorded in the evidence remains unresolved; a provisional family link does not prove uninterrupted inheritance. Exact IDs, source locations, dialect tags and assignment rows are retained in the manifest.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/pass227-validation.json). The compiled/browser database was not refreshed. Responses not listed in the exact manifest are outside these saved proposals; they have not been declared etymologically unresolved merely because the shortlist omitted them.

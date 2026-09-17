@@ -1,0 +1,17 @@
+# Malvi — batch 021
+
+**5 proposals, approved and saved to the accepted overlay.**
+
+## Qualified
+
+| # | Malvi | Proposed etymology | Evidence |
+|---|---|---|---|
+| 229 | **asmān, āsmān, asman, āśmān** ‘sky’ | Borrowed from Persian **āsmān**, platts1884 s.v. āsmān;kannauji p. 64;arora; [Primary evidence](<https://www.rekhta.org/urdudictionary?keyword=%D8%A2%D8%B3%D9%85%D8%A7%D9%86>); ID `f_lmwk7knn4svus` | The installed Persian āsmān ‘sky head and the cited primary lexical evidence identify this loan family. The selected survey forms retain local consonant, vowel and ending variants; these are not silently normalized. Nested under the Persian/Arabic etymological entry at the user’s request; this records the loan family, not direct contact or a demonstrated Hindi-Urdu intermediary. |
+| 230 | **hava, havā** ‘wind’ | Borrowed from Persian **havā**, platts1884 s.v. hawā;kannauji p. 66;arora; [Primary evidence](<https://www.rekhta.org/urdudictionary?keyword=havaa>); ID `f_rlqlstrekfzvc` | The installed Persian havā ‘air head and the cited primary lexical evidence identify this loan family. The selected survey forms retain local consonant, vowel and ending variants; these are not silently normalized. Nested under the Persian/Arabic etymological entry at the user’s request; this records the loan family, not direct contact or a demonstrated Hindi-Urdu intermediary. |
+| 231 | **rasto, rasta, rastā** ‘path’ | Borrowed from Persian **rāsta**, platts1884 s.v. rāstā;kannauji p. 67;arora; [Primary evidence](<https://www.rekhta.org/urdudictionary?keyword=raasta>); ID `f_74vcu23lscgak` | The installed Persian rāsta ‘path head and the cited primary lexical evidence identify this loan family. The selected survey forms retain local consonant, vowel and ending variants; these are not silently normalized. Nested under the Persian/Arabic etymological entry at the user’s request; this records the loan family, not direct contact or a demonstrated Hindi-Urdu intermediary. |
+| 232 | **sal, sāl** ‘year’ | Borrowed from Persian **sāl**, platts1884 s.v. sāl, Persian year;kannauji p. 85;arora; [Primary evidence](<https://urdu.hawramani.com/%D8%B3%D8%A7%D9%84-4/>); ID `f_7a3ccguwm7lam` | The installed Persian sāl ‘year head and the cited primary lexical evidence identify this loan family. The selected survey forms retain local consonant, vowel and ending variants; these are not silently normalized. Nested under the Persian/Arabic etymological entry at the user’s request; this records the loan family, not direct contact or a demonstrated Hindi-Urdu intermediary. |
+| 233 | **barābar, bārābar** ‘same’ | Borrowed from Persian **barābar**, platts1884 s.v. barābar;liljegren entry LX000263;arora; [Primary evidence](<https://www.rekhta.org/urdudictionary?keyword=baraabar>); ID `f_odkzxsetllmtk` | Platts and the installed Persian head support barābar equal; local reduction and reduplicated-looking syllables do not establish independent local derivation. Nested under the Persian/Arabic etymological entry at the user’s request; this records the loan family, not direct contact or a demonstrated Hindi-Urdu intermediary. |
+
+5 proposals; 13 affected records; 13 saved assignment rows: 13 `borrowed`. Historical extensions and uncertain contact pathways are explained in the evidence.
+
+Excluded responses remain held in the cumulative review and holds.json. All approved donor dependencies are resolved.

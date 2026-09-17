@@ -1,0 +1,15 @@
+# Adivasi Oriya: joint SIL review, batch 89
+
+**Saved: 3 proposals covering 3 assignment rows on 3 records.** The user authorized saving supported analyses jointly; these are accepted overlay rows, not pending proposals.
+
+Language ID: `AdivasiOriya`. [Joint status and scope](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/REVIEW.md) · [Difficult cases](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/AUDIT.md) · [Exact manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/AdivasiOriya/batch-089.json)
+
+| # | Adivasi Oriya | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **badol** ‘cloud’ | Reflex of **vārdala**, [CDIAL[11567]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=674) | Full vārdala gives Prakrit vaddala cloud, Punjabi baddal, West Pahari badlu rain, Bengali bādlā rain, regional bādal/bādar and Gujarati vādaḷ/vādḷũ cloud. These support the selected b/d/l/r and western v-initial cloud/rain responses, including source retroflexion, gemination, vowels and ordinary endings. Local changes and cross-IA transmission remain qualified. Long multiword or mixed-family alternatives are excluded. Exact response: badol. (1 records.) |
+| 2 | **meg** ‘cloud’ | Reflex of **mēgʰá**, [CDIAL[10302]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=595) | Full megha explicitly means cloud and rain, with Prakrit meha, northern mẽ/mī̃, Kumaoni me and Gujarati mehulɔ/mevlɔ. The selected meg/megh/mek, nasal or reduced me forms and mevuḷo fit this family. Conservative velars may reflect learned or cross-IA transmission; preserve source deaspiration, devoicing, nasalization and vowels. The source cloud/rain distinction is maintained, not standardized. Exact response: meg. (1 records.) |
+| 3 | **mẽg** ‘cloud’ | Reflex of **mēgʰá**, [CDIAL[10302]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=595) | Full megha explicitly means cloud and rain, with Prakrit meha, northern mẽ/mī̃, Kumaoni me and Gujarati mehulɔ/mevlɔ. The selected meg/megh/mek, nasal or reduced me forms and mevuḷo fit this family. Conservative velars may reflect learned or cross-IA transmission; preserve source deaspiration, devoicing, nasalization and vowels. The source cloud/rain distinction is maintained, not standardized. Exact response: mẽg. (1 records.) |
+
+All 3 rows use rank 1 and status `accepted`. Relation kinds: reflex: 3. Transmission uncertainty recorded in the evidence remains unresolved; a provisional family link does not prove uninterrupted inheritance. Exact IDs, source locations, dialect tags and assignment rows are retained in the manifest.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/pass290-validation.json). The compiled/browser database was not refreshed. Responses not listed in the exact manifest are outside these saved proposals; they have not been declared etymologically unresolved merely because the shortlist omitted them.

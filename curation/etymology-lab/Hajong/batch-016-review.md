@@ -1,0 +1,16 @@
+# Hajong: joint SIL review, batch 16
+
+**Saved: 4 proposals covering 29 assignment rows on 29 records.** The user authorized saving supported analyses jointly; these are accepted overlay rows, not pending proposals.
+
+Language ID: `Hajong`. [Joint status and scope](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/REVIEW.md) · [Difficult cases](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/AUDIT.md) · [Exact manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Hajong/batch-016.json)
+
+| # | Hajong | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **goru** ‘cow’, **guru** ‘cow’ | Reflex of **gōrūpá**, [CDIAL[4313]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=231) | CDIAL 4313 gōrūpa gives Prakrit gōru and widespread goru/guru “cow, ox, cattle”, including explicit cow uses in Kumauni, Kashmiri and Hindi. It preserves the full cattle compound rather than linking its modern continuations to bare go. Uncertain transfer between Indo-Aryan languages does not prevent this supported family link under the user’s preference. (10 records.) |
+| 2 | **dima** ‘egg’ | Reflex of **ḍimba**, [CDIAL[5550]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=312) | CDIAL 5550 ḍimba explicitly gives Bengali ḍim, Assamese ḍimā and Oriya ḍimba “egg”. Dental transcription in dima is retained as a local phonetic qualification; the egg-word family is identifiable. Uncertain transfer between Indo-Aryan languages does not prevent this supported family link under the user’s preference. (5 records.) |
+| 3 | **śo** ‘hundred’ | Reflex of **śatá**, [CDIAL[12278]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=711) | CDIAL 12278 śata explicitly gives Bengali sa, Marathi śẽ, Maiya/Shina šal and western sau “hundred”. These numeral forms identify the family; no composite hundred-and numeral is included. Uncertain transfer between Indo-Aryan languages does not prevent this supported family link under the user’s preference. (4 records.) |
+| 4 | **ki** ‘what’ | Reflex of **kím**, [CDIAL[3164]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=161) | CDIAL 3164 kim explicitly gives northern and eastern ki/kī “what”, Hindi and Kumauni kyā, and Middle Indo-Aryan ki/kiṃ. The interrogative sense excludes the borrowed Persian conjunction ki. Uncertain transfer between Indo-Aryan languages does not prevent this supported family link under the user’s preference. (10 records.) |
+
+All 29 rows use rank 1 and status `accepted`. Relation kinds: reflex: 29. Transmission uncertainty recorded in the evidence remains unresolved; a provisional family link does not prove uninterrupted inheritance. Exact IDs, source locations, dialect tags and assignment rows are retained in the manifest.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/global-fifth-validation.json). The compiled/browser database was not refreshed. Responses not listed in the exact manifest are outside these saved proposals; they have not been declared etymologically unresolved merely because the shortlist omitted them.

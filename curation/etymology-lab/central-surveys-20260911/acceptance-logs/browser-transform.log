@@ -1,0 +1,26 @@
+[build_static_db] loaded 411 languages and 1577 explicit dialect tags
+[build_static_db] loaded 541 references
+[build_static_db] collapsed 88228 identical attested lemma rows
+[build_static_db] loaded 603702 lemmas, 729641 lemma↔reference links, 95087 structured text blocks
+[build_static_db] loaded 1,044,569 permanent lemma ID aliases
+[build_static_db] loaded 1449 cross-family comparisons
+[build_static_db] created compact lemma lookup + hot-path ordering indexes
+[build_static_db] loaded typed graph edges: 28977 shipped (0 with unknown endpoints dropped)
+[build_static_db] loaded 428123 concept links across 3275 concepts
+[build_static_db] wrote meta counts: [('total_lemmas', 603702), ('total_lexicon', 603071), ('total_entries', 31504), ('total_reflexes', 299171), ('total_variants', 17072)]
+[build_static_db] materialised per-entry reflex_count / lang_count
+[build_static_db] loaded alignment table: 1941796 aligned segments from ../data/cldf/alignments.csv (0 unreachable rows skipped)
+[build_static_db] built correspondence summaries: corr_lang=539867, corr=333223
+[compact_db] OCR notes: moved 0 shackle page locators, stripped 0 page-nav HTML blocks
+[compact_db] encoded 603702 ids (77 in misc table)
+[compact_db] built lem (603702 rows), 24399 tagsets, 2536 cogsets, 283982 citations in 529 groups, 60137 etymologies, 1449 comparisons
+[compact_db] built ref_lex for 529 references (644568 (form, source) pairs)
+[compact_db] packed 1044569 aliases into 10571 groups (+98908 misc)
+[compact_db] packed alignment: 300553 forms, 113365 distinct cells
+[compact_db] packed corr_lang into 13052 groups; dropped corr/clades rollups
+[compact_db] compaction complete
+[build_static_db] setting page_size=16384 and VACUUMing (this rewrites the file)…
+[build_static_db] sanity: substring 'word:amb' -> 2068 lemmas
+[build_static_db] WARNING: database size regression: 100.0 MB (expected below 97 MB)
+[build_static_db] done: .dbwork/jambu-central-rebuild.db (100.0 MB)
+[build_static_db] elapsed 127.6s

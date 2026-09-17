@@ -1,0 +1,17 @@
+# Bundeli: joint SIL review, batch 29
+
+**Saved: 5 proposals covering 23 assignment rows on 23 records.** The user authorized saving supported analyses jointly; these are accepted overlay rows, not pending proposals.
+
+Language ID: `bundeli_atarra`. [Joint status and scope](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/REVIEW.md) · [Difficult cases](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/AUDIT.md) · [Exact manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/bundeli_atarra/batch-029.json)
+
+| # | Bundeli | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **kīt ī** ‘how many?’, **kīt t o** ‘how many?’, **kɛt t ā** ‘how many?’, **kit ek** ‘how many?’, **kit no** ‘how many?’, **kit na** ‘how many?’, **kit t o** ‘how many?’, **kit t ā** ‘how many?’ | Reflex of **\*kiyatta**, [CDIAL[3167]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=161) | CDIAL 3167 explicitly lists kitnā, kittā, Marathi kitī and ketek how many. These spaced source spellings preserve the same complete lexical form. Whitespace was ignored for comparison only; the exact source form is unchanged. (14 records.) |
+| 2 | **sapt ā** ‘week’, **sapt a** ‘week’ | Reflex of **saptāhá**, [CDIAL[13161]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=761) | CDIAL 13161 saptāha explicitly means a period of seven days. These spaced sāpt ā/sapt a responses retain the recognizable week word; learned or regional transmission remains open. Whitespace was ignored for comparison only; the exact source form is unchanged. (2 records.) |
+| 3 | **kei so** ‘what kind?’, **kai so** ‘what kind?’ | Reflex of **kīdr̩śa**, [CDIAL[3197]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=163) | CDIAL 3197 explicitly gives Hindi kaisā and Apabhraṃśa kaïsa of what kind. Source kai so/kei so matches that single interrogative adjective. Whitespace was ignored for comparison only; the exact source form is unchanged. (2 records.) |
+| 4 | **t ūm** ‘you’ | Reflex of **yuṣmad**, [CDIAL[10511]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=608) | CDIAL 10511 explicitly lists Hindi tum you, historically plural with t from tvam. The source spacing t ūm is internal to that single pronoun; its elicitation label is retained. Whitespace was ignored for comparison only; the exact source form is unchanged. (4 records.) |
+| 5 | **bʰai yā** ‘younger brother’ | Reflex of **bʰrā́tr̩**, [CDIAL[9661]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=552) | CDIAL 9661 includes bhāiya/bhāi brother and source-specific younger-brother uses. Spaced bhai yā is a single kin term rather than an added lexical component. Whitespace was ignored for comparison only; the exact source form is unchanged. (1 records.) |
+
+All 23 rows use rank 1 and status `accepted`. Relation kinds: reflex: 23. Transmission uncertainty recorded in the evidence remains unresolved; a provisional family link does not prove uninterrupted inheritance. Exact IDs, source locations, dialect tags and assignment rows are retained in the manifest.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/global-tenth-validation.json). The compiled/browser database was not refreshed. Responses not listed in the exact manifest are outside these saved proposals; they have not been declared etymologically unresolved merely because the shortlist omitted them.

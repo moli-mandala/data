@@ -1,0 +1,15 @@
+# Jaunsari: joint SIL review, batch 29
+
+**Saved: 3 proposals covering 11 assignment rows on 11 records.** The user authorized saving supported analyses jointly; these are accepted overlay rows, not pending proposals.
+
+Language ID: `jaun`. [Joint status and scope](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/REVIEW.md) · [Difficult cases](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/AUDIT.md) · [Exact manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/jaun/batch-029.json)
+
+| # | Jaunsari | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **īji** ‘mother’ | Reflex of **āryikā**, [CDIAL[1351, Addenda]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=61) | CDIAL 1351 āryikā lists WPah. ijjī/ij mother and its addendum expressly gives Jaunsari iji and poetic ije. The surveyed iji/ijā forms fit that regional mother series, distinct from mā́tṛ and dāī. Exact survey form īji is preserved. (8 records.) |
+| 2 | **iji** ‘mother’ | Reflex of **āryikā**, [CDIAL[1351, Addenda]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=61) | CDIAL 1351 āryikā lists WPah. ijjī/ij mother and its addendum expressly gives Jaunsari iji and poetic ije. The surveyed iji/ijā forms fit that regional mother series, distinct from mā́tṛ and dāī. Exact survey form iji is preserved. (2 records.) |
+| 3 | **həɸta** ‘week’ | Borrowed from **hafta**, [Platts[p. 1230];liljegren[entry LX000908]](https://dsal.uchicago.edu/cgi-bin/app/platts_query.py?qs=hafta&searchhws=yes&matchtype=default) | Platts p. 1230 explicitly gives Urdu/Hindi hafta week as Persian hafta, from haft seven. The existing Hindi hafta donor is independently recorded in Liljegren LX000908. These haft-/hapt- and contracted āft- week forms are linked to that whole Hindi word as a provisional regional donor; actual intermediate Indo-Aryan or Persian transmission remains open. Exact survey form həɸta is preserved. (1 records.) |
+
+All 11 rows use rank 1 and status `accepted`. Relation kinds: borrowed: 1, reflex: 10. Transmission uncertainty recorded in the evidence remains unresolved; a provisional family link does not prove uninterrupted inheritance. Exact IDs, source locations, dialect tags and assignment rows are retained in the manifest.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/week-mother-validation.json). The compiled/browser database was not refreshed. Responses not listed in the exact manifest are outside these saved proposals; they have not been declared etymologically unresolved merely because the shortlist omitted them.

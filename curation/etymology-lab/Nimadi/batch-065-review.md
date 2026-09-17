@@ -1,0 +1,14 @@
+# Nimadi: joint SIL review, batch 65
+
+**Saved: 2 proposals covering 7 assignment rows on 7 records.** The user authorized saving supported analyses jointly; these are accepted overlay rows, not pending proposals.
+
+Language ID: `Nimadi`. [Joint status and scope](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/REVIEW.md) · [Difficult cases](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/AUDIT.md) · [Exact manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Nimadi/batch-065.json)
+
+| # | Nimadi | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **aŋgār** ‘fire’ | Reflex of **áŋgāra**, [CDIAL[125]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=7) | Reviewed whole-form continuation of Kho āŋgār “fire” (f_glo336qwbgcmq). Family evidence: CDIAL 125 aṅgāra explicitly lists Gawri, Kalasha, Khowar aṅgār, Bshk äṅgār, Maiya agār and Palula aṅgōr in the fire/charcoal family. These survey velar-nasal and vowel variants match the explicitly attested northern fire word. Previously reviewed comparator: Kho āngār “fire” (f_54frcx4eam32u). Exact survey transcription remains unchanged. The present source form was inspected for phonetic and gloss differences; normalization was used only to find it, and its exact spelling is preserved. (5 records.) |
+| 2 | **āp** ‘you (2nd sg, formal)’ | Reflex of **ātmán**, [CDIAL[1135]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=51) | Reviewed whole-form continuation of marwari_bagra āp “you” (f_yaofrung5goy6). Family evidence: CDIAL 1135.1 ātman explicitly gives Hindi āp respectful “you”, Punjabi āpā̃ “we” and Old Marwari āpa “self, you, we”. These survey pronouns belong to the reflexive-to-personal paradigm; the distinct possessive *ātmanaka subsection is not selected. Uncertain transfer between Indo-Aryan languages does not prevent this supported family link under the user’s preference. The present source form was inspected for phonetic and gloss differences; normalization was used only to find it, and its exact spelling is preserved. (2 records.) |
+
+All 7 rows use rank 1 and status `accepted`. Relation kinds: reflex: 7. Transmission uncertainty recorded in the evidence remains unresolved; a provisional family link does not prove uninterrupted inheritance. Exact IDs, source locations, dialect tags and assignment rows are retained in the manifest.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/expansion-second-validation.json). The compiled/browser database was not refreshed. Responses not listed in the exact manifest are outside these saved proposals; they have not been declared etymologically unresolved merely because the shortlist omitted them.

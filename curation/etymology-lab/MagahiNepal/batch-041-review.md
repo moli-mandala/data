@@ -1,0 +1,15 @@
+# Magahi (Nepal survey): joint SIL review, batch 41
+
+**Saved: 3 proposals covering 30 assignment rows on 15 records.** The user authorized saving supported analyses jointly; these are accepted overlay rows, not pending proposals.
+
+Language ID: `MagahiNepal`. [Joint status and scope](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/REVIEW.md) · [Difficult cases](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/AUDIT.md) · [Exact manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/MagahiNepal/batch-041.json)
+
+| # | Magahi (Nepal survey) | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **hamsab** ‘we’ | Compound components: **asmad + sárva**, [CDIAL[986];CDIAL[13276]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=43) | The full response is first-person pronoun plus all: CDIAL 986 gives eastern ham and Oriya ami; CDIAL 13276 gives eastern sab and Oriya sabu. Two ordered components preserve hamsab or ami səbu, without asserting an inherited Sanskrit compound. The collective element supplies plurality/emphasis; source inclusive labels and local transmission remain open. Exact response: hamsab. (10 records.) |
+| 2 | **tūsab** ‘you’ | Compound components: **tuvám + sárva**, [CDIAL[5889];CDIAL[13276]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=336) | The full response is tū/tū̃ plus sab all. CDIAL 5889 explicitly gives eastern tū/tu and nasal second-person variants; 13276 gives sab/sabh all. Two ordered components retain the collective expression and source nasalisation. This analyses the actual tū constituent, not a hypothetical tum stem; the elicited you gloss does not independently specify number or politeness. Exact response: tūsab. (2 records.) |
+| 3 | **tū̃sab** ‘you’ | Compound components: **tuvám + sárva**, [CDIAL[5889];CDIAL[13276]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=336) | The full response is tū/tū̃ plus sab all. CDIAL 5889 explicitly gives eastern tū/tu and nasal second-person variants; 13276 gives sab/sabh all. Two ordered components retain the collective expression and source nasalisation. This analyses the actual tū constituent, not a hypothetical tum stem; the elicited you gloss does not independently specify number or politeness. Exact response: tū̃sab. (3 records.) |
+
+All 30 rows use rank 1 and status `accepted`. Relation kinds: component: 30. Transmission uncertainty recorded in the evidence remains unresolved; a provisional family link does not prove uninterrupted inheritance. Exact IDs, source locations, dialect tags and assignment rows are retained in the manifest.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/pass101-validation.json). The compiled/browser database was not refreshed. Responses not listed in the exact manifest are outside these saved proposals; they have not been declared etymologically unresolved merely because the shortlist omitted them.

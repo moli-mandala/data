@@ -1,0 +1,13 @@
+# Dungra Bhil: joint SIL review, batch 36
+
+**Saved: 1 proposals covering 1 assignment rows on 1 records.** The user authorized saving supported analyses jointly; these are accepted overlay rows, not pending proposals.
+
+Language ID: `DungraBhili`. [Joint status and scope](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/REVIEW.md) · [Difficult cases](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/AUDIT.md) · [Exact manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/DungraBhili/batch-036.json)
+
+| # | Dungra Bhil | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **semṭo** ‘tail’ | Reflex of **śēpyā́**, [CDIAL[12607]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=731) | CDIAL 12607 documents both ch- and ś- tail forms, including Prakrit cheppa/chippa and Marathi śẽp. Molesworth pp. 800–801 lists nasal śempaṭī/śempaḍī beside śepaṭī. Western cemṭ/chemṭ/semṭ/cimṭ forms are compared with that nasal extended series, with loss of the labial stop in the nasal cluster and regional vowel, aspiration and dental/retroflex notation explicitly qualified. These links identify the supported family; exact local phonological history and transmission remain unresolved. Primary response: https://dsal.uchicago.edu/cgi-bin/app/molesworth_query.py?qs=%E0%A4%B6%E0%A5%87%E0%A4%AA&searchhws=yes&matchtype=default Exact response: semṭo. (1 records.) |
+
+All 1 rows use rank 1 and status `accepted`. Relation kinds: reflex: 1. Transmission uncertainty recorded in the evidence remains unresolved; a provisional family link does not prove uninterrupted inheritance. Exact IDs, source locations, dialect tags and assignment rows are retained in the manifest.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/pass157-validation.json). The compiled/browser database was not refreshed. Responses not listed in the exact manifest are outside these saved proposals; they have not been declared etymologically unresolved merely because the shortlist omitted them.

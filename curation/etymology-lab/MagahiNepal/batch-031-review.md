@@ -1,0 +1,17 @@
+# Magahi (Nepal survey): joint SIL review, batch 31
+
+**Saved: 5 proposals covering 10 assignment rows on 10 records.** The user authorized saving supported analyses jointly; these are accepted overlay rows, not pending proposals.
+
+Language ID: `MagahiNepal`. [Joint status and scope](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/REVIEW.md) · [Difficult cases](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/AUDIT.md) · [Exact manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/MagahiNepal/batch-031.json)
+
+| # | Magahi (Nepal survey) | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **jaū** ‘barley’ | Reflex of **yáva**, [CDIAL[10431]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=603) | CDIAL 10431 yava explicitly lists regional jau/ja/yō barley. The barley responses fit that crop word; records glossed millet need independent crop-identification review. Exact survey form jaū is preserved; uncertain intra-Indo-Aryan transmission remains open. (2 records.) |
+| 2 | **ja** ‘barley’ | Reflex of **yáva**, [CDIAL[10431]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=603) | CDIAL 10431 yava explicitly lists regional jau/ja/yō barley. The barley responses fit that crop word; records glossed millet need independent crop-identification review. Exact survey form ja is preserved; uncertain intra-Indo-Aryan transmission remains open. (3 records.) |
+| 3 | **halkā** ‘light’ | Reflex of **\*lagʰukk-**, [CDIAL[10896.5]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=631) | CDIAL 10896 explicitly places Nepali haluko and Hindi halkā under the metathesized -kk extension, stored as 10896-5 *laghukk-. The survey halka forms fit this exact branch, with intra-IA transmission unresolved. Exact survey form halkā is preserved; uncertain intra-Indo-Aryan transmission remains open. (1 records.) |
+| 4 | **pīnāī** ‘to drink’ | Reflex of **píbati**, [CDIAL[8209]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=464) | CDIAL 8209 pibati explicitly gives Hindi pīnā, Maithili piab and Gujarati pīvũ drink. Forms with -le may include a light verb rather than an inflection and are held for segmentation. Exact survey form pīnāī is preserved; uncertain intra-Indo-Aryan transmission remains open. (1 records.) |
+| 5 | **jāeb** ‘to go’ | Reflex of **yā́ti**, [CDIAL[10452]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=604) | CDIAL 10452 yāti explicitly gives Hindi jānā, Maithili jāeb and Old Marwari jāvaï go; ordinary imperative jā-/jo forms fit this verb. The article separately derives suppletive g- past forms from gata, which are not included here. Exact survey form jāeb is preserved; uncertain intra-Indo-Aryan transmission remains open. (3 records.) |
+
+All 10 rows use rank 1 and status `accepted`. Relation kinds: reflex: 10. Transmission uncertainty recorded in the evidence remains unresolved; a provisional family link does not prove uninterrupted inheritance. Exact IDs, source locations, dialect tags and assignment rows are retained in the manifest.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/global-ninth-validation.json). The compiled/browser database was not refreshed. Responses not listed in the exact manifest are outside these saved proposals; they have not been declared etymologically unresolved merely because the shortlist omitted them.

@@ -1,0 +1,16 @@
+# Nimadi — batch 018
+
+**4 proposals, approved and saved to the accepted overlay.**
+
+## Qualified
+
+| # | Nimadi | Proposed etymology | Evidence |
+|---|---|---|---|
+| 171 | **baḍibæṇ, baḍibayeṇ, baḍibahin** ‘older sister’ | Components: **baḍo** (Pos 1, ID `f_4ii7ovfsfuy2k`; [CDIAL 11225](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=654)) + **beiṇ** (Pos 2, ID `f_rqgrecjdrgwxq`; [CDIAL 9349](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=531)) | Segment as baḍo ‘big’ + beiṇ ‘sister’, with ordinary gender/number stem variants. The survey’s age-relative kinship meaning supports this composition. The second member varies from contracted bæṇ to bahin; this is compatible with the bhaginī family but merits local review. The anchors are existing same-survey lexical records, not asserted historical donor villages. Acceptance depends on Nimadi proposals 142, 70. |
+| 172 | **moṭibayiṇ, moṭibeiṇ, moṭibāiṇ** ‘older sister’ | Components: **moṭo** (Pos 1, ID `f_5xh2a6drxjqro`; [CDIAL 10187.11](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=587)) + **beiṇ** (Pos 2, ID `f_rqgrecjdrgwxq`; [CDIAL 9349](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=531)) | Segment as moṭo ‘big’ + beiṇ ‘sister’, with ordinary gender/number stem variants. The survey’s age-relative kinship meaning supports this composition.  The anchors are existing same-survey lexical records, not asserted historical donor villages. Acceptance depends on Nimadi proposals 86, 70. |
+| 173 | **choṭibæṇ, choṭibayiṇ, choṭibayeṇ, choṭibeyin, coṭibəhin** ‘younger sister’ | Components: **choṭo** (Pos 1, ID `f_lepscy2n653ak`; [CDIAL 5071](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=279)) + **beiṇ** (Pos 2, ID `f_rqgrecjdrgwxq`; [CDIAL 9349](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=531)) | Segment as choṭo ‘small’ + beiṇ ‘sister’, with ordinary gender/number stem variants. The survey’s age-relative kinship meaning supports this composition. The anchor is elicited as older sister, whereas the compound is younger sister; the hypothesis treats age as supplied by the adjective, which needs semantic review. The anchors are existing same-survey lexical records, not asserted historical donor villages. Acceptance depends on Nimadi proposals 87, 70. |
+| 174 | **nanibeiṇ, nānibāiṇ** ‘younger sister’ | Components: **nāno** (Pos 1, ID `f_rj3h4j4cghw64`; [CDIAL 12732](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=738)) + **beiṇ** (Pos 2, ID `f_rqgrecjdrgwxq`; [CDIAL 9349](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=531)) | Segment as nāno ‘small’ + beiṇ ‘sister’, with ordinary gender/number stem variants. The survey’s age-relative kinship meaning supports this composition. The same older-versus-younger sense qualification applies to the sister anchor. The anchors are existing same-survey lexical records, not asserted historical donor villages. Acceptance depends on Nimadi proposals 149, 70. |
+
+4 proposals; 24 affected records; 48 saved assignment rows: 48 `component`. Historical extensions and uncertain contact pathways are explained in the evidence.
+
+Excluded responses remain held in the cumulative review and holds.json. All approved donor dependencies are resolved.

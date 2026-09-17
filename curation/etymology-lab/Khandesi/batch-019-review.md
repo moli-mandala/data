@@ -1,0 +1,13 @@
+# Khandesi: joint SIL review, batch 19
+
+**Saved: 1 proposals covering 1 assignment rows on 1 records.** The user authorized saving supported analyses jointly; these are accepted overlay rows, not pending proposals.
+
+Language ID: `Khandesi`. [Joint status and scope](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/REVIEW.md) · [Difficult cases](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/AUDIT.md) · [Exact manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Khandesi/batch-019.json)
+
+| # | Khandesi | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **duphār** ‘noon’ | Borrowed from **dupahar**, [Platts[p. 530];kannauji[p. 84]](https://dsal.uchicago.edu/cgi-bin/app/platts_query.py?qs=do-pahar&searchhws=yes&matchtype=default) | Platts p. 530 s.v. do/du expressly gives do-pahar noon (Sanskrit dvi-prahara). The Hindi Rohili survey records dupahar (kannauji p. 84). These whole do-/du-pahar responses are linked to the existing Hindi word as a provisional regional route; the actual immediate Indo-Aryan transmitter remains uncertain. The donor already has an older graph link to *dva-prahara; that reconstruction differs from Platts’s dvi-prahara and is flagged in noon-upstream-audit.json, not silently treated as verified. Exact survey form duphār is retained. (1 records.) |
+
+All 1 rows use rank 1 and status `accepted`. Relation kinds: borrowed: 1. Transmission uncertainty recorded in the evidence remains unresolved; a provisional family link does not prove uninterrupted inheritance. Exact IDs, source locations, dialect tags and assignment rows are retained in the manifest.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/noon-validation.json). The compiled/browser database was not refreshed. Responses not listed in the exact manifest are outside these saved proposals; they have not been declared etymologically unresolved merely because the shortlist omitted them.

@@ -1,0 +1,14 @@
+import csv,json
+from pathlib import Path
+P=Path('/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914');stem='pass257';assert not (P/(stem+'-decisions.json')).exists()
+rules=[dict(parent='9690',citation='CDIAL[9690]',evidence='Full bhrūra explicitly gives Kumaoni bhūro white/fair, Gujarati bhūrũ brown/white and Sindhi bhūro brownish/whitish. The Buksa bhuro and Kaithal bura white responses fit this documented colour family; their white sense is not silently changed to brown. Source aspiration and rhotic/vowel notation remain intact; local phonetic history and cross-IA transmission remain qualified.'),dict(parent='12772',citation='CDIAL[12772]',evidence='Full śvitra explicitly gives Jaunsari ciṭṭō white, as well as Lahnda/Punjabi ciṭṭā and West Pahari ciṭo. This directly supports the Jaunsari survey ciṭu white. Source vowel quality and single retroflex stop remain intact. Turner’s proposed pre-IA/contact history is not independently asserted as settled; regional family membership and local transmission remain qualified. Full citra was also inspected; dental ambiguous responses are kept separate.')]
+remaining={r['ID'] for r in csv.DictReader((P/'unresearched-records.csv').open())};acc=[];held=[]
+for r in json.loads((P/'inventory.json').read_text()):
+ if r['ID'] not in remaining or r['Gloss']!='white':continue
+ i=0 if r['Form'] in {'bʰuɾo','bura'} else 1 if r['Form']=='ciṭu' else None
+ if i is not None:
+  q=rules[i];acc.append(dict(record=r,parent=q['parent'],family=i,kind='reflex',citation=q['citation'],evidence=q['evidence']+' Exact response: '+r['Form']+'.'))
+ elif r['Form'] in {'citī','ciṭa / cita','tsit̪ə'}:held.append(dict(record=r,families=[],passNumber=257,reason='Full śvitra 12772 documents regional ciṭṭā/ciṭṭō white, but full citra 4803 separately gives Hindi cittā white and related dental forms. Source dental/retroflex and affricate notation does not securely decide this response, and the mixed ciṭa/cita response may straddle the distinction. Need a local lexical comparison rather than a similarity-only root assignment.'))
+ elif r['Form'] in {'bulːo','bullo'}:held.append(dict(record=r,families=[0],passNumber=257,reason='Full bhrūra 9690 has a lateral extension Maithili bhulla light brown and simple forms meaning white, but lacks a direct Pauri Bareli bullo white comparison or evidence fixing that extension here. The resemblance is a research lead; aspiration loss, lateral morphology and the local semantic match need evidence beyond unknown cross-IA transmission.'))
+for suffix,obj in [('rules',rules),('decisions',dict(accepted=acc,held=held))]:(P/(stem+'-'+suffix+'.json')).write_text(json.dumps(obj,ensure_ascii=False,indent=1)+'\n')
+(P/(stem+'_save.py')).write_text((P/'global_sixteenth_save.py').read_text().replace('global-sixteenth',stem));(P/(stem+'_prepare.py')).write_text(Path('/tmp/prepare257.py').read_text());print('accepted',len(acc),'held',len(held))

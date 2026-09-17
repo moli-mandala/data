@@ -1,0 +1,35 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_ test_the_dictionary_self_reference_assignments_all_point_at_live_sub_entries _
+
+    def test_the_dictionary_self_reference_assignments_all_point_at_live_sub_entries():
+        """Guards the corpus against the same capture recurring."""
+        import csv
+        import re
+        from pathlib import Path
+    
+        root = Path(__file__).parents[1]
+        forms_path = root / "cldf/forms.csv"
+        assignments_path = root / "data/etymology-assignments.csv"
+        if not forms_path.exists():
+            return
+        with forms_path.open(encoding="utf-8", newline="") as stream:
+            live = {row["ID"] for row in csv.DictReader(stream)}
+        with assignments_path.open(encoding="utf-8", newline="") as stream:
+            assignments = list(csv.DictReader(stream))
+        captured = [row for row in assignments if is_retired_subentry(row, live)]
+        assert captured == []
+        # Every surviving self-reference names a sub-entry that still exists.
+        self_refs = [
+            row for row in assignments
+            if row["Etymon_ID"]
+            and re.fullmatch(re.escape(row["Etymon_ID"]) + r"-\d+[a-z]*", row["Form_ID"])
+        ]
+>       assert len(self_refs) == 2604
+E       AssertionError: assert 2603 == 2604
+E        +  where 2603 = len([{'Etymon_ID': '10005', 'Form_ID': '10005-2', 'Kind': 'reflex', 'Notes': 'Restored from legacy NeoJambu origin_lemma_i...: '10078', 'Form_ID': '10078-2', 'Kind': 'reflex', 'Notes': 'Restored from legacy NeoJambu origin_lemma_id', ...}, ...])
+
+tests/test_assign_form_ids.py:293: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_assign_form_ids.py::test_the_dictionary_self_reference_assignments_all_point_at_live_sub_entries
+1 failed in 3.13s

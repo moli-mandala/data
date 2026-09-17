@@ -1,0 +1,15 @@
+# Gujari: joint SIL review, batch 62
+
+**Saved: 3 proposals covering 6 assignment rows on 6 records.** The user authorized saving supported analyses jointly; these are accepted overlay rows, not pending proposals.
+
+Language ID: `Goj`. [Joint status and scope](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/REVIEW.md) · [Difficult cases](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/AUDIT.md) · [Exact manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Goj/batch-062.json)
+
+| # | Gujari | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **niko** ‘small’ | Reflex of **niktá**, [CDIAL[7150]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=409) | CDIAL 7150 places the Middle Indo-Aryan replacement *nikka under nikta and explicitly gives Lahnda/Punjabi nikkā small/young, Awan nik shortness and regional nikṛā small. The selected nika/nikkā/nikā/nikī/niko small or short forms fit this family, preserving vowel length, gender ending and non-geminate survey notation. The deeper semantic development and regional transmission are not independently settled. Exact response: niko. (3 records.) |
+| 2 | **tre** ‘(you are) thirsty’ | Reflex of **tr̩ṣā**, [CDIAL[5936]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=339) | CDIAL 5936 tṛṣā thirst explicitly gives Lahnda treh and Punjabi tareh/teh. The selected bare tre responses fit that thirst noun with loss or unmarked realization of final h retained as a local qualification. The survey thirsty gloss is preserved as an elliptical state response; longer treā and tre lagi formations are not included. Transmission within Indo-Aryan remains open. Exact response: tre. (2 records.) |
+| 3 | **pukh** ‘be hungry’ | Reflex of **bubʰukṣā**, [CDIAL[9286]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=526) | CDIAL 9286 bubhukṣā hunger gives Lahnda/Punjabi bhukkh and unaspirated Lahnda bukh, plus forms with final kh/k. The bare Pothwari pṳk/pukʰ and Goj pukh responses fit this hunger noun, with initial p versus bh/b and breathy phonation retained as local qualifications. The elicitation gloss hungry is preserved: the analysis treats the bare noun as an elliptical hunger response, not as a full adjectival or verbal construction. Local Indo-Aryan transmission remains open. Exact response: pukh. (1 records.) |
+
+All 6 rows use rank 1 and status `accepted`. Relation kinds: reflex: 6. Transmission uncertainty recorded in the evidence remains unresolved; a provisional family link does not prove uninterrupted inheritance. Exact IDs, source locations, dialect tags and assignment rows are retained in the manifest.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/pass89-validation.json). The compiled/browser database was not refreshed. Responses not listed in the exact manifest are outside these saved proposals; they have not been declared etymologically unresolved merely because the shortlist omitted them.

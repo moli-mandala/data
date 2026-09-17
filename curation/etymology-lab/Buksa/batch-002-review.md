@@ -1,0 +1,18 @@
+# Bhuksa Tharu: joint SIL review, batch 2
+
+**Saved: 6 proposals covering 9 assignment rows on 9 records.** The user authorized saving supported analyses jointly; these are accepted overlay rows, not pending proposals.
+
+Language ID: `Buksa`. [Joint status and scope](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/REVIEW.md) · [Difficult cases](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/AUDIT.md) · [Exact manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Buksa/batch-002.json)
+
+| # | Bhuksa Tharu | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **bidʒʌli** ‘lightning’ | Reflex of **vidyullatā**, [CDIAL[11745]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=683) | CDIAL 11745 vidyullatā gives Prakrit vijjulī, Hindi bijlī/bijurī, Nepali bijuli, Gujarati vijḷī and eastern bijuḷi “lightning”. The extended l/r-bearing forms select this compound, not bare vidyut; Marathi bijlī is explicitly a Hindi loan and is held. (2 records.) |
+| 2 | **dʒʌɖ** ‘root’ | Reflex of **jáṭā**, [CDIAL[5086]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=280) | CDIAL 5086.1 jaṭā already denotes fibrous root and lists Hindi/Marwari jaṛ, Marathi jaḍ, Bengali jaṛ, Maithili jaṛi and Nepali jari. The link identifies the root family; competing Dravidian/Munda proposals about the older word remain unresolved. (1 records.) |
+| 3 | **din** ‘day’ | Reflex of **dina**, [CDIAL[6328]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=362) | CDIAL 6328 dina lists Prakrit diṇa and Nepali, Assamese, Bengali, Maithili, Awadhi and Hindi din “day”. It explicitly warns that Punjabi/Western Pahari din is borrowed from Hindi or Sanskrit, as are potentially Gujarati/Marathi forms; those transmission-sensitive matches are held. (2 records.) |
+| 4 | **tʊʈa** ‘broken’ | Reflex of **trúṭyati**, [CDIAL[6065]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=345) | CDIAL 6065 truṭyati includes Prakrit tuṭṭa/ṭiuṭṭa “broken”, Hindi ṭūṭā and Bhojpuri ṭūṭal. The bare participles fit the intransitive break family; overt auxiliary constructions and opaque suffixes are excluded. (1 records.) |
+| 5 | **pʰuʈa** ‘broken’ | Reflex of **\*spʰuṭyati**, [CDIAL[13845]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=800) | CDIAL 13845 *sphuṭyati includes Prakrit phuṭṭa “burst” alongside regional split/broken continuations. These bare result forms select the intransitive burst family; the similarly spelled sphuṭa “clear, open” and unanalyzed auxiliaries are excluded. (1 records.) |
+| 6 | **bʌhʊt** ‘many’ | Reflex of **bahutva**, [CDIAL[9190]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=519) | CDIAL 9190 bahutva lists Old Marwari bahuta/bahota/bhota, Gujarati bɔt, Hindi bahut, Nepali bahut and Torwali but. The source treats the adjective as influenced by prabhūta and distinguishes obscure Shina buṭ; that qualification is retained. (2 records.) |
+
+All 9 rows use rank 1 and status `accepted`. Relation kinds: reflex: 9. Transmission uncertainty recorded in the evidence remains unresolved; a provisional family link does not prove uninterrupted inheritance. Exact IDs, source locations, dialect tags and assignment rows are retained in the manifest.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/second-validation.json). The compiled/browser database was not refreshed. Responses not listed in the exact manifest are outside these saved proposals; they have not been declared etymologically unresolved merely because the shortlist omitted them.

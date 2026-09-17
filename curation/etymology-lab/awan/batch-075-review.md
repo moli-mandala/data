@@ -1,0 +1,13 @@
+# Hindko: joint SIL review, batch 75
+
+**Saved: 1 proposals covering 1 assignment rows on 1 records.** The user authorized saving supported analyses jointly; these are accepted overlay rows, not pending proposals.
+
+Language ID: `awan`. [Joint status and scope](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/REVIEW.md) · [Difficult cases](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/AUDIT.md) · [Exact manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/awan/batch-075.json)
+
+| # | Hindko | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **gʰā** ‘cow’ | Reflex of **gāvī**, [CDIAL[4147.3]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=222) | Full CDIAL gāva subsection 3 gāvī explicitly gives Phalura ghāu cow and Awankari gā̃, plural gāī̃. The selected Phal gʰāo and Awankari gʰā survey responses are assigned to that specific branch; source aspiration, diphthong and nasal notation are preserved, rather than silently replacing them with the dictionary spelling. Local IA transmission remains unresolved. Exact response: gʰā. (1 records.) |
+
+All 1 rows use rank 1 and status `accepted`. Relation kinds: reflex: 1. Transmission uncertainty recorded in the evidence remains unresolved; a provisional family link does not prove uninterrupted inheritance. Exact IDs, source locations, dialect tags and assignment rows are retained in the manifest.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/pass234-validation.json). The compiled/browser database was not refreshed. Responses not listed in the exact manifest are outside these saved proposals; they have not been declared etymologically unresolved merely because the shortlist omitted them.

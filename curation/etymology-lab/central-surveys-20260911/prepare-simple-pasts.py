@@ -1,0 +1,10 @@
+from research_helpers import Batch
+b=Batch(20)
+b.add('Malvi','go!, he went','gyo|geyā|gāyo|gaya|gya','4008','CDIAL 4008 gata explicitly supplies the go-preterite: Prakrit gaya/gaa, Hindi gayā and Old Marwari gayaü, with contracted Old Gujarati gyau. These simple past forms belong to the suppletive gata family rather than the jā- present stem.',locator='4008.1')
+b.add('Malvi','come!, he came','āyo|ayā','1045','CDIAL 1045 āgata gives Prakrit āya, Hindi āyā and Old Marwari āīyo. These simple arrived/came forms select the inherited preterite rather than the āv- present or the two-part ā-gayā construction.')
+b.add('Malvi','come!, he came','āvi|aviya|āviyā','1200','CDIAL 1200 gives Prakrit āvaï and Old Marwari āvaï for come, while noting that the preterite usually comes from āgata. The retained-v responses may be regularized past/feminine forms of āv-; tense and gender cannot be settled from the combined elicitation label, so this is a qualified present-family analysis.',tier='qualified')
+b.add('Malvi','give!, he gave','diyā','6140-3','CDIAL 6140.3 *dita specifically gives Hindi diyā and Nepali diyo ‘given’. This identifies the past participial branch, distinct from the present de- family.')
+b.add('Malvi','give!, he gave','dido','6140-3','CDIAL 6140.3 discusses replacement by the -ddha participial type, with Old Hindi dīdhau and Gujarati dīdhũ. Malvi dido may continue that remodeled type, but deaspiration or the neighboring *ditta branch remain alternatives; it is not parsed automatically as a repeated give imperative.',tier='qualified',locator='6140.3, -ddha replacement, compare 6140.4')
+for g in ['sleep!, he slept','lie down!, he lay down']:
+ b.add('Nimadi',g,'sav, soyo','13902','The paired responses sav and soyo are provisionally a simple imperative and ordinary past inflection of the sōv- family, not two concatenated components. CDIAL 13902 documents sleep/lie-down senses and sō(v)- stems; the survey’s a/o vowels and tense assignment remain for local review.',tier='qualified')
+b.save()

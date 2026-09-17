@@ -1,0 +1,19 @@
+# Kullui: joint SIL review, batch 37
+
+**Saved: 7 proposals covering 7 assignment rows on 7 records.** The user authorized saving supported analyses jointly; these are accepted overlay rows, not pending proposals.
+
+Language ID: `kul`. [Joint status and scope](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/REVIEW.md) · [Difficult cases](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/AUDIT.md) · [Exact manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/kul/batch-037.json)
+
+| # | Kullui | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **ətʃiː** ‘eye’ | Reflex of **ákṣi**, [CDIAL[43]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=3) | CDIAL 43 akṣi includes Awankari akh, Maiyan āc̣hi/ãc̣hi and Western Pahari aċh eye. These survey velar and affricate forms match the regional eye family; phonetic x represents the spirant counterpart of kh. Exact survey form ətʃiː is retained. (1 records.) |
+| 2 | **ˈatʃi** ‘eye’ | Reflex of **ákṣi**, [CDIAL[43]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=3) | CDIAL 43 akṣi includes Awankari akh, Maiyan āc̣hi/ãc̣hi and Western Pahari aċh eye. These survey velar and affricate forms match the regional eye family; phonetic x represents the spirant counterpart of kh. Exact survey form ˈatʃi is retained. (1 records.) |
+| 3 | **ətʃi** ‘eye’ | Reflex of **ákṣi**, [CDIAL[43]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=3) | CDIAL 43 akṣi includes Awankari akh, Maiyan āc̣hi/ãc̣hi and Western Pahari aċh eye. These survey velar and affricate forms match the regional eye family; phonetic x represents the spirant counterpart of kh. Exact survey form ətʃi is retained. (1 records.) |
+| 4 | **aːtʃ** ‘eye’ | Reflex of **ákṣi**, [CDIAL[43]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=3) | CDIAL 43 akṣi includes Awankari akh, Maiyan āc̣hi/ãc̣hi and Western Pahari aċh eye. These survey velar and affricate forms match the regional eye family; phonetic x represents the spirant counterpart of kh. Exact survey form aːtʃ is retained. (1 records.) |
+| 5 | **naːu** ‘river’ | Reflex of **nadī́**, [CDIAL[6943]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=399) | CDIAL 6943 nadī gives Prakrit ṇaī river and Western Pahari nɔe/nau in its addendum. Vasavi ṇai and Kullu nau/noe match these explicitly documented shapes. Exact survey form naːu is retained. (1 records.) |
+| 6 | **noːe** ‘river’ | Reflex of **nadī́**, [CDIAL[6943]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=399) | CDIAL 6943 nadī gives Prakrit ṇaī river and Western Pahari nɔe/nau in its addendum. Vasavi ṇai and Kullu nau/noe match these explicitly documented shapes. Exact survey form noːe is retained. (1 records.) |
+| 7 | **tʃəɳɖ** ‘moon’ | Reflex of **candrá**, [CDIAL[4661]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=252) | CDIAL 4661 candra includes Gujarati cā̃d/cā̃do moon, Assamese sā̃d and Sindhi caṇḍru. The western survey s-initial and retroflex-cluster variants fit this documented moon family; regional transmission remains open. Exact survey form tʃəɳɖ is retained. (1 records.) |
+
+All 7 rows use rank 1 and status `accepted`. Relation kinds: reflex: 7. Transmission uncertainty recorded in the evidence remains unresolved; a provisional family link does not prove uninterrupted inheritance. Exact IDs, source locations, dialect tags and assignment rows are retained in the manifest.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/global-seventeenth-validation.json). The compiled/browser database was not refreshed. Responses not listed in the exact manifest are outside these saved proposals; they have not been declared etymologically unresolved merely because the shortlist omitted them.

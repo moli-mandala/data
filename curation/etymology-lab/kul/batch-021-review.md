@@ -1,0 +1,14 @@
+# Kullui: joint SIL review, batch 21
+
+**Saved: 2 proposals covering 3 assignment rows on 3 records.** The user authorized saving supported analyses jointly; these are accepted overlay rows, not pending proposals.
+
+Language ID: `kul`. [Joint status and scope](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/REVIEW.md) · [Difficult cases](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/AUDIT.md) · [Exact manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/kul/batch-021.json)
+
+| # | Kullui | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **dərwədʒə** ‘door’, **dərwədʒaː** ‘door’ | Borrowed from **darwaaza**, [liljegren[entry LX000624];platts1884[s.v. darwāza]](https://dsal.uchicago.edu/cgi-bin/app/platts_query.py?qs=darw%C4%81za&searchhws=yes&matchtype=exact) | Platts p. 514 gives Persian darwāza “door”. The existing Hindi-Urdu darwaaza head supports the whole regional loan, including v/w/b and z/j substitutions and contracted dorja. The local transmission route remains provisional. Hindi darwaaza “door” is used as an attested provisional donor under the user’s preference to link supported intra-IA borrowing families. The recorded donor locality is not asserted to be the historical source locality. An intermediate Indo-Aryan language remains possible. (2 records.) |
+| 2 | **mʊrgi** ‘chicken’ | Borrowed from **murgi**, [kannauji[p. 75];platts1884[s.v. murg̠ī]](https://dsal.uchicago.edu/cgi-bin/app/platts_query.py?qs=murg%CC%A0%C4%AB&searchhws=yes&matchtype=exact) | Platts p. 1024 explicitly gives Hindi murgī “hen”, derived from murg plus -ikā, while p. 1023 gives the Persian bird/cock base. The feminine survey forms select the complete Hindi murgi donor rather than dropping the gender suffix. Hindi murgi “chicken” is used as an attested provisional donor under the user’s preference to link supported intra-IA borrowing families. The recorded donor locality is not asserted to be the historical source locality. An intermediate Indo-Aryan language remains possible. (1 records.) |
+
+All 3 rows use rank 1 and status `accepted`. Relation kinds: borrowed: 3. Transmission uncertainty recorded in the evidence remains unresolved; a provisional family link does not prove uninterrupted inheritance. Exact IDs, source locations, dialect tags and assignment rows are retained in the manifest.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/loan-fourth-validation.json). The compiled/browser database was not refreshed. Responses not listed in the exact manifest are outside these saved proposals; they have not been declared etymologically unresolved merely because the shortlist omitted them.

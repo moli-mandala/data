@@ -1,0 +1,14 @@
+# Dungra Bhil: joint SIL review, batch 16
+
+**Saved: 2 proposals covering 2 assignment rows on 2 records.** The user authorized saving supported analyses jointly; these are accepted overlay rows, not pending proposals.
+
+Language ID: `DungraBhili`. [Joint status and scope](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/REVIEW.md) · [Difficult cases](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/AUDIT.md) · [Exact manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/DungraBhili/batch-016.json)
+
+| # | Dungra Bhil | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **puiro** ‘child’ | Reflex of **\*pōtara**, [CDIAL[8399.2]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=477) | CDIAL 8399.2 *potara explicitly gives Gujarati porī little girl and poriyo boy, and Marathi por child or young animal. These western child terms are analyzed jointly in that r-bearing family rather than bare pota or putra. Gendered and y-bearing endings are compared with Gujarati porī/poriyo; pur- beside por- and pory-/poir-/poyar- are working vowel/glide correspondences inferred from the survey series, not independently established sound laws. Those variants remain flagged for audit, and intra-Indo-Aryan transmission is open. The article qualifies the deeper non-Aryan origin of the family. Exact survey form puiro and sense child are preserved. (1 records.) |
+| 2 | **puyiro** ‘child’ | Reflex of **\*pōtara**, [CDIAL[8399.2]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=477) | CDIAL 8399.2 *potara explicitly gives Gujarati porī little girl and poriyo boy, and Marathi por child or young animal. These western child terms are analyzed jointly in that r-bearing family rather than bare pota or putra. Gendered and y-bearing endings are compared with Gujarati porī/poriyo; pur- beside por- and pory-/poir-/poyar- are working vowel/glide correspondences inferred from the survey series, not independently established sound laws. Those variants remain flagged for audit, and intra-Indo-Aryan transmission is open. The article qualifies the deeper non-Aryan origin of the family. Exact survey form puyiro and sense child are preserved. (1 records.) |
+
+All 2 rows use rank 1 and status `accepted`. Relation kinds: reflex: 2. Transmission uncertainty recorded in the evidence remains unresolved; a provisional family link does not prove uninterrupted inheritance. Exact IDs, source locations, dialect tags and assignment rows are retained in the manifest.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/child-r-validation.json). The compiled/browser database was not refreshed. Responses not listed in the exact manifest are outside these saved proposals; they have not been declared etymologically unresolved merely because the shortlist omitted them.

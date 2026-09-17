@@ -1,0 +1,14 @@
+# Indo-Aryan Kalasha: joint SIL review, batch 50
+
+**Saved: 2 proposals covering 2 assignment rows on 2 records.** The user authorized saving supported analyses jointly; these are accepted overlay rows, not pending proposals.
+
+Language ID: `Kal`. [Joint status and scope](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/REVIEW.md) · [Difficult cases](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/AUDIT.md) · [Exact manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Kal/batch-050.json)
+
+| # | Indo-Aryan Kalasha | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **ọ̃ḍrak** ‘egg’ | Reflex of **āṇḍá**, [CDIAL[1111]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=50) | Full āṇḍa explicitly includes Kalasha ṓṇḍrak/hā̃ṭrak, Lahnda āṇḍṛā and Awankari ā̃ṭṛā, Torwali āṇ, Bshk ã, Maiya āṛa, regional aṇḍā and Gujarati ĩḍũ. These support the selected simple, reduced, r-extended and front-vowel egg responses. Keep the source glottal onset, nasalization, stop voicing/aspiration and local endings. The article presents competing deeper analyses and local deformations; this links the documented family without resolving ultimate origin or cross-IA transmission. Multiword responses and unexplained extra initials or l-extensions are excluded. Exact response: ọ̃ḍrak. (1 records.) |
+| 2 | **hā̃ḍrūk** ‘egg’ | Reflex of **āṇḍá**, [CDIAL[1111]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=50) | Full āṇḍa explicitly includes Kalasha ṓṇḍrak/hā̃ṭrak, Lahnda āṇḍṛā and Awankari ā̃ṭṛā, Torwali āṇ, Bshk ã, Maiya āṛa, regional aṇḍā and Gujarati ĩḍũ. These support the selected simple, reduced, r-extended and front-vowel egg responses. Keep the source glottal onset, nasalization, stop voicing/aspiration and local endings. The article presents competing deeper analyses and local deformations; this links the documented family without resolving ultimate origin or cross-IA transmission. Multiword responses and unexplained extra initials or l-extensions are excluded. Exact response: hā̃ḍrūk. (1 records.) |
+
+All 2 rows use rank 1 and status `accepted`. Relation kinds: reflex: 2. Transmission uncertainty recorded in the evidence remains unresolved; a provisional family link does not prove uninterrupted inheritance. Exact IDs, source locations, dialect tags and assignment rows are retained in the manifest.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/pass284-validation.json). The compiled/browser database was not refreshed. Responses not listed in the exact manifest are outside these saved proposals; they have not been declared etymologically unresolved merely because the shortlist omitted them.

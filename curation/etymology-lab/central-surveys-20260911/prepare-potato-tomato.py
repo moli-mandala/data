@@ -1,0 +1,7 @@
+from research_helpers import Batch
+b=Batch(36)
+for lang,words in [('Malvi','alu|ālu|allu|āllu'),('Nimadi','ālu|āḷu|allu'),('Bagheli','alu')]:
+ b.add(lang,'potato',words,'1388','CDIAL 1388.1 ālu/āluka originally names edible aroid roots; it explicitly records Hindi ālū, Punjabi ālū and Nepali ālu ‘potato’, with an addendum’s Kotgarhi aḷu ‘potato’. The modern crop meaning is a semantic transfer, not a claim that the ancient Sanskrit word named the potato; regional borrowing/reinforcement and '+('Nimadi retroflex ḷ and gemination' if lang=='Nimadi' else 'local vowel length/gemination')+' remain qualified, so the provisional reflex relation needs review alongside possible contact transmission.',tier='qualified',locator='1388.1')
+for lang,words in [('Malvi','ṭamaṭār|ṭamāṭar|ṭamaṭar|ṭemaṭer|ṭāmeṭar|tamaṭār|ṭamāṭer|ṭameṭar'),('Nimadi','ṭamāṭar|tāmātār'),('Bagheli','ṭemater')]:
+ b.add(lang,'tomato',words,'f_ioja36d77utxa','Borrowing proposed from attested Hindi ṭamaṭar ‘tomato’ (Kannauji survey p. 74). The full Hindi Śabdasāgara entry, read in its explicitly attributed digital reproduction, identifies टमाटर with English tomato; local vowel and dental/retroflex variants remain qualified, and selecting the Hindi donor does not assert direct borrowing from English or an identified donor village.',tier='qualified',kind='borrowed',citation='kannauji[p. 74]',source_url='https://hi.wiktionary.org/w/index.php?title=टमाटर&oldid=486401#शब्दसागर')
+b.save()

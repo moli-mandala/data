@@ -1,0 +1,16 @@
+# Majhi: joint SIL review, batch 25
+
+**Saved: 4 proposals covering 9 assignment rows on 9 records.** The user authorized saving supported analyses jointly; these are accepted overlay rows, not pending proposals.
+
+Language ID: `Majhi`. [Joint status and scope](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/REVIEW.md) · [Difficult cases](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/AUDIT.md) · [Exact manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Majhi/batch-025.json)
+
+| # | Majhi | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **ṭopi** ‘hat’ | Reflex of **\*ṭōppa**, [CDIAL[5481]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=305) | CDIAL 5481 *ṭoppa explicitly gives Nepali ṭopi hat/cap and Hindi/Bhojpuri ṭopī. These whole hat responses match that feminine noun, with regional transmission unresolved and remote connections left as Turner’s doubtful alternatives. Exact survey form ṭopi is retained; possible cross-Indo-Aryan transmission does not exclude this lexical-family link. (4 records.) |
+| 2 | **nati** ‘grandson’ | Reflex of **náptr̩**, [CDIAL[6955b]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=400) | CDIAL 6955b náptṛ explicitly gives Nepali nāti grandson and nātini granddaughter, with Bhojpuri nātin and related feminine derivatives in the same article. The surveyed kin terms preserve those masculine/feminine forms. Exact survey form nati is retained; possible cross-Indo-Aryan transmission does not exclude this lexical-family link. (2 records.) |
+| 3 | **natini** ‘granddaughter’ | Reflex of **náptr̩**, [CDIAL[6955b]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=400) | CDIAL 6955b náptṛ explicitly gives Nepali nāti grandson and nātini granddaughter, with Bhojpuri nātin and related feminine derivatives in the same article. The surveyed kin terms preserve those masculine/feminine forms. Exact survey form natini is retained; possible cross-Indo-Aryan transmission does not exclude this lexical-family link. (2 records.) |
+| 4 | **sukla** ‘dry’ | Reflex of **\*suṣkall-**, [CDIAL[12548.2]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=727) | CDIAL 12548 śuṣka lists Hindi sūkhā and Gujarati sūku dry, and its -ll extension lists Oriya sukhilā. The l-bearing dry forms are assigned to the specific stored extension 12548-2; other phonological or verbal extensions require separate review. Exact survey form sukla is retained; possible cross-Indo-Aryan transmission does not exclude this lexical-family link. (1 records.) |
+
+All 9 rows use rank 1 and status `accepted`. Relation kinds: reflex: 9. Transmission uncertainty recorded in the evidence remains unresolved; a provisional family link does not prove uninterrupted inheritance. Exact IDs, source locations, dialect tags and assignment rows are retained in the manifest.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/global-seventh-validation.json). The compiled/browser database was not refreshed. Responses not listed in the exact manifest are outside these saved proposals; they have not been declared etymologically unresolved merely because the shortlist omitted them.

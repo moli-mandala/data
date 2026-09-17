@@ -1,0 +1,15 @@
+# Bhatri: joint SIL review, batch 14
+
+**Saved: 3 proposals covering 19 assignment rows on 19 records.** The user authorized saving supported analyses jointly; these are accepted overlay rows, not pending proposals.
+
+Language ID: `Bhatri`. [Joint status and scope](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/REVIEW.md) · [Difficult cases](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/AUDIT.md) · [Exact manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Bhatri/batch-014.json)
+
+| # | Bhatri | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **baṛni** ‘broom’ | Reflex of **várdʰana**, [CDIAL[11378.2]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=663) | CDIAL 11378, section 2, explicitly gives Assamese bārni, Bengali bāṛhan, Bihari baṛhanī, Bhojpuri bāṛhanī and Hindi baṛhnī “broom”, from the vardhanī sweeping formation. No distinct stored subsection node exists, so the citation selects section 2 on the existing head; the euphemistic motivation is not treated as settled. Any unresolved borrowing between Indo-Aryan languages is retained under the user’s preference for a provisional supported family link. (9 records.) |
+| 2 | **lẽj** ‘tail’ | Reflex of **lañja**, [CDIAL[10915]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=632) | CDIAL 10915 lañja² explicitly gives Bengali lej/nej/nejā, Assamese lā̃z/lẽz/nez and Oriya lāñja “tail”. The selected eastern simple nouns preserve the documented nasal and nonnasal variants; longer opaque tail compounds are excluded. Any unresolved borrowing between Indo-Aryan languages is retained under the user’s preference for a provisional supported family link. (2 records.) |
+| 3 | **səman** ‘same’, **sʌman** ‘same’ | Reflex of **samāná**, [CDIAL[13211]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=763) | CDIAL 13211 samāna “same, alike” gives Prakrit samāṇa and Kashmiri samān/Gujarati samāṇu. The simple survey saman/soman forms preserve the whole adjective. Learned renewal or transfer across Indo-Aryan remains possible; this link identifies the lexical family. Any unresolved borrowing between Indo-Aryan languages is retained under the user’s preference for a provisional supported family link. (8 records.) |
+
+All 19 rows use rank 1 and status `accepted`. Relation kinds: reflex: 19. Transmission uncertainty recorded in the evidence remains unresolved; a provisional family link does not prove uninterrupted inheritance. Exact IDs, source locations, dialect tags and assignment rows are retained in the manifest.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/global-fourth-validation.json). The compiled/browser database was not refreshed. Responses not listed in the exact manifest are outside these saved proposals; they have not been declared etymologically unresolved merely because the shortlist omitted them.

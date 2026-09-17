@@ -1,0 +1,56 @@
+
+> jambu-static@0.1.0 check
+> svelte-kit sync && svelte-check --tsconfig ./tsconfig.json
+
+Loading svelte-check in workspace: /Users/aryamanarora/Documents/Code/jambu-all/jambu-static
+Getting Svelte diagnostics...
+
+/Users/aryamanarora/Documents/Code/jambu-all/jambu-static/src/lib/components/ConceptAtlas.svelte:769:2
+Warn: Unused CSS selector ".detail-gloss"
+https://svelte.dev/e/css_unused_selector (svelte)
+	}
+	.detail-gloss {
+		margin: 0;
+
+/Users/aryamanarora/Documents/Code/jambu-all/jambu-static/src/lib/components/FilterCell.svelte:43:21
+Warn: This reference only captures the initial value of `value`. Did you mean to reference it inside a closure instead?
+https://svelte.dev/e/state_referenced_locally (svelte)
+	let inputEl = $state<HTMLInputElement | null>(null);
+	let local = $state(value);
+	$effect(() => {
+
+/Users/aryamanarora/Documents/Code/jambu-all/jambu-static/src/lib/components/EntriesView.svelte:30:55
+Warn: This reference only captures the initial value of `concept`. Did you mean to reference it inside a closure instead?
+https://svelte.dev/e/state_referenced_locally (svelte)
+
+	const list = createListState('entries', { conceptId: concept });
+
+/Users/aryamanarora/Documents/Code/jambu-all/jambu-static/src/lib/components/ReflexesView.svelte:30:31
+Warn: This reference only captures the initial value of `mode`. Did you mean to reference it inside a closure instead?
+https://svelte.dev/e/state_referenced_locally (svelte)
+	const showLangCol = $derived(mode === 'reflexes');
+	const list = createListState(mode, { languageId, referenceId, withOrigin: true });
+	const from = $derived(list.result ? (list.result.page - 1) * PAGE_SIZE + 1 : 0);
+
+/Users/aryamanarora/Documents/Code/jambu-all/jambu-static/src/lib/components/ReflexesView.svelte:30:39
+Warn: This reference only captures the initial value of `languageId`. Did you mean to reference it inside a closure instead?
+https://svelte.dev/e/state_referenced_locally (svelte)
+	const showLangCol = $derived(mode === 'reflexes');
+	const list = createListState(mode, { languageId, referenceId, withOrigin: true });
+	const from = $derived(list.result ? (list.result.page - 1) * PAGE_SIZE + 1 : 0);
+
+/Users/aryamanarora/Documents/Code/jambu-all/jambu-static/src/lib/components/ReflexesView.svelte:30:51
+Warn: This reference only captures the initial value of `referenceId`. Did you mean to reference it inside a closure instead?
+https://svelte.dev/e/state_referenced_locally (svelte)
+	const showLangCol = $derived(mode === 'reflexes');
+	const list = createListState(mode, { languageId, referenceId, withOrigin: true });
+	const from = $derived(list.result ? (list.result.page - 1) * PAGE_SIZE + 1 : 0);
+
+/Users/aryamanarora/Documents/Code/jambu-all/jambu-static/src/routes/concepts/browse/+page.svelte:11:19
+Warn: This reference only captures the initial value of `data`. Did you mean to reference it inside a closure instead?
+https://svelte.dev/e/state_referenced_locally (svelte)
+	let { data } = $props();
+	const concepts = data.concepts as ConceptRow[];
+
+====================================
+svelte-check found 0 errors and 7 warnings in 5 files

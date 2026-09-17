@@ -1,0 +1,14 @@
+# Dungra Bhil: joint SIL review, batch 24
+
+**Saved: 2 proposals covering 4 assignment rows on 4 records.** The user authorized saving supported analyses jointly; these are accepted overlay rows, not pending proposals.
+
+Language ID: `DungraBhili`. [Joint status and scope](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/REVIEW.md) · [Difficult cases](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/AUDIT.md) · [Exact manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/DungraBhili/batch-024.json)
+
+| # | Dungra Bhil | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **tine** ‘three’ | Reflex of **trī́ṇi**, [CDIAL[5994.3]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=342) | CDIAL 5994.3 trīṇi gives Prakrit tiṇṇi, Hindi/Marwari tīn, Gujarati traṇ and, in its addendum, Punjabi tan and Old Gujarati traṇṇi with analogical interaction. The selected western tan/təṇ/taṇ/teṇ/tāṇə/tine fit this n-final three family with r loss and source vowel/nasal/ending variation retained. This is the trīṇi branch, not the separate northwestern *trāyaḥ branch; local Indo-Aryan transmission remains open. Exact response: tine. (2 records.) |
+| 2 | **nove** ‘nine’ | Reflex of **náva**, [CDIAL[6984]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=401) | CDIAL 6984 nava nine gives widespread nau/nao, eastern na/naa, Old Marwari nova and Gujarati nav. The selected eastern noi/noi̯/nɔi ̯, Bhatri nʌu̯/nʌo̯, Oriya nōo and western nove are assigned to this numeral family with their specific vowel sequences and final e retained as regional qualifications. The prose does not explicitly print every surveyed diphthong; no claim of exact attestation or resolved local transmission is made. Exact response: nove. (2 records.) |
+
+All 4 rows use rank 1 and status `accepted`. Relation kinds: reflex: 4. Transmission uncertainty recorded in the evidence remains unresolved; a provisional family link does not prove uninterrupted inheritance. Exact IDs, source locations, dialect tags and assignment rows are retained in the manifest.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/pass106-validation.json). The compiled/browser database was not refreshed. Responses not listed in the exact manifest are outside these saved proposals; they have not been declared etymologically unresolved merely because the shortlist omitted them.

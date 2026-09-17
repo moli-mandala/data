@@ -1,0 +1,17 @@
+# Bhili: joint SIL review, batch 7
+
+**Saved: 5 proposals covering 12 assignment rows on 12 records.** The user authorized saving supported analyses jointly; these are accepted overlay rows, not pending proposals.
+
+Language ID: `Bhili`. [Joint status and scope](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/REVIEW.md) · [Difficult cases](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/AUDIT.md) · [Exact manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Bhili/batch-007.json)
+
+| # | Bhili | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **dehi** ‘body’, **deh** ‘body’ | Reflex of **dēha**, [CDIAL[6557]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=374) | CDIAL 6557 deha “body” gives Pali/Prakrit dēha, Kashmiri dih, Hindi deh/dehī, Assamese dehā, Oriya diha and Middle Bengali de. These explicit body comparanda support the family; intra-IA transmission is not resolved. (2 records.) |
+| 2 | **kurāḍi** ‘axe’, **kurāḍ** ‘axe’ | Reflex of **kuṭʰāra**, [CDIAL[3244]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=166) | CDIAL 3244 kuṭhāra gives Prakrit kuhāḍa, Gujarati kuvāṛī, Bengali kuṛāl, Oriya kuṛāla/kurāṛhi, Hindi kulhāṛī and Marathi kurhāḍ. Metathesis is explicit; deeper Dravidian origin is probable rather than settled. Intra-IA transmission does not prevent this family link. (2 records.) |
+| 3 | **dorā** ‘thread’, **doro** ‘thread’ | Reflex of **davara**, [CDIAL[6225]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=356) | CDIAL 6225 davara/dōra/ḍōra gives Prakrit dōra/ḍōra, Punjabi ḍorā, Nepali ḍoro “thread” and ḍori “rope”, Bhojpuri ḍorā and Gujarati/Marathi dor/dorī. Both dental and retroflex initials are explicitly represented; their local transmission remains open. (3 records.) |
+| 4 | **ālu** ‘potato’, **āllu** ‘potato’ | Reflex of **ālu**, [CDIAL[1388.1]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=63) | CDIAL 1388.1 ālu explicitly compares Hindi/Punjabi ālū, Nepali ālu and Oriya āḷū for potato, transferred from older edible-root senses. It marks some Bihari forms as Hindi loans; intra-IA transmission remains unresolved, while this family link is supported. Pumpkin/gourd forms and ālukī/arwī are excluded. (3 records.) |
+| 5 | **dādo** ‘older brother’, **dado** ‘older brother’ | Reflex of **\*dādda**, [CDIAL[6261]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=359) | CDIAL 6261 *dādda compares Bengali, Assamese, Hindi and Marathi dādā “elder brother”, Kalasha dāda “father” and other older-relative senses. This is a nursery kinship family; the link does not assert that every regional use was inherited without contact. (2 records.) |
+
+All 12 rows use rank 1 and status `accepted`. Relation kinds: reflex: 12. Transmission uncertainty recorded in the evidence remains unresolved; a provisional family link does not prove uninterrupted inheritance. Exact IDs, source locations, dialect tags and assignment rows are retained in the manifest.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/ninth-validation.json). The compiled/browser database was not refreshed. Responses not listed in the exact manifest are outside these saved proposals; they have not been declared etymologically unresolved merely because the shortlist omitted them.

@@ -1,0 +1,17 @@
+# Hajong: joint SIL review, batch 31
+
+**Saved: 5 proposals covering 20 assignment rows on 20 records.** The user authorized saving supported analyses jointly; these are accepted overlay rows, not pending proposals.
+
+Language ID: `Hajong`. [Joint status and scope](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/REVIEW.md) · [Difficult cases](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/AUDIT.md) · [Exact manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Hajong/batch-031.json)
+
+| # | Hajong | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **ruhun** ‘garlic’ | Reflex of **\*raśuna**, [CDIAL[10990]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=637) | CDIAL 10990 Section 2 *raśuna explicitly includes Kashmiri ruhun and Bihari rasūn garlic. The survey variants fit this r-initial family, with regional s/h and contact history left open. Exact survey form ruhun is preserved; intra-Indo-Aryan transmission remains open. (5 records.) |
+| 2 | **mota** ‘fat’ | Reflex of **\*mōṭṭa-**, [CDIAL[10187]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=587) | CDIAL 10187 The article distinguishes *muṭṭa in section 1 with Dogri muṭā fat, *mōṭṭa in section 11 with Bengali moṭā fat, and aspirated branches. Survey vowel and aspiration select the branch only where supported. Exact survey form mota is preserved; intra-Indo-Aryan transmission remains open. (1 records.) |
+| 3 | **patla** ‘thin’ | Reflex of **pattralá**, [CDIAL[7736]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=437) | CDIAL 7736 pattrala meaning 2 explicitly gives Bengali pātlā and Hindi patlā thin. Hajong patla matches that thin/leaf-like branch; this meaning remains within the existing unsplit entry. Exact survey form patla is preserved; intra-Indo-Aryan transmission remains open. (5 records.) |
+| 4 | **teŋa** ‘sour’ | Reflex of **tigmá**, [CDIAL[5808]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=330) | CDIAL 5808 The tigma addendum tentatively compares Assamese ṭeṅā, phonetically tεṅa, sour/acrid. Hajong teŋa is provisionally linked through this precise comparison; Turner’s question mark and uncertain deeper derivation are retained. Exact survey form teŋa is preserved; intra-Indo-Aryan transmission remains open. (5 records.) |
+| 5 | **noya** ‘new’ | Reflex of **náviya**, [CDIAL[7025]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=403) | CDIAL 7025 Section 2 naviya explicitly includes Hindi nayā and Bengali nayā, the latter attributed to Hindi. Noya fits this y-bearing family; the exact regional route remains open. Contracted nyo remains less diagnostic. Exact survey form noya is preserved; intra-Indo-Aryan transmission remains open. (4 records.) |
+
+All 20 rows use rank 1 and status `accepted`. Relation kinds: reflex: 20. Transmission uncertainty recorded in the evidence remains unresolved; a provisional family link does not prove uninterrupted inheritance. Exact IDs, source locations, dialect tags and assignment rows are retained in the manifest.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/global-twelfth-validation.json). The compiled/browser database was not refreshed. Responses not listed in the exact manifest are outside these saved proposals; they have not been declared etymologically unresolved merely because the shortlist omitted them.

@@ -1,0 +1,14 @@
+import csv,json
+from pathlib import Path
+P=Path('/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914');stem='pass274';assert not (P/(stem+'-decisions.json')).exists()
+rules=[dict(parent='6391',citation='CDIAL[6391]',evidence='Full dugdha gives Awankari dudh, regional retroflex ḍudh, Nepali dut, West Pahari dùd and Kotgarhi duddh milk. These support selected northern dental/retroflex and voiced/voiceless milk responses. Source aspiration, vowels, final inflection and complete same-family slash variants remain unchanged; local phonetic history and transmission are qualified.'),dict(parent='4312',citation='CDIAL[4312]',evidence='Full gorasa explicitly gives Oriya gorasa milk/buttermilk and Bihari/Maithili goras milk/curds, with broader regional milk-product senses. These support eastern gorəs/goṛəs/goros milk forms. Source rhotic quality and vowels remain unchanged; the unqualified milk gloss is preserved, with local development and cross-IA transmission qualified.'),dict(parent='3696',citation='CDIAL[3696]',evidence='Full kṣīra explicitly gives Khowar c̣hir, Torwali c̣hī and Oriya khira milk. These directly support the selected affricate and khir milk responses. Source aspiration notation, initial vowel, rhotic quality and ending remain intact, with exact local phonetics and transmission qualified. Longer milk compounds and ambiguous sibilant-only responses remain separate.')]
+sets=[{'ḍʰutʰ','dūd / ḍutʰ','dutʰ','ḍudʰ','dutʰ / dud','dʰudʰ','ḍuḍʰ','dudi','dodh','ɖʌɖə','ɖəɖə','ɖʊaːʰ','ɖəɖʰ','ˈɖʊɖʰ','dʰəɖə','ɖʊtʰ','ɖʊɖə','ḍuḍ','ḍuḍh'},{'gorəs','goṛəs','goṛʌs','goros'},{'ʦ̣īṛ','ʦ̣ī','āʦ̣ī','kʰiṛo'}]
+remaining={r['ID'] for r in csv.DictReader((P/'unresearched-records.csv').open())};acc=[];held=[]
+for r in json.loads((P/'inventory.json').read_text()):
+ if r['ID'] not in remaining or r['Gloss']!='milk':continue
+ for i,fs in enumerate(sets):
+  if r['Form'] in fs:
+   q=rules[i];acc.append(dict(record=r,parent=q['parent'],family=i,kind='reflex',citation=q['citation'],evidence=q['evidence']+' Exact response: '+r['Form']+'.'))
+ if r['Form']=='śīr':held.append(dict(record=r,families=[2],passNumber=274,reason='Full kṣīra supplies Bshk c̣hīr milk but does not establish the survey śīr sibilant-only form. Local sound evidence is needed to distinguish its relationship to that affricate form from an Iranian milk-word loan; neither an exact Iranian donor nor a proven local change is supplied here.'))
+for suffix,obj in [('rules',rules),('decisions',dict(accepted=acc,held=held))]:(P/(stem+'-'+suffix+'.json')).write_text(json.dumps(obj,ensure_ascii=False,indent=1)+'\n')
+(P/(stem+'_save.py')).write_text((P/'global_sixteenth_save.py').read_text().replace('global-sixteenth',stem));(P/(stem+'_prepare.py')).write_text(Path('/tmp/prepare274.py').read_text());print('accepted',len(acc),'held',len(held))

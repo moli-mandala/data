@@ -1,0 +1,17 @@
+# Gujari: joint SIL review, batch 41
+
+**Saved: 5 proposals covering 7 assignment rows on 7 records.** The user authorized saving supported analyses jointly; these are accepted overlay rows, not pending proposals.
+
+Language ID: `Goj`. [Joint status and scope](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/REVIEW.md) · [Difficult cases](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/AUDIT.md) · [Exact manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Goj/batch-041.json)
+
+| # | Gujari | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **bā** ‘hair’ | Reflex of **vā́la**, [CDIAL[11572]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=674) | CDIAL 11572 vāla explicitly gives Palula bōla/būla hair, Oriya bāḷa and WPah. bā. The survey bāl-/būl-/bā forms fit this hair family, with any regional transmission retained as uncertain. Exact survey form bā is preserved; intra-Indo-Aryan transmission remains open. (3 records.) |
+| 2 | **cikaṛ** ‘mud’ | Reflex of **cikka**, [CDIAL[4780]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=259) | CDIAL 4780 cikka explicitly gives Punjabi cikkaṛ, Hindi cīkaṛ and the kṭg. addendum cikṛɔ mud. These cikaṛ/cikaḍ forms fit the r/ḍ extension of this sticky-matter family; its remote origin is debated. Exact survey form cikaṛ is preserved; intra-Indo-Aryan transmission remains open. (1 records.) |
+| 3 | **ruk** ‘tree’ | Reflex of **\*rukṣa**, [CDIAL[10757]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=622) | CDIAL 10757 *rukṣa gives Punjabi rukkh and eastern rūkh tree. Simple ruk is provisionally assigned to that family; extended/nasalized rũkəḍo forms need their own suffix analysis. Exact survey form ruk is preserved; intra-Indo-Aryan transmission remains open. (1 records.) |
+| 4 | **bahū** ‘wife’ | Reflex of **vadʰū́**, [CDIAL[11250]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=656) | CDIAL 11250 vadhū explicitly gives Hindi bahū bride/wife and Maithili bahu wife. The Khowar bok comparison has a specifically qualified *vadhukkā extension in the addendum and is held for exact-parent review. Exact survey form bahū is preserved; intra-Indo-Aryan transmission remains open. (1 records.) |
+| 5 | **moṭu** ‘big’ | Reflex of **\*mōṭṭa-**, [CDIAL[10187.11]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=587) | CDIAL 10187.11 *moṭṭa explicitly gives Gujarati moṭũ and Old Marwari moṭaü big/fat, alongside Bengali moṭā fat. These o-vowel adjectives select section 11, not unextended *muṭṭa defective. Exact survey form moṭu is preserved; intra-Indo-Aryan transmission remains open. (1 records.) |
+
+All 7 rows use rank 1 and status `accepted`. Relation kinds: reflex: 7. Transmission uncertainty recorded in the evidence remains unresolved; a provisional family link does not prove uninterrupted inheritance. Exact IDs, source locations, dialect tags and assignment rows are retained in the manifest.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/global-tenth-validation.json). The compiled/browser database was not refreshed. Responses not listed in the exact manifest are outside these saved proposals; they have not been declared etymologically unresolved merely because the shortlist omitted them.

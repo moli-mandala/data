@@ -1,0 +1,13 @@
+import csv,json
+from pathlib import Path
+P=Path('/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914');stem='pass152';assert not (P/(stem+'-decisions.json')).exists()
+rules=[dict(parent='9190',citation='CDIAL[9190]',evidence='CDIAL 9190 bahutva explicitly gives bahut/bauhat/bhout-type many forms and the extended bahuterā/batherā abundant series. It notes adjectival influence from prabhūta and does not claim a uniform sound history. Selected bahut/bauto and bater/bahut-thēr responses fit those documented branches; contraction, dental/retroflex notation and endings remain qualified, as does local IA transmission.'),dict(parent='4424',citation='CDIAL[4424]',evidence='CDIAL 4424 ghana explicitly gives Sindhi ghaṇo much/many, western ghaṇā and Old Gujarati ghaṇauṁ much. Bhili/Bhilali ghanu/gheṇā many fit that western family, retaining regional vowel variation and aspiration. No unsupported extra suffix is absorbed and the local transmission route remains unresolved.'),dict(parent='250',citation='CDIAL[250];platts1884[35]',evidence='CDIAL 250 adhika gives additional/exceeding; Platts 35 explicitly supplies abundant, more numerous and much for adhik. The surveyed adhik/odik forms preserve the lexical stem, with initial-vowel variation, aspiration and dental/retroflex spelling qualified. Learned reinforcement or local IA transmission is possible and unresolved.'),dict(parent='345',citation='CDIAL[345]',evidence='CDIAL 345 aneka means many and documents MIA anekka/aṇea. Bengali onek/ɔnɛk many match the aneka lexical family with Bengali vowel realization; learned reinforcement versus inherited or regional transmission remains unresolved. The survey forms are preserved without inventing a donor stage.')]
+sets=[{'bɔhʌt','bʌhuttʰer','bʌhuteder','bahūte','batera','baterā','bohuṭ','bauto'}, {'gɦeṇā','ghanu'}, {'eḍhik','odik','odʰik'}, {'onek','ɔnɛk'}]
+remaining={r['ID'] for r in csv.DictReader((P/'unresearched-records.csv').open())};acc=[]
+for r in json.loads((P/'inventory.json').read_text()):
+ if r['ID'] not in remaining or r['Gloss']!='many':continue
+ for i,forms in enumerate(sets):
+  if r['Form'] in forms:
+   q=rules[i];acc.append(dict(record=r,parent=q['parent'],family=i,kind='reflex',citation=q['citation'],evidence=q['evidence']+' Exact response: '+r['Form']+'.'));break
+for suffix,obj in [('rules',rules),('decisions',dict(accepted=acc,held=[]))]:(P/(stem+'-'+suffix+'.json')).write_text(json.dumps(obj,ensure_ascii=False,indent=1)+'\n')
+(P/(stem+'_save.py')).write_text((P/'global_sixteenth_save.py').read_text().replace('global-sixteenth',stem));print('accepted',len(acc))

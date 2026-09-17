@@ -1,0 +1,14 @@
+# Dewas-Done Danuwar: joint SIL review, batch 53
+
+**Saved: 2 proposals covering 5 assignment rows on 5 records.** The user authorized saving supported analyses jointly; these are accepted overlay rows, not pending proposals.
+
+Language ID: `DewasDoneDanuwar`. [Joint status and scope](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/REVIEW.md) · [Difficult cases](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/AUDIT.md) · [Exact manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/DewasDoneDanuwar/batch-053.json)
+
+| # | Dewas-Done Danuwar | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **keunʰi** ‘elbow’ | Reflex of **kapʰōṇi**, [CDIAL[2757]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=138) | CDIAL 2757 kaphoṇi gives Prakrit kuhaṇī, Hindi kohnī/kehunī, Nepali kuhunu/kuinu, Bengali kanui, Oriya kahuṇi and Gujarati koṇī elbow. The selected regional kuh-/ko-/keun- forms fit this nasal elbow family with h placement, contraction, vowel order and source dental/retroflex nasal notation retained. The article discusses competing Munda/Dravidian deeper connections; those and local Indo-Aryan transmission remain unresolved. Exact response: keunʰi. (1 records.) |
+| 2 | **maṭi** ‘soil/clay’ | Reflex of **mŕ̩ttikā**, [CDIAL[10286]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=594) | CDIAL 10286 mṛttikā gives Prakrit maṭṭī/maṭṭiā, eastern māṭi and Hindi māṭī/maṭṭī earth, clay. Selected maṭi/māṭi/maṭ̚ṭi soil/clay responses fit this family with source length, gemination and unreleased-stop notation retained. The similarly shaped mārttika earthen-vessel branch is not selected; these targets name soil, not a pot. Local Indo-Aryan transmission remains open. Exact response: maṭi. (4 records.) |
+
+All 5 rows use rank 1 and status `accepted`. Relation kinds: reflex: 5. Transmission uncertainty recorded in the evidence remains unresolved; a provisional family link does not prove uninterrupted inheritance. Exact IDs, source locations, dialect tags and assignment rows are retained in the manifest.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/pass103-validation.json). The compiled/browser database was not refreshed. Responses not listed in the exact manifest are outside these saved proposals; they have not been declared etymologically unresolved merely because the shortlist omitted them.

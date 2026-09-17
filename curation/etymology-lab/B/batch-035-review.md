@@ -1,0 +1,17 @@
+# Bengali: joint SIL review, batch 35
+
+**Saved: 5 proposals covering 5 assignment rows on 5 records.** The user authorized saving supported analyses jointly; these are accepted overlay rows, not pending proposals.
+
+Language ID: `B`. [Joint status and scope](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/REVIEW.md) · [Difficult cases](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/AUDIT.md) · [Exact manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/B/batch-035.json)
+
+| # | Bengali | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **hatu** ‘knee’ | Reflex of **aṣṭʰīvát**, [CDIAL[959]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=42) | CDIAL 959 aṣṭhīvat explicitly gives Bengali hā̃ṭu/ā̃ṭu and Assamese ā̃ṭhu knee. The eastern survey hatu/haṭu knee forms belong here, not to *haṭṭ move. Dental t in the plain hatu spellings and absent nasalization are retained as transcription or phonetic uncertainties; the regional family is clear but those details are not a demonstrated sound law. Exact survey form hatu is preserved. (1 records.) |
+| 2 | **haʈu** ‘knee’ | Reflex of **aṣṭʰīvát**, [CDIAL[959]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=42) | CDIAL 959 aṣṭhīvat explicitly gives Bengali hā̃ṭu/ā̃ṭu and Assamese ā̃ṭhu knee. The eastern survey hatu/haṭu knee forms belong here, not to *haṭṭ move. Dental t in the plain hatu spellings and absent nasalization are retained as transcription or phonetic uncertainties; the regional family is clear but those details are not a demonstrated sound law. Exact survey form haʈu is preserved. (1 records.) |
+| 3 | **hãʈa** ‘to walk’ | Reflex of **\*haṇṭ-**, [CDIAL[13943.3]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=806) | CDIAL 13943.3 *haṇṭ explicitly gives Bengali hā̃ṭā to walk. Nasalized hãṭa selects section 3, not aspirated *haṭṭh in section 2. Exact survey form hãʈa is preserved. (1 records.) |
+| 4 | **kɪtʃhu** ‘some’ | Reflex of **kíṁcid**, [CDIAL[3144]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=160) | CDIAL 3144 kiṃcid explicitly gives Bengali kichu something/anything alongside the some/a little senses in neighboring languages. Survey kɪtʃhu some matches this indefinite pronoun. Exact survey form kɪtʃhu is preserved. (1 records.) |
+| 5 | **bhul** ‘wrong’ | Reflex of **\*bʰull**, [CDIAL[9538]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=544) | CDIAL 9538 *bhull section 1 gives Bengali bhulā err/forget, with a nominal bhūl mistake in the addenda. Bengali bhul wrong is compared with that error family, retaining the survey adjectival gloss; section 2 *bhol lead astray is distinct. Exact survey form bhul is preserved. (1 records.) |
+
+All 5 rows use rank 1 and status `accepted`. Relation kinds: reflex: 5. Transmission uncertainty recorded in the evidence remains unresolved; a provisional family link does not prove uninterrupted inheritance. Exact IDs, source locations, dialect tags and assignment rows are retained in the manifest.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/global-twentyfirst-validation.json). The compiled/browser database was not refreshed. Responses not listed in the exact manifest are outside these saved proposals; they have not been declared etymologically unresolved merely because the shortlist omitted them.

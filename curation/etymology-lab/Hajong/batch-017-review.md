@@ -1,0 +1,14 @@
+# Hajong: joint SIL review, batch 17
+
+**Saved: 2 proposals covering 3 assignment rows on 3 records.** The user authorized saving supported analyses jointly; these are accepted overlay rows, not pending proposals.
+
+Language ID: `Hajong`. [Joint status and scope](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/REVIEW.md) · [Difficult cases](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/AUDIT.md) · [Exact manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Hajong/batch-017.json)
+
+| # | Hajong | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **maś** ‘month’ | Reflex of **mā́sa**, [CDIAL[10104]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=581) | CDIAL 10104 māsa explicitly gives Khowar mas “moon, month”, Torwali mah “month”, Lahnda māh and widespread eastern mās “month”. The semantic distinction in each survey is preserved; this is not the homophonous flesh word, and bare mā/mõ contractions are excluded without a local paradigm. Comparative check: Kho mas “month” (f_uizaeh5uwnzgo). The exact survey spelling and phonetic marks remain untouched. Stress, vowel articulation, release marks and source palatal/sibilant notation were reviewed as local details; the full form and sense support the same family. The link does not settle uncertain transfer within Indo-Aryan. (1 records.) |
+| 2 | **maś** ‘fish’ | Reflex of **mátsya**, [CDIAL[9758]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=560) | CDIAL 9758.1 matsya gives Prakrit maccha, Bihari/Hindi machlī/macharī and Bshk. mac “fish”; branch 2 *matsiya separately includes Khowar and Kalasha macī. These are kept distinct from the fly family despite similar modern forms. Joint survey comparison leaves inheritance versus transfer between Indo-Aryan languages open. Comparative check: Bshk mas “fish” (f_x3viryggpowhs). The exact survey spelling and phonetic marks remain untouched. Stress, vowel articulation, release marks and source palatal/sibilant notation were reviewed as local details; the full form and sense support the same family. The link does not settle uncertain transfer within Indo-Aryan. (2 records.) |
+
+All 3 rows use rank 1 and status `accepted`. Relation kinds: reflex: 3. Transmission uncertainty recorded in the evidence remains unresolved; a provisional family link does not prove uninterrupted inheritance. Exact IDs, source locations, dialect tags and assignment rows are retained in the manifest.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/phonetic-validation.json). The compiled/browser database was not refreshed. Responses not listed in the exact manifest are outside these saved proposals; they have not been declared etymologically unresolved merely because the shortlist omitted them.

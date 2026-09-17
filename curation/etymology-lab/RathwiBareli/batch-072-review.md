@@ -1,0 +1,15 @@
+# Rathwi Bareli: joint SIL review, batch 72
+
+**Saved: 3 proposals covering 7 assignment rows on 7 records.** The user authorized saving supported analyses jointly; these are accepted overlay rows, not pending proposals.
+
+Language ID: `RathwiBareli`. [Joint status and scope](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/REVIEW.md) · [Difficult cases](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/AUDIT.md) · [Exact manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/RathwiBareli/batch-072.json)
+
+| # | Rathwi Bareli | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **heteḷi** ‘palm’ | Reflex of **hastatala**, [CDIAL[14029]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=811) | Full CDIAL hastatala palm gives Pali hatthatala, Punjabi/Hindi hathelī, Kumaoni hat(h)elī and Gujarati hathelī, alongside Sinhala atala. The selected hath-/het(h)-lateral and hattala/attal palm forms match this documented compound family, retaining vowel, aspiration and lateral/retroflex notation. The article explicitly reports Hindi to Gujarati transmission; local IA transmission for these surveys remains unresolved. Exact response: heteḷi. (4 records.) |
+| 2 | **hetəḷi** ‘palm’ | Reflex of **hastatala**, [CDIAL[14029]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=811) | Full CDIAL hastatala palm gives Pali hatthatala, Punjabi/Hindi hathelī, Kumaoni hat(h)elī and Gujarati hathelī, alongside Sinhala atala. The selected hath-/het(h)-lateral and hattala/attal palm forms match this documented compound family, retaining vowel, aspiration and lateral/retroflex notation. The article explicitly reports Hindi to Gujarati transmission; local IA transmission for these surveys remains unresolved. Exact response: hetəḷi. (2 records.) |
+| 3 | **haṭeli** ‘palm’ | Reflex of **hastatala**, [CDIAL[14029]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=811) | Full CDIAL hastatala palm gives Pali hatthatala, Punjabi/Hindi hathelī, Kumaoni hat(h)elī and Gujarati hathelī, alongside Sinhala atala. The selected hath-/het(h)-lateral and hattala/attal palm forms match this documented compound family, retaining vowel, aspiration and lateral/retroflex notation. The article explicitly reports Hindi to Gujarati transmission; local IA transmission for these surveys remains unresolved. Exact response: haṭeli. (1 records.) |
+
+All 7 rows use rank 1 and status `accepted`. Relation kinds: reflex: 7. Transmission uncertainty recorded in the evidence remains unresolved; a provisional family link does not prove uninterrupted inheritance. Exact IDs, source locations, dialect tags and assignment rows are retained in the manifest.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/pass182-validation.json). The compiled/browser database was not refreshed. Responses not listed in the exact manifest are outside these saved proposals; they have not been declared etymologically unresolved merely because the shortlist omitted them.

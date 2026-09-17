@@ -1,0 +1,15 @@
+# Saraiki: joint SIL review, batch 19
+
+**Saved: 3 proposals covering 3 assignment rows on 3 records.** The user authorized saving supported analyses jointly; these are accepted overlay rows, not pending proposals.
+
+Language ID: `srk`. [Joint status and scope](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/REVIEW.md) · [Difficult cases](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/AUDIT.md) · [Exact manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/srk/batch-019.json)
+
+| # | Saraiki | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **bāyrā** ‘millet (husked)’ | Reflex of **\*bājjara**, [CDIAL[9201]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=519) | CDIAL 9201 *bājjara explicitly gives Punjabi bājrā, Hindi bājrā/bājṛā and Nepali bājuro “millet”. The survey bāyra/bāyarā forms preserve this distinctive grain family with local j/y development, and the deeper reconstruction remains uncertain. Reviewed comparator: kaithal bajra “millet” (f_mscok32yaorko). Any uncertain transfer between Indo-Aryan languages remains open under the user’s preference; source phonetic details are preserved. (1 records.) |
+| 2 | **halad** ‘turmeric’ | Reflex of **haridrā**, [CDIAL[13992]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=809) | CDIAL 13992.1 haridrā gives Hindi harad/hardī/haldī, Kumauni haldo and Middle Indo-Aryan haraddā/haladdā “turmeric”. These simple survey metathesized or contracted forms fit the base turmeric noun, distinct from the hāridra coloured adjective. Reviewed comparator: Buksa hʌɾʌd “turmeric” (f_dlx3mqmma4e4c). Any uncertain transfer between Indo-Aryan languages remains open under the user’s preference; source phonetic details are preserved. (1 records.) |
+| 3 | **kaḷ** ‘tomorrow’ | Reflex of **kalya**, [CDIAL[3104.2]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=158) | CDIAL 3104.2 kalya explicitly gives Punjabi kall/kallu “yesterday, tomorrow” and the widespread kal temporal adverb. Retroflex ḷ is a local phonetic detail; initial-y yāl needs a separate correspondence check. Reviewed comparator: bundeli_atarra kal “tomorrow” (f_q7s2qdlqbvyje). Any uncertain transfer between Indo-Aryan languages remains open under the user’s preference; source phonetic details are preserved. (1 records.) |
+
+All 3 rows use rank 1 and status `accepted`. Relation kinds: reflex: 3. Transmission uncertainty recorded in the evidence remains unresolved; a provisional family link does not prove uninterrupted inheritance. Exact IDs, source locations, dialect tags and assignment rows are retained in the manifest.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/near-second-validation.json). The compiled/browser database was not refreshed. Responses not listed in the exact manifest are outside these saved proposals; they have not been declared etymologically unresolved merely because the shortlist omitted them.

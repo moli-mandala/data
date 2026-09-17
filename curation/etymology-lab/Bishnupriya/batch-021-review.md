@@ -1,0 +1,18 @@
+# Bishnupriya Manipuri: joint SIL review, batch 21
+
+**Saved: 6 proposals covering 32 assignment rows on 32 records.** The user authorized saving supported analyses jointly; these are accepted overlay rows, not pending proposals.
+
+Language ID: `Bishnupriya`. [Joint status and scope](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/REVIEW.md) · [Difficult cases](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/AUDIT.md) · [Exact manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Bishnupriya/batch-021.json)
+
+| # | Bishnupriya Manipuri | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **bochor** ‘year’ | Reflex of **vatsará**, [CDIAL[11242]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=656) | CDIAL 11242 vatsara and its addendum explicitly give Assamese basar and Bengali bachar year. Turner questions whether these were borrowed from Sanskrit; that learned or regional transmission remains open. Exact survey form bochor is preserved. (6 records.) |
+| 2 | **bhaluk** ‘bear’ | Reflex of **\*bʰallukka**, [CDIAL[9415.2]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=536) | CDIAL 9415.2 *bhallukka explicitly contains Assamese/Bengali bhāluk bear. Retained final k selects this strengthened branch, not the bhālū forms under section 1. Exact survey form bhaluk is preserved. (6 records.) |
+| 3 | **udur** ‘rat’ | Reflex of **undura**, [CDIAL[2095]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=99) | CDIAL 2095 distinguishes undura with u-vowel rat/mouse forms from section 2 indūra, explicitly represented by Bengali ĩdur and Assamese endur. The survey vowel identifies the selected branch; the ultimate Austroasiatic etymology remains Turner’s attribution. Exact survey form udur is preserved. (5 records.) |
+| 4 | **gar** ‘neck’ | Reflex of **gala**, [CDIAL[4070]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=218) | CDIAL 4070 gala explicitly gives Bengali galā throat and Maithili/Bhojpuri gar neck/throat. The surveyed eastern gar/gala neck forms fit section 1, with local or contact-mediated l/r variation left open. Exact survey form gar is preserved. (4 records.) |
+| 5 | **pithi** ‘back’ | Reflex of **pr̩ṣṭí**, [CDIAL[8370]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=474) | CDIAL 8370 pṛṣṭi explicitly lists Assamese/Oriya piṭhi back; the retained final i supports this feminine stem rather than the pṛṣṭha alternative Turner raises for forms without final i. Exact survey form pithi is preserved. (5 records.) |
+| 6 | **tita** ‘bitter’ | Reflex of **tiktá**, [CDIAL[5806]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=330) | CDIAL 5806 tikta explicitly lists Assamese titā and Bengali tita/titā bitter. These whole bitter responses fit that family. Exact survey form tita is preserved. (6 records.) |
+
+All 32 rows use rank 1 and status `accepted`. Relation kinds: reflex: 32. Transmission uncertainty recorded in the evidence remains unresolved; a provisional family link does not prove uninterrupted inheritance. Exact IDs, source locations, dialect tags and assignment rows are retained in the manifest.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/global-eighth-validation.json). The compiled/browser database was not refreshed. Responses not listed in the exact manifest are outside these saved proposals; they have not been declared etymologically unresolved merely because the shortlist omitted them.

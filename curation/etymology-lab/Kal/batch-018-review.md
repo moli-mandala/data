@@ -1,0 +1,14 @@
+# Indo-Aryan Kalasha: joint SIL review, batch 18
+
+**Saved: 2 proposals covering 4 assignment rows on 4 records.** The user authorized saving supported analyses jointly; these are accepted overlay rows, not pending proposals.
+
+Language ID: `Kal`. [Joint status and scope](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/REVIEW.md) · [Difficult cases](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/AUDIT.md) · [Exact manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Kal/batch-018.json)
+
+| # | Indo-Aryan Kalasha | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **gūm** ‘wheat (husked)’ | Reflex of **gōdʰū́ma**, [CDIAL[4287]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=230) | CDIAL 4287 godhūma explicitly lists Khowar/Gawri/Bshk. gom, Gowro gū̃, Bengali gom, eastern gahum and Western Pahari giũ. The entry notes uncertainty about retained final m in eastern forms; the comparative wheat family is still explicit. Joint survey comparison leaves inheritance versus transfer between Indo-Aryan languages open. Comparative check: Bshk gūm “wheat” (f_sovn2bmil5cio). The exact survey spelling and semantic marks remain untouched. Equivalent elicitation glosses and ordinary inflections were reviewed together; source person, number, honorific and tense labels remain in the original record. The full form and sense support this same family. The link does not settle uncertain transfer within Indo-Aryan. (1 records.) |
+| 2 | **bo** ‘many’ | Reflex of **bahú**, [CDIAL[9187]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=519) | CDIAL 9187 bahu explicitly gives Khowar bo(h) “many”, confirmed again in its addendum. This is a direct local comparison. Comparative check: Kho bo “many” (f_i2tvxvgkgsrx2). The exact survey spelling and semantic marks remain untouched. Equivalent elicitation glosses and ordinary inflections were reviewed together; source person, number, honorific and tense labels remain in the original record. The full form and sense support this same family. The link does not settle uncertain transfer within Indo-Aryan. (3 records.) |
+
+All 4 rows use rank 1 and status `accepted`. Relation kinds: reflex: 4. Transmission uncertainty recorded in the evidence remains unresolved; a provisional family link does not prove uninterrupted inheritance. Exact IDs, source locations, dialect tags and assignment rows are retained in the manifest.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/semantic-validation.json). The compiled/browser database was not refreshed. Responses not listed in the exact manifest are outside these saved proposals; they have not been declared etymologically unresolved merely because the shortlist omitted them.

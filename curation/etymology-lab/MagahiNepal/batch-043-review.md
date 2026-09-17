@@ -1,0 +1,13 @@
+# Magahi (Nepal survey): joint SIL review, batch 43
+
+**Saved: 1 proposals covering 2 assignment rows on 2 records.** The user authorized saving supported analyses jointly; these are accepted overlay rows, not pending proposals.
+
+Language ID: `MagahiNepal`. [Joint status and scope](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/REVIEW.md) · [Difficult cases](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/AUDIT.md) · [Exact manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/MagahiNepal/batch-043.json)
+
+| # | Magahi (Nepal survey) | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **keūhnī** ‘elbow’ | Reflex of **kapʰōṇi**, [CDIAL[2757]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=138) | CDIAL 2757 kaphoṇi gives Prakrit kuhaṇī, Hindi kohnī/kehunī, Nepali kuhunu/kuinu, Bengali kanui, Oriya kahuṇi and Gujarati koṇī elbow. The selected regional kuh-/ko-/keun- forms fit this nasal elbow family with h placement, contraction, vowel order and source dental/retroflex nasal notation retained. The article discusses competing Munda/Dravidian deeper connections; those and local Indo-Aryan transmission remain unresolved. Exact response: keūhnī. (2 records.) |
+
+All 2 rows use rank 1 and status `accepted`. Relation kinds: reflex: 2. Transmission uncertainty recorded in the evidence remains unresolved; a provisional family link does not prove uninterrupted inheritance. Exact IDs, source locations, dialect tags and assignment rows are retained in the manifest.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/pass103-validation.json). The compiled/browser database was not refreshed. Responses not listed in the exact manifest are outside these saved proposals; they have not been declared etymologically unresolved merely because the shortlist omitted them.

@@ -1,0 +1,15 @@
+# Haryanvi: joint SIL review, batch 85
+
+**Saved: 3 proposals covering 4 assignment rows on 4 records.** The user authorized saving supported analyses jointly; these are accepted overlay rows, not pending proposals.
+
+Language ID: `kaithal`. [Joint status and scope](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/REVIEW.md) · [Difficult cases](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/AUDIT.md) · [Exact manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/kaithal/batch-085.json)
+
+| # | Haryanvi | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **taḍːka** ‘morning’ | Reflex of **traṭ**, [CDIAL[5988]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=341) | Full traṭ explicitly gives Hindi taṛkā dawn and Old Marwari taṛako morning after crack/crackle verbs, comparing English crack of dawn. These support taḍke/tāḍke/taḍːka/taḍka/tʌɾʌke/ṭaṛaqā morning with source retroflex stops/flaps, gemination and vowels preserved. The addendum says most forms may instead be from √taṭ; keep that published uncertainty and regional transmission qualified. Exact response: taḍːka. (1 records.) |
+| 2 | **taḍke** ‘morning’ | Reflex of **traṭ**, [CDIAL[5988]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=341) | Full traṭ explicitly gives Hindi taṛkā dawn and Old Marwari taṛako morning after crack/crackle verbs, comparing English crack of dawn. These support taḍke/tāḍke/taḍːka/taḍka/tʌɾʌke/ṭaṛaqā morning with source retroflex stops/flaps, gemination and vowels preserved. The addendum says most forms may instead be from √taṭ; keep that published uncertainty and regional transmission qualified. Exact response: taḍke. (2 records.) |
+| 3 | **taḍka** ‘morning’ | Reflex of **traṭ**, [CDIAL[5988]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=341) | Full traṭ explicitly gives Hindi taṛkā dawn and Old Marwari taṛako morning after crack/crackle verbs, comparing English crack of dawn. These support taḍke/tāḍke/taḍːka/taḍka/tʌɾʌke/ṭaṛaqā morning with source retroflex stops/flaps, gemination and vowels preserved. The addendum says most forms may instead be from √taṭ; keep that published uncertainty and regional transmission qualified. Exact response: taḍka. (1 records.) |
+
+All 4 rows use rank 1 and status `accepted`. Relation kinds: reflex: 4. Transmission uncertainty recorded in the evidence remains unresolved; a provisional family link does not prove uninterrupted inheritance. Exact IDs, source locations, dialect tags and assignment rows are retained in the manifest.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/pass298-validation.json). The compiled/browser database was not refreshed. Responses not listed in the exact manifest are outside these saved proposals; they have not been declared etymologically unresolved merely because the shortlist omitted them.

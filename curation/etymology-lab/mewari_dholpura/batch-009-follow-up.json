@@ -1,0 +1,82 @@
+{
+  "status": "pending",
+  "scope": "Batch009 follow-up 263,281,282",
+  "proposals": [
+    {
+      "number": 263,
+      "decision": "propose_borrowed_family",
+      "targets": [
+        "f_zyueykybsjrh2"
+      ],
+      "preparedHeads": [
+        {
+          "ID": "loan-mewari-virajati",
+          "Entry_Key": "mw1899-vi-raj-verb",
+          "Language_ID": "Indo-Aryan",
+          "Form": "virājati",
+          "Original": "virājati",
+          "Native": "विराजति",
+          "Gloss": "shines; rules",
+          "Source": "monier-williams1899[p. 982, s.v. vi-rāj]",
+          "Status": "entry",
+          "Evidence": "MW explicitly gives the verb vi-rāj, present virājati, with senses of ruling and shining. This is not the noun virāj or the verb virajyati.",
+          "URL": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/MWScanpdf/mw0982-viraja.pdf",
+          "Prospective_Persistent_ID": "f_kqtvrg34v7ohg"
+        },
+        {
+          "ID": "comparandum-mewari-hindi-virajna",
+          "Entry_Key": "mcgregor-p927-virajna",
+          "Language_ID": "H",
+          "Form": "virājnā",
+          "Original": "vi-rājnā",
+          "Native": "विराजना",
+          "Gloss": "shine; be ensconced; take a seat (honorific)",
+          "Source": "mcgregor[p. 927, s.v. virājnā]",
+          "Status": "entry",
+          "Evidence": "McGregor derives the Hindi verb by adaptation from virājati and includes the honorific sitting sense. The lexical hyphen is omitted in display transcription.",
+          "URL": "https://dsal.uchicago.edu/cgi-bin/app/mcgregor_query.py?qs=%E0%A4%B5%E0%A4%BF%E0%A4%B0%E0%A4%BE%E0%A4%9C%E0%A4%A8%E0%A4%BE&searchhws=yes&matchtype=exact",
+          "Prospective_Persistent_ID": "f_33gpdpbavacag"
+        }
+      ],
+      "proposedAssignments": [
+        {
+          "Form_ID": "f_zyueykybsjrh2",
+          "Etymon_ID": "f_kqtvrg34v7ohg",
+          "Kind": "borrowed",
+          "Rank": "1",
+          "Status": "accepted",
+          "Source": "mcgregor[p. 927, s.v. virājnā];monier-williams1899[p. 982, s.v. vi-rāj]",
+          "Notes": "Proposed learned virāj- family from Sanskrit virājati. McGregor explicitly supports the Hindi adaptation and honorific sitting sense; application to Mewari birājyɔ is a comparative proposal. Possible Hindi mediation is unresolved, not asserted.",
+          "Pos": ""
+        },
+        {
+          "Form_ID": "f_33gpdpbavacag",
+          "Etymon_ID": "f_kqtvrg34v7ohg",
+          "Kind": "borrowed",
+          "Rank": "1",
+          "Status": "accepted",
+          "Source": "mcgregor[p. 927, s.v. virājnā];monier-williams1899[p. 982, s.v. vi-rāj]",
+          "Notes": "Proposed learned virāj- family from Sanskrit virājati. McGregor explicitly supports the Hindi adaptation and honorific sitting sense; application to Mewari birājyɔ is a comparative proposal. Possible Hindi mediation is unresolved, not asserted.",
+          "Pos": ""
+        }
+      ],
+      "evidence": "McGregor p. 927 gives virājnā, adapted from virājati, with an honorific sitting sense. A Sanskrit virājati donor plus the Hindi comparandum now supports a learned-family proposal; precise borrowing route remains to be reviewed."
+    },
+    {
+      "number": 281,
+      "decision": "retain_unlinked",
+      "candidate": "9634",
+      "evidence": "Turner 9634 reconstructs *bhōrā/*bhōlā daybreak (asterisk: not an attested Sanskrit bhora); McGregor p. 775 also gives reconstructed *bhorā-. The survey item 145 is light in weight (halkā, kam-bojh), so a dawn connection would require a gloss mismatch or an unexplained semantic shift. Retain pending user review."
+    },
+    {
+      "number": 282,
+      "decision": "retain_unlinked",
+      "candidate": "5988",
+      "evidence": "Hindi taṛkā daybreak is indeed under Turner 5988 traṭ-/taṭ-, with OMarw. taṛako morning; McGregor p. 434 agrees. However, toḍok is in survey item 145 light in weight, alongside halkā and kam-bojh. This newly verified semantic conflict needs review before applying the suggested dawn link."
+    }
+  ],
+  "validation": "Prospective IDs collision checked and assignments validated against temporary in-memory augmented forms. No pending nodes, identities or edges installed; no build.",
+  "plannedNewNodes": 2,
+  "plannedAssignmentRows": 2,
+  "plannedNewMewariRecords": 1
+}

@@ -1,0 +1,14 @@
+# Chhattisgarhi: joint SIL review, batch 10
+
+**Saved: 2 proposals covering 10 assignment rows on 10 records.** The user authorized saving supported analyses jointly; these are accepted overlay rows, not pending proposals.
+
+Language ID: `NDu`. [Joint status and scope](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/REVIEW.md) · [Difficult cases](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/AUDIT.md) · [Exact manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/NDu/batch-010.json)
+
+| # | Chhattisgarhi | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **havā** ‘wind’ | Borrowed from **hava**, [platts1884[s.v. hawā];kannauji[p. 66]](https://dsal.uchicago.edu/cgi-bin/app/platts_query.py?qs=haw%C4%81&searchhws=yes&matchtype=exact) | Platts p. 1240 gives hawā “air, wind” through Persian from Arabic. The wind/air sense selects this loan family, distinct from the separately listed Arabic desire homonym. Existing Hindi hava “wind” (kannauji[p. 66]) supplies an attested provisional donor. Its locality is the attestation site; the historical lending locality and possible intervening Indo-Aryan language remain unknown. The borrowed edge is saved under the user’s explicit preference to link supported families despite unresolved cross-IA transmission. (1 records.) |
+| 2 | **carbī** ‘fat’ | Borrowed from **carbi**, [platts1884[s.v. ćarbī];kannauji[p. 75]](https://dsal.uchicago.edu/cgi-bin/app/platts_query.py?qs=%C4%87arb%C4%AB&searchhws=yes&matchtype=exact) | Platts p. 429 gives Persian ćarbī “fat, grease, suet, tallow”. The survey carbi/cerbi/corbi material-fat responses preserve its distinctive consonant skeleton; this does not cover unrelated adjectives meaning stout. Existing Hindi carbi “fat” (kannauji[p. 75]) supplies an attested provisional donor. Its locality is the attestation site; the historical lending locality and possible intervening Indo-Aryan language remain unknown. The borrowed edge is saved under the user’s explicit preference to link supported families despite unresolved cross-IA transmission. (9 records.) |
+
+All 10 rows use rank 1 and status `accepted`. Relation kinds: borrowed: 10. Transmission uncertainty recorded in the evidence remains unresolved; a provisional family link does not prove uninterrupted inheritance. Exact IDs, source locations, dialect tags and assignment rows are retained in the manifest.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/loan-second-validation.json). The compiled/browser database was not refreshed. Responses not listed in the exact manifest are outside these saved proposals; they have not been declared etymologically unresolved merely because the shortlist omitted them.

@@ -1,0 +1,17 @@
+# Haryanvi: joint SIL review, batch 31
+
+**Saved: 5 proposals covering 9 assignment rows on 9 records.** The user authorized saving supported analyses jointly; these are accepted overlay rows, not pending proposals.
+
+Language ID: `kaithal`. [Joint status and scope](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/REVIEW.md) · [Difficult cases](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/AUDIT.md) · [Exact manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/kaithal/batch-031.json)
+
+| # | Haryanvi | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **cuci** ‘breast’ | Reflex of **\*cucci**, [CDIAL[4855.2]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=264) | CDIAL 4855.2 *cucci explicitly lists Bashkarik čič and Hindi/Nepali cūcī/cuci breast or nipple. Their i-bearing series selects section 2, not *cuccu; the family is expressive. Exact survey form cuci is preserved. (2 records.) |
+| 2 | **kaleja** ‘heart’ | Reflex of **kālēyaka**, [CDIAL[3103]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=158) | CDIAL 3103 kāleyaka expressly discusses the heart/liver semantic overlap and gives Hindi karejā heart/liver, Assamese kɔlizā heart and Gujarati kāḷjũ heart/liver. The survey kalja/kaleja/kareja heart words fit this explicitly documented sense family. Exact survey form kaleja is preserved. (2 records.) |
+| 3 | **baḷa** ‘wind’ | Reflex of **vātala**, [CDIAL[11497.2]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=671) | CDIAL 11497.1 vātara explicitly lists Gujarati vāyrɔ and Marathi vārā wind. Section 2 vātala separately includes Bashkarik bālā and Hindi bāl; l-bearing survey forms are assigned to that specific section. Exact survey form baḷa is preserved. (1 records.) |
+| 4 | **śila** ‘cold’ | Reflex of **śītalá**, [CDIAL[12487]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=723) | CDIAL 12487 śītala explicitly lists Gawri šalá cold, Hindi sīlā cool and Torwali/Palula šidul/šidālo with unexplained d. Its addendum qualifies l/lh forms as *śītalla or crossed with *śaitalya. The containing article is used with those phonological qualifications retained, not as a claim of regular unmodified inheritance. Exact survey form śila is preserved. (2 records.) |
+| 5 | **sila** ‘cold’ | Reflex of **śītalá**, [CDIAL[12487]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=723) | CDIAL 12487 śītala explicitly lists Gawri šalá cold, Hindi sīlā cool and Torwali/Palula šidul/šidālo with unexplained d. Its addendum qualifies l/lh forms as *śītalla or crossed with *śaitalya. The containing article is used with those phonological qualifications retained, not as a claim of regular unmodified inheritance. Exact survey form sila is preserved. (2 records.) |
+
+All 9 rows use rank 1 and status `accepted`. Relation kinds: reflex: 9. Transmission uncertainty recorded in the evidence remains unresolved; a provisional family link does not prove uninterrupted inheritance. Exact IDs, source locations, dialect tags and assignment rows are retained in the manifest.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/global-eighth-validation.json). The compiled/browser database was not refreshed. Responses not listed in the exact manifest are outside these saved proposals; they have not been declared etymologically unresolved merely because the shortlist omitted them.

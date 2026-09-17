@@ -1,0 +1,13 @@
+# Pauri Bareli: joint SIL review, batch 60
+
+**Saved: 1 proposals covering 4 assignment rows on 4 records.** The user authorized saving supported analyses jointly; these are accepted overlay rows, not pending proposals.
+
+Language ID: `PauriBareli`. [Joint status and scope](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/REVIEW.md) · [Difficult cases](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/AUDIT.md) · [Exact manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/PauriBareli/batch-060.json)
+
+| # | Pauri Bareli | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **adz** ‘today’ | Reflex of **adyá**, [CDIAL[242]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=13) | Full CDIAL adya explicitly gives Prakrit ajja, Punjabi/Lahnda ajj, Bengali/Oriya āj/āji, Gujarati āj and Marathi āj̈ today. The selected western adz and eastern Hajong adž/adži forms retain the affricate written with dz/dž; Dungra Bhili aje and Bhilali āje retain their final vowel. Kului adʒʰ/adʒ(ə) retain the source aspiration and optional schwa rather than being silently normalized. These simple today forms fit adya; the separate adyāpi 243 and adyāhnaḥ 244 entries have additional documented material and do not better explain them. Regional transmission and precise realization of source affricate symbols remain qualified; extra -ika/-iku/-ij forms are excluded. Exact response: adz. (4 records.) |
+
+All 4 rows use rank 1 and status `accepted`. Relation kinds: reflex: 4. Transmission uncertainty recorded in the evidence remains unresolved; a provisional family link does not prove uninterrupted inheritance. Exact IDs, source locations, dialect tags and assignment rows are retained in the manifest.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/pass216-validation.json). The compiled/browser database was not refreshed. Responses not listed in the exact manifest are outside these saved proposals; they have not been declared etymologically unresolved merely because the shortlist omitted them.

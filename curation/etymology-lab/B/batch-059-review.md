@@ -1,0 +1,14 @@
+# Bengali: joint SIL review, batch 59
+
+**Saved: 2 proposals covering 4 assignment rows on 2 records.** The user authorized saving supported analyses jointly; these are accepted overlay rows, not pending proposals.
+
+Language ID: `B`. [Joint status and scope](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/REVIEW.md) · [Difficult cases](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/AUDIT.md) · [Exact manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/B/batch-059.json)
+
+| # | Bengali | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **hater tola** ‘palm’ | Compound components: **hásta + tala**, [CDIAL[14024];CDIAL[5731]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=811) | Analyse this surface expression as hand plus surface/palm in that order: CDIAL hasta supplies eastern hāt/hāta hand and tala explicitly supplies Bengali tal/talā and Oriya taḷa surface/palm, originally in compounds with hand. Bengali hater/hatɛr is the genitive hand element; Bishnupriya ator/atol is interpreted as its h-less regional counterpart, with r/l notation qualified. The final tala/talu/tara identifies the surface element, with lateral/rhotic variation retained. Both lexical components are saved, not an invented inherited compound node; local IA transmission is unresolved. Exact response: hater tola. (1 records.) |
+| 2 | **hatɛr talu** ‘palm’ | Compound components: **hásta + tala**, [CDIAL[14024];CDIAL[5731]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=811) | Analyse this surface expression as hand plus surface/palm in that order: CDIAL hasta supplies eastern hāt/hāta hand and tala explicitly supplies Bengali tal/talā and Oriya taḷa surface/palm, originally in compounds with hand. Bengali hater/hatɛr is the genitive hand element; Bishnupriya ator/atol is interpreted as its h-less regional counterpart, with r/l notation qualified. The final tala/talu/tara identifies the surface element, with lateral/rhotic variation retained. Both lexical components are saved, not an invented inherited compound node; local IA transmission is unresolved. Exact response: hatɛr talu. (1 records.) |
+
+All 4 rows use rank 1 and status `accepted`. Relation kinds: component: 4. Transmission uncertainty recorded in the evidence remains unresolved; a provisional family link does not prove uninterrupted inheritance. Exact IDs, source locations, dialect tags and assignment rows are retained in the manifest.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/pass183-validation.json). The compiled/browser database was not refreshed. Responses not listed in the exact manifest are outside these saved proposals; they have not been declared etymologically unresolved merely because the shortlist omitted them.

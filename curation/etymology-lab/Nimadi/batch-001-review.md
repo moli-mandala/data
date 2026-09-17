@@ -1,0 +1,36 @@
+# Nimadi — batch 001
+
+**19 proposals, approved and saved to the accepted overlay.**
+
+## Straightforward
+
+| # | Nimadi | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **mātha, mātho, māthā** ‘head’ | **masta**, [CDIAL 9926.1](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=571); ID `9926` | Pali mattha/matthaka and Prakrit mattha lead to Hindi māthā and explicitly Marwari mātho ‘head, forehead’. The dental aspirate and vowel length fit the first branch of masta/mastaka; no brain-related subsection is intended. |
+| 3 | **bāl** ‘hair’ | **vā́la**, [CDIAL 11572](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=674); ID `11572` | CDIAL gives Hindi bāl, Gujarati vāḷ and Bhojpuri bār ‘hair’ beneath vāla. Initial v > b and the regional lateral variants have explicit comparanda. |
+| 4 | **kān** ‘ear’ | **kárṇa**, [CDIAL 2830](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=144); ID `2830` | Prakrit kaṇṇa corresponds to Hindi, Old Marwari, Gujarati and Marathi kān ‘ear’ in CDIAL. The local dental/retroflex nasal and variable written vowel length fit this inherited family. |
+| 5 | **dāt, dā̃t, dānt** ‘tooth’ | **dánta**, [CDIAL 6152](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=352); ID `6152` | CDIAL explicitly gives Hindi, Marwari, Gujarati and Marathi dā̃t from danta. Reduction of nt with vowel lengthening/nasalisation accounts for these forms; survey notation varies in whether nasalisation is written. |
+| 6 | **jib, jibə, jip** ‘tongue’ | **jihvā́**, [CDIAL 5228.1](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=288); ID `5228` | Prakrit jibbhā and Hindi jīb(h), Gujarati jībh and Marathi jībh are cited under jihvā. The reduced labial cluster fits jib; Nimadi jip additionally shows final devoicing. |
+| 7 | **peṭ, peṭh** ‘belly’ | **\*pēṭṭa**, [CDIAL 8376.1](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=475); ID `8376` | CDIAL’s first branch has Prakrit peṭṭa/piṭṭa and Hindi peṭ, Old Marwari peṭa, Gujarati peṭ; Maithili peṭ(h) also supplies an aspirated comparator. This is the e/i-vowel branch, separate from pōṭṭa. |
+| 11 | **haḍḍi, hāḍḍi, haḍḍa** ‘bone’ | **haḍḍa**, [CDIAL 13952](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=807); ID `13952` | Prakrit haḍḍa, Hindi haḍḍā/haḍḍī and hāṛ, and Gujarati/Marathi hāḍ give direct comparanda. Turner explicitly calls a connection to asthi very doubtful; the proposal stops at haḍḍa. |
+| 13 | **gāũ, gā̃v, gāv** ‘village’ | **grā́ma**, [CDIAL 4368](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=235); ID `4368` | CDIAL lists Prakrit gāma, Gujarati gām, Marwari gā̃v and Hindi gā̃u beneath grāma. The nasal and v/u outcomes are directly represented, without assigning the separate dehāt or khelo responses. |
+| 14 | **koṇi, koiṇi, koini, kuṇi, kohini** ‘elbow’ | **kapʰōṇi**, [CDIAL 2757](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=138); ID `2757` | CDIAL gives Prakrit kuhaṇī, Hindi kohnī/kuhnī/kehunī, Gujarati kɔṇī and Nepali kuinu. These supply both the medial-h and contracted/metathesised comparanda for the local forms. |
+| 16 | **nāk, nākh** ‘nose’ | **\*nakka**, [CDIAL 6909](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=397); ID `6909` | Prakrit ṇakka, Hindi/Gujarati/Marathi nāk and Kumaoni nākh are explicit comparanda under *nakka. Turner’s proposed deeper *nas-ka/*nast-ka origin is uncertain; the assignment stays at the attested comparative *nakka family. |
+| 18 | **muh** ‘mouth’ | **múkʰa**, [CDIAL 10158](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=585); ID `10158` | Prakrit muha and Hindi muh/mũh, Bhojpuri mũh and Gujarati mõh appear under mukha ‘mouth, face’. The weakened kh and loss or retention of final h fit these selected mouth responses. |
+| 19 | **hāt, hāth** ‘arm’ | **hásta**, [CDIAL 14024](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=811); ID `14024` | CDIAL explicitly gives Hindi/Marwari hāth ‘hand, arm, cubit’ and Marathi hāt. The arm/hand semantic range is primary-source evidence, and inherited st > tth > th/t explains the stem. |
+
+## Qualified
+
+| # | Nimadi | Proposed etymology | Evidence |
+|---|---|---|---|
+| 2 | **mādho, madho** ‘head’ | **masta**, [CDIAL 9926.1](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=571); ID `9926` | Compare the same survey’s māthā/mātho and CDIAL’s Marwari mātho, Gujarati māthũ. Voicing or loss of aspiration differentiates these local forms; the family is plausible, but these developments need locality-specific confirmation. |
+| 8 | **aŋgḷai, aŋgəḷi, angəlai, āŋgḷi, āŋgḷyā, aŋgḷei** ‘finger’ | **aŋgúli**, [CDIAL 135.1](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=7); ID `135` | CDIAL lists Hindi uṅglī, Gujarati ā̃gḷī, Marathi ãgḷī and Old Hindi ā̃gurī under aṅguli/aṅguri. Syncope and l/ḷ/r variation support this branch; survey-specific extended endings are retained in the proposal. |
+| 9 | **nakh, nākh** ‘fingernail’ | **\*nakkʰa**, [CDIAL 6914.2](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=397); ID `6914-2` | The retained kh is compared with CDIAL’s explicitly strengthened *nakkha branch (Prakrit ṇakkha, Bshk. nakh, Torwali nōkh), rather than the nah-/noh- reflexes of plain nakha. A learned or contact-supported retention cannot yet be excluded in these central varieties. |
+| 10 | **cāməḍi, caməḍo, cāmbḍo, cəməḍā, cāmḍā, camḍe, cāmaḍi, cāmaḍo** ‘skin’ | **\*carmaḍa-**, [CDIAL 4701, extension -ḍa-](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=255); ID `4701-2` | CDIAL gives Hindi camṛā, Gujarati cāmḍũ/cāmḍī and Marathi cāmḍẽ/cāmḍī as the historical -ḍ- extension of carman via camma. These survey forms fit that inherited extended family; cāmbḍo additionally has an intrusive b, so it remains qualified. Jambu has a dedicated historical extension node *carmaḍa- (4701-2), which is the selected parent. |
+| 12 | **haḍəka, haḍəkā, haḍəko, hadki, hāḍkā** ‘bone’ | **haḍḍa**, [CDIAL 13952](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=807); ID `13952` | The base agrees with haḍḍa; CDIAL’s addenda explicitly provide k-extended haṛkɔ, hāḍkī and Garhwali hāḍgu (< *hāḍku?). The survey k-forms fit this extended family, with the exact age/productivity of the suffix left open. |
+| 15 | **ḍoḷa, ḍoḷo, doḷə, ḍoḷā** ‘eye’ | **dōla**, [CDIAL 6582](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=375); ID `6582` | CDIAL explicitly derives Prakrit ḍōla ‘eye’ and Marathi ḍoḷā ‘eye’ within the dōla ‘swinging’ family. The lexical meaning is directly attested, but Marathi contact in Nimar leaves immediate inheritance versus borrowing open. |
+| 17 | **hatəḷai, hateḷi, hātheḷi, hātəḷāy, hateli, hatəḷei** ‘palm’ | **hastatala**, [CDIAL 14029](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=811); ID `14029` | CDIAL gives Pali hatthatala and Hindi/Punjabi hathelī from hastatala ‘palm’. The contracted local forms fit that lexicalised compound, but Turner marks Gujarati hathelī as a Hindi loan, so the immediate inheritance/contact route remains qualified. |
+
+19 proposals; 185 affected records; 185 saved assignment rows: 185 `reflex`. Historical extensions and uncertain contact pathways are explained in the evidence.
+
+Excluded responses remain held in the cumulative review and holds.json. All approved donor dependencies are resolved.

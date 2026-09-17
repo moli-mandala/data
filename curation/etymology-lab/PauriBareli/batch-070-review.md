@@ -1,0 +1,13 @@
+# Pauri Bareli: joint SIL review, batch 70
+
+**Saved: 1 proposals covering 1 assignment rows on 1 records.** The user authorized saving supported analyses jointly; these are accepted overlay rows, not pending proposals.
+
+Language ID: `PauriBareli`. [Joint status and scope](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/REVIEW.md) · [Difficult cases](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/AUDIT.md) · [Exact manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/PauriBareli/batch-070.json)
+
+| # | Pauri Bareli | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **dath** ‘tooth’ | Reflex of **dánta**, [CDIAL[6152]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=352) | Full CDIAL danta explicitly gives regional dā̃t tooth across Nepali, Bihari, Hindi and western IA, alongside dand and the proposed Nepali dā̃d stage. The selected dãṭ/ḍãṭ/ḍaṭ/ḍãt/dath and Dotyali dā̃dā tooth responses fit this family with source dental/retroflex notation, nasalization, aspiration spelling and final vowel retained. Local IA transmission is unresolved. The separate non-nasal Dotyali dāḍā and longer compound/extended tooth forms are excluded for separate review. Exact response: dath. (1 records.) |
+
+All 1 rows use rank 1 and status `accepted`. Relation kinds: reflex: 1. Transmission uncertainty recorded in the evidence remains unresolved; a provisional family link does not prove uninterrupted inheritance. Exact IDs, source locations, dialect tags and assignment rows are retained in the manifest.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/pass242-validation.json). The compiled/browser database was not refreshed. Responses not listed in the exact manifest are outside these saved proposals; they have not been declared etymologically unresolved merely because the shortlist omitted them.

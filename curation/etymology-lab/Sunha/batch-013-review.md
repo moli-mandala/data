@@ -1,0 +1,16 @@
+# Sunha Tharu: joint SIL review, batch 13
+
+**Saved: 4 proposals covering 4 assignment rows on 4 records.** The user authorized saving supported analyses jointly; these are accepted overlay rows, not pending proposals.
+
+Language ID: `Sunha`. [Joint status and scope](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/REVIEW.md) · [Difficult cases](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/AUDIT.md) · [Exact manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Sunha/batch-013.json)
+
+| # | Sunha Tharu | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **mut** ‘urine’ | Reflex of **mū́tra**, [CDIAL[10234]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=590) | CDIAL 10234 mūtra gives Prakrit mutta, Hindi mūt, Punjabi mūtar and Bshk. mūλ “urine”. The simple t/tr and named lateral forms are supported; additional aspiration or another northern fricative needs local confirmation. Joint survey comparison leaves inheritance versus transfer between Indo-Aryan languages open. (1 records.) |
+| 2 | **ɡu** ‘feces’ | Reflex of **gūtʰa**, [CDIAL[4225]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=226) | CDIAL 4225.1 gūtha gives Prakrit gūha and the widespread gū/gūh/guhu “excrement” forms, including Nepali, Hindi, Bengali and Oriya. These simple feces responses fit branch 1; no Bshk. gūt form is assigned to it. Joint survey comparison leaves inheritance versus transfer between Indo-Aryan languages open. (1 records.) |
+| 3 | **kãʈ** ‘thorn’ | Reflex of **kaṇṭa**, [CDIAL[2668]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=133) | CDIAL 2668 distinguishes kaṇṭa from 2668.2 kaṇṭaka. The latter explicitly lists Bengali kā̃ṭā, Hindi kā̃ṭā, Punjabi kaṇḍā and Nepali kā̃ṛo. Bare eastern kā̃ṭ belongs to branch 1; uncertain northern forms still require a branch decision. Joint survey comparison leaves inheritance versus transfer between Indo-Aryan languages open. (1 records.) |
+| 4 | **u** ‘he’ | Reflex of **asáu**, [CDIAL[972]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=43) | CDIAL 972 asau groups the remote-demonstrative paradigm, including Lahnda/Punjabi o, Nepali u, Hindi wah and Old Marwari vo. The survey u/o/v- singulars and ve/be plurals identify that paradigm; this is a family-level analysis of remodeled case/number forms, not a direct sound derivation of each form from nominative asau. Regional transmission remains open. Joint survey comparison leaves inheritance versus transfer between Indo-Aryan languages open. (1 records.) |
+
+All 4 rows use rank 1 and status `accepted`. Relation kinds: reflex: 4. Transmission uncertainty recorded in the evidence remains unresolved; a provisional family link does not prove uninterrupted inheritance. Exact IDs, source locations, dialect tags and assignment rows are retained in the manifest.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/global-first-validation.json). The compiled/browser database was not refreshed. Responses not listed in the exact manifest are outside these saved proposals; they have not been declared etymologically unresolved merely because the shortlist omitted them.

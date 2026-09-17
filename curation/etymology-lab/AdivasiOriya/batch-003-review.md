@@ -1,0 +1,16 @@
+# Adivasi Oriya: joint SIL review, batch 3
+
+**Saved: 4 proposals covering 10 assignment rows on 10 records.** The user authorized saving supported analyses jointly; these are accepted overlay rows, not pending proposals.
+
+Language ID: `AdivasiOriya`. [Joint status and scope](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/REVIEW.md) · [Difficult cases](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/AUDIT.md) · [Exact manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/AdivasiOriya/batch-003.json)
+
+| # | Adivasi Oriya | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **caul** ‘rice’ | Reflex of **\*cāmala**, [CDIAL[4749]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=257) | CDIAL 4749 offers *cāmala OR *cāvala, with Prakrit cāulā/cavala, Punjabi cāval, Nepali cāmal and Bhojpuri cāur “husked rice”. Both reconstructed alternatives remain open under this existing family node; the semantic match does not include cooked-rice responses, and short cau/cal forms need local comparison. (2 records.) |
+| 2 | **moric** ‘chili’, **miric** ‘chili’, **maric** ‘chili’ | Reflex of **\*maricca**, [CDIAL[9875.2]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=567) | CDIAL 9875.2 *maricca explicitly gives Bhojpuri maricā “chillies”, Awadhi mircā, Punjabi mirc/marc and Gujarati marcī/marcũ “red pepper”. Retained c selects this strengthened branch, distinct from marīca &gt; miri and the marucca branch. Capsicum is a later semantic extension, not an ancient plant identification. (4 records.) |
+| 3 | **jondri** ‘millet’ | Reflex of **yavanāla**, [CDIAL[10434]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=603) | CDIAL 10434 yavanāla lists Bihari janer/jonhrī/jõdhrī, Hindi junhār/jundrī and Marathi jõdhḷā for regional grain names. The broad “millet” elicitation is retained; the source also covers maize and other grains, so these links do not resolve the botanical identity. (1 records.) |
+| 4 | **baigon** ‘eggplant’, **bãigon** ‘eggplant’, **baigõn** ‘eggplant’ | Reflex of **vātiŋgaṇa**, [CDIAL[11503.1]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=671) | CDIAL 11503.1 vātiṅgaṇa lists Prakrit vāiṃgaṇa, Hindi baigan/baĩgun, Nepali baigan and Oriya bāiṅgaṇa “eggplant”. The diphthong-bearing forms select section 1; bare baṅga and bāgun belong to distinct branches, and the article explicitly identifies an Iranian route for some northwestern forms. (3 records.) |
+
+All 10 rows use rank 1 and status `accepted`. Relation kinds: reflex: 10. Transmission uncertainty recorded in the evidence remains unresolved; a provisional family link does not prove uninterrupted inheritance. Exact IDs, source locations, dialect tags and assignment rows are retained in the manifest.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/continuation-validation.json). The compiled/browser database was not refreshed. Responses not listed in the exact manifest are outside these saved proposals; they have not been declared etymologically unresolved merely because the shortlist omitted them.

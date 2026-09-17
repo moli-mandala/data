@@ -1,0 +1,13 @@
+# Odia: joint SIL review, batch 50
+
+**Saved: 1 proposals covering 1 assignment rows on 1 records.** The user authorized saving supported analyses jointly; these are accepted overlay rows, not pending proposals.
+
+Language ID: `Or`. [Joint status and scope](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/REVIEW.md) · [Difficult cases](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/AUDIT.md) · [Exact manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Or/batch-050.json)
+
+| # | Odia | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **maṇkəṛə** ‘monkey’ | Reflex of **markáṭa**, [CDIAL[9882];CDIAL[9883]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=568) | Full CDIAL markata 9882 is explicitly monkey, with Prakrit makkaḍa/makkaḍī and maṁkaḍa, Phalura mākaṛ, Oriya mākaṛa/māṅkaṛa, Gujarati mākṛũ/mākṛī and Marathi mākaḍ/makḍī. Selected simple survey monkey forms preserve dental/retroflex stop or rhotic notation, nasal and vowel differences, and feminine/ordinary final vowels. Adivasi Oriya makidi retains its less specific dental transcription rather than being silently normalized. The separate markaṭa 9883 has spider/insect meanings and is not the parent of these monkey records. The deeper possible Dravidian connection and local IA transmission remain unresolved; longer -iyu/-iya forms and substantially reduced maka/mako are excluded here. Exact response: maṇkəṛə. (1 records.) |
+
+All 1 rows use rank 1 and status `accepted`. Relation kinds: reflex: 1. Transmission uncertainty recorded in the evidence remains unresolved; a provisional family link does not prove uninterrupted inheritance. Exact IDs, source locations, dialect tags and assignment rows are retained in the manifest.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/pass226-validation.json). The compiled/browser database was not refreshed. Responses not listed in the exact manifest are outside these saved proposals; they have not been declared etymologically unresolved merely because the shortlist omitted them.

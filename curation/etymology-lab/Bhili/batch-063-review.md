@@ -1,0 +1,15 @@
+# Bhili: joint SIL review, batch 63
+
+**Saved: 3 proposals covering 3 assignment rows on 3 records.** The user authorized saving supported analyses jointly; these are accepted overlay rows, not pending proposals.
+
+Language ID: `Bhili`. [Joint status and scope](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/REVIEW.md) · [Difficult cases](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/AUDIT.md) · [Exact manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Bhili/batch-063.json)
+
+| # | Bhili | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **ukhḷiyo** ‘mortar’ | Reflex of **\*udukkʰala**, [CDIAL[2360.4]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=111) | The full CDIAL 2360 article assigns Prakrit ukkhala/okkhala and modern ukhal/okhal/ukhli to subsection 4, *udukk hala (udukkʰala), distinct from the retained-initial-l subsection 2. Explicit comparanda include Gujarati ukhaḷ/ukhḷũ/ukhaḷī, Nepali okhal/okhli, Bhojpuri ōkhar and Awadhi okharī; the selected liquid-retaining forms fit this branch. Vowel and ending variation is retained; cross-IA transmission is unresolved. Exact response: ukhḷiyo. (1 records.) |
+| 2 | **okhaḷ** ‘mortar’ | Reflex of **\*udukkʰala**, [CDIAL[2360.4]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=111) | The full CDIAL 2360 article assigns Prakrit ukkhala/okkhala and modern ukhal/okhal/ukhli to subsection 4, *udukk hala (udukkʰala), distinct from the retained-initial-l subsection 2. Explicit comparanda include Gujarati ukhaḷ/ukhḷũ/ukhaḷī, Nepali okhal/okhli, Bhojpuri ōkhar and Awadhi okharī; the selected liquid-retaining forms fit this branch. Vowel and ending variation is retained; cross-IA transmission is unresolved. Exact response: okhaḷ. (1 records.) |
+| 3 | **khanaṇi** ‘mortar’ | Reflex of **kʰaṇḍana**, [CDIAL[3796]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=199) | CDIAL khaṇḍana explicitly gives Gujarati khā̃ḍṇī, khā̃ḍṇiyɔ, khā̃yṇī, khā̃yṇiyɔ, khāṇṇī and khā̃ṇiyɔ meaning mortar, beside pounding in a mortar. These supply both the full cluster and contracted nasal/y stems of the selected Bhil survey forms. Vowels, nasal realization and endings remain as transcribed; inheritance versus local IA borrowing is unresolved. Exact response: khanaṇi. (1 records.) |
+
+All 3 rows use rank 1 and status `accepted`. Relation kinds: reflex: 3. Transmission uncertainty recorded in the evidence remains unresolved; a provisional family link does not prove uninterrupted inheritance. Exact IDs, source locations, dialect tags and assignment rows are retained in the manifest.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/pass166-validation.json). The compiled/browser database was not refreshed. Responses not listed in the exact manifest are outside these saved proposals; they have not been declared etymologically unresolved merely because the shortlist omitted them.

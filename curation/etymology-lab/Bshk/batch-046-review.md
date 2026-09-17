@@ -1,0 +1,15 @@
+# Bashkarik: joint SIL review, batch 46
+
+**Saved: 3 proposals covering 6 assignment rows on 6 records.** The user authorized saving supported analyses jointly; these are accepted overlay rows, not pending proposals.
+
+Language ID: `Bshk`. [Joint status and scope](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/REVIEW.md) · [Difficult cases](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/AUDIT.md) · [Exact manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Bshk/batch-046.json)
+
+| # | Bashkarik | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **lov** ‘red’ | Reflex of **lṓhita**, [CDIAL[11165]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=650) | Full lohita explicitly gives Bshk lōu red, alongside regional lōya/ləwī/luhī red. The selected Bshk lov/laū/laʔū responses match that direct red comparison. Source vowel, glide and glottal notation remain intact. Turner reports an alternative lohuta analysis in the comparison; the link records the documented lohita family with that historical uncertainty retained, not a newly proven intermediate reconstruction. Exact response: lov. (2 records.) |
+| 2 | **laū** ‘red’ | Reflex of **lṓhita**, [CDIAL[11165]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=650) | Full lohita explicitly gives Bshk lōu red, alongside regional lōya/ləwī/luhī red. The selected Bshk lov/laū/laʔū responses match that direct red comparison. Source vowel, glide and glottal notation remain intact. Turner reports an alternative lohuta analysis in the comparison; the link records the documented lohita family with that historical uncertainty retained, not a newly proven intermediate reconstruction. Exact response: laū. (3 records.) |
+| 3 | **laʔū** ‘red’ | Reflex of **lṓhita**, [CDIAL[11165]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=650) | Full lohita explicitly gives Bshk lōu red, alongside regional lōya/ləwī/luhī red. The selected Bshk lov/laū/laʔū responses match that direct red comparison. Source vowel, glide and glottal notation remain intact. Turner reports an alternative lohuta analysis in the comparison; the link records the documented lohita family with that historical uncertainty retained, not a newly proven intermediate reconstruction. Exact response: laʔū. (1 records.) |
+
+All 6 rows use rank 1 and status `accepted`. Relation kinds: reflex: 6. Transmission uncertainty recorded in the evidence remains unresolved; a provisional family link does not prove uninterrupted inheritance. Exact IDs, source locations, dialect tags and assignment rows are retained in the manifest.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/pass258-validation.json). The compiled/browser database was not refreshed. Responses not listed in the exact manifest are outside these saved proposals; they have not been declared etymologically unresolved merely because the shortlist omitted them.

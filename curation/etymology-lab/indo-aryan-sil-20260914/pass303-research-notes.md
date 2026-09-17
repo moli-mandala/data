@@ -1,0 +1,1 @@
+Resolved and saved in pass303. Cached Platts p.655 supplied the missing explicit sarag < svarga derivation and sky meaning; see pass303-platts-excerpts.json, primary-articles.json, decisions and validation. Earlier web retrieval failure was superseded by this cached primary evidence.

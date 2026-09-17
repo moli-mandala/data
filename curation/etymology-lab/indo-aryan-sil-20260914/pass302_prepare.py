@@ -1,0 +1,13 @@
+import csv,json
+from pathlib import Path
+P=Path('/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914');stem='pass302';assert not (P/(stem+'-decisions.json')).exists()
+rules=[dict(parent='3950',citation='CDIAL[3950]',evidence='Full gagana gives Prakrit gayana/gaana and WPah gaen/goin, explicitly Jaunsari gain, with addenda Kotgarhi nasal gen and Jaunsari gain/gaini sky. These directly support the selected Jaunsari gen/goyan forms, preserving source nasalization, vowels and endings.'),dict(parent='573',citation='CDIAL[573,1]',evidence='Full ambara section 1 explicitly records Prakrit ambara sky and Sinhala ambura open air/sky, distinct from the clothing sense in section 2. The selected regional ambar forms preserve this lexical shape and sky meaning, with vowel variation and retroflex final r in Gojri retained. Learned or cross-IA transmission is qualified.'),dict(parent='1008',citation='CDIAL[1008]',evidence='Full akasa gives Prakrit aga and explicitly Bshk aga cloud/rain, Tor agha and Phal agha. It states that general retention of k as g in Dardic is obscure. The selected northern sky/cloud forms, including source x for a velar fricative, support this family; the historical consonant development and cross-IA transmission remain qualified.'),dict(parent='1008',citation='CDIAL[1008]',evidence='Full akasa has sky from the Sanskrit head through Pali/Prakrit akasa. Odia akasau retains the full stem with its source ending; Kaithali kas and Kullui kas have initial-vowel loss. These are qualified regional matches; source spelling and possible learned or cross-IA transmission are preserved.')]
+sets=[('sky',{'gẽṇ','goyṇə','geṇ','goyəṇ'}),('sky',{'ambar','āmbār','āmbaṛ','əmbər'}),('sky',{'āgʰā'}),('sky',{'akasau','kaś','kaːʃ'})]
+remaining={r['ID'] for r in csv.DictReader((P/'unresearched-records.csv').open())};acc=[]
+for r in json.loads((P/'inventory.json').read_text()):
+ if r['ID'] not in remaining:continue
+ for i,(g,fs) in enumerate(sets):
+  if (r['Gloss']==g and r['Form'] in fs) or (i==2 and r['Gloss']=='cloud' and r['Form'] in {'āgā','āxa','āxo'}):
+   q=rules[i];acc.append(dict(record=r,parent=q['parent'],family=i,kind='reflex',citation=q['citation'],evidence=q['evidence']+' Exact response: '+r['Form']+'.'))
+for suffix,obj in [('rules',rules),('decisions',dict(accepted=acc,held=[]))]:(P/(stem+'-'+suffix+'.json')).write_text(json.dumps(obj,ensure_ascii=False,indent=1)+'\n')
+(P/(stem+'_save.py')).write_text((P/'global_sixteenth_save.py').read_text().replace('global-sixteenth',stem));(P/(stem+'_prepare.py')).write_text(Path('/tmp/prepare302.py').read_text());print('accepted',len(acc))

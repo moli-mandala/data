@@ -1,0 +1,13 @@
+import csv,json
+from pathlib import Path
+P=Path('/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914');stem='pass247';assert not (P/(stem+'-decisions.json')).exists()
+rules=[dict(parent='135',citation='CDIAL[135.1]',evidence='Full CDIAL aṅguli subsection 1 explicitly gives Awankari aṅgul, Punjabi aṅgal/uṅgul, Hindi uṅglī, Gujarati ā̃gḷī, Marathi ā̃goḷī/ā̃gḷī, Nepali aũli/aũlo, Maithili ā̃gur/aṅguriā and eastern aṅguli forms. The selected lateral and rhotic finger responses, including the ordinary -iya extensions, fit these documented regional forms. Source vowels, nasalization, g/k and lateral/retroflex/rhotic notation remain intact. Regional transmission and local reductions are qualified. The finger-breadth entry aṅgula 134 is not substituted merely for matching spelling, and complete same-family slash responses are preserved.'),dict(parent='135-2x',citation='CDIAL[135.2]',evidence='Full CDIAL aṅguli subsection 2 aṅgūḍi explicitly gives Gawri aṅguṛṛik, Kalasha aṅgūṛyak, Bshk áṅgīr, Torwali äṅgī and Kandia hagūī/Maiyan agui. The selected Dardic āŋgū/āŋīr/æŋgī/hāŋgvī forms and complete Gawri/Bshk slash responses follow this specific branch. Source rhotic loss, aspiration, v/w-like glide, vowels and spacing remain unchanged and qualified; longer Gawri -ik is directly represented in the full article. Local IA transmission remains unresolved, without collapsing the two dictionary branches.')]
+sets=[{'ũŋɡʌɾɪja','ʌ̃ŋɡʌɾja','uŋɡʌɾɪja','aŋguḷ','aŋglī / aŋgṛī','aŋglī / aŋgol','əᵘnlā','aū̃rī','aŋgur','āŋguḷ','ānguḷ','āngaḷi','āŋgāṛi','ungaḷi','āŋgəḷyā','ãgli','aŋəḷi','aŋŋuli','ũgli','oŋgli','oŋgʊliː','āgaḷi','āŋkəri','āŋkiri','angḷi','aŋgol','ə̃ṅri','ãᵘṅgri','əṅgri','əṅguri'}, {'ạ̄̃gū','āŋgū','aŋgūī k / āŋgūṛ','æŋgī','āŋīr','āŋgīr','āŋgvīr / āŋgīr','hāŋgvī'}]
+remaining={r['ID'] for r in csv.DictReader((P/'unresearched-records.csv').open())};acc=[]
+for r in json.loads((P/'inventory.json').read_text()):
+ if r['ID'] not in remaining or r['Gloss']!='finger':continue
+ for i,forms in enumerate(sets):
+  if r['Form'] in forms:
+   q=rules[i];acc.append(dict(record=r,parent=q['parent'],family=i,kind='reflex',citation=q['citation'],evidence=q['evidence']+' Exact response: '+r['Form']+'.'));break
+for suffix,obj in [('rules',rules),('decisions',dict(accepted=acc,held=[]))]:(P/(stem+'-'+suffix+'.json')).write_text(json.dumps(obj,ensure_ascii=False,indent=1)+'\n')
+(P/(stem+'_save.py')).write_text((P/'global_sixteenth_save.py').read_text().replace('global-sixteenth',stem));(P/(stem+'_prepare.py')).write_text(Path('/tmp/prepare247.py').read_text());print('accepted',len(acc))

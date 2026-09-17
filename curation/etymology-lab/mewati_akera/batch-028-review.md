@@ -1,0 +1,14 @@
+# Mewati: joint SIL review, batch 28
+
+**Saved: 2 proposals covering 4 assignment rows on 2 records.** The user authorized saving supported analyses jointly; these are accepted overlay rows, not pending proposals.
+
+Language ID: `mewati_akera`. [Joint status and scope](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/REVIEW.md) · [Difficult cases](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/AUDIT.md) · [Exact manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/mewati_akera/batch-028.json)
+
+| # | Mewati | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **ek sā** ‘same’ | Compound components: **\*ēkka + sadŕ̩śa**, [CDIAL[2462.2];CDIAL[13120];platts1884[621]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=119) | Ordered components one + like: CDIAL 2462 subsection 2 explicitly gives modern ek/āk one. Platts page 621 comparative sā like/resembling is explicitly derived through a Prakrit form from sadṛśa plus ka. It is distinct from the adjacent intensifying sā entry. CDIAL 13120 supplies the sadṛśa like family. These same responses are interpreted as comparative ek + sā/so/sī, preserving gender/vowel forms, spacing and regional pronunciation. The sadṛśa link records the base of the documented suffixed derivation, not an unsuffixed direct sound change. Local transmission is unresolved. Exact response: ek sā. (1 records.) |
+| 2 | **ek sī** ‘same’ | Compound components: **\*ēkka + sadŕ̩śa**, [CDIAL[2462.2];CDIAL[13120];platts1884[621]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=119) | Ordered components one + like: CDIAL 2462 subsection 2 explicitly gives modern ek/āk one. Platts page 621 comparative sā like/resembling is explicitly derived through a Prakrit form from sadṛśa plus ka. It is distinct from the adjacent intensifying sā entry. CDIAL 13120 supplies the sadṛśa like family. These same responses are interpreted as comparative ek + sā/so/sī, preserving gender/vowel forms, spacing and regional pronunciation. The sadṛśa link records the base of the documented suffixed derivation, not an unsuffixed direct sound change. Local transmission is unresolved. Exact response: ek sī. (1 records.) |
+
+All 4 rows use rank 1 and status `accepted`. Relation kinds: component: 4. Transmission uncertainty recorded in the evidence remains unresolved; a provisional family link does not prove uninterrupted inheritance. Exact IDs, source locations, dialect tags and assignment rows are retained in the manifest.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/pass146-validation.json). The compiled/browser database was not refreshed. Responses not listed in the exact manifest are outside these saved proposals; they have not been declared etymologically unresolved merely because the shortlist omitted them.

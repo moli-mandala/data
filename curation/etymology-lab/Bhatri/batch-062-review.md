@@ -1,0 +1,14 @@
+# Bhatri: joint SIL review, batch 62
+
+**Saved: 2 proposals covering 9 assignment rows on 9 records.** The user authorized saving supported analyses jointly; these are accepted overlay rows, not pending proposals.
+
+Language ID: `Bhatri`. [Joint status and scope](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/REVIEW.md) · [Difficult cases](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/AUDIT.md) · [Exact manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Bhatri/batch-062.json)
+
+| # | Bhatri | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **munus** ‘man’, **munus** ‘husband’ | Reflex of **manuṣyà**, [CDIAL[9828]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=564) | Full manuṣya article gives Lahnda muṇas husband, Awankari muṇus, Oriya/Sambalpuri munus labourer and the munisa branch influenced by Middle IA purisa. Selected Bhatri/Adivasi Oriya munus/munos/munəs man/husband and Kochila Tharu munsa man match this regional human/person family, preserving vowel and nasal notation. Husband is a contextual specialization of man/person and is independently documented in the article, not imposed on the original gloss. Turner explicitly notes shortening and collision with puruṣa; local IA transmission remains unresolved. Extra -kh, -k and mixed or compound responses are excluded. Exact response: munus. (8 records.) |
+| 2 | **munəs** ‘husband’ | Reflex of **manuṣyà**, [CDIAL[9828]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=564) | Full manuṣya article gives Lahnda muṇas husband, Awankari muṇus, Oriya/Sambalpuri munus labourer and the munisa branch influenced by Middle IA purisa. Selected Bhatri/Adivasi Oriya munus/munos/munəs man/husband and Kochila Tharu munsa man match this regional human/person family, preserving vowel and nasal notation. Husband is a contextual specialization of man/person and is independently documented in the article, not imposed on the original gloss. Turner explicitly notes shortening and collision with puruṣa; local IA transmission remains unresolved. Extra -kh, -k and mixed or compound responses are excluded. Exact response: munəs. (1 records.) |
+
+All 9 rows use rank 1 and status `accepted`. Relation kinds: reflex: 9. Transmission uncertainty recorded in the evidence remains unresolved; a provisional family link does not prove uninterrupted inheritance. Exact IDs, source locations, dialect tags and assignment rows are retained in the manifest.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/pass201-validation.json). The compiled/browser database was not refreshed. Responses not listed in the exact manifest are outside these saved proposals; they have not been declared etymologically unresolved merely because the shortlist omitted them.

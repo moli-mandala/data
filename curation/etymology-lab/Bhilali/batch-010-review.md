@@ -1,0 +1,14 @@
+# Bhilali: joint SIL review, batch 10
+
+**Saved: 2 proposals covering 2 assignment rows on 2 records.** The user authorized saving supported analyses jointly; these are accepted overlay rows, not pending proposals.
+
+Language ID: `Bhilali`. [Joint status and scope](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/REVIEW.md) · [Difficult cases](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/AUDIT.md) · [Exact manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Bhilali/batch-010.json)
+
+| # | Bhilali | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **hāt** ‘seven’ | Reflex of **saptá**, [CDIAL[13139]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=760) | CDIAL 13139 gives Pali/Prakrit satta and Hindi/Marwari/Gujarati/Awadhi sāt. Assimilation of pt and simplification of the resulting geminate support the numeral. The same survey locality independently records hukəlu “dry”, ek hau “one hundred”, corroborating initial s/ś &gt; h locally. These are source-local comparisons, not transferred locality evidence. Exact comparative records are preserved in local-h-matrix.json. Intra-IA transmission, if any, remains open. (1 records.) |
+| 2 | **hət̃** ‘seven’ | Reflex of **saptá**, [CDIAL[13139]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=760) | CDIAL 13139 gives Pali/Prakrit satta and Hindi/Marwari/Gujarati/Awadhi sāt. Assimilation of pt and simplification of the resulting geminate support the numeral. The same survey locality independently records hoṇ̃ u “gold”, hukhā “dry”, ek hõ “one hundred”, corroborating initial s/ś &gt; h locally. These are source-local comparisons, not transferred locality evidence. Exact comparative records are preserved in local-h-matrix.json. Intra-IA transmission, if any, remains open. (1 records.) |
+
+All 2 rows use rank 1 and status `accepted`. Relation kinds: reflex: 2. Transmission uncertainty recorded in the evidence remains unresolved; a provisional family link does not prove uninterrupted inheritance. Exact IDs, source locations, dialect tags and assignment rows are retained in the manifest.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/local-h-validation.json). The compiled/browser database was not refreshed. Responses not listed in the exact manifest are outside these saved proposals; they have not been declared etymologically unresolved merely because the shortlist omitted them.

@@ -1,0 +1,14 @@
+# Bundeli: joint SIL review, batch 19
+
+**Saved: 2 proposals covering 3 assignment rows on 3 records.** The user authorized saving supported analyses jointly; these are accepted overlay rows, not pending proposals.
+
+Language ID: `bundeli_atarra`. [Joint status and scope](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/REVIEW.md) · [Difficult cases](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/AUDIT.md) · [Exact manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/bundeli_atarra/batch-019.json)
+
+| # | Bundeli | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **nā̃o** ‘new’, **nao** ‘new’ | Reflex of **náva**, [CDIAL[6983]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=401) | CDIAL 6983 nava explicitly lists Bshk./Torwali nam, Palula nāwu/nā̃o and Jaunsari nō “new”. Buksa naya needs the separate navya branch rather than automatic transfer of an older nava link. Comparative check: Phal nāo “new” (f_gsifctycgrqs4). The exact survey spelling and semantic marks remain untouched. Equivalent elicitation glosses and ordinary inflections were reviewed together; source person, number, honorific and tense labels remain in the original record. The full form and sense support this same family. The link does not settle uncertain transfer within Indo-Aryan. (2 records.) |
+| 2 | **dekha** ‘look!’ | Reflex of **\*dēkṣati**, [CDIAL[6507.2]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=371) | CDIAL 6507.2 *dēkṣati explicitly gives Ashokan dekhati, Prakrit dekkhaï, Bhojpuri dēkhal, Hindi dekhnā and Sindhi ḍekhaṇu. The e-vowel and kh select branch 2. The article describes geographical spread; intra-IA transmission is left open. Compound verbs and contracted forms without diagnostic kh are excluded. Comparative check: Buksa dekʰa “he sees; he saw” (f_uzispb5iudogm). The exact survey spelling and semantic marks remain untouched. Equivalent elicitation glosses and ordinary inflections were reviewed together; source person, number, honorific and tense labels remain in the original record. The full form and sense support this same family. The link does not settle uncertain transfer within Indo-Aryan. (1 records.) |
+
+All 3 rows use rank 1 and status `accepted`. Relation kinds: reflex: 3. Transmission uncertainty recorded in the evidence remains unresolved; a provisional family link does not prove uninterrupted inheritance. Exact IDs, source locations, dialect tags and assignment rows are retained in the manifest.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/semantic-validation.json). The compiled/browser database was not refreshed. Responses not listed in the exact manifest are outside these saved proposals; they have not been declared etymologically unresolved merely because the shortlist omitted them.

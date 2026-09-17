@@ -1,0 +1,50 @@
+"""Second manually delimited family pass; writes research only."""
+import json,csv,re,unicodedata,collections
+from pathlib import Path
+P=Path(__file__).resolve().parent;ROOT=P.parents[2]
+src=(P/'prepare.py').read_text();exec('def norm'+src.split('def norm',1)[1].split('families=json.loads')[0])
+# Explicit shortlists based on the full CDIAL prose, not a distance threshold.
+rules=[]
+def add(parent,gloss,words,ev):rules.append(dict(parent=parent,gloss=gloss,words=words.split('|'),evidence=ev,citation='CDIAL['+parent.replace('-','.',1)+']'))
+add('6328','day','din|dina|dino|dīnā', 'CDIAL 6328 dina lists Prakrit diṇa and Nepali, Assamese, Bengali, Maithili, Awadhi and Hindi din “day”. It explicitly warns that Punjabi/Western Pahari din is borrowed from Hindi or Sanskrit, as are potentially Gujarati/Marathi forms; those transmission-sensitive matches are held.')
+add('10757','tree','rukh|rukkha|rukha|rukhwa|rukhuwa','CDIAL 10757 *rukṣa lists Pali/Prakrit rukkha, Lahnda/Punjabi rukkh, Nepali rukh, Bhojpuri/Awadhi/Hindi rūkh and Gujarati/Marathi rūkh. This selects the ru- formation rather than vṛkṣa; the uncertain history of the alternation is left at the parent node.')
+add('13291','morning','savera|savero|saver|savele|savela|sabero|saber|sabera|sawero','CDIAL 13291 *savēla lists Punjabi saver/saverā, Hindi sawerā, Nepali/Kumaoni saber and Gujarati saverā. It discusses b through emphatic vv or influence of ber; the modern r/b variants are supported without asserting a unique deeper pathway.')
+add('5086','root','jaḍ|jaḍa|jaḍi|jaṛ|jaṛa|jaṛi|jar|jari','CDIAL 5086.1 jaṭā already denotes fibrous root and lists Hindi/Marwari jaṛ, Marathi jaḍ, Bengali jaṛ, Maithili jaṛi and Nepali jari. The link identifies the root family; competing Dravidian/Munda proposals about the older word remain unresolved.')
+add('5362','tree','jhāḍ|jhāṛ|jhāḍa|jhāṛa|jhaṛi','CDIAL 5362.1 jhāṭa lists Prakrit jhāḍa “bush, thicket”, Lahnda jhāṛ “large tree”, Gujarati jhāṛ “tree, plant” and Marathi jhāḍ “bush, tree”. These bare aspirated forms select section 1, without extending the claim to the distinct ṭṭ or nasal branches.')
+add('9190','many','bahut|bahuta|bahutā|bahot|bhot|bhout|bhaut|bot|but','CDIAL 9190 bahutva lists Old Marwari bahuta/bahota/bhota, Gujarati bɔt, Hindi bahut, Nepali bahut and Torwali but. The source treats the adjective as influenced by prabhūta and distinguishes obscure Shina buṭ; that qualification is retained.')
+add('9289','bad','bura|buro|buri','CDIAL 9289.1 *bura lists Punjabi burā, Western Pahari buro/burā, Nepali/Kumaoni buro, Hindi burā and Gujarati būrũ “bad”. This is the u-vowel branch of an uncertain defective/bad family, not *bōra.')
+add('4386','wet','gila|gilo|gilli|gillo|gillā|gīl|grīlā','CDIAL 4386 *grilla gives Prakrit gilla, Punjabi gillā, Hindi gīlā/gillā and Old Marwari gīlau “wet”, with Kalasha grīla. Turner calls the deeper *gṛdla derivation very doubtful; only the attested wet family is asserted.')
+add('11225','big','baṛa|baṛo|baṛe|baḍa|baḍo|baḍḍa|baḍḍo|baḍːa|boḍ|boḍo|boṛo|vaḍa|vaḍā|barka|barke|barko|baṛkā|bərka','CDIAL 11225 vaḍra lists Prakrit vaḍḍa, Hindi baṛā, Marwari baṛo, Lahnda/Punjabi vaḍḍā, Western Pahari baḍḍo and eastern baṛa. The addenda derive vaḍra by extraction from formations such as evaḍa, rejecting an uncomplicated vṛddha derivation; Gujarati b-initial forms marked as Hindi loans are held.')
+add('6914','fingernail|nail','nah|naha|nauh|noh|naŋ|naṅ|nəŋ|na|nau|no|nu|nẽ|nĩ|ni','CDIAL 6914.1 nakha gives Prakrit ṇaha, Maithili nah/nauh, Bhojpuri nõh, Punjabi naũh, Western Pahari nè and Nepali naṅ. These weakened forms select the first branch; retained-k forms and extended nākhun are excluded.')
+add('3408','broom','kuco|kuci|kuči|kuca','CDIAL 3408 kūrca explicitly includes Nepali kuco/kuci “brush, broom”, Bihari kū̃cā “sweeper’s broom” and Gujarati kūco “brush”. It entertains a Dravidian source for the older family without establishing an immediate donor for these records.')
+add('4209','heavy','garu|garuo|garua|garuŋ|garuṇo|garuṅo|garau|garuko','CDIAL 4209 guru lists Middle Indo-Aryan garu/garua, Western Pahari garūo, Nepali garũo/garuṅo/garuko and eastern garu/garuā “heavy”. It explains u-u > a-u by dissimilation; the selected adjective does not include learned guru “teacher”.')
+add('1670','white','ujar|ujjar|ujara|ujra|ujro|ujrə|ujal|ujalo','CDIAL 1670 ujjvala lists Prakrit ujjala, Maithili ujjar, Awadhi ujar “white” and Gujarati/Marathi ujḷ- forms. The r-outcome is directly attested; Nepali ujjar is explicitly marked as a Bihari loan and is held for its immediate donor.')
+add('2744-4','head|forehead','kapar|kapār|kapal|kapāl|kapāḷ|kapālo','CDIAL 2744.4 *kappāla specifically gives Nepali kapāl “head”, Bihari/Maithili kapār “head, forehead”, Khowar kapál and Torwali kapālo “forehead”. The retained-p branch is distinguished from the weakened and *kabhalla sections; possible interaction with the karpara family is retained.')
+add('248-2','below','heṭh|heṭhā|heṭhe|heṭa|heṭu','CDIAL 248.2 *adhiṣṭāt, remodeled after upariṣṭāt, gives Pali heṭṭhā, Prakrit heṭṭha, Punjabi/Lahnda heṭh, Bhojpuri heṭhā̃ and Gujarati heṭhe “below”. The selected h-/ṭ-bearing adverbs fit this second branch rather than undifferentiated adhastāt.')
+add('5539-2','left','ḍāvo|ḍāva|ḍāo','CDIAL 5539.2 *ḍāva gives Prakrit ḍāva “left hand”, Sindhi ḍāo, Hindi ḍāwā and Marathi ḍāvā “left”. This selects the v/zero branch rather than *ḍābba; the proposed non-Aryan origin is not treated as an established donor.')
+add('5539-3','left','ḍābo|ḍāba|ḍābu','CDIAL 5539.3 *ḍābba gives Old Gujarati ḍābaü, Gujarati ḍābũ and Kachchi ḍābo “left”. The b-bearing forms distinguish this section from *ḍāva; the deeper non-Aryan-origin hypothesis remains unresolved.')
+add('2389','hot|hot (weather)','uno|unu|una|unno|unnu|uṇo|uṇa','CDIAL 2389 uṣṇa gives Pali/Prakrit uṇha, Gujarati ūnũ/hunũ and Marathi ūnh/ūn “hot”. Loss of the cluster aspiration supplies the western n-bearing outcomes; the phonology is distinct from unrelated tāta and garam forms.')
+add('11392','year','baras|baris|barsa|bars|varas|varis|varih|varhi|varha|varah|bariś|barś|variś','CDIAL 11392.2 varṣa gives Prakrit varisa, Hindi baras, Old Marwari barasa, Gujarati varas, Bihari baris and northwestern varh-/varih- forms for “year”. Punjabi varas/baras is explicitly a Central loan; conservative ś/ṣ forms and local retroflex innovations are held rather than inferred automatically.')
+add('12918','evening|evening/afternoon','sanj|sanjha|sanjh|sāja|sājh|saj|sajh|sajha|sãj|sãjʰ','CDIAL 12918 saṃdhyā gives Pali sañjhā, Hindi sā̃j(h), Gujarati sā̃j, Punjabi sañjh and Nepali sā̃jh “evening”. Nasalized contracted and full nasal-cluster forms select the twilight/evening word; conservative sandhyā forms and compounds are excluded.')
+add('6251','right','dahin|dahina|dahini|dahino|dahine|daina|dainu|daino|daine|dāya|daya|daye|dayno|dayna','CDIAL 6251 dākṣiṇa gives Prakrit dāhiṇa, Hindi dāhinā/dāhnā, Kumaoni daiṇo and Nepali dāinu “right”. Hindi dā̃yā is explicitly explained by crossing with vāma; Bhojpuri dāhin is cross-referred to dakṣiṇā and held for section review.')
+add('11533','left','baya|bayo|baye|bai|bao|bau|bawa|bawo|bava','CDIAL 11533 vāma gives Kumaoni bāyõ, Nepali bāũ, Hindi bāyā̃/bā̃wā̃ and Western Pahari bāwā̃ “left”. The y/v and contracted nasalized outcomes are attested; bare retained-m forms are excluded because they may be learned.')
+add('11745','lightning','bijli|bijali|bijuli|bijili|bijuri|bijaḷi|vijali|vijaḷi|vijḷi|vijili|vijiḷi|bizuli','CDIAL 11745 vidyullatā gives Prakrit vijjulī, Hindi bijlī/bijurī, Nepali bijuli, Gujarati vijḷī and eastern bijuḷi “lightning”. The extended l/r-bearing forms select this compound, not bare vidyut; Marathi bijlī is explicitly a Hindi loan and is held.')
+add('10875-2','firewood|wood','lakṛi|lakaṛi|lakaḍi|lakaḍa|lakaḍo|lakaḍu|lakaḍe|lakaḍ|lakḍa|lakḍi|lakkar|lakkaṛ|lakaṛo|lakṛa|lakuḍ|lukṛi','CDIAL 10875.2 *lakkuṭa lists Prakrit lakkuḍa, Hindi lakṛī “firewood”, Gujarati lākṛũ and Marathi lākuḍ “wood”. Retained k selects the strengthened branch; Maithili lakṛī is explicitly borrowed from Hindi and is held for an immediate-donor link.')
+add('2871','cloth','kapṛa|kapṛo|kapaṛa|kapaḍa|kapaḍo|kapḍa|kapṛi|kapaṛi','CDIAL 2871 karpaṭa lists Prakrit kappaḍa, Punjabi kappṛā, Marwari kapṛo, Gujarati kāpaṛ and Marathi kāpaḍ “cloth”. It explicitly marks several Nepali/Bihari/Awadhi kapṛā forms as Hindi loans and questions short-vowel Gujarati borrowing; these are held. The addenda also question the older word’s formation.')
+add('6065','broken','ṭuṭa|ṭuṭo|ṭuṭi|ṭuṭal|tuṭa|tuṭo|tuṭi','CDIAL 6065 truṭyati includes Prakrit tuṭṭa/ṭiuṭṭa “broken”, Hindi ṭūṭā and Bhojpuri ṭūṭal. The bare participles fit the intransitive break family; overt auxiliary constructions and opaque suffixes are excluded.')
+add('13845','broken','phuṭa|phuṭā|phuṭi|phuṭo|phuṭṭa|phuṭṭo','CDIAL 13845 *sphuṭyati includes Prakrit phuṭṭa “burst” alongside regional split/broken continuations. These bare result forms select the intransitive burst family; the similarly spelled sphuṭa “clear, open” and unanalyzed auxiliaries are excluded.')
+(P/'second-rules.json').write_text(json.dumps(rules,ensure_ascii=False,indent=1))
+inv=json.loads((P/'inventory.json').read_text());d=json.loads((P/'decisions.json').read_text());used={x['record']['ID'] for v in d.values() for x in v}
+cs=[]
+for r in inv:
+ if r['previously_linked'] or r['ID'] in used:continue
+ w=norm(r['Form']);gs={s.strip().lower() for s in r['Gloss'].split(';')}
+ if re.search(r'[,;/ ()]',w):continue
+ matches=[i for i,q in enumerate(rules) if w in {norm(w) for w in q['words']} and gs<=set(q['gloss'].split('|'))]
+ if matches:cs.append({'record':r,'families':matches})
+(P/'second-candidates.json').write_text(json.dumps(cs,ensure_ascii=False,indent=1))
+with (P/'second-review.txt').open('w') as f:
+ for i,q in enumerate(rules):
+  rs=[x['record'] for x in cs if i in x['families']];f.write(f"\n{i}. {q['parent']} {q['gloss']} ({len(rs)})\n")
+  f.write('; '.join(l+': '+', '.join(sorted({r['Form'] for r in rs if r['Language_ID']==l})) for l in sorted({r['Language_ID'] for r in rs}))+'\n')
+print(len(cs))

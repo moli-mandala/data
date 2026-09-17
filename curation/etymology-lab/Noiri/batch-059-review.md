@@ -1,0 +1,14 @@
+# Noiri: joint SIL review, batch 59
+
+**Saved: 2 proposals covering 2 assignment rows on 2 records.** The user authorized saving supported analyses jointly; these are accepted overlay rows, not pending proposals.
+
+Language ID: `Noiri`. [Joint status and scope](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/REVIEW.md) · [Difficult cases](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/AUDIT.md) · [Exact manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Noiri/batch-059.json)
+
+| # | Noiri | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **raṭlo** ‘red’ | Reflex of **rakta**, [CDIAL[10539];CDIAL[10543]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=610) | Full CDIAL rakta gives Gujarati rātũ and Marathi rātā red and also includes Assamese rātul, Middle Bengali and Old Maithili rātula red under the same family. The selected Bhil/Bareli rātlo/ratalu/rataḷo-type red forms are linked as lateral-extended members of this family, preserving syncope, vowel endings and dental/retroflex t/l notation. This is not a claim of borrowing from the eastern languages or a reconstructed common lateral suffix; local formation and cross-IA transmission remain open. Full raktālu 10543 is explicitly red plus yam, and its Gujarati/Marathi reflexes mean yam/sweet potato, so that superficially similar plant compound is not selected for these colour responses. Exact response: raṭlo. (1 records.) |
+| 2 | **raṭu** ‘red’ | Reflex of **rakta**, [CDIAL[10539]](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=610) | Noiri raṭu red matches the unextended rakta family, explicitly represented by western Gujarati rātũ and Marathi rātā in full CDIAL 10539. Preserve the source retroflex stop and short vowels as regional transcription/phonological qualifications. No extra lateral or nasal extension is posited; local IA transmission remains unresolved. Exact response: raṭu. (1 records.) |
+
+All 2 rows use rank 1 and status `accepted`. Relation kinds: reflex: 2. Transmission uncertainty recorded in the evidence remains unresolved; a provisional family link does not prove uninterrupted inheritance. Exact IDs, source locations, dialect tags and assignment rows are retained in the manifest.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-sil-20260914/pass217-validation.json). The compiled/browser database was not refreshed. Responses not listed in the exact manifest are outside these saved proposals; they have not been declared etymologically unresolved merely because the shortlist omitted them.
