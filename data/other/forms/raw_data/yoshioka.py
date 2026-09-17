@@ -1,21 +1,10 @@
 #!/usr/bin/env python3
-"""Extract Yoshioka's Eastern Burushaski vocabulary for Jambu ingestion.
+"""Yoshioka Eastern Burushaski ingestion entry point and legacy key anchors.
 
-The vocabulary occupies PDF pages 505--618 (printed pp. CLXXIX--CCXCII) of
-Yoshioka's 2012 dissertation.  The PDF has useful embedded text and typography,
-but a minority of Burushaski glyphs have no usable ToUnicode mapping.  This
-extractor therefore uses the native text for structure and diacritics, and
-repairs only those unmapped glyphs from cached, page-level Tesseract OCR.
-
-Outputs under ``--output-dir``:
-
-* ``yoshioka_entries.csv``: parsed entries with raw text and provenance;
-* ``yoshioka_review.csv``: entries requiring manual review;
-* ``yoshioka_auto_import.csv``: rich fifteen-column Jambu ingestion rows;
-* ``yoshioka_report.md``: extraction and tagging statistics.
-
-``--install`` copies the import CSV to ``data/other/forms``.  The source PDF is
-never copied or modified.
+Normal CLI runs delegate to yoshioka_cleanup.py and its reviewed native-font
+snapshot (PDF 505--618, printed CLXXIX--CCXCII). See yoshioka_2026/README.md.
+The old OCR helpers remain solely for historical keys and regression coverage;
+they are not used to produce the current installed forms.
 """
 
 from __future__ import annotations
@@ -622,7 +611,7 @@ def parse_page_spec(spec: str | None) -> list[int]:
     return sorted(pages)
 
 
-def main(argv: Sequence[str] | None = None) -> int:
+def legacy_ocr_main(argv: Sequence[str] | None = None) -> int:
     here = Path(__file__).resolve().parent
     data_root = here.parents[3]
     work_dir = data_root / ".cache/ocr/yoshioka"
@@ -659,6 +648,15 @@ def main(argv: Sequence[str] | None = None) -> int:
         print(f"Installed {destination}")
     print(f"Parsed {len(entries):,} entries; review {sum(bool(e.review_reasons) for e in entries):,}")
     return 0
+
+
+def main(argv: Sequence[str] | None = None) -> int:
+    """Use the reviewed, offline font-decoded snapshot for normal reimports."""
+    import importlib.util
+    spec = importlib.util.spec_from_file_location('yoshioka_cleanup_cli', Path(__file__).with_name('yoshioka_cleanup.py'))
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module.main(argv)
 
 
 if __name__ == "__main__":

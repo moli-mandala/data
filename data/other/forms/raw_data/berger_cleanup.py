@@ -37,6 +37,8 @@ from typing import Iterable, Sequence
 
 
 HERE = Path(__file__).resolve().parent
+sys.path.insert(0, str(HERE))
+from berger_2026 import repair
 ROOT = HERE.parents[3]
 LEGACY_SCRIPT = HERE / "berger.py"
 SPEC = importlib.util.spec_from_file_location("berger_legacy_ocr", LEGACY_SCRIPT)
@@ -251,6 +253,7 @@ class CleanEntry:
     english_gloss: str = ""
     review: list[str] = field(default_factory=list)
     gold_row: int = 0
+    notes: str = ""
 
 
 def sha256_path(path: Path) -> str:
@@ -294,6 +297,10 @@ def is_header_or_heading(text: str) -> bool:
 
 
 def load_pages(cache_dir: Path, pdf: Path | None = None) -> list[dict]:
+    snapshot = repair.HERE / 'ocr-pages.jsonl.gz'
+    if cache_dir == CACHE_DIR and snapshot.exists():
+        with gzip.open(snapshot, 'rt', encoding='utf-8') as stream:
+            return list(map(json.loads, stream))
     missing = [page for page in PDF_PAGES if not (cache_dir / f"page-{page:03}.json").exists()]
     if missing and not pdf:
         raise FileNotFoundError(
@@ -311,7 +318,23 @@ def load_pages(cache_dir: Path, pdf: Path | None = None) -> list[dict]:
     return pages
 
 
-def reconstruct_units(pages: Iterable[dict]) -> list[RawUnit]:
+def reconstruct_units(pages: Iterable[dict], *, corrected: bool = False) -> list[RawUnit]:
+    pages = list(pages)
+    anchors = {}
+    native = {}
+    reviewed_boundaries = set()
+    if corrected:
+        # Freeze old keys to physical starting lines; never renumber surviving
+        # records just because a missing headword or column has been recovered.
+        anchors = {(u.pdf_page, u.left, u.top): u.stable_key for u in reconstruct_units(pages)}
+        native = repair.load_layout()
+        reviewed = json.loads((repair.HERE / 'reviewed.json').read_text())
+        reviewed_boundaries = {position for position, key in anchors.items()
+                               if key in reviewed and not reviewed[key].get('exclude')}
+        for key, fix in reviewed.items():
+            match = re.fullmatch(r'berger:pdf(\d+):x(\d+):y(\d+)', key)
+            if match and not fix.get('exclude'):
+                reviewed_boundaries.add(tuple(map(int, match.groups())))
     units: list[RawUnit] = []
     current: RawUnit | None = None
     ordinals: Counter[tuple[int, int]] = Counter()
@@ -320,9 +343,11 @@ def reconstruct_units(pages: Iterable[dict]) -> list[RawUnit]:
         if pdf_page in EXCLUDED_PDF_PAGES:
             continue
         width = data["width"]
+        centers = repair.column_starts(data) if corrected else None
         columns: dict[int, list[dict]] = defaultdict(list)
         for raw_line in data["lines"]:
             line = dict(raw_line)
+            line["pdf_page"] = pdf_page
             line["text"] = legacy.canonical(line["text"])
             line["text"] = re.sub(r"-\$0|-śŚ0|-ś0", "-śo", line["text"])
             if pdf_page == 36:
@@ -357,7 +382,8 @@ def reconstruct_units(pages: Iterable[dict]) -> list[RawUnit]:
                     "Menstruation, oder wenn man (sh. zozák, u. dōzax)",
                     "Menstruation, oder wenn man",
                 )
-            columns[physical_column(line["left"], width)].append(line)
+            physical = repair.column(line['left'], centers) if corrected else physical_column(line['left'], width)
+            columns[physical].append(line)
         # Several adjacent scans have shifted crop boxes (most conspicuously PDF
         # pp. 18--23). Infer each column's entry margin from its own lower-tail
         # line positions instead of assuming one global x coordinate.
@@ -385,10 +411,29 @@ def reconstruct_units(pages: Iterable[dict]) -> list[RawUnit]:
                     and text[:1].islower()
                 )
                 lexical = at_margin and not hyphen_continuation and legacy._looks_lexical(text)
+                if corrected:
+                    evidence = native.get((pdf_page, line['left'], line['top']))
+                    tokens = repair.aligned_tokens(text, evidence['words']) if evidence else []
+                    if tokens:
+                        first, font, confidence = tokens[0]
+                        if (font == 'Times-Roman' and confidence >= .85
+                                and not BURUSHASKI_MARK_RE.search(first)
+                                and legacy.normalize_key(first) not in {'davon', 'dazu'}):
+                            lexical = False
+                        elif ('Italic' in font or 'Oblique' in font) and confidence >= .65:
+                            # The previous entry may end in a printed verbal
+                            # stem; its hyphen cannot swallow the next headword.
+                            lexical = at_margin and (legacy._looks_lexical(text)
+                                                     or bool(re.match(r'^[^\s]*[A-Za-z][^\s]*-(?:\s|$)', text)))
+                    if (pdf_page, line['left'], line['top']) in reviewed_boundaries:
+                        lexical = True
                 if lexical:
                     ordinals[(actual_page, source_column)] += 1
                     ordinal = ordinals[(actual_page, source_column)]
                     stable = f"berger:p{actual_page:03d}:c{source_column}:e{ordinal:03d}"
+                    if corrected:
+                        stable = anchors.get((pdf_page, line['left'], line['top']),
+                                             f'berger:pdf{pdf_page:03d}:x{line["left"]}:y{line["top"]}')
                     current = RawUnit(
                         pdf_page, actual_page, source_column, ordinal,
                         line["left"], line["top"], [line], stable,
@@ -473,6 +518,8 @@ def extract_core_gloss(unit: RawUnit, form: str) -> str:
         r"adv\.?|Pron\.?|Postp\.?|Konj\.?|Interj\.?|-[-\wćśṭḍṅ]+|,|;))+",
         "", body, flags=re.I,
     )
+    # A grammar reference before the definition is not an etymology boundary.
+    body = re.sub(r'\((?:vgl\.?\s*)?Gr\.\s*[^)]*\)', '', body)
     source = SOURCE_INLINE_RE.search(body)
     if source:
         body = body[:source.start()]
@@ -492,6 +539,8 @@ def direct_turner_ids(text: str, valid: set[str]) -> list[str]:
         after = text[match.end():match.end() + 3]
         if re.search(r"(?:vgl\.?|\bzu)\s*$", before, re.I) or "?" in after:
             continue
+        if re.match(r'\s+oder\b', text[match.end():], re.I):
+            continue  # Competing references are alternatives, not accepted ancestry.
         value, method = legacy.repair_id(match.group(1), valid)
         if value and method in {"exact", "repaired"} and value not in values:
             values.append(value)
@@ -569,7 +618,8 @@ def parse_entries(units: Sequence[RawUnit], valid_ids: set[str]) -> list[CleanEn
             or bool(re.search(r"[0-9$<>]", form))
             or bool(form[:1].isupper() and not BURUSHASKI_MARK_RE.search(form))
         )
-        if not form or obvious_nonentry or not legacy._looks_lexical(f"{form} Bedeutung"):
+        bound_stem = bool(form.endswith('-') and re.search(r'[A-Za-z]', form))
+        if not form or obvious_nonentry or not (bound_stem or legacy._looks_lexical(f"{form} Bedeutung")):
             review.append("suspicious-form")
         normalized = legacy.normalize_key(form)
         page_initial = dominant.get(unit.printed_page, "")
@@ -659,12 +709,17 @@ def normalize_gold_rows(source_rows: Iterable[Sequence[str]]) -> list[list[str]]
 
 
 def normalized_gold_rows() -> list[list[str]]:
-    with GOLD_OUTPUT.open(encoding="utf-8") as stream:
+    snapshot = repair.HERE / 'gold-before.csv'
+    with (snapshot if snapshot.exists() else GOLD_OUTPUT).open(encoding="utf-8") as stream:
         return normalize_gold_rows(csv.reader(stream))
 
 
 def baseline_csv(blob: str) -> list[list[str]]:
     """Read the pinned pre-cleanup CSV blob used only for identity continuity."""
+    snapshot = repair.HERE / 'legacy-auto.csv.gz'
+    if blob == LEGACY_AUTO_BLOB and snapshot.exists():
+        with gzip.open(snapshot, 'rt', encoding='utf-8') as stream:
+            return list(csv.reader(stream))
     data = subprocess.check_output(
         ["git", "cat-file", "blob", blob], cwd=ROOT, text=True,
     )
@@ -1076,11 +1131,16 @@ def apply_editorial(entries: Sequence[CleanEntry]) -> None:
 
 def align_gold(entries: Sequence[CleanEntry]) -> list[list[str]]:
     by_key = {entry.installed_key: entry for entry in entries}
+    by_stable = {entry.unit.stable_key: entry for entry in entries if not entry.variant_of_stable}
+    corrected = json.loads((repair.HERE / 'gold-alignments.json').read_text())
     editorial = load_editorial()
     output = []
     for index, original in enumerate(normalized_gold_rows(), 1):
         row = list(original)
         entry = by_key.get(row[10])
+        fix = corrected.get(row[10], {})
+        if fix:
+            entry = by_stable.get(fix['stable'])
         record = editorial.get(row[10])
         source_hash = hashlib.sha256(row[3].encode()).hexdigest()
         translated_gold = (
@@ -1088,8 +1148,11 @@ def align_gold(entries: Sequence[CleanEntry]) -> list[list[str]]:
             if record and record["Source_SHA256"] == source_hash else ""
         )
         if entry:
-            entry.gold_row = index
-            if translated_gold:
+            if entry.installed_key == row[10]:
+                entry.gold_row = index
+            if entry.english_gloss and 'source-image-reviewed-20260914' in entry.review:
+                row[3] = entry.english_gloss
+            elif translated_gold:
                 row[3] = translated_gold
                 entry.english_gloss = translated_gold
             elif entry.english_gloss:
@@ -1103,8 +1166,20 @@ def align_gold(entries: Sequence[CleanEntry]) -> list[list[str]]:
             row[7] = f"berger[p. {entry.unit.printed_page}]"
             row[9] = entry.etymology
             row[14] = " ".join(dict.fromkeys(entry.tags))
+            row[6] = entry.notes
+            if row[1] and row[1] not in entry.parameter_ids:
+                row[6] += '\nHistorical manual Turner link T ' + row[1] + ': not confirmed as an unhedged source claim; retained for review.'
+                row[1] = ''
         elif translated_gold:
             row[3] = translated_gold
+        if fix:
+            row[2] = fix.get('form', row[2])
+            row[14] = fix.get('tags', row[14])
+            row[6] = fix.get('notes', row[6])
+            if not entry:
+                row[6] += '\nHistorical manual Turner link T ' + row[1] + ': source/component interpretation unresolved.'
+                row[1], row[9] = '', ''
+                row[7] = 'berger[p. 30]'
         output.append(row)
     return output
 
@@ -1130,7 +1205,7 @@ def import_rows(entries: Sequence[CleanEntry]) -> list[list[str]]:
         for link_index, parameter in enumerate(ids, 1):
             key = entry.installed_key if link_index == 1 else f"{entry.installed_key}:cdial:{link_index}"
             rows.append([
-                entry.language, parameter, entry.form, entry.english_gloss, "", "", "",
+                entry.language, parameter, entry.form, entry.english_gloss, "", "", entry.notes,
                 f"berger-auto[p. {entry.unit.pdf_page} (printed p. {entry.unit.printed_page})]",
                 "", entry.etymology, key,
                 resolve_key(entry.variant_of_stable, entries), "",
@@ -1152,7 +1227,7 @@ def catalog_preservation_rows(rows: Sequence[Sequence[str]], gold: Sequence[Sequ
     }
     wanted = sorted(catalog_evidence_keys() - present)
     preserved = []
-    available = present | {key for key in wanted if key in baseline}
+    available = present | {key for key in wanted if legacy_catalog_key(key) in baseline}
     for key in wanted:
         old = baseline.get(legacy_catalog_key(key))
         if not old or not old[2]:
@@ -1162,15 +1237,20 @@ def catalog_preservation_rows(rows: Sequence[Sequence[str]], gold: Sequence[Sequ
         english = by_digest.get(digest, "")
         if not english:
             continue
-        variant = old[11] if old[11] in available else ""
+        def protected_target(target):
+            protected = target + ':legacy-graph'
+            return protected if protected in available else target
+        variant = protected_target(old[11]) if old[11] else ''
+        variant = variant if variant in available else ''
         derivation = "|".join(
-            parent for parent in old[13].split("|") if parent in available
+            protected_target(parent) for parent in old[13].split("|") if protected_target(parent) in available
         )
         tags = " ".join(dict.fromkeys([
             *old[14].split(), "graph-evidence", "uncertain",
         ]))
         preserved.append([
-            old[0], "", old[2], english, "", "", "", old[7], "", old[9],
+            old[0], "", old[2], english, "", "",
+            'Legacy catalog evidence; original reading preserved. Source grammar/context (legacy OCR): ' + old[3], old[7], "", old[9],
             key, variant, "", derivation, tags,
         ])
     return preserved
@@ -1340,13 +1420,19 @@ def main(argv: Sequence[str] | None = None) -> int:
     parser.add_argument("--translate", action="store_true")
     parser.add_argument("--argos-package", type=Path, help="installed/extracted Argos de_en 1.3 package directory")
     parser.add_argument("--install", action="store_true")
+    parser.add_argument("--output-dir", type=Path, help="write a reviewable proposal without changing installed source files")
     args = parser.parse_args(argv)
+    if args.rebuild_identity_map:
+        parser.error("The published identity crosswalk is frozen. Supply reviewed key corrections; fuzzy reassignment is disabled.")
+    if args.translate:
+        parser.error("Use berger_2026/translate.py with a saved request file. The legacy whole-corpus editorial overwrite is disabled.")
+    repair.verify_inputs()
     if args.pdf:
         args.pdf = args.pdf.expanduser().resolve()
         if sha256_path(args.pdf) != PDF_SHA256:
             raise ValueError("Berger PDF SHA-256 does not match the pinned scan")
     pages = load_pages(args.cache_dir, args.pdf)
-    units = reconstruct_units(pages)
+    units = reconstruct_units(pages, corrected=True)
     valid_ids = legacy.load_valid_ids(ROOT / "data/cdial/params.csv")
     entries = parse_entries(units, valid_ids)
     apply_identity_map(entries, rebuild=args.rebuild_identity_map)
@@ -1355,23 +1441,41 @@ def main(argv: Sequence[str] | None = None) -> int:
             parser.error("--translate requires --argos-package")
         generate_editorial(entries, args.argos_package)
     apply_editorial(entries)
+    overrides = repair.apply(entries)
+    repair.separate_misaligned_gold(entries)
+    repair.preserve_variant_identities(entries)
+    repair.apply_translations(entries)
     gold = align_gold(entries)
     rows = import_rows(entries)
+    repair.add_reviewed_forms(rows, gold, overrides)
+    repair.add_paradigms(entries, rows, gold, overrides)
     preserved = catalog_preservation_rows(rows, gold)
     rows.extend(preserved)
-    audit = [*audit_rows(entries, rows), *preservation_audit(preserved)]
-    write_gzip_audit(audit)
-    write_sample(audit)
-    write_manifest(units, entries, rows, audit)
+    repair.repair_gold(gold)
+    relations = repair.resolve_relations(rows, gold)
+    references = repair.crossreferences(rows, gold, entries)
+    repair.finish_rows(rows, gold)
+    audit = repair.complete_audit(audit_rows(entries, rows), rows, gold, preserved)
+    summary = repair.summary(units, entries, rows, gold, audit, relations, references)
+    aliases, unresolved_aliases = repair.source_aliases(entries, rows, gold, reconstruct_units(pages))
+    summary['retired_key_aliases'] = len(aliases)
+    summary['unresolved_retired_keys'] = unresolved_aliases
+    if args.install and unresolved_aliases:
+        raise ValueError('Refusing to retire public source keys without a reviewed redirect: ' + ', '.join(unresolved_aliases))
+    destination = repair.HERE if args.install else args.output_dir
+    if destination:
+        destination.mkdir(parents=True, exist_ok=True)
+        repair.write_artifacts(destination, audit, relations, references, summary)
+        write_dict_csv(destination / 'aliases.csv', aliases, ['Retired_Source_Key', 'Target_Source_Key', 'Reason'])
+        if not args.install:
+            write_csv(destination / AUTO_OUTPUT.name, rows)
+            write_csv(destination / GOLD_OUTPUT.name, gold)
     if args.install:
+        write_dict_csv(ROOT / 'data/other/form_aliases/20260914-berger.csv', aliases,
+                       ['Retired_Source_Key', 'Target_Source_Key', 'Reason'])
         write_csv(AUTO_OUTPUT, rows)
         write_csv(GOLD_OUTPUT, gold)
-    print(json.dumps({
-        "raw_units": len(units), "entries": len(entries), "auto_rows": len(rows),
-        "gold_rows": len(gold),
-        "excluded": sum(row["Status"] == "excluded" for row in audit),
-        "installed_untranslated": sum(row["Status"] == "installed-untranslated" for row in audit),
-    }, indent=2))
+    print(json.dumps({**summary, 'unresolved_retired_keys': len(unresolved_aliases)}, indent=2))
     return 0
 
 

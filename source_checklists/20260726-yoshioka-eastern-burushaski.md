@@ -2,38 +2,39 @@
 
 - Installed input: `data/other/forms/20260726-yoshioka-eastern-burushaski.csv`
 - Canonical checklist SHA-256: `23516ba5c7caeaa5310f6a32d92b86e4b9ae5e4479e792926b61dd0689129f05`
-- Source-type addenda: Dictionary or glossary
-- Installed rows: 3183
+- Source-type addenda: Dictionary or glossary, Etymological/comparative source
+- Installed rows: 4886
 - Compiled rows carrying this unit's citation keys: 3239
-- Input rows with checked grammatical evidence: 2506
+- Input rows with checked grammatical evidence: 4424
 - Compiled rows with canonical grammatical tags: 2539
-- Source keys: yoshioka2012
+- Source keys: berger, ilcaa1967, yoshioka2012
+- Full-source state: 4,886 source rows installed from the font-decoded vocabulary; global compiled data still awaits a full rebuild
 
 ## Retrospective gate assessment
 
-- [x] 1. Establish the source and scope — source keys: yoshioka2012; 3183 installed records
-- [x] 2. Choose the extraction path — importer/raw route: data/other/forms/raw_data/eastern_magar.py, data/other/forms/raw_data/yoshioka.py
-- [x] 3. Plan the installed files and identifiers — 3183 unique immutable Entry_Key values
+- [x] 1. Establish the source and scope — source keys: berger, ilcaa1967, yoshioka2012; 4886 installed records
+- [x] 2. Choose the extraction path — importer/raw route: data/other/forms/raw_data/yoshioka_cleanup.py, data/other/forms/raw_data/yoshioka.py
+- [x] 3. Plan the installed files and identifiers — 4886 unique immutable Entry_Key values
 - [x] 4. Model languages and dialects before emitting forms — 1 input language/lect IDs; registry gaps: none
-- [x] 5. Emit the rich import schema — row widths {'15': 3183}; blank forms 0
-- [x] 6. Parse structured linguistic information — 2506 input rows carry checked grammatical evidence; 2539 compiled rows carry canonical grammatical tags
+- [x] 5. Emit the rich import schema — row widths {'15': 4886}; blank forms 0
+- [x] 6. Parse structured linguistic information — 4424 input rows carry checked grammatical evidence; 2539 compiled rows carry canonical grammatical tags
 - [x] 7. Build and verify the sound profile — profile route: conversion/yoshioka.txt; replacement characters in input forms: 0
 - [x] 8. Parse references and provenance — unresolved keys: none
-- [x] 9. Model etymology and graph relations conservatively — covered by tests/test_edges.py and compiled edge invariants
-- [x] 10. Produce a complete audit trail — audit: data/other/forms/raw_data/20260828-sil-eastern-gujari-audit.csv, source_checklists/installed-record-audit.csv.gz
-- [x] 11. Add focused regression tests — tests: tests/test_burushaski_cognates.py, tests/test_burushaski_comparisons.py, tests/test_eastern_magar.py, tests/test_sil_eastern_gujari_2023.py, tests/test_yoshioka.py, tests/test_source_checklists.py
-- [ ] 12. Install and run the full data pipeline — pending final repository-wide make all and full-suite validation for this review
+- [x] 9. Model etymology and graph relations conservatively — Source-local variant endpoints/cycles and durable-ID/alias preservation pass in test_yoshioka_cleanup.py; global graph build pending
+- [x] 10. Produce a complete audit trail — audit: data/other/forms/raw_data/yoshioka_2026/audit.csv, data/other/forms/raw_data/yoshioka_2026/manifest.json, data/other/forms/raw_data/yoshioka_2026/crossreference-decisions.json, data/other/forms/raw_data/yoshioka_2026/crossreference-audit.csv, source_checklists/20260914-yoshioka-review.md, source_checklists/20260914-yoshioka-crossreferences.md, source_checklists/installed-record-audit.csv.gz
+- [x] 11. Add focused regression tests — tests: tests/test_yoshioka.py, tests/test_yoshioka_cleanup.py, tests/test_yoshioka_crossreferences.py, tests/test_burushaski_cognates.py, tests/test_assign_form_ids.py
+- [ ] 12. Install and run the full data pipeline — Only the bounded Yoshioka parse and ID assignment have run; full build and full suite deferred under the 8 GB local-resource policy; see 20260914-yoshioka-review.md
 - [x] 13. Browser database refresh and inspection (user-triggered) — deferred by standing policy; refresh and browser QA run only when the user requests them
 - [x] 14. Document, review, and ship only when requested — this source-specific checklist is the durable review record; shipping is not requested
 
 ## Review summary
 
-- Counts: 3183 installed records; 3239 compiled citation attestations.
-- Exclusions: none detected in the installed input; any source-side exclusions remain in the linked importer/audit.
-- Unresolved cases: none detected.
-- Transcription: `conversion/yoshioka.txt`.
-- Validation: full data validation is recorded centrally in `source_checklists/VALIDATION.md`; browser refresh is user-triggered.
-- Representative app entries: recorded centrally in `source_checklists/VALIDATION.md`.
+- Counts: 4886 installed records; 3239 compiled citation attestations.
+- Exclusions: nine printed bare headings retained audit-only; 25 old parse fragments rejoined; all 3,212 legacy keys accounted for.
+- Unresolved cases: six ambiguous forms remain unlinked after image review of all 57 index entries (56/62 forms resolved); overall 214 entries fully resolved, two partial, four unresolved; 10 donor statements retain source uncertainty.
+- Transcription: native Gentium cmap recovery; c/č/c̣ distinct; full printed grammar, noun classes and plural suffixes retained alongside scoped tags.
+- Validation: 60 focused tests pass; unrelated assignment-count test deselected (previously 2603 vs 2604); fresh source sample 0/20 plus exhaustive 57-entry cross-reference image review; full-build and full-suite gates remain pending; see 20260914-yoshioka-review.md.
+- Representative app entries: source keys yoshioka-entry-3 (aalú/aaloínc), 43 (alét), 3049 (yuúṭis/yuúṭiŋ); browser refresh not requested.
 
 ## Filled checklist copy
 

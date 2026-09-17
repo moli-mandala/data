@@ -1,0 +1,126 @@
+{
+  "date": "2026-09-14",
+  "source": {
+    "doi": "10.15026/72148",
+    "url": "https://tufs.repo.nii.ac.jp/records/1002",
+    "pdf_sha256": "020d343e067d7e46e91eacbf9d30f79844625a7f25f3320772002dc5361e4574",
+    "pdf_pages": 626,
+    "vocabulary_pdf_pages": [
+      505,
+      618
+    ],
+    "vocabulary_printed_pages": [
+      "CLXXIX",
+      "CCXCII"
+    ],
+    "extraction": "Native text with Gentium embedded TrueType cmap; not OCR"
+  },
+  "sha256": {
+    "data/other/forms/20260726-yoshioka-eastern-burushaski.csv": "8ab0f8e2903142a22303b539e309fdd6ab1d9549eb454c8c17d48bfbcc668b4c",
+    "data/other/forms/raw_data/yoshioka_2026/source-lines.jsonl.gz": "a1b5e9cc34128be0f566694ec51178136efed9fa586e3d784ae7d59a8de9b10e",
+    "data/other/forms/raw_data/yoshioka_2026/audit.csv": "167723846e5eb85d2d3914d0104b148061579e69d7fd4bbe4687f1cbfffcc3eb",
+    "conversion/yoshioka.txt": "a9ff8ac9704a6b0874db57bb2d0776558b57b228de28069427b38f65a4e9eefb",
+    "data/other/form_aliases/20260914-yoshioka.csv": "ed1efbac31ed35ad968c2fe7858b3f1051752685dcb3000eee8cb37033fa1d85",
+    "data/other/forms/raw_data/yoshioka_cleanup.py": "4c93120f0d86e9fe30b3f17e6e3db059bf0537d188a283404db6eb6cffaef569",
+    "data/other/forms/raw_data/yoshioka_2026/counts.json": "cf382ad5a4f43af690bc3d13df5d099b19a501dcb7eaa9bb2125925279d35d35",
+    "data/other/forms/raw_data/yoshioka_2026/crossreference-decisions.json": "bfaf98a5f8354458f2f2ab8fbae1aecc6c5ed6bbbba7ef14b6b80268d78a7c42",
+    "data/other/forms/raw_data/yoshioka_2026/crossreference-audit.csv": "0032eb3ffeb7fa03a73d2cacc8cacc923b2469cf426036d91ae578e6c94f7086",
+    "data/other/forms/raw_data/yoshioka_2026/review-crossreferences.py": "254b3b57cac78b464f92b8952c80e29f7cdd5b230486a7648a613b15a6648bc4"
+  },
+  "counts": {
+    "source_records": 3267,
+    "installed_rows": 4886,
+    "statuses": {
+      "installed": 3233,
+      "excluded": 9,
+      "merged-fragment": 5,
+      "merged-continuation": 20
+    },
+    "review": {
+      "": 3216,
+      "missing-definition-or-continuation": 9,
+      "source-uncertain-donor": 10,
+      "same-printed-entry": 5,
+      "source-reference-or-comparison-continuation": 20,
+      "shared-sense-reference": 1,
+      "ambiguous-crossreference": 6
+    },
+    "linked_variants": 1867,
+    "resolved_crossreferences": 214,
+    "crossreference_entries": {
+      "resolved": 214,
+      "partial": 2,
+      "unresolved": 4
+    },
+    "reviewed_crossreference_forms": {
+      "resolved": 56,
+      "ambiguous": 6
+    }
+  },
+  "bounded_build": {
+    "rows": 4886,
+    "parse_errors": 0,
+    "common_active_source_keys_preserving_ids": 3123,
+    "retired_active_keys": [
+      "yoshioka-entry-1101",
+      "yoshioka-entry-1546",
+      "yoshioka-entry-1732",
+      "yoshioka-entry-2165",
+      "yoshioka-entry-2593",
+      "yoshioka-entry-3132",
+      "yoshioka-entry-469",
+      "yoshioka-entry-503",
+      "yoshioka-entry-575",
+      "yoshioka-entry-631",
+      "yoshioka-entry-803"
+    ],
+    "retired_ids_aliased": 11,
+    "global_registry_modified": false
+  },
+  "grammar": {
+    "rows_with_source_grammar": 3949,
+    "rows_with_referenced_grammar": 56,
+    "rows_tagged_plural": 481,
+    "rows_with_class_tags": 2367
+  },
+  "review": {
+    "fresh_seed": 20260918,
+    "fresh_sample_errors": "0/20",
+    "targeted_entries": 93,
+    "additional_grammar_entries": 5,
+    "sample_manifest": "review-samples.json",
+    "crossreferences": {
+      "reviewed_index_entries": 57,
+      "reviewed_forms": 62,
+      "resolved_forms": 56,
+      "ambiguous_forms": 6,
+      "image_groups": 28,
+      "decisions": "crossreference-decisions.json",
+      "audit": "crossreference-audit.csv"
+    }
+  },
+  "representative_existing_ids": {
+    "yoshioka-entry-3": "f_5vporf6ptilc2",
+    "yoshioka-entry-43": "f_jt6eok72wx3sy",
+    "yoshioka-entry-3049": "f_7c5dkg4jdjskg"
+  },
+  "validation": {
+    "focused_tests": "60 passed, 1 unrelated corpus-count test deselected",
+    "unrelated_failure": "test_the_dictionary_self_reference_assignments_all_point_at_live_sub_entries: 2603 != 2604",
+    "installed_files_match_regeneration": true,
+    "only_reviewed_rows_changed": 62
+  },
+  "deferred": [
+    "Full make all",
+    "Full test suite",
+    "Generated global source-audit refresh",
+    "Browser database refresh and UI QA (not requested)"
+  ],
+  "runtime": {
+    "python": "3.12.13",
+    "pdfplumber": "0.11.7",
+    "pdfminer.six": "20250506",
+    "pypdfium2": "4.30.0",
+    "segments": "2.4.0"
+  }
+}

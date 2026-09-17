@@ -1,0 +1,33 @@
+{
+  "completed_date": "2026-09-15",
+  "focused_tests": "48 passed in 9.56s",
+  "test_scope": [
+    "test_berger_repair.py",
+    "test_berger_cleanup.py",
+    "test_berger.py",
+    "test_burushaski_cognates.py",
+    "test_burushaski_comparisons.py",
+    "sound-profile uniqueness",
+    "dialect location/coordinate metadata"
+  ],
+  "rows": 11772,
+  "old_keys_retained": 10161,
+  "old_keys_redirected": 542,
+  "unaccounted_old_keys": 0,
+  "reproduction": "both CSVs byte-identical; aliases, summary, relations, crossreferences identical; decompressed audit identical",
+  "source_conversion": "all source keys, Original forms, Notes and supplied tags survive make_cldf.parse_file; zero conversion errors",
+  "identity_check": "all surviving active Berger keys retain their current durable registry IDs; all retired keys resolve through source_key_aliases; registry read only",
+  "catalog_check": "all Berger endpoints exist; all 149 protected sets resolve using the real apply_catalog function",
+  "graph_check": "no dangling source endpoints or variant cycles; unresolved source claims retained as notes/audit",
+  "audit_check": "all emitted keys covered; every per-record SHA-256 verified",
+  "grammatical_context": "present on every row; canonical class/number/dialect tags retained through conversion",
+  "output_sha256": {
+    "20260726-berger-auto.csv": "76d3e1ad6bb8e9ce0162cf05196ba1fe69e16e7bce2d4547e852f346c56b74cf",
+    "20220930-berger.csv": "9587449bbb70f2c14e9b456fa588020ce09a322252b5347985b0233f3fec2983"
+  },
+  "full_pipeline": "deferred: no authorized suitable remote full-build runner",
+  "full_suite": "deferred under 8 GB workspace policy",
+  "compiled_files": "not rebuilt for this repair",
+  "browser_refresh": "not requested",
+  "publication": "not requested"
+}

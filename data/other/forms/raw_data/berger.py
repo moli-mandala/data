@@ -61,7 +61,7 @@ TURNER_RE = re.compile(
 # conservative: the manual rows remain the authority for specialist glyphs.
 CHAR_FIXES = str.maketrans(
     {
-        "ĉ": "ć", "Ĉ": "Ć", "ġ": "g", "ñ": "ṅ", "ď": "ḍ",
+        "ĉ": "ć", "Ĉ": "Ć", "ñ": "ṅ", "ď": "ḍ",
         "ț": "ṭ", "ş": "ś", "ŝ": "ś", "Ŝ": "Ś", "º": "o",
         "ﬁ": "fi", "ﬂ": "fl", "„": '"', "“": '"', "”": '"',
     }
