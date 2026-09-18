@@ -1,4 +1,4 @@
-.PHONY: all ingest sources check-pass save-pass check-etymologies check-sources manual-survey-etymology-check punjabi dedr dedr_params burushaski-cognates wiktionary-piir wiktionary-piir-refresh
+.PHONY: all forms parsers cdial dedr dedr_params parser-diff ingest sources check-pass save-pass check-etymologies check-sources manual-survey-etymology-check punjabi burushaski-cognates wiktionary-piir wiktionary-piir-refresh
 
 # One interpreter for every stage and importer, and one heavy job at a time (8 GB laptop).
 PY := uv run python
@@ -37,7 +37,39 @@ save-pass:
 punjabi:
 	cd data/other/forms/raw_data && $(PY) old_punjabi.py && mv old_punjabi.csv ../20230521-old_punjabi.csv && cd ../../../..
 
-all:
+# The two dictionary parsers are real make targets: their CSVs are rebuilt only when the parser
+# code or the cached page snapshot changed, and `make all` never builds from a stale parse.
+# Each parser writes to a temp file and renames on success, so a crash leaves the old CSV intact
+# and make sees it as still out of date.
+CDIAL_CSV := data/cdial/cdial.csv
+DEDR_CSV := data/dedr/dedr_new.csv
+
+$(CDIAL_CSV): data/cdial/parse.py data/cdial/abbrevs.py data/cdial/references.py data/dedr/parser_utils.py data/cdial/cdial.pickle
+	cd data/cdial && $(PY) parse.py
+
+$(DEDR_CSV): data/dedr/parse.py data/dedr/parser_utils.py data/dedr/cleanup.py data/dedr/abbrevs.py data/dedr/dedr.pickle
+	cd data/dedr && $(PY) parse.py
+
+parsers: $(CDIAL_CSV) $(DEDR_CSV)
+cdial: $(CDIAL_CSV)
+dedr: $(DEDR_CSV)
+	cd data/dedr && $(PY) get_params.py
+
+# What did a parser change do? Diffs the parser CSV against HEAD in seconds; no build needed.
+#   make parser-diff P=cdial   (or P=dedr; add ARGS="--samples 40")
+parser-diff:
+	@test -n "$(P)" || (echo "usage: make parser-diff P=cdial|dedr [ARGS=...]"; exit 2)
+	$(PY) parser_diff.py $(P) $(ARGS)
+
+# Content-only build: everything that determines forms/glosses/edges, without the slow
+# alignment and reference stages. Use it to check a parser or importer change end to end.
+forms: parsers
+	$(PY) make_cldf.py
+	$(PY) link_refs.py
+	$(PY) unify_cldf.py
+	$(PY) assign_form_ids.py
+
+all: parsers
 	$(PY) make_cldf.py
 	$(PY) link_refs.py
 	$(PY) unify_cldf.py
@@ -65,9 +97,6 @@ wiktionary-piir-refresh:
 
 burushaski-cognates:
 	$(PY) burushaski_cognates.py
-
-dedr:
-	cd data/dedr && $(PY) parse.py && $(PY) get_params.py && cd ../..
 
 dedr_params:
 	cd data/dedr && $(PY) get_params.py && cd ../..

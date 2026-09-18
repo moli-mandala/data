@@ -72,24 +72,31 @@ Then, in `../jambu-static`: `npm run db:transform` reads `../data/cldf` directly
 
 ## Run incantations
 
-Use `uv run --with …` — the repo's own env is stale. The exact sets that work:
+The repo env (`pyproject.toml`/`uv.lock`) carries everything the pipeline and both dictionary
+parsers need, lxml included, so plain `uv run python …` works; `make` targets wrap the common
+paths:
 
 ```bash
-# make_cldf.py
-uv run --with segments --with unidecode --with tqdm python make_cldf.py
-
-# data/cdial/parse.py  —  lxml is REQUIRED (see gotcha below)
-uv run --with beautifulsoup4 --with lxml --with tqdm python parse.py
-
-# link_refs.py / align.py / unify_cldf.py — plain, stdlib-only (align may want tqdm)
-uv run python unify_cldf.py
+make all                      # parsers (only if stale) + every stage → cldf/
+make forms                    # parsers + make_cldf → assign_form_ids: the content-only build (~3× faster; no alignments/refs)
+make cdial | make dedr        # re-parse one dictionary (only when parse.py / helpers / the page snapshot changed)
+make parser-diff P=cdial      # what a parser change did: glosses filled/blanked/edited vs HEAD, in seconds
+cd data/cdial && uv run python parse.py --entry 10132 134   # one entry, rows to stdout, <1 s
+cd data/dedr  && uv run python parse.py --entry 360 a12     # DEDR appendix entries are a<number>
 ```
+
+The parser CSVs (`data/cdial/cdial.csv`, `data/dedr/dedr_new.csv`) are make targets with real
+dependencies, and each parser writes to a temp file and renames on success, so a crashed parse
+never leaves a stale CSV that `make all` would quietly build from. Iterate on a parser with
+`--entry` and `make parser-diff`; run `make forms` to see the result in `cldf/forms.csv`; run
+`make all` once at the end.
 
 ### Gotcha: parse.py silently drops the HTML wrapper without lxml
 BeautifulSoup **without** `lxml` installed falls back to a parser that strips the outer
 `<html><body>` wrapper, so each CDIAL entry's `Description` starts with `<number>` instead of the
 full entry HTML. This is silent — the run "succeeds" — and later manifests as **all CDIAL
-etymology vanishing** on the site. Always include `--with lxml`. (Downstream, `unify_cldf.py`
+etymology vanishing** on the site. lxml is pinned in `pyproject.toml` for this reason; if you run
+the parser outside the repo env, add `--with lxml`. (Downstream, `unify_cldf.py`
 guards with `is_html = header.lstrip().startswith("<")`, but don't rely on that; parse it right.)
 
 ## Data-model invariants (edge model, 2026-08)
