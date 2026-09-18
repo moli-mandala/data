@@ -286,6 +286,111 @@ def propagate_shared_glosses(rows, fallback=""):
     return rows
 
 
+_BOLD_ITALIC_HEAD = re.compile(r"<b><i>([^<]+)</i>")
+_ITALIC_WITH_BOLD = re.compile(r"<i>((?:(?!</i>).)*<b>(?:(?!</i>).)*)</i>", re.DOTALL)
+_TAGS = re.compile(r"<[^>]+>")
+
+
+def _is_latin_name_run(text, abbrevs):
+    """True for a scientific name (with synonyms/authority), false for a language label."""
+    text = text.strip()
+    if not re.fullmatch(r"[A-Za-z][A-Za-z .,()&;/=\[\]-]*", text):
+        return False
+    tokens = [token.strip("().,;[]") for token in text.split()]
+    if any(token in abbrevs or token.rstrip(".") in abbrevs for token in tokens):
+        return False
+    return len(tokens) >= 2 or len(tokens[0]) >= 8
+
+
+def repair_botanical_markup(section, abbrevs):
+    """Unbold italic species names so they stay inside the gloss instead of becoming forms.
+
+    The source sets Latin names as ``<i><b>Linum usitatissimum</b></i>`` (or folds them into
+    the next language's bold run, ``<b><i>Bombax malabaricum. Ma.</i> ilavam</b>``), the same
+    bold the parser relies on to find lemmata; language labels use the same nesting
+    (``<i><b>Go.</b></i>``), so the decision is made on the text.
+    """
+    def bold_head(match):
+        inner = match.group(1)
+        head, sep, label = inner.rpartition(". ")
+        if sep and label.rstrip(".") in abbrevs and _is_latin_name_run(head, abbrevs):
+            return f"<i>{head}</i>. <b><i>{label}</i>"
+        if _is_latin_name_run(inner, abbrevs):
+            return f"<i>{inner}</i><b>"
+        return match.group(0)
+
+    def unbold(match):
+        inner = match.group(1)
+        body, _, tail = inner.partition("(Voc.")
+        if _is_latin_name_run(_TAGS.sub("", body), abbrevs):
+            body = body.replace("<b>", "").replace("</b>", "")
+            if tail:
+                # <i><b>B. malabaricum (Voc.</b></i> 3126) -> name, then the citation marker
+                return f"<i>{body.strip()}</i> (<i>Voc.</i>{tail.replace('</b>', '')}"
+            return f"<i>{body}</i>"
+        return match.group(0)
+
+    section = _BOLD_ITALIC_HEAD.sub(bold_head, section)
+    section = _ITALIC_WITH_BOLD.sub(unbold, section)
+    return re.sub(r"<b>\s*</b>", "", section)
+
+
+IDEM = re.compile(r"^\]?\s*id\.?(?=$|[\s,;(])")
+_TRAILING_CITATION = re.compile(
+    r"(?:\s*\(<i>Voc\.</i>[^)]*\)|[.;]?\s*DED[SN(), ]*\d+(?:\s*,\s*\d+)*)\s*$"
+)
+
+
+def antecedent_gloss(gloss):
+    """The meaning an ``id.`` refers back to: the previous gloss minus its source citations."""
+    previous = None
+    while previous != gloss:
+        previous, gloss = gloss, _TRAILING_CITATION.sub("", gloss).rstrip(" ;,.")
+    return gloss
+
+
+DITTO = re.compile(r"\bdo\.(?!\w)")
+
+
+def resolve_idem(rows, previous=""):
+    """Expand DEDR's ``id.`` (idem) to the gloss of the preceding form.
+
+    The dictionary writes ``id.`` for "same meaning as the form before", across
+    language boundaries and often followed by a source citation (``id. (Voc. 46)``,
+    ``id. DED 4``) or an addition (``id., afterwards``).  ``previous`` carries the last
+    gloss of the preceding section so an ``id.`` opening a section still resolves.
+    Returns the last resolved gloss for the caller to carry forward.
+    """
+    last = previous
+    ditto_base = previous  # last gloss not itself produced by a ``do.`` substitution
+    for row in rows:
+        gloss = row[3]
+        match = IDEM.match(gloss)
+        if match:
+            if last:
+                rest = gloss[match.end():]
+                if rest and not rest[0] in ",;. ":
+                    rest = " " + rest
+                antecedent = antecedent_gloss(last)
+                # ``id., X`` following ``id., X`` repeats the same addition; do not stack it
+                if rest.strip(" ,;.") and antecedent.endswith(rest.strip(" ,;.")):
+                    rest = ""
+                row[3] = (antecedent + rest).strip()
+                last = row[3]
+            continue
+        if DITTO.search(gloss):
+            if ditto_base:
+                # ``small do.`` = "small <preceding noun>"; substitute the antecedent's head
+                # sense. Consecutive ``small do.`` rows all refer to the same base.
+                head_sense = re.split(r"[;,]", antecedent_gloss(ditto_base), 1)[0].strip()
+                row[3] = gloss = DITTO.sub(head_sense, gloss)
+        elif gloss.strip():
+            ditto_base = gloss
+        if gloss.strip():
+            last = gloss
+    return last
+
+
 def mark_unbolded_compact_forms(span):
     """Mark a bare comma-list of forms in compact cross-language entries."""
     if '<b>' in span or '</b>' in span:

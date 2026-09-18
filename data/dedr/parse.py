@@ -1,3 +1,12 @@
+"""Parse the DDSA DEDR pages (cached in ``dedr.pickle``) into ``dedr_new.csv``.
+
+    uv run python parse.py               # full run; outputs are replaced atomically on success
+    uv run python parse.py --entry 360   # parse the named entries only and print their rows
+"""
+
+import argparse
+import sys
+import tempfile
 import pickle
 import os
 import urllib.request
@@ -11,7 +20,7 @@ from enum import Enum
 from tqdm import tqdm
 
 from abbrevs import (
-    abbrevs, dialects, replacements, fixes, shared_gloss_boundaries,
+    abbrevs, dialects, replacements, fixes, shared_gloss_boundaries, entry_initial_glosses,
     shared_section_glosses, source_markup_repairs,
 )
 from cleanup import footer_note, is_footer_misparse
@@ -26,6 +35,8 @@ from parser_utils import (
     mark_unbolded_compact_forms,
     mark_unbolded_gender_forms,
     propagate_shared_glosses,
+    repair_botanical_markup,
+    resolve_idem,
     split_alternatives,
     split_forms,
     split_language_spans,
@@ -36,6 +47,11 @@ from parser_utils import (
 TOTAL_PAGES = 514
 APPENDIX = 509
 ERR = False
+
+_cli = argparse.ArgumentParser(description=__doc__.split("\n")[0])
+_cli.add_argument("--entry", nargs="+", metavar="NUMBER", help="parse only these DEDR entry numbers (appendix: a123) and print their rows as CSV")
+ARGS = _cli.parse_args()
+ONLY = set(ARGS.entry or [])
 
 # useful regexes
 l = '(' + "|".join(sorted([re.escape(x) for x in abbrevs], key=lambda x: -len(x))) + r')'
@@ -149,10 +165,14 @@ if os.path.exists('dedr.pickle'):
     with open('dedr.pickle', 'rb') as fin:
         soups = pickle.load(fin)
     cached = True
-print('Caching?', cached)
+print('Caching?', cached, file=sys.stderr)
 
-# file
-fout = open('dedr_new.csv', 'w')
+# file (written to a sibling temp file and renamed on success; --entry prints instead)
+if ONLY:
+    fout = sys.stdout
+else:
+    _fd, _temporary = tempfile.mkstemp(prefix='dedr_new.csv.', dir='.')
+    fout = os.fdopen(_fd, 'w')
 writer = csv.writer(fout)
 footer_notes = defaultdict(list)
 if os.path.exists('footer_notes.csv'):
@@ -166,8 +186,15 @@ count = 1
 ref_ct = defaultdict(int)
 
 # go through each entire digitised page
-for page in tqdm(range(1, TOTAL_PAGES + 1)):
+for page in tqdm(range(1, TOTAL_PAGES + 1), disable=bool(ONLY)):
     if ERR: print(page)
+
+    # a single-entry run only touches the pages that carry that entry
+    if ONLY and cached and not any(
+        re.search(r"<number>\s*" + re.escape(wanted.lstrip('a')) + r"\s*</number>", soups[page - 1])
+        for wanted in ONLY if (page >= APPENDIX) == wanted.startswith('a')
+    ):
+        continue
     
     # get content
     link = "https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=" + str(page)
@@ -198,6 +225,8 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
             entry.find('number').decompose()
             if page >= APPENDIX:
                 number = 'a' + number
+            if ONLY and number.strip() not in ONLY:
+                continue
 
             # Some page snapshots contain a short entry followed by a longer
             # continuation carrying the same number.  Parse only the final,
@@ -219,6 +248,8 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
                 for f in sorted(fixes, key=lambda x: -len(x)):
                     entry_str[i] = entry_str[i].replace(f, f'<b><i>{f}</i></b>')
             
+            # antecedent for ``id.`` (idem), carried across sections
+            last_gloss = entry_initial_glosses.get(str(number), '')
             for section_num, section in enumerate(entry_str):
                 # Numeric ``Cf.`` tails point to another DEDR entry; their
                 # bold headword is not another reflex in the current entry.
@@ -241,6 +272,7 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
                         continue
                     section = section[next_subsection.start():]
                 section = strip_embedded_cross_family_notes(section)
+                section = repair_botanical_markup(section, abbrevs)
                 entry = BeautifulSoup(section, 'html.parser')
 
                 section_label, spans = split_language_spans(section, abbrevs)
@@ -449,7 +481,9 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
                                     count += 1
 
                 shared_fallback = shared_section_glosses.get((str(number), section_num), '')
-                for output_row in propagate_shared_glosses(section_rows, shared_fallback):
+                output_rows = propagate_shared_glosses(section_rows, shared_fallback)
+                last_gloss = resolve_idem(output_rows, last_gloss)
+                for output_row in output_rows:
                     writer.writerow(output_row)
 
                 if ERR: print('    done with spans')
@@ -460,10 +494,13 @@ for page in tqdm(range(1, TOTAL_PAGES + 1)):
 
 # print top values in ref_ct
 for key in sorted(ref_ct, key=lambda x: ref_ct[x], reverse=True)[:100]:
-    print(key, ref_ct[key])
+    print(key, ref_ct[key], file=sys.stderr)
 
 # close file
+if ONLY:
+    sys.exit(0)
 fout.close()
+os.replace(_temporary, 'dedr_new.csv')
 
 with open('footer_notes.csv', 'w') as fout:
     writer = csv.writer(fout, lineterminator='\n')

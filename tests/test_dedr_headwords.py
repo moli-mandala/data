@@ -83,12 +83,10 @@ def test_compiled_pdr_headword_audit_and_forms_follow_policy():
     assert counts == {
         "krishnamurti-pfeiffer": 817,
         "merriam-pdr": 1166,
-        "dedr-reflex": 3575,
-        "unresolved": 4,
+        "dedr-reflex": 3578,
+        "unresolved": 1,
     }
-    assert {row["Parameter_ID"] for row in audit if row["Strategy"] == "unresolved"} == {
-        "d82", "d92", "d2035", "d3091",
-    }
+    assert {row["Parameter_ID"] for row in audit if row["Strategy"] == "unresolved"} == {"d92"}
 
     for decision in audit:
         entry = compiled[decision["Parameter_ID"]]

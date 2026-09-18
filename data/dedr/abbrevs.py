@@ -33,6 +33,27 @@ shared_section_glosses = {
     ('5496', 6): 'butter',
 }
 
+# Entries whose digital text opens with ``id.`` because the first definition (usually a
+# Latin plant name) was lost in digitisation, or whose first language run is not parsed.
+# The antecedent is supplied from the printed DEDR so ``resolve_idem`` can expand it.
+entry_initial_glosses = {
+    '360': 'castor-oil plant, <i>Ricinus communis</i>',
+    '421': 'a thorny shrub, <i>Azima tetracantha</i>',
+    '575': 'sand',
+    '1092': 'cart',
+    '1667': 'cooing of pigeons',
+    '1699': 'munch',
+    '1737': 'Indian acalypha, <i>Acalypha indica</i>',
+    '2996': 'bedbug',
+    '3112': 'gooseberry bush of the Nilgiris, red myrtle, <i>Rhodomyrtus tomentosa</i>',
+    '3424': 'wing',
+    '3796': 'fast, religious observance, vow',
+    '5072': 'fenugreek, <i>Trigonella foenum-graecum</i>',
+    '5183': 'eaves',
+    '5391': 'shrub, <i>Dichrostachys cinerea</i>',
+    '5509': 'wood-apple, <i>Feronia elephantum</i>',
+}
+
 abbrevs = {
     'Ta': 'Tam',
     'Ma': 'Mal',
