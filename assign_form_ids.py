@@ -77,6 +77,11 @@ def source_identity(value: str) -> str:
     return ";".join(sorted(filter(None, (normalized(item) for item in bare.split(";")))))
 
 
+def primary_source(value: str) -> str:
+    """The dictionary or survey a row comes from; supporting citations may be added later."""
+    return normalized(re.sub(r"\[[^\]]*\]", "", (value or "").split(";", 1)[0]))
+
+
 def fingerprint(row: dict[str, str], source_key: str = "") -> str:
     """Fingerprint raw-ish provenance, deliberately excluding generated transcription and graph."""
     if source_key:
@@ -137,6 +142,36 @@ def has_dictionary_entry_id(row: dict[str, str]) -> bool:
     return is_cdial or is_dedr
 
 
+def legacy_position(legacy_id: str) -> tuple[str, int] | None:
+    """Split a positional legacy ID such as ``0-137060`` into its layer and row index."""
+    layer, sep, index = (legacy_id or "").rpartition("-")
+    return (layer, int(index)) if sep and index.isdigit() else None
+
+
+def nearest_legacy_position(
+    old_id: str, candidates: list[dict[str, str]], max_distance: int | None = None
+) -> dict[str, str] | None:
+    """Among same-fingerprint registry rows, the one whose legacy position lies closest."""
+    position = legacy_position(old_id)
+    if position is None:
+        return None
+    ranked = []
+    for candidate in candidates:
+        candidate_position = legacy_position(candidate.get("Legacy_ID", ""))
+        if candidate_position and candidate_position[0] == position[0]:
+            ranked.append((abs(candidate_position[1] - position[1]), candidate.get("Status") != "active", candidate))
+    if not ranked:
+        return None
+    ranked.sort(key=lambda item: item[:2])
+    # only decide when the nearest is unambiguous; an active identity outranks a retired
+    # tombstone left at the same position by an earlier build
+    if len(ranked) > 1 and ranked[0][:2] == ranked[1][:2]:
+        return None
+    if max_distance is not None and ranked[0][0] > max_distance:
+        return None
+    return ranked[0][2]
+
+
 def assign_ids(
     forms: list[dict[str, str]], registry: list[dict[str, str]], source_keys: dict[str, str] | None = None
 ) -> tuple[dict[str, str], list[dict[str, str]]]:
@@ -154,11 +189,18 @@ def assign_ids(
             by_legacy[legacy_id] = row
     by_fp: dict[str, list[dict[str, str]]] = defaultdict(list)
     by_source_key: dict[str, list[dict[str, str]]] = defaultdict(list)
+    # provenance + language + source form, without the gloss: the durable identity of a record
+    # whose gloss was corrected and whose generated position moved
+    by_record: dict[tuple[str, str, str], list[dict[str, str]]] = defaultdict(list)
     for row in registry:
         if row.get("Source_Key"):
             by_source_key[row["Source_Key"]].append(row)
         if row.get("Fingerprint"):
             by_fp[row["Fingerprint"]].append(row)
+        by_record[(
+            primary_source(row.get("Source", "")), normalized(row.get("Language_ID", "")),
+            normalized(row.get("Original", "")),
+        )].append(row)
 
     used = set(by_form_id)
     claimed: set[str] = set()
@@ -184,10 +226,30 @@ def assign_ids(
                 match = candidates[0]
         if not match and legacy_match and legacy_match.get("Fingerprint") == fp:
             match = legacy_match
+        if not match and not source_key:
+            # The same source record at the nearest generated position keeps its public ID
+            # even when its gloss changed (a parser now fills it), it gained supporting
+            # citations, and rows above it were removed. Prefer this over a fingerprint match,
+            # which could otherwise revive a retired tombstone from an earlier gloss.
+            record_key = (
+                primary_source(row.get("Source", "")), normalized(row.get("Language_ID", "")),
+                normalized(row.get("Original", "") or row.get("Form", "")),
+            )
+            candidates = [candidate for candidate in by_record.get(record_key, []) if candidate["Form_ID"] not in claimed]
+            active = [candidate for candidate in candidates if candidate.get("Status") == "active"]
+            if active:
+                match = nearest_legacy_position(old_id, active, max_distance=5000)
         if not match:
             candidates = [candidate for candidate in by_fp.get(fp, []) if candidate["Form_ID"] not in claimed]
             if len(candidates) == 1:
                 match = candidates[0]
+            elif len(candidates) > 1:
+                # Homographs with the same gloss in different articles (CDIAL H. saṛak 'road' under
+                # 12269 and 13577) share a fingerprint. When rows above them were removed, their
+                # positional legacy IDs no longer match exactly, but the nearest legacy position
+                # still identifies each record; minting new IDs here would orphan curated
+                # etymologies that reference the old ones.
+                match = nearest_legacy_position(old_id, candidates)
         if not match and source_key:
             # A source may gain immutable record keys after it has already shipped with
             # provenance-based identities.  Preserve the existing public ID when the old

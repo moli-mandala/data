@@ -21,13 +21,14 @@ def forms(rows, language):
 
 def test_undecodable_source_forms_are_audited_instead_of_installed():
     with CORRUPT.open(encoding="utf-8", newline="") as handle:
-        corrupt = list(csv.DictReader(handle))
+        audited = list(csv.DictReader(handle))
+    assert all(row["Status"] == "excluded" for row in audited)
 
+    corrupt = [row for row in audited if row["Reason"].startswith("cached DDSA HTML")]
     assert {(row["Entry_ID"], row["Language_ID"]) for row in corrupt} == {
         ("1979", "Ash"),
         ("6498", "K"),
     }
-    assert all(row["Status"] == "excluded" for row in corrupt)
     assert all(
         any(0x7F <= ord(character) < 0xA0 for character in row["Raw_Form"])
         for row in corrupt
@@ -111,7 +112,8 @@ def test_intervening_morphology_stops_same_language_gloss_propagation():
     rows = parsed_entries()["841"]
     pali = {row[2]: row[3] for row in rows if row[0] == "Pa"}
 
-    assert pali["ōvahati"] == ""
+    # ōvahati keeps the headword's meaning; the passive states its own
+    assert pali["ōvahati"] == "carries down"
     assert pali["ōvuyhati"] == "is carried down (a river)"
 
 
@@ -132,13 +134,15 @@ def test_mixed_definition_spans_do_not_carry_one_meaning_to_the_next_language():
 
     # Pa. has both "measures" and "measurement" immediately before these mixed verb/noun forms.
     prakrit_10132 = {row[2]: row[3] for row in entries["10132"] if row[0] == "Pk"}
-    assert prakrit_10132["miṇaï"] == ""
+    # the verb keeps the headword's meaning; the n. noun is not glossed with a verb
+    assert prakrit_10132["miṇaï"] == "measures"
     assert prakrit_10132["miṇaṇa"] == ""
 
-    # OAw. has citerā "painter" and citeraï "paints"; lakh. citērā cannot safely inherit either.
+    # OAw. has citerā "painter" and citeraï "paints"; lakh. citērā inherits the headword
+    # (citrakāra- 'painter') rather than either neighbour.
     lakh_4805 = [row for row in entries["4805"] if row[0] == "lakh"]
     assert len(lakh_4805) == 1
-    assert lakh_4805[0][3] == ""
+    assert lakh_4805[0][3] == "painter"
 
 
 def test_unglossed_direct_reflexes_inherit_the_headword_definition():
@@ -153,8 +157,8 @@ def test_unglossed_direct_reflexes_inherit_the_headword_definition():
     assert shoe[("Pa", "kaṭṭhapādukā")] == "wooden shoe"
     assert shoe[("Pk", "kaṭṭhapāuyā")] == "wooden shoe"
     assert shoe[("Or", "kaṭhaü")] == "wooden shoe"
-    # The following "Other NIA forms" subgroup is not a direct-reflex run.
-    assert shoe[("K", "khrāv")] == ""
+    # The following "Other NIA forms" subgroup states its own meaning once ('sandal')
+    assert shoe[("K", "khrāv")] == "sandal"
 
 
 def test_nearest_following_definition_scopes_over_a_local_form_run():
@@ -171,3 +175,35 @@ def test_nearest_following_definition_scopes_over_a_local_form_run():
     assert young[("Pk", "taruṇaya")] == "young, fresh"
     assert young[("Pk", "taluṇa")] == "young, fresh"
     assert young[("Pk", "taruṇī")] == "young woman"
+
+
+def test_sound_change_fragments_are_audited_instead_of_installed():
+    with CORRUPT.open(encoding="utf-8", newline="") as handle:
+        fragments = [
+            row for row in csv.DictReader(handle) if row["Reason"].startswith("sound-change fragment")
+        ]
+    fragment_forms = {(row["Entry_ID"], row["Language_ID"], row["Raw_Form"]) for row in fragments}
+
+    # ``with MIA. -kk-:`` and ``L. ch-`` label sound changes, not words
+    assert ("1001", "MIA", "kk") in fragment_forms
+    assert ("2445", "L", "ch") in fragment_forms
+    entries = parsed_entries()
+    assert "kk" not in forms(entries["1001"], "MIA")
+    # a consonantal transcription whose vowel is a diacritic or superscript is a real form
+    assert "kv̄ṇ" in forms(entries["2575"], "kṭg")
+    assert "lᵃch" in forms(entries["11045"], "K")
+
+
+def test_starred_reconstructions_stay_in_the_notes_of_the_form_they_explain():
+    entries = parsed_entries()
+
+    # ``MIA. *ādariśa-: Pk. ādarisa-`` — the heading is a note on the forms it introduces
+    prakrit = {row[2]: row for row in entries["1143"] if row[0] == "Pk"}
+    assert "*ādariśa" not in {row[2] for row in entries["1143"]}
+    assert "MIA. *ādariśa" in prakrit["ādarisa"][6]
+    assert forms(entries["1143"], "MIA") == []
+    # ``OG. ārīsaü (< MIA. *āarissa- ?)`` keeps the reconstruction in the note
+    old_gujarati = {row[2]: row for row in entries["1143"] if row[0] == "OG"}
+    assert "*āarissa" in old_gujarati["ārīsaü"][6]
+    # head-paragraph starred lemmata are the etyma and remain forms
+    assert "*udbhārayati" in forms(entries["2038"], "Indo-Aryan")

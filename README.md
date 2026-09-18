@@ -1370,3 +1370,57 @@ entry keys and aliases preserve existing identities. Source-local validation pas
 the full CLDF build, full suite and browser refresh remain pending. See the
 [source package](data/other/forms/raw_data/yoshioka_2026/README.md) and
 [review](source_checklists/20260914-yoshioka-review.md).
+
+## Dialect site coordinates de-duplicated (17 September 2026)
+
+191 registered dialects that had been pinned to one shared display point — every survey site
+of a base language at the language's own coordinate (Kok Borok, Garo, Koch, Palakkad/Idukki
+tribal surveys, Nilgiri Irula, Mudhili Gadaba), Morgenstierne's Pashai and Prasun villages,
+Bhadarwah villages, Bashir's Khowar sub-localities, and SDML villages whose printed
+coordinates duplicate a neighbour's — now carry their own reviewed points.
+`fix_shared_dialect_coordinates.py` holds the hand-reviewed table (OpenStreetMap/Nominatim
+and GeoNames village points at quality `B`; the nearest source-named administrative unit or an
+explicit map reading at quality `C`) and records every row in
+`data/dialect-coordinate-decisions.csv`. Comparative-language labels in the Romani source now
+sit on their own country's centroid, and Magadhi/Paiśācī on approximate historical points.
+Hamlets absent from both gazetteers (several Attappady and Idukki settlements, Garo villages
+in Haluaghat/Dhobaura/Kalmakanda, the West Garo Hills Koch villages, the Rudhari sites) share
+their block/upazila point and are marked approximate rather than left on the language point.
+The 51 Bhil-area survey sites (ESR 2018-011 Bareli/Bhilali/Bhili, Nimadi 2012 Bhilala, Malvi 2009,
+Dhule 2013 Vasave/Noiri, Noira 2015) previously had no coordinates at all, so the browser drew
+them on their parent language's point; they are resolved the same way from the tahsil/district
+printed in each Location, and `backfill_language_coordinates.py` now derives centroids for
+Vasavi, Noiri and Dungra Bhili from them.
+A further 347 dialects with blank coordinates (SIL Malvi, Bagheli, Kullu, Pothwari, Ho, Korwa,
+Kodaku, Koya, Korku, Bonda/Didayi, Desia, Karbi, Gujari, Haryanvi, Kurumba, Adi and Kurux
+surveys; PLSI chapter localities; Angika/Majhi/Danuwar/Vedda sites; Zoller's toponymic variety
+labels) received hand-reviewed points the same way. The 129 still blank are regional or
+register labels with no locatable place ("Uttar Pradesh", "Standard Bangla list", Zoller
+"Western"), plus a few field villages (Bhumij 1989/1996, some Seligmann Vedda sites) that no
+gazetteer knows.
+
+## `id.` glosses resolved; grammatical labels attached to their forms (17 September 2026)
+
+DEDR and CDIAL write `id.` (*idem*) for "same meaning as the preceding form"; 6,946 compiled
+forms carried that abbreviation verbatim (the DEDR parser had even stripped its period).
+`resolve_idem()` in `data/dedr/parser_utils.py` now expands it from the previous glossed form
+in both parsers, keeping additions and citations. Two source problems it exposed are handled
+alongside: italic Latin species names set in bold (`<i><b>Linum usitatissimum</b></i>`) no longer
+parse as forms (221 bogus DEDR rows removed, the names restored to their glosses), and the
+fifteen DEDR entries whose digital text opens with `id.` because the printed first gloss was
+lost take that gloss from the printed dictionary (`entry_initial_glosses` in
+`data/dedr/abbrevs.py`). In CDIAL, a grammatical label printed before a form (`pl. dōnye̯`,
+`imper. bēza`, `obl. hamā`) is now stored as that form's note instead of the preceding form's,
+and only such a detached label opens a new comma-run for definition sharing.
+
+CDIAL blank definitions were then filled by Turner's layout conventions: a borrower in a
+`(→ …)` note keeps the lender's meaning; a short comma-run closed by one glossed form across a
+language label shares it; `do.` (ditto) substitutes the preceding head sense; and a reflex
+printed without a meaning keeps its headword's (or its numbered section lemma's) meaning —
+with causative/valency runs, derivative, contamination (`X`) and borrowing groups excluded,
+extension groups preferring their own first printed gloss, and gender-labelled nouns under a
+verbal lemma left blank. Two 50-row manual audits of the blanks drove these rules (≈62% then
+≈62% would have been filled correctly by the naive "preceding gloss" rule, versus 0 wrong of
+31 applicable in the sample for the headword rule). CDIAL blank glosses fell from 15,353 to
+about 4,000, of which 3,600 are OIA head-paragraph variants and `see X` heads left blank on
+purpose.
