@@ -35,7 +35,8 @@ def test_only_geographically_undefined_languages_lack_coordinates():
     assert missing == {
         "Kassite",  # Zoller comparison; no defensible point in the pinned registry.
         "PBr", "TurkicUnspec", "PSTDr", "PSD1", "PSD2", "PCDr", "PKMDr", "PNDr",
-        "Katkari", "Paniya", "Saurashtra", "Kurmali", "Maliyad",  # Census source lacks precise site coordinates.
-        "Sadri", "MalPaharia", "Sanori", "Bilaspuri", "Wagdi", "KisanIA",  # Survey localities recorded; exact coordinates not asserted.
-        "Vedda", "Pattapu",  # Lindgren supplies no defensible Pattapu locality point.
+        "PKher", "PreMu",  # reconstructed Munda stages.
+        "Paniya", "Saurashtra", "Kurmali",  # Census source lacks precise site coordinates.
+        "Sadri", "MalPaharia", "Sanori", "Bilaspuri", "Wagdi",  # Survey localities recorded; exact coordinates not asserted.
+        "Pattapu",  # Lindgren supplies no defensible Pattapu locality point.
     }

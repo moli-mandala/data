@@ -14,6 +14,7 @@ from segments.tokenizer import Tokenizer
 import pytest
 
 import make_cldf
+from coordinate_policy import assert_reviewed_or_blank, assert_reviewed_point
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -337,7 +338,7 @@ def test_shared_registry_and_reference_match_the_frozen_list_metadata():
         assert row["Language_ID"] == source["Language_ID"]
         assert row["Source_Language_ID"] == source["List_Key"]
         assert row["Name"] == source["Source_Label"]
-        assert row["Latitude"] == row["Longitude"] == ""
+        assert_reviewed_or_blank(row)
         assert row["Location"].startswith(source["Location"].split("; ")[0])
     text = SOURCES.read_text(encoding="utf-8")
     start = text.index("@techreport{blairetal2012kurumba,")

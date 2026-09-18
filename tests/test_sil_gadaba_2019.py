@@ -9,6 +9,7 @@ from collections import Counter
 from pathlib import Path
 
 import pytest
+from coordinate_policy import assert_reviewed_or_blank, assert_reviewed_point
 
 ROOT = Path(__file__).parents[1]
 SOURCE_DIR = ROOT / "data/other/forms/raw_data/sil_gadaba_2019"
@@ -149,8 +150,7 @@ def test_source_and_all_seven_dialects_are_registered():
     for dialect_id in ids:
         assert dialects[dialect_id]["Language_ID"] == "Gadaba"
         assert dialects[dialect_id]["Glottocode"] == "mudh1235"
-        assert dialects[dialect_id]["Quality"] == "C"
-        assert "approximate mandal-centre coordinate" in dialects[dialect_id]["Location"]
+        assert_reviewed_point(dialects[dialect_id])
 
 
 @pytest.mark.skipif(not COMPILED.exists(), reason="cldf/forms.csv has not been built")

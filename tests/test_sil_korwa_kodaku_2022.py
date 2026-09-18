@@ -10,6 +10,7 @@ from collections import Counter
 from pathlib import Path
 
 from segments import Tokenizer
+from coordinate_policy import assert_reviewed_or_blank, assert_reviewed_point
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -137,8 +138,8 @@ def test_shared_profile_language_dialect_and_bibliographic_registration():
     assert len(dialects) == 18
     assert Counter(row["Language_ID"] for row in dialects) == Counter(kw=9, Kodaku=9)
     assert {row["Source_Language_ID"] for row in dialects} == TARGET_CODES
-    assert all(not row["Latitude"] and not row["Longitude"] for row in dialects)
-    assert all(row["Quality"] == "C" for row in dialects)
+    for row in dialects:
+        assert_reviewed_point(row)
 
     bib = (ROOT / "cldf/sources.bib").read_text(encoding="utf-8")
     assert f"@techreport{{{SOURCE_KEY}," in bib

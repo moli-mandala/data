@@ -6,6 +6,7 @@ from collections import Counter
 from pathlib import Path
 
 import pytest
+from coordinate_policy import assert_reviewed_or_blank, assert_reviewed_point
 
 ROOT = Path(__file__).parents[1]
 COMPILED = ROOT / "cldf/forms.csv"
@@ -280,13 +281,12 @@ def test_languages_and_sites_are_registered(name):
         assert language in languages and languages[language]["Glottocode"]
     for site in {row["Tags"].split(":")[2] for row in installed(name)}:
         assert site in dialects, site
-        # Koch's source-specific integration removes invented legacy centroids.
+        # every site now carries a reviewed point (village or upazila) or is honestly blank
         if name == "kochbd":
-            assert dialects[site]["Latitude"] == dialects[site]["Longitude"] == ""
-            assert dialects[site]["Quality"] == ""
+            assert_reviewed_or_blank(dialects[site])
         else:
-            # Other legacy reports retain explicitly marked approximate points pending review.
-            assert dialects[site]["Quality"] == "C"
+            # Tripura/Garo/Kurux sites resolved from the reports' site tables (village or upazila)
+            assert_reviewed_point(dialects[site])
 
 
 @pytest.mark.parametrize("name", sorted(REPORTS))

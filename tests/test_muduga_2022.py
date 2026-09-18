@@ -6,6 +6,7 @@ import unicodedata
 from pathlib import Path
 from make_cldf import parse_file
 from segments import Tokenizer
+from coordinate_policy import assert_reviewed_or_blank, assert_reviewed_point
 
 ROOT=Path(__file__).resolve().parents[1]
 spec=importlib.util.spec_from_file_location('muduga_import',ROOT/'data/other/forms/raw_data/muduga_2022.py')
@@ -49,7 +50,7 @@ def test_profile_and_registry():
     for r in source_rows()[0]:assert '�' not in convert(r[2])
     dialects={r['Tag']:r for r in csv.DictReader((ROOT/'cldf/dialects.csv').open())}
     assert dialects[m.DIALECT]['Language_ID']=='Muduga'
-    assert not dialects[m.DIALECT]['Latitude']
+    assert_reviewed_point(dialects[m.DIALECT])
 
 def test_compiled_source():
     keys={r['Source_Key']:r for r in csv.DictReader((ROOT/'cldf/form-source-keys.csv').open()) if r['Source_Key'].startswith('muduga2022:')}

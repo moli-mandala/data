@@ -10,6 +10,7 @@ from pathlib import Path
 from make_cldf import parse_file
 from segments import Tokenizer
 from assign_form_ids import assign_ids
+from coordinate_policy import assert_reviewed_or_blank, assert_reviewed_point
 
 ROOT = Path(__file__).resolve().parents[1]
 RAW = ROOT / 'data/other/forms/raw_data'
@@ -69,7 +70,8 @@ def test_registry_and_seeded_audit():
     assert len(v.LECTS)==11
     for label in v.LECTS:
         r=dialects[v.dialect_tag(label)]
-        assert r['Language_ID']=='Vedda' and not r['Latitude'] and not r['Longitude']
+        assert r['Language_ID']=='Vedda'
+        assert_reviewed_or_blank(r)
     manifest=json.loads((v.PACKAGE/'manifest.json').read_text())
     for name,expected in manifest['input_hashes'].items():
         assert hashlib.sha256((v.PACKAGE/name).read_bytes()).hexdigest()==expected

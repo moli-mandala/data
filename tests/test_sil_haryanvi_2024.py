@@ -8,6 +8,7 @@ import sys
 import unicodedata
 from collections import Counter
 from pathlib import Path
+from coordinate_policy import assert_reviewed_or_blank, assert_reviewed_point
 
 
 ROOT = Path(__file__).parents[1]
@@ -141,9 +142,9 @@ def test_language_dialect_and_bibliographic_registration():
     assert len(dialects) == 6
     assert {row["Language_ID"] for row in dialects} == {"kaithal"}
     assert {row["Source_Language_ID"] for row in dialects} == set(TARGET_SITES)
-    assert all(not row["Latitude"] and not row["Longitude"] for row in dialects)
-    assert all("no point coordinate" in row["Location"] for row in dialects)
-    assert Counter(row["Quality"] for row in dialects) == Counter(C=4, A=1, B=1)
+    for row in dialects:
+        assert_reviewed_point(row)
+    assert Counter(row["Quality"] for row in dialects) == Counter(B=5, C=1)
     bib = (ROOT / "cldf/sources.bib").read_text(encoding="utf-8")
     assert f"@techreport{{{SOURCE_KEY}," in bib
     assert "No installed form originates from OCR" in bib

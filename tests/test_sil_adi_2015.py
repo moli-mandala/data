@@ -8,6 +8,7 @@ from collections import Counter
 from pathlib import Path
 
 import pytest
+from coordinate_policy import assert_reviewed_or_blank, assert_reviewed_point
 
 
 ROOT = Path(__file__).parents[1]
@@ -237,7 +238,7 @@ def test_shared_source_specific_installation_is_exact_and_fully_routed():
     for dialect_id, (language_id, source_id) in expected_dialects.items():
         assert dialects[dialect_id]["Language_ID"] == language_id
         assert dialects[dialect_id]["Source_Language_ID"] == source_id
-        assert dialects[dialect_id]["Latitude"] == dialects[dialect_id]["Longitude"] == ""
+        assert_reviewed_point(dialects[dialect_id])
     assert {row[14] for row in forms} == {
         dialects[dialect_id]["Tag"] for dialect_id in expected_dialects
     }

@@ -16,7 +16,7 @@ def test_keys_and_dialects():
  assert len({r[14].split()[0] for r in rs})==269
  for r in rs:
   assert len(r)==15 and r[0]=='M' and not r[1] and not r[4] and r[5]==r[2]
-  d=registry[r[14].split()[0]];assert d['Language_ID']=='M' and d['Quality']=='A'
+  d=registry[r[14].split()[0]];assert d['Language_ID']=='M' and d['Quality'] in ('A','B')
   assert 15<float(d['Latitude'])<23 and 72<float(d['Longitude'])<82
   assert r[7].startswith('sdml2026[') and r[10].startswith('sdml2026:')
 def test_profile_coverage():

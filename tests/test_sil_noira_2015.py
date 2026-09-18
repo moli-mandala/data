@@ -5,6 +5,7 @@ import hashlib
 import json
 from collections import Counter
 from pathlib import Path
+from coordinate_policy import assert_reviewed_point
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -87,7 +88,8 @@ def test_noira_profile_is_exact_and_routed_by_source_key() -> None:
 def test_noira_language_and_dialect_metadata_match_installed_tags() -> None:
     languages = {row["ID"]: row for row in dict_rows(ROOT / "cldf/languages.csv")}
     assert languages["DungraBhili"]["Glottocode"] == "dung1251"
-    assert languages["DungraBhili"]["Latitude"] == languages["DungraBhili"]["Longitude"] == ""
+    # centroid of its located survey sites (backfill_language_coordinates.py)
+    assert languages["DungraBhili"]["Latitude"] and languages["DungraBhili"]["Longitude"]
     assert languages["Noiri"]["Glottocode"] == "noir1238"
     assert "Kotli routing is provisional" in languages["Noiri"]["Location"]
 
@@ -97,7 +99,7 @@ def test_noira_language_and_dialect_metadata_match_installed_tags() -> None:
     assert len(expected) == 11
     for dialect_id, language_id in expected.items():
         assert dialects[dialect_id]["Language_ID"] == language_id
-        assert dialects[dialect_id]["Latitude"] == dialects[dialect_id]["Longitude"] == ""
+        assert_reviewed_point(dialects[dialect_id])
     for dialect_id in [
         "sil-noira-2015-kotli-narayanpur",
         "sil-noira-2015-kotli-taradi",

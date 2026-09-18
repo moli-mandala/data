@@ -13,6 +13,7 @@ import pytest
 from assign_form_ids import assign_ids
 from make_cldf import parse_file
 from segments import Tokenizer
+from coordinate_policy import assert_reviewed_or_blank, assert_reviewed_point
 
 ROOT=Path(__file__).resolve().parents[1]
 RAW=ROOT/'data/other/forms/raw_data'
@@ -132,7 +133,7 @@ def test_language_dialect_assignment_and_no_invented_map_points():
             assert len(tags)==1
             d=dialects[tags[0]]
             assert d['Language_ID']==row[0] and d['Location']
-            assert not d['Latitude'] and not d['Longitude']
+            assert_reviewed_or_blank(d)
     assert dialects[v.dialect_tag('Davar')]['Glottocode']=='dava1244'
 
 def test_durable_ids_survive_corrections_and_reordering():

@@ -180,8 +180,8 @@ def test_survey_sites_have_reviewed_coordinates(dialects):
         assert 81.0 < float(row["Longitude"]) < 86.0, dialect_id
         assert row["Glottocode"] == "", "Beine's survey points are not Glottolog languoids"
         assert "Beine (2017) survey site" in row["Location"], dialect_id
-    # Localities that could not be resolved fall back to the tahsil the source names.
-    assert dialects["beine_bsa"]["Quality"] == "C"
+    # Sargipal was later resolved to a gazetteer village point (data/dialect-coordinate-decisions.csv).
+    assert dialects["beine_bsa"]["Quality"] == "B"
     assert dialects["beine_bje"]["Quality"] == "B"
 
 

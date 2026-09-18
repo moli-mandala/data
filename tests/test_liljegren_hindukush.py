@@ -99,6 +99,11 @@ def test_hindukush_ipa_profile_converts_display_forms_and_retains_phonemic_ipa()
     assert (by_original["ɫuj"].form, by_original["ɫuj"].ipa) == ("ḷuy", "ɫuj")
 
 
+def dialects_quality(rows):
+    from collections import Counter
+    return dict(Counter(row["Quality"] for row in rows))
+
+
 def test_all_source_lects_have_coordinates_locations_and_glottocodes():
     with (ROOT / "cldf/dialects.csv").open(encoding="utf-8", newline="") as stream:
         rows = [
@@ -108,4 +113,7 @@ def test_all_source_lects_have_coordinates_locations_and_glottocodes():
     assert len(rows) == 59
     assert all(row["Tag"].startswith("dialect:") for row in rows)
     assert all(row["Glottocode"] and row["Latitude"] and row["Longitude"] for row in rows)
-    assert all(row["Location"] and row["Quality"] == "A" for row in rows)
+    # HKAT's Alasai list shared Alingar's point in the source table; it now carries a reviewed
+    # gazetteer point (quality B) instead of the source coordinate.
+    assert all(row["Location"] and row["Quality"] in {"A", "B"} for row in rows)
+    assert dialects_quality(rows) == {"A": 58, "B": 1}

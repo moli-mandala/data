@@ -9,6 +9,7 @@ from collections import Counter
 from pathlib import Path
 
 import pytest
+from coordinate_policy import assert_reviewed_or_blank, assert_reviewed_point
 
 
 ROOT = Path(__file__).parents[1]
@@ -180,9 +181,8 @@ def test_source_languages_and_all_thirty_dialects_are_registered():
     for dialect_id in ids:
         dialect = dialects[dialect_id]
         assert dialect["Glottocode"] == LANGUAGE_GLOTTOCODES[dialect["Language_ID"]]
-        assert dialect["Quality"] == "C"
         assert dialect["Location"]
-        assert dialect["Latitude"] == dialect["Longitude"] == ""
+        assert_reviewed_point(dialect)
 
 
 @pytest.mark.skipif(not COMPILED.exists(), reason="cldf/forms.csv has not been built")

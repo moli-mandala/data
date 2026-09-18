@@ -22,6 +22,7 @@ TARGET_SITES = {"JAG", "CHI", "POD", "UTN", "BHG", "BHM", "MAL"}
 
 sys.path.insert(0, str(PACKAGE))
 import import_koya  # noqa: E402
+from coordinate_policy import assert_reviewed_or_blank, assert_reviewed_point
 
 ROWS = import_koya.ROWS
 
@@ -162,8 +163,8 @@ def test_shared_profile_routing_and_metadata_registration():
     assert len(dialects) == 7
     assert {row["Language_ID"] for row in dialects} == {"Gondi"}
     assert {row["Source_Language_ID"] for row in dialects} == TARGET_SITES
-    assert all(not row["Latitude"] and not row["Longitude"] for row in dialects)
-    assert all(row["Quality"] == "C" for row in dialects)
+    for row in dialects:
+        assert_reviewed_point(row)
     bib = (ROOT / "cldf/sources.bib").read_text(encoding="utf-8")
     assert f"@techreport{{{SOURCE_KEY}," in bib
     assert "No installed form originates from OCR" in bib.split(

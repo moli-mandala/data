@@ -7,6 +7,7 @@ import sys
 import unicodedata
 from collections import Counter
 from pathlib import Path
+from coordinate_policy import assert_reviewed_or_blank, assert_reviewed_point
 
 
 ROOT = Path(__file__).parents[1]
@@ -128,9 +129,9 @@ def test_language_dialect_and_bibliographic_registration():
         ]
     assert len(dialects) == 14
     assert {row["Language_ID"] for row in dialects} == {"poth"}
-    assert all(not row["Latitude"] and not row["Longitude"] for row in dialects)
-    assert all("no point coordinate" in row["Location"] for row in dialects)
-    assert Counter(row["Quality"] for row in dialects) == Counter(A=8, B=6)
+    for row in dialects:
+        assert_reviewed_point(row)
+    assert Counter(row["Quality"] for row in dialects) == Counter(B=12, C=2)
     bib = (ROOT / "cldf/sources.bib").read_text(encoding="utf-8")
     assert f"@techreport{{{SOURCE_KEY}," in bib
 

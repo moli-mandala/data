@@ -5,6 +5,7 @@ from collections import Counter
 from pathlib import Path
 
 import pytest
+from coordinate_policy import assert_reviewed_or_blank, assert_reviewed_point
 
 ROOT = Path(__file__).parents[1]
 INSTALLED = ROOT / "data/other/forms/20260826-sil-koch.csv"
@@ -86,8 +87,8 @@ def test_languages_and_sites_are_registered():
     assert languages["Garo"]["Glottocode"] == "garo1247"
     for site in {row["Tags"].split(":")[2] for row in INSTALLED_ROWS}:
         assert site in dialects, site
-        # the report prints no coordinates, so every site point is an approximation
-        assert dialects[site]["Quality"] == "C"
+        # the report prints no coordinates; sites carry reviewed village/district points
+        assert_reviewed_point(dialects[site])
 
 
 @pytest.mark.skipif(not COMPILED.exists(), reason="cldf/forms.csv has not been built")

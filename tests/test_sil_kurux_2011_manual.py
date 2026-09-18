@@ -10,6 +10,7 @@ from collections import Counter, defaultdict
 from pathlib import Path
 
 from segments.tokenizer import Tokenizer
+from coordinate_policy import assert_reviewed_or_blank, assert_reviewed_point
 
 
 ROOT = Path(__file__).parents[1]
@@ -989,8 +990,7 @@ def test_shared_site_registry_matches_the_frozen_source_metadata():
         assert registered["Source_Language_ID"] == site["site_id"]
         assert registered["Name"] == site["site_name"]
         assert registered["Glottocode"] == site["glottocode"]
-        assert registered["Latitude"] == registered["Longitude"] == ""
-        assert registered["Quality"] == ""
+        assert_reviewed_or_blank(registered)
         assert "coordinate" in registered["Location"] or site["role"] == "control"
 
 

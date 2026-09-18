@@ -10,6 +10,7 @@ from collections import Counter
 from pathlib import Path
 
 import pytest
+from coordinate_policy import assert_reviewed_point
 
 ROOT = Path(__file__).resolve().parents[1]
 PACKAGE = ROOT / "data/other/forms/raw_data/sil_northern_dhule_bhils_2013"
@@ -354,8 +355,9 @@ def test_shared_source_specific_installation_is_exact_and_fully_routed():
 
     with (ROOT / "cldf/languages.csv").open(encoding="utf-8", newline="") as stream:
         languages = {row["ID"]: row for row in csv.DictReader(stream)}
-    assert {(languages[key]["Glottocode"], languages[key]["Latitude"], languages[key]["Longitude"])
-            for key in ("Vasavi", "Noiri")} == {("vasa1239", "", ""), ("noir1238", "", "")}
+    assert {languages[key]["Glottocode"] for key in ("Vasavi", "Noiri")} == {"vasa1239", "noir1238"}
+    # centroids of their located survey sites (backfill_language_coordinates.py)
+    assert all(languages[key]["Latitude"] and languages[key]["Longitude"] for key in ("Vasavi", "Noiri"))
 
     with (ROOT / "cldf/dialects.csv").open(encoding="utf-8", newline="") as stream:
         dialects = {row["ID"]: row for row in csv.DictReader(stream)}
@@ -371,7 +373,7 @@ def test_shared_source_specific_installation_is_exact_and_fully_routed():
     }
     for dialect_id, language_id in new_dialects.items():
         assert dialects[dialect_id]["Language_ID"] == language_id
-        assert dialects[dialect_id]["Latitude"] == dialects[dialect_id]["Longitude"] == ""
+        assert_reviewed_point(dialects[dialect_id])
     installed_dialect_tags = {tag for row in forms for tag in row[14].split(";") if tag}
     assert installed_dialect_tags == {dialects[key]["Tag"] for key in new_dialects} | {
         dialects[key]["Tag"] for key in {

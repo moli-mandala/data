@@ -10,6 +10,7 @@ from collections import Counter
 from pathlib import Path
 
 from segments.tokenizer import Tokenizer
+from coordinate_policy import assert_reviewed_or_blank, assert_reviewed_point
 
 
 ROOT = Path(__file__).parents[1]
@@ -222,8 +223,7 @@ def test_shared_site_registry_matches_source_metadata_without_invented_points():
         assert registered["Source_Language_ID"] == site["site_id"]
         assert registered["Name"] == site["site_name"]
         assert registered["Glottocode"] == site["glottocode"]
-        assert registered["Latitude"] == registered["Longitude"] == ""
-        assert registered["Quality"] == ""
+        assert_reviewed_or_blank(registered)
         assert registered["Location"] == site["location"]
 
 

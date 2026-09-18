@@ -16,6 +16,7 @@ import unify_cldf
 import burushaski_comparisons
 from assign_form_ids import assign_ids
 from dialects import load_dialect_aliases, normalize_dialect
+from coordinate_policy import assert_reviewed_or_blank, assert_reviewed_point
 
 ROOT = Path(__file__).resolve().parents[1]
 RAW = ROOT / "data/other/forms/raw_data"
@@ -78,8 +79,9 @@ def test_language_mapping_qualifiers_and_unknown_coordinates():
             assert parent == spec["parent"]
             d = dialects[row["Tags"].split()[0]]
             assert d["Language_ID"] == spec["parent"]
-            assert not d["Latitude"] and not d["Longitude"] and not d["Glottocode"]
-            assert d["Location"] and d["Quality"] == "C"
+            assert not d["Glottocode"]
+            assert d["Location"]
+            assert_reviewed_or_blank(d)
     rows, audit = adapter.prepare("bhumij")
     udala = [r for r in rows if "1989-udala" in r["Entry_Key"]]
     assert udala and all("uncertain" in r["Tags"].split() for r in udala)

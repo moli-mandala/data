@@ -5,6 +5,7 @@ from collections import Counter
 from pathlib import Path
 
 import pytest
+from coordinate_policy import assert_reviewed_or_blank, assert_reviewed_point
 
 ROOT = Path(__file__).parents[1]
 COMPILED = ROOT / "cldf/forms.csv"
@@ -119,8 +120,8 @@ def test_languages_and_survey_sites_are_registered(name):
     for site in {row["Tags"].split(":")[2] for row in installed(name)}:
         assert site in dialects, site
         assert dialects[site]["Language_ID"] in REPORTS[name][3]
-        # the reports print no coordinates, so every site point is an approximation
-        assert dialects[site]["Quality"] == "C"
+        # the reports print no coordinates; sites carry reviewed village/block points
+        assert_reviewed_point(dialects[site])
 
 
 @pytest.mark.parametrize("name", sorted(REPORTS))

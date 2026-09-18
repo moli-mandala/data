@@ -10,6 +10,7 @@ from collections import Counter
 from pathlib import Path
 
 from segments.tokenizer import Tokenizer
+from coordinate_policy import assert_reviewed_or_blank, assert_reviewed_point
 
 
 ROOT = Path(__file__).parents[1]
@@ -195,8 +196,8 @@ def test_shared_profile_routing_and_metadata_registration():
     assert len(dialects) == 18
     assert {row["Language_ID"] for row in dialects} == {"bagheli_lakshman"}
     assert {row["Source_Language_ID"] for row in dialects} == TARGET_CODES
-    assert all(not row["Latitude"] and not row["Longitude"] for row in dialects)
-    assert all(row["Quality"] == "C" for row in dialects)
+    for row in dialects:
+        assert_reviewed_point(row)
     bib = (ROOT / "cldf/sources.bib").read_text(encoding="utf-8")
     assert f"@techreport{{{SOURCE_KEY}," in bib
     assert "No installed form originates from OCR" in bib.split(

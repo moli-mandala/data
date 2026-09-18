@@ -57,7 +57,7 @@ def backfill(
     fd, temporary = tempfile.mkstemp(prefix=languages_path.name + ".", dir=languages_path.parent)
     try:
         with os.fdopen(fd, "w", encoding="utf-8", newline="") as stream:
-            writer = csv.DictWriter(stream, fieldnames=fields, lineterminator="\n")
+            writer = csv.DictWriter(stream, fieldnames=fields, lineterminator="\r\n")
             writer.writeheader()
             writer.writerows(languages)
         os.replace(temporary, languages_path)

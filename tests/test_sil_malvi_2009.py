@@ -7,6 +7,7 @@ import sys
 import unicodedata
 from collections import Counter, defaultdict
 from pathlib import Path
+from coordinate_policy import assert_reviewed_or_blank, assert_reviewed_point
 
 
 ROOT = Path(__file__).parents[1]
@@ -134,7 +135,8 @@ def test_dialect_and_bibliographic_registration():
         dialects = [row for row in csv.DictReader(stream) if row["ID"].startswith("sil-malvi-2009-")]
     assert len(dialects) == 30
     assert {row["Language_ID"] for row in dialects} == {"mewari_basad"}
-    assert all(not row["Latitude"] and not row["Longitude"] for row in dialects)
+    for row in dialects:
+        assert_reviewed_or_blank(row)
     bib = (ROOT / "cldf/sources.bib").read_text(encoding="utf-8")
     assert f"@techreport{{{SOURCE_KEY}," in bib
 

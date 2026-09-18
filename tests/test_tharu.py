@@ -5,6 +5,7 @@ import subprocess
 import sys
 from collections import Counter
 from pathlib import Path
+from coordinate_policy import assert_reviewed_or_blank, assert_reviewed_point
 
 
 ROOT = Path(__file__).parents[1]
@@ -139,7 +140,7 @@ def test_western_tharu_sites_reference_profile_and_checklist_are_integrated():
     assert SITE_IDS <= dialects.keys()
     assert dialects["Tharu-RNS-Sisaikhara"]["Language_ID"] == "Rana"
     assert dialects["Tharu-RNS-Sisana"]["Language_ID"] == "Rana"
-    assert not dialects["Tharu-RNS-Sisaikhara"]["Latitude"]
+    assert_reviewed_point(dialects["Tharu-RNS-Sisaikhara"])
     assert dialects["Tharu-CCC"]["Language_ID"] == "Chitwan"
     assert "source label Thakur Tharu" in dialects["Tharu-TkN"]["Location"]
     bib = (ROOT / "cldf/sources.bib").read_text(encoding="utf-8")
