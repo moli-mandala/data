@@ -1,6 +1,7 @@
 import csv
 import importlib.util
 import sys
+import unicodedata
 from pathlib import Path
 
 from segments import Tokenizer
@@ -129,7 +130,32 @@ def test_enriched_kalasha_cldf_graph_is_resolved():
     ]
     by_id = {row["ID"]: row for row in all_rows}
 
-    assert sum("dialect-variant" in row["Tags"].split() for row in rows) == 146
+    assert sum("dialect-variant" in row["Tags"].split() for row in rows) == 148
+    # These three tags were already explicit in the installed source, but were
+    # discarded when attestations merged. Pin source witnesses and durable IDs.
+    with (DATA_DIR / "data/other/forms/20260725-kalasha-trail-cooper.csv").open() as stream:
+        raw_rows = list(csv.reader(stream))
+    restored = {
+        "tc-entry-4881-variant-1": ("f_ceth7b4fie2qq", "šaŋ", "dialect-variant"),
+        "tc-entry-4841-variant-1": ("f_junqvljh6sslg", "šel", "dialect-variant"),
+        "tc-entry-355": ("f_46hjyhky4llba", "bak", "morphology"),
+    }
+    tokenizer = Tokenizer(PROFILE)
+    normalize = lambda value: unicodedata.normalize("NFC", value)
+    for key, (form_id, original, tag) in restored.items():
+        witnesses = [raw for raw in raw_rows if raw[10] == key]
+        assert len(witnesses) == 1
+        raw = witnesses[0]
+        assert raw[2] == original and tag in raw[14].split()
+        actual = by_id[form_id]
+        assert raw[7] in actual["Source"].split(";")
+        assert normalize(original) in {normalize(value.strip()) for value in actual["Original"].split(";")}
+        assert actual["Form"] == normalize(tokenizer(original, column="IPA").replace(" ", "").replace("#", " "))
+        assert tag in actual["Tags"].split()
+    with (DATA_DIR / "cldf/form-id-aliases.csv").open() as stream:
+        aliases = {row["Legacy_ID"]: row["Form_ID"] for row in csv.DictReader(stream)
+                   if row["Legacy_ID"] in {"0-136041", "0-138319"}}
+    assert aliases == {"0-136041": "f_ceth7b4fie2qq", "0-138319": "f_junqvljh6sslg"}
     assert {"dialect:Kal:bumb:Bumburet", "dialect:Kal:rumb:Rambur",
             "dialect:Kal:bir:Birir", "dialect:Kal:urt:Urtsun"} <= {
         tag for row in rows for tag in row["Tags"].split()
@@ -137,7 +163,7 @@ def test_enriched_kalasha_cldf_graph_is_resolved():
     assert sum(row["Relation"] == "borrowed" for row in rows) == 956
     assert sum("loan-source" in row["Tags"].split() for row in rows) == 9
     assert sum(bool(row["Etymology"]) for row in rows) == 878
-    assert sum("morphology" in row["Tags"].split() for row in rows) == 173
+    assert sum("morphology" in row["Tags"].split() for row in rows) == 174
     assert sum("causative" in row["Tags"].split() for row in rows) == 34
     assert all(not row["Origin_ID"] or row["Origin_ID"] in by_id for row in rows)
     assert all(not row["Variant_Of"] or row["Variant_Of"] in by_id for row in rows)

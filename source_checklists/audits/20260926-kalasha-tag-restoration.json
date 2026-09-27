@@ -1,0 +1,437 @@
+{
+  "status": "passed",
+  "raw_source_sha256": "b1b0a5172fdef8e186df4fe1dec0f31d1aa6fe099c16c126b3e112337bc9a8b3",
+  "raw_variants": {
+    "tc-entry-4881-variant-1": [
+      "urt",
+      "12260",
+      "šaŋ",
+      "Branch of a tree (uncut)",
+      "",
+      "",
+      "",
+      "trail-cooper1999[p. 311 (printed p. 281)]",
+      "",
+      "Trail & Cooper Etym: sáŋkú- ‘peg, spike’ T-12260.",
+      "tc-entry-4881-variant-1",
+      "tc-entry-4881",
+      "",
+      "",
+      "dialect-variant"
+    ],
+    "tc-entry-4841-variant-1": [
+      "urt",
+      "12466",
+      "šel",
+      "Spear",
+      "",
+      "",
+      "",
+      "trail-cooper1999[p. 308 (printed p. 278)]",
+      "",
+      "Trail & Cooper Etym: s5ili…- ‘dart, arrow’ T-12466.",
+      "tc-entry-4841-variant-1",
+      "tc-entry-4841",
+      "",
+      "",
+      "dialect-variant"
+    ]
+  },
+  "compiled_tag_delta": [
+    {
+      "ID": "f_ceth7b4fie2qq",
+      "Language_ID": "Kal",
+      "Form": "śaŋ",
+      "Source": "CDIAL;trail-cooper1999[p. 311 (printed p. 281)]",
+      "before_tags": "dialect:Kal:urt:Urtsun",
+      "after_tags": "dialect-variant dialect:Kal:urt:Urtsun",
+      "added": [
+        "dialect-variant"
+      ],
+      "removed": []
+    },
+    {
+      "ID": "f_junqvljh6sslg",
+      "Language_ID": "Kal",
+      "Form": "śel",
+      "Source": "CDIAL;trail-cooper1999[p. 308 (printed p. 278)]",
+      "before_tags": "dialect:Kal:urt:Urtsun",
+      "after_tags": "dialect-variant dialect:Kal:urt:Urtsun",
+      "added": [
+        "dialect-variant"
+      ],
+      "removed": []
+    }
+  ],
+  "interpretation": "The two variant witnesses explicitly carry dialect-variant and bak explicitly carries morphology. Generic cleanup previously discarded these tags during duplicate merging. All13Kalasha changed rows have explicit raw-tag support; existing lexical fields and graph are unchanged. Tests retain exact148variant/174morphology counts and source-grounded three-ID fixtures, with broader graph assertions unchanged.",
+  "mapping_caveat": "Historical merged rows retain CDIAL aliases rather than dictionary Entry_Key registry aliases; no new Source_Key alias is invented.",
+  "full_thirteen_row_review": [
+    {
+      "compiled_id": "f_ceth7b4fie2qq",
+      "tag_delta": {
+        "ID": "f_ceth7b4fie2qq",
+        "Language_ID": "Kal",
+        "Form": "śaŋ",
+        "Source": "CDIAL;trail-cooper1999[p. 311 (printed p. 281)]",
+        "before_tags": "dialect:Kal:urt:Urtsun",
+        "after_tags": "dialect-variant dialect:Kal:urt:Urtsun",
+        "added": [
+          "dialect-variant"
+        ],
+        "removed": []
+      },
+      "source_tag_evidence": {
+        "dialect-variant": [
+          {
+            "key": "tc-entry-4881-variant-1",
+            "form": "šaŋ",
+            "gloss": "Branch of a tree (uncut)",
+            "citation": "trail-cooper1999[p. 311 (printed p. 281)]",
+            "tags": "dialect-variant"
+          }
+        ]
+      }
+    },
+    {
+      "compiled_id": "f_junqvljh6sslg",
+      "tag_delta": {
+        "ID": "f_junqvljh6sslg",
+        "Language_ID": "Kal",
+        "Form": "śel",
+        "Source": "CDIAL;trail-cooper1999[p. 308 (printed p. 278)]",
+        "before_tags": "dialect:Kal:urt:Urtsun",
+        "after_tags": "dialect-variant dialect:Kal:urt:Urtsun",
+        "added": [
+          "dialect-variant"
+        ],
+        "removed": []
+      },
+      "source_tag_evidence": {
+        "dialect-variant": [
+          {
+            "key": "tc-entry-4841-variant-1",
+            "form": "šel",
+            "gloss": "Spear",
+            "citation": "trail-cooper1999[p. 308 (printed p. 278)]",
+            "tags": "dialect-variant"
+          }
+        ]
+      }
+    },
+    {
+      "compiled_id": "f_quevtxr5gk3q4",
+      "tag_delta": {
+        "ID": "f_quevtxr5gk3q4",
+        "Language_ID": "Kal",
+        "Form": "amál",
+        "Source": "trail-cooper1999[p. 34 (printed p. 4)];trail-cooper1999[p. 35 (printed p. 5)]",
+        "before_tags": "dialect:Kal:bumb:Bumburet",
+        "after_tags": "loan:Arabic dialect:Kal:bumb:Bumburet",
+        "added": [
+          "loan:Arabic"
+        ],
+        "removed": []
+      },
+      "source_tag_evidence": {
+        "loan:Arabic": [
+          {
+            "key": "tc-entry-79",
+            "form": "amál",
+            "gloss": "Habit",
+            "citation": "trail-cooper1999[p. 35 (printed p. 5)]",
+            "tags": "loan:Arabic"
+          }
+        ]
+      }
+    },
+    {
+      "compiled_id": "f_46hjyhky4llba",
+      "tag_delta": {
+        "ID": "f_46hjyhky4llba",
+        "Language_ID": "Kal",
+        "Form": "bak",
+        "Source": "trail-cooper1999[p. 50 (printed p. 20)]",
+        "before_tags": "dialect:Kal:bumb:Bumburet",
+        "after_tags": "morphology loan:Persian underlying-form dialect:Kal:bumb:Bumburet",
+        "added": [
+          "loan:Persian",
+          "morphology",
+          "underlying-form"
+        ],
+        "removed": []
+      },
+      "source_tag_evidence": {
+        "loan:Persian": [
+          {
+            "key": "tc-entry-355",
+            "form": "bak",
+            "gloss": "Garden",
+            "citation": "trail-cooper1999[p. 50 (printed p. 20)]",
+            "tags": "morphology loan:Persian underlying-form"
+          }
+        ],
+        "morphology": [
+          {
+            "key": "tc-entry-355",
+            "form": "bak",
+            "gloss": "Garden",
+            "citation": "trail-cooper1999[p. 50 (printed p. 20)]",
+            "tags": "morphology loan:Persian underlying-form"
+          }
+        ],
+        "underlying-form": [
+          {
+            "key": "tc-entry-355",
+            "form": "bak",
+            "gloss": "Garden",
+            "citation": "trail-cooper1999[p. 50 (printed p. 20)]",
+            "tags": "morphology loan:Persian underlying-form"
+          }
+        ]
+      }
+    },
+    {
+      "compiled_id": "f_q2pbq7epmgjle",
+      "tag_delta": {
+        "ID": "f_q2pbq7epmgjle",
+        "Language_ID": "Kal",
+        "Form": "ban",
+        "Source": "trail-cooper1999[p. 52 (printed p. 22)]",
+        "before_tags": "dialect:Kal:bumb:Bumburet",
+        "after_tags": "loan:Persian dialect:Kal:bumb:Bumburet",
+        "added": [
+          "loan:Persian"
+        ],
+        "removed": []
+      },
+      "source_tag_evidence": {
+        "loan:Persian": [
+          {
+            "key": "tc-entry-385",
+            "form": "ban, band",
+            "gloss": "Closed, impassable",
+            "citation": "trail-cooper1999[p. 52 (printed p. 22)]",
+            "tags": "loan:Persian"
+          }
+        ]
+      }
+    },
+    {
+      "compiled_id": "f_x6nwc5ovetubo",
+      "tag_delta": {
+        "ID": "f_x6nwc5ovetubo",
+        "Language_ID": "Kal",
+        "Form": "bas kárik",
+        "Source": "trail-cooper1999[p. 55 (printed p. 25)]",
+        "before_tags": "dialect:Kal:bumb:Bumburet",
+        "after_tags": "loan:Arabic dialect:Kal:bumb:Bumburet",
+        "added": [
+          "loan:Arabic"
+        ],
+        "removed": []
+      },
+      "source_tag_evidence": {
+        "loan:Arabic": [
+          {
+            "key": "tc-entry-429",
+            "form": "bas kárik",
+            "gloss": "To debate with someone, argue with someone",
+            "citation": "trail-cooper1999[p. 55 (printed p. 25)]",
+            "tags": "loan:Arabic"
+          }
+        ]
+      }
+    },
+    {
+      "compiled_id": "f_rkin2d27tbpew",
+      "tag_delta": {
+        "ID": "f_rkin2d27tbpew",
+        "Language_ID": "Kal",
+        "Form": "bek",
+        "Source": "trail-cooper1999[p. 61 (printed p. 31)]",
+        "before_tags": "dialect:Kal:bumb:Bumburet",
+        "after_tags": "loan:English dialect:Kal:bumb:Bumburet",
+        "added": [
+          "loan:English"
+        ],
+        "removed": []
+      },
+      "source_tag_evidence": {
+        "loan:English": [
+          {
+            "key": "tc-entry-540",
+            "form": "bek",
+            "gloss": "Bag",
+            "citation": "trail-cooper1999[p. 61 (printed p. 31)]",
+            "tags": "loan:English"
+          }
+        ]
+      }
+    },
+    {
+      "compiled_id": "f_jy4jrhtxyadqa",
+      "tag_delta": {
+        "ID": "f_jy4jrhtxyadqa",
+        "Language_ID": "Kal",
+        "Form": "kam",
+        "Source": "trail-cooper1999[p. 172 (printed p. 142)]",
+        "before_tags": "loan:Arabic dialect:Kal:bumb:Bumburet",
+        "after_tags": "loan:Arabic loan:Persian dialect:Kal:bumb:Bumburet",
+        "added": [
+          "loan:Persian"
+        ],
+        "removed": []
+      },
+      "source_tag_evidence": {
+        "loan:Persian": [
+          {
+            "key": "tc-entry-2449",
+            "form": "kam",
+            "gloss": "Less",
+            "citation": "trail-cooper1999[p. 172 (printed p. 142)]",
+            "tags": "loan:Persian"
+          }
+        ]
+      }
+    },
+    {
+      "compiled_id": "f_iqwfykfgyss6w",
+      "tag_delta": {
+        "ID": "f_iqwfykfgyss6w",
+        "Language_ID": "Kal",
+        "Form": "kʰalí",
+        "Source": "trail-cooper1999[p. 183 (printed p. 153)]",
+        "before_tags": "dialect:Kal:bumb:Bumburet",
+        "after_tags": "loan:Arabic dialect:Kal:bumb:Bumburet",
+        "added": [
+          "loan:Arabic"
+        ],
+        "removed": []
+      },
+      "source_tag_evidence": {
+        "loan:Arabic": [
+          {
+            "key": "tc-entry-2634",
+            "form": "khalí",
+            "gloss": "Empty",
+            "citation": "trail-cooper1999[p. 183 (printed p. 153)]",
+            "tags": "loan:Arabic"
+          }
+        ]
+      }
+    },
+    {
+      "compiled_id": "f_k4ipqbenjnosi",
+      "tag_delta": {
+        "ID": "f_k4ipqbenjnosi",
+        "Language_ID": "Kal",
+        "Form": "na",
+        "Source": "trail-cooper1999[p. 234 (printed p. 204)]",
+        "before_tags": "dialect:Kal:bumb:Bumburet",
+        "after_tags": "loan:Persian dialect:Kal:bumb:Bumburet",
+        "added": [
+          "loan:Persian"
+        ],
+        "removed": []
+      },
+      "source_tag_evidence": {
+        "loan:Persian": [
+          {
+            "key": "tc-entry-3522",
+            "form": "na-",
+            "gloss": "Not",
+            "citation": "trail-cooper1999[p. 234 (printed p. 204)]",
+            "tags": "loan:Persian"
+          }
+        ]
+      }
+    },
+    {
+      "compiled_id": "f_kc2x3lghovcv4",
+      "tag_delta": {
+        "ID": "f_kc2x3lghovcv4",
+        "Language_ID": "Kal",
+        "Form": "pas",
+        "Source": "trail-cooper1999[p. 256 (printed p. 226)]",
+        "before_tags": "morphology loan:Khowar underlying-form dialect:Kal:bumb:Bumburet",
+        "after_tags": "morphology loan:Khowar underlying-form loan:Persian dialect:Kal:bumb:Bumburet",
+        "added": [
+          "loan:Persian"
+        ],
+        "removed": []
+      },
+      "source_tag_evidence": {
+        "loan:Persian": [
+          {
+            "key": "tc-entry-3891",
+            "form": "pas, past",
+            "gloss": "Low, lowdown",
+            "citation": "trail-cooper1999[p. 256 (printed p. 226)]",
+            "tags": "loan:Persian"
+          }
+        ]
+      }
+    },
+    {
+      "compiled_id": "f_4v6f3q6tmishc",
+      "tag_delta": {
+        "ID": "f_4v6f3q6tmishc",
+        "Language_ID": "Kal",
+        "Form": "tak",
+        "Source": "trail-cooper1999[p. 321 (printed p. 291)]",
+        "before_tags": "dialect:Kal:bumb:Bumburet",
+        "after_tags": "loan:Arabic dialect:Kal:bumb:Bumburet",
+        "added": [
+          "loan:Arabic"
+        ],
+        "removed": []
+      },
+      "source_tag_evidence": {
+        "loan:Arabic": [
+          {
+            "key": "tc-entry-5042",
+            "form": "tak",
+            "gloss": "Odd number",
+            "citation": "trail-cooper1999[p. 321 (printed p. 291)]",
+            "tags": "loan:Arabic"
+          }
+        ]
+      }
+    },
+    {
+      "compiled_id": "f_qndlytwmvd6vc",
+      "tag_delta": {
+        "ID": "f_qndlytwmvd6vc",
+        "Language_ID": "Kal",
+        "Form": "var",
+        "Source": "trail-cooper1999[p. 356 (printed p. 326)]",
+        "before_tags": "loan:Pashto dialect:Kal:bumb:Bumburet",
+        "after_tags": "loan:Pashto loan:Khowar dialect:Kal:bumb:Bumburet",
+        "added": [
+          "loan:Khowar"
+        ],
+        "removed": []
+      },
+      "source_tag_evidence": {
+        "loan:Khowar": [
+          {
+            "key": "tc-entry-5628",
+            "form": "war",
+            "gloss": "Language",
+            "citation": "trail-cooper1999[p. 356 (printed p. 326)]",
+            "tags": "loan:Khowar"
+          }
+        ]
+      }
+    }
+  ],
+  "all_added_tags_have_raw_source_witnesses": true,
+  "test_contract": "Exact148dialect-variant and174morphology output counts, three restored durableIDs pinned to exact sourcekey/form/citation/Original/tags. Existing graph assertions unchanged. Full rawwitness matching experiment exposed known one-to-many CDIAL analyses and was not used to invent identity mappings.",
+  "focused_validation": {
+    "command": "python -m pytest tests/test_kalasha.py -q",
+    "result": "9 passed in7.00s",
+    "log_sha256": "423a90d2882ea84f066a1f4da7df67a74ea3689d06dc773b416f02c3b94bef54",
+    "cldf_git_status": "unchanged",
+    "audit_discovery_effect": "None: generated checklist discovery scans source_checklists/audits/{unit_id}*.csv, not this JSON."
+  }
+}
