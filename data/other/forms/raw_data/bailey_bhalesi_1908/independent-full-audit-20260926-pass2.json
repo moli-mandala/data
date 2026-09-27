@@ -1,0 +1,186 @@
+{
+  "status": "failed_material_transcription_error",
+  "seed": 20260926144,
+  "hashes": {
+    "full-reviewed.jsonl": "96737b93555eda6f138e625497993b06a48a6e4df13544b18009c3ca6da82ea9",
+    "proposal.csv": "0e4f6a4c1721e8145c598250bb4bf056d7d48be0f91e4e6bca016e67df5634d6",
+    "proposal-audit.jsonl": "25ceb5456354b7829a96d6d0b912056bccf9fd127b1feef7d239f492f9fd2d71",
+    "proposal-profile.txt": "04cd4a94dfaa3bd48cfd64176711773958fe37f2312ada82e744f591c75a2e00"
+  },
+  "sample_size": 20,
+  "material_errors": 1,
+  "results": [
+    {
+      "source_unit_key": "bailey1908bhalesi:p69:other-pronouns:whosoever",
+      "result": "pass",
+      "forms": [
+        "dzē kōī"
+      ],
+      "gloss": "whosoever"
+    },
+    {
+      "source_unit_key": "bailey1908bhalesi:p71:go:past-sg",
+      "result": "pass",
+      "forms": [
+        "gēū"
+      ],
+      "gloss": "went"
+    },
+    {
+      "source_unit_key": "bailey1908bhalesi:p72:drink:fut",
+      "result": "pass",
+      "forms": [
+        "pīan"
+      ],
+      "gloss": "drink"
+    },
+    {
+      "source_unit_key": "bailey1908bhalesi:p71:come:fut-6",
+      "result": "pass",
+      "forms": [
+        "ēīn"
+      ],
+      "gloss": "will come"
+    },
+    {
+      "source_unit_key": "bailey1908bhalesi:p71:fall:fut-2",
+      "result": "pass",
+      "forms": [
+        "khirkal",
+        "khirkĕl"
+      ],
+      "gloss": "will fall"
+    },
+    {
+      "source_unit_key": "bailey1908bhalesi:p69:pronoun-3sg:agent",
+      "result": "pass",
+      "forms": [
+        "unī"
+      ],
+      "gloss": "he"
+    },
+    {
+      "source_unit_key": "bailey1908bhalesi:p71:fall:fut-4",
+      "result": "pass",
+      "forms": [
+        "khirkkamal"
+      ],
+      "gloss": "will fall"
+    },
+    {
+      "source_unit_key": "bailey1908bhalesi:p70:time-adverbs:3",
+      "result": "pass",
+      "forms": [
+        "kĕssā"
+      ],
+      "gloss": "when"
+    },
+    {
+      "source_unit_key": "bailey1908bhalesi:p73:left:item:4",
+      "result": "pass",
+      "forms": [
+        "bhēī"
+      ],
+      "gloss": "brother"
+    },
+    {
+      "source_unit_key": "bailey1908bhalesi:p73:left:item:2",
+      "result": "pass",
+      "forms": [
+        "haī"
+      ],
+      "gloss": "mother"
+    },
+    {
+      "source_unit_key": "bailey1908bhalesi:p71:auxiliary:pres-6",
+      "result": "pass",
+      "forms": [
+        "ahan"
+      ],
+      "gloss": "be"
+    },
+    {
+      "source_unit_key": "bailey1908bhalesi:p74:sentence:16",
+      "result": "pass",
+      "forms": [
+        "Usā rupayyē ēṇī tshaḍḍ."
+      ],
+      "gloss": "From him take those rupees"
+    },
+    {
+      "source_unit_key": "bailey1908bhalesi:p72:beat:imperf-f-pl",
+      "result": "pass",
+      "forms": [
+        "kuṭtī thī"
+      ],
+      "gloss": "was beating"
+    },
+    {
+      "source_unit_key": "bailey1908bhalesi:p71:fall:fut-f-2",
+      "result": "pass",
+      "forms": [
+        "khirkeul"
+      ],
+      "gloss": "will fall"
+    },
+    {
+      "source_unit_key": "bailey1908bhalesi:p70:adjectival-series:interr-2",
+      "result": "fail",
+      "forms": [
+        "kutthur"
+      ],
+      "gloss": "how much or many"
+    },
+    {
+      "source_unit_key": "bailey1908bhalesi:p72:beat:pres-subj-1",
+      "result": "pass",
+      "forms": [
+        "kuṭṭā̃"
+      ],
+      "gloss": "beat"
+    },
+    {
+      "source_unit_key": "bailey1908bhalesi:p71:fall:pres-ind-1",
+      "result": "pass",
+      "forms": [
+        "khirktan",
+        "khirktu"
+      ],
+      "gloss": "fall"
+    },
+    {
+      "source_unit_key": "bailey1908bhalesi:p69:pronoun-3sg:loc",
+      "result": "pass",
+      "forms": [
+        "us mā̃"
+      ],
+      "gloss": "he"
+    },
+    {
+      "source_unit_key": "bailey1908bhalesi:p73:participle-prose:eat-inf",
+      "result": "pass",
+      "forms": [
+        "khāṇō"
+      ],
+      "gloss": "eat"
+    },
+    {
+      "source_unit_key": "bailey1908bhalesi:p69:other-pronouns:anyone",
+      "result": "pass",
+      "forms": [
+        "kōī"
+      ],
+      "gloss": "anyone, someone"
+    }
+  ],
+  "corrections": [
+    {
+      "source_unit_key": "bailey1908bhalesi:p70:adjectival-series:interr-2",
+      "before": "kutthur",
+      "after": "kuthur",
+      "evidence": "Original PDF184 printed70 crop(230,325,270,346) at6x: one t before h.",
+      "error_class": "Spurious consonant doubling in literal transcription; inspect whole inventory before fresh sample."
+    }
+  ],
+  "scope": "Actual proposed CSV rows and source forms/glosses checked against original pages. No installation acceptance; newly added out-of-chapter passages also require targeted checks."
+}

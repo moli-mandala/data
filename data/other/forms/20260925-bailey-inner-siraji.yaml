@@ -1,0 +1,21 @@
+file: 20260925-bailey-inner-siraji.csv
+defaults:
+  transcription:
+    profile: bailey-inner-siraji-1908
+  identity:
+    legacy_ids: stem
+    append_order: 55
+  importer:
+    commands:
+      - [data/other/forms/raw_data/bailey_inner_siraji_1908/import_source.py, --install]
+    note: 'Full Inner Siraji chapter pp. 44–51; 419 source units, 415 accepted yielding 500 forms, four explicit pattern/comparative exclusions, zero unresolved cases. All 88 old keys retained; independent fresh20 audit 0 errors. Full build and requested-refresh browser gates deferred.'
+sources:
+  bailey1908innersiraji:
+    identity:
+      dedupe_by_entry_key: true
+    forms:
+      split_alternates: false
+    reference:
+      editor: OpenAI Codex
+      ocr: false
+      etymology_provenance: none

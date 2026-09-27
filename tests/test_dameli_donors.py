@@ -52,7 +52,11 @@ def test_cited_source_does_not_reconvert_audited_donors():
         param_counter={})
     expected = json.loads((RAW/'20260910-dameli-donors-audit.json').read_text())
     assert not errors.getvalue()
-    assert [r.form for r in rows] == [r['Form'] for r in expected]
+    # the audited donor spellings are the Original; the display form is their house
+    # transcription (w → v, š → ś), nothing else is re-interpreted
+    assert [r.old_form for r in rows] == [r['Form'] for r in expected]
+    assert [r.form for r in rows] == [
+        r['Form'].replace('w', 'v').replace('š', 'ś') for r in expected]
 
 def test_compiled_heads_when_requested():
     if not os.environ.get('DAMELI_COMPILED_CHECK'):

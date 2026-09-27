@@ -31,3 +31,23 @@ def test_leaves_parenthetical_source_labels_untouched():
 def test_leaves_leading_dialect_labels_untouched():
     form = "(F.) aṇḍatasi"
     assert expand_attached_sound_variants(form) == [form]
+
+
+def test_raised_length_dot_becomes_a_macron():
+    from dedr_variants import normalize_dedr_marks
+    from segments.tokenizer import Tokenizer
+    import unicodedata
+
+    # Burrow–Emeneau's Kota/Toda/Kodagu/Kolami length dot (printed as U+0387 or U+00B7)
+    assert normalize_dedr_marks("a·k") == "āk"
+    assert normalize_dedr_marks("a·(k) ka·ṛ") == "ā(k) kāṛ"
+    assert normalize_dedr_marks("pu ·") == "pū"          # the website's stray space
+    assert normalize_dedr_marks("lā·ru") == "lāru"       # already long: no double macron
+    assert normalize_dedr_marks("ã·") == "ā̃"
+    # Toda/Kota special vowels keep their own letter and take the house long form
+    house = Tokenizer("conversion/dedr.txt")
+    convert = lambda s: unicodedata.normalize("NFC", house(normalize_dedr_marks(s), column="IPA").replace(" ", ""))
+    assert convert("ï·štyu·") == "ɨ̄śtyū"
+    assert convert("ë·ḷ-") == "ə̄ḷ-"
+    assert convert("nö·ṟ") == "nø̄ṟ"
+    assert convert("nä·ṯṯu") == "nǣṯṯu"

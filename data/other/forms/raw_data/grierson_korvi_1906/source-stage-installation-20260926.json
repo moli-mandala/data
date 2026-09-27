@@ -1,0 +1,31 @@
+{
+  "status": "complete_source_stage",
+  "rows": 990,
+  "source_units": 1237,
+  "excluded_controls": 15,
+  "bound_morphology_units": 20,
+  "exact_reuses": 237,
+  "legacy_keys_preserved": 156,
+  "canonical_hashes": {
+    "csv": "e14af7b3977667610379dcc566d01dfe41faa3959422ed1419b44c8439ccca3e",
+    "audit": "4ce889c85864ea4b2a1fc566d3b5151dc3bc8f2cfeddb1a2224b2cea5f439543",
+    "profile": "91c7eb962f393a9e349bd574d03895f90f853276799e6f42ed9c05ccb8190f7f"
+  },
+  "durable_form_identities_sha256": "5ec2588f97a569cc7a1de68f59474c03612fa7a4266582be61d70dca29efcfc9",
+  "validation": {
+    "focused_tests": "15 passed in 0.99s from data directory",
+    "actual_registered_parser": "990 rows; exact Original/Native/Phonemic/citation/tag round trip",
+    "profile": "Every emitted form covered and every rule passes shared house-output policy",
+    "references": "Both scoped source and separate bound-in addendum format in memory",
+    "dialects": "Four named lects registered; shared examples unlocalized; no guessed coordinates",
+    "graph": "All source-local variant targets resolve; unsupported synonym and neuter links removed"
+  },
+  "independent_review": "root-final-installation-review-20260926.json; 20 sampled records, targeted grammar and fine-mark/errata checks accepted",
+  "deferred": [
+    "Full CLDF/database construction",
+    "Compiled identity, graph and global reference checks",
+    "Full suite",
+    "Browser/app QA"
+  ],
+  "replicable_command": "cd data && .venv/bin/python -m pytest tests/test_grierson_korvi_1906.py tests/test_grierson_korvi_full_proposal.py -q"
+}

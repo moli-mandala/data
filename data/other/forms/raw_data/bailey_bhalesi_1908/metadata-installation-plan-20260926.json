@@ -1,0 +1,38 @@
+{
+  "source": "bailey1908bhalesi",
+  "stage": "metadata review before independent audit; no canonical edits",
+  "registered_language": {
+    "id": "bhal",
+    "name": "Bhalesi",
+    "glottocode": "bhad1241",
+    "coordinates": [
+      33.03,
+      75.9
+    ],
+    "policy": "Existing registry identity and representative coordinates preserved; no new survey site or speaker locality inferred."
+  },
+  "current_profile": "bailey-bhalesi-1908",
+  "proposed_profile": "proposal-profile.txt",
+  "profile_policy": "Literal source Roman display; lowercase ṅ maps to ŋ under house policy, terminal punctuation omitted in normalized Form but retained in Original, source eu/style distinctions preserved without invented IPA.",
+  "source_reference": {
+    "book": "Thomas Grahame Bailey, The Languages of the Northern Himalayas, 1908, Part III, Bhalesi, pp. 68–75; explicit comparisons on pp. 28, 53–54 and introductory morphology on p. iii",
+    "rights": "Public domain original edition",
+    "editor": "OpenAI Codex",
+    "ocr": false,
+    "required_installation_changes": [
+      "Replace bounded-list note and included fields in cldf/sources.bib with full chapter scope.",
+      "Update YAML importer note while retaining profile routing, legacy identity settings, append order 81 and source flags.",
+      "Archive the former pilot importer/audit/transcription and update importer to install reviewed whole staging only.",
+      "Preserve all 16 legacy entry keys and durable identity file."
+    ]
+  },
+  "identity_sha256_before": "5ec2588f97a569cc7a1de68f59474c03612fa7a4266582be61d70dca29efcfc9",
+  "source_overlap": "The woman entry has a documented derivative LSI/Zoller witness. Recover the Bailey attestation with provenance; do not remove existing cross-source rows or assert independent field evidence.",
+  "source_graph": "Printed alternate answers link to their source-unit primary key; all 25 local variant references resolve. No unsupported etymology or cross-source cognate edges.",
+  "deferred": [
+    "Canonical source-stage installation pending independent original audit.",
+    "No full CLDF/database build or compiled graph/identity verification authorized.",
+    "Full suite and browser QA deferred."
+  ],
+  "source_geography_verified": "Original p53 places Bhales valley a few miles east of Bhadrawah town, in eastern Jammu proper; it gives no exact elicitation site."
+}

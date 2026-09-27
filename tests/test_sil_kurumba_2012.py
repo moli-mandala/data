@@ -360,8 +360,8 @@ def test_shared_profile_route_and_coverage_are_complete():
         assert "�" not in converted
     assert tokenizer("su:rjʌn", column="IPA", segment_separator="", separator="") == "sūryan"
     assert tokenizer("ku:rʌ'", column="IPA", segment_separator="", separator="") == "kūra'"
-    assert tokenizer("aɽɽja", column="IPA", segment_separator="", separator="") == "aṛṛya"
-    assert tokenizer("na':", column="IPA", segment_separator="", separator="") == "na':"
+    assert tokenizer("aɽɽja", column="IPA", segment_separator="", separator="") == "āṛṛyā"
+    assert tokenizer("na':", column="IPA", segment_separator="", separator="") == "nā':"
     _routed("blairetal2012kurumba", "sil-kurumba-2012", str(INSTALLED_FORMS))
     errors = io.StringIO()
     parsed, stats = make_cldf.parse_file(
@@ -372,7 +372,7 @@ def test_shared_profile_route_and_coverage_are_complete():
     assert stats == {"converted": 3204, "for_conversion": 3204}
     first = parsed[0]
     assert first.ipa == "bəɳɖe"
-    assert first.form == "bəṇḍe"
+    assert first.form == "baṇḍe"
 
 
 def test_shared_integration_manifest_freezes_counts_hashes_and_deferred_gates():

@@ -1,0 +1,171 @@
+{
+  "status": "source_stage_installed",
+  "source": "Dalton–Haldar 1872 Juang separate vocabulary, printed pp. 241–242",
+  "source_pdf_sha256": "38dda30a06f7c56df34311328c36d3fdf8cb9835a5420aea4453fbb1b76008b1",
+  "inventory_sha256": "1351d7879164489fd78179146920796be7cd5e87bf9cbca31e03c0f38c484544",
+  "prompt_rows": 134,
+  "reviewed": 130,
+  "typed_holds": 4,
+  "sections": {
+    "numerals": 11,
+    "pronouns": 7,
+    "miscellaneous words": 21,
+    "left column": 47,
+    "right column": 48
+  },
+  "sample_seed": 20260925,
+  "sample_method": "Stratified random sample: 3 numerals, 3 pronouns, 4 miscellaneous, 5 p.242 left, 5 p.242 right; compared each English head, Juang reading/hold, and physical page with 350-dpi rendered scans. Later 700-dpi review resolved two sampled holds (You, Star); sample statuses are synchronized to the final inventory.",
+  "sample_size": 20,
+  "material_errors": 0,
+  "sample": [
+    {
+      "inventory_key": "p241:numerals:06",
+      "english_gloss": "Six",
+      "source_reading": "choogota",
+      "review_status": "reviewed",
+      "result": "pass"
+    },
+    {
+      "inventory_key": "p241:numerals:03",
+      "english_gloss": "Three",
+      "source_reading": "igota",
+      "review_status": "reviewed",
+      "result": "pass"
+    },
+    {
+      "inventory_key": "p241:numerals:09",
+      "english_gloss": "Nine",
+      "source_reading": "naugota",
+      "review_status": "reviewed",
+      "result": "pass"
+    },
+    {
+      "inventory_key": "p241:pronouns:01",
+      "english_gloss": "I",
+      "source_reading": "aing",
+      "review_status": "reviewed",
+      "result": "pass"
+    },
+    {
+      "inventory_key": "p241:pronouns:04",
+      "english_gloss": "Thou, thine",
+      "source_reading": "aru, am",
+      "review_status": "reviewed",
+      "result": "pass"
+    },
+    {
+      "inventory_key": "p241:pronouns:05",
+      "english_gloss": "You, of you, your",
+      "source_reading": "apáre",
+      "review_status": "reviewed",
+      "result": "pass"
+    },
+    {
+      "inventory_key": "p241:miscellaneous-words:20",
+      "english_gloss": "Camel",
+      "source_reading": "uto",
+      "review_status": "reviewed",
+      "result": "pass"
+    },
+    {
+      "inventory_key": "p241:miscellaneous-words:08",
+      "english_gloss": "Star",
+      "source_reading": "kujinda",
+      "review_status": "reviewed",
+      "result": "pass"
+    },
+    {
+      "inventory_key": "p241:miscellaneous-words:19",
+      "english_gloss": "Ass",
+      "source_reading": "godo",
+      "review_status": "reviewed",
+      "result": "pass"
+    },
+    {
+      "inventory_key": "p241:miscellaneous-words:16",
+      "english_gloss": "Cock",
+      "source_reading": "senkoi",
+      "review_status": "reviewed",
+      "result": "pass"
+    },
+    {
+      "inventory_key": "p242:left-column:26",
+      "english_gloss": "To-morrow",
+      "source_reading": "tera",
+      "review_status": "reviewed",
+      "result": "pass"
+    },
+    {
+      "inventory_key": "p242:left-column:06",
+      "english_gloss": "Tooth",
+      "source_reading": "gone",
+      "review_status": "reviewed",
+      "result": "pass"
+    },
+    {
+      "inventory_key": "p242:left-column:34",
+      "english_gloss": "Sambur",
+      "source_reading": "serum",
+      "review_status": "reviewed",
+      "result": "pass"
+    },
+    {
+      "inventory_key": "p242:left-column:17",
+      "english_gloss": "Mother",
+      "source_reading": "boin",
+      "review_status": "reviewed",
+      "result": "pass"
+    },
+    {
+      "inventory_key": "p242:left-column:01",
+      "english_gloss": "Hand",
+      "source_reading": "iti",
+      "review_status": "reviewed",
+      "result": "pass"
+    },
+    {
+      "inventory_key": "p242:right-column:19",
+      "english_gloss": "Behind",
+      "source_reading": "kinom",
+      "review_status": "reviewed",
+      "result": "pass"
+    },
+    {
+      "inventory_key": "p242:right-column:01",
+      "english_gloss": "Fish",
+      "source_reading": "karom",
+      "review_status": "reviewed",
+      "result": "pass"
+    },
+    {
+      "inventory_key": "p242:right-column:22",
+      "english_gloss": "Why",
+      "source_reading": "kotha-biri",
+      "review_status": "reviewed",
+      "result": "pass"
+    },
+    {
+      "inventory_key": "p242:right-column:16",
+      "english_gloss": "Before",
+      "source_reading": "sengua",
+      "review_status": "reviewed",
+      "result": "pass"
+    },
+    {
+      "inventory_key": "p242:right-column:40",
+      "english_gloss": "Bow",
+      "source_reading": "kukah",
+      "review_status": "reviewed",
+      "result": "pass"
+    }
+  ],
+  "notes": [
+    "Four printed comma-separated answer cells are split as explicit selected_forms alternatives using |: p241 pronouns 04 aru|am and 06 ai|arih; p242 left 04 emor|emet; p242 right 02 dai|domong domrui. The latter second alternative is a two-word expression. Printed commas remain in source_reading.",
+    "Second 700-dpi visual pass resolved 14 initial holds, including p242 right Sword corrected from provisional turnli to printed turuli. Four typed holds remain: p241 numeral One; p242 Bad, Give, White. None emits a selected form.",
+    "The shared plural suffix loko is represented by printed Brother/Brothers examples, without auto-generating plurals for all nouns.",
+    "The gender markers andesh and petah are represented by printed Male Goat/She Goat examples, without auto-generating forms.",
+    "This source-local list is not yet integrated; the coordinating task owns the comparative table and final canonical importer."
+  ],
+  "selected_forms": 134,
+  "installed_form_rows": 134
+}

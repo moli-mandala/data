@@ -30,6 +30,7 @@ import csv
 import sys
 import unicodedata
 from collections import defaultdict
+from functools import lru_cache
 
 csv.field_size_limit(min(sys.maxsize, 2**31 - 1))
 
@@ -61,14 +62,21 @@ def load_graphemes(path: str) -> list[str]:
 
 
 def segmenter(graphemes: list[str]):
+    # graphemes arrive longest-first; keep that order within each first-character bucket so
+    # the first match at a position is the same one the flat scan would have found
+    by_first: dict[str, list[str]] = defaultdict(list)
+    for g in graphemes:
+        if g:
+            by_first[g[0]].append(g)
+
     def tok(form: str) -> list[str]:
         # a hyphen marks a stem/affix boundary — strip it but keep the material on both sides
         s = unicodedata.normalize("NFC", form).replace("-", "").split("/")[0].strip()
         out: list[str] = []
         i = 0
         while i < len(s):
-            for g in graphemes:
-                if g and s.startswith(g, i):
+            for g in by_first.get(s[i], ()):
+                if s.startswith(g, i):
                     out.append(g)
                     i += len(g)
                     break
@@ -184,10 +192,15 @@ def segments(tok, form: str) -> list[Seg]:
 
 def segment_identity(seg: Seg) -> str:
     """Pool vowel prosody, never consonantal diacritics such as the acute in ś."""
-    if seg.kind != "V":
-        return unicodedata.normalize("NFC", seg.raw)
+    return _identity(seg.raw, seg.kind)
+
+
+@lru_cache(maxsize=None)  # score() asks per DP cell; the answer depends only on (raw, kind)
+def _identity(raw: str, kind: str) -> str:
+    if kind != "V":
+        return unicodedata.normalize("NFC", raw)
     return unicodedata.normalize("NFC", "".join(
-        ch for ch in unicodedata.normalize("NFD", seg.raw)
+        ch for ch in unicodedata.normalize("NFD", raw)
         if ch not in "\u0300\u0301\u0302\u030c\u030b\u030f"
     ))
 

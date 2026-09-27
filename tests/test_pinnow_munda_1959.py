@@ -152,7 +152,13 @@ def test_compiled_rows_survive_with_identity_and_phonemic_layers():
     if not rows:
         return
     assert len(rows) == 4051
-    assert all(row["Original"] == row["Form"] == row["Phonemic"] for row in rows)
+    from segments import Tokenizer
+    import unicodedata
+    tokenizer = Tokenizer(str(source.PROFILE))
+    assert all(row['Original'] == row['Phonemic'] for row in rows)
+    for row in rows:
+        expected = unicodedata.normalize('NFC', tokenizer(row['Original'],column='IPA').replace(' ','').replace('#',' '))
+        assert row['Form'] == expected
     assert {"Asuri", "Birhor", "Turi"} <= {row["Language_ID"] for row in rows}
 
     with (ROOT / "cldf/form-source-keys.csv").open(encoding="utf-8", newline="") as handle:

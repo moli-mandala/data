@@ -1,0 +1,22 @@
+file: 20260925-bailey-surkhuli.csv
+defaults:
+  transcription:
+    profile: bailey-surkhuli-1920
+    preserve_hyphens: true
+  identity:
+    legacy_ids: stem
+    append_order: 49
+  importer:
+    commands:
+      - [data/other/forms/raw_data/bailey_surkhuli_1920/import_source.py, --install]
+    note: Whole Surkhuli source, shared introduction113–118 with explicit Surkhuli117; main148–158 grammar, 22 translated responses, glossary; 529 physical units, 605 forms. All 267 prior keys/order/rows retained. Literal morphology and source marks preserved.
+sources:
+  bailey1920surkhuli:
+    identity:
+      dedupe_by_entry_key: true
+    forms:
+      split_alternates: false
+    reference:
+      editor: OpenAI Codex
+      ocr: true
+      etymology_provenance: none

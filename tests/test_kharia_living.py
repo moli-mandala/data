@@ -70,7 +70,9 @@ def test_profile_all_symbols_and_rich_source_layers():
         for norm in ('NFC','NFD'):
             value=unicodedata.normalize(norm,row[2])
             out=tokenizer(value,column='IPA').replace(' ','').replace('#',' ')
-            assert unicodedata.normalize('NFC',out)==row[2]
+            # house transcription (ʈ ɖ ɳ ɽ ɲ → ṭ ḍ ṇ ṛ ñ), the same from NFC and NFD input
+            assert '�' not in out
+            assert unicodedata.normalize('NFC',out)==unicodedata.normalize('NFC',tokenizer(row[2],column='IPA').replace(' ','').replace('#',' '))
     error=io.StringIO()
     parsed,stats=parse_file(str(ROOT/f'data/other/forms/{STEM}.csv'),errors=error)
     assert not error.getvalue()
@@ -78,13 +80,14 @@ def test_profile_all_symbols_and_rich_source_layers():
     assert stats=={'converted':521,'for_conversion':521}
     raw={r[10]:r for r in forms()}
     for r in parsed:
-        assert r.form==raw[r.entry_key][2]
+        assert r.form==unicodedata.normalize('NFC',tokenizer(raw[r.entry_key][2],column='IPA').replace(' ','').replace('#',' '))
         assert r.old_form==raw[r.entry_key][2]
         assert r.ipa==raw[r.entry_key][5]
 
 
 def test_compiled_source_identity_and_variant_graph():
     raw = {r[10]: r for r in forms()}
+    tokenizer = Tokenizer(str(ROOT/'conversion/kharia-living.txt'))
     aliases = {r['Legacy_ID']: r['Form_ID'] for r in csv.DictReader(
         (ROOT/'cldf/form-id-aliases.csv').open())}
     identities = {r['Source_Key']: aliases.get(r['Legacy_ID'], r['Legacy_ID'])
@@ -98,7 +101,9 @@ def test_compiled_source_identity_and_variant_graph():
     for key, row in raw.items():
         built = compiled[identities[key]]
         assert built['Language_ID'] == 'kh'
-        assert built['Form'] == row[2] and built['Gloss'] == row[3]
+        expected = unicodedata.normalize('NFC', tokenizer(row[2], column='IPA').replace(' ', '').replace('#', ' '))
+        assert built['Form'] == expected and built['Gloss'] == row[3]
+        assert built['Original'] == row[2]
         assert built['Native'] == row[4] and built['Phonemic'] == row[5]
     actual = {(r['Child_ID'], r['Parent_ID'], r['Kind'], r['Rank'])
               for r in csv.DictReader((ROOT/'cldf/edges.csv').open())

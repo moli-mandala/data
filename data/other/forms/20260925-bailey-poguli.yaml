@@ -1,0 +1,23 @@
+file: 20260925-bailey-poguli.csv
+defaults:
+  transcription:
+    profile: bailey-poguli-1908
+  identity:
+    legacy_ids: stem
+    append_order: 110
+  importer:
+    commands:
+    - - data/other/forms/raw_data/bailey_poguli_1908/import_source_full.py
+      - --install
+    note: Complete Poguli chapter pp51–60:400 source units,393accepted→460forms;7explicit
+      exclusions and no typography holds. Full build/browser gates deferred.
+sources:
+  bailey1908poguli:
+    identity:
+      dedupe_by_entry_key: true
+    forms:
+      split_alternates: false
+    reference:
+      editor: OpenAI Codex
+      ocr: false
+      etymology_provenance: none

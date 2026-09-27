@@ -38,9 +38,9 @@ def test_kochila_lects_are_registered():
 def test_kochila_profile_converts_ipa_and_covers_every_form():
     profile = Tokenizer(DATA_DIR / "conversion/kochila-tharu.txt")
     cases = {
-        "dʒɔʈə": "joṭə",
+        "dʒɔʈə": "jɔṭa",
         "kʰẽⁱs": "kʰẽⁱs",
-        "tʃaⁱ̃t̪i": "caⁱ̃ti",
+        "tʃaⁱ̃t̪i": "cāⁱ̃ti",
         "a:ŋ": "āŋ",
     }
     for source, expected in cases.items():

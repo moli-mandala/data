@@ -1,0 +1,21 @@
+file: 20260925-bailey-bilaspuri.csv
+defaults:
+  transcription:
+    profile: bailey-bilaspuri-1920
+  identity:
+    legacy_ids: stem
+    append_order: 64
+  importer:
+    commands:
+      - [data/other/forms/raw_data/bailey_bilaspuri_1920/import_source.py, --install]
+    note: Full Bailey 1920 Bilaspuri pp. 245–248 glossary, 237 accepted cells expanded to 288 forms; all 114 legacy keys retained; fresh independent audit 0/20.
+sources:
+  bailey1920bilaspuri:
+    identity:
+      dedupe_by_entry_key: true
+    forms:
+      split_alternates: false
+    reference:
+      editor: OpenAI Codex
+      ocr: true
+      etymology_provenance: none

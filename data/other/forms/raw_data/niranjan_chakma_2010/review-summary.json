@@ -1,0 +1,150 @@
+{
+  "status": "Main-wordlist source files installed; broader book ingestion and compiled validation incomplete",
+  "raw_ocr_lines": 2313,
+  "english_ocr_lines": 758,
+  "candidate_records": 733,
+  "excluded_english_heading_or_noise_lines": 26,
+  "merged_english_continuation_lines": 1,
+  "unpaired_native_lines": 89,
+  "missing_candidate_cells": 0,
+  "printed_cells_confirmed_nonblank": 14,
+  "material_transcription_audit": {
+    "file": "transcription-audit-2026092109.json",
+    "seed": 2026092109,
+    "material_errors": 0,
+    "sample_size": 20,
+    "existing_uncertain_records": 1,
+    "scope": "Main-wordlist transcription; installed-output audit still pending"
+  },
+  "known_errors": [
+    "Bengali-script letter substitutions remain; all 14 previously missing aligned cells recovered by the Bengali-only best model.",
+    "Fixed-column first pass clipped text because page margins shift; retained only in scratch",
+    "Source contains misspelled English glosses: preserve source evidence separately from any editorial corrections",
+    "Per-page boundaries remain provisional; long native cells and headers require review",
+    "Whole-column English OCR omitted Dancing hall on printed26 and Linguistic on printed35; recovered visually and via isolated-cell OCR. All 28 main-wordlist pages have a first visual review; fresh acceptance audit remains pending."
+  ],
+  "scope_deferred": [
+    "Remaining lexical/comparative chapters",
+    "91 flagged source readings (one withheld) and ambiguous slash scope",
+    "Auxiliary grammar-introduction reference if that section is ingested",
+    "Compiled integration validation and full suite; no build authorization"
+  ],
+  "user_deferred": [
+    "All database/data builds",
+    "Remote execution",
+    "Compiled integration and browser QA"
+  ],
+  "raw_lines_sha256": "00790140d56d6cbd31a515430386a0def92570fdaa414f30344b019ba060404f",
+  "previous_missing_candidate_cells": 14,
+  "model_experiment": {
+    "url": "https://raw.githubusercontent.com/tesseract-ocr/tessdata_best/main/ben.traineddata",
+    "sha256": "1cd0129288d1f74f6661c35e638e487bd146a66bb732ecd9e011e48dcb0df623",
+    "bytes": 11045427,
+    "sublanguage": "Embedded English fallback disabled explicitly with tessedit_load_sublangs=; otherwise creates Latin-script noise.",
+    "evidence": "v2-* preserves earlier raw/paired outputs; current raw-lines and paired outputs use v4. English OCR is byte-for-byte structurally identical across these passes."
+  },
+  "manual_review": {
+    "records": 733,
+    "printed_pages": [
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46
+    ],
+    "visually_reviewed_without_remaining_glyph_flags": 642,
+    "explicit_transcription_uncertainties": 91,
+    "separate_gloss_discrepancies": 4,
+    "file": "visual-review.jsonl"
+  },
+  "preparation_tests": {
+    "passed": 15,
+    "command": ".venv/bin/python -m pytest -q tests/test_niranjan_chakma_preparation.py tests/test_niranjan_chakma_import.py",
+    "scope": "Evidence, importer and lightweight parse_file checks; no compiled build"
+  },
+  "recovered_english_cells": 2,
+  "unpaired_line_review": {
+    "file": "unpaired-line-review.jsonl",
+    "reviewed": 89,
+    "classifications": {
+      "section-heading": 31,
+      "column-heading": 30,
+      "page-footer": 28
+    },
+    "lexical_rows_excluded": 0
+  },
+  "second_glyph_review": {
+    "reviewed": 144,
+    "resolved": 53,
+    "retained_uncertainty": 91,
+    "file": "second-glyph-review.jsonl"
+  },
+  "previous_material_transcription_audit": {
+    "file": "transcription-audit-2026092108.json",
+    "seed": 2026092108,
+    "material_errors": 2,
+    "sample_size": 20,
+    "status": "failed; fresh sample required",
+    "corrections_applied": true,
+    "systematic_followup": "All reviewed English glosses scanned for unexpected non-Latin punctuation; only the Sclera bar was found. Consonant-transcription reliability still requires a fresh audit."
+  },
+  "multiple_form_review": {
+    "file": "multiple-form-review.json",
+    "cells": 12,
+    "independent_coequivalent_pairs": 11,
+    "shared_prefix_scope_unresolved": 1,
+    "variant_edges": 0
+  },
+  "draft_import": {
+    "source_records": 733,
+    "draft_rows": 742,
+    "withheld_records": 2,
+    "uncertain_draft_rows": 97,
+    "installed_rows": 0,
+    "relationship_edges": 0,
+    "audit": "draft-audit.jsonl"
+  },
+  "metadata_preparation": {
+    "bibliography": "source.bib",
+    "settings": "20260921-niranjan-chakma.yaml",
+    "language_review": "language-review.json",
+    "symbol_inventory": "symbol-inventory.json",
+    "unique_symbols": 55,
+    "validation": "Draft bibliography parses; source settings schema and full inventory pass focused checks. Not installed."
+  },
+  "source_installation": {
+    "rows": 742,
+    "uncertain_rows": 97,
+    "withheld_cells": 2,
+    "settings_validated": true,
+    "source_csv": "data/other/forms/20260921-niranjan-chakma.csv",
+    "output_audit": "output-audit-2026092110.json",
+    "material_errors": 0,
+    "sample_size": 20,
+    "existing_uncertain_records_in_sample": 1,
+    "compiled_survival": "not run; builds deferred by user"
+  }
+}

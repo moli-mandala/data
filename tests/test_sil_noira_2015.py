@@ -13,7 +13,7 @@ PACKAGE = ROOT / "data/other/forms/raw_data/sil_noira_2015"
 INSTALLED = ROOT / "data/other/forms/20260829-sil-noira.csv"
 PROFILE = ROOT / "conversion/sil-noira.txt"
 STAGED_SHA256 = "c82983a319d6d6fbf5c07063f0655ae3e4e8e3890d625e1bfc2a38f95c811746"
-PROFILE_SHA256 = "3932523f127f4a13a94915dbd88bc21d2cac5867138bec7f2ce03a061e7f0de5"
+PROFILE_SHA256 = "0053f962da609cdb61c8a7b692bb8fdd2c4ebc7d476cae58ce2850df52939f3b"
 
 
 def dict_rows(path: Path, delimiter: str = ",") -> list[dict[str, str]]:
@@ -80,8 +80,20 @@ def test_noira_profile_is_exact_and_routed_by_source_key() -> None:
     assert PROFILE.read_bytes() == (PACKAGE / "conversion_profile.tsv").read_bytes()
     assert hashlib.sha256(PROFILE.read_bytes()).hexdigest() == PROFILE_SHA256
     inventory = dict_rows(PACKAGE / "profile_inventory.tsv", "\t")
-    assert len(inventory) == 54
-    assert all(row["Present_In_Staged_Targets"] == "yes" for row in inventory)
+    # Shared house-profile review adds attested aː/oː/ɑː sequences; check the
+    # full mapping and occurrence evidence rather than the old 54-rule count.
+    profile_rows = dict_rows(PACKAGE / "conversion_profile.tsv", "\t")
+    assert len(inventory) == len(profile_rows) == 57
+    assert {(r["Grapheme"], r["IPA"]) for r in inventory} == {
+        (r["Grapheme"], r["IPA"]) for r in profile_rows
+    }
+    long_rules = {r["Grapheme"]: r for r in inventory if r["Grapheme"] in {"aː", "oː", "ɑː"}}
+    assert {g: (r["IPA"], int(r["Staged_Input_Occurrences"])) for g, r in long_rules.items()} == {
+        "aː": ("ā", 7), "oː": ("ō", 2), "ɑː": ("ā", 1)
+    }
+    assert {row["Grapheme"] for row in inventory if row["Present_In_Staged_Targets"] == "no"} == {"ː"}
+    assert next(row for row in inventory if row["Grapheme"] == "ː")["Staged_Input_Occurrences"] == "0"
+    assert all(row["Present_In_Staged_Targets"] == ("yes" if int(row["Staged_Input_Occurrences"]) else "no") for row in inventory)
     _routed("varghesekumar2015noira", "sil-noira", "data/other/forms/20260829-sil-noira.csv")
 
 

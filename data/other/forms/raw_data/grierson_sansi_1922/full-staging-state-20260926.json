@@ -1,0 +1,48 @@
+{
+  "source": "grierson_sansi_1922",
+  "source_stage": "complete_source_stage_full_build_user_deferred",
+  "canonical_unchanged": false,
+  "counts": {
+    "prose_units": 573,
+    "aligned_specimen_attestations": 1507,
+    "table_prompts": 241,
+    "table_cells": 482,
+    "audit_units": 2562,
+    "proposed_forms": 1943,
+    "legacy_keys_preserved": 87,
+    "explicit_derivation_edges": 154,
+    "pronunciation_attachments": 2
+  },
+  "review_status_counts": {
+    "prose-staged.tsv": {
+      "second_reading_complete": 573
+    },
+    "specimen-staged.tsv": {
+      "second_reading_complete": 1504,
+      "second_reading_transcription_uncertain": 3
+    },
+    "table-staged.tsv": {
+      "second_reading_complete": 238,
+      "second_reading_transcription_uncertain": 3
+    }
+  },
+  "pending": [],
+  "deferred_by_user": [
+    "database/full-build/full-suite",
+    "browser built-app QA"
+  ],
+  "scratch": "one overwritten tmp/handuri-completion/review-active.png",
+  "validation": {
+    "focused_tests": "6 passed",
+    "scoped_parser": "1943 converted, zero errors",
+    "profile": "all source graphemes covered",
+    "tags": "all registered; argot backend/frontend synchronized",
+    "auxiliary_references": "6 parsed and formatted",
+    "independent_audit": "20/20 passed plus2 pronunciation evidences and8 Bailey argot tokens"
+  },
+  "final_hashes": {
+    "canonical_csv": "94c4467c8fa470a98d062f79872dfe9e15e41b1dd723988615de0e13e17a8290",
+    "canonical_audit": "61d87a21bac442a9ac9d93a3a3c1b43dc28a09d2255d7c8a0899295680cc5596",
+    "preview_audit": "1a3c63763c814e1cdb778477ce1c36027793c2472f10bfb1a411e182ac699e58"
+  }
+}

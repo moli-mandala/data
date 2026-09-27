@@ -106,7 +106,7 @@ def test_source_sound_profile_covers_difficult_lahul_symbols():
         )
 
     assert convert("ɾəɳdʒ.kɾiɳdʒ") == "rəṇj.kriṇj"
-    assert convert("ŋɐʒɐtshʌmtʃe") == "ŋažaʦhamce"
+    assert convert("ŋɐʒɐtshʌmtʃe") == "ŋaźaʦhamce"
     assert convert("k̚ t̪ɐ") == "k̚ ta"
 
 

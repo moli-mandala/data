@@ -1,0 +1,42 @@
+{
+  "status": "approved-source-stage-installation",
+  "reviewer": "root",
+  "seed": 20260926170,
+  "sha256": {
+    "expression-recovery-proposed.csv": "2a93db01cf7521611a3574d0b551ad719c4f26df80f8f7a29bc5600dc551b942",
+    "expression-recovery-first-reading-20260926.jsonl": "2382db4bc6403738ac9afa885cf1ec12f82cc0b2ab6d778688a543fd72cc6442",
+    "expression-recovery-census-20260926.jsonl": "cb93a3bb1a9454a64b207162a418d28aa626223e3d2a7c64fb8d4b15097f1481",
+    "expression-recovery-profile.txt": "0e6e8b78802ab0e728b869195c0d428fa25f5e11f2b2574ddf71c421c0dca402"
+  },
+  "sample_count": 20,
+  "material_errors": 0,
+  "reviewed_entry_keys": [
+    "ho-mla2004:00953:recovery:01",
+    "ho-mla2004:01232:recovery:01",
+    "ho-mla2004:00062:recovery:01",
+    "ho-mla2004:01174:recovery:01",
+    "ho-mla2004:00971:recovery:02",
+    "ho-mla2004:00962:recovery:01",
+    "ho-mla2004:00751:recovery:01",
+    "ho-mla2004:00059:recovery:04",
+    "ho-mla2004:01114:recovery:01",
+    "ho-mla2004:00305:recovery:01",
+    "ho-mla2004:00978:recovery:01",
+    "ho-mla2004:00971:recovery:01",
+    "ho-mla2004:00979:recovery:01",
+    "ho-mla2004:00716:recovery:02",
+    "ho-mla2004:01336:recovery:01",
+    "ho-mla2004:00010:recovery:01",
+    "ho-mla2004:01364:recovery:01",
+    "ho-mla2004:01364:recovery:02",
+    "ho-mla2004:01003:recovery:01",
+    "ho-mla2004:01056:recovery:01"
+  ],
+  "evidence": "All 20 raw source excerpts verified verbatim against pinned source-wayback.txt; all selected actual CSV rows verified against frozen proposal. Independent reading checked form, gloss scope, grammatical scope, malformed delimiter repair and blank-gloss retention. Prior full 90-candidate review remains supporting evidence.",
+  "scope": "Entire available archived A–C snapshot, not full Deeney dictionary. 2227 proposed rows including 81 recovered attestations; 2 existing gloss-scope repairs retain keys.",
+  "limitations": [
+    "Full compiled CLDF, global graph/identity and full suite remain deferred.",
+    "Browser database and browser QA not requested."
+  ],
+  "permission": "Owner may install exactly reviewed source-stage artifacts, run focused checks and update source coverage metadata. No database build, remote work, commit or publication."
+}

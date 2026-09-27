@@ -1,0 +1,31 @@
+{
+  "status": "Source-preserving draft conversion policy validated; installation pending metadata and output audit",
+  "evidence": [
+    {
+      "pdf_page": 7,
+      "printed_page": 5,
+      "observation": "Grammar introduction explicitly discusses difficulties representing Chakma in Bengali letters. It adapts a 2003 SCERT Tripura primer contribution; auxiliary bibliographic details remain to be resolved."
+    },
+    {
+      "pdf_page": 8,
+      "printed_page": 6,
+      "observation": "Grammatical examples use Chakma in Bengali script with Bengali explanations. This is not a Roman/IPA transcription key."
+    }
+  ],
+  "proposed_fields": {
+    "Form": "Preserve source Bengali-script spelling; no unsupported phonemic conversion.",
+    "Original": "Same source spelling, derived from raw source form.",
+    "Native": "Source Bengali-script spelling, including meaningful punctuation.",
+    "Phonemic": "Blank; this source section provides no separate IPA/phonemic transcription.",
+    "Gloss": "Printed English lexical gloss, with any editorial correction separately auditable."
+  },
+  "conversion": false,
+  "alternatives": "Printed comma or slash alternatives must be reviewed and preserved; do not assert historical or variant relationships without source evidence.",
+  "claims": "Main thematic wordlist is lexical attestation, not inherited or borrowed ancestry.",
+  "unresolved": [
+    "Orthographic marks and rare conjuncts",
+    "Auxiliary reference named by grammar introduction",
+    "Regional scope versus publisher location: do not infer a Tripura dialect from the imprint alone."
+  ],
+  "symbol_inventory": "symbol-inventory.json: 55 source symbols, all preserved, no phonological values inferred"
+}

@@ -34,16 +34,44 @@ def dicts(path):
 
 
 def test_audit_covers_every_attested_nihali_record_once():
-    forms = dicts(ROOT / "cldf/forms.csv")
-    targets = [
-        row for row in forms
-        if is_study_attestation(row)
-    ]
+    with (ROOT / "cldf/forms.csv").open(encoding="utf-8", newline="") as stream:
+        targets = [row for row in csv.DictReader(stream) if is_study_attestation(row)]
     audit = dicts(ANALYSIS / "nihali-provisional-etymology-audit.csv")
     summary = json.loads((ANALYSIS / "nihali-provisional-etymology-summary.json").read_text())
-    assert len(targets) == 4299
+    # The reviewed cohort remains fixed. The later optional-length expansion adds
+    # 22 short readings of those attestations, not new provisional hypotheses.
+    assert len(targets) == 4321
     assert len(audit) == 4299
-    assert {row["ID"] for row in targets} == {row["Form_ID"] for row in audit}
+    audited_ids = {row["Form_ID"] for row in audit}
+    with (ROOT / "data/other/forms/20260817-nagaraja-nihali-wiktionary.csv").open(
+        encoding="utf-8", newline=""
+    ) as stream:
+        short_keys = {row[10] for row in csv.reader(stream) if row[10].endswith(":short")}
+    assert len(short_keys) == 22
+    paired_keys = short_keys | {key.removesuffix(":short") for key in short_keys}
+    with (ROOT / "cldf/form-source-keys.csv").open(encoding="utf-8", newline="") as stream:
+        legacy_keys = {row["Legacy_ID"]: row["Source_Key"] for row in csv.DictReader(stream)
+                       if row["Source_Key"] in paired_keys}
+    with (ROOT / "cldf/form-id-aliases.csv").open(encoding="utf-8", newline="") as stream:
+        keyed_ids = {legacy_keys[row["Legacy_ID"]]: row["Form_ID"] for row in csv.DictReader(stream)
+                     if row["Legacy_ID"] in legacy_keys}
+    short_ids = {keyed_ids[key] for key in short_keys}
+    assert len(short_ids) == 22 and not (short_ids & audited_ids)
+    assert {row["ID"] for row in targets} == audited_ids | short_ids
+    with (ROOT / "cldf/edges.csv").open(encoding="utf-8", newline="") as stream:
+        short_edges = [row for row in csv.DictReader(stream) if row["Child_ID"] in short_ids]
+    assert len(short_edges) == 22
+    assert {row["Child_ID"] for row in short_edges} == short_ids
+    assert Counter(row["Kind"] for row in short_edges) == {"variant": 21, "borrowed": 1}
+    assert all(row["Rank"] == "1" for row in short_edges)
+    assert all(row["Parent_ID"] in audited_ids for row in short_edges if row["Kind"] == "variant")
+    # he(ː)la already has the explicit CDIAL borrowing recorded in the reviewed
+    # audit; both length readings retain that claim instead of adding a new one.
+    long_id = keyed_ids["nagaraja2014-wiktionary:716"]
+    long_audit = next(row for row in audit if row["Form_ID"] == long_id)
+    borrowed = next(row for row in short_edges if row["Kind"] == "borrowed")
+    assert borrowed["Child_ID"] == keyed_ids["nagaraja2014-wiktionary:716:short"]
+    assert borrowed["Parent_ID"] == long_audit["Parent_ID"] == "14158"
     assert all(
         row["Parent_ID"] and row["Method"] and row["Confidence"]
         and row["Lexeme_ID"].startswith("nilex-") and int(row["Lexeme_Size"]) >= 1

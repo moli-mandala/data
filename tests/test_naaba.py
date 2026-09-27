@@ -29,7 +29,7 @@ def test_naaba_ipa_profile():
         "tɕʰeraŋ": "ʦ̣ʰeraŋ",
         "ɡo̤": "go̤",
         "bĩ̤zo": "bĩ̤zo",
-        "(pʌrtʃʰʌ)": "partśʰa",
+        "(pʌrtʃʰʌ)": "parcʰa",
     }
     for source, expected in cases.items():
         converted = profile(unicodedata.normalize("NFD", source), column="IPA")

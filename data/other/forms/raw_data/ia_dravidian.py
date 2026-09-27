@@ -11,6 +11,20 @@ RAW=Path(__file__).with_name('ia_dravidian_2026')
 sys.path.insert(0,str(ROOT))
 from dialects import dialect_tag
 SOURCES={'bajjika':'regmi2014bajjika','lindgren':'lindgren2023dravidian','dravlex':'kolipakam2018dravlex'}
+def load_primary_reviews():
+ reviews={}
+ for name in ('pattapu-primary-review.json','belari-primary-review.json'):
+  current=json.loads((RAW/name).read_text())
+  assert not reviews.keys() & current.keys()
+  reviews.update(current)
+ return reviews
+def annotate_primary_review(row, reviews):
+ review=reviews.get(row[10])
+ if review:
+  assert (row[2],row[3])==(review['expected_form'],review['expected_gloss']),row[10]
+  row[6]=review['note']
+  if review.get('uncertain',True):row[14]=' '.join(dict.fromkeys(row[14].split()+['uncertain']))
+ return review
 def nfc(s):return unicodedata.normalize('NFC',s.strip())
 def read(name,delim=','):return list(csv.DictReader((RAW/name).open(),delimiter=delim))
 def ipa(segments):return nfc(''.join(segments.split()).replace('+',' '))
@@ -67,11 +81,14 @@ def build(out):
  for s,(lat,lon) in zip(sites,gps):
   d='bajjika-'+s.lower();dialects.append([d,dialect_tag('Mth',d,'Bajjika '+s),'Mth',d,'Bajjika '+s,'bajj1234',str(lat[0]+lat[1]/60+lat[2]/3600),str(lon[0]+lon[1]/60+lon[2]/3600),'Bihari',s+', Nepal; Regmi et al. 2014, table 2.3','A'])
  audits={k:[] for k in SOURCES};rows={k:[] for k in SOURCES}
+ primary_reviews=load_primary_reviews()
  def emit(k,key,lang,form,gloss,phonemic='',tags=None,source_extra='',cog='',raw=None,reason=''):
   source=f'{SOURCES[k]}[{key}]'+(';' +source_extra if source_extra else '')
   r=[lang,'',nfc(form),nfc(gloss),'',phonemic,'',source,cog,'',key,'','','',' '.join(tags or [])]
+  review=annotate_primary_review(r,primary_reviews)
   assert form and lang in base,(key,lang)
   rows[k].append(r);audits[k].append(dict(entry_key=key,status='unlinked',reason=reason,upstream=raw,installed=r))
+  if review:audits[k][-1]['primary_source_review']=review
  for r in extract_bajjika():
   item=r['item'];gloss=r['gloss'].replace('\n',' ').strip()
   fixes={49:'lightning',69:'wheat (husked)',71:'rice (husked)',74:'groundnut',79:'cauliflower',196:'to run',197:'to go',199:'to speak',200:'to hear; to listen',201:'to look',207:'we (inclusive)',208:'we (exclusive)'}

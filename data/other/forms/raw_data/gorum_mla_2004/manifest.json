@@ -1,0 +1,96 @@
+{
+  "status": "complete_source_stage; canonical7493-row CSV installed; full build deferred",
+  "source": "Donegan and Stampe 2004 Munda Lexical Archive, Gorum file",
+  "source_key": "DSGO",
+  "original_url": "http://www.ling.hawaii.edu/austroasiatic/AA/Munda/Dictionaries/Gorum",
+  "snapshot_url": "https://web.archive.org/web/20201022115121id_/http://www.ling.hawaii.edu/austroasiatic/AA/Munda/Dictionaries/Gorum",
+  "snapshot_date": "2020-10-22",
+  "archived_last_modified": "2014-09-05",
+  "source_sha256": "17c19bd2158d5c7ec3bd3c6afd9c6c653b1a7f33b6246a36f4e6b831a2ab418b",
+  "source_bytes": 518266,
+  "rights": "The source file expressly permits copying, correction, augmentation, translation, transliteration, rearrangement, redistribution and republication if derivatives explicitly impose the same conditions to guarantee unrestricted use by speakers and students. LICENSE applies that condition to snapshot and derived outputs. No permission is inferred from mirror access alone.",
+  "source_type_addenda": [
+    "dictionary/glossary",
+    "website/archive snapshot"
+  ],
+  "language": {
+    "id": "go",
+    "name": "Gorum",
+    "glottocode": "pare1266",
+    "dialect": null,
+    "coordinate": null,
+    "decision": "Z/A/ZA/Bh./S source witness labels remain provenance; no dialect or location inferred. Bh./S referents remain typed unresolved."
+  },
+  "selection": "Entire pinned snapshot, every numbered and unnumbered lexical unit; all witnesses, symbol classes, bounded senses and morphology accounted. Empty definitions held; unglossed grouping/context excluded explicitly.",
+  "numbered_source_chunks": 5824,
+  "unique_numeric_ids": 5743,
+  "installed_rows": 7493,
+  "editorial_uncertainty_tagged_rows": 6153,
+  "profile": {
+    "file": "conversion/gorum-mla.txt",
+    "source_local": "gorum-mla.txt",
+    "coverage": "All7493 staged source spellings; complete grapheme inventory; scoped parser7493/7493 without conversion errors",
+    "caution": "Exact source spelling retained; uncertain phonetic interpretation is not imposed. Full-form bracket transcription preserved separately only with defensible alignment.",
+    "scoped_policy_violations": 0
+  },
+  "overlap_review": {
+    "existing_source": "data/other/forms/20260921-sil-gutob-gorum.csv",
+    "existing_gorum_rows": 206,
+    "exact_source_form_intersections": 3,
+    "decision": "Distinct archived Z-marked source and SIL Kinumun Parenga attestations; no automatic deduplication or cognacy claim"
+  },
+  "secondary_representation_check": {
+    "file": "local cache ../tmp/pdfs/munda-lexical-archive/IndianLexicon.pdf",
+    "url": "https://lakshminarayanlenasia.com/articles/IndianLexicon.pdf",
+    "sha256": "b78a33a4c42f88852c299cabd3807c71a2014d6efd8051ff8c9ccedea99304f0",
+    "pages": 5111,
+    "gorum_span_pdf_pages": [
+      3154,
+      3400
+    ],
+    "role": "Visual confirmation of source boundary/license and sample layout only; original Wayback ASCII snapshot drives import; mirror PDF not redistributed"
+  },
+  "installed_csv": "data/other/forms/20260925-donegan-stampe-gorum.csv",
+  "settings": "data/other/forms/20260925-donegan-stampe-gorum.yaml",
+  "append_order": 52,
+  "deferred": [
+    "No remote execution",
+    "No database/data build without direct user request",
+    "Compiled survival, reference and graph validation, full suite and browser QA remain open"
+  ],
+  "physical_body_lines": 6564,
+  "audit_units": 6562,
+  "continuation_lines": 2,
+  "staged_rows": 7493,
+  "audit_statuses": {
+    "ingested": 5694,
+    "same_source_reuse": 75,
+    "held": 46,
+    "excluded_context": 747
+  },
+  "whole_source_counts": {
+    "variant_edges": 465,
+    "phonemic_rows": 236,
+    "source_bracket_notes": 456,
+    "etymology_rows": 5850,
+    "loanword_tagged_rows": 1445,
+    "legacy_keys_preserved": 559,
+    "unassigned_witness_sense_scopes": 6
+  },
+  "historical_pilot_audit": {
+    "seed": 20260925,
+    "sample": 20,
+    "population": 559,
+    "material_errors": 0,
+    "file": "sample-20260925.jsonl",
+    "scope": "Direct archived ASCII text versus selected source CSV; no OCR, and no compiled-output audit"
+  },
+  "validation": "Independent final pass4:0/20 material errors, seed2026092614; canonical CSV hash matches retained report.26 source/profile/dialect tests passed; scoped parser7493/7493 without conversion errors; source_meta275files262citation keys. All previous failed audits retained with corpus-wide regressions.",
+  "raw_to_output_audit": {
+    "seed": 2026092614,
+    "sample_size": 20,
+    "material_errors": 0,
+    "file": "independent-full-scope-audit-20260926-pass4.json",
+    "canonical_csv_sha256": "e378c58b70c8440721ec099e15fc0f23a513a676146829a7e4ca87e16866d53e"
+  }
+}

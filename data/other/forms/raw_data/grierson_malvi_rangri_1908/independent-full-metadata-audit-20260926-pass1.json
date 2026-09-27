@@ -1,0 +1,52 @@
+{
+  "status": "pass-no-material-metadata-errors",
+  "reviewer": "rohru_finish",
+  "scope": "All20 selected units: semantic metadata, source scope, Notes, alias preservation, uncertainty propagation. Root independently owns original-image lexical audit.",
+  "input_hashes": {
+    "proposal.csv": "6819116fd46764fea402135e7ede868f69562e409270595e8b04a01301078005",
+    "proposal-audit.jsonl": "a8db786277824de9fda97f13688a744dce1e7fe3f924689b1fb667caf3238d28",
+    "proposal-profile.txt": "3f72caff77f6fae86576f3a76973309b9fb1bc4ecc4279ef7920be6591671b05"
+  },
+  "selection_sha256": "ef0c48a618782682d26b25758679e199c37a2542334479f48f680e1d2de62d4a",
+  "selected_rows_equal_current_csv": true,
+  "selected_units_without_other_concrete_error": 20,
+  "alias_checks": [
+    {
+      "source_unit_key": "grierson1908malvirangri:p251:specimen:line8:word2",
+      "representative": "grierson1908malvirangri:p250:specimen:line18:word6",
+      "status": "pass-form-gloss-native-locality-scope-and-citation"
+    },
+    {
+      "source_unit_key": "grierson1908malvirangri:p251:specimen:line1:word8",
+      "representative": "grierson1908malvirangri:p249:specimen:line8:word2",
+      "status": "pass-form-gloss-native-locality-scope-and-citation"
+    },
+    {
+      "source_unit_key": "grierson1908malvirangri:p249:specimen:line3:word5",
+      "representative": "grierson1908malvirangri:p249:specimen:line2:word8",
+      "status": "pass-form-gloss-native-locality-scope-and-citation"
+    },
+    {
+      "source_unit_key": "grierson1908malvirangri:p251:specimen:line7:word7",
+      "representative": "grierson1908malvirangri:p249:specimen:line7:word2",
+      "status": "pass-form-gloss-native-locality-scope-and-citation"
+    }
+  ],
+  "grammar_checks": "Original pages54/56/57 reconfirm shared standing scope, singular-oblique dog, indefinite anyone with adjective noninflection preserved, reflexive self, explicit Rangri demonstrative nominative singular masculine, present progressive3pl.",
+  "table_checks": "English survey context supports 2pl past item189, good man noun/adjective singular119, two fathers plural105, adjective high135, first singular past-perfect193. No Malvi-only control columns included.",
+  "specimen_checks": "Locality and aligned-occurrence qualification retained. Passive/past and participle claims follow explicit local English constructions; by-the-bard remains unassigned for ambiguous case. Exact aliases retain all source/native citations. No selected unit carries an unresolved source/native glyph flag that is dropped from output.",
+  "limitations": "General lexical POS is not inferred merely from bare English nouns. Review does not re-interpret unmarked native/Roman differences. No builder or lexical output edits made.",
+  "context_observations": [
+    {
+      "source_unit_key": "grierson1908rangri:p57:grammar:pres-definite-3pl",
+      "printed_page": 57,
+      "field": "Notes",
+      "severity": "nonmaterial-general-comparative-context",
+      "source_evidence": "The Present Definite. I am striking, as elsewhere in Rajasthani.",
+      "current_notes": "Source applies this shared grammatical example to Rangri and Malvi proper under its explicit standing rule on p.54.",
+      "disposition": "Exact attributed source comparison is preserved here as source-audit context. It adds no specific lexical mapping, paradigm restriction or distinct analysis; repeating it in six emitted Notes is optional. Frozen outputs require no mutation."
+    }
+  ],
+  "material_findings": [],
+  "judgment": "All20 selected rows pass material Notes/tags/source-scope/alias/uncertainty review. One general comparative sentence is retained in this source-audit context addendum, not counted as a source-data defect."
+}

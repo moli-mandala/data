@@ -1,0 +1,120 @@
+{
+  "status": "pass",
+  "seed": 2026092673,
+  "sample_count": 20,
+  "errors": 0,
+  "reviewer": "root independent of transcription agent",
+  "method": "All20 stratified units compared with original LSI IX4 PDF pages printed648–654,656–657,660–661,664–665,667 at180dpi wholepage. Compared all selected forms, alternatives, glosses and paradigm person/number scopes. Original p648 mixed-glossary wording, p650 explicitly OS subsidiary and pp656–657 OS future scope checked.",
+  "csv_sha256": "f7edc25cacb35279bdcaa020c4c67dc1d54eaf3ea037c0605ecaf8619f75e73e",
+  "audit_sha256": "e388efcc261d8cce09d3c84656a0db25ba2c560353c5c12da64a39ca51cc864b",
+  "results": [
+    {
+      "source_cell_key": "grierson1916sodochi:p648:glossary:5",
+      "result": "pass",
+      "page": "648"
+    },
+    {
+      "source_cell_key": "grierson1916sodochi:p649:glossary:41",
+      "result": "pass",
+      "page": "649"
+    },
+    {
+      "source_cell_key": "grierson1916sodochi:p650:glossary:19",
+      "result": "pass",
+      "page": "650"
+    },
+    {
+      "source_cell_key": "grierson1916sodochi:p650:glossary:4b",
+      "result": "pass",
+      "page": "650"
+    },
+    {
+      "source_cell_key": "grierson1916sodochi:p651:glossary:24",
+      "result": "pass",
+      "page": "651"
+    },
+    {
+      "source_cell_key": "grierson1916sodochi:p652:grammar:cold-h-loss",
+      "result": "pass",
+      "page": "652"
+    },
+    {
+      "source_cell_key": "grierson1916sodochi:p653:grammar:noun-table-horse-voc-sg",
+      "result": "pass",
+      "page": "653"
+    },
+    {
+      "source_cell_key": "grierson1916sodochi:p654:grammar:postp-loc",
+      "result": "pass",
+      "page": "654"
+    },
+    {
+      "source_cell_key": "grierson1916sodochi:p656:grammar:strike-present-3pl-OS-future",
+      "result": "pass",
+      "page": "656"
+    },
+    {
+      "source_cell_key": "grierson1916sodochi:p657:grammar:go-present-3sg",
+      "result": "pass",
+      "page": "657"
+    },
+    {
+      "source_cell_key": "grierson1916sodochi:specimen:660-17-1",
+      "result": "pass",
+      "page": "660"
+    },
+    {
+      "source_cell_key": "grierson1916sodochi:specimen:660-7-7",
+      "result": "pass",
+      "page": "660"
+    },
+    {
+      "source_cell_key": "grierson1916sodochi:specimen:660-9-2",
+      "result": "pass",
+      "page": "660"
+    },
+    {
+      "source_cell_key": "grierson1916sodochi:specimen:661-1-6",
+      "result": "pass",
+      "page": "661"
+    },
+    {
+      "source_cell_key": "grierson1916sodochi:specimen:661-20-6",
+      "result": "pass",
+      "page": "661"
+    },
+    {
+      "source_cell_key": "grierson1916sodochi:p664:item:60",
+      "result": "pass",
+      "page": "664"
+    },
+    {
+      "source_cell_key": "grierson1916sodochi:p664:item:73",
+      "result": "pass",
+      "page": "664"
+    },
+    {
+      "source_cell_key": "grierson1916sodochi:p665:item:109",
+      "result": "pass",
+      "page": "665"
+    },
+    {
+      "source_cell_key": "grierson1916sodochi:p665:item:148",
+      "result": "pass",
+      "page": "665"
+    },
+    {
+      "source_cell_key": "grierson1916sodochi:p667:item:232",
+      "result": "pass",
+      "page": "667"
+    }
+  ],
+  "scope_limit": "Sampling does not replace full-source accounting and focused validations. No DB build/browser QA.",
+  "post_install_addendum": {
+    "csv_sha256": "f7edc25cacb35279bdcaa020c4c67dc1d54eaf3ea037c0605ecaf8619f75e73e",
+    "audit_sha256": "94044c7b75507ca3e4a5aa451041a7e39be2a1d27e6b5d74f0ccffca6d8bd161",
+    "change": "Only stale first-reading process notes cleaned in authoritative TSV/audit; historical notes preserved in historical-first-reading-notes-20260926.json. Installed CSV byte-identical to independently reviewed proposal.",
+    "focused_tests": "4 passed; scoped parser 1146/1146, all source profile mappings covered; house policy passed.",
+    "build": "Full database/CLDF/full suite/browser explicitly deferred by user."
+  }
+}

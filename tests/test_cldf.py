@@ -219,10 +219,14 @@ def test_marked_origins_are_borrowings_with_valid_targets():
     ]
     # Markodi's 36 Indo-Aryan loans moved from `~`-marked Parameter_IDs into the per-source
     # etymology sidecar (Kind=borrowed), so they no longer carry the marker-derived tag.
-    assert len(marked) == 561
-    assert sum({"marked", "borrowing"} <= set(row["Tags"].split()) for row in marked) == 549
+    # Nagaraja's explicitly optional he(ː)la now preserves both source forms;
+    # the short hela retains the same accepted borrowing as long hēla.
+    hela = forms["f_j4mz5kstxb6qg"]
+    assert (hela["Original"], hela["Gloss"], hela["Origin_ID"]) == ("hela", "all", "14158")
+    assert len(marked) == 562
+    assert sum({"marked", "borrowing"} <= set(row["Tags"].split()) for row in marked) == 550
     assert sum("semi-tatsama" in row["Tags"].split() for row in marked) == 12
-    assert sum(row["Language_ID"] == "Ni" for row in marked) == 138
+    assert sum(row["Language_ID"] == "Ni" for row in marked) == 139
     for row in marked:
         assert row["Origin_ID"] in forms
         assert row["Relation"] == "borrowed"
@@ -246,6 +250,10 @@ def test_cross_family_descendants_are_borrowings():
         "W. Hindi", "Rajasthanic", "Gujaratic", "Bhil", "Khandeshi",
         "Marathi-Konkani", "Halbic", "Insular", "Migratory",
     }
+    # Page (2024), §1.2, printed pp.2–3 explicitly identifies Bote [bmj]
+    # as Indo-Aryan. "Other" is its unresolved display subgroup, not its family.
+    # See source_checklists/audits/20260926-bote-family-predicate-evidence.json.
+    evidenced_indo_aryan_languages = {"Bote"}
     matched = []
     for row in forms.values():
         # a variant inherits its loan status from its chain target (asserted independently);
@@ -260,8 +268,9 @@ def test_cross_family_descendants_are_borrowings():
         origin_clade = clades.get(origin["Language_ID"])
         dravidian_loan = child_clade in dravidian and origin["Language_ID"] != "PDr"
         ia_loan = (
-            origin_clade in indo_aryan
+            (origin_clade in indo_aryan or origin["Language_ID"] in evidenced_indo_aryan_languages)
             and child_clade not in indo_aryan
+            and row["Language_ID"] not in evidenced_indo_aryan_languages
         )
         if dravidian_loan or ia_loan:
             matched.append(row)

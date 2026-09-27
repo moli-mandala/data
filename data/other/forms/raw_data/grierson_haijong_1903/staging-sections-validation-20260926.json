@@ -1,0 +1,31 @@
+{
+  "date": "2026-09-26",
+  "status": "partial_staging_validated_not_installable",
+  "source_units": 315,
+  "candidate_rows": 330,
+  "legacy_keys_preserved": 14,
+  "checks": [
+    "15-column widths",
+    "unique keys",
+    "variant targets resolve",
+    "all 14 existing keys retained",
+    "70 grammar groups and all 245 table cells accounted for",
+    "11 genuine source blanks retained in audit"
+  ],
+  "canonical_modified": false,
+  "inputs": {
+    "grammar-reviewed.jsonl": "fd734834a214292ee7c6d1beb77d46ab69d194e0f0d0eed2f1db528cba8660c7",
+    "table-reviewed.jsonl": "2d39f80ff207a5da87611feb80f3b21d457f2b2a56ffde81c4e3ad954c28d961",
+    "prepare_full_source.py": "58547a9362bb22207605a0f60d1a37c390901de04cffc06b5694adbfdb68252c"
+  },
+  "remaining": [
+    "specimens",
+    "native alignment",
+    "grammar gloss completion",
+    "source commentary",
+    "dialect metadata",
+    "profile",
+    "final output audit"
+  ],
+  "full_build": "deferred under explicit user instruction"
+}

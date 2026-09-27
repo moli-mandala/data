@@ -1,0 +1,21 @@
+file: 20260925-bailey-kiunthali.csv
+defaults:
+  transcription:
+    profile: bailey-kiunthali-1908
+  identity:
+    legacy_ids: stem
+    append_order: 79
+  importer:
+    commands:
+      - [data/other/forms/raw_data/bailey_kiunthali_1908/import_source.py, --install]
+    note: "Full main Kiunthali chapter, printed pp.11–20: 515 source units, 505 accepted units yielding 617 forms; one exact plural-vocative pattern unresolved, four grammatical patterns, three Eastern-Kiunthali comparisons and two Panjabi-Urdu comparisons audited. All 36 translated expressions included whole. Independent fresh20 and correction addendum pass; full build/browser deferred."
+sources:
+  bailey1908kiunthali:
+    identity:
+      dedupe_by_entry_key: true
+    forms:
+      split_alternates: false
+    reference:
+      editor: OpenAI Codex
+      ocr: false
+      etymology_provenance: none

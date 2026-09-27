@@ -9,16 +9,38 @@ _MACRON = "̄"
 _BREVE = "̆"
 _TILDE = "̃"
 _MACRON_BREVE = _MACRON + _BREVE
+# Burrow and Emeneau mark Toda, Kota, Kodagu and Kolami vowel length with a raised dot
+# (``Ko. a·k``); the website prints it as the Greek ano teleia or a middle dot, sometimes
+# after a space. House transcription is the macron.
+_LENGTH_DOT = re.compile(r"([aeiouy])([\u0300-\u036f]*)\s*[\u0387\u00b7]")
+
+
+def _dot_to_macron(match):
+    letter, marks = match.group(1), match.group(2)
+    if _MACRON in marks:
+        return letter + marks  # already long
+    return letter + _MACRON + marks
 
 
 def normalize_dedr_marks(form):
-    """Canonicalise nasalisation marks so the profile's nasalised vowels match: a spacing
+    """Canonicalise length and nasalisation marks so the profile's vowels match: the raised
+    length dot becomes a macron (``a·k`` → ``āk``, ``ï·`` → ``ï̄``), a spacing
     tilde (``˜``, as in ``ī˜``) becomes a combining tilde (matching the CDIAL parser), and a
     tilde written before a macron (``ã̄`` = tilde+macron) is reordered to macron-then-tilde
     (``ā̃``), the order the profile lists."""
-    s = unicodedata.normalize("NFD", form)
-    s = s.replace("˜", _TILDE)  # spacing tilde -> combining tilde
+    s = unicodedata.normalize("NFD", canonical_dedr_marks(form))
+    s = _LENGTH_DOT.sub(_dot_to_macron, s)  # raised length dot -> macron next to the letter
     s = s.replace(_TILDE + _MACRON, _MACRON + _TILDE)  # tilde+macron -> macron+tilde
+    return unicodedata.normalize("NFC", s)
+
+
+def canonical_dedr_marks(form):
+    """The notation-only canonicalisation that Original keeps as well (so identities do not
+    depend on how the website encoded a nasal mark): spacing tilde to combining tilde, and a
+    tilde written before a macron reordered after it."""
+    s = unicodedata.normalize("NFD", form)
+    s = s.replace("˜", _TILDE)
+    s = s.replace(_TILDE + _MACRON, _MACRON + _TILDE)
     return unicodedata.normalize("NFC", s)
 
 

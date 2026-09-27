@@ -1,0 +1,35 @@
+{
+  "status": "complete_source_stage_full_pipeline_deferred",
+  "scope": "Bailey1908 Poguli complete chapter, printed51–60, PDF275–284; Kishtawari starts next page",
+  "source_units": 400,
+  "forms": 460,
+  "dispositions": {
+    "ingested": 393,
+    "exclude_pattern": 4,
+    "exclude_other_language": 1,
+    "exclude_rejected_example": 1,
+    "exclude_blank": 1
+  },
+  "whole_expressions": {
+    "prodigal_son": 29,
+    "extracts": 11,
+    "final_specimens": 22
+  },
+  "legacy_keys_retained": 94,
+  "self_review": "Entire grammar, narrative, extracts, glossary, specimens visually reread from original;450dpi selective crops with650dpi difficult raised-vowel checks. Literal breve/macron/nasal/diaeresis/underdots and printed cross-section inconsistencies preserved; full printed narratives kept as whole expressions without inferred token lemmata.",
+  "focused_tests": "PYTHONPATH=. .venv/bin/pytest -q tests/test_bailey_poguli_full_stage.py:5passed; scoped parser460rows and literal profile460forms covered.",
+  "hashes": {
+    "chapter-transcription-work.tsv": "5d2723137999706bdc2e005d0ec2ffe98e7ad5f62046b056c24d9769f91b1e24",
+    "full-staged.csv": "c3ccd3268f994225daad725540b6ce86fe88cd311be24763e312d37db22cfed4",
+    "full-staged-audit.jsonl": "70b1e02390fa37fe0154916a1defe716ab3ef9a3b25b3c4265101327a53d53df",
+    "literal-profile-staged.txt": "a77ad9a2943682b3dc07964d704af94cba2fe0f10e4a2af9fd890f1a7c487777"
+  },
+  "deferred_gates": [
+    "full data pipeline, compiled identity/graph/reference checks and full suite: user prohibits builds/remotes",
+    "browser database and appQA: only when explicitly requested"
+  ],
+  "installed_forms": 460,
+  "installed_csv_sha256": "c3ccd3268f994225daad725540b6ce86fe88cd311be24763e312d37db22cfed4",
+  "independent_audit": "independent-full-audit-20260926-pass1.json:seed20260926103,0/20errors",
+  "validation": "11 focused installed+stage tests passed;460/460 profile and scoped parser; all94oldkeys retained; registered tags/dialect/source routing and profile policy pass; source rows have blank graph fields, no inferred edges"
+}

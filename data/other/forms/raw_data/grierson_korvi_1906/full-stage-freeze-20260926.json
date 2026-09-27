@@ -1,0 +1,47 @@
+{
+  "status": "frozen_for_independent_review",
+  "rows": 990,
+  "source_units": 1237,
+  "hashes": {
+    "proposal.csv": "e14af7b3977667610379dcc566d01dfe41faa3959422ed1419b44c8439ccca3e",
+    "proposal-audit.jsonl": "4ce889c85864ea4b2a1fc566d3b5151dc3bc8f2cfeddb1a2224b2cea5f439543",
+    "proposal-profile.txt": "91c7eb962f393a9e349bd574d03895f90f853276799e6f42ed9c05ccb8190f7f",
+    "grammar-reviewed.jsonl": "70d593f7a302f9cadd1042b83c50dff1d98d663a1030d34fc0e1f828722965fb",
+    "specimens-reviewed.jsonl": "9e6f5ea553e13e7056c64668f70636310a4f4bb35894ef14a0a4de102452e454",
+    "table-reviewed.jsonl": "50679c267157435b17cff3d243b20f4f6207748f48055b17024789cb5b881994",
+    "source-wide-attestations.jsonl": "53557a2e3007f0353888ba6ea886e0fe34c074c2bc41ed98388379124eb62b79"
+  },
+  "canonical_modified": false,
+  "checks": [
+    "10 focused proposal regressions passed",
+    "Actual generic parser round-trip passed for all 990 rows using proposed YAML/profile in memory",
+    "All tags registered, all variant targets resolve, actual citation parsers agree",
+    "Every profile output rule passes shared profile_policy.house_output; explicit transliteration-key digraphs and underlined ts mapped to house alphabet."
+  ],
+  "literal_review": {
+    "grammar_units": 89,
+    "specimen_units": 899,
+    "table_cells": 241,
+    "sourcewide_units": 4,
+    "later_correction_units": 4
+  },
+  "reuse": {
+    "emissions_before_reuse": 1227,
+    "rows_after_reuse": 990,
+    "aliases": 237
+  },
+  "targeted_edge_requests": [
+    "p327 specimen3 feeling aṇḍs: confirm short initial a against any stray upper ink.",
+    "p321 expenditure kharṯs̱ and p326 service ṯs̱ākari: underlined ts remains distinct from dotted ṭs in metāṭs-kuṇḍū.",
+    "p. 658 item 94 Yā̃tka and p. 666 item 150 hō̃ta: stacked length plus nasal marks.",
+    "Later bound-in p. 18 Korvi corrections ava→ãva and186 aḍasā; original 1906 witnesses remain separately installed in proposal.",
+    "p. 330 time-is source gloss/free-translation mismatch remains typed uncertainty with no invented verbal category."
+  ],
+  "pending": [
+    "Independent fresh 20 original-source audit",
+    "Canonical installation and metadata registration only after acceptance",
+    "Full builds, DB, compiled identity/graph outputs and browser QA deferred by user"
+  ],
+  "metadata_repair_report": "final-metadata-repair-review-20260926.json",
+  "table_edge_repair_report": "table-edge-repair-20260926.json"
+}

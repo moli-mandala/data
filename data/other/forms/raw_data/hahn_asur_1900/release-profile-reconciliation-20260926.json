@@ -1,0 +1,119 @@
+{
+  "status": "release_profile_house_notation_reconciliation",
+  "changes": {
+    "cfel-koda-api": {
+      "mappings": [
+        [
+          "j",
+          "j",
+          "y"
+        ],
+        [
+          "w",
+          "w",
+          "v"
+        ],
+        [
+          "ǝ",
+          "ǝ",
+          "ə"
+        ],
+        [
+          "ɟ",
+          "ɟ",
+          "j"
+        ],
+        [
+          "ɪ",
+          "ɪ",
+          "i"
+        ],
+        [
+          "ʊ",
+          "ʊ",
+          "u"
+        ],
+        [
+          "ʒ",
+          "ž",
+          "ź"
+        ],
+        [
+          "ʱ",
+          "ʱ",
+          "ʰ"
+        ]
+      ],
+      "before_sha256": "a81379ff541d239338e11a9244ec6a28e194fdf22fabcb8c5405ee7b15a0e6a3",
+      "after_sha256": "8d38a67ac9f1eb743f88e41678c4a25479ef31dfbb3e56ff2c17ee23bb0070be"
+    },
+    "cfel-koda-print": {
+      "mappings": [
+        [
+          "j",
+          "j",
+          "y"
+        ],
+        [
+          "w",
+          "w",
+          "v"
+        ],
+        [
+          "ɟ",
+          "ɟ",
+          "j"
+        ],
+        [
+          "ʊ",
+          "ʊ",
+          "u"
+        ],
+        [
+          "ʒ",
+          "ž",
+          "ź"
+        ],
+        [
+          "ʱ",
+          "ʱ",
+          "ʰ"
+        ]
+      ],
+      "before_sha256": "3cd6f267842d0e6328abd6805042cb8fe0e86e5592abe888b6b8013354faa3c4",
+      "after_sha256": "50f9cc735382eeaa5183369b9089e8206db8bb109a612a353327e266f390c866"
+    },
+    "grierson-koda-birbhum-1906": {
+      "mappings": [
+        [
+          "ṃ",
+          "ṃ",
+          "ṁ"
+        ]
+      ],
+      "before_sha256": "a8e83b00d559c5ebf39124a45bbdf4f9fc1288df4d87390d24687b34f5cf3a44",
+      "after_sha256": "d300ac71d7e1dd12e5be159021a441080fd3eb12995548d34a18a558650bb883"
+    },
+    "grierson-sansi-1922": {
+      "mappings": [
+        [
+          "ṅ",
+          "ṅ",
+          "ŋ"
+        ]
+      ],
+      "before_sha256": "73456556fce26a3c4604bd157c73c9e0f5ae8db7f2a91247c4584d17836c3c40",
+      "after_sha256": "27a7312ff69bf5df1c6e6a658e8fcd7ed9bb59f37f30348cfdf722c96a7f1be7"
+    }
+  },
+  "hahn": "No profile change: colons in p172 song are clause punctuation. Exclude colon from length-inventory scanning only for Hahn; no vowel deletion, no lengthening.",
+  "cfel_basis": "Publisher documents IPA separately from native spelling. Standard house-symbol mappings applied; Original and Bengali Native unchanged. Munda schwa kept via SCHWA registration. Quality ɔ/æ and all literal uncertainty/script marks remain unchanged.",
+  "grierson_basis": "Houseṃ→ṁ andṅ→ŋ orthographic notation only; Original retains exact printed marks. Historical source-local proposed profiles and their audit hashes remain unchanged.",
+  "source_rows_changed": 0,
+  "validation": {
+    "profile_policy": "0 policy violations in 0 profiles",
+    "focused_tests": "55 passed in 21.97s",
+    "full_build_run": false,
+    "inputs_frozen": true
+  }
+}

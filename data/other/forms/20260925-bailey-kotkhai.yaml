@@ -1,0 +1,24 @@
+file: 20260925-bailey-kotkhai.csv
+defaults:
+  transcription:
+    profile: bailey-kotkhai-1908
+  identity:
+    legacy_ids: stem
+    append_order: 62
+  importer:
+    commands:
+    - - data/other/forms/raw_data/bailey_kotkhai_1908/import_source.py
+      - --install
+    note: 'Complete Kotkhai chapter pp. 23–24: 77 units, 73 forms, all paradigms and
+      vocabulary; 11 printed blank cells and one Kiunthali comparison-control unit
+      accounted. Independent source-stage audit passed; full build deferred.'
+sources:
+  bailey1908kotkhai:
+    identity:
+      dedupe_by_entry_key: true
+    forms:
+      split_alternates: false
+    reference:
+      editor: OpenAI Codex
+      ocr: false
+      etymology_provenance: none

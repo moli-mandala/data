@@ -1,0 +1,46 @@
+{
+  "date": "2026-09-26",
+  "seed": 2026092639,
+  "sample_size": 20,
+  "csv_sha256": "cc8d2e2cfec72b2e093415c5fd4726635841a895da6513d2a5831abb7b2e8902",
+  "method": "Root visually reviewed all20original lexicalblocks including source descriptions; checked frozen sampled rows equal actual installed CSV.",
+  "native_ipa_gloss_transcription_errors": 0,
+  "result": "fail-semantic-preservation",
+  "entries_with_errors": 2,
+  "findings": [
+    {
+      "entry_key": "cfelmahali2024:p115:entry:5",
+      "issue": "Description explicitly restricts this compound to an action completed by the speaker; installed infinitival English label and generic verb/compound tags omit that grammatical statement.",
+      "repair": "Preserve concise source-attributed grammatical statement in Notes; audit this omission class source-wide."
+    },
+    {
+      "entry_key": "cfelmahali2024:p172:entry:5",
+      "issue": "Description specifically defines cooked pig meat; short English label Pork omits source sense restriction.",
+      "repair": "Preserve short factual source-definition qualification without copying explanatory prose."
+    }
+  ],
+  "sample_keys": [
+    "cfelmahali2024:p115:entry:5",
+    "cfelmahali2024:p302:entry:8",
+    "cfelmahali2024:p110:entry:6",
+    "cfelmahali2024:p279:entry:4",
+    "cfelmahali2024:p302:entry:3",
+    "cfelmahali2024:p304:entry:8",
+    "cfelmahali2024:p172:entry:5",
+    "cfelmahali2024:p236:entry:4",
+    "cfelmahali2024:p384:entry:2",
+    "cfelmahali2024:p256:entry:1",
+    "cfelmahali2024:p206:entry:5",
+    "cfelmahali2024:p165:entry:5",
+    "cfelmahali2024:p164:entry:1",
+    "cfelmahali2024:p312:entry:7",
+    "cfelmahali2024:p189:entry:1",
+    "cfelmahali2024:p96:entry:3",
+    "cfelmahali2024:p378:entry:5",
+    "cfelmahali2024:p63:entry:2",
+    "cfelmahali2024:p281:entry:5",
+    "cfelmahali2024:p340:entry:4"
+  ],
+  "scope": "Not a full-build or browser validation.",
+  "component_label_check": "Corrected reviewer misreading: p96entry3 already has Source component labels: Determiner + Noun. in Notes; no component-label error."
+}

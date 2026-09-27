@@ -31,8 +31,8 @@ def transcribe_ssnp(form: str) -> str:
 
 def test_ssnp_ipa_profile_uses_house_transcription():
     assert transcribe_ssnp("wʌ'jud") == "vayūd"
-    assert transcribe_ssnp("ɖhɛr") == "ḍʰer"
-    assert transcribe_ssnp("t͡ɕɛ̣̃ʌ") == "ʦ̣ẹ̃a"
+    assert transcribe_ssnp("ɖhɛr") == "ḍʰɛr"
+    assert transcribe_ssnp("t͡ɕɛ̣̃ʌ") == "ʦ̣ɛ̣̃a"
     assert transcribe_ssnp("ʂɪʂ") == "ṣiṣ"
     assert transcribe_ssnp("khɑ́ːɳɖo") == "kʰā́ṇḍo"
 

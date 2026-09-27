@@ -4,7 +4,9 @@ import importlib.util
 import io
 import json
 from pathlib import Path
+import unicodedata
 import pytest
+from segments.tokenizer import Tokenizer
 import make_cldf
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -41,7 +43,13 @@ def test_installed_equivalents_and_comparisons_are_lossless_and_scoped():
     errors=io.StringIO()
     compiled,stats=make_cldf.parse_file(str(S.HERE.parent/S.FILENAME),errors,file_num='sheth-sanskrit')
     assert not errors.getvalue() and len(compiled)==len(forms)
-    assert all(r.form==by_key[r.entry_key][2] for r in compiled)
+    # the display form is the CDIAL house transcription (Cʰ, r̩, ŋ, ḣ); Original keeps Sheth's spelling
+    assert all(r.old_form==by_key[r.entry_key][2] for r in compiled)
+    tokenizer=Tokenizer(str(ROOT/'conversion/sheth-ddsa.txt'))
+    house=lambda v: unicodedata.normalize('NFC',tokenizer(unicodedata.normalize('NFC',v),column='IPA').replace(' ','').replace('#',' '))
+    assert all(r.form==house(by_key[r.entry_key][2]) for r in compiled)
+    assert house('abhidhyā')=='abʰidʰyā' and house('ativṛtta')=='ativr̩tta' and house('abhitaḥ')=='abʰitaḣ'
+    assert not any(('ʰ' not in r.form and 'h' in r.old_form[1:] and any(x+'h' in r.old_form for x in 'kgcjṭḍtdpb')) for r in compiled)
     with gzip.open(S.PACKAGE/'etymology-audit.jsonl.gz','rt') as f:
         records=[json.loads(line) for line in f]
     assert len(records)==41638

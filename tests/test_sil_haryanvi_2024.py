@@ -94,7 +94,7 @@ def test_profile_covers_every_manual_form_and_preserves_source_phonemic():
     assert converted["d̪eh"] == "deh"
     assert converted["tʃutʃi"] == "cuci"
     assert converted["dʒevli"] == "jevli"
-    assert converted["rʌs·a"] == "rasːa"
+    assert converted["rʌs·a"] == "rassā"
 
 
 def test_complete_audit_and_manifest_reconcile_every_source_cell():

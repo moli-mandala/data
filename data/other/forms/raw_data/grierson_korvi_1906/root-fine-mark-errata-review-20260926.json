@@ -1,0 +1,61 @@
+{
+  "date": "2026-09-26",
+  "reviewer": "root",
+  "status": "literal_edge_checks_pass_gloss_metadata_correction_required",
+  "hashes": {
+    "proposal.csv": "fd3b3f778357566a8e09c43b7cb7757b734b9fa41c7e9f7357122a1cb98adc16",
+    "proposal-audit.jsonl": "08c26032bcffd2e191a2b8ce2052054acfc0e4239b2ec48a6bdcc75b2ac66ccb",
+    "proposal-profile.txt": "91c7eb962f393a9e349bd574d03895f90f853276799e6f42ed9c05ccb8190f7f"
+  },
+  "findings": [
+    {
+      "units": "p658 item94; p666 item150",
+      "result": "pass",
+      "evidence": "Enlarged grayscale crops show stacked macron and nasal sign: Yā̃tka and hō̃ta; t is plain."
+    },
+    {
+      "units": "p321 expenditure; p326 service and servants-to",
+      "result": "pass",
+      "evidence": "Original underlined ts is distinct from dotted ṭs; literal lower lines retained in Original, source-key affricate mapping handled by profile."
+    },
+    {
+      "units": "p670 items164,181,187 and later correction p18",
+      "result": "pass",
+      "evidence": "Original witnesses print plain Ava. Later notice explicitly corrects to nasalized ãva; proposal retains originals and separately cited corrections."
+    },
+    {
+      "units": "p670 item186 and later correction p18",
+      "result": "pass",
+      "evidence": "Original adāsā and later aḍasā remain separate; no silent correction."
+    },
+    {
+      "units": "p674 items197,207,213",
+      "result": "pass",
+      "evidence": "Original witnesses already show nasalized Ãva, consistent with notice that only some copies have broken type."
+    },
+    {
+      "units": "p330 specimen5 line14 word1",
+      "result": "pass",
+      "evidence": "Printed time-is gloss retained with explicit gloss mismatch uncertainty and no invented verbal category."
+    },
+    {
+      "units": "p670 item186/187 and corrections; possible similar tense-label cells",
+      "result": "metadata_correction_requested",
+      "evidence": "Output gloss still contains grammatical parenthetical past tense although pret tag is emitted. Move this label entirely into structured metadata, preserving printed text in audit. Owner performing census."
+    }
+  ],
+  "original_hashes": {
+    "source-page341.jpg": "5d6a7cafd4d1bca6a6b06b4b25a87e36dfab5320163065d3de1edb751ce3b660",
+    "source-page346.jpg": "07a95b01eeecea1425dc19e195fc22f1005680cd5e706e74a89912c21fa46bd8",
+    "source-page678.jpg": "2ea29e56e3a363461d2ae318298c6b60734f374fe5dd2dae8a8a3a3cb6af0c6b",
+    "source-page686.jpg": "12e7e569a64e8a0e497977f0793751e06d4a318f8d2d9c3338b051cc12185b3f",
+    "source-page690.jpg": "9674133cfae7a9444ef4321ee2c0c6b097a41290e68863e862c4120ac03a4829",
+    "source-page694.jpg": "e837301f39ab4bc86636a8c5b797dce82915deee93182abf1e65baedf6856953"
+  },
+  "correction_notice_sha256": "42ce0612d99ca3583bd9078d172d592f8e04772def7871fe19cbe9f98135f63c",
+  "pending": [
+    "Final graph and gloss-label corrections",
+    "Final profile review",
+    "Final output freeze verification and installation"
+  ]
+}

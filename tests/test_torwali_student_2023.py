@@ -102,7 +102,7 @@ def test_source_profile_converts_display_form_and_retains_exact_phonemic_ipa():
     assert (by_key["torwali2023student:p013:cR:e02"].form,
             by_key["torwali2023student:p013:cR:e02"].ipa) == ("aūzār", "au:za:r")
     assert (by_key["torwali2023student:p032:cR:e02"].form,
-            by_key["torwali2023student:p032:cR:e02"].ipa) == ("b:cā", "b:tʃa:")
+            by_key["torwali2023student:p032:cR:e02"].ipa) == ("bbcā", "b:tʃa:")
     assert "uncertain" in by_key["torwali2023student:p032:cR:e02"].tags
     assert all("�" not in row.form for row in rows)
 

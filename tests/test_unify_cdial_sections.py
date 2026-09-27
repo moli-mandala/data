@@ -6,6 +6,7 @@ sys.path.insert(0, str(Path(__file__).parents[1]))
 
 from unify_cldf import (
     derivation_morpheme,
+    ext_morpheme,
     is_derivation_section,
     section_flags,
     section_kind,
@@ -28,6 +29,26 @@ def test_derivation_sections_with_explicit_morphemes_remain_branches():
     historical = "Deriv. with -<i>er</i>- &lt; -<i>a-tara</i>-"
     assert derivation_morpheme(historical) == "-er-"
     assert section_kind(historical) == ("deriv-morph", "-er-", "ext:er")
+
+
+def test_with_morpheme_headers_are_extensions_only_for_pleonastic_suffixes():
+    # Turner's "with -X-" phrasing of an extended stem, alongside "ext. -X-" and bare "-X-"
+    assert ext_morpheme("ext. -<i>kk</i>-") == "-kk-"
+    assert ext_morpheme("-<i>kk</i>-") == "-kk-"
+    assert ext_morpheme("with -<i>ḍa</i>-") == "-ḍa-"
+    assert ext_morpheme("With -<i>ll</i>-") == "-ll-"
+    assert ext_morpheme("with anal. -<i>kk</i>-") == "-kk-"
+    assert ext_morpheme("With unexpl. -<i>r</i>- (&lt; *pragāḍa- ?)") == "-r-"
+    assert ext_morpheme("-<i>kk</i>- (?)") == "-kk-"
+    assert section_kind("-<i>l</i>- or -<i>ll</i>-") == ("ext", "-l-", "ext:l")
+    # sound substitutions, compounds, negations and non-pleonastic suffixes are not extensions
+    assert ext_morpheme("With -<i>kk</i>- for -<i>tt</i>- (after MIA. type muccaï)") is None
+    assert ext_morpheme("With -<i>r</i>- in place of -<i>ḍ</i>-") is None
+    assert ext_morpheme("-<i>uḍa</i>- (&lt; *<smallcaps>kuḍa</smallcaps>-¹?") is None
+    assert ext_morpheme("Without -<i>kka</i>-") is None
+    assert ext_morpheme("with caus. suffix -<i>l</i>-") is None
+    assert ext_morpheme("onom. with -<i>k</i>-, -<i>g</i>-") is None
+    assert ext_morpheme("with -<i>ima</i>- after <smallcaps>paścimá</smallcaps>-") is None
 
 
 def test_compiled_generic_derivatives_are_flattened_and_explicit_morphemes_are_not():

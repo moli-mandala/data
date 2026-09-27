@@ -1,0 +1,50 @@
+{
+  "status": "source_stage_installed_full_build_deferred",
+  "source_scope": "Entire pinned unfinished MLA Ho A–C archive, 1524 physical units, not entire printed Deeney dictionary",
+  "counts": {
+    "legacy_rows": 2146,
+    "legacy_keys_preserved": 2146,
+    "legacy_rows_unchanged": 2144,
+    "legacy_joint_gloss_scope_repairs": 2,
+    "new_rows": 81,
+    "proposed_rows": 2227,
+    "recovery_records": 90,
+    "new_sentential_responses": 47,
+    "blank_gloss_rows": 58,
+    "new_untranslated_examples": 20,
+    "new_typed_uncertain_rows": 29,
+    "variant_edges": 122,
+    "derivation_edges": 1,
+    "borrowing_edges": 0
+  },
+  "exclusions": "Existing four headings, two empty records and two explicitly non-Ho controls remain excluded. Bare cross-references, donor/control mentions and constituent analyses retain raw source context; they do not receive inferred meanings. Whole translated responses are included.",
+  "decisions": [
+    "Preserve literal archive notation including case, punctuation, ellipsis and leading hyphen.",
+    "Expand only explicitly printed shared-prefix alternatives; no reconstructed stems or invented clauses.",
+    "Keep20new unglossed attested examples with blank gloss and typed uncertainty.",
+    "Retain01003biJa verbal sense from explicit vr-scope; blank01364two individual glosses because only joint translation is printed, retaining translation in Notes and stable keys.",
+    "Standing w-to-v display mapping retained; Original exact. Comma and uppercase P identity mappings added.",
+    "No inferred prayer poetic register or unsupported verb tag on reviling example."
+  ],
+  "validation": "8focusedtests pass;2227 actual parser rows noerrors; all2146prior generatedIDs unchanged; source-local graph endpoints closed.",
+  "frozen_inputs": {
+    "expression-recovery-proposed.csv": "2a93db01cf7521611a3574d0b551ad719c4f26df80f8f7a29bc5600dc551b942",
+    "expression-recovery-first-reading-20260926.jsonl": "2382db4bc6403738ac9afa885cf1ec12f82cc0b2ab6d778688a543fd72cc6442",
+    "expression-recovery-census-20260926.jsonl": "cb93a3bb1a9454a64b207162a418d28aa626223e3d2a7c64fb8d4b15097f1481",
+    "expression-recovery-profile.txt": "0e6e8b78802ab0e728b869195c0d428fa25f5e11f2b2574ddf71c421c0dca402"
+  },
+  "next_gate": "User-authorized full build and browser QA remain deferred.",
+  "deferred_by_user": [
+    "Full CLDF/database build",
+    "Full test suite",
+    "Compiled graph/reference checks",
+    "Browser QA"
+  ],
+  "canonical_modified": true,
+  "installed_hashes": {
+    "canonical_csv": "2a93db01cf7521611a3574d0b551ad719c4f26df80f8f7a29bc5600dc551b942",
+    "canonical_profile": "0e6e8b78802ab0e728b869195c0d428fa25f5e11f2b2574ddf71c421c0dca402",
+    "audit": "8c57f961999408c6c5fd62bbb05dcef5ed2f8292cb72629e5b30f4472f128cd6"
+  },
+  "independent_final_review": "root-expression-final-audit-20260926.json;20/20 pass after full90candidate review"
+}

@@ -31,6 +31,7 @@ import sys
 import unicodedata
 from collections import defaultdict
 import source_meta
+from source_files import legacy_prefix_files
 
 from edges_build import build_edges, write_edges
 from burushaski_cognates import apply_catalog as apply_burushaski_catalog
@@ -138,6 +139,21 @@ def apply_strand_oia_redirects(etyma_rows, reflex_rows, redirects):
     return len(redirects), redirected
 
 
+def load_inferred_extensions(path="data/cdial/inferred-extensions.csv"):
+    """Shape-inferred extended reflexes (see infer_extensions.py) → {legacy form id: "-kk-"}.
+    The table keys rows by their line in data/cdial/cdial.csv, which make_cldf turns into the
+    legacy id ``<cdial prefix>-<line>``. Missing file → nothing inferred."""
+    out = {}
+    if not os.path.exists(path):
+        return out
+    prefix = next(p for p, f in legacy_prefix_files().items() if f == "data/cdial/cdial.csv")
+    with open(path, newline="", encoding="utf-8") as fh:
+        for r in csv.DictReader(fh):
+            if r.get("Morpheme"):
+                out[f"{prefix}-{r['Row']}"] = f"-{r['Morpheme']}-"
+    return out
+
+
 def load_language_clades(path="cldf/languages.csv"):
     with open(path, encoding="utf-8") as f:
         return {row["ID"]: row["Clade"] for row in csv.DictReader(f)}
@@ -225,16 +241,48 @@ def strip_marker(pid: str) -> str:
 
 
 _EXT_MORPH = re.compile(r"<i>([^<]+)</i>")
+# Turner's pleonastic extension morphemes. A section headed "with -X-" / "-X- or -Y-" / "-X- (cf. …)"
+# is only read as an extension when X is one of these; anything else ("with -ima-", "with -u-,
+# -uka-", "-uḍa- (< *kuḍa-", "with -cc-") is a suffix or sound variant, not an extended stem.
+_PLEONASTIC = {
+    "kk", "kka", "akka",
+    "ḍ", "ḍa", "ṭ", "ṭa", "ṭṭ",
+    "l", "ll", "la", "lla",
+    "r", "ra",
+    "tt",
+}
+# leading "with -X-" (optionally "with anal. -X-" / "with unexpl. -X-") or a bare "-X-" opening
+_EXT_WITH = re.compile(r"(?i)^(?:with\s+(?:anal\.\s+|unexpl\.\s+)?)?-<i>([^<]+)</i>-")
+# headers that open like an extension but describe a sound substitution — left to sound_variant()
+_EXT_NOT = re.compile(r"(?i)\bin place of\b|\bfor\s+-<i>")
+
+
+def _explicit_ext_header(info: str) -> bool:
+    """``ext. …`` anywhere, or a header that is exactly a bare ``-<i>X</i>-``."""
+    return bool(re.search(r"\bext\b", info, re.I) or re.fullmatch(r"-<i>[^<]+</i>-", info))
 
 
 def ext_morpheme(info: str) -> str | None:
-    """The extension suffix in a CDIAL section header — ``ext. -<i>kk</i>-`` or a bare
-    ``-<i>kk</i>-`` — returned as ``-kk-`` (tags stripped), else None. These sections mark reflexes
-    descending from a morphologically extended stem of the headword."""
-    if not (re.search(r"\bext\b", info, re.I) or re.fullmatch(r"-<i>[^<]+</i>-", info)):
-        return None
-    m = _EXT_MORPH.search(info)
-    return f"-{m.group(1)}-" if m else None
+    """The extension suffix in a CDIAL section header — ``ext. -<i>kk</i>-``, a bare ``-<i>kk</i>-``,
+    or ``with -<i>ḍa</i>-`` / ``-<i>l</i>- or -<i>ll</i>-`` / ``with anal. -<i>kk</i>-`` when the
+    morpheme is a known pleonastic extension — returned as ``-kk-`` (tags stripped), else None. These
+    sections mark reflexes descending from a morphologically extended stem of the headword. When a
+    header offers alternatives ("-l- or -ll-", "-kk- and -l-") the first morpheme names the node."""
+    if _explicit_ext_header(info):
+        m = _EXT_MORPH.search(info)
+        return f"-{m.group(1)}-" if m else None
+    m = _EXT_WITH.match(info)
+    if m and m.group(1) in _PLEONASTIC and not _EXT_NOT.search(info):
+        return f"-{m.group(1)}-"
+    return None
+
+
+def ext_promotion_pass(info: str) -> int:
+    """Promotion order of a derived-form section within its entry. Synthetic ``<etymon>-<n>`` ids
+    are numbered in promotion order and curated etymology sidecars cite them, so headers recognised
+    since the ids were first minted (the ``with -X-`` phrasings) are promoted in a second pass,
+    after every ``ext.`` / bare ``-X-`` / causative / ``Deriv. with -X-`` section of the entry."""
+    return 0 if _explicit_ext_header(info) or not ext_morpheme(info) else 1
 
 
 def is_derivation_section(info: str) -> bool:
@@ -635,6 +683,8 @@ def main():
     n_reflex = n_variant = n_section = n_borrowed = n_lone = n_ext = n_crossed = n_svar = 0
     n_deriv_flat = 0
     n_replaced = n_altern = 0
+    n_ext_inferred = n_ext_inferred_nodes = 0
+    inferred_ext = load_inferred_extensions()
     reflex_rows = []
     ext_entry_rows = []  # synthetic extension/caus/morphemic-derivative + shared morpheme entries
     morpheme_id = {}  # suffix -> shared morpheme entry id (one `-kk-`/`-áya-`/… entry, reused)
@@ -713,12 +763,11 @@ def main():
             }
             base_row = etyma_by_id.get(pid)
             base_form = base_row[2] if base_row else ""
-            for r in group:
-                cg = r.get("Cognateset") or ""
-                info = cg.split(":", 1)[1] if ":" in cg else ""
-                kind, suffix, tag = section_kind(info)
-                if not kind or suffix in ext_by_morph:
-                    continue
+            def promote(kind, suffix, tag, info, inferred=False):
+                """Create the `<etymon>-<n>` derived entry for one suffix (idempotent per suffix)."""
+                nonlocal num, n_ext, n_ext_inferred_nodes
+                if suffix in ext_by_morph:
+                    return
                 new_id = f"{pid}-{num}"
                 while new_id in all_ids:
                     new_id += "x"
@@ -771,6 +820,10 @@ def main():
                     "deriv-morph": f"{mo_link}-derivative of {base_link}; CDIAL section: {info}",
                 }[kind]
                 entry_tags = f"derived {tag}" if kind == "deriv-morph" else tag
+                if inferred:
+                    entry_tags += " inferred"
+                    etym += " (inferred from reflex shape; no CDIAL section)"
+                    n_ext_inferred_nodes += 1
                 ext_entry_rows.append([
                     new_id, parent["Language_ID"], word, base_row[3] if base_row else "",
                     "", "", "", "", "", entry_tags, "CDIAL", "", etym, "", "", "", "",
@@ -779,6 +832,20 @@ def main():
                 if mo_id:
                     section_edges.append((new_id, mo_id))  # …and from the morpheme (ext/caus compound)
                 n_ext += 1
+
+            # Promotion requests in id-stable order: explicit section headers, then "with -X-"
+            # headers (shape-inferred extensions come last, after the sound-variant nodes below).
+            requests = []
+            for r in sorted(group, key=lambda r: ext_promotion_pass(
+                (r.get("Cognateset") or "").split(":", 1)[1] if ":" in (r.get("Cognateset") or "") else ""
+            )):  # stable sort: original order within each pass, "with -X-" headers last
+                cg = r.get("Cognateset") or ""
+                info = cg.split(":", 1)[1] if ":" in cg else ""
+                kind, suffix, tag = section_kind(info)
+                if kind:
+                    requests.append((kind, suffix, tag, info, False))
+            for kind, suffix, tag, info, inferred in requests:
+                promote(kind, suffix, tag, info, inferred)
 
             # promote sound-variant sections ("with A in place of B", initial "With X-") — head-word
             # generated from the base — and "Replaced by ⟨Y⟩" sections (head-word = the named
@@ -815,6 +882,12 @@ def main():
                     n_svar += 1
                 else:
                     n_replaced += 1
+
+            # last, so every id above keeps its meaning: nodes for shape-inferred extensions
+            for r in group:
+                suffix = inferred_ext.get(r["ID"])
+                if suffix:
+                    promote("ext", suffix, "ext:" + suffix.strip("-"), "", True)
 
         last_num = 1  # carry-forward form number within this entry (1 = the head itself)
         for r in group:
@@ -963,6 +1036,18 @@ def main():
                         if last_num in section_by_num:
                             mk = origin[0] if origin and origin[0] in ">~" else ""
                             origin = mk + section_by_num[last_num]
+                        elif last_num == 1:
+                            # shape-inferred extension of a base reflex (infer_extensions.py)
+                            inf = inferred_ext.get(r["ID"])
+                            if inf and inf in ext_by_morph:
+                                mk = origin[0] if origin and origin[0] in ">~" else ""
+                                origin = mk + ext_by_morph[inf]
+                                rtags = [t for t in (r.get("Tags", "") or "").split() if t]
+                                for t in ("ext:" + inf.strip("-"), "inferred"):
+                                    if t not in rtags:
+                                        rtags.append(t)
+                                r["Tags"] = " ".join(rtags)
+                                n_ext_inferred += 1
 
             # Preserve a generic derivative heading on every affected row, including rows whose
             # legacy Variant_Of encoding bypassed the ordinary reflex branch above.
@@ -1153,7 +1238,8 @@ def main():
         f"unified cldf/forms.csv: {len(etyma_rows)} etyma "
         f"({len(folded)} folded self-reflexes, {n_merged} merged addenda) + {n_reflex} reflexes "
         f"+ {n_variant} variants + {n_section} promoted section-forms + {n_ext} morpheme-bearing "
-        f"derived entries + {n_deriv_flat} generic-derived reflexes + {n_svar} generated sound-variants "
+        f"derived entries ({n_ext_inferred_nodes} shape-inferred, homing {n_ext_inferred} reflexes) "
+        f"+ {n_deriv_flat} generic-derived reflexes + {n_svar} generated sound-variants "
         f"+ {n_replaced} replacement entries "
         f"+ {n_altern} alternate-etymology links + {n_borrowed} borrowed "
         f"+ {n_crossed} contamination-tagged + {n_lone} lone nodes; "

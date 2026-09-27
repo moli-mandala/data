@@ -1,0 +1,209 @@
+{
+  "date": "2026-09-26",
+  "status": "Complete753-unit visual extraction and second reading;768-row staging awaits independent audit; canonical13unchanged",
+  "source": {
+    "title": "The Languages of the Northern Himalayas",
+    "author": "Thomas Grahame Bailey",
+    "year": 1908,
+    "local_pdf": "tmp/pdfs/bailey-sainji/bailey1908.pdf",
+    "sha256": "953f5da5ee9bc341cdf7eb558920e824dc6f15f7473a8c0d5c8134c401ad60b5",
+    "pages": 358
+  },
+  "source_internal_evidence": {
+    "preface_pdf_page": 11,
+    "statement_paraphrase": "The volume deliberately retains the earlier1902 Padari notes in addition to the much fuller PartIII account; repeated accounts therefore require separately located evidence."
+  },
+  "main_account": {
+    "part": "III",
+    "printed_pages": [
+      76,
+      84
+    ],
+    "pdf_pages": [
+      190,
+      198
+    ],
+    "preceding_boundary": "Bhalesi sentences end printed75/PDF189",
+    "following_boundary": "Sansi Glossaries introduction begins printed85/PDF199",
+    "page_sections": {
+      "76": "Masculine/feminine noun paradigms, explicitly segmented endings and separately glossed prose examples",
+      "77": "Personal/demonstrative/interrogative/relative pronouns and paradigms; adjective comparison and8correlative expressions",
+      "78": "Time/place/other adverbs, conjunction and postpositions including multiword examples",
+      "79": "Auxiliary and intransitive verb paradigms; fall/become/come/go",
+      "80": "Sit and transitive verb paradigms; beat/eat/drink/give/take/speak",
+      "81": "Do; bring/take-away compounds; epenthesis and type limitations with explicit examples; numerals1–20",
+      "82": "Numerals continuation; both glossary columns",
+      "83": "Both glossary columns continued",
+      "84": "Final14glossary heads;22translated sentences with explicit alternatives"
+    },
+    "glossary_head_lines": 150,
+    "glossary_column_counts": {
+      "82:left": 28,
+      "82:right": 28,
+      "83:left": 41,
+      "83:right": 39,
+      "84:left": 7,
+      "84:right": 7
+    },
+    "numeral_prompts": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      27,
+      29,
+      30,
+      37,
+      39,
+      40,
+      47,
+      49,
+      50,
+      57,
+      59,
+      60,
+      67,
+      69,
+      70,
+      77,
+      79,
+      80,
+      87,
+      89,
+      90,
+      97,
+      100
+    ],
+    "sentence_units": 22,
+    "grammar_form_count": "Pending cell-by-cell transcription; no claimed completeness count yet"
+  },
+  "earlier_account": {
+    "part": "IV",
+    "printed_pages": [
+      33,
+      35
+    ],
+    "pdf_pages": [
+      257,
+      259
+    ],
+    "following_boundary": "Siraji starts printed36/PDF260",
+    "grammar_pdf_page": 257,
+    "numbered_vocabulary": {
+      "258": [
+        1,
+        72
+      ],
+      "259": [
+        73,
+        100
+      ]
+    },
+    "numbered_prompts": 100,
+    "recoverable_nonblank_prompts": 95,
+    "source_blank_prompts": {
+      "56": "ass",
+      "57": "camel",
+      "98": "male deer",
+      "99": "female deer",
+      "100": "deer"
+    },
+    "asterisk_meaning": "Explicit resemblance to corresponding Pangwali words, explained on PartIVp33; not reconstruction, borrowing or independently established cognacy"
+  },
+  "additional_attributed_evidence": [
+    {
+      "part": "III",
+      "printed_pages": [
+        53,
+        55
+      ],
+      "pdf_pages": [
+        167,
+        169
+      ],
+      "scope": "Shared Bhadrawahi/Bhalesi/Padari introduction: explicit Padari forms, pronunciation remarks, morphology and cautious Harman/Ahriman comparison"
+    },
+    {
+      "part": "III",
+      "printed_pages": [
+        28,
+        28
+      ],
+      "pdf_pages": [
+        142,
+        142
+      ],
+      "scope": "Curahi comparison note explicitly supplies Padari genitive horse forms"
+    },
+    {
+      "part": "IV",
+      "printed_pages": [
+        70,
+        72
+      ],
+      "pdf_pages": [
+        294,
+        296
+      ],
+      "scope": "Sasi comparison tables: Pad abbreviation is explicitly defined; retain actually attributed Padari cells only"
+    },
+    {
+      "part": "III",
+      "printed_pages": [
+        89,
+        90
+      ],
+      "pdf_pages": [
+        203,
+        204
+      ],
+      "scope": "Additional Sasi comparison tables require visual attribution check; OCR is incomplete, no Padari forms presumed"
+    }
+  ],
+  "transcription_requirements": [
+    "Read general Romanization preface and relevant part introduction before mapping italics, underlines and superscript half-vowels.",
+    "PartIIIp81 explicitly notes certain e letters printed on baseline due to type limitations; preserve literal original with source phonetic explanation.",
+    "Expand only explicit paradigm stems/endings with documented slots; do not synthesize unprinted forms.",
+    "Retain all explicit head variants, compound alternatives and translated sentences.",
+    "Maintain distinct earlier/later source witnesses and part-qualified citation locators."
+  ],
+  "legacy_gaps": {
+    "installed": 13,
+    "audited_units": 28,
+    "typography_holds": 13,
+    "same_print_exclusions": 2,
+    "omitted_main_glossary_heads": 122,
+    "omitted_numerals": 43,
+    "omitted_sentences": 22,
+    "omitted_earlier_numbered_prompts": 100,
+    "omitted_grammar_and_intro": "All main/earlier paradigms and source-attributed introductory/comparison forms"
+  },
+  "reuse_policy": "Revisit hair and fox exclusions. Preserve source attestation and exact citation/identity evidence; never drop a source item merely because a later secondary work has similar form and gloss. No existing rows migrated or removed.",
+  "review_basis": "Original pages190,191,196,197,198,257,258 visually inspected at160–300dpi; embedded text inspected for boundaries, preface, introductions and continuation259. One overwritten render only.",
+  "remaining": "Complete physical-unit census/transcription for grammar, earlier continuation and attributed comparisons, independent review, metadata/profile/grammar checks and full source-stage installation; no DB/fullbuild/remotes authorized.",
+  "final_accounting": {
+    "physical_units": 753,
+    "represented_units": 748,
+    "printed_blank_units": 5,
+    "staged_rows": 768,
+    "explicit_alternative_rows": 20,
+    "second_visual_pass_units": 753,
+    "unresolved_readings": 2
+  }
+}

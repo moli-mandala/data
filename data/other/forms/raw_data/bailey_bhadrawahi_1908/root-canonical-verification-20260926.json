@@ -1,0 +1,18 @@
+{
+  "status": "source_stage_verified_full_pipeline_deferred",
+  "canonical_rows": 709,
+  "legacy_keys_retained": 23,
+  "csv_byte_equal_frozen_proposal": true,
+  "canonical_sha256": "2f7301c1d71e89ba6cd4fbb8a997e6c1556e4d519415304f5379b88819a4c893",
+  "audit_decoded_equal_frozen_proposal": true,
+  "independent_sample": {
+    "passed": 20,
+    "errors": 0,
+    "report": "independent-full-audit-20260926-pass1.json"
+  },
+  "focused_tests": {
+    "command": ".venv/bin/python -m pytest tests/test_bailey_bhadrawahi_1908.py tests/test_bailey_bhadrawahi_full_stage.py -q",
+    "result": "5 passed in 0.93s"
+  },
+  "deferred": "Full CLDF/database build, full suite, compiled graph/reference checks and browser QA; user explicitly prohibits DB builds and remotes."
+}

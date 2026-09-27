@@ -39,4 +39,11 @@ def test_only_geographically_undefined_languages_lack_coordinates():
         "Paniya", "Saurashtra", "Kurmali",  # Census source lacks precise site coordinates.
         "Sadri", "MalPaharia", "Sanori", "Bilaspuri", "Wagdi",  # Survey localities recorded; exact coordinates not asserted.
         "Pattapu",  # Lindgren supplies no defensible Pattapu locality point.
+        # Historical specimens name administrative areas, not elicitation points.
+        "Kaikadi", "Yerukula", "Holiya", "Northern Hindko", "Hinduri",
+        # Archived numeral sources give language distributions only. Their source
+        # READMEs explicitly retain blank coordinates instead of guessed points.
+        "Aranadan", "Mullu Kurumba", "Kumarbhag Paharia", "Kakkala", "Khirwar",
+        "Korra Koraga", "Aheri Gondi", "Adilabad Gondi", "Jennu Kurumba", "Koya",
+        "Eastern Muria", "Dandami Maria", "Maria (India)",
     }

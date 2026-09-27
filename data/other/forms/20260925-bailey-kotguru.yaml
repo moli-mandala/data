@@ -1,0 +1,21 @@
+file: 20260925-bailey-kotguru.csv
+defaults:
+  transcription:
+    profile: bailey-kotguru-1908
+  identity:
+    legacy_ids: stem
+    append_order: 60
+  importer:
+    commands:
+      - [data/other/forms/raw_data/bailey_kotguru_1908/import_source.py, --install]
+    note: 'Full Kotguru chapter pp. 25–33; 487 source units, 485 accepted yielding 610 forms, one adjective-pattern exclusion and one specific ink-obscured vowel-stack hold. All 112 old keys retained; independent fresh20 audit 0 errors. Full-build and browser gates deferred.'
+sources:
+  bailey1908kotguru:
+    identity:
+      dedupe_by_entry_key: true
+    forms:
+      split_alternates: false
+    reference:
+      editor: OpenAI Codex
+      ocr: false
+      etymology_provenance: none

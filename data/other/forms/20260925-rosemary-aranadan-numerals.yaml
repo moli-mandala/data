@@ -1,0 +1,17 @@
+file: 20260925-rosemary-aranadan-numerals.csv
+defaults:
+  transcription:
+    profile: rosemary-aranadan-numerals-2017
+    preserve_hyphens: true
+  identity:
+    legacy_ids: stem
+    append_order: 56
+  importer:
+    commands:
+      - [data/other/forms/raw_data/rosemary_aranadan_numerals_2017/import_source.py, --install]
+    note: Explicit Aranadan numerals in 2017 SPPEL primary elicitation; one typographically uncertain item held.
+sources:
+  rosemary2017aranadan:
+    reference:
+      editor: OpenAI Codex
+      ocr: false

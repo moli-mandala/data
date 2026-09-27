@@ -1,0 +1,17 @@
+file: 20260925-penny-adilabad-gondi-numerals.csv
+defaults:
+  transcription:
+    profile: penny-adilabad-gondi-2017
+    preserve_hyphens: true
+  identity:
+    legacy_ids: stem
+    append_order: 85
+  importer:
+    commands:
+      - [data/other/forms/raw_data/penny_adilabad_gondi_2017/import_source.py, --install]
+    note: Mark Penny's Western Southern/Adilabad Gondi 2013/2017 table in the immutable CC-BY Chan archive.
+sources:
+  penny2017adilabadgondi:
+    reference:
+      editor: OpenAI Codex
+      ocr: false

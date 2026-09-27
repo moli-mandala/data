@@ -1,0 +1,112 @@
+{
+  "status": "independent_English_prompt_alignment_pass_with_metadata_requirements",
+  "additional_physical_cells": 50,
+  "cumulative_physical_cells": 179,
+  "prior_report": "independent-English-first129-review-20260926.json",
+  "reviewed_keys": [
+    "grierson1903haijong:p374:haijong:prompt:126",
+    "grierson1903haijong:p374:haijong:prompt:127",
+    "grierson1903haijong:p374:haijong:prompt:128",
+    "grierson1903haijong:p374:haijong:prompt:129",
+    "grierson1903haijong:p374:haijong:prompt:130",
+    "grierson1903haijong:p374:haijong:prompt:131",
+    "grierson1903haijong:p374:haijong:prompt:132",
+    "grierson1903haijong:p374:haijong:prompt:133",
+    "grierson1903haijong:p374:haijong:prompt:134",
+    "grierson1903haijong:p374:haijong:prompt:135",
+    "grierson1903haijong:p374:haijong:prompt:136",
+    "grierson1903haijong:p374:haijong:prompt:137",
+    "grierson1903haijong:p374:haijong:prompt:138",
+    "grierson1903haijong:p374:haijong:prompt:139",
+    "grierson1903haijong:p374:haijong:prompt:140",
+    "grierson1903haijong:p374:haijong:prompt:141",
+    "grierson1903haijong:p374:haijong:prompt:142",
+    "grierson1903haijong:p374:haijong:prompt:143",
+    "grierson1903haijong:p374:haijong:prompt:144",
+    "grierson1903haijong:p374:haijong:prompt:145",
+    "grierson1903haijong:p374:haijong:prompt:146",
+    "grierson1903haijong:p374:haijong:prompt:147",
+    "grierson1903haijong:p374:haijong:prompt:148",
+    "grierson1903haijong:p374:haijong:prompt:149",
+    "grierson1903haijong:p374:haijong:prompt:150",
+    "grierson1903haijong:p374:haijong:prompt:151",
+    "grierson1903haijong:p378:haijong:prompt:152",
+    "grierson1903haijong:p378:haijong:prompt:153",
+    "grierson1903haijong:p378:haijong:prompt:154",
+    "grierson1903haijong:p378:haijong:prompt:155",
+    "grierson1903haijong:p378:haijong:prompt:156",
+    "grierson1903haijong:p378:haijong:prompt:157",
+    "grierson1903haijong:p378:haijong:prompt:158",
+    "grierson1903haijong:p378:haijong:prompt:159",
+    "grierson1903haijong:p378:haijong:prompt:160",
+    "grierson1903haijong:p378:haijong:prompt:161",
+    "grierson1903haijong:p378:haijong:prompt:162",
+    "grierson1903haijong:p378:haijong:prompt:163",
+    "grierson1903haijong:p378:haijong:prompt:164",
+    "grierson1903haijong:p378:haijong:prompt:165",
+    "grierson1903haijong:p378:haijong:prompt:166",
+    "grierson1903haijong:p378:haijong:prompt:167",
+    "grierson1903haijong:p378:haijong:prompt:168",
+    "grierson1903haijong:p378:haijong:prompt:169",
+    "grierson1903haijong:p378:haijong:prompt:170",
+    "grierson1903haijong:p378:haijong:prompt:171",
+    "grierson1903haijong:p378:haijong:prompt:172",
+    "grierson1903haijong:p378:haijong:prompt:173",
+    "grierson1903haijong:p378:haijong:prompt:174",
+    "grierson1903haijong:p378:haijong:prompt:175"
+  ],
+  "inputs": [
+    {
+      "path": "data/data/other/forms/raw_data/grierson_haijong_1903/table-p374-first-reading-20260926.jsonl",
+      "sha256": "e4812ca258a445b7d77939622cf69baabb0ec13c3324d3115bf09cc704612040"
+    },
+    {
+      "path": "data/data/other/forms/raw_data/grierson_haijong_1903/table-p378-first-reading-20260926.jsonl",
+      "sha256": "db5e9a4ddbc9b437d9fd4fa0d43952091160e7489db354e9211f36c16a6cabe2"
+    }
+  ],
+  "original": "tmp/pdfs/lsi-v5-1/LSI-V5-1.djvu",
+  "pages": [
+    {
+      "english_printed": 372,
+      "english_djvu": 388,
+      "target_printed": 374
+    },
+    {
+      "english_printed": 376,
+      "english_djvu": 392,
+      "target_printed": 378
+    }
+  ],
+  "method": "Viewed every English prompt on original printed372/376 and compared row numbering and draft meanings.",
+  "alignment_errors": [],
+  "lexical_gloss_errors": [],
+  "metadata_requirements": [
+    {
+      "prompts": [
+        "168",
+        "175"
+      ],
+      "source": "Be (Imperative); Beat (Imperative)",
+      "decision": "Retain imperative metadata."
+    },
+    {
+      "prompts": [
+        "169"
+      ],
+      "source": "To be (Infin. of purpose)",
+      "decision": "Retain infinitive tag plus source purpose qualification in Notes or supported tag."
+    },
+    {
+      "prompts": [
+        "170"
+      ],
+      "source": "Being (Present Participle)",
+      "decision": "Target blank, but preserve full printed grammatical heading in blank audit."
+    }
+  ],
+  "control_exclusions": [
+    "English372 comparative/superlative and plural construction notes belong specifically Bengali Standard/Colloquial columns; do not attribute those prescriptions to Haijong."
+  ],
+  "canonical_modified": false
+}

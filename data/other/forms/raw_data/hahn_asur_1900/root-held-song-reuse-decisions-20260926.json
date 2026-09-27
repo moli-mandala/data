@@ -1,0 +1,25 @@
+{
+  "date": "2026-09-26",
+  "status": "reconciled_for_proposal_not_installed",
+  "reviewer": "root",
+  "evidence_hashes": {
+    "held-recovery-first-reading-20260926.jsonl": "97adfedbc74bd05f0f0f3957051b40bc2cb8bc5f7e0e41cc8d3b36860c5f03c3",
+    "expression-recovery-song-first-reading.jsonl": "6b25bd8cb8ad89b31d65fa8aa80a65a3f737641896951f7028c9f875a0e4efa9",
+    "root-reuse-reassessment-20260926.json": "87e3c36917c40bdef47f7862e459584306d266228370c3bfd5d4410cf375704b",
+    "independent-held-song-reuse-review-20260926.json": "9ead7204daba7746a7c2cd7afd6e574b347279d6ee985129fac1b27d069fc900"
+  },
+  "decisions": [
+    "Retain all six formerly held source units using independently checked literal readings, with blank gloss where no lexical translation is supplied. Expand the explicitly shared okoe base transparently.",
+    "Retain quoted identifiable morphology cabā and kū with source-explicit functional metadata; do not classify them as ordinary unqualified lexical words.",
+    "Recover pa’eṉ and paheṉ as separate unglossed p171 attestations. Do not harmonize ruled n to plain n or infer variant/borrowing edges.",
+    "Retain p171 affixal hōṉ as a distinct morphology attestation from p169 lexical even; source analyses differ.",
+    "Retain p172 song as one whole translated stanza, preserving source spelling spendid in the translation and typed fine-mark uncertainty for geṭer/geter. No invented word alignment."
+  ],
+  "bound_morphology_policy": "Explicitly quoted identifiable source morphemes are in scope. Abstract variables and foreign controls require individually recorded exclusion decisions.",
+  "next_gate": "Merge independently reconciled expression inventories into reproducible full-source proposal, check source profile coverage and metadata, then fresh raw-to-output audit and focused tests.",
+  "deferred": [
+    "Full data build and full suite",
+    "Global compiled identity and graph verification",
+    "Browser database refresh and app QA only upon explicit user request"
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "status": "complete_grammar_second_reading_draft_not_canonical",
+  "reviewer": "asur_finish",
+  "original": "tmp/pdfs/lsi-v9-2/LSI-V9-2-alternate.pdf",
+  "verified_folios": {
+    "70": 53,
+    "71": 54,
+    "72": 55,
+    "73": 56,
+    "74": 57,
+    "75": 58,
+    "76": 59
+  },
+  "standing_rule": "Printed54 explicitly says unqualified remarks apply both Rangri and Malvi proper. Printed53 locates specimen basis in Dewas Junior Branch.",
+  "counts": {
+    "units": 280,
+    "by_page": {
+      "54": 57,
+      "55": 44,
+      "56": 61,
+      "57": 55,
+      "58": 51,
+      "59": 12
+    },
+    "by_scope": {
+      "shared-rangri-malvi": 135,
+      "comparison-base-control": 14,
+      "explicit-rangri": 67,
+      "explicit-malvi-control": 58,
+      "other-language-control": 4,
+      "rejected-control": 2
+    },
+    "form_occurrences_including_controls": 350
+  },
+  "input_draft_sha256": "e2d4663c4c9025bd7492742e1d8259cbd3242a9e589acf538790fd4ebdc28567",
+  "coverage": "All lexical examples, paradigms and explicitly exemplified morphology in printed54–59 accounted, including locative/plural/conjunctive/passive/causative and pleonastic endings. Phoneme-only ai/au/e/o/i/u/a and ḍ/ṛ statements, gender absence, inserted consonants and absent future types s/h are retained as prose context, not invented lexical attestations.",
+  "second_reading_status": "All printed54–59 lexical blocks and paradigms reread against sharper original PDF71–76. Targeted narrow crops resolved wō, chaḷyō, kaṇi-ē̃ and wāḷō; root independently confirmed the remaining nasal-i distinctions. Full independent random audit belongs to parent package integration.",
+  "attribution_issues": [
+    "Unlabelled reflexive sentences on56 use dental forms; standing shared rule applied with explicit Notes, not silently treated Malvi-only.",
+    "Conjunctive examples58 assigned by explicitly contrasted Rangri āy-nē versus Malvi ai-nē ending; parent should confirm interpretation.",
+    "Forms following for in pronunciation comparisons are preserved as comparison-base controls, not automatically added as Rangri."
+  ],
+  "remaining_fine_checks": [],
+  "tag_policy": "All draft tags now map to registered grammatical/gender tags; original shorthand retained as source_grammar_labels. Pluperfect rendered pret+perfect with explicit English gloss, no new schema.",
+  "outputs": "shared-grammar-first-reading.jsonl; no canonical changes",
+  "independent_targeted_checks": {
+    "reviewer": "root",
+    "source": "original PDF73 / printed56 narrow4x crop",
+    "confirmed": [
+      "kaĩ",
+      "kaī̃",
+      "kā̃ī̃",
+      "kaṇi-ē̃ nahĩ diyā"
+    ],
+    "result": "all literal distinctions confirmed"
+  }
+}

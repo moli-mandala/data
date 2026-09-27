@@ -1,0 +1,50 @@
+{
+  "status": "installed_source_stage_validated",
+  "forms": 605,
+  "physical_source_units": 529,
+  "legacy_rows_order_keys_and_generated_ids_preserved": 267,
+  "focused_tests": {
+    "command": ".venv/bin/python -m pytest tests/test_bailey_surkhuli_1920.py tests/test_bailey_surkhuli_whole_recovery.py -q",
+    "result": "13 passed in 1.12s"
+  },
+  "actual_canonical_parser": {
+    "rows": 605,
+    "conversion_errors": 0,
+    "monkeypatches": false,
+    "all_original_notes_citations_tags_roundtrip": true,
+    "display_policy": "literal except established w→v, ṅ→ŋ, internal stop removal; hyphens preserved by installed YAML"
+  },
+  "source_graph": {
+    "variant_edges": 27,
+    "all_endpoints_installed": true,
+    "new_etymology_or_borrowing_edges": 0
+  },
+  "metadata": {
+    "canonical_language": "surkh",
+    "new_dialects": 0,
+    "reference": "bailey1920surkhuli",
+    "reference_present": true,
+    "ocr": true,
+    "preserve_hyphens": true,
+    "split_alternates": false,
+    "identity": {
+      "legacy_ids": "stem",
+      "append_order": 49
+    }
+  },
+  "audit": "Root independent20 unchanged; all10 morphology emissions approved; supplementary class reviews and full e/i follow-up recorded; historical glossary hashes validated against preserved snapshots.",
+  "sha256": {
+    "canonical_csv": "272709d298d6034c00c8e396f75a7376ae4e883cfb6ed3a564b0bbdd04b35064",
+    "canonical_audit": "9da368e60a916807c25dddb0fa83956de6fb4ba4d7fcc4c7069ec93d22154ac6",
+    "canonical_profile": "d58e91e33d58a23ce8e046b67cb76353c8a4a1434d4fb5bcd0661dcad34a5357",
+    "canonical_metadata": "938815ea447e23878e31bef7347ba012f9395968919af4f1860383ae1890bcfe",
+    "importer": "885ebff8ac9f57932d31515746d9cc1d82e5c9ad5ef5ee22775a53328fbb3a06"
+  },
+  "deferred_to_parent_release": [
+    "Full CLDF/database build",
+    "Full suite",
+    "Compiled graph/reference/identity validation",
+    "Browser QA"
+  ],
+  "no_other_ingestion_started": true
+}

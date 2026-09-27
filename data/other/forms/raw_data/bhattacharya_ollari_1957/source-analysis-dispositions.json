@@ -1,0 +1,229 @@
+{
+  "status": "17 analyses individually dispositioned; unresolved endpoints remain in attributed prose",
+  "matching_policy": "Streamed current CLDF; discovery allowed removal of Vedic acute/grave marks only, preserving length and consonants. Form-only matches do not establish senses or relation scope.",
+  "compiled_candidates": [
+    {
+      "ID": "722",
+      "Language_ID": "Indo-Aryan",
+      "Form": "álpa",
+      "Gloss": "small",
+      "Source": "CDIAL",
+      "Status": "entry",
+      "Redirect": ""
+    },
+    {
+      "ID": "2462",
+      "Language_ID": "Indo-Aryan",
+      "Form": "ḗka",
+      "Gloss": "one",
+      "Source": "CDIAL;CDIAL",
+      "Status": "entry",
+      "Redirect": ""
+    },
+    {
+      "ID": "2588",
+      "Language_ID": "Indo-Aryan",
+      "Form": "kákṣa",
+      "Gloss": "armpit; groin (?)",
+      "Source": "CDIAL;EWA[i 561];CDIAL",
+      "Status": "",
+      "Redirect": ""
+    },
+    {
+      "ID": "2589",
+      "Language_ID": "Indo-Aryan",
+      "Form": "kákṣa",
+      "Gloss": "undergrowth; dead wood; grass",
+      "Source": "CDIAL",
+      "Status": "entry",
+      "Redirect": ""
+    },
+    {
+      "ID": "14342",
+      "Language_ID": "Indo-Aryan",
+      "Form": "kákṣa-",
+      "Gloss": "",
+      "Source": "CDIAL",
+      "Status": "entry",
+      "Redirect": "2588"
+    },
+    {
+      "ID": "d4726",
+      "Language_ID": "PDr",
+      "Form": "*maram",
+      "Gloss": "",
+      "Source": "dedr[entry 4726, DED(S) 3869];merriam2026dravidiandb[record 4956, DEDR 4726]",
+      "Status": "entry",
+      "Redirect": ""
+    },
+    {
+      "ID": "f_b3zcxsawrxanc",
+      "Language_ID": "Tamil",
+      "Form": "ciṟu",
+      "Gloss": "to be small, short, stunted in growth, shrink, diminish, be impoverished, sink low",
+      "Source": "dedr",
+      "Status": "",
+      "Redirect": ""
+    }
+  ],
+  "records": [
+    {
+      "entry_key": "ollari1957:p48:c1:y2409",
+      "position": 1,
+      "source_text": "duplication of aṭ- (‘to strike’) to denote reciprocity",
+      "disposition": "existing-derived-link",
+      "reason": "Reduplication already links to the strike verb in the lexical preview.",
+      "candidate_ids": []
+    },
+    {
+      "entry_key": "ollari1957:p49:c2:y1246",
+      "position": 1,
+      "source_text": "IA.; lit. first day, i.e. the day from which counting begins",
+      "disposition": "unlinked-unspecified-ia",
+      "reason": "IA attribution and literal first day gloss name no unique donor form.",
+      "candidate_ids": []
+    },
+    {
+      "entry_key": "ollari1957:p50:c1:y808",
+      "position": 1,
+      "source_text": "dem. a + l of loc. il (?)",
+      "disposition": "unlinked-source-uncertain",
+      "reason": "Printed question mark qualifies the demonstrative plus locative analysis.",
+      "candidate_ids": []
+    },
+    {
+      "entry_key": "ollari1957:p50:c1:y1442",
+      "position": 1,
+      "source_text": "De. ɔlɔp < Sk. alpa",
+      "disposition": "unlinked-intermediate-donor",
+      "reason": "Source gives Desia ɔlɔp before Sanskrit alpa; direct attachment to Sanskrit would discard the intermediate donor. CDIAL 722 is a Sanskrit candidate only.",
+      "candidate_ids": [
+        "722"
+      ]
+    },
+    {
+      "entry_key": "ollari1957:p50:c2:y1942",
+      "position": 2,
+      "source_text": "— Drav. yānḍu > Ta. Ma. ānṭu, Kol. ēḍ ‘year’, with dem. i-",
+      "disposition": "unlinked-unspecified-proto-stage",
+      "reason": "Drav. yānḍu with demonstrative i- names no uniquely identifiable reconstruction node; retain component analysis.",
+      "candidate_ids": []
+    },
+    {
+      "entry_key": "ollari1957:p51:c2:y1321",
+      "position": 1,
+      "source_text": "i + loc. -l (?)",
+      "disposition": "unlinked-source-uncertain",
+      "reason": "Printed question mark qualifies the demonstrative plus locative analysis.",
+      "candidate_ids": []
+    },
+    {
+      "entry_key": "ollari1957:p53:c2:y1058",
+      "position": 1,
+      "source_text": "ok + kuṛve",
+      "disposition": "unlinked-incomplete-components",
+      "reason": "kuṛve has a source-local headword; ok is not an independently emitted exact form. Do not attach the whole compound as a simple derivation to only the measure noun.",
+      "candidate_ids": [
+        "ollari1957:p57:c2:y2313"
+      ]
+    },
+    {
+      "entry_key": "ollari1957:p54:c1:y1900",
+      "position": 1,
+      "source_text": "pl. of ōnḍ, on-",
+      "disposition": "integrated-plural-derived",
+      "reason": "Source explicitly calls this headword the plural of ōnḍ/on-. Integration preview now links it to ōnḍ and tags it plural.",
+      "candidate_ids": [
+        "ollari1957:p54:c1:y867"
+      ]
+    },
+    {
+      "entry_key": "ollari1957:p54:c1:y2384",
+      "position": 1,
+      "source_text": "< Sk. kakṣa- ‘side’",
+      "disposition": "unlinked-sense-review",
+      "reason": "CDIAL 2588 armpit/groin is plausible for printed side, but not identical; 2589 undergrowth is semantically unsuitable. No unconditional headword-only match.",
+      "candidate_ids": [
+        "2588",
+        "2589",
+        "14342"
+      ]
+    },
+    {
+      "entry_key": "ollari1957:p54:c2:y2029",
+      "position": 2,
+      "source_text": "< Sk. khanḍa ‘part’ + ēka ‘one’",
+      "disposition": "unlinked-incomplete-components",
+      "reason": "Source khanḍa part plus ēka one is a compound analysis. 2462 matches the one component; the exact first component and compound construction need resolution.",
+      "candidate_ids": [
+        "2462"
+      ]
+    },
+    {
+      "entry_key": "ollari1957:p61:c1:y2738",
+      "position": 2,
+      "source_text": "jir < sir ‘buffalo’",
+      "disposition": "unlinked-component-only",
+      "reason": "Only jir is analysed as coming from sir buffalo, not the entire compound. No independently emitted jir component node.",
+      "candidate_ids": [
+        "ollari1957:p76:c1:y2667"
+      ]
+    },
+    {
+      "entry_key": "ollari1957:p63:c1:y1292",
+      "position": 2,
+      "source_text": "Sk. dik ‘direction’ + el",
+      "disposition": "unlinked-incomplete-components",
+      "reason": "Printed Sanskrit dik plus el; neither complete pair of uniquely identified endpoints nor source-local el headword established.",
+      "candidate_ids": []
+    },
+    {
+      "entry_key": "ollari1957:p70:c1:y1355",
+      "position": 2,
+      "source_text": "sinḍ = son (q.v.)",
+      "disposition": "unlinked-component-only",
+      "reason": "sinḍ son identifies the second component; do not make the whole compound a variant or ordinary reflex of son.",
+      "candidate_ids": [
+        "ollari1957:p76:c1:y1200"
+      ]
+    },
+    {
+      "entry_key": "ollari1957:p70:c1:y1355",
+      "position": 5,
+      "source_text": "The word is mag, while -nḍ is the 3rd pers. sing. masc. suffix",
+      "disposition": "unlinked-morphological-analysis",
+      "reason": "The source describes mag plus a masculine suffix; grammatical morphemes have no standalone lexical endpoints here.",
+      "candidate_ids": []
+    },
+    {
+      "entry_key": "ollari1957:p71:c1:y238",
+      "position": 2,
+      "source_text": "probably connected with maram ‘tree’",
+      "disposition": "unlinked-source-uncertain",
+      "reason": "Probably connected preserves explicit source uncertainty; several maram attestations and a proto-entry exist, without a specified language/stage.",
+      "candidate_ids": [
+        "d4726"
+      ]
+    },
+    {
+      "entry_key": "ollari1957:p75:c2:y3042",
+      "position": 1,
+      "source_text": "sav- (savul) ‘mortar’ + kal ‘stone’",
+      "disposition": "unlinked-incomplete-components",
+      "reason": "savul is available, but printed kal stone is not the independently printed Ollari kanḍ stone; do not silently substitute it.",
+      "candidate_ids": [
+        "ollari1957:p75:c2:y2405"
+      ]
+    },
+    {
+      "entry_key": "ollari1957:p76:c1:y4142",
+      "position": 1,
+      "source_text": "sir (< Ta. ciṟu ‘small’) + eli ‘rat’",
+      "disposition": "unlinked-incomplete-components",
+      "reason": "The source analyses sir from Tamil ciṟu plus eli rat. Matching the Tamil form does not provide the local intermediate sir or a uniquely attributed eli component.",
+      "candidate_ids": [
+        "f_b3zcxsawrxanc"
+      ]
+    }
+  ]
+}

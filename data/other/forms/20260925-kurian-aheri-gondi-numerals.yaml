@@ -1,0 +1,17 @@
+file: 20260925-kurian-aheri-gondi-numerals.csv
+defaults:
+  transcription:
+    profile: kurian-aheri-gondi-2018
+    preserve_hyphens: true
+  identity:
+    legacy_ids: stem
+    append_order: 82
+  importer:
+    commands:
+      - [data/other/forms/raw_data/kurian_aheri_gondi_2018/import_source.py, --install]
+    note: Benny Kurian's explicitly numbered Aheri Gondi 2018 numeral table in the immutable CC-BY Chan archive.
+sources:
+  kurian2018aherigondi:
+    reference:
+      editor: OpenAI Codex
+      ocr: false

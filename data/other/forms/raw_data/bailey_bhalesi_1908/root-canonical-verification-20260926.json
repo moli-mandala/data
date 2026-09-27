@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "path": "data/data/other/forms/20260925-bailey-bhalesi.csv",
+      "sha256": "9be7c6ef82bbc0c95167aa7d1901254c4bf9f589353a8c27bd2a910462d080f6",
+      "matches_approved": true
+    },
+    {
+      "path": "data/data/other/forms/raw_data/bailey_bhalesi_1908/audit.jsonl",
+      "sha256": "893c63e421dcc4b2819f72ac24d710bb1ff3ff42c2c7058cb3c12fcf387990b7",
+      "matches_approved": true
+    },
+    {
+      "path": "data/conversion/bailey-bhalesi-1908.txt",
+      "sha256": "04cd4a94dfaa3bd48cfd64176711773958fe37f2312ada82e744f591c75a2e00",
+      "matches_approved": true
+    }
+  ],
+  "durable_identity_sha256": "5ec2588f97a569cc7a1de68f59474c03612fa7a4266582be61d70dca29efcfc9",
+  "durable_identity_unchanged": true,
+  "scope": "Exact source-stage files only; global build/database deferred."
+}

@@ -1,0 +1,185 @@
+{
+  "status": "section_scope_confirmed_extraction_in_progress",
+  "owner": "root",
+  "date": "2026-09-26",
+  "scan": "tmp/pdfs/lsi-v9-2/LSI-V9-2.djvu",
+  "scan_sha256": "d6796bad8d267b776d2aec40dabb0b3b74d4f4fc87eb118f81db1b88e9dc6049",
+  "page_mapping": "DjVu one-based page = printed page +15",
+  "evidence": {
+    "contents_reviewed": [
+      "printed contents v–vii"
+    ],
+    "original_pages_viewed": [
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      240,
+      247,
+      248,
+      249,
+      250,
+      251,
+      252,
+      253,
+      254,
+      255,
+      256,
+      257,
+      258,
+      305,
+      307,
+      309,
+      311,
+      313,
+      315,
+      317,
+      319,
+      321
+    ]
+  },
+  "confirmed_sections": [
+    {
+      "printed_pages": [
+        248
+      ],
+      "scope": "Rangri specimenI native-script witness; Dewas Junior Branch"
+    },
+    {
+      "printed_pages": [
+        249,
+        250,
+        251
+      ],
+      "scope": "Complete Rangri specimenI Roman interlinear Parable; every aligned token is in recovery scope"
+    },
+    {
+      "printed_pages": [
+        252,
+        253
+      ],
+      "scope": "Rangri specimenII native-script witness"
+    },
+    {
+      "printed_pages": [
+        254,
+        255,
+        256
+      ],
+      "scope": "Complete Rangri specimenII Roman interlinear tale; every aligned token is in recovery scope"
+    },
+    {
+      "printed_pages": [
+        256,
+        257
+      ],
+      "scope": "Free English translation of specimenII; contextual witness, not additional lexical attestations"
+    },
+    {
+      "printed_pages": [
+        321
+      ],
+      "scope": "Final Rangri table column prompts215–241; separate Standard Malvi and Nimari columns are controls"
+    }
+  ],
+  "pending_scope_checks": [],
+  "attribution_policy": "Printed240 explicitly distinguishes two Standard Malvi specimens from two Rangri specimens. Preserve this distinction; no replacement from adjacent when-different column. Printed52 identifies Rangri among Malvi varieties. Historical social descriptions are source attribution only.",
+  "canonical_state": "Existing five forms untouched pending complete extraction, second reading, independent audit, metadata/profile and focused validation.",
+  "deferred_by_user": [
+    "DB/fullCLDF build",
+    "global compiled graph/identity/reference checks",
+    "fullsuite",
+    "browserQA"
+  ],
+  "grammar_attribution": {
+    "printed53": "Grammatical sketch based on specimens from Dewas Junior Branch; two forms Rangri and Malvi proper distinguished.",
+    "printed54": "Explicit standing rule: unless otherwise stated, remarks apply both to Rangri and Malvi proper.",
+    "decision": "Include unqualified shared grammar examples with exact shared-attribution Notes. Include explicitly labelled Rangri examples. Exclude explicitly contrasting Malvi-only, other-language, and hypothetical comparison forms from Rangri rows; preserve them in the census as controls.",
+    "page_sections": {
+      "54": "Pronunciation prose, explicit Rangri/Malvi contrast, shared noun declension",
+      "55": "Malvi-only plural controls; Rangri agent examples, shared case postpositions, explicit Rangri personal-pronoun paradigm",
+      "56": "Rangri inclusive pronouns, honorific/reflexive prose, Rangri vs Malvi third-person/demonstrative/relative tables, adverbs",
+      "57": "Adverbs, shared auxiliaries, explicit contrasted principal parts, shared finite paradigms",
+      "58": "Shared future, Malvi-only future controls, contrasted past constructions, irregular verbs, conjunctive/causal/passive prose",
+      "59": "Compound verbs and suffix examples; preserve explicitly Malvi-only example as control"
+    }
+  },
+  "table_census": [
+    {
+      "printed_page": 305,
+      "djvu_page": 320,
+      "first_prompt": 1,
+      "last_prompt": 25,
+      "column": "Malvi (Rangri)"
+    },
+    {
+      "printed_page": 307,
+      "djvu_page": 322,
+      "first_prompt": 26,
+      "last_prompt": 52,
+      "column": "Malvi (Rangri)"
+    },
+    {
+      "printed_page": 309,
+      "djvu_page": 324,
+      "first_prompt": 53,
+      "last_prompt": 79,
+      "column": "Malvi (Rangri)"
+    },
+    {
+      "printed_page": 311,
+      "djvu_page": 326,
+      "first_prompt": 80,
+      "last_prompt": 106,
+      "column": "Malvi (Rangri)"
+    },
+    {
+      "printed_page": 313,
+      "djvu_page": 328,
+      "first_prompt": 107,
+      "last_prompt": 133,
+      "column": "Malvi (Rangri)"
+    },
+    {
+      "printed_page": 315,
+      "djvu_page": 330,
+      "first_prompt": 134,
+      "last_prompt": 160,
+      "column": "Malvi (Rangri)"
+    },
+    {
+      "printed_page": 317,
+      "djvu_page": 332,
+      "first_prompt": 161,
+      "last_prompt": 187,
+      "column": "Malvi (Rangri)"
+    },
+    {
+      "printed_page": 319,
+      "djvu_page": 334,
+      "first_prompt": 188,
+      "last_prompt": 214,
+      "column": "Malvi (Rangri)"
+    },
+    {
+      "printed_page": 321,
+      "djvu_page": 336,
+      "first_prompt": 215,
+      "last_prompt": 241,
+      "column": "Malvi (Rangri)"
+    }
+  ],
+  "table_source_blanks_observed": [
+    172,
+    174,
+    201
+  ],
+  "boundary_checks": {
+    "247": "End of separately labelled Standard Malvi song and free English translation, not Rangri specimen.",
+    "258": "New Malvi of Kota and Gwalior chapter; not Dewas Rangri."
+  }
+}

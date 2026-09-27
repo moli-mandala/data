@@ -1,0 +1,121 @@
+{
+  "reviewer": "asur_finish",
+  "date": "2026-09-26",
+  "scope": "All 280 grammar units rechecked against all six original DSAL grayscale pages; whole pages and narrow glyph controls viewed.",
+  "sources": [
+    {
+      "path": "tmp/pdfs/lsi-v9-2/dsal-069.jpg",
+      "url": "https://dsal.uchicago.edu/books/lsi/images/lsi-v9-2-069.jpg",
+      "printed_page": 54,
+      "bytes": 358882,
+      "sha256": "974a37337cc8eb9f4fcffcc9dc9d0b5a964de622e1dfe4359955748ca777faba"
+    },
+    {
+      "path": "tmp/pdfs/lsi-v9-2/dsal-070.jpg",
+      "url": "https://dsal.uchicago.edu/books/lsi/images/lsi-v9-2-070.jpg",
+      "printed_page": 55,
+      "bytes": 343881,
+      "sha256": "e7a47cc251976e05c8ec4736be53157a0074732915f14b539ac777fa3562b3b1"
+    },
+    {
+      "path": "tmp/pdfs/lsi-v9-2/dsal-071.jpg",
+      "url": "https://dsal.uchicago.edu/books/lsi/images/lsi-v9-2-071.jpg",
+      "printed_page": 56,
+      "bytes": 295474,
+      "sha256": "a219259bf6f1ba0919a4149eab1f599b5e958724216ed18852cb2f6deaff2436"
+    },
+    {
+      "path": "tmp/pdfs/lsi-v9-2/dsal-072.jpg",
+      "url": "https://dsal.uchicago.edu/books/lsi/images/lsi-v9-2-072.jpg",
+      "printed_page": 57,
+      "bytes": 239684,
+      "sha256": "d7b2b986fa02b037f022a7680a9bf820248921b645ca085fe7a976dde1d78dfb"
+    },
+    {
+      "path": "tmp/pdfs/lsi-v9-2/dsal-073.jpg",
+      "url": "https://dsal.uchicago.edu/books/lsi/images/lsi-v9-2-073.jpg",
+      "printed_page": 58,
+      "bytes": 340372,
+      "sha256": "b4f7e5d4184672a98147c4106cefe012058420d617f135091f6577f875e91719"
+    },
+    {
+      "path": "tmp/pdfs/lsi-v9-2/dsal-074.jpg",
+      "url": "https://dsal.uchicago.edu/books/lsi/images/lsi-v9-2-074.jpg",
+      "printed_page": 59,
+      "bytes": 105672,
+      "sha256": "7ff581ec25b343378bf4b3036de01c81824db7cc5c48e7e8baca5cb981f7ed02"
+    }
+  ],
+  "corrections": [
+    {
+      "key": "grierson1908rangri:p55:grammar:men",
+      "before": [
+        "āḍᵃmī-hōn-sē"
+      ],
+      "after": [
+        "ādᵃmī-hōn-sē"
+      ],
+      "reason": "Superior DSAL grayscale source resolves binary-image artifacts; original page verified."
+    },
+    {
+      "key": "grierson1908rangri:p55:grammar:rejected-men",
+      "before": [
+        "āḍmyā̃-hōn-sē"
+      ],
+      "after": [
+        "ādmyā̃-hōn-sē"
+      ],
+      "reason": "Superior DSAL grayscale source resolves binary-image artifacts; original page verified."
+    },
+    {
+      "key": "grierson1908rangri:p56:grammar:there-where",
+      "before": [
+        "jaithē"
+      ],
+      "after": [
+        "jathē"
+      ],
+      "reason": "Superior DSAL grayscale source resolves binary-image artifacts; original page verified."
+    },
+    {
+      "key": "grierson1908rangri:p57:grammar:aux-pres-3pl",
+      "before": [
+        "hā",
+        "hai"
+      ],
+      "after": [
+        "hē",
+        "hai"
+      ],
+      "reason": "Superior DSAL grayscale source resolves binary-image artifacts; original page verified."
+    },
+    {
+      "key": "grierson1908rangri:p56:grammar:who-obl",
+      "before": [
+        "kaṇi"
+      ],
+      "after": [
+        "kaṇī"
+      ],
+      "reason": "Original DSAL071 clear horizontal macron above final i contrasts nearby relative jaṇi dot; independently confirmed by root."
+    },
+    {
+      "key": "grierson1908rangri:p56:grammar:no-one",
+      "before": [
+        "kaṇi-ē̃ nahĩ diyā"
+      ],
+      "after": [
+        "kaṇī-ē̃ nahĩ diyā"
+      ],
+      "reason": "Original DSAL071 clear horizontal macron above final i contrasts nearby relative jaṇi dot; independently confirmed by root."
+    }
+  ],
+  "prior_root_confirmation_overturned": {
+    "unit": "aux-pres-3pl",
+    "prior": "hā,hai from binary",
+    "superior_source": "hē,hai in DSAL072; root independently confirms open e crossbar"
+  },
+  "pending_targeted_confirmation": [],
+  "control_glyph_hold": "malvi-pronoun-our initial damagedh/l; excluded control",
+  "grammar_sha256": "038403c3eacec24a94b1d78db2c28db0ae4d797d868188b5ab7e8d41601355c1"
+}

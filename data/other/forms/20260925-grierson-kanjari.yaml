@@ -1,0 +1,22 @@
+file: 20260925-grierson-kanjari.csv
+defaults:
+  transcription:
+    profile: grierson-kanjari-1922
+    preserve_hyphens: true
+  identity:
+    legacy_ids: stem
+    append_order: 43
+  importer:
+    commands:
+      - [data/other/forms/raw_data/grierson_kanjari_1922/import_source.py, --install]
+    note: Complete source-stage transcription of Kanjari lexical and grammatical prose and aligned specimens, printed pp. 96–120, plus all 241 prompts in both Sitapur and Belgaum standard-table columns, printed pp. 180–212. All original readings reviewed against the pinned page-image PDF; three Kheri controls and one bound suffix remain audit-only. Exact specimen form/gloss repeats retain every source locator. Full DB build and browser QA deferred by explicit user instruction.
+sources:
+  grierson1922lsi11:
+    identity:
+      dedupe_by_entry_key: true
+    forms:
+      split_alternates: false
+    reference:
+      editor: OpenAI Codex
+      ocr: true
+      etymology_provenance: source

@@ -45,11 +45,11 @@ def test_hajong_clean_pdf_targets_are_complete():
 
 def test_hajong_ipa_profile_and_full_source_coverage():
     assert _convert("brɪʃʈi") == "briśṭi"
-    assert _convert("rɔŋdʰɔnu") == "roŋdʰonu"
+    assert _convert("rɔŋdʰɔnu") == "rɔŋdʰɔnu"
     assert _convert("d̪al") == "dal"
     assert _convert("dui̯") == "dui̯"
     assert _convert("ɖim") == "ḍim"
-    assert _convert("bɛŋun") == "beŋun"
+    assert _convert("bɛŋun") == "bɛŋun"
     assert _convert("bɯla") == "bula"
 
     with open(SOURCE_FILE, encoding="utf-8", newline="") as stream:

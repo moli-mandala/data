@@ -56,11 +56,11 @@ def test_yamphu_lects_are_registered_under_report_language_groups():
 def test_yamphu_ipa_profile():
     profile = Tokenizer("conversion/yamphu.txt")
     cases = {
-        "lɪnʈa": "linṭa",
-        "dʒʌɾa": "jara",
-        "tsʌŋak̚": "ʦaŋak̚",
-        "kʰʌɹani": "kʰarani",
-        "ɠʷɛŋ": "gʷeŋ",
+        "lɪnʈa": "linṭā",
+        "dʒʌɾa": "jarā",
+        "tsʌŋak̚": "ʦaŋāk̚",
+        "kʰʌɹani": "kʰarāni",
+        "ɠʷɛŋ": "gʷɛŋ",
     }
     for source, expected in cases.items():
         converted = profile(unicodedata.normalize("NFD", source), column="IPA")

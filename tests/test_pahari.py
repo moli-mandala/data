@@ -50,11 +50,11 @@ def test_pahari_keeps_five_targets_and_excludes_newar_controls_and_nonforms():
 def test_pahari_ipa_profile():
     profile = Tokenizer("conversion/pahari.txt")
     cases = {
-        "m̤ɔ": "m̤o",
+        "m̤ɔ": "m̤ɔ",
         "t͡sʰe": "ʦʰe",
-        "d͡z̤i": "ʣ̤i",
-        "ɪndɾɛni+pəɾe+du+d͡zu": "indreni+pəre+du+ʣu",
-        "t͡saĩ̯.ɦa": "ʦaĩ̯.ɦa",
+        "d͡z̤i": "ʣ̤ī",
+        "ɪndɾɛni+pəɾe+du+d͡zu": "indrɛnī+pare+du+ʣu",
+        "t͡saĩ̯.ɦa": "ʦāī̯̃.hā",
     }
     for source, expected in cases.items():
         converted = profile(unicodedata.normalize("NFD", source), column="IPA")

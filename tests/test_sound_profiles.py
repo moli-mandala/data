@@ -78,8 +78,8 @@ CHECKED_PROFILE_FILES = {
         "20260817-mundlay-nihali.csv",
         "20260817-nagaraja-nihali-wiktionary.csv",
         "20260817-nihali-database-bhattacharya.csv",
-        "20260817-nihali-database-konow.csv",
     ],
+    "nihali-konow": ["20260817-nihali-database-konow.csv"],
     "badaga-hockings": ["20260818-hockings-badaga.csv"],
     "nured": ["20260818-nured-org.csv"],
     "buddruss-grangali": ["20260819-buddruss-grangali.csv"],
@@ -139,6 +139,8 @@ def convert(profile: str, value: str) -> str:
 
 
 def test_every_installed_source_has_an_explicit_sound_profile():
+    import source_meta
+    meta = source_meta.load()
     profiles = {
         os.path.splitext(os.path.basename(path))[0]
         for path in glob.glob("conversion/*.txt")
@@ -156,6 +158,12 @@ def test_every_installed_source_has_an_explicit_sound_profile():
             continue
         key = os.path.splitext(basename)[0].split("-")[1]
         source_key = first_row[7].split("[", 1)[0]
+        configured, convert = meta.transcription(source_key, path, first_row[0])
+        if configured is not None:
+            assert configured in profiles, f"{basename} has no configured sound profile"
+            continue
+        if meta.transcription_rule(source_key, path, first_row[0]).get('convert') is False:
+            continue
         if source_key in {"regmi2017angika", "chalise2014majhi", "bhat1971koraga", "census2002orissa"}:
             profile = {"regmi2017angika":"selected-angika", "chalise2014majhi":"selected-majhi", "bhat1971koraga":"selected-koraga", "census2002orissa":"selected-orissa"}[source_key]
         elif source_key in {"shackle", "shackle-auto"}:
@@ -292,30 +300,30 @@ def test_new_source_profiles_cover_source_specific_transcription():
     assert convert("kusunda-gipan", "khaṅgu") == "kʰaŋgu"
     assert convert("merriam-reconstruction", "kaṭ-/kaḍ-") == "kaṭ-/kaḍ-"
     assert convert("merriam-reconstruction", "agáḍ-") == "agáḍ-"
-    assert convert("pinnow-munda", "(ə-)ˈlʔuːd-ən") == "(ə-)ˈlʔuːd-ən"
-    assert convert("pinnow-munda", "ɔr- (ɔɽ-?) (C-F)") == "ɔr- (ɔɽ-?) (C-F)"
+    assert convert("pinnow-munda", "(ə-)ˈlʔuːd-ən") == "(ə-)ˈlʔūd-ən"
+    assert convert("pinnow-munda", "ɔr- (ɔɽ-?) (C-F)") == "ɔr- (ɔṛ-?) (C-F)"
     assert convert("munda-proto-kherwarian", "*(a-)pì/ɛ̀") == "*(a-)pì/ɛ̀"
     assert convert("munda-proto-kherwarian", "*sɛ̀da(ɛ)") == "*sɛ̀da(ɛ)"
     assert convert("zide-sora-juray", "ʌb-ʌsin-") == "ʌb-ʌsin-"
     assert convert("zide-sora-juray", "R-lʌŋ") == "R-lʌŋ"
     assert convert("bhattacharya-bonda", "a?a?") == "a?a?"
-    assert convert("bahl-korwa", "gũːgiaː-kin") == "gũːgiaː-kin"
-    assert convert("pinnow-juang", "ɔ[b]ɽɔg-") == "ɔ[b]ɽɔg-"
+    assert convert("bahl-korwa", "gũːgiaː-kin") == "gū̃giā-kin"
+    assert convert("pinnow-juang", "ɔ[b]ɽɔg-") == "ɔ[b]ṛɔg-"
     assert convert("ghatage", "tã:ŋkɨ") == "tā̃ŋkɨ"
     assert convert("ghatage", "pɛ:ṇṭɛ") == "pɛ̄ṇṭɛ"
     assert convert("ghatage", "goṭṭe") == "goṭṭe"
-    assert convert("ghatage", "ǰagrutɛ") == "jagrutɛ"
+    assert convert("ghatage", "ǰagrutɛ") == "jāgrutɛ"
     assert convert("southworth-marathi", "phaḷ") == "pʰaḷ"
     assert convert("southworth-marathi", "āi") == "āī"
     assert convert("southworth-marathi", "māṇḍi") == "māṇḍī"
     assert convert("southworth-marathi", "niṭ") == "nīṭ"
     assert convert("southworth-marathi", "bāḷant(iṇ)") == "bāḷant(īṇ)"
-    assert convert("southworth-marathi", "ḍokə") == "ḍokə̄"
+    assert convert("southworth-marathi", "ḍokə") == "ḍoka"
     assert convert("southworth-marathi", "buṭṭ@") == "buṭṭ@"
     assert convert("emeneau-brahui", "bēg̲h̲-") == "bēɣ-"
     assert convert("emeneau-brahui", "hōg̲h̲-") == "hōɣ-"
     assert convert("emeneau-brahui", "taṛifing") == "taṛifing"
-    assert convert("ghatage", "tilače te:lɨ") == "tilace tēlɨ"
+    assert convert("ghatage", "tilače te:lɨ") == "tilāce tēlɨ"
     assert convert("vaagri", "iga:ri") == "igāri"
     assert convert("vaagri", "iJalbiJal") == "iẓalbiẓal"
     assert convert("vaagri", "uba:Sa") == "ubāśa"
@@ -328,9 +336,15 @@ def test_new_source_profiles_cover_source_specific_transcription():
     assert convert("nihali", "ãːpo") == "ā̃po"
     assert convert("nihali", "dhāblā") == "dʰāblā"
     assert convert("nihali", "aɖɖo") == "aḍḍo"
-    assert convert("nihali", "aᵑgarako") == "aⁿgarako"
-    assert convert("nihali", "chhirī") == "cʰirī"
+    assert convert("nihali", "aᵑgarako") == "aŋgarako"  # Bhattacharya's ᵑ is his ṅ (aᵑga)
+    assert convert("nihali", "ičhā") == "icʰā"
+    assert convert("nihali", "cacǔko") == "cacuko"
+    assert convert("nihali", "ápa") == "ápa"  # Mundlay's stress is kept
     assert convert("nihali", "ʈoːl") == "ṭōl"
+    # Konow follows the Linguistic Survey: ch is c, chh is cʰ; his ē/ō are kept as printed
+    assert convert("nihali-konow", "charāw-kēɖinī") == "carāv-kēḍinī"
+    assert convert("nihali-konow", "chhirī") == "cʰirī"
+    assert convert("nihali-konow", "mēŋgē") == "mēŋgē"
     assert convert("drasi", "ó:ʃ") == "ṓś"
     assert convert("drasi", "ʧhúp") == "cʰúp"
     assert convert("yoshioka", "aabáad") == "ābā̂d"
@@ -338,45 +352,45 @@ def test_new_source_profiles_cover_source_specific_transcription():
     assert convert("gandhari", "aṭ́hi") == "aṭṭʰi"
     assert convert("gandhari", "maj̄a") == "majja"
     assert convert("gandhari", "kiṣ̄a") == "kiṣṇa"
-    assert convert("kullui", "dzʰaɽna") == "ʣʰaṛna"
+    assert convert("kullui", "dzʰaɽna") == "ʣʰāṛnā"
     assert convert("kullui", "rɔng") == "rɔŋg"
     assert convert("toda", "aḏïyi ïḏ") == "aḏɨyi ɨḏ"
     assert convert("toda", "teːsts̱") == "tēsts̱"
     assert convert("rabha", "kɑ́n") == "kā́n"
-    assert convert("rabha", "kɑnɡɑnd͡ʒi") == "kāngānjī"
+    assert convert("rabha", "kɑnɡɑnd͡ʒi") == "kāngānji"
     assert convert("rabha", "tʃɑ̑skɑm") == "cā̑skām"
-    assert convert("yamphu", "dʒʌɾa") == "jara"
-    assert convert("yamphu", "tsʌŋak̚") == "ʦaŋak̚"
-    assert convert("sampang", "tˢʰʌ̃wara") == "ʦʰãvara"
+    assert convert("yamphu", "dʒʌɾa") == "jarā"
+    assert convert("yamphu", "tsʌŋak̚") == "ʦaŋāk̚"
+    assert convert("sampang", "tˢʰʌ̃wara") == "ʦʰãvārā"
     assert convert("sampang", "pʌmtᶳʱu") == "pamcʰu"
-    assert convert("sampang", "dᶽʰara") == "jʰara"
-    assert convert("mewahang", "tˢʰebruŋwa") == "ʦʰebruŋva"
-    assert convert("mewahang", "mimtᶳʰa") == "mimcʰa"
-    assert convert("mewahang", "pɨ:ʔma") == "pɨ̄ʔma"
+    assert convert("sampang", "dᶽʰara") == "jʰārā"
+    assert convert("mewahang", "tˢʰebruŋwa") == "ʦʰebruŋvā"
+    assert convert("mewahang", "mimtᶳʰa") == "mimcʰā"
+    assert convert("mewahang", "pɨ:ʔma") == "pɨ̄ʔmā"
     assert convert("chhulung", "dzʰarak") == "ʣʰarak"
     assert convert("chhulung", "ŋa?lasi") == "ŋaʔlasi"
     assert convert("chhulung", "hərd̪i") == "hərdi"
     assert convert("magahi-survey", "kəpar") == "kapār"
     assert convert("magahi-survey", "jʰãɽa") == "jʰā̃ṛā"
-    assert convert("magahi-survey", "pʰut̺əl") == "pʰūtal"
-    assert convert("eastern-magar", "midʒaŋ") == "mijaŋ"
+    assert convert("magahi-survey", "pʰut̺əl") == "pʰutal"
+    assert convert("eastern-magar", "midʒaŋ") == "mijāŋ"
     assert convert("eastern-magar", "tuk̚tʃʲo") == "tuk̚cʸo"
     assert convert("western-tamang", "dʑiu") == "ʣ̣iu"
-    assert convert("western-tamang", "tɕⁱam") == "ʦ̣ⁱam"
-    assert convert("western-tamang", "ʔa:tɕabel") == "ʔāʦ̣abel"
+    assert convert("western-tamang", "tɕⁱam") == "ʦ̣ⁱām"
+    assert convert("western-tamang", "ʔa:tɕabel") == "ʔāʦ̣ābel"
     assert convert("humla", "tsʲʰerwa") == "ʦʸʰerva"
     assert convert("humla", "tɻ̥a") == "tr̥a"
     assert convert("gurung", "mõɾaa") == "mõrā"
     assert convert("gurung", "tʃʰʲaa") == "cʰʸā"
     assert convert("dotyali", "tʃʰɑti") == "cʰāti"
     assert convert("dotyali", "kɑ̃ɖɑ̃") == "kā̃ḍā̃"
-    assert convert("kudiya", "tʃaɭu") == "caḷū"
+    assert convert("kudiya", "tʃaɭu") == "caḷu"
     assert convert("kudiya", "maᶚe") == "maṛ̆e"
     assert convert("brahui", "zunḍ-ing") == "zunḍ-ing"
     assert convert("brahui", "ḍʰāḍarī") == "ḍʰāḍarī"
     assert convert("badaga-hockings", "Eḍeka:ḍu") == "Eḍekāḍu"
     assert convert("badaga-hockings", "ka:ḷu") == "kāḷu"
-    assert convert("nured", "ačẽ́") == "ačẽ́"
+    assert convert("nured", "ačẽ́") == "acẽ́"
     assert convert("nured", "puṇḍrë́/-í") == "puṇḍrë́/-í"
     assert convert("buddruss-grangali", "cōr") == "ʦōr"
     assert convert("buddruss-grangali", "čar") == "car"
@@ -387,7 +401,7 @@ def test_new_source_profiles_cover_source_specific_transcription():
     assert convert("buddruss-grangali", "brəṣpā̃re") == "brəṣpā̃re"
     assert convert("buddruss-waigali", "čipičipun'i") == "cipicipun'i"
     assert convert("buddruss-waigali", "ǰentab'ār") == "jentab'ār"
-    assert convert("buddruss-waigali", "šüwal'a") == "śüwal'a"
+    assert convert("buddruss-waigali", "šüwal'a") == "śüval'a"
     assert convert("buddruss-wama", "cima-karā") == "ʦima-karā"
     assert convert("buddruss-wama", "čital") == "cital"
     assert convert("buddruss-wama", "žatə̄rə") == "źatə̄rə"
@@ -397,20 +411,20 @@ def test_new_source_profiles_cover_source_specific_transcription():
     assert convert("rajasthani", "ʂɐgɭaji") == "ṣagḷāyī"
     assert convert("markodi", "nakʰːam") == "nakkʰam"
     assert convert("strand", "uː") == "ū"
-    assert convert("sil-irula", "muɲʤi") == "muñji"
-    assert convert("sil-irula", "t̪ʌlɛ") == "tale"
+    assert convert("sil-irula", "muɲʤi") == "muñjī"
+    assert convert("sil-irula", "t̪ʌlɛ") == "talɛ"
     assert convert("sil-irula", "kʌɖlʌɪ kʌɪ") == "kaḍlai kai"
     assert convert("sil-kurumba-2012", "su:rjʌn") == "sūryan"
     assert convert("sil-kurumba-2012", "ku:rʌ'") == "kūra'"
-    assert convert("sil-kurumba-2012", "aɽɽja") == "aṛṛya"
-    assert convert("sil-kurumba-2012", "aβɨ palliɣe") == "aβɨ palliɣe"
-    assert convert("sil-kurumba-2012", "na':") == "na':"
+    assert convert("sil-kurumba-2012", "aɽɽja") == "āṛṛyā"
+    assert convert("sil-kurumba-2012", "aβɨ palliɣe") == "āβɨ pāllīɣe"
+    assert convert("sil-kurumba-2012", "na':") == "nā':"
     assert convert("sil-northern-dhule-bhils", "ɖil") == "ḍil"
     assert convert("sil-northern-dhule-bhils", "tʃju") == "cyu"
-    assert convert("sil-northern-dhule-bhils", "t̪s̪hoʈipʌr-ɖahaɖu") == "tshoṭipar-ḍahaḍu"
+    assert convert("sil-northern-dhule-bhils", "t̪s̪hoʈipʌr-ɖahaɖu") == "tshoṭipar-ḍāhāḍu"
     assert convert("sil-northern-dhule-bhils", "kʌlɪχ") == "kalix"
     assert convert("sil-noira", "tʃʌvi") == "cavi"
-    assert convert("sil-noira", "ɑːkhɔ") == "āːkho"
+    assert convert("sil-noira", "ɑːkhɔ") == "ākhɔ"
     assert convert("sil-noira", "oʔõ") == "oʔõ"
     assert convert("sil-adi", "t̪aləŋ") == "taləŋ"
     assert convert("sil-adi", "dʒadʒi") == "jaji"
@@ -421,39 +435,39 @@ def test_new_source_profiles_cover_source_specific_transcription():
     assert convert("sil-amri-karbi", "kʌ̆tʃɾeŋ") == "kăcreŋ"
     assert convert("sil-amri-karbi", "dʒʌ̆ŋ") == "jăŋ"
     assert convert("sil-gadaba", "kʌɳɖu") == "kaṇḍu"
-    assert convert("sil-gadaba", "t̪ʌlːu") == "talːu"
-    assert convert("sil-gadaba", "mʌⁱgabulːu") == "maigabulːu"
+    assert convert("sil-gadaba", "t̪ʌlːu") == "tallu"
+    assert convert("sil-gadaba", "mʌⁱgabulːu") == "maigabullu"
     assert convert("sil-jaunsari", "çʌɾiɾ") == "çarir"
     assert convert("sil-jaunsari", "d̪ant̪") == "dant"
-    assert convert("sil-jaunsari", "jɛ dʒɛ") == "ye je"
-    assert convert("sil-bareli-pauri", "bɦuklu tʃe, bɦuklu hʌtɔ̪") == "bɦuklu ce, bɦuklu hato"
+    assert convert("sil-jaunsari", "jɛ dʒɛ") == "yɛ jɛ"
+    assert convert("sil-bareli-pauri", "bɦuklu tʃe, bɦuklu hʌtɔ̪") == "bhūklū ce, bhūklū hatɔ"
     assert convert("sil-bareli-pauri", "pats̪[") == "pats["
-    assert convert("sil-bareli-pauri", "βid̪zʌ̪we") == "βidzave"
-    assert convert("sil-nimadi", "bʱuklʌgi, bʱuklʌgti̪tʰ̪i") == "bhuklagi, bhuklagtithi"
+    assert convert("sil-bareli-pauri", "βid̪zʌ̪we") == "βīdzave"
+    assert convert("sil-nimadi", "bʱuklʌgi, bʱuklʌgti̪tʰ̪i") == "bʰūklagi, bʰūklagtitʰi"
     assert convert("sil-nimadi", "sʌBhi") == "sabhi"
     assert convert("sil-nimadi", "sʌbⁱ") == "sabi"
-    assert convert("sil-malvi", "kʰʌⁱlo, ɠʰajlijo") == "khailo, ghayliyo"
+    assert convert("sil-malvi", "kʰʌⁱlo, ɠʰajlijo") == "kʰailo, gʰaylīyo"
     assert convert("sil-malvi", "vʌdʒʌndɑ̻ɾ") == "vajandār"
-    assert convert("sil-malvi", "mʌtʃːi") == "macːi"
+    assert convert("sil-malvi", "mʌtʃːi") == "maccī"
     assert convert("sil-dogri", "d͡ʒɪsɘm") == "jisɘm"
-    assert convert("sil-dogri", "t͡ʃɪʈːə") == "ciṭːə"
-    assert convert("sil-dogri", "teɾkman, indɾadʰənʊʃ") == "terkman, indradʰənuś"
+    assert convert("sil-dogri", "t͡ʃɪʈːə") == "ciṭṭa"
+    assert convert("sil-dogri", "teɾkman, indɾadʰənʊʃ") == "terkman, īndradʰanuś"
     assert convert("sil-lahul", "ɾəɳdʒ.kɾiɳdʒ") == "rəṇj.kriṇj"
-    assert convert("sil-lahul", "ŋɐʒɐtshʌmtʃe") == "ŋažaʦhamce"
+    assert convert("sil-lahul", "ŋɐʒɐtshʌmtʃe") == "ŋaźaʦhamce"
     assert convert("sil-lahul", "k̚ t̪ɐ") == "k̚ ta"
-    assert convert("sil-bishnupriya", "dʰiɾɛ dʰiɾɛ") == "dhire dhire"
+    assert convert("sil-bishnupriya", "dʰiɾɛ dʰiɾɛ") == "dʰīrɛ dʰīrɛ"
     assert convert("sil-bishnupriya", "tʃãd") == "cãd"
     assert convert("sil-bishnupriya", "mou̯") == "mou̯"
-    assert convert("sil-meitei", "nɔːŋthɐːŋkupːɐʔ") == "nōŋthāŋkupːaʔ"
+    assert convert("sil-meitei", "nɔːŋthɐːŋkupːɐʔ") == "nɔ̄ŋthāŋkuppaʔ"
     assert convert("sil-meitei", "laŋʃoi̯") == "laŋśoi̯"
-    assert convert("sil-meitei", "ʐʑ") == "žj"
+    assert convert("sil-meitei", "ʐʑ") == "źj"
     assert convert("sil-bangladesh", "tʃɨnoŋ") == "cɨnoŋ"
-    assert convert("sil-bangladesh", "kʰɔɲ") == "kʰoñ"
+    assert convert("sil-bangladesh", "kʰɔɲ") == "kʰɔñ"
     assert convert("sil-bangladesh", "kiʃprĩ") == "kiśprĩ"
-    assert convert("sil-bangladesh", "əthɔu̯") == "əthou̯"
-    assert convert("sil-western-tharu", "tʌɾʌi + ja") == "tʌɾʌi + ja"
-    assert convert("sil-western-tharu", "pʌtʰːʌɾ") == "pʌtʰːʌɾ"
-    assert convert("sil-western-tharu", "tʌĩ") == "tʌĩ"
+    assert convert("sil-bangladesh", "əthɔu̯") == "əthɔu̯"
+    assert convert("sil-western-tharu", "tʌɾʌi + ja") == "taraī + yā"
+    assert convert("sil-western-tharu", "pʌtʰːʌɾ") == "pattʰar"
+    assert convert("sil-western-tharu", "tʌĩ") == "taī̃"
 
 
 def test_new_profiles_cover_every_installed_source_form():
@@ -616,3 +630,51 @@ def test_lsi_profile_covers_every_upstream_phonemic_form():
             source = unicodedata.normalize("NFC", row[5])
             result = tokenizer(source, column="IPA")
             assert "�" not in result, (row_number, source, result)
+
+
+def test_every_profile_writes_the_cdial_house_transcription():
+    """Vowel quality unreinterpreted, length as a macron, Indological consonants: every profile
+    agrees with conversion/cdial.txt on its output alphabet (profile_policy.py)."""
+    import profile_policy
+
+    findings = profile_policy.audit(profile_policy.source_inventory())
+    assert findings == {}, {name: rows[:5] for name, rows in findings.items()}
+
+
+def test_pahari_pothwari_long_aspirated_affricate():
+    tokenizer = Tokenizer('conversion/sil-pahari-pothwari.txt')
+    assert tokenizer('mʌčʰˑi', column='IPA').replace(' ', '') == 'maccʰī'
+    assert tokenizer('ʌčʰˑa', column='IPA').replace(' ', '') == 'accʰā'
+
+
+def test_house_policy_examples():
+    import profile_policy as pp
+
+    assert pp.house_output("ə", "a") == "ə"
+    assert pp.house_output("ʌ", "a") == "ʌ"
+    assert pp.house_output("a", "ā") == "a"
+    assert pp.house_output("ɪ", "i") == "ɪ"
+    assert pp.house_output("ã", "ā̃") == "ã"
+    assert pp.house_output("aː", "aa", {"a": "a"}) == "ā"
+    assert pp.house_output("ʌː", "ā", {"ʌ": "ʌ"}) == "ā"
+    assert pp.house_output("ɛː", "ē", {"ɛ": "ɛ"}) == "ɛ̄"
+    assert pp.house_output("kː", "k", {"k": "k"}) == "kk"
+    assert pp.house_output("kʰː", "kʰ", {"kʰ": "kʰ"}) == "kkʰ"
+    assert pp.house_output("tʃ", "č") == "c"
+    assert pp.house_output("ʒ", "ž") == "ź"
+    assert pp.house_output("ʱ", "h") == "ʰ"
+    assert pp.house_output("bʱ", "bh") == "bʰ"
+    assert pp.house_output("w", "w") == "v"
+    assert pp.house_output("ṅ", "ṅ") == "ŋ"
+    # source orthography with non-house marks is the profile author's call
+    assert pp.house_output("â", "ā") == "ā"
+    assert pp.house_output("ü", "ɨ") == "ɨ"
+
+
+def test_literal_colon_is_not_inferred_as_ipa_length():
+    import profile_policy
+    assert ':' not in profile_policy.length_marks('cuj-asur')
+    assert 'ː' in profile_policy.length_marks('cuj-asur')
+    tokenizer = Tokenizer('conversion/cuj-asur.txt')
+    assert tokenizer('aː', column='IPA').replace(' ', '') == 'ā'
+    assert tokenizer('चाबा:', column='IPA').replace(' ', '') == 'चाबा:'

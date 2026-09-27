@@ -1,0 +1,41 @@
+{
+  "source": "Hockings and Pilot-Raichoor 1992 Badaga-English dictionary, printed pp. 1-621",
+  "status": "full_source_ocr_structural_audit; image_review_pending_for_provisional_transcriptions",
+  "audit_sha256": "4f51cb1dafb40afc6635c5f9a35d858355cab77ee58268fd477ef6af737ba2d8",
+  "corrections_sha256": "a31850c1dfb729f6970509754ce7fac6266599cf65eca514bb04d34a24d45251",
+  "queue_sha256": "e18c334511fc3926848f13e2b2798b931002185613aec9467a6fa58ee014d171",
+  "page_coverage_sha256": "6fe155705e88013af913ced78dd9b4092156bea307620442c75220fc0ace310b",
+  "cached_ocr_pdf_pages": 621,
+  "dictionary_pages_with_articles": 619,
+  "raw_articles": 9993,
+  "replayed_installed_rows": 16706,
+  "replayed_audit_exact_match": true,
+  "layout_only_exclusions": 1,
+  "image_reviewed_articles": 20,
+  "provisionally_installed_articles": 9973,
+  "priority_counts": {
+    "critical": 102,
+    "high": 1357,
+    "routine": 8514
+  },
+  "risk_counts": {
+    "confidence_60_to_79": 700,
+    "confidence_below_60": 77,
+    "digit_in_form": 9,
+    "long_article_over_1000_chars": 32,
+    "page_edge": 598,
+    "printed_alternates": 2641,
+    "suspicious_form_symbol": 16,
+    "unresolved_printed_dedr": 93
+  },
+  "structural_assertions": [
+    "all 621 expected PDF page OCR caches present, excluding inserted blanks 443-444",
+    "all printed dictionary pages 3-621 have article records",
+    "all 9,993 article source keys unique and agree with printed/PDF page, column, and y locator",
+    "cached OCR replay reproduces all 9,993 checked-in audit records exactly and 16,706 uncorrected rich rows",
+    "the only layout exclusion is the printed-page-1 title, not a lexical article",
+    "all 20 prior image decisions resolve to an audit key",
+    "all 9,973 remaining articles appear once in the page-indexed queue"
+  ],
+  "caveat": "Risk flags are triage indicators, not image-verified corrections. The cached OCR JSON is not a substitute for the copyrighted PDF scan."
+}

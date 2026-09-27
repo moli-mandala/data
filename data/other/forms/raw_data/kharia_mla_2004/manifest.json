@@ -1,0 +1,101 @@
+{
+  "status": "complete_source_stage",
+  "source": "Donegan and Stampe 2004 Munda Lexical Archive, Kharia.txt file",
+  "source_key": "DSKH",
+  "original_url": "http://www.ling.hawaii.edu/austroasiatic/AA/Munda/Dictionaries/Kharia.txt",
+  "snapshot_url": "https://web.archive.org/web/20201022142449id_/http://www.ling.hawaii.edu/austroasiatic/AA/Munda/Dictionaries/Kharia.txt",
+  "snapshot_date": "2020-10-22",
+  "archived_last_modified": "2014-09-05",
+  "source_sha256": "4e827a17e08103d4ddf302934af868cdc5275896696c261e3524981af9f79a4c",
+  "source_bytes": 265019,
+  "rights": "The source file expressly permits copying, correction, augmentation, translation, transliteration, rearrangement, redistribution and republication if derivatives explicitly impose the same conditions to guarantee unrestricted use by speakers and students. LICENSE applies that condition to snapshot and derived outputs.",
+  "source_type_addenda": [
+    "dictionary/glossary",
+    "website/archive snapshot"
+  ],
+  "language": {
+    "id": "kh",
+    "name": "Kharia",
+    "dialect": null,
+    "coordinate": null,
+    "decision": "Archive A/B/D/P witness letters retained in audit, with no dialect or locality inference"
+  },
+  "selection": "Entire pinned physical source: all recoverable target heads, witnesses, senses, alternatives and directly glossed supplementary forms; no alphabet or symbol filter. Morphological analyses, foreign comparisons and uncertain language attribution explicitly accounted.",
+  "numbered_source_chunks": 3620,
+  "unique_numeric_ids": 3621,
+  "installed_rows": 5440,
+  "editorial_uncertainty_tagged_rows": 4310,
+  "profile": {
+    "file": "conversion/kharia-mla.txt",
+    "source_local": "kharia-mla.txt",
+    "coverage": "5440/5440 installed spellings and scoped parsed rows; no errors",
+    "caution": "Exact source ASCII retained; existing w-to-v display mapping only, no unsupported phonetic interpretation.",
+    "scoped_policy_violations": 0
+  },
+  "overlap_review": {
+    "existing_source": "data/other/forms/20260911-kharia-living.csv",
+    "existing_source_rows": 521,
+    "exact_source_form_intersections": 29,
+    "decision": "Distinct archived archive-witness and Living Dictionary attestations; no automatic deduplication or cognacy claim"
+  },
+  "prior_archive_id_review": {
+    "existing_source": "data/munda/forms.csv through Rau2019",
+    "same_source_ids": 5,
+    "older_rows": 6,
+    "alignment": "same-source-reuse-alignment.json",
+    "decision": "All additional source senses/alternates retained; existing rows untouched. Same-source evidence aligned explicitly; compiled dedup/ID graph checks deferred."
+  },
+  "installed_csv": "data/other/forms/20260925-donegan-stampe-kharia.csv",
+  "settings": "data/other/forms/20260925-donegan-stampe-kharia.yaml",
+  "append_order": 57,
+  "deferred": [
+    "No remote execution",
+    "No database/data build without direct user request",
+    "Compiled survival, reference and graph validation, full suite and browser QA remain open"
+  ],
+  "physical_nonblank_lines": 3632,
+  "audit_units": 3631,
+  "numbered_source_units": 3620,
+  "unnumbered_lexical_units": 3,
+  "nonlexical_dividers": 8,
+  "staged_rows": 5440,
+  "blank_gloss_rows": 91,
+  "whole_source_counts": {
+    "legacy_keys_preserved": 829,
+    "variant_edges": 545,
+    "derivation_edges": 74,
+    "repaired_delimiter_records": 12,
+    "inline_grouping_contexts": 29,
+    "causative_commentary_forms": 38,
+    "new_causative_children": 6,
+    "new_comparison_example_children": 19,
+    "quoted_commentary_dispositions": {
+      "represented_form_with_source_analysis": 573,
+      "excluded_other_language": 9,
+      "analysis_placeholder": 16,
+      "new_lexical_child": 19,
+      "source_morphological_analysis": 35,
+      "hypothetical_analysis": 2,
+      "unresolved_comparison_language": 5,
+      "connected_usage_example": 1
+    },
+    "commentary_grammar_or_usage_claims": 47
+  },
+  "historical_pilot_audit": {
+    "seed": 20260925,
+    "sample": 20,
+    "population": 829,
+    "material_errors": 0,
+    "file": "sample-20260925.jsonl",
+    "scope": "Direct archived ASCII text versus selected source CSV; no OCR or compiled-output audit"
+  },
+  "validation": "25 focused source/profile/dialect tests passed; source_meta passed (275 files, 262 keys); full profile/scoped parser 5440/5440. Independent fresh pass 5 seed 2026092631 passed 0/20 and canonical hash verified.",
+  "independent_audit": {
+    "file": "independent-audit-20260926-pass5.json",
+    "sample": 20,
+    "material_errors": 0,
+    "seed": 2026092631,
+    "prior_failed_reports_retained": 4
+  },
+  "source_stage_graph_review": "source-metadata-graph-review-20260926.json"
+}

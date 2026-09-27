@@ -1,8 +1,12 @@
 """Guard source records and grammatical labels through the complete CLDF build."""
 import csv
+import sys
 from pathlib import Path
 
 import pytest
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from tags import extract_tags  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCES = (
@@ -45,9 +49,11 @@ def test_compiled_source_text_and_all_grammatical_labels_are_preserved(compiled)
         assert form["Language_ID"] == source[0], key
         assert set(source[14].split()) <= set(form["Tags"].split()), key
         assert form["Source"] == source[7], key
-        # The CLDF writer inserts spaces after punctuation and escapes newlines.
+        # tags.py lifts wholly grammatical ";" fields (e.g. a trailing "; adv.") into Tags; the
+        # CLDF writer inserts spaces after punctuation and escapes newlines.
         normalize = lambda s: "".join(s.replace("\\n", "\n").split())
-        assert normalize(form["Description"]) == normalize(source[6]), key
+        expected = extract_tags(source[6], attestations=False)[1]
+        assert normalize(form["Description"]) == normalize(expected), key
 
 
 def test_historical_berger_alternatives_and_yasin_attestation_stay_distinct(compiled):

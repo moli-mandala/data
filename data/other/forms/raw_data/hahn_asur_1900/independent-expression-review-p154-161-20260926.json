@@ -1,0 +1,34 @@
+{
+  "status": "reviewed_with_three_corrections_required",
+  "reviewer": "asur_finish",
+  "input_sha256": "03c00f8d00c3b449790f07144b2f2bd7191d0675b80de6d26f6c13af66867f0b",
+  "scope": "All 91 records read; all 79 complete responses and oe independently compared to original pages154–161; morphology strings and exclusion/census boundaries checked. Existing 164 cells are scope checks, not a new complete glyph audit.",
+  "findings": [
+    {
+      "key": "hahn1900asur:155:5:expression:03",
+      "before": "meṛhed rā katu",
+      "after": "meṛhed rā kaṭu",
+      "reason": "Distinct dot below t verified 7× original PDF page167 Rect55,73,184,131."
+    },
+    {
+      "key": "hahn1900asur:161:19:expression:02",
+      "before": "Nihi tuanā",
+      "after": "Nihī tuanā",
+      "reason": "Final i has a horizontal macron, matching preceding Nihī; 12× original PDF173 Rect26,154,55,166."
+    },
+    {
+      "key": "hahn1900asur:161:19-23:bound-context",
+      "before": "cyā",
+      "after": "eyā",
+      "reason": "First letter has e crossbar, not c; 8× original PDF173 Rect117,89,185,98."
+    }
+  ],
+  "other_checks": [
+    "p154 unusual okoāṭē independently verified, including distinct underdot",
+    "p155 plain re vs marked rē and mixed r/ṛ preserved as printed",
+    "p156 maṉḍī underbar and retroflex mark preserved; comparative source pairā on161 retained literally",
+    "p158–159 mixed vowel lengths and retroflex dots agree with proposed responses",
+    "p157 wholly consists of existing paradigms; no omitted complete response found"
+  ],
+  "canonical_modified": false
+}

@@ -1,0 +1,17 @@
+file: 20260925-andronov-koya-numerals.csv
+defaults:
+  transcription:
+    profile: andronov-koya-1995
+    preserve_hyphens: true
+  identity:
+    legacy_ids: stem
+    append_order: 91
+  importer:
+    commands:
+      - [data/other/forms/raw_data/andronov_koya_1995/import_source.py, --install]
+    note: Andronov and Bible Society of India 1995 Koya numbered table in the immutable CC-BY Chan archive.
+sources:
+  andronov1995koya:
+    reference:
+      editor: OpenAI Codex
+      ocr: false

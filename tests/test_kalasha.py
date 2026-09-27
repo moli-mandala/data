@@ -40,7 +40,7 @@ def test_legacy_sound_values_and_displaced_vowel_marks():
 def test_kalasha_sound_profile_and_filename_routing():
     tokenizer = Tokenizer(PROFILE)
     converted = tokenizer("aŋgúži bačhọ́a j̣ač", column="IPA")
-    assert converted.replace(" ", "").replace("#", " ") == "aŋgúži baʦ̣ʰọ́a ʣ̣aʦ̣"
+    assert converted.replace(" ", "").replace("#", " ") == "aŋgúźi baʦ̣ʰọ́a ʣ̣aʦ̣"
     assert mapping["kalasha"] == "kalasha"
 
 

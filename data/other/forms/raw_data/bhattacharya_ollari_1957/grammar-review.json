@@ -1,0 +1,98 @@
+{
+  "source_id": "bhattacharya1957ollari",
+  "scan_sha256": "a9e1360d514f337e6b55f8bbebc9a6935bc61bc4072ebef1bd06ee458cff3a6e",
+  "reviewed_printed_pages": [
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21
+  ],
+  "reviewed_pdf_pages": [
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32
+  ],
+  "method": "Visual reading of source scan; grammar cross-checks are not a fresh random output audit.",
+  "findings": [
+    {
+      "pages": [
+        12,
+        13
+      ],
+      "decision": "Preserve the source’s separate nasal and retroflex letters and explicit cluster spellings. Do not regularize vocabulary clusters from comparison forms or examples elsewhere in the grammar."
+    },
+    {
+      "pages": [
+        14
+      ],
+      "decision": "Sandhi, epenthesis and contextual voicing are grammatical alternations, not unconditional sound-profile replacements."
+    },
+    {
+      "pages": [
+        15,
+        16,
+        17
+      ],
+      "decision": "Comparative correspondences describe relations to other languages. Do not treat the tables as global Ollari substitutions or automatically asserted ancestry."
+    },
+    {
+      "pages": [
+        18,
+        19
+      ],
+      "decision": "Plural endings have multiple classes, including stem alternations and replacement. Use printed full forms where available; do not concatenate every abbreviated ending blindly."
+    },
+    {
+      "pages": [
+        19,
+        20
+      ],
+      "decision": "Gender generally distinguishes masculine and nonmasculine; numerals can distinguish masculine, feminine and neuter. Retain vocabulary f. n. scope rather than assigning a single sex."
+    },
+    {
+      "pages": [
+        20,
+        21
+      ],
+      "decision": "Case affixes and oblique formations do not authorize indiscriminate lexical normalization."
+    }
+  ],
+  "resolved_cases": [
+    {
+      "entry_key": "ollari1957:p54:c2:y3663",
+      "source_form": "kanīr",
+      "evidence": "p.54 close-up plus p.18 §13(iv), kanīr : kanīr-til",
+      "previous_provisional_form": "kaṅīr"
+    },
+    {
+      "entry_key": "ollari1957:p67:c2:y250",
+      "source_form": "puned",
+      "plural": "punev",
+      "evidence": "p.18 §13(ii), explicit singular/plural pair; p.67 abbreviated plural ev retained as raw notation"
+    }
+  ],
+  "remaining_cases": [
+    {
+      "entry_key": "ollari1957:p52:c1:y4121",
+      "decision": "Retain provisional ulfṭe and ambiguous-glyph flag. Close-up still looks F-like; related forms elsewhere do not justify silently emending the printed headword."
+    },
+    {
+      "entry_key": "ollari1957:p53:c1:y979",
+      "decision": "Retain ese! senan and typed example-symbol uncertainty. Close-up confirms the exclamation-like mark but not its intended value."
+    }
+  ],
+  "scope": "Grammar supplies interpretation and supporting citations; this pass does not add all grammatical examples as new lexical entries."
+}

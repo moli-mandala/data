@@ -1,0 +1,2738 @@
+{
+  "seed": 2026092110,
+  "sample_size": 20,
+  "population": 742,
+  "status": "source-output sample reviewed; no new material errors observed",
+  "input_hashes": {
+    "visual-review.jsonl": "ea570fa93565d41c90db27ceb5049683793320aedb0c926ac6c8a61f5eae3290",
+    "row-policy.json": "13b4f36ee02b9c89a22947083fa1a5b504ca78d68c54b5bdc32ecec06a8bbea4",
+    "multiple-form-review.json": "e147c68dae569100cecd198597a00649401b0b6b97774d5322f1fd6de932159d",
+    "entry-locators.json": "71d69668be1b6db514a29f328a51edc60746c264a4edacf4d81a5901f5f5b73e",
+    "import_source.py": "aec3dbc4dac761612c4ee9b9b446cc9bc885cad310896238fc88f062b16dc19f"
+  },
+  "records": [
+    {
+      "output_row": [
+        "Chakma",
+        "",
+        "আম্ধার",
+        "Dark",
+        "আম্ধার",
+        "",
+        "",
+        "niranjan2010chakma[p. 20, Chakma column, scan y269]",
+        "",
+        "",
+        "niranjan2010chakma:p20:c1:y269:response:1",
+        "",
+        "",
+        "",
+        "uncertain"
+      ],
+      "source_record": {
+        "entry_key": "niranjan2010chakma:p20:c1:y269",
+        "locator": {
+          "pdf_page": 22,
+          "printed_page": 20,
+          "candidate_row": 3,
+          "entry_key": "niranjan2010chakma:p20:c1:y269",
+          "original_bbox": [
+            218,
+            269,
+            325,
+            302
+          ]
+        },
+        "review": {
+          "pdf_page": 22,
+          "printed_page": 20,
+          "candidate_row": 3,
+          "english_anchor": "Dark",
+          "original_ocr_cells": [
+            {
+              "ocr_line_index": 3,
+              "raw": "আম্ধার",
+              "bbox": [
+                218,
+                269,
+                325,
+                302
+              ]
+            }
+          ],
+          "reviewed_chakma": "আম্ধার",
+          "reviewed_english": "Dark",
+          "review_status": "glyph-uncertain",
+          "uncertainty_type": "transcription",
+          "review_note": "Medial nasal conjunct ambiguous (m/n); do not substitute standard Bengali spelling.",
+          "reviewer": "OpenAI Codex",
+          "date": "2026-09-21",
+          "evidence": "Pinned PDF22, printed20; full-resolution render niranjan-main-ocr-v4/p022.png; original page boxes retained in candidate-cells.jsonl",
+          "second_review": {
+            "file": "second-glyph-review.jsonl",
+            "decision": "retain-uncertainty"
+          }
+        },
+        "candidate": {
+          "pdf_page": 22,
+          "printed_page": 20,
+          "candidate_row": 3,
+          "english_line_indices": [
+            3
+          ],
+          "english_raw": "Dark",
+          "english_bboxes": [
+            [
+              949,
+              264,
+              1043,
+              299
+            ]
+          ],
+          "status": "unreviewed",
+          "review_type": [
+            "ocr",
+            "cell-alignment"
+          ],
+          "cells": {
+            "chakma": [
+              {
+                "ocr_line_index": 3,
+                "raw": "আম্ধার",
+                "bbox": [
+                  218,
+                  269,
+                  325,
+                  302
+                ]
+              }
+            ],
+            "bengali": [
+              {
+                "ocr_line_index": 3,
+                "raw": "অন্ধকার",
+                "bbox": [
+                  652,
+                  268,
+                  776,
+                  301
+                ]
+              }
+            ]
+          }
+        },
+        "language": "Chakma",
+        "dialect": null,
+        "uncertainty_types": [
+          "transcription"
+        ],
+        "emitted_rows": [
+          [
+            "Chakma",
+            "",
+            "আম্ধার",
+            "Dark",
+            "আম্ধার",
+            "",
+            "",
+            "niranjan2010chakma[p. 20, Chakma column, scan y269]",
+            "",
+            "",
+            "niranjan2010chakma:p20:c1:y269:response:1",
+            "",
+            "",
+            "",
+            "uncertain"
+          ]
+        ],
+        "status": "draft",
+        "reason": "Source spelling retained; no phonemic or ancestry claim."
+      },
+      "audit_decision": "existing-transcription-uncertainty",
+      "evidence": "output-audit-2026092110-0.png",
+      "note": "Compared emitted Form, Native, Gloss and printed locator against the three-column source scan; raw reading and typed uncertainty preserved in audit."
+    },
+    {
+      "output_row": [
+        "Chakma",
+        "",
+        "দুনিয়া",
+        "World",
+        "দুনিয়া",
+        "",
+        "",
+        "niranjan2010chakma[p. 20, Chakma column, scan y326]",
+        "",
+        "",
+        "niranjan2010chakma:p20:c1:y326:response:1",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "source_record": {
+        "entry_key": "niranjan2010chakma:p20:c1:y326",
+        "locator": {
+          "pdf_page": 22,
+          "printed_page": 20,
+          "candidate_row": 4,
+          "entry_key": "niranjan2010chakma:p20:c1:y326",
+          "original_bbox": [
+            219,
+            326,
+            309,
+            377
+          ]
+        },
+        "review": {
+          "pdf_page": 22,
+          "printed_page": 20,
+          "candidate_row": 4,
+          "english_anchor": "World",
+          "original_ocr_cells": [
+            {
+              "ocr_line_index": 4,
+              "raw": "দুনিয়া",
+              "bbox": [
+                219,
+                326,
+                309,
+                377
+              ]
+            }
+          ],
+          "reviewed_chakma": "দুনিয়া",
+          "reviewed_english": "World",
+          "review_status": "visually-reviewed",
+          "uncertainty_type": "",
+          "review_note": "Compared directly with the full-resolution source page; no phonemic normalization.",
+          "reviewer": "OpenAI Codex",
+          "date": "2026-09-21",
+          "evidence": "Pinned PDF22, printed20; full-resolution render niranjan-main-ocr-v4/p022.png; original page boxes retained in candidate-cells.jsonl"
+        },
+        "candidate": {
+          "pdf_page": 22,
+          "printed_page": 20,
+          "candidate_row": 4,
+          "english_line_indices": [
+            4
+          ],
+          "english_raw": "World",
+          "english_bboxes": [
+            [
+              950,
+              329,
+              1065,
+              364
+            ]
+          ],
+          "status": "unreviewed",
+          "review_type": [
+            "ocr",
+            "cell-alignment"
+          ],
+          "cells": {
+            "chakma": [
+              {
+                "ocr_line_index": 4,
+                "raw": "দুনিয়া",
+                "bbox": [
+                  219,
+                  326,
+                  309,
+                  377
+                ]
+              }
+            ],
+            "bengali": [
+              {
+                "ocr_line_index": 4,
+                "raw": "জগৎ",
+                "bbox": [
+                  653,
+                  333,
+                  736,
+                  366
+                ]
+              }
+            ]
+          }
+        },
+        "language": "Chakma",
+        "dialect": null,
+        "uncertainty_types": [],
+        "emitted_rows": [
+          [
+            "Chakma",
+            "",
+            "দুনিয়া",
+            "World",
+            "দুনিয়া",
+            "",
+            "",
+            "niranjan2010chakma[p. 20, Chakma column, scan y326]",
+            "",
+            "",
+            "niranjan2010chakma:p20:c1:y326:response:1",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ],
+        "status": "draft",
+        "reason": "Source spelling retained; no phonemic or ancestry claim."
+      },
+      "audit_decision": "no-material-error-observed",
+      "evidence": "output-audit-2026092110-0.png",
+      "note": "Compared emitted Form, Native, Gloss and printed locator against the three-column source scan; raw reading and typed uncertainty preserved in audit."
+    },
+    {
+      "output_row": [
+        "Chakma",
+        "",
+        "উঝুনো চোল",
+        "Boiled rice",
+        "উঝুনো চোল",
+        "",
+        "",
+        "niranjan2010chakma[p. 24, Chakma column, scan y1254]",
+        "",
+        "",
+        "niranjan2010chakma:p24:c1:y1254:response:1",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "source_record": {
+        "entry_key": "niranjan2010chakma:p24:c1:y1254",
+        "locator": {
+          "pdf_page": 26,
+          "printed_page": 24,
+          "candidate_row": 18,
+          "entry_key": "niranjan2010chakma:p24:c1:y1254",
+          "original_bbox": [
+            182,
+            1254,
+            372,
+            1306
+          ]
+        },
+        "review": {
+          "pdf_page": 26,
+          "printed_page": 24,
+          "candidate_row": 18,
+          "english_anchor": "Boiled rice",
+          "original_ocr_cells": [
+            {
+              "ocr_line_index": 18,
+              "raw": "উঝুনো চোল",
+              "bbox": [
+                182,
+                1254,
+                372,
+                1306
+              ]
+            }
+          ],
+          "reviewed_chakma": "উঝুনো চোল",
+          "reviewed_english": "Boiled rice",
+          "review_status": "visually-reviewed",
+          "uncertainty_type": "",
+          "review_note": "Compared directly with full-resolution source page; no phonemic normalization.",
+          "reviewer": "OpenAI Codex",
+          "date": "2026-09-21",
+          "evidence": "Pinned PDF26, printed24; full-resolution render niranjan-main-ocr-v4/p026.png"
+        },
+        "candidate": {
+          "pdf_page": 26,
+          "printed_page": 24,
+          "candidate_row": 18,
+          "english_line_indices": [
+            18
+          ],
+          "english_raw": "Boiled rice",
+          "english_bboxes": [
+            [
+              912,
+              1260,
+              1109,
+              1296
+            ]
+          ],
+          "status": "unreviewed",
+          "review_type": [
+            "ocr",
+            "cell-alignment"
+          ],
+          "cells": {
+            "chakma": [
+              {
+                "ocr_line_index": 18,
+                "raw": "উঝুনো চোল",
+                "bbox": [
+                  182,
+                  1254,
+                  372,
+                  1306
+                ]
+              }
+            ],
+            "bengali": [
+              {
+                "ocr_line_index": 18,
+                "raw": "সিদ্ধ চাল",
+                "bbox": [
+                  616,
+                  1253,
+                  755,
+                  1297
+                ]
+              }
+            ]
+          }
+        },
+        "language": "Chakma",
+        "dialect": null,
+        "uncertainty_types": [],
+        "emitted_rows": [
+          [
+            "Chakma",
+            "",
+            "উঝুনো চোল",
+            "Boiled rice",
+            "উঝুনো চোল",
+            "",
+            "",
+            "niranjan2010chakma[p. 24, Chakma column, scan y1254]",
+            "",
+            "",
+            "niranjan2010chakma:p24:c1:y1254:response:1",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ],
+        "status": "draft",
+        "reason": "Source spelling retained; no phonemic or ancestry claim."
+      },
+      "audit_decision": "no-material-error-observed",
+      "evidence": "output-audit-2026092110-0.png",
+      "note": "Compared emitted Form, Native, Gloss and printed locator against the three-column source scan; raw reading and typed uncertainty preserved in audit."
+    },
+    {
+      "output_row": [
+        "Chakma",
+        "",
+        "কুরো হেরা",
+        "Chicken",
+        "কুরো হেরা",
+        "",
+        "",
+        "niranjan2010chakma[p. 24, Chakma column, scan y339]",
+        "",
+        "",
+        "niranjan2010chakma:p24:c1:y339:response:1",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "source_record": {
+        "entry_key": "niranjan2010chakma:p24:c1:y339",
+        "locator": {
+          "pdf_page": 26,
+          "printed_page": 24,
+          "candidate_row": 4,
+          "entry_key": "niranjan2010chakma:p24:c1:y339",
+          "original_bbox": [
+            175,
+            339,
+            334,
+            383
+          ]
+        },
+        "review": {
+          "pdf_page": 26,
+          "printed_page": 24,
+          "candidate_row": 4,
+          "english_anchor": "Chicken",
+          "original_ocr_cells": [
+            {
+              "ocr_line_index": 4,
+              "raw": "কুরো হ্রো",
+              "bbox": [
+                175,
+                339,
+                334,
+                383
+              ]
+            }
+          ],
+          "reviewed_chakma": "কুরো হেরা",
+          "reviewed_english": "Chicken",
+          "review_status": "visually-reviewed",
+          "uncertainty_type": "",
+          "review_note": "Compared directly with full-resolution source page; no phonemic normalization.",
+          "reviewer": "OpenAI Codex",
+          "date": "2026-09-21",
+          "evidence": "Pinned PDF26, printed24; full-resolution render niranjan-main-ocr-v4/p026.png"
+        },
+        "candidate": {
+          "pdf_page": 26,
+          "printed_page": 24,
+          "candidate_row": 4,
+          "english_line_indices": [
+            4
+          ],
+          "english_raw": "Chicken",
+          "english_bboxes": [
+            [
+              906,
+              337,
+              1058,
+              373
+            ]
+          ],
+          "status": "unreviewed",
+          "review_type": [
+            "ocr",
+            "cell-alignment"
+          ],
+          "cells": {
+            "chakma": [
+              {
+                "ocr_line_index": 4,
+                "raw": "কুরো হ্রো",
+                "bbox": [
+                  175,
+                  339,
+                  334,
+                  383
+                ]
+              }
+            ],
+            "bengali": [
+              {
+                "ocr_line_index": 4,
+                "raw": "মুরগির মাংস",
+                "bbox": [
+                  609,
+                  330,
+                  809,
+                  382
+                ]
+              }
+            ]
+          }
+        },
+        "language": "Chakma",
+        "dialect": null,
+        "uncertainty_types": [],
+        "emitted_rows": [
+          [
+            "Chakma",
+            "",
+            "কুরো হেরা",
+            "Chicken",
+            "কুরো হেরা",
+            "",
+            "",
+            "niranjan2010chakma[p. 24, Chakma column, scan y339]",
+            "",
+            "",
+            "niranjan2010chakma:p24:c1:y339:response:1",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ],
+        "status": "draft",
+        "reason": "Source spelling retained; no phonemic or ancestry claim."
+      },
+      "audit_decision": "no-material-error-observed",
+      "evidence": "output-audit-2026092110-0.png",
+      "note": "Compared emitted Form, Native, Gloss and printed locator against the three-column source scan; raw reading and typed uncertainty preserved in audit."
+    },
+    {
+      "output_row": [
+        "Chakma",
+        "",
+        "কানিফাদা",
+        "Rag",
+        "কানিফাদা",
+        "",
+        "",
+        "niranjan2010chakma[p. 27, Chakma column, scan y1228]",
+        "",
+        "",
+        "niranjan2010chakma:p27:c1:y1228:response:1",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "source_record": {
+        "entry_key": "niranjan2010chakma:p27:c1:y1228",
+        "locator": {
+          "pdf_page": 29,
+          "printed_page": 27,
+          "candidate_row": 17,
+          "entry_key": "niranjan2010chakma:p27:c1:y1228",
+          "original_bbox": [
+            238,
+            1228,
+            377,
+            1270
+          ]
+        },
+        "review": {
+          "pdf_page": 29,
+          "printed_page": 27,
+          "candidate_row": 17,
+          "english_anchor": "Rag",
+          "original_ocr_cells": [
+            {
+              "ocr_line_index": 17,
+              "raw": "কানিফাদা",
+              "bbox": [
+                238,
+                1228,
+                377,
+                1270
+              ]
+            }
+          ],
+          "reviewed_chakma": "কানিফাদা",
+          "reviewed_english": "Rag",
+          "review_status": "visually-reviewed",
+          "uncertainty_type": "",
+          "review_note": "Compared directly with full-resolution source page; no phonemic normalization.",
+          "reviewer": "OpenAI Codex",
+          "date": "2026-09-21",
+          "evidence": "Pinned PDF29, printed27; full-resolution render niranjan-main-ocr-v4/p029.png"
+        },
+        "candidate": {
+          "pdf_page": 29,
+          "printed_page": 27,
+          "candidate_row": 17,
+          "english_line_indices": [
+            17
+          ],
+          "english_raw": "Rag",
+          "english_bboxes": [
+            [
+              962,
+              1236,
+              1032,
+              1280
+            ]
+          ],
+          "status": "unreviewed",
+          "review_type": [
+            "ocr",
+            "cell-alignment"
+          ],
+          "cells": {
+            "chakma": [
+              {
+                "ocr_line_index": 17,
+                "raw": "কানিফাদা",
+                "bbox": [
+                  238,
+                  1228,
+                  377,
+                  1270
+                ]
+              }
+            ],
+            "bengali": [
+              {
+                "ocr_line_index": 17,
+                "raw": "ন্যাকড়া",
+                "bbox": [
+                  669,
+                  1229,
+                  780,
+                  1276
+                ]
+              }
+            ]
+          }
+        },
+        "language": "Chakma",
+        "dialect": null,
+        "uncertainty_types": [],
+        "emitted_rows": [
+          [
+            "Chakma",
+            "",
+            "কানিফাদা",
+            "Rag",
+            "কানিফাদা",
+            "",
+            "",
+            "niranjan2010chakma[p. 27, Chakma column, scan y1228]",
+            "",
+            "",
+            "niranjan2010chakma:p27:c1:y1228:response:1",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ],
+        "status": "draft",
+        "reason": "Source spelling retained; no phonemic or ancestry claim."
+      },
+      "audit_decision": "no-material-error-observed",
+      "evidence": "output-audit-2026092110-0.png",
+      "note": "Compared emitted Form, Native, Gloss and printed locator against the three-column source scan; raw reading and typed uncertainty preserved in audit."
+    },
+    {
+      "output_row": [
+        "Chakma",
+        "",
+        "বংপীড়া",
+        "Small pox",
+        "বংপীড়া",
+        "",
+        "",
+        "niranjan2010chakma[p. 32, Chakma column, scan y1645]",
+        "",
+        "",
+        "niranjan2010chakma:p32:c1:y1645:response:1",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "source_record": {
+        "entry_key": "niranjan2010chakma:p32:c1:y1645",
+        "locator": {
+          "pdf_page": 34,
+          "printed_page": 32,
+          "candidate_row": 22,
+          "entry_key": "niranjan2010chakma:p32:c1:y1645",
+          "original_bbox": [
+            193,
+            1645,
+            314,
+            1694
+          ]
+        },
+        "review": {
+          "pdf_page": 34,
+          "printed_page": 32,
+          "candidate_row": 22,
+          "english_anchor": "Small pox",
+          "original_ocr_cells": [
+            {
+              "ocr_line_index": 23,
+              "raw": "বংৎপীড়া",
+              "bbox": [
+                193,
+                1645,
+                314,
+                1694
+              ]
+            }
+          ],
+          "reviewed_chakma": "বংপীড়া",
+          "reviewed_english": "Small pox",
+          "review_status": "visually-reviewed",
+          "uncertainty_type": "",
+          "review_note": "Compared directly with full-resolution source page; no phonemic normalization.",
+          "reviewer": "OpenAI Codex",
+          "date": "2026-09-21",
+          "evidence": "Pinned PDF34, printed32; full-resolution render niranjan-main-ocr-v4/p034.png"
+        },
+        "candidate": {
+          "pdf_page": 34,
+          "printed_page": 32,
+          "candidate_row": 22,
+          "english_line_indices": [
+            23
+          ],
+          "english_raw": "Small pox",
+          "english_bboxes": [
+            [
+              924,
+              1652,
+              1103,
+              1697
+            ]
+          ],
+          "status": "unreviewed",
+          "review_type": [
+            "ocr",
+            "cell-alignment"
+          ],
+          "cells": {
+            "chakma": [
+              {
+                "ocr_line_index": 23,
+                "raw": "বংৎপীড়া",
+                "bbox": [
+                  193,
+                  1645,
+                  314,
+                  1694
+                ]
+              }
+            ],
+            "bengali": [
+              {
+                "ocr_line_index": 23,
+                "raw": "বসম্ভ",
+                "bbox": [
+                  628,
+                  1658,
+                  712,
+                  1688
+                ]
+              }
+            ]
+          }
+        },
+        "language": "Chakma",
+        "dialect": null,
+        "uncertainty_types": [],
+        "emitted_rows": [
+          [
+            "Chakma",
+            "",
+            "বংপীড়া",
+            "Small pox",
+            "বংপীড়া",
+            "",
+            "",
+            "niranjan2010chakma[p. 32, Chakma column, scan y1645]",
+            "",
+            "",
+            "niranjan2010chakma:p32:c1:y1645:response:1",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ],
+        "status": "draft",
+        "reason": "Source spelling retained; no phonemic or ancestry claim."
+      },
+      "audit_decision": "no-material-error-observed",
+      "evidence": "output-audit-2026092110-0.png",
+      "note": "Compared emitted Form, Native, Gloss and printed locator against the three-column source scan; raw reading and typed uncertainty preserved in audit."
+    },
+    {
+      "output_row": [
+        "Chakma",
+        "",
+        "খাদা",
+        "Exercise book",
+        "খাদা",
+        "",
+        "",
+        "niranjan2010chakma[p. 34, Chakma column, scan y139]",
+        "",
+        "",
+        "niranjan2010chakma:p34:c1:y139:response:1",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "source_record": {
+        "entry_key": "niranjan2010chakma:p34:c1:y139",
+        "locator": {
+          "pdf_page": 36,
+          "printed_page": 34,
+          "candidate_row": 1,
+          "entry_key": "niranjan2010chakma:p34:c1:y139",
+          "original_bbox": [
+            162,
+            139,
+            226,
+            172
+          ]
+        },
+        "review": {
+          "pdf_page": 36,
+          "printed_page": 34,
+          "candidate_row": 1,
+          "english_anchor": "Exercise book",
+          "original_ocr_cells": [
+            {
+              "ocr_line_index": 1,
+              "raw": "খাদা",
+              "bbox": [
+                162,
+                139,
+                226,
+                172
+              ]
+            }
+          ],
+          "reviewed_chakma": "খাদা",
+          "reviewed_english": "Exercise book",
+          "review_status": "visually-reviewed",
+          "uncertainty_type": "",
+          "review_note": "Compared directly with full-resolution source page; no phonemic normalization.",
+          "reviewer": "OpenAI Codex",
+          "date": "2026-09-21",
+          "evidence": "Pinned PDF36, printed34; full-resolution render niranjan-main-ocr-v4/p036.png"
+        },
+        "candidate": {
+          "pdf_page": 36,
+          "printed_page": 34,
+          "candidate_row": 1,
+          "english_line_indices": [
+            1
+          ],
+          "english_raw": "Exercise book",
+          "english_bboxes": [
+            [
+              892,
+              134,
+              1155,
+              169
+            ]
+          ],
+          "status": "unreviewed",
+          "review_type": [
+            "ocr",
+            "cell-alignment"
+          ],
+          "cells": {
+            "chakma": [
+              {
+                "ocr_line_index": 1,
+                "raw": "খাদা",
+                "bbox": [
+                  162,
+                  139,
+                  226,
+                  172
+                ]
+              }
+            ],
+            "bengali": [
+              {
+                "ocr_line_index": 1,
+                "raw": "খাতা",
+                "bbox": [
+                  601,
+                  138,
+                  670,
+                  171
+                ]
+              }
+            ]
+          }
+        },
+        "language": "Chakma",
+        "dialect": null,
+        "uncertainty_types": [],
+        "emitted_rows": [
+          [
+            "Chakma",
+            "",
+            "খাদা",
+            "Exercise book",
+            "খাদা",
+            "",
+            "",
+            "niranjan2010chakma[p. 34, Chakma column, scan y139]",
+            "",
+            "",
+            "niranjan2010chakma:p34:c1:y139:response:1",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ],
+        "status": "draft",
+        "reason": "Source spelling retained; no phonemic or ancestry claim."
+      },
+      "audit_decision": "no-material-error-observed",
+      "evidence": "output-audit-2026092110-0.png",
+      "note": "Compared emitted Form, Native, Gloss and printed locator against the three-column source scan; raw reading and typed uncertainty preserved in audit."
+    },
+    {
+      "output_row": [
+        "Chakma",
+        "",
+        "চোঘঅ ভং",
+        "Eyelash",
+        "চোঘঅ ভং",
+        "",
+        "",
+        "niranjan2010chakma[p. 36, Chakma column, scan y1604]",
+        "",
+        "",
+        "niranjan2010chakma:p36:c1:y1604:response:1",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "source_record": {
+        "entry_key": "niranjan2010chakma:p36:c1:y1604",
+        "locator": {
+          "pdf_page": 38,
+          "printed_page": 36,
+          "candidate_row": 18,
+          "entry_key": "niranjan2010chakma:p36:c1:y1604",
+          "original_bbox": [
+            198,
+            1604,
+            360,
+            1639
+          ]
+        },
+        "review": {
+          "pdf_page": 38,
+          "printed_page": 36,
+          "candidate_row": 18,
+          "english_anchor": "Eyelash",
+          "original_ocr_cells": [
+            {
+              "ocr_line_index": 20,
+              "raw": "চোঘঅ ভং",
+              "bbox": [
+                198,
+                1604,
+                360,
+                1639
+              ]
+            }
+          ],
+          "reviewed_chakma": "চোঘঅ ভং",
+          "reviewed_english": "Eyelash",
+          "review_status": "visually-reviewed",
+          "uncertainty_type": "",
+          "review_note": "Compared directly with full-resolution source page; no phonemic normalization.",
+          "reviewer": "OpenAI Codex",
+          "date": "2026-09-21",
+          "evidence": "Pinned PDF38, printed36; full-resolution render niranjan-main-ocr-v4/p038.png"
+        },
+        "candidate": {
+          "pdf_page": 38,
+          "printed_page": 36,
+          "candidate_row": 18,
+          "english_line_indices": [
+            20
+          ],
+          "english_raw": "Eyelash",
+          "english_bboxes": [
+            [
+              927,
+              1602,
+              1068,
+              1647
+            ]
+          ],
+          "status": "unreviewed",
+          "review_type": [
+            "ocr",
+            "cell-alignment"
+          ],
+          "cells": {
+            "chakma": [
+              {
+                "ocr_line_index": 20,
+                "raw": "চোঘঅ ভং",
+                "bbox": [
+                  198,
+                  1604,
+                  360,
+                  1639
+                ]
+              }
+            ],
+            "bengali": [
+              {
+                "ocr_line_index": 20,
+                "raw": "চোখের ভু",
+                "bbox": [
+                  636,
+                  1604,
+                  788,
+                  1647
+                ]
+              }
+            ]
+          }
+        },
+        "language": "Chakma",
+        "dialect": null,
+        "uncertainty_types": [],
+        "emitted_rows": [
+          [
+            "Chakma",
+            "",
+            "চোঘঅ ভং",
+            "Eyelash",
+            "চোঘঅ ভং",
+            "",
+            "",
+            "niranjan2010chakma[p. 36, Chakma column, scan y1604]",
+            "",
+            "",
+            "niranjan2010chakma:p36:c1:y1604:response:1",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ],
+        "status": "draft",
+        "reason": "Source spelling retained; no phonemic or ancestry claim."
+      },
+      "audit_decision": "no-material-error-observed",
+      "evidence": "output-audit-2026092110-0.png",
+      "note": "Compared emitted Form, Native, Gloss and printed locator against the three-column source scan; raw reading and typed uncertainty preserved in audit."
+    },
+    {
+      "output_row": [
+        "Chakma",
+        "",
+        "দেঘান্যা আঙুল",
+        "Fore finger",
+        "দেঘান্যা আঙুল",
+        "",
+        "",
+        "niranjan2010chakma[p. 37, Chakma column, scan y1983]",
+        "",
+        "",
+        "niranjan2010chakma:p37:c1:y1983:response:1",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "source_record": {
+        "entry_key": "niranjan2010chakma:p37:c1:y1983",
+        "locator": {
+          "pdf_page": 39,
+          "printed_page": 37,
+          "candidate_row": 29,
+          "entry_key": "niranjan2010chakma:p37:c1:y1983",
+          "original_bbox": [
+            162,
+            1983,
+            378,
+            2025
+          ]
+        },
+        "review": {
+          "pdf_page": 39,
+          "printed_page": 37,
+          "candidate_row": 29,
+          "english_anchor": "Fore finger",
+          "original_ocr_cells": [
+            {
+              "ocr_line_index": 29,
+              "raw": "দেঘান্যা আঙুল",
+              "bbox": [
+                162,
+                1983,
+                378,
+                2025
+              ]
+            }
+          ],
+          "reviewed_chakma": "দেঘান্যা আঙুল",
+          "reviewed_english": "Fore finger",
+          "review_status": "visually-reviewed",
+          "uncertainty_type": "",
+          "review_note": "Enlarged crop supports ঘা then ন্য; the source word boundary is retained.",
+          "reviewer": "OpenAI Codex",
+          "date": "2026-09-21",
+          "evidence": "Pinned PDF39, printed37; full-resolution render niranjan-main-ocr-v4/p039.png",
+          "second_review": {
+            "file": "second-glyph-review.jsonl",
+            "decision": "resolved"
+          }
+        },
+        "candidate": {
+          "pdf_page": 39,
+          "printed_page": 37,
+          "candidate_row": 29,
+          "english_line_indices": [
+            29
+          ],
+          "english_raw": "Fore finger",
+          "english_bboxes": [
+            [
+              883,
+              1982,
+              1080,
+              2028
+            ]
+          ],
+          "status": "unreviewed",
+          "review_type": [
+            "ocr",
+            "cell-alignment"
+          ],
+          "cells": {
+            "chakma": [
+              {
+                "ocr_line_index": 29,
+                "raw": "দেঘান্যা আঙুল",
+                "bbox": [
+                  162,
+                  1983,
+                  378,
+                  2025
+                ]
+              }
+            ],
+            "bengali": [
+              {
+                "ocr_line_index": 29,
+                "raw": "তর্জনী",
+                "bbox": [
+                  591,
+                  1974,
+                  685,
+                  2017
+                ]
+              }
+            ]
+          }
+        },
+        "language": "Chakma",
+        "dialect": null,
+        "uncertainty_types": [],
+        "emitted_rows": [
+          [
+            "Chakma",
+            "",
+            "দেঘান্যা আঙুল",
+            "Fore finger",
+            "দেঘান্যা আঙুল",
+            "",
+            "",
+            "niranjan2010chakma[p. 37, Chakma column, scan y1983]",
+            "",
+            "",
+            "niranjan2010chakma:p37:c1:y1983:response:1",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ],
+        "status": "draft",
+        "reason": "Source spelling retained; no phonemic or ancestry claim."
+      },
+      "audit_decision": "no-material-error-observed",
+      "evidence": "output-audit-2026092110-0.png",
+      "note": "Compared emitted Form, Native, Gloss and printed locator against the three-column source scan; raw reading and typed uncertainty preserved in audit."
+    },
+    {
+      "output_row": [
+        "Chakma",
+        "",
+        "ধুপ পদোলি",
+        "Sclera",
+        "ধুপ পদোলি",
+        "",
+        "",
+        "niranjan2010chakma[p. 38, Chakma column, scan y990]",
+        "",
+        "",
+        "niranjan2010chakma:p38:c1:y990:response:1",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "source_record": {
+        "entry_key": "niranjan2010chakma:p38:c1:y990",
+        "locator": {
+          "pdf_page": 40,
+          "printed_page": 38,
+          "candidate_row": 14,
+          "entry_key": "niranjan2010chakma:p38:c1:y990",
+          "original_bbox": [
+            212,
+            990,
+            380,
+            1041
+          ]
+        },
+        "review": {
+          "pdf_page": 40,
+          "printed_page": 38,
+          "candidate_row": 14,
+          "english_anchor": "| Sclera",
+          "original_ocr_cells": [
+            {
+              "ocr_line_index": 14,
+              "raw": "ধুপ পদোলি",
+              "bbox": [
+                212,
+                990,
+                380,
+                1041
+              ]
+            }
+          ],
+          "reviewed_chakma": "ধুপ পদোলি",
+          "reviewed_english": "Sclera",
+          "review_status": "visually-reviewed",
+          "uncertainty_type": "",
+          "review_note": "Compared directly with full-resolution source page; no phonemic normalization.",
+          "reviewer": "OpenAI Codex",
+          "date": "2026-09-21",
+          "evidence": "Pinned PDF40, printed38; full-resolution render niranjan-main-ocr-v4/p040.png",
+          "acceptance_audit_correction": {
+            "audit": "transcription-audit-2026092108.json",
+            "note": "Scan has no vertical bar before Sclera; OCR noise survived first review."
+          }
+        },
+        "candidate": {
+          "pdf_page": 40,
+          "printed_page": 38,
+          "candidate_row": 14,
+          "english_line_indices": [
+            14
+          ],
+          "english_raw": "| Sclera",
+          "english_bboxes": [
+            [
+              924,
+              999,
+              1057,
+              1034
+            ]
+          ],
+          "status": "unreviewed",
+          "review_type": [
+            "ocr",
+            "cell-alignment"
+          ],
+          "cells": {
+            "chakma": [
+              {
+                "ocr_line_index": 14,
+                "raw": "ধুপ পদোলি",
+                "bbox": [
+                  212,
+                  990,
+                  380,
+                  1041
+                ]
+              }
+            ],
+            "bengali": [
+              {
+                "ocr_line_index": 14,
+                "raw": "চোখের শ্বেত অংশ",
+                "bbox": [
+                  649,
+                  1000,
+                  924,
+                  1035
+                ]
+              }
+            ]
+          }
+        },
+        "language": "Chakma",
+        "dialect": null,
+        "uncertainty_types": [],
+        "emitted_rows": [
+          [
+            "Chakma",
+            "",
+            "ধুপ পদোলি",
+            "Sclera",
+            "ধুপ পদোলি",
+            "",
+            "",
+            "niranjan2010chakma[p. 38, Chakma column, scan y990]",
+            "",
+            "",
+            "niranjan2010chakma:p38:c1:y990:response:1",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ],
+        "status": "draft",
+        "reason": "Source spelling retained; no phonemic or ancestry claim."
+      },
+      "audit_decision": "no-material-error-observed",
+      "evidence": "output-audit-2026092110-0.png",
+      "note": "Compared emitted Form, Native, Gloss and printed locator against the three-column source scan; raw reading and typed uncertainty preserved in audit."
+    },
+    {
+      "output_row": [
+        "Chakma",
+        "",
+        "ঘাম",
+        "Sweat",
+        "ঘাম",
+        "",
+        "",
+        "niranjan2010chakma[p. 39, Chakma column, scan y862]",
+        "",
+        "",
+        "niranjan2010chakma:p39:c1:y862:response:1",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "source_record": {
+        "entry_key": "niranjan2010chakma:p39:c1:y862",
+        "locator": {
+          "pdf_page": 41,
+          "printed_page": 39,
+          "candidate_row": 12,
+          "entry_key": "niranjan2010chakma:p39:c1:y862",
+          "original_bbox": [
+            228,
+            862,
+            287,
+            895
+          ]
+        },
+        "review": {
+          "pdf_page": 41,
+          "printed_page": 39,
+          "candidate_row": 12,
+          "english_anchor": "Sweat",
+          "original_ocr_cells": [
+            {
+              "ocr_line_index": 12,
+              "raw": "ঘাম",
+              "bbox": [
+                228,
+                862,
+                287,
+                895
+              ]
+            }
+          ],
+          "reviewed_chakma": "ঘাম",
+          "reviewed_english": "Sweat",
+          "review_status": "visually-reviewed",
+          "uncertainty_type": "",
+          "review_note": "Compared directly with full-resolution source page; no phonemic normalization.",
+          "reviewer": "OpenAI Codex",
+          "date": "2026-09-21",
+          "evidence": "Pinned PDF41, printed39; full-resolution render niranjan-main-ocr-v4/p041.png"
+        },
+        "candidate": {
+          "pdf_page": 41,
+          "printed_page": 39,
+          "candidate_row": 12,
+          "english_line_indices": [
+            12
+          ],
+          "english_raw": "Sweat",
+          "english_bboxes": [
+            [
+              955,
+              861,
+              1066,
+              896
+            ]
+          ],
+          "status": "unreviewed",
+          "review_type": [
+            "ocr",
+            "cell-alignment"
+          ],
+          "cells": {
+            "chakma": [
+              {
+                "ocr_line_index": 12,
+                "raw": "ঘাম",
+                "bbox": [
+                  228,
+                  862,
+                  287,
+                  895
+                ]
+              }
+            ],
+            "bengali": [
+              {
+                "ocr_line_index": 12,
+                "raw": "ঘাম",
+                "bbox": [
+                  661,
+                  862,
+                  720,
+                  894
+                ]
+              }
+            ]
+          }
+        },
+        "language": "Chakma",
+        "dialect": null,
+        "uncertainty_types": [],
+        "emitted_rows": [
+          [
+            "Chakma",
+            "",
+            "ঘাম",
+            "Sweat",
+            "ঘাম",
+            "",
+            "",
+            "niranjan2010chakma[p. 39, Chakma column, scan y862]",
+            "",
+            "",
+            "niranjan2010chakma:p39:c1:y862:response:1",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ],
+        "status": "draft",
+        "reason": "Source spelling retained; no phonemic or ancestry claim."
+      },
+      "audit_decision": "no-material-error-observed",
+      "evidence": "output-audit-2026092110-10.png",
+      "note": "Compared emitted Form, Native, Gloss and printed locator against the three-column source scan; raw reading and typed uncertainty preserved in audit."
+    },
+    {
+      "output_row": [
+        "Chakma",
+        "",
+        "শ্যের",
+        "Martin",
+        "শ্যের",
+        "",
+        "",
+        "niranjan2010chakma[p. 42, Chakma column, scan y1160]",
+        "",
+        "",
+        "niranjan2010chakma:p42:c1:y1160:response:1",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "source_record": {
+        "entry_key": "niranjan2010chakma:p42:c1:y1160",
+        "locator": {
+          "pdf_page": 44,
+          "printed_page": 42,
+          "candidate_row": 16,
+          "entry_key": "niranjan2010chakma:p42:c1:y1160",
+          "original_bbox": [
+            152,
+            1160,
+            230,
+            1195
+          ]
+        },
+        "review": {
+          "pdf_page": 44,
+          "printed_page": 42,
+          "candidate_row": 16,
+          "english_anchor": "Martin",
+          "original_ocr_cells": [
+            {
+              "ocr_line_index": 16,
+              "raw": "শ্যের",
+              "bbox": [
+                152,
+                1160,
+                230,
+                1195
+              ]
+            }
+          ],
+          "reviewed_chakma": "শ্যের",
+          "reviewed_english": "Martin",
+          "review_status": "visually-reviewed",
+          "uncertainty_type": "",
+          "review_note": "Enlarged crop supports শ with য-ফলা and e sign.",
+          "reviewer": "OpenAI Codex",
+          "date": "2026-09-21",
+          "evidence": "Pinned PDF44, printed42; full-resolution render niranjan-main-ocr-v4/p044.png",
+          "second_review": {
+            "file": "second-glyph-review.jsonl",
+            "decision": "resolved"
+          }
+        },
+        "candidate": {
+          "pdf_page": 44,
+          "printed_page": 42,
+          "candidate_row": 16,
+          "english_line_indices": [
+            16
+          ],
+          "english_raw": "Martin",
+          "english_bboxes": [
+            [
+              882,
+              1158,
+              1003,
+              1193
+            ]
+          ],
+          "status": "unreviewed",
+          "review_type": [
+            "ocr",
+            "cell-alignment"
+          ],
+          "cells": {
+            "chakma": [
+              {
+                "ocr_line_index": 16,
+                "raw": "শ্যের",
+                "bbox": [
+                  152,
+                  1160,
+                  230,
+                  1195
+                ]
+              }
+            ],
+            "bengali": [
+              {
+                "ocr_line_index": 16,
+                "raw": "শালিক",
+                "bbox": [
+                  589,
+                  1151,
+                  691,
+                  1193
+                ]
+              }
+            ]
+          }
+        },
+        "language": "Chakma",
+        "dialect": null,
+        "uncertainty_types": [],
+        "emitted_rows": [
+          [
+            "Chakma",
+            "",
+            "শ্যের",
+            "Martin",
+            "শ্যের",
+            "",
+            "",
+            "niranjan2010chakma[p. 42, Chakma column, scan y1160]",
+            "",
+            "",
+            "niranjan2010chakma:p42:c1:y1160:response:1",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ],
+        "status": "draft",
+        "reason": "Source spelling retained; no phonemic or ancestry claim."
+      },
+      "audit_decision": "no-material-error-observed",
+      "evidence": "output-audit-2026092110-10.png",
+      "note": "Compared emitted Form, Native, Gloss and printed locator against the three-column source scan; raw reading and typed uncertainty preserved in audit."
+    },
+    {
+      "output_row": [
+        "Chakma",
+        "",
+        "সারাল্যা চিল",
+        "Fairy kite",
+        "সারাল্যা চিল",
+        "",
+        "",
+        "niranjan2010chakma[p. 42, Chakma column, scan y541]",
+        "",
+        "",
+        "niranjan2010chakma:p42:c1:y541:response:1",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "source_record": {
+        "entry_key": "niranjan2010chakma:p42:c1:y541",
+        "locator": {
+          "pdf_page": 44,
+          "printed_page": 42,
+          "candidate_row": 7,
+          "entry_key": "niranjan2010chakma:p42:c1:y541",
+          "original_bbox": [
+            145,
+            541,
+            336,
+            586
+          ]
+        },
+        "review": {
+          "pdf_page": 44,
+          "printed_page": 42,
+          "candidate_row": 7,
+          "english_anchor": "Fairy kite",
+          "original_ocr_cells": [
+            {
+              "ocr_line_index": 7,
+              "raw": "সারাল্যা চিল",
+              "bbox": [
+                145,
+                541,
+                336,
+                586
+              ]
+            }
+          ],
+          "reviewed_chakma": "সারাল্যা চিল",
+          "reviewed_english": "Fairy kite",
+          "review_status": "visually-reviewed",
+          "uncertainty_type": "",
+          "review_note": "Compared directly with full-resolution source page; no phonemic normalization.",
+          "reviewer": "OpenAI Codex",
+          "date": "2026-09-21",
+          "evidence": "Pinned PDF44, printed42; full-resolution render niranjan-main-ocr-v4/p044.png"
+        },
+        "candidate": {
+          "pdf_page": 44,
+          "printed_page": 42,
+          "candidate_row": 7,
+          "english_line_indices": [
+            7
+          ],
+          "english_raw": "Fairy kite",
+          "english_bboxes": [
+            [
+              878,
+              549,
+              1049,
+              594
+            ]
+          ],
+          "status": "unreviewed",
+          "review_type": [
+            "ocr",
+            "cell-alignment"
+          ],
+          "cells": {
+            "chakma": [
+              {
+                "ocr_line_index": 7,
+                "raw": "সারাল্যা চিল",
+                "bbox": [
+                  145,
+                  541,
+                  336,
+                  586
+                ]
+              }
+            ],
+            "bengali": [
+              {
+                "ocr_line_index": 7,
+                "raw": "শঙ্খ চিল",
+                "bbox": [
+                  584,
+                  542,
+                  715,
+                  588
+                ]
+              }
+            ]
+          }
+        },
+        "language": "Chakma",
+        "dialect": null,
+        "uncertainty_types": [],
+        "emitted_rows": [
+          [
+            "Chakma",
+            "",
+            "সারাল্যা চিল",
+            "Fairy kite",
+            "সারাল্যা চিল",
+            "",
+            "",
+            "niranjan2010chakma[p. 42, Chakma column, scan y541]",
+            "",
+            "",
+            "niranjan2010chakma:p42:c1:y541:response:1",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ],
+        "status": "draft",
+        "reason": "Source spelling retained; no phonemic or ancestry claim."
+      },
+      "audit_decision": "no-material-error-observed",
+      "evidence": "output-audit-2026092110-10.png",
+      "note": "Compared emitted Form, Native, Gloss and printed locator against the three-column source scan; raw reading and typed uncertainty preserved in audit."
+    },
+    {
+      "output_row": [
+        "Chakma",
+        "",
+        "পেজা",
+        "Owl",
+        "পেজা",
+        "",
+        "",
+        "niranjan2010chakma[p. 42, Chakma column, scan y824]",
+        "",
+        "",
+        "niranjan2010chakma:p42:c1:y824:response:1",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "source_record": {
+        "entry_key": "niranjan2010chakma:p42:c1:y824",
+        "locator": {
+          "pdf_page": 44,
+          "printed_page": 42,
+          "candidate_row": 11,
+          "entry_key": "niranjan2010chakma:p42:c1:y824",
+          "original_bbox": [
+            149,
+            824,
+            231,
+            857
+          ]
+        },
+        "review": {
+          "pdf_page": 44,
+          "printed_page": 42,
+          "candidate_row": 11,
+          "english_anchor": "Owl",
+          "original_ocr_cells": [
+            {
+              "ocr_line_index": 11,
+              "raw": "পেজো",
+              "bbox": [
+                149,
+                824,
+                231,
+                857
+              ]
+            }
+          ],
+          "reviewed_chakma": "পেজা",
+          "reviewed_english": "Owl",
+          "review_status": "visually-reviewed",
+          "uncertainty_type": "",
+          "review_note": "Compared directly with full-resolution source page; no phonemic normalization.",
+          "reviewer": "OpenAI Codex",
+          "date": "2026-09-21",
+          "evidence": "Pinned PDF44, printed42; full-resolution render niranjan-main-ocr-v4/p044.png"
+        },
+        "candidate": {
+          "pdf_page": 44,
+          "printed_page": 42,
+          "candidate_row": 11,
+          "english_line_indices": [
+            11
+          ],
+          "english_raw": "Owl",
+          "english_bboxes": [
+            [
+              879,
+              821,
+              957,
+              856
+            ]
+          ],
+          "status": "unreviewed",
+          "review_type": [
+            "ocr",
+            "cell-alignment"
+          ],
+          "cells": {
+            "chakma": [
+              {
+                "ocr_line_index": 11,
+                "raw": "পেজো",
+                "bbox": [
+                  149,
+                  824,
+                  231,
+                  857
+                ]
+              }
+            ],
+            "bengali": [
+              {
+                "ocr_line_index": 11,
+                "raw": "পেচা",
+                "bbox": [
+                  589,
+                  823,
+                  660,
+                  857
+                ]
+              }
+            ]
+          }
+        },
+        "language": "Chakma",
+        "dialect": null,
+        "uncertainty_types": [],
+        "emitted_rows": [
+          [
+            "Chakma",
+            "",
+            "পেজা",
+            "Owl",
+            "পেজা",
+            "",
+            "",
+            "niranjan2010chakma[p. 42, Chakma column, scan y824]",
+            "",
+            "",
+            "niranjan2010chakma:p42:c1:y824:response:1",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ],
+        "status": "draft",
+        "reason": "Source spelling retained; no phonemic or ancestry claim."
+      },
+      "audit_decision": "no-material-error-observed",
+      "evidence": "output-audit-2026092110-10.png",
+      "note": "Compared emitted Form, Native, Gloss and printed locator against the three-column source scan; raw reading and typed uncertainty preserved in audit."
+    },
+    {
+      "output_row": [
+        "Chakma",
+        "",
+        "নাক্স",
+        "Measuaferra",
+        "নাক্স",
+        "",
+        "",
+        "niranjan2010chakma[p. 44, Chakma column, scan y1761]",
+        "",
+        "",
+        "niranjan2010chakma:p44:c1:y1761:response:1",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "source_record": {
+        "entry_key": "niranjan2010chakma:p44:c1:y1761",
+        "locator": {
+          "pdf_page": 46,
+          "printed_page": 44,
+          "candidate_row": 19,
+          "entry_key": "niranjan2010chakma:p44:c1:y1761",
+          "original_bbox": [
+            191,
+            1761,
+            281,
+            1805
+          ]
+        },
+        "review": {
+          "pdf_page": 46,
+          "printed_page": 44,
+          "candidate_row": 19,
+          "english_anchor": "Measuaferra",
+          "original_ocr_cells": [
+            {
+              "ocr_line_index": 20,
+              "raw": "নাক্স",
+              "bbox": [
+                191,
+                1761,
+                281,
+                1805
+              ]
+            }
+          ],
+          "reviewed_chakma": "নাক্স",
+          "reviewed_english": "Measuaferra",
+          "review_status": "visually-reviewed",
+          "uncertainty_type": "",
+          "review_note": "Compared directly with full-resolution source page; no phonemic normalization.",
+          "reviewer": "OpenAI Codex",
+          "date": "2026-09-21",
+          "evidence": "Pinned PDF46, printed44; full-resolution render niranjan-main-ocr-v4/p046.png"
+        },
+        "candidate": {
+          "pdf_page": 46,
+          "printed_page": 44,
+          "candidate_row": 19,
+          "english_line_indices": [
+            20
+          ],
+          "english_raw": "Measuaferra",
+          "english_bboxes": [
+            [
+              923,
+              1759,
+              1154,
+              1795
+            ]
+          ],
+          "status": "unreviewed",
+          "review_type": [
+            "ocr",
+            "cell-alignment"
+          ],
+          "cells": {
+            "chakma": [
+              {
+                "ocr_line_index": 20,
+                "raw": "নাক্স",
+                "bbox": [
+                  191,
+                  1761,
+                  281,
+                  1805
+                ]
+              }
+            ],
+            "bengali": [
+              {
+                "ocr_line_index": 21,
+                "raw": "নাগেশ্বর",
+                "bbox": [
+                  629,
+                  1762,
+                  758,
+                  1796
+                ]
+              }
+            ]
+          }
+        },
+        "language": "Chakma",
+        "dialect": null,
+        "uncertainty_types": [],
+        "emitted_rows": [
+          [
+            "Chakma",
+            "",
+            "নাক্স",
+            "Measuaferra",
+            "নাক্স",
+            "",
+            "",
+            "niranjan2010chakma[p. 44, Chakma column, scan y1761]",
+            "",
+            "",
+            "niranjan2010chakma:p44:c1:y1761:response:1",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ],
+        "status": "draft",
+        "reason": "Source spelling retained; no phonemic or ancestry claim."
+      },
+      "audit_decision": "no-material-error-observed",
+      "evidence": "output-audit-2026092110-10.png",
+      "note": "Compared emitted Form, Native, Gloss and printed locator against the three-column source scan; raw reading and typed uncertainty preserved in audit."
+    },
+    {
+      "output_row": [
+        "Chakma",
+        "",
+        "বকুল",
+        "Minasops",
+        "বকুল",
+        "",
+        "",
+        "niranjan2010chakma[p. 44, Chakma column, scan y2050]",
+        "",
+        "",
+        "niranjan2010chakma:p44:c1:y2050:response:1",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "source_record": {
+        "entry_key": "niranjan2010chakma:p44:c1:y2050",
+        "locator": {
+          "pdf_page": 46,
+          "printed_page": 44,
+          "candidate_row": 23,
+          "entry_key": "niranjan2010chakma:p44:c1:y2050",
+          "original_bbox": [
+            194,
+            2050,
+            272,
+            2088
+          ]
+        },
+        "review": {
+          "pdf_page": 46,
+          "printed_page": 44,
+          "candidate_row": 23,
+          "english_anchor": "Minasops",
+          "original_ocr_cells": [
+            {
+              "ocr_line_index": 24,
+              "raw": "বকুল",
+              "bbox": [
+                194,
+                2050,
+                272,
+                2088
+              ]
+            }
+          ],
+          "reviewed_chakma": "বকুল",
+          "reviewed_english": "Minasops",
+          "review_status": "visually-reviewed",
+          "uncertainty_type": "",
+          "review_note": "Compared directly with full-resolution source page; no phonemic normalization.",
+          "reviewer": "OpenAI Codex",
+          "date": "2026-09-21",
+          "evidence": "Pinned PDF46, printed44; full-resolution render niranjan-main-ocr-v4/p046.png"
+        },
+        "candidate": {
+          "pdf_page": 46,
+          "printed_page": 44,
+          "candidate_row": 23,
+          "english_line_indices": [
+            24
+          ],
+          "english_raw": "Minasops",
+          "english_bboxes": [
+            [
+              924,
+              2045,
+              1102,
+              2090
+            ]
+          ],
+          "status": "unreviewed",
+          "review_type": [
+            "ocr",
+            "cell-alignment"
+          ],
+          "cells": {
+            "chakma": [
+              {
+                "ocr_line_index": 24,
+                "raw": "বকুল",
+                "bbox": [
+                  194,
+                  2050,
+                  272,
+                  2088
+                ]
+              }
+            ],
+            "bengali": [
+              {
+                "ocr_line_index": 25,
+                "raw": "ব্কুল",
+                "bbox": [
+                  631,
+                  2051,
+                  711,
+                  2089
+                ]
+              }
+            ]
+          }
+        },
+        "language": "Chakma",
+        "dialect": null,
+        "uncertainty_types": [],
+        "emitted_rows": [
+          [
+            "Chakma",
+            "",
+            "বকুল",
+            "Minasops",
+            "বকুল",
+            "",
+            "",
+            "niranjan2010chakma[p. 44, Chakma column, scan y2050]",
+            "",
+            "",
+            "niranjan2010chakma:p44:c1:y2050:response:1",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ],
+        "status": "draft",
+        "reason": "Source spelling retained; no phonemic or ancestry claim."
+      },
+      "audit_decision": "no-material-error-observed",
+      "evidence": "output-audit-2026092110-10.png",
+      "note": "Compared emitted Form, Native, Gloss and printed locator against the three-column source scan; raw reading and typed uncertainty preserved in audit."
+    },
+    {
+      "output_row": [
+        "Chakma",
+        "",
+        "ফলেই মাচ",
+        "Flat fish",
+        "ফলেই মাচ",
+        "",
+        "",
+        "niranjan2010chakma[p. 44, Chakma column, scan y619]",
+        "",
+        "",
+        "niranjan2010chakma:p44:c1:y619:response:1",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "source_record": {
+        "entry_key": "niranjan2010chakma:p44:c1:y619",
+        "locator": {
+          "pdf_page": 46,
+          "printed_page": 44,
+          "candidate_row": 8,
+          "entry_key": "niranjan2010chakma:p44:c1:y619",
+          "original_bbox": [
+            185,
+            619,
+            347,
+            665
+          ]
+        },
+        "review": {
+          "pdf_page": 46,
+          "printed_page": 44,
+          "candidate_row": 8,
+          "english_anchor": "Flat fish",
+          "original_ocr_cells": [
+            {
+              "ocr_line_index": 8,
+              "raw": "ফলেই মাচ",
+              "bbox": [
+                185,
+                619,
+                347,
+                665
+              ]
+            }
+          ],
+          "reviewed_chakma": "ফলেই মাচ",
+          "reviewed_english": "Flat fish",
+          "review_status": "visually-reviewed",
+          "uncertainty_type": "",
+          "review_note": "Compared directly with full-resolution source page; no phonemic normalization.",
+          "reviewer": "OpenAI Codex",
+          "date": "2026-09-21",
+          "evidence": "Pinned PDF46, printed44; full-resolution render niranjan-main-ocr-v4/p046.png"
+        },
+        "candidate": {
+          "pdf_page": 46,
+          "printed_page": 44,
+          "candidate_row": 8,
+          "english_line_indices": [
+            8
+          ],
+          "english_raw": "Flat fish",
+          "english_bboxes": [
+            [
+              918,
+              625,
+              1058,
+              661
+            ]
+          ],
+          "status": "unreviewed",
+          "review_type": [
+            "ocr",
+            "cell-alignment"
+          ],
+          "cells": {
+            "chakma": [
+              {
+                "ocr_line_index": 8,
+                "raw": "ফলেই মাচ",
+                "bbox": [
+                  185,
+                  619,
+                  347,
+                  665
+                ]
+              }
+            ],
+            "bengali": [
+              {
+                "ocr_line_index": 8,
+                "raw": "ফলই মাছ",
+                "bbox": [
+                  624,
+                  619,
+                  776,
+                  665
+                ]
+              }
+            ]
+          }
+        },
+        "language": "Chakma",
+        "dialect": null,
+        "uncertainty_types": [],
+        "emitted_rows": [
+          [
+            "Chakma",
+            "",
+            "ফলেই মাচ",
+            "Flat fish",
+            "ফলেই মাচ",
+            "",
+            "",
+            "niranjan2010chakma[p. 44, Chakma column, scan y619]",
+            "",
+            "",
+            "niranjan2010chakma:p44:c1:y619:response:1",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ],
+        "status": "draft",
+        "reason": "Source spelling retained; no phonemic or ancestry claim."
+      },
+      "audit_decision": "no-material-error-observed",
+      "evidence": "output-audit-2026092110-10.png",
+      "note": "Compared emitted Form, Native, Gloss and printed locator against the three-column source scan; raw reading and typed uncertainty preserved in audit."
+    },
+    {
+      "output_row": [
+        "Chakma",
+        "",
+        "নুনো মাচ",
+        "Salted fish",
+        "নুনো মাচ",
+        "",
+        "",
+        "niranjan2010chakma[p. 44, Chakma column, scan y766]",
+        "",
+        "",
+        "niranjan2010chakma:p44:c1:y766:response:1",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "source_record": {
+        "entry_key": "niranjan2010chakma:p44:c1:y766",
+        "locator": {
+          "pdf_page": 46,
+          "printed_page": 44,
+          "candidate_row": 10,
+          "entry_key": "niranjan2010chakma:p44:c1:y766",
+          "original_bbox": [
+            185,
+            766,
+            326,
+            808
+          ]
+        },
+        "review": {
+          "pdf_page": 46,
+          "printed_page": 44,
+          "candidate_row": 10,
+          "english_anchor": "Salted fish",
+          "original_ocr_cells": [
+            {
+              "ocr_line_index": 10,
+              "raw": "নুনো মাচ",
+              "bbox": [
+                185,
+                766,
+                326,
+                808
+              ]
+            }
+          ],
+          "reviewed_chakma": "নুনো মাচ",
+          "reviewed_english": "Salted fish",
+          "review_status": "visually-reviewed",
+          "uncertainty_type": "",
+          "review_note": "Compared directly with full-resolution source page; no phonemic normalization.",
+          "reviewer": "OpenAI Codex",
+          "date": "2026-09-21",
+          "evidence": "Pinned PDF46, printed44; full-resolution render niranjan-main-ocr-v4/p046.png"
+        },
+        "candidate": {
+          "pdf_page": 46,
+          "printed_page": 44,
+          "candidate_row": 10,
+          "english_line_indices": [
+            10
+          ],
+          "english_raw": "Salted fish",
+          "english_bboxes": [
+            [
+              919,
+              764,
+              1104,
+              800
+            ]
+          ],
+          "status": "unreviewed",
+          "review_type": [
+            "ocr",
+            "cell-alignment"
+          ],
+          "cells": {
+            "chakma": [
+              {
+                "ocr_line_index": 10,
+                "raw": "নুনো মাচ",
+                "bbox": [
+                  185,
+                  766,
+                  326,
+                  808
+                ]
+              }
+            ],
+            "bengali": [
+              {
+                "ocr_line_index": 10,
+                "raw": "নোনা মাছ",
+                "bbox": [
+                  627,
+                  766,
+                  781,
+                  802
+                ]
+              }
+            ]
+          }
+        },
+        "language": "Chakma",
+        "dialect": null,
+        "uncertainty_types": [],
+        "emitted_rows": [
+          [
+            "Chakma",
+            "",
+            "নুনো মাচ",
+            "Salted fish",
+            "নুনো মাচ",
+            "",
+            "",
+            "niranjan2010chakma[p. 44, Chakma column, scan y766]",
+            "",
+            "",
+            "niranjan2010chakma:p44:c1:y766:response:1",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ],
+        "status": "draft",
+        "reason": "Source spelling retained; no phonemic or ancestry claim."
+      },
+      "audit_decision": "no-material-error-observed",
+      "evidence": "output-audit-2026092110-10.png",
+      "note": "Compared emitted Form, Native, Gloss and printed locator against the three-column source scan; raw reading and typed uncertainty preserved in audit."
+    },
+    {
+      "output_row": [
+        "Chakma",
+        "",
+        "তোরমোচ",
+        "Water-melon",
+        "তোরমোচ",
+        "",
+        "",
+        "niranjan2010chakma[p. 45, Chakma column, scan y1643]",
+        "",
+        "",
+        "niranjan2010chakma:p45:c1:y1643:response:1",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "source_record": {
+        "entry_key": "niranjan2010chakma:p45:c1:y1643",
+        "locator": {
+          "pdf_page": 47,
+          "printed_page": 45,
+          "candidate_row": 18,
+          "entry_key": "niranjan2010chakma:p45:c1:y1643",
+          "original_bbox": [
+            157,
+            1643,
+            302,
+            1677
+          ]
+        },
+        "review": {
+          "pdf_page": 47,
+          "printed_page": 45,
+          "candidate_row": 18,
+          "english_anchor": "Water-melon",
+          "original_ocr_cells": [
+            {
+              "ocr_line_index": 19,
+              "raw": "তোরমোচ",
+              "bbox": [
+                157,
+                1643,
+                302,
+                1677
+              ]
+            }
+          ],
+          "reviewed_chakma": "তোরমোচ",
+          "reviewed_english": "Water-melon",
+          "review_status": "visually-reviewed",
+          "uncertainty_type": "",
+          "review_note": "Compared directly with full-resolution source page; no phonemic normalization.",
+          "reviewer": "OpenAI Codex",
+          "date": "2026-09-21",
+          "evidence": "Pinned PDF47, printed45; full-resolution render niranjan-main-ocr-v4/p047.png"
+        },
+        "candidate": {
+          "pdf_page": 47,
+          "printed_page": 45,
+          "candidate_row": 18,
+          "english_line_indices": [
+            19
+          ],
+          "english_raw": "Water-melon",
+          "english_bboxes": [
+            [
+              881,
+              1643,
+              1115,
+              1679
+            ]
+          ],
+          "status": "unreviewed",
+          "review_type": [
+            "ocr",
+            "cell-alignment"
+          ],
+          "cells": {
+            "chakma": [
+              {
+                "ocr_line_index": 19,
+                "raw": "তোরমোচ",
+                "bbox": [
+                  157,
+                  1643,
+                  302,
+                  1677
+                ]
+              }
+            ],
+            "bengali": [
+              {
+                "ocr_line_index": 20,
+                "raw": "তরমুজ",
+                "bbox": [
+                  588,
+                  1647,
+                  696,
+                  1686
+                ]
+              }
+            ]
+          }
+        },
+        "language": "Chakma",
+        "dialect": null,
+        "uncertainty_types": [],
+        "emitted_rows": [
+          [
+            "Chakma",
+            "",
+            "তোরমোচ",
+            "Water-melon",
+            "তোরমোচ",
+            "",
+            "",
+            "niranjan2010chakma[p. 45, Chakma column, scan y1643]",
+            "",
+            "",
+            "niranjan2010chakma:p45:c1:y1643:response:1",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ],
+        "status": "draft",
+        "reason": "Source spelling retained; no phonemic or ancestry claim."
+      },
+      "audit_decision": "no-material-error-observed",
+      "evidence": "output-audit-2026092110-10.png",
+      "note": "Compared emitted Form, Native, Gloss and printed locator against the three-column source scan; raw reading and typed uncertainty preserved in audit."
+    },
+    {
+      "output_row": [
+        "Chakma",
+        "",
+        "করথ",
+        "Foliage",
+        "করথ",
+        "",
+        "",
+        "niranjan2010chakma[p. 45, Chakma column, scan y687]",
+        "",
+        "",
+        "niranjan2010chakma:p45:c1:y687:response:1",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "source_record": {
+        "entry_key": "niranjan2010chakma:p45:c1:y687",
+        "locator": {
+          "pdf_page": 47,
+          "printed_page": 45,
+          "candidate_row": 9,
+          "entry_key": "niranjan2010chakma:p45:c1:y687",
+          "original_bbox": [
+            150,
+            687,
+            230,
+            720
+          ]
+        },
+        "review": {
+          "pdf_page": 47,
+          "printed_page": 45,
+          "candidate_row": 9,
+          "english_anchor": "Foliage",
+          "original_ocr_cells": [
+            {
+              "ocr_line_index": 9,
+              "raw": "ক্রথ",
+              "bbox": [
+                150,
+                687,
+                230,
+                720
+              ]
+            }
+          ],
+          "reviewed_chakma": "করথ",
+          "reviewed_english": "Foliage",
+          "review_status": "visually-reviewed",
+          "uncertainty_type": "",
+          "review_note": "Compared directly with full-resolution source page; no phonemic normalization.",
+          "reviewer": "OpenAI Codex",
+          "date": "2026-09-21",
+          "evidence": "Pinned PDF47, printed45; full-resolution render niranjan-main-ocr-v4/p047.png"
+        },
+        "candidate": {
+          "pdf_page": 47,
+          "printed_page": 45,
+          "candidate_row": 9,
+          "english_line_indices": [
+            9
+          ],
+          "english_raw": "Foliage",
+          "english_bboxes": [
+            [
+              877,
+              686,
+              1007,
+              733
+            ]
+          ],
+          "status": "unreviewed",
+          "review_type": [
+            "ocr",
+            "cell-alignment"
+          ],
+          "cells": {
+            "chakma": [
+              {
+                "ocr_line_index": 9,
+                "raw": "ক্রথ",
+                "bbox": [
+                  150,
+                  687,
+                  230,
+                  720
+                ]
+              }
+            ],
+            "bengali": [
+              {
+                "ocr_line_index": 9,
+                "raw": "পল্লব",
+                "bbox": [
+                  587,
+                  688,
+                  665,
+                  721
+                ]
+              }
+            ]
+          }
+        },
+        "language": "Chakma",
+        "dialect": null,
+        "uncertainty_types": [],
+        "emitted_rows": [
+          [
+            "Chakma",
+            "",
+            "করথ",
+            "Foliage",
+            "করথ",
+            "",
+            "",
+            "niranjan2010chakma[p. 45, Chakma column, scan y687]",
+            "",
+            "",
+            "niranjan2010chakma:p45:c1:y687:response:1",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ],
+        "status": "draft",
+        "reason": "Source spelling retained; no phonemic or ancestry claim."
+      },
+      "audit_decision": "no-material-error-observed",
+      "evidence": "output-audit-2026092110-10.png",
+      "note": "Compared emitted Form, Native, Gloss and printed locator against the three-column source scan; raw reading and typed uncertainty preserved in audit."
+    }
+  ],
+  "material_errors": 0,
+  "existing_uncertain_records": 1,
+  "scope": "Source-level output only; no compiled survival or database check.",
+  "installed_csv_sha256": "13aba1342fb4fd20d54b055d85eec90827b4fc99a4649cbdb064ff90be9a59c5",
+  "installation_check": "Installed source rows reproduce audited sample exactly; importer installation plumbing added after sampling without changing rows."
+}

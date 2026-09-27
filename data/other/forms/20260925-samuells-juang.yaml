@@ -1,0 +1,26 @@
+file: 20260925-samuells-juang.csv
+defaults:
+  transcription:
+    profile: samuells-juang-1856
+    input: form
+    preserve_hyphens: true
+  identity:
+    legacy_ids: stem
+    append_order: 102
+    dedupe_by_entry_key: true
+  forms:
+    split_alternates: false
+  importer:
+    commands:
+      - [data/other/forms/raw_data/samuells_juang_1856/import_source.py, --install]
+    note: Complete article pp.295–303; all31 glossary cells plus2 attested prose units yield35 forms, zero holds. Whole responses retained,21 legacy keys and positions preserved. Full independent33-unit review passed. DB/full-build/browser gates deferred by user.
+sources:
+  samuells1856juang:
+    identity:
+      dedupe_by_entry_key: true
+    forms:
+      split_alternates: false
+    reference:
+      editor: OpenAI Codex
+      ocr: false
+      etymology_provenance: none

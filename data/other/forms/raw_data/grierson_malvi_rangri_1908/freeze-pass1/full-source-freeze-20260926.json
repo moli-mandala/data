@@ -1,0 +1,34 @@
+{
+  "status": "frozen-awaiting-independent-whole-output-audit",
+  "sha256": {
+    "proposal.csv": "6819116fd46764fea402135e7ede868f69562e409270595e8b04a01301078005",
+    "proposal-audit.jsonl": "a8db786277824de9fda97f13688a744dce1e7fe3f924689b1fb667caf3238d28",
+    "proposal-profile.txt": "3f72caff77f6fae86576f3a76973309b9fb1bc4ecc4279ef7920be6591671b05",
+    "shared-grammar-first-reading.jsonl": "c7481b248afca39f5c636bb83597a463593572ed7b6b50cf6b953230bb0eede1",
+    "full-table-reconciled-reading.jsonl": "92dfd17630998412e6673e7446f636f7dbadb098fc79e351ab3a731811023e51",
+    "specimens-reviewed.jsonl": "35339b781eb81d948da6cc1afcfc4cdfd6bd18a34d55b2e92cf7e51b3216fcae",
+    "native-witness-alignments.jsonl": "8165e8b97729cc7e85becb887cb851a68878c853f9dfa2c59e85952ef652ce21",
+    "native-witness-reviewed.jsonl": "402fc337e609efae5e9a085d20a33b5be5821313b03249571084beaaf9cae928",
+    "grammar-source-commentary-review-20260926.json": "cc59e572d29e3b5bda82598372d04f6aace65cf668d5a13b530e74e7965dd97e",
+    "prepare_full.py": "a7cbe127d08bf32aef2e14803bdf1426a2a20299694c2fa10bf4177bdc73ceef",
+    "specimen_grammar.py": "6137fc7a26feb1691b6becee0a95990cf56448013af5de07cfecced411052100"
+  },
+  "rows": 1170,
+  "audit_units": 1346,
+  "pre_reuse_rows": 1393,
+  "focused_validation": "6 tests passed; scoped parse1170 zero errors; all raw forms and keys roundtrip",
+  "canonical": "five-row pilot unchanged",
+  "remaining_installation_gates": [
+    "independent fresh whole-output20 audit",
+    "canonical installation and importer parity",
+    "source YAML/bibliography/profile/dialect locality documentation",
+    "source-stage checklist and completeness ledger"
+  ],
+  "deferred_user_prohibited": [
+    "database/full CLDF build",
+    "full suite",
+    "compiled identity/graph/reference checks",
+    "browser QA",
+    "remote work"
+  ]
+}

@@ -1,0 +1,17 @@
+file: 20260925-babu-malasar-numerals.csv
+defaults:
+  transcription:
+    profile: babu-malasar-2018
+    preserve_hyphens: true
+  identity:
+    legacy_ids: stem
+    append_order: 93
+  importer:
+    commands:
+      - [data/other/forms/raw_data/babu_malasar_2018/import_source.py, --install]
+    note: Aswini Babu's 2018 Malasar numbered table in the immutable CC-BY Chan archive.
+sources:
+  babu2018malasar:
+    reference:
+      editor: OpenAI Codex
+      ocr: false

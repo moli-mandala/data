@@ -37,13 +37,15 @@ def test_transcription_corpus_and_rare_symbols():
     rows, stats = parse_file(str(RAW.parent / f'{v.STEM}.csv'), errors)
     assert stats == {'for_conversion':502, 'converted':502}
     assert not errors.getvalue()
-    assert all(r.form == r.old_form and not r.ipa and not r.native for r in rows)
+    assert all(not r.ipa and not r.native for r in rows)
+    # the display form is the house transcription of the source spelling (w → v)
+    assert all(r.form == r.old_form.replace('w', 'v') for r in rows)
     tokenizer = Tokenizer(str(ROOT/'conversion/seligmann-vedda.txt'))
     for row in v.emit()[0]:
         for norm in ('NFC','NFD'):
             result = tokenizer(unicodedata.normalize(norm,row[2]),column='IPA')
             assert '�' not in result
-            assert unicodedata.normalize('NFC',result.replace(' ','').replace('#',' ')) == row[2]
+            assert unicodedata.normalize('NFC',result.replace(' ','').replace('#',' ')) == row[2].replace('w','v')
     by_key = {r.entry_key:r.form for r in rows}
     assert by_key[f'{v.SOURCE}:128:g1:f2'] == 'naidaṇḍa'
     assert by_key[f'{v.SOURCE}:172:g3:f1'] == 'dëula'
@@ -94,7 +96,7 @@ def test_compiled_source_survives():
     forms={r['ID']:r for r in csv.DictReader((ROOT/'cldf/forms.csv').open()) if v.SOURCE in r['Source']}
     assert len(forms)==502
     assert all(r['Language_ID']=='Vedda' and r['Status']=='unlinked' for r in forms.values())
-    assert all(r['Form']==r['Original'] for r in forms.values())
+    assert all(r['Form']==r['Original'].replace('w','v') for r in forms.values())
     assert {r['Gloss'] for r in forms.values() if r['Form']=='dia'} == {'Tears','Water'}
     keys=[r for r in csv.DictReader((ROOT/'cldf/form-source-keys.csv').open()) if r['Source_Key'].startswith(v.SOURCE+':')]
     assert len(keys)==502

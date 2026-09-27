@@ -1,0 +1,32 @@
+{
+  "status": "whole_source_stage_installed_full_pipeline_deferred",
+  "forms": 654,
+  "physical_units": 735,
+  "by_lect": {
+    "Birbhum": 256,
+    "Bankura": 96,
+    "Dhangar": 302
+  },
+  "legacy_keys_preserved": 5,
+  "added": 649,
+  "canonical_sha256": "2002294c39cfd9c87c500dd3719cc030cc95ad8a134552b332849b9107fb2a29",
+  "audit_sha256": "492275cc873b723042362badc45a9775c5048ea34830663891b5a691b6c3f9ee",
+  "independent_audit": "independent-full-audit-20260926-pass2.json",
+  "independent_result": "20/20passed; zero material errors; repaired metadata classes and edge checks verified.",
+  "post_audit_change": "Only stale number08 process note replaced with completed-reading statement, as reviewer requested. Reversing exactly that Notes replacement reproduces audited CSV hash; all other bytes unchanged.",
+  "profile_graphemes": 84,
+  "scoped_parser": {
+    "rows": 654,
+    "errors": 0,
+    "Original_preserved": true,
+    "Phonemic_blank": true
+  },
+  "focused_tests": "7passed in0.68s",
+  "deferred": [
+    "FullCLDF/database build",
+    "Global compiled reference/ID/graph checks",
+    "Fullsuite",
+    "BrowserQA and representative app entries"
+  ],
+  "reason": "Explicit user no-build/no-remotes instruction."
+}

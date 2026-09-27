@@ -49,10 +49,10 @@ def test_western_tamang_ipa_profile_and_source_annotations():
     profile = Tokenizer("conversion/western-tamang.txt")
     cases = {
         "dʑiu": "ʣ̣iu",
-        "tɕⁱam": "ʦ̣ⁱam",
-        "ʔa:tɕabel": "ʔāʦ̣abel",
-        "kʰalːa": "kʰalla",
-        "mṳla": "mṳla",
+        "tɕⁱam": "ʦ̣ⁱām",
+        "ʔa:tɕabel": "ʔāʦ̣ābel",
+        "kʰalːa": "kʰāllā",
+        "mṳla": "mṳlā",
         "ɕego": "śego",
     }
     for source, expected in cases.items():

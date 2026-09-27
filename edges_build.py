@@ -179,6 +179,11 @@ def build_edges(rows, deriv_edges):
         seen_pairs.add(pair)
         per_child[child].append(parent)
 
+    alt_ranks = defaultdict(int)  # child → rank≥2 edges emitted so far
+    for e in edges:
+        if e[3] >= 2:
+            alt_ranks[e[0]] += 1
+
     for child, parents in per_child.items():
         r1 = rank1.get(child)
         live = []
@@ -192,9 +197,10 @@ def build_edges(rows, deriv_edges):
         if r1 is not None:
             # attested child → alternate etymology hypotheses, in stored order
             note = NOTE_ALTERNATE if len(live) == 1 else ""
-            next_rank = 2 + sum(1 for e in edges if e[0] == child and e[3] >= 2)
+            next_rank = 2 + alt_ranks[child]
             for i, parent in enumerate(live):
                 emit(child, parent, "reflex", next_rank + i, note=note)
+                alt_ranks[child] += 1
                 stats["alt_edges"] += 1
             if note:
                 stats["alt_reviewable"] += 1

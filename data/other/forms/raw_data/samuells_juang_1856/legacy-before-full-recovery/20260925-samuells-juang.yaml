@@ -1,0 +1,15 @@
+file: 20260925-samuells-juang.csv
+defaults:
+  transcription:
+    profile: samuells-juang-1856
+    input: form
+  identity:
+    legacy_ids: stem
+    append_order: 102
+    dedupe_by_entry_key: true
+  forms:
+    split_alternates: false
+  importer:
+    commands:
+      - [data/other/forms/raw_data/samuells_juang_1856/import_source.py, --install]
+    note: Printed 1856 Samuells Juang pp. 302–303 vocabulary; 31 prompt cells audited, 20 simplex prompt cells selected yielding 21 forms, 11 held.

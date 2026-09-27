@@ -244,7 +244,7 @@ def test_shared_reference_records_exact_manual_only_provenance():
 def test_shared_profile_is_exact_and_parser_route_is_explicit():
     assert SHARED_PROFILE.read_bytes() == SOUND_PROFILE.read_bytes()
     assert sha256(SHARED_PROFILE) == (
-        "bcaf9bcb1098d3dfe394aa2cb0003873c31417e2a50f34643acbbe9a1a349936"
+        "783fd889fdfb369545067107c15c0a7309dfd3b97d50726623332a12e4182fba"
     )
     _routed("kim-ahmad-kim-sangma2011kochbd", "sil-bangladesh", "data/other/forms/20260826-sil-kochbd.csv")
 

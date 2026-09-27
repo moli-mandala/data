@@ -1,0 +1,88 @@
+{
+  "date": "2026-09-26",
+  "original_path": "tmp/pdfs/lsi-v9-2/LSI-V9-2-alternate.pdf",
+  "url": "https://archive.org/download/in.ernet.dli.2015.34951/2015.34951.Indo-aryan-Family-Central-Group-Part-Ii-Specimens-Of-The-Rajasthani-And-Gujrati.pdf",
+  "sha256": "a9fbdec72119b8a6aab236541782342c62318cb1eb7cfddf2d1f5cf5891cbcb1",
+  "bytes": 19952676,
+  "pages": 498,
+  "source_metadata": "tmp/pdfs/lsi-v9-2/alternate-metadata.json",
+  "scandata": "tmp/pdfs/lsi-v9-2/alternate-scandata.xml",
+  "observed_mapping": {
+    "320": "printed304",
+    "325": "printed307",
+    "327": "printed309",
+    "329": "printed311",
+    "331": "printed313",
+    "333": "printed315",
+    "334": "printed316"
+  },
+  "mapping_warning": "Zero-based fitz indices; mapping not constant across verified leaves. Check printed folio per page.",
+  "decision": "Use alternate original for full transcription and recheck prior provisional readings and held cells. Preserve both originals and previous draft.",
+  "image_dimensions_on_fitz325": [
+    [
+      2203,
+      3142
+    ]
+  ],
+  "page_defects": [
+    {
+      "printed_page": 315,
+      "fitz_index": 333,
+      "defect": "Left part of Rangri column cut off in original image. PDF media/crop boxes match full image; not recoverable by changing render clip.",
+      "fallback": "Original DjVu page330 preserves complete column at lower resolution; jointly compare witnesses and retain glyph uncertainties.",
+      "affected_prompts": "134\u2013160"
+    },
+    {
+      "printed_page": 317,
+      "fitz_index": 335,
+      "defect": "Rangri column left edge also cut off; need intact witness."
+    }
+  ],
+  "dsal_witnesses": [
+    {
+      "path": "tmp/pdfs/lsi-v9-2/dsal-330.jpg",
+      "url": "https://dsal.uchicago.edu/books/lsi/images/lsi-v9-2-330.jpg",
+      "printed_page": 315,
+      "sha256": "830090872f61b1d9c80699b7e797a0d47b5c2951f30005eac54a6118f446b43b",
+      "bytes": 169381,
+      "dimensions": [
+        1000,
+        1400
+      ],
+      "finding": "Complete column, grayscale retains more fine-mark detail than old binary DjVu despite similar dimensions."
+    },
+    {
+      "path": "tmp/pdfs/lsi-v9-2/dsal-332.jpg",
+      "url": "https://dsal.uchicago.edu/books/lsi/images/lsi-v9-2-332.jpg",
+      "printed_page": 317,
+      "sha256": "680493cc7616d00aec875fea80fbea735eec28880219e7dfb13c69f2465a4ff2",
+      "bytes": 168545,
+      "dimensions": [
+        1000,
+        1400
+      ]
+    },
+    {
+      "path": "tmp/pdfs/lsi-v9-2/dsal-334.jpg",
+      "url": "https://dsal.uchicago.edu/books/lsi/images/lsi-v9-2-334.jpg",
+      "printed_page": 319,
+      "sha256": "a4cc238ec0698fcd96489c4fde67514659e9a69fe26d18dc41aa33702b300bac",
+      "bytes": 189038,
+      "dimensions": [
+        1000,
+        1400
+      ]
+    },
+    {
+      "path": "tmp/pdfs/lsi-v9-2/dsal-336.jpg",
+      "url": "https://dsal.uchicago.edu/books/lsi/images/lsi-v9-2-336.jpg",
+      "printed_page": 321,
+      "sha256": "467983c41b7ff45422b72aefb8cb4570978a4440b92cb0cdaa4164911dbefbe2",
+      "bytes": 303372,
+      "dimensions": [
+        1000,
+        1400
+      ]
+    }
+  ]
+}

@@ -109,7 +109,7 @@ def test_build_converts_clts_ipa_and_preserves_grierson_form(tmp_path):
         encoding="utf-8",
     )
     rows, stats = parse_file(
-        str(source), io.StringIO(), name="grierson"
+        str(source), io.StringIO(), name="20260813-grierson-lsi"
     )
     assert stats == {"converted": 1, "for_conversion": 1}
     assert len(rows) == 1

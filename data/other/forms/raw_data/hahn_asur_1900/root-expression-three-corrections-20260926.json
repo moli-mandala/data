@@ -1,0 +1,30 @@
+{
+  "status": "three_corrections_confirmed",
+  "reviewer": "root",
+  "input_review_sha256": "eff8163bd19a2de49623557fc642d48d7ac2446f7ae9c7dea057ee2c3ccff0d2",
+  "method": "OriginalPDF independently rendered6x at reviewer coordinates; visually checked dot under t, macron on final i, crossbar of e.",
+  "findings": [
+    {
+      "key": "hahn1900asur:155:5:expression:03",
+      "before": "meṛhed rā katu",
+      "after": "meṛhed rā kaṭu",
+      "reason": "Distinct dot below t verified 7× original PDF page167 Rect55,73,184,131.",
+      "root_result": "confirmed"
+    },
+    {
+      "key": "hahn1900asur:161:19:expression:02",
+      "before": "Nihi tuanā",
+      "after": "Nihī tuanā",
+      "reason": "Final i has a horizontal macron, matching preceding Nihī; 12× original PDF173 Rect26,154,55,166.",
+      "root_result": "confirmed"
+    },
+    {
+      "key": "hahn1900asur:161:19-23:bound-context",
+      "before": "cyā",
+      "after": "eyā",
+      "reason": "First letter has e crossbar, not c; 8× original PDF173 Rect117,89,185,98.",
+      "root_result": "confirmed"
+    }
+  ],
+  "canonical_modified": false
+}

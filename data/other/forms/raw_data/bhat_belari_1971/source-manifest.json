@@ -1,0 +1,105 @@
+{
+  "status": "192 source rows installed; source audit and focused integration checks passed; derivative annotations applied; compiled gates deferred",
+  "source_key": "bhat1971koraga",
+  "source_url": "https://dnshankarabhat.net/wp-content/uploads/2014/11/Koraga_Language.pdf",
+  "pdf_sha256": "a16d98b086813a80a1f86a0ae9da69e12575c99f87202fa1253caf17614f4ab9",
+  "pdf_pages": 130,
+  "scope": "Appendix8: The Belari Language, printed119–123, PDF126–130",
+  "canonical_language": "Belari",
+  "existing_source_scope": "Canonical bibliography now includes chapter7 Koraga pp.88–118 and appendix8 Belari pp.119–123",
+  "existing_derived_source": "lindgren2023dravidian,108 Belari source rows; thesis printed27 Table4 cites Bhat1971 and mentions114 comparative concepts",
+  "overlap_policy": "Compare every primary lexical/paradigm unit with derivative entries; shared origin is not independent field evidence; preserve distinct inflectional analyses and canonical identities",
+  "locality": "Slopes of Western Ghats east of Coondapur, South Kanara; village not specified, do not invent village dialect or coordinates",
+  "licence": "Existing canonical source records no open licence; extract factual lexical data with attribution, no republication of book",
+  "checklist_addenda": [
+    "Dictionary or glossary",
+    "Survey wordlists or comparative tables"
+  ],
+  "extraction": "Reuse pinned local PDF and its existing text layer; first appendix page visually inspected, phonetic OCR substitutions visible. Per-page raw text is scaffold only. No new OCR yet. Allfive rendered pages now viewed; existing OCR does not reliably preserve barred i, retroflexes or layout.",
+  "next": [
+    "Continue diversity-oriented source discovery; compiled gates remain deferred"
+  ],
+  "deferred": [
+    "Remote execution prohibited",
+    "Full data/database builds require direct user request",
+    "Compiled identity/graph/reference and browser validation deferred"
+  ],
+  "structural_inventory": "section-inventory.json;191 source occurrences including repeated paradigm/affix cells, not unique lexemes",
+  "candidate_counts_by_page": {
+    "119": 36,
+    "120": 41,
+    "121": 30,
+    "122": 36,
+    "123": 48
+  },
+  "glyph_review": {
+    "file": "glyph-review.jsonl",
+    "reviewed_occurrences": 191,
+    "first_pass_corrections": 10,
+    "uncertain_readings": 3,
+    "remaining_occurrences": 0
+  },
+  "grammar_preparation": {
+    "script": "prepare_analysis.py",
+    "output": "analysis-proposals.jsonl",
+    "analyses": 192,
+    "reason_for_expansion": "One source pronoun explicitly covers second-person feminine singular and unrestricted plural; two analysis keys preserve both.",
+    "uncertain_analyses": 4
+  },
+  "focused_tests": "8 passed in 0.49s, including installed CSV parser, shared citation, bibliography and language-specific profile routing",
+  "overlap_review": {
+    "script": "reconcile_lindgren.py",
+    "file": "lindgren-overlap-review.jsonl",
+    "counts": {
+      "shared-primary-source": 89,
+      "grammatical-disagreement": 2,
+      "transcription-disagreement": 2,
+      "derived-stem": 7,
+      "not-located-in-appendix": 3,
+      "gloss-ambiguity": 1,
+      "gloss-generalization": 2,
+      "unsupported-grammatical-specificity": 2
+    },
+    "derived_rows_changed": true,
+    "annotations": {
+      "notes": 19,
+      "uncertainty_flags": 7,
+      "lexical_claims_preserved": true,
+      "file": "../ia_dravidian_2026/belari-primary-review.json"
+    }
+  },
+  "relationships": {
+    "file": "relationship-decisions.json",
+    "paradigm_variants": 45,
+    "parent": "attested bar root",
+    "historical_edges": 0
+  },
+  "source_row_checks": {
+    "rows": 192,
+    "source_occurrences": 191,
+    "paradigm_links": 45,
+    "uncertain_rows": 4,
+    "historical_commentary_rows": 14,
+    "preserved": [
+      "Original",
+      "Gloss",
+      "Notes",
+      "Etymology",
+      "Variant_Of_Key",
+      "Tags"
+    ],
+    "unicode": "NFC and NFD source inputs produce identical house transcription",
+    "output_sample_seed": 2026092203,
+    "output_sample_status": "accepted: 0 material errors in 20 rows",
+    "output_audit": "output-audit-2026092203.json"
+  },
+  "installation": {
+    "csv": "data/other/forms/20260922-bhat-belari.csv",
+    "settings": "data/other/forms/20260922-bhat-belari.yaml",
+    "profile": "conversion/bhat-belari.txt",
+    "canonical_source_owner": "data/other/forms/20260911-selected-koraga.yaml",
+    "append_order": 38,
+    "metadata_validation": "203 source files,198 citation keys; passed",
+    "compiled_outputs_built": false
+  }
+}

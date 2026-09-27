@@ -47,11 +47,11 @@ def test_eastern_magar_lects_are_registered_as_dialects():
 def test_eastern_magar_ipa_profile_and_pdf_font_repairs():
     profile = Tokenizer("conversion/eastern-magar.txt")
     cases = {
-        "midʒaŋ": "mijaŋ",
+        "midʒaŋ": "mijāŋ",
         "tuk̚tʃʲo": "tuk̚cʸo",
         "miʃʲæk̚": "miśʸæk̚",
-        "kʰeɾɛp̚": "kʰerep̚",
-        "ŋɛ̃t": "ŋẽt",
+        "kʰeɾɛp̚": "kʰerɛp̚",
+        "ŋɛ̃t": "ŋɛ̃t",
     }
     for source, expected in cases.items():
         converted = profile(unicodedata.normalize("NFD", source), column="IPA")

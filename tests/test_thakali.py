@@ -41,7 +41,7 @@ def test_thakali_profile_converts_ipa_and_covers_every_form():
     profile = Tokenizer(DATA_DIR / "conversion/thakali.txt")
     cases = {
         "tsʰju": "ʦʰyu",
-        "tʃʰɔm": "cʰom",
+        "tʃʰɔm": "cʰɔm",
         "pʰo̤": "pʰo̤",
         "ɟʌ̃lʌ": "jãla",
         "æí:": "æī́",

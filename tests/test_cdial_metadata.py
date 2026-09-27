@@ -176,3 +176,13 @@ def test_uppercase_source_code_is_not_a_grammatical_tag():
 
     assert tags == ""
     assert note == "Tr."
+
+
+def test_sanskrit_work_loci_are_tagged_only_where_attestations_are_enabled():
+    # Berger's own grammar, a botanical authority and a Turkic language label are not Sanskrit works.
+    for note in ("Kopula, Gr. 16.8.) K 192", "Malcolmia africana R. Br.", "(Kar. und Kir.)", "W."):
+        tags, kept = extract_tags(note, attestations=False)
+        assert tags == ""
+        assert kept == note
+    assert extract_tags("adj; W.", attestations=False) == ("adj", "W.")
+    assert extract_tags("m.; RV.") == ("m RV Early-Vedic", "")

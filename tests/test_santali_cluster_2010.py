@@ -54,7 +54,7 @@ def test_santali_cluster_clean_pdf_targets_are_complete():
 def test_santali_cluster_ipa_profile_covers_every_source_form():
     assert _convert("ʃiŋgi") == "śiŋgi"
     assert _convert("ʈʃando") == "ṭśando"
-    assert _convert("rɔŋdʰɔnu") == "roŋdʰonu"
+    assert _convert("rɔŋdʰɔnu") == "rɔŋdʰɔnu"
     assert _convert("pahaɽ") == "pahaṛ"
     assert _convert("d̪ɑʔɑʔ") == "dāʔāʔ"
     assert _convert("bɨndɾi") == "bɨndri"
@@ -113,4 +113,6 @@ def test_santali_cluster_compiled_rows_keep_raw_source_transcription():
         forms = [row for row in csv.DictReader(stream) if row["ID"] in form_ids]
     assert len(forms) == 4882
     assert all(row["Phonemic"] for row in forms)
-    assert sum(row["Form"] != row["Phonemic"] for row in forms) > 3000
+    # Exact house conversion replaces the former arbitrary changed-form threshold.
+    assert all(row['Form'] == _convert(row['Phonemic']) for row in forms)
+    assert all(row['Original'] == row['Phonemic'] for row in forms)

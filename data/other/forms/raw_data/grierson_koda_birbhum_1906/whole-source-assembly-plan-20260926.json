@@ -1,0 +1,32 @@
+{
+  "status": "whole_source_readings_ready_for_proposal_assembly_not_installed",
+  "inputs": {
+    "grammar-second-reading-20260926.jsonl": 41,
+    "birbhum-specimen-third-reading-20260926.jsonl": 333,
+    "bankura-specimen-third-reading-20260926.jsonl": 93,
+    "dhangar-bankura-prose-second-reading-20260926.jsonl": 27,
+    "dhangar-table-final-reading-20260926.jsonl": 241
+  },
+  "total_physical_units": 735,
+  "introductory_context": "introductory-context-review-20260926.json",
+  "legacy_key_mapping": {
+    "grierson1906koda:grammar:p109:pronunciation01": "grierson1906lsi4:koda_birbhum:p109:ex01",
+    "grierson1906koda:grammar:p109:pronunciation07": "grierson1906lsi4:koda_birbhum:p109:ex07",
+    "grierson1906koda:grammar:p110:number07": "grierson1906lsi4:koda_birbhum:p110:ex05",
+    "grierson1906koda:grammar:p110:number08": "grierson1906lsi4:koda_birbhum:p110:ex06",
+    "grierson1906koda:grammar:p110:number10": "grierson1906lsi4:koda_birbhum:p110:ex08"
+  },
+  "required_assembly_rules": [
+    "Preserve all5 existing keys; correct source readings, including pilot horo/man and lal/see.",
+    "Join only5 verified physical continuations using current component readings; retain every original locator. Do not reuse outdated joined-candidate glyphs from first wrap report.",
+    "Deduplicate only identical source lect + literal form + gloss; merge all source locators. Do not merge Birbhum, Dhangar or Bankura.",
+    "Preserve Bankura source reconstruction qualification and printed parentheses/sic; do not generate unsupported alternatives.",
+    "Preserve table47 my/thy/his qualifiers,49 elder,50 elder/my younger and1 one-only on corresponding alternatives.",
+    "Review special table103,104 and156–161 abbreviated/leading-hyphen alternatives before lexical emission. Do not invent omitted stems or give a bound relational fragment a whole-sentence gloss.",
+    "Retain typed source uncertainty for specimen111-l4-w6 and table209; metadata-name uncertainty stays metadata.",
+    "Do not manufacture IPA; prepare complete preservation profile and source lect metadata.",
+    "Keep bound-morphology/control records in full audit. No invented standalone gloss for grammar possessive03 reuse.",
+    "Freeze whole-source proposal and run fresh independent original-image sample before installation."
+  ],
+  "full_pipeline_deferred": "User prohibits DB builds/remotes; global compiled graph/reference/browser gates remain explicitly deferred."
+}

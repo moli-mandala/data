@@ -1,0 +1,21 @@
+file: 20260925-bailey-rohru.csv
+defaults:
+  transcription:
+    profile: bailey-rohru-1920
+  identity:
+    legacy_ids: stem
+    append_order: 90
+  importer:
+    commands:
+      - [data/other/forms/raw_data/bailey_rohru_1920/import_source.py, --install]
+    note: Complete 255-cell Bailey 1920 Rohru glossary pp. 127–130 is audited; 250 accepted cells yield 309 rows, with two specifically documented vowel-stack holds and three cross-reference-only exclusions.
+sources:
+  bailey1920rohru:
+    identity:
+      dedupe_by_entry_key: true
+    forms:
+      split_alternates: false
+    reference:
+      editor: OpenAI Codex
+      ocr: true
+      etymology_provenance: none

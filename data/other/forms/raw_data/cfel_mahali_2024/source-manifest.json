@@ -1,0 +1,188 @@
+{
+  "status": "2451 reviewed lexical rows installed in source CSV; compiled build and browser gates deferred by user",
+  "title": "Mahali-Bangla-Hindi-English Dictionary",
+  "editors": [
+    "Manoranjan Pradhan",
+    "Arimardan Kumar Tripathi"
+  ],
+  "publisher": "Centre for Endangered Languages, Visva-Bharati",
+  "year": 2024,
+  "isbn": "978-81-957226-9-3",
+  "url": "https://cfelvb.in/uploads/pdf/1727692288-Mahali-Bangla-Hindi-English%20Dictionary.pdf",
+  "pdf_sha256": "4214334508edc9668f35301249d5c1a5110c2580594c83fa5259bf70d921c5a2",
+  "pdf_pages": 387,
+  "reported_entries": 2451,
+  "reported_domains": 52,
+  "lexical_pdf_pages": [
+    10,
+    387
+  ],
+  "licence": "Copyright Visva-Bharati; no open redistribution licence or publisher permission identified. Source PDF, page images and prose definitions are not installed or redistributed.",
+  "selection": "Target Mahali IPA and English labels occur in the same entries; preferable to Bangla-headed multilingual edition and incomplete API enumeration. Preserve edition differences.",
+  "source_claims": "Lexical attestations and revitalization coinages; no individual ancestral or donor graph claims established. Do not label all terms traditional vocabulary.",
+  "raw_text_issue": "Bengali and Devanagari text layer contains NUL glyphs; cannot silently treat as faithful Native. IPA and English need independent full inventory and visual audit.",
+  "checklist_addenda": [
+    "Dictionary or glossary",
+    "OCR-heavy source (native recovery pilot)",
+    "Website/API (publisher cross-check)"
+  ],
+  "next": [
+    "Run compiled-source survival/reference/profile/graph checks only after the user explicitly requests a database build",
+    "Run full pipeline and browser QA only after the user authorizes the build/release stage"
+  ],
+  "deferred": [
+    "No remote execution",
+    "No data/database builds without direct user request",
+    "Compiled pipeline/full suite gates deferred; browser refresh only on explicit request"
+  ],
+  "extraction_evidence": {
+    "raw_pages": 387,
+    "raw_cache": "../tmp/pdfs/cfel-koda-mahali/mahali-pages.jsonl",
+    "single_line_header_candidates": 2435,
+    "multiline_grammar_and_IPA_boundaries": 2450,
+    "description_headings": 2441,
+    "pages_with_NUL": 378,
+    "unresolved": "2451 printed entries reconciled; first-pass and positioned extraction plus normalized source-output samples audited. Compiled output remains unverified.",
+    "reconciled_entries": 2451,
+    "missing_ipa_opening_slash": {
+      "page": 380,
+      "item": 2,
+      "form": "ɖũmbɔr",
+      "gloss": "Fig",
+      "evidence": "page380 rendered at140dpi and visually checked; absent slash is printed"
+    },
+    "entries_without_description": 10,
+    "native_candidates_with_NUL": 1176,
+    "ipa_candidates_with_NUL": 0
+  },
+  "focused_tests": "21 focused Mahali tests passed; both 20-record seeded output audits reproduce; source_meta validates 214 settings and 207 citation keys",
+  "transcription_review": {
+    "inventory": "transcription-inventory.json",
+    "unique_symbols": 53,
+    "targeted_review_entries": 28,
+    "visually_checked": 28,
+    "review_ledger": "glyph-review.jsonl",
+    "font_evidence": "font-inspection.json",
+    "result": "Systematic tie-bar displacement corrected geometrically; first-pass candidates retained. Fresh seeded whole-source normalized-output audit found 0/20 material errors.",
+    "targeted_review": "targeted-review.jsonl",
+    "positioned_candidate_file": "positioned-candidates.jsonl",
+    "positioned_combining_glyphs": 1377,
+    "ambiguous_geometric_anchors": 0,
+    "IPA_candidates_changed": 204,
+    "ties_in_positioned_IPA": 211
+  },
+  "observed_lexical_domains": 50,
+  "domain_inventory": "domains.json; TOC items3–52 exclude Acknowledgement and Introduction",
+  "extraction_audit": {
+    "file": "sample-2026092204.json",
+    "seed": 2026092204,
+    "sample_size": 20,
+    "material_errors": 0,
+    "scope": "positioned IPA, source grammar, English label and entry alignment; not normalized output or Native"
+  },
+  "analysis_preparation": {
+    "file": "analysis-proposals.jsonl",
+    "rows": 2451,
+    "component_label_records": 180,
+    "uncertain": 22,
+    "grammar_policy": "Simple POS mapped; component chains retained in notes with multiword-expression, not applied as whole-phrase POS. Domain-specific numerals, ordinals, causatives and compounds retained.",
+    "native": "2451 accepted native readings; 0 pending; raw source retained for all",
+    "gloss_disambiguation": "p306:item2 Grain is a unit of weight; supported by source definition",
+    "ipa_linewrap_repair": "Eyelid p282:e5 printed IPA wraps after a meaningful hyphen; newline joined without adding a space, raw IPA retained in positioned candidates"
+  },
+  "profile_preparation": {
+    "file": "cfel-mahali.txt",
+    "rules": 59,
+    "source_input": "IPA",
+    "coverage": "2451/2451; NFC and NFD agree",
+    "policy_audit": "no violations",
+    "decisions": "IPA j→y; affricates tied/untied/digraph→c/j; preserve æ/ɔ, dental/other combining marks, glottal stops, question marks and internal dots distinctly."
+  },
+  "native_recovery_next": "None: all 2451 native readings visually reviewed; eight print/online edition mismatches retained separately.",
+  "native_ocr_pilot": {
+    "file": "native-ocr-pilot.json",
+    "records": 10,
+    "engine": "Tesseract ben,PSM7,400dpi,OMP_THREAD_LIMIT1",
+    "status": "rejected for unattended installation",
+    "accepted_native_readings": 1,
+    "review_file": "native-recovery-review.jsonl",
+    "count_scope": "One reading accepted during original pilot; subsequent publisher-assisted reviews counted separately."
+  },
+  "native_review": {
+    "file": "native-recovery-review.jsonl",
+    "accepted": 2451,
+    "pending": 0,
+    "method": "2443 publisher-assisted visual readings and 8 direct printed transcriptions; evidence recorded per entry"
+  },
+  "metadata_review": "metadata-review.json",
+  "review_draft": {
+    "csv": "review-draft.csv",
+    "audit": "draft-audit.jsonl",
+    "rows": 2451,
+    "status": "2451 reviewed rows installed as data/other/forms/20260925-cfel-mahali.csv; no compiled build"
+  },
+  "reviewed_subset_output_audit": {
+    "file": "output-sample-2026092205.json",
+    "seed": 2026092205,
+    "population": 190,
+    "sample": 20,
+    "material_errors": 0,
+    "scope": "Reviewed-native subset; all sampled labels nouns. Not a whole-source or compiled-output audit.",
+    "verification": "audit_draft.py",
+    "editorial_clarification": "p307:e6 Glass (material), supported by printed definition; raw source label preserved"
+  },
+  "semantic_review": {
+    "file": "semantic-review.jsonl",
+    "flagged": 3,
+    "issue": "Two conflicting numeral meanings at p78; one native/IPA mismatch at p102:e4. All source fields retained without emendation."
+  },
+  "cardinal_number_review": {
+    "inventory": "numeral-inventory.json",
+    "review": "numeral-review.json",
+    "entries": 129,
+    "native_reviewed": 129,
+    "repeated_exact_IPA_groups": 4,
+    "conflicting_groups": 1,
+    "scope": "Native readings and exact-IPA repetitions reviewed; not an exhaustive semantic validation."
+  },
+  "publisher_edition_review": "publisher-edition-review.jsonl; Curry, Beverage, Taste, Ripe, Dark skinned, House, Skeleton and Right Hand exceptions resolved from print",
+  "rights_review": {
+    "publisher_evidence": "2024 printed edition copyright page identifies © Visva-Bharati; https://cfelvb.in/ footer states ©2026 Centre for Endangered Languages, All Rights Reserved; no open licence found",
+    "inclusion_basis": "Checklist §1 alternative: attributed extraction of lexical facts, not republication of the dictionary. Jambu source CSV contains Mahali headwords, printed IPA readings, short English labels, grammatical analysis, page/item citations and editorial notes. Individual words, pronunciations, short labels and observed grammatical categories are factual lexical data. Jambu applies its own transcription profile, schema and search organization. This is an editorial assessment of factual reuse, not a claim that the PDF is licensed, that permission was granted, or that all 2451 source entries are public domain.",
+    "preexisting_project_precedent": "CUJ Asur 2020 and Watters Kusunda 2006 source packages also include attributed lexical attestations from copyrighted publications while excluding source PDFs and literary/prose content.",
+    "excluded_from_installed_rows": "PDF pages, images, source-layout facsimiles, Bengali/Hindi translations, prose definitions, illustrations and publisher API prose; raw publisher responses and page renders remain outside the repository in local cache.",
+    "scope_caveat": "The complete set of 2451 printed records is a substantial extraction; rights basis should be revisited before public release if project policy or publisher terms require permission. No public release was performed in this source-stage task."
+  },
+  "whole_source_output_audit": {
+    "file": "output-sample-20260925.json",
+    "seed": 20260925,
+    "population": 2451,
+    "sample": 20,
+    "material_errors": 0,
+    "scope": "Fresh seeded visual comparison of complete printed lexical blocks with source CSV form/display, gloss, Native, tags, citation and notes; not an exhaustive semantic or compiled-output audit",
+    "verification": "audit_draft.py"
+  },
+  "source_integration": {
+    "csv": "data/other/forms/20260925-cfel-mahali.csv",
+    "settings": "data/other/forms/20260925-cfel-mahali.yaml",
+    "bibliography": "cldf/sources.bib:pradhan-tripathi2024mahali",
+    "profile": "conversion/cfel-mahali.txt",
+    "append_order": 44,
+    "language": "existing Mahali / maha1291; no invented dialect",
+    "focused_tests": "21 passed",
+    "source_meta": "214 source settings, 207 citation keys",
+    "profile_policy": "cfel-mahali scoped audit: 0 violations; unrelated global profile violations remain"
+  },
+  "completion_review_20260926": {
+    "status": "complete_source_stage",
+    "physical_entries": 2451,
+    "descriptions_reviewed": 2451,
+    "description_amendments": 358,
+    "proposal_sha256": "0148691048bd3de49f2f3bf29ff79fe0d17ce7bedb0ffccbe4291ca3cac82418",
+    "all_existing_lexical_fields_preserved": true,
+    "full_build_and_browser": "Deferred by explicit user no-database-build instruction.",
+    "canonical_csv_sha256": "0148691048bd3de49f2f3bf29ff79fe0d17ce7bedb0ffccbe4291ca3cac82418",
+    "independent_material_errors": 0,
+    "focused_tests": 46
+  }
+}

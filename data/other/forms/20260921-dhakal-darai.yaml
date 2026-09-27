@@ -1,0 +1,23 @@
+file: 20260921-dhakal-darai.csv
+defaults:
+  transcription:
+    profile: dhakal-darai
+    input: phonemic
+    preserve_hyphens: true
+  identity:
+    legacy_ids: stem
+    append_order: 34
+  importer:
+    commands:
+      - [data/other/forms/raw_data/dhakal_darai_2011/import_source.py, --install]
+    note: Native font decoding; authorial phonemic transcription drives house conversion. Original preserves printed syllable/word spacing; two scoped internal spaces normalize in Phonemic.
+sources:
+  dhakal2011darai:
+    identity:
+      dedupe_by_entry_key: true
+    forms:
+      split_alternates: false
+    reference:
+      editor: Aryaman Arora; OpenAI Codex
+      ocr: false
+      etymology_provenance: source

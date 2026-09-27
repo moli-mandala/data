@@ -1,0 +1,23 @@
+{
+  "source_profile": "samuells-juang-1856",
+  "scope": "All 35 full-article forms",
+  "original": "Literal source input: capitalization, acute accents, doubled vowels and internal spaces preserved; terminal list punctuation removed with original response retained in audit.",
+  "display": "Lowercase and retain literal characters; space becomes a word boundary. Standard w-to-v policy would apply, but no w occurs in these forms.",
+  "source_key": "None printed in the complete article pp.295–303.",
+  "rejected_prior_assumptions": [
+    "ee to i",
+    "oo to u",
+    "áa to ā",
+    "ch to c",
+    "deletion of acute accents"
+  ],
+  "interpretation": "Conservative historical transcription, not inferred IPA or phoneme reconstruction.",
+  "coverage": {
+    "forms": 35,
+    "unmapped": 0,
+    "shared_policy_rule_violations": 0
+  },
+  "validation": "tests/test_samuells_juang_full_recovery.py::test_literal_profile_all_forms_and_shared_policy",
+  "canonical_profile_changed": true,
+  "installation": "Byte-exact independent-reviewed proposed profile installed; Original remains literal."
+}

@@ -1,0 +1,16 @@
+file: 20260925-grierson-turi-sites.csv
+defaults:
+  transcription:
+    profile: grierson-turi-1906
+    input: form
+  identity:
+    legacy_ids: stem
+    append_order: 80
+    dedupe_by_entry_key: true
+  forms:
+    split_alternates: false
+  importer:
+    commands:
+      - [data/other/forms/raw_data/grierson_turi_1906/import_source.py, --install]
+    note: >-
+      Complete Turi chapter, printed pp. 128–134: 352 prose/specimen units, 291 forms across four named sites plus unattributed prose; literal transcription with one typed uncertain reading.

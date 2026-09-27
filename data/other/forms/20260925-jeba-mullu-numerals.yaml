@@ -1,0 +1,17 @@
+file: 20260925-jeba-mullu-numerals.csv
+defaults:
+  transcription:
+    profile: jeba-mullu-numerals-2018
+    preserve_hyphens: true
+  identity:
+    legacy_ids: stem
+    append_order: 58
+  importer:
+    commands:
+      - [data/other/forms/raw_data/jeba_mullu_numerals_2018/import_source.py, --install]
+    note: Explicit Mullu Kurumba numerals in Melwin Jeba's 2018 source table; source phrase spacing retained.
+sources:
+  jeba2018mullu:
+    reference:
+      editor: OpenAI Codex
+      ocr: false

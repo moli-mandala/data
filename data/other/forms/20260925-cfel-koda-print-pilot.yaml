@@ -1,0 +1,32 @@
+file: 20260925-cfel-koda-print-pilot.csv
+defaults:
+  transcription:
+    profile: cfel-koda-print
+    input: form
+    preserve_hyphens: true
+  identity:
+    legacy_ids: stem
+    append_order: 70
+  importer:
+    commands:
+      - [data/other/forms/raw_data/cfel_koda_2022/prepare_full.py, --install]
+    note: Complete 2450-unit paired-print recovery; source-stage only, no database build. Historical filename and pilot keys retained.
+sources:
+  pradhan-tripathi2022koda-native:
+    identity:
+      dedupe_by_entry_key: true
+    forms:
+      split_alternates: false
+    reference:
+      editor: OpenAI Codex
+      ocr: true
+      etymology_provenance: none
+  pradhan-tripathi2022koda:
+    identity:
+      dedupe_by_entry_key: true
+    forms:
+      split_alternates: false
+    reference:
+      editor: OpenAI Codex
+      ocr: true
+      etymology_provenance: none

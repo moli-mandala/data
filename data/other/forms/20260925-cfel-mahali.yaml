@@ -1,0 +1,23 @@
+file: 20260925-cfel-mahali.csv
+defaults:
+  transcription:
+    profile: cfel-mahali
+    input: form
+    preserve_hyphens: true
+  identity:
+    legacy_ids: stem
+    append_order: 44
+  importer:
+    commands:
+      - [data/other/forms/raw_data/cfel_mahali_2024/import_source.py, --install]
+    note: Printed lexical records with per-entry native visual review and publisher Unicode assistance; source-only installation, no data or browser database build.
+sources:
+  pradhan-tripathi2024mahali:
+    identity:
+      dedupe_by_entry_key: true
+    forms:
+      split_alternates: false
+    reference:
+      editor: OpenAI Codex
+      ocr: false
+      etymology_provenance: none

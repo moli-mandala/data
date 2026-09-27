@@ -1,0 +1,19 @@
+file: 20260925-dalton-haldar-juang.csv
+defaults:
+  transcription:
+    profile: dalton-haldar-juang-1872
+    input: form
+  identity:
+    legacy_ids: stem
+    append_order: 104
+    dedupe_by_entry_key: true
+  forms:
+    split_alternates: false
+  importer:
+    commands:
+      - [data/other/forms/raw_data/dalton_haldar_juang_1872/import_source.py, --install]
+    note: Complete Haldar-compiled Juanga comparison column on pp. 235–241 and separate Juang list on pp. 241–242; all target cells audited with typed transcription holds; eight adjacent comparison columns excluded.
+sources:
+  dalton1872haldarjuang:
+    forms:
+      split_alternates: false

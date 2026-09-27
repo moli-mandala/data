@@ -58,10 +58,10 @@ FROZEN_HASHES = {
     "exhaustive_audit.tsv": "fba530368ca1a982fad4c7bc3d53ee3a418b518123f33897e5630a675a0faec2",
     "dhule_republication_reconciliation.tsv": "fe0a636c70a7979921b7f5f107a84a7279a1654f24a9aeb964a1be26f0960ee1",
     "list_registry.tsv": "00254725d94e63af0ee9d2036fe302bdef4b5a515182d5ab45ccf05a72768de3",
-    "conversion_profile.tsv": "3932523f127f4a13a94915dbd88bc21d2cac5867138bec7f2ce03a061e7f0de5",
+    "conversion_profile.tsv": "0053f962da609cdb61c8a7b692bb8fdd2c4ebc7d476cae58ce2850df52939f3b",
     "unresolved_readings.tsv": "21e62e44fd2a03f5bc96a7921e192f55f66e52024a569acfca5ecf0dd6255ba9",
     "import_noira_2015.py": "caca39c1c0b366917cfe8da1f90c311e9633994e774135d535bea0cdbef5743c",
-    "source_manifest.json": "bc91f2a4587d2fb28f60731b7d6477ffebf088e18696c4759b5d81c5ead21e0c",
+    "source_manifest.json": "ee275e0eb537e8987d8270bd38d28f76788da04cee0c3fbb8c9d030c56b4353e",
 }
 
 TARGET_CODES = {"NCH", "NPN", "NGO", "DBM", "DBA", "KNA", "KTA", "GTA", "NTE", "TKO", "NJA"}

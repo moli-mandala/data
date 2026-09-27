@@ -56,9 +56,9 @@ def test_magahi_profile_preserves_source_ipa_separately():
     cases = {
         "kəpar": "kapār",
         "jʰãɽa": "jʰā̃ṛā",
-        "həd̺d̺i": "haddī",
-        "ciniyã bədam": "cīnīyā̃ badām",
-        "pʰut̺əl": "pʰūtal",
+        "həd̺d̺i": "haddi",
+        "ciniyã bədam": "ciniyā̃ badām",
+        "pʰut̺əl": "pʰutal",
     }
     for source, expected in cases.items():
         converted = profile(unicodedata.normalize("NFC", source), column="IPA")

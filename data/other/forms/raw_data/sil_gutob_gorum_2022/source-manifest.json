@@ -1,0 +1,230 @@
+{
+  "status": "Source files installed; compiled build and full validation deferred by user",
+  "source_key": "mathew-chamberlain2022bonda-didayi",
+  "source_pdf_sha256": "bb0548b4324224260b9618786dfd3aa40377138d0fbf4ae14c796df82f6190ce",
+  "acquisition": "Reuse existing pinned official SIL PDF and the complete 2730-cell extraction ledger. This supplement explicitly promotes GUT and PAR from earlier comparison-only roles to target attestations.",
+  "upstream_ledger": "data/other/forms/raw_data/sil_bonda_didayi_2022/extracted_cells.tsv",
+  "upstream_ledger_sha256": "92e8b5f4c7a89dd26c181dc0c3d239dc047ff448f0c133b63ecefded581c4241",
+  "scope": "Appendix B printed16–45/PDF21–50; Tikrapada Gutob and Kinumun Parenga Parja only, 210 prompts each.",
+  "targets": {
+    "GUT": {
+      "language": "gu",
+      "label": "Tikrapada Gutob"
+    },
+    "PAR": {
+      "language": "go",
+      "label": "Kinumun Parenga Parja"
+    }
+  },
+  "other_lists": "Nine Bonda/Didayi lists already ingested; Rona Desiya and Oriya remain controls for this supplement.",
+  "checklist_addendum": "Survey wordlists/comparative tables; native-text extraction, no OCR",
+  "policy": "Similarity-group numbers are not cognate or variant claims. Repeated identical spellings in one cell need an explicit collapse decision preserving every group label. Distinct responses require prompt-aware review.",
+  "preliminary_accounting": {
+    "GUT": {
+      "source_cells": 210,
+      "source_disqualified": 4,
+      "no_response": 3,
+      "raw_response_segments": 237,
+      "repeated_transcription_cells": [
+        {
+          "item": "126",
+          "raw": "2 mɐs, 3 mɐs",
+          "parsed": [
+            [
+              "2",
+              "mɐs"
+            ],
+            [
+              "3",
+              "mɐs"
+            ]
+          ]
+        }
+      ],
+      "missing": [
+        [
+          "143",
+          "small",
+          "---"
+        ],
+        [
+          "151",
+          "one",
+          "---"
+        ],
+        [
+          "209",
+          "you (2nd pl)",
+          "---"
+        ]
+      ]
+    },
+    "PAR": {
+      "source_cells": 210,
+      "source_disqualified": 4,
+      "no_response": 3,
+      "raw_response_segments": 211,
+      "repeated_transcription_cells": [
+        {
+          "item": "6",
+          "raw": "2 lũ, 4 lũ, 5 lũ",
+          "parsed": [
+            [
+              "2",
+              "lũ"
+            ],
+            [
+              "4",
+              "lũ"
+            ],
+            [
+              "5",
+              "lũ"
+            ]
+          ]
+        },
+        {
+          "item": "62",
+          "raw": "2 ʋolɐ, 4 ʋolɐ",
+          "parsed": [
+            [
+              "2",
+              "ʋolɐ"
+            ],
+            [
+              "4",
+              "ʋolɐ"
+            ]
+          ]
+        },
+        {
+          "item": "105",
+          "raw": "1 ʌbɐ, 2 ʌbɐ",
+          "parsed": [
+            [
+              "1",
+              "ʌbɐ"
+            ],
+            [
+              "2",
+              "ʌbɐ"
+            ]
+          ]
+        },
+        {
+          "item": "126",
+          "raw": "2 mɐs, 3 mɐs",
+          "parsed": [
+            [
+              "2",
+              "mɐs"
+            ],
+            [
+              "3",
+              "mɐs"
+            ]
+          ]
+        }
+      ],
+      "missing": [
+        [
+          "69",
+          "wheat",
+          "0 no entry"
+        ],
+        [
+          "118",
+          "night",
+          "---"
+        ],
+        [
+          "208",
+          "we (1st pl, exclusive)",
+          "0 no entry̱"
+        ]
+      ]
+    }
+  },
+  "remaining": [
+    "Full compiled data validation, full tests and formatted-reference regeneration deferred until authorized",
+    "Browser database build and app QA require explicit refresh request"
+  ],
+  "user_deferred": [
+    "Remote execution",
+    "Database builds",
+    "Full compiled validation"
+  ],
+  "structural_review": {
+    "records": 78,
+    "file": "structure-review.jsonl",
+    "scope": "Site attribution, cell boundaries and prompt structure; not final transcription acceptance"
+  },
+  "response_policy": "response-policy.json",
+  "draft_parser": {
+    "source_cells": 420,
+    "draft_rows": 441,
+    "disqualified": 8,
+    "no_response": 6,
+    "withheld_corrupt": 1,
+    "same_cell_repetitions": 6,
+    "uncertain_rows": 57,
+    "installed_rows": 441,
+    "focused_tests": "16 passed (0.68s), supplement and original survey package"
+  },
+  "profile_review": "profile-review.json",
+  "glyph_review": {
+    "file": "visual-review.jsonl",
+    "records": 420,
+    "pdf_pages": [
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50
+    ],
+    "changes": 0,
+    "remaining": "None for source-cell transcription; importer-output acceptance audit remains separate."
+  },
+  "site_metadata": "site-metadata.json",
+  "rights": "PDF3: copyright2022 SIL International; research/instruction copying allowed by stated fair-use policy; republication of the document requires consent. This package preserves extracted lexical facts and provenance; the PDF and rendered pages are not installed.",
+  "installed": {
+    "file": "data/other/forms/20260921-sil-gutob-gorum.csv",
+    "rows": 441,
+    "language_counts": {
+      "gu": 235,
+      "go": 206
+    },
+    "sha256": "305c314246ae17140520ddb17492ba7657ee546ed4523643b22ab12dff08c81d"
+  },
+  "output_audit": {
+    "file": "output-audit-2026092111.json",
+    "seed": 2026092111,
+    "sample_size": 20,
+    "material_errors": 0
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "date": "2026-09-26",
+  "status": "pass_specimen_reconciliation_only_not_final_output_approval",
+  "checks": [
+    "All three independent literal corrections present in final reviewed specimens and proposal rows.",
+    "Exactly three literal form changes from immutable owner-reviewed706-unit input.",
+    "All reconciliation input/output hashes match actual files.",
+    "Unresolved l/ḷ retained as explicit Notes and uncertain tag."
+  ],
+  "hashes": {
+    "independent-specimen-reconciliation.json": "8ef6a1b54509aae7bf441d701e55984ab71cc890e15e4a6860fb5be8ad864503",
+    "specimens-final-reviewed.jsonl": "ee91e5b0e3c9849c76e288802da1dae895c0fad66fbac9757431179bcdb164b3",
+    "proposal.csv": "5333a70c7ef92185fed4c867d6c6a260cab085097fc95e2b775a4a50cc49952f",
+    "proposal-audit.jsonl": "0a1d6ec0f6498ead102286422895dcd248a6321624960350c2bbdd785cf3577d"
+  },
+  "remaining": "Errata reconciliation, updated reuse review if rows change, fresh independent final output sample, source-stage installation. DB/build/browser deferred."
+}

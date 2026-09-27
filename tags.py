@@ -37,7 +37,7 @@ GRAMMATICAL_TAGS = {
     "subj", "obj", "direct-object", "indirect-object",
     "abs", "erg", "ade", "ine", "ess",
     "prox", "dist", "indef", "finalis",
-    "poss", "conditional", "prefix", "suffix", "emph", "interr", "dir", "uncertain",
+    "poss", "conditional", "prefix", "suffix", "infix", "affix", "completive", "emph", "interr", "dir", "uncertain",
     # Boretzky & Igla mark weather, sensation and modal verbs "impers"; the category is
     # printed by other dictionaries too and has no existing equivalent above.
     "impersonal",
@@ -46,6 +46,8 @@ GRAMMATICAL_TAGS = {
     "derived", "loanword", "diminutive", "intensive", "compound", "not-reconstructed",
     "alternate", "replaced", "reduplicated", "sound-variant", "etymology-group",
     "figurative", "pejorative", "poetic", "dialectal", "archaic", "modern", "colloquial", "vulgar",
+    # Source-labelled secret or specialized in-group vocabulary; a register, not a dialect.
+    "argot",
     # Language-specific inflection / noun classes
     "weak", "middle", "strong", "Tamil-class-1", "Tamil-class-2", "Tamil-class-3",
     "Tamil-class-4", "Tamil-class-5", "Tamil-class-6", "Tamil-class-7",
@@ -69,7 +71,7 @@ GRAMMATICAL_TAGS = {
     # the progressive extension -št-, and Matras's contextualising and remoteness markers.
     "comitative", "superessive", "subjunctive", "progressive", "contextualiser",
     "remoteness", "complementizer", "definite",
-    "proper-noun", "multiword-expression", "demonstrative",
+    "proper-noun", "multiword-expression", "demonstrative", "correlative",
     "personal", "reciprocal", "copula", "modal", "conjunct-verb",
     "incorporating", "non-incorporating", "temporal", "spatial", "manner",
     "degree", "sentential", "onomatopoeia", "quantifier",
@@ -78,6 +80,7 @@ GRAMMATICAL_TAGS = {
     "indirect-past", "potential-past", "inchoative-participle",
     "topic-same", "topic-shift", "prohibitive", "echo", "epenthetic",
     "appropriate-place", "first-person", "second-person", "third-person",
+    "prospective", "non-past", "classifier", "high-honorific",
     "quotative", "filler",
 }
 
@@ -208,8 +211,11 @@ def _split_fields(note):
     return [restore(p) for p in protected.split(";")]
 
 
-def _classify(field, language_id=None):
-    """Tag list for a field if it is ENTIRELY gender/grammatical/source tokens, else None."""
+def _classify(field, language_id=None, attestations=True):
+    """Tag list for a field if it is ENTIRELY gender/grammatical/source tokens, else None.
+
+    Source tokens count only with ``attestations``; elsewhere ``R.`` or ``Gr.`` is not a Sanskrit work.
+    """
     plain = html.unescape(_TAGS.sub("", field)).strip()
     regional_tag = _regional_tag(plain, language_id)
     if regional_tag:
@@ -245,7 +251,7 @@ def _classify(field, language_id=None):
         # grammatical tag ``tr``.
         elif base in GRAMMATICAL_TAGS:
             out.append(base)
-        elif base in SOURCE_TAGS:
+        elif attestations and base in SOURCE_TAGS:
             out.append(base)  # sources keep their case (RV, MBh, ŚBr)
         else:
             return None
@@ -262,21 +268,26 @@ def _category(tag):
     return 2  # attestation source
 
 
-def extract_tags(note, language_id=None):
+def extract_tags(note, language_id=None, attestations=True):
     """(tags, cleaned_notes): `tags` is a space-separated list (gender, grammatical, source, era);
-    `cleaned_notes` keeps every field that was not purely structured tokens."""
+    `cleaned_notes` keeps every field that was not purely structured tokens.
+
+    ``attestations`` enables Sanskrit work loci (and their eras). Callers enable it only for Old
+    Indo-Aryan rows of sources that cite Sanskrit works, e.g. CDIAL: in other sources the same
+    abbreviations mean something else (Berger's ``Gr.`` grammar, the botanist ``R. Br.``) or cite
+    a Sanskrit comparandum rather than attest the row's own form."""
     if not note:
         return "", note or ""
     # A work locus can be embedded in a parenthetical or other scholarly prose, e.g.
     # ``('devotion' Prab.com.)`` or ``(sudhyatē ṢaḍvBr.)``.  Discover dotted work markers there,
     # but retain the prose verbatim; only wholly structured fields are removed below.
     plain_note = html.unescape(_TAGS.sub("", note))
-    tags = [m.group(1) for m in _WORK_IN_PROSE.finditer(plain_note)]
+    tags = [m.group(1) for m in _WORK_IN_PROSE.finditer(plain_note)] if attestations else []
     kept = []
     for field in _split_fields(note):
         if not field.strip():
             continue
-        cls = _classify(field, language_id=language_id)
+        cls = _classify(field, language_id=language_id, attestations=attestations)
         if cls is None:
             kept.append(field.strip())
         else:

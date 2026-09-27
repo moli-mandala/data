@@ -1,0 +1,61 @@
+{
+  "status": "partial_staging_review_not_final_audit",
+  "reviewer": "root",
+  "scope": "grammar/table builder and explicit table expansion only; specimens/native still underworkerreview",
+  "table_units": 241,
+  "expanded_table_forms": 317,
+  "source_blank_prompts": [
+    172,
+    174,
+    201
+  ],
+  "explicit_expansion_units": [
+    27,
+    28,
+    102,
+    103,
+    104,
+    107,
+    108,
+    109,
+    111,
+    112,
+    113,
+    116,
+    117,
+    118,
+    120,
+    121,
+    122,
+    125,
+    126,
+    127,
+    157,
+    158,
+    161,
+    173,
+    182,
+    206,
+    207,
+    210
+  ],
+  "review": "Inspected all abbreviatedsuffix and sharedsubject expansion outputs against preserved rawsourcecells; semicolon groups reset suffix antecedents; prompt109 barese interpretation remains documented. Finalsourceauditstillrequired.",
+  "focused_tests": "4 passed in0.22s before plannedthreefunctionparadigmexpansion",
+  "proposal_sha256_at_review": "43b497d36d1c525a6d5005055c13c377cc798af6f4e1c4eef1cb68f6860c27ba",
+  "deferred": "Whole Roman/native incorporation, wholepackagefreeze and independent20audit; compiledDB/build/browser prohibited byuser.",
+  "subsequent_checks": [
+    {
+      "stage": "combined Roman plus grammar and table, before native alignment and exact reuse",
+      "proposal_sha256": "50b14843925494b869a7ed41c4d59f01a479429ed1f81684654d8d3aea49f2a1",
+      "rows": 1393,
+      "audited_units": 1344,
+      "accounting": "280 grammar units + 241 table cells + 823 editorial Roman units. Roman units include four joined line continuations; physical fragments are counted separately in the specimen report.",
+      "focused_tests": "4 passed in 0.26s",
+      "open_findings": [
+        "Preserve p54 Gujarati-form comments on taken/done alternatives.",
+        "Apply citation-preserving exact reuse only after Native fields and residual Notes are finalized.",
+        "Complete independent whole-output audit after freeze."
+      ]
+    }
+  ]
+}

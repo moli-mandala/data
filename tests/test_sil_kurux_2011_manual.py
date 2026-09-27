@@ -944,9 +944,9 @@ def test_source_local_sound_profile_covers_every_staged_form():
     for row in staged:
         converted = tokenizer(row[2], column="IPA", segment_separator="", separator="")
         assert "�" not in converted
-    assert tokenizer("t͜ʃʰɛnd", column="IPA", segment_separator="", separator="") == "cʰend"
+    assert tokenizer("t͜ʃʰɛnd", column="IPA", segment_separator="", separator="") == "cʰɛnd"
     assert tokenizer("ʃuɹd͜ʒo", column="IPA", segment_separator="", separator="") == "śurjo"
-    assert tokenizer("məⁱjə", column="IPA", segment_separator="", separator="") == "məⁱyə"
+    assert tokenizer("məⁱjə", column="IPA", segment_separator="", separator="") == "maⁱya"
     assert tokenizer("püp", column="IPA", segment_separator="", separator="") == "püp"
     assert len(inventory) == 52
     assert len({row["codepoint"] for row in inventory}) == 52
@@ -974,7 +974,7 @@ def test_shared_install_is_the_frozen_target_stage_byte_for_byte():
 def test_shared_profile_is_exact_and_explicitly_routed():
     assert SHARED_PROFILE.read_bytes() == SOUND_PROFILE.read_bytes()
     assert sha256(SHARED_PROFILE) == (
-        "ac76ab83a6d435e384cf7287fb275d3574343c35141409f2298009f97ffeeb23"
+        "50763b8b1dd7dec7819e6b6a8f21c0c44ab7a2f0bede4ed087ab874c71fd509f"
     )
     _routed("kim-ahmad-kim-sangma2011kurux", "sil-kurux", "data/other/forms/20260826-sil-kurux.csv")
 

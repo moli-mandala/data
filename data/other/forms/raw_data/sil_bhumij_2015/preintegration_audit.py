@@ -25,7 +25,10 @@ import import_bhumij_2015 as bhumij
 HERE = Path(__file__).resolve().parent
 WORKSPACE_ROOT = HERE.parents[5]
 PDF = WORKSPACE_ROOT / "tmp/pdfs/bhumij_2015/silesr2015_026.pdf"
-PROFILE = HERE.parents[4] / "conversion/sil-bhumij.txt"
+# The extraction-stage manifest pins the historical shared profile. Preserve that
+# exact snapshot while the live house-transcription profile evolves independently.
+# Current routing and corpus conversion are checked by shared integration tests.
+PROFILE = HERE / "preintegration_profile.tsv"
 RENDER_HASHES = HERE / "render_hashes.tsv"
 MANIFEST = HERE / "preintegration_manifest.json"
 
@@ -148,7 +151,7 @@ def verify_hashes() -> dict[str, object]:
     if sha256(ho_input) != HO_INPUT_HASH:
         raise ValueError("Post-freeze Ho 2024 reconciliation input changed")
     if sha256(PROFILE) != PROFILE_HASH:
-        raise ValueError("Read-only shared Bhumij profile changed")
+        raise ValueError("Frozen preintegration Bhumij profile changed")
     return bundles
 
 

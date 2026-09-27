@@ -71,7 +71,7 @@ def test_consequential_profile_mappings():
  tok=Tokenizer(str(ROOT/'conversion/selected-koraga.txt'))
  assert tok('ki:rɨ',column='IPA').replace(' ','')=='kīrɨ'
  tok=Tokenizer(str(ROOT/'conversion/selected-orissa.txt'))
- assert tok('TODcj',column='IPA').replace(' ','')=='ṭɔḍčǰ'
+ assert tok('TODcj',column='IPA').replace(' ','')=='ṭɔḍcj'
  assert tok('gẽJbar',column='IPA').replace(' ','')=='gẽJbar'
 def test_reproducible(tmp_path):
  m.build(tmp_path)

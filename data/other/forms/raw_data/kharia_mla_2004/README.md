@@ -1,0 +1,28 @@
+# Complete Kharia MLA snapshot
+
+This package represents the complete pinned ASCII *Kharia.txt* file in Patricia J. Donegan and David Stampe's 2004 Munda Lexical Archive. The exact Wayback snapshot is dated 2020-10-22, with archived Last-Modified 2014-09-05. Its SHA-256 and the source-specific same-conditions reuse notice are retained in `manifest.json` and `LICENSE`. No OCR is involved.
+
+The physical census contains **3,632 nonblank lines**, joined into **3,631 audit units** after recovering numeric ID 9321 split across two lines. There are 3,620 numbered lexical units, three genuinely unnumbered lexical units, and eight nonlexical dividers. One lexical line carries both 7970 and 26602, so the complete source has 3,621 numeric identifiers. Every physical unit is accounted; 29 inline grouping prefixes (`<root>::<actual head>`) remain context rather than acquiring their child's gloss.
+
+The installed full source contains **5,440 rows**, preserving all **829 legacy keys**. It includes all recoverable heads, alternatives, witnesses, senses and explicitly glossed supplementary forms. Ninety-one rows have no safely scoped non-placeholder gloss; they remain installed attestations with exact raw evidence and uncertainty rather than fabricated definitions. Twelve recoverable delimiter errors are documented per record. Source strings containing apostrophes, brackets, uppercase letters, colons, tildes and question marks are preserved literally. The existing display mapping `w → v` remains; `Original` retains the source spelling. No source IPA or native-script field is invented.
+
+Source witness labels A/B/D/P and combinations are provenance, not newly created dialects or collection sites. Source-qualified PVersuch and other unresolved witness spellings retain typed uncertainty. All target rows use existing canonical `kh`. Square-bracket witness restrictions in definitions apply to the correct head and sense, including restrictions inside explanatory parentheses. Joint-witness forms acquire separate rows where definitions differ by witness. The source's own contradictory “we two, 2nd person dual” at 12820 remains visible without silently choosing a corrected person.
+
+Grammatical labels and explicit grammatical prose become canonical tags where justified. Bare `INTER` is interjection; `INTER ADV` and `INTER ADJ` are interrogative categories. `STAT` records explicitly give both an adjectival state and “to be” meaning, which are retained together. Explicit causative parent claims require an exact source form, a unique candidate and compatible meaning before a graph edge is emitted. For example, the contradictory “wide” versus “small” analysis of DoRe? remains unlinked, as does a parent whose definition is absent.
+
+All 33 Caus.-bearing commentary records are reviewed: 38 directly glossed causative forms comprise 32 already represented literal head/definition pairs and six additional source children. Nineteen further directly glossed comparison/example forms are retained as children. The complete quoted-commentary audit distinguishes existing forms, new lexical children, morphological analysis, source placeholders, explicit foreign-language comparisons, uncertain comparative-language attribution, hypothetical derivation and a connected usage example. Source analysis remains in Etymology with its original punctuation; quoted endings and abbreviation periods are not stripped. There are 74 conservative derivation edges and 545 explicit same-witness alternate edges.
+
+The five DSKH IDs cited earlier through Rau 2019 are not dropped wholesale. `same-source-reuse-alignment.json` aligns the six older rows to their source attestations. Full extraction preserves the previously omitted noun sense of *i'j*, the shaving-rite verb sense of *ului*, and the *ghOl* alternate for ‘ten’. Older `data/munda` rows are untouched. This is reuse of the same source evidence, not an independent second collection; downstream identity/graph reconciliation is deferred to the authorized compiled build.
+
+Failed and fresh independent audits are retained separately; the manifest records the current validation state. The historical 20260925 sample covers only the old 829-row pilot. A fresh reproducible sample can be selected without writing data:
+
+```sh
+.venv/bin/python data/other/forms/raw_data/kharia_mla_2004/import_source.py
+.venv/bin/python data/other/forms/raw_data/kharia_mla_2004/audit_sample.py --seed 2026092623 --exclude-report self-review-selection-20260926.json
+```
+
+The first command creates source-local staging. Canonical installation uses `--install` only after independent review. Focused source/profile/dialect tests and the scoped source parser are lightweight validation; no command here builds the database. Full CLDF build, compiled reference/graph/identity checks and full-suite gates remain deferred under the user's instruction. Browser database construction and application QA require an explicit refresh request.
+
+Leading editorial grammar is structured, including auxiliary, postposition, case/emphasis, kinship, causative/prefix and witness-scoped pejorative usage. Negative-polarity, song-only, bound-form and verb-environment restrictions remain explicit source usage Notes where the registered tags do not express their meaning.
+
+Source-stage validation passed: fresh independent pass 5 (seed 2026092631) found 0/20 material errors after retained failed passes and full grammar-class repairs. All 25 focused source/profile/dialect tests pass; profile and scoped parser cover 5,440/5,440 rows. Source references/language and 619 local edges resolve without dangling, self, cyclic or cross-witness variant links. Full compiled/database/browser gates remain deferred.

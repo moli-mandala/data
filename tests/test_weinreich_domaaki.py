@@ -93,4 +93,20 @@ def test_compiled_rows_resolve_to_the_printed_turner_parents():
         key: parent_by_child.get(final_by_legacy[legacy_id], "")
         for key, legacy_id in legacy_by_key.items()
     }
+    # Three originally unlinked moon attestations have reviewed source-specific
+    # sidecar links. Keep checking printed links and require explicit evidence
+    # for any additional accepted parent.
+    with (ROOT / "data/other/forms/etymologies/20260813-weinreich-domaaki.csv").open(encoding="utf-8", newline="") as stream:
+        reviewed = {row["Form_ID"]: row for row in csv.DictReader(stream)
+                    if row["Status"] == "accepted" and row["Rank"] == "1" and row["Kind"] == "reflex"}
+    assert len(reviewed) == 3
+    for key, legacy_id in legacy_by_key.items():
+        decision = reviewed.get(final_by_legacy[legacy_id])
+        if decision:
+            assert expected[key] == ""
+            assert ":8.22:" in key
+            assert decision["Etymon_ID"] == "4661"
+            assert "weinreich2008[p. 311, § 8.22]" in decision["Source"]
+            assert decision["Notes"].strip()
+            expected[key] = decision["Etymon_ID"]
     assert actual == expected

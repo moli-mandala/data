@@ -1,0 +1,17 @@
+file: 20260925-jeba-jennu-kurumba-numerals.csv
+defaults:
+  transcription:
+    profile: jeba-jennu-kurumba-2018
+    preserve_hyphens: true
+  identity:
+    legacy_ids: stem
+    append_order: 87
+  importer:
+    commands:
+      - [data/other/forms/raw_data/jeba_jennu_kurumba_2018/import_source.py, --install]
+    note: Melwin Jeba's first Jennu Kurumba numeral table in the immutable 2019 CC-BY archive; separately credited Kodagunti comparator cells excluded.
+sources:
+  jeba2018jennukurumba:
+    reference:
+      editor: OpenAI Codex
+      ocr: false

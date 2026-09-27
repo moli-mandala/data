@@ -1,0 +1,60 @@
+{
+  "status": "reviewed-corrections-required-not-install-approved",
+  "seed": 20260926171,
+  "frozen_hashes": {
+    "proposal.csv": "80d3e91cda9b8c5f4f2bc5ad0e51551c7f3fd7e6ea59d74416cc56b2f1cbbbee",
+    "proposal-audit.jsonl": "aa80e46168c6a7a8c58513bc3c144829af2b016dd94555947a70c5464bb7f176",
+    "proposal-profile.txt": "caf7ad6e4b0391cd409ace7ff75118f7687104dd0622e1816b82f334a3c683fd",
+    "full_inventory.tsv": "2a151bcf08a3fd4f12121f67b77ac6e0b6495910822dc64a2abb67446ab03c48",
+    "reviewed_inventory.tsv": "6c8259457841cb25c9036d5ff9c6d2f6557d3ad522a5eda28282521a88a285f8",
+    "expression-recovery-p154-161-reviewed.jsonl": "9dc4cad330e8069e02a35147967cb7d1d1ae6c18dcd74c4d0bd43b1204695911",
+    "expression-recovery-p162-169-first-reading.jsonl": "489d7af2a985fff8513065212e2f352ead3f9f1a1cc851741580dbc6cd3599f1",
+    "expression-recovery-song-first-reading.jsonl": "6b25bd8cb8ad89b31d65fa8aa80a65a3f737641896951f7028c9f875a0e4efa9",
+    "held-recovery-first-reading-20260926.jsonl": "97adfedbc74bd05f0f0f3957051b40bc2cb8bc5f7e0e41cc8d3b36860c5f03c3",
+    "root-held-song-reuse-decisions-20260926.json": "2b2f8f26668065e43bbc6378c4cf552214d7a29e1820a1ef53811be3ec7341c9",
+    "proposal.yaml": "809e0394b0ad12ebbf9537fc1454e01e5acb6feef06b1022db3c3dc593dc5513"
+  },
+  "source_units_reviewed": [
+    "hahn1900asur:161:21:expression:05",
+    "hahn1900asur:159:15:expression:01",
+    "hahn1900asur:p162:s24:09",
+    "hahn1900asur:p158:s13:09",
+    "hahn1900asur:p163:s28:04",
+    "hahn1900asur:p165:expression:33-negatives:07",
+    "hahn1900asur:p166:expression:35-compounds:01",
+    "hahn1900asur:p170:comparison:04",
+    "hahn1900asur:154:5:expression:11",
+    "hahn1900asur:p162:s24-head:01",
+    "hahn1900asur:p159:s16:04",
+    "hahn1900asur:p160:s18:11",
+    "hahn1900asur:p170:comparison:09",
+    "hahn1900asur:154:5:expression:14",
+    "hahn1900asur:p168:s43:03",
+    "hahn1900asur:p157:s11-sg:05",
+    "hahn1900asur:p158:s12:05",
+    "hahn1900asur:161:19-23:bound-context",
+    "hahn1900asur:p171:s49:07",
+    "hahn1900asur:p165:expression:35-compounds:02"
+  ],
+  "source_evidence": "Original Hahn pages; root-pageNNN.png renders under tmp/hahn-asur-review. All 20 units compared, including all 28 morphology emissions from p161 bound context.",
+  "literal_form_gloss_errors": 0,
+  "metadata_findings": [
+    {
+      "sample": 7,
+      "finding": "Single-token predicate alternate dohólenaiŋ has multiword-expression tag; remove."
+    },
+    {
+      "samples": [
+        8,
+        13
+      ],
+      "finding": "Raw-head-only Notes nyumun/drup redundant; audit comparison rows for same class."
+    },
+    {
+      "sample": 18,
+      "finding": "Past perfect participle functions15–17 should structure past in tags alongside perfect; source-context citations can use actual numbered sections."
+    }
+  ],
+  "approval": false,
+  "next": "Owner cleanup, freeze and fresh seeded sample. No database build."
+}

@@ -55,10 +55,10 @@ def test_sampang_legacy_glyphs_and_profile():
 
     profile = Tokenizer("conversion/sampang.txt")
     cases = {
-        "tˢʰʌ̃wara": "ʦʰãvara",
+        "tˢʰʌ̃wara": "ʦʰãvārā",
         "pʌmtᶳʱu": "pamcʰu",
-        "dᶽʰara": "jʰara",
-        "ri:ma": "rīma",
+        "dᶽʰara": "jʰārā",
+        "ri:ma": "rīmā",
     }
     for source, expected in cases.items():
         converted = profile(unicodedata.normalize("NFC", source), column="IPA")

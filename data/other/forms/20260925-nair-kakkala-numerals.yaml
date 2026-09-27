@@ -1,0 +1,17 @@
+file: 20260925-nair-kakkala-numerals.csv
+defaults:
+  transcription:
+    profile: nair-kakkala-numerals-2017
+    preserve_hyphens: true
+  identity:
+    legacy_ids: stem
+    append_order: 65
+  importer:
+    commands:
+      - [data/other/forms/raw_data/nair_kakkala_numerals_2017/import_source.py, --install]
+    note: Explicit Kakkala numerals in Ravi Sankar S. Nair's 2017 table; only printed slash-separated readings were emitted.
+sources:
+  nair2017kakkala:
+    reference:
+      editor: OpenAI Codex
+      ocr: false

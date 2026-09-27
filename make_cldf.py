@@ -6,7 +6,7 @@ from segments.tokenizer import Tokenizer, Profile
 import unicodedata
 from tqdm import tqdm
 import os
-from copy import deepcopy
+from copy import copy
 
 from utils import mapping, superscript, change
 import source_meta
@@ -14,7 +14,9 @@ from dialects import load_dialect_aliases, normalize_dialect
 from tags import extract_tags
 from form_grammar import extract_gloss_tags
 from tamil_morphology import append_note, extract_tamil_verb_morphology
+from entry_text_sources import read_entry_text_sources
 from dedr_variants import (
+    canonical_dedr_marks,
     expand_attached_sound_variants,
     expand_length_variants,
     normalize_dedr_marks,
@@ -259,7 +261,7 @@ PRESERVE_SOURCE_PROFILE_INPUT = {
     "sil-ho", "sil-bhumij", "sil-dhurwa-2021",
     "zoller-2023",
     "keed", "muduga",
-    "kharia-living", "sdml", "bajjika", "ia-dravidian-ipa", "census-ipa", "census-ascii", "census-danuwar", "more-ascii", "more-ipa", "selected-angika", "selected-majhi", "selected-koraga", "selected-orissa",
+    "kharia-living", "sdml", "bajjika", "ia-dravidian-ipa", "census-ipa", "census-dravidian", "census-ascii", "census-danuwar", "more-ascii", "more-himachal", "more-ipa", "selected-angika", "selected-majhi", "selected-koraga", "selected-orissa",
     "dadra-varli", "ghatage-western",
     "seligmann-vedda",
     "perder-dameli",
@@ -529,12 +531,20 @@ def parse_file(file: str, errors, name=None, file_num=0, param_counter=None):
                 "burrow-emeneau1972den1", "burrow-emeneau1972den2",
             }
         )
-        forms = (
+        # DEDR variants are expanded from the source spelling; mark normalisation (raised
+        # length dot, tildes) applies to the display form only, so Original and the identity
+        # fingerprint keep Burrow–Emeneau's own notation.
+        dedr_variants = (
             [
-                normalize_dedr_marks(length_variant)
+                canonical_dedr_marks(length_variant)
                 for base in expand_attached_sound_variants(row.form)
                 for length_variant in expand_length_variants(base)
             ]
+            if uses_dedr_transcription
+            else []
+        )
+        forms = (
+            [normalize_dedr_marks(variant) for variant in dedr_variants]
             if uses_dedr_transcription
             # Commas and slashes inside a reconstruction are source notation, not the legacy
             # manual-import convention for expanded attested alternates. Likewise, several SIL
@@ -551,7 +561,10 @@ def parse_file(file: str, errors, name=None, file_num=0, param_counter=None):
         for fj, form in enumerate(forms):
             reformed = form
             if not is_merriam_reconstruction:
-                row.old_form = source_form if uses_dedr_transcription and len(forms) > 1 else form
+                if uses_dedr_transcription:
+                    row.old_form = source_form if len(forms) > 1 else dedr_variants[fj]
+                else:
+                    row.old_form = form
             row.form = form
             # Forms on a CDIAL-style numeric etymon (CDIAL itself, plus other-source additions that
             # hang reflexes on a CDIAL entry by its number) keep <file>-<row> ids, so the <etymon>-<n>
@@ -725,6 +738,11 @@ def parse_file(file: str, errors, name=None, file_num=0, param_counter=None):
                     stats["converted"] += 1
             elif row_ipa is not None and "˚" not in form and row_convert:
                 stats["for_conversion"] += 1
+                conversion_rule = meta.transcription_rule(source_key, settings_file, row.lang)
+                if conversion_rule.get("input") == "phonemic" and row.ipa:
+                    # Source spelling remains in old_form; the distinct authorial
+                    # pronunciation drives display only when explicitly configured.
+                    reformed = unicodedata.normalize("NFC", row.ipa)
                 # fix accentuation from Strand
                 if row_ipa == "strand":
                     reformed = reformed.replace("′", "´")
@@ -738,7 +756,10 @@ def parse_file(file: str, errors, name=None, file_num=0, param_counter=None):
                     reformed = normalize_schmidt_stress(reformed)
 
                 # do the conversion
-                reformed = reformed.strip("-1234⁴5⁵67⁷,;.")
+                boundary_marks = "1234⁴5⁵67⁷,;."
+                if not conversion_rule.get("preserve_hyphens", False):
+                    boundary_marks += "-"
+                reformed = reformed.strip(boundary_marks)
                 reformed = convertors[row_ipa](reformed, column="IPA")
                 reformed = reformed.replace(" ", "").replace("#", " ")
 
@@ -753,11 +774,22 @@ def parse_file(file: str, errors, name=None, file_num=0, param_counter=None):
                 row.form = "*" + row.form
 
             # add the result
-            result.append(deepcopy(row))
+            # Row holds only scalars; a shallow copy is equivalent and ~20x cheaper
+            result.append(copy(row))
             i += 1
 
     fin.close()
     return result, stats
+
+
+def source_entry_dedupe_key(row, meta):
+    """Respect source overrides before the owning input file's identity policy."""
+    citation = row.source.split(";", 1)[0].split("[", 1)[0]
+    keyed = meta.flag(
+        citation, "identity", "dedupe_by_entry_key",
+        meta.file_flag(getattr(row, "input_file", ""), "identity", "dedupe_by_entry_key", False),
+    )
+    return row.entry_key if keyed else ""
 
 
 def main():
@@ -765,7 +797,9 @@ def main():
     errors = open("errors.txt", "w")
     dialect_aliases = load_dialect_aliases()
     with open("cldf/languages.csv", encoding="utf-8", newline="") as fin:
-        cldf_langs = {row["ID"] for row in csv.DictReader(fin)}
+        language_rows = list(csv.DictReader(fin))
+    cldf_langs = {row["ID"] for row in language_rows}
+    oia_langs = {row["ID"] for row in language_rows if row["Clade"] == "OIA"}
 
     form_count = 0
     results: list[Row] = []
@@ -811,9 +845,7 @@ def main():
             # Rich source-keyed imports can contain genuine homographs or the same form under
             # several elicitation prompts. Their immutable record keys keep those entries distinct
             # while retaining the legacy dedupe behaviour for other sources.
-            row.entry_key
-            if meta.flag(row.source.split("[", 1)[0], "identity", "dedupe_by_entry_key")
-            else "",
+            source_entry_dedupe_key(row, meta),
             row.gloss
             if not row.param and (
                 row.lang.startswith("SSNP-")
@@ -914,8 +946,14 @@ def main():
             # Regional labels are a CDIAL convention. Other sources can contain the same place
             # names in bibliographic prose, so only CDIAL rows receive regional dialect tags.
             regional_language_id = row.lang if source_key == "CDIAL" else None
+            # Sanskrit work loci (RV., MBh., lex.) attest only the Old Indo-Aryan rows of sources
+            # that declare them; on other rows they cite a comparandum or mean something else.
+            attestations = (
+                row.lang in oia_langs
+                and meta.flag(source_key, "notes", "sanskrit_attestations", False)
+            )
             parsed_tags, row.notes = extract_tags(
-                row.notes, language_id=regional_language_id
+                row.notes, language_id=regional_language_id, attestations=attestations
             )
             row.tags = " ".join(
                 dict.fromkeys(filter(None, row.tags.split() + parsed_tags.split()))
@@ -1091,13 +1129,9 @@ def main():
 
     # Preserve source-level prose as explicitly typed blocks. ``assign_form_ids.py`` rewrites
     # source-local entry IDs (including Strand PNur IDs) to their durable public Form_IDs.
-    for file in sorted(glob.glob("data/other/entry_texts/*.csv")):
-        with open(file, encoding="utf-8", newline="") as fin:
-            for row in csv.DictReader(fin):
-                munda_entry_texts.append([
-                    row["Form_ID"], row["Position"], row["Kind"], row["Format"],
-                    row["Content"], row["Source"],
-                ])
+    munda_entry_texts.extend(read_entry_text_sources(
+        sorted(glob.glob("data/other/entry_texts/*.csv")), "cldf/forms.csv"
+    ))
     with open("cldf/entry-texts.csv", "w", encoding="utf-8", newline="") as fout:
         texts = csv.writer(fout)
         texts.writerow(["Form_ID", "Position", "Kind", "Format", "Content", "Source"])

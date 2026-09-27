@@ -1,0 +1,22 @@
+file: 20260925-roy-birhor-p567-p568.csv
+defaults:
+  transcription:
+    profile: roy-birhor
+    input: form
+  identity:
+    legacy_ids: stem
+    append_order: 74
+  importer:
+    commands:
+      - [data/other/forms/raw_data/roy_birhor_1925/import_source_full.py, --install]
+    note: Complete Appendix I pp559–591, preserving the historical filename and entry keys; source-file installation only, no database build.
+sources:
+  roy1925birhors:
+    identity:
+      dedupe_by_entry_key: true
+    forms:
+      split_alternates: false
+    reference:
+      editor: OpenAI Codex
+      ocr: false
+      etymology_provenance: none

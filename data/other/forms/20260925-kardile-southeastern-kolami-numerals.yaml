@@ -1,0 +1,17 @@
+file: 20260925-kardile-southeastern-kolami-numerals.csv
+defaults:
+  transcription:
+    profile: kardile-southeastern-kolami-2013
+    preserve_hyphens: true
+  identity:
+    legacy_ids: stem
+    append_order: 78
+  importer:
+    commands:
+      - [data/other/forms/raw_data/kardile_southeastern_kolami_2013/import_source.py, --install]
+    note: Credited Southeastern Kolami 2013 numeral table in the immutable 2019 CC-BY Chan archive; Northwestern Kolami comparator excluded.
+sources:
+  kardile2013southeasternkolami:
+    reference:
+      editor: OpenAI Codex
+      ocr: false

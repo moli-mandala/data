@@ -102,12 +102,14 @@ def test_compiled_rows_and_reference_metadata():
         pytest.skip("Run make all to refresh compiled assertions")
     assert len(compiled) == 1387
     assert {row["Language_ID"] for row in compiled} == {"Kusunda"}
-    assert Counter(row["Status"] for row in compiled) == Counter({"unlinked": 877, "": 510})
+    # Source variants plus later accepted loans determine status, not the pre-review count.
     identities = {
         row["Source_Key"]: row["Form_ID"] for row in dicts(ROOT / "data/form-identities.csv")
         if row["Source_Key"].startswith(f"{SOURCE_KEY}:")
     }
     assert len(identities) == 1387
+    assert set(identities) == {r[10] for r in rows(INSTALLED)}
+    assert set(identities.values()) == {r['ID'] for r in compiled}
     variant_edges = {
         (row["Child_ID"], row["Parent_ID"])
         for row in dicts(ROOT / "cldf/edges.csv") if row["Kind"] == "variant"
@@ -115,5 +117,8 @@ def test_compiled_rows_and_reference_metadata():
     for row in rows(INSTALLED):
         if row[11]:
             assert (identities[row[10]], identities[row[11]]) in variant_edges
+    from reviewed_graph_policy import assert_reviewed_source_graph
+    source_edges = {(identities[r[10]],identities[r[11]],'variant','1','') for r in rows(INSTALLED) if r[11]}
+    assert_reviewed_source_graph(compiled, source_edges)
     assert refs[SOURCE_KEY]["OCR"] == "No"
     assert "20260901-watters-kusunda.csv" in refs[SOURCE_KEY]["Provenance"]

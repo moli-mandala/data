@@ -1,0 +1,21 @@
+file: 20260925-grierson-suketi.csv
+defaults:
+  transcription:
+    profile: grierson-suketi-1916
+  identity:
+    legacy_ids: stem
+    append_order: 47
+  importer:
+    commands:
+      - [data/other/forms/raw_data/grierson_suketi_1916/import_source.py, --install]
+    note: Complete manually checked Suketi prose, aligned specimen, and all 241 numbered comparative prompts on printed pp. 757–767 of LSI IX(IV); shared-context controls on pp. 716–718 retained in audit. 353 rows from 440 physical units; all 55 pilot keys preserved. Cached PDF is optional for regeneration and required for visual re-audit.
+sources:
+  grierson1916suketi:
+    identity:
+      dedupe_by_entry_key: true
+    forms:
+      split_alternates: false
+    reference:
+      editor: OpenAI Codex
+      ocr: false
+      etymology_provenance: none

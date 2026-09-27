@@ -1,0 +1,27 @@
+file: 20260925-grierson-kaikadi.csv
+defaults:
+  transcription:
+    profile: grierson-kaikadi-1906
+    input: form
+    preserve_hyphens: true
+  identity:
+    legacy_ids: stem
+    append_order: 48
+    dedupe_by_entry_key: true
+  forms:
+    split_alternates: false
+  importer:
+    commands:
+      - [data/other/forms/raw_data/grierson_kaikadi_1906/import_source.py, --install]
+    note: Complete Kaikadi chapter333–342, four interlinear specimens, all241 comparison-table prompts including22 sentences, and explicit Kaikadi examples elsewhere in the volume. Original quantity, diaeresis, nasal and underbar notation retained without harmonization. Later undated Addenda Minora IV corrections are preserved as distinct witnesses, including a specifically unresolved vowel mark. Database/full build and browser gates deferred by user.
+sources:
+  grierson1906kaikadi:
+    reference:
+      editor: OpenAI Codex
+      ocr: false
+      etymology_provenance: none
+  grierson_addenda_minora_iv_boundin:
+    reference:
+      editor: OpenAI Codex
+      ocr: false
+      etymology_provenance: none

@@ -49,8 +49,8 @@ def test_dotyali_lects_are_registered_to_dotyali():
 def test_dotyali_ipa_profile():
     profile = Tokenizer("conversion/dotyali.txt")
     cases = {
-        "həɾ": "hər",
-        "səriʒ": "səriž",
+        "həɾ": "har",
+        "səriʒ": "sariź",
         "tʃʰɑti": "cʰāti",
         "kɑ̃ɖɑ̃": "kā̃ḍā̃",
     }

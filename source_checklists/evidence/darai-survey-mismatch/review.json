@@ -1,0 +1,63 @@
+{
+  "status": "rejected for Darai ingestion: title/body mismatch",
+  "url": "https://portal.tu.edu.np/downloads/Darai_2023_09_20_20_27_53.pdf",
+  "pdf_sha256": "967992096a28458a696ae09261200fc861e806e73f1f7b37bfd58334b6e5a154",
+  "pdf_pages": 132,
+  "evidence": [
+    {
+      "path": "pdf-001.txt",
+      "sha256": "041bb7e7056d5d07ea65dbe2d90947b5d56335f0112de84aa8f0a05fb9442993"
+    },
+    {
+      "path": "pdf-002.txt",
+      "sha256": "60d20fb2c58b1db4bbf7de4309bfcd5d5c1c9a906fab4484628529d344c3034d"
+    },
+    {
+      "path": "pdf-031.txt",
+      "sha256": "3cd022a6b7e1641fb6387e26ad82c34cd42a43c8f41296eec562d548dbeccad6"
+    },
+    {
+      "path": "pdf-081.txt",
+      "sha256": "c8d4df4618c6327b9498039c06ddea6a953b18150903029533594f9d6e063651"
+    },
+    {
+      "path": "pdf-126.txt",
+      "sha256": "a448093ce4f6a986d0eac6ab30379eda176c9d38455eb803e53d9e446ae8fb64"
+    },
+    {
+      "path": "pdf-132.txt",
+      "sha256": "bc289cdda3b65386c9548d91ec1b4f2bf492b4924a77550dfe230051513babaf"
+    }
+  ],
+  "findings": [
+    "Title and acknowledgements describe Darai and sites in Tanahu, Nawalparasi and Chitwan.",
+    "PDF page 31 (printed 21) explicitly describes Danuwar language use.",
+    "PDF page 81 (printed 71) explicitly maps Danuwar sites in Sindhupalchok, Kavrepalanchok, Lalitpur and Sindhuli.",
+    "PDF pages 126-132 (printed 116-122) contain 210-item appendix headed Kavrepalanchok, Sindhupalchok, Lalitpur, Sindhuli and Bara.",
+    "Do not infer Darai dialects from these columns or silently relabel them as Danuwar; source identity must be resolved first."
+  ],
+  "baseline": {
+    "Darai": {
+      "compiled_rows": 32,
+      "manual_source_rows": 32
+    },
+    "Chakma": {
+      "compiled_rows": 1,
+      "manual_source_rows": 1
+    }
+  },
+  "alternatives": [
+    {
+      "source": "Kotapish and Kotapish 1973, A vocabulary of the Darai language",
+      "catalogue": "https://nepal.sil.org/resources/archives/50253",
+      "status": "17-page draft without English glosses; linked 1971 key needed. PDF returned 403 via web and curl."
+    },
+    {
+      "source": "Dhakal 2011, The Darai Language",
+      "catalogue": "https://elibrary.tucl.edu.np/items/4c2a3db9-8d61-4dc4-8906-60db09180a1e/full",
+      "status": "Downloaded and inspected title/contents: 486 pages, searchable text with legacy phonetic PUA glyphs. Grammar with lexical examples and paradigms; not a standalone complete wordlist.",
+      "pdf_sha256": "6ca12ee82a22a16b0394b08e319afd5a94f075111fb8a994ee10d59da234bebf",
+      "local_pdf": "tmp/pdfs/darai-survey/dhakal-2011.pdf"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "seed": 2026092617,
+  "sample_size": 20,
+  "material_errors": 2,
+  "status": "failed_repaired",
+  "selection": "fullscope-audit-pass3-selection.json",
+  "findings": [
+    {
+      "source_id": "01231",
+      "issue": "Nonparenthetical also-called aliases omitted; recovered both bird names."
+    },
+    {
+      "source_id": "01094",
+      "issue": "Alternate-form reference remained a bare definition. Now parsed as a reference, but target has multiple compatible senses; blank definition explicitly uncertain rather than guessed."
+    }
+  ],
+  "minor_findings": [
+    "00995 citation removal left duplicated comma; punctuation cleanup repaired."
+  ]
+}

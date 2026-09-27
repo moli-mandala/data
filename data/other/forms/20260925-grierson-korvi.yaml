@@ -1,0 +1,22 @@
+file: 20260925-grierson-korvi.csv
+defaults:
+  transcription:
+    profile: grierson-korvi-1906
+    input: form
+    preserve_hyphens: true
+  forms:
+    split_alternates: false
+  identity:
+    dedupe_by_entry_key: true
+    legacy_ids: stem
+    append_order: 50
+  importer:
+    commands:
+      - [data/other/forms/raw_data/grierson_korvi_1906/import_source.py, --install]
+    note: Complete chapter, five specimens, all 241 table prompts and source-wide comparisons; 990 rows from 1237 audited units, with later corrections separately attributed.
+sources:
+  grierson1906korava:
+    reference:
+      editor: OpenAI Codex
+      ocr: false
+      etymology_provenance: none

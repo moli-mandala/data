@@ -40,12 +40,12 @@ def test_kurux_nepal_lects_are_registered():
 def test_kurux_nepal_profile_converts_ipa_and_covers_every_form():
     profile = Tokenizer(DATA_DIR / "conversion/kurux-nepal.txt")
     cases = {
-        "t͡ʃʰuʈʈi": "cʰuṭṭi",
-        "d͡ʒʰia": "jʰia",
-        "χɛ̃s": "xẽs",
-        "pʌĩ̯ja": "paĩ̯ya",
-        "kiɽa lʌgia": "kiṛa#lagia",
-        "bṳŋgiʌs": "bṳŋgias",
+        "t͡ʃʰuʈʈi": "cʰuṭṭī",
+        "d͡ʒʰia": "jʰīa",
+        "χɛ̃s": "xɛ̃s",
+        "pʌĩ̯ja": "paī̯̃ya",
+        "kiɽa lʌgia": "kīṛa#lagīa",
+        "bṳŋgiʌs": "bṳŋgīas",
     }
     for source, expected in cases.items():
         converted = profile(unicodedata.normalize("NFC", source), column="IPA")

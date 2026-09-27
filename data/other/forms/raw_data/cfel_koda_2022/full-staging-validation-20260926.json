@@ -1,0 +1,49 @@
+{
+  "status": "complete_source_stage; full pipeline expressly deferred",
+  "source_units": 2450,
+  "publisher_records": 2448,
+  "print_rows": 3230,
+  "publisher_rows": 3223,
+  "no_source_units_excluded": true,
+  "native_script_rows": {
+    "print": 785,
+    "publisher": 780
+  },
+  "uncertain_rows": {
+    "print": 365,
+    "publisher": 543
+  },
+  "validation": {
+    "focused_tests": "14 passed",
+    "scoped_parse_file": {
+      "print_converted": 3230,
+      "publisher_converted": 3223,
+      "conversion_errors": 0,
+      "all_entry_keys_survive": true
+    },
+    "source_meta": "275 source files, 264 citation keys validated",
+    "full_pipeline": "Not run: user prohibition",
+    "database": "Not built: user prohibition",
+    "independent_audit": "20/20 pass, seed20260926112, original source images and all four staged hashes verified"
+  },
+  "source_only_hold_reasons": [
+    "Uninterpreted source glyphs are literal and typed; no phonological regularization.",
+    "IPA/head discrepancies preserve full native head with transcription evidence in Notes/audit.",
+    "Native-only variants retain source-script Form and blank Phonemic."
+  ],
+  "sha256": {
+    "data/data/other/forms/raw_data/cfel_koda_2022/full-proposal.csv": "059da98955efd57821ea0959bd306afc1c72b598daf3d57bf4ff0986da4a408f",
+    "data/data/other/forms/raw_data/cfel_koda_2022/full-proposal-audit.jsonl": "c0beb58c8fb9fd9afa35cdb98ab9db7a8a1bdc8de519d5d47caa282dc086e8c1",
+    "data/data/other/forms/raw_data/cfel_koda_api_2026/full-proposal.csv": "9a54ef2713be7245d9355f5dce76420026bcbfed72a3f52f99667aa3b8706f03",
+    "data/data/other/forms/raw_data/cfel_koda_api_2026/full-proposal-audit.jsonl": "220dc5899b477367eeb048d3ca5d65b68c6c4f4e2fc10206a86f114c63e4d757"
+  },
+  "canonical_rows": {
+    "print": 3230,
+    "publisher": 3223
+  },
+  "prior_keys_preserved": 64,
+  "source_graph": {
+    "variant_targets": "All source-local keys resolve in scoped parser; no unrequested etymology/borrowing links",
+    "compiled_graph": "Deferred with full build"
+  }
+}

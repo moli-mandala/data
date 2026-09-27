@@ -167,7 +167,7 @@ def test_source_profile_covers_every_installed_form():
         )
         assert "�" not in converted
     assert tokenizer("beɕja", column="IPA", segment_separator="", separator="") == "beśya"
-    assert tokenizer("pā̃tʃʰ", column="IPA", segment_separator="", separator="") == "pā̃ch"
+    assert tokenizer("pā̃tʃʰ", column="IPA", segment_separator="", separator="") == "pā̃cʰ"
 
 
 def test_shared_profile_routing_and_metadata_registration():

@@ -1,0 +1,21 @@
+file: 20260925-bailey-bhalesi.csv
+defaults:
+  transcription:
+    profile: bailey-bhalesi-1908
+  identity:
+    legacy_ids: stem
+    append_order: 81
+  importer:
+    commands:
+      - [data/other/forms/raw_data/bailey_bhalesi_1908/import_source.py, --install]
+    note: Complete Bhalesi chapter pp. 68–75 plus explicit comparisons on pp. 28 and 53–54; 435 rows from 436 editorial units, including 410 target units, 7 other-lect controls, and 19 bound morphology units. All 16 pilot keys preserved. Independent fresh 20-unit audit passed; full database and browser gates deferred.
+sources:
+  bailey1908bhalesi:
+    identity:
+      dedupe_by_entry_key: true
+    forms:
+      split_alternates: false
+    reference:
+      editor: OpenAI Codex
+      ocr: false
+      etymology_provenance: none

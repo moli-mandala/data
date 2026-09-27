@@ -1,0 +1,21 @@
+file: 20260925-grierson-simla-siraji.csv
+defaults:
+  transcription:
+    profile: grierson-simla-siraji-1916
+  identity:
+    legacy_ids: stem
+    append_order: 71
+  importer:
+    commands:
+      - [data/other/forms/raw_data/grierson_simla_siraji_1916/import_source.py, --install]
+    note: Whole Simla chapter593–598, explicit comparisons599, and all241 standard-list prompts629–645;341 lexical units yield414 forms, two printed blanks, zero unresolved holds; all16 legacy keys retained. Complete untranslated Parable preserved as source facsimile. Full-build/browser gates deferred by user.
+sources:
+  grierson1916simlasiraji:
+    identity:
+      dedupe_by_entry_key: true
+    forms:
+      split_alternates: false
+    reference:
+      editor: OpenAI Codex
+      ocr: false
+      etymology_provenance: none

@@ -1,0 +1,17 @@
+file: 20260925-daniel-paniya-numerals.csv
+defaults:
+  transcription:
+    profile: daniel-paniya-numerals-2013
+    preserve_hyphens: true
+  identity:
+    legacy_ids: stem
+    append_order: 69
+  importer:
+    commands:
+      - [data/other/forms/raw_data/daniel_paniya_numerals_2013/import_source.py, --install]
+    note: Explicit Paniyan numerals in Stephen Daniel's 2013 table; six unresolved source-typography cells held.
+sources:
+  daniel2013paniya:
+    reference:
+      editor: OpenAI Codex
+      ocr: false

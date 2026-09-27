@@ -1,0 +1,22 @@
+file: 20260925-bailey-sainji.csv
+defaults:
+  transcription:
+    profile: bailey-sainji-1908
+    preserve_hyphens: true
+  identity:
+    legacy_ids: stem
+    append_order: 42
+  importer:
+    commands:
+      - [data/other/forms/raw_data/bailey_sainji_1908/import_source.py, --install]
+    note: Whole Sainji chapter pp. 52–56; 241 source units yield 270 forms including all grammar, 46 glossary lines, 20 numerals and 22 whole sentences. Four documented exclusions, no holds; four blank-gloss forms and two provisional typography readings explicitly flagged. All 55 legacy keys retained. Full build gates deferred.
+sources:
+  bailey1908sainji:
+    identity:
+      dedupe_by_entry_key: true
+    forms:
+      split_alternates: false
+    reference:
+      editor: OpenAI Codex
+      ocr: false
+      etymology_provenance: none

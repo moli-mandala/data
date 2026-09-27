@@ -146,6 +146,6 @@ def test_source_profile_covers_all_installed_forms_and_maps_source_conventions()
             segment_separator="", separator="",
         )
         assert "�" not in converted
-    assert tokenizer("dza:va", column="IPA", segment_separator="", separator="") == "jāva".replace("ā", "aː")
+    assert tokenizer("dza:va", column="IPA", segment_separator="", separator="") == "jāva"
     assert tokenizer("uṇ?a", column="IPA", segment_separator="", separator="") == "uṇʔa"
     assert tokenizer("oɽol", column="IPA", segment_separator="", separator="") == "oṛol"

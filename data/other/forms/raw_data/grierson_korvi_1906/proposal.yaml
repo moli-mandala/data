@@ -1,0 +1,18 @@
+file: proposal.csv
+defaults:
+  transcription:
+    profile: grierson-korvi-1906
+    input: form
+    preserve_hyphens: true
+  forms:
+    split_alternates: false
+  identity:
+    dedupe_by_entry_key: true
+    legacy_ids: stem
+    append_order: 50
+sources:
+  grierson1906korava:
+    reference:
+      editor: OpenAI Codex
+      ocr: false
+      etymology_provenance: none

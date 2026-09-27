@@ -39,10 +39,10 @@ def test_maikoti_lects_are_registered():
 def test_maikoti_profile_converts_ipa_and_covers_every_form():
     profile = Tokenizer(DATA_DIR / "conversion/maikoti-kham.txt")
     cases = {
-        "t͡sɛm": "ʦem",
+        "t͡sɛm": "ʦɛm",
         "d͡zimi": "ʣimi",
         "t͡ʃĩ": "cĩ",
-        "kʷãkʰãnã": "kʷãkʰãnã",
+        "kʷãkʰãnã": "kʷā̃kʰā̃nā̃",
     }
     for source, expected in cases.items():
         converted = profile(unicodedata.normalize("NFC", source), column="IPA")

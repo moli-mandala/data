@@ -1,0 +1,23 @@
+file: 20260925-hahn-asur.csv
+defaults:
+  transcription:
+    profile: hahn-asur-1900
+    input: form
+    preserve_hyphens: true
+  importer:
+    commands:
+      - [data/other/forms/raw_data/hahn_asur_1900/import_source.py, --install]
+    note: Whole pp149–172 primer including complete expressions, song, quoted morphology and comparison controls; 835 rows and 670 audited records.
+  identity:
+    legacy_ids: stem
+    append_order: 98
+    dedupe_by_entry_key: true
+  forms:
+    split_alternates: false
+sources:
+  hahn1900asur:
+    forms:
+      split_alternates: false
+    reference:
+      editor: OpenAI Codex
+      ocr: true

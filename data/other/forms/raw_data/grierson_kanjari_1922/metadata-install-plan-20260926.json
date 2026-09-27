@@ -1,0 +1,13 @@
+{
+  "status": "draft_pending_independent_audit_and_install",
+  "yaml_importer_note": "Complete source-stage transcription of Kanjari lexical and grammatical prose and aligned specimens, printed pp. 96–120, plus all 241 prompts in both Sitapur and Belgaum standard-table columns, printed pp. 180–212. All original readings reviewed against the pinned page-image PDF; three Kheri controls and one bound suffix remain audit-only. Exact specimen form/gloss repeats retain every source locator. Full DB build and browser QA deferred by explicit user instruction.",
+  "shared_bibliography_included": "Kanjari full lexical/grammatical prose and target aligned specimens, pp. 96–120, and complete Sitapur/Belgaum standard lists, pp. 180–212; three source-attributed Kheri prose controls and the Hindostani Kheri specimen are accounted in audit only. Sikalgari (Belgaum) and Sasi (Ordinary) remain pilot standard-list prompts 1–13 and 32–100, pp. 178–193; their other material remains outside their installed pilots.",
+  "provenance_rule": "Replace only Kanjari transcription.tsv reference with prose-staged.tsv, specimen-staged.tsv and table-staged.tsv; retain other package provenance and prior source metadata.",
+  "auxiliary_reference": "Kirkpatrick1911 is cited by Grierson as the provenance of quotations. It is not a separately ingested original; preserve attributed quotation notes without claiming original article inspection.",
+  "validation_after_install": [
+    "Verify canonical CSV SHA256 equals frozen reviewed proposal",
+    "Run five focused canonical tests and source-local parser/profile checks",
+    "Verify YAML and shared BibTeX coverage reflect only installed scope",
+    "Update only this source ledger row; retain explicitly deferred DB/full build/browser gates"
+  ]
+}

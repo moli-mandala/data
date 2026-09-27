@@ -1,0 +1,21 @@
+file: 20260925-bailey-rambani.csv
+defaults:
+  transcription:
+    profile: bailey-rambani-1908
+  identity:
+    legacy_ids: stem
+    append_order: 86
+  importer:
+    commands:
+      - [data/other/forms/raw_data/bailey_rambani_1908/import_source.py, --install]
+    note: Whole Rambani chapter pp. 46–50, 214 source units yielding 249 forms; all grammar, 100 glossary cells, and 22 whole specimens. Two documented exclusions, no holds, one literal typography uncertainty. All 62 legacy keys retained. Full database and browser gates deferred.
+sources:
+  bailey1908rambani:
+    identity:
+      dedupe_by_entry_key: true
+    forms:
+      split_alternates: false
+    reference:
+      editor: OpenAI Codex
+      ocr: false
+      etymology_provenance: none

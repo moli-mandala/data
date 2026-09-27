@@ -54,10 +54,10 @@ def test_mewahang_lects_follow_the_current_eastern_western_split():
 def test_mewahang_profile_preserves_source_ipa_separately():
     profile = Tokenizer("conversion/mewahang.txt")
     cases = {
-        "tˢʰebruŋwa": "ʦʰebruŋva",
-        "mimtᶳʰa": "mimcʰa",
+        "tˢʰebruŋwa": "ʦʰebruŋvā",
+        "mimtᶳʰa": "mimcʰā",
         "sumdᶻi": "sumʣi",
-        "pɨ:ʔma": "pɨ̄ʔma",
+        "pɨ:ʔma": "pɨ̄ʔmā",
     }
     for source, expected in cases.items():
         converted = profile(unicodedata.normalize("NFC", source), column="IPA")

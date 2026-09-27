@@ -1,0 +1,43 @@
+{
+  "status": "metadata_finalization_pending",
+  "scope": "Read-only proposal metadata/identity/tag/profile/reference/alias review; no canonical edit or build.",
+  "proposal_sha256": "7b7bbba35c363fe6909214bdf4eb54f9c22c6c24252b64362d9887494907b722",
+  "rows": 1170,
+  "checks_passed": {
+    "canonical_language": "Malw, Glottolog malv1243; legacy display Malwai documented",
+    "dialect": "dialect:Malw:lsi1908-malvi-rangri:Rangri registered with blank coordinates",
+    "routing": "grierson-malvi-rangri-1908 resolves through YAML",
+    "proposal_profile": "All1170literal forms map to exact lowercase preservation; zero replacements",
+    "declared_tags": "All tags registered",
+    "audit_entry_keys": "All emitted/reused entry keys resolve to proposal representatives",
+    "control_exclusion": "No excluded control has emitted entry keys",
+    "graph": "All graph/etymology fields blank; no invented graph relation",
+    "native_integration": "Separate native-integration-review-20260926.json passes"
+  },
+  "coordination": "All defects communicated to asur_finish; no edits to builder/canonical.",
+  "pending_installation_gates": [
+    {
+      "file": "data/conversion/grierson-malvi-rangri-1908.txt",
+      "issue": "Registered profile remains pilot;1160of1170proposal forms have unsupported symbols. Expanded proposal profile passes."
+    },
+    {
+      "file": "data/data/other/forms/20260925-grierson-malvi-rangri.yaml",
+      "issue": "Importer note still scoped to21cells; must describe complete reviewed source."
+    },
+    {
+      "file": "data/cldf/sources.bib",
+      "issue": "Included/provenance still five-form pilot plus16held, omitting full grammar/specimens/table/native scope."
+    },
+    {
+      "file": "data/cldf/dialects.csv",
+      "issue": "Geography note should preserve explicit State Dewas, Junior Branch specimen attribution; retain unknown exact site/blankcoordinates."
+    }
+  ],
+  "deferred_compiled_artifacts": [
+    {
+      "file": "data/cldf/references.csv",
+      "reason": "Generated reference row is absent in current compiled artifact; DB/full compiled rebuild deferred by user. Validate final bibliography entry formatting in memory without patching generated output."
+    }
+  ],
+  "proposal_assessment": "Reviewed proposal identity, tags, profile, audit references, and native integration pass. Pilot metadata intentionally awaits root full-audit approval; not evidence against proposal."
+}

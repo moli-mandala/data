@@ -1,0 +1,126 @@
+{
+  "status": "full_transcription_second_reading_complete_independent_audit_pending",
+  "original": "tmp/pdfs/lsi-v11/LSI-V11.pdf",
+  "pdf_pages": 225,
+  "printed_pdf_offset": 12,
+  "source_sha256": "50df2b41e31420139148e2b16b321336881f227e917ca55cfedf225315cf4574",
+  "contents_evidence": "PDF9 lists Kanjari96, language97, specimens103; Kuchbandhi119–120; Nati121 begins next named chapter.",
+  "scope": {
+    "96-102": "All239prose lexical/grammar units across96–102,110,111,119 inventoried and second-read; threeKheri source-attributed controls retained outside Kanjari rows; Kuchbandhi bound genitive suffix inventory-only.",
+    "103-118": "All named Kanjari aligned Roman/English specimens second-read; Kheri106 separately accounted as source-explicit ordinary Hindostani control;113/118free translations are narrative duplicates, no native-script witness.",
+    "119-120": "Source-labelled Kuchbandhi, Bahraich retained distinctly;81aligned words and man gihar ingested; bound genitive rō in inventory.",
+    "180,184,188,192,196,200,204,208,212": "Both Kanjari standard-table columns across all241prompts; controls excluded by column"
+  },
+  "observations": {
+    "96": "Original kājarō/kā̃jarō man with uncertain etymological comparisons; ethnographic plant names not asserted Kanjari forms.",
+    "97": "Kheri explicitly classified by author as ordinary Hindostani; two prose forms and p101argot-device khamāl retained as attributed conflicting control evidence, not guessed Kanjari/Hindi canonical records."
+  },
+  "canonical_state": "163 pilot rows unchanged; no DB/remote; one overwritten active render only.",
+  "specimens": [
+    {
+      "number": "I",
+      "lect": "Sitapur",
+      "aligned_pages": [
+        103,
+        104
+      ]
+    },
+    {
+      "number": "II",
+      "lect": "Kheri",
+      "aligned_pages": [
+        106
+      ],
+      "mapping": "source explicitly identifies as ordinary Hindostani, control; inventory separately"
+    },
+    {
+      "number": "III",
+      "lect": "Aligarh",
+      "aligned_pages": [
+        108,
+        109,
+        110
+      ]
+    },
+    {
+      "number": "IV",
+      "lect": "Etawah",
+      "aligned_pages": [
+        111
+      ]
+    },
+    {
+      "number": "V",
+      "lect": "Farrukhabad",
+      "aligned_pages": [
+        112
+      ],
+      "free_translation": [
+        113
+      ]
+    },
+    {
+      "number": "VI",
+      "lect": "Belgaum",
+      "aligned_pages": [
+        114,
+        115,
+        116
+      ]
+    },
+    {
+      "number": "VII",
+      "lect": "Belgaum",
+      "aligned_pages": [
+        117
+      ],
+      "free_translation": [
+        118
+      ]
+    },
+    {
+      "number": "Kuchbandhi",
+      "lect": "Kuchbandhi/Bahraich",
+      "aligned_pages": [
+        120
+      ],
+      "mapping": "p119 explicitly subdivision of Kanjar and same speech type; retain source-qualified dialect"
+    }
+  ],
+  "scope_ocr": {
+    "path": "full-chapter-scope-ocr",
+    "command": "pdftoppm one page at140dpi to overwritten review-active.png; tesseract stdout --psm3",
+    "use": "Section-boundary discovery only; all lexical readings require full original-page review.",
+    "pages": "103–120"
+  },
+  "prose_first_reading_units": 239,
+  "prose_state": "All239units fully second-read against original; exact source comparisons retained in source-comparison-scope-20260926.json.",
+  "staged_counts": {
+    "prose": 239,
+    "specimen": 1508,
+    "specimen_by_page": {
+      "103": 141,
+      "104": 169,
+      "108": 149,
+      "109": 182,
+      "110": 33,
+      "111": 141,
+      "112": 130,
+      "114": 128,
+      "115": 155,
+      "116": 76,
+      "117": 123,
+      "120": 81
+    },
+    "status": "All target lexical prose,1508aligned specimen attestations,482tablecells and241English prompts fully second-read; seeded independent audit pending.",
+    "table_prompts": 241,
+    "table_cells": 482,
+    "table_source_blanks": 35
+  },
+  "stage_warning": "Full source proposal awaiting independent audit; canonical163pilot unchanged. User prohibits DB/build/remotes.",
+  "proposal_forms": 1832,
+  "proposal_raw_units": 2229,
+  "reuse_policy": "Within specimens only, exact same lect+case-sensitive form+gloss merged with every locator retained. No cross-section or cross-lect collapse.",
+  "non_target_evidence": "kheri-control-scope-20260926.json covers all16physical aligned lines of p106; three individual Kheri prose units in full audit.",
+  "specimen_exact_reuses": 391
+}

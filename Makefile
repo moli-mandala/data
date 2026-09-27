@@ -1,4 +1,4 @@
-.PHONY: all forms parsers cdial dedr dedr_params parser-diff ingest sources check-pass save-pass check-etymologies check-sources manual-survey-etymology-check punjabi burushaski-cognates wiktionary-piir wiktionary-piir-refresh
+.PHONY: all forms parsers inferred-extensions cdial dedr dedr_params parser-diff ingest sources check-pass save-pass check-etymologies check-sources manual-survey-etymology-check punjabi burushaski-cognates wiktionary-piir wiktionary-piir-refresh
 
 # One interpreter for every stage and importer, and one heavy job at a time (8 GB laptop).
 PY := uv run python
@@ -50,7 +50,17 @@ $(CDIAL_CSV): data/cdial/parse.py data/cdial/abbrevs.py data/cdial/references.py
 $(DEDR_CSV): data/dedr/parse.py data/dedr/parser_utils.py data/dedr/cleanup.py data/dedr/abbrevs.py data/dedr/dedr.pickle
 	cd data/dedr && $(PY) parse.py
 
-parsers: $(CDIAL_CSV) $(DEDR_CSV)
+# Shape-inferred extended reflexes (-kk-, -ḍ-, -l-, -r-) that Turner left on the bare etymon;
+# unify_cldf.py re-homes them. Rebuilt whenever the CDIAL parse or the detector changes.
+#   make inferred-extensions            (or: uv run python infer_extensions.py --metrics)
+INFERRED_EXT := data/cdial/inferred-extensions.csv
+
+$(INFERRED_EXT): $(CDIAL_CSV) infer_extensions.py
+	$(PY) infer_extensions.py
+
+inferred-extensions: $(INFERRED_EXT)
+
+parsers: $(CDIAL_CSV) $(DEDR_CSV) $(INFERRED_EXT)
 cdial: $(CDIAL_CSV)
 dedr: $(DEDR_CSV)
 	cd data/dedr && $(PY) get_params.py
@@ -80,7 +90,7 @@ all: parsers
 	$(MAKE) manual-survey-etymology-check
 
 manual-survey-etymology-check:
-	uv run --with pytest --with pycldf python -m pytest -q tests/test_manual_survey_etymologies.py
+	$(PY) -m pytest -q tests/test_manual_survey_etymologies.py
 
 # The Proto-Indo-Iranian etymon layer resolves its links against the *built*
 # graph, so it needs a complete build to read and a second one to compile what it

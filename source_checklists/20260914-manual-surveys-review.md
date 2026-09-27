@@ -1,10 +1,78 @@
 # Ho, Bhumij and Dhurwa shared integration — 14 September 2026
 
-The three source packages are installed in the shared lexical inputs, bibliography,
-dialect registry and conversion routes. **The full database ingestion is not yet
-complete:** the repository-wide build/full test suite remain deferred. A bounded
-source-only compilation and graph check validates these inputs. Browser refresh
-was not separately requested and is outside this routine integration.
+## Shared validation update — 21 September 2026
+
+The installed surveys are present in the existing shared CLDF. The former
+source-survival and graph-validation deferrals are now resolved by a complete
+read-only comparison against the current inputs and profiles. No CLDF or browser
+database was rebuilt, and no generated lexical data or persistent identities were
+rewritten. This is source-specific integration validation, not a claim that the
+repository-wide ingestion checklist is entirely green.
+
+`verify_manual_surveys.py` streams the shared tables, retains only these survey
+records, and checks all 5,809 source keys through legacy aliases to distinct active
+persistent IDs. Every compiled Form, Original, Phonemic, Gloss, language, citation
+and required dialect/uncertainty tag agrees with the current parser. All 46 variant
+parents match their source-local keys; the graph has 5,763 unlinked nodes and no
+historical ancestry, borrowing, derived or component edges for these records.
+The current `errors.txt` is empty. No source records have been cross-source merged;
+the separate prompt/site identities all survive.
+
+| Source | Installed rows | Shared nodes | Unlinked | Variant nodes | Nodes with concepts |
+|---|---:|---:|---:|---:|---:|
+| Ho | 2,900 | 2,900 | 2,900 | 0 | 2,889 |
+| Bhumij | 2,100 | 2,100 | 2,054 | 46 | 2,063 |
+| Dhurwa | 809 | 809 | 809 | 0 | 752 |
+
+Concept membership counts describe the existing generated concept layer; not every
+survey gloss has a concept mapping. No survey node has an alignment row, and no
+historical alignment was inferred to fill that absence. Compiled examples are Ho
+`f_hlnkn7xi6266a` (*homo*, body), Bhumij `f_jic7ymxiv3a62` (*hoḍomo*, body), and
+Dhurwa `f_a6kxtl6ywtrne` (*men*, body). These are CLDF IDs, not newly inspected app
+entries. The 28 source dialects and all prior exclusions remain unchanged.
+
+The machine-readable evidence in
+`audits/20260914-manual-surveys-shared.json` includes input/profile and shared-table
+SHA-256 hashes. Reproduce without a rebuild from the data repository:
+
+```sh
+OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 .venv/bin/python verify_manual_surveys.py \
+  --output source_checklists/audits/20260914-manual-surveys-shared.json
+```
+
+Two stale extraction-test contracts were corrected after existing house-profile
+changes: Bhumij's frozen audit now checks an exact historical profile snapshot
+(`preintegration_profile.tsv`, SHA-256
+`c029063b4fc2ba541c72ba71379b185a94582c1ccb62c24e9c8e76ce5f303525`), recovered from
+the repository version and checked against the pre-existing frozen hash. The
+historical manifest and frozen importer/ledgers remain unchanged. Live Bhumij
+conversion is checked independently. Dhurwa's checkpoint test expects current
+macron/geminate display forms (*bujjām*, *pōḍōm*, *kīḍ kīḍī*); no profile or source
+reading was changed in this pass.
+
+Validation: **144 focused checks passed** in 25.04 seconds, covering shared
+integration, Bhumij/Ho extraction, all Dhurwa chunks, frozen Bhumij contracts,
+Ho hand-keyed chunks, the full dialect tests, explicit profile routing and unique
+graphemes. `source_meta.py` also passed (194 source settings files, 191 citation
+keys). The initial expanded run found the three stale assertions described above;
+the final run is green. Pytest's default import mode was used because importlib
+mode cannot resolve the existing test-only `coordinate_policy` helper.
+
+Remaining gates: a new full build is excluded by the user's “Don't rebuild db
+ever” instruction. The full repository suite and global retrospective manifest
+regeneration remain deferred under the workspace resource policy: available CI
+only runs on pushes/PRs, and this request does not authorize publishing workspace
+changes to trigger it. The scoped evidence above is not a replacement for the
+global audit manifest. Browser refresh is prohibited; browser QA was not run.
+No commit, push or deployment was performed.
+
+## Historical integration record — 14 September 2026
+
+The record below preserves the original installation evidence. Its references to
+pending shared survival/graph checks and untouched compiled files describe that
+earlier pass and are superseded by the read-only validation above. Its original
+profile description predates the current house-profile changes; Original and
+Phonemic remain preserved, while current Form output is checked exhaustively.
 
 ## Counts and exclusions
 

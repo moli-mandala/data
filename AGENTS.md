@@ -31,6 +31,13 @@ by `make all`. The stages, for when you need to run one by hand:
 1. `data/cdial/parse.py` — regenerate `data/cdial/cdial.csv` from the CDIAL HTML.
    **Only when CDIAL parsing logic changes.** Slow; caches to `data/cdial/cdial.pickle`.
    (DEDR has a parallel `data/dedr/parse.py` + `get_params.py`.)
+1b. `infer_extensions.py` — `data/cdial/inferred-extensions.csv`, the CDIAL reflexes that continue
+   an extended stem (-kk-, -ḍ-, -l-, -r-) by surface shape although Turner left them on the bare
+   etymon (`make inferred-extensions`; a `parsers` dependency, so `make all` refreshes it). Only
+   the same-language-witness tier is written (≈92% precision against Turner's own "ext." sections;
+   `--metrics` prints the evaluation). `unify_cldf.py` homes those rows to the entry's extension
+   node, creating it last so existing `<etymon>-<n>` ids keep their meaning, and tags both node
+   and reflex `inferred`. Never hand-edit the table; change the detector and regenerate.
 2. `make_cldf.py` — raw `data/**` → `cldf/{forms,parameters,languages,references}.csv`.
    Per-source settings (transcription profile, dedupe-by-key, alternates splitting, excluded
    languages, gloss handling, audit-only notes, reference metadata) come from the YAML beside each
@@ -84,6 +91,14 @@ make parser-diff P=cdial      # what a parser change did: glosses filled/blanked
 cd data/cdial && uv run python parse.py --entry 10132 134   # one entry, rows to stdout, <1 s
 cd data/dedr  && uv run python parse.py --entry 360 a12     # DEDR appendix entries are a<number>
 ```
+
+Sound profiles (`conversion/*.txt`) must write the house transcription that `conversion/cdial.txt`
+does — Turner's vowels (`ʌ`/`ə` → `a`, `ɪ` → `i`, `ʊ` → `u`; the source's long series → `ā ī ū`,
+decided per profile in `profile_policy.py`), length as a macron, Indological consonants.
+`uv run python profile_policy.py check` lists offending rules and `… fix` rewrites them (and adds
+the `Vː`/`Cː` rules the routed sources need); the check is a test. When writing a new profile, add
+it to `LONG_A`/`LONG_I`/`LONG_U`/`SCHWA` as its inventory warrants, and map the source's IPA to
+house letters, never to `č ǰ ž ṅ ʃ ʈ w`.
 
 The parser CSVs (`data/cdial/cdial.csv`, `data/dedr/dedr_new.csv`) are make targets with real
 dependencies, and each parser writes to a temp file and renames on success, so a crashed parse

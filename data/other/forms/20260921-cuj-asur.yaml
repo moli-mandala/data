@@ -1,0 +1,20 @@
+file: 20260921-cuj-asur.csv
+defaults:
+  transcription:
+  - profile: cuj-asur
+  identity:
+    legacy_ids: stem
+    append_order: 31
+  importer:
+    commands:
+    - [data/other/forms/raw_data/cuj_asur_2020/import_source.py, --install]
+sources:
+  cuj2020asur:
+    identity:
+      dedupe_by_entry_key: true
+    forms:
+      split_alternates: false
+    reference:
+      editor: Aryaman Arora; OpenAI Codex
+      ocr: false
+      etymology_provenance: source

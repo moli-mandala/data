@@ -1,0 +1,15 @@
+file: 20260925-crooke-korwa-mirzapur.csv
+defaults:
+  transcription:
+    profile: crooke-korwa-1892
+    input: form
+  identity:
+    legacy_ids: stem
+    append_order: 83
+    dedupe_by_entry_key: true
+  forms:
+    split_alternates: false
+  importer:
+    commands:
+      - [data/other/forms/raw_data/crooke_korwa_1892/import_source.py, --install]
+    note: Crooke's independent 1892 southern Mirzapur Korwa glossary; all 123 printed responses retained, including 30 recovered former holds; 41 comparison annotations preserved without inferred graph edges; one typed source-glyph uncertainty; adjacent Driver article excluded.

@@ -1,0 +1,17 @@
+file: 20260925-sharma-korra-numerals.csv
+defaults:
+  transcription:
+    profile: sharma-korra-numerals-1990
+    preserve_hyphens: true
+  identity:
+    legacy_ids: stem
+    append_order: 72
+  importer:
+    commands:
+      - [data/other/forms/raw_data/sharma_korra_numerals_1990/import_source.py, --install]
+    note: Explicit Korra Koraga numerals in S. R. Sharma's 1990 table; eleven source-blank numbered cells omitted.
+sources:
+  sharma1990korra:
+    reference:
+      editor: OpenAI Codex
+      ocr: false

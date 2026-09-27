@@ -22,7 +22,7 @@ def test_keys_and_dialects():
 def test_profile_coverage():
  t=Tokenizer(str(ROOT/'conversion/sdml.txt'))
  for r in rows():assert '�' not in t(r[2],column='IPA')
- assert t('c č j ǰ',column='IPA').replace(' ','').replace('#',' ')=='c č j ǰ'
+ assert t('c č j ǰ',column='IPA').replace(' ','').replace('#',' ')=='ʦ c ʣ j'  # dental c/j are the house ʦ/ʣ, palatal č/ǰ the house c/j
 def test_gloss_and_exclusions():
  assert m.gloss('female_egos_brothers_daughter')=="female ego's brother's daughter"
  audit=[json.loads(l) for l in (m.RAW/'20260911-sdml-audit.jsonl').open()]

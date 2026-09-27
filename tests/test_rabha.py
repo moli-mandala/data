@@ -40,9 +40,9 @@ def test_rabha_lects_are_registered_as_dialects():
 def test_rabha_ipa_profile():
     profile = Tokenizer("conversion/rabha.txt")
     cases = {
-        "kɑ́nɡɑnd͡ʒi": "kā́ngānjī",
+        "kɑ́nɡɑnd͡ʒi": "kā́ngānji",
         "tʃɑ̑skɑm": "cā̑skām",
-        "nuk̚d͡ʒo": "nūk̚jo",
+        "nuk̚d͡ʒo": "nuk̚jo",
         "t͡ʃɨŋ kɑmkɑʲ": "cɨŋ kāmkāʸ",
     }
     for source, expected in cases.items():

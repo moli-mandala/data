@@ -1,0 +1,17 @@
+file: 20260925-john-pottangi-ollar-gadaba-numerals.csv
+defaults:
+  transcription:
+    profile: john-pottangi-ollar-gadaba-2013
+    preserve_hyphens: true
+  identity:
+    legacy_ids: stem
+    append_order: 101
+  importer:
+    commands:
+      - [data/other/forms/raw_data/john_pottangi_ollari_gadaba_2013/import_source.py, --install]
+    note: John's 2013 Pottangi Ollar Gadaba table from the immutable CC-BY Chan archive; Sharma 1990 Konekor table audited as excluded comparator.
+sources:
+  john2013pottangiollargadaba:
+    reference:
+      editor: OpenAI Codex
+      ocr: false

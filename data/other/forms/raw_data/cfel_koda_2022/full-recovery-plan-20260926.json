@@ -1,0 +1,47 @@
+{
+  "date": "2026-09-26",
+  "scope": {
+    "english_headed_pdf_pages": 371,
+    "english_headed_lexical_pages": [
+      10,
+      371
+    ],
+    "native_headed_xps_pages": 366,
+    "native_headed_lexical_pages": [
+      10,
+      366
+    ],
+    "entries_each": 2450,
+    "lexical_domains": 50
+  },
+  "evidence": [
+    "full-english-pdf-scope-census-20260926.json",
+    "full-xps-scope-census-20260926.json"
+  ],
+  "representations": {
+    "english_pdf": "Text layer on lexical pages has page numbers only; English head and English IPA followed by Hindi, Bengali and Koda native forms as vector outlines. English IPA must not become Koda pronunciation.",
+    "koda_xps": "Lexical paths are outlines, including shared PathGeometry; footer Unicode only. Native-headed edition has different pagination and source IPA.",
+    "api": "Existing dated package covers60first-domain queries only. Neither those60nor the Mahali query inventory establishes full Koda API scope."
+  },
+  "bounded_ocr_trial": {
+    "input": "/private/tmp/cfel-koda-pilot/p010.png",
+    "generated_new_render": false,
+    "command": "OMP_THREAD_LIMIT=1 tesseract INPUT OUTPUT -l eng+ben+hin --psm3",
+    "english_heads_detected": 6,
+    "observed_errors": [
+      "Bengali Blouse became Latin FPG",
+      "Diamond separators lost in Bindi and damaged in Bangle",
+      "Bengali description errors"
+    ],
+    "conclusion": "Usable for head/boundary proposals only, not unreviewed acceptance of native spelling."
+  },
+  "recovery_plan": [
+    "Extract all2450Englishheads and geometry with bounded one-page OCR; preserve source-local page/item keys and rawOCR.",
+    "Obtain reproducible full publisher enumeration if available, otherwise exact print-head queries with pagination and explicit missing/extra record accounting.",
+    "Use publisher Unicode only as proposed native readings; compare every printed native head, preserve source/API differences and alternate native spellings.",
+    "Use source Koda IPA from native-headed edition or explicitly paired publisher evidence; neverEnglishIPA. Ambiguous transcription stays typed and visible rather than blanket omission.",
+    "Review every source description for lexical/grammar restrictions; source descriptions differ across editions.",
+    "Fresh independent20 after complete accounting, then focused profile/metadata/parity checks. NoDB/fullbuild/remotes."
+  ],
+  "status": "Completeness census and bounded recovery investigation complete; full transcription remains open; no canonical Koda data changed."
+}

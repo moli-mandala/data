@@ -1,0 +1,31 @@
+{
+  "status": "interrupted before verdict: explicit shared-context attestations discovered",
+  "hashes": {
+    "full-reviewed.jsonl": "4d7307cb3258f31291e1d287ac5fbad3d8aa8578df364e86dcb3a3117ece0baf",
+    "proposal.csv": "960f2f7753db8cf4107455c6249029e859a127bb2859f84c75174fc281796c6e",
+    "proposal-audit.jsonl": "00d439cde9eed6ec96ba1695a2f73f02a891cd3f1e35a32c06836456928f2ea0",
+    "proposal-profile.txt": "04cd4a94dfaa3bd48cfd64176711773958fe37f2312ada82e744f591c75a2e00"
+  },
+  "rows": 424,
+  "units": 412,
+  "target_units": 399,
+  "other_lect_controls": 7,
+  "bound_morphology_units": 6,
+  "typed_uncertainty_units": [
+    "bailey1908bhalesi:p69:pronoun-1sg:dat_acc",
+    "bailey1908bhalesi:p69:pronoun-1sg:loc",
+    "bailey1908bhalesi:p69:other-pronouns:anyone-gen",
+    "bailey1908bhalesi:p69:other-pronouns:anyone-dat",
+    "bailey1908bhalesi:p73:left:item:5",
+    "bailey1908bhalesi:p74:left:item:15"
+  ],
+  "canonical_installed": false,
+  "validation": "Five focused tests passed, including scoped parser, profile, tags, citations and legacy key coverage.",
+  "deferred": [
+    "independent fresh 20 original audit",
+    "canonical source-stage installation",
+    "full CLDF/database build explicitly not authorized",
+    "compiled identity/graph/browser gates deferred"
+  ],
+  "selection": "tmp/bhalesi-full-review/independent-pass1-selection.json"
+}

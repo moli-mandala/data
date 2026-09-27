@@ -1,0 +1,17 @@
+file: 20260925-riezen-eastern-muria-numerals.csv
+defaults:
+  transcription:
+    profile: riezen-eastern-muria-2013
+    preserve_hyphens: true
+  identity:
+    legacy_ids: stem
+    append_order: 103
+  importer:
+    commands:
+      - [data/other/forms/raw_data/riezen_eastern_muria_2013/import_source.py, --install]
+    note: Riezen's 2013 Eastern Muria numbered table in the immutable CC-BY Chan archive; one bracketed cell held.
+sources:
+  riezen2013easternmuria:
+    reference:
+      editor: OpenAI Codex
+      ocr: false

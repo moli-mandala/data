@@ -130,7 +130,8 @@ def test_compiled_rows_edges_keys_and_blocks_survive_full_build():
     assert "pʰaḷ" in {row["Form"] for row in compiled}
     assert "āī" in {row["Form"] for row in compiled}
     assert "māṇḍī" in {row["Form"] for row in compiled}
-    assert "ḍokə̄" in {row["Form"] for row in compiled}
+    assert "ḍoka" in {row["Form"] for row in compiled}
+    assert any(row["Form"] == "ḍoka" and row["Original"] == "ḍokə" for row in compiled)
 
     edges = read_rows(ROOT / "cldf/edges.csv")
     rank1 = {

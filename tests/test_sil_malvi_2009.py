@@ -145,7 +145,11 @@ def test_compiled_rows_preserve_every_source_locator_and_dialect():
     installed = forms()
     with COMPILED.open(encoding="utf-8", newline="") as stream:
         compiled = [row for row in csv.DictReader(stream) if SOURCE_KEY in row["Source"]]
-    assert len(compiled) == 2128
+    from segments import Tokenizer
+    tokenizer = Tokenizer(str(ROOT/'conversion/sil-malvi.txt'))
+    expected = {(r['Language_ID'], r['Parameter_ID'], unicodedata.normalize('NFC',tokenizer(r['Form'],column='IPA').replace(' ','').replace('#',' '))) for r in installed}
+    assert len(compiled) == len(expected)
+    assert {(r['Language_ID'],r['Form']) for r in compiled} == {(lang,form) for lang,_,form in expected}
     compiled_citations = {
         citation
         for row in compiled
@@ -154,6 +158,13 @@ def test_compiled_rows_preserve_every_source_locator_and_dialect():
     }
     assert compiled_citations == {row["Source"] for row in installed}
     assert len(compiled_citations) == 6182
+    # Preserve the mapping, not merely independent global citation/tag unions.
+    by_citation = {citation: row for row in compiled for citation in row['Source'].split(';') if citation.startswith(f'{SOURCE_KEY}[')}
+    for raw in installed:
+        actual = by_citation[raw['Source']]
+        display = unicodedata.normalize('NFC',tokenizer(raw['Form'],column='IPA').replace(' ','').replace('#',' '))
+        assert actual['Form'] == display and actual['Language_ID'] == raw['Language_ID']
+        assert set(raw['Tags'].split()) <= set(actual['Tags'].split())
     assert len({
         tag for row in compiled for tag in row["Tags"].split()
         if "sil-malvi-2009-" in tag

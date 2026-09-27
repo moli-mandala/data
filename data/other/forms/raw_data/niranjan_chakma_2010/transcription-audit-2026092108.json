@@ -1,0 +1,1596 @@
+{
+  "seed": 2026092108,
+  "sample_size": 20,
+  "population": 733,
+  "review_sha256": "9439adfca8041f701d186ee5263219eaa404ea40df91791db4257025eb948cd4",
+  "scope": "Main-wordlist transcription only; not installed-output acceptance",
+  "status": "failed; corrections applied, fresh sample required",
+  "records": [
+    {
+      "review_snapshot": {
+        "pdf_page": 21,
+        "printed_page": 19,
+        "candidate_row": 20,
+        "english_anchor": "Polaris",
+        "original_ocr_cells": [
+          {
+            "ocr_line_index": 22,
+            "raw": "মোচতারা",
+            "bbox": [
+              225,
+              1594,
+              362,
+              1627
+            ]
+          }
+        ],
+        "reviewed_chakma": "মোচতারা",
+        "reviewed_english": "Polaris",
+        "review_status": "visually-reviewed",
+        "uncertainty_type": "",
+        "review_note": "Compared with full page and enlarged row crop; no phonemic normalization.",
+        "reviewer": "OpenAI Codex",
+        "date": "2026-09-21",
+        "evidence": "Pinned PDF21, printed19; scratch niranjan-page19-review.png; original-page coordinates retained in candidate-cells.jsonl"
+      },
+      "candidate_snapshot": {
+        "pdf_page": 21,
+        "printed_page": 19,
+        "candidate_row": 20,
+        "english_line_indices": [
+          22
+        ],
+        "english_raw": "Polaris",
+        "english_bboxes": [
+          [
+            947,
+            1594,
+            1068,
+            1629
+          ]
+        ],
+        "status": "unreviewed",
+        "review_type": [
+          "ocr",
+          "cell-alignment"
+        ],
+        "cells": {
+          "chakma": [
+            {
+              "ocr_line_index": 22,
+              "raw": "মোচতারা",
+              "bbox": [
+                225,
+                1594,
+                362,
+                1627
+              ]
+            }
+          ],
+          "bengali": [
+            {
+              "ocr_line_index": 22,
+              "raw": "ধ্রুবতারা",
+              "bbox": [
+                655,
+                1595,
+                779,
+                1628
+              ]
+            }
+          ]
+        }
+      },
+      "audit_decision": "no-material-error-observed",
+      "evidence": "transcription-audit-2026092108-0.png",
+      "note": "Compared all three printed columns against the reviewed headword and English gloss."
+    },
+    {
+      "review_snapshot": {
+        "pdf_page": 23,
+        "printed_page": 21,
+        "candidate_row": 12,
+        "english_anchor": "Mid-day",
+        "original_ocr_cells": [
+          {
+            "ocr_line_index": 12,
+            "raw": "দ্বিবুচ্যা",
+            "bbox": [
+              130,
+              861,
+              231,
+              913
+            ]
+          }
+        ],
+        "reviewed_chakma": "দ্বিবুচ্যা",
+        "reviewed_english": "Mid-day",
+        "review_status": "visually-reviewed",
+        "uncertainty_type": "",
+        "review_note": "Compared directly with the full-resolution source page; no phonemic normalization.",
+        "reviewer": "OpenAI Codex",
+        "date": "2026-09-21",
+        "evidence": "Pinned PDF23, printed21; full-resolution render niranjan-main-ocr-v4/p023.png; original page boxes retained in candidate-cells.jsonl"
+      },
+      "candidate_snapshot": {
+        "pdf_page": 23,
+        "printed_page": 21,
+        "candidate_row": 12,
+        "english_line_indices": [
+          12
+        ],
+        "english_raw": "Mid-day",
+        "english_bboxes": [
+          [
+            854,
+            869,
+            1011,
+            914
+          ]
+        ],
+        "status": "unreviewed",
+        "review_type": [
+          "ocr",
+          "cell-alignment"
+        ],
+        "cells": {
+          "chakma": [
+            {
+              "ocr_line_index": 12,
+              "raw": "দ্বিবুচ্যা",
+              "bbox": [
+                130,
+                861,
+                231,
+                913
+              ]
+            }
+          ],
+          "bengali": [
+            {
+              "ocr_line_index": 12,
+              "raw": "দপুর",
+              "bbox": [
+                561,
+                870,
+                635,
+                913
+              ]
+            }
+          ]
+        }
+      },
+      "audit_decision": "material-error",
+      "evidence": "transcription-audit-2026092108-0.png",
+      "error_class": "extra-consonant",
+      "corrected_reading": "দিবুচ্যা",
+      "note": "Scan shows দি, not দ্বি; erroneous inserted ব in the first review."
+    },
+    {
+      "review_snapshot": {
+        "pdf_page": 25,
+        "printed_page": 23,
+        "candidate_row": 6,
+        "english_anchor": "Mesua ferrea Linn",
+        "original_ocr_cells": [
+          {
+            "ocr_line_index": 6,
+            "raw": "নাক্‌স গাচ",
+            "bbox": [
+              136,
+              530,
+              294,
+              574
+            ]
+          }
+        ],
+        "reviewed_chakma": "নাক্স গাচ",
+        "reviewed_english": "Mesua ferrea Linn",
+        "review_status": "visually-reviewed",
+        "uncertainty_type": "",
+        "review_note": "Compared directly with the full-resolution source page; no phonemic normalization.",
+        "reviewer": "OpenAI Codex",
+        "date": "2026-09-21",
+        "evidence": "Pinned PDF25, printed23; full-resolution render niranjan-main-ocr-v4/p025.png; original page boxes retained in candidate-cells.jsonl"
+      },
+      "candidate_snapshot": {
+        "pdf_page": 25,
+        "printed_page": 23,
+        "candidate_row": 6,
+        "english_line_indices": [
+          7
+        ],
+        "english_raw": "Mesua ferrea Linn",
+        "english_bboxes": [
+          [
+            863,
+            537,
+            1192,
+            574
+          ]
+        ],
+        "status": "unreviewed",
+        "review_type": [
+          "ocr",
+          "cell-alignment"
+        ],
+        "cells": {
+          "chakma": [
+            {
+              "ocr_line_index": 6,
+              "raw": "নাক্‌স গাচ",
+              "bbox": [
+                136,
+                530,
+                294,
+                574
+              ]
+            }
+          ],
+          "bengali": [
+            {
+              "ocr_line_index": 6,
+              "raw": "নাগেশ্বর",
+              "bbox": [
+                570,
+                535,
+                699,
+                569
+              ]
+            }
+          ]
+        }
+      },
+      "audit_decision": "no-material-error-observed",
+      "evidence": "transcription-audit-2026092108-0.png",
+      "note": "Compared all three printed columns against the reviewed headword and English gloss."
+    },
+    {
+      "review_snapshot": {
+        "pdf_page": 26,
+        "printed_page": 24,
+        "candidate_row": 8,
+        "english_anchor": "Sour",
+        "original_ocr_cells": [
+          {
+            "ocr_line_index": 8,
+            "raw": "খরঅ",
+            "bbox": [
+              179,
+              603,
+              260,
+              636
+            ]
+          }
+        ],
+        "reviewed_chakma": "খরঅ",
+        "reviewed_english": "Sour",
+        "review_status": "visually-reviewed",
+        "uncertainty_type": "",
+        "review_note": "Compared directly with full-resolution source page; no phonemic normalization.",
+        "reviewer": "OpenAI Codex",
+        "date": "2026-09-21",
+        "evidence": "Pinned PDF26, printed24; full-resolution render niranjan-main-ocr-v4/p026.png"
+      },
+      "candidate_snapshot": {
+        "pdf_page": 26,
+        "printed_page": 24,
+        "candidate_row": 8,
+        "english_line_indices": [
+          8
+        ],
+        "english_raw": "Sour",
+        "english_bboxes": [
+          [
+            908,
+            602,
+            996,
+            636
+          ]
+        ],
+        "status": "unreviewed",
+        "review_type": [
+          "ocr",
+          "cell-alignment"
+        ],
+        "cells": {
+          "chakma": [
+            {
+              "ocr_line_index": 8,
+              "raw": "খরঅ",
+              "bbox": [
+                179,
+                603,
+                260,
+                636
+              ]
+            }
+          ],
+          "bengali": [
+            {
+              "ocr_line_index": 8,
+              "raw": "টক",
+              "bbox": [
+                610,
+                595,
+                664,
+                635
+              ]
+            }
+          ]
+        }
+      },
+      "audit_decision": "no-material-error-observed",
+      "evidence": "transcription-audit-2026092108-0.png",
+      "note": "Compared all three printed columns against the reviewed headword and English gloss."
+    },
+    {
+      "review_snapshot": {
+        "pdf_page": 27,
+        "printed_page": 25,
+        "candidate_row": 20,
+        "english_anchor": "Screen",
+        "original_ocr_cells": [
+          {
+            "ocr_line_index": 20,
+            "raw": "গেন্দ্যল",
+            "bbox": [
+              174,
+              1414,
+              285,
+              1450
+            ]
+          }
+        ],
+        "reviewed_chakma": "গেন্দ্যল",
+        "reviewed_english": "Screen",
+        "review_status": "visually-reviewed",
+        "uncertainty_type": "",
+        "review_note": "Compared directly with full-resolution source page; no phonemic normalization.",
+        "reviewer": "OpenAI Codex",
+        "date": "2026-09-21",
+        "evidence": "Pinned PDF27, printed25; full-resolution render niranjan-main-ocr-v4/p027.png"
+      },
+      "candidate_snapshot": {
+        "pdf_page": 27,
+        "printed_page": 25,
+        "candidate_row": 20,
+        "english_line_indices": [
+          20
+        ],
+        "english_raw": "Screen",
+        "english_bboxes": [
+          [
+            896,
+            1415,
+            1020,
+            1450
+          ]
+        ],
+        "status": "unreviewed",
+        "review_type": [
+          "ocr",
+          "cell-alignment"
+        ],
+        "cells": {
+          "chakma": [
+            {
+              "ocr_line_index": 20,
+              "raw": "গেন্দ্যল",
+              "bbox": [
+                174,
+                1414,
+                285,
+                1450
+              ]
+            }
+          ],
+          "bengali": [
+            {
+              "ocr_line_index": 20,
+              "raw": "পর্দা",
+              "bbox": [
+                605,
+                1405,
+                663,
+                1449
+              ]
+            }
+          ]
+        }
+      },
+      "audit_decision": "no-material-error-observed",
+      "evidence": "transcription-audit-2026092108-0.png",
+      "note": "Compared all three printed columns against the reviewed headword and English gloss."
+    },
+    {
+      "review_snapshot": {
+        "pdf_page": 28,
+        "printed_page": 26,
+        "candidate_row": 18,
+        "english_anchor": "Candle",
+        "original_ocr_cells": [
+          {
+            "ocr_line_index": 20,
+            "raw": "মুমবাত্তি",
+            "bbox": [
+              203,
+              1747,
+              326,
+              1799
+            ]
+          }
+        ],
+        "reviewed_chakma": "মুমবাত্তি",
+        "reviewed_english": "Candle",
+        "review_status": "visually-reviewed",
+        "uncertainty_type": "",
+        "review_note": "Compared directly with full-resolution source page; no phonemic normalization.",
+        "reviewer": "OpenAI Codex",
+        "date": "2026-09-21",
+        "evidence": "Pinned PDF28, printed26; full-resolution render niranjan-main-ocr-v4/p028.png"
+      },
+      "candidate_snapshot": {
+        "pdf_page": 28,
+        "printed_page": 26,
+        "candidate_row": 18,
+        "english_line_indices": [
+          19
+        ],
+        "english_raw": "Candle",
+        "english_bboxes": [
+          [
+            932,
+            1756,
+            1061,
+            1791
+          ]
+        ],
+        "status": "unreviewed",
+        "review_type": [
+          "ocr",
+          "cell-alignment"
+        ],
+        "cells": {
+          "chakma": [
+            {
+              "ocr_line_index": 20,
+              "raw": "মুমবাত্তি",
+              "bbox": [
+                203,
+                1747,
+                326,
+                1799
+              ]
+            }
+          ],
+          "bengali": [
+            {
+              "ocr_line_index": 20,
+              "raw": "মোমবাতি",
+              "bbox": [
+                640,
+                1749,
+                782,
+                1792
+              ]
+            }
+          ]
+        }
+      },
+      "audit_decision": "no-material-error-observed",
+      "evidence": "transcription-audit-2026092108-0.png",
+      "note": "Compared all three printed columns against the reviewed headword and English gloss."
+    },
+    {
+      "review_snapshot": {
+        "pdf_page": 29,
+        "printed_page": 27,
+        "candidate_row": 8,
+        "english_anchor": "Plane",
+        "original_ocr_cells": [
+          {
+            "ocr_line_index": 8,
+            "raw": "রেন্দা",
+            "bbox": [
+              233,
+              626,
+              312,
+              660
+            ]
+          }
+        ],
+        "reviewed_chakma": "রেন্দা",
+        "reviewed_english": "Plane",
+        "review_status": "visually-reviewed",
+        "uncertainty_type": "",
+        "review_note": "Compared directly with full-resolution source page; no phonemic normalization.",
+        "reviewer": "OpenAI Codex",
+        "date": "2026-09-21",
+        "evidence": "Pinned PDF29, printed27; full-resolution render niranjan-main-ocr-v4/p029.png"
+      },
+      "candidate_snapshot": {
+        "pdf_page": 29,
+        "printed_page": 27,
+        "candidate_row": 8,
+        "english_line_indices": [
+          8
+        ],
+        "english_raw": "Plane",
+        "english_bboxes": [
+          [
+            957,
+            624,
+            1054,
+            660
+          ]
+        ],
+        "status": "unreviewed",
+        "review_type": [
+          "ocr",
+          "cell-alignment"
+        ],
+        "cells": {
+          "chakma": [
+            {
+              "ocr_line_index": 8,
+              "raw": "রেন্দা",
+              "bbox": [
+                233,
+                626,
+                312,
+                660
+              ]
+            }
+          ],
+          "bengali": [
+            {
+              "ocr_line_index": 8,
+              "raw": "র্াদা",
+              "bbox": [
+                665,
+                617,
+                741,
+                661
+              ]
+            }
+          ]
+        }
+      },
+      "audit_decision": "no-material-error-observed",
+      "evidence": "transcription-audit-2026092108-0.png",
+      "note": "Compared all three printed columns against the reviewed headword and English gloss."
+    },
+    {
+      "review_snapshot": {
+        "pdf_page": 30,
+        "printed_page": 28,
+        "candidate_row": 23,
+        "english_anchor": "Spear",
+        "original_ocr_cells": [
+          {
+            "ocr_line_index": 23,
+            "raw": "যাদি",
+            "bbox": [
+              201,
+              1636,
+              268,
+              1679
+            ]
+          }
+        ],
+        "reviewed_chakma": "যাদি",
+        "reviewed_english": "Spear",
+        "review_status": "visually-reviewed",
+        "uncertainty_type": "",
+        "review_note": "Compared directly with full-resolution source page; no phonemic normalization.",
+        "reviewer": "OpenAI Codex",
+        "date": "2026-09-21",
+        "evidence": "Pinned PDF30, printed28; full-resolution render niranjan-main-ocr-v4/p030.png"
+      },
+      "candidate_snapshot": {
+        "pdf_page": 30,
+        "printed_page": 28,
+        "candidate_row": 23,
+        "english_line_indices": [
+          23
+        ],
+        "english_raw": "Spear",
+        "english_bboxes": [
+          [
+            933,
+            1644,
+            1042,
+            1689
+          ]
+        ],
+        "status": "unreviewed",
+        "review_type": [
+          "ocr",
+          "cell-alignment"
+        ],
+        "cells": {
+          "chakma": [
+            {
+              "ocr_line_index": 23,
+              "raw": "যাদি",
+              "bbox": [
+                201,
+                1636,
+                268,
+                1679
+              ]
+            }
+          ],
+          "bengali": [
+            {
+              "ocr_line_index": 23,
+              "raw": "বর্শা",
+              "bbox": [
+                640,
+                1635,
+                700,
+                1679
+              ]
+            }
+          ]
+        }
+      },
+      "audit_decision": "no-material-error-observed",
+      "evidence": "transcription-audit-2026092108-0.png",
+      "note": "Compared all three printed columns against the reviewed headword and English gloss."
+    },
+    {
+      "review_snapshot": {
+        "pdf_page": 31,
+        "printed_page": 29,
+        "candidate_row": 15,
+        "english_anchor": "Barbar",
+        "original_ocr_cells": [
+          {
+            "ocr_line_index": 17,
+            "raw": "নাবিত",
+            "bbox": [
+              181,
+              1372,
+              276,
+              1416
+            ]
+          }
+        ],
+        "reviewed_chakma": "নাবিত",
+        "reviewed_english": "Barbar",
+        "review_status": "visually-reviewed",
+        "uncertainty_type": "",
+        "review_note": "Compared directly with full-resolution source page; no phonemic normalization.",
+        "reviewer": "OpenAI Codex",
+        "date": "2026-09-21",
+        "evidence": "Pinned PDF31, printed29; full-resolution render niranjan-main-ocr-v4/p031.png"
+      },
+      "candidate_snapshot": {
+        "pdf_page": 31,
+        "printed_page": 29,
+        "candidate_row": 15,
+        "english_line_indices": [
+          17
+        ],
+        "english_raw": "Barbar",
+        "english_bboxes": [
+          [
+            904,
+            1382,
+            1029,
+            1418
+          ]
+        ],
+        "status": "unreviewed",
+        "review_type": [
+          "ocr",
+          "cell-alignment"
+        ],
+        "cells": {
+          "chakma": [
+            {
+              "ocr_line_index": 17,
+              "raw": "নাবিত",
+              "bbox": [
+                181,
+                1372,
+                276,
+                1416
+              ]
+            }
+          ],
+          "bengali": [
+            {
+              "ocr_line_index": 17,
+              "raw": "নাপিত",
+              "bbox": [
+                613,
+                1374,
+                710,
+                1417
+              ]
+            }
+          ]
+        }
+      },
+      "audit_decision": "no-material-error-observed",
+      "evidence": "transcription-audit-2026092108-0.png",
+      "note": "Compared all three printed columns against the reviewed headword and English gloss."
+    },
+    {
+      "review_snapshot": {
+        "pdf_page": 31,
+        "printed_page": 29,
+        "candidate_row": 18,
+        "english_anchor": "Doctor",
+        "original_ocr_cells": [
+          {
+            "ocr_line_index": 20,
+            "raw": "ডাক্তর",
+            "bbox": [
+              182,
+              1603,
+              280,
+              1636
+            ]
+          }
+        ],
+        "reviewed_chakma": "ডাক্তর",
+        "reviewed_english": "Doctor",
+        "review_status": "visually-reviewed",
+        "uncertainty_type": "",
+        "review_note": "Compared directly with full-resolution source page; no phonemic normalization.",
+        "reviewer": "OpenAI Codex",
+        "date": "2026-09-21",
+        "evidence": "Pinned PDF31, printed29; full-resolution render niranjan-main-ocr-v4/p031.png"
+      },
+      "candidate_snapshot": {
+        "pdf_page": 31,
+        "printed_page": 29,
+        "candidate_row": 18,
+        "english_line_indices": [
+          20
+        ],
+        "english_raw": "Doctor",
+        "english_bboxes": [
+          [
+            904,
+            1604,
+            1032,
+            1639
+          ]
+        ],
+        "status": "unreviewed",
+        "review_type": [
+          "ocr",
+          "cell-alignment"
+        ],
+        "cells": {
+          "chakma": [
+            {
+              "ocr_line_index": 20,
+              "raw": "ডাক্তর",
+              "bbox": [
+                182,
+                1603,
+                280,
+                1636
+              ]
+            }
+          ],
+          "bengali": [
+            {
+              "ocr_line_index": 20,
+              "raw": "ডাক্তার",
+              "bbox": [
+                613,
+                1604,
+                720,
+                1638
+              ]
+            }
+          ]
+        }
+      },
+      "audit_decision": "no-material-error-observed",
+      "evidence": "transcription-audit-2026092108-0.png",
+      "note": "Compared all three printed columns against the reviewed headword and English gloss."
+    },
+    {
+      "review_snapshot": {
+        "pdf_page": 35,
+        "printed_page": 33,
+        "candidate_row": 3,
+        "english_anchor": "Pain",
+        "original_ocr_cells": [
+          {
+            "ocr_line_index": 3,
+            "raw": "শুলোনি",
+            "bbox": [
+              139,
+              257,
+              255,
+              300
+            ]
+          }
+        ],
+        "reviewed_chakma": "শুলোনি",
+        "reviewed_english": "Pain",
+        "review_status": "visually-reviewed",
+        "uncertainty_type": "",
+        "review_note": "Compared directly with full-resolution source page; no phonemic normalization.",
+        "reviewer": "OpenAI Codex",
+        "date": "2026-09-21",
+        "evidence": "Pinned PDF35, printed33; full-resolution render niranjan-main-ocr-v4/p035.png",
+        "source_structure_note": "The page prints this Pain entry twice, in separate rows; both source records are retained."
+      },
+      "candidate_snapshot": {
+        "pdf_page": 35,
+        "printed_page": 33,
+        "candidate_row": 3,
+        "english_line_indices": [
+          3
+        ],
+        "english_raw": "Pain",
+        "english_bboxes": [
+          [
+            863,
+            265,
+            940,
+            301
+          ]
+        ],
+        "status": "unreviewed",
+        "review_type": [
+          "ocr",
+          "cell-alignment"
+        ],
+        "cells": {
+          "chakma": [
+            {
+              "ocr_line_index": 3,
+              "raw": "শুলোনি",
+              "bbox": [
+                139,
+                257,
+                255,
+                300
+              ]
+            }
+          ],
+          "bengali": [
+            {
+              "ocr_line_index": 3,
+              "raw": "ব্যাথা",
+              "bbox": [
+                572,
+                266,
+                655,
+                301
+              ]
+            }
+          ]
+        }
+      },
+      "audit_decision": "no-material-error-observed",
+      "evidence": "transcription-audit-2026092108-10.png",
+      "note": "Compared all three printed columns against the reviewed headword and English gloss."
+    },
+    {
+      "review_snapshot": {
+        "pdf_page": 36,
+        "printed_page": 34,
+        "candidate_row": 18,
+        "english_anchor": "Reader",
+        "original_ocr_cells": [
+          {
+            "ocr_line_index": 18,
+            "raw": "পড়বো",
+            "bbox": [
+              174,
+              1250,
+              277,
+              1290
+            ]
+          }
+        ],
+        "reviewed_chakma": "পড়বো",
+        "reviewed_english": "Reader",
+        "review_status": "visually-reviewed",
+        "uncertainty_type": "",
+        "review_note": "Compared directly with full-resolution source page; no phonemic normalization.",
+        "reviewer": "OpenAI Codex",
+        "date": "2026-09-21",
+        "evidence": "Pinned PDF36, printed34; full-resolution render niranjan-main-ocr-v4/p036.png"
+      },
+      "candidate_snapshot": {
+        "pdf_page": 36,
+        "printed_page": 34,
+        "candidate_row": 18,
+        "english_line_indices": [
+          18
+        ],
+        "english_raw": "Reader",
+        "english_bboxes": [
+          [
+            901,
+            1246,
+            1035,
+            1281
+          ]
+        ],
+        "status": "unreviewed",
+        "review_type": [
+          "ocr",
+          "cell-alignment"
+        ],
+        "cells": {
+          "chakma": [
+            {
+              "ocr_line_index": 18,
+              "raw": "পড়বো",
+              "bbox": [
+                174,
+                1250,
+                277,
+                1290
+              ]
+            }
+          ],
+          "bengali": [
+            {
+              "ocr_line_index": 18,
+              "raw": "পাঠক",
+              "bbox": [
+                611,
+                1238,
+                697,
+                1282
+              ]
+            }
+          ]
+        }
+      },
+      "audit_decision": "no-material-error-observed",
+      "evidence": "transcription-audit-2026092108-10.png",
+      "note": "Compared all three printed columns against the reviewed headword and English gloss."
+    },
+    {
+      "review_snapshot": {
+        "pdf_page": 38,
+        "printed_page": 36,
+        "candidate_row": 5,
+        "english_anchor": "Library",
+        "original_ocr_cells": [
+          {
+            "ocr_line_index": 5,
+            "raw": "বইঘর",
+            "bbox": [
+              190,
+              400,
+              285,
+              446
+            ]
+          }
+        ],
+        "reviewed_chakma": "বইঘর",
+        "reviewed_english": "Library",
+        "review_status": "visually-reviewed",
+        "uncertainty_type": "",
+        "review_note": "Compared directly with full-resolution source page; no phonemic normalization.",
+        "reviewer": "OpenAI Codex",
+        "date": "2026-09-21",
+        "evidence": "Pinned PDF38, printed36; full-resolution render niranjan-main-ocr-v4/p038.png"
+      },
+      "candidate_snapshot": {
+        "pdf_page": 38,
+        "printed_page": 36,
+        "candidate_row": 5,
+        "english_line_indices": [
+          5
+        ],
+        "english_raw": "Library",
+        "english_bboxes": [
+          [
+            920,
+            407,
+            1054,
+            452
+          ]
+        ],
+        "status": "unreviewed",
+        "review_type": [
+          "ocr",
+          "cell-alignment"
+        ],
+        "cells": {
+          "chakma": [
+            {
+              "ocr_line_index": 5,
+              "raw": "বইঘর",
+              "bbox": [
+                190,
+                400,
+                285,
+                446
+              ]
+            }
+          ],
+          "bengali": [
+            {
+              "ocr_line_index": 5,
+              "raw": "গ্রন্থাগার",
+              "bbox": [
+                631,
+                409,
+                750,
+                449
+              ]
+            }
+          ]
+        }
+      },
+      "audit_decision": "no-material-error-observed",
+      "evidence": "transcription-audit-2026092108-10.png",
+      "note": "Compared all three printed columns against the reviewed headword and English gloss."
+    },
+    {
+      "review_snapshot": {
+        "pdf_page": 39,
+        "printed_page": 37,
+        "candidate_row": 18,
+        "english_anchor": "Finger",
+        "original_ocr_cells": [
+          {
+            "ocr_line_index": 18,
+            "raw": "আঙুল",
+            "bbox": [
+              156,
+              1261,
+              250,
+              1303
+            ]
+          }
+        ],
+        "reviewed_chakma": "আঙুল",
+        "reviewed_english": "Finger",
+        "review_status": "visually-reviewed",
+        "uncertainty_type": "",
+        "review_note": "Compared directly with full-resolution source page; no phonemic normalization.",
+        "reviewer": "OpenAI Codex",
+        "date": "2026-09-21",
+        "evidence": "Pinned PDF39, printed37; full-resolution render niranjan-main-ocr-v4/p039.png"
+      },
+      "candidate_snapshot": {
+        "pdf_page": 39,
+        "printed_page": 37,
+        "candidate_row": 18,
+        "english_line_indices": [
+          18
+        ],
+        "english_raw": "Finger",
+        "english_bboxes": [
+          [
+            881,
+            1259,
+            994,
+            1305
+          ]
+        ],
+        "status": "unreviewed",
+        "review_type": [
+          "ocr",
+          "cell-alignment"
+        ],
+        "cells": {
+          "chakma": [
+            {
+              "ocr_line_index": 18,
+              "raw": "আঙুল",
+              "bbox": [
+                156,
+                1261,
+                250,
+                1303
+              ]
+            }
+          ],
+          "bengali": [
+            {
+              "ocr_line_index": 18,
+              "raw": "আঙ্গুল",
+              "bbox": [
+                589,
+                1261,
+                687,
+                1304
+              ]
+            }
+          ]
+        }
+      },
+      "audit_decision": "no-material-error-observed",
+      "evidence": "transcription-audit-2026092108-10.png",
+      "note": "Compared all three printed columns against the reviewed headword and English gloss."
+    },
+    {
+      "review_snapshot": {
+        "pdf_page": 40,
+        "printed_page": 38,
+        "candidate_row": 14,
+        "english_anchor": "| Sclera",
+        "original_ocr_cells": [
+          {
+            "ocr_line_index": 14,
+            "raw": "ধুপ পদোলি",
+            "bbox": [
+              212,
+              990,
+              380,
+              1041
+            ]
+          }
+        ],
+        "reviewed_chakma": "ধুপ পদোলি",
+        "reviewed_english": "| Sclera",
+        "review_status": "visually-reviewed",
+        "uncertainty_type": "",
+        "review_note": "Compared directly with full-resolution source page; no phonemic normalization.",
+        "reviewer": "OpenAI Codex",
+        "date": "2026-09-21",
+        "evidence": "Pinned PDF40, printed38; full-resolution render niranjan-main-ocr-v4/p040.png"
+      },
+      "candidate_snapshot": {
+        "pdf_page": 40,
+        "printed_page": 38,
+        "candidate_row": 14,
+        "english_line_indices": [
+          14
+        ],
+        "english_raw": "| Sclera",
+        "english_bboxes": [
+          [
+            924,
+            999,
+            1057,
+            1034
+          ]
+        ],
+        "status": "unreviewed",
+        "review_type": [
+          "ocr",
+          "cell-alignment"
+        ],
+        "cells": {
+          "chakma": [
+            {
+              "ocr_line_index": 14,
+              "raw": "ধুপ পদোলি",
+              "bbox": [
+                212,
+                990,
+                380,
+                1041
+              ]
+            }
+          ],
+          "bengali": [
+            {
+              "ocr_line_index": 14,
+              "raw": "চোখের শ্বেত অংশ",
+              "bbox": [
+                649,
+                1000,
+                924,
+                1035
+              ]
+            }
+          ]
+        }
+      },
+      "audit_decision": "material-error",
+      "evidence": "transcription-audit-2026092108-10.png",
+      "error_class": "english-ocr-noise",
+      "corrected_reading": "Sclera",
+      "note": "Scan has no vertical bar before Sclera; OCR noise survived first review."
+    },
+    {
+      "review_snapshot": {
+        "pdf_page": 40,
+        "printed_page": 38,
+        "candidate_row": 23,
+        "english_anchor": "Knee",
+        "original_ocr_cells": [
+          {
+            "ocr_line_index": 23,
+            "raw": "আদু",
+            "bbox": [
+              212,
+              1589,
+              283,
+              1632
+            ]
+          }
+        ],
+        "reviewed_chakma": "আদু",
+        "reviewed_english": "Knee",
+        "review_status": "visually-reviewed",
+        "uncertainty_type": "",
+        "review_note": "Compared directly with full-resolution source page; no phonemic normalization.",
+        "reviewer": "OpenAI Codex",
+        "date": "2026-09-21",
+        "evidence": "Pinned PDF40, printed38; full-resolution render niranjan-main-ocr-v4/p040.png"
+      },
+      "candidate_snapshot": {
+        "pdf_page": 40,
+        "printed_page": 38,
+        "candidate_row": 23,
+        "english_line_indices": [
+          23
+        ],
+        "english_raw": "Knee",
+        "english_bboxes": [
+          [
+            944,
+            1590,
+            1042,
+            1624
+          ]
+        ],
+        "status": "unreviewed",
+        "review_type": [
+          "ocr",
+          "cell-alignment"
+        ],
+        "cells": {
+          "chakma": [
+            {
+              "ocr_line_index": 23,
+              "raw": "আদু",
+              "bbox": [
+                212,
+                1589,
+                283,
+                1632
+              ]
+            }
+          ],
+          "bengali": [
+            {
+              "ocr_line_index": 23,
+              "raw": "হঁটু",
+              "bbox": [
+                649,
+                1582,
+                704,
+                1635
+              ]
+            }
+          ]
+        }
+      },
+      "audit_decision": "no-material-error-observed",
+      "evidence": "transcription-audit-2026092108-10.png",
+      "note": "Compared all three printed columns against the reviewed headword and English gloss."
+    },
+    {
+      "review_snapshot": {
+        "pdf_page": 41,
+        "printed_page": 39,
+        "candidate_row": 7,
+        "english_anchor": "Beard",
+        "original_ocr_cells": [
+          {
+            "ocr_line_index": 7,
+            "raw": "দাড়ি",
+            "bbox": [
+              225,
+              523,
+              296,
+              571
+            ]
+          }
+        ],
+        "reviewed_chakma": "দাড়ি",
+        "reviewed_english": "Beard",
+        "review_status": "visually-reviewed",
+        "uncertainty_type": "",
+        "review_note": "Compared directly with full-resolution source page; no phonemic normalization.",
+        "reviewer": "OpenAI Codex",
+        "date": "2026-09-21",
+        "evidence": "Pinned PDF41, printed39; full-resolution render niranjan-main-ocr-v4/p041.png"
+      },
+      "candidate_snapshot": {
+        "pdf_page": 41,
+        "printed_page": 39,
+        "candidate_row": 7,
+        "english_line_indices": [
+          7
+        ],
+        "english_raw": "Beard",
+        "english_bboxes": [
+          [
+            952,
+            531,
+            1061,
+            566
+          ]
+        ],
+        "status": "unreviewed",
+        "review_type": [
+          "ocr",
+          "cell-alignment"
+        ],
+        "cells": {
+          "chakma": [
+            {
+              "ocr_line_index": 7,
+              "raw": "দাড়ি",
+              "bbox": [
+                225,
+                523,
+                296,
+                571
+              ]
+            }
+          ],
+          "bengali": [
+            {
+              "ocr_line_index": 7,
+              "raw": "দীড়ি",
+              "bbox": [
+                659,
+                523,
+                728,
+                571
+              ]
+            }
+          ]
+        }
+      },
+      "audit_decision": "no-material-error-observed",
+      "evidence": "transcription-audit-2026092108-10.png",
+      "note": "Compared all three printed columns against the reviewed headword and English gloss."
+    },
+    {
+      "review_snapshot": {
+        "pdf_page": 41,
+        "printed_page": 39,
+        "candidate_row": 24,
+        "english_anchor": "Cat",
+        "original_ocr_cells": [
+          {
+            "ocr_line_index": 26,
+            "raw": "বিলেই",
+            "bbox": [
+              237,
+              1976,
+              339,
+              2022
+            ]
+          }
+        ],
+        "reviewed_chakma": "বিলেই",
+        "reviewed_english": "Cat",
+        "review_status": "visually-reviewed",
+        "uncertainty_type": "",
+        "review_note": "Compared directly with full-resolution source page; no phonemic normalization.",
+        "reviewer": "OpenAI Codex",
+        "date": "2026-09-21",
+        "evidence": "Pinned PDF41, printed39; full-resolution render niranjan-main-ocr-v4/p041.png"
+      },
+      "candidate_snapshot": {
+        "pdf_page": 41,
+        "printed_page": 39,
+        "candidate_row": 24,
+        "english_line_indices": [
+          26
+        ],
+        "english_raw": "Cat",
+        "english_bboxes": [
+          [
+            944,
+            1985,
+            1025,
+            2019
+          ]
+        ],
+        "status": "unreviewed",
+        "review_type": [
+          "ocr",
+          "cell-alignment"
+        ],
+        "cells": {
+          "chakma": [
+            {
+              "ocr_line_index": 26,
+              "raw": "বিলেই",
+              "bbox": [
+                237,
+                1976,
+                339,
+                2022
+              ]
+            }
+          ],
+          "bengali": [
+            {
+              "ocr_line_index": 26,
+              "raw": ". বিড়াল",
+              "bbox": [
+                640,
+                1977,
+                766,
+                2025
+              ]
+            }
+          ]
+        }
+      },
+      "audit_decision": "no-material-error-observed",
+      "evidence": "transcription-audit-2026092108-10.png",
+      "note": "Compared all three printed columns against the reviewed headword and English gloss."
+    },
+    {
+      "review_snapshot": {
+        "pdf_page": 44,
+        "printed_page": 42,
+        "candidate_row": 11,
+        "english_anchor": "Owl",
+        "original_ocr_cells": [
+          {
+            "ocr_line_index": 11,
+            "raw": "পেজো",
+            "bbox": [
+              149,
+              824,
+              231,
+              857
+            ]
+          }
+        ],
+        "reviewed_chakma": "পেজা",
+        "reviewed_english": "Owl",
+        "review_status": "visually-reviewed",
+        "uncertainty_type": "",
+        "review_note": "Compared directly with full-resolution source page; no phonemic normalization.",
+        "reviewer": "OpenAI Codex",
+        "date": "2026-09-21",
+        "evidence": "Pinned PDF44, printed42; full-resolution render niranjan-main-ocr-v4/p044.png"
+      },
+      "candidate_snapshot": {
+        "pdf_page": 44,
+        "printed_page": 42,
+        "candidate_row": 11,
+        "english_line_indices": [
+          11
+        ],
+        "english_raw": "Owl",
+        "english_bboxes": [
+          [
+            879,
+            821,
+            957,
+            856
+          ]
+        ],
+        "status": "unreviewed",
+        "review_type": [
+          "ocr",
+          "cell-alignment"
+        ],
+        "cells": {
+          "chakma": [
+            {
+              "ocr_line_index": 11,
+              "raw": "পেজো",
+              "bbox": [
+                149,
+                824,
+                231,
+                857
+              ]
+            }
+          ],
+          "bengali": [
+            {
+              "ocr_line_index": 11,
+              "raw": "পেচা",
+              "bbox": [
+                589,
+                823,
+                660,
+                857
+              ]
+            }
+          ]
+        }
+      },
+      "audit_decision": "no-material-error-observed",
+      "evidence": "transcription-audit-2026092108-10.png",
+      "note": "Compared all three printed columns against the reviewed headword and English gloss."
+    },
+    {
+      "review_snapshot": {
+        "pdf_page": 47,
+        "printed_page": 45,
+        "candidate_row": 10,
+        "english_anchor": "Pollen",
+        "original_ocr_cells": [
+          {
+            "ocr_line_index": 10,
+            "raw": "রেণু",
+            "bbox": [
+              152,
+              756,
+              217,
+              798
+            ]
+          }
+        ],
+        "reviewed_chakma": "রেণু",
+        "reviewed_english": "Pollen",
+        "review_status": "visually-reviewed",
+        "uncertainty_type": "",
+        "review_note": "Compared directly with full-resolution source page; no phonemic normalization.",
+        "reviewer": "OpenAI Codex",
+        "date": "2026-09-21",
+        "evidence": "Pinned PDF47, printed45; full-resolution render niranjan-main-ocr-v4/p047.png"
+      },
+      "candidate_snapshot": {
+        "pdf_page": 47,
+        "printed_page": 45,
+        "candidate_row": 10,
+        "english_line_indices": [
+          10
+        ],
+        "english_raw": "Pollen",
+        "english_bboxes": [
+          [
+            877,
+            755,
+            987,
+            791
+          ]
+        ],
+        "status": "unreviewed",
+        "review_type": [
+          "ocr",
+          "cell-alignment"
+        ],
+        "cells": {
+          "chakma": [
+            {
+              "ocr_line_index": 10,
+              "raw": "রেণু",
+              "bbox": [
+                152,
+                756,
+                217,
+                798
+              ]
+            }
+          ],
+          "bengali": [
+            {
+              "ocr_line_index": 10,
+              "raw": "রেণু",
+              "bbox": [
+                587,
+                756,
+                652,
+                798
+              ]
+            }
+          ]
+        }
+      },
+      "audit_decision": "no-material-error-observed",
+      "evidence": "transcription-audit-2026092108-10.png",
+      "note": "Compared all three printed columns against the reviewed headword and English gloss."
+    }
+  ],
+  "material_errors": 2
+}

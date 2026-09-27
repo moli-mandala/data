@@ -1,0 +1,12 @@
+file: 20260922-bhat-belari.csv
+defaults:
+  identity:
+    legacy_ids: stem
+    append_order: 38
+  transcription:
+    profile: bhat-belari
+  importer:
+    commands:
+    - - data/other/forms/raw_data/bhat_belari_1971/import_source.py
+      - --install
+    note: Source-file installation only; does not build CLDF or the browser database.

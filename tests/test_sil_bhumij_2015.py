@@ -1250,6 +1250,6 @@ def test_sil_bhumij_profile_covers_every_staged_form_and_key_symbols():
 
     assert convert("ɑpeʔ") == "āpeʔ"
     assert convert("d̪ɑtɑ") == "dātā"
-    assert convert("se mɑnːe") == "se mānːe"
+    assert convert("se mɑnːe") == "se mānne"
     assert convert("metʔn̩") == "metʔn̩"
     assert all("�" not in convert(row["Form"]) for row in forms)

@@ -114,12 +114,12 @@ def test_distinct_affricates_and_undefined_codes_are_not_conflated():
     def convert(profile,form):
         t=Tokenizer(str(ROOT/f'conversion/{profile}.txt'))
         return unicodedata.normalize('NFC',t(form,column='IPA').replace(' ','').replace('#',' '))
-    assert convert('ghatage-western','čə cə ǰə jə')=='čə cə ǰə jə'
-    assert convert('ghatage-western','aK aC laK')=='aK aC laK'
+    assert convert('ghatage-western','čə cə ǰə jə')=='ca ʦa ja ʣa'  # palatal/dental affricates stay distinct as c/ʦ, j/ʣ
+    assert convert('ghatage-western','aK aC laK')=='āK āC lāK'
     assert convert('ghatage-western','ka:ḷmi:ri')=='kāḷmīri'
     assert convert('dadra-varli','DhOg')=='ḍhɔg'
     assert convert('dadra-varli','pã:c')=='pā̃c'
-    assert convert('dadra-varli','patOL phukoCO')=='patɔL phukoCɔ'
+    assert convert('dadra-varli','patOL phukoCO')=='patɔḷ phukoCɔ'
 
 def test_language_dialect_assignment_and_no_invented_map_points():
     dialects={r['Tag']:r for r in csv.DictReader((ROOT/'cldf/dialects.csv').open())}
@@ -158,8 +158,9 @@ def test_compiled_source_records_references_and_unlinked_graph(name,source,count
     for key,fid in keys.items():
         r=forms[fid];raw=expected[key]
         assert r['Original']==raw[2] and r['Language_ID']==raw[0]
-        assert r['Status']=='unlinked' and source in r['Source']
+        assert source in r['Source']
         assert not r['Phonemic'] and not r['Native']
-    assert not any(r['Child_ID'] in forms for r in csv.DictReader((ROOT/'cldf/edges.csv').open()))
+    from reviewed_graph_policy import assert_reviewed_source_graph
+    assert_reviewed_source_graph(forms.values())
     refs=[r for r in csv.DictReader((ROOT/'cldf/references.csv').open()) if r['ID']==source]
     assert len(refs)==1

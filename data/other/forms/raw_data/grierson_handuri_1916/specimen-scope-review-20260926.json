@@ -1,0 +1,68 @@
+{
+  "status": "complete_interlinear_inventory_awaiting_independent_audit",
+  "source_pages": [
+    590,
+    591,
+    592
+  ],
+  "native_source_pages": [
+    588,
+    589
+  ],
+  "units": 343,
+  "units_by_page": {
+    "590": 123,
+    "591": 176,
+    "592": 44
+  },
+  "physical_lines_by_page": {
+    "590": 15,
+    "591": 21,
+    "592": 6
+  },
+  "scope": "Every printed form/phrase aligned to an English gloss in the three-page interlinear specimen. Repeated words and phrases remain separate attestation rows; no deduplication performed.",
+  "exclusions": [
+    "Section titles and geographic/family headings are source metadata, not lexical units.",
+    "Quotation marks and terminal punctuation are excluded from form strings; semantic English parenthetical content remains in gloss.",
+    "Native-script pages are the same specimen in another representation, not an additional unglossed lexical corpus. Native spelling was checked against passage order but has not been falsely claimed as a character-by-character diplomatic transcription."
+  ],
+  "native_reconciliation": [
+    {
+      "native_page": 588,
+      "aligned_start": "p590-l01-u01",
+      "aligned_end": "p591-l14-u05",
+      "anchors": [
+        "Two sons and the younger son requests his share.",
+        "Division and departure; wastage, famine, swine feeding, hunger.",
+        "Return, repentance, clothing, ring and shoes, feast.",
+        "Elder son in the field; hears singing and dancing; asks what is happening."
+      ]
+    },
+    {
+      "native_page": 589,
+      "aligned_start": "p591-l14-u06",
+      "aligned_end": "p592-l06-u01",
+      "anchors": [
+        "Servant answers that the brother has returned.",
+        "Elder son protests years of service and no kid for his friends.",
+        "Father replies that the son is always with him and his brother has returned to life."
+      ]
+    }
+  ],
+  "transcription_notes": [
+    "English hyphens preserve the source alignment, not inferred lexical segmentation.",
+    "Source putr at p592-l01-u01 differs from frequent put and is retained.",
+    "Uppercase/lowercase preserved at passage boundaries.",
+    "True stacked nasal marks are retained separately from ĕ/ŏ breves and simple macrons.",
+    "No POS/person/number tags inferred merely from English translation here; final structured grammar remains a subsequent review gate."
+  ],
+  "tsv_sha256": "4eae16aaeaaf50460320f87bd97325caa84483499be1d16682ffddfbcf9c2f59",
+  "raw_alignment_sha256": "99696ab2fcaaad24464e2bf58efafa5ab9e1ffe50c294bd2e500734f45d87ae4",
+  "render_method": "Existing full-page images plus bounded 300–450 dpi source crops; one reused disposable active crop.",
+  "own_review": "All 42 aligned lines reread against rendered source; source-specific long vowels, breves, retroflex underdots and nasal marks checked with higher resolution for ambiguous areas. Independent fresh audit still required.",
+  "validation": {
+    "unique_attestation_keys": 343,
+    "nonempty_form_gloss_pairs": 343,
+    "contiguous_aligned_unit_numbers": true
+  }
+}

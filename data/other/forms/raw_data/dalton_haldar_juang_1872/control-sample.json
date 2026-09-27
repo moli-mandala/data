@@ -1,0 +1,48 @@
+{
+  "purpose": "Verbatim checks of bounded comparison-control cells; all eight controls' presence/blank status is audited for every one of the 42 p. 236 prompts, and no control forms are installed",
+  "control_order": ["Mundari", "Santal", "Korwa", "Kharia", "Ho", "Kuri/Muasi", "Talain/Mon", "Khasi"],
+  "sampled_rows": [
+    {
+      "row": 6,
+      "prompt": "Ear",
+      "juanga_target": "lutur",
+      "controls": {
+        "Mundari": "lutur",
+        "Santal": "lutur",
+        "Korwa": "luturmi",
+        "Kharia": "lutur",
+        "Ho": "lutur",
+        "Kuri/Muasi": "lutar",
+        "Talain/Mon": "khato",
+        "Khasi": "ka shkor"
+      }
+    },
+    {
+      "row": 30,
+      "prompt": "Sun",
+      "juanga_target": "belá",
+      "controls": {
+        "Mundari": "singi",
+        "Santal": "singchándo",
+        "Korwa": "beru",
+        "Kharia": "bero",
+        "Ho": "singi",
+        "Kuri/Muasi": "gomoi",
+        "Talain/Mon": "tangway",
+        "Khasi": "ka sngi"
+      }
+    },
+    {
+      "row": 9,
+      "prompt": "Tongue",
+      "juanga_target": "eláng",
+      "controls_blank": ["Kuri/Muasi", "Talain/Mon"]
+    },
+    {
+      "row": 41,
+      "prompt": "Duck",
+      "juanga_target": "huns (s.)",
+      "controls_blank": ["Korwa", "Kuri/Muasi", "Talain/Mon"]
+    }
+  ]
+}

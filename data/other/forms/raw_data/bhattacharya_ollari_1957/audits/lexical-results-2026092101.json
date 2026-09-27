@@ -1,0 +1,144 @@
+{
+  "sample_file": "lexical-sample-2026092101.json",
+  "sample_sha256": "5db81ccc0605ca89834064bea604e2574ff1a2cb91827be7096a68939165c128",
+  "seed": 2026092101,
+  "scope": "Lexical headwords, glosses, POS/gender, printed inflections and lexical display conversion. Excludes comparative prose and compiled graph.",
+  "status": "lexical-sample-reviewed; not final ingestion audit",
+  "physical_records_reviewed": 20,
+  "preview_rows_reviewed": 27,
+  "material_lexical_errors": 0,
+  "checks": [
+    "source headword and diacritics",
+    "lexical gloss",
+    "printed POS and gender",
+    "printed inflection and alternate expansion",
+    "source spelling versus display conversion"
+  ],
+  "results": [
+    {
+      "sample_number": 1,
+      "entry_key": "ollari1957:p51:c2:y1984",
+      "outcome": "pass",
+      "note": "Both printed alternatives and feminine/neuter label retained; lexical gloss remains one."
+    },
+    {
+      "sample_number": 2,
+      "entry_key": "ollari1957:p64:c2:y1875",
+      "outcome": "pass",
+      "note": "Printed lexical content agrees with preview; comparison content outside this audit scope."
+    },
+    {
+      "sample_number": 3,
+      "entry_key": "ollari1957:p56:c1:y3955",
+      "outcome": "pass",
+      "note": "Printed lexical content agrees with preview; comparison content outside this audit scope."
+    },
+    {
+      "sample_number": 4,
+      "entry_key": "ollari1957:p75:c2:y3271",
+      "outcome": "pass",
+      "note": "Printed lexical content agrees with preview; comparison content outside this audit scope."
+    },
+    {
+      "sample_number": 5,
+      "entry_key": "ollari1957:p51:c2:y2634",
+      "outcome": "pass",
+      "note": "Printed lexical content agrees with preview; comparison content outside this audit scope."
+    },
+    {
+      "sample_number": 6,
+      "entry_key": "ollari1957:p68:c2:y3784",
+      "outcome": "pass",
+      "note": "Printed lexical content agrees with preview; comparison content outside this audit scope."
+    },
+    {
+      "sample_number": 7,
+      "entry_key": "ollari1957:p49:c1:y1717",
+      "outcome": "pass",
+      "note": "Printed lexical content agrees with preview; comparison content outside this audit scope."
+    },
+    {
+      "sample_number": 8,
+      "entry_key": "ollari1957:p59:c1:y1600",
+      "outcome": "pass",
+      "note": "Printed kopergul is a full plural, not concatenated from kopre."
+    },
+    {
+      "sample_number": 9,
+      "entry_key": "ollari1957:p75:c1:y4051",
+      "outcome": "pass",
+      "note": "Printed lexical content agrees with preview; comparison content outside this audit scope."
+    },
+    {
+      "sample_number": 10,
+      "entry_key": "ollari1957:p67:c2:y1738",
+      "outcome": "pass",
+      "note": "Printed lexical content agrees with preview; comparison content outside this audit scope."
+    },
+    {
+      "sample_number": 11,
+      "entry_key": "ollari1957:p66:c1:y4396",
+      "outcome": "pass",
+      "note": "Printed lexical content agrees with preview; comparison content outside this audit scope."
+    },
+    {
+      "sample_number": 12,
+      "entry_key": "ollari1957:p56:c1:y246",
+      "outcome": "pass",
+      "note": "Parenthesized nīr is usage context; not a headword alternative."
+    },
+    {
+      "sample_number": 13,
+      "entry_key": "ollari1957:p75:c1:y3830",
+      "outcome": "pass",
+      "note": "Causative label and the plain d contrast are retained in both verb stems."
+    },
+    {
+      "sample_number": 14,
+      "entry_key": "ollari1957:p54:c1:y2996",
+      "outcome": "pass",
+      "note": "Overdot on N is visible; converted ŋ and suffix -til retained."
+    },
+    {
+      "sample_number": 15,
+      "entry_key": "ollari1957:p67:c2:y1108",
+      "outcome": "pass",
+      "note": "Printed puṛgul correctly replaces the singular stem shape."
+    },
+    {
+      "sample_number": 16,
+      "entry_key": "ollari1957:p63:c1:y1863",
+      "outcome": "pass",
+      "note": "Month definition matches; festival explanatory prose remains in the record audit and needs sidecar review."
+    },
+    {
+      "sample_number": 17,
+      "entry_key": "ollari1957:p70:c2:y542",
+      "outcome": "pass",
+      "note": "Printed lexical content agrees with preview; comparison content outside this audit scope."
+    },
+    {
+      "sample_number": 18,
+      "entry_key": "ollari1957:p59:c2:y1229",
+      "outcome": "pass",
+      "note": "Printed lexical content agrees with preview; comparison content outside this audit scope."
+    },
+    {
+      "sample_number": 19,
+      "entry_key": "ollari1957:p62:c2:y2305",
+      "outcome": "pass",
+      "note": "Retroflex ṛ and the printed -kul plural retained."
+    },
+    {
+      "sample_number": 20,
+      "entry_key": "ollari1957:p64:c1:y229",
+      "outcome": "pass",
+      "note": "Printed lexical content agrees with preview; comparison content outside this audit scope."
+    }
+  ],
+  "remaining_gates": [
+    "Full comparison/prose preservation and source-reference audit",
+    "Final compiled graph and row survival checks",
+    "Fresh final audit after remaining importer changes"
+  ]
+}

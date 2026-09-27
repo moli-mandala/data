@@ -101,3 +101,18 @@ entries.
 The row count exceeds the article count because a source article may cite
 multiple DEDR targets and/or print alternate head forms. Layout-only title and
 blank pages are excluded before article accounting.
+
+## User-directed audit waiver (2026-09-26 recording)
+
+After the complete structural inventory, the user explicitly declined the
+requested additional distributed page-image audit: “noo need to audit that”.
+That audit is waived, not passed. No further original-PDF acquisition or image
+review is scheduled. The existing 20-article calibration remains the only
+image-backed acceptance evidence; all 9,973 provisional articles retain their
+typed transcription-review state and uncertainty tags. This direction changes
+neither source transcriptions nor the recorded structural counts.
+
+The source-wide structural report and page-indexed review queue remain as
+evidence and optional future review aids. Complete pipeline, compiled graph,
+identity, reference-output and browser verification are not newly claimed;
+builds remain deferred under the user's explicit no-build instruction.

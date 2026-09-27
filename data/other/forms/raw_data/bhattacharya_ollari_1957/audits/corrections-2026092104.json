@@ -1,0 +1,67 @@
+{
+  "reason": "Fresh acceptance audit found two comparative transcription errors.",
+  "corrections": [
+    {
+      "entry_key": "ollari1957:p71:c1:y3634",
+      "before": {
+        "entry_key": "ollari1957:p71:c1:y3634",
+        "source_head": "MĀL",
+        "status": "visually-transcribed-prose",
+        "passages": [
+          {
+            "position": 1,
+            "kind": "comparison",
+            "text": "Pj. mēl ‘wine’; cf. Burushaski mel ‘wine’"
+          }
+        ],
+        "comparison_endpoint_status": "unresolved; no graph edges emitted"
+      },
+      "after": {
+        "entry_key": "ollari1957:p71:c1:y3634",
+        "source_head": "MĀL",
+        "status": "visually-transcribed-prose",
+        "passages": [
+          {
+            "position": 1,
+            "kind": "comparison",
+            "text": "Pj. mēl ‘wine’; cf. Burushaski mɛl ‘wine’"
+          }
+        ],
+        "comparison_endpoint_status": "unresolved; no graph edges emitted"
+      },
+      "before_sha256": "963cbf9516af9f52ee3eec49d6e7fa5e4b81530bfb14270d049efd3bc123c581",
+      "after_sha256": "7c57aefdd7a012d481418fa326adeda61d1a680de4281d14f6b7703327b8446e"
+    },
+    {
+      "entry_key": "ollari1957:p60:c2:y2009",
+      "before": {
+        "entry_key": "ollari1957:p60:c2:y2009",
+        "source_head": "JUM",
+        "status": "visually-transcribed-prose",
+        "passages": [
+          {
+            "position": 1,
+            "kind": "comparison",
+            "text": "Ta. cem ‘red’, cē ‘to redden’, Ka. cevu ‘redness’, Tu. kem ‘red’, Te. kempu, cennu ‘redness’, Pj. key ‘red’, Kur. khē·so, Malt. qēso, Brah. khisun ‘id.’"
+          }
+        ],
+        "comparison_endpoint_status": "unresolved; no graph edges emitted"
+      },
+      "after": {
+        "entry_key": "ollari1957:p60:c2:y2009",
+        "source_head": "JUM",
+        "status": "visually-transcribed-prose",
+        "passages": [
+          {
+            "position": 1,
+            "kind": "comparison",
+            "text": "Ta. cem ‘red’, cē ‘to redden’, Ka. cevu ‘redness’, Tu. kem ‘red’, Te. kempu, cennu ‘redness’, Pj. key ‘red’, Kur. khē·so, Malt. qēso, Brah. khīsun ‘id.’"
+          }
+        ],
+        "comparison_endpoint_status": "unresolved; no graph edges emitted"
+      },
+      "before_sha256": "6243663f9186525c8d87430f831b56ecf0204a05a2141421cf4ef3fc8f4e12d0",
+      "after_sha256": "2ff1267b86189e5f333c2e366f9e81e59ac8d05327b9a3e4098454cf2078e368"
+    }
+  ]
+}

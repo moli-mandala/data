@@ -1,0 +1,46 @@
+{
+  "status": "repaired",
+  "cause": "Stale hard-coded proposal override retained a tentative lengthening after the root review rejected it.",
+  "repair": "Removed override; generator now loads the adjudicated no-change record and asserts legacy input equals the accepted form. Regression test derives expected form from that source review.",
+  "delta": [
+    {
+      "key": "hahn1900asur:p160:s18:16",
+      "before": [
+        "Asuri",
+        "",
+        "iŋā dāimiŋ",
+        "my mother's sister",
+        "",
+        "",
+        "",
+        "hahn1900asur[p. 160, section 18, item 16]",
+        "",
+        "",
+        "hahn1900asur:p160:s18:16",
+        "",
+        "",
+        "",
+        "dialect:Asuri:hahn-1900-asur-dukma:Asur%20Dukma%20%28Hahn%201900%29 noun kinship poss multiword-expression"
+      ],
+      "after": [
+        "Asuri",
+        "",
+        "iŋā daimiŋ",
+        "my mother's sister",
+        "",
+        "",
+        "",
+        "hahn1900asur[p. 160, section 18, item 16]",
+        "",
+        "",
+        "hahn1900asur:p160:s18:16",
+        "",
+        "",
+        "",
+        "dialect:Asuri:hahn-1900-asur-dukma:Asur%20Dukma%20%28Hahn%201900%29 noun kinship poss multiword-expression"
+      ]
+    }
+  ],
+  "validation": "10 focused tests and actual generic parsing of all 835 rows pass.",
+  "canonical_modified": false
+}

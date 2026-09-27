@@ -1,7 +1,7 @@
 # Source ingestion checklist — 20260810-tulpule-old-marathi
 
 - Installed input: `data/other/forms/20260810-tulpule-old-marathi.csv`
-- Canonical checklist SHA-256: `23516ba5c7caeaa5310f6a32d92b86e4b9ae5e4479e792926b61dd0689129f05`
+- Canonical checklist SHA-256: `85e38ca842519c4b80ff58ab75d3882865b688dbe866041805b8c4f4c9163201`
 - Source-type addenda: Etymological/comparative source
 - Installed rows: 4718
 - Compiled rows carrying this unit's citation keys: 4718
@@ -10,6 +10,8 @@
 - Source keys: tulpule1999
 
 ## Retrospective gate assessment
+
+Historical PASS markers below are retrospective evidence, not certification of the current release. Current release validation is recorded in [the release evidence](../../tmp/release-20260926/), including compiled-source-verification.json; pending browser checks remain pending until independently recorded.
 
 - [x] 1. Establish the source and scope — source keys: tulpule1999; 4718 installed records
 - [x] 2. Choose the extraction path — importer/raw route: data/other/forms/raw_data/southworth_marathi.py, data/other/forms/raw_data/tulpule.py
@@ -23,8 +25,8 @@
 - [x] 10. Produce a complete audit trail — audit: source_checklists/installed-record-audit.csv.gz
 - [x] 11. Add focused regression tests — tests: tests/test_southworth_marathi.py, tests/test_tulpule.py, tests/test_source_checklists.py
 - [ ] 12. Install and run the full data pipeline — pending final repository-wide make all and full-suite validation for this review
-- [x] 13. Browser database refresh and inspection (user-triggered) — deferred by standing policy; refresh and browser QA run only when the user requests them
-- [x] 14. Document, review, and ship only when requested — this source-specific checklist is the durable review record; shipping is not requested
+- [ ] 13. Browser database refresh and inspection (user-triggered) — browser database refresh and QA are not yet recorded for this source; release completion requires current validation evidence
+- [x] 14. Document, review, and ship only when requested — this source-specific checklist is the durable review record; publication status and release evidence are recorded separately
 
 ## Review summary
 
@@ -32,7 +34,7 @@
 - Exclusions: none detected in the installed input; any source-side exclusions remain in the linked importer/audit.
 - Unresolved cases: none detected.
 - Transcription: `conversion/house.txt`.
-- Validation: full data validation is recorded centrally in `source_checklists/VALIDATION.md`; browser refresh is user-triggered.
+- Validation: full data and browser validation evidence is recorded centrally in `source_checklists/VALIDATION.md`.
 - Representative app entries: recorded centrally in `source_checklists/VALIDATION.md`.
 
 ## Filled checklist copy
@@ -81,7 +83,7 @@ Before calling an ingest complete, all of these should be true:
       while protecting same-lect homonyms and source-defined distinct records.
 - [ ] Focused importer tests, registry/profile tests, the complete data build, and the full test
       suite pass.
-- [x] When the user requests a browser-database refresh, it builds, passes its integrity/size
+- [ ] When the user requests a browser-database refresh, it builds, passes its integrity/size
       checks, and representative entry, language, dialect, reference, search, and concept views
       have been inspected. Routine source ingestion does not rebuild the browser database.
 - [x] The final handoff reports counts, exclusions, unresolved cases, transcription decisions,
@@ -223,6 +225,16 @@ These defaults are intentional and apply unless a source-specific review records
 
 ## 5. Emit the rich import schema
 
+- [x] **Required:** create the source's settings file `data/other/forms/<stem>.yaml` beside the CSV
+  (schema in `source_meta.py`). Every per-source decision the pipeline needs lives there, never as
+  a new `if source_key == …` branch: transcription profile and conversion (`transcription`), whether
+  rows dedupe by `Entry_Key` (`identity.dedupe_by_entry_key`), whether commas are notation rather
+  than alternates (`forms.split_alternates`), excluded control languages
+  (`forms.exclude_languages`), gloss handling (`gloss`), audit-only Notes (`notes.audit_only`),
+  and reference metadata (`reference.editor`, `reference.ocr`,
+  `reference.etymology_provenance`). Declare each citation key under `sources:` exactly once
+  repo-wide. Validate with `uv run python source_meta.py`.
+
 Prefer the 15-column source CSV even when many fields are blank. It is headerless and ordered as:
 
 1. `Language_ID`
@@ -301,6 +313,9 @@ is retained as an `unlinked` node.
 
 ## 7. Build and verify the sound profile
 
+- [x] Route the source to its profile in the YAML settings file (`transcription: {profile: …}`
+  under the citation key, or under `defaults` for the whole file), not in `make_cldf.py`.
+
 - [x] Read the source's orthography/transcription description before mapping symbols.
 - [x] Inventory every grapheme/cluster actually present in the source, including decomposed
   combining sequences, punctuation, boundary marks, stress/tone, length, superscript homonym
@@ -366,8 +381,16 @@ is retained as an `unlinked` node.
   among rows created by the same rich importer. Ensure every referenced key exists.
 - [x] Keep source free-text etymology even when a graph edge is created; the edge captures the
   relation, while the prose preserves the author's reasoning and caveats.
-- [x] Put later/manual decisions in `data/etymology-assignments.csv`, keyed by persistent form ID,
-  rather than hard-coding unstable generated IDs into an importer.
+- [x] Put later/manual decisions in the source's own etymology sidecar,
+  `data/other/forms/etymologies/<source>.csv`, keyed by persistent form ID, rather than
+  hard-coding unstable generated IDs into an importer. A hand-maintained source CSV may instead
+  carry the etymon directly in `Parameter_ID`; a CSV regenerated by an importer must use the
+  sidecar, or the edit is lost on the next regeneration. Write sidecars through
+  `etymology_assignments.write_assignments(rows, SidecarResolver())` and confirm placement with
+  `uv run python etymology_assignments.py check`.
+- [x] Save research-pass decisions with `make check-pass` then `make save-pass`
+  (`DECISIONS=<json> PASS=<name> NOTE="…"`), never a bespoke save script; the helper validates
+  against the compiled graph and writes the sidecars and per-language batch manifests.
 - [x] Verify accepted rank-1 and alternate/rejected hypotheses against `cldf/edges.csv` after the
   full build. Variants point to their true source target; the effective etymon is reached
   transitively.
@@ -477,11 +500,11 @@ comparison text must not become ancestry.
 
 ## 13. Browser database refresh and inspection (user-triggered)
 
-- [x] Do not rebuild, stage, or serve the browser database during routine ingestion. The user
+- [ ] Do not rebuild, stage, or serve the browser database during routine ingestion. The user
       decides when to pay the cost of refreshing it.
-- [x] When the user explicitly requests a refresh, use the browser project's documented build
+- [ ] When the user explicitly requests a refresh, use the browser project's documented build
       workflow and confirm its SQLite integrity and compact-database size guards pass.
-- [x] After a requested refresh, inspect representative pages in the app:
+- [ ] After a requested refresh, inspect representative pages in the app:
   - one ordinary entry;
   - a linked etymon/reflex or borrowing;
   - an unlinked entry;
@@ -490,9 +513,9 @@ comparison text must not become ancestry.
   - the source's reference page and locator display;
   - grammatical/register/dialect tag rendering and filtering;
   - source search and concept membership/counts.
-- [x] After a requested refresh, inspect at least one example that combines several ingestion
+- [ ] After a requested refresh, inspect at least one example that combines several ingestion
       features; record it in the handoff so another person can verify the work quickly.
-- [x] After a requested refresh, check that independently sourced, identical unlinked forms merge across dialects and
+- [ ] After a requested refresh, check that independently sourced, identical unlinked forms merge across dialects and
   bibliographic sources when canonical language and complete lexical analysis agree. All source
   attestations, citations, dialect tags, and ID aliases must be retained; same-lect homonyms and
   source-defined distinct senses/records must remain distinguishable.

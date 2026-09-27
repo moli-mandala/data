@@ -1,0 +1,30 @@
+{
+  "status": "pass_source_stage",
+  "reviewer": "root",
+  "canonical_hashes": {
+    "proposal.csv": "46ec977942039e718942da333bd4d3373862eacffd18d5ac717e3f4dd5b8af31",
+    "proposal-audit.jsonl": "a8db786277824de9fda97f13688a744dce1e7fe3f924689b1fb667caf3238d28",
+    "proposal-profile.txt": "3f72caff77f6fae86576f3a76973309b9fb1bc4ecc4279ef7920be6591671b05"
+  },
+  "installed_rows": 1170,
+  "audit_units": 1346,
+  "audit_statuses": {
+    "ingested": 1024,
+    "excluded_control": 78,
+    "bound_morphology_evidence": 15,
+    "source_blank": 3,
+    "reused_exact_attestation": 223,
+    "reused_grouped_expression": 1,
+    "native_alignment_hold": 2
+  },
+  "native_rows": 601,
+  "identity_sha256_unchanged": "5ec2588f97a569cc7a1de68f59474c03612fa7a4266582be61d70dca29efcfc9",
+  "independent_visual_audit": "independent-full-audit-20260926-pass2.json: 0/20 material errors",
+  "focused_validation": "Root ran 7 staging tests: all passed. Installation owner ran 10 installed/staging tests and saved postinstall-verification-20260926.json; root inspected report and independently verified canonical hashes and unchanged identity state.",
+  "deferred": [
+    "Full CLDF pipeline",
+    "compiled graph, references, aliases and identity checks",
+    "full suite",
+    "browser refresh not requested"
+  ]
+}

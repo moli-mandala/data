@@ -1,0 +1,21 @@
+file: 20260921-das-yerava.csv
+defaults:
+  transcription:
+    convert: false
+  identity:
+    legacy_ids: stem
+    append_order: 33
+  importer:
+    commands:
+      - [data/other/forms/raw_data/das_yerava_1987/import_source.py, --install]
+    note: Popular source spelling preserved; no supported phonemic conversion.
+sources:
+  das1987yerava:
+    identity:
+      dedupe_by_entry_key: true
+    forms:
+      split_alternates: false
+    reference:
+      editor: Aryaman Arora; OpenAI Codex
+      ocr: true
+      etymology_provenance: none

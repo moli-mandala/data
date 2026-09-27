@@ -1,0 +1,12 @@
+file: 20260925-grierson-sikalgari.csv
+defaults:
+  transcription:
+    profile: grierson-sikalgari-1922
+    preserve_hyphens: true
+  identity:
+    legacy_ids: stem
+    append_order: 45
+  importer:
+    commands:
+      - [data/other/forms/raw_data/grierson_sikalgari_1922/import_source.py, --install]
+    note: Complete Sikalgari (Belgaum) source, printed167-174 and all241 standard-list prompts181-213;790 audited units yield633 rows with157 exact reuses preserving citations, all82 legacykeys retained. Source PDF is optional for deterministic regeneration but required for visual audit.

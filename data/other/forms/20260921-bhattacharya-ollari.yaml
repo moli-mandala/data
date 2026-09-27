@@ -1,0 +1,23 @@
+file: 20260921-bhattacharya-ollari.csv
+defaults:
+  transcription:
+    profile: bhattacharya-ollari
+    input: phonemic
+    preserve_hyphens: true
+  identity:
+    legacy_ids: stem
+    append_order: 32
+  importer:
+    commands:
+    - - data/other/forms/raw_data/bhattacharya_ollari_1957/import_source.py
+      - --install
+sources:
+  bhattacharya1957ollari:
+    identity:
+      dedupe_by_entry_key: true
+    forms:
+      split_alternates: false
+    reference:
+      editor: Aryaman Arora; OpenAI Codex
+      ocr: true
+      etymology_provenance: source

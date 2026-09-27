@@ -1,0 +1,17 @@
+file: 20260925-kuriakose-muduga-numerals.csv
+defaults:
+  transcription:
+    profile: kuriakose-muduga-2018
+    preserve_hyphens: true
+  identity:
+    legacy_ids: stem
+    append_order: 99
+  importer:
+    commands:
+      - [data/other/forms/raw_data/kuriakose_muduga_2018/import_source.py, --install]
+    note: Kuriakose and Daniel's 2018 Muduga numeral table in immutable CC-BY Chan archive.
+sources:
+  kuriakose2018muduga:
+    reference:
+      editor: OpenAI Codex
+      ocr: false

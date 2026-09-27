@@ -1,0 +1,20 @@
+file: 20260925-hislop-kuri-muasi.csv
+defaults:
+  transcription:
+    profile: hislop-kuri-muasi-1866
+    input: form
+  identity:
+    legacy_ids: stem
+    append_order: 89
+    dedupe_by_entry_key: true
+  forms:
+    split_alternates: false
+  importer:
+    commands:
+      - [data/other/forms/raw_data/hislop_kuri_muasi_1866/import_source.py, --install]
+    note: Full main Kuri/Muasi column pp.1–43, five-collector comparison and Essay p.27 comparative forms; damaged readings remain explicit audit holds.
+sources:
+  hislop1866papers:
+    reference:
+      editor: OpenAI Codex
+      ocr: false

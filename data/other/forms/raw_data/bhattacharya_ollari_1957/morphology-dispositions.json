@@ -1,0 +1,25 @@
+{
+  "source_id": "bhattacharya1957ollari",
+  "scan_sha256": "a9e1360d514f337e6b55f8bbebc9a6935bc61bc4072ebef1bd06ee458cff3a6e",
+  "method": "Visual cross-check of printed grammar pp. 18–21 against vocabulary annotations; retain unresolved scope without generating unattested full forms.",
+  "decisions": [
+    {
+      "entry_key": "ollari1957:p49:c2:y4059",
+      "annotation_index": 1,
+      "annotation": {"kind": "suffix", "label": "pl.", "raw": "-v"},
+      "candidate_bases": ["āya", "aya"],
+      "disposition": "retain-unexpanded",
+      "evidence": "Printed p. 18 §13(ii) gives tam-aya ‘their mother’ : tam-aya-v. This supports short aya in a possessed expression, but does not explicitly supply the independent plural or establish the scope of p. 49 -v across āya and aya.",
+      "decision": "Retain both printed headword forms and the plural suffix annotation. Do not emit āyav or ayav from this ambiguous annotation. The compound grammar example remains supporting evidence, not a new vocabulary entry."
+    },
+    {
+      "entry_key": "ollari1957:p70:c2:y2780",
+      "annotation_index": 1,
+      "annotation": {"kind": "suffix", "label": "pl.", "raw": "-kil"},
+      "candidate_bases": ["mar", "marin"],
+      "disposition": "retain-unexpanded",
+      "evidence": "Printed p. 18 §13(vi) illustrates -kil after consonants, without choosing mar or marin. Printed p. 20 §15 says the nominative usually supplies the plural base; p. 21 §17(b) concerns case suffixes. These general rules do not resolve the vocabulary's alternative stems.",
+      "decision": "Retain mar and marin and the printed -kil annotation. Do not select a base or generate both markil and marinkil without specific evidence."
+    }
+  ]
+}

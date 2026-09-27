@@ -1,0 +1,88 @@
+{
+  "status": "201 source rows installed; compiled/database gates deferred by user",
+  "source_key_proposed": "rebbavarapu2013pattapu",
+  "title": "Request for Change to ISO639-3 Language Code:2013-020, Pattapu",
+  "request_author": "Ruth Rebbavarapu",
+  "request_date": "2013-07-19",
+  "fieldwork_date": "2013-04-02",
+  "fieldwork_researcher_as_printed": "G Sudheer",
+  "official_url": "https://iso639-3.sil.org/sites/iso639-3/files/change_requests/2013/2013-020.pdf",
+  "acquired_date": "2026-09-22",
+  "pdf_sha256": "bc16114164909100ddb2ccfd414fcb5e55aa3c1db1fca39883dd6d770acd03e3",
+  "pdf_pages": 9,
+  "scope": "Numbered210-item Pattapu wordlist on PDF/printed6–8; request forms1–5 and final page9 are provenance/nonlexical material.",
+  "source_cells": 210,
+  "page_counts": {
+    "6": 87,
+    "7": 112,
+    "8": 11
+  },
+  "canonical_language": "Pattapu",
+  "locality": "Ethamukkala, Kotthapatnam tahsil, Prakasam district, Andhra Pradesh; spelling retained from source",
+  "coordinates": "Not assigned",
+  "source_relationship": {
+    "installed_related_source": "lindgren2023dravidian",
+    "installed_rows": 101,
+    "evidence": "Lindgren thesis PDF28/printed27, Table4: L_Pattapu cites IRA(2013). Current TSV F_Pattapu records are attributed generically to Lindgren2023.",
+    "decision": "Retain primary and derivative transcriptions/analyses with explicit shared fieldwork provenance; no inferred primary cognate claims. Eight existing derivative rows annotated uncertain with source-comparison notes; identities and source readings unchanged.",
+    "overlap_audit": "lindgren-overlap-review.jsonl: all101 existing rows mapped to candidate primary prompts, review-only; existing rows unchanged"
+  },
+  "extraction": "Native column extraction with full-page footer boundary; 15 false-space glyphs repaired from embedded font. Original flawed extraction retained in text-scaffold.jsonl; current recovered scaffold and all210 visual comparisons retained separately. No OCR.",
+  "checklist_addenda": [
+    "Survey wordlists or comparative tables"
+  ],
+  "licence": "No open licence identified; form explicitly says completed request becomes public record. Extract lexical facts with citation; do not redistribute PDF or personal contact data.",
+  "remaining": [
+    "Ten unresolved transcriptions remain withheld in audit",
+    "Full CLDF build, compiled identity/graph/reference validation and full suite deferred until authorized",
+    "Browser database refresh and app QA require explicit user request"
+  ],
+  "user_deferred": [
+    "Remote execution",
+    "Full data/database builds",
+    "Full compiled validation and browser refresh"
+  ],
+  "font_recovery": {
+    "file": "font-recovery.json",
+    "mechanism": "Embedded-font Unicode cmap repairs15 glyph IDs falsely mapped to space in PDF ToUnicode",
+    "unresolved_cid": "1345",
+    "unresolved_items": [
+      81,
+      89,
+      121,
+      129,
+      142,
+      155,
+      178,
+      179,
+      189
+    ],
+    "visual_finding": "CID1345 is a visible overhead arc near affricates; inspected crops but exact Unicode identity and attachment are not yet established. Remains U+E000, never an accepted form."
+  },
+  "visual_review": {
+    "cells": 210,
+    "file": "visual-review.jsonl",
+    "scope": "Glyph comparison only; profile/meaning/overlap acceptance remains separate",
+    "statuses": {
+      "glyphs-compared-with-render": 199,
+      "unresolved-glyph": 9,
+      "transcription-review": 1,
+      "source-unanswered": 1
+    }
+  },
+  "focused_checks": "19 source tests passed (compiled test deselected);13 profile/registry tests passed including8 overlapping Pattapu tests:24 distinct checks. Metadata CLI passes;201 actual source-row conversions.",
+  "draft": {
+    "importer": "import_source.py",
+    "summary": "draft-summary.json",
+    "symbols": "symbol-inventory.json",
+    "rows": 201,
+    "prompts": 199,
+    "unanswered": 1,
+    "withheld_transcription": 10,
+    "additional_prompts_outside_existing_selection": 104,
+    "profile": "pattapu-iso.txt; conservative conversion with4typed tie-placement uncertainties",
+    "settings": "Installed data/other/forms/20260922-pattapu-iso.yaml",
+    "bibliography": "Registered rebbavarapu2013pattapu in cldf/sources.bib; parsed/formatted",
+    "dialect": "Registered pattapu_ethamukkala under Pattapu; coordinates blank"
+  }
+}

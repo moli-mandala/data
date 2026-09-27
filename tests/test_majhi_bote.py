@@ -40,10 +40,10 @@ def test_majhi_bote_lects_are_registered_to_the_correct_language():
 def test_majhi_bote_profile_converts_ipa_and_covers_every_form():
     profile = Tokenizer(DATA_DIR / "conversion/majhi-bote.txt")
     cases = {
-        "tʃʰati": "cʰati",
+        "tʃʰati": "cʰāti",
         "dʒʲu": "jʸu",
-        "bɛʈɛk": "beṭek",
-        "ʌnaɾ": "anar",
+        "bɛʈɛk": "bɛṭɛk",
+        "ʌnaɾ": "anār",
     }
     for source, expected in cases.items():
         converted = profile(unicodedata.normalize("NFC", source), column="IPA")

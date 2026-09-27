@@ -106,7 +106,7 @@ def test_profile_covers_every_form_and_preserves_distinctions():
     assert convert('ċĩĩt')=='ʦī̃t'
     assert convert('ɡaṭ−aw−a−ee')=='gaṭ-av-a-ē'
     assert convert('ẉi−i')=='ɻi-i'
-    assert convert('žǎn žân')=='žǎn žân'
+    assert convert('žǎn žân')=='źǎn źân'
     assert convert('mãã−Ø')=='mā̃-Ø'
     assert convert('ba.loy')=='ba.loy'
     assert convert('uu oo')=='ū ō'

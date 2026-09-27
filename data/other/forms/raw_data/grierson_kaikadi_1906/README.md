@@ -1,0 +1,15 @@
+# Grierson1906 Kaikadi: complete source-stage recovery
+
+The source inputs now account for the complete Kaikadi chapter on pp.333–342, all four interlinear specimens, all241 Sholapur comparison-table prompts including22 full sentences, and eight explicit Kaikadi evidence units elsewhere in the volume. Eight later Addenda Minora IV correction scopes are represented as a separately cited, undated bound-in witness. Source-stage completion does not mean the deferred database/full-build gates have run.
+
+The1,087 audited units produce841 installed rows from1,051 candidate forms, with210 exact repeated attestations reusing keys and retaining all citations. All164 old Entry_Keys survive. Seventeen source cells are genuinely blank;30 comparison/bound-morphology units and4 later editorial scopes remain audit-only. All40 formerly held table cells and all22 formerly excluded sentence answers were recovered. Four later corrected dog/bitch attestations coexist with the explicitly identified original-edition readings.
+
+Two narrow uncertainties remain: l/ḷ in specimen chāḷkē is provisionally retained and tagged uncertain; the later #95 vowel mark cannot distinguish ā/ă and is audit-only, without a guessed corrected row. The later addendum's precise publication identity/date is unverified, so it is not dated1906 by assumption.
+
+Kaikadi retains canonical identity kaik1244. Explicit Sholapur, Akola, Buldana, Ahmednagar, Kolaba, Aundh, Ramdrug, Berar and Ellichpur source attributions are registered as nine dialect routes; no speaker coordinates are invented. Buldana's narrower Melkapur Taluka attribution stays in Notes. General grammatical examples remain unassigned to a district.
+
+`import_source.py --install` delegates to the approval-gated installer. It verifies final CSV/audit/profile/YAML/Bib/dialect hashes and the reviewed-input manifest, checks complete independent key coverage, and proves each correction was reconciled. Immutable pilot, first readings, owner readings and failed/corrective evidence remain available. `prepare_proposal.py` regenerates the complete reviewed staging; it does not install.
+
+All1,087 units have independent original-image coverage. The final seeded20 sample passed20/20 with zero material errors; all8 later addendum scopes also passed an independent edge review. Ten focused tests pass, including the actual installed parser for841 rows, literal profile, tags, graph closure, citation registration, nine dialects and stable legacy identities. Source metadata validation passes. No replacement symbols or guessed phonemic layer were introduced.
+
+See `FULL_SOURCE_REVIEW.md` for scope, scholarly qualifications and normalization policy, `final-freeze-20260926.json` for approved hashes, `independent-full-audit-20260926-pass1.json` for the fresh sample, and `SOURCE_CHECKLIST.md` for gates. Full CLDF/database generation, compiled identity/graph/reference verification, full suite and browser QA remain deferred by the user's explicit instructions. No commit, push or publication was performed.

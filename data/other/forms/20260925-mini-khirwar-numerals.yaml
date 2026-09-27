@@ -1,0 +1,18 @@
+file: 20260925-mini-khirwar-numerals.csv
+defaults:
+  transcription:
+    profile: mini-khirwar-numerals-2018
+    preserve_hyphens: true
+  identity:
+    legacy_ids: stem
+    dedupe_by_entry_key: true
+    append_order: 67
+  importer:
+    commands:
+      - [data/other/forms/raw_data/mini_khirwar_numerals_2018/import_source.py, --install]
+    note: Explicit Khirwar numerals in Suraj Mini's 2018 table; unclear spacing in items 5 and 50 held.
+sources:
+  mini2018khirwar:
+    reference:
+      editor: OpenAI Codex
+      ocr: false

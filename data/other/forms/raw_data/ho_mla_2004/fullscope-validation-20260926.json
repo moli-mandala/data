@@ -1,0 +1,38 @@
+{
+  "status": "complete_source_stage",
+  "proposal_sha256": "2ce9444da454e32b58f69a3815e6d1c26639330ea3ef0a6c94eb0c92b441855b",
+  "source_units": 1524,
+  "proposed_rows": 2146,
+  "excluded_units": 8,
+  "blank_gloss_rows": 36,
+  "variant_edges": 122,
+  "subsidiary_rows": 240,
+  "typed_uncertain_rows": 1423,
+  "validation": [
+    "25 focused/source-profile/dialect tests passed",
+    "2146 canonical rows scoped parse: zero errors",
+    "275 source settings /262 citation keys validated",
+    "122 variant targets and1 derivation target resolve locally",
+    "All91 legacy entry keys preserved",
+    "Installed output exactly matches independent clean20 hash"
+  ],
+  "deferred_by_user": [
+    "full CLDF/database build",
+    "full suite",
+    "compiled graph validation",
+    "browser QA"
+  ],
+  "not_applicable": [
+    "OCR/image audit (ASCII digital source)",
+    "new language registration (existing ho)",
+    "native-script or IPA invention"
+  ],
+  "independent_report_pending": false,
+  "derivation_edges": 1,
+  "independent_audit": {
+    "report": "independent-audit-20260926-pass10.json",
+    "seed": 2026092636,
+    "sample_size": 20,
+    "material_errors": 0
+  }
+}

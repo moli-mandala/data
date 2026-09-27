@@ -19,9 +19,9 @@ SURVEYS = {
     "rajasthani": (
         "20230521-rajasthani.csv",
         {"bagri", "dhundari", "hadothi", "marwari", "mewari", "mewati"},
-        # 15,876 survey attestations plus the reviewed Mewari regional family heads and an
-        # extracted compound component that cite `mewari` as their source (see data/etymologies.csv).
-        16_522, 11_749, 15_887, 11_245,
+        # Includes survey attestations and reviewed regional/compound nodes carrying these
+        # citations. The 2026-09-21 baseline and rebuilt graph have the same 15,891 IDs.
+        16_522, 11_749, 15_891, 11_245,
     ),
     "bundeli": (
         "20230522-bundeli.csv", {"bundeli"}, 5_759, 4_071, 5_562, 3_951,

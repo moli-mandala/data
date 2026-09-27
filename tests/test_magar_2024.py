@@ -52,9 +52,9 @@ def test_magar_2024_ipa_profile():
     profile = Tokenizer("conversion/magar-2024.txt")
     cases = {
         "dʒjæn": "jyæn",
-        "midzjan": "miʣyan",
-        "mitʃʰam": "micʰam",
-        "mita mitãhã̤": "mita mitãhã̤",
+        "midzjan": "miʣyān",
+        "mitʃʰam": "micʰām",
+        "mita mitãhã̤": "mitā mitā̃hā̤̃",
         "mik̚": "mik̚",
     }
     for source, expected in cases.items():

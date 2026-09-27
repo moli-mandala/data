@@ -70,10 +70,10 @@ def test_north_gorkha_profile_converts_ipa_and_covers_every_form():
     profile = Tokenizer(DATA_DIR / "conversion/north-gorkha.txt")
     cases = {
         "tʃʰee": "cʰee",
-        "dʒɛ": "je",
-        "ʈʰɹak": "ṭʰrak",
-        "n̪a": "n̪a",
-        "li̤:": "li̤ː",
+        "dʒɛ": "jɛ",
+        "ʈʰɹak": "ṭʰrāk",
+        "n̪a": "n̪ā",
+        "li̤:": "lī̤",
         "ki lo": "ki#lo",
     }
     for source, expected in cases.items():

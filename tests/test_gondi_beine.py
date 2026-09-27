@@ -161,16 +161,16 @@ def test_profile_maps_the_difficult_source_notation():
     assert convert("(hor)und̪ʒetol") == "(hor)unjetol"
     assert convert("boʈa") == "boṭa"
     assert convert("dʰoɖa") == "dʰoḍa"
-    assert convert("ʃɪɖ") == "śɪḍ"
-    assert convert("ɾoʒu") == "rožu"
+    assert convert("ʃɪɖ") == "śiḍ"
+    assert convert("ɾoʒu") == "roźu"
     assert convert("dʒʰunaɭ") == "jʰunaḷ"
-    assert convert("ɡʌɖːi") == "gʌḍḍi"          # a consonant plus length is a geminate
-    assert convert("nʌlːoʈʌ") == "nʌlloṭʌ"
-    assert convert("kaɾabaːt̪ʌ") == "karabātʌ"  # a vowel plus length takes a macron
-    # w/ʋ/v and j/y are one phoneme each in this transcription; vowel qualities are kept
-    assert convert("wat̪ʌ") == "vatʌ"
+    assert convert("ɡʌɖːi") == "gaḍḍi"          # a consonant plus length is a geminate
+    assert convert("nʌlːoʈʌ") == "nalloṭa"
+    assert convert("kaɾabaːt̪ʌ") == "karabāta"  # a vowel plus length takes a macron
+    # w/ʋ/v and j/y are one phoneme each in this transcription; ʌ and ə are the house short a
+    assert convert("wat̪ʌ") == "vata"
     assert convert("i̯awal") == "i̯aval"
-    assert convert("səri") == "səri"
+    assert convert("səri") == "sari"
     assert convert("mɛkra") == "mɛkra"
     # printed optional material, half-length and nasality survive conversion
     assert convert("(akˑi)ɡʰobi") == "(akˑi)gʰobi"

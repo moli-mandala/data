@@ -49,7 +49,7 @@ FROZEN_HASHES = {
     "staged_audit.tsv": "4bc5aa3bf41e79622494fea7426b6c77532ab4600c263a32179aa6c248b9c302",
     "unresolved_readings.tsv": "c3ab989d0d9d0403d4f60c2edab6ecd5276b8ab583da2536d042752467a18f6c",
     "list_registry.tsv": "635b57460fb9b5a6fa682941ae39a857ef26542271c6e73bf5cbeb7c3631dc62",
-    "conversion_profile.tsv": "b0bca6f983bbcf87dc43769c804ae02a73db45d58fad1e86f975fb8b9f7456ce",
+    "conversion_profile.tsv": "0bad99e5f48d262be3484d5895c7435579420ad7f83cd3c4fa2374227e527c94",
 }
 PDF_HASH = "edeeeda98cb76624df1a0d70c765cc816ea463d75bc79ec20883c62e6fc1c482"
 NOIRA_RECONCILIATION_HASH = "fe0a636c70a7979921b7f5f107a84a7279a1654f24a9aeb964a1be26f0960ee1"
@@ -149,6 +149,31 @@ def build_render_hash_rows() -> list[dict[str, str | int]]:
         })
     if len(rows) != 234:
         raise ValueError(f"Expected 234 current render artifacts, found {len(rows)}")
+    return rows
+
+
+def retained_render_hash_rows() -> list[dict[str, str | int]]:
+    """Verify retained evidence after regenerable PNG cleanup, not the PNGs themselves."""
+    manifest = json.loads(PREINTEGRATION_MANIFEST.read_text(encoding="utf-8"))
+    evidence = manifest["renders"]
+    if sha256(RENDER_HASHES) != evidence["manifest_sha256"]:
+        raise ValueError("Retained render manifest hash differs from frozen audit")
+    rows = read_dicts(RENDER_HASHES, "\t")
+    if len(rows) != evidence["artifacts"] or len(rows) != 234:
+        raise ValueError("Retained render manifest count differs from frozen audit")
+    if len({row["Relative_Path"] for row in rows}) != len(rows):
+        raise ValueError("Duplicate retained render paths")
+    for row in rows:
+        path = Path(row["Relative_Path"])
+        if path.is_absolute() or ".." in path.parts or int(row["Bytes"]) <= 0:
+            raise ValueError("Invalid retained render evidence")
+        if len(row["SHA256"]) != 64 or any(c not in "0123456789abcdef" for c in row["SHA256"]):
+            raise ValueError("Invalid retained render digest")
+    body = "".join(f"{row['Relative_Path']}\t{row['Bytes']}\t{row['SHA256']}\t{row['Evidence_Class']}\n" for row in rows)
+    if hashlib.sha256(body.encode()).hexdigest() != evidence["tree_sha256"]:
+        raise ValueError("Retained render tree digest differs from frozen audit")
+    if sum(int(row["Bytes"]) for row in rows) != evidence["bytes"]:
+        raise ValueError("Retained render byte count differs from frozen audit")
     return rows
 
 
@@ -282,10 +307,14 @@ def tsv_text(rows: list[dict[str, object]], fields: list[str]) -> str:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--write", action="store_true", help="write source-local audit artifacts")
+    parser.add_argument("--verify-retained-render-manifest", action="store_true",
+                        help="verify frozen render evidence without requiring deleted PNG cache; read-only")
     args = parser.parse_args()
+    if args.write and args.verify_retained_render_manifest:
+        parser.error("Retained render verification cannot write or renew the audit")
 
     effective, specs, frozen_forms = verify_frozen_manual_package()
-    render_rows = build_render_hash_rows()
+    render_rows = retained_render_hash_rows() if args.verify_retained_render_manifest else build_render_hash_rows()
     profile_rows = build_profile_inventory(frozen_forms)
     reconciliation = build_reconciliation(effective)
 
@@ -418,6 +447,8 @@ def main() -> None:
             json.dumps(manifest, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
             encoding="utf-8",
         )
+    if args.verify_retained_render_manifest:
+        print("render_verification=retained-manifest-only; current PNGs not re-audited")
     print(
         f"cells={sum(status_counts.values())} target_forms={len(frozen_forms)} "
         f"renders={len(render_rows)} reconciliation={len(reconciliation)} "

@@ -1,0 +1,142 @@
+"""Import Bailey 1908 Outer Siraji lexical and numeral sections, pp. 41–43."""
+
+from __future__ import annotations
+
+import argparse
+import csv
+import hashlib
+import json
+import unicodedata
+from collections import Counter
+from pathlib import Path
+
+
+PACKAGE = Path(__file__).resolve().parent
+DATA = PACKAGE.parents[4]
+INPUT = PACKAGE / "transcription.tsv"
+LEXICAL_COMPLETION = PACKAGE / "completion-lexical.tsv"
+NUMERAL_COMPLETION = PACKAGE / "completion-numerals.tsv"
+AUDIT = PACKAGE / "audit.jsonl"
+OUTPUT = DATA / "data/other/forms/20260925-bailey-outer-siraji.csv"
+PDF = DATA.parent / "tmp/pdfs/bailey-sainji/bailey1908.pdf"
+PDF_SHA256 = "953f5da5ee9bc341cdf7eb558920e824dc6f15f7473a8c0d5c8134c401ad60b5"
+SOURCE = "bailey1908outersiraji"
+
+
+def read_source() -> list[dict[str, str]]:
+    with INPUT.open(encoding="utf-8", newline="") as stream:
+        rows = list(csv.DictReader(stream, delimiter="\t"))
+    for row in rows:
+        row["column"] = "left"
+        row["section"] = "lexical"
+    with LEXICAL_COMPLETION.open(encoding="utf-8", newline="") as stream:
+        lexical = list(csv.DictReader(stream, delimiter="\t"))
+    for row in lexical:
+        row["section"] = "lexical"
+    with NUMERAL_COMPLETION.open(encoding="utf-8", newline="") as stream:
+        numerals = list(csv.DictReader(stream, delimiter="\t"))
+    rows = lexical + rows + numerals
+    rows.sort(key=lambda r: (
+        int(r["page"]),
+        {"lexical": 0, "cardinal": 1, "ordinal": 2}[r["section"]],
+        {"left": 0, "right": 1}[r["column"]], int(r["item"]),
+    ))
+    expected = (
+        [(41, "lexical", "left", i) for i in range(1, 33)]
+        + [(41, "lexical", "right", i) for i in range(1, 33)]
+        + [(42, "lexical", "left", i) for i in range(1, 31)]
+        + [(42, "lexical", "right", i) for i in range(1, 30)]
+        + [(42, "cardinal", "left", i) for i in range(1, 9)]
+        + [(42, "cardinal", "right", i) for i in range(9, 17)]
+        + [(43, "cardinal", "left", i) for i in range(17, 32)]
+        + [(43, "cardinal", "right", i) for i in range(32, 47)]
+        + [(43, "ordinal", "left", i) for i in range(1, 6)]
+        + [(43, "ordinal", "right", i) for i in range(6, 10)]
+    )
+    if [(int(r["page"]), r["section"], r["column"], int(r["item"])) for r in rows] != expected:
+        raise ValueError("Expected the complete Outer Siraji lexical and numeral sections on pp. 41–43")
+    for row in rows:
+        if not row["gloss"] or not row["printed_form"]:
+            raise ValueError(f"Blank source unit {row['item']}")
+        if row["decision"] not in {"ingest", "hold_typography", "hold_incomplete", "hold_complex", "hold_morphology"}:
+            raise ValueError(f"Invalid decision at {row['item']}")
+        if row["decision"] == "ingest" and "(?)" in row["printed_form"]:
+            raise ValueError(f"Unresolved form installed at {row['page']} {row['column']} {row['item']}")
+    return rows
+
+
+def generate() -> tuple[list[list[str]], list[dict[str, object]]]:
+    installed: list[list[str]] = []
+    audit: list[dict[str, object]] = []
+    for row in read_source():
+        item = int(row["item"])
+        page = int(row["page"])
+        column = row["column"]
+        section = row["section"]
+        key = f"{SOURCE}:p{page}:{column}:item:{item}" if section == "lexical" else f"{SOURCE}:p{page}:{section}:{column}:item:{item}"
+        locator = f"p. {page}, {column} column, item {item}" if section == "lexical" else f"p. {page}, {section}, {column} column, item {item}"
+        keys: list[str] = []
+        if row["decision"] == "ingest":
+            forms = [unicodedata.normalize("NFC", x.strip()) for x in row["printed_form"].split(";")]
+            if not all(forms):
+                raise ValueError(f"Empty accepted answer at {item}")
+            for answer_no, form in enumerate(forms, 1):
+                entry_key = key if answer_no == 1 else f"{key}:answer{answer_no}"
+                keys.append(entry_key)
+                installed.append([
+                    "OuterSiraji", "", form, row["gloss"], "", "", "",
+                    f"{SOURCE}[{locator}]",
+                    "", "", entry_key, "", "", "", "num" if section != "lexical" else "",
+                ])
+        audit.append({
+            "source_cell_key": key,
+            "status": "ingested" if row["decision"] == "ingest" else row["decision"],
+            "reason": row["note"],
+            "printed_page": page,
+            "scan_page": page + 22,
+            "section": section,
+            "column": column,
+            "vocabulary_item": item,
+            "english_headword": row["gloss"],
+            "printed_form_review": row["printed_form"],
+            "language_id": "OuterSiraji",
+            "source_lect": "Outer Siraji",
+            "citation_locator": locator,
+            "entry_keys": keys,
+            "typography_review": (
+                "page image checked; printed length, underdots and hyphens retained"
+                if row["decision"] == "ingest" else row["note"]
+            ),
+            "uncertainty": "" if row["decision"] == "ingest" else row["decision"],
+        })
+    if len(audit) != 178:
+        raise ValueError(f"Unexpected counts: {len(audit)} units, {len(installed)} rows")
+    if len({r[10] for r in installed}) != len(installed):
+        raise ValueError("Duplicate entry keys")
+    return installed, audit
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--install", action="store_true")
+    parser.add_argument("--check-pdf", action="store_true")
+    args = parser.parse_args()
+    if args.check_pdf:
+        digest = hashlib.sha256()
+        with PDF.open("rb") as stream:
+            for chunk in iter(lambda: stream.read(1024 * 1024), b""):
+                digest.update(chunk)
+        if digest.hexdigest() != PDF_SHA256:
+            raise SystemExit(f"Missing or changed original scan: {PDF}")
+    rows, audit = generate()
+    print(f"{len(audit)} source units, {len(rows)} installed rows, decisions={dict(Counter(x['status'] for x in audit))}")
+    if args.install:
+        with OUTPUT.open("w", encoding="utf-8", newline="") as stream:
+            csv.writer(stream).writerows(rows)
+        with AUDIT.open("w", encoding="utf-8") as stream:
+            for item in audit:
+                stream.write(json.dumps(item, ensure_ascii=False, sort_keys=True) + "\n")
+
+
+if __name__ == "__main__":
+    main()

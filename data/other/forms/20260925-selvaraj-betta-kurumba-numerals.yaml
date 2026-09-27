@@ -1,0 +1,17 @@
+file: 20260925-selvaraj-betta-kurumba-numerals.csv
+defaults:
+  transcription:
+    profile: selvaraj-betta-kurumba-1996
+    preserve_hyphens: true
+  identity:
+    legacy_ids: stem
+    append_order: 97
+  importer:
+    commands:
+      - [data/other/forms/raw_data/selvaraj_betta_kurumba_1996/import_source.py, --install]
+    note: Selvaraj's 1996 Betta Kurumba table in immutable CC-BY Chan archive; Coelho 2010/2011 table audited as excluded comparator.
+sources:
+  selvaraj1996bettakurumba:
+    reference:
+      editor: OpenAI Codex
+      ocr: false

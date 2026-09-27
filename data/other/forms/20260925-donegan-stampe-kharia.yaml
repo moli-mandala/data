@@ -1,0 +1,23 @@
+file: 20260925-donegan-stampe-kharia.csv
+defaults:
+  transcription:
+    profile: kharia-mla
+    input: form
+    preserve_hyphens: true
+  identity:
+    legacy_ids: stem
+    append_order: 57
+  importer:
+    commands:
+      - [data/other/forms/raw_data/kharia_mla_2004/import_source.py, --install]
+    note: Source-file installation only; no database build. Complete pinned snapshot; literal source notation preserved with the existing w-to-v display mapping. All witnesses/senses accounted; source claims audited.
+sources:
+  DSKH:
+    identity:
+      dedupe_by_entry_key: true
+    forms:
+      split_alternates: false
+    reference:
+      editor: OpenAI Codex
+      ocr: false
+      etymology_provenance: source

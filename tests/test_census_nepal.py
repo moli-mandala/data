@@ -51,8 +51,8 @@ def test_reused_tharu_has_citations_without_duplicate_readings():
 def test_profile_interpretations():
  def conv(p,s):return Tokenizer(str(ROOT/'conversion'/(p+'.txt')))(s,column='IPA').replace(' ','').replace('#',' ')
  assert conv('census-ipa','ɖaːɡ')=='ḍāg'
- assert conv('census-ascii','pAhaD')=='pəhaḍ'
- assert conv('census-danuwar','t̺auko')=='t̺auko'
+ assert conv('census-ascii','pAhaD')=='pahāḍ'  # the volume's key: A is the short vowel, plain a the long one
+ assert conv('census-danuwar','t̺auko')=='t̺āuko'
 def test_reproducible(tmp_path):
  m.build(tmp_path)
  for k in COUNTS:assert (tmp_path/f'20260911-census-{k}.csv').read_bytes()==(ROOT/f'data/other/forms/20260911-census-{k}.csv').read_bytes()
@@ -63,12 +63,15 @@ def test_compiled_rows_and_graph():
  with (ROOT/'cldf/form-id-aliases.csv').open() as f:aliases={r['Legacy_ID']:r['Form_ID'] for r in csv.DictReader(f)}
  new_ids={aliases[r['Legacy_ID']] for r in links if r['Source_Key'] in keys}
  assert keys<=found
- ids=set();count=0
+ ids=set();count=0;compiled=[]
  with (ROOT/'cldf/forms.csv').open() as f:
   for r in csv.DictReader(f):
    if any(s+'[' in r['Source'] for s in m.SOURCES.values()):
-    assert r['Form'] and r['Original'] and '�' not in r['Form'];ids.add(r['ID'])
-    if any(s+'[' in r['Source'] for s in list(m.SOURCES.values())[:-1]):assert r['Status']=='unlinked'
+    assert r['Form'] and r['Original'] and '�' not in r['Form'];ids.add(r['ID']);compiled.append(r)
+    # Later reviewed etymology sidecars may link any census source.
+    # Exact accepted-edge reconciliation below retains the no-unreviewed-link gate.
+ from reviewed_graph_policy import assert_reviewed_source_graph
+ assert_reviewed_source_graph(compiled)
  # The census surveys assert no etymologies; edges on their forms may only come from the reviewed per-source sidecar (the 2026-09 joint SIL review linked Tharu cells).
  import sys;sys.path.insert(0,str(ROOT));from etymology_assignments import read_assignments
  reviewed={r['Form_ID'] for r in read_assignments()}

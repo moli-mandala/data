@@ -1,0 +1,21 @@
+file: 20260925-grierson-sodochi.csv
+defaults:
+  transcription:
+    profile: grierson-sodochi-1916
+  identity:
+    legacy_ids: stem
+    append_order: 68
+  importer:
+    commands:
+      - [data/other/forms/raw_data/grierson_sodochi_1916/import_source.py, --install]
+    note: Full chapter pp. 647–667 inventoried in source-local proposal; mixed glossary, grammar, aligned specimen and all 241 standard prompts. Named lect comparisons and mixed-lect uncertainty retained. Independent fresh20 passed; 1,034 full-scope units yield 1,146 installed source-stage forms. Full database build and browser QA deferred by user.
+sources:
+  grierson1916sodochi:
+    identity:
+      dedupe_by_entry_key: true
+    forms:
+      split_alternates: false
+    reference:
+      editor: OpenAI Codex
+      ocr: false
+      etymology_provenance: none

@@ -1,0 +1,1801 @@
+{
+  "seed": 2026092621,
+  "reviewer": "root independent raw-versus-staged review",
+  "sample_size": 20,
+  "entries_with_errors": 5,
+  "error_classes": [
+    "INTER/INTERR grammatical-label collision",
+    "overbroad terminal character stripping damages quoted commentary"
+  ],
+  "hashes": {
+    "source-wayback.txt": "4e827a17e08103d4ddf302934af868cdc5275896696c261e3524981af9f79a4c",
+    "staged.csv": "a7d4753ad1cbf5842d03384f2651f0630b6d72de24d27e4bb328fb40630d1c20",
+    "staged-audit.jsonl": "597e09bceffd208eaddb3365adff87c7261fdd52e245da768552da67b3730aa2"
+  },
+  "status": "failed; fix corpus-wide and review fresh sample",
+  "additional_followup": "Verify commentary-only causative attestations such as ro[b]jo'D at 27061 are represented or explicitly accounted for across full source.",
+  "entries": [
+    {
+      "line": 5241,
+      "line_end": 5241,
+      "source_id": "26961",
+      "source_ids": [
+        "26961"
+      ],
+      "raw": "<roa>(D),,<rowa>(B)  {NI} ``^seedling used for transplanting''.  {V} ``to ^plant_rice''.  ??VAR.  #26961.",
+      "entry_key": "kharia-mla2004:26961",
+      "repairs": [],
+      "rows": [
+        {
+          "entry_key": "kharia-mla2004:26961",
+          "form": "roa",
+          "gloss": "seedling used for transplanting",
+          "source_gloss": "^seedling used for transplanting",
+          "label": "NI",
+          "witness": "D",
+          "tags": "noun inanimate uncertain",
+          "uncertainty_types": [
+            "source_editorial_or_gloss_uncertainty"
+          ]
+        },
+        {
+          "entry_key": "kharia-mla2004:26961:sense:1:head:2",
+          "form": "rowa",
+          "gloss": "seedling used for transplanting",
+          "source_gloss": "^seedling used for transplanting",
+          "label": "NI",
+          "witness": "B",
+          "tags": "noun inanimate uncertain",
+          "uncertainty_types": [
+            "source_editorial_or_gloss_uncertainty"
+          ]
+        },
+        {
+          "entry_key": "kharia-mla2004:26961:sense:2:head:1",
+          "form": "roa",
+          "gloss": "to plant rice",
+          "source_gloss": "to ^plant_rice",
+          "label": "V",
+          "witness": "D",
+          "tags": "verb uncertain",
+          "uncertainty_types": [
+            "source_editorial_or_gloss_uncertainty"
+          ]
+        },
+        {
+          "entry_key": "kharia-mla2004:26961:sense:2:head:2",
+          "form": "rowa",
+          "gloss": "to plant rice",
+          "source_gloss": "to ^plant_rice",
+          "label": "V",
+          "witness": "B",
+          "tags": "verb uncertain",
+          "uncertainty_types": [
+            "source_editorial_or_gloss_uncertainty"
+          ]
+        }
+      ],
+      "sense_holds": [],
+      "grouping_context": "",
+      "headwords": [
+        {
+          "form": "roa",
+          "witness": "D",
+          "start": 0,
+          "end": 8
+        },
+        {
+          "form": "rowa",
+          "witness": "B",
+          "start": 10,
+          "end": 19
+        }
+      ],
+      "header": "<roa>(D),,<rowa>(B)  ",
+      "senses": [
+        {
+          "number": 1,
+          "label": "NI",
+          "source_gloss": "^seedling used for transplanting"
+        },
+        {
+          "number": 2,
+          "label": "V",
+          "source_gloss": "to ^plant_rice"
+        }
+      ],
+      "source_commentary": ".  ??VAR.  #26961.",
+      "status": "ingested",
+      "installed_rows": [
+        [
+          "kh",
+          "",
+          "roa",
+          "seedling used for transplanting",
+          "",
+          "",
+          "",
+          "DSKH[entry 26961, witness D, sense 1]",
+          "",
+          "??VAR",
+          "kharia-mla2004:26961",
+          "",
+          "",
+          "",
+          "noun inanimate uncertain"
+        ],
+        [
+          "kh",
+          "",
+          "rowa",
+          "seedling used for transplanting",
+          "",
+          "",
+          "",
+          "DSKH[entry 26961, witness B, sense 1]",
+          "",
+          "??VAR",
+          "kharia-mla2004:26961:sense:1:head:2",
+          "",
+          "",
+          "",
+          "noun inanimate uncertain"
+        ],
+        [
+          "kh",
+          "",
+          "roa",
+          "to plant rice",
+          "",
+          "",
+          "",
+          "DSKH[entry 26961, witness D, sense 2]",
+          "",
+          "??VAR",
+          "kharia-mla2004:26961:sense:2:head:1",
+          "",
+          "",
+          "",
+          "verb uncertain"
+        ],
+        [
+          "kh",
+          "",
+          "rowa",
+          "to plant rice",
+          "",
+          "",
+          "",
+          "DSKH[entry 26961, witness B, sense 2]",
+          "",
+          "??VAR",
+          "kharia-mla2004:26961:sense:2:head:2",
+          "",
+          "",
+          "",
+          "verb uncertain"
+        ]
+      ],
+      "review_findings": [],
+      "review_result": "pass"
+    },
+    {
+      "line": 5226,
+      "line_end": 5226,
+      "source_id": "26881",
+      "source_ids": [
+        "26881"
+      ],
+      "raw": "<rij-raG>(D),,<ritiyaygoD>(D)  {V} ``to ^enjoy oneself''.  ??.  ??VAR.  #26881.",
+      "entry_key": "kharia-mla2004:26881",
+      "repairs": [],
+      "rows": [
+        {
+          "entry_key": "kharia-mla2004:26881",
+          "form": "rij-raG",
+          "gloss": "to enjoy oneself",
+          "source_gloss": "to ^enjoy oneself",
+          "label": "V",
+          "witness": "D",
+          "tags": "verb uncertain",
+          "uncertainty_types": [
+            "source_transcription_preserved",
+            "source_editorial_or_gloss_uncertainty"
+          ]
+        },
+        {
+          "entry_key": "kharia-mla2004:26881:sense:1:head:2",
+          "form": "ritiyaygoD",
+          "gloss": "to enjoy oneself",
+          "source_gloss": "to ^enjoy oneself",
+          "label": "V",
+          "witness": "D",
+          "tags": "verb uncertain",
+          "uncertainty_types": [
+            "source_transcription_preserved",
+            "source_editorial_or_gloss_uncertainty"
+          ]
+        }
+      ],
+      "sense_holds": [],
+      "grouping_context": "",
+      "headwords": [
+        {
+          "form": "rij-raG",
+          "witness": "D",
+          "start": 0,
+          "end": 12
+        },
+        {
+          "form": "ritiyaygoD",
+          "witness": "D",
+          "start": 14,
+          "end": 29
+        }
+      ],
+      "header": "<rij-raG>(D),,<ritiyaygoD>(D)  ",
+      "senses": [
+        {
+          "number": 1,
+          "label": "V",
+          "source_gloss": "to ^enjoy oneself"
+        }
+      ],
+      "source_commentary": ".  ??.  ??VAR.  #26881.",
+      "status": "ingested",
+      "installed_rows": [
+        [
+          "kh",
+          "",
+          "rij-raG",
+          "to enjoy oneself",
+          "",
+          "",
+          "",
+          "DSKH[entry 26881, witness D, sense 1]",
+          "",
+          "??.  ??VAR",
+          "kharia-mla2004:26881",
+          "",
+          "",
+          "",
+          "verb uncertain"
+        ],
+        [
+          "kh",
+          "",
+          "ritiyaygoD",
+          "to enjoy oneself",
+          "",
+          "",
+          "",
+          "DSKH[entry 26881, witness D, sense 1]",
+          "",
+          "??.  ??VAR",
+          "kharia-mla2004:26881:sense:1:head:2",
+          "kharia-mla2004:26881",
+          "",
+          "",
+          "verb uncertain"
+        ]
+      ],
+      "review_findings": [],
+      "review_result": "pass"
+    },
+    {
+      "line": 4,
+      "line_end": 4,
+      "source_id": "21",
+      "source_ids": [
+        "21"
+      ],
+      "raw": "<a>(D)  {INTERR} ``^interrogative''.  Cf. <i>(BD) `what?'.  ??.  #21.",
+      "entry_key": "kharia-mla2004:21",
+      "repairs": [],
+      "rows": [
+        {
+          "entry_key": "kharia-mla2004:21",
+          "form": "a",
+          "gloss": "interrogative",
+          "source_gloss": "^interrogative",
+          "label": "INTERR",
+          "witness": "D",
+          "tags": "interr uncertain",
+          "uncertainty_types": [
+            "source_editorial_or_gloss_uncertainty"
+          ]
+        }
+      ],
+      "sense_holds": [],
+      "grouping_context": "",
+      "headwords": [
+        {
+          "form": "a",
+          "witness": "D",
+          "start": 0,
+          "end": 6
+        }
+      ],
+      "header": "<a>(D)  ",
+      "senses": [
+        {
+          "number": 1,
+          "label": "INTERR",
+          "source_gloss": "^interrogative"
+        }
+      ],
+      "source_commentary": ".  Cf. <i>(BD) `what?'.  ??.  #21.",
+      "status": "ingested",
+      "installed_rows": [
+        [
+          "kh",
+          "",
+          "a",
+          "interrogative",
+          "",
+          "",
+          "",
+          "DSKH[entry 21, witness D, sense 1]",
+          "",
+          "Cf. <i>(BD) `what?'.  ??",
+          "kharia-mla2004:21",
+          "",
+          "",
+          "",
+          "interr uncertain"
+        ]
+      ],
+      "review_findings": [],
+      "review_result": "pass"
+    },
+    {
+      "line": 2937,
+      "line_end": 2937,
+      "source_id": "15442",
+      "source_ids": [
+        "15442"
+      ],
+      "raw": "<u-kaR>(D)  {} ``^this ^one''.  #15442.",
+      "entry_key": "kharia-mla2004:15442",
+      "repairs": [],
+      "rows": [
+        {
+          "entry_key": "kharia-mla2004:15442",
+          "form": "u-kaR",
+          "gloss": "this one",
+          "source_gloss": "^this ^one",
+          "label": "",
+          "witness": "D",
+          "tags": "uncertain",
+          "uncertainty_types": [
+            "source_transcription_preserved",
+            "source_grammar_unresolved"
+          ]
+        }
+      ],
+      "sense_holds": [],
+      "grouping_context": "",
+      "headwords": [
+        {
+          "form": "u-kaR",
+          "witness": "D",
+          "start": 0,
+          "end": 10
+        }
+      ],
+      "header": "<u-kaR>(D)  ",
+      "senses": [
+        {
+          "number": 1,
+          "label": "",
+          "source_gloss": "^this ^one"
+        }
+      ],
+      "source_commentary": ".  #15442.",
+      "status": "ingested",
+      "installed_rows": [
+        [
+          "kh",
+          "",
+          "u-kaR",
+          "this one",
+          "",
+          "",
+          "",
+          "DSKH[entry 15442, witness D, sense 1]",
+          "",
+          "",
+          "kharia-mla2004:15442",
+          "",
+          "",
+          "",
+          "uncertain"
+        ]
+      ],
+      "review_findings": [],
+      "review_result": "pass"
+    },
+    {
+      "line": 5218,
+      "line_end": 5218,
+      "source_id": "26841",
+      "source_ids": [
+        "26841"
+      ],
+      "raw": "<ri>(B)  {INTER} ``^form used by women to address other women''.  Cf. <re>.  #26841.",
+      "entry_key": "kharia-mla2004:26841",
+      "repairs": [],
+      "rows": [
+        {
+          "entry_key": "kharia-mla2004:26841",
+          "form": "ri",
+          "gloss": "form used by women to address other women",
+          "source_gloss": "^form used by women to address other women",
+          "label": "INTER",
+          "witness": "B",
+          "tags": "interr",
+          "uncertainty_types": []
+        }
+      ],
+      "sense_holds": [],
+      "grouping_context": "",
+      "headwords": [
+        {
+          "form": "ri",
+          "witness": "B",
+          "start": 0,
+          "end": 7
+        }
+      ],
+      "header": "<ri>(B)  ",
+      "senses": [
+        {
+          "number": 1,
+          "label": "INTER",
+          "source_gloss": "^form used by women to address other women"
+        }
+      ],
+      "source_commentary": ".  Cf. <re>.  #26841.",
+      "status": "ingested",
+      "installed_rows": [
+        [
+          "kh",
+          "",
+          "ri",
+          "form used by women to address other women",
+          "",
+          "",
+          "",
+          "DSKH[entry 26841, witness B, sense 1]",
+          "",
+          "Cf. <re>",
+          "kharia-mla2004:26841",
+          "",
+          "",
+          "",
+          "interr"
+        ]
+      ],
+      "review_findings": [
+        "INTER interjection incorrectly mapped to interrogative; contrast source INTERR and INTER hey/alas/address entries."
+      ],
+      "review_result": "error"
+    },
+    {
+      "line": 5674,
+      "line_end": 5674,
+      "source_id": "29081",
+      "source_ids": [
+        "29081"
+      ],
+      "raw": "<soGay>(AD)  {NI} ``^strength''.  Syn. <jor>(D), <sawaG>(D), <paRom>(D), <komeG>(D) ??.  #29081.",
+      "entry_key": "kharia-mla2004:29081",
+      "repairs": [],
+      "rows": [
+        {
+          "entry_key": "kharia-mla2004:29081",
+          "form": "soGay",
+          "gloss": "strength",
+          "source_gloss": "^strength",
+          "label": "NI",
+          "witness": "AD",
+          "tags": "noun inanimate uncertain",
+          "uncertainty_types": [
+            "source_transcription_preserved",
+            "source_editorial_or_gloss_uncertainty"
+          ]
+        }
+      ],
+      "sense_holds": [],
+      "grouping_context": "",
+      "headwords": [
+        {
+          "form": "soGay",
+          "witness": "AD",
+          "start": 0,
+          "end": 11
+        }
+      ],
+      "header": "<soGay>(AD)  ",
+      "senses": [
+        {
+          "number": 1,
+          "label": "NI",
+          "source_gloss": "^strength"
+        }
+      ],
+      "source_commentary": ".  Syn. <jor>(D), <sawaG>(D), <paRom>(D), <komeG>(D) ??.  #29081.",
+      "status": "ingested",
+      "installed_rows": [
+        [
+          "kh",
+          "",
+          "soGay",
+          "strength",
+          "",
+          "",
+          "",
+          "DSKH[entry 29081, witness AD, sense 1]",
+          "",
+          "Syn. <jor>(D), <sawaG>(D), <paRom>(D), <komeG>(D) ??",
+          "kharia-mla2004:29081",
+          "",
+          "",
+          "",
+          "noun inanimate uncertain"
+        ]
+      ],
+      "review_findings": [],
+      "review_result": "pass"
+    },
+    {
+      "line": 2095,
+      "line_end": 2095,
+      "source_id": "11140",
+      "source_ids": [
+        "11140"
+      ],
+      "raw": "<rago'j>(BD),,<ragu'j>(B)  {VT} ``to ^wash plates, to ^scour, to ^scrape''.  *@.  ??VAR.  #11140.",
+      "entry_key": "kharia-mla2004:11140",
+      "repairs": [],
+      "rows": [
+        {
+          "entry_key": "kharia-mla2004:11140",
+          "form": "rago'j",
+          "gloss": "to wash plates, to scour, to scrape",
+          "source_gloss": "to ^wash plates, to ^scour, to ^scrape",
+          "label": "VT",
+          "witness": "BD",
+          "tags": "verb tr uncertain",
+          "uncertainty_types": [
+            "source_transcription_preserved",
+            "source_editorial_or_gloss_uncertainty"
+          ]
+        },
+        {
+          "entry_key": "kharia-mla2004:11140:sense:1:head:2",
+          "form": "ragu'j",
+          "gloss": "to wash plates, to scour, to scrape",
+          "source_gloss": "to ^wash plates, to ^scour, to ^scrape",
+          "label": "VT",
+          "witness": "B",
+          "tags": "verb tr uncertain",
+          "uncertainty_types": [
+            "source_transcription_preserved",
+            "source_editorial_or_gloss_uncertainty"
+          ]
+        }
+      ],
+      "sense_holds": [],
+      "grouping_context": "",
+      "headwords": [
+        {
+          "form": "rago'j",
+          "witness": "BD",
+          "start": 0,
+          "end": 12
+        },
+        {
+          "form": "ragu'j",
+          "witness": "B",
+          "start": 14,
+          "end": 25
+        }
+      ],
+      "header": "<rago'j>(BD),,<ragu'j>(B)  ",
+      "senses": [
+        {
+          "number": 1,
+          "label": "VT",
+          "source_gloss": "to ^wash plates, to ^scour, to ^scrape"
+        }
+      ],
+      "source_commentary": ".  *@.  ??VAR.  #11140.",
+      "status": "ingested",
+      "installed_rows": [
+        [
+          "kh",
+          "",
+          "rago'j",
+          "to wash plates, to scour, to scrape",
+          "",
+          "",
+          "",
+          "DSKH[entry 11140, witness BD, sense 1]",
+          "",
+          "??VAR",
+          "kharia-mla2004:11140",
+          "",
+          "",
+          "",
+          "verb tr uncertain"
+        ],
+        [
+          "kh",
+          "",
+          "ragu'j",
+          "to wash plates, to scour, to scrape",
+          "",
+          "",
+          "",
+          "DSKH[entry 11140, witness B, sense 1]",
+          "",
+          "??VAR",
+          "kharia-mla2004:11140:sense:1:head:2",
+          "",
+          "",
+          "",
+          "verb tr uncertain"
+        ]
+      ],
+      "review_findings": [],
+      "review_result": "pass"
+    },
+    {
+      "line": 1018,
+      "line_end": 1018,
+      "source_id": "5521",
+      "source_ids": [
+        "5521"
+      ],
+      "raw": "<caRcaRo>(A)  {N} ``^mat (of bamboo)''.  |<<caRo.caRo>> w. syncope, cf. <caro>(D) `id.'.  #5521.",
+      "entry_key": "kharia-mla2004:5521",
+      "repairs": [],
+      "rows": [
+        {
+          "entry_key": "kharia-mla2004:5521",
+          "form": "caRcaRo",
+          "gloss": "mat (of bamboo)",
+          "source_gloss": "^mat (of bamboo)",
+          "label": "N",
+          "witness": "A",
+          "tags": "noun uncertain",
+          "uncertainty_types": [
+            "source_transcription_preserved"
+          ]
+        }
+      ],
+      "sense_holds": [],
+      "grouping_context": "",
+      "headwords": [
+        {
+          "form": "caRcaRo",
+          "witness": "A",
+          "start": 0,
+          "end": 12
+        }
+      ],
+      "header": "<caRcaRo>(A)  ",
+      "senses": [
+        {
+          "number": 1,
+          "label": "N",
+          "source_gloss": "^mat (of bamboo)"
+        }
+      ],
+      "source_commentary": ".  |<<caRo.caRo>> w. syncope, cf. <caro>(D) `id.'.  #5521.",
+      "status": "ingested",
+      "installed_rows": [
+        [
+          "kh",
+          "",
+          "caRcaRo",
+          "mat (of bamboo)",
+          "",
+          "",
+          "",
+          "DSKH[entry 5521, witness A, sense 1]",
+          "",
+          "|<<caRo.caRo>> w. syncope, cf. <caro>(D) `id",
+          "kharia-mla2004:5521",
+          "",
+          "",
+          "",
+          "noun uncertain"
+        ]
+      ],
+      "review_findings": [
+        "Commentary loses closing quote and abbreviation punctuation from source id."
+      ],
+      "review_result": "error"
+    },
+    {
+      "line": 3865,
+      "line_end": 3865,
+      "source_id": "20121",
+      "source_ids": [
+        "20121"
+      ],
+      "raw": "<lo?Dho>(D)  {PP} ``^after''.  {ADV} ``^afterwards''.  {ADJ} ``the ^second, ^another''.  #20121.",
+      "entry_key": "kharia-mla2004:20121",
+      "repairs": [],
+      "rows": [
+        {
+          "entry_key": "kharia-mla2004:20121",
+          "form": "lo?Dho",
+          "gloss": "after",
+          "source_gloss": "^after",
+          "label": "PP",
+          "witness": "D",
+          "tags": "postp uncertain",
+          "uncertainty_types": [
+            "source_transcription_preserved"
+          ]
+        },
+        {
+          "entry_key": "kharia-mla2004:20121:sense:2:head:1",
+          "form": "lo?Dho",
+          "gloss": "afterwards",
+          "source_gloss": "^afterwards",
+          "label": "ADV",
+          "witness": "D",
+          "tags": "adv uncertain",
+          "uncertainty_types": [
+            "source_transcription_preserved"
+          ]
+        },
+        {
+          "entry_key": "kharia-mla2004:20121:sense:3:head:1",
+          "form": "lo?Dho",
+          "gloss": "the second, another",
+          "source_gloss": "the ^second, ^another",
+          "label": "ADJ",
+          "witness": "D",
+          "tags": "adj uncertain",
+          "uncertainty_types": [
+            "source_transcription_preserved"
+          ]
+        }
+      ],
+      "sense_holds": [],
+      "grouping_context": "",
+      "headwords": [
+        {
+          "form": "lo?Dho",
+          "witness": "D",
+          "start": 0,
+          "end": 11
+        }
+      ],
+      "header": "<lo?Dho>(D)  ",
+      "senses": [
+        {
+          "number": 1,
+          "label": "PP",
+          "source_gloss": "^after"
+        },
+        {
+          "number": 2,
+          "label": "ADV",
+          "source_gloss": "^afterwards"
+        },
+        {
+          "number": 3,
+          "label": "ADJ",
+          "source_gloss": "the ^second, ^another"
+        }
+      ],
+      "source_commentary": ".  #20121.",
+      "status": "ingested",
+      "installed_rows": [
+        [
+          "kh",
+          "",
+          "lo?Dho",
+          "after",
+          "",
+          "",
+          "",
+          "DSKH[entry 20121, witness D, sense 1]",
+          "",
+          "",
+          "kharia-mla2004:20121",
+          "",
+          "",
+          "",
+          "postp uncertain"
+        ],
+        [
+          "kh",
+          "",
+          "lo?Dho",
+          "afterwards",
+          "",
+          "",
+          "",
+          "DSKH[entry 20121, witness D, sense 2]",
+          "",
+          "",
+          "kharia-mla2004:20121:sense:2:head:1",
+          "",
+          "",
+          "",
+          "adv uncertain"
+        ],
+        [
+          "kh",
+          "",
+          "lo?Dho",
+          "the second, another",
+          "",
+          "",
+          "",
+          "DSKH[entry 20121, witness D, sense 3]",
+          "",
+          "",
+          "kharia-mla2004:20121:sense:3:head:1",
+          "",
+          "",
+          "",
+          "adj uncertain"
+        ]
+      ],
+      "review_findings": [],
+      "review_result": "pass"
+    },
+    {
+      "line": 1917,
+      "line_end": 1917,
+      "source_id": "10201",
+      "source_ids": [
+        "10201"
+      ],
+      "raw": "<gim>(ABD),,<gi~m>(B)  {VT} ``to ^shower, to ^rain''.  *@.  ??VAR.  #10201.",
+      "entry_key": "kharia-mla2004:10201",
+      "repairs": [],
+      "rows": [
+        {
+          "entry_key": "kharia-mla2004:10201",
+          "form": "gim",
+          "gloss": "to shower, to rain",
+          "source_gloss": "to ^shower, to ^rain",
+          "label": "VT",
+          "witness": "ABD",
+          "tags": "verb tr uncertain",
+          "uncertainty_types": [
+            "source_editorial_or_gloss_uncertainty"
+          ]
+        },
+        {
+          "entry_key": "kharia-mla2004:10201:sense:1:head:2",
+          "form": "gi~m",
+          "gloss": "to shower, to rain",
+          "source_gloss": "to ^shower, to ^rain",
+          "label": "VT",
+          "witness": "B",
+          "tags": "verb tr uncertain",
+          "uncertainty_types": [
+            "source_transcription_preserved",
+            "source_editorial_or_gloss_uncertainty"
+          ]
+        }
+      ],
+      "sense_holds": [],
+      "grouping_context": "",
+      "headwords": [
+        {
+          "form": "gim",
+          "witness": "ABD",
+          "start": 0,
+          "end": 10
+        },
+        {
+          "form": "gi~m",
+          "witness": "B",
+          "start": 12,
+          "end": 21
+        }
+      ],
+      "header": "<gim>(ABD),,<gi~m>(B)  ",
+      "senses": [
+        {
+          "number": 1,
+          "label": "VT",
+          "source_gloss": "to ^shower, to ^rain"
+        }
+      ],
+      "source_commentary": ".  *@.  ??VAR.  #10201.",
+      "status": "ingested",
+      "installed_rows": [
+        [
+          "kh",
+          "",
+          "gim",
+          "to shower, to rain",
+          "",
+          "",
+          "",
+          "DSKH[entry 10201, witness ABD, sense 1]",
+          "",
+          "??VAR",
+          "kharia-mla2004:10201",
+          "",
+          "",
+          "",
+          "verb tr uncertain"
+        ],
+        [
+          "kh",
+          "",
+          "gi~m",
+          "to shower, to rain",
+          "",
+          "",
+          "",
+          "DSKH[entry 10201, witness B, sense 1]",
+          "",
+          "??VAR",
+          "kharia-mla2004:10201:sense:1:head:2",
+          "",
+          "",
+          "",
+          "verb tr uncertain"
+        ]
+      ],
+      "review_findings": [],
+      "review_result": "pass"
+    },
+    {
+      "line": 5237,
+      "line_end": 5237,
+      "source_id": "26941",
+      "source_ids": [
+        "26941"
+      ],
+      "raw": "<ro?>(D),,<ru?>(P:Joh. 9,10)  {V} ``to ^pull_out, to ^pull_off, to ^open (e.g. a door)''.  *@.  ??VAR.  #26941.",
+      "entry_key": "kharia-mla2004:26941",
+      "repairs": [],
+      "rows": [
+        {
+          "entry_key": "kharia-mla2004:26941",
+          "form": "ro?",
+          "gloss": "to pull out, to pull off, to open (e.g. a door)",
+          "source_gloss": "to ^pull_out, to ^pull_off, to ^open (e.g. a door)",
+          "label": "V",
+          "witness": "D",
+          "tags": "verb uncertain",
+          "uncertainty_types": [
+            "source_transcription_preserved",
+            "source_editorial_or_gloss_uncertainty"
+          ]
+        },
+        {
+          "entry_key": "kharia-mla2004:26941:sense:1:head:2",
+          "form": "ru?",
+          "gloss": "to pull out, to pull off, to open (e.g. a door)",
+          "source_gloss": "to ^pull_out, to ^pull_off, to ^open (e.g. a door)",
+          "label": "V",
+          "witness": "P:Joh. 9,10",
+          "tags": "verb uncertain",
+          "uncertainty_types": [
+            "source_witness_unresolved",
+            "source_transcription_preserved",
+            "source_editorial_or_gloss_uncertainty"
+          ]
+        }
+      ],
+      "sense_holds": [],
+      "grouping_context": "",
+      "headwords": [
+        {
+          "form": "ro?",
+          "witness": "D",
+          "start": 0,
+          "end": 8
+        },
+        {
+          "form": "ru?",
+          "witness": "P:Joh. 9,10",
+          "start": 10,
+          "end": 28
+        }
+      ],
+      "header": "<ro?>(D),,<ru?>(P:Joh. 9,10)  ",
+      "senses": [
+        {
+          "number": 1,
+          "label": "V",
+          "source_gloss": "to ^pull_out, to ^pull_off, to ^open (e.g. a door)"
+        }
+      ],
+      "source_commentary": ".  *@.  ??VAR.  #26941.",
+      "status": "ingested",
+      "installed_rows": [
+        [
+          "kh",
+          "",
+          "ro?",
+          "to pull out, to pull off, to open (e.g. a door)",
+          "",
+          "",
+          "",
+          "DSKH[entry 26941, witness D, sense 1]",
+          "",
+          "??VAR",
+          "kharia-mla2004:26941",
+          "",
+          "",
+          "",
+          "verb uncertain"
+        ],
+        [
+          "kh",
+          "",
+          "ru?",
+          "to pull out, to pull off, to open (e.g. a door)",
+          "",
+          "",
+          "",
+          "DSKH[entry 26941, witness P:Joh. 9,10, sense 1]",
+          "",
+          "??VAR",
+          "kharia-mla2004:26941:sense:1:head:2",
+          "",
+          "",
+          "",
+          "verb uncertain"
+        ]
+      ],
+      "review_findings": [],
+      "review_result": "pass"
+    },
+    {
+      "line": 5145,
+      "line_end": 5145,
+      "source_id": "26451",
+      "source_ids": [
+        "26451"
+      ],
+      "raw": "<ra:j>(A),,<raij>(B),,<rays>(B)  {NI} ``^country, ^empire, ^kingdom''.  *@.  ??VAR.  #26451.",
+      "entry_key": "kharia-mla2004:26451",
+      "repairs": [],
+      "rows": [
+        {
+          "entry_key": "kharia-mla2004:26451",
+          "form": "ra:j",
+          "gloss": "country, empire, kingdom",
+          "source_gloss": "^country, ^empire, ^kingdom",
+          "label": "NI",
+          "witness": "A",
+          "tags": "noun inanimate uncertain",
+          "uncertainty_types": [
+            "source_transcription_preserved",
+            "source_editorial_or_gloss_uncertainty"
+          ]
+        },
+        {
+          "entry_key": "kharia-mla2004:26451:sense:1:head:2",
+          "form": "raij",
+          "gloss": "country, empire, kingdom",
+          "source_gloss": "^country, ^empire, ^kingdom",
+          "label": "NI",
+          "witness": "B",
+          "tags": "noun inanimate uncertain",
+          "uncertainty_types": [
+            "source_editorial_or_gloss_uncertainty"
+          ]
+        },
+        {
+          "entry_key": "kharia-mla2004:26451:sense:1:head:3",
+          "form": "rays",
+          "gloss": "country, empire, kingdom",
+          "source_gloss": "^country, ^empire, ^kingdom",
+          "label": "NI",
+          "witness": "B",
+          "tags": "noun inanimate uncertain",
+          "uncertainty_types": [
+            "source_editorial_or_gloss_uncertainty"
+          ]
+        }
+      ],
+      "sense_holds": [],
+      "grouping_context": "",
+      "headwords": [
+        {
+          "form": "ra:j",
+          "witness": "A",
+          "start": 0,
+          "end": 9
+        },
+        {
+          "form": "raij",
+          "witness": "B",
+          "start": 11,
+          "end": 20
+        },
+        {
+          "form": "rays",
+          "witness": "B",
+          "start": 22,
+          "end": 31
+        }
+      ],
+      "header": "<ra:j>(A),,<raij>(B),,<rays>(B)  ",
+      "senses": [
+        {
+          "number": 1,
+          "label": "NI",
+          "source_gloss": "^country, ^empire, ^kingdom"
+        }
+      ],
+      "source_commentary": ".  *@.  ??VAR.  #26451.",
+      "status": "ingested",
+      "installed_rows": [
+        [
+          "kh",
+          "",
+          "ra:j",
+          "country, empire, kingdom",
+          "",
+          "",
+          "",
+          "DSKH[entry 26451, witness A, sense 1]",
+          "",
+          "??VAR",
+          "kharia-mla2004:26451",
+          "",
+          "",
+          "",
+          "noun inanimate uncertain"
+        ],
+        [
+          "kh",
+          "",
+          "raij",
+          "country, empire, kingdom",
+          "",
+          "",
+          "",
+          "DSKH[entry 26451, witness B, sense 1]",
+          "",
+          "??VAR",
+          "kharia-mla2004:26451:sense:1:head:2",
+          "",
+          "",
+          "",
+          "noun inanimate uncertain"
+        ],
+        [
+          "kh",
+          "",
+          "rays",
+          "country, empire, kingdom",
+          "",
+          "",
+          "",
+          "DSKH[entry 26451, witness B, sense 1]",
+          "",
+          "??VAR",
+          "kharia-mla2004:26451:sense:1:head:3",
+          "kharia-mla2004:26451:sense:1:head:2",
+          "",
+          "",
+          "noun inanimate uncertain"
+        ]
+      ],
+      "review_findings": [],
+      "review_result": "pass"
+    },
+    {
+      "line": 2341,
+      "line_end": 2341,
+      "source_id": "3213",
+      "source_ids": [
+        "3213"
+      ],
+      "raw": "<i beRe>(A)  {ADV} ``^when?, at ^what ^time?''.  |<beRe>, <ber> `time'.  #3213.",
+      "entry_key": "kharia-mla2004:3213",
+      "repairs": [],
+      "rows": [
+        {
+          "entry_key": "kharia-mla2004:3213",
+          "form": "i beRe",
+          "gloss": "when?, at what time?",
+          "source_gloss": "^when?, at ^what ^time?",
+          "label": "ADV",
+          "witness": "A",
+          "tags": "adv uncertain",
+          "uncertainty_types": [
+            "source_transcription_preserved",
+            "source_editorial_or_gloss_uncertainty"
+          ]
+        }
+      ],
+      "sense_holds": [],
+      "grouping_context": "",
+      "headwords": [
+        {
+          "form": "i beRe",
+          "witness": "A",
+          "start": 0,
+          "end": 11
+        }
+      ],
+      "header": "<i beRe>(A)  ",
+      "senses": [
+        {
+          "number": 1,
+          "label": "ADV",
+          "source_gloss": "^when?, at ^what ^time?"
+        }
+      ],
+      "source_commentary": ".  |<beRe>, <ber> `time'.  #3213.",
+      "status": "ingested",
+      "installed_rows": [
+        [
+          "kh",
+          "",
+          "i beRe",
+          "when?, at what time?",
+          "",
+          "",
+          "",
+          "DSKH[entry 3213, witness A, sense 1]",
+          "",
+          "|<beRe>, <ber> `time",
+          "kharia-mla2004:3213",
+          "",
+          "",
+          "",
+          "adv uncertain"
+        ]
+      ],
+      "review_findings": [
+        "Commentary loses closing quote from source time."
+      ],
+      "review_result": "error"
+    },
+    {
+      "line": 4821,
+      "line_end": 4821,
+      "source_id": "24801",
+      "source_ids": [
+        "24801"
+      ],
+      "raw": "<phapha>(D)  {NI} ``a big green ^grasshopper''.  #24801.",
+      "entry_key": "kharia-mla2004:24801",
+      "repairs": [],
+      "rows": [
+        {
+          "entry_key": "kharia-mla2004:24801",
+          "form": "phapha",
+          "gloss": "a big green grasshopper",
+          "source_gloss": "a big green ^grasshopper",
+          "label": "NI",
+          "witness": "D",
+          "tags": "noun inanimate",
+          "uncertainty_types": []
+        }
+      ],
+      "sense_holds": [],
+      "grouping_context": "",
+      "headwords": [
+        {
+          "form": "phapha",
+          "witness": "D",
+          "start": 0,
+          "end": 11
+        }
+      ],
+      "header": "<phapha>(D)  ",
+      "senses": [
+        {
+          "number": 1,
+          "label": "NI",
+          "source_gloss": "a big green ^grasshopper"
+        }
+      ],
+      "source_commentary": ".  #24801.",
+      "status": "ingested",
+      "installed_rows": [
+        [
+          "kh",
+          "",
+          "phapha",
+          "a big green grasshopper",
+          "",
+          "",
+          "",
+          "DSKH[entry 24801]",
+          "",
+          "",
+          "kharia-mla2004:24801",
+          "",
+          "",
+          "",
+          "noun inanimate"
+        ]
+      ],
+      "review_findings": [],
+      "review_result": "pass"
+    },
+    {
+      "line": 1152,
+      "line_end": 1152,
+      "source_id": "6221",
+      "source_ids": [
+        "6221"
+      ],
+      "raw": "<cu?ci>(BD)  {NI} ``^needle, small ^arrow, small ^bolt''.  Syn. <kuci>.  *@.  #6221.",
+      "entry_key": "kharia-mla2004:6221",
+      "repairs": [],
+      "rows": [
+        {
+          "entry_key": "kharia-mla2004:6221",
+          "form": "cu?ci",
+          "gloss": "needle, small arrow, small bolt",
+          "source_gloss": "^needle, small ^arrow, small ^bolt",
+          "label": "NI",
+          "witness": "BD",
+          "tags": "noun inanimate uncertain",
+          "uncertainty_types": [
+            "source_transcription_preserved"
+          ]
+        }
+      ],
+      "sense_holds": [],
+      "grouping_context": "",
+      "headwords": [
+        {
+          "form": "cu?ci",
+          "witness": "BD",
+          "start": 0,
+          "end": 11
+        }
+      ],
+      "header": "<cu?ci>(BD)  ",
+      "senses": [
+        {
+          "number": 1,
+          "label": "NI",
+          "source_gloss": "^needle, small ^arrow, small ^bolt"
+        }
+      ],
+      "source_commentary": ".  Syn. <kuci>.  *@.  #6221.",
+      "status": "ingested",
+      "installed_rows": [
+        [
+          "kh",
+          "",
+          "cu?ci",
+          "needle, small arrow, small bolt",
+          "",
+          "",
+          "",
+          "DSKH[entry 6221, witness BD, sense 1]",
+          "",
+          "Syn. <kuci>",
+          "kharia-mla2004:6221",
+          "",
+          "",
+          "",
+          "noun inanimate uncertain"
+        ]
+      ],
+      "review_findings": [],
+      "review_result": "pass"
+    },
+    {
+      "line": 5310,
+      "line_end": 5310,
+      "source_id": "27301",
+      "source_ids": [
+        "27301"
+      ],
+      "raw": "<rup>(BD)  {NI} ``^form, ^shape''.  #27301.",
+      "entry_key": "kharia-mla2004:27301",
+      "repairs": [],
+      "rows": [
+        {
+          "entry_key": "kharia-mla2004:27301",
+          "form": "rup",
+          "gloss": "form, shape",
+          "source_gloss": "^form, ^shape",
+          "label": "NI",
+          "witness": "BD",
+          "tags": "noun inanimate",
+          "uncertainty_types": []
+        }
+      ],
+      "sense_holds": [],
+      "grouping_context": "",
+      "headwords": [
+        {
+          "form": "rup",
+          "witness": "BD",
+          "start": 0,
+          "end": 9
+        }
+      ],
+      "header": "<rup>(BD)  ",
+      "senses": [
+        {
+          "number": 1,
+          "label": "NI",
+          "source_gloss": "^form, ^shape"
+        }
+      ],
+      "source_commentary": ".  #27301.",
+      "status": "ingested",
+      "installed_rows": [
+        [
+          "kh",
+          "",
+          "rup",
+          "form, shape",
+          "",
+          "",
+          "",
+          "DSKH[entry 27301]",
+          "",
+          "",
+          "kharia-mla2004:27301",
+          "",
+          "",
+          "",
+          "noun inanimate"
+        ]
+      ],
+      "review_findings": [],
+      "review_result": "pass"
+    },
+    {
+      "line": 381,
+      "line_end": 381,
+      "source_id": "2201",
+      "source_ids": [
+        "2201"
+      ],
+      "raw": "<bala?>(B)  {VT} ``to ^vomit''.  {NI} ``^nausea''.  Syn. <baja?>(B).  *@.  #2201.",
+      "entry_key": "kharia-mla2004:2201",
+      "repairs": [],
+      "rows": [
+        {
+          "entry_key": "kharia-mla2004:2201",
+          "form": "bala?",
+          "gloss": "to vomit",
+          "source_gloss": "to ^vomit",
+          "label": "VT",
+          "witness": "B",
+          "tags": "verb tr uncertain",
+          "uncertainty_types": [
+            "source_transcription_preserved"
+          ]
+        },
+        {
+          "entry_key": "kharia-mla2004:2201:sense:2:head:1",
+          "form": "bala?",
+          "gloss": "nausea",
+          "source_gloss": "^nausea",
+          "label": "NI",
+          "witness": "B",
+          "tags": "noun inanimate uncertain",
+          "uncertainty_types": [
+            "source_transcription_preserved"
+          ]
+        }
+      ],
+      "sense_holds": [],
+      "grouping_context": "",
+      "headwords": [
+        {
+          "form": "bala?",
+          "witness": "B",
+          "start": 0,
+          "end": 10
+        }
+      ],
+      "header": "<bala?>(B)  ",
+      "senses": [
+        {
+          "number": 1,
+          "label": "VT",
+          "source_gloss": "to ^vomit"
+        },
+        {
+          "number": 2,
+          "label": "NI",
+          "source_gloss": "^nausea"
+        }
+      ],
+      "source_commentary": ".  Syn. <baja?>(B).  *@.  #2201.",
+      "status": "ingested",
+      "installed_rows": [
+        [
+          "kh",
+          "",
+          "bala?",
+          "to vomit",
+          "",
+          "",
+          "",
+          "DSKH[entry 2201, witness B, sense 1]",
+          "",
+          "Syn. <baja?>(B)",
+          "kharia-mla2004:2201",
+          "",
+          "",
+          "",
+          "verb tr uncertain"
+        ],
+        [
+          "kh",
+          "",
+          "bala?",
+          "nausea",
+          "",
+          "",
+          "",
+          "DSKH[entry 2201, witness B, sense 2]",
+          "",
+          "Syn. <baja?>(B)",
+          "kharia-mla2004:2201:sense:2:head:1",
+          "",
+          "",
+          "",
+          "noun inanimate uncertain"
+        ]
+      ],
+      "review_findings": [],
+      "review_result": "pass"
+    },
+    {
+      "line": 5260,
+      "line_end": 5260,
+      "source_id": "27061",
+      "source_ids": [
+        "27061"
+      ],
+      "raw": "<rojo'D>(ABD)  {ADJ} ``^sour''.  {VI} ``to sour, to be sour''.  Caus. <ro[b]jo'D>(AD) `to make ^sour'.  *@.  #27061.",
+      "entry_key": "kharia-mla2004:27061",
+      "repairs": [],
+      "rows": [
+        {
+          "entry_key": "kharia-mla2004:27061",
+          "form": "rojo'D",
+          "gloss": "sour",
+          "source_gloss": "^sour",
+          "label": "ADJ",
+          "witness": "ABD",
+          "tags": "adj uncertain",
+          "uncertainty_types": [
+            "source_transcription_preserved"
+          ]
+        },
+        {
+          "entry_key": "kharia-mla2004:27061:sense:2:head:1",
+          "form": "rojo'D",
+          "gloss": "to sour, to be sour",
+          "source_gloss": "to sour, to be sour",
+          "label": "VI",
+          "witness": "ABD",
+          "tags": "verb intr uncertain",
+          "uncertainty_types": [
+            "source_transcription_preserved"
+          ]
+        }
+      ],
+      "sense_holds": [],
+      "grouping_context": "",
+      "headwords": [
+        {
+          "form": "rojo'D",
+          "witness": "ABD",
+          "start": 0,
+          "end": 13
+        }
+      ],
+      "header": "<rojo'D>(ABD)  ",
+      "senses": [
+        {
+          "number": 1,
+          "label": "ADJ",
+          "source_gloss": "^sour"
+        },
+        {
+          "number": 2,
+          "label": "VI",
+          "source_gloss": "to sour, to be sour"
+        }
+      ],
+      "source_commentary": ".  Caus. <ro[b]jo'D>(AD) `to make ^sour'.  *@.  #27061.",
+      "status": "ingested",
+      "installed_rows": [
+        [
+          "kh",
+          "",
+          "rojo'D",
+          "sour",
+          "",
+          "",
+          "",
+          "DSKH[entry 27061, witness ABD, sense 1]",
+          "",
+          "Caus. <ro[b]jo'D>(AD) `to make ^sour",
+          "kharia-mla2004:27061",
+          "",
+          "",
+          "",
+          "adj uncertain"
+        ],
+        [
+          "kh",
+          "",
+          "rojo'D",
+          "to sour, to be sour",
+          "",
+          "",
+          "",
+          "DSKH[entry 27061, witness ABD, sense 2]",
+          "",
+          "Caus. <ro[b]jo'D>(AD) `to make ^sour",
+          "kharia-mla2004:27061:sense:2:head:1",
+          "",
+          "",
+          "",
+          "verb intr uncertain"
+        ]
+      ],
+      "review_findings": [
+        "Commentary loses closing quote from source causative gloss."
+      ],
+      "review_result": "error"
+    },
+    {
+      "line": 2,
+      "line_end": 2,
+      "source_id": "11",
+      "source_ids": [
+        "11"
+      ],
+      "raw": "<a>(*)  {} ``''.  *@.  #11.",
+      "entry_key": "kharia-mla2004:11",
+      "repairs": [],
+      "rows": [
+        {
+          "entry_key": "kharia-mla2004:11",
+          "form": "a",
+          "gloss": "",
+          "source_gloss": "",
+          "label": "",
+          "witness": "*",
+          "tags": "uncertain",
+          "uncertainty_types": [
+            "source_gloss_empty_or_witness_alignment_unresolved",
+            "source_witness_unresolved",
+            "source_grammar_unresolved"
+          ]
+        }
+      ],
+      "sense_holds": [],
+      "grouping_context": "",
+      "headwords": [
+        {
+          "form": "a",
+          "witness": "*",
+          "start": 0,
+          "end": 6
+        }
+      ],
+      "header": "<a>(*)  ",
+      "senses": [
+        {
+          "number": 1,
+          "label": "",
+          "source_gloss": ""
+        }
+      ],
+      "source_commentary": ".  *@.  #11.",
+      "status": "ingested",
+      "installed_rows": [
+        [
+          "kh",
+          "",
+          "a",
+          "",
+          "",
+          "",
+          "",
+          "DSKH[entry 11, witness *, sense 1]",
+          "",
+          "",
+          "kharia-mla2004:11",
+          "",
+          "",
+          "",
+          "uncertain"
+        ]
+      ],
+      "review_findings": [],
+      "review_result": "pass"
+    },
+    {
+      "line": 502,
+      "line_end": 502,
+      "source_id": "2502",
+      "source_ids": [
+        "2502"
+      ],
+      "raw": "^T2<bar-thaG>(D)  {NUM} ``^two''.  |<bar> `two', <taG>, <thaG> `?'.  #2502.",
+      "entry_key": "kharia-mla2004:2502",
+      "repairs": [],
+      "rows": [
+        {
+          "entry_key": "kharia-mla2004:2502",
+          "form": "bar-thaG",
+          "gloss": "two",
+          "source_gloss": "^two",
+          "label": "NUM",
+          "witness": "D",
+          "tags": "num uncertain",
+          "uncertainty_types": [
+            "source_transcription_preserved"
+          ]
+        }
+      ],
+      "sense_holds": [],
+      "grouping_context": "",
+      "headwords": [
+        {
+          "form": "bar-thaG",
+          "witness": "D",
+          "start": 3,
+          "end": 16
+        }
+      ],
+      "header": "^T2<bar-thaG>(D)  ",
+      "senses": [
+        {
+          "number": 1,
+          "label": "NUM",
+          "source_gloss": "^two"
+        }
+      ],
+      "source_commentary": ".  |<bar> `two', <taG>, <thaG> `?'.  #2502.",
+      "status": "ingested",
+      "installed_rows": [
+        [
+          "kh",
+          "",
+          "bar-thaG",
+          "two",
+          "",
+          "",
+          "",
+          "DSKH[entry 2502, witness D, sense 1]",
+          "",
+          "|<bar> `two', <taG>, <thaG> `?",
+          "kharia-mla2004:2502",
+          "",
+          "",
+          "",
+          "num uncertain"
+        ]
+      ],
+      "review_findings": [
+        "Commentary loses closing quote from source uncertain component gloss."
+      ],
+      "review_result": "error"
+    }
+  ]
+}

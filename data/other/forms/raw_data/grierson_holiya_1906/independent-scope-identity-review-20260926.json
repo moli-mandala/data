@@ -1,0 +1,128 @@
+{
+  "status": "independent-whole-chapter-scope-and-identity-reviewed",
+  "reviewer": "rohru_finish",
+  "checklist": "SOURCE_INGESTION_CHECKLIST.md read fully; survey/comparative, glossary and scanned-source requirements active. Source stage only; no DB/full pipeline.",
+  "source_original": {
+    "path": "tmp/pdfs/LSI-V4.djvu",
+    "pages": 701,
+    "mapping": "Verified printed385–396 = physical405–416; +20. Nordic viewer fragment uses a distinct +19 coordinate convention."
+  },
+  "scope": [
+    {
+      "pages": [
+        385
+      ],
+      "content": "Historical names, district attestations, population tables and Sherring citation; contextual, no glossed lexical entries."
+    },
+    {
+      "pages": [
+        386,
+        387
+      ],
+      "content": "Every target lexical pronunciation/grammar example, alternatives, complete verb person paradigm, and source-defined expressions. Preserve separately labelled Standard/Old Kanarese/Bijapur/Telugu comparisons as controls or attributed analysis, not Holiya target rows."
+    },
+    {
+      "pages": [
+        388,
+        389
+      ],
+      "specimen": "I, No.17",
+      "locality": "District Bhandara",
+      "content": "Complete Report of a Theft, Roman interlinear; p389 free English contextual witness."
+    },
+    {
+      "pages": [
+        390,
+        391
+      ],
+      "specimen": "II, No.18",
+      "locality": "District Balaghat",
+      "content": "Complete Roman interlinear Prodigal Son."
+    },
+    {
+      "pages": [
+        392,
+        393
+      ],
+      "specimen": "III, No.19",
+      "locality": "District Seoni",
+      "content": "Complete Roman interlinear Prodigal Son; retain printed sic and question-mark qualifications."
+    },
+    {
+      "pages": [
+        394,
+        395
+      ],
+      "specimen": "No.20, additional Holiya witness",
+      "locality": "District Bhandara",
+      "content": "Complete additional Prodigal Son, introduced explicitly as Holiya identical to Golari. Earlier reference to three specimens does not exclude this fourth."
+    },
+    {
+      "pages": [
+        396
+      ],
+      "content": "Next chapter Kurumba/Kurumvari; excluded boundary."
+    }
+  ],
+  "identity": {
+    "canonical_language": "Holiya",
+    "glottocode": "holi1239",
+    "clade": "S. Dravidian I",
+    "new_base_language": false,
+    "evidence": [
+      "Current languages.csv explicitly identifies Golari as Holiya alternate name.",
+      "Glottolog primary language page identifies Holiya/hoy and alternative Golari-Kannada; cites Grierson1906.",
+      "p385 explicitly equates Holiya and Golari of these districts; p394 reinforces same for Bhandara."
+    ],
+    "verification_url": "https://glottolog.org/resource/languoid/id/holi1239",
+    "historical_classification": "Kanarese dialect especially close to Bijapur is preserved as Grierson’s classification, not a reassignment to modern Kannada.",
+    "proposed_dialects": [
+      "dialect:Holiya:lsi1906-golari-holiya:General",
+      "dialect:Holiya:lsi1906-golari-holiya:Bhandara",
+      "dialect:Holiya:lsi1906-golari-holiya:Balaghat",
+      "dialect:Holiya:lsi1906-golari-holiya:Seoni"
+    ],
+    "district_policy": "General chapter examples receive General unless source explicitly assigns district. Two Bhandara texts share one district variety; text number and caste label remain provenance. No Nagpur tag merely from census or prediction.",
+    "coordinates": "Source gives districts, not exact elicitation points; leave numeric coordinates blank or explicitly label a sourced district approximation qualityC. Nordic21.32,79.55 is not a surveyed site and must not be copied as exact."
+  },
+  "critical_controls": [
+    "Chanda Golar/Golkars speak Telugu per p385; p577 and594 independently reiterate identity with local Telugu/Komtau. Do not map label Golari blindly across volume.",
+    "Standard Kanarese, Old Kanarese, Bijapur and Telugu comparison forms retain source labels; no generic shared-scope rule makes them Holiya attestations.",
+    "Census tables, English-only free translation, headings and authority prose remain accounted context."
+  ],
+  "representation": {
+    "native": "p386 explicitly says only Roman version printed; original submitted Devanagari is unavailable here, so Native stays blank. Do not reconstruct.",
+    "profile": "Preserve literal source vowels, quantities, aspirates, doubled consonants, nasalization, hyphens and Seoni ṛ. Source warns e/o length supplied from Standard Kanarese may be wrong and other quantities inconsistent; do not harmonize or assert phonemic certainty.",
+    "source_analysis": "Retain qualified Aryan-influence claims, Telugu attribution of yād batinā/vastā, and tentative hōgdhōdun decomposition as attributed analysis. Do not invent donor identities or graph targets."
+  },
+  "external_scope_checks": {
+    "nordic_prose_pages": [
+      385,
+      386,
+      387
+    ],
+    "nordic_specimen_pages": [],
+    "table_html": {
+      "path": "nordic-vol4-part1-tables.html",
+      "sha256": "2656ceb842596c580835e2a846e25a83d67cc74e364e5ddc7d1ea0c1dd89a6fb",
+      "url": "https://demo.spraakbanken.gu.se/lsi/tables/vol4-part1-tables.html",
+      "chapter_tables": "385 and386 population counts only; no specimen layer388–395.",
+      "all_label_hits": "Golari/Holiya hits elsewhere are census tables; no dedicated lexical column located."
+    },
+    "original_standard_list": "Inspected complete first four-page header spread printed646–649/physical666–669: Tamil(Poona),Korvi(Belgaum),Kaikadi(Sholapur),Malayalam,Kanarese(Belgaum),Kurukh(Palamau),Malto,Kui(Khondmal),Gondi(Mandla),Telugu,Brahui(Kalat). No Golari/Holiya column.",
+    "outside_chapter_nordic_mentions": {
+      "363": "General Kanarese classification comparison only; no explicitly Golari lexical example.",
+      "396": "Kurumba editorial vowel-length method refers back to Golari; no Holiya lexical example.",
+      "577": "Chanda Telugu label context, excluded.",
+      "594": "Chanda Golari/Komtau Telugu context and Telugu forms, excluded."
+    }
+  },
+  "references": {
+    "proposed_source_key": "grierson1906holiya",
+    "primary": "Grierson1906 Linguistic Survey of India IV, Munda and Dravidian Languages,385–395; bibliographic edition and titlepage to be pinned by owner.",
+    "auxiliary": "p385 cites Sherring, Tribes and Castes,II,p112; add attributed context/auxiliary reference, not lexical citation propagation. Existing sources.bib has no Sherring record.",
+    "auxiliary_identification": "Matthew Atmore Sherring, Hindu Tribes and Castes,II,1879; primary GoogleBooks catalogue UZ1CAQAAMAAJ confirms author/year/publisher Thacker,Spink&Company; exact title transcription should be verified by owner.",
+    "auxiliary_url": "https://books.google.com/books?id=UZ1CAQAAMAAJ"
+  },
+  "limitations": "Scope census is complete at section/page level; lexical atom/row counts require owner extraction. This is not a final sampled transcription audit or installation approval. Canonical files untouched."
+}

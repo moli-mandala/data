@@ -1,0 +1,23 @@
+file: 20260925-donegan-stampe-gorum.csv
+defaults:
+  transcription:
+    profile: gorum-mla
+    input: form
+    preserve_hyphens: true
+  identity:
+    legacy_ids: stem
+    append_order: 52
+  importer:
+    commands:
+      - [data/other/forms/raw_data/gorum_mla_2004/import_source.py, --install]
+    note: Source-file installation only; no database build. Complete snapshot; ambiguous ASCII notation remains exact source spelling. Unique full-form bracket transcriptions preserved separately; no unsupported phonetic mapping.
+sources:
+  DSGO:
+    identity:
+      dedupe_by_entry_key: true
+    forms:
+      split_alternates: false
+    reference:
+      editor: OpenAI Codex
+      ocr: false
+      etymology_provenance: source

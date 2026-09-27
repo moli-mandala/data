@@ -189,5 +189,5 @@ def test_every_installed_row_survives_build_with_original_ipa():
         if row["Gloss"] == "he is hungry, he was hungry"
         and row["Source"].endswith("item 184, N-Son-Bal]")
     )
-    assert hungry["Form"] == "bhuklagi, bhuklagtithi"
+    assert hungry["Form"] == "bʰūklagi, bʰūklagtitʰi"
     assert hungry["Original"] == "bʱuklʌgi, bʱuklʌgti̪tʰ̪i"

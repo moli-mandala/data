@@ -1,0 +1,18 @@
+file: 20260925-kisan-odisha-numerals.csv
+defaults:
+  transcription:
+    profile: kujur-perumalsamy-kisan-2018
+    preserve_hyphens: true
+  identity:
+    legacy_ids: stem
+    dedupe_by_entry_key: true
+    append_order: 75
+  importer:
+    commands:
+      - [data/other/forms/raw_data/kisan_odisha_numerals_2018/import_source.py, --install]
+    note: Two explicitly credited Dravidian Kisan tables, mapped under Kurux; duplicate printed 4s held.
+sources:
+  kujur-perumalsamy2018kisan:
+    reference:
+      editor: OpenAI Codex
+      ocr: false

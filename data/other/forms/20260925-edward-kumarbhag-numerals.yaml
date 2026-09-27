@@ -1,0 +1,17 @@
+file: 20260925-edward-kumarbhag-numerals.csv
+defaults:
+  transcription:
+    profile: edward-kumarbhag-numerals-2019
+    preserve_hyphens: true
+  identity:
+    legacy_ids: stem
+    append_order: 61
+  importer:
+    commands:
+      - [data/other/forms/raw_data/edward_kumarbhag_numerals_2019/import_source.py, --install]
+    note: Explicit Kumarbhag Paharia numerals in George Edward's 2019 contributed table; the two complete readings of numeral 20 have separate entry keys.
+sources:
+  edward2019kumarbhag:
+    reference:
+      editor: OpenAI Codex
+      ocr: false

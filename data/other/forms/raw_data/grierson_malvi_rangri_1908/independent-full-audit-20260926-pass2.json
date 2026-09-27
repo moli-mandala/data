@@ -1,0 +1,124 @@
+{
+  "status": "pass",
+  "seed": 20260926142,
+  "sample_size": 20,
+  "material_errors": 0,
+  "hashes_before_and_after": {
+    "proposal.csv": "46ec977942039e718942da333bd4d3373862eacffd18d5ac717e3f4dd5b8af31",
+    "proposal-audit.jsonl": "a8db786277824de9fda97f13688a744dce1e7fe3f924689b1fb667caf3238d28",
+    "proposal-profile.txt": "3f72caff77f6fae86576f3a76973309b9fb1bc4ecc4279ef7920be6591671b05"
+  },
+  "reviewer": "root",
+  "method": "Independent direct grayscale review against final sampled CSV rows; 5 grammar, 5 tables, 5 specimen I, 5 specimen II source units, with all alternatives and native witness correspondence. Originals viewed this turn include grammar54,56,57; tables309,315,321; Roman249–251,255–256; native248,252–253. Four-way demonstrative enlarged for diacritics.",
+  "checks": [
+    "All selected actual_csv_rows equal frozen proposal rows by Entry_Key.",
+    "Typed source scope, grammatical tags and residual Notes reviewed.",
+    "Exact attestation reuse retains selected occurrence citations.",
+    "Seven focused tests passed in 0.78s, including actual make_refs.source_ids and unify_cldf.citation_keys for every proposal row.",
+    "Citation repair preserves all lexical fields and raw audit; no semicolon remains inside exported citation locators."
+  ],
+  "results": [
+    {
+      "source_unit_key": "grierson1908rangri:p57:grammar:aux-past-f-sg",
+      "result": "pass",
+      "note": "p57 feminine singular auxiliary thī and no-person-change statement verified."
+    },
+    {
+      "source_unit_key": "grierson1908rangri:p56:grammar:dem-sg-obl",
+      "result": "pass",
+      "note": "p56 four singular oblique demonstratives aṇī, iṇī, ī̃, yā verified in enlarged grayscale crop; all four alternatives preserved."
+    },
+    {
+      "source_unit_key": "grierson1908rangri:p57:grammar:pres-definite-3sg",
+      "result": "pass",
+      "note": "p57 present definite third singular mārē-hē verified, distinct person analysis retained from identical third plural form."
+    },
+    {
+      "source_unit_key": "grierson1908rangri:p54:grammar:noun-daughter-1",
+      "result": "pass",
+      "note": "p54 daughter laḍᵃkī nominative singular verified, superscript a retained."
+    },
+    {
+      "source_unit_key": "grierson1908rangri:p54:grammar:pronunciation-milk",
+      "result": "pass",
+      "note": "p54 dūd milk in aspiration-loss example verified; comparison dūdh remains attributed Notes."
+    },
+    {
+      "source_unit_key": "grierson1908malvirangri:p321:item:224",
+      "result": "pass",
+      "note": "p321 item224 Āj hū̃ bahōt dūr phari-nē āyō and English sentence agree; printed continuation joined as one cell."
+    },
+    {
+      "source_unit_key": "grierson1908malvirangri:p309:item:77",
+      "result": "pass",
+      "note": "p309 item77 Jā Go agrees."
+    },
+    {
+      "source_unit_key": "grierson1908malvirangri:p315:item:160",
+      "result": "pass",
+      "note": "p315 item160 Thē̃ hō You are agrees with nasalization and plural prompt."
+    },
+    {
+      "source_unit_key": "grierson1908malvirangri:p315:item:148",
+      "result": "pass",
+      "note": "p315 item148 Ṭēgᵃḍā Dogs agrees, no added nasalization."
+    },
+    {
+      "source_unit_key": "grierson1908malvirangri:p309:item:79",
+      "result": "pass",
+      "note": "p309 item79 Bēṭh Sit agrees."
+    },
+    {
+      "source_unit_key": "grierson1908malvirangri:p251:specimen:line9:word1",
+      "result": "pass",
+      "note": "p251 line9 pāyō/is-found and p248 line30 पायो agree."
+    },
+    {
+      "source_unit_key": "grierson1908malvirangri:p251:specimen:line9:word7",
+      "result": "pass",
+      "note": "p251 line9 jōgyᵃ/proper and p248 line31 जोग्य agree, source superscript final a preserved."
+    },
+    {
+      "source_unit_key": "grierson1908malvirangri:p249:specimen:line9:word3",
+      "result": "pass",
+      "note": "p249 line9 kōī/a-certain and p248 line6 कोईँ agree; native nasalization not projected onto Roman."
+    },
+    {
+      "source_unit_key": "grierson1908malvirangri:p250:specimen:line17:word4",
+      "result": "pass",
+      "note": "p250 line17 pūchhyō/it-was-asked and p248 line21 पूछ्यो agree."
+    },
+    {
+      "source_unit_key": "grierson1908malvirangri:p250:specimen:line19:word2",
+      "result": "pass",
+      "note": "p250 line19 maḷyō/was-got and p248 line23 मळ्यो agree."
+    },
+    {
+      "source_unit_key": "grierson1908malvirangri:p255:specimen:line14:word2",
+      "result": "pass",
+      "note": "p255 line14 Dēwᵃḍā/Dēwaḍā and p252 line18 देवडा agree; source name translation retained."
+    },
+    {
+      "source_unit_key": "grierson1908malvirangri:p256:specimen:line9:word6",
+      "result": "pass",
+      "note": "p256 line9 ghaṇī-j/very-much and p253 line1 घणी-ज agree."
+    },
+    {
+      "source_unit_key": "grierson1908malvirangri:p255:specimen:line10:word5",
+      "result": "pass",
+      "note": "p255 line10 māthā-rē/head-of and p252 line15 माथा-रे agree."
+    },
+    {
+      "source_unit_key": "grierson1908malvirangri:p255:specimen:line7:word2",
+      "result": "pass",
+      "note": "p255 line7 paḍyō-thō/lying-was and p252 line13 literal पडो-थो agree; no Roman y projected into native witness."
+    },
+    {
+      "source_unit_key": "grierson1908malvirangri:p256:specimen:line4:word4",
+      "result": "pass",
+      "note": "p256 line4 jāṇ-nē/known-having and p252 line25 जाण-ने agree."
+    }
+  ],
+  "decision": "Authorize source-stage canonical installation of this exact frozen proposal, metadata/profile/importer and focused checks. Full CLDF/full suite deferred; browser refresh not requested.",
+  "residual_uncertainty": "One native-script place-name vowel uncertainty, explicitly typed; two unpaired p55 native orthographic examples remain audit evidence, not forced row alignments."
+}

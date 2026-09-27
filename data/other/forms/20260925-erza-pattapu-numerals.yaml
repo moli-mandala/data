@@ -1,0 +1,17 @@
+file: 20260925-erza-pattapu-numerals.csv
+defaults:
+  transcription:
+    profile: erza-pattapu-2015
+    preserve_hyphens: true
+  identity:
+    legacy_ids: stem
+    append_order: 111
+  importer:
+    commands:
+      - [data/other/forms/raw_data/erza_pattapu_numerals_2015/import_source.py, --install]
+    note: Erza/BSI's complete 2015 Pattapu numbered table in the immutable CC-BY Chan archive.
+sources:
+  erza2015pattapu:
+    reference:
+      editor: OpenAI Codex
+      ocr: false

@@ -1,0 +1,1506 @@
+{
+  "seed": 2026092103,
+  "count": 20,
+  "population": 657,
+  "scope": "Combined preview source-to-output audit; compiled IDs and graph survival remain a separate gate.",
+  "sampling": "random.Random(seed).sample over page-ordered physical records",
+  "input_sha256": {
+    "reviewed-p48.json": "72519e1cd8bc9f8221ebb48585ae33ff2433817eb32edb11d6d1d9c97a9f8271",
+    "reviewed-p49.json": "c93e5c0bb6940f9f96a23d56a46e7278cd286c0c33570677e2551ae796a52d0d",
+    "reviewed-p50.json": "0d6f615e8346c574991fa10f8a7357f444424d4fbb3e50790b6f2018512d6646",
+    "reviewed-p51.json": "ede7660a7b9ef12ac9f657938f0416cf392c261dd54bc071222b6cd54860270c",
+    "reviewed-p52.json": "390a97efa19bae8dcad7f6ce577682522cb479a04173411ac442760c54121e6b",
+    "reviewed-p53.json": "3f6fcfdf54b1417f9bc5e6f2725dad3305f45a2be91f2b7454c3bcdc3460ddcc",
+    "reviewed-p54.json": "7fd29e1e8940ee689ebcc61b05dffe4bd4ec739e7bf77dbb0d7e35052192913c",
+    "reviewed-p55.json": "51f6ad12fa6619044e2e3eaf7d9aade782ea5d09df8205087d64f60aff24535b",
+    "reviewed-p56.json": "348a05e28314f93c46e347283c6700588c9c903ed616a2526d1257161a074c1c",
+    "reviewed-p57.json": "830c069b8ce1a5b79b86b80a5f075f11cccbef6671c6f19f8be231c30a00237f",
+    "reviewed-p58.json": "b991adecefd417e789423528686e39410c2fabba574f68db59431cfd195c11c7",
+    "reviewed-p59.json": "4ab1852c510ae88b8c9de5aad35925faf2e99db51a05aace9c725fadbd27ad91",
+    "reviewed-p60.json": "d035d3a84a45f42811f5bce7526e6f2fa4c118946d380b31e78ea96a17595e89",
+    "reviewed-p61.json": "87e5fbf79e50ad929740a17e2fa2e465e48fe967d9307d133e50a02b0994db54",
+    "reviewed-p62.json": "96984a964fbd8aa8ae367403cf09ac474af71be8202b36f63da754ef37df73ee",
+    "reviewed-p63.json": "cd2943402cc6da64da54e65cbf6a1dafbb11a83635b38046c061bb6349fccc8a",
+    "reviewed-p64.json": "917664a3b01265cf5ab2763d0bccada5cbb03d562e86413f5abd5226e1a799f8",
+    "reviewed-p65.json": "8adee430fe66059cb0ca544f35b731f7aae9a79e7754c9ff699f5612ac214e4c",
+    "reviewed-p66.json": "c728d7785c39a3573d266526e32f67fb80b6ec29013c502094abe7118bce148b",
+    "reviewed-p67.json": "beb58eaac03b85c03d766c900fcbba6cb40f39d8390d791047f65df560cd7b55",
+    "reviewed-p68.json": "5d28a19e4bf223437fcaf0c676c67826932819f7c86c90e1bb55461f865844c7",
+    "reviewed-p69.json": "3072a952231f713a681f0b79211ad20161ecc469be62ddb3b1c2311f639b4ea3",
+    "reviewed-p70.json": "57baf53fe77a8dca3b70fc60802cb0c3e2205e036eadd036080671221c2acff0",
+    "reviewed-p71.json": "350eeeb80c3984ce8bae3d6f14bfccb1c6766effbc9f7f5977b7ee2ce1ab2ca2",
+    "reviewed-p72.json": "2372922aeb69ff6400d930374fcee71462094957af6e06770099635b38dd9958",
+    "reviewed-p73.json": "da436545be074b54d8111f25bfd4b278328f14663cc35b387798b1fd0c10f6fe",
+    "reviewed-p74.json": "a8adb3893ac3c9cdac57b139fa35920daf7adefd13900a37497341c9cef74f01",
+    "reviewed-p75.json": "64bb5778cbfda075390c463bd2b807a555b15e68fb087aa3dda3592717bb38bb",
+    "reviewed-p76.json": "5d8c6358e042258ecee80e4c8225ac964d63986b2b4ab6f8dcdac6afa6303578",
+    "reviewed-p77.json": "8b3a66c900ed9f68bbdade0d76e879c81e3d677200168290689406323271c3f2",
+    "comparison-reviewed-p48.json": "9e3b12c1c7bbe12c0f4649f55e9a7d339fe8ec6f48633edee31fcda12d803cc7",
+    "comparison-reviewed-p49.json": "e4dbd75c6437c938c68a54794003d88210f3a541ea3e5d7eceed5d7d540055ef",
+    "comparison-reviewed-p50.json": "dd502f668127074830aea64879d3a60c1a982478be4f57e9d1ef15173a5dae74",
+    "comparison-reviewed-p51.json": "50f060870017277aa58e55875971dbefbc2419fc3a3a513e5bda5b1d6dc514ab",
+    "comparison-reviewed-p52.json": "e5cfd392c74aef5a4dd47eecfaf69c761b6deeef549ec3f0db69ab14fa34cffe",
+    "comparison-reviewed-p53.json": "b67cdfde6a94ab95c325e036345e007431773d9622bad9bf2891cf722c80db34",
+    "comparison-reviewed-p54.json": "a832021980261979f254d7012c08b25217827945d2de62a002d3757e03734e5a",
+    "comparison-reviewed-p55.json": "266acbecb5c9980f572ca4e17f4f0208d710601bd6f43ae1867c8d0d8315de65",
+    "comparison-reviewed-p56.json": "6d17f2f5e1f81477512b4f5a8c3444dcf9e46ea92f4bb74c4d7d3aa974e0acc2",
+    "comparison-reviewed-p57.json": "6a4c61db425a45f565b91b900695b068d0e36e2c6d18eebd8d924d8d06139600",
+    "comparison-reviewed-p58.json": "629a4de67d73c6a3debd7a74baad3fe74dcebca866e2673d0fd34d6f739959f5",
+    "comparison-reviewed-p59.json": "7716a6a221e93e551e15b554c7efa91484d151794fc4c14d31d22a16676269de",
+    "comparison-reviewed-p60.json": "6243663f9186525c8d87430f831b56ecf0204a05a2141421cf4ef3fc8f4e12d0",
+    "comparison-reviewed-p61.json": "99c825cfcd15c1d4d634b6b7b78fe783addb34b07e80d609e8d6ccf6a55d217f",
+    "comparison-reviewed-p62.json": "40fbbd5fc5ed73e192945e07cd5e12200d6dfadc7a1e4c94b71258ba786c9987",
+    "comparison-reviewed-p63.json": "465c448ba7d2926cd42ef14ac9409bf2f87a76fb356a69c7baf8756df31a9bec",
+    "comparison-reviewed-p64.json": "190f267f3e3eafbb80b4cdfcc3e35c602be3b271e97d033677b5411fd3e1ae20",
+    "comparison-reviewed-p65.json": "d9f529df5f360860bdd143d87d67f7ac4f1baf08d051177be5429187cf880f3b",
+    "comparison-reviewed-p66.json": "42d1ff04f5601fbe468fc804e5964c9482655ed844ccd10e594eab746d68a3a9",
+    "comparison-reviewed-p67.json": "88b39ad846abbc3524d2f860fe96db71fdf7bf0892db95560e1f04a6e63a4e5e",
+    "comparison-reviewed-p68.json": "9a4c32bfa41bc04f3498b6a4a7758f21610339163d29c2f1a8cc6738e6d23e60",
+    "comparison-reviewed-p69.json": "3167eaa6047eb6b9020799b197a254b7879c53841efb812223c16a20acc12d0d",
+    "comparison-reviewed-p70.json": "74867b92d3ce22072db033495a7b8eeac51056af1f0919b7882a9d866843306e",
+    "comparison-reviewed-p71.json": "477a98f141ab978c957bf3f7903cea6030516f2d738c5fea03bf3a08e9a01e68",
+    "comparison-reviewed-p72.json": "53b7a2a92c29e5719736f9a4cee605f56769cee051dea536353bdc6eac034201",
+    "comparison-reviewed-p73.json": "3c79a485c06ad8c634fac56cae59443993a3a1672a03a992e3467643de797a0c",
+    "comparison-reviewed-p74.json": "f2bb068931adca9ce67da0664398a1053aa6d47584f5e92bd12ef0691798f1cb",
+    "comparison-reviewed-p75.json": "d800b48aad90b41dd90b38b9f17084321ec32cbe4803a656cd68e03ca3362bcd",
+    "comparison-reviewed-p76.json": "bd1f5aaffb090be03dd94682e1604cb836a3023f9e11fa9eb1896f0808698ab5",
+    "comparison-reviewed-p77.json": "cc460f7cfb6e3768263c6014ef71110e2963e1e4d32124824d3f9adff7727d00",
+    "reviewed-relations.json": "702345f33e566c3e85f012430c91e5a5da1326a4b25675d8d47a9b705330b4b6",
+    "morphology-dispositions.json": "960cf01df6b75b3254c578a742e48b8f190721ed242685cf91d79be5d6cd176f",
+    "explicit-reference-resolution.json": "8811ef880119ad2c4878f03fcf0649d63ad0c0f2aad8019608065fbf67c4d3f6",
+    "integration-preview/rich-row-audit.jsonl": "e1a30dec71196a798469a7ced084212ef20f5b19f149286d6308f236dcc2869f",
+    "integration-preview/physical-record-audit.jsonl": "bb5c8ef7c6fd97846f554dd992bf4a2e0520b2729e8705b4ca351df3de5bad4c",
+    "integration-preview/20260921-bhattacharya-ollari.csv": "9eef4305dfa38d7fe6895b1b1d59b7a9cc6610c3a2a415d024feb9ddb5299928",
+    "integration-preview/20260921-bhattacharya-ollari-entry-texts.csv": "ff3a66aa1cface8db9f4075a926fbae35c40150c57dc842307defb4187bdb301"
+  },
+  "records": [
+    {
+      "sample_number": 1,
+      "source_record": {
+        "entry_key": "ollari1957:p71:c1:y3292",
+        "printed_page": 71,
+        "pdf_page": 82,
+        "column": 1,
+        "top": 3292,
+        "source_head": "MĀL",
+        "transcribed_form": "māl",
+        "source_pos": "sb.",
+        "gloss": "daughter",
+        "morphology": [
+          {
+            "label": "pl.",
+            "raw": "māsil",
+            "kind": "full-form"
+          }
+        ],
+        "source_note": "",
+        "explicit_derivation_parent": "",
+        "lexical_review": "visually-transcribed",
+        "comparison_review": "pending; raw OCR retained, not phonetic transcription",
+        "raw_ocr": "MAL, pl. masil, sb., daughter\n[Pj. mal ‘id.’, Ta. makal, Ka.\nmagal]",
+        "case_policy": "Small-cap headword typography recorded separately; transcribed_form is lowercase."
+      },
+      "preview_rows": [
+        {
+          "entry_key": "ollari1957:p71:c1:y3292",
+          "expected_display": "māl",
+          "pending": [
+            "comparative-prose-and-graph-review",
+            "fresh-source-to-output-audit"
+          ],
+          "physical_entry_key": "ollari1957:p71:c1:y3292",
+          "proposed_row": [
+            "OllariGadaba",
+            "",
+            "māl",
+            "daughter",
+            "",
+            "",
+            "",
+            "bhattacharya1957ollari[p. 71, col. 1]",
+            "",
+            "",
+            "ollari1957:p71:c1:y3292",
+            "",
+            "",
+            "",
+            "noun"
+          ],
+          "relation_basis": "headword",
+          "status": "preview-not-installed"
+        },
+        {
+          "entry_key": "ollari1957:p71:c1:y3292:inflection:1",
+          "expected_display": "māsil",
+          "pending": [
+            "comparative-prose-and-graph-review",
+            "fresh-source-to-output-audit"
+          ],
+          "physical_entry_key": "ollari1957:p71:c1:y3292",
+          "proposed_row": [
+            "OllariGadaba",
+            "",
+            "māsil",
+            "daughter",
+            "",
+            "",
+            "",
+            "bhattacharya1957ollari[p. 71, col. 1]",
+            "",
+            "",
+            "ollari1957:p71:c1:y3292:inflection:1",
+            "",
+            "",
+            "ollari1957:p71:c1:y3292",
+            "noun pl"
+          ],
+          "relation_basis": "inflection",
+          "status": "preview-not-installed"
+        }
+      ],
+      "prose_rows": [
+        {
+          "Form_ID": "",
+          "Entry_Key": "ollari1957:p71:c1:y3292",
+          "Position": "1",
+          "Kind": "comparison",
+          "Format": "text",
+          "Content": "Pj. māl ‘id.’, Ta. makaḷ, Ka. magaḷ",
+          "Source": "bhattacharya1957ollari[p. 71, col. 1]"
+        }
+      ],
+      "morphology_dispositions": []
+    },
+    {
+      "sample_number": 2,
+      "source_record": {
+        "entry_key": "ollari1957:p60:c2:y1863",
+        "printed_page": 60,
+        "pdf_page": 71,
+        "column": 2,
+        "top": 1863,
+        "source_head": "JILOM",
+        "transcribed_form": "jilom",
+        "source_pos": "adj.",
+        "gloss": "late",
+        "morphology": [],
+        "source_note": "",
+        "explicit_derivation_parent": "",
+        "lexical_review": "visually-transcribed",
+        "comparison_review": "pending; raw OCR retained, not phonetic transcription",
+        "raw_ocr": "JILOM, adj., late",
+        "case_policy": "Small-cap headword typography recorded separately; transcribed_form is lowercase."
+      },
+      "preview_rows": [
+        {
+          "entry_key": "ollari1957:p60:c2:y1863",
+          "expected_display": "jilom",
+          "pending": [
+            "comparative-prose-and-graph-review",
+            "fresh-source-to-output-audit"
+          ],
+          "physical_entry_key": "ollari1957:p60:c2:y1863",
+          "proposed_row": [
+            "OllariGadaba",
+            "",
+            "jilom",
+            "late",
+            "",
+            "",
+            "",
+            "bhattacharya1957ollari[p. 60, col. 2]",
+            "",
+            "",
+            "ollari1957:p60:c2:y1863",
+            "",
+            "",
+            "",
+            "adj"
+          ],
+          "relation_basis": "headword",
+          "status": "preview-not-installed"
+        }
+      ],
+      "prose_rows": [],
+      "morphology_dispositions": []
+    },
+    {
+      "sample_number": 3,
+      "source_record": {
+        "entry_key": "ollari1957:p62:c1:y1567",
+        "printed_page": 62,
+        "pdf_page": 73,
+        "column": 1,
+        "top": 1567,
+        "source_head": "TIRG-",
+        "transcribed_form": "tirg-",
+        "source_pos": "vb.",
+        "gloss": "to tremble",
+        "morphology": [],
+        "source_note": "",
+        "explicit_derivation_parent": "",
+        "lexical_review": "visually-transcribed",
+        "comparison_review": "pending; raw OCR retained, not phonetic transcription",
+        "raw_ocr": "TIRG-, vb., to tremble [Pj. tir-,\nKonda firg-, Kui tirga, Kuwi\ntrig- ‘to tremble’]",
+        "case_policy": "Small-cap headword typography recorded separately; transcribed_form is lowercase."
+      },
+      "preview_rows": [
+        {
+          "entry_key": "ollari1957:p62:c1:y1567",
+          "expected_display": "tirg-",
+          "pending": [
+            "comparative-prose-and-graph-review",
+            "fresh-source-to-output-audit"
+          ],
+          "physical_entry_key": "ollari1957:p62:c1:y1567",
+          "proposed_row": [
+            "OllariGadaba",
+            "",
+            "tirg-",
+            "to tremble",
+            "",
+            "",
+            "",
+            "bhattacharya1957ollari[p. 62, col. 1]",
+            "",
+            "",
+            "ollari1957:p62:c1:y1567",
+            "",
+            "",
+            "",
+            "verb"
+          ],
+          "relation_basis": "headword",
+          "status": "preview-not-installed"
+        }
+      ],
+      "prose_rows": [
+        {
+          "Form_ID": "",
+          "Entry_Key": "ollari1957:p62:c1:y1567",
+          "Position": "1",
+          "Kind": "comparison",
+          "Format": "text",
+          "Content": "Pj. tir-, Konda tirg-, Kui tirga, Kuwi trig- ‘to tremble’",
+          "Source": "bhattacharya1957ollari[p. 62, col. 1]"
+        }
+      ],
+      "morphology_dispositions": []
+    },
+    {
+      "sample_number": 4,
+      "source_record": {
+        "entry_key": "ollari1957:p52:c1:y4121",
+        "printed_page": 52,
+        "pdf_page": 63,
+        "column": 1,
+        "top": 4121,
+        "source_head": "ULFṬE",
+        "transcribed_form": "ulfṭe",
+        "source_pos": "sb.; adj.",
+        "gloss": "person(s) living in a house; pertaining to the house",
+        "morphology": [
+          {
+            "label": "pl.",
+            "raw": "-r",
+            "kind": "suffix"
+          }
+        ],
+        "source_note": "",
+        "explicit_derivation_parent": "",
+        "lexical_review": "uncertain-head-character",
+        "comparison_review": "pending; raw OCR retained, not phonetic transcription",
+        "raw_ocr": "ULFTE, pl. -r, sb., person(s)\nliving in a_ house; adj.,\npertaining to the house",
+        "case_policy": "Small-cap headword typography recorded separately; transcribed_form is lowercase.",
+        "uncertainties": [
+          {
+            "type": "ambiguous-glyph",
+            "field": "source_head",
+            "detail": "Third letter in ULFṬE may be E rather than F; 350-dpi crop retained in scratch. Provisional reading must be resolved or explicitly flagged at import."
+          }
+        ]
+      },
+      "preview_rows": [
+        {
+          "entry_key": "ollari1957:p52:c1:y4121",
+          "expected_display": "ulfṭe",
+          "pending": [
+            "comparative-prose-and-graph-review",
+            "fresh-source-to-output-audit"
+          ],
+          "physical_entry_key": "ollari1957:p52:c1:y4121",
+          "proposed_row": [
+            "OllariGadaba",
+            "",
+            "ulfṭe",
+            "person(s) living in a house; pertaining to the house",
+            "",
+            "",
+            "",
+            "bhattacharya1957ollari[p. 52, col. 1]",
+            "",
+            "",
+            "ollari1957:p52:c1:y4121",
+            "",
+            "",
+            "",
+            "noun adj uncertain"
+          ],
+          "relation_basis": "headword",
+          "status": "preview-not-installed"
+        },
+        {
+          "entry_key": "ollari1957:p52:c1:y4121:inflection:1",
+          "expected_display": "ulfṭer",
+          "pending": [
+            "comparative-prose-and-graph-review",
+            "fresh-source-to-output-audit"
+          ],
+          "physical_entry_key": "ollari1957:p52:c1:y4121",
+          "proposed_row": [
+            "OllariGadaba",
+            "",
+            "ulfṭer",
+            "person(s) living in a house; pertaining to the house",
+            "",
+            "",
+            "",
+            "bhattacharya1957ollari[p. 52, col. 1]",
+            "",
+            "",
+            "ollari1957:p52:c1:y4121:inflection:1",
+            "",
+            "",
+            "ollari1957:p52:c1:y4121",
+            "noun adj pl uncertain"
+          ],
+          "relation_basis": "inflection",
+          "status": "preview-not-installed"
+        }
+      ],
+      "prose_rows": [],
+      "morphology_dispositions": []
+    },
+    {
+      "sample_number": 5,
+      "source_record": {
+        "entry_key": "ollari1957:p51:c1:y2855",
+        "printed_page": 51,
+        "pdf_page": 62,
+        "column": 1,
+        "top": 2855,
+        "source_head": "ILE",
+        "transcribed_form": "ile",
+        "source_pos": "sb.",
+        "gloss": "bride",
+        "morphology": [
+          {
+            "label": "pl.",
+            "raw": "-v",
+            "kind": "suffix"
+          }
+        ],
+        "source_note": "",
+        "explicit_derivation_parent": "",
+        "lexical_review": "visually-transcribed",
+        "comparison_review": "pending; raw OCR retained, not phonetic transcription",
+        "raw_ocr": "ILE, pl. -v, sb., bride [Pj. ile\n‘young woman’ ‘girl’, cf.\nTa. ila, Ka. ele ‘young\nwoman’ ‘young’ ‘tender’, Te.\nléla, also ela (elabrdyamu)\n‘id.’, Kui /a@a ‘young woman’]",
+        "case_policy": "Small-cap headword typography recorded separately; transcribed_form is lowercase."
+      },
+      "preview_rows": [
+        {
+          "entry_key": "ollari1957:p51:c1:y2855",
+          "expected_display": "ile",
+          "pending": [
+            "comparative-prose-and-graph-review",
+            "fresh-source-to-output-audit"
+          ],
+          "physical_entry_key": "ollari1957:p51:c1:y2855",
+          "proposed_row": [
+            "OllariGadaba",
+            "",
+            "ile",
+            "bride",
+            "",
+            "",
+            "",
+            "bhattacharya1957ollari[p. 51, col. 1]",
+            "",
+            "",
+            "ollari1957:p51:c1:y2855",
+            "",
+            "",
+            "",
+            "noun"
+          ],
+          "relation_basis": "headword",
+          "status": "preview-not-installed"
+        },
+        {
+          "entry_key": "ollari1957:p51:c1:y2855:inflection:1",
+          "expected_display": "ilev",
+          "pending": [
+            "comparative-prose-and-graph-review",
+            "fresh-source-to-output-audit"
+          ],
+          "physical_entry_key": "ollari1957:p51:c1:y2855",
+          "proposed_row": [
+            "OllariGadaba",
+            "",
+            "ilev",
+            "bride",
+            "",
+            "",
+            "",
+            "bhattacharya1957ollari[p. 51, col. 1]",
+            "",
+            "",
+            "ollari1957:p51:c1:y2855:inflection:1",
+            "",
+            "",
+            "ollari1957:p51:c1:y2855",
+            "noun pl"
+          ],
+          "relation_basis": "inflection",
+          "status": "preview-not-installed"
+        }
+      ],
+      "prose_rows": [
+        {
+          "Form_ID": "",
+          "Entry_Key": "ollari1957:p51:c1:y2855",
+          "Position": "1",
+          "Kind": "comparison",
+          "Format": "text",
+          "Content": "Pj. ile ‘young woman’ ‘girl’, cf. Ta. iḷa, Ka. ele ‘young woman’ ‘young’ ‘tender’, Te. lē·la, also ela (elabrāyamu) ‘id.’, Kui lāa ‘young woman’",
+          "Source": "bhattacharya1957ollari[p. 51, col. 1]"
+        }
+      ],
+      "morphology_dispositions": []
+    },
+    {
+      "sample_number": 6,
+      "source_record": {
+        "entry_key": "ollari1957:p69:c2:y4284",
+        "printed_page": 69,
+        "pdf_page": 80,
+        "column": 2,
+        "top": 4284,
+        "source_head": "BOYSĀK",
+        "transcribed_form": "boysāk",
+        "source_pos": "sb.",
+        "gloss": "month of vaiśākha (April–May)",
+        "morphology": [],
+        "source_note": "",
+        "explicit_derivation_parent": "",
+        "lexical_review": "visually-transcribed",
+        "comparison_review": "pending; raw OCR retained, not phonetic transcription",
+        "raw_ocr": "BOYSAK, sb., month of vaisakha\n(April-May)",
+        "case_policy": "Small-cap headword typography recorded separately; transcribed_form is lowercase."
+      },
+      "preview_rows": [
+        {
+          "entry_key": "ollari1957:p69:c2:y4284",
+          "expected_display": "boysāk",
+          "pending": [
+            "comparative-prose-and-graph-review",
+            "fresh-source-to-output-audit"
+          ],
+          "physical_entry_key": "ollari1957:p69:c2:y4284",
+          "proposed_row": [
+            "OllariGadaba",
+            "",
+            "boysāk",
+            "month of vaiśākha (April–May)",
+            "",
+            "",
+            "",
+            "bhattacharya1957ollari[p. 69, col. 2]",
+            "",
+            "",
+            "ollari1957:p69:c2:y4284",
+            "",
+            "",
+            "",
+            "noun"
+          ],
+          "relation_basis": "headword",
+          "status": "preview-not-installed"
+        }
+      ],
+      "prose_rows": [],
+      "morphology_dispositions": []
+    },
+    {
+      "sample_number": 7,
+      "source_record": {
+        "entry_key": "ollari1957:p61:c1:y1275",
+        "printed_page": 61,
+        "pdf_page": 72,
+        "column": 1,
+        "top": 1275,
+        "source_head": "ḌĀBA",
+        "transcribed_form": "ḍāba",
+        "source_pos": "adj.",
+        "gloss": "closed",
+        "morphology": [],
+        "source_note": "",
+        "explicit_derivation_parent": "",
+        "lexical_review": "visually-transcribed",
+        "comparison_review": "pending; raw OCR retained, not phonetic transcription",
+        "raw_ocr": "DABA, adj., closed",
+        "case_policy": "Small-cap headword typography recorded separately; transcribed_form is lowercase."
+      },
+      "preview_rows": [
+        {
+          "entry_key": "ollari1957:p61:c1:y1275",
+          "expected_display": "ḍāba",
+          "pending": [
+            "comparative-prose-and-graph-review",
+            "fresh-source-to-output-audit"
+          ],
+          "physical_entry_key": "ollari1957:p61:c1:y1275",
+          "proposed_row": [
+            "OllariGadaba",
+            "",
+            "ḍāba",
+            "closed",
+            "",
+            "",
+            "",
+            "bhattacharya1957ollari[p. 61, col. 1]",
+            "",
+            "",
+            "ollari1957:p61:c1:y1275",
+            "",
+            "",
+            "",
+            "adj"
+          ],
+          "relation_basis": "headword",
+          "status": "preview-not-installed"
+        }
+      ],
+      "prose_rows": [],
+      "morphology_dispositions": []
+    },
+    {
+      "sample_number": 8,
+      "source_record": {
+        "entry_key": "ollari1957:p71:c1:y1471",
+        "printed_page": 71,
+        "pdf_page": 82,
+        "column": 1,
+        "top": 1471,
+        "source_head": "MAṄGIL",
+        "transcribed_form": "maṅgil",
+        "source_pos": "sb.",
+        "gloss": "peacock",
+        "morphology": [],
+        "source_note": "",
+        "explicit_derivation_parent": "",
+        "lexical_review": "visually-transcribed",
+        "comparison_review": "pending; raw OCR retained, not phonetic transcription",
+        "raw_ocr": "MASGIL, 5b., peacock [Pj. majil,\nmanjil, manil, Ta. majinai,\nmayil, Ma. mayil, Tu. mairu,\nKonda miril ‘id’, Poya\nmanni “id,.’, Sav. namil; cf.\nSk. maytira]",
+        "case_policy": "Small-cap headword typography recorded separately; transcribed_form is lowercase."
+      },
+      "preview_rows": [
+        {
+          "entry_key": "ollari1957:p71:c1:y1471",
+          "expected_display": "maŋgil",
+          "pending": [
+            "comparative-prose-and-graph-review",
+            "fresh-source-to-output-audit"
+          ],
+          "physical_entry_key": "ollari1957:p71:c1:y1471",
+          "proposed_row": [
+            "OllariGadaba",
+            "",
+            "maṅgil",
+            "peacock",
+            "",
+            "",
+            "",
+            "bhattacharya1957ollari[p. 71, col. 1]",
+            "",
+            "",
+            "ollari1957:p71:c1:y1471",
+            "",
+            "",
+            "",
+            "noun"
+          ],
+          "relation_basis": "headword",
+          "status": "preview-not-installed"
+        }
+      ],
+      "prose_rows": [
+        {
+          "Form_ID": "",
+          "Entry_Key": "ollari1957:p71:c1:y1471",
+          "Position": "1",
+          "Kind": "comparison",
+          "Format": "text",
+          "Content": "Pj. mājil, manjil, mañil, Ta. maññai, mayil, Ma. mayil, Tu. mairu, Konda miril ‘id.’, Poya maññi ‘id.’, Sav. namil; cf. Sk. mayūra",
+          "Source": "bhattacharya1957ollari[p. 71, col. 1]"
+        }
+      ],
+      "morphology_dispositions": []
+    },
+    {
+      "sample_number": 9,
+      "source_record": {
+        "entry_key": "ollari1957:p50:c1:y629",
+        "printed_page": 50,
+        "pdf_page": 61,
+        "column": 1,
+        "top": 629,
+        "source_head": "ĀṚ BELA",
+        "transcribed_form": "āṛ bela",
+        "source_pos": "adv.",
+        "gloss": "after-noon",
+        "morphology": [],
+        "source_note": "De.",
+        "explicit_derivation_parent": "",
+        "lexical_review": "visually-transcribed",
+        "comparison_review": "pending; raw OCR retained, not phonetic transcription",
+        "raw_ocr": "AR BELA, ady., after-noon (De.)",
+        "case_policy": "Small-cap headword typography recorded separately; transcribed_form is lowercase."
+      },
+      "preview_rows": [
+        {
+          "entry_key": "ollari1957:p50:c1:y629",
+          "expected_display": "āṛ bela",
+          "pending": [
+            "comparative-prose-and-graph-review",
+            "fresh-source-to-output-audit"
+          ],
+          "physical_entry_key": "ollari1957:p50:c1:y629",
+          "proposed_row": [
+            "OllariGadaba",
+            "",
+            "āṛ bela",
+            "after-noon",
+            "",
+            "",
+            "",
+            "bhattacharya1957ollari[p. 50, col. 1]",
+            "",
+            "",
+            "ollari1957:p50:c1:y629",
+            "",
+            "",
+            "",
+            "adv"
+          ],
+          "relation_basis": "headword",
+          "status": "preview-not-installed"
+        }
+      ],
+      "prose_rows": [
+        {
+          "Form_ID": "",
+          "Entry_Key": "ollari1957:p50:c1:y629",
+          "Position": "1",
+          "Kind": "source-attribution",
+          "Format": "text",
+          "Content": "De.",
+          "Source": "bhattacharya1957ollari[p. 50, col. 1]"
+        }
+      ],
+      "morphology_dispositions": []
+    },
+    {
+      "sample_number": 10,
+      "source_record": {
+        "entry_key": "ollari1957:p74:c2:y2338",
+        "printed_page": 74,
+        "pdf_page": 85,
+        "column": 2,
+        "top": 2338,
+        "source_head": "VEYTAL NĪR",
+        "transcribed_form": "veytal nīr",
+        "source_pos": "",
+        "gloss": "hot water",
+        "morphology": [],
+        "source_note": "No part-of-speech label printed; retained blank.",
+        "explicit_derivation_parent": "",
+        "lexical_review": "visually-transcribed",
+        "comparison_review": "pending; raw OCR retained, not phonetic transcription",
+        "raw_ocr": "VEYTAL Nik, hot water [Ta.\nvennir ‘hot water’, Ka. bennir,\nTe. védiniru ‘id.’; cf. Pj.\nvey- ‘(boiled rice) to be\ncooked’, Go. wédnd ‘to be\ncooked’, Brah. bising ‘id.’]",
+        "case_policy": "Small-cap headword typography recorded separately; transcribed_form is lowercase."
+      },
+      "preview_rows": [
+        {
+          "entry_key": "ollari1957:p74:c2:y2338",
+          "expected_display": "veytal nīr",
+          "pending": [
+            "comparative-prose-and-graph-review",
+            "fresh-source-to-output-audit"
+          ],
+          "physical_entry_key": "ollari1957:p74:c2:y2338",
+          "proposed_row": [
+            "OllariGadaba",
+            "",
+            "veytal nīr",
+            "hot water",
+            "",
+            "",
+            "",
+            "bhattacharya1957ollari[p. 74, col. 2]",
+            "",
+            "",
+            "ollari1957:p74:c2:y2338",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "relation_basis": "headword",
+          "status": "preview-not-installed"
+        }
+      ],
+      "prose_rows": [
+        {
+          "Form_ID": "",
+          "Entry_Key": "ollari1957:p74:c2:y2338",
+          "Position": "1",
+          "Kind": "comparison",
+          "Format": "text",
+          "Content": "Ta. vennīr ‘hot water’, Ka. bennīr, Te. vēḍinīru ‘id.’; cf. Pj. vey- ‘(boiled rice) to be cooked’, Go. wēānā ‘to be cooked’, Brah. bising ‘id.’",
+          "Source": "bhattacharya1957ollari[p. 74, col. 2]"
+        }
+      ],
+      "morphology_dispositions": []
+    },
+    {
+      "sample_number": 11,
+      "source_record": {
+        "entry_key": "ollari1957:p60:c1:y221",
+        "printed_page": 60,
+        "pdf_page": 71,
+        "column": 1,
+        "top": 221,
+        "source_head": "GAḌLI",
+        "transcribed_form": "gaḍli",
+        "source_pos": "sb.",
+        "gloss": "neck",
+        "morphology": [],
+        "source_note": "",
+        "explicit_derivation_parent": "",
+        "lexical_review": "visually-transcribed",
+        "comparison_review": "pending; raw OCR retained, not phonetic transcription",
+        "raw_ocr": "GADLI, sb., neck [Konda gadli\n‘id.’, cf. Koya  gururiga,\ngudunga ‘id.”]",
+        "case_policy": "Small-cap headword typography recorded separately; transcribed_form is lowercase."
+      },
+      "preview_rows": [
+        {
+          "entry_key": "ollari1957:p60:c1:y221",
+          "expected_display": "gaḍli",
+          "pending": [
+            "comparative-prose-and-graph-review",
+            "fresh-source-to-output-audit"
+          ],
+          "physical_entry_key": "ollari1957:p60:c1:y221",
+          "proposed_row": [
+            "OllariGadaba",
+            "",
+            "gaḍli",
+            "neck",
+            "",
+            "",
+            "",
+            "bhattacharya1957ollari[p. 60, col. 1]",
+            "",
+            "",
+            "ollari1957:p60:c1:y221",
+            "",
+            "",
+            "",
+            "noun"
+          ],
+          "relation_basis": "headword",
+          "status": "preview-not-installed"
+        }
+      ],
+      "prose_rows": [
+        {
+          "Form_ID": "",
+          "Entry_Key": "ollari1957:p60:c1:y221",
+          "Position": "1",
+          "Kind": "comparison",
+          "Format": "text",
+          "Content": "Konda gaḍli ‘id.’, cf. Koya guṛuṅga, guḍuṅga ‘id.’",
+          "Source": "bhattacharya1957ollari[p. 60, col. 1]"
+        }
+      ],
+      "morphology_dispositions": []
+    },
+    {
+      "sample_number": 12,
+      "source_record": {
+        "entry_key": "ollari1957:p58:c1:y2759",
+        "printed_page": 58,
+        "pdf_page": 69,
+        "column": 1,
+        "top": 2759,
+        "source_head": "KĒṬAL",
+        "transcribed_form": "kēṭal",
+        "source_pos": "sb.",
+        "gloss": "widow",
+        "morphology": [
+          {
+            "label": "pl.",
+            "raw": "kēṭasil",
+            "kind": "full-form"
+          }
+        ],
+        "source_note": "",
+        "explicit_derivation_parent": "",
+        "lexical_review": "visually-transcribed",
+        "comparison_review": "pending; raw OCR retained, not phonetic transcription",
+        "raw_ocr": "KETAL, pl. kéfasil, sb., widow\n[Pj. kétal, ketal ‘widow’]",
+        "case_policy": "Small-cap headword typography recorded separately; transcribed_form is lowercase."
+      },
+      "preview_rows": [
+        {
+          "entry_key": "ollari1957:p58:c1:y2759",
+          "expected_display": "kēṭal",
+          "pending": [
+            "comparative-prose-and-graph-review",
+            "fresh-source-to-output-audit"
+          ],
+          "physical_entry_key": "ollari1957:p58:c1:y2759",
+          "proposed_row": [
+            "OllariGadaba",
+            "",
+            "kēṭal",
+            "widow",
+            "",
+            "",
+            "",
+            "bhattacharya1957ollari[p. 58, col. 1]",
+            "",
+            "",
+            "ollari1957:p58:c1:y2759",
+            "",
+            "",
+            "",
+            "noun"
+          ],
+          "relation_basis": "headword",
+          "status": "preview-not-installed"
+        },
+        {
+          "entry_key": "ollari1957:p58:c1:y2759:inflection:1",
+          "expected_display": "kēṭasil",
+          "pending": [
+            "comparative-prose-and-graph-review",
+            "fresh-source-to-output-audit"
+          ],
+          "physical_entry_key": "ollari1957:p58:c1:y2759",
+          "proposed_row": [
+            "OllariGadaba",
+            "",
+            "kēṭasil",
+            "widow",
+            "",
+            "",
+            "",
+            "bhattacharya1957ollari[p. 58, col. 1]",
+            "",
+            "",
+            "ollari1957:p58:c1:y2759:inflection:1",
+            "",
+            "",
+            "ollari1957:p58:c1:y2759",
+            "noun pl"
+          ],
+          "relation_basis": "inflection",
+          "status": "preview-not-installed"
+        }
+      ],
+      "prose_rows": [
+        {
+          "Form_ID": "",
+          "Entry_Key": "ollari1957:p58:c1:y2759",
+          "Position": "1",
+          "Kind": "comparison",
+          "Format": "text",
+          "Content": "Pj. kēṭal, kētal ‘widow’",
+          "Source": "bhattacharya1957ollari[p. 58, col. 1]"
+        }
+      ],
+      "morphology_dispositions": []
+    },
+    {
+      "sample_number": 13,
+      "source_record": {
+        "entry_key": "ollari1957:p60:c2:y3242",
+        "printed_page": 60,
+        "pdf_page": 71,
+        "column": 2,
+        "top": 3242,
+        "source_head": "JOṚEK",
+        "transcribed_form": "joṛek",
+        "source_pos": "sb.",
+        "gloss": "one pair",
+        "morphology": [],
+        "source_note": "j=dz",
+        "explicit_derivation_parent": "",
+        "lexical_review": "visually-transcribed",
+        "comparison_review": "pending; raw OCR retained, not phonetic transcription",
+        "raw_ocr": "JOREK (j=dz), sb., one pair (De.)",
+        "case_policy": "Small-cap headword typography recorded separately; transcribed_form is lowercase.",
+        "pronunciation_overrides": [
+          {
+            "source": "j",
+            "value": "dz",
+            "scope": "entry"
+          }
+        ]
+      },
+      "preview_rows": [
+        {
+          "entry_key": "ollari1957:p60:c2:y3242",
+          "expected_display": "ʣoṛek",
+          "pending": [
+            "comparative-prose-and-graph-review",
+            "fresh-source-to-output-audit"
+          ],
+          "physical_entry_key": "ollari1957:p60:c2:y3242",
+          "proposed_row": [
+            "OllariGadaba",
+            "",
+            "joṛek",
+            "one pair",
+            "",
+            "dzoṛek",
+            "",
+            "bhattacharya1957ollari[p. 60, col. 2]",
+            "",
+            "",
+            "ollari1957:p60:c2:y3242",
+            "",
+            "",
+            "",
+            "noun"
+          ],
+          "relation_basis": "headword",
+          "status": "preview-not-installed"
+        }
+      ],
+      "prose_rows": [
+        {
+          "Form_ID": "",
+          "Entry_Key": "ollari1957:p60:c2:y3242",
+          "Position": "1",
+          "Kind": "source-attribution",
+          "Format": "text",
+          "Content": "De.",
+          "Source": "bhattacharya1957ollari[p. 60, col. 2]"
+        }
+      ],
+      "morphology_dispositions": []
+    },
+    {
+      "sample_number": 14,
+      "source_record": {
+        "entry_key": "ollari1957:p58:c2:y3946",
+        "printed_page": 58,
+        "pdf_page": 69,
+        "column": 2,
+        "top": 3946,
+        "source_head": "KOḌROṄG",
+        "transcribed_form": "koḍroṅg",
+        "source_pos": "sb.",
+        "gloss": "throat",
+        "morphology": [],
+        "source_note": "",
+        "explicit_derivation_parent": "",
+        "lexical_review": "visually-transcribed",
+        "comparison_review": "pending; raw OCR retained, not phonetic transcription",
+        "raw_ocr": "KODRONG, sb., throat",
+        "case_policy": "Small-cap headword typography recorded separately; transcribed_form is lowercase."
+      },
+      "preview_rows": [
+        {
+          "entry_key": "ollari1957:p58:c2:y3946",
+          "expected_display": "koḍroŋg",
+          "pending": [
+            "comparative-prose-and-graph-review",
+            "fresh-source-to-output-audit"
+          ],
+          "physical_entry_key": "ollari1957:p58:c2:y3946",
+          "proposed_row": [
+            "OllariGadaba",
+            "",
+            "koḍroṅg",
+            "throat",
+            "",
+            "",
+            "",
+            "bhattacharya1957ollari[p. 58, col. 2]",
+            "",
+            "",
+            "ollari1957:p58:c2:y3946",
+            "",
+            "",
+            "",
+            "noun"
+          ],
+          "relation_basis": "headword",
+          "status": "preview-not-installed"
+        }
+      ],
+      "prose_rows": [],
+      "morphology_dispositions": []
+    },
+    {
+      "sample_number": 15,
+      "source_record": {
+        "entry_key": "ollari1957:p73:c2:y2167",
+        "printed_page": 73,
+        "pdf_page": 84,
+        "column": 2,
+        "top": 2167,
+        "source_head": "VARSI",
+        "transcribed_form": "varsi",
+        "source_pos": "sb.",
+        "gloss": "paddy",
+        "morphology": [
+          {
+            "label": "pl.",
+            "raw": "-l",
+            "kind": "suffix"
+          }
+        ],
+        "source_note": "usually plural",
+        "explicit_derivation_parent": "",
+        "lexical_review": "visually-transcribed",
+        "comparison_review": "pending; raw OCR retained, not phonetic transcription",
+        "raw_ocr": "VARSI, pl. -/, (usually p/.), sb.,\npaddy [Pj. verci, pl. vercil\n‘id.’, Koya vanji, Te. vart]",
+        "case_policy": "Small-cap headword typography recorded separately; transcribed_form is lowercase."
+      },
+      "preview_rows": [
+        {
+          "entry_key": "ollari1957:p73:c2:y2167",
+          "expected_display": "varsi",
+          "pending": [
+            "comparative-prose-and-graph-review",
+            "fresh-source-to-output-audit"
+          ],
+          "physical_entry_key": "ollari1957:p73:c2:y2167",
+          "proposed_row": [
+            "OllariGadaba",
+            "",
+            "varsi",
+            "paddy",
+            "",
+            "",
+            "",
+            "bhattacharya1957ollari[p. 73, col. 2]",
+            "",
+            "",
+            "ollari1957:p73:c2:y2167",
+            "",
+            "",
+            "",
+            "noun"
+          ],
+          "relation_basis": "headword",
+          "status": "preview-not-installed"
+        },
+        {
+          "entry_key": "ollari1957:p73:c2:y2167:inflection:1",
+          "expected_display": "varsil",
+          "pending": [
+            "comparative-prose-and-graph-review",
+            "fresh-source-to-output-audit"
+          ],
+          "physical_entry_key": "ollari1957:p73:c2:y2167",
+          "proposed_row": [
+            "OllariGadaba",
+            "",
+            "varsil",
+            "paddy",
+            "",
+            "",
+            "",
+            "bhattacharya1957ollari[p. 73, col. 2]",
+            "",
+            "",
+            "ollari1957:p73:c2:y2167:inflection:1",
+            "",
+            "",
+            "ollari1957:p73:c2:y2167",
+            "noun pl"
+          ],
+          "relation_basis": "inflection",
+          "status": "preview-not-installed"
+        }
+      ],
+      "prose_rows": [
+        {
+          "Form_ID": "",
+          "Entry_Key": "ollari1957:p73:c2:y2167",
+          "Position": "1",
+          "Kind": "comparison",
+          "Format": "text",
+          "Content": "Pj. verci, pl. vercil ‘id.’, Koya vañji, Te. vari",
+          "Source": "bhattacharya1957ollari[p. 73, col. 2]"
+        }
+      ],
+      "morphology_dispositions": []
+    },
+    {
+      "sample_number": 16,
+      "source_record": {
+        "entry_key": "ollari1957:p72:c2:y3817",
+        "printed_page": 72,
+        "pdf_page": 83,
+        "column": 2,
+        "top": 3817,
+        "source_head": "RISA",
+        "transcribed_form": "risa",
+        "source_pos": "sb.",
+        "gloss": "anger",
+        "morphology": [],
+        "source_note": "",
+        "explicit_derivation_parent": "",
+        "lexical_review": "visually-transcribed",
+        "comparison_review": "pending; raw OCR retained, not phonetic transcription",
+        "raw_ocr": "RISA, 5b., anger [De. ris]",
+        "case_policy": "Small-cap headword typography recorded separately; transcribed_form is lowercase."
+      },
+      "preview_rows": [
+        {
+          "entry_key": "ollari1957:p72:c2:y3817",
+          "expected_display": "risa",
+          "pending": [
+            "comparative-prose-and-graph-review",
+            "fresh-source-to-output-audit"
+          ],
+          "physical_entry_key": "ollari1957:p72:c2:y3817",
+          "proposed_row": [
+            "OllariGadaba",
+            "",
+            "risa",
+            "anger",
+            "",
+            "",
+            "",
+            "bhattacharya1957ollari[p. 72, col. 2]",
+            "",
+            "",
+            "ollari1957:p72:c2:y3817",
+            "",
+            "",
+            "",
+            "noun"
+          ],
+          "relation_basis": "headword",
+          "status": "preview-not-installed"
+        }
+      ],
+      "prose_rows": [
+        {
+          "Form_ID": "",
+          "Entry_Key": "ollari1957:p72:c2:y3817",
+          "Position": "1",
+          "Kind": "comparison",
+          "Format": "text",
+          "Content": "De. ris",
+          "Source": "bhattacharya1957ollari[p. 72, col. 2]"
+        }
+      ],
+      "morphology_dispositions": []
+    },
+    {
+      "sample_number": 17,
+      "source_record": {
+        "entry_key": "ollari1957:p58:c1:y1650",
+        "printed_page": 58,
+        "pdf_page": 69,
+        "column": 1,
+        "top": 1650,
+        "source_head": "KENDA",
+        "transcribed_form": "kenda",
+        "source_pos": "sb.",
+        "gloss": "branch of tree",
+        "morphology": [],
+        "source_note": "",
+        "explicit_derivation_parent": "",
+        "lexical_review": "visually-transcribed",
+        "comparison_review": "pending; raw OCR retained, not phonetic transcription",
+        "raw_ocr": "KENDA, sb., branch of tree (De.\nkhenda)",
+        "case_policy": "Small-cap headword typography recorded separately; transcribed_form is lowercase."
+      },
+      "preview_rows": [
+        {
+          "entry_key": "ollari1957:p58:c1:y1650",
+          "expected_display": "kenda",
+          "pending": [
+            "comparative-prose-and-graph-review",
+            "fresh-source-to-output-audit"
+          ],
+          "physical_entry_key": "ollari1957:p58:c1:y1650",
+          "proposed_row": [
+            "OllariGadaba",
+            "",
+            "kenda",
+            "branch of tree",
+            "",
+            "",
+            "",
+            "bhattacharya1957ollari[p. 58, col. 1]",
+            "",
+            "",
+            "ollari1957:p58:c1:y1650",
+            "",
+            "",
+            "",
+            "noun"
+          ],
+          "relation_basis": "headword",
+          "status": "preview-not-installed"
+        }
+      ],
+      "prose_rows": [
+        {
+          "Form_ID": "",
+          "Entry_Key": "ollari1957:p58:c1:y1650",
+          "Position": "1",
+          "Kind": "comparison",
+          "Format": "text",
+          "Content": "De. khendā",
+          "Source": "bhattacharya1957ollari[p. 58, col. 1]"
+        }
+      ],
+      "morphology_dispositions": []
+    },
+    {
+      "sample_number": 18,
+      "source_record": {
+        "entry_key": "ollari1957:p73:c1:y1742",
+        "printed_page": 73,
+        "pdf_page": 84,
+        "column": 1,
+        "top": 1742,
+        "source_head": "VAṬ-",
+        "transcribed_form": "vaṭ-",
+        "source_pos": "vb. intr.",
+        "gloss": "to dry; wither",
+        "morphology": [],
+        "source_note": "",
+        "explicit_derivation_parent": "",
+        "lexical_review": "visually-transcribed",
+        "comparison_review": "pending; raw OCR retained, not phonetic transcription",
+        "raw_ocr": "VAT-, vb. intr. to dry, wither [Ta.\nvarru ‘to become dry’ ‘grow\nlean’, Ma. varalu, Ka. battu,\nTu. varu, Te. vattu, Go. A.\nvat-, Kur. batt, Brah. barring\n‘id.’, Pj. vdd- ‘to shrivel’)",
+        "case_policy": "Small-cap headword typography recorded separately; transcribed_form is lowercase."
+      },
+      "preview_rows": [
+        {
+          "entry_key": "ollari1957:p73:c1:y1742",
+          "expected_display": "vaṭ-",
+          "pending": [
+            "comparative-prose-and-graph-review",
+            "fresh-source-to-output-audit"
+          ],
+          "physical_entry_key": "ollari1957:p73:c1:y1742",
+          "proposed_row": [
+            "OllariGadaba",
+            "",
+            "vaṭ-",
+            "to dry; wither",
+            "",
+            "",
+            "",
+            "bhattacharya1957ollari[p. 73, col. 1]",
+            "",
+            "",
+            "ollari1957:p73:c1:y1742",
+            "",
+            "",
+            "",
+            "verb intr"
+          ],
+          "relation_basis": "headword",
+          "status": "preview-not-installed"
+        }
+      ],
+      "prose_rows": [
+        {
+          "Form_ID": "",
+          "Entry_Key": "ollari1957:p73:c1:y1742",
+          "Position": "1",
+          "Kind": "comparison",
+          "Format": "text",
+          "Content": "Ta. vaṟṟu ‘to become dry’ ‘grow lean’, Ma. varaḷu, Ka. battu, Tu. varu, Te. vaṭṭu, Go. A. vat-, Kur. batt, Brah. barring ‘id.’, Pj. vāḍ- ‘to shrivel’",
+          "Source": "bhattacharya1957ollari[p. 73, col. 1]"
+        }
+      ],
+      "morphology_dispositions": []
+    },
+    {
+      "sample_number": 19,
+      "source_record": {
+        "entry_key": "ollari1957:p75:c2:y1871",
+        "printed_page": 75,
+        "pdf_page": 86,
+        "column": 2,
+        "top": 1871,
+        "source_head": "SALÑIḌ",
+        "transcribed_form": "salñiḍ",
+        "source_pos": "sb.",
+        "gloss": "son-in-law; younger sister’s husband",
+        "morphology": [
+          {
+            "label": "pl.",
+            "raw": "-kil",
+            "kind": "suffix"
+          }
+        ],
+        "source_note": "",
+        "explicit_derivation_parent": "",
+        "lexical_review": "visually-transcribed",
+        "comparison_review": "pending; raw OCR retained, not phonetic transcription",
+        "raw_ocr": "SALBID, pl. -kil, sb., son-in-law ;\nyounger sister’s husband [Pj.\n_ caliiid ‘bridegroom’, Kol.\nsdnzin, Naik. sdnjin, Go.\nsanne ‘id,”]",
+        "case_policy": "Small-cap headword typography recorded separately; transcribed_form is lowercase."
+      },
+      "preview_rows": [
+        {
+          "entry_key": "ollari1957:p75:c2:y1871",
+          "expected_display": "salñiḍ",
+          "pending": [
+            "comparative-prose-and-graph-review",
+            "fresh-source-to-output-audit"
+          ],
+          "physical_entry_key": "ollari1957:p75:c2:y1871",
+          "proposed_row": [
+            "OllariGadaba",
+            "",
+            "salñiḍ",
+            "son-in-law; younger sister’s husband",
+            "",
+            "",
+            "",
+            "bhattacharya1957ollari[p. 75, col. 2]",
+            "",
+            "",
+            "ollari1957:p75:c2:y1871",
+            "",
+            "",
+            "",
+            "noun"
+          ],
+          "relation_basis": "headword",
+          "status": "preview-not-installed"
+        },
+        {
+          "entry_key": "ollari1957:p75:c2:y1871:inflection:1",
+          "expected_display": "salñiḍkil",
+          "pending": [
+            "comparative-prose-and-graph-review",
+            "fresh-source-to-output-audit"
+          ],
+          "physical_entry_key": "ollari1957:p75:c2:y1871",
+          "proposed_row": [
+            "OllariGadaba",
+            "",
+            "salñiḍkil",
+            "son-in-law; younger sister’s husband",
+            "",
+            "",
+            "",
+            "bhattacharya1957ollari[p. 75, col. 2]",
+            "",
+            "",
+            "ollari1957:p75:c2:y1871:inflection:1",
+            "",
+            "",
+            "ollari1957:p75:c2:y1871",
+            "noun pl"
+          ],
+          "relation_basis": "inflection",
+          "status": "preview-not-installed"
+        }
+      ],
+      "prose_rows": [
+        {
+          "Form_ID": "",
+          "Entry_Key": "ollari1957:p75:c2:y1871",
+          "Position": "1",
+          "Kind": "comparison",
+          "Format": "text",
+          "Content": "Pj. calñid ‘bridegroom’, Kol. sānzin, Naik. sānjin, Go. sanne ‘id.’",
+          "Source": "bhattacharya1957ollari[p. 75, col. 2]"
+        }
+      ],
+      "morphology_dispositions": []
+    },
+    {
+      "sample_number": 20,
+      "source_record": {
+        "entry_key": "ollari1957:p56:c1:y850",
+        "printed_page": 56,
+        "pdf_page": 67,
+        "column": 1,
+        "top": 850,
+        "source_head": "KĀṆA",
+        "transcribed_form": "kāṇa",
+        "source_pos": "adj.; sb.",
+        "gloss": "blind (m. n.)",
+        "morphology": [],
+        "source_note": "",
+        "explicit_derivation_parent": "",
+        "lexical_review": "visually-transcribed",
+        "comparison_review": "pending; raw OCR retained, not phonetic transcription",
+        "raw_ocr": "KANA, adj., sb., blind (m. n.)\n[Sk. kdna]",
+        "case_policy": "Small-cap headword typography recorded separately; transcribed_form is lowercase."
+      },
+      "preview_rows": [
+        {
+          "entry_key": "ollari1957:p56:c1:y850",
+          "expected_display": "kāṇa",
+          "pending": [
+            "comparative-prose-and-graph-review",
+            "fresh-source-to-output-audit"
+          ],
+          "physical_entry_key": "ollari1957:p56:c1:y850",
+          "proposed_row": [
+            "OllariGadaba",
+            "",
+            "kāṇa",
+            "blind (m. n.)",
+            "",
+            "",
+            "",
+            "bhattacharya1957ollari[p. 56, col. 1]",
+            "",
+            "",
+            "ollari1957:p56:c1:y850",
+            "",
+            "",
+            "",
+            "adj noun"
+          ],
+          "relation_basis": "headword",
+          "status": "preview-not-installed"
+        }
+      ],
+      "prose_rows": [
+        {
+          "Form_ID": "",
+          "Entry_Key": "ollari1957:p56:c1:y850",
+          "Position": "1",
+          "Kind": "comparison",
+          "Format": "text",
+          "Content": "Sk. kāṇa",
+          "Source": "bhattacharya1957ollari[p. 56, col. 1]"
+        }
+      ],
+      "morphology_dispositions": []
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+file: 20260921-sil-gutob-gorum.csv
+defaults:
+  identity:
+    legacy_ids: stem
+    append_order: 36
+  importer:
+    commands:
+      - [data/other/forms/raw_data/sil_gutob_gorum_2022/import_source.py, --install]
+    note: Source-file installation only; does not build CLDF or the browser database.

@@ -126,10 +126,10 @@ def test_every_text_layer_combining_mark_misattachment_is_audited():
 
 def test_profile_covers_every_installed_form():
     tokenizer = Tokenizer(str(PROFILE))
-    assert tokenizer("tʃeɳɖi", column="IPA", segment_separator="", separator="") == "ceṇḍi"
-    assert tokenizer("d̪iɔ", column="IPA", segment_separator="", separator="") == "dio"
-    assert tokenizer("a:ki", column="IPA", segment_separator="", separator="") == "aːki"
-    assert tokenizer("ãːki", column="IPA", segment_separator="", separator="") == "ā̃ki"
+    assert tokenizer("tʃeɳɖi", column="IPA", segment_separator="", separator="") == "ceṇḍī"
+    assert tokenizer("d̪iɔ", column="IPA", segment_separator="", separator="") == "dīɔ"
+    assert tokenizer("a:ki", column="IPA", segment_separator="", separator="") == "ākī"
+    assert tokenizer("ãːki", column="IPA", segment_separator="", separator="") == "ā̃kī"
     for row in form_rows():
         converted = tokenizer(row[2], column="IPA", segment_separator="", separator="")
         assert "�" not in converted

@@ -158,7 +158,7 @@ def test_compiled_comparison_sidecar_has_cross_family_entries_and_valid_referenc
     assert sum(not row["ID"].startswith("burushaski:") for row in comparisons) == (
         len(extracted) + len(manual) + len(dbia) + sheth
     )
-    assert len(manual) == 91
+    assert len(manual) == 209
     assert {row["ID"] for row in manual} <= {row["ID"] for row in comparisons}
     assert len(dbia) == 328
     assert {row["ID"] for row in dbia} <= {row["ID"] for row in comparisons}

@@ -1,0 +1,20 @@
+file: 20260925-donegan-stampe-gta-chatterji.csv
+defaults:
+  transcription:
+  - profile: gta-chatterji-mla
+  identity:
+    legacy_ids: stem
+    append_order: 40
+  importer:
+    commands:
+    - [data/other/forms/raw_data/gta_chatterji_mla_2004/import_source.py, --install]
+sources:
+  DSGT:
+    identity:
+      dedupe_by_entry_key: true
+    forms:
+      split_alternates: false
+    reference:
+      editor: Aryaman Arora; OpenAI Codex
+      ocr: false
+      etymology_provenance: source

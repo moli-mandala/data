@@ -1,0 +1,45 @@
+{
+  "status": "ready_for_independent_acceptance_not_installed",
+  "frozen_hashes": {
+    "proposal.csv": "0f486898ded8fc4f6620212568aec25d214f3d5277871930acb4f49a3fb198ee",
+    "proposal-audit.jsonl": "313bde9d700fefa25324c50ab4350301087db272383c8f549bdb1e8b63ff9524",
+    "proposal-profile.txt": "827622778c627b4c4526ed615b3b0d12e701be817cba1512d88c24c2af4e37e8",
+    "proposal.yaml": "809e0394b0ad12ebbf9537fc1454e01e5acb6feef06b1022db3c3dc593dc5513"
+  },
+  "key_check": "All 621 old keys present among 835 proposal keys; no reminting.",
+  "graph_check": "All proposal graph fields blank; unsupported 153 old edges have per-edge dispositions.",
+  "notes_check": "No review/audit/install/reconcile/pending/proposal procedural wording in emitted Notes.",
+  "current_canonical_sha256": "59eb78154453d579b40940445e110b5436519b07a6f5ee40d418eb1571890c5a",
+  "durable_identity_sha256": "5ec2588f97a569cc7a1de68f59474c03612fa7a4266582be61d70dca29efcfc9",
+  "metadata_pending_installation": [
+    "YAML preserve_hyphens true, whole-source importer note and command",
+    "Bibliography included/provenance replace stale exclusions and 621-row count",
+    "README/manifest/checklist/ledger exact whole scope, counts and deferred gates",
+    "Historical tests updated without removing fine-glyph coverage"
+  ],
+  "metadata_identity_ready": "Existing Asuri / hahn-1900-asur-dukma identity, source key hahn1900asur and blank coordinates retained. No new lect or citation key needed.",
+  "commands_after_approval": [
+    {
+      "command": "python3 data/data/other/forms/raw_data/hahn_asur_1900/prepare_whole.py",
+      "expected": "835 670; exact accepted proposal hashes unchanged"
+    },
+    {
+      "command": "data/.venv/bin/python -m pytest data/tests/test_hahn_asur_whole_proposal.py -q",
+      "expected": "10 passed"
+    },
+    {
+      "command": "data/.venv/bin/python data/data/other/forms/raw_data/hahn_asur_1900/verify_whole_installation.py",
+      "expected": "status passed; 835 parsed rows, 621 old keys, 670 audit records; identity unchanged; formatted Hahn reference; exact accepted canonical hashes"
+    }
+  ],
+  "installation_notes": "Archive existing importer as historical-lexical-importer.py and CSV as historical-lexical.csv before wrapper/canonical replacement. Prepared verifier requires these archives; it is intentionally not run before install.",
+  "next_queued_package": {
+    "package": "bailey_kagani_1920",
+    "scope": "Whole chapter pp87–109: introduction87–91, grammar92–101, interlinear parable101–104, lexical commentary105, existing full glossary106–109.",
+    "reason": "Queued unowned package with available local original and distinct Northern Hindko lect; all 329 existing rows/keys retained. Surkhuli is already owned by rohru_finish.",
+    "source": "tmp/pdfs/bailey1920/bailey1920.pdf",
+    "source_pages": 310,
+    "no_new_download_needed": true,
+    "not_started": true
+  }
+}

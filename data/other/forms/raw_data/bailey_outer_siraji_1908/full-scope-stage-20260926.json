@@ -1,0 +1,169 @@
+{
+  "status": "complete_source_stage",
+  "scope": "Entire Outer Siraji chapter pp37–43 plus four explicitly Outer-attributed introductory case-marker units p36.",
+  "source_units": 367,
+  "forms": 450,
+  "decisions": {
+    "ingested": 364,
+    "exclude_pattern": 3
+  },
+  "page_census": {
+    "36": {
+      "units": 4,
+      "forms": 3,
+      "sections": {
+        "intro-genitive-pattern": 1,
+        "intro-postposition": 3
+      }
+    },
+    "37": {
+      "units": 20,
+      "forms": 39,
+      "sections": {
+        "noun-horse": 6,
+        "noun-house": 3,
+        "noun-girl": 4,
+        "noun-sheep": 3,
+        "noun-sister": 4
+      }
+    },
+    "38": {
+      "units": 68,
+      "forms": 83,
+      "sections": {
+        "pronoun-1sg": 6,
+        "pronoun-2sg": 6,
+        "pronoun-3sg": 6,
+        "pronoun-this-sg": 6,
+        "pronoun-1pl": 6,
+        "pronoun-2pl": 6,
+        "pronoun-3pl": 6,
+        "pronoun-this-pl": 6,
+        "pronoun-who": 3,
+        "adjective-pattern": 1,
+        "genitive-example": 4,
+        "demonstrative": 2,
+        "correlative": 2,
+        "interrogative": 2,
+        "comparison": 6
+      }
+    },
+    "39": {
+      "units": 54,
+      "forms": 80,
+      "sections": {
+        "adverb-time": 10,
+        "adverb-place": 4,
+        "preposition": 8,
+        "auxiliary-present": 6,
+        "auxiliary-negative": 1,
+        "auxiliary-past": 1,
+        "fall-head": 1,
+        "fall-future": 6,
+        "fall-imperative": 1,
+        "fall-present": 6,
+        "fall-past-conditional": 1,
+        "fall-imperfect": 6,
+        "fall-past": 1,
+        "fall-pluperfect": 1,
+        "fall-participle": 1
+      }
+    },
+    "40": {
+      "units": 34,
+      "forms": 47,
+      "sections": {
+        "come-head": 1,
+        "come-past": 1,
+        "go-de-head": 1,
+        "go-de-future": 3,
+        "go-de-imperative": 1,
+        "go-de-past-conditional": 1,
+        "go-de-past": 1,
+        "go-ja-head": 1,
+        "go-ja-future": 1,
+        "go-ja-imperative": 1,
+        "go-ja-past-conditional": 1,
+        "go-ja-past": 1,
+        "remain-head": 1,
+        "remain-future": 1,
+        "remain-past-conditional": 1,
+        "remain-past": 1,
+        "sit-head": 1,
+        "sit-imperative": 1,
+        "beat-head": 1,
+        "beat-past": 1,
+        "eat-head": 1,
+        "eat-past-conditional": 1,
+        "eat-past": 1,
+        "give-head": 1,
+        "give-past": 1,
+        "take-head": 1,
+        "take-future": 1,
+        "take-past": 1,
+        "do-head": 1,
+        "do-past": 1,
+        "ability-expression": 2
+      }
+    },
+    "41": {
+      "units": 68,
+      "forms": 72,
+      "sections": {
+        "necessity-expression": 1,
+        "infinitive-pattern": 1,
+        "verb-note": 2,
+        "lexical": 64
+      }
+    },
+    "42": {
+      "units": 75,
+      "forms": 82,
+      "sections": {
+        "lexical": 59,
+        "cardinal": 16
+      }
+    },
+    "43": {
+      "units": 44,
+      "forms": 44,
+      "sections": {
+        "cardinal": 30,
+        "ordinal": 9,
+        "specimen": 5
+      }
+    }
+  },
+  "prior_keys": 100,
+  "prior_changed_form_or_gloss": 51,
+  "unresolved": [],
+  "exclusions": [
+    "p38 general adjective endings with no lexical stem",
+    "p41 general infinitive suffix list with no lexical stem",
+    "p36 introductory genitive suffix -ĕau with no lexical stem"
+  ],
+  "outside_scope": [
+    "Shared introduction p35 geographical and genealogical prose contains no target lexical list",
+    "Other lects in p36 introduction (Inner Siraji, Sainji, Kului, Hindi/Sasi comparisons) belong to separate source packages",
+    "Following Inner Siraji starts p44; no continued Outer list"
+  ],
+  "specific_expansion_limits": [
+    "p37 sheep plural column prints ellipses rather than forms or ditto; only explicit singular forms emitted",
+    "Etc. after paradigms does not license unprinted forms",
+    "Whole translated specimens remain whole; no guessed word segmentation"
+  ],
+  "validation": {
+    "focused_tests": "7 installed +6 staging passed",
+    "regeneration": "Exact CSV/audit;100legacykeys preserved",
+    "profile_and_scoped_parse": "450/450 no errors",
+    "independent_audit": "0/20 seed2026092672",
+    "metadata": "275files263keys validated"
+  },
+  "deferred": [
+    "Full CLDF/database build not authorized",
+    "Full graph/reference checks deferred",
+    "Full test suite deferred",
+    "Updated-database browser QA deferred"
+  ],
+  "csv_sha256": "9dd133ebbd74a5e23e32dfed3cb11b60897d301464f02e6741e56a2763fe55ca"
+}

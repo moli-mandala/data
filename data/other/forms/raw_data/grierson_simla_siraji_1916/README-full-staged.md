@@ -1,0 +1,1 @@
+The reviewed draft is now installed at the source stage. See README.md, independent-full-audit-20260926-pass3.json and source-stage-installation-20260926.json for current status. Historical failed states remain preserved.

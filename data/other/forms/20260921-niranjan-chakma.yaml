@@ -1,0 +1,22 @@
+file: 20260921-niranjan-chakma.csv
+defaults:
+  transcription:
+    convert: false
+    preserve_hyphens: true
+  identity:
+    legacy_ids: stem
+    append_order: 35
+  importer:
+    commands:
+      - [data/other/forms/raw_data/niranjan_chakma_2010/import_source.py, --install]
+    note: Bengali-script source spelling preserved without phonemic conversion.
+sources:
+  niranjan2010chakma:
+    identity:
+      dedupe_by_entry_key: true
+    forms:
+      split_alternates: false
+    reference:
+      editor: Aryaman Arora; OpenAI Codex
+      ocr: true
+      etymology_provenance: none

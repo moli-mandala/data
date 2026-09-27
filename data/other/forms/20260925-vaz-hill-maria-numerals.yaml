@@ -1,0 +1,17 @@
+file: 20260925-vaz-hill-maria-numerals.csv
+defaults:
+  transcription:
+    profile: vaz-hill-maria-2011
+    preserve_hyphens: true
+  identity:
+    legacy_ids: stem
+    append_order: 109
+  importer:
+    commands:
+      - [data/other/forms/raw_data/vaz_hill_maria_2011/import_source.py, --install]
+    note: Vaz's 2011 Hill Madia numbered table in the immutable CC-BY Chan archive; Natarajan 1985 table excluded.
+sources:
+  vaz2011hillmaria:
+    reference:
+      editor: OpenAI Codex
+      ocr: false

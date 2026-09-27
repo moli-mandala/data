@@ -281,10 +281,11 @@ def test_source_local_profile_covers_every_staged_input_character():
 
 def test_preintegration_freeze_reconciliation_and_render_contract_are_exact():
     result = subprocess.run(
-        ["python3", str(PREINTEGRATION_AUDITOR)],
+        ["python3", str(PREINTEGRATION_AUDITOR), "--verify-retained-render-manifest"],
         cwd=ROOT, capture_output=True, text=True, check=False,
     )
     assert result.returncode == 0, result.stderr
+    assert "render_verification=retained-manifest-only; current PNGs not re-audited" in result.stdout
     assert "cells=2730 target_forms=2497 renders=234 reconciliation=1470" in result.stdout
     manifest = json.loads((PACKAGE / "preintegration_manifest.json").read_text(encoding="utf-8"))
     assert manifest["state"] == "source-local-preintegration-audit-complete"
@@ -340,7 +341,7 @@ def test_shared_source_specific_installation_is_exact_and_fully_routed():
     )
     assert profile.read_bytes() == (PACKAGE / "conversion_profile.tsv").read_bytes()
     assert hashlib.sha256(profile.read_bytes()).hexdigest() == (
-        "b0bca6f983bbcf87dc43769c804ae02a73db45d58fad1e86f975fb8b9f7456ce"
+        "0bad99e5f48d262be3484d5895c7435579420ad7f83cd3c4fa2374227e527c94"
     )
 
     with installed.open(encoding="utf-8", newline="") as stream:
@@ -400,3 +401,23 @@ def test_shared_source_specific_installation_is_exact_and_fully_routed():
     assert manifest["scope"]["control_cells_audit_only"] == 210
     assert manifest["scope"]["target_blanks_audit_only"] == 21
     assert manifest["scope"]["target_ambiguities_audit_only"] == 2
+
+
+def test_retained_render_manifest_rejects_changed_evidence_and_write(tmp_path, monkeypatch):
+    import sys
+    monkeypatch.setitem(sys.modules, "import_northern_dhule_bhils", dhule)
+    audit_spec = importlib.util.spec_from_file_location("dhule_retained_render_audit", PREINTEGRATION_AUDITOR)
+    auditor = importlib.util.module_from_spec(audit_spec)
+    audit_spec.loader.exec_module(auditor)
+    assert len(auditor.retained_render_hash_rows()) == 234
+    changed = tmp_path / "render_hashes.tsv"
+    changed.write_bytes(auditor.RENDER_HASHES.read_bytes() + b"\n")
+    monkeypatch.setattr(auditor, "RENDER_HASHES", changed)
+    with pytest.raises(ValueError, match="manifest hash differs"):
+        auditor.retained_render_hash_rows()
+    result = subprocess.run(
+        ["python3", str(PREINTEGRATION_AUDITOR), "--verify-retained-render-manifest", "--write"],
+        cwd=ROOT, capture_output=True, text=True,
+    )
+    assert result.returncode == 2
+    assert "cannot write or renew the audit" in result.stderr

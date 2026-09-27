@@ -1,0 +1,20 @@
+file: 20260921-peterson-turi.csv
+defaults:
+  transcription:
+  - profile: peterson-turi
+  identity:
+    legacy_ids: stem
+    append_order: 30
+  importer:
+    commands:
+    - [data/other/forms/raw_data/peterson_turi_2024/import_source.py, --install]
+sources:
+  peterson2024turi:
+    identity:
+      dedupe_by_entry_key: true
+    forms:
+      split_alternates: false
+    reference:
+      editor: Aryaman Arora; OpenAI Codex
+      ocr: false
+      etymology_provenance: source

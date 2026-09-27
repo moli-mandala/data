@@ -25,6 +25,8 @@ from collections import Counter
 from dataclasses import asdict, dataclass
 from pathlib import Path
 
+import source_meta
+
 from utils import mapping
 from form_grammar import extract_gloss_tags
 from tags import GENDER_TAGS, GRAMMATICAL_TAGS
@@ -2709,8 +2711,11 @@ def compiled_source_rows() -> dict[str, list[dict[str, str]]]:
     by_source: dict[str, list[dict[str, str]]] = {}
     with (ROOT / "cldf/forms.csv").open(encoding="utf-8", newline="") as stream:
         for row in csv.DictReader(stream):
+            # Only these fields are consumed by build_units; do not retain the
+            # complete million-row CLDF payload in the source index.
+            projected = {field: row[field] for field in ("ID", "Language_ID", "Tags")}
             for key in citation_keys(row["Source"]):
-                by_source.setdefault(key, []).append(row)
+                by_source.setdefault(key, []).append(projected)
     return by_source
 
 
@@ -2777,6 +2782,35 @@ def infer_profiles(path: Path, uid: str, rows: list[list[str]]) -> list[str]:
     override = CORE_REVIEW_FILES.get(uid, {})
     if override:
         return existing_paths(override["profiles"])
+
+    meta = source_meta.load()
+    routes: set[str] = set()
+    matched = unmatched = False
+    for row in rows:
+        if len(row) < 8:
+            continue
+        source = row[7].split(";", 1)[0].split("[", 1)[0]
+        rule = meta.transcription_rule(source, path, row[0])
+        if not rule:
+            unmatched = True
+            continue
+        matched = True
+        profile = rule.get("profile")
+        if profile:
+            target = ROOT / "conversion" / f"{profile}.txt"
+            if not target.is_file():
+                return []
+            routes.add(str(target.relative_to(ROOT)))
+        else:
+            # Explicit identity/no-conversion is a declared route, not a
+            # missing profile. Cite its YAML rather than invent a tokenizer.
+            owner = meta.source_owner.get(source)
+            source_rules = meta.source(source).get("transcription", [])
+            route_file = meta.file_paths.get(owner) if rule in source_rules else meta.file_paths.get(meta.stem_for(path))
+            if route_file:
+                routes.add(str(route_file.relative_to(ROOT)))
+    if matched:
+        return sorted(routes) if not unmatched else []
 
     available = {candidate.stem: candidate for candidate in (ROOT / "conversion").glob("*.txt")}
     stem = re.sub(r"^\d{8}-", "", path.stem)
@@ -3011,16 +3045,18 @@ def section_evidence(unit: Unit) -> dict[str, tuple[bool, str]]:
             "pending final repository-wide make all and full-suite validation for this review",
         ),
         "13. Browser database refresh and inspection (user-triggered)": (
-            True,
+            browser_validated,
             (
                 "fresh compact database built, integrity-checked, served, and inspected in the app"
                 if browser_validated else
-                "deferred by standing policy; refresh and browser QA run only when the user requests them"
+                "browser database refresh and QA are not yet recorded for this source; "
+                "release completion requires current validation evidence"
             ),
         ),
         "14. Document, review, and ship only when requested": (
             True,
-            "this source-specific checklist is the durable review record; shipping is not requested",
+            "this source-specific checklist is the durable review record; "
+            "publication status and release evidence are recorded separately",
         ),
     }
     evidence.update(UNIT_EVIDENCE_OVERRIDES.get(unit.id, {}))
@@ -3048,6 +3084,11 @@ def render_unit(unit: Unit, master: str) -> str:
     lines.extend([
         "",
         "## Retrospective gate assessment",
+        "",
+        "Historical PASS markers below are retrospective evidence, not certification of the current release. "
+        "Current release validation is recorded in "
+        "[the release evidence](../../tmp/release-20260926/), including compiled-source-verification.json; "
+        "pending browser checks remain pending until independently recorded.",
         "",
     ])
     for section, (passed, note) in evidence.items():
@@ -3092,7 +3133,7 @@ def render_unit(unit: Unit, master: str) -> str:
             "- Validation: "
             + review.get(
                 "validation",
-                "full data validation is recorded centrally in `source_checklists/VALIDATION.md`; browser refresh is user-triggered",
+                "full data and browser validation evidence is recorded centrally in `source_checklists/VALIDATION.md`",
             )
             + ".",
             "- Representative app entries: "
@@ -3161,41 +3202,45 @@ def render_unit(unit: Unit, master: str) -> str:
 
 
 def render_installed_record_audit(units: list[Unit]) -> bytes:
-    stream = io.StringIO(newline="")
-    writer = csv.writer(stream, lineterminator="\n")
-    writer.writerow(
-        [
-            "Unit_ID", "Installed_File", "Row_Number", "Status", "Reason", "Language_ID",
-            "Parameter_ID", "Form", "Gloss", "Source", "Entry_Key", "Row_SHA256",
-        ]
-    )
-    for unit in units:
-        path = ROOT / unit.installed_file
-        for row_number, row in enumerate(load_csv(path), 1):
-            form = row[2] if len(row) > 2 else ""
-            status = "installed" if form.strip() and "�" not in form else "excluded"
-            reason = ""
-            if not form.strip():
-                reason = "blank form"
-            elif "�" in form:
-                reason = "replacement character"
+    compressed = io.BytesIO()
+    with gzip.GzipFile(fileobj=compressed, mode="wb", compresslevel=9, mtime=0) as zipped:
+        with io.TextIOWrapper(zipped, encoding="utf-8", newline="") as stream:
+            writer = csv.writer(stream, lineterminator="\n")
             writer.writerow(
                 [
-                    unit.id,
-                    unit.installed_file,
-                    row_number,
-                    status,
-                    reason,
-                    row[0] if row else "",
-                    row[1] if len(row) > 1 else "",
-                    form,
-                    row[3] if len(row) > 3 else "",
-                    row[7] if len(row) > 7 else "",
-                    row[10] if len(row) > 10 else "",
-                    hashlib.sha256("\x1f".join(row).encode("utf-8")).hexdigest(),
+                    "Unit_ID", "Installed_File", "Row_Number", "Status", "Reason", "Language_ID",
+                    "Parameter_ID", "Form", "Gloss", "Source", "Entry_Key", "Row_SHA256",
                 ]
             )
-    return gzip.compress(stream.getvalue().encode("utf-8"), compresslevel=9, mtime=0)
+            for unit in units:
+                path = ROOT / unit.installed_file
+                with path.open(encoding="utf-8", newline="") as source:
+                    rows = csv.reader(source)
+                    for row_number, row in enumerate(rows, 1):
+                        form = row[2] if len(row) > 2 else ""
+                        status = "installed" if form.strip() and "�" not in form else "excluded"
+                        reason = ""
+                        if not form.strip():
+                            reason = "blank form"
+                        elif "�" in form:
+                            reason = "replacement character"
+                        writer.writerow(
+                            [
+                                unit.id,
+                                unit.installed_file,
+                                row_number,
+                                status,
+                                reason,
+                                row[0] if row else "",
+                                row[1] if len(row) > 1 else "",
+                                form,
+                                row[3] if len(row) > 3 else "",
+                                row[7] if len(row) > 7 else "",
+                                row[10] if len(row) > 10 else "",
+                                hashlib.sha256("\x1f".join(row).encode("utf-8")).hexdigest(),
+                            ]
+                        )
+    return compressed.getvalue()
 
 
 def expected_outputs() -> tuple[list[Unit], dict[Path, bytes]]:

@@ -1,0 +1,28 @@
+{
+  "status": "scoped_preview_only",
+  "parsed": 633,
+  "stats": {
+    "converted": 633,
+    "for_conversion": 633
+  },
+  "errors": "",
+  "profile_override": "In-memory staged tokenizer; canonical CSV/profile unchanged.",
+  "sha256": {
+    "full-staged.csv": "164293c31d7d6702ecdee4e63be3b2d06db65208f2f228feda6dabb34e863b1c",
+    "full-staged-audit.jsonl": "57a03800e7de10f5a24d9ab335e6938b228002bfd7c2cf8170329b313042ce5e",
+    "full-profile-staged.txt": "5d4e4359ed40ac9df9eaa30a594eda2c07a6731cb7e5b02e1fb63554573a8527"
+  },
+  "focused_tests": {
+    "count": 9,
+    "result": "passed"
+  },
+  "deferred": [
+    "fullCLDF",
+    "fullsuite",
+    "compiledglobalgraph",
+    "compiledreferences",
+    "browserDB",
+    "browserQA"
+  ],
+  "canonical_validation": "633/633 canonical scoped parse, zeroerrors, canonical CSV/audit hashes match independently audited inputs."
+}

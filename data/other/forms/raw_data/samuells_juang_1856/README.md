@@ -1,0 +1,11 @@
+# Samuells's complete Juang article (1856)
+
+Source-stage recovery covers the whole article, printed pp.295–303: all31 glossary prompts plus the explicitly attested self-name Juanga and title Pudhan yield35 forms. All11 previously excluded phrases/inflected responses are retained whole. There are no unresolved source readings or omitted target cells. Three illustrated plates and non-target/control prose are accounted in `full-source-scope.json`.
+
+`full-reviewed-inventory.jsonl` is authoritative; `reviewed_inventory.tsv` is its31-cell glossary view. `prepare_full.py` and the importer generate the35-row CSV,33-unit audit and conservative profile. Installation is gated on the exact independently reviewed output hashes. All21 legacy keys and leading positions remain. Two source-defined alternative pairs have closed variant links. Source spelling belongs to Original, variant commentary to Notes, and no etymology or donor link is inferred.
+
+`independent-full-output-review-20260926.json` records a complete33-unit/35-form source/output review with zero errors. Eight focused installed/recovery checks pass, including actual35-row parsing and profile coverage. `full-overlap-review.json` checks2,204 other Juang rows and records one exact Minna match with Pinnow, without assuming independent elicitation. Historical pilot files and the now-reversed exclusion policy are retained in `legacy-before-full-recovery/`; the dated20260925 visual audit remains historical evidence.
+
+The printed year1856 is used despite BHL's1857 catalogue date. The original article is public domain. Samuells collected the list himself, but the article does not tie individual words to particular speakers or visits; the registered source-qualified Juang dialect retains blank coordinates. No source phonetic key licenses conversion of doubled letters or acute accents into guessed sounds, so display lowercases while retaining literal spelling. All source pages have explicit physical/printed mappings because inserted plates change the offset.
+
+See `FULL_RECOVERY.md` for checklist scope, exclusions, transcription, provenance, validation and representative entries. Full DB/CLDF builds, compiled identity/graph/reference validation and browser QA remain deferred by explicit user instruction. Source-stage closure does not claim a completed app/database release.

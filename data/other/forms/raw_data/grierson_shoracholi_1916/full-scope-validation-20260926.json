@@ -1,0 +1,52 @@
+{
+  "status": "complete_source_stage",
+  "inventory_units": 683,
+  "proposed_rows": 728,
+  "source_section_units": {
+    "unusual_words": 27,
+    "table": 241,
+    "grammar": 108,
+    "specimen": 307
+  },
+  "decisions": {
+    "ingested": 598,
+    "represented_by_explicit_construction": 1,
+    "ingested_uncertain": 3,
+    "source_blank": 3,
+    "inventory_only_control_or_ending": 8,
+    "reused_same_source_attestation": 70
+  },
+  "legacy_keys_preserved": 11,
+  "hashes": {
+    "full-preview.csv": "791ce1dd5f8f48d78e03e54b6239ff01953f88a7233299703dcbb2577224921c",
+    "full-preview-audit.jsonl": "82e0b104396710dbb99eb7df555c15d11808a91d7ef343c83181ddb7e6fc3b99",
+    "unusual-words-reviewed.tsv": "3ddae7355ea5c7f1f17f040b479960896749112648d10dfd838eb0dd9ec2a7f9",
+    "full-transcription-staged.tsv": "4c745a4d1ab9423a4289195ff91c2230b9e166cc4b6cb591fd31ac585ad6dc70",
+    "grammar-transcription-staged.tsv": "28aa6bc1cbf537ce17d96c68319221143baeef9e0fb80620f539f3d2f42e2f1a",
+    "specimen-transcription-staged.tsv": "65add48bf38744fc80eef01e977102ce1df5f839578178f02a1632b68809c600"
+  },
+  "checks": {
+    "profile_complete": true,
+    "scoped_parser_rows": 728,
+    "scoped_parser_errors": 0,
+    "registered_tags_only": true,
+    "source_metadata_profile": "grierson-shoracholi-1916",
+    "source_profile_policy_errors": 0,
+    "source_focused_tests_passed": 4,
+    "source_meta_validation": "275 source files with settings,263 citation keys",
+    "shared_profile_dialect_tests": {
+      "passed": 20,
+      "failed": 1,
+      "failure": "Concurrent Turi profile w/ṅ output violates housev/ŋ; reported to owner. Shoracholi profile-specific audit passed."
+    }
+  },
+  "independent_audit": "Fresh pass2 seed2026092662:0/20 material errors; post-install lexical-field comparison passed after whitespace/process-note cleanup.",
+  "deferred_user_gates": [
+    "full database/CLDF build",
+    "compiled graph/reference checks",
+    "full suite",
+    "browser QA"
+  ],
+  "native_witness_review": "sequence/block reconciliation, not diplomatic character transcription",
+  "no_remotes": true
+}

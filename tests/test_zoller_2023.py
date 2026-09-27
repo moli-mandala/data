@@ -33,7 +33,12 @@ def test_profile_and_layers(rows):
     assert not err.getvalue() and stats['converted']==len(rows)==len(parsed)
     assert all(not r[5] and not r[6] for r in rows)
     assert all(not r[4] or (r[0]=='Gk' and r[4]==r[2]) for r in rows)
-    assert [r.form for r in parsed]==[r[2] for r in rows]
+    # the display form is the house transcription of Zoller's mixed notation (ṅ → ŋ, š → ś …)
+    from segments.tokenizer import Tokenizer
+    t=Tokenizer(str(ROOT/'conversion/zoller-2023.txt'))
+    house=lambda v: unicodedata.normalize('NFC',t(unicodedata.normalize('NFC',v),column='IPA').replace(' ','').replace('#',' '))
+    assert [r.old_form for r in parsed]==[r[2] for r in rows]
+    assert [r.form for r in parsed]==[house(r[2]) for r in rows]
 
 def test_registered_languages_and_dialects(rows):
     languages={r['ID']:r for r in csv.DictReader((ROOT/'cldf/languages.csv').open())}
@@ -107,10 +112,13 @@ def test_compiled_graph_and_source_layers(rows):
     keys={r['Source_Key']:aliases[r['Legacy_ID']] for r in csv.DictReader((ROOT/'cldf/form-source-keys.csv').open()) if r['Source_Key'].startswith('zoller2023:')}
     edges={(r['Child_ID'],r['Parent_ID'],r['Kind']) for r in csv.DictReader((ROOT/'cldf/edges.csv').open())}
     forms={r['ID']:r for r in csv.DictReader((ROOT/'cldf/forms.csv').open()) if 'zoller2023' in r['Source']}
+    from segments import Tokenizer
+    tokenizer=Tokenizer(str(ROOT/'conversion/zoller-2023.txt'))
     for row in rows:
         r=forms[keys[row[10]]]
         assert r['Language_ID']==row[0]
-        assert r['Original']==row[2] and r['Form']==row[2]
+        expected=unicodedata.normalize('NFC',tokenizer(row[2],column='IPA').replace(' ','').replace('#',' '))
+        assert r['Original']==row[2] and r['Form']==expected
         if row[11]:assert (keys[row[10]],keys[row[11]],'variant') in edges
         elif row[1]:assert (keys[row[10]],row[1],'borrowed' if row[8] else 'reflex') in edges
 

@@ -30,6 +30,14 @@ def dict_rows(path, delimiter=","):
         return list(csv.DictReader(stream, delimiter=delimiter))
 
 
+def test_existing_shared_cldf_preserves_every_survey_record_and_variant():
+    from verify_manual_surveys import verify
+
+    evidence = verify()
+    assert sum(s["compiled_nodes"] for s in evidence["sources"].values()) == 5809
+    assert evidence["variant_edges"] == 46
+
+
 @pytest.mark.parametrize("name", adapter.SOURCES)
 def test_frozen_records_install_with_canonical_languages_and_stable_keys(name):
     spec = adapter.SOURCES[name]
@@ -66,7 +74,8 @@ def test_real_compiler_preserves_all_records_and_transcription_layers(name):
         assert row.is_lone and not row.param
         assert "�" not in row.form and row.form.strip()
         if name == "ho":
-            assert row.form == raw["Form"]
+            # the Ho lists are typed in IPA; the display form is the house transcription
+            assert row.form == make_cldf.convertors["sil-ho"](raw["Form"], column="IPA").replace(" ", "").replace("#", " ")
 
 
 def test_language_mapping_qualifiers_and_unknown_coordinates():
@@ -123,9 +132,9 @@ def test_references_are_complete_and_authors_match_source_covers():
 def test_display_profiles_preserve_difficult_source_notation():
     def convert(profile, text):
         return make_cldf.convertors[profile](text, column="IPA").replace(" ", "").replace("#", " ")
-    assert convert("sil-ho", "boʔo, bo?o ṯaḏ ɖ ẽ") == "boʔo, bo?o ṯaḏ ɖ ẽ"
+    assert convert("sil-ho", "boʔo, bo?o ṯaḏ ɖ ẽ") == "boʔo, bo?o ṯaḏ ḍ ẽ"
     assert convert("sil-bhumij", "ɖɳʈ tʃ dʒ ʌː") == "ḍṇṭ c j ā"
-    assert convert("sil-dhurwa-2021", "ʈɛl dʒ j bom:a") == "ṭel j y bomːa"
+    assert convert("sil-dhurwa-2021", "ʈɛl dʒ j bom:a") == "ṭɛl j y bommā"
 
 
 def test_new_sources_do_not_shift_old_input_positions():
@@ -136,7 +145,15 @@ def test_new_sources_do_not_shift_old_input_positions():
           and str(p.relative_to(ROOT)) not in make_cldf.APPENDED_SURVEY_FILES],
     ]) + [make_cldf.MERRIAM_DRAVIDIAN_DB_FILE, "data/dbia/forms.csv", *make_cldf.WESTERN_SURVEY_FILES]
     assert not set(existing) & set(make_cldf.MANUAL_SURVEY_FILES)
-    assert make_cldf.APPENDED_SURVEY_FILES == make_cldf.WESTERN_SURVEY_FILES + make_cldf.MANUAL_SURVEY_FILES + (make_cldf.SHETH_FILE, make_cldf.SHETH_SANSKRIT_FILE)
+    historical = make_cldf.WESTERN_SURVEY_FILES + make_cldf.MANUAL_SURVEY_FILES + (make_cldf.SHETH_FILE, make_cldf.SHETH_SANSKRIT_FILE)
+    assert make_cldf.APPENDED_SURVEY_FILES[:len(historical)] == historical
+    assert len(make_cldf.APPENDED_SURVEY_FILES) == len(set(make_cldf.APPENDED_SURVEY_FILES))
+    from source_files import ordered_source_files, legacy_prefix
+    ordered = ordered_source_files(ROOT)
+    assert ordered[:len(existing)] == existing
+    for file_num, filename in enumerate(ordered):
+        if filename in make_cldf.APPENDED_SURVEY_FILES:
+            assert legacy_prefix(filename, file_num) == Path(filename).stem
 
 
 def test_source_only_compilation_retains_homonyms_variants_and_durable_identity(tmp_path, monkeypatch):

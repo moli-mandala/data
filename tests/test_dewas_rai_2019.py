@@ -41,8 +41,8 @@ def test_dewas_rai_clean_pdf_targets_are_complete():
 
 def test_dewas_rai_ipa_profile_and_full_source_coverage():
     assert _convert("bʰʌ̃ĩ̯si") == "bʰãĩ̯si"
-    assert _convert("dʒungʰuɣau") == "jungʰuɣau"
-    assert _convert("pias lagʎʌ") == "pias lagʎa"
+    assert _convert("dʒungʰuɣau") == "jungʰuɣāu"
+    assert _convert("pias lagʎʌ") == "piās lāgʎa"
     # NFC recomposes the profile's u + breathy-voice mark as U+1E73.
     assert _convert("mṳi") == "mṳi"
     assert _convert("tʃʰɑlkʌ") == "cʰālka"

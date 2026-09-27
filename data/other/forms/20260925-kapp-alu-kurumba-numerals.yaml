@@ -1,0 +1,17 @@
+file: 20260925-kapp-alu-kurumba-numerals.csv
+defaults:
+  transcription:
+    profile: kapp-alu-kurumba-1995
+    preserve_hyphens: true
+  identity:
+    legacy_ids: stem
+    append_order: 105
+  importer:
+    commands:
+      - [data/other/forms/raw_data/kapp_alu_kurumba_1995/import_source.py, --install]
+    note: Kapp's 1995 Alu Kurumba numbered table in the immutable CC-BY Chan archive.
+sources:
+  kapp1995alukurumba:
+    reference:
+      editor: OpenAI Codex
+      ocr: false

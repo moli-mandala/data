@@ -1,0 +1,85 @@
+{
+  "status": "source metadata registered; source CSV installed locally; compiled build deferred",
+  "source_key_proposal": "pradhan-tripathi2024mahali",
+  "edition": {
+    "title": "Mahali-Bangla-Hindi-English Dictionary",
+    "editors": [
+      "Manoranjan Pradhan",
+      "Arimardan Kumar Tripathi"
+    ],
+    "year": 2024,
+    "edition": "First",
+    "publisher": "Centre for Endangered Languages, Visva-Bharati",
+    "address": "Santiniketan",
+    "isbn": "978-81-957226-9-3",
+    "evidence_pdf_pages": [
+      2,
+      3
+    ],
+    "introduction_date": "2024-03-25"
+  },
+  "language_mapping": {
+    "source_label": "Mahali",
+    "language_id": "Mahali",
+    "existing_glottocode": "maha1291",
+    "clade": "Munda",
+    "evidence_pdf_pages": [
+      6,
+      7,
+      8
+    ],
+    "context": "West Bengal community; introduction mentions Birbhum, Maldah and Nadia as regional concentrations, not as identified collection sites.",
+    "dialect_id": null,
+    "latitude": null,
+    "longitude": null,
+    "decision": "Use existing canonical Mahali. Do not turn broad distribution, publisher address or personal names into a source dialect or collection coordinates. The existing base-language coordinate is not a collection location."
+  },
+  "contributors": {
+    "language_resource_persons": [
+      "Dashrath Murmu",
+      "Santosh Tudu",
+      "Chhabi Mahali"
+    ],
+    "linguistics_resource_persons": [
+      "Monisha Ghosh",
+      "Akash Bhagat",
+      "Ayan Chatterjee",
+      "Arka Das"
+    ],
+    "evidence_pdf_page": 6,
+    "role_policy": "Source provenance; no person-derived dialect tags."
+  },
+  "attestation_policy": {
+    "evidence_pdf_pages": [
+      7,
+      8
+    ],
+    "claims": "Vocabulary assembled through fieldwork and workshops, with coinages when needed for cross-language equivalents.",
+    "decision": "Do not claim every item is traditional, or assign individual coinage/borrowing labels without entry-level evidence."
+  },
+  "existing_source_inventory": [
+    {
+      "path": "data/other/forms/20260813-santali-cluster.csv",
+      "mahali_rows": 908,
+      "source": "kim-kim-ahmad-sangma2010santali-cluster",
+      "varieties": {
+        "mahali_abirpara": 300,
+        "mahali_matindor": 303,
+        "mahali_pachondor": 305
+      }
+    },
+    {
+      "path": "data/other/forms/20260828-pinnow-munda.csv",
+      "mahali_rows": 68
+    },
+    {
+      "path": "data/other/forms/20260913-zoller-linguistic-data.csv",
+      "mahali_rows": 8
+    }
+  ],
+  "overlap_policy": "This 2024 dictionary is a separate bibliographic attestation, not a replacement for the Bangladesh survey or comparative citations. Inventory counts do not establish independence of every lexical datum or quantify lexical overlap. Preserve printed page/item keys and same-source distinct records; no automatic graph links or source replacement.",
+  "remaining": [
+    "Review exact cross-source lexical matches before any deduplication claim",
+    "Compiled survival, references, graph, full pipeline and browser checks deferred until user requests a build"
+  ]
+}

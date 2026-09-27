@@ -1,0 +1,105 @@
+{
+  "date": "2026-09-26",
+  "status": "full chapter recovery active; canonical pilot not complete",
+  "source_path": "tmp/pdfs/LSI-V4.djvu",
+  "source_sha256": "33e9aaa220db22fcde712705581a69f7edcfc7e20b3e7a09347dc969768020f1",
+  "method": "Root inspected original source pages128–129 and cached original page contact sheet147–154; verified fullDjVu identity.",
+  "chapter_printed_pages": [
+    128,
+    129,
+    130,
+    131,
+    132,
+    133,
+    134
+  ],
+  "chapter_djvu_pages": [
+    147,
+    148,
+    149,
+    150,
+    151,
+    152,
+    153
+  ],
+  "next_chapter_control": {
+    "printed_page": 135,
+    "djvu_page": 154,
+    "heading": "Asuri"
+  },
+  "sections": [
+    {
+      "printed_pages": [
+        128,
+        129
+      ],
+      "kind": "editorial grammar and lexical examples",
+      "prior_audit_units": 24,
+      "required": "Recover literal source readings, including inflected examples; retain editorial emendations and comparison controls separately."
+    },
+    {
+      "printed_pages": [
+        130
+      ],
+      "kind": "SpecimenI alignedtext",
+      "site": "Ranchi",
+      "required": "Inventory every printed alignment; preserve surface forms and cited glosses."
+    },
+    {
+      "printed_pages": [
+        131,
+        132
+      ],
+      "kind": "SpecimenII alignedtext and free translation",
+      "site": "Jashpur",
+      "required": "Inventory aligned units; check footnote and free translation for lexical evidence without inventing alignments."
+    },
+    {
+      "printed_pages": [
+        133,
+        134
+      ],
+      "kind": "SpecimenIII alignedtext and free translation",
+      "site": "Sarangarh",
+      "required": "Inventory alignedunits; retain source-described number discrepancies."
+    }
+  ],
+  "lect_policy": "Preserve Ranchi, Jashpur, Sambalpur and Sarangarh source sites separately; no exact coordinates. Generic grammar examples without source-site attribution remain source-qualified unspecified, unless linked explicitly to a specimen.",
+  "controls": [
+    "Introductory ethnonyms are not automatically lexical entries.",
+    "Introductory basket/implement names have uncertain target-language attribution and require explicit source-scope decisions.",
+    "The conjectural interpretation of hor and rejected comparison are not independent observed Turi attestations.",
+    "The dative suffix and verb suffix comparison require morphology inventory rather than invented independent lemmas."
+  ],
+  "prior_hold_reason_census": {
+    "Grierson’s conjectural interpretation of the printed hor, not a second independent attestation": 1,
+    "comparison form, not independently attributed to Sarangarh specimen": 1,
+    "dative-marked phrase, not an independently elicited simplex lemma": 1,
+    "explicit rejected comparison form, not Tūri source response": 1,
+    "genitive phrase, not an independently elicited simplex lemma": 1,
+    "grammatical copula paradigm, not lexical example": 2,
+    "grammatical example of number confusion; source form/gloss not stable": 1,
+    "inflected future verb, not simplex lemma": 2,
+    "inflected phrase, not simplex lemma": 1,
+    "inflected verb, not simplex lemma": 2,
+    "inflected verbal sentence, not simplex lemma": 1,
+    "negative inflected sentence; exact source form unresolved": 2,
+    "past inflected verb, not simplex lemma": 2,
+    "source says singular/plural pronouns confounded; vowel reading uncertain": 1,
+    "vowel diacritic and sequence not securely readable in scan": 1,
+    "vowel lengths and ending not securely readable in scan": 1
+  },
+  "remaining": [
+    "Full reading of all3specimens with unit census",
+    "Second reviewofprose readings, superscripts and vowel marks",
+    "Full source importer/profile/metadata/dialect review",
+    "Independent random source/output audit and focused checks"
+  ],
+  "deferred_by_user": [
+    "FullCLDFbuild",
+    "Databasebuild",
+    "Compiledgraph/referencechecks",
+    "Fullsuite",
+    "BrowserrefreshQA"
+  ]
+}

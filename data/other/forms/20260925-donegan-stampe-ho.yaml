@@ -1,0 +1,23 @@
+file: 20260925-donegan-stampe-ho.csv
+defaults:
+  transcription:
+    profile: ho-mla
+    input: form
+    preserve_hyphens: true
+  identity:
+    legacy_ids: stem
+    append_order: 63
+  importer:
+    commands:
+      - [data/other/forms/raw_data/ho_mla_2004/import_source.py, --install]
+    note: Only the archived A–C slice of Deeney via MLA; source-file installation only, no database build.
+sources:
+  DHED:
+    identity:
+      dedupe_by_entry_key: true
+    forms:
+      split_alternates: false
+    reference:
+      editor: OpenAI Codex
+      ocr: false
+      etymology_provenance: source

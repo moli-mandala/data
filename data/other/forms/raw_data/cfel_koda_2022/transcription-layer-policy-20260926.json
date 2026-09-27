@@ -1,0 +1,16 @@
+{
+  "status": "Design policy; full source installation pending review",
+  "native_only_alternates": {
+    "authorization": "Parent confirmed source-native preservation on 2026-09-26.",
+    "Form": "Literal NFC Bengali source spelling; explicit exception to phonetic display transcription.",
+    "Native": "Same literal NFC source spelling.",
+    "Phonemic": "Blank when source supplies no independently aligned IPA; never inherit the primary head pronunciation.",
+    "identity": "Stable child keys tied to source position and explicit Variant_Of_Key relation.",
+    "audit": "Typed missing-source-IPA reason; keep source witness and exact printed/API evidence.",
+    "profile": "Literal Bengali preservation route with corpus-wide symbol coverage; must not turn source-script Form into purported IPA."
+  },
+  "primary_IPA": "Publisher API IPA remains its own source layer. Native-print dental/retroflex or other differences must not be silently substituted.",
+  "partial_IPA": "If IPA covers only a component of a longer native head, preserve component analysis in audit rather than assign it as full-form Phonemic.",
+  "english_print_IPA": "IPA in English-headed edition describes English control headings, not Koda; never use as Koda pronunciation.",
+  "editions": "Cite each edition separately when using its attestation; pairing is contextual evidence, not proof of identical wording."
+}

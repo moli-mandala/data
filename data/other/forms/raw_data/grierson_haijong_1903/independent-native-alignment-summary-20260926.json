@@ -1,0 +1,50 @@
+{
+  "status": "complete_independent_native_review_and_conservative_alignment",
+  "native_lines": 26,
+  "roman_atoms": 391,
+  "direct_native_span_assignments": 385,
+  "many_roman_atoms_one_native_word_groups": [
+    [
+      "grierson1903haijong:p217:specimen-I:line1:word1",
+      "grierson1903haijong:p217:specimen-I:line1:word2"
+    ],
+    [
+      "grierson1903haijong:p217:specimen-I:line7:word6",
+      "grierson1903haijong:p217:specimen-I:line7:word7"
+    ],
+    [
+      "grierson1903haijong:p218:specimen-I:line12:word8",
+      "grierson1903haijong:p218:specimen-I:line12:word9"
+    ]
+  ],
+  "unmatched_native_lexical_characters": 0,
+  "unmatched_roman_atoms": 0,
+  "boundary_policy": "Three two-atom groups preserve one native printed word. Individual recommended_native is empty for these six atoms; group native evidence and locators are retained. Native whitespace-separated expressions may correspond to one printed Roman compound; their exact spelling/spacing is preserved. Native punctuation is preserved in the complete line witness but excluded from lexical span matching.",
+  "spelling_policy": "Parallel passage alignment is not an assertion of transliteration equivalence; all native spellings remain literal. Highlighted spelling differences are illustrative, not an exhaustive phonological comparison.",
+  "explicit_differences": {
+    "grierson1903haijong:p217:specimen-I:line2:word7": "Native আগরা has initial আ; Roman bhāgrā has bh. Preserve both witnesses.",
+    "grierson1903haijong:p217:specimen-I:line14:word4": "Native আপনর has final র; Roman āpnā lacks final r. Preserve both witnesses.",
+    "grierson1903haijong:p218:specimen-I:line1:word2": "Native বাখার retains vowel spelling absent in printed Roman bkhār. Preserve both witnesses.",
+    "grierson1903haijong:p218:specimen-I:line2:word7": "Native ধরিয়া has final vowel; Roman dhariy lacks final a. Preserve both witnesses.",
+    "grierson1903haijong:p218:specimen-I:line11:word5": "Native ক্ষেত্নি cluster differs from expanded Roman khˢēttra-ni. Retain literal witnesses; no reconstructed cluster.",
+    "grierson1903haijong:p218:specimen-I:line21:word2": "Native লইয়া and Roman lāiyā have different vowel representation; do not normalize."
+  },
+  "input_sha256": {
+    "native-p216-first-reading-20260926.jsonl": "c14a75ee47e2a726a724dcb7a529297870f595461bfe108f4164040bb6aa4713",
+    "native-p216-reviewed-20260926.jsonl": "da8d3703950989f4e9d7fd337a9bde26595ecf5896cfe9dfd91a6297ec222064",
+    "specimens-reconciled-20260926.jsonl": "275e3ba3a1aca796ae80b2daa668bfd3f7894c3c8b38e2e831c09fcecfe86cc9",
+    "native-specimen-I-alignments-20260926.jsonl": "a3a3e857fb37484bfec32b3502a3b55f9e73c191549785065c49b401ddad04f4"
+  },
+  "validation": [
+    "391 unique Roman keys exactly cover Specimen I reconciled input",
+    "All26 native lines covered",
+    "Sequential normalized native character stream consumed exactly once except explicit shared-word groups",
+    "Only whitespace and Unicode punctuation ignored in matching; no vowel/consonant folding",
+    "Native corrections preserved in separate review report; frozen first reading unchanged"
+  ],
+  "deferred": [
+    "Root independent acceptance of native corrections/alignment",
+    "Canonical importer integration and focused parse/profile checks by root",
+    "DB/full build/browser explicitly deferred by user instruction"
+  ]
+}

@@ -2,7 +2,7 @@
 
 ## Shared integration update — 14 September 2026
 
-The frozen staging is now adapted into `data/other/forms/20260914-sil-ho.csv`: 2,900 rows under canonical language `ho`, with shared dialects, bibliography, formatted references and explicit profile routing. Source-only compilation and graph tests pass. The full shared CLDF build and full suite remain deferred under the workspace resource policy; the app database has not been refreshed. See the [shared review](../../../../../source_checklists/20260914-manual-surveys-review.md) for counts, corrections, validation and remaining gates.
+The frozen staging is now adapted into `data/other/forms/20260914-sil-ho.csv`: 2,900 rows under canonical language `ho`, with shared dialects, bibliography, formatted references and explicit profile routing. Read-only shared-CLDF verification on 21 September 2026 confirms every installed key, persistent ID, transcription layer, citation, dialect tag and source-defined variant edge. No database was rebuilt. A new full build, repository-wide suite and global retrospective audit remain unclaimed; see the current shared review for scope and evidence. See the [shared review](../../../../../source_checklists/20260914-manual-surveys-review.md) for counts, corrections, validation and remaining gates.
 
 The source manifests and staged files remain frozen as extraction evidence. The
 following text records that earlier source-local stage; its pending shared gates

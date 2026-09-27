@@ -406,3 +406,44 @@ def test_overlay_components_roundtrip_and_require_all_bases(tmp_path):
     bad[1]['Pos'] = '1'
     with pytest.raises(ValueError, match='not contiguous'):
         validate_assignments(forms, bad)
+
+
+def test_a_folded_survey_node_keeps_its_id_when_a_profile_change_splits_it():
+    # make_cldf folds two survey sites with the same display form into one node whose
+    # Original joins their source forms; the node's legacy ID is the first site's
+    folded = form("9-5", "ʊna; una", rendered="una")
+    folded["Source"] = "survey[site a];survey[site b]"
+    initial_mapping, registry = assign_ids([folded], [])
+    node_id = initial_mapping["9-5"]
+
+    # a transcription change makes the sites distinct again: the site at the old position
+    # keeps the public ID, the other is minted afresh, nothing is retired by accident
+    split = [
+        form("9-5", "ʊna", rendered="una"),
+        form("9-6", "una", rendered="ūna"),
+    ]
+    for row in split:
+        row["Source"] = "survey[site a]"
+    mapping, next_registry = assign_ids(split, registry)
+    assert mapping["9-5"] == node_id
+    assert mapping["9-6"] != node_id
+    assert {row["Form_ID"]: row["Status"] for row in next_registry}[node_id] == "active"
+
+
+def test_sites_folded_into_another_node_are_aliased_to_the_survivor():
+    separate = [
+        form("9-5", "kivaɖa", rendered="kīvaḍa"),
+        form("9-7", "kivaɖə", rendered="kīvaḍə"),
+    ]
+    separate[0]["Source"] = "survey[site a]"
+    separate[1]["Source"] = "survey[site b]"
+    initial_mapping, registry = assign_ids(separate, [])
+
+    # ə → a now makes both sites the same display form and make_cldf folds them
+    folded = form("9-5", "kivaɖa; kivaɖə", rendered="kīvaḍa")
+    folded["Source"] = "survey[site a];survey[site b]"
+    mapping, next_registry = assign_ids([folded], registry)
+    assert mapping["9-5"] == initial_mapping["9-5"]
+    # the absorbed site's ID redirects to the survivor so its curated etymology follows it
+    assert mapping[initial_mapping["9-7"]] == initial_mapping["9-5"]
+    assert {row["Form_ID"]: row["Status"] for row in next_registry}[initial_mapping["9-7"]] == "retired"

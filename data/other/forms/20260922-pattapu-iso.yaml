@@ -1,0 +1,21 @@
+file: 20260922-pattapu-iso.csv
+defaults:
+  identity:
+    legacy_ids: stem
+    append_order: 37
+  importer:
+    commands:
+      - [data/other/forms/raw_data/rebbavarapu_pattapu_2013/import_source.py, --install]
+    note: Source-file installation only; does not build CLDF or the browser database.
+  transcription:
+    profile: pattapu-iso
+sources:
+  rebbavarapu2013pattapu:
+    identity:
+      dedupe_by_entry_key: true
+    forms:
+      split_alternates: false
+    reference:
+      editor: OpenAI Codex
+      ocr: false
+      etymology_provenance: none

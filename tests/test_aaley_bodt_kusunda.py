@@ -143,7 +143,8 @@ def test_compiled_rows_survive_as_unlinked_nodes_with_source_layers_separated():
 
     assert len(compiled) == 662
     assert {row["Language_ID"] for row in compiled} == {"Kusunda"}
-    assert {row["Status"] for row in compiled} == {"unlinked"}
+    from reviewed_graph_policy import assert_reviewed_source_graph
+    assert_reviewed_source_graph(compiled)
     assert all(not row["Cognateset"] for row in compiled)
     assert all(row["Original"] == row["Phonemic"] for row in compiled)
     assert sum(row["Form"].startswith("*") for row in compiled) == 211
@@ -157,6 +158,9 @@ def test_compiled_rows_survive_as_unlinked_nodes_with_source_layers_separated():
         "ProtoKusunda-", "KusundaGM-", "KusundaK-"
     ))]
     assert len(kusunda_keys) == 662
+    assert {r['Source_Key'] for r in kusunda_keys} == {r[10] for r in rows(INSTALLED)}
+    aliases = {r['Legacy_ID']:r['Form_ID'] for r in dicts(ROOT / 'cldf/form-id-aliases.csv')}
+    assert {aliases[r['Legacy_ID']] for r in kusunda_keys} == {r['ID'] for r in compiled}
 
 
 def test_reference_metadata_is_complete_after_build():

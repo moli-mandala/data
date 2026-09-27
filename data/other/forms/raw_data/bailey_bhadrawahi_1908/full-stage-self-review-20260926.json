@@ -1,0 +1,42 @@
+{
+  "scope": "Entire printed57–67 chapter + explicitly Bhadrawahi attestations in shared introduction53–55; PDFprinted+114",
+  "units": 623,
+  "forms": 709,
+  "statuses": {
+    "ingested": 615,
+    "exclude_pattern": 3,
+    "exclude_other_language": 5
+  },
+  "accepted_unit_strata": {
+    "grammar-prose": 378,
+    "glossary": 149,
+    "numerals": 41,
+    "sentences": 22,
+    "introduction": 25
+  },
+  "legacy_keys_preserved": 23,
+  "typed_uncertainties": {
+    "transcription": [
+      "p60 adverb-prose6 first answer u/v-shaped initial",
+      "p67 sentence17 damaged final a of kutta, both expanded answers"
+    ],
+    "gloss": [
+      "printed being, five forms",
+      "two explicitly cited present-action fragments without a standalone lexical gloss"
+    ]
+  },
+  "hashes": {
+    "chapter-transcription-work.tsv": "8d174dfa15970d0202aaebb7ca09bbdc5b9886a15ab4dda07044eb89c6d67535",
+    "full-staged.csv": "2f7301c1d71e89ba6cd4fbb8a997e6c1556e4d519415304f5379b88819a4c893",
+    "full-staged-audit.jsonl": "d3156f571f4ae624f3187fa0590c433c157a7926c40371107ee0d31ed34bfd00",
+    "literal-profile-staged.txt": "27c43afbf7ca5a5c6afbb27bf1817a2767631517f41c00717fb2b7546fdbad16"
+  },
+  "focused_tests": "3 passed, including709 scoped parse/profile coverage, stable23keys and literal regressions",
+  "gates_deferred": [
+    "independent fresh20 (requested next)",
+    "installation",
+    "full CLDF pipeline and compiled graph/reference validation",
+    "full suite",
+    "browser DB and QA, not authorized"
+  ]
+}

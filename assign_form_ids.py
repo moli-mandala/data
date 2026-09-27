@@ -172,6 +172,24 @@ def nearest_legacy_position(
     return ranked[0][2]
 
 
+def folded_node_split(registry_row: dict[str, str], row: dict[str, str]) -> bool:
+    """True when ``row`` is (one of) the source record(s) behind ``registry_row``: same
+    provenance and language, and its source form is the registry Original or one of the
+    ``; ``-joined Originals of a node make_cldf folded from several survey sites."""
+    original = row.get("Original", "") or row.get("Form", "")
+    registry_sources = set(source_identity(registry_row.get("Source", "")).split(";"))
+    row_sources = set(source_identity(row.get("Source", "")).split(";"))
+    registry_parts = set(registry_row.get("Original", "").split("; "))
+    row_parts = set(original.split("; "))
+    if registry_row.get("Language_ID") != row.get("Language_ID", ""):
+        return False
+    # the node split: this row is one of the sites the registry node had folded
+    if row_parts <= registry_parts and row_sources <= registry_sources:
+        return True
+    # the node grew: the registry record (folded or not) is now inside this row
+    return registry_parts <= row_parts and registry_sources <= row_sources
+
+
 def assign_ids(
     forms: list[dict[str, str]], registry: list[dict[str, str]], source_keys: dict[str, str] | None = None
 ) -> tuple[dict[str, str], list[dict[str, str]]]:
@@ -226,6 +244,18 @@ def assign_ids(
                 match = candidates[0]
         if not match and legacy_match and legacy_match.get("Fingerprint") == fp:
             match = legacy_match
+        if (
+            not match and not source_key and legacy_match
+            and legacy_match.get("Status") == "active"
+            and ("; " in legacy_match.get("Original", "") or ";" in row.get("Source", ""))
+            and folded_node_split(legacy_match, row)
+        ):
+            # A node that make_cldf had folded from several survey sites carries their
+            # Originals joined by "; ". When a transcription change stops those sites from
+            # sharing a display form, the site at the old position keeps the public ID and
+            # the others are minted afresh; this must beat the fingerprint fallback, which
+            # would otherwise revive the tombstone the fold had retired.
+            match = legacy_match
         if not match and not source_key:
             # The same source record at the nearest generated position keeps its public ID
             # even when its gloss changed (a parser now fills it), it gained supporting
@@ -275,13 +305,7 @@ def assign_ids(
                 # Older sources without immutable keys still need editorial corrections to a
                 # gloss to preserve their public ID when provenance, language and source form
                 # identify the same record at the same legacy position.
-                same_source_record = (
-                    source_identity(legacy_match.get("Source", ""))
-                    == source_identity(row.get("Source", ""))
-                    and legacy_match.get("Language_ID") == row.get("Language_ID", "")
-                    and legacy_match.get("Original")
-                    == (row.get("Original", "") or row.get("Form", ""))
-                )
+                same_source_record = folded_node_split(legacy_match, row)
             if same_source_record:
                 match = legacy_match
 
@@ -306,6 +330,35 @@ def assign_ids(
             "Gloss": row.get("Gloss", ""),
             "Status": "active",
         }
+
+    # The reverse of a split: a transcription change can make make_cldf fold survey sites that
+    # used to be separate nodes into one ("; "-joined Originals). The sites that lost their own
+    # node are aliased to the survivor so their curated etymologies follow them.
+    by_site: dict[tuple[str, str], list[dict[str, str]]] = defaultdict(list)
+    for candidate in registry:
+        if candidate.get("Status") == "active" and candidate["Form_ID"] not in claimed:
+            for part in candidate.get("Original", "").split("; "):
+                by_site[(normalized(candidate.get("Language_ID", "")), normalized(part))].append(candidate)
+    for row in forms:
+        original = row.get("Original", "") or row.get("Form", "")
+        if ("; " not in original and ";" not in row.get("Source", "")) or has_dictionary_entry_id(row):
+            continue
+        survivor = mapping.get(row["ID"])
+        if not survivor:
+            continue
+        sources = set(source_identity(row.get("Source", "")).split(";"))
+        parts = {normalized(part) for part in original.split("; ")}
+        for part in parts:
+            for candidate in by_site.get((normalized(row.get("Language_ID", "")), part), []):
+                if candidate["Form_ID"] in claimed:
+                    continue
+                # every site the old node carried is now inside this node
+                if (
+                    {normalized(p) for p in candidate.get("Original", "").split("; ")} <= parts
+                    and set(source_identity(candidate.get("Source", "")).split(";")) <= sources
+                ):
+                    mapping[candidate["Form_ID"]] = survivor
+                    claimed.add(candidate["Form_ID"])
 
     for old in registry:
         if old.get("Form_ID") not in snapshots:
@@ -444,6 +497,16 @@ def apply_assignments(
     for edge in edges:
         if edge.get("Rank") == "1" and edge.get("Kind") in {"reflex", "borrowed", "variant"}:
             rank1_by_child[edge["Child_ID"]] = edge
+    # (child, parent) → its edges in table order: every lookup below is by that pair
+    by_pair: dict[tuple[str, str], list[dict[str, str]]] = defaultdict(list)
+    for edge in edges:
+        by_pair[(edge["Child_ID"], edge["Parent_ID"])].append(edge)
+    dropped: set[int] = set()  # id() of rejected edges, filtered out once at the end
+
+    def add_edge(edge: dict[str, str]) -> None:
+        edges.append(edge)
+        by_pair[(edge["Child_ID"], edge["Parent_ID"])].append(edge)
+
     changed = 0
     for assignment in assignments:
         status = assignment.get("Status", "accepted").strip().lower()
@@ -452,22 +515,21 @@ def apply_assignments(
         kind = assignment.get("Kind", "reflex")
         rank = assignment.get("Rank", "1")
         if status in REJECTED:
-            before = len(edges)
-            edges = [
-                e for e in edges
-                if not (e["Child_ID"] == form_id and e["Parent_ID"] == etymon_id and e["Rank"] != "1")
-            ]
-            changed += before - len(edges)
+            group = by_pair.get((form_id, etymon_id), [])
+            doomed = [e for e in group if e["Rank"] != "1"]
+            if doomed:
+                dropped.update(id(e) for e in doomed)
+                by_pair[(form_id, etymon_id)] = [e for e in group if e["Rank"] == "1"]
+                changed += len(doomed)
             continue
         if kind in {"derived", "component"}:
             # Derivations are non-attestation edges, so do not put them in the
             # reflex/loan rank-1 index or replace an unrelated ancestry edge.
-            match = next((e for e in edges if
-                e["Child_ID"] == form_id and e["Parent_ID"] == etymon_id
-                and e["Kind"] == kind and e["Rank"] == rank
+            match = next((e for e in by_pair.get((form_id, etymon_id), ()) if
+                e["Kind"] == kind and e["Rank"] == rank
                 and e.get("Pos", "") == assignment.get("Pos", "")), None)
             if match is None:
-                edges.append(dict(
+                add_edge(dict(
                     Child_ID=form_id, Parent_ID=etymon_id, Kind=kind, Rank=rank,
                     Pos=assignment.get("Pos", ""), Source=assignment.get("Source", ""),
                     Note=assignment.get("Notes", ""),
@@ -498,7 +560,7 @@ def apply_assignments(
                     Child_ID=form_id, Parent_ID=etymon_id, Kind=kind, Rank="1", Pos="",
                     Source=assignment.get("Source", ""), Note="",
                 )
-                edges.append(edge)
+                add_edge(edge)
                 rank1_by_child[form_id] = edge
                 changed += 1
             # An accepted rank-1 edge makes the node attested, so clear whichever parentless
@@ -509,21 +571,20 @@ def apply_assignments(
                 row["Status"] = ""
                 changed += 1
         else:
-            match = [
-                e for e in edges
-                if e["Child_ID"] == form_id and e["Parent_ID"] == etymon_id and e["Rank"] != "1"
-            ]
+            match = [e for e in by_pair.get((form_id, etymon_id), ()) if e["Rank"] != "1"]
             if match:
                 for e in match:
                     if e.get("Note", "").startswith("review:") or e.get("Kind") != kind:
                         e.update(Kind=kind, Rank=rank, Source=assignment.get("Source", ""), Note="")
                         changed += 1
             else:
-                edges.append(dict(
+                add_edge(dict(
                     Child_ID=form_id, Parent_ID=etymon_id, Kind=kind, Rank=rank, Pos="",
                     Source=assignment.get("Source", ""), Note="",
                 ))
                 changed += 1
+    if dropped:
+        edges = [e for e in edges if id(e) not in dropped]
     edges.sort(key=lambda e: (
         e["Child_ID"], e["Kind"], int(e["Rank"] or 1), int(e["Pos"] or 0), e["Parent_ID"]
     ))

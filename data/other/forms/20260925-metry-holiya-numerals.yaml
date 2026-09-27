@@ -1,0 +1,17 @@
+file: 20260925-metry-holiya-numerals.csv
+defaults:
+  transcription:
+    profile: metry-holiya-numerals-2017
+    preserve_hyphens: true
+  identity:
+    legacy_ids: stem
+    append_order: 54
+  importer:
+    commands:
+      - [data/other/forms/raw_data/metry_holiya_numerals_2017/import_source.py, --install]
+    note: Metry's 2017 Holiya numeral elicitation as displayed in Chan's table; three typographically uncertain items held in audit.
+sources:
+  metry2017holiya:
+    reference:
+      editor: OpenAI Codex
+      ocr: false

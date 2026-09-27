@@ -1,0 +1,165 @@
+{
+  "seed": 2026092671,
+  "method": "Stratified random8grammar8lexical/numeral4whole specimens; sample chosen before viewing originals",
+  "stage_sha256": "64128fe4b957a4d9a3f7f6133852efaecbfe065e7570e9913815e34640506f23",
+  "audit_sha256": "2a944d7622e9e1df1f6668062db98b1f111a70078c21cea107651987b28070bb",
+  "reviewer": "root, independent of transcriber rohru_finish",
+  "original_pdf": "tmp/pdfs/bailey-sainji/bailey1908.pdf",
+  "original_sha256": "953f5da5ee9bc341cdf7eb558920e824dc6f15f7473a8c0d5c8134c401ad60b5",
+  "original_pages_viewed": [
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55
+  ],
+  "sample_size": 20,
+  "material_literal_or_gloss_errors": 0,
+  "result": "pass on frozen stage; one out-of-sample typography hold required before installation",
+  "checks": [
+    "Original page images216dpi, enlarged local crops360–420dpi for edge cases",
+    "All alternatives within each sampled source unit",
+    "Complete sampled sentence strings and corresponding English translations",
+    "Entry keys and staged CSV agree with audit sample"
+  ],
+  "sample": [
+    {
+      "source_cell_key": "bailey1908kotguru:p26:pronoun-1sg:item:3",
+      "printed_page": 26,
+      "result": "pass"
+    },
+    {
+      "source_cell_key": "bailey1908kotguru:p26:pronoun-this-pl:item:1",
+      "printed_page": 26,
+      "result": "pass"
+    },
+    {
+      "source_cell_key": "bailey1908kotguru:p26:pronoun-this-sg:item:3",
+      "printed_page": 26,
+      "result": "pass"
+    },
+    {
+      "source_cell_key": "bailey1908kotguru:p27:adverb-place:item:3",
+      "printed_page": 27,
+      "result": "pass"
+    },
+    {
+      "source_cell_key": "bailey1908kotguru:p28:conjunction:item:6",
+      "printed_page": 28,
+      "result": "pass"
+    },
+    {
+      "source_cell_key": "bailey1908kotguru:p29:beat-past:item:1",
+      "printed_page": 29,
+      "result": "pass"
+    },
+    {
+      "source_cell_key": "bailey1908kotguru:p29:come-pres-conditional:item:1pl",
+      "printed_page": 29,
+      "result": "pass"
+    },
+    {
+      "source_cell_key": "bailey1908kotguru:p29:go-de-present:item:1",
+      "printed_page": 29,
+      "result": "pass"
+    },
+    {
+      "source_cell_key": "bailey1908kotguru:p30:right:item:10",
+      "printed_page": 30,
+      "result": "pass"
+    },
+    {
+      "source_cell_key": "bailey1908kotguru:p30:right:item:8",
+      "printed_page": 30,
+      "result": "pass"
+    },
+    {
+      "source_cell_key": "bailey1908kotguru:p31:left:item:25",
+      "printed_page": 31,
+      "result": "pass"
+    },
+    {
+      "source_cell_key": "bailey1908kotguru:p32:cardinal:left:item:13",
+      "printed_page": 32,
+      "result": "pass"
+    },
+    {
+      "source_cell_key": "bailey1908kotguru:p32:cardinal:left:item:5",
+      "printed_page": 32,
+      "result": "pass"
+    },
+    {
+      "source_cell_key": "bailey1908kotguru:p32:cardinal:right:item:19",
+      "printed_page": 32,
+      "result": "pass"
+    },
+    {
+      "source_cell_key": "bailey1908kotguru:p32:ordinal:left:item:3",
+      "printed_page": 32,
+      "result": "pass"
+    },
+    {
+      "source_cell_key": "bailey1908kotguru:p32:right:item:4",
+      "printed_page": 32,
+      "result": "pass"
+    },
+    {
+      "source_cell_key": "bailey1908kotguru:p33:specimen:item:16",
+      "printed_page": 33,
+      "result": "pass"
+    },
+    {
+      "source_cell_key": "bailey1908kotguru:p33:specimen:item:17",
+      "printed_page": 33,
+      "result": "pass"
+    },
+    {
+      "source_cell_key": "bailey1908kotguru:p33:specimen:item:20",
+      "printed_page": 33,
+      "result": "pass"
+    },
+    {
+      "source_cell_key": "bailey1908kotguru:p33:specimen:item:4",
+      "printed_page": 33,
+      "result": "pass"
+    }
+  ],
+  "edge_review": [
+    {
+      "page": 25,
+      "reading": "nā̃ō̃",
+      "result": "two overmark stacks visible; retain source literal, second stack inked"
+    },
+    {
+      "page": 28,
+      "reading": "tērī tā- [final vowel stack]",
+      "result": "unresolved inked final vowel/diacritic stack; specific hold required, do not infer from parallel tāī̃"
+    },
+    {
+      "page": 29,
+      "readings": [
+        "kŏrnuu",
+        "āṇuu"
+      ],
+      "result": "literal uu appearance confirmed; retain explicit source discrepancy note"
+    },
+    {
+      "page": 29,
+      "reading": "gēĭ",
+      "result": "dotted breve independently confirmed by narrow crop"
+    },
+    {
+      "page": 31,
+      "reading": "bēdẓau",
+      "result": "underdot belongs to z"
+    }
+  ],
+  "limits": [
+    "Sample audit does not independently re-transcribe all487 units",
+    "Compiled DB, graph/reference checks and browser QA deferred by user"
+  ]
+}

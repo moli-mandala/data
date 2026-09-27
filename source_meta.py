@@ -36,13 +36,19 @@ Schema::
           source_defined_tags: true     # verb labels printed in the source table
         notes:
           audit_only: true              # Notes are ingestion metadata, kept out of public notes
+          sanskrit_attestations: true   # Sanskrit work loci in notes tag the OIA rows (CDIAL)
         reference:
           editor: "Aryaman Arora; OpenAI Codex"
           ocr: true
           etymology_provenance: source  # source | source-mapped | jambu | mixed | none
 
 ``<rules>`` is a mapping or a list of mappings ``{profile, convert, languages,
-exclude_languages, language_prefixes}``.  Rules are tried in order — the citation key's rules first, then the file's
+exclude_languages, language_prefixes, input, preserve_hyphens}``. In the generic
+profile route, ``input: phonemic`` uses a nonblank authorial pronunciation field
+for display conversion, falling back to Form when blank; Original remains the
+source Form. The default input is ``form``. ``preserve_hyphens: true`` retains
+meaningful leading/trailing hyphens (default false). Source-specific legacy
+conversion routes keep their existing behavior. Rules are tried in order — the citation key's rules first, then the file's
 ``defaults`` — and the first whose language filter matches wins.  A rule naming a ``profile``
 converts unless it says ``convert: false``; ``convert: false`` alone disables conversion.  With no
 matching rule the row is not converted.
@@ -71,13 +77,13 @@ SECTIONS = {
         "legacy_ids", "append_order", "dedupe_by_entry_key", "key_dialect_prefix",
         "keyed_duplicates_allowed",
     },
-    "notes": {"audit_only"},
+    "notes": {"audit_only", "sanskrit_attestations"},
     "reference": {"editor", "ocr", "etymology_provenance"},
     # file-level only: how to regenerate the source CSV (argv lists run with the project python
     # from the repo root, in order); `make ingest SOURCE=<stem>` runs them.
     "importer": {"commands", "note"},
 }
-RULE_KEYS = {"profile", "convert", "languages", "exclude_languages", "language_prefixes"}
+RULE_KEYS = {"profile", "convert", "languages", "exclude_languages", "language_prefixes", "input", "preserve_hyphens"}
 
 
 class SourceMetaError(ValueError):
@@ -119,6 +125,10 @@ def _rules(value: Any, where: str) -> list[dict]:
         for key in ("languages", "exclude_languages", "language_prefixes"):
             if key in rule and not isinstance(rule[key], list):
                 raise SourceMetaError(f"{where}: {key} must be a list")
+        if rule.get("input", "form") not in {"form", "phonemic"}:
+            raise SourceMetaError(f"{where}: input must be form or phonemic")
+        if "preserve_hyphens" in rule and not isinstance(rule["preserve_hyphens"], bool):
+            raise SourceMetaError(f"{where}: preserve_hyphens must be a boolean")
         out.append(rule)
     return out
 
@@ -187,6 +197,7 @@ class SourceMeta:
     # ------------------------------------------------------------------ lookups
 
     @staticmethod
+    @lru_cache(maxsize=None)  # called per row; only ~200 distinct files
     def stem_for(file: str | os.PathLike[str]) -> str:
         """Stem used to find a file's defaults: ``20230621-shina`` or ``munda/source``."""
         path = Path(file)
@@ -217,6 +228,14 @@ class SourceMeta:
         self, citation_key: str, file: str | os.PathLike[str], language: str
     ) -> tuple[str | None, bool]:
         """(profile, convert) for one row: the citation key's rules, then the file's defaults."""
+        rule = self.transcription_rule(citation_key, file, language)
+        profile = rule.get("profile")
+        return profile, bool(rule.get("convert", profile is not None))
+
+    def transcription_rule(
+        self, citation_key: str, file: str | os.PathLike[str], language: str
+    ) -> dict:
+        """Return the same first matching rule used by transcription()."""
         rules = list(self.source(citation_key).get("transcription", []))
         rules += self.file_defaults(file).get("transcription", [])
         for rule in rules:
@@ -226,10 +245,8 @@ class SourceMeta:
                 continue
             if "language_prefixes" in rule and not language.startswith(tuple(rule["language_prefixes"])):
                 continue
-            profile = rule.get("profile")
-            convert = rule.get("convert", profile is not None)
-            return (profile if convert else profile), bool(convert)
-        return None, False
+            return rule
+        return {}
 
 
 @lru_cache(maxsize=1)

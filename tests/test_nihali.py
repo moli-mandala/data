@@ -9,7 +9,7 @@ RAW = FORMS / "raw_data"
 SNAPSHOT_SHA256 = "a2525d858969c84eb36c4f5a43857a893b89baa1e0bee16974bc4e8a9d46524d"
 FILES = {
     "Mundlay": ("20260817-mundlay-nihali.csv", 1707),
-    "Nagaraja": ("20260817-nagaraja-nihali-wiktionary.csv", 1761),
+    "Nagaraja": ("20260817-nagaraja-nihali-wiktionary.csv", 1783),
     "Bhattacharya": ("20260817-nihali-database-bhattacharya.csv", 407),
     "Konow": ("20260817-nihali-database-konow.csv", 190),
 }
@@ -35,7 +35,7 @@ def test_database_replaces_both_old_imports_and_adds_two_sources():
         assert len({row[10] for row in rows}) == len(rows)
         assert all("nihali-database2026[tab " in row[7] for row in rows)
         all_keys.extend(row[10] for row in rows)
-    assert len(all_keys) == 4065
+    assert len(all_keys) == 4087
     assert len(set(all_keys)) == len(all_keys)
 
 
@@ -57,7 +57,7 @@ def test_database_audit_is_complete_and_pinned():
         ("Roots", "excluded"): 1,
         ("Dravidian", "excluded"): 22,
     })
-    assert sum(int(row["Output_Count"] or 0) for row in audit) == 4065
+    assert sum(int(row["Output_Count"] or 0) for row in audit) == 4087
     assert Counter(row["Reason"] for row in audit if row["Status"] == "excluded") == Counter({
         "nonlexical_analysis_sidecar": 45,
         "analysis_sidecar_merged_by_source_id": 12,
@@ -98,3 +98,18 @@ def test_representative_records_and_editorial_decisions():
     audit = read_dicts(RAW / "20260817-nihali-database-audit.csv")
     private_audit = next(row for row in audit if "\uf0e2" in row["Parsed_Form"])
     assert "private_use_glyph_preserved" in private_audit["Reason"]
+
+
+def test_optional_length_is_two_forms_long_first():
+    rows = read_rows(FORMS / "20260817-nagaraja-nihali-wiktionary.csv")
+    assert not any("(ː)" in row[2] or "(ː)" in row[5] for row in rows)
+    shorts = [row for row in rows if row[10].endswith(":short")]
+    assert len(shorts) == 22
+    by_key = {row[10]: row for row in rows}
+    for short in shorts:
+        long = by_key[short[10].removesuffix(":short")]
+        assert short[11] == (long[11] or long[10])
+        assert "(optional vowel length)" in long[6] and short[6] == long[6]
+        assert short[1] == long[1] and short[3] == long[3] and short[9] == long[9]
+    cart = [row[2] for row in rows if row[6] == "Source form: ga(ː)ra (optional vowel length)"]
+    assert cart == ["gaːra", "gara"]

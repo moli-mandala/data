@@ -1,0 +1,100 @@
+{
+  "reviewed_source_pages": [
+    21,
+    38,
+    46,
+    47,
+    48,
+    49
+  ],
+  "same_cell_repetition": {
+    "decision": "One attestation per distinct NFC transcription within the same numbered prompt and site; retain all segment positions and similarity-group labels in audit.",
+    "examples": [
+      {
+        "item": 6,
+        "site": "PAR",
+        "form": "lũ",
+        "groups": [
+          "2",
+          "4",
+          "5"
+        ],
+        "visual_confirmation": "PDF21"
+      },
+      {
+        "item": 126,
+        "site": "GUT",
+        "form": "mɐs",
+        "groups": [
+          "2",
+          "3"
+        ],
+        "visual_confirmation": "PDF38"
+      },
+      {
+        "item": 126,
+        "site": "PAR",
+        "form": "mɐs",
+        "groups": [
+          "2",
+          "3"
+        ],
+        "visual_confirmation": "PDF38"
+      },
+      {
+        "item": 62,
+        "site": "PAR",
+        "form": "ʋolɐ",
+        "groups": [
+          "2",
+          "4"
+        ],
+        "visual_confirmation": "PDF29, p029-targets.png"
+      },
+      {
+        "item": 105,
+        "site": "PAR",
+        "form": "ʌbɐ",
+        "groups": [
+          "1",
+          "2"
+        ],
+        "visual_confirmation": "PDF35, p035-targets.png"
+      }
+    ],
+    "remaining_visual_checks": []
+  },
+  "multiple_distinct_responses": {
+    "decision": "Emit separate attested responses without variant/cognacy edges. Similarity codes do not establish a lexical relation.",
+    "paired_prompt_items": [
+      182,
+      183,
+      184,
+      185,
+      186,
+      187,
+      188,
+      189,
+      190,
+      191,
+      192,
+      193,
+      194,
+      195,
+      196,
+      197,
+      198,
+      199,
+      200,
+      201
+    ],
+    "paired_prompt_decision": "Preserve the complete printed prompt for every response, including single-response cells. Do not assign a response to imperative/past/present/negative solely by its sequence or similarity code.",
+    "uncertainty_type": "grammatical-scope",
+    "review_note": "Paired English prompts do not establish unambiguous response-to-slot mapping; full prompt retained."
+  },
+  "pronouns": {
+    "decision": "Prompt person/number/gender/inclusivity/register distinctions can be represented as tags. Keep source prompt in audit and do not deduplicate across prompt IDs.",
+    "review_status": "All items202–210 checked against PDF49–50; no-response markers retained in audit."
+  },
+  "lexical_relationship_edges": 0
+}

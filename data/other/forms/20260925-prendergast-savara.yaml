@@ -1,0 +1,20 @@
+file: 20260925-prendergast-savara.csv
+defaults:
+  transcription:
+    profile: prendergast-savara-1880
+    input: form
+  identity:
+    legacy_ids: stem
+    append_order: 108
+    dedupe_by_entry_key: true
+  forms:
+    split_alternates: false
+  importer:
+    commands:
+      - [data/other/forms/raw_data/prendergast_savara_1880/import_source.py, --install]
+    note: Complete Savara vocabulary on printed pp. 426–428, prepared 1880 and published 1881; 266 cells audited, 270 rows including four printed alternatives.
+sources:
+  prendergast1881savara:
+    reference:
+      editor: OpenAI Codex
+      ocr: false

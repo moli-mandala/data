@@ -113,9 +113,11 @@ def test_checkpoint_profile_has_complete_coverage():
     forms, _, _ = guard.build_checkpoint(guard.load_manual_cells())
     converted = [guard.convert(row[2], profile) for row in forms]
     assert len(converted) == 164
-    assert "bujːam" in converted
-    assert "poːḍoːm" in converted
-    assert "kiḍ#kiḍi" in converted
+    # The current display profile uses gemination/macrons; source notation stays
+    # unchanged in staged Form and compiled Original/Phonemic.
+    assert "bujjām" in converted
+    assert "pōḍōm" in converted
+    assert "kīḍ#kīḍī" in converted
     assert all("�" not in form for form in converted)
 
 

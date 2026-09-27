@@ -1,0 +1,21 @@
+file: 20260925-bailey-outer-siraji.csv
+defaults:
+  transcription:
+    profile: bailey-outer-siraji-1908
+  identity:
+    legacy_ids: stem
+    append_order: 59
+  importer:
+    commands:
+      - [data/other/forms/raw_data/bailey_outer_siraji_1908/import_source.py, --install]
+    note: 'Full Outer Siraji chapter pp. 37–43 plus four attributed introductory units p36; 367 source units, 364 accepted yielding 450 forms, three general pattern exclusions, zero holds. All 100 old keys retained; independent fresh20 audit 0 errors. Full-build/browser gates deferred.'
+sources:
+  bailey1908outersiraji:
+    identity:
+      dedupe_by_entry_key: true
+    forms:
+      split_alternates: false
+    reference:
+      editor: OpenAI Codex
+      ocr: false
+      etymology_provenance: none

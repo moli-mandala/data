@@ -21,6 +21,10 @@ Decision files keep the established shape::
                    "citation": "<evidence citation>", "evidence": "<prose>"}, …],
      "held": [...]}
 
+For a compound, replace ``parent`` with ``components: ["id1", "id2", ...]``.
+Their list order supplies the component positions. Historical decisions may also retain
+``parent`` equal to the first component and ``kind: "component"``.
+
 Usage::
 
     uv run python etymology_lab.py save PASS_DIR/decisions.json --pass alternant \\
@@ -42,6 +46,7 @@ import shutil
 import sys
 import tempfile
 from collections import defaultdict
+from collections import Counter
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
@@ -72,17 +77,68 @@ def read_rows(path: Path) -> tuple[list[str], list[dict[str, str]]]:
         return list(reader.fieldnames or []), list(reader)
 
 
+def decision_parents(item: dict) -> tuple[str, ...]:
+    """Resolve one analysis without silently dropping compound members."""
+    if "components" not in item:
+        return (item["parent"],)
+    parents = item["components"]
+    if not isinstance(parents, list) or len(parents) < 2 or any(
+        not isinstance(parent, str) or not parent.strip() or parent != parent.strip()
+        for parent in parents
+    ):
+        raise ValueError("components must be an ordered list of at least two node IDs")
+    if item.get("parent", parents[0]) != parents[0]:
+        raise ValueError("parent must equal the first component when both are supplied")
+    if item.get("kind", "component") != "component" or item.get("pos", "") != "":
+        raise ValueError("components define their own kind and ordered positions")
+    return tuple(parents)
+
+
 def rows_from_decisions(accepted: list[dict], note: str) -> list[dict[str, str]]:
     suffix = f" {note}" if note else ""
     return [
         dict(
-            Form_ID=item["record"]["ID"], Etymon_ID=item["parent"],
-            Kind=item.get("kind", "reflex"), Rank=str(item.get("rank", "1")),
+            Form_ID=item["record"]["ID"], Etymon_ID=parent,
+            Kind="component" if "components" in item else item.get("kind", "reflex"),
+            Rank=str(item.get("rank", "1")),
             Status="accepted", Source=item.get("citation", ""),
-            Notes=(item.get("evidence", "") + suffix).strip(), Pos=str(item.get("pos", "")),
+            Notes=(item.get("evidence", "") + suffix).strip(),
+            Pos=str(position) if "components" in item else str(item.get("pos", "")),
         )
         for item in accepted
+        for position, parent in enumerate(decision_parents(item), 1)
     ]
+
+
+def validate_ancestry(forms: list[dict], edges: list[dict], roots: set[str]) -> None:
+    """Check every accepted ancestor of this pass in the effective scratch graph."""
+    by_id = {row["ID"]: row for row in forms}
+    parents = defaultdict(set)
+    for edge in edges:
+        if edge["Rank"] == "1":
+            parents[edge["Child_ID"]].add(edge["Parent_ID"])
+    # Cycles are allowed (e.g. CDIAL cross-references compiled as mutual `derived` edges), but
+    # every target's ancestry must still reach a curated `entry` or a parentless linked node.
+    for root in roots:
+        seen, stack, anchored = set(), [root], False
+        while stack:
+            node = stack.pop()
+            if node in seen:
+                continue
+            seen.add(node)
+            if node not in by_id:
+                raise ValueError(f"ancestor {node} is absent from forms")
+            if by_id[node].get("Redirect"):
+                raise ValueError(f"ancestor {node} is a redirect")
+            if not parents[node]:
+                if by_id[node]["Status"] == "unlinked":
+                    raise ValueError(f"ancestor {node} is unlinked")
+                anchored = True
+            elif by_id[node]["Status"] == "entry":
+                anchored = True
+            stack.extend(parents[node])
+        if not anchored:
+            raise ValueError(f"ancestry of {root} is a cycle that reaches no etymon")
 
 
 def validate_against_graph(accepted: list[dict], rows: list[dict[str, str]]) -> dict:
@@ -90,16 +146,18 @@ def validate_against_graph(accepted: list[dict], rows: list[dict[str, str]]) -> 
     targets = {item["record"]["ID"] for item in accepted}
     if len(targets) != len(accepted):
         raise ValueError("a record is accepted twice in this pass")
-    existing = [r for r in overlay.read_assignments() if r["Form_ID"] in targets]
+    current = list(overlay.read_assignments())
+    existing = [r for r in current if r["Form_ID"] in targets]
     if existing:
         raise ValueError(
             f"{len(existing)} target(s) already have overlay rows; reconcile explicitly "
             f"(e.g. {existing[0]['Form_ID']} in {existing[0].path})"
         )
-    needed = targets | {item["parent"] for item in accepted}
+    needed = targets | {parent for item in accepted for parent in decision_parents(item)}
     forms, selected = [], {}
     for row in csv.DictReader(FORMS.open(encoding="utf-8", newline="")):
-        forms.append({"ID": row["ID"], "Status": row["Status"]})
+        forms.append({"ID": row["ID"], "Status": row["Status"],
+                      "Redirect": row.get("Redirect", "")})
         if row["ID"] in needed:
             selected[row["ID"]] = row
     missing = needed - set(selected)
@@ -112,12 +170,13 @@ def validate_against_graph(accepted: list[dict], rows: list[dict[str, str]]) -> 
         drift = [k for k in RECORD_FIELDS if k in item["record"] and record[k] != item["record"][k]]
         if drift:
             raise ValueError(f"{record['ID']} changed since the decision was made: {drift}")
-        parent = selected[item["parent"]]
-        if parent["Redirect"]:
-            raise ValueError(f"parent {parent['ID']} is a redirect")
-        if parent["Status"] == "unlinked":
-            raise ValueError(f"parent {parent['ID']} is an unlinked node")
-    validate_assignments(forms, rows)
+        for parent_id in decision_parents(item):
+            parent = selected[parent_id]
+            if parent["Redirect"]:
+                raise ValueError(f"parent {parent['ID']} is a redirect")
+    # The compiled status can lag a previously saved source sidecar. Validate the
+    # complete accepted overlay, including this pass, before applying it in scratch.
+    validate_assignments(forms, current + rows)
     registered = {
         r["Form_ID"] for r in csv.DictReader(REGISTRY.open(encoding="utf-8", newline=""))
         if r["Form_ID"] in targets and r["Status"] == "active"
@@ -128,12 +187,14 @@ def validate_against_graph(accepted: list[dict], rows: list[dict[str, str]]) -> 
     with tempfile.TemporaryDirectory(prefix="etymology-lab-") as scratch:
         graph = Path(scratch) / "edges.csv"
         shutil.copyfile(EDGES, graph)
+        apply_assignments(graph, forms, current)
+        _, original = read_rows(graph)
         first = apply_assignments(graph, forms, rows)
         second = apply_assignments(graph, forms, rows)
         if second != 0:
             raise ValueError("pass is not idempotent against the compiled graph")
-        _, original = read_rows(EDGES)
         _, result = read_rows(graph)
+        validate_ancestry(forms, result, targets)
         if [e for e in original if e["Child_ID"] in targets and e["Rank"] == "1"]:
             raise ValueError("a target already has a rank-1 edge in the compiled graph")
         untouched = lambda edges: [e for e in edges if e["Child_ID"] not in targets]  # noqa: E731
@@ -164,9 +225,11 @@ def write_language_manifests(
         number = max(numbers, default=0) + 1
         grouped: dict[tuple, list[dict]] = defaultdict(list)
         for item in items:
-            grouped[(item["parent"], item.get("citation", ""), item.get("evidence", ""), item.get("kind", "reflex"))].append(item)
+            kind = "component" if "components" in item else item.get("kind", "reflex")
+            grouped[(decision_parents(item), item.get("citation", ""), item.get("evidence", ""), kind)].append(item)
         proposals = []
-        for index, ((parent, citation, evidence, kind), members) in enumerate(grouped.items(), 1):
+        for index, ((parents, citation, evidence, kind), members) in enumerate(grouped.items(), 1):
+            parent = parents[0]
             ids = {m["record"]["ID"] for m in members}
             proposals.append(dict(
                 number=index, status="saved", parentId=parent, parentForm=selected[parent]["Form"],
@@ -174,6 +237,9 @@ def write_language_manifests(
                 records=[m["record"] for m in members],
                 assignments=[r for r in rows if r["Form_ID"] in ids],
             ))
+            if kind == "component":
+                proposals[-1].update(componentIds=list(parents),
+                                     componentForms=[selected[p]["Form"] for p in parents])
         path = dest / f"batch-{number:03d}.json"
         if path.exists():
             raise FileExistsError(path)
@@ -232,6 +298,51 @@ def save(decisions: Path, *, pass_name: str, note: str, authorization: str, dry_
     return report
 
 
+def retract(ledger: Path, *, form_ids: list[str], reason: str,
+            authorization: str, output: Path, dry_run: bool = False) -> dict:
+    """Withdraw complete analyses only when current rows exactly match a save ledger.
+
+    Keep the original ledger/manifests as history; the separate retraction ledger
+    records the removed rows and the correction, without changing compiled inputs.
+    """
+    if output.exists():
+        raise FileExistsError(output)
+    targets = set(form_ids)
+    if not targets or not reason.strip():
+        raise ValueError("retraction requires target IDs and a reason")
+    expected = [r for r in json.loads(ledger.read_text()) if r["Form_ID"] in targets]
+    if {r["Form_ID"] for r in expected} != targets:
+        raise ValueError("every target must occur in the original save ledger")
+    watched = [REGISTRY, FORMS, EDGES, *overlay.assignment_files()]
+    before = {str(p.relative_to(ROOT)): sha256(p) for p in watched}
+    current = overlay.read_assignments()
+    actual = [r for r in current if r["Form_ID"] in targets]
+    signature = lambda rows: Counter(tuple(r.get(k, "") for k in overlay.FIELDS) for r in rows)
+    if signature(actual) != signature(expected):
+        raise ValueError("current target rows differ from the save ledger; reconcile explicitly")
+    retained = [r for r in current if r["Form_ID"] not in targets]
+    if {str(p.relative_to(ROOT)): sha256(p) for p in watched} != before:
+        raise RuntimeError("inputs changed during retraction validation")
+    report = dict(originalLedger=str(ledger.resolve()), formIds=sorted(targets),
+                  removedAssignments=expected, reason=reason, authorization=authorization,
+                  hashesBefore=before, dryRun=dry_run)
+    if not dry_run:
+        overlay.write_assignments(retained)
+        result = overlay.read_assignments()
+        if signature(result) != signature(retained):
+            raise RuntimeError("retraction did not preserve the unrelated rows")
+        after = {str(p.relative_to(ROOT)): sha256(p)
+                 for p in [REGISTRY, FORMS, EDGES, *overlay.assignment_files()]}
+        if any(after[str(p.relative_to(ROOT))] != before[str(p.relative_to(ROOT))]
+               for p in (REGISTRY, FORMS, EDGES)):
+            raise RuntimeError("a compiled input changed during retraction")
+        report.update(hashesAfter=after, retractedAt=_dt.datetime.now(_dt.timezone.utc).isoformat())
+        output.write_text(json.dumps(report, ensure_ascii=False, indent=1) + "\n")
+    print(json.dumps({k: v for k, v in report.items() if k not in ("hashesBefore", "hashesAfter")},
+                     ensure_ascii=False, indent=2))
+    return report
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = parser.add_subparsers(dest="command", required=True)
@@ -241,7 +352,18 @@ def main(argv: list[str] | None = None) -> int:
     s.add_argument("--note", default="", help="appended to every row's Notes (e.g. review date)")
     s.add_argument("--authorization", default="", help="recorded in the language batch manifests")
     s.add_argument("--dry-run", action="store_true", help="validate only; write nothing")
+    r = sub.add_parser("retract", help="withdraw exact saved rows, retaining an audit ledger")
+    r.add_argument("ledger", type=Path)
+    r.add_argument("--form-id", dest="form_ids", action="append", required=True)
+    r.add_argument("--reason", required=True)
+    r.add_argument("--authorization", required=True)
+    r.add_argument("--output", type=Path, required=True)
+    r.add_argument("--dry-run", action="store_true")
     args = parser.parse_args(argv)
+    if args.command == "retract":
+        retract(args.ledger, form_ids=args.form_ids, reason=args.reason,
+                authorization=args.authorization, output=args.output, dry_run=args.dry_run)
+        return 0
     save(args.decisions, pass_name=args.pass_name, note=args.note,
          authorization=args.authorization, dry_run=args.dry_run)
     return 0

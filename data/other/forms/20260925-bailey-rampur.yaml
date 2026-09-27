@@ -1,0 +1,21 @@
+file: 20260925-bailey-rampur.csv
+defaults:
+  transcription:
+    profile: bailey-rampur-1920
+  identity:
+    legacy_ids: stem
+    append_order: 73
+  importer:
+    commands:
+      - [data/other/forms/raw_data/bailey_rampur_1920/import_source.py, --install]
+    note: Full245-cell Rampur glossary pp144–147;242accepted→288rows,2crossrefs,1specific unresolved body-vowel stack. Breves, underdots and underlined digraphs preserved literally; Baghi controls excluded.
+sources:
+  bailey1920rampur:
+    identity:
+      dedupe_by_entry_key: true
+    forms:
+      split_alternates: false
+    reference:
+      editor: OpenAI Codex
+      ocr: true
+      etymology_provenance: none

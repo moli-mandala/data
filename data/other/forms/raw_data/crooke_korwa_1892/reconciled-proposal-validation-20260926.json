@@ -1,0 +1,79 @@
+{
+  "status": "reconciled_proposal_not_installed",
+  "date": "2026-09-26",
+  "source_units": 123,
+  "forms": 123,
+  "legacy_keys_preserved_in_order": 93,
+  "recovered_former_holds": 30,
+  "literal_corrections_from_historical_inventory": 13,
+  "comparison_annotations_reviewed": 41,
+  "source_glyph_uncertainties": 1,
+  "independent_corrections": [
+    {
+      "entry_key": "crooke1892korwa:mirzapur:p125:item15",
+      "printed_page": 125,
+      "item": 15,
+      "reviewed_form": "letî",
+      "reviewed_gloss": "boiled rice",
+      "literal_result": "correction_required",
+      "gloss_result": "pass",
+      "whole_response_scope_result": "pass",
+      "source_image": "printed-p125.png",
+      "source_image_sha256": "7a8648789239bbb5f0130e0418d1d6a464d01c364864046a2778b8cbdaad7470",
+      "after": "leṭî",
+      "finding": "Clear compact underdot directly beneath italic t. Root literal reading omitted this source mark.",
+      "crop_locator": [
+        480,
+        1305,
+        605,
+        1373
+      ]
+    },
+    {
+      "entry_key": "crooke1892korwa:mirzapur:p128:item01",
+      "printed_page": 128,
+      "item": 1,
+      "reviewed_form": "jhâtkaritu",
+      "reviewed_gloss": "morning",
+      "literal_result": "correction_required",
+      "gloss_result": "pass",
+      "whole_response_scope_result": "pass",
+      "source_image": "printed-p128.png",
+      "source_image_sha256": "5f0422ca4695c27a55de33f4654e93efa1d8324c15901e062ff5df91c452a29a",
+      "after": "jhâtkarîti",
+      "finding": "The i after r has a clear circumflex; the final vowel is a dotted i, not u. Both distinctions are visible on the original.",
+      "crop_locator": [
+        558,
+        181,
+        745,
+        232
+      ]
+    }
+  ],
+  "resolved_uncertainty": "crooke1892korwa:mirzapur:p127:item02",
+  "remaining_uncertainty": "crooke1892korwa:mirzapur:p126:item17",
+  "focused_tests": {
+    "command": ".venv/bin/python -m pytest -q tests/test_crooke_korwa_full_recovery.py",
+    "result": "3 passed",
+    "scope": "whole-response recovery, legacy key order, actual scoped make_cldf parser, all-form profile coverage and shared profile policy, comparison annotations, corrected glyphs and uncertainty"
+  },
+  "pending": [
+    "Fresh final raw-to-output audit",
+    "Guarded canonical installation and canonical focused checks"
+  ],
+  "deferred": [
+    "Full data build and suite",
+    "Compiled identity/graph/reference verification",
+    "Browser database and app QA"
+  ],
+  "hashes": {
+    "prepare_full_source.py": "7d5e8e369e68450550c439b124534d062ecc725628a165e2a884e322a2612e40",
+    "full-proposed.csv": "a0ec984e2ffd3998e490e338024cab2ac67a6efc238b2247828bcee35164c0e9",
+    "full-proposed-audit.jsonl": "7402a5cd04cec0f2c98f0d07aec0feeffb5d4fff1986ceb9c0967e62419d68e9",
+    "full-proposed-profile.txt": "75060389d6a97b6ef11e14fc20ddc0a8b19356c135223ac48eaeced9afcc20ec",
+    "full-proposed-source.yaml": "a27b28b8bd0852242122225a43815f339cdcc2b2b3aed75882220ac8f0ab4feb",
+    "full-proposed-source.bib": "c6622fe920d63cf1de9375ffc4cb38296108c83f8706305861c84228d7af0998",
+    "independent-full-literal-comparison-review-20260926.json": "fc2a7466e25219b1470a95eb3193db9a761a982c7312c8c800fe440bfe6abea4"
+  },
+  "durable_identities_sha256": "5ec2588f97a569cc7a1de68f59474c03612fa7a4266582be61d70dca29efcfc9"
+}

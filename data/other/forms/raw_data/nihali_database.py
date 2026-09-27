@@ -131,6 +131,16 @@ def split_variants(value: str) -> list[tuple[str, str]]:
     return result
 
 
+OPTIONAL_LENGTH = "(ː)"
+
+
+def expand_optional_length(form: str) -> list[str]:
+    """``ga(ː)ra`` -> ``gaːra`` and ``gara``: the long reading first, as CDIAL stores ``ā̆``."""
+    if OPTIONAL_LENGTH not in form:
+        return [form]
+    return [form.replace(OPTIONAL_LENGTH, "ː"), form.replace(OPTIONAL_LENGTH, "")]
+
+
 def active_rows(sheet) -> list[tuple[int, tuple[object, ...]]]:
     rows = []
     for row_number, row in enumerate(sheet.iter_rows(min_row=2, values_only=True), 2):
@@ -435,17 +445,25 @@ def main() -> None:
                     if not main_key:
                         main_key = key
                     variant_notes = dedupe_parts(notes, f"Source transcription annotation: {annotation}" if annotation else "")
-                    output_writers[tab].writerow(
-                        [
-                            "Ni", param, variant_form, gloss, "", variant_form, variant_notes,
-                            reference, "", etymology, key, main_key if variant > 1 else "", "", "", tags,
-                        ]
-                    )
-                    output_keys.append(key)
+                    readings = expand_optional_length(variant_form)
+                    if len(readings) > 1:
+                        variant_notes = dedupe_parts(
+                            variant_notes, f"Source form: {variant_form} (optional vowel length)"
+                        )
+                    for reading_index, reading in enumerate(readings):
+                        reading_key = key if reading_index == 0 else f"{key}:short"
+                        variant_of = main_key if variant > 1 or reading_index > 0 else ""
+                        output_writers[tab].writerow(
+                            [
+                                "Ni", param, reading, gloss, "", reading, variant_notes,
+                                reference, "", etymology, reading_key, variant_of, "", "", tags,
+                            ]
+                        )
+                        output_keys.append(reading_key)
+                        counts[f"{tab}:installed"] += 1
                     if matched:
                         legacy_keys.append(matched[0])
                         legacy_scores.append(f"{matched[1]:.4f}")
-                    counts[f"{tab}:installed"] += 1
                 audit.writerow(
                     {
                         "Status": "ingested", "Reason": (

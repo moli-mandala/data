@@ -49,8 +49,8 @@ def test_kannauji_ipa_profile():
     profile = Tokenizer("conversion/kannauji.txt")
     cases = {
         "d̪ʌɾʋʌdʒʌ": "darvaja",
-        "tʃhoʈobɦʌija": "choṭobʰaiya",
-        "d̪ɦʊã": "dʰuã",
+        "tʃhoʈobɦʌija": "choṭobʰaīyā",
+        "d̪ɦʊã": "dʰuā̃",
         "mʊh̰": "muh̰",
     }
     for source, expected in cases.items():

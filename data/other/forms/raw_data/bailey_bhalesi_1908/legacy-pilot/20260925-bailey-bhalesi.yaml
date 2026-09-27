@@ -1,0 +1,21 @@
+file: 20260925-bailey-bhalesi.csv
+defaults:
+  transcription:
+    profile: bailey-bhalesi-1908
+  identity:
+    legacy_ids: stem
+    append_order: 81
+  importer:
+    commands:
+      - [data/other/forms/raw_data/bailey_bhalesi_1908/import_source.py, --install]
+    note: All 34 Bailey 1908 Bhalesi printed pp. 73–74 comparison-list lines are audited; 16 typography holds, one complex-stem hold, one incomplete-suffix hold, and one same-print Zoller/LSI exclusion are documented.
+sources:
+  bailey1908bhalesi:
+    identity:
+      dedupe_by_entry_key: true
+    forms:
+      split_alternates: false
+    reference:
+      editor: OpenAI Codex
+      ocr: false
+      etymology_provenance: none

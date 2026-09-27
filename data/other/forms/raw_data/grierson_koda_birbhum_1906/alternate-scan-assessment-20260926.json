@@ -1,0 +1,21 @@
+{
+  "purpose": "Clarify stacked literal diacritics in Dhangar standard table before installation",
+  "reader_url": "https://dsal.uchicago.edu/books/lsi/lsi.php?pages=701&volume=4",
+  "page_url": "https://dsal.uchicago.edu/books/lsi/images/lsi-v4-260.jpg",
+  "local_page": "tmp/koda-birbhum-review/dsal-260.jpg",
+  "printed_page": 241,
+  "scan_page": 260,
+  "dimensions": [
+    1000,
+    1400
+  ],
+  "bytes": 152854,
+  "sha256": "e263d781badb87d08daa5227588e4414aca1048d4450969e390132fc90831d72",
+  "comparison": "Same printed table as DjVu260; JPEG has smoother glyph edges but essentially same low pixel dimensions. Does not resolve all stacked vowel marks. No resolution improvement claim.",
+  "findings": [
+    "Numeral1 has3printed alternatives; parenthetical one only applies to final alternative.",
+    "Several vowel letters carry stacked marks rather than simple macrons; initial plain-macron first readings must not be installed without literal recheck.",
+    "Numeral2 second alternative has no printed internal hyphen; initial bār-eā candidate segmentation requires correction."
+  ],
+  "next_action": "Read volume transcription notation and use source-literal stacked Unicode marks; second-reading inventory must explicitly supersede every provisional candidate. Only one150KiB source page acquired."
+}

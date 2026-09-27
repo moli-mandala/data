@@ -1,0 +1,54 @@
+{
+  "status": "complete_source_stage",
+  "source_pages": [
+    46,
+    50
+  ],
+  "scan_pages": [
+    270,
+    274
+  ],
+  "units": 214,
+  "forms": 249,
+  "strata": {
+    "grammar": 92,
+    "glossary": 100,
+    "specimens": 22
+  },
+  "ingested_units": 212,
+  "exclusions": {
+    "unexpanded_paradigm_reference": 1,
+    "explicit_Urdu_comparison": 1
+  },
+  "holds": 0,
+  "typed_uncertainties": [
+    {
+      "key": "bailey1908rambani:p48:left:item:26",
+      "reading": "löhā",
+      "issue": "two separated short marks above o; damaged macron possible; literal ö retained with explicit note",
+      "independent_edge_review": "root agrees literal uncertainty"
+    }
+  ],
+  "self_review": "Entire five-page chapter visually reread at 400–500 dpi with bounded high-resolution crops; all explicit grammatical forms, 100 glossary cells and 22 translated specimens covered. Source context and stem/suffix boundaries checked.",
+  "legacy_keys": 62,
+  "focused_tests": "7 passed; canonical regeneration,62legacykeys, source/language registry, profile policy,249 literal tokenizations and scoped parser",
+  "hashes": {
+    "chapter-transcription-work.tsv": "0c5fa74107f94209e321a120480c9b646ad1b116c7d2ee38874f94da773b3891",
+    "full-staged.csv": "46dda75c22591a12c7a0ed4f311e2382b322ab71e836d9a31804ba048bd625d3",
+    "full-staged-audit.jsonl": "9be7d32c579ef4b793daa557c2c16050c1652e3ab7f9820bba831f9f2fd67aa2",
+    "literal-profile-staged.txt": "ab4031bca94cb5bb44101fef03fb5f3cefa5b7fc3e9a40032a06e9a25892d2cd",
+    "audit.jsonl": "9be7d32c579ef4b793daa557c2c16050c1652e3ab7f9820bba831f9f2fd67aa2"
+  },
+  "deferred": [
+    "Full database/CLDF build",
+    "Compiled graph and reference integrity checks",
+    "Full suite",
+    "Browser QA"
+  ],
+  "independent_audit": {
+    "pass1": "1 transcription error in20; remediated with chapter-wide b/h check and explicit feminine tag completion",
+    "pass2": "20/20 zero errors; independent seed20260926107 excludes previous20"
+  },
+  "canonical_sha256": "46dda75c22591a12c7a0ed4f311e2382b322ab71e836d9a31804ba048bd625d3",
+  "source_local_graph_check": "All249 source keys unique,62existingkeys preserved; canonical language ram registered; allsourcecitations resolve localregistry; no inferred etymological/variant edge columns introduced."
+}

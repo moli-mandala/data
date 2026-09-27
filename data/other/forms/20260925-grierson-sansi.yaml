@@ -1,0 +1,12 @@
+file: 20260925-grierson-sansi.csv
+defaults:
+  transcription:
+    profile: grierson-sansi-1922
+    preserve_hyphens: true
+  identity:
+    legacy_ids: stem
+    append_order: 46
+  importer:
+    commands:
+      - [data/other/forms/raw_data/grierson_sansi_1922/import_source.py, --install]
+    note: Complete Sansi chapter lexical/grammatical prose49–53/60–63, ordinary specimens54–57, argot specimens64–70, all241 prompts in both ordinary and argot columns178–210. 2562 source units yield1943 forms;32 foreign comparisons,80 Kheri Hindostani tokens and26 bound endings remain audit-only,2 pronunciation units attach to target forms,533 exact specimen repetitions retain all locators. Full build/database/browser gates explicitly deferred by user.

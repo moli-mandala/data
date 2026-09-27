@@ -1,0 +1,22 @@
+file: 20260925-kumari-gaddi.csv
+defaults:
+  transcription:
+    profile: kumari-gaddi-ipa
+    preserve_hyphens: true
+  identity:
+    legacy_ids: stem
+    append_order: 39
+  importer:
+    commands:
+      - [data/other/forms/raw_data/gaddi_grammar_2026/import_source.py, --install]
+    note: Selectable Tables B.1 and C.1–C.4; preserve printed source anomalies, repair only verified PDF positioning artifacts. The source IPA drives house conversion. Appendix III collector is Kumari Mamta.
+sources:
+  kumari2026gaddi:
+    identity:
+      dedupe_by_entry_key: true
+    forms:
+      split_alternates: false
+    reference:
+      editor: OpenAI Codex
+      ocr: false
+      etymology_provenance: none

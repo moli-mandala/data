@@ -1,0 +1,17 @@
+file: 20260925-vijayan-eravallan-numerals.csv
+defaults:
+  transcription:
+    profile: vijayan-eravallan-2018
+    preserve_hyphens: true
+  identity:
+    legacy_ids: stem
+    append_order: 95
+  importer:
+    commands:
+      - [data/other/forms/raw_data/vijayan_eravallan_2018/import_source.py, --install]
+    note: Vijayan's 2018 Eravallan table selected from immutable CC-BY Chan archive; Gnanasundaram 2014 table audited as excluded comparator.
+sources:
+  vijayan2018eravallan:
+    reference:
+      editor: OpenAI Codex
+      ocr: false

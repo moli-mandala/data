@@ -1,0 +1,19 @@
+file: 20260925-cust-norton-korku.csv
+defaults:
+  transcription:
+    profile: cust-norton-korku-1884
+    input: form
+  identity:
+    legacy_ids: stem
+    append_order: 92
+    dedupe_by_entry_key: true
+  forms:
+    split_alternates: false
+  importer:
+    commands:
+      - [data/other/forms/raw_data/norton_korku_1884/install_expression_recovery.py, --install]
+    note: Complete477forward cells,427reverse heads,12numerals,42introduction/grammar units including all14whole expressions and3control/metalinguistic units; exact duplicate citations reused, literal source variants preserved, uncertain interpretations audited.
+sources:
+  cust1884korku:
+    forms:
+      split_alternates: false

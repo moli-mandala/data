@@ -1,0 +1,49 @@
+{
+  "status": "full_specimen_first_reading_staged_not_accepted",
+  "printed_scope": [
+    128,
+    134
+  ],
+  "specimens": [
+    {
+      "file": "specimen1-first-reading.jsonl",
+      "units": 117,
+      "printed_page": 130,
+      "site": "Ranchi",
+      "sha256": "6afc2a63663c856843c1c1e0557d68e734c7e46899d9b9332a9db5cde92a4e33",
+      "accepted": 0
+    },
+    {
+      "file": "specimen2-first-reading.jsonl",
+      "units": 102,
+      "printed_page": 131,
+      "site": "Jashpur",
+      "sha256": "54c170deae56b5f52428f110e7fe3bb04ece6b50800d7b4d430b75355978ac5c",
+      "accepted": 0
+    },
+    {
+      "file": "specimen3-first-reading.jsonl",
+      "units": 109,
+      "printed_page": 133,
+      "site": "Sarangarh",
+      "sha256": "bc0a2db7f47dd4157e817eae2b621a629daa7b5a9b925171bbc1531dc42d4d93",
+      "accepted": 0
+    }
+  ],
+  "translation_review": {
+    "132": "Read entire free-translation continuation and botanical footnote; footnote added to linked p131 machkam units. No inferred word pairs from free translation.",
+    "134": "Read full free translation of Sarangarh story; contextual check only, not new word alignments."
+  },
+  "pending": [
+    "Full second visual reading of all forms, diacritics and alignments",
+    "Prose pp128–129 recovery and typed comparator/morphology decisions",
+    "Canonical import and source metadata/profile/dialect/graph checks",
+    "Fresh independent source sample and focused tests"
+  ],
+  "explicitly_deferred_by_user": [
+    "Database/full CLDF build",
+    "Compiled graph and browser refresh QA"
+  ],
+  "prose_recovery": "24 prose units reassessed in prose-recovery-review.jsonl; 3 controls distinguished; lexical phrases eligible pending literal verification. apan is/his source discrepancy recorded.",
+  "second_reading_progress": "All328 aligned units across three specimens second-viewed; source-specific corrections and exact unresolved readings recorded in three review reports. Final acceptance pending."
+}

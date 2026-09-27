@@ -1,8 +1,21 @@
 # moli-mandala/data
 
+The CUJ Asur dictionary draft adds **2,106 Asuri source rows**, including native
+spelling, 185 explicit variant links and one two-component compound. See the
+[source package](data/other/forms/raw_data/cuj_asur_2020/README.md) for extraction,
+transcription, exclusions and audit evidence. Source-local checks pass; full
+compiled integration and browser QA are still pending.
+
+
 ![Status](https://github.com/moli-mandala/data/actions/workflows/python-app.yml/badge.svg)
 
 This is a CLDF database for the Jambu application, containing historical linguistic data for many languages of South Asia. It also contains the underlying raw data and scripts used to produce/update the CLDF database.
+
+Peterson et al. (2024), Appendix 1, adds 246 Odisha Turi forms to the source
+inputs, extending a language with only 23 rows in the pre-ingest compiled data.
+The [source package](data/other/forms/raw_data/peterson_turi_2024/README.md)
+records the pinned publisher edition, 275-record audit, transcription decisions,
+12 passing focused tests, and outstanding full-build/browser gates.
 
 Zoller (2023), *Linguistic data I–III* (pp. 519–1035), contributes 17,754 resolved
 attestations in 328 languages after separating its West Pahari varieties. The importer decodes the PDF's TeX phonetic fonts,
@@ -34,6 +47,9 @@ columns `Form_ID, Position, Kind, Format, Content, Source`. `Position` orders bl
 `Kind` is a semantic label such as `etymology`, `comparison`, or `usage`; `Format` is `text`,
 `markdown`, or trusted `html`; and `Source` uses the same CLDF citation syntax as forms. The web
 database materializes legacy `Etymology` values into this shape when no explicit blocks exist.
+Raw sidecars in `data/other/entry_texts/` may additionally use `Entry_Key` with a blank
+`Form_ID`. The build resolves that key against emitted forms before producing the standard
+six-column sidecar; missing, ambiguous, or conflicting targets fail rather than losing prose.
 
 Source-attributed comparisons between dictionary articles live in the optional
 `cldf/comparisons.csv` sidecar. Its columns are `ID, Entry_ID, Compared_Entry_ID, Relation,
@@ -153,6 +169,28 @@ and a change audit in `tmp/nuristani-cdial-grouping/`. This is a graph migration
 or automatic merger of independent source records.
 
 Finally, some sources have unusual orthographies that we need to convert to the Sāmapriya-n system. The profiles used by the `segments` library to do so are stored as `conversions/*.txt`; these give substitution rules for orthographic normalisation.
+
+**House transcription policy (2026-09-19).** Every profile writes the house transcription
+that `conversion/cdial.txt` produces for Turner, and `profile_policy.py` enforces it
+(`uv run python profile_policy.py check`, also run by `tests/test_sound_profiles.py`;
+`fix` rewrites the profiles and adds a `Vː`/`Cː` rule for every length bigram that occurs in the
+sources routed through a profile). Vowels follow Turner's phonemic system: the house pairs are
+a/ā, i/ī, u/ū, so a source's IPA `ʌ` (and, in Indo-Aryan and Dravidian survey IPA, `ə`) is `a`,
+`ɪ` is `i`, `ʊ` is `u`, and the vowel the source writes as long — plain `a`/`i`/`u` in the
+SIL-style transcriptions that reserve `ʌ`/`ɪ`/`ʊ` for the short series, `aː`/`ɑ` elsewhere — is
+`ā`/`ī`/`ū`. Which convention each source follows is a per-profile decision recorded in
+`profile_policy.py` (`LONG_A`, `LONG_I`, `LONG_U`, `SCHWA`), derived from every source's
+vowel inventory and reviewed by hand; `ə` stays `ə` where Turner writes it (Dardic, Nuristani,
+Kashmiri, Burushaski, Romani) and where it is a phoneme (Tibeto-Burman, Munda, Kusunda, Nihali,
+scholarly Dravidian). `e ɛ o ɔ æ ɨ` keep their quality (no more `ɛ`→`e`, `ɔ`→`o`); a long
+consonant is doubled. Consonants use the Indological letters (`tʃ dʒ ʃ ʒ ʂ ʈ ɖ ɳ ɽ ɭ ɲ ŋ` →
+`c j ś ź ṣ ṭ ḍ ṇ ṛ ḷ ñ ŋ`, `ʱ`/`Ch` → `Cʰ`, IPA `j` → `y` where the source writes the affricate
+as `dʒ`, `w`/`ʋ` → `v`, `ṃ` → `ṁ`, `ṅ` → `ŋ`); the Marathi sources that contrast dental c/j with
+palatal č/ǰ (SDML, Ghatage) write the dental pair as the house `ʦ`/`ʣ`. Symbols with no house
+counterpart (`ɐ ɑ ɤ ɯ ø ʔ ʕ`, breathy `̤`, half-length `ˑ`, tone and stress marks) stay as the
+profile author chose; DEDR's `è`, Emeneau's Toda `ü` and the Chhattisgarhi/Magahi `ɔ`/`æ`
+(= Hindi au/ai) are explicit exemptions. `Original`/`Phonemic` always keep the source's own
+spelling, and form IDs are fingerprinted on `Original`, so a profile change never re-mints an ID.
 
 #### DEDR
 
@@ -468,14 +506,16 @@ with the Old Punjabi OCR pipeline are in
 
 `data/other/forms/raw_data/nihali_database.py` installs the reviewed spreadsheet *The Nihali
 database* as the canonical Nihali import. The snapshot is pinned by Drive modification time and
-SHA-256, and contributes 4,065 form variants from 3,976 lexical records: Mundlay (1,707 variants),
-Nagaraja (1,761), Bhattacharya (407), and Konow (190). The Contact, Roots, and Dravidian tabs are
+SHA-256, and contributes 4,087 form variants from 3,976 lexical records: Mundlay (1,707 variants),
+Nagaraja (1,783), Bhattacharya (407), and Konow (190). Nagaraja's optional vowel length (`ga(ː)ra`)
+is installed as two forms, the long reading first and the short one as its `:short` variant, as
+CDIAL's `ā̆` is. The Contact, Roots, and Dravidian tabs are
 analysis sidecars rather than independent attestations; all 59 excluded rows remain in the audit,
 and twelve Dravidian analyses are merged into their matching Nagaraja records.
 
-The browser database exposes 4,063 Nihali rows: its standard exact-attestation compactor merges
+The browser database exposes 4,085 Nihali rows: its standard exact-attestation compactor merges
 the two duplicate Nagaraja spellings `gegeliya` and `gengeliya` from source IDs 615 and 621 while
-retaining both source locators and durable aliases. The CLDF and ingestion audit retain all 4,065
+retaining both source locators and durable aliases. The CLDF and ingestion audit retain all 4,087
 source variants.
 
 The replacement preserves 3,104 prior immutable keys after exact or conservative reconciliation.
@@ -483,7 +523,9 @@ The older Mundlay OCR and Wiktionary snapshot audits remain for provenance, but
 `raw_data/nihali.py` is a superseded reconstruction tool and no longer writes canonical outputs by
 default. Source and editor etymologies remain labeled; only unambiguous printed CDIAL/DEDR IDs are
 turned into borrowing hypotheses. A private-use glyph in one Nagaraja form is preserved and marked
-uncertain rather than silently guessed. The canonical audit and key map are
+uncertain rather than silently guessed. Mundlay, Nagaraja and Bhattacharya share the `nihali`
+sound profile; Konow follows the Linguistic Survey's romanisation (`ch` = c, `chh` = cʰ) and has
+its own `nihali-konow` profile. The canonical audit and key map are
 `data/other/forms/raw_data/20260817-nihali-database-audit.csv` and
 `data/other/forms/raw_data/20260817-nihali-database-key-map.csv`.
 
@@ -1333,10 +1375,11 @@ and supply explicit conversion profiles and complete references. Frozen manual
 ledgers and all exclusions are preserved. Ho item 93 is corrected to *tail*;
 Bhumij source qualifiers and Udala's uncertain language label remain explicit.
 
-All 5,809 records survive source-only compilation and graph checks, with 46
-source-defined variant edges. The full shared CLDF build and full test suite
-remain deferred under the workspace resource policy; the app database has not
-been refreshed. See the [integration review](source_checklists/20260914-manual-surveys-review.md).
+Read-only verification on 21 September confirms all 5,809 records in the existing
+shared CLDF, with stable keys/IDs and 46 correct source-defined variant edges.
+Current source profiles reproduce every compiled display form; source transcription,
+locators and dialect tags survive unchanged. No database was rebuilt. Full-build,
+repository-wide suite and global retrospective audit gates remain unclaimed. See the [integration review](source_checklists/20260914-manual-surveys-review.md).
 
 ## Sheth's Prakrit–Hindi dictionary (14 September 2026)
 
@@ -1424,3 +1467,44 @@ verbal lemma left blank. Two 50-row manual audits of the blanks drove these rule
 31 applicable in the sample for the headword rule). CDIAL blank glosses fell from 15,353 to
 about 4,000, of which 3,600 are OIA head-paragraph variants and `see X` heads left blank on
 purpose.
+
+### Bhattacharya 1957 Ollari vocabulary
+
+`data/other/forms/20260921-bhattacharya-ollari.csv` contains 880 rows from all
+657 physical vocabulary entries on printed pp. 48–77 of *Ollari: A Dravidian
+Speech*. The accompanying YAML routes the source transcription and preserves
+stable keys, homonyms and meaningful hyphens. Regenerate with
+`make ingest SOURCE=20260921-bhattacharya-ollari`. The importer requires the
+passing pinned source-to-preview audit before installation.
+
+The image-only Tamil Digital Library scan was visually transcribed using a
+retained OCR scaffold. Raw review records, acquisition details, source hashes,
+failed and passing audits, and relationship decisions are under
+`data/other/forms/raw_data/bhattacharya_ollari_1957/`. The 509 ordered prose
+passages are installed in `data/other/entry_texts/20260921-bhattacharya-ollari.csv`.
+Comparative-language forms remain source-attributed prose, not independently
+ingested attestations or inferred ancestry. The source creates 124 variant
+and 111 derivation/inflection relations through stable keys.
+
+Ollari maps to existing `OllariGadaba`; collection villages remain provenance
+because no per-entry dialect assignment is supplied. No entries are excluded.
+One cross-reference has no printed gloss; two suffix scopes remain unexpanded;
+three lexical rows and two prose entries retain documented reading uncertainty.
+The profile maps ṅ to ŋ and printed affricate pronunciations to house notation;
+13 rows preserve explicit pronunciation overrides separately from source spelling.
+The fresh 20-entry audit has zero material errors. Canonical inputs are installed;
+full compilation, graph/ID survival, formatted references, and the full test suite
+remain required. No browser refresh was requested.
+
+
+Das (1987), *The Yeravas of Kodagu*, adds 90 source rows from its complete
+comparison table: 48 Panjiri Yerava (Ravula), 42 Pani Yerava (Paniya). Printed
+popular spelling is preserved without inferred phonemic values, and the two
+Kodagu varieties have distinct dialect records. The [source package](data/other/forms/raw_data/das_yerava_1987/README.md)
+records the 0/20 visual acceptance audit, exclusions, reproduction and outstanding
+compiled-integration gates. Source inputs are installed; full ingestion is pending.
+
+
+### Complete Sansi ordinary and argot source stage (LSI XI,1922)
+
+`data/other/forms/raw_data/grierson_sansi_1922/import_source.py` reproduces1,943 reviewed forms from2,562 source units: full lexical/grammatical prose49–53/60–63, ordinary specimens54–57, argot specimens64–70, and all241 prompts in both standard-list columns178–210. The source-local audit retains32foreign comparisons,80Kheri Hindostani controls,26bound endings, two attached pronunciation approximations and533 repeated specimen attestations with every locator. Argot is a usage register under Sansi, while explicit regions use registered dialect tags without invented coordinates. Literal accents, nasal marks and underdots remain source evidence;154 explicit argot derivations are structured,148 contextual base-attributions remain uncertain. All87 pilot keys survive. Independent20/20 audit plus edges and6focused tests passed; fullCLDF/database/browser gates remain explicitly user-deferred. See `source_checklists/20260926-sansi-full-source.md`.

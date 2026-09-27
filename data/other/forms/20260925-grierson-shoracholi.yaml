@@ -1,0 +1,21 @@
+file: 20260925-grierson-shoracholi.csv
+defaults:
+  transcription:
+    profile: grierson-shoracholi-1916
+  identity:
+    legacy_ids: stem
+    append_order: 66
+  importer:
+    commands:
+      - [data/other/forms/raw_data/grierson_shoracholi_1916/import_source.py, --install]
+    note: Complete source stage covers27 unusual heads,108 grammatical units,307 aligned specimen attestations, and all241 comparative-table prompts;683 units. 728 forms installed; fresh independent audit passed0/20. Full build deferred by user. No source dependence inferred from mere Zoller form matches; specific typography uncertainty retained.
+sources:
+  grierson1916shoracholi:
+    identity:
+      dedupe_by_entry_key: true
+    forms:
+      split_alternates: false
+    reference:
+      editor: OpenAI Codex
+      ocr: false
+      etymology_provenance: none

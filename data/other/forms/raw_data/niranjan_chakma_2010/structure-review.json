@@ -1,0 +1,295 @@
+{
+  "status": "provisional structural segmentation; requires complete visual acceptance audit",
+  "index_basis": "One-based English OCR line index in raw-lines.jsonl for the fixed v2 snapshot; these are review indices, not stable entry keys.",
+  "pages": [
+    {
+      "pdf_page": 21,
+      "printed_page": 19,
+      "exclude_english_lines": [
+        1,
+        2
+      ],
+      "join_english_lines": [],
+      "expected_candidate_records": 27
+    },
+    {
+      "pdf_page": 22,
+      "printed_page": 20,
+      "exclude_english_lines": [],
+      "join_english_lines": [],
+      "expected_candidate_records": 30
+    },
+    {
+      "pdf_page": 23,
+      "printed_page": 21,
+      "exclude_english_lines": [],
+      "join_english_lines": [],
+      "expected_candidate_records": 30
+    },
+    {
+      "pdf_page": 24,
+      "printed_page": 22,
+      "exclude_english_lines": [
+        6,
+        7
+      ],
+      "join_english_lines": [],
+      "expected_candidate_records": 25
+    },
+    {
+      "pdf_page": 25,
+      "printed_page": 23,
+      "exclude_english_lines": [
+        14,
+        15
+      ],
+      "join_english_lines": [
+        [
+          3,
+          4
+        ]
+      ],
+      "expected_candidate_records": 23
+    },
+    {
+      "pdf_page": 26,
+      "printed_page": 24,
+      "exclude_english_lines": [
+        19
+      ],
+      "join_english_lines": [],
+      "expected_candidate_records": 29
+    },
+    {
+      "pdf_page": 27,
+      "printed_page": 25,
+      "exclude_english_lines": [],
+      "join_english_lines": [],
+      "expected_candidate_records": 29
+    },
+    {
+      "pdf_page": 28,
+      "printed_page": 26,
+      "exclude_english_lines": [
+        6,
+        7
+      ],
+      "join_english_lines": [],
+      "expected_candidate_records": 22,
+      "recovered_english_cells": [
+        {
+          "recovery_id": "printed26-dancing-hall",
+          "raw": "Dancing hall",
+          "bbox": [
+            925,
+            279,
+            1144,
+            324
+          ],
+          "method": "Visually identified omitted row; local isolated English OCR PSM7 confirmed wording. Original full-column OCR is unchanged.",
+          "crop_bbox": [
+            910,
+            265,
+            1320,
+            335
+          ],
+          "ocr_command": "OMP_THREAD_LIMIT=1 tesseract dancing-hall.png stdout --psm 7 -l eng tsv",
+          "native_evidence": [
+            "নাটঘর",
+            "নাচঘর"
+          ],
+          "source": "PDF28 / printed26, third lexical row"
+        }
+      ]
+    },
+    {
+      "pdf_page": 29,
+      "printed_page": 27,
+      "exclude_english_lines": [],
+      "join_english_lines": [],
+      "expected_candidate_records": 29
+    },
+    {
+      "pdf_page": 30,
+      "printed_page": 28,
+      "exclude_english_lines": [],
+      "join_english_lines": [],
+      "expected_candidate_records": 29
+    },
+    {
+      "pdf_page": 31,
+      "printed_page": 29,
+      "exclude_english_lines": [
+        1,
+        2
+      ],
+      "join_english_lines": [],
+      "expected_candidate_records": 24
+    },
+    {
+      "pdf_page": 32,
+      "printed_page": 30,
+      "exclude_english_lines": [],
+      "join_english_lines": [],
+      "expected_candidate_records": 26
+    },
+    {
+      "pdf_page": 33,
+      "printed_page": 31,
+      "exclude_english_lines": [
+        1,
+        2
+      ],
+      "join_english_lines": [],
+      "expected_candidate_records": 25
+    },
+    {
+      "pdf_page": 34,
+      "printed_page": 32,
+      "exclude_english_lines": [
+        1
+      ],
+      "join_english_lines": [],
+      "expected_candidate_records": 28
+    },
+    {
+      "pdf_page": 35,
+      "printed_page": 33,
+      "exclude_english_lines": [],
+      "join_english_lines": [],
+      "expected_candidate_records": 27
+    },
+    {
+      "pdf_page": 36,
+      "printed_page": 34,
+      "exclude_english_lines": [],
+      "join_english_lines": [],
+      "expected_candidate_records": 30
+    },
+    {
+      "pdf_page": 37,
+      "printed_page": 35,
+      "exclude_english_lines": [],
+      "join_english_lines": [],
+      "expected_candidate_records": 30,
+      "recovered_english_cells": [
+        {
+          "recovery_id": "printed35-linguistic",
+          "raw": "Linguistic",
+          "bbox": [
+            897,
+            1590,
+            1063,
+            1626
+          ],
+          "method": "Visually identified omitted row; isolated English OCR PSM7 confirmed wording. Original full-column OCR unchanged.",
+          "crop_bbox": [
+            885,
+            1580,
+            1300,
+            1645
+          ],
+          "ocr_command": "OMP_THREAD_LIMIT=1 tesseract linguistic.png stdout --psm 7 -l eng tsv",
+          "source": "PDF37 / printed35, 23rd lexical row"
+        }
+      ]
+    },
+    {
+      "pdf_page": 38,
+      "printed_page": 36,
+      "exclude_english_lines": [
+        12,
+        13
+      ],
+      "join_english_lines": [],
+      "expected_candidate_records": 25
+    },
+    {
+      "pdf_page": 39,
+      "printed_page": 37,
+      "exclude_english_lines": [],
+      "join_english_lines": [],
+      "expected_candidate_records": 30
+    },
+    {
+      "pdf_page": 40,
+      "printed_page": 38,
+      "exclude_english_lines": [],
+      "join_english_lines": [],
+      "expected_candidate_records": 30
+    },
+    {
+      "pdf_page": 41,
+      "printed_page": 39,
+      "exclude_english_lines": [
+        15,
+        16
+      ],
+      "join_english_lines": [],
+      "expected_candidate_records": 25
+    },
+    {
+      "pdf_page": 42,
+      "printed_page": 40,
+      "exclude_english_lines": [
+        21,
+        22
+      ],
+      "join_english_lines": [],
+      "expected_candidate_records": 26
+    },
+    {
+      "pdf_page": 43,
+      "printed_page": 41,
+      "exclude_english_lines": [
+        8
+      ],
+      "join_english_lines": [],
+      "expected_candidate_records": 24
+    },
+    {
+      "pdf_page": 44,
+      "printed_page": 42,
+      "exclude_english_lines": [
+        21,
+        22
+      ],
+      "join_english_lines": [],
+      "expected_candidate_records": 24
+    },
+    {
+      "pdf_page": 45,
+      "printed_page": 43,
+      "exclude_english_lines": [
+        19
+      ],
+      "join_english_lines": [],
+      "expected_candidate_records": 24
+    },
+    {
+      "pdf_page": 46,
+      "printed_page": 44,
+      "exclude_english_lines": [
+        13
+      ],
+      "join_english_lines": [],
+      "expected_candidate_records": 23
+    },
+    {
+      "pdf_page": 47,
+      "printed_page": 45,
+      "exclude_english_lines": [
+        15
+      ],
+      "join_english_lines": [],
+      "expected_candidate_records": 24
+    },
+    {
+      "pdf_page": 48,
+      "printed_page": 46,
+      "exclude_english_lines": [],
+      "join_english_lines": [],
+      "expected_candidate_records": 15
+    }
+  ]
+}

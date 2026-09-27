@@ -43,7 +43,7 @@ FROZEN_HASHES = {
     "staged_audit.tsv": "6fb69a145419fff42c6b48d8e965acf2dbd9dc06bd297edf2e19f62e4f88877b",
     "unresolved_readings.tsv": "3a4e2be9c39e3b3852e455d59d7a077919e208d536b0c6673c2ec834f1f51803",
     "symbol_inventory.tsv": "a649621372743809a46b6391f11e4abf329016bdf84f8dfa175b94e1b330e886",
-    "conversion_profile.tsv": "61f298367f3e9217c170797cc6c4dbebc3c4b86eb90936b3e2f52561ed013d71",
+    "conversion_profile.tsv": "d99beda48288fc6e80e72d98f43fdd8f90de14098e4b1a4f9777ed19d7678894",
 }
 
 MANUAL_HASHES = {

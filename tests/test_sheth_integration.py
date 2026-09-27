@@ -5,10 +5,12 @@ import importlib.util
 import io
 import json
 import shutil
+import unicodedata
 from collections import Counter
 from pathlib import Path
 
 import pytest
+from segments.tokenizer import Tokenizer
 import make_cldf
 import unify_cldf
 import burushaski_comparisons
@@ -107,9 +109,13 @@ def test_all_installed_rows_have_audited_origin_registered_metadata_and_profiles
     parsed, stats = make_cldf.parse_file(str(RAW.parent / S.FILENAME), errors, file_num='20260914-sheth')
     assert not errors.getvalue() and len(parsed) == len(installed)
     assert stats['converted'] == len(installed)
+    tokenizer = Tokenizer(str(ROOT / 'conversion/sheth-ddsa.txt'))
+    house = lambda v: unicodedata.normalize('NFC', tokenizer(unicodedata.normalize('NFC', v), column='IPA').replace(' ', '').replace('#', ' '))
+    assert house('aaṅkha') == 'aaŋkʰa' and house('amha') == 'amʰa' and house('jīmṛa') == 'jīmr̩a'
     for row in parsed:
         source = by_key[row.entry_key]
-        assert row.form == source[2] == row.old_form
+        assert source[2] == row.old_form
+        assert row.form == house(source[2])
         assert row.ipa == '' and row.source == source[7]
         assert '�' not in row.form
     reference = next(r for r in rows(ROOT / 'cldf/references.csv') if r['ID'] == S.SOURCE)

@@ -1,0 +1,48 @@
+{
+  "status": "frozen_for_independent_whole_output_review",
+  "rows": 835,
+  "audit_records": 670,
+  "legacy_keys_preserved": 621,
+  "emissions_before_exact_reuse": 838,
+  "exact_reused_keys": 3,
+  "historical_auto_edges_removed": 153,
+  "hashes": {
+    "proposal.csv": "d62aaf672d79a63c655c97875e05084d380dbc44a32f1d6498ff5f892ee09a1f",
+    "proposal-audit.jsonl": "914670428086b74b2dc8f1fc981d4990552f5ffed16567e4c1b9fb8b7d8cbe93",
+    "proposal-profile.txt": "827622778c627b4c4526ed615b3b0d12e701be817cba1512d88c24c2af4e37e8",
+    "full_inventory.tsv": "2a151bcf08a3fd4f12121f67b77ac6e0b6495910822dc64a2abb67446ab03c48",
+    "reviewed_inventory.tsv": "6c8259457841cb25c9036d5ff9c6d2f6557d3ad522a5eda28282521a88a285f8",
+    "expression-recovery-p154-161-reviewed.jsonl": "9dc4cad330e8069e02a35147967cb7d1d1ae6c18dcd74c4d0bd43b1204695911",
+    "expression-recovery-p162-169-first-reading.jsonl": "489d7af2a985fff8513065212e2f352ead3f9f1a1cc851741580dbc6cd3599f1",
+    "expression-recovery-song-first-reading.jsonl": "6b25bd8cb8ad89b31d65fa8aa80a65a3f737641896951f7028c9f875a0e4efa9",
+    "held-recovery-first-reading-20260926.jsonl": "97adfedbc74bd05f0f0f3957051b40bc2cb8bc5f7e0e41cc8d3b36860c5f03c3",
+    "root-held-song-reuse-decisions-20260926.json": "2b2f8f26668065e43bbc6378c4cf552214d7a29e1820a1ef53811be3ec7341c9",
+    "proposal.yaml": "809e0394b0ad12ebbf9537fc1454e01e5acb6feef06b1022db3c3dc593dc5513",
+    "doh-form-class-review-20260926.json": "5dd70a45193e1a65549363fa8411d348e0fd10f0da9cf11dea3cd8edeeb073ea",
+    "o-diacritic-full-class-review-20260926.json": "ebd43ade1bfb13742338bafbcd548bb6a653891d960ecb712df6bc2f85ebcbcd"
+  },
+  "source_accounting": "Includes 24 whole-page context records and 7 existing-scope cross-checks; these are editorial audit records, not additional lexical attestations. All target expressions, quoted morphology and controls have explicit dispositions.",
+  "validation": [
+    "9 whole-source focused tests pass",
+    "Actual generic parser passes all 835 rows using proposed YAML/profile in memory",
+    "All source symbols and shared house-profile rules pass",
+    "All grammatical tags registered and infix/affix/completive synchronized with frontend",
+    "Raw versus typed layers and actual citation parsing pass"
+  ],
+  "targeted_review": [
+    "p166 literal alternate predicates retain scoped shared hāsu context, not invented prefixed text",
+    "p169 oṛā and kó; p167 Kuniā/Kuneā; p159 short-i kuniā",
+    "p150 jhaṛī and p160 dāimiŋ corrections",
+    "p172 unequal geṭer/geter and literal translation spendid",
+    "Quoted morphology keeps distinct source functions; no automatic variant graph edges"
+  ],
+  "canonical_modified": false,
+  "deferred": [
+    "Full data build and full suite",
+    "Global compiled identity/graph/reference checks",
+    "Browser database refresh and app QA"
+  ],
+  "review_revision": 4,
+  "prior_review": "root-whole-audit-pass2-findings-20260926.json",
+  "reconciliation": "o-diacritic-full-class-review-20260926.json"
+}

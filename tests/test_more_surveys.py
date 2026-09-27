@@ -47,11 +47,11 @@ def test_annotation_scope_and_line_wraps():
  assert [r[2] for r in find('rajasthan',104,0)]==['pAg','pAglya']
 def test_profile_interpretations():
  def conv(p,s):return Tokenizer(str(ROOT/'conversion'/(p+'.txt')))(s,column='IPA').replace(' ','').replace('#',' ')
- assert conv('more-ascii','pAhaD')=='pəhaḍ'
+ assert conv('more-ascii','pAhaD')=='pahāḍ'  # the volume's key: A is the short vowel, plain a the long one
  assert conv('more-ipa','ɖaːɡ')=='ḍāg'
- assert conv('more-ascii','bãdh(a)')=='bãdʰ(a)'
+ assert conv('more-ascii','bãdh(a)')=='bā̃dʰ(ā)'
  assert conv('more-ascii','۠')=='۠' # ambiguous printed mark retained, not interpreted
- assert conv('more-ipa','ɟ')=='ɟ' # legacy IPA route deliberately preserves palatal stop
+ assert conv('more-ipa','ɟ')=='j' # the IPA palatal stop is the house j
 
 def test_reproducible(tmp_path):
  m.build(tmp_path)

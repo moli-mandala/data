@@ -1,0 +1,48 @@
+{
+  "rows": 605,
+  "legacy_rows_and_generated_ids_preserved": 267,
+  "glossary_units": 224,
+  "supplemental_units": 305,
+  "audit_units": 529,
+  "supplement_statuses": {
+    "target": 301,
+    "morphology_with_context": 3,
+    "control": 1
+  },
+  "scoped_parser_errors": "",
+  "literal_roundtrip_rows": 605,
+  "profile_coverage": 605,
+  "new_variant_edges": 27,
+  "source_blank_glosses": 12,
+  "sha256": {
+    "whole-proposed.csv": "272709d298d6034c00c8e396f75a7376ae4e883cfb6ed3a564b0bbdd04b35064",
+    "whole-proposed-audit.jsonl": "9da368e60a916807c25dddb0fa83956de6fb4ba4d7fcc4c7069ec93d22154ac6",
+    "whole-proposed-profile.txt": "d58e91e33d58a23ce8e046b67cb76353c8a4a1434d4fb5bcd0661dcad34a5357",
+    "whole-chapter-first-reading.jsonl": "abc3bf6b5b569b6cf93cb9ecc42acee23c024d46a105195c9a095b75521b817c",
+    "whole-chapter-own-second-review-20260926.json": "a4eeca3b08db404e46328c54d7b7f8251be19355588ce1b9aaddaa7359a2d906",
+    "whole-scope-additional-attestations.jsonl": "87af765e494ab4111f4c3f14e5a142a513aab0ca0e65a402deb2108df42b2dea",
+    "whole-morphology-decisions.json": "63813a89da536759e72f06541f06f7068208e79d271b3aaef706ae3b9cef3bb1",
+    "whole-post-audit-corrections.json": "915328bc1a61b0f2330f587d41ce56965c28f24b8e5f54566a15573a9347149c"
+  },
+  "status": "revised_full_proposal_frozen_for_root_review",
+  "canonical_modified": false,
+  "deferred_gates": [
+    "Full CLDF/database generation",
+    "Full test suite",
+    "Compiled graph/identity/reference validation",
+    "Browser QA"
+  ],
+  "focused_tests": "6 passed in 0.61s",
+  "required_metadata": {
+    "preserve_hyphens": true
+  },
+  "morphology_emissions": 10,
+  "independent_sample_continuity": "All 20 sampled actual rows unchanged",
+  "scope_reconciliation": {
+    "shared113_118": "All pages censused; Surkhuli section117 yields 9 target groups/10 rows and 5 explicit morphology emissions. Other named lects and general unlocated examples remain attributed source context. See whole-source-context-20260926.json.",
+    "main148_154": "Complete grammar paradigms, prose examples, identifiable morphology, 22 complete translated responses and source notes. Final adjective-class vowels o/a/ā remain contextual with explicit reason; no invented stems.",
+    "glossary155_158": "224 physical units and 267 previously reviewed rows retained byte-exact.",
+    "physical_units": 529,
+    "unresolved": "Three roof-shaped i marks literal and typed; two isolated forms lack explicit gloss. Identifiable morphology blank gloss reflects grammatical function, not unresolved transcription."
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "source": "dsal-232.jpg",
+  "crop_xyxy": [
+    132,
+    405,
+    868,
+    1154
+  ],
+  "resize_pixels": [
+    1472,
+    1498
+  ],
+  "language": "ben",
+  "page_segmentation_mode": 6,
+  "threads": 1,
+  "command": "OMP_THREAD_LIMIT=1 tesseract INPUT OUTPUT -l ben --psm 6",
+  "version": "tesseract 5.5.2",
+  "raw_output": "native-p216-raw-ocr.txt",
+  "visual_first_reading": "native-p216-first-reading-20260926.jsonl",
+  "source_lines": 26,
+  "status": "Not accepted or aligned; complete independent review pending."
+}

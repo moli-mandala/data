@@ -111,8 +111,11 @@ def test_dhule_crosswalk_is_complete_but_not_a_reading_authority() -> None:
 
 def test_profile_and_render_contracts_are_complete() -> None:
     profile = read_dicts(HERE / "profile_inventory.tsv", "\t")
-    assert len(profile) == 54
-    assert all(row["Present_In_Staged_Targets"] == "yes" for row in profile)
+    # Includes the explicit aː, oː and ɑː sequences in the reviewed profile.
+    assert len(profile) == 57
+    # Longest-match tokenization consumes every length mark inside those sequences.
+    assert {row["Grapheme"] for row in profile
+            if row["Present_In_Staged_Targets"] != "yes"} == {"ː"}
     assert sum(int(row["Staged_Input_Occurrences"]) for row in profile) > 0
     renders = read_dicts(HERE / "render_hashes.tsv", "\t")
     assert len(renders) == 46

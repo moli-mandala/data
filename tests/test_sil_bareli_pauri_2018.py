@@ -204,5 +204,5 @@ def test_every_installed_row_survives_the_full_build_with_original_ipa():
         and row["Language_ID"] == "RathwiBareli"
         and row["Source"].endswith("item 184, Rathwi Bareli-Tharadpura]")
     )
-    assert hungry["Form"] == "bɦuklu ce, bɦuklu hato"
+    assert hungry["Form"] == "bhūklū ce, bhūklū hatɔ"
     assert hungry["Original"] == "bɦuklu tʃe, bɦuklu hʌtɔ̪"
