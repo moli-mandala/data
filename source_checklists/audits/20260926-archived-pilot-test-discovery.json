@@ -1,0 +1,26 @@
+{
+  "baseline_commit": "5d9a018127a098613a5586f21f0550cd1d824c9e",
+  "reason": "Broad CI discovery collects four archived pilot test files whose historical relative-path assumptions no longer apply. Archives remain immutable provenance.",
+  "ignored_exact_paths": [
+    "data/other/forms/raw_data/bailey_bhalesi_1908/legacy-pilot/test_bailey_bhalesi_1908.py",
+    "data/other/forms/raw_data/bailey_padari_1908/legacy-pilot/test_bailey_padari_1908.py",
+    "data/other/forms/raw_data/grierson_malvi_rangri_1908/legacy-pilot/test_grierson_malvi_rangri_1908.py",
+    "data/other/forms/raw_data/grierson_suketi_1916/legacy-pilot/test_grierson_suketi_1916.py"
+  ],
+  "live_replacements": [
+    "tests/test_bailey_bhalesi_full_stage.py",
+    "tests/test_bailey_padari_full_stage.py",
+    "tests/test_grierson_malvi_rangri_full_stage.py",
+    "tests/test_grierson_suketi_full_stage.py"
+  ],
+  "validation": {
+    "mode": "pytest --collect-only over all four live modules and all four archived directories",
+    "collected_live_tests": 25,
+    "collection_errors": 0,
+    "exit_code": 0,
+    "seconds": 0.45,
+    "log_sha256": "58d28b6ed0051a33f574fe1fc313965218e7a1bd9cf3ce40c6697fcac4d73d82"
+  },
+  "cldf_changed": false,
+  "remaining_ci_issues": "Inherited align import, clldutils.lazyproperty incompatibility and missing pysem are not changed by this focused patch."
+}
