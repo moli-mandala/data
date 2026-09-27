@@ -11,7 +11,7 @@
 
 ## Retrospective gate assessment
 
-Historical PASS markers below are retrospective evidence, not certification of the current release. Current release validation is recorded in [the release evidence](../../tmp/release-20260926/), including compiled-source-verification.json; pending browser checks remain pending until independently recorded.
+Historical PASS markers below are retrospective evidence, not certification of the current release. Current release validation is recorded in [the release validation record](20260926-release-validation.md); pending browser checks remain pending until independently recorded.
 
 - [x] 1. Establish the source and scope — source keys: bailey1908innersiraji; 500 installed records
 - [x] 2. Choose the extraction path — importer/raw route: data/other/forms/20260925-bailey-inner-siraji.csv

@@ -11,7 +11,7 @@
 
 ## Retrospective gate assessment
 
-Historical PASS markers below are retrospective evidence, not certification of the current release. Current release validation is recorded in [the release evidence](../../tmp/release-20260926/), including compiled-source-verification.json; pending browser checks remain pending until independently recorded.
+Historical PASS markers below are retrospective evidence, not certification of the current release. Current release validation is recorded in [the release validation record](20260926-release-validation.md); pending browser checks remain pending until independently recorded.
 
 - [x] 1. Establish the source and scope — source keys: bailey1920northjubbal; 330 installed records
 - [x] 2. Choose the extraction path — importer/raw route: data/other/forms/raw_data/link_northern_nontrivial.py, data/other/forms/raw_data/link_northern_obvious.py, data/other/forms/raw_data/link_northern_shina_database.py, data/other/forms/raw_data/north_gorkha.py, data/other/forms/raw_data/northern.py

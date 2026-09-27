@@ -12,7 +12,7 @@
 
 ## Retrospective gate assessment
 
-Historical PASS markers below are retrospective evidence, not certification of the current release. Current release validation is recorded in [the release evidence](../../tmp/release-20260926/), including compiled-source-verification.json; pending browser checks remain pending until independently recorded.
+Historical PASS markers below are retrospective evidence, not certification of the current release. Current release validation is recorded in [the release validation record](20260926-release-validation.md); pending browser checks remain pending until independently recorded.
 
 - [x] 1. Establish the source and scope — source keys: kim-ahmad-kim-sangma2011kochbd; 1017 installed records
 - [x] 2. Choose the extraction path — render-first manual transcription of every lexical cell on physical pages 43--62; OCR/PDF text and legacy data are locator or post-freeze comparison only

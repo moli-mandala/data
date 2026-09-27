@@ -11,7 +11,7 @@
 
 ## Retrospective gate assessment
 
-Historical PASS markers below are retrospective evidence, not certification of the current release. Current release validation is recorded in [the release evidence](../../tmp/release-20260926/), including compiled-source-verification.json; pending browser checks remain pending until independently recorded.
+Historical PASS markers below are retrospective evidence, not certification of the current release. Current release validation is recorded in [the release validation record](20260926-release-validation.md); pending browser checks remain pending until independently recorded.
 
 - [x] 1. Establish the source and scope — source keys: A, AG, AG08, BAHL, BDBH, BMED, BSD1, BSD2, BSD3, BSDV1, BSDV2, BSDV5, CDES, CDSE, CSED, DHED, DSBO, DSGT, DSGU, DSJU, DSKH, DSKO, DSKW, DSRE, EM, EMV12, EMV13, EMV5, FR, GGEG, GTXT, GZ63, GZ65, HLKS, HOGV, JLIC, JV, MJTL, MVOL, NKEV, PGEG, PJDW, PJED, PKED, PKEP, PKEV, RSED, SAAW, Z1965, Z1975, Z1982, ZG63, ZG65, ZKPM, Zide, korkutxt, rau, soratxt; 1223 installed records
 - [x] 2. Choose the extraction path — importer/raw route: data/munda/rau_2019.csv

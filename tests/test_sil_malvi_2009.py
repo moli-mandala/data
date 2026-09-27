@@ -146,25 +146,65 @@ def test_compiled_rows_preserve_every_source_locator_and_dialect():
     with COMPILED.open(encoding="utf-8", newline="") as stream:
         compiled = [row for row in csv.DictReader(stream) if SOURCE_KEY in row["Source"]]
     from segments import Tokenizer
-    tokenizer = Tokenizer(str(ROOT/'conversion/sil-malvi.txt'))
-    expected = {(r['Language_ID'], r['Parameter_ID'], unicodedata.normalize('NFC',tokenizer(r['Form'],column='IPA').replace(' ','').replace('#',' '))) for r in installed}
-    assert len(compiled) == len(expected)
-    assert {(r['Language_ID'],r['Form']) for r in compiled} == {(lang,form) for lang,_,form in expected}
-    compiled_citations = {
-        citation
-        for row in compiled
-        for citation in row["Source"].split(";")
-        if citation.startswith(f"{SOURCE_KEY}[")
+    tokenizer = Tokenizer(str(ROOT / 'conversion/sil-malvi.txt'))
+    def display(value):
+        return unicodedata.normalize('NFC', tokenizer(value.strip(), column='IPA').replace(' ', '').replace('#', ' '))
+
+    # The declared source parser expands comma-separated alternatives. A locator
+    # can therefore identify multiple output rows, and several raw response keys
+    # can share a locator. Never overwrite them in a citation->single-row dict.
+    expected = {
+        (raw['Language_ID'], display(alternative))
+        for raw in installed for alternative in raw['Form'].split(',') if alternative.strip()
     }
-    assert compiled_citations == {row["Source"] for row in installed}
-    assert len(compiled_citations) == 6182
-    # Preserve the mapping, not merely independent global citation/tag unions.
-    by_citation = {citation: row for row in compiled for citation in row['Source'].split(';') if citation.startswith(f'{SOURCE_KEY}[')}
+    assert len(compiled) == len(expected)
+    assert {(r['Language_ID'], r['Form']) for r in compiled} == expected
+    by_citation = defaultdict(list)
+    for row in compiled:
+        for citation in row['Source'].split(';'):
+            if citation.startswith(f'{SOURCE_KEY}['):
+                by_citation[citation].append(row)
+    assert set(by_citation) == {raw['Source'] for raw in installed}
+    assert len(by_citation) == 6182
+    matched_ids = set()
+    covered_keys = set()
     for raw in installed:
-        actual = by_citation[raw['Source']]
-        display = unicodedata.normalize('NFC',tokenizer(raw['Form'],column='IPA').replace(' ','').replace('#',' '))
-        assert actual['Form'] == display and actual['Language_ID'] == raw['Language_ID']
-        assert set(raw['Tags'].split()) <= set(actual['Tags'].split())
+        alternatives = [value for value in raw['Form'].split(',') if value.strip()]
+        assert alternatives, raw['Entry_Key']
+        for alternative in alternatives:
+            matches = [actual for actual in by_citation[raw['Source']]
+                       if actual['Language_ID'] == raw['Language_ID']
+                       and actual['Form'] == display(alternative)]
+            assert matches, (raw['Entry_Key'], alternative)
+            # Merged attestations may carry multiple exact originals/glosses.
+            assert any(unicodedata.normalize('NFC', alternative.strip()) in
+                       {unicodedata.normalize('NFC', v.strip()) for v in actual['Original'].split(';')}
+                       and raw['Gloss'] in {v.strip() for v in actual['Gloss'].split(';')}
+                       and set(raw['Tags'].split()) <= set(actual['Tags'].split())
+                       for actual in matches), raw['Entry_Key']
+            matched_ids.update(actual['ID'] for actual in matches)
+        covered_keys.add(raw['Entry_Key'])
+    assert covered_keys == {raw['Entry_Key'] for raw in installed}
+    assert len(covered_keys) == 6894
+    assert matched_ids == {actual['ID'] for actual in compiled}
+
+    # This legacy source predates per-attestation durable dedupe. Every retained
+    # registry key must still resolve to an output containing its source response;
+    # collapsed response keys are covered above by their exact scholarly content.
+    raw_by_key = {raw['Entry_Key']: raw for raw in installed}
+    with (ROOT / 'cldf/form-source-keys.csv').open() as stream:
+        links = [r for r in csv.DictReader(stream) if r['Source_Key'] in raw_by_key]
+    wanted = {r['Legacy_ID'] for r in links}
+    with (ROOT / 'cldf/form-id-aliases.csv').open() as stream:
+        aliases = {r['Legacy_ID']: r['Form_ID'] for r in csv.DictReader(stream) if r['Legacy_ID'] in wanted}
+    actual_by_id = {r['ID']: r for r in compiled}
+    assert links
+    for link in links:
+        actual = actual_by_id[aliases.get(link['Legacy_ID'], link['Legacy_ID'])]
+        raw = raw_by_key[link['Source_Key']]
+        assert raw['Source'] in actual['Source'].split(';')
+        assert actual['Language_ID'] == raw['Language_ID']
+        assert actual['Form'] in {display(v) for v in raw['Form'].split(',') if v.strip()}
     assert len({
         tag for row in compiled for tag in row["Tags"].split()
         if "sil-malvi-2009-" in tag

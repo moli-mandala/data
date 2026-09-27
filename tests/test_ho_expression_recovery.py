@@ -23,12 +23,30 @@ def test_entire_snapshot_accounting_and_legacy_identity():
     assert [c["source_id"] for c in census if c["source_id"].isdigit()] == [f"{i:05d}" for i in range(1, 1517)]
     legacy = list(csv.reader((PACKAGE / "legacy-before-expression-recovery.csv").open()))
     assert [r[10] for r in rows[:2146]] == [r[10] for r in legacy]
-    changed = [new[10] for old, new in zip(legacy, rows) if old != new]
-    assert changed == ["ho-mla2004:01364:supplement:1", "ho-mla2004:01364:supplement:2"]
+    lexical_repairs = {"ho-mla2004:01364:supplement:1", "ho-mla2004:01364:supplement:2"}
+    citation_repairs = {old[10] for old in legacy if ', archive refs ' in old[7]}
+    assert len(citation_repairs) == 93
+    changed = {new[10] for old, new in zip(legacy, rows) if old != new}
+    assert changed == lexical_repairs | citation_repairs
+    for old, new in zip(legacy, rows):
+        if old[10] in lexical_repairs:
+            continue  # Independently checked below, including the exact joint gloss scope.
+        assert all(a == b for i, (a, b) in enumerate(zip(old, new)) if i not in (6, 7))
+        if old[10] in citation_repairs:
+            locator, prose = old[7].split(', archive refs ', 1)
+            assert new[7] == locator + ']'
+            assert new[6] == (old[6] + ' Archived reference prose: ' + prose[:-1]).strip()
+        else:
+            assert old == new
     keys = {r[10] for r in rows}
     assert len(keys) == len(rows)
     assert all(not r[11] or r[11] in keys for r in rows)
-    assert rows == list(csv.reader((PACKAGE / "expression-recovery-proposed.csv").open()))
+    assert rows == list(csv.reader((PACKAGE / "proposal.csv").open()))
+    # The independently approved pre-serialization proposal stays immutable.
+    frozen = list(csv.reader((PACKAGE / "expression-recovery-proposed.csv").open()))
+    assert len(frozen) == len(rows)
+    for prior, current in zip(frozen, rows):
+        assert all(a == b for i, (a, b) in enumerate(zip(prior, current)) if i not in (6, 7))
 
 
 def test_whole_examples_and_explicit_alternative_scope():
@@ -61,14 +79,13 @@ def test_untranslated_examples_and_shared_glosses_are_not_invented():
     assert bykey["ho-mla2004:01003:supplement:1"][3] == "to be attacked by a snake"
 
 
-def test_full_profile_and_actual_parser_roundtrip(monkeypatch):
+def test_full_profile_and_actual_parser_roundtrip():
     import make_cldf
 
     rows, _, _ = prepared()
     tokenizer = Tokenizer(str(PACKAGE / "expression-recovery-profile.txt"))
-    monkeypatch.setitem(make_cldf.convertors, "ho-mla", tokenizer)
     errors = io.StringIO()
-    parsed, stats = make_cldf.parse_file(str(PACKAGE / "expression-recovery-proposed.csv"), errors, name="20260925-donegan-stampe-ho")
+    parsed, stats = make_cldf.parse_file(str(PACKAGE.parents[1] / "20260925-donegan-stampe-ho.csv"), errors, name="20260925-donegan-stampe-ho")
     assert not errors.getvalue() and len(parsed) == stats["converted"] == 2227
     assert len({r.id for r in parsed}) == 2227
     bykey = {r[10]: r for r in rows}

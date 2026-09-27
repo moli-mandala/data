@@ -11,7 +11,7 @@
 
 ## Retrospective gate assessment
 
-Historical PASS markers below are retrospective evidence, not certification of the current release. Current release validation is recorded in [the release evidence](../../tmp/release-20260926/), including compiled-source-verification.json; pending browser checks remain pending until independently recorded.
+Historical PASS markers below are retrospective evidence, not certification of the current release. Current release validation is recorded in [the release validation record](20260926-release-validation.md); pending browser checks remain pending until independently recorded.
 
 - [x] 1. Establish the source and scope — source keys: hugoniot-polster-ahmad-rajan2023easterngujari; 1753 installed records
 - [x] 2. Choose the extraction path — importer/raw route: data/other/forms/raw_data/sil_eastern_gujari_2023/extract_eastern_gujari.py, data/other/forms/raw_data/sil_eastern_gujari_2023/finalize_review.py, data/other/forms/raw_data/sil_eastern_gujari_2023/import_eastern_gujari.py

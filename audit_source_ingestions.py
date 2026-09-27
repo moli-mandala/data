@@ -3087,7 +3087,7 @@ def render_unit(unit: Unit, master: str) -> str:
         "",
         "Historical PASS markers below are retrospective evidence, not certification of the current release. "
         "Current release validation is recorded in "
-        "[the release evidence](../../tmp/release-20260926/), including compiled-source-verification.json; "
+        "[the release validation record](20260926-release-validation.md); "
         "pending browser checks remain pending until independently recorded.",
         "",
     ])

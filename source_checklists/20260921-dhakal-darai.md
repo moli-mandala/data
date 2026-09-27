@@ -11,7 +11,7 @@
 
 ## Retrospective gate assessment
 
-Historical PASS markers below are retrospective evidence, not certification of the current release. Current release validation is recorded in [the release evidence](../../tmp/release-20260926/), including compiled-source-verification.json; pending browser checks remain pending until independently recorded.
+Historical PASS markers below are retrospective evidence, not certification of the current release. Current release validation is recorded in [the release validation record](20260926-release-validation.md); pending browser checks remain pending until independently recorded.
 
 - [x] 1. Establish the source and scope — source keys: dhakal2011darai; 485 installed records
 - [x] 2. Choose the extraction path — importer/raw route: data/other/forms/20260921-dhakal-darai.csv
@@ -23,7 +23,7 @@ Historical PASS markers below are retrospective evidence, not certification of t
 - [x] 8. Parse references and provenance — unresolved keys: none
 - [x] 9. Model etymology and graph relations conservatively — covered by tests/test_edges.py and compiled edge invariants
 - [x] 10. Produce a complete audit trail — audit: source_checklists/installed-record-audit.csv.gz
-- [x] 11. Add focused regression tests — tests: tests/test_dhakal_darai_2011.py, tests/test_dhakal_darai_chapters12.py, tests/test_dhakal_darai_clause_recovery.py, tests/test_source_checklists.py
+- [x] 11. Add focused regression tests — tests: tests/test_dhakal_darai_2011.py, tests/test_source_checklists.py
 - [ ] 12. Install and run the full data pipeline — pending final repository-wide make all and full-suite validation for this review
 - [ ] 13. Browser database refresh and inspection (user-triggered) — browser database refresh and QA are not yet recorded for this source; release completion requires current validation evidence
 - [x] 14. Document, review, and ship only when requested — this source-specific checklist is the durable review record; publication status and release evidence are recorded separately

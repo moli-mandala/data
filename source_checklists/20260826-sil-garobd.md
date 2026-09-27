@@ -12,7 +12,7 @@
 
 ## Retrospective gate assessment
 
-Historical PASS markers below are retrospective evidence, not certification of the current release. Current release validation is recorded in [the release evidence](../../tmp/release-20260926/), including compiled-source-verification.json; pending browser checks remain pending until independently recorded.
+Historical PASS markers below are retrospective evidence, not certification of the current release. Current release validation is recorded in [the release validation record](20260926-release-validation.md); pending browser checks remain pending until independently recorded.
 
 - [x] 1. Establish the source and scope — source keys: kim-kim-sangma2012garo; 4444 installed records
 - [ ] 2. Choose the extraction path — partial decoder: data/other/forms/raw_data/sil_bracket_wordlists.py; render-first manual recovery package is queued but not yet begun
