@@ -6,7 +6,7 @@
 - Installed rows: 1520
 - Compiled rows carrying this unit's citation keys: 2263
 - Input rows with checked grammatical evidence: 0
-- Compiled rows with canonical grammatical tags: 16
+- Compiled rows with canonical grammatical tags: 18
 - Source keys: mitchell-eichentopf2013tharu
 
 ## Retrospective gate assessment

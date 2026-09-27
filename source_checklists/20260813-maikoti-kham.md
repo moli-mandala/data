@@ -6,7 +6,7 @@
 - Installed rows: 1147
 - Compiled rows carrying this unit's citation keys: 1097
 - Input rows with checked grammatical evidence: 180
-- Compiled rows with canonical grammatical tags: 160
+- Compiled rows with canonical grammatical tags: 170
 - Source keys: leman2020maikoti
 
 ## Retrospective gate assessment
@@ -18,7 +18,7 @@ Historical PASS markers below are retrospective evidence, not certification of t
 - [x] 3. Plan the installed files and identifiers — 1147 unique immutable Entry_Key values
 - [x] 4. Model languages and dialects before emitting forms — 4 input language/lect IDs; registry gaps: none
 - [x] 5. Emit the rich import schema — row widths {'11': 1147}; blank forms 0
-- [x] 6. Parse structured linguistic information — 180 input rows carry checked grammatical evidence; 160 compiled rows carry canonical grammatical tags
+- [x] 6. Parse structured linguistic information — 180 input rows carry checked grammatical evidence; 170 compiled rows carry canonical grammatical tags
 - [x] 7. Build and verify the sound profile — profile route: conversion/maikoti-kham.txt; replacement characters in input forms: 0
 - [x] 8. Parse references and provenance — unresolved keys: none
 - [x] 9. Model etymology and graph relations conservatively — covered by tests/test_edges.py and compiled edge invariants

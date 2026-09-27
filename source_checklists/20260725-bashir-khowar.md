@@ -6,7 +6,7 @@
 - Installed rows: 15172
 - Compiled rows carrying this unit's citation keys: 15018
 - Input rows with checked grammatical evidence: 14810
-- Compiled rows with canonical grammatical tags: 14654
+- Compiled rows with canonical grammatical tags: 14655
 - Source keys: bashir2023
 
 ## Retrospective gate assessment
@@ -18,7 +18,7 @@ Historical PASS markers below are retrospective evidence, not certification of t
 - [x] 3. Plan the installed files and identifiers — 15172 unique immutable Entry_Key values
 - [x] 4. Model languages and dialects before emitting forms — 53 input language/lect IDs; registry gaps: none
 - [x] 5. Emit the rich import schema — row widths {'15': 15172}; blank forms 0
-- [x] 6. Parse structured linguistic information — 14810 input rows carry checked grammatical evidence; 14654 compiled rows carry canonical grammatical tags
+- [x] 6. Parse structured linguistic information — 14810 input rows carry checked grammatical evidence; 14655 compiled rows carry canonical grammatical tags
 - [x] 7. Build and verify the sound profile — profile route: conversion/khowar.txt, data/other/forms/20260725-bashir-khowar.yaml; replacement characters in input forms: 0
 - [x] 8. Parse references and provenance — unresolved keys: none
 - [x] 9. Model etymology and graph relations conservatively — covered by tests/test_edges.py and compiled edge invariants

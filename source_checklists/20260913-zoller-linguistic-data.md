@@ -6,7 +6,7 @@
 - Installed rows: 17754
 - Compiled rows carrying this unit's citation keys: 280550
 - Input rows with checked grammatical evidence: 1099
-- Compiled rows with canonical grammatical tags: 88087
+- Compiled rows with canonical grammatical tags: 88265
 - Source keys: CDIAL, dedr, zoller2023
 
 ## Retrospective gate assessment
@@ -18,7 +18,7 @@ Historical PASS markers below are retrospective evidence, not certification of t
 - [x] 3. Plan the installed files and identifiers — 17754 unique immutable Entry_Key values
 - [x] 4. Model languages and dialects before emitting forms — 328 input language/lect IDs; registry gaps: none
 - [x] 5. Emit the rich import schema — row widths {'15': 17754}; blank forms 0
-- [x] 6. Parse structured linguistic information — 1099 input rows carry checked grammatical evidence; 88087 compiled rows carry canonical grammatical tags
+- [x] 6. Parse structured linguistic information — 1099 input rows carry checked grammatical evidence; 88265 compiled rows carry canonical grammatical tags
 - [x] 7. Build and verify the sound profile — profile route: conversion/zoller-2023.txt; replacement characters in input forms: 0
 - [x] 8. Parse references and provenance — unresolved keys: none
 - [x] 9. Model etymology and graph relations conservatively — covered by tests/test_edges.py and compiled edge invariants

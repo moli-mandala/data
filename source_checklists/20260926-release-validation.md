@@ -73,3 +73,9 @@ Completed focused frontend checks: **10 builder tests passed**, **two Node displ
 - [ ] Final changelog/source-scope reconciliation, staged dependency review, commits/push/publication and live verification under the release workflow.
 
 Working evidence and reproducible staging/identity review scripts are retained locally under `tmp/release-20260926`; final durable results should be summarized here or in the committed frontend release audit. No full-source completion claim should be inferred from this provisional release checklist.
+
+## Subsequent preservation correction
+
+The exact-commit suite found that duplicate-attestation cleanup discarded dialect and grammatical tags from later witnesses. Cleanup now unions those tags in stable order. The fifth full `make all` passed, followed by seven focused checks including every Malvi response. Comparing all 991,379 compiled rows found tag additions on 10,654 records across 93 languages, no tag losses, and no changes to IDs, order, spelling, glosses, citations or other fields. All other 15 published CLDF files are byte-identical. The ignored `forms-legacy.csv` development diagnostic is outside the publication scope. See [the preservation audit](audits/20260926-tag-preservation.json).
+
+The prior browser databases are superseded. The final committed suite, rebuilt browser assets, compaction parity and live deployment remain pending; their final results are recorded in the frontend [db-v39 release audit](https://github.com/aryamanarora/jambu/blob/main/release-audits/db-v39.json).

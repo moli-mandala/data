@@ -179,7 +179,7 @@ def test_compiled_rows_preserve_every_source_locator_and_dialect():
             # Merged attestations may carry multiple exact originals/glosses.
             assert any(unicodedata.normalize('NFC', alternative.strip()) in
                        {unicodedata.normalize('NFC', v.strip()) for v in actual['Original'].split(';')}
-                       and raw['Gloss'] in {v.strip() for v in actual['Gloss'].split(';')}
+                       and (not raw['Gloss'] or raw['Gloss'] in {v.strip() for v in actual['Gloss'].split(';')})
                        and set(raw['Tags'].split()) <= set(actual['Tags'].split())
                        for actual in matches), raw['Entry_Key']
             matched_ids.update(actual['ID'] for actual in matches)

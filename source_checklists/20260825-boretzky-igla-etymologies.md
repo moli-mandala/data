@@ -6,7 +6,7 @@
 - Installed rows: 1140
 - Compiled rows carrying this unit's citation keys: 1129
 - Input rows with checked grammatical evidence: 1114
-- Compiled rows with canonical grammatical tags: 1062
+- Compiled rows with canonical grammatical tags: 1106
 - Source keys: barannikov1934gypsy, bischoff1827woerterbuch, boretzky1994romani, colocci1889zingari, finck1903zigeuner, heinschink1989izmir, jesina1886romanicib, lipa1963cikanstina, paspati1870tchinghianes, rozwadowski1936zakopane, sampson1926welsh, sowa1898zigeuner, thesleff1901finnland
 
 ## Retrospective gate assessment
@@ -18,7 +18,7 @@ Historical PASS markers below are retrospective evidence, not certification of t
 - [x] 3. Plan the installed files and identifiers — 1140 unique immutable Entry_Key values
 - [x] 4. Model languages and dialects before emitting forms — 4 input language/lect IDs; registry gaps: none
 - [x] 5. Emit the rich import schema — row widths {'15': 1140}; blank forms 0
-- [x] 6. Parse structured linguistic information — 1114 input rows carry checked grammatical evidence; 1062 compiled rows carry canonical grammatical tags
+- [x] 6. Parse structured linguistic information — 1114 input rows carry checked grammatical evidence; 1106 compiled rows carry canonical grammatical tags
 - [x] 7. Build and verify the sound profile — profile route: conversion/boretzky-romani.txt; replacement characters in input forms: 0
 - [x] 8. Parse references and provenance — unresolved keys: none
 - [x] 9. Model etymology and graph relations conservatively — covered by tests/test_edges.py and compiled edge invariants

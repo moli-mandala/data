@@ -6,7 +6,7 @@
 - Installed rows: 1590
 - Compiled rows carrying this unit's citation keys: 1557
 - Input rows with checked grammatical evidence: 263
-- Compiled rows with canonical grammatical tags: 242
+- Compiled rows with canonical grammatical tags: 255
 - Source keys: page2024majhi-bote
 
 ## Retrospective gate assessment
@@ -18,7 +18,7 @@ Historical PASS markers below are retrospective evidence, not certification of t
 - [x] 3. Plan the installed files and identifiers — 1590 unique immutable Entry_Key values
 - [x] 4. Model languages and dialects before emitting forms — 6 input language/lect IDs; registry gaps: none
 - [x] 5. Emit the rich import schema — row widths {'11': 1590}; blank forms 0
-- [x] 6. Parse structured linguistic information — 263 input rows carry checked grammatical evidence; 242 compiled rows carry canonical grammatical tags
+- [x] 6. Parse structured linguistic information — 263 input rows carry checked grammatical evidence; 255 compiled rows carry canonical grammatical tags
 - [x] 7. Build and verify the sound profile — profile route: conversion/majhi-bote.txt; replacement characters in input forms: 0
 - [x] 8. Parse references and provenance — unresolved keys: none
 - [x] 9. Model etymology and graph relations conservatively — covered by tests/test_edges.py and compiled edge invariants

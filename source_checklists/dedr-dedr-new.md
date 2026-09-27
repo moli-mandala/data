@@ -6,7 +6,7 @@
 - Installed rows: 76082
 - Compiled rows carrying this unit's citation keys: 102508
 - Input rows with checked grammatical evidence: 5376
-- Compiled rows with canonical grammatical tags: 30736
+- Compiled rows with canonical grammatical tags: 30764
 - Source keys: A-Gondi, Ag-Tam, Andronov-Tam, Annamalai-Tam, Asher-Radhakrishnan-Tam, B-K-Tulu, B-Telugu, BB-Konda, Badaga-Kannada, Bark-Kannada, Bleses-Kurux, Coorg-Kannada, Devanesan-Tam, F-Kuwi, Gowda-Kannada, Grignard-Kurux, Gul-Kannada, Hahn-Kurux, Hal-Kannada, Hav-Kannada, HavS-Kannada, Hislop-Drav, Hock-Kannada, Inscr-Telugu, Inscr1-Telugu, Inscr2-Telugu, Isr-Kuwi, K-Kui, K-Telugu, K-also-Telugu, K2-Kannada, Kauṭ-Mal, Kitt-Kannada, Koll-Tam, KoyaT-Gondi, L-Gondi, LSB-BettaKurumba, LuS-Gondi, M-Gondi, Mah-Kuwi, Menon-Mal, Merolu-Telugu, Mirdha-Kurux, Nanj-Kannada, Oll-Gadaba, PBh-Kannada, PN-Tam, PPTI-Tam, PR-Tam, Pat-Gondi, Pat-Kolami, Ph-Gondi, Rabakavi-Kannada, S-Gadaba, S-Kuwi, S2-Gadaba, S3-Gadaba, SR-Gondi, SR-Kolami, Sak-Toda, Shanmugam-Kodagu, Sholiga-Kannada, Tiga-Kurux, Tinn-Tam, Tipt-Kannada, Tiyya-Mal, Tr-Gondi, UNR-Kannada, UPU-Kannada, VPK-Telugu, W-Gondi, Z-Irula, Z2-Irula, Zvelebil1980-Irula, dedr, Ḍ-Kuwi, Ṭ-Kuwi
 
 ## Retrospective gate assessment
@@ -18,7 +18,7 @@ Historical PASS markers below are retrospective evidence, not certification of t
 - [x] 3. Plan the installed files and identifiers — 0 unique immutable Entry_Key values
 - [x] 4. Model languages and dialects before emitting forms — 77 input language/lect IDs; registry gaps: none
 - [x] 5. Emit the rich import schema — row widths {'15': 76082}; blank forms 0
-- [x] 6. Parse structured linguistic information — 5376 input rows carry checked grammatical evidence; 30736 compiled rows carry canonical grammatical tags
+- [x] 6. Parse structured linguistic information — 5376 input rows carry checked grammatical evidence; 30764 compiled rows carry canonical grammatical tags
 - [x] 7. Build and verify the sound profile — profile route: conversion/dedr.txt; replacement characters in input forms: 0
 - [x] 8. Parse references and provenance — unresolved keys: none
 - [x] 9. Model etymology and graph relations conservatively — covered by tests/test_edges.py and compiled edge invariants

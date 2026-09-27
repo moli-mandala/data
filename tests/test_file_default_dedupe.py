@@ -2,7 +2,7 @@ from types import SimpleNamespace
 
 import pytest
 
-from make_cldf import source_entry_dedupe_key
+from make_cldf import source_entry_dedupe_key, merge_attestation_tags
 from source_meta import SourceMeta
 
 
@@ -44,3 +44,15 @@ def test_explicit_source_override_including_false_precedes_file_default(tmp_path
     row = record('new:one', source='new[p. 1];second[p. 2]')
     assert source_entry_dedupe_key(row, meta) == expected
     assert row.tags == 'dialect:ko:norton noun'
+
+
+def test_merged_attestations_keep_both_sites_and_grammar_in_stable_order():
+    retained = record('first', source='survey[site A]', tags='noun dialect:ko:A noun')
+    duplicate = record('second', source='survey[site B]', tags='dialect:ko:B noun pl dialect:ko:B')
+    merge_attestation_tags(retained, duplicate)
+    assert retained.tags == 'noun dialect:ko:A dialect:ko:B pl'
+    assert duplicate.tags == 'dialect:ko:B noun pl dialect:ko:B'
+    merge_attestation_tags(retained, duplicate)
+    assert retained.tags == 'noun dialect:ko:A dialect:ko:B pl'
+    merge_attestation_tags(retained, record('empty', tags=''))
+    assert retained.tags == 'noun dialect:ko:A dialect:ko:B pl'

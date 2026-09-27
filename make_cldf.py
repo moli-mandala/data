@@ -792,6 +792,11 @@ def source_entry_dedupe_key(row, meta):
     return row.entry_key if keyed else ""
 
 
+def merge_attestation_tags(retained, duplicate):
+    """Keep every site's grammatical and dialect evidence when attestations merge."""
+    retained.tags = " ".join(dict.fromkeys(retained.tags.split() + duplicate.tags.split()))
+
+
 def main():
     # write out forms.csv
     errors = open("errors.txt", "w")
@@ -876,6 +881,7 @@ def main():
                 orig_row.native = _merge(orig_row.native, row.native)
                 orig_row.notes = _merge(orig_row.notes, row.notes)
                 orig_row.source = _merge(orig_row.source, row.source, sep=';')
+                merge_attestation_tags(orig_row, row)
                 orig_row.ipa = _merge(orig_row.ipa, row.ipa)
                 orig_row.old_form = _merge(orig_row.old_form, row.old_form)
                 # Long source analyses are already deduplicated by their

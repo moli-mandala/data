@@ -1,0 +1,189 @@
+{
+  "status": "passed",
+  "baseline_commit": "f6f1b43e89a5",
+  "method": "Streaming ordered row comparison of committed CLDF against fifth build. Every field except Tags exact; prior tags subset of resulting tags. Other tracked CLDF artifacts compared bytewise. No snapshots of current output used to weaken expected source assertions.",
+  "counts": {
+    "rows": 991379,
+    "tag_changed_rows": 10654,
+    "tag_added_rows": 10654,
+    "tag_removed_rows": 0,
+    "tag_order_only_rows": 0
+  },
+  "affected_languages": {
+    "AdivasiOriya": 675,
+    "As": 4,
+    "Bote": 4,
+    "Brahui": 97,
+    "Brj": 2,
+    "Bugun": 334,
+    "Dakpakha": 181,
+    "Dotyali": 1,
+    "EasternGorkhaTamang": 1,
+    "Gadaba": 3,
+    "Goj": 326,
+    "Gondi": 368,
+    "Gurung": 90,
+    "Humla": 8,
+    "Kal": 13,
+    "KalaktangMonpa": 225,
+    "Kam": 24,
+    "Kannada": 51,
+    "Kho": 170,
+    "Kjl": 11,
+    "KochilaTharu": 2,
+    "Kodagu": 11,
+    "Kodaku": 455,
+    "Kolami": 17,
+    "Konda": 189,
+    "Koraga": 25,
+    "Kota": 7,
+    "Kt": 17,
+    "Kudiya": 1,
+    "Kui": 7,
+    "Kurux": 16,
+    "Kuwi": 25,
+    "Lohorung": 2,
+    "Loy": 4,
+    "M": 23,
+    "Majhi": 12,
+    "Malayalam": 33,
+    "Malto": 13,
+    "Manda": 4,
+    "Marw": 12,
+    "Miji": 307,
+    "NDu": 1,
+    "New": 2,
+    "NorthernGhale": 1,
+    "Nyishi": 2,
+    "OSi": 75,
+    "Parji": 10,
+    "Pengo": 28,
+    "Phal": 130,
+    "Pr": 2,
+    "Psht": 814,
+    "Puroik": 8,
+    "Rabha": 1,
+    "Rj": 1,
+    "Sartang": 95,
+    "Sherdukpen": 130,
+    "SouthernGhale": 1,
+    "SouthernYamphu": 1,
+    "Tagin": 11,
+    "Tamil": 2,
+    "Telugu": 83,
+    "Ths": 1,
+    "Toda": 29,
+    "Tshangla": 257,
+    "Tulu": 106,
+    "VB": 12,
+    "WK": 33,
+    "Wg": 10,
+    "Yamphu": 2,
+    "amri_karbi": 175,
+    "as": 20,
+    "bagheli_lakshman": 814,
+    "bagri_fatehabad": 9,
+    "bfu": 153,
+    "bundeli_atarra": 9,
+    "cih": 64,
+    "dhundari_badagaon": 3,
+    "dhundari_bamore": 2,
+    "eur": 93,
+    "had": 2,
+    "karbi": 639,
+    "ko": 237,
+    "kul": 448,
+    "kw": 392,
+    "lae": 256,
+    "lbf": 102,
+    "lhl": 71,
+    "mewari_bannoda": 1,
+    "mewari_basad": 1121,
+    "mewari_dholpura": 8,
+    "mewati_akera": 8,
+    "re": 191,
+    "sbu": 218
+  },
+  "affected_language_count": 93,
+  "forms_sha256": {
+    "before": "50352554e6068a37f4a2ba8a88b351f6b0fe4c82ce0d343055d4ef4840eb2330",
+    "after": "b08eb1f0e04777ff8a204b013829d5a3c7cdbde4a54665fd948256ed223bfd28"
+  },
+  "other_tracked_cldf_files": {
+    "Wordlist-metadata.json": {
+      "before_sha256": "7b2616e1ca1c0f541d95ecab39c3b4ce01687abf9d503cd106e005193db6104b",
+      "after_sha256": "7b2616e1ca1c0f541d95ecab39c3b4ce01687abf9d503cd106e005193db6104b"
+    },
+    "alignments.csv": {
+      "before_sha256": "3f5068c8f3ec21a8b7a8207542fec6fc59dda3d9b00a7707642531d03391c561",
+      "after_sha256": "3f5068c8f3ec21a8b7a8207542fec6fc59dda3d9b00a7707642531d03391c561"
+    },
+    "comparisons.csv": {
+      "before_sha256": "a63c9f8a1ca22ace29fba238d7340891f04a84e60c66845b31e00f707862c3b1",
+      "after_sha256": "a63c9f8a1ca22ace29fba238d7340891f04a84e60c66845b31e00f707862c3b1"
+    },
+    "concepts.csv": {
+      "before_sha256": "7058160e428282c3c7aa62d5349f260c507ce30f6c19287cf9f9b85f22a750d8",
+      "after_sha256": "7058160e428282c3c7aa62d5349f260c507ce30f6c19287cf9f9b85f22a750d8"
+    },
+    "dialects.csv": {
+      "before_sha256": "7746df79f6a7d7aac9749740d3337b6da59049e25fb10e98be2e295a9d398fa3",
+      "after_sha256": "7746df79f6a7d7aac9749740d3337b6da59049e25fb10e98be2e295a9d398fa3"
+    },
+    "edges.csv": {
+      "before_sha256": "ea578183f8bd029520af6921924c29b9d014aff68a73ff29b8a1e1cd63652de0",
+      "after_sha256": "ea578183f8bd029520af6921924c29b9d014aff68a73ff29b8a1e1cd63652de0"
+    },
+    "entry-texts.csv": {
+      "before_sha256": "17b99788b7d8784078a31b83285e2468cd58efc996138ed84fc8cb1232e2ee74",
+      "after_sha256": "17b99788b7d8784078a31b83285e2468cd58efc996138ed84fc8cb1232e2ee74"
+    },
+    "form-id-aliases.csv": {
+      "before_sha256": "f8f6a5f9cdd93a041ec7e235e1f3ccbaad2f6b0aa7ba4e918c1f30c2cc5e926c",
+      "after_sha256": "f8f6a5f9cdd93a041ec7e235e1f3ccbaad2f6b0aa7ba4e918c1f30c2cc5e926c"
+    },
+    "form-source-keys.csv": {
+      "before_sha256": "6f3555e3088bd64814edc6940ac6a00770aa7dbc898e31b69a7828693f25489d",
+      "after_sha256": "6f3555e3088bd64814edc6940ac6a00770aa7dbc898e31b69a7828693f25489d"
+    },
+    "form_concepts.csv": {
+      "before_sha256": "73ef570d30573814ffaeb6d0045c0891812be92eae8358dcf9a8e01bae0a6549",
+      "after_sha256": "73ef570d30573814ffaeb6d0045c0891812be92eae8358dcf9a8e01bae0a6549"
+    },
+    "languages.csv": {
+      "before_sha256": "740f3c29a7dd1bf42b17b8875e00f77d7aea635472b1124792a49222f7365260",
+      "after_sha256": "740f3c29a7dd1bf42b17b8875e00f77d7aea635472b1124792a49222f7365260"
+    },
+    "merges.csv": {
+      "before_sha256": "0bb7fe41714adc5c319bd5c772b96a3603f8bde2068969ef17504d065361806c",
+      "after_sha256": "0bb7fe41714adc5c319bd5c772b96a3603f8bde2068969ef17504d065361806c"
+    },
+    "pdr-headword-audit.csv": {
+      "before_sha256": "1cc46f3ee5215bf97e28df729a1d5f15bf7b8ef307f249ea9f0e660f3bed90e0",
+      "after_sha256": "1cc46f3ee5215bf97e28df729a1d5f15bf7b8ef307f249ea9f0e660f3bed90e0"
+    },
+    "references.csv": {
+      "before_sha256": "2965f1dce82c8a6573a4149db921b4e6a4868382c494d159a7cb2353cffeb97b",
+      "after_sha256": "2965f1dce82c8a6573a4149db921b4e6a4868382c494d159a7cb2353cffeb97b"
+    },
+    "sources.bib": {
+      "before_sha256": "30beb6b2096d77710c4d319e1fece929a32fc566c373627e8b9490ecee6f1196",
+      "after_sha256": "30beb6b2096d77710c4d319e1fece929a32fc566c373627e8b9490ecee6f1196"
+    }
+  },
+  "ignored_diagnostic_review": {
+    "path": "cldf/forms-legacy.csv",
+    "gitignore_evidence": ".gitignore:11:cldf/forms-legacy.csv\tcldf/forms-legacy.csv",
+    "generator": "unify_cldf.py:1206–1213; conditional --legacy-cols development cross-check",
+    "tracked": false,
+    "decision": "Exclude this exact ignored diagnostic from publication and final audit overlay; all16trackedCLDF artifacts remain subject to original strict comparison."
+  },
+  "focused_validation": {
+    "summary": ".......                                                                  [100%]\n7 passed in 4.73s",
+    "log_sha256": "bf0e9512c0bac10dfd5c4dc81f7de7c405cbab5efc41d23dacb220270563b07f",
+    "coverage": "generic cleanup exact tag union fixture and strict Malvi source/key/Original/gloss/dialect checks"
+  },
+  "full_delta_sha256": "5ec1dd1ac4da2220aeefa1e267786dd187760b4a98f2f90af481fd4762e528d8",
+  "original_comparison_sha256": "37f0ed1989466525b0dee3976af1f813f0940eadac97e6a0d877f3cec01e94d5",
+  "scope": "No lexical forms, IDs, glosses, sources, graph edges or source-key mappings changed. 10654rows gained existing input tags previously discarded when duplicate forms merged."
+}
