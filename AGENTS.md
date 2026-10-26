@@ -58,8 +58,15 @@ by `make all`. The stages, for when you need to run one by hand:
    build. Its committed `data/form-identities.csv` registry is
    identity state: do not regenerate or discard it during a re-ingestion. Rich importers' immutable
    `Entry_Key` values reach this pass through generated `cldf/form-source-keys.csv`.
-6. `align.py` — phonetic final-origin→child alignments → `cldf/alignments.csv`. Approximate/computed
-   layer, tuned for Indo-Aryan. Reads unified `Origin_ID` relationships, so it **must run last**.
+6. `align.py` — phonetic final-origin→child alignments → `cldf/alignments.csv` for every family
+   except Indo-Aryan (Dravidian, Munda, Nuristani, …). Approximate/computed layer. Reads unified
+   `Origin_ID` relationships, so it **must run last** (before `make_refs.py`).
+7. `sound_changes/derive.py` — Indo-Aryan: rule-based derivations. Runs each form's lect chain
+   (all lects in one file, `sound_changes/rules/chains.sc`, a lect's lines selected by `[…]` with the families as `%set`s; dialects without one borrow a sister chain via
+   `sound_changes/chain_borrow.tsv`) on its CDIAL headword and appends the composed alignment rows
+   (change = the rules that rewrote each column, `?` where the prediction and the attested form
+   still differ) to `cldf/alignments.csv`, plus `derivations.csv`, `sound_rules.csv`,
+   `sound_chains.csv`. Loans are not derived. Cached per chain in `../tmp/sound_changes/derive_cache/`.
 
 Then, in `../jambu-static`: `npm run db:transform` reads `../data/cldf` directly.
 
@@ -175,6 +182,12 @@ and **era** (a cited work also contributes Early-Vedic / Late-Vedic / Epic / Cla
 change clades (e.g. the "Early NIA" grouping of the Old {Punjabi, Bengali, Assamese, Maithili,
 Awadhi, Hindi, Marwari, Gujarati, Marathi, Sinhala} lects), edit the CSV directly. Clade **names**
 must match `../jambu-static/src/lib/clades.ts` + `cladeTree.ts`.
+
+`cldf/historical-languages.csv` is its hand-edited companion: every language that is not a living
+one (`Basis` = `attested` historical stage, `reconstructed`, or family/group `label`). jambu-static
+draws exactly these with the historical rhombus and never paints an atlas area for them; nothing is
+inferred from a name or clade, so add a row with any new Old/Middle/Proto language or ancient
+comparandum (`tests/test_historical_languages.py` checks the obvious cases).
 
 ## Shipping to prod
 

@@ -91,10 +91,10 @@ def test_unidentified_codes_are_transcribed_but_never_guessed_or_installed():
 
 def test_installed_rows_preserve_diacritics_variants_and_non_etymological_groups():
     rows = form_rows()
-    assert len(rows) == 4458
+    assert len(rows) == 4459
     assert {len(row) for row in rows} == {15}
-    assert Counter(row[0] for row in rows) == Counter(kw=2160, Kodaku=2298)
-    assert len({row[14] for row in rows}) == 18
+    assert Counter(row[0] for row in rows) == Counter(kw=2161, Kodaku=2298)
+    assert len({tag for row in rows for tag in row[14].split() if tag.startswith('dialect:')}) == 18
     assert all(row[2] == row[5] and unicodedata.normalize("NFC", row[2]) == row[2] for row in rows)
     assert all(row[1] == row[4] == row[8] == row[9] == "" for row in rows)
     assert all("non-etymological" in row[6] for row in rows)
@@ -103,6 +103,7 @@ def test_installed_rows_preserve_diacritics_variants_and_non_etymological_groups
     assert by_key["silkorwakodaku2022:i001:S:f1"][2] == "d̪ejaɲ"
     assert by_key["silkorwakodaku2022:i104:c:v1"][2] == "koda hɔpoɲ"
     assert by_key["silkorwakodaku2022:i104:c:v2"][2] == "koɖi hɔpoɲ"
+    assert by_key["silkorwakodaku2022:i183:K:f2:v2"][2] == "hʊʔ ʌkʌrɪja"
     assert not any("/" in row[2] for row in rows)
 
 
@@ -119,9 +120,9 @@ def test_shared_profile_language_dialect_and_bibliographic_registration():
 
     errors = io.StringIO()
     parsed, stats = parse_file(str(INSTALLED), errors)
-    assert stats == {"converted": 4458, "for_conversion": 4458}
+    assert stats == {"converted": 4459, "for_conversion": 4459}
     assert errors.getvalue() == ""
-    assert len(parsed) == 4458
+    assert len(parsed) == 4459
     assert all(row.ipa == row.old_form and "�" not in row.form for row in parsed)
 
     with (ROOT / "cldf/languages.csv").open(encoding="utf-8", newline="") as stream:
@@ -144,8 +145,8 @@ def test_shared_profile_language_dialect_and_bibliographic_registration():
     bib = (ROOT / "cldf/sources.bib").read_text(encoding="utf-8")
     assert f"@techreport{{{SOURCE_KEY}," in bib
     record = bib.split(f"@techreport{{{SOURCE_KEY},", 1)[1].split("\n}", 1)[0]
-    assert "every one of the 2,900 printed response rows was visually checked" in record
-    assert "No ambiguous, clipped, illegible, or OCR-derived form is installed" in record
+    assert "Whole-report coverage: 6,864 rows" in record
+    assert "Source conflicts and uncertain alignments are explicitly recorded" in record
 
 
 def test_manifest_pins_source_and_review_counts():

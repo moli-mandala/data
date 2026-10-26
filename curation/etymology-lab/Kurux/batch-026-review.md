@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Kurux · Dravidian surveys, 2026-09-21 · batch 026. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Kurux | Proposed etymology | Evidence |
+|---|---|---|---|
+| 121 | **pɔīr̯ī** ‘morning’ | Proposed reflex of [**DEDR 3805**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=340) | DEDR3805 explicitly gives Kurux pairī morning and pahpahrnā to dawn. Survey pɔīrī retains the diphthong with a more rounded first component; this is a same-language comparative proposal. The longer pāīrī-bīrī response is excluded pending analysis of its second member. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (2 records.) |
+| 122 | **ījas** ‘stand’ | Proposed reflex of [**DEDR 3675**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=325) | DEDR3675 gives Kannada nil/nillu with nind- stem, Kodagu nill- with nipp-/nind-, Malayalam nilkka, Parji nilp-, Gondi imperative nillā and Kurux ijnā (ijjas) stand. Selected survey forms retain these ordinary stem/inflectional variants, including Kurux ījas and Badaga nippə; no extra auxiliary or causative analysis is inferred. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (4 records.) |
+| 123 | **xhāñjpā** ‘fruit’ | Proposed reflex of [**DEDR 1459**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=136) | DEDR1459 explicitly gives Kurux xańjpā/xańjkā fruit. Survey xhāñjpā preserves the same stem with its source initial-cluster and vowel-length notation; this is not the Indo-Aryan phal family. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (2 records.) |
+| 124 | **nɛlɛ** ‘tomorrow’ | Proposed reflex of [**DEDR 3656**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=323) | DEDR3656 explicitly gives Tamil nāḷai/nāḷaikku, Malayalam nāḷa, Kannada nāḷe, Kodagu nāḷe/nāḷēkï, Gondi nāṛ(i) and Kurux nelā tomorrow. Selected survey forms preserve the day-stem temporal/locative endings, including nāḷɛykɨ and regional vowel/lateral variants; these are ordinary inflected temporal forms. Opaque contractions and multiword temporal responses are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 125 | **ṭɔṭxa** ‘mango’, **ṭatxa** ‘mango’ | Proposed reflex of [**DEDR 2943**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=256) | DEDR2943 gives Kurux ṭaṭxā mango and Malto ṭaṭge. Survey ṭɔṭxa/ṭatxa-type responses preserve the same-language mango stem with vowel notation retained. Slash-separated tetke/tetxe and the uncertain tatk?a reading remain unresolved. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (8 records.) |
+
+Proposed assignment rows: **17**. Affected records: **17**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-026.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Kurux/batch-026.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

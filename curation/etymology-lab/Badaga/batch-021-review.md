@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Badaga · Dravidian surveys, 2026-09-21 · batch 021. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Badaga | Proposed etymology | Evidence |
+|---|---|---|---|
+| 101 | **bari** ‘roof’ | Proposed reflex of [**DEDR 5264**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=475) | DEDR5264 explicitly gives Irula bärī and Alu Kurumba bari thatched roof, with Toda pary roof. Survey neighbouring Badaga bari roof compares with the attested Nilgiri roof noun in the bind/cover family. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 102 | **ghāśu** ‘potato’ | Proposed reflex of [**DEDR 1578**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=145) | DEDR1578 gives Tamil kiẓaṅku esculent/bulbous root, explicitly including potato, and Kannada geṇasu/geẓasu, Tulu kereṅg- and related tuber names. These bare survey kaŋgɨ/kalaŋgɨ/gelusum/ghāśu potato responses compare with that root/tuber family. Botanical application to potato is retained, without equating potato and yam as species. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 103 | **həvvə** ‘mother’ | Proposed reflex of [**DEDR 273**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=25) | DEDR273 explicitly gives Kota av and Toda af/afuf mother, alongside Kannada avva. Survey Badaga həvvə, Kota au and Toda avopʰ mother preserve corresponding Nilgiri maternal forms and their source labial/aspirated notation. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 104 | **kūśu** ‘child’ | Proposed reflex of [**DEDR 1873**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=171) | DEDR1873 explicitly gives Kannada kūsu infant/babe and Toda kūx girl/daughter. Survey Irula kusu, Badaga kūśu and Sholaga kōcu child compare with the Nilgiri/southern infant noun; the questioned Gondi aunt comparison is not used. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 105 | **śinnə̄** ‘gold’ | Proposed reflex of [**DEDR 2596**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=225) | DEDR2596 gives Tamil ciṉṉam gold coin, Kota cinm gold, Toda sin gold/ear-ring and Kannada/Tulu cinna gold. Survey Nilgiri/southern cinnā/śinnā/sīnnā/sinum forms retain this specific gold noun, including Kota final nasal expansion; no connection to the homonymous small adjective is proposed. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+
+Proposed assignment rows: **5**. Affected records: **5**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-021.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Badaga/batch-021.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

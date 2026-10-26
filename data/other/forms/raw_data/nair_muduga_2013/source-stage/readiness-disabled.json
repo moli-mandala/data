@@ -1,0 +1,52 @@
+{
+  "status": "disabled source-stage scaffold and isolated transaction tests only; no scholarly acceptance or real installation",
+  "rows": 204,
+  "audit_units": 128,
+  "physical_witness_slots": 229,
+  "references": [
+    "nair2013muduga",
+    "rajendran1986muduga"
+  ],
+  "target_assets": [
+    "new source CSV",
+    "new YAML with actual importer command",
+    "accepted audit",
+    "one source-qualified Muduga lect",
+    "two bibliography records"
+  ],
+  "approval": "installation_approved false; final files/baselines pins intentionally empty pending independent root lexical acceptance",
+  "staged_audit": "All128 accepted_for_source_stage false; original raw audit preserved; acceptance fields may be finalized only after review",
+  "existing_sources": "109+42 rows and all151 immutable keys compared exactly before any real transaction; no baseline overlap allowed",
+  "canonical_provenance": "Staged bibliography references installed dated CSV and installed-audit, main source provenance/source etymology; reported Rajendran auxiliary no direct lexical claims",
+  "transaction_checks": {
+    "passed": 9,
+    "log": "source-stage/installer-tests.log",
+    "isolated": true
+  },
+  "guards": [
+    "Disabled approval",
+    "Input hash drift",
+    "Pending lexical audit status",
+    "Legacy source drift",
+    "Unchanged durable identity",
+    "Five-target staged journal/resume",
+    "Own-asset repeat no-op",
+    "Later unrelated shared contribution preservation",
+    "Installed asset drift rejection",
+    "False/noOCR and etymology flags verified independently of pinned hashes"
+  ],
+  "original_freeze_sha256": "70f3963e2f3ba3e1da27f801c1226b3fde2f48b0102454fc0805baf86646197f",
+  "frozen_inputs_unchanged": true,
+  "files_sha256": {
+    "import_source.py": "545c1d20926766e72eb76cf4185147c29bedddeadad194b1a72e58b0cf6af0e2",
+    "source-stage/20260927-nair-muduga.yaml": "74ebd6464f06beb6c9e7ceb88c3c7a0a69063ca2050566c28aba4f2405a5214b",
+    "source-stage/accepted-audit.jsonl": "45260f3b04b6e06c984f066cd637f5c55118f3663cbbcfb956aebaf2c208c6fd",
+    "source-stage/references.bib": "62571865dc7a04a959fe038fbdee307346376ad1683718044c13654eca2bfa30",
+    "source-stage-authorization.json": "7665fcef11e5d46da237e8a3a03e3a00f9bd323a4e0f9f4df2da03a0a4acb321"
+  },
+  "deferred": [
+    "Independent lexical acceptance and exact final authorization",
+    "Canonical transaction and actual installed-parser/config checks",
+    "Full compiled/build/browser gates"
+  ]
+}

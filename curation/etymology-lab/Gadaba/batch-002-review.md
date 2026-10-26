@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Gadaba · Dravidian surveys, 2026-09-21 · batch 002. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Gadaba | Proposed etymology | Evidence |
+|---|---|---|---|
+| 6 | **vande** ‘finger’, **vandɛ** ‘finger’, **vende** ‘finger’ | Proposed reflex of [**DEDR 5409**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=490) | DEDR 5409 explicitly gives Tamil/Malayalam viral, Kannada beraḷ, Kodagu bera, Kota verl, Kolami vende, Parji/Gadaba vanda/vande and Konda ṛeska ‘finger’. The selected stems match these diagnostic lateral or -nd- series; aṅguli- and boṭṭa-type responses are separate families. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (7 records.) |
+| 7 | **goru** ‘fingernail’, **gor** ‘fingernail’ | Proposed reflex of [**DEDR 561**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=55) | DEDR 561 gives Tamil/Malayalam ukir, Kannada/Tulu ugur(u), Telugu/Konda gōru, Parji gēri and Kodagu oy ‘nail/claw’. The article expressly corrects Kurukh oṛox to orox; rhotic-nail responses requiring that transcription judgment are held separately, as are Sanskrit nakha loans. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (7 records.) |
+| 8 | **kal** ‘leg’, **kalu** ‘leg’, **kālu** ‘leg’ | Proposed reflex of [**DEDR 1479**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=138) | DEDR 1479 gives Tamil kāl, Kannada/Telugu kālu, Kota kāl, Toda kōl, Parji kēl, Gadaba/Gondi/Konda kāl ‘leg, foot’. Exact elicited leg/foot senses are preserved; longer body-part compounds and Kurukh xeḍ are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (3 records.) |
+| 9 | **tokkā** ‘skin’, **tokka** ‘skin’ | Proposed reflex of [**DEDR 3559**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=312) | DEDR 3559 explicitly groups Tamil/Malayalam tōl/toli/tokku, Kannada tōl/togal/toval, Telugu tōlu/tokka and Gondi tōl/tolka ‘skin, hide, rind’. These simple skin forms fit the printed family; carma-type Indo-Aryan loans are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (7 records.) |
+| 10 | **mɛnu** ‘body’ | Proposed reflex of [**DEDR 5099**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=461) | DEDR 5099 lists Tamil/Malayalam mēl, Telugu/Kolami mēnu/mēn, Parji mēn, Gadaba mēnu and Gondi mēndul/mēndur ‘body’. These match the selected stems; mey belongs to the separately cross-referenced entry 5073, and oṭal/uṭampu forms require a different parent. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (7 records.) |
+
+Proposed assignment rows: **31**. Affected records: **31**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-002.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Gadaba/batch-002.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

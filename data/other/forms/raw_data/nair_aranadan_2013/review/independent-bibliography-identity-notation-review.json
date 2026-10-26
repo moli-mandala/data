@@ -1,0 +1,97 @@
+{
+  "status": "independent source review complete; proposals only",
+  "reviewer": "asur_finish",
+  "source_sha256": "4d2588987dab5d15c62ecc95330ccf7e925a9bce80d08068b91ca3f48c8cc5af",
+  "original_pages_visually_reviewed": [
+    1,
+    9,
+    10,
+    11
+  ],
+  "render_evidence": "notation-render-manifest.json and ../scope/render-manifest.json",
+  "applicable_addenda": [
+    "survey/comparative source",
+    "legacy-font transcription"
+  ],
+  "attribution": {
+    "primary_author": "Ravi Sankar S. Nair",
+    "primary_title": "Tribal Languages of Kerala",
+    "publication": "Language in India 13(7), July 2013, ISSN 1930-2940",
+    "chapter_pages": "9–11",
+    "basis": "Title page and all chapter footers name Nair. The preface describes a preliminary compilation extended with incomplete fieldwork in some languages; it does not identify all Aranadan forms as original field elicitation.",
+    "reported_authority": "Usha, S. 1992. Keralathile Aranadanmar (Aranadars of Kerala). Vijinana Kairali, Kerala Bhasha Institute, Trivandrum 23-8, August, 1992.",
+    "authority_scope": "Chapter bibliography only. Usha is not stated to be the chapter author. No occurrence-level mapping or original-article collation is asserted.",
+    "authority_uncertainty": "Retain the printed 23-8 string in a note rather than guessing a volume/issue interpretation.",
+    "licence": "No explicit reuse licence established by this review; publisher availability is not an open-licence claim. Do not commit the full source PDF."
+  },
+  "identity_routes": [
+    {
+      "source_label": "Aranadan",
+      "language": "Aranadan",
+      "glottocode": "aran1261",
+      "new_dialect": false,
+      "evidence": "Chapter heading p9; existing registry record. Malayalam/Kannada similarities are comparisons, not a language merger."
+    },
+    {
+      "source_label": "Malayalam / Ma.",
+      "language": "Malayalam",
+      "glottocode": "mala1464",
+      "evidence": "Explicit comparison headings and parenthetical labels pp9–10."
+    },
+    {
+      "source_label": "Ka.",
+      "language": "Kannada",
+      "glottocode": "nucl1305",
+      "evidence": "p10 explicitly labelled niinu.Ka. comparator; retain source abbreviation in audit."
+    }
+  ],
+  "locality_policy": "p9 Kerala/Tamil Nadu distribution and listed settlements describe the community. They do not establish separate lects or item-level elicitation sites. Preserve attributed distribution prose; no invented coordinates or site dialects.",
+  "notation": [
+    {
+      "raw": "U+F02C",
+      "count": 38,
+      "proposal": "U+0323 COMBINING DOT BELOW on the preceding letter; NFC allowed with exact raw code retained",
+      "evidence": "p9 enlarged l/l/t/r controls show isolated round lower dots. p10 r comparisons corroborate. This is glyph preservation, not inferred retroflex or rhotic phonetic interpretation."
+    },
+    {
+      "raw": "U+F019",
+      "count": 6,
+      "proposal": "U+0303 COMBINING TILDE on the preceding letter",
+      "evidence": "p9 enlarged e, n, a, a and o marks are visibly tildes. Preserve the n tilde and both a tildes in the I example; do not collapse doubled vowels."
+    },
+    {
+      "raw": "initial n with a drawn underline, absent from extracted text",
+      "proposal": "n plus U+0332 COMBINING LOW LINE, with a source-typography note",
+      "evidence": "p10 second-person nin, parenthetical Kannada niinu, and three initial niin expression tokens show an underline beneath initial n. Do not map to ñ or ṇ. Later niina tokens lack that visible underline in the inspected crop; do not harmonize."
+    },
+    {
+      "raw": "ŋ U+014B",
+      "proposal": "retain literal ŋ",
+      "evidence": "Source font text and original examples agree; no conversion to n or ng."
+    },
+    {
+      "raw": "aa/ee/ii/oo and literal g",
+      "proposal": "retain doubled vowels and g in Original; do not impose IPA length marks or script-g conversion",
+      "evidence": "No chapter transcription key warrants modern IPA normalization."
+    },
+    {
+      "raw": "source slash and affix boundaries",
+      "proposal": "preserve literal slash grouping and printed hyphen/dash in audit; expand only independently reviewed explicit alternatives",
+      "evidence": "naaji/naayi and puje/puye are explicit alternatives; suffixes and missing leading hyphen in atu must not be silently regularized."
+    },
+    {
+      "raw": "underlined l in Malayalam kooli/naali/pula, absent from extracted text",
+      "proposal": "l plus U+0332 COMBINING LOW LINE; keep distinct from dot-below l",
+      "evidence": "Independent original p9 image confirms a horizontal lower line beneath l in all three comparison cells. This is not the round dot below in the water/net controls."
+    }
+  ],
+  "source_claim_constraints": [
+    "p10 explicitly denies an inclusive/exclusive contrast: naam denotes a large group and yem a small group. Do not add inclusive/exclusive tags.",
+    "p10 nominal plural suffix has an animate restriction in Aranadan, contrasted with Malayalam; retain both source-qualified claims.",
+    "p9 prose says the i of Malayalam becomes y or j. Preserve the printed claim and any example discrepancy rather than silently replacing the letter from linguistic expectation.",
+    "Community names and feature comparisons do not independently supply Paniya/Adiya lexical forms.",
+    "Native is blank for this Roman-transcribed source. Do not claim a phonemic/IPA layer until a source-grounded profile policy is reviewed."
+  ],
+  "canonical_changes": false,
+  "installation_build_browser_gates": "Not run: independent source review only. Whole-source extraction is owned separately."
+}

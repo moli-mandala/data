@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Gondi · Dravidian surveys, 2026-09-21 · batch 050. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Gondi | Proposed etymology | Evidence |
+|---|---|---|---|
+| 226 | **seylal** ‘older sister’ | Proposed reflex of [**DEDR 2783**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=242) | DEDR2783 gives Gondi sēlāṛ sister as well as younger sister. Survey seylal elicited as older sister is a use of the general sister noun; the source age gloss is preserved, without asserting that the stem itself encodes older. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 227 | **iekka** ‘older sister’, **iekke** ‘older sister’, **akˑai** ‘older sister’ | Proposed reflex of [**DEDR 23**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=4) | DEDR23 explicitly gives Gondi akkā/akkal elder sister. Survey iekka/iekke/akai retains that same-language elder-sister stem with source initial-vowel/glide notation and ordinary endings. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (3 records.) |
+| 228 | **ninna** ‘yesterday’ | Proposed reflex of [**DEDR 3758**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=335) | DEDR3758 explicitly gives Kannada ninne and Gondi ninnē/ninne yesterday. These ninne/nenne/nenna/ninna/nanne survey responses retain the same yesterday stem with source vowel and ordinary final variants; larger clauses and Kannada menne are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 229 | **nine** ‘yesterday’, **ninˑe** ‘yesterday’ | Proposed reflex of [**DEDR 3758**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=335) | DEDR3758 explicitly gives Gondi ninnē/ninne yesterday. Survey nine is a same-language yesterday form with source nongeminate spelling retained; the longer nine(hanji) response needs independent constituent analysis. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (2 records.) |
+| 230 | **ne(n)d** ‘today’, **nīandu** ‘today’, **nīadu** ‘today’, **nedu** ‘today’, **nɛ̄nd** ‘today’, **nēdu** ‘today’ | Proposed reflex of [**DEDR 2920**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=253) | DEDR2920 explicitly gives Gondi nēnḍ/nēnḍu/nēr today, with ordinary nēṭ- case forms. These simple nēnḍ/niāndu/nēḍu responses preserve the same-language temporal stem and source nasal/vowel notation. Multiword or parenthesized additional lexical material is excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (6 records.) |
+
+Proposed assignment rows: **13**. Affected records: **13**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-050.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Gondi/batch-050.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

@@ -1,0 +1,32 @@
+{
+  "status": "pass: isolated dry-run guard and recovery review",
+  "reviewer": "rohru_finish, independent of installer author",
+  "sha256": {
+    "data/data/other/forms/raw_data/grierson_kui_1906/import_source.py": "d55164ff04b799500bf39b6cc918a4531a8ec9f65247eaf1c1c6c110e7d03d21",
+    "data/data/other/forms/raw_data/grierson_kui_1906/installer-review/test_installer_preflight.py": "0bd3b4294f44ccf87658a0ae0441004e147d630187f8399243b2d03e21324bd2",
+    "tmp/kui-specimens/installer-review-tests.log": "79e4ba00e63fc08d8d512c2fa4b1016cef741ad8e43a8c7970419d5fd5578dff"
+  },
+  "tests": 18,
+  "installation_executed": false,
+  "canonical_changes": false,
+  "coverage": [
+    "Approval/input and durable-identity drift rejected before writes.",
+    "Unrelated bibliography bytes and unique dialect header preserved; conflicting IDs rejected.",
+    "Missing terminal dialect newline repaired in staged output.",
+    "All six partial-write states recover in read-only dry-run, including after bibliography append.",
+    "Exact six-target receipt/journal coverage; corrupt staged bytes and unexpected canonical edits rejected.",
+    "Complete receipt idempotent; interrupted temporary receipt does not mask validated journal."
+  ],
+  "resolved_findings": [
+    "Durable staged-assets and transaction journal added before canonical writes.",
+    "Dialect append now inserts absent newline.",
+    "Receipt requires exact approved target set.",
+    "Final receipt uses temporary file and atomic replacement."
+  ],
+  "limits": [
+    "Tests simulate partial transaction states inside Jambu scratch; no actual --install run.",
+    "Source/editorial acceptance and final approved input pins remain parent responsibilities.",
+    "No full CLDF/database build, compiled graph, browser QA, or publication performed."
+  ],
+  "remaining_material_findings": []
+}

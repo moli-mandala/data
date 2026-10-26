@@ -1,0 +1,11 @@
+{
+  "status": "historical preliminary fixture receipt is stale for current outside census; conversion checks are not failing",
+  "reported_by": "/root",
+  "input": "outside-review/scope-decisions.json",
+  "fixture_pinned_sha256": "709ecd3dba7b0fea695e030c1ca9bf61a1a42bd08d6b5a3c68c26bf847455aec",
+  "current_sha256_observed": "d53cb8d3e2152d3d18bb9a08e207c03c3f13372754ba6b89558fdd6bc03ed291",
+  "root_rerun": "Two conversion tests pass; pinned-input test correctly rejects changed outside census. Log tmp/kolami-root-preliminary-profile-tests.log retained.",
+  "historical_report_scope": "The 3-pass receipt remains evidence only for its recorded prior input hashes; it is not current-source acceptance.",
+  "action": "Keep prior corpus/profile/status/review immutable. Refresh in a new revision after outside census closes and owner literal corrections arrive; do not silently replace pins.",
+  "boundary_fixture_scope": "Separate actual-parser boundary fixture consumes only the four unchanged specimen first readings and the unchanged preliminary profile; outside census is not its input."
+}

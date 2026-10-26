@@ -1,0 +1,35 @@
+{
+  "status": "Precise staged correction actualparserPASS; no canonical writes",
+  "checks": {
+    "NFC": {
+      "rows": 1832,
+      "all15fields_exact": true,
+      "ordered_keys": true,
+      "errors": 0,
+      "corrected_key_original_and_display": "amd",
+      "unintended_splits": 0
+    },
+    "NFD": {
+      "rows": 1832,
+      "all15fields_exact": true,
+      "ordered_keys": true,
+      "errors": 0,
+      "corrected_key_original_and_display": "amd",
+      "unintended_splits": 0
+    }
+  },
+  "draft_sha256": "41fdd7d2eca4ca409d859e619b0e2877fa53039bd9a6a8eab83359c906c14543",
+  "csv_sha256": "a37c47777742b845818963a724173014d84adb111f94e46e165a829447adf066",
+  "rows": 1832,
+  "unchanged_other_raw_records": 1831,
+  "key_order_unchanged": true,
+  "parser_sha256": {
+    "make_cldf.py": "1a1ded9eff5b8607174aa37981efb4358824be8ffffdfaa7128c0cea53dac5a8",
+    "source_meta.py": "1c3147843d6c9f2489155b633db55fd1374e6f3b1a59b7051a3642fdbd2c7a4c"
+  },
+  "deferred": [
+    "Root plan activation",
+    "Guarded source-stage correction transaction",
+    "All full-build/compiled/browser gates"
+  ]
+}

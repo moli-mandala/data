@@ -1,0 +1,12 @@
+{
+  "status": "accepted full653 profile/display coverage with explicit production boundary policy",
+  "rows": 653,
+  "NFC_NFD_cases": 1306,
+  "enumerated_display_deltas": 177,
+  "explicit_boundary_trims": 103,
+  "policy": "Lowercase, ṅ/Ṅ→ŋ, and existing production boundary trimming of terminal comma/semicolon/full stop (configured hyphen preservation remains active). Original retains exact source punctuation; all quantities, raised letters, internal hyphens, nasal marks and script witnesses remain protected. No row in the enumerated changes has a boundary digit removed. Phonemic is blank; this is not an IPA analysis.",
+  "verification": "Root evaluates every actual display delta independently against this rule; real parser coverage supplies unchanged rows and NFC/NFD results. No changed display outside this exact rule is accepted.",
+  "profile_sha256": "cb2002cb65ed17c62510cb9a98751aebe04587d3d6dc75a368b8e11a1150a5ff",
+  "parser_report_sha256": "9c03e13284bcdeaf9202c106787174af3b650b3e1ac4438e1a0aebb10d616a0b",
+  "canonical_and_compiled_gates": "Separate; no DB or full CLDF build authorized."
+}

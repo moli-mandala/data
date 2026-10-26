@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Koraga · Bhat 1971 Koraga records, 2026-09-25 · batch 106. Pending user review; autonomous research continues.
+
+| # | Koraga | Proposed etymology | Evidence |
+|---|---|---|---|
+| 311 | **megi** ‘younger brother’ | Proposed reflex of [**DEDR 5054**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=457) | DEDR 5054 full article (p. 457) gives Kor. (M.) megi , (T.) megge younger brother; (M. T.) megdi younger sister. Bhat megi “younger brother” is the same cited Koraga form and sense; its original dialect:Koraga:mudu:Mudu uncertain dialect tag is retained. The article is used as family classification, not an independent second attestation of Bhat. (1 record.) |
+| 312 | **megge** ‘younger brother’ | Proposed reflex of [**DEDR 5054**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=457) | DEDR 5054 full article (p. 457) gives Kor. (M.) megi , (T.) megge younger brother; (M. T.) megdi younger sister. Bhat megge “younger brother” is the same cited Koraga form and sense; its original dialect:Koraga:tappu:Tappu uncertain dialect tag is retained. The article is used as family classification, not an independent second attestation of Bhat. (1 record.) |
+| 313 | **mere** ‘breast’ | Proposed reflex of [**DEDR 4985**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=448) | DEDR 4985 full article (p. 448) gives 4985 Ta. mulai woman's breast, teat. Ma. mula id., udder. Ko. mel breast; mol id. (in a proverb; < Badaga), pointed end of anvil. To. mïs̱ nipple, teat, breast, udder; mil breast ( TS , p. 8 Bhat mere “breast” matches Lindgren Koraga mere “breast” in form and sense; this cross-source match is a candidate lead, with the full DEDR article defining the family. Both source identities and dialect tags are preserved. (1 record.) |
+| 314 | **moṭṭe** ‘egg’ | Proposed reflex of [**DEDR 4939**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=442) | DEDR 4939 full article (p. 442) gives 4939 Ta. muṭṭai egg, ovum; world as a globe; muṇṭai egg. Ma. muṭṭa, moṭṭa id. Ko. moṭ id. To. muṭy id. Ka. moṭṭe id. Koḍ. muṭṭe id., testis. Tu. moṭṭe egg. DED 4048. Bhat moṭṭe “egg” matches Lindgren Koraga moṭṭe “egg” in form and sense; this cross-source match is a candidate lead, with the full DEDR article defining the family. Both source identities and dialect tags are preserved. (1 record.) |
+| 315 | **moṇṇɨ** ‘soil’ | Proposed reflex of [**DEDR 4666**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=413) | DEDR 4666 full article (p. 413) gives 4666 (a) Ta. maṇ the earth, world, earth as an element, dust, dirt, dry ground, soil, land, lime-mortar. Ma. maṇ, maṇṇu earth (as one of the five elements), soil, mud, mudwall, wall, earth a Bhat moṇṇɨ “soil” matches Lindgren Koraga moṇṇɨ “earth (soil)” in form and sense; this cross-source match is a candidate lead, with the full DEDR article defining the family. Both source identities and dialect tags are preserved. (1 record.) |
+
+Proposed assignment rows: **5**. Affected records: **5**. Relation kinds: **reflex**. Multi-part responses retain their source order.
+
+Exact persistent IDs and complete source records: [batch-106.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Koraga/batch-106.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../koraga-bhat-20260925/research-holds.json). No new lexical material or donor nodes are introduced.

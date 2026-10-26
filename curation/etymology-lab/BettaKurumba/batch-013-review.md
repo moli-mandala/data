@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Betta Kurumba · Dravidian surveys, 2026-09-21 · batch 013. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Betta Kurumba | Proposed etymology | Evidence |
+|---|---|---|---|
+| 61 | **yaddi** ‘heart’ | Proposed reflex of [**DEDR 827**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=81) | DEDR827 gives Kannada ede/edde chest/breast/courage and Tulu ede heart/chest, with Telugu eda heart. Kudiya ede, Badaga etə and Betta Kurumba yaddi are proposed comparative heart/chest-family variants, preserving initial glide, dental voicing and source sense. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 62 | **yeḷuvā** ‘bone’ | Proposed reflex of [**DEDR 839**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=81) | DEDR839 gives Malayalam eluvu/eluṅku, Kannada elu/eluvu/elugu/emike/emake and Toda eḷf bone. Selected survey yeḷuvā/eḷuku/yelɨyɨ/yemke/yāmukɨ/yellu and Toda eṛḷf are comparative variants preserving source initial glides, vowels and lateral notation; the śelugū form is excluded pending an explanation of its initial consonant. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 63 | **naṭṭru** ‘blood’ | Proposed reflex of [**DEDR 3748**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=335) | DEDR3748 gives Kannada nettar(u)/nettara/nettra, Tulu netterů and Gondi nettur/netur/nattur blood. Selected netter-/nettr-/naṭṭr-type survey responses preserve that stem with vowel variation or syncope; opaque Gondi naktur/naktar responses are excluded pending stronger consonant evidence. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 64 | **uddu** ‘long’ | Proposed reflex of [**DEDR 621**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=60) | DEDR621 gives Irula uddya long, Kannada udda/uddi/uddu length or height, Kodagu uddatë long and Tulu udda long. Survey uddā/vuḍḍā/uddu/utta/uddaṭā long preserve that family, including the initial glide and ordinary final-vowel or adjectival variation; longer opaque elicitation responses are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 65 | **solḷe** ‘mosquito’ | Proposed reflex of [**DEDR 2705**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=235) | DEDR2705 explicitly gives Kannada soḷḷe mosquito beside Tamil cuḷḷāṉ a kind of mosquito. Survey soḷḷe/solla/salla/colla retain that southern mosquito stem with vowel, sibilant and lateral notation preserved. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+
+Proposed assignment rows: **5**. Affected records: **5**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-013.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/BettaKurumba/batch-013.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

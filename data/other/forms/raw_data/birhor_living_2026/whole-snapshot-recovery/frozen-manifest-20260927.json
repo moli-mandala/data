@@ -1,0 +1,53 @@
+{
+  "status": "frozen proposal pending independent whole-output review; no installation",
+  "files": {
+    "proposal.csv": "22b84c90646a2da1f93d05a05cd0ffe98a75b2d05006184d077004e99e0c8522",
+    "proposal-audit.jsonl": "00a7ca55915259dacc85c261117d610b5ea57ff72777e0db82d10920e5536509",
+    "proposal-profile.txt": "c59528c51794ee3e69141f712acbca4c9e7eecf84ccbc627b346ed1d4d079358",
+    "20260927-birhor-living.yaml": "17aac0fc1204c3c9c70b0c9ec1597418dbaff0e39c7d572f6ed2bc436d8462a2",
+    "proposal-sources.bib": "8ee5744381341ec601577506d658512102ed65d4fcbf557b9f154819e6c157e3",
+    "proposal-summary.json": "471dcba82c7d4779044cba9cc490e70c1ff0396cf5a51ac373b441586b474bea",
+    "full-field-coverage-20260927.json": "7025d7535c54b74d62fe1b8fd676db1fa326cbc973cbc665dbf51817e47e7853",
+    "whole-profile-review-20260927.json": "57e71b958c137e8a0e7b65bf4e86d8ea0ba917b917a040d44dc113bf236e9d58",
+    "head-and-grammar-review-packet-20260927.json": "33f1a72c963a2b6eb98a0c2b25082881878eb6d48b5f5baf5407ecd5a74ac647",
+    "head-gloss-scope-review-20260927.json": "ca241f9c45db8a6027a27a16851d0b7b51ed8ea8544eadd50570208df238c764",
+    "root-head-and-grammar-review-20260927.json": "29807aadc78b5279d69252ce333623093c74acf218ac81ebbe90f9b09b718b7b",
+    "root-structured-morphology-review-20260927.json": "a4d6c616e707f3724118afa1bbf2581df2f1765cd7312b50824a5b4e96d80469",
+    "root-conventional-label-attribution-review-20260927.json": "04f49c110ade034bf50f70ee5f9344afdff014a547d2829fabd938362734ba79"
+  },
+  "builder_sha256": "3d555a4c64cec1fcbc389069e9ebdb28ee3320566c44b25e1afdd31d1627c4ea",
+  "snapshot_sha256": "9b377c42300e406c10d1571dab998a7ea7f924be8cf912e2b98ecaf0a2bae666",
+  "focused_tests": {
+    "result": "7 passed",
+    "duration_seconds": 0.79,
+    "test_file": "tests/test_birhor_living_whole_source.py",
+    "test_sha256": "f4b1d650a561e7d487f298604ee66a612d8fbed6d54a8e5e1bc82a41600ada69"
+  },
+  "review_inputs": {
+    "annotation-review-21-30-20260927.jsonl": "280f05a7ca378dc2a214c14988b613e57810d1182f2027a5d643cdfc5f7cf483",
+    "annotation-review-61-70-20260927.jsonl": "40b107d01154e6dff27430552826d5b319c2c622a91d14f2ea9ac278474328ed",
+    "annotation-review-41-50-20260927.jsonl": "a54b4781db8b0c7a6b453003586170c770aa6562158f3c2d1c32426e799f9793",
+    "annotation-review-11-20-20260927.jsonl": "6ef7a4a8841a7618adddc666d6466329a7754a3c93305c9eb0e6e2e8fb3d073b",
+    "annotation-review-81-90-20260927.jsonl": "c7e3df6244a7ae7506930b2e2857a77f41a1388cf900b399b0b6a93457bf6544",
+    "annotation-review-51-60-20260927.jsonl": "cd0c34b9129b6eebf8d8486e57184bc0e933a618f9bb82b8c147a531343b6b37",
+    "annotation-review-91-98-20260927.jsonl": "acc15fb63957db71bfabb292f59865f14bbe31901e7b3a2cb4071feb83fdd684",
+    "annotation-review-31-40-20260927.jsonl": "1a1df0782f9cd33d8b0ae7ad14004fa702dab0becaa8c4a9b6b36d1a6a322fcd",
+    "annotation-review-71-80-20260927.jsonl": "306a20a0fe430b49e060416f616b110a3cee6653e0d3262393683ebe0ec37e11",
+    "annotation-review-first10-20260927.jsonl": "63cc69da2a4af27eb792809416838c6bf22e363cf66a64570a0f36e04b7eb091"
+  },
+  "schema": {
+    "csv": "15 source columns; Entry_Key column11, Variant_Of12, Tags15 (one-based)",
+    "audit": "3795 JSONL units; source_unit_key, section, entry_keys after reuse, pre_reuse_entry_keys; structured-head raw entry/senses/source_roles or source-note decision with exact original span and context. Source notes available through entry_id and raw head."
+  },
+  "rows": 3480,
+  "raw_head_records": 2746,
+  "exact_note_reuses": 610,
+  "prior_preparation_keys_preserved": 3100,
+  "deferred": [
+    "independent whole-output approval",
+    "canonical source-stage install",
+    "full CLDF/database build",
+    "compiled reference/graph checks",
+    "browser QA"
+  ]
+}

@@ -29,6 +29,8 @@ OUTPUT = DATA_ROOT / "data/other/forms/20260828-sil-korwa-kodaku.csv"
 AUDIT = DATA_ROOT / "data/other/forms/raw_data/20260828-sil-korwa-kodaku-audit.csv"
 MANIFEST = DATA_ROOT / "data/other/forms/raw_data/20260828-sil-korwa-kodaku-manifest.json"
 UNRESOLVED = HERE / "unresolved_source_codes.tsv"
+WHOLE_RECOVERY = HERE / "whole-recovery"
+HISTORICAL_OUTPUT_SHA256 = "4f9b4f40b32994fdea888f411c8b5a1ad7bd000031ba065bd20a3b4fda07ce08"
 
 SOURCE_KEY = "behera2022korwakodaku"
 RECORD_URL = "https://www.sil.org/resources/publications/entry/94564"
@@ -90,6 +92,24 @@ def sha256(path: Path) -> str:
         for chunk in iter(lambda: stream.read(1024 * 1024), b""):
             digest.update(chunk)
     return digest.hexdigest()
+
+
+def assert_legacy_install_safe() -> None:
+    """Only the original Appendix B.5 output may be reinstalled here.
+
+    A reviewed whole-report installation owns the same CSV path. Its
+    approval/transaction/receipt markers prevent this historical importer
+    from overwriting it, including during an interrupted transaction.
+    """
+    for marker in (
+        WHOLE_RECOVERY / "installation/root-acceptance.json",
+        WHOLE_RECOVERY / "installation-transaction.json",
+        WHOLE_RECOVERY / "installation-receipt.json",
+    ):
+        if marker.exists():
+            raise RuntimeError(f"Whole-report recovery owns the source install; use its guarded installer ({marker})")
+    if not OUTPUT.exists() or sha256(OUTPUT) != HISTORICAL_OUTPUT_SHA256:
+        raise RuntimeError("Historical Appendix B.5 output changed; refusing legacy overwrite")
 
 
 def manual_rows() -> list[dict[str, str]]:
@@ -296,6 +316,8 @@ def main() -> None:
     parser.add_argument("--install", action="store_true")
     parser.add_argument("--verify-pdf", action="store_true")
     args = parser.parse_args()
+    if args.install:
+        assert_legacy_install_safe()
     if args.verify_pdf:
         if sha256(PDF) != PDF_SHA256:
             raise SystemExit("Canonical PDF SHA-256 mismatch")

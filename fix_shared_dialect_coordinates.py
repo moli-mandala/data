@@ -719,6 +719,11 @@ DECISIONS: dict[str, tuple[str, str, str, str, str, str]] = {
     "zoller-gy-sweden": p(62.0, 15.0, "C", "manual-centroid", "country centroid", "Sweden"),
     "zoller-gy-norway": p(61.0, 9.0, "C", "manual-centroid", "country centroid", "Norway"),
     "zoller-gy-finland": p(64.0, 26.0, "C", "manual-centroid", "country centroid", "Finland"),
+    # --- Romani comparative-language labels from the 2022 registry ---------------------------
+    # Geocoder country centroids typed without the minus sign of a western longitude: "sp" sat
+    # in the sea between Mallorca and Menorca, "eng" in Suffolk.
+    "sp": p(40.4637, -3.7492, "C", "manual-centroid", "country centroid", "Spain; longitude sign restored"),
+    "eng": p(52.3555, -1.1743, "C", "manual-centroid", "country centroid", "England; longitude sign restored"),
 }
 
 

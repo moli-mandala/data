@@ -1,0 +1,7 @@
+# Rama et al. Gondi first-500 bounded residual — 2026-09-25
+
+Research is in progress. This directory is **not registered as a completed review pass** and no assignment has been saved. No source, accepted sidecar, rebuilt database, commit, or remote has been changed.
+
+The exact `rama-coltekin-sofroniev2017gondi` source has 10,264 Gondi records: 4,708 linked, 309 earlier pending, 373 earlier held, and 4,874 previously unexamined. `prepare-inventory.py` deterministically selected the first 500 eligible residual records and explicitly deferred the other 4,374. All 10 ant, 9 meat, and 41 broom residual records were excluded from selection in response to the user's instruction to leave the earlier questioned Gondi cases untouched. `ownership-baseline.json`, `survey-inventory.json`, and `deferred-inventory.json` preserve the exact ID sets.
+
+All selected records were queried through Jambu's current homepage search in 15 bounded exact-form chunks; `discovery-coverage.json` verifies 500 query/form alignments and 3,078 returned rows. A first conservative draft proposes two `hai`/`hai̯` ‘arm’ links to full DEDR 2023 and holds the other 498. The initial alphabetic slice is heavily loanlike, including 91 cabbage/cauliflower records. `source-coverage-001.json` verifies unique source-wide ownership or explicit deferral, with zero silent gaps. Twenty-five representative cross-language homepage queries are staged for remaining candidate discovery. Numbered review manifests, canonical read-only check, and independent checkpoint verification remain to do.

@@ -1,0 +1,44 @@
+{
+  "status": "frozen revision3; fresh independent acceptance required",
+  "rows": 1135,
+  "audit_units": 1110,
+  "legacy_keys_preserved": 198,
+  "historical_assignment_corrections": 5,
+  "other_historical_assignments_preserved": 193,
+  "input_sha256": {
+    "whole-proposal-r2/review-manifest.json": "742eb946d261d87f3aee582da23da41f4b5151cd5f2ccc88b2020a4da340ebc6",
+    "whole-proposal-r2/whole-proposed.csv": "6487035d3cb5d19d8e20487fa3af4f2c138d5251a1773936cc072ae74db64a5c",
+    "whole-proposal-r2/whole-proposed-audit.jsonl": "07be097eacb458517f9bea6d4a97013523f4c8d07badb61c934c0dbfad68e578",
+    "independent-r2-original-review.json": "761254b524c796cc00176d7a763f44213850d805b8a07381b6ae15d33d651b75",
+    "independent-historical-link-review-r3.json": "31f207a502ec37619518c675928085fddf7d9438bd794f7ee4c2c3119808326f",
+    "independent-donor-class-pre-freeze-review-r3.json": "7612ebcff8859ecf1991917ba878aae4a86cacf82bd521e6e0e204af6c7c9abe",
+    "graph-reconciliation-r3/actual-parser-validation.json": "03ea7534c39cbfd07e5d11ad19d2bb8f26be88a7336f81f2ebaba42940e7db2b",
+    "graph-reconciliation-r3/donor-classification-proposal.json": "c2971b82bd5053ffc3a02f855f5b3f8e167132c387e69958fac2ffdf204c99a0",
+    "graph-reconciliation-r3/historical-assignment-correction-proposal.json": "e2d2dd03d9af60508a30364f5b6344fb3cb47a6460edc1e615e0032a710652e4",
+    "graph-reconciliation-r3/r2-to-r3-delta.json": "c9405e9146cb37c83ed1edbc6d012985621d47d811df34b8d17407e2bbd47a29",
+    "graph-reconciliation-r3/summary.json": "4f44ab1d3444dbae7f981f80a0e1d83ec6134f54d48315d34c341f3dacfd6160",
+    "graph-reconciliation-r3/whole-proposed.csv": "97ebfb4fc673ca06b805736030340bf2206b53e73af3cd76ed065b02bbd1f2bd",
+    "prepare_historical_assignment_review_r3.py": "806496dbbe54a4ce9a05ee2d2a548ce0ace4561a4071fc63a64dda5a17f28bbf",
+    "prepare_donor_classification_r3.py": "6e638851ceec1f8e97f57353f9ca0635d906b4487f61de26d43a9e75318bd5ef",
+    "prepare_output_revision_r3.py": "808c67dd7bae2a94ce3b816dad2a36ee247faf0cc24589e5d1e0658dba725958",
+    "validate_revision_r3.py": "4646b8d280011a4a1c290242910fb5c6018de99538644614324c30d268bb4595",
+    "freeze_revision_r3.py": "d55ee2abd39903820c7666e7c9823459d7af689d9ed179a08a1f5c04c4965663"
+  },
+  "output_sha256": {
+    "actual-parser-validation.json": "03ea7534c39cbfd07e5d11ad19d2bb8f26be88a7336f81f2ebaba42940e7db2b",
+    "r2-to-r3-delta.json": "c9405e9146cb37c83ed1edbc6d012985621d47d811df34b8d17407e2bbd47a29",
+    "summary.json": "4f44ab1d3444dbae7f981f80a0e1d83ec6134f54d48315d34c341f3dacfd6160",
+    "whole-metadata-proposed.yaml": "c2eeb18dfa49fc65c97a38b0ea37be135409b6a8ce72b6ab949acb8e5d20105c",
+    "whole-profile-proposed.txt": "1fcdabf0a57b03e70499591a6f2271edf5f1e7fef5d2250fb02b28728cb9369a",
+    "whole-proposed-audit.jsonl": "f50492fdb2c194cc0f9f959176e26c2872da1fbaf62a3850e8b7a743d1d46ca5",
+    "whole-proposed.csv": "97ebfb4fc673ca06b805736030340bf2206b53e73af3cd76ed065b02bbd1f2bd"
+  },
+  "method": "R2 plus full donor-class reconciliation and five independently supported historical-reference corrections. All lexical fields, IPA, citations, keys and local relations remain exact.",
+  "deferred": [
+    "Fresh independent r3 output/source audit",
+    "Canonical installation",
+    "Compiled identity/graph",
+    "Full build/test suite",
+    "Browser QA"
+  ]
+}

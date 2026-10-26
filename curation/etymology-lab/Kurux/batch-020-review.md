@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Kurux · Dravidian surveys, 2026-09-21 · batch 020. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Kurux | Proposed etymology | Evidence |
+|---|---|---|---|
+| 91 | **marag** ‘horn’ | Proposed reflex of [**DEDR 4720**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=417) | DEDR4720 directly gives Brahui marg̠ẖ, Kurukh marag and Malto margu horn. Survey margʰ, marag and margadu preserve their aspiration and suffix transcription; source cognacy independently identifies this article. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 92 | **mosaga** ‘smoke’ | Proposed reflex of [**DEDR 5131**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=464) | DEDR5131 directly groups Brahui mōḻẖ smoke, Kurukh mōjxā/mōsgā smoke and Malto mog̣e emit smoke. Survey mōś, mosaga and mōha preserve their fricative and vowel transcriptions. Source cognacy identifies the article; the Malto noun/verb elicitation difference remains visible for review. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 93 | **nām** ‘We’ | Proposed reflex of [**DEDR 3647**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=322) | DEDR 3647 directly gives Tamil nām, Kannada nāvu, Telugu manamu, Kurukh nām and Brahui nan ‘we’. These simple survey pronouns match the corresponding language branches; the source’s generic gloss is preserved without adding an inclusive/exclusive distinction. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 94 | **mūka** ‘knee’, **mū̃ka** ‘knee’, **mūkā** ‘knee’, **muka** ‘knee’ | Proposed reflex of [**DEDR 4990**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=448) | DEDR 4990 directly gives Kurukh mūkā/mũkā ‘knee, elbow’ and Hahn’s mūkā/mūkul ‘knee’. The selected survey responses are simple knee nouns, matching this branch; they are not the southern knee-plus-leg compounds. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (6 records.) |
+| 95 | **n̤ɛ** ‘who’, **nẽ** ‘who’, **nɛ̃** ‘who’, **nɛ** ‘who’ | Proposed reflex of [**DEDR 5151**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=465) | DEDR 5151 directly gives Kurukh nē ‘who’ and Kannada yār ‘who’, ēn ‘what’. The selected forms match their respective language and interrogative sense; survey breathiness, nasalization and final vowels remain as recorded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (8 records.) |
+
+Proposed assignment rows: **17**. Affected records: **17**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-020.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Kurux/batch-020.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

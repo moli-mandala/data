@@ -1,0 +1,40 @@
+{
+ "objective": "Time-bounded autonomous survey etymology work, not exhaustion of all remaining records",
+ "window": "2026-09-21 09:55:37 UTC to 17:55:37 UTC",
+ "closedAt": "2026-09-22T05:29:25.568199+00:00",
+ "summary": {
+  "savedRows": 7901,
+  "savedRecords": 6494,
+  "passes": 116,
+  "heldRecords": 1023,
+  "remaining": 26235
+ },
+ "evidence": {
+  "exactActiveLedgerAndPlacementAudit": "new-row-placement-audit.json",
+  "allSaveProtectedHashesAndIdempotence": "final-invariance-audit.json",
+  "finalSourceCheck": "final-check-sources.log (exit 0)",
+  "review": "REVIEW.md",
+  "languageIndex": "language-progress.md"
+ },
+ "deferred": {
+  "validatedUnsavedRecords": 17,
+  "approvedFlyStemAwaitingWholeResponseAnalysis": 71,
+  "additionalAdjudications": "Items 4–7 approved and saved in pass118 after the autonomous window closed.",
+  "remainingScope": "26,235 initially unassigned records not assigned by this run; this is not a freshly rebuilt inventory"
+ },
+ "noRebuild": "All saves preserve compiled forms, edges and registry hashes within each save. Current files match the latest save. Shared-workspace changes between saves are outside that assertion.",
+ "postCompletionAdjudication": {
+  "pass": "pass118",
+  "savedRecords": 108,
+  "savedRows": 108,
+  "choices": {
+   "cold": "12487 with note",
+   "path": "11366 with note",
+   "seed": "9261",
+   "fire": "5300 with note"
+  },
+  "checkSourcesExit": 0,
+  "reviewSummary": "current-summary.json",
+  "audit": "post-adjudication-audit.log"
+ }
+}

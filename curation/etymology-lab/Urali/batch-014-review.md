@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Urali · Dravidian surveys, 2026-09-21 · batch 014. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Urali | Proposed etymology | Evidence |
+|---|---|---|---|
+| 61 | **napəti** ‘forty’ | Compound: [**DEDR 3655**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=323) + [**DEDR 3918**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=349) | Propose ordered four × ten. DEDR3655 and3918 explicitly give Tamil nāṟpatu/nāppatu, Malayalam nālpatu, Kannada nālvattu and Kota nālvat forty. Survey forms are comparative variants of these formations, preserving assimilation, reduced vowels and final vowels. No independent one-stem etymology is substituted for the two numeral components. (1 records.) |
+| 62 | **valakəi** ‘right’ | Compound: [**DEDR 5276**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=476) + [**DEDR 2023**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=183) | DEDR5276 explicitly gives Tamil vala-kkai/valaṅ-kai right hand; DEDR2023 supplies kai hand. Analyse survey valakkai/valakəi in the attested order as right + hand, preserving source gemination and vowel notation. (1 records.) |
+| 63 | **māŋgākā** ‘mango’ | Compound: [**DEDR 4782**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=425) + [**DEDR 1459**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=136) | DEDR4782 explicitly gives Tamil māṅkāy and Telugu mã̄gāyu mango fruit beside mā/māvu mango; DEDR1459 gives kāy/kāyi/kāyu fruit. The complete survey māṅgāy/māṅgāyɨ/māvaṅkai/māṅgekāyɨ responses are ordered mango + fruit compounds, with compound nasal and ordinary vowel/voicing variants retained. (2 records.) |
+| 64 | **vɛpammə** ‘banana’ | Compound: [**DEDR 5373**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=486) + [**DEDR 4004**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=356) | DEDR5373 gives vāḻai/vāḻa and Kannada bāḻe banana; DEDR4004 gives Irula pammu/pāmu and Kannada paṇṇu fruit. Survey vā-/vē-/bāḷa-/bē- plus pammu/pāmu/paṇṇu-type banana responses are proposed contracted banana + ripe-fruit compounds. The contractions are comparative analyses, preserving the original complete response, rather than separately attested dictionary headwords. (1 records.) |
+| 65 | **pənpullɛ** ‘girl’ | Compound: [**DEDR 4395**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=388) + [**DEDR 4198**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=372) | DEDR4395 supplies peṇ female and DEDR4198 piḷḷai/piḷḷa child. Survey peṇṇu-piḷḷe/paṇ-puḷḷe girl is an ordered female + child compound; source vowels and gemination are preserved. The University of Madras Tamil Lexicon also explicitly records peṇ-piḷḷai girl/woman/wife (https://agarathi.com/word/பெண்பிள்ளை). (1 records.) |
+
+Proposed assignment rows: **12**. Affected records: **6**. Relation kinds: **component**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-014.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Urali/batch-014.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

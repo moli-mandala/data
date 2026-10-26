@@ -21,17 +21,19 @@ from tqdm import tqdm
 
 from abbrevs import (
     abbrevs, dialects, replacements, fixes, shared_gloss_boundaries, entry_initial_glosses,
-    shared_section_glosses, source_markup_repairs,
+    shared_section_glosses, source_markup_repairs, latin_genera,
 )
 from cleanup import footer_note, is_footer_misparse
 from parser_utils import (
     clean_form_html,
+    detach_inline_latin_glosses,
     detach_leading_grammatical_note,
     detach_trailing_forward_grammatical_note,
     grammatical_tag,
     grammatical_tags,
     is_prose_misparse,
     marker_only_tags,
+    mark_plain_language_labels,
     mark_unbolded_compact_forms,
     mark_unbolded_gender_forms,
     propagate_shared_glosses,
@@ -184,6 +186,13 @@ if os.path.exists('footer_notes.csv'):
 count = 1
 
 ref_ct = defaultdict(int)
+# every hand repair must still match its entry's text; a stale one is an error, not a no-op
+unused_repairs = {
+    (number, old)
+    for number, pairs in source_markup_repairs.items()
+    if not ONLY or number in ONLY
+    for old, _ in pairs
+}
 
 # go through each entire digitised page
 for page in tqdm(range(1, TOTAL_PAGES + 1), disable=bool(ONLY)):
@@ -272,7 +281,12 @@ for page in tqdm(range(1, TOTAL_PAGES + 1), disable=bool(ONLY)):
                         continue
                     section = section[next_subsection.start():]
                 section = strip_embedded_cross_family_notes(section)
-                section = repair_botanical_markup(section, abbrevs)
+                section = repair_botanical_markup(section, abbrevs, latin_genera)
+                for old, new in source_markup_repairs.get(str(number), []):
+                    if old in section:
+                        section = section.replace(old, new)
+                        unused_repairs.discard((str(number), old))
+                section = mark_plain_language_labels(section, abbrevs)
                 entry = BeautifulSoup(section, 'html.parser')
 
                 section_label, spans = split_language_spans(section, abbrevs)
@@ -286,13 +300,12 @@ for page in tqdm(range(1, TOTAL_PAGES + 1), disable=bool(ONLY)):
                     # comparisons table and audits unresolved prose.
                     if lang == 'OIA':
                         continue
-                    for old, new in source_markup_repairs.get(str(number), []):
-                        span[1] = span[1].replace(old, new)
                     span[1] = mark_unbolded_gender_forms(span[1].strip())
                     boundary = shared_gloss_boundaries.get(str(number))
                     if boundary and f', {boundary}' in span[1]:
                         span[1] = span[1].replace(f', {boundary}', f'</b> {boundary}', 1)
                     span[1] = mark_unbolded_compact_forms(span[1])
+                    span[1] = detach_inline_latin_glosses(span[1], abbrevs, latin_genera)
 
                     # get every forms + gloss pairing (delineated by bold tags)
                     rows = []
@@ -495,6 +508,13 @@ for page in tqdm(range(1, TOTAL_PAGES + 1), disable=bool(ONLY)):
 # print top values in ref_ct
 for key in sorted(ref_ct, key=lambda x: ref_ct[x], reverse=True)[:100]:
     print(key, ref_ct[key], file=sys.stderr)
+
+if unused_repairs:
+    if not ONLY:
+        fout.close()
+        os.remove(_temporary)
+    sys.exit('source_markup_repairs that no longer match their entry: '
+             + '; '.join(f'{number}: {old!r}' for number, old in sorted(unused_repairs)))
 
 # close file
 if ONLY:

@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Gondi · Dravidian surveys, 2026-09-21 · batch 057. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Gondi | Proposed etymology | Evidence |
+|---|---|---|---|
+| 261 | **veta** ‘burn’, **βɛ̄nta** ‘burn’, **βɛntu** ‘burn’, **βɛtor** ‘burn’ | Proposed reflex of [**DEDR 5517**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=502) | DEDR5517 explicitly gives Gondi vey-/vē- burn/cook in the southern vē-/vent- burning family. These ve(t)-/ven(t)- survey burn responses are comparative finite forms retaining their source v/β notation and past/person endings; they are not assigned to a separate fire noun. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (6 records.) |
+| 262 | **boḍsa** ‘burn’, **borasa** ‘burn’, **vorsa** ‘burn’ | Proposed reflex of [**DEDR 4537**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=400) | DEDR4537 explicitly gives Gondi poṛsānā burn, bōrsānā roast and boṛs- roast. Survey boḍsa/borasa/vorsa burn compares with these documented burning/roasting stems, preserving source voiced-stop/rhotic and initial-consonant notation. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (3 records.) |
+| 263 | **masa** ‘burn’ | Proposed reflex of [**DEDR 4801**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=426) | DEDR4801 explicitly gives Gondi māsānā burn transitively/light a lamp and mās- kindle fire. Survey māsa burn retains that same-language transitive burning stem and ordinary final vowel. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 264 | **ramtur** ‘lie down’, **ruma** ‘lie down’ | Proposed reflex of [**DEDR 5178**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=469) | DEDR5178 explicitly gives Gondi romānā rest and roma rest/repose. These rūma/rāmtur lie-down responses compare with that resting verb and ordinary endings; preserve the elicited lie-down meaning as a contextual use of resting rather than silently changing its gloss. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (3 records.) |
+| 265 | **para** ‘above’, **paranu** ‘above’, **poro** ‘above’, **pōru** ‘above’, **porro** ‘above’, **pero** ‘above’ | Proposed reflex of [**DEDR 4567**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=404) | DEDR4567 explicitly gives Gondi parro/parrō/poro/porro above, on top and upper part. Survey para/paranu/poro/pōru/porro/pero above compare directly with this documented same-language spatial stem and ordinary final locative material. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (7 records.) |
+
+Proposed assignment rows: **20**. Affected records: **20**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-057.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Gondi/batch-057.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

@@ -1,0 +1,796 @@
+{
+  "status": "actual parser boundary behavior verified; final emission policy pending root/owner review",
+  "input_hashes": {
+    "data/data/other/forms/raw_data/grierson_kolami_basim_1906/specimens/p564-first-reading.jsonl": "9231c09556f8e658f823363bfbf408bc57651ec053677f8a02e75e19ce1974b7",
+    "data/data/other/forms/raw_data/grierson_kolami_basim_1906/specimens/p565-first-reading.jsonl": "be018c7f7826a0f24fdcd7f2de67230a213665f3dc5bc0eaf3b8a30726ce0323",
+    "data/data/other/forms/raw_data/grierson_kolami_basim_1906/specimens/p568-first-reading.jsonl": "7ac1c77dbb6f03e2f530ef13ce18eb0a2212fa173f97165418ec8d02ce54c2fd",
+    "data/data/other/forms/raw_data/grierson_kolami_basim_1906/specimens/p569-first-reading.jsonl": "a831c8b55fca88ff9c3a1c44f937c3c844932e03a1a2343ab34b0fff15a71f36"
+  },
+  "profile_sha256": "00c946673ca99838d1b1220d8f376ebe0ede7c40dbda0c3e309724df204fb043",
+  "code_hashes": {
+    "make_cldf.py": "1a1ded9eff5b8607174aa37981efb4358824be8ffffdfaa7128c0cea53dac5a8",
+    "source_meta.py": "1c3147843d6c9f2489155b633db55fd1374e6f3b1a59b7051a3642fdbd2c7a4c",
+    "form_grammar.py": "8b509a13a5ac30731288d849ffbd1701d282c930546e55e764088fae437a5d05"
+  },
+  "checks": {
+    "profile-NFC": {
+      "rows": 563,
+      "original_and_all15_fields_exact": true,
+      "errors": 0,
+      "converted": 563,
+      "ordered_keys": true
+    },
+    "profile-NFD": {
+      "rows": 563,
+      "original_and_all15_fields_exact": true,
+      "errors": 0,
+      "converted": 563,
+      "ordered_keys": true
+    },
+    "literal-NFC": {
+      "rows": 563,
+      "original_and_all15_fields_exact": true,
+      "errors": 0,
+      "converted": 0,
+      "ordered_keys": true
+    },
+    "literal-NFD": {
+      "rows": 563,
+      "original_and_all15_fields_exact": true,
+      "errors": 0,
+      "converted": 0,
+      "ordered_keys": true
+    }
+  },
+  "stripped_boundary_cases": 121,
+  "stripped_boundary_records": [
+    {
+      "key": "grierson1906kolamibasim:p564:specimen75-line:1:word:3",
+      "original": "āṇḍen.",
+      "boundary_stripped_form": "āṇḍen",
+      "final_display": "āṇḍen"
+    },
+    {
+      "key": "grierson1906kolamibasim:p564:specimen75-line:1:word:7",
+      "original": "āṇḍēr.",
+      "boundary_stripped_form": "āṇḍēr",
+      "final_display": "āṇḍēr"
+    },
+    {
+      "key": "grierson1906kolamibasim:p564:specimen75-line:2:word:2",
+      "original": "enten,",
+      "boundary_stripped_form": "enten",
+      "final_display": "enten"
+    },
+    {
+      "key": "grierson1906kolamibasim:p564:specimen75-line:2:word:3",
+      "original": "‘bā,",
+      "boundary_stripped_form": "‘bā",
+      "final_display": "‘bā"
+    },
+    {
+      "key": "grierson1906kolamibasim:p564:specimen75-line:3:word:3",
+      "original": "siten.",
+      "boundary_stripped_form": "siten",
+      "final_display": "siten"
+    },
+    {
+      "key": "grierson1906kolamibasim:p564:specimen75-line:4:word:5",
+      "original": "sedeṇ.",
+      "boundary_stripped_form": "sedeṇ",
+      "final_display": "sedeṇ"
+    },
+    {
+      "key": "grierson1906kolamibasim:p564:specimen75-line:5:word:2",
+      "original": "uḍāpten.",
+      "boundary_stripped_form": "uḍāpten",
+      "final_display": "uḍāpten"
+    },
+    {
+      "key": "grierson1906kolamibasim:p564:specimen75-line:5:word:6",
+      "original": "kharchipten,",
+      "boundary_stripped_form": "kharchipten",
+      "final_display": "kharchipten"
+    },
+    {
+      "key": "grierson1906kolamibasim:p564:specimen75-line:6:word:1",
+      "original": "paṭṭīn.",
+      "boundary_stripped_form": "paṭṭīn",
+      "final_display": "paṭṭīn"
+    },
+    {
+      "key": "grierson1906kolamibasim:p564:specimen75-line:6:word:5",
+      "original": "paṭṭīn.",
+      "boundary_stripped_form": "paṭṭīn",
+      "final_display": "paṭṭīn"
+    },
+    {
+      "key": "grierson1906kolamibasim:p564:specimen75-line:7:word:5",
+      "original": "tākten.",
+      "boundary_stripped_form": "tākten",
+      "final_display": "tākten"
+    },
+    {
+      "key": "grierson1906kolamibasim:p564:specimen75-line:8:word:4",
+      "original": "pānākten.",
+      "boundary_stripped_form": "pānākten",
+      "final_display": "pānākten"
+    },
+    {
+      "key": "grierson1906kolamibasim:p564:specimen75-line:9:word:7",
+      "original": "vāṭlīn.",
+      "boundary_stripped_form": "vāṭlīn",
+      "final_display": "vāṭlīn"
+    },
+    {
+      "key": "grierson1906kolamibasim:p564:specimen75-line:10:word:1",
+      "original": "siyeten.",
+      "boundary_stripped_form": "siyeten",
+      "final_display": "siyeten"
+    },
+    {
+      "key": "grierson1906kolamibasim:p564:specimen75-line:10:word:5",
+      "original": "enten,",
+      "boundary_stripped_form": "enten",
+      "final_display": "enten"
+    },
+    {
+      "key": "grierson1906kolamibasim:p564:specimen75-line:11:word:3",
+      "original": "anḍā,",
+      "boundary_stripped_form": "anḍā",
+      "final_display": "anḍā"
+    },
+    {
+      "key": "grierson1906kolamibasim:p564:specimen75-line:11:word:6",
+      "original": "tikhātūn.",
+      "boundary_stripped_form": "tikhātūn",
+      "final_display": "tikhātūn"
+    },
+    {
+      "key": "grierson1906kolamibasim:p564:specimen75-line:12:word:3",
+      "original": "yenātūn,",
+      "boundary_stripped_form": "yenātūn",
+      "final_display": "yenātūn"
+    },
+    {
+      "key": "grierson1906kolamibasim:p564:specimen75-line:12:word:4",
+      "original": "“bā,",
+      "boundary_stripped_form": "“bā",
+      "final_display": "“bā"
+    },
+    {
+      "key": "grierson1906kolamibasim:p564:specimen75-line:13:word:1",
+      "original": "kāktān.",
+      "boundary_stripped_form": "kāktān",
+      "final_display": "kāktān"
+    },
+    {
+      "key": "grierson1906kolamibasim:p564:specimen75-line:13:word:7",
+      "original": "tōten.",
+      "boundary_stripped_form": "tōten",
+      "final_display": "tōten"
+    },
+    {
+      "key": "grierson1906kolamibasim:p564:specimen75-line:14:word:8",
+      "original": "sedden.",
+      "boundary_stripped_form": "sedden",
+      "final_display": "sedden"
+    },
+    {
+      "key": "grierson1906kolamibasim:p564:specimen75-line:15:word:7",
+      "original": "ōltnā,",
+      "boundary_stripped_form": "ōltnā",
+      "final_display": "ōltnā"
+    },
+    {
+      "key": "grierson1906kolamibasim:p564:specimen75-line:15:word:9",
+      "original": "vāttīn,",
+      "boundary_stripped_form": "vāttīn",
+      "final_display": "vāttīn"
+    },
+    {
+      "key": "grierson1906kolamibasim:p564:specimen75-line:16:word:7",
+      "original": "samnet.",
+      "boundary_stripped_form": "samnet",
+      "final_display": "samnet"
+    },
+    {
+      "key": "grierson1906kolamibasim:p564:specimen75-line:17:word:1",
+      "original": "enten,",
+      "boundary_stripped_form": "enten",
+      "final_display": "enten"
+    },
+    {
+      "key": "grierson1906kolamibasim:p564:specimen75-line:17:word:8",
+      "original": "kāktān.",
+      "boundary_stripped_form": "kāktān",
+      "final_display": "kāktān"
+    },
+    {
+      "key": "grierson1906kolamibasim:p565:specimen75-line:1:word:7",
+      "original": "iṭten,",
+      "boundary_stripped_form": "iṭten",
+      "final_display": "iṭten"
+    },
+    {
+      "key": "grierson1906kolamibasim:p565:specimen75-line:2:word:3",
+      "original": "tōḍeṅg,",
+      "boundary_stripped_form": "tōḍeṅg",
+      "final_display": "tōḍeŋg"
+    },
+    {
+      "key": "grierson1906kolamibasim:p565:specimen75-line:2:word:6",
+      "original": "mundī,",
+      "boundary_stripped_form": "mundī",
+      "final_display": "mundī"
+    },
+    {
+      "key": "grierson1906kolamibasim:p565:specimen75-line:2:word:9",
+      "original": "tōḍūr.",
+      "boundary_stripped_form": "tōḍūr",
+      "final_display": "tōḍūr"
+    },
+    {
+      "key": "grierson1906kolamibasim:p565:specimen75-line:3:word:4",
+      "original": "kākātūn.",
+      "boundary_stripped_form": "kākātūn",
+      "final_display": "kākātūn"
+    },
+    {
+      "key": "grierson1906kolamibasim:p565:specimen75-line:3:word:9",
+      "original": "tikt-āṇḍen,",
+      "boundary_stripped_form": "tikt-āṇḍen",
+      "final_display": "tikt-āṇḍen"
+    },
+    {
+      "key": "grierson1906kolamibasim:p565:specimen75-line:4:word:2",
+      "original": "pānām-edden;",
+      "boundary_stripped_form": "pānām-edden",
+      "final_display": "pānām-edden"
+    },
+    {
+      "key": "grierson1906kolamibasim:p565:specimen75-line:4:word:3",
+      "original": "bhulīlta-āṇḍeṇ,",
+      "boundary_stripped_form": "bhulīlta-āṇḍeṇ",
+      "final_display": "bhulīlta-āṇḍeṇ"
+    },
+    {
+      "key": "grierson1906kolamibasim:p565:specimen75-line:5:word:2",
+      "original": "utten.",
+      "boundary_stripped_form": "utten",
+      "final_display": "utten"
+    },
+    {
+      "key": "grierson1906kolamibasim:p565:specimen75-line:6:word:7",
+      "original": "āṇḍen.",
+      "boundary_stripped_form": "āṇḍen",
+      "final_display": "āṇḍen"
+    },
+    {
+      "key": "grierson1906kolamibasim:p565:specimen75-line:7:word:2",
+      "original": "vātten.",
+      "boundary_stripped_form": "vātten",
+      "final_display": "vātten"
+    },
+    {
+      "key": "grierson1906kolamibasim:p565:specimen75-line:7:word:6",
+      "original": "vintēr.",
+      "boundary_stripped_form": "vintēr",
+      "final_display": "vintēr"
+    },
+    {
+      "key": "grierson1906kolamibasim:p565:specimen75-line:8:word:4",
+      "original": "veltōlten,",
+      "boundary_stripped_form": "veltōlten",
+      "final_display": "veltōlten"
+    },
+    {
+      "key": "grierson1906kolamibasim:p565:specimen75-line:8:word:9",
+      "original": "iṭten,",
+      "boundary_stripped_form": "iṭten",
+      "final_display": "iṭten"
+    },
+    {
+      "key": "grierson1906kolamibasim:p565:specimen75-line:9:word:2",
+      "original": "vāttāṇḍān.",
+      "boundary_stripped_form": "vāttāṇḍān",
+      "final_display": "vāttāṇḍān"
+    },
+    {
+      "key": "grierson1906kolamibasim:p565:specimen75-line:9:word:7",
+      "original": "miḷālten.",
+      "boundary_stripped_form": "miḷālten",
+      "final_display": "miḷālten"
+    },
+    {
+      "key": "grierson1906kolamibasim:p565:specimen75-line:10:word:10",
+      "original": "seren.",
+      "boundary_stripped_form": "seren",
+      "final_display": "seren"
+    },
+    {
+      "key": "grierson1906kolamibasim:p565:specimen75-line:11:word:7",
+      "original": "lāgten.",
+      "boundary_stripped_form": "lāgten",
+      "final_display": "lāgten"
+    },
+    {
+      "key": "grierson1906kolamibasim:p565:specimen75-line:12:word:1",
+      "original": "enten,",
+      "boundary_stripped_form": "enten",
+      "final_display": "enten"
+    },
+    {
+      "key": "grierson1906kolamibasim:p565:specimen75-line:12:word:2",
+      "original": "‘ōlūr,",
+      "boundary_stripped_form": "‘ōlūr",
+      "final_display": "‘ōlūr"
+    },
+    {
+      "key": "grierson1906kolamibasim:p565:specimen75-line:12:word:8",
+      "original": "kākātūn.",
+      "boundary_stripped_form": "kākātūn",
+      "final_display": "kākātūn"
+    },
+    {
+      "key": "grierson1906kolamibasim:p565:specimen75-line:13:word:2",
+      "original": "mōḍīp-tōten.",
+      "boundary_stripped_form": "mōḍīp-tōten",
+      "final_display": "mōḍīp-tōten"
+    },
+    {
+      "key": "grierson1906kolamibasim:p565:specimen75-line:14:word:2",
+      "original": "si-tōten.",
+      "boundary_stripped_form": "si-tōten",
+      "final_display": "si-tōten"
+    },
+    {
+      "key": "grierson1906kolamibasim:p565:specimen75-line:14:word:7",
+      "original": "tintaruśiten,",
+      "boundary_stripped_form": "tintaruśiten",
+      "final_display": "tintaruśiten"
+    },
+    {
+      "key": "grierson1906kolamibasim:p565:specimen75-line:16:word:2",
+      "original": "enten,",
+      "boundary_stripped_form": "enten",
+      "final_display": "enten"
+    },
+    {
+      "key": "grierson1906kolamibasim:p565:specimen75-line:16:word:3",
+      "original": "‘bālā,",
+      "boundary_stripped_form": "‘bālā",
+      "final_display": "‘bālā"
+    },
+    {
+      "key": "grierson1906kolamibasim:p565:specimen75-line:16:word:7",
+      "original": "āṇḍātīv;",
+      "boundary_stripped_form": "āṇḍātīv",
+      "final_display": "āṇḍātīv"
+    },
+    {
+      "key": "grierson1906kolamibasim:p565:specimen75-line:17:word:2",
+      "original": "āṇḍāt.",
+      "boundary_stripped_form": "āṇḍāt",
+      "final_display": "āṇḍāt"
+    },
+    {
+      "key": "grierson1906kolamibasim:p565:specimen75-line:17:word:6",
+      "original": "barōbar.",
+      "boundary_stripped_form": "barōbar",
+      "final_display": "barōbar"
+    },
+    {
+      "key": "grierson1906kolamibasim:p565:specimen75-line:18:word:1",
+      "original": "tikt-āṇḍen,",
+      "boundary_stripped_form": "tikt-āṇḍen",
+      "final_display": "tikt-āṇḍen"
+    },
+    {
+      "key": "grierson1906kolamibasim:p565:specimen75-line:18:word:4",
+      "original": "pānām-eden;",
+      "boundary_stripped_form": "pānām-eden",
+      "final_display": "pānām-eden"
+    },
+    {
+      "key": "grierson1906kolamibasim:p565:specimen75-line:18:word:6",
+      "original": "āṇḍen,",
+      "boundary_stripped_form": "āṇḍen",
+      "final_display": "āṇḍen"
+    },
+    {
+      "key": "grierson1906kolamibasim:p568:specimen76-line:1:word:5",
+      "original": "aṇḍēr.",
+      "boundary_stripped_form": "aṇḍēr",
+      "final_display": "aṇḍēr"
+    },
+    {
+      "key": "grierson1906kolamibasim:p568:specimen76-line:2:word:1",
+      "original": "muṭten,",
+      "boundary_stripped_form": "muṭten",
+      "final_display": "muṭten"
+    },
+    {
+      "key": "grierson1906kolamibasim:p568:specimen76-line:2:word:2",
+      "original": "‘bā,",
+      "boundary_stripped_form": "‘bā",
+      "final_display": "‘bā"
+    },
+    {
+      "key": "grierson1906kolamibasim:p568:specimen76-line:3:word:3",
+      "original": "miḷāpten.",
+      "boundary_stripped_form": "miḷāpten",
+      "final_display": "miḷāpten"
+    },
+    {
+      "key": "grierson1906kolamibasim:p568:specimen76-line:3:word:7",
+      "original": "sedden,",
+      "boundary_stripped_form": "sedden",
+      "final_display": "sedden"
+    },
+    {
+      "key": "grierson1906kolamibasim:p568:specimen76-line:4:word:2",
+      "original": "nās-gakten.",
+      "boundary_stripped_form": "nās-gakten",
+      "final_display": "nās-gakten"
+    },
+    {
+      "key": "grierson1906kolamibasim:p568:specimen76-line:4:word:4",
+      "original": "paṭṭīn,",
+      "boundary_stripped_form": "paṭṭīn",
+      "final_display": "paṭṭīn"
+    },
+    {
+      "key": "grierson1906kolamibasim:p568:specimen76-line:4:word:7",
+      "original": "puṭṭed.",
+      "boundary_stripped_form": "puṭṭed",
+      "final_display": "puṭṭed"
+    },
+    {
+      "key": "grierson1906kolamibasim:p568:specimen76-line:5:word:4",
+      "original": "dhandā-takten.",
+      "boundary_stripped_form": "dhandā-takten",
+      "final_display": "dhandā-takten"
+    },
+    {
+      "key": "grierson1906kolamibasim:p568:specimen76-line:6:word:1",
+      "original": "kōstel.",
+      "boundary_stripped_form": "kōstel",
+      "final_display": "kōstel"
+    },
+    {
+      "key": "grierson1906kolamibasim:p568:specimen76-line:6:word:6",
+      "original": "uttel,",
+      "boundary_stripped_form": "uttel",
+      "final_display": "uttel"
+    },
+    {
+      "key": "grierson1906kolamibasim:p568:specimen76-line:6:word:7",
+      "original": "avande,",
+      "boundary_stripped_form": "avande",
+      "final_display": "avande"
+    },
+    {
+      "key": "grierson1906kolamibasim:p568:specimen76-line:7:word:5",
+      "original": "siyaṅg-tōdī.",
+      "boundary_stripped_form": "siyaṅg-tōdī",
+      "final_display": "siyaŋg-tōdī"
+    },
+    {
+      "key": "grierson1906kolamibasim:p568:specimen76-line:8:word:1",
+      "original": "vattīn,",
+      "boundary_stripped_form": "vattīn",
+      "final_display": "vattīn"
+    },
+    {
+      "key": "grierson1906kolamibasim:p568:specimen76-line:8:word:8",
+      "original": "puṭtād.",
+      "boundary_stripped_form": "puṭtād",
+      "final_display": "puṭtād"
+    },
+    {
+      "key": "grierson1906kolamibasim:p568:specimen76-line:9:word:2",
+      "original": "tiksātan.",
+      "boundary_stripped_form": "tiksātan",
+      "final_display": "tiksātan"
+    },
+    {
+      "key": "grierson1906kolamibasim:p568:specimen76-line:9:word:7",
+      "original": "moḍātūn,",
+      "boundary_stripped_form": "moḍātūn",
+      "final_display": "moḍātūn"
+    },
+    {
+      "key": "grierson1906kolamibasim:p568:specimen76-line:10:word:1",
+      "original": "“bā,",
+      "boundary_stripped_form": "“bā",
+      "final_display": "“bā"
+    },
+    {
+      "key": "grierson1906kolamibasim:p568:specimen76-line:10:word:6",
+      "original": "puṭtān,",
+      "boundary_stripped_form": "puṭtān",
+      "final_display": "puṭtān"
+    },
+    {
+      "key": "grierson1906kolamibasim:p568:specimen76-line:10:word:8",
+      "original": "aktān.",
+      "boundary_stripped_form": "aktān",
+      "final_display": "aktān"
+    },
+    {
+      "key": "grierson1906kolamibasim:p568:specimen76-line:11:word:4",
+      "original": "vahā.",
+      "boundary_stripped_form": "vahā",
+      "final_display": "vahā"
+    },
+    {
+      "key": "grierson1906kolamibasim:p568:specimen76-line:12:word:2",
+      "original": "śedden.",
+      "boundary_stripped_form": "śedden",
+      "final_display": "śedden"
+    },
+    {
+      "key": "grierson1906kolamibasim:p568:specimen76-line:12:word:6",
+      "original": "dhāvād,",
+      "boundary_stripped_form": "dhāvād",
+      "final_display": "dhāvād"
+    },
+    {
+      "key": "grierson1906kolamibasim:p568:specimen76-line:13:word:1",
+      "original": "vattīn.",
+      "boundary_stripped_form": "vattīn",
+      "final_display": "vattīn"
+    },
+    {
+      "key": "grierson1906kolamibasim:p568:specimen76-line:13:word:5",
+      "original": "paṭṭen,",
+      "boundary_stripped_form": "paṭṭen",
+      "final_display": "paṭṭen"
+    },
+    {
+      "key": "grierson1906kolamibasim:p568:specimen76-line:13:word:8",
+      "original": "samten.",
+      "boundary_stripped_form": "samten",
+      "final_display": "samten"
+    },
+    {
+      "key": "grierson1906kolamibasim:p568:specimen76-line:14:word:2",
+      "original": "muṭten,",
+      "boundary_stripped_form": "muṭten",
+      "final_display": "muṭten"
+    },
+    {
+      "key": "grierson1906kolamibasim:p568:specimen76-line:14:word:3",
+      "original": "‘bā,",
+      "boundary_stripped_form": "‘bā",
+      "final_display": "‘bā"
+    },
+    {
+      "key": "grierson1906kolamibasim:p568:specimen76-line:14:word:8",
+      "original": "puṭtān,",
+      "boundary_stripped_form": "puṭtān",
+      "final_display": "puṭtān"
+    },
+    {
+      "key": "grierson1906kolamibasim:p568:specimen76-line:14:word:10",
+      "original": "aktān.",
+      "boundary_stripped_form": "aktān",
+      "final_display": "aktān"
+    },
+    {
+      "key": "grierson1906kolamibasim:p568:specimen76-line:16:word:1",
+      "original": "kōkten,",
+      "boundary_stripped_form": "kōkten",
+      "final_display": "kōkten"
+    },
+    {
+      "key": "grierson1906kolamibasim:p568:specimen76-line:16:word:3",
+      "original": "iṭten,",
+      "boundary_stripped_form": "iṭten",
+      "final_display": "iṭten"
+    },
+    {
+      "key": "grierson1906kolamibasim:p568:specimen76-line:16:word:8",
+      "original": "tepp.",
+      "boundary_stripped_form": "tepp",
+      "final_display": "tepp"
+    },
+    {
+      "key": "grierson1906kolamibasim:p568:specimen76-line:17:word:3",
+      "original": "tapp,",
+      "boundary_stripped_form": "tapp",
+      "final_display": "tapp"
+    },
+    {
+      "key": "grierson1906kolamibasim:p569:specimen76-line:1:word:1",
+      "original": "ukatten,",
+      "boundary_stripped_form": "ukatten",
+      "final_display": "ukatten"
+    },
+    {
+      "key": "grierson1906kolamibasim:p569:specimen76-line:1:word:5",
+      "original": "prānām-etten;",
+      "boundary_stripped_form": "prānām-etten",
+      "final_display": "prānām-etten"
+    },
+    {
+      "key": "grierson1906kolamibasim:p569:specimen76-line:1:word:7",
+      "original": "gavāṭ-aṇḍen,",
+      "boundary_stripped_form": "gavāṭ-aṇḍen",
+      "final_display": "gavāṭ-aṇḍen"
+    },
+    {
+      "key": "grierson1906kolamibasim:p569:specimen76-line:3:word:4",
+      "original": "aṇḍen.",
+      "boundary_stripped_form": "aṇḍen",
+      "final_display": "aṇḍen"
+    },
+    {
+      "key": "grierson1906kolamibasim:p569:specimen76-line:3:word:6",
+      "original": "vatten,",
+      "boundary_stripped_form": "vatten",
+      "final_display": "vatten"
+    },
+    {
+      "key": "grierson1906kolamibasim:p569:specimen76-line:3:word:9",
+      "original": "vintān.",
+      "boundary_stripped_form": "vintān",
+      "final_display": "vintān"
+    },
+    {
+      "key": "grierson1906kolamibasim:p569:specimen76-line:4:word:2",
+      "original": "kōkten,",
+      "boundary_stripped_form": "kōkten",
+      "final_display": "kōkten"
+    },
+    {
+      "key": "grierson1906kolamibasim:p569:specimen76-line:4:word:4",
+      "original": "veltel-ōlten,",
+      "boundary_stripped_form": "veltel-ōlten",
+      "final_display": "veltel-ōlten"
+    },
+    {
+      "key": "grierson1906kolamibasim:p569:specimen76-line:4:word:8",
+      "original": "iṭten,",
+      "boundary_stripped_form": "iṭten",
+      "final_display": "iṭten"
+    },
+    {
+      "key": "grierson1906kolamibasim:p569:specimen76-line:5:word:2",
+      "original": "vatten;",
+      "boundary_stripped_form": "vatten",
+      "final_display": "vatten"
+    },
+    {
+      "key": "grierson1906kolamibasim:p569:specimen76-line:5:word:5",
+      "original": "vatten;",
+      "boundary_stripped_form": "vatten",
+      "final_display": "vatten"
+    },
+    {
+      "key": "grierson1906kolamibasim:p569:specimen76-line:6:word:2",
+      "original": "vattīn;",
+      "boundary_stripped_form": "vattīn",
+      "final_display": "vattīn"
+    },
+    {
+      "key": "grierson1906kolamibasim:p569:specimen76-line:6:word:4",
+      "original": "varen.",
+      "boundary_stripped_form": "varen",
+      "final_display": "varen"
+    },
+    {
+      "key": "grierson1906kolamibasim:p569:specimen76-line:7:word:1",
+      "original": "samjipsān.",
+      "boundary_stripped_form": "samjipsān",
+      "final_display": "samjipsān"
+    },
+    {
+      "key": "grierson1906kolamibasim:p569:specimen76-line:7:word:4",
+      "original": "muṭten,",
+      "boundary_stripped_form": "muṭten",
+      "final_display": "muṭten"
+    },
+    {
+      "key": "grierson1906kolamibasim:p569:specimen76-line:8:word:1",
+      "original": "gaksātan;",
+      "boundary_stripped_form": "gaksātan",
+      "final_display": "gaksātan"
+    },
+    {
+      "key": "grierson1906kolamibasim:p569:specimen76-line:8:word:4",
+      "original": "murken.",
+      "boundary_stripped_form": "murken",
+      "final_display": "murken"
+    },
+    {
+      "key": "grierson1906kolamibasim:p569:specimen76-line:9:word:2",
+      "original": "siyaṅg-tōdī.",
+      "boundary_stripped_form": "siyaṅg-tōdī",
+      "final_display": "siyaŋg-tōdī"
+    },
+    {
+      "key": "grierson1906kolamibasim:p569:specimen76-line:9:word:6",
+      "original": "nās-gakten,",
+      "boundary_stripped_form": "nās-gakten",
+      "final_display": "nās-gakten"
+    },
+    {
+      "key": "grierson1906kolamibasim:p569:specimen76-line:10:word:1",
+      "original": "seiten,",
+      "boundary_stripped_form": "seiten",
+      "final_display": "seiten"
+    },
+    {
+      "key": "grierson1906kolamibasim:p569:specimen76-line:10:word:3",
+      "original": "vatten,",
+      "boundary_stripped_form": "vatten",
+      "final_display": "vatten"
+    },
+    {
+      "key": "grierson1906kolamibasim:p569:specimen76-line:10:word:9",
+      "original": "muṭten,",
+      "boundary_stripped_form": "muṭten",
+      "final_display": "muṭten"
+    },
+    {
+      "key": "grierson1906kolamibasim:p569:specimen76-line:11:word:3",
+      "original": "aṇḍātīv.",
+      "boundary_stripped_form": "aṇḍātīv",
+      "final_display": "aṇḍātīv"
+    },
+    {
+      "key": "grierson1906kolamibasim:p569:specimen76-line:11:word:7",
+      "original": "yandīn.",
+      "boundary_stripped_form": "yandīn",
+      "final_display": "yandīn"
+    },
+    {
+      "key": "grierson1906kolamibasim:p569:specimen76-line:12:word:1",
+      "original": "pāijē.",
+      "boundary_stripped_form": "pāijē",
+      "final_display": "pāijē"
+    },
+    {
+      "key": "grierson1906kolamibasim:p569:specimen76-line:12:word:4",
+      "original": "tiktānden,",
+      "boundary_stripped_form": "tiktānden",
+      "final_display": "tiktānden"
+    },
+    {
+      "key": "grierson1906kolamibasim:p569:specimen76-line:12:word:5",
+      "original": "pānām-etten;",
+      "boundary_stripped_form": "pānām-etten",
+      "final_display": "pānām-etten"
+    },
+    {
+      "key": "grierson1906kolamibasim:p569:specimen76-line:12:word:7",
+      "original": "gavāṭ-aṇḍen,",
+      "boundary_stripped_form": "gavāṭ-aṇḍen",
+      "final_display": "gavāṭ-aṇḍen"
+    }
+  ],
+  "join_control": {
+    "first_key": "grierson1906kolamibasim:p568:specimen76-line:11:word:8",
+    "tail_key": "grierson1906kolamibasim:p568:specimen76-line:12:word:1",
+    "physical_originals": [
+      "Bāp-",
+      "phōkān"
+    ],
+    "candidate_joined_form": "Bāp-phōkān",
+    "expected_display": "bāp-phōkān",
+    "status": "parser control only; owner original-reviewed joining still required",
+    "tail_not_separate_head_in_final_candidate": true
+  },
+  "quotation_scope": "Physical line is a test control, not a source whole sentence or acceptance of synthesized translation.",
+  "schema_options": {
+    "profile_with_preserve_hyphens": "Original exact; display strips comma/semicolon/fullstop/digits at boundaries but preserves quotes and hyphens. Internal punctuation remains literal.",
+    "convert_false": "All literal boundary punctuation and capitalization survive; does not perform approved lowercase/ṅ display normalization.",
+    "input_phonemic": "Not appropriate: Phonemic must remain blank without source phonemic evidence; do not populate a normalized display surrogate."
+  },
+  "recommendation": "Use existing generic profile route with preserve_hyphens:true for lexical atoms, preserve every exact raw fragment and punctuation in Original/audit, and explicitly document boundary display changes. For full utterances needing exact punctuation and casing, a separate convert:false file is schema-compatible; do not infer sentence boundaries from physical lines. No existing YAML option simultaneously preserves all terminal punctuation and applies the profile. Any stricter display policy requires root adjudication rather than a source-specific parser branch.",
+  "canonical_changes": false,
+  "monkeypatch": false,
+  "temporary_sandbox_removed": true
+}

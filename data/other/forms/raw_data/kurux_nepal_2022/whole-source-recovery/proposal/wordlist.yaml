@@ -1,0 +1,19 @@
+file: wordlist.csv
+defaults:
+  transcription:
+    profile: kurux-nepal-whole-phonetic
+    preserve_hyphens: true
+  identity:
+    dedupe_by_entry_key: true
+  forms:
+    split_alternates: false
+  gloss:
+    grammar_tags: false
+sources:
+  shackelford-swenson-chaudhary-maggard2022kurux:
+    forms:
+      split_alternates: false
+    gloss:
+      grammar_tags: false
+    identity:
+      dedupe_by_entry_key: true

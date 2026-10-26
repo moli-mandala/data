@@ -1,0 +1,19 @@
+{
+  "status": "source-local proposal; no canonical registry or shared metadata changes",
+  "source": "nair2013mannan",
+  "source_pdf_sha256": "4d2588987dab5d15c62ecc95330ccf7e925a9bce80d08068b91ca3f48c8cc5af",
+  "existing_language_routes": ["Mannan", "Malayalam"],
+  "identity": "Use existing Mannan/mann1246 base, distinct from Malayalam; preserve Nair's possible Malayalam-dialect classification as an attributed source claim rather than collapse existing identities.",
+  "no_new_registry_rows": true,
+  "dialect_decision": "No elicitation site, locality-specific paradigm, or consultant is identified. Four broad taluks do not justify assigning any existing SIL Idukki village dialect or inventing precise coordinates. Base-language route only.",
+  "comparative_policy": "All 31 explicitly labelled Malayalam lexical/morphology comparison witnesses are separately routed to existing Malayalam, as known in-family attestations. Phoneme symbols are context, not lexical rows. Generic Dravidian -kaḷ lacks a unique language/stage route and remains audited.",
+  "literal_transcription": {"convert": false, "preserve_hyphens": true, "doubled_vowels": "unchanged", "dotbelow": "U+0323 from visible source dots", "lowline": "U+0332 from eleven independently viewed vector lowlines; combined nn lines attach to both n characters", "nasal_tilde": "U+0303 from visible source mark", "breve": "source ŭ preserved", "en_dash": "source dash-led morphology retains U+2013; no added hyphen on plain aa or kaaṭ-u", "Native": "blank", "Phonemic": "blank"},
+  "graph_proposals": [],
+  "graph_claim_accounting": [
+    {"source_unit_key": "nair2013mannan:p46:other-plural:0", "source_claim_locator": "p. 47 paragraph after examples", "claim": "This could be related to the usual Dravidian plural suffix -kaḷ", "disposition": "attributed tentative morphological relationship; no uniquely identifiable comparator language or independently attested ancestor node; preserve in Etymology/audit without invented edge"},
+    {"scope": "28 Malayalam/Mannan pairs", "disposition": "phonological comparisons; source does not identify Malayalam forms as ancestors, loans or free variants"}
+  ],
+  "auxiliary_authority": {"key": "joseph1980devikolam", "original_locator": "p. 49 bibliography", "status": "reported 1980 thesis only, not independently collated"},
+  "source_identity_keys": "All154 candidate keys are source-witness keys; dedupe_by_entry_key true avoids collapsing distinct source senses and grammatical forms.",
+  "pending": ["complete independent source reading", "independent metadata/reference/graph decision review", "fresh output audit", "guarded canonical installer after root acceptance", "compiled/full-build/full-suite/browser gates"]
+}

@@ -1,0 +1,11 @@
+# Muduga Arsenault–Abraham residual etymology research — 2026-09-25
+
+Research only; **pending review**. No accepted sidecar write, importer, rebuild, browser refresh, commit, push, or deployment was performed.
+
+The 2022 Muduga source has **109** compiled Muduga lexical records: **99** already have rank-1 graph/accepted assignments. The ten residual IDs were searched with Jambu's existing read-only homepage `fetchLemmaList` implementation: ten exact Muduga form queries (11 rows) and nine targeted cross-language form/gloss queries (19 rows). Two records have pending DEDR whole-article proposals, and eight have documented research holds. The [review](REVIEW.md), [batch 029](../Muduga/batch-029-review.md), [decisions](proposed-decisions.json), [holds](research-holds.json), and [primary DEDR evidence](primary-evidence.json) preserve exact source IDs and article-level comparanda.
+
+The two proposed reflexes are Muduga **cāṟɯ** ‘curry, essence’ → DEDR **2484** (southern *cāṟu/sāṟu* broth/curry) and **tavuḍɯ** ‘bran’ → DEDR **3111** (Tamil/Malayalam *taviṭu*, Kannada/Telugu *tavuḍu*). They are family-level labels; the displayed head of 2484 is not required to reproduce every member of its article.
+
+High-value hold: Muduga **cōṟe** ‘dove’ has a strong Kota/Gowda comparison, but the source cites DEDR 2885 while the installed DEDR data has no `d2885` and folds a separate dove article into `d2835` alongside a drip family. [The collision evidence](DEDR-NUMBER-COLLISION.md) documents the two cached primary articles. The seven other holds concern a loan with unknown immediate donor, an author-questioned cognacy, uncertain plantain ancestry, two unparsed complex forms, an inflected clause, and an unmatched beak word.
+
+Canonical `make check-pass` passed on the read-only current graph: **2 proposed records, 2 assignment rows, 2 parents, 4 first-application changes, 0 second-application changes**. [The retained log](check-pass-001.log) and [independent verifier](checkpoint-001-validation.json) show exact manifest-row agreement and source-wide ownership: 99 prior linked + 2 pending + 8 held = 109, with zero overlap or unexamined records. Nothing here enters an accepted etymology sidecar until user review and a later authorized `save-pass`.

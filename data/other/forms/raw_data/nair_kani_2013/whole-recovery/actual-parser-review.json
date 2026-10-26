@@ -1,0 +1,24 @@
+{
+  "status": "passed isolated actual parser; review candidate uninstalled",
+  "inputs_sha256": {
+    "review-candidate.csv": "008927fd95809d423ac9d8b913ff690c4c398fee0da940fe96838117caeb0e85",
+    "review-audit.jsonl": "798ca2ae93e9783a1a6313786ba4a4e530a0d044a3e92df29d78e30c57414582",
+    "proposed-settings.yaml": "133d5e4bc6090b784a3a7aa58de908ed0e0ed051f54778f35c1032926885ff44"
+  },
+  "make_cldf_sha256": "1a1ded9eff5b8607174aa37981efb4358824be8ffffdfaa7128c0cea53dac5a8",
+  "checks": {
+    "NFC": {
+      "rows": 36,
+      "ordered_keys_exact": true,
+      "all_15_source_fields_exact": true,
+      "errors": 0
+    },
+    "NFD": {
+      "rows": 36,
+      "ordered_keys_exact": true,
+      "all_15_source_fields_exact": true,
+      "errors": 0
+    }
+  },
+  "registry_status": "Kanikkaran and source-qualified Kerala Kani dialect are only proposed; this parser fixture does not claim canonical language/dialect registration"
+}

@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Ollari Gadaba · Bhattacharya 1957 Ollari Gadaba residual records, 2026-09-25 · batch 012. Pending user review; autonomous research continues.
+
+| # | Ollari Gadaba | Proposed etymology | Evidence |
+|---|---|---|---|
+| 16 | **ilij** ‘bear’ | Proposed reflex of [**DEDR 857**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=83) | DEDR 857 full article opens “857 Ta. eṇku, elu, uḷiyam a bear; iḷai Indian black bear. Ma. uḷiyam a bear. Te. elūgu, eluvu id. Pa. ili ( pl. ilil) id. Ga. (Oll.) ilij ( pl.…”; its Ga. (Oll.) passage gives “Ga. (Oll.) ilij ( pl. iljil) , (S.) illij ( pl. iljīl; j = dz) id.”. The source form and sense match this Ollari entry within the whole article. (1 record.) |
+| 17 | **ile** ‘bride’, **iled** ‘grown-up girl; woman’, **ilenḍ** ‘bridegroom’ | Proposed reflex of [**DEDR 513**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=50) | DEDR 513 full article opens “513 Ta. iḷa, iḷam, iḷai young, tender; iḷa-nir tender coconut milk, tender coconut; iḷai youth, tender age; iḷaimai youth; iḷaicci younger…”; its Ga. (Oll.) passage gives “Ga. (Oll.) ile bride; iled grown-up girl, woman; ilenḍ ( pl. iler) bridegroom.”. The source form and sense match this Ollari entry within the whole article. (3 records.) |
+| 18 | **ukur** ‘alone; single’ | Proposed reflex of [**DEDR 990**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=94) | DEDR 990 full article opens “990 (a) Ta. oru (before consonant), ōr (before vowel) one; ori (-pp-, -tt-) to be united in harmony; orukkam oneness, sameness; orukka for…”; its Ga. (Oll.) passage gives “Ga. (Oll.) ukur one man; ukuṭ, okuṭ one woman or thing; (S.) ukkur one man; okal one woman; ukuṭ one thing.”. DEDR 990 gives ukur “one man”; the source’s broader “alone; single” gloss extends the one stem. (1 record.) |
+| 19 | **ukuṭ** ‘one’, **okuṭ** ‘one’ | Proposed reflex of [**DEDR 990**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=94) | DEDR 990 full article opens “990 (a) Ta. oru (before consonant), ōr (before vowel) one; ori (-pp-, -tt-) to be united in harmony; orukkam oneness, sameness; orukka for…”; its Ga. (Oll.) passage gives “Ga. (Oll.) ukur one man; ukuṭ, okuṭ one woman or thing; (S.) ukkur one man; okal one woman; ukuṭ one thing.”. The source form and sense match this Ollari entry within the whole article. (2 records.) |
+| 20 | **unḍ-** ‘to sit’ | Proposed reflex of [**DEDR 725**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=71) | DEDR 725 full article opens “725 Kol. ud- (utt-) to sit; udip- (udipt-) to make to sit. Nk. udd- (utt-) to sit; udip- to make to sit. Nk. (Ch.) ud- (utt-) to sit; udup-/ udp…”; its Ga. (Oll.) passage gives “Ga. (Oll.) unḍ- to sit. (S.) unḍ-, unḍ-ēr- to sit, perch; (S. 3 ) uṇ- (uṇḍ-) to sit; uṇup- to seat.”. The source form and sense match this Ollari entry within the whole article. (1 record.) |
+
+Proposed assignment rows: **8**. Affected records: **8**. Relation kinds: **reflex**. Multi-part responses retain their source order.
+
+Exact persistent IDs and complete source records: [batch-012.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/OllariGadaba/batch-012.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../ollari-bhattacharya-20260925/research-holds.json). No new lexical material or donor nodes are introduced.

@@ -1,0 +1,402 @@
+{
+ "_doc": "Round-2 accent hypotheses x agent groups, hand-compiled from the §7/§8 notes of each group (sound_changes/notes/<group>.md). v: '+' adopted (beats the positional control on train LOO), '~' partial or weak (adopted in few lects or tiny), '-' rejected (accent version worse than the accent-blind or positional rule), '0' no signal either way, '' not tested.",
+ "hyps": [
+  {
+   "id": "pretonic",
+   "label": "Pretonic shortening / reduction",
+   "q": "Is a long vowel before the accent shortened (or a short one reduced)?"
+  },
+  {
+   "id": "lengthen",
+   "label": "Tonic lengthening, accent-conditioned CL",
+   "q": "Does the accented vowel lengthen, or does compensatory lengthening prefer the accented syllable?"
+  },
+  {
+   "id": "final",
+   "label": "Final vowels: oxytone survival",
+   "q": "Does an accented final vowel resist apocope (or behave differently from a post-tonic one)?"
+  },
+  {
+   "id": "syncope",
+   "label": "Medial syncope",
+   "q": "Is medial vowel loss conditioned by position relative to the accent?"
+  },
+  {
+   "id": "rvoc",
+   "label": "Vocalic r̩ outcome",
+   "q": "Does the accent decide the a / i / u outcome of r̩?"
+  },
+  {
+   "id": "quality",
+   "label": "Vowel quality (a > ɔ/o, ā > ō, umlaut)",
+   "q": "Are quality shifts restricted to accented (or unaccented) vowels?"
+  },
+  {
+   "id": "tone",
+   "label": "Modern tone / stress placement",
+   "q": "Does modern tone or stress fall on the Vedic accented syllable?"
+  }
+ ],
+ "cells": {
+  "mia-insular": {
+   "pretonic": [
+    "-",
+    "Pk +0.0088, Pa +0.0114 train NED"
+   ],
+   "lengthen": [
+    "-",
+    "the accent does not protect long vowels from the two-mora law; Pischel-type pretonic gemination 2 better / 59 worse"
+   ],
+   "final": [
+    "-",
+    "apocope and Sinhala -i > -a accent-blind"
+   ],
+   "syncope": [
+    "-",
+    "accent-blind"
+   ],
+   "rvoc": [
+    "~",
+    "Sinhala pretonic r̩ > i (+0.0005), the group's only accent rule; elsewhere apparent splits track starred vs Vedic headwords and oxytone r-stems; a labial neighbour favours u"
+   ],
+   "quality": [
+    "-",
+    "Sinhala umlaut accent-blind"
+   ],
+   "tone": [
+    "",
+    ""
+   ]
+  },
+  "dardic-north": {
+   "pretonic": [
+    "",
+    ""
+   ],
+   "lengthen": [
+    "+",
+    "Palula á > ā; Shina verb roots shorten their long vowel because the infinitive carries the stress (+0.0027)"
+   ],
+   "final": [
+    "~",
+    "Khowar loses accented final -i/-u and keeps unaccented ones (+0.0009), the reverse of Tharu; oxytone -á survives more often (statistical only)"
+   ],
+   "syncope": [
+    "-",
+    "no accent effect"
+   ],
+   "rvoc": [
+    "-",
+    "no accent effect"
+   ],
+   "quality": [
+    "+",
+    "Palula drag chain ō > ū, then accented ā > ō (reverse order +0.009)"
+   ],
+   "tone": [
+    "-",
+    "Accent score (accent-marked forms): the old penult, placed before final-vowel loss, is best for Shina (train accent NED 0.481 vs Vedic 0.508), Palula and Kalasha; the last syllable for Khowar. The Vedic accent carried through the chain ranks 3rd–5th of 6. Earlier test: Shina, Palula, Khowar, Kalasha stress/tone not on the Vedic accent"
+   ]
+  },
+  "dardic-south": {
+   "pretonic": [
+    "-",
+    "pre- and post-stress shortening both worse"
+   ],
+   "lengthen": [
+    "+",
+    "Pashai lengthens the accented vowel of disyllables: yáva > yā, mála > māl (+0.0024; the unaccented version −0.0024)"
+   ],
+   "final": [
+    "-",
+    "accent does not predict final-vowel loss (+0.004 to +0.024 against a matched control)"
+   ],
+   "syncope": [
+    "-",
+    "worse"
+   ],
+   "rvoc": [
+    "-",
+    "worse"
+   ],
+   "quality": [
+    "-",
+    "Kohistani vowel shortening: every accent-protected version worse"
+   ],
+   "tone": [
+    "-",
+    "Accent score: last syllable best in Indus Kohistani, Pashai, Gowro, Bhateri; first syllable in Bashkarik; the Vedic accent ranks 3rd–5th. Zoller's Kohistani tones: first-syllable falling tone +0.049; rising tone after voiced aspirates only 52% vs 42%"
+   ]
+  },
+  "nuristani": {
+   "pretonic": [
+    "-",
+    "rejected"
+   ],
+   "lengthen": [
+    "",
+    ""
+   ],
+   "final": [
+    "~",
+    "PNur, Kati, Kamviri: post-tonic -a lost, oxytone -á kept (dropping both costs +0.002 to +0.006); half the gain is starred vs unstarred words; Ashkun, Prasun, Tregami lose tonic -á too"
+   ],
+   "syncope": [
+    "-",
+    "all variants rejected"
+   ],
+   "rvoc": [
+    "",
+    ""
+   ],
+   "quality": [
+    "0",
+    "Kati ā~o 30% tonic vs 28% pretonic; a~u 44% vs 43%; Kamviri ū~ɨ 47% vs 50%; Strand's â 96% vs 96%; Prasun a > u 39% vs 38%"
+   ],
+   "tone": [
+    "-",
+    "Accent score: the last syllable wins in all five lects with accent-marked forms (Kamviri 0.496 vs Vedic 0.522); the Vedic accent comes second in Kamviri, Kati and Prasun, its best showing anywhere"
+   ]
+  },
+  "northwest": {
+   "pretonic": [
+    "~",
+    "Round 2 adopted pretonic ī ū > i u in Sindhi, Lahnda and Khetrani, but its whole gain comes from vowels before a cluster: pretonic shortening in open syllables is worse than no rule. The rule is now the two-mora law for ī ū, restricted to pretonic position in Sindhi and Lahnda (the accent adds ≈ 0.001 train NED there) and unrestricted in Khetrani (the accent adds nothing). Accent-conditioned long-vowel shortening in general hurts all 11 lects (+0.001 to +0.014)"
+   ],
+   "lengthen": [
+    "-",
+    "tonic lengthening rejected; next-syllable weight conditions shortening and degemination"
+   ],
+   "final": [
+    "-",
+    "oxytone and barytone words take the same citation vowel: the -ā/-o split tracks word age (starred vs Vedic), not accent"
+   ],
+   "syncope": [
+    "-",
+    "rejected"
+   ],
+   "rvoc": [
+    "-",
+    "pretonic r̩ > a rejected"
+   ],
+   "quality": [
+    "",
+    ""
+   ],
+   "tone": [
+    "-",
+    "Accent score (Hindko): first long vowel 0.392, Vedic 0.475 (5th of 6). Hindko tone falls on the Vedic accented syllable in 26 of 74 forms; it follows the lost h / aspirate"
+   ]
+  },
+  "west-pahari": {
+   "pretonic": [
+    "-",
+    "worse in 15 of 16 lects; Dogri's apparent gain is vowel contraction"
+   ],
+   "lengthen": [
+    "-",
+    "final-vowel lengthening not accent-conditioned"
+   ],
+   "final": [
+    "-",
+    "word-final loss not accent-conditioned"
+   ],
+   "syncope": [
+    "0",
+    "pretonic medial vowels survive best (27–50% lost vs 42–77% post-tonic), but no accent rule beat the positional one"
+   ],
+   "rvoc": [
+    "-",
+    "not accent-conditioned"
+   ],
+   "quality": [
+    "-",
+    "a > ɔ depends on the open syllable (68% vs 20% closed) and a following non-ā; blocking it pretonically costs +0.0015 to +0.008"
+   ],
+   "tone": [
+    "-",
+    "Accent score: first syllable best in Kotgarhi and Bhalesi; the Vedic accent 4th–5th of 6"
+   ]
+  },
+  "central-east-pahari-romani": {
+   "pretonic": [
+    "-",
+    "first-syllable ā shortened before a later ā is positional; the Vedic-pretonic version loses +0.002 to +0.011"
+   ],
+   "lengthen": [
+    "~",
+    "Nepali, Kumaoni, Dotyali: the accented vowel lengthens before an OIA cluster (+0.0006 to +0.0017), beating every positional control"
+   ],
+   "final": [
+    "~",
+    "Kumaoni oxytone -á > -o (+0.0021; the barytone version −0.0015); Romani and Domari final vowels show no accent effect"
+   ],
+   "syncope": [
+    "-",
+    "Romani syncope accent-blind (pre- or post-tonic only ≈ +0.0015)"
+   ],
+   "rvoc": [
+    "",
+    ""
+   ],
+   "quality": [
+    "",
+    ""
+   ],
+   "tone": [
+    "-",
+    "Accent score (Domari): the old penult best (0.402), Vedic 5th of 6 (0.441)"
+   ]
+  },
+  "hindi": {
+   "pretonic": [
+    "-",
+    "+0.002 to +0.012 in every lect"
+   ],
+   "lengthen": [
+    "-",
+    "CL or anusvāra lengthening tied to the accent: +0.0025 and +0.0017 over controls; lengthening follows the modern stressed syllable"
+   ],
+   "final": [
+    "+",
+    "final -u > -ū except under the Vedic accent: áśru > ā̃sū but bāhú > bāh (Hindi reflexes 19% -ū accented vs 48% unaccented); accented -ā resisting loss rejected"
+   ],
+   "syncope": [
+    "-",
+    "accented or pretonic schwa not protected; syncope is positional"
+   ],
+   "rvoc": [
+    "",
+    ""
+   ],
+   "quality": [
+    "",
+    ""
+   ],
+   "tone": [
+    "",
+    ""
+   ]
+  },
+  "rajasthani-gujarati": {
+   "pretonic": [
+    "",
+    ""
+   ],
+   "lengthen": [
+    "-",
+    "lengthening only under the accent is worse than syllable weight (Gujarati anusvāra +0.0051 on accented words); tonic-only CL worse than none in Marwari"
+   ],
+   "final": [
+    "0",
+    "in survey lects final -á words are cited with -o more often, but no rule survives"
+   ],
+   "syncope": [
+    "-",
+    "accent-conditioned syncope and protecting tonic initial a- both hurt"
+   ],
+   "rvoc": [
+    "-",
+    "hurts"
+   ],
+   "quality": [
+    "~",
+    "Gujarati tonic ū stays long (−0.0005), equally explained by syllable position"
+   ],
+   "tone": [
+    "",
+    ""
+   ]
+  },
+  "marathi-bhil": {
+   "pretonic": [
+    "-",
+    "unaffected; a Vasavi pretonic-shortening rule (train −0.0047, 7 etyma) was reverted after test +0.015"
+   ],
+   "lengthen": [
+    "-",
+    "compensatory lengthening follows the initial syllable; the accent never beats it and adds nothing"
+   ],
+   "final": [
+    "~",
+    "Rathwi Bareli: a post-tonic final -a blocks masc. -o (+0.0072); does not carry to the 8 other -o lects"
+   ],
+   "syncope": [
+    "-",
+    "tonic medial a is lost 71% of the time"
+   ],
+   "rvoc": [
+    "~",
+    "Marathi tonic ŕ̩ > i, other r̩ > a (+0.0003); the same split is worse in Konkani"
+   ],
+   "quality": [
+    "-",
+    "Marathi ī/ū shortening unaffected"
+   ],
+   "tone": [
+    "",
+    ""
+   ]
+  },
+  "bihari-tharu": {
+   "pretonic": [
+    "-",
+    "+0.003 to +0.014 everywhere; Bihari shortening is antepenult counting"
+   ],
+   "lengthen": [
+    "~",
+    "two-mora shortening spares a long vowel when the accent follows (Maithili, Bihari, Rana, Kochila, K. Danuwar; up to +0.0015); blocking CL pretonically costs +0.004 to +0.009; tonic lengthening worse"
+   ],
+   "final": [
+    "~",
+    "western Tharu keeps oxytone -í through apocope (agní > āgi; +0.0005 to +0.0012 on 2–7 words); Dewas-Done Danuwar loses post-tonic -i; not Bhojpuri"
+   ],
+   "syncope": [
+    "-",
+    "worse almost everywhere"
+   ],
+   "rvoc": [
+    "-",
+    "ŕ̩ > a gain rests on mŕ̩ttikā alone"
+   ],
+   "quality": [
+    "-",
+    "a-rounding and umlaut worse"
+   ],
+   "tone": [
+    "",
+    ""
+   ]
+  },
+  "eastern": {
+   "pretonic": [
+    "-",
+    "loses"
+   ],
+   "lengthen": [
+    "-",
+    "tonic lengthening recovers only 0–57% of the first-syllable CL rule in all 11 lects"
+   ],
+   "final": [
+    "-",
+    "final -a vs -ā and apocope of -i both lose"
+   ],
+   "syncope": [
+    "",
+    "not testable: the accent is gone before syncope"
+   ],
+   "rvoc": [
+    "-",
+    "loses"
+   ],
+   "quality": [
+    "-",
+    "a > ɔ rounding loses"
+   ],
+   "tone": [
+    "",
+    ""
+   ]
+  }
+ }
+}

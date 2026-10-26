@@ -1,0 +1,19 @@
+{
+  "reviewer": "OpenAI Codex root, independent of importer author",
+  "selection": "independent-selection-202609271210.json",
+  "seed": 202609271210,
+  "proposal_csv_sha256": "cdc1f98bd6a372e51eb99915090882a155f0d8a98b723037a6056e39f03e9378",
+  "reviewed_source_units": 20,
+  "material_errors": 0,
+  "status": "sample passed; targeted controls and installation pending",
+  "method": "Read all twenty actual output rows in the frozen selection. Independently queried the nineteen dictionary IDs from the original snapshot/kera-mundari.db, joining entries and senses and reading lexeme, notes, glosses and parts_of_speech. Compared the remaining about:boy record against the original snapshot/about.html morphophonology paragraph, which explicitly gives kora as boy and a lexicalized vowel-harmony example.",
+  "checks": [
+    "All nineteen dictionary literal forms and English glosses agree exactly with raw SQLite.",
+    "All nineteen source POS labels agree with the emitted noun, adj or adv tags.",
+    "Prompt identifiers and three 2011-09-28 source-note dates are retained as locators.",
+    "The two younger-sibling phrases retain full forms and multiword-expression tags.",
+    "The source's aspiration, retroflexion, glottal markers and length marks are preserved without inferred phonemic conversion.",
+    "The about-page boy record preserves the attested spelling, gloss and source qualification."
+  ],
+  "scope_limit": "This is a fresh twenty-unit sample, not a claim that every source record was independently reread. Complete about-page scope has a separate independent audit. Compiled/full-build gates remain deferred."
+}

@@ -1,0 +1,101 @@
+{
+  "status": "frozen for independent actual-output source audit; not installed",
+  "source_pdf": "tmp/pdfs/bailey1920/bailey1920.pdf",
+  "source_pdf_sha256": "7a1577a2d2a24eca8b95e9b1ed700ef01f716d1069e4468f36a673611d093b39",
+  "page_mapping": "Printed n = one-based PDF n+26 = zero-based PDF n+25",
+  "source_scope": "Shared113–115; heading-scoped116–117; paired grammar131–140;44complete responses141–142; commentary142–143; complete glossary144–147; boundary controls115–118,130,148",
+  "source_groups": {
+    "frozen_supplementary_groups": 393,
+    "additional_lexical_headings": 2,
+    "reviewed_supplementary_groups": 395,
+    "grammar": 305,
+    "sentences": 44,
+    "commentary": 19,
+    "introduction": 27,
+    "context_or_control_groups": 23
+  },
+  "packages": {
+    "rampur": {
+      "rows": 647,
+      "added_rows": 359,
+      "recovered_glossary_holds": 1,
+      "generic_kochi_rows": 4,
+      "audit_units": 640,
+      "uncertain_rows": 16,
+      "variant_rows": 10,
+      "files": {
+        "whole-proposed.csv": "848c4e6e652bea79d14f270327bd3e7e3d293d6fb6abe1384c8da786ed16eebb",
+        "whole-proposed-audit.jsonl": "146b284f877bc6a5b9d19977728c30ff2c21810e826ea6a3b1b74504de48c72c",
+        "whole-proposed-profile.txt": "4956fe9a0bae7e2912595a34d1eb8594200f74d5b74a2e272f85869a2cb4852b",
+        "whole-parser-validation-20260927.json": "5372bd81a7bdfe0c108bda438876811350ce943e0d17509ddc811e2868c8feeb",
+        "whole-profile-validation-20260927.json": "672352743eba2dc34f6f3ceb47e0fbca03c92ea2e798d2d749e8d3fcf3ae7bfd"
+      },
+      "legacy_keys_preserved": 288,
+      "legacy_rows_exact": 280
+    },
+    "baghi": {
+      "rows": 698,
+      "added_rows": 402,
+      "recovered_glossary_holds": 0,
+      "generic_kochi_rows": 0,
+      "audit_units": 640,
+      "uncertain_rows": 7,
+      "variant_rows": 21,
+      "files": {
+        "whole-proposed.csv": "68be2ca65253257509dc6b8d12c125bbb56fbc224852b5889dc7563d7f5f4918",
+        "whole-proposed-audit.jsonl": "59d5012a895a2e6cc557607aaaa7924d6046c3a45bacaca09cc41905a34946a5",
+        "whole-proposed-profile.txt": "975fb32b76eece2271b3c2b4d79eb7ac154c0957bcf42b21316e913efa300b86",
+        "whole-parser-validation-20260927.json": "627d940072c145b51f266b109d6e8e597996a1c809ba977b7492ec2f93efa19b",
+        "whole-profile-validation-20260927.json": "8db71813d1ffe2698e8400debc751670930cebac1b469c2804732057cb76819e"
+      },
+      "legacy_keys_preserved": 296,
+      "legacy_rows_exact": 293
+    }
+  },
+  "input_sha256": {
+    "whole-paired-grammar-first-reading-20260927.tsv": "54b95aecc7a2b86fc490bb8d530add63fdbdd8165ab2b21b0204072812632b6e",
+    "whole-paired-sentences-first-reading-20260927.tsv": "a2cce004b8c23c96287877a7d871d2ed00e8aead2242775881d7f4f24e071bd7",
+    "whole-paired-commentary-first-reading-20260927.jsonl": "1473cb58fc78ca9b2a1f8c97f2656b97405a7f816689425c87dad9fb1348b001",
+    "whole-paired-introduction-first-reading-20260927.jsonl": "7a24e966cd0ac24538ae33e3328b007a4ecd8985ded56c02a09c94c7365c57a1",
+    "whole-paired-second-reading-20260927.json": "f2ccab900a491cfea31f80aade79b959b3575e1f71d41b588e2fad5233ca7294",
+    "whole-paired-grammar-reviewed-20260927.jsonl": "e71e629b1c7459b736179cea4c7c5999fc4e4fa36711c9ad17a812f567865aa7",
+    "whole-paired-sentences-reviewed-20260927.jsonl": "84aeb590b40dd50fad6f7521baf53622ed5cf5089817781e0dfc64f03be94c37",
+    "whole-paired-commentary-reviewed-20260927.jsonl": "e742ad9b0d83a7211a7f84bd5039463fef829dbf314704a93382bc866ff46e37",
+    "whole-paired-introduction-reviewed-20260927.jsonl": "795d66f82673b94ba8ed15083ae966f9be101d8995f2c96c7c3078d28aee0e8b",
+    "whole-paired-expansion-draft-20260927.jsonl": "b9808654967fb2d4b58753d96f41ad4a90740542a59eb34eb6588c861e4e6d59",
+    "whole-glossary-hold-recovery-20260927.json": "fc103d2b2fc8518f14f0ea43c7a7d6a75976eb121e9a650228dd7ff5a04b8b0c",
+    "prepare_paired_reviewed.py": "76eccec34bc9d4641eb417ce824ee067f981c6a1668eb5108ab65570b3e80472",
+    "prepare_paired_expansion.py": "74a705cef9a29c2e7343979e297c473e9fe18a2e5a677650453a1bf0f7b15c4f",
+    "prepare_paired_proposals.py": "8bd160a0c751d5f55a13b4919ceb743f718eae2c319285aa16715b2c869c468a",
+    "whole-legacy-corrections-20260927-pass2.json": "ce2d630893523e14c4baf8760cfa8bde2718ba9ad70d029fc039caad0510f6e4"
+  },
+  "source_decisions": [
+    "GenericKochi4examples emitted once under kc in Rampuri carrier, with explicit attribution scope and blank glosses.",
+    "Explicit suffixes and ditto replacements expanded only from printed stems/context; raw physical cells retained.",
+    "Same-as paradigm statements have exact candidate-key reuse accounting; no arbitrary unprinted paradigms generated.",
+    "Baghi water-word alternate emits2complete responses; all44physical responses retained.",
+    "Future3pl unpunctuated ōā auī split into2tentative alternatives with root-supported segmentation uncertainty and no confident variant edge.",
+    "Formerly held glossary body jĕā́ recovered after root original-image confirmation; historical hold retained and interpretation uncertainty explicit.",
+    "Preserve all584 legacy keys; apply only11 exact independently documented legacy deltas: one literal quantity and ten grammatical gloss/tag repairs."
+  ],
+  "validation": {
+    "focused_test_file": "tests/test_bailey_rampur_baghi_whole_recovery.py",
+    "focused_tests": "7 passed",
+    "parser_rows": 1345,
+    "normalizations": [
+      "NFC",
+      "NFD"
+    ],
+    "profile_policy": "zero violations",
+    "legacy_rows_exact": 573,
+    "legacy_keys_preserved": 584,
+    "explicit_legacy_corrections": 11
+  },
+  "remaining": [
+    "independent actual-output source audit and adjudication",
+    "guarded canonical importer/metadata/reference/checklist installation and canonical parser checks",
+    "fullCLDF/database/build/browser gates explicitly deferred; no remote work authorized"
+  ],
+  "version": "pass2 after independently identified legacy mark and metadata corrections",
+  "previous_freeze_sha256": "f099472cf1664aa6c084b9b06b046155894dba4031ca5fc2815d519376ed746c"
+}

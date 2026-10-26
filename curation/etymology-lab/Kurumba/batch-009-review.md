@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Attappady Kurumba · Dravidian surveys, 2026-09-21 · batch 009. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Attappady Kurumba | Proposed etymology | Evidence |
+|---|---|---|---|
+| 41 | **putiyatɨ** ‘new’ | Proposed reflex of [**DEDR 4275**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=378) | DEDR 4275 gives Tamil putu/putiya, Malayalam putu, Kodagu pudiyë, Kannada posa/hosa/hosadu and Tulu posa/posatu new; Konda pūni and Malto pune belong to the same family. These simple stems and adjectival inflections are selected; new-person nouns and loan-looking alternative stems remain unassigned. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (2 records.) |
+| 42 | **pū** ‘flower’, **pūvɨ** ‘flower’ | Proposed reflex of [**DEDR 4345**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=384) | DEDR 4345 records Tamil pū, Malayalam pū/pūvu, Kannada pūvu, Gadaba pū/puvvu, Parji pū, Gondi puŋgar and Kurux pūmp flower. The selected simple flower forms fit these comparanda; Indo-Aryan-looking phul and uncertain responses are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (2 records.) |
+| 43 | **maṇal** ‘sand’, **maṇalɨ** ‘sand’ | Proposed reflex of [**DEDR 4666**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=413) | DEDR 4666(b), distinct from earth/soil in (a), explicitly lists Tamil and Malayalam maṇal, Kannada maṇal/maḷal/maral, Kodagu maṇa and Parji/Gadaba man sand. Only this sand branch is selected; the Toda compound er-moḷṇ and earth responses under the sand prompt are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (2 records.) |
+| 44 | **koḷuppɨ** ‘fat’, **kɔḷuppu** ‘fat’ | Proposed reflex of [**DEDR 2146**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=193) | DEDR 2146 gives Tamil/Malayalam koḻuppu fat, Gadaba koḍukuṭ/koḍukuḍ, Gondi koṛvinj and Konda koṛvu animal fat. The survey variants retain this lexical family; questioned Kota evidence and carbi/cerabi loan forms are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (2 records.) |
+| 45 | **tsinnatɨ** ‘small’, **sinnadɨ** ‘small’ | Proposed reflex of [**DEDR 2594**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=225) | DEDR 2594 attests Tamil and Malayalam cinna small, Kodagu ciṇṇi, Telugu cinna, Kolami sinnam/cinni and Parji cin. These selected southern survey forms fit the cinna family; Gondi and Kurux lookalikes require separate contact evidence. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (2 records.) |
+
+Proposed assignment rows: **10**. Affected records: **10**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-009.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Kurumba/batch-009.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

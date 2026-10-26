@@ -1,0 +1,21 @@
+file: 20260927-fawcett-saora.csv
+defaults:
+  transcription:
+    profile: fawcett-saora-1888
+    input: form
+    preserve_hyphens: true
+  identity:
+    legacy_ids: stem
+    dedupe_by_entry_key: true
+  importer:
+    commands:
+      - [data/other/forms/raw_data/fawcett_saora_1888/import_source.py, --install]
+    note: Complete article pp. 206–272 accounted; 128 forms from 121 target units, with 43 explicit controls or documentary units retained in the audit. Source-stage importer only; full builds and browser validation are separate gates. OCR was used only as a passage-location aid, not transcription input.
+sources:
+  fawcett1888saora:
+    forms:
+      split_alternates: false
+    reference:
+      editor: OpenAI Codex
+      ocr: false
+      etymology_provenance: none

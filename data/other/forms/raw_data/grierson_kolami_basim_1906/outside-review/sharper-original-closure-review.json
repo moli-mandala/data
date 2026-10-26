@@ -1,0 +1,121 @@
+{
+  "reviewer": "/root/asur_finish",
+  "status": "passed_root_qualified_adjudication",
+  "date": "2026-09-27",
+  "retrievals": [
+    {
+      "url": "https://archive.org/download/in.ernet.dli.2015.42222/page/n704.jpg",
+      "file": "later-addendum-leaf704-unverified.jpg",
+      "verified_printed_page": 16,
+      "witness": "Later bound-in Addenda Minora Vol.IV, not silently1906"
+    },
+    {
+      "url": "https://archive.org/download/in.ernet.dli.2015.42222/page/n202.jpg",
+      "file": "alternate-leaf202-unverified.jpg",
+      "verified_printed_page": 182,
+      "native_size": [
+        4532,
+        6340
+      ]
+    },
+    {
+      "url": "https://archive.org/download/in.ernet.dli.2015.42222/page/n203.jpg",
+      "file": "alternate-leaf203-unverified.jpg",
+      "verified_printed_page": 183,
+      "disposition": "adjacent mapping-control; not182 evidence"
+    }
+  ],
+  "addendum16": {
+    "all_original_read": true,
+    "entries": [
+      30,
+      36,
+      168,
+      219,
+      240,
+      243,
+      244,
+      247,
+      251,
+      254,
+      259,
+      260,
+      262,
+      263,
+      264,
+      267
+    ],
+    "applicable_changes": [],
+    "scope": "p168 adds Korku authority only. No182,561–575,Kolami/Basim or standardDravidian-list correction. Completes original16–18 applicability review with separately pinned17/18 originals."
+  },
+  "p182": {
+    "all_original_read": true,
+    "resolved_forms": [
+      {
+        "key": "grierson1906kolamibasim:p182:outside:kolami-negative",
+        "form": "tōlen",
+        "resolution": "Second medial consonant is a tall slanted l with no t crossbar; compare initial printedt in same word. Separateōmacron visible. Preserve this source spelling, not later626/627tōten."
+      },
+      {
+        "key": "grierson1906kolamibasim:p182:outside:bhili-berar-negative",
+        "form": "todī",
+        "resolution": "Plain round o with no quantity stroke; separate finalīmacron clearly visible."
+      }
+    ],
+    "crop_native_bbox": [
+      1880,
+      4820,
+      2910,
+      4970
+    ],
+    "image": "alternate-p182-two-comparands-native-crop.png",
+    "phonological_inference": false,
+    "source_claim": "The preceding proposed Dravidian loan analysis is conditional (“If this explanation is the right one ... perhaps”). Preserve qualification, no borrowing edge."
+  },
+  "referent_census": {
+    "distinct_competing_Dravidian_Bhili_of_Berar_referent_found": false,
+    "positive_source_context": [
+      "p182 broader DravidianBhili ofBerar",
+      "pp561/565–569 DravidianBhili ofPusad/Basim"
+    ],
+    "separate_controls": [
+      "p501 Gondi ofBasim, explicitlyGondi",
+      "pp8/9/167/185/186 genericBhili, noDravidianBasim attribution"
+    ],
+    "scope_limit": "Result concerns the complete recorded keyed-prose,label,contents,table and original-lead census; not a claim of independent visual rereading of all701book pages."
+  },
+  "canonical_changes": false,
+  "evidence_sha256": {
+    "later-addendum-leaf704-unverified.jpg": "62c498b9ceeb996e21dd5e45e4130f1e75baab01f8b8428cb34bb4062770660d",
+    "alternate-leaf202-unverified.jpg": "23f768f73e5ae0c455f9aad30581324f74a35267a3abf921f67bfd11f9c39279",
+    "alternate-leaf203-unverified.jpg": "2d679e6d04c0e694a689e6622b22e66dc7de5a5a82af7e9f69172f13c8ca689b",
+    "alternate-p182-final-comparison-native-crop.png": "9feda88113a29f9045c98ca7d7c6be03819ef26244dc739cdef3ce64cd99ba65",
+    "alternate-p182-two-comparands-native-crop.png": "4bd2a8e61f1d7777f4a838b798957a7cde6f009da3f36aafc88d5ec207d1e2e3"
+  },
+  "root_independent_review": {
+    "reviewer": "/root",
+    "original_crop_and_complete_addendum16_viewed": true,
+    "literal_readings": [
+      "tōlen",
+      "todī"
+    ],
+    "decision": "Qualified Naikri base for broader Dravidian Bhili of Berar, uncertain tag and typed historical-attribution caveat. No Basim dialect tag/coordinates or borrowing edge. Source context plus DEDR27 and census found no distinct competing named Dravidian-Bhili referent. p182 tōlen is not harmonized to later tōten."
+  },
+  "accepted_Berar_route": {
+    "Language_ID": "Naikri",
+    "dialect_tag": null,
+    "tags": [
+      "uncertain"
+    ],
+    "typed_uncertainty": {
+      "type": "historical-attribution",
+      "detail": "Source labels this comparison broadly Dravidian Bhili of Berar, not a specified Basim elicitation. Naikri is a qualified contextual base mapping grounded in the volume and DEDR27, not a global geographic identity assertion."
+    },
+    "borrowing_edge": null,
+    "coordinates": null
+  },
+  "identity_report": {
+    "path": "data/data/other/forms/raw_data/grierson_kolami_basim_1906/identity-review/berar-label-followup-20260927.json",
+    "sha256": "9b1fada246b90b4270816d9439567bff096bae335ae6bf2ac2c1eee0c4121ff3"
+  }
+}

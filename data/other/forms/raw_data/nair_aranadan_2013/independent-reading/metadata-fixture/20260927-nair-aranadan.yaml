@@ -1,0 +1,33 @@
+# Whole-chapter source-stage configuration; installation is approval-guarded.
+file: 20260927-nair-aranadan.csv
+defaults:
+  importer:
+    commands:
+      - [data/other/forms/raw_data/nair_aranadan_2013/import_source.py, --install]
+    note: Complete reviewed Aranadan chapter and its explicitly attributed comparisons.
+  transcription:
+    convert: false
+    preserve_hyphens: true
+  identity:
+    dedupe_by_entry_key: true
+  forms:
+    split_alternates: false
+  gloss:
+    grammar_tags: false
+sources:
+  nair2013aranadan:
+    identity:
+      dedupe_by_entry_key: true
+    forms:
+      split_alternates: false
+    gloss:
+      grammar_tags: false
+    reference:
+      editor: OpenAI Codex
+      ocr: false
+      etymology_provenance: source
+  usha1992aranadanmar:
+    reference:
+      editor: OpenAI Codex
+      ocr: false
+      etymology_provenance: none

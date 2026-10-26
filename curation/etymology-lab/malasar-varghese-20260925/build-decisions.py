@@ -1,0 +1,122 @@
+"""Draft conservative Malasar Varghese research decisions for later user review."""
+import csv,gzip,json
+from pathlib import Path
+P=Path(__file__).resolve().parent;records=json.loads((P/'survey-inventory.json').read_text())
+assert len(records)==144
+proposals={};hold_reasons={}
+def add(indices,parent,evidence,components=None):
+ for i in indices:
+  assert i not in proposals
+  proposals[i]=(parent,evidence,components)
+def hold(indices,reason):
+ for i in indices:
+  assert i not in hold_reasons
+  hold_reasons[i]=reason
+add([1],5099,"DEDR 5099 gives Tamil/Malayalam mēl 'body' and Kodagu me·lï 'body'; Malasar melɨ matches this body noun.")
+add([2],5031,"DEDR 5031 lists Malayalam mōnta/muññi and Kota mo·nd 'face'; Malasar mūñḍźi belongs to the same face family.")
+add([3,4],1448,"DEDR 1448 directly lists Tamil and Malayalam kātu 'ear'; the Malasar kādɨ/kātɨ spellings match this organ noun.")
+add([9,10],3911,"DEDR 3911 gives Tamil pati 'abode; town, city, village' and Malayalam pativu 'settlement'; Malasar pati preserves the village sense.")
+add([17],1819,"Malasar koḷavikallɨ can be parsed as koḷavi 'grinding pestle' plus kallɨ 'stone': DEDR 1819 gives Tamil/Malayalam kur̤avi 'pestle, rolling grinding stone', and 1298 gives Malayalam kal/kallu 'stone'. The ordered components preserve both visible parts.",[1819,1298])
+add([18],1819,"DEDR 1819 gives Tamil kur̤avi 'grinding pestle' and Malayalam kur̤avi 'small rolling stone to grind with'; Malasar koḷavi is the corresponding tool noun.")
+add([27,28],3045,"DEDR 3045 directly includes Tamil and Malayalam taṇṇi 'water'; the survey's spaced ta ṇṇi is the same water word.")
+add([30],2453,"DEDR 2453 gives Tamil cāmpal and Malayalam cāmpal 'ashes'; Malasar śyambal shares their consonantal frame and ash sense.")
+add([32],497,"DEDR 497 lists Tamil ilai, Malayalam ila and Kota el 'leaf'; Malasar ɛlai is the same leaf family.")
+add([33],5535,"DEDR 5535 lists Tamil/Malayalam vēr and Kota ve·r 'root'; Malasar veirɨ matches the root noun.")
+add([37,38],4867,"DEDR 4867 lists Tamil miḷaku and Malayalam miḷaku/muḷaku 'pepper', with Kota and Tulu chilli senses; Malasar miḷakay/moḷakai show the pepper-to-chilli extension.")
+add([47],3939,"DEDR 3939 explicitly lists Tamil paiyaṉ 'boy, son'; Malasar payyan preserves the son/boy noun.")
+add([48],4198,"DEDR 4198 gives Tamil piḷḷai 'child, son, daughter' and Malayalam piḷḷa 'child'; Malasar puḷḷa is the same child word used for daughter.")
+add([83,84],5496,"DEDR 5496(a) includes Tamil veḷ/veṇ and Malayalam veḷḷa 'white'; Malasar vɛḷḷai/vɛḷḷɛ preserve the white family.")
+add([85,86],3918,"The Malasar eleven form contains ten plus one: DEDR 3918 gives Tamil patiṉ- and Malayalam patin- in teens, while DEDR 990 gives the or-/on- 'one' family. Both components are represented in order.",[3918,990])
+add([87,88],5151,"DEDR 5151 lists Tamil yār/ār and Malayalam ār 'who'; Malasar ārɨ is an ordinary local interrogative form.")
+add([89,90,91,92],5151,"DEDR 5151 groups Tamil eṉṉa/eṉṉatu and Malayalam entu 'what'; the Malasar enna-/endu- responses preserve this interrogative base with local endings.")
+add([93,94],5151,"DEDR 5151 gives Tamil eṅkē and Malayalam eṅṅu 'where'; Malasar ɛŋgēykɨ/ɛŋgɛ use the corresponding place interrogative.")
+add([95,96],5151,"DEDR 5151 gives Tamil eppōtu and Malayalam eppōḷ 'when'; Malasar ɛppam/ɛppa represent the time interrogative stem.")
+add([97,99],5151,"DEDR 5151 includes Tamil ettaṉai and Malayalam etra 'how much/how many' within the larger interrogative family; Malasar ɛtta ra/ɛnatta m are quantity/manner interrogatives, with endings left unanalyzed.")
+add([100,101],410,"DEDR 410(a) includes Tamil itu and Malayalam itu 'this'; Malasar itɨ preserves the proximal neuter demonstrative.")
+add([102,103],1,"DEDR 1 gives Tamil atu and Malayalam atu 'that'; Malasar atɨ preserves the distal neuter demonstrative.")
+add([112,113],1124,"DEDR 1124 directly lists Tamil kaṭi and Malayalam kaṭikka 'bite'; Malasar kaḍi is the elicited bite stem.")
+add([114,115,116],3825,"DEDR 3825(a) gives Tamil paci 'to be hungry' and Malayalam payikka 'to be hungry'; Malasar paśikatɨ/paśikɨtɨ retain the hunger stem with predicative morphology.")
+add([119],811,"DEDR 811 gives Tamil eri and Malayalam eriyuka 'burn'; Malasar ɛriyatɨ retains this burn stem with ordinary survey tense morphology.")
+add([124],2132,"DEDR 2132 gives Tamil kol and Malayalam kolluka 'kill'; Malasar kollatɛ retains the kill stem, while the elicitation prompt mixes negative imperative and past contexts.")
+add([125,126],4091,"DEDR 4091(a) gives Tamil pār 'see, look' and Malayalam pārkka 'regard, behold'; Malasar pārɨ/parɨ preserve the look stem.")
+add([127,128],5160,"DEDR 5160 gives Tamil nāṉ and Malayalam ñān 'I'; Malasar nān/nānɨ belong to this first-person singular family.")
+add([129,130],3684,"DEDR 3684 gives Tamil nī and Malayalam nī 'you (singular)'; Malasar ni is the corresponding singular pronoun.")
+add([131,132],3688,"DEDR 3688 includes plural/honorific second-person forms including Tamil nīvir and nīr; Malasar nivi in a formal singular source slot plausibly retains this honorific/plural base.")
+add([133,134],1,"DEDR 1 gives Tamil/Malayalam avan 'that man, he'; Malasar avan matches the distal masculine pronoun.")
+add([135,136],1,"DEDR 1 gives Tamil/Malayalam avaḷ 'that woman, she'; Malasar avaḷ matches the distal feminine pronoun.")
+add([137,138],3647,"DEDR 3647 gives Malayalam nām 'we, I and you' and other inclusive first-person plurals; Malasar nām/namɨ are explicitly labelled inclusive.")
+add([139],5154,"DEDR 5154 gives Malayalam ñaṅṅaḷ and Kodagu naŋga 'we (exclusive)'; Malasar naŋŋaḷ is explicitly labelled exclusive and matches this plural family.")
+add([141,142],3688,"DEDR 3688 lists Tamil nīvir and related second-person plurals; Malasar nīvi/nivi are the corresponding plural pronouns.")
+add([143,144],1,"DEDR 1 gives Tamil/Malayalam avar 'those persons, they'; Malasar avarɨ belongs to the distal plural pronoun family.")
+# Ambiguous contact, word segmentation, mismatched senses, and contradictory prompts stay visible as holds.
+hold([5,6],"Naham/nɛgam 'fingernail' resembles a regional nakha-type loan; the immediate donor and route into Malasar are not established.")
+hold([7],"Ira kula 'heart' is multiword; neither the first element nor the whole expression has a verified parent family.")
+hold([8],"Idayam 'heart' resembles Indo-Aryan hṛdaya-type vocabulary, but no immediate donor for this survey lect is verified.")
+hold([11,12],"Cāḷa/saḷa 'house' may be regional śālā-type contact vocabulary; inheritance or immediate donor is unresolved.")
+hold([13],"Vasapaḍi 'door' appears compounded; only a possible doorway element is recognizable, and the other part and order need verification.")
+hold([14],"Simar 'broom' lacks a secure match in the checked full DEDR broom articles; form similarity alone is insufficient.")
+hold([15,16],"Maḷakakallɨ/moḷakakallɨ 'mortar' may contain chilli/pepper plus stone, but the grinding-tool formation and first segment are not sufficiently established for ordered components.")
+hold([19],"Koṭapoḍi 'hammer' is a compound-looking response; a koṭ- 'strike' resemblance does not explain the remainder or the whole tool meaning.")
+hold([20,21],"Koḍāli 'axe' is a widely shared tool term with possible contact history; the immediate donor or inherited route remains unresolved.")
+hold([22,23],"Modira m/modiram 'ring' resembles a regional loan; the immediate donor is not established.")
+hold([24,25],"Sūriyan/sūryan 'sun' is Sanskrit-type vocabulary; an attested immediate donor for Malasar has not been established.")
+hold([26],"Akayam 'sky' resembles Sanskrit ākāśa/ākāyam-type vocabulary; its immediate donor and exact sound path are unresolved.")
+hold([29],"Paccavillɨ 'rainbow' is apparently a green/fresh + bow formation, but the meaning of the first constituent in this source and the complete compound analysis need confirmation.")
+hold([31],"Mɔda 'dust' has no secure DEDR dust-family match after primary comparison.")
+hold([34,35],"Gōdambi/godimbi 'wheat' resembles regionally shared contact vocabulary; its immediate donor is unresolved.")
+hold([36],"Kaḍakay 'groundnut' may be reduced from a gram/pulse + fruit compound, but the missing medial material and source segmentation require confirmation.")
+hold([39],"Vɛḷḷɛvɛŋkāyam 'garlic' is a white + onion-looking compound; the onion term's ancestry/immediate donor is unresolved.")
+hold([40,41],"Vɛŋkayam 'onion' is a widespread contact/crop term, but direct inherited ancestry or immediate donor has not been verified.")
+hold([42,43],"Ta kkāḷi 'tomato' is a later crop name; its contact or compound history needs an immediate donor analysis.")
+hold([44,45],"Mɔṭṭakosɨ/moṭakos 'cabbage' is a later crop term with unresolved immediate contact path.")
+hold([46],"Pāra 'spider' lacks a secure matching full DEDR spider family.")
+hold([49],"Māḷan 'husband' resembles āḷan in DEDR 399, but its initial m- has no established explanation in this source.")
+hold([50],"Purusan 'husband' resembles Sanskrit puruṣa-type vocabulary; its immediate donor is not verified.")
+hold([51,52],"Ambuḷapayyan 'boy' is multi-part: payyan is recognizable, but the first element is not securely identified.")
+hold([53,54],"Rātri 'night' is a contact-looking calendar/time term; the immediate donor of this lect's form is not established.")
+hold([55,56],"Madyanam 'noon' is a Sanskrit-type time term with unverified immediate donor.")
+hold([57],"Sayamkalam 'evening/afternoon' is a mixed or contact-looking compound; its immediate source and component ancestry need analysis.")
+hold([58,59],"Poḷudoḍɨ/poḷuto ḍɨ 'evening/afternoon' appears compounded or inflected; the second element is not securely analysed.")
+hold([60,61],"Varam 'week' is regional calendar vocabulary whose immediate donor has not been established.")
+hold([62,63,64,65],"Māsam 'month' is a widespread Sanskrit-type calendar word; the immediate donor is unresolved.")
+hold([66,67,68,69],"Varsam 'year' is a varṣa-type contact word with unresolved immediate donor.")
+hold([70],"Aḷakarkɨ 'good' appears to be a derived/predicative form; its stem and suffix are not firmly segmented.")
+hold([71,72],"Mośam/mosam 'bad' resembles contact vocabulary; no inherited family or immediate donor has been verified.")
+hold([73],"Paccata ṇṇi 'cold' is a multiword fresh/cold + water expression, not a single inherited adjective; its first element needs exact analysis.")
+hold([74],"Virɨviran 'cold' lacks a securely matched temperature adjective family.")
+hold([75,76,77,78],"The right/left expressions are multiword compounds with hand/side elements; their direction-bearing stems and exact ordering need checking.")
+hold([79],"Dūram 'far' resembles Indo-Aryan dūra-type vocabulary; the immediate donor is unverified.")
+hold([80,81,82],"The heavy/light responses have a recognizable kanam 'weight' element, but additional qualifiers and predicative suffixes are not securely analysed as complete compounds.")
+hold([98],"Ɛnatta n 'how many?' is an interrogative formation, but its quantity suffix and exact relation to the DEDR 5151 subforms are unclear.")
+hold([104,105],"Orɛpolɛ/ondupolɛ 'same' appears to combine 'one' with a resemblance particle; that second component and construction need verification.")
+hold([106],"Vityāsam 'different' resembles Sanskrit vyatyāsa contact vocabulary; the immediate donor is unresolved.")
+hold([107,108],"Pūra m/pūra 'whole' may reflect Indo-Aryan pūra-type contact vocabulary; no secure immediate donor or independent Dravidian family is verified.")
+hold([109,110,111],"The broken responses contain a break stem plus an additional go/become-like predicate; source morphology needs analysis before whole-response ancestry is assigned.")
+hold([117,118],"The thirsty responses are complex predicates, including water or an unanalyzed thirst stem; a single-family link would omit material.")
+hold([120],"Moḷaŋgitɨ 'it burns' may encode 'blaze/flame' with a predicate suffix, but the exact lexical stem is not established.")
+hold([121,122],"The die responses combine stem and negative/prohibitive or auxiliary material under a contradictory prompt; no whole-word analysis is secure.")
+hold([123],"Kollaveṇḍa 'don't kill, he killed' combines the kill stem with negative/prohibitive material; its two parts are not fully mapped.")
+hold([140],"Namɨ is explicitly labelled exclusive although its form matches the inclusive nam- family in DEDR 3647; the source's paradigm distinction requires adjudication.")
+assert not set(proposals)&set(hold_reasons)
+assert set(proposals)|set(hold_reasons)==set(range(1,len(records)+1)),(set(range(1,len(records)+1))-(set(proposals)|set(hold_reasons)))
+accepted=[];held=[]
+for i,r in enumerate(records,1):
+ if i in proposals:
+  num,ev,comps=proposals[i];x=dict(record=r,parent=f'd{num}',kind='component' if comps else 'reflex',citation=r['Source']+';dedr[entry '+str(num)+']',evidence=ev,status='pending-review',surveyIndex=i)
+  if comps:x['components']=[f'd{n}' for n in comps];x['citation']=r['Source']+';'+ ';'.join(f'dedr[entry {n}]' for n in comps)
+  accepted.append(x)
+ else:held.append(dict(record=r,reason=hold_reasons[i],status='research-hold',surveyIndex=i))
+(P/'proposed-decisions.json').write_text(json.dumps(dict(status='pending-review',accepted=accepted,held=held),ensure_ascii=False,indent=2)+'\n')
+(P/'research-holds.json').write_text(json.dumps(held,ensure_ascii=False,indent=2)+'\n')
+(P/'unexamined-inventory.json').write_text('[]\n')
+parents={p for x in accepted for p in x.get('components',[x['parent']])}
+article={}
+with gzip.open(P.parents[2]/'data/dedr/entry-texts-audit.csv.gz','rt') as f:
+ for row in csv.DictReader(f):
+  if row['Entry_ID'] in parents:
+   assert row['Entry_ID'] not in article,(row['Entry_ID'],'number collision')
+   article[row['Entry_ID']]={k:row[k] for k in ('Page','Citation','Raw_Article')}
+   article[row['Entry_ID']]['URL']='https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page='+row['Page']
+assert set(article)==parents,parents-set(article)
+(P/'primary-evidence.json').write_text(json.dumps(article,ensure_ascii=False,indent=2)+'\n')
+print('proposed',len(accepted),'rows',sum(len(x.get('components',[x['parent']])) for x in accepted),'held',len(held),'parents',len(parents))

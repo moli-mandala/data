@@ -1,0 +1,13 @@
+# Mannan Varghese–Mathew Idukki residual records — research review
+
+**Pending review. No new assignments have been saved. No rebuild has been run.**
+
+The exact source inventory has **1745 records**: **1007 earlier pending**, **59 earlier held**, and **679 previously unexamined**. Of the latter, **274 records** now have proposals producing **274 assignment rows**, and **405** have explicit research holds. Zero remain unexamined.
+
+New pending batches: [037](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Mannan/batch-037-review.md), [038](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Mannan/batch-038-review.md), [039](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Mannan/batch-039-review.md), [040](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Mannan/batch-040-review.md), [041](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Mannan/batch-041-review.md), [042](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Mannan/batch-042-review.md), [043](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Mannan/batch-043-review.md), [044](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Mannan/batch-044-review.md), [045](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Mannan/batch-045-review.md), [046](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Mannan/batch-046-review.md).
+
+The 20 [exact-form homepage search chunks](discovery-001-035-results.json) covered all 679 residual records using the current Jambu query implementation. The [full cached DEDR articles](primary-evidence.json), [draft decisions](proposed-decisions.json), [holds](research-holds.json), and [source-wide coverage](source-coverage-001.json) preserve the evidence and exact ownership.
+
+The Appendix B3 source repeats elicitation prompts across seven Mannan villages, and some villages provide duplicate forms under one prompt. Every exact source ID remains separate. Strongly attested village variants are proposed together only when the full DEDR article supports their stem and sense.
+
+Whole compounds and clauses such as **muḷakarakallɨ** ‘mortar’, **pañjam puḍikana** ‘he is hungry’, and **ta ṇṇi ta vikkaṇɨ** ‘he is thirsty’ are held where all components are not secure. Loanlike forms without an immediate donor and potential form–gloss conflicts are also held. A DEDR ID denotes an entire article; its displayed head may differ from the attested comparison inside the article. Existing source records and accepted sidecars remain unchanged.

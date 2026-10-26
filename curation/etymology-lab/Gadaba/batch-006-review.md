@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Gadaba · Dravidian surveys, 2026-09-21 · batch 006. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Gadaba | Proposed etymology | Evidence |
+|---|---|---|---|
+| 26 | **berī** ‘big’, **berīḍ** ‘big’, **ber** ‘big’ | Proposed reflex of [**DEDR 4411**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=389) | DEDR 4411 connects Tamil periya/peritu, Telugu pedda, Gondi beriya, Konda per/peri, Parji berto and Gadaba berit big. These language-matched survey stems fit that family; the numerous valiya, doḍḍa and Indo-Aryan-looking alternatives are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (7 records.) |
+| 27 | **pū** ‘flower’, **puve** ‘flower’, **puv** ‘flower’, **puvu** ‘flower’ | Proposed reflex of [**DEDR 4345**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=384) | DEDR 4345 records Tamil pū, Malayalam pū/pūvu, Kannada pūvu, Gadaba pū/puvvu, Parji pū, Gondi puŋgar and Kurux pūmp flower. The selected simple flower forms fit these comparanda; Indo-Aryan-looking phul and uncertain responses are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (6 records.) |
+| 28 | **kuḍuku** ‘fat’, **koḍukkul** ‘fat’, **koḍuku** ‘fat’ | Proposed reflex of [**DEDR 2146**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=193) | DEDR 2146 gives Tamil/Malayalam koḻuppu fat, Gadaba koḍukuṭ/koḍukuḍ, Gondi koṛvinj and Konda koṛvu animal fat. The survey variants retain this lexical family; questioned Kota evidence and carbi/cerabi loan forms are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (8 records.) |
+| 29 | **vaṭī** ‘dry’ | Proposed reflex of [**DEDR 5320**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=481) | DEDR 5320 gives Tamil vaṟaḷ/vaṟal, Malayalam varaḷ-/vaṟu, Kota varl, Kannada battu, Gadaba vaṭṭ-, Gondi vatt-, Parji vett-/veṭṭ- and Brahui bārun dry. These simple stems or inflected dry responses are retained; transitive causatives and multiword responses are not collapsed into the stem. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (2 records.) |
+| 30 | **cepe** ‘broom’, **cepeṭ** ‘broom’, **ceppɛṭ** ‘broom’, **cɛpeṭ** ‘broom’ | Proposed reflex of [**DEDR 2599**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=225) | DEDR 2599 records Gadaba cēpēḍ/sēpeṭ/sēpe, Gondi ēpur, Konda sipeṟ and Malayalam cūl broom. Only these simple noun responses are selected; broom compounds and responses belonging to other sweeping stems remain separate. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (5 records.) |
+
+Proposed assignment rows: **28**. Affected records: **28**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-006.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Gadaba/batch-006.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

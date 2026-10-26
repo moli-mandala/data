@@ -1,0 +1,20 @@
+{
+  "status": "source-local metadata proposal; no canonical registry, bibliography, YAML or conversion edits",
+  "primary_source": "Ravi Sankar S. Nair, Tribal Languages of Kerala, Language in India 13:7 (July 2013), printed/PDF pp. 32–33",
+  "primary_source_url": "https://languageinindia.com/july2013/ravisankarkeralatriballanguages.html",
+  "source_pdf_sha256": "4d2588987dab5d15c62ecc95330ccf7e925a9bce80d08068b91ca3f48c8cc5af",
+  "identity_evidence": [
+    {"url":"https://glottolog.org/resource/reference/id/320019","claim":"Glottolog 5.3 indexes this Nair 2013 work and specifically maps its Kani chapter to Kanikkaran [kev]."},
+    {"url":"https://glottolog.org/resource/languoid/id/kani1275","claim":"Kanikkaran is a separate Spoken L1 Language with glottocode kani1275, ISO 639-3 kev, and alternate names including Kanikkar/Malampashi."},
+    {"original_locator":"p. 32, first paragraph","claim":"Nair explicitly distinguishes the Kerala Kani speech represented in this chapter from nearby Tamil Nadu Kani speech, and lists Kerala settlement regions but no exact elicitation site."}
+  ],
+  "proposed_base_language": {"ID":"Kanikkaran","Name":"Kanikkaran","Glottocode":"kani1275","Latitude":"","Longitude":"","Clade":"S. Dravidian I","Location":"Southern Kerala; Nair 2013 chapter lists regions, not an elicitation point","Quality":""},
+  "proposed_source_variety": {"ID":"nair2013-kerala-kani","Tag":"dialect:Kanikkaran:nair2013-kerala-kani:Kerala%20Kani","Language_ID":"Kanikkaran","Source_Language_ID":"Nair2013:Kani:Kerala","Name":"Kerala Kani (Nair 2013)","Glottocode":"","Latitude":"","Longitude":"","Clade":"S. Dravidian I","Location":"Kerala Kani as contrasted with Tamil Nadu Kani; broad southern Kerala chapter area only","Quality":""},
+  "coordinate_decision": "No exact settlement among the many named places is identified as the elicitation site; leave coordinates blank rather than use a Glottolog point or an invented centroid.",
+  "transcription": {"convert":false,"preserve_hyphens":true,"inputform":"source Roman literal","source_doubled_vowels":"preserve written aa/ee/uu, do not normalize to macrons in Original or claim phonemic values","source_diacritics":"preserve visible underdots, underlines, tilde and breve as graphemic marks","native":"blank: no Kani native-script text printed in this chapter","phonemic":"blank: source does not provide separate IPA/phonemic layer"},
+  "identity": {"dedupe_by_entry_key":true,"reason":"Source contrasts senses, grammatically inflected examples, and distinct physical pair rows; no source-stage key should disappear through same-form merging."},
+  "forms": {"split_alternates":false,"reason":"Each paired-table row and prose expression has its own physical-unit key; punctuation and double vowels are source notation, not delimiter instructions."},
+  "graph": "No etymological or borrowing links are claimed by this phonological correspondence chapter; Malayalam and Tamil Nadu forms are comparisons, not asserted ancestors or donors.",
+  "bibliography": {"main_key":"nair2013kani","auxiliary_key":"somasekharannairkanikkarude","auxiliary_status":"reported by Nair on p.33; uncollated and no separately ingested lexical forms"},
+  "approval_gates": ["independent Kani language/variety review","independent complete source-literal check","registered base and source-qualified dialect","source-local actual parser fixture","fresh output sample","guarded canonical source installer"]
+}

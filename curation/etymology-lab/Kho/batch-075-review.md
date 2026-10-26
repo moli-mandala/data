@@ -1,0 +1,15 @@
+# Kho: survey etymology review, batch 75
+
+**Saved under the autonomous-work authorization of 2026-09-21.** 5 proposals; exact IDs and source attestations are in the [manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Kho/batch-075.json).
+
+| # | Language form and meaning | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **trūpʰ** ‘salt’ | Reflex of **tr̩prá**; [CDIAL 5934](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=339);[CDIAL 5848,comparative cross-reference](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=333);bashir2023[s.v. trup] | Turner tr̥pra (5934) explicitly gives Khowar trup salt, also radish. Bashir confirms trup/thrup. Although Bashir cites T5848, the full tīvrá entry only cross-references Khowar trup to tr̥pra; 5934 is therefore the exact parent. Final aspiration in the survey is retained, not silently normalized. (1 records.) |
+| 2 | **ʦ̣ī** ‘hungry’, **ʦ̣ūī** ‘hungry’, **ʦ̣ūyī** ‘hungry’, **ʦ̣hūī** ‘hungry’ | Reflex of **\*kṣudʰin**; [CDIAL 3716,section 3](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=193);bashir2023[s.v. c̣huy] | Turner explicitly separates Khowar c̣hui hunger under \*kṣudhikā (section 2) from c̣hui hungry under \*kṣudhin (section 3). The survey adjective belongs to section 3; Bashir confirms c̣huy hungry beside c̣huí hunger. The local renderings differ in aspiration and vowel notation but preserve the diagnostic retroflex affricate and predicate meaning. (5 records.) |
+| 3 | **ore** ‘sleep’, **ūre** ‘sleep’ | Reflex of **avarati**; [CDIAL 807](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=35);bashir2023[s.v. oreék] | Turner avarati explicitly gives Khowar orói sleep and its verb oréik to sleep. Bashir confirms oreék/oróik. These simple survey ore/ūre sleep responses match that verbal family; the unrelated poris response is excluded. (4 records.) |
+| 4 | **obri-** ‘die’ | Reflex of **mriyátē**; CDIAL[10383 and addenda];bashir2023[s.v. brik] | Turner mriyate explicitly gives Khowar bri-, brik and past obristai; Bashir gives obrítay beside older obrístam. The survey obri- is this documented prefixed verbal stem, not the distinct birdu dead participle under mr̥ta 10278. (2 records.) |
+| 5 | **de** ‘run’ | Reflex of **dʰāváyati**; [CDIAL 6802,section 2](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=389);bashir2023[s.v. deék] | Turner section 2 dhāvayati explicitly gives Khowar deik both make run and intransitive run/gallop. Bashir distinguishes intransitive deék from transitive deík. The survey de run is matched to this documented de- family; choosing the causative historical subsection does not change its current intransitive meaning. (5 records.) |
+
+17 assignment rows on 17 records. Relation kinds: {'reflex': 17}.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-surveys-20260921/pass116-validation.json). No compiled or browser rebuild. Excluded and competing analyses are tracked in the [run review](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-surveys-20260921/REVIEW.md).

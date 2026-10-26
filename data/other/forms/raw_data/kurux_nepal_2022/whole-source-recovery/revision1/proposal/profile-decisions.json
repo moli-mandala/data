@@ -1,0 +1,30 @@
+{
+  "base_profile": "conversion/kurux-nepal.txt",
+  "literal_additions": [
+    "ɭ",
+    "ɲ",
+    "ɹ",
+    "ʊ",
+    "ʋ",
+    "ʷ",
+    "̩",
+    "̪",
+    "̬",
+    "ᵊ",
+    "ᶺ"
+  ],
+  "canonical_equivalent_aliases": {
+    "ãː": "ā̃",
+    "ẽː": "ē̃",
+    "ĩː": "ī̃",
+    "õː": "ō̃",
+    "ũː": "ū̃",
+    "ã": "ã",
+    "ẽ": "ẽ",
+    "ĩ": "ī̃",
+    "õ": "õ",
+    "ũ": "ũ",
+    "ṳ": "ṳ"
+  },
+  "policy": "Existing reviewed house conversions remain. Canonically equivalent NFC/NFD graphemes share those same outputs, including nasal-plus-length sequences. Newly recovered raised vowels and unmatched source symbols preserve literal shape, with no inferred phonemic normalization. Native and conventional Roman routes are entirely literal. No source-wide profile override leaks across the four files."
+}

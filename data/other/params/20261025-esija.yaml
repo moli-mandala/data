@@ -1,0 +1,14 @@
+file: 20261025-esija.csv
+defaults:
+  importer:
+    commands:
+      - [data/other/forms/raw_data/esija_2000/import_source.py, --install]
+    note: >-
+      needs the OCR cache in ../tmp/iranic/esija (rebuild with --extract from the ESIJa PDF);
+      manual headword readings in data/other/forms/raw_data/esija_2000/manual-lemmas.csv
+sources:
+  rastorgueva2000esija:
+    reference:
+      editor: "Aryaman Arora; Anthropic Claude"
+      ocr: true
+      etymology_provenance: source

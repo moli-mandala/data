@@ -27,11 +27,15 @@ def forms():
 def test_full_count_and_offline_reproduction():
     audit, rows = records(), forms()
     assert len(audit) == 452
-    assert rows == [row for record in audit for row in K.emit_record(record)]
-    assert len(rows) == 521
-    assert len({r[10] for r in rows}) == 521
+    historical = [row for record in audit for row in K.emit_record(record)]
+    assert historical == [row for record in audit for row in record['rows']]
+    assert len(historical)==521
+    approved=RAW/'kharia_living_2026/whole-source-recovery/proposal'/f'{STEM}.csv'
+    assert rows == list(csv.reader(approved.open()))
+    assert len(rows) == 524
+    assert len({r[10] for r in rows}) == 524
     assert sum(bool(r[11]) for r in rows) == 68
-    assert sum(not r[5] for r in rows) == 6
+    assert sum(not r[5] for r in rows) == 9
     assert all(len(r)==15 and r[2] and r[3] and r[4] for r in rows)
     assert all(unicodedata.is_normalized('NFC',f) and '�' not in f for r in rows for f in r)
 
@@ -76,13 +80,15 @@ def test_profile_all_symbols_and_rich_source_layers():
     error=io.StringIO()
     parsed,stats=parse_file(str(ROOT/f'data/other/forms/{STEM}.csv'),errors=error)
     assert not error.getvalue()
-    assert len(parsed)==521
-    assert stats=={'converted':521,'for_conversion':521}
+    assert len(parsed)==524
+    assert stats=={'converted':524,'for_conversion':524}
     raw={r[10]:r for r in forms()}
     for r in parsed:
         assert r.form==unicodedata.normalize('NFC',tokenizer(raw[r.entry_key][2],column='IPA').replace(' ','').replace('#',' '))
         assert r.old_form==raw[r.entry_key][2]
         assert r.ipa==raw[r.entry_key][5]
+        assert r.native==raw[r.entry_key][4]
+        assert set(raw[r.entry_key][14].split())<=set(r.tags.split())
 
 
 def test_compiled_source_identity_and_variant_graph():
@@ -94,7 +100,7 @@ def test_compiled_source_identity_and_variant_graph():
                   for r in csv.DictReader((ROOT/'cldf/form-source-keys.csv').open())
                   if r['Source_Key'] in raw}
     assert identities.keys() == raw.keys()
-    assert len(set(identities.values())) == 521
+    assert len(set(identities.values())) == 524
     compiled = {r['ID']: r for r in csv.DictReader((ROOT/'cldf/forms.csv').open())
                 if 'living-kharia2026' in r['Source']}
     assert set(compiled) == set(identities.values())

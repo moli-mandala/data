@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Kadar · Dravidian surveys, 2026-09-21 · batch 008. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Kadar | Proposed etymology | Evidence |
+|---|---|---|---|
+| 36 | **pudiya** ‘new’, **putu** ‘new’ | Proposed reflex of [**DEDR 4275**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=378) | DEDR 4275 gives Tamil putu/putiya, Malayalam putu, Kodagu pudiyë, Kannada posa/hosa/hosadu and Tulu posa/posatu new; Konda pūni and Malto pune belong to the same family. These simple stems and adjectival inflections are selected; new-person nouns and loan-looking alternative stems remain unassigned. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (2 records.) |
+| 37 | **pūvɨ** ‘flower’ | Proposed reflex of [**DEDR 4345**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=384) | DEDR 4345 records Tamil pū, Malayalam pū/pūvu, Kannada pūvu, Gadaba pū/puvvu, Parji pū, Gondi puŋgar and Kurux pūmp flower. The selected simple flower forms fit these comparanda; Indo-Aryan-looking phul and uncertain responses are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (2 records.) |
+| 38 | **maṇal** ‘sand’ | Proposed reflex of [**DEDR 4666**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=413) | DEDR 4666(b), distinct from earth/soil in (a), explicitly lists Tamil and Malayalam maṇal, Kannada maṇal/maḷal/maral, Kodagu maṇa and Parji/Gadaba man sand. Only this sand branch is selected; the Toda compound er-moḷṇ and earth responses under the sand prompt are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (2 records.) |
+| 39 | **nanañja** ‘wet’ | Proposed reflex of [**DEDR 3630**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=320) | DEDR 3630 compares Tamil naṉai (past naṉaint-), Malayalam nanayuka and Gondi nānd-/nān- become wet. The selected participial survey responses retain this intransitive wetting stem; causatives and compounds remain separate. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 40 | **manam** ‘sky’ | Proposed reflex of [**DEDR 5381**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=487) | DEDR 5381 records Tamil vāṉam/māṉam, Malayalam vānam/mānam, Kota vānm, Toda pōn and Kannada bāna sky. The selected simple survey sky forms reflect these stems; ākāśa-type and cloud-derived alternatives are separate families. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+
+Proposed assignment rows: **8**. Affected records: **8**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-008.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Kadar/batch-008.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

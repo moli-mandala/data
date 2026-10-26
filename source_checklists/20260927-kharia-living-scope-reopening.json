@@ -1,0 +1,20 @@
+{
+  "source": "living-kharia2026",
+  "status": "whole_snapshot_review_assigned",
+  "owner": "norton_finish",
+  "evidence": "data/other/forms/raw_data/kharia_living.py: propose() report explicitly excludes three example sentences as not lexical headword rows.",
+  "reason": "User requires whole-source lexical ingestion, including attested examples, rather than headword-only scope.",
+  "baseline": {
+    "entries": 452,
+    "installed_rows": 521,
+    "sqlite_sha256": "c0bf44b14565a019de565ca82b45e01da177f2453cda00c460428acaa22ea3d2"
+  },
+  "next_actions": [
+    "Locate and verify the pinned local snapshot.",
+    "Census all lexical and example tables and reconcile existing audit.",
+    "Preserve existing keys and source evidence; recover omitted attestations.",
+    "Complete independent output audit and focused validation before installation."
+  ],
+  "permission": "User reconfirmed Living Dictionaries reuse is allowed per Sarva.",
+  "limits": "This is a verified importer-scope omission, not a claim that the current SQLite has been independently inspected. Media and personal metadata need not be copied. No database rebuild authorized."
+}

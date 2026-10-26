@@ -2,13 +2,19 @@ file: 20260925-bailey-kagani.csv
 defaults:
   transcription:
     profile: bailey-kagani-1920
+    input: form
+    preserve_hyphens: true
   identity:
     legacy_ids: stem
     append_order: 100
   importer:
     commands:
-      - [data/other/forms/raw_data/bailey_kagani_1920/import_source.py, --install]
-    note: "Full printed pp.106–109 Kāgānī vocabulary recovered literally: 261 cells, 258 accepted yielding 329 forms, three English cross-references, zero withheld readings; all 83 legacy keys retained. Full build and browser refresh deferred."
+    - - data/other/forms/raw_data/bailey_kagani_1920/install_whole_source.py
+      - --install
+    note: Independently approved1306-row whole Kāgānī source;329 historical keys retained
+      with reviewed delta. Guarded r2 regeneration only. Historical import_source.py
+      must not run against live whole-source files. Full DB/build/browser gates remain
+      separately deferred.
 sources:
   bailey1920kagani:
     identity:

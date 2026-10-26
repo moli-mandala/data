@@ -1,0 +1,38 @@
+{
+  "status": "two targeted original-image checks complete; not a whole-source approval",
+  "source_pdf": "tmp/pdfs/chakma-discovery/niranjan-2010.pdf",
+  "render_scale": 7,
+  "checks": [
+    {
+      "source_unit_key": "niranjanchakma2010:p66:homophones:left:g141:c1",
+      "reading": "পাট",
+      "decision": "retain",
+      "pdf_page": 68,
+      "rect": [
+        10,
+        280,
+        160,
+        322
+      ],
+      "evidence": "root-sample-g141.png",
+      "reason": "No detached nasal mark. Upper raised shape belongs to ট; same-row Bengali পাট is a direct control.",
+      "evidence_sha256": "4609d7150d254f7ffb2ee4c1b716e5a34acca72ebbc34051e311fdde6ef78b54"
+    },
+    {
+      "source_unit_key": "niranjanchakma2010:p72:named-groups:g48:c2",
+      "reading": "দোভঅ কাধি",
+      "decision": "retain",
+      "pdf_page": 74,
+      "rect": [
+        65,
+        403,
+        205,
+        456
+      ],
+      "evidence": "root-sample-g48.png",
+      "reason": "Medial ভ matches preceding দভা and contrasts with same-line initial ত in তন্যা.",
+      "evidence_sha256": "b9373c1e7d74ffa1475c85f79e41b75cb7dae90fe2ab40f237e84bd78894919e"
+    }
+  ],
+  "parent_review_evidence": "Parent separately accepted all18 prior changes in homophones-named-root-adjudication-20260927.json; earlier message specifically confirmed g73 both পেল and g87c2 চিত্. This report adds only the two retained-reading checks."
+}

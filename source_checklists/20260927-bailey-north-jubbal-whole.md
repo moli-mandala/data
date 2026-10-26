@@ -1,0 +1,14 @@
+# North Jubbal whole-source installation, 2026-09-27
+
+The source-ingestion checklist and glossary/survey/OCR addenda apply. This is an approved **source-stage installation**, not a completed full ingestion or database refresh.
+
+- Installed: **837 forms, 688 audit units**, including all **330 legacy keys** and 507 additional forms. Literal legacy forms remain unchanged; 43 source-reviewed metadata corrections are applied.
+- Scope: complete North Jubbal/Barari chapter pp. 172–188; applicable shared notation p. 114; explicitly North/South Jubbal suffix p. 143; tentative currency commentary p. 167 attached to the relevant sentence and note. The complete 22 sentences produce 24 attested expressions. Other named lects and source context remain attributed controls, not invented North Jubbal lexical forms.
+- Review: complete independent grammar and sentence/context reading; two sentence vowel-length corrections and six imperative classifications reconciled. Fresh independent whole-output sample passed **20/20 units, 21 rows**. Historical failed/first-reading evidence remains intact.
+- Reproducibility: isolated regeneration reconstructs the historical 330-row baseline and regenerates approved CSV, audit and profile byte-identically. The new guarded `install_whole_source.py` verifies the accepted audit and pinned freeze. Original `import_source.py` is historical and must never install into the live tree.
+- Transcription: source marks and both raised-breath conventions remain literal; lowercase, w→v and ṅ→ŋ affect display only. Profile supports NFC/NFD. Bailey's currency interpretation remains tentative and does not create a derivation edge.
+- Metadata: canonical Barari identity and existing quality-C regional coordinates unchanged; no new dialect. One targeted bibliography entry records complete scope and final review provenance, editor and OCR status. YAML uses `input: form`, `preserve_hyphens: true`, immutable source keys and unchanged legacy-ID/append-order policy.
+- Validation: actual canonical parser **837/837**, no errors, with exact ordered keys, Original, Notes, citations and tags. **19 focused tests passed**. Source graph has no inferred etymological/variant links; historical keys and evidence remain accessible.
+- Deferred by current authorization: full CLDF/database build, compiled durable-ID/graph/reference checks, full suite, and browser/app QA. No representative new app entry is claimed before that refresh; source-row examples include p183 sentence12 `Ēh rā bā’ī ăpṇī bauhṇī du jēṭhā`, sentence17 `Ĕs khūb pīṭĕau rŏs̲h̲īo dā baunho`, and p143 suffix `-ēṛu`.
+
+Evidence lives in `data/other/forms/raw_data/bailey_north_jubbal_1920/`: `root-whole-output-audit-20260927-pass1.json`, `whole-reviewed-regeneration-validation.json`, `whole-installation-result-20260927.json`, `whole-installed-validation-20260927.json`, and `historical-glossary-installation/manifest.json`.

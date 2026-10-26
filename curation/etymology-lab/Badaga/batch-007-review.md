@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Badaga · Dravidian surveys, 2026-09-21 · batch 007. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Badaga | Proposed etymology | Evidence |
+|---|---|---|---|
+| 31 | **mīnu** ‘Star’, **mīnu** ‘star’ | Proposed reflex of [**DEDR 4876**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=435) | DEDR 4876 attests Tamil, Malayalam, Kota, Toda and Kannada mīn star, and Kurux bīnkō star. These simple survey star forms belong to the shining family; compound veḷḷi-mīn responses require separate component analysis. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (2 records.) |
+| 32 | **maṇalu** ‘sand’ | Proposed reflex of [**DEDR 4666**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=413) | DEDR 4666(b), distinct from earth/soil in (a), explicitly lists Tamil and Malayalam maṇal, Kannada maṇal/maḷal/maral, Kodagu maṇa and Parji/Gadaba man sand. Only this sand branch is selected; the Toda compound er-moḷṇ and earth responses under the sand prompt are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 33 | **koḷəppə** ‘fat’ | Proposed reflex of [**DEDR 2146**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=193) | DEDR 2146 gives Tamil/Malayalam koḻuppu fat, Gadaba koḍukuṭ/koḍukuḍ, Gondi koṛvinj and Konda koṛvu animal fat. The survey variants retain this lexical family; questioned Kota evidence and carbi/cerabi loan forms are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 34 | **keppə** ‘red’, **kɛbbu** ‘red’ | Proposed reflex of [**DEDR 1931**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=175) | DEDR 1931 attests Tamil civappu/cēppu, Malayalam cuvappu/cemappu, Kannada kempu and Tulu kempu red, showing the southern c-/k- correspondences. The selected simple colour forms fit this family; Kodagu cōpï is explicitly a Malayalam loan and Kannada Tamil-type forms are excluded from this inheritance proposal. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (2 records.) |
+| 35 | **keṭṭətu** ‘bad’ | Proposed reflex of [**DEDR 1942**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=176) | DEDR 1942 explicitly lists Tamil/Malayalam keṭṭa and Kannada keṭṭa bad or spoiled, beside the ruin/spoil verb. The selected adjective and neuter forms fit these attested senses; negative phrases meaning not good and unrelated loan adjectives are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+
+Proposed assignment rows: **7**. Affected records: **7**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-007.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Badaga/batch-007.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

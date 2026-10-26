@@ -1,0 +1,32 @@
+import csv,json
+from pathlib import Path
+from etymology_assignments import read_assignments
+P=Path('curation/etymology-lab/indo-aryan-diversity-20260922')
+rs=[{k:r[k] for k in ('ID','Language_ID','Form','Gloss','Source','Tags')} for r in csv.DictReader(open('cldf/forms.csv')) if 'andersen1990[' in r['Source']]
+assigned={r['Form_ID'] for r in read_assignments() if r['Status']=='accepted'};assigned.update(r['Child_ID'] for r in csv.DictReader(open('cldf/edges.csv')) if r['Rank']=='1')
+groups=[
+('ācariya','teacher','1072','ācārya',138,'Andersen explicitly compares AV ācārya and Pali ācariya; Turner includes both ācāriya and ācārya in the same teacher entry. The scan confirms the headword despite low OCR confidence and the spurious extra initial a in the cached Sanskrit string.'),
+('eka','one','2462','eka',142,'Andersen gives RV eka and the attested accusative ekam. Turner section1 explicitly places Ashokan eka here; this early MIA form is not the later replacement *ekka of section2.'),
+('kāma','desire','3042','kāma',144,'Andersen compares RV kāma and Pali kāma and cites accusative -am. Turner gives the desire family with Ashokan kāmaṁ; this is the source simple lexical head.'),
+('kāla','time','3084','kāla',144,'The scan clearly reads kāla time, not kalā or the black adjective. Turner explicitly gives Ashokan kāla/kala time. Andersen includes substitute readings from other sites in brackets; existing locality tags are retained as source metadata, not asserted to be separate kāla attestations at every listed site.'),
+('giri','mountain','4161','giri',146,'Andersen gives giri mountain with RV giri and Pali giri, and refers to suvaṁṇagiri. Turner has the same mountain head and Pali/Prakrit giri. This links the already-installed glossary stem, not the whole compound or a newly asserted independent inscription token.'),
+('cira','long','4824','cira',147,'Andersen compares RV cira and Pali cira and refers to ciraṭhitika; Turner explicitly has Ashokan cira/ciraṁ long in time. It is distinct from physical-length dīrgha.'),
+('dīgʰa','long','6368','dīrgha',152,'Andersen explicitly gives RV dīrgha, Pali dīgha and the cross-reference dīghāvus. Turner has Pali dīgha and Ashokan dighāya. The existing glossary stem is linked, not the entire long-life compound.'),
+('dīpa','an island, continent','6691','dvīpa',152,'Andersen explicitly compares RV dvīpa and Pali dīpa and refers to jambudīpa; Turner gives Pali dīpa island under dvīpa. The island sense excludes the homonymous lamp family. This is the existing glossary stem, not an analysis of the whole compound.'),
+('deva','god','6523','deva',152,'Andersen gives deva god with RV and Pali comparanda and nominative plural devā. Turner explicitly cites Ashokan devā gods. Later NIA learned/loan cautions do not establish a separate donor for this early MIA attestation.'),
+('desa','part, region, country','6547','deśa',153,'Andersen compares VS deśa and Pali desa, referring to māṇemadesa. Turner directly gives Ashokan desa/deśa portion. This links the installed glossary stem; no compound or place-name identity is inferred.'),
+('dʰamma','Dharma','6753','dharma',153,'Andersen explicitly compares RV dharman and Pali dhamma. Turner’s dharma entry includes RV dharman in its etymological bracket and Ashokan dhaṁma. The religious sense is preserved; no separate modern Sanskrit borrowing is inferred.'),
+('pʰala','fruit','9051','phala',158,'Andersen gives phala fruit with RV phala, Pali phala and nominative -e. Turner explicitly includes Ashokan phala with result sense. Preserve the source gloss fruit while noting the contextual result reading; no relation to the ploughshare homonym is intended.'),
+('silā','stone','12459','śilā',173,'Andersen compares AVP śilā and Pali silā, referring to silāṭhambha. Turner section1 explicitly gives Ashokan silā stone; the geminated *śillā section2 is not needed. This is the existing glossary stem, not the entire stone-pillar compound.')]
+a=[]
+for f,g,pa,label,page,ev in groups:
+ match=[r for r in rs if r['ID'] not in assigned and r['Form']==f and r['Gloss']==g];assert len(match)==1,(f,len(match))
+ a.append(dict(record=match[0],parent=pa,kind='reflex',citation=f'CDIAL[{pa} and addenda];'+match[0]['Source'],evidence=ev+' Headword and comparison visually checked against the source scan; existing transcription, source citation and tags preserved.'))
+h=[dict(record=r,reason='Source image p.173 separates sata hundred, saṁt being and sapaṁnā fifty-six, but the imported sata audit block absorbs the latter entries and their locality tags. Hold for source-level boundary/provenance review; no re-ingestion or identity edits authorized in this pass.') for r in rs if r['Form']=='sata' and r['Gloss']=='hundred']
+(P/'pass024-decisions.json').write_text(json.dumps(dict(accepted=a,held=h),ensure_ascii=False,indent=2)+'\n')
+lines=['# Andersen Ashokan glossary: source-checked lexical heads','','13 records / 13 reflex rows across thirteen etyma; one held record. Standing autonomous objective authorizes saving supported existing-node analyses.','','| # | Ashokan Prakrit | Proposed etymology | Evidence |','|---|---|---|---|']
+for i,(f,g,pa,label,page,ev) in enumerate(groups,1):lines.append(f'| {i} | **{f}** ‘{g}’ | **{label}**, CDIAL **{pa}** | {ev} |')
+lines+=['','Source images: existing Andersen PDF, PDF pages138,142,144,146,147,152,153,158,171,173 (printed pages +2), rendered under ../tmp/pdfs/andersen-etymology. Every selected headword and Sanskrit/Pali comparison was inspected. Cached OCR evidence is copied in pass024-source-audit.json; source OCR flags remain unchanged.','', 'Held: sata hundred, because its OCR entry absorbs saṁt being and sapaṁnā fifty-six and their locality metadata. The Sanskrit comparison field in that merged block is therefore unsafe. No source reparsing or identity repair performed.','', 'Giri, dīgha, dīpa, desa and silā are dictionary stems supported partly through compounds; this pass links those existing heads only. Kāla’s site list includes substitute readings, explicitly noted. Research: andersen-search001–002.json and andersen-primary001–002.json.','', 'Validation and save status: pending.']
+(P/'pass024-review.md').write_text('\n'.join(lines)+'\n')
+(P/'pass024-image-review.json').write_text(json.dumps([dict(form=f,gloss=g,pdfPage=page,printedPage=page+2,image=f'../tmp/pdfs/andersen-etymology/p{page}.png',headwordAndComparisonVerified=True) for f,g,pa,label,page,ev in groups],ensure_ascii=False,indent=2)+'\n')
+print(len(a),'accepted',len(h),'held')

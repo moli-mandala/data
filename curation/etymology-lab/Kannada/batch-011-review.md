@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Kannada · Dravidian surveys, 2026-09-21 · batch 011. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Kannada | Proposed etymology | Evidence |
+|---|---|---|---|
+| 51 | **səli** ‘cold’ | Proposed reflex of [**DEDR 2408**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=211) | DEDR 2408 directly records Tamil caḷi, Kannada caḷi/saḷi, Tulu cali/sali and Telugu calla cold or cool. These simple survey forms are linked to the actual caḷi entry, distinct from taṇ- at 3045; Gondi contact-looking forms are left for donor analysis. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 52 | **bānā** ‘sky’ | Proposed reflex of [**DEDR 5381**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=487) | DEDR 5381 records Tamil vāṉam/māṉam, Malayalam vānam/mānam, Kota vānm, Toda pōn and Kannada bāna sky. The selected simple survey sky forms reflect these stems; ākāśa-type and cloud-derived alternatives are separate families. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (6 records.) |
+| 53 | **mokā** ‘face’, **mokkā** ‘face’, **mɔkkā** ‘face’ | Proposed reflex of [**DEDR 4889**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=437) | DEDR 4889 gives Tamil/Malayalam mukam, Kannada moga/mōṟe, Tulu mōrè, and Gondi mokom/mukam face. The selected simple face stems match this family; mūñci/mond- responses belong to a separate family and are not merged. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (6 records.) |
+| 54 | **mūnjɨ** ‘face’ | Proposed reflex of [**DEDR 5031**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=454) | DEDR 5031 explicitly attests Tamil mūñci, Malayalam muññi/moññi/mōnta, Kota mōnd and Kannada mūti/mōti face. These survey forms are comparative members of the face/muzzle family, distinct from mukam in DEDR 4889. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 55 | **ellāne** ‘all’, **yellaru** ‘all’, **yellāru** ‘all’, **yeḷḷāruvā** ‘all’, **yellāruvu** ‘all’, **yeḷḷāruvu** ‘all’, **yeḷḷāru** ‘all’, **ella** ‘all’ | Proposed reflex of [**DEDR 844**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=82) | DEDR 844 directly compares Tamil/Malayalam ellām, Kannada ella/ellarum and Kodagu ellā all. The survey simple universal quantifier matches the entry. Human plural ellāru(m) is an attested member of the same quantifier paradigm. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (8 records.) |
+
+Proposed assignment rows: **22**. Affected records: **22**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-011.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Kannada/batch-011.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

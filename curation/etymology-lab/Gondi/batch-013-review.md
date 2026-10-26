@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Gondi · Dravidian surveys, 2026-09-21 · batch 013. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Gondi | Proposed etymology | Evidence |
+|---|---|---|---|
+| 46 | **īmmā** ‘Thou’, **nimme** ‘thou’, **nimma** ‘thou’ | Proposed reflex of [**DEDR 3684**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=327) | DEDR 3684 records singular Tamil nī, Kannada nīnu, Kodagu nīnï, Gondi immā/nimma, Kui īnu, Kurux/Malto nīn and Tulu ī. Only singular paradigm members are selected; plural nīm/nīvu and overt plurals are excluded even where the prompt simply says you. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (3 records.) |
+| 47 | **peder** ‘name’, **pedder** ‘name’, **pedir** ‘name’, **porōl** ‘name’, **porol** ‘name’ | Proposed reflex of [**DEDR 4410**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=389) | DEDR 4410 explicitly attests Tamil/Malayalam pēr, Kota pēr, Telugu pēru, Gadaba/Parji pidir, Gondi peder/porol, Tulu pudaru and Konda/Kuvi dōru name. The selected simple name nouns fit these branches; Indo-Aryan nām forms and potentially contact-mediated Kannada pēru are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (6 records.) |
+| 48 | **u̯eki** ‘firewood’, **vaki** ‘firewood’, **vakkiŋ** ‘firewood’, **verku** ‘firewood’, **verike** ‘firewood’, **verki** ‘firewood’, **verke** ‘firewood’ | Proposed reflex of [**DEDR 5440**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=494) | DEDR5440 explicitly gives Gondi verrki, Muria vark, Maria vaẖk/veẖki and Koya verk firewood. The Koya survey verk-/verik- forms and Maria vaki/u̯eki fit those dialect-specific comparanda; Muria vakkiŋ preserves the survey final nasal plural-like ending, whose local analysis remains visible for review. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (8 records.) |
+| 49 | **puŋgar** ‘flower’ | Proposed reflex of [**DEDR 4345**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=384) | DEDR 4345 gives Kurukh pū̃p/pūmp, Gondi puŋgar, Gadaba pū and Kannada pūvu ‘flower’. Nasalization is retained in the source record; the tentative Sanskrit puṣpa comparison is not made into a borrowing edge. (1 records.) |
+| 50 | **gal** ‘wind’, **gāl** ‘wind’ | Proposed reflex of [**DEDR 1499**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=139) | DEDR 1499 explicitly lists Kannada gāḷi, Konda gāli and Gondi gāl ‘wind’. The direct same-language words and wind sense support the family placement; the precise history of regional contact is not determined by the listing. (2 records.) |
+
+Proposed assignment rows: **20**. Affected records: **20**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-013.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Gondi/batch-013.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

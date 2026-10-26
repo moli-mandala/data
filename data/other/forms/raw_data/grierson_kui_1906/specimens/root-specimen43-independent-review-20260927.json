@@ -1,0 +1,35 @@
+{
+  "status":"both physical pages independently compared; fine-mark and correction proposals await owner reconciliation",
+  "reviewer":"root",
+  "specimen":43,
+  "printed_pages":[470,471],
+  "source_images":["tmp/kui-specimens/alternate-n491.jpg","tmp/kui-specimens/alternate-n492.jpg"],
+  "input_hashes":{
+    "p470-first-reading.tsv":"daca5f7b521098b0e0d8040eba631038ad505a6ea5c983de604294799c7cce39",
+    "p471-first-reading.tsv":"b1333499fbb0ef6698a7b086fd35488e4c808059e08fb98eb30552b224509986"
+  },
+  "coverage":{"atoms":334,"page470_atoms":156,"page471_atoms":178,"physical_lines":37,"full_form_and_gloss_comparison":true},
+  "corrections":[
+    {"source_unit_key":"grierson1906kui:p470:specimen43:line16:word7","field":"raw_source_form","old":"muskitēñju.","proposed":"murkitēñju.","evidence":"Medial letter before k has r shoulder, not s curves. Verify narrower crop before accepting correction."},
+    {"source_unit_key":"grierson1906kui:p471:specimen43:line9:word8","field":"raw_source_form","old":"‘mi","proposed":"mi","evidence":"The source word mi has no opening quote; the quote is printed before its English gloss your. Keep raw gloss quotation separately."}
+  ],
+  "questions":[
+    {"source_unit_key":"grierson1906kui:p470:specimen43:line2:word2","current":"‘āhō","candidate":"‘āhē","issue":"Final vowel appears to have e body in enlarged strip; check narrow original rather than harmonize repeated vocatives."},
+    {"source_unit_key":"grierson1906kui:p470:specimen43:line7:word8","current":"mēttēñju","candidate":"mētēñju","issue":"Only one tall t body appears between vowels in the enlarged source strip. Confirm segmentation of heavy type."},
+    {"source_unit_key":"grierson1906kui:p470:specimen43:line5:word9","current":"bēṭaṭi","candidate":"bētaṭi","issue":"First t lower dot not secure; final ṭ lower mark clear. Do not regularize to another adverb."}
+  ],
+  "class_question":{
+    "description":"Initial capital E frequently lacks a visibly separate upper macron although first reading encodes Ē. Review each occurrence independently, including occurrences already questioned in specimen42. Do not strip macrons from lowercase ē or infer omitted capital length from pronunciation.",
+    "page470_locations":["line1:word5","line3:word1","line6:word8","line8:word4","line9:word1","line16:word8"],
+    "page471_locations":["line6:word1","line7:word1","line7:word7","line8:word3","line9:word6","line11:word4","line12:word1","line12:word9","line14:word5","line15:word7"]
+  },
+  "retained_caveats":[
+    "p471 line11word3 sibki-mānēñju remains provisional with damaged medial-cluster uncertainty from earlier independent review.",
+    "Do not replace Āmu glossed I with a plural gloss, or āmu glossed we with singular, on paradigm expectations. Preserve source inconsistent person rendering and the author's preceding qualification about inclusive use.",
+    "p470 final him-to clause continues onto p471 first said clause; preserve whole expression and both page citations.",
+    "p471 ābā(-i) parenthesis is literal; no unprinted optional-form expansion approved.",
+    "Historical Kalahandi routing and conflicting modern identification remain explicitly qualified; no automatic Kuvi migration."
+  ],
+  "remaining":["owner reconciliation of proposed readings and capitalization class","expression span review after reconciliation","whole-source audit"],
+  "canonical_changes":false
+}

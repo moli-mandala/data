@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Kuwi · Dravidian surveys, 2026-09-21 · batch 004. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Kuwi | Proposed etymology | Evidence |
+|---|---|---|---|
+| 16 | **guṭi** ‘mouth’ | Proposed reflex of [**DEDR 1708**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=156) | DEDR 1708 explicitly lists Kuvi guti/gūti ‘mouth’, alongside Kui guti. The survey guṭi matches the complete noun and meaning, while its retroflex stop spelling is preserved for review. (1 records.) |
+| 17 | **sipadaki** ‘breast’ | Compound: [**DEDR 2620**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=227) + [**DEDR 2976**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=258) | DEDR2620 explicitly gives Kuwi sīpa-ḍaki/hīpa-ḍaki chest and refers to DEDR2976; the latter gives the same Kuwi compound plus Kui ḍaki breastbone/chest. Propose ordered sīpa- upper-trunk element + ḍaki chest/bone components for survey sipadaki breast, preserving the broader elicited anatomical gloss and undivided source spelling. (1 records.) |
+| 18 | **nānu** ‘I’ | Proposed reflex of [**DEDR 5160**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=468) | DEDR 5160 directly groups the first-person singular forms in these languages. The source cognacy annotation explicitly identifies this article; full-article checking confirms the same pronoun family. Survey aēn and hēnu retain their differences from dictionary Kurukh ēn and Malto én; these are comparative proposals, not spelling corrections. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 19 | **mambu** ‘we’ | Proposed reflex of [**DEDR 5154**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=467) | DEDR 5154 explicitly groups the exclusive first-person plural series, including Gondi mammoṭ, Kuwi māmbu, Gadaba/Parji ām, Tamil nāṅkaḷ, Telugu mēmu and Tulu eṅkuḷu. The source cognacy annotation independently identifies 5154. Tamil nānga and Tulu yankulu are retained as surveyed variants; source gloss we is unchanged. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 20 | **ena** ‘what’ | Proposed reflex of [**DEDR 5151**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=465) | DEDR 5151 gives Brahui ant, Gondi batal/bāta, Kannada ēn, Kurukh endr/endrā, Kuwi ena, Malayalam entu, Parji nāto and Tamil eṉṉa. The source cognacy annotations identify the same interrogative family. Survey endings and vowel differences are preserved; no claim of literal dictionary identity is made. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+
+Proposed assignment rows: **6**. Affected records: **5**. Relation kinds: **component, reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-004.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Kuwi/batch-004.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

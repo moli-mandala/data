@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Koraga · Bhat 1971 Koraga records, 2026-09-25 · batch 096. Pending user review; autonomous research continues.
+
+| # | Koraga | Proposed etymology | Evidence |
+|---|---|---|---|
+| 261 | **bisirige** ‘homesickness’ | Proposed reflex of [**DEDR 5524**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=504) | DEDR 5524 full article (p. 504) gives Kor. (T.) bisirige homesickness. Bhat bisirige “homesickness” is the same cited Koraga form and sense; its original dialect:Koraga:tappu:Tappu uncertain dialect tag is retained. The article is used as family classification, not an independent second attestation of Bhat. (1 record.) |
+| 262 | **bī** ‘to grind’ | Proposed reflex of [**DEDR 5450**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=495) | DEDR 5450 full article (p. 495) gives Kor. (T.) bī- to grind. Te. vīcu to blow as the wind; wave ( tr. ), (K. also) fling, throw with a sweep, fan; vī-tencu to blow as the wind; vīcōpu chowrie; vīvana fan, whisk; vīvali wind; visan Bhat bī “to grind” matches Lindgren Koraga bī “grind” in form and sense; this cross-source match is a candidate lead, with the full DEDR article defining the family. Both source identities and dialect tags are preserved. (1 record.) |
+| 263 | **bīsɨ** ‘to blow’ | Proposed reflex of [**DEDR 5450**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=495) | DEDR 5450 full article (p. 495) gives Kor. (T.) bī- to grind. Te. vīcu to blow as the wind; wave ( tr. ), (K. also) fling, throw with a sweep, fan; vī-tencu to blow as the wind; vīcōpu chowrie; vīvana fan, whisk; vīvali wind; visan Bhat bīsɨ “to blow” matches Lindgren Koraga bīsɨ “blow (with mouth)” in form and sense; this cross-source match is a candidate lead, with the full DEDR article defining the family. Both source identities and dialect tags are preserved. (1 record.) |
+| 264 | **buḍara** ‘house’ | Proposed reflex of [**DEDR 5393**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=488) | DEDR 5393 full article (p. 488) gives 5393 Ta. viṭu (viṭuv-, viṭṭ-) to leave, quit, part with, get rid of, abandon, forsake, let go, dispatch, send away liberate, release, leave off, discontinue, omit, leave out, send forth, dis Bhat buḍara “house” matches Lindgren Koraga buḍara “house” in form and sense; this cross-source match is a candidate lead, with the full DEDR article defining the family. Both source identities and dialect tags are preserved. (1 record.) |
+| 265 | **burpɨ** ‘to cry’ | Proposed reflex of [**DEDR 5433**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=493) | DEDR 5433 full article (p. 493) gives Kor. (T.) burpi to cry. Te. viḷambaramu notification, publication. Cf. 4195 Ta. piḷiṟu . DED(N) 4460. Bhat burpɨ “to cry” matches Lindgren Koraga burpɨ “cry” in form and sense; this cross-source match is a candidate lead, with the full DEDR article defining the family. Both source identities and dialect tags are preserved. (1 record.) |
+
+Proposed assignment rows: **5**. Affected records: **5**. Relation kinds: **reflex**. Multi-part responses retain their source order.
+
+Exact persistent IDs and complete source records: [batch-096.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Koraga/batch-096.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../koraga-bhat-20260925/research-holds.json). No new lexical material or donor nodes are introduced.

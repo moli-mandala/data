@@ -301,14 +301,16 @@ def build() -> tuple[list[list[str]], list[dict], dict]:
 
 def write(forms: list[list[str]], audit: list[dict], metadata: dict, install: bool) -> None:
     target = INSTALLED if install else REPO / "tmp/20260828-sil-koya-preview.csv"
+    audit_target = AUDIT if install else target.with_name("20260828-sil-koya-preview-audit.csv")
+    manifest_target = MANIFEST if install else target.with_name("20260828-sil-koya-preview-manifest.json")
     target.parent.mkdir(parents=True, exist_ok=True)
     with target.open("w", encoding="utf-8", newline="") as stream:
         csv.writer(stream).writerows(forms)
-    with AUDIT.open("w", encoding="utf-8", newline="") as stream:
+    with audit_target.open("w", encoding="utf-8", newline="") as stream:
         writer = csv.DictWriter(stream, fieldnames=AUDIT_FIELDS)
         writer.writeheader()
         writer.writerows(audit)
-    MANIFEST.write_text(json.dumps(metadata, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    manifest_target.write_text(json.dumps(metadata, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(
         f"source_cells={len(audit)} installed={len(forms)} "
         f"missing={sum(r['Status']=='missing' for r in audit)} "

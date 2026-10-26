@@ -1,0 +1,133 @@
+{
+  "reviewer": "/root/asur_finish",
+  "status": "Outside-source census reviewed; two p182 source uncertainties preserved; canonical integration deferred",
+  "original_pages_checked": {
+    "182": "Entire printed182 at physical201 viewed. Two explicit lexical witnesses: Kolami negative form and Dravidian Bhili of Berar todī. Fine-glyph and broader Bhili identity remain separately held; source loan conjecture not a borrowing edge",
+    "348": "Entire Malayalam introduction viewed; no Kolami/Basim lexical witness. Initial discovery lead is excluded",
+    "349": "Entire Malayalam population/literature page viewed; no Kolami/Basim lexical witness. Initial discovery lead is excluded",
+    "480": "Entire Gondi grammar page viewed. Similar forms also found in Kaikadi and Kolami refers to preceding genitive class, without an explicitly printed Kolami literal. Documentary cross-reference, no invented expansions",
+    "570": "Entire original Naiki page viewed. Same forms usual in Kolami has ambiguous antecedent between Naiki paradigm and three Kui examples; retain existing documentary decision, no inferred three Kolami rows",
+    "571": "Entire original Naiki page viewed. Three Compare Kolami cross-references under present/past, negation and infinitive classes; forms explicitly printed remain Naiki. No synthetic Kolami forms",
+    "623": "Entire original Brahui page viewed. One shared nē genitive token explicitly attributed to Naiki and Kolami. Two language attributions on one printing, exact current canonical occurrences already exist",
+    "626": "Entire original Brahui page viewed. Explicit Kolami tōten negative particle, tentative past-negative-verb interpretation retained as source claim",
+    "627": "Entire original Brahui page viewed. Explicit repeated Kolami tōten under qualified comparison; independent physical occurrence, no graph inference",
+    "8": "Entire original viewed; Bhillas ethnonym in historical quotation; not language-attributed lexical evidence",
+    "9": "Entire original viewed; General Bhil/Dravidian-influence discussion; not Basim identity or literal borrowing",
+    "167": "Entire original viewed; Naharī/Nahari exclusions; Bhil of Nasik/Sargana is not Naikri",
+    "185": "Entire original viewed; Nahal/Nahari classification and neighbouring Indo-Aryan Bhil dialects, not Basim",
+    "186": "Entire original viewed; General Bhili/Khandeshi n suffix comparison; lacks historical Dravidian-Basim qualification, deliberately not routed to Naikri",
+    "283": "Entire original viewed; Documentary Kolami/Naiki classification",
+    "284": "Entire original viewed; Documentary Pusad/Basim classification",
+    "290": "Entire original viewed; Source gender-class discussion; no printed Kolami token in matching sentence",
+    "473": "Entire original viewed; Gondi/Kolam distribution and Basim geography, not Naikri lexical routing",
+    "474": "Entire original viewed; Kolami/Naiki classification statement; no independent literal",
+    "478": "Entire original viewed; Reported Haig authority and Gondi pronoun geography; Wun alone does not identify Kolami",
+    "577": "Entire original viewed; Telugu language boundary through Wun; unrelated geographic lead",
+    "501": "Source explicitly labels the surrounding section Gondi and Basim specimens Gondi, despite geographic coincidence. Not historical Dravidian Bhili of Basim; no Naikri attribution.",
+    "622": "Entire original Brahui page viewed. Kolami is named in a dative/accusative-class comparison, with no literal Kolami exponent printed. Documentary source claim only."
+  },
+  "physical_lexical_witnesses_outside_chapter": [
+    {
+      "key": "grierson1906kolamibasim:p182:outside:kolami-negative",
+      "printed_page": 182,
+      "source_label": "Kolami",
+      "form_candidate": "tōten",
+      "alternatives": [
+        "tōten",
+        "tōlen"
+      ],
+      "gloss": "",
+      "disposition": "transcription_hold",
+      "analysis": "Compared to preceding negative-verb discussion; source speculates Dravidian loan, no donor edge inferred"
+    },
+    {
+      "key": "grierson1906kolamibasim:p182:outside:bhili-berar-negative",
+      "printed_page": 182,
+      "source_label": "Dravidian Bhili of Berar",
+      "form_candidate": "todī",
+      "gloss": "",
+      "disposition": "identity_and_fine_glyph_review",
+      "analysis": "Broader source label is not an exact Basim lect attribution; do not silently add Basim dialect"
+    },
+    {
+      "key": "grierson1906kolamibasim:p623:outside:kolami-genitive",
+      "printed_page": 623,
+      "source_label": "Naiki and Kolami",
+      "form_candidate": "nē",
+      "gloss": "",
+      "disposition": "exact_existing_occurrence_reuse",
+      "existing_kolami_key": "grierson1906kui:p623:outside-comparand:15",
+      "existing_naiki_key": "grierson1906naiki:p623:genitive-comparison:naiki",
+      "physical_tokens": 1,
+      "language_witnesses": 2
+    },
+    {
+      "key": "grierson1906kolamibasim:p626:outside:negative",
+      "printed_page": 626,
+      "source_label": "Kolami",
+      "form_candidate": "tōten",
+      "gloss": "",
+      "disposition": "literal_original_reviewed_candidate",
+      "source_analysis": "Source calls it a negative particle and says perhaps a past tense of a negative verb; do not impose past tag as certain"
+    },
+    {
+      "key": "grierson1906kolamibasim:p627:outside:negative",
+      "printed_page": 627,
+      "source_label": "Kolami",
+      "form_candidate": "tōten",
+      "gloss": "",
+      "disposition": "literal_original_reviewed_candidate",
+      "source_analysis": "Source says Brahui t-forms can perhaps be compared with Kolami form; qualification retained, no edge"
+    }
+  ],
+  "chapter_overlap": {
+    "p566_existing_emitted_kolami": "grierson1906kui:p566:outside-comparand:06 (and, he)",
+    "p566_existing_basim_holds": [
+      "grierson1906kui:p566:outside-comparand:01",
+      "grierson1906kui:p566:outside-comparand:02",
+      "grierson1906kui:p566:outside-comparand:03",
+      "grierson1906kui:p566:outside-comparand:04",
+      "grierson1906kui:p566:outside-comparand:05"
+    ],
+    "policy": "Keep old emitted occurrence key and immutable historical holds; source-local reconciliation must not count these physical printings twice or fabricate persistent ID aliases",
+    "adjacent_naiki": "All 694 installed Naiki rows remain separate chapter coverage; full overarching heading includes pp570–575 without retranscription as Kolami"
+  },
+  "false_lead": {
+    "printed_page": 233,
+    "raw_form": "kōlār",
+    "context": "Gadaba example music/dancing sound, not the Kolami language label",
+    "disposition": "unrelated_literal_not_target"
+  },
+  "addenda_original_review": {
+    "pages": [
+      17,
+      18
+    ],
+    "originals": [
+      "tmp/holiya-scope-review/addenda-leaf706.jpg",
+      "tmp/korvi-full-scope/alternate-leaf708.jpg"
+    ],
+    "result": "Both complete original sheets independently viewed. p17 ends chapter corrections at483; p18 starts580 and then621 and named standard-list columns. No561–575 Kolami/Naiki/Basim correction or named Kolami column. Later undated witness remains separate from1906",
+    "p16": "Prior original applicability evidence required to close earlier chapter corrections; not silently declared reviewed here"
+  },
+  "table_header_closure": "Reuse independent complete original header646–649 review in grierson_holiya_1906/independent-scope-identity-review-20260926.json: 11 named columns, none Kolami/Basim/Naiki. Cached HTML label hits require separate population-table classification",
+  "pending": [
+    "p182 negative-form fine glyph and broader Berar identity adjudication; retained as typed holds",
+    "Original addendum16 is not retained locally: OCR range evidence only, no new original absence claim"
+  ],
+  "canonical_changes": false,
+  "original_documentary_pages_checked": {
+    "8": "Bhillas ethnonym in historical quotation; not language-attributed lexical evidence",
+    "9": "General Bhil/Dravidian-influence discussion; not Basim identity or literal borrowing",
+    "167": "Naharī/Nahari exclusions; Bhil of Nasik/Sargana is not Naikri",
+    "185": "Nahal/Nahari classification and neighbouring Indo-Aryan Bhil dialects, not Basim",
+    "186": "General Bhili/Khandeshi n suffix comparison; lacks historical Dravidian-Basim qualification, deliberately not routed to Naikri",
+    "283": "Documentary Kolami/Naiki classification",
+    "284": "Documentary Pusad/Basim classification",
+    "290": "Source gender-class discussion; no printed Kolami token in matching sentence",
+    "473": "Gondi/Kolam distribution and Basim geography, not Naikri lexical routing",
+    "474": "Kolami/Naiki classification statement; no independent literal",
+    "478": "Reported Haig authority and Gondi pronoun geography; Wun alone does not identify Kolami",
+    "577": "Telugu language boundary through Wun; unrelated geographic lead"
+  }
+}

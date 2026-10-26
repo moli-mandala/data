@@ -1,0 +1,37 @@
+{
+  "status": "canonical source-stage validation passes; compiled/browser gates deferred",
+  "checks": {
+    "NFC": {
+      "rows": 223,
+      "all15fields_exact": true,
+      "initial_dedupe_keys": 223,
+      "zero_conversion": true
+    },
+    "NFD": {
+      "rows": 223,
+      "all15fields_exact": true,
+      "initial_dedupe_keys": 223,
+      "zero_conversion": true
+    }
+  },
+  "reference_flags": 7,
+  "variants": 12,
+  "audit_records": 240,
+  "canonical_sha256": {
+    "csv": "ee7fb5625bc4532815e64ae3755cd3ab76ec80c42d5b34fee25462af12e912c1",
+    "yaml": "a7e720e29add3ab712975ffdf6b584ca5f64a77e0430a89e8561bea4dae502b7",
+    "audit": "cccddbb2fba5aacb04399e59d82ea594c894d3d1755e11747829e6d1a646118f"
+  },
+  "durable_identity_sha256": "4977c4e205f66233366ee1c00a9c938c9c78e3c087b63e02a94832647525c28a",
+  "actual_canonical_source_meta": true,
+  "parser_monkeypatch": false,
+  "repeat_install": "no-op with current shared membership verified",
+  "bibliography": "seven reviewed records installed; auxiliary works reported only",
+  "unresolved": "Source Veda locality/catalogue identity and printed grammatical/gloss anomalies retained with typed uncertainty.",
+  "deferred": [
+    "full CLDF/database build",
+    "full suite",
+    "compiled identity/graph/reference survival",
+    "browser QA/publication"
+  ]
+}

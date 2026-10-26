@@ -1,0 +1,1535 @@
+{
+  "seed": 20260927191,
+  "manifest_sha256": "b1c184adec73bf750d4c95aa473f40ebdfcf41e79f80c996074a3e5d2d656925",
+  "source_pdf_sha256": "a6541e0d2397849ce7c36961b3849f3b2c1f1c267036cfa1a3f6025796e14e7d",
+  "frozen_manifest": {
+    "status": "ready_for_independent_review_not_installation_approved",
+    "rows": {
+      "wordlist": 1437,
+      "narrative": 210,
+      "comparative": 18,
+      "total": 1665
+    },
+    "audit_units": 2119,
+    "legacy_key_reconciliation": {
+      "active": 1437,
+      "proposed_alias": 1,
+      "total_accounted": 1438
+    },
+    "outputs_sha256": {
+      "bibliography-update-proposal.json": "fb8535ac6393609516a3f22a1f13ca861be5da27e8c50b3f5a31b5acd2f2cc59",
+      "metadata-validation.json": "f3d5a1219a9d3dc1487e48f6ce4a4db82ced730db0f7d9ae30b2c627e39f3d34",
+      "parser-validation.json": "c0e674c3a17578374f211ef07419a476d3fa73b5db20c484ad19837babd2b158",
+      "proposal-summary.json": "67ad927a9e39b5c4f9e368bc9ef19b0640e6b327ba0dbbb83dd1dd09e84f2c55",
+      "proposed-comparative.csv": "3c01698e63111d1b778cab20f00383861c417f2cc4483965debbfe6aea4570be",
+      "proposed-comparative.yaml": "690a0c0468e77966b41484d881b48f69d6c6220a5d656a8ddcef8201972390b2",
+      "proposed-entry-key-aliases.json": "be65174b6f138f6d0bf41106845439e62fc7656d6367d57bf2eae60753eb9b40",
+      "proposed-narrative.csv": "c73b7c6de0aec5e067b13a2f3e2fa2bbbde925b12c7bcdb7579232e36b1c1bbb",
+      "proposed-narrative.yaml": "6815aadfc5ef5370d1f9861e9b7edb9ebca9053e6b4ee739dee759ba96e2bd61",
+      "proposed-sil-koya-comparative.txt": "de9320f424d972063046552dbf2785002b90b7acd0623fea661bc178aa693c0a",
+      "proposed-sil-koya-literal.txt": "a5860f6c9ab25696dc881f2cd6e30a12c58fc76ce37b06aa2e2979719bf53267",
+      "proposed-sil-koya-narrative.txt": "c91ab89a34fec4e3648254811b552da5c523e23dcab6312017c105a1abd9fcba",
+      "proposed-whole-audit.jsonl": "ad7af4e58035238d3bda321fddf4e7888b87085f8bbbb416a8187716592076d8",
+      "proposed-wordlist-audit.jsonl": "a53c77cc37848e0439dd387e2d00e99560d93645945f5c14871c7a5384feea61",
+      "proposed-wordlist.csv": "85ddc2cdc190048313a62fc4b2f1c6f9443e1bede84101261b0403df7f815724",
+      "proposed-wordlist.yaml": "c383e80e6bb53084f16ba12f26bfa68b35060c605279ede6e9d40df6fc90854c"
+    },
+    "inputs_sha256": {
+      "notation-keyed-proposal-20260927.jsonl": "0196472194191423f9a7b51d257f86fa4201861555a2e28b88461c2a72f55222",
+      "notation-literal-pages-20260927.json": "ee8cdad69d042129545b8e1d2d0490b086e508194453dc5e3f2732e9508f28e6",
+      "notation-narrow-adjudications-20260927.json": "97b56f5ecedaaa6d4e92606d9269424d3a74886d0ef1579ead50a8155cccdb5b",
+      "notation-iota-encoding-review-20260927.json": "817562466491838c5104f356dd44912dda57cb68e4f0fdbe73cba0430d04da50",
+      "notation-question-shaped-sign-census-20260927.json": "3f966403b73e4032066c442589123d10ebef464aee352943df2016469530c291",
+      "notation-validation-20260927.json": "0793b2f70ef605d47089e18c67e2889e37d70c81bd9d546ae9be34bcb42125d0",
+      "report-census-first-reading-20260927.json": "5f4c02ab1b1570ac2eb06565ece4e0df646ead73042203f3a727e598b0ae4ccf",
+      "narrative-scope-review-20260927.json": "6fde5243c3f92563f4a7d589abe7bd5514e9f5e6bd1aff0a8bebfef832287949",
+      "original-page-review-20260927.json": "1c8938edee99b0f98bc1e68e3380b8b348b7fa4f5d18edc5b3e5804189af4883",
+      "whole-output-freeze-20260927.json": "42df94b977a55ab6cd2504408f8fa11191bfdd7ac8fb197fd255ce454dd39103",
+      "independent-whole-output-audit-20260927.json": "b3e7199f30a54eb6f85d998d7deca907bd68f083f4827aab723f3e1a94d9f004"
+    },
+    "scripts_sha256": {
+      "prepare_notation_review.py": "85c703d9303d2f4c6bf7de3107bbb8fc8eeb9d9debbd52ffdf9562525e70bf9a",
+      "validate_notation_review.py": "202606f44ccb11721b0ab672d3dada5fe66279baa60a56a01c191a1273a3df5b",
+      "prepare_literal_integration.py": "4dc10745b849ca26a71aa0f4bfba6e055a63a56f3251182842369977e844e3a2",
+      "validate_literal_integration.py": "3aa7eb33b6f84c021f2507ae5ff5fa520662aba48c5527a153331b1e8423a08e",
+      "validate_literal_metadata.py": "ba913ffdc92d7ce0b9f7af64f3b6f5b7bc78b0d74fddcefe6eb8ffbe95789fff",
+      "prepare_literal_manifest.py": "ad440f0129a61febffc5e135aebbc6bbcd3391a50bdb581114b2537c7338a992"
+    },
+    "canonical_modified": false,
+    "historical_failed_freeze_unchanged": true,
+    "required_next": "Root independently reviews actual emitted rows, source notation and proposed alias; installation remains unauthorized pending that review."
+  },
+  "excluded_historical_keys": [
+    "devagnanavaram2021:whole:3.1.4:p6:salt:2",
+    "devagnanavaram2021:whole:3.1.4:p7:different:2",
+    "devagnanavaram2021:whole:3.1.4:p7:six:2",
+    "devagnanavaram2021:whole:3.1.4:p7:village:3",
+    "devagnanavaram2021:whole:B.1:p17:13",
+    "devagnanavaram2021:whole:B.1:p19:3",
+    "devagnanavaram2021:whole:B.2:p20:14",
+    "devagnanavaram2021:whole:B.2:p20:parsi-definition",
+    "devagnanavaram2021:whole:B.3:p22:14",
+    "devagnanavaram2021:whole:B.4:p24:1",
+    "devagnanavaram2021:whole:B.4:p24:18",
+    "devagnanavaram2021:whole:B.4:p24:lanton-context",
+    "devagnanavaram2021:whole:B.4:p25:1",
+    "devagnanavaram2021:whole:B.4:p25:5",
+    "devagnanavaram2021:whole:B.5:p26:4",
+    "devagnanavaram2021:whole:B.5:p26:jaw-context",
+    "devagnanavaram2021:whole:B.6:p28:13",
+    "devagnanavaram2021:whole:B.6:p28:15",
+    "devagnanavaram2021:whole:B.6:p28:Vija-context",
+    "devagnanavaram2021:whole:B.6:p28:Zoma-context",
+    "devagnanavaram2021:whole:B.6:p29:1",
+    "devagnanavaram2021:whole:B.6:p29:4",
+    "devagnanavaram2021:whole:B.6:p29:6",
+    "devagnanavaram2021:whole:B.6:p29:perrama-context",
+    "devagnanavaram2021:whole:B.7:p30:1",
+    "devagnanavaram2021:whole:B.7:p30:5",
+    "devagnanavaram2021:whole:B.7:p31:13",
+    "wordlist:CHI:74",
+    "wordlist:JAG:118",
+    "wordlist:JAG:78",
+    "wordlist:UTN:33"
+  ],
+  "sample": [
+    {
+      "stratum": "wordlist",
+      "audit": {
+        "source_unit_key": "wordlist:BHM:166",
+        "legacy_audit": {
+          "Record_Type": "wordlist cell",
+          "Item": 166,
+          "Gloss": "what?",
+          "Site_Code": "BHM",
+          "Site_Name": "Bhamani Madia",
+          "Role": "target",
+          "Dialect_Group": "western Madia",
+          "PDF_Page": 100,
+          "Printed_Page": 95,
+          "Column": 3,
+          "Manual_Transcription": "bʰat̪e",
+          "Manual_Review": "manual-source-image",
+          "Uncertainty": "",
+          "OCR_Evidence": "tesseract_raw.txt#pdf100",
+          "Alternate_Digital_Evidence": "bʰat̪e",
+          "Status": "installed",
+          "Reason": "",
+          "Language_ID": "Gondi",
+          "Dialect_ID": "sil-koya-1985-bhamani-madia",
+          "Source": "devagnanavaram-et-al2021koya[Appendix E, printed p. 95, item 166, Bhamani Madia]",
+          "Entry_Keys": "silkoya1985:bhm:i166:v1"
+        },
+        "entry_keys": [
+          "silkoya1985:bhm:i166:v1"
+        ],
+        "status": "proposed",
+        "notation_review": {
+          "source_unit_key": "wordlist:BHM:166",
+          "entry_key_prefix": "silkoya1985:bhm:i166",
+          "pdf_page": 100,
+          "printed_page": 95,
+          "site": "BHM",
+          "item": 166,
+          "column": 3,
+          "previous_ledger_form": "bʰat̪e",
+          "literal_source_proposal": "bʰat̪e",
+          "first_literal_reading": "bʰat̪e",
+          "narrow_adjudication": null,
+          "encoding_review": null,
+          "question_shaped_sign_review": null,
+          "normalized_ipa_proposal": null,
+          "changed": false,
+          "review_uncertainty": "",
+          "status": "first_independent_literal_reading",
+          "installation_approved": false
+        },
+        "previous_entry_keys": [
+          "silkoya1985:bhm:i166:v1"
+        ]
+      },
+      "actual_rows": [
+        [
+          "Gondi",
+          "",
+          "bʰat̪e",
+          "what?",
+          "",
+          "",
+          "",
+          "devagnanavaram-et-al2021koya[Appendix E, printed p. 95, item 166, Bhamani Madia]",
+          "",
+          "",
+          "silkoya1985:bhm:i166:v1",
+          "",
+          "",
+          "",
+          "dialect:Gondi:sil-koya-1985-bhamani-madia:Bhamani%20Madia"
+        ]
+      ]
+    },
+    {
+      "stratum": "wordlist",
+      "audit": {
+        "source_unit_key": "wordlist:JAG:188",
+        "legacy_audit": {
+          "Record_Type": "wordlist cell",
+          "Item": 188,
+          "Gloss": "lie down",
+          "Site_Code": "JAG",
+          "Site_Name": "Jaganathapuram Koya",
+          "Role": "target",
+          "Dialect_Group": "eastern Koya",
+          "PDF_Page": 91,
+          "Printed_Page": 86,
+          "Column": 1,
+          "Manual_Transcription": "patːa",
+          "Manual_Review": "manual-source-image",
+          "Uncertainty": "",
+          "OCR_Evidence": "tesseract_raw.txt#pdf91",
+          "Alternate_Digital_Evidence": "",
+          "Status": "installed",
+          "Reason": "",
+          "Language_ID": "Gondi",
+          "Dialect_ID": "sil-koya-1985-jaganathapuram",
+          "Source": "devagnanavaram-et-al2021koya[Appendix E, printed p. 86, item 188, Jaganathapuram Koya]",
+          "Entry_Keys": "silkoya1985:jag:i188:v1"
+        },
+        "entry_keys": [
+          "silkoya1985:jag:i188:v1"
+        ],
+        "status": "proposed",
+        "notation_review": {
+          "source_unit_key": "wordlist:JAG:188",
+          "entry_key_prefix": "silkoya1985:jag:i188",
+          "pdf_page": 91,
+          "printed_page": 86,
+          "site": "JAG",
+          "item": 188,
+          "column": 1,
+          "previous_ledger_form": "patːa",
+          "literal_source_proposal": "pat·a",
+          "first_literal_reading": "pat·a",
+          "narrow_adjudication": null,
+          "encoding_review": null,
+          "question_shaped_sign_review": null,
+          "normalized_ipa_proposal": null,
+          "changed": true,
+          "review_uncertainty": "",
+          "status": "first_independent_literal_reading",
+          "installation_approved": false
+        },
+        "previous_entry_keys": [
+          "silkoya1985:jag:i188:v1"
+        ]
+      },
+      "actual_rows": [
+        [
+          "Gondi",
+          "",
+          "pat·a",
+          "lie down",
+          "",
+          "",
+          "",
+          "devagnanavaram-et-al2021koya[Appendix E, printed p. 86, item 188, Jaganathapuram Koya]",
+          "",
+          "",
+          "silkoya1985:jag:i188:v1",
+          "",
+          "",
+          "",
+          "dialect:Gondi:sil-koya-1985-jaganathapuram:Jaganathapuram%20Koya"
+        ]
+      ]
+    },
+    {
+      "stratum": "wordlist",
+      "audit": {
+        "source_unit_key": "wordlist:JAG:165",
+        "legacy_audit": {
+          "Record_Type": "wordlist cell",
+          "Item": 165,
+          "Gloss": "who?",
+          "Site_Code": "JAG",
+          "Site_Name": "Jaganathapuram Koya",
+          "Role": "target",
+          "Dialect_Group": "eastern Koya",
+          "PDF_Page": 90,
+          "Printed_Page": 85,
+          "Column": 1,
+          "Manual_Transcription": "bano",
+          "Manual_Review": "manual-source-image",
+          "Uncertainty": "",
+          "OCR_Evidence": "tesseract_raw.txt#pdf90",
+          "Alternate_Digital_Evidence": "",
+          "Status": "installed",
+          "Reason": "",
+          "Language_ID": "Gondi",
+          "Dialect_ID": "sil-koya-1985-jaganathapuram",
+          "Source": "devagnanavaram-et-al2021koya[Appendix E, printed p. 85, item 165, Jaganathapuram Koya]",
+          "Entry_Keys": "silkoya1985:jag:i165:v1"
+        },
+        "entry_keys": [
+          "silkoya1985:jag:i165:v1"
+        ],
+        "status": "proposed",
+        "notation_review": {
+          "source_unit_key": "wordlist:JAG:165",
+          "entry_key_prefix": "silkoya1985:jag:i165",
+          "pdf_page": 90,
+          "printed_page": 85,
+          "site": "JAG",
+          "item": 165,
+          "column": 1,
+          "previous_ledger_form": "bano",
+          "literal_source_proposal": "bano",
+          "first_literal_reading": "bano",
+          "narrow_adjudication": null,
+          "encoding_review": null,
+          "question_shaped_sign_review": null,
+          "normalized_ipa_proposal": null,
+          "changed": false,
+          "review_uncertainty": "",
+          "status": "first_independent_literal_reading",
+          "installation_approved": false
+        },
+        "previous_entry_keys": [
+          "silkoya1985:jag:i165:v1"
+        ]
+      },
+      "actual_rows": [
+        [
+          "Gondi",
+          "",
+          "bano",
+          "who?",
+          "",
+          "",
+          "",
+          "devagnanavaram-et-al2021koya[Appendix E, printed p. 85, item 165, Jaganathapuram Koya]",
+          "",
+          "",
+          "silkoya1985:jag:i165:v1",
+          "",
+          "",
+          "",
+          "dialect:Gondi:sil-koya-1985-jaganathapuram:Jaganathapuram%20Koya"
+        ]
+      ]
+    },
+    {
+      "stratum": "wordlist",
+      "audit": {
+        "source_unit_key": "wordlist:UTN:144",
+        "legacy_audit": {
+          "Record_Type": "wordlist cell",
+          "Item": 144,
+          "Gloss": "heavy",
+          "Site_Code": "UTN",
+          "Site_Name": "Utnoor Gondi",
+          "Role": "target",
+          "Dialect_Group": "western Gondi",
+          "PDF_Page": 99,
+          "Printed_Page": 94,
+          "Column": 1,
+          "Manual_Transcription": "dʒaːdtʔ",
+          "Manual_Review": "manual-source-image",
+          "Uncertainty": "",
+          "OCR_Evidence": "tesseract_raw.txt#pdf99",
+          "Alternate_Digital_Evidence": "dʒaːdtʔ",
+          "Status": "installed",
+          "Reason": "",
+          "Language_ID": "Gondi",
+          "Dialect_ID": "sil-koya-1985-utnoor",
+          "Source": "devagnanavaram-et-al2021koya[Appendix E, printed p. 94, item 144, Utnoor Gondi]",
+          "Entry_Keys": "silkoya1985:utn:i144:v1"
+        },
+        "entry_keys": [
+          "silkoya1985:utn:i144:v1"
+        ],
+        "status": "proposed",
+        "notation_review": {
+          "source_unit_key": "wordlist:UTN:144",
+          "entry_key_prefix": "silkoya1985:utn:i144",
+          "pdf_page": 99,
+          "printed_page": 94,
+          "site": "UTN",
+          "item": 144,
+          "column": 1,
+          "previous_ledger_form": "dʒaːdtʔ",
+          "literal_source_proposal": "dʒa:dtʔ",
+          "first_literal_reading": "dʒa:dtʔ",
+          "narrow_adjudication": null,
+          "encoding_review": null,
+          "question_shaped_sign_review": {
+            "status": "interpretation_uncertain",
+            "literal_signs": [
+              "ʔ"
+            ],
+            "prior_review_note": "",
+            "decision": "Preserve the transcribed question-shaped sign. Its role as phonetic notation versus collector doubt is unresolved; neither interpretation is asserted. The chosen Unicode shape is not an approved phonemic analysis.",
+            "authority": "Root independent review and instruction, 2026-09-27; supersedes categorical interpretation in first-reading notes without changing their historical evidence."
+          },
+          "normalized_ipa_proposal": null,
+          "changed": true,
+          "review_uncertainty": "Preserve the transcribed question-shaped sign. Its role as phonetic notation versus collector doubt is unresolved; neither interpretation is asserted. The chosen Unicode shape is not an approved phonemic analysis.",
+          "status": "uncertain_question_shaped_sign_interpretation",
+          "installation_approved": false
+        },
+        "previous_entry_keys": [
+          "silkoya1985:utn:i144:v1"
+        ]
+      },
+      "actual_rows": [
+        [
+          "Gondi",
+          "",
+          "dʒa:dtʔ",
+          "heavy",
+          "",
+          "",
+          "Source handwriting/notation uncertainty: question shaped sign interpretation. The question-shaped sign is retained; phonetic notation versus collector doubt is unresolved.",
+          "devagnanavaram-et-al2021koya[Appendix E, printed p. 94, item 144, Utnoor Gondi]",
+          "",
+          "",
+          "silkoya1985:utn:i144:v1",
+          "",
+          "",
+          "",
+          "dialect:Gondi:sil-koya-1985-utnoor:Utnoor%20Gondi uncertain"
+        ]
+      ]
+    },
+    {
+      "stratum": "wordlist",
+      "audit": {
+        "source_unit_key": "wordlist:CHI:107",
+        "legacy_audit": {
+          "Record_Type": "wordlist cell",
+          "Item": 107,
+          "Gloss": "older brother",
+          "Site_Code": "CHI",
+          "Site_Name": "Chintoor Koya",
+          "Role": "target",
+          "Dialect_Group": "eastern Koya",
+          "PDF_Page": 87,
+          "Printed_Page": 82,
+          "Column": 2,
+          "Manual_Transcription": "dʰada",
+          "Manual_Review": "manual-source-image",
+          "Uncertainty": "",
+          "OCR_Evidence": "tesseract_raw.txt#pdf87",
+          "Alternate_Digital_Evidence": "",
+          "Status": "installed",
+          "Reason": "",
+          "Language_ID": "Gondi",
+          "Dialect_ID": "sil-koya-1985-chintoor",
+          "Source": "devagnanavaram-et-al2021koya[Appendix E, printed p. 82, item 107, Chintoor Koya]",
+          "Entry_Keys": "silkoya1985:chi:i107:v1"
+        },
+        "entry_keys": [
+          "silkoya1985:chi:i107:v1"
+        ],
+        "status": "proposed",
+        "notation_review": {
+          "source_unit_key": "wordlist:CHI:107",
+          "entry_key_prefix": "silkoya1985:chi:i107",
+          "pdf_page": 87,
+          "printed_page": 82,
+          "site": "CHI",
+          "item": 107,
+          "column": 2,
+          "previous_ledger_form": "dʰada",
+          "literal_source_proposal": "dʰada",
+          "first_literal_reading": "dʰada",
+          "narrow_adjudication": null,
+          "encoding_review": null,
+          "question_shaped_sign_review": null,
+          "normalized_ipa_proposal": null,
+          "changed": false,
+          "review_uncertainty": "",
+          "status": "first_independent_literal_reading",
+          "installation_approved": false
+        },
+        "previous_entry_keys": [
+          "silkoya1985:chi:i107:v1"
+        ]
+      },
+      "actual_rows": [
+        [
+          "Gondi",
+          "",
+          "dʰada",
+          "older brother",
+          "",
+          "",
+          "",
+          "devagnanavaram-et-al2021koya[Appendix E, printed p. 82, item 107, Chintoor Koya]",
+          "",
+          "",
+          "silkoya1985:chi:i107:v1",
+          "",
+          "",
+          "",
+          "dialect:Gondi:sil-koya-1985-chintoor:Chintoor%20Koya"
+        ]
+      ]
+    },
+    {
+      "stratum": "wordlist",
+      "audit": {
+        "source_unit_key": "wordlist:CHI:199",
+        "legacy_audit": {
+          "Record_Type": "wordlist cell",
+          "Item": 199,
+          "Gloss": "speak",
+          "Site_Code": "CHI",
+          "Site_Name": "Chintoor Koya",
+          "Role": "target",
+          "Dialect_Group": "eastern Koya",
+          "PDF_Page": 91,
+          "Printed_Page": 86,
+          "Column": 2,
+          "Manual_Transcription": "tiɾiːa",
+          "Manual_Review": "manual-source-image",
+          "Uncertainty": "",
+          "OCR_Evidence": "tesseract_raw.txt#pdf91",
+          "Alternate_Digital_Evidence": "",
+          "Status": "installed",
+          "Reason": "",
+          "Language_ID": "Gondi",
+          "Dialect_ID": "sil-koya-1985-chintoor",
+          "Source": "devagnanavaram-et-al2021koya[Appendix E, printed p. 86, item 199, Chintoor Koya]",
+          "Entry_Keys": "silkoya1985:chi:i199:v1"
+        },
+        "entry_keys": [
+          "silkoya1985:chi:i199:v1"
+        ],
+        "status": "proposed",
+        "notation_review": {
+          "source_unit_key": "wordlist:CHI:199",
+          "entry_key_prefix": "silkoya1985:chi:i199",
+          "pdf_page": 91,
+          "printed_page": 86,
+          "site": "CHI",
+          "item": 199,
+          "column": 2,
+          "previous_ledger_form": "tiɾiːa",
+          "literal_source_proposal": "t̪iɾi·a",
+          "first_literal_reading": "t̪iɾi·a",
+          "narrow_adjudication": null,
+          "encoding_review": null,
+          "question_shaped_sign_review": null,
+          "normalized_ipa_proposal": null,
+          "changed": true,
+          "review_uncertainty": "",
+          "status": "first_independent_literal_reading",
+          "installation_approved": false
+        },
+        "previous_entry_keys": [
+          "silkoya1985:chi:i199:v1"
+        ]
+      },
+      "actual_rows": [
+        [
+          "Gondi",
+          "",
+          "t̪iɾi·a",
+          "speak",
+          "",
+          "",
+          "",
+          "devagnanavaram-et-al2021koya[Appendix E, printed p. 86, item 199, Chintoor Koya]",
+          "",
+          "",
+          "silkoya1985:chi:i199:v1",
+          "",
+          "",
+          "",
+          "dialect:Gondi:sil-koya-1985-chintoor:Chintoor%20Koya"
+        ]
+      ]
+    },
+    {
+      "stratum": "wordlist",
+      "audit": {
+        "source_unit_key": "wordlist:UTN:126",
+        "legacy_audit": {
+          "Record_Type": "wordlist cell",
+          "Item": 126,
+          "Gloss": "month",
+          "Site_Code": "UTN",
+          "Site_Name": "Utnoor Gondi",
+          "Role": "target",
+          "Dialect_Group": "western Gondi",
+          "PDF_Page": 98,
+          "Printed_Page": 93,
+          "Column": 1,
+          "Manual_Transcription": "mahɪnʌ",
+          "Manual_Review": "manual-source-image",
+          "Uncertainty": "",
+          "OCR_Evidence": "tesseract_raw.txt#pdf98",
+          "Alternate_Digital_Evidence": "mahɪnʌ",
+          "Status": "installed",
+          "Reason": "",
+          "Language_ID": "Gondi",
+          "Dialect_ID": "sil-koya-1985-utnoor",
+          "Source": "devagnanavaram-et-al2021koya[Appendix E, printed p. 93, item 126, Utnoor Gondi]",
+          "Entry_Keys": "silkoya1985:utn:i126:v1"
+        },
+        "entry_keys": [
+          "silkoya1985:utn:i126:v1"
+        ],
+        "status": "proposed",
+        "notation_review": {
+          "source_unit_key": "wordlist:UTN:126",
+          "entry_key_prefix": "silkoya1985:utn:i126",
+          "pdf_page": 98,
+          "printed_page": 93,
+          "site": "UTN",
+          "item": 126,
+          "column": 1,
+          "previous_ledger_form": "mahɪnʌ",
+          "literal_source_proposal": "mahɩnʌ",
+          "first_literal_reading": "mahɪnʌ",
+          "narrow_adjudication": null,
+          "encoding_review": {
+            "key": "wordlist:UTN:126",
+            "pdf_page": 98,
+            "provisional": "mahɪnʌ",
+            "literal_glyph_candidate": "mahɩnʌ"
+          },
+          "question_shaped_sign_review": null,
+          "normalized_ipa_proposal": null,
+          "changed": true,
+          "review_uncertainty": "",
+          "status": "first_independent_literal_reading",
+          "installation_approved": false
+        },
+        "previous_entry_keys": [
+          "silkoya1985:utn:i126:v1"
+        ]
+      },
+      "actual_rows": [
+        [
+          "Gondi",
+          "",
+          "mahɩnʌ",
+          "month",
+          "",
+          "",
+          "",
+          "devagnanavaram-et-al2021koya[Appendix E, printed p. 93, item 126, Utnoor Gondi]",
+          "",
+          "",
+          "silkoya1985:utn:i126:v1",
+          "",
+          "",
+          "",
+          "dialect:Gondi:sil-koya-1985-utnoor:Utnoor%20Gondi"
+        ]
+      ]
+    },
+    {
+      "stratum": "wordlist",
+      "audit": {
+        "source_unit_key": "wordlist:JAG:160",
+        "legacy_audit": {
+          "Record_Type": "wordlist cell",
+          "Item": 160,
+          "Gloss": "ten",
+          "Site_Code": "JAG",
+          "Site_Name": "Jaganathapuram Koya",
+          "Role": "target",
+          "Dialect_Group": "eastern Koya",
+          "PDF_Page": 89,
+          "Printed_Page": 84,
+          "Column": 1,
+          "Manual_Transcription": "padi",
+          "Manual_Review": "manual-source-image",
+          "Uncertainty": "",
+          "OCR_Evidence": "tesseract_raw.txt#pdf89",
+          "Alternate_Digital_Evidence": "",
+          "Status": "installed",
+          "Reason": "",
+          "Language_ID": "Gondi",
+          "Dialect_ID": "sil-koya-1985-jaganathapuram",
+          "Source": "devagnanavaram-et-al2021koya[Appendix E, printed p. 84, item 160, Jaganathapuram Koya]",
+          "Entry_Keys": "silkoya1985:jag:i160:v1"
+        },
+        "entry_keys": [
+          "silkoya1985:jag:i160:v1"
+        ],
+        "status": "proposed",
+        "notation_review": {
+          "source_unit_key": "wordlist:JAG:160",
+          "entry_key_prefix": "silkoya1985:jag:i160",
+          "pdf_page": 89,
+          "printed_page": 84,
+          "site": "JAG",
+          "item": 160,
+          "column": 1,
+          "previous_ledger_form": "padi",
+          "literal_source_proposal": "pad̪i",
+          "first_literal_reading": "pad̪i",
+          "narrow_adjudication": {
+            "key": "wordlist:JAG:160",
+            "pdf_page": 89,
+            "crop": [
+              210,
+              598,
+              277,
+              625
+            ],
+            "scale": 8,
+            "literal": "pad̪i",
+            "status": "uncertain_detached_right_marks",
+            "reason": "A dark dot and a more distant faint two-part mark stand right of final i. Their separation and lower position do not securely establish length notation; preserve their existence in audit, without silently converting them to length or declaring stray ink."
+          },
+          "encoding_review": null,
+          "question_shaped_sign_review": null,
+          "normalized_ipa_proposal": null,
+          "changed": true,
+          "review_uncertainty": "A dark dot and a more distant faint two-part mark stand right of final i. Their separation and lower position do not securely establish length notation; preserve their existence in audit, without silently converting them to length or declaring stray ink.",
+          "status": "uncertain_detached_right_marks",
+          "installation_approved": false
+        },
+        "previous_entry_keys": [
+          "silkoya1985:jag:i160:v1"
+        ]
+      },
+      "actual_rows": [
+        [
+          "Gondi",
+          "",
+          "pad̪i",
+          "ten",
+          "",
+          "",
+          "Source handwriting/notation uncertainty: detached right marks.",
+          "devagnanavaram-et-al2021koya[Appendix E, printed p. 84, item 160, Jaganathapuram Koya]",
+          "",
+          "",
+          "silkoya1985:jag:i160:v1",
+          "",
+          "",
+          "",
+          "dialect:Gondi:sil-koya-1985-jaganathapuram:Jaganathapuram%20Koya uncertain"
+        ]
+      ]
+    },
+    {
+      "stratum": "wordlist",
+      "audit": {
+        "source_unit_key": "wordlist:MAL:124",
+        "legacy_audit": {
+          "Record_Type": "wordlist cell",
+          "Item": 124,
+          "Gloss": "tomorrow",
+          "Site_Code": "MAL",
+          "Site_Name": "Malakanagiri Koya",
+          "Role": "target",
+          "Dialect_Group": "eastern Koya",
+          "PDF_Page": 108,
+          "Printed_Page": 103,
+          "Column": 1,
+          "Manual_Transcription": "naːdu",
+          "Manual_Review": "manual-source-image",
+          "Uncertainty": "",
+          "OCR_Evidence": "tesseract_raw.txt#pdf108",
+          "Alternate_Digital_Evidence": "",
+          "Status": "installed",
+          "Reason": "",
+          "Language_ID": "Gondi",
+          "Dialect_ID": "sil-koya-1985-malakanagiri",
+          "Source": "devagnanavaram-et-al2021koya[Appendix E, printed p. 103, item 124, Malakanagiri Koya]",
+          "Entry_Keys": "silkoya1985:mal:i124:v1"
+        },
+        "entry_keys": [
+          "silkoya1985:mal:i124:v1"
+        ],
+        "status": "proposed",
+        "notation_review": {
+          "source_unit_key": "wordlist:MAL:124",
+          "entry_key_prefix": "silkoya1985:mal:i124",
+          "pdf_page": 108,
+          "printed_page": 103,
+          "site": "MAL",
+          "item": 124,
+          "column": 1,
+          "previous_ledger_form": "naːdu",
+          "literal_source_proposal": "na·du",
+          "first_literal_reading": "na·du",
+          "narrow_adjudication": null,
+          "encoding_review": null,
+          "question_shaped_sign_review": null,
+          "normalized_ipa_proposal": null,
+          "changed": true,
+          "review_uncertainty": "",
+          "status": "first_independent_literal_reading",
+          "installation_approved": false
+        },
+        "previous_entry_keys": [
+          "silkoya1985:mal:i124:v1"
+        ]
+      },
+      "actual_rows": [
+        [
+          "Gondi",
+          "",
+          "na·du",
+          "tomorrow",
+          "",
+          "",
+          "",
+          "devagnanavaram-et-al2021koya[Appendix E, printed p. 103, item 124, Malakanagiri Koya]",
+          "",
+          "",
+          "silkoya1985:mal:i124:v1",
+          "",
+          "",
+          "",
+          "dialect:Gondi:sil-koya-1985-malakanagiri:Malakanagiri%20Koya"
+        ]
+      ]
+    },
+    {
+      "stratum": "wordlist",
+      "audit": {
+        "source_unit_key": "wordlist:CHI:155",
+        "legacy_audit": {
+          "Record_Type": "wordlist cell",
+          "Item": 155,
+          "Gloss": "five",
+          "Site_Code": "CHI",
+          "Site_Name": "Chintoor Koya",
+          "Role": "target",
+          "Dialect_Group": "eastern Koya",
+          "PDF_Page": 89,
+          "Printed_Page": 84,
+          "Column": 2,
+          "Manual_Transcription": "idu",
+          "Manual_Review": "manual-source-image",
+          "Uncertainty": "",
+          "OCR_Evidence": "tesseract_raw.txt#pdf89",
+          "Alternate_Digital_Evidence": "",
+          "Status": "installed",
+          "Reason": "",
+          "Language_ID": "Gondi",
+          "Dialect_ID": "sil-koya-1985-chintoor",
+          "Source": "devagnanavaram-et-al2021koya[Appendix E, printed p. 84, item 155, Chintoor Koya]",
+          "Entry_Keys": "silkoya1985:chi:i155:v1"
+        },
+        "entry_keys": [
+          "silkoya1985:chi:i155:v1"
+        ],
+        "status": "proposed",
+        "notation_review": {
+          "source_unit_key": "wordlist:CHI:155",
+          "entry_key_prefix": "silkoya1985:chi:i155",
+          "pdf_page": 89,
+          "printed_page": 84,
+          "site": "CHI",
+          "item": 155,
+          "column": 2,
+          "previous_ledger_form": "idu",
+          "literal_source_proposal": "id̪u",
+          "first_literal_reading": "id̪u",
+          "narrow_adjudication": null,
+          "encoding_review": null,
+          "question_shaped_sign_review": null,
+          "normalized_ipa_proposal": null,
+          "changed": true,
+          "review_uncertainty": "",
+          "status": "first_independent_literal_reading",
+          "installation_approved": false
+        },
+        "previous_entry_keys": [
+          "silkoya1985:chi:i155:v1"
+        ]
+      },
+      "actual_rows": [
+        [
+          "Gondi",
+          "",
+          "id̪u",
+          "five",
+          "",
+          "",
+          "",
+          "devagnanavaram-et-al2021koya[Appendix E, printed p. 84, item 155, Chintoor Koya]",
+          "",
+          "",
+          "silkoya1985:chi:i155:v1",
+          "",
+          "",
+          "",
+          "dialect:Gondi:sil-koya-1985-chintoor:Chintoor%20Koya"
+        ]
+      ]
+    },
+    {
+      "stratum": "wordlist",
+      "audit": {
+        "source_unit_key": "wordlist:MAL:39",
+        "legacy_audit": {
+          "Record_Type": "wordlist cell",
+          "Item": 39,
+          "Gloss": "cloth",
+          "Site_Code": "MAL",
+          "Site_Name": "Malakanagiri Koya",
+          "Role": "target",
+          "Dialect_Group": "eastern Koya",
+          "PDF_Page": 104,
+          "Printed_Page": 99,
+          "Column": 1,
+          "Manual_Transcription": "tʃile",
+          "Manual_Review": "manual-source-image",
+          "Uncertainty": "",
+          "OCR_Evidence": "tesseract_raw.txt#pdf104",
+          "Alternate_Digital_Evidence": "",
+          "Status": "installed",
+          "Reason": "",
+          "Language_ID": "Gondi",
+          "Dialect_ID": "sil-koya-1985-malakanagiri",
+          "Source": "devagnanavaram-et-al2021koya[Appendix E, printed p. 99, item 39, Malakanagiri Koya]",
+          "Entry_Keys": "silkoya1985:mal:i039:v1"
+        },
+        "entry_keys": [
+          "silkoya1985:mal:i039:v1"
+        ],
+        "status": "proposed",
+        "notation_review": {
+          "source_unit_key": "wordlist:MAL:39",
+          "entry_key_prefix": "silkoya1985:mal:i039",
+          "pdf_page": 104,
+          "printed_page": 99,
+          "site": "MAL",
+          "item": 39,
+          "column": 1,
+          "previous_ledger_form": "tʃile",
+          "literal_source_proposal": "tʃile",
+          "first_literal_reading": "tʃile",
+          "narrow_adjudication": null,
+          "encoding_review": null,
+          "question_shaped_sign_review": null,
+          "normalized_ipa_proposal": null,
+          "changed": false,
+          "review_uncertainty": "",
+          "status": "first_independent_literal_reading",
+          "installation_approved": false
+        },
+        "previous_entry_keys": [
+          "silkoya1985:mal:i039:v1"
+        ]
+      },
+      "actual_rows": [
+        [
+          "Gondi",
+          "",
+          "tʃile",
+          "cloth",
+          "",
+          "",
+          "",
+          "devagnanavaram-et-al2021koya[Appendix E, printed p. 99, item 39, Malakanagiri Koya]",
+          "",
+          "",
+          "silkoya1985:mal:i039:v1",
+          "",
+          "",
+          "",
+          "dialect:Gondi:sil-koya-1985-malakanagiri:Malakanagiri%20Koya"
+        ]
+      ]
+    },
+    {
+      "stratum": "wordlist",
+      "audit": {
+        "source_unit_key": "wordlist:CHI:127",
+        "legacy_audit": {
+          "Record_Type": "wordlist cell",
+          "Item": 127,
+          "Gloss": "year",
+          "Site_Code": "CHI",
+          "Site_Name": "Chintoor Koya",
+          "Role": "target",
+          "Dialect_Group": "eastern Koya",
+          "PDF_Page": 88,
+          "Printed_Page": 83,
+          "Column": 2,
+          "Manual_Transcription": "tʃamusaɾam",
+          "Manual_Review": "manual-source-image",
+          "Uncertainty": "",
+          "OCR_Evidence": "tesseract_raw.txt#pdf88",
+          "Alternate_Digital_Evidence": "",
+          "Status": "installed",
+          "Reason": "",
+          "Language_ID": "Gondi",
+          "Dialect_ID": "sil-koya-1985-chintoor",
+          "Source": "devagnanavaram-et-al2021koya[Appendix E, printed p. 83, item 127, Chintoor Koya]",
+          "Entry_Keys": "silkoya1985:chi:i127:v1"
+        },
+        "entry_keys": [
+          "silkoya1985:chi:i127:v1"
+        ],
+        "status": "proposed",
+        "notation_review": {
+          "source_unit_key": "wordlist:CHI:127",
+          "entry_key_prefix": "silkoya1985:chi:i127",
+          "pdf_page": 88,
+          "printed_page": 83,
+          "site": "CHI",
+          "item": 127,
+          "column": 2,
+          "previous_ledger_form": "tʃamusaɾam",
+          "literal_source_proposal": "tʃamusaram",
+          "first_literal_reading": "tʃamusaram",
+          "narrow_adjudication": null,
+          "encoding_review": null,
+          "question_shaped_sign_review": null,
+          "normalized_ipa_proposal": null,
+          "changed": true,
+          "review_uncertainty": "",
+          "status": "first_independent_literal_reading",
+          "installation_approved": false
+        },
+        "previous_entry_keys": [
+          "silkoya1985:chi:i127:v1"
+        ]
+      },
+      "actual_rows": [
+        [
+          "Gondi",
+          "",
+          "tʃamusaram",
+          "year",
+          "",
+          "",
+          "",
+          "devagnanavaram-et-al2021koya[Appendix E, printed p. 83, item 127, Chintoor Koya]",
+          "",
+          "",
+          "silkoya1985:chi:i127:v1",
+          "",
+          "",
+          "",
+          "dialect:Gondi:sil-koya-1985-chintoor:Chintoor%20Koya"
+        ]
+      ]
+    },
+    {
+      "stratum": "narrative",
+      "audit": {
+        "source_unit_key": "devagnanavaram2021:whole:B.5:p26:7",
+        "section": "B.5",
+        "lect": "Podia Koya",
+        "target_lines": [
+          {
+            "pdf_page": 31,
+            "printed_page": 26,
+            "bbox": [
+              71.958,
+              274.367,
+              169.804,
+              292.924
+            ],
+            "text": "Q.3. Unk batta kailta?"
+          }
+        ],
+        "translation_lines": [
+          {
+            "pdf_page": 31,
+            "printed_page": 26,
+            "bbox": [
+              93.551,
+              289.367,
+              229.202,
+              307.924
+            ],
+            "text": "• What did he see? <bear>"
+          }
+        ],
+        "source_form": "Q.3. Unk batta kailta?",
+        "translation_raw": "What did he see? <bear>",
+        "question_number": 3,
+        "kind": "test-question",
+        "form_without_question_label": "Unk batta kailta?",
+        "status": "all original pages reviewed; answer separation prepared; metadata/profile and independent output audit pending",
+        "original_linguistic_text": "Unk batta kailta?",
+        "display_before_transcription_profile": "Unk batta kailta?",
+        "gloss": "What did he see?",
+        "expected_test_answer": "bear",
+        "expected_answer_notation": "angle brackets",
+        "editorial_annotations": [],
+        "notes": "Source pairs this printed text segment with a free English translation; no word-level alignment is asserted.",
+        "proposed_entry_keys": [
+          "devagnanavaram2021:whole:B.5:p26:7"
+        ]
+      },
+      "actual_rows": [
+        [
+          "Gondi",
+          "",
+          "Unk batta kailta?",
+          "What did he see?",
+          "",
+          "",
+          "Source pairs this printed text segment with a free English translation; no word-level alignment is asserted.",
+          "devagnanavaram-et-al2021koya[Appendix B.5, p. 26, text unit 7]",
+          "",
+          "",
+          "devagnanavaram2021:whole:B.5:p26:7",
+          "",
+          "",
+          "",
+          "dialect:Gondi:sil-koya-1985-podia:Podia%20Koya interr"
+        ]
+      ]
+    },
+    {
+      "stratum": "narrative",
+      "audit": {
+        "source_unit_key": "devagnanavaram2021:whole:B.1:p18:9",
+        "section": "B.1",
+        "lect": "Utnoor Gondi",
+        "target_lines": [
+          {
+            "pdf_page": 23,
+            "printed_page": 18,
+            "bbox": [
+              71.958,
+              332.392,
+              168.731,
+              350.949
+            ],
+            "text": "Q.6. Kursu batal kita?"
+          }
+        ],
+        "translation_lines": [
+          {
+            "pdf_page": 23,
+            "printed_page": 18,
+            "bbox": [
+              93.551,
+              347.392,
+              424.622,
+              365.949
+            ],
+            "text": "• What did the deer do? <went in front, moved quickly, blocked path>"
+          }
+        ],
+        "source_form": "Q.6. Kursu batal kita?",
+        "translation_raw": "What did the deer do? <went in front, moved quickly, blocked path>",
+        "question_number": 6,
+        "kind": "test-question",
+        "form_without_question_label": "Kursu batal kita?",
+        "status": "all original pages reviewed; answer separation prepared; metadata/profile and independent output audit pending",
+        "original_linguistic_text": "Kursu batal kita?",
+        "display_before_transcription_profile": "Kursu batal kita?",
+        "gloss": "What did the deer do?",
+        "expected_test_answer": "went in front, moved quickly, blocked path",
+        "expected_answer_notation": "angle brackets",
+        "editorial_annotations": [],
+        "notes": "Source pairs this printed text segment with a free English translation; no word-level alignment is asserted.",
+        "proposed_entry_keys": [
+          "devagnanavaram2021:whole:B.1:p18:9"
+        ]
+      },
+      "actual_rows": [
+        [
+          "Gondi",
+          "",
+          "Kursu batal kita?",
+          "What did the deer do?",
+          "",
+          "",
+          "Source pairs this printed text segment with a free English translation; no word-level alignment is asserted.",
+          "devagnanavaram-et-al2021koya[Appendix B.1, p. 18, text unit 9]",
+          "",
+          "",
+          "devagnanavaram2021:whole:B.1:p18:9",
+          "",
+          "",
+          "",
+          "dialect:Gondi:sil-koya-1985-utnoor:Utnoor%20Gondi interr"
+        ]
+      ]
+    },
+    {
+      "stratum": "narrative",
+      "audit": {
+        "source_unit_key": "devagnanavaram2021:whole:B.5:p26:6",
+        "section": "B.5",
+        "lect": "Podia Koya",
+        "target_lines": [
+          {
+            "pdf_page": 31,
+            "printed_page": 26,
+            "bbox": [
+              71.978,
+              244.377,
+              339.152,
+              262.924
+            ],
+            "text": "Imetka aamettka metka metka kawdasa mattaske eduju dorsta."
+          }
+        ],
+        "translation_lines": [
+          {
+            "pdf_page": 31,
+            "printed_page": 26,
+            "bbox": [
+              93.571,
+              259.367,
+              395.354,
+              277.924
+            ],
+            "text": "• When I missed the way, I looked here and there and saw a bear."
+          }
+        ],
+        "source_form": "Imetka aamettka metka metka kawdasa mattaske eduju dorsta.",
+        "translation_raw": "When I missed the way, I looked here and there and saw a bear.",
+        "question_number": null,
+        "kind": "narrative-unit",
+        "form_without_question_label": "Imetka aamettka metka metka kawdasa mattaske eduju dorsta.",
+        "status": "all original pages reviewed; answer separation prepared; metadata/profile and independent output audit pending",
+        "original_linguistic_text": "Imetka aamettka metka metka kawdasa mattaske eduju dorsta.",
+        "display_before_transcription_profile": "Imetka aamettka metka metka kawdasa mattaske eduju dorsta.",
+        "gloss": "When I missed the way, I looked here and there and saw a bear.",
+        "expected_test_answer": null,
+        "expected_answer_notation": null,
+        "editorial_annotations": [],
+        "notes": "Source pairs this printed text segment with a free English translation; no word-level alignment is asserted.",
+        "proposed_entry_keys": [
+          "devagnanavaram2021:whole:B.5:p26:6"
+        ]
+      },
+      "actual_rows": [
+        [
+          "Gondi",
+          "",
+          "Imetka aamettka metka metka kawdasa mattaske eduju dorsta.",
+          "When I missed the way, I looked here and there and saw a bear.",
+          "",
+          "",
+          "Source pairs this printed text segment with a free English translation; no word-level alignment is asserted.",
+          "devagnanavaram-et-al2021koya[Appendix B.5, p. 26, text unit 6]",
+          "",
+          "",
+          "devagnanavaram2021:whole:B.5:p26:6",
+          "",
+          "",
+          "",
+          "dialect:Gondi:sil-koya-1985-podia:Podia%20Koya"
+        ]
+      ]
+    },
+    {
+      "stratum": "narrative",
+      "audit": {
+        "source_unit_key": "devagnanavaram2021:whole:B.5:p26:9",
+        "section": "B.5",
+        "lect": "Podia Koya",
+        "target_lines": [
+          {
+            "pdf_page": 31,
+            "printed_page": 26,
+            "bbox": [
+              71.948,
+              334.376,
+              168.902,
+              352.923
+            ],
+            "text": "kudi goiso goiso mirta."
+          }
+        ],
+        "translation_lines": [
+          {
+            "pdf_page": 31,
+            "printed_page": 26,
+            "bbox": [
+              93.541,
+              349.366,
+              195.595,
+              367.923
+            ],
+            "text": "• It slowly ran away."
+          }
+        ],
+        "source_form": "kudi goiso goiso mirta.",
+        "translation_raw": "It slowly ran away.",
+        "question_number": null,
+        "kind": "narrative-unit",
+        "form_without_question_label": "kudi goiso goiso mirta.",
+        "status": "all original pages reviewed; answer separation prepared; metadata/profile and independent output audit pending",
+        "original_linguistic_text": "kudi goiso goiso mirta.",
+        "display_before_transcription_profile": "kudi goiso goiso mirta.",
+        "gloss": "It slowly ran away.",
+        "expected_test_answer": null,
+        "expected_answer_notation": null,
+        "editorial_annotations": [],
+        "notes": "Source pairs this printed text segment with a free English translation; no word-level alignment is asserted.",
+        "proposed_entry_keys": [
+          "devagnanavaram2021:whole:B.5:p26:9"
+        ]
+      },
+      "actual_rows": [
+        [
+          "Gondi",
+          "",
+          "kudi goiso goiso mirta.",
+          "It slowly ran away.",
+          "",
+          "",
+          "Source pairs this printed text segment with a free English translation; no word-level alignment is asserted.",
+          "devagnanavaram-et-al2021koya[Appendix B.5, p. 26, text unit 9]",
+          "",
+          "",
+          "devagnanavaram2021:whole:B.5:p26:9",
+          "",
+          "",
+          "",
+          "dialect:Gondi:sil-koya-1985-podia:Podia%20Koya"
+        ]
+      ]
+    },
+    {
+      "stratum": "narrative",
+      "audit": {
+        "source_unit_key": "devagnanavaram2021:whole:B.4:p24:15",
+        "section": "B.4",
+        "lect": "Malakanagiri Koya",
+        "target_lines": [
+          {
+            "pdf_page": 29,
+            "printed_page": 24,
+            "bbox": [
+              71.948,
+              514.376,
+              274.382,
+              532.923
+            ],
+            "text": "Nage diggo matan goron waston goro wastonke."
+          }
+        ],
+        "translation_lines": [
+          {
+            "pdf_page": 29,
+            "printed_page": 24,
+            "bbox": [
+              93.551,
+              529.366,
+              355.083,
+              547.923
+            ],
+            "text": "• I was still there and I shot a jungle goat with an arrow."
+          }
+        ],
+        "source_form": "Nage diggo matan goron waston goro wastonke.",
+        "translation_raw": "I was still there and I shot a jungle goat with an arrow.",
+        "question_number": null,
+        "kind": "narrative-unit",
+        "form_without_question_label": "Nage diggo matan goron waston goro wastonke.",
+        "status": "all original pages reviewed; answer separation prepared; metadata/profile and independent output audit pending",
+        "original_linguistic_text": "Nage diggo matan goron waston goro wastonke.",
+        "display_before_transcription_profile": "Nage diggo matan goron waston goro wastonke.",
+        "gloss": "I was still there and I shot a jungle goat with an arrow.",
+        "expected_test_answer": null,
+        "expected_answer_notation": null,
+        "editorial_annotations": [],
+        "notes": "Source pairs this printed text segment with a free English translation; no word-level alignment is asserted.",
+        "proposed_entry_keys": [
+          "devagnanavaram2021:whole:B.4:p24:15"
+        ]
+      },
+      "actual_rows": [
+        [
+          "Gondi",
+          "",
+          "Nage diggo matan goron waston goro wastonke.",
+          "I was still there and I shot a jungle goat with an arrow.",
+          "",
+          "",
+          "Source pairs this printed text segment with a free English translation; no word-level alignment is asserted.",
+          "devagnanavaram-et-al2021koya[Appendix B.4, p. 24, text unit 15]",
+          "",
+          "",
+          "devagnanavaram2021:whole:B.4:p24:15",
+          "",
+          "",
+          "",
+          "dialect:Gondi:sil-koya-1985-malakanagiri:Malakanagiri%20Koya"
+        ]
+      ]
+    },
+    {
+      "stratum": "narrative",
+      "audit": {
+        "source_unit_key": "devagnanavaram2021:whole:B.2:p20:8",
+        "section": "B.2",
+        "lect": "Bhamani Gondi",
+        "target_lines": [
+          {
+            "pdf_page": 25,
+            "printed_page": 20,
+            "bbox": [
+              71.988,
+              304.376,
+              523.763,
+              322.923
+            ],
+            "text": "Aske battal teri shikar putte aske momote shikar kishi tanjor mattom. Chine undi honeke dayneke ma dante"
+          },
+          {
+            "pdf_page": 25,
+            "printed_page": 20,
+            "bbox": [
+              71.988,
+              316.38,
+              167.98,
+              334.927
+            ],
+            "text": "dante undi adju putta."
+          }
+        ],
+        "translation_lines": [
+          {
+            "pdf_page": 25,
+            "printed_page": 20,
+            "bbox": [
+              93.581,
+              331.37,
+              533.054,
+              349.927
+            ],
+            "text": "• On the way, they were thinking that if anything comes they would hunt it. As they were going,"
+          },
+          {
+            "pdf_page": 25,
+            "printed_page": 20,
+            "bbox": [
+              107.98,
+              343.374,
+              195.755,
+              361.931
+            ],
+            "text": "one bear appeared."
+          }
+        ],
+        "source_form": "Aske battal teri shikar putte aske momote shikar kishi tanjor mattom. Chine undi honeke dayneke ma dante dante undi adju putta.",
+        "translation_raw": "On the way, they were thinking that if anything comes they would hunt it. As they were going, one bear appeared.",
+        "question_number": null,
+        "kind": "narrative-unit",
+        "form_without_question_label": "Aske battal teri shikar putte aske momote shikar kishi tanjor mattom. Chine undi honeke dayneke ma dante dante undi adju putta.",
+        "status": "all original pages reviewed; answer separation prepared; metadata/profile and independent output audit pending",
+        "original_linguistic_text": "Aske battal teri shikar putte aske momote shikar kishi tanjor mattom. Chine undi honeke dayneke ma dante dante undi adju putta.",
+        "display_before_transcription_profile": "Aske battal teri shikar putte aske momote shikar kishi tanjor mattom. Chine undi honeke dayneke ma dante dante undi adju putta.",
+        "gloss": "On the way, they were thinking that if anything comes they would hunt it. As they were going, one bear appeared.",
+        "expected_test_answer": null,
+        "expected_answer_notation": null,
+        "editorial_annotations": [],
+        "notes": "Source pairs this printed text segment with a free English translation; no word-level alignment is asserted.",
+        "proposed_entry_keys": [
+          "devagnanavaram2021:whole:B.2:p20:8"
+        ]
+      },
+      "actual_rows": [
+        [
+          "Gondi",
+          "",
+          "Aske battal teri shikar putte aske momote shikar kishi tanjor mattom. Chine undi honeke dayneke ma dante dante undi adju putta.",
+          "On the way, they were thinking that if anything comes they would hunt it. As they were going, one bear appeared.",
+          "",
+          "",
+          "Source pairs this printed text segment with a free English translation; no word-level alignment is asserted.",
+          "devagnanavaram-et-al2021koya[Appendix B.2, p. 20, text unit 8]",
+          "",
+          "",
+          "devagnanavaram2021:whole:B.2:p20:8",
+          "",
+          "",
+          "",
+          "dialect:Gondi:sil-koya-1985-bhamani-gondi:Bhamani%20Gondi"
+        ]
+      ]
+    },
+    {
+      "stratum": "comparative",
+      "audit": {
+        "source_unit_key": "devagnanavaram2021:whole:3.1.4:p6:salt:5",
+        "pdf_page": 11,
+        "printed_page": 6,
+        "lect": "Podia Koya",
+        "source_form": "ovar",
+        "gloss": "salt",
+        "raw_source": "Podia Koya: \n \n/ovar/",
+        "review": "root compared every cell with original PDF pages11–12",
+        "interpretation": "comparative attestation; no cognate edge inferred",
+        "transcription_note": "Section3.1.4 explicitly identifies G as a voiced velar fricative and the corresponding r as an alveolar flap; source slash delimiters are notation.",
+        "status": "first reading; source metadata, conversion and independent output audit pending",
+        "proposed_entry_keys": [
+          "devagnanavaram2021:whole:3.1.4:p6:salt:5"
+        ]
+      },
+      "actual_rows": [
+        [
+          "Gondi",
+          "",
+          "ovar",
+          "salt",
+          "",
+          "",
+          "Source compares dialect sound correspondences; no etymological relationship is asserted.",
+          "devagnanavaram-et-al2021koya[section 3.1.4, p. 6, salt]",
+          "",
+          "",
+          "devagnanavaram2021:whole:3.1.4:p6:salt:5",
+          "",
+          "",
+          "",
+          "dialect:Gondi:sil-koya-1985-podia:Podia%20Koya"
+        ]
+      ]
+    },
+    {
+      "stratum": "comparative",
+      "audit": {
+        "source_unit_key": "devagnanavaram2021:whole:3.1.4:p7:six:5",
+        "pdf_page": 12,
+        "printed_page": 7,
+        "lect": "Malakanagiri Koya",
+        "source_form": "aru",
+        "gloss": "six",
+        "raw_source": "Malakanagiri Koya: \n/aru/",
+        "review": "root compared every cell with original PDF pages11–12",
+        "interpretation": "comparative attestation; no cognate edge inferred",
+        "transcription_note": "Section3.1.4 explicitly identifies G as a voiced velar fricative and the corresponding r as an alveolar flap; source slash delimiters are notation.",
+        "status": "first reading; source metadata, conversion and independent output audit pending",
+        "proposed_entry_keys": [
+          "devagnanavaram2021:whole:3.1.4:p7:six:5"
+        ]
+      },
+      "actual_rows": [
+        [
+          "Gondi",
+          "",
+          "aru",
+          "six",
+          "",
+          "",
+          "Source compares dialect sound correspondences; no etymological relationship is asserted.",
+          "devagnanavaram-et-al2021koya[section 3.1.4, p. 7, six]",
+          "",
+          "",
+          "devagnanavaram2021:whole:3.1.4:p7:six:5",
+          "",
+          "",
+          "",
+          "dialect:Gondi:sil-koya-1985-malakanagiri:Malakanagiri%20Koya num"
+        ]
+      ]
+    }
+  ]
+}

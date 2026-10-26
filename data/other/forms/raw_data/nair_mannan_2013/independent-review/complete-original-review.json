@@ -1,0 +1,2802 @@
+{
+  "reviewer": "Norton; independent of Rohru’s first reading and exporter",
+  "method": "Read all five original page images before comparing owner text; then compare every source witness, scope record and actual output row. Narrow original PDF p47 negative construction checked at 4x.",
+  "status": "literal and chapter-scope review passed; metadata repair required",
+  "counts": {
+    "physical_groups": 140,
+    "witness_records": 208,
+    "emitted_rows": 154,
+    "literal_corrections": 0,
+    "metadata_rows": 19,
+    "kinship_rows": 11,
+    "nonpast_rows": 7,
+    "verb_rows": 1,
+    "lowline_vectors_reviewed": 11
+  },
+  "inputs_sha256": {
+    "physical-units-first-reading.jsonl": "7e756a167297b07d0f03cddf135bc5ed97a6e102e21ab99947d1de7d6148edf5",
+    "proposed.csv": "7e95da15b5e4770da3e2fee7943413dd81b0637f4ea937e8e924b663184ed8b7",
+    "proposal-audit.jsonl": "7c69e497b95665320dc66f75fb2a6f2ce7991051d13472705572544fbd47bb5d",
+    "review-freeze.json": "6a8be5a9ba296df95517be7a972cfc126693c662bf2a14ee14dc7de56ff2d3b4",
+    "scope/underline-vector-census.json": "59c87dcf666f493ec4467178ced00ff3019f4f7b45534537fb6059a0ea62ef2e",
+    "original-review/page-45-150dpi.png": "0fa640c37a36e3dcb8c74ab1aba28ba3b5f6512d37328021728eb14370b14930",
+    "original-review/page-46-150dpi.png": "2db1a54818c5f79e38cdfa238d9ad07809220af3e1447769454ad4752bbd299b",
+    "original-review/page-47-150dpi.png": "265eda62c273e6392cf7ae34ebec53fd73efa2ae46927bd3c5acfe1919620d80",
+    "original-review/page-48-150dpi.png": "62e2dcbe9c60629a24394fa067fa8e5c6ea40b54a86c72536aaacc3bfd02bc4f",
+    "original-review/page-49-150dpi.png": "605c7fcdd7b22542f474027e190841b0a97f41d36f4026c46dfb7d82491ae9b4",
+    "original-review/page-50-boundary-150dpi.png": "412de8ec733ac994cbede7e498ccf19c022231763f8396359463d6bd39490a2e"
+  },
+  "additional_evidence_sha256": {
+    "p47-negative-original-detail.png": "81696642eb8bab6c50933faa48e98fcdd9c07f07b5f6570acd53b2095bb0468f"
+  },
+  "original_checks": [
+    "All 11 drawn lowlines agree with distinct U+0332 encoding; they are not retroflex underdots.",
+    "P47 kaaṇ-aat-e does have a visible lower dot and matching encoded diacritic; no plain-n correction warranted.",
+    "P46 peeṭṭa-laam versus p48 peettan differ in printed dental notation; preserve both without harmonization.",
+    "P47 demonstratives have gender/distance headings but no repeated singular/plural headings; candidate correctly withholds inferred number/variant edges.",
+    "P48 icca calling a bor and p48 coḷḷan daughter relation retain source anomalies rather than silently replacing them.",
+    "Bound markers retain printed en dash / ASCII dash / bare aa and kaaṭ-u differences; zero phonemic claims.",
+    "P49 personal names and community mannaan remain documentary, with no unjustified lexical language assignment.",
+    "P50 begins Muduga; Mannan comparison commentary is accounted separately without inventing additional Mannan heads."
+  ],
+  "resolved_nonfailure": {
+    "numeral_class": "All six actual emitted numeral comparison rows already have num; first-reading provisional tags are not the final output authority."
+  },
+  "metadata_decisions": [
+    {
+      "entry_key": "nair2013mannan:p46:kin-plural:1:w1",
+      "form_unchanged": "appa-laam",
+      "old_tags": "noun pl",
+      "new_tags": "noun pl kinship",
+      "add_tags": [
+        "kinship"
+      ],
+      "evidence": "Explicit kinship section/examples, pp.46,48–49."
+    },
+    {
+      "entry_key": "nair2013mannan:p46:kin-plural:2:w1",
+      "form_unchanged": "colla-laam",
+      "old_tags": "noun pl",
+      "new_tags": "noun pl kinship",
+      "add_tags": [
+        "kinship"
+      ],
+      "evidence": "Explicit kinship section/examples, pp.46,48–49."
+    },
+    {
+      "entry_key": "nair2013mannan:p46:kin-plural:3:w1",
+      "form_unchanged": "peeṭṭa-laam",
+      "old_tags": "noun pl",
+      "new_tags": "noun pl kinship",
+      "add_tags": [
+        "kinship"
+      ],
+      "evidence": "Explicit kinship section/examples, pp.46,48–49."
+    },
+    {
+      "entry_key": "nair2013mannan:p46:kin-plural:4:w1",
+      "form_unchanged": "acca-laam",
+      "old_tags": "noun pl",
+      "new_tags": "noun pl kinship",
+      "add_tags": [
+        "kinship"
+      ],
+      "evidence": "Explicit kinship section/examples, pp.46,48–49."
+    },
+    {
+      "entry_key": "nair2013mannan:p47:nonpast-negative:0:w1",
+      "form_unchanged": "-aat",
+      "old_tags": "affix neg suffix",
+      "new_tags": "affix neg suffix non-past",
+      "add_tags": [
+        "non-past"
+      ],
+      "evidence": "The p.47 paragraph explicitly introduces these as non-past negative markers/examples."
+    },
+    {
+      "entry_key": "nair2013mannan:p47:nonpast-negative:0:w2",
+      "form_unchanged": "–att",
+      "old_tags": "affix neg suffix",
+      "new_tags": "affix neg suffix non-past",
+      "add_tags": [
+        "non-past"
+      ],
+      "evidence": "The p.47 paragraph explicitly introduces these as non-past negative markers/examples."
+    },
+    {
+      "entry_key": "nair2013mannan:p47:nonpast-negative:1:w1",
+      "form_unchanged": "kaaṇ-aat-e",
+      "old_tags": "neg verb",
+      "new_tags": "neg verb non-past",
+      "add_tags": [
+        "non-past"
+      ],
+      "evidence": "The p.47 paragraph explicitly introduces these as non-past negative markers/examples."
+    },
+    {
+      "entry_key": "nair2013mannan:p47:nonpast-negative:2:w1",
+      "form_unchanged": "pook-aatt-u",
+      "old_tags": "neg verb",
+      "new_tags": "neg verb non-past",
+      "add_tags": [
+        "non-past"
+      ],
+      "evidence": "The p.47 paragraph explicitly introduces these as non-past negative markers/examples."
+    },
+    {
+      "entry_key": "nair2013mannan:p47:nonpast-negative:3:w1",
+      "form_unchanged": "pook-aat-u",
+      "old_tags": "neg verb",
+      "new_tags": "neg verb non-past",
+      "add_tags": [
+        "non-past"
+      ],
+      "evidence": "The p.47 paragraph explicitly introduces these as non-past negative markers/examples."
+    },
+    {
+      "entry_key": "nair2013mannan:p47:nonpast-negative:4:w1",
+      "form_unchanged": "kaaṇ-aat-u",
+      "old_tags": "neg verb",
+      "new_tags": "neg verb non-past",
+      "add_tags": [
+        "non-past"
+      ],
+      "evidence": "The p.47 paragraph explicitly introduces these as non-past negative markers/examples."
+    },
+    {
+      "entry_key": "nair2013mannan:p47:nonpast-negative:5:w1",
+      "form_unchanged": "cirri-kk-aat-u",
+      "old_tags": "neg verb",
+      "new_tags": "neg verb non-past",
+      "add_tags": [
+        "non-past"
+      ],
+      "evidence": "The p.47 paragraph explicitly introduces these as non-past negative markers/examples."
+    },
+    {
+      "entry_key": "nair2013mannan:p48:vocabulary:23:w1",
+      "form_unchanged": "cimp",
+      "old_tags": "",
+      "new_tags": "verb",
+      "add_tags": [
+        "verb"
+      ],
+      "evidence": "P.48 vocabulary prints cimp, to carry on head; this is an explicitly verbal definition."
+    },
+    {
+      "entry_key": "nair2013mannan:p48:kinship:1:w1",
+      "form_unchanged": "coḷḷan",
+      "old_tags": "noun",
+      "new_tags": "noun kinship",
+      "add_tags": [
+        "kinship"
+      ],
+      "evidence": "Explicit kinship section/examples, pp.46,48–49."
+    },
+    {
+      "entry_key": "nair2013mannan:p48:kinship:2:w1",
+      "form_unchanged": "coḷḷi",
+      "old_tags": "noun",
+      "new_tags": "noun kinship",
+      "add_tags": [
+        "kinship"
+      ],
+      "evidence": "Explicit kinship section/examples, pp.46,48–49."
+    },
+    {
+      "entry_key": "nair2013mannan:p48:kinship:3:w1",
+      "form_unchanged": "peettan",
+      "old_tags": "noun",
+      "new_tags": "noun kinship",
+      "add_tags": [
+        "kinship"
+      ],
+      "evidence": "Explicit kinship section/examples, pp.46,48–49."
+    },
+    {
+      "entry_key": "nair2013mannan:p49:kinship:4:w1",
+      "form_unchanged": "peetti",
+      "old_tags": "noun",
+      "new_tags": "noun kinship",
+      "add_tags": [
+        "kinship"
+      ],
+      "evidence": "Explicit kinship section/examples, pp.46,48–49."
+    },
+    {
+      "entry_key": "nair2013mannan:p49:kinship:5:w1",
+      "form_unchanged": "maṭayan",
+      "old_tags": "noun",
+      "new_tags": "noun kinship",
+      "add_tags": [
+        "kinship"
+      ],
+      "evidence": "Explicit kinship section/examples, pp.46,48–49."
+    },
+    {
+      "entry_key": "nair2013mannan:p49:kinship:6:w1",
+      "form_unchanged": "maaḷa",
+      "old_tags": "noun",
+      "new_tags": "noun kinship",
+      "add_tags": [
+        "kinship"
+      ],
+      "evidence": "Explicit kinship section/examples, pp.46,48–49."
+    },
+    {
+      "entry_key": "nair2013mannan:p49:kinship:7:w1",
+      "form_unchanged": "kaṛuttamma",
+      "old_tags": "noun",
+      "new_tags": "noun kinship",
+      "add_tags": [
+        "kinship"
+      ],
+      "evidence": "Explicit kinship section/examples, pp.46,48–49."
+    }
+  ],
+  "coverage": [
+    {
+      "source_unit_key": "nair2013mannan:p45:identity:1",
+      "printed_page": 45,
+      "kind": "documentary",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p45:identity:1:w1",
+          "form": "mannaan",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": false
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p45:classification:1",
+      "printed_page": 45,
+      "kind": "source commentary",
+      "scope_review": "agrees",
+      "witnesses": []
+    },
+    {
+      "source_unit_key": "nair2013mannan:p45:phoneme-inventory:1",
+      "printed_page": 45,
+      "kind": "source commentary",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p45:phoneme-inventory:1:w1",
+          "form": "l̲",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": false
+        },
+        {
+          "witness_key": "nair2013mannan:p45:phoneme-inventory:1:w2",
+          "form": "ñ",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": false
+        },
+        {
+          "witness_key": "nair2013mannan:p45:phoneme-inventory:1:w3",
+          "form": "ŋ",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": false
+        },
+        {
+          "witness_key": "nair2013mannan:p45:phoneme-inventory:1:w4",
+          "form": "n̲",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": false
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p45:l-to-c:0",
+      "printed_page": 45,
+      "kind": "phonological commentary",
+      "scope_review": "agrees",
+      "witnesses": []
+    },
+    {
+      "source_unit_key": "nair2013mannan:p45:l-to-c:1",
+      "printed_page": 45,
+      "kind": "comparison table",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p45:l-to-c:1:w1",
+          "form": "mal̲a",
+          "printed_gloss": "rain",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        },
+        {
+          "witness_key": "nair2013mannan:p45:l-to-c:1:w2",
+          "form": "maca",
+          "printed_gloss": "rain",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p45:l-to-c:2",
+      "printed_page": 45,
+      "kind": "comparison table",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p45:l-to-c:2:w1",
+          "form": "pal̲am",
+          "printed_gloss": "fruit",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        },
+        {
+          "witness_key": "nair2013mannan:p45:l-to-c:2:w2",
+          "form": "pacam",
+          "printed_gloss": "fruit",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p45:l-to-c:3",
+      "printed_page": 45,
+      "kind": "comparison table",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p45:l-to-c:3:w1",
+          "form": "eel̲u",
+          "printed_gloss": "seven",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        },
+        {
+          "witness_key": "nair2013mannan:p45:l-to-c:3:w2",
+          "form": "eecu",
+          "printed_gloss": "seven",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p45:l-to-c:4",
+      "printed_page": 45,
+      "kind": "comparison table",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p45:l-to-c:4:w1",
+          "form": "kool̲i",
+          "printed_gloss": "fowl",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        },
+        {
+          "witness_key": "nair2013mannan:p45:l-to-c:4:w2",
+          "form": "kooci",
+          "printed_gloss": "fowl",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p45:st-t-to-c:0",
+      "printed_page": 45,
+      "kind": "phonological commentary",
+      "scope_review": "agrees",
+      "witnesses": []
+    },
+    {
+      "source_unit_key": "nair2013mannan:p45:st-t-to-c:1",
+      "printed_page": 45,
+      "kind": "comparison table",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p45:st-t-to-c:1:w1",
+          "form": "meestiri",
+          "printed_gloss": "mason",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        },
+        {
+          "witness_key": "nair2013mannan:p45:st-t-to-c:1:w2",
+          "form": "meecciri",
+          "printed_gloss": "mason",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p45:st-t-to-c:2",
+      "printed_page": 45,
+      "kind": "comparison table",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p45:st-t-to-c:2:w1",
+          "form": "kotukŭ",
+          "printed_gloss": "mosquito",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        },
+        {
+          "witness_key": "nair2013mannan:p45:st-t-to-c:2:w2",
+          "form": "kocukŭ",
+          "printed_gloss": "mosquito",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p45:medial-to-y:0",
+      "printed_page": 45,
+      "kind": "phonological commentary",
+      "scope_review": "agrees",
+      "witnesses": []
+    },
+    {
+      "source_unit_key": "nair2013mannan:p45:medial-to-y:1",
+      "printed_page": 45,
+      "kind": "comparison table",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p45:medial-to-y:1:w1",
+          "form": "puujaari",
+          "printed_gloss": "temple priest",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        },
+        {
+          "witness_key": "nair2013mannan:p45:medial-to-y:1:w2",
+          "form": "puuyaari",
+          "printed_gloss": "temple priest",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p45:medial-to-y:2",
+      "printed_page": 45,
+      "kind": "comparison table",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p45:medial-to-y:2:w1",
+          "form": "koovil",
+          "printed_gloss": "temple",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        },
+        {
+          "witness_key": "nair2013mannan:p45:medial-to-y:2:w2",
+          "form": "kooyil",
+          "printed_gloss": "temple",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p45:medial-to-y:3",
+      "printed_page": 45,
+      "kind": "comparison table",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p45:medial-to-y:3:w1",
+          "form": "masi",
+          "printed_gloss": "ink",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        },
+        {
+          "witness_key": "nair2013mannan:p45:medial-to-y:3:w2",
+          "form": "mayi",
+          "printed_gloss": "ink",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p45:rr-to-tt:0",
+      "printed_page": 45,
+      "kind": "phonological commentary",
+      "scope_review": "agrees",
+      "witnesses": []
+    },
+    {
+      "source_unit_key": "nair2013mannan:p45:rr-to-tt:1",
+      "printed_page": 45,
+      "kind": "comparison table",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p45:rr-to-tt:1:w1",
+          "form": "kaaṛṛu",
+          "printed_gloss": "wind",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        },
+        {
+          "witness_key": "nair2013mannan:p45:rr-to-tt:1:w2",
+          "form": "kaattu",
+          "printed_gloss": "wind",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p45:rr-to-tt:2",
+      "printed_page": 45,
+      "kind": "comparison table",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p45:rr-to-tt:2:w1",
+          "form": "peṛṛu",
+          "printed_gloss": "delivered",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        },
+        {
+          "witness_key": "nair2013mannan:p45:rr-to-tt:2:w2",
+          "form": "pettu",
+          "printed_gloss": "delivered",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p45:rr-to-tt:3",
+      "printed_page": 45,
+      "kind": "comparison table",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p45:rr-to-tt:3:w1",
+          "form": "muṛṛam",
+          "printed_gloss": "courtyard",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        },
+        {
+          "witness_key": "nair2013mannan:p45:rr-to-tt:3:w2",
+          "form": "muttam",
+          "printed_gloss": "courtyard",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p45:s-h-to-k:0",
+      "printed_page": 45,
+      "kind": "phonological commentary",
+      "scope_review": "agrees",
+      "witnesses": []
+    },
+    {
+      "source_unit_key": "nair2013mannan:p45:s-h-to-k:1",
+      "printed_page": 45,
+      "kind": "comparison table",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p45:s-h-to-k:1:w1",
+          "form": "vaṛṣam",
+          "printed_gloss": "year",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        },
+        {
+          "witness_key": "nair2013mannan:p45:s-h-to-k:1:w2",
+          "form": "varikam",
+          "printed_gloss": "year",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p46:s-h-to-k:0",
+      "printed_page": 46,
+      "kind": "phonological commentary",
+      "scope_review": "agrees",
+      "witnesses": []
+    },
+    {
+      "source_unit_key": "nair2013mannan:p46:s-h-to-k:1",
+      "printed_page": 46,
+      "kind": "comparison table",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p46:s-h-to-k:1:w1",
+          "form": "simham",
+          "printed_gloss": "lion",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        },
+        {
+          "witness_key": "nair2013mannan:p46:s-h-to-k:1:w2",
+          "form": "cimukam",
+          "printed_gloss": "lion",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p46:s-h-to-k:2",
+      "printed_page": 46,
+      "kind": "comparison table",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p46:s-h-to-k:2:w1",
+          "form": "sahaayam",
+          "printed_gloss": "help",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        },
+        {
+          "witness_key": "nair2013mannan:p46:s-h-to-k:2:w2",
+          "form": "cakaayam",
+          "printed_gloss": "help",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p46:p-k-ph-to-v:0",
+      "printed_page": 46,
+      "kind": "phonological commentary",
+      "scope_review": "agrees",
+      "witnesses": []
+    },
+    {
+      "source_unit_key": "nair2013mannan:p46:p-k-ph-to-v:1",
+      "printed_page": 46,
+      "kind": "comparison table",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p46:p-k-ph-to-v:1:w1",
+          "form": "parippu",
+          "printed_gloss": "grain/seed",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        },
+        {
+          "witness_key": "nair2013mannan:p46:p-k-ph-to-v:1:w2",
+          "form": "varippu",
+          "printed_gloss": "grain/seed",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p46:p-k-ph-to-v:2",
+      "printed_page": 46,
+      "kind": "comparison table",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p46:p-k-ph-to-v:2:w1",
+          "form": "kapham",
+          "printed_gloss": "phlegm",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        },
+        {
+          "witness_key": "nair2013mannan:p46:p-k-ph-to-v:2:w2",
+          "form": "kavam",
+          "printed_gloss": "phlegm",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p46:p-k-ph-to-v:3",
+      "printed_page": 46,
+      "kind": "comparison table",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p46:p-k-ph-to-v:3:w1",
+          "form": "mutuku",
+          "printed_gloss": "back",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        },
+        {
+          "witness_key": "nair2013mannan:p46:p-k-ph-to-v:3:w2",
+          "form": "mutuvu",
+          "printed_gloss": "back",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p46:nasal-clusters:0",
+      "printed_page": 46,
+      "kind": "phonological commentary",
+      "scope_review": "agrees",
+      "witnesses": []
+    },
+    {
+      "source_unit_key": "nair2013mannan:p46:nasal-clusters:1",
+      "printed_page": 46,
+      "kind": "comparison table",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p46:nasal-clusters:1:w1",
+          "form": "pan̲n̲i",
+          "printed_gloss": "pig",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        },
+        {
+          "witness_key": "nair2013mannan:p46:nasal-clusters:1:w2",
+          "form": "paṇṇi",
+          "printed_gloss": "pig",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p46:nasal-clusters:2",
+      "printed_page": 46,
+      "kind": "comparison table",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p46:nasal-clusters:2:w1",
+          "form": "on̲n̲u",
+          "printed_gloss": "one",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        },
+        {
+          "witness_key": "nair2013mannan:p46:nasal-clusters:2:w2",
+          "form": "oṇṇu",
+          "printed_gloss": "one",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p46:nasal-clusters:3",
+      "printed_page": 46,
+      "kind": "comparison table",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p46:nasal-clusters:3:w1",
+          "form": "muun̲n̲u",
+          "printed_gloss": "three",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        },
+        {
+          "witness_key": "nair2013mannan:p46:nasal-clusters:3:w2",
+          "form": "muuṇu",
+          "printed_gloss": "three",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p46:final-l:0",
+      "printed_page": 46,
+      "kind": "phonological commentary",
+      "scope_review": "agrees",
+      "witnesses": []
+    },
+    {
+      "source_unit_key": "nair2013mannan:p46:final-l:1",
+      "printed_page": 46,
+      "kind": "comparison table",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p46:final-l:1:w1",
+          "form": "makkaḷ",
+          "printed_gloss": "children",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        },
+        {
+          "witness_key": "nair2013mannan:p46:final-l:1:w2",
+          "form": "makka",
+          "printed_gloss": "children",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p46:final-l:2",
+      "printed_page": 46,
+      "kind": "comparison table",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p46:final-l:2:w1",
+          "form": "makaḷ",
+          "printed_gloss": "daughter",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        },
+        {
+          "witness_key": "nair2013mannan:p46:final-l:2:w2",
+          "form": "maka",
+          "printed_gloss": "daughter",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p46:final-l:3",
+      "printed_page": 46,
+      "kind": "comparison table",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p46:final-l:3:w1",
+          "form": "tinkaḷ",
+          "printed_gloss": "moon",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        },
+        {
+          "witness_key": "nair2013mannan:p46:final-l:3:w2",
+          "form": "tinka",
+          "printed_gloss": "moon",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p46:initial-c-s:0",
+      "printed_page": 46,
+      "kind": "phonological commentary",
+      "scope_review": "agrees",
+      "witnesses": []
+    },
+    {
+      "source_unit_key": "nair2013mannan:p46:initial-c-s:1",
+      "printed_page": 46,
+      "kind": "comparison table",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p46:initial-c-s:1:w1",
+          "form": "suuci",
+          "printed_gloss": "needle",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        },
+        {
+          "witness_key": "nair2013mannan:p46:initial-c-s:1:w2",
+          "form": "uuyi",
+          "printed_gloss": "needle",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p46:initial-c-s:2",
+      "printed_page": 46,
+      "kind": "comparison table",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p46:initial-c-s:2:w1",
+          "form": "ciraku",
+          "printed_gloss": "wing",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        },
+        {
+          "witness_key": "nair2013mannan:p46:initial-c-s:2:w2",
+          "form": "uraku",
+          "printed_gloss": "wing",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p46:inserted-vowels:0",
+      "printed_page": 46,
+      "kind": "phonological commentary",
+      "scope_review": "agrees",
+      "witnesses": []
+    },
+    {
+      "source_unit_key": "nair2013mannan:p46:inserted-vowels:1",
+      "printed_page": 46,
+      "kind": "comparison table",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p46:inserted-vowels:1:w1",
+          "form": "pṛaaṇi",
+          "printed_gloss": "insects",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        },
+        {
+          "witness_key": "nair2013mannan:p46:inserted-vowels:1:w2",
+          "form": "puraani",
+          "printed_gloss": "insects",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p46:inserted-vowels:2",
+      "printed_page": 46,
+      "kind": "comparison table",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p46:inserted-vowels:2:w1",
+          "form": "pṛiyam",
+          "printed_gloss": "affection",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        },
+        {
+          "witness_key": "nair2013mannan:p46:inserted-vowels:2:w2",
+          "form": "puriyam",
+          "printed_gloss": "affection",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p46:phonological-symbols:1",
+      "printed_page": 46,
+      "kind": "source phonological notation",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p46:phonological-symbols:1:w1",
+          "form": "-st-",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": false
+        },
+        {
+          "witness_key": "nair2013mannan:p46:phonological-symbols:1:w2",
+          "form": "–t-",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": false
+        },
+        {
+          "witness_key": "nair2013mannan:p46:phonological-symbols:1:w3",
+          "form": "c",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": false
+        },
+        {
+          "witness_key": "nair2013mannan:p46:phonological-symbols:1:w4",
+          "form": "j",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": false
+        },
+        {
+          "witness_key": "nair2013mannan:p46:phonological-symbols:1:w5",
+          "form": "v",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": false
+        },
+        {
+          "witness_key": "nair2013mannan:p46:phonological-symbols:1:w6",
+          "form": "ṣ",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": false
+        },
+        {
+          "witness_key": "nair2013mannan:p46:phonological-symbols:1:w7",
+          "form": "y",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": false
+        },
+        {
+          "witness_key": "nair2013mannan:p46:phonological-symbols:1:w8",
+          "form": "ṛṛ",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": false
+        },
+        {
+          "witness_key": "nair2013mannan:p46:phonological-symbols:1:w9",
+          "form": "tt",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": false
+        },
+        {
+          "witness_key": "nair2013mannan:p46:phonological-symbols:1:w10",
+          "form": "h",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": false
+        },
+        {
+          "witness_key": "nair2013mannan:p46:phonological-symbols:1:w11",
+          "form": "k",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": false
+        },
+        {
+          "witness_key": "nair2013mannan:p46:phonological-symbols:1:w12",
+          "form": "p",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": false
+        },
+        {
+          "witness_key": "nair2013mannan:p46:phonological-symbols:1:w13",
+          "form": "ph",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": false
+        },
+        {
+          "witness_key": "nair2013mannan:p46:phonological-symbols:1:w14",
+          "form": "n̲n̲",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": false
+        },
+        {
+          "witness_key": "nair2013mannan:p46:phonological-symbols:1:w15",
+          "form": "ṇṇ",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": false
+        },
+        {
+          "witness_key": "nair2013mannan:p46:phonological-symbols:1:w16",
+          "form": "ṇ",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": false
+        },
+        {
+          "witness_key": "nair2013mannan:p46:phonological-symbols:1:w17",
+          "form": "ḷ",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": false
+        },
+        {
+          "witness_key": "nair2013mannan:p46:phonological-symbols:1:w18",
+          "form": "c/s",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": false
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p46:kin-plural:0",
+      "printed_page": 46,
+      "kind": "bound morphology",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p46:kin-plural:0:w1",
+          "form": "–laam",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p46:kin-plural:1",
+      "printed_page": 46,
+      "kind": "plural noun example",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p46:kin-plural:1:w1",
+          "form": "appa-laam",
+          "printed_gloss": "fathers",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p46:kin-plural:2",
+      "printed_page": 46,
+      "kind": "plural noun example",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p46:kin-plural:2:w1",
+          "form": "colla-laam",
+          "printed_gloss": "younger brothers",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p46:kin-plural:3",
+      "printed_page": 46,
+      "kind": "plural noun example",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p46:kin-plural:3:w1",
+          "form": "peeṭṭa-laam",
+          "printed_gloss": "brothers-in-law",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p46:kin-plural:4",
+      "printed_page": 46,
+      "kind": "plural noun example",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p46:kin-plural:4:w1",
+          "form": "acca-laam",
+          "printed_gloss": "elder brothers",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p46:other-plural:0",
+      "printed_page": 46,
+      "kind": "bound morphology",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p46:other-plural:0:w1",
+          "form": "kaaṭ-u",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p47:other-plural:1",
+      "printed_page": 47,
+      "kind": "plural example",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p47:other-plural:1:w1",
+          "form": "kuñci-kaaṭ-u",
+          "printed_gloss": "children",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p47:other-plural:2",
+      "printed_page": 47,
+      "kind": "plural example",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p47:other-plural:2:w1",
+          "form": "teeŋka-kaaṭ-u",
+          "printed_gloss": "coconuts",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p47:other-plural:3",
+      "printed_page": 47,
+      "kind": "plural example",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p47:other-plural:3:w1",
+          "form": "atu-kaaṭ-u",
+          "printed_gloss": "those",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p47:other-plural:4",
+      "printed_page": 47,
+      "kind": "plural example",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p47:other-plural:4:w1",
+          "form": "kal-kaaṭ-u",
+          "printed_gloss": "stones",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p47:plural-comparison:0",
+      "printed_page": 47,
+      "kind": "source morphology comparison",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p47:plural-comparison:0:w1",
+          "form": "-kaḷ",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": false
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p47:case-suffix:0",
+      "printed_page": 47,
+      "kind": "bound morphology",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p47:case-suffix:0:w1",
+          "form": "–e",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        },
+        {
+          "witness_key": "nair2013mannan:p47:case-suffix:0:w2",
+          "form": "–e",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        },
+        {
+          "witness_key": "nair2013mannan:p47:case-suffix:0:w3",
+          "form": "-kku",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p47:case-suffix:1",
+      "printed_page": 47,
+      "kind": "whole case example",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p47:case-suffix:1:w1",
+          "form": "en-akk-u aṭiccu",
+          "printed_gloss": "beat me",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p47:case-suffix:2",
+      "printed_page": 47,
+      "kind": "whole case example",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p47:case-suffix:2:w1",
+          "form": "maratt-ukk-u veṭṭi",
+          "printed_gloss": "cut the tree",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p47:case-suffix:3",
+      "printed_page": 47,
+      "kind": "whole case example",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p47:case-suffix:3:w1",
+          "form": "avan-ukk-u talli",
+          "printed_gloss": "beat him",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p47:case-suffix:4",
+      "printed_page": 47,
+      "kind": "whole case example",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p47:case-suffix:4:w1",
+          "form": "puun-ee-kk-u",
+          "printed_gloss": "to the cat",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p47:case-suffix:5",
+      "printed_page": 47,
+      "kind": "whole case example",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p47:case-suffix:5:w1",
+          "form": "nin-akk-u",
+          "printed_gloss": "to you",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p47:case-suffix:6",
+      "printed_page": 47,
+      "kind": "whole case example",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p47:case-suffix:6:w1",
+          "form": "avaḷ-ukk-u",
+          "printed_gloss": "to her",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p47:personal-pronouns:1",
+      "printed_page": 47,
+      "kind": "pronoun table",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p47:personal-pronouns:1:w1",
+          "form": "een",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p47:personal-pronouns:2",
+      "printed_page": 47,
+      "kind": "pronoun table",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p47:personal-pronouns:2:w1",
+          "form": "eŋka",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p47:personal-pronouns:3",
+      "printed_page": 47,
+      "kind": "pronoun table",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p47:personal-pronouns:3:w1",
+          "form": "naŋka",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p47:personal-pronouns:4",
+      "printed_page": 47,
+      "kind": "pronoun table",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p47:personal-pronouns:4:w1",
+          "form": "nii",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p47:personal-pronouns:5",
+      "printed_page": 47,
+      "kind": "pronoun table",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p47:personal-pronouns:5:w1",
+          "form": "niŋka",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p47:demonstratives:1",
+      "printed_page": 47,
+      "kind": "demonstrative table",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p47:demonstratives:1:w1",
+          "form": "avan",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p47:demonstratives:2",
+      "printed_page": 47,
+      "kind": "demonstrative table",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p47:demonstratives:2:w1",
+          "form": "avaḷu",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p47:demonstratives:3",
+      "printed_page": 47,
+      "kind": "demonstrative table",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p47:demonstratives:3:w1",
+          "form": "ava",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p47:demonstratives:4",
+      "printed_page": 47,
+      "kind": "demonstrative table",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p47:demonstratives:4:w1",
+          "form": "atu",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p47:demonstratives:5",
+      "printed_page": 47,
+      "kind": "demonstrative table",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p47:demonstratives:5:w1",
+          "form": "ivan",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p47:demonstratives:6",
+      "printed_page": 47,
+      "kind": "demonstrative table",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p47:demonstratives:6:w1",
+          "form": "ivaḷu",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p47:demonstratives:7",
+      "printed_page": 47,
+      "kind": "demonstrative table",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p47:demonstratives:7:w1",
+          "form": "iva",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p47:demonstratives:8",
+      "printed_page": 47,
+      "kind": "demonstrative table",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p47:demonstratives:8:w1",
+          "form": "itu",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p47:present:0",
+      "printed_page": 47,
+      "kind": "bound morphology",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p47:present:0:w1",
+          "form": "–nnu",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        },
+        {
+          "witness_key": "nair2013mannan:p47:present:0:w2",
+          "form": "–nu",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p47:present:1",
+      "printed_page": 47,
+      "kind": "present verb example",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p47:present:1:w1",
+          "form": "poo-nu",
+          "printed_gloss": "goes",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p47:present:2",
+      "printed_page": 47,
+      "kind": "present verb example",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p47:present:2:w1",
+          "form": "kol-nu",
+          "printed_gloss": "kills",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p47:present:3",
+      "printed_page": 47,
+      "kind": "present verb example",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p47:present:3:w1",
+          "form": "cuṭ-u-nu",
+          "printed_gloss": "bakes",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p47:present:4",
+      "printed_page": 47,
+      "kind": "present verb example",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p47:present:4:w1",
+          "form": "iṭ-inu",
+          "printed_gloss": "puts",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p47:present:5",
+      "printed_page": 47,
+      "kind": "present verb example",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p47:present:5:w1",
+          "form": "var-inu",
+          "printed_gloss": "comes",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p47:past-negative:0",
+      "printed_page": 47,
+      "kind": "bound morphology",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p47:past-negative:0:w1",
+          "form": "aa",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        },
+        {
+          "witness_key": "nair2013mannan:p47:past-negative:0:w2",
+          "form": "–aat",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p47:past-negative:1",
+      "printed_page": 47,
+      "kind": "whole negative construction",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p47:past-negative:1:w1",
+          "form": "var-aa-pooyi",
+          "printed_gloss": "having not come, went",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p47:past-negative:2",
+      "printed_page": 47,
+      "kind": "whole negative construction",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p47:past-negative:2:w1",
+          "form": "kaaṇ-aa-pooyi",
+          "printed_gloss": "having not seen, went",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p47:nonpast-negative:0",
+      "printed_page": 47,
+      "kind": "bound morphology",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p47:nonpast-negative:0:w1",
+          "form": "-aat",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        },
+        {
+          "witness_key": "nair2013mannan:p47:nonpast-negative:0:w2",
+          "form": "–att",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p47:nonpast-negative:1",
+      "printed_page": 47,
+      "kind": "whole negative construction",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p47:nonpast-negative:1:w1",
+          "form": "kaaṇ-aat-e",
+          "printed_gloss": "without seeing",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p47:nonpast-negative:2",
+      "printed_page": 47,
+      "kind": "whole negative construction",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p47:nonpast-negative:2:w1",
+          "form": "pook-aatt-u",
+          "printed_gloss": "will not go",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p47:nonpast-negative:3",
+      "printed_page": 47,
+      "kind": "whole negative construction",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p47:nonpast-negative:3:w1",
+          "form": "pook-aat-u",
+          "printed_gloss": "do not go",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p47:nonpast-negative:4",
+      "printed_page": 47,
+      "kind": "whole negative construction",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p47:nonpast-negative:4:w1",
+          "form": "kaaṇ-aat-u",
+          "printed_gloss": "will not see",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p47:nonpast-negative:5",
+      "printed_page": 47,
+      "kind": "whole negative construction",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p47:nonpast-negative:5:w1",
+          "form": "cirri-kk-aat-u",
+          "printed_gloss": "do not laugh",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p48:no-copula:1",
+      "printed_page": 48,
+      "kind": "whole sentence",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p48:no-copula:1:w1",
+          "form": "itu een pookina kuura",
+          "printed_gloss": "this is the house where I am going",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p48:no-copula:2",
+      "printed_page": 48,
+      "kind": "whole sentence",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p48:no-copula:2:w1",
+          "form": "ninaṭṭu vantatu en makanu",
+          "printed_gloss": "the one who came yesterday is my son",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p48:no-personal-endings:1",
+      "printed_page": 48,
+      "kind": "whole sentence",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p48:no-personal-endings:1:w1",
+          "form": "amma vantu",
+          "printed_gloss": "mother came",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p48:no-personal-endings:2",
+      "printed_page": 48,
+      "kind": "whole sentence",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p48:no-personal-endings:2:w1",
+          "form": "makanu vantu",
+          "printed_gloss": "son came",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p48:no-personal-endings:3",
+      "printed_page": 48,
+      "kind": "whole sentence",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p48:no-personal-endings:3:w1",
+          "form": "koocci vantu",
+          "printed_gloss": "fowl came",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p48:vocabulary:1",
+      "printed_page": 48,
+      "kind": "lexical list",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p48:vocabulary:1:w1",
+          "form": "ippiṭe",
+          "printed_gloss": "calling a girl",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p48:vocabulary:2",
+      "printed_page": 48,
+      "kind": "lexical list",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p48:vocabulary:2:w1",
+          "form": "icca",
+          "printed_gloss": "calling a bor",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p48:vocabulary:3",
+      "printed_page": 48,
+      "kind": "lexical list",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p48:vocabulary:3:w1",
+          "form": "iḷaya vaṭṭam",
+          "printed_gloss": "leader of youngsters",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p48:vocabulary:4",
+      "printed_page": 48,
+      "kind": "lexical list",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p48:vocabulary:4:w1",
+          "form": "iiṭu",
+          "printed_gloss": "weight",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p48:vocabulary:5",
+      "printed_page": 48,
+      "kind": "lexical list",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p48:vocabulary:5:w1",
+          "form": "ekaram",
+          "printed_gloss": "branch of a tree",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p48:vocabulary:6",
+      "printed_page": 48,
+      "kind": "lexical list",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p48:vocabulary:6:w1",
+          "form": "ecpiṭi",
+          "printed_gloss": "plenty",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p48:vocabulary:7",
+      "printed_page": 48,
+      "kind": "lexical list",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p48:vocabulary:7:w1",
+          "form": "naccataan",
+          "printed_gloss": "a type of rat",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p48:vocabulary:8",
+      "printed_page": 48,
+      "kind": "lexical list",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p48:vocabulary:8:w1",
+          "form": "attee",
+          "printed_gloss": "an expression of surprise,",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p48:vocabulary:9",
+      "printed_page": 48,
+      "kind": "lexical list",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p48:vocabulary:9:w1",
+          "form": "akappa",
+          "printed_gloss": "winnowing fan",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p48:vocabulary:10",
+      "printed_page": 48,
+      "kind": "lexical list",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p48:vocabulary:10:w1",
+          "form": "aaṇam",
+          "printed_gloss": "curry",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p48:vocabulary:11",
+      "printed_page": 48,
+      "kind": "lexical list",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p48:vocabulary:11:w1",
+          "form": "olli",
+          "printed_gloss": "emaciated person",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p48:vocabulary:12",
+      "printed_page": 48,
+      "kind": "lexical list",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p48:vocabulary:12:w1",
+          "form": "utaṭu",
+          "printed_gloss": "lip, beak",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p48:vocabulary:13",
+      "printed_page": 48,
+      "kind": "lexical list",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p48:vocabulary:13:w1",
+          "form": "uḷa",
+          "printed_gloss": "feather",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p48:vocabulary:14",
+      "printed_page": 48,
+      "kind": "lexical list",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p48:vocabulary:14:w1",
+          "form": "uḷantaari",
+          "printed_gloss": "young man",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p48:vocabulary:15",
+      "printed_page": 48,
+      "kind": "lexical list",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p48:vocabulary:15:w1",
+          "form": "ulantaaricci",
+          "printed_gloss": "young woman",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p48:vocabulary:16",
+      "printed_page": 48,
+      "kind": "lexical list",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p48:vocabulary:16:w1",
+          "form": "paṭṭippuli",
+          "printed_gloss": "fox",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p48:vocabulary:17",
+      "printed_page": 48,
+      "kind": "lexical list",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p48:vocabulary:17:w1",
+          "form": "pani",
+          "printed_gloss": "fog",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p48:vocabulary:18",
+      "printed_page": 48,
+      "kind": "lexical list",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p48:vocabulary:18:w1",
+          "form": "paaḷi",
+          "printed_gloss": "bush",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p48:vocabulary:19",
+      "printed_page": 48,
+      "kind": "lexical list",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p48:vocabulary:19:w1",
+          "form": "tappaṛu",
+          "printed_gloss": "rest",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p48:vocabulary:20",
+      "printed_page": 48,
+      "kind": "lexical list",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p48:vocabulary:20:w1",
+          "form": "tookku",
+          "printed_gloss": "tail",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p48:vocabulary:21",
+      "printed_page": 48,
+      "kind": "lexical list",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p48:vocabulary:21:w1",
+          "form": "tuṛam",
+          "printed_gloss": "bravery",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p48:vocabulary:22",
+      "printed_page": 48,
+      "kind": "lexical list",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p48:vocabulary:22:w1",
+          "form": "cimpu",
+          "printed_gloss": "petal",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p48:vocabulary:23",
+      "printed_page": 48,
+      "kind": "lexical list",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p48:vocabulary:23:w1",
+          "form": "cimp",
+          "printed_gloss": "to carry on head",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p48:vocabulary:24",
+      "printed_page": 48,
+      "kind": "lexical list",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p48:vocabulary:24:w1",
+          "form": "ceeti",
+          "printed_gloss": "news",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p48:vocabulary:25",
+      "printed_page": 48,
+      "kind": "lexical list",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p48:vocabulary:25:w1",
+          "form": "akkan",
+          "printed_gloss": "sediment of oil",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p48:vocabulary:26",
+      "printed_page": 48,
+      "kind": "lexical list",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p48:vocabulary:26:w1",
+          "form": "kunnaṭi",
+          "printed_gloss": "arm pit",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p48:vocabulary:27",
+      "printed_page": 48,
+      "kind": "lexical list",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p48:vocabulary:27:w1",
+          "form": "karinkaṇa",
+          "printed_gloss": "millipede",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p48:vocabulary:28",
+      "printed_page": 48,
+      "kind": "lexical list",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p48:vocabulary:28:w1",
+          "form": "kaalmontu",
+          "printed_gloss": "feet",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p48:vocabulary:29",
+      "printed_page": 48,
+      "kind": "lexical list",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p48:vocabulary:29:w1",
+          "form": "koyyan",
+          "printed_gloss": "parrot",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p48:vocabulary:30",
+      "printed_page": 48,
+      "kind": "lexical list",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p48:vocabulary:30:w1",
+          "form": "kuṇayan",
+          "printed_gloss": "boy",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p48:vocabulary:31",
+      "printed_page": 48,
+      "kind": "lexical list",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p48:vocabulary:31:w1",
+          "form": "kuṇacci",
+          "printed_gloss": "girl",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p48:vocabulary:32",
+      "printed_page": 48,
+      "kind": "lexical list",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p48:vocabulary:32:w1",
+          "form": "kuṇṇi",
+          "printed_gloss": "dragon fly",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p48:vocabulary:33",
+      "printed_page": 48,
+      "kind": "lexical list",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p48:vocabulary:33:w1",
+          "form": "kuuvilaan",
+          "printed_gloss": "cuckoo",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p48:vocabulary:34",
+      "printed_page": 48,
+      "kind": "lexical list",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p48:vocabulary:34:w1",
+          "form": "miṭa",
+          "printed_gloss": "wall",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p48:vocabulary:35",
+      "printed_page": 48,
+      "kind": "lexical list",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p48:vocabulary:35:w1",
+          "form": "meppu",
+          "printed_gloss": "shoulder",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p48:vocabulary:36",
+      "printed_page": 48,
+      "kind": "lexical list",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p48:vocabulary:36:w1",
+          "form": "meeṭṭa",
+          "printed_gloss": "step",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p48:kinship:1",
+      "printed_page": 48,
+      "kind": "head with two definitions",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p48:kinship:1:w1",
+          "form": "coḷḷan",
+          "printed_gloss": "Father’s elder /younger brother’s son (younger to the addressee.); Mother’s elder /younger brother’s daughter (younger to the addressee)",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p48:kinship:2",
+      "printed_page": 48,
+      "kind": "head with two definitions",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p48:kinship:2:w1",
+          "form": "coḷḷi",
+          "printed_gloss": "Father’s elder/younger brother’s daughter (younger to the addressee); Mother’s elder/younger sister’s daughter (younger to the addresse)",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p48:kinship:3",
+      "printed_page": 48,
+      "kind": "head with two definitions",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p48:kinship:3:w1",
+          "form": "peettan",
+          "printed_gloss": "fathers elder/younger sister’s son (elder to the addressee); Mother’s elder /younger brother’s son (elder to the addressee)",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p49:kinship:4",
+      "printed_page": 49,
+      "kind": "head with two definitions",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p49:kinship:4:w1",
+          "form": "peetti",
+          "printed_gloss": "father’s elder/younger sister’s daughter (elder to the addressee); Mother’s elder /younger brother’s daughter (elder to the addressee)",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p49:kinship:5",
+      "printed_page": 49,
+      "kind": "head with two definitions",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p49:kinship:5:w1",
+          "form": "maṭayan",
+          "printed_gloss": "fathers elder/younger sister’s son (younger to the addressee); Mother’s elder /younger brother’s son (younger to the addressee)",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p49:kinship:6",
+      "printed_page": 49,
+      "kind": "head with two definitions",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p49:kinship:6:w1",
+          "form": "maaḷa",
+          "printed_gloss": "father’s elder/younger sister’s daughter (younger to the addressee); Mother’s elder /younger brother’s daughter (younger to the addressee)",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p49:kinship:7",
+      "printed_page": 49,
+      "kind": "head with two definitions",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p49:kinship:7:w1",
+          "form": "kaṛuttamma",
+          "printed_gloss": "Mother’s younger brother’s wife.; Mother-in-law",
+          "literal_and_gloss_review": "agrees",
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p49:traditional-names:1",
+      "printed_page": 49,
+      "kind": "documentary personal-name list",
+      "scope_review": "agrees",
+      "witnesses": [
+        {
+          "witness_key": "nair2013mannan:p49:traditional-names:1:w1",
+          "form": "ilunki",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": false
+        },
+        {
+          "witness_key": "nair2013mannan:p49:traditional-names:1:w2",
+          "form": "ilunkan",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": false
+        },
+        {
+          "witness_key": "nair2013mannan:p49:traditional-names:1:w3",
+          "form": "acaki",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": false
+        },
+        {
+          "witness_key": "nair2013mannan:p49:traditional-names:1:w4",
+          "form": "acakan",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": false
+        },
+        {
+          "witness_key": "nair2013mannan:p49:traditional-names:1:w5",
+          "form": "ariyan",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": false
+        },
+        {
+          "witness_key": "nair2013mannan:p49:traditional-names:1:w6",
+          "form": "ariyaalu",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": false
+        },
+        {
+          "witness_key": "nair2013mannan:p49:traditional-names:1:w7",
+          "form": "pericci",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": false
+        },
+        {
+          "witness_key": "nair2013mannan:p49:traditional-names:1:w8",
+          "form": "periyan",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": false
+        },
+        {
+          "witness_key": "nair2013mannan:p49:traditional-names:1:w9",
+          "form": "pancan",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": false
+        },
+        {
+          "witness_key": "nair2013mannan:p49:traditional-names:1:w10",
+          "form": "pancaaṇṭi",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": false
+        },
+        {
+          "witness_key": "nair2013mannan:p49:traditional-names:1:w11",
+          "form": "parayan",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": false
+        },
+        {
+          "witness_key": "nair2013mannan:p49:traditional-names:1:w12",
+          "form": "palicci",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": false
+        },
+        {
+          "witness_key": "nair2013mannan:p49:traditional-names:1:w13",
+          "form": "palyan",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": false
+        },
+        {
+          "witness_key": "nair2013mannan:p49:traditional-names:1:w14",
+          "form": "paappu",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": false
+        },
+        {
+          "witness_key": "nair2013mannan:p49:traditional-names:1:w15",
+          "form": "paappan",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": false
+        },
+        {
+          "witness_key": "nair2013mannan:p49:traditional-names:1:w16",
+          "form": "ponnaayi",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": false
+        },
+        {
+          "witness_key": "nair2013mannan:p49:traditional-names:1:w17",
+          "form": "ponnaayan",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": false
+        },
+        {
+          "witness_key": "nair2013mannan:p49:traditional-names:1:w18",
+          "form": "cinavan",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": false
+        },
+        {
+          "witness_key": "nair2013mannan:p49:traditional-names:1:w19",
+          "form": "cakki",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": false
+        },
+        {
+          "witness_key": "nair2013mannan:p49:traditional-names:1:w20",
+          "form": "cakkan",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": false
+        },
+        {
+          "witness_key": "nair2013mannan:p49:traditional-names:1:w21",
+          "form": "kaṇṭaru",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": false
+        },
+        {
+          "witness_key": "nair2013mannan:p49:traditional-names:1:w22",
+          "form": "kaṛuppi",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": false
+        },
+        {
+          "witness_key": "nair2013mannan:p49:traditional-names:1:w23",
+          "form": "kaatiyal",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": false
+        },
+        {
+          "witness_key": "nair2013mannan:p49:traditional-names:1:w24",
+          "form": "kompi",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": false
+        },
+        {
+          "witness_key": "nair2013mannan:p49:traditional-names:1:w25",
+          "form": "kompan",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": false
+        },
+        {
+          "witness_key": "nair2013mannan:p49:traditional-names:1:w26",
+          "form": "kuppi",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": false
+        },
+        {
+          "witness_key": "nair2013mannan:p49:traditional-names:1:w27",
+          "form": "kuppan",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": false
+        },
+        {
+          "witness_key": "nair2013mannan:p49:traditional-names:1:w28",
+          "form": "naacci",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": false
+        },
+        {
+          "witness_key": "nair2013mannan:p49:traditional-names:1:w29",
+          "form": "naayan",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": false
+        },
+        {
+          "witness_key": "nair2013mannan:p49:traditional-names:1:w30",
+          "form": "viiru",
+          "printed_gloss": "",
+          "literal_and_gloss_review": "agrees",
+          "emitted": false
+        }
+      ]
+    },
+    {
+      "source_unit_key": "nair2013mannan:p49:bibliography:1",
+      "printed_page": 49,
+      "kind": "documentary",
+      "scope_review": "agrees",
+      "witnesses": []
+    },
+    {
+      "source_unit_key": "nair2013mannan:p50:outside-phonology:1",
+      "printed_page": 50,
+      "kind": "outside chapter source commentary",
+      "scope_review": "agrees",
+      "witnesses": []
+    }
+  ],
+  "limits": "No canonical installation, full build, compiled graph/identity or browser acceptance claimed. Parent’s fresh output sample is separate."
+}

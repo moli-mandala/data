@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Gondi · Dravidian surveys, 2026-09-21 · batch 012. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Gondi | Proposed etymology | Evidence |
+|---|---|---|---|
+| 41 | **vatte** ‘dry’, **vatta** ‘dry’, **vaṭṭa** ‘dry’ | Proposed reflex of [**DEDR 5320**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=481) | DEDR 5320 gives Tamil vaṟaḷ/vaṟal, Malayalam varaḷ-/vaṟu, Kota varl, Kannada battu, Gadaba vaṭṭ-, Gondi vatt-, Parji vett-/veṭṭ- and Brahui bārun dry. These simple stems or inflected dry responses are retained; transitive causatives and multiword responses are not collapsed into the stem. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (3 records.) |
+| 42 | **nantte** ‘wet’, **nanti** ‘wet’, **nantta** ‘wet’, **nante** ‘wet’ | Proposed reflex of [**DEDR 3630**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=320) | DEDR 3630 compares Tamil naṉai (past naṉaint-), Malayalam nanayuka and Gondi nānd-/nān- become wet. The selected participial survey responses retain this intransitive wetting stem; causatives and compounds remain separate. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (4 records.) |
+| 43 | **mokã** ‘face’, **mokam** ‘face’, **mokame** ‘face’, **mokkam** ‘face’ | Proposed reflex of [**DEDR 4889**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=437) | DEDR 4889 gives Tamil/Malayalam mukam, Kannada moga/mōṟe, Tulu mōrè, and Gondi mokom/mukam face. The selected simple face stems match this family; mūñci/mond- responses belong to a separate family and are not merged. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (13 records.) |
+| 44 | **epuru** ‘broom’ | Proposed reflex of [**DEDR 2599**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=225) | DEDR 2599 records Gadaba cēpēḍ/sēpeṭ/sēpe, Gondi ēpur, Konda sipeṟ and Malayalam cūl broom. Only these simple noun responses are selected; broom compounds and responses belonging to other sweeping stems remain separate. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 45 | **pilla** ‘child’, **pille** ‘child’ | Proposed reflex of [**DEDR 4198**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=372) | DEDR 4198 gives Tamil piḷḷai, Malayalam piḷḷa, Kannada piḷḷe/piḷḷa, Telugu/Gondi pilla and Konda pila child. The selected simple child responses belong here; sex-marked and small-child compounds are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (2 records.) |
+
+Proposed assignment rows: **23**. Affected records: **23**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-012.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Gondi/batch-012.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

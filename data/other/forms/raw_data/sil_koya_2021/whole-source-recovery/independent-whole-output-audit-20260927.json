@@ -1,0 +1,1129 @@
+{
+  "status": "failed; repair systematic classes and repeat fresh independent sample",
+  "reviewer": "rohru_finish",
+  "date": "2026-09-27",
+  "seed": 2026092727,
+  "sample_units": 20,
+  "additional_edge_positions": 12,
+  "unique_reviewed_units": 31,
+  "material_errors": 15,
+  "sample_literal_or_notation_errors": 2,
+  "sample_metadata_errors": 13,
+  "additional_edge_positions_with_errors": 6,
+  "edge_duplicate_of_sample": "B.6:p29:6 appears in both seeded and edge selections; counts by positions are not unique-unit counts.",
+  "sha256": {
+    "proposed-wordlist.csv": "9974f1d2e35bbd5f3f935a8e085d3fc3e64e63ae80b55670653d54e8ae21b0cc",
+    "proposed-wordlist.yaml": "493e18882e6bfe8104409b10179da3cdb23d51d16b1f58d4eb0828abb7c44a18",
+    "proposed-narrative.csv": "c73b7c6de0aec5e067b13a2f3e2fa2bbbde925b12c7bcdb7579232e36b1c1bbb",
+    "proposed-narrative.yaml": "6815aadfc5ef5370d1f9861e9b7edb9ebca9053e6b4ee739dee759ba96e2bd61",
+    "proposed-comparative.csv": "3c01698e63111d1b778cab20f00383861c417f2cc4483965debbfe6aea4570be",
+    "proposed-comparative.yaml": "690a0c0468e77966b41484d881b48f69d6c6220a5d656a8ddcef8201972390b2",
+    "proposed-sil-koya-narrative.txt": "c91ab89a34fec4e3648254811b552da5c523e23dcab6312017c105a1abd9fcba",
+    "proposed-sil-koya-comparative.txt": "de9320f424d972063046552dbf2785002b90b7acd0623fea661bc178aa693c0a",
+    "proposed-additions-audit.jsonl": "bd2f3f798931790311d59aa077b8dfa1fd4989fe59205e39d49a99bef835497f",
+    "wordlist-note-relocation.jsonl": "d1196121b66bfbcc18887b8a44bc428e6d448078f7c27133b45a984c89384268",
+    "independent-review-selection.json": "967b691fef871cf1b02d7e892a8d76a1b5b7443d2c28c85ff4f299bcfcd1a139",
+    "whole-draft-parser-validation.json": "a5b1c770856391a2bd9787f230b3e37dd140cf6af55882436fbddd59cb60ab10"
+  },
+  "source_sha256": "a6541e0d2397849ce7c36961b3849f3b2c1f1c267036cfa1a3f6025796e14e7d",
+  "all_frozen_hashes_verified": true,
+  "all_selected_actual_rows_verified": true,
+  "all_selected_dialect_tags_registered_under_row_language": true,
+  "method": "Independent visual reading of each selected original source unit, including bounded rendered snippets with surrounding print. Printed6–7 comparative pages and75–76 source notation legends reviewed; handwritten wordlist pages80/82/88 inspected. Actual proposed rows compared by immutable key. No canonical or frozen proposal edits.",
+  "class_recommendations": [
+    "Review every narrative unit for complete sentential versus fragment/multiword scope; preserve interr and do not infer internal morphology.",
+    "Review all wordlist length dots, not just the onion cell; preserve stable keys.",
+    "Review all raised-vowel source notation versus flattened ledger substitutions; separate literal Original from defensible display/phonemic conversion.",
+    "Retain all question/answer, stutter and named-term boundary decisions that passed."
+  ],
+  "findings": [
+    {
+      "selection_index": 0,
+      "stratum": "seeded20",
+      "source_unit_key": "devagnanavaram2021:whole:B.1:p17:13",
+      "actual_rows": [
+        {
+          "file_kind": "narrative",
+          "row": [
+            "Gondi",
+            "",
+            "dutitagavatu sikunu parupesitosu.",
+            "He kept it in a basket and went.",
+            "",
+            "",
+            "Source pairs this printed text segment with a free English translation; no word-level alignment is asserted.",
+            "devagnanavaram-et-al2021koya[Appendix B.1, p. 17, text unit 13]",
+            "",
+            "",
+            "devagnanavaram2021:whole:B.1:p17:13",
+            "",
+            "",
+            "",
+            "dialect:Gondi:sil-koya-1985-utnoor:Utnoor%20Gondi"
+          ]
+        }
+      ],
+      "status": "material_errors",
+      "errors": [
+        {
+          "class": "source_response_scope_metadata",
+          "expected_tag": "sentential",
+          "reason": "Complete source-translated response/question lacks sentential classification."
+        }
+      ],
+      "source_comparison": "Original PDF image inspected; lexical gloss, locator and lect attribution agree except the explicitly recorded defects."
+    },
+    {
+      "selection_index": 1,
+      "stratum": "seeded20",
+      "source_unit_key": "devagnanavaram2021:whole:B.2:p20:14",
+      "actual_rows": [
+        {
+          "file_kind": "narrative",
+          "row": [
+            "Gondi",
+            "",
+            "Aske adu adjunu undi marrate add manji aske danu nishana pitor.",
+            "Then we stayed behind a tree in order to kill that bear.",
+            "",
+            "",
+            "Source pairs this printed text segment with a free English translation; no word-level alignment is asserted.",
+            "devagnanavaram-et-al2021koya[Appendix B.2, p. 20, text unit 14]",
+            "",
+            "",
+            "devagnanavaram2021:whole:B.2:p20:14",
+            "",
+            "",
+            "",
+            "dialect:Gondi:sil-koya-1985-bhamani-gondi:Bhamani%20Gondi"
+          ]
+        }
+      ],
+      "status": "material_errors",
+      "errors": [
+        {
+          "class": "source_response_scope_metadata",
+          "expected_tag": "sentential",
+          "reason": "Complete source-translated response/question lacks sentential classification."
+        }
+      ],
+      "source_comparison": "Original PDF image inspected; lexical gloss, locator and lect attribution agree except the explicitly recorded defects."
+    },
+    {
+      "selection_index": 2,
+      "stratum": "seeded20",
+      "source_unit_key": "devagnanavaram2021:whole:B.3:p22:14",
+      "actual_rows": [
+        {
+          "file_kind": "narrative",
+          "row": [
+            "Gondi",
+            "",
+            "Oru mekal udisi barri injor mator?",
+            "What were the people wondering about the bison?",
+            "",
+            "",
+            "Source pairs this printed text segment with a free English translation; no word-level alignment is asserted.",
+            "devagnanavaram-et-al2021koya[Appendix B.3, p. 22, text unit 14]",
+            "",
+            "",
+            "devagnanavaram2021:whole:B.3:p22:14",
+            "",
+            "",
+            "",
+            "dialect:Gondi:sil-koya-1985-bhamani-madia:Bhamani%20Madia interr"
+          ]
+        }
+      ],
+      "status": "material_errors",
+      "errors": [
+        {
+          "class": "source_response_scope_metadata",
+          "expected_tag": "sentential",
+          "reason": "Complete source-translated response/question lacks sentential classification."
+        }
+      ],
+      "source_comparison": "Original PDF image inspected; lexical gloss, locator and lect attribution agree except the explicitly recorded defects.",
+      "boundary_check": "Printed Q labels correctly removed from lexical form; expected answer retained in audit and excluded from question Gloss."
+    },
+    {
+      "selection_index": 3,
+      "stratum": "seeded20",
+      "source_unit_key": "devagnanavaram2021:whole:B.4:p25:5",
+      "actual_rows": [
+        {
+          "file_kind": "narrative",
+          "row": [
+            "Gondi",
+            "",
+            "ne matanan gerstan.",
+            "leave the goat? Let the tigers eat you.” But the dogs helped me escape.",
+            "",
+            "",
+            "Source pairs this printed text segment with a free English translation; no word-level alignment is asserted.",
+            "devagnanavaram-et-al2021koya[Appendix B.4, p. 25, text unit 5]",
+            "",
+            "",
+            "devagnanavaram2021:whole:B.4:p25:5",
+            "",
+            "",
+            "",
+            "dialect:Gondi:sil-koya-1985-malakanagiri:Malakanagiri%20Koya"
+          ]
+        }
+      ],
+      "status": "material_errors",
+      "errors": [
+        {
+          "class": "source_response_scope_metadata",
+          "expected_tag": "multiword",
+          "reason": "Printed segment continues a preceding English quotation; classify as multiword fragment, not automatically a complete sentence."
+        }
+      ],
+      "source_comparison": "Original PDF image inspected; lexical gloss, locator and lect attribution agree except the explicitly recorded defects."
+    },
+    {
+      "selection_index": 4,
+      "stratum": "seeded20",
+      "source_unit_key": "devagnanavaram2021:whole:B.5:p26:4",
+      "actual_rows": [
+        {
+          "file_kind": "narrative",
+          "row": [
+            "Gondi",
+            "",
+            "Und begge attond?",
+            "Where did he go?",
+            "",
+            "",
+            "Source pairs this printed text segment with a free English translation; no word-level alignment is asserted.",
+            "devagnanavaram-et-al2021koya[Appendix B.5, p. 26, text unit 4]",
+            "",
+            "",
+            "devagnanavaram2021:whole:B.5:p26:4",
+            "",
+            "",
+            "",
+            "dialect:Gondi:sil-koya-1985-podia:Podia%20Koya interr"
+          ]
+        }
+      ],
+      "status": "material_errors",
+      "errors": [
+        {
+          "class": "source_response_scope_metadata",
+          "expected_tag": "sentential",
+          "reason": "Complete source-translated response/question lacks sentential classification."
+        }
+      ],
+      "source_comparison": "Original PDF image inspected; lexical gloss, locator and lect attribution agree except the explicitly recorded defects.",
+      "boundary_check": "Printed Q labels correctly removed from lexical form; expected answer retained in audit and excluded from question Gloss."
+    },
+    {
+      "selection_index": 5,
+      "stratum": "seeded20",
+      "source_unit_key": "devagnanavaram2021:whole:B.6:p29:6",
+      "actual_rows": [
+        {
+          "file_kind": "narrative",
+          "row": [
+            "Gondi",
+            "",
+            "Tupakte rendu debba batta wadstor?",
+            "What did they shoot twice?",
+            "",
+            "",
+            "Source pairs this printed text segment with a free English translation; no word-level alignment is asserted.",
+            "devagnanavaram-et-al2021koya[Appendix B.6, p. 29, text unit 6]",
+            "",
+            "",
+            "devagnanavaram2021:whole:B.6:p29:6",
+            "",
+            "",
+            "",
+            "dialect:Gondi:sil-koya-1985-chintoor:Chintoor%20Koya interr"
+          ]
+        }
+      ],
+      "status": "material_errors",
+      "errors": [
+        {
+          "class": "source_response_scope_metadata",
+          "expected_tag": "sentential",
+          "reason": "Complete source-translated response/question lacks sentential classification."
+        }
+      ],
+      "source_comparison": "Original PDF image inspected; lexical gloss, locator and lect attribution agree except the explicitly recorded defects.",
+      "boundary_check": "Printed Q labels correctly removed from lexical form; expected answer retained in audit and excluded from question Gloss."
+    },
+    {
+      "selection_index": 6,
+      "stratum": "seeded20",
+      "source_unit_key": "devagnanavaram2021:whole:B.7:p31:13",
+      "actual_rows": [
+        {
+          "file_kind": "narrative",
+          "row": [
+            "Gondi",
+            "",
+            "Manaan peytagaltku beela manaani saavdengin demsur kaad loonu demirrte podudatte.",
+            "How should we hold the pig? It will kill us, so let’s go. Night came.",
+            "",
+            "",
+            "Source pairs this printed text segment with a free English translation; no word-level alignment is asserted.",
+            "devagnanavaram-et-al2021koya[Appendix B.7, p. 31, text unit 13]",
+            "",
+            "",
+            "devagnanavaram2021:whole:B.7:p31:13",
+            "",
+            "",
+            "",
+            "dialect:Gondi:sil-koya-1985-jaganathapuram:Jaganathapuram%20Koya"
+          ]
+        }
+      ],
+      "status": "material_errors",
+      "errors": [
+        {
+          "class": "source_response_scope_metadata",
+          "expected_tag": "sentential",
+          "reason": "Complete source-translated response/question lacks sentential classification."
+        }
+      ],
+      "source_comparison": "Original PDF image inspected; lexical gloss, locator and lect attribution agree except the explicitly recorded defects."
+    },
+    {
+      "selection_index": 7,
+      "stratum": "seeded20",
+      "source_unit_key": "devagnanavaram2021:whole:B.1:p19:3",
+      "actual_rows": [
+        {
+          "file_kind": "narrative",
+          "row": [
+            "Gondi",
+            "",
+            "Sikaridaral beke sotor?",
+            "Where did the hunter go?",
+            "",
+            "",
+            "Source pairs this printed text segment with a free English translation; no word-level alignment is asserted.",
+            "devagnanavaram-et-al2021koya[Appendix B.1, p. 19, text unit 3]",
+            "",
+            "",
+            "devagnanavaram2021:whole:B.1:p19:3",
+            "",
+            "",
+            "",
+            "dialect:Gondi:sil-koya-1985-utnoor:Utnoor%20Gondi interr"
+          ]
+        }
+      ],
+      "status": "material_errors",
+      "errors": [
+        {
+          "class": "source_response_scope_metadata",
+          "expected_tag": "sentential",
+          "reason": "Complete source-translated response/question lacks sentential classification."
+        }
+      ],
+      "source_comparison": "Original PDF image inspected; lexical gloss, locator and lect attribution agree except the explicitly recorded defects.",
+      "boundary_check": "Printed Q labels correctly removed from lexical form; expected answer retained in audit and excluded from question Gloss."
+    },
+    {
+      "selection_index": 8,
+      "stratum": "seeded20",
+      "source_unit_key": "devagnanavaram2021:whole:B.4:p24:1",
+      "actual_rows": [
+        {
+          "file_kind": "narrative",
+          "row": [
+            "Gondi",
+            "",
+            "Veta daklaro nadu onmat lanton matan onmat.",
+            "We are going hunting tomorrow so don’t drink ‘lanton’.",
+            "",
+            "",
+            "Source pairs this printed text segment with a free English translation; no word-level alignment is asserted.",
+            "devagnanavaram-et-al2021koya[Appendix B.4, p. 24, text unit 1]",
+            "",
+            "",
+            "devagnanavaram2021:whole:B.4:p24:1",
+            "",
+            "",
+            "",
+            "dialect:Gondi:sil-koya-1985-malakanagiri:Malakanagiri%20Koya"
+          ]
+        }
+      ],
+      "status": "material_errors",
+      "errors": [
+        {
+          "class": "source_response_scope_metadata",
+          "expected_tag": "sentential",
+          "reason": "Complete source-translated response/question lacks sentential classification."
+        }
+      ],
+      "source_comparison": "Original PDF image inspected; lexical gloss, locator and lect attribution agree except the explicitly recorded defects."
+    },
+    {
+      "selection_index": 9,
+      "stratum": "seeded20",
+      "source_unit_key": "devagnanavaram2021:whole:B.4:p24:18",
+      "actual_rows": [
+        {
+          "file_kind": "narrative",
+          "row": [
+            "Gondi",
+            "",
+            "Und ordag bata udi mirton?",
+            "On the way, what did he see and run from?",
+            "",
+            "",
+            "Source pairs this printed text segment with a free English translation; no word-level alignment is asserted.",
+            "devagnanavaram-et-al2021koya[Appendix B.4, p. 24, text unit 18]",
+            "",
+            "",
+            "devagnanavaram2021:whole:B.4:p24:18",
+            "",
+            "",
+            "",
+            "dialect:Gondi:sil-koya-1985-malakanagiri:Malakanagiri%20Koya interr"
+          ]
+        }
+      ],
+      "status": "material_errors",
+      "errors": [
+        {
+          "class": "source_response_scope_metadata",
+          "expected_tag": "sentential",
+          "reason": "Complete source-translated response/question lacks sentential classification."
+        }
+      ],
+      "source_comparison": "Original PDF image inspected; lexical gloss, locator and lect attribution agree except the explicitly recorded defects.",
+      "boundary_check": "Printed Q labels correctly removed from lexical form; expected answer retained in audit and excluded from question Gloss."
+    },
+    {
+      "selection_index": 10,
+      "stratum": "seeded20",
+      "source_unit_key": "devagnanavaram2021:whole:B.4:p25:1",
+      "actual_rows": [
+        {
+          "file_kind": "narrative",
+          "row": [
+            "Gondi",
+            "",
+            "Martari matan martare manji agetawaton banela.",
+            "I climbed up a tree and looked around, but there was nobody.",
+            "",
+            "",
+            "Source pairs this printed text segment with a free English translation; no word-level alignment is asserted.",
+            "devagnanavaram-et-al2021koya[Appendix B.4, p. 25, text unit 1]",
+            "",
+            "",
+            "devagnanavaram2021:whole:B.4:p25:1",
+            "",
+            "",
+            "",
+            "dialect:Gondi:sil-koya-1985-malakanagiri:Malakanagiri%20Koya"
+          ]
+        }
+      ],
+      "status": "material_errors",
+      "errors": [
+        {
+          "class": "source_response_scope_metadata",
+          "expected_tag": "sentential",
+          "reason": "Complete source-translated response/question lacks sentential classification."
+        }
+      ],
+      "source_comparison": "Original PDF image inspected; lexical gloss, locator and lect attribution agree except the explicitly recorded defects."
+    },
+    {
+      "selection_index": 11,
+      "stratum": "seeded20",
+      "source_unit_key": "devagnanavaram2021:whole:B.7:p30:1",
+      "actual_rows": [
+        {
+          "file_kind": "narrative",
+          "row": [
+            "Gondi",
+            "",
+            "Ma aanaalu baamkaya vati nalu voojku vaatapay paddin vaasi peyte.",
+            "My brothers kept the bomb four days when the pig came and took it.",
+            "",
+            "",
+            "Source pairs this printed text segment with a free English translation; no word-level alignment is asserted.",
+            "devagnanavaram-et-al2021koya[Appendix B.7, p. 30, text unit 1]",
+            "",
+            "",
+            "devagnanavaram2021:whole:B.7:p30:1",
+            "",
+            "",
+            "",
+            "dialect:Gondi:sil-koya-1985-jaganathapuram:Jaganathapuram%20Koya"
+          ]
+        }
+      ],
+      "status": "material_errors",
+      "errors": [
+        {
+          "class": "source_response_scope_metadata",
+          "expected_tag": "sentential",
+          "reason": "Complete source-translated response/question lacks sentential classification."
+        }
+      ],
+      "source_comparison": "Original PDF image inspected; lexical gloss, locator and lect attribution agree except the explicitly recorded defects."
+    },
+    {
+      "selection_index": 12,
+      "stratum": "seeded20",
+      "source_unit_key": "devagnanavaram2021:whole:3.1.4:p6:salt:2",
+      "actual_rows": [
+        {
+          "file_kind": "comparative",
+          "row": [
+            "Gondi",
+            "",
+            "ovor",
+            "salt",
+            "",
+            "",
+            "Source compares dialect sound correspondences; no etymological relationship is asserted.",
+            "devagnanavaram-et-al2021koya[section 3.1.4, p. 6, salt]",
+            "",
+            "",
+            "devagnanavaram2021:whole:3.1.4:p6:salt:2",
+            "",
+            "",
+            "",
+            "dialect:Gondi:sil-koya-1985-bhamani-gondi:Bhamani%20Gondi"
+          ]
+        }
+      ],
+      "status": "pass",
+      "errors": [],
+      "source_comparison": "Original PDF image inspected; lexical gloss, locator and lect attribution agree except the explicitly recorded defects."
+    },
+    {
+      "selection_index": 13,
+      "stratum": "seeded20",
+      "source_unit_key": "devagnanavaram2021:whole:3.1.4:p7:six:2",
+      "actual_rows": [
+        {
+          "file_kind": "comparative",
+          "row": [
+            "Gondi",
+            "",
+            "arun",
+            "six",
+            "",
+            "",
+            "Source compares dialect sound correspondences; no etymological relationship is asserted.",
+            "devagnanavaram-et-al2021koya[section 3.1.4, p. 7, six]",
+            "",
+            "",
+            "devagnanavaram2021:whole:3.1.4:p7:six:2",
+            "",
+            "",
+            "",
+            "dialect:Gondi:sil-koya-1985-bhamani-gondi:Bhamani%20Gondi num"
+          ]
+        }
+      ],
+      "status": "pass",
+      "errors": [],
+      "source_comparison": "Original PDF image inspected; lexical gloss, locator and lect attribution agree except the explicitly recorded defects."
+    },
+    {
+      "selection_index": 14,
+      "stratum": "seeded20",
+      "source_unit_key": "devagnanavaram2021:whole:3.1.4:p7:different:2",
+      "actual_rows": [
+        {
+          "file_kind": "comparative",
+          "row": [
+            "Gondi",
+            "",
+            "vere vere",
+            "different",
+            "",
+            "",
+            "Source compares dialect sound correspondences; no etymological relationship is asserted.",
+            "devagnanavaram-et-al2021koya[section 3.1.4, p. 7, different]",
+            "",
+            "",
+            "devagnanavaram2021:whole:3.1.4:p7:different:2",
+            "",
+            "",
+            "",
+            "dialect:Gondi:sil-koya-1985-bhamani-gondi:Bhamani%20Gondi"
+          ]
+        }
+      ],
+      "status": "material_errors",
+      "errors": [
+        {
+          "class": "source_response_scope_metadata",
+          "expected_tag": "multiword",
+          "reason": "Printed repeated expression vere vere is two source words, with no multiword classification."
+        }
+      ],
+      "source_comparison": "Original PDF image inspected; lexical gloss, locator and lect attribution agree except the explicitly recorded defects."
+    },
+    {
+      "selection_index": 15,
+      "stratum": "seeded20",
+      "source_unit_key": "devagnanavaram2021:whole:3.1.4:p7:village:3",
+      "actual_rows": [
+        {
+          "file_kind": "comparative",
+          "row": [
+            "Gondi",
+            "",
+            "naru",
+            "village",
+            "",
+            "",
+            "Source compares dialect sound correspondences; no etymological relationship is asserted.",
+            "devagnanavaram-et-al2021koya[section 3.1.4, p. 7, village]",
+            "",
+            "",
+            "devagnanavaram2021:whole:3.1.4:p7:village:3",
+            "",
+            "",
+            "",
+            "dialect:Gondi:sil-koya-1985-chintoor:Chintoor%20Koya"
+          ]
+        }
+      ],
+      "status": "pass",
+      "errors": [],
+      "source_comparison": "Original PDF image inspected; lexical gloss, locator and lect attribution agree except the explicitly recorded defects."
+    },
+    {
+      "selection_index": 16,
+      "stratum": "seeded20",
+      "source_unit_key": "wordlist:UTN:33",
+      "actual_rows": [
+        {
+          "file_kind": "wordlist",
+          "row": [
+            "Gondi",
+            "",
+            "sutːɛ",
+            "hammer",
+            "",
+            "sutːɛ",
+            "",
+            "devagnanavaram-et-al2021koya[Appendix E, printed p. 88, item 33, Utnoor Gondi]",
+            "",
+            "",
+            "silkoya1985:utn:i033:v1",
+            "",
+            "",
+            "",
+            "dialect:Gondi:sil-koya-1985-utnoor:Utnoor%20Gondi"
+          ]
+        }
+      ],
+      "status": "pass",
+      "errors": [],
+      "source_comparison": "Original PDF image inspected; lexical gloss, locator and lect attribution agree except the explicitly recorded defects.",
+      "notation_check": "Utnoor hammer sut:ɛ agrees with ledger sutːɛ under existing length encoding; no missing mark."
+    },
+    {
+      "selection_index": 17,
+      "stratum": "seeded20",
+      "source_unit_key": "wordlist:JAG:78",
+      "actual_rows": [
+        {
+          "file_kind": "wordlist",
+          "row": [
+            "Gondi",
+            "",
+            "wulipaia",
+            "onion",
+            "",
+            "wulipaia",
+            "",
+            "devagnanavaram-et-al2021koya[Appendix E, printed p. 80, item 78, Jaganathapuram Koya]",
+            "",
+            "",
+            "silkoya1985:jag:i078:v1",
+            "",
+            "",
+            "",
+            "dialect:Gondi:sil-koya-1985-jaganathapuram:Jaganathapuram%20Koya"
+          ]
+        }
+      ],
+      "status": "material_errors",
+      "errors": [
+        {
+          "class": "source_transcription",
+          "old": "wulipaia",
+          "source_literal": "wul·ipaia",
+          "proposed_ledger_correction": "wulːipaia",
+          "reason": "Original printed80 Jaganathapuram item78 has a distinct raised dot after l. Printed76 legend identifies this as lengthened; omission loses consonant length. PDF85 Rect196,542,266,564 inspected at5x."
+        }
+      ],
+      "source_comparison": "Original PDF image inspected; lexical gloss, locator and lect attribution agree except the explicitly recorded defects."
+    },
+    {
+      "selection_index": 18,
+      "stratum": "seeded20",
+      "source_unit_key": "wordlist:CHI:74",
+      "actual_rows": [
+        {
+          "file_kind": "wordlist",
+          "row": [
+            "Gondi",
+            "",
+            "veɾutsenga",
+            "groundnut",
+            "",
+            "veɾutsenga",
+            "",
+            "devagnanavaram-et-al2021koya[Appendix E, printed p. 80, item 74, Chintoor Koya]",
+            "",
+            "",
+            "silkoya1985:chi:i074:v1",
+            "",
+            "",
+            "",
+            "dialect:Gondi:sil-koya-1985-chintoor:Chintoor%20Koya"
+          ]
+        }
+      ],
+      "status": "material_errors",
+      "errors": [
+        {
+          "class": "source_notation_preservation",
+          "old": "veɾutsenga",
+          "source_literal": "ᵘeɾutsenga",
+          "reason": "Original printed80 Chintoor item74 starts with raised u before e, not baseline v. Printed76 explicitly explains raised vowel glides. Preserve literal notation in Original and document any separately justified display/phonemic conversion; no such exception was found in reviewed package policy."
+        }
+      ],
+      "source_comparison": "Original PDF image inspected; lexical gloss, locator and lect attribution agree except the explicitly recorded defects."
+    },
+    {
+      "selection_index": 19,
+      "stratum": "seeded20",
+      "source_unit_key": "wordlist:JAG:118",
+      "actual_rows": [
+        {
+          "file_kind": "wordlist",
+          "row": [
+            "Gondi",
+            "",
+            "naɾka",
+            "night",
+            "",
+            "naɾka",
+            "",
+            "devagnanavaram-et-al2021koya[Appendix E, printed p. 82, item 118, Jaganathapuram Koya]",
+            "",
+            "",
+            "silkoya1985:jag:i118:v1",
+            "",
+            "",
+            "",
+            "dialect:Gondi:sil-koya-1985-jaganathapuram:Jaganathapuram%20Koya"
+          ]
+        }
+      ],
+      "status": "pass",
+      "errors": [],
+      "source_comparison": "Original PDF image inspected; lexical gloss, locator and lect attribution agree except the explicitly recorded defects.",
+      "notation_check": "Jaganathapuram night form and column confirmed; no lost length mark."
+    },
+    {
+      "selection_index": 20,
+      "stratum": "edge_control",
+      "source_unit_key": "devagnanavaram2021:whole:B.6:p28:13",
+      "actual_rows": [
+        {
+          "file_kind": "narrative",
+          "row": [
+            "Gondi",
+            "",
+            "Badangk urrpal bidatiki vatte?",
+            "Why did the lizard come out of the hole?",
+            "",
+            "",
+            "Source pairs this printed text segment with a free English translation; no word-level alignment is asserted.",
+            "devagnanavaram-et-al2021koya[Appendix B.6, p. 28, text unit 13]",
+            "",
+            "",
+            "devagnanavaram2021:whole:B.6:p28:13",
+            "",
+            "",
+            "",
+            "dialect:Gondi:sil-koya-1985-chintoor:Chintoor%20Koya interr"
+          ]
+        }
+      ],
+      "status": "material_errors",
+      "errors": [
+        {
+          "class": "source_response_scope_metadata",
+          "expected_tag": "sentential",
+          "reason": "Complete source-translated response/question lacks sentential classification."
+        }
+      ],
+      "source_comparison": "Original PDF image inspected; lexical gloss, locator and lect attribution agree except the explicitly recorded defects.",
+      "boundary_check": "Printed Q labels correctly removed from lexical form; expected answer retained in audit and excluded from question Gloss."
+    },
+    {
+      "selection_index": 21,
+      "stratum": "edge_control",
+      "source_unit_key": "devagnanavaram2021:whole:B.6:p28:15",
+      "actual_rows": [
+        {
+          "file_kind": "narrative",
+          "row": [
+            "Gondi",
+            "",
+            "Pilla jalla batta tungtoru?",
+            "What did the children do?",
+            "",
+            "",
+            "Source pairs this printed text segment with a free English translation; no word-level alignment is asserted.",
+            "devagnanavaram-et-al2021koya[Appendix B.6, p. 28, text unit 15]",
+            "",
+            "",
+            "devagnanavaram2021:whole:B.6:p28:15",
+            "",
+            "",
+            "",
+            "dialect:Gondi:sil-koya-1985-chintoor:Chintoor%20Koya interr"
+          ]
+        }
+      ],
+      "status": "material_errors",
+      "errors": [
+        {
+          "class": "source_response_scope_metadata",
+          "expected_tag": "sentential",
+          "reason": "Complete source-translated response/question lacks sentential classification."
+        }
+      ],
+      "source_comparison": "Original PDF image inspected; lexical gloss, locator and lect attribution agree except the explicitly recorded defects.",
+      "boundary_check": "Printed Q labels correctly removed from lexical form; expected answer retained in audit and excluded from question Gloss."
+    },
+    {
+      "selection_index": 22,
+      "stratum": "edge_control",
+      "source_unit_key": "devagnanavaram2021:whole:B.6:p29:1",
+      "actual_rows": [
+        {
+          "file_kind": "narrative",
+          "row": [
+            "Gondi",
+            "",
+            "Oru batta utoor?",
+            "What did they drink?",
+            "",
+            "",
+            "Source pairs this printed text segment with a free English translation; no word-level alignment is asserted.",
+            "devagnanavaram-et-al2021koya[Appendix B.6, p. 29, text unit 1]",
+            "",
+            "",
+            "devagnanavaram2021:whole:B.6:p29:1",
+            "",
+            "",
+            "",
+            "dialect:Gondi:sil-koya-1985-chintoor:Chintoor%20Koya interr"
+          ]
+        }
+      ],
+      "status": "material_errors",
+      "errors": [
+        {
+          "class": "source_response_scope_metadata",
+          "expected_tag": "sentential",
+          "reason": "Complete source-translated response/question lacks sentential classification."
+        }
+      ],
+      "source_comparison": "Original PDF image inspected; lexical gloss, locator and lect attribution agree except the explicitly recorded defects.",
+      "boundary_check": "Printed Q labels correctly removed from lexical form; expected answer retained in audit and excluded from question Gloss."
+    },
+    {
+      "selection_index": 23,
+      "stratum": "edge_control",
+      "source_unit_key": "devagnanavaram2021:whole:B.6:p29:4",
+      "actual_rows": [
+        {
+          "file_kind": "narrative",
+          "row": [
+            "Gondi",
+            "",
+            "Bari munjukini wadsille?",
+            "Why did they not hunt monkey?",
+            "",
+            "",
+            "Source pairs this printed text segment with a free English translation; no word-level alignment is asserted.",
+            "devagnanavaram-et-al2021koya[Appendix B.6, p. 29, text unit 4]",
+            "",
+            "",
+            "devagnanavaram2021:whole:B.6:p29:4",
+            "",
+            "",
+            "",
+            "dialect:Gondi:sil-koya-1985-chintoor:Chintoor%20Koya interr"
+          ]
+        }
+      ],
+      "status": "material_errors",
+      "errors": [
+        {
+          "class": "source_response_scope_metadata",
+          "expected_tag": "sentential",
+          "reason": "Complete source-translated response/question lacks sentential classification."
+        }
+      ],
+      "source_comparison": "Original PDF image inspected; lexical gloss, locator and lect attribution agree except the explicitly recorded defects.",
+      "boundary_check": "Printed Q labels correctly removed from lexical form; expected answer retained in audit and excluded from question Gloss."
+    },
+    {
+      "selection_index": 24,
+      "stratum": "edge_control",
+      "source_unit_key": "devagnanavaram2021:whole:B.6:p29:6",
+      "actual_rows": [
+        {
+          "file_kind": "narrative",
+          "row": [
+            "Gondi",
+            "",
+            "Tupakte rendu debba batta wadstor?",
+            "What did they shoot twice?",
+            "",
+            "",
+            "Source pairs this printed text segment with a free English translation; no word-level alignment is asserted.",
+            "devagnanavaram-et-al2021koya[Appendix B.6, p. 29, text unit 6]",
+            "",
+            "",
+            "devagnanavaram2021:whole:B.6:p29:6",
+            "",
+            "",
+            "",
+            "dialect:Gondi:sil-koya-1985-chintoor:Chintoor%20Koya interr"
+          ]
+        }
+      ],
+      "status": "material_errors",
+      "errors": [
+        {
+          "class": "source_response_scope_metadata",
+          "expected_tag": "sentential",
+          "reason": "Complete source-translated response/question lacks sentential classification."
+        }
+      ],
+      "source_comparison": "Original PDF image inspected; lexical gloss, locator and lect attribution agree except the explicitly recorded defects.",
+      "boundary_check": "Printed Q labels correctly removed from lexical form; expected answer retained in audit and excluded from question Gloss."
+    },
+    {
+      "selection_index": 25,
+      "stratum": "edge_control",
+      "source_unit_key": "devagnanavaram2021:whole:B.7:p30:5",
+      "actual_rows": [
+        {
+          "file_kind": "narrative",
+          "row": [
+            "Gondi",
+            "",
+            "Daanini [stutter] jaada uudi malla vassi naaTe kulatin kelto.",
+            "Seeing her footprints, I came and told the village people.",
+            "",
+            "",
+            "Source pairs this printed text segment with a free English translation; no word-level alignment is asserted. Source marks a stutter at the position retained in Original.",
+            "devagnanavaram-et-al2021koya[Appendix B.7, p. 30, text unit 5]",
+            "",
+            "",
+            "devagnanavaram2021:whole:B.7:p30:5",
+            "",
+            "",
+            "",
+            "dialect:Gondi:sil-koya-1985-jaganathapuram:Jaganathapuram%20Koya"
+          ]
+        }
+      ],
+      "status": "material_errors",
+      "errors": [
+        {
+          "class": "source_response_scope_metadata",
+          "expected_tag": "sentential",
+          "reason": "Complete source-translated response/question lacks sentential classification."
+        }
+      ],
+      "source_comparison": "Original PDF image inspected; lexical gloss, locator and lect attribution agree except the explicitly recorded defects.",
+      "boundary_check": "Printed [stutter] position retained in Original and removed by explicit profile rule; no invented lexical token."
+    },
+    {
+      "selection_index": 26,
+      "stratum": "edge_control",
+      "source_unit_key": "devagnanavaram2021:whole:B.2:p20:parsi-definition",
+      "actual_rows": [
+        {
+          "file_kind": "narrative",
+          "row": [
+            "Gondi",
+            "",
+            "parsi",
+            "an axe-like tool",
+            "",
+            "",
+            "",
+            "devagnanavaram-et-al2021koya[Appendix B, p. 20, named term in text]",
+            "",
+            "",
+            "devagnanavaram2021:whole:B.2:p20:parsi-definition",
+            "",
+            "",
+            "",
+            "dialect:Gondi:sil-koya-1985-bhamani-gondi:Bhamani%20Gondi"
+          ]
+        }
+      ],
+      "status": "pass",
+      "errors": [],
+      "source_comparison": "Original PDF image inspected; lexical gloss, locator and lect attribution agree except the explicitly recorded defects.",
+      "boundary_check": "Named target term and English context verified. Explicit parsi definition retained; lanton/jaw/Zoma/perrama remain intentionally blank-gloss. Vija is a documentary festival proper name retained in audit and whole sentence, not assigned an invented definition."
+    },
+    {
+      "selection_index": 27,
+      "stratum": "edge_control",
+      "source_unit_key": "devagnanavaram2021:whole:B.4:p24:lanton-context",
+      "actual_rows": [
+        {
+          "file_kind": "narrative",
+          "row": [
+            "Gondi",
+            "",
+            "lanton",
+            "",
+            "",
+            "",
+            "Source translation: We are going hunting tomorrow so don’t drink ‘lanton’. The source supplies no separate lexical definition.",
+            "devagnanavaram-et-al2021koya[Appendix B, p. 24, named term in text]",
+            "",
+            "",
+            "devagnanavaram2021:whole:B.4:p24:lanton-context",
+            "",
+            "",
+            "",
+            "dialect:Gondi:sil-koya-1985-malakanagiri:Malakanagiri%20Koya"
+          ]
+        }
+      ],
+      "status": "pass",
+      "errors": [],
+      "source_comparison": "Original PDF image inspected; lexical gloss, locator and lect attribution agree except the explicitly recorded defects.",
+      "boundary_check": "Named target term and English context verified. Explicit parsi definition retained; lanton/jaw/Zoma/perrama remain intentionally blank-gloss. Vija is a documentary festival proper name retained in audit and whole sentence, not assigned an invented definition."
+    },
+    {
+      "selection_index": 28,
+      "stratum": "edge_control",
+      "source_unit_key": "devagnanavaram2021:whole:B.5:p26:jaw-context",
+      "actual_rows": [
+        {
+          "file_kind": "narrative",
+          "row": [
+            "Gondi",
+            "",
+            "jaw",
+            "",
+            "",
+            "",
+            "Source translation: My dog and I went hunting. When the sun came down we drank ‘jaw’. The source supplies no separate lexical definition.",
+            "devagnanavaram-et-al2021koya[Appendix B, p. 26, named term in text]",
+            "",
+            "",
+            "devagnanavaram2021:whole:B.5:p26:jaw-context",
+            "",
+            "",
+            "",
+            "dialect:Gondi:sil-koya-1985-podia:Podia%20Koya"
+          ]
+        }
+      ],
+      "status": "pass",
+      "errors": [],
+      "source_comparison": "Original PDF image inspected; lexical gloss, locator and lect attribution agree except the explicitly recorded defects.",
+      "boundary_check": "Named target term and English context verified. Explicit parsi definition retained; lanton/jaw/Zoma/perrama remain intentionally blank-gloss. Vija is a documentary festival proper name retained in audit and whole sentence, not assigned an invented definition."
+    },
+    {
+      "selection_index": 29,
+      "stratum": "edge_control",
+      "source_unit_key": "devagnanavaram2021:whole:B.6:p28:Vija-context",
+      "actual_rows": [],
+      "status": "pass",
+      "errors": [],
+      "source_comparison": "Original PDF image inspected; lexical gloss, locator and lect attribution agree except the explicitly recorded defects.",
+      "boundary_check": "Named target term and English context verified. Explicit parsi definition retained; lanton/jaw/Zoma/perrama remain intentionally blank-gloss. Vija is a documentary festival proper name retained in audit and whole sentence, not assigned an invented definition."
+    },
+    {
+      "selection_index": 30,
+      "stratum": "edge_control",
+      "source_unit_key": "devagnanavaram2021:whole:B.6:p28:Zoma-context",
+      "actual_rows": [
+        {
+          "file_kind": "narrative",
+          "row": [
+            "Gondi",
+            "",
+            "Zoma",
+            "",
+            "",
+            "",
+            "Source translation: We drank zoma fully and then one day we went. The source supplies no separate lexical definition.",
+            "devagnanavaram-et-al2021koya[Appendix B, p. 28, named term in text]",
+            "",
+            "",
+            "devagnanavaram2021:whole:B.6:p28:Zoma-context",
+            "",
+            "",
+            "",
+            "dialect:Gondi:sil-koya-1985-chintoor:Chintoor%20Koya"
+          ]
+        }
+      ],
+      "status": "pass",
+      "errors": [],
+      "source_comparison": "Original PDF image inspected; lexical gloss, locator and lect attribution agree except the explicitly recorded defects.",
+      "boundary_check": "Named target term and English context verified. Explicit parsi definition retained; lanton/jaw/Zoma/perrama remain intentionally blank-gloss. Vija is a documentary festival proper name retained in audit and whole sentence, not assigned an invented definition."
+    },
+    {
+      "selection_index": 31,
+      "stratum": "edge_control",
+      "source_unit_key": "devagnanavaram2021:whole:B.6:p29:perrama-context",
+      "actual_rows": [
+        {
+          "file_kind": "narrative",
+          "row": [
+            "Gondi",
+            "",
+            "perrama",
+            "",
+            "",
+            "",
+            "Source translation: While we go and go, we met perrama; when we met them, we shot twice. The source supplies no separate lexical definition.",
+            "devagnanavaram-et-al2021koya[Appendix B, p. 29, named term in text]",
+            "",
+            "",
+            "devagnanavaram2021:whole:B.6:p29:perrama-context",
+            "",
+            "",
+            "",
+            "dialect:Gondi:sil-koya-1985-chintoor:Chintoor%20Koya"
+          ]
+        }
+      ],
+      "status": "pass",
+      "errors": [],
+      "source_comparison": "Original PDF image inspected; lexical gloss, locator and lect attribution agree except the explicitly recorded defects.",
+      "boundary_check": "Named target term and English context verified. Explicit parsi definition retained; lanton/jaw/Zoma/perrama remain intentionally blank-gloss. Vija is a documentary festival proper name retained in audit and whole sentence, not assigned an invented definition."
+    }
+  ],
+  "limits": "Independent sampled source-stage audit only. No build, database, installation or release action."
+}

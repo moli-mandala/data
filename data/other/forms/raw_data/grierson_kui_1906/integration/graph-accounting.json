@@ -1,0 +1,134 @@
+[
+  {
+    "child_key": "grierson1906kui:p463:negative-conjunctive-example:1",
+    "parent_keys": [
+      "grierson1906kui:p462:principal-conjunctive-past-c1:1",
+      "grierson1906kui:p463:negative-conjunctive-morphology:1"
+    ],
+    "disposition": "accept_ordered_components",
+    "source_claim_and_decision": "Original p463 explicitly forms the negative conjunctive compound by adding ār-aṅgā to the past conjunctive participle. The independently attested past conjunctive pāga is the correct first endpoint, not the homographic verbal noun. Keep source analysis and its literal fused boundary; this is not a variant edge.",
+    "child_form": "pāgār-aṅgā",
+    "parent_forms": [
+      "pāga",
+      "ār-aṅgā"
+    ],
+    "emitted_parent_keys": [
+      "grierson1906kui:p462:principal-conjunctive-past-c1:1",
+      "grierson1906kui:p463:negative-conjunctive-morphology:1"
+    ],
+    "edge_type": "component"
+  },
+  {
+    "child_key": "grierson1906kui:p463:compound-example:4",
+    "parent_keys": [
+      "grierson1906kui:p462:principal-conjunctive-past-c5:1",
+      "grierson1906kui:p463:copula-1-excl-c1:1"
+    ],
+    "disposition": "accept_ordered_components",
+    "source_claim_and_decision": "Original p463 explicitly forms compound tenses from conjunctive participles and manba; gia-maĩ contains independently attested gia and maĩ, with compatible standard lect and person. Preserve the perfect construction rather than treating it as ordinary spelling variation.",
+    "child_form": "gia-maĩ",
+    "parent_forms": [
+      "gia",
+      "maĩ"
+    ],
+    "emitted_parent_keys": [
+      "grierson1906kui:p462:principal-conjunctive-past-c5:1",
+      "grierson1906kui:p463:copula-1-excl-c1:1"
+    ],
+    "edge_type": "component"
+  },
+  {
+    "child_key": "grierson1906kui:p463:passive-example:1",
+    "parent_keys": [
+      "grierson1906kui:p462:principal-verbal-noun-c5:1",
+      "grierson1906kui:p462:principal-relative-past-c4:1"
+    ],
+    "disposition": "accept_after_approved_alternate_emission",
+    "source_claim_and_decision": "Original p463 explicitly adds āwa to the verbal noun and gives giwa-āti. āti is independently present as the past relative form of āwa. First parent is currently the literal grouped cell giwa, gipka: select its reviewed giwa emission key, never point to the whole comma group as a component. Then two ordered component edges are supported. Preserve the source qualification that the passive is not in common use.",
+    "child_form": "giwa-āti",
+    "parent_forms": [
+      "giwa, gipka",
+      "āti"
+    ],
+    "approved_emission_parent_keys": [
+      "grierson1906kui:p462:principal-verbal-noun-c5:1:v1",
+      "grierson1906kui:p462:principal-relative-past-c4:1"
+    ],
+    "parent_approval": "Root message confirms root-grammar-alternative-emission-review-20260927.json approves giwa as :v1. Exporter must assert this key has literal giwa before installing the two-component relationship.",
+    "emitted_parent_keys": [
+      "grierson1906kui:p462:principal-verbal-noun-c5:1:v1",
+      "grierson1906kui:p462:principal-relative-past-c4:1"
+    ],
+    "edge_type": "component"
+  },
+  {
+    "child_key": "grierson1906kui:p463:compound-example:1",
+    "parent_keys": [
+      "grierson1906kui:p462:principal-conjunctive-present-c5:1",
+      "grierson1906kui:p463:copula-1-excl-c1:1"
+    ],
+    "disposition": "conditional_on_reviewed_optional_endpoint",
+    "source_claim_and_decision": "Explicit compound-tense construction. First parent is gi(pk)i; select a reviewed gipki optional-form emission before linking gipki-maĩ. Do not point to the notation group or invent an unattested new base.",
+    "child_form": "gipki-maĩ",
+    "parent_forms": [
+      "gi(pk)i",
+      "maĩ"
+    ],
+    "emitted_parent_keys": [],
+    "edge_type": null
+  },
+  {
+    "child_key": "grierson1906kui:p463:compound-example:2",
+    "parent_keys": [
+      "grierson1906kui:p462:principal-conjunctive-present-c5:1",
+      "grierson1906kui:p463:copula-1-excl-c3:1"
+    ],
+    "disposition": "conditional_on_reviewed_optional_endpoint",
+    "source_claim_and_decision": "Same explicit construction; use reviewed gipki and the first-person singular past massē endpoint, not homographic third-person massē.",
+    "child_form": "gipki-massē",
+    "parent_forms": [
+      "gi(pk)i",
+      "massē"
+    ],
+    "emitted_parent_keys": [],
+    "edge_type": null
+  },
+  {
+    "child_key": "grierson1906kui:p462:adjective-example:1",
+    "parent_keys": [
+      "grierson1906kui:p462:adjective-morphology:1"
+    ],
+    "disposition": "incomplete_component_set_hold",
+    "source_claim_and_decision": "Original p462 explicitly derives the adjective by adding gaṭṭa to a noun. Suffix endpoint exists; no independently attested dāṭā noun endpoint was found in the reviewed grammar. Do not serialize a single suffix as a complete derivational base or invent a dāṭā row. Retain the exact claim and incomplete component candidate.",
+    "child_form": "dāṭā-gaṭṭa",
+    "parent_forms": [
+      "gaṭṭa"
+    ],
+    "emitted_parent_keys": [],
+    "edge_type": null
+  },
+  {
+    "child_key": "grierson1906kui:p463:verbal-noun-example:1",
+    "parent_keys": [],
+    "disposition": "unmatched_relative_participle_base",
+    "source_claim_and_decision": "Original p463 explicitly derives tinañju from a relative participle plus third-person pronoun ending. No independently attested matching tin(a) relative-participle endpoint occurs in the reviewed grammar. tinba to eat is not the stated immediate base; eñju has its own quantity uncertainty. Retain the derivation claim without fabricated endpoints.",
+    "child_form": "tinañju",
+    "parent_forms": [],
+    "emitted_parent_keys": [],
+    "edge_type": null
+  },
+  {
+    "child_key": "grierson1906kui:p463:verbal-noun-example:2",
+    "parent_keys": [
+      "grierson1906kui:p462:noun-prose:14"
+    ],
+    "disposition": "incomplete_component_set_hold",
+    "source_claim_and_decision": "Explicit verbal-noun derivation; āri is attested but the matching relative-participle base is absent. Ordinary third-person pronoun āri is not automatically the isolated suffix analysis. Keep incomplete-component evidence, not a lone derived edge to the suffix.",
+    "child_form": "tināri",
+    "parent_forms": [
+      "āri"
+    ],
+    "emitted_parent_keys": [],
+    "edge_type": null
+  }
+]

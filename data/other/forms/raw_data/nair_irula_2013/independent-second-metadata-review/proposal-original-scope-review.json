@@ -1,0 +1,228 @@
+{
+  "status": "bounded independent original review of all12 owner second-review proposals; six temporal-suffix scope holds require root policy adjudication, no literal repair identified",
+  "reviewer": "norton_finish",
+  "source_pdf_sha256": "4d2588987dab5d15c62ecc95330ccf7e925a9bce80d08068b91ca3f48c8cc5af",
+  "input_sha256": {
+    "owner-metadata-second-review-proposal.json": "e28540a6bd0f55ac5247456f20a2fd915a3d9d290c2a9552c7eb53317c596c4f",
+    "proposed.csv": "fe21a778a6e93c6c8da14ea16511948cc88468a51f3375d18ea4c25f09f7dbda",
+    "proposal-audit.jsonl": "9b717f616af25e32be6475712dcb9a142e9cceba746afe80441b785132c44e34",
+    "review-manifest-r1.json": "17233c28be1c2092fb42068158d7d20dc81ac7ec84877fffdca9bd1bc709d593"
+  },
+  "original_images_sha256": {
+    "23": "ba90a50cbd1c315f8078028f3401b0a0f408340d2852d466f71933b719aedfa5",
+    "26": "e70234079790426af45f626e589cc64a3c1d7ffeb5f76404c110fd51cb95c23d",
+    "27": "b7db3e8a4ff8a232c81e3918df7f6e6f6757bafab6f7d6147d5674c821294232"
+  },
+  "scope": "Complete12 listed metadata decisions only; not a complete chapter extraction or256-row lexical acceptance audit. Originals visually reviewed at retained1.8x; exact source locators are the named paragraphs of pp23/26/27.",
+  "stability_notice": "Owner earlier reported frozen0b744f06 CSV/b3816b6f audit. On comparison current CSV is fe21a778/audit9b717f61 and contains all12 proposals; report pins actual files, does not overwrite earlier freeze/evidence.",
+  "accepted_removals": 4,
+  "source_conditioned_class_acceptances": 2,
+  "scope_holds": 6,
+  "decisions": [
+    {
+      "entry_key": "nair2013irula:p26:optative-markers:01",
+      "form": "-udi",
+      "proposal": {
+        "entry_key": "nair2013irula:p26:optative-markers:01",
+        "field": "Tags",
+        "old": "suffix opt",
+        "new": "suffix opt weak",
+        "reason": "Source explicitly conditions -udi on weak verbs."
+      },
+      "actual_tags": "suffix opt weak",
+      "printed_page": 26,
+      "decision": "accept only as source-conditioned allomorph class",
+      "recommendation": "Weak/strong may index explicitly reported marker-use class; keep conditioning Notes and do not classify marker as lexical weak/strong verb or propagate to unrelated complete examples.",
+      "evidence": "Original p26 explicitly says -udi and –üdi come after weak verbs and strong verbs respectively. This is morphological conditioning, not separate marker POS.",
+      "material_literal_error": false
+    },
+    {
+      "entry_key": "nair2013irula:p26:optative-markers:02",
+      "form": "–üdi",
+      "proposal": {
+        "entry_key": "nair2013irula:p26:optative-markers:02",
+        "field": "Tags",
+        "old": "suffix opt",
+        "new": "suffix opt strong",
+        "reason": "Source explicitly conditions –üdi on strong verbs."
+      },
+      "actual_tags": "suffix opt strong",
+      "printed_page": 26,
+      "decision": "accept only as source-conditioned allomorph class",
+      "recommendation": "Weak/strong may index explicitly reported marker-use class; keep conditioning Notes and do not classify marker as lexical weak/strong verb or propagate to unrelated complete examples.",
+      "evidence": "Original p26 explicitly says -udi and –üdi come after weak verbs and strong verbs respectively. This is morphological conditioning, not separate marker POS.",
+      "material_literal_error": false
+    },
+    {
+      "entry_key": "nair2013irula:p27:zvelebil-temporal-comparison:01:v1",
+      "form": "aadi",
+      "proposal": {
+        "entry_key": "nair2013irula:p27:zvelebil-temporal-comparison:01:v1",
+        "field": "Tags",
+        "old": "suffix temporal",
+        "new": "suffix temporal non-past",
+        "reason": "Source explicitly gives non-past stem+aadi/adi formula."
+      },
+      "actual_tags": "suffix temporal non-past",
+      "printed_page": 27,
+      "decision": "scope hold: root adjudication requested",
+      "recommendation": "Keep suffix temporal; retain reported past/non-past stem selection formula in Notes/audit. Do not assert intrinsic suffix TAM unless the source-model policy explicitly treats these as tense-conditioned allomorph classes.",
+      "evidence": "Original p27 says non-past stem+aadi/adi (or –aatti/atti and past+aakki/akki) as different. Stem past/non-past is explicit; a separate tense value of isolated suffix is not stated.",
+      "material_literal_error": false
+    },
+    {
+      "entry_key": "nair2013irula:p27:zvelebil-temporal-comparison:01:v2",
+      "form": "adi",
+      "proposal": {
+        "entry_key": "nair2013irula:p27:zvelebil-temporal-comparison:01:v2",
+        "field": "Tags",
+        "old": "suffix temporal",
+        "new": "suffix temporal non-past",
+        "reason": "Source explicitly gives non-past stem+aadi/adi formula."
+      },
+      "actual_tags": "suffix temporal non-past",
+      "printed_page": 27,
+      "decision": "scope hold: root adjudication requested",
+      "recommendation": "Keep suffix temporal; retain reported past/non-past stem selection formula in Notes/audit. Do not assert intrinsic suffix TAM unless the source-model policy explicitly treats these as tense-conditioned allomorph classes.",
+      "evidence": "Original p27 says non-past stem+aadi/adi (or –aatti/atti and past+aakki/akki) as different. Stem past/non-past is explicit; a separate tense value of isolated suffix is not stated.",
+      "material_literal_error": false
+    },
+    {
+      "entry_key": "nair2013irula:p27:zvelebil-temporal-comparison:02:v1",
+      "form": "–aatti",
+      "proposal": {
+        "entry_key": "nair2013irula:p27:zvelebil-temporal-comparison:02:v1",
+        "field": "Tags",
+        "old": "suffix temporal",
+        "new": "suffix temporal non-past",
+        "reason": "Source explicitly gives non-past stem+–aatti/atti alternative formula."
+      },
+      "actual_tags": "suffix temporal non-past",
+      "printed_page": 27,
+      "decision": "scope hold: root adjudication requested",
+      "recommendation": "Keep suffix temporal; retain reported past/non-past stem selection formula in Notes/audit. Do not assert intrinsic suffix TAM unless the source-model policy explicitly treats these as tense-conditioned allomorph classes.",
+      "evidence": "Original p27 says non-past stem+aadi/adi (or –aatti/atti and past+aakki/akki) as different. Stem past/non-past is explicit; a separate tense value of isolated suffix is not stated.",
+      "material_literal_error": false
+    },
+    {
+      "entry_key": "nair2013irula:p27:zvelebil-temporal-comparison:02:v2",
+      "form": "atti",
+      "proposal": {
+        "entry_key": "nair2013irula:p27:zvelebil-temporal-comparison:02:v2",
+        "field": "Tags",
+        "old": "suffix temporal",
+        "new": "suffix temporal non-past",
+        "reason": "Source explicitly gives non-past stem+–aatti/atti alternative formula."
+      },
+      "actual_tags": "suffix temporal non-past",
+      "printed_page": 27,
+      "decision": "scope hold: root adjudication requested",
+      "recommendation": "Keep suffix temporal; retain reported past/non-past stem selection formula in Notes/audit. Do not assert intrinsic suffix TAM unless the source-model policy explicitly treats these as tense-conditioned allomorph classes.",
+      "evidence": "Original p27 says non-past stem+aadi/adi (or –aatti/atti and past+aakki/akki) as different. Stem past/non-past is explicit; a separate tense value of isolated suffix is not stated.",
+      "material_literal_error": false
+    },
+    {
+      "entry_key": "nair2013irula:p27:zvelebil-temporal-comparison:03:v1",
+      "form": "aakki",
+      "proposal": {
+        "entry_key": "nair2013irula:p27:zvelebil-temporal-comparison:03:v1",
+        "field": "Tags",
+        "old": "suffix temporal",
+        "new": "suffix temporal pret",
+        "reason": "Source explicitly gives past+aakki/akki formula."
+      },
+      "actual_tags": "suffix temporal pret",
+      "printed_page": 27,
+      "decision": "scope hold: root adjudication requested",
+      "recommendation": "Keep suffix temporal; retain reported past/non-past stem selection formula in Notes/audit. Do not assert intrinsic suffix TAM unless the source-model policy explicitly treats these as tense-conditioned allomorph classes.",
+      "evidence": "Original p27 says non-past stem+aadi/adi (or –aatti/atti and past+aakki/akki) as different. Stem past/non-past is explicit; a separate tense value of isolated suffix is not stated.",
+      "material_literal_error": false
+    },
+    {
+      "entry_key": "nair2013irula:p27:zvelebil-temporal-comparison:03:v2",
+      "form": "akki",
+      "proposal": {
+        "entry_key": "nair2013irula:p27:zvelebil-temporal-comparison:03:v2",
+        "field": "Tags",
+        "old": "suffix temporal",
+        "new": "suffix temporal pret",
+        "reason": "Source explicitly gives past+aakki/akki formula."
+      },
+      "actual_tags": "suffix temporal pret",
+      "printed_page": 27,
+      "decision": "scope hold: root adjudication requested",
+      "recommendation": "Keep suffix temporal; retain reported past/non-past stem selection formula in Notes/audit. Do not assert intrinsic suffix TAM unless the source-model policy explicitly treats these as tense-conditioned allomorph classes.",
+      "evidence": "Original p27 says non-past stem+aadi/adi (or –aatti/atti and past+aakki/akki) as different. Stem past/non-past is explicit; a separate tense value of isolated suffix is not stated.",
+      "material_literal_error": false
+    },
+    {
+      "entry_key": "nair2013irula:p23:purposive-example:01",
+      "form": "maṇikkadukkaayi",
+      "proposal": {
+        "entry_key": "nair2013irula:p23:purposive-example:01",
+        "field": "Tags",
+        "old": "purposive verb",
+        "new": "purposive",
+        "reason": "Case-section for-speaking example does not explicitly establish lexical verb POS; retain source-defined purposive function."
+      },
+      "actual_tags": "purposive",
+      "printed_page": 23,
+      "decision": "accept removal of unsupported verb",
+      "recommendation": "Retain purposive source case function; full purposive nominal/infinitival example is not explicitly a lexical verb in this paragraph.",
+      "evidence": "Original p23 case continuation begins Purposive –kkaayi; maṇikkadukkaayi for speaking.",
+      "material_literal_error": false
+    },
+    {
+      "entry_key": "nair2013irula:p26:imperative-examples:01",
+      "form": "collu",
+      "proposal": {
+        "entry_key": "nair2013irula:p26:imperative-examples:01",
+        "field": "Tags",
+        "old": "impv verb 2sg",
+        "new": "impv verb sg",
+        "reason": "Source explicitly says imperative singular is stem; simple say gloss has no overt second-person feature, unlike say-you(Pl) companion. Preserve singular rather than inferred2sg."
+      },
+      "actual_tags": "impv verb sg",
+      "printed_page": 26,
+      "decision": "accept conservative sg metadata",
+      "recommendation": "Retain impv verb sg; no objection to withholding2sg where printed singular imperative example is only say.",
+      "evidence": "Original p26: imperative singular is the verb stem; collu say contrasts with colli say-you(Pl).",
+      "material_literal_error": false
+    },
+    {
+      "entry_key": "nair2013irula:p23:universal-examples:01",
+      "form": "aa -rumu",
+      "proposal": {
+        "entry_key": "nair2013irula:p23:universal-examples:01",
+        "field": "Tags",
+        "old": "pron quantifier multiword-expression",
+        "new": "pron quantifier",
+        "reason": "Printed space adjacent to bound hyphen is morphological segmentation typography; source calls these universal pronoun morphs, not independently established multiword expressions. Preserve exact spaced Original/Form."
+      },
+      "actual_tags": "pron quantifier",
+      "printed_page": 23,
+      "decision": "accept removal of confident MWE",
+      "recommendation": "Preserve literal source spaces adjacent to bound hyphens; retain pron quantifier, no space-only MWE inference.",
+      "evidence": "Original p23 calls these three morphemes for universal pronouns and prints aa -rumu, e-dumu, ev- ämu.",
+      "material_literal_error": false
+    },
+    {
+      "entry_key": "nair2013irula:p23:universal-examples:03",
+      "form": "ev- ämu",
+      "proposal": {
+        "entry_key": "nair2013irula:p23:universal-examples:03",
+        "field": "Tags",
+        "old": "pron quantifier multiword-expression",
+        "new": "pron quantifier",
+        "reason": "Printed space adjacent to bound hyphen is morphological segmentation typography; source calls these universal pronoun morphs, not independently established multiword expressions. Preserve exact spaced Original/Form."
+      },
+      "actual_tags": "pron quantifier",
+      "printed_page": 23,
+      "decision": "accept removal of confident MWE",
+      "recommendation": "Preserve literal source spaces adjacent to bound hyphens; retain pron quantifier, no space-only MWE inference.",
+      "evidence": "Original p23 calls these three morphemes for universal pronouns and prints aa -rumu, e-dumu, ev- ämu.",
+      "material_literal_error": false
+    }
+  ],
+  "owner_or_canonical_changes": false
+}

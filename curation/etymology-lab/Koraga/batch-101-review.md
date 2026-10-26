@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Koraga · Bhat 1971 Koraga records, 2026-09-25 · batch 101. Pending user review; autonomous research continues.
+
+| # | Koraga | Proposed etymology | Evidence |
+|---|---|---|---|
+| 286 | **maṇḍe** ‘head’ | Proposed reflex of [**DEDR 4682**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=414) | DEDR 4682 full article (p. 414) gives Kor. (M.) maṇḍa , (O. T.) manḍe head. Bhat maṇḍe “head” is the same cited Koraga form and sense; its original dialect:Koraga:onti:Onti uncertain dialect tag is retained. The article is used as family classification, not an independent second attestation of Bhat. (1 record.) |
+| 287 | **maṇḍe** ‘head’ | Proposed reflex of [**DEDR 4682**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=414) | DEDR 4682 full article (p. 414) gives Kor. (M.) maṇḍa , (O. T.) manḍe head. Bhat maṇḍe “head” is the same cited Koraga form and sense; its original dialect:Koraga:tappu:Tappu uncertain dialect tag is retained. The article is used as family classification, not an independent second attestation of Bhat. (1 record.) |
+| 288 | **maṇṇɨ** ‘soil’ | Proposed reflex of [**DEDR 4666**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=413) | DEDR 4666 full article (p. 413) gives 4666 (a) Ta. maṇ the earth, world, earth as an element, dust, dirt, dry ground, soil, land, lime-mortar. Ma. maṇ, maṇṇu earth (as one of the five elements), soil, mud, mudwall, wall, earth a Bhat maṇṇɨ “soil” matches Lindgren Koraga mannɨ “earth (soil)” in form and sense; this cross-source match is a candidate lead, with the full DEDR article defining the family. Both source identities and dialect tags are preserved. (1 record.) |
+| 289 | **mannɨ** ‘soil’ | Proposed reflex of [**DEDR 4666**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=413) | DEDR 4666 full article (p. 413) gives 4666 (a) Ta. maṇ the earth, world, earth as an element, dust, dirt, dry ground, soil, land, lime-mortar. Ma. maṇ, maṇṇu earth (as one of the five elements), soil, mud, mudwall, wall, earth a Bhat mannɨ “soil” matches Lindgren Koraga mannɨ “earth (soil)” in form and sense; this cross-source match is a candidate lead, with the full DEDR article defining the family. Both source identities and dialect tags are preserved. (1 record.) |
+| 290 | **mara** ‘tree’ | Proposed reflex of [**DEDR 4711**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=416) | DEDR 4711 full article (p. 416) gives 4711 ( a ) Ta. maram ( in cpds. marattu-) tree, wood, timber; marakkāl a measure. Ma. maram tree, wood, timber; marakkāl a measure. Ko. marm ( obl. mart-) tree. To. me·ṇ ( obl. me·ṇt-) id. K Bhat mara “tree” matches Lindgren Koraga mara “tree” in form and sense; this cross-source match is a candidate lead, with the full DEDR article defining the family. Both source identities and dialect tags are preserved. (1 record.) |
+
+Proposed assignment rows: **5**. Affected records: **5**. Relation kinds: **reflex**. Multi-part responses retain their source order.
+
+Exact persistent IDs and complete source records: [batch-101.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Koraga/batch-101.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../koraga-bhat-20260925/research-holds.json). No new lexical material or donor nodes are introduced.

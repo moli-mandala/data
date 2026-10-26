@@ -1,0 +1,42 @@
+earlier,later,earlier_rule,later_rule,i,j,delta_ned,words
+@sibilant-s @sibilant-s,@s-stop-aspirate @s-stop-aspirate,Sib > s,s Stop > $2-asp $2+asp,5,7,0.0018,25
+@sibilant-s @sibilant-s,@s-nasal @s-nasal,Sib > s,{s h} Nasal > $2 h,5,8,0.0009,22
+@sibilant-s @sibilant-s,@assim-sonorant @assim-sonorant,Sib > s,s Son > s s,5,9,0.0009,23
+@final-cons-loss @final-cons-loss,@nasal-cluster @nasal-cluster,repeat: Cx > ∅ / _ #,Nasal Stop > ṁ $2,4,11,0.00106,23
+@prati-retroflexion @prati-retroflexion,@assim-sonorant @assim-sonorant,t > ṭ / # p r a _ i,Stop {r y v l Nasal} > $1-asp $1,1,13,0.00049,37
+@final-cons-loss @final-cons-loss,@assim-sonorant @assim-sonorant,repeat: Cx > ∅ / _ #,Stop {r y v l Nasal} > $1-asp $1,4,13,0.00106,51
+@sibilant-s @sibilant-s,@assim-sonorant @assim-sonorant,Sib > s,Stop {r y v l Nasal} > $1-asp $1,5,13,0.0036,53
+@palatal-Cy @palatal-Cy,@assim-sonorant @assim-sonorant,{t tʰ d dʰ} y > {c c j j} {c cʰ j jʰ}@1,Stop {r y v l Nasal} > $1-asp $1,6,13,0.00631,37
+@prati-retroflexion @prati-retroflexion,@initial-degem @initial-degem,t > ṭ / # p r a _ i,C C > $2 / # _,1,17,0.00049,28
+@final-cons-loss @final-cons-loss,@initial-degem @initial-degem,repeat: Cx > ∅ / _ #,C C > $2 / # _,4,17,0.00106,42
+@sibilant-s @sibilant-s,@initial-degem @initial-degem,Sib > s,C C > $2 / # _,5,17,0.0036,43
+@palatal-Cy @palatal-Cy,@initial-degem @initial-degem,{t tʰ d dʰ} y > {c c j j} {c cʰ j jʰ}@1,C C > $2 / # _,6,17,0.00631,32
+@assim-sonorant @assim-sonorant,@initial-degem @initial-degem,s Son > s s,C C > $2 / # _,9,17,0.00441,31
+@assim-sonorant @assim-sonorant,@initial-degem @initial-degem,Nasal {y v} > $1 $1,C C > $2 / # _,10,17,0.00288,28
+@assim-sonorant @assim-sonorant,@initial-degem @initial-degem,Stop {r y v l Nasal} > $1-asp $1,C C > $2 / # _,13,17,0.01647,38
+@prati-retroflexion @prati-retroflexion,@int-retroflex @int-retroflex,t > ṭ / # p r a _ i,{ṭ ṭʰ} > {ḍ ḍʰ} / V _ V,1,21,0.00049,2
+@prati-retroflexion @prati-retroflexion,@int-stop-loss @int-stop-loss,t > ṭ / # p r a _ i,y > ∅ / V _ V,1,23,0.00049,17
+@final-cons-loss @final-cons-loss,@int-stop-loss @int-stop-loss,repeat: Cx > ∅ / _ #,y > ∅ / V _ V,4,23,0.00075,30
+@sibilant-s @sibilant-s,@int-stop-loss @int-stop-loss,Sib > s,y > ∅ / V _ V,5,23,0.00075,35
+@palatal-Cy @palatal-Cy,@int-stop-loss @int-stop-loss,{t tʰ d dʰ} y > {c c j j} {c cʰ j jʰ}@1,y > ∅ / V _ V,6,23,0.00075,19
+@assim-sonorant @assim-sonorant,@int-stop-loss @int-stop-loss,s Son > s s,y > ∅ / V _ V,9,23,0.00075,23
+@assim-sonorant @assim-sonorant,@int-stop-loss @int-stop-loss,Nasal {y v} > $1 $1,y > ∅ / V _ V,10,23,0.00075,16
+@assim-sonorant @assim-sonorant,@int-stop-loss @int-stop-loss,Stop {r y v l Nasal} > $1-asp $1,y > ∅ / V _ V,13,23,0.00075,42
+@aya-e @aya-e,@int-stop-loss @int-stop-loss,a y a > ē / _ t {i ē},y > ∅ / V _ V,19,23,0.00075,16
+@prati-retroflexion @prati-retroflexion,@int-stop-loss @int-stop-loss,t > ṭ / # p r a _ i,{k g c j t d} > ∅ / V _ V,1,24,0.00049,42
+@final-cons-loss @final-cons-loss,@int-stop-loss @int-stop-loss,repeat: Cx > ∅ / _ #,{k g c j t d} > ∅ / V _ V,4,24,0.00075,55
+@sibilant-s @sibilant-s,@int-stop-loss @int-stop-loss,Sib > s,{k g c j t d} > ∅ / V _ V,5,24,0.00075,54
+@palatal-Cy @palatal-Cy,@int-stop-loss @int-stop-loss,{t tʰ d dʰ} y > {c c j j} {c cʰ j jʰ}@1,{k g c j t d} > ∅ / V _ V,6,24,0.00075,44
+@assim-sonorant @assim-sonorant,@int-stop-loss @int-stop-loss,s Son > s s,{k g c j t d} > ∅ / V _ V,9,24,0.00075,48
+@assim-sonorant @assim-sonorant,@int-stop-loss @int-stop-loss,Nasal {y v} > $1 $1,{k g c j t d} > ∅ / V _ V,10,24,0.00075,42
+@assim-sonorant @assim-sonorant,@int-stop-loss @int-stop-loss,Stop {r y v l Nasal} > $1-asp $1,{k g c j t d} > ∅ / V _ V,13,24,0.00075,64
+@aya-e @aya-e,@int-stop-loss @int-stop-loss,a y a > ē / _ t {i ē},{k g c j t d} > ∅ / V _ V,19,24,0.00075,41
+@prati-retroflexion @prati-retroflexion,@n-retroflex @n-retroflex,t > ṭ / # p r a _ i,n > ṇ,1,26,0.00049,23
+@prati-retroflexion @prati-retroflexion,@vowel-shift,t > ṭ / # p r a _ i,ē > e,1,30,0.00049,17
+@sibilant-s @sibilant-s,@vowel-shift,Sib > s,ē > e,5,30,0.00135,34
+@palatal-Cy @palatal-Cy,@vowel-shift,{t tʰ d dʰ} y > {c c j j} {c cʰ j jʰ}@1,ē > e,6,30,0.00135,19
+@assim-sonorant @assim-sonorant,@vowel-shift,s Son > s s,ē > e,9,30,0.00135,23
+@assim-sonorant @assim-sonorant,@vowel-shift,Nasal {y v} > $1 $1,ē > e,10,30,0.00135,17
+@assim-sonorant @assim-sonorant,@vowel-shift,Stop {r y v l Nasal} > $1-asp $1,ē > e,13,30,0.00135,46
+@aya-e @aya-e,@vowel-shift,a y a > ē / _ t {i ē},ē > e,19,30,0.00075,16
+@int-stop-loss @int-stop-loss,@vowel-shift,{k g c j t d} > ∅ / V _ V,ē > e,24,30,0.00135,45

@@ -1,0 +1,785 @@
+{
+  "status": "complete independent chapter original/source-record review; six definite affix-POS failures plus two source-supported recommendations before final output acceptance",
+  "source_pdf_sha256": "4d2588987dab5d15c62ecc95330ccf7e925a9bce80d08068b91ca3f48c8cc5af",
+  "input_sha256": {
+    "review-freeze.json": "3a6fda61dbfa06a27de82b857193d7be65b0bf1085faac04cb7f65938d3cc818",
+    "physical-units-first-reading.jsonl": "7bd8af78668aeff2453ebb99ae9fd0e8ad57212f10af6f3867164ea8e29f51c0",
+    "proposed.csv": "4e85544cd7835bdd84eb58898b0b74368efc81c04aada4b0c7d89713297d0c83",
+    "proposal-audit.jsonl": "494168f119323d48bf7bf0b2b5afac56fbbfc490d05b9df854ccc1c2d8898cb9"
+  },
+  "original_images_sha256": {
+    "page-55-150dpi.png": "a6c7deabfec9ad695f6d76fe32a58c308aaeb796d2efa48dbdf720153f540d23",
+    "page-56-150dpi.png": "11b708c8b47da8104c9af0c0ec2def230de2c7685af3061e15abfd8249e66b91",
+    "page-57-150dpi.png": "abd55f92eeb8bed6a944642d6a984d1b51f221eff2b4135a8394657dd6d052b6",
+    "page-58-150dpi.png": "358a38e083e62adf1f2aeddae8d5511c6802c6622626e7b81af669b26ef38c06"
+  },
+  "detail_images_sha256": {
+    "page-12-outside-classification-4x.png": "0e006155e61fe2a2605f402ca8e6af90a778f6991a1ff5aa706494d2f68b28ba",
+    "page-55-noun-dots-lowline-4x.png": "9310e8997ef55d3d19070c962947bd0f4cf43d9243945da282545aa5af797eac",
+    "page-56-pronoun-lowline-4x.png": "db19d9fe3cd86707631ebcf7d00b2d254cd0710bd555e46cd0e5d6c07de4c8ec",
+    "page-57-participle-tilde-dots-4x.png": "64a88927c8c3c1784468cd5de83e671e13f1ab074aae329ff95a0bf275cfe721"
+  },
+  "coverage_counts": {
+    "audit_groups": 65,
+    "witness_records": 164,
+    "output_rows": 135,
+    "target_rows": 110,
+    "comparator_rows": 25,
+    "existing_occurrence_reuses": 6
+  },
+  "literal_corrections": [],
+  "metadata_recommendations": [
+    {
+      "entry_key": "nair2013mullukurumba:p57:present-suffixes:w1",
+      "field": "Tags",
+      "old": "affix pres suffix verb",
+      "proposed": "affix pres suffix",
+      "type": "definite source-class correction",
+      "source_evidence": "Original p57 explicitly says present/future tense suffixes; verbal attachment does not make isolated marker a lexical verb. Keep affix/suffix/TAM unchanged."
+    },
+    {
+      "entry_key": "nair2013mullukurumba:p57:present-suffixes:w2",
+      "field": "Tags",
+      "old": "affix pres suffix verb",
+      "proposed": "affix pres suffix",
+      "type": "definite source-class correction",
+      "source_evidence": "Original p57 explicitly says present/future tense suffixes; verbal attachment does not make isolated marker a lexical verb. Keep affix/suffix/TAM unchanged."
+    },
+    {
+      "entry_key": "nair2013mullukurumba:p57:present-suffixes:w3",
+      "field": "Tags",
+      "old": "affix pres suffix verb",
+      "proposed": "affix pres suffix",
+      "type": "definite source-class correction",
+      "source_evidence": "Original p57 explicitly says present/future tense suffixes; verbal attachment does not make isolated marker a lexical verb. Keep affix/suffix/TAM unchanged."
+    },
+    {
+      "entry_key": "nair2013mullukurumba:p57:future-suffixes:w1",
+      "field": "Tags",
+      "old": "affix fut suffix verb",
+      "proposed": "affix fut suffix",
+      "type": "definite source-class correction",
+      "source_evidence": "Original p57 explicitly says present/future tense suffixes; verbal attachment does not make isolated marker a lexical verb. Keep affix/suffix/TAM unchanged."
+    },
+    {
+      "entry_key": "nair2013mullukurumba:p57:future-suffixes:w2",
+      "field": "Tags",
+      "old": "affix fut suffix verb",
+      "proposed": "affix fut suffix",
+      "type": "definite source-class correction",
+      "source_evidence": "Original p57 explicitly says present/future tense suffixes; verbal attachment does not make isolated marker a lexical verb. Keep affix/suffix/TAM unchanged."
+    },
+    {
+      "entry_key": "nair2013mullukurumba:p57:future-suffixes:w3",
+      "field": "Tags",
+      "old": "affix fut suffix verb",
+      "proposed": "affix fut suffix",
+      "type": "definite source-class correction",
+      "source_evidence": "Original p57 explicitly says present/future tense suffixes; verbal attachment does not make isolated marker a lexical verb. Keep affix/suffix/TAM unchanged."
+    },
+    {
+      "entry_key": "nair2013mullukurumba:p55:plural-examples:w1",
+      "field": "Tags",
+      "old": "noun pl",
+      "proposed": "m noun pl",
+      "type": "source-supported metadata recommendation",
+      "source_evidence": "Original p55 mutt-en-maar-u old men repeats the same masculine mutt-en old man base illustrated above; plural does not erase the source masculine classification. No gender inferred for animal nouns."
+    },
+    {
+      "entry_key": "nair2013mullukurumba:p56:instrumental-examples:w1",
+      "field": "Gloss",
+      "old": "",
+      "proposed": "by the knife",
+      "type": "paired-gloss scope recommendation; root adjudication requested",
+      "source_evidence": "Original p56 instrumental example row places Malayalam kattiyaal and Mullu katti-aalu in the two named columns followed by by the knife. This single paired row supports shared gloss; do not extend over subsequent mismatched dative/locative examples."
+    }
+  ],
+  "controls": [
+    "p55 one drawn l lowline distinct from encoded underdot; eight feminine and plural source-marker differences source-exact",
+    "p56 first exclusive n lowline and all source table columns/scoped glosses checked; blank nominatives held",
+    "p57 paañña has tilde on both n positions, not ordinary nn; peyyi and naṭannu distinct arrow output sources",
+    "p57 masculine/feminine singular suffix slash forms retain actual differing hyphens; plural masculine-row forms not duplicated into blank feminine cell",
+    "p57 isolated neuter zero witnesses held; complete tense examples source-subject tags checked without conditioning transfer",
+    "p58 reported bibliography and colophon close the physical book; no missing final lexical section",
+    "2 explicit pronoun free variants are closed true source pairs; arrow analyses are not variant/component edges",
+    "Unresolved Veetuvar/Mullu ethnonym components retain attributed documentary meanings, no automatic target-language assignment"
+  ],
+  "coverage": [
+    {
+      "source_unit_key": "nair2013mullukurumba:p55:identity-ethnonym-leads",
+      "printed_page": 55,
+      "witness_keys": [
+        "nair2013mullukurumba:p55:identity-ethnonym-leads:w1",
+        "nair2013mullukurumba:p55:identity-ethnonym-leads:w2"
+      ],
+      "literal_and_gloss_review": "all listed records compared with original chapter page; no literal correction found",
+      "source_scope": "documentary/zero/blank/reuse retained as separately accounted by owner; chapter55–58 originals completely viewed"
+    },
+    {
+      "source_unit_key": "nair2013mullukurumba:p55:settlements",
+      "printed_page": 55,
+      "witness_keys": [
+        "nair2013mullukurumba:p55:settlements:w1",
+        "nair2013mullukurumba:p55:settlements:w2",
+        "nair2013mullukurumba:p55:settlements:w3",
+        "nair2013mullukurumba:p55:settlements:w4",
+        "nair2013mullukurumba:p55:settlements:w5",
+        "nair2013mullukurumba:p55:settlements:w6",
+        "nair2013mullukurumba:p55:settlements:w7",
+        "nair2013mullukurumba:p55:settlements:w8",
+        "nair2013mullukurumba:p55:settlements:w9",
+        "nair2013mullukurumba:p55:settlements:w10"
+      ],
+      "literal_and_gloss_review": "all listed records compared with original chapter page; no literal correction found",
+      "source_scope": "documentary/zero/blank/reuse retained as separately accounted by owner; chapter55–58 originals completely viewed"
+    },
+    {
+      "source_unit_key": "nair2013mullukurumba:p55:neighbour-community-names",
+      "printed_page": 55,
+      "witness_keys": [
+        "nair2013mullukurumba:p55:neighbour-community-names:w1",
+        "nair2013mullukurumba:p55:neighbour-community-names:w2",
+        "nair2013mullukurumba:p55:neighbour-community-names:w3"
+      ],
+      "literal_and_gloss_review": "all listed records compared with original chapter page; no literal correction found",
+      "source_scope": "documentary/zero/blank/reuse retained as separately accounted by owner; chapter55–58 originals completely viewed"
+    },
+    {
+      "source_unit_key": "nair2013mullukurumba:p55:livelihood-and-contact",
+      "printed_page": 55,
+      "witness_keys": [],
+      "literal_and_gloss_review": "all listed records compared with original chapter page; no literal correction found",
+      "source_scope": "documentary/zero/blank/reuse retained as separately accounted by owner; chapter55–58 originals completely viewed"
+    },
+    {
+      "source_unit_key": "nair2013mullukurumba:p55:classification-authorities",
+      "printed_page": 55,
+      "witness_keys": [
+        "nair2013mullukurumba:p55:classification-authorities:w1"
+      ],
+      "literal_and_gloss_review": "all listed records compared with original chapter page; no literal correction found",
+      "source_scope": "documentary/zero/blank/reuse retained as separately accounted by owner; chapter55–58 originals completely viewed"
+    },
+    {
+      "source_unit_key": "nair2013mullukurumba:p55:gender-number-general",
+      "printed_page": 55,
+      "witness_keys": [],
+      "literal_and_gloss_review": "all listed records compared with original chapter page; no literal correction found",
+      "source_scope": "documentary/zero/blank/reuse retained as separately accounted by owner; chapter55–58 originals completely viewed"
+    },
+    {
+      "source_unit_key": "nair2013mullukurumba:p55:masculine-suffixes",
+      "printed_page": 55,
+      "witness_keys": [
+        "nair2013mullukurumba:p55:masculine-suffixes:w1",
+        "nair2013mullukurumba:p55:masculine-suffixes:w2"
+      ],
+      "literal_and_gloss_review": "all listed records compared with original chapter page; no literal correction found",
+      "source_scope": "documentary/zero/blank/reuse retained as separately accounted by owner; chapter55–58 originals completely viewed"
+    },
+    {
+      "source_unit_key": "nair2013mullukurumba:p55:masculine-examples",
+      "printed_page": 55,
+      "witness_keys": [
+        "nair2013mullukurumba:p55:masculine-examples:w1",
+        "nair2013mullukurumba:p55:masculine-examples:w2"
+      ],
+      "literal_and_gloss_review": "all listed records compared with original chapter page; no literal correction found",
+      "source_scope": "documentary/zero/blank/reuse retained as separately accounted by owner; chapter55–58 originals completely viewed"
+    },
+    {
+      "source_unit_key": "nair2013mullukurumba:p55:feminine-suffixes",
+      "printed_page": 55,
+      "witness_keys": [
+        "nair2013mullukurumba:p55:feminine-suffixes:w1",
+        "nair2013mullukurumba:p55:feminine-suffixes:w2",
+        "nair2013mullukurumba:p55:feminine-suffixes:w3",
+        "nair2013mullukurumba:p55:feminine-suffixes:w4",
+        "nair2013mullukurumba:p55:feminine-suffixes:w5"
+      ],
+      "literal_and_gloss_review": "all listed records compared with original chapter page; no literal correction found",
+      "source_scope": "documentary/zero/blank/reuse retained as separately accounted by owner; chapter55–58 originals completely viewed"
+    },
+    {
+      "source_unit_key": "nair2013mullukurumba:p55:feminine-examples",
+      "printed_page": 55,
+      "witness_keys": [
+        "nair2013mullukurumba:p55:feminine-examples:w1",
+        "nair2013mullukurumba:p55:feminine-examples:w2",
+        "nair2013mullukurumba:p55:feminine-examples:w3",
+        "nair2013mullukurumba:p55:feminine-examples:w4",
+        "nair2013mullukurumba:p55:feminine-examples:w5"
+      ],
+      "literal_and_gloss_review": "all listed records compared with original chapter page; no literal correction found",
+      "source_scope": "documentary/zero/blank/reuse retained as separately accounted by owner; chapter55–58 originals completely viewed"
+    },
+    {
+      "source_unit_key": "nair2013mullukurumba:p55:plural-suffixes",
+      "printed_page": 55,
+      "witness_keys": [
+        "nair2013mullukurumba:p55:plural-suffixes:w1",
+        "nair2013mullukurumba:p55:plural-suffixes:w2",
+        "nair2013mullukurumba:p55:plural-suffixes:w3",
+        "nair2013mullukurumba:p55:plural-suffixes:w4"
+      ],
+      "literal_and_gloss_review": "all listed records compared with original chapter page; no literal correction found",
+      "source_scope": "documentary/zero/blank/reuse retained as separately accounted by owner; chapter55–58 originals completely viewed"
+    },
+    {
+      "source_unit_key": "nair2013mullukurumba:p55:plural-examples",
+      "printed_page": 55,
+      "witness_keys": [
+        "nair2013mullukurumba:p55:plural-examples:w1",
+        "nair2013mullukurumba:p55:plural-examples:w2"
+      ],
+      "literal_and_gloss_review": "all listed records compared with original chapter page; no literal correction found",
+      "source_scope": "documentary/zero/blank/reuse retained as separately accounted by owner; chapter55–58 originals completely viewed"
+    },
+    {
+      "source_unit_key": "nair2013mullukurumba:p55:case-overview",
+      "printed_page": 55,
+      "witness_keys": [],
+      "literal_and_gloss_review": "all listed records compared with original chapter page; no literal correction found",
+      "source_scope": "documentary/zero/blank/reuse retained as separately accounted by owner; chapter55–58 originals completely viewed"
+    },
+    {
+      "source_unit_key": "nair2013mullukurumba:p55:nominative-zero-cells",
+      "printed_page": 55,
+      "witness_keys": [
+        "nair2013mullukurumba:p55:nominative-zero-cells:w1",
+        "nair2013mullukurumba:p55:nominative-zero-cells:w2"
+      ],
+      "literal_and_gloss_review": "all listed records compared with original chapter page; no literal correction found",
+      "source_scope": "documentary/zero/blank/reuse retained as separately accounted by owner; chapter55–58 originals completely viewed"
+    },
+    {
+      "source_unit_key": "nair2013mullukurumba:p55:accusative-suffix-cells",
+      "printed_page": 55,
+      "witness_keys": [
+        "nair2013mullukurumba:p55:accusative-suffix-cells:w1",
+        "nair2013mullukurumba:p55:accusative-suffix-cells:w2"
+      ],
+      "literal_and_gloss_review": "all listed records compared with original chapter page; no literal correction found",
+      "source_scope": "documentary/zero/blank/reuse retained as separately accounted by owner; chapter55–58 originals completely viewed"
+    },
+    {
+      "source_unit_key": "nair2013mullukurumba:p56:accusative-example",
+      "printed_page": 56,
+      "witness_keys": [
+        "nair2013mullukurumba:p56:accusative-example:w1"
+      ],
+      "literal_and_gloss_review": "all listed records compared with original chapter page; no literal correction found",
+      "source_scope": "documentary/zero/blank/reuse retained as separately accounted by owner; chapter55–58 originals completely viewed"
+    },
+    {
+      "source_unit_key": "nair2013mullukurumba:p56:instrumental-suffix-cells",
+      "printed_page": 56,
+      "witness_keys": [
+        "nair2013mullukurumba:p56:instrumental-suffix-cells:w1",
+        "nair2013mullukurumba:p56:instrumental-suffix-cells:w2"
+      ],
+      "literal_and_gloss_review": "all listed records compared with original chapter page; no literal correction found",
+      "source_scope": "documentary/zero/blank/reuse retained as separately accounted by owner; chapter55–58 originals completely viewed"
+    },
+    {
+      "source_unit_key": "nair2013mullukurumba:p56:instrumental-examples",
+      "printed_page": 56,
+      "witness_keys": [
+        "nair2013mullukurumba:p56:instrumental-examples:w1",
+        "nair2013mullukurumba:p56:instrumental-examples:w2"
+      ],
+      "literal_and_gloss_review": "all listed records compared with original chapter page; no literal correction found",
+      "source_scope": "documentary/zero/blank/reuse retained as separately accounted by owner; chapter55–58 originals completely viewed"
+    },
+    {
+      "source_unit_key": "nair2013mullukurumba:p56:dative-suffix-cells",
+      "printed_page": 56,
+      "witness_keys": [
+        "nair2013mullukurumba:p56:dative-suffix-cells:w1",
+        "nair2013mullukurumba:p56:dative-suffix-cells:w2",
+        "nair2013mullukurumba:p56:dative-suffix-cells:w3",
+        "nair2013mullukurumba:p56:dative-suffix-cells:w4",
+        "nair2013mullukurumba:p56:dative-suffix-cells:w5"
+      ],
+      "literal_and_gloss_review": "all listed records compared with original chapter page; no literal correction found",
+      "source_scope": "documentary/zero/blank/reuse retained as separately accounted by owner; chapter55–58 originals completely viewed"
+    },
+    {
+      "source_unit_key": "nair2013mullukurumba:p56:dative-examples",
+      "printed_page": 56,
+      "witness_keys": [
+        "nair2013mullukurumba:p56:dative-examples:w1",
+        "nair2013mullukurumba:p56:dative-examples:w2",
+        "nair2013mullukurumba:p56:dative-examples:w3",
+        "nair2013mullukurumba:p56:dative-examples:w4",
+        "nair2013mullukurumba:p56:dative-examples:w5"
+      ],
+      "literal_and_gloss_review": "all listed records compared with original chapter page; no literal correction found",
+      "source_scope": "documentary/zero/blank/reuse retained as separately accounted by owner; chapter55–58 originals completely viewed"
+    },
+    {
+      "source_unit_key": "nair2013mullukurumba:p56:genitive-suffix-cells",
+      "printed_page": 56,
+      "witness_keys": [
+        "nair2013mullukurumba:p56:genitive-suffix-cells:w1",
+        "nair2013mullukurumba:p56:genitive-suffix-cells:w2",
+        "nair2013mullukurumba:p56:genitive-suffix-cells:w3"
+      ],
+      "literal_and_gloss_review": "all listed records compared with original chapter page; no literal correction found",
+      "source_scope": "documentary/zero/blank/reuse retained as separately accounted by owner; chapter55–58 originals completely viewed"
+    },
+    {
+      "source_unit_key": "nair2013mullukurumba:p56:genitive-examples",
+      "printed_page": 56,
+      "witness_keys": [
+        "nair2013mullukurumba:p56:genitive-examples:w1",
+        "nair2013mullukurumba:p56:genitive-examples:w2",
+        "nair2013mullukurumba:p56:genitive-examples:w3",
+        "nair2013mullukurumba:p56:genitive-examples:w4",
+        "nair2013mullukurumba:p56:genitive-examples:w5",
+        "nair2013mullukurumba:p56:genitive-examples:w6"
+      ],
+      "literal_and_gloss_review": "all listed records compared with original chapter page; no literal correction found",
+      "source_scope": "documentary/zero/blank/reuse retained as separately accounted by owner; chapter55–58 originals completely viewed"
+    },
+    {
+      "source_unit_key": "nair2013mullukurumba:p56:locative-suffix-cells",
+      "printed_page": 56,
+      "witness_keys": [
+        "nair2013mullukurumba:p56:locative-suffix-cells:w1",
+        "nair2013mullukurumba:p56:locative-suffix-cells:w2",
+        "nair2013mullukurumba:p56:locative-suffix-cells:w3",
+        "nair2013mullukurumba:p56:locative-suffix-cells:w4",
+        "nair2013mullukurumba:p56:locative-suffix-cells:w5"
+      ],
+      "literal_and_gloss_review": "all listed records compared with original chapter page; no literal correction found",
+      "source_scope": "documentary/zero/blank/reuse retained as separately accounted by owner; chapter55–58 originals completely viewed"
+    },
+    {
+      "source_unit_key": "nair2013mullukurumba:p56:locative-examples",
+      "printed_page": 56,
+      "witness_keys": [
+        "nair2013mullukurumba:p56:locative-examples:w1",
+        "nair2013mullukurumba:p56:locative-examples:w2",
+        "nair2013mullukurumba:p56:locative-examples:w3",
+        "nair2013mullukurumba:p56:locative-examples:w4",
+        "nair2013mullukurumba:p56:locative-examples:w5"
+      ],
+      "literal_and_gloss_review": "all listed records compared with original chapter page; no literal correction found",
+      "source_scope": "documentary/zero/blank/reuse retained as separately accounted by owner; chapter55–58 originals completely viewed"
+    },
+    {
+      "source_unit_key": "nair2013mullukurumba:p56:ablative-cells",
+      "printed_page": 56,
+      "witness_keys": [
+        "nair2013mullukurumba:p56:ablative-cells:w1",
+        "nair2013mullukurumba:p56:ablative-cells:w2"
+      ],
+      "literal_and_gloss_review": "all listed records compared with original chapter page; no literal correction found",
+      "source_scope": "documentary/zero/blank/reuse retained as separately accounted by owner; chapter55–58 originals completely viewed"
+    },
+    {
+      "source_unit_key": "nair2013mullukurumba:p56:ablative-examples",
+      "printed_page": 56,
+      "witness_keys": [
+        "nair2013mullukurumba:p56:ablative-examples:w1",
+        "nair2013mullukurumba:p56:ablative-examples:w2"
+      ],
+      "literal_and_gloss_review": "all listed records compared with original chapter page; no literal correction found",
+      "source_scope": "documentary/zero/blank/reuse retained as separately accounted by owner; chapter55–58 originals completely viewed"
+    },
+    {
+      "source_unit_key": "nair2013mullukurumba:p56:directive-cells",
+      "printed_page": 56,
+      "witness_keys": [
+        "nair2013mullukurumba:p56:directive-cells:w1",
+        "nair2013mullukurumba:p56:directive-cells:w2"
+      ],
+      "literal_and_gloss_review": "all listed records compared with original chapter page; no literal correction found",
+      "source_scope": "documentary/zero/blank/reuse retained as separately accounted by owner; chapter55–58 originals completely viewed"
+    },
+    {
+      "source_unit_key": "nair2013mullukurumba:p56:directive-examples",
+      "printed_page": 56,
+      "witness_keys": [
+        "nair2013mullukurumba:p56:directive-examples:w1",
+        "nair2013mullukurumba:p56:directive-examples:w2"
+      ],
+      "literal_and_gloss_review": "all listed records compared with original chapter page; no literal correction found",
+      "source_scope": "documentary/zero/blank/reuse retained as separately accounted by owner; chapter55–58 originals completely viewed"
+    },
+    {
+      "source_unit_key": "nair2013mullukurumba:p56:pronouns-first-singular",
+      "printed_page": 56,
+      "witness_keys": [
+        "nair2013mullukurumba:p56:pronouns-first-singular:w1",
+        "nair2013mullukurumba:p56:pronouns-first-singular:w2"
+      ],
+      "literal_and_gloss_review": "all listed records compared with original chapter page; no literal correction found",
+      "source_scope": "documentary/zero/blank/reuse retained as separately accounted by owner; chapter55–58 originals completely viewed"
+    },
+    {
+      "source_unit_key": "nair2013mullukurumba:p56:pronouns-first-plural",
+      "printed_page": 56,
+      "witness_keys": [
+        "nair2013mullukurumba:p56:pronouns-first-plural:w1",
+        "nair2013mullukurumba:p56:pronouns-first-plural:w2"
+      ],
+      "literal_and_gloss_review": "all listed records compared with original chapter page; no literal correction found",
+      "source_scope": "documentary/zero/blank/reuse retained as separately accounted by owner; chapter55–58 originals completely viewed"
+    },
+    {
+      "source_unit_key": "nair2013mullukurumba:p56:pronouns-second-singular",
+      "printed_page": 56,
+      "witness_keys": [
+        "nair2013mullukurumba:p56:pronouns-second-singular:w1",
+        "nair2013mullukurumba:p56:pronouns-second-singular:w2"
+      ],
+      "literal_and_gloss_review": "all listed records compared with original chapter page; no literal correction found",
+      "source_scope": "documentary/zero/blank/reuse retained as separately accounted by owner; chapter55–58 originals completely viewed"
+    },
+    {
+      "source_unit_key": "nair2013mullukurumba:p56:pronouns-second-plural",
+      "printed_page": 56,
+      "witness_keys": [
+        "nair2013mullukurumba:p56:pronouns-second-plural:w1"
+      ],
+      "literal_and_gloss_review": "all listed records compared with original chapter page; no literal correction found",
+      "source_scope": "documentary/zero/blank/reuse retained as separately accounted by owner; chapter55–58 originals completely viewed"
+    },
+    {
+      "source_unit_key": "nair2013mullukurumba:p56:pronouns-third-masculine-singular",
+      "printed_page": 56,
+      "witness_keys": [
+        "nair2013mullukurumba:p56:pronouns-third-masculine-singular:w1",
+        "nair2013mullukurumba:p56:pronouns-third-masculine-singular:w2"
+      ],
+      "literal_and_gloss_review": "all listed records compared with original chapter page; no literal correction found",
+      "source_scope": "documentary/zero/blank/reuse retained as separately accounted by owner; chapter55–58 originals completely viewed"
+    },
+    {
+      "source_unit_key": "nair2013mullukurumba:p56:pronouns-third-feminine-singular",
+      "printed_page": 56,
+      "witness_keys": [
+        "nair2013mullukurumba:p56:pronouns-third-feminine-singular:w1",
+        "nair2013mullukurumba:p56:pronouns-third-feminine-singular:w2"
+      ],
+      "literal_and_gloss_review": "all listed records compared with original chapter page; no literal correction found",
+      "source_scope": "documentary/zero/blank/reuse retained as separately accounted by owner; chapter55–58 originals completely viewed"
+    },
+    {
+      "source_unit_key": "nair2013mullukurumba:p56:pronouns-third-neuter-singular",
+      "printed_page": 56,
+      "witness_keys": [
+        "nair2013mullukurumba:p56:pronouns-third-neuter-singular:w1",
+        "nair2013mullukurumba:p56:pronouns-third-neuter-singular:w2"
+      ],
+      "literal_and_gloss_review": "all listed records compared with original chapter page; no literal correction found",
+      "source_scope": "documentary/zero/blank/reuse retained as separately accounted by owner; chapter55–58 originals completely viewed"
+    },
+    {
+      "source_unit_key": "nair2013mullukurumba:p56:pronouns-third-plural",
+      "printed_page": 56,
+      "witness_keys": [
+        "nair2013mullukurumba:p56:pronouns-third-plural:w1",
+        "nair2013mullukurumba:p56:pronouns-third-plural:w2",
+        "nair2013mullukurumba:p56:pronouns-third-plural:w3",
+        "nair2013mullukurumba:p56:pronouns-third-plural:w4"
+      ],
+      "literal_and_gloss_review": "all listed records compared with original chapter page; no literal correction found",
+      "source_scope": "documentary/zero/blank/reuse retained as separately accounted by owner; chapter55–58 originals completely viewed"
+    },
+    {
+      "source_unit_key": "nair2013mullukurumba:p56:pronouns-third-neuter-plural",
+      "printed_page": 56,
+      "witness_keys": [
+        "nair2013mullukurumba:p56:pronouns-third-neuter-plural:w1",
+        "nair2013mullukurumba:p56:pronouns-third-neuter-plural:w2"
+      ],
+      "literal_and_gloss_review": "all listed records compared with original chapter page; no literal correction found",
+      "source_scope": "documentary/zero/blank/reuse retained as separately accounted by owner; chapter55–58 originals completely viewed"
+    },
+    {
+      "source_unit_key": "nair2013mullukurumba:p56:pronoun-commentary-occurrences",
+      "printed_page": 56,
+      "witness_keys": [
+        "nair2013mullukurumba:p56:pronoun-commentary-occurrences:w1",
+        "nair2013mullukurumba:p56:pronoun-commentary-occurrences:w2",
+        "nair2013mullukurumba:p56:pronoun-commentary-occurrences:w3",
+        "nair2013mullukurumba:p56:pronoun-commentary-occurrences:w4",
+        "nair2013mullukurumba:p56:pronoun-commentary-occurrences:w5",
+        "nair2013mullukurumba:p56:pronoun-commentary-occurrences:w6"
+      ],
+      "literal_and_gloss_review": "all listed records compared with original chapter page; no literal correction found",
+      "source_scope": "documentary/zero/blank/reuse retained as separately accounted by owner; chapter55–58 originals completely viewed"
+    },
+    {
+      "source_unit_key": "nair2013mullukurumba:p56:v-base-commentary",
+      "printed_page": 56,
+      "witness_keys": [
+        "nair2013mullukurumba:p56:v-base-commentary:w1"
+      ],
+      "literal_and_gloss_review": "all listed records compared with original chapter page; no literal correction found",
+      "source_scope": "documentary/zero/blank/reuse retained as separately accounted by owner; chapter55–58 originals completely viewed"
+    },
+    {
+      "source_unit_key": "nair2013mullukurumba:p56:interrogative-bases",
+      "printed_page": 56,
+      "witness_keys": [
+        "nair2013mullukurumba:p56:interrogative-bases:w1",
+        "nair2013mullukurumba:p56:interrogative-bases:w2"
+      ],
+      "literal_and_gloss_review": "all listed records compared with original chapter page; no literal correction found",
+      "source_scope": "documentary/zero/blank/reuse retained as separately accounted by owner; chapter55–58 originals completely viewed"
+    },
+    {
+      "source_unit_key": "nair2013mullukurumba:p57:interrogative-pronouns",
+      "printed_page": 57,
+      "witness_keys": [
+        "nair2013mullukurumba:p57:interrogative-pronouns:w1",
+        "nair2013mullukurumba:p57:interrogative-pronouns:w2",
+        "nair2013mullukurumba:p57:interrogative-pronouns:w3",
+        "nair2013mullukurumba:p57:interrogative-pronouns:w4"
+      ],
+      "literal_and_gloss_review": "all listed records compared with original chapter page; no literal correction found",
+      "source_scope": "documentary/zero/blank/reuse retained as separately accounted by owner; chapter55–58 originals completely viewed"
+    },
+    {
+      "source_unit_key": "nair2013mullukurumba:p57:numeral-commentary",
+      "printed_page": 57,
+      "witness_keys": [],
+      "literal_and_gloss_review": "all listed records compared with original chapter page; no literal correction found",
+      "source_scope": "documentary/zero/blank/reuse retained as separately accounted by owner; chapter55–58 originals completely viewed"
+    },
+    {
+      "source_unit_key": "nair2013mullukurumba:p57:tense-overview",
+      "printed_page": 57,
+      "witness_keys": [],
+      "literal_and_gloss_review": "all listed records compared with original chapter page; no literal correction found",
+      "source_scope": "documentary/zero/blank/reuse retained as separately accounted by owner; chapter55–58 originals completely viewed"
+    },
+    {
+      "source_unit_key": "nair2013mullukurumba:p57:past-examples",
+      "printed_page": 57,
+      "witness_keys": [
+        "nair2013mullukurumba:p57:past-examples:w1",
+        "nair2013mullukurumba:p57:past-examples:w2",
+        "nair2013mullukurumba:p57:past-examples:w3",
+        "nair2013mullukurumba:p57:past-examples:w4"
+      ],
+      "literal_and_gloss_review": "all listed records compared with original chapter page; no literal correction found",
+      "source_scope": "documentary/zero/blank/reuse retained as separately accounted by owner; chapter55–58 originals completely viewed"
+    },
+    {
+      "source_unit_key": "nair2013mullukurumba:p57:present-suffixes",
+      "printed_page": 57,
+      "witness_keys": [
+        "nair2013mullukurumba:p57:present-suffixes:w1",
+        "nair2013mullukurumba:p57:present-suffixes:w2",
+        "nair2013mullukurumba:p57:present-suffixes:w3"
+      ],
+      "literal_and_gloss_review": "all listed records compared with original chapter page; no literal correction found",
+      "source_scope": "documentary/zero/blank/reuse retained as separately accounted by owner; chapter55–58 originals completely viewed"
+    },
+    {
+      "source_unit_key": "nair2013mullukurumba:p57:present-examples",
+      "printed_page": 57,
+      "witness_keys": [
+        "nair2013mullukurumba:p57:present-examples:w1",
+        "nair2013mullukurumba:p57:present-examples:w2",
+        "nair2013mullukurumba:p57:present-examples:w3",
+        "nair2013mullukurumba:p57:present-examples:w4"
+      ],
+      "literal_and_gloss_review": "all listed records compared with original chapter page; no literal correction found",
+      "source_scope": "documentary/zero/blank/reuse retained as separately accounted by owner; chapter55–58 originals completely viewed"
+    },
+    {
+      "source_unit_key": "nair2013mullukurumba:p57:future-suffixes",
+      "printed_page": 57,
+      "witness_keys": [
+        "nair2013mullukurumba:p57:future-suffixes:w1",
+        "nair2013mullukurumba:p57:future-suffixes:w2",
+        "nair2013mullukurumba:p57:future-suffixes:w3"
+      ],
+      "literal_and_gloss_review": "all listed records compared with original chapter page; no literal correction found",
+      "source_scope": "documentary/zero/blank/reuse retained as separately accounted by owner; chapter55–58 originals completely viewed"
+    },
+    {
+      "source_unit_key": "nair2013mullukurumba:p57:future-examples",
+      "printed_page": 57,
+      "witness_keys": [
+        "nair2013mullukurumba:p57:future-examples:w1",
+        "nair2013mullukurumba:p57:future-examples:w2",
+        "nair2013mullukurumba:p57:future-examples:w3",
+        "nair2013mullukurumba:p57:future-examples:w4",
+        "nair2013mullukurumba:p57:future-examples:w5",
+        "nair2013mullukurumba:p57:future-examples:w6"
+      ],
+      "literal_and_gloss_review": "all listed records compared with original chapter page; no literal correction found",
+      "source_scope": "documentary/zero/blank/reuse retained as separately accounted by owner; chapter55–58 originals completely viewed"
+    },
+    {
+      "source_unit_key": "nair2013mullukurumba:p57:relative-participle-marker",
+      "printed_page": 57,
+      "witness_keys": [
+        "nair2013mullukurumba:p57:relative-participle-marker:w1",
+        "nair2013mullukurumba:p57:relative-participle-marker:w2"
+      ],
+      "literal_and_gloss_review": "all listed records compared with original chapter page; no literal correction found",
+      "source_scope": "documentary/zero/blank/reuse retained as separately accounted by owner; chapter55–58 originals completely viewed"
+    },
+    {
+      "source_unit_key": "nair2013mullukurumba:p57:relative-participle-examples",
+      "printed_page": 57,
+      "witness_keys": [
+        "nair2013mullukurumba:p57:relative-participle-examples:w1",
+        "nair2013mullukurumba:p57:relative-participle-examples:w2",
+        "nair2013mullukurumba:p57:relative-participle-examples:w3",
+        "nair2013mullukurumba:p57:relative-participle-examples:w4"
+      ],
+      "literal_and_gloss_review": "all listed records compared with original chapter page; no literal correction found",
+      "source_scope": "documentary/zero/blank/reuse retained as separately accounted by owner; chapter55–58 originals completely viewed"
+    },
+    {
+      "source_unit_key": "nair2013mullukurumba:p57:verbal-participle-overview",
+      "printed_page": 57,
+      "witness_keys": [],
+      "literal_and_gloss_review": "all listed records compared with original chapter page; no literal correction found",
+      "source_scope": "documentary/zero/blank/reuse retained as separately accounted by owner; chapter55–58 originals completely viewed"
+    },
+    {
+      "source_unit_key": "nair2013mullukurumba:p57:verbal-participle-examples",
+      "printed_page": 57,
+      "witness_keys": [
+        "nair2013mullukurumba:p57:verbal-participle-examples:w1",
+        "nair2013mullukurumba:p57:verbal-participle-examples:w2",
+        "nair2013mullukurumba:p57:verbal-participle-examples:w3",
+        "nair2013mullukurumba:p57:verbal-participle-examples:w4"
+      ],
+      "literal_and_gloss_review": "all listed records compared with original chapter page; no literal correction found",
+      "source_scope": "documentary/zero/blank/reuse retained as separately accounted by owner; chapter55–58 originals completely viewed"
+    },
+    {
+      "source_unit_key": "nair2013mullukurumba:p57:pronominal-suffix-overview",
+      "printed_page": 57,
+      "witness_keys": [],
+      "literal_and_gloss_review": "all listed records compared with original chapter page; no literal correction found",
+      "source_scope": "documentary/zero/blank/reuse retained as separately accounted by owner; chapter55–58 originals completely viewed"
+    },
+    {
+      "source_unit_key": "nair2013mullukurumba:p57:suffix-first-person-cells",
+      "printed_page": 57,
+      "witness_keys": [
+        "nair2013mullukurumba:p57:suffix-first-person-cells:w1",
+        "nair2013mullukurumba:p57:suffix-first-person-cells:w2"
+      ],
+      "literal_and_gloss_review": "all listed records compared with original chapter page; no literal correction found",
+      "source_scope": "documentary/zero/blank/reuse retained as separately accounted by owner; chapter55–58 originals completely viewed"
+    },
+    {
+      "source_unit_key": "nair2013mullukurumba:p57:suffix-second-person-cells",
+      "printed_page": 57,
+      "witness_keys": [
+        "nair2013mullukurumba:p57:suffix-second-person-cells:w1",
+        "nair2013mullukurumba:p57:suffix-second-person-cells:w2"
+      ],
+      "literal_and_gloss_review": "all listed records compared with original chapter page; no literal correction found",
+      "source_scope": "documentary/zero/blank/reuse retained as separately accounted by owner; chapter55–58 originals completely viewed"
+    },
+    {
+      "source_unit_key": "nair2013mullukurumba:p57:suffix-third-masculine-singular-cell",
+      "printed_page": 57,
+      "witness_keys": [
+        "nair2013mullukurumba:p57:suffix-third-masculine-singular-cell:w1",
+        "nair2013mullukurumba:p57:suffix-third-masculine-singular-cell:w2",
+        "nair2013mullukurumba:p57:suffix-third-masculine-singular-cell:w3"
+      ],
+      "literal_and_gloss_review": "all listed records compared with original chapter page; no literal correction found",
+      "source_scope": "documentary/zero/blank/reuse retained as separately accounted by owner; chapter55–58 originals completely viewed"
+    },
+    {
+      "source_unit_key": "nair2013mullukurumba:p57:suffix-third-feminine-singular-cell",
+      "printed_page": 57,
+      "witness_keys": [
+        "nair2013mullukurumba:p57:suffix-third-feminine-singular-cell:w1",
+        "nair2013mullukurumba:p57:suffix-third-feminine-singular-cell:w2",
+        "nair2013mullukurumba:p57:suffix-third-feminine-singular-cell:w3",
+        "nair2013mullukurumba:p57:suffix-third-feminine-singular-cell:w4"
+      ],
+      "literal_and_gloss_review": "all listed records compared with original chapter page; no literal correction found",
+      "source_scope": "documentary/zero/blank/reuse retained as separately accounted by owner; chapter55–58 originals completely viewed"
+    },
+    {
+      "source_unit_key": "nair2013mullukurumba:p57:suffix-third-plural-cell",
+      "printed_page": 57,
+      "witness_keys": [
+        "nair2013mullukurumba:p57:suffix-third-plural-cell:w1",
+        "nair2013mullukurumba:p57:suffix-third-plural-cell:w2",
+        "nair2013mullukurumba:p57:suffix-third-plural-cell:w3",
+        "nair2013mullukurumba:p57:suffix-third-plural-cell:w4",
+        "nair2013mullukurumba:p57:suffix-third-plural-cell:w5"
+      ],
+      "literal_and_gloss_review": "all listed records compared with original chapter page; no literal correction found",
+      "source_scope": "documentary/zero/blank/reuse retained as separately accounted by owner; chapter55–58 originals completely viewed"
+    },
+    {
+      "source_unit_key": "nair2013mullukurumba:p57:suffix-third-feminine-plural-blank",
+      "printed_page": 57,
+      "witness_keys": [
+        "nair2013mullukurumba:p57:suffix-third-feminine-plural-blank:w1"
+      ],
+      "literal_and_gloss_review": "all listed records compared with original chapter page; no literal correction found",
+      "source_scope": "documentary/zero/blank/reuse retained as separately accounted by owner; chapter55–58 originals completely viewed"
+    },
+    {
+      "source_unit_key": "nair2013mullukurumba:p57:suffix-neuter-zero-cells",
+      "printed_page": 57,
+      "witness_keys": [
+        "nair2013mullukurumba:p57:suffix-neuter-zero-cells:w1",
+        "nair2013mullukurumba:p57:suffix-neuter-zero-cells:w2"
+      ],
+      "literal_and_gloss_review": "all listed records compared with original chapter page; no literal correction found",
+      "source_scope": "documentary/zero/blank/reuse retained as separately accounted by owner; chapter55–58 originals completely viewed"
+    },
+    {
+      "source_unit_key": "nair2013mullukurumba:p58:reported-bibliography",
+      "printed_page": 58,
+      "witness_keys": [
+        "nair2013mullukurumba:p58:reported-bibliography:w1"
+      ],
+      "literal_and_gloss_review": "all listed records compared with original chapter page; no literal correction found",
+      "source_scope": "documentary/zero/blank/reuse retained as separately accounted by owner; chapter55–58 originals completely viewed"
+    },
+    {
+      "source_unit_key": "nair2013mullukurumba:p58:book-colophon",
+      "printed_page": 58,
+      "witness_keys": [],
+      "literal_and_gloss_review": "all listed records compared with original chapter page; no literal correction found",
+      "source_scope": "documentary/zero/blank/reuse retained as separately accounted by owner; chapter55–58 originals completely viewed"
+    },
+    {
+      "source_unit_key": "nair2013mullukurumba:p3:contents",
+      "printed_page": 3,
+      "witness_keys": [],
+      "literal_and_gloss_review": "all listed records compared with original chapter page; no literal correction found",
+      "source_scope": "documentary/zero/blank/reuse retained as separately accounted by owner; chapter55–58 originals completely viewed"
+    },
+    {
+      "source_unit_key": "nair2013mullukurumba:p12:shared-classification-subgroups",
+      "printed_page": 12,
+      "witness_keys": [],
+      "literal_and_gloss_review": "all listed records compared with original chapter page; no literal correction found",
+      "source_scope": "documentary/zero/blank/reuse retained as separately accounted by owner; chapter55–58 originals completely viewed"
+    },
+    {
+      "source_unit_key": "nair2013mullukurumba:p12:reported-thurston-classification",
+      "printed_page": 12,
+      "witness_keys": [],
+      "literal_and_gloss_review": "all listed records compared with original chapter page; no literal correction found",
+      "source_scope": "documentary/zero/blank/reuse retained as separately accounted by owner; chapter55–58 originals completely viewed"
+    }
+  ],
+  "outside_controls_limit": "p3/p12 documentary units examined as accounted owner metadata; complete original claim here is limited to55–58. p12 crop is separately pinned retained evidence, not whole unrelated chapter scope.",
+  "no_owner_or_canonical_changes": true,
+  "remaining_gate": "Owner/root adjudication of metadata findings, exact derivative continuity, then fresh20 actual rows from stable final candidate; full compiled/build/browser deferred."
+}

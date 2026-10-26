@@ -86,6 +86,7 @@ all: parsers
 	$(PY) assign_form_ids.py
 	$(PY) concepts.py
 	$(PY) align.py
+	$(PY) sound_changes/derive.py --workers 3
 	$(PY) make_refs.py
 	$(MAKE) manual-survey-etymology-check
 

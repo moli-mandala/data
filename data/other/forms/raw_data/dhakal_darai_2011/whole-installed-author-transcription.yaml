@@ -1,0 +1,26 @@
+file: 20260921-dhakal-darai.csv
+defaults:
+  importer:
+    commands:
+      - [data/other/forms/raw_data/dhakal_darai_2011/import_source.py, --install]
+    note: Complete reviewed thesis; immutable pre-expansion baseline and exact approved output hashes.
+  transcription:
+    profile: dhakal-darai
+    input: phonemic
+    preserve_hyphens: true
+  identity:
+    legacy_ids: stem
+    append_order: 34
+    dedupe_by_entry_key: true
+  forms:
+    split_alternates: false
+sources:
+  dhakal2011darai:
+    identity:
+      dedupe_by_entry_key: true
+    forms:
+      split_alternates: false
+    reference:
+      editor: Aryaman Arora; OpenAI Codex
+      ocr: false
+      etymology_provenance: source

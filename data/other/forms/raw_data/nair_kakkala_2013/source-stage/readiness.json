@@ -1,0 +1,34 @@
+{
+  "status": "ready for root installer/metadata approval; actual installation disabled",
+  "candidate_csv_sha256": "9939c1f14763cd7b591c56c2d0909b6736185383acbd080011b6f4c8d230cd50",
+  "candidate_audit_sha256": "b92f5954a6878ca6d546388d68c98798e641dd96513e2cce78c34b6bbe5cdd44",
+  "staged_accepted_audit_sha256": "49e2bf812deb658b4a1953a68fdb6774021d8b753c2c2ced435b3b0e05995502",
+  "frozen_rows_and_physical_audit_unchanged": true,
+  "overlay_scope": [
+    "Importer command added to actual staged YAML.",
+    "Primary identity/forms/gloss flags explicit as well as file defaults; all three reference records editor/OCR/etymology flags checked by real SourceMeta.",
+    "Bib provenance changes proposal paths to canonical CSV/installed audit.",
+    "Accepted audit adds only source-stage acceptance metadata."
+  ],
+  "transaction_tests": {
+    "passed": 12,
+    "seconds": 0.87,
+    "log_sha256": "ed51c8110b29522399db3f827a5a29a3a49b7505be56bf09001e6760bb11a47e",
+    "scope": "Tiny isolated five-target registries with approved-source fixture, interrupted recovery, source repeat no-op, later shared contribution preservation, disabled/stale approval and drift rejection."
+  },
+  "identity_hashing": "Streaming 1MiB chunks for190MB durable sidecar; no identity mutation.",
+  "authorization_sha256": "2f5e00d8fab2a5060bf4bc7bbef740b697bd6bf4ac886bf8284902208f0081fb",
+  "files_sha256": {
+    "proposed.csv": "9939c1f14763cd7b591c56c2d0909b6736185383acbd080011b6f4c8d230cd50",
+    "source-stage/20260927-nair-kakkala.yaml": "7c62afe8fa9b62e2dc86aab6648ec2c6c15f191be932b04f419b88a95e7ab453",
+    "source-stage/accepted-audit.jsonl": "49e2bf812deb658b4a1953a68fdb6774021d8b753c2c2ced435b3b0e05995502",
+    "metadata/proposed-dialect.csv": "452f5ceff36ff037640cbf2321b1c0de2e9a7e1fc4fb1cbea590c4a5614b7ce7",
+    "source-stage/references.bib": "18271b2ee263ac80d4c1f208fae8def033c241d2c17776d56c3c6d32165c093e",
+    "import_source.py": "ed4662ff16841a2ef79d2c865ebfe6ad4da5715f9e3386341657896c80e0c9e4",
+    "review-freeze.json": "3206ba420d3d7b3a55eb20fefa2f7c11b79a76ec486b1efa0fdac5c5651162a5",
+    "revision2-continuity.json": "18dedf77eb1c499d65875a5a4bf360c60ab6d950f865751241c5b94f9bc7b5d2",
+    "independent-review/root-original-review-final-20260927462.json": "258456ee6098257c3ae44bce86f09e99c6015989d6c1c015d2f656d7c3abdb8d",
+    "source-stage/installer-tests.log": "ed51c8110b29522399db3f827a5a29a3a49b7505be56bf09001e6760bb11a47e"
+  },
+  "canonical_changes": false
+}

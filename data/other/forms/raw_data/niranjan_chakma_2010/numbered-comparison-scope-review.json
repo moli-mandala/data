@@ -1,0 +1,38 @@
+{
+  "reviewer":"root",
+  "date":"2026-09-27",
+  "stage":"Owner complete original-page structural review; literal extraction and independent review pending",
+  "pdf_sha256":"f022a2a448445cdc9840891478bd5864e2ded1ae98985332b51f0938c075842d",
+  "printed_pages":[77,87],
+  "numbered_units":101,
+  "numbering_gaps":[],
+  "page_structure":[
+    {"pdf_page":79,"printed_page":77,"new_group_range":[1,8],"cross_column_group":4},
+    {"pdf_page":80,"printed_page":78,"new_group_range":[9,16],"initial_continuation":8,"cross_column_group":11},
+    {"pdf_page":81,"printed_page":79,"new_group_range":[17,25],"cross_column_group":20},
+    {"pdf_page":82,"printed_page":80,"new_group_range":[26,35],"initial_continuation":25},
+    {"pdf_page":83,"printed_page":81,"new_group_range":[36,45],"cross_column_group":41},
+    {"pdf_page":84,"printed_page":82,"new_group_range":[46,54],"cross_column_group":51},
+    {"pdf_page":85,"printed_page":83,"new_group_range":[55,66]},
+    {"pdf_page":86,"printed_page":84,"new_group_range":[67,75],"initial_continuation":66,"cross_column_group":71},
+    {"pdf_page":87,"printed_page":85,"new_group_range":[76,85],"initial_continuation":75,"cross_column_group":80},
+    {"pdf_page":88,"printed_page":86,"new_group_range":[86,92],"initial_continuation":85,"cross_column_group":87},
+    {"pdf_page":89,"printed_page":87,"new_group_range":[93,101],"initial_continuation":92}
+  ],
+  "exceptional_units":[
+    {"group":48,"pdf_page":84,"type":"headless-source-record","observation":"Printed number48 is immediately followed by অর্থ and the meaning শহর, followed by explanatory prose. No independent head is printed before the definition.","policy":"Do not invent a Chakma head from the gloss or nearby Sanskrit নগর. Retain complete prose and inventory any explicitly attributed forms within it separately."},
+    {"group":65,"pdf_page":85,"type":"explicit-source-origin-analysis","observation":"Printed উৎস introduces বাট + চেই and a sequence of forms; an abbreviated work citation and quoted historical expression follow.","policy":"Recover every stated component/form, source caveat and work abbreviation; determine language/stage attribution before proposing graph edges. This is not merely a phonetic comparison."},
+    {"group":87,"pdf_page":88,"type":"explicit-source-origin-analysis","observation":"Printed উৎস names লম্পক with a meaning and discusses a work by Kshemendra across the column boundary.","policy":"Preserve the source claim and auxiliary reference; uniquely resolve ancestry only after literal and semantic review."},
+    {"group":7,"pdf_page":79,"type":"printed-empty-comparison","observation":"One comparison language label is followed by a dash with no form.","policy":"Account for the blank rather than propagating a neighbouring form."},
+    {"group":19,"pdf_page":81,"type":"printed-empty-comparison","observation":"The final comparison language label is followed by a dash without a form.","policy":"Account for the blank; no invented response."}
+  ],
+  "abbreviation_pages":{
+    "pdf_pages":[77,78],
+    "printed_pages":[75,76],
+    "policy":"Preserve every printed abbreviation declaration and occurrence. Repeated Bengali declarations and occurrence labels absent from the declaration list need explicit reconciliation. Names alone must not force modern language identities, especially broad Munda and regional/historical labels."
+  },
+  "unit_key_policy":"Use numbered-group identity plus a physical witness locator for child attestations; never renumber the headless group or derive keys from corrected spelling.",
+  "scope_policy":"Account for all101 units and all comparison witnesses. Prioritize goal-family witnesses after conservative language mapping; unresolved and out-of-family comparisons remain full audit evidence, not inferred cognates.",
+  "counts_caution":"101 is the numbered-group count. Multiple named comparison witnesses, alternatives, nested forms and explicit origins mean the emitted-form count is not yet known.",
+  "canonical_rows_changed":0
+}

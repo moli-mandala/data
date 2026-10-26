@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="HandheldFriendly" content="true" />
+<title>Kholosi Dictionary</title>
+<script src="https://d3js.org/d3.v5.js"></script>
+<script src="https://unpkg.com/topojson@3"></script>
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400italic,600italic,700italic,200,300,400,600,700,900">
+<!--CSS-->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--JS-->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/versor"></script><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-52207113-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-52207113-1');
+</script>
+
+<!-- CSS -->
+<style>
+ 
+body, h1, h2, h3, p {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1em;
+  color: #333;
+  font-weight: 400;
+}
+
+#content {
+  margin: 5px;
+  padding: 20px;
+  width: 805px;
+  border: 1px solid #ccc;
+}
+
+#map {
+  margin: 0px 0px 0px 0px;
+  padding: 0px;
+}
+
+h1, h2 {
+  line-height: 1em;
+  font-size: 1.75em;
+  font-weight: 900;
+  color: #000;
+}
+
+h2.date {
+  margin: 10px 0px 0px 0px;
+  font-size: 1.3em;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 1.25em;
+  margin: 0px 0px 0px 0px;
+  font-weight: 900;
+}
+
+p {
+  margin: 10px 0px 0px 0px;
+}
+
+.card {
+  line-height: 110%;
+}
+
+.counties {
+  position: absolute;
+}
+
+.label {
+  font-variant: small-caps;
+}
+
+
+.states {
+  fill: none;
+  stroke: black;
+  stroke-width: 0.5px;
+  stroke-linejoin: round;
+}
+
+input {
+  display: block;
+  width: 200px;
+  margin: 10px 0px 0px 0px;
+}
+
+#legend text {
+  font-size: 0.9em;
+  color: #333;
+  font-weight: 400;
+}
+
+.tooltip {
+  position: absolute;
+}
+
+.tooltip p {
+  margin: 0;
+  padding: 0;
+}
+
+.tooltip table {
+  margin: 0;
+  padding: 0;
+  border-collapse: collapse;
+}
+
+.wide {
+  width: 140px;
+}
+
+.title {
+  position: absolute;
+}
+</style>
+</head>
+<body>
+  <div class="container mt-5 mb-5">
+      <h1>Kholosi Dictionary</h1>
+      <p>This is live-generated from a Google Sheet that I am probably editing as you view this, so if it breaks (and it probably will) let me know! Also, check out the very <a href="/kholosi/vowels">preliminary analysis of vowels in Kholosi</a>.</p>
+      <p class="text-muted">CDIAL refers to Sir Ralph Lilley Turner's <a href="https://dsalsrv04.uchicago.edu/dictionaries/soas/"><em>Comparative Dictionary of the Indo-Aryan Languages</em></a>, which is the foundational work on Indo-Aryan comparative lexicography. Most modern work with a diachronic bent refers to this (e.g. Zoller [2006]'s work on Indus Kohistani) so I have too.</p>
+      <p>Also see <a href="/kholosi/sentences">sentences</a>.</p>
+      <p class="load">Loading...</p>
+      <hr>
+    </div>
+      <table class="table table-sm table-bordered" style="width: 90%; margin-left: 5%;">
+        <thead>
+          <tr>
+            <th scope="col">Word</th>
+            <th scope="col">IPA</th>
+            <th scope="col">Gloss</th>
+            <th scope="col">POS</th>
+            <th scope="col">Etymology</th>
+            <th scope="col">Citations</th>
+            <th scope="col" style="width: 200px;">Notes</th>
+          </tr>
+        </thead>
+      </table>
+      <script>
+          var shortcuts = [
+              ['Skt.', 'Sanskrit'],
+              ['Trk.', 'Turkish'],
+              ['Prs.', 'Persian'],
+              ['Sd.', 'Sindhi'],
+              ['Pa.', 'Punjabi'],
+              ['Dom.', 'Domari'],
+              ['Rom.', 'Romani'],
+              ['Az.', 'Azerbaijani']
+          ]
+          d3.csv("lexicon.csv").then(function(data) {
+              d3.select(".load").text(data.length + " lemmata.")
+              console.log(data)
+              var add = d3.select("table")
+              data = data.sort((a, b) => {
+                console.log(a)
+                if (a.Transcription < b.Transcription) return -1
+                else if (a.Transcription > b.Transcription) return 1
+                return 0
+              })
+              for (var i = 0; i < data.length; i++) {
+                    var d = data[i]
+                    shortcuts.forEach(e => {
+                        d.Etymology = d.Etymology.replace(e[0], `<abbr title="${e[1]}">${e[0]}</abbr>`)
+                        d.Cognates = d.Cognates.replace(e[0], `<abbr title="${e[1]}">${e[0]}</abbr>`)
+                    })
+                    var card = add.append("tr")
+
+                    card.append("td")
+                        .style("font-weight", "bold")
+                        .html(d.Transcription)
+                    card.append("td").html(d['Phonetic IPA'])
+                    card.append("td").html(d['Meaning'])
+                    card.append("td").html(d['Part of Speech'])
+                    card.append("td").html(d['Etymology'] + (d.Cognates ? "<br>cf. " + d.Cognates : ""))
+                    card.append("td").html(d['Citation'])
+                    card.append("td").html(`<small>${d['Notes']}</small>`)
+              }
+          })
+      </script>
+</body>
+</html>

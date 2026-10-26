@@ -1,0 +1,18 @@
+{
+  "status": "pass_with_one_narrow_assertion_gap",
+  "reviewer": "rohru_finish",
+  "file": "data/tests/test_behera_whole_installed.py",
+  "read_only": true,
+  "valid_coverage": [
+    "Receipt approval/identity and output hashes are checked.",
+    "Exact installed legacy/addition CSVs, accepted audit and bibliography bytes are compared with reviewed assets.",
+    "Both source CSVs are passed through the real parser and all 6864 ordered Entry_Keys are retained; source-key dedupe policy is checked.",
+    "Registered language/dialect routes, five bibliography keys and 6823 accepted audit units are checked; 332 held keys remain disjoint from installed rows."
+  ],
+  "narrow_gap": {
+    "test": "test_exact_eight_asset_installation_and_receipt",
+    "issue": "Receipt test checks only that installed_sha256 has eight entries, rather than the exact eight TARGETS paths. Eight unrelated self-consistent paths would pass this test's receipt-set assertion.",
+    "fix": "Assert set(receipt['installed_sha256']) == set(install_source.TARGETS.values()) before checking every target hash. The production installer independently guards this; the change strengthens this regression test."
+  },
+  "deferred": "This test file is source-stage validation. It does not claim a complete compiled CLDF/DB/graph/browser check."
+}

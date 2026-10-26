@@ -1,0 +1,87 @@
+{
+  "status": "independent source-grounded candidate graph review; not canonical approval",
+  "proposal_sha256": "19cf7f4182824a5090ddd13a517c464119db1b4bc41f117bdc876a4b73b2b90a",
+  "csv_sha256": "ef3956895f096896757dc2209cf872718a838fa9ec8ee2caf3246bfce5822210",
+  "source_pdf_sha256": "4d2588987dab5d15c62ecc95330ccf7e925a9bce80d08068b91ca3f48c8cc5af",
+  "supported_variant_edges": [
+    {
+      "parent": "nair2013kurichiya:p35:s-to-y-or-c:1:Kurichiya:alt1",
+      "child": "nair2013kurichiya:p35:s-to-y-or-c:1:Kurichiya:alt2",
+      "original_page": 35,
+      "decision": "supported_candidate",
+      "source_basis": "slash alternatives in one original printed cell"
+    },
+    {
+      "parent": "nair2013kurichiya:p35:medial-elision:4:Kurichiya:alt1",
+      "child": "nair2013kurichiya:p35:medial-elision:4:Kurichiya:alt2",
+      "original_page": 35,
+      "decision": "supported_candidate",
+      "source_basis": "slash alternatives in one original printed cell"
+    },
+    {
+      "parent": "nair2013kurichiya:p36:pronouns:I-dat-sg:1",
+      "child": "nair2013kurichiya:p36:pronouns:I-dat-sg:2",
+      "original_page": 36,
+      "decision": "supported_candidate",
+      "source_basis": "slash alternatives in one original printed cell"
+    },
+    {
+      "parent": "nair2013kurichiya:p36:pronouns:I-gen-sg:1",
+      "child": "nair2013kurichiya:p36:pronouns:I-gen-sg:2",
+      "original_page": 36,
+      "decision": "supported_candidate",
+      "source_basis": "slash alternatives in one original printed cell"
+    },
+    {
+      "parent": "nair2013kurichiya:p36:pronouns:II-sg:1",
+      "child": "nair2013kurichiya:p36:pronouns:II-sg:2",
+      "original_page": 36,
+      "decision": "supported_candidate",
+      "source_basis": "slash alternatives in one original printed cell"
+    },
+    {
+      "parent": "nair2013kurichiya:p36:pronouns:II-pl:1",
+      "child": "nair2013kurichiya:p36:pronouns:II-pl:2",
+      "original_page": 36,
+      "decision": "supported_candidate",
+      "source_basis": "slash alternatives in one original printed cell"
+    },
+    {
+      "parent": "nair2013kurichiya:p36:particle-1",
+      "child": "nair2013kurichiya:p36:particle-2",
+      "original_page": 36,
+      "decision": "supported_candidate",
+      "source_basis": "source explicitly calls the two sentence-final particles free variants"
+    },
+    {
+      "parent": "nair2013kurichiya:p36:utterance-1",
+      "child": "nair2013kurichiya:p36:utterance-2",
+      "original_page": 36,
+      "decision": "supported_candidate",
+      "source_basis": "source prints the same full utterance with alternate free-variant final particle"
+    }
+  ],
+  "held": [
+    {
+      "keys": [
+        "nair2013kurichiya:p36:pronouns:III-mas-sg:1",
+        "nair2013kurichiya:p36:pronouns:III-mas-sg:2",
+        "nair2013kurichiya:p36:pronouns:III-fem-sg:1"
+      ],
+      "decision": "hold",
+      "reason": "The same second masculine-row form is repeated in the feminine row; sex and variant scope are uncertain",
+      "source_check": "p36 original pronoun table checked"
+    },
+    {
+      "keys": [
+        "nair2013kurichiya:p36:pronouns:I-pl-1:1",
+        "nair2013kurichiya:p36:pronouns:I-pl-2:1"
+      ],
+      "decision": "hold",
+      "reason": "Plural cells encode different explicit or unknown inclusivity and are not marked as variants",
+      "source_check": "p36 original pronoun table checked"
+    }
+  ],
+  "cross_language_or_derivational_edges": 0,
+  "conclusion": "All eight proposed same-language variant links are supported as candidates; both held pronoun analyses remain unresolved on original evidence."
+}

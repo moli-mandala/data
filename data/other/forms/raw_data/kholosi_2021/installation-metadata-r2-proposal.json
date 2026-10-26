@@ -1,0 +1,40 @@
+{
+  "status": "prepared only; no shared metadata or canonical writes",
+  "canonical_csv": "data/other/forms/20220913-kholosi.csv",
+  "canonical_yaml": "data/other/forms/20220913-kholosi.yaml",
+  "canonical_profile": "conversion/kholosi-source.txt",
+  "coordinator": "data/other/forms/raw_data/kholosi_2021/install_reviewed_source.py",
+  "reference": {
+    "file": "cldf/sources.bib",
+    "key": "kholosi",
+    "unchanged": {
+      "title": "Kholosi Dictionary",
+      "author": "Aryaman Arora and Ahmed Etebari",
+      "year": "2021",
+      "publisher": "Zenodo",
+      "doi": "10.5281/zenodo.7901554"
+    },
+    "proposed_fields": {
+      "included": "Yes; complete printed dictionary pp. 1–10 and preface, plus the separately attributed author repository at commit 18b43f982efad92f35e4054561f2e0fc519f4eb7: lexical CSV, translated examples, explicit morphology and one untranslated text witness. 1135 source-stage rows; all 198 historical keys and assignments preserved. Source claims, conflicting printed numbers and historical assignments are distinguished in the source audit.",
+      "version": "v1, 13 April 2021",
+      "url": "https://zenodo.org/records/7901554",
+      "ocr": "No"
+    }
+  },
+  "language": {
+    "id": "Khol",
+    "glottocode": "khol1241",
+    "coordinates": [27.12,54.30],
+    "classification": "Sindhic",
+    "registry_changes": "none",
+    "source_labels": "A./N./M. remain literal authority or pronunciation labels. Do not invent dialects or expand an unidentified initial."
+  },
+  "source_versions": "DOI PDF exactly matches the pinned repository PDF by MD5; repository CSV/text witnesses remain separately attributed and are not silently treated as identical published entries.",
+  "etymology_provenance": "Retain existing reference-level Jambu provenance for historical assignments. Every new direct or qualified source link has a keyed source-claim disposition, exact source wording and source-version locator; corrected printed numbers are distinct from verbatim number links.",
+  "approval_contract": {
+    "file": "source-stage-installation-approval.json",
+    "required": ["status=accepted","manifest_sha256","independent_report","independent_report_sha256","approved_output_sha256"],
+    "independent_report_requirement": "material_errors=0 and exact frozen r2 output approval"
+  },
+  "deferred": ["Full CLDF/database build","Compiled identity and graph checks","Full suite","Browser QA","Publication"]
+}

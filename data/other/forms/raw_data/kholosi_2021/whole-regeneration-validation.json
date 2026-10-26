@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "before": {
+    "whole-proposed.csv": "c21945e2e67a071d70220a4c1a65a44bd77ca3d185bd66ae52dbc3596b1c07bc",
+    "whole-proposed-audit.jsonl": "37ed182802da015e452365488ea91bcd121cc7e8fd03a96df42710b6cfd09f86",
+    "whole-profile-proposed.txt": "1fcdabf0a57b03e70499591a6f2271edf5f1e7fef5d2250fb02b28728cb9369a",
+    "whole-metadata-proposed.yaml": "c2eeb18dfa49fc65c97a38b0ea37be135409b6a8ce72b6ab949acb8e5d20105c"
+  },
+  "after": {
+    "whole-proposed.csv": "c21945e2e67a071d70220a4c1a65a44bd77ca3d185bd66ae52dbc3596b1c07bc",
+    "whole-proposed-audit.jsonl": "37ed182802da015e452365488ea91bcd121cc7e8fd03a96df42710b6cfd09f86",
+    "whole-profile-proposed.txt": "1fcdabf0a57b03e70499591a6f2271edf5f1e7fef5d2250fb02b28728cb9369a",
+    "whole-metadata-proposed.yaml": "c2eeb18dfa49fc65c97a38b0ea37be135409b6a8ce72b6ab949acb8e5d20105c"
+  },
+  "scripts": [
+    "prepare_witnesses.py",
+    "resolve_source_relations.py",
+    "expand_explicit_alternates.py",
+    "apply_structured_metadata.py",
+    "prepare_etymology_claims.py",
+    "prepare_legacy_identity_review.py",
+    "prepare_whole_proposal.py",
+    "prepare_profile.py",
+    "validate_whole_proposal.py"
+  ]
+}

@@ -1,0 +1,12 @@
+file: 20260927-dhakal-darai-literal.csv
+defaults:
+  importer:
+    commands:
+      - [data/other/forms/raw_data/dhakal_darai_2011/import_source.py, --install]
+    note: Complete reviewed thesis; immutable pre-expansion baseline and exact approved output hashes.
+  transcription:
+    convert: false
+  identity:
+    dedupe_by_entry_key: true
+  forms:
+    split_alternates: false

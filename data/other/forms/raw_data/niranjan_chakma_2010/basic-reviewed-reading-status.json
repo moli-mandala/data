@@ -1,0 +1,56 @@
+{
+  "status": "all99 independent reviews reconciled; three explicit transcription holds remain",
+  "cells": 99,
+  "nonblank_bengali_controls": 97,
+  "review_status_counts": {
+    "agrees": 93,
+    "unresolved_glyph": 3,
+    "correction": 3
+  },
+  "corrections": [
+    {
+      "source_unit_key": "niranjan2010chakma:p106:basic:left:row12",
+      "field": "raw_owner_first_reading",
+      "old": "দিবা",
+      "new": "দ্বিবা",
+      "evidence": "Visible attached ব beneath/with initial দ before the following ব; independent six-times crop, normalized page fraction(.20,.47,.36,.56)."
+    },
+    {
+      "source_unit_key": "niranjan2010chakma:p107:basic:right:row2",
+      "field": "raw_owner_first_reading",
+      "old": "বর",
+      "new": "ঝর",
+      "evidence": "Initial ঝ has the lower/left structure absent from ব; full original p107 at3x, consistent with narrow-source OCR but accepted from original."
+    },
+    {
+      "source_unit_key": "niranjan2010chakma:p107:basic:right:row14",
+      "field": "raw_owner_first_reading",
+      "old": "রেল",
+      "new": "য়েল",
+      "evidence": "Initial dotted য with preposed e sign, then ল; six-times original crop(.62,.49,.76,.59). Not রেল."
+    }
+  ],
+  "holds": [
+    {
+      "key": "niranjan2010chakma:p106:basic:left:row11",
+      "reason": "Printed medial conjunct visibly more complex than provisional এগা. Six-times crop(.20,.47,.36,.56) does not support committing the provisional simple গ; exact conjunct reading remains unresolved."
+    },
+    {
+      "key": "niranjan2010chakma:p106:basic:left:row21",
+      "reason": "Medial dog consonant cluster remains difficult to encode securely; retain provisional কুত্তর with explicit unresolved-cluster warning, never replace from Bengali কুকুর."
+    },
+    {
+      "key": "niranjan2010chakma:p107:basic:left:row5",
+      "reason": "Retain provisional অজভ’ and final apostrophe evidence; damaged medial/final letter attachment remains uncertain."
+    }
+  ],
+  "inputs": {
+    "basic-first-reading.jsonl": "40348bf70669a2c6a6e87ef405934d855a959fdc0b8db2c901fc6b43216263c5",
+    "independent-basic-full-review-20260927.json": "e9b2d18e020cb83d0daeda2fe60eaa5f67816bcba28685ea6b7ead99fe52ff18"
+  },
+  "output": {
+    "basic-reviewed-reading.jsonl": "b2a2bc3b910febcb8fcf7ff2f3be23e4dd0d1098709fc187b3b287deb7f1e574"
+  },
+  "source_semantics_policy": "Keep English, Bengali controls and source mismatches separately; no semantic emendation.",
+  "installed_rows_changed": 0
+}

@@ -1,0 +1,70 @@
+{
+  "status": "pass: root independently recomputed staged shared deltas and audit preservation",
+  "draft_sha256": "a00e3f35fb04aa94e1898b337292644dd15c6580a2fda51a93f64174581469ec",
+  "source_stage_only": true,
+  "assets": {
+    "csv": {
+      "target": "data/other/forms/20260927-nair-malaveda.csv",
+      "input": "installation/assets/csv.asset",
+      "output_sha256": "ee7fb5625bc4532815e64ae3755cd3ab76ec80c42d5b34fee25462af12e912c1"
+    },
+    "yaml": {
+      "target": "data/other/forms/20260927-nair-malaveda.yaml",
+      "input": "installation/assets/yaml.asset",
+      "output_sha256": "a7e720e29add3ab712975ffdf6b584ca5f64a77e0430a89e8561bea4dae502b7"
+    },
+    "audit": {
+      "target": "data/other/forms/raw_data/nair_malaveda_2013/installed-audit.jsonl",
+      "input": "installation/assets/audit.asset",
+      "output_sha256": "cccddbb2fba5aacb04399e59d82ea594c894d3d1755e11747829e6d1a646118f"
+    },
+    "languages": {
+      "target": "cldf/languages.csv",
+      "input": "installation/assets/languages.asset",
+      "output_sha256": "ff894ca6b5b2612836871aee45b5ba887fd17c5e8ff797c5c2e0e122538e0b96"
+    },
+    "dialects": {
+      "target": "cldf/dialects.csv",
+      "input": "installation/assets/dialects.asset",
+      "output_sha256": "ea8c2081dbf1be8f99818cad017e97ee98173756eddc41538cef398f4072c552"
+    },
+    "bib": {
+      "target": "cldf/sources.bib",
+      "input": "installation/assets/bib.asset",
+      "output_sha256": "27f8356086e45c3a46a2d7e8d994832970c7a5b620eed55e3f9d74ef619276e3"
+    }
+  },
+  "shared_registries": {
+    "languages": {
+      "unchanged_prior_rows": 585,
+      "added_ids": [
+        "Malaveda"
+      ]
+    },
+    "dialects": {
+      "unchanged_prior_rows": 2189,
+      "added_ids": [
+        "nair2013_malaveda_unlocated"
+      ]
+    }
+  },
+  "bibliography": {
+    "unchanged_prior_entries": 613,
+    "new_source_keys": [
+      "hyrunnisabeegam1991malaveda",
+      "kumarinirmala1977veda",
+      "nair2013malaveda",
+      "radhakrishnan1977veda",
+      "thankachi1977veda",
+      "vimala1984malaveda",
+      "vimalakumari1977veda"
+    ]
+  },
+  "audit": {
+    "records": 240,
+    "raw_history_exact": true
+  },
+  "identity_sha256": "4977c4e205f66233366ee1c00a9c938c9c78e3c087b63e02a94832647525c28a",
+  "installation_approved": false,
+  "note": "Installer test and final guard review remain prerequisites to root activation."
+}

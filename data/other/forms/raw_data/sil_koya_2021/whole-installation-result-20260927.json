@@ -1,0 +1,46 @@
+{
+  "status": "complete source-file coverage installed; focused canonical gates passed; full build/browser gates deferred",
+  "rows": 1665,
+  "audit_units": 2119,
+  "preserved_active_legacy_keys": 1437,
+  "retired_source_key_aliases": 1,
+  "manifest_sha256": "1d220e49a1c33e752944825ef8767f29b746bd39937055e37817e7f710d46a6c",
+  "installed_sha256": {
+    "data/other/forms/20260828-sil-koya.csv": "d7961cba6e9422db15293aeaf41b3fd6a586bb1678807a024802e10d9db0729c",
+    "data/other/forms/20260828-sil-koya.yaml": "c57e833fda8046e95541ef88e685928fb06352584c208e5b2205d600af785478",
+    "data/other/forms/20260927-sil-koya-narrative.csv": "5b44c2809b3dc0f2ed981622e6df9be62bb2c92b1617cbcc37d7d9281ce6f35d",
+    "data/other/forms/20260927-sil-koya-narrative.yaml": "ea047802c11310559a06177eddb29fdddebccccbe824b531daebb4822f212d67",
+    "data/other/forms/20260927-sil-koya-comparative.csv": "e34ac3498d8a5f6a5b3631022f1942fb9291a91d0a18038de59beffaba14449c",
+    "data/other/forms/20260927-sil-koya-comparative.yaml": "b889ce8519586663e2b5a9ce9596774b97dc8778581fa76910157134a8267888",
+    "conversion/sil-koya-literal.txt": "a5860f6c9ab25696dc881f2cd6e30a12c58fc76ce37b06aa2e2979719bf53267",
+    "conversion/sil-koya-narrative.txt": "c91ab89a34fec4e3648254811b552da5c523e23dcab6312017c105a1abd9fcba",
+    "conversion/sil-koya-comparative.txt": "de9320f424d972063046552dbf2785002b90b7acd0623fea661bc178aa693c0a",
+    "data/other/forms/raw_data/sil_koya_2021/whole-audit.jsonl": "d15c8a3ee266d8e7e314d3f7bfa5d3d09cadf22f59f0ea49422de56ab03624a7",
+    "data/other/form_aliases/20260927-koya.csv": "420c7b1df1470489c212419efd3158966a74631a04df457a7c5dee05428d2b57"
+  },
+  "identity_policy": "UTN198 v2 source-key alias only; JAG198 active ID and unrelated positional alias untouched.",
+  "deferred": [
+    "full CLDF build",
+    "compiled durable identity check",
+    "full tests",
+    "database build",
+    "browser QA"
+  ],
+  "focused_tests": {
+    "count": 26,
+    "passed": 26,
+    "seconds": 1.12,
+    "modules": [
+      "test_sil_koya_2021.py",
+      "test_sil_koya_preview.py",
+      "test_sil_koya_whole_recovery.py",
+      "test_sil_koya_metadata_revision.py",
+      "test_sil_koya_installed_whole.py"
+    ],
+    "log": "tmp/rohru-whole-review/koya-final-tests.log"
+  },
+  "canonical_parser_rows": 1665,
+  "metadata_delta_from_frozen_yaml": "Only defaults.importer commands/note added; reviewed linguistic settings remain exact.",
+  "installer_sha256": "df68b256fc6a6cd4bae09a6b6f27dfdff9ac165e99c54bccf371a913040631f6",
+  "independent_acceptance": "whole-source-recovery/literal-integration-metadata-r2/root-independent-output-audit-20260927.json"
+}

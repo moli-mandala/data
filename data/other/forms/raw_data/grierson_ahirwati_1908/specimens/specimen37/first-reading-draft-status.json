@@ -1,0 +1,40 @@
+{
+  "status": "complete physical owner first-reading draft; cross-script/whole-utterance review not yet closed",
+  "counts": {
+    "roman_lines": 42,
+    "roman_physical_atoms": 367,
+    "native_lines": 27,
+    "native_physical_atoms": 365,
+    "roman_join_groups": 3,
+    "script_alignment_candidates": 362,
+    "whole_utterances": 27
+  },
+  "input_hashes": {
+    "data/data/other/forms/raw_data/grierson_ahirwati_1908/specimens/specimen37/roman-first-reading.tsv": "8aa740179b4afc187aa5e38bf216168a514191ef95597b958ac4908839245c04",
+    "data/data/other/forms/raw_data/grierson_ahirwati_1908/specimens/specimen37/native-first-reading.tsv": "7af48d331dee4c091bd3b2b5c0b27ac93514cac4162b2d29ee54253ac4fa9ca0",
+    "data/data/other/forms/raw_data/grierson_ahirwati_1908/scope/native-specimen-image-manifest.json": "d80b66475e667929d9cdff6f51c67170465f5bb8270b1eeee924cd30fd403f8d"
+  },
+  "output_hashes": {
+    "roman-physical-lines-first-reading.jsonl": "d76a7526bd4ef7a706c47dd56a6b9dbaf7e290a4f08d54a4f708d1a51a01894c",
+    "roman-atoms-first-reading.jsonl": "b0d4be52ec0231f7979c56699f1b8e719dbd87c382211c84ba5e3af7d98c9cd3",
+    "native-physical-lines-first-reading.jsonl": "731ac393502bf04afa39fecd09816376b7a03993aa4b6b3cb3c0666d946049b8",
+    "native-atoms-first-reading.jsonl": "b76b8a9bea5b11c7f660a68b11ea036c1756e9ed6494426741c6a3936acfd732",
+    "physical-break-joins-proposal.jsonl": "337ff4530f5366e8714643019baeecfb32bda76d2c63b61cc4f0cd2b74f814c8",
+    "script-alignment-proposal.jsonl": "1ed23db49dd8c9361301e26d38aa25b942a69e40cac425c48deb5eb31bfcb079",
+    "whole-utterances-first-reading.jsonl": "e3f158f9c0c09ccfb0ff9b86c0fa70ecc783c49d8cab5486b890bf197f7a6aa7"
+  },
+  "script_sha256": "9604387c9afb6c03da850d9db46acccfedc1c1e3e2bad0bb450e0a7fc9a0c36a",
+  "planning_count_reconciliation": {
+    "initial_roman_space_atom_count": 366,
+    "fine_roman_atom_count": 367,
+    "reason": "p234 fine aligned first reading accounts 141 atoms rather than initial planning space count 140; planning census is preserved."
+  },
+  "known_limits": [
+    "Ordinal equal counts do not establish lexical alignment; all362 source-span anchors owner-read, independent review still required.",
+    "Native source and Roman source differences must remain separate evidence; no silent transliteration repair.",
+    "Printed Devanagari quotation punctuation differs from Roman quotation; no inferred speech labels.",
+    "Printed interlinear analysis is not a supplied free English translation.",
+    "Native font confusions including ळ/क, nasal signs, and final joined letters remain owner fine-review tasks.",
+    "Whole utterance boundaries and proposed atomic joins require independent review before proposal freeze."
+  ]
+}

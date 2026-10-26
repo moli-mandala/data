@@ -1,0 +1,36 @@
+{
+  "status": "All proposed rows pass isolated actual parser",
+  "inputs": {
+    "integration-proposal/all-additions.csv": "eac856e14db95482180055cd4e6aee2539061281fd71c50b8d12f362da6ec9d5",
+    "routing-proposal/20260828-sil-korwa-kodaku.yaml": "7579f276c0e0b37ad02fb18eb587724b4d7f58d6f10860eafcbf748e56836472",
+    "routing-proposal/20260927-behera-whole-additions.yaml": "3bea74ba85f97fcf985bdf17ed16082872c7547e0d7c26e1881a6e4dbf631adf"
+  },
+  "parser_sha256": "1a1ded9eff5b8607174aa37981efb4358824be8ffffdfaa7128c0cea53dac5a8",
+  "checks": {
+    "NFC": {
+      "rows": 2405,
+      "all_15_fields_exact": true,
+      "ordered_keys_preserved": true,
+      "unlinked_rows_retained": true,
+      "unwanted_splits": 0,
+      "errors": 0,
+      "initial_dedupe_distinct_source_records": 2405
+    },
+    "NFD": {
+      "rows": 2405,
+      "all_15_fields_exact": true,
+      "ordered_keys_preserved": true,
+      "unlinked_rows_retained": true,
+      "unwanted_splits": 0,
+      "errors": 0,
+      "initial_dedupe_distinct_source_records": 2405
+    }
+  },
+  "canonical_changes": false,
+  "not_proven": [
+    "Final literal review",
+    "Language/dialect registry installation",
+    "Whole-source assembly",
+    "Full compiled identity/graph behavior"
+  ]
+}

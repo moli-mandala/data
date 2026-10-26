@@ -1,0 +1,18 @@
+# Darai: kinship and door
+
+Eight source-backed reflex records across five etyma.
+
+| # | Darai form | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **putəu** ‘daughter-in-law’ (dhakal2011darai[p. 47]) | **putravadhū**, CDIAL **8270** | Dhakal p. 47 prints /putəu/ “daughter-in-law.” Turner8270 gives Maithili putahu “son’s wife” and Bhojpuri/Awadhi patoh alongside its putravadhū head; the Darai final diphthong and absent h agree with this eastern family. |
+| 2 | **bʰaim** ‘my brother’ (dhakal2011darai[p. 48]) | **bhrā́tr̥**, CDIAL **9661** | Dhakal p. 48 prints /bʰaim/ “my brother.” Turner9661 lists Prakrit bhāi and Nepali, Maithili, Bhojpuri bhāi “brother”; it also documents -m in “my brother” forms from other lects. The Darai possessive response remains one source record. |
+| 3 | **dulʰa** ‘husband’ (dhakal2011darai[p. 56]) | **durlabha**, CDIAL **6446** | Dhakal p. 56 prints /dulʰa/ “husband.” Turner6446 lists Bihari and Maithili dulhā “bridegroom” from the durlabha family; the Darai form denotes the married male rather than only his wedding role. |
+| 4 | **dulʰi** ‘wife’ (dhakal2011darai[p. 56]) | **durlabha**, CDIAL **6446** | Dhakal p. 56 prints /dulʰi/ “wife.” Turner6446 explicitly gives the feminine Nepali dulahi “bride” and Maithili/OAw dulahini; the Darai reduced feminine form denotes the married female. The source does not establish a separate synchronic derivation. |
+| 5 | **kevari** ‘door’ (dhakal2011darai[p. 57]) | **kavāṭa**, CDIAL **2963** | Dhakal pp. 57, 66 and 67 print /kewari/ “door.” Turner2963 lists Bihari kewāṛī, Maithili kewāṛī and Hindi kewār/kiwāṛ “door”; Darai transcription v represents the source /w/. Its remote Dravidian origin is described by Turner as possible, not settled. |
+| 6 | **kevari** ‘door’ (dhakal2011darai[p. 66]) | **kavāṭa**, CDIAL **2963** | Dhakal pp. 57, 66 and 67 print /kewari/ “door.” Turner2963 lists Bihari kewāṛī, Maithili kewāṛī and Hindi kewār/kiwāṛ “door”; Darai transcription v represents the source /w/. Its remote Dravidian origin is described by Turner as possible, not settled. |
+| 7 | **kevari** ‘door’ (dhakal2011darai[p. 67]) | **kavāṭa**, CDIAL **2963** | Dhakal pp. 57, 66 and 67 print /kewari/ “door.” Turner2963 lists Bihari kewāṛī, Maithili kewāṛī and Hindi kewār/kiwāṛ “door”; Darai transcription v represents the source /w/. Its remote Dravidian origin is described by Turner as possible, not settled. |
+| 8 | **samdʰi** ‘son's father in law’ (dhakal2011darai[p. 60]) | **saṁbandhin**, CDIAL **12957** | Dhakal p. 60 prints /samdʰi/ “son’s father-in-law.” Turner12957 gives Maithili samdhī with exactly that meaning and Nepali samdhi “child’s father-in-law”; the Darai cluster and kin relation match the first, masculine branch. |
+
+Eight affected records and eight reflex rows. Held: *nəmda* husband’s younger sister and two *bʰəŋna* nephew records. The prior Darai holds remain excluded. No lexical-source, identity or build changes.
+Primary source: Dhakal 2011 printed pp. 47–48, 56–57, 60, 66–67, checked in source PDF images and decoded text. Discovery: darai-search025–027; complete CDIAL articles darai-primary024–026.
+Validation: check-pass and save-pass passed; the exact eight saved rows match the Darai owner sidecar, now 104 rows. check-sources and direct sidecar-placement checks passed. Protected identity/compiled forms/compiled edges hashes are unchanged, the Darai sidecar was the sole sidecar changed, and a second application produced zero changes. The first check-sources attempt encountered an unrelated source profile being created concurrently; the rerun passed after its owner completed that file. No rebuild.

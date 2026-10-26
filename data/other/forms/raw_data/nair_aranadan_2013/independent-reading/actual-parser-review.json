@@ -1,0 +1,40 @@
+{
+  "status": "passed isolated actual parser; no canonical writes",
+  "pins": {
+    "integration/review-candidate.csv": "d7479dff8846d69095766bae90b10abf837bbe8f5d989d38a635e2e52a90de42",
+    "integration/review-audit.jsonl": "0b8d183e825ed416bb5345a3cfc5829a0b0c7e137abc0030c1085ef527b6e517",
+    "integration/review-status.json": "5bb16eddf8e0a67adaab8e9f95f1042b4bd0f31de0b10f14f60ce99342d0a1f5",
+    "root-review/proposed-settings.yaml": "fc3f8fd4f49e1adea048bd6e3bd4525b84ad7d973988f91e8e223a9c375c6f07"
+  },
+  "parser_sha256": "1a1ded9eff5b8607174aa37981efb4358824be8ffffdfaa7128c0cea53dac5a8",
+  "checks": {
+    "NFC": {
+      "rows": 102,
+      "all15fields_exact": true,
+      "display_exact_normalized_equivalence": true,
+      "errors": 0,
+      "ordered_keys": true
+    },
+    "NFD": {
+      "rows": 102,
+      "all15fields_exact": true,
+      "display_exact_normalized_equivalence": true,
+      "errors": 0,
+      "ordered_keys": true
+    }
+  },
+  "variant_links_closed": 2,
+  "languages": [
+    "Aranadan",
+    "Kannada",
+    "Malayalam"
+  ],
+  "no_pua_or_replacement": true,
+  "source_mark_controls": [
+    "n/l combining lowline",
+    "ñãã three tilde marks",
+    "doubled vowels",
+    "source hyphen/dash boundaries"
+  ],
+  "canonical_changes": false
+}

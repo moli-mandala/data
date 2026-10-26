@@ -1,0 +1,68 @@
+{
+  "status": "owner whole-source review completed; independent final output audit pending",
+  "scope": "Read all452 source lexical rows and all152 changed emitted-row decisions, all3sentences and full schema/census. Source raw phonetics, native strings and bilingual definitions retained. No speculative word segmentation, donor links or source inflection from English plural nouns.",
+  "reviewed_source_entries": 452,
+  "reviewed_output_decisions": 521,
+  "changed_rows": 152,
+  "new_sentences": 3,
+  "originals": {
+    "sqlite_sha256": "bc4ab203e8f6edc902cda41171c9feed602fe854ea34aee3869b610199167f93",
+    "lexical_snapshot_sha256": "fe6c9b06260a4ee8940ce7e4f993d328d952dc92d26f47afa2bc5f9f6f823117"
+  },
+  "schema_accounting": {
+    "included": [
+      "entries",
+      "senses",
+      "dialects",
+      "entry_dialects",
+      "sentences",
+      "senses_in_sentences"
+    ],
+    "empty_lexical_tables": [
+      "clause_slots",
+      "cognate_set_members",
+      "cognate_sets",
+      "deletes",
+      "entry_relationships",
+      "entry_tags",
+      "etymologies",
+      "featured_entries",
+      "glossing_abbreviations",
+      "grammar_sections",
+      "ignored_forms",
+      "rejected_pushes",
+      "relationship_types",
+      "section_sentences",
+      "sense_videos",
+      "sentence_photos",
+      "sentence_videos",
+      "sources",
+      "sqlite_sequence",
+      "tags",
+      "text_collections",
+      "text_dialects",
+      "text_tags",
+      "texts",
+      "video_speakers",
+      "videos"
+    ],
+    "excluded_nonlexical": "438audio/438speakerlinks,69photos/69senselinks,2speakers and administrative synchronization/migration tables. No media fetched, speaker personal data not exported."
+  },
+  "known_residuals": [
+    "Six legacy native-only heads plus three new native-only sentences have no source phonetic transcription.",
+    "Source spelling/shortening/glottalization distinctions preserved as before.",
+    "Leading hyphen on culture retained with typed morphological uncertainty.",
+    "Automatic sentence token matches lack interlinear glossing and split apostrophes; preserved as evidence, not accepted lexical alignment.",
+    "Bare English you/your has no number; her has no inferred possessive/object case.",
+    "Existing homographic heads and conflicting sentence glosses remain distinct source records."
+  ],
+  "targeted_independent_evidence": "root-sentence-evidence-review-20260927.json",
+  "focused_tests": "4 passed in0.66s; tmp/kharia-living-recovery/tests.log",
+  "deferred": [
+    "full CLDF",
+    "full suite",
+    "database",
+    "browser",
+    "canonical installation pending approval"
+  ]
+}

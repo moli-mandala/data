@@ -1,0 +1,10 @@
+# Zargari: every day and every night
+
+Two source-checked temporal adverbs under standing autonomous authorization. Original PDF printed pp. 132 and 143, source glyph audit (including duplicate grammar occurrences), exact installed keys, compiled variant links and full Turner articles/addenda were checked. No lexical import or rebuild.
+
+| Zargari forms and meanings | Proposed etymology | Evidence |
+|---|---|---|
+| **diseste** ‘every day’ | **divasá**, CDIAL **6333** | Turner 6333 divasá 'day' gives European Romani dives and Paluli dīs; the separate source Zargari dis 'day' is already linked to 6333. The grammar explicitly prints dis-este 'every day' as a locative expression of 'every' (p. 132 §3.1.16) and lists diseste in its temporal adverbs (p. 143 §3.20.1.2). The local ending is retained; the inherited day stem is the etymological target. |
+| **rāytādu** ‘every night’ | **rā́trī**, CDIAL **10702** | Turner 10702 rā́trī 'night' gives European Romani rat and locative rati 'at night'. The grammar explicitly prints rājt-ādu 'every night' as another locative expression of 'every' (p. 132 §3.1.16), lists rājtādu among temporal adverbs, and separately prints rāt 'night' in the phrase nāklās rāt 'last night' (p. 143 §3.20.1.2). The source j glide and the locative ending are retained; no separately installed bare-night lemma is assumed. |
+
+Two assignment rows affect two records, both `reflex` of inherited bases with source locative morphology. The separately installed dis-este and rāyt-ādu spellings have existing compiled rank-1 variant edges and are not duplicated. Other phrases with partially unknown deictic or contact members remain excluded. Discovery: `zargari-primary035`, PDF images and `pass162-source-audit.json`. Check-pass, save-pass and check-sources passed. Both saved rows match the exact owner sidecar, second application changes zero rows, and protected CSV hashes are unchanged. No rebuild. Zargari linked 271→273 of 522, leaving 249 unlinked; diversity Zargari additions now 194 records.

@@ -1,11 +1,17 @@
-# Shared integration proposal
+# Historical wordlist integration record
 
 Shared bibliography, Kodaku base-language registration, eighteen dialect rows,
 profile routing, audit-registry, census, and focused metadata integration were
 applied by the coordinating task on 2026-08-28. The consolidated CLDF build and
 browser QA remain deferred until all parallel source packages have landed. The
 sections below retain the source-local proposal and expected counts as an audit
-trail.
+trail. They are not current instructions to reinstall the 4,458-row wordlist.
+The complete report's candidate, review evidence and remaining gates are in
+`whole-recovery/README.md`. An accepted whole-report source stage is installed
+only by `whole-recovery/installation/install_source.py --install` with its
+exact-hash root-acceptance manifest. Its transaction journal and receipt protect
+an interrupted or completed installation. The historical importer rejects those
+states and any changed canonical wordlist CSV.
 
 ## Bibliography
 
@@ -69,13 +75,13 @@ sil-kodaku-2005-baikanthpur,dialect:Kodaku:sil-kodaku-2005-baikanthpur:Baikanthp
 - No `utils.py` graph or etymology routing is needed. Similarity groups remain
   Notes only and all `Parameter_ID`, `Cognateset`, and `Etymology` fields are blank.
 
-## Commands and expected counts
+## Historical commands and expected counts
 
 ```sh
-python data/other/forms/raw_data/sil_korwa_kodaku_2022/import_korwa_kodaku.py --verify-pdf --install
-UV_CACHE_DIR=/tmp/uv-cache uv run pytest -q tests/test_sil_korwa_kodaku_2022.py
-make all
-UV_CACHE_DIR=/tmp/uv-cache uv run pytest -q
+python data/other/forms/raw_data/sil_korwa_kodaku_2022/import_korwa_kodaku.py --verify-pdf
+# Historical --install is archival and guarded against whole-report recovery.
+# After exact whole-report approval, use:
+# python data/other/forms/raw_data/sil_korwa_kodaku_2022/whole-recovery/installation/install_source.py --install
 ```
 
 Expected source-local results: 2,900 reviewed printed response lines; 5,250

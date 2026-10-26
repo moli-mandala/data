@@ -26,9 +26,14 @@ def installed():
         return list(csv.reader(handle))
 
 
+def historical():
+    with (PACKAGE / f'{CSV.stem}.csv').open(encoding='utf-8', newline='') as handle:
+        return list(csv.reader(handle))
+
+
 def test_entire_p236_table_and_reproducibility():
     rows, audit = source.build_p236()
-    assert rows == installed()[:31]
+    assert rows == historical()[:31]
     assert len(audit) == 42 and len(rows) == 31
     assert [a["row"] for a in audit] == list(range(1, 43))
     assert len({a["entry_key"] for a in audit}) == 42
@@ -70,10 +75,12 @@ def test_print_review_controls_provenance_and_overlap():
 
 def test_source_dialect_profile_and_scoped_parser():
     rows = installed()
-    assert all(len(r) == 15 and r[0] == "ju" and r[14] == source.DIALECT for r in rows)
-    assert len({r[10] for r in rows}) == 196
+    assert all(len(r) == 15 and r[0] == "ju" for r in rows)
+    assert all(source.DIALECT in r[14].split() for r in rows if ':prose:' not in r[10])
+    assert len({r[10] for r in rows}) == 226
     assert all(r[7].startswith("dalton1872haldarjuang[p. ") for r in rows)
-    assert sum("Source annotation: (s.)" in r[9] for r in rows) >= 7
+    assert sum('(s.)' in r[6] for r in rows) >= 7
+    assert all(not r[9] for r in rows)
     dialects = {r[0]: r for r in csv.reader((DATA / "cldf/dialects.csv").open())}
     dialect = dialects["haldar-1872-juanga"]
     assert dialect[1:5] == [source.DIALECT, "ju", "dalton1872haldarjuang:Juanga", "Juanga (Haldar compiled 1872)"]
@@ -82,20 +89,20 @@ def test_source_dialect_profile_and_scoped_parser():
     assert bib.count("@book{dalton1872haldarjuang,") == 1
     assert "20260925-dalton-haldar-juang.csv" in bib
     tokenizer = Tokenizer(str(PROFILE))
-    assert tokenizer("juanglé", column="IPA").replace(" ", "") == "juangle"
-    assert tokenizer("bhagwán", column="IPA").replace(" ", "") == "bʰagvan"
-    assert tokenizer("ghorá", column="IPA").replace(" ", "") == "gʰora"
+    assert tokenizer("juanglé", column="IPA").replace(" ", "") == "juanglé"
+    assert tokenizer("bhagwán", column="IPA").replace(" ", "") == "bʰagván"
+    assert tokenizer("ghorá", column="IPA").replace(" ", "") == "gʰorá"
     import make_cldf
 
     errors = io.StringIO()
     parsed, stats = make_cldf.parse_file(str(CSV), errors, name=CSV.stem)
     assert not errors.getvalue()
-    assert len(parsed) == stats["converted"] == 196
+    assert len(parsed) == stats["converted"] == 226
 
 
 def test_complete_comparison_and_separate_list_inventory():
     rows, audit = source.build()
-    assert rows == installed()
+    assert rows == historical()
     assert len(audit) == 361 and len(rows) == 196
     assert Counter(a["status"] for a in audit) == {
         "selected": 186, "selected_alternates": 3, "held": 19, "blank": 153

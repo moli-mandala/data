@@ -1,0 +1,12 @@
+# marwari_bagra: survey etymology review, batch 29
+
+**Saved under the autonomous-work authorization of 2026-09-21.** 2 proposals; exact IDs and source attestations are in the [manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/marwari_bagra/batch-029.json).
+
+| # | Language form and meaning | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **margyɔ** ‘don't die!, he died’ | Component: **máratē** + **gatá**; [CDIAL 9871](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=567);[CDIAL 4008,1](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=214);[Platts s.v. marnā, mar-jānā](https://www.rekhta.org/urdudictionary?keyword=marnaa) | The complete response contains mar(i) “die” plus the perfective go auxiliary, in that order. CDIAL 9871 supplies the regional mar stem (its deeper Vedic history remains debated); 4008,1 gives gaya/gaa, Hindi gayā, Gujarati gyau/giu and the extended gel forms. Platts explicitly records mar-jānā “die”. The links identify both members of the regional compound, not an inherited Sanskrit compound. Paired elicitation glosses are retained; selected responses contain the affirmative past form, with no unrepresented negative word. Mixed responses and unclear additional material are excluded. (1 records.) |
+| 2 | **mārdīyɔ** ‘don't kill!, he killed’ | Component: **māráyati** + **\*dita**; [CDIAL 10066](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=579);[CDIAL 6140,3](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=351);[Platts s.v. mārnā, mār-denā](https://www.rekhta.org/urdudictionary?keyword=maarnaa) | This is mār “kill” followed by diyā/diyo “gave” as a perfective auxiliary. CDIAL 10066 supplies the causative kill stem, while specifically 6140,3 \*dita supplies Hindi diyā and Kumaoni/Nepali diyo; the contracted dyo retains the same auxiliary. Platts explicitly lists mār-denā as an intensive of mārnā. Both ordered component families are represented; the source paired gloss does not imply that a negative particle occurs in these affirmative responses. (1 records.) |
+
+4 assignment rows on 2 records. Relation kinds: {'component': 4}.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-surveys-20260921/pass008-validation.json). No compiled or browser rebuild. Excluded and competing analyses are tracked in the [run review](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-surveys-20260921/REVIEW.md).

@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Gondi · Dravidian surveys, 2026-09-21 · batch 011. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Gondi | Proposed etymology | Evidence |
+|---|---|---|---|
+| 36 | **tin** ‘Eat’, **tin** ‘eat’, **tinu** ‘eat’, **tinnu** ‘eat’, **tinˑu** ‘eat’ | Proposed reflex of [**DEDR 3263**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=284) | DEDR 3263(a) lists Tamil tiṉ, Kannada tin/tinu/tinnu and the widespread cognate eating verb; Kannada past stem tind- and related inflection belong here. Causatives, food derivatives and subsection (b) right-hand expressions are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (6 records.) |
+| 37 | **sā** ‘Die’, **hā** ‘die’ | Proposed reflex of [**DEDR 2426**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=212) | DEDR 2426 explicitly compares Tamil cā, Kannada sāy (past sattu), Gondi hā-/sāy-, Kurux khē’enā (keccas), Malto keye and Brahui kahing die. Only the intransitive verb is proposed here; derived causative kill responses require a distinct relation analysis. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (2 records.) |
+| 38 | **puna** ‘new’, **pūnaʔ** ‘new’ | Proposed reflex of [**DEDR 4275**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=378) | DEDR 4275 gives Tamil putu/putiya, Malayalam putu, Kodagu pudiyë, Kannada posa/hosa/hosadu and Tulu posa/posatu new; Konda pūni and Malto pune belong to the same family. These simple stems and adjectival inflections are selected; new-person nouns and loan-looking alternative stems remain unassigned. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (3 records.) |
+| 39 | **puŋgari** ‘flower’, **buŋgār** ‘flower’ | Proposed reflex of [**DEDR 4345**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=384) | DEDR 4345 records Tamil pū, Malayalam pū/pūvu, Kannada pūvu, Gadaba pū/puvvu, Parji pū, Gondi puŋgar and Kurux pūmp flower. The selected simple flower forms fit these comparanda; Indo-Aryan-looking phul and uncertain responses are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (2 records.) |
+| 40 | **koḍvinj** ‘fat’ | Proposed reflex of [**DEDR 2146**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=193) | DEDR 2146 gives Tamil/Malayalam koḻuppu fat, Gadaba koḍukuṭ/koḍukuḍ, Gondi koṛvinj and Konda koṛvu animal fat. The survey variants retain this lexical family; questioned Kota evidence and carbi/cerabi loan forms are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+
+Proposed assignment rows: **14**. Affected records: **14**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-011.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Gondi/batch-011.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

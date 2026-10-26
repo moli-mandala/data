@@ -1,0 +1,74 @@
+{
+  "status": "partial_independent_visual_review",
+  "reviewer": "root",
+  "source": "Pinned local486-pagePDF",
+  "findings": [
+    {
+      "codepoint": "U+F0C3",
+      "font": "SILDoulosIPA93Regular",
+      "pdf_page": 374,
+      "printed_page": 352,
+      "result": "Visual wedge ʌ confirmed in two table forms tʌmʰha and ʌmʰa; preserve distinction from schwa and a.",
+      "proposed_mapping": "ʌ"
+    },
+    {
+      "codepoints": [
+        "U+F040",
+        "U+F07E"
+      ],
+      "pdf_page": 100,
+      "printed_page": 78,
+      "result": "Stacked mark above i visually resembles small crossing strokes. Font-specific character mapping and mark attachment remain unresolved; do not guess plain nasal/acute solely from expected morphology."
+    },
+    {
+      "codepoint": "U+F041",
+      "pdf_page": 171,
+      "printed_page": 149,
+      "result": "a-like glyph adjacent to t with visible subscript dot near boundary. Need font mapping/glyph-coordinate inspection to assign dot; no mapping approved."
+    },
+    {
+      "codepoint": "U+F0E2",
+      "font": "SILDoulosIPA93Italic",
+      "pdf_page": 46,
+      "printed_page": 24,
+      "result": "Tilde directly above final i in dzawaĩ confirmed at5x.",
+      "proposed_mapping": "combining tilde U+0303, attached geometrically to final i"
+    },
+    {
+      "codepoint": "U+F0E2",
+      "font": "SILDoulosIPA93Regular",
+      "pdf_page": 39,
+      "printed_page": 17,
+      "result": "Zero-width source mark renders tilde over a in kãdbari; mark location must be attached by glyph geometry, not extraction order alone.",
+      "proposed_mapping": "combining tilde U+0303 on source-marked a"
+    },
+    {
+      "codepoint": "U+F02B",
+      "font": "SILDoulosIPA93Regular",
+      "pdf_page": 104,
+      "printed_page": 82,
+      "result": "Literal plus sign confirmed; structural table marker, not lexical form.",
+      "proposed_mapping": "+"
+    },
+    {
+      "codepoint": "U+F060",
+      "pdf_page": 163,
+      "printed_page": 141,
+      "result": "Small vertical stroke beneath/after final i of rəktarirəktari. Not visually a conventional grave above a vowel; unresolved, preserve evidence."
+    },
+    {
+      "codepoint": "U+F032",
+      "pdf_page": 232,
+      "printed_page": 210,
+      "result": "No independently legible mark identified in5x crop containing kʰas; requires glyph contour/coordinate review, no deletion approved."
+    },
+    {
+      "codepoint": "U+F03E",
+      "pdf_page": 342,
+      "printed_page": 320,
+      "result": "Small elevated wedge-like mark after i before n; do not map to greater-than from legacy codepoint, unresolved."
+    }
+  ],
+  "canonical_modified": false,
+  "font_inspection": "Embedded TrueType subsets for PDF100/171 omit post tables/glyph names; no authoritative symbol names recovered from these subsets."
+}

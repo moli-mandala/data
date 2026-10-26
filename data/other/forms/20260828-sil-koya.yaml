@@ -1,7 +1,24 @@
 file: 20260828-sil-koya.csv
+defaults:
+  identity:
+    dedupe_by_entry_key: true
+  transcription:
+    profile: sil-koya-literal
+    preserve_hyphens: true
+  importer:
+    commands:
+    - - data/other/forms/raw_data/sil_koya_2021/install_whole_source.py
+      - --install
+    note: Accepted whole-report recovery, 1665 rows across three files. Historical
+      import_koya.py is a reconstruction fixture only. Guarded regeneration required;
+      full build and browser gates deferred.
 sources:
   devagnanavaram-et-al2021koya:
-    transcription:
-    - profile: sil-koya
-    notes:
-      audit_only: true
+    identity:
+      dedupe_by_entry_key: true
+    forms:
+      split_alternates: false
+    reference:
+      editor: OpenAI Codex
+      ocr: true
+      etymology_provenance: none

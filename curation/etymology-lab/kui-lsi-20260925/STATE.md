@@ -1,0 +1,15 @@
+# Kui LSI 1928 residual research — checkpoint 001
+
+The source has 175 compiled records. Before this pass, 23 were already pending proposals, one was held, and none had an accepted graph or overlay link. This checkpoint assessed the first 50 of the 151 residual records: three new pending reflex proposals, 47 research holds, and 101 still unexamined. Every record has a unique disposition (`record-coverage-001.json`).
+
+Candidate discovery invoked Jambu's existing homepage `fetchLemmaList` implementation against the read-only browser database. Fifty exact-form queries returned 189 rows and 50 Kui/DEDR gloss queries returned 383 rows; every result count matched its returned rows. The full DEDR articles for the three proposed parents and relevant counterexamples are retained in `primary-evidence.json`. The proposed forms directly match printed Kui-family material for man (4756), woman (400), and up (4841). A false homograph is held: DEDR 5151 bāi means ‘who’, whereas the LSI record is glossed ‘sister’. Multiword animal, kinship, and descriptive responses remain held where their components are not all sourced.
+
+Pending review is in Kui batch 006. The canonical `make check-pass` dry run passed for all three proposed records and three assignment rows, with `secondApplicationChanges=0` and exact manifest agreement (`checkpoint-001-validation.json`). No `save-pass`, rebuild, source reparse, accepted sidecar edit, parent-heading edit, commit, push, or deployment has been performed.
+
+## Final residual checkpoint 002
+
+The remaining 101 records have now been assessed: 26 additional pending proposals (27 assignment rows, including one ordered moon-plus-deity compound) and 75 additional holds. Across all 175 Kui LSI source records, 23 have earlier pending proposals, one an earlier hold, 29 new pending proposals, 122 new holds, and zero are unexamined. Ownership is unique and exhaustive (`record-coverage-002.json`). Pending Kui batches 007–010 are indexed in `REVIEW-002.md`.
+
+Homepage discovery used the read-only `fetchLemmaList` implementation: 101 exact-form queries returned 1,754 rows and 101 Kui/DEDR gloss queries returned 2,157 rows. The form query `a` had 1,527 matches and the gloss query `I` had 1,234; each was capped at the first 1,000 returned rows. Precise form candidates and the full DEDR 333/5160 articles support the associated proposals. Full shortlisted articles and counterexamples are retained in `primary-evidence-002.json`. Complete subject-plus-predicate clauses were held where linking to one root would discard the other words and inflection; uncertain immediate donors and unmatched transcription were also held.
+
+The second canonical dry-run (`check-pass-002.log`, `checkpoint-002-validation.json`) passed for 26 records and 27 assignment rows, with `secondApplicationChanges=0` and exact agreement with the four pending manifests. All proposals remain pending review. No `save-pass`, rebuild, source reparse, accepted sidecar edit, parent-heading edit, commit, push, or deployment has been performed.

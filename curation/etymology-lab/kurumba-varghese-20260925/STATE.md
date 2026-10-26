@@ -1,0 +1,7 @@
+# Varghese Palakkad Kurumba residual research — checkpoint 003
+
+The compiled Varghese Palakkad Kurumba source has **463** records. Earlier pending research owns **313**; this pass assesses the remaining **150** exact source IDs. It proposes **61** DEDR whole-article assignment rows affecting **59** records, including ordered ten-plus-one components for two eleven responses. Another **91** records are explicit research holds; none remain unexamined. The original forms, glosses, locators and record identities are preserved, with no overlap with older review manifests.
+
+All 150 source forms were searched using the homepage `fetchLemmaList` against the read-only local database in five bounded chunks, returning **300** rows with no capped searches. The full text of **26** shortlisted DEDR articles is retained in `primary-evidence.json`. Seven current review batches, **032–038**, agree exactly with the proposed decisions. Uncertain loans, compounds and sense conflicts remain on hold.
+
+Canonical `make check-pass PY=.venv/bin/python` passed at checkpoint **003**, with **zero** second-application changes. `checkpoint-003-validation.json` independently verifies manifest agreement. Checkpoints 001 and 002 failed because an unrelated Grierson LSI accepted sidecar changed during the hash audit; that sidecar was left untouched. Exact source/prior-pass coverage and older-review overlap checks passed. No `save-pass`, accepted sidecar edit, rebuild, commit, push or deployment was performed for this pass.

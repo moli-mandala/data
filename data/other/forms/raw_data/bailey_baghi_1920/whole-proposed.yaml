@@ -1,0 +1,29 @@
+file: 20260925-bailey-baghi.csv
+defaults:
+  transcription:
+    profile: bailey-baghi-1920
+    input: form
+    preserve_hyphens: true
+  identity:
+    legacy_ids: stem
+    append_order: 51
+  importer:
+    commands:
+    - - data/other/forms/raw_data/bailey_baghi_1920/import_source.py
+      - --install
+    note: 'Whole paired-source Baghi recovery: shared introduction113–115 and lect-specific116–117,
+      grammar131–140,22complete translated responses141–142, commentary142–143 and
+      glossary144–147. 698rows preserve all296stable legacy keys, with 3explicit source-reviewed
+      legacy corrections. Printed morphology, variants and typed uncertainties remain
+      explicit; full compiled/browser gates deferred. Shared generic Kochi witnesses
+      are carried once in the companion Rampuri source, not duplicated.'
+sources:
+  bailey1920baghi:
+    identity:
+      dedupe_by_entry_key: true
+    forms:
+      split_alternates: false
+    reference:
+      editor: OpenAI Codex
+      ocr: true
+      etymology_provenance: none

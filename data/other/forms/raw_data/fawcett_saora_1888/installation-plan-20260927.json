@@ -1,0 +1,38 @@
+{
+  "status": "prepared only; no canonical files modified",
+  "preconditions": [
+    "Parent approves exact frozen manifest hash in root-installation-approval-20260927.json with status approved.",
+    "Importer validates every frozen input and test hash; conflicting canonical files are rejected before copying."
+  ],
+  "source_stage_command": "From data/: .venv/bin/python data/other/forms/raw_data/fawcett_saora_1888/import_source.py --install",
+  "copies": {
+    "proposal.csv": "data/other/forms/20260927-fawcett-saora.csv",
+    "proposal-audit.jsonl": "data/other/forms/raw_data/fawcett_saora_1888/audit.jsonl",
+    "proposal-profile.txt": "conversion/fawcett-saora-1888.txt",
+    "20260927-fawcett-saora.yaml": "data/other/forms/20260927-fawcett-saora.yaml"
+  },
+  "shared_metadata_patch": {
+    "file": "cldf/sources.bib",
+    "operation": "Append the exact parsed article entry from reference-proposal.bib if fawcett1888saora is absent; otherwise require equality/review. Do not rewrite other entries.",
+    "entry_sha256": "57f5babeb1f7d2f8a428bb7c6d1c138df00205e58acdf1458a4655ea431860f1"
+  },
+  "no_shared_code_changes": "Conversion profiles are automatically loaded from conversion/*.txt. File defaults provide existing profile routing and keyed identity; citation-specific no-split preserves syllable commas. No source-specific parser branch needed.",
+  "language": {
+    "id": "so",
+    "label": "Sora",
+    "glottocode": "sora1254",
+    "new_language_or_dialect_registration": false,
+    "geography": "Existing broad language geography retained; no table locality or precise source coordinate inferred."
+  },
+  "post_install_checks": [
+    "Exact byte equality of all four installed files.",
+    "Focused six tests plus actual parser route using registered profile/YAML.",
+    "Scoped in-memory bibliography formatting; no generated references rebuild.",
+    "Update source README, source-stage ledger and applicable checklist with build/browser explicitly deferred."
+  ],
+  "deferred": [
+    "full CLDF/database build",
+    "browser QA",
+    "commits/pushes/release"
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "status": "two_sharper_punctuation_corrections_require_owner_revision",
+  "reviewer": "/root/asur_finish",
+  "manifest_sha256": "f938a23ab7b25ddcf252b56547b98c30bf6516ac4f5b29b214565508eb09a025",
+  "pinned_proposal_expression_sha256": "ac88963a557430dc31f92ce0720d57e6b8a40be92b05f086a0fde44084659362",
+  "comparison_scope": "All four selected pages viewed against prior retained main-body layout; targeted native crops adjudicate two punctuation controls. No claim complete second fine-glyph reading of every atom.",
+  "corrections": [
+    {
+      "source_unit_key": "grierson1906kolamibasim:p564:specimen75-line:2:word:3",
+      "field": "raw_interlinear_gloss",
+      "old": "‘father.",
+      "new": "‘father,",
+      "alternate_reading": "Clearly comma with lower descending body; opening quotation mark unchanged.",
+      "main_reading": "Retained low-resolution binary main image appears dot-like; insufficient detail to prove an editorial edition change versus lost comma shape.",
+      "alternate_evidence": {
+        "path": "tmp/jambu-next-source/kolami-specimen-originals/alternate-p564-father-punctuation.png",
+        "sha256": "6386087a7445c42d1a78e0a4e4cf1d0dcf68a2ecd8a24d381cb61088ca267bd7",
+        "crop_bbox_native_or_retained_pixels": [
+          1230,
+          1740,
+          1660,
+          2010
+        ]
+      },
+      "main_evidence": {
+        "path": "tmp/jambu-next-source/kolami-specimen-originals/main-p564-father-punctuation.png",
+        "sha256": "9119af8783b34c72bf4880f66ecee8a4a9a9fe5b141b8ee0e1e6a25ea3e0a982",
+        "crop_bbox_native_or_retained_pixels": [
+          880,
+          1200,
+          1170,
+          1340
+        ]
+      },
+      "boundary_effect": "No target expression boundary change, since target already has comma."
+    },
+    {
+      "source_unit_key": "grierson1906kolamibasim:p568:specimen76-line:3:word:3",
+      "field": "raw_source_form",
+      "old": "miḷāpten.",
+      "new": "miḷāpten,",
+      "alternate_reading": "Clearly comma descender after final n.",
+      "main_reading": "Main binary mark dot-like; source-witness discrepancy or detail loss not established as textual edition change.",
+      "alternate_evidence": {
+        "path": "tmp/jambu-next-source/kolami-specimen-originals/alternate-p568-gathered-punctuation.png",
+        "sha256": "c0f740caf1f2e3e5d760261f18a74fd6918d4053cafd00664fa2829776a9735a",
+        "crop_bbox_native_or_retained_pixels": [
+          1060,
+          1950,
+          1590,
+          2160
+        ]
+      },
+      "main_evidence": {
+        "path": "tmp/jambu-next-source/kolami-specimen-originals/printed-568-top.png",
+        "sha256": "9199872461e36b766aac040a741eb4a3d75b15ed711d98b741137cbbf42d14a5",
+        "crop_bbox_native_or_retained_pixels": null
+      },
+      "boundary_effect": "Current expression3 closes after this token. Sharper target has no fullstop; re-evaluate and combine following span through first true target boundary, retaining exact atomic contributors and anchor history."
+    }
+  ],
+  "edition_discrepancy": "No secure editorial wording difference established; two punctuation shapes resolved by sharper primary witness. Retain both source hashes and observations.",
+  "next_gate": "Owner full sharper punctuation/glyph sweep and revised atomic/expression snapshots; rerun conservation and original boundary review.",
+  "canonical_changes": false
+}

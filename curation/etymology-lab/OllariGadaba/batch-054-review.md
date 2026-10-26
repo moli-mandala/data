@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Ollari Gadaba · Bhattacharya 1957 Ollari Gadaba residual records, 2026-09-25 · batch 054. Pending user review; autonomous research continues.
+
+| # | Ollari Gadaba | Proposed etymology | Evidence |
+|---|---|---|---|
+| 226 | **savul** ‘mortar’, **savkol** ‘pestle’ | Proposed reflex of [**DEDR 2391**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=210) | DEDR 2391 full article opens “2391 Ta. aval rice obtained from fried paddy by pestling it; avai (-pp-, -tt-) to pound in a mortar, crush, cuff, prod; avaiyal well-husked…”; its Ga. (Oll.) passage gives “Ga. (Oll.) savul mortar; savkol pestle; (S.) savvul mortar; savkōl pestle. ?”. The source form and sense match this Ollari entry within the whole article. (2 records.) |
+| 227 | **sāy-** ‘to leave; abandon’ | Proposed reflex of [**DEDR 2458**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=215) | DEDR 2458 full article opens “2458 Kol. say- (sayt-) to leave, let go, release; sasi- (sasit-) to leave ( say- + si·- to give); (SR.) sāy- to leave. Nk. sāy- leave, abandon.…”; its Ga. (Oll.) passage gives “Ga. (Oll.) sāy- to leave, abandon; (S.) sāy key- to leave, let loose; (S. 3 ) sāy- to leave, heal ( intr. ); sāyupp- to heal a wound.”. The source form and sense match this Ollari entry within the whole article. (1 record.) |
+| 228 | **siṭ-** ‘to split; cut’ | Proposed reflex of [**DEDR 2510**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=219) | DEDR 2510 full article opens “2510 Ka. ciṭlisu to break, snap, crack, burst, etc. Te. ciṭlu , (K. also) ciṭilu id.; ciṭlincu id. (tr.). Pa. ciṭṭ- to cut, split. Ga. (Oll.)…”; its Ga. (Oll.) passage gives “Ga. (Oll.) siṭ- id. DED 2071.”. DEDR 2510 gives Ollari siṭ- “split, cut”; the homophonous extinguish verb is in DEDR 1942. (1 record.) |
+| 229 | **siṭ-** ‘fire to go out’ | Proposed reflex of [**DEDR 1942**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=176) | DEDR 1942 full article opens “1942 Ta. keṭu (keṭuv-, keṭṭ-) to perish, be destroyed, decay, rot, become damaged, spoiled, fall on evil days, degenerate, be reduced, run away…”; its Ga. (Oll.) passage gives “Ga. (Oll.) siṭ- (fire) goes out; siṭp- (siṭt-) to make (fire) go out; (S) ciṭṭ- to be put out as fire.”. DEDR 1942 gives Ollari siṭ- “fire goes out”; the homophonous split verb is in DEDR 2510. (1 record.) |
+| 230 | **sinḍ** ‘son’ | Proposed reflex of [**DEDR 2594**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=225) | DEDR 2594 full article opens “2594 Ta. ciṉṉa small, little, inferior, mean, low, young; ciṉṉam smallness, minuteness, anything small; ciṉṉi small child, little thing, a small…”; its Ga. (Oll.) passage gives “Ga. (Oll.) sini vande little finger; sinḍ son; (S) cinḍu, sinḍu ( pl. cinḍīl, sinḍīl) id.; (S. 2 ) cin makil children.”. DEDR 2594 explicitly lists Ollari sinḍ “son”; its occurrence in a DEDR 4616 compound is not the source of this assignment. (1 record.) |
+
+Proposed assignment rows: **6**. Affected records: **6**. Relation kinds: **reflex**. Multi-part responses retain their source order.
+
+Exact persistent IDs and complete source records: [batch-054.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/OllariGadaba/batch-054.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../ollari-bhattacharya-20260925/research-holds.json). No new lexical material or donor nodes are introduced.

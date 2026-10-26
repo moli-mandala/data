@@ -1,0 +1,29 @@
+{
+  "status": "source-specific display decisions for integrated candidate; coverage and parser checks still required",
+  "basis": [
+    "Source transliteration key, original physical16–17; volume-notation-review-20260927.json",
+    "Source-specific chapter pronunciation and witness distinctions on printed459–460",
+    "Existing same-volume house-display profile conversion/grierson-naiki-1906.txt",
+    "SOURCE_INGESTION_CHECKLIST.md section7 requires an explicit source-to-display route rather than assuming every source glyph is already house transcription"
+  ],
+  "approved_display_changes": [
+    {"input": "capital letters, including precomposed and decomposed diacritic forms", "output": "corresponding lowercase letters", "reason": "Match established Jambu lexical display convention; retain source capitalization exactly in Original."},
+    {"input": "ṅ and Ṅ, including n/N plus combining dot above", "output": "ŋ", "reason": "Match the same-volume Naiki house transcription for the source velar nasal sign. This converts the proposed literal reading, not its confidence; any source-glyph uncertainty remains in audit and tags."}
+  ],
+  "preserve": [
+    "Every source vowel quantity and nasalization distinction, including witness disagreements",
+    "ñ and source-specific damaged nasal marks without phonological reinterpretation",
+    "Marked h and lower-r/l typography with their typed uncertainties",
+    "Meaningful hyphens, word boundaries, internal punctuation and optional-form parentheses",
+    "Source ch and w unless a separate witness-specific mapping is explicitly justified"
+  ],
+  "field_policy": {"Original": "exact source transcription after only approved physical word joins", "Phonemic": "blank; display normalization is not an independently supplied IPA transcription"},
+  "required_validation": [
+    "Refresh symbol inventory from actual combined emission, not earlier draft inventory",
+    "Test every observed NFC and NFD grapheme sequence with no replacement characters",
+    "Assert expected lowercase and velar-nasal display separately from exact Original retention",
+    "Keep settings source-specific; no shared default profile changes",
+    "Document existing generic-parser boundary trimming separately from sound conversion"
+  ],
+  "canonical_changes": false
+}

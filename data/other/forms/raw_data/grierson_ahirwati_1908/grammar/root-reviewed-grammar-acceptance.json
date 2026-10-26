@@ -1,0 +1,71 @@
+{
+  "reviewer": "/root",
+  "status": "accepted_source_local_four_keyed_corrections_and_three_shared_language_interpretations",
+  "input_sha256": {
+    "grammar/child-witnesses-first-reading.jsonl": "96ccc5261f3ddca49a5fe96b08675f800d64173c7d590a7eda4048882cb6f6d7",
+    "grammar/child-witnesses-reviewed.jsonl": "5ac645b13ae1a3132ac094431fbce9376037705f93c0c59d9861e6e7ef999ee7",
+    "independent-grammar-review/independent-full-grammar-review.json": "bd3bb95c88dfbe71317838ac598897de5a947c8d74cad88643a3fc3e98c1b9a3",
+    "grammar/reviewed-derivative-continuity.json": "ea2401f993bb76cd97e81eff5798dfd65ca2329df165ec2a40b988c70ca03142",
+    "grammar/parent-coverage-reviewed.jsonl": "67cd884d9c3fa64c9c188499b82ce92e8e4a91a73d8b5881cecab66a639672da"
+  },
+  "reviewed_interpretations": 98,
+  "preserved_first_reading_keys": 95,
+  "covered_parents": 51,
+  "field_changes": {
+    "stage": 95,
+    "source_quote": 11,
+    "source_form": 2,
+    "language_label": 2,
+    "historical_typed_uncertainties": 5,
+    "literal_review_resolution": 5,
+    "typed_uncertainties": 5
+  },
+  "accepted_field_corrections": [
+    {
+      "key": "lsi9.2:p50:nominal-ending-comparison-continuation:w3",
+      "field": "source_form",
+      "old": "ē",
+      "new": "ā"
+    },
+    {
+      "key": "lsi9.2:p51:qualified-oblique-relative-interrogative:w2",
+      "field": "source_form",
+      "old": "kaun",
+      "new": "kauṇ"
+    },
+    {
+      "key": "lsi9.2:p50:nominal-ending-comparison-continuation:w4",
+      "field": "language_label",
+      "old": "Bagri",
+      "new": "Bangaru"
+    },
+    {
+      "key": "lsi9.2:p50:nominal-ending-comparison-continuation:w5",
+      "field": "language_label",
+      "old": "Bagri",
+      "new": "Bangaru"
+    }
+  ],
+  "shared_language_interpretations": [
+    "lsi9.2:p50:nominal-ending-comparison-continuation:w6",
+    "lsi9.2:p50:nominal-ending-comparison-continuation:w7",
+    "lsi9.2:p51:genitive-suffix:w2"
+  ],
+  "native_evidence_sha256": {
+    "tmp/jambu-next-source/ahirwati-native-grammar-20260927/peer-p50-nominal-ending-native.png": "07d6d3ccec441bc206a391106ca91addc4ce9671e84129df2e36c4f662d6a70d",
+    "tmp/jambu-next-source/ahirwati-native-grammar-20260927/p51-first-reading-hypothesis-detail.png": "daa47fae2c74d960550063ff57ca8f3299ecb1b197dd2867da3d58439ab60c6e"
+  },
+  "counts_by_disposition": {
+    "documentary": 19,
+    "eligible": 66,
+    "eligible_comparator": 9,
+    "unattested_source_hypothesis": 4
+  },
+  "limits": [
+    "Same printed morphological witnesses interpreted under source-explicit Mewati agreement; not three new printed tokens.",
+    "No inherited/borrowing edges inferred from agreement.",
+    "Whole-source rich emission/settings/profile/registry/refs/graph/final audit pending.",
+    "Four unattested obliques remain audit-only.",
+    "No canonical writes or full-source completion."
+  ]
+}

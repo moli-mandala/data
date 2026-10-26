@@ -1,0 +1,111 @@
+{
+  "status": "source-local metadata proposals only; shared metadata unchanged",
+  "packages": {
+    "rampur": {
+      "current_yaml_sha256": "58131d4bd1bfd3089db9c4ea4c2bf26f0c644f7a78993cd194ac526c2480157e",
+      "proposed_yaml_sha256": "366937b49bbc41f0ef3d1a7a066ea7371d749babc697424f89c53e1214e83324",
+      "identity_unchanged": {
+        "legacy_ids": "stem",
+        "append_order": 73
+      },
+      "source_settings_unchanged": {
+        "bailey1920rampur": {
+          "identity": {
+            "dedupe_by_entry_key": true
+          },
+          "forms": {
+            "split_alternates": false
+          },
+          "reference": {
+            "editor": "OpenAI Codex",
+            "ocr": true,
+            "etymology_provenance": "none"
+          }
+        }
+      },
+      "changed_yaml_fields": [
+        "defaults.transcription.input",
+        "defaults.transcription.preserve_hyphens",
+        "defaults.importer.note"
+      ],
+      "proposed_reference_fields": {
+        "included": "Complete Rampuri source scope: shared introduction pp.113–115, lect-specific introduction p.116, grammar pp.131–140,22whole translated responses pp.141–142, commentary pp.142–143, and glossary pp.144–147. 647rows retain all288prior glossary keys; 280legacy rows are unchanged and 8have explicit source-reviewed field corrections. Source morphology, full expressions and qualified glyph readings are preserved. Other-lect comparisons, shared context and printed cross-references are explicitly accounted. Four unglossed generic Koci witnesses occur once under existing Kochi; the former body hold is recovered literally as jĕā́ with interpretation uncertainty.",
+        "provenance": "data/other/forms/20260925-bailey-rampur.csv; data/other/forms/raw_data/bailey_rampur_1920/audit.jsonl; data/other/forms/raw_data/bailey_rampur_1920/whole-paired-output-freeze-20260927-pass2.json; data/other/forms/raw_data/bailey_rampur_1920/whole-paired-second-reading-20260927.json; data/other/forms/raw_data/bailey_rampur_1920/whole-legacy-corrections-20260927-pass2.json"
+      }
+    },
+    "baghi": {
+      "current_yaml_sha256": "a40de3a812bd1756af6acdf189bb1a861aa4924620b06bfdfae49a7df00c5842",
+      "proposed_yaml_sha256": "25221a0b341f1e8ca630d4339c1267efa3c9754001d7b46c90fb7cdf42f3098d",
+      "identity_unchanged": {
+        "legacy_ids": "stem",
+        "append_order": 51
+      },
+      "source_settings_unchanged": {
+        "bailey1920baghi": {
+          "identity": {
+            "dedupe_by_entry_key": true
+          },
+          "forms": {
+            "split_alternates": false
+          },
+          "reference": {
+            "editor": "OpenAI Codex",
+            "ocr": true,
+            "etymology_provenance": "none"
+          }
+        }
+      },
+      "changed_yaml_fields": [
+        "defaults.transcription.input",
+        "defaults.transcription.preserve_hyphens",
+        "defaults.importer.note"
+      ],
+      "proposed_reference_fields": {
+        "included": "Complete Baghi source scope: shared introduction pp.113–115, lect-specific introduction pp.116–117, grammar pp.131–140,22whole translated responses pp.141–142, commentary pp.142–143, and glossary pp.144–147. 698rows retain all296prior glossary keys; 293legacy rows are unchanged and 3have explicit source-reviewed field corrections. Source morphology, full expressions and qualified glyph readings are preserved. Other-lect comparisons, shared context and printed cross-references are explicitly accounted. Shared generic Koci witnesses are retained only in companion bailey1920rampur; no unpaired Rampuri glossary answer is attributed to Baghi.",
+        "provenance": "data/other/forms/20260925-bailey-baghi.csv; data/other/forms/raw_data/bailey_baghi_1920/audit.jsonl; data/other/forms/raw_data/bailey_rampur_1920/whole-paired-output-freeze-20260927-pass2.json; data/other/forms/raw_data/bailey_rampur_1920/whole-paired-second-reading-20260927.json; data/other/forms/raw_data/bailey_rampur_1920/whole-legacy-corrections-20260927-pass2.json"
+      }
+    }
+  },
+  "existing_registry": {
+    "ramp": {
+      "ID": "ramp",
+      "Name": "Rampuri",
+      "Glottocode": "ramp1242",
+      "Latitude": "31.45",
+      "Longitude": "77.633056",
+      "Clade": "W. Pahari",
+      "Location": "",
+      "Quality": ""
+    },
+    "ba": {
+      "ID": "ba",
+      "Name": "Baghi",
+      "Glottocode": "maha1287",
+      "Latitude": "31.2395",
+      "Longitude": "77.5541",
+      "Clade": "W. Pahari",
+      "Location": "",
+      "Quality": ""
+    },
+    "kc": {
+      "ID": "kc",
+      "Name": "Kochi",
+      "Glottocode": "maha1287",
+      "Latitude": "31.01",
+      "Longitude": "77.53",
+      "Clade": "W. Pahari",
+      "Location": "",
+      "Quality": ""
+    }
+  },
+  "registry_sha256": "740f3c29a7dd1bf42b17b8875e00f77d7aea635472b1124792a49222f7365260",
+  "registry_changes": [],
+  "coordinate_changes": [],
+  "dialect_changes": [],
+  "source_label_policy": "Generic Koci maps once to existing kc with attribution uncertainty; explicit Rampuri/Baghi headings map to existing ramp/ba. No inferred site or population coordinates.",
+  "source_stage_deferred": [
+    "independent output audit acceptance",
+    "guarded installation and real canonical parser checks",
+    "fullCLDF/database/build/browser gates"
+  ]
+}

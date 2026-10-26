@@ -1,0 +1,18 @@
+import json
+from pathlib import Path
+P=Path(__file__).resolve().parent
+rs=json.loads((P/'remaining-initial.json').read_text());done={x['Form_ID'] for f in P.glob('pass*-saved-assignments.json') for x in json.loads(f.read_text())}
+groups=[{'parent': '6261', 'gloss': ['older brother'], 'forms': ['dādī', 'ḍāḍu', 'ḍãḍã', 'ḍāḍā', 'dāi'], 'citation': 'CDIAL[6261 and addenda]', 'evidence': 'Turner explicitly records Oriya dādi, Hindi/Marathi dādā and Nepali dāi elder brother in the *dādda nursery kinship family. These single elder-brother responses match that documented family; dental/retroflex and repeated-nasal variants are preserved, and nursery diffusion rather than strict uniform sound-law descent remains possible.'}, {'parent': '6261', 'gloss': ['older sister'], 'forms': ['dadi', 'ḍāḍī', 'dāḍi'], 'citation': 'CDIAL[6261]', 'evidence': 'Turner explicitly gives Kumaoni dādī grandmother/elder sister and neighbouring dād-/dadd- elderly-relative words under *dādda. Jaunsari and Nepal survey dadi/ḍāḍī/dāḍi fit this elder-sister use of the ā-vowel nursery family; the i-vowel didi family is separately treated under 6327.'}, {'parent': '5232', 'gloss': ['older sister'], 'forms': ['źīźī'], 'citation': 'CDIAL[5232]', 'evidence': 'Turner gives Hindi jījī/jijjī and Marathi jijī elder sister under the *jījja nursery family. Bhili źīźī continues this reduplicated kinship term with the survey’s palatal transcription; simple jī is excluded because a general honorific could compete.'}, {'components': ['6261', '9661'], 'gloss': ['older brother'], 'forms': ['dādā bʰāī', 'dādbʰāy', 'dādabʰāī̃ɔ', 'dādɔ bāy', 'dādɔ bʰāyī', 'dadɔ bʰaī', 'daddɔ bʰāy', 'daddɔ bʰāyī', 'dadɔ bʰāī', 'ḍaḍa bʰay', 'dadbaīyyo'], 'citation': 'CDIAL[6261];CDIAL[9661]', 'evidence': 'The full expression is the senior-relative term dādā/daddo plus bhāi brother. Turner documents both with elder-brother uses, so both ordered components are retained instead of reducing the phrase to one kin noun.'}, {'components': ['11225', '6261'], 'gloss': ['older brother'], 'forms': ['boḍadada', 'baḍadada'], 'citation': 'CDIAL[11225];CDIAL[6261]', 'evidence': 'The entire response is boḍ-/baḍ- elder/big plus dādā elder brother, with both regional stems directly documented by Turner. Both ordered components are represented.'}, {'components': ['12732', '6261'], 'gloss': ['younger brother'], 'forms': ['nānlū dādo'], 'citation': 'CDIAL[12732];CDIAL[6261]', 'evidence': 'This response explicitly combines nānlū small/younger with dādo brother/senior-relative, both documented regional stems. Both components are represented; the overt small modifier resolves the younger-brother elicitation despite dādo commonly referring to an older relative.'}]
+a=[]
+for i,g in enumerate(groups):
+ for r in rs:
+  if r['ID'] not in done and r['Gloss'] in g['gloss'] and r['Form'] in g['forms'] and ('languages' not in g or r['Language_ID'] in g['languages']):
+   x=dict(record=r,citation=g['citation'],evidence=g['evidence'],family=i)
+   if 'components' in g:x['components']=g['components']
+   else:x.update(parent=g['parent'],kind=g.get('kind','reflex'))
+   a.append(x)
+assert len(a)==len({x['record']['ID'] for x in a})
+h=[]
+(P/'pass054-decisions.json').write_text(json.dumps(dict(accepted=a,held=h),ensure_ascii=False,indent=1)+'\n')
+(P/'pass054-rules.json').write_text(json.dumps(groups,ensure_ascii=False,indent=1)+'\n')
+print(len(a),'accepted',len(h),'held',[(g.get('parent',g.get('components')),sum(x['family']==i for x in a)) for i,g in enumerate(groups)])

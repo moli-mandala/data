@@ -1,0 +1,124 @@
+{
+  "status": "Proposal only; frozen inputs, proposed outputs and canonical artifacts unchanged",
+  "freeze_sha256": "f099472cf1664aa6c084b9b06b046155894dba4031ca5fc2815d519376ed746c",
+  "source_pdf_sha256": "7a1577a2d2a24eca8b95e9b1ed700ef01f716d1069e4468f36a673611d093b39",
+  "changes": [
+    {
+      "package": "rampur",
+      "entry_key": "bailey1920rampur:p145:item:66:answer5",
+      "source_csv_sha256": "5e236fafd8dab2360ed584157248fd0cbbcdf2fa90a23b1187565f0cd5c3c3e3",
+      "before": [
+        "ramp",
+        "",
+        "dzētī",
+        "as much (or many, relative)",
+        "",
+        "",
+        "",
+        "bailey1920rampur[p. 145, vocabulary item 66, Rampur column]",
+        "",
+        "",
+        "bailey1920rampur:p145:item:66:answer5",
+        "",
+        "",
+        "",
+        "relative"
+      ],
+      "proposed_after": [
+        "ramp",
+        "",
+        "dzētī",
+        "as much (or many)",
+        "",
+        "",
+        "",
+        "bailey1920rampur[p. 145, vocabulary item 66, Rampur column]",
+        "",
+        "",
+        "bailey1920rampur:p145:item:66:answer5",
+        "",
+        "",
+        "",
+        "relative"
+      ],
+      "changed_fields": {
+        "Gloss": {
+          "before": "as much (or many, relative)",
+          "after": "as much (or many)"
+        }
+      },
+      "evidence": {
+        "printed_pages": [
+          145,
+          146
+        ],
+        "source_text": "as — (rel.), dzētī : dzĕtro.",
+        "interpretation": "The relative label applies to both printed alternatives. The existing relative tag already captures it; remove only the parsed label from lexical gloss.",
+        "review": "Independent source view of the p146 continuation; awaiting root source check."
+      }
+    },
+    {
+      "package": "baghi",
+      "entry_key": "bailey1920baghi:p145:item:28:answer3",
+      "source_csv_sha256": "37d3015845c7995c9d5c0826868d49a832a54ff5abd1fe37660bcc97bfefdc3e",
+      "before": [
+        "ba",
+        "",
+        "dhŭhĭ",
+        "wild hen",
+        "",
+        "",
+        "",
+        "bailey1920baghi[p. 145, vocabulary item 28, Baghi column]",
+        "",
+        "",
+        "bailey1920baghi:p145:item:28:answer3",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "proposed_after": [
+        "ba",
+        "",
+        "dhūhĭ",
+        "wild hen",
+        "",
+        "",
+        "",
+        "bailey1920baghi[p. 145, vocabulary item 28, Baghi column]",
+        "",
+        "",
+        "bailey1920baghi:p145:item:28:answer3",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "changed_fields": {
+        "Form": {
+          "before": "dhŭhĭ",
+          "after": "dhūhĭ"
+        }
+      },
+      "evidence": {
+        "printed_pages": [
+          145
+        ],
+        "pdf_zero_index": 170,
+        "crop_rect": [
+          23,
+          420,
+          142,
+          443
+        ],
+        "render_scale": 10,
+        "source_text": "wild — (Bāghī), dhūhĭ.",
+        "interpretation": "First u bears a flat macron; final i bears a curved breve. This is an occurrence-specific correction, not analogical normalization.",
+        "review": "Independent original crop agrees with root finding; awaiting completed audit disposition."
+      }
+    }
+  ],
+  "application_gate": "Complete root audit and explicit source-check acceptance before regenerating. Preserve old freeze and actual audited rows; assert every old field before applying. Preserve every Entry_Key. Record only the accepted field deltas rather than claiming byte-exact legacy preservation.",
+  "class_followup": "Other previously reported grammatical gloss labels remain a separate pending class-wide review; this proposal contains only the two requested keyed changes."
+}

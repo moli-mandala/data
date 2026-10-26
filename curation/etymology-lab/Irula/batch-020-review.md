@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Irula · Dravidian surveys, 2026-09-21 · batch 020. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Irula | Proposed etymology | Evidence |
+|---|---|---|---|
+| 96 | **nāpəit** ‘forty’ | Compound: [**DEDR 3655**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=323) + [**DEDR 3918**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=349) | Propose ordered four × ten. DEDR3655 and3918 explicitly give Tamil nāṟpatu/nāppatu, Malayalam nālpatu, Kannada nālvattu and Kota nālvat forty. Survey forms are comparative variants of these formations, preserving assimilation, reduced vowels and final vowels. No independent one-stem etymology is substituted for the two numeral components. (1 records.) |
+| 97 | **kaimuḷi** ‘elbow’ | Compound: [**DEDR 2023**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=183) + [**DEDR 4990**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=448) | DEDR2023 supplies Tamil/Malayalam kai hand and DEDR4990 Tamil moḻi/muḷi and Malayalam muḻi joint/knuckle. Analyse survey kai-moḷi/kai-muḷi elbow in its actual order as hand + joint; the reverse-order elbow compounds in DEDR4990 support the anatomical interpretation but do not change source order. (4 records.) |
+| 98 | **monakkai** ‘elbow’, **monaŋgai** ‘elbow’, **muŋgai** ‘elbow’ | Compound: [**DEDR 4990**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=448) + [**DEDR 2023**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=183) | DEDR4990 explicitly gives Tamil/Malayalam muḻaṅ kai elbow, Kannada moḻa key, Kodagu moḷa kay and Kota mogay/mogī; DEDR2023 supplies hand. Propose ordered joint + hand for these southern survey elbow responses, retaining lateral/nasal variants, assimilation and the contracted Muthuvan mū̃kay/Irula muŋgoi shapes. These minority-lect correspondences are comparative proposals. (5 records.) |
+| 99 | **kaimuṭṭɨ** ‘elbow’ | Compound: [**DEDR 2023**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=183) + [**DEDR 4935**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=442) | DEDR2023 supplies kai hand and DEDR4935 muṭṭu elbow/joint. Analyse survey kai-muṭṭɨ/kɛi-muṭṭɨ elbow as ordered hand + joint, preserving the source hand vowel. (1 records.) |
+| 100 | **ḍɛkkɛi** ‘left’, **ḍakkai** ‘left’ | Compound: [**DEDR 449**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=44) + [**DEDR 2023**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=183) | DEDR449 documents the iṭ-/eḍa left-side family and DEDR2023 kai hand. Propose ordered left + hand for Irula ḍakkai/ḍɛkkɛi, with loss of the initial vowel and assimilation before kai. This is a comparative analysis of the complete left-hand response, not a simple inherited stem. (7 records.) |
+
+Proposed assignment rows: **36**. Affected records: **18**. Relation kinds: **component**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-020.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Irula/batch-020.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

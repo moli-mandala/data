@@ -1,0 +1,16 @@
+**Next 4 proposals, ready for review. Nothing in this batch saved yet.**
+
+Toda · Dravidian surveys, 2026-09-21 · batch 011. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Toda | Proposed etymology | Evidence |
+|---|---|---|---|
+| 51 | **avopʰ** ‘mother’ | Proposed reflex of [**DEDR 273**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=25) | DEDR273 explicitly gives Kota av and Toda af/afuf mother, alongside Kannada avva. Survey Badaga həvvə, Kota au and Toda avopʰ mother preserve corresponding Nilgiri maternal forms and their source labial/aspirated notation. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 52 | **eieiye** ‘father’ | Proposed reflex of [**DEDR 196**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=19) | DEDR196(a) explicitly gives Tamil/Malayalam ayya(n), Kota ayṇ and Toda eyi· father. These survey ayya/ain/eieiye father forms compare with the paternal noun, not subsection(b) interjections. Retain the article’s questioned comparison with Indo-Aryan ārya-/ayya-, without asserting an immediate borrowing route. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 53 | **nīr** ‘Water’, **nīr** ‘water’, **nīru** ‘water’ | Proposed reflex of [**DEDR 3690**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=328) | DEDR 3690(a) gives Tamil/Malayalam nīr, Kannada nīru, Telugu nīru/nīḷḷu, Kolami īr, Parji/Gadaba nīr and Brahui dīr ‘water’. The water noun is distinct from the ashes article 3693; taṇṇīr and other compounds are excluded. User clarified on 2026-09-21 that each DEDR node represents the whole dictionary article, not only the displayed reconstruction. The head label remains unchanged; the cited article family/subsection is the proposed parent scope. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (3 records.) |
+| 54 | **irb** ‘ant’ | Proposed reflex of [**DEDR 864**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=84) | DEDR 864 lists Tamil eṟumpu/eṟumpi/iṟumpi, Malayalam eṟumpu/iṟumpu/uṟumpu, Kota irb, Toda ïrb, Kannada iṟumpu/iṟupe/iṟuve/irvu/irve and Kodagu urupï ant. These southern survey forms preserve the r plus labial family, with nasal clusters, cluster simplification or southern stop voicing. The same article is unqueried; this does not endorse the separately questioned Gondi ant family. Per user clarification the node denotes the full article; its displayed heading remains unchanged. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+
+Proposed assignment rows: **6**. Affected records: **6**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-011.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Toda/batch-011.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

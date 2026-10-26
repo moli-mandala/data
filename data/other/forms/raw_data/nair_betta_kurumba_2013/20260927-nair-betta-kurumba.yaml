@@ -1,0 +1,15 @@
+file: 20260927-nair-betta-kurumba.csv
+defaults:
+  transcription:
+    convert: false
+    preserve_hyphens: true
+  identity:
+    dedupe_by_entry_key: true
+sources:
+  nair2013bettakurumba:
+    forms:
+      split_alternates: false
+    reference:
+      editor: OpenAI Codex
+      ocr: "No"
+      etymology_provenance: none

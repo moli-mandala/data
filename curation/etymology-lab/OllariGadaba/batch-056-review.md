@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Ollari Gadaba · Bhattacharya 1957 Ollari Gadaba residual records, 2026-09-25 · batch 056. Pending user review; autonomous research continues.
+
+| # | Ollari Gadaba | Proposed etymology | Evidence |
+|---|---|---|---|
+| 236 | **sirtal** ‘evening’ | Proposed reflex of [**DEDR 2552**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=222) | DEDR 2552 full article opens “2552 Ta. iravu, ira, irā, rā night; iru black; iruṭci, iruṭṭu, iruṇmai, irumai darkness; iruḷ darkness, dark colour, ignorance; ( iruḷv-, iruṇṭ-…”; its Ga. (Oll.) passage gives “siriŋ ( pl. sirŋil) charcoal, cinders; (S. 3 ) sirriŋ soot, ashes; (Oll.) sirtal evening.”. DEDR 2552 gives Ollari sirtal “evening” under the dark family; the primary article itself supplies the temporal sense. (1 record.) |
+| 237 | **sirmul** ‘sambhar’ | Proposed reflex of [**DEDR 2555**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=222) | DEDR 2555 full article opens “2555 Pa. cirmol (cirmocil) , (S.) cirmul sambar. Ga. (Oll.) sirmul , (S. 2 ) cirmul id. ? Kuwi (Ḍ.) cibḍa/sibḍa id. DED(S) 2105.”; its Ga. (Oll.) passage gives “Ga. (Oll.) sirmul , (S. 2 ) cirmul id. ?”. The source form and sense match this Ollari entry within the whole article. (1 record.) |
+| 238 | **silp-** ‘to rise’ | Proposed reflex of [**DEDR 2742**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=238) | DEDR 2742 full article opens “2742 Kol. su·l- (su·lt-) to get up, wake up; su·lp- (su·lupt-) to make to get up; (SR.) sull-, sul- to get up; sulp- to lift. Nk. sūḷ- to rise.…”; its Ga. (Oll.) passage gives “Ga. (Oll.) silp- (silt-) to rise; sinḍup- (sinḍut-) to make to rise, lift; (S.) cil-, cinḍ- to get up, rise (as pain); silk- to wake up”. The source form and sense match this Ollari entry within the whole article. (1 record.) |
+| 239 | **sīkaṭ** ‘darkness’ | Proposed reflex of [**DEDR 2604**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=226) | DEDR 2604 full article opens “2604 Te. cī˜kaṭi darkness, obscurity, gloom, dark; cī˜jī˜kaṭi twilight; cīku a blind person; blind. Kol. (Kin.) cīkaṭi darkness; (SR.) cīkaṭ…”; its Ga. (Oll.) passage gives “Ga. (Oll.) sīkaṭ , (S. 2 ) cīkaṭ darkness.”. The source form and sense match this Ollari entry within the whole article. (1 record.) |
+| 240 | **sup** ‘salt’ | Proposed reflex of [**DEDR 2674**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=231) | DEDR 2674 full article opens “2674 (a) Ta. uppu salt, alkali, saltness; uppar salt manufacturers; uppaḷam saltpans, saline land (cf. 299 aḷam salt-pan); uppaḷavaṉ salt-maker;…”; its Ga. (Oll.) passage gives “Ga. (Oll.) sup , (S.) cuppu id. (b) Ta. uvar (-pp-, -tt-) to taste saltish, be brackish, taste astringent, dislike, abhor, loathe; n.”. The source form and sense match this Ollari entry within the whole article. (1 record.) |
+
+Proposed assignment rows: **5**. Affected records: **5**. Relation kinds: **reflex**. Multi-part responses retain their source order.
+
+Exact persistent IDs and complete source records: [batch-056.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/OllariGadaba/batch-056.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../ollari-bhattacharya-20260925/research-holds.json). No new lexical material or donor nodes are introduced.

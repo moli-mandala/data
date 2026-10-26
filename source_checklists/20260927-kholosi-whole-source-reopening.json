@@ -1,0 +1,22 @@
+{
+  "package": "20220913-kholosi",
+  "status": "confirmed_partial_whole_source_recovery_queued",
+  "owner": "rohru_finish after Kagani installation reconciliation",
+  "canonical_baseline": {"rows": 198, "all_rows_have_parameter_ids": true, "sentential_tagged_rows": 0},
+  "primary_sources": [
+    "https://zenodo.org/records/7901554",
+    "https://aryaman.io/kholosi/Kholosi_Dictionary.pdf",
+    "https://aryaman.io/kholosi/dictionary",
+    "https://github.com/aryamanarora/kholosi"
+  ],
+  "verified_source_scope": "Author-hosted April13,2021 PDF is12 pages, with pronunciation, grammatical labels, etymology, alternate subentries, compounds and examples. Zenodo v1 is the canonical DOI recorded by Jambu; compare bytes/representations before extraction.",
+  "confirmed_omissions": [
+    {"source_form":"aber", "gloss":"cloud", "evidence":"Printed p1 entry; absent from canonical raw Form column."},
+    {"source_form":"avval", "gloss":"first", "evidence":"Printed p1 entry; absent from canonical raw Form column."},
+    {"source_form":"barg", "gloss":"leaf", "evidence":"Printed p1 entry; absent from canonical raw Form column."}
+  ],
+  "structured_source_discovery": "Author's papers page links the public aryamanarora/kholosi repository as dictionary code. Observed files include lexicon.csv, sentences.csv, sentences.txt, dictionary.html, data.txt/data2.txt/data3.txt and the PDF. Pin commit and compare representations before choosing extraction; fetch scoped artifacts, not audio or the entire repository.",
+  "required_scope": "Census every target headword, alternate, compound and example across the complete dictionary, including unlinked and borrowed attestations. Preserve all198 legacy keys and reviewed etymological assignments. Distinguish source etymological claims from later Jambu analysis; do not infer donor nodes from ambiguous names.",
+  "next_steps": ["Acquire/pin canonical version and compare author copy or structured original.","Build source-wide record census before extraction.","Reconcile legacy rows and exact source locators.","Complete source-stage checklist and independent audit; compiled/database gates remain deferred."],
+  "limits": "Discovery establishes omitted records, not final source counts. Existing retrospective checklist does not prove source-side completeness."
+}

@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Kannada · Dravidian surveys, 2026-09-21 · batch 050. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Kannada | Proposed etymology | Evidence |
+|---|---|---|---|
+| 241 | **none** ‘fly’ | Proposed reflex of [**DEDR 3715**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=331) | DEDR3715 explicitly gives Kannada noṇa/noṇavu fly/housefly. Survey none is the corresponding nominal response, with its final vowel and source dental/lateral convention retained. The nearby nonga-type forms are not assumed to belong to this stem. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 242 | **uḷā** ‘worm’ | Proposed reflex of [**DEDR 4312**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=381) | DEDR4312 gives Kannada puḻu/puḻa worm. Survey uḷa represents the weak-initial worm noun, comparable with Kannada huḷa; preserve its initial consonant loss and original form rather than silently normalizing it. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 243 | **āruṭā** ‘fly’, **hāroḍu** ‘fly’, **hāru** ‘fly’ | Proposed reflex of [**DEDR 4020**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=358) | DEDR4020 gives Kannada pāṟu leap/run/fly, alongside its h-/zero-initial causative comparanda. Survey hāru/hārōdu/aruta retain the intransitive fly stem and ordinary elicitation endings with initial p weakening; causative-looking or opaque extended forms remain unassigned. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (3 records.) |
+| 244 | **malugu** ‘sleep’ | Proposed reflex of [**DEDR 4735**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=419) | DEDR4735 gives Kannada malagu/malaṅgu recline/lie down and Tulu malaguni sleep. Survey malugu is the ordinary same-language sleep verb with unstressed vowel variation, not a compound or a borrowed nidra noun. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (2 records.) |
+| 245 | **kātstsu** ‘bite’, **kāco** ‘bite’, **katsu** ‘bite’, **kācu** ‘bite’ | Proposed reflex of [**DEDR 1097**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=103) | DEDR1097 gives Kannada kaccu bite and Tamil kaccu gnaw/nibble. Survey kacc-/kats-/kac- bite responses are comparative southern variants retaining the source affricate spelling and ordinary final vowels; the semantic fit is explicitly biting. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (5 records.) |
+
+Proposed assignment rows: **12**. Affected records: **12**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-050.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Kannada/batch-050.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

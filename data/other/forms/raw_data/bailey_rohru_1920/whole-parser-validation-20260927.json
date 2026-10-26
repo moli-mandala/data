@@ -1,0 +1,27 @@
+{
+  "status": "pass",
+  "method": "Unmodified make_cldf.py and source_meta.py copied byte-exact; isolated YAML adds intended input:form/preserve_hyphens:true and proposed profile. No monkeypatch, canonical writes or CLDF build.",
+  "code_sha256": {
+    "make_cldf.py": "1a1ded9eff5b8607174aa37981efb4358824be8ffffdfaa7128c0cea53dac5a8",
+    "source_meta.py": "1c3147843d6c9f2489155b633db55fd1374e6f3b1a59b7051a3642fdbd2c7a4c"
+  },
+  "proposal_sha256": "1e59a05596a237b0fc498340638256eb37060304b023b47da0da25e1a2c5d0ee",
+  "checks": {
+    "NFC": {
+      "rows": 723,
+      "converted": 723,
+      "errors": 0,
+      "keys": "exact ordered match",
+      "original": "exact input retained",
+      "display": "literal lowercase and w→v; NFC-equivalent"
+    },
+    "NFD": {
+      "rows": 723,
+      "converted": 723,
+      "errors": 0,
+      "keys": "exact ordered match",
+      "original": "exact input retained",
+      "display": "literal lowercase and w→v; NFC-equivalent"
+    }
+  }
+}

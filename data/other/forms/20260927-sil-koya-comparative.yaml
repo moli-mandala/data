@@ -1,0 +1,12 @@
+file: 20260927-sil-koya-comparative.csv
+defaults:
+  transcription:
+    profile: sil-koya-comparative
+    preserve_hyphens: true
+  importer:
+    commands:
+    - - data/other/forms/raw_data/sil_koya_2021/install_whole_source.py
+      - --install
+    note: Accepted whole-report recovery, 1665 rows across three files. Historical
+      import_koya.py is a reconstruction fixture only. Guarded regeneration required;
+      full build and browser gates deferred.

@@ -1,0 +1,75 @@
+{
+  "status": "canonical source stage verified; compiled gates deferred",
+  "counts": {
+    "canonical_rows": 36,
+    "audit_units": 42,
+    "witness_slots": 66,
+    "excluded_control_or_documentary_witnesses": 30
+  },
+  "canonical_sha256": {
+    "csv": "008927fd95809d423ac9d8b913ff690c4c398fee0da940fe96838117caeb0e85",
+    "yaml": "65574805f0cac7a0ecd6f91618aca6c4e012d36f52ff84e1b23b28674a7220c6",
+    "audit": "453759d7c580b8dee813ec79fb6ec7e92e4650901f484e4591782a0d05c43440"
+  },
+  "parser": {
+    "actual_canonical_rows": 36,
+    "all_15_fields_exact": true,
+    "Original_literal_exact": true,
+    "conversion_errors": 0,
+    "initial_dedupe_keys": 36
+  },
+  "transcription": {
+    "convert": false,
+    "preserve_hyphens": true,
+    "phonemic_native": "blank as source supplies no independent layers",
+    "unique_nfd_codepoints": 22
+  },
+  "references": {
+    "nair2013kani": "Ravi Sankar S\\. Nair\\.\nTribal Languages of Kerala\\.\n*Language in India*, 13\\(7\\):32–33, July 2013\\.\nThe preface describes compiled material and incomplete fieldwork\\. The chapter lists southern Kerala settlement regions but gives no exact elicitation site or consultant\\. Source Roman forms preserve written doubled vowels and distinctive marks\\.\nURL: [https://languageinindia\\.com/july2013/ravisankarkeralatriballanguages\\.html](https://languageinindia.com/july2013/ravisankarkeralatriballanguages.html)\\.",
+    "somasekharannairkanikkarude": "P\\. Somasekharan Nair\\.\nKanikkarude Samsarabhasha \\(the speech of kanikkar\\)\\.\nSamsakara Keralam\\.\nReported by Nair 2013, p\\. 33\\. The printed bibliography gives no year, volume, issue or pages; original not independently collated\\."
+  },
+  "registry": {
+    "base": {
+      "ID": "Kanikkaran",
+      "Name": "Kanikkaran",
+      "Glottocode": "kani1275",
+      "Latitude": "",
+      "Longitude": "",
+      "Clade": "S. Dravidian I",
+      "Location": "Southern Kerala; Nair 2013 chapter lists regions, not an elicitation point",
+      "Quality": ""
+    },
+    "dialect": {
+      "ID": "nair2013-kerala-kani",
+      "Tag": "dialect:Kanikkaran:nair2013-kerala-kani:Kerala%20Kani",
+      "Language_ID": "Kanikkaran",
+      "Source_Language_ID": "Nair2013:Kani:Kerala",
+      "Name": "Kerala Kani (Nair 2013)",
+      "Glottocode": "",
+      "Latitude": "",
+      "Longitude": "",
+      "Clade": "S. Dravidian I",
+      "Location": "Kerala Kani as contrasted with Tamil Nadu Kani; broad southern Kerala chapter area only",
+      "Quality": ""
+    },
+    "frontend_existing_clade": true
+  },
+  "source_meta": {
+    "settings_files": 295,
+    "citation_keys": 289
+  },
+  "durable_identity_sha256": "4977c4e205f66233366ee1c00a9c938c9c78e3c087b63e02a94832647525c28a",
+  "independent_review": {
+    "fresh_20_units_21_rows": "pass",
+    "targeted_corrected_aa_control": "pass",
+    "old_freeze_retained": true
+  },
+  "repeat_installation": "no-op; own assets exact and shared membership checked",
+  "deferred": [
+    "full CLDF build",
+    "full test suite",
+    "compiled source-key/ID/graph checks",
+    "browser database and QA",
+    "publication"
+  ]
+}

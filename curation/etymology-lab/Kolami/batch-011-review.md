@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Kolami · Dravidian surveys, 2026-09-21 · batch 011. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Kolami | Proposed etymology | Evidence |
+|---|---|---|---|
+| 51 | **vāna** ‘rain’ | Proposed reflex of [**DEDR 5381**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=487) | DEDR5381 explicitly gives Kolami vāna ‘rain’ in the sky/rain family. The simple survey noun directly matches this Kolami attestation. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 52 | **tōka** ‘tail’ | Proposed reflex of [**DEDR 3538**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=311) | DEDR3538 directly gives Kolami tōke ‘tail’. Survey tōka is compared with this Kolami attestation, preserving its final vowel difference. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 53 | **pere** ‘many’ | Proposed reflex of [**DEDR 4411**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=389) | DEDR4411 explicitly gives Kolami peret ‘many’, beside pera/per ‘big’. Survey pere ‘many’ is compared with this same-language quantity branch, retaining the absent final t. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 54 | **kēv** ‘Ear’, **kev** ‘ear’ | Proposed reflex of [**DEDR 1977**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=179) | DEDR 1977(a) lists Tamil cevi, Alu Kurumba kevi, Kannada kivi/kimi/kemi, Gondi kevi/kavi, Parji/Gadaba kekol, Konda gibi, Kurukh xebdā and Brahui xaf ‘ear’. The separate Kui/Kuvi kri- subsection (b) is not folded into this analysis; deafness derivatives are excluded. User clarified on 2026-09-21 that each DEDR node represents the whole dictionary article, not only the displayed reconstruction. The head label remains unchanged; the cited article family/subsection is the proposed parent scope. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (2 records.) |
+| 55 | **īr** ‘Water’, **īr** ‘water’ | Proposed reflex of [**DEDR 3690**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=328) | DEDR 3690(a) gives Tamil/Malayalam nīr, Kannada nīru, Telugu nīru/nīḷḷu, Kolami īr, Parji/Gadaba nīr and Brahui dīr ‘water’. The water noun is distinct from the ashes article 3693; taṇṇīr and other compounds are excluded. User clarified on 2026-09-21 that each DEDR node represents the whole dictionary article, not only the displayed reconstruction. The head label remains unchanged; the cited article family/subsection is the proposed parent scope. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (2 records.) |
+
+Proposed assignment rows: **7**. Affected records: **7**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-011.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Kolami/batch-011.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

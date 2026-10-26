@@ -8,8 +8,10 @@ defaults:
     append_order: 35
   importer:
     commands:
-      - [data/other/forms/raw_data/niranjan_chakma_2010/import_source.py, --install]
-    note: Bengali-script source spelling preserved without phonemic conversion.
+    - - data/other/forms/raw_data/niranjan_chakma_2010/whole-installation/install_whole_source.py
+      - --install
+    note: Guarded complete-source regeneration from immutable historical baseline
+      and accepted whole-source review; literal Bengali script, no phonemic conversion.
 sources:
   niranjan2010chakma:
     identity:
@@ -19,4 +21,29 @@ sources:
     reference:
       editor: Aryaman Arora; OpenAI Codex
       ocr: true
+      etymology_provenance: source
+  taittiriya_aranyaka_work:
+    reference:
+      editor: OpenAI Codex
+      ocr: false
+      etymology_provenance: none
+  caryapada_work:
+    reference:
+      editor: OpenAI Codex
+      ocr: false
+      etymology_provenance: none
+  srikrsnakirtana_work:
+    reference:
+      editor: OpenAI Codex
+      ocr: false
+      etymology_provenance: none
+  ksemendra_brhatkathamanjari_work:
+    reference:
+      editor: OpenAI Codex
+      ocr: false
+      etymology_provenance: none
+  dewan_chakma2003chakma_first_lesson:
+    reference:
+      editor: OpenAI Codex
+      ocr: false
       etymology_provenance: none

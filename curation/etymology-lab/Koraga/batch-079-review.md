@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Koraga · Bhat 1971 Koraga records, 2026-09-25 · batch 079. Pending user review; autonomous research continues.
+
+| # | Koraga | Proposed etymology | Evidence |
+|---|---|---|---|
+| 176 | **tāy** ‘mother’ | Proposed reflex of [**DEDR 364**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=34) | DEDR 364 full article (p. 34) gives 364 Ta. āy, āyi, yāy, ñāy mother; āycci, ācci mother, grandmother; āccāḷ mother; āyāḷ mother, grandmother, old woman; ( yāy my mother, ñāy thy mother; Kuṟunt° 40); tāy mother; tāycci wet nur Bhat tāy “mother” matches Lindgren Koraga tāy “mother” in form and sense; this cross-source match is a candidate lead, with the full DEDR article defining the family. Both source identities and dialect tags are preserved. (1 record.) |
+| 177 | **tāri** ‘to wait’ | Proposed reflex of [**DEDR 3193**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=277) | DEDR 3193 full article (p. 277) gives Kor. (O.) tāri to wait. Bhat tāri “to wait” is the same cited Koraga form and sense; its original dialect:Koraga:onti:Onti uncertain dialect tag is retained. The article is used as family classification, not an independent second attestation of Bhat. (1 record.) |
+| 178 | **tālɨ** ‘to drop off’ | Proposed reflex of [**DEDR 3178**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=276) | DEDR 3178 full article (p. 276) gives 3178 Ta. tār̤ (-v-, -nt-) to fall low, be lowered, be low (as a roof), flow down, descend, decline as the sun, sink in water, sink in circumstances or repute, decrease, decay, degenerate, de Bhat tālɨ “to drop off” matches Lindgren Koraga tālɨ “fall” in form and sense; this cross-source match is a candidate lead, with the full DEDR article defining the family. Both source identities and dialect tags are preserved. (1 record.) |
+| 179 | **tinɨ** ‘to eat’ | Proposed reflex of [**DEDR 3263**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=284) | DEDR 3263 full article (p. 284) gives 3263 (a) Ta. tiṉ (tiṉp-, tiṉṟ-) to eat, chew, bite, gnash, eat away (as white ants), destroy, ruin, cause irritating sensation (as in the skin); tiṉṟi, tiṇṭi eatables; tiṉṉi glutton, one who Bhat tinɨ “to eat” matches Lindgren Koraga tinɨ “eat” in form and sense; this cross-source match is a candidate lead, with the full DEDR article defining the family. Both source identities and dialect tags are preserved. (3 records.) |
+| 180 | **tippi** ‘to sweep’ | Proposed reflex of [**DEDR 2599**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=225) | DEDR 2599 full article (p. 225) gives Kor. (O.) tippi to sweep. Bhat tippi “to sweep” is the same cited Koraga form and sense; its original dialect:Koraga:onti:Onti uncertain dialect tag is retained. The article is used as family classification, not an independent second attestation of Bhat. (1 record.) |
+
+Proposed assignment rows: **7**. Affected records: **7**. Relation kinds: **reflex**. Multi-part responses retain their source order.
+
+Exact persistent IDs and complete source records: [batch-079.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Koraga/batch-079.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../koraga-bhat-20260925/research-holds.json). No new lexical material or donor nodes are introduced.

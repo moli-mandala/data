@@ -1,0 +1,35 @@
+{
+  "status": "static-and-scoped-parser-policy-pass",
+  "inputs": {
+    "data/data/other/forms/raw_data/sil_korwa_kodaku_2022/whole-recovery/legacy-review/legacy-repaired-candidate.csv": "541c4142afb3e2945706524e50ec44c324faaddc9071b633f294832b3cea000f",
+    "data/data/other/forms/raw_data/sil_korwa_kodaku_2022/whole-recovery/integration-proposal/all-additions.csv": "e00eca9ae93ccbc59af3a77a0357ddce5542b6b6cedd2d6e906938b236210339",
+    "data/data/other/forms/raw_data/sil_korwa_kodaku_2022/whole-recovery/routing-proposal/20260828-sil-korwa-kodaku.yaml": "68aeae47a82fb4c3af54e7c65d71c84e0f0068076768db3e3e64372c225f1f07",
+    "data/data/other/forms/raw_data/sil_korwa_kodaku_2022/whole-recovery/routing-proposal/20260927-behera-whole-additions.yaml": "3bea74ba85f97fcf985bdf17ed16082872c7547e0d7c26e1881a6e4dbf631adf",
+    "data/make_cldf.py": "1a1ded9eff5b8607174aa37981efb4358824be8ffffdfaa7128c0cea53dac5a8",
+    "data/source_meta.py": "1c3147843d6c9f2489155b633db55fd1374e6f3b1a59b7051a3642fdbd2c7a4c",
+    "data/data/other/forms/raw_data/sil_korwa_kodaku_2022/whole-recovery/check_transcription_routing.py": "978b146407d17349c426c8243cb3a38177e65fb2131a75f328aad612f85542c7",
+    "data/data/other/forms/raw_data/sil_korwa_kodaku_2022/whole-recovery/check_comparison_parser.py": "4daba41f4f18999a3ab3450c4922ba46a29d6b2d40c7b966e0bf8a51eb3c6d61",
+    "data/tests/test_behera_whole_recovery.py": "5710283ce03f45e8175c35f563386990b76f52c3a26259e1a7d9683b5afc69a4"
+  },
+  "counts": {
+    "rows": 6864,
+    "legacy_rows": 4459,
+    "new_rows": 2405,
+    "unique_source_entry_keys": 6864,
+    "source_citations": {
+      "behera2022korwakodaku": 6864
+    },
+    "unkeyed_triples": 3716,
+    "colliding_triples": 1157,
+    "rows_in_colliding_triples": 4305,
+    "colliding_triples_with_distinct_glosses": 118
+  },
+  "finding": "The source citation maps to the explicit true source-level identity override. make_cldf.source_entry_dedupe_key therefore contributes each unique Entry_Key to its first-pass (language, parameter, form, source-key, special-gloss) tuple; all6864 rows remain distinct. The final done tuple includes Entry_Key because row.formatted[1:] spans Entry_Key. Initial merge_redundant_strand_rows is restricted to Strand/Strand3, so this source is unaffected.",
+  "scope": [
+    "SourceMeta.flag gives the citation-level true value precedence over the new file default false. The new additions YAML has no source declaration, preventing duplicate citation ownership while retaining the source-level override.",
+    "check_comparison_parser.py exercises only 2405 additions through actual NFC/NFD parse; test_behera_whole_recovery.py forms Row objects for all6864 and asserts exact initial dedupe tuples. This is complementary coverage, not a compiled end-to-end proof.",
+    "Cross-source first-pass collisions with a different citation and no own key are possible under generic compiler policy; Behera rows retain a nonempty unique source key, preventing such merging on their side. However no full multi-source compile or durable-ID/graph parity was run.",
+    "Second-pass done uses complete formatted fields except ID, including Entry_Key. A different-source record with an identical Entry_Key and all other fields could collide; globally unique keys are expected, but cross-source global-key closure awaits full build."
+  ],
+  "risks": []
+}

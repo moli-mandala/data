@@ -1,0 +1,226 @@
+{
+  "status": "unfrozen review preview; not installed and not approved",
+  "input_sha256": {
+    "full-transcription.tsv": "638d3b2e35550743908e4010f508c1bc84650e6d3d07df4bbb6ba45da8a4a5da",
+    "import_source.py": "92a26b6ba44515b3357e70585719f483d08fe41097817e579a93b0bf5b4dc795",
+    "prepare_whole_preview.py": "0c4048ef2eccf96f15f93498e41bc8dcdd43d9cb4a834a02a0a426bede39c3fd",
+    "whole-source-recovery/currency-cross-reference-20260927.json": "c0820eba75674c61728145557a2f3ee88cb804c2bde34225c09a32fb23e03eab",
+    "whole-source-recovery/reviewed-grammar-p172-182-20260927.json": "a5edea4244c0caff08dd5b4dc976c8f429e8fc03b3141f3c40511f0b14d0c226",
+    "whole-source-recovery/sentences-p183-first-reading-20260927.json": "9c745f74a86b66cab58ad1d74c1cda0d97edcb7497cecd776971a20d9f77a03b",
+    "whole-source-recovery/sentences-p184-first-reading-20260927.json": "db4b0666e92a0faba38a85e55c22a0556078f1a0fe7513746d5cd25c5a0466fe",
+    "whole-source-recovery/shared-scope-review-20260927.json": "5652ceb37b4c03618058bf67af062912371cdfdcfe8aa8854b25655b142e49fd"
+  },
+  "canonical_sha256": "487685ead47d111f850e565c886c0bf114998179da48f2ce66e1c4ceecac9065",
+  "legacy_rows_unchanged": 330,
+  "proposed_rows": 837,
+  "added_rows": 507,
+  "source_unit_counts": {
+    "reviewed-grammar-p172-182-20260927.json": 414,
+    "sentences-p183-first-reading-20260927.json": 18,
+    "sentences-p184-first-reading-20260927.json": 12,
+    "shared-scope-review-20260927.json": 1
+  },
+  "total_audit_units": 688,
+  "controls": [
+    {
+      "input_file": "reviewed-grammar-p172-182-20260927.json",
+      "raw": {
+        "raw_control": {
+          "count": 3,
+          "forms": [
+            "ghōṛā",
+            "dhī",
+            "bhaiṇ"
+          ],
+          "attribution": "Hindi/Panjabi-ized Urdu comparison forms for horse, daughter and sister",
+          "decision": "Do not attribute to Barari"
+        },
+        "review_input": "intro-page172-review-20260927.json"
+      }
+    },
+    {
+      "input_file": "reviewed-grammar-p172-182-20260927.json",
+      "raw": {
+        "raw_control": {
+          "count": 3,
+          "forms": [
+            "gōhṛo",
+            "dīhī",
+            "bauhṇ"
+          ],
+          "attribution": "Explicit Bishshau responses for the same three meanings",
+          "decision": "Other lect controls, not Barari output"
+        },
+        "review_input": "intro-page172-review-20260927.json"
+      }
+    },
+    {
+      "input_file": "reviewed-grammar-p172-182-20260927.json",
+      "raw": {
+        "raw_control": {
+          "type": "toponyms and lect labels",
+          "decision": "Documentary scope evidence; not automatically treated as elicited lexical headwords"
+        },
+        "review_input": "intro-page172-review-20260927.json"
+      }
+    },
+    {
+      "input_file": "reviewed-grammar-p172-182-20260927.json",
+      "raw": {
+        "raw_control": {
+          "source_unit_key": "bailey1920northjubbal:p173:control:khe",
+          "form": "khe",
+          "gloss": "to",
+          "lect": "Bishshau",
+          "decision": "Other-lect control, not Barari"
+        },
+        "review_input": "intro-p173-first-reading-20260927.json"
+      }
+    },
+    {
+      "input_file": "reviewed-grammar-p172-182-20260927.json",
+      "raw": {
+        "raw_control": {
+          "type": "sound-symbol discussion",
+          "forms": [
+            "h",
+            "‘"
+          ],
+          "decision": "Notation explanation, not free lexical items; Bishshau h is described as tone."
+        },
+        "review_input": "intro-p173-first-reading-20260927.json"
+      }
+    },
+    {
+      "input_file": "reviewed-grammar-p172-182-20260927.json",
+      "raw": {
+        "raw_control": {
+          "source_unit_key": "bailey1920northjubbal:p174:control:nouns",
+          "lect": "Bishshau",
+          "decision": "Section under explicit BISHSHAU heading; not attributed to Barari."
+        },
+        "review_input": "intro-p174-first-reading-20260927.json"
+      }
+    },
+    {
+      "input_file": "reviewed-grammar-p172-182-20260927.json",
+      "raw": {
+        "raw_control": {
+          "source_unit_key": "bailey1920northjubbal:p174:control:pronouns",
+          "lect": "Bishshau",
+          "decision": "Section under explicit BISHSHAU heading; not attributed to Barari."
+        },
+        "review_input": "intro-p174-first-reading-20260927.json"
+      }
+    },
+    {
+      "input_file": "reviewed-grammar-p172-182-20260927.json",
+      "raw": {
+        "raw_control": {
+          "source_unit_key": "bailey1920northjubbal:p174:control:verbs",
+          "lect": "Bishshau",
+          "decision": "Section under explicit BISHSHAU heading; not attributed to Barari."
+        },
+        "review_input": "intro-p174-first-reading-20260927.json"
+      }
+    },
+    {
+      "input_file": "reviewed-grammar-p172-182-20260927.json",
+      "raw": {
+        "raw_control": {
+          "scope": "Above NORTH JUBBAL OR BARARI heading",
+          "items": [
+            "continued Bishshau ability sentence",
+            "Bishshau pronominal suffix s",
+            "Bishshau temporal expressions"
+          ],
+          "decision": "Continues preceding Bishshau section despite page running head; excluded from Barari."
+        },
+        "review_input": "nouns-p175-first-reading-20260927.json"
+      }
+    },
+    {
+      "input_file": "reviewed-grammar-p172-182-20260927.json",
+      "raw": {
+        "raw_control": "Most adjectives can be used as adverbs: descriptive rule, no generated lexical forms.",
+        "review_input": "misc-p178-first-reading-20260927.json"
+      }
+    },
+    {
+      "input_file": "reviewed-grammar-p172-182-20260927.json",
+      "raw": {
+        "raw_control": "Asterisk agreement rule retained as metadata on each affected unit.",
+        "review_input": "misc-p178-first-reading-20260927.json"
+      }
+    },
+    {
+      "input_file": "reviewed-grammar-p172-182-20260927.json",
+      "raw": {
+        "raw_control": "Conjugation-same-as rule does not license unattested paradigm generation.",
+        "review_input": "verbs-p180-first-reading-20260927.json"
+      }
+    },
+    {
+      "input_file": "reviewed-grammar-p172-182-20260927.json",
+      "raw": {
+        "raw_control": "Source statement about past transitive subject agreement preserved without editorial correction.",
+        "review_input": "verbs-p180-first-reading-20260927.json"
+      }
+    },
+    {
+      "input_file": "reviewed-grammar-p172-182-20260927.json",
+      "raw": {
+        "raw_control": "Negative-sentence past-conditional rule is descriptive; no unattested negative forms generated.",
+        "review_input": "verbs-p181-first-reading-20260927.json"
+      }
+    },
+    {
+      "input_file": "reviewed-grammar-p172-182-20260927.json",
+      "raw": {
+        "raw_control": {
+          "forms": [
+            "khāīdā"
+          ],
+          "source_lect": "Panjabi",
+          "reason": "Explicit comparative control, not North Jubbal target."
+        },
+        "review_input": "misc-p182-first-reading-20260927.json"
+      }
+    },
+    {
+      "input_file": "reviewed-grammar-p172-182-20260927.json",
+      "raw": {
+        "raw_control": {
+          "forms": [
+            "khāīṇā"
+          ],
+          "gloss": "to be eaten",
+          "source_lect": "Panjabi",
+          "reason": "Explicit comparative passive verb, not target lexical assertion."
+        },
+        "review_input": "misc-p182-first-reading-20260927.json"
+      }
+    },
+    {
+      "input_file": "sentences-p184-first-reading-20260927.json",
+      "raw": {
+        "forms": [
+          "lăgāī"
+        ],
+        "source_lect": "Hindi",
+        "printed_page": 184,
+        "reason": "Explicit Hindi comparison for sentence 9, excluded from North Jubbal target."
+      }
+    }
+  ],
+  "preview_sha256": "6230b9c02c111a350d37f094b2eafa6413e71c20bfd7fe7029a8462a132fb422",
+  "audit_sha256": "ed9d2985a222865df1b64897e8b9898958eb09e2218043255809df7ffd23b8d8",
+  "pending": [
+    "Independent sentence/shared review",
+    "Legacy glossary reconciliation",
+    "Sound profile and provenance reconciliation",
+    "Frozen output audit",
+    "Focused importer tests and installation",
+    "Deferred full-build gates"
+  ]
+}

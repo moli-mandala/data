@@ -1,0 +1,27 @@
+file: 20260925-bailey-kagani.csv
+defaults:
+  transcription:
+    profile: bailey-kagani-1920
+    input: form
+    preserve_hyphens: true
+  identity:
+    legacy_ids: stem
+    append_order: 100
+  importer:
+    commands:
+    - - data/other/forms/raw_data/bailey_kagani_1920/install_whole_source.py
+      - --install
+    note: Approved whole-source freeze only; historical import_source.py is glossary
+      evidence and must not run against the live whole-source installation. Guarded
+      installer verifies hashes, accepted independent audit and sandbox regeneration.
+      Full builds/browser remain separately deferred.
+sources:
+  bailey1920kagani:
+    identity:
+      dedupe_by_entry_key: true
+    forms:
+      split_alternates: false
+    reference:
+      editor: OpenAI Codex
+      ocr: true
+      etymology_provenance: none

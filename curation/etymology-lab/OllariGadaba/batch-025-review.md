@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Ollari Gadaba · Bhattacharya 1957 Ollari Gadaba residual records, 2026-09-25 · batch 025. Pending user review; autonomous research continues.
+
+| # | Ollari Gadaba | Proposed etymology | Evidence |
+|---|---|---|---|
+| 81 | **kēy-** ‘to winnow’ | Proposed reflex of [**DEDR 2019**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=183) | DEDR 2019 full article opens “2019 Ta. cēṭṭai winnowing fan or basket (< Te.) Ma. cēṟuka to winnow, fan, and clean pounded rice. Ko. ke·r- (ke·ry-) to winnow with up-and-down…”; its Ga. (Oll.) passage gives “Ga. (Oll.) kēy- to winnow; kēṭi, kēṭin winnowing basket; (S.) kēy- to winnow; (S.) kēṭen ( pl. kēṭkil) , (S. 3 ) kēṭiŋ winnowing baske”. The source form and sense match this Ollari entry within the whole article. (1 record.) |
+| 82 | **kēs-** ‘to shave’, **kēsal** ‘razor’ | Proposed reflex of [**DEDR 1995**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=181) | DEDR 1995 full article opens “1995 Pa. kēc- to shave; kēma razor. Ga. (Oll.) kēs- to shave; kēsal razor. DEDS 294.”; its Ga. (Oll.) passage gives “Ga. (Oll.) kēs- to shave; kēsal razor. DEDS 294.”. The source form and sense match this Ollari entry within the whole article. (2 records.) |
+| 83 | **koṭ-** ‘to dig; (fowl) to peck; to strike with axe’, **koṭal** ‘spade’ | Proposed reflex of [**DEDR 2064**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=187) | DEDR 2064 full article opens “2064 Ta. koṭṭu (koṭṭi-) to sting (as a scorpion, wasp); n. stinging; hoe with short handle, weeding-hoe, spade; koṭukku sting of a wasp, hornet,…”; its Ga. (Oll.) passage gives “Ga. (Oll.) koṭ- to dig, (fowl) to peck; koṭal hoe, spade; (S.) koṭ- to bite (as a snake).”. The source form and sense match this Ollari entry within the whole article. (2 records.) |
+| 84 | **konḍke** ‘bill-hook’ | Proposed reflex of [**DEDR 2054**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=186) | DEDR 2054 full article opens “2054 (a) Ta. koṭu curved, bent, crooked; koṭumai crookedness, obliquity; koṭukki hooked bar for fastening doors, clasp of an ornament; koṭuṅ-kāy…”; its Ga. (Oll.) passage gives “Ga. (Oll.) konḍke id.”. The source form and sense match this Ollari entry within the whole article. (1 record.) |
+| 85 | **kop-** ‘river to be over-flooded; to become full’ | Proposed reflex of [**DEDR 1731**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=158) | DEDR 1731 full article opens “1731 (a) Ta. kuppam multitude, heap; kuppal heap, as of manure, mound, multitude; kuppai heap, mound, sweepings, rubbish, excrement, dung. Ma.…”; its Ga. (Oll.) passage gives “Ga. (Oll.) kop- to be full, (river) overflows; kope hill, forest; (S.) kuppā heap; (S. 3 ) kop- to be full; kopup- to fill ( tr. ); ko”. The source form and sense match this Ollari entry within the whole article. (1 record.) |
+
+Proposed assignment rows: **7**. Affected records: **7**. Relation kinds: **reflex**. Multi-part responses retain their source order.
+
+Exact persistent IDs and complete source records: [batch-025.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/OllariGadaba/batch-025.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../ollari-bhattacharya-20260925/research-holds.json). No new lexical material or donor nodes are introduced.

@@ -1,0 +1,11 @@
+file: 20260927-behera-whole-additions.csv
+defaults:
+  transcription:
+    convert: false
+    preserve_hyphens: true
+  importer:
+    commands:
+    - - data/other/forms/raw_data/sil_korwa_kodaku_2022/whole-recovery/installation/install_source.py
+      - --install
+    note: Install or verify the exact accepted whole-report assets through the guarded
+      source transaction.

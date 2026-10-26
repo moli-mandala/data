@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Muthuvan · Dravidian surveys, 2026-09-21 · batch 008. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Muthuvan | Proposed etymology | Evidence |
+|---|---|---|---|
+| 36 | **kombɨ** ‘horns’ | Proposed reflex of [**DEDR 2115**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=190) | DEDR 2115 gives Tamil/Malayalam kompu, Kannada/Tulu kombu, Telugu/Gadaba kommu, Kota kob and Konda komu ‘horn’. Horn senses select this family; ordinary branch responses are not included in this proposal. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (8 records.) |
+| 37 | **uppɨ** ‘salt’ | Proposed reflex of [**DEDR 2674**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=231) | DEDR 2674(a) lists Tamil/Malayalam/Kannada uppu, Kolami sup and Parji cup ‘salt’; subsection (b) gives Gondi havar/ovor, Konda sōru and Kuvi hāru. The article supports the family but keeps the two stem series explicit; multiword salt responses are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (8 records.) |
+| 38 | **ompatɨ** ‘nine’, **ombatɨ** ‘nine’, **ɔmbotɨ** ‘nine’ | Proposed reflex of [**DEDR 1025**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=98) | DEDR 1025 gives Tamil oṉpatu/ompatu, Malayalam ompatu, Kannada ombattu/ombhattu, Kodagu oymbadi, Kota orbād, Tulu ormba and Gondi unmā nine. The retained variants preserve this numeral stem; Indo-Aryan nau/no and Telugu-type tommidi responses belong elsewhere. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (8 records.) |
+| 39 | **paḷayatɨ** ‘old’, **paḷɛya** ‘old’, **paḷaśɨ** ‘old’, **paḷɛyɨ** ‘old’ | Proposed reflex of [**DEDR 3999**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=355) | DEDR 3999 gives Tamil paẓa/paẓacu/paẓaiya, Malayalam paẓaya, Kannada paẓa, Gondi paḍana/paṛana, Konda paṛay and Kurux paccā old. The selected simple adjective forms follow these comparanda; old-person responses and compounds are kept out. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (5 records.) |
+| 40 | **śūḍɨ** ‘hot’, **tsuḍɨ** ‘hot’, **tsūḍɨ** ‘hot’, **cūḍɨ** ‘hot’ | Proposed reflex of [**DEDR 2654**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=229) | DEDR 2654 gives Tamil cuṭu/cūṭu burn/heat, Malayalam cūṭu, Kannada suḍu/sūḍu and Tulu cūḍu hot. The selected survey forms retain this stem with the palatal/sibilant and stop spelling variants; compounds and unrelated heat families remain outside this proposal. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (7 records.) |
+
+Proposed assignment rows: **36**. Affected records: **36**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-008.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Muthuvan/batch-008.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

@@ -1,0 +1,21 @@
+{
+  "status": "independent complete underline-class review; supersedes plain-n findings in independent-first-reading-review.json",
+  "source_pdf": "tmp/pdfs/tribal-languages-kerala-nair2013.pdf",
+  "source_pdf_sha256": "4d2588987dab5d15c62ecc95330ccf7e925a9bce80d08068b91ca3f48c8cc5af",
+  "first_reading": "physical-units-first-reading.jsonl",
+  "first_reading_sha256": "ddcf9dd7a6e6cb53ee5030f94487216a323ab0d3adb2639461c4a6656ef8da7b",
+  "pages_checked": [19, 20, 21],
+  "notation": "The printed horizontal low line is encoded as U+0332 on each covered n. This preserves visible typography without assigning a phonetic value. The PDF text layer omits the line; round underdots elsewhere remain U+0323.",
+  "corrections": [
+    {"unit_key":"nair2013cholanaickan:p19:accusative-example","old":["kūsina","kūsine"],"new":["kūsin̲a","kūsin̲e"],"evidence":"Original p19 accusative line: separate low line directly under n in both words; PDF page19 crop Rect(92,395,230,435) at 9x."},
+    {"unit_key":"nair2013cholanaickan:p19:genitive-examples","old":["ennu","ennule"],"new":["en̲n̲u","en̲n̲ule"],"evidence":"Original p19 genitive line: continuous low line spans both adjacent n glyphs in each word; page19 crop Rect(92,540,220,725) at 9x."},
+    {"unit_key":"nair2013cholanaickan:p19:locative-examples","old":["ennukaḍe"],"new":["en̲n̲ukaḍe"],"evidence":"Original p19 locative line: continuous low line spans both n glyphs; same 9x crop."},
+    {"unit_key":"nair2013cholanaickan:p20:personal-pronouns","old":["naanu","en","niinu","taan","tan","avnu","ivnnu"],"new":["naan̲u","en̲","niin̲u","taan̲","tan̲","avn̲u","ivn̲n̲u"],"evidence":"Original p20 pronoun table, full-page image and 7x Rect(92,218,350,319). The low line covers the final n of naanu, en, niinu, taan, tan, avnu and both adjacent n glyphs of ivnnu. Other pronoun cells have no such low line."},
+    {"unit_key":"nair2013cholanaickan:p20:interrogatives","old":["eennei","evnu"],"new":["een̲n̲ei","evn̲u"],"evidence":"Original p20 interrogative table, 6x Rect(90,310,355,640): low line spans both n in eennei and n in evnu; other cells have none."}
+  ],
+  "total_corrected_form_occurrences": 14,
+  "negative_controls": ["p19 -in- prose increment has no separate low line", "p20 plural-pronoun nānke/nanke, nīnke/ninke and other right-column cells show no low line", "p20 gender example eṇṇukūsu has round underdots under consonants rather than horizontal low lines", "p21 negative, causative, hortative and 17 lexical-list source forms show no horizontal low line under n"],
+  "additional_omission": {"printed_page":19,"literal":"aale","context":"rock shelters called aale","disposition":"audit-only documentary/local term; source does not explicitly identify this as Cholanaickan-language speech","note":"Retain exact p19 prose locator and English explanatory meaning without inventing a target lemma."},
+  "other_scope_findings": ["p20 -tti is reconstructed South Dravidian comparison, -cci is explicitly retained by Tamil/Kodagu/Kannada; they are not independently attested Cholanaickan feminine forms", "p20 -annu is a stem-ending condition in the vocative paragraph, not itself a vocative suffix"],
+  "immutable_first_reading_modified": false
+}

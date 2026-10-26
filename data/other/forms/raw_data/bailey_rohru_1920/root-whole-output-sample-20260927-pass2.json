@@ -1,0 +1,1099 @@
+{
+  "seed": 2026092712,
+  "method": "Fresh source units disjoint from failed pass1; one per eligible new-target page plus random remainder to20.",
+  "excluded_pass1_keys": [
+    "bailey1920rohru:p115:intro-morphology:masc-oblique-sg",
+    "bailey1920rohru:p116:intro-morphology:future",
+    "bailey1920rohru:p118:noun-horse:gen-pl",
+    "bailey1920rohru:p119:noun-hindu:nom",
+    "bailey1920rohru:p119:pronoun-2:dat-acc-sg",
+    "bailey1920rohru:p119:pronoun-prose:rel-dat",
+    "bailey1920rohru:p120:cardinals:13",
+    "bailey1920rohru:p121:adverb-place:4",
+    "bailey1920rohru:p122:be-past:row2-pl-f",
+    "bailey1920rohru:p122:be-past:row2-pl-m",
+    "bailey1920rohru:p122:beat-imperfect:2-f",
+    "bailey1920rohru:p122:beat:infinitive",
+    "bailey1920rohru:p122:prepositions:6",
+    "bailey1920rohru:p123:beat-participles:immediate",
+    "bailey1920rohru:p123:beat-participles:pass-m-pl",
+    "bailey1920rohru:p123:verb-become:future-1",
+    "bailey1920rohru:p124:verb-speak:infinitive",
+    "bailey1920rohru:p125:sentence:07",
+    "bailey1920rohru:p125:sentence:08",
+    "bailey1920rohru:p126:sentence:22"
+  ],
+  "input_sha256": {
+    "whole-proposed.csv": "1e59a05596a237b0fc498340638256eb37060304b023b47da0da25e1a2c5d0ee",
+    "whole-proposed-audit.jsonl": "dac0c6c808f914d55ed325c34b76a04e267ed32427786cf01f79971ce27c169e",
+    "whole-proposed-profile.txt": "bbc5cda350b2562e20fbdc9ff0cfbc45e0cc6c3549729f3e2b7165aa0fa3f866",
+    "prepare_whole_source.py": "0cdbf55bc4bf62fb987d615a491b81c0dcb26d77eef516f844f4a8f594686a20",
+    "whole-second-reading-20260927.json": "c44b5e22117c107582c817f0eb7ef871e19d9b2473403569724ca98439a1854c",
+    "legacy-before-whole-recovery.csv": "b548b5e2f8d5298a701a2686c6050ab23e42b2102433fa399b648233637dc4dd",
+    "legacy-before-whole-recovery-audit.jsonl": "fdf79a85cc36b3805e9ba2a19511e7045b2959b54e3a35efe693543e8aa11dca",
+    "whole-grammar-first-reading.jsonl": "99fe792b885f848dab763d8a0e11d621a3e05d9f955822bbc471463209499cbf",
+    "whole-sentences-first-reading.jsonl": "848887e659cf7b768b08271023cc9ba3e92a5273fe06794a536d4cbc0d297c23",
+    "whole-commentary-first-reading.jsonl": "42b2a5a35115ce56f54523f9ed9a6d9c8f20ea9702c732cbacd09d77f506bdbd",
+    "whole-source-context-census.jsonl": "37cff08ce9325d5564ca4c5014d8a1173e324387854d2ba9bcf029a549b1d818",
+    "whole-source-text-inventory.jsonl": "b9f51d228fe9ba67eea7fbfb65affccf2a2ae1380897baf2c9f1c0f58b96de18",
+    "whole-nasal-class-review-20260927.json": "bb6952e282ebd3a28bf81467793f2b99d68806c4b8750267b4cc80abc38750be"
+  },
+  "sample_size": 20,
+  "entries": [
+    {
+      "source_unit_key": "bailey1920rohru:p115:intro-morphology:masc-oblique-pl",
+      "printed_page": 115,
+      "source_audit": {
+        "source_unit_key": "bailey1920rohru:p115:intro-morphology:masc-oblique-pl",
+        "printed_page": 115,
+        "pdf_page": 141,
+        "section": "intro-morphology",
+        "forms": [
+          "-ā"
+        ],
+        "gloss": "",
+        "tags": [
+          "suffix",
+          "noun",
+          "m",
+          "pl",
+          "obl"
+        ],
+        "raw_source_form": "-ā",
+        "note": "Consonant-final masculine nouns inflect in ā.",
+        "status": "ingested",
+        "typed_uncertainty": [],
+        "exported_entry_keys": [
+          "bailey1920rohru:p115:intro-morphology:masc-oblique-pl"
+        ],
+        "exported_tags": [
+          "suffix",
+          "noun",
+          "m",
+          "pl",
+          "obl"
+        ],
+        "exported_notes": "Consonant-final masculine nouns inflect in ā."
+      },
+      "actual_rows": [
+        [
+          "roh",
+          "",
+          "-ā",
+          "",
+          "",
+          "",
+          "Consonant-final masculine nouns inflect in ā.",
+          "bailey1920rohru[p. 115, intro-morphology, masc-oblique-pl]",
+          "",
+          "",
+          "bailey1920rohru:p115:intro-morphology:masc-oblique-pl",
+          "",
+          "",
+          "",
+          "suffix noun m pl obl"
+        ]
+      ],
+      "result": "pending"
+    },
+    {
+      "source_unit_key": "bailey1920rohru:p116:intro-verbs:progressive-auxiliary",
+      "printed_page": 116,
+      "source_audit": {
+        "source_unit_key": "bailey1920rohru:p116:intro-verbs:progressive-auxiliary",
+        "printed_page": 116,
+        "pdf_page": 142,
+        "section": "intro-verbs",
+        "forms": [
+          "lāgṇo"
+        ],
+        "gloss": "",
+        "tags": [
+          "verb",
+          "inf",
+          "auxiliary"
+        ],
+        "raw_source_form": "lāgṇo",
+        "note": "Source combines this verb with an invariant inflected present participle for an action actually taking place.",
+        "status": "ingested",
+        "typed_uncertainty": [],
+        "second_reading_correction": {
+          "source_unit_key": "bailey1920rohru:p116:intro-verbs:progressive-auxiliary",
+          "old_forms": [
+            "lāgno"
+          ],
+          "forms": [
+            "lāgṇo"
+          ],
+          "raw_source_form": "lāgṇo",
+          "reason": "Original infinitive has an unambiguous dot below n."
+        },
+        "exported_entry_keys": [
+          "bailey1920rohru:p116:intro-verbs:progressive-auxiliary"
+        ],
+        "exported_tags": [
+          "verb",
+          "inf",
+          "auxiliary"
+        ],
+        "exported_notes": "Source combines this verb with an invariant inflected present participle for an action actually taking place."
+      },
+      "actual_rows": [
+        [
+          "roh",
+          "",
+          "lāgṇo",
+          "",
+          "",
+          "",
+          "Source combines this verb with an invariant inflected present participle for an action actually taking place.",
+          "bailey1920rohru[p. 116, intro-verbs, progressive-auxiliary]",
+          "",
+          "",
+          "bailey1920rohru:p116:intro-verbs:progressive-auxiliary",
+          "",
+          "",
+          "",
+          "verb inf auxiliary"
+        ]
+      ],
+      "result": "pending"
+    },
+    {
+      "source_unit_key": "bailey1920rohru:p118:noun-horse:nom-sg",
+      "printed_page": 118,
+      "source_audit": {
+        "source_unit_key": "bailey1920rohru:p118:noun-horse:nom-sg",
+        "printed_page": 118,
+        "pdf_page": 144,
+        "section": "noun-horse",
+        "forms": [
+          "gōhṛo"
+        ],
+        "gloss": "horse",
+        "tags": [
+          "noun",
+          "m",
+          "sg",
+          "nom"
+        ],
+        "raw_source_form": "-o",
+        "note": "Explicit printed stem-plus-ending paradigm expanded; no unprinted cells generated.",
+        "status": "ingested",
+        "typed_uncertainty": [],
+        "exported_entry_keys": [
+          "bailey1920rohru:p118:noun-horse:nom-sg"
+        ],
+        "exported_tags": [
+          "noun",
+          "m",
+          "sg",
+          "nom"
+        ],
+        "exported_notes": "Printed abbreviated cell: -o."
+      },
+      "actual_rows": [
+        [
+          "roh",
+          "",
+          "gōhṛo",
+          "horse",
+          "",
+          "",
+          "Printed abbreviated cell: -o.",
+          "bailey1920rohru[p. 118, noun-horse, nom-sg]",
+          "",
+          "",
+          "bailey1920rohru:p118:noun-horse:nom-sg",
+          "",
+          "",
+          "",
+          "noun m sg nom"
+        ]
+      ],
+      "result": "pending"
+    },
+    {
+      "source_unit_key": "bailey1920rohru:p119:pronoun-2:gen-sg",
+      "printed_page": 119,
+      "source_audit": {
+        "source_unit_key": "bailey1920rohru:p119:pronoun-2:gen-sg",
+        "printed_page": 119,
+        "pdf_page": 145,
+        "section": "pronoun-2",
+        "forms": [
+          "tēro"
+        ],
+        "gloss": "thou",
+        "tags": [
+          "pron",
+          "2sg",
+          "gen"
+        ],
+        "raw_source_form": "tēro",
+        "note": "",
+        "status": "ingested",
+        "typed_uncertainty": [],
+        "exported_entry_keys": [
+          "bailey1920rohru:p119:pronoun-2:gen-sg"
+        ],
+        "exported_tags": [
+          "pron",
+          "2sg",
+          "gen"
+        ],
+        "exported_notes": ""
+      },
+      "actual_rows": [
+        [
+          "roh",
+          "",
+          "tēro",
+          "thou",
+          "",
+          "",
+          "",
+          "bailey1920rohru[p. 119, pronoun-2, gen-sg]",
+          "",
+          "",
+          "bailey1920rohru:p119:pronoun-2:gen-sg",
+          "",
+          "",
+          "",
+          "pron 2sg gen"
+        ]
+      ],
+      "result": "pending"
+    },
+    {
+      "source_unit_key": "bailey1920rohru:p119:pronoun-prose:rel-gen",
+      "printed_page": 119,
+      "source_audit": {
+        "source_unit_key": "bailey1920rohru:p119:pronoun-prose:rel-gen",
+        "printed_page": 119,
+        "pdf_page": 145,
+        "section": "pronoun-prose",
+        "forms": [
+          "dzau-ro"
+        ],
+        "gloss": "who",
+        "tags": [
+          "pron",
+          "rel",
+          "gen"
+        ],
+        "raw_source_form": "dzau-ro",
+        "note": "Coordinated endings expanded only where source explicitly gives the base.",
+        "status": "ingested",
+        "typed_uncertainty": [],
+        "printed_pattern": "dzau-ro khĕ khu",
+        "exported_entry_keys": [
+          "bailey1920rohru:p119:pronoun-prose:rel-gen"
+        ],
+        "exported_tags": [
+          "pron",
+          "relative",
+          "gen"
+        ],
+        "exported_notes": ""
+      },
+      "actual_rows": [
+        [
+          "roh",
+          "",
+          "dzau-ro",
+          "who",
+          "",
+          "",
+          "",
+          "bailey1920rohru[p. 119, pronoun-prose, rel-gen]",
+          "",
+          "",
+          "bailey1920rohru:p119:pronoun-prose:rel-gen",
+          "",
+          "",
+          "",
+          "pron relative gen"
+        ]
+      ],
+      "result": "pending"
+    },
+    {
+      "source_unit_key": "bailey1920rohru:p120:cardinals:6",
+      "printed_page": 120,
+      "source_audit": {
+        "source_unit_key": "bailey1920rohru:p120:cardinals:6",
+        "printed_page": 120,
+        "pdf_page": 146,
+        "section": "cardinals",
+        "forms": [
+          "tshau"
+        ],
+        "gloss": "6",
+        "tags": [
+          "num",
+          "cardinal"
+        ],
+        "raw_source_form": "tshau",
+        "note": "",
+        "status": "ingested",
+        "typed_uncertainty": [],
+        "exported_entry_keys": [
+          "bailey1920rohru:p120:cardinals:6"
+        ],
+        "exported_tags": [
+          "num"
+        ],
+        "exported_notes": ""
+      },
+      "actual_rows": [
+        [
+          "roh",
+          "",
+          "tshau",
+          "6",
+          "",
+          "",
+          " Bailey says the h of sixth is weaker than in six, although the printed sixth form tsŏūo has no h.",
+          "bailey1920rohru[p. 120, cardinals, 6];bailey1920rohru[p. 121, sixth/six aspiration comparison, item 2]",
+          "",
+          "",
+          "bailey1920rohru:p120:cardinals:6",
+          "",
+          "",
+          "",
+          "num"
+        ]
+      ],
+      "result": "pending"
+    },
+    {
+      "source_unit_key": "bailey1920rohru:p120:pronouns:indef-gen",
+      "printed_page": 120,
+      "source_audit": {
+        "source_unit_key": "bailey1920rohru:p120:pronouns:indef-gen",
+        "printed_page": 120,
+        "pdf_page": 146,
+        "section": "pronouns",
+        "forms": [
+          "kauh-ro"
+        ],
+        "gloss": "anyone, someone",
+        "tags": [
+          "pron",
+          "indef",
+          "gen"
+        ],
+        "raw_source_form": "kauh-ro",
+        "note": "Source calls the adjective-pronoun class usable also as adverbs on p121; no unattested paradigm cells inferred from etc.",
+        "status": "ingested",
+        "typed_uncertainty": [],
+        "exported_entry_keys": [
+          "bailey1920rohru:p120:pronouns:indef-gen"
+        ],
+        "exported_tags": [
+          "pron",
+          "indef",
+          "gen"
+        ],
+        "exported_notes": ""
+      },
+      "actual_rows": [
+        [
+          "roh",
+          "",
+          "kauh-ro",
+          "anyone, someone",
+          "",
+          "",
+          "",
+          "bailey1920rohru[p. 120, pronouns, indef-gen]",
+          "",
+          "",
+          "bailey1920rohru:p120:pronouns:indef-gen",
+          "",
+          "",
+          "",
+          "pron indef gen"
+        ]
+      ],
+      "result": "pending"
+    },
+    {
+      "source_unit_key": "bailey1920rohru:p121:adverb-place:1",
+      "printed_page": 121,
+      "source_audit": {
+        "source_unit_key": "bailey1920rohru:p121:adverb-place:1",
+        "printed_page": 121,
+        "pdf_page": 147,
+        "section": "adverb-place",
+        "forms": [
+          "īyyā"
+        ],
+        "gloss": "here",
+        "tags": [
+          "adv",
+          "spatial"
+        ],
+        "raw_source_form": "īyyā",
+        "note": "",
+        "status": "ingested",
+        "typed_uncertainty": [],
+        "exported_entry_keys": [
+          "bailey1920rohru:p121:adverb-place:1"
+        ],
+        "exported_tags": [
+          "adv",
+          "spatial"
+        ],
+        "exported_notes": ""
+      },
+      "actual_rows": [
+        [
+          "roh",
+          "",
+          "īyyā",
+          "here",
+          "",
+          "",
+          "",
+          "bailey1920rohru[p. 121, adverb-place, 1]",
+          "",
+          "",
+          "bailey1920rohru:p121:adverb-place:1",
+          "",
+          "",
+          "",
+          "adv spatial"
+        ]
+      ],
+      "result": "pending"
+    },
+    {
+      "source_unit_key": "bailey1920rohru:p121:adverb-place:12",
+      "printed_page": 121,
+      "source_audit": {
+        "source_unit_key": "bailey1920rohru:p121:adverb-place:12",
+        "printed_page": 121,
+        "pdf_page": 147,
+        "section": "adverb-place",
+        "forms": [
+          "āggu"
+        ],
+        "gloss": "forward",
+        "tags": [
+          "adv",
+          "spatial"
+        ],
+        "raw_source_form": "āggu",
+        "note": "",
+        "status": "ingested",
+        "typed_uncertainty": [],
+        "exported_entry_keys": [
+          "bailey1920rohru:p121:adverb-place:12"
+        ],
+        "exported_tags": [
+          "adv",
+          "spatial"
+        ],
+        "exported_notes": ""
+      },
+      "actual_rows": [
+        [
+          "roh",
+          "",
+          "āggu",
+          "forward",
+          "",
+          "",
+          "",
+          "bailey1920rohru[p. 121, adverb-place, 12]",
+          "",
+          "",
+          "bailey1920rohru:p121:adverb-place:12",
+          "",
+          "",
+          "",
+          "adv spatial"
+        ]
+      ],
+      "result": "pending"
+    },
+    {
+      "source_unit_key": "bailey1920rohru:p122:beat-pres-ind:4",
+      "printed_page": 122,
+      "source_audit": {
+        "source_unit_key": "bailey1920rohru:p122:beat-pres-ind:4",
+        "printed_page": 122,
+        "pdf_page": 148,
+        "section": "beat-pres-ind",
+        "forms": [
+          "pīṭī"
+        ],
+        "gloss": "beat",
+        "tags": [
+          "verb",
+          "pres",
+          "ind"
+        ],
+        "raw_source_form": "pīṭī",
+        "note": "Six printed positions retained in column-major order; person labels are not printed here. Source p123 says present conditional has the same forms as present indicative.",
+        "status": "ingested",
+        "typed_uncertainty": [],
+        "exported_entry_keys": [
+          "bailey1920rohru:p122:beat-pres-ind:4"
+        ],
+        "exported_tags": [
+          "verb",
+          "pres",
+          "ind"
+        ],
+        "exported_notes": "The source says present conditional has the same forms as present indicative."
+      },
+      "actual_rows": [
+        [
+          "roh",
+          "",
+          "pīṭī",
+          "beat",
+          "",
+          "",
+          "The source says present conditional has the same forms as present indicative.",
+          "bailey1920rohru[p. 122, beat-pres-ind, 4]",
+          "",
+          "",
+          "bailey1920rohru:p122:beat-pres-ind:4",
+          "",
+          "",
+          "",
+          "verb pres ind"
+        ]
+      ],
+      "result": "pending"
+    },
+    {
+      "source_unit_key": "bailey1920rohru:p122:prepositions:15",
+      "printed_page": 122,
+      "source_audit": {
+        "source_unit_key": "bailey1920rohru:p122:prepositions:15",
+        "printed_page": 122,
+        "pdf_page": 148,
+        "section": "prepositions",
+        "forms": [
+          "ār"
+        ],
+        "gloss": "on this side of",
+        "tags": [
+          "post"
+        ],
+        "raw_source_form": "ār",
+        "note": "Source heading Prepositions; expressions and explicitly grouped answers retained without automatic variant relations.",
+        "status": "ingested",
+        "typed_uncertainty": [],
+        "exported_entry_keys": [
+          "bailey1920rohru:p122:prepositions:15"
+        ],
+        "exported_tags": [
+          "postp"
+        ],
+        "exported_notes": ""
+      },
+      "actual_rows": [
+        [
+          "roh",
+          "",
+          "ār",
+          "on this side of",
+          "",
+          "",
+          "",
+          "bailey1920rohru[p. 122, prepositions, 15]",
+          "",
+          "",
+          "bailey1920rohru:p122:prepositions:15",
+          "",
+          "",
+          "",
+          "postp"
+        ]
+      ],
+      "result": "pending"
+    },
+    {
+      "source_unit_key": "bailey1920rohru:p122:prepositions:7",
+      "printed_page": 122,
+      "source_audit": {
+        "source_unit_key": "bailey1920rohru:p122:prepositions:7",
+        "printed_page": 122,
+        "pdf_page": 148,
+        "section": "prepositions",
+        "forms": [
+          "are"
+        ],
+        "gloss": "with, along with",
+        "tags": [
+          "post"
+        ],
+        "raw_source_form": "are",
+        "note": "Source heading Prepositions; expressions and explicitly grouped answers retained without automatic variant relations.",
+        "status": "ingested",
+        "typed_uncertainty": [],
+        "exported_entry_keys": [
+          "bailey1920rohru:p122:prepositions:7"
+        ],
+        "exported_tags": [
+          "postp"
+        ],
+        "exported_notes": ""
+      },
+      "actual_rows": [
+        [
+          "roh",
+          "",
+          "are",
+          "with, along with",
+          "",
+          "",
+          "",
+          "bailey1920rohru[p. 122, prepositions, 7]",
+          "",
+          "",
+          "bailey1920rohru:p122:prepositions:7",
+          "",
+          "",
+          "",
+          "postp"
+        ]
+      ],
+      "result": "pending"
+    },
+    {
+      "source_unit_key": "bailey1920rohru:p123:beat-participles:pass-f-sg",
+      "printed_page": 123,
+      "source_audit": {
+        "source_unit_key": "bailey1920rohru:p123:beat-participles:pass-f-sg",
+        "printed_page": 123,
+        "pdf_page": 149,
+        "section": "beat-participles",
+        "forms": [
+          "pīṭĕndĭ"
+        ],
+        "gloss": "beat",
+        "tags": [
+          "participle",
+          "pres",
+          "pass",
+          "f",
+          "sg"
+        ],
+        "raw_source_form": "pīṭĕndĭ",
+        "note": "Printed grammatical account retained; uncontracted passive explicitly supplied, Hindi comparison control recorded separately.",
+        "status": "ingested",
+        "typed_uncertainty": [],
+        "second_reading_correction": {
+          "source_unit_key": "bailey1920rohru:p123:beat-participles:pass-f-sg",
+          "old_forms": [
+            "pīṭĕndī"
+          ],
+          "forms": [
+            "pīṭĕndĭ"
+          ],
+          "raw_source_form": "pīṭĕndĭ",
+          "reason": "Enlarged original separates breve and macron explicitly; retain this occurrence rather than harmonize neighboring forms."
+        },
+        "exported_entry_keys": [
+          "bailey1920rohru:p123:beat-participles:pass-f-sg"
+        ],
+        "exported_tags": [
+          "participle",
+          "pres",
+          "pass",
+          "f",
+          "sg"
+        ],
+        "exported_notes": "Source passive participle, described as contracted from pīṭo ondo; the source compares Hindi mārā huā."
+      },
+      "actual_rows": [
+        [
+          "roh",
+          "",
+          "pīṭĕndĭ",
+          "beat",
+          "",
+          "",
+          "Source passive participle, described as contracted from pīṭo ondo; the source compares Hindi mārā huā.",
+          "bailey1920rohru[p. 123, beat-participles, pass-f-sg]",
+          "",
+          "",
+          "bailey1920rohru:p123:beat-participles:pass-f-sg",
+          "",
+          "",
+          "",
+          "participle pres pass f sg"
+        ]
+      ],
+      "result": "pending"
+    },
+    {
+      "source_unit_key": "bailey1920rohru:p123:verb-become:past-conditional",
+      "printed_page": 123,
+      "source_audit": {
+        "source_unit_key": "bailey1920rohru:p123:verb-become:past-conditional",
+        "printed_page": 123,
+        "pdf_page": 149,
+        "section": "verb-become",
+        "forms": [
+          "ōhndo"
+        ],
+        "gloss": "be, become",
+        "tags": [
+          "verb",
+          "pret",
+          "conditional"
+        ],
+        "raw_source_form": "ōhndo",
+        "note": "",
+        "status": "ingested",
+        "typed_uncertainty": [],
+        "exported_entry_keys": [
+          "bailey1920rohru:p123:verb-become:past-conditional"
+        ],
+        "exported_tags": [
+          "verb",
+          "pret",
+          "conditional"
+        ],
+        "exported_notes": ""
+      },
+      "actual_rows": [
+        [
+          "roh",
+          "",
+          "ōhndo",
+          "be, become",
+          "",
+          "",
+          "",
+          "bailey1920rohru[p. 123, verb-become, past-conditional]",
+          "",
+          "",
+          "bailey1920rohru:p123:verb-become:past-conditional",
+          "",
+          "",
+          "",
+          "verb pret conditional"
+        ]
+      ],
+      "result": "pending"
+    },
+    {
+      "source_unit_key": "bailey1920rohru:p123:verb-go:infinitive",
+      "printed_page": 123,
+      "source_audit": {
+        "source_unit_key": "bailey1920rohru:p123:verb-go:infinitive",
+        "printed_page": 123,
+        "pdf_page": 149,
+        "section": "verb-go",
+        "forms": [
+          "ḍēuṇo"
+        ],
+        "gloss": "go",
+        "tags": [
+          "verb",
+          "inf"
+        ],
+        "raw_source_form": "ḍēuṇo",
+        "note": "",
+        "status": "ingested",
+        "typed_uncertainty": [],
+        "exported_entry_keys": [
+          "bailey1920rohru:p123:verb-go:infinitive"
+        ],
+        "exported_tags": [
+          "verb",
+          "inf"
+        ],
+        "exported_notes": ""
+      },
+      "actual_rows": [
+        [
+          "roh",
+          "",
+          "ḍēuṇo",
+          "go",
+          "",
+          "",
+          "",
+          "bailey1920rohru[p. 123, verb-go, infinitive]",
+          "",
+          "",
+          "bailey1920rohru:p123:verb-go:infinitive",
+          "",
+          "",
+          "",
+          "verb inf"
+        ]
+      ],
+      "result": "pending"
+    },
+    {
+      "source_unit_key": "bailey1920rohru:p124:verb-bring:infinitive",
+      "printed_page": 124,
+      "source_audit": {
+        "source_unit_key": "bailey1920rohru:p124:verb-bring:infinitive",
+        "printed_page": 124,
+        "pdf_page": 150,
+        "section": "verb-bring",
+        "forms": [
+          "āṇṇo"
+        ],
+        "gloss": "bring",
+        "tags": [
+          "verb",
+          "inf"
+        ],
+        "raw_source_form": "āṇṇo",
+        "note": "",
+        "status": "ingested",
+        "typed_uncertainty": [],
+        "exported_entry_keys": [
+          "bailey1920rohru:p124:verb-bring:infinitive"
+        ],
+        "exported_tags": [
+          "verb",
+          "inf"
+        ],
+        "exported_notes": ""
+      },
+      "actual_rows": [
+        [
+          "roh",
+          "",
+          "āṇṇo",
+          "bring",
+          "",
+          "",
+          "",
+          "bailey1920rohru[p. 124, verb-bring, infinitive]",
+          "",
+          "",
+          "bailey1920rohru:p124:verb-bring:infinitive",
+          "",
+          "",
+          "",
+          "verb inf"
+        ]
+      ],
+      "result": "pending"
+    },
+    {
+      "source_unit_key": "bailey1920rohru:p124:verb-take:past",
+      "printed_page": 124,
+      "source_audit": {
+        "source_unit_key": "bailey1920rohru:p124:verb-take:past",
+        "printed_page": 124,
+        "pdf_page": 150,
+        "section": "verb-take",
+        "forms": [
+          "lāo"
+        ],
+        "gloss": "take",
+        "tags": [
+          "verb",
+          "pret"
+        ],
+        "raw_source_form": "lāo",
+        "note": "Only explicitly printed forms; etc. does not authorize invented paradigm completion.",
+        "status": "ingested",
+        "typed_uncertainty": [],
+        "exported_entry_keys": [
+          "bailey1920rohru:p124:verb-take:past"
+        ],
+        "exported_tags": [
+          "verb",
+          "pret"
+        ],
+        "exported_notes": ""
+      },
+      "actual_rows": [
+        [
+          "roh",
+          "",
+          "lāo",
+          "take",
+          "",
+          "",
+          "",
+          "bailey1920rohru[p. 124, verb-take, past]",
+          "",
+          "",
+          "bailey1920rohru:p124:verb-take:past",
+          "",
+          "",
+          "",
+          "verb pret"
+        ]
+      ],
+      "result": "pending"
+    },
+    {
+      "source_unit_key": "bailey1920rohru:p125:sentence:19",
+      "printed_page": 125,
+      "source_audit": {
+        "source_unit_key": "bailey1920rohru:p125:sentence:19",
+        "printed_page": 125,
+        "pdf_page": 151,
+        "section": "Sentences",
+        "item": 19,
+        "forms": [
+          "Mū khu āga hāṇḍo"
+        ],
+        "gloss": "Me from before walk.",
+        "tags": [
+          "sentential",
+          "multiword-expression",
+          "impv"
+        ],
+        "source_locator": "p. 125, sentence 19",
+        "raw_form": "Mū khu āga hāṇḍo",
+        "review_note": "All fine marks require complete narrow second reading; no canonical emission yet.",
+        "source": "tmp/pdfs/bailey1920/bailey1920.pdf",
+        "gloss_continues_page": null,
+        "status": "ingested",
+        "typed_uncertainty": [],
+        "exported_entry_keys": [
+          "bailey1920rohru:p125:sentence:19"
+        ],
+        "exported_tags": [
+          "sentential",
+          "multiword-expression",
+          "impv"
+        ],
+        "exported_notes": ""
+      },
+      "actual_rows": [
+        [
+          "roh",
+          "",
+          "Mū khu āga hāṇḍo",
+          "Me from before walk.",
+          "",
+          "",
+          "",
+          "bailey1920rohru[p. 125, sentence 19]",
+          "",
+          "",
+          "bailey1920rohru:p125:sentence:19",
+          "",
+          "",
+          "",
+          "sentential multiword-expression impv"
+        ]
+      ],
+      "result": "pending"
+    },
+    {
+      "source_unit_key": "bailey1920rohru:p125:sentence:20",
+      "printed_page": 125,
+      "source_audit": {
+        "source_unit_key": "bailey1920rohru:p125:sentence:20",
+        "printed_page": 125,
+        "pdf_page": 151,
+        "section": "Sentences",
+        "item": 20,
+        "forms": [
+          "Kauhro tshōru taū patshe āhande lāgahndo"
+        ],
+        "gloss": "Whose son thee behind coming attached, i.e. is at this moment coming.",
+        "tags": [
+          "sentential",
+          "multiword-expression",
+          "interr"
+        ],
+        "source_locator": "p. 125, sentence 20",
+        "raw_form": "Kauhro tshōru taū patshe āhande lāgahndo",
+        "review_note": "All fine marks require complete narrow second reading; no canonical emission yet.",
+        "source": "tmp/pdfs/bailey1920/bailey1920.pdf",
+        "gloss_continues_page": 126,
+        "status": "ingested",
+        "typed_uncertainty": [],
+        "exported_entry_keys": [
+          "bailey1920rohru:p125:sentence:20"
+        ],
+        "exported_tags": [
+          "sentential",
+          "multiword-expression",
+          "interr"
+        ],
+        "exported_notes": ""
+      },
+      "actual_rows": [
+        [
+          "roh",
+          "",
+          "Kauhro tshōru taū patshe āhande lāgahndo",
+          "Whose son thee behind coming attached, i.e. is at this moment coming.",
+          "",
+          "",
+          "",
+          "bailey1920rohru[p. 125, sentence 20]",
+          "",
+          "",
+          "bailey1920rohru:p125:sentence:20",
+          "",
+          "",
+          "",
+          "sentential multiword-expression interr"
+        ]
+      ],
+      "result": "pending"
+    },
+    {
+      "source_unit_key": "bailey1920rohru:p126:commentary:note10",
+      "printed_page": 126,
+      "source_audit": {
+        "source_unit_key": "bailey1920rohru:p126:commentary:note10",
+        "printed_page": 126,
+        "pdf_page": 152,
+        "section": "Sentence notes",
+        "forms": [
+          "Bŭṭṭhahndo"
+        ],
+        "gloss": "seated",
+        "tags": [
+          "participle"
+        ],
+        "note": "Source note numbered10 although the seated sentence is11; preserve source numbering and phonetic differences.",
+        "status": "ingested",
+        "typed_uncertainty": [],
+        "exported_entry_keys": [
+          "bailey1920rohru:p126:commentary:note10"
+        ],
+        "exported_tags": [
+          "participle"
+        ],
+        "exported_notes": "Source note numbered10 although the seated sentence is11; preserve source numbering and phonetic differences."
+      },
+      "actual_rows": [
+        [
+          "roh",
+          "",
+          "Bŭṭṭhahndo",
+          "seated",
+          "",
+          "",
+          "Source note numbered10 although the seated sentence is11; preserve source numbering and phonetic differences.",
+          "bailey1920rohru[p. 126, Sentence notes, note10]",
+          "",
+          "",
+          "bailey1920rohru:p126:commentary:note10",
+          "",
+          "",
+          "",
+          "participle"
+        ]
+      ],
+      "result": "pending"
+    }
+  ]
+}

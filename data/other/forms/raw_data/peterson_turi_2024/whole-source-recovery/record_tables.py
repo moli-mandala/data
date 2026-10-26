@@ -1,0 +1,22 @@
+"""Native-layer first reading of every lexical/grammatical table outside Appendix1."""
+import json
+from pathlib import Path
+HERE=Path(__file__).resolve().parent
+rows=[]
+def add(page,table,key,form,gloss,tags='',note='',lect='Odisha'):
+ rows.append(dict(source_unit_key=f'peterson2024turi:p{page}:table{table}:{key}',printed_page=page,pdf_page=page-260,table=table,form=form,gloss=gloss,tags=tags.split(),note=note,lect=lect,review_status='first_reading_pending_original_review'))
+pronouns=[('1sg','iŋ','I','pron 1 sg'),('1du-excl','ɑliŋ','we (dual, exclusive)','pron 1 du excl'),('1pl-excl','ɑlɛ','we (plural, exclusive)','pron 1 pl excl'),('1du-incl','ɑlɑŋ','we (dual, inclusive)','pron 1 du incl'),('1pl-incl','ɑbu','we (plural, inclusive)','pron 1 pl incl'),('2sg','ɑm','you (singular)','pron 2 sg'),('2du','ɑbin','you (dual)','pron 2 du'),('2pl','ɑpɛ','you (plural)','pron 2 pl'),('3sg','uni','third-person singular pronoun','pron 3 sg'),('3du','unkin','third-person dual pronoun','pron 3 du'),('3pl','unku','third-person plural pronoun','pron 3 pl')]
+for k,f,g,t in pronouns: add(268,3,k,f,g,t,'English expands only explicit person/number/inclusivity table headers; no gender assigned.')
+for k,f,g in [('1','miɑʔn','one'),('2','bɑrɛɑ','two'),('3','pɛɑ','three'),('4','ʧɑr','four'),('5','pɑnʧ','five')]:
+ add(268,4,k,f,g,'num'+(' loanword' if k in ('4','5') else ''),'Source IA label on four and five; no specific donor entry asserted.')
+for k,f,g in [('1-jh','meja','one'),('2-jh','baria','two')]: add(268,4,k,f,g,'num','Explicit Jharkhandi Turi parenthetical.',lect='Jharkhandi')
+for i,f in enumerate(['mit’','miat’'],1): add(268,4,f'1-grierson-{i}',f,'one','num','Source explicitly attributes form to Grierson; no finer lect supplied in table.',lect='historical unspecified')
+markers=[('1sg-a','=ɛŋ','first-person singular subject/object index','1 sg'),('1sg-b','=iŋ','first-person singular subject/object index','1 sg'),('1du-excl','=liŋ','first-person dual exclusive subject/object index','1 du excl'),('1pl-excl','=lɛ','first-person plural exclusive subject/object index','1 pl excl'),('1du-incl','=lɑŋ','first-person dual inclusive subject/object index','1 du incl'),('1pl-incl','=bu','first-person plural inclusive subject/object index','1 pl incl'),('2sg','=m','second-person singular subject/object index','2 sg'),('2du','=bin','second-person dual subject/object index','2 du'),('2pl','=pɛ','second-person plural subject/object index','2 pl'),('3sg-obj','=i','third-person singular object index','3 sg obj'),('3sg-subj','=ɛ','third-person singular subject index','3 sg'),('3du','=kin','third-person dual subject/object index','3 du'),('3pl','=ku','third-person plural subject/object index','3 pl')]
+for k,f,g,t in markers:add(271,5,k,f,g,t,'Enclitic argument index, not independent pronoun. First-person singular two forms are speaker-specific free variants; third-person singular object/subject scopes differ.')
+tam=[('present-mid',['-tɑn'],'present middle'),('present-act',['-ɛtɑn'],'present active'),('past-mid',['-ɛn','-kɛn','-ɔn','-ɔʔ-ɛn'],'past middle'),('past-imperfective-act',['-ɛkɛn'],'past imperfective active'),('past-simple-act',['-tɑd'],'simple past active'),('future-mid',['-ɔʔ','-ɔ','-ʔ'],'future middle'),('present-perfect-mid',['-ɑkɑn'],'present perfect middle'),('present-perfect-act',['-ɑkɑd'],'present perfect active'),('past-perfect-mid',['-lɛn'],'past perfect middle'),('past-perfect-act',['-lɛʔ','-lɑʔ'],'past perfect active')]
+for key,forms,gloss in tam:
+ for i,f in enumerate(forms,1):add(272,6,f'{key}-{i}',f,gloss+' marker',note='Parenthesized active present-perfect is explicitly from Grierson1906 p.130 Ranchi; no Odisha attestation.' if key=='present-perfect-act' else 'Source table analyses retained; zero alternatives separately audited, not invented word forms.',lect='historical Ranchi' if key=='present-perfect-act' else 'Odisha')
+for key in ['future-mid-zero','future-act-zero']:
+ rows.append(dict(source_unit_key=f'peterson2024turi:p272:table6:{key}',printed_page=272,pdf_page=12,table=6,form='-',gloss=key.replace('-',' '),status='zero_morphology_evidence_only',note='Printed dash is explicitly absence of overt future marking; no lexical row for zero.',review_status='first_reading_pending_original_review'))
+(HERE/'tables-first-reading.jsonl').write_text(''.join(json.dumps(r,ensure_ascii=False)+'\n' for r in rows))
+print(f'{len(rows)} table cells including two zero-marker evidence units')

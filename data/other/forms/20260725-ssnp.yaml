@@ -2,6 +2,10 @@ file: 20260725-ssnp.csv
 defaults:
   transcription:
   - profile: ssnp
+  forms:
+    # "kʌpɑl / sor": one survey cell giving two responses (or phonetic variants such as
+    # "ser / sɪr"); each becomes its own form, Original keeps the whole cell.
+    slash_alternates: true
   importer:
     commands:
     - - data/other/forms/raw_data/ssnp.py

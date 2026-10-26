@@ -2,13 +2,15 @@ file: 20260925-bailey-bilaspuri.csv
 defaults:
   transcription:
     profile: bailey-bilaspuri-1920
+    input: form
+    preserve_hyphens: true
   identity:
     legacy_ids: stem
     append_order: 64
   importer:
     commands:
       - [data/other/forms/raw_data/bailey_bilaspuri_1920/import_source.py, --install]
-    note: Full Bailey 1920 Bilaspuri pp. 245–248 glossary, 237 accepted cells expanded to 288 forms; all 114 legacy keys retained; fresh independent audit 0/20.
+    note: Whole Bilaspuri source pp. 231–248, including attributed introductory examples, grammar, 22 sentences and glossary; 678 forms, all 288 prior rows exact; fresh independent pass 3 zero errors in 20 source units. Other lect controls remain audit-only. Full build and browser gates deferred.
 sources:
   bailey1920bilaspuri:
     identity:

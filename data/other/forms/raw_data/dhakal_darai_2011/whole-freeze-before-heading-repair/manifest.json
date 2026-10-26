@@ -1,0 +1,34 @@
+{
+  "status": "Frozen for independent whole-source original-versus-output audit; not installed",
+  "files": {
+    "whole-proposed-author-transcription.csv": "f956ca2f12285e3ad3bd5be6f22ac3fcff403e363d2d297881afad54584ddce2",
+    "whole-proposed-literal-preservation.csv": "96a55aef16bcc34d10678a626da30260569e4bda6375dbaa8199b8dcfd94c1d4",
+    "whole-proposed-audit.jsonl": "d7c93fe193afeaf60bbdcfd0e52b60f79b080515b69b4befae13f9ea5a6c88ef",
+    "whole-profile-proposed.txt": "0cd4b3396c56fc8183f763b278b606d99ac2e37a858613f119ff494fd3d04b31",
+    "whole-source-graph-decisions.json": "5e24cc4d2d07beed1aed106ca54b4abf84040e88bf311bdb389d6ac1ce736b3f",
+    "whole-source-tag-reconciliation-20260927.json": "53077c303520f4466043635abab0972958d92c565776d26d0644b691df0bf7e3"
+  },
+  "counts": {
+    "expanded_source_units": 11304,
+    "emitted_entries": 8348,
+    "author_transcription": 8336,
+    "literal_preservation": 12,
+    "exact_reuse": 2456,
+    "controls": 500,
+    "existing_keys_preserved": 485
+  },
+  "validation": "48 focused tests passed, including actual generic parser, NFC/NFD and profile policy, exact reuse and all source-unit accounting",
+  "canonical_changed": false,
+  "deferred": [
+    "Independent original-versus-output audit",
+    "Final metadata/importer installation and canonical validation",
+    "User-authorized full build and browser QA"
+  ],
+  "targeted_review": [
+    "Three literal unresolved slash groups on p376 (root reviewed).",
+    "Two separately translated statements on p343, example16b, with6+3children.",
+    "Literal and idiomatic proverb senses onp190/327/328.",
+    "Eighteen Chapter3 physical attestations reuse historical keys while preserving complete translations and source citations.",
+    "Source-explicit imminent p156, hypothetical p164, frustrative p170, counterfactual distinct."
+  ]
+}

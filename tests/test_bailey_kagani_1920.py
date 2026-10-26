@@ -1,4 +1,4 @@
-"""Focused source-input checks for Bailey's complete Kāgānī vocabulary."""
+"""Historical glossary-stage fixtures; whole-source checks are in the revision and installed modules."""
 
 import csv
 import importlib.util
@@ -15,8 +15,9 @@ from segments.tokenizer import Tokenizer
 
 DATA = Path(__file__).resolve().parents[1]
 PACKAGE = DATA / "data/other/forms/raw_data/bailey_kagani_1920"
-CSV = DATA / "data/other/forms/20260925-bailey-kagani.csv"
-PROFILE = DATA / "conversion/bailey-kagani-1920.txt"
+ARCHIVE = PACKAGE / "historical-glossary-installation"
+CSV = ARCHIVE / "20260925-bailey-kagani.csv"
+PROFILE = ARCHIVE / "bailey-kagani-1920.txt"
 spec = importlib.util.spec_from_file_location("bailey_kagani_1920", PACKAGE / "import_source.py")
 source = importlib.util.module_from_spec(spec)
 sys.modules[spec.name] = source
@@ -29,10 +30,10 @@ def installed():
 
 
 def audited():
-    return [json.loads(line) for line in (PACKAGE / "audit.jsonl").read_text().splitlines()]
+    return [json.loads(line) for line in (ARCHIVE / "audit.jsonl").read_text().splitlines()]
 
 
-def test_full_source_regeneration_and_keys():
+def test_historical_glossary_regeneration_and_keys():
     rows, audit = source.generate()
     assert rows == installed() and audit == audited()
     assert len(audit) == 261 and len(rows) == 329
@@ -128,7 +129,7 @@ def test_all_source_see_also_references_survive():
     assert excluded == {"river":"[see stream]", "second":"[see two]", "spruce":"[see fir]"}
 
 
-def test_fresh_independent_audit_pins_installed_output():
+def test_historical_independent_audit_pins_glossary_output():
     import hashlib
     report = json.loads((PACKAGE / "independent-audit-20260926-pass2.json").read_text())
     assert report["sample_size"] == 20 and report["material_errors"] == 0
@@ -137,7 +138,7 @@ def test_fresh_independent_audit_pins_installed_output():
     # still match the immutable independently reviewed snapshot.
     audited_bytes = CSV.read_bytes().replace(b"dialect:Northern%20Hindko:", b"dialect:Northern Hindko:")
     assert hashlib.sha256(audited_bytes).hexdigest() == report["hashes"]["literal-staged.csv"]
-    assert hashlib.sha256((PACKAGE / "audit.jsonl").read_bytes()).hexdigest() == report["hashes"]["literal-staged-audit.jsonl"]
+    assert hashlib.sha256((ARCHIVE / "audit.jsonl").read_bytes()).hexdigest() == report["hashes"]["literal-staged-audit.jsonl"]
 
 
 def test_dialect_tag_is_one_registered_whitespace_free_token():

@@ -1,0 +1,16 @@
+{
+  "reviewer": "root",
+  "status": "implementation_review_passed_final_output_pending",
+  "reviewed_file": "whole_attribution.py",
+  "original_risks": [
+    "Any nonempty witness except Word list today was classified as historical without an explicit inventory.",
+    "Only immediate-parent claims were inherited, so deeper generated descendants could lose source scope."
+  ],
+  "reviewed_changes": [
+    "Explicit historical/current witness inventory rejects unreviewed values.",
+    "Recursive ancestry resolution preserves parent scope regardless of row ordering and rejects cycles.",
+    "Nine early-chapter historical, uncertain-cultural and radio-title exceptions have explicit source-local overrides.",
+    "Text recording locations remain provenance, not automatic dialect assignments."
+  ],
+  "remaining_validation": "Final proposed rows must be checked against source evidence for source labels, registered dialects, historical citations, and uncertain-language exceptions. This code review is not source-stage installation approval."
+}

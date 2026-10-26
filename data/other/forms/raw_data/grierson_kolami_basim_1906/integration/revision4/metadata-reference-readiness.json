@@ -1,0 +1,69 @@
+{
+  "status": "Source-local metadata/reference/schema validation passes; staged installer and canonical provenance still deferred",
+  "rows": 827,
+  "language_counts": {
+    "Kolami": 447,
+    "Tamil": 1,
+    "Kannada": 2,
+    "Tulu": 1,
+    "Telugu": 6,
+    "Toda": 2,
+    "Naikri": 367,
+    "Kui": 1
+  },
+  "registered_languages_all_valid": true,
+  "tags_all_registered_or_exact_two_dialect_proposals": true,
+  "proposed_dialects": [
+    {
+      "ID": "grierson1906_kolami_wun",
+      "Tag": "dialect:Kolami:Kolami-Wun-LSI1906:Kolami%20of%20Wun%20%28LSI%201906%29",
+      "Language_ID": "Kolami",
+      "Source_Language_ID": "Kolami-Wun-LSI1906",
+      "Name": "Kolami of Wun (LSI 1906)",
+      "Glottocode": "",
+      "Latitude": "",
+      "Longitude": "",
+      "Clade": "C. Dravidian",
+      "Location": "Historical Wun district, Berar; LSI 1906 survey",
+      "Quality": ""
+    },
+    {
+      "ID": "grierson1906_naikri_basim",
+      "Tag": "dialect:Naikri:Naikri-Basim-LSI1906:Bhili%20of%20Basim%20%28LSI%201906%29",
+      "Language_ID": "Naikri",
+      "Source_Language_ID": "Naikri-Basim-LSI1906",
+      "Name": "Bhili of Basim (LSI 1906)",
+      "Glottocode": "",
+      "Latitude": "",
+      "Longitude": "",
+      "Clade": "C. Dravidian",
+      "Location": "Historical Basim district, Berar; LSI 1906 survey",
+      "Quality": ""
+    }
+  ],
+  "source_declarations": {
+    "grierson1906kolamibasim": 1,
+    "haig1897gondi_kolami": 1
+  },
+  "formatted_references": {
+    "grierson1906kolamibasim": "[1] George Abraham Grierson\\.\nKōlāmī, Naikī, etc\\.\nIn *Linguistic Survey of India\\. Volume IV: Munda and Dravidian Languages*, pages 561–569\\.\nOffice of the Superintendent of Government Printing, India, Calcutta, 1906\\.\nURL: [https://dsal\\.uchicago\\.edu/books/lsi/lsi\\.php?volume=4\\\\&amp;pages=701](https://dsal.uchicago.edu/books/lsi/lsi.php?volume=4\\&pages=701)\\.  \n",
+    "haig1897gondi_kolami": "[1] Wolseley Haig\\.\nA comparative vocabulary of the Gondi and Kolami languages\\.\n*Journal of the Asiatic Society of Bengal*, 66\\(1\\):185–191, 1897\\.\nReported authority in Grierson 1906, p\\. 562\\. Full page range corroborated by DEDR bibliography section 26\\. This work has not been independently collated for lexical ingestion; no direct lexical citation is asserted\\.  \n"
+  },
+  "input_pins": {
+    "data/data/other/forms/raw_data/grierson_kolami_basim_1906/integration/revision4/combined-review-candidate.csv": "944c6b0cf1edec453a0531e130af95d9832b29df54b40c23e214f3ba996fb87d",
+    "data/data/other/forms/raw_data/grierson_kolami_basim_1906/integration/revision4/combined-review-candidate.yaml": "c5e1e02467fdfc669b7e09a1a8b1d85b80baebe7e8d076a22e44477ca3e6f283",
+    "data/data/other/forms/raw_data/grierson_kolami_basim_1906/metadata-profile-proposal/references-proposed.bib": "af08bdc1e8cd88156078f7ff9495de001bc27791adca762487487e19025f2267",
+    "data/cldf/languages.csv": "ff894ca6b5b2612836871aee45b5ba887fd17c5e8ff797c5c2e0e122538e0b96",
+    "data/cldf/dialects.csv": "f4baf66ce8c60985faf49e561b7254e890f3da5d05a954aaf10bc99a493a89de",
+    "data/cldf/sources.bib": "af76f24c4a29cbe3822ac94aef8c4b753e16ed04d79de62415f06bc554285dc2"
+  },
+  "reference_candidate_sha256": "2031da0cbfd7a71b0f6b88d194354ed13eb47f16413273b8eecd539c1bcc2ea3",
+  "notes_policy": "Generic alignment/parser-state evidence is audit-only; lexical rows contain no repeated parser commentary.",
+  "canonical_changes": false,
+  "pending": [
+    "Final independent source-output and specimen metadata approval",
+    "Final canonical paths/importer command in staged metadata",
+    "Canonical source-stage installation",
+    "Full compiled and browser gates"
+  ]
+}

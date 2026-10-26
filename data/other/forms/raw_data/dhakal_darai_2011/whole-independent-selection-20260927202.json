@@ -1,0 +1,1639 @@
+{
+  "seed": 20260927202,
+  "count": 20,
+  "freeze": {
+    "status": "Frozen for independent whole-source original-versus-output audit; not installed",
+    "files": {
+      "whole-proposed-author-transcription.csv": "f956ca2f12285e3ad3bd5be6f22ac3fcff403e363d2d297881afad54584ddce2",
+      "whole-proposed-literal-preservation.csv": "96a55aef16bcc34d10678a626da30260569e4bda6375dbaa8199b8dcfd94c1d4",
+      "whole-proposed-audit.jsonl": "d7c93fe193afeaf60bbdcfd0e52b60f79b080515b69b4befae13f9ea5a6c88ef",
+      "whole-profile-proposed.txt": "0cd4b3396c56fc8183f763b278b606d99ac2e37a858613f119ff494fd3d04b31",
+      "whole-source-graph-decisions.json": "5e24cc4d2d07beed1aed106ca54b4abf84040e88bf311bdb389d6ac1ce736b3f",
+      "whole-source-tag-reconciliation-20260927.json": "53077c303520f4466043635abab0972958d92c565776d26d0644b691df0bf7e3"
+    },
+    "counts": {
+      "expanded_source_units": 11304,
+      "emitted_entries": 8348,
+      "author_transcription": 8336,
+      "literal_preservation": 12,
+      "exact_reuse": 2456,
+      "controls": 500,
+      "existing_keys_preserved": 485
+    },
+    "validation": "48 focused tests passed, including actual generic parser, NFC/NFD and profile policy, exact reuse and all source-unit accounting",
+    "canonical_changed": false,
+    "deferred": [
+      "Independent original-versus-output audit",
+      "Final metadata/importer installation and canonical validation",
+      "User-authorized full build and browser QA"
+    ],
+    "targeted_review": [
+      "Three literal unresolved slash groups on p376 (root reviewed).",
+      "Two separately translated statements on p343, example16b, with6+3children.",
+      "Literal and idiomatic proverb senses onp190/327/328.",
+      "Eighteen Chapter3 physical attestations reuse historical keys while preserving complete translations and source citations.",
+      "Source-explicit imminent p156, hypothetical p164, frustrative p170, counterfactual distinct."
+    ]
+  },
+  "exclusion_files": [
+    "chapters12-independent-selection.json",
+    "preview/acceptance-sample.json"
+  ],
+  "excluded_keys": [],
+  "sampling": "Uniform random emitted entries, sorted by source key before seeded sampling; targeted edge reviews are additional, not substituted.",
+  "records": [
+    {
+      "source_unit_key": "dhakal2011:p108:ch4:surface:l28:word:l35:w1",
+      "evidence_file": "chapter4-interlinear-reviewed.jsonl",
+      "evidence_line": 430,
+      "printed_page": 108,
+      "pdf_page": 130,
+      "kind": "prior-proposal-attestation",
+      "form": "rakʰ-ike",
+      "source_gloss": "place-INF",
+      "proposed_grammar": {
+        "gloss": "place",
+        "tags": [
+          "inf",
+          "verb"
+        ],
+        "labels": [
+          "INF"
+        ],
+        "unmapped_source_labels": [],
+        "raw_gloss": "place-INF",
+        "analysis_status": "Proposed source-label mapping; contextual review pending"
+      },
+      "source_claims": {},
+      "source_status": "Owner original-page literal and alignment review complete; independent review pending",
+      "source_disposition": null,
+      "disposition": "candidate attestation; review pending",
+      "reuse_source_unit_key": null,
+      "parent_expression_key": "dhakal2011:p108:ch4:surface:l28",
+      "open_review": [],
+      "metadata_status": "Not frozen; source claims, roles, variants and profiles require full reconciliation",
+      "source_attribution": {
+        "scope": "author Chitwan default, printed page 8",
+        "lect": "Chitwan"
+      },
+      "export": {
+        "entry_key": "dhakal2011:p108:ch4:surface:l28:word:l35:w1",
+        "route": "author-transcription",
+        "disposition": "emit",
+        "reason": "distinct source analysis or retained historical key",
+        "occurrence_citation": "dhakal2011darai[p. 108]",
+        "occurrence_row": [
+          "Darai",
+          "",
+          "rakʰ-ike",
+          "place",
+          "",
+          "rakʰ-ike",
+          "Printed interlinear analysis: place-INF.",
+          "dhakal2011darai[p. 108]",
+          "",
+          "",
+          "dhakal2011:p108:ch4:surface:l28:word:l35:w1",
+          "",
+          "",
+          "",
+          "dialect:Darai:darai_chitwan:Chitwan inf verb"
+        ],
+        "source_unit_keys": [
+          "dhakal2011:p108:ch4:surface:l28:word:l35:w1"
+        ]
+      },
+      "sample_exported_row": [
+        "Darai",
+        "",
+        "rakʰ-ike",
+        "place",
+        "",
+        "rakʰ-ike",
+        "Printed interlinear analysis: place-INF.",
+        "dhakal2011darai[p. 108]",
+        "",
+        "",
+        "dhakal2011:p108:ch4:surface:l28:word:l35:w1",
+        "",
+        "",
+        "",
+        "dialect:Darai:darai_chitwan:Chitwan inf verb"
+      ]
+    },
+    {
+      "source_unit_key": "dhakal2011:appendix5:JaH.SLD.034:word:p428:l148:w1",
+      "evidence_file": "appendix5-reviewed-records.jsonl",
+      "evidence_line": 1922,
+      "printed_page": 428,
+      "pdf_page": 450,
+      "kind": "prior-proposal-attestation",
+      "form": "toi",
+      "source_gloss": "you",
+      "proposed_grammar": {
+        "gloss": "you",
+        "tags": [],
+        "labels": [],
+        "unmapped_source_labels": [],
+        "raw_gloss": "you",
+        "analysis_status": "Proposed source-label mapping; contextual review pending"
+      },
+      "source_claims": {
+        "text_id": "JaH.SLD.034",
+        "source_surface_form": "toi"
+      },
+      "source_status": "Owner original-page review passed; independent review and metadata integration pending",
+      "source_disposition": null,
+      "disposition": "candidate attestation; review pending",
+      "reuse_source_unit_key": null,
+      "parent_expression_key": "dhakal2011:appendix5:JaH.SLD.034",
+      "open_review": [],
+      "metadata_status": "Not frozen; source claims, roles, variants and profiles require full reconciliation",
+      "source_attribution": {
+        "scope": "author Chitwan default, printed page 8",
+        "lect": "Chitwan",
+        "corpus_context": {
+          "prefix": "JaH.SLD",
+          "title": "Jackal and Hen",
+          "speaker": "Som Lal Darai",
+          "recording_locality": "Kathar VDC, Chitwan district"
+        },
+        "recording_location_is_not_a_dialect_assignment": true
+      },
+      "export": {
+        "entry_key": "dhakal2011:appendix5:JaH.SLD.034:word:p428:l148:w1",
+        "route": "author-transcription",
+        "disposition": "emit",
+        "reason": "distinct source analysis or retained historical key",
+        "occurrence_citation": "dhakal2011darai[p. 428]",
+        "occurrence_row": [
+          "Darai",
+          "",
+          "toi",
+          "you",
+          "",
+          "toi",
+          "Source narrative: Jackal and Hen; speaker: Som Lal Darai. Source recording locality: Kathar VDC, Chitwan district. Source text identifier: JaH.SLD.034.",
+          "dhakal2011darai[p. 428]",
+          "",
+          "",
+          "dhakal2011:appendix5:JaH.SLD.034:word:p428:l148:w1",
+          "",
+          "",
+          "",
+          "dialect:Darai:darai_chitwan:Chitwan"
+        ],
+        "source_unit_keys": [
+          "dhakal2011:appendix5:JaH.SLD.034:word:p428:l148:w1"
+        ]
+      },
+      "sample_exported_row": [
+        "Darai",
+        "",
+        "toi",
+        "you",
+        "",
+        "toi",
+        "Source narrative: Jackal and Hen; speaker: Som Lal Darai. Source recording locality: Kathar VDC, Chitwan district. Source text identifier: JaH.SLD.034.",
+        "dhakal2011darai[p. 428]",
+        "",
+        "",
+        "dhakal2011:appendix5:JaH.SLD.034:word:p428:l148:w1",
+        "",
+        "",
+        "",
+        "dialect:Darai:darai_chitwan:Chitwan"
+      ]
+    },
+    {
+      "source_unit_key": "dhakal2011:p185:ch6:surface:l20",
+      "evidence_file": "chapter6-reviewed-records.jsonl",
+      "evidence_line": 138,
+      "printed_page": 185,
+      "pdf_page": 207,
+      "kind": "whole-expression",
+      "form": "məi ukʰrake bʰat dehalmik",
+      "source_gloss": "I gave him rice.",
+      "proposed_grammar": {
+        "gloss": "I gave him rice.",
+        "tags": [],
+        "labels": []
+      },
+      "source_claims": {},
+      "source_status": "Owner original-page comparison complete; independent review and metadata integration pending",
+      "source_disposition": null,
+      "disposition": "candidate attestation; review pending",
+      "reuse_source_unit_key": null,
+      "parent_expression_key": null,
+      "open_review": [],
+      "metadata_status": "Not frozen; source claims, roles, variants and profiles require full reconciliation",
+      "source_attribution": {
+        "scope": "author Chitwan default, printed page 8",
+        "lect": "Chitwan"
+      },
+      "export": {
+        "entry_key": "dhakal2011:p185:ch6:surface:l20",
+        "route": "author-transcription",
+        "disposition": "emit",
+        "reason": "distinct source analysis or retained historical key",
+        "occurrence_citation": "dhakal2011darai[p. 185]",
+        "occurrence_row": [
+          "Darai",
+          "",
+          "məi ukʰrake bʰat dehalmik",
+          "I gave him rice.",
+          "",
+          "məi ukʰrake bʰat dehalmik",
+          "",
+          "dhakal2011darai[p. 185]",
+          "",
+          "",
+          "dhakal2011:p185:ch6:surface:l20",
+          "",
+          "",
+          "",
+          "dialect:Darai:darai_chitwan:Chitwan multiword-expression"
+        ],
+        "source_unit_keys": [
+          "dhakal2011:p185:ch6:surface:l20"
+        ]
+      },
+      "sample_exported_row": [
+        "Darai",
+        "",
+        "məi ukʰrake bʰat dehalmik",
+        "I gave him rice.",
+        "",
+        "məi ukʰrake bʰat dehalmik",
+        "",
+        "dhakal2011darai[p. 185]",
+        "",
+        "",
+        "dhakal2011:p185:ch6:surface:l20",
+        "",
+        "",
+        "",
+        "dialect:Darai:darai_chitwan:Chitwan multiword-expression"
+      ]
+    },
+    {
+      "source_unit_key": "dhakal2011:appendix5:PtP.CND.006:word:p435:l109:w1",
+      "evidence_file": "appendix5-reviewed-records.jsonl",
+      "evidence_line": 2170,
+      "printed_page": 435,
+      "pdf_page": 457,
+      "kind": "prior-proposal-attestation",
+      "form": "məi-rə",
+      "source_gloss": "I -[OBL] GEN",
+      "proposed_grammar": {
+        "gloss": "I",
+        "tags": [
+          "obl",
+          "gen"
+        ],
+        "labels": [
+          "OBL",
+          "GEN"
+        ],
+        "unmapped_source_labels": [],
+        "raw_gloss": "I -[OBL] GEN",
+        "analysis_status": "Proposed source-label mapping; contextual review pending"
+      },
+      "source_claims": {
+        "text_id": "PtP.CND.006",
+        "source_surface_form": "merə"
+      },
+      "source_status": "Owner original-page review passed; independent review and metadata integration pending",
+      "source_disposition": null,
+      "disposition": "candidate attestation; review pending",
+      "reuse_source_unit_key": null,
+      "parent_expression_key": "dhakal2011:appendix5:PtP.CND.006",
+      "open_review": [],
+      "metadata_status": "Not frozen; source claims, roles, variants and profiles require full reconciliation",
+      "source_attribution": {
+        "scope": "author Chitwan default, printed page 8",
+        "lect": "Chitwan",
+        "corpus_context": {
+          "prefix": "PtP.CND",
+          "title": "Past to Present",
+          "speaker": "Cham Narayan Darai",
+          "recording_locality": "Mangalpur VDC, Chitwan district"
+        },
+        "recording_location_is_not_a_dialect_assignment": true
+      },
+      "export": {
+        "entry_key": "dhakal2011:appendix5:PtP.CND.006:word:p435:l109:w1",
+        "route": "author-transcription",
+        "disposition": "emit",
+        "reason": "distinct source analysis or retained historical key",
+        "occurrence_citation": "dhakal2011darai[p. 435]",
+        "occurrence_row": [
+          "Darai",
+          "",
+          "məi-rə",
+          "I",
+          "",
+          "məi-rə",
+          "Printed interlinear analysis: I -[OBL] GEN. Corresponding printed surface form: merə. Source narrative: Past to Present; speaker: Cham Narayan Darai. Source recording locality: Mangalpur VDC, Chitwan district. Source text identifier: PtP.CND.006.",
+          "dhakal2011darai[p. 435]",
+          "",
+          "",
+          "dhakal2011:appendix5:PtP.CND.006:word:p435:l109:w1",
+          "",
+          "",
+          "",
+          "dialect:Darai:darai_chitwan:Chitwan obl gen"
+        ],
+        "source_unit_keys": [
+          "dhakal2011:appendix5:PtP.CND.006:word:p435:l109:w1"
+        ]
+      },
+      "sample_exported_row": [
+        "Darai",
+        "",
+        "məi-rə",
+        "I",
+        "",
+        "məi-rə",
+        "Printed interlinear analysis: I -[OBL] GEN. Corresponding printed surface form: merə. Source narrative: Past to Present; speaker: Cham Narayan Darai. Source recording locality: Mangalpur VDC, Chitwan district. Source text identifier: PtP.CND.006.",
+        "dhakal2011darai[p. 435]",
+        "",
+        "",
+        "dhakal2011:appendix5:PtP.CND.006:word:p435:l109:w1",
+        "",
+        "",
+        "",
+        "dialect:Darai:darai_chitwan:Chitwan obl gen"
+      ]
+    },
+    {
+      "source_unit_key": "dhakal2011:p319:ch11:surface:l31:word:l34:w1",
+      "evidence_file": "chapter11-reviewed-records.jsonl",
+      "evidence_line": 801,
+      "printed_page": 319,
+      "pdf_page": 341,
+      "kind": "prior-proposal-attestation",
+      "form": "bahun-ke",
+      "source_gloss": "priest-GEN",
+      "proposed_grammar": {
+        "gloss": "priest",
+        "tags": [
+          "gen"
+        ],
+        "labels": [
+          "GEN"
+        ],
+        "unmapped_source_labels": [],
+        "raw_gloss": "priest-GEN",
+        "analysis_status": "Proposed source-label mapping; contextual review pending"
+      },
+      "source_claims": {},
+      "source_status": "Owner original-page comparison complete; independent review and metadata integration pending",
+      "source_disposition": null,
+      "disposition": "candidate attestation; review pending",
+      "reuse_source_unit_key": null,
+      "parent_expression_key": "dhakal2011:p319:ch11:surface:l31",
+      "open_review": [],
+      "metadata_status": "Not frozen; source claims, roles, variants and profiles require full reconciliation",
+      "source_attribution": {
+        "scope": "author Chitwan default, printed page 8",
+        "lect": "Chitwan"
+      },
+      "export": {
+        "entry_key": "dhakal2011:p319:ch11:surface:l31:word:l34:w1",
+        "route": "author-transcription",
+        "disposition": "emit",
+        "reason": "distinct source analysis or retained historical key",
+        "occurrence_citation": "dhakal2011darai[p. 319]",
+        "occurrence_row": [
+          "Darai",
+          "",
+          "bahun-ke",
+          "priest",
+          "",
+          "bahun-ke",
+          "Printed interlinear analysis: priest-GEN.",
+          "dhakal2011darai[p. 319]",
+          "",
+          "",
+          "dhakal2011:p319:ch11:surface:l31:word:l34:w1",
+          "",
+          "",
+          "",
+          "dialect:Darai:darai_chitwan:Chitwan gen"
+        ],
+        "source_unit_keys": [
+          "dhakal2011:p319:ch11:surface:l31:word:l34:w1"
+        ]
+      },
+      "sample_exported_row": [
+        "Darai",
+        "",
+        "bahun-ke",
+        "priest",
+        "",
+        "bahun-ke",
+        "Printed interlinear analysis: priest-GEN.",
+        "dhakal2011darai[p. 319]",
+        "",
+        "",
+        "dhakal2011:p319:ch11:surface:l31:word:l34:w1",
+        "",
+        "",
+        "",
+        "dialect:Darai:darai_chitwan:Chitwan gen"
+      ]
+    },
+    {
+      "source_unit_key": "dhakal2011:appendix5:JaH.SLD.006:word:p423:l24:w1",
+      "evidence_file": "appendix5-reviewed-records.jsonl",
+      "evidence_line": 1697,
+      "printed_page": 423,
+      "pdf_page": 445,
+      "kind": "prior-proposal-attestation",
+      "form": "ucʰika",
+      "source_gloss": "there",
+      "proposed_grammar": {
+        "gloss": "there",
+        "tags": [],
+        "labels": [],
+        "unmapped_source_labels": [],
+        "raw_gloss": "there",
+        "analysis_status": "Proposed source-label mapping; contextual review pending"
+      },
+      "source_claims": {
+        "text_id": "JaH.SLD.006",
+        "source_surface_form": "ucʰika"
+      },
+      "source_status": "Owner original-page review passed; independent review and metadata integration pending",
+      "source_disposition": null,
+      "disposition": "candidate attestation; review pending",
+      "reuse_source_unit_key": null,
+      "parent_expression_key": "dhakal2011:appendix5:JaH.SLD.006",
+      "open_review": [],
+      "metadata_status": "Not frozen; source claims, roles, variants and profiles require full reconciliation",
+      "source_attribution": {
+        "scope": "author Chitwan default, printed page 8",
+        "lect": "Chitwan",
+        "corpus_context": {
+          "prefix": "JaH.SLD",
+          "title": "Jackal and Hen",
+          "speaker": "Som Lal Darai",
+          "recording_locality": "Kathar VDC, Chitwan district"
+        },
+        "recording_location_is_not_a_dialect_assignment": true
+      },
+      "export": {
+        "entry_key": "dhakal2011:appendix5:JaH.SLD.006:word:p423:l24:w1",
+        "route": "author-transcription",
+        "disposition": "emit",
+        "reason": "distinct source analysis or retained historical key",
+        "occurrence_citation": "dhakal2011darai[p. 423]",
+        "occurrence_row": [
+          "Darai",
+          "",
+          "ucʰika",
+          "there",
+          "",
+          "ucʰika",
+          "Source narrative: Jackal and Hen; speaker: Som Lal Darai. Source recording locality: Kathar VDC, Chitwan district. Source text identifier: JaH.SLD.006.",
+          "dhakal2011darai[p. 423]",
+          "",
+          "",
+          "dhakal2011:appendix5:JaH.SLD.006:word:p423:l24:w1",
+          "",
+          "",
+          "",
+          "dialect:Darai:darai_chitwan:Chitwan"
+        ],
+        "source_unit_keys": [
+          "dhakal2011:appendix5:JaH.SLD.006:word:p423:l24:w1"
+        ]
+      },
+      "sample_exported_row": [
+        "Darai",
+        "",
+        "ucʰika",
+        "there",
+        "",
+        "ucʰika",
+        "Source narrative: Jackal and Hen; speaker: Som Lal Darai. Source recording locality: Kathar VDC, Chitwan district. Source text identifier: JaH.SLD.006.",
+        "dhakal2011darai[p. 423]",
+        "",
+        "",
+        "dhakal2011:appendix5:JaH.SLD.006:word:p423:l24:w1",
+        "",
+        "",
+        "",
+        "dialect:Darai:darai_chitwan:Chitwan"
+      ]
+    },
+    {
+      "source_unit_key": "dhakal2011:p368:appendix3b:l241:col5",
+      "evidence_file": "appendix3b-reviewed-records.jsonl",
+      "evidence_line": 116,
+      "printed_page": 368,
+      "pdf_page": 390,
+      "kind": "paradigm-inflection",
+      "form": "piu-tahə-səb",
+      "source_gloss": "drink",
+      "proposed_grammar": {
+        "gloss": "drink",
+        "tags": [
+          "non-past",
+          "2pl",
+          "verb"
+        ],
+        "labels": [
+          "NPST",
+          "2PL"
+        ],
+        "unmapped_source_labels": [],
+        "raw_gloss": "NPST.2PL",
+        "analysis_status": "Proposed source-label mapping; contextual review pending",
+        "raw_source_grammar": "non-past 2PL"
+      },
+      "source_claims": {
+        "source_grammar": "non-past 2PL",
+        "root_source_unit_key": "dhakal2011:p368:appendix3b:l233:root"
+      },
+      "source_status": "Owner original-page review passed; independent review pending",
+      "source_disposition": null,
+      "disposition": "candidate attestation; review pending",
+      "reuse_source_unit_key": null,
+      "parent_expression_key": null,
+      "open_review": [],
+      "metadata_status": "Not frozen; source claims, roles, variants and profiles require full reconciliation",
+      "source_attribution": {
+        "scope": "author Chitwan default, printed page 8",
+        "lect": "Chitwan"
+      },
+      "export": {
+        "entry_key": "dhakal2011:p368:appendix3b:l241:col5",
+        "route": "author-transcription",
+        "disposition": "emit",
+        "reason": "distinct source analysis or retained historical key",
+        "occurrence_citation": "dhakal2011darai[p. 368]",
+        "occurrence_row": [
+          "Darai",
+          "",
+          "piu-tahə-səb",
+          "drink",
+          "",
+          "piu-tahə-səb",
+          "Source grammatical label: non-past 2PL. Printed interlinear analysis: drink.",
+          "dhakal2011darai[p. 368]",
+          "",
+          "",
+          "dhakal2011:p368:appendix3b:l241:col5",
+          "",
+          "",
+          "",
+          "dialect:Darai:darai_chitwan:Chitwan non-past 2pl verb"
+        ],
+        "source_unit_keys": [
+          "dhakal2011:p368:appendix3b:l241:col5"
+        ]
+      },
+      "sample_exported_row": [
+        "Darai",
+        "",
+        "piu-tahə-səb",
+        "drink",
+        "",
+        "piu-tahə-səb",
+        "Source grammatical label: non-past 2PL. Printed interlinear analysis: drink.",
+        "dhakal2011darai[p. 368]",
+        "",
+        "",
+        "dhakal2011:p368:appendix3b:l241:col5",
+        "",
+        "",
+        "",
+        "dialect:Darai:darai_chitwan:Chitwan non-past 2pl verb"
+      ]
+    },
+    {
+      "source_unit_key": "dhakal2011:p117:ch4:table:l27:a1",
+      "evidence_file": "chapter4-adjudicated-records.jsonl",
+      "evidence_line": 425,
+      "printed_page": 117,
+      "pdf_page": 139,
+      "kind": "tables",
+      "form": "kono-se",
+      "source_gloss": "who",
+      "proposed_grammar": {
+        "gloss": "who",
+        "tags": [
+          "pron",
+          "interr",
+          "abl",
+          "com"
+        ],
+        "labels": []
+      },
+      "source_claims": {
+        "note": "Literal table case form, independent of differing prose spellings."
+      },
+      "source_status": "first-reading",
+      "source_disposition": null,
+      "disposition": "candidate attestation; review pending",
+      "reuse_source_unit_key": null,
+      "parent_expression_key": null,
+      "open_review": [],
+      "metadata_status": "Not frozen; source claims, roles, variants and profiles require full reconciliation",
+      "editorial_source_note": "",
+      "source_attribution": {
+        "scope": "author Chitwan default, printed page 8",
+        "lect": "Chitwan"
+      },
+      "export": {
+        "entry_key": "dhakal2011:p117:ch4:table:l27:a1",
+        "route": "author-transcription",
+        "disposition": "emit",
+        "reason": "distinct source analysis or retained historical key",
+        "occurrence_citation": "dhakal2011darai[p. 117]",
+        "occurrence_row": [
+          "Darai",
+          "",
+          "kono-se",
+          "who",
+          "",
+          "kono-se",
+          "",
+          "dhakal2011darai[p. 117]",
+          "",
+          "",
+          "dhakal2011:p117:ch4:table:l27:a1",
+          "",
+          "",
+          "",
+          "dialect:Darai:darai_chitwan:Chitwan pron interr abl com"
+        ],
+        "source_unit_keys": [
+          "dhakal2011:p117:ch4:table:l27:a1"
+        ]
+      },
+      "sample_exported_row": [
+        "Darai",
+        "",
+        "kono-se",
+        "who",
+        "",
+        "kono-se",
+        "",
+        "dhakal2011darai[p. 117]",
+        "",
+        "",
+        "dhakal2011:p117:ch4:table:l27:a1",
+        "",
+        "",
+        "",
+        "dialect:Darai:darai_chitwan:Chitwan pron interr abl com"
+      ]
+    },
+    {
+      "source_unit_key": "dhakal2011:p89:ch4:surface:l31:word:l38:w1",
+      "evidence_file": "chapter4-interlinear-reviewed.jsonl",
+      "evidence_line": 135,
+      "printed_page": 89,
+      "pdf_page": 111,
+      "kind": "prior-proposal-attestation",
+      "form": "səntan-səb",
+      "source_gloss": "children-PL",
+      "proposed_grammar": {
+        "gloss": "children",
+        "tags": [
+          "pl"
+        ],
+        "labels": [
+          "PL"
+        ],
+        "unmapped_source_labels": [],
+        "raw_gloss": "children-PL",
+        "analysis_status": "Proposed source-label mapping; contextual review pending"
+      },
+      "source_claims": {},
+      "source_status": "Owner original-page literal and alignment review complete; independent review pending",
+      "source_disposition": null,
+      "disposition": "candidate attestation; review pending",
+      "reuse_source_unit_key": null,
+      "parent_expression_key": "dhakal2011:p89:ch4:surface:l31",
+      "open_review": [],
+      "metadata_status": "Not frozen; source claims, roles, variants and profiles require full reconciliation",
+      "source_attribution": {
+        "scope": "author Chitwan default, printed page 8",
+        "lect": "Chitwan"
+      },
+      "export": {
+        "entry_key": "dhakal2011:p89:ch4:surface:l31:word:l38:w1",
+        "route": "author-transcription",
+        "disposition": "emit",
+        "reason": "distinct source analysis or retained historical key",
+        "occurrence_citation": "dhakal2011darai[p. 89]",
+        "occurrence_row": [
+          "Darai",
+          "",
+          "səntan-səb",
+          "children",
+          "",
+          "səntan-səb",
+          "Printed interlinear analysis: children-PL.",
+          "dhakal2011darai[p. 89]",
+          "",
+          "",
+          "dhakal2011:p89:ch4:surface:l31:word:l38:w1",
+          "",
+          "",
+          "",
+          "dialect:Darai:darai_chitwan:Chitwan pl"
+        ],
+        "source_unit_keys": [
+          "dhakal2011:p89:ch4:surface:l31:word:l38:w1"
+        ]
+      },
+      "sample_exported_row": [
+        "Darai",
+        "",
+        "səntan-səb",
+        "children",
+        "",
+        "səntan-səb",
+        "Printed interlinear analysis: children-PL.",
+        "dhakal2011darai[p. 89]",
+        "",
+        "",
+        "dhakal2011:p89:ch4:surface:l31:word:l38:w1",
+        "",
+        "",
+        "",
+        "dialect:Darai:darai_chitwan:Chitwan pl"
+      ]
+    },
+    {
+      "source_unit_key": "dhakal2011:p67:g423",
+      "evidence_file": "clause-recovery-proposal-audit.jsonl",
+      "evidence_line": 419,
+      "printed_page": 67,
+      "pdf_page": 89,
+      "kind": "prior-proposal-attestation",
+      "form": "mə.dʰu",
+      "source_gloss": "bee",
+      "proposed_grammar": {
+        "gloss": "bee",
+        "tags": [],
+        "labels": [],
+        "existing_tags": [
+          "dialect:Darai:darai_chitwan:Chitwan"
+        ]
+      },
+      "source_claims": {
+        "dialect_policy": "All chapter attestations to Chitwan per pp.1,8,42; only p.49 acoustic wordlist explicitly assigned to Pidrahani per pp.48–49. Other mentions do not assign every word to a village."
+      },
+      "source_status": "proposed",
+      "source_disposition": null,
+      "disposition": "candidate attestation; review pending",
+      "reuse_source_unit_key": null,
+      "parent_expression_key": null,
+      "open_review": [],
+      "metadata_status": "Not frozen; source claims, roles, variants and profiles require full reconciliation",
+      "source_attribution": {
+        "scope": "author Chitwan default, printed page 8",
+        "lect": "Chitwan"
+      },
+      "export": {
+        "entry_key": "dhakal2011:p67:g423",
+        "route": "author-transcription",
+        "disposition": "emit",
+        "reason": "distinct source analysis or retained historical key",
+        "occurrence_citation": "dhakal2011darai[p. 67]",
+        "occurrence_row": [
+          "Darai",
+          "",
+          "mə.dʰu",
+          "bee",
+          "",
+          "mə.dʰu",
+          "",
+          "dhakal2011darai[p. 67]",
+          "",
+          "",
+          "dhakal2011:p67:g423",
+          "",
+          "",
+          "",
+          "dialect:Darai:darai_chitwan:Chitwan"
+        ],
+        "source_unit_keys": [
+          "dhakal2011:p67:g423"
+        ]
+      },
+      "sample_exported_row": [
+        "Darai",
+        "",
+        "mə.dʰu",
+        "bee",
+        "",
+        "mə.dʰu",
+        "",
+        "dhakal2011darai[p. 67]",
+        "",
+        "",
+        "dhakal2011:p67:g423",
+        "",
+        "",
+        "",
+        "dialect:Darai:darai_chitwan:Chitwan"
+      ]
+    },
+    {
+      "source_unit_key": "dhakal2011:p116:ch4:surface:l4:word:l8:w1",
+      "evidence_file": "chapter4-interlinear-reviewed.jsonl",
+      "evidence_line": 547,
+      "printed_page": 116,
+      "pdf_page": 138,
+      "kind": "prior-proposal-attestation",
+      "form": "bicar",
+      "source_gloss": "thought",
+      "proposed_grammar": {
+        "gloss": "thought",
+        "tags": [],
+        "labels": [],
+        "unmapped_source_labels": [],
+        "raw_gloss": "thought",
+        "analysis_status": "Proposed source-label mapping; contextual review pending"
+      },
+      "source_claims": {},
+      "source_status": "Owner original-page literal and alignment review complete; independent review pending",
+      "source_disposition": null,
+      "disposition": "candidate attestation; review pending",
+      "reuse_source_unit_key": null,
+      "parent_expression_key": "dhakal2011:p116:ch4:surface:l4",
+      "open_review": [],
+      "metadata_status": "Not frozen; source claims, roles, variants and profiles require full reconciliation",
+      "source_attribution": {
+        "scope": "author Chitwan default, printed page 8",
+        "lect": "Chitwan"
+      },
+      "export": {
+        "entry_key": "dhakal2011:p116:ch4:surface:l4:word:l8:w1",
+        "route": "author-transcription",
+        "disposition": "emit",
+        "reason": "distinct source analysis or retained historical key",
+        "occurrence_citation": "dhakal2011darai[p. 116]",
+        "occurrence_row": [
+          "Darai",
+          "",
+          "bicar",
+          "thought",
+          "",
+          "bicar",
+          "",
+          "dhakal2011darai[p. 116]",
+          "",
+          "",
+          "dhakal2011:p116:ch4:surface:l4:word:l8:w1",
+          "",
+          "",
+          "",
+          "dialect:Darai:darai_chitwan:Chitwan"
+        ],
+        "source_unit_keys": [
+          "dhakal2011:p116:ch4:surface:l4:word:l8:w1"
+        ]
+      },
+      "sample_exported_row": [
+        "Darai",
+        "",
+        "bicar",
+        "thought",
+        "",
+        "bicar",
+        "",
+        "dhakal2011darai[p. 116]",
+        "",
+        "",
+        "dhakal2011:p116:ch4:surface:l4:word:l8:w1",
+        "",
+        "",
+        "",
+        "dialect:Darai:darai_chitwan:Chitwan"
+      ]
+    },
+    {
+      "source_unit_key": "dhakal2011:p211:ch7:surface:l4",
+      "evidence_file": "chapter7-reviewed-records.jsonl",
+      "evidence_line": 12,
+      "printed_page": 211,
+      "pdf_page": 233,
+      "kind": "whole-expression",
+      "form": "ek dzəna mətrəi bʰəikunu ekdəm dukʰə paulə",
+      "source_gloss": "Since he was only one, he got much sufferings.",
+      "proposed_grammar": {
+        "gloss": "Since he was only one, he got much sufferings.",
+        "tags": [],
+        "labels": []
+      },
+      "source_claims": {
+        "text_ids": [
+          "SoaO.JD.002"
+        ]
+      },
+      "source_status": "Owner original-page comparison complete; independent review and metadata integration pending",
+      "source_disposition": null,
+      "disposition": "candidate attestation; review pending",
+      "reuse_source_unit_key": null,
+      "parent_expression_key": null,
+      "open_review": [],
+      "metadata_status": "Not frozen; source claims, roles, variants and profiles require full reconciliation",
+      "source_attribution": {
+        "scope": "author Chitwan default, printed page 8",
+        "lect": "Chitwan"
+      },
+      "export": {
+        "entry_key": "dhakal2011:p211:ch7:surface:l4",
+        "route": "author-transcription",
+        "disposition": "emit",
+        "reason": "distinct source analysis or retained historical key",
+        "occurrence_citation": "dhakal2011darai[p. 211]",
+        "occurrence_row": [
+          "Darai",
+          "",
+          "ek dzəna mətrəi bʰəikunu ekdəm dukʰə paulə",
+          "Since he was only one, he got much sufferings.",
+          "",
+          "ek dzəna mətrəi bʰəikunu ekdəm dukʰə paulə",
+          "Source corpus references: SoaO.JD.002.",
+          "dhakal2011darai[p. 211]",
+          "",
+          "",
+          "dhakal2011:p211:ch7:surface:l4",
+          "",
+          "",
+          "",
+          "dialect:Darai:darai_chitwan:Chitwan multiword-expression"
+        ],
+        "source_unit_keys": [
+          "dhakal2011:p211:ch7:surface:l4"
+        ]
+      },
+      "sample_exported_row": [
+        "Darai",
+        "",
+        "ek dzəna mətrəi bʰəikunu ekdəm dukʰə paulə",
+        "Since he was only one, he got much sufferings.",
+        "",
+        "ek dzəna mətrəi bʰəikunu ekdəm dukʰə paulə",
+        "Source corpus references: SoaO.JD.002.",
+        "dhakal2011darai[p. 211]",
+        "",
+        "",
+        "dhakal2011:p211:ch7:surface:l4",
+        "",
+        "",
+        "",
+        "dialect:Darai:darai_chitwan:Chitwan multiword-expression"
+      ]
+    },
+    {
+      "source_unit_key": "dhakal2011:p69:g321",
+      "evidence_file": "clause-recovery-proposal-audit.jsonl",
+      "evidence_line": 473,
+      "printed_page": 69,
+      "pdf_page": 91,
+      "kind": "prior-proposal-attestation",
+      "form": "dʰi.ja.pu.ta",
+      "source_gloss": "children/heir",
+      "proposed_grammar": {
+        "gloss": "children/heir",
+        "tags": [],
+        "labels": [],
+        "existing_tags": [
+          "dialect:Darai:darai_chitwan:Chitwan"
+        ]
+      },
+      "source_claims": {
+        "dialect_policy": "All chapter attestations to Chitwan per pp.1,8,42; only p.49 acoustic wordlist explicitly assigned to Pidrahani per pp.48–49. Other mentions do not assign every word to a village."
+      },
+      "source_status": "proposed",
+      "source_disposition": null,
+      "disposition": "candidate attestation; review pending",
+      "reuse_source_unit_key": null,
+      "parent_expression_key": null,
+      "open_review": [],
+      "metadata_status": "Not frozen; source claims, roles, variants and profiles require full reconciliation",
+      "source_attribution": {
+        "scope": "author Chitwan default, printed page 8",
+        "lect": "Chitwan"
+      },
+      "export": {
+        "entry_key": "dhakal2011:p69:g321",
+        "route": "author-transcription",
+        "disposition": "emit",
+        "reason": "distinct source analysis or retained historical key",
+        "occurrence_citation": "dhakal2011darai[p. 69]",
+        "occurrence_row": [
+          "Darai",
+          "",
+          "dʰi.ja.pu.ta",
+          "children/heir",
+          "",
+          "dʰi.ja.pu.ta",
+          "",
+          "dhakal2011darai[p. 69]",
+          "",
+          "",
+          "dhakal2011:p69:g321",
+          "",
+          "",
+          "",
+          "dialect:Darai:darai_chitwan:Chitwan"
+        ],
+        "source_unit_keys": [
+          "dhakal2011:p69:g321"
+        ]
+      },
+      "sample_exported_row": [
+        "Darai",
+        "",
+        "dʰi.ja.pu.ta",
+        "children/heir",
+        "",
+        "dʰi.ja.pu.ta",
+        "",
+        "dhakal2011darai[p. 69]",
+        "",
+        "",
+        "dhakal2011:p69:g321",
+        "",
+        "",
+        "",
+        "dialect:Darai:darai_chitwan:Chitwan"
+      ]
+    },
+    {
+      "source_unit_key": "dhakal2011:p99:ch4:surface:l77:word:l80:w1",
+      "evidence_file": "chapter4-interlinear-reviewed.jsonl",
+      "evidence_line": 269,
+      "printed_page": 99,
+      "pdf_page": 121,
+      "kind": "prior-proposal-attestation",
+      "form": "ɡoru-ke",
+      "source_gloss": "ox-DAT",
+      "proposed_grammar": {
+        "gloss": "ox",
+        "tags": [
+          "dat"
+        ],
+        "labels": [
+          "DAT"
+        ],
+        "unmapped_source_labels": [],
+        "raw_gloss": "ox-DAT",
+        "analysis_status": "Proposed source-label mapping; contextual review pending"
+      },
+      "source_claims": {},
+      "source_status": "Owner original-page literal and alignment review complete; independent review pending",
+      "source_disposition": null,
+      "disposition": "candidate attestation; review pending",
+      "reuse_source_unit_key": null,
+      "parent_expression_key": "dhakal2011:p99:ch4:surface:l77",
+      "open_review": [],
+      "metadata_status": "Not frozen; source claims, roles, variants and profiles require full reconciliation",
+      "source_attribution": {
+        "scope": "author Chitwan default, printed page 8",
+        "lect": "Chitwan"
+      },
+      "export": {
+        "entry_key": "dhakal2011:p99:ch4:surface:l77:word:l80:w1",
+        "route": "author-transcription",
+        "disposition": "emit",
+        "reason": "distinct source analysis or retained historical key",
+        "occurrence_citation": "dhakal2011darai[p. 99]",
+        "occurrence_row": [
+          "Darai",
+          "",
+          "ɡoru-ke",
+          "ox",
+          "",
+          "ɡoru-ke",
+          "Printed interlinear analysis: ox-DAT.",
+          "dhakal2011darai[p. 99]",
+          "",
+          "",
+          "dhakal2011:p99:ch4:surface:l77:word:l80:w1",
+          "",
+          "",
+          "",
+          "dialect:Darai:darai_chitwan:Chitwan dat"
+        ],
+        "source_unit_keys": [
+          "dhakal2011:p99:ch4:surface:l77:word:l80:w1"
+        ]
+      },
+      "sample_exported_row": [
+        "Darai",
+        "",
+        "ɡoru-ke",
+        "ox",
+        "",
+        "ɡoru-ke",
+        "Printed interlinear analysis: ox-DAT.",
+        "dhakal2011darai[p. 99]",
+        "",
+        "",
+        "dhakal2011:p99:ch4:surface:l77:word:l80:w1",
+        "",
+        "",
+        "",
+        "dialect:Darai:darai_chitwan:Chitwan dat"
+      ]
+    },
+    {
+      "source_unit_key": "dhakal2011:appendix5:In.UN.095:word:p419:l36:w1",
+      "evidence_file": "appendix5-reviewed-records.jsonl",
+      "evidence_line": 1549,
+      "printed_page": 419,
+      "pdf_page": 441,
+      "kind": "prior-proposal-attestation",
+      "form": "dzat",
+      "source_gloss": "caste",
+      "proposed_grammar": {
+        "gloss": "caste",
+        "tags": [],
+        "labels": [],
+        "unmapped_source_labels": [],
+        "raw_gloss": "caste",
+        "analysis_status": "Proposed source-label mapping; contextual review pending"
+      },
+      "source_claims": {
+        "text_id": "In.UN.095",
+        "source_surface_form": "dzat"
+      },
+      "source_status": "Owner original-page review passed; independent review and metadata integration pending",
+      "source_disposition": null,
+      "disposition": "candidate attestation; review pending",
+      "reuse_source_unit_key": null,
+      "parent_expression_key": "dhakal2011:appendix5:In.UN.095",
+      "open_review": [],
+      "metadata_status": "Not frozen; source claims, roles, variants and profiles require full reconciliation",
+      "source_attribution": {
+        "scope": "author Chitwan default, printed page 8",
+        "lect": "Chitwan",
+        "corpus_context": {
+          "prefix": "In.UN",
+          "title": "Interview",
+          "speaker": "Mangal Ram Darai and a woman",
+          "recorded_by": "Nepal Darai Development Society",
+          "recording_locality": null
+        },
+        "recording_location_is_not_a_dialect_assignment": true
+      },
+      "export": {
+        "entry_key": "dhakal2011:appendix5:In.UN.095:word:p419:l36:w1",
+        "route": "author-transcription",
+        "disposition": "emit",
+        "reason": "distinct source analysis or retained historical key",
+        "occurrence_citation": "dhakal2011darai[p. 419]",
+        "occurrence_row": [
+          "Darai",
+          "",
+          "dzat",
+          "caste",
+          "",
+          "dzat",
+          "Source narrative: Interview; speaker: Mangal Ram Darai and a woman. Source text identifier: In.UN.095.",
+          "dhakal2011darai[p. 419]",
+          "",
+          "",
+          "dhakal2011:appendix5:In.UN.095:word:p419:l36:w1",
+          "",
+          "",
+          "",
+          "dialect:Darai:darai_chitwan:Chitwan"
+        ],
+        "source_unit_keys": [
+          "dhakal2011:appendix5:In.UN.095:word:p419:l36:w1"
+        ]
+      },
+      "sample_exported_row": [
+        "Darai",
+        "",
+        "dzat",
+        "caste",
+        "",
+        "dzat",
+        "Source narrative: Interview; speaker: Mangal Ram Darai and a woman. Source text identifier: In.UN.095.",
+        "dhakal2011darai[p. 419]",
+        "",
+        "",
+        "dhakal2011:appendix5:In.UN.095:word:p419:l36:w1",
+        "",
+        "",
+        "",
+        "dialect:Darai:darai_chitwan:Chitwan"
+      ]
+    },
+    {
+      "source_unit_key": "dhakal2011:p86:ch4:surface:l5:word:l8:w1",
+      "evidence_file": "chapter4-interlinear-reviewed.jsonl",
+      "evidence_line": 86,
+      "printed_page": 86,
+      "pdf_page": 108,
+      "kind": "prior-proposal-attestation",
+      "form": "a-lə",
+      "source_gloss": "come-PST",
+      "proposed_grammar": {
+        "gloss": "come",
+        "tags": [
+          "pret",
+          "verb"
+        ],
+        "labels": [
+          "PST"
+        ],
+        "unmapped_source_labels": [],
+        "raw_gloss": "come-PST",
+        "analysis_status": "Proposed source-label mapping; contextual review pending"
+      },
+      "source_claims": {},
+      "source_status": "Owner original-page literal and alignment review complete; independent review pending",
+      "source_disposition": null,
+      "disposition": "candidate attestation; review pending",
+      "reuse_source_unit_key": null,
+      "parent_expression_key": "dhakal2011:p86:ch4:surface:l5",
+      "open_review": [],
+      "metadata_status": "Not frozen; source claims, roles, variants and profiles require full reconciliation",
+      "source_attribution": {
+        "scope": "author Chitwan default, printed page 8",
+        "lect": "Chitwan"
+      },
+      "export": {
+        "entry_key": "dhakal2011:p86:ch4:surface:l5:word:l8:w1",
+        "route": "author-transcription",
+        "disposition": "emit",
+        "reason": "distinct source analysis or retained historical key",
+        "occurrence_citation": "dhakal2011darai[p. 86]",
+        "occurrence_row": [
+          "Darai",
+          "",
+          "a-lə",
+          "come",
+          "",
+          "a-lə",
+          "Printed interlinear analysis: come-PST.",
+          "dhakal2011darai[p. 86]",
+          "",
+          "",
+          "dhakal2011:p86:ch4:surface:l5:word:l8:w1",
+          "",
+          "",
+          "",
+          "dialect:Darai:darai_chitwan:Chitwan pret verb"
+        ],
+        "source_unit_keys": [
+          "dhakal2011:p86:ch4:surface:l5:word:l8:w1",
+          "dhakal2011:p86:ch4:surface:l33:word:l36:w1",
+          "dhakal2011:p106:ch4:surface:l29:word:l35:w1",
+          "dhakal2011:p109:ch4:surface:l6:word:l12:w1",
+          "dhakal2011:p109:ch4:surface:l45:word:l50:w2",
+          "dhakal2011:p110:ch4:surface:l6:word:l14:w1",
+          "dhakal2011:p117:ch4:surface:l37:word:l42:w1",
+          "dhakal2011:p134:ch5:surface:l47:word:l50:w1",
+          "dhakal2011:p135:ch5:surface:l34:word:l38:w1",
+          "dhakal2011:p212:ch7:surface:l69:word:l74:w1",
+          "dhakal2011:p213:ch7:surface:l4:word:l10:w1",
+          "dhakal2011:p220:ch7:surface:l50:word:l56:w1",
+          "dhakal2011:p223:ch8:surface:l43:word:l45:w1",
+          "dhakal2011:p249:ch10:surface:l20:word:l23:w1",
+          "dhakal2011:p250:ch10:surface:l48:word:l52:w1",
+          "dhakal2011:p251:ch10:surface:l39:word:l42:w2",
+          "dhakal2011:p252:ch10:surface:l39:word:l42:w1",
+          "dhakal2011:p261:ch10:surface:l41:word:l54:w1",
+          "dhakal2011:p264:ch10:surface:l38:word:l42:w1",
+          "dhakal2011:p264:ch10:surface:l54:word:l58:w3",
+          "dhakal2011:p264:ch10:surface:l68:word:l75:w1",
+          "dhakal2011:p267:ch10:surface:l34:word:l37:w1",
+          "dhakal2011:p268:ch10:surface:l5:word:l9:w2",
+          "dhakal2011:p275:ch10:surface:l50:word:l52:w1",
+          "dhakal2011:p294:ch11:surface:l45:word:l46:w3",
+          "dhakal2011:p311:ch11:surface:l33:word:l37:w1",
+          "dhakal2011:p339:ch12:surface:l84:word:l88:w2",
+          "dhakal2011:p340:ch12:surface:l31:word:l40:w1",
+          "dhakal2011:p341:ch12:surface:l56:word:l59:w1",
+          "dhakal2011:p343:ch12:surface:l19:word:l28:w1",
+          "dhakal2011:p346:ch12:surface:l35:word:l36:w2"
+        ]
+      },
+      "sample_exported_row": [
+        "Darai",
+        "",
+        "a-lə",
+        "come",
+        "",
+        "a-lə",
+        "Printed interlinear analysis: come-PST.",
+        "dhakal2011darai[p. 86];dhakal2011darai[p. 106];dhakal2011darai[p. 109];dhakal2011darai[p. 110];dhakal2011darai[p. 117];dhakal2011darai[p. 134];dhakal2011darai[p. 135];dhakal2011darai[p. 212];dhakal2011darai[p. 213];dhakal2011darai[p. 220];dhakal2011darai[p. 223];dhakal2011darai[p. 249];dhakal2011darai[p. 250];dhakal2011darai[p. 251];dhakal2011darai[p. 252];dhakal2011darai[p. 261];dhakal2011darai[p. 264];dhakal2011darai[p. 267];dhakal2011darai[p. 268];dhakal2011darai[p. 275];dhakal2011darai[p. 294];dhakal2011darai[p. 311];dhakal2011darai[p. 339];dhakal2011darai[p. 340];dhakal2011darai[p. 341];dhakal2011darai[p. 343];dhakal2011darai[p. 346]",
+        "",
+        "",
+        "dhakal2011:p86:ch4:surface:l5:word:l8:w1",
+        "",
+        "",
+        "",
+        "dialect:Darai:darai_chitwan:Chitwan pret verb"
+      ]
+    },
+    {
+      "source_unit_key": "dhakal2011:p301:ch11:surface:l13",
+      "evidence_file": "chapter11-reviewed-records.jsonl",
+      "evidence_line": 40,
+      "printed_page": 301,
+      "pdf_page": 323,
+      "kind": "whole-expression",
+      "form": "[bistarei bora] kəhikun kəhələ",
+      "source_gloss": "(She) told them to speak softly.",
+      "proposed_grammar": {
+        "gloss": "(She) told them to speak softly.",
+        "tags": [],
+        "labels": []
+      },
+      "source_claims": {
+        "text_ids": [
+          "JaH.SLD.058"
+        ]
+      },
+      "source_status": "Owner original-page comparison complete; independent review and metadata integration pending",
+      "source_disposition": null,
+      "disposition": "candidate attestation; review pending",
+      "reuse_source_unit_key": null,
+      "parent_expression_key": null,
+      "open_review": [],
+      "metadata_status": "Not frozen; source claims, roles, variants and profiles require full reconciliation",
+      "source_attribution": {
+        "scope": "author Chitwan default, printed page 8",
+        "lect": "Chitwan"
+      },
+      "export": {
+        "entry_key": "dhakal2011:p301:ch11:surface:l13",
+        "route": "author-transcription",
+        "disposition": "emit",
+        "reason": "distinct source analysis or retained historical key",
+        "occurrence_citation": "dhakal2011darai[p. 301]",
+        "occurrence_row": [
+          "Darai",
+          "",
+          "[bistarei bora] kəhikun kəhələ",
+          "(She) told them to speak softly.",
+          "",
+          "bistarei bora kəhikun kəhələ",
+          "Source corpus references: JaH.SLD.058. Source clause-constituent brackets are structural and retained only in Original.",
+          "dhakal2011darai[p. 301]",
+          "",
+          "",
+          "dhakal2011:p301:ch11:surface:l13",
+          "",
+          "",
+          "",
+          "dialect:Darai:darai_chitwan:Chitwan multiword-expression"
+        ],
+        "source_unit_keys": [
+          "dhakal2011:p301:ch11:surface:l13"
+        ]
+      },
+      "sample_exported_row": [
+        "Darai",
+        "",
+        "[bistarei bora] kəhikun kəhələ",
+        "(She) told them to speak softly.",
+        "",
+        "bistarei bora kəhikun kəhələ",
+        "Source corpus references: JaH.SLD.058. Source clause-constituent brackets are structural and retained only in Original.",
+        "dhakal2011darai[p. 301]",
+        "",
+        "",
+        "dhakal2011:p301:ch11:surface:l13",
+        "",
+        "",
+        "",
+        "dialect:Darai:darai_chitwan:Chitwan multiword-expression"
+      ]
+    },
+    {
+      "source_unit_key": "dhakal2011:p86:ch4:surface:l5",
+      "evidence_file": "chapter4-adjudicated-records.jsonl",
+      "evidence_line": 23,
+      "printed_page": 86,
+      "pdf_page": 108,
+      "kind": "expressions",
+      "form": "beṭa əilə",
+      "source_gloss": "The son came.",
+      "proposed_grammar": {
+        "gloss": "The son came.",
+        "tags": [],
+        "labels": []
+      },
+      "source_claims": {},
+      "source_status": "first-reading",
+      "source_disposition": null,
+      "disposition": "candidate attestation; review pending",
+      "reuse_source_unit_key": null,
+      "parent_expression_key": null,
+      "open_review": [],
+      "metadata_status": "Not frozen; source claims, roles, variants and profiles require full reconciliation",
+      "source_attribution": {
+        "scope": "author Chitwan default, printed page 8",
+        "lect": "Chitwan"
+      },
+      "export": {
+        "entry_key": "dhakal2011:p86:ch4:surface:l5",
+        "route": "author-transcription",
+        "disposition": "emit",
+        "reason": "distinct source analysis or retained historical key",
+        "occurrence_citation": "dhakal2011darai[p. 86]",
+        "occurrence_row": [
+          "Darai",
+          "",
+          "beṭa əilə",
+          "The son came.",
+          "",
+          "beṭa əilə",
+          "",
+          "dhakal2011darai[p. 86]",
+          "",
+          "",
+          "dhakal2011:p86:ch4:surface:l5",
+          "",
+          "",
+          "",
+          "dialect:Darai:darai_chitwan:Chitwan multiword-expression"
+        ],
+        "source_unit_keys": [
+          "dhakal2011:p86:ch4:surface:l5"
+        ]
+      },
+      "sample_exported_row": [
+        "Darai",
+        "",
+        "beṭa əilə",
+        "The son came.",
+        "",
+        "beṭa əilə",
+        "",
+        "dhakal2011darai[p. 86]",
+        "",
+        "",
+        "dhakal2011:p86:ch4:surface:l5",
+        "",
+        "",
+        "",
+        "dialect:Darai:darai_chitwan:Chitwan multiword-expression"
+      ]
+    },
+    {
+      "source_unit_key": "dhakal2011:p99:ch4:surface:l31",
+      "evidence_file": "chapter4-adjudicated-records.jsonl",
+      "evidence_line": 83,
+      "printed_page": 99,
+      "pdf_page": 121,
+      "kind": "expressions",
+      "form": "məi lestəm bubake bʰat",
+      "source_gloss": "I will carry the food for father.",
+      "proposed_grammar": {
+        "gloss": "I will carry the food for father.",
+        "tags": [],
+        "labels": []
+      },
+      "source_claims": {
+        "text_ids": [
+          "BF.SLD.094"
+        ]
+      },
+      "source_status": "first-reading",
+      "source_disposition": null,
+      "disposition": "candidate attestation; review pending",
+      "reuse_source_unit_key": null,
+      "parent_expression_key": null,
+      "open_review": [],
+      "metadata_status": "Not frozen; source claims, roles, variants and profiles require full reconciliation",
+      "source_attribution": {
+        "scope": "author Chitwan default, printed page 8",
+        "lect": "Chitwan"
+      },
+      "export": {
+        "entry_key": "dhakal2011:p99:ch4:surface:l31",
+        "route": "author-transcription",
+        "disposition": "emit",
+        "reason": "distinct source analysis or retained historical key",
+        "occurrence_citation": "dhakal2011darai[p. 99]",
+        "occurrence_row": [
+          "Darai",
+          "",
+          "məi lestəm bubake bʰat",
+          "I will carry the food for father.",
+          "",
+          "məi lestəm bubake bʰat",
+          "Source corpus references: BF.SLD.094.",
+          "dhakal2011darai[p. 99]",
+          "",
+          "",
+          "dhakal2011:p99:ch4:surface:l31",
+          "",
+          "",
+          "",
+          "dialect:Darai:darai_chitwan:Chitwan multiword-expression"
+        ],
+        "source_unit_keys": [
+          "dhakal2011:p99:ch4:surface:l31"
+        ]
+      },
+      "sample_exported_row": [
+        "Darai",
+        "",
+        "məi lestəm bubake bʰat",
+        "I will carry the food for father.",
+        "",
+        "məi lestəm bubake bʰat",
+        "Source corpus references: BF.SLD.094.",
+        "dhakal2011darai[p. 99]",
+        "",
+        "",
+        "dhakal2011:p99:ch4:surface:l31",
+        "",
+        "",
+        "",
+        "dialect:Darai:darai_chitwan:Chitwan multiword-expression"
+      ]
+    },
+    {
+      "source_unit_key": "dhakal2011:p142:ch5:surface:l41",
+      "evidence_file": "chapter5-reviewed-records.jsonl",
+      "evidence_line": 54,
+      "printed_page": 142,
+      "pdf_page": 164,
+      "kind": "whole-expression",
+      "form": "uhĩ hamrake ek ek kərtihin herlə",
+      "source_gloss": "He looked at us scrutinizing one by one.",
+      "proposed_grammar": {
+        "gloss": "He looked at us scrutinizing one by one.",
+        "tags": [],
+        "labels": []
+      },
+      "source_claims": {},
+      "source_status": "Owner original-page comparison complete; independent review and metadata integration pending",
+      "source_disposition": null,
+      "disposition": "candidate attestation; review pending",
+      "reuse_source_unit_key": null,
+      "parent_expression_key": null,
+      "open_review": [],
+      "metadata_status": "Not frozen; source claims, roles, variants and profiles require full reconciliation",
+      "source_attribution": {
+        "scope": "author Chitwan default, printed page 8",
+        "lect": "Chitwan"
+      },
+      "export": {
+        "entry_key": "dhakal2011:p142:ch5:surface:l41",
+        "route": "author-transcription",
+        "disposition": "emit",
+        "reason": "distinct source analysis or retained historical key",
+        "occurrence_citation": "dhakal2011darai[p. 142]",
+        "occurrence_row": [
+          "Darai",
+          "",
+          "uhĩ hamrake ek ek kərtihin herlə",
+          "He looked at us scrutinizing one by one.",
+          "",
+          "uhĩ hamrake ek ek kərtihin herlə",
+          "",
+          "dhakal2011darai[p. 142]",
+          "",
+          "",
+          "dhakal2011:p142:ch5:surface:l41",
+          "",
+          "",
+          "",
+          "dialect:Darai:darai_chitwan:Chitwan multiword-expression"
+        ],
+        "source_unit_keys": [
+          "dhakal2011:p142:ch5:surface:l41"
+        ]
+      },
+      "sample_exported_row": [
+        "Darai",
+        "",
+        "uhĩ hamrake ek ek kərtihin herlə",
+        "He looked at us scrutinizing one by one.",
+        "",
+        "uhĩ hamrake ek ek kərtihin herlə",
+        "",
+        "dhakal2011darai[p. 142]",
+        "",
+        "",
+        "dhakal2011:p142:ch5:surface:l41",
+        "",
+        "",
+        "",
+        "dialect:Darai:darai_chitwan:Chitwan multiword-expression"
+      ]
+    }
+  ]
+}

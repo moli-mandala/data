@@ -1,0 +1,109 @@
+{
+  "status": "preview preservation-profile coverage passed; actual parser and editorial acceptance pending",
+  "rows_checked": 837,
+  "input_normalization": "NFC literals and explicit NFD aliases; capitals map to lowercase display only",
+  "decomposed_grapheme_aliases": {
+    "õ": "õ",
+    "ā": "ā",
+    "ă": "ă",
+    "ē": "ē",
+    "ĕ": "ĕ",
+    "ĩ": "ĩ",
+    "ī": "ī",
+    "ĭ": "ĭ",
+    "ō": "ō",
+    "ŏ": "ŏ",
+    "ũ": "ũ",
+    "ū": "ū",
+    "ŭ": "ŭ",
+    "ḍ": "ḍ",
+    "ḷ": "ḷ",
+    "ṅ": "ŋ",
+    "ṇ": "ṇ",
+    "ṛ": "ṛ",
+    "ṭ": "ṭ",
+    "ã": "ã",
+    "Ā": "ā",
+    "Ē": "ē",
+    "Ĕ": "ĕ",
+    "Ī": "ī",
+    "ẽ": "ẽ"
+  },
+  "added_symbols": [
+    {
+      "symbol": "-",
+      "unicode_name": "HYPHEN-MINUS",
+      "mapping": "-"
+    },
+    {
+      "symbol": "G",
+      "unicode_name": "LATIN CAPITAL LETTER G",
+      "mapping": "g"
+    },
+    {
+      "symbol": "K",
+      "unicode_name": "LATIN CAPITAL LETTER K",
+      "mapping": "k"
+    },
+    {
+      "symbol": "M",
+      "unicode_name": "LATIN CAPITAL LETTER M",
+      "mapping": "m"
+    },
+    {
+      "symbol": "P",
+      "unicode_name": "LATIN CAPITAL LETTER P",
+      "mapping": "p"
+    },
+    {
+      "symbol": "T",
+      "unicode_name": "LATIN CAPITAL LETTER T",
+      "mapping": "t"
+    },
+    {
+      "symbol": "y",
+      "unicode_name": "LATIN SMALL LETTER Y",
+      "mapping": "y"
+    },
+    {
+      "symbol": "ã",
+      "unicode_name": "LATIN SMALL LETTER A WITH TILDE",
+      "mapping": "ã"
+    },
+    {
+      "symbol": "Ā",
+      "unicode_name": "LATIN CAPITAL LETTER A WITH MACRON",
+      "mapping": "ā"
+    },
+    {
+      "symbol": "Ē",
+      "unicode_name": "LATIN CAPITAL LETTER E WITH MACRON",
+      "mapping": "ē"
+    },
+    {
+      "symbol": "Ĕ",
+      "unicode_name": "LATIN CAPITAL LETTER E WITH BREVE",
+      "mapping": "ĕ"
+    },
+    {
+      "symbol": "Ī",
+      "unicode_name": "LATIN CAPITAL LETTER I WITH MACRON",
+      "mapping": "ī"
+    },
+    {
+      "symbol": "ẽ",
+      "unicode_name": "LATIN SMALL LETTER E WITH TILDE",
+      "mapping": "ẽ"
+    },
+    {
+      "symbol": "’",
+      "unicode_name": "RIGHT SINGLE QUOTATION MARK",
+      "mapping": "’"
+    }
+  ],
+  "existing_policy": "w to v and ṅ to ŋ; all other source symbols preserved",
+  "breath_policy": "Preserve both historical U+2018 and new original-image U+2019 literally; no phonemic mapping or silent unification.",
+  "profile_sha256": "78a9842686f80fc27f4a7719f381ae29d454224b05c62d7b9d2c17e7423c5d72",
+  "preview_sha256": "6230b9c02c111a350d37f094b2eafa6413e71c20bfd7fe7029a8462a132fb422",
+  "canonical_changes": false
+}

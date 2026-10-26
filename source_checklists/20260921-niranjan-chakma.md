@@ -1,43 +1,35 @@
 # Source ingestion checklist — 20260921-niranjan-chakma
 
-- Installed input: `data/other/forms/20260921-niranjan-chakma.csv`
-- Canonical checklist SHA-256: `85e38ca842519c4b80ff58ab75d3882865b688dbe866041805b8c4f4c9163201`
-- Source-type addenda: Dictionary or glossary
-- Installed rows: 742
-- Compiled rows carrying this unit's citation keys: 742
-- Input rows with checked grammatical evidence: 97
-- Compiled rows with canonical grammatical tags: 97
-- Source keys: niranjan2010chakma
+## Whole-source source-stage update — 2026-09-27
 
-## Retrospective gate assessment
+Canonical source files are installed; full compiled-data and browser gates remain deferred.
+The active source addenda are dictionary/glossary, survey/comparative table, OCR-heavy,
+and etymological/comparative evidence. The current canonical checklist was reread in full.
 
-Historical PASS markers below are retrospective evidence, not certification of the current release. Current release validation is recorded in [the release validation record](20260926-release-validation.md); pending browser checks remain pending until independently recorded.
+- [x] Complete 110-page scope and documentary census; every section is accounted for.
+- [x] Guarded reproducible importer, immutable 742-row baseline, exact page/unit provenance.
+- [x] 3,662 installed fifteen-column rows, 5,232 audit records, all 742 historical keys retained.
+- [x] Registered language routes; Tanchangya (3 rows), Chenchu (4 rows), no invented locality coordinates or named-group dialects.
+- [x] Explicit grammatical metadata and source claims; 486 rows retain typed uncertainty.
+- [x] Literal Bengali-script preservation, NFC coverage, no replacement characters or invented IPA; conversion disabled, hyphens retained.
+- [x] Main bibliography coverage/provenance updated; five separately registered auxiliary references; main source etymology provenance is source.
+- [x] Fresh independent 20-unit original-output review passed; original failed mapping review preserved and exactly two omissions repaired.
+- [x] 40 focused tests passed (5.64 s); actual canonical parser preserves all 3,662 rows/fields/tags; repeated guarded installation is byte-identical.
+- [ ] Full CLDF pipeline, compiled identity/graph/reference verification and full repository suite — deferred, not run.
+- [ ] Browser database refresh and representative app QA — deferred, not requested in this source-stage task.
 
-- [x] 1. Establish the source and scope — source keys: niranjan2010chakma; 742 installed records
-- [x] 2. Choose the extraction path — importer/raw route: data/other/forms/20260921-niranjan-chakma.csv
-- [x] 3. Plan the installed files and identifiers — 742 unique immutable Entry_Key values
-- [x] 4. Model languages and dialects before emitting forms — 1 input language/lect IDs; registry gaps: none
-- [x] 5. Emit the rich import schema — row widths {'15': 742}; blank forms 0
-- [x] 6. Parse structured linguistic information — 97 input rows carry checked grammatical evidence; 97 compiled rows carry canonical grammatical tags
-- [x] 7. Build and verify the sound profile — profile route: data/other/forms/20260921-niranjan-chakma.yaml; replacement characters in input forms: 0
-- [x] 8. Parse references and provenance — unresolved keys: none
-- [x] 9. Model etymology and graph relations conservatively — covered by tests/test_edges.py and compiled edge invariants
-- [x] 10. Produce a complete audit trail — audit: source_checklists/installed-record-audit.csv.gz
-- [x] 11. Add focused regression tests — tests: tests/test_niranjan_chakma_import.py, tests/test_niranjan_chakma_preparation.py, tests/test_sil_chakma_tanchangya_2007_discovery.py, tests/test_source_checklists.py
-- [ ] 12. Install and run the full data pipeline — pending final repository-wide make all and full-suite validation for this review
-- [ ] 13. Browser database refresh and inspection (user-triggered) — browser database refresh and QA are not yet recorded for this source; release completion requires current validation evidence
-- [x] 14. Document, review, and ship only when requested — this source-specific checklist is the durable review record; publication status and release evidence are recorded separately
+Full evidence: `data/other/forms/raw_data/niranjan_chakma_2010/whole-installation/source-stage-handoff.json`,
+`whole-installed-audit.jsonl`, `whole-export-r2/whole-source-export-status.json`, and
+`independent-whole-output-r2-review-20260927.json`.
 
-## Review summary
+Exclusions are individually keyed: outside-family controls, unresolved language identities,
+explicit blanks, damaged/segmentation cases and documentary/abbreviation records. Three
+source analyses retain every printed component and claim with unresolved language attribution;
+no language or ancestry is inferred merely from a literary work's identity. Compiled counts
+still reflect the earlier release and must not be read as whole-source validation.
 
-- Counts: 742 installed records; 742 compiled citation attestations.
-- Exclusions: none detected in the installed input; any source-side exclusions remain in the linked importer/audit.
-- Unresolved cases: none detected.
-- Transcription: `data/other/forms/20260921-niranjan-chakma.yaml`.
-- Validation: full data and browser validation evidence is recorded centrally in `source_checklists/VALIDATION.md`.
-- Representative app entries: recorded centrally in `source_checklists/VALIDATION.md`.
+## Historical filled checklist snapshot (not current certification)
 
-## Filled checklist copy
 
 Checked boxes below inherit the repository evidence stated above for their section. Unchecked boxes remain completion gates; addenda not listed for this unit are explicitly not applicable.
 

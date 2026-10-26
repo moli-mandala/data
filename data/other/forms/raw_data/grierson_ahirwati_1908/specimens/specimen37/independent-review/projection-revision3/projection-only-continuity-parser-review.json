@@ -1,0 +1,29 @@
+{
+  "status": "passed projection-only correction and actual production parser check; source-local proposal only",
+  "counts": {
+    "rows": 390,
+    "protected_other_indices_per_row": 13,
+    "keys_changed": 0,
+    "metadata_tag_changes": 0,
+    "actual_parser_rows": 390
+  },
+  "schema": {
+    "index1": "Parameter_ID blank",
+    "index2": "source Form input / parsed Original",
+    "index4": "Native; exact previously intended Native",
+    "index5": "Phonemic blank"
+  },
+  "limits": "Source-local convert:false parser fixture verifies actual schema without canonical registration. Display Form follows the generic literal route; exact terminal punctuation is certified in Original, not asserted invariant under generic display normalization. Pending independent metadata decisions are not mixed into this revision.",
+  "inputs": {
+    "metadata-proposal-revision2/candidate.csv": "fcd708e8edb9e164f28e8813bf69026bda262fa56b739fdde36814cd09862075",
+    "metadata-proposal-revision2/candidate-audit.jsonl": "df30840857b1e5899af75ecc436d91a29ed99904ace2624d768abbbef000af3f"
+  },
+  "outputs": {
+    "candidate-audit.jsonl": "0e6e7e5100ca204e62878a31bd65c52c805b1de8a1791f04b4c29dda88f0101c",
+    "candidate.csv": "a8141e9f2d2291d7f50929b3cb9fc3574cbf77669a2a19a92f4b4ee0d670fd99",
+    "candidate.yaml": "643851fda493dc6de25d3363a71e88809822efcfe0f3aed111a3da06fa4d8b9e",
+    "all-390-projection-changes.jsonl": "9422a4c1551b282ed103c4b60d4bbd0bda48711ddeae316ab02a05e13e13a657"
+  },
+  "parser_source_sha256": "1a1ded9eff5b8607174aa37981efb4358824be8ffffdfaa7128c0cea53dac5a8",
+  "script_sha256": "2c3cc54cef75b9fbb05c2273c75c91abd0017e866bbd59730ae6a6f5c2bd4cf4"
+}

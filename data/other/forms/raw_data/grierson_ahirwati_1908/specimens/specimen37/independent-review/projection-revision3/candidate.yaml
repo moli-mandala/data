@@ -1,0 +1,16 @@
+file: candidate.csv
+defaults:
+  transcription:
+    convert: false
+    preserve_hyphens: true
+  identity:
+    dedupe_by_entry_key: true
+sources:
+  grierson1908ahirwati:
+    transcription:
+      convert: false
+      preserve_hyphens: true
+    forms:
+      split_alternates: false
+    gloss:
+      grammar_tags: false

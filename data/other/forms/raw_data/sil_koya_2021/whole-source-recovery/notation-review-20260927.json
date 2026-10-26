@@ -1,0 +1,42 @@
+{
+  "status": "in_progress_not_installation_ready",
+  "scope": "Independent whole target-wordlist notation review; parent owns proposal and canonical installation.",
+  "original": "tmp/pdfs/koya/JLSR2021_029.pdf",
+  "original_sha256": "a6541e0d2397849ce7c36961b3849f3b2c1f1c267036cfa1a3f6025796e14e7d",
+  "legend": {
+    "pdf_page": 81,
+    "printed_page": 76,
+    "single_dot": "Lengthened",
+    "colon": "Extra Lengthened",
+    "raised_vowels": "glides",
+    "policy": "Preserve literal middle dot, colon and raised vowels separately. Normalized IPA proposals remain separate editorial fields; no automatic equivalence between the two length classes. Other source diacritics must not be silently discarded."
+  },
+  "coverage": [
+    {"pdf_page": 82, "printed_page": 77, "sites": ["JAG", "CHI", "POD"], "items": [1,20], "cells": 60, "review": "All cells visually screened for dots/raised vowels. Additional source-diacritic and segment discrepancies flagged; full literal transcription not yet certified.", "crop": [175,95,480,670], "render_scale": 6}
+  ],
+  "corrections": [
+    {"key":"wordlist:JAG:1","old":"oleu","literal_notation_proposal":"ol·u","issue":"Dot after l, no intervening e."},
+    {"key":"wordlist:JAG:9","old":"palu","literal_notation_proposal":"pal·u","issue":"Single dot after l omitted."},
+    {"key":"wordlist:JAG:11","old":"bʰomːa","literal_notation_proposal":"bʰom·a","issue":"Single length dot, not colon."},
+    {"key":"wordlist:JAG:12","old":"dokːa","literal_notation_fragment":"k·a","issue":"Single length dot, not colon; initial dental diacritic additionally visible and requires full literal reconciliation."},
+    {"key":"wordlist:JAG:16","old":"veliku","literal_notation_proposal":"ᵘelku","issue":"Initial raised u, no baseline v; no i between l and k."},
+    {"key":"wordlist:CHI:3","old":"kelːku","literal_notation_proposal":"kel·ku","issue":"Single length dot, not colon."},
+    {"key":"wordlist:CHI:4","old":"mokːam","literal_notation_proposal":"mok·am","issue":"Single length dot, not colon."},
+    {"key":"wordlist:CHI:9","old":"palːku","literal_notation_proposal":"pal·ku","issue":"Single length dot, not colon."},
+    {"key":"wordlist:CHI:12","old":"dokːa","literal_notation_proposal":"dok·a","issue":"Single length dot, not colon."},
+    {"key":"wordlist:CHI:13","old":"dʒabːa","literal_notation_fragment":"b·a","issue":"Single length dot, not colon; initial handwritten segment requires separate glyph reconciliation."},
+    {"key":"wordlist:CHI:15","old":"labːa","literal_notation_proposal":"lab·a","issue":"Single length dot, not colon."},
+    {"key":"wordlist:CHI:16","old":"tadugu","literal_notation_fragment":"ᵘadu","issue":"Initial raised u, not baseline t; final handwritten segment requires separate glyph reconciliation."},
+    {"key":"wordlist:CHI:19","old":"tolːka","literal_notation_fragment":"l·ka","issue":"Single length dot, not colon; initial dental diacritic additionally visible."},
+    {"key":"wordlist:POD:8","old":"paiur","literal_notation_fragment":"paⁱu","issue":"i is raised before baseline u."},
+    {"key":"wordlist:POD:11","old":"bomːa","literal_notation_proposal":"bom·a","issue":"Single length dot, not colon."},
+    {"key":"wordlist:POD:12","old":"dokːa","literal_notation_fragment":"k·a","issue":"Single length dot, not colon; initial dental diacritic additionally visible."}
+  ],
+  "additional_literal_questions": [
+    "PDF82 JAG5 appears kandku rather than kandu, but damaged ink requires narrow original check.",
+    "PDF82 CHI17 and POD17 explicitly have raised h after g; all three bone forms item20 have raised h after b, absent from old forms.",
+    "PDF82 dental marks below t/d are visible in head, body, belly and skin cells and need source-wide reconciliation independently of length/glides.",
+    "PDF82 POD7 trailing marks after final tap are not yet confidently identified."
+  ],
+  "normalization": "Not approved. Proposed full strings above concern this notation review; fragment-only records explicitly do not certify the remaining segments. No canonical or parent proposal changed."
+}

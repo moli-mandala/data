@@ -1,0 +1,124 @@
+{
+  "status": "failed; full grammatical-gloss class repair and fresh disjoint audit required",
+  "reviewer": "root",
+  "sample_sha256": "cb163f5474c34ce3066c2315b045bc5b2d425ffec1b9a9a0e90c619eebcf9a78",
+  "input_sha256": {
+    "whole-proposed.csv": "e0df107bbbfc14c0ba96fd0916b180f4f5e5d3af5b585b5308046edb9524d470",
+    "whole-proposed-audit.jsonl": "38e973f55e924d43db0747ebd7e090759bf4384eb87f2ebd4c2014e91a23b2d0",
+    "whole-proposed-profile.txt": "3774144744ae38dc3c6d9e2e7fcff788e88812a9ad0fb6920170e1b080bfe440",
+    "whole-grammar-metadata-proposal-20260927.jsonl": "0d14326cfa58cf58629db27b81e5e13cfc8a729631f88a11326183f6565eea99",
+    "whole-expansion-draft-20260927.jsonl": "f50131737ac5f9a691b346e47707159ae378b6e3a9a2803225f51aad441d0e04",
+    "independent-whole-second-reading-20260927.json": "5017c3c5e07f55c44c02e391ca0ef647fee7ffb2071827383ee6cac02f37c3df",
+    "independent-expansion-metadata-review-20260927.json": "7b5c00d16119ba7c8276c759ce50288a2340666572bfd8550cc63e33f807acf1",
+    "source-label-class-remediation-20260927.json": "b924da78f0c43e70973b0da4145c87498120533dc39a151d639c57da4e57608e"
+  },
+  "units_reviewed": 20,
+  "output_rows_reviewed": 23,
+  "material_errors": 2,
+  "form_transcription_errors": 0,
+  "method": "Compared all sampled output rows with original printed pages232,233,235–244 rendered during this audit sequence; images reviewed across consecutive root turns. Checked glosses, notes and tags against checklist §§5–6.",
+  "results": [
+    {
+      "source_unit_key": "bailey1920bilaspuri:grammar:232:intro-nouns:1",
+      "result": "pass",
+      "observation": "Forms, lexical meaning and source analysis match printed unit."
+    },
+    {
+      "source_unit_key": "bailey1920bilaspuri:grammar:232:intro-numerals:2",
+      "result": "pass",
+      "observation": "Forms, lexical meaning and source analysis match printed unit."
+    },
+    {
+      "source_unit_key": "bailey1920bilaspuri:grammar:233:intro-ability:1",
+      "result": "pass",
+      "observation": "Forms, lexical meaning and source analysis match printed unit."
+    },
+    {
+      "source_unit_key": "bailey1920bilaspuri:grammar:233:intro-ability:2",
+      "result": "pass",
+      "observation": "Forms, lexical meaning and source analysis match printed unit."
+    },
+    {
+      "source_unit_key": "bailey1920bilaspuri:grammar:235:horse:1",
+      "result": "pass",
+      "observation": "Forms, lexical meaning and source analysis match printed unit."
+    },
+    {
+      "source_unit_key": "bailey1920bilaspuri:grammar:236:girl:3",
+      "result": "pass",
+      "observation": "Forms, lexical meaning and source analysis match printed unit."
+    },
+    {
+      "source_unit_key": "bailey1920bilaspuri:grammar:236:second-person:2",
+      "result": "pass",
+      "observation": "Forms, lexical meaning and source analysis match printed unit."
+    },
+    {
+      "source_unit_key": "bailey1920bilaspuri:grammar:237:pronominal-adjectives:4",
+      "result": "metadata failure",
+      "observation": "Relative tag is present, but successfully parsed (rel.) label remains in lexical Gloss, contrary to checklist §6."
+    },
+    {
+      "source_unit_key": "bailey1920bilaspuri:grammar:237:what:2",
+      "result": "pass",
+      "observation": "Forms, lexical meaning and source analysis match printed unit."
+    },
+    {
+      "source_unit_key": "bailey1920bilaspuri:grammar:238:cardinal:5",
+      "result": "pass",
+      "observation": "Forms, lexical meaning and source analysis match printed unit."
+    },
+    {
+      "source_unit_key": "bailey1920bilaspuri:grammar:238:cardinal:99",
+      "result": "pass",
+      "observation": "Forms, lexical meaning and source analysis match printed unit."
+    },
+    {
+      "source_unit_key": "bailey1920bilaspuri:grammar:239:place:4",
+      "result": "metadata failure",
+      "observation": "Explicit source (rel.) is retained inside lexical Gloss and missing from canonical Tags. Move grammatical label to relative tag."
+    },
+    {
+      "source_unit_key": "bailey1920bilaspuri:grammar:239:place:6",
+      "result": "pass",
+      "observation": "Forms, lexical meaning and source analysis match printed unit."
+    },
+    {
+      "source_unit_key": "bailey1920bilaspuri:grammar:239:preposition:4",
+      "result": "pass",
+      "observation": "Forms, lexical meaning and source analysis match printed unit."
+    },
+    {
+      "source_unit_key": "bailey1920bilaspuri:grammar:240:fall:16",
+      "result": "pass",
+      "observation": "Forms, lexical meaning and source analysis match printed unit."
+    },
+    {
+      "source_unit_key": "bailey1920bilaspuri:grammar:241:beat:1",
+      "result": "pass",
+      "observation": "Forms, lexical meaning and source analysis match printed unit."
+    },
+    {
+      "source_unit_key": "bailey1920bilaspuri:grammar:242:strike:1",
+      "result": "pass",
+      "observation": "Forms, lexical meaning and source analysis match printed unit."
+    },
+    {
+      "source_unit_key": "bailey1920bilaspuri:sentences:243:2",
+      "result": "pass",
+      "observation": "Forms, lexical meaning and source analysis match printed unit."
+    },
+    {
+      "source_unit_key": "bailey1920bilaspuri:sentences:243:9",
+      "result": "pass",
+      "observation": "Forms, lexical meaning and source analysis match printed unit."
+    },
+    {
+      "source_unit_key": "bailey1920bilaspuri:sentences:244:22",
+      "result": "pass",
+      "observation": "Forms, lexical meaning and source analysis match printed unit."
+    }
+  ],
+  "repair_scope": "All new grammatical gloss labels, including relative/correlative qualifications; use canonical tags and remove parsed labels from lexical glosses, retaining literal source reading in audit.",
+  "installation": "not accepted; canonical unchanged"
+}

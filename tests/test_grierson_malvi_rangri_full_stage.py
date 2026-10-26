@@ -5,6 +5,7 @@ import json
 import unicodedata
 from pathlib import Path
 from segments import Tokenizer
+from profile_policy import hunterian_display  # Hunterian ch/chh/Ch → house spelling
 
 DATA = Path(__file__).resolve().parents[1]
 P = DATA / 'data/other/forms/raw_data/grierson_malvi_rangri_1908'
@@ -80,7 +81,7 @@ def test_complete_profile_symbol_coverage_and_registered_tags():
     for row in rows:
         assert len(row) == 15 and row[0] == 'Malw'
         assert row[2] and row[2] == unicodedata.normalize('NFC', row[2])
-        assert tokenizer(row[2], column='IPA').replace(' ', '').replace('#', ' ') == row[2].lower().replace("ṅ", "ŋ")
+        assert tokenizer(row[2], column='IPA').replace(' ', '').replace('#', ' ') == hunterian_display(row[2].lower().replace("ṅ", "ŋ"))
         assert set(row[14].split()) <= tags.GRAMMATICAL_TAGS | tags.GENDER_TAGS | {source.DIALECT}
 
 

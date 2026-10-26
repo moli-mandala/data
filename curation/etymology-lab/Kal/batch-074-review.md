@@ -1,0 +1,14 @@
+# Kal: survey etymology review, batch 74
+
+**Saved under the autonomous-work authorization of 2026-09-21.** 4 proposals; exact IDs and source attestations are in the [manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Kal/batch-074.json).
+
+| # | Language form and meaning | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **riʦ̣** ‘feces’, **īric** ‘feces’ | Reflex of **\*rikṣa**; [CDIAL 10731](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=620);trail-cooper1999[printed p. 259, PDF p. 284] | Turner explicitly gives Kalasha ric̣ excrement and Khowar ric̣(h) fresh dung of humans and animals under the combined \*rikṣa or \*rikṣya head. Trail and Cooper confirm the Urtsun variant iric̣; Bashir includes human feces. The link retains the unresolved reconstruction alternative already present in this public head. (3 records.) |
+| 2 | **sụ̄̃ā** ‘gold’, **sụ̄ɛ̣̃** ‘gold’, **sụ̄̃ā̃** ‘gold’ | Reflex of **suvárṇa**; [CDIAL 13519,1 or 2](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=779);trail-cooper1999[printed p. 277, PDF p. 302] | Trail and Cooper explicitly derive retroflex-nasal suạ̃ gold from suvarṇa; Turner includes the older Kalasha sū̃ṛa/sū̃ŕä forms. Turner groups suvarṇa and sauvarṇa because their reflexes often cannot be distinguished. This uses that combined public head and preserves the survey’s retroflex vowel notation. (3 records.) |
+| 3 | **āṣūṣal** ‘dry’ | Borrowed from **ʦ̣uʦ̣ʰú**; [CDIAL 12508](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=724);trail-cooper1999[printed p. 70, PDF p. 95];[bashir2023[s.v. c̣uc̣hú]](https://escholarship.org/uc/item/955239w9) | Trail and Cooper explicitly list Urtsun aṣúṣal as a variant of c̣uc̣hu dry and identify the \*śukṣa family as borrowed through Khowar. The existing Bashir Khowar c̣uc̣hú entry is the immediate donor. This preserves the documented borrowing route and the dialect variant instead of asserting direct Kalasha inheritance. (1 records.) |
+| 4 | **lāẓīā** ‘red’, **lāʦ̣īā** ‘red’, **laʦ̣īa** ‘red’ | Reflex of **lākṣiká**; [CDIAL 11003,1](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=638);trail-cooper1999[printed p. 184, PDF p. 209] | Turner lākṣika, section 1, explicitly gives Kalasha lac̣hīa red. Trail and Cooper confirm Lac̣hía and the voiced variant LaJía. Their printed reference suffix .2 conflicts with Turner’s full article: section 2 is the separate \*lākṣaka head, so the exact first-branch public node is retained. (3 records.) |
+
+10 assignment rows on 10 records. Relation kinds: {'reflex': 9, 'borrowed': 1}.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-surveys-20260921/pass114-validation.json). No compiled or browser rebuild. Excluded and competing analyses are tracked in the [run review](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-surveys-20260921/REVIEW.md).

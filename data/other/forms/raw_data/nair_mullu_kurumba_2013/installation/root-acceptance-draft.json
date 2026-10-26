@@ -1,0 +1,102 @@
+{
+  "installation_approved": false,
+  "result": "disabled; root activation required",
+  "rows": 135,
+  "audit_units": 65,
+  "witness_records": 164,
+  "target_rows": 110,
+  "comparison_rows": 25,
+  "commentary_reuses": 6,
+  "audit_only_witness_records": 23,
+  "variants": 11,
+  "shared_baseline_captured": true,
+  "audit_acceptance_ready": true,
+  "files": {
+    "README.md": "d9b0e7cc2996ab8d67db7ead464216380ed20b539635819ee439ed47d7ee938b",
+    "physical-units-first-reading.jsonl": "7bd8af78668aeff2453ebb99ae9fd0e8ad57212f10af6f3867164ea8e29f51c0",
+    "first-reading-status.json": "1105cf24d2b284ef152bbe2da4afe0134a7d83f87ece285be930dfdfd75a6832",
+    "prepare_first_reading.py": "63c34e6fd04e69f66df23191760a2c2950fede8d9285dbbe0274abda9a63629f",
+    "prepare_candidate.py": "5e2c15ff07b7cff35f1c71f23dc557eb9267e5248f4c2659c61c8bb1b7a9f22f",
+    "proposed.csv": "242e05bd375e4b6962bf30629046ca498eb247f5d04f3f4c1392968d7e2e1224",
+    "proposal-audit.jsonl": "a3e5f02e49fa736c5ac853c4b53e09287ef688f01aed8fdcc22bf96cb20e034b",
+    "candidate-status.json": "c6b6359e73e157a57423631240649b08255bedfdcb6a6f387c5ad6c2520c8aad",
+    "metadata-proposal.json": "120ba4098f84a1181fe23289f8d8a387e5a43a4fafd9f470223f96b231718853",
+    "graph-proposal.json": "81a87c3f1829e6b4bba19c303567c7929d748f7b8d0655b8638cc6e22dd32bf9",
+    "proposed-settings.yaml": "b89c022f171562917450c3c774a0e97138bf9804963c2f306639e494c1757f40",
+    "proposed-references.bib": "a46cfe0bf6000c6e0344e95e520805c42f800b616761aa4aafad30b5d106f424",
+    "prepare_metadata_review.py": "ce5dc1aa8ac238e07bf3cc98a2e67e0b18a9c0654ce6a10b407f1e210640f64b",
+    "metadata-profile-review.json": "07753a082be813ea6735d94cad83dfa6bdbc939f4a2dd0956d3ca06863ccded4",
+    "validate_actual_parser.py": "4dd30b444556b321d4c02cefaf8c0dc68d43c5fc69726160197c93c05cc3d79b",
+    "actual-parser-review.json": "1c3ff8c5bf49d933c4b1d8a2626ba9d2c058ca583c60788a916de63472474346",
+    "record_typography_review.py": "bce2d75668640685c03f331a41b0212b5fe34bcc8c8b28152a62cd15d165258b",
+    "bound-typography-review.json": "d7afca96b9b8c622de65b39b87d8f2cd91eb7192ede4dc77afed6ca84c48f54b",
+    "focused-tests.log": "964ca6b97369074902f81b50f7fcdd26ee2b9f5faca63de9e08fb47476e4254c",
+    "scope/source-position-inventory.jsonl": "e37de419030701a646dfaf294c51e1c01dff3b4e06ef20c8720ba0754107056d",
+    "scope/detail-font-evidence.json": "88dfc7a8c12f407df0a4ad8c5943764f8571c9229e480dd546d858293ead6c71",
+    "scope/page-native-font-census.json": "688e224e9bdc3ef069d1c95c9b4fc68421cea36e4ec7e01ebedd5d1ded9d4a6f",
+    "scope/originals/page-55-150dpi.png": "a6c7deabfec9ad695f6d76fe32a58c308aaeb796d2efa48dbdf720153f540d23",
+    "scope/originals/page-56-150dpi.png": "11b708c8b47da8104c9af0c0ec2def230de2c7685af3061e15abfd8249e66b91",
+    "scope/originals/page-57-150dpi.png": "abd55f92eeb8bed6a944642d6a984d1b51f221eff2b4135a8394657dd6d052b6",
+    "scope/originals/page-58-150dpi.png": "358a38e083e62adf1f2aeddae8d5511c6802c6622626e7b81af669b26ef38c06",
+    "apply_reviewed_revision.py": "f6bfbd4cee84a4ad9c8611fb6e354a8a9fad190b2ef94c0ebd014313d06650ef",
+    "review-repair-continuity.json": "99ff7303b5e02f0653a8c57e74a703eb5942737aac8a718e49ddf09e38ae732f",
+    "prepare_slash_adjudication.py": "83fe8beb76bf61abe7acd8e57c062eef815495773133012174cdc50f2320b1d9",
+    "slash-alternative-adjudication-proposal.json": "190c48b21f5dd3b82636cc37f5937e3823195b20168e372db17b992e28f22750",
+    "independent-review/complete-original-review-pass1.json": "f4783f86c9a88c2f9ff4877738b0e63760c3e0b99391b58d7edab219962b1df8",
+    "check_reference_format.py": "2e703280efea6307fd5183b4a5e4d84f397bb1d6d034b8c5bad198e5a9a75a1e",
+    "reference-format-review.json": "907c13ae75f329dd1d92eec92964916c17888458e8d1038fe3e3aa9bcd364d2f",
+    "review-freeze.json": "815bd4883bd4ad3b0dfcf368f33e451dcd8eab76d8e2243912d410e309acca57",
+    "independent-review/final-original-output-review-r2-20260927571.json": "9f9ce0925f30ca1859db677a959d3fc5baf8c7c1dde7ebc08d95e66cdc5bcc38",
+    "installation/prepare_installer.py": "d697ee7058ab0619536501b4429e92a8d710e0afee6b2c30d462e3ca51083a94",
+    "installation/install_source.py": "181361a1cc0f3ebd05d3fc0a1627979e7b59aa6d58291f639cc29830162bc2b5",
+    "installation/prepare_assets.py": "97ed6ffbefd40d0d01f65ccd5446e92fd70796d6dce301efcf2b0796875938c8",
+    "installation/20260927-nair-mullu-kurumba.yaml": "99155b48f4de487dca4731f9a189e9589b756cd659b8308e32071385e960f68e",
+    "installation/staged-references.bib": "3dccd05d190cded87d6c965dd722139665fc9311708647c42196bd34b4bd4471",
+    "installation/accepted-audit-proposal.jsonl": "5098c19e459bd4ade5100a79169d564288a2af1e33a0d8b69b13dfe38a5a0105",
+    "root-source-stage-acceptance-r2.json": "3ea8a8f189538ac4b1c35701170eb1dc0e0a1220b5e9fe1f06f5816a6ac06040",
+    "installation/assets/csv.asset": "242e05bd375e4b6962bf30629046ca498eb247f5d04f3f4c1392968d7e2e1224",
+    "installation/assets/yaml.asset": "99155b48f4de487dca4731f9a189e9589b756cd659b8308e32071385e960f68e",
+    "installation/assets/audit.asset": "5098c19e459bd4ade5100a79169d564288a2af1e33a0d8b69b13dfe38a5a0105",
+    "installation/assets/bib.asset": "af76f24c4a29cbe3822ac94aef8c4b753e16ed04d79de62415f06bc554285dc2",
+    "installation/test_installer.py": "23d6fe41856ca5d7b284053a604ced9fe645d58d320991da64bed29009364535",
+    "installation/check_fixture.py": "1e64941ede55395b6a994b4643427e6416575766d5d603f2fc9eeee5c112e0b8",
+    "installation/actual-parser-check.json": "4138f91341bfbf47b05d5ee251fbcfe8070200b1d53cffe1be43795808aed39f"
+  },
+  "assets": {
+    "csv": {
+      "target": "data/other/forms/20260927-nair-mullu-kurumba.csv",
+      "input": "installation/assets/csv.asset",
+      "output_sha256": "242e05bd375e4b6962bf30629046ca498eb247f5d04f3f4c1392968d7e2e1224"
+    },
+    "yaml": {
+      "target": "data/other/forms/20260927-nair-mullu-kurumba.yaml",
+      "input": "installation/assets/yaml.asset",
+      "output_sha256": "99155b48f4de487dca4731f9a189e9589b756cd659b8308e32071385e960f68e"
+    },
+    "audit": {
+      "target": "data/other/forms/raw_data/nair_mullu_kurumba_2013/installed-audit.jsonl",
+      "input": "installation/assets/audit.asset",
+      "output_sha256": "5098c19e459bd4ade5100a79169d564288a2af1e33a0d8b69b13dfe38a5a0105"
+    },
+    "bib": {
+      "target": "cldf/sources.bib",
+      "input": "installation/assets/bib.asset",
+      "output_sha256": "af76f24c4a29cbe3822ac94aef8c4b753e16ed04d79de62415f06bc554285dc2"
+    }
+  },
+  "canonical_baselines": {
+    "data/other/forms/20260927-nair-mullu-kurumba.csv": null,
+    "data/other/forms/20260927-nair-mullu-kurumba.yaml": null,
+    "data/other/forms/raw_data/nair_mullu_kurumba_2013/installed-audit.jsonl": null,
+    "cldf/sources.bib": "13d183d0479219f8f9a4d94c2d006e8f9fd52779da62ac3a4e434e4423547367"
+  },
+  "source_pdf_sha256": "4d2588987dab5d15c62ecc95330ccf7e925a9bce80d08068b91ca3f48c8cc5af",
+  "durable_identity_sha256": "4977c4e205f66233366ee1c00a9c938c9c78e3c087b63e02a94832647525c28a",
+  "shared_baseline_status": "captured in root-reserved window",
+  "deferred": [
+    "full compiled build",
+    "full suite",
+    "compiled identity/graph/reference checks",
+    "browser QA"
+  ]
+}

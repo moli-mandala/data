@@ -1,0 +1,51 @@
+file: 20260927-nair-malaveda.csv
+defaults:
+  transcription:
+    convert: false
+    preserve_hyphens: true
+  identity:
+    dedupe_by_entry_key: true
+  importer:
+    commands:
+    - - data/other/forms/raw_data/nair_malaveda_2013/installation/install_source.py
+      - --install
+    note: Guarded complete chapter installation only; frozen lexical inputs and independent
+      pass2 required. Full compiled/browser gates are separate.
+sources:
+  nair2013malaveda:
+    forms:
+      split_alternates: false
+    reference:
+      editor: OpenAI Codex
+      ocr: false
+      etymology_provenance: source
+  vimalakumari1977veda:
+    reference:
+      editor: OpenAI Codex
+      ocr: false
+      etymology_provenance: none
+  vimala1984malaveda:
+    reference:
+      editor: OpenAI Codex
+      ocr: false
+      etymology_provenance: none
+  kumarinirmala1977veda:
+    reference:
+      editor: OpenAI Codex
+      ocr: false
+      etymology_provenance: none
+  thankachi1977veda:
+    reference:
+      editor: OpenAI Codex
+      ocr: false
+      etymology_provenance: none
+  radhakrishnan1977veda:
+    reference:
+      editor: OpenAI Codex
+      ocr: false
+      etymology_provenance: none
+  hyrunnisabeegam1991malaveda:
+    reference:
+      editor: OpenAI Codex
+      ocr: false
+      etymology_provenance: none

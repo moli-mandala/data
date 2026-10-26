@@ -1,0 +1,51 @@
+{
+  "status": "source-explicit categories registered and root independently confirmed",
+  "source_pdf_sha256": "4d2588987dab5d15c62ecc95330ccf7e925a9bce80d08068b91ca3f48c8cc5af",
+  "categories": {
+    "permissive": {
+      "page": 26,
+      "markers": [
+        "–ila",
+        "–idi"
+      ],
+      "examples": [
+        "naḍakkila",
+        "collugila",
+        "uudugidi",
+        "tingidi"
+      ],
+      "definition": "Source heading marks permission; not optative/hortative inferred from let."
+    },
+    "injunctive": {
+      "pages": [
+        26,
+        27
+      ],
+      "markers": [
+        "-vi",
+        "–bi",
+        "–viri",
+        "–biri",
+        "–ppiri"
+      ],
+      "definition": "Source explicitly defines suggestion rather than command; kept distinct from imperative."
+    },
+    "concessive": {
+      "page": 27,
+      "marker": "–aalu",
+      "example": "mä vündaalu",
+      "definition": "Source explicitly calls this concessive; not collapsed into conditional."
+    },
+    "polite": {
+      "page": 26,
+      "marker": "–mba",
+      "examples": [
+        "pooyimba",
+        "tinnimba"
+      ],
+      "definition": "Source labels polite imperative; no social honorific rank inferred."
+    }
+  },
+  "registration": "Exact IDs in data/tags.py and jambu-static/src/lib/tags.ts grammatical category and labels; no added natural-prose aliases.",
+  "tests": "3 category fixtures plus5 whole-source conservation/parser/graph fixtures; combined8pass0.56s."
+}

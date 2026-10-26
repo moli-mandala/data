@@ -1,0 +1,763 @@
+{
+  "status": "Source-local complete metadata/profile proposal; independent acceptance pending",
+  "inputs": {
+    "physical-units-first-reading.jsonl": "7bd8af78668aeff2453ebb99ae9fd0e8ad57212f10af6f3867164ea8e29f51c0",
+    "proposed.csv": "4e85544cd7835bdd84eb58898b0b74368efc81c04aada4b0c7d89713297d0c83",
+    "proposal-audit.jsonl": "494168f119323d48bf7bf0b2b5afac56fbbfc490d05b9df854ccc1c2d8898cb9",
+    "proposed-settings.yaml": "b89c022f171562917450c3c774a0e97138bf9804963c2f306639e494c1757f40",
+    "proposed-references.bib": "a46cfe0bf6000c6e0344e95e520805c42f800b616761aa4aafad30b5d106f424"
+  },
+  "source_routes": {
+    "Mullu Kurumba": {
+      "ID": "Mullu Kurumba",
+      "Name": "Mullu Kurumba",
+      "Glottocode": "mull1244",
+      "Latitude": "",
+      "Longitude": "",
+      "Clade": "S. Dravidian I",
+      "Location": "Kerala, India, broad 2018 numeral-page location; Wayanad (Kerala) and Nilgiri (Tamil Nadu) distribution noted, exact elicitation site not given; distinct from Attappady Kurumba",
+      "Quality": ""
+    },
+    "Malayalam": {
+      "ID": "Malayalam",
+      "Name": "Malayalam",
+      "Glottocode": "mala1464",
+      "Latitude": "9.59",
+      "Longitude": "76.77",
+      "Clade": "S. Dravidian I",
+      "Location": "",
+      "Quality": ""
+    }
+  },
+  "registry_action": "Reuse existing two base languages; no dialect or coordinate additions.",
+  "lect_scope": "Nair discusses Wayanad/Nilgiris and quotes the reported Nilgiris study but does not locate each printed example. No new source lect is inferred.",
+  "existing_source_overlap": "Jeba2018 numeral witnesses remain distinct; no numeral forms are present here.",
+  "main_source": "nair2013mullukurumba",
+  "auxiliary": "robertsathyajoseph1982mullukurumba",
+  "reference_scope": "Auxiliary is cited background only, never a directly collated lexical citation. All lexical witnesses cite Nair printed pages.",
+  "profile": {
+    "convert": false,
+    "preserve_hyphens": true,
+    "Native": "blank",
+    "Phonemic": "blank",
+    "display_policy": "Exact literal Roman spelling; no invented IPA or normalization of drawn lowline into a phonemic consonant.",
+    "symbol_inventory": [
+      {
+        "character": " ",
+        "codepoint": "U+0020",
+        "name": "SPACE",
+        "occurrences": 4
+      },
+      {
+        "character": "-",
+        "codepoint": "U+002D",
+        "name": "HYPHEN-MINUS",
+        "occurrences": 61
+      },
+      {
+        "character": "a",
+        "codepoint": "U+0061",
+        "name": "LATIN SMALL LETTER A",
+        "occurrences": 130
+      },
+      {
+        "character": "c",
+        "codepoint": "U+0063",
+        "name": "LATIN SMALL LETTER C",
+        "occurrences": 10
+      },
+      {
+        "character": "e",
+        "codepoint": "U+0065",
+        "name": "LATIN SMALL LETTER E",
+        "occurrences": 56
+      },
+      {
+        "character": "i",
+        "codepoint": "U+0069",
+        "name": "LATIN SMALL LETTER I",
+        "occurrences": 49
+      },
+      {
+        "character": "k",
+        "codepoint": "U+006B",
+        "name": "LATIN SMALL LETTER K",
+        "occurrences": 41
+      },
+      {
+        "character": "l",
+        "codepoint": "U+006C",
+        "name": "LATIN SMALL LETTER L",
+        "occurrences": 16
+      },
+      {
+        "character": "m",
+        "codepoint": "U+006D",
+        "name": "LATIN SMALL LETTER M",
+        "occurrences": 15
+      },
+      {
+        "character": "n",
+        "codepoint": "U+006E",
+        "name": "LATIN SMALL LETTER N",
+        "occurrences": 71
+      },
+      {
+        "character": "o",
+        "codepoint": "U+006F",
+        "name": "LATIN SMALL LETTER O",
+        "occurrences": 14
+      },
+      {
+        "character": "p",
+        "codepoint": "U+0070",
+        "name": "LATIN SMALL LETTER P",
+        "occurrences": 15
+      },
+      {
+        "character": "r",
+        "codepoint": "U+0072",
+        "name": "LATIN SMALL LETTER R",
+        "occurrences": 10
+      },
+      {
+        "character": "s",
+        "codepoint": "U+0073",
+        "name": "LATIN SMALL LETTER S",
+        "occurrences": 2
+      },
+      {
+        "character": "t",
+        "codepoint": "U+0074",
+        "name": "LATIN SMALL LETTER T",
+        "occurrences": 55
+      },
+      {
+        "character": "u",
+        "codepoint": "U+0075",
+        "name": "LATIN SMALL LETTER U",
+        "occurrences": 94
+      },
+      {
+        "character": "v",
+        "codepoint": "U+0076",
+        "name": "LATIN SMALL LETTER V",
+        "occurrences": 18
+      },
+      {
+        "character": "y",
+        "codepoint": "U+0079",
+        "name": "LATIN SMALL LETTER Y",
+        "occurrences": 15
+      },
+      {
+        "character": "ñ",
+        "codepoint": "U+00F1",
+        "name": "LATIN SMALL LETTER N WITH TILDE",
+        "occurrences": 2
+      },
+      {
+        "character": "ŋ",
+        "codepoint": "U+014B",
+        "name": "LATIN SMALL LETTER ENG",
+        "occurrences": 6
+      },
+      {
+        "character": "̲",
+        "codepoint": "U+0332",
+        "name": "COMBINING LOW LINE",
+        "occurrences": 2
+      },
+      {
+        "character": "ḷ",
+        "codepoint": "U+1E37",
+        "name": "LATIN SMALL LETTER L WITH DOT BELOW",
+        "occurrences": 28
+      },
+      {
+        "character": "ṇ",
+        "codepoint": "U+1E47",
+        "name": "LATIN SMALL LETTER N WITH DOT BELOW",
+        "occurrences": 5
+      },
+      {
+        "character": "ṛ",
+        "codepoint": "U+1E5B",
+        "name": "LATIN SMALL LETTER R WITH DOT BELOW",
+        "occurrences": 5
+      },
+      {
+        "character": "ṭ",
+        "codepoint": "U+1E6D",
+        "name": "LATIN SMALL LETTER T WITH DOT BELOW",
+        "occurrences": 21
+      },
+      {
+        "character": "–",
+        "codepoint": "U+2013",
+        "name": "EN DASH",
+        "occurrences": 21
+      }
+    ],
+    "section_inventory": {
+      "nair2013mullukurumba:p55:identity-ethnonym-leads": {
+        "U+004D": 1,
+        "U+0056": 1,
+        "U+0061": 1,
+        "U+0065": 2,
+        "U+006C": 2,
+        "U+0072": 1,
+        "U+0074": 1,
+        "U+0075": 3,
+        "U+0076": 1
+      },
+      "nair2013mullukurumba:p55:settlements": {
+        "U+004B": 4,
+        "U+004D": 1,
+        "U+004E": 2,
+        "U+004F": 1,
+        "U+0050": 1,
+        "U+0054": 1,
+        "U+0061": 19,
+        "U+0063": 4,
+        "U+0065": 4,
+        "U+0069": 7,
+        "U+006B": 6,
+        "U+006C": 6,
+        "U+006D": 1,
+        "U+006E": 10,
+        "U+006F": 4,
+        "U+0070": 6,
+        "U+0072": 2,
+        "U+0074": 5,
+        "U+0075": 13,
+        "U+0076": 1,
+        "U+0079": 2
+      },
+      "nair2013mullukurumba:p55:neighbour-community-names": {
+        "U+0020": 2,
+        "U+0042": 1,
+        "U+004B": 2,
+        "U+004E": 1,
+        "U+0050": 1,
+        "U+0061": 7,
+        "U+0062": 1,
+        "U+0063": 1,
+        "U+0065": 1,
+        "U+0069": 2,
+        "U+006B": 1,
+        "U+006D": 1,
+        "U+006E": 1,
+        "U+0072": 1,
+        "U+0074": 4,
+        "U+0075": 3,
+        "U+0079": 1
+      },
+      "nair2013mullukurumba:p55:livelihood-and-contact": {},
+      "nair2013mullukurumba:p55:classification-authorities": {
+        "U+0020": 1,
+        "U+004B": 1,
+        "U+004D": 1,
+        "U+0061": 2,
+        "U+0062": 1,
+        "U+006C": 2,
+        "U+006D": 1,
+        "U+0072": 1,
+        "U+0075": 3
+      },
+      "nair2013mullukurumba:p55:gender-number-general": {},
+      "nair2013mullukurumba:p55:masculine-suffixes": {
+        "U+002D": 1,
+        "U+0061": 1,
+        "U+0065": 1,
+        "U+006E": 2,
+        "U+2013": 1
+      },
+      "nair2013mullukurumba:p55:masculine-examples": {
+        "U+002D": 2,
+        "U+0061": 2,
+        "U+0065": 2,
+        "U+006B": 1,
+        "U+006C": 1,
+        "U+006D": 1,
+        "U+006E": 2,
+        "U+0074": 2,
+        "U+0075": 1,
+        "U+0332": 1
+      },
+      "nair2013mullukurumba:p55:feminine-suffixes": {
+        "U+002D": 4,
+        "U+0061": 4,
+        "U+0069": 3,
+        "U+006F": 2,
+        "U+0074": 2,
+        "U+0075": 2,
+        "U+1E37": 2,
+        "U+1E6D": 2
+      },
+      "nair2013mullukurumba:p55:feminine-examples": {
+        "U+002D": 6,
+        "U+0061": 9,
+        "U+0069": 6,
+        "U+006B": 4,
+        "U+006D": 3,
+        "U+0070": 2,
+        "U+0072": 1,
+        "U+0074": 7,
+        "U+0075": 4,
+        "U+1E37": 1,
+        "U+1E47": 2,
+        "U+1E6D": 3
+      },
+      "nair2013mullukurumba:p55:plural-suffixes": {
+        "U+002D": 2,
+        "U+0061": 6,
+        "U+006B": 2,
+        "U+006D": 2,
+        "U+1E37": 2,
+        "U+1E5B": 2,
+        "U+2013": 2
+      },
+      "nair2013mullukurumba:p55:plural-examples": {
+        "U+002D": 4,
+        "U+0061": 4,
+        "U+0065": 1,
+        "U+0069": 1,
+        "U+006B": 1,
+        "U+006D": 2,
+        "U+006E": 3,
+        "U+0070": 1,
+        "U+0072": 1,
+        "U+0074": 2,
+        "U+0075": 2,
+        "U+1E37": 1
+      },
+      "nair2013mullukurumba:p55:case-overview": {},
+      "nair2013mullukurumba:p55:nominative-zero-cells": {
+        "U+0061": 2,
+        "U+0064": 2,
+        "U+0065": 2,
+        "U+006B": 2,
+        "U+006D": 2,
+        "U+006E": 2,
+        "U+0072": 2,
+        "U+0075": 2
+      },
+      "nair2013mullukurumba:p55:accusative-suffix-cells": {
+        "U+002D": 1,
+        "U+0065": 2,
+        "U+2013": 1
+      },
+      "nair2013mullukurumba:p56:accusative-example": {
+        "U+002D": 1,
+        "U+0065": 2,
+        "U+006E": 1
+      },
+      "nair2013mullukurumba:p56:instrumental-suffix-cells": {
+        "U+002D": 2,
+        "U+0061": 4,
+        "U+006C": 2,
+        "U+0075": 1
+      },
+      "nair2013mullukurumba:p56:instrumental-examples": {
+        "U+002D": 1,
+        "U+0061": 6,
+        "U+0069": 2,
+        "U+006B": 2,
+        "U+006C": 2,
+        "U+0074": 4,
+        "U+0075": 1,
+        "U+0079": 1
+      },
+      "nair2013mullukurumba:p56:dative-suffix-cells": {
+        "U+002D": 2,
+        "U+0061": 1,
+        "U+0069": 1,
+        "U+006B": 8,
+        "U+006E": 1,
+        "U+0075": 5,
+        "U+2013": 2
+      },
+      "nair2013mullukurumba:p56:dative-examples": {
+        "U+0061": 9,
+        "U+0065": 1,
+        "U+0069": 2,
+        "U+006B": 8,
+        "U+006C": 1,
+        "U+006D": 2,
+        "U+006E": 2,
+        "U+0072": 1,
+        "U+0073": 1,
+        "U+0074": 2,
+        "U+0075": 6,
+        "U+0079": 2,
+        "U+014B": 2,
+        "U+1E37": 1
+      },
+      "nair2013mullukurumba:p56:genitive-suffix-cells": {
+        "U+002D": 1,
+        "U+0065": 3,
+        "U+006E": 1,
+        "U+0075": 1,
+        "U+1E5B": 1,
+        "U+1E6D": 1,
+        "U+2013": 2
+      },
+      "nair2013mullukurumba:p56:genitive-examples": {
+        "U+0020": 1,
+        "U+002D": 1,
+        "U+0061": 12,
+        "U+0065": 6,
+        "U+0069": 2,
+        "U+006D": 1,
+        "U+006E": 3,
+        "U+0072": 1,
+        "U+0073": 1,
+        "U+0074": 1,
+        "U+0075": 3,
+        "U+0076": 4,
+        "U+0079": 1,
+        "U+1E37": 2,
+        "U+1E5B": 1,
+        "U+1E6D": 1,
+        "U+2013": 1
+      },
+      "nair2013mullukurumba:p56:locative-suffix-cells": {
+        "U+0020": 1,
+        "U+002D": 5,
+        "U+0061": 2,
+        "U+0069": 4,
+        "U+006C": 4,
+        "U+0074": 4,
+        "U+0075": 2,
+        "U+2013": 1
+      },
+      "nair2013mullukurumba:p56:locative-examples": {
+        "U+0020": 1,
+        "U+002D": 2,
+        "U+0061": 6,
+        "U+0065": 1,
+        "U+0069": 5,
+        "U+006B": 1,
+        "U+006C": 4,
+        "U+006E": 1,
+        "U+006F": 1,
+        "U+0072": 1,
+        "U+0074": 6,
+        "U+0075": 3,
+        "U+0079": 1,
+        "U+1E47": 1,
+        "U+1E6D": 1,
+        "U+2013": 1
+      },
+      "nair2013mullukurumba:p56:ablative-cells": {
+        "U+002D": 1,
+        "U+006E": 4,
+        "U+0075": 2,
+        "U+2013": 1
+      },
+      "nair2013mullukurumba:p56:ablative-examples": {
+        "U+0020": 1,
+        "U+002D": 1,
+        "U+0061": 3,
+        "U+0065": 1,
+        "U+0069": 3,
+        "U+006C": 1,
+        "U+006D": 1,
+        "U+006E": 5,
+        "U+0072": 1,
+        "U+0074": 4,
+        "U+0075": 2
+      },
+      "nair2013mullukurumba:p56:directive-cells": {
+        "U+0061": 1,
+        "U+0065": 2,
+        "U+006B": 4,
+        "U+0075": 1,
+        "U+2013": 1
+      },
+      "nair2013mullukurumba:p56:directive-examples": {
+        "U+0061": 3,
+        "U+0065": 4,
+        "U+006B": 4,
+        "U+006C": 1,
+        "U+0070": 1,
+        "U+0074": 2,
+        "U+0075": 4,
+        "U+1E5B": 1,
+        "U+1E6D": 2
+      },
+      "nair2013mullukurumba:p56:pronouns-first-singular": {
+        "U+002D": 1,
+        "U+0061": 2,
+        "U+0065": 1,
+        "U+006E": 3,
+        "U+0075": 1
+      },
+      "nair2013mullukurumba:p56:pronouns-first-plural": {
+        "U+0061": 4,
+        "U+006D": 2,
+        "U+006E": 2,
+        "U+014B": 2,
+        "U+0332": 1,
+        "U+1E37": 2
+      },
+      "nair2013mullukurumba:p56:pronouns-second-singular": {
+        "U+002D": 1,
+        "U+0069": 2,
+        "U+006E": 3,
+        "U+0075": 1,
+        "U+0079": 2
+      },
+      "nair2013mullukurumba:p56:pronouns-second-plural": {
+        "U+0061": 1,
+        "U+006E": 1,
+        "U+0075": 1,
+        "U+014B": 2,
+        "U+1E37": 1
+      },
+      "nair2013mullukurumba:p56:pronouns-third-masculine-singular": {
+        "U+0061": 3,
+        "U+0069": 1,
+        "U+006E": 2,
+        "U+0075": 2,
+        "U+0076": 2
+      },
+      "nair2013mullukurumba:p56:pronouns-third-feminine-singular": {
+        "U+0061": 3,
+        "U+0069": 1,
+        "U+0075": 2,
+        "U+0076": 2,
+        "U+1E37": 2
+      },
+      "nair2013mullukurumba:p56:pronouns-third-neuter-singular": {
+        "U+0061": 1,
+        "U+0069": 1,
+        "U+0074": 2,
+        "U+0075": 2
+      },
+      "nair2013mullukurumba:p56:pronouns-third-plural": {
+        "U+0061": 6,
+        "U+0063": 4,
+        "U+0069": 4,
+        "U+0072": 2,
+        "U+0075": 2,
+        "U+0076": 4
+      },
+      "nair2013mullukurumba:p56:pronouns-third-neuter-plural": {
+        "U+0061": 3,
+        "U+0069": 1,
+        "U+006B": 2,
+        "U+0074": 2,
+        "U+0075": 2,
+        "U+1E37": 2
+      },
+      "nair2013mullukurumba:p56:pronoun-commentary-occurrences": {
+        "U+0061": 9,
+        "U+0063": 4,
+        "U+0069": 5,
+        "U+006B": 2,
+        "U+0072": 2,
+        "U+0074": 2,
+        "U+0075": 4,
+        "U+0076": 4,
+        "U+1E37": 2
+      },
+      "nair2013mullukurumba:p56:v-base-commentary": {
+        "U+002D": 1,
+        "U+0061": 1,
+        "U+0062": 1,
+        "U+0065": 1,
+        "U+0073": 1,
+        "U+0076": 1
+      },
+      "nair2013mullukurumba:p56:interrogative-bases": {
+        "U+0065": 3
+      },
+      "nair2013mullukurumba:p57:interrogative-pronouns": {
+        "U+0061": 1,
+        "U+0065": 8,
+        "U+006E": 2,
+        "U+0074": 2,
+        "U+0075": 3,
+        "U+0076": 2,
+        "U+1E37": 1
+      },
+      "nair2013mullukurumba:p57:numeral-commentary": {},
+      "nair2013mullukurumba:p57:tense-overview": {},
+      "nair2013mullukurumba:p57:past-examples": {
+        "U+0061": 4,
+        "U+0065": 6,
+        "U+0069": 2,
+        "U+006E": 7,
+        "U+006F": 1,
+        "U+0074": 3,
+        "U+0075": 1,
+        "U+0079": 1,
+        "U+1E47": 2,
+        "U+1E6D": 3
+      },
+      "nair2013mullukurumba:p57:present-suffixes": {
+        "U+0069": 1,
+        "U+006E": 4,
+        "U+0075": 5,
+        "U+2013": 3
+      },
+      "nair2013mullukurumba:p57:present-examples": {
+        "U+002D": 4,
+        "U+0061": 1,
+        "U+0063": 1,
+        "U+0065": 1,
+        "U+0069": 3,
+        "U+006E": 4,
+        "U+006F": 2,
+        "U+0070": 4,
+        "U+0074": 2,
+        "U+0075": 8,
+        "U+1E37": 1,
+        "U+1E6D": 2
+      },
+      "nair2013mullukurumba:p57:future-suffixes": {
+        "U+002D": 1,
+        "U+006D": 1,
+        "U+006E": 1,
+        "U+0070": 1,
+        "U+0075": 2,
+        "U+2013": 3
+      },
+      "nair2013mullukurumba:p57:future-examples": {
+        "U+002D": 4,
+        "U+0063": 3,
+        "U+0065": 4,
+        "U+006B": 4,
+        "U+006E": 6,
+        "U+006F": 5,
+        "U+0070": 2,
+        "U+0074": 1,
+        "U+0075": 6,
+        "U+0076": 2,
+        "U+0079": 2,
+        "U+1E37": 2,
+        "U+1E6D": 4
+      },
+      "nair2013mullukurumba:p57:relative-participle-marker": {
+        "U+0061": 2,
+        "U+2013": 2
+      },
+      "nair2013mullukurumba:p57:relative-participle-examples": {
+        "U+002D": 4,
+        "U+0061": 8,
+        "U+0069": 2,
+        "U+006E": 1,
+        "U+0070": 2,
+        "U+0074": 3,
+        "U+0075": 3,
+        "U+0079": 2,
+        "U+00F1": 2,
+        "U+1E37": 4
+      },
+      "nair2013mullukurumba:p57:verbal-participle-overview": {},
+      "nair2013mullukurumba:p57:verbal-participle-examples": {
+        "U+002D": 2,
+        "U+0061": 4,
+        "U+0065": 2,
+        "U+0069": 2,
+        "U+006E": 5,
+        "U+0070": 2,
+        "U+0074": 1,
+        "U+0075": 2,
+        "U+0079": 3,
+        "U+1E6D": 2
+      },
+      "nair2013mullukurumba:p57:pronominal-suffix-overview": {},
+      "nair2013mullukurumba:p57:suffix-first-person-cells": {
+        "U+002D": 2,
+        "U+0065": 1,
+        "U+006E": 2,
+        "U+006F": 1
+      },
+      "nair2013mullukurumba:p57:suffix-second-person-cells": {
+        "U+002D": 2,
+        "U+0065": 1,
+        "U+0074": 1,
+        "U+0075": 3
+      },
+      "nair2013mullukurumba:p57:suffix-third-masculine-singular-cell": {
+        "U+002D": 1,
+        "U+0061": 3,
+        "U+0065": 1,
+        "U+006E": 3,
+        "U+0076": 1
+      },
+      "nair2013mullukurumba:p57:suffix-third-feminine-singular-cell": {
+        "U+002D": 2,
+        "U+0061": 4,
+        "U+006F": 2,
+        "U+0075": 4,
+        "U+0076": 1,
+        "U+1E37": 4
+      },
+      "nair2013mullukurumba:p57:suffix-third-plural-cell": {
+        "U+0061": 7,
+        "U+0063": 2,
+        "U+0065": 2,
+        "U+0072": 2,
+        "U+0074": 2,
+        "U+0075": 4
+      },
+      "nair2013mullukurumba:p57:suffix-third-feminine-plural-blank": {},
+      "nair2013mullukurumba:p57:suffix-neuter-zero-cells": {
+        "U+0020": 2,
+        "U+0028": 2,
+        "U+0029": 2,
+        "U+0061": 2,
+        "U+0064": 2,
+        "U+0065": 2,
+        "U+006B": 2,
+        "U+006D": 2,
+        "U+006E": 2,
+        "U+0072": 2,
+        "U+0075": 2,
+        "U+00F8": 2
+      },
+      "nair2013mullukurumba:p58:reported-bibliography": {
+        "U+0020": 3,
+        "U+002C": 1,
+        "U+002E": 1,
+        "U+0044": 1,
+        "U+004A": 1,
+        "U+0052": 1,
+        "U+0053": 1,
+        "U+0061": 2,
+        "U+0062": 1,
+        "U+0065": 2,
+        "U+0068": 2,
+        "U+006F": 2,
+        "U+0070": 1,
+        "U+0072": 1,
+        "U+0073": 1,
+        "U+0074": 2,
+        "U+0079": 1
+      },
+      "nair2013mullukurumba:p58:book-colophon": {},
+      "nair2013mullukurumba:p3:contents": {},
+      "nair2013mullukurumba:p12:shared-classification-subgroups": {},
+      "nair2013mullukurumba:p12:reported-thurston-classification": {}
+    },
+    "notation": {
+      "U+0323": "Separate round dot in original Symbol font; literal underdot, no IPA claim.",
+      "U+0303": "Visible original upper tilde, literal nasal-shaped sign, no automatic phonemic claim.",
+      "U+0332": "Separate drawn lower horizontal line beneath l on p55 and n on p56, distinct from round underdot.",
+      "U+2013": "Printed en dash in several bound forms, retained distinctly from hyphen-minus."
+    },
+    "PUA_remaining": 0,
+    "dedicated_transcription_profile": "Not applicable with source-level convert:false; Unicode inventory and parser retention are tested instead."
+  },
+  "pending": [
+    "Full independent original glyph/scope reading",
+    "fresh actual-output audit and graph review",
+    "root guarded installation approval",
+    "coordinated compiled/full-build/browser gates"
+  ],
+  "canonical_changes": false
+}

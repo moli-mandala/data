@@ -1,0 +1,31 @@
+file: 20261025-cheung-ediv.csv
+defaults:
+  # Modern Iranian languages: Iranist consonants -> house letters (conversion/cheung-ediv.txt).
+  # Old and Middle Iranian (Av OPers MPrs Parth Khot Tumsh Sogd Chvar Bactr) keep their
+  # philological transliteration: no rule matches them, so they are not converted.
+  transcription:
+    - profile: cheung-ediv
+      preserve_hyphens: true
+      languages: [Asht, Bakht, Bal, Bashk, Gazic, Gil, Gur, Ishk, JHam, Kavir, Khuns, Kumz,
+                  Kurd, Lasg, Lur, Maz, Mj, Natz, Nayin, Orm, Oss, Par, Pers, Psht, Rosh, Sang,
+                  Sangs, Sar, Semn, Shgh, Shmz, Siv, Soic, SorkhA, Taj, Tal, Tati, Vafsi, Wj,
+                  Wkh, X, Yazgh, Yghn, Yid, Zaza, ZorYzd, wne]
+  identity:
+    legacy_ids: stem
+    append_order: 112
+  importer:
+    commands:
+      - [data/other/forms/raw_data/cheung_ediv_2007/import_source.py, --install]
+      - [data/other/forms/raw_data/cheung_ediv_2007/build_profile.py]
+    note: >-
+      Needs the copyrighted PDF (not redistributed) at the path in
+      raw_data/cheung_ediv_2007/manifest.json, or the verified extraction cache
+      tmp/iranic/cheung/extract.json.gz. Dictionary body printed pp. 1-475 (PDF 26-500).
+sources:
+  cheung2007ediv:
+    identity:
+      dedupe_by_entry_key: true
+    reference:
+      editor: "Aryaman Arora; Anthropic Claude"
+      ocr: false
+      etymology_provenance: source

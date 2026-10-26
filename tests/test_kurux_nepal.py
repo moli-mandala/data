@@ -7,7 +7,7 @@ from segments.tokenizer import Tokenizer
 
 
 DATA_DIR = Path(__file__).parents[1]
-SOURCE_FILE = DATA_DIR / "data/other/forms/20260813-kurux-nepal.csv"
+SOURCE_FILE = DATA_DIR / "data/other/forms/raw_data/kurux_nepal_2022/whole-source-recovery/legacy-before-whole-recovery.csv"
 
 
 def test_kurux_nepal_import_is_complete_and_target_only():

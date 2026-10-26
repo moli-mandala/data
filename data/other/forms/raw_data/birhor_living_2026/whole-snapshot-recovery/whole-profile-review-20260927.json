@@ -1,0 +1,18 @@
+{
+  "status": "owner profile review; full output independent approval pending",
+  "input_policy": "Source phonetic field where present; literal source-note form otherwise. No inferred phonemic layer assigned to subsidiary note attestations.",
+  "changes_from_historical_draft": {
+    "w": "House w→v, including supplied phonetic w; Original and Phonemic preserve source.",
+    "y": "Literal y preserved; no invented contrast.",
+    "NBSP": "Display word boundary normalized to space, original retained."
+  },
+  "retained_source_routes": {
+    "j": "IPA-like source j→house y; note examples majom, mijaʔ, suija use same notation.",
+    "dʒ/ʤ": "House j",
+    "tʃ/ʧ": "House c",
+    "ʔ": "Glottal stop retained",
+    "nasality": "Combining tilde and precomposed vowels agree under NFC/NFD; no inference of missing nasal marks.",
+    "native": "Devanagari retained unchanged, not generated from Roman."
+  },
+  "validation": "All proposed primary input strings convert without replacement glyphs and agree NFC/NFD in focused test; actual parser preserves Original/Native/Phonemic/Gloss/Notes/Source and all keys."
+}

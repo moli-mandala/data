@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Kurux · Shackelford et al. 2022 source records · batch 083. Pending user review.
+
+| # | Kurux | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **ɛkase** ‘how (what is it like)’ | Proposed reflex of [**DEDR 5151**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=465) | The full DEDR 5151 article gives Kurux: nē who ( sg. ); nē nē id. ( pl. ); endr what ( sg. ); endr endr id. ( pl. ); ekdas, ekdā which man, which woman or thing; adj. ekā; endrad, endrā what thing; ek'am any, every; ehō̃, ekhō, ohō̃, okhō where precisely; ēkābīrī at what time of day; ekāge when; ekannē, ekāsē of…. Shackelford records ɛkase ‘how (what is it like)’; DEDR Kurux ekāsē ‘of what kind’.  (2 records.) |
+| 2 | **ikase** ‘how (what is it like)’ | Proposed reflex of [**DEDR 5151**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=465) | The full DEDR 5151 article gives Kurux: nē who ( sg. ); nē nē id. ( pl. ); endr what ( sg. ); endr endr id. ( pl. ); ekdas, ekdā which man, which woman or thing; adj. ekā; endrad, endrā what thing; ek'am any, every; ehō̃, ekhō, ohō̃, okhō where precisely; ēkābīrī at what time of day; ekāge when; ekannē, ekāsē of…. Shackelford records ikase ‘how (what is it like)’; DEDR Kurux ekāsē ‘of what kind’.  (1 record.) |
+| 3 | **ɛkasɛ** ‘how (what is it like); how (to do something)’ | Proposed reflex of [**DEDR 5151**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=465) | The full DEDR 5151 article gives Kurux: nē who ( sg. ); nē nē id. ( pl. ); endr what ( sg. ); endr endr id. ( pl. ); ekdas, ekdā which man, which woman or thing; adj. ekā; endrad, endrā what thing; ek'am any, every; ehō̃, ekhō, ohō̃, okhō where precisely; ēkābīrī at what time of day; ekāge when; ekannē, ekāsē of…. Shackelford records ɛkasɛ ‘how (what is it like); how (to do something)’; DEDR Kurux ekāsē ‘of what kind’.  (1 record.) |
+| 4 | **ad** ‘that; he’ | Proposed reflex of [**DEDR 1**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=1) | The full DEDR 1 article gives Kurux: a- that most remote (contrast 557 hu- that intermediate); ās, ār/abṛar, ād, abṛā that man, those persons, that woman or thing, those things; adj. ā; ābīrī then, at that moment; adā, ahāy there!; ajgō in that direction, on that spot; annē such; adv. so; annū, ānū by that way;…. Shackelford records ad ‘that; he’; DEDR Kurux ād ‘that man, those persons, that woman or thing, those things’.  (2 records.) |
+| 5 | **ībaṛan** ‘these’ | Proposed reflex of [**DEDR 410**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=38) | The full DEDR 410 article gives Kurux: īs, īr/ibṛar, īd, ibṛā this man, these persons, this woman or thing, these things; adj. ī; ībīrī at this moment (previously mentioned); idā, isan, hisan here; istī from here; idim just at present; idnā this year; īge therefore; ijgō in this direction; innū in this direction, by…. Shackelford records ībaṛan ‘these’; DEDR Kurux ibṛā ‘this man, these persons, this woman or thing, these things’.  (1 record.) |
+
+Proposed assignment rows: **7**. Affected records: **7**. Relation kinds: **reflex**.
+
+Exact persistent IDs, source locators and ordered assignments: [batch-083.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Kurux/batch-083.json).
+
+Excluded uncertain responses are documented in [research holds](../kurux-shackelford-20260925/research-holds.json). No new lexical material or donor nodes are proposed.

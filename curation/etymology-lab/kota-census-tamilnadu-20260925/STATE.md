@@ -1,0 +1,7 @@
+# Census Tamil Nadu Kota residual research — checkpoint 001
+
+The compiled Census Tamil Nadu Kota source has **496** records. Earlier pending research owns **84**; this pass assesses the remaining **412** exact source IDs. It proposes **49** DEDR whole-article assignment rows affecting **47** records, with ordered components for the maternal-uncle’s-daughter and head-hair compounds. Another **365** records are explicit research holds; none remain unexamined. Original source forms, including spacing and imperfect glosses, locators and identities are preserved. No earlier review manifest owns any residual ID.
+
+All 412 forms were searched using the homepage `fetchLemmaList` against the read-only local database in twelve bounded chunks, returning **1,689** rows with no capped searches. The full text of **38** shortlisted DEDR articles is retained in `primary-evidence.json`. Ten current review batches, **038–047**, agree exactly with the proposed decisions. Many Census responses are multi-part or auxiliary-bearing, and others have unresolved loans, transcription or gloss conflicts; these remain on explicit hold for closer analysis.
+
+Canonical `make check-pass PY=.venv/bin/python` passed at checkpoint **001**, with **zero** second-application changes. `checkpoint-001-validation.json` independently verifies manifest agreement. Exact source/prior-pass coverage and older-review overlap checks passed. No `save-pass`, accepted sidecar edit, rebuild, commit, push or deployment was performed for this pass.

@@ -92,6 +92,15 @@ def main() -> None:
     parser.add_argument("--install", action="store_true")
     parser.add_argument("--check-pdf", action="store_true")
     args = parser.parse_args()
+    if args.install:
+        # Prevent the historical glossary route from truncating whole-source data.
+        import subprocess
+        import sys
+        command = [sys.executable, str(PACKAGE / 'install_reviewed_whole.py'), '--install']
+        if args.check_pdf:
+            command.append('--check-pdf')
+        subprocess.run(command, check=True)
+        return
     if args.check_pdf:
         digest = hashlib.sha256()
         with PDF.open("rb") as stream:

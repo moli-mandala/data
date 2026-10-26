@@ -1,0 +1,56 @@
+{
+  "status": "metadata installation plan only; review and source acceptance pending",
+  "source_id": "bailey1920northjubbal",
+  "language": {
+    "ID": "Barari",
+    "Name": "Barari",
+    "Glottocode": "",
+    "Latitude": "31.45",
+    "Longitude": "77.7",
+    "Clade": "W. Pahari",
+    "Location": "Zoller 2023 source label: Barari; separate language record by explicit editorial decision, 2026-09-13; source locality coordinates not supplied; approximate regional display point",
+    "Quality": "C"
+  },
+  "language_decision": "Reuse canonical Barari under the existing explicit editorial decision. North Jubbal is the source name for this language; no narrower stable survey site or new dialect is asserted.",
+  "coordinates_decision": "Retain existing quality-C approximate regional point and its caveat; no new coordinates inferred.",
+  "transcription": {
+    "profile": "bailey-north-jubbal-1920",
+    "input": "form",
+    "preserve_hyphens": true
+  },
+  "identity": {
+    "legacy_ids": "stem",
+    "append_order": 53
+  },
+  "dedupe_by_entry_key": true,
+  "split_alternates": false,
+  "reference_fields_proposal": {
+    "title": "Linguistic Studies from the Himalayas: Being Studies in the Grammar of Fifteen Himalayan Dialects",
+    "series": "Asiatic Society Monographs",
+    "volume": "XVIII",
+    "year": "1920",
+    "address": "London",
+    "publisher": "Royal Asiatic Society",
+    "url": "https://archive.org/details/linguisticstudie00bailrich",
+    "license": "Public domain; original 1920 edition",
+    "note": "Bailey's North Jubbal or Barari lexical section maps to canonical Barari and is distinct from the Koci chapters. The LSI IX(IV) account of Barari on pp. 599--601 has a prose specimen, not this vocabulary. Zoller 2023 Barari citations to Bailey p. 185 are derivative attestations of the same printed evidence, not independent field elicitation. Wikimedia-hosted Internet Archive scan, 310 PDF pages, SHA256 7a1577a2d2a24eca8b95e9b1ed700ef01f716d1069e4468f36a673611d093b39.",
+    "included": "North Jubbal/Barari introduction, grammar, paradigms and complete translated responses, printed pp. 172–184; complete glossary pp. 185–188; explicitly North Jubbal suffix comparison on p. 143; applicable vowel-notation guidance on p. 114. The currency discussion on p. 184 refers to p. 167, note 13, whose uncertainty is retained. Other named lects and comparative controls remain separately attributed and excluded from Barari output.",
+    "provenance": "data/other/forms/20260925-bailey-north-jubbal.csv; data/other/forms/raw_data/bailey_north_jubbal_1920/full-transcription.tsv; data/other/forms/raw_data/bailey_north_jubbal_1920/whole-source-recovery; final whole-output audit path to be supplied at approved installation",
+    "jambu_editor": "OpenAI Codex",
+    "ocr": "Yes"
+  },
+  "reference_editors": {
+    "editor": "OpenAI Codex",
+    "ocr": true,
+    "etymology_provenance": "none"
+  },
+  "settings_before_sha256": "d2124b155cc3c0a7cd9adc6549f03591971cd1a330e564c2c0c2a01ef0091eab",
+  "pending": [
+    "Independent source reviews and approved whole-output freeze",
+    "Replace glossary-only importer route with guarded whole-source installer",
+    "Use final installed whole-output audit path in bibliography provenance",
+    "Update settings importer note and README counts from final approved manifest",
+    "Regenerated references and compiled graph checks at user-authorized full build"
+  ],
+  "canonical_changes": false
+}

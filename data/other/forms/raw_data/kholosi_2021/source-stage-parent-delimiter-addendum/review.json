@@ -1,0 +1,68 @@
+{
+  "status": "proposed serializer correction; root review pending",
+  "rows": 1135,
+  "affected_rows": 6,
+  "old_csv_sha256": "97ebfb4fc673ca06b805736030340bf2206b53e73af3cd76ed065b02bbd1f2bd",
+  "new_csv_sha256": "4a034de4c3624e825117045e12a0586e028fd37df2509448b1d8e9b840ff9b22",
+  "changes": [
+    {
+      "entry_key": "kholosi:pdf:p3:c1:u22:sense:1",
+      "old": "kholosi:pdf:p3:c1:u21:sense:1 legacy:20220913-kholosi:row:29",
+      "new": "kholosi:pdf:p3:c1:u21:sense:1|legacy:20220913-kholosi:row:29",
+      "parent_keys": [
+        "kholosi:pdf:p3:c1:u21:sense:1",
+        "legacy:20220913-kholosi:row:29"
+      ]
+    },
+    {
+      "entry_key": "kholosi:pdf:p7:c1:u14:sense:1",
+      "old": "legacy:20220913-kholosi:row:76 legacy:20220913-kholosi:row:132",
+      "new": "legacy:20220913-kholosi:row:76|legacy:20220913-kholosi:row:132",
+      "parent_keys": [
+        "legacy:20220913-kholosi:row:76",
+        "legacy:20220913-kholosi:row:132"
+      ]
+    },
+    {
+      "entry_key": "kholosi:github:18b43f982efa:lexicon.csv:row16:paradigm:1",
+      "old": "kholosi:github:18b43f982efa:lexicon.csv:row16 kholosi:github:18b43f982efa:lexicon.csv:row16:morphology:8",
+      "new": "kholosi:github:18b43f982efa:lexicon.csv:row16|kholosi:github:18b43f982efa:lexicon.csv:row16:morphology:8",
+      "parent_keys": [
+        "kholosi:github:18b43f982efa:lexicon.csv:row16",
+        "kholosi:github:18b43f982efa:lexicon.csv:row16:morphology:8"
+      ]
+    },
+    {
+      "entry_key": "kholosi:github:18b43f982efa:lexicon.csv:row23:paradigm:1",
+      "old": "kholosi:github:18b43f982efa:lexicon.csv:row23 kholosi:github:18b43f982efa:lexicon.csv:row23:morphology:9",
+      "new": "kholosi:github:18b43f982efa:lexicon.csv:row23|kholosi:github:18b43f982efa:lexicon.csv:row23:morphology:9",
+      "parent_keys": [
+        "kholosi:github:18b43f982efa:lexicon.csv:row23",
+        "kholosi:github:18b43f982efa:lexicon.csv:row23:morphology:9"
+      ]
+    },
+    {
+      "entry_key": "kholosi:github:18b43f982efa:lexicon.csv:row181",
+      "old": "kholosi:github:18b43f982efa:lexicon.csv:row2 kholosi:github:18b43f982efa:lexicon.csv:row180 kholosi:github:18b43f982efa:lexicon.csv:row181:morphology:11",
+      "new": "kholosi:github:18b43f982efa:lexicon.csv:row2|kholosi:github:18b43f982efa:lexicon.csv:row180|kholosi:github:18b43f982efa:lexicon.csv:row181:morphology:11",
+      "parent_keys": [
+        "kholosi:github:18b43f982efa:lexicon.csv:row2",
+        "kholosi:github:18b43f982efa:lexicon.csv:row180",
+        "kholosi:github:18b43f982efa:lexicon.csv:row181:morphology:11"
+      ]
+    },
+    {
+      "entry_key": "kholosi:github:18b43f982efa:lexicon.csv:row402",
+      "old": "kholosi:github:18b43f982efa:lexicon.csv:row38 kholosi:github:18b43f982efa:lexicon.csv:row402:morphology:14",
+      "new": "kholosi:github:18b43f982efa:lexicon.csv:row38|kholosi:github:18b43f982efa:lexicon.csv:row402:morphology:14",
+      "parent_keys": [
+        "kholosi:github:18b43f982efa:lexicon.csv:row38",
+        "kholosi:github:18b43f982efa:lexicon.csv:row402:morphology:14"
+      ]
+    }
+  ],
+  "compiler_contract": "unify_cldf.py resolves Derivation_Parent_Keys with split(\"|\"); spaces made six compound parent lists unresolved.",
+  "scope": "Only field 13 delimiters change. Every literal, source key, parent identity and source claim is identical.",
+  "frozen_r3_unchanged": true,
+  "canonical_changed": false
+}

@@ -1,0 +1,99 @@
+{
+  "reviewer": "norton_finish",
+  "date": "2026-09-27",
+  "status": "bounded independent export accounting review; two material cross-section identity omissions; not whole-output acceptance",
+  "scope": "Entire 5232-unit accounting mechanically checked; original images specifically reopened for numbered48/65/87 and two further language labels. This is not an independent rereading of all3660 rows; earlier authored transcription is not counted as independent evidence.",
+  "frozen_hashes": {
+    "whole-source-export-preview.csv": "c42730f3d131a995b8b0be6af0b28b29d4e626a22e206e8d8020dd5c87b02f22",
+    "whole-source-export-audit.jsonl": "23c29d9b4e1132a82c00d8a3043aa06b5e33a8abadbe0509d46436ff343244b4",
+    "whole-source-export-status.json": "f63b549709fe55838ed7ebaed7813c3fd22e068bfdd821239541b43ae0a99a86",
+    "whole-source-assembly-preview.jsonl": "1f3f287afcb6d93a25d13d284cf54e967d9d2290d0c6419a269d622a1048a4d0"
+  },
+  "source_image_hashes": {
+    "numbered-review/p84-1.jpg": "9705e1f3948b3692079208720977a077f3880d7387e32bbdce05cf33f3dd2be1",
+    "numbered-review/p84-2.jpg": "3149989cb850d720ede21377d3b9b39cbda9596c70142e9c4e251bdae91e8d71",
+    "numbered-review/p85-2.jpg": "b9faeb66a66085ee35a95be57888b636d3486b1d7c42acdc1e3c72ffddc36a38",
+    "numbered-review/p88-1.jpg": "d934dd14a173b4530fad33479853d1a4ea119e18c4827f86ed208f6e926c0800",
+    "numbered-review/p88-2.jpg": "86e14e68923212f5ab5f90ba4a9b720d3a3a9642972e84894e0f64454bd06e60",
+    "further-detail/p101-2.jpg": "7db950790fcc5c537f1aeea6cf303e4f48bb63f4aa2d2de13b04a9c4123da858",
+    "further-detail/p102-2.jpg": "ff1083887c20e378add2409f7d53045b256ce9d19ed72ff5826c16081b04db96"
+  },
+  "accounting": {
+    "rows": 3660,
+    "columns": {
+      "15": 3660
+    },
+    "unique_entry_keys": 3660,
+    "audit_units": 5232,
+    "unique_audit_keys": 5232,
+    "assembly_audit_key_sets_equal": true,
+    "csv_audit_emission_key_sets_equal": true,
+    "emission_count": 3660,
+    "legacy_keys": 742,
+    "legacy_missing": [],
+    "pinned_input_mismatches": [],
+    "section_rows": {
+      "thematic": 742,
+      "grammar": 658,
+      "reverse": 741,
+      "homophones": 427,
+      "named-groups": 145,
+      "numbered": 313,
+      "kokborok": 68,
+      "brokskat": 144,
+      "santali": 192,
+      "further": 133,
+      "basic": 97
+    }
+  },
+  "source_analysis_decisions": [
+    {
+      "group": 48,
+      "source_scope": "No printed head. Two reported ancient settlement names and the attributed literary/spiritual sense of নগর are fully retained in source_analysis.",
+      "decision": "Maintain documentary/unresolved-language records, not a fabricated Chakma head or automatically Sanskrit quotation. Named work identity alone does not establish the language of the printed cited form."
+    },
+    {
+      "group": 65,
+      "source_scope": "Explicit বাট (পথ) + চেই (চেয়ে), development বাটচেই > বাড়চেই > বাচ্চেই, and cited বাট চাহিঅ are all present in nested audit. The lexical head is emitted.",
+      "decision": "No explicit language/stage labels accompany constituents/development stages/literary quotation. Retain current typed unresolved attribution; no OB or Sk routing solely from work identity. Terminal বাচ্চেই repeats the emitted head; avoid duplicate merely to restate its development position."
+    },
+    {
+      "group": 87,
+      "source_scope": "Origin লম্পক and cited-work লম্বক are visibly distinct in originals and both preserved. The Chakma head and definition are emitted.",
+      "decision": "Do not correct প to ব, infer Sanskrit from Ksemendra, or claim primary passage collation. Retain source-origin relationship as unlinked attributed analysis with unresolved language."
+    }
+  ],
+  "material_findings": [
+    {
+      "source_unit_key": "niranjan2010chakma:p99:further-comparison:row25:comparison",
+      "old_language_proposal": null,
+      "proposed_language_id": "Pk",
+      "form": "তুত্ত",
+      "gloss_bn": "ভেঙে যাওয়া, বিনষ্ট।",
+      "source_label": "প্রাকৃত",
+      "required_note": "The source labels this comparison Prakrit without specifying a variety. No subtype, place or Maharashtri attribution inferred.",
+      "basis": "Exact printed language label independently verified; apply the same base-routing policy already accepted for the numbered chapter. No ancestry link or narrower lect inferred.",
+      "original_evidence": "further-detail/p101-2.jpg"
+    },
+    {
+      "source_unit_key": "niranjan2010chakma:p100:further-comparison:row18:comparison",
+      "old_language_proposal": null,
+      "proposed_language_id": "Sk",
+      "form": "গাবৌ",
+      "gloss_bn": "গরু",
+      "source_label": "বৈদিক",
+      "required_note": "The source attributes this comparison to Vedic. No early/late stage, text or date is specified.",
+      "basis": "Exact printed language label independently verified; apply the same base-routing policy already accepted for the numbered chapter. No ancestry link or narrower lect inferred.",
+      "original_evidence": "further-detail/p102-2.jpg"
+    }
+  ],
+  "remaining_further_holds": {
+    "count_after_two_proposed_repairs": 24,
+    "decision": "No other exact match to the previously accepted numbered-label routes found. Four মুন্ডা witnesses consistently remain group-versus-lect holds. Geographic গুজরাট and apparently printed বাংজবংশী require separate explicit identity adjudication; do not silently reinterpret. Other community/historical/uncertain labels retain their specific holds."
+  },
+  "limitations": [
+    "No canonical or frozen files modified.",
+    "Graph/metadata/profile/build/browser installation gates not certified by this bounded review.",
+    "The source_claim kind must not become a permanent blanket exclusion policy: current three holds are individually justified by absent language attribution, with all explicit forms and claims retained."
+  ]
+}

@@ -1,0 +1,554 @@
+{
+  "date": "2026-09-27",
+  "reviewer": "asur_finish",
+  "status": "research proposals; parent adjudication and any registration remain pending",
+  "inputs": {
+    "numbered-language-mapping-proposal.json": "08481e8da3b207a77677036e7dbd87676ac9751b21f352fb91b82d93b761c20c",
+    "numbered-structured-review.jsonl": "60f2d5c0e841e1d9eb2ec0933cc9f71ac18f623463fc5937b4b92808a09ea405",
+    "numbered-target-identity-research-addendum.md": "1cb7ac9d97af3ac7cee59750a45bdecf23d6e68f56e08b3d469689eaf47dcc26"
+  },
+  "local_primary_evidence": [
+    "data/cdial/abbrevs.py: Pk=Prakrit; Mu=Munda",
+    "cldf/dialects.csv: multiple Prakrit varieties under Pk",
+    "data/other/forms/20260914-sheth.csv: general Prakrit usage",
+    "cldf/languages.csv: separate Mu and mu; Chenchu absent"
+  ],
+  "counts": {
+    "existing broad base supported by actual registry usage": 21,
+    "unresolved lect retained": 6,
+    "group reference only; parent decision needed for Mu emission": 4,
+    "named language resolved; new registry approval required": 4,
+    "base supported subject to preserving Vedic source stage": 5
+  },
+  "decisions": [
+    {
+      "comparison_key": "niranjan2010chakma:numbered-comparison:group1:pdf79:left:line4:comparison:1",
+      "raw_label": "প্রা",
+      "literal_form": "অগ্‌গ",
+      "prior_base_id": null,
+      "proposed_base_id": "Pk",
+      "decision_status": "existing broad base supported by actual registry usage",
+      "source_scope_note": "The source labels this comparison Prakrit without specifying a variety. No subtype, place or Maharashtri attribution inferred.",
+      "proposed_registry_record": null,
+      "candidate_only_ids": [],
+      "accepted_for_installation": false
+    },
+    {
+      "comparison_key": "niranjan2010chakma:numbered-comparison:group3:pdf79:left:line4:comparison:1",
+      "raw_label": "প্রা",
+      "literal_form": "আঢ়অ",
+      "prior_base_id": null,
+      "proposed_base_id": "Pk",
+      "decision_status": "existing broad base supported by actual registry usage",
+      "source_scope_note": "The source labels this comparison Prakrit without specifying a variety. No subtype, place or Maharashtri attribution inferred.",
+      "proposed_registry_record": null,
+      "candidate_only_ids": [],
+      "accepted_for_installation": false
+    },
+    {
+      "comparison_key": "niranjan2010chakma:numbered-comparison:group4:pdf79:left:line4:comparison:1",
+      "raw_label": "সান",
+      "literal_form": "সেজো",
+      "prior_base_id": null,
+      "proposed_base_id": null,
+      "decision_status": "unresolved lect retained",
+      "source_scope_note": "Printed Sawar has Sora as a possible exonym match, but source provenance does not exclude other Sabar speech communities.",
+      "proposed_registry_record": null,
+      "candidate_only_ids": [
+        "so"
+      ],
+      "accepted_for_installation": false
+    },
+    {
+      "comparison_key": "niranjan2010chakma:numbered-comparison:group5:pdf79:right:line4:comparison:1",
+      "raw_label": "প্রা",
+      "literal_form": "উদঅ",
+      "prior_base_id": null,
+      "proposed_base_id": "Pk",
+      "decision_status": "existing broad base supported by actual registry usage",
+      "source_scope_note": "The source labels this comparison Prakrit without specifying a variety. No subtype, place or Maharashtri attribution inferred.",
+      "proposed_registry_record": null,
+      "candidate_only_ids": [],
+      "accepted_for_installation": false
+    },
+    {
+      "comparison_key": "niranjan2010chakma:numbered-comparison:group7:pdf79:right:line5:comparison:1",
+      "raw_label": "মু",
+      "literal_form": "কাডা",
+      "prior_base_id": null,
+      "proposed_base_id": null,
+      "decision_status": "group reference only; parent decision needed for Mu emission",
+      "source_scope_note": "Printed Munda does not establish Mundari or a reconstructed proto-form. Mu is an existing group reference, not a resolved spoken lect.",
+      "proposed_registry_record": null,
+      "candidate_only_ids": [
+        "Mu"
+      ],
+      "accepted_for_installation": false
+    },
+    {
+      "comparison_key": "niranjan2010chakma:numbered-comparison:group8:pdf79:right:line7:comparison:1",
+      "raw_label": "চে",
+      "literal_form": "কড্ডা",
+      "prior_base_id": null,
+      "proposed_base_id": "Chenchu",
+      "decision_status": "named language resolved; new registry approval required",
+      "source_scope_note": "Source-declared Chenchu; not collapsed into Telugu. Original compact-glyph review remains separate.",
+      "proposed_registry_record": {
+        "ID": "Chenchu",
+        "Name": "Chenchu",
+        "Glottocode": "chen1255",
+        "Clade": "S. Dravidian II",
+        "Latitude": "",
+        "Longitude": "",
+        "ISO_639_3_evidence": "cde"
+      },
+      "candidate_only_ids": [],
+      "accepted_for_installation": false
+    },
+    {
+      "comparison_key": "niranjan2010chakma:numbered-comparison:group9:pdf80:left:line7:comparison:1",
+      "raw_label": "কাই",
+      "literal_form": "কোকুয়া",
+      "prior_base_id": null,
+      "proposed_base_id": null,
+      "decision_status": "unresolved lect retained",
+      "source_scope_note": "Kaithi/Kayethi is not a uniquely resolved language; script-name and Bihar evidence do not select a lect.",
+      "proposed_registry_record": null,
+      "candidate_only_ids": [],
+      "accepted_for_installation": false
+    },
+    {
+      "comparison_key": "niranjan2010chakma:numbered-comparison:group10:pdf80:left:line9:comparison:1",
+      "raw_label": "চে",
+      "literal_form": "কান",
+      "prior_base_id": null,
+      "proposed_base_id": "Chenchu",
+      "decision_status": "named language resolved; new registry approval required",
+      "source_scope_note": "Source-declared Chenchu; not collapsed into Telugu. Original compact-glyph review remains separate.",
+      "proposed_registry_record": {
+        "ID": "Chenchu",
+        "Name": "Chenchu",
+        "Glottocode": "chen1255",
+        "Clade": "S. Dravidian II",
+        "Latitude": "",
+        "Longitude": "",
+        "ISO_639_3_evidence": "cde"
+      },
+      "candidate_only_ids": [],
+      "accepted_for_installation": false
+    },
+    {
+      "comparison_key": "niranjan2010chakma:numbered-comparison:group23:pdf81:right:line4:comparison:1",
+      "raw_label": "প্রা.",
+      "literal_form": "গব্ভরঅ",
+      "prior_base_id": null,
+      "proposed_base_id": "Pk",
+      "decision_status": "existing broad base supported by actual registry usage",
+      "source_scope_note": "The source labels this comparison Prakrit without specifying a variety. No subtype, place or Maharashtri attribution inferred.",
+      "proposed_registry_record": null,
+      "candidate_only_ids": [],
+      "accepted_for_installation": false
+    },
+    {
+      "comparison_key": "niranjan2010chakma:numbered-comparison:group24:pdf81:right:line3:comparison:1",
+      "raw_label": "বৈ",
+      "literal_form": "চিকিষ্ণ",
+      "prior_base_id": null,
+      "proposed_base_id": "Sk",
+      "decision_status": "base supported subject to preserving Vedic source stage",
+      "source_scope_note": "The source attributes this comparison to Vedic. No early/late stage, text or date is specified.",
+      "proposed_registry_record": null,
+      "candidate_only_ids": [],
+      "accepted_for_installation": false
+    },
+    {
+      "comparison_key": "niranjan2010chakma:numbered-comparison:group27:pdf82:left:line5:comparison:1",
+      "raw_label": "সান",
+      "literal_form": "কুহং",
+      "prior_base_id": null,
+      "proposed_base_id": null,
+      "decision_status": "unresolved lect retained",
+      "source_scope_note": "Printed Sawar has Sora as a possible exonym match, but source provenance does not exclude other Sabar speech communities.",
+      "proposed_registry_record": null,
+      "candidate_only_ids": [
+        "so"
+      ],
+      "accepted_for_installation": false
+    },
+    {
+      "comparison_key": "niranjan2010chakma:numbered-comparison:group32:pdf82:right:line4:comparison:1",
+      "raw_label": "প্রা",
+      "literal_form": "ধীতা, ঝীআ",
+      "prior_base_id": null,
+      "proposed_base_id": "Pk",
+      "decision_status": "existing broad base supported by actual registry usage",
+      "source_scope_note": "The source labels this comparison Prakrit without specifying a variety. No subtype, place or Maharashtri attribution inferred.",
+      "proposed_registry_record": null,
+      "candidate_only_ids": [],
+      "accepted_for_installation": false
+    },
+    {
+      "comparison_key": "niranjan2010chakma:numbered-comparison:group33:pdf82:right:line4:comparison:1",
+      "raw_label": "প্রা",
+      "literal_form": "জুন্ন",
+      "prior_base_id": null,
+      "proposed_base_id": "Pk",
+      "decision_status": "existing broad base supported by actual registry usage",
+      "source_scope_note": "The source labels this comparison Prakrit without specifying a variety. No subtype, place or Maharashtri attribution inferred.",
+      "proposed_registry_record": null,
+      "candidate_only_ids": [],
+      "accepted_for_installation": false
+    },
+    {
+      "comparison_key": "niranjan2010chakma:numbered-comparison:group36:pdf83:left:line3:comparison:1",
+      "raw_label": "সান",
+      "literal_form": "ডুঙ্গা",
+      "prior_base_id": null,
+      "proposed_base_id": null,
+      "decision_status": "unresolved lect retained",
+      "source_scope_note": "Printed Sawar has Sora as a possible exonym match, but source provenance does not exclude other Sabar speech communities.",
+      "proposed_registry_record": null,
+      "candidate_only_ids": [
+        "so"
+      ],
+      "accepted_for_installation": false
+    },
+    {
+      "comparison_key": "niranjan2010chakma:numbered-comparison:group39:pdf83:left:line4:comparison:1",
+      "raw_label": "প্রা",
+      "literal_form": "তেরিচ্চা",
+      "prior_base_id": null,
+      "proposed_base_id": "Pk",
+      "decision_status": "existing broad base supported by actual registry usage",
+      "source_scope_note": "The source labels this comparison Prakrit without specifying a variety. No subtype, place or Maharashtri attribution inferred.",
+      "proposed_registry_record": null,
+      "candidate_only_ids": [],
+      "accepted_for_installation": false
+    },
+    {
+      "comparison_key": "niranjan2010chakma:numbered-comparison:group42:pdf83:right:line3:comparison:1",
+      "raw_label": "বৈ",
+      "literal_form": "স্থূণা",
+      "prior_base_id": null,
+      "proposed_base_id": "Sk",
+      "decision_status": "base supported subject to preserving Vedic source stage",
+      "source_scope_note": "The source attributes this comparison to Vedic. No early/late stage, text or date is specified.",
+      "proposed_registry_record": null,
+      "candidate_only_ids": [],
+      "accepted_for_installation": false
+    },
+    {
+      "comparison_key": "niranjan2010chakma:numbered-comparison:group52:pdf84:right:line3:comparison:1",
+      "raw_label": "প্রাক.",
+      "literal_form": "পত্তাল",
+      "prior_base_id": null,
+      "proposed_base_id": "Pk",
+      "decision_status": "existing broad base supported by actual registry usage",
+      "source_scope_note": "The source labels this comparison Prakrit without specifying a variety. No subtype, place or Maharashtri attribution inferred.",
+      "proposed_registry_record": null,
+      "candidate_only_ids": [],
+      "accepted_for_installation": false
+    },
+    {
+      "comparison_key": "niranjan2010chakma:numbered-comparison:group55:pdf85:left:line4:comparison:1",
+      "raw_label": "প্রা.",
+      "literal_form": "পিলিহা",
+      "prior_base_id": null,
+      "proposed_base_id": "Pk",
+      "decision_status": "existing broad base supported by actual registry usage",
+      "source_scope_note": "The source labels this comparison Prakrit without specifying a variety. No subtype, place or Maharashtri attribution inferred.",
+      "proposed_registry_record": null,
+      "candidate_only_ids": [],
+      "accepted_for_installation": false
+    },
+    {
+      "comparison_key": "niranjan2010chakma:numbered-comparison:group57:pdf85:left:line4:comparison:1",
+      "raw_label": "প্রা.",
+      "literal_form": "পইট্ঠা",
+      "prior_base_id": null,
+      "proposed_base_id": "Pk",
+      "decision_status": "existing broad base supported by actual registry usage",
+      "source_scope_note": "The source labels this comparison Prakrit without specifying a variety. No subtype, place or Maharashtri attribution inferred.",
+      "proposed_registry_record": null,
+      "candidate_only_ids": [],
+      "accepted_for_installation": false
+    },
+    {
+      "comparison_key": "niranjan2010chakma:numbered-comparison:group58:pdf85:left:line4:comparison:1",
+      "raw_label": "প্রা.",
+      "literal_form": "পাঅ থান",
+      "prior_base_id": null,
+      "proposed_base_id": "Pk",
+      "decision_status": "existing broad base supported by actual registry usage",
+      "source_scope_note": "The source labels this comparison Prakrit without specifying a variety. No subtype, place or Maharashtri attribution inferred.",
+      "proposed_registry_record": null,
+      "candidate_only_ids": [],
+      "accepted_for_installation": false
+    },
+    {
+      "comparison_key": "niranjan2010chakma:numbered-comparison:group60:pdf85:left:line4:comparison:1",
+      "raw_label": "প্রা.",
+      "literal_form": "বাঅ",
+      "prior_base_id": null,
+      "proposed_base_id": "Pk",
+      "decision_status": "existing broad base supported by actual registry usage",
+      "source_scope_note": "The source labels this comparison Prakrit without specifying a variety. No subtype, place or Maharashtri attribution inferred.",
+      "proposed_registry_record": null,
+      "candidate_only_ids": [],
+      "accepted_for_installation": false
+    },
+    {
+      "comparison_key": "niranjan2010chakma:numbered-comparison:group63:pdf85:right:line4:comparison:1",
+      "raw_label": "প্রা.",
+      "literal_form": "বনাজ্জ",
+      "prior_base_id": null,
+      "proposed_base_id": "Pk",
+      "decision_status": "existing broad base supported by actual registry usage",
+      "source_scope_note": "The source labels this comparison Prakrit without specifying a variety. No subtype, place or Maharashtri attribution inferred.",
+      "proposed_registry_record": null,
+      "candidate_only_ids": [],
+      "accepted_for_installation": false
+    },
+    {
+      "comparison_key": "niranjan2010chakma:numbered-comparison:group66:pdf86:left:line1:comparison:1",
+      "raw_label": "বৈ.",
+      "literal_form": "ব্রাত্য",
+      "prior_base_id": null,
+      "proposed_base_id": "Sk",
+      "decision_status": "base supported subject to preserving Vedic source stage",
+      "source_scope_note": "The source attributes this comparison to Vedic. No early/late stage, text or date is specified.",
+      "proposed_registry_record": null,
+      "candidate_only_ids": [],
+      "accepted_for_installation": false
+    },
+    {
+      "comparison_key": "niranjan2010chakma:numbered-comparison:group69:pdf86:left:line4:comparison:1",
+      "raw_label": "প্রা.",
+      "literal_form": "বিলাই",
+      "prior_base_id": null,
+      "proposed_base_id": "Pk",
+      "decision_status": "existing broad base supported by actual registry usage",
+      "source_scope_note": "The source labels this comparison Prakrit without specifying a variety. No subtype, place or Maharashtri attribution inferred.",
+      "proposed_registry_record": null,
+      "candidate_only_ids": [],
+      "accepted_for_installation": false
+    },
+    {
+      "comparison_key": "niranjan2010chakma:numbered-comparison:group69:pdf86:left:line8:comparison:1",
+      "raw_label": "কাই.",
+      "literal_form": "বিলেই",
+      "prior_base_id": null,
+      "proposed_base_id": null,
+      "decision_status": "unresolved lect retained",
+      "source_scope_note": "Kaithi/Kayethi is not a uniquely resolved language; script-name and Bihar evidence do not select a lect.",
+      "proposed_registry_record": null,
+      "candidate_only_ids": [],
+      "accepted_for_installation": false
+    },
+    {
+      "comparison_key": "niranjan2010chakma:numbered-comparison:group70:pdf86:left:line3:comparison:1",
+      "raw_label": "বৈ.",
+      "literal_form": "বেন",
+      "prior_base_id": null,
+      "proposed_base_id": "Sk",
+      "decision_status": "base supported subject to preserving Vedic source stage",
+      "source_scope_note": "The source attributes this comparison to Vedic. No early/late stage, text or date is specified.",
+      "proposed_registry_record": null,
+      "candidate_only_ids": [],
+      "accepted_for_installation": false
+    },
+    {
+      "comparison_key": "niranjan2010chakma:numbered-comparison:group71:pdf86:right:line2:comparison:1",
+      "raw_label": "প্রা.",
+      "literal_form": "বোঅরী, বোরী",
+      "prior_base_id": null,
+      "proposed_base_id": "Pk",
+      "decision_status": "existing broad base supported by actual registry usage",
+      "source_scope_note": "The source labels this comparison Prakrit without specifying a variety. No subtype, place or Maharashtri attribution inferred.",
+      "proposed_registry_record": null,
+      "candidate_only_ids": [],
+      "accepted_for_installation": false
+    },
+    {
+      "comparison_key": "niranjan2010chakma:numbered-comparison:group72:pdf86:right:line4:comparison:1",
+      "raw_label": "প্রা.",
+      "literal_form": "বাথই",
+      "prior_base_id": null,
+      "proposed_base_id": "Pk",
+      "decision_status": "existing broad base supported by actual registry usage",
+      "source_scope_note": "The source labels this comparison Prakrit without specifying a variety. No subtype, place or Maharashtri attribution inferred.",
+      "proposed_registry_record": null,
+      "candidate_only_ids": [],
+      "accepted_for_installation": false
+    },
+    {
+      "comparison_key": "niranjan2010chakma:numbered-comparison:group73:pdf86:right:line4:comparison:1",
+      "raw_label": "প্রা.",
+      "literal_form": "বিডিআ",
+      "prior_base_id": null,
+      "proposed_base_id": "Pk",
+      "decision_status": "existing broad base supported by actual registry usage",
+      "source_scope_note": "The source labels this comparison Prakrit without specifying a variety. No subtype, place or Maharashtri attribution inferred.",
+      "proposed_registry_record": null,
+      "candidate_only_ids": [],
+      "accepted_for_installation": false
+    },
+    {
+      "comparison_key": "niranjan2010chakma:numbered-comparison:group75:pdf87:left:line4:comparison:1",
+      "raw_label": "চে.",
+      "literal_form": "ভূই",
+      "prior_base_id": null,
+      "proposed_base_id": "Chenchu",
+      "decision_status": "named language resolved; new registry approval required",
+      "source_scope_note": "Source-declared Chenchu; not collapsed into Telugu. Original compact-glyph review remains separate.",
+      "proposed_registry_record": {
+        "ID": "Chenchu",
+        "Name": "Chenchu",
+        "Glottocode": "chen1255",
+        "Clade": "S. Dravidian II",
+        "Latitude": "",
+        "Longitude": "",
+        "ISO_639_3_evidence": "cde"
+      },
+      "candidate_only_ids": [],
+      "accepted_for_installation": false
+    },
+    {
+      "comparison_key": "niranjan2010chakma:numbered-comparison:group78:pdf87:left:line4:comparison:1",
+      "raw_label": "প্রা.",
+      "literal_form": "জোঅ",
+      "prior_base_id": null,
+      "proposed_base_id": "Pk",
+      "decision_status": "existing broad base supported by actual registry usage",
+      "source_scope_note": "The source labels this comparison Prakrit without specifying a variety. No subtype, place or Maharashtri attribution inferred.",
+      "proposed_registry_record": null,
+      "candidate_only_ids": [],
+      "accepted_for_installation": false
+    },
+    {
+      "comparison_key": "niranjan2010chakma:numbered-comparison:group81:pdf87:right:line4:comparison:1",
+      "raw_label": "প্রা.",
+      "literal_form": "রাংডী",
+      "prior_base_id": null,
+      "proposed_base_id": "Pk",
+      "decision_status": "existing broad base supported by actual registry usage",
+      "source_scope_note": "The source labels this comparison Prakrit without specifying a variety. No subtype, place or Maharashtri attribution inferred.",
+      "proposed_registry_record": null,
+      "candidate_only_ids": [],
+      "accepted_for_installation": false
+    },
+    {
+      "comparison_key": "niranjan2010chakma:numbered-comparison:group81:pdf87:right:line8:comparison:1",
+      "raw_label": "মু.",
+      "literal_form": "রান্দিয়া কুরি",
+      "prior_base_id": null,
+      "proposed_base_id": null,
+      "decision_status": "group reference only; parent decision needed for Mu emission",
+      "source_scope_note": "Printed Munda does not establish Mundari or a reconstructed proto-form. Mu is an existing group reference, not a resolved spoken lect.",
+      "proposed_registry_record": null,
+      "candidate_only_ids": [
+        "Mu"
+      ],
+      "accepted_for_installation": false
+    },
+    {
+      "comparison_key": "niranjan2010chakma:numbered-comparison:group86:pdf88:left:line7:comparison:1",
+      "raw_label": "সান.",
+      "literal_form": "লা",
+      "prior_base_id": null,
+      "proposed_base_id": null,
+      "decision_status": "unresolved lect retained",
+      "source_scope_note": "Printed Sawar has Sora as a possible exonym match, but source provenance does not exclude other Sabar speech communities.",
+      "proposed_registry_record": null,
+      "candidate_only_ids": [
+        "so"
+      ],
+      "accepted_for_installation": false
+    },
+    {
+      "comparison_key": "niranjan2010chakma:numbered-comparison:group88:pdf88:right:line6:comparison:1",
+      "raw_label": "মু.",
+      "literal_form": "লুচা",
+      "prior_base_id": null,
+      "proposed_base_id": null,
+      "decision_status": "group reference only; parent decision needed for Mu emission",
+      "source_scope_note": "Printed Munda does not establish Mundari or a reconstructed proto-form. Mu is an existing group reference, not a resolved spoken lect.",
+      "proposed_registry_record": null,
+      "candidate_only_ids": [
+        "Mu"
+      ],
+      "accepted_for_installation": false
+    },
+    {
+      "comparison_key": "niranjan2010chakma:numbered-comparison:group92:pdf89:left:line2:comparison:1",
+      "raw_label": "প্রা.",
+      "literal_form": "সরাঅ",
+      "prior_base_id": null,
+      "proposed_base_id": "Pk",
+      "decision_status": "existing broad base supported by actual registry usage",
+      "source_scope_note": "The source labels this comparison Prakrit without specifying a variety. No subtype, place or Maharashtri attribution inferred.",
+      "proposed_registry_record": null,
+      "candidate_only_ids": [],
+      "accepted_for_installation": false
+    },
+    {
+      "comparison_key": "niranjan2010chakma:numbered-comparison:group94:pdf89:left:line7:comparison:1",
+      "raw_label": "চে.",
+      "literal_form": "সং",
+      "prior_base_id": null,
+      "proposed_base_id": "Chenchu",
+      "decision_status": "named language resolved; new registry approval required",
+      "source_scope_note": "Source-declared Chenchu; not collapsed into Telugu. Original compact-glyph review remains separate.",
+      "proposed_registry_record": {
+        "ID": "Chenchu",
+        "Name": "Chenchu",
+        "Glottocode": "chen1255",
+        "Clade": "S. Dravidian II",
+        "Latitude": "",
+        "Longitude": "",
+        "ISO_639_3_evidence": "cde"
+      },
+      "candidate_only_ids": [],
+      "accepted_for_installation": false
+    },
+    {
+      "comparison_key": "niranjan2010chakma:numbered-comparison:group96:pdf89:left:line3:comparison:1",
+      "raw_label": "বৈ.",
+      "literal_form": "অমা",
+      "prior_base_id": null,
+      "proposed_base_id": "Sk",
+      "decision_status": "base supported subject to preserving Vedic source stage",
+      "source_scope_note": "The source attributes this comparison to Vedic. No early/late stage, text or date is specified.",
+      "proposed_registry_record": null,
+      "candidate_only_ids": [],
+      "accepted_for_installation": false
+    },
+    {
+      "comparison_key": "niranjan2010chakma:numbered-comparison:group97:pdf89:right:line4:comparison:1",
+      "raw_label": "প্রা.",
+      "literal_form": "হমান",
+      "prior_base_id": null,
+      "proposed_base_id": "Pk",
+      "decision_status": "existing broad base supported by actual registry usage",
+      "source_scope_note": "The source labels this comparison Prakrit without specifying a variety. No subtype, place or Maharashtri attribution inferred.",
+      "proposed_registry_record": null,
+      "candidate_only_ids": [],
+      "accepted_for_installation": false
+    },
+    {
+      "comparison_key": "niranjan2010chakma:numbered-comparison:group99:pdf89:right:line4:comparison:1",
+      "raw_label": "মু.",
+      "literal_form": "খরাখরি",
+      "prior_base_id": null,
+      "proposed_base_id": null,
+      "decision_status": "group reference only; parent decision needed for Mu emission",
+      "source_scope_note": "Printed Munda does not establish Mundari or a reconstructed proto-form. Mu is an existing group reference, not a resolved spoken lect.",
+      "proposed_registry_record": null,
+      "candidate_only_ids": [
+        "Mu"
+      ],
+      "accepted_for_installation": false
+    }
+  ],
+  "unchanged": "All source literals, declarations, first mapping proposal and canonical data remain unchanged."
+}

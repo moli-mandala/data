@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Irula · Dravidian surveys, 2026-09-21 · batch 021. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Irula | Proposed etymology | Evidence |
+|---|---|---|---|
+| 101 | **valakkai** ‘right’ | Compound: [**DEDR 5276**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=476) + [**DEDR 2023**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=183) | DEDR5276 explicitly gives Tamil vala-kkai/valaṅ-kai right hand; DEDR2023 supplies kai hand. Analyse survey valakkai/valakəi in the attested order as right + hand, preserving source gemination and vowel notation. (1 records.) |
+| 102 | **tɛlɛ magirɨ** ‘hair’ | Compound: [**DEDR 3103**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=269) + [**DEDR 4707**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=416) | DEDR3103 supplies head and DEDR4707 mayir/macir/Irula megaru/Kota mīr hair, also explicitly discussing Kui head-hair compounds. Analyse these southern tala-/tɛlɛ- plus mayr-/mur-/maśar-/magir- responses as ordered head + hair, retaining the lect reflex of the hair stem. (1 records.) |
+| 103 | **guṇḍikay** ‘heart’, **guṇḍīkai** ‘heart’, **guṇḍukai** ‘heart’, **guṇḍukkai** ‘heart’ | Compound: [**DEDR 1693**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=155) + [**DEDR 1459**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=136) | DEDR1693 explicitly gives Tamil kuṇṭi-kkāy, Kannada guṇḍi-kāyi, Telugu guṇḍe-kāya, Gondi guṇḍe/guṇḍer-kaya and Konda guṇḍa-kāya heart; DEDR1459 supplies kāy fruit. Analyse selected complete survey responses as ordered heart/kidney + fruit, preserving stem vowels and gemination; longer modifiers remain unanalysed. (12 records.) |
+| 104 | **mavaŋkai** ‘mango’, **mavɛŋgayɨ** ‘mango’, **mavankai** ‘mango’ | Compound: [**DEDR 4782**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=425) + [**DEDR 1459**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=136) | DEDR4782 explicitly gives Tamil māṅkāy and Telugu mã̄gāyu mango fruit beside mā/māvu mango; DEDR1459 gives kāy/kāyi/kāyu fruit. The complete survey māṅgāy/māṅgāyɨ/māvaṅkai/māṅgekāyɨ responses are ordered mango + fruit compounds, with compound nasal and ordinary vowel/voicing variants retained. (8 records.) |
+| 105 | **mavapammɨ** ‘mango’, **mavapammu** ‘mango’, **mavepammu** ‘mango’, **mavapamu** ‘mango’, **mavapamɨ** ‘mango’, **məvɛpəimmɯ** ‘mango’ | Compound: [**DEDR 4782**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=425) + [**DEDR 4004**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=356) | DEDR4782 supplies mā/māvu mango and DEDR4004 Tamil paḻam, Irula pammu/pāmu ripe fruit. Survey māva-pammu/māve-pammu/māva-pāmu/māve-paiṃmu and Tamil māmpaḻam are ordered mango + ripe-fruit compounds; the entire compound is preserved with its source spacing and diacritics. (9 records.) |
+
+Proposed assignment rows: **62**. Affected records: **31**. Relation kinds: **component**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-021.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Irula/batch-021.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Malayalam · Dravidian surveys, 2026-09-21 · batch 012. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Malayalam | Proposed etymology | Evidence |
+|---|---|---|---|
+| 56 | **cōra** ‘blood’ | Proposed reflex of [**DEDR 2883**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=249) | DEDR 2883 explicitly gives Malayalam cōri/cōra ‘blood’, beside verbs meaning flow or trickle. The survey cōra is the independently attested blood noun; it is not inferred from blood merely occurring inside a verb definition. (1 records.) |
+| 57 | **mul̪aŋkāl** ‘knee’ | Compound: [**DEDR 4990**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=448) + [**DEDR 1479**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=138) | DEDR4990 gives Kannada moṟa kāl, Malayalam muẓaṅ kāl and Kota mogāl knee alongside the joint/cubit stem; DEDR1479 independently documents kāl leg in each language. Propose the ordered joint + leg components for survey muṇakālo, mul̪aŋkāl or mōgāl, preserving their full spelling and the fused Kota form. These are not shortened to the first constituent. (1 records.) |
+| 58 | **ñān** ‘I’ | Proposed reflex of [**DEDR 5160**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=468) | DEDR 5160 directly groups the first-person singular forms in these languages. The source cognacy annotation explicitly identifies this article; full-article checking confirms the same pronoun family. Survey aēn and hēnu retain their differences from dictionary Kurukh ēn and Malto én; these are comparative proposals, not spelling corrections. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 59 | **endə** ‘what’ | Proposed reflex of [**DEDR 5151**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=465) | DEDR 5151 gives Brahui ant, Gondi batal/bāta, Kannada ēn, Kurukh endr/endrā, Kuwi ena, Malayalam entu, Parji nāto and Tamil eṉṉa. The source cognacy annotations identify the same interrogative family. Survey endings and vowel differences are preserved; no claim of literal dictionary identity is made. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 60 | **ārə** ‘who’ | Proposed reflex of [**DEDR 5151**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=465) | DEDR 5151 directly documents the corresponding who forms: Brahui dēr, Gondi bor, Kannada yār, Kodagu/Kota dār, Kurukh nē, Malayalam ār, Malto né, Parji ēd, Tamil yār, Telugu evaru, Toda ōry and Tulu ērů. Source cognacy explicitly identifies this article. Final vowels and Malto -du are retained as surveyed morphological variants, not removed. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+
+Proposed assignment rows: **6**. Affected records: **5**. Relation kinds: **component, reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-012.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Malayalam/batch-012.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

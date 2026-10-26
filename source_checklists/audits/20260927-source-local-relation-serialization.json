@@ -1,0 +1,105 @@
+{
+  "stage": "Read-only source-local relation serialization audit; not compiled graph validation",
+  "date": "2026-09-27",
+  "basis": "unify_cldf.py splits Derivation_Parent_Keys on |; variant and borrowed fields are single keys.",
+  "results": [
+    {
+      "file": "data/other/forms/20220913-kholosi.csv",
+      "sha256": "97ebfb4fc673ca06b805736030340bf2206b53e73af3cd76ed065b02bbd1f2bd",
+      "rows": 1135,
+      "counts": {
+        "variant": 35,
+        "borrowed": 0,
+        "derived": 83
+      },
+      "unresolved_local_parents": [
+        {
+          "child": "kholosi:pdf:p3:c1:u22:sense:1",
+          "field": "derived",
+          "unresolved_serialized_parent": "kholosi:pdf:p3:c1:u21:sense:1 legacy:20220913-kholosi:row:29"
+        },
+        {
+          "child": "kholosi:pdf:p7:c1:u14:sense:1",
+          "field": "derived",
+          "unresolved_serialized_parent": "legacy:20220913-kholosi:row:76 legacy:20220913-kholosi:row:132"
+        },
+        {
+          "child": "kholosi:github:18b43f982efa:lexicon.csv:row16:paradigm:1",
+          "field": "derived",
+          "unresolved_serialized_parent": "kholosi:github:18b43f982efa:lexicon.csv:row16 kholosi:github:18b43f982efa:lexicon.csv:row16:morphology:8"
+        },
+        {
+          "child": "kholosi:github:18b43f982efa:lexicon.csv:row23:paradigm:1",
+          "field": "derived",
+          "unresolved_serialized_parent": "kholosi:github:18b43f982efa:lexicon.csv:row23 kholosi:github:18b43f982efa:lexicon.csv:row23:morphology:9"
+        },
+        {
+          "child": "kholosi:github:18b43f982efa:lexicon.csv:row181",
+          "field": "derived",
+          "unresolved_serialized_parent": "kholosi:github:18b43f982efa:lexicon.csv:row2 kholosi:github:18b43f982efa:lexicon.csv:row180 kholosi:github:18b43f982efa:lexicon.csv:row181:morphology:11"
+        },
+        {
+          "child": "kholosi:github:18b43f982efa:lexicon.csv:row402",
+          "field": "derived",
+          "unresolved_serialized_parent": "kholosi:github:18b43f982efa:lexicon.csv:row38 kholosi:github:18b43f982efa:lexicon.csv:row402:morphology:14"
+        }
+      ]
+    },
+    {
+      "file": "data/other/forms/20260921-dhakal-darai.csv",
+      "sha256": "4c0151607f67b0c181b445899cd1dc7a5d701ea15a8763143f37c4d47787d58a",
+      "rows": 8361,
+      "counts": {
+        "variant": 12,
+        "borrowed": 0,
+        "derived": 22
+      },
+      "unresolved_local_parents": []
+    },
+    {
+      "file": "data/other/forms/20260927-dhakal-darai-literal.csv",
+      "sha256": "4645f38115177714489d922e4c82544a91598348964029bd059c7061619fe6da",
+      "rows": 12,
+      "counts": {
+        "variant": 0,
+        "borrowed": 0,
+        "derived": 0
+      },
+      "unresolved_local_parents": []
+    },
+    {
+      "file": "data/other/forms/20260927-birhor-living.csv",
+      "sha256": "22b84c90646a2da1f93d05a05cd0ffe98a75b2d05006184d077004e99e0c8522",
+      "rows": 3480,
+      "counts": {
+        "variant": 41,
+        "borrowed": 0,
+        "derived": 0
+      },
+      "unresolved_local_parents": []
+    },
+    {
+      "file": "data/other/forms/20260911-kharia-living.csv",
+      "sha256": "181502ec08b2a9d22ed75036a427d076001626255c55a8b81f6f610c5d6a5563",
+      "rows": 524,
+      "counts": {
+        "variant": 68,
+        "borrowed": 0,
+        "derived": 0
+      },
+      "unresolved_local_parents": []
+    },
+    {
+      "file": "data/other/forms/20260927-grierson-naiki.csv",
+      "sha256": "a0547a5e0aee057074ee4daf1a40ca4efbb89de194e55094185fa64724ce5932",
+      "rows": 694,
+      "counts": {
+        "variant": 0,
+        "borrowed": 0,
+        "derived": 0
+      },
+      "unresolved_local_parents": []
+    }
+  ],
+  "next": "Repair six Kholosi multi-parent separators via reviewed addendum; no unresolved local parents in the other five checked inputs."
+}

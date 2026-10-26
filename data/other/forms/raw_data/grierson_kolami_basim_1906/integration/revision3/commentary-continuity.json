@@ -1,0 +1,54 @@
+{
+  "status": "Three exact root-approved current commentary repairs; historical claims remain in prior revisions and explicit history",
+  "inputs": {
+    "/Users/aryamanarora/Documents/Code/jambu-all/data/data/other/forms/raw_data/grierson_kolami_basim_1906/grammar-native-review/sharp-revision2-history-review.json": "8954136b44ad6e22a158cdd30dfcd2fca2c14757d272f936bd6077601b28758e",
+    "/Users/aryamanarora/Documents/Code/jambu-all/data/data/other/forms/raw_data/grierson_kolami_basim_1906/integration/revision2/combined-review-candidate.csv": "dd8bb8ffa5227d67b9c5e626518d53e27bce0f4c48cdd1c1f2410da7e2840895",
+    "/Users/aryamanarora/Documents/Code/jambu-all/data/data/other/forms/raw_data/grierson_kolami_basim_1906/grammar-review/sharp-reviewed-revision2/reviewed-child-witnesses.jsonl": "c17d355aa870971bbb2433a7f9115fa5ce6deeac3ddc34911451d42534393814",
+    "/Users/aryamanarora/Documents/Code/jambu-all/data/data/other/forms/raw_data/grierson_kolami_basim_1906/grammar-review/sharp-reviewed-revision2/grammar-graph-proposal.jsonl": "77b84f9058c97745bcdd2f49c8ca4de30e7ccf99cdf8b4c0ee7e1c239284401c"
+  },
+  "deltas": [
+    {
+      "source_unit_key": "grierson1906kolamibasim:p567:conjunctive-participle:1:independent:w5",
+      "field": "Notes",
+      "old": "Middle/final quantity provisional; needs narrow original comparison",
+      "new": "The compact upper mark on final u remains ambiguous between ū, ü and plain u; source segments are retained without phonological interpretation.",
+      "exact_review_decision": {
+        "key": "grierson1906kolamibasim:p567:conjunctive-participle:1:independent:w5",
+        "field": "qualification",
+        "old": "Middle/final quantity provisional; needs narrow original comparison",
+        "new": "The compact upper mark on final u remains ambiguous between ū, ü and plain u; source segments are retained without phonological interpretation.",
+        "reason": "Current typed hold is only final-u mark encoding, a closed editorial source-preservation decision. Earlier middle-quantity/narrow-review wording is historical, not an outstanding new review task."
+      }
+    },
+    {
+      "source_unit_key": "grierson1906kolamibasim:p567:conjunctive-participle:1:independent:w4",
+      "field": "Notes",
+      "old": "Source prints vāttān and vaddan together with the shared having-gone interpretation in its conjunctive-participle paragraph. Printed corresponding forms, not inferred modern phonological normalization; no relation to following having-said example.",
+      "new": "The source lists sāhādūn and saddan together as having-gone examples in its conjunctive-participle paragraph. Printed corresponding forms, not inferred modern phonological normalization; no relation to following having-said example.",
+      "exact_review_decision": {
+        "key": "grierson1906kolamibasim:p567:conjunctive-participle:1:independent:w4",
+        "field": "source_claim",
+        "old": "Source prints vāttān and vaddan together with the shared having-gone interpretation in its conjunctive-participle paragraph.",
+        "new": "The source lists sāhādūn and saddan together as having-gone examples in its conjunctive-participle paragraph.",
+        "reason": "Literal endpoints were corrected against the sharp original, but source_claim still names the rejected vāttān/vaddan readings. Keep old claim only in history; retain the already approved local Variant pointer."
+      }
+    },
+    {
+      "source_unit_key": "grierson1906kolamibasim:p566:present-copula-comparison:1:independent:w1",
+      "field": "Notes",
+      "old": "Immediately after the present table, source says in third-person singular neuter we also find andīn, it is. Pointer targets the actual third-person neuter row āṇḍād, never disputed2.m. āṇḍān; retain source spelling and quantity inconsistency.",
+      "new": "Immediately after the present table, source says in third-person singular neuter we also find andīn, it is. Pointer targets the actual third-person singular neuter row āṇḍād. Retain the source spelling and quantity difference; do not link to masculine āṇḍān.",
+      "exact_review_decision": {
+        "key": "grierson1906kolamibasim:p566:present-copula-comparison:1:independent:w1",
+        "field": "scope_caveat",
+        "old": "Pointer targets the actual third-person neuter row āṇḍād, never disputed2.m. āṇḍān; retain source spelling and quantity inconsistency.",
+        "new": "Pointer targets the actual third-person singular neuter row āṇḍād. Retain the source spelling and quantity difference; do not link to masculine āṇḍān.",
+        "reason": "The low-resolution 2.m. misreading is historical; sharp original explicitly reads 3.m. Current graph commentary must not call it a disputed source label."
+      }
+    }
+  ],
+  "rows": 827,
+  "changed_notes": 3,
+  "other_fields_changed": 0,
+  "canonical_changes": false
+}

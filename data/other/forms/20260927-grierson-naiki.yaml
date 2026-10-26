@@ -1,0 +1,28 @@
+file: 20260927-grierson-naiki.csv
+defaults:
+  importer:
+    commands:
+      - [data/other/forms/raw_data/grierson_naiki_1906/import_source.py, --install]
+    note: Complete reviewed chapter and explicit additional witness; approved r2 with Notes-only addendum.
+  transcription:
+    profile: grierson-naiki-1906
+    input: form
+    preserve_hyphens: true
+  identity:
+    dedupe_by_entry_key: true
+  forms:
+    split_alternates: false
+  gloss:
+    grammar_tags: false
+sources:
+  grierson1906naiki:
+    identity:
+      dedupe_by_entry_key: true
+    forms:
+      split_alternates: false
+    gloss:
+      grammar_tags: false
+    reference:
+      editor: OpenAI Codex
+      ocr: true
+      etymology_provenance: none

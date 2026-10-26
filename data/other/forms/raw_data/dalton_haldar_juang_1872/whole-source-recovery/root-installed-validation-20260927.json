@@ -1,0 +1,23 @@
+{
+  "status": "source-stage installed; focused validation passed",
+  "rows": 226,
+  "audit_units": 373,
+  "legacy_keys_preserved": 196,
+  "new_rows": 30,
+  "historical_held_cells_recovered": 19,
+  "printed_blank_cells_excluded": 153,
+  "documentary_prose_controls": 5,
+  "uncertain_rows": 10,
+  "variant_links": 9,
+  "independent_audit": "0/20 material errors; 22 actual rows, five exclusion controls and three explicit grammatical markers",
+  "focused_tests": {
+    "working_directory": "data",
+    "command": ".venv/bin/python -m pytest -q tests/test_dalton_haldar_juang_1872.py tests/test_dalton_juang_whole_recovery.py",
+    "result": "13 passed in 0.78s",
+    "scope": "Historical inventory preservation, whole-source accounting, corrected literal readings, source qualifiers, explicit grammar, source-local variants, prose attribution, complete profile coverage, metadata registry, and actual installed parser",
+    "initial_failure": "Run from workspace root could not locate conversion profiles; rerun from documented data directory passed. No profile or parser code was changed to hide this failure."
+  },
+  "bibliography": "Single canonical entry reconciled; formatted reference checked and explicit YAML OCR/editor flags installed",
+  "deferred": ["full CLDF build", "compiled identities and graph", "compiled references", "full suite", "browser database refresh", "browser QA and representative app entries"],
+  "completion_claim": "Source-stage only; full ingestion completion remains unproven until deferred gates run."
+}

@@ -1,0 +1,35 @@
+{
+  "status": "installed_source_stage_full_pipeline_deferred",
+  "rows": 524,
+  "source_entries": 452,
+  "source_sentences": 3,
+  "audit_units": 455,
+  "legacy_keys_preserved": 521,
+  "variant_links": 68,
+  "native_only_rows": 9,
+  "uncertain_rows": 138,
+  "metadata_changed_legacy_rows": 152,
+  "frozen_manifest_sha256": "8f15c61165fa60c21911bffa22861309e5878d8488f165116ab2f8a22b952cc9",
+  "independent_audit": "root-independent-output-review-20260927.json",
+  "independent_result": "20/20 units,25rows; zero material errors",
+  "canonical_hashes": {
+    "data/data/other/forms/20260911-kharia-living.csv": "181502ec08b2a9d22ed75036a427d076001626255c55a8b81f6f610c5d6a5563",
+    "data/data/other/forms/20260911-kharia-living.yaml": "0aa786c9f676272a813fbdf0f3714f3e57b6b1689bada46396152b760550f6a7",
+    "data/conversion/kharia-living.txt": "4ace5c554fc00381fc7ec289a1925409f5fbc8b5ac2f967092ea337abf8adf50"
+  },
+  "regeneration_guard_sha256": "43a1ab56251ef91d13f4d8118f96050f8bf9b3608e14fbe5f3d8ab0d78135fff",
+  "tests": "............                                                             [100%]\n12 passed, 1 deselected in 0.97s\n",
+  "tests_log_sha256": "b800de9c990d07f36a44388e35ad0d7d4f62f4774e79cafd0697e27a036017c1",
+  "deferred": [
+    "complete CLDF pipeline",
+    "compiled references/graph/identity validation",
+    "full suite",
+    "database",
+    "browser QA"
+  ],
+  "representative_source_keys": [
+    "living-kharia2026:sentence:0847607e-dc37-406d-b151-8ed93133122f",
+    "living-kharia2026:sentence:eaa2b406-b613-4532-aefb-b37e74901cfb",
+    "living-kharia2026:sentence:f53687a6-0547-484d-8420-94f359f5b91c"
+  ]
+}

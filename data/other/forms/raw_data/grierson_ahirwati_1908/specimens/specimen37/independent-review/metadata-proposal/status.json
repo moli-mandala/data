@@ -1,0 +1,37 @@
+{
+  "status": "complete source-local emission/metadata proposal; independent metadata and final-output audit required",
+  "counts": {
+    "candidate_rows": 389,
+    "atom_or_joint_spans": 362,
+    "whole_expressions": 27,
+    "Roman_physical_atoms": 367,
+    "Native_physical_atoms": 365,
+    "aliases": 732,
+    "joins": 3,
+    "grammar_interpretations_consulted": 98
+  },
+  "generator_sha256": "fc6b7b3e936bca2781bde4f8717ca2f1f8688b09e93d551c859ff630d91d5da7",
+  "input_hashes": {
+    "specimens/specimen37/first-reading-freeze.json": "b6aeabbf7ac9e36172bbb493e6e6c1119352d541881a88364a8ff5233052e60a",
+    "specimens/specimen37/independent-review/independent-full-original-review.json": "25edc7bb45e9240f1ff6a8789f1ab0c12b56c754ddfde923c52159c40932577f",
+    "grammar/child-witnesses-reviewed.jsonl": "5ac645b13ae1a3132ac094431fbce9376037705f93c0c59d9861e6e7ef999ee7",
+    "scope/historical-identity-proposal.json": "cba0fb403f6a5882684d0537d4bf228b9817863704d78009a70cb4d91dd1ebfa"
+  },
+  "outputs": {
+    "unforced-lexical-function-scope.jsonl": "1e954f74caab06207aedb54e2f96a294b9d37af206b3d30499a492a1c1869dec",
+    "candidate-audit.jsonl": "593422efc8c3cb2cc782496a4a19d342673fb9afcdab15c42ab0cc37ebb12ce3",
+    "candidate.csv": "97380267c11c0cc28def90ebc13e326a9b86f922a38ca77c1040ae01d978e401",
+    "physical-key-aliases.jsonl": "598aa988a1cd36487d3c62b1621e2d0f764dc5fa4c8167170bcf1d6666c81bfb",
+    "literal-symbol-inventory.tsv": "18ac7ad2ee415644f722bfc96f7d138ef78c375e79920085bd59b1e0562f849b",
+    "all-389-metadata-proposal.jsonl": "88fe2ccb3cd7085dcf85d447365c9b992cd9b1ebf8383f4aa4065f3cc141a961",
+    "routing-and-literal-policy-proposal.json": "fce81da7ce810cc4146dc81919a20cdc2833f0b372aa75aba0cba4abef879666"
+  },
+  "policies": [
+    "Every physical atom maps exactly once to an aligned atom/span; nested whole speech adds source expressions, not duplicated physical attestations.",
+    "All27 expression keys anchor first immutable physical atom; prior ordinal proposal keys retained only as audit history.",
+    "Full group Native preserved without guessed perword alignment; all three joins and segmentation exceptions retained.",
+    "No graph edges, inferred roots, English object-case tags, or automatic -ing/participle extraction.",
+    "Source identity follows proposed Ahirwadi/Gurgaon historical route; source lect registration and final source key remain integration decisions.",
+    "No canonical writes or phonemic inference; literal-profile inventory is preliminary source policy evidence."
+  ]
+}

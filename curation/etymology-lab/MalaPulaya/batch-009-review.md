@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Mala Pulaya · Dravidian surveys, 2026-09-21 · batch 009. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Mala Pulaya | Proposed etymology | Evidence |
+|---|---|---|---|
+| 41 | **ompatɨ** ‘nine’ | Proposed reflex of [**DEDR 1025**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=98) | DEDR 1025 gives Tamil oṉpatu/ompatu, Malayalam ompatu, Kannada ombattu/ombhattu, Kodagu oymbadi, Kota orbād, Tulu ormba and Gondi unmā nine. The retained variants preserve this numeral stem; Indo-Aryan nau/no and Telugu-type tommidi responses belong elsewhere. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 42 | **paḷaśɨ** ‘old’ | Proposed reflex of [**DEDR 3999**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=355) | DEDR 3999 gives Tamil paẓa/paẓacu/paẓaiya, Malayalam paẓaya, Kannada paẓa, Gondi paḍana/paṛana, Konda paṛay and Kurux paccā old. The selected simple adjective forms follow these comparanda; old-person responses and compounds are kept out. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 43 | **cūḍɨ** ‘hot’ | Proposed reflex of [**DEDR 2654**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=229) | DEDR 2654 gives Tamil cuṭu/cūṭu burn/heat, Malayalam cūṭu, Kannada suḍu/sūḍu and Tulu cūḍu hot. The selected survey forms retain this stem with the palatal/sibilant and stop spelling variants; compounds and unrelated heat families remain outside this proposal. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 44 | **pūvɨ** ‘flower’ | Proposed reflex of [**DEDR 4345**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=384) | DEDR 4345 records Tamil pū, Malayalam pū/pūvu, Kannada pūvu, Gadaba pū/puvvu, Parji pū, Gondi puŋgar and Kurux pūmp flower. The selected simple flower forms fit these comparanda; Indo-Aryan-looking phul and uncertain responses are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 45 | **maṇal** ‘sand’ | Proposed reflex of [**DEDR 4666**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=413) | DEDR 4666(b), distinct from earth/soil in (a), explicitly lists Tamil and Malayalam maṇal, Kannada maṇal/maḷal/maral, Kodagu maṇa and Parji/Gadaba man sand. Only this sand branch is selected; the Toda compound er-moḷṇ and earth responses under the sand prompt are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+
+Proposed assignment rows: **5**. Affected records: **5**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-009.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/MalaPulaya/batch-009.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

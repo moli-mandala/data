@@ -1,0 +1,26 @@
+{
+  "status": "complete review reconciliation; not independent transcription certification",
+  "cells": 427,
+  "findings": {
+    "uncertain": 21,
+    "confirmed-reading": 5,
+    "proposed-correction": 7,
+    "correction": 8
+  },
+  "reviewer_independent_of_first_reading": false,
+  "scope_policy": "Preserve all homographs, distinct definitions, literal group labels, missing labels, and Tanchangya attributions.",
+  "font_policy": "All h-class readings remain subject to independent-ha-glyph-caution-20260927.json.",
+  "inputs": {
+    "homophones-first-reading.jsonl": "6f9dd220066eb32f0de8876a79e42f5fd96cdf3c86f0073cc3051dad5c6c1eea",
+    "independent-homophones-complete-review-20260927.json": "0363bb1aeb696467aa9a3b599053bad3a82dc169ee6b920d3c51574a52e8ca61"
+  },
+  "output": {
+    "homophones-reviewed-reading-proposal.jsonl": "439c8331cf59f2717f3a6d128869ca8b69cc3390121d8c664ca486b73d68aca4"
+  },
+  "canonical_changes": false,
+  "pending": [
+    "independent correction adjudication and fresh raw-versus-output audit",
+    "typed residual uncertainties and language/dialect mapping",
+    "whole-source integration, focused and authorized compiled gates"
+  ]
+}

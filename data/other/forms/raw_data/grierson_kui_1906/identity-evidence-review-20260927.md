@@ -1,0 +1,36 @@
+# Historical Kui witnesses and modern Kui/Kuvi identity
+
+This is a source-specific mapping proposal, not a registry change or lexical transcription. All proposed decisions require review. Existing Jambu bases are **Kui** (`kuii1252`) and **Kuwi** (`kuvi1243`); the latter is the existing spelling of the modern Kuvi ID. The generic LSI-1928 Kui dialect already in the registry does not establish the locality of each 1906 witness.
+
+## Recommendation
+
+Retain Gumsur/Bod, Khondmals, Chinna Kimedi and the **historical LSI Kalahandi** witness as separate source-qualified Kui lects. Do not turn every historical Kalahandi record into modern Kuwi. The Kalahandi proposal has an explicit conflicting-authority flag: Glottolog's bibliography codes it as Kuvi, while direct scholarly discussion of the same specimen treats it as a Kui dialect. This recommendation is about this specimen, not all languages spoken in Kalahandi. Coordinates stay blank.
+
+## Primary source and modern evidence
+
+1. **Grierson, LSI IV (1906), printed 457–471.** The keyed snapshot reports the standard grammar as Gumsur/Bod, based principally on Lingum Letchmajee. Original p. 460 confirms that attribution, states that no new specimens came from those districts, and identifies p. 464 as Major Smith's published tale with Grierson's added and occasionally uncertain interlinear translation. Original p. 465 identifies the supplied Khondmals material with the same general dialect while describing local differences. The actual headers identify specimens 41 and 42 as District Khondmals and specimen 43 as State Kalahandi. Original p. 469 labels the Chinna Kimedi notes as taken from Letchmajee and states that no specimen is available. Its separate Kalahandi commentary continues onto p. 470. The exact divisions are recorded in `original-specimen-scope-review-20260927.json`.
+
+2. **Burrow and Bhattacharya (1961), “Some notes on the Kui dialect as spoken by the Kuṭṭia Kandhs of North-east Koraput,” Indo-Iranian Journal 5, 118–135; existing Jambu key `K-Kui`.** On p. 118 they explicitly discuss Grierson's Gumsur, Khondmals, Chinna Kimedi and Kalahandi materials. Kalahandi's retained l and intervocalic c are shared features, not a declaration that its specimen is Kuvi. On pp. 120–121 they again discuss the LSI Kalahandi forms within the Kui comparison. Their explicit Kui-not-Kuvi conclusion concerns their Kuṭṭia field dialect; it must not be misquoted as a direct categorical identification of Kalahandi. Together, their treatment supports preserving Grierson's historical Kui route while flagging the modern mismatch. [Journal record](https://www.jstor.org/stable/24646640); [accessible text of the primary article](https://www.scribd.com/document/150349902/Some-Notes-on-the-Kui-Dialect-as-Spoken-by-the-Kuttia-Kandhs-of-North-East-Koraput). The accessible text has damaged phonetic OCR and was used for prose identification only, not lexical transcription.
+
+3. **Glottolog 5.3 bibliographic coding**, Grierson 1906 reference 304344, explicitly contains `Kui Kalahandi = Kuvi [kxv]`. This is a genuine conflicting authority, not merely a geographic guess. It is nevertheless a bibliographic mapping rather than an argument examining the particular specimen. Preserve it as alternative modern identification; do not silently override the primary paper or erase the original lect label. [Reference record](https://glottolog.org/resource/reference/id/304344).
+
+4. **Current language records** distinguish Kui and Kuvi: [Kui](https://glottolog.org/resource/languoid/id/kuii1252), [Kuvi](https://glottolog.org/resource/languoid/id/kuvi1243). The Kui page also reports an ISO retirement/split involving kxu; this proposal retains the existing Jambu Glottocode-based base identity and does not attempt an unrelated global ISO migration. Direct SIL pages returned inaccessible responses in this review.
+
+5. **Odisha's SCSTRTI and State Tribal Museum** show why geography alone is insufficient: the Khond community entry lists both languages across the larger region, and the Kutia page specifically pairs southern Kandhamal/Kalahandi with both Kui and Kuvi. These community-level statements do not identify an individual 1906 speaker or specimen. [SCSTRTI](https://www.scstrti.in/index.php/communities/91-tribes/176-khond); [State Tribal Museum](https://ostm.in/tribes_of_odisha/kutia-kandha/).
+
+Exact short anchors in the 1961 primary paper: p. 118, “A specimen is also given”; p. 120, “Kui as spoken in Kalahandi”; p. 121, “To judge by the slender evidence of the LSI the Kalahandi dialect”. The surrounding discussions are summarized above; these anchors distinguish the actual LSI discussion from the paper's separate Kuṭṭia field identification.
+
+## Scope and provenance rules
+
+- Standard grammar and unqualified standard comparanda: joint Gumsur/Bod scope under Kui. A joint source statement does not warrant duplicated attestations for each district. Keep the Lingum Letchmajee and Major Smith witnesses distinct in citations/notes even when they share the language route.
+- Specimen 40: Smith 1876 quotation, p. 464 and free translation p. 465. It is not a new 1906 field elicitation. No precise village should be invented.
+- Specimens 41–42: Khondmals, pp. 465–468, with free translation of 42 on p. 469. The source says a related tale occurs in Smith, not that these supplied words are a verbatim copy.
+- Chinna Kimedi: the named comparative examples on p. 459, the p. 462 margin and p. 469 commentary override the general Gumsur/Bod scope. There is no separate continuous specimen to manufacture.
+- Kalahandi: named comparisons on pp. 459–460 and 469–470 plus specimen 43 on pp. 470–471. Preserve the author's qualification that inclusive use of the first-person form might be a specimen error or Oriya influence.
+- Broad “Orissa and Central Provinces” examples remain region-scoped, not automatically Khondmals or Kalahandi. Unlocalized Kui comparisons elsewhere in the volume remain generic Kui unless their own context supplies a site. The later standard-word column requires its original header/attribution review before inheriting Khondmals; p. 465's pointer is evidence, not a substitute for that review.
+- The Patna submission is described as Oriya with a slight Chhattisgarhi admixture, not trustworthy Kui evidence. The Konda/Kondadora census claim is expressly untested by this survey. These documentary claims do not supply lexical entries.
+- Koi/Gondi is explicitly distinguished from Kui; shared ethnonyms do not license merging Koya, Konda-Dora, Kui or Kuvi. Modern Kutia community labels likewise do not replace the actual printed locality.
+
+Original pp. 457 and 459 were additionally viewed after the initial keyed-text review, confirming their attribution statements. The cached original labelled printed 643 is a Bharia specimen, not the desired table. Therefore the table pointer read as 643 in the small p. 465 image requires enlargement or source-misreference accounting; the complete comparative-table header remains the authority for both extent and lect assignment.
+
+No new original images or books were downloaded; existing page renders were reused. No coordinates, canonical language/dialect rows, forms or builds were changed.

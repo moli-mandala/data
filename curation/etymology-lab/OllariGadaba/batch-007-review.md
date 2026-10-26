@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Ollari Gadaba · Dravidian surveys, 2026-09-21 · batch 007. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Ollari Gadaba | Proposed etymology | Evidence |
+|---|---|---|---|
+| 31 | **kanḍ** ‘stone’ | Proposed reflex of [**DEDR 1298**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=121) | DEDR1298 explicitly gives Ollari kanḍ ‘stone’, exactly supporting the survey form. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 32 | **kure** ‘root’ | Proposed reflex of [**DEDR 1799**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=162) | DEDR1799 gives Gadaba (S.2) kure root/tuber and Parji kurḍa. The Ollari Gadaba survey kure root is an exact lexical match to the Gadaba comparator, but the primary lect label is S.2 rather than Ollari; this is an explicitly comparative extension across varieties. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 33 | **cendi** ‘hair’ | Proposed reflex of [**DEDR 2002**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=181) | DEDR2002 gives Gadaba kendī/kendiṭ hair (S./S.3), alongside feather senses in other varieties. Survey Ollari cendi hair is proposed comparatively with initial palatal c versus k and final-vowel notation preserved; the article does not itself print the Ollari form. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 34 | **iruḍu** ‘two’ | Proposed reflex of [**DEDR 474**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=46) | DEDR474 gives Ollari Gadaba inḍi two things and adjectival ir, with Parji irḍu two things. Survey Ollari iruḍu is a comparative variant of this numeral family, particularly close to Parji irḍu; preserve the survey’s language label and medial vowel rather than claiming an exact printed Ollari attestation. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 35 | **kekal** ‘ear’ | Proposed reflex of [**DEDR 1977**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=179) | DEDR 1977(a) lists Tamil cevi, Alu Kurumba kevi, Kannada kivi/kimi/kemi, Gondi kevi/kavi, Parji/Gadaba kekol, Konda gibi, Kurukh xebdā and Brahui xaf ‘ear’. The separate Kui/Kuvi kri- subsection (b) is not folded into this analysis; deafness derivatives are excluded. User clarified on 2026-09-21 that each DEDR node represents the whole dictionary article, not only the displayed reconstruction. The head label remains unchanged; the cited article family/subsection is the proposed parent scope. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+
+Proposed assignment rows: **5**. Affected records: **5**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-007.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/OllariGadaba/batch-007.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

@@ -22,6 +22,44 @@ def _dot_to_macron(match):
     return letter + _MACRON + marks
 
 
+# Burrow and Emeneau's editorial parentheticals inside a cited form: source citations, usage,
+# grammatical and transcription notes.  They belong in the row's notes, not the display form
+# (the profile would otherwise transliterate "before vowel" as "before vovel").  A note either
+# opens with one of these words or carries markup or a numeral (``<i>Voc.</i> 84``, ``3 pers.``,
+# ``Su. 1971``).  Stem classes and alternate stems -- ``(-pp-, -tt-)``, ``(a·c-)`` -- are the
+# dictionary's morphological notation and stay in the form.
+_EDITORIAL_NOTE_START = re.compile("|".join((
+    r"LSB ", r"MBE ", r"Gai, ", r"Burrow ", r"cf\. ", r"see ", r"for ", r"before consonant",
+    r"before vowel", r"same meaning", r"in a song", r"in song", r"in all usages", r"coll\.",
+    r"commonly ", r"construed ", r"in (?:some )?cpds", r"also ", r"[a-z] = [a-z]+$", r"\?$",
+    r"irregular", r"i\.e\.", r"s\.v\.", r"past stem", r"pair word", r"used ", r"or with ",
+)))
+_PARENTHETICAL = re.compile(r"\s*\(([^()]*)\)")
+
+
+def _is_editorial(content):
+    return bool(
+        _EDITORIAL_NOTE_START.match(content)
+        or re.search(r"<|&lt;|&gt;|\d", content)
+    )
+
+
+def split_editorial_notes(form):
+    """``(display form, note)``: the form without its editorial parentheticals, and those
+    notes joined with ``; `` (markup stripped)."""
+    notes = []
+
+    def drop(match):
+        if not _is_editorial(match.group(1)):
+            return match.group(0)
+        note = re.sub(r"<[^>]+>", "", match.group(1)).replace("&lt;", "<").replace("&gt;", ">")
+        notes.append(note.strip())
+        return ""
+
+    display = _PARENTHETICAL.sub(drop, form).strip()
+    return (display, "; ".join(notes)) if notes else (form, "")
+
+
 def normalize_dedr_marks(form):
     """Canonicalise length and nasalisation marks so the profile's vowels match: the raised
     length dot becomes a macron (``a·k`` → ``āk``, ``ï·`` → ``ï̄``), a spacing

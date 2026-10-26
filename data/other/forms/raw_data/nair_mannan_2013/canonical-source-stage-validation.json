@@ -1,0 +1,37 @@
+{
+  "status": "canonical source-stage validation passes; compiled/browser gates deferred",
+  "checks": {
+    "NFC": {
+      "rows": 154,
+      "all15fields_exact": true,
+      "initial_dedupe_keys": 154,
+      "zero_conversion": true
+    },
+    "NFD": {
+      "rows": 154,
+      "all15fields_exact": true,
+      "initial_dedupe_keys": 154,
+      "zero_conversion": true
+    }
+  },
+  "reference_flags": 2,
+  "variants": 0,
+  "audit_records": 140,
+  "canonical_sha256": {
+    "csv": "e14969d61a067d45143e4c842c9bc495d70f76a0fda76820f3d140a9e85bdbde",
+    "yaml": "2797b923e8fc28b2cd6efbf8770e40625373ac40937d1d8f52b87720cf571207",
+    "audit": "7d1b3d11321945d641fed582ae25f2e697f777228d5be31cccc7095bb969c834"
+  },
+  "durable_identity_sha256": "4977c4e205f66233366ee1c00a9c938c9c78e3c087b63e02a94832647525c28a",
+  "actual_canonical_source_meta": true,
+  "parser_monkeypatch": false,
+  "repeat_install": "no-op with current shared membership verified",
+  "bibliography": "two reviewed records installed; auxiliary works reported only",
+  "unresolved": "Reported Malayalam relationship and printed grammatical/gloss anomalies retained as source claims with typed uncertainty.",
+  "deferred": [
+    "full CLDF/database build",
+    "full suite",
+    "compiled identity/graph/reference survival",
+    "browser QA/publication"
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "status": "combined actual-parser and scoped source accounting pass; independent acceptance and canonical metadata pending",
+  "output_pins": {
+    "combined-candidate.csv": "63c4d755869d7b41fb947ea663c008b9815aec57b56ca8a7c56ad4e638a586a0",
+    "combined-audit.jsonl": "26f6558e30110a6237989bca7d74d406e6df952ff2ab924aab6e57a4594e45a1",
+    "literal-preservation.txt": "16b0b67cddd07a6aa98936050c6ee48590dfa45900bb021ac670184b5f0694eb",
+    "metadata-proposal.json": "8b54d26d2194d0dc867756bd560d1452f58aa473a6dfbea5d3d1f3da5bd84d38"
+  },
+  "status_sha256": "bb95d5c46b064ef113ef112be8461b3672472408fe238f45f575058d413a025a",
+  "checks": {
+    "NFC": {
+      "rows": 1826,
+      "errors": 0,
+      "all15source_fields_retained": true,
+      "ordered_keys": true,
+      "no_unintended_splits": true,
+      "approved_display": true
+    },
+    "NFD": {
+      "rows": 1826,
+      "errors": 0,
+      "all15source_fields_retained": true,
+      "ordered_keys": true,
+      "no_unintended_splits": true,
+      "approved_display": true
+    }
+  },
+  "parser_code": {
+    "make_cldf.py": "1a1ded9eff5b8607174aa37981efb4358824be8ffffdfaa7128c0cea53dac5a8",
+    "source_meta.py": "1c3147843d6c9f2489155b633db55fd1374e6f3b1a59b7051a3642fdbd2c7a4c",
+    "tags.py": "f03b4c2295dae956c4cfa212968eeff437a96cbc838fccdc409214fa5b25b67f"
+  },
+  "accounting": {
+    "rows": 1826,
+    "audit_units": 1859,
+    "atomic_emissions_verified": 888,
+    "expressions_verified": 77,
+    "dispositions": {
+      "emitted": 1801,
+      "source-blank": 18,
+      "identity-hold": 15,
+      "documentary": 8,
+      "joined-physical-fragment": 2,
+      "reused-existing-occurrence": 12,
+      "reference-hold": 3
+    }
+  },
+  "dialect_tokens": [
+    "dialect:Gondi:mandla:Mandla",
+    "dialect:Kaikadi:lsi1906-kaikadi:Berar",
+    "dialect:Kui:grierson1906_kui_chinna_kimedi:Chinna%20Kimedi%20%28LSI%201906%29",
+    "dialect:Kui:grierson1906_kui_gumsur_bod:Gumsur%20and%20Bod%20%28LSI%201906%29",
+    "dialect:Kui:grierson1906_kui_kalahandi:Historical%20Kui%20of%20Kalahandi%20%28LSI%201906%29",
+    "dialect:Kui:grierson1906_kui_khondmals:Khondmals%20%28LSI%201906%29"
+  ],
+  "pending": [
+    "Canonical dialect/source declaration and bibliography registration still need guarded integration; encoded tokens checked for parent/syntax only.",
+    "Graph claims may still be revised by independent source review; this report covers only pinned candidate.",
+    "Final independent output audit and approved freeze; no full build/database/browser run."
+  ],
+  "canonical_changes": false
+}

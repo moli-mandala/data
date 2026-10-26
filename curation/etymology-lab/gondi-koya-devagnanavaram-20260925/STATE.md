@@ -1,0 +1,7 @@
+# Devagnanavaram et al. 2021 Gondi Koya residual research — checkpoint 001
+
+The compiled source has **1,141** Gondi/Koya records. Earlier pending decisions and holds cover **455** exact IDs; this pass assesses the other **686**. It proposes **58** pending whole-article DEDR assignments and records **628** explicit research holds, with zero unexamined records. Original forms, glosses, locators, dialect tags, and persistent identities are preserved. No older review manifest owns a residual ID.
+
+All 686 residual forms were searched through the homepage `fetchLemmaList` against the read-only local database in twenty bounded chunks. The searches returned **6,630** rows (7,558 reported matches); one common-form query was capped at 1,000 returned rows. Shortlisted comparisons were reviewed against **38 full DEDR articles**, retained verbatim in `primary-evidence.json`. The **12** Gondi review batches, **075–086**, agree exactly with the decisions. Mixed glosses, homographs, uncertain morphology and suspected contact forms remain explicit holds. Earlier questioned Gondi records were untouched.
+
+Canonical read-only `make check-pass PY=.venv/bin/python` passed at checkpoint **001**, with **zero** second-application changes. `checkpoint-001-validation.json` independently verifies exact review-manifest agreement. The source-wide ownership and older-review overlap audits passed. No `save-pass`, accepted sidecar edit, rebuild, commit, push or deployment was performed for this pass.

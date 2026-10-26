@@ -1,9 +1,22 @@
 file: 20260828-sil-korwa-kodaku.csv
 sources:
   behera2022korwakodaku:
-    transcription:
-    - profile: sil-korwa-kodaku
     forms:
       split_alternates: false
     notes:
       audit_only: true
+    identity:
+      dedupe_by_entry_key: true
+    reference:
+      editor: OpenAI Codex
+      ocr: false
+      etymology_provenance: source
+defaults:
+  transcription:
+  - profile: sil-korwa-kodaku
+  importer:
+    commands:
+    - - data/other/forms/raw_data/sil_korwa_kodaku_2022/whole-recovery/installation/install_source.py
+      - --install
+    note: Install or verify the exact accepted whole-report assets through the guarded
+      source transaction.

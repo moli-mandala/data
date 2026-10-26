@@ -1,0 +1,149 @@
+{
+  "status": "corrections_required",
+  "scope": {
+    "tone_pairs": 14,
+    "note_units": 28,
+    "story_tokens": 34,
+    "whole_expressions": 3
+  },
+  "original": {
+    "path": "tmp/pdfs/bailey1920/bailey1920.pdf",
+    "sha256": "7a1577a2d2a24eca8b95e9b1ed700ef01f716d1069e4468f36a673611d093b39",
+    "page_mapping": {
+      "88": 114,
+      "105": 131
+    }
+  },
+  "input_hashes": {
+    "p88-first-reading.tsv": "0035c3b6a1b4e4dff9a61f4a1446634f0bf008e25fd52f8a76235b954823c13f",
+    "tone-encoding-first-review.md": "0858fe23e52bea60284e1dbdb4e74b96f85b7a1025e87211e538e1e0b2d9e9ea",
+    "p105-first-reading.tsv": "5705210af534efa922f8283fa082d7605ecdc20cdf7a2ee2631425ed212b64c0",
+    "p105-story-first-reading.json": "829784411a87033b4bd4852075b75883cf4aca5a51383e328381e53f529c02c6"
+  },
+  "corrections": [
+    {
+      "page": 105,
+      "section": "parable-notes",
+      "item": "4",
+      "field": "forms",
+      "old": "āk̲h̲ĕā ē",
+      "new": "āk̲h̲ĕā e",
+      "basis": "First expansion on p105 line1 visibly prints plain e without a macron. The later repeated expansion at the end of these notes prints ē; retain that independent difference. Verified fresh original PDF index130 Rect(140,46,258,59) at12x."
+    },
+    {
+      "page": 105,
+      "section": "story-notes",
+      "item": "2",
+      "field": "tags",
+      "old": "verb",
+      "new": "verb participle",
+      "basis": "Source explicitly labels this stat. part with e; retain exact stative qualification in Notes, and registered participle tag."
+    }
+  ],
+  "confirmed_edges": [
+    {
+      "scope": "All14 tone pairs",
+      "finding": "All literal readings agree. U030D/U0329 encode the visible perpendicular strokes as shapes only, with no IPA syllabicity or phonological-tone reinterpretation. The separate raised apostrophes, macrons/breves, stacked high+deep signs, and vowel placement in sister/brother-in-law are correctly retained."
+    },
+    {
+      "scope": "Story token3",
+      "finding": "jhăṅhū confirmed: a breve, n dot above, final u macron. Fresh original index130 Rect(65,230,285,247) at12x; distinct from shorter wind head on p88."
+    },
+    {
+      "scope": "Story remaining33tokens and3spans",
+      "finding": "Literal forms and interlinear glosses agree. Span endpoints1–13,14–25,26–34 follow printed punctuation and preserve the complete printed opening only. Source explicitly says strong means stronger here; retain that contextual qualification."
+    },
+    {
+      "scope": "Parable notes item20",
+      "finding": "āyā ē confirmed with final macron at12x original Rect(158,177,269,201); initial small crop suspicion of plain e was rejected. āai remains literal contracted form."
+    },
+    {
+      "scope": "Story notes",
+      "finding": "ŭttĕ,ŭttē differ from story ŭtte,ŭtto and are correctly kept distinct. The copular e is plain in the stative-participle note."
+    },
+    {
+      "scope": "Control attribution",
+      "finding": "Panjabi worn-out-shoe sense is not Kagani shoe sense; Sasi nonnasal bhī remains foreign comparison. Unlabelled ŭtārnā is an explicit same-source comparison, not an invented donor. Empty independent glosses for isolated sŭṇ/lŭā/e are honest; analyzed phrase glosses stay scoped."
+    }
+  ],
+  "coverage": [
+    "p88:tone-examples:1",
+    "p88:tone-examples:2",
+    "p88:tone-examples:3",
+    "p88:tone-examples:4",
+    "p88:tone-examples:5",
+    "p88:tone-examples:6",
+    "p88:tone-examples:7",
+    "p88:tone-examples:8",
+    "p88:tone-examples:9",
+    "p88:tone-examples:10",
+    "p88:tone-examples:11",
+    "p88:tone-examples:12",
+    "p88:variable-tone:1",
+    "p88:variable-tone:2",
+    "p105:parable-notes:1",
+    "p105:parable-notes:2",
+    "p105:parable-notes:3",
+    "p105:parable-notes:4",
+    "p105:parable-notes:5",
+    "p105:parable-notes:6",
+    "p105:parable-notes:7",
+    "p105:parable-notes:8",
+    "p105:parable-notes:9",
+    "p105:parable-notes:10",
+    "p105:parable-notes:11",
+    "p105:parable-notes:12",
+    "p105:parable-notes:13",
+    "p105:parable-notes:14",
+    "p105:parable-notes:15",
+    "p105:parable-notes:16",
+    "p105:parable-notes:17",
+    "p105:parable-notes:18",
+    "p105:parable-notes:19",
+    "p105:parable-notes:20",
+    "p105:parable-notes:21",
+    "p105:parable-notes:22",
+    "p105:story-notes:1",
+    "p105:story-notes:2",
+    "p105:story-notes:3",
+    "p105:story-notes:4",
+    "p105:story-notes:5",
+    "p105:story-notes:6",
+    "p105:story:token1",
+    "p105:story:token2",
+    "p105:story:token3",
+    "p105:story:token4",
+    "p105:story:token5",
+    "p105:story:token6",
+    "p105:story:token7",
+    "p105:story:token8",
+    "p105:story:token9",
+    "p105:story:token10",
+    "p105:story:token11",
+    "p105:story:token12",
+    "p105:story:token13",
+    "p105:story:token14",
+    "p105:story:token15",
+    "p105:story:token16",
+    "p105:story:token17",
+    "p105:story:token18",
+    "p105:story:token19",
+    "p105:story:token20",
+    "p105:story:token21",
+    "p105:story:token22",
+    "p105:story:token23",
+    "p105:story:token24",
+    "p105:story:token25",
+    "p105:story:token26",
+    "p105:story:token27",
+    "p105:story:token28",
+    "p105:story:token29",
+    "p105:story:token30",
+    "p105:story:token31",
+    "p105:story:token32",
+    "p105:story:token33",
+    "p105:story:token34"
+  ],
+  "owner_inputs_unchanged": true,
+  "render_evidence": "Original full pages plus existing six-times detail crops reviewed; fresh12x original crops overwrite only tmp/turi-whole/active.png."
+}

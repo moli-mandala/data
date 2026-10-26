@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Ravula · Dravidian surveys, 2026-09-21 · batch 010. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Ravula | Proposed etymology | Evidence |
+|---|---|---|---|
+| 41 | **kuḍipə** ‘drink’ | Proposed reflex of [**DEDR 1654**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=151) | DEDR1654 gives Tamil kuṭi (-pp-, -tt-), Malayalam kuṭikka, Kannada kuḍi/kuḍu and Kodagu kuḍi- (kuḍip-, kuḍic-) drink. These simple and ordinary participial/nominal survey forms retain that drink stem and documented inflectional bases; source vowel/voicing and final morphology are preserved. Possible causative kuḍisu forms and opaque auxiliaries are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 42 | **bā** ‘come’ | Proposed reflex of [**DEDR 5270**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=475) | DEDR5270 explicitly gives Tamil vā imperative of varu, Malayalam varuka, Kannada bar/bār with bā imperative, Kodagu bar-, Telugu vaccu, Parji ver- and Tulu barpini. These survey simple come responses retain the corresponding stems and ordinary endings; pronoun-led clauses and auxiliary constructions are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 43 | **kollə** ‘kill’ | Proposed reflex of [**DEDR 2132**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=192) | DEDR2132 explicitly gives Tamil kol kill with koṉṟ- past, Malayalam kolluka and Kannada/Kodagu koll- with kond- past. These simple survey kol-/koṉṟ- kill responses retain the appropriate root or past stem and ordinary endings; longer causative/auxiliary expressions are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 44 | **iraiku** ‘sit’ | Proposed reflex of [**DEDR 480**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=47) | DEDR480 explicitly gives Malayalam irikkuka sit/remain and the southern iru existential/sitting family. Malayalam irikkuga and Ravula iraiku sit retain that lexical sitting verb with source stop/vowel variation and ordinary endings; no opaque multi-verb response is included. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 45 | **ninjo** ‘stand’ | Proposed reflex of [**DEDR 3675**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=325) | DEDR3675 explicitly gives southern nil-/nin- stand and Kodagu nind- past. Ravula ninjo stand compares with this standing stem, retaining the source palatalized past consonant and final vowel. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+
+Proposed assignment rows: **5**. Affected records: **5**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-010.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Ravula/batch-010.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

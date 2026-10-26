@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Kannada · Zoller (2023), Dravidian records, 2026-09-22 · batch 064. Pending user review; autonomous research continues.
+
+| # | Kannada | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **kaḍi** ‘curds mixed with salt, chillies, mustard, etc., and some rice flour boiled and seasoned’ | Proposed reflex of [**DEDR 1128**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=106) | DEDR1128 explicitly records Kannada kaḍi with the same detailed prepared-curds gloss. Zoller p.557 cites1128 accurately. This is a direct family match; the possible Dravidian origin of the surrounding Indo-Aryan forms is a separate claim. This family identification does not endorse broader cross-family ancestry claims in the source. (1 records.) |
+| 2 | **maga** ‘son, male person’ | Proposed reflex of [**DEDR 4616**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=407) | DEDR4616 explicitly records Kannada maga son, male person within the child/son family. Zoller p.839 supplies the same form and gloss with4616 governing the comparison. No Indo-European or Nostratic ancestry is asserted by this family link. This family identification does not endorse broader cross-family ancestry claims in the source. (1 records.) |
+| 3 | **kukil** ‘cuckoo’ | Proposed reflex of [**DEDR 1764**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=160) | DEDR1764 explicitly records Kannada kukil cuckoo, exactly as quoted by Zoller pp.555–556. Retain the article’s Sanskrit comparison and the source’s onomatopoeic qualification: family membership does not establish a particular donor or independent inheritance. This family identification does not endorse broader cross-family ancestry claims in the source. (1 records.) |
+| 4 | **gūḍu** ‘trap for catching wild animals’ | Proposed reflex of [**DEDR 1883**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=172) | DEDR1883 explicitly includes Kannada gūḍu trap for catching wild animals among its nest/cage/receptacle senses. Zoller pp.558–559 quotes this meaning. The proposed link is to that whole article, not a deduction from the surrounding Sanskrit trap comparison. This family identification does not endorse broader cross-family ancestry claims in the source. (1 records.) |
+| 5 | **bulla** ‘penis’, **bulli** ‘penis’ | Proposed reflex of [**DEDR 4309**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=380) | DEDR4309 explicitly records Kannada bulla and bulli male generative organ, matching Zoller p.708. The article compares Marathi, without identifying a donor. Keep the two source forms distinct; the family proposal does not assert the Nostratic or Phrygian relationship in Zoller’s discussion. This family identification does not endorse broader cross-family ancestry claims in the source. (2 records.) |
+
+Proposed assignment rows: **6**. Affected records: **6**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-064.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Kannada/batch-064.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../zoller-dravidian-20260922/research-holds.json). No new lexical material or donor nodes are introduced.

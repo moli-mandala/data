@@ -3,6 +3,7 @@ import csv,importlib.util,io,json,unicodedata
 from collections import Counter
 from pathlib import Path
 from segments import Tokenizer
+from profile_policy import hunterian_display  # Hunterian ch/chh/Ch → house spelling
 DATA=Path(__file__).resolve().parents[1];P=DATA/'data/other/forms/raw_data/grierson_suketi_1916'
 spec=importlib.util.spec_from_file_location('suketi_full_stage',P/'prepare_full.py');source=importlib.util.module_from_spec(spec);spec.loader.exec_module(source)
 def rows():return list(csv.reader((P/'proposal.csv').open()))
@@ -36,7 +37,7 @@ def test_profile_coverage_and_tags():
  t=Tokenizer(str(P/'proposal-profile.txt'))
  for r in rows():
   assert len(r)==15 and not r[4]
-  expected=unicodedata.normalize('NFC',r[2]).lower().replace('w','v').replace('ṅ','ŋ')
+  expected=hunterian_display(unicodedata.normalize('NFC',r[2]).lower().replace('w','v').replace('ṅ','ŋ'))
   assert t(r[2],column='IPA').replace(' ','').replace('#',' ')==expected
   assert set(r[14].split())<=tags.GRAMMATICAL_TAGS|tags.GENDER_TAGS
   assert r[11]==r[12]==r[13]==''

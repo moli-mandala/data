@@ -1,0 +1,56 @@
+{
+  "status": "complete physical first-reading inventory; independent review and metadata/export remain pending",
+  "input_sha256": {
+    "p464-first-reading.tsv": "73cc0fb8e51c669df351472a53152890a5f9c1ef3601e9aae1ae55c9c0b0a2cb",
+    "p465-first-reading.tsv": "5c0b07a05778ea656781293aae4390175a9fbd0f1778306f60017a6e9dc4e67f",
+    "p466-first-reading.tsv": "2711b23389886655142c7a184669b906e1705e512990cebbd60e851f1411fedd",
+    "p467-first-reading.tsv": "7a334e105762234020f58a897e54b09e3747ac4fd7d9e10c6a886431268bb74f",
+    "p468-first-reading.tsv": "e6a1b482f96b6075fc40763c1d09897ce62af4276bd27ac92860ac8ca9c65869",
+    "p470-first-reading.tsv": "daca5f7b521098b0e0d8040eba631038ad505a6ea5c983de604294799c7cce39",
+    "p471-first-reading.tsv": "b1333499fbb0ef6698a7b086fd35488e4c808059e08fb98eb30552b224509986"
+  },
+  "atom_count": 890,
+  "interlinear_atom_count": 884,
+  "title_atom_count": 6,
+  "physical_line_count": 108,
+  "expression_span_count": 77,
+  "per_page": {
+    "464": 124,
+    "465": 37,
+    "466": 182,
+    "467": 109,
+    "468": 104,
+    "470": 156,
+    "471": 178
+  },
+  "per_specimen": {
+    "40": 124,
+    "41": 328,
+    "42": 104,
+    "43": 334
+  },
+  "uncertain_atoms": 32,
+  "explicit_continuations": 2,
+  "free_translations": {
+    "40": "free-translation-40-p465.txt",
+    "42": "free-translation-42-p469.txt"
+  },
+  "excluded_context": {
+    "465": "Surrounding linguistic commentary owned by grammar/prose worker.",
+    "469": "After specimen42 free translation, Chinna Kimedi/Kalahandi commentary owned by grammar/prose worker.",
+    "470": "Introductory commentary above specimen43 owned by grammar/prose worker."
+  },
+  "guards": {
+    "all_form_gloss_counts_equal": true,
+    "unique_physical_keys": true,
+    "every_non_title_atom_in_one_expression_span": true,
+    "canonical_files_written": false
+  },
+  "pending": [
+    "Independent complete literal/gloss review",
+    "Whole-expression boundary/gloss review",
+    "Source-supported grammatical metadata",
+    "Integrated profile/parser/graph/reference/identity checks",
+    "Canonical installation and deferred full build/browser gates"
+  ]
+}

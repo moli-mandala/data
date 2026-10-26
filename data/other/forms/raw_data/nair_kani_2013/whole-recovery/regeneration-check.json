@@ -1,0 +1,18 @@
+{
+  "status": "passed byte-exact regeneration of first reading, candidate CSV and audit",
+  "inputs_sha256": {
+    "prepare_first_reading.py": "500835316ad2dfbadf6cae6e1ae1e506fd6bda860eb20b5ac82f520fcbdcf8cf",
+    "prepare_review_candidate.py": "91d6bf693409219cae701a6d2c346c1c6f2d6351e1648ab1854160b75a3bd415",
+    "physical-units-first-reading.jsonl": "8e95ee28fe33b393477f9a2474f3e348ba1a1d6799302982e04146bb5f9023e3"
+  },
+  "outputs_sha256": {
+    "review-candidate.csv": "008927fd95809d423ac9d8b913ff690c4c398fee0da940fe96838117caeb0e85",
+    "review-audit.jsonl": "798ca2ae93e9783a1a6313786ba4a4e530a0d044a3e92df29d78e30c57414582"
+  },
+  "counts": {
+    "source_units": 42,
+    "printed_witness_slots": 66,
+    "emitted_rows": 36
+  },
+  "canonical_mutations": false
+}

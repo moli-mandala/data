@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Eravallan · Dravidian surveys, 2026-09-21 · batch 014. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Eravallan | Proposed etymology | Evidence |
+|---|---|---|---|
+| 66 | **eṭṭukāli** ‘spider’ | Compound: [**DEDR 784**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=77) + [**DEDR 1479**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=138) | DEDR784 Tamil/Malayalam eṭṭu eight plus DEDR1479 kāl leg supports survey eṭṭukāli spider as eight + leg, with its ordinary nominal ending. Preserve the complete eight-legged designation as a compound. (1 records.) |
+| 67 | **pɛṭṭapuḷḷɛ** ‘girl’ | Compound: [**DEDR 4395**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=388) + [**DEDR 4198**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=372) | DEDR4395(b) gives peṭṭai female/woman/girl and colloquial poṭṭacci, while DEDR4198 gives piḷḷai/piḷḷa child. Survey poṭṭa-/peṭṭa-piḷḷai/pulla/pulle girl is an ordered female + child compound with the source vowel and stop variants retained; subsection(b) is specified rather than silently treating it as the simple peṇ form. (2 records.) |
+| 68 | **kanamilla** ‘light’ | Compound: [**DEDR 1404**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=130) + [**DEDR 2559**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=222) | Ordered weight + absence components: DEDR1404 supplies kaṉam heaviness and DEDR2559 supplies illa/illā not existing, including ordinary negative adjectival forms. The survey whole expressions mean light, literally without weight; their source contractions and endings are preserved. DEDR1404 expressly notes influence from Sanskrit ghana on the kaṉa heavy family; that contact qualification is retained, and no unsupported immediate donor is asserted. (2 records.) |
+| 69 | **ɛṇṇɛ** ‘oil’, **ɛṇṇe** ‘oil’ | Compound: [**DEDR 854**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=83) + [**DEDR 3746**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=334) | Ordered sesame + oil: DEDR854 explicitly gives Tamil eṇ ṇey gingelly oil and related Malayalam eṇṇa/Kannada eṇṇe, while3746 gives ney oil. These lexicalized eṇṇey/eṇṇa/eṇṇe survey responses are analysed with both historical constituents; their generalized survey gloss oil and all dialect transcriptions remain unchanged. (2 records.) |
+| 70 | **kūramugaḍɨ** ‘roof’ | Compound: [**DEDR 1904**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=173) + [**DEDR 4888**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=437) | Ordered roof + ridge: DEDR1904 gives kūrai/kūra roof and4888 mukaṭu ridge/top of a roof. Eravallan kūramugaḍɨ roof contains both nouns; retain the source general roof gloss for this ridge compound. The external crown/diadem comparison in4888 is not treated as an established immediate borrowing route. (1 records.) |
+
+Proposed assignment rows: **16**. Affected records: **8**. Relation kinds: **component**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-014.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Eravallan/batch-014.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

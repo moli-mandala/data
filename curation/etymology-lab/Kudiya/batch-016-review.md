@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Kudiya · Dravidian surveys, 2026-09-21 · batch 016. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Kudiya | Proposed etymology | Evidence |
+|---|---|---|---|
+| 76 | **maḍ** ‘roof’ | Proposed reflex of [**DEDR 4796**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=426) | DEDR4796(a) explicitly gives Tulu māḍů roof within the māṭam/māḍa building family. Kudiya māḍ is the same regional roof noun with its final-vowel loss preserved. The Sanskrit architectural comparisons do not by themselves establish a separate immediate borrowing route for this response. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 77 | **karuta** ‘black’ | Proposed reflex of [**DEDR 1395**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=130) | DEDR1395 gives Tamil kaṟu with past -tt- become black, kaṟuppaṉ black man and Kodagu karatë black. The selected karutta/karuttavan/karttatɨ/karettu responses retain the documented black adjective or human form and ordinary endings; the exact source black gloss is preserved. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (2 records.) |
+| 78 | **uṇagati** ‘dry’ | Proposed reflex of [**DEDR 601**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=59) | DEDR601 gives Tamil uṇaṅku, Malayalam uṇaṅṅuka, Kannada oṇagu, Tulu oṇuṅgelu/uṇuṅgu/nuṅgu dry and dry up. These unag-/oṇag-/voṇag-/nuṅg- survey responses preserve that drying stem, ordinary adjectival endings and initial glide; potentially competing nānt-/nan- readings are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 79 | **nanañade** ‘wet’ | Proposed reflex of [**DEDR 3630**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=320) | DEDR3630 gives Tamil nanai wet with past -nt-, Malayalam nanayuka/nanaccal wetness and Kodagu nele- with past neland- get wet. Selected nanan-/nanañj-/naned-/naland- survey wet responses preserve these regional wet stems and ordinary adjectival endings; longer auxiliary constructions are left unresolved. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 80 | **puṇḍe** ‘wet’ | Proposed reflex of [**DEDR 4183**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=370) | DEDR4183(a) explicitly gives Kodagu puṇḍe wetness of wet clothes, within the squeeze/wring family. Kudiya punde wet is a proposed neighbouring-lect use of that wetness noun; the source wet meaning is preserved. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+
+Proposed assignment rows: **6**. Affected records: **6**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-016.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Kudiya/batch-016.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

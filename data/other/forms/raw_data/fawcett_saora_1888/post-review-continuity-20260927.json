@@ -1,0 +1,29 @@
+{
+  "status": "lexical/output continuity verified after Unicode-equivalent profile and source metadata repairs",
+  "immutable_independent_review": "root-whole-output-audit-20260927-pass1.json",
+  "unchanged_hashes": {
+    "proposal.csv": "22228f7f37976525caa93a25a2f0b4811098932c9868ced89e8cbc9db1743db6",
+    "proposal-audit.jsonl": "10af88365982b7af6af2289e6742ae948505731d92bc2afd4013b5c4aa1580d1",
+    "full-reviewed-inventory.jsonl": "f2613368a8aa85ea97788ead3f239bd05d57a801c3aa4bebaa0c4d6d36ada011"
+  },
+  "profile": {
+    "old_sha256": "38625a7e2d52fe03d3ebdc9384409aa6fd11e8afa7b859a540d1266cbf77a3cb",
+    "new_sha256": "5e749e21a5f4eeac8ce5dff907cbbb286af6a305b4bcef415ca5c692db81398a",
+    "change": "Add NFD grapheme spellings with identical NFC output. All original composed grapheme mappings unchanged; no new scholarly phonological decision.",
+    "nfc_nfd_rows_passed": 128
+  },
+  "metadata_changes": [
+    "Bib jambu_editor field replaces editor to distinguish ingestion credit from publication editor.",
+    "Bib provenance names planned canonical CSV/audit and explains OCR locator aid only.",
+    "YAML importer points to implemented guarded script; no source interpretation change."
+  ],
+  "validation": {
+    "tests": "6 passed in 0.63s",
+    "test_log_sha256": "29fe33603395be7dd07a4febbd5aa11392a8d6b257cded3e92de8342a7d585f2",
+    "unknown_graphemes": 0,
+    "parser_rows_in": 128,
+    "parser_rows_out": 128,
+    "closed_variant_edges": 7
+  },
+  "independent_review_limitation": "Original 20-unit review remains immutable; final metadata/profile/coverage approval is separate."
+}

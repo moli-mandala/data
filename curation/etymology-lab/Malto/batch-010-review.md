@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Malto · Zoller (2023), Dravidian records, 2026-09-22 · batch 010. Pending user review; autonomous research continues.
+
+| # | Malto | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **eke** ‘a kind of small tortoise’ | Proposed reflex of [**DEDR 773**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=76) | DEDR773 explicitly pairs Kurux ekkā tortoise with Malto eke a kind of small tortoise. Zoller p.1009 cites this article for these same attestations; Kurux short final a is retained as his transcription variant. This proposal concerns that Dravidian family, not his further Nancowry comparison. This family identification does not endorse broader cross-family ancestry claims in the source. (1 records.) |
+| 2 | **onqe** ‘to be under the effect of drink or poison, be intoxicated’ | Proposed reflex of [**DEDR 936**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=90) | DEDR936 explicitly records Kurux oŋgkhnā/uŋgkhnā and Malto onqe with the same intoxication senses. Zoller pp.1009–1010 cites936 for these forms; his doubtful Mon-Khmer comparison does not change this attested family identification or establish a donor. This family identification does not endorse broader cross-family ancestry claims in the source. (1 records.) |
+| 3 | **ceṉyro** ‘scented, smelling’ | Proposed reflex of [**DEDR 2264**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=201) | DEDR2264 records Malto ceṉyro scented, smelling and Kurux cā'(a)nā stink/smell. Zoller p.1010 explicitly distinguishes Pfeiffer’s Kurux cãʔ from Burrow and Emeneau’s fuller verbal form while identifying the same article. Retain the source-specific Kurux citation shape; this link does not endorse Zoller’s proposed Austroasiatic origin. This family identification does not endorse broader cross-family ancestry claims in the source. (1 records.) |
+| 4 | **tenge** ‘to tell, point out, relate’ | Proposed reflex of [**DEDR 3409**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=299) | DEDR3409 explicitly records Malto teṉg̠e tell, point out, relate alongside Kurux teŋgnā. Zoller p.1010 cites3409 and prints Malto tenge with the same gloss: the simpler n/g notation is preserved. His comparisons with Sre, Tampuan and Palaung are not ancestry assignments here. This family identification does not endorse broader cross-family ancestry claims in the source. (1 records.) |
+| 5 | **mĕru** ‘thread’ | Proposed reflex of [**DEDR 5095**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=461) | DEDR5095 explicitly gives Kurux nasalized mē̃r and mēr thread, twine, thin cord and Malto mĕru thread. Zoller p.1010 cites this family with matching forms and meanings; nasalization placement and breve notation are source conventions. Keep the two Kurux source records distinct; no Mon-Khmer ancestry is inferred. This family identification does not endorse broader cross-family ancestry claims in the source. (1 records.) |
+
+Proposed assignment rows: **5**. Affected records: **5**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-010.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Malto/batch-010.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../zoller-dravidian-20260922/research-holds.json). No new lexical material or donor nodes are introduced.

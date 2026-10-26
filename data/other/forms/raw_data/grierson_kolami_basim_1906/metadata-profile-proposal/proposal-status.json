@@ -1,0 +1,112 @@
+{
+  "status": "metadata/profile proposal; not install-ready",
+  "new_keys_no_current_bib_or_settings_collision": [
+    "grierson1906kolamibasim",
+    "haig1897gondi_kolami"
+  ],
+  "actual_SourceMeta_schema_and_combined_declaration_check": "pass; route names resolved, profile materialization remains pending",
+  "actual_pybtex_plain_formatter": {
+    "grierson1906kolamibasim": "[1] George Abraham Grierson\\.\nKōlāmī, Naikī, etc\\.\nIn *Linguistic Survey of India\\. Volume IV: Munda and Dravidian Languages*, pages 561–569\\.\nOffice of the Superintendent of Government Printing, India, Calcutta, 1906\\.\nURL: [https://dsal\\.uchicago\\.edu/books/lsi/lsi\\.php?volume=4\\\\&amp;pages=701](https://dsal.uchicago.edu/books/lsi/lsi.php?volume=4\\&pages=701)\\.  \n",
+    "haig1897gondi_kolami": "[1] Wolseley Haig\\.\nA comparative vocabulary of the Gondi and Kolami languages\\.\n*Journal of the Asiatic Society of Bengal*, 66\\(1\\):185–191, 1897\\.\nReported authority in Grierson 1906, p\\. 562\\. Full page range corroborated by DEDR bibliography section 26\\. This work has not been independently collated for lexical ingestion; no direct lexical citation is asserted\\.  \n"
+  },
+  "existing_keys_reused_without_redeclaration": [
+    "hislop1866papers",
+    "dedr",
+    "grierson1906lsi4",
+    "grierson1906naiki"
+  ],
+  "proposed_lects": [
+    {
+      "ID": "grierson1906_kolami_wun",
+      "Tag": "dialect:Kolami:Kolami-Wun-LSI1906:Kolami%20of%20Wun%20%28LSI%201906%29",
+      "Language_ID": "Kolami",
+      "Source_Language_ID": "Kolami-Wun-LSI1906",
+      "Name": "Kolami of Wun (LSI 1906)",
+      "Glottocode": "",
+      "Latitude": "",
+      "Longitude": "",
+      "Clade": "C. Dravidian",
+      "Location": "Historical Wun district, Berar; LSI 1906 survey",
+      "Quality": ""
+    },
+    {
+      "ID": "grierson1906_naikri_basim",
+      "Tag": "dialect:Naikri:Naikri-Basim-LSI1906:Bhili%20of%20Basim%20%28LSI%201906%29",
+      "Language_ID": "Naikri",
+      "Source_Language_ID": "Naikri-Basim-LSI1906",
+      "Name": "Bhili of Basim (LSI 1906)",
+      "Glottocode": "",
+      "Latitude": "",
+      "Longitude": "",
+      "Clade": "C. Dravidian",
+      "Location": "Historical Basim district, Berar; LSI 1906 survey",
+      "Quality": ""
+    }
+  ],
+  "routing": [
+    {
+      "scope": "Specimen75 printed564–565 above Basim boundary",
+      "base": "Kolami",
+      "lect": "grierson1906_kolami_wun"
+    },
+    {
+      "scope": "General Kolami grammar562–563",
+      "base": "Kolami",
+      "lect": null,
+      "reason": "Synthesized from multiple supplied materials; not all explicitly Wun"
+    },
+    {
+      "scope": "Basim subsection565 lower–569",
+      "base": "Naikri",
+      "lect": "grierson1906_naikri_basim"
+    }
+  ],
+  "auxiliary_policy": {
+    "hislop1866papers": "Existing citation/settings only; reported source authority, no asserted direct lexical collation",
+    "haig1897gondi_kolami": "New reported authority; printed562 plus DEDR section26 corroborates page range185–191; no lexical emission"
+  },
+  "ocr_attribution": "Main proposal assumes Nordic keyed OCR contributes transcription, with original owner/independent correction; final flag must reflect actual accepted path. Auxiliary identity was read from original/primary bibliography, not lexically OCR-ingested.",
+  "unready_gates": [
+    "No complete lexical candidate or Unicode inventory yet",
+    "No source profile file yet",
+    "No guarded importer exists; no command declared",
+    "Bibliographic installed counts/provenance pending",
+    "No canonical/parser/full-build/browser claim"
+  ],
+  "inputs": [
+    {
+      "path": "data/cldf/languages.csv",
+      "sha256": "ff894ca6b5b2612836871aee45b5ba887fd17c5e8ff797c5c2e0e122538e0b96"
+    },
+    {
+      "path": "data/cldf/dialects.csv",
+      "sha256": "f4baf66ce8c60985faf49e561b7254e890f3da5d05a954aaf10bc99a493a89de"
+    },
+    {
+      "path": "data/cldf/sources.bib",
+      "sha256": "af76f24c4a29cbe3822ac94aef8c4b753e16ed04d79de62415f06bc554285dc2"
+    }
+  ],
+  "proposal_files": [
+    {
+      "path": "data/data/other/forms/raw_data/grierson_kolami_basim_1906/metadata-profile-proposal/settings-proposed.yaml",
+      "sha256": "7c02f9c838a4eef7777bd27a014e3c9e8323779679b735b7b9037c4f94e7a814"
+    },
+    {
+      "path": "data/data/other/forms/raw_data/grierson_kolami_basim_1906/metadata-profile-proposal/references-proposed.bib",
+      "sha256": "af08bdc1e8cd88156078f7ff9495de001bc27791adca762487487e19025f2267"
+    },
+    {
+      "path": "data/data/other/forms/raw_data/grierson_kolami_basim_1906/metadata-profile-proposal/dialects-proposed.csv",
+      "sha256": "1e460795aad102f6d168ebf17b2e29b1be8b561f7f2fbd53b5d6472b90b4c1e6"
+    },
+    {
+      "path": "data/data/other/forms/raw_data/grierson_kolami_basim_1906/metadata-profile-proposal/profile-decisions.json",
+      "sha256": "99e1074dabd20ab3cea7bf1192f6131a21fa12a3c6e1b40378cca9a0a551e14f"
+    },
+    {
+      "path": "data/data/other/forms/raw_data/grierson_kolami_basim_1906/metadata-profile-proposal/README.md",
+      "sha256": "dd540072af58137365be3f3f5cddd64422f2c09fc842333dcf44f3abf70eeead"
+    }
+  ]
+}

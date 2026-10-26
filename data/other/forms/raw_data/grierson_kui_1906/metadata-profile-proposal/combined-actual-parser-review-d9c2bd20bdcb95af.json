@@ -1,0 +1,140 @@
+{
+  "status": "combined actual-parser and scoped source accounting pass; independent acceptance and canonical metadata pending",
+  "output_pins": {
+    "combined-candidate.csv": "d9c2bd20bdcb95af8f6a508f5548b63a48ffde6454505166b5b9f1adfc341030",
+    "combined-audit.jsonl": "65991ebd83d8ecaaf4d829d53b67469179e23018412c31f968674ed147b94112",
+    "literal-preservation.txt": "16b0b67cddd07a6aa98936050c6ee48590dfa45900bb021ac670184b5f0694eb",
+    "metadata-proposal.json": "8b54d26d2194d0dc867756bd560d1452f58aa473a6dfbea5d3d1f3da5bd84d38",
+    "combined-candidate.yaml": "8b54d26d2194d0dc867756bd560d1452f58aa473a6dfbea5d3d1f3da5bd84d38",
+    "graph-accounting.json": "6b190c5b75306d64ad2f9e4e4207a0523909294d6cfbf502bcfc9562e13155d8",
+    "integration-overlays.json": "ed5864fa33eca552fd892b1afdb6e85d09e314bfccecd1f2be158d610009de9e",
+    "build_candidate.py": "42b9c84a54ffe3271692b74a83c50371f6c78626bb3363a5aa940f583606092c"
+  },
+  "status_sha256": "7e6ba6f5a7f342eef3b8a8d2912fd4af6da18911c205b41e7caa5f4e5369d8af",
+  "checks": {
+    "NFC": {
+      "rows": 1832,
+      "errors": 0,
+      "all15source_fields_retained": true,
+      "ordered_keys": true,
+      "no_unintended_splits": true,
+      "approved_display": true
+    },
+    "NFD": {
+      "rows": 1832,
+      "errors": 0,
+      "all15source_fields_retained": true,
+      "ordered_keys": true,
+      "no_unintended_splits": true,
+      "approved_display": true
+    }
+  },
+  "parser_code": {
+    "make_cldf.py": "1a1ded9eff5b8607174aa37981efb4358824be8ffffdfaa7128c0cea53dac5a8",
+    "source_meta.py": "1c3147843d6c9f2489155b633db55fd1374e6f3b1a59b7051a3642fdbd2c7a4c",
+    "tags.py": "f03b4c2295dae956c4cfa212968eeff437a96cbc838fccdc409214fa5b25b67f"
+  },
+  "accounting": {
+    "rows": 1832,
+    "audit_units": 1859,
+    "atomic_emissions_verified": 888,
+    "expressions_verified": 77,
+    "dispositions": {
+      "emitted": 1801,
+      "source-blank": 18,
+      "identity-hold": 15,
+      "documentary": 8,
+      "joined-physical-fragment": 2,
+      "reused-existing-occurrence": 12,
+      "reference-hold": 3
+    }
+  },
+  "dialect_tokens": [
+    "dialect:Gondi:mandla:Mandla",
+    "dialect:Kaikadi:lsi1906-kaikadi:Berar",
+    "dialect:Kui:grierson1906_kui_chinna_kimedi:Chinna%20Kimedi%20%28LSI%201906%29",
+    "dialect:Kui:grierson1906_kui_gumsur_bod:Gumsur%20and%20Bod%20%28LSI%201906%29",
+    "dialect:Kui:grierson1906_kui_kalahandi:Historical%20Kui%20of%20Kalahandi%20%28LSI%201906%29",
+    "dialect:Kui:grierson1906_kui_khondmals:Khondmals%20%28LSI%201906%29"
+  ],
+  "existing_occurrence_reuses_verified": [
+    {
+      "source_unit_key": "grierson1906kui:p570:outside-comparand:01",
+      "existing_keys": [
+        "grierson1906naiki:p570:pronoun-table:col1:row1"
+      ]
+    },
+    {
+      "source_unit_key": "grierson1906kui:p570:outside-comparand:02",
+      "existing_keys": [
+        "grierson1906naiki:p570:pronoun-table:col1:row2"
+      ]
+    },
+    {
+      "source_unit_key": "grierson1906kui:p570:outside-comparand:03",
+      "existing_keys": [
+        "grierson1906naiki:p570:pronoun-table:col1:row3"
+      ]
+    },
+    {
+      "source_unit_key": "grierson1906kui:p570:outside-comparand:04",
+      "existing_keys": [
+        "grierson1906naiki:p570:pronoun-table:col1:row4"
+      ]
+    },
+    {
+      "source_unit_key": "grierson1906kui:p570:outside-comparand:05",
+      "existing_keys": [
+        "grierson1906naiki:p570:pronoun-table:col2:row1"
+      ]
+    },
+    {
+      "source_unit_key": "grierson1906kui:p570:outside-comparand:06",
+      "existing_keys": [
+        "grierson1906naiki:p570:pronoun-table:col2:row2"
+      ]
+    },
+    {
+      "source_unit_key": "grierson1906kui:p570:outside-comparand:07",
+      "existing_keys": [
+        "grierson1906naiki:p570:pronoun-table:col2:row3"
+      ]
+    },
+    {
+      "source_unit_key": "grierson1906kui:p570:outside-comparand:08",
+      "existing_keys": [
+        "grierson1906naiki:p570:pronoun-table:col2:row4"
+      ]
+    },
+    {
+      "source_unit_key": "grierson1906kui:p570:outside-comparand:09",
+      "existing_keys": [
+        "grierson1906naiki:p570:pronoun-table:col3:row1"
+      ]
+    },
+    {
+      "source_unit_key": "grierson1906kui:p570:outside-comparand:10",
+      "existing_keys": [
+        "grierson1906naiki:p570:pronoun-table:col3:row2"
+      ]
+    },
+    {
+      "source_unit_key": "grierson1906kui:p570:outside-comparand:11",
+      "existing_keys": [
+        "grierson1906naiki:p570:pronoun-table:col3:row3"
+      ]
+    },
+    {
+      "source_unit_key": "grierson1906kui:p623:outside-comparand:14",
+      "existing_keys": [
+        "grierson1906naiki:p623:genitive-comparison:naiki"
+      ]
+    }
+  ],
+  "pending": [
+    "Canonical dialect/source declaration and bibliography registration still need guarded integration; encoded tokens checked for parent/syntax only.",
+    "Graph claims may still be revised by independent source review; this report covers only pinned candidate.",
+    "Final independent output audit and approved freeze; no full build/database/browser run."
+  ],
+  "canonical_changes": false
+}

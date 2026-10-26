@@ -1,0 +1,33 @@
+{
+  "status": "passed source-local actual parser; canonical install not performed",
+  "inputs": {
+    "proposed.csv": "7e95da15b5e4770da3e2fee7943413dd81b0637f4ea937e8e924b663184ed8b7",
+    "proposal-audit.jsonl": "7c69e497b95665320dc66f75fb2a6f2ce7991051d13472705572544fbd47bb5d",
+    "proposed-settings.yaml": "b1a494a90e72d07d0fd6690b551e15aa98f5a0da1be1f5c3207dd4f0f04cae35",
+    "proposed-references.bib": "5ac1ee89003a0362ffd1737c4c22e292ece9ee37f1d1e262be3a6e5a9db90a8e",
+    "metadata-and-graph-proposal.json": "761cb83959abebf6cbc817ad3f1d523db9d7224d46ba0866b98c971d06562201"
+  },
+  "checks": {
+    "NFC": {
+      "rows": 154,
+      "all_15_fields_exact": true,
+      "ordered_keys_exact": true,
+      "literal_display": true
+    },
+    "NFD": {
+      "rows": 154,
+      "all_15_fields_exact": true,
+      "ordered_keys_exact": true,
+      "literal_display": true
+    }
+  },
+  "registered_languages": [
+    "Malayalam",
+    "Mannan"
+  ],
+  "registered_tags": true,
+  "no_graph_edges": true,
+  "audit_key_closure": true,
+  "excluded_witness_records": 54,
+  "fixture_isolation": "Only source-local YAML discovery patched; actual generic parse_file is unchanged; this is not a canonical SourceMeta/build acceptance claim."
+}

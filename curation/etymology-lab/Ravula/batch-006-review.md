@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Ravula · Dravidian surveys, 2026-09-21 · batch 006. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Ravula | Proposed etymology | Evidence |
+|---|---|---|---|
+| 21 | **koḍu** ‘give’ | Proposed reflex of [**DEDR 2053**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=185) | DEDR 2053 attests Tamil koṭu, Malayalam koṭukka, Kannada koḍu/kuḍu and Kodagu koḍï give. The survey simple verbs belong to this stem; give-away compounds and the separate tā-/ī- giving stems are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 22 | **nōku** ‘see’ | Proposed reflex of [**DEDR 3794**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=339) | DEDR 3794 attests Kannada nōḍu, Kota/Kodagu nōṭ- and Tamil/Malayalam nōkku see or look. These simple survey verbs retain that stem; causatives and longer verb phrases are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 23 | **pēru** ‘name’ | Proposed reflex of [**DEDR 4410**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=389) | DEDR 4410 explicitly attests Tamil/Malayalam pēr, Kota pēr, Telugu pēru, Gadaba/Parji pidir, Gondi peder/porol, Tulu pudaru and Konda/Kuvi dōru name. The selected simple name nouns fit these branches; Indo-Aryan nām forms and potentially contact-mediated Kannada pēru are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 24 | **mīnə** ‘fish’ | Proposed reflex of [**DEDR 4885**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=436) | DEDR 4885 directly groups the mīn fish series in Kannada, Kodagu, Kota, Tamil, Tulu and Malto (mínu). The survey final -ə and Malto -du are retained. Badaga and Ravula are comparative extensions explicitly labelled look-alikes by the upstream annotation; neither is falsely described as listed in DEDR. The article’s Sanskrit mīna comparison does not itself specify a loan route for these records. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 25 | **kombə** ‘horn’ | Proposed reflex of [**DEDR 2115**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=190) | DEDR 2115 directly gives Kodagu kombï and Tamil/Malayalam kompu horn. The source survey kombə/kompə spellings preserve final-vowel and voicing differences. Badaga, Betta Kurumba and Ravula forms are comparative extensions of this distinctive nasal-stop stem, explicitly only look-alikes in the upstream annotation, pending inheritance/contact review. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+
+Proposed assignment rows: **5**. Affected records: **5**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-006.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Ravula/batch-006.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

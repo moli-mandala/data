@@ -49,7 +49,9 @@ def test_kannauji_ipa_profile():
     profile = Tokenizer("conversion/kannauji.txt")
     cases = {
         "d̪ʌɾʋʌdʒʌ": "darvaja",
-        "tʃhoʈobɦʌija": "choṭobʰaīyā",
+        # plain h after a voiceless stop and ɦ after a voiced one are both aspiration
+        "tʃhoʈobɦʌija": "cʰoṭobʰaīyā",
+        "kʊlhaɖi": "kulʰāḍī",  # Hindi kulhāṛī: the murmured l CDIAL writes lʰ
         "d̪ɦʊã": "dʰuā̃",
         "mʊh̰": "muh̰",
     }

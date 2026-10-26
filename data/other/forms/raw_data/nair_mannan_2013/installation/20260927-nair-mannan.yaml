@@ -1,0 +1,30 @@
+file: 20260927-nair-mannan.csv
+defaults:
+  transcription:
+    convert: false
+    preserve_hyphens: true
+  identity:
+    dedupe_by_entry_key: true
+  forms:
+    split_alternates: false
+  gloss:
+    grammar_tags: false
+  importer:
+    commands:
+    - - data/other/forms/raw_data/nair_mannan_2013/installation/install_source.py
+      - --install
+    note: Guarded complete reviewed chapter only; historical literal generator followed
+      by metadata overlay remains archival. Full compiled/browser gates separate.
+sources:
+  nair2013mannan:
+    reference:
+      editor: OpenAI Codex
+      ocr: false
+      etymology_provenance: source
+    identity:
+      dedupe_by_entry_key: true
+  joseph1980devikolam:
+    reference:
+      editor: OpenAI Codex
+      ocr: false
+      etymology_provenance: none

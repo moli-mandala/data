@@ -1,0 +1,29 @@
+file: 20260925-bailey-rampur.csv
+defaults:
+  transcription:
+    profile: bailey-rampur-1920
+    input: form
+    preserve_hyphens: true
+  identity:
+    legacy_ids: stem
+    append_order: 73
+  importer:
+    commands:
+    - - data/other/forms/raw_data/bailey_rampur_1920/import_source.py
+      - --install
+    note: 'Whole paired-source Rampur recovery: shared introduction113–115 and lect-specific116,
+      grammar131–140,22complete translated responses141–142, commentary142–143 and
+      glossary144–147. 647rows preserve all288stable legacy keys, with 8explicit source-reviewed
+      legacy corrections. Printed morphology, variants and typed uncertainties remain
+      explicit; full compiled/browser gates deferred. Four generic Kochi witnesses
+      occur once under kc; body jĕā́ recovered with typed interpretation uncertainty.'
+sources:
+  bailey1920rampur:
+    identity:
+      dedupe_by_entry_key: true
+    forms:
+      split_alternates: false
+    reference:
+      editor: OpenAI Codex
+      ocr: true
+      etymology_provenance: none

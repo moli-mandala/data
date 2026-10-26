@@ -1,0 +1,25 @@
+{
+  "status": "pass: staged SourceMeta and actual generic parser fixture",
+  "checks": {
+    "NFC": {
+      "rows": 223,
+      "all15fields_exact": true,
+      "ordered_keys_exact": true,
+      "literal_display": true
+    },
+    "NFD": {
+      "rows": 223,
+      "all15fields_exact": true,
+      "ordered_keys_exact": true,
+      "literal_display": true
+    }
+  },
+  "source_reference_flags": 7,
+  "input_csv_sha256": "ee7fb5625bc4532815e64ae3755cd3ab76ec80c42d5b34fee25462af12e912c1",
+  "combined_current_registry_and_staged_yaml": "all current settings plus staged file validate with unique source declarations",
+  "staged_settings_sha256": "a7e720e29add3ab712975ffdf6b584ca5f64a77e0430a89e8561bea4dae502b7",
+  "proposed_language_and_lect": "explicit new source-named base/lect, blank catalogue and coordinates; not canonically registered yet",
+  "isolation": "Only YAML discovery is isolated to the source-local fixture; parse_file and conversion implementations unchanged.",
+  "canonical_changes": false,
+  "canonical_source_meta_and_parser_gate": "required after authorized installation"
+}

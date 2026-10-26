@@ -1,0 +1,18 @@
+import json
+from pathlib import Path
+P=Path(__file__).resolve().parent
+rs=json.loads((P/'remaining-initial.json').read_text());done={x['Form_ID'] for f in P.glob('pass*-saved-assignments.json') for x in json.loads(f.read_text())}
+groups=[{'parent': '9828', 'gloss': ['man', 'husband'], 'forms': ['moś'], 'languages': ['Kho'], 'citation': 'CDIAL[9828 and addenda]', 'evidence': 'Turner explicitly lists Khowar moš man/husband under manuṣya and repeats it from the Khowar primary source in the addendum. He qualifies this branch as mixed with mānuṣa or possibly martya; that historical qualification applies here.'}, {'parent': '9828', 'gloss': ['man'], 'forms': ['mīʔś'], 'languages': ['Bshk'], 'citation': 'CDIAL[9828]', 'evidence': 'Turner explicitly gives Bashkarik mīš/mī̃š young man/husband, with plural mānuš, in the manuṣya family. The survey mīʔś matches this shortened Bashkarik singular; the glottal marker is preserved.'}, {'parent': '9828', 'gloss': ['man'], 'forms': ['māś', 'māś / māśa', 'mū̃ś'], 'languages': ['Mai', 'bhatr'], 'citation': 'CDIAL[9828]', 'evidence': 'Turner explicitly lists Maiya māsh under manuṣya, qualified by contamination with mānuṣa or possibly martya. The Maiya/Bateri survey singular and inflected/slash variants fit that documented Kohistani family; the competing historical influence is retained in the analysis.'}, {'parent': '9828', 'gloss': ['man'], 'forms': ['munī'], 'languages': ['Bishnupriya'], 'citation': 'CDIAL[9828]', 'evidence': 'Turner gives Assamese munih man/hired farmworker and Bengali munis labourer in the manuṣya family influenced by puruṣa. Bishnupriya munī is compared with this directly neighbouring munih form; the final h loss and mixed historical family make this a qualified regional comparison.'}, {'parent': '5098', 'gloss': ['man', 'husband'], 'forms': ['janā', 'jaṇa', 'jaṇā', 'jaṇā̃', 'jɛṇo'], 'languages': ['poth', 'Goj'], 'citation': 'CDIAL[5098]', 'evidence': 'Turner explicitly gives Lahnda jaṇā person/husband, Awankari jaṇā person and Punjabi jaṇā. The Pothwari and Gujari responses preserve that western jana family, including ordinary final-vowel and nasalized variants; mixed answers with bandā or ādmī are excluded.'}]
+a=[]
+for i,g in enumerate(groups):
+ for r in rs:
+  if r['ID'] not in done and r['Gloss'] in g['gloss'] and r['Form'] in g['forms'] and ('languages' not in g or r['Language_ID'] in g['languages']):
+   x=dict(record=r,citation=g['citation'],evidence=g['evidence'],family=i)
+   if 'components' in g:x['components']=g['components']
+   else:x.update(parent=g['parent'],kind=g.get('kind','reflex'))
+   a.append(x)
+assert len(a)==len({x['record']['ID'] for x in a})
+h=[]
+(P/'pass061-decisions.json').write_text(json.dumps(dict(accepted=a,held=h),ensure_ascii=False,indent=1)+'\n')
+(P/'pass061-rules.json').write_text(json.dumps(groups,ensure_ascii=False,indent=1)+'\n')
+print(len(a),'accepted',len(h),'held',[(g.get('parent',g.get('components')),sum(x['family']==i for x in a)) for i,g in enumerate(groups)])

@@ -1,0 +1,31 @@
+{
+  "status": "confirmed partial source; whole-source recovery active",
+  "owner": "root",
+  "source_sha256": "a6541e0d2397849ce7c36961b3849f3b2c1f1c267036cfa1a3f6025796e14e7d",
+  "original_pdf": "tmp/pdfs/koya/JLSR2021_029.pdf",
+  "source_pages": 124,
+  "existing_scope": "Appendix E wordlists, 1438 installed rows; preserve existing source identities and source readings.",
+  "verified_missing_scope": [
+    {"section": "3.1.4", "printed_pages": [6, 7], "pdf_pages": [11, 12], "content": "18 explicitly glossed comparison attestations for salt, six, different and village, with dialect attribution and sound correspondence prose."},
+    {"section": "B.1", "lect": "Utnoor Gondi", "printed_pages": [17, 19], "pdf_pages": [22, 24]},
+    {"section": "B.2", "lect": "Bhamani Gondi", "printed_pages": [20, 21], "pdf_pages": [25, 26]},
+    {"section": "B.3", "lect": "Bhamani Madia", "printed_pages": [22, 23], "pdf_pages": [27, 28]},
+    {"section": "B.4", "lect": "Malakanagiri Koya", "printed_pages": [24, 25], "pdf_pages": [29, 30]},
+    {"section": "B.5", "lect": "Podia Koya", "printed_pages": [26, 27], "pdf_pages": [31, 32]},
+    {"section": "B.6", "lect": "Chintoor Koya", "printed_pages": [28, 29], "pdf_pages": [33, 34]},
+    {"section": "B.7", "lect": "Jaganathapuram Koya", "printed_pages": [30, 31], "pdf_pages": [35, 36]}
+  ],
+  "scope_rules": [
+    "Page pairs in section records are inclusive ranges, not isolated pages.",
+    "Recover complete printed target narrative/translation units and all target test questions. Do not invent word-level gloss alignment from free translations.",
+    "English-only expected answers are documentary controls unless a target form is explicitly supplied.",
+    "B.8 and B.9 Telugu test texts are comparison controls for this package, like Appendix E Telugu/Oriya controls; census them explicitly.",
+    "Check all remaining report prose, appendices and phonetic alphabet for further target examples before claiming source coverage.",
+    "Retain source capital letters, editorial stutter markings, source orthography and phonetic symbols separately; do not apply the wordlist profile blindly to narrative spelling.",
+    "Source similarity and intelligibility percentages are not etymological or cognate edges."
+  ],
+  "evidence": "Pinned original PDF native-text census across all124pages in tmp/koya-whole/native-text.jsonl; contents and sections3.1.4/B.1–B.7 directly inspected. Original-page visual audit remains required.",
+  "checklist_addenda": ["survey wordlists or comparative tables", "OCR-heavy source for existing raster wordlist and any image-only additions"],
+  "remaining": ["Full-report lexical census", "Complete source-unit extraction", "Original-page review", "Metadata/profile/dialect/citation integration", "Independent output audit and focused checks", "Canonical whole-source installation"],
+  "deferred": "No database/CLDF build, compiled graph or browser refresh without user authorization; no remote execution or release."
+}

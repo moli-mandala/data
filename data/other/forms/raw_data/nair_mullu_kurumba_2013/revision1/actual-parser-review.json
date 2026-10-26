@@ -1,0 +1,37 @@
+{
+  "status": "passed source-local actual parser; canonical install not performed",
+  "inputs": {
+    "proposed.csv": "4e85544cd7835bdd84eb58898b0b74368efc81c04aada4b0c7d89713297d0c83",
+    "proposal-audit.jsonl": "494168f119323d48bf7bf0b2b5afac56fbbfc490d05b9df854ccc1c2d8898cb9",
+    "proposed-settings.yaml": "b89c022f171562917450c3c774a0e97138bf9804963c2f306639e494c1757f40",
+    "proposed-references.bib": "a46cfe0bf6000c6e0344e95e520805c42f800b616761aa4aafad30b5d106f424",
+    "metadata-proposal.json": "f684d3495fc03dc3cb805424dd8b3bcd0a1af7dc31bab4a62273e6b80cf51d32",
+    "graph-proposal.json": "078b7cdc9254a3e4081651865b7a527b42198bdf745c069fb3c1c32fe65777b1"
+  },
+  "checks": {
+    "NFC": {
+      "initial_dedupe_keys": 135,
+      "rows": 135,
+      "all_15_fields_exact": true,
+      "ordered_keys_exact": true,
+      "literal_display": true
+    },
+    "NFD": {
+      "initial_dedupe_keys": 135,
+      "rows": 135,
+      "all_15_fields_exact": true,
+      "ordered_keys_exact": true,
+      "literal_display": true
+    }
+  },
+  "registered_languages": [
+    "Malayalam",
+    "Mullu Kurumba"
+  ],
+  "registered_tags": true,
+  "closed_variant_edges": 2,
+  "audit_key_closure": true,
+  "excluded_witness_records": 23,
+  "commentary_reuses": 6,
+  "fixture_isolation": "Only source-local YAML discovery patched; actual generic parse_file is unchanged; this is not a canonical SourceMeta/build acceptance claim."
+}

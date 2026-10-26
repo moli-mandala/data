@@ -1,0 +1,40 @@
+{
+  "status": "proposed metadata only; no canonical writes",
+  "language": "Northern Hindko",
+  "dialect_tag": "dialect:Northern%20Hindko:bailey1920-kagani:Kagani%20%28Bailey%201920%29",
+  "source": "bailey1920kagani",
+  "preserve_identity": {
+    "legacy_ids": "stem",
+    "append_order": 100,
+    "dedupe_by_entry_key": true
+  },
+  "transcription": {
+    "profile": "bailey-kagani-1920",
+    "input": "form",
+    "preserve_hyphens": true
+  },
+  "forms": {
+    "split_alternates": false
+  },
+  "reference": {
+    "editor": "OpenAI Codex",
+    "ocr": true,
+    "etymology_provenance": "none"
+  },
+  "bibliography_change": {
+    "included": "Whole Kāgānī chapter printed pp.87–90 and92–109; p91 Bahramgala introduction recorded as an other-lect context control. All grammar, identifiable bound morphology, both interlinear narratives, complete expression spans, narrative notes and glossary retained. 1306 proposed forms,1217 audited units;329 historical keys retained with explicit independently reviewed corrections.",
+    "provenance": "Canonical source CSV and whole-source-recovery frozen proposal, keyed input/review records, literal preservation profile, parser validation and fresh independent output audit."
+  },
+  "deferred": [
+    "canonical installation until accepted fresh output audit",
+    "full database/CLDF build",
+    "full test suite",
+    "browser QA",
+    "compiled persistent-ID verification"
+  ],
+  "canonical_before_sha256": {
+    "data/data/other/forms/20260925-bailey-kagani.csv": "cd3fccd764d24b3332df1f1bb8167f4d792242343eb0b329a0858d1af099e83a",
+    "data/data/other/forms/20260925-bailey-kagani.yaml": "22ad14c7c1dd3e30ac53c1d1bbed78cf5f6b4951dd369452b4a072d98e5a5acf",
+    "data/conversion/bailey-kagani-1920.txt": "c99ed648e8d6753d2edcbe225b906d91f91d8b900d32eec0d3cc319309dc4949"
+  }
+}

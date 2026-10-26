@@ -1,0 +1,1 @@
+Zoller 2005 printed p. 120 (PDF page 130) visually checked at /private/tmp/jambu-zoller-120.png. Bottom-right entry explicitly gives the Kohistani short adjective, Shina khuṭo and Kalam khäṭän, with CDIAL 3895. This supports the specified short-adjective survey family, not every initial kh-/k- adjective.

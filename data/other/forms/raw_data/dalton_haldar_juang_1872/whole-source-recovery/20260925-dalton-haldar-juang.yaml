@@ -1,0 +1,23 @@
+file: 20260925-dalton-haldar-juang.csv
+defaults:
+  transcription:
+    profile: dalton-haldar-juang-1872
+    input: form
+  identity:
+    legacy_ids: stem
+    append_order: 104
+    dedupe_by_entry_key: true
+  forms:
+    split_alternates: false
+  importer:
+    commands:
+      - [data/other/forms/raw_data/dalton_haldar_juang_1872/install_whole_source.py, --install]
+    note: Whole Juang chapter pp.152–158 and complete Haldar comparison/separate vocabulary pp.235–242; all361 table cells reviewed,19 historical holds recovered, explicit grammatical markers retained, and outside-chapter indexed mentions accounted as documentary controls. Typed source and typography uncertainty remains visible. No source partial build is implied.
+sources:
+  dalton1872haldarjuang:
+    reference:
+      editor: OpenAI Codex
+      ocr: true
+      etymology_provenance: none
+    forms:
+      split_alternates: false

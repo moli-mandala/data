@@ -1,0 +1,46 @@
+{
+  "status": "refinement required; no owner inputs modified",
+  "reviewer": "/root/asur_finish",
+  "reviewed_rows": 390,
+  "reviewed_changed_rows": 138,
+  "protected_fields_pass": true,
+  "proposal_rows": 109,
+  "finding_counts": {
+    "unsupported_nominal_plural": 15,
+    "generic_intrinsic_analysis_notes": 47,
+    "raw_head_only_agent_notes": 16,
+    "source_agent_claim_retained": 8,
+    "missing_specific_claim_citations": 5,
+    "source_un_claim_retained": 6,
+    "unsupported_agent_comparison_citations": 2,
+    "modal_raw_analysis_note": 1,
+    "whole_raw_analysis_notes": 27
+  },
+  "candidate_sha256": "0c1951c68a1be1b3bc7b220ed4867178b347ce859877fdc1de6876dee5c4a4fc",
+  "projection_r3_sha256": "a8141e9f2d2291d7f50929b3cb9fc3574cbf77669a2a19a92f4b4ee0d670fd99",
+  "input_status_sha256": "069b5ec0e50c6312b04d80a058ae001a183473ceaa38792583a95bde1eea215c",
+  "source_evidence_sha256": {
+    "/Users/aryamanarora/Documents/Code/jambu-all/data/data/other/forms/raw_data/grierson_ahirwati_1908/specimens/specimen37/independent-review/independent-full-original-review.json": "25edc7bb45e9240f1ff6a8789f1ab0c12b56c754ddfde923c52159c40932577f",
+    "/Users/aryamanarora/Documents/Code/jambu-all/data/data/other/forms/raw_data/grierson_ahirwati_1908/specimen38/root-documentary-review/p237-linguistic-commentary-native.png": "033bc17569873466afa381de5beddd133cd27baca3886f22a7a4ee3c47716461",
+    "tmp/jambu-next-source/ahirwati-native-grammar-20260927/p51-first-reading-copulas.png": "62dd80c29d2bd3f86a66317a62465ff0b8e06b466f73757b28bf239d207eb5a4",
+    "tmp/jambu-next-source/ahirwati-native-grammar-20260927/p51-first-reading-pronouns.png": "7c739a3b28b02176fce7312669b1331614e4cdccd609d92b011365e4d9880da9",
+    "tmp/jambu-next-source/ahirwati-native-grammar-20260927/p51-first-reading-nominals.png": "d28d83d3192799aa1a5358024040af7e4cd9b61506b997fdfdd1a8042ca9f720",
+    "tmp/jambu-next-source/ahirwati-native-grammar-20260927/printed-50-pdf-67-Im67.png": "1612c1da60979c592b4d344bf70325b588024318c128656b2ed91fe04b230bce"
+  },
+  "retained_classes": [
+    "p51 exact present/past copulas including 2sg sā and masculine-plural thā",
+    "p237 explicitly past-participial bōlyō",
+    "p51 apᵃṇā masculine oblique",
+    "p51 ghari masculine locative and mhārē agreement",
+    "p51 future-passive participle karᵃṇō",
+    "explicit printed obj label",
+    "qualified final-component copula comparisons without whole-compound TAM/person"
+  ],
+  "nominal_count_clarification": "Actual frozen candidate contains 15 noun+pl rows, not 17. Three pronominal-plural rows and one thā copula-plural row are separate retained categories.",
+  "limits": "Independent complete keyed metadata scope review; prior full literal review reused with hashes. No new claim of Native recertification, canonical installation, parser/full-build or browser validation.",
+  "outputs": {
+    "all390-keyed-review.jsonl": "87dba91377a95725f9d8746472434031a8100c5c0d4e88d3ce518ac682dc7d29",
+    "guarded-refinement-proposals.jsonl": "73517b31ca51108d009b62f6b6d021b15ac16a74d841bc24f768f3a345d7fddd",
+    "nominal-number-scope-review.jsonl": "e07cc1db44a84fb3040b4ae1a03f219180ba0e3dc241370e6ed7e49704de65f1"
+  }
+}

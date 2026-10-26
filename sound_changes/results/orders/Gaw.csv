@@ -1,0 +1,82 @@
+earlier,later,earlier_rule,later_rule,i,j,delta_ned,words
+@final-cons-loss @final-cons-loss,@ks @ks,{s ḣ t n m} > ∅ / V C (V) _ #,k ṣ > ʦ̣ʰ,2,5,0.00068,28
+@final-cons-loss @final-cons-loss,@tr-lateral @tr-lateral,{s ḣ t n m} > ∅ / V C (V) _ #,{k t p kʰ tʰ pʰ} r > ɬ,2,8,0.00054,39
+@tr-lateral,@tr-lateral @tr-lateral,{b bʰ p} r > {b b p} l,{k t p kʰ tʰ pʰ} r > ɬ,6,8,0.00054,30
+@final-cons-loss @final-cons-loss,@flap @int-retroflex @int-retroflex @flap,{s ḣ t n m} > ∅ / V C (V) _ #,{ṭ ḍ} > ṛ / V _ V,2,12,0.00028,32
+@tr-lateral,@flap @int-retroflex @int-retroflex @flap,{b bʰ p} r > {b b p} l,{ṭ ḍ} > ṛ / V _ V,6,12,0.00028,35
+@deaspiration @tone @deaspiration,@flap @int-retroflex @int-retroflex @flap,{bʰ dʰ gʰ jʰ ḍʰ} > {b d g j ḍ},{ṭ ḍ} > ṛ / V _ V,11,12,0.00028,69
+@final-cons-loss @final-cons-loss,@int-stop-loss @int-stop-loss,{s ḣ t n m} > ∅ / V C (V) _ #,{t d} > ∅ / V _ V,2,13,0.00068,91
+@tr-lateral,@int-stop-loss @int-stop-loss,{b bʰ p} r > {b b p} l,{t d} > ∅ / V _ V,6,13,0.00054,86
+@deaspiration @tone @deaspiration,@int-stop-loss @int-stop-loss,{bʰ dʰ gʰ jʰ ḍʰ} > {b d g j ḍ},{t d} > ∅ / V _ V,11,13,0.00122,117
+@final-cons-loss @final-cons-loss,@v-loss @v-loss,{s ḣ t n m} > ∅ / V C (V) _ #,{v y} > ∅ / V _ V,2,15,0.0017,81
+@int-stop-loss @int-stop-loss,@aka @hiatus @hiatus,{k g} > ∅ / V _ V,i {a ā} > ī / _ #,14,17,0.00023,50
+@v-loss @v-loss,@aka @hiatus @hiatus,{v y} > ∅ / V _ V,i {a ā} > ī / _ #,15,17,0.0017,83
+@final-cons-loss @final-cons-loss,@final-vowel-loss,{s ḣ t n m} > ∅ / V C (V) _ #,{a ā i} > ∅ / V C* _ #,2,18,0.00655,375
+@tr-lateral,@final-vowel-loss,{b bʰ p} r > {b b p} l,{a ā i} > ∅ / V C* _ #,6,18,0.00054,374
+@deaspiration @tone @deaspiration,@final-vowel-loss,{bʰ dʰ gʰ jʰ ḍʰ} > {b d g j ḍ},{a ā i} > ∅ / V C* _ #,11,18,0.0015,376
+@flap @int-retroflex @int-retroflex @flap,@final-vowel-loss,{ṭ ḍ} > ṛ / V _ V,{a ā i} > ∅ / V C* _ #,12,18,0.0062,377
+@int-stop-loss @int-stop-loss,@final-vowel-loss,{t d} > ∅ / V _ V,{a ā i} > ∅ / V C* _ #,13,18,0.00101,378
+@int-stop-loss @int-stop-loss,@final-vowel-loss,{k g} > ∅ / V _ V,{a ā i} > ∅ / V C* _ #,14,18,0.00194,376
+@v-loss @v-loss,@final-vowel-loss,{v y} > ∅ / V _ V,{a ā i} > ∅ / V C* _ #,15,18,0.00857,377
+@aka @hiatus @hiatus,@final-vowel-loss,i {a ā} > ī / _ #,{a ā i} > ∅ / V C* _ #,17,18,0.0005,374
+@final-cons-loss @final-cons-loss,@hiatus @hiatus,{s ḣ t n m} > ∅ / V C (V) _ #,{a i} > ∅ / V _,2,19,0.00695,104
+@tr-lateral,@hiatus @hiatus,{b bʰ p} r > {b b p} l,{a i} > ∅ / V _,6,19,0.00054,72
+@deaspiration @tone @deaspiration,@hiatus @hiatus,{bʰ dʰ gʰ jʰ ḍʰ} > {b d g j ḍ},{a i} > ∅ / V _,11,19,0.0015,110
+@flap @int-retroflex @int-retroflex @flap,@hiatus @hiatus,{ṭ ḍ} > ṛ / V _ V,{a i} > ∅ / V _,12,19,0.0062,80
+@int-stop-loss @int-stop-loss,@hiatus @hiatus,{t d} > ∅ / V _ V,{a i} > ∅ / V _,13,19,0.00172,108
+@int-stop-loss @int-stop-loss,@hiatus @hiatus,{k g} > ∅ / V _ V,{a i} > ∅ / V _,14,19,0.00407,120
+@v-loss @v-loss,@hiatus @hiatus,{v y} > ∅ / V _ V,{a i} > ∅ / V _,15,19,0.00524,144
+@h-loss @h-loss,@hiatus @hiatus,h > ∅ / V _ V,{a i} > ∅ / V _,16,19,0.0002,143
+@final-vowel-loss,@hiatus @hiatus,{a ā i} > ∅ / V C* _ #,{a i} > ∅ / V _,18,19,0.0006,362
+@final-vowel-loss,@int-p-v @int-p-v,{a ā i} > ∅ / V C* _ #,p > v / V _ V,18,20,-0.00026,357
+@final-cons-loss @final-cons-loss,@cluster-simplify @cluster-simplify,{s ḣ t n m} > ∅ / V C (V) _ #,C v > $1,2,21,0.00185,64
+@tr-lateral,@cluster-simplify @cluster-simplify,{b bʰ p} r > {b b p} l,C v > $1,6,21,0.00054,29
+@deaspiration @tone @deaspiration,@cluster-simplify @cluster-simplify,{bʰ dʰ gʰ jʰ ḍʰ} > {b d g j ḍ},C v > $1,11,21,0.0015,69
+@flap @int-retroflex @int-retroflex @flap,@cluster-simplify @cluster-simplify,{ṭ ḍ} > ṛ / V _ V,C v > $1,12,21,0.00185,36
+@int-stop-loss @int-stop-loss,@cluster-simplify @cluster-simplify,{t d} > ∅ / V _ V,C v > $1,13,21,0.00128,93
+@int-stop-loss @int-stop-loss,@cluster-simplify @cluster-simplify,{k g} > ∅ / V _ V,C v > $1,14,21,0.00128,54
+@final-cons-loss @final-cons-loss,@cluster-simplify @cluster-simplify,{s ḣ t n m} > ∅ / V C (V) _ #,y > ∅ / C _,2,22,0.00121,69
+@tr-lateral,@cluster-simplify @cluster-simplify,{b bʰ p} r > {b b p} l,y > ∅ / C _,6,22,0.00054,35
+@deaspiration @tone @deaspiration,@cluster-simplify @cluster-simplify,{bʰ dʰ gʰ jʰ ḍʰ} > {b d g j ḍ},y > ∅ / C _,11,22,0.00121,71
+@flap @int-retroflex @int-retroflex @flap,@cluster-simplify @cluster-simplify,{ṭ ḍ} > ṛ / V _ V,y > ∅ / C _,12,22,0.00121,40
+@int-stop-loss @int-stop-loss,@cluster-simplify @cluster-simplify,{t d} > ∅ / V _ V,y > ∅ / C _,13,22,0.00045,95
+@h-loss @h-loss,@cluster-simplify @cluster-simplify,h > ∅ / V _ V,y > ∅ / C _,16,22,0.0002,32
+@int-p-v @int-p-v,@cluster-simplify @cluster-simplify,p > v / V _ V,y > ∅ / C _,20,22,0.00043,37
+@final-cons-loss @final-cons-loss,@initial-degem @initial-degem,{s ḣ t n m} > ∅ / V C (V) _ #,s C > $2 / # _,2,23,0.00134,65
+@tr-lateral,@initial-degem @initial-degem,{b bʰ p} r > {b b p} l,s C > $2 / # _,6,23,0.00054,30
+@deaspiration @tone @deaspiration,@initial-degem @initial-degem,{bʰ dʰ gʰ jʰ ḍʰ} > {b d g j ḍ},s C > $2 / # _,11,23,0.00134,66
+@flap @int-retroflex @int-retroflex @flap,@initial-degem @initial-degem,{ṭ ḍ} > ṛ / V _ V,s C > $2 / # _,12,23,0.00134,34
+@int-stop-loss @int-stop-loss,@initial-degem @initial-degem,{t d} > ∅ / V _ V,s C > $2 / # _,13,23,0.00134,93
+@int-stop-loss @int-stop-loss,@initial-degem @initial-degem,{k g} > ∅ / V _ V,s C > $2 / # _,14,23,0.00134,53
+@v-loss @v-loss,@initial-degem @initial-degem,{v y} > ∅ / V _ V,s C > $2 / # _,15,23,0.00134,91
+@h-loss @h-loss,@initial-degem @initial-degem,h > ∅ / V _ V,s C > $2 / # _,16,23,0.0002,26
+@int-p-v @int-p-v,@initial-degem @initial-degem,p > v / V _ V,s C > $2 / # _,20,23,0.00043,30
+@cluster-simplify @cluster-simplify,@initial-degem @initial-degem,C v > $1,s C > $2 / # _,21,23,0.00091,28
+@cluster-simplify @cluster-simplify,@initial-degem @initial-degem,y > ∅ / C _,s C > $2 / # _,22,23,0.00043,30
+@final-cons-loss @final-cons-loss,@cluster-simplify @cluster-simplify,{s ḣ t n m} > ∅ / V C (V) _ #,C r > $1,2,24,0.00684,93
+@tr-lateral,@cluster-simplify @cluster-simplify,{b bʰ p} r > {b b p} l,C r > $1,6,24,0.00122,46
+@tr-lateral @tr-lateral,@cluster-simplify @cluster-simplify,{d dʰ g gʰ} r > l,C r > $1,7,24,0.00084,32
+@tr-lateral @tr-lateral,@cluster-simplify @cluster-simplify,{k t p kʰ tʰ pʰ} r > ɬ,C r > $1,8,24,0.00456,28
+@deaspiration @tone @deaspiration,@cluster-simplify @cluster-simplify,{bʰ dʰ gʰ jʰ ḍʰ} > {b d g j ḍ},C r > $1,11,24,0.00028,64
+@flap @int-retroflex @int-retroflex @flap,@cluster-simplify @cluster-simplify,{ṭ ḍ} > ṛ / V _ V,C r > $1,12,24,0.00028,31
+@int-stop-loss @int-stop-loss,@cluster-simplify @cluster-simplify,{t d} > ∅ / V _ V,C r > $1,13,24,0.00028,90
+@int-stop-loss @int-stop-loss,@cluster-simplify @cluster-simplify,{k g} > ∅ / V _ V,C r > $1,14,24,0.00028,50
+@v-loss @v-loss,@cluster-simplify @cluster-simplify,{v y} > ∅ / V _ V,C r > $1,15,24,0.00028,89
+@final-cons-loss @final-cons-loss,@cluster-simplify @degem-plain @cluster-simplify,{s ḣ t n m} > ∅ / V C (V) _ #,C $1 > $1,2,25,0.00874,98
+@tr-lateral,@cluster-simplify @degem-plain @cluster-simplify,{b bʰ p} r > {b b p} l,C $1 > $1,6,25,0.00122,68
+@tr-lateral @tr-lateral,@cluster-simplify @degem-plain @cluster-simplify,{d dʰ g gʰ} r > l,C $1 > $1,7,25,0.00084,58
+@tr-lateral @tr-lateral,@cluster-simplify @degem-plain @cluster-simplify,{k t p kʰ tʰ pʰ} r > ɬ,C $1 > $1,8,25,0.00456,69
+@deaspiration @tone @deaspiration,@cluster-simplify @degem-plain @cluster-simplify,{bʰ dʰ gʰ jʰ ḍʰ} > {b d g j ḍ},C $1 > $1,11,25,0.0015,100
+@flap @int-retroflex @int-retroflex @flap,@cluster-simplify @degem-plain @cluster-simplify,{ṭ ḍ} > ṛ / V _ V,C $1 > $1,12,25,0.0062,69
+@int-stop-loss @int-stop-loss,@cluster-simplify @degem-plain @cluster-simplify,{t d} > ∅ / V _ V,C $1 > $1,13,25,0.00274,131
+@int-stop-loss @int-stop-loss,@cluster-simplify @degem-plain @cluster-simplify,{k g} > ∅ / V _ V,C $1 > $1,14,25,0.00683,89
+@v-loss @v-loss,@cluster-simplify @degem-plain @cluster-simplify,{v y} > ∅ / V _ V,C $1 > $1,15,25,0.00068,133
+@h-loss @h-loss,@cluster-simplify @degem-plain @cluster-simplify,h > ∅ / V _ V,C $1 > $1,16,25,0.0002,64
+@int-p-v @int-p-v,@cluster-simplify @degem-plain @cluster-simplify,p > v / V _ V,C $1 > $1,20,25,0.00068,70
+@final-cons-loss @final-cons-loss,@assim-r @cluster-simplify @cluster-simplify @assim-r,{s ḣ t n m} > ∅ / V C (V) _ #,r > ∅ / _ C,2,26,0.00187,70
+@tr-lateral,@assim-r @cluster-simplify @cluster-simplify @assim-r,{b bʰ p} r > {b b p} l,r > ∅ / _ C,6,26,0.00122,42
+@tr-lateral @tr-lateral,@assim-r @cluster-simplify @cluster-simplify @assim-r,{d dʰ g gʰ} r > l,r > ∅ / _ C,7,26,0.00084,31
+@tr-lateral @tr-lateral,@assim-r @cluster-simplify @cluster-simplify @assim-r,{k t p kʰ tʰ pʰ} r > ɬ,r > ∅ / _ C,8,26,0.00232,42
+@deaspiration @tone @deaspiration,@assim-r @cluster-simplify @cluster-simplify @assim-r,{bʰ dʰ gʰ jʰ ḍʰ} > {b d g j ḍ},r > ∅ / _ C,11,26,0.0015,71
+@flap @int-retroflex @int-retroflex @flap,@assim-r @cluster-simplify @cluster-simplify @assim-r,{ṭ ḍ} > ṛ / V _ V,r > ∅ / _ C,12,26,0.00232,44
+@int-stop-loss @int-stop-loss,@assim-r @cluster-simplify @cluster-simplify @assim-r,{t d} > ∅ / V _ V,r > ∅ / _ C,13,26,0.00232,106

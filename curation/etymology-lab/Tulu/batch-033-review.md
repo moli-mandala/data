@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Tulu · LSI Tulu residual records, 2026-09-25 · batch 033. Pending user review; autonomous research continues.
+
+| # | Tulu | Proposed etymology | Evidence |
+|---|---|---|---|
+| 66 | **nikuḷu uppuvary** ‘You are’ | Ordered components: [**DEDR 3688**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=328) + [**DEDR 710**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=70) | LSI has an explicitly two-word subject-plus-verb response. DEDR 3688 gives nikuḷu “you (plural)”; DEDR 710 gives Tulu uppuni “be, exist”. The source uppuv- verb stem and its person/tense ending remain in the exact survey form; ordered components retain both lexical parts without inventing an inflection suffix node. (1 record.) |
+| 67 | **ākuḷu uppuvery** ‘They are’ | Ordered components: [**DEDR 1**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=1) + [**DEDR 710**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=70) | LSI has an explicitly two-word subject-plus-verb response. DEDR 1 gives ākuḷu “they/those persons”; DEDR 710 gives Tulu uppuni “be, exist”. The source uppuv- verb stem and its person/tense ending remain in the exact survey form; ordered components retain both lexical parts without inventing an inflection suffix node. (1 record.) |
+| 68 | **yāny itte** ‘I was’ | Ordered components: [**DEDR 5160**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=468) + [**DEDR 480**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=47) | LSI has an explicitly two-word subject-plus-verb response. DEDR 5160 gives yānu/yānů “I”; DEDR 480 gives Tulu ippuni (itt-) “be, exist”. The source itt- verb stem and its person/tense ending remain in the exact survey form; ordered components retain both lexical parts without inventing an inflection suffix node. (1 record.) |
+| 69 | **ī itta** ‘Thou wast’ | Ordered components: [**DEDR 3684**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=327) + [**DEDR 480**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=47) | LSI has an explicitly two-word subject-plus-verb response. DEDR 3684 gives ī “thou”; DEDR 480 gives Tulu ippuni (itt-) “be, exist”. The source itt- verb stem and its person/tense ending remain in the exact survey form; ordered components retain both lexical parts without inventing an inflection suffix node. (1 record.) |
+| 70 | **āye itte** ‘He was’ | Ordered components: [**DEDR 1**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=1) + [**DEDR 480**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=47) | LSI has an explicitly two-word subject-plus-verb response. DEDR 1 gives āye “he/that man”; DEDR 480 gives Tulu ippuni (itt-) “be, exist”. The source itt- verb stem and its person/tense ending remain in the exact survey form; ordered components retain both lexical parts without inventing an inflection suffix node. (1 record.) |
+
+Proposed assignment rows: **10**. Affected records: **5**. Relation kinds: **component**. Multi-part responses retain their source order.
+
+Exact persistent IDs and complete source records: [batch-033.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Tulu/batch-033.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../tulu-lsi-20260925/research-holds.json). No new lexical material or donor nodes are introduced.

@@ -1,0 +1,28 @@
+{
+  "status": "Staged YAML and actual parser checks pass; no canonical installation",
+  "inputs": {
+    "proposed.csv": "242e05bd375e4b6962bf30629046ca498eb247f5d04f3f4c1392968d7e2e1224",
+    "proposal-audit.jsonl": "a3e5f02e49fa736c5ac853c4b53e09287ef688f01aed8fdcc22bf96cb20e034b",
+    "installation/20260927-nair-mullu-kurumba.yaml": "99155b48f4de487dca4731f9a189e9589b756cd659b8308e32071385e960f68e",
+    "installation/staged-references.bib": "3dccd05d190cded87d6c965dd722139665fc9311708647c42196bd34b4bd4471",
+    "installation/accepted-audit-proposal.jsonl": "5098c19e459bd4ade5100a79169d564288a2af1e33a0d8b69b13dfe38a5a0105"
+  },
+  "checks": {
+    "NFC": {
+      "rows": 135,
+      "all15fields_exact": true,
+      "initial_dedupe_keys": 135,
+      "zero_conversion": true
+    },
+    "NFD": {
+      "rows": 135,
+      "all15fields_exact": true,
+      "initial_dedupe_keys": 135,
+      "zero_conversion": true
+    }
+  },
+  "source_reference_flags": 2,
+  "closed_variants": 11,
+  "canonical_changes": false,
+  "isolation": "Only YAML discovery patched; actual parse_file unchanged. This is not a canonical SourceMeta or compiled acceptance claim."
+}

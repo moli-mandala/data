@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Ollari Gadaba · Bhattacharya 1957 Ollari Gadaba residual records, 2026-09-25 · batch 045. Pending user review; autonomous research continues.
+
+| # | Ollari Gadaba | Proposed etymology | Evidence |
+|---|---|---|---|
+| 181 | **marip-** ‘to teach’ | Proposed reflex of [**DEDR 4722**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=417) | DEDR 4722 full article opens “4722 Ta. maruvu (maruvi-) to combine, join together, be united in affection, arise, be evolved (as a custom), appear, come near, approach,…”; its Ga. (Oll.) passage gives “Ga. (Oll.) mar- to learn; marip- (marit-) to teach; (S.) marr- to learn; (S. 3 ) mary- (mariy-) id., be habituated.”. The source form and sense match this Ollari entry within the whole article. (1 record.) |
+| 182 | **mare** ‘hillock’ | Proposed reflex of [**DEDR 4742**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=420) | DEDR 4742 full article opens “4742 Ta. malai hill, mountain. Ma. mala mountain, raised land, hill-land. Ko. mal im buffaloes of the Nilgiri tribes (i.e. mountain buffaloes);…”; its Ga. (Oll.) passage gives “Ga. (Oll.) mare ( pl. marel) hillock; (S.) māre ( pl. mārel) hill.”. The source form and sense match this Ollari entry within the whole article. (1 record.) |
+| 183 | **mardil** ‘medicine’ | Proposed reflex of [**DEDR 4719**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=417) | DEDR 4719 full article opens “4719 Ta. maruntu ( in cpds. maruttu-) medicine; maruttaṉ physician; maruttuvam practice of medicine, remedy. Ma. marunnu medicine; maruttan…”; its Ga. (Oll.) passage gives “Ga. (Oll.) mardil , (S.) marid id.”. The source form and sense match this Ollari entry within the whole article. (1 record.) |
+| 184 | **māyŋ-** ‘to get lost; disappear’, **māyŋp-** ‘to lose’ | Proposed reflex of [**DEDR 4814**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=428) | DEDR 4814 full article opens “4814 Ta. māy (-v-, -nt-) to hide, vanish, perish, be annihilated, terminated, die, become lustreless as the setting sun, forget; ( -pp-, -tt- )…”; its Ga. (Oll.) passage gives “Ga. (Oll.) māyŋ(g)- to get lost, disappear; māyŋp- (māyŋt-) to lose.”. The source form and sense match this Ollari entry within the whole article. (2 records.) |
+| 185 | **māl** ‘daughter’ | Proposed reflex of [**DEDR 4616**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=407) | DEDR 4616 full article opens “4616 Ta. maka child, infant, young of animal, son or daughter, young age; makaṭu, makaṭūu female, woman, wife; makavu infant, son, young of…”; its Ga. (Oll.) passage gives “Ga. (Oll.) maginḍ sinḍ man, husband; māl daughter; (S) maga sinḍu boy child ( sinḍu son); magginḍ husband; mācil girl child; children; māl ( pl. māsil) woman; (”. DEDR 4616 gives Ollari māl “daughter”; māl “wine” belongs to DEDR 4822. (1 record.) |
+
+Proposed assignment rows: **6**. Affected records: **6**. Relation kinds: **reflex**. Multi-part responses retain their source order.
+
+Exact persistent IDs and complete source records: [batch-045.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/OllariGadaba/batch-045.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../ollari-bhattacharya-20260925/research-holds.json). No new lexical material or donor nodes are introduced.

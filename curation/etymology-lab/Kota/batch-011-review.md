@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Kota · Dravidian surveys, 2026-09-21 · batch 011. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Kota | Proposed etymology | Evidence |
+|---|---|---|---|
+| 51 | **pədnaṛə** ‘sixteen’ | Compound: [**DEDR 3918**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=349) + [**DEDR 2485**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=217) | Propose ordered ten + six. DEDR3918 documents the patiṉ-/padn-/pon- combining forms of ten in these teens, and DEDR2485 gives āṟu/ār six and explicitly Toda pāṟ sixteen. The southern census variants retain contraction, p/h alternation and vowel notation; uncertain census lect labels remain source qualifications, not corrections. (1 records.) |
+| 52 | **nalvət** ‘forty’ | Compound: [**DEDR 3655**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=323) + [**DEDR 3918**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=349) | Propose ordered four × ten. DEDR3655 and3918 explicitly give Tamil nāṟpatu/nāppatu, Malayalam nālpatu, Kannada nālvattu and Kota nālvat forty. Survey forms are comparative variants of these formations, preserving assimilation, reduced vowels and final vowels. No independent one-stem etymology is substituted for the two numeral components. (1 records.) |
+| 53 | **maŋgai** ‘mango’ | Compound: [**DEDR 4782**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=425) + [**DEDR 1459**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=136) | DEDR4782 explicitly gives Tamil māṅkāy and Telugu mã̄gāyu mango fruit beside mā/māvu mango; DEDR1459 gives kāy/kāyi/kāyu fruit. The complete survey māṅgāy/māṅgāyɨ/māvaṅkai/māṅgekāyɨ responses are ordered mango + fruit compounds, with compound nasal and ordinary vowel/voicing variants retained. (1 records.) |
+| 54 | **gənmug** ‘boy’ | Compound: [**DEDR 1173**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=111) + [**DEDR 4616**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=407) | DEDR1173 supplies gaṇḍu/gaṇḍ male and DEDR4616 supplies maga/magu/mog child/person. Survey gaṇḍu-maka/kaṇḍu-muga/gaṇa-mage/gan-mug is an ordered male + child/person compound, with source cluster reduction and final vowels retained. This is a comparative component analysis, not a claim that the entire compound is an indivisible inherited stem. (1 records.) |
+| 55 | **pemug** ‘girl’, **pemmuh** ‘woman’ | Compound: [**DEDR 4395**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=388) + [**DEDR 4616**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=407) | DEDR4395 and4616 explicitly give Kota pe-mog woman, female + child/person; Kannada peṇṇu/heṇṇu and magu supply the corresponding components. Survey pemmuh/pemug/yennu-magu preserves that ordered female + child/person construction and its source consonant notation. (2 records.) |
+
+Proposed assignment rows: **12**. Affected records: **6**. Relation kinds: **component**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-011.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Kota/batch-011.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

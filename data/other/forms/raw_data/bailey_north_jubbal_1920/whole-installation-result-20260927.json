@@ -1,0 +1,25 @@
+{
+  "status": "approved source-stage installed and validated; full gates deferred",
+  "rows": 837,
+  "audit_units": 688,
+  "preserved_legacy_keys": 330,
+  "new_rows": 507,
+  "freeze_sha256": "b044e70de3478a82840f1059438c7c1603d1cea7b1c2ff3d92b08c91c3f60178",
+  "accepted_audit_sha256": "08db3af626b20164c4c9e9aaac0e7ecc11a1471b20c4a16d34df4aa6991ff2ea",
+  "installed_sha256": {
+    "data/other/forms/20260925-bailey-north-jubbal.csv": "d3570bdfffe4a8e96859c5f460efcb4b4c102cfbfee72dd9fa0f0a9c7929d5d7",
+    "data/other/forms/raw_data/bailey_north_jubbal_1920/audit.jsonl": "4c574751077810c0ca8a91afbc6a0b382b63025b26ce5ba047caaf30826527a3",
+    "conversion/bailey-north-jubbal-1920.txt": "78a9842686f80fc27f4a7719f381ae29d454224b05c62d7b9d2c17e7423c5d72"
+  },
+  "historical_importer": "import_source.py is hash-pinned historical evidence. Never run it against the live installation; regeneration verifier runs it only in an isolated sandbox.",
+  "deferred": [
+    "Full CLDF/database build",
+    "Compiled graph/durable-ID verification",
+    "Regenerated references",
+    "Full suite",
+    "Browser QA"
+  ],
+  "validation_evidence": "whole-installed-validation-20260927.json",
+  "focused_tests": "19 passed in 0.98s",
+  "canonical_metadata_reconciled": true
+}

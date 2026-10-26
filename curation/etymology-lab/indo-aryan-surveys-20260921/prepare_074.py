@@ -1,0 +1,18 @@
+import json
+from pathlib import Path
+P=Path(__file__).resolve().parent
+rs=json.loads((P/'remaining-initial.json').read_text());done={x['Form_ID'] for f in P.glob('pass*-saved-assignments.json') for x in json.loads(f.read_text())}
+groups=[{'gloss': ['noon'], 'forms': ['dipʰur', 'dūphāryɔ', 'dūpāryū̃', 'dupāryo', 'bɔpor', 'bahpɔr', 'baphor', 'bopor', 'bapor', 'bapore', 'bopar', 'dūpær', 'dupəḷə', 'dūpʰɛr / dopār'], 'evidence': 'The noon word is analysed as two + watch/time-period, matching Platts do-pahar noon (dvi-prahara). Turner documents regional do/du/be two and pahar/pɔr/par watch, supporting the western bapor and eastern diphur contractions as qualified comparative members. Both components are represented; Turner’s suggestion that prahara may Sanskritize Persian pahra is retained as uncertainty about its deeper origin, not asserted as an established Sanskrit inheritance.', 'citation': 'CDIAL[6648];CDIAL[8900];platts1884[do, do-pahar]', 'components': ['6648', '8900']}, {'gloss': ['evening'], 'forms': ['sãj bera', 'sʌ̃j bera', 'sə̃j bela', 'sʌ̃j beṛa', 'sʌ̃j bela', 'sʌj beṛa', 'sanyavɛlɛ'], 'evidence': 'The complete compound is evening + time. Turner saṃdhyā explicitly gives eastern sā̃jh/sañjha, while velā gives Oriya beḷa daytime and eastern ber time (discussing l/r variation). Both ordered components are included; Pothwari sanyavɛlɛ is a qualified northwestern counterpart rather than the unrelated evening-star compound *saṃdhāvelaka.', 'citation': 'CDIAL[12918];CDIAL[12115]', 'components': ['12918', '12115']}, {'gloss': ['evening'], 'forms': ['sā̃ji pahar'], 'evidence': 'The full expression is evening + watch/time period, saṃdhyā through sā̃j and prahara through pahar. Both lexical constituents are represented; prahara’s deeper history remains uncertain in Turner.', 'citation': 'CDIAL[12918];CDIAL[8900]', 'components': ['12918', '8900']}, {'gloss': ['spicy, hot'], 'forms': ['ḍźʰala', 'jala', 'jhal', 'dʒhal'], 'evidence': 'Turner *jhāla burning/pungent explicitly gives Assamese zāl and Bengali jhāl hot/pungent. These Hajong/Bengali forms match that eastern family; aspiration and the final vowel are preserved. Bishnupriya forms with an additional copula or other ending are not silently shortened.', 'citation': 'CDIAL[5379]', 'parent': '5379'}, {'gloss': ['sun'], 'forms': ['bel', 'bela', 'bila', 'bula', 'bɛlī', 'bɛnī', 'berīā'], 'evidence': 'Qualified members of the regional velā time/daylight family: Turner gives Assamese beli time, Oriya beḷa daytime and eastern ber/beri forms, while noting a probable Dravidian background with sun/daytime meanings. The surveys themselves attest the sun sense. This is a comparative family assignment with a daylight-to-sun semantic extension; regional contact and the exact transmission path remain open, especially in Hajong/Bishnupriya. Retroflex beṛ/beḍ forms are excluded because Turner also separates a *veḍā branch.', 'citation': 'CDIAL[12115]', 'parent': '12115'}]
+a=[]
+for i,g in enumerate(groups):
+ for r in rs:
+  if r['ID'] not in done and r['Gloss'] in g['gloss'] and r['Form'] in g['forms'] and ('languages' not in g or r['Language_ID'] in g['languages']):
+   x=dict(record=r,citation=g['citation'],evidence=g['evidence'],family=i)
+   if 'components' in g:x['components']=g['components']
+   else:x.update(parent=g['parent'],kind=g.get('kind','reflex'))
+   a.append(x)
+assert len(a)==len({x['record']['ID'] for x in a})
+h=[]
+(P/'pass074-decisions.json').write_text(json.dumps(dict(accepted=a,held=h),ensure_ascii=False,indent=1)+'\n')
+(P/'pass074-rules.json').write_text(json.dumps(groups,ensure_ascii=False,indent=1)+'\n')
+print(len(a),'accepted',len(h),'held',[(g.get('parent',g.get('components')),sum(x['family']==i for x in a)) for i,g in enumerate(groups)])

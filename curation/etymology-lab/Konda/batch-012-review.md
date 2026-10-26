@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Konda · Dravidian surveys, 2026-09-21 · batch 012. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Konda | Proposed etymology | Evidence |
+|---|---|---|---|
+| 56 | **kuruveli** ‘rainbow’ | Proposed reflex of [**DEDR 2124**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=191) | DEDR2124 explicitly gives Konda kuṟveli rainbow and Kannada koraḍu/koḍḍa a kind of rainbow. The survey kuruveli/karuḍu responses match their respective language comparanda, preserving epenthetic/reduced-vowel notation and the survey’s broader rainbow gloss. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 57 | **koru** ‘chicken’ | Proposed reflex of [**DEDR 2160**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=195) | DEDR2160 explicitly gives Parji korr cock/hen/fowl, Gadaba kor/korru cock, Gondi kor/korr fowl/hen and Konda koṟu hen. The selected simple survey kor/koru chicken forms match those language-specific comparanda, preserving final vowels and singleton notation. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 58 | **sāmu** ‘thorn’, **sāmpu** ‘thorn’ | Proposed reflex of [**DEDR 2468**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=216) | DEDR2468 explicitly gives Konda sāmbu (plural sāpku) thorn, with Gadaba sāpu/sappu and Gondi sāp/hāp comparanda. Survey sāmpu and sāmu match the Konda nasal cluster, with devoicing or loss of the stop; these are stated survey variants rather than exact quotations. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (2 records.) |
+| 59 | **ṭōko** ‘tail’ | Proposed reflex of [**DEDR 3538**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=311) | DEDR3538 gives Tamil tōkai tail, Malayalam tōka, Kannada tōke, Gondi tōkār/tōkor/tōkar/tōka and Konda tōka tail. Selected simple survey tok-/tōk- responses match this family, retaining gemination and lect-specific final vowels. Gondi teke and other more divergent responses remain unassigned. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 60 | **marisi** ‘son’, **marsi** ‘son’ | Proposed reflex of [**DEDR 4764**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=423) | DEDR4764 gives Gondi marrī/mari/marr son and Konda maṟin/maṟisi son (the latter referring to third person). Survey mar/maru and marisi/marsi retain these stems and the Konda relational ending, including syncope; ordinary inflection is not treated as derivation. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (2 records.) |
+
+Proposed assignment rows: **7**. Affected records: **7**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-012.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Konda/batch-012.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Tulu · Dravidian surveys, 2026-09-21 · batch 005. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Tulu | Proposed etymology | Evidence |
+|---|---|---|---|
+| 21 | **vormba** ‘Nine’ | Proposed reflex of [**DEDR 1025**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=98) | DEDR 1025 gives Tamil oṉpatu/ompatu, Malayalam ompatu, Kannada ombattu/ombhattu, Kodagu oymbadi, Kota orbād, Tulu ormba and Gondi unmā nine. The retained variants preserve this numeral stem; Indo-Aryan nau/no and Telugu-type tommidi responses belong elsewhere. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 22 | **tin** ‘Eat’ | Proposed reflex of [**DEDR 3263**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=284) | DEDR 3263(a) lists Tamil tiṉ, Kannada tin/tinu/tinnu and the widespread cognate eating verb; Kannada past stem tind- and related inflection belong here. Causatives, food derivatives and subsection (b) right-hand expressions are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 23 | **posatta** ‘new’ | Proposed reflex of [**DEDR 4275**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=378) | DEDR 4275 gives Tamil putu/putiya, Malayalam putu, Kodagu pudiyë, Kannada posa/hosa/hosadu and Tulu posa/posatu new; Konda pūni and Malto pune belong to the same family. These simple stems and adjectival inflections are selected; new-person nouns and loan-looking alternative stems remain unassigned. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 24 | **kempu** ‘red’ | Proposed reflex of [**DEDR 1931**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=175) | DEDR 1931 attests Tamil civappu/cēppu, Malayalam cuvappu/cemappu, Kannada kempu and Tulu kempu red, showing the southern c-/k- correspondences. The selected simple colour forms fit this family; Kodagu cōpï is explicitly a Malayalam loan and Kannada Tamil-type forms are excluded from this inheritance proposal. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 25 | **ī** ‘Thou’, **i** ‘thou’ | Proposed reflex of [**DEDR 3684**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=327) | DEDR 3684 records singular Tamil nī, Kannada nīnu, Kodagu nīnï, Gondi immā/nimma, Kui īnu, Kurux/Malto nīn and Tulu ī. Only singular paradigm members are selected; plural nīm/nīvu and overt plurals are excluded even where the prompt simply says you. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (2 records.) |
+
+Proposed assignment rows: **6**. Affected records: **6**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-005.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Tulu/batch-005.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

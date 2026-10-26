@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Kannada · Dravidian surveys, 2026-09-21 · batch 058. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Kannada | Proposed etymology | Evidence |
+|---|---|---|---|
+| 281 | **bā** ‘come’, **ba** ‘come’, **baru** ‘come’ | Proposed reflex of [**DEDR 5270**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=475) | DEDR5270 explicitly gives Tamil vā imperative of varu, Malayalam varuka, Kannada bar/bār with bā imperative, Kodagu bar-, Telugu vaccu, Parji ver- and Tulu barpini. These survey simple come responses retain the corresponding stems and ordinary endings; pronoun-led clauses and auxiliary constructions are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (9 records.) |
+| 282 | **ōgu** ‘go’, **vogu** ‘go’, **vagu** ‘go’ | Proposed reflex of [**DEDR 4572**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=404) | DEDR4572 documents the southern pō-/pōk-/ōg- go family, including Malayalam pōka, Kannada pōgu/hōgu/ōgu and Kota ōg-. These survey pō/ōgu/vōgu/pīge responses compare with that go family and retain source vowels and ordinary endings; no longer auxiliary phrase is included. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (6 records.) |
+| 283 | **kallu** ‘kill’ | Proposed reflex of [**DEDR 2132**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=192) | DEDR2132 explicitly gives Tamil kol kill with koṉṟ- past, Malayalam kolluka and Kannada/Kodagu koll- with kond- past. These simple survey kol-/koṉṟ- kill responses retain the appropriate root or past stem and ordinary endings; longer causative/auxiliary expressions are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (2 records.) |
+| 284 | **kotte** ‘give’ | Proposed reflex of [**DEDR 2053**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=185) | DEDR2053 explicitly gives Kannada koḍu/kuḍu give with koṭṭ- past, and Tulu korpini/koru give. Survey koṭṭe/koro retains the same-language giving root or past stem with its final ending. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 285 | **nɨllu** ‘stand’ | Proposed reflex of [**DEDR 3675**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=325) | DEDR3675 explicitly gives Kannada nilu/nillu stand. Survey nuḷḷu stand is a same-language comparison retaining the source vowel and lateral notation rather than rewriting the elicited form. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+
+Proposed assignment rows: **19**. Affected records: **19**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-058.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Kannada/batch-058.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

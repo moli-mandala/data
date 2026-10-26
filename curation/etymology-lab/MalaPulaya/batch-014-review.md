@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Mala Pulaya · Dravidian surveys, 2026-09-21 · batch 014. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Mala Pulaya | Proposed etymology | Evidence |
+|---|---|---|---|
+| 66 | **ta lamuḍi** ‘hair’ | Compound: [**DEDR 3103**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=269) + [**DEDR 4921**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=440) | DEDR3103 Tamil talai/Malayalam tala head plus DEDR4921 muṭi hair of head supports ordered head + hair in the complete survey tala-muḍi responses; retain source spaces and vowel notation. (1 records.) |
+| 67 | **maŋgāy** ‘mango’ | Compound: [**DEDR 4782**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=425) + [**DEDR 1459**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=136) | DEDR4782 explicitly gives Tamil māṅkāy and Telugu mã̄gāyu mango fruit beside mā/māvu mango; DEDR1459 gives kāy/kāyi/kāyu fruit. The complete survey māṅgāy/māṅgāyɨ/māvaṅkai/māṅgekāyɨ responses are ordered mango + fruit compounds, with compound nasal and ordinary vowel/voicing variants retained. (1 records.) |
+| 68 | **kanamillatta tɨ** ‘light’ | Compound: [**DEDR 1404**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=130) + [**DEDR 2559**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=222) | Ordered weight + absence components: DEDR1404 supplies kaṉam heaviness and DEDR2559 supplies illa/illā not existing, including ordinary negative adjectival forms. The survey whole expressions mean light, literally without weight; their source contractions and endings are preserved. DEDR1404 expressly notes influence from Sanskrit ghana on the kaṉa heavy family; that contact qualification is retained, and no unsupported immediate donor is asserted. (1 records.) |
+| 69 | **ɛṇṇa** ‘oil’ | Compound: [**DEDR 854**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=83) + [**DEDR 3746**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=334) | Ordered sesame + oil: DEDR854 explicitly gives Tamil eṇ ṇey gingelly oil and related Malayalam eṇṇa/Kannada eṇṇe, while3746 gives ney oil. These lexicalized eṇṇey/eṇṇa/eṇṇe survey responses are analysed with both historical constituents; their generalized survey gloss oil and all dialect transcriptions remain unchanged. (1 records.) |
+| 70 | **nilakaḍalai** ‘groundnut’ | Compound: [**DEDR 3676**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=326) + [**DEDR 1120**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=105) | Ordered ground + gram: DEDR3676 nilam/nela earth/ground and1120 kaṭalai/kaṭala gram. Survey nila-/nela-kaḍala(i) groundnut transparently contains both constituents; its modern groundnut designation is retained as a compound, not conflated with the botanical gram referent of1120. (1 records.) |
+
+Proposed assignment rows: **10**. Affected records: **5**. Relation kinds: **component**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-014.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/MalaPulaya/batch-014.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

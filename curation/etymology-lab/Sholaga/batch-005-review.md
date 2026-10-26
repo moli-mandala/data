@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Sholaga · Dravidian surveys, 2026-09-21 · batch 005. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Sholaga | Proposed etymology | Evidence |
+|---|---|---|---|
+| 21 | **mogā** ‘face’ | Proposed reflex of [**DEDR 4889**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=437) | DEDR 4889 gives Tamil/Malayalam mukam, Kannada moga/mōṟe, Tulu mōrè, and Gondi mokom/mukam face. The selected simple face stems match this family; mūñci/mond- responses belong to a separate family and are not merged. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 22 | **nīnu** ‘you’ | Proposed reflex of [**DEDR 3684**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=327) | DEDR 3684 records singular Tamil nī, Kannada nīnu, Kodagu nīnï, Gondi immā/nimma, Kui īnu, Kurux/Malto nīn and Tulu ī. Only singular paradigm members are selected; plural nīm/nīvu and overt plurals are excluded even where the prompt simply says you. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 23 | **iruvatu** ‘twenty’ | Compound: [**DEDR 474**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=46) + [**DEDR 3918**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=349) | DEDR474 and3918 explicitly document Tamil/Malayalam iru-patu/iru-vatu twenty, Kannada irpattu/ippattu, Kodagu iru-vadï and Kota irvād. Propose ordered two × ten components for the selected southern survey forms, preserving assimilated pp/bb, initial-glide variants and final vowels. Minority-lect forms are comparative extensions; neighbouring Gondi/Gadaba/Konda contact-sensitive numeral sets are excluded. (1 records.) |
+| 24 | **hata āṛu** ‘sixteen’ | Compound: [**DEDR 3918**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=349) + [**DEDR 2485**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=217) | Propose ordered ten + six. DEDR3918 documents the patiṉ-/padn-/pon- combining forms of ten in these teens, and DEDR2485 gives āṟu/ār six and explicitly Toda pāṟ sixteen. The southern census variants retain contraction, p/h alternation and vowel notation; uncertain census lect labels remain source qualifications, not corrections. (1 records.) |
+| 25 | **nā̪pətu̪** ‘forty’ | Compound: [**DEDR 3655**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=323) + [**DEDR 3918**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=349) | Propose ordered four × ten. DEDR3655 and3918 explicitly give Tamil nāṟpatu/nāppatu, Malayalam nālpatu, Kannada nālvattu and Kota nālvat forty. Survey forms are comparative variants of these formations, preserving assimilation, reduced vowels and final vowels. No independent one-stem etymology is substituted for the two numeral components. (1 records.) |
+
+Proposed assignment rows: **8**. Affected records: **5**. Relation kinds: **component, reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-005.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Sholaga/batch-005.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

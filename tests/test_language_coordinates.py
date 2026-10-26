@@ -41,6 +41,7 @@ def test_only_geographically_undefined_languages_lack_coordinates():
         "Pattapu",  # Lindgren supplies no defensible Pattapu locality point.
         # Historical specimens name administrative areas, not elicitation points.
         "Kaikadi", "Yerukula", "Holiya", "Northern Hindko", "Hinduri",
+        "Sik",  # Sikalgari: LSI xi specimen from Sampgaon taluka; formerly Gujarati's point.
         # Archived numeral sources give language distributions only. Their source
         # READMEs explicitly retain blank coordinates instead of guessed points.
         "Aranadan", "Mullu Kurumba", "Kumarbhag Paharia", "Kakkala", "Khirwar",

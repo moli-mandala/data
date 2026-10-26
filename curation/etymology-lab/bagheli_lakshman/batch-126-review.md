@@ -1,0 +1,11 @@
+# bagheli_lakshman: survey etymology review, batch 126
+
+**Saved under the autonomous-work authorization of 2026-09-21.** 1 proposals; exact IDs and source attestations are in the [manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/bagheli_lakshman/batch-126.json).
+
+| # | Language form and meaning | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **ū** ‘he; she; those; those; those; they (3rd pl); they (3rd pl); they (3rd pl)’, **u** ‘that; those; he (3rd sg, masculine); he (3rd sg, masculine); he (3rd sg, masculine); she (3rd sg, feminine); she (3rd sg, feminine); she (3rd sg, feminine); she (3rd sg, feminine); they (3rd pl); they (3rd pl); they (3rd pl); they (3rd pl)’, **vɔ** ‘that; those; those; he (3rd sg, masculine); he (3rd sg, masculine); he (3rd sg, masculine); he (3rd sg, masculine); he (3rd sg, masculine); he (3rd sg, masculine); he (3rd sg, masculine); he (3rd sg, masculine); she (3rd sg, feminine); she (3rd sg, feminine); she (3rd sg, feminine); she (3rd sg, feminine); she (3rd sg, feminine); she (3rd sg, feminine); she (3rd sg, feminine); she (3rd sg, feminine); they (3rd pl); they (3rd pl); they (3rd pl); they (3rd pl)’, **ve** ‘those’, **ɔ** ‘he (3rd sg, masculine); she (3rd sg, feminine); they (3rd pl); they (3rd pl)’ | Reflex of **asáu**; [CDIAL 972](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=43) | Turner asau explicitly supplies Old Marwari vo, Hindi wah, Punjabi/Lahnda o and Nepali u as remote demonstratives and third-person forms. These western and central survey paradigms are compared with that family, preserving ordinary b/v alternation and local gender/number inflection. Only third-person or distal-labelled responses are included; this/these responses and extra lexical material are excluded. (5 records.) |
+
+5 assignment rows on 5 records. Relation kinds: {'reflex': 5}.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-surveys-20260921/pass108-validation.json). No compiled or browser rebuild. Excluded and competing analyses are tracked in the [run review](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-surveys-20260921/REVIEW.md).

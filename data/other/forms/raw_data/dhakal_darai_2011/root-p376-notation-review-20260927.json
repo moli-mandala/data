@@ -1,0 +1,47 @@
+{
+  "status": "independent review complete; three source-notation ambiguities retained",
+  "reviewer": "root",
+  "date": "2026-09-27",
+  "source_pdf": "tmp/pdfs/darai-survey/dhakal-2011.pdf",
+  "source_sha256": "6ca12ee82a22a16b0394b08e319afd5a94f075111fb8a994ee10d59da234bebf",
+  "printed_page": 376,
+  "pdf_page": 398,
+  "evidence": "Original Appendix3(d) table viewed at2x, including person/number/honorific headers, full cells and neighbouring rows. Native source prose167–168 checked for inference morphology/periphrasis description; it does not explicitly disambiguate these slash scopes.",
+  "decisions": [
+    {
+      "source_unit_key": "dhakal2011:p376:appendix3d:l83",
+      "raw_group_form": "kər-lə-h-ai/kʰ-ai",
+      "source_cell": "Inference1, 3SG",
+      "expanded_forms": null,
+      "review_type": "source-notation-scope",
+      "reason": "The slash separates h-ai from kʰ-ai after a written verbal prefix. Carrying the preceding prefix to the second alternative is plausible but not explicit enough to assert a separately spelled-out attestation."
+    },
+    {
+      "source_unit_key": "dhakal2011:p376:appendix3d:l87",
+      "raw_group_form": "kər-lə-hai/kʰ-ai-səb",
+      "source_cell": "Inference1, 3PL",
+      "expanded_forms": null,
+      "review_type": "source-notation-scope",
+      "reason": "Both shared-prefix and shared-final-səb scope are ambiguous. The 3PL column establishes the cell's grammatical category but does not prove that the final suffix must be copied to both alternatives. Preserve the printed grouping rather than manufacturing either expansion."
+    },
+    {
+      "source_unit_key": "dhakal2011:p376:appendix3d:l104",
+      "raw_group_form": "rəli-h-ai/kʰai",
+      "source_cell": "Inference2, 3SG",
+      "expanded_forms": null,
+      "review_type": "source-notation-scope",
+      "reason": "The table does not explicitly establish whether rəli is shared by both slash members. Preserve the distinct literal boundary in kʰai without adding a hyphen or repeating a prefix."
+    }
+  ],
+  "integration_policy": {
+    "include_source_unit": true,
+    "preserve_literal_group": true,
+    "split_alternates": false,
+    "tag": "uncertain",
+    "typed_reason": "source-notation-scope",
+    "phonemic": "Do not assert a new phonemic analysis; preserve source spelling separately.",
+    "variant_or_derivation_edges": false,
+    "reopening_condition": "An explicit same-source expansion or independently attested ungrouped form with matching analysis can justify a later reviewed expansion."
+  },
+  "scope_limit": "This resolves the editorial treatment of three ambiguous units. It does not approve the complete Darai proposal or replace its final original/output audit."
+}

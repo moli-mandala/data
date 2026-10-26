@@ -1,0 +1,113 @@
+{
+  "status": "Independent prose corrections reconciled; not whole-source installation approval",
+  "input_sha256": {
+    "prose-first-reading.jsonl": "8f440ae0543004b49ad60959787525a089a3ec4e707b0a93b3ac9f5aa328484b",
+    "pronoun-table-first-reading.jsonl": "c337ec6c12add5a54061471c72e58c501e8259a45dea0d5e89797c7b1f002531"
+  },
+  "review_sha256": "f34e2e7a7794952911d7e048beb786288c2deebfaf4c13df129dc1c5e9c6c3d9",
+  "corrected_fields": [
+    {
+      "source_unit_key": "grierson1906naiki:p570:pronoun-table:col2:row2",
+      "field": "raw_form",
+      "before": "īnun",
+      "after": "inun",
+      "reason": "Original initial i has a compact round dot. Adjacent īn and īm have detached flat macrons. Preserve this occurrence-specific short i.",
+      "original_page": 570,
+      "crop_normalized_to_1000px_width": [
+        120,
+        872,
+        888,
+        1272
+      ],
+      "magnification": 12,
+      "confidence": "high"
+    },
+    {
+      "source_unit_key": "grierson1906naiki:p571:prose:done-phrase",
+      "field": "raw_form_group",
+      "before": "kakṭēn anlēn",
+      "after": "kaktēn anlēn",
+      "reason": "Narrow original crop shows plain t with no detached underdot. The immediately following pāp kaktēn anlēn and standalone Kaktēn independently have plain t as well; correction is based on the phrase itself, not harmonization.",
+      "original_page": 571,
+      "crop_normalized_to_1000px_width": [
+        132,
+        586,
+        358,
+        637
+      ],
+      "magnification": 24,
+      "confidence": "high"
+    }
+  ],
+  "added_units": [
+    {
+      "proposed_source_unit_key": "grierson1906naiki:p571:prose:plural-personal-ending",
+      "raw_form_group": "r",
+      "raw_gloss_or_analysis": "plural personal ending",
+      "disposition": "target-affix",
+      "suggested_tags": [
+        "suffix",
+        "pl"
+      ],
+      "source_quote": "The forms ending in r are properly plural forms.",
+      "source_caveat": "Printed singular translations of aṇḍur and antēr remain unchanged; preserve the author’s morphological classification alongside their actual glosses.",
+      "reason": "Explicitly identified bound morphology is not fully accounted by retaining only the whole-word examples.",
+      "original_page": 571,
+      "crop_normalized_to_1000px_width": [
+        125,
+        125,
+        890,
+        388
+      ],
+      "magnification": 12
+    }
+  ],
+  "source_context_requirements": [
+    {
+      "scope": "p570 Kui comparison",
+      "claim": "The same forms are usual in Kōlāmī.",
+      "disposition": "Preserve comparative attribution in source-level commentary or the three control records; no invented extra Naiki forms."
+    },
+    {
+      "scope": "p570 numerals",
+      "claim": "No materials for distinguishing long and short e and o; ōkō and irōṭēr are possible author readings.",
+      "disposition": "Retain the qualification on proposed readings; no confident equivalence or phonological length claim."
+    },
+    {
+      "scope": "p570 accusative/dative",
+      "claim": "The dative and accusative do not appear to be distinguished.",
+      "disposition": "Carry the tentative wording into final source commentary; pronoun-table case analysis inherits this qualified statement."
+    },
+    {
+      "scope": "p570–571 verbal system",
+      "claim": "Judged only from specimens, verbs apparently do not change for person; some counterexamples exist.",
+      "disposition": "Preserve both statement and counterexamples. Do not force one person onto anlēn, or delete the source’s plural morphology analysis because English glosses are singular."
+    },
+    {
+      "scope": "p571 present/past markers",
+      "claim": "The characteristic present consonant seems l; past t is also used in present or future tense.",
+      "disposition": "Retain source tentativeness and all stated functions; do not classify t solely as a categorical past suffix."
+    },
+    {
+      "scope": "p571 agency noun",
+      "claim": "Kaktēn and similar forms are apparently nouns of agency.",
+      "disposition": "Retain apparent status; whole I have done / I am one who did sin examples stay whole with their source translations."
+    },
+    {
+      "scope": "p571 repeated Compare Kōlāmī statements",
+      "claim": "The source explicitly compares finite-tense, negative and infinitival constructions with Kōlāmī.",
+      "disposition": "Preserve as source-level comparison; no unprinted comparative forms or etymology edges."
+    }
+  ],
+  "output_sha256": {
+    "prose-reviewed.jsonl": "c51d775e892c2efb125dff75b020eb3f4b473b18774882b4ddcbe52e416645bf",
+    "pronoun-table-reviewed.jsonl": "a72dd1785f8fd29467b7742d08d2b76a7c6bd8abb8c2e215ee19d8b1de10d6bb"
+  },
+  "counts": {
+    "prose_groups": 84,
+    "pronoun_cells": 11,
+    "literal_corrections": 2,
+    "added_morphology": 1
+  },
+  "canonical_changed": false
+}

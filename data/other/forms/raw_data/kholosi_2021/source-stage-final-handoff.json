@@ -1,0 +1,104 @@
+{
+  "status": "whole-source stage installed and focused gates passed; full ingestion gates deferred",
+  "rows": 1135,
+  "audit_units": 1110,
+  "legacy_keys": 198,
+  "new_keys": 937,
+  "historical_assignment_corrections": 5,
+  "source_scope": {
+    "pdf_heads": 448,
+    "pdf_subentries": 70,
+    "lexicon_records": 401,
+    "sentence_records": 116,
+    "quoted_embedded_occurrences": 29,
+    "morphology_occurrences": 15,
+    "morphology_comparison_controls": 6,
+    "whole_untranslated_text": 1,
+    "acoustic_controls": 3,
+    "separate_historical_witnesses": 21
+  },
+  "exclusions": [
+    "Three entirely blank sentence CSV rows",
+    "Nonlexical acoustic tracks and explicitly identified comparison/phonological controls"
+  ],
+  "unresolved": {
+    "uncertainty_tagged_rows": 107,
+    "blank_gloss_rows": 25,
+    "description": "Source uncertainties, alternative ancestry, unresolved donor targets, unglossed responses/text and morphology without lexical definitions remain explicit; ke has no unsupported ancestry link."
+  },
+  "transcription": "Printed literal orthography and supplied IPA remain separate; source-specific display profile, NFC/NFD parity, no phonetic inference or OCR.",
+  "graph": {
+    "ancestry_linked_rows": 380,
+    "borrowing_tagged_rows": 317,
+    "variant_links": 35,
+    "derivation_parent_links": 90,
+    "claim_statements": 830,
+    "all_source_keys_closed": true,
+    "serializer_addendum": "Six multi-parent delimiters repaired to compiler pipe syntax; historical r3 evidence retained",
+    "reference_provenance": "mixed"
+  },
+  "independent_audit": {
+    "report": "independent-r3-original-review.json",
+    "fresh_rows": 20,
+    "material_errors": 0,
+    "targeted_groups": 12,
+    "targeted_rows": 13,
+    "complete_donor_claim_census": 830,
+    "historical_report": "independent-historical-link-review-r3.json"
+  },
+  "validation": {
+    "focused_tests": 21,
+    "actual_canonical_parser_rows": 1135,
+    "NFC_NFD_rows_each": 1135,
+    "registered_importer_repeat_byte_parity": true,
+    "registry_valid": true,
+    "all_198_existing_identity_records_retained": true
+  },
+  "canonical_sha256": {
+    "data/other/forms/20220913-kholosi.csv": "4a034de4c3624e825117045e12a0586e028fd37df2509448b1d8e9b840ff9b22",
+    "data/other/forms/20220913-kholosi.yaml": "1c172f27d231fc9800ad7e91ba2bbf5da6ac8d8994bf40691ac8b5de3f5f289a",
+    "conversion/kholosi-source.txt": "1fcdabf0a57b03e70499591a6f2271edf5f1e7fef5d2250fb02b28728cb9369a"
+  },
+  "evidence_sha256": {
+    "whole-proposal-r3/review-manifest.json": "72c5a580541c1594f773d32e6304b28a9d071796f22ee1aa564fcf8776997315",
+    "independent-r3-original-review.json": "54a9b250345ce3c437e1a94d3351262843a41220f5860019d68fa4fc36313f2f",
+    "independent-full-donor-census-review-r3.json": "c084450d4792eeec84df6ed0512a144a65e9fc3d6d1b91e24a617d5c6970629f",
+    "independent-r3-metadata-addendum-review.json": "f968c2a12e7cba720e7713d24c65b13d3719585269df2482a41c3a820661763e",
+    "source-stage-installation-approval.json": "88115a3c4bf0e56ec6b26f60fd56d798e6b781822492c3390ef6e4fa4cd02035",
+    "source-stage-importer-routing-approval.json": "8afe3116a44cf8266d1232ed2332fcd752c5beebcd5ded3b8d43c51451a858af",
+    "canonical-validation.json": "3f9ca8892f8f5d6f892ade94988b4fa236e5de5d7bb8127d7d9576c1d82febff",
+    "source-stage-parent-delimiter-addendum/root-approval.json": "c5b52d4c5d487fb47840d1742ea9fb762142cccb4ff6ced5181cbfe28b088d9e",
+    "source-stage-parent-delimiter-addendum/review.json": "1a3c43d31033e26ed25b3d541b798246f5e3519998a7e5e7ff8b08b765ce08a6"
+  },
+  "log_sha256": {
+    "tmp/kholosi-recovery/installed-tests.log": "9c63481eb44e19f1a93eee9ab1d4aff1eee9673434a3482460dbd83667d37429",
+    "tmp/kholosi-recovery/registry-validation.log": "e76c512ed48ba7872654d83bc6f932ce17ce167d7529bb0b6b79f776de5271c4",
+    "tmp/kholosi-recovery/registered-repeat-install.log": "4119a01507d0c41fd93f336ae4a8a8eea70203969a9baa3d78a6417749208150",
+    "tmp/kholosi-recovery/canonical-validation.log": "fde052b7e62a7423b64c37dc488c8ae3cb0c42ac6dd2ee3edc75fa0f9c2b8bd7"
+  },
+  "representative_source_entries": [
+    {
+      "key": "kholosi:pdf:p1:c1:u1:sense:1",
+      "form": "aber",
+      "gloss": "cloud"
+    },
+    {
+      "key": "kholosi:pdf:p1:c1:u20:sense:1",
+      "form": "avval",
+      "gloss": "first"
+    },
+    {
+      "key": "kholosi:pdf:p1:c2:u11:sense:1",
+      "form": "barg",
+      "gloss": "leaf"
+    }
+  ],
+  "app_entries": "No new app/browser claim; representative source keys above await the authorized future build.",
+  "deferred": [
+    "Full database/CLDF build",
+    "Compiled durable identity and graph reconciliation",
+    "Full suite",
+    "Browser QA"
+  ],
+  "no_remote_or_publication": true
+}

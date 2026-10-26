@@ -1,0 +1,30 @@
+file: 20260927-nair-mullu-kurumba.csv
+defaults:
+  transcription:
+    convert: false
+    preserve_hyphens: true
+  identity:
+    dedupe_by_entry_key: true
+  forms:
+    split_alternates: false
+  gloss:
+    grammar_tags: false
+  importer:
+    commands:
+    - - data/other/forms/raw_data/nair_mullu_kurumba_2013/installation/install_source.py
+      - --install
+    note: Guarded complete reviewed chapter only. Frozen first readings and revision1
+      are historical; source-stage compiled/browser gates remain separate.
+sources:
+  nair2013mullukurumba:
+    reference:
+      editor: OpenAI Codex
+      ocr: false
+      etymology_provenance: source
+    identity:
+      dedupe_by_entry_key: true
+  robertsathyajoseph1982mullukurumba:
+    reference:
+      editor: OpenAI Codex
+      ocr: false
+      etymology_provenance: none

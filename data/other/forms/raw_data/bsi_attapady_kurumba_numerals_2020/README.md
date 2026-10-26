@@ -1,0 +1,7 @@
+# Attapady Kurumba 2020: analysis-only hold
+
+The [primary numeral page](https://lingweb.eva.mpg.de/channumerals/Kurumba-Attapady.htm) credits an Attapady Kurumba Bible translator (Bible Society of India), 23 June 2020. A local HTML snapshot was examined on 25 September 2026 (27,395 bytes; SHA256 `447111e36ae5c890bdaf5cf0b29fd73f2ca8125276f485bd3a62262dc314c990`). The source labels Attapady Kurumba / Pal Kurumba, matching Jambu's `PaluKurumba` (`atta1243`); it is unrelated to the new `Mullu Kurumba` canonical. Jambu has four existing Palu Kurumba compiled forms, none numerals.
+
+The table has 46 numbered prompts: 37 readings and nine blank cells (21–29). Eight printed readings have internal spacing or hyphenation requiring transcription review: 1, 2, 15, 17, 60, 80, 500, 700. The analysis audit preserves every numbered cell and printed value. No inferred compounds or etymological links were generated.
+
+**No forms, source settings, profile, or bibliography entry are installed.** The [CC-BY numeralbank/channumerals v1.0.1 archive](https://doi.org/10.5281/zenodo.15649312) represents Chan data accessed **2019-09-30** and therefore cannot grant reuse of this **2020** elicitation. No independent licence for systematic reuse of this specific page was found. The HTML remains outside the repository at `/private/tmp/Kurumba-Attapady.htm`; `import_source.py` accepts a local copy and validates its hash before recreating the analysis-only audit. Full ingestion awaits a defensible reuse basis; the public source can still be cited for discovery.

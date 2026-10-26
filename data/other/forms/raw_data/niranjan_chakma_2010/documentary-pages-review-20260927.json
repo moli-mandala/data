@@ -1,0 +1,30 @@
+{
+  "date": "2026-09-27",
+  "reviewer": "root",
+  "status": "all four documentary table pages visually reviewed; no omitted lexical table or example found",
+  "source_pdf_sha256": "f022a2a448445cdc9840891478bd5864e2ded1ae98985332b51f0938c075842d",
+  "raw_ocr_file": "whole-remaining-raw-lines.jsonl",
+  "raw_ocr_file_sha256": "011bd751a622226536da9aed3ae73ea68c464ba4d5c17ba0b9ececae9d4b8278",
+  "source_table_title": "কতিপয় ভারতীয় ভাষা সাধারণ পরিচয় জনসংখ্যা",
+  "columns": ["ভাষার নাম", "কোথায় প্রচলিত", "ভাষাপরিবার", "জনসংখ্যা (০০০)"],
+  "pages": [
+    {"source_unit_key": "niranjan2010chakma:p102:demography", "printed_page": 102, "pdf_page": 104, "table_rows": 25, "first_language_label": "আদি", "last_language_label": "চোদ্রি", "image": "tmp/pdfs/chakma-discovery/documentary-review/p104.jpg", "disposition": "documentary language metadata; no lexical attestations"},
+    {"source_unit_key": "niranjan2010chakma:p103:demography", "printed_page": 103, "pdf_page": 105, "table_rows": 28, "first_language_label": "ছত্তিশগড়", "last_language_label": "কুরুম্বা", "image": "tmp/pdfs/chakma-discovery/documentary-review/p105.jpg", "disposition": "documentary language metadata; no lexical attestations"},
+    {"source_unit_key": "niranjan2010chakma:p104:demography", "printed_page": 104, "pdf_page": 106, "table_rows": 26, "first_language_label": "কুরুক্স", "last_language_label": "রিয়াং", "image": "tmp/pdfs/chakma-discovery/documentary-review/p106.jpg", "disposition": "documentary language metadata; no lexical attestations"},
+    {"source_unit_key": "niranjan2010chakma:p105:demography", "printed_page": 105, "pdf_page": 107, "table_rows": 15, "first_language_label": "সাদানি", "last_language_label": "য়ানাদি", "image": "tmp/pdfs/chakma-discovery/documentary-review/p107.jpg", "disposition": "documentary language metadata; no lexical attestations"}
+  ],
+  "counts": {"pages": 4, "language_metadata_rows": 94, "lexical_rows": 0},
+  "scope_findings": [
+    "PDF105 Hindi location cell wraps onto a second line; this is one language row.",
+    "PDF106 large vertical gaps after the opening rows and Lamani are layout spacing, not omitted lexical passages.",
+    "PDF107 table ends after Yanadi; lower page contains no additional examples.",
+    "Language names in this metadata table are not wordlist attestations of the named languages."
+  ],
+  "editorial_policy": [
+    "Keep original table evidence and exact page references in the audit.",
+    "Do not import population figures or country lists as present-day facts or collection sites.",
+    "Do not promote source classifications directly into the registry: Garo, for example, is printed under an Austronesian label here.",
+    "Any use for source language-name disambiguation requires separate identity evidence."
+  ],
+  "canonical_changes": false
+}

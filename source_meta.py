@@ -27,6 +27,7 @@ Schema::
         transcription: <rules>
         forms:
           split_alternates: false       # commas are source notation, not alternate forms
+          slash_alternates: true        # "A / B" (and word-level "x A/B") list alternate forms
         identity:
           dedupe_by_entry_key: true     # rows dedupe on (lang, param, form, Entry_Key)
           legacy_ids: file-order        # keep <file>-<row> ids even under a non-numeric etymon
@@ -71,7 +72,7 @@ DICTIONARY_DIRS = ("cdial", "dedr", "munda", "dbia")
 TOP_LEVEL_KEYS = {"file", "defaults", "sources"}
 SECTIONS = {
     "transcription": None,  # rules; validated separately
-    "forms": {"split_alternates", "exclude_languages"},
+    "forms": {"split_alternates", "slash_alternates", "exclude_languages"},
     "gloss": {"grammar_tags", "source_defined_tags"},
     "identity": {
         "legacy_ids", "append_order", "dedupe_by_entry_key", "key_dialect_prefix",

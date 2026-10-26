@@ -1,0 +1,633 @@
+{
+  "source": "living-kharia2026",
+  "sqlite_sha256": "bc4ab203e8f6edc902cda41171c9feed602fe854ea34aee3869b610199167f93",
+  "historical_sqlite_sha256": "c0bf44b14565a019de565ca82b45e01da177f2453cda00c460428acaa22ea3d2",
+  "matches_historical_snapshot": false,
+  "compressed_sha256": "032932e6fc87a33323a48678ea1aab382055680da27447d209962d8677e838e5",
+  "snapshot_bytes": 1957888,
+  "tables": {
+    "audio": {
+      "count": 438,
+      "columns": [
+        "id",
+        "entry_id",
+        "sentence_id",
+        "text_id",
+        "storage_path",
+        "source",
+        "dirty",
+        "created_by_user_id",
+        "created_at",
+        "updated_by_user_id",
+        "updated_at",
+        "timings",
+        "server_seq"
+      ]
+    },
+    "audio_speakers": {
+      "count": 438,
+      "columns": [
+        "id",
+        "audio_id",
+        "speaker_id",
+        "dirty",
+        "created_by_user_id",
+        "created_at",
+        "updated_by_user_id",
+        "updated_at",
+        "server_seq"
+      ]
+    },
+    "clause_slots": {
+      "count": 0,
+      "columns": [
+        "id",
+        "sort_key",
+        "name",
+        "code",
+        "dirty",
+        "server_seq",
+        "created_by_user_id",
+        "created_at",
+        "updated_by_user_id",
+        "updated_at"
+      ]
+    },
+    "cognate_set_members": {
+      "count": 0,
+      "columns": [
+        "id",
+        "set_id",
+        "entry_id",
+        "sense_id",
+        "note",
+        "uncertain",
+        "dirty",
+        "server_seq",
+        "created_by_user_id",
+        "created_at",
+        "updated_by_user_id",
+        "updated_at"
+      ]
+    },
+    "cognate_sets": {
+      "count": 0,
+      "columns": [
+        "id",
+        "reconstruction",
+        "proto_level",
+        "gloss",
+        "notes",
+        "sources",
+        "citations",
+        "dirty",
+        "server_seq",
+        "created_by_user_id",
+        "created_at",
+        "updated_by_user_id",
+        "updated_at"
+      ]
+    },
+    "db_metadata": {
+      "count": 4,
+      "columns": [
+        "key",
+        "value"
+      ]
+    },
+    "deletes": {
+      "count": 0,
+      "columns": [
+        "table_name",
+        "id",
+        "updated_at",
+        "server_seq"
+      ]
+    },
+    "dialects": {
+      "count": 3,
+      "columns": [
+        "id",
+        "name",
+        "dirty",
+        "created_by_user_id",
+        "created_at",
+        "updated_by_user_id",
+        "updated_at",
+        "server_seq",
+        "coordinates"
+      ]
+    },
+    "entries": {
+      "count": 452,
+      "columns": [
+        "id",
+        "lexeme",
+        "phonetic",
+        "interlinearization",
+        "morphology",
+        "notes",
+        "linguistic_history",
+        "sources",
+        "scientific_names",
+        "coordinates",
+        "unsupported_fields",
+        "elicitation_id",
+        "dirty",
+        "created_by_user_id",
+        "created_at",
+        "updated_by_user_id",
+        "updated_at",
+        "server_seq",
+        "homograph",
+        "citations",
+        "review",
+        "tone_class"
+      ]
+    },
+    "entry_dialects": {
+      "count": 446,
+      "columns": [
+        "id",
+        "entry_id",
+        "dialect_id",
+        "dirty",
+        "created_by_user_id",
+        "created_at",
+        "updated_by_user_id",
+        "updated_at",
+        "server_seq"
+      ]
+    },
+    "entry_relationships": {
+      "count": 0,
+      "columns": [
+        "id",
+        "from_entry_id",
+        "from_sense_id",
+        "to_entry_id",
+        "to_sense_id",
+        "type",
+        "custom_type_id",
+        "note",
+        "sources",
+        "dirty",
+        "created_by_user_id",
+        "created_at",
+        "updated_by_user_id",
+        "updated_at",
+        "server_seq"
+      ]
+    },
+    "entry_tags": {
+      "count": 0,
+      "columns": [
+        "id",
+        "entry_id",
+        "tag_id",
+        "dirty",
+        "created_by_user_id",
+        "created_at",
+        "updated_by_user_id",
+        "updated_at",
+        "server_seq"
+      ]
+    },
+    "etymologies": {
+      "count": 0,
+      "columns": [
+        "id",
+        "entry_id",
+        "verdict",
+        "reconstruction_level",
+        "reconstruction",
+        "cognate_set_id",
+        "donor_language",
+        "donor_form",
+        "stratum",
+        "confidence",
+        "notes",
+        "sources",
+        "citations",
+        "dirty",
+        "server_seq",
+        "created_by_user_id",
+        "created_at",
+        "updated_by_user_id",
+        "updated_at"
+      ]
+    },
+    "featured_entries": {
+      "count": 0,
+      "columns": [
+        "id",
+        "entry_id",
+        "sort_key",
+        "dirty",
+        "created_by_user_id",
+        "created_at",
+        "updated_by_user_id",
+        "updated_at",
+        "server_seq"
+      ]
+    },
+    "glossing_abbreviations": {
+      "count": 0,
+      "columns": [
+        "id",
+        "code",
+        "name",
+        "category",
+        "dirty",
+        "server_seq",
+        "created_by_user_id",
+        "created_at",
+        "updated_by_user_id",
+        "updated_at"
+      ]
+    },
+    "grammar_sections": {
+      "count": 0,
+      "columns": [
+        "id",
+        "parent_id",
+        "sort_key",
+        "number_label",
+        "title",
+        "body",
+        "usage_conditions",
+        "slot_id",
+        "entry_id",
+        "sense_id",
+        "dirty",
+        "server_seq",
+        "created_by_user_id",
+        "created_at",
+        "updated_by_user_id",
+        "updated_at"
+      ]
+    },
+    "ignored_forms": {
+      "count": 0,
+      "columns": [
+        "id",
+        "form",
+        "dirty",
+        "server_seq",
+        "created_by_user_id",
+        "created_at",
+        "updated_by_user_id",
+        "updated_at"
+      ]
+    },
+    "migrations": {
+      "count": 18,
+      "columns": [
+        "id",
+        "name",
+        "run_on"
+      ]
+    },
+    "photos": {
+      "count": 69,
+      "columns": [
+        "id",
+        "storage_path",
+        "source",
+        "photographer",
+        "dirty",
+        "created_by_user_id",
+        "created_at",
+        "updated_by_user_id",
+        "updated_at",
+        "server_seq",
+        "latitude",
+        "longitude",
+        "taken_at"
+      ]
+    },
+    "rejected_pushes": {
+      "count": 0,
+      "columns": [
+        "id",
+        "table_name",
+        "row_id",
+        "user_id",
+        "payload",
+        "reason",
+        "created_at",
+        "acknowledged_at"
+      ]
+    },
+    "relationship_types": {
+      "count": 0,
+      "columns": [
+        "id",
+        "name",
+        "inverse_name",
+        "symmetric",
+        "dirty",
+        "created_by_user_id",
+        "created_at",
+        "updated_by_user_id",
+        "updated_at",
+        "server_seq"
+      ]
+    },
+    "section_sentences": {
+      "count": 0,
+      "columns": [
+        "id",
+        "section_id",
+        "sentence_id",
+        "sort_key",
+        "dirty",
+        "server_seq",
+        "created_by_user_id",
+        "created_at",
+        "updated_by_user_id",
+        "updated_at"
+      ]
+    },
+    "sense_photos": {
+      "count": 69,
+      "columns": [
+        "id",
+        "sense_id",
+        "photo_id",
+        "dirty",
+        "created_by_user_id",
+        "created_at",
+        "updated_by_user_id",
+        "updated_at",
+        "server_seq"
+      ]
+    },
+    "sense_videos": {
+      "count": 0,
+      "columns": [
+        "id",
+        "sense_id",
+        "video_id",
+        "dirty",
+        "created_by_user_id",
+        "created_at",
+        "updated_by_user_id",
+        "updated_at",
+        "server_seq"
+      ]
+    },
+    "senses": {
+      "count": 452,
+      "columns": [
+        "id",
+        "entry_id",
+        "definition",
+        "glosses",
+        "parts_of_speech",
+        "semantic_domains",
+        "write_in_semantic_domains",
+        "noun_class",
+        "plural_form",
+        "variant",
+        "dirty",
+        "created_by_user_id",
+        "created_at",
+        "updated_by_user_id",
+        "updated_at",
+        "server_seq",
+        "sources"
+      ]
+    },
+    "senses_in_sentences": {
+      "count": 3,
+      "columns": [
+        "id",
+        "sense_id",
+        "sentence_id",
+        "dirty",
+        "created_by_user_id",
+        "created_at",
+        "updated_by_user_id",
+        "updated_at",
+        "server_seq"
+      ]
+    },
+    "sentence_photos": {
+      "count": 0,
+      "columns": [
+        "id",
+        "sentence_id",
+        "photo_id",
+        "dirty",
+        "created_by_user_id",
+        "created_at",
+        "updated_by_user_id",
+        "updated_at",
+        "server_seq"
+      ]
+    },
+    "sentence_videos": {
+      "count": 0,
+      "columns": [
+        "id",
+        "sentence_id",
+        "video_id",
+        "dirty",
+        "created_by_user_id",
+        "created_at",
+        "updated_by_user_id",
+        "updated_at",
+        "server_seq"
+      ]
+    },
+    "sentences": {
+      "count": 3,
+      "columns": [
+        "id",
+        "text",
+        "translation",
+        "text_id",
+        "sort_key",
+        "ends_paragraph",
+        "dirty",
+        "created_by_user_id",
+        "created_at",
+        "updated_by_user_id",
+        "updated_at",
+        "sources",
+        "tokens",
+        "server_seq",
+        "discourse_role",
+        "example_label",
+        "citations"
+      ]
+    },
+    "server_seq_counter": {
+      "count": 1,
+      "columns": [
+        "seq"
+      ]
+    },
+    "sources": {
+      "count": 0,
+      "columns": [
+        "id",
+        "slug",
+        "citation",
+        "abbreviation",
+        "author",
+        "year",
+        "url",
+        "license",
+        "type",
+        "dirty",
+        "created_by_user_id",
+        "created_at",
+        "updated_by_user_id",
+        "updated_at",
+        "server_seq",
+        "orthography"
+      ]
+    },
+    "speakers": {
+      "count": 2,
+      "columns": [
+        "id",
+        "name",
+        "decade",
+        "gender",
+        "birthplace",
+        "user_id",
+        "dirty",
+        "created_by_user_id",
+        "created_at",
+        "updated_by_user_id",
+        "updated_at",
+        "server_seq"
+      ]
+    },
+    "sqlite_sequence": {
+      "count": 0,
+      "columns": [
+        "name",
+        "seq"
+      ]
+    },
+    "tags": {
+      "count": 0,
+      "columns": [
+        "id",
+        "name",
+        "private",
+        "dirty",
+        "created_by_user_id",
+        "created_at",
+        "updated_by_user_id",
+        "updated_at",
+        "server_seq",
+        "kind",
+        "code"
+      ]
+    },
+    "text_collections": {
+      "count": 0,
+      "columns": [
+        "id",
+        "title",
+        "description",
+        "parent_id",
+        "sort_key",
+        "dirty",
+        "server_seq",
+        "created_by_user_id",
+        "created_at",
+        "updated_by_user_id",
+        "updated_at"
+      ]
+    },
+    "text_dialects": {
+      "count": 0,
+      "columns": [
+        "id",
+        "text_id",
+        "dialect_id",
+        "dirty",
+        "server_seq",
+        "created_by_user_id",
+        "created_at",
+        "updated_by_user_id",
+        "updated_at"
+      ]
+    },
+    "text_tags": {
+      "count": 0,
+      "columns": [
+        "id",
+        "text_id",
+        "tag_id",
+        "dirty",
+        "server_seq",
+        "created_by_user_id",
+        "created_at",
+        "updated_by_user_id",
+        "updated_at"
+      ]
+    },
+    "texts": {
+      "count": 0,
+      "columns": [
+        "id",
+        "title",
+        "dirty",
+        "created_by_user_id",
+        "created_at",
+        "updated_by_user_id",
+        "updated_at",
+        "sources",
+        "server_seq",
+        "citations",
+        "summary",
+        "work_id",
+        "collection_id",
+        "sort_key"
+      ]
+    },
+    "video_speakers": {
+      "count": 0,
+      "columns": [
+        "id",
+        "video_id",
+        "speaker_id",
+        "dirty",
+        "created_by_user_id",
+        "created_at",
+        "updated_by_user_id",
+        "updated_at",
+        "server_seq"
+      ]
+    },
+    "videos": {
+      "count": 0,
+      "columns": [
+        "id",
+        "storage_path",
+        "hosted_elsewhere",
+        "source",
+        "videographer",
+        "text_id",
+        "dirty",
+        "created_by_user_id",
+        "created_at",
+        "updated_by_user_id",
+        "updated_at",
+        "timings",
+        "server_seq",
+        "hosted_metadata"
+      ]
+    }
+  },
+  "status": "distinct current snapshot read-only census; canonical unchanged; no implicit historical replacement",
+  "permission": "User: living dictionary is allowed per sarva",
+  "integrity": "ok"
+}

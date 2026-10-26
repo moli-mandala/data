@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Tulu · Dravidian surveys, 2026-09-21 · batch 012. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Tulu | Proposed etymology | Evidence |
+|---|---|---|---|
+| 56 | **kūjal** ‘hair’ | Proposed reflex of [**DEDR 1892**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=172) | DEDR1892 directly gives Tulu kujalů ‘hair of the head’. Survey kūjal is compared with that branch, preserving its long vowel and absence of the dictionary’s final vowel. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 57 | **naḍapara** ‘walk’ | Proposed reflex of [**DEDR 3582**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=315) | DEDR3582 gives Tamil naṭa, Malayalam naṭakka, Kannada naḍe/naḍi, Kodagu naḍa- and Tulu naḍapuni to walk. These complete southern survey naḍa/naḍi/naḍakk-/naḍap- forms preserve the stem and source inflection; the Kudiya naḍapu comparison follows intransitive Tulu naḍapuni, not Kannada causative naḍapu. Longer or opaque responses are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 58 | **kullara** ‘sit’ | Proposed reflex of [**DEDR 1835**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=166) | DEDR1835 gives Kannada kuḷir/kuḷḷir/kuḷḷu to sit down and Tulu kuḷḷuni to sit. Survey kuḷi/kulī, Badaga kuḷəvə and Tulu kullara retain that sitting stem with source inflections; auxiliary-bearing or longer kuṇḍuko/kuḷitiko responses remain separate. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 59 | **nunguduna** ‘dry’ | Proposed reflex of [**DEDR 601**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=59) | DEDR601 gives Tamil uṇaṅku, Malayalam uṇaṅṅuka, Kannada oṇagu, Tulu oṇuṅgelu/uṇuṅgu/nuṅgu dry and dry up. These unag-/oṇag-/voṇag-/nuṅg- survey responses preserve that drying stem, ordinary adjectival endings and initial glide; potentially competing nānt-/nan- readings are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 60 | **barara** ‘come’ | Proposed reflex of [**DEDR 5270**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=475) | DEDR5270 explicitly gives Tamil vā imperative of varu, Malayalam varuka, Kannada bar/bār with bā imperative, Kodagu bar-, Telugu vaccu, Parji ver- and Tulu barpini. These survey simple come responses retain the corresponding stems and ordinary endings; pronoun-led clauses and auxiliary constructions are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+
+Proposed assignment rows: **5**. Affected records: **5**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-012.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Tulu/batch-012.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

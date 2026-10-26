@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Koraga · Bhat 1971 Koraga records, 2026-09-25 · batch 089. Pending user review; autonomous research continues.
+
+| # | Koraga | Proposed etymology | Evidence |
+|---|---|---|---|
+| 226 | **pijaŋki** ‘to crush’ | Proposed reflex of [**DEDR 4135**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=366) | DEDR 4135 full article (p. 366) gives Kor. (O.) pijaŋki to crush. Bhat pijaŋki “to crush” is the same cited Koraga form and sense; its original dialect:Koraga:onti:Onti uncertain dialect tag is retained. The article is used as family classification, not an independent second attestation of Bhat. (1 record.) |
+| 227 | **pijji** ‘to pick up’ | Proposed reflex of [**DEDR 4423**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=391) | DEDR 4423 full article (p. 391) gives Kor. (O.) pijji, (M.) hiji, (T.) hije to pick up. Bhat pijji “to pick up” is the same cited Koraga form and sense; its original dialect:Koraga:onti:Onti uncertain dialect tag is retained. The article is used as family classification, not an independent second attestation of Bhat. (1 record.) |
+| 228 | **pirpi** ‘to make the spirit leave a person’ | Proposed reflex of [**DEDR 4176**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=370) | DEDR 4176 full article (p. 370) gives Kor. (O.) pirpi to make the spirit leave a person. Bhat pirpi “to make the spirit leave a person” is the same cited Koraga form and sense; its original dialect:Koraga:onti:Onti uncertain dialect tag is retained. The article is used as family classification, not an independent second attestation of Bhat. (1 record.) |
+| 229 | **puge** ‘smoke’ | Proposed reflex of [**DEDR 4240**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=375) | DEDR 4240 full article (p. 375) gives 4240 Ta. pukai smoke, mist, vapour, steam; ( -v-, -nt- ) to smoke, emit vapour or steam; ( -pp- -tt- ) to cause to smoke; pukaiccal smoke; pukaippu smoking, fumigation; pukaivu smoking; pukā Bhat puge “smoke” matches Lindgren Koraga puge “smoke (exhaust)” in form and sense; this cross-source match is a candidate lead, with the full DEDR article defining the family. Both source identities and dialect tags are preserved. (1 record.) |
+| 230 | **puggelɨ** ‘shoulder’ | Proposed reflex of [**DEDR 4172**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=369) | DEDR 4172 full article (p. 369) gives 4172 Ta. piyal nape of the neck; pical id., shoulder, hump as of an ox. Ko. peyḷ, peyl shoulder; ? pekaṛtl nape of neck ( kaṛtl neck). Ka. pegal shoulder. Tu. pugelů, puggelů id. Bel. (LSB 2 Bhat puggelɨ “shoulder” matches Lindgren Koraga puggelɨ “shoulder” in form and sense; this cross-source match is a candidate lead, with the full DEDR article defining the family. Both source identities and dialect tags are preserved. (1 record.) |
+
+Proposed assignment rows: **5**. Affected records: **5**. Relation kinds: **reflex**. Multi-part responses retain their source order.
+
+Exact persistent IDs and complete source records: [batch-089.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Koraga/batch-089.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../koraga-bhat-20260925/research-holds.json). No new lexical material or donor nodes are introduced.

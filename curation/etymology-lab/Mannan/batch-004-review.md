@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Mannan · Dravidian surveys, 2026-09-21 · batch 004. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Mannan | Proposed etymology | Evidence |
+|---|---|---|---|
+| 16 | **uḍambɨ** ‘body’, **oḍambɨ** ‘body’ | Proposed reflex of [**DEDR 586**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=57) | DEDR 586 explicitly gives Tamil uṭal/uṭampu, Malayalam uṭal/uṭampu, Kannada oḍal/oḍambi and Konda oṛol ‘body’. This is printed entry 586; the existing reconstruction at d585 has a mismatched body gloss and is deliberately not used. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (7 records.) |
+| 17 | **nāy** ‘dog’, **nay** ‘dog’, **nayi** ‘dog’ | Proposed reflex of [**DEDR 3650**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=322) | DEDR 3650 gives Tamil nāy, Kannada nāyi, Toda nōy, Gondi nai/ney, Parji netta, Gadaba nette and Kolami āte ‘dog’. Its longer Konda nukuṛi analysis is qualified and morphologically complex, so that series remains outside this simple-form proposal. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (7 records.) |
+| 18 | **ɛruma** ‘buffalo’ | Proposed reflex of [**DEDR 816**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=80) | DEDR 816 records Tamil erumai, Malayalam eruma, Kannada/Kodagu emme, Tulu erme, Telugu enumu and Gondi ermi/hermi/armi ‘female buffalo’. Unqualified survey buffalo senses are compatible but do not identify sex; clearly male or compound responses are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (4 records.) |
+| 19 | **āḍɨ** ‘goat’ | Proposed reflex of [**DEDR 5152**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=467) | DEDR 5152 gives Tamil/Malayalam āṭu ‘goat, sheep’, Kannada āḍu, Kota ār, Toda ōḍ, Gondi ēṭi, Kui ōḍa and Kurukh ēṛā ‘goat’. Source sex qualifiers remain visible; the printed Sanskrit comparison is not treated as a demonstrated donor relationship. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (7 records.) |
+| 20 | **min** ‘fish’, **mīn** ‘fish’ | Proposed reflex of [**DEDR 4885**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=436) | DEDR 4885 gives Tamil/Malayalam/Kannada mīn, Parji mīni, Telugu/Kuvi mīnu and Gondi mīn ‘fish’. Simple min- responses are matched by both form and meaning; the article’s Sanskrit comparison does not itself establish borrowing direction. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (7 records.) |
+
+Proposed assignment rows: **32**. Affected records: **32**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-004.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Mannan/batch-004.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

@@ -1,0 +1,396 @@
+{
+  "status": "changes_required",
+  "review_scope": "Independent field/grammar review of all117 whole-expression/answer rows and all192 C5 column/group rows; all31 C5 physical p/g pairs visually compared on four original pages; fresh20 exact-row original audit. Not a claim that all117 whole-expression glyph strings received a full independent rereading.",
+  "source": {
+    "path": "tmp/pdfs/korwa-kodaku-2022/source.pdf",
+    "sha256": "a8efbe88405e27024a7a6ec786cd6fde3e382f0eaf0d0081197d3880ed97eb0c"
+  },
+  "inputs": {
+    "whole-expression-proposal.jsonl": "8609dcbb8bfa31ff01f9822bde38f9223949d45655b2ae83676f1f1174fe23ac",
+    "c5-column-proposal.jsonl": "d5cbc92e46a197ff11e904abb5768f0a32eba999ed7ea9d4d21b44cbeef91378",
+    "c5-column-coverage.json": "28b3b6400c78f2c1df45748894d5a195b355042094ea14f63d791fac12cc9c3f",
+    "grouping-status.json": "7b181f5fc463928ec41239e8dbc80d309128b2979314c9644dcd0f4abdc0f86b"
+  },
+  "selection_sha256": "5ecddc29a6987aa0b5ee24e5aac0a20f57dc255b9d1b2c7bd5e3258ecf2e11f6",
+  "original_pages_viewed": [
+    93,
+    96,
+    97,
+    99,
+    100,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108
+  ],
+  "render_policy": "One overwritten original-page PNG; fitz page index PDF page minus1, matrix1.6–1.8; original PDF remains authoritative. No bulk render corpus.",
+  "coverage": {
+    "whole_rows": 117,
+    "column_rows": 192,
+    "c5_physical_pairs": 31,
+    "whole_by_section_role": {
+      "C.2:whole-narrative-expression": 26,
+      "C.3:whole-narrative-expression": 12,
+      "C.4:whole-narrative-expression": 39,
+      "C.5:whole-narrative-expression": 20,
+      "C.5:whole-target-question": 10,
+      "C.5:source-target-answer": 10
+    },
+    "all192_column_keys_unique_and_covered": true,
+    "all_column_target_ranges_contiguous_and_nonoverlapping": true,
+    "whole_p_accounting": 126,
+    "whole_p_accounting_scope": "Checked owner physical-key transfer and complete key census; root separately verifies full v5 transfer.",
+    "unresolved_internal_spans_preserved": [
+      "behera2022korwakodaku:C.5:column:6.1:2",
+      "behera2022korwakodaku:C.5:column:12.1:3"
+    ]
+  },
+  "fresh_sample": {
+    "seed": 20260927329,
+    "units": 20,
+    "passed": 20,
+    "material_sample_errors": 0,
+    "rows": [
+      {
+        "source_unit_key": "behera2022korwakodaku:C.2:expression:4",
+        "source_pages": [
+          93
+        ],
+        "result": "pass",
+        "checked": [
+          "literal form",
+          "printed gloss/free-translation scope",
+          "source location",
+          "output metadata"
+        ]
+      },
+      {
+        "source_unit_key": "behera2022korwakodaku:C.2:expression:2",
+        "source_pages": [
+          93
+        ],
+        "result": "pass",
+        "checked": [
+          "literal form",
+          "printed gloss/free-translation scope",
+          "source location",
+          "output metadata"
+        ]
+      },
+      {
+        "source_unit_key": "behera2022korwakodaku:C.2:expression:20",
+        "source_pages": [
+          96
+        ],
+        "result": "pass",
+        "checked": [
+          "literal form",
+          "printed gloss/free-translation scope",
+          "source location",
+          "output metadata"
+        ]
+      },
+      {
+        "source_unit_key": "behera2022korwakodaku:C.3:expression:1",
+        "source_pages": [
+          97
+        ],
+        "result": "pass",
+        "checked": [
+          "literal form",
+          "printed gloss/free-translation scope",
+          "source location",
+          "output metadata"
+        ]
+      },
+      {
+        "source_unit_key": "behera2022korwakodaku:C.3:expression:12",
+        "source_pages": [
+          99
+        ],
+        "result": "pass",
+        "checked": [
+          "literal form",
+          "printed gloss/free-translation scope",
+          "source location",
+          "output metadata"
+        ]
+      },
+      {
+        "source_unit_key": "behera2022korwakodaku:C.4:expression:30",
+        "source_pages": [
+          103
+        ],
+        "result": "pass",
+        "checked": [
+          "literal form",
+          "printed gloss/free-translation scope",
+          "source location",
+          "output metadata"
+        ]
+      },
+      {
+        "source_unit_key": "behera2022korwakodaku:C.4:expression:33",
+        "source_pages": [
+          104
+        ],
+        "result": "pass",
+        "checked": [
+          "literal form",
+          "printed gloss/free-translation scope",
+          "source location",
+          "output metadata"
+        ]
+      },
+      {
+        "source_unit_key": "behera2022korwakodaku:C.4:expression:7",
+        "source_pages": [
+          100
+        ],
+        "result": "pass",
+        "checked": [
+          "literal form",
+          "printed gloss/free-translation scope",
+          "source location",
+          "output metadata"
+        ]
+      },
+      {
+        "source_unit_key": "behera2022korwakodaku:C.5:expression:17",
+        "source_pages": [
+          107,
+          108
+        ],
+        "result": "pass",
+        "checked": [
+          "literal form",
+          "printed gloss/free-translation scope",
+          "source location",
+          "output metadata"
+        ]
+      },
+      {
+        "source_unit_key": "behera2022korwakodaku:C.5:expression:3",
+        "source_pages": [
+          105
+        ],
+        "result": "pass",
+        "checked": [
+          "literal form",
+          "printed gloss/free-translation scope",
+          "source location",
+          "output metadata"
+        ]
+      },
+      {
+        "source_unit_key": "behera2022korwakodaku:C.5:question:6",
+        "source_pages": [
+          107
+        ],
+        "result": "pass",
+        "checked": [
+          "literal form",
+          "printed gloss/free-translation scope",
+          "source location",
+          "output metadata"
+        ]
+      },
+      {
+        "source_unit_key": "behera2022korwakodaku:C.5:answer:10",
+        "source_pages": [
+          108
+        ],
+        "result": "pass",
+        "checked": [
+          "literal form",
+          "printed gloss/free-translation scope",
+          "source location",
+          "output metadata"
+        ]
+      },
+      {
+        "source_unit_key": "behera2022korwakodaku:C.5:column:5.1:1",
+        "source_pages": [
+          105
+        ],
+        "result": "pass",
+        "checked": [
+          "literal form",
+          "printed gloss/free-translation scope",
+          "source location",
+          "output metadata"
+        ]
+      },
+      {
+        "source_unit_key": "behera2022korwakodaku:C.5:column:2:5",
+        "source_pages": [
+          105
+        ],
+        "result": "pass",
+        "checked": [
+          "literal form",
+          "printed gloss/free-translation scope",
+          "source location",
+          "output metadata"
+        ]
+      },
+      {
+        "source_unit_key": "behera2022korwakodaku:C.5:column:11:6",
+        "source_pages": [
+          106
+        ],
+        "result": "pass",
+        "checked": [
+          "literal form",
+          "printed gloss/free-translation scope",
+          "source location",
+          "output metadata"
+        ]
+      },
+      {
+        "source_unit_key": "behera2022korwakodaku:C.5:column:11:4",
+        "source_pages": [
+          106
+        ],
+        "result": "pass",
+        "checked": [
+          "literal form",
+          "printed gloss/free-translation scope",
+          "source location",
+          "output metadata"
+        ]
+      },
+      {
+        "source_unit_key": "behera2022korwakodaku:C.5:column:14.1:4",
+        "source_pages": [
+          107
+        ],
+        "result": "pass",
+        "checked": [
+          "literal form",
+          "printed gloss/free-translation scope",
+          "source location",
+          "output metadata"
+        ]
+      },
+      {
+        "source_unit_key": "behera2022korwakodaku:C.5:column:17.2:5",
+        "source_pages": [
+          107
+        ],
+        "result": "pass",
+        "checked": [
+          "literal form",
+          "printed gloss/free-translation scope",
+          "source location",
+          "output metadata"
+        ]
+      },
+      {
+        "source_unit_key": "behera2022korwakodaku:C.5:column:19.2:3",
+        "source_pages": [
+          108
+        ],
+        "result": "pass",
+        "checked": [
+          "literal form",
+          "printed gloss/free-translation scope",
+          "source location",
+          "output metadata"
+        ]
+      },
+      {
+        "source_unit_key": "behera2022korwakodaku:C.5:column:18.1:4",
+        "source_pages": [
+          108
+        ],
+        "result": "pass",
+        "checked": [
+          "literal form",
+          "printed gloss/free-translation scope",
+          "source location",
+          "output metadata"
+        ]
+      }
+    ]
+  },
+  "findings": [
+    {
+      "id": "introductory-fragment",
+      "keys": [
+        "behera2022korwakodaku:C.5:expression:1"
+      ],
+      "old": {
+        "tags": [
+          "multiword-expression",
+          "sentential"
+        ]
+      },
+      "proposed": {
+        "tags": [
+          "multiword-expression"
+        ]
+      },
+      "evidence": "PDF105/printed95 n1: free translation 'Once, when I was small'; introductory temporal fragment, followed by separately numbered main narrative n2. Preserve separate physical unit; do not claim a complete sentence."
+    },
+    {
+      "id": "printed-column-conflict",
+      "keys": [
+        "behera2022korwakodaku:C.5:column:1:3",
+        "behera2022korwakodaku:C.5:column:1:4"
+      ],
+      "old": {
+        "typed_uncertainty": []
+      },
+      "proposed": {
+        "typed_uncertainty": [
+          "source-word-alignment"
+        ],
+        "note": "The printed columns pair tʃotʰeɾɐ with 'was' and holo with 'small'; the anomalous pairing is preserved without reassignment or inferred part of speech."
+      },
+      "evidence": "PDF105/printed95 n1: directly aligned original p/g columns. No literal correction authorized."
+    },
+    {
+      "id": "performance-note-in-gloss",
+      "keys": [
+        "behera2022korwakodaku:C.5:column:19.2:4"
+      ],
+      "old": {
+        "gloss": "entered (drawn out for emphasis)",
+        "source_analysis": ""
+      },
+      "proposed": {
+        "gloss": "entered",
+        "source_analysis": "drawn out for emphasis"
+      },
+      "evidence": "PDF108/printed98 n19.2 explicitly supplies performance parenthetical after lexical 'entered'. Preserve complete raw_gloss and all source length signs."
+    },
+    {
+      "id": "literal-baseline-dot",
+      "keys": [
+        "behera2022korwakodaku:C.4:expression:6"
+      ],
+      "related_physical_key": "behera2022korwakodaku:pdf100:line4",
+      "proposed": {
+        "typed_uncertainty": [
+          "source-notation"
+        ],
+        "note": "The source prints sa.b with a baseline dot; its phonetic interpretation is not specified. The dot is retained literally."
+      },
+      "evidence": "PDF100/printed90 n6 original visibly prints sa.b, not an extraction artifact. Apply the same qualification to its continuous-alignment child; that child is outside this report's owned proposal set."
+    }
+  ],
+  "class_decisions": [
+    "All10 target questions and10 answers compared with original C5 pages; source English-only Q/A controls in other chapters must not be invented as target answers.",
+    "C4n3 blank lexical Gloss is correct: original PDF99 has a p/g block but no separate f translation. Its interlinear analysis remains auditable.",
+    "C5 pause/emph-only rows correctly have blank lexical Gloss and retained source_analysis; no adjective/noun inferred from those labels.",
+    "C5n6.1 and12.1 unresolved internal spans remain intact; printed layout does not support a forced one-to-one internal assignment.",
+    "C5n5.1 sticks versus whole-translation spears is a printed layer difference, preserved without harmonization.",
+    "C5n17.2 printed tiger-not-is versus separate target tokens remains a source alignment; preserve the leading hyphen in raw_gloss without treating it as target morphology.",
+    "No lexical POS or tense inferred solely from unqualified English free translations. Structured feature review of the790 continuous children is a separate agent's task."
+  ],
+  "installation_approval": false,
+  "owner_files_modified": false
+}

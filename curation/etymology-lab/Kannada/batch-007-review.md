@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Kannada · Dravidian surveys, 2026-09-21 · batch 007. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Kannada | Proposed etymology | Evidence |
+|---|---|---|---|
+| 31 | **kāttī** ‘knife’ | Proposed reflex of [**DEDR 1204**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=112) | DEDR 1204 gives Tamil/Malayalam/Kannada/Telugu katti and Tulu katte ‘knife’. Gondi is attested here only for a cock’s spur or attached fighting knife; general Gondi knife forms need a contact or sense judgment and are held. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 32 | **mālē** ‘rain’, **māḷe** ‘rain’, **male** ‘rain’, **maḷe** ‘rain’, **maḷā** ‘rain’, **ɱəle** ‘rain’ | Proposed reflex of [**DEDR 4753**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=421) | DEDR 4753 gives Tamil maẓai, Malayalam maẓa, Kannada maẓe, Kodagu/Tulu maḷe, Kota may and Toda maw ‘rain’. These simple stems are linked with the rain sense; rain-cloud or rainfall verbal compounds are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (15 records.) |
+| 33 | **nāligĕ** ‘Tongue’, **nālīge** ‘tongue’, **nāḷukke** ‘tongue’, **nāḷɨkke** ‘tongue’, **nālige** ‘tongue’, **nāvu** ‘tongue’ | Proposed reflex of [**DEDR 3633**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=321) | DEDR 3633 gives Tamil/Malayalam nā/nākku/nāvu, Kannada nālige/nālage, Telugu/Konda nālika, Kolami nālka and Gadaba nāŋ ‘tongue’. These simple n-initial stems fit the documented series; Gondi vanjēr and Kurukh tatxa require different articles. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (7 records.) |
+| 34 | **nettɨrɨ** ‘blood’ | Proposed reflex of [**DEDR 3748**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=335) | DEDR 3748 explicitly gives Kannada nettar, Telugu netturu, Gadaba nettūr/netir, Parji netir, Gondi nettur/nattur and Brahui ditar ‘blood’. This blood stem is kept separate from Kurukh xē̃s and from Indo-Aryan rakta-type responses. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 35 | **māṇṇu** ‘soil’, **mannu** ‘soil’, **maṇ** ‘soil’, **maṇṇu** ‘earth’ | Proposed reflex of [**DEDR 4666**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=413) | DEDR 4666(a) gives Tamil maṇ, Malayalam/Kannada maṇṇu, Telugu mannu, Gadaba manu and Toda moṇ ‘earth, soil, mud’. Only the unextended earth/mud stem is selected here; maṇal ‘sand’ is separately distinguished in subsection (b). This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (7 records.) |
+
+Proposed assignment rows: **31**. Affected records: **31**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-007.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Kannada/batch-007.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

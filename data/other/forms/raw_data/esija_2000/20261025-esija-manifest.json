@@ -1,0 +1,92 @@
+{
+ "bibliography": "Rastorgueva, V. S. & Edel'man, D. I. Ètimologičeskij slovar' iranskix jazykov. Vol. 1 (a–ā), 2000; vol. 2 (b–d), 2003; vol. 3 (f–h), 2007. Moscow: Vostočnaja literatura.",
+ "counts": {
+  "articles": 760,
+  "by_volume_status": {
+   "1:cross_reference": 49,
+   "1:installed": 190,
+   "1:layout_false_positive": 1,
+   "2:cross_reference": 59,
+   "2:excluded_ambiguous": 1,
+   "2:installed": 205,
+   "2:layout_false_positive": 1,
+   "3:cross_reference": 60,
+   "3:excluded_ambiguous": 1,
+   "3:installed": 192,
+   "3:layout_false_positive": 1
+  },
+  "params": 587
+ },
+ "extraction": {
+  "acceptance": "OCR lemmas installed only when the fused first lemma agrees with the ABBYY letter skeleton; all other headwords read manually from the headword crops (manual-lemmas.csv)",
+  "diacritics": "connected-component geometry: detached flat marks over a/i/u = macron, háček vs acute by top-left ink share (0.16), detached/under-baseline marks under i/u/r = i̯ u̯ r̥, raised glyphs = homonym numerals / ᵛ",
+  "gloss": "first quoted Russian gloss(es) of the headword paragraph; English by editorial translation table glosses_en.csv",
+  "headword_detection": "hanging-indent (outdented) lines vs a skew-fitted left margin; derivatives are indented",
+  "headword_ocr": "pypdfium2 render at native resolution (7.4 px/pt, vol. 3 3.7 px/pt), 2x Lanczos, band-trimmed; tesseract 5 -l script/Latin --psm 7 hocr_char_boxes=1",
+  "text_layer": "ABBYY FineReader Russian layer via pdfplumber words (font size used for superscripts)"
+ },
+ "outputs": {
+  "audit": "data/other/forms/raw_data/esija_2000/20261025-esija-audit.csv",
+  "ids": "data/other/forms/raw_data/esija_2000/ids.csv",
+  "params": "data/other/params/20261025-esija.csv",
+  "sample": "data/other/forms/raw_data/esija_2000/20261025-esija-sample.csv"
+ },
+ "page_mapping_verification": "Tesseract digit OCR of the printed folio strip of every PDF page: 1236 folios read agree with the mapping, 28 partial reads (e.g. \"4\" for 44), 0 contradictions; no missing or duplicated leaves. Vol. 3 pages are scanned at double size (389x599 pt).",
+ "pdf_name": "Etimologicheskiy slovar irananskih yazikov. Tom 1-3 (А-H).pdf",
+ "pdf_pages": 1324,
+ "pdf_redistributed": false,
+ "pdf_sha256": "c5b37d2017df63795bc404699426d8096bd4ef306452642ae43bb603a948dc10",
+ "reflex_stage": "deferred: no reflex rows installed (see proposals.md)",
+ "rights": "Copyrighted scan used for research extraction; neither the scan nor page images are checked in.",
+ "source_key": "rastorgueva2000esija",
+ "volumes": {
+  "1": {
+   "dictionary_pdf": [
+    62,
+    326
+   ],
+   "dictionary_printed": [
+    63,
+    327
+   ],
+   "letters": "a, ā",
+   "pdf_pages": [
+    1,
+    327
+   ],
+   "printed_page": "pdf + 1"
+  },
+  "2": {
+   "dictionary_pdf": [
+    366,
+    828
+   ],
+   "dictionary_printed": [
+    40,
+    502
+   ],
+   "letters": "b, č, d",
+   "pdf_pages": [
+    328,
+    830
+   ],
+   "printed_page": "pdf - 326"
+  },
+  "3": {
+   "dictionary_pdf": [
+    873,
+    1322
+   ],
+   "dictionary_printed": [
+    44,
+    493
+   ],
+   "letters": "f, g, h",
+   "pdf_pages": [
+    831,
+    1324
+   ],
+   "printed_page": "pdf - 829"
+  }
+ }
+}

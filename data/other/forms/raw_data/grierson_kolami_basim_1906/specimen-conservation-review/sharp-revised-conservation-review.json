@@ -1,0 +1,2513 @@
+{
+  "reviewer": "/root/asur_finish",
+  "status": "passed_independently_approved_literal_overlay_atomic_and_boundary_conservation",
+  "approval_path": "../root-independent-review/consolidated-24-literal-acceptance.json",
+  "approval_sha256": "4c9bf0af5e2afe27baa612a4e8b75bee4c073b66235402e2f088afa84ea3a35f",
+  "correction_ledger_sha256": "b720a686b0352f6205a9374fd7eec4c2ae370e02a581e41a483a3562bc08873e",
+  "input_sha256": {
+    "specimens/sharp-reviewed-revision/expression-emission-proposal.jsonl": "fecc6462f86e2713bbf78e9fb8deab3061cd597cf34681d5bc86e31e6c42c43c",
+    "specimens/sharp-reviewed-revision/keyed-literal-overlay.json": "b720a686b0352f6205a9374fd7eec4c2ae370e02a581e41a483a3562bc08873e",
+    "specimens/sharp-reviewed-revision/expression-boundary-history.json": "05e278828af41d297d1073df243338a0c4d646249c1dd3cc4765788a7a5fb8f4",
+    "specimens/sharp-reviewed-revision/atomic-emission-proposal.jsonl": "73b4bcc64ed4dc94e5c47cd6782a2cf64ae580f28963e5eb7784213f61795e89",
+    "specimens/sharp-reviewed-revision/physical-atom-emission-audit.jsonl": "7ae23aba0bd9d26eb21dea88f280618d1752974d8bcd5ddcb17b50027b76066d",
+    "specimens/sharp-reviewed-revision/reviewed-physical-atoms.jsonl": "25c868b94702346ec4aa590c49d8be671af5f31dd84d39783ecc985fafdb4e8c",
+    "specimens/sharp-reviewed-revision/status.json": "77c2d793c5309c4f7ebbb348bbc39ded9debe13ec1485da43314e3b91819c5c3"
+  },
+  "physical_lines": 64,
+  "atomic_accounting": {
+    "status": "passed_exact_physical_atomic_accounting",
+    "physical_atoms": 561,
+    "emitted_atomic_records": 560,
+    "explicit_join_keys": [
+      "grierson1906kolamibasim:p568:specimen76-line:11:word:8",
+      "grierson1906kolamibasim:p568:specimen76-line:12:word:1"
+    ],
+    "physical_to_emitted": {
+      "grierson1906kolamibasim:p564:specimen75-line:1:word:1": "grierson1906kolamibasim:p564:specimen75-line:1:word:1",
+      "grierson1906kolamibasim:p564:specimen75-line:1:word:2": "grierson1906kolamibasim:p564:specimen75-line:1:word:2",
+      "grierson1906kolamibasim:p564:specimen75-line:1:word:3": "grierson1906kolamibasim:p564:specimen75-line:1:word:3",
+      "grierson1906kolamibasim:p564:specimen75-line:1:word:4": "grierson1906kolamibasim:p564:specimen75-line:1:word:4",
+      "grierson1906kolamibasim:p564:specimen75-line:1:word:5": "grierson1906kolamibasim:p564:specimen75-line:1:word:5",
+      "grierson1906kolamibasim:p564:specimen75-line:1:word:6": "grierson1906kolamibasim:p564:specimen75-line:1:word:6",
+      "grierson1906kolamibasim:p564:specimen75-line:1:word:7": "grierson1906kolamibasim:p564:specimen75-line:1:word:7",
+      "grierson1906kolamibasim:p564:specimen75-line:1:word:8": "grierson1906kolamibasim:p564:specimen75-line:1:word:8",
+      "grierson1906kolamibasim:p564:specimen75-line:2:word:1": "grierson1906kolamibasim:p564:specimen75-line:2:word:1",
+      "grierson1906kolamibasim:p564:specimen75-line:2:word:2": "grierson1906kolamibasim:p564:specimen75-line:2:word:2",
+      "grierson1906kolamibasim:p564:specimen75-line:2:word:3": "grierson1906kolamibasim:p564:specimen75-line:2:word:3",
+      "grierson1906kolamibasim:p564:specimen75-line:2:word:4": "grierson1906kolamibasim:p564:specimen75-line:2:word:4",
+      "grierson1906kolamibasim:p564:specimen75-line:2:word:5": "grierson1906kolamibasim:p564:specimen75-line:2:word:5",
+      "grierson1906kolamibasim:p564:specimen75-line:2:word:6": "grierson1906kolamibasim:p564:specimen75-line:2:word:6",
+      "grierson1906kolamibasim:p564:specimen75-line:2:word:7": "grierson1906kolamibasim:p564:specimen75-line:2:word:7",
+      "grierson1906kolamibasim:p564:specimen75-line:2:word:8": "grierson1906kolamibasim:p564:specimen75-line:2:word:8",
+      "grierson1906kolamibasim:p564:specimen75-line:2:word:9": "grierson1906kolamibasim:p564:specimen75-line:2:word:9",
+      "grierson1906kolamibasim:p564:specimen75-line:2:word:10": "grierson1906kolamibasim:p564:specimen75-line:2:word:10",
+      "grierson1906kolamibasim:p564:specimen75-line:3:word:1": "grierson1906kolamibasim:p564:specimen75-line:3:word:1",
+      "grierson1906kolamibasim:p564:specimen75-line:3:word:2": "grierson1906kolamibasim:p564:specimen75-line:3:word:2",
+      "grierson1906kolamibasim:p564:specimen75-line:3:word:3": "grierson1906kolamibasim:p564:specimen75-line:3:word:3",
+      "grierson1906kolamibasim:p564:specimen75-line:3:word:4": "grierson1906kolamibasim:p564:specimen75-line:3:word:4",
+      "grierson1906kolamibasim:p564:specimen75-line:3:word:5": "grierson1906kolamibasim:p564:specimen75-line:3:word:5",
+      "grierson1906kolamibasim:p564:specimen75-line:3:word:6": "grierson1906kolamibasim:p564:specimen75-line:3:word:6",
+      "grierson1906kolamibasim:p564:specimen75-line:3:word:7": "grierson1906kolamibasim:p564:specimen75-line:3:word:7",
+      "grierson1906kolamibasim:p564:specimen75-line:3:word:8": "grierson1906kolamibasim:p564:specimen75-line:3:word:8",
+      "grierson1906kolamibasim:p564:specimen75-line:4:word:1": "grierson1906kolamibasim:p564:specimen75-line:4:word:1",
+      "grierson1906kolamibasim:p564:specimen75-line:4:word:2": "grierson1906kolamibasim:p564:specimen75-line:4:word:2",
+      "grierson1906kolamibasim:p564:specimen75-line:4:word:3": "grierson1906kolamibasim:p564:specimen75-line:4:word:3",
+      "grierson1906kolamibasim:p564:specimen75-line:4:word:4": "grierson1906kolamibasim:p564:specimen75-line:4:word:4",
+      "grierson1906kolamibasim:p564:specimen75-line:4:word:5": "grierson1906kolamibasim:p564:specimen75-line:4:word:5",
+      "grierson1906kolamibasim:p564:specimen75-line:4:word:6": "grierson1906kolamibasim:p564:specimen75-line:4:word:6",
+      "grierson1906kolamibasim:p564:specimen75-line:4:word:7": "grierson1906kolamibasim:p564:specimen75-line:4:word:7",
+      "grierson1906kolamibasim:p564:specimen75-line:4:word:8": "grierson1906kolamibasim:p564:specimen75-line:4:word:8",
+      "grierson1906kolamibasim:p564:specimen75-line:4:word:9": "grierson1906kolamibasim:p564:specimen75-line:4:word:9",
+      "grierson1906kolamibasim:p564:specimen75-line:5:word:1": "grierson1906kolamibasim:p564:specimen75-line:5:word:1",
+      "grierson1906kolamibasim:p564:specimen75-line:5:word:2": "grierson1906kolamibasim:p564:specimen75-line:5:word:2",
+      "grierson1906kolamibasim:p564:specimen75-line:5:word:3": "grierson1906kolamibasim:p564:specimen75-line:5:word:3",
+      "grierson1906kolamibasim:p564:specimen75-line:5:word:4": "grierson1906kolamibasim:p564:specimen75-line:5:word:4",
+      "grierson1906kolamibasim:p564:specimen75-line:5:word:5": "grierson1906kolamibasim:p564:specimen75-line:5:word:5",
+      "grierson1906kolamibasim:p564:specimen75-line:5:word:6": "grierson1906kolamibasim:p564:specimen75-line:5:word:6",
+      "grierson1906kolamibasim:p564:specimen75-line:5:word:7": "grierson1906kolamibasim:p564:specimen75-line:5:word:7",
+      "grierson1906kolamibasim:p564:specimen75-line:5:word:8": "grierson1906kolamibasim:p564:specimen75-line:5:word:8",
+      "grierson1906kolamibasim:p564:specimen75-line:5:word:9": "grierson1906kolamibasim:p564:specimen75-line:5:word:9",
+      "grierson1906kolamibasim:p564:specimen75-line:6:word:1": "grierson1906kolamibasim:p564:specimen75-line:6:word:1",
+      "grierson1906kolamibasim:p564:specimen75-line:6:word:2": "grierson1906kolamibasim:p564:specimen75-line:6:word:2",
+      "grierson1906kolamibasim:p564:specimen75-line:6:word:3": "grierson1906kolamibasim:p564:specimen75-line:6:word:3",
+      "grierson1906kolamibasim:p564:specimen75-line:6:word:4": "grierson1906kolamibasim:p564:specimen75-line:6:word:4",
+      "grierson1906kolamibasim:p564:specimen75-line:6:word:5": "grierson1906kolamibasim:p564:specimen75-line:6:word:5",
+      "grierson1906kolamibasim:p564:specimen75-line:6:word:6": "grierson1906kolamibasim:p564:specimen75-line:6:word:6",
+      "grierson1906kolamibasim:p564:specimen75-line:6:word:7": "grierson1906kolamibasim:p564:specimen75-line:6:word:7",
+      "grierson1906kolamibasim:p564:specimen75-line:6:word:8": "grierson1906kolamibasim:p564:specimen75-line:6:word:8",
+      "grierson1906kolamibasim:p564:specimen75-line:6:word:9": "grierson1906kolamibasim:p564:specimen75-line:6:word:9",
+      "grierson1906kolamibasim:p564:specimen75-line:7:word:1": "grierson1906kolamibasim:p564:specimen75-line:7:word:1",
+      "grierson1906kolamibasim:p564:specimen75-line:7:word:2": "grierson1906kolamibasim:p564:specimen75-line:7:word:2",
+      "grierson1906kolamibasim:p564:specimen75-line:7:word:3": "grierson1906kolamibasim:p564:specimen75-line:7:word:3",
+      "grierson1906kolamibasim:p564:specimen75-line:7:word:4": "grierson1906kolamibasim:p564:specimen75-line:7:word:4",
+      "grierson1906kolamibasim:p564:specimen75-line:7:word:5": "grierson1906kolamibasim:p564:specimen75-line:7:word:5",
+      "grierson1906kolamibasim:p564:specimen75-line:7:word:6": "grierson1906kolamibasim:p564:specimen75-line:7:word:6",
+      "grierson1906kolamibasim:p564:specimen75-line:7:word:7": "grierson1906kolamibasim:p564:specimen75-line:7:word:7",
+      "grierson1906kolamibasim:p564:specimen75-line:7:word:8": "grierson1906kolamibasim:p564:specimen75-line:7:word:8",
+      "grierson1906kolamibasim:p564:specimen75-line:8:word:1": "grierson1906kolamibasim:p564:specimen75-line:8:word:1",
+      "grierson1906kolamibasim:p564:specimen75-line:8:word:2": "grierson1906kolamibasim:p564:specimen75-line:8:word:2",
+      "grierson1906kolamibasim:p564:specimen75-line:8:word:3": "grierson1906kolamibasim:p564:specimen75-line:8:word:3",
+      "grierson1906kolamibasim:p564:specimen75-line:8:word:4": "grierson1906kolamibasim:p564:specimen75-line:8:word:4",
+      "grierson1906kolamibasim:p564:specimen75-line:8:word:5": "grierson1906kolamibasim:p564:specimen75-line:8:word:5",
+      "grierson1906kolamibasim:p564:specimen75-line:8:word:6": "grierson1906kolamibasim:p564:specimen75-line:8:word:6",
+      "grierson1906kolamibasim:p564:specimen75-line:8:word:7": "grierson1906kolamibasim:p564:specimen75-line:8:word:7",
+      "grierson1906kolamibasim:p564:specimen75-line:8:word:8": "grierson1906kolamibasim:p564:specimen75-line:8:word:8",
+      "grierson1906kolamibasim:p564:specimen75-line:8:word:9": "grierson1906kolamibasim:p564:specimen75-line:8:word:9",
+      "grierson1906kolamibasim:p564:specimen75-line:9:word:1": "grierson1906kolamibasim:p564:specimen75-line:9:word:1",
+      "grierson1906kolamibasim:p564:specimen75-line:9:word:2": "grierson1906kolamibasim:p564:specimen75-line:9:word:2",
+      "grierson1906kolamibasim:p564:specimen75-line:9:word:3": "grierson1906kolamibasim:p564:specimen75-line:9:word:3",
+      "grierson1906kolamibasim:p564:specimen75-line:9:word:4": "grierson1906kolamibasim:p564:specimen75-line:9:word:4",
+      "grierson1906kolamibasim:p564:specimen75-line:9:word:5": "grierson1906kolamibasim:p564:specimen75-line:9:word:5",
+      "grierson1906kolamibasim:p564:specimen75-line:9:word:6": "grierson1906kolamibasim:p564:specimen75-line:9:word:6",
+      "grierson1906kolamibasim:p564:specimen75-line:9:word:7": "grierson1906kolamibasim:p564:specimen75-line:9:word:7",
+      "grierson1906kolamibasim:p564:specimen75-line:9:word:8": "grierson1906kolamibasim:p564:specimen75-line:9:word:8",
+      "grierson1906kolamibasim:p564:specimen75-line:9:word:9": "grierson1906kolamibasim:p564:specimen75-line:9:word:9",
+      "grierson1906kolamibasim:p564:specimen75-line:10:word:1": "grierson1906kolamibasim:p564:specimen75-line:10:word:1",
+      "grierson1906kolamibasim:p564:specimen75-line:10:word:2": "grierson1906kolamibasim:p564:specimen75-line:10:word:2",
+      "grierson1906kolamibasim:p564:specimen75-line:10:word:3": "grierson1906kolamibasim:p564:specimen75-line:10:word:3",
+      "grierson1906kolamibasim:p564:specimen75-line:10:word:4": "grierson1906kolamibasim:p564:specimen75-line:10:word:4",
+      "grierson1906kolamibasim:p564:specimen75-line:10:word:5": "grierson1906kolamibasim:p564:specimen75-line:10:word:5",
+      "grierson1906kolamibasim:p564:specimen75-line:10:word:6": "grierson1906kolamibasim:p564:specimen75-line:10:word:6",
+      "grierson1906kolamibasim:p564:specimen75-line:10:word:7": "grierson1906kolamibasim:p564:specimen75-line:10:word:7",
+      "grierson1906kolamibasim:p564:specimen75-line:10:word:8": "grierson1906kolamibasim:p564:specimen75-line:10:word:8",
+      "grierson1906kolamibasim:p564:specimen75-line:11:word:1": "grierson1906kolamibasim:p564:specimen75-line:11:word:1",
+      "grierson1906kolamibasim:p564:specimen75-line:11:word:2": "grierson1906kolamibasim:p564:specimen75-line:11:word:2",
+      "grierson1906kolamibasim:p564:specimen75-line:11:word:3": "grierson1906kolamibasim:p564:specimen75-line:11:word:3",
+      "grierson1906kolamibasim:p564:specimen75-line:11:word:4": "grierson1906kolamibasim:p564:specimen75-line:11:word:4",
+      "grierson1906kolamibasim:p564:specimen75-line:11:word:5": "grierson1906kolamibasim:p564:specimen75-line:11:word:5",
+      "grierson1906kolamibasim:p564:specimen75-line:11:word:6": "grierson1906kolamibasim:p564:specimen75-line:11:word:6",
+      "grierson1906kolamibasim:p564:specimen75-line:11:word:7": "grierson1906kolamibasim:p564:specimen75-line:11:word:7",
+      "grierson1906kolamibasim:p564:specimen75-line:11:word:8": "grierson1906kolamibasim:p564:specimen75-line:11:word:8",
+      "grierson1906kolamibasim:p564:specimen75-line:11:word:9": "grierson1906kolamibasim:p564:specimen75-line:11:word:9",
+      "grierson1906kolamibasim:p564:specimen75-line:12:word:1": "grierson1906kolamibasim:p564:specimen75-line:12:word:1",
+      "grierson1906kolamibasim:p564:specimen75-line:12:word:2": "grierson1906kolamibasim:p564:specimen75-line:12:word:2",
+      "grierson1906kolamibasim:p564:specimen75-line:12:word:3": "grierson1906kolamibasim:p564:specimen75-line:12:word:3",
+      "grierson1906kolamibasim:p564:specimen75-line:12:word:4": "grierson1906kolamibasim:p564:specimen75-line:12:word:4",
+      "grierson1906kolamibasim:p564:specimen75-line:12:word:5": "grierson1906kolamibasim:p564:specimen75-line:12:word:5",
+      "grierson1906kolamibasim:p564:specimen75-line:12:word:6": "grierson1906kolamibasim:p564:specimen75-line:12:word:6",
+      "grierson1906kolamibasim:p564:specimen75-line:12:word:7": "grierson1906kolamibasim:p564:specimen75-line:12:word:7",
+      "grierson1906kolamibasim:p564:specimen75-line:12:word:8": "grierson1906kolamibasim:p564:specimen75-line:12:word:8",
+      "grierson1906kolamibasim:p564:specimen75-line:12:word:9": "grierson1906kolamibasim:p564:specimen75-line:12:word:9",
+      "grierson1906kolamibasim:p564:specimen75-line:13:word:1": "grierson1906kolamibasim:p564:specimen75-line:13:word:1",
+      "grierson1906kolamibasim:p564:specimen75-line:13:word:2": "grierson1906kolamibasim:p564:specimen75-line:13:word:2",
+      "grierson1906kolamibasim:p564:specimen75-line:13:word:3": "grierson1906kolamibasim:p564:specimen75-line:13:word:3",
+      "grierson1906kolamibasim:p564:specimen75-line:13:word:4": "grierson1906kolamibasim:p564:specimen75-line:13:word:4",
+      "grierson1906kolamibasim:p564:specimen75-line:13:word:5": "grierson1906kolamibasim:p564:specimen75-line:13:word:5",
+      "grierson1906kolamibasim:p564:specimen75-line:13:word:6": "grierson1906kolamibasim:p564:specimen75-line:13:word:6",
+      "grierson1906kolamibasim:p564:specimen75-line:13:word:7": "grierson1906kolamibasim:p564:specimen75-line:13:word:7",
+      "grierson1906kolamibasim:p564:specimen75-line:13:word:8": "grierson1906kolamibasim:p564:specimen75-line:13:word:8",
+      "grierson1906kolamibasim:p564:specimen75-line:13:word:9": "grierson1906kolamibasim:p564:specimen75-line:13:word:9",
+      "grierson1906kolamibasim:p564:specimen75-line:14:word:1": "grierson1906kolamibasim:p564:specimen75-line:14:word:1",
+      "grierson1906kolamibasim:p564:specimen75-line:14:word:2": "grierson1906kolamibasim:p564:specimen75-line:14:word:2",
+      "grierson1906kolamibasim:p564:specimen75-line:14:word:3": "grierson1906kolamibasim:p564:specimen75-line:14:word:3",
+      "grierson1906kolamibasim:p564:specimen75-line:14:word:4": "grierson1906kolamibasim:p564:specimen75-line:14:word:4",
+      "grierson1906kolamibasim:p564:specimen75-line:14:word:5": "grierson1906kolamibasim:p564:specimen75-line:14:word:5",
+      "grierson1906kolamibasim:p564:specimen75-line:14:word:6": "grierson1906kolamibasim:p564:specimen75-line:14:word:6",
+      "grierson1906kolamibasim:p564:specimen75-line:14:word:7": "grierson1906kolamibasim:p564:specimen75-line:14:word:7",
+      "grierson1906kolamibasim:p564:specimen75-line:14:word:8": "grierson1906kolamibasim:p564:specimen75-line:14:word:8",
+      "grierson1906kolamibasim:p564:specimen75-line:14:word:9": "grierson1906kolamibasim:p564:specimen75-line:14:word:9",
+      "grierson1906kolamibasim:p564:specimen75-line:15:word:1": "grierson1906kolamibasim:p564:specimen75-line:15:word:1",
+      "grierson1906kolamibasim:p564:specimen75-line:15:word:2": "grierson1906kolamibasim:p564:specimen75-line:15:word:2",
+      "grierson1906kolamibasim:p564:specimen75-line:15:word:3": "grierson1906kolamibasim:p564:specimen75-line:15:word:3",
+      "grierson1906kolamibasim:p564:specimen75-line:15:word:4": "grierson1906kolamibasim:p564:specimen75-line:15:word:4",
+      "grierson1906kolamibasim:p564:specimen75-line:15:word:5": "grierson1906kolamibasim:p564:specimen75-line:15:word:5",
+      "grierson1906kolamibasim:p564:specimen75-line:15:word:6": "grierson1906kolamibasim:p564:specimen75-line:15:word:6",
+      "grierson1906kolamibasim:p564:specimen75-line:15:word:7": "grierson1906kolamibasim:p564:specimen75-line:15:word:7",
+      "grierson1906kolamibasim:p564:specimen75-line:15:word:8": "grierson1906kolamibasim:p564:specimen75-line:15:word:8",
+      "grierson1906kolamibasim:p564:specimen75-line:15:word:9": "grierson1906kolamibasim:p564:specimen75-line:15:word:9",
+      "grierson1906kolamibasim:p564:specimen75-line:15:word:10": "grierson1906kolamibasim:p564:specimen75-line:15:word:10",
+      "grierson1906kolamibasim:p564:specimen75-line:16:word:1": "grierson1906kolamibasim:p564:specimen75-line:16:word:1",
+      "grierson1906kolamibasim:p564:specimen75-line:16:word:2": "grierson1906kolamibasim:p564:specimen75-line:16:word:2",
+      "grierson1906kolamibasim:p564:specimen75-line:16:word:3": "grierson1906kolamibasim:p564:specimen75-line:16:word:3",
+      "grierson1906kolamibasim:p564:specimen75-line:16:word:4": "grierson1906kolamibasim:p564:specimen75-line:16:word:4",
+      "grierson1906kolamibasim:p564:specimen75-line:16:word:5": "grierson1906kolamibasim:p564:specimen75-line:16:word:5",
+      "grierson1906kolamibasim:p564:specimen75-line:16:word:6": "grierson1906kolamibasim:p564:specimen75-line:16:word:6",
+      "grierson1906kolamibasim:p564:specimen75-line:16:word:7": "grierson1906kolamibasim:p564:specimen75-line:16:word:7",
+      "grierson1906kolamibasim:p564:specimen75-line:16:word:8": "grierson1906kolamibasim:p564:specimen75-line:16:word:8",
+      "grierson1906kolamibasim:p564:specimen75-line:16:word:9": "grierson1906kolamibasim:p564:specimen75-line:16:word:9",
+      "grierson1906kolamibasim:p564:specimen75-line:16:word:10": "grierson1906kolamibasim:p564:specimen75-line:16:word:10",
+      "grierson1906kolamibasim:p564:specimen75-line:17:word:1": "grierson1906kolamibasim:p564:specimen75-line:17:word:1",
+      "grierson1906kolamibasim:p564:specimen75-line:17:word:2": "grierson1906kolamibasim:p564:specimen75-line:17:word:2",
+      "grierson1906kolamibasim:p564:specimen75-line:17:word:3": "grierson1906kolamibasim:p564:specimen75-line:17:word:3",
+      "grierson1906kolamibasim:p564:specimen75-line:17:word:4": "grierson1906kolamibasim:p564:specimen75-line:17:word:4",
+      "grierson1906kolamibasim:p564:specimen75-line:17:word:5": "grierson1906kolamibasim:p564:specimen75-line:17:word:5",
+      "grierson1906kolamibasim:p564:specimen75-line:17:word:6": "grierson1906kolamibasim:p564:specimen75-line:17:word:6",
+      "grierson1906kolamibasim:p564:specimen75-line:17:word:7": "grierson1906kolamibasim:p564:specimen75-line:17:word:7",
+      "grierson1906kolamibasim:p564:specimen75-line:17:word:8": "grierson1906kolamibasim:p564:specimen75-line:17:word:8",
+      "grierson1906kolamibasim:p564:specimen75-line:17:word:9": "grierson1906kolamibasim:p564:specimen75-line:17:word:9",
+      "grierson1906kolamibasim:p564:specimen75-line:17:word:10": "grierson1906kolamibasim:p564:specimen75-line:17:word:10",
+      "grierson1906kolamibasim:p565:specimen75-line:1:word:1": "grierson1906kolamibasim:p565:specimen75-line:1:word:1",
+      "grierson1906kolamibasim:p565:specimen75-line:1:word:2": "grierson1906kolamibasim:p565:specimen75-line:1:word:2",
+      "grierson1906kolamibasim:p565:specimen75-line:1:word:3": "grierson1906kolamibasim:p565:specimen75-line:1:word:3",
+      "grierson1906kolamibasim:p565:specimen75-line:1:word:4": "grierson1906kolamibasim:p565:specimen75-line:1:word:4",
+      "grierson1906kolamibasim:p565:specimen75-line:1:word:5": "grierson1906kolamibasim:p565:specimen75-line:1:word:5",
+      "grierson1906kolamibasim:p565:specimen75-line:1:word:6": "grierson1906kolamibasim:p565:specimen75-line:1:word:6",
+      "grierson1906kolamibasim:p565:specimen75-line:1:word:7": "grierson1906kolamibasim:p565:specimen75-line:1:word:7",
+      "grierson1906kolamibasim:p565:specimen75-line:1:word:8": "grierson1906kolamibasim:p565:specimen75-line:1:word:8",
+      "grierson1906kolamibasim:p565:specimen75-line:1:word:9": "grierson1906kolamibasim:p565:specimen75-line:1:word:9",
+      "grierson1906kolamibasim:p565:specimen75-line:2:word:1": "grierson1906kolamibasim:p565:specimen75-line:2:word:1",
+      "grierson1906kolamibasim:p565:specimen75-line:2:word:2": "grierson1906kolamibasim:p565:specimen75-line:2:word:2",
+      "grierson1906kolamibasim:p565:specimen75-line:2:word:3": "grierson1906kolamibasim:p565:specimen75-line:2:word:3",
+      "grierson1906kolamibasim:p565:specimen75-line:2:word:4": "grierson1906kolamibasim:p565:specimen75-line:2:word:4",
+      "grierson1906kolamibasim:p565:specimen75-line:2:word:5": "grierson1906kolamibasim:p565:specimen75-line:2:word:5",
+      "grierson1906kolamibasim:p565:specimen75-line:2:word:6": "grierson1906kolamibasim:p565:specimen75-line:2:word:6",
+      "grierson1906kolamibasim:p565:specimen75-line:2:word:7": "grierson1906kolamibasim:p565:specimen75-line:2:word:7",
+      "grierson1906kolamibasim:p565:specimen75-line:2:word:8": "grierson1906kolamibasim:p565:specimen75-line:2:word:8",
+      "grierson1906kolamibasim:p565:specimen75-line:2:word:9": "grierson1906kolamibasim:p565:specimen75-line:2:word:9",
+      "grierson1906kolamibasim:p565:specimen75-line:2:word:10": "grierson1906kolamibasim:p565:specimen75-line:2:word:10",
+      "grierson1906kolamibasim:p565:specimen75-line:3:word:1": "grierson1906kolamibasim:p565:specimen75-line:3:word:1",
+      "grierson1906kolamibasim:p565:specimen75-line:3:word:2": "grierson1906kolamibasim:p565:specimen75-line:3:word:2",
+      "grierson1906kolamibasim:p565:specimen75-line:3:word:3": "grierson1906kolamibasim:p565:specimen75-line:3:word:3",
+      "grierson1906kolamibasim:p565:specimen75-line:3:word:4": "grierson1906kolamibasim:p565:specimen75-line:3:word:4",
+      "grierson1906kolamibasim:p565:specimen75-line:3:word:5": "grierson1906kolamibasim:p565:specimen75-line:3:word:5",
+      "grierson1906kolamibasim:p565:specimen75-line:3:word:6": "grierson1906kolamibasim:p565:specimen75-line:3:word:6",
+      "grierson1906kolamibasim:p565:specimen75-line:3:word:7": "grierson1906kolamibasim:p565:specimen75-line:3:word:7",
+      "grierson1906kolamibasim:p565:specimen75-line:3:word:8": "grierson1906kolamibasim:p565:specimen75-line:3:word:8",
+      "grierson1906kolamibasim:p565:specimen75-line:3:word:9": "grierson1906kolamibasim:p565:specimen75-line:3:word:9",
+      "grierson1906kolamibasim:p565:specimen75-line:3:word:10": "grierson1906kolamibasim:p565:specimen75-line:3:word:10",
+      "grierson1906kolamibasim:p565:specimen75-line:4:word:1": "grierson1906kolamibasim:p565:specimen75-line:4:word:1",
+      "grierson1906kolamibasim:p565:specimen75-line:4:word:2": "grierson1906kolamibasim:p565:specimen75-line:4:word:2",
+      "grierson1906kolamibasim:p565:specimen75-line:4:word:3": "grierson1906kolamibasim:p565:specimen75-line:4:word:3",
+      "grierson1906kolamibasim:p565:specimen75-line:4:word:4": "grierson1906kolamibasim:p565:specimen75-line:4:word:4",
+      "grierson1906kolamibasim:p565:specimen75-line:4:word:5": "grierson1906kolamibasim:p565:specimen75-line:4:word:5",
+      "grierson1906kolamibasim:p565:specimen75-line:4:word:6": "grierson1906kolamibasim:p565:specimen75-line:4:word:6",
+      "grierson1906kolamibasim:p565:specimen75-line:4:word:7": "grierson1906kolamibasim:p565:specimen75-line:4:word:7",
+      "grierson1906kolamibasim:p565:specimen75-line:4:word:8": "grierson1906kolamibasim:p565:specimen75-line:4:word:8",
+      "grierson1906kolamibasim:p565:specimen75-line:5:word:1": "grierson1906kolamibasim:p565:specimen75-line:5:word:1",
+      "grierson1906kolamibasim:p565:specimen75-line:5:word:2": "grierson1906kolamibasim:p565:specimen75-line:5:word:2",
+      "grierson1906kolamibasim:p565:specimen75-line:6:word:1": "grierson1906kolamibasim:p565:specimen75-line:6:word:1",
+      "grierson1906kolamibasim:p565:specimen75-line:6:word:2": "grierson1906kolamibasim:p565:specimen75-line:6:word:2",
+      "grierson1906kolamibasim:p565:specimen75-line:6:word:3": "grierson1906kolamibasim:p565:specimen75-line:6:word:3",
+      "grierson1906kolamibasim:p565:specimen75-line:6:word:4": "grierson1906kolamibasim:p565:specimen75-line:6:word:4",
+      "grierson1906kolamibasim:p565:specimen75-line:6:word:5": "grierson1906kolamibasim:p565:specimen75-line:6:word:5",
+      "grierson1906kolamibasim:p565:specimen75-line:6:word:6": "grierson1906kolamibasim:p565:specimen75-line:6:word:6",
+      "grierson1906kolamibasim:p565:specimen75-line:6:word:7": "grierson1906kolamibasim:p565:specimen75-line:6:word:7",
+      "grierson1906kolamibasim:p565:specimen75-line:6:word:8": "grierson1906kolamibasim:p565:specimen75-line:6:word:8",
+      "grierson1906kolamibasim:p565:specimen75-line:6:word:9": "grierson1906kolamibasim:p565:specimen75-line:6:word:9",
+      "grierson1906kolamibasim:p565:specimen75-line:6:word:10": "grierson1906kolamibasim:p565:specimen75-line:6:word:10",
+      "grierson1906kolamibasim:p565:specimen75-line:7:word:1": "grierson1906kolamibasim:p565:specimen75-line:7:word:1",
+      "grierson1906kolamibasim:p565:specimen75-line:7:word:2": "grierson1906kolamibasim:p565:specimen75-line:7:word:2",
+      "grierson1906kolamibasim:p565:specimen75-line:7:word:3": "grierson1906kolamibasim:p565:specimen75-line:7:word:3",
+      "grierson1906kolamibasim:p565:specimen75-line:7:word:4": "grierson1906kolamibasim:p565:specimen75-line:7:word:4",
+      "grierson1906kolamibasim:p565:specimen75-line:7:word:5": "grierson1906kolamibasim:p565:specimen75-line:7:word:5",
+      "grierson1906kolamibasim:p565:specimen75-line:7:word:6": "grierson1906kolamibasim:p565:specimen75-line:7:word:6",
+      "grierson1906kolamibasim:p565:specimen75-line:7:word:7": "grierson1906kolamibasim:p565:specimen75-line:7:word:7",
+      "grierson1906kolamibasim:p565:specimen75-line:7:word:8": "grierson1906kolamibasim:p565:specimen75-line:7:word:8",
+      "grierson1906kolamibasim:p565:specimen75-line:7:word:9": "grierson1906kolamibasim:p565:specimen75-line:7:word:9",
+      "grierson1906kolamibasim:p565:specimen75-line:8:word:1": "grierson1906kolamibasim:p565:specimen75-line:8:word:1",
+      "grierson1906kolamibasim:p565:specimen75-line:8:word:2": "grierson1906kolamibasim:p565:specimen75-line:8:word:2",
+      "grierson1906kolamibasim:p565:specimen75-line:8:word:3": "grierson1906kolamibasim:p565:specimen75-line:8:word:3",
+      "grierson1906kolamibasim:p565:specimen75-line:8:word:4": "grierson1906kolamibasim:p565:specimen75-line:8:word:4",
+      "grierson1906kolamibasim:p565:specimen75-line:8:word:5": "grierson1906kolamibasim:p565:specimen75-line:8:word:5",
+      "grierson1906kolamibasim:p565:specimen75-line:8:word:6": "grierson1906kolamibasim:p565:specimen75-line:8:word:6",
+      "grierson1906kolamibasim:p565:specimen75-line:8:word:7": "grierson1906kolamibasim:p565:specimen75-line:8:word:7",
+      "grierson1906kolamibasim:p565:specimen75-line:8:word:8": "grierson1906kolamibasim:p565:specimen75-line:8:word:8",
+      "grierson1906kolamibasim:p565:specimen75-line:8:word:9": "grierson1906kolamibasim:p565:specimen75-line:8:word:9",
+      "grierson1906kolamibasim:p565:specimen75-line:8:word:10": "grierson1906kolamibasim:p565:specimen75-line:8:word:10",
+      "grierson1906kolamibasim:p565:specimen75-line:9:word:1": "grierson1906kolamibasim:p565:specimen75-line:9:word:1",
+      "grierson1906kolamibasim:p565:specimen75-line:9:word:2": "grierson1906kolamibasim:p565:specimen75-line:9:word:2",
+      "grierson1906kolamibasim:p565:specimen75-line:9:word:3": "grierson1906kolamibasim:p565:specimen75-line:9:word:3",
+      "grierson1906kolamibasim:p565:specimen75-line:9:word:4": "grierson1906kolamibasim:p565:specimen75-line:9:word:4",
+      "grierson1906kolamibasim:p565:specimen75-line:9:word:5": "grierson1906kolamibasim:p565:specimen75-line:9:word:5",
+      "grierson1906kolamibasim:p565:specimen75-line:9:word:6": "grierson1906kolamibasim:p565:specimen75-line:9:word:6",
+      "grierson1906kolamibasim:p565:specimen75-line:9:word:7": "grierson1906kolamibasim:p565:specimen75-line:9:word:7",
+      "grierson1906kolamibasim:p565:specimen75-line:9:word:8": "grierson1906kolamibasim:p565:specimen75-line:9:word:8",
+      "grierson1906kolamibasim:p565:specimen75-line:10:word:1": "grierson1906kolamibasim:p565:specimen75-line:10:word:1",
+      "grierson1906kolamibasim:p565:specimen75-line:10:word:2": "grierson1906kolamibasim:p565:specimen75-line:10:word:2",
+      "grierson1906kolamibasim:p565:specimen75-line:10:word:3": "grierson1906kolamibasim:p565:specimen75-line:10:word:3",
+      "grierson1906kolamibasim:p565:specimen75-line:10:word:4": "grierson1906kolamibasim:p565:specimen75-line:10:word:4",
+      "grierson1906kolamibasim:p565:specimen75-line:10:word:5": "grierson1906kolamibasim:p565:specimen75-line:10:word:5",
+      "grierson1906kolamibasim:p565:specimen75-line:10:word:6": "grierson1906kolamibasim:p565:specimen75-line:10:word:6",
+      "grierson1906kolamibasim:p565:specimen75-line:10:word:7": "grierson1906kolamibasim:p565:specimen75-line:10:word:7",
+      "grierson1906kolamibasim:p565:specimen75-line:10:word:8": "grierson1906kolamibasim:p565:specimen75-line:10:word:8",
+      "grierson1906kolamibasim:p565:specimen75-line:10:word:9": "grierson1906kolamibasim:p565:specimen75-line:10:word:9",
+      "grierson1906kolamibasim:p565:specimen75-line:10:word:10": "grierson1906kolamibasim:p565:specimen75-line:10:word:10",
+      "grierson1906kolamibasim:p565:specimen75-line:11:word:1": "grierson1906kolamibasim:p565:specimen75-line:11:word:1",
+      "grierson1906kolamibasim:p565:specimen75-line:11:word:2": "grierson1906kolamibasim:p565:specimen75-line:11:word:2",
+      "grierson1906kolamibasim:p565:specimen75-line:11:word:3": "grierson1906kolamibasim:p565:specimen75-line:11:word:3",
+      "grierson1906kolamibasim:p565:specimen75-line:11:word:4": "grierson1906kolamibasim:p565:specimen75-line:11:word:4",
+      "grierson1906kolamibasim:p565:specimen75-line:11:word:5": "grierson1906kolamibasim:p565:specimen75-line:11:word:5",
+      "grierson1906kolamibasim:p565:specimen75-line:11:word:6": "grierson1906kolamibasim:p565:specimen75-line:11:word:6",
+      "grierson1906kolamibasim:p565:specimen75-line:11:word:7": "grierson1906kolamibasim:p565:specimen75-line:11:word:7",
+      "grierson1906kolamibasim:p565:specimen75-line:11:word:8": "grierson1906kolamibasim:p565:specimen75-line:11:word:8",
+      "grierson1906kolamibasim:p565:specimen75-line:11:word:9": "grierson1906kolamibasim:p565:specimen75-line:11:word:9",
+      "grierson1906kolamibasim:p565:specimen75-line:11:word:10": "grierson1906kolamibasim:p565:specimen75-line:11:word:10",
+      "grierson1906kolamibasim:p565:specimen75-line:12:word:1": "grierson1906kolamibasim:p565:specimen75-line:12:word:1",
+      "grierson1906kolamibasim:p565:specimen75-line:12:word:2": "grierson1906kolamibasim:p565:specimen75-line:12:word:2",
+      "grierson1906kolamibasim:p565:specimen75-line:12:word:3": "grierson1906kolamibasim:p565:specimen75-line:12:word:3",
+      "grierson1906kolamibasim:p565:specimen75-line:12:word:4": "grierson1906kolamibasim:p565:specimen75-line:12:word:4",
+      "grierson1906kolamibasim:p565:specimen75-line:12:word:5": "grierson1906kolamibasim:p565:specimen75-line:12:word:5",
+      "grierson1906kolamibasim:p565:specimen75-line:12:word:6": "grierson1906kolamibasim:p565:specimen75-line:12:word:6",
+      "grierson1906kolamibasim:p565:specimen75-line:12:word:7": "grierson1906kolamibasim:p565:specimen75-line:12:word:7",
+      "grierson1906kolamibasim:p565:specimen75-line:12:word:8": "grierson1906kolamibasim:p565:specimen75-line:12:word:8",
+      "grierson1906kolamibasim:p565:specimen75-line:12:word:9": "grierson1906kolamibasim:p565:specimen75-line:12:word:9",
+      "grierson1906kolamibasim:p565:specimen75-line:12:word:10": "grierson1906kolamibasim:p565:specimen75-line:12:word:10",
+      "grierson1906kolamibasim:p565:specimen75-line:12:word:11": "grierson1906kolamibasim:p565:specimen75-line:12:word:11",
+      "grierson1906kolamibasim:p565:specimen75-line:13:word:1": "grierson1906kolamibasim:p565:specimen75-line:13:word:1",
+      "grierson1906kolamibasim:p565:specimen75-line:13:word:2": "grierson1906kolamibasim:p565:specimen75-line:13:word:2",
+      "grierson1906kolamibasim:p565:specimen75-line:13:word:3": "grierson1906kolamibasim:p565:specimen75-line:13:word:3",
+      "grierson1906kolamibasim:p565:specimen75-line:13:word:4": "grierson1906kolamibasim:p565:specimen75-line:13:word:4",
+      "grierson1906kolamibasim:p565:specimen75-line:13:word:5": "grierson1906kolamibasim:p565:specimen75-line:13:word:5",
+      "grierson1906kolamibasim:p565:specimen75-line:13:word:6": "grierson1906kolamibasim:p565:specimen75-line:13:word:6",
+      "grierson1906kolamibasim:p565:specimen75-line:13:word:7": "grierson1906kolamibasim:p565:specimen75-line:13:word:7",
+      "grierson1906kolamibasim:p565:specimen75-line:13:word:8": "grierson1906kolamibasim:p565:specimen75-line:13:word:8",
+      "grierson1906kolamibasim:p565:specimen75-line:13:word:9": "grierson1906kolamibasim:p565:specimen75-line:13:word:9",
+      "grierson1906kolamibasim:p565:specimen75-line:14:word:1": "grierson1906kolamibasim:p565:specimen75-line:14:word:1",
+      "grierson1906kolamibasim:p565:specimen75-line:14:word:2": "grierson1906kolamibasim:p565:specimen75-line:14:word:2",
+      "grierson1906kolamibasim:p565:specimen75-line:14:word:3": "grierson1906kolamibasim:p565:specimen75-line:14:word:3",
+      "grierson1906kolamibasim:p565:specimen75-line:14:word:4": "grierson1906kolamibasim:p565:specimen75-line:14:word:4",
+      "grierson1906kolamibasim:p565:specimen75-line:14:word:5": "grierson1906kolamibasim:p565:specimen75-line:14:word:5",
+      "grierson1906kolamibasim:p565:specimen75-line:14:word:6": "grierson1906kolamibasim:p565:specimen75-line:14:word:6",
+      "grierson1906kolamibasim:p565:specimen75-line:14:word:7": "grierson1906kolamibasim:p565:specimen75-line:14:word:7",
+      "grierson1906kolamibasim:p565:specimen75-line:14:word:8": "grierson1906kolamibasim:p565:specimen75-line:14:word:8",
+      "grierson1906kolamibasim:p565:specimen75-line:14:word:9": "grierson1906kolamibasim:p565:specimen75-line:14:word:9",
+      "grierson1906kolamibasim:p565:specimen75-line:14:word:10": "grierson1906kolamibasim:p565:specimen75-line:14:word:10",
+      "grierson1906kolamibasim:p565:specimen75-line:15:word:1": "grierson1906kolamibasim:p565:specimen75-line:15:word:1",
+      "grierson1906kolamibasim:p565:specimen75-line:15:word:2": "grierson1906kolamibasim:p565:specimen75-line:15:word:2",
+      "grierson1906kolamibasim:p565:specimen75-line:15:word:3": "grierson1906kolamibasim:p565:specimen75-line:15:word:3",
+      "grierson1906kolamibasim:p565:specimen75-line:15:word:4": "grierson1906kolamibasim:p565:specimen75-line:15:word:4",
+      "grierson1906kolamibasim:p565:specimen75-line:15:word:5": "grierson1906kolamibasim:p565:specimen75-line:15:word:5",
+      "grierson1906kolamibasim:p565:specimen75-line:15:word:6": "grierson1906kolamibasim:p565:specimen75-line:15:word:6",
+      "grierson1906kolamibasim:p565:specimen75-line:15:word:7": "grierson1906kolamibasim:p565:specimen75-line:15:word:7",
+      "grierson1906kolamibasim:p565:specimen75-line:15:word:8": "grierson1906kolamibasim:p565:specimen75-line:15:word:8",
+      "grierson1906kolamibasim:p565:specimen75-line:16:word:1": "grierson1906kolamibasim:p565:specimen75-line:16:word:1",
+      "grierson1906kolamibasim:p565:specimen75-line:16:word:2": "grierson1906kolamibasim:p565:specimen75-line:16:word:2",
+      "grierson1906kolamibasim:p565:specimen75-line:16:word:3": "grierson1906kolamibasim:p565:specimen75-line:16:word:3",
+      "grierson1906kolamibasim:p565:specimen75-line:16:word:4": "grierson1906kolamibasim:p565:specimen75-line:16:word:4",
+      "grierson1906kolamibasim:p565:specimen75-line:16:word:5": "grierson1906kolamibasim:p565:specimen75-line:16:word:5",
+      "grierson1906kolamibasim:p565:specimen75-line:16:word:6": "grierson1906kolamibasim:p565:specimen75-line:16:word:6",
+      "grierson1906kolamibasim:p565:specimen75-line:16:word:7": "grierson1906kolamibasim:p565:specimen75-line:16:word:7",
+      "grierson1906kolamibasim:p565:specimen75-line:16:word:8": "grierson1906kolamibasim:p565:specimen75-line:16:word:8",
+      "grierson1906kolamibasim:p565:specimen75-line:16:word:9": "grierson1906kolamibasim:p565:specimen75-line:16:word:9",
+      "grierson1906kolamibasim:p565:specimen75-line:16:word:10": "grierson1906kolamibasim:p565:specimen75-line:16:word:10",
+      "grierson1906kolamibasim:p565:specimen75-line:17:word:1": "grierson1906kolamibasim:p565:specimen75-line:17:word:1",
+      "grierson1906kolamibasim:p565:specimen75-line:17:word:2": "grierson1906kolamibasim:p565:specimen75-line:17:word:2",
+      "grierson1906kolamibasim:p565:specimen75-line:17:word:3": "grierson1906kolamibasim:p565:specimen75-line:17:word:3",
+      "grierson1906kolamibasim:p565:specimen75-line:17:word:4": "grierson1906kolamibasim:p565:specimen75-line:17:word:4",
+      "grierson1906kolamibasim:p565:specimen75-line:17:word:5": "grierson1906kolamibasim:p565:specimen75-line:17:word:5",
+      "grierson1906kolamibasim:p565:specimen75-line:17:word:6": "grierson1906kolamibasim:p565:specimen75-line:17:word:6",
+      "grierson1906kolamibasim:p565:specimen75-line:17:word:7": "grierson1906kolamibasim:p565:specimen75-line:17:word:7",
+      "grierson1906kolamibasim:p565:specimen75-line:17:word:8": "grierson1906kolamibasim:p565:specimen75-line:17:word:8",
+      "grierson1906kolamibasim:p565:specimen75-line:17:word:9": "grierson1906kolamibasim:p565:specimen75-line:17:word:9",
+      "grierson1906kolamibasim:p565:specimen75-line:18:word:1": "grierson1906kolamibasim:p565:specimen75-line:18:word:1",
+      "grierson1906kolamibasim:p565:specimen75-line:18:word:2": "grierson1906kolamibasim:p565:specimen75-line:18:word:2",
+      "grierson1906kolamibasim:p565:specimen75-line:18:word:3": "grierson1906kolamibasim:p565:specimen75-line:18:word:3",
+      "grierson1906kolamibasim:p565:specimen75-line:18:word:4": "grierson1906kolamibasim:p565:specimen75-line:18:word:4",
+      "grierson1906kolamibasim:p565:specimen75-line:18:word:5": "grierson1906kolamibasim:p565:specimen75-line:18:word:5",
+      "grierson1906kolamibasim:p565:specimen75-line:18:word:6": "grierson1906kolamibasim:p565:specimen75-line:18:word:6",
+      "grierson1906kolamibasim:p565:specimen75-line:18:word:7": "grierson1906kolamibasim:p565:specimen75-line:18:word:7",
+      "grierson1906kolamibasim:p565:specimen75-line:18:word:8": "grierson1906kolamibasim:p565:specimen75-line:18:word:8",
+      "grierson1906kolamibasim:p568:specimen76-line:1:word:1": "grierson1906kolamibasim:p568:specimen76-line:1:word:1",
+      "grierson1906kolamibasim:p568:specimen76-line:1:word:2": "grierson1906kolamibasim:p568:specimen76-line:1:word:2",
+      "grierson1906kolamibasim:p568:specimen76-line:1:word:3": "grierson1906kolamibasim:p568:specimen76-line:1:word:3",
+      "grierson1906kolamibasim:p568:specimen76-line:1:word:4": "grierson1906kolamibasim:p568:specimen76-line:1:word:4",
+      "grierson1906kolamibasim:p568:specimen76-line:1:word:5": "grierson1906kolamibasim:p568:specimen76-line:1:word:5",
+      "grierson1906kolamibasim:p568:specimen76-line:1:word:6": "grierson1906kolamibasim:p568:specimen76-line:1:word:6",
+      "grierson1906kolamibasim:p568:specimen76-line:1:word:7": "grierson1906kolamibasim:p568:specimen76-line:1:word:7",
+      "grierson1906kolamibasim:p568:specimen76-line:1:word:8": "grierson1906kolamibasim:p568:specimen76-line:1:word:8",
+      "grierson1906kolamibasim:p568:specimen76-line:2:word:1": "grierson1906kolamibasim:p568:specimen76-line:2:word:1",
+      "grierson1906kolamibasim:p568:specimen76-line:2:word:2": "grierson1906kolamibasim:p568:specimen76-line:2:word:2",
+      "grierson1906kolamibasim:p568:specimen76-line:2:word:3": "grierson1906kolamibasim:p568:specimen76-line:2:word:3",
+      "grierson1906kolamibasim:p568:specimen76-line:2:word:4": "grierson1906kolamibasim:p568:specimen76-line:2:word:4",
+      "grierson1906kolamibasim:p568:specimen76-line:2:word:5": "grierson1906kolamibasim:p568:specimen76-line:2:word:5",
+      "grierson1906kolamibasim:p568:specimen76-line:2:word:6": "grierson1906kolamibasim:p568:specimen76-line:2:word:6",
+      "grierson1906kolamibasim:p568:specimen76-line:2:word:7": "grierson1906kolamibasim:p568:specimen76-line:2:word:7",
+      "grierson1906kolamibasim:p568:specimen76-line:3:word:1": "grierson1906kolamibasim:p568:specimen76-line:3:word:1",
+      "grierson1906kolamibasim:p568:specimen76-line:3:word:2": "grierson1906kolamibasim:p568:specimen76-line:3:word:2",
+      "grierson1906kolamibasim:p568:specimen76-line:3:word:3": "grierson1906kolamibasim:p568:specimen76-line:3:word:3",
+      "grierson1906kolamibasim:p568:specimen76-line:3:word:4": "grierson1906kolamibasim:p568:specimen76-line:3:word:4",
+      "grierson1906kolamibasim:p568:specimen76-line:3:word:5": "grierson1906kolamibasim:p568:specimen76-line:3:word:5",
+      "grierson1906kolamibasim:p568:specimen76-line:3:word:6": "grierson1906kolamibasim:p568:specimen76-line:3:word:6",
+      "grierson1906kolamibasim:p568:specimen76-line:3:word:7": "grierson1906kolamibasim:p568:specimen76-line:3:word:7",
+      "grierson1906kolamibasim:p568:specimen76-line:3:word:8": "grierson1906kolamibasim:p568:specimen76-line:3:word:8",
+      "grierson1906kolamibasim:p568:specimen76-line:3:word:9": "grierson1906kolamibasim:p568:specimen76-line:3:word:9",
+      "grierson1906kolamibasim:p568:specimen76-line:4:word:1": "grierson1906kolamibasim:p568:specimen76-line:4:word:1",
+      "grierson1906kolamibasim:p568:specimen76-line:4:word:2": "grierson1906kolamibasim:p568:specimen76-line:4:word:2",
+      "grierson1906kolamibasim:p568:specimen76-line:4:word:3": "grierson1906kolamibasim:p568:specimen76-line:4:word:3",
+      "grierson1906kolamibasim:p568:specimen76-line:4:word:4": "grierson1906kolamibasim:p568:specimen76-line:4:word:4",
+      "grierson1906kolamibasim:p568:specimen76-line:4:word:5": "grierson1906kolamibasim:p568:specimen76-line:4:word:5",
+      "grierson1906kolamibasim:p568:specimen76-line:4:word:6": "grierson1906kolamibasim:p568:specimen76-line:4:word:6",
+      "grierson1906kolamibasim:p568:specimen76-line:4:word:7": "grierson1906kolamibasim:p568:specimen76-line:4:word:7",
+      "grierson1906kolamibasim:p568:specimen76-line:5:word:1": "grierson1906kolamibasim:p568:specimen76-line:5:word:1",
+      "grierson1906kolamibasim:p568:specimen76-line:5:word:2": "grierson1906kolamibasim:p568:specimen76-line:5:word:2",
+      "grierson1906kolamibasim:p568:specimen76-line:5:word:3": "grierson1906kolamibasim:p568:specimen76-line:5:word:3",
+      "grierson1906kolamibasim:p568:specimen76-line:5:word:4": "grierson1906kolamibasim:p568:specimen76-line:5:word:4",
+      "grierson1906kolamibasim:p568:specimen76-line:5:word:5": "grierson1906kolamibasim:p568:specimen76-line:5:word:5",
+      "grierson1906kolamibasim:p568:specimen76-line:5:word:6": "grierson1906kolamibasim:p568:specimen76-line:5:word:6",
+      "grierson1906kolamibasim:p568:specimen76-line:5:word:7": "grierson1906kolamibasim:p568:specimen76-line:5:word:7",
+      "grierson1906kolamibasim:p568:specimen76-line:5:word:8": "grierson1906kolamibasim:p568:specimen76-line:5:word:8",
+      "grierson1906kolamibasim:p568:specimen76-line:6:word:1": "grierson1906kolamibasim:p568:specimen76-line:6:word:1",
+      "grierson1906kolamibasim:p568:specimen76-line:6:word:2": "grierson1906kolamibasim:p568:specimen76-line:6:word:2",
+      "grierson1906kolamibasim:p568:specimen76-line:6:word:3": "grierson1906kolamibasim:p568:specimen76-line:6:word:3",
+      "grierson1906kolamibasim:p568:specimen76-line:6:word:4": "grierson1906kolamibasim:p568:specimen76-line:6:word:4",
+      "grierson1906kolamibasim:p568:specimen76-line:6:word:5": "grierson1906kolamibasim:p568:specimen76-line:6:word:5",
+      "grierson1906kolamibasim:p568:specimen76-line:6:word:6": "grierson1906kolamibasim:p568:specimen76-line:6:word:6",
+      "grierson1906kolamibasim:p568:specimen76-line:6:word:7": "grierson1906kolamibasim:p568:specimen76-line:6:word:7",
+      "grierson1906kolamibasim:p568:specimen76-line:6:word:8": "grierson1906kolamibasim:p568:specimen76-line:6:word:8",
+      "grierson1906kolamibasim:p568:specimen76-line:6:word:9": "grierson1906kolamibasim:p568:specimen76-line:6:word:9",
+      "grierson1906kolamibasim:p568:specimen76-line:6:word:10": "grierson1906kolamibasim:p568:specimen76-line:6:word:10",
+      "grierson1906kolamibasim:p568:specimen76-line:7:word:1": "grierson1906kolamibasim:p568:specimen76-line:7:word:1",
+      "grierson1906kolamibasim:p568:specimen76-line:7:word:2": "grierson1906kolamibasim:p568:specimen76-line:7:word:2",
+      "grierson1906kolamibasim:p568:specimen76-line:7:word:3": "grierson1906kolamibasim:p568:specimen76-line:7:word:3",
+      "grierson1906kolamibasim:p568:specimen76-line:7:word:4": "grierson1906kolamibasim:p568:specimen76-line:7:word:4",
+      "grierson1906kolamibasim:p568:specimen76-line:7:word:5": "grierson1906kolamibasim:p568:specimen76-line:7:word:5",
+      "grierson1906kolamibasim:p568:specimen76-line:7:word:6": "grierson1906kolamibasim:p568:specimen76-line:7:word:6",
+      "grierson1906kolamibasim:p568:specimen76-line:7:word:7": "grierson1906kolamibasim:p568:specimen76-line:7:word:7",
+      "grierson1906kolamibasim:p568:specimen76-line:7:word:8": "grierson1906kolamibasim:p568:specimen76-line:7:word:8",
+      "grierson1906kolamibasim:p568:specimen76-line:8:word:1": "grierson1906kolamibasim:p568:specimen76-line:8:word:1",
+      "grierson1906kolamibasim:p568:specimen76-line:8:word:2": "grierson1906kolamibasim:p568:specimen76-line:8:word:2",
+      "grierson1906kolamibasim:p568:specimen76-line:8:word:3": "grierson1906kolamibasim:p568:specimen76-line:8:word:3",
+      "grierson1906kolamibasim:p568:specimen76-line:8:word:4": "grierson1906kolamibasim:p568:specimen76-line:8:word:4",
+      "grierson1906kolamibasim:p568:specimen76-line:8:word:5": "grierson1906kolamibasim:p568:specimen76-line:8:word:5",
+      "grierson1906kolamibasim:p568:specimen76-line:8:word:6": "grierson1906kolamibasim:p568:specimen76-line:8:word:6",
+      "grierson1906kolamibasim:p568:specimen76-line:8:word:7": "grierson1906kolamibasim:p568:specimen76-line:8:word:7",
+      "grierson1906kolamibasim:p568:specimen76-line:8:word:8": "grierson1906kolamibasim:p568:specimen76-line:8:word:8",
+      "grierson1906kolamibasim:p568:specimen76-line:8:word:9": "grierson1906kolamibasim:p568:specimen76-line:8:word:9",
+      "grierson1906kolamibasim:p568:specimen76-line:9:word:1": "grierson1906kolamibasim:p568:specimen76-line:9:word:1",
+      "grierson1906kolamibasim:p568:specimen76-line:9:word:2": "grierson1906kolamibasim:p568:specimen76-line:9:word:2",
+      "grierson1906kolamibasim:p568:specimen76-line:9:word:3": "grierson1906kolamibasim:p568:specimen76-line:9:word:3",
+      "grierson1906kolamibasim:p568:specimen76-line:9:word:4": "grierson1906kolamibasim:p568:specimen76-line:9:word:4",
+      "grierson1906kolamibasim:p568:specimen76-line:9:word:5": "grierson1906kolamibasim:p568:specimen76-line:9:word:5",
+      "grierson1906kolamibasim:p568:specimen76-line:9:word:6": "grierson1906kolamibasim:p568:specimen76-line:9:word:6",
+      "grierson1906kolamibasim:p568:specimen76-line:9:word:7": "grierson1906kolamibasim:p568:specimen76-line:9:word:7",
+      "grierson1906kolamibasim:p568:specimen76-line:10:word:1": "grierson1906kolamibasim:p568:specimen76-line:10:word:1",
+      "grierson1906kolamibasim:p568:specimen76-line:10:word:2": "grierson1906kolamibasim:p568:specimen76-line:10:word:2",
+      "grierson1906kolamibasim:p568:specimen76-line:10:word:3": "grierson1906kolamibasim:p568:specimen76-line:10:word:3",
+      "grierson1906kolamibasim:p568:specimen76-line:10:word:4": "grierson1906kolamibasim:p568:specimen76-line:10:word:4",
+      "grierson1906kolamibasim:p568:specimen76-line:10:word:5": "grierson1906kolamibasim:p568:specimen76-line:10:word:5",
+      "grierson1906kolamibasim:p568:specimen76-line:10:word:6": "grierson1906kolamibasim:p568:specimen76-line:10:word:6",
+      "grierson1906kolamibasim:p568:specimen76-line:10:word:7": "grierson1906kolamibasim:p568:specimen76-line:10:word:7",
+      "grierson1906kolamibasim:p568:specimen76-line:10:word:8": "grierson1906kolamibasim:p568:specimen76-line:10:word:8",
+      "grierson1906kolamibasim:p568:specimen76-line:10:word:9": "grierson1906kolamibasim:p568:specimen76-line:10:word:9",
+      "grierson1906kolamibasim:p568:specimen76-line:10:word:10": "grierson1906kolamibasim:p568:specimen76-line:10:word:10",
+      "grierson1906kolamibasim:p568:specimen76-line:11:word:1": "grierson1906kolamibasim:p568:specimen76-line:11:word:1",
+      "grierson1906kolamibasim:p568:specimen76-line:11:word:2": "grierson1906kolamibasim:p568:specimen76-line:11:word:2",
+      "grierson1906kolamibasim:p568:specimen76-line:11:word:3": "grierson1906kolamibasim:p568:specimen76-line:11:word:3",
+      "grierson1906kolamibasim:p568:specimen76-line:11:word:4": "grierson1906kolamibasim:p568:specimen76-line:11:word:4",
+      "grierson1906kolamibasim:p568:specimen76-line:11:word:5": "grierson1906kolamibasim:p568:specimen76-line:11:word:5",
+      "grierson1906kolamibasim:p568:specimen76-line:11:word:6": "grierson1906kolamibasim:p568:specimen76-line:11:word:6",
+      "grierson1906kolamibasim:p568:specimen76-line:11:word:7": "grierson1906kolamibasim:p568:specimen76-line:11:word:7",
+      "grierson1906kolamibasim:p568:specimen76-line:11:word:8": "grierson1906kolamibasim:p568:specimen76-line:11:word:8",
+      "grierson1906kolamibasim:p568:specimen76-line:12:word:1": "grierson1906kolamibasim:p568:specimen76-line:11:word:8",
+      "grierson1906kolamibasim:p568:specimen76-line:12:word:2": "grierson1906kolamibasim:p568:specimen76-line:12:word:2",
+      "grierson1906kolamibasim:p568:specimen76-line:12:word:3": "grierson1906kolamibasim:p568:specimen76-line:12:word:3",
+      "grierson1906kolamibasim:p568:specimen76-line:12:word:4": "grierson1906kolamibasim:p568:specimen76-line:12:word:4",
+      "grierson1906kolamibasim:p568:specimen76-line:12:word:5": "grierson1906kolamibasim:p568:specimen76-line:12:word:5",
+      "grierson1906kolamibasim:p568:specimen76-line:12:word:6": "grierson1906kolamibasim:p568:specimen76-line:12:word:6",
+      "grierson1906kolamibasim:p568:specimen76-line:12:word:7": "grierson1906kolamibasim:p568:specimen76-line:12:word:7",
+      "grierson1906kolamibasim:p568:specimen76-line:12:word:8": "grierson1906kolamibasim:p568:specimen76-line:12:word:8",
+      "grierson1906kolamibasim:p568:specimen76-line:13:word:1": "grierson1906kolamibasim:p568:specimen76-line:13:word:1",
+      "grierson1906kolamibasim:p568:specimen76-line:13:word:2": "grierson1906kolamibasim:p568:specimen76-line:13:word:2",
+      "grierson1906kolamibasim:p568:specimen76-line:13:word:3": "grierson1906kolamibasim:p568:specimen76-line:13:word:3",
+      "grierson1906kolamibasim:p568:specimen76-line:13:word:4": "grierson1906kolamibasim:p568:specimen76-line:13:word:4",
+      "grierson1906kolamibasim:p568:specimen76-line:13:word:5": "grierson1906kolamibasim:p568:specimen76-line:13:word:5",
+      "grierson1906kolamibasim:p568:specimen76-line:13:word:6": "grierson1906kolamibasim:p568:specimen76-line:13:word:6",
+      "grierson1906kolamibasim:p568:specimen76-line:13:word:7": "grierson1906kolamibasim:p568:specimen76-line:13:word:7",
+      "grierson1906kolamibasim:p568:specimen76-line:13:word:8": "grierson1906kolamibasim:p568:specimen76-line:13:word:8",
+      "grierson1906kolamibasim:p568:specimen76-line:13:word:9": "grierson1906kolamibasim:p568:specimen76-line:13:word:9",
+      "grierson1906kolamibasim:p568:specimen76-line:14:word:1": "grierson1906kolamibasim:p568:specimen76-line:14:word:1",
+      "grierson1906kolamibasim:p568:specimen76-line:14:word:2": "grierson1906kolamibasim:p568:specimen76-line:14:word:2",
+      "grierson1906kolamibasim:p568:specimen76-line:14:word:3": "grierson1906kolamibasim:p568:specimen76-line:14:word:3",
+      "grierson1906kolamibasim:p568:specimen76-line:14:word:4": "grierson1906kolamibasim:p568:specimen76-line:14:word:4",
+      "grierson1906kolamibasim:p568:specimen76-line:14:word:5": "grierson1906kolamibasim:p568:specimen76-line:14:word:5",
+      "grierson1906kolamibasim:p568:specimen76-line:14:word:6": "grierson1906kolamibasim:p568:specimen76-line:14:word:6",
+      "grierson1906kolamibasim:p568:specimen76-line:14:word:7": "grierson1906kolamibasim:p568:specimen76-line:14:word:7",
+      "grierson1906kolamibasim:p568:specimen76-line:14:word:8": "grierson1906kolamibasim:p568:specimen76-line:14:word:8",
+      "grierson1906kolamibasim:p568:specimen76-line:14:word:9": "grierson1906kolamibasim:p568:specimen76-line:14:word:9",
+      "grierson1906kolamibasim:p568:specimen76-line:14:word:10": "grierson1906kolamibasim:p568:specimen76-line:14:word:10",
+      "grierson1906kolamibasim:p568:specimen76-line:15:word:1": "grierson1906kolamibasim:p568:specimen76-line:15:word:1",
+      "grierson1906kolamibasim:p568:specimen76-line:15:word:2": "grierson1906kolamibasim:p568:specimen76-line:15:word:2",
+      "grierson1906kolamibasim:p568:specimen76-line:15:word:3": "grierson1906kolamibasim:p568:specimen76-line:15:word:3",
+      "grierson1906kolamibasim:p568:specimen76-line:15:word:4": "grierson1906kolamibasim:p568:specimen76-line:15:word:4",
+      "grierson1906kolamibasim:p568:specimen76-line:15:word:5": "grierson1906kolamibasim:p568:specimen76-line:15:word:5",
+      "grierson1906kolamibasim:p568:specimen76-line:15:word:6": "grierson1906kolamibasim:p568:specimen76-line:15:word:6",
+      "grierson1906kolamibasim:p568:specimen76-line:15:word:7": "grierson1906kolamibasim:p568:specimen76-line:15:word:7",
+      "grierson1906kolamibasim:p568:specimen76-line:15:word:8": "grierson1906kolamibasim:p568:specimen76-line:15:word:8",
+      "grierson1906kolamibasim:p568:specimen76-line:15:word:9": "grierson1906kolamibasim:p568:specimen76-line:15:word:9",
+      "grierson1906kolamibasim:p568:specimen76-line:16:word:1": "grierson1906kolamibasim:p568:specimen76-line:16:word:1",
+      "grierson1906kolamibasim:p568:specimen76-line:16:word:2": "grierson1906kolamibasim:p568:specimen76-line:16:word:2",
+      "grierson1906kolamibasim:p568:specimen76-line:16:word:3": "grierson1906kolamibasim:p568:specimen76-line:16:word:3",
+      "grierson1906kolamibasim:p568:specimen76-line:16:word:4": "grierson1906kolamibasim:p568:specimen76-line:16:word:4",
+      "grierson1906kolamibasim:p568:specimen76-line:16:word:5": "grierson1906kolamibasim:p568:specimen76-line:16:word:5",
+      "grierson1906kolamibasim:p568:specimen76-line:16:word:6": "grierson1906kolamibasim:p568:specimen76-line:16:word:6",
+      "grierson1906kolamibasim:p568:specimen76-line:16:word:7": "grierson1906kolamibasim:p568:specimen76-line:16:word:7",
+      "grierson1906kolamibasim:p568:specimen76-line:16:word:8": "grierson1906kolamibasim:p568:specimen76-line:16:word:8",
+      "grierson1906kolamibasim:p568:specimen76-line:16:word:9": "grierson1906kolamibasim:p568:specimen76-line:16:word:9",
+      "grierson1906kolamibasim:p568:specimen76-line:17:word:1": "grierson1906kolamibasim:p568:specimen76-line:17:word:1",
+      "grierson1906kolamibasim:p568:specimen76-line:17:word:2": "grierson1906kolamibasim:p568:specimen76-line:17:word:2",
+      "grierson1906kolamibasim:p568:specimen76-line:17:word:3": "grierson1906kolamibasim:p568:specimen76-line:17:word:3",
+      "grierson1906kolamibasim:p568:specimen76-line:17:word:4": "grierson1906kolamibasim:p568:specimen76-line:17:word:4",
+      "grierson1906kolamibasim:p568:specimen76-line:17:word:5": "grierson1906kolamibasim:p568:specimen76-line:17:word:5",
+      "grierson1906kolamibasim:p568:specimen76-line:17:word:6": "grierson1906kolamibasim:p568:specimen76-line:17:word:6",
+      "grierson1906kolamibasim:p568:specimen76-line:17:word:7": "grierson1906kolamibasim:p568:specimen76-line:17:word:7",
+      "grierson1906kolamibasim:p568:specimen76-line:17:word:8": "grierson1906kolamibasim:p568:specimen76-line:17:word:8",
+      "grierson1906kolamibasim:p568:specimen76-line:17:word:9": "grierson1906kolamibasim:p568:specimen76-line:17:word:9",
+      "grierson1906kolamibasim:p568:specimen76-line:17:word:10": "grierson1906kolamibasim:p568:specimen76-line:17:word:10",
+      "grierson1906kolamibasim:p569:specimen76-line:1:word:1": "grierson1906kolamibasim:p569:specimen76-line:1:word:1",
+      "grierson1906kolamibasim:p569:specimen76-line:1:word:2": "grierson1906kolamibasim:p569:specimen76-line:1:word:2",
+      "grierson1906kolamibasim:p569:specimen76-line:1:word:3": "grierson1906kolamibasim:p569:specimen76-line:1:word:3",
+      "grierson1906kolamibasim:p569:specimen76-line:1:word:4": "grierson1906kolamibasim:p569:specimen76-line:1:word:4",
+      "grierson1906kolamibasim:p569:specimen76-line:1:word:5": "grierson1906kolamibasim:p569:specimen76-line:1:word:5",
+      "grierson1906kolamibasim:p569:specimen76-line:1:word:6": "grierson1906kolamibasim:p569:specimen76-line:1:word:6",
+      "grierson1906kolamibasim:p569:specimen76-line:1:word:7": "grierson1906kolamibasim:p569:specimen76-line:1:word:7",
+      "grierson1906kolamibasim:p569:specimen76-line:1:word:8": "grierson1906kolamibasim:p569:specimen76-line:1:word:8",
+      "grierson1906kolamibasim:p569:specimen76-line:2:word:1": "grierson1906kolamibasim:p569:specimen76-line:2:word:1",
+      "grierson1906kolamibasim:p569:specimen76-line:2:word:2": "grierson1906kolamibasim:p569:specimen76-line:2:word:2",
+      "grierson1906kolamibasim:p569:specimen76-line:2:word:3": "grierson1906kolamibasim:p569:specimen76-line:2:word:3",
+      "grierson1906kolamibasim:p569:specimen76-line:2:word:4": "grierson1906kolamibasim:p569:specimen76-line:2:word:4",
+      "grierson1906kolamibasim:p569:specimen76-line:2:word:5": "grierson1906kolamibasim:p569:specimen76-line:2:word:5",
+      "grierson1906kolamibasim:p569:specimen76-line:3:word:1": "grierson1906kolamibasim:p569:specimen76-line:3:word:1",
+      "grierson1906kolamibasim:p569:specimen76-line:3:word:2": "grierson1906kolamibasim:p569:specimen76-line:3:word:2",
+      "grierson1906kolamibasim:p569:specimen76-line:3:word:3": "grierson1906kolamibasim:p569:specimen76-line:3:word:3",
+      "grierson1906kolamibasim:p569:specimen76-line:3:word:4": "grierson1906kolamibasim:p569:specimen76-line:3:word:4",
+      "grierson1906kolamibasim:p569:specimen76-line:3:word:5": "grierson1906kolamibasim:p569:specimen76-line:3:word:5",
+      "grierson1906kolamibasim:p569:specimen76-line:3:word:6": "grierson1906kolamibasim:p569:specimen76-line:3:word:6",
+      "grierson1906kolamibasim:p569:specimen76-line:3:word:7": "grierson1906kolamibasim:p569:specimen76-line:3:word:7",
+      "grierson1906kolamibasim:p569:specimen76-line:3:word:8": "grierson1906kolamibasim:p569:specimen76-line:3:word:8",
+      "grierson1906kolamibasim:p569:specimen76-line:3:word:9": "grierson1906kolamibasim:p569:specimen76-line:3:word:9",
+      "grierson1906kolamibasim:p569:specimen76-line:4:word:1": "grierson1906kolamibasim:p569:specimen76-line:4:word:1",
+      "grierson1906kolamibasim:p569:specimen76-line:4:word:2": "grierson1906kolamibasim:p569:specimen76-line:4:word:2",
+      "grierson1906kolamibasim:p569:specimen76-line:4:word:3": "grierson1906kolamibasim:p569:specimen76-line:4:word:3",
+      "grierson1906kolamibasim:p569:specimen76-line:4:word:4": "grierson1906kolamibasim:p569:specimen76-line:4:word:4",
+      "grierson1906kolamibasim:p569:specimen76-line:4:word:5": "grierson1906kolamibasim:p569:specimen76-line:4:word:5",
+      "grierson1906kolamibasim:p569:specimen76-line:4:word:6": "grierson1906kolamibasim:p569:specimen76-line:4:word:6",
+      "grierson1906kolamibasim:p569:specimen76-line:4:word:7": "grierson1906kolamibasim:p569:specimen76-line:4:word:7",
+      "grierson1906kolamibasim:p569:specimen76-line:4:word:8": "grierson1906kolamibasim:p569:specimen76-line:4:word:8",
+      "grierson1906kolamibasim:p569:specimen76-line:4:word:9": "grierson1906kolamibasim:p569:specimen76-line:4:word:9",
+      "grierson1906kolamibasim:p569:specimen76-line:5:word:1": "grierson1906kolamibasim:p569:specimen76-line:5:word:1",
+      "grierson1906kolamibasim:p569:specimen76-line:5:word:2": "grierson1906kolamibasim:p569:specimen76-line:5:word:2",
+      "grierson1906kolamibasim:p569:specimen76-line:5:word:3": "grierson1906kolamibasim:p569:specimen76-line:5:word:3",
+      "grierson1906kolamibasim:p569:specimen76-line:5:word:4": "grierson1906kolamibasim:p569:specimen76-line:5:word:4",
+      "grierson1906kolamibasim:p569:specimen76-line:5:word:5": "grierson1906kolamibasim:p569:specimen76-line:5:word:5",
+      "grierson1906kolamibasim:p569:specimen76-line:5:word:6": "grierson1906kolamibasim:p569:specimen76-line:5:word:6",
+      "grierson1906kolamibasim:p569:specimen76-line:5:word:7": "grierson1906kolamibasim:p569:specimen76-line:5:word:7",
+      "grierson1906kolamibasim:p569:specimen76-line:5:word:8": "grierson1906kolamibasim:p569:specimen76-line:5:word:8",
+      "grierson1906kolamibasim:p569:specimen76-line:6:word:1": "grierson1906kolamibasim:p569:specimen76-line:6:word:1",
+      "grierson1906kolamibasim:p569:specimen76-line:6:word:2": "grierson1906kolamibasim:p569:specimen76-line:6:word:2",
+      "grierson1906kolamibasim:p569:specimen76-line:6:word:3": "grierson1906kolamibasim:p569:specimen76-line:6:word:3",
+      "grierson1906kolamibasim:p569:specimen76-line:6:word:4": "grierson1906kolamibasim:p569:specimen76-line:6:word:4",
+      "grierson1906kolamibasim:p569:specimen76-line:6:word:5": "grierson1906kolamibasim:p569:specimen76-line:6:word:5",
+      "grierson1906kolamibasim:p569:specimen76-line:6:word:6": "grierson1906kolamibasim:p569:specimen76-line:6:word:6",
+      "grierson1906kolamibasim:p569:specimen76-line:6:word:7": "grierson1906kolamibasim:p569:specimen76-line:6:word:7",
+      "grierson1906kolamibasim:p569:specimen76-line:6:word:8": "grierson1906kolamibasim:p569:specimen76-line:6:word:8",
+      "grierson1906kolamibasim:p569:specimen76-line:6:word:9": "grierson1906kolamibasim:p569:specimen76-line:6:word:9",
+      "grierson1906kolamibasim:p569:specimen76-line:7:word:1": "grierson1906kolamibasim:p569:specimen76-line:7:word:1",
+      "grierson1906kolamibasim:p569:specimen76-line:7:word:2": "grierson1906kolamibasim:p569:specimen76-line:7:word:2",
+      "grierson1906kolamibasim:p569:specimen76-line:7:word:3": "grierson1906kolamibasim:p569:specimen76-line:7:word:3",
+      "grierson1906kolamibasim:p569:specimen76-line:7:word:4": "grierson1906kolamibasim:p569:specimen76-line:7:word:4",
+      "grierson1906kolamibasim:p569:specimen76-line:7:word:5": "grierson1906kolamibasim:p569:specimen76-line:7:word:5",
+      "grierson1906kolamibasim:p569:specimen76-line:7:word:6": "grierson1906kolamibasim:p569:specimen76-line:7:word:6",
+      "grierson1906kolamibasim:p569:specimen76-line:7:word:7": "grierson1906kolamibasim:p569:specimen76-line:7:word:7",
+      "grierson1906kolamibasim:p569:specimen76-line:7:word:8": "grierson1906kolamibasim:p569:specimen76-line:7:word:8",
+      "grierson1906kolamibasim:p569:specimen76-line:7:word:9": "grierson1906kolamibasim:p569:specimen76-line:7:word:9",
+      "grierson1906kolamibasim:p569:specimen76-line:8:word:1": "grierson1906kolamibasim:p569:specimen76-line:8:word:1",
+      "grierson1906kolamibasim:p569:specimen76-line:8:word:2": "grierson1906kolamibasim:p569:specimen76-line:8:word:2",
+      "grierson1906kolamibasim:p569:specimen76-line:8:word:3": "grierson1906kolamibasim:p569:specimen76-line:8:word:3",
+      "grierson1906kolamibasim:p569:specimen76-line:8:word:4": "grierson1906kolamibasim:p569:specimen76-line:8:word:4",
+      "grierson1906kolamibasim:p569:specimen76-line:8:word:5": "grierson1906kolamibasim:p569:specimen76-line:8:word:5",
+      "grierson1906kolamibasim:p569:specimen76-line:8:word:6": "grierson1906kolamibasim:p569:specimen76-line:8:word:6",
+      "grierson1906kolamibasim:p569:specimen76-line:8:word:7": "grierson1906kolamibasim:p569:specimen76-line:8:word:7",
+      "grierson1906kolamibasim:p569:specimen76-line:8:word:8": "grierson1906kolamibasim:p569:specimen76-line:8:word:8",
+      "grierson1906kolamibasim:p569:specimen76-line:8:word:9": "grierson1906kolamibasim:p569:specimen76-line:8:word:9",
+      "grierson1906kolamibasim:p569:specimen76-line:9:word:1": "grierson1906kolamibasim:p569:specimen76-line:9:word:1",
+      "grierson1906kolamibasim:p569:specimen76-line:9:word:2": "grierson1906kolamibasim:p569:specimen76-line:9:word:2",
+      "grierson1906kolamibasim:p569:specimen76-line:9:word:3": "grierson1906kolamibasim:p569:specimen76-line:9:word:3",
+      "grierson1906kolamibasim:p569:specimen76-line:9:word:4": "grierson1906kolamibasim:p569:specimen76-line:9:word:4",
+      "grierson1906kolamibasim:p569:specimen76-line:9:word:5": "grierson1906kolamibasim:p569:specimen76-line:9:word:5",
+      "grierson1906kolamibasim:p569:specimen76-line:9:word:6": "grierson1906kolamibasim:p569:specimen76-line:9:word:6",
+      "grierson1906kolamibasim:p569:specimen76-line:9:word:7": "grierson1906kolamibasim:p569:specimen76-line:9:word:7",
+      "grierson1906kolamibasim:p569:specimen76-line:9:word:8": "grierson1906kolamibasim:p569:specimen76-line:9:word:8",
+      "grierson1906kolamibasim:p569:specimen76-line:10:word:1": "grierson1906kolamibasim:p569:specimen76-line:10:word:1",
+      "grierson1906kolamibasim:p569:specimen76-line:10:word:2": "grierson1906kolamibasim:p569:specimen76-line:10:word:2",
+      "grierson1906kolamibasim:p569:specimen76-line:10:word:3": "grierson1906kolamibasim:p569:specimen76-line:10:word:3",
+      "grierson1906kolamibasim:p569:specimen76-line:10:word:4": "grierson1906kolamibasim:p569:specimen76-line:10:word:4",
+      "grierson1906kolamibasim:p569:specimen76-line:10:word:5": "grierson1906kolamibasim:p569:specimen76-line:10:word:5",
+      "grierson1906kolamibasim:p569:specimen76-line:10:word:6": "grierson1906kolamibasim:p569:specimen76-line:10:word:6",
+      "grierson1906kolamibasim:p569:specimen76-line:10:word:7": "grierson1906kolamibasim:p569:specimen76-line:10:word:7",
+      "grierson1906kolamibasim:p569:specimen76-line:10:word:8": "grierson1906kolamibasim:p569:specimen76-line:10:word:8",
+      "grierson1906kolamibasim:p569:specimen76-line:10:word:9": "grierson1906kolamibasim:p569:specimen76-line:10:word:9",
+      "grierson1906kolamibasim:p569:specimen76-line:10:word:10": "grierson1906kolamibasim:p569:specimen76-line:10:word:10",
+      "grierson1906kolamibasim:p569:specimen76-line:11:word:1": "grierson1906kolamibasim:p569:specimen76-line:11:word:1",
+      "grierson1906kolamibasim:p569:specimen76-line:11:word:2": "grierson1906kolamibasim:p569:specimen76-line:11:word:2",
+      "grierson1906kolamibasim:p569:specimen76-line:11:word:3": "grierson1906kolamibasim:p569:specimen76-line:11:word:3",
+      "grierson1906kolamibasim:p569:specimen76-line:11:word:4": "grierson1906kolamibasim:p569:specimen76-line:11:word:4",
+      "grierson1906kolamibasim:p569:specimen76-line:11:word:5": "grierson1906kolamibasim:p569:specimen76-line:11:word:5",
+      "grierson1906kolamibasim:p569:specimen76-line:11:word:6": "grierson1906kolamibasim:p569:specimen76-line:11:word:6",
+      "grierson1906kolamibasim:p569:specimen76-line:11:word:7": "grierson1906kolamibasim:p569:specimen76-line:11:word:7",
+      "grierson1906kolamibasim:p569:specimen76-line:11:word:8": "grierson1906kolamibasim:p569:specimen76-line:11:word:8",
+      "grierson1906kolamibasim:p569:specimen76-line:11:word:9": "grierson1906kolamibasim:p569:specimen76-line:11:word:9",
+      "grierson1906kolamibasim:p569:specimen76-line:12:word:1": "grierson1906kolamibasim:p569:specimen76-line:12:word:1",
+      "grierson1906kolamibasim:p569:specimen76-line:12:word:2": "grierson1906kolamibasim:p569:specimen76-line:12:word:2",
+      "grierson1906kolamibasim:p569:specimen76-line:12:word:3": "grierson1906kolamibasim:p569:specimen76-line:12:word:3",
+      "grierson1906kolamibasim:p569:specimen76-line:12:word:4": "grierson1906kolamibasim:p569:specimen76-line:12:word:4",
+      "grierson1906kolamibasim:p569:specimen76-line:12:word:5": "grierson1906kolamibasim:p569:specimen76-line:12:word:5",
+      "grierson1906kolamibasim:p569:specimen76-line:12:word:6": "grierson1906kolamibasim:p569:specimen76-line:12:word:6",
+      "grierson1906kolamibasim:p569:specimen76-line:12:word:7": "grierson1906kolamibasim:p569:specimen76-line:12:word:7",
+      "grierson1906kolamibasim:p569:specimen76-line:12:word:8": "grierson1906kolamibasim:p569:specimen76-line:12:word:8"
+    },
+    "repeated_literal_groups_retained_as_occurrences": 68,
+    "reuse_policy": "No unstated repeated-token deduplication. The sole non-emitting physical tail is the explicitly printed Bāp-/phōkān continuation."
+  },
+  "boundary_accounting": {
+    "status": "passed_exact_revised_partition_and_anchor_history",
+    "counts": {
+      "physical_atoms": 561,
+      "historical_expressions": 51,
+      "current_expressions": 51
+    },
+    "expression_partitions": [
+      {
+        "key": "grierson1906kolamibasim:p564:specimen75-line:1:word:1:expression",
+        "first_key": "grierson1906kolamibasim:p564:specimen75-line:1:word:1",
+        "last_key": "grierson1906kolamibasim:p564:specimen75-line:1:word:3",
+        "physical_keys": [
+          "grierson1906kolamibasim:p564:specimen75-line:1:word:1",
+          "grierson1906kolamibasim:p564:specimen75-line:1:word:2",
+          "grierson1906kolamibasim:p564:specimen75-line:1:word:3"
+        ],
+        "pages": [
+          564
+        ]
+      },
+      {
+        "key": "grierson1906kolamibasim:p564:specimen75-line:1:word:4:expression",
+        "first_key": "grierson1906kolamibasim:p564:specimen75-line:1:word:4",
+        "last_key": "grierson1906kolamibasim:p564:specimen75-line:1:word:7",
+        "physical_keys": [
+          "grierson1906kolamibasim:p564:specimen75-line:1:word:4",
+          "grierson1906kolamibasim:p564:specimen75-line:1:word:5",
+          "grierson1906kolamibasim:p564:specimen75-line:1:word:6",
+          "grierson1906kolamibasim:p564:specimen75-line:1:word:7"
+        ],
+        "pages": [
+          564
+        ]
+      },
+      {
+        "key": "grierson1906kolamibasim:p564:specimen75-line:1:word:8:expression",
+        "first_key": "grierson1906kolamibasim:p564:specimen75-line:1:word:8",
+        "last_key": "grierson1906kolamibasim:p564:specimen75-line:2:word:7",
+        "physical_keys": [
+          "grierson1906kolamibasim:p564:specimen75-line:1:word:8",
+          "grierson1906kolamibasim:p564:specimen75-line:2:word:1",
+          "grierson1906kolamibasim:p564:specimen75-line:2:word:2",
+          "grierson1906kolamibasim:p564:specimen75-line:2:word:3",
+          "grierson1906kolamibasim:p564:specimen75-line:2:word:4",
+          "grierson1906kolamibasim:p564:specimen75-line:2:word:5",
+          "grierson1906kolamibasim:p564:specimen75-line:2:word:6",
+          "grierson1906kolamibasim:p564:specimen75-line:2:word:7"
+        ],
+        "pages": [
+          564
+        ]
+      },
+      {
+        "key": "grierson1906kolamibasim:p564:specimen75-line:2:word:8:expression",
+        "first_key": "grierson1906kolamibasim:p564:specimen75-line:2:word:8",
+        "last_key": "grierson1906kolamibasim:p564:specimen75-line:3:word:3",
+        "physical_keys": [
+          "grierson1906kolamibasim:p564:specimen75-line:2:word:8",
+          "grierson1906kolamibasim:p564:specimen75-line:2:word:9",
+          "grierson1906kolamibasim:p564:specimen75-line:2:word:10",
+          "grierson1906kolamibasim:p564:specimen75-line:3:word:1",
+          "grierson1906kolamibasim:p564:specimen75-line:3:word:2",
+          "grierson1906kolamibasim:p564:specimen75-line:3:word:3"
+        ],
+        "pages": [
+          564
+        ]
+      },
+      {
+        "key": "grierson1906kolamibasim:p564:specimen75-line:3:word:4:expression",
+        "first_key": "grierson1906kolamibasim:p564:specimen75-line:3:word:4",
+        "last_key": "grierson1906kolamibasim:p564:specimen75-line:4:word:5",
+        "physical_keys": [
+          "grierson1906kolamibasim:p564:specimen75-line:3:word:4",
+          "grierson1906kolamibasim:p564:specimen75-line:3:word:5",
+          "grierson1906kolamibasim:p564:specimen75-line:3:word:6",
+          "grierson1906kolamibasim:p564:specimen75-line:3:word:7",
+          "grierson1906kolamibasim:p564:specimen75-line:3:word:8",
+          "grierson1906kolamibasim:p564:specimen75-line:4:word:1",
+          "grierson1906kolamibasim:p564:specimen75-line:4:word:2",
+          "grierson1906kolamibasim:p564:specimen75-line:4:word:3",
+          "grierson1906kolamibasim:p564:specimen75-line:4:word:4",
+          "grierson1906kolamibasim:p564:specimen75-line:4:word:5"
+        ],
+        "pages": [
+          564
+        ]
+      },
+      {
+        "key": "grierson1906kolamibasim:p564:specimen75-line:4:word:6:expression",
+        "first_key": "grierson1906kolamibasim:p564:specimen75-line:4:word:6",
+        "last_key": "grierson1906kolamibasim:p564:specimen75-line:5:word:2",
+        "physical_keys": [
+          "grierson1906kolamibasim:p564:specimen75-line:4:word:6",
+          "grierson1906kolamibasim:p564:specimen75-line:4:word:7",
+          "grierson1906kolamibasim:p564:specimen75-line:4:word:8",
+          "grierson1906kolamibasim:p564:specimen75-line:4:word:9",
+          "grierson1906kolamibasim:p564:specimen75-line:5:word:1",
+          "grierson1906kolamibasim:p564:specimen75-line:5:word:2"
+        ],
+        "pages": [
+          564
+        ]
+      },
+      {
+        "key": "grierson1906kolamibasim:p564:specimen75-line:5:word:3:expression",
+        "first_key": "grierson1906kolamibasim:p564:specimen75-line:5:word:3",
+        "last_key": "grierson1906kolamibasim:p564:specimen75-line:6:word:1",
+        "physical_keys": [
+          "grierson1906kolamibasim:p564:specimen75-line:5:word:3",
+          "grierson1906kolamibasim:p564:specimen75-line:5:word:4",
+          "grierson1906kolamibasim:p564:specimen75-line:5:word:5",
+          "grierson1906kolamibasim:p564:specimen75-line:5:word:6",
+          "grierson1906kolamibasim:p564:specimen75-line:5:word:7",
+          "grierson1906kolamibasim:p564:specimen75-line:5:word:8",
+          "grierson1906kolamibasim:p564:specimen75-line:5:word:9",
+          "grierson1906kolamibasim:p564:specimen75-line:6:word:1"
+        ],
+        "pages": [
+          564
+        ]
+      },
+      {
+        "key": "grierson1906kolamibasim:p564:specimen75-line:6:word:2:expression",
+        "first_key": "grierson1906kolamibasim:p564:specimen75-line:6:word:2",
+        "last_key": "grierson1906kolamibasim:p564:specimen75-line:6:word:5",
+        "physical_keys": [
+          "grierson1906kolamibasim:p564:specimen75-line:6:word:2",
+          "grierson1906kolamibasim:p564:specimen75-line:6:word:3",
+          "grierson1906kolamibasim:p564:specimen75-line:6:word:4",
+          "grierson1906kolamibasim:p564:specimen75-line:6:word:5"
+        ],
+        "pages": [
+          564
+        ]
+      },
+      {
+        "key": "grierson1906kolamibasim:p564:specimen75-line:6:word:6:expression",
+        "first_key": "grierson1906kolamibasim:p564:specimen75-line:6:word:6",
+        "last_key": "grierson1906kolamibasim:p564:specimen75-line:7:word:5",
+        "physical_keys": [
+          "grierson1906kolamibasim:p564:specimen75-line:6:word:6",
+          "grierson1906kolamibasim:p564:specimen75-line:6:word:7",
+          "grierson1906kolamibasim:p564:specimen75-line:6:word:8",
+          "grierson1906kolamibasim:p564:specimen75-line:6:word:9",
+          "grierson1906kolamibasim:p564:specimen75-line:7:word:1",
+          "grierson1906kolamibasim:p564:specimen75-line:7:word:2",
+          "grierson1906kolamibasim:p564:specimen75-line:7:word:3",
+          "grierson1906kolamibasim:p564:specimen75-line:7:word:4",
+          "grierson1906kolamibasim:p564:specimen75-line:7:word:5"
+        ],
+        "pages": [
+          564
+        ]
+      },
+      {
+        "key": "grierson1906kolamibasim:p564:specimen75-line:7:word:6:expression",
+        "first_key": "grierson1906kolamibasim:p564:specimen75-line:7:word:6",
+        "last_key": "grierson1906kolamibasim:p564:specimen75-line:8:word:4",
+        "physical_keys": [
+          "grierson1906kolamibasim:p564:specimen75-line:7:word:6",
+          "grierson1906kolamibasim:p564:specimen75-line:7:word:7",
+          "grierson1906kolamibasim:p564:specimen75-line:7:word:8",
+          "grierson1906kolamibasim:p564:specimen75-line:8:word:1",
+          "grierson1906kolamibasim:p564:specimen75-line:8:word:2",
+          "grierson1906kolamibasim:p564:specimen75-line:8:word:3",
+          "grierson1906kolamibasim:p564:specimen75-line:8:word:4"
+        ],
+        "pages": [
+          564
+        ]
+      },
+      {
+        "key": "grierson1906kolamibasim:p564:specimen75-line:8:word:5:expression",
+        "first_key": "grierson1906kolamibasim:p564:specimen75-line:8:word:5",
+        "last_key": "grierson1906kolamibasim:p564:specimen75-line:9:word:7",
+        "physical_keys": [
+          "grierson1906kolamibasim:p564:specimen75-line:8:word:5",
+          "grierson1906kolamibasim:p564:specimen75-line:8:word:6",
+          "grierson1906kolamibasim:p564:specimen75-line:8:word:7",
+          "grierson1906kolamibasim:p564:specimen75-line:8:word:8",
+          "grierson1906kolamibasim:p564:specimen75-line:8:word:9",
+          "grierson1906kolamibasim:p564:specimen75-line:9:word:1",
+          "grierson1906kolamibasim:p564:specimen75-line:9:word:2",
+          "grierson1906kolamibasim:p564:specimen75-line:9:word:3",
+          "grierson1906kolamibasim:p564:specimen75-line:9:word:4",
+          "grierson1906kolamibasim:p564:specimen75-line:9:word:5",
+          "grierson1906kolamibasim:p564:specimen75-line:9:word:6",
+          "grierson1906kolamibasim:p564:specimen75-line:9:word:7"
+        ],
+        "pages": [
+          564
+        ]
+      },
+      {
+        "key": "grierson1906kolamibasim:p564:specimen75-line:9:word:8:expression",
+        "first_key": "grierson1906kolamibasim:p564:specimen75-line:9:word:8",
+        "last_key": "grierson1906kolamibasim:p564:specimen75-line:10:word:1",
+        "physical_keys": [
+          "grierson1906kolamibasim:p564:specimen75-line:9:word:8",
+          "grierson1906kolamibasim:p564:specimen75-line:9:word:9",
+          "grierson1906kolamibasim:p564:specimen75-line:10:word:1"
+        ],
+        "pages": [
+          564
+        ]
+      },
+      {
+        "key": "grierson1906kolamibasim:p564:specimen75-line:10:word:2:expression",
+        "first_key": "grierson1906kolamibasim:p564:specimen75-line:10:word:2",
+        "last_key": "grierson1906kolamibasim:p564:specimen75-line:14:word:2",
+        "physical_keys": [
+          "grierson1906kolamibasim:p564:specimen75-line:10:word:2",
+          "grierson1906kolamibasim:p564:specimen75-line:10:word:3",
+          "grierson1906kolamibasim:p564:specimen75-line:10:word:4",
+          "grierson1906kolamibasim:p564:specimen75-line:10:word:5",
+          "grierson1906kolamibasim:p564:specimen75-line:10:word:6",
+          "grierson1906kolamibasim:p564:specimen75-line:10:word:7",
+          "grierson1906kolamibasim:p564:specimen75-line:10:word:8",
+          "grierson1906kolamibasim:p564:specimen75-line:11:word:1",
+          "grierson1906kolamibasim:p564:specimen75-line:11:word:2",
+          "grierson1906kolamibasim:p564:specimen75-line:11:word:3",
+          "grierson1906kolamibasim:p564:specimen75-line:11:word:4",
+          "grierson1906kolamibasim:p564:specimen75-line:11:word:5",
+          "grierson1906kolamibasim:p564:specimen75-line:11:word:6",
+          "grierson1906kolamibasim:p564:specimen75-line:11:word:7",
+          "grierson1906kolamibasim:p564:specimen75-line:11:word:8",
+          "grierson1906kolamibasim:p564:specimen75-line:11:word:9",
+          "grierson1906kolamibasim:p564:specimen75-line:12:word:1",
+          "grierson1906kolamibasim:p564:specimen75-line:12:word:2",
+          "grierson1906kolamibasim:p564:specimen75-line:12:word:3",
+          "grierson1906kolamibasim:p564:specimen75-line:12:word:4",
+          "grierson1906kolamibasim:p564:specimen75-line:12:word:5",
+          "grierson1906kolamibasim:p564:specimen75-line:12:word:6",
+          "grierson1906kolamibasim:p564:specimen75-line:12:word:7",
+          "grierson1906kolamibasim:p564:specimen75-line:12:word:8",
+          "grierson1906kolamibasim:p564:specimen75-line:12:word:9",
+          "grierson1906kolamibasim:p564:specimen75-line:13:word:1",
+          "grierson1906kolamibasim:p564:specimen75-line:13:word:2",
+          "grierson1906kolamibasim:p564:specimen75-line:13:word:3",
+          "grierson1906kolamibasim:p564:specimen75-line:13:word:4",
+          "grierson1906kolamibasim:p564:specimen75-line:13:word:5",
+          "grierson1906kolamibasim:p564:specimen75-line:13:word:6",
+          "grierson1906kolamibasim:p564:specimen75-line:13:word:7",
+          "grierson1906kolamibasim:p564:specimen75-line:13:word:8",
+          "grierson1906kolamibasim:p564:specimen75-line:13:word:9",
+          "grierson1906kolamibasim:p564:specimen75-line:14:word:1",
+          "grierson1906kolamibasim:p564:specimen75-line:14:word:2"
+        ],
+        "pages": [
+          564
+        ]
+      },
+      {
+        "key": "grierson1906kolamibasim:p564:specimen75-line:14:word:3:expression",
+        "first_key": "grierson1906kolamibasim:p564:specimen75-line:14:word:3",
+        "last_key": "grierson1906kolamibasim:p564:specimen75-line:14:word:8",
+        "physical_keys": [
+          "grierson1906kolamibasim:p564:specimen75-line:14:word:3",
+          "grierson1906kolamibasim:p564:specimen75-line:14:word:4",
+          "grierson1906kolamibasim:p564:specimen75-line:14:word:5",
+          "grierson1906kolamibasim:p564:specimen75-line:14:word:6",
+          "grierson1906kolamibasim:p564:specimen75-line:14:word:7",
+          "grierson1906kolamibasim:p564:specimen75-line:14:word:8"
+        ],
+        "pages": [
+          564
+        ]
+      },
+      {
+        "key": "grierson1906kolamibasim:p564:specimen75-line:14:word:9:expression",
+        "first_key": "grierson1906kolamibasim:p564:specimen75-line:14:word:9",
+        "last_key": "grierson1906kolamibasim:p564:specimen75-line:16:word:7",
+        "physical_keys": [
+          "grierson1906kolamibasim:p564:specimen75-line:14:word:9",
+          "grierson1906kolamibasim:p564:specimen75-line:15:word:1",
+          "grierson1906kolamibasim:p564:specimen75-line:15:word:2",
+          "grierson1906kolamibasim:p564:specimen75-line:15:word:3",
+          "grierson1906kolamibasim:p564:specimen75-line:15:word:4",
+          "grierson1906kolamibasim:p564:specimen75-line:15:word:5",
+          "grierson1906kolamibasim:p564:specimen75-line:15:word:6",
+          "grierson1906kolamibasim:p564:specimen75-line:15:word:7",
+          "grierson1906kolamibasim:p564:specimen75-line:15:word:8",
+          "grierson1906kolamibasim:p564:specimen75-line:15:word:9",
+          "grierson1906kolamibasim:p564:specimen75-line:15:word:10",
+          "grierson1906kolamibasim:p564:specimen75-line:16:word:1",
+          "grierson1906kolamibasim:p564:specimen75-line:16:word:2",
+          "grierson1906kolamibasim:p564:specimen75-line:16:word:3",
+          "grierson1906kolamibasim:p564:specimen75-line:16:word:4",
+          "grierson1906kolamibasim:p564:specimen75-line:16:word:5",
+          "grierson1906kolamibasim:p564:specimen75-line:16:word:6",
+          "grierson1906kolamibasim:p564:specimen75-line:16:word:7"
+        ],
+        "pages": [
+          564
+        ]
+      },
+      {
+        "key": "grierson1906kolamibasim:p564:specimen75-line:16:word:8:expression",
+        "first_key": "grierson1906kolamibasim:p564:specimen75-line:16:word:8",
+        "last_key": "grierson1906kolamibasim:p565:specimen75-line:1:word:3",
+        "physical_keys": [
+          "grierson1906kolamibasim:p564:specimen75-line:16:word:8",
+          "grierson1906kolamibasim:p564:specimen75-line:16:word:9",
+          "grierson1906kolamibasim:p564:specimen75-line:16:word:10",
+          "grierson1906kolamibasim:p564:specimen75-line:17:word:1",
+          "grierson1906kolamibasim:p564:specimen75-line:17:word:2",
+          "grierson1906kolamibasim:p564:specimen75-line:17:word:3",
+          "grierson1906kolamibasim:p564:specimen75-line:17:word:4",
+          "grierson1906kolamibasim:p564:specimen75-line:17:word:5",
+          "grierson1906kolamibasim:p564:specimen75-line:17:word:6",
+          "grierson1906kolamibasim:p564:specimen75-line:17:word:7",
+          "grierson1906kolamibasim:p564:specimen75-line:17:word:8",
+          "grierson1906kolamibasim:p564:specimen75-line:17:word:9",
+          "grierson1906kolamibasim:p564:specimen75-line:17:word:10",
+          "grierson1906kolamibasim:p565:specimen75-line:1:word:1",
+          "grierson1906kolamibasim:p565:specimen75-line:1:word:2",
+          "grierson1906kolamibasim:p565:specimen75-line:1:word:3"
+        ],
+        "pages": [
+          564,
+          565
+        ]
+      },
+      {
+        "key": "grierson1906kolamibasim:p565:specimen75-line:1:word:4:expression",
+        "first_key": "grierson1906kolamibasim:p565:specimen75-line:1:word:4",
+        "last_key": "grierson1906kolamibasim:p565:specimen75-line:4:word:5",
+        "physical_keys": [
+          "grierson1906kolamibasim:p565:specimen75-line:1:word:4",
+          "grierson1906kolamibasim:p565:specimen75-line:1:word:5",
+          "grierson1906kolamibasim:p565:specimen75-line:1:word:6",
+          "grierson1906kolamibasim:p565:specimen75-line:1:word:7",
+          "grierson1906kolamibasim:p565:specimen75-line:1:word:8",
+          "grierson1906kolamibasim:p565:specimen75-line:1:word:9",
+          "grierson1906kolamibasim:p565:specimen75-line:2:word:1",
+          "grierson1906kolamibasim:p565:specimen75-line:2:word:2",
+          "grierson1906kolamibasim:p565:specimen75-line:2:word:3",
+          "grierson1906kolamibasim:p565:specimen75-line:2:word:4",
+          "grierson1906kolamibasim:p565:specimen75-line:2:word:5",
+          "grierson1906kolamibasim:p565:specimen75-line:2:word:6",
+          "grierson1906kolamibasim:p565:specimen75-line:2:word:7",
+          "grierson1906kolamibasim:p565:specimen75-line:2:word:8",
+          "grierson1906kolamibasim:p565:specimen75-line:2:word:9",
+          "grierson1906kolamibasim:p565:specimen75-line:2:word:10",
+          "grierson1906kolamibasim:p565:specimen75-line:3:word:1",
+          "grierson1906kolamibasim:p565:specimen75-line:3:word:2",
+          "grierson1906kolamibasim:p565:specimen75-line:3:word:3",
+          "grierson1906kolamibasim:p565:specimen75-line:3:word:4",
+          "grierson1906kolamibasim:p565:specimen75-line:3:word:5",
+          "grierson1906kolamibasim:p565:specimen75-line:3:word:6",
+          "grierson1906kolamibasim:p565:specimen75-line:3:word:7",
+          "grierson1906kolamibasim:p565:specimen75-line:3:word:8",
+          "grierson1906kolamibasim:p565:specimen75-line:3:word:9",
+          "grierson1906kolamibasim:p565:specimen75-line:3:word:10",
+          "grierson1906kolamibasim:p565:specimen75-line:4:word:1",
+          "grierson1906kolamibasim:p565:specimen75-line:4:word:2",
+          "grierson1906kolamibasim:p565:specimen75-line:4:word:3",
+          "grierson1906kolamibasim:p565:specimen75-line:4:word:4",
+          "grierson1906kolamibasim:p565:specimen75-line:4:word:5"
+        ],
+        "pages": [
+          565
+        ]
+      },
+      {
+        "key": "grierson1906kolamibasim:p565:specimen75-line:4:word:6:expression",
+        "first_key": "grierson1906kolamibasim:p565:specimen75-line:4:word:6",
+        "last_key": "grierson1906kolamibasim:p565:specimen75-line:5:word:2",
+        "physical_keys": [
+          "grierson1906kolamibasim:p565:specimen75-line:4:word:6",
+          "grierson1906kolamibasim:p565:specimen75-line:4:word:7",
+          "grierson1906kolamibasim:p565:specimen75-line:4:word:8",
+          "grierson1906kolamibasim:p565:specimen75-line:5:word:1",
+          "grierson1906kolamibasim:p565:specimen75-line:5:word:2"
+        ],
+        "pages": [
+          565
+        ]
+      },
+      {
+        "key": "grierson1906kolamibasim:p565:specimen75-line:6:word:1:expression",
+        "first_key": "grierson1906kolamibasim:p565:specimen75-line:6:word:1",
+        "last_key": "grierson1906kolamibasim:p565:specimen75-line:6:word:7",
+        "physical_keys": [
+          "grierson1906kolamibasim:p565:specimen75-line:6:word:1",
+          "grierson1906kolamibasim:p565:specimen75-line:6:word:2",
+          "grierson1906kolamibasim:p565:specimen75-line:6:word:3",
+          "grierson1906kolamibasim:p565:specimen75-line:6:word:4",
+          "grierson1906kolamibasim:p565:specimen75-line:6:word:5",
+          "grierson1906kolamibasim:p565:specimen75-line:6:word:6",
+          "grierson1906kolamibasim:p565:specimen75-line:6:word:7"
+        ],
+        "pages": [
+          565
+        ]
+      },
+      {
+        "key": "grierson1906kolamibasim:p565:specimen75-line:6:word:8:expression",
+        "first_key": "grierson1906kolamibasim:p565:specimen75-line:6:word:8",
+        "last_key": "grierson1906kolamibasim:p565:specimen75-line:7:word:2",
+        "physical_keys": [
+          "grierson1906kolamibasim:p565:specimen75-line:6:word:8",
+          "grierson1906kolamibasim:p565:specimen75-line:6:word:9",
+          "grierson1906kolamibasim:p565:specimen75-line:6:word:10",
+          "grierson1906kolamibasim:p565:specimen75-line:7:word:1",
+          "grierson1906kolamibasim:p565:specimen75-line:7:word:2"
+        ],
+        "pages": [
+          565
+        ]
+      },
+      {
+        "key": "grierson1906kolamibasim:p565:specimen75-line:7:word:3:expression",
+        "first_key": "grierson1906kolamibasim:p565:specimen75-line:7:word:3",
+        "last_key": "grierson1906kolamibasim:p565:specimen75-line:7:word:6",
+        "physical_keys": [
+          "grierson1906kolamibasim:p565:specimen75-line:7:word:3",
+          "grierson1906kolamibasim:p565:specimen75-line:7:word:4",
+          "grierson1906kolamibasim:p565:specimen75-line:7:word:5",
+          "grierson1906kolamibasim:p565:specimen75-line:7:word:6"
+        ],
+        "pages": [
+          565
+        ]
+      },
+      {
+        "key": "grierson1906kolamibasim:p565:specimen75-line:7:word:7:expression",
+        "first_key": "grierson1906kolamibasim:p565:specimen75-line:7:word:7",
+        "last_key": "grierson1906kolamibasim:p565:specimen75-line:8:word:6",
+        "physical_keys": [
+          "grierson1906kolamibasim:p565:specimen75-line:7:word:7",
+          "grierson1906kolamibasim:p565:specimen75-line:7:word:8",
+          "grierson1906kolamibasim:p565:specimen75-line:7:word:9",
+          "grierson1906kolamibasim:p565:specimen75-line:8:word:1",
+          "grierson1906kolamibasim:p565:specimen75-line:8:word:2",
+          "grierson1906kolamibasim:p565:specimen75-line:8:word:3",
+          "grierson1906kolamibasim:p565:specimen75-line:8:word:4",
+          "grierson1906kolamibasim:p565:specimen75-line:8:word:5",
+          "grierson1906kolamibasim:p565:specimen75-line:8:word:6"
+        ],
+        "pages": [
+          565
+        ]
+      },
+      {
+        "key": "grierson1906kolamibasim:p565:specimen75-line:8:word:7:expression",
+        "first_key": "grierson1906kolamibasim:p565:specimen75-line:8:word:7",
+        "last_key": "grierson1906kolamibasim:p565:specimen75-line:10:word:4",
+        "physical_keys": [
+          "grierson1906kolamibasim:p565:specimen75-line:8:word:7",
+          "grierson1906kolamibasim:p565:specimen75-line:8:word:8",
+          "grierson1906kolamibasim:p565:specimen75-line:8:word:9",
+          "grierson1906kolamibasim:p565:specimen75-line:8:word:10",
+          "grierson1906kolamibasim:p565:specimen75-line:9:word:1",
+          "grierson1906kolamibasim:p565:specimen75-line:9:word:2",
+          "grierson1906kolamibasim:p565:specimen75-line:9:word:3",
+          "grierson1906kolamibasim:p565:specimen75-line:9:word:4",
+          "grierson1906kolamibasim:p565:specimen75-line:9:word:5",
+          "grierson1906kolamibasim:p565:specimen75-line:9:word:6",
+          "grierson1906kolamibasim:p565:specimen75-line:9:word:7",
+          "grierson1906kolamibasim:p565:specimen75-line:9:word:8",
+          "grierson1906kolamibasim:p565:specimen75-line:10:word:1",
+          "grierson1906kolamibasim:p565:specimen75-line:10:word:2",
+          "grierson1906kolamibasim:p565:specimen75-line:10:word:3",
+          "grierson1906kolamibasim:p565:specimen75-line:10:word:4"
+        ],
+        "pages": [
+          565
+        ]
+      },
+      {
+        "key": "grierson1906kolamibasim:p565:specimen75-line:10:word:5:expression",
+        "first_key": "grierson1906kolamibasim:p565:specimen75-line:10:word:5",
+        "last_key": "grierson1906kolamibasim:p565:specimen75-line:10:word:10",
+        "physical_keys": [
+          "grierson1906kolamibasim:p565:specimen75-line:10:word:5",
+          "grierson1906kolamibasim:p565:specimen75-line:10:word:6",
+          "grierson1906kolamibasim:p565:specimen75-line:10:word:7",
+          "grierson1906kolamibasim:p565:specimen75-line:10:word:8",
+          "grierson1906kolamibasim:p565:specimen75-line:10:word:9",
+          "grierson1906kolamibasim:p565:specimen75-line:10:word:10"
+        ],
+        "pages": [
+          565
+        ]
+      },
+      {
+        "key": "grierson1906kolamibasim:p565:specimen75-line:11:word:1:expression",
+        "first_key": "grierson1906kolamibasim:p565:specimen75-line:11:word:1",
+        "last_key": "grierson1906kolamibasim:p565:specimen75-line:11:word:7",
+        "physical_keys": [
+          "grierson1906kolamibasim:p565:specimen75-line:11:word:1",
+          "grierson1906kolamibasim:p565:specimen75-line:11:word:2",
+          "grierson1906kolamibasim:p565:specimen75-line:11:word:3",
+          "grierson1906kolamibasim:p565:specimen75-line:11:word:4",
+          "grierson1906kolamibasim:p565:specimen75-line:11:word:5",
+          "grierson1906kolamibasim:p565:specimen75-line:11:word:6",
+          "grierson1906kolamibasim:p565:specimen75-line:11:word:7"
+        ],
+        "pages": [
+          565
+        ]
+      },
+      {
+        "key": "grierson1906kolamibasim:p565:specimen75-line:11:word:8:expression",
+        "first_key": "grierson1906kolamibasim:p565:specimen75-line:11:word:8",
+        "last_key": "grierson1906kolamibasim:p565:specimen75-line:15:word:6",
+        "physical_keys": [
+          "grierson1906kolamibasim:p565:specimen75-line:11:word:8",
+          "grierson1906kolamibasim:p565:specimen75-line:11:word:9",
+          "grierson1906kolamibasim:p565:specimen75-line:11:word:10",
+          "grierson1906kolamibasim:p565:specimen75-line:12:word:1",
+          "grierson1906kolamibasim:p565:specimen75-line:12:word:2",
+          "grierson1906kolamibasim:p565:specimen75-line:12:word:3",
+          "grierson1906kolamibasim:p565:specimen75-line:12:word:4",
+          "grierson1906kolamibasim:p565:specimen75-line:12:word:5",
+          "grierson1906kolamibasim:p565:specimen75-line:12:word:6",
+          "grierson1906kolamibasim:p565:specimen75-line:12:word:7",
+          "grierson1906kolamibasim:p565:specimen75-line:12:word:8",
+          "grierson1906kolamibasim:p565:specimen75-line:12:word:9",
+          "grierson1906kolamibasim:p565:specimen75-line:12:word:10",
+          "grierson1906kolamibasim:p565:specimen75-line:12:word:11",
+          "grierson1906kolamibasim:p565:specimen75-line:13:word:1",
+          "grierson1906kolamibasim:p565:specimen75-line:13:word:2",
+          "grierson1906kolamibasim:p565:specimen75-line:13:word:3",
+          "grierson1906kolamibasim:p565:specimen75-line:13:word:4",
+          "grierson1906kolamibasim:p565:specimen75-line:13:word:5",
+          "grierson1906kolamibasim:p565:specimen75-line:13:word:6",
+          "grierson1906kolamibasim:p565:specimen75-line:13:word:7",
+          "grierson1906kolamibasim:p565:specimen75-line:13:word:8",
+          "grierson1906kolamibasim:p565:specimen75-line:13:word:9",
+          "grierson1906kolamibasim:p565:specimen75-line:14:word:1",
+          "grierson1906kolamibasim:p565:specimen75-line:14:word:2",
+          "grierson1906kolamibasim:p565:specimen75-line:14:word:3",
+          "grierson1906kolamibasim:p565:specimen75-line:14:word:4",
+          "grierson1906kolamibasim:p565:specimen75-line:14:word:5",
+          "grierson1906kolamibasim:p565:specimen75-line:14:word:6",
+          "grierson1906kolamibasim:p565:specimen75-line:14:word:7",
+          "grierson1906kolamibasim:p565:specimen75-line:14:word:8",
+          "grierson1906kolamibasim:p565:specimen75-line:14:word:9",
+          "grierson1906kolamibasim:p565:specimen75-line:14:word:10",
+          "grierson1906kolamibasim:p565:specimen75-line:15:word:1",
+          "grierson1906kolamibasim:p565:specimen75-line:15:word:2",
+          "grierson1906kolamibasim:p565:specimen75-line:15:word:3",
+          "grierson1906kolamibasim:p565:specimen75-line:15:word:4",
+          "grierson1906kolamibasim:p565:specimen75-line:15:word:5",
+          "grierson1906kolamibasim:p565:specimen75-line:15:word:6"
+        ],
+        "pages": [
+          565
+        ]
+      },
+      {
+        "key": "grierson1906kolamibasim:p565:specimen75-line:15:word:7:expression",
+        "first_key": "grierson1906kolamibasim:p565:specimen75-line:15:word:7",
+        "last_key": "grierson1906kolamibasim:p565:specimen75-line:18:word:8",
+        "physical_keys": [
+          "grierson1906kolamibasim:p565:specimen75-line:15:word:7",
+          "grierson1906kolamibasim:p565:specimen75-line:15:word:8",
+          "grierson1906kolamibasim:p565:specimen75-line:16:word:1",
+          "grierson1906kolamibasim:p565:specimen75-line:16:word:2",
+          "grierson1906kolamibasim:p565:specimen75-line:16:word:3",
+          "grierson1906kolamibasim:p565:specimen75-line:16:word:4",
+          "grierson1906kolamibasim:p565:specimen75-line:16:word:5",
+          "grierson1906kolamibasim:p565:specimen75-line:16:word:6",
+          "grierson1906kolamibasim:p565:specimen75-line:16:word:7",
+          "grierson1906kolamibasim:p565:specimen75-line:16:word:8",
+          "grierson1906kolamibasim:p565:specimen75-line:16:word:9",
+          "grierson1906kolamibasim:p565:specimen75-line:16:word:10",
+          "grierson1906kolamibasim:p565:specimen75-line:17:word:1",
+          "grierson1906kolamibasim:p565:specimen75-line:17:word:2",
+          "grierson1906kolamibasim:p565:specimen75-line:17:word:3",
+          "grierson1906kolamibasim:p565:specimen75-line:17:word:4",
+          "grierson1906kolamibasim:p565:specimen75-line:17:word:5",
+          "grierson1906kolamibasim:p565:specimen75-line:17:word:6",
+          "grierson1906kolamibasim:p565:specimen75-line:17:word:7",
+          "grierson1906kolamibasim:p565:specimen75-line:17:word:8",
+          "grierson1906kolamibasim:p565:specimen75-line:17:word:9",
+          "grierson1906kolamibasim:p565:specimen75-line:18:word:1",
+          "grierson1906kolamibasim:p565:specimen75-line:18:word:2",
+          "grierson1906kolamibasim:p565:specimen75-line:18:word:3",
+          "grierson1906kolamibasim:p565:specimen75-line:18:word:4",
+          "grierson1906kolamibasim:p565:specimen75-line:18:word:5",
+          "grierson1906kolamibasim:p565:specimen75-line:18:word:6",
+          "grierson1906kolamibasim:p565:specimen75-line:18:word:7",
+          "grierson1906kolamibasim:p565:specimen75-line:18:word:8"
+        ],
+        "pages": [
+          565
+        ]
+      },
+      {
+        "key": "grierson1906kolamibasim:p568:specimen76-line:1:word:1:expression",
+        "first_key": "grierson1906kolamibasim:p568:specimen76-line:1:word:1",
+        "last_key": "grierson1906kolamibasim:p568:specimen76-line:1:word:5",
+        "physical_keys": [
+          "grierson1906kolamibasim:p568:specimen76-line:1:word:1",
+          "grierson1906kolamibasim:p568:specimen76-line:1:word:2",
+          "grierson1906kolamibasim:p568:specimen76-line:1:word:3",
+          "grierson1906kolamibasim:p568:specimen76-line:1:word:4",
+          "grierson1906kolamibasim:p568:specimen76-line:1:word:5"
+        ],
+        "pages": [
+          568
+        ]
+      },
+      {
+        "key": "grierson1906kolamibasim:p568:specimen76-line:1:word:6:expression",
+        "first_key": "grierson1906kolamibasim:p568:specimen76-line:1:word:6",
+        "last_key": "grierson1906kolamibasim:p568:specimen76-line:2:word:6",
+        "physical_keys": [
+          "grierson1906kolamibasim:p568:specimen76-line:1:word:6",
+          "grierson1906kolamibasim:p568:specimen76-line:1:word:7",
+          "grierson1906kolamibasim:p568:specimen76-line:1:word:8",
+          "grierson1906kolamibasim:p568:specimen76-line:2:word:1",
+          "grierson1906kolamibasim:p568:specimen76-line:2:word:2",
+          "grierson1906kolamibasim:p568:specimen76-line:2:word:3",
+          "grierson1906kolamibasim:p568:specimen76-line:2:word:4",
+          "grierson1906kolamibasim:p568:specimen76-line:2:word:5",
+          "grierson1906kolamibasim:p568:specimen76-line:2:word:6"
+        ],
+        "pages": [
+          568
+        ]
+      },
+      {
+        "key": "grierson1906kolamibasim:p568:specimen76-line:2:word:7:expression",
+        "first_key": "grierson1906kolamibasim:p568:specimen76-line:2:word:7",
+        "last_key": "grierson1906kolamibasim:p568:specimen76-line:4:word:2",
+        "physical_keys": [
+          "grierson1906kolamibasim:p568:specimen76-line:2:word:7",
+          "grierson1906kolamibasim:p568:specimen76-line:3:word:1",
+          "grierson1906kolamibasim:p568:specimen76-line:3:word:2",
+          "grierson1906kolamibasim:p568:specimen76-line:3:word:3",
+          "grierson1906kolamibasim:p568:specimen76-line:3:word:4",
+          "grierson1906kolamibasim:p568:specimen76-line:3:word:5",
+          "grierson1906kolamibasim:p568:specimen76-line:3:word:6",
+          "grierson1906kolamibasim:p568:specimen76-line:3:word:7",
+          "grierson1906kolamibasim:p568:specimen76-line:3:word:8",
+          "grierson1906kolamibasim:p568:specimen76-line:3:word:9",
+          "grierson1906kolamibasim:p568:specimen76-line:4:word:1",
+          "grierson1906kolamibasim:p568:specimen76-line:4:word:2"
+        ],
+        "pages": [
+          568
+        ]
+      },
+      {
+        "key": "grierson1906kolamibasim:p568:specimen76-line:4:word:3:expression",
+        "first_key": "grierson1906kolamibasim:p568:specimen76-line:4:word:3",
+        "last_key": "grierson1906kolamibasim:p568:specimen76-line:4:word:7",
+        "physical_keys": [
+          "grierson1906kolamibasim:p568:specimen76-line:4:word:3",
+          "grierson1906kolamibasim:p568:specimen76-line:4:word:4",
+          "grierson1906kolamibasim:p568:specimen76-line:4:word:5",
+          "grierson1906kolamibasim:p568:specimen76-line:4:word:6",
+          "grierson1906kolamibasim:p568:specimen76-line:4:word:7"
+        ],
+        "pages": [
+          568
+        ]
+      },
+      {
+        "key": "grierson1906kolamibasim:p568:specimen76-line:5:word:1:expression",
+        "first_key": "grierson1906kolamibasim:p568:specimen76-line:5:word:1",
+        "last_key": "grierson1906kolamibasim:p568:specimen76-line:5:word:4",
+        "physical_keys": [
+          "grierson1906kolamibasim:p568:specimen76-line:5:word:1",
+          "grierson1906kolamibasim:p568:specimen76-line:5:word:2",
+          "grierson1906kolamibasim:p568:specimen76-line:5:word:3",
+          "grierson1906kolamibasim:p568:specimen76-line:5:word:4"
+        ],
+        "pages": [
+          568
+        ]
+      },
+      {
+        "key": "grierson1906kolamibasim:p568:specimen76-line:5:word:5:expression",
+        "first_key": "grierson1906kolamibasim:p568:specimen76-line:5:word:5",
+        "last_key": "grierson1906kolamibasim:p568:specimen76-line:6:word:1",
+        "physical_keys": [
+          "grierson1906kolamibasim:p568:specimen76-line:5:word:5",
+          "grierson1906kolamibasim:p568:specimen76-line:5:word:6",
+          "grierson1906kolamibasim:p568:specimen76-line:5:word:7",
+          "grierson1906kolamibasim:p568:specimen76-line:5:word:8",
+          "grierson1906kolamibasim:p568:specimen76-line:6:word:1"
+        ],
+        "pages": [
+          568
+        ]
+      },
+      {
+        "key": "grierson1906kolamibasim:p568:specimen76-line:6:word:2:expression",
+        "first_key": "grierson1906kolamibasim:p568:specimen76-line:6:word:2",
+        "last_key": "grierson1906kolamibasim:p568:specimen76-line:7:word:1",
+        "physical_keys": [
+          "grierson1906kolamibasim:p568:specimen76-line:6:word:2",
+          "grierson1906kolamibasim:p568:specimen76-line:6:word:3",
+          "grierson1906kolamibasim:p568:specimen76-line:6:word:4",
+          "grierson1906kolamibasim:p568:specimen76-line:6:word:5",
+          "grierson1906kolamibasim:p568:specimen76-line:6:word:6",
+          "grierson1906kolamibasim:p568:specimen76-line:6:word:7",
+          "grierson1906kolamibasim:p568:specimen76-line:6:word:8",
+          "grierson1906kolamibasim:p568:specimen76-line:6:word:9",
+          "grierson1906kolamibasim:p568:specimen76-line:6:word:10",
+          "grierson1906kolamibasim:p568:specimen76-line:7:word:1"
+        ],
+        "pages": [
+          568
+        ]
+      },
+      {
+        "key": "grierson1906kolamibasim:p568:specimen76-line:7:word:2:expression",
+        "first_key": "grierson1906kolamibasim:p568:specimen76-line:7:word:2",
+        "last_key": "grierson1906kolamibasim:p568:specimen76-line:7:word:5",
+        "physical_keys": [
+          "grierson1906kolamibasim:p568:specimen76-line:7:word:2",
+          "grierson1906kolamibasim:p568:specimen76-line:7:word:3",
+          "grierson1906kolamibasim:p568:specimen76-line:7:word:4",
+          "grierson1906kolamibasim:p568:specimen76-line:7:word:5"
+        ],
+        "pages": [
+          568
+        ]
+      },
+      {
+        "key": "grierson1906kolamibasim:p568:specimen76-line:7:word:6:expression",
+        "first_key": "grierson1906kolamibasim:p568:specimen76-line:7:word:6",
+        "last_key": "grierson1906kolamibasim:p568:specimen76-line:11:word:7",
+        "physical_keys": [
+          "grierson1906kolamibasim:p568:specimen76-line:7:word:6",
+          "grierson1906kolamibasim:p568:specimen76-line:7:word:7",
+          "grierson1906kolamibasim:p568:specimen76-line:7:word:8",
+          "grierson1906kolamibasim:p568:specimen76-line:8:word:1",
+          "grierson1906kolamibasim:p568:specimen76-line:8:word:2",
+          "grierson1906kolamibasim:p568:specimen76-line:8:word:3",
+          "grierson1906kolamibasim:p568:specimen76-line:8:word:4",
+          "grierson1906kolamibasim:p568:specimen76-line:8:word:5",
+          "grierson1906kolamibasim:p568:specimen76-line:8:word:6",
+          "grierson1906kolamibasim:p568:specimen76-line:8:word:7",
+          "grierson1906kolamibasim:p568:specimen76-line:8:word:8",
+          "grierson1906kolamibasim:p568:specimen76-line:8:word:9",
+          "grierson1906kolamibasim:p568:specimen76-line:9:word:1",
+          "grierson1906kolamibasim:p568:specimen76-line:9:word:2",
+          "grierson1906kolamibasim:p568:specimen76-line:9:word:3",
+          "grierson1906kolamibasim:p568:specimen76-line:9:word:4",
+          "grierson1906kolamibasim:p568:specimen76-line:9:word:5",
+          "grierson1906kolamibasim:p568:specimen76-line:9:word:6",
+          "grierson1906kolamibasim:p568:specimen76-line:9:word:7",
+          "grierson1906kolamibasim:p568:specimen76-line:10:word:1",
+          "grierson1906kolamibasim:p568:specimen76-line:10:word:2",
+          "grierson1906kolamibasim:p568:specimen76-line:10:word:3",
+          "grierson1906kolamibasim:p568:specimen76-line:10:word:4",
+          "grierson1906kolamibasim:p568:specimen76-line:10:word:5",
+          "grierson1906kolamibasim:p568:specimen76-line:10:word:6",
+          "grierson1906kolamibasim:p568:specimen76-line:10:word:7",
+          "grierson1906kolamibasim:p568:specimen76-line:10:word:8",
+          "grierson1906kolamibasim:p568:specimen76-line:10:word:9",
+          "grierson1906kolamibasim:p568:specimen76-line:10:word:10",
+          "grierson1906kolamibasim:p568:specimen76-line:11:word:1",
+          "grierson1906kolamibasim:p568:specimen76-line:11:word:2",
+          "grierson1906kolamibasim:p568:specimen76-line:11:word:3",
+          "grierson1906kolamibasim:p568:specimen76-line:11:word:4",
+          "grierson1906kolamibasim:p568:specimen76-line:11:word:5",
+          "grierson1906kolamibasim:p568:specimen76-line:11:word:6",
+          "grierson1906kolamibasim:p568:specimen76-line:11:word:7"
+        ],
+        "pages": [
+          568
+        ]
+      },
+      {
+        "key": "grierson1906kolamibasim:p568:specimen76-line:11:word:8:expression",
+        "first_key": "grierson1906kolamibasim:p568:specimen76-line:11:word:8",
+        "last_key": "grierson1906kolamibasim:p568:specimen76-line:12:word:2",
+        "physical_keys": [
+          "grierson1906kolamibasim:p568:specimen76-line:11:word:8",
+          "grierson1906kolamibasim:p568:specimen76-line:12:word:1",
+          "grierson1906kolamibasim:p568:specimen76-line:12:word:2"
+        ],
+        "pages": [
+          568
+        ]
+      },
+      {
+        "key": "grierson1906kolamibasim:p568:specimen76-line:12:word:3:expression",
+        "first_key": "grierson1906kolamibasim:p568:specimen76-line:12:word:3",
+        "last_key": "grierson1906kolamibasim:p568:specimen76-line:13:word:1",
+        "physical_keys": [
+          "grierson1906kolamibasim:p568:specimen76-line:12:word:3",
+          "grierson1906kolamibasim:p568:specimen76-line:12:word:4",
+          "grierson1906kolamibasim:p568:specimen76-line:12:word:5",
+          "grierson1906kolamibasim:p568:specimen76-line:12:word:6",
+          "grierson1906kolamibasim:p568:specimen76-line:12:word:7",
+          "grierson1906kolamibasim:p568:specimen76-line:12:word:8",
+          "grierson1906kolamibasim:p568:specimen76-line:13:word:1"
+        ],
+        "pages": [
+          568
+        ]
+      },
+      {
+        "key": "grierson1906kolamibasim:p568:specimen76-line:13:word:2:expression",
+        "first_key": "grierson1906kolamibasim:p568:specimen76-line:13:word:2",
+        "last_key": "grierson1906kolamibasim:p568:specimen76-line:13:word:8",
+        "physical_keys": [
+          "grierson1906kolamibasim:p568:specimen76-line:13:word:2",
+          "grierson1906kolamibasim:p568:specimen76-line:13:word:3",
+          "grierson1906kolamibasim:p568:specimen76-line:13:word:4",
+          "grierson1906kolamibasim:p568:specimen76-line:13:word:5",
+          "grierson1906kolamibasim:p568:specimen76-line:13:word:6",
+          "grierson1906kolamibasim:p568:specimen76-line:13:word:7",
+          "grierson1906kolamibasim:p568:specimen76-line:13:word:8"
+        ],
+        "pages": [
+          568
+        ]
+      },
+      {
+        "key": "grierson1906kolamibasim:p568:specimen76-line:13:word:9:expression",
+        "first_key": "grierson1906kolamibasim:p568:specimen76-line:13:word:9",
+        "last_key": "grierson1906kolamibasim:p568:specimen76-line:15:word:6",
+        "physical_keys": [
+          "grierson1906kolamibasim:p568:specimen76-line:13:word:9",
+          "grierson1906kolamibasim:p568:specimen76-line:14:word:1",
+          "grierson1906kolamibasim:p568:specimen76-line:14:word:2",
+          "grierson1906kolamibasim:p568:specimen76-line:14:word:3",
+          "grierson1906kolamibasim:p568:specimen76-line:14:word:4",
+          "grierson1906kolamibasim:p568:specimen76-line:14:word:5",
+          "grierson1906kolamibasim:p568:specimen76-line:14:word:6",
+          "grierson1906kolamibasim:p568:specimen76-line:14:word:7",
+          "grierson1906kolamibasim:p568:specimen76-line:14:word:8",
+          "grierson1906kolamibasim:p568:specimen76-line:14:word:9",
+          "grierson1906kolamibasim:p568:specimen76-line:14:word:10",
+          "grierson1906kolamibasim:p568:specimen76-line:15:word:1",
+          "grierson1906kolamibasim:p568:specimen76-line:15:word:2",
+          "grierson1906kolamibasim:p568:specimen76-line:15:word:3",
+          "grierson1906kolamibasim:p568:specimen76-line:15:word:4",
+          "grierson1906kolamibasim:p568:specimen76-line:15:word:5",
+          "grierson1906kolamibasim:p568:specimen76-line:15:word:6"
+        ],
+        "pages": [
+          568
+        ]
+      },
+      {
+        "key": "grierson1906kolamibasim:p568:specimen76-line:15:word:7:expression",
+        "first_key": "grierson1906kolamibasim:p568:specimen76-line:15:word:7",
+        "last_key": "grierson1906kolamibasim:p568:specimen76-line:17:word:6",
+        "physical_keys": [
+          "grierson1906kolamibasim:p568:specimen76-line:15:word:7",
+          "grierson1906kolamibasim:p568:specimen76-line:15:word:8",
+          "grierson1906kolamibasim:p568:specimen76-line:15:word:9",
+          "grierson1906kolamibasim:p568:specimen76-line:16:word:1",
+          "grierson1906kolamibasim:p568:specimen76-line:16:word:2",
+          "grierson1906kolamibasim:p568:specimen76-line:16:word:3",
+          "grierson1906kolamibasim:p568:specimen76-line:16:word:4",
+          "grierson1906kolamibasim:p568:specimen76-line:16:word:5",
+          "grierson1906kolamibasim:p568:specimen76-line:16:word:6",
+          "grierson1906kolamibasim:p568:specimen76-line:16:word:7",
+          "grierson1906kolamibasim:p568:specimen76-line:16:word:8",
+          "grierson1906kolamibasim:p568:specimen76-line:16:word:9",
+          "grierson1906kolamibasim:p568:specimen76-line:17:word:1",
+          "grierson1906kolamibasim:p568:specimen76-line:17:word:2",
+          "grierson1906kolamibasim:p568:specimen76-line:17:word:3",
+          "grierson1906kolamibasim:p568:specimen76-line:17:word:4",
+          "grierson1906kolamibasim:p568:specimen76-line:17:word:5",
+          "grierson1906kolamibasim:p568:specimen76-line:17:word:6"
+        ],
+        "pages": [
+          568
+        ]
+      },
+      {
+        "key": "grierson1906kolamibasim:p568:specimen76-line:17:word:7:expression",
+        "first_key": "grierson1906kolamibasim:p568:specimen76-line:17:word:7",
+        "last_key": "grierson1906kolamibasim:p569:specimen76-line:1:word:8",
+        "physical_keys": [
+          "grierson1906kolamibasim:p568:specimen76-line:17:word:7",
+          "grierson1906kolamibasim:p568:specimen76-line:17:word:8",
+          "grierson1906kolamibasim:p568:specimen76-line:17:word:9",
+          "grierson1906kolamibasim:p568:specimen76-line:17:word:10",
+          "grierson1906kolamibasim:p569:specimen76-line:1:word:1",
+          "grierson1906kolamibasim:p569:specimen76-line:1:word:2",
+          "grierson1906kolamibasim:p569:specimen76-line:1:word:3",
+          "grierson1906kolamibasim:p569:specimen76-line:1:word:4",
+          "grierson1906kolamibasim:p569:specimen76-line:1:word:5",
+          "grierson1906kolamibasim:p569:specimen76-line:1:word:6",
+          "grierson1906kolamibasim:p569:specimen76-line:1:word:7",
+          "grierson1906kolamibasim:p569:specimen76-line:1:word:8"
+        ],
+        "pages": [
+          568,
+          569
+        ]
+      },
+      {
+        "key": "grierson1906kolamibasim:p569:specimen76-line:2:word:1:expression",
+        "first_key": "grierson1906kolamibasim:p569:specimen76-line:2:word:1",
+        "last_key": "grierson1906kolamibasim:p569:specimen76-line:2:word:5",
+        "physical_keys": [
+          "grierson1906kolamibasim:p569:specimen76-line:2:word:1",
+          "grierson1906kolamibasim:p569:specimen76-line:2:word:2",
+          "grierson1906kolamibasim:p569:specimen76-line:2:word:3",
+          "grierson1906kolamibasim:p569:specimen76-line:2:word:4",
+          "grierson1906kolamibasim:p569:specimen76-line:2:word:5"
+        ],
+        "pages": [
+          569
+        ]
+      },
+      {
+        "key": "grierson1906kolamibasim:p569:specimen76-line:3:word:1:expression",
+        "first_key": "grierson1906kolamibasim:p569:specimen76-line:3:word:1",
+        "last_key": "grierson1906kolamibasim:p569:specimen76-line:3:word:4",
+        "physical_keys": [
+          "grierson1906kolamibasim:p569:specimen76-line:3:word:1",
+          "grierson1906kolamibasim:p569:specimen76-line:3:word:2",
+          "grierson1906kolamibasim:p569:specimen76-line:3:word:3",
+          "grierson1906kolamibasim:p569:specimen76-line:3:word:4"
+        ],
+        "pages": [
+          569
+        ]
+      },
+      {
+        "key": "grierson1906kolamibasim:p569:specimen76-line:3:word:5:expression",
+        "first_key": "grierson1906kolamibasim:p569:specimen76-line:3:word:5",
+        "last_key": "grierson1906kolamibasim:p569:specimen76-line:3:word:9",
+        "physical_keys": [
+          "grierson1906kolamibasim:p569:specimen76-line:3:word:5",
+          "grierson1906kolamibasim:p569:specimen76-line:3:word:6",
+          "grierson1906kolamibasim:p569:specimen76-line:3:word:7",
+          "grierson1906kolamibasim:p569:specimen76-line:3:word:8",
+          "grierson1906kolamibasim:p569:specimen76-line:3:word:9"
+        ],
+        "pages": [
+          569
+        ]
+      },
+      {
+        "key": "grierson1906kolamibasim:p569:specimen76-line:4:word:1:expression",
+        "first_key": "grierson1906kolamibasim:p569:specimen76-line:4:word:1",
+        "last_key": "grierson1906kolamibasim:p569:specimen76-line:4:word:6",
+        "physical_keys": [
+          "grierson1906kolamibasim:p569:specimen76-line:4:word:1",
+          "grierson1906kolamibasim:p569:specimen76-line:4:word:2",
+          "grierson1906kolamibasim:p569:specimen76-line:4:word:3",
+          "grierson1906kolamibasim:p569:specimen76-line:4:word:4",
+          "grierson1906kolamibasim:p569:specimen76-line:4:word:5",
+          "grierson1906kolamibasim:p569:specimen76-line:4:word:6"
+        ],
+        "pages": [
+          569
+        ]
+      },
+      {
+        "key": "grierson1906kolamibasim:p569:specimen76-line:4:word:7:expression",
+        "first_key": "grierson1906kolamibasim:p569:specimen76-line:4:word:7",
+        "last_key": "grierson1906kolamibasim:p569:specimen76-line:5:word:7",
+        "physical_keys": [
+          "grierson1906kolamibasim:p569:specimen76-line:4:word:7",
+          "grierson1906kolamibasim:p569:specimen76-line:4:word:8",
+          "grierson1906kolamibasim:p569:specimen76-line:4:word:9",
+          "grierson1906kolamibasim:p569:specimen76-line:5:word:1",
+          "grierson1906kolamibasim:p569:specimen76-line:5:word:2",
+          "grierson1906kolamibasim:p569:specimen76-line:5:word:3",
+          "grierson1906kolamibasim:p569:specimen76-line:5:word:4",
+          "grierson1906kolamibasim:p569:specimen76-line:5:word:5",
+          "grierson1906kolamibasim:p569:specimen76-line:5:word:6",
+          "grierson1906kolamibasim:p569:specimen76-line:5:word:7"
+        ],
+        "pages": [
+          569
+        ]
+      },
+      {
+        "key": "grierson1906kolamibasim:p569:specimen76-line:5:word:8:expression",
+        "first_key": "grierson1906kolamibasim:p569:specimen76-line:5:word:8",
+        "last_key": "grierson1906kolamibasim:p569:specimen76-line:6:word:4",
+        "physical_keys": [
+          "grierson1906kolamibasim:p569:specimen76-line:5:word:8",
+          "grierson1906kolamibasim:p569:specimen76-line:6:word:1",
+          "grierson1906kolamibasim:p569:specimen76-line:6:word:2",
+          "grierson1906kolamibasim:p569:specimen76-line:6:word:3",
+          "grierson1906kolamibasim:p569:specimen76-line:6:word:4"
+        ],
+        "pages": [
+          569
+        ]
+      },
+      {
+        "key": "grierson1906kolamibasim:p569:specimen76-line:6:word:5:expression",
+        "first_key": "grierson1906kolamibasim:p569:specimen76-line:6:word:5",
+        "last_key": "grierson1906kolamibasim:p569:specimen76-line:7:word:1",
+        "physical_keys": [
+          "grierson1906kolamibasim:p569:specimen76-line:6:word:5",
+          "grierson1906kolamibasim:p569:specimen76-line:6:word:6",
+          "grierson1906kolamibasim:p569:specimen76-line:6:word:7",
+          "grierson1906kolamibasim:p569:specimen76-line:6:word:8",
+          "grierson1906kolamibasim:p569:specimen76-line:6:word:9",
+          "grierson1906kolamibasim:p569:specimen76-line:7:word:1"
+        ],
+        "pages": [
+          569
+        ]
+      },
+      {
+        "key": "grierson1906kolamibasim:p569:specimen76-line:7:word:2:expression",
+        "first_key": "grierson1906kolamibasim:p569:specimen76-line:7:word:2",
+        "last_key": "grierson1906kolamibasim:p569:specimen76-line:10:word:6",
+        "physical_keys": [
+          "grierson1906kolamibasim:p569:specimen76-line:7:word:2",
+          "grierson1906kolamibasim:p569:specimen76-line:7:word:3",
+          "grierson1906kolamibasim:p569:specimen76-line:7:word:4",
+          "grierson1906kolamibasim:p569:specimen76-line:7:word:5",
+          "grierson1906kolamibasim:p569:specimen76-line:7:word:6",
+          "grierson1906kolamibasim:p569:specimen76-line:7:word:7",
+          "grierson1906kolamibasim:p569:specimen76-line:7:word:8",
+          "grierson1906kolamibasim:p569:specimen76-line:7:word:9",
+          "grierson1906kolamibasim:p569:specimen76-line:8:word:1",
+          "grierson1906kolamibasim:p569:specimen76-line:8:word:2",
+          "grierson1906kolamibasim:p569:specimen76-line:8:word:3",
+          "grierson1906kolamibasim:p569:specimen76-line:8:word:4",
+          "grierson1906kolamibasim:p569:specimen76-line:8:word:5",
+          "grierson1906kolamibasim:p569:specimen76-line:8:word:6",
+          "grierson1906kolamibasim:p569:specimen76-line:8:word:7",
+          "grierson1906kolamibasim:p569:specimen76-line:8:word:8",
+          "grierson1906kolamibasim:p569:specimen76-line:8:word:9",
+          "grierson1906kolamibasim:p569:specimen76-line:9:word:1",
+          "grierson1906kolamibasim:p569:specimen76-line:9:word:2",
+          "grierson1906kolamibasim:p569:specimen76-line:9:word:3",
+          "grierson1906kolamibasim:p569:specimen76-line:9:word:4",
+          "grierson1906kolamibasim:p569:specimen76-line:9:word:5",
+          "grierson1906kolamibasim:p569:specimen76-line:9:word:6",
+          "grierson1906kolamibasim:p569:specimen76-line:9:word:7",
+          "grierson1906kolamibasim:p569:specimen76-line:9:word:8",
+          "grierson1906kolamibasim:p569:specimen76-line:10:word:1",
+          "grierson1906kolamibasim:p569:specimen76-line:10:word:2",
+          "grierson1906kolamibasim:p569:specimen76-line:10:word:3",
+          "grierson1906kolamibasim:p569:specimen76-line:10:word:4",
+          "grierson1906kolamibasim:p569:specimen76-line:10:word:5",
+          "grierson1906kolamibasim:p569:specimen76-line:10:word:6"
+        ],
+        "pages": [
+          569
+        ]
+      },
+      {
+        "key": "grierson1906kolamibasim:p569:specimen76-line:10:word:7:expression",
+        "first_key": "grierson1906kolamibasim:p569:specimen76-line:10:word:7",
+        "last_key": "grierson1906kolamibasim:p569:specimen76-line:12:word:8",
+        "physical_keys": [
+          "grierson1906kolamibasim:p569:specimen76-line:10:word:7",
+          "grierson1906kolamibasim:p569:specimen76-line:10:word:8",
+          "grierson1906kolamibasim:p569:specimen76-line:10:word:9",
+          "grierson1906kolamibasim:p569:specimen76-line:10:word:10",
+          "grierson1906kolamibasim:p569:specimen76-line:11:word:1",
+          "grierson1906kolamibasim:p569:specimen76-line:11:word:2",
+          "grierson1906kolamibasim:p569:specimen76-line:11:word:3",
+          "grierson1906kolamibasim:p569:specimen76-line:11:word:4",
+          "grierson1906kolamibasim:p569:specimen76-line:11:word:5",
+          "grierson1906kolamibasim:p569:specimen76-line:11:word:6",
+          "grierson1906kolamibasim:p569:specimen76-line:11:word:7",
+          "grierson1906kolamibasim:p569:specimen76-line:11:word:8",
+          "grierson1906kolamibasim:p569:specimen76-line:11:word:9",
+          "grierson1906kolamibasim:p569:specimen76-line:12:word:1",
+          "grierson1906kolamibasim:p569:specimen76-line:12:word:2",
+          "grierson1906kolamibasim:p569:specimen76-line:12:word:3",
+          "grierson1906kolamibasim:p569:specimen76-line:12:word:4",
+          "grierson1906kolamibasim:p569:specimen76-line:12:word:5",
+          "grierson1906kolamibasim:p569:specimen76-line:12:word:6",
+          "grierson1906kolamibasim:p569:specimen76-line:12:word:7",
+          "grierson1906kolamibasim:p569:specimen76-line:12:word:8"
+        ],
+        "pages": [
+          569
+        ]
+      }
+    ],
+    "historical_to_current": [
+      {
+        "historical_key": "grierson1906kolamibasim:p564:specimen75-line:1:word:1:expression",
+        "current_keys": [
+          "grierson1906kolamibasim:p564:specimen75-line:1:word:1:expression"
+        ],
+        "relation": "same-or-merged-span"
+      },
+      {
+        "historical_key": "grierson1906kolamibasim:p564:specimen75-line:1:word:4:expression",
+        "current_keys": [
+          "grierson1906kolamibasim:p564:specimen75-line:1:word:4:expression"
+        ],
+        "relation": "same-or-merged-span"
+      },
+      {
+        "historical_key": "grierson1906kolamibasim:p564:specimen75-line:1:word:8:expression",
+        "current_keys": [
+          "grierson1906kolamibasim:p564:specimen75-line:1:word:8:expression"
+        ],
+        "relation": "same-or-merged-span"
+      },
+      {
+        "historical_key": "grierson1906kolamibasim:p564:specimen75-line:2:word:8:expression",
+        "current_keys": [
+          "grierson1906kolamibasim:p564:specimen75-line:2:word:8:expression"
+        ],
+        "relation": "same-or-merged-span"
+      },
+      {
+        "historical_key": "grierson1906kolamibasim:p564:specimen75-line:3:word:4:expression",
+        "current_keys": [
+          "grierson1906kolamibasim:p564:specimen75-line:3:word:4:expression"
+        ],
+        "relation": "same-or-merged-span"
+      },
+      {
+        "historical_key": "grierson1906kolamibasim:p564:specimen75-line:4:word:6:expression",
+        "current_keys": [
+          "grierson1906kolamibasim:p564:specimen75-line:4:word:6:expression"
+        ],
+        "relation": "same-or-merged-span"
+      },
+      {
+        "historical_key": "grierson1906kolamibasim:p564:specimen75-line:5:word:3:expression",
+        "current_keys": [
+          "grierson1906kolamibasim:p564:specimen75-line:5:word:3:expression"
+        ],
+        "relation": "same-or-merged-span"
+      },
+      {
+        "historical_key": "grierson1906kolamibasim:p564:specimen75-line:6:word:2:expression",
+        "current_keys": [
+          "grierson1906kolamibasim:p564:specimen75-line:6:word:2:expression"
+        ],
+        "relation": "same-or-merged-span"
+      },
+      {
+        "historical_key": "grierson1906kolamibasim:p564:specimen75-line:6:word:6:expression",
+        "current_keys": [
+          "grierson1906kolamibasim:p564:specimen75-line:6:word:6:expression"
+        ],
+        "relation": "same-or-merged-span"
+      },
+      {
+        "historical_key": "grierson1906kolamibasim:p564:specimen75-line:7:word:6:expression",
+        "current_keys": [
+          "grierson1906kolamibasim:p564:specimen75-line:7:word:6:expression"
+        ],
+        "relation": "same-or-merged-span"
+      },
+      {
+        "historical_key": "grierson1906kolamibasim:p564:specimen75-line:8:word:5:expression",
+        "current_keys": [
+          "grierson1906kolamibasim:p564:specimen75-line:8:word:5:expression"
+        ],
+        "relation": "same-or-merged-span"
+      },
+      {
+        "historical_key": "grierson1906kolamibasim:p564:specimen75-line:9:word:8:expression",
+        "current_keys": [
+          "grierson1906kolamibasim:p564:specimen75-line:9:word:8:expression"
+        ],
+        "relation": "same-or-merged-span"
+      },
+      {
+        "historical_key": "grierson1906kolamibasim:p564:specimen75-line:10:word:2:expression",
+        "current_keys": [
+          "grierson1906kolamibasim:p564:specimen75-line:10:word:2:expression"
+        ],
+        "relation": "same-or-merged-span"
+      },
+      {
+        "historical_key": "grierson1906kolamibasim:p564:specimen75-line:14:word:3:expression",
+        "current_keys": [
+          "grierson1906kolamibasim:p564:specimen75-line:14:word:3:expression"
+        ],
+        "relation": "same-or-merged-span"
+      },
+      {
+        "historical_key": "grierson1906kolamibasim:p564:specimen75-line:14:word:9:expression",
+        "current_keys": [
+          "grierson1906kolamibasim:p564:specimen75-line:14:word:9:expression"
+        ],
+        "relation": "same-or-merged-span"
+      },
+      {
+        "historical_key": "grierson1906kolamibasim:p564:specimen75-line:16:word:8:expression",
+        "current_keys": [
+          "grierson1906kolamibasim:p564:specimen75-line:16:word:8:expression"
+        ],
+        "relation": "same-or-merged-span"
+      },
+      {
+        "historical_key": "grierson1906kolamibasim:p565:specimen75-line:1:word:4:expression",
+        "current_keys": [
+          "grierson1906kolamibasim:p565:specimen75-line:1:word:4:expression"
+        ],
+        "relation": "same-or-merged-span"
+      },
+      {
+        "historical_key": "grierson1906kolamibasim:p565:specimen75-line:4:word:6:expression",
+        "current_keys": [
+          "grierson1906kolamibasim:p565:specimen75-line:4:word:6:expression"
+        ],
+        "relation": "same-or-merged-span"
+      },
+      {
+        "historical_key": "grierson1906kolamibasim:p565:specimen75-line:6:word:1:expression",
+        "current_keys": [
+          "grierson1906kolamibasim:p565:specimen75-line:6:word:1:expression"
+        ],
+        "relation": "same-or-merged-span"
+      },
+      {
+        "historical_key": "grierson1906kolamibasim:p565:specimen75-line:6:word:8:expression",
+        "current_keys": [
+          "grierson1906kolamibasim:p565:specimen75-line:6:word:8:expression"
+        ],
+        "relation": "same-or-merged-span"
+      },
+      {
+        "historical_key": "grierson1906kolamibasim:p565:specimen75-line:7:word:3:expression",
+        "current_keys": [
+          "grierson1906kolamibasim:p565:specimen75-line:7:word:3:expression"
+        ],
+        "relation": "same-or-merged-span"
+      },
+      {
+        "historical_key": "grierson1906kolamibasim:p565:specimen75-line:7:word:7:expression",
+        "current_keys": [
+          "grierson1906kolamibasim:p565:specimen75-line:7:word:7:expression"
+        ],
+        "relation": "same-or-merged-span"
+      },
+      {
+        "historical_key": "grierson1906kolamibasim:p565:specimen75-line:8:word:7:expression",
+        "current_keys": [
+          "grierson1906kolamibasim:p565:specimen75-line:8:word:7:expression"
+        ],
+        "relation": "same-or-merged-span"
+      },
+      {
+        "historical_key": "grierson1906kolamibasim:p565:specimen75-line:10:word:5:expression",
+        "current_keys": [
+          "grierson1906kolamibasim:p565:specimen75-line:10:word:5:expression"
+        ],
+        "relation": "same-or-merged-span"
+      },
+      {
+        "historical_key": "grierson1906kolamibasim:p565:specimen75-line:11:word:1:expression",
+        "current_keys": [
+          "grierson1906kolamibasim:p565:specimen75-line:11:word:1:expression"
+        ],
+        "relation": "same-or-merged-span"
+      },
+      {
+        "historical_key": "grierson1906kolamibasim:p565:specimen75-line:11:word:8:expression",
+        "current_keys": [
+          "grierson1906kolamibasim:p565:specimen75-line:11:word:8:expression"
+        ],
+        "relation": "same-or-merged-span"
+      },
+      {
+        "historical_key": "grierson1906kolamibasim:p565:specimen75-line:15:word:7:expression",
+        "current_keys": [
+          "grierson1906kolamibasim:p565:specimen75-line:15:word:7:expression"
+        ],
+        "relation": "same-or-merged-span"
+      },
+      {
+        "historical_key": "grierson1906kolamibasim:p568:specimen76-line:1:word:1:expression",
+        "current_keys": [
+          "grierson1906kolamibasim:p568:specimen76-line:1:word:1:expression"
+        ],
+        "relation": "same-or-merged-span"
+      },
+      {
+        "historical_key": "grierson1906kolamibasim:p568:specimen76-line:1:word:6:expression",
+        "current_keys": [
+          "grierson1906kolamibasim:p568:specimen76-line:1:word:6:expression"
+        ],
+        "relation": "same-or-merged-span"
+      },
+      {
+        "historical_key": "grierson1906kolamibasim:p568:specimen76-line:2:word:7:expression",
+        "current_keys": [
+          "grierson1906kolamibasim:p568:specimen76-line:2:word:7:expression"
+        ],
+        "relation": "same-or-merged-span"
+      },
+      {
+        "historical_key": "grierson1906kolamibasim:p568:specimen76-line:3:word:4:expression",
+        "current_keys": [
+          "grierson1906kolamibasim:p568:specimen76-line:2:word:7:expression"
+        ],
+        "relation": "same-or-merged-span"
+      },
+      {
+        "historical_key": "grierson1906kolamibasim:p568:specimen76-line:4:word:3:expression",
+        "current_keys": [
+          "grierson1906kolamibasim:p568:specimen76-line:4:word:3:expression"
+        ],
+        "relation": "same-or-merged-span"
+      },
+      {
+        "historical_key": "grierson1906kolamibasim:p568:specimen76-line:5:word:1:expression",
+        "current_keys": [
+          "grierson1906kolamibasim:p568:specimen76-line:5:word:1:expression"
+        ],
+        "relation": "same-or-merged-span"
+      },
+      {
+        "historical_key": "grierson1906kolamibasim:p568:specimen76-line:5:word:5:expression",
+        "current_keys": [
+          "grierson1906kolamibasim:p568:specimen76-line:5:word:5:expression"
+        ],
+        "relation": "same-or-merged-span"
+      },
+      {
+        "historical_key": "grierson1906kolamibasim:p568:specimen76-line:6:word:2:expression",
+        "current_keys": [
+          "grierson1906kolamibasim:p568:specimen76-line:6:word:2:expression"
+        ],
+        "relation": "same-or-merged-span"
+      },
+      {
+        "historical_key": "grierson1906kolamibasim:p568:specimen76-line:7:word:2:expression",
+        "current_keys": [
+          "grierson1906kolamibasim:p568:specimen76-line:7:word:2:expression"
+        ],
+        "relation": "same-or-merged-span"
+      },
+      {
+        "historical_key": "grierson1906kolamibasim:p568:specimen76-line:7:word:6:expression",
+        "current_keys": [
+          "grierson1906kolamibasim:p568:specimen76-line:7:word:6:expression"
+        ],
+        "relation": "same-or-merged-span"
+      },
+      {
+        "historical_key": "grierson1906kolamibasim:p568:specimen76-line:11:word:8:expression",
+        "current_keys": [
+          "grierson1906kolamibasim:p568:specimen76-line:11:word:8:expression"
+        ],
+        "relation": "same-or-merged-span"
+      },
+      {
+        "historical_key": "grierson1906kolamibasim:p568:specimen76-line:12:word:3:expression",
+        "current_keys": [
+          "grierson1906kolamibasim:p568:specimen76-line:12:word:3:expression"
+        ],
+        "relation": "same-or-merged-span"
+      },
+      {
+        "historical_key": "grierson1906kolamibasim:p568:specimen76-line:13:word:2:expression",
+        "current_keys": [
+          "grierson1906kolamibasim:p568:specimen76-line:13:word:2:expression"
+        ],
+        "relation": "same-or-merged-span"
+      },
+      {
+        "historical_key": "grierson1906kolamibasim:p568:specimen76-line:13:word:9:expression",
+        "current_keys": [
+          "grierson1906kolamibasim:p568:specimen76-line:13:word:9:expression"
+        ],
+        "relation": "same-or-merged-span"
+      },
+      {
+        "historical_key": "grierson1906kolamibasim:p568:specimen76-line:15:word:7:expression",
+        "current_keys": [
+          "grierson1906kolamibasim:p568:specimen76-line:15:word:7:expression"
+        ],
+        "relation": "same-or-merged-span"
+      },
+      {
+        "historical_key": "grierson1906kolamibasim:p568:specimen76-line:17:word:7:expression",
+        "current_keys": [
+          "grierson1906kolamibasim:p568:specimen76-line:17:word:7:expression"
+        ],
+        "relation": "same-or-merged-span"
+      },
+      {
+        "historical_key": "grierson1906kolamibasim:p569:specimen76-line:2:word:1:expression",
+        "current_keys": [
+          "grierson1906kolamibasim:p569:specimen76-line:2:word:1:expression",
+          "grierson1906kolamibasim:p569:specimen76-line:3:word:1:expression"
+        ],
+        "relation": "split"
+      },
+      {
+        "historical_key": "grierson1906kolamibasim:p569:specimen76-line:3:word:5:expression",
+        "current_keys": [
+          "grierson1906kolamibasim:p569:specimen76-line:3:word:5:expression"
+        ],
+        "relation": "same-or-merged-span"
+      },
+      {
+        "historical_key": "grierson1906kolamibasim:p569:specimen76-line:4:word:1:expression",
+        "current_keys": [
+          "grierson1906kolamibasim:p569:specimen76-line:4:word:1:expression"
+        ],
+        "relation": "same-or-merged-span"
+      },
+      {
+        "historical_key": "grierson1906kolamibasim:p569:specimen76-line:4:word:7:expression",
+        "current_keys": [
+          "grierson1906kolamibasim:p569:specimen76-line:4:word:7:expression"
+        ],
+        "relation": "same-or-merged-span"
+      },
+      {
+        "historical_key": "grierson1906kolamibasim:p569:specimen76-line:5:word:8:expression",
+        "current_keys": [
+          "grierson1906kolamibasim:p569:specimen76-line:5:word:8:expression"
+        ],
+        "relation": "same-or-merged-span"
+      },
+      {
+        "historical_key": "grierson1906kolamibasim:p569:specimen76-line:6:word:5:expression",
+        "current_keys": [
+          "grierson1906kolamibasim:p569:specimen76-line:6:word:5:expression"
+        ],
+        "relation": "same-or-merged-span"
+      },
+      {
+        "historical_key": "grierson1906kolamibasim:p569:specimen76-line:7:word:2:expression",
+        "current_keys": [
+          "grierson1906kolamibasim:p569:specimen76-line:7:word:2:expression"
+        ],
+        "relation": "same-or-merged-span"
+      },
+      {
+        "historical_key": "grierson1906kolamibasim:p569:specimen76-line:10:word:7:expression",
+        "current_keys": [
+          "grierson1906kolamibasim:p569:specimen76-line:10:word:7:expression"
+        ],
+        "relation": "same-or-merged-span"
+      }
+    ],
+    "current_to_historical": [
+      {
+        "current_key": "grierson1906kolamibasim:p564:specimen75-line:1:word:1:expression",
+        "historical_keys": [
+          "grierson1906kolamibasim:p564:specimen75-line:1:word:1:expression"
+        ],
+        "relation": "same-or-split-span"
+      },
+      {
+        "current_key": "grierson1906kolamibasim:p564:specimen75-line:1:word:4:expression",
+        "historical_keys": [
+          "grierson1906kolamibasim:p564:specimen75-line:1:word:4:expression"
+        ],
+        "relation": "same-or-split-span"
+      },
+      {
+        "current_key": "grierson1906kolamibasim:p564:specimen75-line:1:word:8:expression",
+        "historical_keys": [
+          "grierson1906kolamibasim:p564:specimen75-line:1:word:8:expression"
+        ],
+        "relation": "same-or-split-span"
+      },
+      {
+        "current_key": "grierson1906kolamibasim:p564:specimen75-line:2:word:8:expression",
+        "historical_keys": [
+          "grierson1906kolamibasim:p564:specimen75-line:2:word:8:expression"
+        ],
+        "relation": "same-or-split-span"
+      },
+      {
+        "current_key": "grierson1906kolamibasim:p564:specimen75-line:3:word:4:expression",
+        "historical_keys": [
+          "grierson1906kolamibasim:p564:specimen75-line:3:word:4:expression"
+        ],
+        "relation": "same-or-split-span"
+      },
+      {
+        "current_key": "grierson1906kolamibasim:p564:specimen75-line:4:word:6:expression",
+        "historical_keys": [
+          "grierson1906kolamibasim:p564:specimen75-line:4:word:6:expression"
+        ],
+        "relation": "same-or-split-span"
+      },
+      {
+        "current_key": "grierson1906kolamibasim:p564:specimen75-line:5:word:3:expression",
+        "historical_keys": [
+          "grierson1906kolamibasim:p564:specimen75-line:5:word:3:expression"
+        ],
+        "relation": "same-or-split-span"
+      },
+      {
+        "current_key": "grierson1906kolamibasim:p564:specimen75-line:6:word:2:expression",
+        "historical_keys": [
+          "grierson1906kolamibasim:p564:specimen75-line:6:word:2:expression"
+        ],
+        "relation": "same-or-split-span"
+      },
+      {
+        "current_key": "grierson1906kolamibasim:p564:specimen75-line:6:word:6:expression",
+        "historical_keys": [
+          "grierson1906kolamibasim:p564:specimen75-line:6:word:6:expression"
+        ],
+        "relation": "same-or-split-span"
+      },
+      {
+        "current_key": "grierson1906kolamibasim:p564:specimen75-line:7:word:6:expression",
+        "historical_keys": [
+          "grierson1906kolamibasim:p564:specimen75-line:7:word:6:expression"
+        ],
+        "relation": "same-or-split-span"
+      },
+      {
+        "current_key": "grierson1906kolamibasim:p564:specimen75-line:8:word:5:expression",
+        "historical_keys": [
+          "grierson1906kolamibasim:p564:specimen75-line:8:word:5:expression"
+        ],
+        "relation": "same-or-split-span"
+      },
+      {
+        "current_key": "grierson1906kolamibasim:p564:specimen75-line:9:word:8:expression",
+        "historical_keys": [
+          "grierson1906kolamibasim:p564:specimen75-line:9:word:8:expression"
+        ],
+        "relation": "same-or-split-span"
+      },
+      {
+        "current_key": "grierson1906kolamibasim:p564:specimen75-line:10:word:2:expression",
+        "historical_keys": [
+          "grierson1906kolamibasim:p564:specimen75-line:10:word:2:expression"
+        ],
+        "relation": "same-or-split-span"
+      },
+      {
+        "current_key": "grierson1906kolamibasim:p564:specimen75-line:14:word:3:expression",
+        "historical_keys": [
+          "grierson1906kolamibasim:p564:specimen75-line:14:word:3:expression"
+        ],
+        "relation": "same-or-split-span"
+      },
+      {
+        "current_key": "grierson1906kolamibasim:p564:specimen75-line:14:word:9:expression",
+        "historical_keys": [
+          "grierson1906kolamibasim:p564:specimen75-line:14:word:9:expression"
+        ],
+        "relation": "same-or-split-span"
+      },
+      {
+        "current_key": "grierson1906kolamibasim:p564:specimen75-line:16:word:8:expression",
+        "historical_keys": [
+          "grierson1906kolamibasim:p564:specimen75-line:16:word:8:expression"
+        ],
+        "relation": "same-or-split-span"
+      },
+      {
+        "current_key": "grierson1906kolamibasim:p565:specimen75-line:1:word:4:expression",
+        "historical_keys": [
+          "grierson1906kolamibasim:p565:specimen75-line:1:word:4:expression"
+        ],
+        "relation": "same-or-split-span"
+      },
+      {
+        "current_key": "grierson1906kolamibasim:p565:specimen75-line:4:word:6:expression",
+        "historical_keys": [
+          "grierson1906kolamibasim:p565:specimen75-line:4:word:6:expression"
+        ],
+        "relation": "same-or-split-span"
+      },
+      {
+        "current_key": "grierson1906kolamibasim:p565:specimen75-line:6:word:1:expression",
+        "historical_keys": [
+          "grierson1906kolamibasim:p565:specimen75-line:6:word:1:expression"
+        ],
+        "relation": "same-or-split-span"
+      },
+      {
+        "current_key": "grierson1906kolamibasim:p565:specimen75-line:6:word:8:expression",
+        "historical_keys": [
+          "grierson1906kolamibasim:p565:specimen75-line:6:word:8:expression"
+        ],
+        "relation": "same-or-split-span"
+      },
+      {
+        "current_key": "grierson1906kolamibasim:p565:specimen75-line:7:word:3:expression",
+        "historical_keys": [
+          "grierson1906kolamibasim:p565:specimen75-line:7:word:3:expression"
+        ],
+        "relation": "same-or-split-span"
+      },
+      {
+        "current_key": "grierson1906kolamibasim:p565:specimen75-line:7:word:7:expression",
+        "historical_keys": [
+          "grierson1906kolamibasim:p565:specimen75-line:7:word:7:expression"
+        ],
+        "relation": "same-or-split-span"
+      },
+      {
+        "current_key": "grierson1906kolamibasim:p565:specimen75-line:8:word:7:expression",
+        "historical_keys": [
+          "grierson1906kolamibasim:p565:specimen75-line:8:word:7:expression"
+        ],
+        "relation": "same-or-split-span"
+      },
+      {
+        "current_key": "grierson1906kolamibasim:p565:specimen75-line:10:word:5:expression",
+        "historical_keys": [
+          "grierson1906kolamibasim:p565:specimen75-line:10:word:5:expression"
+        ],
+        "relation": "same-or-split-span"
+      },
+      {
+        "current_key": "grierson1906kolamibasim:p565:specimen75-line:11:word:1:expression",
+        "historical_keys": [
+          "grierson1906kolamibasim:p565:specimen75-line:11:word:1:expression"
+        ],
+        "relation": "same-or-split-span"
+      },
+      {
+        "current_key": "grierson1906kolamibasim:p565:specimen75-line:11:word:8:expression",
+        "historical_keys": [
+          "grierson1906kolamibasim:p565:specimen75-line:11:word:8:expression"
+        ],
+        "relation": "same-or-split-span"
+      },
+      {
+        "current_key": "grierson1906kolamibasim:p565:specimen75-line:15:word:7:expression",
+        "historical_keys": [
+          "grierson1906kolamibasim:p565:specimen75-line:15:word:7:expression"
+        ],
+        "relation": "same-or-split-span"
+      },
+      {
+        "current_key": "grierson1906kolamibasim:p568:specimen76-line:1:word:1:expression",
+        "historical_keys": [
+          "grierson1906kolamibasim:p568:specimen76-line:1:word:1:expression"
+        ],
+        "relation": "same-or-split-span"
+      },
+      {
+        "current_key": "grierson1906kolamibasim:p568:specimen76-line:1:word:6:expression",
+        "historical_keys": [
+          "grierson1906kolamibasim:p568:specimen76-line:1:word:6:expression"
+        ],
+        "relation": "same-or-split-span"
+      },
+      {
+        "current_key": "grierson1906kolamibasim:p568:specimen76-line:2:word:7:expression",
+        "historical_keys": [
+          "grierson1906kolamibasim:p568:specimen76-line:2:word:7:expression",
+          "grierson1906kolamibasim:p568:specimen76-line:3:word:4:expression"
+        ],
+        "relation": "merge"
+      },
+      {
+        "current_key": "grierson1906kolamibasim:p568:specimen76-line:4:word:3:expression",
+        "historical_keys": [
+          "grierson1906kolamibasim:p568:specimen76-line:4:word:3:expression"
+        ],
+        "relation": "same-or-split-span"
+      },
+      {
+        "current_key": "grierson1906kolamibasim:p568:specimen76-line:5:word:1:expression",
+        "historical_keys": [
+          "grierson1906kolamibasim:p568:specimen76-line:5:word:1:expression"
+        ],
+        "relation": "same-or-split-span"
+      },
+      {
+        "current_key": "grierson1906kolamibasim:p568:specimen76-line:5:word:5:expression",
+        "historical_keys": [
+          "grierson1906kolamibasim:p568:specimen76-line:5:word:5:expression"
+        ],
+        "relation": "same-or-split-span"
+      },
+      {
+        "current_key": "grierson1906kolamibasim:p568:specimen76-line:6:word:2:expression",
+        "historical_keys": [
+          "grierson1906kolamibasim:p568:specimen76-line:6:word:2:expression"
+        ],
+        "relation": "same-or-split-span"
+      },
+      {
+        "current_key": "grierson1906kolamibasim:p568:specimen76-line:7:word:2:expression",
+        "historical_keys": [
+          "grierson1906kolamibasim:p568:specimen76-line:7:word:2:expression"
+        ],
+        "relation": "same-or-split-span"
+      },
+      {
+        "current_key": "grierson1906kolamibasim:p568:specimen76-line:7:word:6:expression",
+        "historical_keys": [
+          "grierson1906kolamibasim:p568:specimen76-line:7:word:6:expression"
+        ],
+        "relation": "same-or-split-span"
+      },
+      {
+        "current_key": "grierson1906kolamibasim:p568:specimen76-line:11:word:8:expression",
+        "historical_keys": [
+          "grierson1906kolamibasim:p568:specimen76-line:11:word:8:expression"
+        ],
+        "relation": "same-or-split-span"
+      },
+      {
+        "current_key": "grierson1906kolamibasim:p568:specimen76-line:12:word:3:expression",
+        "historical_keys": [
+          "grierson1906kolamibasim:p568:specimen76-line:12:word:3:expression"
+        ],
+        "relation": "same-or-split-span"
+      },
+      {
+        "current_key": "grierson1906kolamibasim:p568:specimen76-line:13:word:2:expression",
+        "historical_keys": [
+          "grierson1906kolamibasim:p568:specimen76-line:13:word:2:expression"
+        ],
+        "relation": "same-or-split-span"
+      },
+      {
+        "current_key": "grierson1906kolamibasim:p568:specimen76-line:13:word:9:expression",
+        "historical_keys": [
+          "grierson1906kolamibasim:p568:specimen76-line:13:word:9:expression"
+        ],
+        "relation": "same-or-split-span"
+      },
+      {
+        "current_key": "grierson1906kolamibasim:p568:specimen76-line:15:word:7:expression",
+        "historical_keys": [
+          "grierson1906kolamibasim:p568:specimen76-line:15:word:7:expression"
+        ],
+        "relation": "same-or-split-span"
+      },
+      {
+        "current_key": "grierson1906kolamibasim:p568:specimen76-line:17:word:7:expression",
+        "historical_keys": [
+          "grierson1906kolamibasim:p568:specimen76-line:17:word:7:expression"
+        ],
+        "relation": "same-or-split-span"
+      },
+      {
+        "current_key": "grierson1906kolamibasim:p569:specimen76-line:2:word:1:expression",
+        "historical_keys": [
+          "grierson1906kolamibasim:p569:specimen76-line:2:word:1:expression"
+        ],
+        "relation": "same-or-split-span"
+      },
+      {
+        "current_key": "grierson1906kolamibasim:p569:specimen76-line:3:word:1:expression",
+        "historical_keys": [
+          "grierson1906kolamibasim:p569:specimen76-line:2:word:1:expression"
+        ],
+        "relation": "same-or-split-span"
+      },
+      {
+        "current_key": "grierson1906kolamibasim:p569:specimen76-line:3:word:5:expression",
+        "historical_keys": [
+          "grierson1906kolamibasim:p569:specimen76-line:3:word:5:expression"
+        ],
+        "relation": "same-or-split-span"
+      },
+      {
+        "current_key": "grierson1906kolamibasim:p569:specimen76-line:4:word:1:expression",
+        "historical_keys": [
+          "grierson1906kolamibasim:p569:specimen76-line:4:word:1:expression"
+        ],
+        "relation": "same-or-split-span"
+      },
+      {
+        "current_key": "grierson1906kolamibasim:p569:specimen76-line:4:word:7:expression",
+        "historical_keys": [
+          "grierson1906kolamibasim:p569:specimen76-line:4:word:7:expression"
+        ],
+        "relation": "same-or-split-span"
+      },
+      {
+        "current_key": "grierson1906kolamibasim:p569:specimen76-line:5:word:8:expression",
+        "historical_keys": [
+          "grierson1906kolamibasim:p569:specimen76-line:5:word:8:expression"
+        ],
+        "relation": "same-or-split-span"
+      },
+      {
+        "current_key": "grierson1906kolamibasim:p569:specimen76-line:6:word:5:expression",
+        "historical_keys": [
+          "grierson1906kolamibasim:p569:specimen76-line:6:word:5:expression"
+        ],
+        "relation": "same-or-split-span"
+      },
+      {
+        "current_key": "grierson1906kolamibasim:p569:specimen76-line:7:word:2:expression",
+        "historical_keys": [
+          "grierson1906kolamibasim:p569:specimen76-line:7:word:2:expression"
+        ],
+        "relation": "same-or-split-span"
+      },
+      {
+        "current_key": "grierson1906kolamibasim:p569:specimen76-line:10:word:7:expression",
+        "historical_keys": [
+          "grierson1906kolamibasim:p569:specimen76-line:10:word:7:expression"
+        ],
+        "relation": "same-or-split-span"
+      }
+    ],
+    "identity_history_policy": "These are review-span histories, not automatic Variant or Form-ID aliases. Retired anchors remain historical; new split spans anchor their actual first physical atom."
+  },
+  "retained_typed_uncertainties": {
+    "grierson1906kolamibasim:p564:specimen75-line:16:word:1": [
+      {
+        "type": "source-glyph-identity",
+        "reason": "Native source-bar tūltnā provisional; prior diaeresis hypothesis rejected after pixel-controlled bar comparison. No phonemic inference."
+      }
+    ],
+    "grierson1906kolamibasim:p565:specimen75-line:7:word:6": [
+      {
+        "type": "source-glyph-identity",
+        "reason": "Retain vintēr.; medial cluster/lower-mark damage does not justify retroflex insertion."
+      }
+    ],
+    "grierson1906kolamibasim:p569:specimen76-line:9:word:7": [
+      {
+        "type": "source-glyph-identity",
+        "reason": "Retain kasbirā; small ink adjoining r may be its shoulder or detached mark. No inserted punctuation."
+      }
+    ]
+  },
+  "verified_changed_span_history": [
+    {
+      "new_anchor": "grierson1906kolamibasim:p568:specimen76-line:2:word:7:expression",
+      "new_contributors": [
+        "grierson1906kolamibasim:p568:specimen76-line:2:word:7",
+        "grierson1906kolamibasim:p568:specimen76-line:3:word:1",
+        "grierson1906kolamibasim:p568:specimen76-line:3:word:2",
+        "grierson1906kolamibasim:p568:specimen76-line:3:word:3",
+        "grierson1906kolamibasim:p568:specimen76-line:3:word:4",
+        "grierson1906kolamibasim:p568:specimen76-line:3:word:5",
+        "grierson1906kolamibasim:p568:specimen76-line:3:word:6",
+        "grierson1906kolamibasim:p568:specimen76-line:3:word:7",
+        "grierson1906kolamibasim:p568:specimen76-line:3:word:8",
+        "grierson1906kolamibasim:p568:specimen76-line:3:word:9",
+        "grierson1906kolamibasim:p568:specimen76-line:4:word:1",
+        "grierson1906kolamibasim:p568:specimen76-line:4:word:2"
+      ],
+      "historical_anchors": [
+        "grierson1906kolamibasim:p568:specimen76-line:2:word:7:expression",
+        "grierson1906kolamibasim:p568:specimen76-line:3:word:4:expression"
+      ],
+      "historical_contributors": [
+        [
+          "grierson1906kolamibasim:p568:specimen76-line:2:word:7",
+          "grierson1906kolamibasim:p568:specimen76-line:3:word:1",
+          "grierson1906kolamibasim:p568:specimen76-line:3:word:2",
+          "grierson1906kolamibasim:p568:specimen76-line:3:word:3"
+        ],
+        [
+          "grierson1906kolamibasim:p568:specimen76-line:3:word:4",
+          "grierson1906kolamibasim:p568:specimen76-line:3:word:5",
+          "grierson1906kolamibasim:p568:specimen76-line:3:word:6",
+          "grierson1906kolamibasim:p568:specimen76-line:3:word:7",
+          "grierson1906kolamibasim:p568:specimen76-line:3:word:8",
+          "grierson1906kolamibasim:p568:specimen76-line:3:word:9",
+          "grierson1906kolamibasim:p568:specimen76-line:4:word:1",
+          "grierson1906kolamibasim:p568:specimen76-line:4:word:2"
+        ]
+      ]
+    },
+    {
+      "new_anchor": "grierson1906kolamibasim:p569:specimen76-line:2:word:1:expression",
+      "new_contributors": [
+        "grierson1906kolamibasim:p569:specimen76-line:2:word:1",
+        "grierson1906kolamibasim:p569:specimen76-line:2:word:2",
+        "grierson1906kolamibasim:p569:specimen76-line:2:word:3",
+        "grierson1906kolamibasim:p569:specimen76-line:2:word:4",
+        "grierson1906kolamibasim:p569:specimen76-line:2:word:5"
+      ],
+      "historical_anchors": [
+        "grierson1906kolamibasim:p569:specimen76-line:2:word:1:expression"
+      ],
+      "historical_contributors": [
+        [
+          "grierson1906kolamibasim:p569:specimen76-line:2:word:1",
+          "grierson1906kolamibasim:p569:specimen76-line:2:word:2",
+          "grierson1906kolamibasim:p569:specimen76-line:2:word:3",
+          "grierson1906kolamibasim:p569:specimen76-line:2:word:4",
+          "grierson1906kolamibasim:p569:specimen76-line:2:word:5",
+          "grierson1906kolamibasim:p569:specimen76-line:3:word:1",
+          "grierson1906kolamibasim:p569:specimen76-line:3:word:2",
+          "grierson1906kolamibasim:p569:specimen76-line:3:word:3",
+          "grierson1906kolamibasim:p569:specimen76-line:3:word:4"
+        ]
+      ]
+    },
+    {
+      "new_anchor": "grierson1906kolamibasim:p569:specimen76-line:3:word:1:expression",
+      "new_contributors": [
+        "grierson1906kolamibasim:p569:specimen76-line:3:word:1",
+        "grierson1906kolamibasim:p569:specimen76-line:3:word:2",
+        "grierson1906kolamibasim:p569:specimen76-line:3:word:3",
+        "grierson1906kolamibasim:p569:specimen76-line:3:word:4"
+      ],
+      "historical_anchors": [
+        "grierson1906kolamibasim:p569:specimen76-line:2:word:1:expression"
+      ],
+      "historical_contributors": [
+        [
+          "grierson1906kolamibasim:p569:specimen76-line:2:word:1",
+          "grierson1906kolamibasim:p569:specimen76-line:2:word:2",
+          "grierson1906kolamibasim:p569:specimen76-line:2:word:3",
+          "grierson1906kolamibasim:p569:specimen76-line:2:word:4",
+          "grierson1906kolamibasim:p569:specimen76-line:2:word:5",
+          "grierson1906kolamibasim:p569:specimen76-line:3:word:1",
+          "grierson1906kolamibasim:p569:specimen76-line:3:word:2",
+          "grierson1906kolamibasim:p569:specimen76-line:3:word:3",
+          "grierson1906kolamibasim:p569:specimen76-line:3:word:4"
+        ]
+      ]
+    }
+  ],
+  "limits": [
+    "Exact source accounting and approved-literal continuity; not a substitute for final combined CSV metadata/profile/reference/parser and fresh original-output audit.",
+    "Physical lines are not treated as sentences; English remains the exact aligned source join.",
+    "Merge/split anchor history is not a Form-ID alias or Variant relation."
+  ],
+  "canonical_mutations": false
+}

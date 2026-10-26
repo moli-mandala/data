@@ -1,0 +1,31 @@
+{
+  "status": "in_progress_material_errors_found",
+  "sample_file": "root-output-sample-20260927.json",
+  "seed": 20260927151,
+  "installation_approved": false,
+  "findings": [
+    {
+      "key": "bailey1920kagani:whole:p103:parable:line12:word1",
+      "form": "băjēṇā",
+      "classification": "material_unsupported_grammatical_subtype",
+      "actual_tags": "verb participle pres",
+      "evidence": "Original p103 lower narrative prints băjēṇā aligned playing, beside gēṇā aligned singing. Source infinitive formation uses -ṇā/-nā. The English -ing ending alone does not establish a source present participle.",
+      "required_repair": "Audit all outputs of the English -ing rule against actual source paradigms and construction context. Preserve raw analysis; do not assign unsupported present-participle tags."
+    },
+    {
+      "key": "bailey1920kagani:whole:p102:parable:line1:word4",
+      "form": "oh",
+      "classification": "structured_metadata_omission",
+      "evidence": "Frozen row gloss he has no pronoun/person/number tags.",
+      "required_repair": "Reconcile pronoun metadata with aligned analysis and source paradigm."
+    },
+    {
+      "key": "bailey1920kagani:whole:p104:parable:line12:word2",
+      "form": "tŭṛai",
+      "classification": "structured_metadata_omission",
+      "evidence": "Frozen thine-is analysis emits pron gen copula pres but omits second-person singular.",
+      "required_repair": "Review possessive person/number scope across the interlinear inventory."
+    }
+  ],
+  "followup": "Agent preparing separate revision2. Frozen revision1 must remain unchanged; the twenty-unit audit is not yet finished."
+}

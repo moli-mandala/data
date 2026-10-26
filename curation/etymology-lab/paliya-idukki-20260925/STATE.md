@@ -1,0 +1,7 @@
+# Paliya Idukki residual research — checkpoint 001
+
+All 239 compiled `varghese-mathew2015idukki` Paliya records are accounted for: 134 earlier pending proposals, 14 earlier research holds, 55 new pending proposals, and 36 new holds. The 91 residual records preserve exact compiled IDs and source fields. There are no unexamined records; prior-pass ownership and current review-manifest agreement passed. The 55 new proposals would add 61 rows across 44 DEDR article families, including six additional ordered component rows.
+
+The read-only homepage `fetchLemmaList` search ran 91 exact-form queries in four bounded chunks, returning 106 rows. Full shortlisted DEDR article text and source citations are retained in `primary-evidence.json` and `proposed-decisions.json`. DEDR nodes are treated as whole articles, including inflectional and semantic variants inside an article. Loans without a verified immediate donor, questionable truncations, and multiword verbal clauses remain in `research-holds.json`.
+
+`make check-pass PY=.venv/bin/python` passed on the proposal graph: 55 affected records, 61 assignment rows, 44 parent nodes, zero second-application changes. A later edit corrected three evidence-wording details only; it did not change record IDs, parents, relation kinds, citation locators, or assignment positions. The offline manifest audit passed against the final decisions. No `save-pass`, accepted sidecar edit, rebuild, importer, source reparse, commit, push, or deployment was performed. Pending batches 028–038 await user review.

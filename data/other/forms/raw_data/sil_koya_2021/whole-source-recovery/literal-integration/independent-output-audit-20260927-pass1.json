@@ -1,0 +1,1041 @@
+{
+  "status": "failed_metadata_no_installation_approval",
+  "reviewer": "rohru_finish",
+  "seed": 20260927191,
+  "manifest_sha256": "b1c184adec73bf750d4c95aa473f40ebdfcf41e79f80c996074a3e5d2d656925",
+  "source_pdf_sha256": "a6541e0d2397849ce7c36961b3849f3b2c1f1c267036cfa1a3f6025796e14e7d",
+  "selection_sha256": "898e73e86459e49efea9672192754469a9a3dd430cbb21f7e6282b89f7aa1b58",
+  "frozen_manifest": {
+    "status": "ready_for_independent_review_not_installation_approved",
+    "rows": {
+      "wordlist": 1437,
+      "narrative": 210,
+      "comparative": 18,
+      "total": 1665
+    },
+    "audit_units": 2119,
+    "legacy_key_reconciliation": {
+      "active": 1437,
+      "proposed_alias": 1,
+      "total_accounted": 1438
+    },
+    "outputs_sha256": {
+      "bibliography-update-proposal.json": "fb8535ac6393609516a3f22a1f13ca861be5da27e8c50b3f5a31b5acd2f2cc59",
+      "metadata-validation.json": "f3d5a1219a9d3dc1487e48f6ce4a4db82ced730db0f7d9ae30b2c627e39f3d34",
+      "parser-validation.json": "c0e674c3a17578374f211ef07419a476d3fa73b5db20c484ad19837babd2b158",
+      "proposal-summary.json": "67ad927a9e39b5c4f9e368bc9ef19b0640e6b327ba0dbbb83dd1dd09e84f2c55",
+      "proposed-comparative.csv": "3c01698e63111d1b778cab20f00383861c417f2cc4483965debbfe6aea4570be",
+      "proposed-comparative.yaml": "690a0c0468e77966b41484d881b48f69d6c6220a5d656a8ddcef8201972390b2",
+      "proposed-entry-key-aliases.json": "be65174b6f138f6d0bf41106845439e62fc7656d6367d57bf2eae60753eb9b40",
+      "proposed-narrative.csv": "c73b7c6de0aec5e067b13a2f3e2fa2bbbde925b12c7bcdb7579232e36b1c1bbb",
+      "proposed-narrative.yaml": "6815aadfc5ef5370d1f9861e9b7edb9ebca9053e6b4ee739dee759ba96e2bd61",
+      "proposed-sil-koya-comparative.txt": "de9320f424d972063046552dbf2785002b90b7acd0623fea661bc178aa693c0a",
+      "proposed-sil-koya-literal.txt": "a5860f6c9ab25696dc881f2cd6e30a12c58fc76ce37b06aa2e2979719bf53267",
+      "proposed-sil-koya-narrative.txt": "c91ab89a34fec4e3648254811b552da5c523e23dcab6312017c105a1abd9fcba",
+      "proposed-whole-audit.jsonl": "ad7af4e58035238d3bda321fddf4e7888b87085f8bbbb416a8187716592076d8",
+      "proposed-wordlist-audit.jsonl": "a53c77cc37848e0439dd387e2d00e99560d93645945f5c14871c7a5384feea61",
+      "proposed-wordlist.csv": "85ddc2cdc190048313a62fc4b2f1c6f9443e1bede84101261b0403df7f815724",
+      "proposed-wordlist.yaml": "c383e80e6bb53084f16ba12f26bfa68b35060c605279ede6e9d40df6fc90854c"
+    },
+    "inputs_sha256": {
+      "notation-keyed-proposal-20260927.jsonl": "0196472194191423f9a7b51d257f86fa4201861555a2e28b88461c2a72f55222",
+      "notation-literal-pages-20260927.json": "ee8cdad69d042129545b8e1d2d0490b086e508194453dc5e3f2732e9508f28e6",
+      "notation-narrow-adjudications-20260927.json": "97b56f5ecedaaa6d4e92606d9269424d3a74886d0ef1579ead50a8155cccdb5b",
+      "notation-iota-encoding-review-20260927.json": "817562466491838c5104f356dd44912dda57cb68e4f0fdbe73cba0430d04da50",
+      "notation-question-shaped-sign-census-20260927.json": "3f966403b73e4032066c442589123d10ebef464aee352943df2016469530c291",
+      "notation-validation-20260927.json": "0793b2f70ef605d47089e18c67e2889e37d70c81bd9d546ae9be34bcb42125d0",
+      "report-census-first-reading-20260927.json": "5f4c02ab1b1570ac2eb06565ece4e0df646ead73042203f3a727e598b0ae4ccf",
+      "narrative-scope-review-20260927.json": "6fde5243c3f92563f4a7d589abe7bd5514e9f5e6bd1aff0a8bebfef832287949",
+      "original-page-review-20260927.json": "1c8938edee99b0f98bc1e68e3380b8b348b7fa4f5d18edc5b3e5804189af4883",
+      "whole-output-freeze-20260927.json": "42df94b977a55ab6cd2504408f8fa11191bfdd7ac8fb197fd255ce454dd39103",
+      "independent-whole-output-audit-20260927.json": "b3e7199f30a54eb6f85d998d7deca907bd68f083f4827aab723f3e1a94d9f004"
+    },
+    "scripts_sha256": {
+      "prepare_notation_review.py": "85c703d9303d2f4c6bf7de3107bbb8fc8eeb9d9debbd52ffdf9562525e70bf9a",
+      "validate_notation_review.py": "202606f44ccb11721b0ab672d3dada5fe66279baa60a56a01c191a1273a3df5b",
+      "prepare_literal_integration.py": "4dc10745b849ca26a71aa0f4bfba6e055a63a56f3251182842369977e844e3a2",
+      "validate_literal_integration.py": "3aa7eb33b6f84c021f2507ae5ff5fa520662aba48c5527a153331b1e8423a08e",
+      "validate_literal_metadata.py": "ba913ffdc92d7ce0b9f7af64f3b6f5b7bc78b0d74fddcefe6eb8ffbe95789fff",
+      "prepare_literal_manifest.py": "ad440f0129a61febffc5e135aebbc6bbcd3391a50bdb581114b2537c7338a992"
+    },
+    "canonical_modified": false,
+    "historical_failed_freeze_unchanged": true,
+    "required_next": "Root independently reviews actual emitted rows, source notation and proposed alias; installation remains unauthorized pending that review."
+  },
+  "sampled_units": 20,
+  "sampled_rows": 20,
+  "literal_errors": 0,
+  "material_error_units": 10,
+  "material_error_classes": [
+    "Narrative scope classification omitted by integration",
+    "Source-explicit numeral/interrogative classification omitted from sampled wordlist rows"
+  ],
+  "method": "Independent original-PDF visual review: full pages100,91,90,99,87,98,89,108,104,88,31,23,29,25,11,12 at2x; narrow handwriting crops PDF108(247,174,307,195) and104(248,590,294,615) at8x; alias PDF101(175,520,280,615) at6x; stutter PDF35 at2x. Compared exact emitted forms/glosses/Notes/Tags/lect/citations/links, not only first-reading agreement. One overwritten local image.",
+  "per_unit": [
+    {
+      "sample_number": 1,
+      "source_unit_key": "wordlist:BHM:166",
+      "stratum": "wordlist",
+      "pdf_page": 100,
+      "printed_page": 95,
+      "actual_rows": [
+        [
+          "Gondi",
+          "",
+          "bʰat̪e",
+          "what?",
+          "",
+          "",
+          "",
+          "devagnanavaram-et-al2021koya[Appendix E, printed p. 95, item 166, Bhamani Madia]",
+          "",
+          "",
+          "silkoya1985:bhm:i166:v1",
+          "",
+          "",
+          "",
+          "dialect:Gondi:sil-koya-1985-bhamani-madia:Bhamani%20Madia"
+        ]
+      ],
+      "literal_form": "pass",
+      "gloss_and_boundary": "pass",
+      "lect_and_citation": "pass",
+      "notes_and_uncertainty": "pass",
+      "graph": "pass: no unsupported links in sampled rows",
+      "status": "failed_metadata",
+      "findings": [
+        {
+          "category": "grammatical-metadata",
+          "missing_tags": [
+            "interr"
+          ],
+          "reason": "Printed what?/who? prompts explicitly identify interrogative function; only dialect is exported."
+        }
+      ]
+    },
+    {
+      "sample_number": 2,
+      "source_unit_key": "wordlist:JAG:188",
+      "stratum": "wordlist",
+      "pdf_page": 91,
+      "printed_page": 86,
+      "actual_rows": [
+        [
+          "Gondi",
+          "",
+          "pat·a",
+          "lie down",
+          "",
+          "",
+          "",
+          "devagnanavaram-et-al2021koya[Appendix E, printed p. 86, item 188, Jaganathapuram Koya]",
+          "",
+          "",
+          "silkoya1985:jag:i188:v1",
+          "",
+          "",
+          "",
+          "dialect:Gondi:sil-koya-1985-jaganathapuram:Jaganathapuram%20Koya"
+        ]
+      ],
+      "literal_form": "pass",
+      "gloss_and_boundary": "pass",
+      "lect_and_citation": "pass",
+      "notes_and_uncertainty": "pass",
+      "graph": "pass: no unsupported links in sampled rows",
+      "status": "passed",
+      "findings": []
+    },
+    {
+      "sample_number": 3,
+      "source_unit_key": "wordlist:JAG:165",
+      "stratum": "wordlist",
+      "pdf_page": 90,
+      "printed_page": 85,
+      "actual_rows": [
+        [
+          "Gondi",
+          "",
+          "bano",
+          "who?",
+          "",
+          "",
+          "",
+          "devagnanavaram-et-al2021koya[Appendix E, printed p. 85, item 165, Jaganathapuram Koya]",
+          "",
+          "",
+          "silkoya1985:jag:i165:v1",
+          "",
+          "",
+          "",
+          "dialect:Gondi:sil-koya-1985-jaganathapuram:Jaganathapuram%20Koya"
+        ]
+      ],
+      "literal_form": "pass",
+      "gloss_and_boundary": "pass",
+      "lect_and_citation": "pass",
+      "notes_and_uncertainty": "pass",
+      "graph": "pass: no unsupported links in sampled rows",
+      "status": "failed_metadata",
+      "findings": [
+        {
+          "category": "grammatical-metadata",
+          "missing_tags": [
+            "interr"
+          ],
+          "reason": "Printed what?/who? prompts explicitly identify interrogative function; only dialect is exported."
+        }
+      ]
+    },
+    {
+      "sample_number": 4,
+      "source_unit_key": "wordlist:UTN:144",
+      "stratum": "wordlist",
+      "pdf_page": 99,
+      "printed_page": 94,
+      "actual_rows": [
+        [
+          "Gondi",
+          "",
+          "dʒa:dtʔ",
+          "heavy",
+          "",
+          "",
+          "Source handwriting/notation uncertainty: question shaped sign interpretation. The question-shaped sign is retained; phonetic notation versus collector doubt is unresolved.",
+          "devagnanavaram-et-al2021koya[Appendix E, printed p. 94, item 144, Utnoor Gondi]",
+          "",
+          "",
+          "silkoya1985:utn:i144:v1",
+          "",
+          "",
+          "",
+          "dialect:Gondi:sil-koya-1985-utnoor:Utnoor%20Gondi uncertain"
+        ]
+      ],
+      "literal_form": "pass",
+      "gloss_and_boundary": "pass",
+      "lect_and_citation": "pass",
+      "notes_and_uncertainty": "pass",
+      "graph": "pass: no unsupported links in sampled rows",
+      "status": "passed",
+      "findings": []
+    },
+    {
+      "sample_number": 5,
+      "source_unit_key": "wordlist:CHI:107",
+      "stratum": "wordlist",
+      "pdf_page": 87,
+      "printed_page": 82,
+      "actual_rows": [
+        [
+          "Gondi",
+          "",
+          "dʰada",
+          "older brother",
+          "",
+          "",
+          "",
+          "devagnanavaram-et-al2021koya[Appendix E, printed p. 82, item 107, Chintoor Koya]",
+          "",
+          "",
+          "silkoya1985:chi:i107:v1",
+          "",
+          "",
+          "",
+          "dialect:Gondi:sil-koya-1985-chintoor:Chintoor%20Koya"
+        ]
+      ],
+      "literal_form": "pass",
+      "gloss_and_boundary": "pass",
+      "lect_and_citation": "pass",
+      "notes_and_uncertainty": "pass",
+      "graph": "pass: no unsupported links in sampled rows",
+      "status": "passed",
+      "findings": []
+    },
+    {
+      "sample_number": 6,
+      "source_unit_key": "wordlist:CHI:199",
+      "stratum": "wordlist",
+      "pdf_page": 91,
+      "printed_page": 86,
+      "actual_rows": [
+        [
+          "Gondi",
+          "",
+          "t̪iɾi·a",
+          "speak",
+          "",
+          "",
+          "",
+          "devagnanavaram-et-al2021koya[Appendix E, printed p. 86, item 199, Chintoor Koya]",
+          "",
+          "",
+          "silkoya1985:chi:i199:v1",
+          "",
+          "",
+          "",
+          "dialect:Gondi:sil-koya-1985-chintoor:Chintoor%20Koya"
+        ]
+      ],
+      "literal_form": "pass",
+      "gloss_and_boundary": "pass",
+      "lect_and_citation": "pass",
+      "notes_and_uncertainty": "pass",
+      "graph": "pass: no unsupported links in sampled rows",
+      "status": "passed",
+      "findings": []
+    },
+    {
+      "sample_number": 7,
+      "source_unit_key": "wordlist:UTN:126",
+      "stratum": "wordlist",
+      "pdf_page": 98,
+      "printed_page": 93,
+      "actual_rows": [
+        [
+          "Gondi",
+          "",
+          "mahɩnʌ",
+          "month",
+          "",
+          "",
+          "",
+          "devagnanavaram-et-al2021koya[Appendix E, printed p. 93, item 126, Utnoor Gondi]",
+          "",
+          "",
+          "silkoya1985:utn:i126:v1",
+          "",
+          "",
+          "",
+          "dialect:Gondi:sil-koya-1985-utnoor:Utnoor%20Gondi"
+        ]
+      ],
+      "literal_form": "pass",
+      "gloss_and_boundary": "pass",
+      "lect_and_citation": "pass",
+      "notes_and_uncertainty": "pass",
+      "graph": "pass: no unsupported links in sampled rows",
+      "status": "passed",
+      "findings": []
+    },
+    {
+      "sample_number": 8,
+      "source_unit_key": "wordlist:JAG:160",
+      "stratum": "wordlist",
+      "pdf_page": 89,
+      "printed_page": 84,
+      "actual_rows": [
+        [
+          "Gondi",
+          "",
+          "pad̪i",
+          "ten",
+          "",
+          "",
+          "Source handwriting/notation uncertainty: detached right marks.",
+          "devagnanavaram-et-al2021koya[Appendix E, printed p. 84, item 160, Jaganathapuram Koya]",
+          "",
+          "",
+          "silkoya1985:jag:i160:v1",
+          "",
+          "",
+          "",
+          "dialect:Gondi:sil-koya-1985-jaganathapuram:Jaganathapuram%20Koya uncertain"
+        ]
+      ],
+      "literal_form": "pass",
+      "gloss_and_boundary": "pass",
+      "lect_and_citation": "pass",
+      "notes_and_uncertainty": "pass",
+      "graph": "pass: no unsupported links in sampled rows",
+      "status": "failed_metadata",
+      "findings": [
+        {
+          "category": "grammatical-metadata",
+          "missing_tags": [
+            "num"
+          ],
+          "reason": "Printed ten/five prompts explicitly identify numeral responses; exported Tags omit num."
+        }
+      ]
+    },
+    {
+      "sample_number": 9,
+      "source_unit_key": "wordlist:MAL:124",
+      "stratum": "wordlist",
+      "pdf_page": 108,
+      "printed_page": 103,
+      "actual_rows": [
+        [
+          "Gondi",
+          "",
+          "na·du",
+          "tomorrow",
+          "",
+          "",
+          "",
+          "devagnanavaram-et-al2021koya[Appendix E, printed p. 103, item 124, Malakanagiri Koya]",
+          "",
+          "",
+          "silkoya1985:mal:i124:v1",
+          "",
+          "",
+          "",
+          "dialect:Gondi:sil-koya-1985-malakanagiri:Malakanagiri%20Koya"
+        ]
+      ],
+      "literal_form": "pass",
+      "gloss_and_boundary": "pass",
+      "lect_and_citation": "pass",
+      "notes_and_uncertainty": "pass",
+      "graph": "pass: no unsupported links in sampled rows",
+      "status": "passed",
+      "findings": []
+    },
+    {
+      "sample_number": 10,
+      "source_unit_key": "wordlist:CHI:155",
+      "stratum": "wordlist",
+      "pdf_page": 89,
+      "printed_page": 84,
+      "actual_rows": [
+        [
+          "Gondi",
+          "",
+          "id̪u",
+          "five",
+          "",
+          "",
+          "",
+          "devagnanavaram-et-al2021koya[Appendix E, printed p. 84, item 155, Chintoor Koya]",
+          "",
+          "",
+          "silkoya1985:chi:i155:v1",
+          "",
+          "",
+          "",
+          "dialect:Gondi:sil-koya-1985-chintoor:Chintoor%20Koya"
+        ]
+      ],
+      "literal_form": "pass",
+      "gloss_and_boundary": "pass",
+      "lect_and_citation": "pass",
+      "notes_and_uncertainty": "pass",
+      "graph": "pass: no unsupported links in sampled rows",
+      "status": "failed_metadata",
+      "findings": [
+        {
+          "category": "grammatical-metadata",
+          "missing_tags": [
+            "num"
+          ],
+          "reason": "Printed ten/five prompts explicitly identify numeral responses; exported Tags omit num."
+        }
+      ]
+    },
+    {
+      "sample_number": 11,
+      "source_unit_key": "wordlist:MAL:39",
+      "stratum": "wordlist",
+      "pdf_page": 104,
+      "printed_page": 99,
+      "actual_rows": [
+        [
+          "Gondi",
+          "",
+          "tʃile",
+          "cloth",
+          "",
+          "",
+          "",
+          "devagnanavaram-et-al2021koya[Appendix E, printed p. 99, item 39, Malakanagiri Koya]",
+          "",
+          "",
+          "silkoya1985:mal:i039:v1",
+          "",
+          "",
+          "",
+          "dialect:Gondi:sil-koya-1985-malakanagiri:Malakanagiri%20Koya"
+        ]
+      ],
+      "literal_form": "pass",
+      "gloss_and_boundary": "pass",
+      "lect_and_citation": "pass",
+      "notes_and_uncertainty": "pass",
+      "graph": "pass: no unsupported links in sampled rows",
+      "status": "passed",
+      "findings": []
+    },
+    {
+      "sample_number": 12,
+      "source_unit_key": "wordlist:CHI:127",
+      "stratum": "wordlist",
+      "pdf_page": 88,
+      "printed_page": 83,
+      "actual_rows": [
+        [
+          "Gondi",
+          "",
+          "tʃamusaram",
+          "year",
+          "",
+          "",
+          "",
+          "devagnanavaram-et-al2021koya[Appendix E, printed p. 83, item 127, Chintoor Koya]",
+          "",
+          "",
+          "silkoya1985:chi:i127:v1",
+          "",
+          "",
+          "",
+          "dialect:Gondi:sil-koya-1985-chintoor:Chintoor%20Koya"
+        ]
+      ],
+      "literal_form": "pass",
+      "gloss_and_boundary": "pass",
+      "lect_and_citation": "pass",
+      "notes_and_uncertainty": "pass",
+      "graph": "pass: no unsupported links in sampled rows",
+      "status": "passed",
+      "findings": []
+    },
+    {
+      "sample_number": 13,
+      "source_unit_key": "devagnanavaram2021:whole:B.5:p26:7",
+      "stratum": "narrative",
+      "pdf_page": 31,
+      "printed_page": 26,
+      "actual_rows": [
+        [
+          "Gondi",
+          "",
+          "Unk batta kailta?",
+          "What did he see?",
+          "",
+          "",
+          "Source pairs this printed text segment with a free English translation; no word-level alignment is asserted.",
+          "devagnanavaram-et-al2021koya[Appendix B.5, p. 26, text unit 7]",
+          "",
+          "",
+          "devagnanavaram2021:whole:B.5:p26:7",
+          "",
+          "",
+          "",
+          "dialect:Gondi:sil-koya-1985-podia:Podia%20Koya interr"
+        ]
+      ],
+      "literal_form": "pass",
+      "gloss_and_boundary": "pass",
+      "lect_and_citation": "pass",
+      "notes_and_uncertainty": "pass",
+      "graph": "pass: no unsupported links in sampled rows",
+      "status": "failed_metadata",
+      "findings": [
+        {
+          "category": "grammatical-metadata",
+          "missing_tags": [
+            "sentential"
+          ],
+          "reason": "Original preserves this translated multiword response. Existing frozen narrative-scope-review supplies its source-unit classification, but integration did not export that scope tag. Five sampled units are classified sentential; B.5:p26:9 conservatively remains multiword-expression despite a complete English translation.",
+          "source_scope_decision": {
+            "source_unit_key": "devagnanavaram2021:whole:B.5:p26:7",
+            "original": "Unk batta kailta?",
+            "source_translation": "What did he see?",
+            "scope_tag": "sentential",
+            "retain_interr": true,
+            "reason": "Printed target segment and paired translation represent a complete question, sentence, or sequence of sentences.",
+            "reviewer": "root"
+          }
+        }
+      ]
+    },
+    {
+      "sample_number": 14,
+      "source_unit_key": "devagnanavaram2021:whole:B.1:p18:9",
+      "stratum": "narrative",
+      "pdf_page": 23,
+      "printed_page": 18,
+      "actual_rows": [
+        [
+          "Gondi",
+          "",
+          "Kursu batal kita?",
+          "What did the deer do?",
+          "",
+          "",
+          "Source pairs this printed text segment with a free English translation; no word-level alignment is asserted.",
+          "devagnanavaram-et-al2021koya[Appendix B.1, p. 18, text unit 9]",
+          "",
+          "",
+          "devagnanavaram2021:whole:B.1:p18:9",
+          "",
+          "",
+          "",
+          "dialect:Gondi:sil-koya-1985-utnoor:Utnoor%20Gondi interr"
+        ]
+      ],
+      "literal_form": "pass",
+      "gloss_and_boundary": "pass",
+      "lect_and_citation": "pass",
+      "notes_and_uncertainty": "pass",
+      "graph": "pass: no unsupported links in sampled rows",
+      "status": "failed_metadata",
+      "findings": [
+        {
+          "category": "grammatical-metadata",
+          "missing_tags": [
+            "sentential"
+          ],
+          "reason": "Original preserves this translated multiword response. Existing frozen narrative-scope-review supplies its source-unit classification, but integration did not export that scope tag. Five sampled units are classified sentential; B.5:p26:9 conservatively remains multiword-expression despite a complete English translation.",
+          "source_scope_decision": {
+            "source_unit_key": "devagnanavaram2021:whole:B.1:p18:9",
+            "original": "Kursu batal kita?",
+            "source_translation": "What did the deer do?",
+            "scope_tag": "sentential",
+            "retain_interr": true,
+            "reason": "Printed target segment and paired translation represent a complete question, sentence, or sequence of sentences.",
+            "reviewer": "root"
+          }
+        }
+      ]
+    },
+    {
+      "sample_number": 15,
+      "source_unit_key": "devagnanavaram2021:whole:B.5:p26:6",
+      "stratum": "narrative",
+      "pdf_page": 31,
+      "printed_page": 26,
+      "actual_rows": [
+        [
+          "Gondi",
+          "",
+          "Imetka aamettka metka metka kawdasa mattaske eduju dorsta.",
+          "When I missed the way, I looked here and there and saw a bear.",
+          "",
+          "",
+          "Source pairs this printed text segment with a free English translation; no word-level alignment is asserted.",
+          "devagnanavaram-et-al2021koya[Appendix B.5, p. 26, text unit 6]",
+          "",
+          "",
+          "devagnanavaram2021:whole:B.5:p26:6",
+          "",
+          "",
+          "",
+          "dialect:Gondi:sil-koya-1985-podia:Podia%20Koya"
+        ]
+      ],
+      "literal_form": "pass",
+      "gloss_and_boundary": "pass",
+      "lect_and_citation": "pass",
+      "notes_and_uncertainty": "pass",
+      "graph": "pass: no unsupported links in sampled rows",
+      "status": "failed_metadata",
+      "findings": [
+        {
+          "category": "grammatical-metadata",
+          "missing_tags": [
+            "sentential"
+          ],
+          "reason": "Original preserves this translated multiword response. Existing frozen narrative-scope-review supplies its source-unit classification, but integration did not export that scope tag. Five sampled units are classified sentential; B.5:p26:9 conservatively remains multiword-expression despite a complete English translation.",
+          "source_scope_decision": {
+            "source_unit_key": "devagnanavaram2021:whole:B.5:p26:6",
+            "original": "Imetka aamettka metka metka kawdasa mattaske eduju dorsta.",
+            "source_translation": "When I missed the way, I looked here and there and saw a bear.",
+            "scope_tag": "sentential",
+            "retain_interr": false,
+            "reason": "Printed target segment and paired translation represent a complete question, sentence, or sequence of sentences.",
+            "reviewer": "root"
+          }
+        }
+      ]
+    },
+    {
+      "sample_number": 16,
+      "source_unit_key": "devagnanavaram2021:whole:B.5:p26:9",
+      "stratum": "narrative",
+      "pdf_page": 31,
+      "printed_page": 26,
+      "actual_rows": [
+        [
+          "Gondi",
+          "",
+          "kudi goiso goiso mirta.",
+          "It slowly ran away.",
+          "",
+          "",
+          "Source pairs this printed text segment with a free English translation; no word-level alignment is asserted.",
+          "devagnanavaram-et-al2021koya[Appendix B.5, p. 26, text unit 9]",
+          "",
+          "",
+          "devagnanavaram2021:whole:B.5:p26:9",
+          "",
+          "",
+          "",
+          "dialect:Gondi:sil-koya-1985-podia:Podia%20Koya"
+        ]
+      ],
+      "literal_form": "pass",
+      "gloss_and_boundary": "pass",
+      "lect_and_citation": "pass",
+      "notes_and_uncertainty": "pass",
+      "graph": "pass: no unsupported links in sampled rows",
+      "status": "failed_metadata",
+      "findings": [
+        {
+          "category": "grammatical-metadata",
+          "missing_tags": [
+            "multiword-expression"
+          ],
+          "reason": "Original preserves this translated multiword response. Existing frozen narrative-scope-review supplies its source-unit classification, but integration did not export that scope tag. Five sampled units are classified sentential; B.5:p26:9 conservatively remains multiword-expression despite a complete English translation.",
+          "source_scope_decision": {
+            "source_unit_key": "devagnanavaram2021:whole:B.5:p26:9",
+            "original": "kudi goiso goiso mirta.",
+            "source_translation": "It slowly ran away.",
+            "scope_tag": "multiword-expression",
+            "retain_interr": false,
+            "reason": "Printed segment has a clipped boundary or continues a neighboring segment; may also contain complete clauses. No standalone-sentence claim.",
+            "reviewer": "root"
+          }
+        }
+      ]
+    },
+    {
+      "sample_number": 17,
+      "source_unit_key": "devagnanavaram2021:whole:B.4:p24:15",
+      "stratum": "narrative",
+      "pdf_page": 29,
+      "printed_page": 24,
+      "actual_rows": [
+        [
+          "Gondi",
+          "",
+          "Nage diggo matan goron waston goro wastonke.",
+          "I was still there and I shot a jungle goat with an arrow.",
+          "",
+          "",
+          "Source pairs this printed text segment with a free English translation; no word-level alignment is asserted.",
+          "devagnanavaram-et-al2021koya[Appendix B.4, p. 24, text unit 15]",
+          "",
+          "",
+          "devagnanavaram2021:whole:B.4:p24:15",
+          "",
+          "",
+          "",
+          "dialect:Gondi:sil-koya-1985-malakanagiri:Malakanagiri%20Koya"
+        ]
+      ],
+      "literal_form": "pass",
+      "gloss_and_boundary": "pass",
+      "lect_and_citation": "pass",
+      "notes_and_uncertainty": "pass",
+      "graph": "pass: no unsupported links in sampled rows",
+      "status": "failed_metadata",
+      "findings": [
+        {
+          "category": "grammatical-metadata",
+          "missing_tags": [
+            "sentential"
+          ],
+          "reason": "Original preserves this translated multiword response. Existing frozen narrative-scope-review supplies its source-unit classification, but integration did not export that scope tag. Five sampled units are classified sentential; B.5:p26:9 conservatively remains multiword-expression despite a complete English translation.",
+          "source_scope_decision": {
+            "source_unit_key": "devagnanavaram2021:whole:B.4:p24:15",
+            "original": "Nage diggo matan goron waston goro wastonke.",
+            "source_translation": "I was still there and I shot a jungle goat with an arrow.",
+            "scope_tag": "sentential",
+            "retain_interr": false,
+            "reason": "Printed target segment and paired translation represent a complete question, sentence, or sequence of sentences.",
+            "reviewer": "root"
+          }
+        }
+      ]
+    },
+    {
+      "sample_number": 18,
+      "source_unit_key": "devagnanavaram2021:whole:B.2:p20:8",
+      "stratum": "narrative",
+      "pdf_page": 25,
+      "printed_page": 20,
+      "actual_rows": [
+        [
+          "Gondi",
+          "",
+          "Aske battal teri shikar putte aske momote shikar kishi tanjor mattom. Chine undi honeke dayneke ma dante dante undi adju putta.",
+          "On the way, they were thinking that if anything comes they would hunt it. As they were going, one bear appeared.",
+          "",
+          "",
+          "Source pairs this printed text segment with a free English translation; no word-level alignment is asserted.",
+          "devagnanavaram-et-al2021koya[Appendix B.2, p. 20, text unit 8]",
+          "",
+          "",
+          "devagnanavaram2021:whole:B.2:p20:8",
+          "",
+          "",
+          "",
+          "dialect:Gondi:sil-koya-1985-bhamani-gondi:Bhamani%20Gondi"
+        ]
+      ],
+      "literal_form": "pass",
+      "gloss_and_boundary": "pass",
+      "lect_and_citation": "pass",
+      "notes_and_uncertainty": "pass",
+      "graph": "pass: no unsupported links in sampled rows",
+      "status": "failed_metadata",
+      "findings": [
+        {
+          "category": "grammatical-metadata",
+          "missing_tags": [
+            "sentential"
+          ],
+          "reason": "Original preserves this translated multiword response. Existing frozen narrative-scope-review supplies its source-unit classification, but integration did not export that scope tag. Five sampled units are classified sentential; B.5:p26:9 conservatively remains multiword-expression despite a complete English translation.",
+          "source_scope_decision": {
+            "source_unit_key": "devagnanavaram2021:whole:B.2:p20:8",
+            "original": "Aske battal teri shikar putte aske momote shikar kishi tanjor mattom. Chine undi honeke dayneke ma dante dante undi adju putta.",
+            "source_translation": "On the way, they were thinking that if anything comes they would hunt it. As they were going, one bear appeared.",
+            "scope_tag": "sentential",
+            "retain_interr": false,
+            "reason": "Printed target segment and paired translation represent a complete question, sentence, or sequence of sentences.",
+            "reviewer": "root"
+          }
+        }
+      ]
+    },
+    {
+      "sample_number": 19,
+      "source_unit_key": "devagnanavaram2021:whole:3.1.4:p6:salt:5",
+      "stratum": "comparative",
+      "pdf_page": 11,
+      "printed_page": 6,
+      "actual_rows": [
+        [
+          "Gondi",
+          "",
+          "ovar",
+          "salt",
+          "",
+          "",
+          "Source compares dialect sound correspondences; no etymological relationship is asserted.",
+          "devagnanavaram-et-al2021koya[section 3.1.4, p. 6, salt]",
+          "",
+          "",
+          "devagnanavaram2021:whole:3.1.4:p6:salt:5",
+          "",
+          "",
+          "",
+          "dialect:Gondi:sil-koya-1985-podia:Podia%20Koya"
+        ]
+      ],
+      "literal_form": "pass",
+      "gloss_and_boundary": "pass",
+      "lect_and_citation": "pass",
+      "notes_and_uncertainty": "pass",
+      "graph": "pass: no unsupported links in sampled rows",
+      "status": "passed",
+      "findings": []
+    },
+    {
+      "sample_number": 20,
+      "source_unit_key": "devagnanavaram2021:whole:3.1.4:p7:six:5",
+      "stratum": "comparative",
+      "pdf_page": 12,
+      "printed_page": 7,
+      "actual_rows": [
+        [
+          "Gondi",
+          "",
+          "aru",
+          "six",
+          "",
+          "",
+          "Source compares dialect sound correspondences; no etymological relationship is asserted.",
+          "devagnanavaram-et-al2021koya[section 3.1.4, p. 7, six]",
+          "",
+          "",
+          "devagnanavaram2021:whole:3.1.4:p7:six:5",
+          "",
+          "",
+          "",
+          "dialect:Gondi:sil-koya-1985-malakanagiri:Malakanagiri%20Koya num"
+        ]
+      ],
+      "literal_form": "pass",
+      "gloss_and_boundary": "pass",
+      "lect_and_citation": "pass",
+      "notes_and_uncertainty": "pass",
+      "graph": "pass: no unsupported links in sampled rows",
+      "status": "passed",
+      "findings": []
+    }
+  ],
+  "targeted_edges": [
+    {
+      "entry_key": "silkoya1985:utn:i198:v1",
+      "actual_row": [
+        "Gondi",
+        "",
+        "va:val",
+        "come",
+        "",
+        "",
+        "",
+        "devagnanavaram-et-al2021koya[Appendix E, printed p. 96, item 198, Utnoor Gondi]",
+        "",
+        "",
+        "silkoya1985:utn:i198:v1",
+        "",
+        "",
+        "",
+        "dialect:Gondi:sil-koya-1985-utnoor:Utnoor%20Gondi"
+      ],
+      "finding": "Original PDF101 clip175,520,280,615 at6x shows one continuous va:val, two-dot colon, no slash; proposed v2→v1 entry-key alias is source-supported. This is not a claim that old v2 has an independent persistent ID.",
+      "status": "pass"
+    },
+    {
+      "entry_key": "silkoya1985:chi:i105:v1",
+      "actual_row": [
+        "Gondi",
+        "",
+        "ia",
+        "father",
+        "",
+        "",
+        "",
+        "devagnanavaram-et-al2021koya[Appendix E, printed p. 82, item 105, Chintoor Koya]",
+        "",
+        "",
+        "silkoya1985:chi:i105:v1",
+        "",
+        "",
+        "",
+        "dialect:Gondi:sil-koya-1985-chintoor:Chintoor%20Koya"
+      ],
+      "finding": "Original PDF87 shows father ia/t̪ap·e; slash alternatives correctly emit two rows.",
+      "status": "pass"
+    },
+    {
+      "entry_key": "silkoya1985:chi:i105:v2",
+      "actual_row": [
+        "Gondi",
+        "",
+        "t̪ap·e",
+        "father",
+        "",
+        "",
+        "",
+        "devagnanavaram-et-al2021koya[Appendix E, printed p. 82, item 105, Chintoor Koya]",
+        "",
+        "",
+        "silkoya1985:chi:i105:v2",
+        "silkoya1985:chi:i105:v1",
+        "",
+        "",
+        "dialect:Gondi:sil-koya-1985-chintoor:Chintoor%20Koya"
+      ],
+      "finding": "Second slash alternative t̪ap·e correctly links to the first same-source father answer via Variant_Of.",
+      "status": "pass"
+    },
+    {
+      "entry_key": "devagnanavaram2021:whole:B.2:p20:parsi-definition",
+      "actual_row": [
+        "Gondi",
+        "",
+        "parsi",
+        "an axe-like tool",
+        "",
+        "",
+        "",
+        "devagnanavaram-et-al2021koya[Appendix B, p. 20, named term in text]",
+        "",
+        "",
+        "devagnanavaram2021:whole:B.2:p20:parsi-definition",
+        "",
+        "",
+        "",
+        "dialect:Gondi:sil-koya-1985-bhamani-gondi:Bhamani%20Gondi"
+      ],
+      "finding": "Original PDF25 explicitly says parsi (an axe-like tool); independent lexical definition retained.",
+      "status": "pass"
+    },
+    {
+      "entry_key": "devagnanavaram2021:whole:B.4:p24:lanton-context",
+      "actual_row": [
+        "Gondi",
+        "",
+        "lanton",
+        "",
+        "",
+        "",
+        "Source translation: We are going hunting tomorrow so don’t drink ‘lanton’. The source supplies no separate lexical definition.",
+        "devagnanavaram-et-al2021koya[Appendix B, p. 24, named term in text]",
+        "",
+        "",
+        "devagnanavaram2021:whole:B.4:p24:lanton-context",
+        "",
+        "",
+        "",
+        "dialect:Gondi:sil-koya-1985-malakanagiri:Malakanagiri%20Koya"
+      ],
+      "finding": "Original PDF29 leaves lanton without a lexical definition. Blank gloss and exact source translation in Notes are appropriate.",
+      "status": "pass"
+    },
+    {
+      "entry_key": "devagnanavaram2021:whole:B.5:p26:jaw-context",
+      "actual_row": [
+        "Gondi",
+        "",
+        "jaw",
+        "",
+        "",
+        "",
+        "Source translation: My dog and I went hunting. When the sun came down we drank ‘jaw’. The source supplies no separate lexical definition.",
+        "devagnanavaram-et-al2021koya[Appendix B, p. 26, named term in text]",
+        "",
+        "",
+        "devagnanavaram2021:whole:B.5:p26:jaw-context",
+        "",
+        "",
+        "",
+        "dialect:Gondi:sil-koya-1985-podia:Podia%20Koya"
+      ],
+      "finding": "Original PDF31 leaves jaw without a lexical definition. Blank gloss and exact source translation in Notes are appropriate.",
+      "status": "pass"
+    },
+    {
+      "entry_key": "devagnanavaram2021:whole:B.7:p30:5",
+      "actual_row": [
+        "Gondi",
+        "",
+        "Daanini [stutter] jaada uudi malla vassi naaTe kulatin kelto.",
+        "Seeing her footprints, I came and told the village people.",
+        "",
+        "",
+        "Source pairs this printed text segment with a free English translation; no word-level alignment is asserted. Source marks a stutter at the position retained in Original.",
+        "devagnanavaram-et-al2021koya[Appendix B.7, p. 30, text unit 5]",
+        "",
+        "",
+        "devagnanavaram2021:whole:B.7:p30:5",
+        "",
+        "",
+        "",
+        "dialect:Gondi:sil-koya-1985-jaganathapuram:Jaganathapuram%20Koya"
+      ],
+      "finding": "Original PDF35 has [stutter] exactly between Daanini and jaada. Original and Notes preserve its location; audit distinguishes display removal. Same missing sentential/expression metadata class applies outside the random sample.",
+      "status": "literal_scope_pass_metadata_failure"
+    }
+  ],
+  "notation_observations": [
+    "PDF108 tomorrow na·du has one central dot, confirmed8x; literal middle dot is appropriate.",
+    "PDF99 heavy has the question-shaped mark retained with explicit interpretive uncertainty; no phonemic interpretation endorsed.",
+    "PDF89 ten retains detached-right-mark uncertainty; no guessed length added.",
+    "PDF98 month undotted curved i-shaped body supports literal iota encoding.",
+    "PDF104 cloth has extra small ink below i/l; no secure linguistic diacritic identified, no invented interpretation proposed."
+  ],
+  "class_wide_recommendations": [
+    "Wire the already frozen narrative-scope decisions into all205 narrative emissions, distinguishing complete sentences from clipped multiword segments; do not indiscriminately label every segment sentential.",
+    "Review source-explicit numeral and interrogative wordlist prompts across all dialect columns and emit registered grammar tags.",
+    "Preserve all reviewed literals, alias evidence, exact source-boundary/answer audit, typed glyph uncertainties and frozen failed artifacts. Then regenerate a new version and independently review a fresh disjoint sample."
+  ],
+  "canonical_modified": false,
+  "frozen_inputs_unchanged": true,
+  "limitations": "Twenty fresh stratified units plus targeted edges; not a new full1665-row literal rereading or independent durable-ID validation."
+}

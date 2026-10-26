@@ -26,6 +26,14 @@ language decisions and reproducible extraction.
 
 ## How it works
 
+Nair (2013), complete Kani chapter pp. 32–33, adds 36 Kanikkaran source rows with
+all 42 source units/66 printed witnesses accounted for. The source preserves
+doubled-vowel and diacritic notation without inferred IPA. Independent sampling,
+the corrected suffix control, guarded installation and eight focused checks pass;
+full compiled integration remains pending. See the
+[source package](data/other/forms/raw_data/nair_kani_2013/README.md) and
+[handoff checklist](source_checklists/20260927-nair-kani-source-stage.md).
+
 Before doing things, install dependencies in a fresh environment with `pip install -r requirements.txt` (with Python 3.9.12).
 
 To recreate the CLDF database from raw data, just run `make parse` in root. To verify the output is valid CLDF, run `python -m pytest` in root folder.
@@ -66,8 +74,10 @@ validates and combines both files into the compiled sidecar.
 **Raw data is organised under `data/`**. The script `make_cldf.py` builds the CLDF database in `cldf/` from the raw data. Raw data is all stored in CSV in order to be easy to edit and parse.
 
 Run the complete data build with `make all`. It executes `make_cldf.py`, `link_refs.py`,
-`unify_cldf.py`, `assign_form_ids.py`, and finally `align.py`; alignment must use the final unified `Origin_ID` graph so
-borrowings and redirected entries are aligned to the same ancestors displayed by the application.
+`unify_cldf.py`, `assign_form_ids.py`, and finally `align.py` and `sound_changes/derive.py`; alignment must use the final
+unified `Origin_ID` graph so borrowings and redirected entries are aligned to the same ancestors displayed by the
+application. Indo-Aryan forms are not aligned by `align.py`: `derive.py` runs each lect's ordered sound-change chain
+(`sound_changes/`) on the CDIAL headword and writes the resulting rule-labelled alignment and derivation trace.
 
 Attested forms receive persistent opaque IDs in `assign_form_ids.py`. The committed
 `data/form-identities.csv` registry keeps those IDs stable across input reordering, etymological
@@ -985,6 +995,31 @@ conventions: doubled vowels become macrons, with the mora position of the acute 
 CDIAL-style accents (`aá` rising → `ā́`, `áa` falling → `ā̀` — a mapping that merits linguistic
 review), the spacing nasalization tilde becomes the combining tilde, and the affricates map as
 `ċ` → `ʦ`, `č`/`čh` → `c`/`cʰ`, `c̣`/`c̣h` → `ʦ̣`/`ʦ̣ʰ`, `ǰ` → `j`.
+
+#### Iranian family (2026-10-25)
+
+Iranian languages have first-class clades — `Old Iranian`, `Middle Iranian`, `SW Iranian`,
+`NW Iranian`, `E. Iranian` and `Pamir` — mirrored in `../jambu-static/src/lib/clades.ts` and
+`cladeTree.ts` (family `Iranian`; concept reflex rollups count it as Indo-Iranian). A
+Proto-Iranian etymon layer `PIr` holds two independent dictionaries' reconstructions, which are
+deliberately not merged: Cheung's verbal roots and Rastorgueva & Edel'man's ESIJa lemmata. No
+PIr→PIIr or Iranian→CDIAL ancestry is inferred; Sanskrit and IE comparanda are prose. Decisions
+and the batch plan: `source_checklists/20261025-iranic-extension.md`. Base languages follow
+Glottolog language-level languoids (glottolog-cldf v5.2); villages, script corpora (Manichaean,
+Book Pahlavi, Buddhist/Christian Sogdian…) and stages (Old/Young Avestan, Old/Late Khotanese) are
+dialect tags. Old and Middle Iranian forms keep their philological transliteration; modern forms
+convert Iranist consonants to house symbols (`š→ś ž→ź č→c ǰ→j c→ʦ δ→ð ϑ→θ γ→ɣ x̌→χ w→v`).
+
+| Source | Package | Installed | Not installed |
+|---|---|---|---|
+| Cheung, *Etymological Dictionary of the Iranian Verb* (2007) | `raw_data/cheung_ediv_2007/` | 701 PIr roots, 12,960 reflexes in 56 base languages, 3,817 prose blocks | paradigms, non-Iranian comparanda (audit) |
+| Uesugi & Catt, *Old Avestan Dictionary* (2024, CC BY) | `raw_data/uesugi_oad_2024/` | 1,198 lemmata + 164 alternants; 171 root derivations; 1,177 prose blocks | attestations, Part II text (audit) |
+| Kamioka & Yamada, *Lari Basic Vocabulary* (1979) | `raw_data/kamioka_lari_1979/` | 1,946 Lari forms for all 1,000 entries (OCR; unreviewed rows tagged `uncertain`) | 632 example sentences, indexes |
+| Rastorgueva & Edel'man, *ESIJa* vols. 1–3 (2000–2007) | `raw_data/esija_2000/` | 587 PIr lemmata (English glosses are an editorial translation) | reflex citations: deferred, since the Russian-mode OCR garbles Latin forms |
+
+Cheung's PDF uses custom glyph encodings, decoded from the embedded fonts (`glyphs.csv`). ESIJa
+headwords were re-read from crops (Tesseract plus glyph geometry, or manual collation in
+`manual-lemmas.csv`). Each package README records its counts, audit and review items.
 
 #### DBIA
 

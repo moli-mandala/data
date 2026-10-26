@@ -1,0 +1,7 @@
+# Census Tamil Nadu Sholaga residual research — checkpoint 001
+
+The compiled Census Tamil Nadu Sholaga source has **501** records. Earlier pending research owns **62**; this pass assesses the remaining **439** exact source IDs. It proposes **76** DEDR whole-article assignment rows affecting **76** records. Another **363** records have explicit research holds; none remain unexamined. Original source spellings, glosses, locators and record identities are preserved. No older review manifest owns a residual ID.
+
+All 439 residual forms were searched with the homepage `fetchLemmaList` against the read-only local database in thirteen bounded chunks. They returned **1,297** rows, with no capped query. The full text of **68** shortlisted DEDR articles is retained in `primary-evidence.json`. Sixteen current review batches, **Sholaga 013–028**, agree exactly with the pending decisions. Elicitation phrases, uncertain donor paths, source gloss conflicts and forms without securely identified article families remain on explicit hold.
+
+Canonical `make check-pass PY=.venv/bin/python` passed at checkpoint **001**, with **zero** second-application changes. `checkpoint-001-validation.json` independently verifies manifest agreement. Exact source/prior-pass coverage and older-review overlap checks passed. No `save-pass`, accepted sidecar edit, rebuild, commit, push or deployment was performed for this pass.

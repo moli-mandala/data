@@ -1,0 +1,216 @@
+{
+  "seed": 20260927205,
+  "reviewer": "root independent original-page review",
+  "method": "All 20 sampled entries compared visually with original PDF page renders, including source form, gloss, source-explicit grammar, citation and relevant dialect/uncertainty context. Frozen proposal hashes verified before recording.",
+  "freeze": {
+    "status": "Frozen for independent whole-source original-versus-output audit; not installed",
+    "files": {
+      "whole-proposed-author-transcription.csv": "e8e7aed50e774062243a682293d78bc859f5951cc37776548505b84ebbd156c6",
+      "whole-proposed-literal-preservation.csv": "4645f38115177714489d922e4c82544a91598348964029bd059c7061619fe6da",
+      "whole-proposed-audit.jsonl": "4f8207c471e56ba530a1f225b5a17564bdcc60f2670fad0950214ec89b0fa401",
+      "whole-profile-proposed.txt": "0cd4b3396c56fc8183f763b278b606d99ac2e37a858613f119ff494fd3d04b31",
+      "whole-source-graph-decisions.json": "6196c948b3c34ca3dffa68441fb17c082b0e22e6e806579789d02f7fac9f6509",
+      "whole-source-tag-reconciliation-20260927.json": "53077c303520f4466043635abab0972958d92c565776d26d0644b691df0bf7e3",
+      "whole-heading-scope-review-draft.json": "5e230ac5946e170f0b7c3706f1dbcfe06a6225e9c40408b80124584bfb20d212",
+      "whole-heading-repair-report-20260927.json": "47760a2c10d3aa9c4b7b6e9d802476eb26eba58609ad19ad4b12b952fe7762c7",
+      "whole-root-boundary-review-20260927.json": "75939e7162e686dfb5bb5d4c108bea22f46f2927f76a0be89dd9ba56d6ba0b14",
+      "whole-role-repair-report-20260927.json": "eb175d0ce115f8585aebe0e1508973a48a0da14bf6fbcdcbe6168642944ac641",
+      "whole-proposed-author-transcription.yaml": "9f0db31376c113751ac4414bb0f0407d2ed90d489fc73a77492548276106a654",
+      "whole-proposed-literal-preservation.yaml": "e8885165681d783062b8104f5039afbbca81dbf29d47787c5ad0acb4caa2f619"
+    },
+    "counts": {
+      "expanded_source_units": 11304,
+      "emitted_entries": 8391,
+      "author_transcription": 8379,
+      "literal_preservation": 12,
+      "exact_reuse": 2413,
+      "controls": 500,
+      "existing_keys_preserved": 485
+    },
+    "validation": "51 focused tests passed in 4.03 seconds, including actual proposed YAML parsing, all verb-root and inflection roles, isolated marker distinctions, and exact printed root boundaries.",
+    "canonical_changed": false,
+    "deferred": [
+      "Independent original-versus-output audit",
+      "Final metadata/importer installation and canonical validation",
+      "User-authorized full build and browser QA"
+    ],
+    "targeted_review": [
+      "Three literal unresolved slash groups on p376 (root reviewed).",
+      "Two separately translated statements on p343, example16b, with6+3children.",
+      "Literal and idiomatic proverb senses onp190/327/328.",
+      "Eighteen Chapter3 physical attestations reuse historical keys while preserving complete translations and source citations.",
+      "Source-explicit imminent p156, hypothetical p164, frustrative p170, counterfactual distinct.",
+      "Heading repair: adjective p126, agreement suffix p178, full derived ADVZ word p220, explicit clitic p222.",
+      "Fourteen explicit derivation pairs on p138 and pp277–278.",
+      "Appendix 3: all 49 verb roots and 555 verb inflections; 37 restored printed terminal root hyphens, with unmarked p376 pəḍʰə unchanged.",
+      "Comparative personal pronouns p352; adjective versus possessive comparison p145; isolated TAM markers without lexical verb POS."
+    ],
+    "previous_freeze": "whole-freeze-before-role-repair/manifest.json"
+  },
+  "reviewed": 20,
+  "material_errors": 2,
+  "result": "FAIL; systemic repair and fresh disjoint sample required before installation",
+  "checks": [
+    {
+      "sample": 1,
+      "source_unit_key": "dhakal2011:appendix5:PtP.CND.076:word:p449:l50:w1",
+      "printed_page": 449,
+      "original_image": "tmp/darai-root-whole-review/p449.png",
+      "result": "pass",
+      "finding": "p449 PtP.CND.076: abe aligned with now; preserved literal token and text provenance."
+    },
+    {
+      "sample": 2,
+      "source_unit_key": "dhakal2011:appendix5:PtP.CND.051:word:p444:l106:w1",
+      "printed_page": 444,
+      "original_image": "tmp/darai-root-whole-review/p444.png",
+      "result": "pass",
+      "finding": "p444 PtP.CND.051: ucʰi aligned with there; superscript aspiration preserved."
+    },
+    {
+      "sample": 3,
+      "source_unit_key": "dhakal2011:appendix5:DR.CND.006:word:p389:l48:w2",
+      "printed_page": 389,
+      "original_image": "tmp/darai-root-whole-review/p389.png",
+      "result": "material-error",
+      "finding": "p389 DR.CND.006: sit is explicitly COND.PART, a conditional particle. Output incorrectly adds lexical verb POS alongside conditional and part. Remove unsupported verb classification throughout this error class."
+    },
+    {
+      "sample": 4,
+      "source_unit_key": "dhakal2011:p92:ch4:table:l53:a1",
+      "printed_page": 92,
+      "original_image": "tmp/darai-root-whole-review/p92.png",
+      "result": "pass",
+      "finding": "p92 Table4.2: car occupies bare numeral column opposite 4, distinct from classifier expressions; num correct."
+    },
+    {
+      "sample": 5,
+      "source_unit_key": "dhakal2011:p265:ch10:surface:l83",
+      "printed_page": 265,
+      "original_image": "tmp/darai-root-whole-review/p265.png",
+      "result": "pass",
+      "finding": "p265 example45b: complete surface kʰəi babu nihidzə tʰaha and full translation preserved; In.UN.111 exact."
+    },
+    {
+      "sample": 6,
+      "source_unit_key": "dhakal2011:appendix5:In.UN.082:word:p417:l27:w1",
+      "printed_page": 417,
+      "original_image": "tmp/darai-root-whole-review/p417.png",
+      "result": "pass",
+      "finding": "p417 In.UN.082: dəsəĩ aligned with Dashain; nasalization preserved."
+    },
+    {
+      "sample": 7,
+      "source_unit_key": "dhakal2011:p341:ch12:surface:l7",
+      "printed_page": 341,
+      "original_image": "tmp/darai-root-whole-review/p341.png",
+      "result": "pass",
+      "finding": "p341 example13a: surface and full translation preserved, including source unmatched internal quotation; JaH.SLD.052 exact."
+    },
+    {
+      "sample": 8,
+      "source_unit_key": "dhakal2011:p373:appendix3c1:aligned-word:l28",
+      "printed_page": 373,
+      "original_image": "tmp/darai-root-whole-review/p373.png",
+      "result": "pass",
+      "finding": "p373 example5b: de-hali-r / give-PST-1SG-2SG. Source conflicts with he in subject and translation; existing uncertainty and literal analysis correctly preserve conflict without asserting 1SG."
+    },
+    {
+      "sample": 9,
+      "source_unit_key": "dhakal2011:appendix5:In.UN.014:word:p407:l24:w1",
+      "printed_page": 407,
+      "original_image": "tmp/darai-root-whole-review/p407.png",
+      "result": "pass",
+      "finding": "p407 In.UN.014: sun -lə / listen -PST; joined aligned form and pret verb tags correct, surface sunlə retained in Notes."
+    },
+    {
+      "sample": 10,
+      "source_unit_key": "dhakal2011:p214:ch7:surface:l53:word:l55:w2",
+      "printed_page": 214,
+      "original_image": "tmp/darai-root-whole-review/p214.png",
+      "result": "material-error",
+      "finding": "p214 example23c: mor-lə aligned with die-PST. Output leaves die-PST in lexical Gloss and has no pret or verb tags. Material missed interlinear grammatical parsing."
+    },
+    {
+      "sample": 11,
+      "source_unit_key": "dhakal2011:p265:ch10:surface:l68:word:l70:w1",
+      "printed_page": 265,
+      "original_image": "tmp/darai-root-whole-review/p265.png",
+      "result": "pass",
+      "finding": "p265 example45a: dərəi-kə aligned Darai-GEN, lexical gloss Darai and gen tag correct; source citation preserved."
+    },
+    {
+      "sample": 12,
+      "source_unit_key": "dhakal2011:p256:ch10:surface:l61",
+      "printed_page": 256,
+      "original_image": "tmp/darai-root-whole-review/p256.png",
+      "result": "pass",
+      "finding": "p256 example25a: complete ucʰin baṭəi dzoɡi and full translation preserved; KaQ.SLD.026 exact."
+    },
+    {
+      "sample": 13,
+      "source_unit_key": "dhakal2011:p102:ch4:surface:l40",
+      "printed_page": 102,
+      "original_image": "tmp/darai-root-whole-review/p102.png",
+      "result": "pass",
+      "finding": "p102 example46c: ratijə̃ niskələ baɡʰ and complete tiger translation preserved; BF.SLD.203 exact."
+    },
+    {
+      "sample": 14,
+      "source_unit_key": "dhakal2011:p164:ch6:surface:l20:word:l22:w1",
+      "printed_page": 164,
+      "original_image": "tmp/darai-root-whole-review/p164.png",
+      "result": "pass",
+      "finding": "p164 example37d: ərkə aligned with next, no unsupported conditional scope propagated from adjacent verb."
+    },
+    {
+      "sample": 15,
+      "source_unit_key": "dhakal2011:appendix5:PtP.CND.051:word:p444:l108:w1",
+      "printed_page": 444,
+      "original_image": "tmp/darai-root-whole-review/p444.png",
+      "result": "pass",
+      "finding": "p444 PtP.CND.051: bos -te / sit -SIM; source surface boste and simultaneous-converb verb analysis preserved."
+    },
+    {
+      "sample": 16,
+      "source_unit_key": "dhakal2011:p30:ch12:l126:a1",
+      "printed_page": 30,
+      "original_image": "tmp/darai-root-whole-review/p30.png",
+      "result": "pass",
+      "finding": "p30 example12: nai occurs under Tanahun opposite not; correct regional assignment and neg tag."
+    },
+    {
+      "sample": 17,
+      "source_unit_key": "dhakal2011:p190:ch6:surface:l4:word:l9:w1",
+      "printed_page": 190,
+      "original_image": "tmp/darai-root-whole-review/p190.png",
+      "result": "pass",
+      "finding": "p190 example70c: bhat explicitly unaspirated in source and aligned rice; source spelling preserved rather than harmonized."
+    },
+    {
+      "sample": 18,
+      "source_unit_key": "dhakal2011:p374:appendix3c2:l39",
+      "printed_page": 374,
+      "original_image": "tmp/darai-root-whole-review/p374.png",
+      "result": "pass",
+      "finding": "p374 Appendix3c2: mar-hal-mi-r(s), subject1SG/object2SG/PST. Sample is r alternative; grammatical roles kept separate and pret verb correct. Parenthetic alternative decision preserved in audit."
+    },
+    {
+      "sample": 19,
+      "source_unit_key": "dhakal2011:p377:appendix3e:l38",
+      "printed_page": 377,
+      "original_image": "tmp/darai-root-whole-review/p377.png",
+      "result": "pass",
+      "finding": "p377 Appendix3e: həkʰə-səb in NOM/ERG 3PL column of COP.NPST; source argument/agreement role preserved in Notes, copula non-past verb correct."
+    },
+    {
+      "sample": 20,
+      "source_unit_key": "dhakal2011:appendix5:JaH.SLD.037:word:p429:l61:w1",
+      "printed_page": 429,
+      "original_image": "tmp/darai-root-whole-review/p429.png",
+      "result": "pass",
+      "finding": "p429 JaH.SLD.037: sãdzʰə aligned evening; nasal vowel and aspiration preserved."
+    }
+  ],
+  "scope_limit": "This sampled audit does not establish full-build, compiled identity/graph, or browser completion."
+}

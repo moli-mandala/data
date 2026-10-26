@@ -1,0 +1,11 @@
+# Tamil LSI 1928 residual records — research review
+
+**Pending review. No new assignments have been saved. No rebuild has been run.**
+
+All **148 residual records** have an initial research disposition: **72 proposed records**, producing **84 assignment rows**, and **76 research holds**. Zero residual records remain unexamined. Ordinary plural and case inflection remains with its lexical family; complete subject–predicate clauses are held pending analysis of all their parts.
+
+New pending batches: [052](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Tamil/batch-052-review.md), [053](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Tamil/batch-053-review.md), [054](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Tamil/batch-054-review.md), [055](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Tamil/batch-055-review.md), [056](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Tamil/batch-056-review.md), [057](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Tamil/batch-057-review.md), [058](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Tamil/batch-058-review.md), [059](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Tamil/batch-059-review.md), [060](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Tamil/batch-060-review.md), [061](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Tamil/batch-061-review.md), [062](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Tamil/batch-062-review.md).
+
+The [exact-form homepage search](discovery-001-035-results.json) covered all five request chunks using the existing Jambu query code. The [cached full DEDR articles](primary-evidence.json), [draft decisions](proposed-decisions.json), [holds](research-holds.json), and [exact residual coverage](record-coverage-001.json) preserve the research basis.
+
+Ambiguous source spellings and contact forms with unresolved immediate donors remain held. DEDR entries are whole articles: a survey reflex may occur within an article whose displayed head differs. Existing source records, dictionary heads, and accepted sidecars remain unchanged.

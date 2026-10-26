@@ -1,0 +1,13 @@
+# Nimadi: survey etymology review, batch 109
+
+**Saved under the autonomous-work authorization of 2026-09-21.** 3 proposals; exact IDs and source attestations are in the [manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Nimadi/batch-109.json).
+
+| # | Language form and meaning | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **sūji** ‘needle’ | Reflex of **sūcī́**; [CDIAL 13551,1](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=781);[Platts s.v. sūjī, needle](https://www.rekhta.org/urdudictionary?keyword=suujii) | Platts explicitly distinguishes sūjī “needle, small awl”, from sūcikā, from the semolina and tailor homonyms. CDIAL 13551,1 includes sūcikā in its needle head as well as the contracted sūī family. The survey j/z forms therefore belong to this needle family, with the voiced medial consonant retained in the analysis. Regional learned or vernacular transfer remains unresolved; the link does not treat j as an arbitrary spelling of zero. (1 records.) |
+| 2 | **dīn** ‘sun’ | Reflex of **dina**; [CDIAL 6328](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=362);varkey-vunnamatla2018bareli[Appendix C.3, printed p. 118, item 117, Nimadi-Khargone] | CDIAL dina supplies regional din “day, daytime”. The same surveyed language independently attests dīn “day” (f_5npxj74btxmzy), supporting the local day/sun polysemy rather than choosing a remote sun root by sound alone. The source’s sun gloss, vowel length and dental/retroflex spelling are retained. This identifies the day-word family and leaves possible intra-Indo-Aryan transmission open. (3 records.) |
+| 3 | **din** ‘sun’ | Reflex of **dina**; [CDIAL 6328](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=362);vunnamatla-john-samuvel2012nimadi[Appendix A, printed p. 80, item 117, N-Son-Bal] | CDIAL dina supplies regional din “day, daytime”. The same surveyed language independently attests din “day” (f_vrlpkwnuaplmg), supporting the local day/sun polysemy rather than choosing a remote sun root by sound alone. The source’s sun gloss, vowel length and dental/retroflex spelling are retained. This identifies the day-word family and leaves possible intra-Indo-Aryan transmission open. (10 records.) |
+
+14 assignment rows on 14 records. Relation kinds: {'reflex': 14}.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-surveys-20260921/pass009-validation.json). No compiled or browser rebuild. Excluded and competing analyses are tracked in the [run review](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-surveys-20260921/REVIEW.md).

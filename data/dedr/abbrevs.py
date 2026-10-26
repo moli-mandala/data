@@ -20,10 +20,114 @@ shared_gloss_boundaries = {
     '4251': 'hands',
 }
 
+# Exact replacements in an entry section's HTML, applied after ``repair_botanical_markup`` and
+# before the language labels are read (so a repair can restore a lost label). parse.py fails if
+# a repair no longer matches. "SQL" is the 2013 DEDR dump dedr_new_entry_oct2013_edited.sql.
 source_markup_repairs = {
+    # Words of an English gloss that DSAL set in bold, each parsed as a form of the entry.
+    '50': [('a <b>Malayāḷa</b> woman', 'a Malayāḷa woman')],
+    '1037': [('that <b>I</b> may look nice', 'that I may look nice')],
+    '1278': [('rock at <b>Me\u0387na\u0387ṛ</b> village', 'rock at Me\u0387na\u0387ṛ village')],
+    # Names of the country, not reflexes of *koṅk-: "inhabitant of the Koṅku country", "of the
+    # Chēra or Kēraḷa country", "the Koṅgu country (Cēra or Kēraḷa, …)", "the Kon̄gu country".
+    '2037': [(f'<b>{name}</b>', name) for name in (
+        'Koṅku', 'Chēra', 'Kēraḷa', 'Kēraḷa,', 'Koṅgu', 'Cēra', 'Kon̄gu')],
+    '3067': [('father of <b>Ar̤āṉ; āntai</b> father of <b>Ātaṉ; pur̤āntai</b> father of '
+              '<b>Pur̤āṉ. <i>Ma.</i> tanta</b>',
+              'father of Ar̤āṉ; <b>āntai</b> father of Ātaṉ; <b>pur̤āntai</b> father of '
+              'Pur̤āṉ. <b><i>Ma.</i> tanta</b>')],
+    # Toda women's names that attest the form glossed: "murx, in woman's name Piḷymurx".
+    '3268': [("in woman's name <b>Sici\u0387z</b>, (also known as <b>Tici\u0387ζ</b>,",
+              "in woman's name Sici\u0387z, (also known as Tici\u0387ζ,")],
+    '4979': [("in woman's name <b>Piḷymurx (piḷy</b> silver,",
+              "in woman's name Piḷymurx (piḷy silver,")],
+    '4198': [('title of <b>Veḷḷāḷa</b> caste', 'title of Veḷḷāḷa caste')],
+    '5545': [('a person of <b>Vēḷāḷa</b> caste', 'a person of Vēḷāḷa caste')],
+    'a18': [('a class of <b>Mārān</b> Sūdras', 'a class of Mārān Sūdras')],
+    # Cross-references to other entries set like forms.
+    '1225': [('Or with 1221 <b>Ta. kappu</b> (Pfeiffer)', 'Or with 1221 Ta. kappu (Pfeiffer)')],
+    '2661': [('For <b>eli</b>, etc., see 833 <b>Ta. eli</b>.', 'For eli, etc., see 833 Ta. eli.')],
+    # The Brahui paradigm is cut by three stray bold tags, and the cross-reference "(for ēt-, see
+    # 872 Ma. ēkuka)" is bold together with the next lemma.
+    '3098': [('<b><i>Br.</i> tining (tir-, <i>neg.</i> ti-, <i>present</i> ēt-</b> [dial. '
+              '<b>tē-], <i>imper.</i> ēte, <i>past</i> tiss-</b>) to give (for <b>ēt-</b>, see 872 '
+              '<b>Ma. ēkuka); tiss</b>',
+              '<b><i>Br.</i> tining (tir-, <i>neg.</i> ti-, <i>present</i> ēt- [dial. tē-], '
+              '<i>imper.</i> ēte, <i>past</i> tiss-)</b> to give (for ēt-, see 872 Ma. ēkuka); '
+              '<b>tiss</b>')],
+    # Likewise in the Kolami run: "kak- (kakt-; also ka- instead of kak- in the present) to do,
+    # make; …"; akk- and ā belong to the comparison with Nk. and 333 Ta.
+    '1957': [('<b><i>Kol.</i> kak- (kakt-</b>; also <b>ka-</b> instead of <b>kak-</b> in the '
+              'present)', '<b><i>Kol.</i> kak- (kakt-; also ka- instead of kak- in the present)</b>'),
+             ('a form like Nk. <b>akk-</b>, s.v. 333 Ta. <b>ā</b>).',
+              'a form like Nk. akk-, s.v. 333 Ta. ā).')],
+    # Plain "(b) Kurub. (LSB 1.12)" after a sentence: pōke is Betta Kurumba, not Kuwi.
+    '1224': [('frog.(<i>b</i>) Kurub. (<i>LSB</i> 1.12) <b>',
+              'frog. <i>(b) Kurub.</i> (<i>LSB</i> 1.12) <b>')],
+    # A dialect parenthesis that lost its opening bracket.
+    '2209': [('<i><b>Ga.</b></i> P.) <b>', '<i><b>Ga.</b></i> (P.) <b>')],  # kōne
+    '4508': [('<i><b>Go.</b></i> Tr.) <b>', '<i><b>Go.</b></i> (Tr.) <b>')],  # pōṛāl
+    # "M. malabaricum, Ma." for "M. malabaricum. Ma.", hiding the Malayalam label.
+    '1464': [('<b><i>M. malabaricum, Ma.</i> kāyāvu</b>',
+              '<i>M. malabaricum</i>. <b><i>Ma.</i> kāyāvu</b>')],
+    # Malayalam iṭala "a wood, burning very rapidly, (ML) Olea dioica"; (DCV) eṭala id.
+    '436': [('<i>(ML) <b>Olea dioica</b>; (DCV)</i> <b>eṭala</b>',
+             '(ML) <i>Olea dioica</i>; (DCV) <b>eṭala</b>')],
+    # "modern names Errayya, Erramma (MBE 1978, p. 355)": the gloss precedes the two names.
+    '865': [('modern names <b>Errayya, Erramma</b> (MBE 1978, p. 355)',
+             '<b>Errayya, Erramma</b> modern names (MBE 1978, p. 355)')],
+    # Toda t/θ (DSAL <at>Q</at>) alternation inside one word, "teṣ t/θwï·ṟ" (cf. twï·ṟ, 2897).
+    '3245': [('<b>teṣ t/<at>Q</at>wï\u0387ṟ</b>', '<b>teṣ twï\u0387ṟ/teṣ <at>Q</at>wï\u0387ṟ</b>')],
+    # Capital I for l: Pengo lēkiŋ (pl.), cf. Kui vlēka.
+    '5557': [('<b><i>Pe.</i> Iēkiŋ', '<b><i>Pe.</i> lēkiŋ')],
+    # DSAL text drops, restored from SQL (as for 2399 below). 421: "muṭ-caṅku mistletoe berry
+    # thorn,"; the binomial is DSAL's "tetracantha" and Kannada's "A. tetracantha".
+    '421': [('uvar-ccaṅkam, tetracantha. Ma. iyaṅku, iśaṅku</b> id.',
+             'uvar-ccaṅkam, muṭ-caṅku</b> mistletoe berry thorn, <i>Azima tetracantha</i>. '
+             '<b><i>Ma.</i> iyaṅku, iśaṅku</b> id.')],
+    # 1737: SQL has "Ma. kuppa-mēni id. Ka. kuppe, kuppe-giḍa id."
+    '1737': [('kuppai-mēṉi <i>Acalypha indica</i> kuppe-giḍa</b> id.',
+              'kuppai-mēṉi</b> Indian acalypha, <i>Acalypha indica</i>. <b><i>Ma.</i> kuppa-mēni</b> '
+              'id. <b><i>Ka.</i> kuppe, kuppe-giḍa</b> id.')],
+    # 1077: SQL has "kakadg, peṇ gakadg Pogostemon speciosum; am gakadg Plectranthus macraei";
+    # am gakadg is "our k.", ka·ṛ gakadg "jungle k.".
+    '1077': [("<b><i>Ko.</i> kakadg, peṇ gakadg <i>Pogostemon <i>Plectranthus macraei</i></i></b>"
+              "<i> ('our k.'); <b>ka\u0387ṛ gakadg</b> <i><b>Pl. nepetaefolius</b></i> ('jungle k.'). "
+              "<b><i>To.</i> kaka<at>Q</at>x <i>Pogostemon speciosum.</i></b>",
+              "<b><i>Ko.</i> kakadg, peṇ gakadg</b> <i>Pogostemon speciosum</i>; <b>am gakadg</b> "
+              "<i>Plectranthus macraei</i> ('our k.'); <b>ka\u0387ṛ gakadg</b> <i>Pl. nepetaefolius</i> "
+              "('jungle k.'). <b><i>To.</i> kaka<at>Q</at>x</b> <i>Pogostemon speciosum.</i>")],
+    # 2665: SQL has "cuṇṭai Solanum torvum; S. verbascifolium" and "Ma. cuṇṭa".
+    '2665': [('<b><i>Ta.</i> cuṇṭai <i>Solanum torvum; S. <i>S. pubescens. Ko.</i> <b>ciḍ muḷ</b>',
+              '<b><i>Ta.</i> cuṇṭai</b> <i>Solanum torvum; S. verbascifolium</i>. '
+              '<b><i>Ma.</i> cuṇṭa</b> <i>S. pubescens</i>. <b><i>Ko.</i> ciḍ muḷ</b>')],
+    # 3112: SQL has "taviṭṭu-kkoyyā, taviṭṭu-cceṭi, taviṭṭu-ppar̤am hill guava,"; the binomial is
+    # implied by Kannada's abbreviated R. tomentosa.
+    '3112': [('taviṭṭu-kkoyyā, taviṭṭu-cceṭi, Ko. <b>tavṭ</b> id.',
+              'taviṭṭu-kkoyyā, taviṭṭu-cceṭi, taviṭṭu-ppar̤am</b> hill guava, '
+              '<i>Rhodomyrtus tomentosa</i>. <b><i>Ko.</i> tavṭ</b> id.')],
+    # The DSAL text drops "savunte a kind of cucumber, Cucumis utilissimus", leaving Kittel's
+    # botanical authority "Roxb." as a fifth Kannada "form". The 2013 DEDR SQL dump keeps
+    # savunte and "a kind of cucumber,"; the binomial is Kittel's (p. 1607, s.v. savute), whose
+    # Kannada definitions DEDR quotes.
+    '2399': [(' savute, saute, savate, savati, Roxb. ',
+              ' <b>savute, saute, savate, savati, savunte</b> a kind of cucumber, '
+              '<i>Cucumis utilissimus</i> Roxb. ')],
+    # Both Latin names are set bold, so the authority of the bracketed correction became a Gondi
+    # form "Roxb" glossed "]".
+    '2628': [('<i>Buchanania angustifolia</i><b> Roxb.</b> [better, <i>B. latifolia</i><b> Roxb</b>.]',
+              '<i>Buchanania angustifolia</i> Roxb. [better, <i>B. latifolia</i> Roxb.]')],
     '4428': [('bē salt, piquancy, spirit, flavour.',
               '<b>bē</b> salt, piquancy, spirit, flavour.')],
 }
+
+# Genus names shorter than eight letters that the source sets alone in bold italics
+# (``<b><i>Barbus. Ma.</i> keṇṭa</b>``, ``<i><b>Cassia</b></i>``); ``repair_botanical_markup``
+# accepts longer single words without a list. This is every such name in the DSAL text.
+latin_genera = frozenset({
+    'Aegle', 'Alpinia', 'Arum', 'Barbus', 'Belone', 'Caranx', 'Cassia', 'Clupea', 'Cuculus',
+    'Cuon', 'Cyperus', 'Panicum', 'Premna', 'Shorea', 'Solanum', 'Ulex',
+})
 
 # Definitions stated once for a whole compact subsection whose remaining
 # forms are bare equivalents.  The section indices come from the source's
@@ -38,15 +142,10 @@ shared_section_glosses = {
 # The antecedent is supplied from the printed DEDR so ``resolve_idem`` can expand it.
 entry_initial_glosses = {
     '360': 'castor-oil plant, <i>Ricinus communis</i>',
-    '421': 'a thorny shrub, <i>Azima tetracantha</i>',
     '575': 'sand',
     '1092': 'cart',
     '1667': 'cooing of pigeons',
     '1699': 'munch',
-    '1737': 'Indian acalypha, <i>Acalypha indica</i>',
-    '2996': 'bedbug',
-    '3112': 'gooseberry bush of the Nilgiris, red myrtle, <i>Rhodomyrtus tomentosa</i>',
-    '3424': 'wing',
     '3796': 'fast, religious observance, vow',
     '5072': 'fenugreek, <i>Trigonella foenum-graecum</i>',
     '5183': 'eaves',
@@ -60,6 +159,7 @@ abbrevs = {
     'Ir': 'Irula',
     'PālKu': 'PaluKurumba',
     'ĀlKu': 'AluKurumba',
+    'Ālku': 'AluKurumba',  # 656, 1977
     'Kurub': 'BettaKurumba',
     'Ko': 'Kota',
     'To': 'Toda',
@@ -67,6 +167,11 @@ abbrevs = {
     'Koḍ': 'Kodagu',
     # A handful of entries use the non-diacritic spelling.
     'Kod': 'Kodagu',
+    # Single-entry slips in the DSAL text, identified by the entry's language order:
+    # 2690 Koḏ. (Ka. … Koḏ. … Tu.), 4035 Koḷ. (SR.) (Te. … Koḷ. … Nk.), 1942 Ṭe. (Tu. … Ṭe. …).
+    'Koḏ': 'Kodagu',
+    'Koḷ': 'Kolami',
+    'Ṭe': 'Telugu',
     'Tu': 'Tulu',
     'Bel': 'Belari',
     'Kor': 'Koraga',
@@ -78,8 +183,12 @@ abbrevs = {
     'Ga': 'Gadaba',
     'Go': 'Gondi',
     'Konḍa': 'Konda',
+    'Koṇḍa': 'Konda',  # 443
+    'Konḏa': 'Konda',  # 5183
     'Pe': 'Pengo',
     'Manḍ': 'Manda',
+    'Mand': 'Manda',   # 34
+    'Manḍa': 'Manda',  # 2341, 3808
     'Kui': 'Kui',
     'Kuwi': 'Kuwi',
     'Oraon': 'Kurux',

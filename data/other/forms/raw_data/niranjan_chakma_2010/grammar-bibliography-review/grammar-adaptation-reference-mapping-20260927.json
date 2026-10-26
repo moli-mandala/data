@@ -1,0 +1,123 @@
+{
+  "status": "source-local work-level proposal; no canonical registration",
+  "source_citation": "niranjan2010chakma",
+  "printed_page": 5,
+  "pdf_page": 7,
+  "original_pdf_sha256": "f022a2a448445cdc9840891478bd5864e2ded1ae98985332b51f0938c075842d",
+  "work": {
+    "proposed_key": "dewan_chakma2003chakma_first_lesson",
+    "title_literal": "চাক্মা ভাষা শিক্ষার প্রথম পাঠ",
+    "container_title_literal": "সদরক",
+    "year_printed": "২০০৩",
+    "author_names_as_credited": [
+      "শ্রীবঙ্কিম চন্দ্র দেওয়ান",
+      "শ্রী সুগত চাক্মা"
+    ],
+    "author_names_without_honorific": [
+      "বঙ্কিম চন্দ্র দেওয়ান",
+      "সুগত চাক্মা"
+    ],
+    "publishing_body_literal": "এস.সি.ই.আর.টি., ত্রিপুরা ‘ল্যাঙ্গুয়েজ সেল’"
+  },
+  "attribution_decisions": [
+    {
+      "claim": "Two named people are credited jointly for the upstream article.",
+      "evidence_literal": "শ্রীবঙ্কিম চন্দ্র দেওয়ান ও শ্রী সুগত চাক্মার নামে",
+      "support": "Following paragraph explicitly refers to লেখকদ্বয়, the two authors; not separate author/editor roles."
+    },
+    {
+      "claim": "The magazine is described as published in 2003 by SCERT Tripura Language Cell.",
+      "support": "Publishing-body phrase precedes থেকে ২০০৩ সালে প্রকাশিত; no issue, volume, article pagination, city or imprint expansion is supplied."
+    },
+    {
+      "claim": "Niranjan presents the grammar as an adaptation, with principal portions incorporated.",
+      "evidence_literals": [
+        "শিরোনামের অনুকরণে",
+        "তার মুখ্য অংশের সংযোজন এখানে ঘটানো হয়েছে"
+      ],
+      "support": "Do not call it a verbatim reproduction or claim that every later example occurs in the upstream article."
+    },
+    {
+      "claim": "Container title has an explicit medial র.",
+      "preferred_literal": "সদরক",
+      "discrepant_task_shorthand": "সদক",
+      "support": "Narrow original magazine-title.png shows four characters স দ র ক. No external transliteration or edition identity asserted."
+    }
+  ],
+  "unknown_fields": [
+    "magazine issue and volume",
+    "article page range",
+    "publication month/day",
+    "editor",
+    "upstream edition or reprint state",
+    "exact extent of adaptation",
+    "original article text not independently consulted"
+  ],
+  "citation_policy": {
+    "lexical_evidence": "Cite niranjan2010chakma at the actual grammar page.",
+    "auxiliary_role": "adaptation-source attribution, as reported by Niranjan, not direct lexical attestation independently checked against the 2003 article",
+    "single_record_rationale": "One article-level record includes the magazine title and institutional publication attribution; no duplicate standalone magazine record is necessary.",
+    "scope": "grammar introductory context on printed5, continued grammar section; no propagation to unrelated wordlists/comparison chapters"
+  },
+  "registration_check": {
+    "file": "data/cldf/sources.bib",
+    "sha256": "dd00100099835e22f8d61763c1f2af0714577907818389a2de3dcb313b03b28b",
+    "terms_and_match_offsets": {
+      "দেওয়ান": [],
+      "সুগত": [],
+      "বঙ্কিম": [],
+      "সদরক": [],
+      "সদক": [],
+      "প্রথম পাঠ": [],
+      "Dewan": [],
+      "Sugata": [],
+      "Bankim": [],
+      "SCERT": [],
+      "Sadarak": [],
+      "Sadak": []
+    },
+    "existing_proposed_key": false,
+    "compiled_references_file": "data/cldf/references.csv",
+    "compiled_references_sha256": "2965f1dce82c8a6573a4149db921b4e6a4868382c494d159a7cb2353cffeb97b",
+    "compiled_term_matches": {
+      "দেওয়ান": false,
+      "সুগত": false,
+      "বঙ্কিম": false,
+      "সদরক": false,
+      "সদক": false,
+      "প্রথম পাঠ": false,
+      "Dewan": false,
+      "Sugata": false,
+      "Bankim": false,
+      "SCERT": false,
+      "Sadarak": false,
+      "Sadak": false
+    },
+    "result": "No author/title/container duplicate located by these literal and Roman search variants."
+  },
+  "evidence": [
+    {
+      "file": "attribution-context.png",
+      "rect_pdf_points": [
+        5,
+        103,
+        335,
+        294
+      ],
+      "scale": 6,
+      "sha256": "5a3683a558d1b52203a79a6869e6947cb5d103dddd12067852e39ced404179d4"
+    },
+    {
+      "file": "magazine-title.png",
+      "rect_pdf_points": [
+        244,
+        153,
+        287,
+        173
+      ],
+      "scale": 6,
+      "sha256": "c251e1f81d5e9da94d7c094e7740df43ce54b70926bb8985ba2d6fe0092589a5"
+    }
+  ],
+  "reproduction_script": "tmp/naiki-scope/record_grammar_bibliography.py"
+}

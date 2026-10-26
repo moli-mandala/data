@@ -1,0 +1,17 @@
+file: 20260927-peterson-turi-grammar.csv
+defaults:
+  transcription:
+  - profile: peterson-turi-grammar
+    preserve_hyphens: true
+  identity:
+    dedupe_by_entry_key: true
+    legacy_ids: stem
+  forms:
+    split_alternates: false
+  importer:
+    commands:
+    - - data/other/forms/raw_data/peterson_turi_2024/whole-source-recovery/revision4/install_proposal.py
+      - --install
+    note: Installs only independently approved pinned whole-source artifacts. Does
+      not rebuild CLDF or databases.
+sources: {}

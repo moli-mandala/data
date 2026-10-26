@@ -1,0 +1,183 @@
+{
+  "status": "read-only complete installed-key and exclusion reconciliation; not original transcription acceptance",
+  "pins": {
+    "data/other/forms/20260828-sil-korwa-kodaku.csv": "4f9b4f40b32994fdea888f411c8b5a1ad7bd000031ba065bd20a3b4fda07ce08",
+    "data/other/forms/raw_data/20260828-sil-korwa-kodaku-audit.csv": "48673ed83ece03a222db12f79cf48a574968c390f57959ce17ee0713e95f5c11",
+    "data/other/forms/raw_data/sil_korwa_kodaku_2022/manual_review.tsv": "967c2f40b342a4e61a7b69ffe6d3f8bd5fbdeaa6bdec4ae0d1d5c9b630e68f79",
+    "data/other/forms/raw_data/sil_korwa_kodaku_2022/import_korwa_kodaku.py": "fb7dd97db22b68bd4c2b4ff18987d9ff138a98ce5a8af0601c7da218c4b5b83e",
+    "data/other/forms/raw_data/sil_korwa_kodaku_2022/unresolved_source_codes.tsv": "988b79d41c8e2f8825e2b6e5f93f8ad381ea83f797552a590a60b744633cd400"
+  },
+  "rows": 4458,
+  "unique_keys": 4458,
+  "languages": {
+    "kw": 2160,
+    "Kodaku": 2298
+  },
+  "audit_records": 6135,
+  "audit_statuses": {
+    "excluded": 1628,
+    "installed": 4457,
+    "missing": 50
+  },
+  "all_installed_keys_mapped_exactly_once": true,
+  "source_language_gloss_citation_equal": true,
+  "original_equals_existing_phonemic": true,
+  "controls": {
+    "A": {
+      "site": "Husambu Asuri",
+      "audit_records": 226,
+      "prompts": 210,
+      "nonblank_records": 224,
+      "blank_items": [
+        "23",
+        "24"
+      ],
+      "statuses": {
+        "excluded": 226
+      }
+    },
+    "B": {
+      "site": "Dumortoli Sadri",
+      "audit_records": 245,
+      "prompts": 210,
+      "nonblank_records": 243,
+      "blank_items": [
+        "23",
+        "24"
+      ],
+      "statuses": {
+        "excluded": 245
+      }
+    },
+    "J": {
+      "site": "Arahas Birjia",
+      "audit_records": 211,
+      "prompts": 210,
+      "nonblank_records": 209,
+      "blank_items": [
+        "23",
+        "24"
+      ],
+      "statuses": {
+        "excluded": 211
+      }
+    },
+    "T": {
+      "site": "Tanmai mixed variety",
+      "audit_records": 248,
+      "prompts": 210,
+      "nonblank_records": 246,
+      "blank_items": [
+        "23",
+        "24"
+      ],
+      "statuses": {
+        "excluded": 248
+      }
+    },
+    "U": {
+      "site": "Mahuabathan Mundari",
+      "audit_records": 225,
+      "prompts": 210,
+      "nonblank_records": 223,
+      "blank_items": [
+        "23",
+        "24"
+      ],
+      "statuses": {
+        "excluded": 225
+      }
+    },
+    "V": {
+      "site": "Kotgohna Sadri",
+      "audit_records": 240,
+      "prompts": 210,
+      "nonblank_records": 236,
+      "blank_items": [
+        "23",
+        "24",
+        "108",
+        "208"
+      ],
+      "statuses": {
+        "excluded": 240
+      }
+    },
+    "k": {
+      "site": "Kesrelmal Standard Sadri",
+      "audit_records": 233,
+      "prompts": 210,
+      "nonblank_records": 230,
+      "blank_items": [
+        "23",
+        "24",
+        "206"
+      ],
+      "statuses": {
+        "excluded": 233
+      }
+    }
+  },
+  "multioutput_audit_records": [
+    {
+      "Source_Key": "behera2022korwakodaku",
+      "PDF_Page": "75",
+      "Printed_Page": "65",
+      "Source_Line": "p75:l137",
+      "Item": "104",
+      "Gloss": "child",
+      "Similarity_Groups": "3",
+      "Site_Code": "c",
+      "Site": "Chainpur Kodaku",
+      "Scope": "Kodaku target",
+      "Manual_Form": "koda/koɖi hɔpoɲ",
+      "Confidence": "high",
+      "Review_Method": "manual visual review of typeset source; text/OCR comparison only",
+      "Review_Status": "complete",
+      "Status": "installed",
+      "Reason": "",
+      "Language_ID": "Kodaku",
+      "Dialect_ID": "sil-kodaku-2005-chainpur",
+      "Citation": "behera2022korwakodaku[Appendix B.5, printed p. 65, item 104, site c]",
+      "Entry_Keys": "silkorwakodaku2022:i104:c:v1|silkorwakodaku2022:i104:c:v2"
+    }
+  ],
+  "undefined_source_codes": [
+    {
+      "PDF_Page": "73",
+      "Printed_Page": "63",
+      "Source_Line": "119",
+      "Item": "83",
+      "Gloss": "salt",
+      "Similarity_Group": "1",
+      "Manual_Form": "buluŋg",
+      "Unknown_Site_Code": "u",
+      "Confidence": "high transcription / unresolved assignment",
+      "Resolution": "excluded; source code has no wordlist metadata and was not reassigned"
+    },
+    {
+      "PDF_Page": "84",
+      "Printed_Page": "74",
+      "Source_Line": "102",
+      "Item": "173",
+      "Gloss": "these",
+      "Similarity_Group": "1",
+      "Manual_Form": "nɐʔa",
+      "Unknown_Site_Code": "n",
+      "Confidence": "high transcription / unresolved assignment",
+      "Resolution": "excluded; source code has no wordlist metadata and was not reassigned"
+    }
+  ],
+  "source_stage_gaps": [
+    "Importer and bibliography cover AppendixB.5 only; full115pagecensus owned separately.",
+    "Seven comparison lists excluded on scope grounds, not poor transcription. BirjiaJ211records=210prompts,209nonblankrecords,blank23/24.",
+    "Four complete interlinear narratives and printed target questions are not represented by existing AppendixB.5keys.",
+    "Existing tags are site/dialect only; source-explicit grammar in paired prompts requires complete review rather than assuming baseline metadata complete.",
+    "Existing per-row note manually verified is process metadata; separate scholarly similarity-group information from procedural claims during recovery, preserving historicalaudit.",
+    "Unknown codesu/n remain unresolved attribution; do not assign by similarity.",
+    "No Birjia registry registration or acceptednewtranscription performed."
+  ],
+  "canonical_writes": false,
+  "baseline_file": "canonical-row-baseline.jsonl",
+  "exclusion_file": "comparison-exclusions.jsonl"
+}

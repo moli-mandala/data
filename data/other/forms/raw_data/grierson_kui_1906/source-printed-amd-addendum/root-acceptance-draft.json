@@ -1,0 +1,75 @@
+{
+  "installation_approved": false,
+  "result": "disabled; root plan review required",
+  "rows": 1832,
+  "audit_units": 1859,
+  "entry_key": "grierson1906kui:p566:outside-comparand:06",
+  "targets": {
+    "csv": {
+      "target": "data/other/forms/20260927-grierson-kui.csv",
+      "input": "stage/corrected.csv",
+      "baseline_sha256": "b3869cae1a515ae745f00e99edb9344c73939f54a941fc7a9dc241f4c4b8a133",
+      "output_sha256": "a37c47777742b845818963a724173014d84adb111f94e46e165a829447adf066"
+    },
+    "audit": {
+      "target": "data/other/forms/raw_data/grierson_kui_1906/installed-audit.jsonl",
+      "input": "stage/accepted-audit.jsonl",
+      "baseline_sha256": "9b76c68718d5258ac85cd635e6aa4027b554e7260499d53b7b9c45e5fa34782e",
+      "output_sha256": "8d1b0249559524615a58270471f39ed9f408f73a3d8c3cc73a50535a5cf0cd33"
+    },
+    "importer": {
+      "target": "data/other/forms/raw_data/grierson_kui_1906/import_source.py",
+      "input": "stage/import_source.py",
+      "baseline_sha256": "d55164ff04b799500bf39b6cc918a4531a8ec9f65247eaf1c1c6c110e7d03d21",
+      "output_sha256": "3124a8882cc5c39c4e6494922bd69507cbd2c6133a81942965c1eeaba9ad176d"
+    }
+  },
+  "files": {
+    "prepare_plan.py": "1da40515ae0e10ad626b7e0fdb05b6491dbf19a4560014816643d7b483d1e9d5",
+    "apply_correction.py": "72bed869c16db8bb41eaae326dd8648b0d729c3d97a409e70c20d08a741c98d3",
+    "test_transaction.py": "65379afb60018b1d4f15a42bbb5e737908cff14086d88d3833a272b8ed88b1b2",
+    "check_staged_parser.py": "734f2a5b11bae1b8b55bbee1c065be640ca94eb4f1a2e2e51fc4fd4cd826cbef",
+    "historical-import_source.py": "d55164ff04b799500bf39b6cc918a4531a8ec9f65247eaf1c1c6c110e7d03d21",
+    "stage/corrected.csv": "a37c47777742b845818963a724173014d84adb111f94e46e165a829447adf066",
+    "stage/accepted-audit.jsonl": "8d1b0249559524615a58270471f39ed9f408f73a3d8c3cc73a50535a5cf0cd33",
+    "stage/import_source.py": "3124a8882cc5c39c4e6494922bd69507cbd2c6133a81942965c1eeaba9ad176d"
+  },
+  "unchanged_at_initial_transaction": {
+    "data/other/forms/20260927-grierson-kui.yaml": "141bdc91ad04bf09382d8453ea8878421b04828056977f792242d1dc0938a88f",
+    "conversion/grierson-kui-1906.txt": "16b0b67cddd07a6aa98936050c6ee48590dfa45900bb021ac670184b5f0694eb",
+    "cldf/sources.bib": "af76f24c4a29cbe3822ac94aef8c4b753e16ed04d79de62415f06bc554285dc2",
+    "cldf/languages.csv": "ff894ca6b5b2612836871aee45b5ba887fd17c5e8ff797c5c2e0e122538e0b96",
+    "cldf/dialects.csv": "f4baf66ce8c60985faf49e561b7254e890f3da5d05a954aaf10bc99a493a89de"
+  },
+  "durable_identity_sha256": "4977c4e205f66233366ee1c00a9c938c9c78e3c087b63e02a94832647525c28a",
+  "root_historical_approval_sha256": "904b273b7b8e4c23f9cae37cef57d484e4df72868f88eca7cd39e4bcb980ba64",
+  "canonical_field_changes": [
+    {
+      "row": 1777,
+      "column": 2,
+      "old": "and",
+      "new": "amd"
+    }
+  ],
+  "unchanged_other_rows": 1831,
+  "all_keys_and_order_unchanged": true,
+  "source_evidence": {
+    "path": "data/data/other/forms/raw_data/grierson_kolami_basim_1906/grammar-review/existing-kui-key-spelling-correction-proposal.json",
+    "sha256": "9909e5338ed1b639565f45b726902159ee1fb787b6846c0ba37bb0c6fd869c6d"
+  },
+  "raw_first_readings_and_historical_candidate_unchanged": true,
+  "existing_entrypoint_archival_mapping": {
+    "import_source.py": "source-printed-amd-addendum/historical-import_source.py"
+  },
+  "required_test_gates": [
+    "Exact1831rawrowbytepreservation",
+    "Actualparser1832NFC/NFDkey/Originalclosure",
+    "Isolated interruptedwrite/recovery/rollback/output-drift/no-opfixtures"
+  ],
+  "forbidden": [
+    "DB/fullbuild",
+    "Unrelatedsettings/profile/Bib/registrychanges",
+    "Sourcekeyreplacement",
+    "Duplicate new chapter emission"
+  ]
+}

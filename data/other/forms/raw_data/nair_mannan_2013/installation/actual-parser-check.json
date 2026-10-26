@@ -1,0 +1,25 @@
+{
+  "status": "pass: staged SourceMeta and actual generic parser fixture",
+  "checks": {
+    "NFC": {
+      "rows": 154,
+      "all15fields_exact": true,
+      "ordered_keys_exact": true,
+      "literal_display": true
+    },
+    "NFD": {
+      "rows": 154,
+      "all15fields_exact": true,
+      "ordered_keys_exact": true,
+      "literal_display": true
+    }
+  },
+  "source_reference_flags": 2,
+  "input_csv_sha256": "e14969d61a067d45143e4c842c9bc495d70f76a0fda76820f3d140a9e85bdbde",
+  "combined_current_registry_and_staged_yaml": "all current settings plus staged file validate with unique source declarations",
+  "staged_settings_sha256": "2797b923e8fc28b2cd6efbf8770e40625373ac40937d1d8f52b87720cf571207",
+  "registered_languages": "existing Mannan/mann1246 and Malayalam; no new base, lect or coordinates",
+  "isolation": "Only YAML discovery is isolated to the source-local fixture; parse_file and conversion implementations unchanged.",
+  "canonical_changes": false,
+  "canonical_source_meta_and_parser_gate": "required after authorized installation"
+}

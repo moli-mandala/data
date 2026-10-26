@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Gondi · Dravidian surveys, 2026-09-21 · batch 058. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Gondi | Proposed etymology | Evidence |
+|---|---|---|---|
+| 266 | **adugu** ‘below’, **adigi** ‘below’ | Proposed reflex of [**DEDR 72**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=8) | DEDR72 explicitly gives Gondi aḍi/aṛgi underneath and related Konda aḍgi below. Survey adugu/adigi below compare with this same-language bottom/under spatial formation. Telugu aḍugu is also compared in the article, but no unattested borrowing route is asserted. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (2 records.) |
+| 267 | **(h)ere** ‘near’, **ere** ‘near’, **here** ‘near’, **heṛe** ‘near’, **hɛre** ‘near’, **hɛrɛ** ‘near’ | Proposed reflex of [**DEDR 2814**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=244) | DEDR2814 explicitly gives Gondi here near, alongside sēr- arrive/join and related southern cēr-/sēr- come close. Survey here/heṛe/hɛre/ere/(h)ere near are same-language spatial variants. The questioned Kurux go comparison in this article is not used. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (11 records.) |
+| 268 | **jakˑu** ‘far’ | Proposed reflex of [**DEDR 2807**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=243) | DEDR2807 explicitly gives Gondi jēk/jēka/jēke far/distant. Survey jakˑu far compares with that same-language spatial stem, preserving its vowel and length notation. Questioned northern comparisons in the article are not used. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 269 | **doima** ‘mosquito’ | Proposed reflex of [**DEDR 2991**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=259) | DEDR2991 gives Telugu/Konda dōma and Kolami ḍo·me mosquito. Gondi doima mosquito compares with this neighbouring South-Central mosquito family, retaining the survey vowel sequence. No immediate donor is asserted in the absence of an explicit loan diagnosis. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (2 records.) |
+| 270 | **lulle** ‘mosquito’ | Proposed reflex of [**DEDR 3715**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=331) | DEDR3715 explicitly gives Gondi nulle/nulē/nūle biting insect/gnat/mosquito. Survey lulle mosquito compares with the documented same-language stem, with assimilation of the initial nasal to the following lateral preserved in the source form. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+
+Proposed assignment rows: **17**. Affected records: **17**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-058.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Gondi/batch-058.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

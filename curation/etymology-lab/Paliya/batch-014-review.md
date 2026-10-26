@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Paliya · Dravidian surveys, 2026-09-21 · batch 014. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Paliya | Proposed etymology | Evidence |
+|---|---|---|---|
+| 61 | **maŋgāyɨ** ‘mango’ | Compound: [**DEDR 4782**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=425) + [**DEDR 1459**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=136) | DEDR4782 explicitly gives Tamil māṅkāy and Telugu mã̄gāyu mango fruit beside mā/māvu mango; DEDR1459 gives kāy/kāyi/kāyu fruit. The complete survey māṅgāy/māṅgāyɨ/māvaṅkai/māṅgekāyɨ responses are ordered mango + fruit compounds, with compound nasal and ordinary vowel/voicing variants retained. (1 records.) |
+| 62 | **ɛṇṇa** ‘oil’ | Compound: [**DEDR 854**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=83) + [**DEDR 3746**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=334) | Ordered sesame + oil: DEDR854 explicitly gives Tamil eṇ ṇey gingelly oil and related Malayalam eṇṇa/Kannada eṇṇe, while3746 gives ney oil. These lexicalized eṇṇey/eṇṇa/eṇṇe survey responses are analysed with both historical constituents; their generalized survey gloss oil and all dialect transcriptions remain unchanged. (1 records.) |
+| 63 | **nilakaḍala** ‘groundnut’ | Compound: [**DEDR 3676**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=326) + [**DEDR 1120**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=105) | Ordered ground + gram: DEDR3676 nilam/nela earth/ground and1120 kaṭalai/kaṭala gram. Survey nila-/nela-kaḍala(i) groundnut transparently contains both constituents; its modern groundnut designation is retained as a compound, not conflated with the botanical gram referent of1120. (1 records.) |
+| 64 | **moḷakay** ‘chili’ | Compound: [**DEDR 4867**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=434) + [**DEDR 1459**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=136) | Ordered pepper + fruit/pod: DEDR4867 miḷaku/muḷaku pepper/chilli and1459 kāy fruit. Survey muḷakay/moḷakay chilli retains both historical lexical constituents and its source crop meaning. (1 records.) |
+| 65 | **āmpuḷa** ‘man’ | Compound: [**DEDR 399**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=36) + [**DEDR 4198**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=372) | Ordered male + child components, comparing the contracted Tamil formation. Sri Lanka Educational Publications Department, Tamil11, printed p.112 (https://noolaham.net/project/795/79443/79443.pdf), visually verified, explicitly pairs āmpiḷai with āṇpiḷḷai in its colloquial/standard table. DEDR399 supplies āṇ male and4198 piḷḷai child. Survey contractions preserve these components; source vowel/rhotic variants remain unchanged, and borrowing versus shared formation across varieties is not resolved by this component analysis. See tamil-contracted-kinship-evidence.md. (1 records.) |
+
+Proposed assignment rows: **10**. Affected records: **5**. Relation kinds: **component**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-014.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Paliya/batch-014.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

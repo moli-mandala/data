@@ -1,0 +1,34 @@
+file: 20260927-nair-kani.csv
+defaults:
+  transcription:
+    convert: false
+    preserve_hyphens: true
+  identity:
+    dedupe_by_entry_key: true
+  forms:
+    split_alternates: false
+  gloss:
+    grammar_tags: false
+  importer:
+    commands:
+    - - data/other/forms/raw_data/nair_kani_2013/import_source.py
+      - --install
+    note: Guarded complete Nair 2013 Kerala Kani chapter; controls remain in accepted
+      audit.
+sources:
+  nair2013kani:
+    reference:
+      editor: OpenAI Codex
+      ocr: false
+      etymology_provenance: none
+    identity:
+      dedupe_by_entry_key: true
+    forms:
+      split_alternates: false
+    gloss:
+      grammar_tags: false
+  somasekharannairkanikkarude:
+    reference:
+      editor: OpenAI Codex
+      ocr: false
+      etymology_provenance: none

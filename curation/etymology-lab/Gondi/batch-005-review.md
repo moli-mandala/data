@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Gondi · Dravidian surveys, 2026-09-21 · batch 005. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Gondi | Proposed etymology | Evidence |
+|---|---|---|---|
+| 6 | **kāl** ‘Foot’, **kaˑl** ‘leg’, **kāl** ‘foot’ | Proposed reflex of [**DEDR 1479**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=138) | DEDR 1479 gives Tamil kāl, Kannada/Telugu kālu, Kota kāl, Toda kōl, Parji kēl, Gadaba/Gondi/Konda kāl ‘leg, foot’. Exact elicited leg/foot senses are preserved; longer body-part compounds and Kurukh xeḍ are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (3 records.) |
+| 7 | **tolu** ‘skin’, **tolk** ‘skin’, **tol** ‘skin’, **ṭoˑl** ‘skin’, **tolka** ‘skin’, **tōl** ‘skin’ | Proposed reflex of [**DEDR 3559**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=312) | DEDR 3559 explicitly groups Tamil/Malayalam tōl/toli/tokku, Kannada tōl/togal/toval, Telugu tōlu/tokka and Gondi tōl/tolka ‘skin, hide, rind’. These simple skin forms fit the printed family; carma-type Indo-Aryan loans are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (7 records.) |
+| 8 | **mendul** ‘body’, **mɛ̄ndol** ‘body’ | Proposed reflex of [**DEDR 5099**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=461) | DEDR 5099 lists Tamil/Malayalam mēl, Telugu/Kolami mēnu/mēn, Parji mēn, Gadaba mēnu and Gondi mēndul/mēndur ‘body’. These match the selected stems; mey belongs to the separately cross-referenced entry 5073, and oṭal/uṭampu forms require a different parent. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (2 records.) |
+| 9 | **kal** ‘stone’ | Proposed reflex of [**DEDR 1298**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=121) | DEDR 1298 gives Tamil kal, Malayalam/Kannada kallu, Parji kel, Gadaba kanḍ(u), Gondi kal/kalli and Brahui xal ‘stone’. The matching forms are restricted by the stone sense, preventing confusion with kāl ‘leg’. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (10 records.) |
+| 10 | **veru** ‘root’, **vēr** ‘root’ | Proposed reflex of [**DEDR 5535**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=505) | DEDR 5535 explicitly gives Tamil/Malayalam vēr, Kannada/Tulu bēr(u), Telugu vēru, Parji vār and Konda vēla ‘root’. The survey root senses and rhotic/lateral stems fit these comparanda; source forms are preserved without imposing one language's spelling on another. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (2 records.) |
+
+Proposed assignment rows: **24**. Affected records: **24**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-005.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Gondi/batch-005.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Malayalam · Dravidian surveys, 2026-09-21 · batch 007. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Malayalam | Proposed etymology | Evidence |
+|---|---|---|---|
+| 31 | **onbadu** ‘Nine’ | Proposed reflex of [**DEDR 1025**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=98) | DEDR 1025 gives Tamil oṉpatu/ompatu, Malayalam ompatu, Kannada ombattu/ombhattu, Kodagu oymbadi, Kota orbād, Tulu ormba and Gondi unmā nine. The retained variants preserve this numeral stem; Indo-Aryan nau/no and Telugu-type tommidi responses belong elsewhere. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 32 | **tin** ‘Eat’ | Proposed reflex of [**DEDR 3263**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=284) | DEDR 3263(a) lists Tamil tiṉ, Kannada tin/tinu/tinnu and the widespread cognate eating verb; Kannada past stem tind- and related inflection belong here. Causatives, food derivatives and subsection (b) right-hand expressions are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 33 | **pudiya** ‘new’ | Proposed reflex of [**DEDR 4275**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=378) | DEDR 4275 gives Tamil putu/putiya, Malayalam putu, Kodagu pudiyë, Kannada posa/hosa/hosadu and Tulu posa/posatu new; Konda pūni and Malto pune belong to the same family. These simple stems and adjectival inflections are selected; new-person nouns and loan-looking alternative stems remain unassigned. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 34 | **maṇal** ‘sand’ | Proposed reflex of [**DEDR 4666**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=413) | DEDR 4666(b), distinct from earth/soil in (a), explicitly lists Tamil and Malayalam maṇal, Kannada maṇal/maḷal/maral, Kodagu maṇa and Parji/Gadaba man sand. Only this sand branch is selected; the Toda compound er-moḷṇ and earth responses under the sand prompt are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 35 | **koɻuppə** ‘fat’ | Proposed reflex of [**DEDR 2146**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=193) | DEDR 2146 gives Tamil/Malayalam koḻuppu fat, Gadaba koḍukuṭ/koḍukuḍ, Gondi koṛvinj and Konda koṛvu animal fat. The survey variants retain this lexical family; questioned Kota evidence and carbi/cerabi loan forms are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+
+Proposed assignment rows: **5**. Affected records: **5**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-007.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Malayalam/batch-007.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

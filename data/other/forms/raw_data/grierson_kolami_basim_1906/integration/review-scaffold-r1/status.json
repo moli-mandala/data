@@ -1,0 +1,49 @@
+{
+  "status": "Complete source-local integration review candidate; no installation approval or freeze",
+  "input_pins": {
+    "grammar-review/sharp-reviewed-revision2/reviewed-child-witnesses.jsonl": "c17d355aa870971bbb2433a7f9115fa5ce6deeac3ddc34911451d42534393814",
+    "grammar-review/sharp-reviewed-revision2/grammar-tag-proposal.jsonl": "64ab32db4063d05c139d619503cd19f5cae9b600ad2ef7c6cc59d08870d03d16",
+    "grammar-review/sharp-reviewed-revision2/grammar-graph-proposal.jsonl": "77b84f9058c97745bcdd2f49c8ca4de30e7ccf99cdf8b4c0ee7e1c239284401c",
+    "specimens/sharp-reviewed-revision/atomic-emission-proposal.jsonl": "73b4bcc64ed4dc94e5c47cd6782a2cf64ae580f28963e5eb7784213f61795e89",
+    "specimens/sharp-reviewed-revision/expression-emission-proposal.jsonl": "fecc6462f86e2713bbf78e9fb8deab3061cd597cf34681d5bc86e31e6c42c43c",
+    "specimens/sharp-reviewed-revision/physical-atom-emission-audit.jsonl": "7ae23aba0bd9d26eb21dea88f280618d1752974d8bcd5ddcb17b50027b76066d",
+    "specimens/sharp-reviewed-revision/status.json": "77c2d793c5309c4f7ebbb348bbc39ded9debe13ec1485da43314e3b91819c5c3",
+    "scope/physical-unit-census.jsonl": "4a4ba94662e25b66ead735bfbd8061332c530c359f194bcb2225bbc9ebc314cd",
+    "outside-review/outside-census-review.json": "771e371345e45b37a0df0d611ac209446adebfd0bb3e583ab161b7d161bd174f",
+    "metadata-profile-proposal/dialects-proposed.csv": "1e460795aad102f6d168ebf17b2e29b1be8b561f7f2fbd53b5d6472b90b4c1e6"
+  },
+  "counts": {
+    "emitted_rows": 827,
+    "sections": {
+      "grammar": 212,
+      "atomic": 560,
+      "expression": 51,
+      "outside": 4
+    },
+    "grammar_children": 224,
+    "physical_atoms": 561,
+    "atomic_emissions": 560,
+    "source_bounded_expressions": 51,
+    "structural_parents": 169,
+    "outside_physical_tokens": 5,
+    "outside_language_attributions": 6,
+    "reused_canonical_rows": 3,
+    "audit_records": 1570
+  },
+  "outputs": {
+    "combined-review-candidate.csv": "265f49083931ce263660fedff35ef2389c54e014879c19ad9bd0599af804742c",
+    "combined-review-audit.jsonl": "cc5e4b807c60ef7e87a72f1dd6d7a8fcae3837bbcbad51da05ff731e5e575361",
+    "specimen-metadata-proposal.jsonl": "97eb2a6e210c3a83e48c77c5428d44ffea06f0ae855904ee545bcf43839e6b95",
+    "grierson-kolami-basim-1906.txt": "89ae32f7df58cc3298cdd62bab1e106a7842cfdb02debc2efaabca34c6fc979f",
+    "unicode-inventory.json": "e788b6802c3ce4c9f9b538953e23bed0869ffb9f0bab07acf943f429575e0280"
+  },
+  "canonical_changes": false,
+  "pending": [
+    "Independent specimen structured-metadata review",
+    "Current grammar metadata acceptance",
+    "Actual full candidate parser/profile/registry/ref validation",
+    "Fresh final actual-output original audit",
+    "Guarded installer and source-stage approval",
+    "Full compiled/browser gates deferred"
+  ]
+}

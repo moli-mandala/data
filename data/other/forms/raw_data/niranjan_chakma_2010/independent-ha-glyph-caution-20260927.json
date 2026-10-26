@@ -1,0 +1,63 @@
+{
+  "status": "requires font-control adjudication; supersedes confident ha-only hasanta assertions",
+  "reviewer": "norton_finish",
+  "original_pdf_sha256": "f022a2a448445cdc9840891478bd5864e2ded1ae98985332b51f0938c075842d",
+  "evidence": "Original PDF99 printed97, lower strip Rect(0,265,339,525) at7x: row16 লেহ / লেহ-লেহ have lower diagonal on হ, but adjacent row17 হাগা has very similar lower diagonal on initial হ with a-kar. The ordinary shape of হ itself can include a lower diagonal. A diagonal alone is therefore insufficient evidence of separate virama.",
+  "affected_class": "Earlier Brokskat/Santali/reverse proposed insertion of hasanta after হ solely from lower diagonal, including গোহর, লেহ, মেহত and comparable forms. These need renewed font-control adjudication; historical reports are preserved unchanged.",
+  "unaffected_class": "Separately visible disjoining hasanta on ক, চ, ন, ম and other consonants must still be preserved when supported; this caution is not a blanket deletion policy.",
+  "requested_target": {
+    "pdf_page": 99,
+    "printed_page": 97,
+    "row": 16,
+    "Santali": "লেহ",
+    "Chakma": "লেহ-লেহ",
+    "decision": "retain current literal pending independent font-control review; do not assert final হ্ solely from the lower diagonal"
+  },
+  "canonical_changes": false,
+  "known_earlier_cases": {
+    "Brokskat": [
+      "গোহর → গোহ্‌র",
+      "যুহু → যুহ্"
+    ],
+    "Santali": [
+      "দাহগি / দাহঘি → দাহ্‌গি / দাহ্‌ঘি",
+      "লেহ / লেহ-লেহ; no new insertion certified"
+    ],
+    "reverse": [
+      "হুদন্যা / হুদিয্যা → হ্‌দ…",
+      "লেহ্যাদন",
+      "লেহ্যহাধেই",
+      "হুমমন্ত্রী → হ্‌মামন্ত্রী",
+      "হাতাল series",
+      "গোহর",
+      "মেহুত / মেহুজ্জানি",
+      "হুমা",
+      "গাহক",
+      "পহন",
+      "হে initial cases"
+    ],
+    "homophones": [
+      "সলাহ্",
+      "তলাহ্",
+      "চাহ্‌রা",
+      "চাহ্‌না",
+      "চানাহ্",
+      "মাহ্লা",
+      "কেনাহ্",
+      "বানাহ্",
+      "জহুল",
+      "পহ্ন",
+      "চাহ্‌রি",
+      "বরাহ্",
+      "বারাহ্"
+    ],
+    "named_groups": [
+      "সেনে হাক্কি",
+      "সুরি বাহ্চ",
+      "হাত কাবড় ordinary glyph control",
+      "মুহ্-পুঝোনী",
+      "ভাত গাহ্"
+    ]
+  },
+  "inventory_scope": "Known affected readings, not an assertion that every listed form is wrong. Whole-source h-class review should inspect all occurrences, retain source first readings and resolve separate vowel/segment questions independently."
+}

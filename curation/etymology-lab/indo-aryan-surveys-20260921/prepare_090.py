@@ -1,0 +1,21 @@
+import json
+from pathlib import Path
+P=Path(__file__).resolve().parent
+rs=json.loads((P/'remaining-initial.json').read_text());done={x['Form_ID'] for f in P.glob('pass*-saved-assignments.json') for x in json.loads(f.read_text())}
+groups=[
+('664','broken',['adūrā','adūro'],'Turner *ardhapūraka explicitly gives Gujarati adhurũ and Hindi/Lahnda adhūrā incomplete/half-done. These Malvi broken responses use that incomplete adjective with local deaspiration, rather than simple ardha half or learned apūrṇa.'),
+('6481','daughter',['dʰ ī́','dʰū','ẓūr','cū','yūr / cʰū','jʰīɔ','jī','dʰźī','ji.o','jiu'],'Turner duhitṛ explicitly cites Phalura dhī, Torwali dhū, Khowar žūr, Kalasha jhūr/chū and the eastern jhi/jhiu/zī/zīw forms. These survey responses fit those exact regional branches, including the Kalasha paired response whose two alternatives remain in one family. Turner retains uncertainty about the origin of the palatal initial in some daughter forms.'),
+('9282','father',['buvā','bubā','buā','bua','būa'],'Turner *buba explicitly gives Nepali bubā/buwā, Kumauni buwā and Oriya buā as father or an affectionate address to a father. These Nepal-region and eastern survey forms are compared with that nursery-word family, without treating the resemblance as a regular sound-law derivation from pitṛ.'),
+('9209-2','father',['babbu','babāi'],'Turner’s *bābba branch explicitly gives Hindi bābū/babuwā and Nepali bābu/bābai nursery or affectionate kin terms. These Kaithal/Majhi father responses fit that family, preserving ordinary local endings; they are kept distinct from the bāppa branch.'),
+('9209','father',['bappu'],'Turner *bāppa explicitly lists Punjabi bāpū and western Pahari bapu/bāpū father. The Kaithal bappu response is a direct match, retaining its recorded gemination.'),
+('7047','root',['nɛṛaī','nāṛ','nɛʔr','nār'],'Turner nāḍī explicitly lists Gawri nāṛ root, Bashkarik nēr root and Phalura nēṛī root of grass. The corresponding survey forms fit this stalk/tube/root family, retaining local r/ṛ and vowel spellings. More contracted nā/naī forms remain excluded pending local evidence.'),
+('6849','smoke',['tūā̃','tūā','tū̃ā̃','tũa','dʰuhā̃','dʰūhā̃','dʰũĩ','dū̃h','dʰũhũ'],'Turner dhūma explicitly gives Awan/Punjabi dhūā̃, Hindi/Nepali dhuwā̃ and western Pahari dhũ/dhuwā̃ smoke. The western t-initial forms reflect the established local devoicing of old voiced aspirates, while the Maiya/Kullui forms retain their local vowel, nasal and h placement. This comparison is to the smoke noun, not the separate dhūmikā feminine branch.'),
+('6849','smoke',['dhūvāḍo','dʰūaḍa','dʰūaḍo','dʰūvāḍo','dʰuaḷo','dʰūvaḷḍa','dhūāḍɔ'],'Turner dhūma includes Gujarati dhūvɔ/dhumāṛɔ and the Kachchhi dhū̃āṛo smoke addendum. These western Bhil/Malvi/Gojri forms fit that extended smoke-noun family with local ḍ/ḷ spellings. Forms with k or ṅ extensions are not automatically placed here.')]
+a=[]
+for i,(parent,gl,forms,ev) in enumerate(groups):
+ for r in rs:
+  if r['ID'] not in done and r['Gloss']==gl and r['Form'] in forms:a.append(dict(record=r,parent=parent,kind='reflex',citation=f'CDIAL[{parent}]',evidence=ev,family=i))
+assert len(a)==len({x['record']['ID'] for x in a})
+(P/'pass090-decisions.json').write_text(json.dumps(dict(accepted=a,held=[]),ensure_ascii=False,indent=1)+'\n')
+(P/'pass090-rules.json').write_text(json.dumps(groups,ensure_ascii=False,indent=1)+'\n')
+print(len(a),[(g[0],sum(x['family']==i for x in a)) for i,g in enumerate(groups)])

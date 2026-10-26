@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Paliya · Dravidian surveys, 2026-09-21 · batch 009. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Paliya | Proposed etymology | Evidence |
+|---|---|---|---|
+| 41 | **koḷuppɨ** ‘fat’ | Proposed reflex of [**DEDR 2146**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=193) | DEDR 2146 gives Tamil/Malayalam koḻuppu fat, Gadaba koḍukuṭ/koḍukuḍ, Gondi koṛvinj and Konda koṛvu animal fat. The survey variants retain this lexical family; questioned Kota evidence and carbi/cerabi loan forms are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 42 | **cinnatɨ** ‘small’ | Proposed reflex of [**DEDR 2594**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=225) | DEDR 2594 attests Tamil and Malayalam cinna small, Kodagu ciṇṇi, Telugu cinna, Kolami sinnam/cinni and Parji cin. These selected southern survey forms fit the cinna family; Gondi and Kurux lookalikes require separate contact evidence. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 43 | **nīṭam** ‘long’ | Proposed reflex of [**DEDR 3692**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=328) | DEDR 3692 attests Tamil nīḷ-/nīṇṭ- and nīṭ-/nīṭṭam, Malayalam nīḷam/nīṭu, Kannada nīḷa and Tulu nīṭa/nīṭu length or long. Only simple length stems and ordinary adjectival inflections are selected; length-plus-possessive compounds need component analysis. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (2 records.) |
+| 44 | **cɛhappɨ** ‘red’ | Proposed reflex of [**DEDR 1931**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=175) | DEDR 1931 attests Tamil civappu/cēppu, Malayalam cuvappu/cemappu, Kannada kempu and Tulu kempu red, showing the southern c-/k- correspondences. The selected simple colour forms fit this family; Kodagu cōpï is explicitly a Malayalam loan and Kannada Tamil-type forms are excluded from this inheritance proposal. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 45 | **kɛṭṭatɨ** ‘bad’ | Proposed reflex of [**DEDR 1942**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=176) | DEDR 1942 explicitly lists Tamil/Malayalam keṭṭa and Kannada keṭṭa bad or spoiled, beside the ruin/spoil verb. The selected adjective and neuter forms fit these attested senses; negative phrases meaning not good and unrelated loan adjectives are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+
+Proposed assignment rows: **6**. Affected records: **6**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-009.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Paliya/batch-009.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

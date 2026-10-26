@@ -1,0 +1,158 @@
+{
+  "registry": {
+    "path": "data/form-identities.csv",
+    "rows_scanned": 1167680,
+    "selected": [
+      {
+        "Form_ID": "f_7mlyijnudplki",
+        "Legacy_ID": "135-591",
+        "Source_Key": "silkoya1985:jag:i198:v1",
+        "Fingerprint": "956990fb0118eda4f16144ffeb2fe055",
+        "Source": "devagnanavaram-et-al2021koya[Appendix E, printed p. 86, item 198, Jaganathapuram Koya];devagnanavaram-et-al2021koya[Appendix E, printed p. 96, item 198, Utnoor Gondi]",
+        "Language_ID": "Gondi",
+        "Original": "wa; va",
+        "Gloss": "come",
+        "Status": "active"
+      },
+      {
+        "Form_ID": "f_clrv55fanq2my",
+        "Legacy_ID": "135-1213",
+        "Source_Key": "silkoya1985:utn:i198:v1",
+        "Fingerprint": "4c6aa028d5fad2a0d93e9ee1286d7bb5",
+        "Source": "devagnanavaram-et-al2021koya[Appendix E, printed p. 96, item 198, Utnoor Gondi]",
+        "Language_ID": "Gondi",
+        "Original": "vator",
+        "Gloss": "come",
+        "Status": "active"
+      },
+      {
+        "Form_ID": "f_vtiprk6vhpmco",
+        "Legacy_ID": "147-1214",
+        "Source_Key": "abrahammonpa2018:monpa:r111:k:v1",
+        "Fingerprint": "3d1e04f0d99cca0b7e69398cd7315908",
+        "Source": "abraham-sako-kinny-zeliang2018[Lexibank v3.0, monpa.tsv, row 111, Monpa (Dirang Dum)]",
+        "Language_ID": "Tshangla",
+        "Original": "sopla",
+        "Gloss": "hot",
+        "Status": "active"
+      }
+    ],
+    "file_bytes": 189824381
+  },
+  "source_keys": {
+    "path": "cldf/form-source-keys.csv",
+    "rows_scanned": 641412,
+    "selected": [
+      {
+        "Legacy_ID": "135-591",
+        "Source_Key": "silkoya1985:jag:i198:v1"
+      },
+      {
+        "Legacy_ID": "135-1213",
+        "Source_Key": "silkoya1985:utn:i198:v1"
+      }
+    ],
+    "file_bytes": 33607412
+  },
+  "forms": {
+    "path": "cldf/forms.csv",
+    "rows_scanned": 991379,
+    "selected": [
+      {
+        "ID": "f_7mlyijnudplki",
+        "Language_ID": "Gondi",
+        "Form": "va",
+        "Gloss": "come",
+        "Native": "",
+        "Phonemic": "wa; va",
+        "Original": "wa; va",
+        "Cognateset": "",
+        "Description": "",
+        "Tags": "dialect:Gondi:sil-koya-1985-jaganathapuram:Jaganathapuram%20Koya dialect:Gondi:sil-koya-1985-utnoor:Utnoor%20Gondi",
+        "Source": "devagnanavaram-et-al2021koya[Appendix E, printed p. 86, item 198, Jaganathapuram Koya];devagnanavaram-et-al2021koya[Appendix E, printed p. 96, item 198, Utnoor Gondi]",
+        "Etymology": "",
+        "Redirect": "",
+        "Status": "unlinked"
+      },
+      {
+        "ID": "f_clrv55fanq2my",
+        "Language_ID": "Gondi",
+        "Form": "vator",
+        "Gloss": "come",
+        "Native": "",
+        "Phonemic": "vator",
+        "Original": "vator",
+        "Cognateset": "",
+        "Description": "",
+        "Tags": "dialect:Gondi:sil-koya-1985-utnoor:Utnoor%20Gondi",
+        "Source": "devagnanavaram-et-al2021koya[Appendix E, printed p. 96, item 198, Utnoor Gondi]",
+        "Etymology": "",
+        "Redirect": "",
+        "Status": "unlinked"
+      },
+      {
+        "ID": "f_vtiprk6vhpmco",
+        "Language_ID": "Tshangla",
+        "Form": "sopla",
+        "Gloss": "hot",
+        "Native": "",
+        "Phonemic": "sopla",
+        "Original": "sopla",
+        "Cognateset": "",
+        "Description": "",
+        "Tags": "dialect:Tshangla:abrahammonpa2018_monpa_dirang_dum:Dirang%20Dum",
+        "Source": "abraham-sako-kinny-zeliang2018[Lexibank v3.0, monpa.tsv, row 111, Monpa (Dirang Dum)]",
+        "Etymology": "",
+        "Redirect": "",
+        "Status": "unlinked"
+      }
+    ],
+    "file_bytes": 194542651
+  },
+  "aliases": {
+    "path": "cldf/form-id-aliases.csv",
+    "rows_scanned": 1381632,
+    "selected": [
+      {
+        "Legacy_ID": "135-1213",
+        "Form_ID": "f_clrv55fanq2my"
+      },
+      {
+        "Legacy_ID": "135-1214",
+        "Form_ID": "f_vtiprk6vhpmco"
+      },
+      {
+        "Legacy_ID": "135-591",
+        "Form_ID": "f_7mlyijnudplki"
+      },
+      {
+        "Legacy_ID": "147-1214",
+        "Form_ID": "f_vtiprk6vhpmco"
+      }
+    ],
+    "file_bytes": 39062623
+  },
+  "result": {
+    "status": "passed_readonly_identity_investigation",
+    "target_durable_id": "f_clrv55fanq2my",
+    "old_v2_registry_matches": 0,
+    "shared_historical_attestation_id": "f_7mlyijnudplki",
+    "shared_id_must_remain_with": "silkoya1985:jag:i198:v1",
+    "actual_source_key_alias_replacements": 0,
+    "fixture_checks": [
+      "corrected/reordered v1 retains its durable ID",
+      "JAG retains shared historic ID",
+      "absent v2 key creates no fabricated ID redirect",
+      "real retired keyed ID would redirect including historic URL",
+      "active ID redirect rejected"
+    ],
+    "missing_route": "There is no separate v2 persistent ID to redirect in this baseline. A key-alias CSV cannot and must not redirect the active JAG node. Source-local reconciliation accounts the old key; the real v1 public ID survives by immutable key.",
+    "legacy_position_warning": "135-1214 currently aliases unrelated active Tshangla f_vtiprk6vhpmco; do not infer a Koya identity from source row number.",
+    "canonical_writes": false,
+    "build_run": false
+  },
+  "implementation_sha256": {
+    "assign_form_ids.py": "1338e11bb41f10e80f08d06f6997826a9498f87d4d9b99db5c3d2ec5e9549852",
+    "source_key_aliases.py": "f1f3127c8e21fce67ca325a3edf819a3e363c470e84035582401d63dc2e1013f"
+  }
+}

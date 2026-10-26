@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Ollari Gadaba · Bhattacharya 1957 Ollari Gadaba residual records, 2026-09-25 · batch 053. Pending user review; autonomous research continues.
+
+| # | Ollari Gadaba | Proposed etymology | Evidence |
+|---|---|---|---|
+| 221 | **say-** ‘to die’ | Proposed reflex of [**DEDR 2426**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=212) | DEDR 2426 full article opens “2426 Ta. cā (cāv-/cākuv-, cett-) to die, be spoiled or blighted (as crops), be exhausted; cāvu death, ghost; cākkāṭu death; cettal dying; ? ceku…”; its Ga. (Oll.) passage gives “Ga. (Oll.) say- (sad-, san-) , (S) cay- , (S. 3 ) sā- (sāg-, say- , etc.) to die.”. DEDR 2426 gives Ollari say- “die”; the homophonous “stay” response is held. (1 record.) |
+| 222 | **sand-** ‘to grow’ | Proposed reflex of [**DEDR 2329**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=205) | DEDR 2329 full article opens “2329 Pa. cand- to grow up; candip- (candit-) to make to grow up, bring up, rear. Ga. (Oll.) sand- to grow; sandup- (sandut-) to make to grow;…”; its Ga. (Oll.) passage gives “Ga. (Oll.) sand- to grow; sandup- (sandut-) to make to grow; (S.) sand- to grow (plants, etc.). DED 1922.”. The source form and sense match this Ollari entry within the whole article. (1 record.) |
+| 223 | **sapre** ‘tasteless; insipid’ | Proposed reflex of [**DEDR 2337**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=206) | DEDR 2337 full article opens “2337 Ta. cappai that which is insipid or tasteless; capp-eṉal onom. expr. signifying insipidity; cappaṭṭai flatness, emptiness, hollowness. Ma.…”; its Ga. (Oll.) passage gives “Ga. (Oll.) sapre id.; (S) saprēṭi, saprā , (S. 3 ) sappan id.”. The source form and sense match this Ollari entry within the whole article. (1 record.) |
+| 224 | **sam-** ‘to be rotten’ | Proposed reflex of [**DEDR 2341**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=206) | DEDR 2341 full article opens “2341 Ta. avi (-v-, -nt-) to ferment (as decayed fruit, vegetable matter, manure heaps); avical that which is decayed. Ma. aviyuka to rot, spoil…”; its Ga. (Oll.) passage gives “Ga. (Oll.) sam- to become rotten; (S.) cammi cen- to rot (as fruit); (S. 3 ) ? savur rheum of the eyes.”. The source form and sense match this Ollari entry within the whole article. (1 record.) |
+| 225 | **salñiḍ** ‘son-in-law; younger sister’s husband’ | Proposed reflex of [**DEDR 2410**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=211) | DEDR 2410 full article opens “2410 Ma. aḷiyan brother-in-law, wife's brother or sister's husband. Ko. ayḷ brother-in-law, male cross-cousin (male speaking); ayḷ ba·vn…”; its Ga. (Oll.) passage gives “Ga. (Oll.) salñiḍ ( pl. -kil) son-in-law, younger sister's husband.”. The source form and sense match this Ollari entry within the whole article. (1 record.) |
+
+Proposed assignment rows: **5**. Affected records: **5**. Relation kinds: **reflex**. Multi-part responses retain their source order.
+
+Exact persistent IDs and complete source records: [batch-053.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/OllariGadaba/batch-053.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../ollari-bhattacharya-20260925/research-holds.json). No new lexical material or donor nodes are introduced.

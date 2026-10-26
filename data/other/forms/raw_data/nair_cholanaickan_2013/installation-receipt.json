@@ -1,0 +1,43 @@
+{
+  "status": "source-stage installed; full CLDF/browser gates deferred",
+  "rows": 104,
+  "audit_units": 117,
+  "variant_edges": 11,
+  "frozen_inputs": {
+    "proposed.csv": "771abcdfe9f6e0c25198397c8afd37e4d592ab982b34e3d8be8781eaa582c308",
+    "proposal-audit.jsonl": "a0f18aca7076d0141df0410262888e319ff308b17ee2522ffedcd7e6c97a8373",
+    "physical-units-first-reading.jsonl": "7dce05411899a3e99dab489cc3df5f4b59f77e2848e7c4af4fde4fe623effab5",
+    "graph-decisions-proposal.json": "6a2c53efb5afa8327da58ad529c06a7bfaff37d8d91d25dbe4059e29206e9733"
+  },
+  "source_pdf_sha256": "4d2588987dab5d15c62ecc95330ccf7e925a9bce80d08068b91ca3f48c8cc5af",
+  "outputs": {
+    "csv": "771abcdfe9f6e0c25198397c8afd37e4d592ab982b34e3d8be8781eaa582c308",
+    "yaml": "0663c898fd96aa3191b8af97183c3bbfceed9f22d6bb3efbe2d5f9a4c79fe334",
+    "languages": "41165ed2c15356e60a3a7aa59206490ea087f051ef9f6ffd6681a7764a8df0be",
+    "bib": "345e45efa63be687ddc1e99019630446ba2aa93fdffa3170defb9485b538a575",
+    "audit": "47549bb702fe62387e49978a3fe6cde5748d42a17ca22e297dd9e5c452c51654"
+  },
+  "baselines": {
+    "csv": null,
+    "yaml": null,
+    "languages": "59078344450e3d241ceaa36b87b12817f98ca79a6723eb22f434154ac5d3895a",
+    "bib": "fd9064c39989c0781d8ce6db417bc15e300a64a5b15400bb0daf06e201a236c9",
+    "audit": null
+  },
+  "durable_identity_sha256": "4977c4e205f66233366ee1c00a9c938c9c78e3c087b63e02a94832647525c28a",
+  "reference_title_amendment": {
+    "old_bib_sha256": "22e5512e116ae588e5daa0b1f07b0d15e1fb2a32d093e6c6ed9a72e61c4fecef",
+    "new_bib_sha256": "303db07e3e7493192ec45c93ceb1f73bfdff25d9de04b734d29aa664c8811a0c",
+    "scope": "braced two Cholanaickan source titles only; other bibliography bytes identical"
+  },
+  "reference_provenance_amendment": {
+    "old_bib_sha256": "303db07e3e7493192ec45c93ceb1f73bfdff25d9de04b734d29aa664c8811a0c",
+    "new_bib_sha256": "80eb260c2f12c21a34ce2be09f4b4c1130299ae2d7f16cdf9722b6bd8434241d",
+    "scope": "replace stale proposal-only provenance with actual canonical CSV/audit and shared-volume note"
+  },
+  "reference_provenance_dedup": {
+    "old_bib_sha256": "80eb260c2f12c21a34ce2be09f4b4c1130299ae2d7f16cdf9722b6bd8434241d",
+    "new_bib_sha256": "345e45efa63be687ddc1e99019630446ba2aa93fdffa3170defb9485b538a575",
+    "scope": "remove duplicated shared-volume provenance sentence only"
+  }
+}

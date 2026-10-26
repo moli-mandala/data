@@ -1,0 +1,9 @@
+# Kannada DravLex residual research
+
+Initial inventory: 133 source records, comprising 94 earlier pending proposals, 9 earlier research holds, and 30 residual records in this pass. All 30 residual records now have an initial assessment: 6 pending reflex proposals/6 rows and 24 explicit research holds; zero remain unexamined. Earlier manifests and sidecars were not altered.
+
+Proposed family links: nāru “bark/fibre” → DEDR3651; tumbidu “full” → 3331; hīri “liver” → 546; duṇḍane “round” → 3309; ījo “swim” → 3687; adʰu “that” → 1. Full articles directly list the Kannada stem or close survey variant; the review text preserves the bark/fibre sense narrowing, participial ending, swim final vowel, and demonstrative aspiration qualifications. The whole DEDR articles are parent nodes, so the exact displayed reconstruction need not reproduce an inflected survey form.
+
+Twenty-four records remain research holds. Many have DravLex loan flags, but donor/register is not established from primary evidence. The unflagged telidiko “know” resembles Telugu telisi konu in DEDR3433 more than its Kannada tiḷi entry, so dialect/contact attribution is unresolved. stʰana “breast” likewise appears learned despite an unset loan flag. baṭṭa “round” has a loan flag but similar DEDR words mean “forehead spot” or “bareness”; no false-friend link was made.
+
+Discovery used 30 homepage exact-form queries (359 rows) and 30 DEDR-restricted gloss queries (6,236 rows). The first gloss group included a capped generic “man” query; exact puruṣa searches and the loan flag supplied its relevant context. Raw source cognacy groups and full shortlisted/counterevidence DEDR articles are retained. Canonical dry-run check-pass001 validates 6 rows with zero second-application changes; manifest agreement and exact30-record coverage pass. Batches under Kannada/ remain pending review. No accepted saving, rebuild, importer, commit, push, or deployment.

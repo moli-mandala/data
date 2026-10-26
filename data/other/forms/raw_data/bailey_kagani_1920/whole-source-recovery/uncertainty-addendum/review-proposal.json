@@ -1,0 +1,104 @@
+{
+  "status": "pending root targeted approval; no canonical writes",
+  "base_freeze_sha256": "cbc675533d0baee66a1b450a83ca0807deb7a7b477c64dc599eaddd540b8d9a2",
+  "base_output_sha256": {
+    "proposal.csv": "793ea77e9e448ba2c5ed7436a6f6b9cbe1370168b87ed25c18b46ce81691b166",
+    "proposal-audit.jsonl": "c93208f1e07d6bc1edd62f088cf4d56fa3be978db4296c131a5beb4369a82d8d",
+    "profile-proposal.txt": "1c06a83e464622fcb000aab9313458a25c1052d21e13218595f04dc636801936"
+  },
+  "census": {
+    "all_audit_units": 1217,
+    "all_rows": 1306,
+    "recursive_nonempty_uncertainty_fields": [
+      {
+        "path": [
+          "172",
+          "uncertainty"
+        ],
+        "value": "exclude_crossref"
+      },
+      {
+        "path": [
+          "179",
+          "uncertainty"
+        ],
+        "value": "exclude_crossref"
+      },
+      {
+        "path": [
+          "204",
+          "uncertainty"
+        ],
+        "value": "exclude_crossref"
+      },
+      {
+        "path": [
+          "630",
+          "input",
+          "source_glyph_uncertainty"
+        ],
+        "value": {
+          "reading": "äsīā̃",
+          "alternative": "āsīā̃",
+          "locator": "printed97 Rect165,117,240,158 at12x",
+          "reason": "Initial upper mark consists of two separated small points; uncertain diaeresis versus damaged macron. No phonetic claim.",
+          "second_read": "Root independently confirmed two separated upper points from same12x original crop; provisional ä retained without phonetic interpretation."
+        }
+      }
+    ],
+    "affected_rows": 1
+  },
+  "entry_key": "bailey1920kagani:p97:substantive-past:3-pl-f",
+  "before_row": [
+    "Northern Hindko",
+    "",
+    "äsīā̃",
+    "be",
+    "",
+    "",
+    "Feminine labels printed; masculine follows contrast. Person/number follows paradigm row/column order.",
+    "bailey1920kagani[p. 97, substantive-past, unit 3-pl-f]",
+    "",
+    "",
+    "bailey1920kagani:p97:substantive-past:3-pl-f",
+    "",
+    "",
+    "",
+    "dialect:Northern%20Hindko:bailey1920-kagani:Kagani%20%28Bailey%201920%29 verb auxiliary pret 3pl f"
+  ],
+  "after_row": [
+    "Northern Hindko",
+    "",
+    "äsīā̃",
+    "be",
+    "",
+    "",
+    "Feminine labels printed; masculine follows contrast. Person/number follows paradigm row/column order. Source glyph uncertain: the initial upper mark shows two separated points, provisionally transcribed ä; damaged ā remains possible (alternative āsīā̃). No phonetic interpretation is assigned.",
+    "bailey1920kagani[p. 97, substantive-past, unit 3-pl-f]",
+    "",
+    "",
+    "bailey1920kagani:p97:substantive-past:3-pl-f",
+    "",
+    "",
+    "",
+    "dialect:Northern%20Hindko:bailey1920-kagani:Kagani%20%28Bailey%201920%29 verb auxiliary pret 3pl f uncertain"
+  ],
+  "changed_fields": [
+    "Notes",
+    "Tags"
+  ],
+  "all_keys_forms_glosses_unchanged": true,
+  "source_evidence": {
+    "reading": "äsīā̃",
+    "alternative": "āsīā̃",
+    "locator": "printed97 Rect165,117,240,158 at12x",
+    "reason": "Initial upper mark consists of two separated small points; uncertain diaeresis versus damaged macron. No phonetic claim.",
+    "second_read": "Root independently confirmed two separated upper points from same12x original crop; provisional ä retained without phonetic interpretation."
+  },
+  "output_sha256": {
+    "proposal.csv": "81f9a18e81492b0635c4992bc4aa7d338bfeb4f1f1eb1444068d3bc390cedce3",
+    "proposal-audit.jsonl": "c5225a88098d0f82568374a74b718141a5712057f1bc8b7fb046651e18dc0cc0",
+    "profile-proposal.txt": "1c06a83e464622fcb000aab9313458a25c1052d21e13218595f04dc636801936"
+  },
+  "producer_sha256": "5c6599379a910a9099e0321c26a62d1b5104c5188e7b7a2b1d8a57969eb05e77"
+}

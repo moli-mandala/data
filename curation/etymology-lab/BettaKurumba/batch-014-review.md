@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Betta Kurumba · Dravidian surveys, 2026-09-21 · batch 014. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Betta Kurumba | Proposed etymology | Evidence |
+|---|---|---|---|
+| 66 | **yippi** ‘fly’ | Proposed reflex of [**DEDR 533**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=53) | DEDR533 explicitly gives Alu Kurumba īpi and Irula īppi fly. Survey yippi in Alu and Betta Kurumba is a comparative noun-family match with initial glide and gemination retained; the gloss here denotes the insect, not flight. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 67 | **pār** ‘fly’, **pēr** ‘fly’ | Proposed reflex of [**DEDR 4020**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=358) | DEDR4020 gives Malayalam paṟakka fly and Kodagu pār- fly, with Tamil paṟa/paṟapp- and Kannada pāṟu. These survey par/per/pāra/paṟakkuga/parappa verbal responses match that flight family with ordinary infinitival/stem endings and vowels retained. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (2 records.) |
+| 68 | **argu** ‘sleep’, **ergu** ‘sleep’ | Proposed reflex of [**DEDR 707**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=69) | DEDR707 gives Malayalam uṟaṅṅuka sleep, Kannada oṟagu/oṟaṅgu and Kodagu or- fall asleep. Selected survey uraŋguga/voraŋgiyadu/oragada/ora and contracted argu/ergu responses retain this sleep stem with ordinary elicitation endings and initial-vowel/glide notation. The Toda orkʰa response is excluded because its verbal versus nominal/causative interpretation remains unclear. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (2 records.) |
+| 69 | **kaḍi** ‘bite’ | Proposed reflex of [**DEDR 1124**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=106) | DEDR1124 gives Tamil kaṭi, Malayalam kaṭikka and Kannada kaḍi bite. Survey kaḍi/kaḍikkuga preserves the documented southern bite verb with ordinary infinitival endings and source voicing; the unrelated cut entry d1125 is not substituted. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 70 | **kippi** ‘broom’ | Proposed reflex of [**DEDR 2599**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=225) | DEDR2599 gives Kodagu cīpe, Gadaba sēpe/cēpēḍ and Toda kīp broom, with the Tamil cī-/cīvu sweep family. Kudiya ceppe, Gadaba cip and Betta Kurumba kippi are comparative broom-family responses preserving source initial-consonant, vowel and gemination notation. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+
+Proposed assignment rows: **7**. Affected records: **7**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-014.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/BettaKurumba/batch-014.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

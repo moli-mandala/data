@@ -1,0 +1,520 @@
+<title>Indo-Aryan Sound Chains</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400&family=Noto+Sans:wght@400;600&family=Noto+Sans+Mono:wght@400;600&display=swap">
+<style>
+:root {
+  --paper: #f3f5f4;
+  --panel: #ffffff;
+  --ink: #18212b;
+  --muted: #56616c;
+  --rule: #d3d9dd;
+  --accent: #2e4b8f;
+  --accent-soft: #e3e9f6;
+  --ochre: #9a5a1c;
+  --ochre-soft: #f6ead9;
+  --good: #2f6b45;
+  --bad: #a1362f;
+  --serif: "Gentium Book Plus", "Gentium Plus", "Noto Serif", Georgia, serif;
+  --sans: "Noto Sans", "Helvetica Neue", Arial, sans-serif;
+  --mono: "Noto Sans Mono", "DejaVu Sans Mono", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --paper: #12161b; --panel: #1a2027; --ink: #e5e8eb; --muted: #9ba5af; --rule: #2c343d;
+    --accent: #9db3ea; --accent-soft: #1f2a40; --ochre: #e0a466; --ochre-soft: #33261a;
+    --good: #7cc596; --bad: #ef8a80;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --paper: #12161b; --panel: #1a2027; --ink: #e5e8eb; --muted: #9ba5af; --rule: #2c343d;
+  --accent: #9db3ea; --accent-soft: #1f2a40; --ochre: #e0a466; --ochre-soft: #33261a;
+  --good: #7cc596; --bad: #ef8a80;
+}
+* { box-sizing: border-box; }
+body { background: var(--paper); color: var(--ink); font: 17px/1.6 var(--serif); margin: 0; padding-inline: 16px; }
+.wrap { max-width: 1180px; margin: 0 auto; padding-block: 40px 80px; display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 48px; }
+@media (max-width: 900px) { .wrap { grid-template-columns: minmax(0, 1fr); gap: 24px; } nav.toc { position: static !important; } }
+nav.toc { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 24px); align-self: start; font: 13px/1.5 var(--sans); }
+nav.toc p { text-transform: uppercase; letter-spacing: .08em; color: var(--muted); font-size: 11px; margin: 0 0 8px; }
+nav.toc ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
+nav.toc a { color: var(--ink); text-decoration: none; border-left: 2px solid var(--rule); padding-left: 10px; display: block; }
+nav.toc a:hover, nav.toc a:focus-visible { border-color: var(--accent); color: var(--accent); }
+main { min-width: 0; }
+.prose { max-width: 70ch; }
+header.top { border-bottom: 1px solid var(--rule); padding-bottom: 24px; margin-bottom: 32px; }
+.eyebrow { font: 600 12px/1.4 var(--sans); letter-spacing: .1em; text-transform: uppercase; color: var(--ochre); margin: 0 0 12px; }
+h1 { font-size: clamp(34px, 5vw, 52px); line-height: 1.05; margin: 0 0 14px; text-wrap: balance; letter-spacing: -.01em; }
+.dek { font-size: 20px; color: var(--muted); margin: 0; max-width: 62ch; text-wrap: pretty; }
+h2 { font-size: 28px; line-height: 1.2; margin: 56px 0 12px; text-wrap: balance; padding-top: 12px; border-top: 1px solid var(--rule); }
+h3 { font: 600 17px/1.35 var(--sans); margin: 28px 0 8px; }
+h4 { font: 600 14px/1.4 var(--sans); margin: 18px 0 4px; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
+p { margin: 0 0 14px; }
+a { color: var(--accent); }
+code, .mono { font-family: var(--mono); font-size: .86em; }
+code { background: var(--accent-soft); padding: 1px 4px; border-radius: 3px; }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin: 24px 0 8px; }
+.stat { background: var(--panel); border: 1px solid var(--rule); padding: 14px 16px; }
+.stat b { display: block; font: 600 26px/1.1 var(--sans); font-variant-numeric: tabular-nums; }
+.stat span { font: 13px/1.4 var(--sans); color: var(--muted); }
+ul.findings { padding-left: 1.1em; }
+ul.findings li { margin-bottom: 10px; }
+ul.findings li::marker { color: var(--ochre); }
+.callout { background: var(--ochre-soft); border-left: 3px solid var(--ochre); padding: 12px 16px; margin: 16px 0; max-width: 70ch; }
+.callout p:last-child { margin: 0; }
+figure.plate { background: #ffffff; border: 1px solid var(--rule); margin: 18px 0; padding: 10px; max-width: 900px; }
+figure.plate img { display: block; width: 100%; height: auto; }
+figure.tall { max-width: 900px; max-height: 1100px; overflow: auto; }
+figcaption { font: 13px/1.5 var(--sans); color: var(--muted); margin: -8px 0 18px; max-width: 70ch; }
+.tablewrap { overflow-x: auto; margin: 12px 0 20px; border: 1px solid var(--rule); background: var(--panel); }
+table { border-collapse: collapse; width: 100%; font: 13px/1.45 var(--sans); }
+th, td { text-align: left; padding: 6px 10px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+th { font-weight: 600; background: var(--accent-soft); position: sticky; top: 0; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+td small { color: var(--muted); }
+.note { color: var(--ink); }
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; font: 14px var(--sans); margin-top: 12px; }
+.controls label { color: var(--muted); }
+.controls select, .controls input { font: 14px var(--sans); padding: 5px 8px; border: 1px solid var(--rule); background: var(--panel); color: var(--ink); border-radius: 3px; }
+#lects th { cursor: pointer; user-select: none; }
+#lects th[aria-sort="ascending"]::after { content: " ▲"; font-size: 9px; }
+#lects th[aria-sort="descending"]::after { content: " ▼"; font-size: 9px; }
+#lects td.win { color: var(--good); }
+#lects td.loss { color: var(--bad); }
+.tbl-scroll { max-height: 560px; overflow: auto; }
+.stages { display: grid; gap: 10px; margin: 16px 0; }
+.stage { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 12px; align-items: start; }
+.stage-n { font: 600 22px/1.2 var(--sans); color: var(--accent); text-align: right; font-variant-numeric: tabular-nums; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { font: 13px/1.3 var(--mono); background: var(--panel); border: 1px solid var(--rule); padding: 3px 7px; border-radius: 3px; cursor: help; }
+.chip small { font-family: var(--sans); color: var(--muted); margin-left: 5px; font-size: 11px; }
+.groups { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; margin-top: 16px; }
+.group { background: var(--panel); border: 1px solid var(--rule); padding: 16px 18px; }
+.group h3 { margin-top: 0; }
+.group p, .group li { font-size: 15.5px; }
+.group ul { padding-left: 1.1em; margin: 0; }
+.group .meta { font: 12.5px/1.4 var(--sans); color: var(--muted); margin-bottom: 8px; }
+ol.novel { padding-left: 1.4em; }
+ol.novel li { margin-bottom: 10px; }
+ol.novel li::marker { color: var(--muted); font: 13px var(--sans); }
+ul.clusters { font: 14px/1.5 var(--sans); padding-left: 1.1em; }
+ul.clusters li { margin-bottom: 6px; }
+ul.clusters strong { font-variant-numeric: tabular-nums; display: inline-block; min-width: 2.2em; color: var(--accent); }
+.tl { font-style: italic; }
+.small { font: 13px/1.5 var(--sans); color: var(--muted); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+</style>
+
+<div class="wrap">
+<nav class="toc" aria-label="Contents">
+  <p>Contents</p>
+  <ol>
+    <li><a href="#findings">Key findings</a></li>
+    <li><a href="#method">How it was built</a></li>
+    <li><a href="#scores">Scores</a></li>
+    <li><a href="#chronology">Family chronology</a></li>
+    <li><a href="#subgroups">Shared changes and subgroups</a></li>
+    <li><a href="#groups">Group by group</a></li>
+    <li><a href="#novel">Things worth a closer look</a></li>
+    <li><a href="#nuristani">Nuristani</a></li>
+    <li><a href="#romani">Romani and Domari</a></li>
+    <li><a href="#curation">Data problems for curation</a></li>
+    <li><a href="#limits">Limits and next steps</a></li>
+    <li><a href="#files">Files</a></li>
+  </ol>
+</nav>
+
+<main>
+<header class="top">
+  <p class="eyebrow">Jambu · OIA → daughter sound-change chains · 28 September 2026</p>
+  <h1>Indo-Aryan Sound Chains</h1>
+  <p class="dek">Ordered lists of sound changes from Old Indo-Aryan to {{N_IA}} Indo-Aryan lects and 7 Nuristani ones, hill-climbed against the attested reflexes in Jambu, and what they say about the relative chronology and grouping of the family.</p>
+  <div class="stats">
+    <div class="stat"><b>{{N_LECTS}}</b><span>lects with a tuned chain ({{N_PAIRS}} reflex pairs)</span></div>
+    <div class="stat"><b>{{N_RULES}}</b><span>rules written, every one tagged with a shared change label</span></div>
+    <div class="stat"><b>{{MED_NULL}} → {{MED_HAND}}</b><span>median test NED, no rules → final chain</span></div>
+    <div class="stat"><b>{{WINS}} / {{N_CMP}}</b><span>lects where the hand chain beats greedy induction at the same rule count (median margin {{MED_GAP}})</span></div>
+  </div>
+</header>
+
+<section id="findings" class="prose">
+<h2>Key findings</h2>
+<ul class="findings">
+  <li><strong>One family-wide skeleton of relative chronology comes out of the data.</strong> Across all 151 chains, the order of pairs of changes was tested by moving each rule past the other. The cluster assimilations and sibilant merger come first. Intervocalic lenition follows, then degemination and compensatory lengthening, then loss of final vowels. For example, intervocalic stop loss must precede degemination in 120 lects with none against, and compensatory lengthening must precede apocope in 40 lects with 2 against.</li>
+  <li><strong>Lenition before cluster reduction holds in every branch.</strong> What differs is how clusters reduce. Mainland MIA made geminates, which resisted lenition and simplified much later. Dardic, Nuristani and (partly) Romani never geminated, but their clusters still simplified only after lenition (40 lects for, 4 against). This is the clearest structural split between Dardic and the mainland.</li>
+  <li><strong>The MIA stages separate cleanly.</strong> Pali and Aśokan reject every Prakrit lenition (adding intervocalic stop loss costs +0.058 NED). The Kharoṣṭhī texts keep all three sibilants and lenite only by voicing, in decreasing degree from the Gāndhārī Dharmapada to the Niya documents to the inscriptions. Sinhala and Dhivehi start from a Pali-like stage and develop their own lenition.</li>
+  <li><strong>Where compensatory lengthening falls is a major isogloss.</strong> It is penultimate in Hindi, Pahari, Gujarati and Bengali; initial in Marathi, the Bhil lects, Bihari, Assamese and Odia; absent in the Northwest, Dardic, Insular and Romani. Adding it to any Northwest lect costs +0.03 to +0.07 NED.</li>
+  <li><strong>Several classic subgroupings fall out of the rule files without being built in.</strong> Examples: Kamarupi (Assamese, Kamta, Rajbanshi, Surjapuri, Hajong, Bishnupriya) by ḍ &gt; r; Central vs Eastern Pahari; Shina proper by tr &gt; ʦ̣; the Northwest by no lengthening + post-nasal voicing + rt &gt; ṭṭ; the Bhil lects as Gujarati–Rajasthani rather than Marathi; Halbi and Bhatri as central/eastern rather than Marathi.</li>
+  <li><strong>Romani left the Central continuum early and then spent time in the Northwest.</strong> Grafting the Hindi MIA block onto any Romani chain costs +0.054 to +0.087 NED. Romani shares early Central innovations (ts &gt; cʰ, kṣ &gt; kʰ) but not the geminate package. Its north-western traits (post-nasal voicing, t &gt; l, aspirate devoicing) look areal. Domari and Lomavren are separate, more Central exits.</li>
+  <li><strong>OIA hides little of Nuristani.</strong> An oracle that knew which branch of each merged PIIr palatal (ś, j, h, kṣ) to use recovers only 1.5–2.3% of the residual error beyond chance. Part of the j split is even recoverable from OIA vowel context. Sound correspondences also flag about 100 Nuristani etyma as likely Indo-Aryan loans (93% precision on a sanity set).</li>
+  <li><strong>Some changes are shared across distant groups and look areal.</strong> Examples: stop + r → a lateral (West Pahari ṭ͡ḷ, Kohistani/Kunar/Pashai ɬ/l, Sauji); s &gt; h before a later c &gt; s that escapes it (Bhil, south-western Rajasthani, Assamese); nasal + voiced stop assimilation before nasal vowels form (Pahari, Bihari, eastern Tharu).</li>
+  <li><strong>Most remaining error is not sound change.</strong> Gender and extension suffixes (-ā, -ī, -o, -u) are the largest residual in almost every NIA lect. Citation morphology, compounds, learned vocabulary and mixed transcriptions account for most of the rest. Distinct attested forms of the same etymon in Kohistani already differ from each other by 0.42–0.59 NED.</li>
+  <li><strong>The run surfaced many data problems worth fixing in Jambu.</strong> Examples: a Rajasthani wordlist filed under Punjabi, Kannauji forms under Hindi, Domaaki classed as Punjabic when its sound changes are Shinaic, Sanskrit headwords and English/German glosses in reflex fields, and a mangled <code>n/a</code> sequence in several Dardic and West Pahari sources. See <a href="#curation">the curation list</a>.</li>
+</ul>
+</section>
+
+<section id="method" class="prose">
+<h2>How it was built</h2>
+<p><strong>Data.</strong> For every lect with at least 100 etyma linked to a CDIAL Indo-Aryan headword by an inherited <code>reflex</code> edge (borrowings excluded), the reflex pairs were extracted from <code>cldf/forms.csv</code> and <code>cldf/edges.csv</code>: 153 lects, of which the unspecified "MIA" lect was dropped as unusable (fragments and OIA forms) and Sanskrit and Proto-Indo-Iranian were not targets. Nuristani (7 lects) was included as a sister branch. Pairs are split 80/20 by a stable hash of the etymon, so an etymon is in the same split for every lect.</p>
+<p><strong>Rules.</strong> Each lect has an ordered rule file in a small sound-change language: segments from Jambu's grapheme profile, classes, sets, back-references with feature modifiers (<code>$1-asp</code>, <code>$1+long</code>), environments with optional elements and exceptions, and per-source notation blocks. Every rule carries one or more tags from a shared catalogue (<code>@int-stop-loss</code>, <code>@degem-lengthen</code> …), which is what makes rules comparable across lects.</p>
+<p><strong>Metric.</strong> Normalised edit distance (NED) over segments between the predicted and the attested form, averaged over reflex pairs, plus exact-match rate. Stress marks, homonym digits and a few lax-vowel letters are normalised on the attested side only.</p>
+<p><strong>Process.</strong> Twelve agents, one per group of lects, wrote and hill-climbed the chains on the training split only, using per-rule leave-one-out value, residual confusions and a rule-suggestion tool, and kept only rules that read as plausible sound changes. Two baselines: no rules (the etymon itself) and a greedy induction that adds, one at a time, the single-segment change that most reduces training NED. Every chain was then ablated (rules removed greedily, least useful first) to get a rules-vs-score curve.</p>
+<p><strong>Chronology.</strong> For each pair of rules <span class="tl">i</span> before <span class="tl">j</span> in a chain, two moves reverse them: <span class="tl">j</span> to just before <span class="tl">i</span>, and <span class="tl">i</span> to just after <span class="tl">j</span>. If both raise training NED, the lect requires <span class="tl">i</span> before <span class="tl">j</span>; if both lower it, the reverse fits better. Results are pooled by tag across lects.</p>
+<div class="callout"><p>These chains are models of the data, not reconstructions. A rule that improves NED can be a real sound change, a transcription convention, or a regularity of citation form. Tags mark <code>@notation</code> and <code>@morph</code> rules explicitly, and those are excluded from the chronology and grouping analyses.</p></div>
+</section>
+
+<section id="scores">
+<h2>Scores</h2>
+<div class="prose">
+<p>The hand-written chains cut test NED from a median {{MED_NULL}} to {{MED_HAND}}. At the same number of rules as the greedy baseline they are better in {{WINS}} of {{N_CMP}} lects; the exceptions (Balkan Romani, Surjapuri, Surgujia, Kvari, Kangri) all have 25–86 test pairs. MIA lects are easiest (Pali 0.144, 55% exact), since their citation forms are stems; Dardic and Nuristani are hardest (mostly 0.45–0.64; Kashmiri reaches 0.40), because of cluster and vowel changes, heavy dialect mixture in the sources and tonal or phonetic transcriptions.</p>
+</div>
+{{FIG_SCORES}}
+<figcaption>Test NED per lect, by group. Blue: no rules. Red: greedy induction with the same number of rules as the hand chain (or its maximum). Green: the hand-written chain.</figcaption>
+{{FIG_PK}}
+<figcaption>Example rules-vs-score curve (Prakrit). Red: the hand chain, with rules removed one at a time, least useful first. Blue: greedy induction, adding one rule at a time. Most of the gain comes from 10–15 rules.</figcaption>
+
+<h3>All lects</h3>
+<div class="controls">
+  <label for="grp">Group</label>
+  <select id="grp"><option value="">All groups</option>{{GROUP_OPTIONS}}</select>
+  <label for="q">Search</label>
+  <input id="q" type="search" placeholder="Lect or code">
+  <span id="count" class="small"></span>
+</div>
+<div class="tablewrap tbl-scroll">
+<table id="lects">
+  <thead><tr>
+    <th data-k="name">Lect</th><th data-k="group">Group</th><th class="num" data-k="etyma">Etyma</th>
+    <th class="num" data-k="test">Test pairs</th><th class="num" data-k="rules">Rules</th>
+    <th class="num" data-k="null">NED, no rules</th><th class="num" data-k="hand">NED, chain</th>
+    <th class="num" data-k="exact">Exact %</th><th class="num" data-k="k">k</th>
+    <th class="num" data-k="handk">Chain @k</th><th class="num" data-k="autok">Greedy @k</th>
+    <th data-k="excl">Excluded sources</th>
+  </tr></thead>
+  <tbody></tbody>
+</table>
+</div>
+<p class="small">All NED values are on the test split. <em>k</em> is the rule count at which the hand chain's ablation curve and the greedy curve are compared (the smaller of the two chain lengths). Click a column to sort.</p>
+</section>
+
+<section id="chronology">
+<h2>Family chronology</h2>
+<div class="prose">
+<p>Each lect's chain is its own hypothesis of relative chronology, but only the orders the data actually cares about count as evidence. The table below pools those tests across all 151 chains (tags seen in at least 15 lects). "Lects for" counts lects where both reversing moves raise training NED; "Against" counts lects where both lower it; Σ ΔNED sums the smaller of the two costs.</p>
+</div>
+<div class="tablewrap"><table>
+<thead><tr><th>Change</th><th></th><th>Change</th><th class="num">Lects for</th><th class="num">Against</th><th class="num">Σ ΔNED</th></tr></thead>
+<tbody>{{CONSENSUS_ROWS}}</tbody></table></div>
+
+<h3>Selected orders and where the support comes from</h3>
+<div class="tablewrap"><table>
+<thead><tr><th>Order</th><th class="num">For</th><th class="num">Against</th><th>Reading</th></tr></thead>
+<tbody>{{KEY_ORDERS}}</tbody></table></div>
+
+<h3>Consensus stages</h3>
+<div class="prose">
+<p>Keeping only orders supported by at least 20 lects with at most 15% contradicting, the evidence forms an acyclic graph. Layering it gives the earliest stage each change can occupy. A change with no strongly supported predecessor sits at stage 0 even if, in most lects, it is late. Hover a label for its main predecessors; the number is how many lects have the change.</p>
+</div>
+<div class="stages">{{STAGES}}</div>
+{{FIG_CHRONO}}
+<figcaption>Where each change sits in the chains that have it: median relative position (0 = first rule, 1 = last), with interquartile range. Changes present in at least 8 lects.</figcaption>
+
+<div class="prose">
+<h3>A staged hypothesis</h3>
+<p>Putting the pooled orders together with what each group found, the best-supported history of the family's sound changes runs as follows. Stages are relative, and each branch leaves the sequence at a different point.</p>
+<h4>I. Early MIA (shared by all Indo-Aryan)</h4>
+<p>ai au &gt; ē ō; r̩ &gt; a/i/u (ri after consonants in Pali, Dardic and some Pahari); loss of final consonants; ty dy &gt; cc jj, which bled the general C + y assimilation (90 lects for, 1 against); the sibilant merger to s, which fed s + stop &gt; aspirated geminate (85 : 1) and kṣ &gt; kkʰ; then assimilation of stop + stop, r + C and C + sonorant into geminates, and the law of two morae. The Kharoṣṭhī north-west (Gāndhārī, Niya) kept the three sibilants and some clusters; Dardic and Nuristani simplified clusters without making geminates.</p>
+<h4>II. Prakrit lenition</h4>
+<p>Aspirates &gt; h, ṭ &gt; ḍ, p &gt; v, loss of single intervocalic stops with ya-śruti, n &gt; ṇ. Pali and Aśokan lack all of it; the Kharoṣṭhī texts only voice; Sinhala has its own, later lenition that keeps d and b. Everywhere it applies, it precedes degemination (stop loss: 120 : 0; aspirate &gt; h: 83 : 0; ṭ &gt; ḍ: 114 : 0), so geminates were protected.</p>
+<h4>III. Late MIA / Apabhraṁśa</h4>
+<p>Shortening of final -ā (seen in the eastern, Bihari, Hindi, north-western and Marathi chains, always before apocope and before the -aka &gt; -ā contraction); contraction of aya &gt; ē, which the MIA chains show was a verb-paradigm change rather than a phonological one; hiatus contraction after stop loss (126 : 0).</p>
+<h4>IV. Early NIA</h4>
+<p>Degemination, with compensatory lengthening in the Central, Eastern and Southern lects (on the penult or the first syllable, depending on the region) and without it in the Northwest, Dardic and Insular. Before degemination, several singleton-only changes had to happen: l &gt; r (Hindi east, Bihari, Sindhi), l &gt; ḷ (Gujarati–Rajasthani, Marathi, Odia, West Pahari), ṇṇ &gt; nn. Nasal + voiced stop assimilation (mb &gt; mm, ŋg &gt; ŋ) happened before nasal vowels formed in Pahari and Bihari. Anusvāra &gt; nasal vowel. The flap ḍ &gt; ṛ came before degemination in the west and after it in Bihari, Bengali and Hindi-Urdu.</p>
+<h4>V. Late NIA</h4>
+<p>Loss of final short vowels, after compensatory lengthening (40 : 2); merger of i/u length after lengthening in the eastern lects; syncope (before or after apocope depending on region); v- &gt; b-, y- &gt; j-, ṇ &gt; n in the Hindi and eastern area; s &gt; h in Bhil, south-western Rajasthani, the Northwest, Assamese and Dhivehi, which in three separate groups is older than a later c &gt; s.</p>
+</div>
+</section>
+
+<section id="subgroups">
+<h2>Shared changes and subgroups</h2>
+<div class="prose">
+<p>The maps show where some of the defining changes are present in the final chains (South Asian lects only). They reproduce the textbook isoglosses: no compensatory lengthening across the Northwest and Dardic, post-nasal voicing in the Northwest and Dardic, s &gt; h in the south-west and Assam, and the sibilant merger to ś only in the Bengal–Assam corner.</p>
+</div>
+{{FIG_ISO}}
+<figcaption>Presence (red) or absence (blue) of a tagged change in each lect's final chain. Absence can also mean too little evidence in a small lect's data.</figcaption>
+
+<h3>Clusters from shared changes</h3>
+<div class="prose">
+<p>Clustering lects by which tagged changes their chains contain (Jaccard distance, average linkage) gives the groups below at 16 clusters. It separates the migratory lects, the Kharoṣṭhī texts, the literary MIA languages, Nuristani, the Kohistani–Kunar–Pashai block, the Shina–Chitral block (with Poguli), West Pahari, Halbi–Bhatri, and a south-western block (Marathi, Konkani, the Bhil lects, Old Gujarati, Old Marwari, Wadiyara Koli) from a large northern and eastern mainland cluster that includes the Northwest, Gujarati, Rajasthani, Hindi, Pahari, Bihari and the Eastern lects. Domaaki, Kholosi and Old Marathi stand alone. Presence/absence clustering also groups lects by shared <em>absences</em>, which is why, for example, Kashmiri falls with the Insular lects and the Northwest does not separate from the Hindi belt; the group-level analyses below are more reliable.</p>
+</div>
+<ul class="clusters">{{CLUSTERS}}</ul>
+{{FIG_HEAT}}
+<figcaption>Lects (rows, ordered by the clustering) by tagged changes present in at least 4 lects (columns, by frequency), coloured by group.</figcaption>
+</section>
+
+<section id="groups">
+<h2>Group by group</h2>
+<div class="groups">
+
+<article class="group">
+<h3>MIA and Insular</h3>
+<p class="meta">Pk, Pa, Dhp, NiDoc, As, KharI, Ap, Si, OSi, Md · Pali 0.347 → 0.144 (55% exact), Gāndhārī 0.188, Prakrit 0.206, Sinhala 0.394</p>
+<ul>
+<li>Four sets: {Prakrit, Apabhraṁśa} with the full lenition; {Pali, Aśokan}, conservative; the Kharoṣṭhī north-west {Gāndhārī ⊃ Niya ⊃ inscriptions}; and Insular {Sinhala, Old Sinhala, Dhivehi}.</li>
+<li>Kharoṣṭhī lects keep three sibilants (merging costs +0.014 to +0.022) and have sv &gt; sp; their lenition is voicing without loss.</li>
+<li>Insular: deaspiration, c &gt; s, j &gt; d, degemination without lengthening, with lenition before degemination (+0.041). CDIAL Sinhala mostly keeps s; only Dhivehi has s &gt; h, late.</li>
+<li>prati- &gt; paṭi- retroflexion is systematic across Prakrit, Pali, Aśokan, Sinhala and Gāndhārī.</li>
+</ul>
+</article>
+
+<article class="group">
+<h3>Dardic (north)</h3>
+<p class="meta">{{DN_META}}</p>
+{{DN_BODY}}
+</article>
+
+<article class="group">
+<h3>Dardic (south)</h3>
+<p class="meta">Indus Kohistani, Pashai, Bashkarik, Dameli, Gawarbati, Gowro, Torwali, Bhateri, Shumashti, Wotapuri, Tirahi, Chilisso · 0.46–0.61 test NED</p>
+<ul>
+<li>Lenition precedes degemination in all 12 lects (+0.006 to +0.019), and deaspiration precedes intervocalic loss wherever both occur.</li>
+<li>Stop + r splits three ways: retroflex affricates in Kohistani proper (including pr &gt; ʦ̣), laterals ɬ/l in Bashkarik, Gawarbati, Shumashti and Pashai, kept in Dameli and Tirahi. The laterals cut across the subgroups, so they look areal.</li>
+<li>Tirahi is not Kohistani; Wotapuri is transitional; Dameli is the archaic member of Kunar.</li>
+<li>Zoller's Kohistani tone cannot be predicted from OIA; the only trend is rising tone after old voiced aspirates.</li>
+<li>The floor is high: different recorded forms of the same etymon differ by 0.42–0.59 NED.</li>
+</ul>
+</article>
+
+<article class="group">
+<h3>Northwest</h3>
+<p class="meta">Punjabi, Sindhi, Lahnda, Old Punjabi, Hindko, Kutchi, Domaaki, Saraiki, Dhatki, Pothwari, Khetrani, Kholosi · Sindhi 0.352, Punjabi 0.359</p>
+<ul>
+<li>Defining bundle: no compensatory lengthening (adding it costs +0.03 to +0.07), post-nasal voicing, rt &gt; ṭṭ, n &gt; ṇ, s &gt; h. All three testable features hurt the Hindi chain.</li>
+<li>Sindhi degemination is late: l &gt; r, s &gt; h, n &gt; ṇ and the implosives come before it (moving it into MIA costs +0.017).</li>
+<li>Tone separates northern Lahnda (Hindko, Pothwari) from southern (Saraiki, Khetrani). CDIAL's "L." data fit the Saraiki chain best.</li>
+<li>Implosives and initial d &gt; ḍ run on a continuum from Sindhi to Punjabi. Dhatki patterns with Kutchi and Gujarati, not Sindhi.</li>
+<li>Domaaki is Shinaic, not Punjabic: three sibilants, tr &gt; ʦ̣, nasal + stop &gt; nasal; the Shina and Kalkoti chains fit it far better (0.58) than Punjabi (0.65).</li>
+</ul>
+</article>
+
+<article class="group">
+<h3>West Pahari</h3>
+<p class="meta">16 lects · Jaunsari 0.404, Kiunthali 0.431, Kullui 0.438, Kotgarhi 0.448</p>
+<ul>
+<li>Stop + r &gt; lateral affricate ṭ͡ḷ/ḍ͡ḷ in Bhadrawahi, Bhalesi and Khashali; Kotgarhi and Kiunthali tr &gt; c is best derived through that stage.</li>
+<li>Four blocks, agreed by two independent methods: Bhadrawah (Bhalesi, Bhadrawahi, Khashali); Satluj–Kullu (Kotgarhi, Kochi, Kullui); southern Mahasu (Kiunthali, Jaunsari, CDIAL "WPah"); Chamba–Kangra (Churahi, Pangwali; Chambeali, Mandeali, Kangri, Dogri).</li>
+<li>a &gt; ɔ is older than degemination and length loss, independent of the Vedic accent: a weight-based stress system.</li>
+<li>ṣ &gt; ś with s kept distinct in 12 of 16 lects. The law of two morae leaves no trace (dropped in 12 of 16).</li>
+</ul>
+</article>
+
+<article class="group">
+<h3>Central and Eastern Pahari, Romani</h3>
+<p class="meta">Nepali 0.376, Kumaoni 0.392, Garhwali 0.383 · European Romani 0.426, Domari 0.437, Lomavren 0.400</p>
+<ul>
+<li>Central Pahari (Kumaoni, Garhwali) vs Eastern (Nepali, Dotyali): single -ḍ- &gt; r in Nepali and Dotyali vs ṛ; h-loss, n &gt; ṇ and glide formation only in Kumaoni and Garhwali.</li>
+<li>Pahari ŋg/mb &gt; ŋ/m happened at the MIA stage, before nasal vowels (+0.004 to +0.009).</li>
+<li>Masculine -o &lt; -aka is shared by Pahari and Romani, against Hindi -ā.</li>
+<li>Romani: see <a href="#romani">below</a>.</li>
+</ul>
+</article>
+
+<article class="group">
+<h3>Hindi belt</h3>
+<p class="meta">Hindi 0.362 (18% exact), Old Awadhi 0.260 (34%), Awadhi 0.309, Braj 0.436 · 10 lects</p>
+<ul>
+<li>The sharpest isogloss is intervocalic l &gt; r, and it is not West vs East: Braj, Bundeli, Old Awadhi, Awadhi, Chhattisgarhi and Surgujia have it; standard Hindi and Haryanvi keep l. It precedes degemination, so old -ll- stays l.</li>
+<li>Old Awadhi is an older stage of Awadhi: the same choices in the same order, lacking only Awadhi's last change (a second flap after nasal vowels), which Braj shares.</li>
+<li>Haryanvi alone has n &gt; ṇ and h-loss with tone, both Panjabi-side features.</li>
+<li>228 Hindi words resist compensatory lengthening (pakkā, billā, ḍabbā): an expressive or suffixed stratum.</li>
+</ul>
+</article>
+
+<article class="group">
+<h3>Rajasthani and Gujarati</h3>
+<p class="meta">18 lects · Old Gujarati 0.313, Old Marwari 0.319, Gujarati 0.373</p>
+<ul>
+<li>A Gujarati branch (Gujarati, Old Gujarati, Wadiyara Koli) shares medial syncope before apocope and the -vũ infinitive; only Gujarati and Old Gujarati keep tr.</li>
+<li>l &gt; ḷ, the flap, ṇṇ &gt; nn and s &gt; h all precede degemination; compensatory lengthening precedes apocope (up to +0.056).</li>
+<li>s &gt; h is south-western only (Godwari 88%, Mewari 58%) plus Koli; Ahirwadi is Hindi-like; -vv- &gt; -bb- splits east from west.</li>
+<li>Gujari is an outlier: no compensatory lengthening, no n &gt; ṇ, nasal clusters kept; read as a Rajasthani base reshaped by north-western contact.</li>
+</ul>
+</article>
+
+<article class="group">
+<h3>Marathi, Konkani and Bhil</h3>
+<p class="meta">17 lects · Marathi 0.372, Halbi 0.339, Konkani 0.452</p>
+<ul>
+<li>The Bhil lects are Gujarati–Rajasthani in type (masculine -o, s &gt; h, nasal clusters kept); the Nimadi chain fits them better than the Marathi one.</li>
+<li>In Noiri, Dungra Bhil, Wagri and Pauri Bareli, s &gt; h precedes c &gt; s: the new s escaped debuccalisation.</li>
+<li>Halbi and Bhatri side with Hindi and Odia; nothing specifically Marathi survives.</li>
+<li>Compensatory lengthening fits the first syllable, not the penult, in Marathi and most Bhil lects.</li>
+<li>Old Marathi (Tulpule) is mostly learned vocabulary (18% of pairs within 0.2 NED of the Sanskrit), so it gives no chronology.</li>
+</ul>
+</article>
+
+<article class="group">
+<h3>Bihari and Tharu</h3>
+<p class="meta">17 lects · Bhojpuri 0.298 (30% exact), Maithili 0.337, Bihari 0.391</p>
+<ul>
+<li>No Magadhan ś anywhere in the data.</li>
+<li>Nasal + voiced stop: kept in western Tharu; assimilated early in the Bihari core (before nasal vowels); NN in eastern Tharu, Danuwar and Majhi (bandʰa &gt; bān).</li>
+<li>Compensatory lengthening precedes apocope (+0.012 to +0.025); l &gt; r precedes degemination across Bihari and Tharu.</li>
+<li>Bote and Majhi show eastern phonology with a Nepali overlay; Dangaura's "e &gt; yā" is one transcriber's on-glide, not a sound change.</li>
+</ul>
+</article>
+
+<article class="group">
+<h3>Eastern</h3>
+<p class="meta">Odia 0.322, Bengali 0.336, Assamese 0.353, Bishnupriya 0.247 (38% exact)</p>
+<ul>
+<li>Kamarupi (Assamese, Kamta, Rajbanshi, Surjapuri, Hajong, Bishnupriya) is marked by ḍ &gt; r rather than ṛ. Assamese data fit the Rajbanshi chain better than the Bengali one.</li>
+<li>Bengali across its stages: the flap and nasal vowels appear between Old and Middle Bengali; loss of final -a comes after Middle Bengali, so the apocope Bengali shares with Assamese is parallel.</li>
+<li>i/u length merger follows compensatory lengthening in every eastern lect (+0.017 to +0.034); Assamese ś &gt; x/h precedes c &gt; s.</li>
+<li>Magadhan a &gt; ɔ is invisible in CDIAL, whose eastern forms are orthographic transliterations.</li>
+</ul>
+</article>
+
+<article class="group">
+<h3>Nuristani</h3>
+<p class="meta">Proto-Nuristani 0.440, Kamviri 0.521, Kati 0.542, Prasun 0.640</p>
+<ul>
+<li>One ordered history across all seven: palatal and cluster archaisms, then deaspiration, then intervocalic loss, then cluster simplification, then final-vowel loss.</li>
+<li>Tree: {Kati, Kamviri} vs {Waigali, Tregami} vs Ashkun vs Prasun; a shared initial r- fortition with a different output in each lect.</li>
+<li>See <a href="#nuristani">below</a> for what OIA can and cannot predict.</li>
+</ul>
+</article>
+
+</div>
+</section>
+
+<section id="novel" class="prose">
+<h2>Things worth a closer look</h2>
+<ol class="novel">
+<li><strong>aya &gt; ē is morphological.</strong> Restricting it to -ayati/-ayatē verbs beats the general rule in Prakrit, Pali and Gāndhārī, and Aśokan lacks it altogether.</li>
+<li><strong>Kharoṣṭhī lenition is graded by register</strong>: Gāndhārī Dharmapada &gt; Niya documents &gt; inscriptions (none), and all stop at voicing.</li>
+<li><strong>Insular lenition is not Prakritic.</strong> Sinhala keeps d and b, and loses intervocalic d before j &gt; d; Old Sinhala shows no stop loss at all.</li>
+<li><strong>Khowar vowel harmony.</strong> First-syllable a &gt; o when the next syllable has short a (95 : 36), which replaced an accent-based rule; the data also suggest rounding before u/ō and i &gt; e before i. {{DN_HARMONY}}</li>
+<li><strong>A Cr &gt; lateral isogloss</strong> links West Pahari (ṭ͡ḷ), Kohistani/Kunar/Pashai (ɬ, l) and Sauji (tr &gt; ɬ, dr &gt; l), and West Pahari tr &gt; c goes through it.</li>
+<li><strong>pr &gt; ʦ̣ in Indus Kohistani and Bhateri</strong> (pralabʰatē &gt; ʦ̣ālǎṽ), implying a general *Cr &gt; retroflex affricate before the labial was lost.</li>
+<li><strong>The -aka final vowel survives in Kohistani only where apocope preceded hiatus contraction</strong>, an order that splits the Swat lects from Indus Kohistani and Gowro.</li>
+<li><strong>West Pahari a &gt; ɔ is weight-conditioned</strong>, blocked before a following long ā (kaṭāha &gt; kəṛā́) and older than degemination.</li>
+<li><strong>Hindi l &gt; r is not a West/East split</strong>: Braj goes with Awadhi, and Khari Boli with Haryanvi keeps l.</li>
+<li><strong>Stress-conditioned lengthening before anusvāra in Gujarati</strong> (ā̃gaṇ, kā̃ṭɔ vs ãgār, ãdʰārũ), and sk/ṣk &gt; unaspirated kk in several Rajasthani lects, which looks like the Prakrit sukka ~ sukkha doublet surviving.</li>
+<li><strong>Counter-feeding s &gt; h before c &gt; s</strong> recurs in three independent areas (Bhil, south-western Rajasthani/Koli, Assamese).</li>
+<li><strong>Sindhi degemination is later than its implosives</strong>, and gemination in the Northwest is partly a transcription variable: CDIAL writes geminates in 13–17% of Punjabi/Lahnda reflexes, the phonetic wordlists almost never.</li>
+<li><strong>-triṁśat numerals keep tr in every eastern lect</strong> (Bengali ektris, Assamese ektrix, Odia ekatrisa), against Hindi ikattīs: a learned or compound-boundary effect.</li>
+<li><strong>Western Tharu keeps voiced nasal clusters</strong> and has weak lengthening, matching an Awadhi–Bhojpuri affiliation, while eastern Tharu, Danuwar and Majhi share the Bengali–Assamese NN outcome.</li>
+<li><strong>Two-mora shortening is invisible in NIA</strong> in four separate groups, for the same reason each time: compensatory lengthening restores the length it removed.</li>
+</ol>
+</section>
+
+<section id="nuristani" class="prose">
+<h2>Nuristani: what OIA can predict</h2>
+<p>Nuristani is not descended from OIA, so these chains are correspondence rules read from the OIA side. They still behave like a single ordered history, and they give a direct answer to how much of Nuristani is inferable from OIA.</p>
+<h3>The palatal problem is small</h3>
+<p>OIA merged PIIr contrasts that Nuristani keeps: ś (Nuristani ʦ, or ś in loans), j (ʣ or j), h (ʣ or j) and kṣ (three outcomes). An oracle that picks the right branch per etymon recovers 2.3% of the residual error in Proto-Nuristani, 1.9% in Kati and 1.5% in Kamviri and Waigali, after subtracting what a control oracle over meaningless alternatives gains by chance. About a third of the affected etyma would be better with the other branch, but they are few. The residual is dominated by derivation and compounds in the cited forms, unpredictable vowels (Kati and Kamviri ā ~ o, u ~ ɨ) and mixed transcriptions.</p>
+<p>Part of the j split is recoverable from OIA itself: j &gt; ʣ before a/ā, with j kept before front vowels, beats an unconditioned rule in four lects. OIA j before front vowels mostly continues PIIr *ǰ from the second palatalisation.</p>
+<h3>Loans and inherited words</h3>
+<p>CDIAL's Nuristani links are stored as neutral groupings. Diagnostic sounds (ś kept rather than ʦ, aspirates, h &gt; ʣ, j &gt; ʣ, cʰ &gt; ʦ) classify about 100 etyma as likely Indo-Aryan loans and 160 as inherited. On a sanity set, 99.6% of strict "inherited" verdicts are core vocabulary and 93% of strict "loan" verdicts (numerals aside) are culture words: oath, guest, country, adze, trap, spear, stable, rice, cat. Loan rates are similar across lects (about 30%); the difference between sources is larger (Turner/Morgenstierne 26–42%, Strand 18–27%), which suggests Turner linked Nuristani words mainly when they looked Indo-Aryan. Whole-chain comparison against Dardic chains barely separates the strata (AUC 0.53–0.57). Caveats: initial ś- before a liquid may be inherited (śarád), Persian loans mimic the archaisms (sahásra &gt; āzor), and wanderwörter are classified by shape only.</p>
+</section>
+
+<section id="romani" class="prose">
+<h2>Romani and Domari</h2>
+<p><strong>Verdict: Central origin, early exit, then a north-western period.</strong> Replacing a migratory chain's MIA block with the Hindi one costs +0.087 (European Romani), +0.066 (Welsh), +0.071 (Balkan), +0.072 (Lomavren), +0.060 (Zargari) and +0.054 (Domari). Romani shares with Central/NW MIA the innovations ts/ps &gt; cʰ, medial kṣ &gt; kʰ, ava &gt; o, r̩ &gt; i/u and medial syncope, none of which are Dardic. It shares with Dardic only retentions: s + stop and stop + r kept (trin, drak, pʰral), no gemination, no nasal vowels.</p>
+<p>The dental lenition is the key clue. Intervocalic t/d became l (Domari r) rather than disappearing, and this had to happen before clusters simplified (+0.003 to +0.008), so geminate tt stayed t (mattá &gt; mato). The ancestors left after -t- had weakened but before the Central loss of intervocalic stops. The north-western traits (post-nasal voicing, found in 0 of 10 Central chains but 10 of 12 Northwest; aspirate devoicing with Pothwari and Dogri parallels; ṣ &gt; ś with s kept, as in West Pahari) are the kind of change easily shared through contact.</p>
+<p>Whole-chain scores alone do not settle this: raw scores favour the Kalasha chain, but after normalising length, nasal vowels and geminates, the Hindi, Punjabi, Lahnda and Shina chains all fit European Romani within about 0.01. Domari is the most Central in its obstruents (s-merger, velar loss) and lacks the Romani aspirate devoicing (adding it costs +0.02); its closest outside chain is Domaaki. Lomavren adds Central/NW changes Romani lacks (st &gt; tʰ, voiced aspirate &gt; h), consistent with a later exit.</p>
+</section>
+
+<section id="curation" class="prose">
+<h2>Data problems for curation</h2>
+<p>The agents recorded these while working. None were changed.</p>
+<h3>Mislabelled lects and mixed sources</h3>
+<ul>
+<li><strong>Domaaki (D)</strong> is classed Punjabic in <code>languages.csv</code>, but its sound changes are Shinaic.</li>
+<li><strong>Punjabi / <code>bagri</code></strong> (130 pairs) is a Rajasthani (Bagri) wordlist; <strong>Hindi / <code>kannauji</code></strong> (404) is Kannauji dialect data; <strong>Bengali / <code>zoller2023</code></strong> is Bangani (a code collision on "B"); <strong>Odia and Adivasi Oriya / <code>beine2017bhatri</code></strong> is Bhatri.</li>
+<li>"Malvi" includes a Mewari village list (Basad); "Rj" is Mewari survey data; "Nimadi" includes Bareli (a Bhil language); "Gujari" mixes Pakistani and Eastern Gujari with Noira; the Marathi "bundeli" source is a Marathi-like wordlist.</li>
+<li>The unspecified "MIA" lect (119 etyma) is fragments, OIA forms and unrelated look-ups.</li>
+<li>Pashai CDIAL forms are a dialect mixture (44% of etyma have two or more distinct forms).</li>
+</ul>
+<h3>Wrong content in reflex fields</h3>
+<ul>
+<li>Sanskrit forms as reflexes: <span class="mono">vásati</span>, <span class="mono">upaviṣṭa</span> (Or, B, A under úpaviśati); <span class="mono">ávadahati</span> (A, Mth under *uddahati); Gujarati <span class="mono">saṁlōḍyatē</span>, <span class="mono">nárāśáṁsa</span>, <span class="mono">útkasati</span>; Kumaoni <span class="mono">śvaśrūśvaśura</span>; Prasun <span class="mono">dvā́daśa</span>.</li>
+<li>Glosses as reflexes: Kiunthali <span class="mono">vitʰout</span> ("without"), European Romani <span class="mono">branntvein</span>, Prasun <span class="mono">vr̩ṣabʰṓ jyā́yān</span>; Zoller part-of-speech abbreviations in Indus Kohistani reflexes.</li>
+<li>Encoding debris: a mangled <span class="mono">n/a</span> for a vowel letter (18 Kotgarhi pairs, also Bhalesi, Khashali, Kalasha, Shina, Gawarbati, Dameli, Palula); raw <span class="mono">&lt;sup&gt;</span> in 11 CDIAL Kashmiri forms and some Dardic ones; <span class="mono">&amp;gt;</span> in a Nepali reflex.</li>
+<li>Fragments and phrases: Lahnda <span class="mono">sárva → a</span>, European Romani <span class="mono">karambʰá → u</span>, phrases in Grierson's Bihari and several survey lists.</li>
+</ul>
+<h3>Transcription and tooling</h3>
+<ul>
+<li>Several field sources need source-level notation metadata (written length, dentals written with the retroflex underdot, digraph aspirates); the agents' <code>%source</code> blocks record them.</li>
+<li>The CDIAL profile splits accented diphthongs (<span class="mono">saínya</span>, <span class="mono">saúvarṇa</span>; 31 sequences among 18,527 etyma), and U+01DD <span class="mono">ǝ</span> is not folded like <span class="mono">ə</span>.</li>
+<li>Nuristani loan/inherited candidates are in <code>results/nuristani-strata.csv</code> for review.</li>
+</ul>
+</section>
+
+<section id="limits" class="prose">
+<h2>Limits and next steps</h2>
+<ul>
+<li><strong>Morphology is the ceiling.</strong> Gender and extension suffixes, infinitive and other citation forms, and compounds dominate the residual. The most-requested engine feature (7 of 12 groups) is conditioning rules on part of speech or word class; next are source blocks that can run inside the chain (6) and morpheme boundaries (5).</li>
+<li><strong>Non-local contexts are hard to find.</strong> The rule-suggestion tool only proposes changes conditioned on adjacent segments, so vowel harmony, umlaut and stress effects were found only when someone looked for them (Khowar, Kalasha, West Pahari, Gujarati). A correspondence-table view conditioned on the next syllable would help every lect.</li>
+<li><strong>Small test sets.</strong> About 60 lects have fewer than 100 test pairs; their test NED moves by ±0.01–0.05 with single words. Train numbers are steadier.</li>
+<li><strong>Orders are only as good as the chains.</strong> An order is evidence only where both single-rule moves hurt, and rules phrased differently can change which orders are testable (for example, lengthening conditioned on a following vowel versus a word-final geminate).</li>
+<li><strong>Grouping.</strong> The tag clustering uses presence and absence, so shared absences pull lects together. Cross-scoring chains on other lects' data, which several groups did locally, is a better tree-building signal but needs notation normalisation.</li>
+</ul>
+</section>
+
+<section id="files" class="prose">
+<h2>Files</h2>
+<p>All under <code>data/sound_changes/</code>: <code>rules/OIA-&lt;lect&gt;.sc</code> (hand chains), <code>rules/auto/</code> (greedy baselines), <code>pairs/</code> (eval data), <code>results/summary.csv</code>, <code>results/tags.csv</code>, <code>results/order_consensus.csv</code>, <code>results/chronology_stages.csv</code>, <code>results/orders/</code> (per-lect order tests), <code>results/*.frontier.csv</code>, <code>notes/&lt;group&gt;.md</code> (each group's full notes), <code>CATALOG.md</code> (tag vocabulary), <code>plots/</code>. Tools: <code>sca.py</code> (engine), <code>evaluate.py</code> (score, apply, suggest, frontier, induce), <code>synth.py</code> (table, tags, orders, orderagg).</p>
+</section>
+</main>
+</div>
+
+<script>
+(function () {
+  var data = {{LECT_DATA}};
+  var tbody = document.querySelector('#lects tbody');
+  var grp = document.getElementById('grp');
+  var q = document.getElementById('q');
+  var count = document.getElementById('count');
+  var sortKey = 'hand', sortDir = 1;
+  function fmt(v, d) { return v === null || v === undefined || v === '' ? '' : (typeof v === 'number' ? v.toFixed(d) : v); }
+  function render() {
+    var g = grp.value, s = q.value.trim().toLowerCase();
+    var rows = data.filter(function (r) {
+      return (!g || r.gkey === g) && (!s || r.name.toLowerCase().indexOf(s) >= 0 || r.lang.toLowerCase().indexOf(s) >= 0);
+    });
+    rows.sort(function (a, b) {
+      var x = a[sortKey], y = b[sortKey];
+      if (x === null || x === undefined) return 1;
+      if (y === null || y === undefined) return -1;
+      return (x > y ? 1 : x < y ? -1 : 0) * sortDir;
+    });
+    tbody.innerHTML = rows.map(function (r) {
+      var cmp = r.handk !== null && r.autok !== null ? (r.handk < r.autok ? 'win' : 'loss') : '';
+      return '<tr><td>' + r.name + ' <small>' + r.lang + '</small></td><td>' + r.group + '</td>' +
+        '<td class="num">' + r.etyma + '</td><td class="num">' + r.test + '</td><td class="num">' + r.rules + '</td>' +
+        '<td class="num">' + fmt(r.null, 3) + '</td><td class="num">' + fmt(r.hand, 3) + '</td>' +
+        '<td class="num">' + fmt(r.exact, 1) + '</td><td class="num">' + fmt(r.k, 0) + '</td>' +
+        '<td class="num ' + cmp + '">' + fmt(r.handk, 3) + '</td><td class="num">' + fmt(r.autok, 3) + '</td>' +
+        '<td><small>' + (r.excl || '') + '</small></td></tr>';
+    }).join('');
+    count.textContent = rows.length + ' of ' + data.length + ' lects';
+    document.querySelectorAll('#lects th').forEach(function (th) {
+      th.setAttribute('aria-sort', th.dataset.k === sortKey ? (sortDir > 0 ? 'ascending' : 'descending') : 'none');
+    });
+  }
+  document.querySelectorAll('#lects th').forEach(function (th) {
+    th.tabIndex = 0;
+    function go() { var k = th.dataset.k; if (k === sortKey) sortDir = -sortDir; else { sortKey = k; sortDir = 1; } render(); }
+    th.addEventListener('click', go);
+    th.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } });
+  });
+  grp.addEventListener('change', render);
+  q.addEventListener('input', render);
+  render();
+})();
+</script>

@@ -1,0 +1,23 @@
+{
+  "status": "one_material_pre_receipt_gap",
+  "reviewer": "rohru_finish",
+  "scope": "Read-only inspection of Behera guarded adapter, isolated tests, actual canonical target paths, approval design and reused Aranadan transaction engine; no real installation was run.",
+  "passes": [
+    "Root approval pins all eight target roles, every approved asset, the adapter and the reused engine before clean installation.",
+    "The source's 6864 rows and their accepted audit union are closed against the approved key set; existing legacy keys, unrelated registry rows and bibliography entries have explicit preservation guards.",
+    "The staged journal validates asset hashes and restricts partial targets to the approved baseline or approved output. A complete receipt is validated on re-entry.",
+    "Rollback rechecks staged output or original baseline for every target, restores only approved backups, and refuses intervening edits.",
+    "Fixture tests cover missing approval, forged journal stage, partial recovery, no-op receipt, rollback and unrelated metadata changes; the real workspace has no acceptance manifest yet."
+  ],
+  "material_issue": {
+    "file": "data/data/other/forms/raw_data/nair_aranadan_2013/import_source.py",
+    "function": "main",
+    "location": "After the target replacement loop and before installation-receipt.json is written",
+    "finding": "Only durable identity is rehashed. Previously written shared targets are not rehashed before the complete receipt is published. A concurrent edit to bibliography or registries after replacement of that target, while later targets are written, can result in a false success receipt. A later invocation detects drift, but the initial installation claims completion incorrectly.",
+    "recommendation": "Assert file_hash(path) == digest(content) for every planned target immediately before the receipt write. Add a synthetic interruption/drift fixture. This changes the shared engine, so the exact new engine hash must be approved in root-acceptance.json."
+  },
+  "deferred": [
+    "No final approved Behera asset set or root-acceptance.json exists yet; current real-target checks are design-level rather than final-baseline-value checks.",
+    "No full multi-source CLDF build, durable-ID graph parity or browser QA was run."
+  ]
+}

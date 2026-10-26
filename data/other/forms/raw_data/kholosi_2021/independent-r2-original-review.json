@@ -1,0 +1,662 @@
+{
+  "status": "failed; revision required before installation",
+  "reviewer": "independent norton_finish agent",
+  "sample_seed": 2026092702,
+  "sampled_units": 20,
+  "passed_units": 16,
+  "failed_units": 4,
+  "material_error_classes": 1,
+  "controls": [
+    {
+      "control": 1,
+      "purpose": "printed-number conflict",
+      "status": "passed for stated control purpose",
+      "entry_keys": [
+        "legacy:20220913-kholosi:row:9"
+      ]
+    },
+    {
+      "control": 2,
+      "purpose": "probable competing ancestry",
+      "status": "passed for stated control purpose",
+      "entry_keys": [
+        "legacy:20220913-kholosi:row:147"
+      ]
+    },
+    {
+      "control": 3,
+      "purpose": "printed-number conflict",
+      "status": "passed for stated control purpose",
+      "entry_keys": [
+        "legacy:20220913-kholosi:row:154"
+      ]
+    },
+    {
+      "control": 4,
+      "purpose": "explicit local compound",
+      "status": "passed for stated control purpose",
+      "entry_keys": [
+        "kholosi:pdf:p2:c2:u19:sense:1"
+      ]
+    },
+    {
+      "control": 5,
+      "purpose": "rejected ancestry",
+      "status": "passed for stated control purpose",
+      "entry_keys": [
+        "kholosi:pdf:p10:c1:u8:sense:1"
+      ]
+    },
+    {
+      "control": 6,
+      "purpose": "qualified comparison scope",
+      "status": "passed for stated control purpose",
+      "entry_keys": [
+        "kholosi:pdf:p1:c2:u21:sense:1",
+        "kholosi:pdf:p1:c2:u21:sense:2"
+      ]
+    },
+    {
+      "control": 7,
+      "purpose": "explicit optional form",
+      "status": "passed for stated control purpose",
+      "entry_keys": [
+        "kholosi:github:18b43f982efa:lexicon.csv:row141:answer1",
+        "kholosi:github:18b43f982efa:lexicon.csv:row141:answer2"
+      ]
+    },
+    {
+      "control": 8,
+      "purpose": "pronunciation alternatives",
+      "status": "passed for stated control purpose",
+      "entry_keys": [
+        "kholosi:github:18b43f982efa:lexicon.csv:row44:answer1",
+        "kholosi:github:18b43f982efa:lexicon.csv:row44:answer2"
+      ]
+    },
+    {
+      "control": 9,
+      "purpose": "head and feminine paradigm",
+      "status": "passed for stated control purpose",
+      "entry_keys": [
+        "kholosi:github:18b43f982efa:lexicon.csv:row37",
+        "kholosi:github:18b43f982efa:lexicon.csv:row37:paradigm:1"
+      ]
+    },
+    {
+      "control": 10,
+      "purpose": "untranslated response",
+      "status": "passed for stated control purpose",
+      "entry_keys": [
+        "kholosi:github:18b43f982efa:sentences.csv:row91"
+      ]
+    },
+    {
+      "control": 11,
+      "purpose": "source blank",
+      "status": "passed for stated control purpose",
+      "entry_keys": []
+    },
+    {
+      "control": 12,
+      "purpose": "untranslated whole text",
+      "status": "passed for stated control purpose",
+      "entry_keys": [
+        "kholosi:github:18b43f982efa:sentences.txt:whole-text"
+      ]
+    },
+    {
+      "control": 13,
+      "purpose": "acoustic control",
+      "status": "passed for stated control purpose",
+      "entry_keys": []
+    },
+    {
+      "control": 14,
+      "purpose": "mixed-case citation",
+      "status": "passed for stated control purpose",
+      "entry_keys": [
+        "kholosi:github:18b43f982efa:lexicon.csv:row137"
+      ]
+    }
+  ],
+  "records": [
+    {
+      "sample": 1,
+      "entry_key": "legacy:20220913-kholosi:row:183",
+      "actual_row": [
+        "Khol",
+        "11225",
+        "vazo",
+        "big, large",
+        "",
+        "ʋazo",
+        "",
+        "kholosi[p. 9, col. 2, u13]",
+        "",
+        "Sanskrit VAḌRA (11225).",
+        "legacy:20220913-kholosi:row:183",
+        "",
+        "",
+        "",
+        "adj"
+      ],
+      "status": "passed",
+      "literal_form_gloss_ipa_scope": "passed original comparison",
+      "finding": null
+    },
+    {
+      "sample": 2,
+      "entry_key": "kholosi:pdf:p1:c2:u14:sense:1",
+      "actual_row": [
+        "Khol",
+        "",
+        "bāā",
+        "father",
+        "",
+        "bɔɔ",
+        "",
+        "kholosi[p. 1, col. 2, u14]",
+        "",
+        "unknown.",
+        "kholosi:pdf:p1:c2:u14:sense:1",
+        "",
+        "",
+        "",
+        "noun"
+      ],
+      "status": "passed",
+      "literal_form_gloss_ipa_scope": "passed original comparison",
+      "finding": null
+    },
+    {
+      "sample": 3,
+      "entry_key": "kholosi:pdf:p2:c2:u9:sense:1",
+      "actual_row": [
+        "Khol",
+        "",
+        "dāno",
+        "seed",
+        "",
+        "dɔno",
+        "",
+        "kholosi[p. 2, col. 2, u9]",
+        "",
+        "Persian dāne.",
+        "kholosi:pdf:p2:c2:u9:sense:1",
+        "",
+        "",
+        "",
+        "noun"
+      ],
+      "status": "failed metadata",
+      "literal_form_gloss_ipa_scope": "passed original comparison",
+      "finding": "Explicit unqualified Persian donor etymology lacks loanword tag; preserve source claim without inventing a donor node."
+    },
+    {
+      "sample": 4,
+      "entry_key": "kholosi:pdf:p2:c2:u18:sense:1",
+      "actual_row": [
+        "Khol",
+        "",
+        "derāz",
+        "lying, flat",
+        "",
+        "derɔz",
+        "",
+        "kholosi[p. 2, col. 2, u18]",
+        "",
+        "Persian darāz.",
+        "kholosi:pdf:p2:c2:u18:sense:1",
+        "",
+        "",
+        "",
+        "adj"
+      ],
+      "status": "failed metadata",
+      "literal_form_gloss_ipa_scope": "passed original comparison",
+      "finding": "Explicit unqualified Persian donor etymology lacks loanword tag; preserve source claim without inventing a donor node."
+    },
+    {
+      "sample": 5,
+      "entry_key": "kholosi:pdf:p10:c2:u8:sense:1",
+      "actual_row": [
+        "Khol",
+        "",
+        "xorāk",
+        "food",
+        "",
+        "xorɔk",
+        "",
+        "kholosi[p. 10, col. 2, u8]",
+        "",
+        "Persian xorāk.",
+        "kholosi:pdf:p10:c2:u8:sense:1",
+        "",
+        "",
+        "",
+        "noun"
+      ],
+      "status": "failed metadata",
+      "literal_form_gloss_ipa_scope": "passed original comparison",
+      "finding": "Explicit unqualified Persian donor etymology lacks loanword tag; preserve source claim without inventing a donor node."
+    },
+    {
+      "sample": 6,
+      "entry_key": "kholosi:pdf:p9:c2:u5:sense:2",
+      "actual_row": [
+        "Khol",
+        "",
+        "valem",
+        "right (direction)",
+        "",
+        "ʋalem",
+        "",
+        "kholosi[p. 9, col. 2, u5]",
+        "",
+        "",
+        "kholosi:pdf:p9:c2:u5:sense:2",
+        "kholosi:pdf:p9:c2:u4:sense:2",
+        "",
+        "",
+        "noun alternate"
+      ],
+      "status": "passed",
+      "literal_form_gloss_ipa_scope": "passed original comparison",
+      "finding": null
+    },
+    {
+      "sample": 7,
+      "entry_key": "kholosi:pdf:p4:c2:u3:sense:1",
+      "actual_row": [
+        "Khol",
+        "",
+        "kelak",
+        "son",
+        "",
+        "kelak",
+        "",
+        "kholosi[p. 4, col. 2, u3]",
+        "",
+        "unknown.",
+        "kholosi:pdf:p4:c2:u3:sense:1",
+        "",
+        "",
+        "",
+        "noun"
+      ],
+      "status": "passed",
+      "literal_form_gloss_ipa_scope": "passed original comparison",
+      "finding": null
+    },
+    {
+      "sample": 8,
+      "entry_key": "legacy:20220913-kholosi:row:14",
+      "actual_row": [
+        "Khol",
+        "10511",
+        "āve",
+        "you",
+        "",
+        "ɔʋe",
+        "",
+        "kholosi[p. 1, col. 2, u4]",
+        "",
+        "Sanskrit YUṢMAD (10511), cf. Khetrani avhe, Lasi avī, Sinhala uᵐbə.",
+        "legacy:20220913-kholosi:row:14",
+        "",
+        "",
+        "",
+        "pron personal second-person pl"
+      ],
+      "status": "passed",
+      "literal_form_gloss_ipa_scope": "passed original comparison",
+      "finding": null
+    },
+    {
+      "sample": 9,
+      "entry_key": "kholosi:github:18b43f982efa:lexicon.csv:row238:paradigm:1",
+      "actual_row": [
+        "Khol",
+        "8283",
+        "parini",
+        "old",
+        "",
+        "",
+        "Source record date: October 15, 2020. The source prints CDIAL 3283, whose head is kuthnā́ti; its explicitly named purāṇá corresponds uniquely to CDIAL 8283. The printed number is retained as source evidence.",
+        "kholosi[repository 18b43f982efa, lexicon.csv, row 238]",
+        "",
+        "",
+        "kholosi:github:18b43f982efa:lexicon.csv:row238:paradigm:1",
+        "",
+        "",
+        "kholosi:github:18b43f982efa:lexicon.csv:row238",
+        "adj f"
+      ],
+      "status": "passed",
+      "literal_form_gloss_ipa_scope": "passed original comparison",
+      "finding": null
+    },
+    {
+      "sample": 10,
+      "entry_key": "kholosi:github:18b43f982efa:lexicon.csv:row148",
+      "actual_row": [
+        "Khol",
+        "",
+        "sāvāyi",
+        "grass",
+        "",
+        "sɔ.vɔ.i",
+        "Source record date: October 9, 2020. The source qualifies part of this component analysis; the original qualification is retained in Etymology.",
+        "kholosi[repository 18b43f982efa, lexicon.csv, row 148]",
+        "",
+        "Native sāo \"green\" + ?",
+        "kholosi:github:18b43f982efa:lexicon.csv:row148",
+        "",
+        "",
+        "kholosi:github:18b43f982efa:lexicon.csv:row242",
+        "noun uncertain"
+      ],
+      "status": "passed",
+      "literal_form_gloss_ipa_scope": "passed original comparison",
+      "finding": null
+    },
+    {
+      "sample": 11,
+      "entry_key": "kholosi:github:18b43f982efa:lexicon.csv:row366",
+      "actual_row": [
+        "Khol",
+        "",
+        "kavi",
+        "strong",
+        "",
+        "ka.ʋi",
+        "Source record date: December 29, 2020.",
+        "kholosi[repository 18b43f982efa, lexicon.csv, row 366]",
+        "",
+        "Prs. qavi",
+        "kholosi:github:18b43f982efa:lexicon.csv:row366",
+        "",
+        "",
+        "",
+        "adj"
+      ],
+      "status": "failed metadata",
+      "literal_form_gloss_ipa_scope": "passed original comparison",
+      "finding": "Explicit unqualified Persian donor etymology lacks loanword tag; preserve source claim without inventing a donor node."
+    },
+    {
+      "sample": 12,
+      "entry_key": "kholosi:github:18b43f982efa:lexicon.csv:row182:paradigm:1",
+      "actual_row": [
+        "Khol",
+        "",
+        "herro",
+        "boy",
+        "",
+        "",
+        "Source record date: October 12, 2020.",
+        "kholosi[repository 18b43f982efa, lexicon.csv, row 182]",
+        "",
+        "",
+        "kholosi:github:18b43f982efa:lexicon.csv:row182:paradigm:1",
+        "",
+        "",
+        "kholosi:github:18b43f982efa:lexicon.csv:row182",
+        "noun pl"
+      ],
+      "status": "passed",
+      "literal_form_gloss_ipa_scope": "passed original comparison",
+      "finding": null
+    },
+    {
+      "sample": 13,
+      "entry_key": "kholosi:github:18b43f982efa:lexicon.csv:row55",
+      "actual_row": [
+        "Khol",
+        "9758",
+        "mačʰi",
+        "fish",
+        "",
+        "ma.t͡ʃʰi",
+        "Source record date: October 3, 2020.",
+        "kholosi[repository 18b43f982efa, lexicon.csv, row 55]",
+        "",
+        "Skt. mátsya (CDIAL 9758)",
+        "kholosi:github:18b43f982efa:lexicon.csv:row55",
+        "",
+        "",
+        "",
+        "noun"
+      ],
+      "status": "passed",
+      "literal_form_gloss_ipa_scope": "passed original comparison",
+      "finding": null
+    },
+    {
+      "sample": 14,
+      "entry_key": "kholosi:github:18b43f982efa:lexicon.csv:row23",
+      "actual_row": [
+        "Khol",
+        "5994",
+        "tereṛā",
+        "three",
+        "",
+        "te.re.ɽo",
+        "Source citation: Anonby (tereda). Source record date: September 29, 2020.",
+        "kholosi[repository 18b43f982efa, lexicon.csv, row 23]",
+        "",
+        "Skt. tráyaḥ (CDIAL 5994) The -ro numeral suffix seems to have undergone dissimilation. Source comparison: Sd. ṭ(r)e, Thari ṭan.",
+        "kholosi:github:18b43f982efa:lexicon.csv:row23",
+        "",
+        "",
+        "kholosi:github:18b43f982efa:lexicon.csv:row23:morphology:9",
+        "num"
+      ],
+      "status": "passed",
+      "literal_form_gloss_ipa_scope": "passed original comparison",
+      "finding": null
+    },
+    {
+      "sample": 15,
+      "entry_key": "kholosi:github:18b43f982efa:sentences.csv:row30",
+      "actual_row": [
+        "Khol",
+        "",
+        "mohemtarin kôm môrez jo mehrabani he",
+        "Kindness is the most \nimportant principle of humanity.",
+        "",
+        "",
+        "Source record date: October 5, 2020. Source interlinear analysis: most.important principle humanity GEN kindness be.PRS.",
+        "kholosi[repository 18b43f982efa, sentences.csv, row 30]",
+        "",
+        "",
+        "kholosi:github:18b43f982efa:sentences.csv:row30",
+        "",
+        "",
+        "",
+        "sentential multiword-expression"
+      ],
+      "status": "passed",
+      "literal_form_gloss_ipa_scope": "passed original comparison",
+      "finding": null
+    },
+    {
+      "sample": 16,
+      "entry_key": "kholosi:github:18b43f982efa:sentences.csv:row12",
+      "actual_row": [
+        "Khol",
+        "",
+        "ho môntôw tarix e",
+        "He is angry at me.",
+        "",
+        "",
+        "Source record date: October 5, 2020. Source interlinear analysis: 3SG 1SG.ABL angry be.PRS.",
+        "kholosi[repository 18b43f982efa, sentences.csv, row 12]",
+        "",
+        "",
+        "kholosi:github:18b43f982efa:sentences.csv:row12",
+        "",
+        "",
+        "",
+        "sentential multiword-expression"
+      ],
+      "status": "passed",
+      "literal_form_gloss_ipa_scope": "passed original comparison",
+      "finding": null
+    },
+    {
+      "sample": 17,
+      "entry_key": "kholosi:github:18b43f982efa:sentences.csv:row59",
+      "actual_row": [
+        "Khol",
+        "",
+        "ôve gohrom gahvayi ye",
+        "Your (pl.) horse is brown.",
+        "",
+        "",
+        "Source interlinear analysis: ?.",
+        "kholosi[repository 18b43f982efa, sentences.csv, row 59]",
+        "",
+        "",
+        "kholosi:github:18b43f982efa:sentences.csv:row59",
+        "",
+        "",
+        "",
+        "sentential multiword-expression"
+      ],
+      "status": "passed",
+      "literal_form_gloss_ipa_scope": "passed original comparison",
+      "finding": null
+    },
+    {
+      "sample": 18,
+      "entry_key": "kholosi:github:18b43f982efa:sentences.csv:row38",
+      "actual_row": [
+        "Khol",
+        "",
+        "fil-e-daroto ne meraw",
+        "The old elephant did not die.",
+        "",
+        "",
+        "Source record date: October 7, 2020. Source interlinear analysis: elephant.EZ.old not die.PST.",
+        "kholosi[repository 18b43f982efa, sentences.csv, row 38]",
+        "",
+        "",
+        "kholosi:github:18b43f982efa:sentences.csv:row38",
+        "",
+        "",
+        "",
+        "sentential multiword-expression"
+      ],
+      "status": "passed",
+      "literal_form_gloss_ipa_scope": "passed original comparison",
+      "finding": null
+    },
+    {
+      "sample": 19,
+      "entry_key": "kholosi:pdf:p3:c2:u20:morphology:15",
+      "actual_row": [
+        "Khol",
+        "",
+        "h-",
+        "",
+        "",
+        "",
+        "Source analysis: with emphatic h-",
+        "kholosi[p. 3, col. 2, u20]",
+        "",
+        "",
+        "kholosi:pdf:p3:c2:u20:morphology:15",
+        "",
+        "",
+        "",
+        "prefix emph"
+      ],
+      "status": "passed",
+      "literal_form_gloss_ipa_scope": "passed original comparison",
+      "finding": null
+    },
+    {
+      "sample": 20,
+      "entry_key": "kholosi:pdf:p8:c1:u12:morphology:5",
+      "actual_row": [
+        "Khol",
+        "",
+        "-āyi",
+        "",
+        "",
+        "",
+        "Source analysis: -āyi ‘?’ source morphology gloss unknown.",
+        "kholosi[p. 8, col. 1, u12]",
+        "",
+        "",
+        "kholosi:pdf:p8:c1:u12:morphology:5",
+        "",
+        "",
+        "",
+        "suffix uncertain"
+      ],
+      "status": "passed",
+      "literal_form_gloss_ipa_scope": "passed original comparison",
+      "finding": null
+    }
+  ],
+  "manifest_sha256": "742eb946d261d87f3aee582da23da41f4b5151cd5f2ccc88b2020a4da340ebc6",
+  "selection_sha256": "cdc1a2fabd0f942233fe135a4bbf3705e52d5cde9329e4feb8de2b9e4c6e1ea2",
+  "frozen_output_sha256": {
+    "r1-to-r2-delta.json": "7effd9c3b5f7d4cc44c7bbede302637c156e44630379c97c745a57daa1f9c5f3",
+    "whole-metadata-proposed.yaml": "c2eeb18dfa49fc65c97a38b0ea37be135409b6a8ce72b6ab949acb8e5d20105c",
+    "whole-parser-validation.json": "fb76388e47a92e01fa9f077cd652ef4d7e8ebe3ef6023817c0e6662a9cbd9b2f",
+    "whole-profile-proposed.txt": "1fcdabf0a57b03e70499591a6f2271edf5f1e7fef5d2250fb02b28728cb9369a",
+    "whole-proposed-audit.jsonl": "07be097eacb458517f9bea6d4a97013523f4c8d07badb61c934c0dbfad68e578",
+    "whole-proposed.csv": "6487035d3cb5d19d8e20487fa3af4f2c138d5251a1773936cc072ae74db64a5c"
+  },
+  "original_sha256": {
+    "Kholosi_Dictionary.pdf": "a87222552e2561a6961aef3cda7a6a178ab033870a558ea64d297cf5417e09dc",
+    "lexicon.csv": "940cd0d0d6963065c67e4244ee0323f7046383b578503825fa44d20a7d32881f",
+    "sentences.csv": "61d9121693c0432f31a23c2c81b8bc02b85511cb2b029b5760e1ba03d004f159",
+    "sentences.txt": "a5267192d260fac01f7f0b4a7e16ef262b366ce224e0726fe03620b264c0f40a",
+    "data.txt": "6b6c1aa4c6c1f78df7074df868a51a32294d0b01af4fe79d96a5e6cd4265fe25"
+  },
+  "original_review": {
+    "pdf_printed_pages_visually_inspected": [
+      1,
+      2,
+      3,
+      4,
+      8,
+      9,
+      10
+    ],
+    "mapping": "printed page p = original PDF zero-index p+1",
+    "author_csv": "Every sampled/control raw_fields record compared to exact physical original CSV row; actual output rows verified separately.",
+    "fields": "Literal form, printed IPA or deliberate blank, meaning, source attribution, grammatical qualifiers, graph targets and source caveats."
+  },
+  "graph_checks": {
+    "legacy_parameter_assignments_preserved": 198,
+    "local_link_targets_closed": 125,
+    "cdial_target_heads": {
+      "11714": "viḍaṅga",
+      "1174": "ā́nayati",
+      "12372": "*śākara",
+      "12732": "ślakṣṇá",
+      "3283": "kuthnā́ti",
+      "8283": "purāṇá",
+      "9187": "bahú",
+      "9193": "bahura",
+      "12415": "śāli",
+      "4749": "*cāmala",
+      "10323": "mḗdas"
+    },
+    "interpretation": "11714/1174,12372/12732 and3283/8283 numerical conflicts retain printed evidence; corrected named-head targets agree with canonical CDIAL. Rice retains historical4749 while source12415 is explicitly qualified. BAHURA9193 is comparison-only; bere links9187. Local kadden/sāo components and bound h-/-āyi are source-supported; no inferred donor node."
+  },
+  "required_class_repair": "Review all explicit direct borrowing attributions across PDF and author CSV, including variants/paradigms inheriting the same etymological claim. Distinguish direct donors from comparisons, calques, qualified alternatives and unknown ancestry. Add loanword only where source warrants it; qualify uncertain claims. Do not create unrelated donor entries.",
+  "nonblocking_notes": [
+    "Sample14 retains source tentative dissimilation claim verbatim; no independent phonological claim is certified.",
+    "Sample17 supplies a secure whole translation but unknown interlinear analysis; no token analysis is inferred.",
+    "Controls verify their stated conflict/alternate/blank scope, not exemption from corpus-wide borrowing-tag repair."
+  ],
+  "coverage_limit": "This is an independent20-unit original-source audit plus14targeted control groups and bounded graph validation, not a new complete rereading of all dictionary entries.",
+  "canonical_mutated": false
+}

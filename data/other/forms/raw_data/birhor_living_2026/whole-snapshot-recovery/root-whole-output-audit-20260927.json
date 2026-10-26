@@ -1,0 +1,152 @@
+{
+  "status": "passed independent whole-output sample; source-stage installation eligible after canonical checks",
+  "reviewer": "root",
+  "manifest_sha256": "18d08e164fe66d52a14259c23484750286f727de2720aab973e5616c958a2afd",
+  "sample_sha256": "7f61217d1f07a090d9ef8f6b69d082ada64cf87ac4b2fc6ee8f79758e96a8977",
+  "proposal_sha256": "22b84c90646a2da1f93d05a05cd0ffe98a75b2d05006184d077004e99e0c8522",
+  "snapshot_sha256": "9b377c42300e406c10d1571dab998a7ea7f924be8cf912e2b98ecaf0a2bae666",
+  "units_reviewed": 20,
+  "output_rows_reviewed": 22,
+  "extra_controls_reviewed": 5,
+  "material_errors": 0,
+  "method": "Read actual ten head records and ten complete raw annotation contexts, comparing all emitted rows, Native/phonetic layers, numbered senses, lexical gloss, explicit tags, Notes, source locators and exact-reuse attribution. Verified packet equality against pinned snapshot and frozen CSV/audit.",
+  "observations": [
+    "Explicit warm (vb.) becomes warm + verb tag. Numbered bangle/bracelet and spatter(ed)/sprinkle(d) senses remain distinct; semantic parentheses preserved.",
+    "Annotation attestations stomach, liquor, seed/seeds, mustard seed, cattle, bark, toothache and dog match local source wording. arkʰi also explicitly paired with traditional liquor later in its note.",
+    "Reused seed/cattle/bark/toothache entries retain every sampled source locator and same analysis; singular seed and plural-context seeds remain distinct lexical glosses.",
+    "Santali matkam, English narrative parentheses and language-unassigned prose labels remain documentary controls. Bare babat buna is recovered as a head, not lost with its control record."
+  ],
+  "results": [
+    {
+      "source_unit_key": "living-birhor2026:WmpRYWAYwl5hFpySKrgZ:head",
+      "result": "pass",
+      "rows_reviewed": 1
+    },
+    {
+      "source_unit_key": "living-birhor2026:WTDtcS4E6Y4gjU3OH5WF:head",
+      "result": "pass",
+      "rows_reviewed": 2
+    },
+    {
+      "source_unit_key": "living-birhor2026:FkKhz9382lFm5AfQsbLZ:head",
+      "result": "pass",
+      "rows_reviewed": 1
+    },
+    {
+      "source_unit_key": "living-birhor2026:3WmH1ahBJkLMI90g6Tjj:head",
+      "result": "pass",
+      "rows_reviewed": 1
+    },
+    {
+      "source_unit_key": "living-birhor2026:3oI7MKmxMiDTtLxMygZ9:head",
+      "result": "pass",
+      "rows_reviewed": 1
+    },
+    {
+      "source_unit_key": "living-birhor2026:P5ELhDiCds9ncE6jwwJZ:head",
+      "result": "pass",
+      "rows_reviewed": 1
+    },
+    {
+      "source_unit_key": "living-birhor2026:lKqOHVmNxHKCDL43lcwu:head",
+      "result": "pass",
+      "rows_reviewed": 2
+    },
+    {
+      "source_unit_key": "living-birhor2026:pWAHEm19hWc35FE3e7K4:head",
+      "result": "pass",
+      "rows_reviewed": 1
+    },
+    {
+      "source_unit_key": "living-birhor2026:Rd9JYuNX52PCUzMWGYyf:head",
+      "result": "pass",
+      "rows_reviewed": 1
+    },
+    {
+      "source_unit_key": "living-birhor2026:HYzXswt55tg8h0JWvE3r:head",
+      "result": "pass",
+      "rows_reviewed": 1
+    },
+    {
+      "source_unit_key": "living-birhor2026:3mWwIaZTsPB6SbDwli2x:note:parenthesis:8",
+      "result": "pass",
+      "rows_reviewed": 1
+    },
+    {
+      "source_unit_key": "living-birhor2026:iXEzMlUBfuF64zlHE9ft:note:outside:3",
+      "result": "pass",
+      "rows_reviewed": 1
+    },
+    {
+      "source_unit_key": "living-birhor2026:lCN8uwRXiAYQuHUQzDh3:note:parenthesis:9",
+      "result": "pass",
+      "rows_reviewed": 1
+    },
+    {
+      "source_unit_key": "living-birhor2026:mFWqhayaTZ8Na4gvNHzl:note:parenthesis:10",
+      "result": "pass",
+      "rows_reviewed": 1
+    },
+    {
+      "source_unit_key": "living-birhor2026:JpWevk3xKUV1j4idCHzw:note:parenthesis:16",
+      "result": "pass",
+      "rows_reviewed": 1
+    },
+    {
+      "source_unit_key": "living-birhor2026:dxqNTOfUHQGjbs087NPv:note:parenthesis:5",
+      "result": "pass",
+      "rows_reviewed": 1
+    },
+    {
+      "source_unit_key": "living-birhor2026:JjeGW1PyC0RP0ZkjdHvx:note:parenthesis:4",
+      "result": "pass",
+      "rows_reviewed": 1
+    },
+    {
+      "source_unit_key": "living-birhor2026:f2JNon9NG8zJTb1nqRQp:note:parenthesis:7",
+      "result": "pass",
+      "rows_reviewed": 1
+    },
+    {
+      "source_unit_key": "living-birhor2026:r9B81mwaBcb6DFG2SWJf:note:parenthesis:7",
+      "result": "pass",
+      "rows_reviewed": 1
+    },
+    {
+      "source_unit_key": "living-birhor2026:E02FqfhLYTpf9r1PxfSi:note:parenthesis:18",
+      "result": "pass",
+      "rows_reviewed": 1
+    }
+  ],
+  "controls": [
+    {
+      "source_unit_key": "living-birhor2026:iXEzMlUBfuF64zlHE9ft:note:outside:1",
+      "result": "pass",
+      "disposition": "explicit-other-language-control"
+    },
+    {
+      "source_unit_key": "living-birhor2026:mGk3qZ7YPYGNSSNC22OY:note:outside:2",
+      "result": "pass",
+      "disposition": "documentary-prose-label-unassigned-language"
+    },
+    {
+      "source_unit_key": "living-birhor2026:qO6VC75ZTsmI4QblbLxF:note:parenthesis:22",
+      "result": "pass",
+      "disposition": "English-or-botanical-or-link-context"
+    },
+    {
+      "source_unit_key": "living-birhor2026:lV4SFRDZBI0R4KykWpwJ:note:outside:1",
+      "result": "pass",
+      "disposition": "main-head-scope-resolution"
+    },
+    {
+      "source_unit_key": "living-birhor2026:dSk9kvdAAntCgfpxNcjm:note:outside:2",
+      "result": "pass",
+      "disposition": "documentary-prose-label-unassigned-language"
+    }
+  ],
+  "remaining": [
+    "Canonical installation, registered-source parser and citation checks",
+    "Full CLDF/database, compiled graph/reference and browser QA deferred under standing user instruction."
+  ]
+}

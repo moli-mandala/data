@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Kurux · Dravidian surveys, 2026-09-21 · batch 027. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Kurux | Proposed etymology | Evidence |
+|---|---|---|---|
+| 126 | **tīŋglī** ‘fly’, **tīŋalī** ‘fly’, **tīŋlī** ‘fly’, **tīŋgilī** ‘fly’, **tiŋli** ‘fly’, **tīnglī** ‘fly’ | Proposed reflex of [**DEDR 3214**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=279) | DEDR3214 explicitly gives Kurux tiŋglī fly beside Malto tilṉgru. The survey tiŋgli/tiŋgili/tiŋali-type noun responses retain that family, including the source’s epenthetic vowel or cluster notation. Verb fly responses are treated separately. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (9 records.) |
+| 127 | **xandaras** ‘sleep’, **xāndaras** ‘sleep’, **xandarās** ‘sleep’ | Proposed reflex of [**DEDR 1407**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=131) | DEDR1407 explicitly gives Kurux xandrnā to sleep within the dream family. Survey xandaras is an ordinary inflected response based on that same-language sleep verb; the nearby kʰandavna form is excluded pending analysis of its internal consonant/possible extension. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (3 records.) |
+| 128 | **pɔrmīas** ‘bite’, **parīmīas** ‘bite’ | Proposed reflex of [**DEDR 3962**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=353) | DEDR3962(a) gives Kurux parᵃmnā to bite, also separate the halves of pulse with a handmill. Survey pormias/parimias matches that specific bite verb with ordinary inflection and source vowel variation; the separate subsection (b) chip/slice borrowing is not used. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (4 records.) |
+| 129 | **cʰɛlki** ‘broom’ | Proposed reflex of [**DEDR 2375**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=209) | DEDR2375 explicitly gives Kurux calkī broom or its special grass, alongside Malto celaki grass broom. Survey cʰelki matches that same-language broom noun with source aspiration and vowel notation retained. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 130 | **mīsgā** ‘roof’ | Proposed reflex of [**DEDR 5532**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=505) | DEDR5532 explicitly gives Kurux mesgā roof, especially thatched roof, alongside Malto mesge. Survey misga matches that same-language noun with its source vowel notation preserved. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+
+Proposed assignment rows: **18**. Affected records: **18**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-027.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Kurux/batch-027.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

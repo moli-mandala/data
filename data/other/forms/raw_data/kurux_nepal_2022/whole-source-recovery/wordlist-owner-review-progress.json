@@ -1,0 +1,44 @@
+{
+  "status": "complete owner original-page reading; independent whole-output audit pending",
+  "source_sha256": "aedf47151ebea80852cb7ed66d085fc18310aa3f4d35e189c698b624f3cbef5a",
+  "input": "wordlist-geometry-first-reading.jsonl",
+  "reviewed_printed_pages": [
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56
+  ],
+  "reviewed_prompt_ranges": [
+    [
+      1,
+      338
+    ]
+  ],
+  "reviewed_cells": 2028,
+  "method": "All six Kurux source columns compared cell by cell against original PDF renders at3x; checking source-order combining marks, full-sized versus raised vowels, consonant symbols, length and slash/comma scope. English and Nepali prompts remain separate controls.",
+  "corrections_to_geometry_reading": "wordlist-owner-corrections.json",
+  "observations": [
+    "Printed p44 body breathy marks attach to d, not ɛ; PDF-span source order preserves this whereas historical pdfplumber sorting did not.",
+    "Printed p44 and45 have many reduced-size raised schwas; geometry recovery retainsᵊ, not ordinaryə.",
+    "Printed p44 Ranchi whole-arm nasal mark attaches toʌ in bʌ̃ihɪ; historical draft placed it on i.",
+    "Printed p45 Ranchi axe explicitly hasʔ̬, despite general prose convention of plainʔ. Preserve the actual cell rather than harmonize to the prose rule.",
+    "Printed p45 all six gold cells are dashes; retain these six audit records without inventing forms.",
+    "All six columns reviewed through p56, including source blanks. Printed he/she English prompts and their forms are preserved without semantic harmonization.",
+    "Wrapped alternatives with absent affricate ties retain that literal difference; raised vowels stay distinct from full-size vowels.",
+    "Contextual third-person singular past labels and negative commands will be structured from explicit prompt labels, not inferred from recognizable forms."
+  ],
+  "pending_cases": [],
+  "form_corrections": 22,
+  "gloss_correction_prompts": 1,
+  "output": "wordlist-reviewed.jsonl",
+  "output_sha256": "90cfef82ecb3b74f5f2f792d8ca79ecb29c6aed3d8bd62bc949773d4eaedffb5"
+}

@@ -1,0 +1,40 @@
+{
+  "status": "Complete reviewed source-stage installed; compiled/database/browser gates deferred.",
+  "rows": 8373,
+  "author_transcription": 8361,
+  "literal_preservation": 12,
+  "audit_units": 11304,
+  "exact_reuses": 2431,
+  "controls": 500,
+  "old_keys_preserved": 485,
+  "canonical_sha256": {
+    "data/other/forms/20260921-dhakal-darai.csv": "4c0151607f67b0c181b445899cd1dc7a5d701ea15a8763143f37c4d47787d58a",
+    "data/other/forms/20260921-dhakal-darai.yaml": "5c4bd6c33d0c6a2813a328c1212564d2e64496cf9eded67dc1f032db673ee8fb",
+    "data/other/forms/20260927-dhakal-darai-literal.csv": "4645f38115177714489d922e4c82544a91598348964029bd059c7061619fe6da",
+    "data/other/forms/20260927-dhakal-darai-literal.yaml": "cb710da2b3513ecc9e92cad83b066a746dc9cfa65aa2f64eee51346fb4b76417",
+    "conversion/dhakal-darai.txt": "0cd4b3396c56fc8183f763b278b606d99ac2e37a858613f119ff494fd3d04b31"
+  },
+  "installed_audit_sha256": "cf77517556fed68f5961e03a29b4310ce744d0fa22af065172da59b48017bb4d",
+  "durable_identity_sha256_unchanged": "4977c4e205f66233366ee1c00a9c938c9c78e3c087b63e02a94832647525c28a",
+  "independent_review": "root-whole-independent-review-20260927206.json",
+  "unrelated_bibliography_entries_unchanged": 578,
+  "dialect_records_added": [
+    "darai_tanahun",
+    "darai_nawalparasi"
+  ],
+  "deferred": [
+    "Full CLDF/database build",
+    "Compiled identity/graph survival",
+    "Full test suite",
+    "Browser QA"
+  ],
+  "focused_validation": {
+    "result": "pass",
+    "tests": 66,
+    "deselected_compiled_test": 1,
+    "seconds": 5.37,
+    "log_sha256": "ea8180a2eb0b84efd8d4daaa5c8ef24e93a9cf8a401ac5059c59c39382310e9b"
+  },
+  "source_meta_validation": "283 source files with settings, 270 citation keys",
+  "post_installation_regeneration": "All four approved outputs byte-identical after canonical installation."
+}

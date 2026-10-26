@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Tamil · Dravidian surveys, 2026-09-21 · batch 041. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Tamil | Proposed etymology | Evidence |
+|---|---|---|---|
+| 191 | **kaindadə** ‘dry’, **kānjə** ‘dry’, **kāiṇta** ‘dry’ | Proposed reflex of [**DEDR 1458**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=135) | DEDR1458 gives Tamil kāy dry up/be parched with past -nt-, alongside Kannada kāyd-/kād- and the wider heat/drying family. Survey kāñca/kāñjatu/kāñju/kāynta/kāyndada dry are comparative past-adjectival responses retaining the source palatalization or nasal-stop notation and ordinary endings. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (3 records.) |
+| 192 | **ularnta** ‘dry’ | Proposed reflex of [**DEDR 674**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=66) | DEDR674 gives Tamil ular become dry with past -nt-. Survey ularnta is its ordinary dried/dry participle; no separate ancestor is invented for the ending. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 193 | **koñyam** ‘few’ | Proposed reflex of [**DEDR 2041**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=184) | DEDR2041 explicitly gives Tamil/Malayalam koñcam a little, Kannada koñca/koñce and Telugu koncemu a little/few. These koñca/koñjam/koñjo/kocca survey few responses retain that specific little-quantity family with source affricate/nasal notation and ordinary endings. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 194 | **nerru** ‘yesterday’ | Proposed reflex of [**DEDR 3758**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=335) | DEDR3758 explicitly gives Irula nagaṯṯu/næṯṯu yesterday and Kota nēr (oblique nēṯ-), beside Tamil nerunal. These nēṯṯ-/nagaṯṯ-/nēṟ- survey forms retain that yesterday family and its documented medial/oblique variants; source transcription remains unchanged. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 195 | **kuḍi** ‘drink’ | Proposed reflex of [**DEDR 1654**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=151) | DEDR1654 gives Tamil kuṭi (-pp-, -tt-), Malayalam kuṭikka, Kannada kuḍi/kuḍu and Kodagu kuḍi- (kuḍip-, kuḍic-) drink. These simple and ordinary participial/nominal survey forms retain that drink stem and documented inflectional bases; source vowel/voicing and final morphology are preserved. Possible causative kuḍisu forms and opaque auxiliaries are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+
+Proposed assignment rows: **7**. Affected records: **7**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-041.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Tamil/batch-041.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

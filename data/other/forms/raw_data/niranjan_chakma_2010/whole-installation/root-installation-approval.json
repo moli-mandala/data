@@ -1,0 +1,25 @@
+{
+  "status": "approved",
+  "reviewer": "root",
+  "date": "2026-09-27",
+  "scope": "Canonical source CSV, audit and metadata installation only; full CLDF, database, browser and publication gates deferred",
+  "material_errors": 0,
+  "csv_sha256": "4a2e1086f9f6d4af50751f577c226a757dd1d92b514e5821dd415981c4e9a35c",
+  "audit_sha256": "d582df615b8044778cdaff7976a51fc47d936790455b661a18a1cb55f233a18c",
+  "metadata_sha256": "4f0a3062677527f293ebcecf8ac5f1ab55519858220624fa7e74381a55aa9b0f",
+  "preparation_sha256": "eca48b1294d49e3f0df3ecdcdb1888247e3384f136fdfef30fc56db44e23394f",
+  "coordinator_sha256": "fdb8006cb336eb70872ebf0f2963e540807f0509c2f78779ad6875e573d8b5ac",
+  "review_manifest_sha256": "a9e5498af1a86cdb98322f55293127d9580c86d4020a435b38d7de49ddfcf01f",
+  "independent_review_sha256": {
+    "independent-whole-output-r2-review-20260927.json": "2aae910fc96e5c4e6f8b8da2107a46f33c35a32514b458bf11dba5fb76a21918",
+    "independent-whole-export-accounting-review-20260927.json": "313d9fa8cbce25e92f47fe2e516a873934b21d570feba9ec6c505916fc7b9efa"
+  },
+  "acceptance_notes": [
+    "Fresh stratified audit20/20 passes; two witnesses share one physical cell, and prior Brokskat/Santali review is disclosed.",
+    "Whole accounting review of revision1 led to two accepted identity additions in revision2, with all3660 prior output rows unchanged.",
+    "Root separately reviewed homophones/named-group corrections and section-level transcription/identity adjudications.",
+    "All742 historical keys remain; corrections do not change source identity.",
+    "486 typed uncertain rows and all unresolved-language/damaged/source-claim audit exclusions remain explicit; approval does not erase uncertainty.",
+    "Main source etymology provenance records attributed source claims; no inferred graph or phonemic claims are added."
+  ]
+}

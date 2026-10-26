@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Muthuvan · Dravidian surveys, 2026-09-21 · batch 010. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Muthuvan | Proposed etymology | Evidence |
+|---|---|---|---|
+| 46 | **nīṭam** ‘long’, **nīḷam** ‘long’ | Proposed reflex of [**DEDR 3692**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=328) | DEDR 3692 attests Tamil nīḷ-/nīṇṭ- and nīṭ-/nīṭṭam, Malayalam nīḷam/nīṭu, Kannada nīḷa and Tulu nīṭa/nīṭu length or long. Only simple length stems and ordinary adjectival inflections are selected; length-plus-possessive compounds need component analysis. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (14 records.) |
+| 47 | **nanañña** ‘wet’ | Proposed reflex of [**DEDR 3630**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=320) | DEDR 3630 compares Tamil naṉai (past naṉaint-), Malayalam nanayuka and Gondi nānd-/nān- become wet. The selected participial survey responses retain this intransitive wetting stem; causatives and compounds remain separate. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (2 records.) |
+| 48 | **kɛṭṭatɨ** ‘bad’ | Proposed reflex of [**DEDR 1942**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=176) | DEDR 1942 explicitly lists Tamil/Malayalam keṭṭa and Kannada keṭṭa bad or spoiled, beside the ruin/spoil verb. The selected adjective and neuter forms fit these attested senses; negative phrases meaning not good and unrelated loan adjectives are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 49 | **oṇaŋŋiya** ‘dry’, **oṇaŋŋikina** ‘dry’, **oṇaŋŋina** ‘dry’, **uṇakka** ‘dry’, **uṇaŋŋiya** ‘dry’ | Proposed reflex of [**DEDR 601**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=59) | DEDR 601 attests Tamil uṇaṅku, Malayalam uṇaṅṅuka, Kannada oṇagu/oṇa/oṇagilu and Kodagu oṇaŋg- dry or wither; Malayalam uṇakku also means dryness. These simple dry stems and ordinary inflections are selected; causative verb phrases and the distinctive Toda forms require separate analysis. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (7 records.) |
+| 50 | **vanam** ‘sky’, **manam** ‘sky’ | Proposed reflex of [**DEDR 5381**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=487) | DEDR 5381 records Tamil vāṉam/māṉam, Malayalam vānam/mānam, Kota vānm, Toda pōn and Kannada bāna sky. The selected simple survey sky forms reflect these stems; ākāśa-type and cloud-derived alternatives are separate families. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (7 records.) |
+
+Proposed assignment rows: **31**. Affected records: **31**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-010.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Muthuvan/batch-010.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

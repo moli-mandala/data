@@ -1,0 +1,1572 @@
+{
+  "reviewer": "/root/asur_finish",
+  "date": "2026-09-27",
+  "canonical_changed": false,
+  "status": "complete source-local routing proposal with explicit identity holds",
+  "input_hashes": {
+    "outside-comparands-first-reading.jsonl": "3a9557d72d1344a7aa41840750c67754040f8f35cf6d8cfb8b5d4296c56e0863",
+    "outside-comparands-scope-supplement-20260927.json": "548ac2c0d47b1111bca59a5f31e84430f63f935f48a7b08c5446142be1dbfc75"
+  },
+  "registry_hashes": {
+    "languages.csv": "f2dead310c035388298b90ecaee078710a598fbd073a014a85ddc30566c0d0f4",
+    "dialects.csv": "098c5d42b1c20aa295b1a0cfa7a213399a8a64e99b66541ecc096bf989e4ffdf"
+  },
+  "counts": {
+    "records": 146,
+    "base": 140,
+    "supplement": 6,
+    "labels": {
+      "Juang": 4,
+      "Tamil (contextual)": 1,
+      "Telugu": 20,
+      "Kurukh": 11,
+      "Tamil": 23,
+      "Kanarese": 14,
+      "Gondi": 20,
+      "Brahui": 13,
+      "Tuḷu": 1,
+      "Maḷyāḷam": 4,
+      "Korava (a dialect of Tamil)": 1,
+      "Kōi (Gondi context)": 1,
+      "Parji": 5,
+      "Kolami": 6,
+      "Naiki": 12,
+      "Korava": 2,
+      "Kōi": 1,
+      "Burgandi": 2,
+      "Malto": 2,
+      "Gondi (Mandla)": 1,
+      "High Tamil": 1,
+      "generalized comparison, not one independently localized lect": 1
+    },
+    "decisions": {
+      "existing_language": 132,
+      "unresolved_source_identity": 5,
+      "existing_historical_dialect_proposal": 2,
+      "source_label_correction_and_registry_gap": 5,
+      "existing_dialect": 1,
+      "documentary_generalized_morphology": 1
+    },
+    "verified_reuses": 12
+  },
+  "decisions": [
+    {
+      "source_unit_key": "grierson1906kui:p210:outside-comparand:01",
+      "input_label": "Juang",
+      "source_label": "Juang",
+      "language_id": "ju",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p210:outside-comparand:02",
+      "input_label": "Juang",
+      "source_label": "Juang",
+      "language_id": "ju",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p210:outside-comparand:03",
+      "input_label": "Juang",
+      "source_label": "Juang",
+      "language_id": "ju",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p210:outside-comparand:04",
+      "input_label": "Juang",
+      "source_label": "Juang",
+      "language_id": "ju",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p290:outside-comparand:01",
+      "input_label": "Tamil (contextual)",
+      "source_label": "Tamil (contextual)",
+      "language_id": "Tamil",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Retain Tamil routing as contextual, not directly labelled at this suffix; the original comparison follows explicit Tamil discussion and uncertainty must survive."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p290:outside-comparand:02",
+      "input_label": "Telugu",
+      "source_label": "Telugu",
+      "language_id": "Telugu",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p290:outside-comparand:03",
+      "input_label": "Telugu",
+      "source_label": "Telugu",
+      "language_id": "Telugu",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p290:outside-comparand:04",
+      "input_label": "Kurukh",
+      "source_label": "Kurukh",
+      "language_id": "Kurux",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p291:outside-comparand:01",
+      "input_label": "Tamil",
+      "source_label": "Tamil",
+      "language_id": "Tamil",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p291:outside-comparand:02",
+      "input_label": "Tamil",
+      "source_label": "Tamil",
+      "language_id": "Tamil",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p291:outside-comparand:03",
+      "input_label": "Tamil",
+      "source_label": "Tamil",
+      "language_id": "Tamil",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p291:outside-comparand:04",
+      "input_label": "Tamil",
+      "source_label": "Tamil",
+      "language_id": "Tamil",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p291:outside-comparand:05",
+      "input_label": "Tamil",
+      "source_label": "Tamil",
+      "language_id": "Tamil",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p291:outside-comparand:06",
+      "input_label": "Kanarese",
+      "source_label": "Kanarese",
+      "language_id": "Kannada",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p291:outside-comparand:07",
+      "input_label": "Kanarese",
+      "source_label": "Kanarese",
+      "language_id": "Kannada",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p291:outside-comparand:08",
+      "input_label": "Kanarese",
+      "source_label": "Kanarese",
+      "language_id": "Kannada",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p291:outside-comparand:09",
+      "input_label": "Kanarese",
+      "source_label": "Kanarese",
+      "language_id": "Kannada",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p291:outside-comparand:10",
+      "input_label": "Kanarese",
+      "source_label": "Kanarese",
+      "language_id": "Kannada",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p291:outside-comparand:11",
+      "input_label": "Gondi",
+      "source_label": "Gondi",
+      "language_id": "Gondi",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p291:outside-comparand:12",
+      "input_label": "Gondi",
+      "source_label": "Gondi",
+      "language_id": "Gondi",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p291:outside-comparand:13",
+      "input_label": "Gondi",
+      "source_label": "Gondi",
+      "language_id": "Gondi",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p291:outside-comparand:14",
+      "input_label": "Telugu",
+      "source_label": "Telugu",
+      "language_id": "Telugu",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p291:outside-comparand:15",
+      "input_label": "Brahui",
+      "source_label": "Brahui",
+      "language_id": "Brahui",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p291:outside-comparand:16",
+      "input_label": "Brahui",
+      "source_label": "Brahui",
+      "language_id": "Brahui",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p291:outside-comparand:17",
+      "input_label": "Telugu",
+      "source_label": "Telugu",
+      "language_id": "Telugu",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p291:outside-comparand:18",
+      "input_label": "Telugu",
+      "source_label": "Telugu",
+      "language_id": "Telugu",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred. Preserve source hypothetical status and exact star presence/absence; no inferred etymological edges.",
+      "attestation_status": "source_hypothesis_not_independent_attestation"
+    },
+    {
+      "source_unit_key": "grierson1906kui:p291:outside-comparand:19",
+      "input_label": "Telugu",
+      "source_label": "Telugu",
+      "language_id": "Telugu",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p293:outside-comparand:01",
+      "input_label": "Tamil",
+      "source_label": "Tamil",
+      "language_id": "Tamil",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p293:outside-comparand:02",
+      "input_label": "Tamil",
+      "source_label": "Tamil",
+      "language_id": "Tamil",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p293:outside-comparand:03",
+      "input_label": "Tuḷu",
+      "source_label": "Tuḷu",
+      "language_id": "Tulu",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p293:outside-comparand:04",
+      "input_label": "Telugu",
+      "source_label": "Telugu",
+      "language_id": "Telugu",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p293:outside-comparand:05",
+      "input_label": "Telugu",
+      "source_label": "Telugu",
+      "language_id": "Telugu",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Explicit old Telugu qualification retained in source Notes; existing broad Telugu route, without inventing a dated lect or silently relabelling it modern conversational Telugu."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p293:outside-comparand:06",
+      "input_label": "Tamil",
+      "source_label": "Tamil",
+      "language_id": "Tamil",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p293:outside-comparand:07",
+      "input_label": "Maḷyāḷam",
+      "source_label": "Maḷyāḷam",
+      "language_id": "Malayalam",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p293:outside-comparand:08",
+      "input_label": "Kurukh",
+      "source_label": "Kurukh",
+      "language_id": "Kurux",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p293:outside-comparand:09",
+      "input_label": "Telugu",
+      "source_label": "Telugu",
+      "language_id": "Telugu",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p293:outside-comparand:10",
+      "input_label": "Telugu",
+      "source_label": "Telugu",
+      "language_id": "Telugu",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p293:outside-comparand:11",
+      "input_label": "Tamil",
+      "source_label": "Tamil",
+      "language_id": "Tamil",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p293:outside-comparand:12",
+      "input_label": "Tamil",
+      "source_label": "Tamil",
+      "language_id": "Tamil",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p293:outside-comparand:13",
+      "input_label": "Maḷyāḷam",
+      "source_label": "Maḷyāḷam",
+      "language_id": "Malayalam",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p293:outside-comparand:14",
+      "input_label": "Kurukh",
+      "source_label": "Kurukh",
+      "language_id": "Kurux",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p293:outside-comparand:15",
+      "input_label": "Telugu",
+      "source_label": "Telugu",
+      "language_id": "Telugu",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p295:outside-comparand:01",
+      "input_label": "Tamil",
+      "source_label": "Tamil",
+      "language_id": "Tamil",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p295:outside-comparand:02",
+      "input_label": "Kanarese",
+      "source_label": "Kanarese",
+      "language_id": "Kannada",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p295:outside-comparand:03",
+      "input_label": "Gondi",
+      "source_label": "Gondi",
+      "language_id": "Gondi",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p295:outside-comparand:04",
+      "input_label": "Telugu",
+      "source_label": "Telugu",
+      "language_id": "Telugu",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p296:outside-comparand:01",
+      "input_label": "Kanarese",
+      "source_label": "Kanarese",
+      "language_id": "Kannada",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p296:outside-comparand:02",
+      "input_label": "Kurukh",
+      "source_label": "Kurukh",
+      "language_id": "Kurux",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p296:outside-comparand:03",
+      "input_label": "Gondi",
+      "source_label": "Gondi",
+      "language_id": "Gondi",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p296:outside-comparand:04",
+      "input_label": "Telugu",
+      "source_label": "Telugu",
+      "language_id": "Telugu",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p296:outside-comparand:05",
+      "input_label": "Telugu",
+      "source_label": "Telugu",
+      "language_id": "Telugu",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p296:outside-comparand:06",
+      "input_label": "Tamil",
+      "source_label": "Tamil",
+      "language_id": "Tamil",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p296:outside-comparand:07",
+      "input_label": "Tamil",
+      "source_label": "Tamil",
+      "language_id": "Tamil",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p296:outside-comparand:08",
+      "input_label": "Tamil",
+      "source_label": "Tamil",
+      "language_id": "Tamil",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p296:outside-comparand:09",
+      "input_label": "Kanarese",
+      "source_label": "Kanarese",
+      "language_id": "Kannada",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p296:outside-comparand:10",
+      "input_label": "Kurukh",
+      "source_label": "Kurukh",
+      "language_id": "Kurux",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p296:outside-comparand:11",
+      "input_label": "Gondi",
+      "source_label": "Gondi",
+      "language_id": "Gondi",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p296:outside-comparand:12",
+      "input_label": "Telugu",
+      "source_label": "Telugu",
+      "language_id": "Telugu",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p296:outside-comparand:13",
+      "input_label": "Brahui",
+      "source_label": "Brahui",
+      "language_id": "Brahui",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p413:outside-comparand:01",
+      "input_label": "Kurukh",
+      "source_label": "Kurukh",
+      "language_id": "Kurux",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p413:outside-comparand:02",
+      "input_label": "Kurukh",
+      "source_label": "Kurukh",
+      "language_id": "Kurux",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p413:outside-comparand:03",
+      "input_label": "Tamil",
+      "source_label": "Tamil",
+      "language_id": "Tamil",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p413:outside-comparand:04",
+      "input_label": "Tamil",
+      "source_label": "Tamil",
+      "language_id": "Tamil",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p413:outside-comparand:05",
+      "input_label": "Kanarese",
+      "source_label": "Kanarese",
+      "language_id": "Kannada",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p413:outside-comparand:06",
+      "input_label": "Kurukh",
+      "source_label": "Kurukh",
+      "language_id": "Kurux",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p413:outside-comparand:07",
+      "input_label": "Kurukh",
+      "source_label": "Kurukh",
+      "language_id": "Kurux",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p413:outside-comparand:08",
+      "input_label": "Kurukh",
+      "source_label": "Kurukh",
+      "language_id": "Kurux",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p479:outside-comparand:01",
+      "input_label": "Gondi",
+      "source_label": "Gondi",
+      "language_id": "Gondi",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p479:outside-comparand:02",
+      "input_label": "Gondi",
+      "source_label": "Gondi",
+      "language_id": "Gondi",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p479:outside-comparand:03",
+      "input_label": "Gondi",
+      "source_label": "Gondi",
+      "language_id": "Gondi",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p479:outside-comparand:04",
+      "input_label": "Gondi",
+      "source_label": "Gondi",
+      "language_id": "Gondi",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p479:outside-comparand:05",
+      "input_label": "Korava (a dialect of Tamil)",
+      "source_label": "Korava (a dialect of Tamil)",
+      "language_id": null,
+      "dialect_id": null,
+      "status": "unresolved_source_identity",
+      "note": "Generic historical Korava comparison is not localized. Installed Yerukula/korvi_belgaum and other routes were justified specifically for the Belgaum/Jamkhandi/Bijapur chapter witnesses. These comparative suffixes have no such locality evidence; source Tamil-dialect classification alone cannot decide modern Tamil versus Yerukula. Keep source label with typed unresolved identity, candidate Yerukula only, and do not borrow a locality."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p481:outside-comparand:01",
+      "input_label": "Gondi",
+      "source_label": "Gondi",
+      "language_id": "Gondi",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p481:outside-comparand:02",
+      "input_label": "Gondi",
+      "source_label": "Gondi",
+      "language_id": "Gondi",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p481:outside-comparand:03",
+      "input_label": "Kanarese",
+      "source_label": "Kanarese",
+      "language_id": "Kannada",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p481:outside-comparand:04",
+      "input_label": "Kanarese",
+      "source_label": "Kanarese",
+      "language_id": "Kannada",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p481:outside-comparand:05",
+      "input_label": "Telugu",
+      "source_label": "Telugu",
+      "language_id": "Telugu",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p481:outside-comparand:06",
+      "input_label": "Kanarese",
+      "source_label": "Kanarese",
+      "language_id": "Kannada",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p481:outside-comparand:07",
+      "input_label": "Telugu",
+      "source_label": "Telugu",
+      "language_id": "Telugu",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p481:outside-comparand:08",
+      "input_label": "Tamil",
+      "source_label": "Tamil",
+      "language_id": "Tamil",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p481:outside-comparand:09",
+      "input_label": "Gondi",
+      "source_label": "Gondi",
+      "language_id": "Gondi",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p481:outside-comparand:10",
+      "input_label": "Maḷyāḷam",
+      "source_label": "Maḷyāḷam",
+      "language_id": "Malayalam",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p481:outside-comparand:11",
+      "input_label": "Kanarese",
+      "source_label": "Kanarese",
+      "language_id": "Kannada",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p481:outside-comparand:12",
+      "input_label": "Gondi",
+      "source_label": "Gondi",
+      "language_id": "Gondi",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p481:outside-comparand:13",
+      "input_label": "Tamil",
+      "source_label": "Tamil",
+      "language_id": "Tamil",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p481:outside-comparand:14",
+      "input_label": "Maḷyāḷam",
+      "source_label": "Maḷyāḷam",
+      "language_id": "Malayalam",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p481:outside-comparand:15",
+      "input_label": "Kanarese",
+      "source_label": "Kanarese",
+      "language_id": "Kannada",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p481:outside-comparand:16",
+      "input_label": "Gondi",
+      "source_label": "Gondi",
+      "language_id": "Gondi",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p481:outside-comparand:17",
+      "input_label": "Kōi (Gondi context)",
+      "source_label": "Kōi (Gondi context)",
+      "language_id": "Gondi",
+      "dialect_id": "koya",
+      "status": "existing_historical_dialect_proposal",
+      "note": "LSI IV p473 explicitly places Kōi within the historical Gondi discussion while distinguishing its southernmost form. Existing historical koya registry route is Gondi/koya with glottocode koya1251; use that qualified source route, not a new locality, Gommu, or silent global migration to newly registered modern Koya. Root should approve this historical compatibility choice.",
+      "dialect_tag": "dialect:Gondi:koya:Koya"
+    },
+    {
+      "source_unit_key": "grierson1906kui:p481:outside-comparand:18",
+      "input_label": "Telugu",
+      "source_label": "Telugu",
+      "language_id": "Telugu",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p484:outside-comparand:01",
+      "input_label": "Tamil",
+      "source_label": "Tamil",
+      "language_id": "Tamil",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p484:outside-comparand:02",
+      "input_label": "Telugu",
+      "source_label": "Telugu",
+      "language_id": "Telugu",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p566:outside-comparand:01",
+      "input_label": "Parji",
+      "source_label": "Bhili of Basim",
+      "language_id": null,
+      "dialect_id": null,
+      "status": "source_label_correction_and_registry_gap",
+      "note": "Original p566 explicitly says Bhili received from Basim and compares it with Kolami; the n/nd/d forms are that witness, not Parji. Nordic page metadata proposes Southwestern Kolami-Washim (nit), whereas existing Kolami is nort2699 and Naiki is naik1250. Neither existing base nor a northern Kolami locality is securely interchangeable. Preserve all five records under unresolved historical Bhili of Basim pending an approved identity route; never Parji or Indo-Aryan Bhili."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p566:outside-comparand:02",
+      "input_label": "Parji",
+      "source_label": "Bhili of Basim",
+      "language_id": null,
+      "dialect_id": null,
+      "status": "source_label_correction_and_registry_gap",
+      "note": "Original p566 explicitly says Bhili received from Basim and compares it with Kolami; the n/nd/d forms are that witness, not Parji. Nordic page metadata proposes Southwestern Kolami-Washim (nit), whereas existing Kolami is nort2699 and Naiki is naik1250. Neither existing base nor a northern Kolami locality is securely interchangeable. Preserve all five records under unresolved historical Bhili of Basim pending an approved identity route; never Parji or Indo-Aryan Bhili."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p566:outside-comparand:03",
+      "input_label": "Parji",
+      "source_label": "Bhili of Basim",
+      "language_id": null,
+      "dialect_id": null,
+      "status": "source_label_correction_and_registry_gap",
+      "note": "Original p566 explicitly says Bhili received from Basim and compares it with Kolami; the n/nd/d forms are that witness, not Parji. Nordic page metadata proposes Southwestern Kolami-Washim (nit), whereas existing Kolami is nort2699 and Naiki is naik1250. Neither existing base nor a northern Kolami locality is securely interchangeable. Preserve all five records under unresolved historical Bhili of Basim pending an approved identity route; never Parji or Indo-Aryan Bhili."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p566:outside-comparand:04",
+      "input_label": "Parji",
+      "source_label": "Bhili of Basim",
+      "language_id": null,
+      "dialect_id": null,
+      "status": "source_label_correction_and_registry_gap",
+      "note": "Original p566 explicitly says Bhili received from Basim and compares it with Kolami; the n/nd/d forms are that witness, not Parji. Nordic page metadata proposes Southwestern Kolami-Washim (nit), whereas existing Kolami is nort2699 and Naiki is naik1250. Neither existing base nor a northern Kolami locality is securely interchangeable. Preserve all five records under unresolved historical Bhili of Basim pending an approved identity route; never Parji or Indo-Aryan Bhili."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p566:outside-comparand:05",
+      "input_label": "Parji",
+      "source_label": "Bhili of Basim",
+      "language_id": null,
+      "dialect_id": null,
+      "status": "source_label_correction_and_registry_gap",
+      "note": "Original p566 explicitly says Bhili received from Basim and compares it with Kolami; the n/nd/d forms are that witness, not Parji. Nordic page metadata proposes Southwestern Kolami-Washim (nit), whereas existing Kolami is nort2699 and Naiki is naik1250. Neither existing base nor a northern Kolami locality is securely interchangeable. Preserve all five records under unresolved historical Bhili of Basim pending an approved identity route; never Parji or Indo-Aryan Bhili."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p566:outside-comparand:06",
+      "input_label": "Kolami",
+      "source_label": "Kolami",
+      "language_id": "Kolami",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p566:outside-comparand:07",
+      "input_label": "Kolami",
+      "source_label": "Kolami",
+      "language_id": "Kolami",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred. Preserve source hypothetical status and exact star presence/absence; no inferred etymological edges.",
+      "attestation_status": "source_hypothesis_not_independent_attestation"
+    },
+    {
+      "source_unit_key": "grierson1906kui:p566:outside-comparand:08",
+      "input_label": "Telugu",
+      "source_label": "Telugu",
+      "language_id": "Telugu",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p570:outside-comparand:01",
+      "input_label": "Naiki",
+      "source_label": "Naiki",
+      "language_id": "Naiki",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred.",
+      "reuse_key": "grierson1906naiki:p570:pronoun-table:col1:row1"
+    },
+    {
+      "source_unit_key": "grierson1906kui:p570:outside-comparand:02",
+      "input_label": "Naiki",
+      "source_label": "Naiki",
+      "language_id": "Naiki",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred.",
+      "reuse_key": "grierson1906naiki:p570:pronoun-table:col1:row2"
+    },
+    {
+      "source_unit_key": "grierson1906kui:p570:outside-comparand:03",
+      "input_label": "Naiki",
+      "source_label": "Naiki",
+      "language_id": "Naiki",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred.",
+      "reuse_key": "grierson1906naiki:p570:pronoun-table:col1:row3"
+    },
+    {
+      "source_unit_key": "grierson1906kui:p570:outside-comparand:04",
+      "input_label": "Naiki",
+      "source_label": "Naiki",
+      "language_id": "Naiki",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred.",
+      "reuse_key": "grierson1906naiki:p570:pronoun-table:col1:row4"
+    },
+    {
+      "source_unit_key": "grierson1906kui:p570:outside-comparand:05",
+      "input_label": "Naiki",
+      "source_label": "Naiki",
+      "language_id": "Naiki",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred.",
+      "reuse_key": "grierson1906naiki:p570:pronoun-table:col2:row1"
+    },
+    {
+      "source_unit_key": "grierson1906kui:p570:outside-comparand:06",
+      "input_label": "Naiki",
+      "source_label": "Naiki",
+      "language_id": "Naiki",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred.",
+      "reuse_key": "grierson1906naiki:p570:pronoun-table:col2:row2"
+    },
+    {
+      "source_unit_key": "grierson1906kui:p570:outside-comparand:07",
+      "input_label": "Naiki",
+      "source_label": "Naiki",
+      "language_id": "Naiki",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred.",
+      "reuse_key": "grierson1906naiki:p570:pronoun-table:col2:row3"
+    },
+    {
+      "source_unit_key": "grierson1906kui:p570:outside-comparand:08",
+      "input_label": "Naiki",
+      "source_label": "Naiki",
+      "language_id": "Naiki",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred.",
+      "reuse_key": "grierson1906naiki:p570:pronoun-table:col2:row4"
+    },
+    {
+      "source_unit_key": "grierson1906kui:p570:outside-comparand:09",
+      "input_label": "Naiki",
+      "source_label": "Naiki",
+      "language_id": "Naiki",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred.",
+      "reuse_key": "grierson1906naiki:p570:pronoun-table:col3:row1"
+    },
+    {
+      "source_unit_key": "grierson1906kui:p570:outside-comparand:10",
+      "input_label": "Naiki",
+      "source_label": "Naiki",
+      "language_id": "Naiki",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred.",
+      "reuse_key": "grierson1906naiki:p570:pronoun-table:col3:row2"
+    },
+    {
+      "source_unit_key": "grierson1906kui:p570:outside-comparand:11",
+      "input_label": "Naiki",
+      "source_label": "Naiki",
+      "language_id": "Naiki",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred.",
+      "reuse_key": "grierson1906naiki:p570:pronoun-table:col3:row3"
+    },
+    {
+      "source_unit_key": "grierson1906kui:p570:outside-comparand:12",
+      "input_label": "Kolami",
+      "source_label": "Kolami",
+      "language_id": "Kolami",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p570:outside-comparand:13",
+      "input_label": "Kolami",
+      "source_label": "Kolami",
+      "language_id": "Kolami",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p570:outside-comparand:14",
+      "input_label": "Kolami",
+      "source_label": "Kolami",
+      "language_id": "Kolami",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p623:outside-comparand:01",
+      "input_label": "Brahui",
+      "source_label": "Brahui",
+      "language_id": "Brahui",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p623:outside-comparand:02",
+      "input_label": "Tamil",
+      "source_label": "Tamil",
+      "language_id": "Tamil",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p623:outside-comparand:03",
+      "input_label": "Korava",
+      "source_label": "Korava",
+      "language_id": null,
+      "dialect_id": null,
+      "status": "unresolved_source_identity",
+      "note": "Generic historical Korava comparison is not localized. Installed Yerukula/korvi_belgaum and other routes were justified specifically for the Belgaum/Jamkhandi/Bijapur chapter witnesses. These comparative suffixes have no such locality evidence; source Tamil-dialect classification alone cannot decide modern Tamil versus Yerukula. Keep source label with typed unresolved identity, candidate Yerukula only, and do not borrow a locality."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p623:outside-comparand:04",
+      "input_label": "Korava",
+      "source_label": "Korava",
+      "language_id": null,
+      "dialect_id": null,
+      "status": "unresolved_source_identity",
+      "note": "Generic historical Korava comparison is not localized. Installed Yerukula/korvi_belgaum and other routes were justified specifically for the Belgaum/Jamkhandi/Bijapur chapter witnesses. These comparative suffixes have no such locality evidence; source Tamil-dialect classification alone cannot decide modern Tamil versus Yerukula. Keep source label with typed unresolved identity, candidate Yerukula only, and do not borrow a locality."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p623:outside-comparand:05",
+      "input_label": "Kurukh",
+      "source_label": "Kurukh",
+      "language_id": "Kurux",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p623:outside-comparand:06",
+      "input_label": "Kōi",
+      "source_label": "Kōi",
+      "language_id": "Gondi",
+      "dialect_id": "koya",
+      "status": "existing_historical_dialect_proposal",
+      "note": "LSI IV p473 explicitly places Kōi within the historical Gondi discussion while distinguishing its southernmost form. Existing historical koya registry route is Gondi/koya with glottocode koya1251; use that qualified source route, not a new locality, Gommu, or silent global migration to newly registered modern Koya. Root should approve this historical compatibility choice.",
+      "dialect_tag": "dialect:Gondi:koya:Koya"
+    },
+    {
+      "source_unit_key": "grierson1906kui:p623:outside-comparand:07",
+      "input_label": "Tamil",
+      "source_label": "Tamil",
+      "language_id": "Tamil",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p623:outside-comparand:08",
+      "input_label": "Gondi",
+      "source_label": "Gondi",
+      "language_id": "Gondi",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p623:outside-comparand:09",
+      "input_label": "Brahui",
+      "source_label": "Brahui",
+      "language_id": "Brahui",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p623:outside-comparand:10",
+      "input_label": "Brahui",
+      "source_label": "Brahui",
+      "language_id": "Brahui",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p623:outside-comparand:11",
+      "input_label": "Brahui",
+      "source_label": "Brahui",
+      "language_id": "Brahui",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p623:outside-comparand:12",
+      "input_label": "Burgandi",
+      "source_label": "Burgandi",
+      "language_id": null,
+      "dialect_id": null,
+      "status": "unresolved_source_identity",
+      "note": "Original LSI IV p343 states Burgandi is closely connected with Kaikadi, with unsatisfactory mixed Nimar/Central India material and principal Bagli specimen. Relatedness is not identity. No exact Burgandi base/dialect exists in current registry; retain source-specific unresolved Burgandi, not Kaikadi or Tamil by historical family placement."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p623:outside-comparand:13",
+      "input_label": "Burgandi",
+      "source_label": "Burgandi",
+      "language_id": null,
+      "dialect_id": null,
+      "status": "unresolved_source_identity",
+      "note": "Original LSI IV p343 states Burgandi is closely connected with Kaikadi, with unsatisfactory mixed Nimar/Central India material and principal Bagli specimen. Relatedness is not identity. No exact Burgandi base/dialect exists in current registry; retain source-specific unresolved Burgandi, not Kaikadi or Tamil by historical family placement."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p623:outside-comparand:14",
+      "input_label": "Naiki",
+      "source_label": "Naiki",
+      "language_id": "Naiki",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred.",
+      "reuse_key": "grierson1906naiki:p623:genitive-comparison:naiki"
+    },
+    {
+      "source_unit_key": "grierson1906kui:p623:outside-comparand:15",
+      "input_label": "Kolami",
+      "source_label": "Kolami",
+      "language_id": "Kolami",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p623:outside-comparand:16",
+      "input_label": "Gondi",
+      "source_label": "Gondi",
+      "language_id": "Gondi",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p623:outside-comparand:17",
+      "input_label": "Brahui",
+      "source_label": "Brahui",
+      "language_id": "Brahui",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p623:outside-comparand:18",
+      "input_label": "Tamil",
+      "source_label": "Tamil",
+      "language_id": "Tamil",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p624:outside-comparand:01",
+      "input_label": "Brahui",
+      "source_label": "Brahui",
+      "language_id": "Brahui",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p624:outside-comparand:02",
+      "input_label": "Brahui",
+      "source_label": "Brahui",
+      "language_id": "Brahui",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p624:outside-comparand:03",
+      "input_label": "Tamil",
+      "source_label": "Tamil",
+      "language_id": "Tamil",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p624:outside-comparand:04",
+      "input_label": "Brahui",
+      "source_label": "Brahui",
+      "language_id": "Brahui",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p624:outside-comparand:05",
+      "input_label": "Brahui",
+      "source_label": "Brahui",
+      "language_id": "Brahui",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p624:outside-comparand:06",
+      "input_label": "Brahui",
+      "source_label": "Brahui",
+      "language_id": "Brahui",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p624:outside-comparand:07",
+      "input_label": "Malto",
+      "source_label": "Malto",
+      "language_id": "Malto",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p624:outside-comparand:08",
+      "input_label": "Malto",
+      "source_label": "Malto",
+      "language_id": "Malto",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p290:outside-comparand:05",
+      "input_label": "Gondi",
+      "source_label": "Gondi",
+      "language_id": "Gondi",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p290:outside-comparand:06",
+      "input_label": "Gondi",
+      "source_label": "Gondi",
+      "language_id": "Gondi",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p290:outside-comparand:07",
+      "input_label": "Gondi (Mandla)",
+      "source_label": "Gondi (Mandla)",
+      "language_id": "Gondi",
+      "dialect_id": "mandla",
+      "status": "existing_dialect",
+      "note": "Supplement explicitly gives Mandla only for this example. Existing mandla is the historical Gondi lect; do not propagate this locality to the following unqualified form.",
+      "dialect_tag": "dialect:Gondi:mandla:Mandla"
+    },
+    {
+      "source_unit_key": "grierson1906kui:p290:outside-comparand:08",
+      "input_label": "Gondi",
+      "source_label": "Gondi",
+      "language_id": "Gondi",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Exact source label or established registry name alias; no source locality or modern coordinates inferred."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p293:outside-comparand:16",
+      "input_label": "High Tamil",
+      "source_label": "High Tamil",
+      "language_id": "Tamil",
+      "dialect_id": null,
+      "status": "existing_language",
+      "note": "Route broad Tamil, retaining the explicit High Tamil register in Notes; not automatically Old Tamil or any spoken regional lect."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p293:outside-comparand:17",
+      "input_label": "generalized comparison, not one independently localized lect",
+      "source_label": "generalized comparison, not one independently localized lect",
+      "language_id": null,
+      "dialect_id": null,
+      "status": "documentary_generalized_morphology",
+      "note": "Source gives common plural morphology rather than a localized language witness. Preserve the physical unit and source claim audit-only; do not multiply into all subsequent languages."
+    }
+  ],
+  "reuse_checks": [
+    {
+      "source_unit_key": "grierson1906kui:p570:outside-comparand:01",
+      "canonical_file": "data/data/other/forms/20260927-grierson-naiki.csv",
+      "canonical_file_sha256": "a0547a5e0aee057074ee4daf1a40ca4efbb89de194e55094185fa64724ce5932",
+      "canonical_entry_key": "grierson1906naiki:p570:pronoun-table:col1:row1",
+      "exact_full_row_equal": true,
+      "original_equal": true,
+      "gloss_equal": true,
+      "source_page_equal": true,
+      "proposed_tags_missing_from_canonical": [],
+      "canonical_tags": "pron personal 1sg dialect:Naiki:naiki_chanda_lsi1906:Chanda",
+      "disposition": "reuse exact installed occurrence, retaining canonical full analysis, Notes and citations; do not replace it with the shorter comparative draft"
+    },
+    {
+      "source_unit_key": "grierson1906kui:p570:outside-comparand:02",
+      "canonical_file": "data/data/other/forms/20260927-grierson-naiki.csv",
+      "canonical_file_sha256": "a0547a5e0aee057074ee4daf1a40ca4efbb89de194e55094185fa64724ce5932",
+      "canonical_entry_key": "grierson1906naiki:p570:pronoun-table:col1:row2",
+      "exact_full_row_equal": true,
+      "original_equal": true,
+      "gloss_equal": true,
+      "source_page_equal": true,
+      "proposed_tags_missing_from_canonical": [],
+      "canonical_tags": "pron personal 1sg acc dat dialect:Naiki:naiki_chanda_lsi1906:Chanda",
+      "disposition": "reuse exact installed occurrence, retaining canonical full analysis, Notes and citations; do not replace it with the shorter comparative draft"
+    },
+    {
+      "source_unit_key": "grierson1906kui:p570:outside-comparand:03",
+      "canonical_file": "data/data/other/forms/20260927-grierson-naiki.csv",
+      "canonical_file_sha256": "a0547a5e0aee057074ee4daf1a40ca4efbb89de194e55094185fa64724ce5932",
+      "canonical_entry_key": "grierson1906naiki:p570:pronoun-table:col1:row3",
+      "exact_full_row_equal": true,
+      "original_equal": true,
+      "gloss_equal": true,
+      "source_page_equal": true,
+      "proposed_tags_missing_from_canonical": [],
+      "canonical_tags": "pron personal 1sg gen poss dialect:Naiki:naiki_chanda_lsi1906:Chanda",
+      "disposition": "reuse exact installed occurrence, retaining canonical full analysis, Notes and citations; do not replace it with the shorter comparative draft"
+    },
+    {
+      "source_unit_key": "grierson1906kui:p570:outside-comparand:04",
+      "canonical_file": "data/data/other/forms/20260927-grierson-naiki.csv",
+      "canonical_file_sha256": "a0547a5e0aee057074ee4daf1a40ca4efbb89de194e55094185fa64724ce5932",
+      "canonical_entry_key": "grierson1906naiki:p570:pronoun-table:col1:row4",
+      "exact_full_row_equal": true,
+      "original_equal": true,
+      "gloss_equal": true,
+      "source_page_equal": true,
+      "proposed_tags_missing_from_canonical": [],
+      "canonical_tags": "pron personal 1pl dialect:Naiki:naiki_chanda_lsi1906:Chanda",
+      "disposition": "reuse exact installed occurrence, retaining canonical full analysis, Notes and citations; do not replace it with the shorter comparative draft"
+    },
+    {
+      "source_unit_key": "grierson1906kui:p570:outside-comparand:05",
+      "canonical_file": "data/data/other/forms/20260927-grierson-naiki.csv",
+      "canonical_file_sha256": "a0547a5e0aee057074ee4daf1a40ca4efbb89de194e55094185fa64724ce5932",
+      "canonical_entry_key": "grierson1906naiki:p570:pronoun-table:col2:row1",
+      "exact_full_row_equal": true,
+      "original_equal": true,
+      "gloss_equal": true,
+      "source_page_equal": true,
+      "proposed_tags_missing_from_canonical": [],
+      "canonical_tags": "pron personal 2sg dialect:Naiki:naiki_chanda_lsi1906:Chanda",
+      "disposition": "reuse exact installed occurrence, retaining canonical full analysis, Notes and citations; do not replace it with the shorter comparative draft"
+    },
+    {
+      "source_unit_key": "grierson1906kui:p570:outside-comparand:06",
+      "canonical_file": "data/data/other/forms/20260927-grierson-naiki.csv",
+      "canonical_file_sha256": "a0547a5e0aee057074ee4daf1a40ca4efbb89de194e55094185fa64724ce5932",
+      "canonical_entry_key": "grierson1906naiki:p570:pronoun-table:col2:row2",
+      "exact_full_row_equal": true,
+      "original_equal": true,
+      "gloss_equal": true,
+      "source_page_equal": true,
+      "proposed_tags_missing_from_canonical": [],
+      "canonical_tags": "pron personal 2sg acc dat dialect:Naiki:naiki_chanda_lsi1906:Chanda",
+      "disposition": "reuse exact installed occurrence, retaining canonical full analysis, Notes and citations; do not replace it with the shorter comparative draft"
+    },
+    {
+      "source_unit_key": "grierson1906kui:p570:outside-comparand:07",
+      "canonical_file": "data/data/other/forms/20260927-grierson-naiki.csv",
+      "canonical_file_sha256": "a0547a5e0aee057074ee4daf1a40ca4efbb89de194e55094185fa64724ce5932",
+      "canonical_entry_key": "grierson1906naiki:p570:pronoun-table:col2:row3",
+      "exact_full_row_equal": true,
+      "original_equal": true,
+      "gloss_equal": true,
+      "source_page_equal": true,
+      "proposed_tags_missing_from_canonical": [],
+      "canonical_tags": "pron personal 2sg gen poss dialect:Naiki:naiki_chanda_lsi1906:Chanda",
+      "disposition": "reuse exact installed occurrence, retaining canonical full analysis, Notes and citations; do not replace it with the shorter comparative draft"
+    },
+    {
+      "source_unit_key": "grierson1906kui:p570:outside-comparand:08",
+      "canonical_file": "data/data/other/forms/20260927-grierson-naiki.csv",
+      "canonical_file_sha256": "a0547a5e0aee057074ee4daf1a40ca4efbb89de194e55094185fa64724ce5932",
+      "canonical_entry_key": "grierson1906naiki:p570:pronoun-table:col2:row4",
+      "exact_full_row_equal": true,
+      "original_equal": true,
+      "gloss_equal": true,
+      "source_page_equal": true,
+      "proposed_tags_missing_from_canonical": [],
+      "canonical_tags": "pron personal 2pl dialect:Naiki:naiki_chanda_lsi1906:Chanda",
+      "disposition": "reuse exact installed occurrence, retaining canonical full analysis, Notes and citations; do not replace it with the shorter comparative draft"
+    },
+    {
+      "source_unit_key": "grierson1906kui:p570:outside-comparand:09",
+      "canonical_file": "data/data/other/forms/20260927-grierson-naiki.csv",
+      "canonical_file_sha256": "a0547a5e0aee057074ee4daf1a40ca4efbb89de194e55094185fa64724ce5932",
+      "canonical_entry_key": "grierson1906naiki:p570:pronoun-table:col3:row1",
+      "exact_full_row_equal": true,
+      "original_equal": true,
+      "gloss_equal": true,
+      "source_page_equal": true,
+      "proposed_tags_missing_from_canonical": [],
+      "canonical_tags": "pron personal 3sg m dialect:Naiki:naiki_chanda_lsi1906:Chanda",
+      "disposition": "reuse exact installed occurrence, retaining canonical full analysis, Notes and citations; do not replace it with the shorter comparative draft"
+    },
+    {
+      "source_unit_key": "grierson1906kui:p570:outside-comparand:10",
+      "canonical_file": "data/data/other/forms/20260927-grierson-naiki.csv",
+      "canonical_file_sha256": "a0547a5e0aee057074ee4daf1a40ca4efbb89de194e55094185fa64724ce5932",
+      "canonical_entry_key": "grierson1906naiki:p570:pronoun-table:col3:row2",
+      "exact_full_row_equal": true,
+      "original_equal": true,
+      "gloss_equal": true,
+      "source_page_equal": true,
+      "proposed_tags_missing_from_canonical": [],
+      "canonical_tags": "pron personal 3sg m acc dat dialect:Naiki:naiki_chanda_lsi1906:Chanda",
+      "disposition": "reuse exact installed occurrence, retaining canonical full analysis, Notes and citations; do not replace it with the shorter comparative draft"
+    },
+    {
+      "source_unit_key": "grierson1906kui:p570:outside-comparand:11",
+      "canonical_file": "data/data/other/forms/20260927-grierson-naiki.csv",
+      "canonical_file_sha256": "a0547a5e0aee057074ee4daf1a40ca4efbb89de194e55094185fa64724ce5932",
+      "canonical_entry_key": "grierson1906naiki:p570:pronoun-table:col3:row3",
+      "exact_full_row_equal": true,
+      "original_equal": true,
+      "gloss_equal": true,
+      "source_page_equal": true,
+      "proposed_tags_missing_from_canonical": [],
+      "canonical_tags": "pron personal 3sg m gen poss dialect:Naiki:naiki_chanda_lsi1906:Chanda",
+      "disposition": "reuse exact installed occurrence, retaining canonical full analysis, Notes and citations; do not replace it with the shorter comparative draft"
+    },
+    {
+      "source_unit_key": "grierson1906kui:p623:outside-comparand:14",
+      "canonical_file": "data/data/other/forms/20260927-grierson-naiki.csv",
+      "canonical_file_sha256": "a0547a5e0aee057074ee4daf1a40ca4efbb89de194e55094185fa64724ce5932",
+      "canonical_entry_key": "grierson1906naiki:p623:genitive-comparison:naiki",
+      "exact_full_row_equal": true,
+      "original_equal": true,
+      "gloss_equal": true,
+      "source_page_equal": true,
+      "proposed_tags_missing_from_canonical": [],
+      "canonical_tags": "suffix gen",
+      "disposition": "reuse exact installed occurrence, retaining canonical full analysis, Notes and citations; do not replace it with the shorter comparative draft"
+    }
+  ],
+  "evidence": [
+    {
+      "source": "LSI IV original p566, physical586",
+      "path": "tmp/kui-root-outside-566.png",
+      "sha256": "f2c369fc90d4b65f19307b080a559e62532d02d0373da0c963f2707c10143183",
+      "observation": "Viewed complete original page: explicit Bhili from Basim, not Parji; n/nd/d paragraph contains the five disputed records."
+    },
+    {
+      "source": "LSI IV original p343, physical363",
+      "observation": "Independently rendered and viewed original; Burgandi closely connected with Kaikadi, mixed Nimar/Central India material. Connection is not an exact language alias."
+    },
+    {
+      "source": "LSI IV original p473, physical493",
+      "observation": "Independently rendered and viewed original; Kōi belongs to historical Gondi treatment and southernmost Kōi is distinguished. No locality is attached to the two comparator records."
+    },
+    {
+      "source": "LSI IV original p474, physical494",
+      "observation": "Original treats Parji in Bastar separately and points to pp554ff; reinforces that p566 Basim witness must not be relabelled Parji."
+    },
+    {
+      "source": "grierson_korvi_1906/language-dialect-plan-20260926.json",
+      "observation": "Existing Yerukula routes explicitly justified for named Belgaum/Jamkhandi/Bijapur witnesses; they do not prove every generic historical Korava label has the same modern identity."
+    },
+    {
+      "source": "nordic-volume-kui-mentions.json",
+      "observation": "p566 metadata identifies Southwestern Kolami-Washim/nit. Retained as secondary routing lead, not promoted over original or used to overwrite existing northern Kolami identity."
+    }
+  ],
+  "policy": "No coordinates, new registries, lexical corrections, graph edges, or canonical edits. Explicit unresolved language identities remain preserved source evidence, not silent omissions or guessed assignments."
+}

@@ -1,0 +1,39 @@
+{
+  "status": "Frozen for independent whole-source original-versus-output audit; not installed",
+  "files": {
+    "whole-proposed-author-transcription.csv": "405d52798058aeaf18102cc8c3f50b4727f53f4b77e399d4de6e0cb3f470660f",
+    "whole-proposed-literal-preservation.csv": "aea8c394f27538f8968a12b1fd864dd0f4b75016b684a81c3062e6737374d32e",
+    "whole-proposed-audit.jsonl": "7ca1f59a1c2762a3c724f89a4626f549d6b638d0a7ab0f8ce5c1986c2c60631b",
+    "whole-profile-proposed.txt": "0cd4b3396c56fc8183f763b278b606d99ac2e37a858613f119ff494fd3d04b31",
+    "whole-source-graph-decisions.json": "6196c948b3c34ca3dffa68441fb17c082b0e22e6e806579789d02f7fac9f6509",
+    "whole-source-tag-reconciliation-20260927.json": "53077c303520f4466043635abab0972958d92c565776d26d0644b691df0bf7e3",
+    "whole-heading-scope-review-draft.json": "78e3f7d04255fe67694e8b68e1fe80f7361e56b9982ba7ffc2c0c44882945864",
+    "whole-heading-repair-report-20260927.json": "47760a2c10d3aa9c4b7b6e9d802476eb26eba58609ad19ad4b12b952fe7762c7"
+  },
+  "counts": {
+    "expanded_source_units": 11304,
+    "emitted_entries": 8390,
+    "author_transcription": 8378,
+    "literal_preservation": 12,
+    "exact_reuse": 2414,
+    "controls": 500,
+    "existing_keys_preserved": 485
+  },
+  "validation": "50 focused tests passed in 3.97 seconds, including actual generic parser, sound/profile parity, source-heading/derived-word/clitic regressions, exact reuse and historical sampling exclusions.",
+  "canonical_changed": false,
+  "deferred": [
+    "Independent original-versus-output audit",
+    "Final metadata/importer installation and canonical validation",
+    "User-authorized full build and browser QA"
+  ],
+  "targeted_review": [
+    "Three literal unresolved slash groups on p376 (root reviewed).",
+    "Two separately translated statements on p343, example16b, with6+3children.",
+    "Literal and idiomatic proverb senses onp190/327/328.",
+    "Eighteen Chapter3 physical attestations reuse historical keys while preserving complete translations and source citations.",
+    "Source-explicit imminent p156, hypothetical p164, frustrative p170, counterfactual distinct.",
+    "Heading repair: adjective p126, agreement suffix p178, full derived ADVZ word p220, explicit clitic p222.",
+    "Fourteen explicit derivation pairs on p138 and pp277\u2013278."
+  ],
+  "previous_freeze": "whole-freeze-before-heading-repair/manifest.json"
+}

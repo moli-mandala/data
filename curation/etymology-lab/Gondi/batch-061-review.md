@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Gondi · Dravidian surveys, 2026-09-21 · batch 061. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Gondi | Proposed etymology | Evidence |
+|---|---|---|---|
+| 281 | **kurso** ‘short’, **kursa** ‘short’ | Proposed reflex of [**DEDR 1851**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=168) | DEDR1851 gives Gondi kurrā short, Telugu kuṟuca short, Toda kuṟx- be short and Tamil kuṟaivu deficiency/shortness. Survey Gondi kursa/kurso, Toda kuṛt and Tamil kuraivāna short compare with the documented reduction/shortness family, retaining dialectal suffixes and ordinary adjectival morphology. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (2 records.) |
+| 282 | **ul** ‘onion’, **ulli** ‘onion’ | Proposed reflex of [**DEDR 705**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=69) | DEDR705 explicitly gives the widespread uḷḷi/ulli onion family, including Gondi ulli, Konda uli and southern uḷḷi. Survey ulli/uḷḷi/ul onion are direct lexical comparisons; the article also compares Sanskrit ūlī and Oriya uli, but does not specify an immediate borrowing route for these records. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (2 records.) |
+| 283 | **iaio** ‘mother’, **iāia** ‘mother’ | Proposed reflex of [**DEDR 364**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=34) | DEDR364 explicitly gives Gondi yāyo/yāyāl/iyāl mother. Survey iaio/iāia mother retains that same-language maternal stem with glide/vowel transcription preserved. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (2 records.) |
+| 284 | **(y)aval** ‘mother’, **iava** ‘mother’, **iaua** ‘mother’, **i̯aval** ‘mother’, **au̯a** ‘mother’ | Proposed reflex of [**DEDR 273**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=25) | DEDR273 explicitly gives Gondi avva/avval/aval and yavva mother. Survey (y)aval/iava/iaua/i̯aval/au̯a retain that same-language av-/yav- maternal term. Keep the source optional glide and personal suffix; the separate āy-family forms are handled under364. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (5 records.) |
+| 285 | **narka(du)** ‘night’, **narke** ‘night’, **nakˑa** ‘night’ | Proposed reflex of [**DEDR 3613**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=319) | DEDR3613 explicitly attests Gondi narka/naẖka night and Gadaba narkam/narkā/narkām night, explaining internal *nalk > *naṟk sandhi. Survey narka(du), narke, nakˑa, narkan and narkɛm retain that noun and its source endings. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (4 records.) |
+
+Proposed assignment rows: **15**. Affected records: **15**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-061.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Gondi/batch-061.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

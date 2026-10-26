@@ -1,0 +1,20 @@
+{
+  "status": "proposal only; complete accepted input symbol inventory and parser tests pending",
+  "profile_id": "grierson-kolami-basim-1906",
+  "input_layer": "source Roman Form; Original preserved by parser",
+  "phonemic_policy": "blank unless a separate source analysis is actually supplied",
+  "native_policy": "blank for Roman-only witnesses",
+  "candidate_display_rules": [
+    {"class": "source capital letters", "mapping": "lowercase", "scope": "display only; source case remains in Original"},
+    {"class": "ṅ, Ṅ and NFD n/N plus dot above", "mapping": "ŋ", "scope": "house transcription; nasalization tilde and ñ remain distinct"}
+  ],
+  "literal_preservation": ["vowel length and short/long inconsistencies", "tilde nasalization", "ñ", "source consonant diacritics", "meaningful hyphens", "word boundaries", "other unusual notation with typed mark uncertainty"],
+  "prohibited_automatic_mappings": ["printed A/ū interchange", "l/n interchange", "n/m before labial", "n/nd/d interchange", "ch", "w", "conjectural restoration from standard-language comparisons"],
+  "source_local_context": [
+    {"printed_page":562,"claim":"Grammar uses several supplied texts and a standard wordlist; limited materials and mixed singular/plural usage explicitly qualified. Printed interlinear translation supplied by Grierson."},
+    {"printed_page":566,"claim":"Pronunciation paragraph reports printed A/ū, l/n, final n/m and n/nd/d correspondences; these do not authorize an importer substitution. Earlier preliminary a/ā paraphrase corrected after enlarged original review."},
+    {"printed_pages":[562,563,566,567],"claim":"No explicit correction of the printed vowel quantities was found in the bounded original chapter review; preserve the literal quantities."}
+  ],
+  "existing_policy_evidence": ["data/conversion/grierson-naiki-1906.txt", "data/data/other/forms/raw_data/grierson_kui_1906/volume-notation-review-20260927.json"],
+  "remaining_gates": ["complete accepted grapheme/cluster inventory", "independent profile adjudication", "corpus-wide tokenizer coverage", "NFC/NFD exact Original and display tests", "actual YAML routing with complete canonical metadata", "guarded importer command after implementation"]
+}

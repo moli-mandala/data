@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Kannada · Dravidian surveys, 2026-09-21 · batch 043. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Kannada | Proposed etymology | Evidence |
+|---|---|---|---|
+| 206 | **cikkadu** ‘small’ | Proposed reflex of [**DEDR 2495**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=218) | DEDR2495 explicitly gives Kannada cikka ‘little, small, young’. Survey cikkadu is the adjective in its elicited nominal form. This corrects the source’s4295, whose actual article concerns layers and membranes. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 207 | **kutʰige** ‘neck’ | Proposed reflex of [**DEDR 1718**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=157) | DEDR1718 explicitly gives Kannada kuttige ‘throat, neck’. Survey kutʰige is compared with this direct attestation, preserving aspiration in place of the dictionary gemination. The source’s114 is an unrelated jaw/neck family and is corrected. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 208 | **karuḍu** ‘rainbow’ | Proposed reflex of [**DEDR 2124**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=191) | DEDR2124 explicitly gives Konda kuṟveli rainbow and Kannada koraḍu/koḍḍa a kind of rainbow. The survey kuruveli/karuḍu responses match their respective language comparanda, preserving epenthetic/reduced-vowel notation and the survey’s broader rainbow gloss. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 209 | **matte** ‘egg’, **mottu** ‘egg’, **moṭṭu** ‘egg’, **ɱɔḍḍe** ‘egg’ | Proposed reflex of [**DEDR 4939**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=442) | DEDR4939 gives Tamil muṭṭai, Malayalam muṭṭa/moṭṭa and Kannada moṭṭe egg. The selected survey forms preserve their vowel, gemination and voicing variants; Irula/Malasar forms are comparative regional extensions. No longer expression or unrelated egg synonym is shortened to this stem. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (5 records.) |
+| 210 | **ṭuṇi** ‘cloth’ | Proposed reflex of [**DEDR 3307**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=289) | DEDR3307 gives Tamil/Malayalam/Kodagu tuṇi cloth, with differentiated ritual garment senses in Kota/Toda. These simple southern survey tu ṇi/ṭuṇi/tuṇī cloth responses are comparative lect extensions of the ordinary cloth noun, preserving source-internal spacing and retroflex/vowel notation. The longer tuṇi-maṇi response is excluded pending component analysis. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+
+Proposed assignment rows: **9**. Affected records: **9**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-043.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Kannada/batch-043.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

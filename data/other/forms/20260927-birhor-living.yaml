@@ -1,0 +1,16 @@
+file: 20260927-birhor-living.csv
+defaults:
+  transcription:
+    profile: birhor-living
+    input: phonemic
+    preserve_hyphens: true
+sources:
+  living-birhor2026:
+    identity:
+      dedupe_by_entry_key: true
+    forms:
+      split_alternates: false
+    reference:
+      editor: OpenAI Codex
+      ocr: false
+      etymology_provenance: none

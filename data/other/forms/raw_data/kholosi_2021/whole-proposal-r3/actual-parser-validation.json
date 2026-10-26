@@ -1,0 +1,24 @@
+{
+  "status": "passed actual parser; independent acceptance pending",
+  "checks": {
+    "NFC": {
+      "rows": 1135,
+      "parser_errors": 0,
+      "exact_graph_fields": true
+    },
+    "NFD": {
+      "rows": 1135,
+      "parser_errors": 0,
+      "exact_graph_fields": true
+    }
+  },
+  "closed_graph": true,
+  "unknown_tags": [],
+  "code_sha256": {
+    "make_cldf.py": "1a1ded9eff5b8607174aa37981efb4358824be8ffffdfaa7128c0cea53dac5a8",
+    "source_meta.py": "1c3147843d6c9f2489155b633db55fd1374e6f3b1a59b7051a3642fdbd2c7a4c"
+  },
+  "proposal_sha256": "97ebfb4fc673ca06b805736030340bf2206b53e73af3cd76ed065b02bbd1f2bd",
+  "profile_sha256": "1fcdabf0a57b03e70499591a6f2271edf5f1e7fef5d2250fb02b28728cb9369a",
+  "method": "Unmodified parser in bounded source-local sandbox; exact ancestry/variant/borrowing/derivation fields checked. No CLDF or database build."
+}

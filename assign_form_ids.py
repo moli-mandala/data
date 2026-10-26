@@ -233,6 +233,12 @@ def assign_ids(
         fp = fingerprint(row, source_key)
         match = by_form_id.get(old_id)
         legacy_match = by_legacy.get(old_id)
+        if legacy_match and legacy_match["Form_ID"] in claimed:
+            # An identity an earlier row already took cannot identify this one. When a row above
+            # two same-fingerprint nodes (one form and gloss attested in two dialects) is removed,
+            # the second node's old position names the first node's identity; it must fall through
+            # to the nearest-position match below instead of being minted afresh.
+            legacy_match = None
         if not match and source_key:
             # Some historical snapshots gained keys without updating their old
             # content fingerprint. The immutable key still identifies the row.

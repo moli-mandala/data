@@ -1,0 +1,13 @@
+# Paniya Census Tamil Nadu residual records — research review
+
+**Pending review. No new assignments have been saved. No rebuild has been run.**
+
+The exact source inventory has **499 records**: **38 earlier pending**, **1 earlier held**, and **460 previously unexamined**. Of the latter, **60 records** now have proposals producing **60 assignment rows**, and **400** have explicit research holds. Zero remain unexamined.
+
+New pending batches: [015](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Paniya/batch-015-review.md), [016](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Paniya/batch-016-review.md), [017](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Paniya/batch-017-review.md), [018](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Paniya/batch-018-review.md), [019](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Paniya/batch-019-review.md), [020](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Paniya/batch-020-review.md), [021](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Paniya/batch-021-review.md), [022](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Paniya/batch-022-review.md), [023](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Paniya/batch-023-review.md), [024](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Paniya/batch-024-review.md), [025](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Paniya/batch-025-review.md).
+
+The 14 [exact-form homepage search chunks](discovery-001-035-results.json) covered all 460 residual records using the current Jambu query implementation. The [full cached DEDR articles](primary-evidence.json), [draft decisions](proposed-decisions.json), [holds](research-holds.json), and [source-wide coverage](source-coverage-001.json) preserve the evidence and exact ownership.
+
+This Census Paniya column has substantial apparent form–gloss displacement: 147 exact residual rows are flagged in [source–gloss conflict indices](source-gloss-conflict-indices.json), including **ellu** ‘blood’ (cf. bone), **kaṇṇu** ‘chest’ (cf. eye), **irəcci** ‘fever’ (cf. meat), and identical **kuḷikiñcai** as both ‘bathe’ and ‘buy’. Those rows remain on hold; the source itself has not been altered.
+
+Compounds, other elicitation errors, loanlike forms without an immediate donor, and weakly matched verb stems also remain held. A DEDR ID denotes an entire article; its displayed head may differ from the attested comparison inside the article. Existing source records and accepted sidecars remain unchanged.

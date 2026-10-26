@@ -58,6 +58,18 @@ def test_bashir_khowar_sound_profile():
         assert unicodedata.normalize("NFC", parsed_phon) == phonemic
 
 
+def test_bashir_homonyms_stay_distinct():
+    # Identical unlinked forms in one dialect merge, so Form must keep Bashir's homonym
+    # numbers: baṣ¹ 'share' and baṣ³ 'place in a river where it divides' are different words.
+    with open("cldf/forms.csv", encoding="utf-8") as handle:
+        bas = [r for r in csv.DictReader(handle)
+               if r["Language_ID"] == "Kho" and "bashir2023" in r["Source"]
+               and r["Original"].startswith(("baṣ¹", "baṣ³"))]
+    assert bas
+    assert not [r for r in bas if "share" in r["Gloss"] and "river" in r["Gloss"]]
+    assert {"baṣ¹", "baṣ³"} <= {r["Form"] for r in bas}
+
+
 def test_validate():
     if not Path("cldf/parameters.csv").exists():
         pytest.skip("Wordlist metadata validates the pre-unification CLDF stage")

@@ -4,6 +4,8 @@ import io
 import sys
 from pathlib import Path
 
+import pytest
+
 from make_cldf import parse_file
 
 
@@ -32,7 +34,9 @@ def test_language_ids_are_lect_specific_and_clades_follow_jambu_taxonomy():
     assert hindukush.clade({"ID": "dml", "Family": "Indo-European", "SubGroup": "Nuristani"}) == "Kunar"
     assert hindukush.clade({"ID": "ask", "Family": "Indo-European", "SubGroup": "Nuristani"}) == "Nuristani"
     assert hindukush.clade({"ID": "bsk_h", "Family": "Burushaski", "SubGroup": ""}) == "Burushaski"
-    assert hindukush.clade({"ID": "wbl_a", "Family": "Indo-European", "SubGroup": "Iranian"}) == "Other"
+    assert hindukush.clade({"ID": "wbl_a", "Family": "Indo-European", "SubGroup": "Iranian"}, "Pamir") == "Pamir"
+    with pytest.raises(ValueError):
+        hindukush.clade({"ID": "wbl_a", "Family": "Indo-European", "SubGroup": "Iranian"})
 
 
 def test_lect_names_group_under_existing_database_languages():

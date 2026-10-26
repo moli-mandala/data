@@ -1,5 +1,11 @@
 # Source ingestion checklist — 20260925-bailey-bilaspuri
 
+## Whole-source checkpoint — 2026-09-27
+
+Whole Bilaspuri source stage: 678 forms (288 prior glossary rows exact plus 390 grammar, morphology and whole-response forms), 546 audited units; printed pp. 231–248, 22 translated sentences, attributed introductory examples and all glossary cells. Independent whole rereading and fresh pass 3: zero material errors in 20 units/28 emitted rows. One numeral glyph uncertainty retained. Other-lect comparisons and contextual statements remain audited controls. Ten focused tests pass, actual canonical parser 678/678 with no errors; NFC/NFD proposal checks pass. Full CLDF/DB/build/browser gates deferred; no release performed.
+
+The generated retrospective sections below describe the prior compiled release (288 rows), not a new build. Current installation evidence: `data/other/forms/raw_data/bailey_bilaspuri_1920/whole-installation-result-20260927.json`. Applicable addenda: glossary, survey/comparative table, OCR.
+
 - Installed input: `data/other/forms/20260925-bailey-bilaspuri.csv`
 - Canonical checklist SHA-256: `85e38ca842519c4b80ff58ab75d3882865b688dbe866041805b8c4f4c9163201`
 - Source-type addenda: Dictionary or glossary

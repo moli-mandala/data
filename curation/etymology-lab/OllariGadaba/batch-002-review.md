@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Ollari Gadaba · Dravidian surveys, 2026-09-21 · batch 002. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Ollari Gadaba | Proposed etymology | Evidence |
+|---|---|---|---|
+| 6 | **mīn** ‘fish’ | Proposed reflex of [**DEDR 4885**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=436) | DEDR 4885 gives Tamil/Malayalam/Kannada mīn, Parji mīni, Telugu/Kuvi mīnu and Gondi mīn ‘fish’. Simple min- responses are matched by both form and meaning; the article’s Sanskrit comparison does not itself establish borrowing direction. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 7 | **nāng** ‘tongue’ | Proposed reflex of [**DEDR 3633**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=321) | DEDR 3633 gives Tamil/Malayalam nā/nākku/nāvu, Kannada nālige/nālage, Telugu/Konda nālika, Kolami nālka and Gadaba nāŋ ‘tongue’. These simple n-initial stems fit the documented series; Gondi vanjēr and Kurukh tatxa require different articles. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 8 | **niḍ** ‘ashes’ | Proposed reflex of [**DEDR 3693**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=329) | DEDR 3693 directly gives Tamil/Malayalam nīṟu, Telugu nivuṟu/niguṟu, Parji nīd and Gondi nīr ‘ashes’. The ash gloss differentiates these from nīr ‘water’ (3690); multiword ash compounds are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 9 | **okuṭi** ‘one’ | Proposed reflex of [**DEDR 990**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=94) | DEDR 990 explicitly groups the one numeral: (a) Tamil oru, Kannada obba, Kui ro, Kurux ort and Brahui asiṭ; (b) Telugu okaṭi, Kolami okkod and Gadaba ukuṭ; (c) Kurux oṇṭā; (d) Tamil oṉṟu/oṇṇu, Kannada ondu, Tulu oñji, Gondi undi and Kurux ōnd. The selected simple survey responses fit the corresponding branch; composite and divergent responses remain unassigned. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 10 | **tin** ‘eat’ | Proposed reflex of [**DEDR 3263**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=284) | DEDR 3263(a) lists Tamil tiṉ, Kannada tin/tinu/tinnu and the widespread cognate eating verb; Kannada past stem tind- and related inflection belong here. Causatives, food derivatives and subsection (b) right-hand expressions are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+
+Proposed assignment rows: **5**. Affected records: **5**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-002.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/OllariGadaba/batch-002.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

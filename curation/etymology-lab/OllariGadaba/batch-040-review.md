@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Ollari Gadaba · Bhattacharya 1957 Ollari Gadaba residual records, 2026-09-25 · batch 040. Pending user review; autonomous research continues.
+
+| # | Ollari Gadaba | Proposed etymology | Evidence |
+|---|---|---|---|
+| 156 | **puskir-** ‘to put off clothes’ | Proposed reflex of [**DEDR 4281**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=378) | DEDR 4281 full article opens “4281 Ta. puy (-v-, -nt-) to be pulled out, torn off, wrested, disappear; ( -pp-, -tt- ) to extract, pull out, uproot; puya (-pp-, -nt-) to…”; its Ga. (Oll.) passage gives “Ga. (Oll.) puskir- to put off (clothes); (S.) pucc- to pull out, remove; (P.) pusk- to take out something, pull out; (S. 3 ) puc- to take”. The source form and sense match this Ollari entry within the whole article. (1 record.) |
+| 157 | **pūn** ‘bone’ | Proposed reflex of [**DEDR 4299**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=380) | DEDR 4299 full article opens “4299 Nk. purni bone. Ga. (Oll.) pūn id.; (P.) iṇḍmul pūn backbone. ? Ka. huri id., spine. ? Cf. 4339 Te. punuka. DED(S) 3526.”; its Ga. (Oll.) passage gives “Ga. (Oll.) pūn id.; (P.) iṇḍmul pūn backbone. ? Ka. huri id., spine. ? Cf. 4339 Te. punuka. DED(S) 3526.”. The source form and sense match this Ollari entry within the whole article. (1 record.) |
+| 158 | **pūp-** ‘to flower; to blossom’ | Proposed reflex of [**DEDR 4345**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=384) | DEDR 4345 full article opens “4345 Ta. pū flower, cock's comb, richness, flourishing condition, wire edge on tool, cataract in eye, albugo, menstruation; (-pp-, -tt-) to…”; its Ga. (Oll.) passage gives “Ga. (Oll.) pū ( pl. pūl ) flower; pūp- (pūt-) to flower; (S) puvvu flower; pūk- (pūt-) to flower, blossom; (S.²) būm pinḍake bumble bee.”. The source form and sense match this Ollari entry within the whole article. (1 record.) |
+| 159 | **penḍom** ‘rice beer’ | Proposed reflex of [**DEDR 4397**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=388) | DEDR 4397 full article opens “4397 Ka. heṇḍa vinous liquor or toddy extracted from the wild date tree. Tu. heṇḍa toddy, palm-wine. Ga. (Oll.) penḍom rice-beer. Konḍa peṇḍam…”; its Ga. (Oll.) passage gives “Ga. (Oll.) penḍom rice-beer.”. The source form and sense match this Ollari entry within the whole article. (1 record.) |
+| 160 | **pernonḍ** ‘big’ | Proposed reflex of [**DEDR 4411**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=389) | DEDR 4411 full article opens “4411 Ta. peru, perum, pēr great; peritu that which is great, big, large; greatly; periya large, great, elder, important; periyār, periyōr the…”; its Ga. (Oll.) passage gives “Ga. (Oll.) pernonḍ ( masc. ), berit ( fem. and neut. ) big; berpul tiger; (S) berbullū id.; (S. 2 ) beŋgiḍ much, more; beŋgurtul many; (P.”. DEDR 4411 gives Ollari pernonḍ “big”; its separate “elder brother” source gloss is held. (1 record.) |
+
+Proposed assignment rows: **5**. Affected records: **5**. Relation kinds: **reflex**. Multi-part responses retain their source order.
+
+Exact persistent IDs and complete source records: [batch-040.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/OllariGadaba/batch-040.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../ollari-bhattacharya-20260925/research-holds.json). No new lexical material or donor nodes are introduced.

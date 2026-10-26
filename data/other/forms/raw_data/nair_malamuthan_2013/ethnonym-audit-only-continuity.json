@@ -1,0 +1,26 @@
+{
+  "status": "audit-only documentary source spelling correction",
+  "old_csv_sha256": "4f5fb77e4d66ca2b15c7e68ad0192d7b89e82bcd8519f23bd5d5ff9d33399faa",
+  "new_csv_sha256": "4f5fb77e4d66ca2b15c7e68ad0192d7b89e82bcd8519f23bd5d5ff9d33399faa",
+  "csv_byte_identical": true,
+  "old_audit_sha256": "302eb43c384ee9caffd11138ec75433fb29da3c1ffe0b3990155929b44af9aaf",
+  "new_audit_sha256": "7860c2d95ba7f3facb04d89c2684678cf48b3506c1a9e79e83b29ead6730e1a8",
+  "audit_deltas": [
+    {
+      "unit_key": "nair2013malamuthan:p37:ethnographic-context:02",
+      "fields": {
+        "note": {
+          "old": "Final r diacritic requires close original check before exact codepoint acceptance.",
+          "new": "The visible final r has a dot below; source spells the long vowel with aa, not a macron."
+        },
+        "target_form": {
+          "old": "malakāṛ",
+          "new": "malakaaṛ"
+        }
+      }
+    }
+  ],
+  "crop_sha256": "8340cbdfd3eca40d64ace812bf91deff96ecc307e3bdd04fb6f57a53d2cee6a2",
+  "independent_csv_sample_report": "independent-review/fresh20-original-review-20260927420.json",
+  "focused_tests": "5 passed"
+}

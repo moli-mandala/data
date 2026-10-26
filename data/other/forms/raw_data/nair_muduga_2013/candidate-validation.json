@@ -1,0 +1,32 @@
+{
+  "status": "pass: isolated actual parser all15fields NFC/NFD and real SourceMeta/formatter; not independent lexical approval",
+  "csv_sha256": "e091d6665b36fb0a770d62955382e30c73d97f186e9f2e833e785c73939c7127",
+  "audit_sha256": "707e2c010082a4902b07849cf6601d30f06e25f7a586fef0569261ff2d0e163a",
+  "settings_sha256": "4598ef2e0fa689b110deb12beac670caee8c19c08e51eae535f3befc0d71d64f",
+  "bib_sha256": "16d0269ece40af6e9987c56f5a80d78b471078b8ebd4548bbf4244ea5d281e2a",
+  "checks": [
+    {
+      "normalization": "NFC",
+      "rows": 204,
+      "exact_fields": 15,
+      "errors": 0
+    },
+    {
+      "normalization": "NFD",
+      "rows": 204,
+      "exact_fields": 15,
+      "errors": 0
+    }
+  ],
+  "references": [
+    {
+      "key": "nair2013muduga",
+      "formatted": "[1] Ravi Sankar S\\. Nair\\.\nTribal Languages of Kerala\\.\n*Language in India*, 13\\(7\\):50–54, July 2013\\.\nThe same physical volume separately cited for other complete chapters; not another edition\\. Nair attributes distinctive\\-feature discussion to Rajendran and lists the 1986 book\\. Item\\-level fieldwork provenance is not supplied\\. Source Roman notation is preserved, including underdots, drawn lowlines, tilde, zero within expressions, literal dash differences and source spelling inconsistencies; no inferred IPA\\. Source geography calls Attapady part of Wayanad; retained as an attributed historical statement rather than an alteration of the base language registry\\.\nURL: [https://languageinindia\\.com/july2013/ravisankarkeralatriballanguages\\.html](https://languageinindia.com/july2013/ravisankarkeralatriballanguages.html)\\.  \n"
+    },
+    {
+      "key": "rajendran1986muduga",
+      "formatted": "[1] N\\. Rajendran\\.\n*Muduga Language*\\.\nEnnes Publications, Quilon, 1986\\.\nReported in Nair 2013, pp\\. 50 and 54; not independently consulted and not a direct lexical attestation\\. Bibliographic identification is limited to the details printed by Nair\\.  \n"
+    }
+  ],
+  "canonical_changes": false
+}

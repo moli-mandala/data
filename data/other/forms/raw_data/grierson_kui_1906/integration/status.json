@@ -1,0 +1,76 @@
+{
+  "status": "combined review candidate, not installation-ready",
+  "input_hashes": {
+    "source-lect-mapping-approved-20260927.json": "e237a6d5bff1d73c0bacbf6aebd313bd5eaf646ae0afd9df485326bb7c118538",
+    "outside-comparands-routing-reuse-review-20260927.json": "c1f432ddf80a6262dfeaea575dacf68539b01b2863b04ac27276fc617a2b04ca",
+    "table-metadata-candidate.json": "90862e3004171589c05f49051bfd61a3e822f7518115eebcd13b54aa9255248b",
+    "table-prompt-inventory.jsonl": "99b350259b3fbed95ec8d85037a44dc29152532847df6d471fc89353a156cd9c",
+    "grammar-scope-supplement-20260927.json": "dcabda2dfd729ca943a208af1d5e6f59a8c46278a7708376e297fc458b35e84e",
+    "root-grammar-alternative-emission-review-20260927.json": "fd03a41c7287b4e5290607a2ec1bf3d54a5abcae13d2822ab12adbec312173cb",
+    "grammar-metadata-candidate.jsonl": "2806561d2a09c15db6a98ff921c799c932301f4f0427a0a18ec334f779a5050f",
+    "specimens/atomic-emissions-reviewed.jsonl": "794f83f01fd09711b543a0aee03f06a0058a0049ca4a1b2fd0b632b5446d3aef",
+    "specimens/interlinear-reviewed.jsonl": "d6960e5336320d539b83be14010b57fdf4b0183640c21e2936d64649843aee5d",
+    "specimens/expression-emissions-reviewed.jsonl": "f50df616f0ed5a77aca4518e1e830c0ca71b2306927471484db735a051f75f9f",
+    "outsidechapter-independent-reviewed.jsonl": "3db46b3113fb82c0a83a138fa8e46c6b6b325a921c76e852daca23f6f4edebc0",
+    "root-comparand-supplement-review-20260927.json": "fc6258c427b2430f5f858088ca476a5b375734877afa2f5dcc0f1416459d6fc3",
+    "outside-comparands-reviewed-candidate-20260927.jsonl": "ad3e8a363be81e7b05cf8eafdf76c3ac138a24437e9aca3316b324dff9e92957",
+    "independent-integration-routing-graph-review-20260927.json": "08e946f05391d5916cba8c3135c8810ba53da0325188b4ecbe70825e4c740748",
+    "root-component-relations-review-20260927.json": "53f5a19d977861fcd65b049e507b91070914220e7b1eb7be806c0fe4cbb52ef5",
+    "integration/display-note-revisions.json": "33a62a4386338ef89849e7656ab95a6c5b132d834f2d1fec6a2615c0777e3286"
+  },
+  "rows": 1832,
+  "audit_units": 1859,
+  "sections": {
+    "table": 241,
+    "grammar": 432,
+    "grammar-supplement": 7,
+    "specimen-physical-atom": 890,
+    "specimen-expression": 77,
+    "outside-target": 34,
+    "outside-comparand": 178
+  },
+  "dispositions": {
+    "emitted": 1801,
+    "source-blank": 18,
+    "identity-hold": 15,
+    "documentary": 8,
+    "joined-physical-fragment": 2,
+    "reused-existing-occurrence": 12,
+    "reference-hold": 3
+  },
+  "languages": {
+    "Kui": 1671,
+    "Telugu": 23,
+    "Kannada": 22,
+    "Gondi": 41,
+    "Tamil": 32,
+    "ju": 4,
+    "Kurux": 11,
+    "Brahui": 16,
+    "Tulu": 2,
+    "Malayalam": 5,
+    "Kolami": 2,
+    "Malto": 2,
+    "Kaikadi": 1
+  },
+  "profile_rules": 122,
+  "outputs": {
+    "combined-candidate.csv": "b3869cae1a515ae745f00e99edb9344c73939f54a941fc7a9dc241f4c4b8a133",
+    "combined-audit.jsonl": "9b76c68718d5258ac85cd635e6aa4027b554e7260499d53b7b9c45e5fa34782e",
+    "literal-preservation.txt": "16b0b67cddd07a6aa98936050c6ee48590dfa45900bb021ac670184b5f0694eb",
+    "metadata-proposal.json": "8b54d26d2194d0dc867756bd560d1452f58aa473a6dfbea5d3d1f3da5bd84d38",
+    "combined-candidate.yaml": "8b54d26d2194d0dc867756bd560d1452f58aa473a6dfbea5d3d1f3da5bd84d38",
+    "graph-accounting.json": "6b190c5b75306d64ad2f9e4e4207a0523909294d6cfbf502bcfc9562e13155d8",
+    "integration-overlays.json": "ed5864fa33eca552fd892b1afdb6e85d09e314bfccecd1f2be158d610009de9e",
+    "build_candidate.py": "a8516a68d389505f3846797b9974cea836becbaff247f8e0dec4500870e62167"
+  },
+  "scope": "Complete chapter and 241-prompt Khondmals column plus explicitly bounded outside comparisons; documentary/reference/identity dispositions retained.",
+  "pending": [
+    "Independent final routing/config review",
+    "Actual parser with proposed dialect overlay and complete profile",
+    "Fresh independent output audit",
+    "Canonical metadata/Bib/reference registration",
+    "Full build, database and browser deferred by instruction"
+  ],
+  "canonical_changes": false
+}

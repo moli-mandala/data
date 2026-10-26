@@ -1,0 +1,91 @@
+{
+  "date": "2026-09-27",
+  "reviewer": "norton_finish",
+  "status": "complete72-row visible-hasanta sweep; keyed proposals need owner reconciliation",
+  "base_review_sha256": "cafaacefa5b6108573692e783d684b5024bb8a3d7490c18e118f9828b2db79a1",
+  "owner_input_sha256": "b6b64f42656c1aadcc44bdd888fb8e8734302331951a6f1b2bcbb7ae2084c214",
+  "coverage": "All six original half-page images revisited, both form columns. Narrow PDF93lower and hand row,PDF94middle/lower,PDF95upper crops independently rendered7x.",
+  "proposals": [
+    {
+      "pdf_page": 93,
+      "row": 23,
+      "field": "chakma",
+      "old": "তক্তক্কা",
+      "proposed": "তক্‌তক্যা",
+      "evidence": "Separate first ক with clear lower diagonal; final ক+যফলা proposed, still requires owner adjudication against earlier ক্কা."
+    },
+    {
+      "pdf_page": 93,
+      "row": 23,
+      "field": "brokskat",
+      "old": "তক্পক",
+      "proposed": "তক্‌পক",
+      "evidence": "Separate ক with lower diagonal before প; do not silently join ক্প."
+    },
+    {
+      "pdf_page": 93,
+      "row": 24,
+      "field": "chakma",
+      "old": "তাক্সি",
+      "proposed": "তাক্‌সি",
+      "evidence": "Visible lower hasanta on separated ক before সি."
+    },
+    {
+      "pdf_page": 93,
+      "row": 24,
+      "field": "brokskat",
+      "old": "থাক্সি",
+      "proposed": "থাক্‌সি",
+      "evidence": "Matching visible lower hasanta on separated ক before সি."
+    },
+    {
+      "pdf_page": 94,
+      "row": 11,
+      "field": "chakma",
+      "old": "গোহর",
+      "proposed": "গোহ্‌র",
+      "evidence": "Narrow original Rect25,185,155,270 at7x shows a distinct second lower stroke after হ before separate র."
+    },
+    {
+      "pdf_page": 94,
+      "row": 17,
+      "field": "chakma",
+      "old": "যুহু",
+      "proposed": "যুহ্",
+      "evidence": "Final হ carries visible hasanta; no u vowel at that position. Repeats original review correction, not another new record."
+    }
+  ],
+  "remaining_exceptions": [
+    {
+      "pdf_page": 93,
+      "row": 11,
+      "field": "chakma",
+      "note": "Distinct extra lower diagonal in left hand-form compared right হাত and Bengali হাত. Exact base/vowel segmentation still unresolved; do not certify literal identical হাত without typed uncertainty."
+    },
+    {
+      "pdf_page": 93,
+      "row": 13,
+      "field": "chakma",
+      "note": "Compressed final তভ cluster remains provisional; no confident automated virama insertion."
+    },
+    {
+      "pdf_page": 94,
+      "row": 25,
+      "field": "chakma",
+      "note": "মাল(-মাত্তা) final parenthetical cluster remains ambiguous; no invented standalone expansion."
+    },
+    {
+      "pdf_page": 95,
+      "row": 7,
+      "field": "chakma",
+      "note": "গল্থ includes stacked/low medial glyph. Candidate গল্‌থ may preserve disjoined hasanta but exact ল versus doubled cluster still unresolved; root adjudication needed."
+    }
+  ],
+  "controls": [
+    "PDF94row1 already preserves final দুত্ on left versus দুত right; do not harmonize",
+    "PDF93row19 উঠস্ already has final hasanta; retain",
+    "Ordinary joined দ্বি and initial ব্রো cluster not forcefully separated",
+    "Bengali-script comparisons do not supply IPA"
+  ],
+  "canonical_changes": false
+}

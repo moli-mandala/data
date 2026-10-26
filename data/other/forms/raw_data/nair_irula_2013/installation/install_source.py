@@ -1,0 +1,244 @@
+"""Guarded four-target Irula installer. Dry run by default; root activates it.
+
+Approved assets are immutable. A journal permits exact interrupted recovery;
+rollback restores original assets only while no unexpected edits have occurred.
+Completed no-ops verify own bytes and shared contribution membership, allowing
+later unrelated source installations. No builds or publication occur here.
+"""
+from __future__ import annotations
+import argparse
+import csv
+import hashlib
+import io
+import json
+import sys
+import unicodedata
+from pathlib import Path
+
+import yaml
+from pybtex.database import parse_string
+
+HERE = Path(__file__).resolve().parent
+PACKAGE = HERE.parent
+DATA = next(p for p in HERE.parents if (p / 'source_meta.py').exists())
+sys.path.insert(0, str(DATA))
+from source_meta import SourceMeta
+
+STEM = '20260927-nair-irula'
+APPROVAL = HERE / 'root-acceptance.json'
+TARGETS = {'csv': f'data/other/forms/{STEM}.csv', 'yaml': f'data/other/forms/{STEM}.yaml',
+    'audit': 'data/other/forms/raw_data/nair_irula_2013/installed-audit.jsonl',
+    'bib': 'cldf/sources.bib'}
+digest = lambda content: hashlib.sha256(content).hexdigest()
+
+
+def file_hash(path):
+    if not path.exists():
+        return None
+    result = hashlib.sha256()
+    with path.open('rb') as stream:
+        for block in iter(lambda: stream.read(1024 * 1024), b''):
+            result.update(block)
+    return result.hexdigest()
+
+
+def contained(root, name):
+    path = (root / name).resolve()
+    assert path.is_relative_to(root.resolve()), ('escaping path', name)
+    return path
+
+
+def validate_inputs(check_draft=False, check_identity=True):
+    path = HERE / 'root-acceptance-draft.json' if check_draft else APPROVAL
+    approval = json.loads(path.read_text())
+    assert approval['installation_approved'] is (False if check_draft else True)
+    if not check_draft:
+        assert approval['result'] == 'pass'
+    assert set(approval['assets']) == set(TARGETS)
+    assert set(approval['canonical_baselines']) == set(TARGETS.values())
+    assert 'installation/install_source.py' in approval['files']
+    for name, expected in approval['files'].items():
+        assert file_hash(contained(PACKAGE, name)) == expected, ('approved input drift', name)
+    for role, asset in approval['assets'].items():
+        assert asset['target'] == TARGETS[role]
+        assert asset['input'] in approval['files']
+        assert asset['output_sha256'] == approval['files'][asset['input']]
+    assert file_hash(DATA.parent / 'tmp/pdfs/tribal-languages-kerala-nair2013.pdf') == approval['source_pdf_sha256']
+    if check_identity:
+        assert file_hash(DATA / 'data/form-identities.csv') == approval['durable_identity_sha256']
+    return approval
+
+
+def registry(content):
+    reader = csv.DictReader(io.StringIO(content.decode()))
+    rows = list(reader)
+    assert all(None not in r and r.get('ID') for r in rows)
+    assert len({r['ID'] for r in rows}) == len(rows)
+    return reader.fieldnames, {r['ID']: r for r in rows}
+
+
+def validate_assets(approval, planned):
+    rows = list(csv.reader(io.StringIO(planned['csv'].decode())))
+    assert planned['csv'] == (PACKAGE / 'proposed.csv').read_bytes()
+    assert len(rows) == approval['rows'] == 256
+    assert all(len(r) == 15 and r[0] == 'Irula' and r[2] and r[10] for r in rows)
+    keys = {r[10] for r in rows}
+    assert len(keys) == 256
+    assert sum(bool(r[11]) for r in rows) == 12 and sum(bool(r[13]) for r in rows) == 4
+    for r in rows:
+        assert not any(r[i] for i in (1, 4, 5, 8, 12))
+        assert not r[11] or r[11] in keys
+        assert not r[13] or all(k in keys for k in r[13].split('|'))
+        assert unicodedata.is_normalized('NFC', r[2])
+        assert all(unicodedata.category(c) != 'Co' and c != '\ufffd' for c in r[2])
+        assert r[7].startswith('nair2013irula[p. ')
+    audit = list(map(json.loads, planned['audit'].decode().splitlines()))
+    historical = list(map(json.loads, (PACKAGE / 'proposal-audit.jsonl').read_text().splitlines()))
+    assert len(audit) == len({a['unit_key'] for a in audit}) == approval['audit_units'] == 261
+    assert {k for a in audit for k in a['proposed_entry_keys']} == keys
+    assert sum(not a['proposed_entry_keys'] for a in audit) == 16
+    for a, old in zip(audit, historical):
+        assert a['accepted_for_installation'] is True
+        assert a['historical_disposition'] == old['disposition']
+        assert a['disposition'] == ('accepted-target' if old['proposed_entry_keys'] else 'audit-only')
+        assert all(a[k] == v for k, v in old.items() if k != 'disposition')
+        assert a['review_evidence']['sha256'] == approval['final_review']['sha256']
+    settings = yaml.safe_load(planned['yaml'])
+    frozen = yaml.safe_load((PACKAGE / '20260927-nair-irula.yaml').read_text())
+    expected = dict(settings['defaults']); importer = expected.pop('importer')
+    frozen['sources']['nair2013irula']['reference']['etymology_provenance'] = 'source'
+    assert expected == frozen['defaults'] and settings['sources'] == frozen['sources']
+    assert settings['file'] == STEM + '.csv'
+    assert importer['commands'] == [['data/other/forms/raw_data/nair_irula_2013/installation/install_source.py', '--install']]
+    refs = parse_string((PACKAGE / 'installation/staged-references.bib').read_text(), 'bibtex').entries
+    assert set(settings['sources']) == set(refs) == {'nair2013irula','zvelebil1982irulapart3','perialwar1978irula'}
+    for key, source in settings['sources'].items():
+        assert source['reference'] == {'editor':'OpenAI Codex','ocr':False,'etymology_provenance':'source' if key == 'nair2013irula' else 'none'}
+    assert set(SourceMeta([PACKAGE / 'installation/20260927-nair-irula.yaml']).sources) == set(refs)
+    live_refs = parse_string(planned['bib'].decode(), 'bibtex').entries
+    assert all(live_refs[k] == v for k, v in refs.items())
+    _, languages = registry((DATA / 'cldf/languages.csv').read_bytes())
+    assert languages['Irula'] == approval['existing_irula_identity']
+    assert languages['Irula']['Glottocode'] == 'irul1243'
+
+
+def shared_membership():
+    expected = parse_string((PACKAGE / 'installation/staged-references.bib').read_text(), 'bibtex').entries
+    actual = parse_string((DATA / TARGETS['bib']).read_text(), 'bibtex').entries
+    assert all(k in actual and actual[k] == v for k, v in expected.items()), 'shared bibliography contribution drift'
+
+
+def plan(approval):
+    outputs = {role: contained(PACKAGE, a['input']).read_bytes() for role, a in approval['assets'].items()}
+    validate_assets(approval, outputs)
+    for role, content in outputs.items():
+        assert digest(content) == approval['assets'][role]['output_sha256']
+    return outputs
+
+
+def journal_state(approval, outputs):
+    journal_path = HERE / 'installation-transaction.json'
+    if journal_path.exists():
+        journal = json.loads(journal_path.read_text())
+        assert journal['approval_sha256'] == file_hash(APPROVAL)
+        assert set(journal['targets']) == set(TARGETS.values())
+        for role, name in TARGETS.items():
+            record = journal['targets'][name]
+            assert record['output_sha256'] == digest(outputs[role])
+            if approval['canonical_baselines'][name] is not None:
+                backup = contained(HERE, record['backup'])
+                assert backup.is_relative_to((HERE / 'baselines').resolve())
+                assert file_hash(backup) == approval['canonical_baselines'][name]
+            assert file_hash(DATA / name) in {approval['canonical_baselines'][name], digest(outputs[role])}, ('partial transaction drift', name)
+        return journal
+    assert all(file_hash(DATA / name) == approval['canonical_baselines'][name] for name in TARGETS.values()), 'canonical baseline drift'
+    return None
+
+
+def main(install=False, rollback=False, check_draft=False):
+    assert not check_draft or not install and not rollback, 'Draft validation cannot mutate'
+    receipt_path = HERE / 'installation-receipt.json'
+    # A completed source installation must remain reusable after later builds
+    # allocate other durable IDs. Initial/recovery/rollback transactions still
+    # require the exact pre-install identity ledger and never modify it.
+    approval = validate_inputs(check_draft, check_identity=not (receipt_path.exists() and not rollback))
+    outputs = plan(approval)
+    assert not (HERE / 'rollback-receipt.json').exists(), 'Rollback requires new root authorization'
+    expected = {name: digest(outputs[role]) for role, name in TARGETS.items()}
+    if receipt_path.exists() and not rollback:
+        receipt = json.loads(receipt_path.read_text())
+        assert receipt['approval_sha256'] == file_hash(APPROVAL) and receipt['installed_sha256'] == expected
+        for role in ('csv', 'yaml', 'audit'):
+            assert file_hash(DATA / TARGETS[role]) == expected[TARGETS[role]]
+        shared_membership()
+        result = {'status': 'no-op; own bytes and current shared membership verified', 'canonical_mutations': False}
+        print(json.dumps(result)); return result
+    journal = journal_state(approval, outputs)
+    if rollback:
+        assert journal is not None, 'No installed transaction to roll back'
+        if install:
+            for role, name in TARGETS.items():
+                journal_state(approval, outputs)
+                path = DATA / name
+                baseline = approval['canonical_baselines'][name]
+                if file_hash(path) == baseline:
+                    continue
+                if baseline is None:
+                    path.unlink()
+                else:
+                    content = contained(HERE, journal['targets'][name]['backup']).read_bytes()
+                    temporary = path.with_name(path.name + '.irula-rollback-tmp')
+                    temporary.write_bytes(content); temporary.replace(path)
+            assert all(file_hash(DATA / name) == approval['canonical_baselines'][name] for name in TARGETS.values())
+            (HERE / 'rollback-receipt.json').write_text(json.dumps({'approval_sha256': file_hash(APPROVAL), 'status': 'exact baselines restored'}) + '\n')
+        result = {'status': 'rollback completed' if install else 'rollback dry run validated', 'targets': 4}
+        print(json.dumps(result)); return result
+    if install:
+        if journal is None:
+            records = {}
+            for role, name in TARGETS.items():
+                path = DATA / name
+                assert file_hash(path) == approval['canonical_baselines'][name]
+                backup_name = None
+                if path.exists():
+                    backup = HERE / 'baselines' / (role + '.asset')
+                    backup.parent.mkdir(exist_ok=True)
+                    assert not backup.exists() or file_hash(backup) == file_hash(path)
+                    backup.write_bytes(path.read_bytes())
+                    backup_name = str(backup.relative_to(HERE))
+                records[name] = {'output_sha256': digest(outputs[role]), 'backup': backup_name}
+            # Recheck all current baselines before committing recovery authority.
+            assert all(file_hash(DATA / name) == approval['canonical_baselines'][name] for name in TARGETS.values())
+            journal = {'approval_sha256': file_hash(APPROVAL), 'targets': records}
+            temp = HERE / 'installation-transaction.tmp'
+            temp.write_text(json.dumps(journal, indent=2) + '\n'); temp.replace(HERE / 'installation-transaction.json')
+        for role, name in TARGETS.items():
+            journal_state(approval, outputs)
+            path, content = DATA / name, outputs[role]
+            if file_hash(path) == digest(content):
+                continue
+            assert file_hash(path) == approval['canonical_baselines'][name]
+            path.parent.mkdir(parents=True, exist_ok=True)
+            temporary = path.with_name(path.name + '.irula-install-tmp')
+            assert not temporary.exists() or file_hash(temporary) == digest(content)
+            temporary.write_bytes(content); temporary.replace(path)
+        assert all(file_hash(DATA / name) == expected[name] for name in TARGETS.values()), 'post-write drift'
+        assert file_hash(DATA / 'data/form-identities.csv') == approval['durable_identity_sha256']
+        shared_membership()
+        result = {'status': 'source-stage installed; compiled/browser gates deferred', 'installed_sha256': expected,
+            'approval_sha256': file_hash(APPROVAL), 'rows': 256, 'audit_units': 261, 'canonical_mutations': True}
+        temporary = HERE / 'installation-receipt.tmp'
+        temporary.write_text(json.dumps(result, indent=2) + '\n'); temporary.replace(receipt_path)
+    else:
+        result = {'status': 'disabled draft checked' if check_draft else 'approved dry-run checked',
+            'rows': 256, 'audit_units': 261, 'canonical_mutations': False, 'output_sha256': expected}
+    print(json.dumps(result)); return result
+
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--install', action='store_true')
+    parser.add_argument('--rollback', action='store_true')
+    parser.add_argument('--check-draft', action='store_true')
+    args = parser.parse_args()
+    main(args.install, args.rollback, args.check_draft)

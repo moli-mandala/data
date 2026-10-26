@@ -1,0 +1,42 @@
+{
+  "status": "whole-source stage installed; full build/browser deferred",
+  "rows": 678,
+  "audit_units": 546,
+  "legacy_rows_exact": 288,
+  "new_rows": 390,
+  "variant_links": 15,
+  "uncertain_rows": 1,
+  "tests": {
+    "passed": 10,
+    "seconds": 0.88,
+    "log": "tmp/rohru-whole-review/bilaspuri-installed-tests.log"
+  },
+  "canonical_parser": {
+    "rows": 678,
+    "errors": 0,
+    "original_notes_sources_tags_exact": true
+  },
+  "proposal_nfc_nfd_validation": "whole-parser-validation-20260927.json",
+  "audit": "root-whole-output-audit-20260927-pass3.json",
+  "identity": {
+    "language": "bil",
+    "legacy_ids": "stem",
+    "append_order": 64
+  },
+  "sha256": {
+    "data/other/forms/20260925-bailey-bilaspuri.csv": "26da2e57647005bc1bfda5ac2ef020e9ca471b854a92f53e24374c4a89898f76",
+    "data/other/forms/20260925-bailey-bilaspuri.yaml": "1c6fec943b4a26dea5093d6d6ddc12af9aa07127ed6589e93cd8aa9c6773403b",
+    "conversion/bailey-bilaspuri-1920.txt": "3774144744ae38dc3c6d9e2e7fcff788e88812a9ad0fb6920170e1b080bfe440",
+    "data/other/forms/raw_data/bailey_bilaspuri_1920/audit.jsonl": "b31f7c301825eb4b8510477e3d13ef1a364e0af59bd0850a2014c919da2c0b1a",
+    "data/other/forms/raw_data/bailey_bilaspuri_1920/import_source.py": "c82ef60306a7f62530d4d5643d27130c146c4a03f7ccab9d8d2a992ded74af4b",
+    "tests/test_bailey_bilaspuri_1920.py": "8f68b8a73f69883d55dd394279f0be46a4457d4e64e9e69b63541a9c06f09eea",
+    "tests/test_bailey_bilaspuri_whole_recovery.py": "c3181bd2e170be53165f68e3bd268e6af3937ff273eba58e82f8a67dc5ab4809"
+  },
+  "deferred": [
+    "full CLDF build",
+    "compiled graph and durable IDs",
+    "full suite",
+    "database/browser QA",
+    "publication"
+  ]
+}

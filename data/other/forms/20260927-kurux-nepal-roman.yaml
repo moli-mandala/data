@@ -1,0 +1,15 @@
+file: 20260927-kurux-nepal-roman.csv
+defaults:
+  importer:
+    commands:
+      - [data/other/forms/raw_data/kurux_nepal_2022/whole-source-recovery/import_source.py, --install]
+    note: Complete reviewed source; immutable baseline and approved revision 2 hashes.
+  transcription:
+    profile: kurux-nepal-whole-roman
+    preserve_hyphens: true
+  identity:
+    dedupe_by_entry_key: true
+  forms:
+    split_alternates: false
+  gloss:
+    grammar_tags: false

@@ -1,0 +1,41 @@
+{
+  "status": "Whole-report review assembly; not installed or accepted",
+  "inputs": {
+    "identity-review/all-source-routing-proposal.json": "afc7dcb8dae5619ac2af2d1d28bfcd38f9bd057125fac298795f58413363078c",
+    "integration-proposal/comparison-rows.csv": "677940a05c36cc24fbe4b8ddbde64f8471450b9de9b2370d36c0341b854ae04a",
+    "integration-proposal/comparison-routing-audit.jsonl": "0f3f64ed13ac27e2cfe4818259c4b37d92fe0864bbc92bed17e43a7f51f238f0",
+    "integration-proposal/comparison-dialects.csv": "efa0d598e1dd7402d5213d83db890c9cb10c4737d25159b7b57c2aac39abe736",
+    "interlinear-review/whole-expression-proposal.jsonl": "7a536b656201fbf05b3c1a8e4da040b10a2aedc062f91335b4d743e071ab9363",
+    "interlinear-review/c5-column-proposal.jsonl": "05a9389bb75aad858e024b0f209473daf8ade1812b8a6667461525edd0e6e068",
+    "interlinear-review/continuous-semantic-proposal.jsonl": "3df092d9f72f9c56e3529839e9f0c0224fc009a4518ecd692c03e4442592430c",
+    "outside-review/outside-candidate.jsonl": "e03f6acb169edb7015b557acabe94278d521012b237ad8094ab4253ddace7e1b"
+  },
+  "rows": 2405,
+  "languages": {
+    "Asuri": 224,
+    "Sadri": 1359,
+    "Birjia": 209,
+    "mu": 223,
+    "kw": 300,
+    "Kodaku": 90
+  },
+  "audit_records": 2763,
+  "dispositions": {
+    "routed-review-candidate": 1370,
+    "held-language-identity-conflict": 246,
+    "text-review-candidate": 1033,
+    "held-internal-word-alignment; target retained in whole expression": 66,
+    "outside-review-candidate": 2,
+    "held-language-attribution": 20,
+    "documentary": 26
+  },
+  "new_dialects": 7,
+  "new_languages": 1,
+  "canonical_changes": false,
+  "pending": [
+    "Independent text/alignment corrections",
+    "Final source-wide audit",
+    "Actual combined parser/registry/reference checks",
+    "Guarded installation"
+  ]
+}

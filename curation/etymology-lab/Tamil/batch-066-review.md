@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Tamil · Lindgren 2023 source records · batch 066. Pending user review.
+
+| # | Tamil | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **avan̪** ‘third-person singular, male, remote’ | Proposed reflex of [**DEDR 1**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=1) | The full DEDR 1 article includes Tamil: a demonstr. base expr. the remoter person or thing; pref. to nouns, expr. remoteness [ a before consonant, avv before vowel]; avaṉ/avvōṉ, avaḷ, avar/avarkaḷ, atu (before consonant)/ aḵtu (before vowel), av/avai that…. This source form matches the article's Tamil stem and the survey's third-person singular, male, remote sense. (1 record.) |
+| 2 | **an̪t̪aalavu** ‘that much’ | Ordered components: [**DEDR 1**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=1) + [**DEDR 295**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=28) | The survey expression is distal demonstrative + measure/extent. DEDR 1 records a demonstr. base expr. the remoter person or thing; pref. to nouns, expr. remoteness [ a before consonant, avv before vowel]; avaṉ/avvōṉ, avaḷ, avar/avarkaḷ, atu (before consonant)/ aḵtu (before vowel), av/avai that…; DEDR 295 records aḷa (-pp-, -nt-) to measure, limit, define; aḷapu, aḷappam measurement; aḷappu id., bounds, limit; aḷavu measure, extent, size, number; aḷavi limit; aḷavai measure, bounds, limit; aḷavaṉ one who measures the grain.. (1 record.) |
+| 3 | **in̪t̪aalavu** ‘this much’ | Ordered components: [**DEDR 410**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=38) + [**DEDR 295**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=28) | The survey expression is proximal demonstrative + measure/extent. DEDR 410 records i demonstr. base expr. the nearer or proximate person or thing; pref. to nouns, expr. nearness [ i before consonant, ivv before vowel]; ivaṉ, ivaḷ, ivar/ivarkaḷ, itu (before consonant)/ iḵtu (before vowel), iv / ivai…; DEDR 295 records aḷa (-pp-, -nt-) to measure, limit, define; aḷapu, aḷappam measurement; aḷappu id., bounds, limit; aḷavu measure, extent, size, number; aḷavi limit; aḷavai measure, bounds, limit; aḷavaṉ one who measures the grain.. (1 record.) |
+| 4 | **kon̪jam** ‘a little’ | Proposed reflex of [**DEDR 2041**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=184) | The full DEDR 2041 article includes Tamil: koccai meanness, despicableness; mean, despicable person; koccu small, young; koccaṉ young boy; koñcam little, small quantity; koñcaṉ mean person.. This source form matches the article's Tamil stem and the survey's a little sense. (1 record.) |
+| 5 | **ellā** ‘all’ | Proposed reflex of [**DEDR 844**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=82) | The full DEDR 844 article includes Tamil: ellām whole, all (personal as well as impersonal); ellavarum, ellārum all persons; ellēmum, ellōmum we all; ellīrum you all.. This source form matches the article's Tamil stem and the survey's all sense. (1 record.) |
+
+Proposed assignment rows: **7**. Affected records: **5**. Relation kinds: **component, reflex**.
+
+Exact persistent IDs, source locators and ordered assignments: [batch-066.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Tamil/batch-066.json).
+
+Excluded uncertain responses are documented in [research holds](../tamil-lindgren-20260925/research-holds.json). No new lexical material or donor nodes are proposed.

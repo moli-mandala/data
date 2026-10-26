@@ -1,0 +1,49 @@
+{
+  "status": "PASS protected literals/Tags/keys; one audit-annotation alignment required in final derivative",
+  "lexical_rows": 132,
+  "tag_changes": 115,
+  "source_anchored_wholes": 23,
+  "literal_changes": 0,
+  "protected_fields": "All original lexical fields except reviewed Tags, and all original whole fields except source-anchored key are exactly preserved. Narrow Native/Phonemic remain blank.",
+  "annotation_refinement": {
+    "key": "lsi9.2:p238:aligned-line:10:word:3",
+    "finding": "Owner recorded equivalent passive-scope reasoning under a different typed-hold name inside exact_keyed_decision. Final derivative must record the exact receipt packet/holds and preserve this historical wording separately.",
+    "required_exact_decision": {
+      "source_unit_key": "lsi9.2:p238:aligned-line:10:word:3",
+      "exact_form_guard": "kahā",
+      "exact_gloss_guard": "it-was-said",
+      "old_tags": [],
+      "proposed_tags": [
+        "verb",
+        "uncertain"
+      ],
+      "proposed_source_notes": [],
+      "source_scoped_basis": [
+        "Printed temporal English is lexical-time evidence only; exact target morphology is not independently corroborated by the chapter, so no intrinsic tense tag is proposed.",
+        "The English passive wording is preserved as source meaning; it does not independently establish morphological passive voice in target kahā."
+      ],
+      "additional_scope_holds": [
+        {
+          "type": "TAM-analysis-scope",
+          "detail": "Printed it-was-said supplies a lexical temporal interpretation. The exact target form has no independently identified chapter tense-class analysis here; intrinsic pret withheld."
+        },
+        {
+          "type": "voice-analysis-scope",
+          "detail": "No chapter corroboration for target passive morphology; English it-was-said is not sufficient, especially beside the printed agent context."
+        }
+      ],
+      "literal_uncertainties_preserved": [],
+      "decision": "keyed metadata proposal only; literal/Form/gloss/Native/Phonemic and source keys protected",
+      "scope_distinction": "Lexical POS from exact source sense/context is separate from intrinsic grammatical morphology. Source-explicit grammar only where independently scoped; temporal English and speech roles stay literal meanings/audit qualifications."
+    }
+  },
+  "inputs": {
+    "data/data/other/forms/raw_data/grierson_ahirwati_1908/specimen38/independent-metadata-review/root-metadata-boundary-acceptance-r3.json": "f95fc51bb6c057bd4a9af28369fde0865995e03d2b6d4f1b1be0ef1156301889",
+    "data/data/other/forms/raw_data/grierson_ahirwati_1908/specimen38/independent-metadata-review/residual-revision2/all-132-keyed-metadata-decisions.jsonl": "e9d003abd32a047bb284023b10c67b7e7d0cdd951ff6faadb07472ac46be3f2a",
+    "data/data/other/forms/raw_data/grierson_ahirwati_1908/specimen38/native-review/atomic-emissions-proposal.jsonl": "4828536ab952ffea007de5fa3b7d8cedccaa17aab35bd040d3ca4529547a20eb",
+    "data/data/other/forms/raw_data/grierson_ahirwati_1908/integration/specimen38-reviewed-root-r3/atomic-emissions-reviewed.jsonl": "90f9f452c4ea8e823a35ea7e8a199372ba060e216a2b289311446a398dd8cff9",
+    "data/data/other/forms/raw_data/grierson_ahirwati_1908/specimen38/native-review/whole-utterances-proposal.jsonl": "ff82e810297d785d0e14ec2fa147d9788d656934ca2ac087bf297e01b7c87b6a",
+    "data/data/other/forms/raw_data/grierson_ahirwati_1908/integration/specimen38-reviewed-root-r3/expression-emissions-reviewed.jsonl": "fab1dc9b3c27d6f887094eb827bc2c09106979e9b8332d581aced003293a4592"
+  },
+  "scope": "Actual source-local derivative continuity, not canonical installation or full compiled validation."
+}

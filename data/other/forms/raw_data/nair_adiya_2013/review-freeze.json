@@ -1,0 +1,68 @@
+{
+  "status": "owner review candidate frozen for independent original audit; no canonical installation",
+  "source_pdf": "/Users/aryamanarora/Documents/Code/jambu-all/tmp/pdfs/tribal-languages-kerala-nair2013.pdf",
+  "source_pdf_sha256": "4d2588987dab5d15c62ecc95330ccf7e925a9bce80d08068b91ca3f48c8cc5af",
+  "source_chapter_printed_pages": [
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "original_pages_visually_reviewed_by_owner": [
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "physical_units": 29,
+  "physical_witnesses": 174,
+  "output_rows": 171,
+  "Ravula_Adiya_rows": 136,
+  "Malayalam_Kannada_comparison_rows": 35,
+  "documentary_name_holds": 3,
+  "graph_edges_applied": 12,
+  "graph_edges_proposed": 0,
+  "files_sha256": {
+    "scope/physical-unit-census.jsonl": "312f713ba151febbaae2b6043fc805196289d3d32e46ced7aee6d72f29fa7ed6",
+    "scope/identity-proposal.json": "d768eddbb80a49f3eacae08537db07550c327918d11eafe637273a4b2245966e",
+    "first-reading.jsonl": "ef1c04c434408ff09b1bcdd846bd32b6fd903691f35f593adccd33f4d7da2763",
+    "proposed.csv": "3e52cbdfe68505abb3411eebbda74eb031938d38a5baeb60163811c1311dcc27",
+    "proposal-audit.jsonl": "af8a3e1212d7da3bbc2e42c13f4684c5984bc2d8ba09b8e5c433e094975bfd9e",
+    "proposal-status.json": "f37d98bc5812a12dced33c87ccaf878efc5d734b38cd25a4ac8cd568c95ee399",
+    "candidate-validation.json": "9e2e448bdb28dbb0dec768eb7ee9fc585959208d3321eb782719376a2b20eb59",
+    "notation-evidence.json": "5e167d23ea931fa4e4629aeda0b267faaed04f5e3efbee57eaa69bb8a0dfae61",
+    "graph-proposal.json": "a828a4277873358ec0276b9d0c8e2fbf27a57bc7a5cdc857c22e502dbdab228b",
+    "graph-approved.json": "73b117f9698489d9a1c3f578216b1483075e08e8651d9c5571010c9a0501b765",
+    "revision4-graph-continuity.json": "4ae56730992ea95e2ed993a523dec675fe0c7fb5f9b1de1c8baa1229f4a048aa",
+    "metadata/proposed-settings.yaml": "68e57a8f58157e43c79d77e95de4925109d705937e60b7d278b2ff137b0cf277",
+    "metadata/proposed-dialect.csv": "75838de4d45663b91a18327b9d52fd34fb5ee96457daffb777fcab7e1f8f6bee",
+    "metadata/proposed-references.bib": "397b4bc3ba5c0c5499faa9a21c738c5973ab9b3e2e240134a999c1a3a724d559",
+    "prepare_first_reading.py": "2ca72399e87852b21f8de011d5996c997e6bb5d08054e6ae0981fb6a1d146133",
+    "prepare_candidate.py": "55f65cffd4448eff9a03e704a5e443baa80e88a4b5c21c945adfad32ec491cd5",
+    "prepare_graph_proposal.py": "fc9658e458d512131715ecab844a9ae84f8c66ee2c1023d0c450bbf40414dd6c",
+    "record_notation_evidence.py": "ad536376d532ae2680db4a89a834fe918369c392ee1148b9732d70051455ee65",
+    "validate_candidate.py": "e5a319768558c7fa3e2ce74ad5bd3ad857719c55a34c04292970a540a70b4928",
+    "record_marker_revision3.py": "53bf4d3b3ad1b35f071b4730be989a604b0d1b5b0001921f7bab0bc3dacf6367",
+    "revision3-marker-continuity.json": "b21d2b0c093188792553a54fcea9061ad51d60e26caaf9f7a837e45fc9d739e5",
+    "metadata/formatter-review.json": "c16d04a2b6d799ff0b4696230e067c04a5e1de37f64a1b8d8313c755e6d17e51"
+  },
+  "review_priorities": [
+    "Every original p4–7 lexical block, particularly underlined l/n/rr, stacked lower dots and source spacing",
+    "p5 paradigm column/gender/honorific alignment and plain prose niinŋka versus later niiŋka",
+    "p6–7 full-clause gloss/tense/person and p7 kinship address versus reference distinctions",
+    "p8 four reported theses and Adiya-to-existing-Ravula identity routing",
+    "12 proposed source-explicit variant edges and five held non-edge classes"
+  ],
+  "deferred_gates": [
+    "independent original/output audit",
+    "graph adjudication",
+    "approval-guarded source-stage installer",
+    "canonical parser/metadata tests",
+    "full CLDF build",
+    "compiled graph/identity tests",
+    "browser QA"
+  ],
+  "canonical_changes": false
+}

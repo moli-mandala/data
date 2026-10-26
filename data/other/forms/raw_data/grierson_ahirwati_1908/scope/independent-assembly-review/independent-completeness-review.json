@@ -1,0 +1,54 @@
+{
+  "status": "physical/emission conservation passed; one documentary-context refinement required",
+  "reviewer": "/root/asur_finish",
+  "counts": {
+    "parents": 173,
+    "physical_keys": 1059,
+    "Roman": 500,
+    "Devanagari": 365,
+    "Persian_editorial_spacegroups": 194,
+    "emissions": 653,
+    "grammar_interpretations": 98,
+    "grammar_emitted": 75,
+    "grammar_documentary": 19,
+    "unattested_hypotheses": 4,
+    "No37_lexical": 363,
+    "No38_lexical": 132,
+    "whole_expressions": 50,
+    "quoted_occurrences": 18,
+    "outside_emissions": 15,
+    "outside_control": 47,
+    "outside_physical_only": 2
+  },
+  "missing_or_duplicate_physical_keys": [],
+  "missing_or_duplicate_emission_keys": [],
+  "shared_native_provenance": {
+    "physical_key": "lsi9.2:p233:native-line:3:word:1",
+    "lexical_references": 2,
+    "narrow_native_fields_blank": true,
+    "physical_record_count": 1
+  },
+  "interpretation_limits": [
+    "Whole expressions deliberately overlap lexical contributors and each other; they are not additional physical occurrences.",
+    "p237 quotations are separately printed occurrences, not literal reuse of p238 narrative.",
+    "No external reuse disposition is asserted by assembly r1; aliases are the five printer joins and the shared cross-script group.",
+    "All194 Persian groups are broad provenance only; this structural check does not certify their literals or per-word Native.",
+    "Metadata proposals, documentary original review, final source/profile/parser and canonical/build/browser gates remain separately pending."
+  ],
+  "findings": [
+    {
+      "type": "documentary-text-preservation",
+      "source_key": "lsi9.2:p233:two-specimen-script-and-lect-introduction",
+      "details": "Assembly retains only broad structural census for this parent. The actual recovered introduction in scope/p233-specimen-introduction-first-reading.json is referenced by census-r2 but is not pinned by assembly status or embedded as documentary context. Preserve/link the recovered source text in the final assembly; no lexical-row omission is asserted.",
+      "evidence_sha256": "dddb1a393db10cf3169e82082f599f7c0cc57c427c2c475ee8fe5dd67bafc840"
+    }
+  ],
+  "pins": {
+    "census_r2": "ea464866a86df7e1d80031504e41e1178c40dcba10de3db6ece8215716cb60bd",
+    "census_status": "2ceed8a0138d5f4064d1fd721e257c883ab518bc4ab576f85bcca69b0f4c6ec5",
+    "assembly_status": "1425af7d188c00fb5370ce03eb758174c66b98618a5183b1bb2b8eb8058d8f28",
+    "assembly_csv": "24dccdeb2fed636a87203815a5aeeb740fe164b471e59bbbccc025cbae9558c9",
+    "assembly_audit": "21b170054f90785e6e16ed21fe1139d9e6fa2a45d9e240bc23eee474ec4233e8"
+  },
+  "canonical_changes": false
+}

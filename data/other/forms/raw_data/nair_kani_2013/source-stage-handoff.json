@@ -1,0 +1,64 @@
+{
+  "status": "source-stage installed and focused validated; full ingestion pending compiled gates",
+  "counts": {
+    "canonical_rows": 36,
+    "audit_units": 42,
+    "witness_slots": 66,
+    "excluded_control_or_documentary_witnesses": 30
+  },
+  "canonical_sha256": {
+    "csv": "008927fd95809d423ac9d8b913ff690c4c398fee0da940fe96838117caeb0e85",
+    "yaml": "65574805f0cac7a0ecd6f91618aca6c4e012d36f52ff84e1b23b28674a7220c6",
+    "audit": "453759d7c580b8dee813ec79fb6ec7e92e4650901f484e4591782a0d05c43440"
+  },
+  "canonical_validation_sha256": "fc18c7acf56e64520ecb6ea64147589e3e9c3f01b29634bf391d028cc333da78",
+  "receipt_sha256": "aa91cbb8949ed16b2410a992506e74b9fb4a63c824501feeeea0bf1a347e2c80",
+  "focused_tests": {
+    "passed": 8,
+    "seconds": 3.09,
+    "log_sha256": "e035b0aeeea5d1a67304b0edaa08fb9e3b240e4f996e1cb70134b25fabb52d5b"
+  },
+  "source_meta": {
+    "settings_files": 295,
+    "citation_keys": 289
+  },
+  "durable_identity_unchanged": true,
+  "durable_identity_sha256": "4977c4e205f66233366ee1c00a9c938c9c78e3c087b63e02a94832647525c28a",
+  "language_added": "Kanikkaran",
+  "dialect_added": "nair2013-kerala-kani",
+  "references_added": [
+    "nair2013kani",
+    "somasekharannairkanikkarude"
+  ],
+  "independent_acceptance": {
+    "fresh_20_units_21_rows": "pass",
+    "targeted_corrected_aa_control": "pass",
+    "old_freeze_retained": true
+  },
+  "transcription": {
+    "convert": false,
+    "preserve_hyphens": true,
+    "phonemic_native": "blank as source supplies no independent layers",
+    "unique_nfd_codepoints": 22
+  },
+  "exclusions": {
+    "Malayalam_controls": 21,
+    "Tamil_Nadu_Kani_controls": 2,
+    "language_unstated_comparisons": 2,
+    "documentary_names": 5
+  },
+  "representative_source_keys": [
+    "nair2013kani:p32:vowel-shift:1:w2",
+    "nair2013kani:p33:noun-increment:2:w2",
+    "nair2013kani:p33:present:1:w1",
+    "nair2013kani:p33:negative:0:w1"
+  ],
+  "deferred": [
+    "full CLDF build",
+    "full test suite",
+    "compiled source-key/ID/graph checks",
+    "browser database and QA",
+    "publication"
+  ],
+  "no_remote_build_commit_or_push": true
+}

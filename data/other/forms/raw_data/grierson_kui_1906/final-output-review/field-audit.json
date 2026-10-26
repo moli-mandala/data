@@ -1,0 +1,135 @@
+{
+  "reviewer": "/root/asur_finish",
+  "status": "field audit passed",
+  "candidate_hashes": {
+    "integration-overlays.json": "ed5864fa33eca552fd892b1afdb6e85d09e314bfccecd1f2be158d610009de9e",
+    "prepare_install_fixtures.py": "f317cf4b44fa3168799932fb91ee7cc433841d5e23c46d89e4c55a958f7ffb84",
+    "display-revision-continuity.json": "634132086acf911cca63f845fe2fe540288376756c03d55f9d07a4daa6f95d6b",
+    "literal-preservation.txt": "16b0b67cddd07a6aa98936050c6ee48590dfa45900bb021ac670184b5f0694eb",
+    "unicode-inventory.json": "6b10e92bdcdfc21df8ca2bd1c6389d3c6b3d61f806379f5ae4175aa44b6df4df",
+    "prepare_display_note_revisions.py": "bbb3d082c602e96bf564b71ee1a796f35bafdb4b83022f084c5f143c853decd2",
+    "final-display-semantics-review.json": "834c849c2b232865d959f4598ca4f76f19015ad12ca9a4650f15e14a0de5d68f",
+    "install-fixture-status.json": "985de6a6dcd80886bafd77ad391929627bab3c9507110bdca971974fd06c5076",
+    "README.md": "77766578197d5462bdbb285c7c06213933efce7acdb6d50490639f2587c62740",
+    "combined-candidate.yaml": "8b54d26d2194d0dc867756bd560d1452f58aa473a6dfbea5d3d1f3da5bd84d38",
+    "proposed-dialects.csv": "a233750f1a3df2d05aec73b90147bdf33e11e8171590b1e94d8a3297dc790291",
+    "install-settings-proposed.yaml": "141bdc91ad04bf09382d8453ea8878421b04828056977f792242d1dc0938a88f",
+    "scaffold-status.json": "7497f6de562a268ea51d720da7da504bd6dae28fc065f9b9ff46daf1e6550115",
+    "source-unit-scaffold.jsonl": "f65996b6a76a28a4a8e99d80c1fd1f36aa79fa8ef5496f00f6b817243e4eb1ef",
+    "graph-accounting.json": "6b190c5b75306d64ad2f9e4e4207a0523909294d6cfbf502bcfc9562e13155d8",
+    "combined-candidate.csv": "b3869cae1a515ae745f00e99edb9344c73939f54a941fc7a9dc241f4c4b8a133",
+    "combined-audit.jsonl": "9b76c68718d5258ac85cd635e6aa4027b554e7260499d53b7b9c45e5fa34782e",
+    "build_candidate.py": "a8516a68d389505f3846797b9974cea836becbaff247f8e0dec4500870e62167",
+    "display-note-revisions.json": "33a62a4386338ef89849e7656ab95a6c5b132d834f2d1fec6a2615c0777e3286",
+    "prepare_scaffold.py": "0c510cffbd848196237468b7c259ded6cd54f7a6ec48c1b823a1470bb059790d",
+    "status.json": "60f8fee5cc9ad8eaf3c5ac422085794f08a59bff8fc8db3a60c3ee728b8eac06",
+    "metadata-proposal.json": "8b54d26d2194d0dc867756bd560d1452f58aa473a6dfbea5d3d1f3da5bd84d38"
+  },
+  "rows": 1832,
+  "audit_units": 1859,
+  "section_dispositions": {
+    "table / emitted": 239,
+    "table / source-blank": 2,
+    "grammar / emitted": 413,
+    "grammar / identity-hold": 3,
+    "grammar / source-blank": 16,
+    "grammar-supplement / documentary": 3,
+    "grammar-supplement / emitted": 4,
+    "specimen-physical-atom / emitted": 888,
+    "specimen-physical-atom / joined-physical-fragment": 2,
+    "specimen-expression / emitted": 77,
+    "outside-target / emitted": 34,
+    "outside-comparand / emitted": 146,
+    "outside-comparand / identity-hold": 12,
+    "outside-comparand / documentary": 5,
+    "outside-comparand / reused-existing-occurrence": 12,
+    "outside-comparand / reference-hold": 3
+  },
+  "issues": [],
+  "procedural_notes_screen_candidates": [
+    "grierson1906kui:p459:letchmajee-shortening:1",
+    "grierson1906kui:p459:letchmajee-shortening:2",
+    "grierson1906kui:p459:letchmajee-shortening:3"
+  ],
+  "multianswer_uncertainty_review": [
+    {
+      "key": "grierson1906kui:p652:khondmals-table:prompt47",
+      "forms": [
+        "Ābā",
+        "tāñji"
+      ],
+      "uncertainty": {
+        "type": "transcription",
+        "candidate_readings": [
+          "tāñji",
+          "tāñ̄ji"
+        ],
+        "reason": "Stacked nasal mark over second form requires source-symbol review; do not infer a phoneme."
+      }
+    },
+    {
+      "key": "grierson1906kui:p652:khondmals-table:prompt51",
+      "forms": [
+        "Lōku",
+        "maḍhēñju"
+      ],
+      "uncertainty": {
+        "type": "transcription",
+        "candidate_readings": [
+          "maḍhēñju",
+          "maḍhēẽju",
+          "maḍhēñ̄ju"
+        ],
+        "reason": "Medial consonant and stacked nasal marks merged in ink; candidate encoding only, not accepted."
+      }
+    },
+    {
+      "key": "grierson1906kui:p660:khondmals-table:prompt99",
+      "forms": [
+        "Āē",
+        "siḍē"
+      ],
+      "uncertainty": {
+        "type": "transcription",
+        "candidate_readings": [
+          "Āē, siḍē",
+          "Āe, siḍē"
+        ],
+        "reason": "Final e length of first alternate requires independent check."
+      }
+    },
+    {
+      "key": "grierson1906kui:p672:khondmals-table:prompt175",
+      "forms": [
+        "Sāhāmu",
+        "nhumu",
+        "kommu"
+      ],
+      "uncertainty": {
+        "type": "transcription",
+        "candidate_readings": [
+          "kommu",
+          "kowmu"
+        ],
+        "reason": "Third alternative's middle letters merge; independently distinguish m/w shapes."
+      }
+    },
+    {
+      "key": "grierson1906kui:p680:khondmals-table:prompt233",
+      "forms": [
+        "Nāi ābā o kopāri iḍutā rāhi ānēñju.",
+        "Nāi ābā o kopāri iḍutā rāhi lohonēñju."
+      ],
+      "uncertainty": {
+        "type": "transcription",
+        "reason": "Check house inflection and final alternative predicate against original; two complete source-scoped variants proposed, not two independent printed clauses."
+      }
+    }
+  ],
+  "checks": "Every CSV row is compared with its reviewed input literal/gloss, known section language, source tags and required lect; all dispositions, physical joins, expression links, graph endpoints and profile NFC/NFD coverage checked.",
+  "limits": [
+    "Not a fresh visual re-reading of all originals. Outside-comparand exact routing and scholarly Notes require the companion reviewer findings.",
+    "No actual YAML, source reference formatter or generic parser fixture is certified by this script.",
+    "No canonical edits, full build, database or browser validation."
+  ]
+}

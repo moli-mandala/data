@@ -1,0 +1,21 @@
+file: 20220913-kholosi.csv
+defaults:
+  transcription:
+    profile: kholosi-source
+    input: form
+    preserve_hyphens: true
+  gloss:
+    grammar_tags: true
+  importer:
+    commands:
+      - [data/other/forms/raw_data/kholosi_2021/install_reviewed_source.py, --install]
+    note: Regenerates only from immutable source snapshots and reviewed graph overlays; verifies accepted audit hashes and historical-key continuity before installation.
+sources:
+  kholosi:
+    identity:
+      dedupe_by_entry_key: true
+    forms:
+      split_alternates: false
+    reference:
+      etymology_provenance: mixed
+      ocr: false

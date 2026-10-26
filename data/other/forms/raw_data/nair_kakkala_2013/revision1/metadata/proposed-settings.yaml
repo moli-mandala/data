@@ -1,0 +1,14 @@
+# Source-local proposal. Approval-guarded installer command pending creation.
+file: 20260927-nair-kakkala.csv
+defaults:
+  transcription: {convert: false, preserve_hyphens: true}
+  identity: {dedupe_by_entry_key: true}
+  forms: {split_alternates: false}
+  gloss: {grammar_tags: false}
+sources:
+  nair2013kakkala:
+    reference: {editor: OpenAI Codex, ocr: false, etymology_provenance: source}
+  azad1980kakkala:
+    reference: {editor: OpenAI Codex, ocr: false, etymology_provenance: none}
+  sheela1980kakkala:
+    reference: {editor: OpenAI Codex, ocr: false, etymology_provenance: none}

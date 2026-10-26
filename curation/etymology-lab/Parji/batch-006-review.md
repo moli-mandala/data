@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Parji · Dravidian surveys, 2026-09-21 · batch 006. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Parji | Proposed etymology | Evidence |
+|---|---|---|---|
+| 26 | **cuppu** ‘salt’, **cup** ‘salt’ | Proposed reflex of [**DEDR 2674**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=231) | DEDR 2674(a) lists Tamil/Malayalam/Kannada uppu, Kolami sup and Parji cup ‘salt’; subsection (b) gives Gondi havar/ovor, Konda sōru and Kuvi hāru. The article supports the family but keeps the two stem series explicit; multiword salt responses are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (4 records.) |
+| 27 | **nīd** ‘ashes’, **nīḍ** ‘ash’ | Proposed reflex of [**DEDR 3693**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=329) | DEDR 3693 directly gives Tamil/Malayalam nīṟu, Telugu nivuṟu/niguṟu, Parji nīd and Gondi nīr ‘ashes’. The ash gloss differentiates these from nīr ‘water’ (3690); multiword ash compounds are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (5 records.) |
+| 28 | **okkuṭ** ‘one’ | Proposed reflex of [**DEDR 990**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=94) | DEDR 990 explicitly groups the one numeral: (a) Tamil oru, Kannada obba, Kui ro, Kurux ort and Brahui asiṭ; (b) Telugu okaṭi, Kolami okkod and Gadaba ukuṭ; (c) Kurux oṇṭā; (d) Tamil oṉṟu/oṇṇu, Kannada ondu, Tulu oñji, Gondi undi and Kurux ōnd. The selected simple survey responses fit the corresponding branch; composite and divergent responses remain unassigned. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (4 records.) |
+| 29 | **berto** ‘big’, **bɛḍṭo** ‘big’, **bɛrṭo** ‘big’, **bɛrṭuṭ** ‘big’ | Proposed reflex of [**DEDR 4411**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=389) | DEDR 4411 connects Tamil periya/peritu, Telugu pedda, Gondi beriya, Konda per/peri, Parji berto and Gadaba berit big. These language-matched survey stems fit that family; the numerous valiya, doḍḍa and Indo-Aryan-looking alternatives are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (5 records.) |
+| 30 | **tin** ‘eat’ | Proposed reflex of [**DEDR 3263**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=284) | DEDR 3263(a) lists Tamil tiṉ, Kannada tin/tinu/tinnu and the widespread cognate eating verb; Kannada past stem tind- and related inflection belong here. Causatives, food derivatives and subsection (b) right-hand expressions are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+
+Proposed assignment rows: **19**. Affected records: **19**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-006.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Parji/batch-006.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

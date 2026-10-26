@@ -1,0 +1,14 @@
+Historical validation failure recorded from the first invocation on 2026-09-27.
+This was a validator API assumption; no canonical source fields were changed.
+
+Traceback (most recent call last):
+  File "installation/check_canonical.py", line 84, in <module>
+    main()
+  File "installation/check_canonical.py", line 66, in main
+    assert len({make_cldf.dedupe_key(item) for item in parsed}) == 223
+AttributeError: module 'make_cldf' has no attribute 'dedupe_key'
+
+Correction: use (item.lang, item.param, item.form,
+make_cldf.source_entry_dedupe_key(item, meta)), matching the actual initial
+cleanup key and canonical SourceMeta policy. Subsequent check evidence is in
+canonical-source-stage-validation.json and the separate passing rerun log.

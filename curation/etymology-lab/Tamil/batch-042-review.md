@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Tamil · Dravidian surveys, 2026-09-21 · batch 042. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Tamil | Proposed etymology | Evidence |
+|---|---|---|---|
+| 196 | **vā** ‘come’ | Proposed reflex of [**DEDR 5270**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=475) | DEDR5270 explicitly gives Tamil vā imperative of varu, Malayalam varuka, Kannada bar/bār with bā imperative, Kodagu bar-, Telugu vaccu, Parji ver- and Tulu barpini. These survey simple come responses retain the corresponding stems and ordinary endings; pronoun-led clauses and auxiliary constructions are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 197 | **kollə** ‘kill’ | Proposed reflex of [**DEDR 2132**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=192) | DEDR2132 explicitly gives Tamil kol kill with koṉṟ- past, Malayalam kolluka and Kannada/Kodagu koll- with kond- past. These simple survey kol-/koṉṟ- kill responses retain the appropriate root or past stem and ordinary endings; longer causative/auxiliary expressions are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 198 | **pin** ‘behind’ | Proposed reflex of [**DEDR 4205**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=373) | DEDR4205 gives Tamil piṉ, Malayalam pimpu, Kota pibal/piga·r and Kannada pinde/him behind. These southern pin-/pimp-/pih-/in(d)- survey responses retain the documented back/behind stem with ordinary locative extensions and regular Kannada-area loss of initial p/h. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 199 | **tolaivu** ‘far’ | Proposed reflex of [**DEDR 3519**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=309) | DEDR3519 explicitly gives Tamil tolai distance/great distance and tolaivu distance, with southern tola-/tula- go away/be at an end. Survey Tamil tolaivu and Malasar/Eravallan tulai/tole/toḷeya far compare with the attested southern distance formation. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 200 | **mārbə** ‘breast’, **mārə** ‘breast’ | Proposed reflex of [**DEDR 4818**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=428) | DEDR4818 gives Tamil mār/mārpu/mārvu breast/chest and Malayalam mār/māṟu chest. These Tamil/Malayalam/Badaga mār-/mārb- survey breast responses retain that southern body-part family and the elicited breast meaning. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (2 records.) |
+
+Proposed assignment rows: **6**. Affected records: **6**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-042.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Tamil/batch-042.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

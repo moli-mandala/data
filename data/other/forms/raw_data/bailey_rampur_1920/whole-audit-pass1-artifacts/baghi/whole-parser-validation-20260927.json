@@ -1,0 +1,26 @@
+{
+  "status": "passed draft actual-parser route; source acceptance separate",
+  "checks": {
+    "NFC": {
+      "rows": 698,
+      "errors": 0,
+      "ordered_keys_preserved": true,
+      "originals_notes_sources_tags_preserved": true,
+      "all_display_forms_match_literal_profile_policy": true
+    },
+    "NFD": {
+      "rows": 698,
+      "errors": 0,
+      "ordered_keys_preserved": true,
+      "originals_notes_sources_tags_preserved": true,
+      "all_display_forms_match_literal_profile_policy": true
+    }
+  },
+  "code_sha256": {
+    "make_cldf.py": "1a1ded9eff5b8607174aa37981efb4358824be8ffffdfaa7128c0cea53dac5a8",
+    "source_meta.py": "1c3147843d6c9f2489155b633db55fd1374e6f3b1a59b7051a3642fdbd2c7a4c"
+  },
+  "proposal_sha256": "37d3015845c7995c9d5c0826868d49a832a54ff5abd1fe37660bcc97bfefdc3e",
+  "profile_sha256": "975fb32b76eece2271b3c2b4d79eb7ac154c0957bcf42b21316e913efa300b86",
+  "method": "Unmodified parser and metadata loader copied into bounded local source tree with intended input:form and preserve_hyphens:true. No canonical or compiled writes."
+}

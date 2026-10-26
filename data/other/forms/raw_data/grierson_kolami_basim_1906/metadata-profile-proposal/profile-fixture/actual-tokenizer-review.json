@@ -1,0 +1,39 @@
+{
+  "status": "passed preliminary coverage fixture; not final source/profile acceptance",
+  "reviewer": "/root/norton_finish",
+  "conversion_api": "segments.tokenizer.Tokenizer(profile_path)(form, column='IPA'), followed by production token separator removal, # boundary restoration, and NFC",
+  "api_inspection": "data/make_cldf.py profile loading and conversion branch, plus data/tests/test_sound_profiles.py conversion helper inspected before fixture construction; no API monkeypatch",
+  "fixture_status_sha256": "03a9b1da12159c2dd8f025c610e0280aaff0e573f415ddd08c68a97c2ceb2a32",
+  "profile_sha256": "00c946673ca99838d1b1220d8f376ebe0ede7c40dbda0c3e309724df204fb043",
+  "test_script_sha256": "781abab5463634b0072e69a1829c6fc45e89febf452cb1cb527ddfbefd9cc66b",
+  "counts": {
+    "specimen_physical_atoms": 561,
+    "grammar_witnesses": 224,
+    "outside_physical_candidates": 5,
+    "unaccepted_outside_glyph_alternative": 1,
+    "synthetic_controls": 14,
+    "total_cases": 805,
+    "NFC_and_NFD_conversion_assertions": 1610,
+    "exact_original_input_projections": 790,
+    "profile_rules": 95,
+    "inventoried_clusters_including_controls": 95,
+    "inventoried_codepoints_including_controls": 72,
+    "material_fixture_failures": 0
+  },
+  "focused_tests": {
+    "result": "3 passed in 0.26s",
+    "log": "tmp/jambu-next-source/kolami-profile-fixture-final-tests.log",
+    "log_sha256": "6493f6f0cf5d50dbd27bff2dc5ab7081995d89c8e1da9f7b1843f4ad03b610ec"
+  },
+  "initial_regression": "Initial test caught decomposed n-plus-dot preserving ṅ; corrected generator normalizes the cluster before applying the sole ṅ→ŋ rule. Initial failed log retained separately; all final NFC/NFD assertions pass.",
+  "preserved": "Exact source Original, optional parentheses, vowel length, nasal marks, ñ, source A/ū distinction, ch/w, punctuation, hyphens and spaces; no phonemic or morphological reinterpretation",
+  "limits": [
+    "All current readings are unaccepted; fixture includes transcription/identity holds without resolving them.",
+    "Inventory covers currently available forms, not final chapter output or future outside supplements.",
+    "Physical split-word fragments stay separate in this coverage fixture; final atomic joining/emission accounting remains owner work.",
+    "Direct tokenizer preserves punctuation; generic parser currently strips ordinary boundary punctuation independently. Final candidate parser/routing policy must account for that behavior.",
+    "Refresh profile/inventory and rerun actual parser tests after final corrected candidate freeze. No canonical profile/settings/registry writes or installation occurred."
+  ],
+  "canonical_changes": false,
+  "full_build_or_database": false
+}

@@ -1,0 +1,33 @@
+{
+  "status": "root source-stage policy; final corpus validation pending",
+  "source": "nair2013aranadan",
+  "source_url": "https://languageinindia.com/july2013/ravisankarkeralatriballanguages.html",
+  "publisher_pdf_url": "https://www.languageinindia.com/july2013/ravisankarkeralatriballanguages.pdf",
+  "publisher_checked": "2026-09-27",
+  "source_version": "Language in India 13(7), July 2013; Aranadan chapter pp.9–11",
+  "original_sha256": "4d2588987dab5d15c62ecc95330ccf7e925a9bce80d08068b91ca3f48c8cc5af",
+  "scope": "Complete source-defined Aranadan chapter plus source-wide check for attributed additional occurrences; not a claim that all chapters of the multilingual book are ingested",
+  "licence": "No explicit open reuse licence established. Publisher provides free access; do not describe that as CC licensing. Import attributed lexical facts and source-specific analyses; retain full original PDF outside canonical source assets.",
+  "attribution": "Nair is the primary chapter author. The preface describes compiled material extended by incomplete fieldwork, without assigning all Aranadan examples to field elicitation. Usha1992 is reported bibliography, not an independently collated lexical source.",
+  "extraction": "Native positioned PDF text reconciled with original images; no OCR engine used for this chapter",
+  "reference_ocr": false,
+  "reference_editor": "OpenAI Codex",
+  "transcription": {
+    "convert": false,
+    "preserve_hyphens": true,
+    "reason": "The source supplies Roman notation with doubled vowels, nasal tildes, lower dots and drawn low lines, but no complete phonemic conversion key. Preserve these distinctions instead of silently assigning IPA values or collapsing visually distinct lower marks. Native-font repairs recover visible characters only; they are not a phonemic conversion.",
+    "Original": "Reviewed source transcription with exact case and doubled vowels; NFC combining-dot/tilde equivalents; explicit low lines retained separately",
+    "Form": "Literal-preservation route, matching reviewed Original apart from documented generic display punctuation handling",
+    "Native": "blank",
+    "Phonemic": "blank",
+    "validation_required": [
+      "All emitted forms contain no private-use characters or replacement glyphs",
+      "Every native-font or drawn-mark repair has original-position evidence",
+      "Actual parser preserves all rows, fields, boundaries and source keys",
+      "NFC/NFD inputs preserve the same visible distinctions",
+      "No automatic comma/slash expansion or guessed phonological substitution"
+    ]
+  },
+  "identity": "Existing Aranadan, Malayalam and Kannada bases; distribution places do not identify separate elicited dialects or coordinates",
+  "deferred": ["Full CLDF/database build", "Compiled graph and identity checks", "Full suite", "Browser refresh and QA", "Publication"]
+}

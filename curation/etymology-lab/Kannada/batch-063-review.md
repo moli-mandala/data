@@ -1,0 +1,15 @@
+**Next 3 proposals, ready for review. Nothing in this batch saved yet.**
+
+Kannada · Dravidian surveys, 2026-09-21 · batch 063. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Kannada | Proposed etymology | Evidence |
+|---|---|---|---|
+| 306 | **hasaru** ‘green’, **pāce** ‘green’ | Proposed reflex of [**DEDR 3821**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=342) | DEDR 3821 gives Kannada pace/pacce, Kodagu pacce, Parji pay and Telugu pacca ‘green’, Telugu pasupu ‘yellow’, and Gondi pahānā ‘wet’. Their separate elicited meanings are preserved; the explicitly Telugu-derived Gadaba pasur series is not selected. User clarified on 2026-09-21 that each DEDR node represents the whole dictionary article, not only the displayed reconstruction. The head label remains unchanged; the cited article family/subsection is the proposed parent scope. (2 records.) |
+| 307 | **ā** ‘that’, **aḍu** ‘that’, **atu** ‘that’ | Proposed reflex of [**DEDR 1**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=1) | DEDR 1 lists the distal demonstrative paradigm, including Kannada ā/adu/atu, Kolami ad, Kota ad, Tamil avai and Kurux abṛā those things. These simple demonstrative forms are selected; compounds and the explicitly Pashto-influenced Brahui forms are excluded. Telugu anni/anta all are also explicitly included in this paradigm. User clarified on 2026-09-21 that each DEDR node represents the whole dictionary article, not only the displayed reconstruction. The head label remains unchanged; the cited article family/subsection is the proposed parent scope. (9 records.) |
+| 308 | **īrubu** ‘ant’, **yīruve** ‘ant’, **īrɨbɨ̄** ‘ant’, **īrubū** ‘ant’, **yɨ̄rɨbɨ** ‘ant’, **yɨrubu** ‘ant’, **yɨrappa** ‘ant’, **yɨruppa** ‘ant’, **yirappā** ‘ant’, **ērupū** ‘ant’ | Proposed reflex of [**DEDR 864**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=84) | DEDR 864 lists Tamil eṟumpu/eṟumpi/iṟumpi, Malayalam eṟumpu/iṟumpu/uṟumpu, Kota irb, Toda ïrb, Kannada iṟumpu/iṟupe/iṟuve/irvu/irve and Kodagu urupï ant. These southern survey forms preserve the r plus labial family, with nasal clusters, cluster simplification or southern stop voicing. The same article is unqueried; this does not endorse the separately questioned Gondi ant family. Per user clarification the node denotes the full article; its displayed heading remains unchanged. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (10 records.) |
+
+Proposed assignment rows: **21**. Affected records: **21**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-063.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Kannada/batch-063.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

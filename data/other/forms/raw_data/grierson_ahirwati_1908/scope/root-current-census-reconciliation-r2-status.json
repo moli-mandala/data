@@ -1,0 +1,44 @@
+{
+  "status": "All173 original physical census records reconciled to current fine inventories; final metadata/output review remains separate",
+  "counts": {
+    "physical_structural_units": 173,
+    "grammar_parents": 51,
+    "grammar_interpretations": 98,
+    "Roman_physical_lines": 57,
+    "Native_physical_lines": 38,
+    "Roman_physical_atoms": 500,
+    "Devanagari_groups": 365,
+    "Persian_spacegroups": 194,
+    "No37_lexical_emissions": 363,
+    "No38_lexical_emissions": 132,
+    "whole_expressions": 50
+  },
+  "inputs": {
+    "scope/physical-source-unit-census.jsonl": "5153251fe5c74be780ff79911020d06eb91622096eaed67e1842d98b2e41fd69",
+    "grammar/parent-coverage-first-reading.jsonl": "53ab13bfe22a064db76cb551ceae2e61e850abc6163ebf9c346773098f0e7f22",
+    "grammar/child-witnesses-reviewed.jsonl": "5ac645b13ae1a3132ac094431fbce9376037705f93c0c59d9861e6e7ef999ee7",
+    "specimens/specimen37/roman-physical-lines-first-reading.jsonl": "d76a7526bd4ef7a706c47dd56a6b9dbaf7e290a4f08d54a4f708d1a51a01894c",
+    "specimens/specimen37/native-physical-lines-first-reading.jsonl": "731ac393502bf04afa39fecd09816376b7a03993aa4b6b3cb3c0666d946049b8",
+    "specimen38/root-reviewed-revision/p238-roman-reviewed.jsonl": "fbab074a5a2589e3a3561afaf5c62615acb5ed95ffa66840aa71002965aac5f3",
+    "specimen38/native-review/native-lines-first-reading.jsonl": "c69a263475fe51b07703e2a93218c72640f1ba160c67525e4510f96b57b983d0",
+    "specimen38/documentary-first-reading.jsonl": "366389404bde9304290bc769fcaee22cb706c0febeb09cc844ed10b23c8f694b",
+    "specimen38/root-documentary-review/quoted-parent-census.jsonl": "8e557dd53f5dd2c19579bc87dfdd90f201f452791182bb7eada783e2fa4eafa9",
+    "outside-review/child-witnesses-reviewed.jsonl": "2b41c61ef7385c0f9a13d62e22b96c28cab351a6681763591cdf82bf1c20ad26",
+    "scope/major-addenda-applicability-review-20260927.json": "9013bb1d7f09c79e9f02f98dc9706e247bcc5070355be8e911ec4d11ea83b28c"
+  },
+  "output_sha256": "ea464866a86df7e1d80031504e41e1178c40dcba10de3db6ece8215716cb60bd",
+  "exact_fine_physical_keys_accounted": 1059,
+  "historical_mapping_fix": "The first reconciliation omitted nested target_atoms keys on15 No38 Roman lines; this revision fills them and proves all1059 physical keys occur once. No source record or extraction changed.",
+  "historical_planning_corrections": [
+    "499 initial Roman spacegroup estimate is superseded by500 fine physical atoms.",
+    "SupplementI applicability is closed by the separately pinned complete primary section-list/index review; prior open status is historical.",
+    "The p237 explanatory quotations and p238 narrative are separate physical printings, not duplicate source tokens; both are retained.",
+    "Gurmukhi is mentioned but unprinted. No unavailable specimen is invented. No Ahirwati standard-table column is printed."
+  ],
+  "limits": [
+    "No new literal acceptance for the194 Persian groups is asserted by this structural reconciliation.",
+    "Documentary prose is inventory-complete but exact original-backed textual review is still pending.",
+    "No complete canonical/source parser/CLDF/browser proof is implied for unfinished Ahirwati."
+  ],
+  "canonical_changes": false
+}

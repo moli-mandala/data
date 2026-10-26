@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Gondi · Dravidian surveys, 2026-09-21 · batch 010. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Gondi | Proposed etymology | Evidence |
+|---|---|---|---|
+| 31 | **nir** ‘ash’, **nīru** ‘ash’, **nīr** ‘ashes’ | Proposed reflex of [**DEDR 3693**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=329) | DEDR 3693 directly gives Tamil/Malayalam nīṟu, Telugu nivuṟu/niguṟu, Parji nīd and Gondi nīr ‘ashes’. The ash gloss differentiates these from nīr ‘water’ (3690); multiword ash compounds are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (3 records.) |
+| 32 | **unmā** ‘Nine’ | Proposed reflex of [**DEDR 1025**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=98) | DEDR 1025 gives Tamil oṉpatu/ompatu, Malayalam ompatu, Kannada ombattu/ombhattu, Kodagu oymbadi, Kota orbād, Tulu ormba and Gondi unmā nine. The retained variants preserve this numeral stem; Indo-Aryan nau/no and Telugu-type tommidi responses belong elsewhere. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 33 | **tommidi** ‘nine’, **tomˑidi** ‘nine’ | Proposed reflex of [**DEDR 3532**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=310) | DEDR 3532 explicitly lists Telugu tommidi and Gondi tomidi/tumīdī nine alongside Kolami tomdi. This proposal follows those attested languages; the similar Konda and Gadaba forms are excluded pending their inheritance versus Telugu-contact history. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (2 records.) |
+| 34 | **padana** ‘old’, **paḍana** ‘old’ | Proposed reflex of [**DEDR 3999**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=355) | DEDR 3999 gives Tamil paẓa/paẓacu/paẓaiya, Malayalam paẓaya, Kannada paẓa, Gondi paḍana/paṛana, Konda paṛay and Kurux paccā old. The selected simple adjective forms follow these comparanda; old-person responses and compounds are kept out. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (2 records.) |
+| 35 | **massor** ‘Nose’, **mosori** ‘nose’, **mosor** ‘nose’, **mosore** ‘nose’, **mosar** ‘nose’, **mossōr** ‘nose’ | Proposed reflex of [**DEDR 5031**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=454) | DEDR 5031 attests Gondi massōr/mosor/mosoṛ nose and Kolami mūti mouth within the face/muzzle family. The differing survey senses are explicitly documented; questioned Toda nose/cheek comparisons are excluded. Konda mūnzi nose is also explicitly printed in this article. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (7 records.) |
+
+Proposed assignment rows: **15**. Affected records: **15**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-010.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Gondi/batch-010.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

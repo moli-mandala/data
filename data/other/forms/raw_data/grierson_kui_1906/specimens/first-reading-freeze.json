@@ -1,0 +1,83 @@
+{
+  "status": "frozen first reading ready for independent full review, not export acceptance",
+  "files": {
+    "README.md": "3d78e47cd186c72e1c4b21107f37347ccd2dbb9bf4675e9170a397cff59dac1a",
+    "alternate-source-manifest.json": "15688ec32e8dcc9bf8880c5c5a7602d1c95312f66ec5778fe9d8ddd344c9aee5",
+    "explicit-continuations-first-reading.json": "fc8632961dbf4142cd9a925dd2cab9828b985cdbf7d19fde17a55287a3ab33f2",
+    "expression-spans-first-reading.jsonl": "54b32588e6877c7248cf7f6ef451d26adee82cde75c8f886ac3a9db38222663d",
+    "first-reading-status.json": "0ea92306b20426d8a7b72224d9db4b2df3dfd415652f955ecf58376fdf4be2ea",
+    "free-translation-40-p465.txt": "c0f2fc8d2e5a749c3d153e21ac4407474b3a27b4d4e9f51ac6c9dab320d13686",
+    "free-translation-42-p469.txt": "d44d03472a6937be0e60a61df99cde6f6fca97ea326b3ab61e2739e11daa5c12",
+    "interlinear-first-reading.jsonl": "18fe69f031259534f32172aa4355924c9b54ab9823298b82e6ac6304b6f5b8ca",
+    "p464-alternate-self-review.json": "8ca908739c0bddeda45c045dca15826fd674f02dbf898205f45dd0863471ee17",
+    "p464-first-reading.tsv": "73cc0fb8e51c669df351472a53152890a5f9c1ef3601e9aae1ae55c9c0b0a2cb",
+    "p464-low-resolution-draft.tsv": "5280576264d1de7bfd8f9d8313c6bc9fda2a0289b6af6e76f63d54f8af534d33",
+    "p465-first-reading.tsv": "5c0b07a05778ea656781293aae4390175a9fbd0f1778306f60017a6e9dc4e67f",
+    "p466-first-reading.tsv": "2711b23389886655142c7a184669b906e1705e512990cebbd60e851f1411fedd",
+    "p467-first-reading.tsv": "7a334e105762234020f58a897e54b09e3747ac4fd7d9e10c6a886431268bb74f",
+    "p468-first-reading.tsv": "e6a1b482f96b6075fc40763c1d09897ce62af4276bd27ac92860ac8ca9c65869",
+    "p470-first-reading.tsv": "daca5f7b521098b0e0d8040eba631038ad505a6ea5c983de604294799c7cce39",
+    "p471-first-reading.tsv": "b1333499fbb0ef6698a7b086fd35488e4c808059e08fb98eb30552b224509986",
+    "physical-lines-first-reading.jsonl": "e72d4968012ddff20bf0ebd7c83f7aff171e68a04b8c33f9a0bbe1e0b9425f68",
+    "prepare_first_reading.py": "f08fa5053c4ca133b2dd4d2c9ab351085b4f471766456435c3dda92dbf4188db",
+    "source-reading-observations.json": "4af840117622396305c3c0318e82c1d771edec06573f3e0b6e4ef79c9e7e6f05"
+  },
+  "source_mapping_sha256": "e237a6d5bff1d73c0bacbf6aebd313bd5eaf646ae0afd9df485326bb7c118538",
+  "inventory_counts": {
+    "status": "complete physical first-reading inventory; independent review and metadata/export remain pending",
+    "input_sha256": {
+      "p464-first-reading.tsv": "73cc0fb8e51c669df351472a53152890a5f9c1ef3601e9aae1ae55c9c0b0a2cb",
+      "p465-first-reading.tsv": "5c0b07a05778ea656781293aae4390175a9fbd0f1778306f60017a6e9dc4e67f",
+      "p466-first-reading.tsv": "2711b23389886655142c7a184669b906e1705e512990cebbd60e851f1411fedd",
+      "p467-first-reading.tsv": "7a334e105762234020f58a897e54b09e3747ac4fd7d9e10c6a886431268bb74f",
+      "p468-first-reading.tsv": "e6a1b482f96b6075fc40763c1d09897ce62af4276bd27ac92860ac8ca9c65869",
+      "p470-first-reading.tsv": "daca5f7b521098b0e0d8040eba631038ad505a6ea5c983de604294799c7cce39",
+      "p471-first-reading.tsv": "b1333499fbb0ef6698a7b086fd35488e4c808059e08fb98eb30552b224509986"
+    },
+    "atom_count": 890,
+    "interlinear_atom_count": 884,
+    "title_atom_count": 6,
+    "physical_line_count": 108,
+    "expression_span_count": 77,
+    "per_page": {
+      "464": 124,
+      "465": 37,
+      "466": 182,
+      "467": 109,
+      "468": 104,
+      "470": 156,
+      "471": 178
+    },
+    "per_specimen": {
+      "40": 124,
+      "41": 328,
+      "42": 104,
+      "43": 334
+    },
+    "uncertain_atoms": 32,
+    "explicit_continuations": 2,
+    "free_translations": {
+      "40": "free-translation-40-p465.txt",
+      "42": "free-translation-42-p469.txt"
+    },
+    "excluded_context": {
+      "465": "Surrounding linguistic commentary owned by grammar/prose worker.",
+      "469": "After specimen42 free translation, Chinna Kimedi/Kalahandi commentary owned by grammar/prose worker.",
+      "470": "Introductory commentary above specimen43 owned by grammar/prose worker."
+    },
+    "guards": {
+      "all_form_gloss_counts_equal": true,
+      "unique_physical_keys": true,
+      "every_non_title_atom_in_one_expression_span": true,
+      "canonical_files_written": false
+    },
+    "pending": [
+      "Independent complete literal/gloss review",
+      "Whole-expression boundary/gloss review",
+      "Source-supported grammatical metadata",
+      "Integrated profile/parser/graph/reference/identity checks",
+      "Canonical installation and deferred full build/browser gates"
+    ]
+  },
+  "canonical_changes": false
+}

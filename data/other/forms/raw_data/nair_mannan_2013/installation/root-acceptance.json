@@ -1,0 +1,90 @@
+{
+  "installation_approved": true,
+  "result": "pass",
+  "rows": 154,
+  "audit_units": 140,
+  "witness_records": 208,
+  "target_rows": 123,
+  "comparison_rows": 31,
+  "audit_only_witness_records": 54,
+  "variants": 0,
+  "files": {
+    "physical-units-first-reading.jsonl": "7e756a167297b07d0f03cddf135bc5ed97a6e102e21ab99947d1de7d6148edf5",
+    "first-reading-status.json": "344dfdde1abca1880688ea7eaf8c3efa6bc61f4ae851eba89eacceca0a22022b",
+    "prepare_first_reading.py": "0e4bcb3adbc834d8fe35b8446fa81f190c1f264d6f7b27d6c4fd64b496acec7c",
+    "proposed.csv": "e14969d61a067d45143e4c842c9bc495d70f76a0fda76820f3d140a9e85bdbde",
+    "proposal-audit.jsonl": "6183c8cbf9fe6633b4fd73f87e3a0360718cf01111b123b785d65dbc09cad43c",
+    "proposal-status.json": "2e735a25ace22ccf6f4ada77aecef6999c63982aaec5246d9b31f6869517c418",
+    "prepare_candidate.py": "1689f37706e1580f2c166489b4ef644a7595959c5cd06ae48e4cae3aba668dc4",
+    "symbol-inventory.json": "fbab04024f4cb6516a5cf105422df7010c5f844e908d6321c02dfab2b7bf8861",
+    "proposed-settings.yaml": "b1a494a90e72d07d0fd6690b551e15aa98f5a0da1be1f5c3207dd4f0f04cae35",
+    "proposed-references.bib": "5ac1ee89003a0362ffd1737c4c22e292ece9ee37f1d1e262be3a6e5a9db90a8e",
+    "metadata-and-graph-proposal.json": "761cb83959abebf6cbc817ad3f1d523db9d7224d46ba0866b98c971d06562201",
+    "actual-parser-review.json": "cbd8b05f16c6dbffaff29a1985ded52b91db3df385035f425241ed6b9efd715c",
+    "validate_actual_parser.py": "a253023970b3b677c0f461c498d6af86ab623af198d7722d9e1b745e52b2b1db",
+    "scope/page-and-font-census.json": "85001dcf1704cc5acdd7d3bcb17e9d5c307759bef4fc32706dffa09b1a175a92",
+    "scope/underline-vector-census.json": "59c87dcf666f493ec4467178ced00ff3019f4f7b45534537fb6059a0ea62ef2e",
+    "scope/native-text-crosscheck.json": "d79a9be62252d3138e9568d11ea5aa0bdab2bf07b75b3e07f9231320ad4b38b9",
+    "metadata-repair-continuity.json": "56ea1ce97b80b324e731f14748d57ce6d485380fcffd50934fbf45c3c1028eb8",
+    "apply_metadata_review.py": "d7a81cb858b6f2686c9b7f1b21b0b76c966b7ff430c3bbc790bb2bff575f12dd",
+    "independent-review/complete-original-review.json": "81911bba97c05c5f53793cd732e9ac1377bf5f67d4b616f8def6ee42c8a621e8",
+    "review-freeze.json": "8fe6620df601435704e65f2f66b1382f34dbb507392123b3ee48ad30cea4829a",
+    "root-original-review-final-20260927452.json": "e9c2fee8953367c73c3b8d04a12a6e03d9746c3fdb4741a0e3cb930a4673b482",
+    "installation/prepare_installer.py": "d44e3fad017aea4e457cd34c2b48251cfb02d4b7ad02ee3e31d450a53cae7cd8",
+    "installation/install_source.py": "4f0deead86e0ad073d33a005382e8dc5fa76b933fbbff718f25534fdf895db4b",
+    "installation/prepare_assets.py": "4165d2c6b7f9dc1264a9b6cd36e365a99267206121d39bad296414754e563746",
+    "installation/prepare_review_checks.py": "571aad688724d62bc6391f57d293f813f50eaa137464aadc7519c7877518a458",
+    "installation/check_fixture.py": "0e060f76b0bb67304aab1b10d96e76bde3edb4d76101cf07c38e7ae1851aa917",
+    "installation/test_installer.py": "a7c125f09268233aa9416768b85a8df9199ff110f766ba45971496f421046c02",
+    "installation/20260927-nair-mannan.yaml": "2797b923e8fc28b2cd6efbf8770e40625373ac40937d1d8f52b87720cf571207",
+    "installation/staged-references.bib": "6e9386edbb2b7c561d21decc22248fe750a9a9d97e1b75ddaa360246641fd8f7",
+    "installation/accepted-audit-proposal.jsonl": "7d1b3d11321945d641fed582ae25f2e697f777228d5be31cccc7095bb969c834",
+    "installation/actual-parser-check.json": "d3d38771944ded7a4e1b3cb1dbe70a0fb8750002dac78a91f32856d1b5ead94c",
+    "installation/assets/csv.asset": "e14969d61a067d45143e4c842c9bc495d70f76a0fda76820f3d140a9e85bdbde",
+    "installation/assets/yaml.asset": "2797b923e8fc28b2cd6efbf8770e40625373ac40937d1d8f52b87720cf571207",
+    "installation/assets/audit.asset": "7d1b3d11321945d641fed582ae25f2e697f777228d5be31cccc7095bb969c834",
+    "installation/assets/bib.asset": "8b9b38f622490b3c8fa10014105b0d57739ddb3d4f20f4e341846cb2071ad642"
+  },
+  "assets": {
+    "csv": {
+      "target": "data/other/forms/20260927-nair-mannan.csv",
+      "input": "installation/assets/csv.asset",
+      "output_sha256": "e14969d61a067d45143e4c842c9bc495d70f76a0fda76820f3d140a9e85bdbde"
+    },
+    "yaml": {
+      "target": "data/other/forms/20260927-nair-mannan.yaml",
+      "input": "installation/assets/yaml.asset",
+      "output_sha256": "2797b923e8fc28b2cd6efbf8770e40625373ac40937d1d8f52b87720cf571207"
+    },
+    "audit": {
+      "target": "data/other/forms/raw_data/nair_mannan_2013/installed-audit.jsonl",
+      "input": "installation/assets/audit.asset",
+      "output_sha256": "7d1b3d11321945d641fed582ae25f2e697f777228d5be31cccc7095bb969c834"
+    },
+    "bib": {
+      "target": "cldf/sources.bib",
+      "input": "installation/assets/bib.asset",
+      "output_sha256": "8b9b38f622490b3c8fa10014105b0d57739ddb3d4f20f4e341846cb2071ad642"
+    }
+  },
+  "source_pdf_sha256": "4d2588987dab5d15c62ecc95330ccf7e925a9bce80d08068b91ca3f48c8cc5af",
+  "canonical_baselines": {
+    "data/other/forms/20260927-nair-mannan.csv": null,
+    "data/other/forms/20260927-nair-mannan.yaml": null,
+    "data/other/forms/raw_data/nair_mannan_2013/installed-audit.jsonl": null,
+    "cldf/sources.bib": "59f4f4ec094a4788a8075d1f8af393258f5532cd86a8b75257464ab58ed6bcbc"
+  },
+  "durable_identity_sha256": "4977c4e205f66233366ee1c00a9c938c9c78e3c087b63e02a94832647525c28a",
+  "required_independent_report": "root-original-review-final-20260927452.json",
+  "required_independent_report_sha256": "e9c2fee8953367c73c3b8d04a12a6e03d9746c3fdb4741a0e3cb930a4673b482",
+  "existing_registry": "Mannan/mann1246 and Malayalam already registered; no registry or dialect edits",
+  "deferred": [
+    "full CLDF/database build",
+    "full suite",
+    "compiled identity/graph/reference survival",
+    "browser QA/publication"
+  ],
+  "approved_by": "root independent original-page and staged transaction review",
+  "root_plan_review_sha256": "86a29e7f5635e2c816ead71cc6dd5bbc384928960221586559f308fb8642bed8",
+  "transaction_test_log_sha256": "3e425503f17ad05305c89c65fda1270c602571bd8425f348a6ef4baa22a740af"
+}

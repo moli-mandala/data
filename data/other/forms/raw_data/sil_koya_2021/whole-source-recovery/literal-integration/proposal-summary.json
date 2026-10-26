@@ -1,0 +1,64 @@
+{
+  "status": "review_proposal_not_frozen_or_installed",
+  "rows": {
+    "wordlist": 1437,
+    "narrative": 210,
+    "comparative": 18
+  },
+  "total_rows": 1665,
+  "whole_audit_units": 2119,
+  "wordlist_statuses": {
+    "proposed": 1401,
+    "source_blank": 18,
+    "comparison_control": 420,
+    "source_omitted_slot": 50,
+    "source_absent_slot": 1
+  },
+  "legacy_wordlist_keys": 1438,
+  "preserved_active_keys": 1437,
+  "proposed_key_aliases": [
+    {
+      "alias_entry_key": "silkoya1985:utn:i198:v2",
+      "canonical_entry_key": "silkoya1985:utn:i198:v1",
+      "source_unit_key": "wordlist:UTN:198",
+      "reason": "Old erroneous slash split; original has one continuous answer va:val.",
+      "status": "proposed_alias_pending_independent_review"
+    }
+  ],
+  "copied_historical_addition_files_unchanged": [
+    "proposed-narrative.csv",
+    "proposed-narrative.yaml",
+    "proposed-sil-koya-narrative.txt",
+    "proposed-comparative.csv",
+    "proposed-comparative.yaml",
+    "proposed-sil-koya-comparative.txt"
+  ],
+  "normalization": "Wordlist uses explicit literal preservation profile; Phonemic blank. No interpretation of uncertain glyphs as IPA.",
+  "historical_failures_preserved": true,
+  "canonical_modified": false,
+  "sha256": {
+    "bibliography-update-proposal.json": "fb8535ac6393609516a3f22a1f13ca861be5da27e8c50b3f5a31b5acd2f2cc59",
+    "metadata-validation.json": "c79b5af27bc94ca002de5aa1e3574d915ca35eb254202e894201b4fc3947c2e8",
+    "parser-validation.json": "c0e674c3a17578374f211ef07419a476d3fa73b5db20c484ad19837babd2b158",
+    "proposed-comparative.csv": "3c01698e63111d1b778cab20f00383861c417f2cc4483965debbfe6aea4570be",
+    "proposed-comparative.yaml": "690a0c0468e77966b41484d881b48f69d6c6220a5d656a8ddcef8201972390b2",
+    "proposed-entry-key-aliases.json": "be65174b6f138f6d0bf41106845439e62fc7656d6367d57bf2eae60753eb9b40",
+    "proposed-narrative.csv": "c73b7c6de0aec5e067b13a2f3e2fa2bbbde925b12c7bcdb7579232e36b1c1bbb",
+    "proposed-narrative.yaml": "6815aadfc5ef5370d1f9861e9b7edb9ebca9053e6b4ee739dee759ba96e2bd61",
+    "proposed-sil-koya-comparative.txt": "de9320f424d972063046552dbf2785002b90b7acd0623fea661bc178aa693c0a",
+    "proposed-sil-koya-literal.txt": "a5860f6c9ab25696dc881f2cd6e30a12c58fc76ce37b06aa2e2979719bf53267",
+    "proposed-sil-koya-narrative.txt": "c91ab89a34fec4e3648254811b552da5c523e23dcab6312017c105a1abd9fcba",
+    "proposed-whole-audit.jsonl": "ad7af4e58035238d3bda321fddf4e7888b87085f8bbbb416a8187716592076d8",
+    "proposed-wordlist-audit.jsonl": "a53c77cc37848e0439dd387e2d00e99560d93645945f5c14871c7a5384feea61",
+    "proposed-wordlist.csv": "85ddc2cdc190048313a62fc4b2f1c6f9443e1bede84101261b0403df7f815724",
+    "proposed-wordlist.yaml": "c383e80e6bb53084f16ba12f26bfa68b35060c605279ede6e9d40df6fc90854c"
+  },
+  "input_sha256": {
+    "notation-keyed-proposal-20260927.jsonl": "0196472194191423f9a7b51d257f86fa4201861555a2e28b88461c2a72f55222",
+    "notation-narrow-adjudications-20260927.json": "97b56f5ecedaaa6d4e92606d9269424d3a74886d0ef1579ead50a8155cccdb5b",
+    "notation-iota-encoding-review-20260927.json": "817562466491838c5104f356dd44912dda57cb68e4f0fdbe73cba0430d04da50",
+    "proposed-additions-audit.jsonl": "bd2f3f798931790311d59aa077b8dfa1fd4989fe59205e39d49a99bef835497f",
+    "whole-output-freeze-20260927.json": "42df94b977a55ab6cd2504408f8fa11191bfdd7ac8fb197fd255ce454dd39103",
+    "independent-whole-output-audit-20260927.json": "b3e7199f30a54eb6f85d998d7deca907bd68f083f4827aab723f3e1a94d9f004"
+  }
+}

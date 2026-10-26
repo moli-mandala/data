@@ -1,0 +1,57 @@
+{
+  "pages": [
+    50,
+    51,
+    52,
+    53,
+    54
+  ],
+  "physical_groups": 128,
+  "witness_records": 229,
+  "rows": 204,
+  "target_rows": 183,
+  "comparison_rows": 21,
+  "audit_only": 25,
+  "source_pdf_sha256": "4d2588987dab5d15c62ecc95330ccf7e925a9bce80d08068b91ca3f48c8cc5af",
+  "status": "owner-frozen complete chapter proposal for independent fresh original-output audit; no installation approval",
+  "files_sha256": {
+    "proposed.csv": "08df8e0d3c95a2507034018112e2b3fa79bc1a12b49f740040b216b3fa26d4d6",
+    "proposal-audit.jsonl": "707e2c010082a4902b07849cf6601d30f06e25f7a586fef0569261ff2d0e163a",
+    "proposal-status.json": "28a77b2eb9d5dbfd778faf5cc8f5a5d111057fb788f5a074602237e4e93ae0dc",
+    "first-reading.jsonl": "7830d8e6d3d7d88d4a9bf58b2d65eba4bad85191ee293c9653362d4a196f421b",
+    "reviewed-first-reading.jsonl": "ad615835e9d206fb2dc22e5ef106d6fb78a5f811f63d136a3c47f07d34c8d3ab",
+    "prepare_first_reading.py": "3a4d2ce4411e203f948a38a282d977c462b0d6f19e052749651d8a8fd46c4c51",
+    "prepare_reviewed_reading.py": "91de35eb62b67e160a5d12f09aa97fea2299df1002f0af715f7463106880ccf2",
+    "prepare_candidate.py": "71471519358d51e0eecf989c4f4181180d6714bb3c1712ff9ab26b5bc744c70c",
+    "validate_candidate.py": "abca20b03b16283fe14cc60b1161490732b953fbac4cb6003d78787eefe58ddb",
+    "graph-proposal.json": "2121698946ea6e1307b9e4c9b6de652b881eb182a99299a8919308baa5ffc2c7",
+    "candidate-validation.json": "8aa43d973cb5bcb23f50324d50d15e27527ff2972bb6c2e966fa14f070c068b3",
+    "focused-tests.log": "571b2d88b94fac6a9d81c74532a2a71eecb9519785808732b28b717bf99b798d",
+    "metadata/proposed-settings.yaml": "4598ef2e0fa689b110deb12beac670caee8c19c08e51eae535f3befc0d71d64f",
+    "metadata/proposed-references.bib": "16d0269ece40af6e9987c56f5a80d78b471078b8ebd4548bbf4244ea5d281e2a",
+    "metadata/proposed-dialect.csv": "efa0062000949aafcd39e5d7d3e021fb064b3c3955be84a5346685f3ac5eae04",
+    "owner-second-reading/corrections.json": "cdc80a01be5f6a50273255f2b4e5493eba95de93d8cbd3f3cc5490728d5d970a",
+    "owner-second-reading/documentary-supplement.json": "eb778b7ff3e8d2b70a4f05a424fc6cb1bef52e1f41a78d80ade4e28fa7749f6e",
+    "owner-second-reading/final-owner-review.json": "63111718a890b9b80f17c74c6ad5e383ed11f03c1749ab46404603a2ca36beed",
+    "scope/legacy-baseline.jsonl": "030a4355ce69dea222f0cd05f343b0f2af6060a6de466a4f268640d1f44157d4",
+    "scope/font-and-vector-census.json": "6aafda152ceaa31a8f7d3b30fd7496e7849eb2b6848a67cc244162accd93d4ca",
+    "scope/chapter-scope-census.jsonl": "77abdf4288bc5821e08fe3b4d5fec44b0c0bed5d008e009f8fdd37ab19af87ff",
+    "scope/scope-status.json": "aa64d347614b58d0f366a9f6ed920ea99d5f80706f7c848424b16f59ac752495",
+    "root-original-chapter-preflight.json": "d78680530ba342d56b0ce1d4faa69811781b6dc4d1e3e9a24e8e704365fe1983",
+    "README.md": "291990a3ce695eab88d0022fa22434c72b45fecf8204a6f1d899b040f3caf9b0"
+  },
+  "audit_schema": "128 source_unit_key records: raw_source, physical_witnesses with physical_key/raw/disposition/hold_reason/entry_keys, aggregate entry_keys. All204 rows fixed fifteen-column Jambu schema; each maps to an exact physical witness.",
+  "sampling_priority": [
+    "all five pages and both target/comparator routes",
+    "p51 lowline versus underdot controls",
+    "p52 pronoun/demonstrative table and arrows",
+    "p53 imperative/negative morphology",
+    "p54 isolated-zero/no-main-suffix/feminine blank controls and nineteen person examples"
+  ],
+  "prior_independent_sample_keys": [],
+  "deferred": [
+    "Full CLDF/database and full suite",
+    "Compiled graph/reference/identity survival",
+    "Browser QA/publication"
+  ]
+}

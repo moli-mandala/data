@@ -1,0 +1,28 @@
+file: 20261025-kamioka-lari.csv
+defaults:
+  transcription:
+    profile: kamioka-lari
+    preserve_hyphens: true
+  identity:
+    legacy_ids: stem
+    append_order: 114
+  importer:
+    commands:
+    - - data/other/forms/raw_data/kamioka_lari_1979/import_source.py
+      - --install
+    note: Kamioka & Yamada 1979 Lari Basic Vocabulary, vocabulary part printed pp. 1–177
+      (PDF pp. 10–186), all 1000 questionnaire entries. Needs the pinned OCR cache from
+      raw_data/kamioka_lari_1979/ocr_runner.py, which needs the (not redistributed) scan.
+      Example sentences, Persian prompts and cross-references stay in the audit.
+sources:
+  kamioka-yamada1979lari:
+    identity:
+      dedupe_by_entry_key: true
+    forms:
+      split_alternates: false
+    gloss:
+      grammar_tags: false
+    reference:
+      editor: "Claude (Anthropic)"
+      ocr: true
+      etymology_provenance: none

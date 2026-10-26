@@ -1,0 +1,83 @@
+{
+  "status": "owner_original_page_review_passed",
+  "pages": [
+    267,
+    268,
+    269,
+    270,
+    271,
+    272,
+    273,
+    274,
+    275,
+    276,
+    277,
+    278,
+    279
+  ],
+  "numbered_subexamples": 60,
+  "aligned_words_or_phrases": 169,
+  "table_units": 53,
+  "original_review": "Each original page rendered separately at 1.8x and viewed; literal symbols checked against native-span evidence. Tables3/4/5/6 headers, all alternatives, zero markers and blanks accounted.",
+  "input_hashes": {
+    "grammar-examples-first-reading.jsonl": "bae182df3118e458ee5f0025bf3ca255375ff675ec390cffd53a90b2b57dffb4",
+    "tables-first-reading.jsonl": "c9fa9a7babc9eab372db46df27469fe80b1520eada29a61e3cb40f33ac64b5f1"
+  },
+  "corrections": [
+    {
+      "key": "peterson2024turi:p267:example:1a",
+      "field": "aligned_glosses",
+      "old": [
+        "monkey"
+      ],
+      "new": [
+        "monkey"
+      ],
+      "reason": "Retain printed gloss; move prose-supported analysis to metadata."
+    },
+    {
+      "key": "peterson2024turi:p267:example:1b",
+      "field": "aligned_glosses",
+      "old": [
+        "monkey=du"
+      ],
+      "new": [
+        "two monkeys"
+      ],
+      "reason": "Retain printed gloss; move prose-supported analysis to metadata."
+    },
+    {
+      "key": "peterson2024turi:p267:example:1c",
+      "field": "aligned_glosses",
+      "old": [
+        "monkey=pl"
+      ],
+      "new": [
+        "(three or more) monkeys"
+      ],
+      "reason": "Retain printed gloss; move prose-supported analysis to metadata."
+    },
+    {
+      "key": "peterson2024turi:p271:example:12",
+      "field": "aligned_glosses[3]",
+      "old": "neg=3sg.anim.subj",
+      "new": "neg=3sg.anim.subjⱼ",
+      "reason": "Original has subject coreference subscript j omitted by plain-text extraction."
+    },
+    {
+      "key": "peterson2024turi:p274:example:20",
+      "field": "aligned_glosses[3]",
+      "old": "neg=3sg.anim.subj",
+      "new": "neg=3sg.anim.subjⱼ",
+      "reason": "Original has subject coreference subscript j omitted by plain-text extraction."
+    }
+  ],
+  "source_inconsistencies": [
+    "15b literal see / 3pl versus he went.",
+    "19b negative repeats positive English translation.",
+    "12/20 coreference indices remain documentary.",
+    "29 editorial [h] and historical reprint uncertainty retained."
+  ],
+  "independent_review": "pending",
+  "whole_source_completion": false
+}

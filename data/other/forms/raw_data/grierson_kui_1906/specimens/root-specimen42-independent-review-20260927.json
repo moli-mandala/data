@@ -1,0 +1,27 @@
+{
+  "status": "full physical page independently compared; fine-mark proposals await owner reconciliation",
+  "reviewer": "root",
+  "specimen": 42,
+  "printed_page": 468,
+  "source_image": "tmp/kui-specimens/alternate-n489.jpg",
+  "source_image_sha256": "21c804dd9162574b051715d00397ec8500d1a44f44ab0a1706dbac8ae2d4da73",
+  "input": "p468-first-reading.tsv",
+  "input_sha256": "e6a1b482f96b6075fc40763c1d09897ce62af4276bd27ac92860ac8ca9c65869",
+  "coverage": {"title_atoms":3,"interlinear_atoms":101,"physical_interlinear_lines":14,"full_form_and_gloss_comparison":true},
+  "corrections": [
+    {"source_unit_key":"grierson1906kui:p468:specimen42:line3:word1","old":"Ēigēli","proposed":"Eigēli","field":"raw_source_form","evidence":"Initial capital E has no separate upper bar in original; do not transfer length from later lowercase vowel."},
+    {"source_unit_key":"grierson1906kui:p468:specimen42:line3:word5","old":"Ēri","proposed":"Eri","field":"raw_source_form","evidence":"Capital E upper edge has no separate macron. Lowercase ēri earlier in the same line is a separate printed occurrence."},
+    {"source_unit_key":"grierson1906kui:p468:specimen42:line8:word3","old":"Ērā","proposed":"Erā","field":"raw_source_form","evidence":"Capital E upper edge has no separate macron; retain final ā. Owner should verify narrow crop before final derivative."}
+  ],
+  "questions": [
+    {"source_unit_key":"grierson1906kui:p468:specimen42:line7:word2","current":"dehānē","issue":"First e upper stroke may indicate ē; compare narrow original before accepting quantity."},
+    {"source_unit_key":"grierson1906kui:p468:specimen42:line11:word8","current":"ṛai","issue":"Lower r-mark appears broad/horizontal in several specimen occurrences. Confirm whether printed underdot or underbar convention; preserve source-mark uncertainty rather than infer a retroflex phoneme."}
+  ],
+  "retained_caveats": [
+    "Curved vowel nasal marks remain provisionally encoded and must not acquire an inferred phonemic value.",
+    "Final line has inji without a visible nasal-letter mark, unlike many preceding iñji occurrences; preserve the printed distinction.",
+    "Glosses remain literal interlinear labels; no retranslation from the free prose rendering."
+  ],
+  "remaining": ["owner reconciliation", "expression span reconciliation", "whole-source audit"],
+  "canonical_changes": false
+}

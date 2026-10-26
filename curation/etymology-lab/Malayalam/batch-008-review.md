@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Malayalam · Dravidian surveys, 2026-09-21 · batch 008. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Malayalam | Proposed etymology | Evidence |
+|---|---|---|---|
+| 36 | **nīnḍa** ‘long’ | Proposed reflex of [**DEDR 3692**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=328) | DEDR 3692 attests Tamil nīḷ-/nīṇṭ- and nīṭ-/nīṭṭam, Malayalam nīḷam/nīṭu, Kannada nīḷa and Tulu nīṭa/nīṭu length or long. Only simple length stems and ordinary adjectival inflections are selected; length-plus-possessive compounds need component analysis. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 37 | **cumappə** ‘red’ | Proposed reflex of [**DEDR 1931**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=175) | DEDR 1931 attests Tamil civappu/cēppu, Malayalam cuvappu/cemappu, Kannada kempu and Tulu kempu red, showing the southern c-/k- correspondences. The selected simple colour forms fit this family; Kodagu cōpï is explicitly a Malayalam loan and Kannada Tamil-type forms are excluded from this inheritance proposal. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 38 | **varaṇṭa** ‘dry’ | Proposed reflex of [**DEDR 5320**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=481) | DEDR 5320 gives Tamil vaṟaḷ/vaṟal, Malayalam varaḷ-/vaṟu, Kota varl, Kannada battu, Gadaba vaṭṭ-, Gondi vatt-, Parji vett-/veṭṭ- and Brahui bārun dry. These simple stems or inflected dry responses are retained; transitive causatives and multiword responses are not collapsed into the stem. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 39 | **uṇangiya** ‘dry’ | Proposed reflex of [**DEDR 601**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=59) | DEDR 601 attests Tamil uṇaṅku, Malayalam uṇaṅṅuka, Kannada oṇagu/oṇa/oṇagilu and Kodagu oṇaŋg- dry or wither; Malayalam uṇakku also means dryness. These simple dry stems and ordinary inflections are selected; causative verb phrases and the distinctive Toda forms require separate analysis. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 40 | **ella** ‘all’ | Proposed reflex of [**DEDR 844**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=82) | DEDR 844 directly compares Tamil/Malayalam ellām, Kannada ella/ellarum and Kodagu ellā all. The survey simple universal quantifier matches the entry. Human plural ellāru(m) is an attested member of the same quantifier paradigm. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+
+Proposed assignment rows: **5**. Affected records: **5**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-008.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Malayalam/batch-008.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Parji · Dravidian surveys, 2026-09-21 · batch 007. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Parji | Proposed etymology | Evidence |
+|---|---|---|---|
+| 31 | **cay** ‘die’ | Proposed reflex of [**DEDR 2426**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=212) | DEDR 2426 explicitly compares Tamil cā, Kannada sāy (past sattu), Gondi hā-/sāy-, Kurux khē’enā (keccas), Malto keye and Brahui kahing die. Only the intransitive verb is proposed here; derived causative kill responses require a distinct relation analysis. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 32 | **pūv** ‘flower’, **pūvā** ‘flower’, **pūvu** ‘flower’ | Proposed reflex of [**DEDR 4345**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=384) | DEDR 4345 records Tamil pū, Malayalam pū/pūvu, Kannada pūvu, Gadaba pū/puvvu, Parji pū, Gondi puŋgar and Kurux pūmp flower. The selected simple flower forms fit these comparanda; Indo-Aryan-looking phul and uncertain responses are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (4 records.) |
+| 33 | **man** ‘sand’ | Proposed reflex of [**DEDR 4666**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=413) | DEDR 4666(b), distinct from earth/soil in (a), explicitly lists Tamil and Malayalam maṇal, Kannada maṇal/maḷal/maral, Kodagu maṇa and Parji/Gadaba man sand. Only this sand branch is selected; the Toda compound er-moḷṇ and earth responses under the sand prompt are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 34 | **veṭu** ‘dry’ | Proposed reflex of [**DEDR 5320**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=481) | DEDR 5320 gives Tamil vaṟaḷ/vaṟal, Malayalam varaḷ-/vaṟu, Kota varl, Kannada battu, Gadaba vaṭṭ-, Gondi vatt-, Parji vett-/veṭṭ- and Brahui bārun dry. These simple stems or inflected dry responses are retained; transitive causatives and multiword responses are not collapsed into the stem. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 35 | **īn** ‘thou’ | Proposed reflex of [**DEDR 3684**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=327) | DEDR 3684 records singular Tamil nī, Kannada nīnu, Kodagu nīnï, Gondi immā/nimma, Kui īnu, Kurux/Malto nīn and Tulu ī. Only singular paradigm members are selected; plural nīm/nīvu and overt plurals are excluded even where the prompt simply says you. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+
+Proposed assignment rows: **8**. Affected records: **8**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-007.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Parji/batch-007.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

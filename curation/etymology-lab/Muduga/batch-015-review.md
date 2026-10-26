@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Muduga · Dravidian surveys, 2026-09-21 · batch 015. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Muduga | Proposed etymology | Evidence |
+|---|---|---|---|
+| 71 | **pɛṇṇɨpiḷḷɛ** ‘girl’ | Compound: [**DEDR 4395**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=388) + [**DEDR 4198**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=372) | DEDR4395 supplies peṇ female and DEDR4198 piḷḷai/piḷḷa child. Survey peṇṇu-piḷḷe/paṇ-puḷḷe girl is an ordered female + child compound; source vowels and gemination are preserved. The University of Madras Tamil Lexicon also explicitly records peṇ-piḷḷai girl/woman/wife (https://agarathi.com/word/பெண்பிள்ளை). (1 records.) |
+| 72 | **tsinnakana** ‘light’ | Compound: [**DEDR 2594**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=225) + [**DEDR 1404**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=130) | Ordered small + weight components: DEDR2594 gives ciṉṉa small and1404 kaṉa heavy/kaṉam weight. The whole survey ciṉṉa-kaṉa response means light through small weight; neither constituent alone is treated as the complete word. DEDR1404 expressly notes influence from Sanskrit ghana on the kaṉa heavy family; that contact qualification is retained, and no unsupported immediate donor is asserted. (1 records.) |
+| 73 | **ɛṇṇɛ** ‘oil’ | Compound: [**DEDR 854**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=83) + [**DEDR 3746**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=334) | Ordered sesame + oil: DEDR854 explicitly gives Tamil eṇ ṇey gingelly oil and related Malayalam eṇṇa/Kannada eṇṇe, while3746 gives ney oil. These lexicalized eṇṇey/eṇṇa/eṇṇe survey responses are analysed with both historical constituents; their generalized survey gloss oil and all dialect transcriptions remain unchanged. (2 records.) |
+| 74 | **kaḍalakai** ‘groundnut’ | Compound: [**DEDR 1120**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=105) + [**DEDR 1459**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=136) | Ordered gram + nut/pod: DEDR1120 gives kaṭalai/kaḍale gram and1459 kāy/kāyi fruit/nut/pod. Survey kaḍala-kāy/kaḍale-kāi/kaḍlai-kai groundnut retains both constituents; the homepage Kannada kaḍalekāyi groundnut attestation supports the lexical extension. (1 records.) |
+| 75 | **uru ḷɛ kaŋgɨ** ‘potato’ | Compound: [**DEDR 664**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=64) + [**DEDR 1578**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=145) | Ordered round + tuber: DEDR664(a) gives uruḷai/uruḷa anything round and uruṇṭa round;1578 gives kiẓaṅku/kiẓaṅṅu esculent tuber, explicitly including potato. These survey uruḷa-/uraṇḍa- plus kiyaṅgu/kisaṅgu/keŋgu/kaŋgu potato compounds retain both lexical constituents, with source dialect consonants and vowels preserved. (2 records.) |
+
+Proposed assignment rows: **14**. Affected records: **7**. Relation kinds: **component**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-015.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Muduga/batch-015.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

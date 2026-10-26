@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Konda · Dravidian surveys, 2026-09-21 · batch 015. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Konda | Proposed etymology | Evidence |
+|---|---|---|---|
+| 71 | **egriṭāḍ** ‘fly’, **egriḍeŋ** ‘fly’ | Proposed reflex of [**DEDR 3730**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=333) | DEDR3730 explicitly gives Konda egṟi- with past -t- to fly as a bird. Survey egritad/egrideng retain that same-language verb with ordinary past/infinitival endings; no donor is inferred solely from the neighbouring Telugu eguru comparison. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (2 records.) |
+| 72 | **sunjiṭān** ‘sleep’, **sujʔa** ‘sleep’ | Proposed reflex of [**DEDR 3291**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=287) | DEDR3291 explicitly gives Konda sunz- with past -it- to sleep and the Sova variant sus-. Survey sunjitan and suja are same-language comparative responses retaining the sleep stem and ordinary ending/cluster simplification; the nidra construction is kept separate. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (2 records.) |
+| 73 | **gūriṭān** ‘lie down’, **gūrʔa** ‘lie down’ | Proposed reflex of [**DEDR 1907**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=174) | DEDR1907(c) explicitly gives Konda gūr- with past -it- lie down/sleep/roll on floor, within the fall/roll family. Survey guritan and gura match this specific subsection with ordinary endings; the rain comparison in the article is questioned and is not the evidence here. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (2 records.) |
+| 74 | **kaṭṭāḍ** ‘bite’, **kaṭʔa** ‘bite’, **kaṭṭeŋ** ‘bite’ | Proposed reflex of [**DEDR 1124**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=106) | DEDR1124 explicitly gives Konda kaṭ- with past -t- bite/sting and separately lists kaṭis-/kaṭpis- cause to bite. Survey kattad/kata/katteng matches the base bite verb with ordinary past or infinitival endings, without assigning the separate causative. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (3 records.) |
+| 75 | **karnika** ‘black’ | Proposed reflex of [**DEDR 1395**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=130) | DEDR1395 explicitly gives Konda kaṟ(i)ni black and kaṟnikan a black man. Survey karnika matches that specific colour stem with its final ending preserved. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+
+Proposed assignment rows: **10**. Affected records: **10**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-015.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Konda/batch-015.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

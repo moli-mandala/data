@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Malayalam · Lindgren 2023 source records · batch 068. Pending user review.
+
+| # | Malayalam | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **toḍe** ‘thigh’ | Proposed reflex of [**DEDR 3302**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=288) | The full DEDR 3302 article gives Malayalam tuṭa id.. The Byari survey form toḍe “thigh” is proposed within this article family. Lindgren assigns the corresponding Tamil reflex to the same source cognate set. (1 record.) |
+| 2 | **mūnu** ‘three’ | Proposed reflex of [**DEDR 5052**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=456) | The full DEDR 5052 article gives Malayalam mūnnu three; mūnnām third; mūnnān a neutral person, middleman; mūvar three persons; mūv-āṇṭu three years; mu-ppatu, nuppatu (cf. Koḍ.) thirty; mu-nnūṟu 300; mu-mmūnnu by threes; three times three; mūr̤akku three ur̤akku.. The Byari survey form mūnu “three” is proposed within this article family. Lindgren assigns the corresponding Tamil reflex to the same source cognate set. (1 record.) |
+| 3 | **eriyi** ‘throw’ | Proposed reflex of [**DEDR 859**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=83) | The full DEDR 859 article gives Malayalam eṟi a throw; eṟiyuka to throw, fling, hit; eṟikka to remove the bark from timber, rough hew for sawing; eṟṟu a blow (chiefly beating clothes); eṟṟuka to throw (as with sling), fillip, propel, spirt, beat hard; ēṟu a throw.. The Byari survey form eriyi “throw” is proposed within this article family. Lindgren assigns the corresponding Tamil reflex to the same source cognate set. (1 record.) |
+| 4 | **keṭṭɨ** ‘tie’ | Proposed reflex of [**DEDR 1147**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=108) | The full DEDR 1147 article gives Malayalam keṭṭuka to tie, build, clasp, yoke, dress, marry, make into a bundle, stop, restrain, build, become entangled, clot; keṭṭikka to cause to tie, make to wear, give in marriage; keṭṭu tie, bundle, band, connexion (as of marriage), restraint, dam, bank,…. The Byari survey form keṭṭɨ “tie” is proposed within this article family. Lindgren assigns the corresponding Tamil reflex to the same source cognate set. (1 record.) |
+| 5 | **nēra** ‘time’ | Proposed reflex of [**DEDR 3774**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=337) | The full DEDR 3774 article gives Malayalam nēram sun, day, light, time, season, hour, turn; nērattu early, seasonably.. The Byari survey form nēra “time” is proposed within this article family. Lindgren assigns the corresponding Tamil reflex to the same source cognate set. (1 record.) |
+
+Proposed assignment rows: **5**. Affected records: **5**. Relation kinds: **reflex**.
+
+Exact persistent IDs, source locators and ordered assignments: [batch-068.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Malayalam/batch-068.json).
+
+Excluded uncertain responses are documented in [research holds](../malayalam-lindgren-20260925/research-holds.json). No new lexical material or donor nodes are proposed.

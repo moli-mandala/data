@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Koraga · Bhat 1971 Koraga records, 2026-09-25 · batch 085. Pending user review; autonomous research continues.
+
+| # | Koraga | Proposed etymology | Evidence |
+|---|---|---|---|
+| 206 | **deŋgi** ‘crab’ | Proposed reflex of [**DEDR 2901**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=251) | DEDR 2901 full article (p. 251) gives Kor. (O.) deŋgi id. Bhat deŋgi “crab” is the same cited Koraga form and sense; its original dialect:Koraga:onti:Onti uncertain dialect tag is retained. The article is used as family classification, not an independent second attestation of Bhat. (1 record.) |
+| 207 | **deŋgɨ** ‘to hide’ | Proposed reflex of [**DEDR 63**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=7) | DEDR 63 full article (p. 7) gives 63 Ta. aṭaṅku (aṭaṅki-) to submit, be subdued, be compressed, cease, disappear, be comprised, settle, subside, sleep; aṭakku (aṭakki-) to control, repress, hide, conceal, bury; aṭakkam submi Bhat deŋgɨ “to hide” matches Lindgren Koraga deŋgɨ “hide” in form and sense; this cross-source match is a candidate lead, with the full DEDR article defining the family. Both source identities and dialect tags are preserved. (1 record.) |
+| 208 | **nakuḷu** ‘earthworm’ | Proposed reflex of [**DEDR 2906**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=252) | DEDR 2906 full article (p. 252) gives Kor. (M.) nakuḷu id. Bhat nakuḷu “earthworm” is the same cited Koraga form and sense; its original dialect:Koraga:mudu:Mudu uncertain dialect tag is retained. The article is used as family classification, not an independent second attestation of Bhat. (1 record.) |
+| 209 | **naṭṭɨ** ‘to beg’ | Proposed reflex of [**DEDR 81**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=9) | DEDR 81 full article (p. 9) gives 81 Te. aḍugu to ask, question, beg, solicit, request, demand. Pa. aḍ- , (S) aḍi- to ask, request. Kui jāpa (jāt-) to request a favour, beg, ask, borrow, pray; n. request, entreaty, act of be Bhat naṭṭɨ “to beg” matches Lindgren Koraga naṭṭɨ “beg” in form and sense; this cross-source match is a candidate lead, with the full DEDR article defining the family. Both source identities and dialect tags are preserved. (1 record.) |
+| 210 | **nālɨ** ‘four’ | Proposed reflex of [**DEDR 3655**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=323) | DEDR 3655 full article (p. 323) gives 3655 Ta. nāl, nālu, nāṉku, nālku four; nāṉkām fourth; nāṟṟi fourfold; nāṟpatu, nāppatu forty; nāṉūṟu 400; nāl-āyiram 4,000; nālvar four persons; nāṟkāli chair; nannāṉku by fours; four times Bhat nālɨ “four” matches Lindgren Koraga nālɨ “four” in form and sense; this cross-source match is a candidate lead, with the full DEDR article defining the family. Both source identities and dialect tags are preserved. (1 record.) |
+
+Proposed assignment rows: **5**. Affected records: **5**. Relation kinds: **reflex**. Multi-part responses retain their source order.
+
+Exact persistent IDs and complete source records: [batch-085.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Koraga/batch-085.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../koraga-bhat-20260925/research-holds.json). No new lexical material or donor nodes are introduced.

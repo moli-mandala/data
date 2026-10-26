@@ -1,0 +1,31 @@
+file: 20260927-grierson-kolami-basim.csv
+defaults:
+  transcription:
+    profile: grierson-kolami-basim-1906
+    input: form
+    preserve_hyphens: true
+  identity:
+    dedupe_by_entry_key: true
+  forms:
+    split_alternates: false
+  gloss:
+    grammar_tags: false
+  importer:
+    commands:
+    - - data/other/forms/raw_data/grierson_kolami_basim_1906/installation/install_source.py
+      - --install
+sources:
+  grierson1906kolamibasim:
+    reference:
+      editor: OpenAI Codex
+      ocr: true
+      etymology_provenance: source
+    forms:
+      split_alternates: false
+    gloss:
+      grammar_tags: false
+  haig1897gondi_kolami:
+    reference:
+      editor: OpenAI Codex
+      ocr: false
+      etymology_provenance: none

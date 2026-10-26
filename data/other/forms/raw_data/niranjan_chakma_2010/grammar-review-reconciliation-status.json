@@ -1,0 +1,93 @@
+{
+  "status": "complete grammar review reconciliation; proposals are not accepted readings",
+  "records": 682,
+  "blocks": 57,
+  "paradigms": [
+    "Present Indefinite",
+    "Present Continuous",
+    "Present Perfect",
+    "Present Imperative",
+    "Past Indefinite",
+    "Past Habitual",
+    "Past Substantial",
+    "সাধারণ অতীত / Future Indefinite (contradictory heading)"
+  ],
+  "field_recommendations": {
+    "candidate_tags": 303,
+    "source_note": 41,
+    "gloss_bn": 3,
+    "form": 1
+  },
+  "changed_keys": 335,
+  "independent_typed_uncertainties": 30,
+  "owner_uncertainty_records": 63,
+  "scope_notes": [
+    {
+      "pdf_page": 7,
+      "key": "niranjan2010:p5:grammar:b1:context:1",
+      "note": "Retain explicit source bibliography/context: কবি-সাহিত্যিক শ্রীবঙ্কিম চন্দ্র দেওয়ান ও শ্রী সুগত চাকমা; এস.সি.ই.আর.টি., ত্রিপুরা ল্যাঙ্গুয়েজ সেল;2003 চাকমা ষান্মাসিক সাহিত্য ম্যাগাজিন সদক; article চাকমা ভাষা শিক্ষার প্রথম পাঠ. Existing vague context note does not fully preserve these source details. The source expressly notes limits of representing Chakma in Bengali and describes this as an outline; retain attributed qualification."
+    },
+    {
+      "pdf_page": 13,
+      "note": "Broad finite/nonfinite labels preserved in unmapped_explicit_categories are appropriate; do not infer a narrower participle subtype from English -ing or merely from অসমাপিকা. Root signs are notation, not lexical letters. Both repeated root খা occurrences and explanatory খেইনে occurrences accounted."
+    },
+    {
+      "pdf_pages": [
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "note": "All eight paradigms read cell by cell, including physical continuations, repeated second-person groups, omitted third-plural perfect group, empty imperative first-singular cell and zero-ending word শূন্য. No regularized or reconstructed missing paradigm cells proposed."
+    },
+    {
+      "pdf_page": 15,
+      "note": "Preserve দ্যা analysis contradiction: seen translation in block1 versus to give in block2. মুই .... remains an incomplete printed ellipsis, not a complete sentence or reconstructed verb. Third-plural দন and second-singular continuous তে/দ্য are source-specific anomalies."
+    },
+    {
+      "pdf_page": 16,
+      "note": "গরিলং/দিলং are displaced into ending column beside first-singular row; preserve as peripheral predicates with Present Perfect scope but no confident person. Parenthetical আমি and plural-row তুই remain source anomalies. No third-plural perfect row appears."
+    },
+    {
+      "pdf_page": 17,
+      "note": "Imperative দেদাক and past লইনেই are literal, not harmonized; peripheral (তারা) is not assigned third-singular merely because it appears beside that row. Third-plural past ending ink blot remains blank/unreadable."
+    },
+    {
+      "pdf_page": 18,
+      "note": "Habitual গদিক, Past Substantial পরিলঙুন and repeated second-person blocks were rechecked as printed. Distinct source heading ইতিবৃত্ত অতীত retained versus earlier ইচ্ছাবৃত্ত অতীত."
+    },
+    {
+      "pdf_page": 19,
+      "note": "রিলাক্কুন has no initial গ in original. Bengali সাধারণ অতীত conflicts with English Future Indefinite: candidate correctly preserves both and withholds an unqualified tense tag for this table. All six number/person groups retained."
+    },
+    {
+      "pdf_page": 20,
+      "note": "All fourteen whole sentences and aligned subcells checked. Whole third question has no separately fabricated token rows. Full negative-position and nonfinite-position prose/skeletons are controls, not invented Chakma lexical entries. Question particle আঃয় remains owner-flagged typography uncertainty."
+    },
+    {
+      "pdf_pages": [
+        7,
+        20
+      ],
+      "note": "Independent review is exhaustive over supplied 682 records and original fourteen pages. Corrections and uncertainty proposals require owner reconciliation; this is not canonical installation or whole-build acceptance."
+    }
+  ],
+  "inputs": {
+    "grammar-review-candidate.jsonl": "42b1e04d15c42b6f70e4c1fc1e34d594cba5e43ab7ee49a18046bf1ab2dea982",
+    "grammar-first-reading.jsonl": "1216c2eca4971ede78ac65758ba68d90d8e7f517713e6ff5d85ca775e1145d69",
+    "grammar-second-reading-corrections.json": "8f2172a9b4abaf29d029881d86cb15bc243f9b60a810f5b246f9332e032d8376",
+    "grammar-second-reading-additions.json": "bf4556324c4697449de803bf51b19d69e0c8fd7b9410e79da6a7ef860b789ee0",
+    "independent-grammar-full-review-20260927.json": "4ca2fdc34890b0cdc98ded6490245b734d35d6d7cf756dc514b4c4f582ccc1fd"
+  },
+  "reconciler_sha256": "dd63aef7880232ed8b8e8d42e8555bdc32ec53a65fac9a0b1618012003ec1ea0",
+  "installed_rows_changed": 0,
+  "pending": [
+    "Root adjudication of each proposed correction and typed uncertainty",
+    "Ordinary হ font controls before accepting h-hasanta readings",
+    "Whole-source integration, fresh output audit, metadata/profile and authorized validation gates"
+  ],
+  "output": {
+    "grammar-reviewed-reading-proposal.jsonl": "dd0024eec4a2fe4c56671d2829e08a482998e355764e611b4fa39158c6baac16"
+  }
+}

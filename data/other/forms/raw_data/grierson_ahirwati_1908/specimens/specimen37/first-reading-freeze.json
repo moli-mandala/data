@@ -1,0 +1,59 @@
+{
+  "status": "complete owner first reading frozen for independent original review; unaccepted",
+  "counts": {
+    "roman_lines": 42,
+    "roman_physical_atoms": 367,
+    "native_lines": 27,
+    "native_physical_atoms": 365,
+    "roman_join_groups": 3,
+    "script_alignment_candidates": 362,
+    "whole_utterances": 27
+  },
+  "files": {
+    "roman-first-reading.tsv": "8aa740179b4afc187aa5e38bf216168a514191ef95597b958ac4908839245c04",
+    "native-first-reading.tsv": "7af48d331dee4c091bd3b2b5c0b27ac93514cac4162b2d29ee54253ac4fa9ca0",
+    "prepare_first_reading.py": "9604387c9afb6c03da850d9db46acccfedc1c1e3e2bad0bb450e0a7fc9a0c36a",
+    "freeze_first_reading.py": "5ac1a5385b6c2274a3010c0ba8d09042f0c80626604d50fe2fd5f8fcae3aa8e0",
+    "roman-physical-lines-first-reading.jsonl": "d76a7526bd4ef7a706c47dd56a6b9dbaf7e290a4f08d54a4f708d1a51a01894c",
+    "roman-atoms-first-reading.jsonl": "b0d4be52ec0231f7979c56699f1b8e719dbd87c382211c84ba5e3af7d98c9cd3",
+    "native-physical-lines-first-reading.jsonl": "731ac393502bf04afa39fecd09816376b7a03993aa4b6b3cb3c0666d946049b8",
+    "native-atoms-first-reading.jsonl": "b76b8a9bea5b11c7f660a68b11ea036c1756e9ed6494426741c6a3936acfd732",
+    "physical-break-joins-proposal.jsonl": "337ff4530f5366e8714643019baeecfb32bda76d2c63b61cc4f0cd2b74f814c8",
+    "script-alignment-proposal.jsonl": "1ed23db49dd8c9361301e26d38aa25b942a69e40cac425c48deb5eb31bfcb079",
+    "script-alignment-review.tsv": "2058ff984463ea164354cf2cea55a7f90dfe320fb3aef3a826d6d6ebdead5c59",
+    "whole-utterances-first-reading.jsonl": "e3f158f9c0c09ccfb0ff9b86c0fa70ecc783c49d8cab5486b890bf197f7a6aa7",
+    "first-reading-draft-status.json": "c9e290cdf46473064dbe78ebac9c44fbdada53680002dd6bf41dcdec004ce616",
+    "first-reading-crop-provenance.json": "835f50bd9eb9d9e990a3f42133f947b85fd38b96140f6ed4c6c43aacdebd1ed6"
+  },
+  "source_manifest_sha256": "d80b66475e667929d9cdff6f51c67170465f5bb8270b1eeee924cd30fd403f8d",
+  "originals": {
+    "233": {
+      "path": "tmp/jambu-next-source/ahirwati-native-specimens-20260927/printed-233-pdf-250-Im250.png",
+      "sha256": "af068e3077bc88ad93d24b95eb10c22d93e08e2c0488388bde42eb6c68d7098f"
+    },
+    "234": {
+      "path": "tmp/jambu-next-source/ahirwati-native-specimens-20260927/printed-234-pdf-251-Im251.png",
+      "sha256": "315eccb03d78543aaf700586fd4c537a07ebaf35e53309cc5d7064fb77125e5a"
+    },
+    "235": {
+      "path": "tmp/jambu-next-source/ahirwati-native-specimens-20260927/printed-235-pdf-252-Im252.png",
+      "sha256": "93a6633b01006e2256563438ef94e3f3c1fe52d92d753d443eaa7ddaf142dfe2"
+    },
+    "236": {
+      "path": "tmp/jambu-next-source/ahirwati-native-specimens-20260927/printed-236-pdf-253-Im253.png",
+      "sha256": "5a712b5bd8bbff13cfc2c559c2f416a33cce908d54d9f2424657b008a6b9dd69"
+    }
+  },
+  "coverage_checks": [
+    "Every Roman/native physical key retained exactly once in script-span accounting.",
+    "Every Roman physical atom occurs in at least one manual whole/speech quotation span.",
+    "42 Roman lines and27 native lines are complete; script differences not normalized.",
+    "Three physical line-break joins retain both raw parts; three local spacing/comparative differences retain joint spans."
+  ],
+  "limits": [
+    "No independent lexical or boundary acceptance yet; no canonical emission or installation.",
+    "Two narrow Roman/English glyph disputes and all keyed native/font holds remain explicit.",
+    "No author-supplied free translation on these pages; concatenated interlinear analysis remains a distinct field.",
+    "Full source additionally requires specimen38, grammar/outside reconciliation, metadata/profile/graph/testing gates."
+  ]
+}

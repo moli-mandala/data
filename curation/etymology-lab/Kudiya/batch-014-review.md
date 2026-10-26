@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Kudiya · Dravidian surveys, 2026-09-21 · batch 014. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Kudiya | Proposed etymology | Evidence |
+|---|---|---|---|
+| 66 | **ede** ‘heart’ | Proposed reflex of [**DEDR 827**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=81) | DEDR827 gives Kannada ede/edde chest/breast/courage and Tulu ede heart/chest, with Telugu eda heart. Kudiya ede, Badaga etə and Betta Kurumba yaddi are proposed comparative heart/chest-family variants, preserving initial glide, dental voicing and source sense. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (2 records.) |
+| 67 | **muḷe** ‘bone’ | Proposed reflex of [**DEDR 5050**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=456) | DEDR5050 explicitly gives Kannada mūḷe/muḷḷE, Kodagu mūḷe and Tulu mūḷe bone. These neighbouring southern survey muḷe/mūle/muḷɛ/moḷe/muḷa responses are comparative lect extensions with vowel/length notation retained. The article’s questioned Kurux muḍḍā comparison is not used. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (2 records.) |
+| 68 | **core** ‘blood’ | Proposed reflex of [**DEDR 2883**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=249) | DEDR2883 gives Tamil cōri/tōrai blood, Malayalam cōri/cōra and Kodagu cōre, within the pour/trickle family. Selected southern survey corā/cora/core/śorɛ/sɔ̄rē match that blood noun, preserving source sibilants and vowels. The more divergent śuvre response remains unassigned. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (2 records.) |
+| 69 | **kodugɨ** ‘mosquito’ | Proposed reflex of [**DEDR 2086**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=189) | DEDR2086 gives Tamil kotuku/kocu/kocuku mosquito, Malayalam kotu/kotuku and Irula kucune. Selected survey kosukɨ/kosuvu/kosuvi, Irula kusune/kusuna and kotuvu/kodugu match the documented velar/dental/sibilant variants. Extended kosukisi-type responses are excluded pending analysis of their additional material. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 70 | **soḷḷe** ‘mosquito’ | Proposed reflex of [**DEDR 2705**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=235) | DEDR2705 explicitly gives Kannada soḷḷe mosquito beside Tamil cuḷḷāṉ a kind of mosquito. Survey soḷḷe/solla/salla/colla retain that southern mosquito stem with vowel, sibilant and lateral notation preserved. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+
+Proposed assignment rows: **8**. Affected records: **8**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-014.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Kudiya/batch-014.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

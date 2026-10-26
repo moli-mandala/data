@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Malayalam · Dravidian surveys, 2026-09-21 · batch 018. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Malayalam | Proposed etymology | Evidence |
+|---|---|---|---|
+| 86 | **vellam** ‘water’ | Proposed reflex of [**DEDR 5503**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=501) | DEDR5503 explicitly gives Malayalam veḷḷam ‘water’. Survey vellam directly matches that noun with plain lateral notation retained. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 87 | **nām** ‘we’ | Proposed reflex of [**DEDR 3647**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=322) | DEDR3647 explicitly gives Malayalam nām ‘we, I and you’. The source annotation3674 transposes digits; the corrected article supports the exact pronoun while the generic survey gloss remains unchanged. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 88 | **aḍukkĕ** ‘Near’ | Proposed reflex of [**DEDR 79**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=9) | DEDR79 gives Tamil aṭu ‘be next, near’ and Malayalam aṭukka ‘come nigh, approach’, with aṭuppam ‘nearness’. The selected aḍukka/aḍuttu-type proximity responses are comparative grammatical forms of this family; lect extensions, vowel differences and source spacing are preserved, without claiming every survey form is printed in DEDR. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 89 | **naḍakkuga** ‘walk’ | Proposed reflex of [**DEDR 3582**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=315) | DEDR3582 gives Tamil naṭa, Malayalam naṭakka, Kannada naḍe/naḍi, Kodagu naḍa- and Tulu naḍapuni to walk. These complete southern survey naḍa/naḍi/naḍakk-/naḍap- forms preserve the stem and source inflection; the Kudiya naḍapu comparison follows intransitive Tulu naḍapuni, not Kannada causative naḍapu. Longer or opaque responses are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 90 | **nilkuga** ‘stand’ | Proposed reflex of [**DEDR 3675**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=325) | DEDR3675 gives Kannada nil/nillu with nind- stem, Kodagu nill- with nipp-/nind-, Malayalam nilkka, Parji nilp-, Gondi imperative nillā and Kurux ijnā (ijjas) stand. Selected survey forms retain these ordinary stem/inflectional variants, including Kurux ījas and Badaga nippə; no extra auxiliary or causative analysis is inferred. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+
+Proposed assignment rows: **5**. Affected records: **5**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-018.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Malayalam/batch-018.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

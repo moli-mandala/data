@@ -1,0 +1,67 @@
+{
+  "status": "root source-stage lexical acceptance; guarded canonical installation pending",
+  "installation_approved": false,
+  "material_errors": 0,
+  "rows": 135,
+  "target_rows": 110,
+  "comparison_rows": 25,
+  "audit_groups": 65,
+  "scoped_witness_records": 164,
+  "exact_commentary_reuses": 6,
+  "audit_only_witnesses": 23,
+  "freeze_sha256": "815bd4883bd4ad3b0dfcf368f33e451dcd8eab76d8e2243912d410e309acca57",
+  "csv_sha256": "242e05bd375e4b6962bf30629046ca498eb247f5d04f3f4c1392968d7e2e1224",
+  "audit_sha256": "a3e5f02e49fa736c5ac853c4b53e09287ef688f01aed8fdcc22bf96cb20e034b",
+  "independent_review": {
+    "path": "independent-review/final-original-output-review-r2-20260927571.json",
+    "sha256": "9f9ce0925f30ca1859db677a959d3fc5baf8c7c1dde7ebc08d95e66cdc5bcc38",
+    "sample": 20,
+    "passed": 20
+  },
+  "root_continuity": {
+    "independently_recomputed": true,
+    "changed_rows": 17,
+    "changed_fields": 35,
+    "field_counts": {
+      "Gloss": 1,
+      "Notes": 9,
+      "Variant_Of_Key": 9,
+      "Tags": 16
+    },
+    "all_literal_forms_and_ordered_keys_unchanged": 135
+  },
+  "root_original_controls": [
+    "pp55–58 whole original preflight",
+    "p55masculine -en explicit class and plural example",
+    "p56shared instrumental gloss, bound spacing/MWE removals, en-attinu source conflict",
+    "p57six suffix POS corrections and all three gender/number slash slots",
+    "p58bibliography-only control"
+  ],
+  "outside_controls": [
+    {
+      "page": 3,
+      "path": "tmp/nair-contents-control-page3.png",
+      "sha256": "f59a5500f06428261963dd957541de0095ade54ddfecb283cfbea493dc49b20e",
+      "verdict": "original contents gives chapter55, no additional lexical quotation"
+    },
+    {
+      "page": 12,
+      "path": "scope/originals/page-12-outside-classification-4x.png",
+      "sha256": "0e006155e61fe2a2605f402ca8e6af90a778f6991a1ff5aa706494d2f68b28ba",
+      "verdict": "two Mullu classification contexts documentary; subsequent Bettu quotation explicitly Betta, no Mullu attribution"
+    }
+  ],
+  "graph": {
+    "variants": 11,
+    "local_key_resolution": true,
+    "no_cycles": true,
+    "derived": 0,
+    "borrowed": 0
+  },
+  "deferred": [
+    "full CLDF/database build",
+    "full suite",
+    "compiled identity/graph/reference survival",
+    "browser QA/publication"
+  ]
+}

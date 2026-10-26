@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Telugu · Dravidian surveys, 2026-09-21 · batch 006. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Telugu | Proposed etymology | Evidence |
+|---|---|---|---|
+| 26 | **okaṭi** ‘One’, **okaṭi** ‘one’ | Proposed reflex of [**DEDR 990**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=94) | DEDR 990 explicitly groups the one numeral: (a) Tamil oru, Kannada obba, Kui ro, Kurux ort and Brahui asiṭ; (b) Telugu okaṭi, Kolami okkod and Gadaba ukuṭ; (c) Kurux oṇṭā; (d) Tamil oṉṟu/oṇṇu, Kannada ondu, Tulu oñji, Gondi undi and Kurux ōnd. The selected simple survey responses fit the corresponding branch; composite and divergent responses remain unassigned. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (2 records.) |
+| 27 | **tommidi** ‘Nine’ | Proposed reflex of [**DEDR 3532**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=310) | DEDR 3532 explicitly lists Telugu tommidi and Gondi tomidi/tumīdī nine alongside Kolami tomdi. This proposal follows those attested languages; the similar Konda and Gadaba forms are excluded pending their inheritance versus Telugu-contact history. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 28 | **pedda** ‘big’ | Proposed reflex of [**DEDR 4411**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=389) | DEDR 4411 connects Tamil periya/peritu, Telugu pedda, Gondi beriya, Konda per/peri, Parji berto and Gadaba berit big. These language-matched survey stems fit that family; the numerous valiya, doḍḍa and Indo-Aryan-looking alternatives are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 29 | **tin** ‘Eat’, **tinu** ‘eat’ | Proposed reflex of [**DEDR 3263**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=284) | DEDR 3263(a) lists Tamil tiṉ, Kannada tin/tinu/tinnu and the widespread cognate eating verb; Kannada past stem tind- and related inflection belong here. Causatives, food derivatives and subsection (b) right-hand expressions are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (2 records.) |
+| 30 | **cinna** ‘small’ | Proposed reflex of [**DEDR 2594**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=225) | DEDR 2594 attests Tamil and Malayalam cinna small, Kodagu ciṇṇi, Telugu cinna, Kolami sinnam/cinni and Parji cin. These selected southern survey forms fit the cinna family; Gondi and Kurux lookalikes require separate contact evidence. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+
+Proposed assignment rows: **7**. Affected records: **7**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-006.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Telugu/batch-006.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

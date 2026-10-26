@@ -1,0 +1,13 @@
+First attempt failure preserved from the tool transcript before the original log was overwritten; no source input changed.
+
+Traceback (most recent call last):
+  File "/Users/aryamanarora/Documents/Code/jambu-all/data/data/other/forms/raw_data/nair_irula_2013/installation/check_canonical.py", line 99, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/Users/aryamanarora/Documents/Code/jambu-all/data/data/other/forms/raw_data/nair_irula_2013/installation/check_canonical.py", line 40, in main
+    for key,value in flags.items():assert meta.file_flag(STEM+'.csv',section,key) is value
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aryamanarora/Documents/Code/jambu-all/data/source_meta.py", line 219, in file_flag
+    return self.file_defaults(file).get(section, {}).get(name, default)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'get'

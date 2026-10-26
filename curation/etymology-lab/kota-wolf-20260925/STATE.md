@@ -1,0 +1,7 @@
+# Wolf Kota residual survey — pending review
+
+The [review index](REVIEW.md) presents 63 pending whole-article DEDR proposals for 63 Kota records in thirteen numbered batches (048–060). The [decisions](proposed-decisions.json) also hold 844 records for missing form-and-sense evidence, ambiguous compounds, contact routes, or source gloss qualifications. No proposed link has been accepted or saved.
+
+The [exact source audit](record-coverage-001.json) reconciles all 2,152 compiled `wolf-kota` forms: 1,245 already graph-linked and 907 previously unexamined residual records now partitioned into 63 proposals and 844 holds. There is no prior pending ownership overlap, no old review-manifest overlap, and no unexamined remainder. [Homepage query coverage](query-coverage-001.json) verifies 907 exact-form searches across 26 bounded chunks, returning 8,070 rows without result caps. The 59 [complete DEDR articles](primary-evidence.json) support the proposed whole-article family identities; similarity scores were used only for discovery.
+
+The first canonical read-only `check-pass` reached the watched-input guard, then reported `inputs changed during validation`; its [log](check-pass-001.log) is retained. A [fresh-input retry](check-pass-002.log) passed with 63 proposed assignment rows, 63 affected records, and zero changes on a second application. The [independent checkpoint verifier](checkpoint-002-validation.json) confirmed exact manifest-row agreement. No `save-pass`, accepted sidecar write, rebuild, source reparse, commit, push, or deployment has occurred.

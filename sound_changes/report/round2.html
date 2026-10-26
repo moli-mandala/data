@@ -1,0 +1,24 @@
+<p>Round 1 only proposed changes conditioned on neighbouring segments, so vowels were under-explored. For round 2 the engine gained syllable-level contexts (<code>C*</code>, first and final syllable, next vowel), built-in <code>Acc</code>/<code>Long</code>/<code>Short</code> classes, and word-level flags (<code>if:verb</code>, <code>if:numeral</code>, <code>if:starred</code>, <code>if:accented</code>). A new <code>probe</code> tool tabulates every OIA vowel's outcome by accent, position, syllable weight and the following vowel. The same 12 groups then audited their round-1 chains and tested the Vedic accent directly, adopting a rule only when it improved held-out training words (leave-one-out) and read as a sound change.</p>
+
+<div class="stats">
+  <div class="stat"><b>0.451 → 0.443</b><span>median test NED, all 151 chains</span></div>
+  <div class="stat"><b>87 / 19</b><span>lects better / worse on test by ≥ 0.0005</span></div>
+  <div class="stat"><b>9.9% → 10.8%</b><span>median exact match on test</span></div>
+  <div class="stat"><b>5,481 → 5,692</b><span>rules in all chains</span></div>
+</div>
+
+<p>The gains are small and the tuning was done on training data only. Six lects got worse on test by more than 0.005, each traced to a handful of words: Wadiyara Koli (+0.020, one word: *matsiya &gt; maccʰī, predicted mās), Welsh Romani (+0.011, three pairs hit by the Romani a &gt; e rule), Kullui (+0.010, final -i loss hits ákṣi seven times), Dogri (a rule removed once its value fell below zero), Poguli (one verb the verb flag misses) and Kvari (one test item). The rules stay because training data support them.</p>
+
+<div class="callout"><p><b>Scoring changes are reported separately.</b> In four southern Dardic lects the tones marked in the sources were stripped before scoring (<code>%gold-drop tone</code>), since no chain can predict them. This alone accounts for most of their round-2 gain: Maiya 0.612 → 0.552 (the new rules add only −0.010), Gowro −0.031, Bhateri −0.014, Bashkarik −0.002. No other group used it.</p></div>
+
+<h3>What the vowel rules found</h3>
+<ul>
+  <li><b>Lengthening follows NIA syllable structure.</b> Compensatory and pre-anusvāra lengthening happen in the first syllable only when the next syllable is final or light (Rajasthani–Gujarati), only in disyllables or the modern stressed syllable (Hindi belt: <i>áŋgāra &gt; ãgār</i> but <i>píṇḍa &gt; pī̃ḍ</i>), or only in the first syllable (Bengali, as already in Assamese and Odia).</li>
+  <li><b>Shortening counts syllables, not stress.</b> Long vowels shorten three or more syllables from the end in Hindi (<i>ānāyayati &gt; anānā</i>) and Bihari, two or more in Braj and several West Pahari lects.</li>
+  <li><b>Final vowels drop only in polysyllables</b> in all 12 southern Dardic lects and Tregami; final -i is lost in parts of West Pahari; final -ī is lost across Nuristani except Waigali.</li>
+  <li><b>New isoglosses:</b> Bhil-core medial u &gt; a; Kati–Kamviri ā &gt; o and a &gt; u; Romani a &gt; e (Welsh, Balkan, Zargari); Assamese ō &gt; u before a high vowel; Odia V m V &gt; nasal vowel; Prasun first-syllable i-umlaut; Dhivehi u &gt; i before i.</li>
+  <li><b>Vocalic r̩:</b> a neighbouring labial favours u everywhere, but no accent rule for r̩ survives outside two tiny ones (Sinhala pretonic r̩ &gt; i, Marathi tonic ŕ̩ &gt; i). Apparent accent effects on r̩, and on the -ā/-o citation vowel, turn out to be starred vs Vedic headwords: Turner's reconstructions are never accented and are mostly late -aka formations.</li>
+</ul>
+
+<h3>Conventions reconciled after round 2</h3>
+<p>The 12 agents had coined 122 group-specific tags, many naming the same process. <code>reconcile.py</code> merged 89 of them into 31 shared tags across 137 files, leaving 33 that really are local (tags are comments, and every file was re-scored to confirm identical train NED). 55 notation rules that sat mid-chain were moved to the end with no score change; 26 stay where they are because later rules depend on them (headword normalisation, Awadhi's macron drop before compensatory lengthening, Nuristani placeholder vowels). Citation-vowel rules keyed to Turner's starred headwords are tagged as morphology in every lect, so they no longer count as sound changes in the chronology or the maps.</p>

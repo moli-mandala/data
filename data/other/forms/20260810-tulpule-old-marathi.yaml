@@ -1,7 +1,10 @@
 file: 20260810-tulpule-old-marathi.csv
 defaults:
   transcription:
-  - profile: house
+  # The house preservation profile restricted to Tulpule's IAST, plus the Marathi aspirated
+  # sonorants (म्ह न्ह ल्ह व्ह ळ्ह → mʰ nʰ lʰ vʰ ḷʰ, as conversion/cdial.txt writes them) and
+  # vocalic ṛ (ऋ) → r̩. Every C+h is checked against the Devanagari Native column.
+  - profile: tulpule-old-marathi
 sources:
   tulpule1999:
     identity:

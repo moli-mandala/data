@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Parji · Dravidian surveys, 2026-09-21 · batch 024. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Parji | Proposed etymology | Evidence |
+|---|---|---|---|
+| 116 | **ullī** ‘onion’ | Proposed reflex of [**DEDR 705**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=69) | DEDR705 explicitly gives the widespread uḷḷi/ulli onion family, including Gondi ulli, Konda uli and southern uḷḷi. Survey ulli/uḷḷi/ul onion are direct lexical comparisons; the article also compares Sanskrit ūlī and Oriya uli, but does not specify an immediate borrowing route for these records. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (2 records.) |
+| 117 | **pāp** ‘child’ | Proposed reflex of [**DEDR 4095**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=364) | DEDR4095 explicitly gives Parji pāp, plural pāpkul, and Gadaba pāp child/young one. Survey pāp/papkul/papu child retains that same-language noun and ordinary plural/final-vowel morphology. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (4 records.) |
+| 118 | **īyā** ‘mother’ | Proposed reflex of [**DEDR 364**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=34) | DEDR364 explicitly gives Parji iya mother. Survey īyā mother is a direct same-language lexical comparison. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (4 records.) |
+| 119 | **arrā** ‘bad’ | Proposed reflex of [**DEDR 107**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=12) | DEDR107 explicitly gives Parji aḍra bad and Gondi aḍra very bad, comparing Halbi aḍra. Survey Parji arrā bad has the reduced/assimilated rhotic cluster; the Halbi comparison is preserved as a contact caveat. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 120 | **kekol** ‘ear’ | Proposed reflex of [**DEDR 1977**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=179) | DEDR 1977(a) lists Tamil cevi, Alu Kurumba kevi, Kannada kivi/kimi/kemi, Gondi kevi/kavi, Parji/Gadaba kekol, Konda gibi, Kurukh xebdā and Brahui xaf ‘ear’. The separate Kui/Kuvi kri- subsection (b) is not folded into this analysis; deafness derivatives are excluded. User clarified on 2026-09-21 that each DEDR node represents the whole dictionary article, not only the displayed reconstruction. The head label remains unchanged; the cited article family/subsection is the proposed parent scope. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+
+Proposed assignment rows: **12**. Affected records: **12**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-024.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Parji/batch-024.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

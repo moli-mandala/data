@@ -1,0 +1,243 @@
+{
+  "reviewer": "root",
+  "status": "repair required; not accepted for source-stage installation",
+  "seed": 20260927421,
+  "csv_sha256": "111546a78056a47d02c9499be293dc1f84ad17ef0bc5d10c1b21d853c45c4531",
+  "audit_sha256": "21d90343c567024f37ac1da7fe47d26f008434bb7fcb1e7901fc28806e83a337",
+  "source_pdf_sha256": "4d2588987dab5d15c62ecc95330ccf7e925a9bce80d08068b91ca3f48c8cc5af",
+  "original_pages_visually_reread": [
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18
+  ],
+  "original_image_sha256": {
+    "12": "1e6382cdebc142434a3a5d1c6586cd25b65f1b20ebf70227a77507db57005899",
+    "13": "5bdc80e7db2de102aba23de85dd1797b7a856577c379cf00ffc31188c8c5bf15",
+    "14": "29315b31d3fa18814950799ffdfb977c87826b1bc38c444ab63c07266aae5bbd",
+    "15": "ec86d3391f766279f666d30cb36591c843d754559613411456050b0f76b6e5c7",
+    "16": "aab2f6a49d7a60101440308d7aa714ecc9708a4be9f10c1ca43396e82b33fdc6",
+    "17": "f3f627f4d5572003711bc606ca47312f2bdb51259ca91449ab889b5fd606cc96",
+    "18": "6c3e161189c2768323e5682e8170ca410b6691035ce9604a4b1caf4e7fe77879"
+  },
+  "sampled_rows": 20,
+  "sample_passes": 9,
+  "sample_material_errors": 11,
+  "sample": [
+    {
+      "entry_key": "nair2013bettakurumba:p12:diagnostic-case-markers:01",
+      "page": 12,
+      "form": "-ma",
+      "gloss": "accusative",
+      "tags": "suffix acc",
+      "verdict": "repair",
+      "original_observation": "Printed -ma is correct, but accusative is a grammatical label in Gloss; suffix acc already structures it."
+    },
+    {
+      "entry_key": "nair2013bettakurumba:p12:diagnostic-case-markers:07",
+      "page": 12,
+      "form": "-puli",
+      "gloss": "locative",
+      "tags": "suffix loc",
+      "verdict": "repair",
+      "original_observation": "Printed –puli has an en dash, candidate -puli has ASCII hyphen; locative is also a grammatical label in Gloss."
+    },
+    {
+      "entry_key": "nair2013bettakurumba:p13:accusative-examples:01",
+      "page": 13,
+      "form": "piliya-ma",
+      "gloss": "tiger (Acc.)",
+      "tags": "acc",
+      "verdict": "repair",
+      "original_observation": "Printed piliya-ma agrees; (Acc.) remains in Gloss and noun from the source label is omitted from Tags."
+    },
+    {
+      "entry_key": "nair2013bettakurumba:p13:gender-nouns:01",
+      "page": 13,
+      "form": "aran",
+      "gloss": "a man of Brahmin caste",
+      "tags": "noun m",
+      "verdict": "pass",
+      "original_observation": "Original literal form, source semantic gloss and scoped tags agree; no material discrepancy found in this row."
+    },
+    {
+      "entry_key": "nair2013bettakurumba:p13:plural-examples:01",
+      "page": 13,
+      "form": "abbiru",
+      "gloss": "mothers",
+      "tags": "noun pl",
+      "verdict": "pass",
+      "original_observation": "Original literal form, source semantic gloss and scoped tags agree; no material discrepancy found in this row."
+    },
+    {
+      "entry_key": "nair2013bettakurumba:p14:purposive-examples:01",
+      "page": 14,
+      "form": "mari-kabeyri",
+      "gloss": "for the sake of Mari",
+      "tags": "purposive",
+      "verdict": "pass",
+      "original_observation": "Original literal form, source semantic gloss and scoped tags agree; no material discrepancy found in this row."
+    },
+    {
+      "entry_key": "nair2013bettakurumba:p14:personal-pronouns:08",
+      "page": 14,
+      "form": "agu",
+      "gloss": "they",
+      "tags": "pron 3pl dist",
+      "verdict": "pass",
+      "original_observation": "Original literal form, source semantic gloss and scoped tags agree; no material discrepancy found in this row."
+    },
+    {
+      "entry_key": "nair2013bettakurumba:p14:personal-pronouns:07",
+      "page": 14,
+      "form": "ad",
+      "gloss": "he/she/it",
+      "tags": "pron 3sg dist",
+      "verdict": "pass",
+      "original_observation": "Original literal form, source semantic gloss and scoped tags agree; no material discrepancy found in this row."
+    },
+    {
+      "entry_key": "nair2013bettakurumba:p15:transitive-examples:08",
+      "page": 15,
+      "form": "ulp",
+      "gloss": "cause to get down",
+      "tags": "verb tr",
+      "verdict": "pass",
+      "original_observation": "Original literal form, source semantic gloss and scoped tags agree; no material discrepancy found in this row."
+    },
+    {
+      "entry_key": "nair2013bettakurumba:p15:past-examples:07",
+      "page": 15,
+      "form": "ettica",
+      "gloss": "(one) who tapped",
+      "tags": "verb pret",
+      "verdict": "repair",
+      "original_observation": "Surface ettica agrees. Printed segmented ett-c-a has a drawn t lowline omitted in Notes/audit first reading."
+    },
+    {
+      "entry_key": "nair2013bettakurumba:p15:nonpast-examples:05",
+      "page": 15,
+      "form": "kengavi(yi)",
+      "gloss": "will kill-you(sg.)",
+      "tags": "verb non-past",
+      "verdict": "repair",
+      "original_observation": "Printed surface kengavi(yi) agrees; explicit you(sg.) lacks 2sg tagging and sg. remains in Gloss."
+    },
+    {
+      "entry_key": "nair2013bettakurumba:p16:relative-participle-markers:01",
+      "page": 16,
+      "form": "-a",
+      "gloss": "relative participle",
+      "tags": "suffix participle",
+      "verdict": "repair",
+      "original_observation": "Literal -a agrees, but relative class is absent from Tags and grammatical label remains in Gloss."
+    },
+    {
+      "entry_key": "nair2013bettakurumba:p16:relative-participle-examples:01",
+      "page": 16,
+      "form": "ba-nd-a",
+      "gloss": "(one) who came",
+      "tags": "verb participle",
+      "verdict": "repair",
+      "original_observation": "Literal ba-nd-a and clause gloss agree; relative class is omitted despite explicitly scoped relative-participle section."
+    },
+    {
+      "entry_key": "nair2013bettakurumba:p16:general-negative-examples:02",
+      "page": 16,
+      "form": "odici-l-u",
+      "gloss": "did not run-you (Pl.)",
+      "tags": "neg verb",
+      "verdict": "repair",
+      "original_observation": "Literal odici-l-u agrees; source you(Pl.) requires 2pl and past-negative scope requires pret; Pl. remains in Gloss."
+    },
+    {
+      "entry_key": "nair2013bettakurumba:p17:negative-potential-examples:01",
+      "page": 17,
+      "form": "belkil-aagalillaa",
+      "gloss": "(one) cannot speak",
+      "tags": "neg verb modal",
+      "verdict": "pass",
+      "original_observation": "Original literal form, source semantic gloss and scoped tags agree; no material discrepancy found in this row."
+    },
+    {
+      "entry_key": "nair2013bettakurumba:p17:prohibitive-example:01",
+      "page": 17,
+      "form": "ooḍl-beeḍa",
+      "gloss": "(one) should not/need not run",
+      "tags": "verb prohibitive neg",
+      "verdict": "pass",
+      "original_observation": "Original literal form, source semantic gloss and scoped tags agree; no material discrepancy found in this row."
+    },
+    {
+      "entry_key": "nair2013bettakurumba:p17:attempted-examples:01",
+      "page": 17,
+      "form": "belkil-nooḍni",
+      "gloss": "I tried to speak",
+      "tags": "verb",
+      "verdict": "pass",
+      "original_observation": "Original literal form, source semantic gloss and scoped tags agree; no material discrepancy found in this row."
+    },
+    {
+      "entry_key": "nair2013bettakurumba:p18:person-suffix-table:08:variant:1",
+      "page": 18,
+      "form": "iyo",
+      "gloss": "2pl nonpast personal suffix",
+      "tags": "suffix 2pl non-past",
+      "verdict": "repair",
+      "original_observation": "Printed iyo and 2pl/nonpast cell alignment agree; constructed grammatical descriptor is put in Gloss."
+    },
+    {
+      "entry_key": "nair2013bettakurumba:p18:person-suffix-table:07",
+      "page": 18,
+      "form": "iyi",
+      "gloss": "2sg nonpast personal suffix",
+      "tags": "suffix 2sg non-past",
+      "verdict": "repair",
+      "original_observation": "Printed iyi and 2sg/nonpast cell alignment agree; constructed grammatical descriptor is put in Gloss."
+    },
+    {
+      "entry_key": "nair2013bettakurumba:p18:person-suffix-table:06:variant:1",
+      "page": 18,
+      "form": "u",
+      "gloss": "2pl past personal suffix",
+      "tags": "suffix 2pl pret",
+      "verdict": "repair",
+      "original_observation": "Printed u and 2pl/past cell alignment agree; constructed grammatical descriptor is put in Gloss."
+    }
+  ],
+  "systematic_classes": [
+    "Grammatical labels in Gloss instead of structured-only Tags",
+    "Literal en dash normalized to ASCII hyphen",
+    "Drawn lowlines absent from candidate Form, segmented Notes and first reading",
+    "Explicit relative class and person/number/tense omitted from scoped examples"
+  ],
+  "targeted_controls": [
+    {
+      "finding": "p12 plain diagnostic -ooda versus p13 ooḍa, and p16 prose -lpad- versus -lpaḍ- examples, correctly retain source spelling differences."
+    },
+    {
+      "finding": "p16 blank purposive speaking target correctly stays audit-only; no invented form."
+    },
+    {
+      "finding": "p17 ba-nd-um retained despite prose -un rule; appropriate unresolved source contradiction."
+    },
+    {
+      "finding": "p18 all twelve person/tense cells and three slash groups align with source; three variant edges have support within their cells."
+    },
+    {
+      "finding": "p17 nooḍ-ku/nooḍuku initial-n lowlines and tardun lowlines; p18 durative/reflexive lowlines require whole geometric census, not PUA-only repair."
+    }
+  ],
+  "required_followup": [
+    "Archive exact reviewed revision",
+    "Whole seven-page dash/space and drawn-lowline census",
+    "Clean grammar from Gloss and complete explicitly scoped tags",
+    "Regression coverage for each systematic class",
+    "Independent reread of changed literal controls",
+    "Fresh disjoint20 of final graph-bearing candidate"
+  ],
+  "limits": "No full CLDF pipeline, compiled graph/identity checks, full suite or browser refresh was run. This report certifies findings, not completeness or acceptance."
+}

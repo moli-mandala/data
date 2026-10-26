@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Gadaba · Dravidian surveys, 2026-09-21 · batch 005. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Gadaba | Proposed etymology | Evidence |
+|---|---|---|---|
+| 21 | **netīr** ‘blood’, **nɛtur** ‘blood’, **nɛtir** ‘blood’, **nɛtīr** ‘blood’, **netur** ‘blood’ | Proposed reflex of [**DEDR 3748**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=335) | DEDR 3748 explicitly gives Kannada nettar, Telugu netturu, Gadaba nettūr/netir, Parji netir, Gondi nettur/nattur and Brahui ditar ‘blood’. This blood stem is kept separate from Kurukh xē̃s and from Indo-Aryan rakta-type responses. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (7 records.) |
+| 22 | **kīccu** ‘fire’ | Proposed reflex of [**DEDR 1514**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=140) | DEDR 1514 gives Tamil/Kannada kiccu, Kota tic, Telugu ciccu, Kolami/Gondi kis, Parji kic, Konda sisu and Kurukh cicc ‘fire’. Toda kic in songs is explicitly borrowed from Badaga and is excluded from inherited assignments. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (2 records.) |
+| 23 | **komu** ‘horns’ | Proposed reflex of [**DEDR 2115**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=190) | DEDR 2115 gives Tamil/Malayalam kompu, Kannada/Tulu kombu, Telugu/Gadaba kommu, Kota kob and Konda komu ‘horn’. Horn senses select this family; ordinary branch responses are not included in this proposal. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (4 records.) |
+| 24 | **cuppu** ‘salt’ | Proposed reflex of [**DEDR 2674**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=231) | DEDR 2674(a) lists Tamil/Malayalam/Kannada uppu, Kolami sup and Parji cup ‘salt’; subsection (b) gives Gondi havar/ovor, Konda sōru and Kuvi hāru. The article supports the family but keeps the two stem series explicit; multiword salt responses are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (2 records.) |
+| 25 | **ukkut** ‘one’, **ukkuṭ** ‘one’ | Proposed reflex of [**DEDR 990**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=94) | DEDR 990 explicitly groups the one numeral: (a) Tamil oru, Kannada obba, Kui ro, Kurux ort and Brahui asiṭ; (b) Telugu okaṭi, Kolami okkod and Gadaba ukuṭ; (c) Kurux oṇṭā; (d) Tamil oṉṟu/oṇṇu, Kannada ondu, Tulu oñji, Gondi undi and Kurux ōnd. The selected simple survey responses fit the corresponding branch; composite and divergent responses remain unassigned. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (7 records.) |
+
+Proposed assignment rows: **22**. Affected records: **22**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-005.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Gadaba/batch-005.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

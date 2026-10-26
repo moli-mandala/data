@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Kurux · Dravidian surveys, 2026-09-21 · batch 030. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Kurux | Proposed etymology | Evidence |
+|---|---|---|---|
+| 141 | **ɛsɛrkʰa** ‘broken’, **ɛsarkʰa** ‘broken’, **ɛsɛrka** ‘broken’, **ɛsra** ‘broken’, **ɛsɛra** ‘broken’ | Proposed reflex of [**DEDR 520**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=51) | DEDR520 explicitly gives Kurux esrnā get broken, beside esnā break transitively. Survey eser-/esr- broken responses retain that same-language intransitive stem with ordinary participial -kha/-ka and source aspiration/vowels preserved. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (6 records.) |
+| 142 | **tɛqɛ** ‘wind’ | Proposed reflex of [**DEDR 3149**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=274) | DEDR3149 explicitly gives Kurux tākā wind/air/breeze beside Malto táke. Survey tēqē wind is a same-language comparison preserving its uvular-stop transcription and fronted vowels rather than silently normalizing the source. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 143 | **kʰɛr** ‘river’, **kʰār** ‘river’ | Proposed reflex of [**DEDR 1478**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=138) | DEDR1478 explicitly gives Kurux xār river/watercourse. These khār/khēr survey river responses compare with that same-language watercourse noun, retaining the source aspirated-stop transcription and vowel variation. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (2 records.) |
+| 144 | **kãŋkʰ** ‘firewood’, **kaŋkʰ** ‘firewood’ | Proposed reflex of [**DEDR 1165**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=110) | DEDR1165 explicitly gives Kurux kaŋk wood/fuel/timber and Malto kanku wood. Survey kaŋkh firewood matches that same-language fuel noun; its final aspiration is retained. This is not one of the Parji/Gadaba forms which the article also assigns alternatively to1370. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (4 records.) |
+| 145 | **bārcʰās** ‘come’, **bārcʰas** ‘come’, **barcas** ‘come’, **barcʰas** ‘come’ | Proposed reflex of [**DEDR 5270**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=475) | DEDR5270 explicitly gives Kurux barnā come. These barc(h)as come responses retain the same-language bar- stem with the survey past/person ending; aspiration is preserved in the original record. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (4 records.) |
+
+Proposed assignment rows: **17**. Affected records: **17**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-030.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Kurux/batch-030.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

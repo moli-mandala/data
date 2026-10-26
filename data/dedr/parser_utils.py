@@ -179,6 +179,66 @@ def split_tagged_forms(form_html, initial_tags=None):
     return result
 
 
+_SENTENCE_ABBREVIATION = re.compile(r"(?:^|[\s(])(?:[Cc]f|esp|e\.g|i\.e|viz|lit|[A-Z])\.$")
+
+
+def _starts_language_run(before, abbreviations):
+    """True when tag-stripped section text ``before`` ends where a new language may begin.
+
+    That is the section start or a sentence-final period at parenthesis depth 0, not the
+    period of ``Cf.``/``esp.``/``e.g.``, of an initial (the authority ``R. Br.``) or of another
+    label (the cross-reference chain ``Cf. 776 Ka. Te. eggu``).
+    """
+    if before.count("(") > before.count(")"):
+        return False
+    stripped = before.rstrip()
+    if not stripped:
+        return True
+    if not stripped.endswith(".") or _SENTENCE_ABBREVIATION.search(stripped):
+        return False
+    previous = re.search(r"(\S+)\.$", stripped)
+    if previous and previous.group(1) in abbreviations:
+        # ``Br.`` of the botanical authority ``R. Br.`` still ends the gloss
+        return bool(re.search(r"(?:^|\s)[A-Z]\.\s*\S+\.$", stripped))
+    return True
+
+
+def mark_plain_language_labels(section, abbreviations):
+    """Italicise language labels that the source left in plain or bold type.
+
+    ``split_language_spans`` relies on italics, but DSAL sometimes sets a label inside the
+    lemma's bold run (``<b>Ka. aḍalu</b>``, ``<b>Kuwi</b> (F.)``) or as plain text before it
+    (``fear. Te. <b>aḍalu</b>``, ``only. Kuwi (Isr.) <b>apka</b>``), filing those forms under
+    the previous language. Only a label that opens a sentence counts: cross-references
+    (``Or with 1221 <b>Ta. kappu</b>``) and comparison prose keep their markup.
+    """
+    labels = sorted((label for label in abbreviations if len(label) > 1), key=len, reverse=True)
+    label_pattern = "|".join(re.escape(label) for label in labels)
+    in_bold = re.compile(rf"<b>\s*(?P<label>(?:{label_pattern})\.?)(?=\s|</b>)")
+    before_bold = re.compile(
+        rf"(?<![\w>/=-])(?P<label>(?:{label_pattern})\.?)"
+        rf"\s*(?:\([^()<>]*\)\s*)?(?=<b>(?!\s*<i>))"
+    )
+
+    def outside(position, opening, closing):
+        return section.rfind(opening, 0, position) <= section.rfind(closing, 0, position)
+
+    edits = []
+    for match in in_bold.finditer(section):
+        if not outside(match.start(), "<i>", "</i>"):
+            continue
+        if _starts_language_run(_tag_text(section[:match.start()]), abbreviations):
+            edits.append((match.start("label"), match.end("label")))
+    for match in before_bold.finditer(section):
+        if not outside(match.start(), "<i>", "</i>") or not outside(match.start(), "<b>", "</b>"):
+            continue
+        if _starts_language_run(_tag_text(section[:match.start()]), abbreviations):
+            edits.append((match.start("label"), match.end("label")))
+    for start, end in sorted(edits, reverse=True):
+        section = f"{section[:start]}<i>{section[start:end]}</i>{section[end:]}"
+    return section
+
+
 def split_language_spans(section, abbreviations):
     """Split one entry section at language labels, including malformed HTML.
 
@@ -190,31 +250,44 @@ def split_language_spans(section, abbreviations):
     """
     labels = sorted(abbreviations, key=len, reverse=True)
     label_pattern = "|".join(re.escape(label) for label in labels)
-    label_at_end = re.compile(rf"(?P<prefix>.*?)(?P<label>{label_pattern})\.?$")
+    # A label may carry a source (``Ma. (DCV)``) and follow a Latin name that closes the
+    # previous gloss (``Tetrameles nudiflora. Ma. (DCV)``); the source's parenthesis may
+    # close only after the italics (``<i>Bel. (LSB</i> 2.2)``). Punctuation slips (``Ko..``,
+    # ``Malt;``, ``Koḍ:``) still end a label.
+    label_at_end = re.compile(
+        rf"(?P<prefix>.*?)(?P<label>{label_pattern})(?:\.\.?|[;:])?"
+        rf"(?:\s*(?P<suffix>\([^()]*\)?))?"
+    )
+    coordinated = re.compile(rf"(?:(?:{label_pattern})\.?\s*,\s*)+(?:{label_pattern})\.?")
     markers = []
 
     for match in re.finditer(r"<i>(?P<content>.*?)</i>", section, re.DOTALL):
         text = _tag_text(match.group("content"))
+        end = match.end()
+        if coordinated.fullmatch(text):
+            # ``PālKu., ĀlKu.`` gives one form list for both lects
+            names = [name.strip().rstrip(".") for name in text.split(",")]
+            markers.append((match.start(), end, names[-1], "", "", names[:-1]))
+            continue
         found = label_at_end.fullmatch(text)
-        source_suffix = ""
         if not found:
-            source_marker = re.fullmatch(
-                rf"(?P<label>{label_pattern})\.?\s*(?P<suffix>\([^)]*\))", text
-            )
-            if not source_marker:
+            continue
+        prefix = found.group("prefix")
+        label = found.group("label")
+        source_suffix = found.group("suffix") or ""
+        if source_suffix and not source_suffix.endswith(")"):
+            closing = re.match(r"(?:</[bi]>|[^()<])*?\)", section[end:end + 100])
+            if not closing:
                 continue
-            prefix = ""
-            label = source_marker.group('label')
-            source_suffix = source_marker.group('suffix')
-        else:
-            prefix = found.group("prefix")
-            label = found.group("label")
+            source_suffix += TAG.sub("", closing.group())
+            end += closing.end()
         # A malformed bold run can put the preceding grammatical note in the
         # same italic element, e.g. ``<i>(tr.). Kui</i>``.  Do not interpret
-        # ordinary italic prose ending in a short language-like token.
-        if prefix and (len(prefix) > 40 or not re.search(r"[.)]\s*$", prefix)):
+        # ordinary italic prose ending in a short language-like token. A doubtful
+        # comparison is marked ``? Koḍ.``.
+        if prefix and (len(prefix) > 40 or not re.search(r"[.)?]\s*$", prefix)):
             continue
-        markers.append((match.start(), match.end(), label, prefix.strip(), source_suffix))
+        markers.append((match.start(), end, label, prefix.strip(), source_suffix, []))
 
     # A few entries mark an uncertain language as plain text (``? Go. (Mu.)``)
     # rather than italics.  The parenthetical followed by a bold lemma makes
@@ -226,19 +299,21 @@ def split_language_spans(section, abbreviations):
     for match in uncertain.finditer(section):
         if any(start <= match.start() < end for start, end, *_ in markers):
             continue
-        markers.append((match.start(), match.end(), match.group("label"), "", ""))
+        markers.append((match.start(), match.end(), match.group("label"), "", "", []))
 
     markers.sort()
     spans = []
     section_label = section[: markers[0][0]] if markers else section
-    for index, (start, end, label, _, source_suffix) in enumerate(markers):
+    for index, (start, end, label, _, source_suffix, co_labels) in enumerate(markers):
         next_start = markers[index + 1][0] if index + 1 < len(markers) else len(section)
         content = (source_suffix + ' ' if source_suffix else '') + section[end:next_start]
         if index + 1 < len(markers):
             next_prefix = markers[index + 1][3]
             if next_prefix:
-                prefix = next_prefix.removesuffix('.').strip()
+                prefix = re.sub(r"[\s.?]+$", "", next_prefix)
                 content += f"<i>{prefix}</i>"
+        for co_label in co_labels:
+            spans.append([co_label, content])
         spans.append([label, content])
     return _tag_text(section_label), spans
 
@@ -291,48 +366,138 @@ _ITALIC_WITH_BOLD = re.compile(r"<i>((?:(?!</i>).)*<b>(?:(?!</i>).)*)</i>", re.D
 _TAGS = re.compile(r"<[^>]+>")
 
 
-def _is_latin_name_run(text, abbrevs):
-    """True for a scientific name (with synonyms/authority), false for a language label."""
+def _is_latin_name_run(text, abbrevs, genera=()):
+    """True for a scientific name (with synonyms/authority), false for a language label.
+
+    ``genera`` lists the genus names shorter than eight letters that the source sets alone
+    (``Cassia``, ``Cuon``); longer single words are accepted without a list.
+    """
     text = text.strip()
     if not re.fullmatch(r"[A-Za-z][A-Za-z .,()&;/=\[\]-]*", text):
         return False
     tokens = [token.strip("().,;[]") for token in text.split()]
-    if any(token in abbrevs or token.rstrip(".") in abbrevs for token in tokens):
-        return False
-    return len(tokens) >= 2 or len(tokens[0]) >= 8
+    for index, token in enumerate(tokens):
+        if token in abbrevs or token.rstrip(".") in abbrevs:
+            # an abbreviated genus before its epithet (``O. punctatus``) is not Oriya ``O.``
+            following = tokens[index + 1] if index + 1 < len(tokens) else ""
+            if not (len(token) == 1 and following[:1].islower()):
+                return False
+    return len(tokens) >= 2 or len(tokens[0]) >= 8 or tokens[0] in genera
 
 
-def repair_botanical_markup(section, abbrevs):
+def _is_citation_xref(html, abbrevs):
+    """A bold ``<xref>`` naming a work (``IIJ``, ``LSI``), never a lemma; ``CDIAL`` is a label."""
+    found = re.fullmatch(r"\s*<b>\s*<xref=\"[^\"]*\">([^<]+)</xref=\"[^\"]*\">\s*</b>\s*", html)
+    return bool(found and re.fullmatch(r"[A-Z][A-Za-z]*", found.group(1))
+                and found.group(1) not in abbrevs)
+
+
+def repair_botanical_markup(section, abbrevs, genera=()):
     """Unbold italic species names so they stay inside the gloss instead of becoming forms.
 
     The source sets Latin names as ``<i><b>Linum usitatissimum</b></i>`` (or folds them into
     the next language's bold run, ``<b><i>Bombax malabaricum. Ma.</i> ilavam</b>``), the same
     bold the parser relies on to find lemmata; language labels use the same nesting
-    (``<i><b>Go.</b></i>``), so the decision is made on the text.
+    (``<i><b>Go.</b></i>``), so the decision is made on the text. Citations of works are set
+    the same way (``<i><b><xref="iij">IIJ</xref="iij"></b></i>``) and are unbolded too.
     """
+    labels = "|".join(sorted(map(re.escape, abbrevs), key=len, reverse=True))
+    # ``Barbus. Ma.``, ``C. fistula. ? Koḍ.`` (a doubtful comparison), ``A. Farnesiana. Te. (VPK)``
+    head_and_label = re.compile(
+        rf"(?P<head>.+?)\.\s+(?P<doubt>\?\s*)?(?P<label>(?:{labels})\.?(?:\s*\([^()]*\))?)"
+    )
+
     def bold_head(match):
         inner = match.group(1)
-        head, sep, label = inner.rpartition(". ")
-        if sep and label.rstrip(".") in abbrevs and _is_latin_name_run(head, abbrevs):
-            return f"<i>{head}</i>. <b><i>{label}</i>"
-        if _is_latin_name_run(inner, abbrevs):
+        found = head_and_label.fullmatch(inner)
+        if found and _is_latin_name_run(found.group("head"), abbrevs, genera):
+            doubt = "? " if found.group("doubt") else ""
+            return f"<i>{found.group('head')}</i>. {doubt}<b><i>{found.group('label')}</i>"
+        if _is_latin_name_run(inner, abbrevs, genera):
             return f"<i>{inner}</i><b>"
         return match.group(0)
 
     def unbold(match):
         inner = match.group(1)
         body, _, tail = inner.partition("(Voc.")
-        if _is_latin_name_run(_TAGS.sub("", body), abbrevs):
+        if _is_latin_name_run(_TAGS.sub("", body), abbrevs, genera):
             body = body.replace("<b>", "").replace("</b>", "")
             if tail:
                 # <i><b>B. malabaricum (Voc.</b></i> 3126) -> name, then the citation marker
                 return f"<i>{body.strip()}</i> (<i>Voc.</i>{tail.replace('</b>', '')}"
             return f"<i>{body}</i>"
+        if _is_citation_xref(inner, abbrevs):
+            return f"<i>{inner.replace('<b>', '').replace('</b>', '').strip()}</i>"
         return match.group(0)
 
     section = _BOLD_ITALIC_HEAD.sub(bold_head, section)
     section = _ITALIC_WITH_BOLD.sub(unbold, section)
     return re.sub(r"<b>\s*</b>", "", section)
+
+
+# parse.py's lemma scan: a bold run (or the span start) up to ``</b>``, then its gloss
+_LEMMA = re.compile(r"(<b>|^)(.*?)(</b>|$)(.*?)((?=<b>)|$)")
+_ITALIC_RUN = re.compile(r"<i>(?P<text>(?:(?!</?i>).)*?)</i>", re.DOTALL)
+
+
+def _is_latin_gloss(text, abbrevs, genera=()):
+    """An italic scientific name glossing forms (``(D. speciosa), Careya arborea``), not a
+    work cited in a source note (``Papers relating to the Aboriginal Tribes …``)."""
+    core = text.strip().lstrip("([").strip()
+    tokens = core.split()
+    if not tokens or not re.fullmatch(r"[A-Z][a-z]*\.?", tokens[0].rstrip(",;)")):
+        return False
+    if len(tokens) > 1 and not re.match(r"[a-z(]", tokens[1]):
+        return False
+    if re.search(r"\b(?:of|the|to|and|in|on|for|by|with|from)\b", core):
+        return False
+    return _is_latin_name_run(core, abbrevs, genera)
+
+
+def detach_inline_latin_glosses(span, abbrevs, genera=()):
+    """End a lemma's bold run at the italic scientific name that glosses it.
+
+    The source can set a gloss inside the bold form run:
+    ``<b>araḷi, alari <i>Nerium odorum; Plumeria acuminata</i></b>`` or
+    ``<b>uka-maram <i>(D. speciosa), Careya arborea</i>; malay-uka <i>Aleurites moluccana</i></b>``.
+    Left there, the name's ``;`` and ``,`` (or the next form after it) make it part of the form
+    list. A name that follows form text and is followed by ``;``/``,`` and another form, or ends
+    the run while containing ``;``/``,`` itself, is moved out of the bold.
+    """
+    def lemma(match):
+        opening, body, closing, rest = match.group(1), match.group(2), match.group(3), match.group(4)
+        out, cursor = [], 0
+        for italic in _ITALIC_RUN.finditer(body):
+            if italic.start() < cursor:
+                continue
+            text = _tag_text(italic.group("text"))
+            after = body[italic.end():]
+            delimiter = re.match(r"\s*[;,]\s*(?=\S)", after)
+            trailing = not _tag_text(after).strip()
+            before = _tag_text(body[:italic.start()])
+            if not (
+                re.search(r"[^\W\d_]", _tag_text(body[cursor:italic.start()]))
+                and before.count("(") <= before.count(")")
+                and _is_latin_gloss(text, abbrevs, genera)
+                and (delimiter or (trailing and re.search(r"[;,]", text)))
+            ):
+                continue
+            out.append(body[cursor:italic.start()].rstrip() + "</b> " + italic.group(0))
+            if delimiter:
+                out.append(delimiter.group(0).rstrip() + " <b>")
+                cursor = italic.end() + delimiter.end()
+            else:
+                out.append(after)
+                cursor = len(body)
+        if not out:
+            return match.group(0)
+        if cursor < len(body):
+            out.append(body[cursor:])
+        else:
+            closing = ""  # the run was closed before its trailing name
+        return opening + "".join(out) + closing + rest
+
+    return re.sub(r"<b>\s*</b>", "", _LEMMA.sub(lemma, span))
 
 
 IDEM = re.compile(r"^\]?\s*id\.?(?=$|[\s,;(])")

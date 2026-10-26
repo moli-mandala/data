@@ -1,0 +1,1170 @@
+{
+  "seed": 2026092707,
+  "method": "One seeded source unit per new target page, plus seeded remainder to20; actual emitted rows. Legacy glossary has prior independent acceptance; held/control units reviewed separately.",
+  "input_sha256": {
+    "whole-proposed.csv": "31888a74ea2b6afcfb45a9ae9bc863052b77f34ff52de3499dce97b2074d2f52",
+    "whole-proposed-audit.jsonl": "5f85d9ecba341eecdd9032a4a5a28f49d6b9cfe89297af70785b058ae59e3124",
+    "whole-proposed-profile.txt": "bbc5cda350b2562e20fbdc9ff0cfbc45e0cc6c3549729f3e2b7165aa0fa3f866",
+    "prepare_whole_source.py": "0cdbf55bc4bf62fb987d615a491b81c0dcb26d77eef516f844f4a8f594686a20",
+    "whole-second-reading-20260927.json": "59907b334e73d5f293987544d7e32c8b0a1d27c8215149719d60acbe692d4577",
+    "legacy-before-whole-recovery.csv": "b548b5e2f8d5298a701a2686c6050ab23e42b2102433fa399b648233637dc4dd",
+    "legacy-before-whole-recovery-audit.jsonl": "fdf79a85cc36b3805e9ba2a19511e7045b2959b54e3a35efe693543e8aa11dca",
+    "whole-grammar-first-reading.jsonl": "99fe792b885f848dab763d8a0e11d621a3e05d9f955822bbc471463209499cbf",
+    "whole-sentences-first-reading.jsonl": "848887e659cf7b768b08271023cc9ba3e92a5273fe06794a536d4cbc0d297c23",
+    "whole-commentary-first-reading.jsonl": "42b2a5a35115ce56f54523f9ed9a6d9c8f20ea9702c732cbacd09d77f506bdbd",
+    "whole-source-context-census.jsonl": "37cff08ce9325d5564ca4c5014d8a1173e324387854d2ba9bcf029a549b1d818",
+    "whole-source-text-inventory.jsonl": "b9f51d228fe9ba67eea7fbfb65affccf2a2ae1380897baf2c9f1c0f58b96de18"
+  },
+  "sample_size": 20,
+  "entries": [
+    {
+      "source_unit_key": "bailey1920rohru:p115:intro-morphology:masc-oblique-sg",
+      "printed_page": 115,
+      "source_audit": {
+        "source_unit_key": "bailey1920rohru:p115:intro-morphology:masc-oblique-sg",
+        "printed_page": 115,
+        "pdf_page": 141,
+        "section": "intro-morphology",
+        "forms": [
+          "-ā"
+        ],
+        "gloss": "",
+        "tags": [
+          "suffix",
+          "noun",
+          "m",
+          "sg",
+          "obl"
+        ],
+        "raw_source_form": "-ā",
+        "note": "Consonant-final masculine nouns inflect in ā.",
+        "status": "ingested",
+        "typed_uncertainty": [],
+        "exported_entry_keys": [
+          "bailey1920rohru:p115:intro-morphology:masc-oblique-sg"
+        ],
+        "exported_tags": [
+          "suffix",
+          "noun",
+          "m",
+          "sg",
+          "obl"
+        ],
+        "exported_notes": "Consonant-final masculine nouns inflect in ā."
+      },
+      "actual_rows": [
+        [
+          "roh",
+          "",
+          "-ā",
+          "",
+          "",
+          "",
+          "Consonant-final masculine nouns inflect in ā.",
+          "bailey1920rohru[p. 115, intro-morphology, masc-oblique-sg]",
+          "",
+          "",
+          "bailey1920rohru:p115:intro-morphology:masc-oblique-sg",
+          "",
+          "",
+          "",
+          "suffix noun m sg obl"
+        ]
+      ],
+      "result": "pass",
+      "review_note": "Original explicitly gives consonant-final masculine inflection -ā in both numbers; sampled singular record preserves suffix and labels."
+    },
+    {
+      "source_unit_key": "bailey1920rohru:p116:intro-morphology:future",
+      "printed_page": 116,
+      "source_audit": {
+        "source_unit_key": "bailey1920rohru:p116:intro-morphology:future",
+        "printed_page": 116,
+        "pdf_page": 142,
+        "section": "intro-morphology",
+        "forms": [
+          "-lo"
+        ],
+        "gloss": "",
+        "tags": [
+          "suffix",
+          "fut"
+        ],
+        "raw_source_form": "-lo",
+        "note": "Added to present indicative with changes in final vowel; source equates present indicative and present conditional.",
+        "status": "ingested",
+        "typed_uncertainty": [],
+        "exported_entry_keys": [
+          "bailey1920rohru:p116:intro-morphology:future"
+        ],
+        "exported_tags": [
+          "suffix",
+          "fut"
+        ],
+        "exported_notes": "Added to present indicative with changes in final vowel; source equates present indicative and present conditional."
+      },
+      "actual_rows": [
+        [
+          "roh",
+          "",
+          "-lo",
+          "",
+          "",
+          "",
+          "Added to present indicative with changes in final vowel; source equates present indicative and present conditional.",
+          "bailey1920rohru[p. 116, intro-morphology, future]",
+          "",
+          "",
+          "bailey1920rohru:p116:intro-morphology:future",
+          "",
+          "",
+          "",
+          "suffix fut"
+        ]
+      ],
+      "result": "pass",
+      "review_note": "Original explicitly adds -lo to present indicative; literal suffix and future label match."
+    },
+    {
+      "source_unit_key": "bailey1920rohru:p118:noun-horse:gen-pl",
+      "printed_page": 118,
+      "source_audit": {
+        "source_unit_key": "bailey1920rohru:p118:noun-horse:gen-pl",
+        "printed_page": 118,
+        "pdf_page": 144,
+        "section": "noun-horse",
+        "forms": [
+          "gōhṛā ro"
+        ],
+        "gloss": "horse",
+        "tags": [
+          "noun",
+          "m",
+          "pl",
+          "gen"
+        ],
+        "raw_source_form": "-ā ro",
+        "note": "Explicit printed stem-plus-ending paradigm expanded; no unprinted cells generated.",
+        "status": "ingested",
+        "typed_uncertainty": [],
+        "exported_entry_keys": [
+          "bailey1920rohru:p118:noun-horse:gen-pl"
+        ],
+        "exported_tags": [
+          "noun",
+          "m",
+          "pl",
+          "gen",
+          "multiword-expression"
+        ],
+        "exported_notes": "Printed abbreviated cell: -ā ro."
+      },
+      "actual_rows": [
+        [
+          "roh",
+          "",
+          "gōhṛā ro",
+          "horse",
+          "",
+          "",
+          "Printed abbreviated cell: -ā ro.",
+          "bailey1920rohru[p. 118, noun-horse, gen-pl]",
+          "",
+          "",
+          "bailey1920rohru:p118:noun-horse:gen-pl",
+          "",
+          "",
+          "",
+          "noun m pl gen multiword-expression"
+        ]
+      ],
+      "result": "pass",
+      "review_note": "Original head gōhṛ-o and plural genitive -ā ro support gōhṛā ro; abbreviated cell retained in source audit."
+    },
+    {
+      "source_unit_key": "bailey1920rohru:p119:noun-hindu:nom",
+      "printed_page": 119,
+      "source_audit": {
+        "source_unit_key": "bailey1920rohru:p119:noun-hindu:nom",
+        "printed_page": 119,
+        "pdf_page": 145,
+        "section": "noun-hindu",
+        "forms": [
+          "īhndū"
+        ],
+        "gloss": "Hindu",
+        "tags": [
+          "noun",
+          "m",
+          "nom"
+        ],
+        "raw_source_form": "īhnd-ū",
+        "note": "Number not independently specified in this prose example.",
+        "status": "ingested",
+        "typed_uncertainty": [],
+        "exported_entry_keys": [
+          "bailey1920rohru:p119:noun-hindu:nom"
+        ],
+        "exported_tags": [
+          "noun",
+          "m",
+          "nom"
+        ],
+        "exported_notes": "The source does not separately specify number for these three Hindu forms."
+      },
+      "actual_rows": [
+        [
+          "roh",
+          "",
+          "īhndū",
+          "Hindu",
+          "",
+          "",
+          "The source does not separately specify number for these three Hindu forms.",
+          "bailey1920rohru[p. 119, noun-hindu, nom]",
+          "",
+          "",
+          "bailey1920rohru:p119:noun-hindu:nom",
+          "",
+          "",
+          "",
+          "noun m nom"
+        ]
+      ],
+      "result": "pass",
+      "review_note": "Original īhnd-ū supports īhndū; no unsupported singular/plural assignment."
+    },
+    {
+      "source_unit_key": "bailey1920rohru:p119:pronoun-2:dat-acc-sg",
+      "printed_page": 119,
+      "source_audit": {
+        "source_unit_key": "bailey1920rohru:p119:pronoun-2:dat-acc-sg",
+        "printed_page": 119,
+        "pdf_page": 145,
+        "section": "pronoun-2",
+        "forms": [
+          "tŏ khĕ"
+        ],
+        "gloss": "thou",
+        "tags": [
+          "pron",
+          "2sg",
+          "dat-acc"
+        ],
+        "raw_source_form": "tŏ khĕ",
+        "note": "",
+        "status": "ingested",
+        "typed_uncertainty": [],
+        "exported_entry_keys": [
+          "bailey1920rohru:p119:pronoun-2:dat-acc-sg"
+        ],
+        "exported_tags": [
+          "pron",
+          "2sg",
+          "dat",
+          "acc",
+          "multiword-expression"
+        ],
+        "exported_notes": ""
+      },
+      "actual_rows": [
+        [
+          "roh",
+          "",
+          "tŏ khĕ",
+          "thou",
+          "",
+          "",
+          "",
+          "bailey1920rohru[p. 119, pronoun-2, dat-acc-sg]",
+          "",
+          "",
+          "bailey1920rohru:p119:pronoun-2:dat-acc-sg",
+          "",
+          "",
+          "",
+          "pron 2sg dat acc multiword-expression"
+        ]
+      ],
+      "result": "pass",
+      "review_note": "Original tŏ khĕ and Dat., Acc. heading match."
+    },
+    {
+      "source_unit_key": "bailey1920rohru:p119:pronoun-prose:rel-dat",
+      "printed_page": 119,
+      "source_audit": {
+        "source_unit_key": "bailey1920rohru:p119:pronoun-prose:rel-dat",
+        "printed_page": 119,
+        "pdf_page": 145,
+        "section": "pronoun-prose",
+        "forms": [
+          "dzau khĕ"
+        ],
+        "gloss": "who",
+        "tags": [
+          "pron",
+          "rel",
+          "dat"
+        ],
+        "raw_source_form": "dzau khĕ",
+        "note": "Coordinated endings expanded only where source explicitly gives the base.",
+        "status": "ingested",
+        "typed_uncertainty": [],
+        "printed_pattern": "dzau-ro khĕ khu",
+        "exported_entry_keys": [
+          "bailey1920rohru:p119:pronoun-prose:rel-dat"
+        ],
+        "exported_tags": [
+          "pron",
+          "relative",
+          "dat",
+          "multiword-expression"
+        ],
+        "exported_notes": ""
+      },
+      "actual_rows": [
+        [
+          "roh",
+          "",
+          "dzau khĕ",
+          "who",
+          "",
+          "",
+          "",
+          "bailey1920rohru[p. 119, pronoun-prose, rel-dat]",
+          "",
+          "",
+          "bailey1920rohru:p119:pronoun-prose:rel-dat",
+          "",
+          "",
+          "",
+          "pron relative dat multiword-expression"
+        ]
+      ],
+      "result": "pass",
+      "review_note": "Original relative dzau-ro khĕ khu supplies shared stem dzau and dative khĕ; pattern preserved."
+    },
+    {
+      "source_unit_key": "bailey1920rohru:p120:cardinals:13",
+      "printed_page": 120,
+      "source_audit": {
+        "source_unit_key": "bailey1920rohru:p120:cardinals:13",
+        "printed_page": 120,
+        "pdf_page": 146,
+        "section": "cardinals",
+        "forms": [
+          "ṭēra"
+        ],
+        "gloss": "13",
+        "tags": [
+          "num",
+          "cardinal"
+        ],
+        "raw_source_form": "ṭēra",
+        "note": "",
+        "status": "ingested",
+        "typed_uncertainty": [],
+        "exported_entry_keys": [
+          "bailey1920rohru:p120:cardinals:13"
+        ],
+        "exported_tags": [
+          "num"
+        ],
+        "exported_notes": ""
+      },
+      "actual_rows": [
+        [
+          "roh",
+          "",
+          "ṭēra",
+          "13",
+          "",
+          "",
+          "",
+          "bailey1920rohru[p. 120, cardinals, 13]",
+          "",
+          "",
+          "bailey1920rohru:p120:cardinals:13",
+          "",
+          "",
+          "",
+          "num"
+        ]
+      ],
+      "result": "pass",
+      "review_note": "Original numeral13 is ṭēra, including underdot and macron."
+    },
+    {
+      "source_unit_key": "bailey1920rohru:p121:adverb-place:4",
+      "printed_page": 121,
+      "source_audit": {
+        "source_unit_key": "bailey1920rohru:p121:adverb-place:4",
+        "printed_page": 121,
+        "pdf_page": 147,
+        "section": "adverb-place",
+        "forms": [
+          "dzīyyā"
+        ],
+        "gloss": "where",
+        "tags": [
+          "adv",
+          "spatial",
+          "rel"
+        ],
+        "raw_source_form": "dzīyyā",
+        "note": "",
+        "status": "ingested",
+        "typed_uncertainty": [],
+        "exported_entry_keys": [
+          "bailey1920rohru:p121:adverb-place:4"
+        ],
+        "exported_tags": [
+          "adv",
+          "spatial",
+          "relative"
+        ],
+        "exported_notes": ""
+      },
+      "actual_rows": [
+        [
+          "roh",
+          "",
+          "dzīyyā",
+          "where",
+          "",
+          "",
+          "",
+          "bailey1920rohru[p. 121, adverb-place, 4]",
+          "",
+          "",
+          "bailey1920rohru:p121:adverb-place:4",
+          "",
+          "",
+          "",
+          "adv spatial relative"
+        ]
+      ],
+      "result": "pass",
+      "review_note": "Original dzīyyā where(rel.) matches form, meaning and relative spatial-adverb labels."
+    },
+    {
+      "source_unit_key": "bailey1920rohru:p122:be-past:row2-pl-f",
+      "printed_page": 122,
+      "source_audit": {
+        "source_unit_key": "bailey1920rohru:p122:be-past:row2-pl-f",
+        "printed_page": 122,
+        "pdf_page": 148,
+        "section": "be-past",
+        "forms": [
+          "thī"
+        ],
+        "gloss": "be",
+        "tags": [
+          "verb",
+          "pret",
+          "pl",
+          "f"
+        ],
+        "raw_source_form": "thī",
+        "note": "Physical table repeats three rows but does not print person labels; position retained without invented person tags.",
+        "status": "ingested",
+        "typed_uncertainty": [],
+        "exported_entry_keys": [
+          "bailey1920rohru:p122:be-past:row2-pl-f"
+        ],
+        "exported_tags": [
+          "verb",
+          "pret",
+          "pl",
+          "f",
+          "copula"
+        ],
+        "exported_notes": ""
+      },
+      "actual_rows": [
+        [
+          "roh",
+          "",
+          "thī",
+          "be",
+          "",
+          "",
+          "",
+          "bailey1920rohru[p. 122, be-past, row2-pl-f]",
+          "",
+          "",
+          "bailey1920rohru:p122:be-past:row2-pl-f",
+          "",
+          "",
+          "",
+          "verb pret pl f copula"
+        ]
+      ],
+      "result": "pass",
+      "review_note": "Second row plural feminine thī matches original past table."
+    },
+    {
+      "source_unit_key": "bailey1920rohru:p122:be-past:row2-pl-m",
+      "printed_page": 122,
+      "source_audit": {
+        "source_unit_key": "bailey1920rohru:p122:be-past:row2-pl-m",
+        "printed_page": 122,
+        "pdf_page": 148,
+        "section": "be-past",
+        "forms": [
+          "thē"
+        ],
+        "gloss": "be",
+        "tags": [
+          "verb",
+          "pret",
+          "pl",
+          "m"
+        ],
+        "raw_source_form": "thē",
+        "note": "Physical table repeats three rows but does not print person labels; position retained without invented person tags.",
+        "status": "ingested",
+        "typed_uncertainty": [],
+        "exported_entry_keys": [
+          "bailey1920rohru:p122:be-past:row2-pl-m"
+        ],
+        "exported_tags": [
+          "verb",
+          "pret",
+          "pl",
+          "m",
+          "copula"
+        ],
+        "exported_notes": ""
+      },
+      "actual_rows": [
+        [
+          "roh",
+          "",
+          "thē",
+          "be",
+          "",
+          "",
+          "",
+          "bailey1920rohru[p. 122, be-past, row2-pl-m]",
+          "",
+          "",
+          "bailey1920rohru:p122:be-past:row2-pl-m",
+          "",
+          "",
+          "",
+          "verb pret pl m copula"
+        ]
+      ],
+      "result": "pass",
+      "review_note": "Second row plural masculine thē matches original past table."
+    },
+    {
+      "source_unit_key": "bailey1920rohru:p122:beat-imperfect:2-f",
+      "printed_page": 122,
+      "source_audit": {
+        "source_unit_key": "bailey1920rohru:p122:beat-imperfect:2-f",
+        "printed_page": 122,
+        "pdf_page": 148,
+        "section": "beat-imperfect",
+        "forms": [
+          "pīṭā thĕ"
+        ],
+        "gloss": "beat",
+        "tags": [
+          "verb",
+          "pret",
+          "f",
+          "sg"
+        ],
+        "raw_source_form": "pīṭā thĕ",
+        "note": "Source imperfect: present indicative plus past substantive. Repeated base supplied only under explicit coordinated feminine label.",
+        "status": "ingested",
+        "typed_uncertainty": [],
+        "printed_abbreviated_auxiliary": "thĕ",
+        "exported_entry_keys": [
+          "bailey1920rohru:p122:beat-imperfect:2-f"
+        ],
+        "exported_tags": [
+          "verb",
+          "pret",
+          "f",
+          "sg",
+          "ipfv",
+          "multiword-expression"
+        ],
+        "exported_notes": "Source imperfect: present indicative with the past substantive verb. The feminine auxiliary is printed after a shared verbal form."
+      },
+      "actual_rows": [
+        [
+          "roh",
+          "",
+          "pīṭā thĕ",
+          "beat",
+          "",
+          "",
+          "Source imperfect: present indicative with the past substantive verb. The feminine auxiliary is printed after a shared verbal form.",
+          "bailey1920rohru[p. 122, beat-imperfect, 2-f]",
+          "",
+          "",
+          "bailey1920rohru:p122:beat-imperfect:2-f",
+          "",
+          "",
+          "",
+          "verb pret f sg ipfv multiword-expression"
+        ]
+      ],
+      "result": "pass",
+      "review_note": "Second singular imperfect row pīṭā thō has separately printed feminine thĕ; output retains shared pīṭā with feminine auxiliary."
+    },
+    {
+      "source_unit_key": "bailey1920rohru:p122:beat:infinitive",
+      "printed_page": 122,
+      "source_audit": {
+        "source_unit_key": "bailey1920rohru:p122:beat:infinitive",
+        "printed_page": 122,
+        "pdf_page": 148,
+        "section": "beat",
+        "forms": [
+          "pīṭṇo"
+        ],
+        "gloss": "beat",
+        "tags": [
+          "verb",
+          "inf"
+        ],
+        "raw_source_form": "pīṭṇo",
+        "note": "",
+        "status": "ingested",
+        "typed_uncertainty": [],
+        "exported_entry_keys": [
+          "bailey1920rohru:p122:beat:infinitive"
+        ],
+        "exported_tags": [
+          "verb",
+          "inf"
+        ],
+        "exported_notes": ""
+      },
+      "actual_rows": [
+        [
+          "roh",
+          "",
+          "pīṭṇo",
+          "beat",
+          "",
+          "",
+          "",
+          "bailey1920rohru[p. 122, beat, infinitive]",
+          "",
+          "",
+          "bailey1920rohru:p122:beat:infinitive",
+          "",
+          "",
+          "",
+          "verb inf"
+        ]
+      ],
+      "result": "pass",
+      "review_note": "Original pīṭṇo beat matches the verb heading."
+    },
+    {
+      "source_unit_key": "bailey1920rohru:p122:prepositions:6",
+      "printed_page": 122,
+      "source_audit": {
+        "source_unit_key": "bailey1920rohru:p122:prepositions:6",
+        "printed_page": 122,
+        "pdf_page": 148,
+        "section": "prepositions",
+        "forms": [
+          "mũ āgu",
+          "mũ khu āgu"
+        ],
+        "gloss": "in front of me",
+        "tags": [
+          "post"
+        ],
+        "raw_source_form": [
+          "mũ āgu",
+          "mũ khu āgu"
+        ],
+        "note": "Source heading Prepositions; expressions and explicitly grouped answers retained without automatic variant relations.",
+        "status": "ingested",
+        "typed_uncertainty": [],
+        "exported_entry_keys": [
+          "bailey1920rohru:p122:prepositions:6",
+          "bailey1920rohru:p122:prepositions:6:answer2"
+        ],
+        "exported_tags": [
+          "postp",
+          "multiword-expression"
+        ],
+        "exported_notes": ""
+      },
+      "actual_rows": [
+        [
+          "roh",
+          "",
+          "mũ āgu",
+          "in front of me",
+          "",
+          "",
+          "",
+          "bailey1920rohru[p. 122, prepositions, 6]",
+          "",
+          "",
+          "bailey1920rohru:p122:prepositions:6",
+          "",
+          "",
+          "",
+          "postp multiword-expression"
+        ],
+        [
+          "roh",
+          "",
+          "mũ khu āgu",
+          "in front of me",
+          "",
+          "",
+          "",
+          "bailey1920rohru[p. 122, prepositions, 6]",
+          "",
+          "",
+          "bailey1920rohru:p122:prepositions:6:answer2",
+          "bailey1920rohru:p122:prepositions:6",
+          "",
+          "",
+          "postp multiword-expression"
+        ]
+      ],
+      "result": "material_error",
+      "review_note": "FAIL: both original phrases print mū̃, a macron plus tilde. Output mũ drops the macron in both alternatives. Narrow p122 crop(30,122,175,154) resolves the two distinct marks.",
+      "corrected_forms": [
+        "mū̃ āgu",
+        "mū̃ khu āgu"
+      ]
+    },
+    {
+      "source_unit_key": "bailey1920rohru:p123:beat-participles:immediate",
+      "printed_page": 123,
+      "source_audit": {
+        "source_unit_key": "bailey1920rohru:p123:beat-participles:immediate",
+        "printed_page": 123,
+        "pdf_page": 149,
+        "section": "beat-participles",
+        "forms": [
+          "āū pīṭde lāgo"
+        ],
+        "gloss": "I am now beating",
+        "tags": [
+          "verb",
+          "pres",
+          "prog",
+          "1sg",
+          "sentential"
+        ],
+        "raw_source_form": "āū pīṭde lāgo",
+        "note": "Printed grammatical account retained; uncontracted passive explicitly supplied, Hindi comparison control recorded separately.",
+        "status": "ingested",
+        "typed_uncertainty": [],
+        "second_reading_correction": {
+          "source_unit_key": "bailey1920rohru:p123:beat-participles:immediate",
+          "old_forms": [
+            "āũ pīṭde lāgo"
+          ],
+          "forms": [
+            "āū pīṭde lāgo"
+          ],
+          "raw_source_form": "āū pīṭde lāgo",
+          "reason": "Source-specific class review: retain single flat bars as macrons, and both visible levels on stacked i rather than deleting the lower bar."
+        },
+        "exported_entry_keys": [
+          "bailey1920rohru:p123:beat-participles:immediate"
+        ],
+        "exported_tags": [
+          "verb",
+          "pres",
+          "progressive",
+          "1sg",
+          "sentential",
+          "multiword-expression"
+        ],
+        "exported_notes": "Source labels this immediate present."
+      },
+      "actual_rows": [
+        [
+          "roh",
+          "",
+          "āū pīṭde lāgo",
+          "I am now beating",
+          "",
+          "",
+          "Source labels this immediate present.",
+          "bailey1920rohru[p. 123, beat-participles, immediate]",
+          "",
+          "",
+          "bailey1920rohru:p123:beat-participles:immediate",
+          "",
+          "",
+          "",
+          "verb pres progressive 1sg sentential multiword-expression"
+        ]
+      ],
+      "result": "pass",
+      "review_note": "Original āū pīṭde lāgo and I am now beating match; no added vowel length on final o."
+    },
+    {
+      "source_unit_key": "bailey1920rohru:p123:beat-participles:pass-m-pl",
+      "printed_page": 123,
+      "source_audit": {
+        "source_unit_key": "bailey1920rohru:p123:beat-participles:pass-m-pl",
+        "printed_page": 123,
+        "pdf_page": 149,
+        "section": "beat-participles",
+        "forms": [
+          "pīṭāndā"
+        ],
+        "gloss": "beat",
+        "tags": [
+          "participle",
+          "pres",
+          "pass",
+          "m",
+          "pl"
+        ],
+        "raw_source_form": "pīṭāndā",
+        "note": "Printed grammatical account retained; uncontracted passive explicitly supplied, Hindi comparison control recorded separately.",
+        "status": "ingested",
+        "typed_uncertainty": [],
+        "exported_entry_keys": [
+          "bailey1920rohru:p123:beat-participles:pass-m-pl"
+        ],
+        "exported_tags": [
+          "participle",
+          "pres",
+          "pass",
+          "m",
+          "pl"
+        ],
+        "exported_notes": "Source passive participle, described as contracted from pīṭo ondo; the source compares Hindi mārā huā."
+      },
+      "actual_rows": [
+        [
+          "roh",
+          "",
+          "pīṭāndā",
+          "beat",
+          "",
+          "",
+          "Source passive participle, described as contracted from pīṭo ondo; the source compares Hindi mārā huā.",
+          "bailey1920rohru[p. 123, beat-participles, pass-m-pl]",
+          "",
+          "",
+          "bailey1920rohru:p123:beat-participles:pass-m-pl",
+          "",
+          "",
+          "",
+          "participle pres pass m pl"
+        ]
+      ],
+      "result": "pass",
+      "review_note": "Original passive plural pīṭāndā matches; passive-participle context retained."
+    },
+    {
+      "source_unit_key": "bailey1920rohru:p123:verb-become:future-1",
+      "printed_page": 123,
+      "source_audit": {
+        "source_unit_key": "bailey1920rohru:p123:verb-become:future-1",
+        "printed_page": 123,
+        "pdf_page": 149,
+        "section": "verb-become",
+        "forms": [
+          "auhūlo"
+        ],
+        "gloss": "be, become",
+        "tags": [
+          "verb",
+          "fut"
+        ],
+        "raw_source_form": "auhūlo",
+        "note": "",
+        "status": "ingested",
+        "typed_uncertainty": [],
+        "exported_entry_keys": [
+          "bailey1920rohru:p123:verb-become:future-1"
+        ],
+        "exported_tags": [
+          "verb",
+          "fut"
+        ],
+        "exported_notes": ""
+      },
+      "actual_rows": [
+        [
+          "roh",
+          "",
+          "auhūlo",
+          "be, become",
+          "",
+          "",
+          "",
+          "bailey1920rohru[p. 123, verb-become, future-1]",
+          "",
+          "",
+          "bailey1920rohru:p123:verb-become:future-1",
+          "",
+          "",
+          "",
+          "verb fut"
+        ]
+      ],
+      "result": "pass",
+      "review_note": "Original first future auhūlo under be,become matches."
+    },
+    {
+      "source_unit_key": "bailey1920rohru:p124:verb-speak:infinitive",
+      "printed_page": 124,
+      "source_audit": {
+        "source_unit_key": "bailey1920rohru:p124:verb-speak:infinitive",
+        "printed_page": 124,
+        "pdf_page": 150,
+        "section": "verb-speak",
+        "forms": [
+          "bōlṇo"
+        ],
+        "gloss": "speak, say",
+        "tags": [
+          "verb",
+          "inf"
+        ],
+        "raw_source_form": "bōlṇo",
+        "note": "",
+        "status": "ingested",
+        "typed_uncertainty": [],
+        "exported_entry_keys": [
+          "bailey1920rohru:p124:verb-speak:infinitive"
+        ],
+        "exported_tags": [
+          "verb",
+          "inf"
+        ],
+        "exported_notes": ""
+      },
+      "actual_rows": [
+        [
+          "roh",
+          "",
+          "bōlṇo",
+          "speak, say",
+          "",
+          "",
+          "",
+          "bailey1920rohru[p. 124, verb-speak, infinitive]",
+          "",
+          "",
+          "bailey1920rohru:p124:verb-speak:infinitive",
+          "",
+          "",
+          "",
+          "verb inf"
+        ]
+      ],
+      "result": "pass",
+      "review_note": "Original bōlṇo speak,say matches."
+    },
+    {
+      "source_unit_key": "bailey1920rohru:p125:sentence:07",
+      "printed_page": 125,
+      "source_audit": {
+        "source_unit_key": "bailey1920rohru:p125:sentence:07",
+        "printed_page": 125,
+        "pdf_page": 151,
+        "section": "Sentences",
+        "item": 7,
+        "forms": [
+          "Gauhrā kha s̱ẖukle gōhṛe rĭ zīn ai"
+        ],
+        "gloss": "House in white horse of saddle is.",
+        "tags": [
+          "sentential",
+          "multiword-expression"
+        ],
+        "source_locator": "p. 125, sentence 7",
+        "raw_form": "Gauhrā kha s̱ẖukle gōhṛe rĭ zīn ai",
+        "review_note": "",
+        "source": "tmp/pdfs/bailey1920/bailey1920.pdf",
+        "status": "ingested",
+        "typed_uncertainty": [],
+        "exported_entry_keys": [
+          "bailey1920rohru:p125:sentence:07"
+        ],
+        "exported_tags": [
+          "sentential",
+          "multiword-expression"
+        ],
+        "exported_notes": ""
+      },
+      "actual_rows": [
+        [
+          "roh",
+          "",
+          "Gauhrā kha s̲h̲ukle gōhṛe rĭ zīn ai",
+          "House in white horse of saddle is.",
+          "",
+          "",
+          "",
+          "bailey1920rohru[p. 125, sentence 7]",
+          "",
+          "",
+          "bailey1920rohru:p125:sentence:07",
+          "",
+          "",
+          "",
+          "sentential multiword-expression"
+        ]
+      ],
+      "result": "pass",
+      "review_note": "Complete sentence, continuous sh underline, gōhṛe, rĭ and zīn match source; complete literal English retained."
+    },
+    {
+      "source_unit_key": "bailey1920rohru:p125:sentence:08",
+      "printed_page": 125,
+      "source_audit": {
+        "source_unit_key": "bailey1920rohru:p125:sentence:08",
+        "printed_page": 125,
+        "pdf_page": 151,
+        "section": "Sentences",
+        "item": 8,
+        "forms": [
+          "Ēhri pĭṭṭhi gahi zīn kŏs̱ẖ"
+        ],
+        "gloss": "His back upon saddle tighten.",
+        "tags": [
+          "sentential",
+          "multiword-expression",
+          "impv"
+        ],
+        "source_locator": "p. 125, sentence 8",
+        "raw_form": "Ēhri piṭṭhi gahi zīn kŏs̱ẖ",
+        "review_note": "",
+        "source": "tmp/pdfs/bailey1920/bailey1920.pdf",
+        "second_reading_correction": {
+          "source_unit_key": "bailey1920rohru:p125:sentence:08",
+          "old_forms": [
+            "Ēhri piṭṭhi gahi zīn kŏs̱ẖ"
+          ],
+          "forms": [
+            "Ēhri pĭṭṭhi gahi zīn kŏs̱ẖ"
+          ],
+          "raw_source_form": "Ēhri pĭṭṭhi gahi zīn kŏs̱ẖ",
+          "reason": "Original enlarged sentence reading: retain exact printed vowel lengths, breve, stacked marks, consonant dots and capitalization independently from related paradigms."
+        },
+        "raw_source_form": "Ēhri pĭṭṭhi gahi zīn kŏs̱ẖ",
+        "status": "ingested",
+        "typed_uncertainty": [],
+        "exported_entry_keys": [
+          "bailey1920rohru:p125:sentence:08"
+        ],
+        "exported_tags": [
+          "sentential",
+          "multiword-expression",
+          "impv"
+        ],
+        "exported_notes": ""
+      },
+      "actual_rows": [
+        [
+          "roh",
+          "",
+          "Ēhri pĭṭṭhi gahi zīn kŏs̲h̲",
+          "His back upon saddle tighten.",
+          "",
+          "",
+          "",
+          "bailey1920rohru[p. 125, sentence 8]",
+          "",
+          "",
+          "bailey1920rohru:p125:sentence:08",
+          "",
+          "",
+          "",
+          "sentential multiword-expression impv"
+        ]
+      ],
+      "result": "pass",
+      "review_note": "Complete sentence including imperative kŏsh with continuous underline matches; complete literal English retained."
+    },
+    {
+      "source_unit_key": "bailey1920rohru:p126:sentence:22",
+      "printed_page": 126,
+      "source_audit": {
+        "source_unit_key": "bailey1920rohru:p126:sentence:22",
+        "printed_page": 126,
+        "pdf_page": 152,
+        "section": "Sentences",
+        "item": 22,
+        "forms": [
+          "Grā re ĕkki aṭṭi-āḷa khu lāo"
+        ],
+        "gloss": "Village of one shop-owner from was-taken.",
+        "tags": [
+          "sentential",
+          "multiword-expression",
+          "pret"
+        ],
+        "source_locator": "p. 126, sentence 22",
+        "raw_form": "Grā re ĕkki aṭṭi-āḷa khu lāo",
+        "source": "tmp/pdfs/bailey1920/bailey1920.pdf",
+        "status": "ingested",
+        "typed_uncertainty": [],
+        "exported_entry_keys": [
+          "bailey1920rohru:p126:sentence:22"
+        ],
+        "exported_tags": [
+          "sentential",
+          "multiword-expression",
+          "pret"
+        ],
+        "exported_notes": "Complete translated response ending in lāo 'was-taken'."
+      },
+      "actual_rows": [
+        [
+          "roh",
+          "",
+          "Grā re ĕkki aṭṭi-āḷa khu lāo",
+          "Village of one shop-owner from was-taken.",
+          "",
+          "",
+          "Complete translated response ending in lāo 'was-taken'.",
+          "bailey1920rohru[p. 126, sentence 22]",
+          "",
+          "",
+          "bailey1920rohru:p126:sentence:22",
+          "",
+          "",
+          "",
+          "sentential multiword-expression pret"
+        ]
+      ],
+      "result": "pass",
+      "review_note": "Whole response Grā re ĕkki aṭṭi-āḷa khu lāo matches printed hyphen and ending; complete literal English retained."
+    }
+  ],
+  "status": "failed_requires_class_repair_and_fresh_sample",
+  "material_errors": 1,
+  "affected_sample_output_rows": 2,
+  "reviewed_sample_output_rows": 21,
+  "extra_review": [
+    "p130 village previously held glyphs were re-inspected in crop(40,368,122,389); uncertain upper marks remain genuinely qualified, not certified phonological readings.",
+    "p115 shared aspiration/tone examples are general Koci/Simla rather than uniquely Rohru; retain shared attribution context.",
+    "p116 Rampuri and Baghi sections and p118 preceding other-lect discussion must remain separate controls.",
+    "p126 Hindi/Panjabi examples explicitly comparative; no Rohru relabelling."
+  ],
+  "required_next": [
+    "Repair both p122 phrases through reviewed correction sidecar.",
+    "Review all new nasal-stack occurrences for missing macrons, retaining occurrence-specific uncertainty.",
+    "Regenerate and freeze candidate after focused checks.",
+    "Draw fresh independent20 excluding these20 units."
+  ],
+  "acceptance": "Not accepted. No canonical installation or database build."
+}

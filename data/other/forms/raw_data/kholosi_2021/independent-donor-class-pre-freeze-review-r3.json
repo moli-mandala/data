@@ -1,0 +1,48 @@
+{
+  "status": "pre-freeze independent donor-class review; owner notified and repairing",
+  "source_claim_count": 830,
+  "claim_queue_sha256": "98629a310ea91369032cd1dfaf78236f6630ff5081b2475aa1aa45806e9bf314",
+  "method": "Read compact inventory of all claims containing donor-language/comparison/component indicators, then residual non-Sanskrit/non-unknown initial claims. Compared suspicious classes to original PDF pages already visually reviewed, especially4,6,10. This does not certify all830 source literals afresh.",
+  "findings": [
+    {
+      "source_unit_key": "kholosi:pdf:p4:c2:u7",
+      "source_claim": "Persian kerm.",
+      "finding": "False negative from shared-head alternatives guard. This printed witness has an unqualified direct Persian attribution; competing author-CSV hypotheses must not change this witness.",
+      "recommendation": "Add loanword to this representation and its explicit variants/paradigms only; retain distinct author-CSV uncertainty."
+    },
+    {
+      "source_unit_key": "kholosi:pdf:p10:c1:u11",
+      "source_claim": "Persian xormā.",
+      "finding": "False negative from shared-head alternatives guard. This printed witness has an unqualified direct Persian attribution; competing author-CSV hypotheses must not change this witness.",
+      "recommendation": "Add loanword to this representation and its explicit variants/paradigms only; retain distinct author-CSV uncertainty."
+    },
+    {
+      "source_unit_key": "kholosi:pdf:p6:c1:u21",
+      "source_claim": "Persian čāš(t) ‘lunch’.",
+      "finding": "Potential false positive whole-compound borrowing: source glosses only the Persian lunch/evening/sleep component of a full named prayer expression. Original p6 visually checked.",
+      "recommendation": "Retain the explicit component donor claim; do not assert entire target expression is borrowed solely from this component attribution."
+    },
+    {
+      "source_unit_key": "kholosi:pdf:p6:c1:u22",
+      "source_claim": "Persian šām ‘evening’.",
+      "finding": "Potential false positive whole-compound borrowing: source glosses only the Persian lunch/evening/sleep component of a full named prayer expression. Original p6 visually checked.",
+      "recommendation": "Retain the explicit component donor claim; do not assert entire target expression is borrowed solely from this component attribution."
+    },
+    {
+      "source_unit_key": "kholosi:pdf:p6:c1:u23",
+      "source_claim": "Persian xoftan ‘to sleep’.",
+      "finding": "Potential false positive whole-compound borrowing: source glosses only the Persian lunch/evening/sleep component of a full named prayer expression. Original p6 visually checked.",
+      "recommendation": "Retain the explicit component donor claim; do not assert entire target expression is borrowed solely from this component attribution."
+    }
+  ],
+  "supported_boundary_controls": [
+    "Persian versus Sanskrit alternatives dur,gāv and author-CSV kerem/xaru: preserve unresolved borrowing rather than definite loanword.",
+    "Unknown with cf. Minabi/Bandari/Keshmi/Hindi comparisons: no donor inferred.",
+    "Explicit Persian+Kholosi component combinations hesāb karen,sorāx genen,sut kadden,ters karen and diminutive močak: component claim is not automatic whole-word borrowing.",
+    "Explicit complete donor chains juti and karčax: preceding Achomi whole-head attribution remains borrowing even if donor itself has earlier compound ancestry.",
+    "Qualified single-donor perhaps/probably/question-mark claims: loanword plus typed uncertainty is appropriate, unlike competing donor-versus-inheritance alternatives.",
+    "Variant and paradigm propagation must follow explicit source links; never transfer through arbitrary component links or shared head spellings."
+  ],
+  "canonical_or_frozen_mutations": false,
+  "next_gate": "Verify revised donor dispositions and actual row tags, then independent fresh20 original audit of frozen r3."
+}

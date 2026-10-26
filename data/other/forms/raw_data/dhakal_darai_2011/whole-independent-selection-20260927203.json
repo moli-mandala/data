@@ -1,0 +1,3475 @@
+{
+  "seed": 20260927203,
+  "count": 20,
+  "freeze": {
+    "status": "Frozen for independent whole-source original-versus-output audit; not installed",
+    "files": {
+      "whole-proposed-author-transcription.csv": "f956ca2f12285e3ad3bd5be6f22ac3fcff403e363d2d297881afad54584ddce2",
+      "whole-proposed-literal-preservation.csv": "96a55aef16bcc34d10678a626da30260569e4bda6375dbaa8199b8dcfd94c1d4",
+      "whole-proposed-audit.jsonl": "d7c93fe193afeaf60bbdcfd0e52b60f79b080515b69b4befae13f9ea5a6c88ef",
+      "whole-profile-proposed.txt": "0cd4b3396c56fc8183f763b278b606d99ac2e37a858613f119ff494fd3d04b31",
+      "whole-source-graph-decisions.json": "5e24cc4d2d07beed1aed106ca54b4abf84040e88bf311bdb389d6ac1ce736b3f",
+      "whole-source-tag-reconciliation-20260927.json": "53077c303520f4466043635abab0972958d92c565776d26d0644b691df0bf7e3"
+    },
+    "counts": {
+      "expanded_source_units": 11304,
+      "emitted_entries": 8348,
+      "author_transcription": 8336,
+      "literal_preservation": 12,
+      "exact_reuse": 2456,
+      "controls": 500,
+      "existing_keys_preserved": 485
+    },
+    "validation": "48 focused tests passed, including actual generic parser, NFC/NFD and profile policy, exact reuse and all source-unit accounting",
+    "canonical_changed": false,
+    "deferred": [
+      "Independent original-versus-output audit",
+      "Final metadata/importer installation and canonical validation",
+      "User-authorized full build and browser QA"
+    ],
+    "targeted_review": [
+      "Three literal unresolved slash groups on p376 (root reviewed).",
+      "Two separately translated statements on p343, example16b, with6+3children.",
+      "Literal and idiomatic proverb senses onp190/327/328.",
+      "Eighteen Chapter3 physical attestations reuse historical keys while preserving complete translations and source citations.",
+      "Source-explicit imminent p156, hypothetical p164, frustrative p170, counterfactual distinct."
+    ]
+  },
+  "exclusion_files": [
+    "chapters12-independent-selection.json",
+    "preview/acceptance-sample.json",
+    "whole-independent-selection-20260927201.json",
+    "whole-independent-selection-20260927202.json"
+  ],
+  "excluded_keys": [
+    "dhakal2011:appendix5:In.UN.095:word:p419:l36:w1",
+    "dhakal2011:appendix5:JaH.SLD.006:word:p423:l24:w1",
+    "dhakal2011:appendix5:JaH.SLD.034:word:p428:l148:w1",
+    "dhakal2011:appendix5:PtP.CND.006:word:p435:l109:w1",
+    "dhakal2011:appendix5:PtP.CND.032:word:p441:l42:w1",
+    "dhakal2011:appendix5:PtP.CND.055:word:p445:l153:w1",
+    "dhakal2011:p108:ch4:surface:l28:word:l35:w1",
+    "dhakal2011:p111:ch4:surface:l5",
+    "dhakal2011:p116:ch4:surface:l4:word:l8:w1",
+    "dhakal2011:p117:ch4:table:l27:a1",
+    "dhakal2011:p123:ch4:surface:l23",
+    "dhakal2011:p128:ch5:list:l61",
+    "dhakal2011:p138:ch5:list:l31",
+    "dhakal2011:p142:ch5:surface:l41",
+    "dhakal2011:p142:ch5:surface:l4:word:l9:w1",
+    "dhakal2011:p149:ch6:pair:l11",
+    "dhakal2011:p169:ch6:surface:l59",
+    "dhakal2011:p172:ch6:surface:l28:word:l29:w1",
+    "dhakal2011:p179:ch6:surface:l22:word:l26:w1",
+    "dhakal2011:p17:ch12:l21:a1",
+    "dhakal2011:p17:ch12:l21:a2",
+    "dhakal2011:p185:ch6:surface:l20",
+    "dhakal2011:p18:ch12:l10:a1",
+    "dhakal2011:p18:ch12:l29:a1",
+    "dhakal2011:p18:ch12:l6:a1",
+    "dhakal2011:p211:ch7:surface:l4",
+    "dhakal2011:p21:ch12:l49:a1",
+    "dhakal2011:p22:ch12:l25:a1",
+    "dhakal2011:p22:ch12:l29:a1",
+    "dhakal2011:p22:ch12:l35:a1",
+    "dhakal2011:p22:ch12:l49:a1",
+    "dhakal2011:p230:ch8:surface:l35:word:l40:w1",
+    "dhakal2011:p24:ch12:l6:a1",
+    "dhakal2011:p24:ch12:l8:a1",
+    "dhakal2011:p255:ch10:surface:l54",
+    "dhakal2011:p25:ch12:l15:a1",
+    "dhakal2011:p25:ch12:l5:a2",
+    "dhakal2011:p301:ch11:surface:l13",
+    "dhakal2011:p309:ch11:surface:l50:word:l52:w2",
+    "dhakal2011:p30:ch12:l129:a1",
+    "dhakal2011:p319:ch11:surface:l31:word:l34:w1",
+    "dhakal2011:p31:ch12:l11:a1",
+    "dhakal2011:p31:ch12:l3:a1",
+    "dhakal2011:p367:appendix3a:l47",
+    "dhakal2011:p368:appendix3b:l241:col5",
+    "dhakal2011:p368:appendix3b:l61:col6",
+    "dhakal2011:p377:appendix3e:root:l126",
+    "dhakal2011:p3:ch12:l21:a2",
+    "dhakal2011:p3:ch12:l27:a1",
+    "dhakal2011:p3:ch12:l27:a2",
+    "dhakal2011:p3:ch12:l29:a1",
+    "dhakal2011:p44:g292",
+    "dhakal2011:p45:g412",
+    "dhakal2011:p46:g644",
+    "dhakal2011:p46:g698",
+    "dhakal2011:p46:g879",
+    "dhakal2011:p47:g838",
+    "dhakal2011:p48:g992",
+    "dhakal2011:p53:g339",
+    "dhakal2011:p53:g396",
+    "dhakal2011:p53:g453",
+    "dhakal2011:p54:g382",
+    "dhakal2011:p59:g201",
+    "dhakal2011:p60:g170",
+    "dhakal2011:p60:g436",
+    "dhakal2011:p60:g716",
+    "dhakal2011:p61:g602",
+    "dhakal2011:p62:g738",
+    "dhakal2011:p62:g773",
+    "dhakal2011:p66:g53",
+    "dhakal2011:p67:g374",
+    "dhakal2011:p67:g423",
+    "dhakal2011:p68:g772",
+    "dhakal2011:p69:g321",
+    "dhakal2011:p81:ch4:prose:l43:a1",
+    "dhakal2011:p86:ch4:surface:l5",
+    "dhakal2011:p86:ch4:surface:l5:word:l8:w1",
+    "dhakal2011:p89:ch4:surface:l31:word:l38:w1",
+    "dhakal2011:p95:ch4:surface:l49",
+    "dhakal2011:p99:ch4:surface:l31",
+    "dhakal2011:p99:ch4:surface:l77:word:l80:w1"
+  ],
+  "sampling": "Uniform random emitted entries, sorted by source key before seeded sampling; targeted edge reviews are additional, not substituted.",
+  "records": [
+    {
+      "source_unit_key": "dhakal2011:appendix5:DR.CND.023:word:p392:l78:w1",
+      "evidence_file": "appendix5-reviewed-records.jsonl",
+      "evidence_line": 521,
+      "printed_page": 392,
+      "pdf_page": 414,
+      "kind": "prior-proposal-attestation",
+      "form": "dzəbəre",
+      "source_gloss": "Jamare",
+      "proposed_grammar": {
+        "gloss": "Jamare",
+        "tags": [],
+        "labels": [],
+        "unmapped_source_labels": [],
+        "raw_gloss": "Jamare",
+        "analysis_status": "Proposed source-label mapping; contextual review pending"
+      },
+      "source_claims": {
+        "text_id": "DR.CND.023",
+        "source_surface_form": "dzəbəre"
+      },
+      "source_status": "Owner original-page review passed; independent review and metadata integration pending",
+      "source_disposition": null,
+      "disposition": "candidate attestation; review pending",
+      "reuse_source_unit_key": null,
+      "parent_expression_key": "dhakal2011:appendix5:DR.CND.023",
+      "open_review": [],
+      "metadata_status": "Not frozen; source claims, roles, variants and profiles require full reconciliation",
+      "source_attribution": {
+        "scope": "author Chitwan default, printed page 8",
+        "lect": "Chitwan",
+        "corpus_context": {
+          "prefix": "DR.CND",
+          "title": "Death Ritual",
+          "speaker": "Cham Narayan Darai",
+          "recording_locality": "Kathar VDC, Chitwan district"
+        },
+        "recording_location_is_not_a_dialect_assignment": true
+      },
+      "export": {
+        "entry_key": "dhakal2011:appendix5:DR.CND.023:word:p392:l78:w1",
+        "route": "author-transcription",
+        "disposition": "emit",
+        "reason": "distinct source analysis or retained historical key",
+        "occurrence_citation": "dhakal2011darai[p. 392]",
+        "occurrence_row": [
+          "Darai",
+          "",
+          "dzəbəre",
+          "Jamare",
+          "",
+          "dzəbəre",
+          "Source narrative: Death Ritual; speaker: Cham Narayan Darai. Source recording locality: Kathar VDC, Chitwan district. Source text identifier: DR.CND.023.",
+          "dhakal2011darai[p. 392]",
+          "",
+          "",
+          "dhakal2011:appendix5:DR.CND.023:word:p392:l78:w1",
+          "",
+          "",
+          "",
+          "dialect:Darai:darai_chitwan:Chitwan"
+        ],
+        "source_unit_keys": [
+          "dhakal2011:appendix5:DR.CND.023:word:p392:l78:w1"
+        ]
+      },
+      "sample_exported_row": [
+        "Darai",
+        "",
+        "dzəbəre",
+        "Jamare",
+        "",
+        "dzəbəre",
+        "Source narrative: Death Ritual; speaker: Cham Narayan Darai. Source recording locality: Kathar VDC, Chitwan district. Source text identifier: DR.CND.023.",
+        "dhakal2011darai[p. 392]",
+        "",
+        "",
+        "dhakal2011:appendix5:DR.CND.023:word:p392:l78:w1",
+        "",
+        "",
+        "",
+        "dialect:Darai:darai_chitwan:Chitwan"
+      ]
+    },
+    {
+      "source_unit_key": "dhakal2011:appendix5:In.UN.087:word:p417:l154:w1",
+      "evidence_file": "appendix5-reviewed-records.jsonl",
+      "evidence_line": 1495,
+      "printed_page": 417,
+      "pdf_page": 439,
+      "kind": "prior-proposal-attestation",
+      "form": "etka-i",
+      "source_gloss": "this much -EMPH",
+      "proposed_grammar": {
+        "gloss": "this much",
+        "tags": [
+          "emph"
+        ],
+        "labels": [
+          "EMPH"
+        ],
+        "unmapped_source_labels": [],
+        "raw_gloss": "this much -EMPH",
+        "analysis_status": "Proposed source-label mapping; contextual review pending"
+      },
+      "source_claims": {
+        "text_id": "In.UN.087",
+        "source_surface_form": "etkai"
+      },
+      "source_status": "Owner original-page review passed; independent review and metadata integration pending",
+      "source_disposition": null,
+      "disposition": "candidate attestation; review pending",
+      "reuse_source_unit_key": null,
+      "parent_expression_key": "dhakal2011:appendix5:In.UN.087",
+      "open_review": [],
+      "metadata_status": "Not frozen; source claims, roles, variants and profiles require full reconciliation",
+      "source_attribution": {
+        "scope": "author Chitwan default, printed page 8",
+        "lect": "Chitwan",
+        "corpus_context": {
+          "prefix": "In.UN",
+          "title": "Interview",
+          "speaker": "Mangal Ram Darai and a woman",
+          "recorded_by": "Nepal Darai Development Society",
+          "recording_locality": null
+        },
+        "recording_location_is_not_a_dialect_assignment": true
+      },
+      "export": {
+        "entry_key": "dhakal2011:appendix5:In.UN.087:word:p417:l154:w1",
+        "route": "author-transcription",
+        "disposition": "emit",
+        "reason": "distinct source analysis or retained historical key",
+        "occurrence_citation": "dhakal2011darai[p. 417]",
+        "occurrence_row": [
+          "Darai",
+          "",
+          "etka-i",
+          "this much",
+          "",
+          "etka-i",
+          "Printed interlinear analysis: this much -EMPH. Corresponding printed surface form: etkai. Source narrative: Interview; speaker: Mangal Ram Darai and a woman. Source text identifier: In.UN.087.",
+          "dhakal2011darai[p. 417]",
+          "",
+          "",
+          "dhakal2011:appendix5:In.UN.087:word:p417:l154:w1",
+          "",
+          "",
+          "",
+          "dialect:Darai:darai_chitwan:Chitwan emph"
+        ],
+        "source_unit_keys": [
+          "dhakal2011:appendix5:In.UN.087:word:p417:l154:w1"
+        ]
+      },
+      "sample_exported_row": [
+        "Darai",
+        "",
+        "etka-i",
+        "this much",
+        "",
+        "etka-i",
+        "Printed interlinear analysis: this much -EMPH. Corresponding printed surface form: etkai. Source narrative: Interview; speaker: Mangal Ram Darai and a woman. Source text identifier: In.UN.087.",
+        "dhakal2011darai[p. 417]",
+        "",
+        "",
+        "dhakal2011:appendix5:In.UN.087:word:p417:l154:w1",
+        "",
+        "",
+        "",
+        "dialect:Darai:darai_chitwan:Chitwan emph"
+      ]
+    },
+    {
+      "source_unit_key": "dhakal2011:p220:ch7:surface:l33:word:l37:w1",
+      "evidence_file": "chapter7-reviewed-records.jsonl",
+      "evidence_line": 435,
+      "printed_page": 220,
+      "pdf_page": 242,
+      "kind": "prior-proposal-attestation",
+      "form": "məsinə-se",
+      "source_gloss": "thin-ADVZ",
+      "proposed_grammar": {
+        "gloss": "thin",
+        "tags": [
+          "adverbializer"
+        ],
+        "labels": [
+          "ADVZ"
+        ],
+        "unmapped_source_labels": [],
+        "raw_gloss": "thin-ADVZ",
+        "analysis_status": "Proposed source-label mapping; contextual review pending"
+      },
+      "source_claims": {},
+      "source_status": "Owner original-page comparison complete; independent review and metadata integration pending",
+      "source_disposition": null,
+      "disposition": "candidate attestation; review pending",
+      "reuse_source_unit_key": null,
+      "parent_expression_key": "dhakal2011:p220:ch7:surface:l33",
+      "open_review": [],
+      "metadata_status": "Not frozen; source claims, roles, variants and profiles require full reconciliation",
+      "source_attribution": {
+        "scope": "author Chitwan default, printed page 8",
+        "lect": "Chitwan"
+      },
+      "export": {
+        "entry_key": "dhakal2011:p220:ch7:surface:l33:word:l37:w1",
+        "route": "author-transcription",
+        "disposition": "emit",
+        "reason": "distinct source analysis or retained historical key",
+        "occurrence_citation": "dhakal2011darai[p. 220]",
+        "occurrence_row": [
+          "Darai",
+          "",
+          "məsinə-se",
+          "thin",
+          "",
+          "məsinə-se",
+          "Printed interlinear analysis: thin-ADVZ.",
+          "dhakal2011darai[p. 220]",
+          "",
+          "",
+          "dhakal2011:p220:ch7:surface:l33:word:l37:w1",
+          "",
+          "",
+          "",
+          "dialect:Darai:darai_chitwan:Chitwan adverbializer"
+        ],
+        "source_unit_keys": [
+          "dhakal2011:p220:ch7:surface:l33:word:l37:w1"
+        ]
+      },
+      "sample_exported_row": [
+        "Darai",
+        "",
+        "məsinə-se",
+        "thin",
+        "",
+        "məsinə-se",
+        "Printed interlinear analysis: thin-ADVZ.",
+        "dhakal2011darai[p. 220]",
+        "",
+        "",
+        "dhakal2011:p220:ch7:surface:l33:word:l37:w1",
+        "",
+        "",
+        "",
+        "dialect:Darai:darai_chitwan:Chitwan adverbializer"
+      ]
+    },
+    {
+      "source_unit_key": "dhakal2011:appendix5:In.UN.093:word:p418:l135:w1",
+      "evidence_file": "appendix5-reviewed-records.jsonl",
+      "evidence_line": 1532,
+      "printed_page": 418,
+      "pdf_page": 440,
+      "kind": "prior-proposal-attestation",
+      "form": "hat",
+      "source_gloss": "measurement unit (hand)",
+      "proposed_grammar": {
+        "gloss": "measurement unit (hand)",
+        "tags": [],
+        "labels": [],
+        "unmapped_source_labels": [],
+        "raw_gloss": "measurement unit (hand)",
+        "analysis_status": "Proposed source-label mapping; contextual review pending"
+      },
+      "source_claims": {
+        "text_id": "In.UN.093",
+        "source_surface_form": "hat"
+      },
+      "source_status": "Owner original-page review passed; independent review and metadata integration pending",
+      "source_disposition": null,
+      "disposition": "candidate attestation; review pending",
+      "reuse_source_unit_key": null,
+      "parent_expression_key": "dhakal2011:appendix5:In.UN.093",
+      "open_review": [],
+      "metadata_status": "Not frozen; source claims, roles, variants and profiles require full reconciliation",
+      "source_attribution": {
+        "scope": "author Chitwan default, printed page 8",
+        "lect": "Chitwan",
+        "corpus_context": {
+          "prefix": "In.UN",
+          "title": "Interview",
+          "speaker": "Mangal Ram Darai and a woman",
+          "recorded_by": "Nepal Darai Development Society",
+          "recording_locality": null
+        },
+        "recording_location_is_not_a_dialect_assignment": true
+      },
+      "export": {
+        "entry_key": "dhakal2011:appendix5:In.UN.093:word:p418:l135:w1",
+        "route": "author-transcription",
+        "disposition": "emit",
+        "reason": "distinct source analysis or retained historical key",
+        "occurrence_citation": "dhakal2011darai[p. 418]",
+        "occurrence_row": [
+          "Darai",
+          "",
+          "hat",
+          "measurement unit (hand)",
+          "",
+          "hat",
+          "Source narrative: Interview; speaker: Mangal Ram Darai and a woman. Source text identifier: In.UN.093.",
+          "dhakal2011darai[p. 418]",
+          "",
+          "",
+          "dhakal2011:appendix5:In.UN.093:word:p418:l135:w1",
+          "",
+          "",
+          "",
+          "dialect:Darai:darai_chitwan:Chitwan"
+        ],
+        "source_unit_keys": [
+          "dhakal2011:appendix5:In.UN.093:word:p418:l135:w1",
+          "dhakal2011:appendix5:In.UN.093:word:p418:l152:w1"
+        ]
+      },
+      "sample_exported_row": [
+        "Darai",
+        "",
+        "hat",
+        "measurement unit (hand)",
+        "",
+        "hat",
+        "Source narrative: Interview; speaker: Mangal Ram Darai and a woman. Source text identifier: In.UN.093.",
+        "dhakal2011darai[p. 418]",
+        "",
+        "",
+        "dhakal2011:appendix5:In.UN.093:word:p418:l135:w1",
+        "",
+        "",
+        "",
+        "dialect:Darai:darai_chitwan:Chitwan"
+      ]
+    },
+    {
+      "source_unit_key": "dhakal2011:appendix5:DR.CND.015:word:p391:l34:w1",
+      "evidence_file": "appendix5-reviewed-records.jsonl",
+      "evidence_line": 477,
+      "printed_page": 391,
+      "pdf_page": 413,
+      "kind": "prior-proposal-attestation",
+      "form": "pər-i-t",
+      "source_gloss": "AUX -3SG -NPST",
+      "proposed_grammar": {
+        "gloss": "",
+        "tags": [
+          "auxiliary",
+          "3sg",
+          "non-past",
+          "verb"
+        ],
+        "labels": [
+          "AUX",
+          "3SG",
+          "NPST"
+        ],
+        "unmapped_source_labels": [],
+        "raw_gloss": "AUX -3SG -NPST",
+        "analysis_status": "Proposed source-label mapping; contextual review pending"
+      },
+      "source_claims": {
+        "text_id": "DR.CND.015",
+        "source_surface_form": "pərit."
+      },
+      "source_status": "Owner original-page review passed; independent review and metadata integration pending",
+      "source_disposition": null,
+      "disposition": "candidate attestation; review pending",
+      "reuse_source_unit_key": null,
+      "parent_expression_key": "dhakal2011:appendix5:DR.CND.015",
+      "open_review": [],
+      "metadata_status": "Not frozen; source claims, roles, variants and profiles require full reconciliation",
+      "source_attribution": {
+        "scope": "author Chitwan default, printed page 8",
+        "lect": "Chitwan",
+        "corpus_context": {
+          "prefix": "DR.CND",
+          "title": "Death Ritual",
+          "speaker": "Cham Narayan Darai",
+          "recording_locality": "Kathar VDC, Chitwan district"
+        },
+        "recording_location_is_not_a_dialect_assignment": true
+      },
+      "export": {
+        "entry_key": "dhakal2011:appendix5:DR.CND.015:word:p391:l34:w1",
+        "route": "author-transcription",
+        "disposition": "emit",
+        "reason": "distinct source analysis or retained historical key",
+        "occurrence_citation": "dhakal2011darai[p. 391]",
+        "occurrence_row": [
+          "Darai",
+          "",
+          "pər-i-t",
+          "",
+          "",
+          "pər-i-t",
+          "Printed interlinear analysis: AUX -3SG -NPST. Corresponding printed surface form: pərit.. Source narrative: Death Ritual; speaker: Cham Narayan Darai. Source recording locality: Kathar VDC, Chitwan district. Source text identifier: DR.CND.015.",
+          "dhakal2011darai[p. 391]",
+          "",
+          "",
+          "dhakal2011:appendix5:DR.CND.015:word:p391:l34:w1",
+          "",
+          "",
+          "",
+          "dialect:Darai:darai_chitwan:Chitwan auxiliary 3sg non-past verb"
+        ],
+        "source_unit_keys": [
+          "dhakal2011:appendix5:DR.CND.015:word:p391:l34:w1"
+        ]
+      },
+      "sample_exported_row": [
+        "Darai",
+        "",
+        "pər-i-t",
+        "",
+        "",
+        "pər-i-t",
+        "Printed interlinear analysis: AUX -3SG -NPST. Corresponding printed surface form: pərit.. Source narrative: Death Ritual; speaker: Cham Narayan Darai. Source recording locality: Kathar VDC, Chitwan district. Source text identifier: DR.CND.015.",
+        "dhakal2011darai[p. 391]",
+        "",
+        "",
+        "dhakal2011:appendix5:DR.CND.015:word:p391:l34:w1",
+        "",
+        "",
+        "",
+        "dialect:Darai:darai_chitwan:Chitwan auxiliary 3sg non-past verb"
+      ]
+    },
+    {
+      "source_unit_key": "dhakal2011:p320:ch11:surface:l12:word:l16:w1",
+      "evidence_file": "chapter11-reviewed-records.jsonl",
+      "evidence_line": 809,
+      "printed_page": 320,
+      "pdf_page": 342,
+      "kind": "prior-proposal-attestation",
+      "form": "ḍara-tə-s",
+      "source_gloss": "frighten-NPST-2SG",
+      "proposed_grammar": {
+        "gloss": "frighten",
+        "tags": [
+          "non-past",
+          "2sg",
+          "verb"
+        ],
+        "labels": [
+          "NPST",
+          "2SG"
+        ],
+        "unmapped_source_labels": [],
+        "raw_gloss": "frighten-NPST-2SG",
+        "analysis_status": "Proposed source-label mapping; contextual review pending"
+      },
+      "source_claims": {},
+      "source_status": "Owner original-page comparison complete; independent review and metadata integration pending",
+      "source_disposition": null,
+      "disposition": "candidate attestation; review pending",
+      "reuse_source_unit_key": null,
+      "parent_expression_key": "dhakal2011:p320:ch11:surface:l12",
+      "open_review": [],
+      "metadata_status": "Not frozen; source claims, roles, variants and profiles require full reconciliation",
+      "source_attribution": {
+        "scope": "author Chitwan default, printed page 8",
+        "lect": "Chitwan"
+      },
+      "export": {
+        "entry_key": "dhakal2011:p320:ch11:surface:l12:word:l16:w1",
+        "route": "author-transcription",
+        "disposition": "emit",
+        "reason": "distinct source analysis or retained historical key",
+        "occurrence_citation": "dhakal2011darai[p. 320]",
+        "occurrence_row": [
+          "Darai",
+          "",
+          "ḍara-tə-s",
+          "frighten",
+          "",
+          "ḍara-tə-s",
+          "Printed interlinear analysis: frighten-NPST-2SG.",
+          "dhakal2011darai[p. 320]",
+          "",
+          "",
+          "dhakal2011:p320:ch11:surface:l12:word:l16:w1",
+          "",
+          "",
+          "",
+          "dialect:Darai:darai_chitwan:Chitwan non-past 2sg verb"
+        ],
+        "source_unit_keys": [
+          "dhakal2011:p320:ch11:surface:l12:word:l16:w1"
+        ]
+      },
+      "sample_exported_row": [
+        "Darai",
+        "",
+        "ḍara-tə-s",
+        "frighten",
+        "",
+        "ḍara-tə-s",
+        "Printed interlinear analysis: frighten-NPST-2SG.",
+        "dhakal2011darai[p. 320]",
+        "",
+        "",
+        "dhakal2011:p320:ch11:surface:l12:word:l16:w1",
+        "",
+        "",
+        "",
+        "dialect:Darai:darai_chitwan:Chitwan non-past 2sg verb"
+      ]
+    },
+    {
+      "source_unit_key": "dhakal2011:p192:ch6:prose:l45:a1",
+      "evidence_file": "chapter6-reviewed-records.jsonl",
+      "evidence_line": 557,
+      "printed_page": 192,
+      "pdf_page": 214,
+      "kind": "prose-attestation",
+      "form": "səkike",
+      "source_gloss": "completive",
+      "proposed_grammar": {
+        "gloss": "completive",
+        "tags": [
+          "verb"
+        ],
+        "labels": []
+      },
+      "source_claims": {
+        "note": "Explicit vector function, distinct from the lexical gloss in the table."
+      },
+      "source_status": "Owner original-page comparison complete; independent review and metadata integration pending",
+      "source_disposition": "target-candidate",
+      "disposition": "candidate attestation; review pending",
+      "reuse_source_unit_key": null,
+      "parent_expression_key": null,
+      "open_review": [],
+      "metadata_status": "Not frozen; source claims, roles, variants and profiles require full reconciliation",
+      "editorial_source_note": "Explicit vector function, distinct from the lexical gloss in the table.",
+      "source_attribution": {
+        "scope": "author Chitwan default, printed page 8",
+        "lect": "Chitwan"
+      },
+      "export": {
+        "entry_key": "dhakal2011:p192:ch6:prose:l45:a1",
+        "route": "author-transcription",
+        "disposition": "emit",
+        "reason": "distinct source analysis or retained historical key",
+        "occurrence_citation": "dhakal2011darai[p. 192]",
+        "occurrence_row": [
+          "Darai",
+          "",
+          "səkike",
+          "completive",
+          "",
+          "səkike",
+          "Explicit vector function, distinct from the lexical gloss in the table.",
+          "dhakal2011darai[p. 192]",
+          "",
+          "",
+          "dhakal2011:p192:ch6:prose:l45:a1",
+          "",
+          "",
+          "",
+          "dialect:Darai:darai_chitwan:Chitwan verb"
+        ],
+        "source_unit_keys": [
+          "dhakal2011:p192:ch6:prose:l45:a1"
+        ]
+      },
+      "sample_exported_row": [
+        "Darai",
+        "",
+        "səkike",
+        "completive",
+        "",
+        "səkike",
+        "Explicit vector function, distinct from the lexical gloss in the table.",
+        "dhakal2011darai[p. 192]",
+        "",
+        "",
+        "dhakal2011:p192:ch6:prose:l45:a1",
+        "",
+        "",
+        "",
+        "dialect:Darai:darai_chitwan:Chitwan verb"
+      ]
+    },
+    {
+      "source_unit_key": "dhakal2011:p216:ch7:prose:l6:a2",
+      "evidence_file": "chapter7-reviewed-records.jsonl",
+      "evidence_line": 177,
+      "printed_page": 216,
+      "pdf_page": 238,
+      "kind": "prose-attestation",
+      "form": "behaudo",
+      "source_gloss": "daybreak",
+      "proposed_grammar": {
+        "gloss": "daybreak",
+        "tags": [
+          "adv"
+        ],
+        "labels": []
+      },
+      "source_claims": {
+        "note": "Source explicitly identifies this as simple."
+      },
+      "source_status": "Owner original-page comparison complete; independent review and metadata integration pending",
+      "source_disposition": null,
+      "disposition": "candidate attestation; review pending",
+      "reuse_source_unit_key": null,
+      "parent_expression_key": null,
+      "open_review": [],
+      "metadata_status": "Not frozen; source claims, roles, variants and profiles require full reconciliation",
+      "editorial_source_note": "Source explicitly identifies this as simple.",
+      "source_attribution": {
+        "scope": "author Chitwan default, printed page 8",
+        "lect": "Chitwan"
+      },
+      "export": {
+        "entry_key": "dhakal2011:p216:ch7:prose:l6:a2",
+        "route": "author-transcription",
+        "disposition": "emit",
+        "reason": "distinct source analysis or retained historical key",
+        "occurrence_citation": "dhakal2011darai[p. 216]",
+        "occurrence_row": [
+          "Darai",
+          "",
+          "behaudo",
+          "daybreak",
+          "",
+          "behaudo",
+          "Source explicitly identifies this as simple.",
+          "dhakal2011darai[p. 216]",
+          "",
+          "",
+          "dhakal2011:p216:ch7:prose:l6:a2",
+          "",
+          "",
+          "",
+          "dialect:Darai:darai_chitwan:Chitwan adv"
+        ],
+        "source_unit_keys": [
+          "dhakal2011:p216:ch7:prose:l6:a2"
+        ]
+      },
+      "sample_exported_row": [
+        "Darai",
+        "",
+        "behaudo",
+        "daybreak",
+        "",
+        "behaudo",
+        "Source explicitly identifies this as simple.",
+        "dhakal2011darai[p. 216]",
+        "",
+        "",
+        "dhakal2011:p216:ch7:prose:l6:a2",
+        "",
+        "",
+        "",
+        "dialect:Darai:darai_chitwan:Chitwan adv"
+      ]
+    },
+    {
+      "source_unit_key": "dhakal2011:p178:ch6:table:l39",
+      "evidence_file": "chapter6-reviewed-records.jsonl",
+      "evidence_line": 359,
+      "printed_page": 178,
+      "pdf_page": 200,
+      "kind": "paradigm-cell",
+      "form": "-kan",
+      "source_gloss": "",
+      "proposed_grammar": {
+        "gloss": "",
+        "tags": [
+          "3sg",
+          "honorific"
+        ],
+        "labels": [
+          "3SG",
+          "H"
+        ],
+        "unmapped_source_labels": [],
+        "raw_gloss": "3SG.H",
+        "analysis_status": "Proposed source-label mapping; contextual review pending",
+        "raw_source_grammar": "3sg honorific Set2"
+      },
+      "source_claims": {
+        "source_grammar": "3sg honorific Set2",
+        "table_context": [
+          {
+            "line": 3,
+            "bbox": [
+              127.5,
+              68.18328094482422,
+              183.2919158935547,
+              80.68109130859375
+            ],
+            "spans": [
+              {
+                "raw": "6.3.2 Cases ",
+                "decoded": "6.3.2 Cases ",
+                "font": "TimesNewRomanPS-BoldMT",
+                "size": 11.289799690246582,
+                "bbox": [
+                  127.5,
+                  68.18328094482422,
+                  183.2919158935547,
+                  80.68109130859375
+                ],
+                "origin": [
+                  127.5,
+                  78.24249267578125
+                ],
+                "private_glyph_positions": []
+              }
+            ]
+          },
+          {
+            "line": 4,
+            "bbox": [
+              161.3400421142578,
+              87.62316131591797,
+              509.9983825683594,
+              100.1209716796875
+            ],
+            "spans": [
+              {
+                "raw": "Darai verb inflection is sensitive to how the arguments are case indexed. We ",
+                "decoded": "Darai verb inflection is sensitive to how the arguments are case indexed. We ",
+                "font": "TimesNewRomanPSMT",
+                "size": 11.289799690246582,
+                "bbox": [
+                  161.3400421142578,
+                  87.62316131591797,
+                  509.9983825683594,
+                  100.1209716796875
+                ],
+                "origin": [
+                  161.3400421142578,
+                  97.682373046875
+                ],
+                "private_glyph_positions": []
+              }
+            ]
+          },
+          {
+            "line": 5,
+            "bbox": [
+              127.5,
+              107.06304168701172,
+              508.4629211425781,
+              119.56085205078125
+            ],
+            "spans": [
+              {
+                "raw": "see two distinct means of marking two kinds of case roles. Nominative and ergative ",
+                "decoded": "see two distinct means of marking two kinds of case roles. Nominative and ergative ",
+                "font": "TimesNewRomanPSMT",
+                "size": 11.289799690246582,
+                "bbox": [
+                  127.5,
+                  107.06304168701172,
+                  508.4629211425781,
+                  119.56085205078125
+                ],
+                "origin": [
+                  127.5,
+                  117.12225341796875
+                ],
+                "private_glyph_positions": []
+              }
+            ]
+          },
+          {
+            "line": 6,
+            "bbox": [
+              127.5,
+              126.56279754638672,
+              498.3100280761719,
+              139.06060791015625
+            ],
+            "spans": [
+              {
+                "raw": "case markings index one kind of agreement whereas genitive and dative cases are ",
+                "decoded": "case markings index one kind of agreement whereas genitive and dative cases are ",
+                "font": "TimesNewRomanPSMT",
+                "size": 11.289799690246582,
+                "bbox": [
+                  127.5,
+                  126.56279754638672,
+                  498.3100280761719,
+                  139.06060791015625
+                ],
+                "origin": [
+                  127.5,
+                  136.62200927734375
+                ],
+                "private_glyph_positions": []
+              }
+            ]
+          },
+          {
+            "line": 7,
+            "bbox": [
+              127.5,
+              146.002685546875,
+              514.9140014648438,
+              158.50048828125
+            ],
+            "spans": [
+              {
+                "raw": "marked differently. Table (6.3) presents nominative and ergative marking with (Set 1 ",
+                "decoded": "marked differently. Table (6.3) presents nominative and ergative marking with (Set 1 ",
+                "font": "TimesNewRomanPSMT",
+                "size": 11.289799690246582,
+                "bbox": [
+                  127.5,
+                  146.002685546875,
+                  514.9140014648438,
+                  158.50048828125
+                ],
+                "origin": [
+                  127.5,
+                  156.0618896484375
+                ],
+                "private_glyph_positions": []
+              }
+            ]
+          },
+          {
+            "line": 8,
+            "bbox": [
+              127.5,
+              165.50244140625,
+              487.3904724121094,
+              178.000244140625
+            ],
+            "spans": [
+              {
+                "raw": "suffixes) and genitive and dative markings are coded with the second set (Set 2 ",
+                "decoded": "suffixes) and genitive and dative markings are coded with the second set (Set 2 ",
+                "font": "TimesNewRomanPSMT",
+                "size": 11.289799690246582,
+                "bbox": [
+                  127.5,
+                  165.50244140625,
+                  487.3904724121094,
+                  178.000244140625
+                ],
+                "origin": [
+                  127.5,
+                  175.5616455078125
+                ],
+                "private_glyph_positions": []
+              }
+            ]
+          },
+          {
+            "line": 9,
+            "bbox": [
+              127.5,
+              183.15066528320312,
+              187.68283081054688,
+              197.5
+            ],
+            "spans": [
+              {
+                "raw": "suffixes).",
+                "decoded": "suffixes).",
+                "font": "TimesNewRomanPSMT",
+                "size": 11.289799690246582,
+                "bbox": [
+                  127.5,
+                  185.002197265625,
+                  169.80514526367188,
+                  197.5
+                ],
+                "origin": [
+                  127.5,
+                  195.0614013671875
+                ],
+                "private_glyph_positions": []
+              },
+              {
+                "raw": " 21",
+                "decoded": " 21",
+                "font": "TimesNewRomanPSMT",
+                "size": 7.507699966430664,
+                "bbox": [
+                  169.8000030517578,
+                  183.15066528320312,
+                  179.19361877441406,
+                  191.46168518066406
+                ],
+                "origin": [
+                  169.8000030517578,
+                  189.84002685546875
+                ],
+                "private_glyph_positions": []
+              },
+              {
+                "raw": "   ",
+                "decoded": "   ",
+                "font": "TimesNewRomanPSMT",
+                "size": 11.289799690246582,
+                "bbox": [
+                  179.22000122070312,
+                  185.00079345703125,
+                  187.68283081054688,
+                  197.49859619140625
+                ],
+                "origin": [
+                  179.22000122070312,
+                  195.05999755859375
+                ],
+                "private_glyph_positions": []
+              }
+            ]
+          },
+          {
+            "line": 10,
+            "bbox": [
+              161.34034729003906,
+              204.440673828125,
+              164.1627960205078,
+              216.9384765625
+            ],
+            "spans": [
+              {
+                "raw": " ",
+                "decoded": " ",
+                "font": "TimesNewRomanPSMT",
+                "size": 11.289799690246582,
+                "bbox": [
+                  161.34034729003906,
+                  204.440673828125,
+                  164.1627960205078,
+                  216.9384765625
+                ],
+                "origin": [
+                  161.34034729003906,
+                  214.4998779296875
+                ],
+                "private_glyph_positions": []
+              }
+            ]
+          },
+          {
+            "line": 11,
+            "bbox": [
+              209.70021057128906,
+              222.09066772460938,
+              438.9024353027344,
+              236.4385986328125
+            ],
+            "spans": [
+              {
+                "raw": "TABLE 6.3 Agreement and pronominal suffixes",
+                "decoded": "TABLE 6.3 Agreement and pronominal suffixes",
+                "font": "TimesNewRomanPSMT",
+                "size": 11.289799690246582,
+                "bbox": [
+                  209.70021057128906,
+                  223.9404296875,
+                  428.5044250488281,
+                  236.438232421875
+                ],
+                "origin": [
+                  209.70021057128906,
+                  233.9996337890625
+                ],
+                "private_glyph_positions": []
+              },
+              {
+                "raw": "22",
+                "decoded": "22",
+                "font": "TimesNewRomanPSMT",
+                "size": 7.507699966430664,
+                "bbox": [
+                  428.5199890136719,
+                  222.09066772460938,
+                  436.053955078125,
+                  230.4016876220703
+                ],
+                "origin": [
+                  428.5199890136719,
+                  228.780029296875
+                ],
+                "private_glyph_positions": []
+              },
+              {
+                "raw": " ",
+                "decoded": " ",
+                "font": "TimesNewRomanPSMT",
+                "size": 11.289799690246582,
+                "bbox": [
+                  436.0799865722656,
+                  223.9407958984375,
+                  438.9024353027344,
+                  236.4385986328125
+                ],
+                "origin": [
+                  436.0799865722656,
+                  234.0
+                ],
+                "private_glyph_positions": []
+              }
+            ]
+          },
+          {
+            "line": 12,
+            "bbox": [
+              161.3404541015625,
+              243.38067626953125,
+              164.16290283203125,
+              255.87847900390625
+            ],
+            "spans": [
+              {
+                "raw": " ",
+                "decoded": " ",
+                "font": "TimesNewRomanPSMT",
+                "size": 11.289799690246582,
+                "bbox": [
+                  161.3404541015625,
+                  243.38067626953125,
+                  164.16290283203125,
+                  255.87847900390625
+                ],
+                "origin": [
+                  161.3404541015625,
+                  253.43988037109375
+                ],
+                "private_glyph_positions": []
+              }
+            ]
+          },
+          {
+            "line": 13,
+            "bbox": [
+              174.900634765625,
+              263.3602294921875,
+              177.72308349609375,
+              275.8580322265625
+            ],
+            "spans": [
+              {
+                "raw": " ",
+                "decoded": " ",
+                "font": "TimesNewRomanPS-BoldMT",
+                "size": 11.289799690246582,
+                "bbox": [
+                  174.900634765625,
+                  263.3602294921875,
+                  177.72308349609375,
+                  275.8580322265625
+                ],
+                "origin": [
+                  174.900634765625,
+                  273.41943359375
+                ],
+                "private_glyph_positions": []
+              }
+            ]
+          },
+          {
+            "line": 14,
+            "bbox": [
+              278.2203674316406,
+              263.3602294921875,
+              343.68646240234375,
+              275.8580322265625
+            ],
+            "spans": [
+              {
+                "raw": "Set 1 suffixes ",
+                "decoded": "Set 1 suffixes ",
+                "font": "TimesNewRomanPS-BoldMT",
+                "size": 11.289799690246582,
+                "bbox": [
+                  278.2203674316406,
+                  263.3602294921875,
+                  343.68646240234375,
+                  275.8580322265625
+                ],
+                "origin": [
+                  278.2203674316406,
+                  273.41943359375
+                ],
+                "private_glyph_positions": []
+              }
+            ]
+          },
+          {
+            "line": 15,
+            "bbox": [
+              417.9033508300781,
+              263.3602294921875,
+              483.4224853515625,
+              275.8580322265625
+            ],
+            "spans": [
+              {
+                "raw": "Set 2 suffixes ",
+                "decoded": "Set 2 suffixes ",
+                "font": "TimesNewRomanPS-BoldMT",
+                "size": 11.289799690246582,
+                "bbox": [
+                  417.9033508300781,
+                  263.3602294921875,
+                  483.4224853515625,
+                  275.8580322265625
+                ],
+                "origin": [
+                  417.9033508300781,
+                  273.41943359375
+                ],
+                "private_glyph_positions": []
+              }
+            ]
+          },
+          {
+            "line": 16,
+            "bbox": [
+              174.89999389648438,
+              283.3407897949219,
+              177.72244262695312,
+              295.8385925292969
+            ],
+            "spans": [
+              {
+                "raw": " ",
+                "decoded": " ",
+                "font": "TimesNewRomanPS-BoldMT",
+                "size": 11.289799690246582,
+                "bbox": [
+                  174.89999389648438,
+                  283.3407897949219,
+                  177.72244262695312,
+                  295.8385925292969
+                ],
+                "origin": [
+                  174.89999389648438,
+                  293.3999938964844
+                ],
+                "private_glyph_positions": []
+              }
+            ]
+          },
+          {
+            "line": 17,
+            "bbox": [
+              242.63992309570312,
+              283.3407897949219,
+              364.0198669433594,
+              295.8385925292969
+            ],
+            "spans": [
+              {
+                "raw": "Nominative and ergative ",
+                "decoded": "Nominative and ergative ",
+                "font": "TimesNewRomanPS-BoldMT",
+                "size": 11.289799690246582,
+                "bbox": [
+                  242.63992309570312,
+                  283.3407897949219,
+                  364.0198669433594,
+                  295.8385925292969
+                ],
+                "origin": [
+                  242.63992309570312,
+                  293.3999938964844
+                ],
+                "private_glyph_positions": []
+              }
+            ]
+          },
+          {
+            "line": 18,
+            "bbox": [
+              386.6378479003906,
+              283.3407897949219,
+              483.4759826660156,
+              295.8385925292969
+            ],
+            "spans": [
+              {
+                "raw": "Genitive and dative ",
+                "decoded": "Genitive and dative ",
+                "font": "TimesNewRomanPS-BoldMT",
+                "size": 11.289799690246582,
+                "bbox": [
+                  386.6378479003906,
+                  283.3407897949219,
+                  483.4759826660156,
+                  295.8385925292969
+                ],
+                "origin": [
+                  386.6378479003906,
+                  293.3999938964844
+                ],
+                "private_glyph_positions": []
+              }
+            ]
+          },
+          {
+            "line": 19,
+            "bbox": [
+              174.89999389648438,
+              303.2757263183594,
+              195.8385009765625,
+              314.71136474609375
+            ],
+            "spans": [
+              {
+                "raw": "1SG ",
+                "decoded": "1SG ",
+                "font": "TimesNewRomanPSMT",
+                "size": 10.330300331115723,
+                "bbox": [
+                  174.89999389648438,
+                  303.2757263183594,
+                  195.8385009765625,
+                  314.71136474609375
+                ],
+                "origin": [
+                  174.89999389648438,
+                  312.4800109863281
+                ],
+                "private_glyph_positions": []
+              }
+            ]
+          },
+          {
+            "line": 20,
+            "bbox": [
+              242.63990783691406,
+              302.8831481933594,
+              257.7624206542969,
+              315.5584411621094
+            ],
+            "spans": [
+              {
+                "raw": "-m",
+                "decoded": "-m",
+                "font": "SILDoulosIPA93Regular",
+                "size": 10.330300331115723,
+                "bbox": [
+                  242.63990783691406,
+                  302.8831481933594,
+                  255.18606567382812,
+                  315.5584411621094
+                ],
+                "origin": [
+                  242.63990783691406,
+                  312.4800109863281
+                ],
+                "private_glyph_positions": []
+              },
+              {
+                "raw": " ",
+                "decoded": " ",
+                "font": "TimesNewRomanPSMT",
+                "size": 10.330300331115723,
+                "bbox": [
+                  255.1798553466797,
+                  303.2757263183594,
+                  257.7624206542969,
+                  314.71136474609375
+                ],
+                "origin": [
+                  255.1798553466797,
+                  312.4800109863281
+                ],
+                "private_glyph_positions": []
+              }
+            ]
+          },
+          {
+            "line": 21,
+            "bbox": [
+              386.5792236328125,
+              302.8831481933594,
+              401.7017517089844,
+              315.5584411621094
+            ],
+            "spans": [
+              {
+                "raw": "-m",
+                "decoded": "-m",
+                "font": "SILDoulosIPA93Regular",
+                "size": 10.330300331115723,
+                "bbox": [
+                  386.5792236328125,
+                  302.8831481933594,
+                  399.1253662109375,
+                  315.5584411621094
+                ],
+                "origin": [
+                  386.5792236328125,
+                  312.4800109863281
+                ],
+                "private_glyph_positions": []
+              },
+              {
+                "raw": " ",
+                "decoded": " ",
+                "font": "TimesNewRomanPSMT",
+                "size": 10.330300331115723,
+                "bbox": [
+                  399.1191711425781,
+                  303.2757263183594,
+                  401.7017517089844,
+                  314.71136474609375
+                ],
+                "origin": [
+                  399.1191711425781,
+                  312.4800109863281
+                ],
+                "private_glyph_positions": []
+              }
+            ]
+          },
+          {
+            "line": 22,
+            "bbox": [
+              174.89999389648438,
+              322.7757263183594,
+              194.70216369628906,
+              334.21136474609375
+            ],
+            "spans": [
+              {
+                "raw": "1PL ",
+                "decoded": "1PL ",
+                "font": "TimesNewRomanPSMT",
+                "size": 10.330300331115723,
+                "bbox": [
+                  174.89999389648438,
+                  322.7757263183594,
+                  194.70216369628906,
+                  334.21136474609375
+                ],
+                "origin": [
+                  174.89999389648438,
+                  331.9800109863281
+                ],
+                "private_glyph_positions": []
+              }
+            ]
+          },
+          {
+            "line": 23,
+            "bbox": [
+              242.63990783691406,
+              322.3831481933594,
+              258.06201171875,
+              335.0584411621094
+            ],
+            "spans": [
+              {
+                "raw": "-hi",
+                "decoded": "-hĩ",
+                "font": "SILDoulosIPA93Regular",
+                "size": 10.330300331115723,
+                "bbox": [
+                  242.63990783691406,
+                  322.3831481933594,
+                  255.5259246826172,
+                  335.0584411621094
+                ],
+                "origin": [
+                  242.63990783691406,
+                  331.9800109863281
+                ],
+                "private_glyph_positions": [
+                  {
+                    "offset": 3,
+                    "codepoint": "U+F029",
+                    "bbox": [
+                      255.4701385498047,
+                      322.3831481933594,
+                      255.48046875,
+                      335.0584411621094
+                    ],
+                    "origin": [
+                      255.4701385498047,
+                      331.9800109863281
+                    ]
+                  }
+                ]
+              },
+              {
+                "raw": " ",
+                "decoded": " ",
+                "font": "TimesNewRomanPSMT",
+                "size": 10.330300331115723,
+                "bbox": [
+                  255.47943115234375,
+                  322.7757263183594,
+                  258.06201171875,
+                  334.21136474609375
+                ],
+                "origin": [
+                  255.47943115234375,
+                  331.9800109863281
+                ],
+                "private_glyph_positions": []
+              }
+            ]
+          },
+          {
+            "line": 24,
+            "bbox": [
+              386.5792236328125,
+              322.44305419921875,
+              398.16156005859375,
+              335.11834716796875
+            ],
+            "spans": [
+              {
+                "raw": "-",
+                "decoded": "-",
+                "font": "SILDoulosIPA93Regular",
+                "size": 10.330300331115723,
+                "bbox": [
+                  386.5792236328125,
+                  322.44305419921875,
+                  390.4530944824219,
+                  335.11834716796875
+                ],
+                "origin": [
+                  386.5792236328125,
+                  332.0399169921875
+                ],
+                "private_glyph_positions": []
+              },
+              {
+                "raw": "ø ",
+                "decoded": "ø ",
+                "font": "TimesNewRomanPSMT",
+                "size": 10.330300331115723,
+                "bbox": [
+                  390.4789123535156,
+                  322.83563232421875,
+                  398.16156005859375,
+                  334.2712707519531
+                ],
+                "origin": [
+                  390.4789123535156,
+                  332.0399169921875
+                ],
+                "private_glyph_positions": []
+              }
+            ]
+          },
+          {
+            "line": 25,
+            "bbox": [
+              174.89999389648438,
+              342.3957214355469,
+              195.8385009765625,
+              353.83135986328125
+            ],
+            "spans": [
+              {
+                "raw": "2SG ",
+                "decoded": "2SG ",
+                "font": "TimesNewRomanPSMT",
+                "size": 10.330300331115723,
+                "bbox": [
+                  174.89999389648438,
+                  342.3957214355469,
+                  195.8385009765625,
+                  353.83135986328125
+                ],
+                "origin": [
+                  174.89999389648438,
+                  351.6000061035156
+                ],
+                "private_glyph_positions": []
+              }
+            ]
+          },
+          {
+            "line": 26,
+            "bbox": [
+              242.63990783691406,
+              342.0031433105469,
+              253.62205505371094,
+              354.6784362792969
+            ],
+            "spans": [
+              {
+                "raw": "-s",
+                "decoded": "-s",
+                "font": "SILDoulosIPA93Regular",
+                "size": 10.330300331115723,
+                "bbox": [
+                  242.63990783691406,
+                  342.0031433105469,
+                  251.02294921875,
+                  354.6784362792969
+                ],
+                "origin": [
+                  242.63990783691406,
+                  351.6000061035156
+                ],
+                "private_glyph_positions": []
+              },
+              {
+                "raw": " ",
+                "decoded": " ",
+                "font": "TimesNewRomanPSMT",
+                "size": 10.330300331115723,
+                "bbox": [
+                  251.0394744873047,
+                  342.3957214355469,
+                  253.62205505371094,
+                  353.83135986328125
+                ],
+                "origin": [
+                  251.0394744873047,
+                  351.6000061035156
+                ],
+                "private_glyph_positions": []
+              }
+            ]
+          },
+          {
+            "line": 27,
+            "bbox": [
+              386.5792236328125,
+              342.0031433105469,
+              397.0221252441406,
+              354.6784362792969
+            ],
+            "spans": [
+              {
+                "raw": "-r",
+                "decoded": "-r",
+                "font": "SILDoulosIPA93Regular",
+                "size": 10.330300331115723,
+                "bbox": [
+                  386.5792236328125,
+                  342.0031433105469,
+                  394.4560546875,
+                  354.6784362792969
+                ],
+                "origin": [
+                  386.5792236328125,
+                  351.6000061035156
+                ],
+                "private_glyph_positions": []
+              },
+              {
+                "raw": " ",
+                "decoded": " ",
+                "font": "TimesNewRomanPSMT",
+                "size": 10.330300331115723,
+                "bbox": [
+                  394.4395446777344,
+                  342.3957214355469,
+                  397.0221252441406,
+                  353.83135986328125
+                ],
+                "origin": [
+                  394.4395446777344,
+                  351.6000061035156
+                ],
+                "private_glyph_positions": []
+              }
+            ]
+          },
+          {
+            "line": 28,
+            "bbox": [
+              174.89999389648438,
+              361.8357238769531,
+              205.8557586669922,
+              373.2713623046875
+            ],
+            "spans": [
+              {
+                "raw": "2SG.H ",
+                "decoded": "2SG.H ",
+                "font": "TimesNewRomanPSMT",
+                "size": 10.330300331115723,
+                "bbox": [
+                  174.89999389648438,
+                  361.8357238769531,
+                  205.8557586669922,
+                  373.2713623046875
+                ],
+                "origin": [
+                  174.89999389648438,
+                  371.0400085449219
+                ],
+                "private_glyph_positions": []
+              }
+            ]
+          },
+          {
+            "line": 29,
+            "bbox": [
+              242.63990783691406,
+              361.4431457519531,
+              254.8224334716797,
+              374.1184387207031
+            ],
+            "spans": [
+              {
+                "raw": "-u",
+                "decoded": "-u",
+                "font": "SILDoulosIPA93Regular",
+                "size": 10.330300331115723,
+                "bbox": [
+                  242.63990783691406,
+                  361.4431457519531,
+                  252.2109375,
+                  374.1184387207031
+                ],
+                "origin": [
+                  242.63990783691406,
+                  371.0400085449219
+                ],
+                "private_glyph_positions": []
+              },
+              {
+                "raw": " ",
+                "decoded": " ",
+                "font": "TimesNewRomanPSMT",
+                "size": 10.330300331115723,
+                "bbox": [
+                  252.23985290527344,
+                  361.8357238769531,
+                  254.8224334716797,
+                  373.2713623046875
+                ],
+                "origin": [
+                  252.23985290527344,
+                  371.0400085449219
+                ],
+                "private_glyph_positions": []
+              }
+            ]
+          },
+          {
+            "line": 30,
+            "bbox": [
+              386.5792236328125,
+              361.4431457519531,
+              398.7617492675781,
+              374.1184387207031
+            ],
+            "spans": [
+              {
+                "raw": "-u",
+                "decoded": "-u",
+                "font": "SILDoulosIPA93Regular",
+                "size": 10.330300331115723,
+                "bbox": [
+                  386.5792236328125,
+                  361.4431457519531,
+                  396.1502380371094,
+                  374.1184387207031
+                ],
+                "origin": [
+                  386.5792236328125,
+                  371.0400085449219
+                ],
+                "private_glyph_positions": []
+              },
+              {
+                "raw": " ",
+                "decoded": " ",
+                "font": "TimesNewRomanPSMT",
+                "size": 10.330300331115723,
+                "bbox": [
+                  396.1791687011719,
+                  361.8357238769531,
+                  398.7617492675781,
+                  373.2713623046875
+                ],
+                "origin": [
+                  396.1791687011719,
+                  371.0400085449219
+                ],
+                "private_glyph_positions": []
+              }
+            ]
+          },
+          {
+            "line": 31,
+            "bbox": [
+              174.89999389648438,
+              381.3957214355469,
+              194.70216369628906,
+              392.83135986328125
+            ],
+            "spans": [
+              {
+                "raw": "2PL ",
+                "decoded": "2PL ",
+                "font": "TimesNewRomanPSMT",
+                "size": 10.330300331115723,
+                "bbox": [
+                  174.89999389648438,
+                  381.3957214355469,
+                  194.70216369628906,
+                  392.83135986328125
+                ],
+                "origin": [
+                  174.89999389648438,
+                  390.6000061035156
+                ],
+                "private_glyph_positions": []
+              }
+            ]
+          },
+          {
+            "line": 32,
+            "bbox": [
+              242.63990783691406,
+              381.0031433105469,
+              275.1028747558594,
+              393.6784362792969
+            ],
+            "spans": [
+              {
+                "raw": "-hsb",
+                "decoded": "-həsəb",
+                "font": "SILDoulosIPA93Regular",
+                "size": 10.330300331115723,
+                "bbox": [
+                  242.63990783691406,
+                  381.0031433105469,
+                  272.447998046875,
+                  393.6784362792969
+                ],
+                "origin": [
+                  242.63990783691406,
+                  390.6000061035156
+                ],
+                "private_glyph_positions": [
+                  {
+                    "offset": 2,
+                    "codepoint": "U+F0AB",
+                    "bbox": [
+                      252.22952270507812,
+                      381.0031433105469,
+                      257.3120422363281,
+                      393.6784362792969
+                    ],
+                    "origin": [
+                      252.22952270507812,
+                      390.6000061035156
+                    ]
+                  },
+                  {
+                    "offset": 4,
+                    "codepoint": "U+F0AB",
+                    "bbox": [
+                      261.8294677734375,
+                      381.0031433105469,
+                      266.9119873046875,
+                      393.6784362792969
+                    ],
+                    "origin": [
+                      261.8294677734375,
+                      390.6000061035156
+                    ]
+                  }
+                ]
+              },
+              {
+                "raw": " ",
+                "decoded": " ",
+                "font": "TimesNewRomanPSMT",
+                "size": 10.330300331115723,
+                "bbox": [
+                  272.5202941894531,
+                  381.3957214355469,
+                  275.1028747558594,
+                  392.83135986328125
+                ],
+                "origin": [
+                  272.5202941894531,
+                  390.6000061035156
+                ],
+                "private_glyph_positions": []
+              }
+            ]
+          },
+          {
+            "line": 33,
+            "bbox": [
+              386.5802307128906,
+              381.0031433105469,
+              419.043212890625,
+              393.6784362792969
+            ],
+            "spans": [
+              {
+                "raw": "-hsb",
+                "decoded": "-həsəb",
+                "font": "SILDoulosIPA93Regular",
+                "size": 10.330300331115723,
+                "bbox": [
+                  386.5802307128906,
+                  381.0031433105469,
+                  416.4503173828125,
+                  393.6784362792969
+                ],
+                "origin": [
+                  386.5802307128906,
+                  390.6000061035156
+                ],
+                "private_glyph_positions": [
+                  {
+                    "offset": 2,
+                    "codepoint": "U+F0AB",
+                    "bbox": [
+                      396.1667785644531,
+                      381.0031433105469,
+                      401.2492980957031,
+                      393.6784362792969
+                    ],
+                    "origin": [
+                      396.1667785644531,
+                      390.6000061035156
+                    ]
+                  },
+                  {
+                    "offset": 4,
+                    "codepoint": "U+F0AB",
+                    "bbox": [
+                      405.7739562988281,
+                      381.0031433105469,
+                      410.8564758300781,
+                      393.6784362792969
+                    ],
+                    "origin": [
+                      405.7739562988281,
+                      390.6000061035156
+                    ]
+                  }
+                ]
+              },
+              {
+                "raw": " ",
+                "decoded": " ",
+                "font": "TimesNewRomanPSMT",
+                "size": 10.330300331115723,
+                "bbox": [
+                  416.46063232421875,
+                  381.3957214355469,
+                  419.043212890625,
+                  392.83135986328125
+                ],
+                "origin": [
+                  416.46063232421875,
+                  390.6000061035156
+                ],
+                "private_glyph_positions": []
+              }
+            ]
+          },
+          {
+            "line": 34,
+            "bbox": [
+              174.89999389648438,
+              400.8957214355469,
+              195.8385009765625,
+              412.33135986328125
+            ],
+            "spans": [
+              {
+                "raw": "3SG ",
+                "decoded": "3SG ",
+                "font": "TimesNewRomanPSMT",
+                "size": 10.330300331115723,
+                "bbox": [
+                  174.89999389648438,
+                  400.8957214355469,
+                  195.8385009765625,
+                  412.33135986328125
+                ],
+                "origin": [
+                  174.89999389648438,
+                  410.1000061035156
+                ],
+                "private_glyph_positions": []
+              }
+            ]
+          },
+          {
+            "line": 35,
+            "bbox": [
+              242.63990783691406,
+              400.5031433105469,
+              252.36279296875,
+              413.1784362792969
+            ],
+            "spans": [
+              {
+                "raw": "-i",
+                "decoded": "-i",
+                "font": "SILDoulosIPA93Regular",
+                "size": 10.330300331115723,
+                "bbox": [
+                  242.63990783691406,
+                  400.5031433105469,
+                  249.8246307373047,
+                  413.1784362792969
+                ],
+                "origin": [
+                  242.63990783691406,
+                  410.1000061035156
+                ],
+                "private_glyph_positions": []
+              },
+              {
+                "raw": " ",
+                "decoded": " ",
+                "font": "TimesNewRomanPSMT",
+                "size": 10.330300331115723,
+                "bbox": [
+                  249.78021240234375,
+                  400.8957214355469,
+                  252.36279296875,
+                  412.33135986328125
+                ],
+                "origin": [
+                  249.78021240234375,
+                  410.1000061035156
+                ],
+                "private_glyph_positions": []
+              }
+            ]
+          },
+          {
+            "line": 36,
+            "bbox": [
+              386.58026123046875,
+              400.5031433105469,
+              398.7627868652344,
+              413.1784362792969
+            ],
+            "spans": [
+              {
+                "raw": "-k",
+                "decoded": "-k",
+                "font": "SILDoulosIPA93Regular",
+                "size": 10.330300331115723,
+                "bbox": [
+                  386.58026123046875,
+                  400.5031433105469,
+                  396.1512756347656,
+                  413.1784362792969
+                ],
+                "origin": [
+                  386.58026123046875,
+                  410.1000061035156
+                ],
+                "private_glyph_positions": []
+              },
+              {
+                "raw": " ",
+                "decoded": " ",
+                "font": "TimesNewRomanPSMT",
+                "size": 10.330300331115723,
+                "bbox": [
+                  396.1802062988281,
+                  400.8957214355469,
+                  398.7627868652344,
+                  412.33135986328125
+                ],
+                "origin": [
+                  396.1802062988281,
+                  410.1000061035156
+                ],
+                "private_glyph_positions": []
+              }
+            ]
+          },
+          {
+            "line": 37,
+            "bbox": [
+              174.89999389648438,
+              420.4557189941406,
+              205.8557586669922,
+              431.891357421875
+            ],
+            "spans": [
+              {
+                "raw": "3SG.H ",
+                "decoded": "3SG.H ",
+                "font": "TimesNewRomanPSMT",
+                "size": 10.330300331115723,
+                "bbox": [
+                  174.89999389648438,
+                  420.4557189941406,
+                  205.8557586669922,
+                  431.891357421875
+                ],
+                "origin": [
+                  174.89999389648438,
+                  429.6600036621094
+                ],
+                "private_glyph_positions": []
+              }
+            ]
+          },
+          {
+            "line": 38,
+            "bbox": [
+              242.63990783691406,
+              420.0631408691406,
+              252.36279296875,
+              432.7384338378906
+            ],
+            "spans": [
+              {
+                "raw": "-t",
+                "decoded": "-t",
+                "font": "SILDoulosIPA93Regular",
+                "size": 10.330300331115723,
+                "bbox": [
+                  242.63990783691406,
+                  420.0631408691406,
+                  249.8246307373047,
+                  432.7384338378906
+                ],
+                "origin": [
+                  242.63990783691406,
+                  429.6600036621094
+                ],
+                "private_glyph_positions": []
+              },
+              {
+                "raw": " ",
+                "decoded": " ",
+                "font": "TimesNewRomanPSMT",
+                "size": 10.330300331115723,
+                "bbox": [
+                  249.78021240234375,
+                  420.4557189941406,
+                  252.36279296875,
+                  431.891357421875
+                ],
+                "origin": [
+                  249.78021240234375,
+                  429.6600036621094
+                ],
+                "private_glyph_positions": []
+              }
+            ]
+          },
+          {
+            "line": 39,
+            "bbox": [
+              386.58026123046875,
+              420.0631408691406,
+              409.5631103515625,
+              432.7384338378906
+            ],
+            "spans": [
+              {
+                "raw": "-kan",
+                "decoded": "-kan",
+                "font": "SILDoulosIPA93Regular",
+                "size": 10.330300331115723,
+                "bbox": [
+                  386.58026123046875,
+                  420.0631408691406,
+                  406.95263671875,
+                  432.7384338378906
+                ],
+                "origin": [
+                  386.58026123046875,
+                  429.6600036621094
+                ],
+                "private_glyph_positions": []
+              },
+              {
+                "raw": " ",
+                "decoded": " ",
+                "font": "TimesNewRomanPSMT",
+                "size": 10.330300331115723,
+                "bbox": [
+                  406.98052978515625,
+                  420.4557189941406,
+                  409.5631103515625,
+                  431.891357421875
+                ],
+                "origin": [
+                  406.98052978515625,
+                  429.6600036621094
+                ],
+                "private_glyph_positions": []
+              }
+            ]
+          },
+          {
+            "line": 40,
+            "bbox": [
+              174.89999389648438,
+              439.8957214355469,
+              194.70216369628906,
+              451.33135986328125
+            ],
+            "spans": [
+              {
+                "raw": "3PL ",
+                "decoded": "3PL ",
+                "font": "TimesNewRomanPSMT",
+                "size": 10.330300331115723,
+                "bbox": [
+                  174.89999389648438,
+                  439.8957214355469,
+                  194.70216369628906,
+                  451.33135986328125
+                ],
+                "origin": [
+                  174.89999389648438,
+                  449.1000061035156
+                ],
+                "private_glyph_positions": []
+              }
+            ]
+          },
+          {
+            "line": 41,
+            "bbox": [
+              242.63990783691406,
+              439.5031433105469,
+              275.1028747558594,
+              452.1784362792969
+            ],
+            "spans": [
+              {
+                "raw": "-hsb",
+                "decoded": "-həsəb",
+                "font": "SILDoulosIPA93Regular",
+                "size": 10.330300331115723,
+                "bbox": [
+                  242.63990783691406,
+                  439.5031433105469,
+                  272.447998046875,
+                  452.1784362792969
+                ],
+                "origin": [
+                  242.63990783691406,
+                  449.1000061035156
+                ],
+                "private_glyph_positions": [
+                  {
+                    "offset": 2,
+                    "codepoint": "U+F0AB",
+                    "bbox": [
+                      252.22952270507812,
+                      439.5031433105469,
+                      257.3120422363281,
+                      452.1784362792969
+                    ],
+                    "origin": [
+                      252.22952270507812,
+                      449.1000061035156
+                    ]
+                  },
+                  {
+                    "offset": 4,
+                    "codepoint": "U+F0AB",
+                    "bbox": [
+                      261.8294677734375,
+                      439.5031433105469,
+                      266.9119873046875,
+                      452.1784362792969
+                    ],
+                    "origin": [
+                      261.8294677734375,
+                      449.1000061035156
+                    ]
+                  }
+                ]
+              },
+              {
+                "raw": " ",
+                "decoded": " ",
+                "font": "TimesNewRomanPSMT",
+                "size": 10.330300331115723,
+                "bbox": [
+                  272.5202941894531,
+                  439.8957214355469,
+                  275.1028747558594,
+                  451.33135986328125
+                ],
+                "origin": [
+                  272.5202941894531,
+                  449.1000061035156
+                ],
+                "private_glyph_positions": []
+              }
+            ]
+          },
+          {
+            "line": 42,
+            "bbox": [
+              386.5802307128906,
+              439.56304931640625,
+              431.58416748046875,
+              452.23834228515625
+            ],
+            "spans": [
+              {
+                "raw": "-kan",
+                "decoded": "-kan",
+                "font": "SILDoulosIPA93Regular",
+                "size": 10.330300331115723,
+                "bbox": [
+                  386.5802307128906,
+                  439.56304931640625,
+                  406.9526062011719,
+                  452.23834228515625
+                ],
+                "origin": [
+                  386.5802307128906,
+                  449.159912109375
+                ],
+                "private_glyph_positions": []
+              },
+              {
+                "raw": "(",
+                "decoded": "(",
+                "font": "TimesNewRomanPSMT",
+                "size": 10.330300331115723,
+                "bbox": [
+                  406.9804992675781,
+                  439.95562744140625,
+                  410.4205017089844,
+                  451.3912658691406
+                ],
+                "origin": [
+                  406.9804992675781,
+                  449.159912109375
+                ],
+                "private_glyph_positions": []
+              },
+              {
+                "raw": "sb",
+                "decoded": "səb",
+                "font": "SILDoulosIPA93Regular",
+                "size": 10.330300331115723,
+                "bbox": [
+                  410.4008483886719,
+                  439.56304931640625,
+                  425.5802001953125,
+                  452.23834228515625
+                ],
+                "origin": [
+                  410.4008483886719,
+                  449.159912109375
+                ],
+                "private_glyph_positions": [
+                  {
+                    "offset": 1,
+                    "codepoint": "U+F0AB",
+                    "bbox": [
+                      414.90692138671875,
+                      439.56304931640625,
+                      419.98944091796875,
+                      452.23834228515625
+                    ],
+                    "origin": [
+                      414.90692138671875,
+                      449.159912109375
+                    ]
+                  }
+                ]
+              },
+              {
+                "raw": ") ",
+                "decoded": ") ",
+                "font": "TimesNewRomanPSMT",
+                "size": 10.330300331115723,
+                "bbox": [
+                  425.58123779296875,
+                  439.95562744140625,
+                  431.58416748046875,
+                  451.3912658691406
+                ],
+                "origin": [
+                  425.58123779296875,
+                  449.159912109375
+                ],
+                "private_glyph_positions": []
+              }
+            ]
+          },
+          {
+            "line": 43,
+            "bbox": [
+              127.5,
+              459.50079345703125,
+              130.32244873046875,
+              471.99859619140625
+            ],
+            "spans": [
+              {
+                "raw": " ",
+                "decoded": " ",
+                "font": "TimesNewRomanPS-BoldMT",
+                "size": 11.289799690246582,
+                "bbox": [
+                  127.5,
+                  459.50079345703125,
+                  130.32244873046875,
+                  471.99859619140625
+                ],
+                "origin": [
+                  127.5,
+                  469.55999755859375
+                ],
+                "private_glyph_positions": []
+              }
+            ]
+          },
+          {
+            "line": 44,
+            "bbox": [
+              127.5,
+              478.9407043457031,
+              130.32244873046875,
+              491.4385070800781
+            ],
+            "spans": [
+              {
+                "raw": " ",
+                "decoded": " ",
+                "font": "TimesNewRomanPS-ItalicMT",
+                "size": 11.289799690246582,
+                "bbox": [
+                  127.5,
+                  478.9407043457031,
+                  130.32244873046875,
+                  491.4385070800781
+                ],
+                "origin": [
+                  127.5,
+                  488.9999084472656
+                ],
+                "private_glyph_positions": []
+              }
+            ]
+          },
+          {
+            "line": 45,
+            "bbox": [
+              161.3400421142578,
+              498.380615234375,
+              520.3937377929688,
+              510.87841796875
+            ],
+            "spans": [
+              {
+                "raw": "Pronouns are listed on the leftmost column of the table. Set (1) suffixes consist ",
+                "decoded": "Pronouns are listed on the leftmost column of the table. Set (1) suffixes consist ",
+                "font": "TimesNewRomanPSMT",
+                "size": 11.289799690246582,
+                "bbox": [
+                  161.3400421142578,
+                  498.380615234375,
+                  520.3937377929688,
+                  510.87841796875
+                ],
+                "origin": [
+                  161.3400421142578,
+                  508.4398193359375
+                ],
+                "private_glyph_positions": []
+              }
+            ]
+          },
+          {
+            "line": 46,
+            "bbox": [
+              127.5,
+              517.88037109375,
+              504.9718322753906,
+              530.378173828125
+            ],
+            "spans": [
+              {
+                "raw": "of agreement markers whereas Set (2) suffixes function both as agreement markers ",
+                "decoded": "of agreement markers whereas Set (2) suffixes function both as agreement markers ",
+                "font": "TimesNewRomanPSMT",
+                "size": 11.289799690246582,
+                "bbox": [
+                  127.5,
+                  517.88037109375,
+                  504.9718322753906,
+                  530.378173828125
+                ],
+                "origin": [
+                  127.5,
+                  527.9395751953125
+                ],
+                "private_glyph_positions": []
+              }
+            ]
+          }
+        ],
+        "lect": "Chitwan"
+      },
+      "source_status": "Owner original-page comparison complete; independent review and metadata integration pending",
+      "source_disposition": "target-candidate",
+      "disposition": "candidate attestation; review pending",
+      "reuse_source_unit_key": null,
+      "parent_expression_key": null,
+      "open_review": [],
+      "metadata_status": "Not frozen; source claims, roles, variants and profiles require full reconciliation",
+      "source_attribution": {
+        "scope": "explicit source dialect",
+        "lect": "Chitwan"
+      },
+      "export": {
+        "entry_key": "dhakal2011:p178:ch6:table:l39",
+        "route": "author-transcription",
+        "disposition": "emit",
+        "reason": "distinct source analysis or retained historical key",
+        "occurrence_citation": "dhakal2011darai[p. 178]",
+        "occurrence_row": [
+          "Darai",
+          "",
+          "-kan",
+          "",
+          "",
+          "-kan",
+          "Source grammatical label: 3sg honorific Set2. Printed interlinear analysis: .",
+          "dhakal2011darai[p. 178]",
+          "",
+          "",
+          "dhakal2011:p178:ch6:table:l39",
+          "",
+          "",
+          "",
+          "dialect:Darai:darai_chitwan:Chitwan 3sg honorific"
+        ],
+        "source_unit_keys": [
+          "dhakal2011:p178:ch6:table:l39"
+        ]
+      },
+      "sample_exported_row": [
+        "Darai",
+        "",
+        "-kan",
+        "",
+        "",
+        "-kan",
+        "Source grammatical label: 3sg honorific Set2. Printed interlinear analysis: .",
+        "dhakal2011darai[p. 178]",
+        "",
+        "",
+        "dhakal2011:p178:ch6:table:l39",
+        "",
+        "",
+        "",
+        "dialect:Darai:darai_chitwan:Chitwan 3sg honorific"
+      ]
+    },
+    {
+      "source_unit_key": "dhakal2011:p155:ch6:surface:l19",
+      "evidence_file": "chapter6-reviewed-records.jsonl",
+      "evidence_line": 25,
+      "printed_page": 155,
+      "pdf_page": 177,
+      "kind": "whole-expression",
+      "form": "osin kərike adzu hamrə sohoarikə rəŋrəs bʰəitihin aṭəi",
+      "source_gloss": "Doing that way, we are enjoying (lit. the enjoyment is becoming) of Sohorai.",
+      "proposed_grammar": {
+        "gloss": "Doing that way, we are enjoying (lit. the enjoyment is becoming) of Sohorai.",
+        "tags": [],
+        "labels": []
+      },
+      "source_claims": {
+        "text_ids": [
+          "DaF.CND.130"
+        ]
+      },
+      "source_status": "Owner original-page comparison complete; independent review and metadata integration pending",
+      "source_disposition": null,
+      "disposition": "candidate attestation; review pending",
+      "reuse_source_unit_key": null,
+      "parent_expression_key": null,
+      "open_review": [],
+      "metadata_status": "Not frozen; source claims, roles, variants and profiles require full reconciliation",
+      "source_attribution": {
+        "scope": "author Chitwan default, printed page 8",
+        "lect": "Chitwan"
+      },
+      "export": {
+        "entry_key": "dhakal2011:p155:ch6:surface:l19",
+        "route": "author-transcription",
+        "disposition": "emit",
+        "reason": "distinct source analysis or retained historical key",
+        "occurrence_citation": "dhakal2011darai[p. 155]",
+        "occurrence_row": [
+          "Darai",
+          "",
+          "osin kərike adzu hamrə sohoarikə rəŋrəs bʰəitihin aṭəi",
+          "Doing that way, we are enjoying (lit. the enjoyment is becoming) of Sohorai.",
+          "",
+          "osin kərike adzu hamrə sohoarikə rəŋrəs bʰəitihin aṭəi",
+          "Source corpus references: DaF.CND.130.",
+          "dhakal2011darai[p. 155]",
+          "",
+          "",
+          "dhakal2011:p155:ch6:surface:l19",
+          "",
+          "",
+          "",
+          "dialect:Darai:darai_chitwan:Chitwan multiword-expression"
+        ],
+        "source_unit_keys": [
+          "dhakal2011:p155:ch6:surface:l19"
+        ]
+      },
+      "sample_exported_row": [
+        "Darai",
+        "",
+        "osin kərike adzu hamrə sohoarikə rəŋrəs bʰəitihin aṭəi",
+        "Doing that way, we are enjoying (lit. the enjoyment is becoming) of Sohorai.",
+        "",
+        "osin kərike adzu hamrə sohoarikə rəŋrəs bʰəitihin aṭəi",
+        "Source corpus references: DaF.CND.130.",
+        "dhakal2011darai[p. 155]",
+        "",
+        "",
+        "dhakal2011:p155:ch6:surface:l19",
+        "",
+        "",
+        "",
+        "dialect:Darai:darai_chitwan:Chitwan multiword-expression"
+      ]
+    },
+    {
+      "source_unit_key": "dhakal2011:p108:ch4:surface:l28:word:l32:w2",
+      "evidence_file": "chapter4-interlinear-reviewed.jsonl",
+      "evidence_line": 428,
+      "printed_page": 108,
+      "pdf_page": 130,
+      "kind": "prior-proposal-attestation",
+      "form": "bʰeṭ -larə",
+      "source_gloss": "meet- PROS",
+      "proposed_grammar": {
+        "gloss": "meet",
+        "tags": [
+          "prospective",
+          "verb"
+        ],
+        "labels": [
+          "PROS"
+        ],
+        "unmapped_source_labels": [],
+        "raw_gloss": "meet- PROS",
+        "analysis_status": "Proposed source-label mapping; contextual review pending"
+      },
+      "source_claims": {},
+      "source_status": "Owner original-page literal and alignment review complete; independent review pending",
+      "source_disposition": null,
+      "disposition": "candidate attestation; review pending",
+      "reuse_source_unit_key": null,
+      "parent_expression_key": "dhakal2011:p108:ch4:surface:l28",
+      "open_review": [],
+      "metadata_status": "Not frozen; source claims, roles, variants and profiles require full reconciliation",
+      "source_attribution": {
+        "scope": "author Chitwan default, printed page 8",
+        "lect": "Chitwan"
+      },
+      "export": {
+        "entry_key": "dhakal2011:p108:ch4:surface:l28:word:l32:w2",
+        "route": "author-transcription",
+        "disposition": "emit",
+        "reason": "distinct source analysis or retained historical key",
+        "occurrence_citation": "dhakal2011darai[p. 108]",
+        "occurrence_row": [
+          "Darai",
+          "",
+          "bʰeṭ -larə",
+          "meet",
+          "",
+          "bʰeṭ -larə",
+          "Printed interlinear analysis: meet- PROS.",
+          "dhakal2011darai[p. 108]",
+          "",
+          "",
+          "dhakal2011:p108:ch4:surface:l28:word:l32:w2",
+          "",
+          "",
+          "",
+          "dialect:Darai:darai_chitwan:Chitwan prospective verb"
+        ],
+        "source_unit_keys": [
+          "dhakal2011:p108:ch4:surface:l28:word:l32:w2"
+        ]
+      },
+      "sample_exported_row": [
+        "Darai",
+        "",
+        "bʰeṭ -larə",
+        "meet",
+        "",
+        "bʰeṭ -larə",
+        "Printed interlinear analysis: meet- PROS.",
+        "dhakal2011darai[p. 108]",
+        "",
+        "",
+        "dhakal2011:p108:ch4:surface:l28:word:l32:w2",
+        "",
+        "",
+        "",
+        "dialect:Darai:darai_chitwan:Chitwan prospective verb"
+      ]
+    },
+    {
+      "source_unit_key": "dhakal2011:appendix5:In.UN.069",
+      "evidence_file": "appendix5-reviewed-records.jsonl",
+      "evidence_line": 152,
+      "printed_page": 415,
+      "pdf_page": 437,
+      "kind": "whole-expression",
+      "form": "əse kəi bərsə boslə madʰapurəjə̃",
+      "source_gloss": "Q: How long (many years) did you live in Madhapur ?",
+      "proposed_grammar": {
+        "gloss": "How long (many years) did you live in Madhapur ?",
+        "tags": [],
+        "labels": []
+      },
+      "source_claims": {
+        "text_id": "In.UN.069",
+        "speaker_turn_label": "Q"
+      },
+      "source_status": "Owner original-page review passed; independent review and metadata integration pending",
+      "source_disposition": null,
+      "disposition": "candidate attestation; review pending",
+      "reuse_source_unit_key": null,
+      "parent_expression_key": null,
+      "open_review": [],
+      "metadata_status": "Not frozen; source claims, roles, variants and profiles require full reconciliation",
+      "source_attribution": {
+        "scope": "author Chitwan default, printed page 8",
+        "lect": "Chitwan",
+        "corpus_context": {
+          "prefix": "In.UN",
+          "title": "Interview",
+          "speaker": "Mangal Ram Darai and a woman",
+          "recorded_by": "Nepal Darai Development Society",
+          "recording_locality": null
+        },
+        "recording_location_is_not_a_dialect_assignment": true
+      },
+      "export": {
+        "entry_key": "dhakal2011:appendix5:In.UN.069",
+        "route": "author-transcription",
+        "disposition": "emit",
+        "reason": "distinct source analysis or retained historical key",
+        "occurrence_citation": "dhakal2011darai[p. 415]",
+        "occurrence_row": [
+          "Darai",
+          "",
+          "əse kəi bərsə boslə madʰapurəjə̃",
+          "How long (many years) did you live in Madhapur ?",
+          "",
+          "əse kəi bərsə boslə madʰapurəjə̃",
+          "Source narrative: Interview; speaker: Mangal Ram Darai and a woman. Source text identifier: In.UN.069. Source speaker-turn label: Q.",
+          "dhakal2011darai[p. 415]",
+          "",
+          "",
+          "dhakal2011:appendix5:In.UN.069",
+          "",
+          "",
+          "",
+          "dialect:Darai:darai_chitwan:Chitwan multiword-expression"
+        ],
+        "source_unit_keys": [
+          "dhakal2011:appendix5:In.UN.069"
+        ]
+      },
+      "sample_exported_row": [
+        "Darai",
+        "",
+        "əse kəi bərsə boslə madʰapurəjə̃",
+        "How long (many years) did you live in Madhapur ?",
+        "",
+        "əse kəi bərsə boslə madʰapurəjə̃",
+        "Source narrative: Interview; speaker: Mangal Ram Darai and a woman. Source text identifier: In.UN.069. Source speaker-turn label: Q.",
+        "dhakal2011darai[p. 415]",
+        "",
+        "",
+        "dhakal2011:appendix5:In.UN.069",
+        "",
+        "",
+        "",
+        "dialect:Darai:darai_chitwan:Chitwan multiword-expression"
+      ]
+    },
+    {
+      "source_unit_key": "dhakal2011:p134:ch5:surface:l4:word:l6:w1",
+      "evidence_file": "chapter5-reviewed-records.jsonl",
+      "evidence_line": 329,
+      "printed_page": 134,
+      "pdf_page": 156,
+      "kind": "prior-proposal-attestation",
+      "form": "saŋɡʰati",
+      "source_gloss": "friend",
+      "proposed_grammar": {
+        "gloss": "friend",
+        "tags": [],
+        "labels": [],
+        "unmapped_source_labels": [],
+        "raw_gloss": "friend",
+        "analysis_status": "Proposed source-label mapping; contextual review pending"
+      },
+      "source_claims": {},
+      "source_status": "Owner original-page comparison complete; independent review and metadata integration pending",
+      "source_disposition": null,
+      "disposition": "candidate attestation; review pending",
+      "reuse_source_unit_key": null,
+      "parent_expression_key": "dhakal2011:p134:ch5:surface:l4",
+      "open_review": [],
+      "metadata_status": "Not frozen; source claims, roles, variants and profiles require full reconciliation",
+      "source_attribution": {
+        "scope": "author Chitwan default, printed page 8",
+        "lect": "Chitwan"
+      },
+      "export": {
+        "entry_key": "dhakal2011:p134:ch5:surface:l4:word:l6:w1",
+        "route": "author-transcription",
+        "disposition": "emit",
+        "reason": "distinct source analysis or retained historical key",
+        "occurrence_citation": "dhakal2011darai[p. 134]",
+        "occurrence_row": [
+          "Darai",
+          "",
+          "saŋɡʰati",
+          "friend",
+          "",
+          "saŋɡʰati",
+          "",
+          "dhakal2011darai[p. 134]",
+          "",
+          "",
+          "dhakal2011:p134:ch5:surface:l4:word:l6:w1",
+          "",
+          "",
+          "",
+          "dialect:Darai:darai_chitwan:Chitwan"
+        ],
+        "source_unit_keys": [
+          "dhakal2011:p134:ch5:surface:l4:word:l6:w1",
+          "dhakal2011:p273:ch10:surface:l4:word:l6:w1"
+        ]
+      },
+      "sample_exported_row": [
+        "Darai",
+        "",
+        "saŋɡʰati",
+        "friend",
+        "",
+        "saŋɡʰati",
+        "",
+        "dhakal2011darai[p. 134];dhakal2011darai[p. 273]",
+        "",
+        "",
+        "dhakal2011:p134:ch5:surface:l4:word:l6:w1",
+        "",
+        "",
+        "",
+        "dialect:Darai:darai_chitwan:Chitwan"
+      ]
+    },
+    {
+      "source_unit_key": "dhakal2011:p164:ch6:surface:l63:word:l78:w1",
+      "evidence_file": "chapter6-reviewed-records.jsonl",
+      "evidence_line": 871,
+      "printed_page": 164,
+      "pdf_page": 186,
+      "kind": "prior-proposal-attestation",
+      "form": "de-larə-m",
+      "source_gloss": "give-HYP-1SG",
+      "proposed_grammar": {
+        "gloss": "give",
+        "tags": [
+          "hypothetical",
+          "1sg",
+          "verb"
+        ],
+        "labels": [
+          "HYP",
+          "1SG"
+        ],
+        "unmapped_source_labels": [],
+        "raw_gloss": "give-HYP-1SG",
+        "analysis_status": "Proposed source-label mapping; contextual review pending"
+      },
+      "source_claims": {},
+      "source_status": "Owner original-page comparison complete; independent review and metadata integration pending",
+      "source_disposition": null,
+      "disposition": "candidate attestation; review pending",
+      "reuse_source_unit_key": null,
+      "parent_expression_key": "dhakal2011:p164:ch6:surface:l63",
+      "open_review": [],
+      "metadata_status": "Not frozen; source claims, roles, variants and profiles require full reconciliation",
+      "source_attribution": {
+        "scope": "author Chitwan default, printed page 8",
+        "lect": "Chitwan"
+      },
+      "export": {
+        "entry_key": "dhakal2011:p164:ch6:surface:l63:word:l78:w1",
+        "route": "author-transcription",
+        "disposition": "emit",
+        "reason": "distinct source analysis or retained historical key",
+        "occurrence_citation": "dhakal2011darai[p. 164]",
+        "occurrence_row": [
+          "Darai",
+          "",
+          "de-larə-m",
+          "give",
+          "",
+          "de-larə-m",
+          "Printed interlinear analysis: give-HYP-1SG.",
+          "dhakal2011darai[p. 164]",
+          "",
+          "",
+          "dhakal2011:p164:ch6:surface:l63:word:l78:w1",
+          "",
+          "",
+          "",
+          "dialect:Darai:darai_chitwan:Chitwan hypothetical 1sg verb"
+        ],
+        "source_unit_keys": [
+          "dhakal2011:p164:ch6:surface:l63:word:l78:w1"
+        ]
+      },
+      "sample_exported_row": [
+        "Darai",
+        "",
+        "de-larə-m",
+        "give",
+        "",
+        "de-larə-m",
+        "Printed interlinear analysis: give-HYP-1SG.",
+        "dhakal2011darai[p. 164]",
+        "",
+        "",
+        "dhakal2011:p164:ch6:surface:l63:word:l78:w1",
+        "",
+        "",
+        "",
+        "dialect:Darai:darai_chitwan:Chitwan hypothetical 1sg verb"
+      ]
+    },
+    {
+      "source_unit_key": "dhakal2011:p157:ch6:surface:l69:word:l73:w1",
+      "evidence_file": "chapter6-reviewed-records.jsonl",
+      "evidence_line": 757,
+      "printed_page": 157,
+      "pdf_page": 179,
+      "kind": "prior-proposal-attestation",
+      "form": "kodʰorə-jə̃",
+      "source_gloss": "corner-LOC",
+      "proposed_grammar": {
+        "gloss": "corner",
+        "tags": [
+          "loc"
+        ],
+        "labels": [
+          "LOC"
+        ],
+        "unmapped_source_labels": [],
+        "raw_gloss": "corner-LOC",
+        "analysis_status": "Proposed source-label mapping; contextual review pending"
+      },
+      "source_claims": {},
+      "source_status": "Owner original-page comparison complete; independent review and metadata integration pending",
+      "source_disposition": null,
+      "disposition": "candidate attestation; review pending",
+      "reuse_source_unit_key": null,
+      "parent_expression_key": "dhakal2011:p157:ch6:surface:l69",
+      "open_review": [],
+      "metadata_status": "Not frozen; source claims, roles, variants and profiles require full reconciliation",
+      "source_attribution": {
+        "scope": "author Chitwan default, printed page 8",
+        "lect": "Chitwan"
+      },
+      "export": {
+        "entry_key": "dhakal2011:p157:ch6:surface:l69:word:l73:w1",
+        "route": "author-transcription",
+        "disposition": "emit",
+        "reason": "distinct source analysis or retained historical key",
+        "occurrence_citation": "dhakal2011darai[p. 157]",
+        "occurrence_row": [
+          "Darai",
+          "",
+          "kodʰorə-jə̃",
+          "corner",
+          "",
+          "kodʰorə-jə̃",
+          "Printed interlinear analysis: corner-LOC.",
+          "dhakal2011darai[p. 157]",
+          "",
+          "",
+          "dhakal2011:p157:ch6:surface:l69:word:l73:w1",
+          "",
+          "",
+          "",
+          "dialect:Darai:darai_chitwan:Chitwan loc"
+        ],
+        "source_unit_keys": [
+          "dhakal2011:p157:ch6:surface:l69:word:l73:w1",
+          "dhakal2011:p339:ch12:surface:l65:word:l77:w1",
+          "dhakal2011:p345:ch12:surface:l39:word:l43:w1"
+        ]
+      },
+      "sample_exported_row": [
+        "Darai",
+        "",
+        "kodʰorə-jə̃",
+        "corner",
+        "",
+        "kodʰorə-jə̃",
+        "Printed interlinear analysis: corner-LOC.",
+        "dhakal2011darai[p. 157];dhakal2011darai[p. 339];dhakal2011darai[p. 345]",
+        "",
+        "",
+        "dhakal2011:p157:ch6:surface:l69:word:l73:w1",
+        "",
+        "",
+        "",
+        "dialect:Darai:darai_chitwan:Chitwan loc"
+      ]
+    },
+    {
+      "source_unit_key": "dhakal2011:p126:ch5:list:l24",
+      "evidence_file": "chapter5-reviewed-records.jsonl",
+      "evidence_line": 68,
+      "printed_page": 126,
+      "pdf_page": 148,
+      "kind": "listed-head-group",
+      "form": "əlɡə",
+      "source_gloss": "tall",
+      "proposed_grammar": {
+        "gloss": "tall",
+        "tags": [],
+        "labels": []
+      },
+      "source_claims": {},
+      "source_status": "Owner original-page comparison complete; independent review and metadata integration pending",
+      "source_disposition": null,
+      "disposition": "candidate attestation; review pending",
+      "reuse_source_unit_key": null,
+      "parent_expression_key": null,
+      "open_review": [],
+      "metadata_status": "Not frozen; source claims, roles, variants and profiles require full reconciliation",
+      "source_attribution": {
+        "scope": "author Chitwan default, printed page 8",
+        "lect": "Chitwan"
+      },
+      "export": {
+        "entry_key": "dhakal2011:p126:ch5:list:l24",
+        "route": "author-transcription",
+        "disposition": "emit",
+        "reason": "distinct source analysis or retained historical key",
+        "occurrence_citation": "dhakal2011darai[p. 126]",
+        "occurrence_row": [
+          "Darai",
+          "",
+          "əlɡə",
+          "tall",
+          "",
+          "əlɡə",
+          "",
+          "dhakal2011darai[p. 126]",
+          "",
+          "",
+          "dhakal2011:p126:ch5:list:l24",
+          "",
+          "",
+          "",
+          "dialect:Darai:darai_chitwan:Chitwan"
+        ],
+        "source_unit_keys": [
+          "dhakal2011:p126:ch5:list:l24",
+          "dhakal2011:p240:ch9:surface:l27:word:l30:w1",
+          "dhakal2011:p253:ch10:surface:l5:word:l6:w2",
+          "dhakal2011:p256:ch10:surface:l13:word:l16:w2"
+        ]
+      },
+      "sample_exported_row": [
+        "Darai",
+        "",
+        "əlɡə",
+        "tall",
+        "",
+        "əlɡə",
+        "",
+        "dhakal2011darai[p. 126];dhakal2011darai[p. 240];dhakal2011darai[p. 253];dhakal2011darai[p. 256]",
+        "",
+        "",
+        "dhakal2011:p126:ch5:list:l24",
+        "",
+        "",
+        "",
+        "dialect:Darai:darai_chitwan:Chitwan"
+      ]
+    },
+    {
+      "source_unit_key": "dhakal2011:p109:ch4:surface:l21:word:l26:w1",
+      "evidence_file": "chapter4-interlinear-reviewed.jsonl",
+      "evidence_line": 442,
+      "printed_page": 109,
+      "pdf_page": 131,
+      "kind": "prior-proposal-attestation",
+      "form": "pokʰəri-kə",
+      "source_gloss": "pond-GEN",
+      "proposed_grammar": {
+        "gloss": "pond",
+        "tags": [
+          "gen"
+        ],
+        "labels": [
+          "GEN"
+        ],
+        "unmapped_source_labels": [],
+        "raw_gloss": "pond-GEN",
+        "analysis_status": "Proposed source-label mapping; contextual review pending"
+      },
+      "source_claims": {},
+      "source_status": "Owner original-page literal and alignment review complete; independent review pending",
+      "source_disposition": null,
+      "disposition": "candidate attestation; review pending",
+      "reuse_source_unit_key": null,
+      "parent_expression_key": "dhakal2011:p109:ch4:surface:l21",
+      "open_review": [],
+      "metadata_status": "Not frozen; source claims, roles, variants and profiles require full reconciliation",
+      "source_attribution": {
+        "scope": "author Chitwan default, printed page 8",
+        "lect": "Chitwan"
+      },
+      "export": {
+        "entry_key": "dhakal2011:p109:ch4:surface:l21:word:l26:w1",
+        "route": "author-transcription",
+        "disposition": "emit",
+        "reason": "distinct source analysis or retained historical key",
+        "occurrence_citation": "dhakal2011darai[p. 109]",
+        "occurrence_row": [
+          "Darai",
+          "",
+          "pokʰəri-kə",
+          "pond",
+          "",
+          "pokʰəri-kə",
+          "Printed interlinear analysis: pond-GEN.",
+          "dhakal2011darai[p. 109]",
+          "",
+          "",
+          "dhakal2011:p109:ch4:surface:l21:word:l26:w1",
+          "",
+          "",
+          "",
+          "dialect:Darai:darai_chitwan:Chitwan gen"
+        ],
+        "source_unit_keys": [
+          "dhakal2011:p109:ch4:surface:l21:word:l26:w1"
+        ]
+      },
+      "sample_exported_row": [
+        "Darai",
+        "",
+        "pokʰəri-kə",
+        "pond",
+        "",
+        "pokʰəri-kə",
+        "Printed interlinear analysis: pond-GEN.",
+        "dhakal2011darai[p. 109]",
+        "",
+        "",
+        "dhakal2011:p109:ch4:surface:l21:word:l26:w1",
+        "",
+        "",
+        "",
+        "dialect:Darai:darai_chitwan:Chitwan gen"
+      ]
+    },
+    {
+      "source_unit_key": "dhakal2011:appendix5:DR.CND.005:word:p389:l24:w1",
+      "evidence_file": "appendix5-reviewed-records.jsonl",
+      "evidence_line": 385,
+      "printed_page": 389,
+      "pdf_page": 411,
+      "kind": "prior-proposal-attestation",
+      "form": "a-ikunu",
+      "source_gloss": "come -SEQ",
+      "proposed_grammar": {
+        "gloss": "come",
+        "tags": [
+          "sequential-converb",
+          "verb"
+        ],
+        "labels": [
+          "SEQ"
+        ],
+        "unmapped_source_labels": [],
+        "raw_gloss": "come -SEQ",
+        "analysis_status": "Proposed source-label mapping; contextual review pending"
+      },
+      "source_claims": {
+        "text_id": "DR.CND.005",
+        "source_surface_form": "aikunu"
+      },
+      "source_status": "Owner original-page review passed; independent review and metadata integration pending",
+      "source_disposition": null,
+      "disposition": "candidate attestation; review pending",
+      "reuse_source_unit_key": null,
+      "parent_expression_key": "dhakal2011:appendix5:DR.CND.005",
+      "open_review": [],
+      "metadata_status": "Not frozen; source claims, roles, variants and profiles require full reconciliation",
+      "source_attribution": {
+        "scope": "author Chitwan default, printed page 8",
+        "lect": "Chitwan",
+        "corpus_context": {
+          "prefix": "DR.CND",
+          "title": "Death Ritual",
+          "speaker": "Cham Narayan Darai",
+          "recording_locality": "Kathar VDC, Chitwan district"
+        },
+        "recording_location_is_not_a_dialect_assignment": true
+      },
+      "export": {
+        "entry_key": "dhakal2011:appendix5:DR.CND.005:word:p389:l24:w1",
+        "route": "author-transcription",
+        "disposition": "emit",
+        "reason": "distinct source analysis or retained historical key",
+        "occurrence_citation": "dhakal2011darai[p. 389]",
+        "occurrence_row": [
+          "Darai",
+          "",
+          "a-ikunu",
+          "come",
+          "",
+          "a-ikunu",
+          "Printed interlinear analysis: come -SEQ. Corresponding printed surface form: aikunu. Source narrative: Death Ritual; speaker: Cham Narayan Darai. Source recording locality: Kathar VDC, Chitwan district. Source text identifier: DR.CND.005.",
+          "dhakal2011darai[p. 389]",
+          "",
+          "",
+          "dhakal2011:appendix5:DR.CND.005:word:p389:l24:w1",
+          "",
+          "",
+          "",
+          "dialect:Darai:darai_chitwan:Chitwan sequential-converb verb"
+        ],
+        "source_unit_keys": [
+          "dhakal2011:appendix5:DR.CND.005:word:p389:l24:w1"
+        ]
+      },
+      "sample_exported_row": [
+        "Darai",
+        "",
+        "a-ikunu",
+        "come",
+        "",
+        "a-ikunu",
+        "Printed interlinear analysis: come -SEQ. Corresponding printed surface form: aikunu. Source narrative: Death Ritual; speaker: Cham Narayan Darai. Source recording locality: Kathar VDC, Chitwan district. Source text identifier: DR.CND.005.",
+        "dhakal2011darai[p. 389]",
+        "",
+        "",
+        "dhakal2011:appendix5:DR.CND.005:word:p389:l24:w1",
+        "",
+        "",
+        "",
+        "dialect:Darai:darai_chitwan:Chitwan sequential-converb verb"
+      ]
+    },
+    {
+      "source_unit_key": "dhakal2011:appendix5:DR.CND.001:word:p388:l11:w1",
+      "evidence_file": "appendix5-reviewed-records.jsonl",
+      "evidence_line": 339,
+      "printed_page": 388,
+      "pdf_page": 410,
+      "kind": "prior-proposal-attestation",
+      "form": "bʰasa-jə̃",
+      "source_gloss": "language -LOC",
+      "proposed_grammar": {
+        "gloss": "language",
+        "tags": [
+          "loc"
+        ],
+        "labels": [
+          "LOC"
+        ],
+        "unmapped_source_labels": [],
+        "raw_gloss": "language -LOC",
+        "analysis_status": "Proposed source-label mapping; contextual review pending"
+      },
+      "source_claims": {
+        "text_id": "DR.CND.001",
+        "source_surface_form": "bʰasajə̃"
+      },
+      "source_status": "Owner original-page review passed; independent review and metadata integration pending",
+      "source_disposition": null,
+      "disposition": "candidate attestation; review pending",
+      "reuse_source_unit_key": null,
+      "parent_expression_key": "dhakal2011:appendix5:DR.CND.001",
+      "open_review": [],
+      "metadata_status": "Not frozen; source claims, roles, variants and profiles require full reconciliation",
+      "source_attribution": {
+        "scope": "author Chitwan default, printed page 8",
+        "lect": "Chitwan",
+        "corpus_context": {
+          "prefix": "DR.CND",
+          "title": "Death Ritual",
+          "speaker": "Cham Narayan Darai",
+          "recording_locality": "Kathar VDC, Chitwan district"
+        },
+        "recording_location_is_not_a_dialect_assignment": true
+      },
+      "export": {
+        "entry_key": "dhakal2011:appendix5:DR.CND.001:word:p388:l11:w1",
+        "route": "author-transcription",
+        "disposition": "emit",
+        "reason": "distinct source analysis or retained historical key",
+        "occurrence_citation": "dhakal2011darai[p. 388]",
+        "occurrence_row": [
+          "Darai",
+          "",
+          "bʰasa-jə̃",
+          "language",
+          "",
+          "bʰasa-jə̃",
+          "Printed interlinear analysis: language -LOC. Corresponding printed surface form: bʰasajə̃. Source narrative: Death Ritual; speaker: Cham Narayan Darai. Source recording locality: Kathar VDC, Chitwan district. Source text identifier: DR.CND.001.",
+          "dhakal2011darai[p. 388]",
+          "",
+          "",
+          "dhakal2011:appendix5:DR.CND.001:word:p388:l11:w1",
+          "",
+          "",
+          "",
+          "dialect:Darai:darai_chitwan:Chitwan loc"
+        ],
+        "source_unit_keys": [
+          "dhakal2011:appendix5:DR.CND.001:word:p388:l11:w1",
+          "dhakal2011:appendix5:DR.CND.001:word:p388:l25:w1"
+        ]
+      },
+      "sample_exported_row": [
+        "Darai",
+        "",
+        "bʰasa-jə̃",
+        "language",
+        "",
+        "bʰasa-jə̃",
+        "Printed interlinear analysis: language -LOC. Corresponding printed surface form: bʰasajə̃. Source narrative: Death Ritual; speaker: Cham Narayan Darai. Source recording locality: Kathar VDC, Chitwan district. Source text identifier: DR.CND.001.",
+        "dhakal2011darai[p. 388]",
+        "",
+        "",
+        "dhakal2011:appendix5:DR.CND.001:word:p388:l11:w1",
+        "",
+        "",
+        "",
+        "dialect:Darai:darai_chitwan:Chitwan loc"
+      ]
+    },
+    {
+      "source_unit_key": "dhakal2011:p143:ch5:surface:l33",
+      "evidence_file": "chapter5-reviewed-records.jsonl",
+      "evidence_line": 57,
+      "printed_page": 143,
+      "pdf_page": 165,
+      "kind": "whole-expression",
+      "form": "məi nanihĩ rəhəm",
+      "source_gloss": "(I) was small.",
+      "proposed_grammar": {
+        "gloss": "(I) was small.",
+        "tags": [],
+        "labels": []
+      },
+      "source_claims": {},
+      "source_status": "Owner original-page comparison complete; independent review and metadata integration pending",
+      "source_disposition": null,
+      "disposition": "candidate attestation; review pending",
+      "reuse_source_unit_key": null,
+      "parent_expression_key": null,
+      "open_review": [],
+      "metadata_status": "Not frozen; source claims, roles, variants and profiles require full reconciliation",
+      "source_attribution": {
+        "scope": "author Chitwan default, printed page 8",
+        "lect": "Chitwan"
+      },
+      "export": {
+        "entry_key": "dhakal2011:p143:ch5:surface:l33",
+        "route": "author-transcription",
+        "disposition": "emit",
+        "reason": "distinct source analysis or retained historical key",
+        "occurrence_citation": "dhakal2011darai[p. 143]",
+        "occurrence_row": [
+          "Darai",
+          "",
+          "məi nanihĩ rəhəm",
+          "(I) was small.",
+          "",
+          "məi nanihĩ rəhəm",
+          "",
+          "dhakal2011darai[p. 143]",
+          "",
+          "",
+          "dhakal2011:p143:ch5:surface:l33",
+          "",
+          "",
+          "",
+          "dialect:Darai:darai_chitwan:Chitwan multiword-expression"
+        ],
+        "source_unit_keys": [
+          "dhakal2011:p143:ch5:surface:l33"
+        ]
+      },
+      "sample_exported_row": [
+        "Darai",
+        "",
+        "məi nanihĩ rəhəm",
+        "(I) was small.",
+        "",
+        "məi nanihĩ rəhəm",
+        "",
+        "dhakal2011darai[p. 143]",
+        "",
+        "",
+        "dhakal2011:p143:ch5:surface:l33",
+        "",
+        "",
+        "",
+        "dialect:Darai:darai_chitwan:Chitwan multiword-expression"
+      ]
+    }
+  ]
+}

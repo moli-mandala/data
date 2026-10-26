@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/Users/aryamanarora/Documents/Code/jambu-all/data/data/other/forms/raw_data/nair_mullu_kurumba_2013/installation/check_fixture.py", line 70, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/Users/aryamanarora/Documents/Code/jambu-all/data/data/other/forms/raw_data/nair_mullu_kurumba_2013/installation/check_fixture.py", line 34, in main
+    assert meta.file_flag(STEM+'.csv','transcription','convert') is False
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aryamanarora/Documents/Code/jambu-all/data/source_meta.py", line 219, in file_flag
+    return self.file_defaults(file).get(section, {}).get(name, default)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'get'

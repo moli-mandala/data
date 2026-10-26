@@ -1,0 +1,21 @@
+earlier,later,earlier_rule,later_rule,i,j,delta_ned,words
+@final-cons-loss @final-vowel-loss @final-cons-loss @final-vowel-loss,@int-stop-loss @v-loss,{a á} {s n} > ∅ / V C* _ #,{k g t d c j y v p} > ∅ / V _ V,2,11,-0.00153,22
+@int-stop-loss @v-loss,@hiatus @hiatus,{k g t d c j y v p} > ∅ / V _ V,{a i} > ∅ / _ V,11,12,0.00439,18
+@flap @int-retroflex @int-retroflex @flap,@cluster-simplify @degem-plain @cluster-simplify @degem-plain,{ṭ ḍ} > ṛ / V _ V,Stop Stop > $2,10,13,0.00841,19
+@int-stop-loss @v-loss,@cluster-simplify @degem-plain @cluster-simplify @degem-plain,{k g t d c j y v p} > ∅ / V _ V,Stop Stop > $2,11,13,0.01156,33
+@flap @int-retroflex @int-retroflex @flap,@cluster-simplify @cluster-simplify,{ṭ ḍ} > ṛ / V _ V,C {y v} > $1,10,14,0.00306,17
+@flap @int-retroflex @int-retroflex @flap,@affrication @affrication,{ṭ ḍ} > ṛ / V _ V,{c cʰ j} > {ʦ ʦʰ z},10,15,0.00186,20
+@int-stop-loss @v-loss,@affrication @affrication,{k g t d c j y v p} > ∅ / V _ V,{c cʰ j} > {ʦ ʦʰ z},11,15,0.00186,34
+@cluster-simplify @degem-plain @cluster-simplify @degem-plain,@affrication @affrication,Stop Stop > $2,{c cʰ j} > {ʦ ʦʰ z},13,15,0.00186,24
+@flap @int-retroflex @int-retroflex @flap,@ks @ks,{ṭ ḍ} > ṛ / V _ V,k ṣ > cʰ,10,16,0.00535,13
+@int-stop-loss @v-loss,@ks @ks,{k g t d c j y v p} > ∅ / V _ V,k ṣ > cʰ,11,16,0.00535,28
+@cluster-simplify @degem-plain @cluster-simplify @degem-plain,@ks @ks,Stop Stop > $2,k ṣ > cʰ,13,16,0.00186,18
+@affrication @affrication,@ks @ks,{c cʰ j} > {ʦ ʦʰ z},k ṣ > cʰ,15,16,0.00535,14
+@final-cons-loss @final-cons-loss,@final-vowel-loss,ḣ > ∅,V > ∅ / V C _ #,7,19,0.00229,55
+@cluster-simplify @s-stop-aspirate @s-stop-aspirate @cluster-simplify,@final-vowel-loss,Sib Stop > $2+asp,V > ∅ / V C _ #,9,19,0.00459,55
+@flap @int-retroflex @int-retroflex @flap,@final-vowel-loss,{ṭ ḍ} > ṛ / V _ V,V > ∅ / V C _ #,10,19,0.00841,55
+@int-stop-loss @v-loss,@final-vowel-loss,{k g t d c j y v p} > ∅ / V _ V,V > ∅ / V C _ #,11,19,0.00592,57
+@cluster-simplify @degem-plain @cluster-simplify @degem-plain,@final-vowel-loss,Stop Stop > $2,V > ∅ / V C _ #,13,19,0.00513,49
+@cluster-simplify @cluster-simplify,@final-vowel-loss,C {y v} > $1,V > ∅ / V C _ #,14,19,0.00229,51
+@affrication @affrication,@final-vowel-loss,{c cʰ j} > {ʦ ʦʰ z},V > ∅ / V C _ #,15,19,0.00031,60
+@ks @ks,@final-vowel-loss,k ṣ > cʰ,V > ∅ / V C _ #,16,19,0.00214,47

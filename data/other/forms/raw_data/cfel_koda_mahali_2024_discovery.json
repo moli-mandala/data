@@ -1,0 +1,142 @@
+{
+  "status": "discovery only; lexical ingestion not started",
+  "title": "Bangla-Koda-Mahali Dictionary",
+  "editors": [
+    "Manoranjan Pradhan",
+    "Arimardan Kumar Tripathi"
+  ],
+  "publisher": "Centre for Endangered Languages, Visva-Bharati",
+  "year": 2024,
+  "isbn": "978-81-972382-3-9",
+  "url": "https://cfelvb.in/uploads/pdf/1727691662-Bangla-Koda-Mahali%20Dictionary.pdf",
+  "local_cache": "../tmp/pdfs/cfel-koda-mahali/dictionary.pdf",
+  "sha256": "94f987306072f6ae66be87e9b585fbaa17bf498925e4f70e77a246d4227e5cee",
+  "pdf_pages": 380,
+  "source_reported_word_count": 2452,
+  "scope": "52 semantic domains; Koda and Mahali communities of Birbhum, West Bengal, with nearby Jharkhand context",
+  "evidence_pages_inspected": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+  ],
+  "licence": "Copyright Visva-Bharati; no open reuse licence found in inspected front matter",
+  "selection_value": "Complements existing Bangladesh survey attestations with Indian community material; not merely another copy of the SIL lists",
+  "risks": [
+    "Publisher introduction explicitly states coinages were adopted where exact equivalents were unavailable; do not label all entries traditional elicited vocabulary.",
+    "Sample IPA belongs to Bangla headword; Koda/Mahali targets are Bengali script. Do not misattribute Bangla IPA to target languages.",
+    "Text layer has U+0000 substitutions and reordered Bengali characters; not safe for direct lexical import.",
+    "English glosses not present in inspected sample; avoid introducing unreviewed translations.",
+    "Images sourced separately according to introduction; lexical work must not republish illustrations."
+  ],
+  "next": [
+    "Continue Mahali selected edition extraction",
+    "Revisit Koda image-based source separately; do not confuse with Mahali or claim web inventory complete"
+  ],
+  "other_lead": {
+    "url": "https://sppel.org/resources/language-documentation/manda",
+    "finding": "Official page describes dictionary and grammar as work in progress; no downloadable lexical dataset identified on this page"
+  },
+  "online_inspection": {
+    "page": "https://cfelvb.in/dictionary.php",
+    "endpoint": "https://cfelvb.in/api/dictionary/getDictionaryData.php",
+    "method": "POST with query parameters, as in publisher page JavaScript",
+    "language_ids": {
+      "English": 1,
+      "Koda": 104,
+      "Mahali": 303
+    },
+    "sample_limit": 5,
+    "queries": [
+      {
+        "search": "water",
+        "source": 1,
+        "target": 104,
+        "file": "koda-water.json",
+        "count": 2
+      },
+      {
+        "search": "water",
+        "source": 1,
+        "target": 303,
+        "file": "mahali-water.json",
+        "count": 2
+      },
+      {
+        "search": "water",
+        "source": 1,
+        "target": 1,
+        "file": "english-water.json",
+        "count": 0
+      },
+      {
+        "search": "",
+        "source": 104,
+        "target": 1,
+        "file": "english-first5.json",
+        "response": "0"
+      },
+      {
+        "search": "দাঃআ",
+        "source": 104,
+        "target": 1,
+        "file": "english-from-koda-water.json",
+        "count": 2
+      }
+    ],
+    "findings": [
+      "Koda and Mahali responses expose target-language ipa, Bengali-script word, record id, abs_ref concept id, grammar and semantic domain.",
+      "Koda water records4696/8106 refer to concepts1679/2095; source IPA differs (/d̪aʔ a/ versus /daʔa/). Preserve source distinctions.",
+      "Mahali water records8520/12520 refer to the same two concepts and have /d̪aʔ/.",
+      "Reverse English responses give Water in matching domains but omit record/concept IDs. Do not assume array position establishes identity.",
+      "Target transliterated field loses phonetic information; use source IPA for phonemic input, never the generic transliteration.",
+      "audio_file can be a bare directory URL with ref_audio null, not an available recording.",
+      "Deprecated DictionaryDatatable endpoint returned no data for the bounded search.",
+      "Blank search is not a complete listing endpoint."
+    ],
+    "snapshot_sha256": {
+      "dictionary.html": "2269444e680a81339c0645f95d578c944d996800f2e647d7714b01d53575f815",
+      "koda-water.json": "2b7cff75f47a19c780a81d7cb9fc0f07f06bd9142a46aff713ccfd2e5c80973b",
+      "mahali-water.json": "04282fc57c1b2cfa14ea377bf77923c8f03d859dca420bb25542a1623db47f40",
+      "english-water.json": "97522eed85b70c3d2d7a1bf17f4f932284f46011db8e345b3a1264efc8521359",
+      "english-first5.json": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "english-from-koda-water.json": "e82c41684eadae233e94db720a9cee27d8d46d55c4cfc9f526ca113c4a7df9e1",
+      "table-water.json": "4ae27f771bab4c103fc716a09dc1fd71aa3b357540f90b6c66af020364116914"
+    }
+  },
+  "followup_findings": {
+    "lexicon_index": "13 linked domain PDFs; no pagination found in index markup",
+    "adornments_pdf": {
+      "url": "https://cfelvb.in/uploads/pdf/1670217216-Adornments-and-Costumes.pdf",
+      "pages": 10,
+      "source_reported_entries": 60,
+      "languages": "Bangla-Hindi-English; no Koda/Mahali target forms"
+    },
+    "suggestions": "water gives6 suggestions including duplicates; no IDs; empty keyword returns empty body",
+    "koda_edition": {
+      "url": "https://cfelvb.in/uploads/pdf/1675749545-Koda-Bangla-Hindi-English.xps",
+      "pages": 366,
+      "year": 2022,
+      "editors": [
+        "Sabita Pradhan",
+        "Arimardan Kumar Tripathi"
+      ],
+      "isbn": "978-81-957226-1-7",
+      "finding": "XPS front matter has Unicode text; inspected lexical pages10–11 expose only page numbers as Unicode, requiring separate image/glyph extraction"
+    },
+    "mahali_edition": {
+      "url": "https://cfelvb.in/uploads/pdf/1727692288-Mahali-Bangla-Hindi-English%20Dictionary.pdf",
+      "pages": 387,
+      "entries": 2451,
+      "finding": "Mahali IPA and English labels share entries. Selected over Bangla-headed PDF/API for reproducible inventory.",
+      "package": "cfel_mahali_2024"
+    }
+  }
+}

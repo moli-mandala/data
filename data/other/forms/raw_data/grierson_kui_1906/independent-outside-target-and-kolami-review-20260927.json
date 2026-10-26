@@ -1,0 +1,618 @@
+{
+  "reviewer": "/root/asur_finish",
+  "date": "2026-09-27",
+  "status": "all 34 target Kui readings reviewed; Kolami reference expansion not independently licensed",
+  "scope": "All 34 records in outsidechapter-original-reviewed.jsonl, spanning 14 printed pages; source-local comparison review, not an entire-volume claim.",
+  "input_sha256": {
+    "outsidechapter-original-reviewed.jsonl": "a9dcfc8588f40028cf0c7175b83c9061a5f1a39640bb7396f9fe01d1cdd2e3c9",
+    "outside-comparands-first-reading.jsonl": "3a9557d72d1344a7aa41840750c67754040f8f35cf6d8cfb8b5d4296c56e0863"
+  },
+  "method": "Independently viewed every corresponding original image/crop, compared literal forms, glosses and explicit analysis/context; source punctuation and marks were not normalized. Enlarged p295 token crop as a fine-mark control. Original p566 full-page view was also performed during the immediately preceding identity review.",
+  "counts": {
+    "target_records": 34,
+    "printed_pages": 14,
+    "material_literal_corrections": 0,
+    "retained_source_uncertainties": 4,
+    "resolved_quantity_uncertainties": 1
+  },
+  "decisions": [
+    {
+      "source_unit_key": "grierson1906kui:p210:outside:suffix",
+      "form": "añju",
+      "gloss": "",
+      "literal_result": "agrees_with_original",
+      "analysis_result": "source_scope_supported",
+      "evidence": [
+        {
+          "path": "tmp/kui-root-outside-210.png",
+          "sha256": "2b2ee084489639c87498c5f5a5b17587d46961e8d2f2fe47a418badfd287a990"
+        }
+      ],
+      "uncertainty": null
+    },
+    {
+      "source_unit_key": "grierson1906kui:p210:outside:father",
+      "form": "abhañju",
+      "gloss": "father",
+      "literal_result": "agrees_with_original",
+      "analysis_result": "source_scope_supported",
+      "evidence": [
+        {
+          "path": "tmp/kui-root-outside-210.png",
+          "sha256": "2b2ee084489639c87498c5f5a5b17587d46961e8d2f2fe47a418badfd287a990"
+        }
+      ],
+      "uncertainty": {
+        "type": "attribution",
+        "reason": "Probably exemplifies immediately preceding Kui añju; language is not repeated. Retain contextual uncertainty, do not silently assign to Juang or Kui as certain."
+      },
+      "attribution_result": "Context supports Kui but does not repeat the language label; retain the existing explicit attribution uncertainty."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p290:outside:woman",
+      "form": "kuāli",
+      "gloss": "a Kui woman",
+      "literal_result": "agrees_with_original",
+      "analysis_result": "source_scope_supported",
+      "evidence": [
+        {
+          "path": "tmp/kui-outside-290-detail.png",
+          "sha256": "6bf0dbf0ce60cb09fa5af6e0c7d25b1495c3688f2a9bbe38a8b2318c832407d6"
+        }
+      ],
+      "uncertainty": null
+    },
+    {
+      "source_unit_key": "grierson1906kui:p291:outside:plural-1",
+      "form": "gā",
+      "gloss": "",
+      "literal_result": "agrees_with_original",
+      "analysis_result": "source_scope_supported",
+      "evidence": [
+        {
+          "path": "tmp/kui-outside-291-detail.png",
+          "sha256": "5be9586593ba7a3048ffaa6c2218f954a7156809560c1dc529df101b2be67b43"
+        },
+        {
+          "path": "tmp/kui-outside-291-young-man-restored-v2.png",
+          "sha256": "f70aaa9c237136d3d54b4328b8f60b04f734cfb6bd99e84dfc08bc1f0dc13a0a"
+        }
+      ],
+      "uncertainty": null
+    },
+    {
+      "source_unit_key": "grierson1906kui:p291:outside:plural-2",
+      "form": "ṅgā",
+      "gloss": "",
+      "literal_result": "agrees_with_original",
+      "analysis_result": "source_scope_supported",
+      "evidence": [
+        {
+          "path": "tmp/kui-outside-291-detail.png",
+          "sha256": "5be9586593ba7a3048ffaa6c2218f954a7156809560c1dc529df101b2be67b43"
+        },
+        {
+          "path": "tmp/kui-outside-291-young-man-restored-v2.png",
+          "sha256": "f70aaa9c237136d3d54b4328b8f60b04f734cfb6bd99e84dfc08bc1f0dc13a0a"
+        }
+      ],
+      "uncertainty": null
+    },
+    {
+      "source_unit_key": "grierson1906kui:p291:outside:plural-3",
+      "form": "skā",
+      "gloss": "",
+      "literal_result": "agrees_with_original",
+      "analysis_result": "source_scope_supported",
+      "evidence": [
+        {
+          "path": "tmp/kui-outside-291-detail.png",
+          "sha256": "5be9586593ba7a3048ffaa6c2218f954a7156809560c1dc529df101b2be67b43"
+        },
+        {
+          "path": "tmp/kui-outside-291-young-man-restored-v2.png",
+          "sha256": "f70aaa9c237136d3d54b4328b8f60b04f734cfb6bd99e84dfc08bc1f0dc13a0a"
+        }
+      ],
+      "uncertainty": null
+    },
+    {
+      "source_unit_key": "grierson1906kui:p291:outside:young-man",
+      "form": "lāvēñju",
+      "gloss": "a young man",
+      "literal_result": "agrees_with_original",
+      "analysis_result": "source_scope_supported",
+      "evidence": [
+        {
+          "path": "tmp/kui-outside-291-detail.png",
+          "sha256": "5be9586593ba7a3048ffaa6c2218f954a7156809560c1dc529df101b2be67b43"
+        },
+        {
+          "path": "tmp/kui-outside-291-young-man-restored-v2.png",
+          "sha256": "f70aaa9c237136d3d54b4328b8f60b04f734cfb6bd99e84dfc08bc1f0dc13a0a"
+        }
+      ],
+      "uncertainty": {
+        "type": "transcription",
+        "alternatives": [
+          "lāvēñju",
+          "lāveñju"
+        ],
+        "reason": "Narrow original detail appears to include e macron; Nordic locator omits it. Root adjudication requested."
+      },
+      "uncertainty_resolution": "The separate upper horizontal e stroke is visible in the original. Confirm lāvēñju over lāveñju; no paradigm-based harmonization used."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p291:outside:young-man-dative",
+      "form": "lāvēni-ki",
+      "gloss": "a young man",
+      "literal_result": "agrees_with_original",
+      "analysis_result": "source_scope_supported",
+      "evidence": [
+        {
+          "path": "tmp/kui-outside-291-detail.png",
+          "sha256": "5be9586593ba7a3048ffaa6c2218f954a7156809560c1dc529df101b2be67b43"
+        },
+        {
+          "path": "tmp/kui-outside-291-young-man-restored-v2.png",
+          "sha256": "f70aaa9c237136d3d54b4328b8f60b04f734cfb6bd99e84dfc08bc1f0dc13a0a"
+        }
+      ],
+      "uncertainty": null
+    },
+    {
+      "source_unit_key": "grierson1906kui:p293:outside:you",
+      "form": "īru",
+      "gloss": "you",
+      "literal_result": "agrees_with_original",
+      "analysis_result": "source_scope_supported",
+      "evidence": [
+        {
+          "path": "tmp/kui-outside-293-comparands-pronouns.png",
+          "sha256": "bd323d3289a4c1ff658c95dd81c9aa01f73a0fbb0a816097f7415ac6a8f0efb3"
+        },
+        {
+          "path": "tmp/kui-outside-293-comparands-table.png",
+          "sha256": "ac21dfc9a9304f0ad9defba7c569d2160b87c752a04391f83a77c606f875352f"
+        }
+      ],
+      "uncertainty": null
+    },
+    {
+      "source_unit_key": "grierson1906kui:p293:outside:we-exclusive",
+      "form": "āmu",
+      "gloss": "we",
+      "literal_result": "agrees_with_original",
+      "analysis_result": "source_scope_supported",
+      "evidence": [
+        {
+          "path": "tmp/kui-outside-293-comparands-pronouns.png",
+          "sha256": "bd323d3289a4c1ff658c95dd81c9aa01f73a0fbb0a816097f7415ac6a8f0efb3"
+        },
+        {
+          "path": "tmp/kui-outside-293-comparands-table.png",
+          "sha256": "ac21dfc9a9304f0ad9defba7c569d2160b87c752a04391f83a77c606f875352f"
+        }
+      ],
+      "uncertainty": null
+    },
+    {
+      "source_unit_key": "grierson1906kui:p293:outside:we-inclusive",
+      "form": "āju",
+      "gloss": "we",
+      "literal_result": "agrees_with_original",
+      "analysis_result": "source_scope_supported",
+      "evidence": [
+        {
+          "path": "tmp/kui-outside-293-comparands-pronouns.png",
+          "sha256": "bd323d3289a4c1ff658c95dd81c9aa01f73a0fbb0a816097f7415ac6a8f0efb3"
+        },
+        {
+          "path": "tmp/kui-outside-293-comparands-table.png",
+          "sha256": "ac21dfc9a9304f0ad9defba7c569d2160b87c752a04391f83a77c606f875352f"
+        }
+      ],
+      "uncertainty": null
+    },
+    {
+      "source_unit_key": "grierson1906kui:p295:outside:he-struck",
+      "form": "ēañju pāgiteñju",
+      "gloss": "he struck",
+      "literal_result": "agrees_with_original",
+      "analysis_result": "source_scope_supported",
+      "evidence": [
+        {
+          "path": "tmp/kui-outside-295-comparands-clauses.png",
+          "sha256": "af88bedba93d4343d5195bdc8f042066823e3a610868ab652d06ca98d47e5a84"
+        }
+      ],
+      "uncertainty": null
+    },
+    {
+      "source_unit_key": "grierson1906kui:p296:outside:thou-doest",
+      "form": "īnu gi-d-ī",
+      "gloss": "thou doest",
+      "literal_result": "agrees_with_original",
+      "analysis_result": "source_scope_supported",
+      "evidence": [
+        {
+          "path": "tmp/kui-outside-296-comparands-tense.png",
+          "sha256": "d34b0d38bf96b0a381ffc376ed73603bcdec70b85cbbb9a74dbb5dcc5fef3997"
+        }
+      ],
+      "uncertainty": null
+    },
+    {
+      "source_unit_key": "grierson1906kui:p296:outside:past-conjunctive",
+      "form": "t",
+      "gloss": "",
+      "literal_result": "agrees_with_original",
+      "analysis_result": "source_scope_supported",
+      "evidence": [
+        {
+          "path": "tmp/kui-outside-296-comparands-tense.png",
+          "sha256": "d34b0d38bf96b0a381ffc376ed73603bcdec70b85cbbb9a74dbb5dcc5fef3997"
+        }
+      ],
+      "uncertainty": null
+    },
+    {
+      "source_unit_key": "grierson1906kui:p413:outside:ablative",
+      "form": "ṭai",
+      "gloss": "",
+      "literal_result": "agrees_with_original",
+      "analysis_result": "source_scope_supported",
+      "evidence": [
+        {
+          "path": "tmp/kui-outside-413-comparands-ablative.png",
+          "sha256": "457f191f201e23b1065a5f9458cd1d0556412e72cdd1d254afd7b9cb6fe7e7cf"
+        }
+      ],
+      "uncertainty": null
+    },
+    {
+      "source_unit_key": "grierson1906kui:p479:outside:plural-1",
+      "form": "gā",
+      "gloss": "",
+      "literal_result": "agrees_with_original",
+      "analysis_result": "source_scope_supported",
+      "evidence": [
+        {
+          "path": "tmp/kui-outside-479-comparands-plural.png",
+          "sha256": "676687c07ca7536f50e32af093658fb137654ee103c8ccb10cd51eceeb18c6e7"
+        }
+      ],
+      "uncertainty": null
+    },
+    {
+      "source_unit_key": "grierson1906kui:p479:outside:plural-2",
+      "form": "skā",
+      "gloss": "",
+      "literal_result": "agrees_with_original",
+      "analysis_result": "source_scope_supported",
+      "evidence": [
+        {
+          "path": "tmp/kui-outside-479-comparands-plural.png",
+          "sha256": "676687c07ca7536f50e32af093658fb137654ee103c8ccb10cd51eceeb18c6e7"
+        }
+      ],
+      "uncertainty": null
+    },
+    {
+      "source_unit_key": "grierson1906kui:p481:outside:five",
+      "form": "siṅgi",
+      "gloss": "five",
+      "literal_result": "agrees_with_original",
+      "analysis_result": "source_scope_supported",
+      "evidence": [
+        {
+          "path": "tmp/kui-outside-481-comparands-page.png",
+          "sha256": "da3d7a7ebe100207bfdfc5e5845a3e01a9eabdcefcde76b0b5747eb91a17f6a7"
+        },
+        {
+          "path": "tmp/kui-outside-481-comparands-you-he.png",
+          "sha256": "478fa7158010dcb792378b096149de8024ebd038410f5b25d9bce58a94c0f49e"
+        }
+      ],
+      "uncertainty": null
+    },
+    {
+      "source_unit_key": "grierson1906kui:p481:outside:six",
+      "form": "sajgi",
+      "gloss": "six",
+      "literal_result": "agrees_with_original",
+      "analysis_result": "source_scope_supported",
+      "evidence": [
+        {
+          "path": "tmp/kui-outside-481-comparands-page.png",
+          "sha256": "da3d7a7ebe100207bfdfc5e5845a3e01a9eabdcefcde76b0b5747eb91a17f6a7"
+        },
+        {
+          "path": "tmp/kui-outside-481-comparands-you-he.png",
+          "sha256": "478fa7158010dcb792378b096149de8024ebd038410f5b25d9bce58a94c0f49e"
+        }
+      ],
+      "uncertainty": null
+    },
+    {
+      "source_unit_key": "grierson1906kui:p481:outside:thou",
+      "form": "īmu",
+      "gloss": "thou",
+      "literal_result": "agrees_with_original",
+      "analysis_result": "source_scope_supported",
+      "evidence": [
+        {
+          "path": "tmp/kui-outside-481-comparands-page.png",
+          "sha256": "da3d7a7ebe100207bfdfc5e5845a3e01a9eabdcefcde76b0b5747eb91a17f6a7"
+        },
+        {
+          "path": "tmp/kui-outside-481-comparands-you-he.png",
+          "sha256": "478fa7158010dcb792378b096149de8024ebd038410f5b25d9bce58a94c0f49e"
+        }
+      ],
+      "uncertainty": null,
+      "note": "Retain printed īmu, including m, and source thou gloss; no replacement by īnu from other pages."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p481:outside:he",
+      "form": "ēañju",
+      "gloss": "he",
+      "literal_result": "agrees_with_original",
+      "analysis_result": "source_scope_supported",
+      "evidence": [
+        {
+          "path": "tmp/kui-outside-481-comparands-page.png",
+          "sha256": "da3d7a7ebe100207bfdfc5e5845a3e01a9eabdcefcde76b0b5747eb91a17f6a7"
+        },
+        {
+          "path": "tmp/kui-outside-481-comparands-you-he.png",
+          "sha256": "478fa7158010dcb792378b096149de8024ebd038410f5b25d9bce58a94c0f49e"
+        }
+      ],
+      "uncertainty": null
+    },
+    {
+      "source_unit_key": "grierson1906kui:p484:outside:honorific",
+      "form": "mu",
+      "gloss": "",
+      "literal_result": "agrees_with_original",
+      "analysis_result": "source_scope_supported",
+      "evidence": [
+        {
+          "path": "tmp/kui-outside-484-comparands-honorific.png",
+          "sha256": "996cc37eb8d1ec29d9e3282216d04846950db8e6392a07d0d46ae31f9c96dcee"
+        }
+      ],
+      "uncertainty": null
+    },
+    {
+      "source_unit_key": "grierson1906kui:p566:outside:he",
+      "form": "eañju",
+      "gloss": "he",
+      "literal_result": "agrees_with_original",
+      "analysis_result": "source_scope_supported",
+      "evidence": [
+        {
+          "path": "tmp/kui-root-outside-566.png",
+          "sha256": "f2c369fc90d4b65f19307b080a559e62532d02d0373da0c963f2707c10143183"
+        }
+      ],
+      "uncertainty": {
+        "type": "gloss-scope",
+        "reason": "Context is comparison of he-pronouns; immediate clause does not repeat English gloss after Kui form."
+      },
+      "note": "Plain initial e is retained. He remains contextual rather than a repeated direct gloss; surrounding Basim attribution applies to its own comparisons, not this explicitly named Kui token."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p570:outside:i",
+      "form": "ānu",
+      "gloss": "I",
+      "literal_result": "agrees_with_original",
+      "analysis_result": "source_scope_supported",
+      "evidence": [
+        {
+          "path": "tmp/kui-outside-570-comparands-pronouns.png",
+          "sha256": "29ec049c03c183a130c6214abf55565dfc184b619f8d91dab40ee04d27beb0de"
+        }
+      ],
+      "uncertainty": null,
+      "note": "These three Kui literals are directly printed and glossed. The separate Kolami cross-reference adjudication does not alter them."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p570:outside:we",
+      "form": "āmu",
+      "gloss": "we",
+      "literal_result": "agrees_with_original",
+      "analysis_result": "source_scope_supported",
+      "evidence": [
+        {
+          "path": "tmp/kui-outside-570-comparands-pronouns.png",
+          "sha256": "29ec049c03c183a130c6214abf55565dfc184b619f8d91dab40ee04d27beb0de"
+        }
+      ],
+      "uncertainty": null,
+      "note": "These three Kui literals are directly printed and glossed. The separate Kolami cross-reference adjudication does not alter them."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p570:outside:thou",
+      "form": "īnu",
+      "gloss": "thou",
+      "literal_result": "agrees_with_original",
+      "analysis_result": "source_scope_supported",
+      "evidence": [
+        {
+          "path": "tmp/kui-outside-570-comparands-pronouns.png",
+          "sha256": "29ec049c03c183a130c6214abf55565dfc184b619f8d91dab40ee04d27beb0de"
+        }
+      ],
+      "uncertainty": null,
+      "note": "These three Kui literals are directly printed and glossed. The separate Kolami cross-reference adjudication does not alter them."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p623:outside:from",
+      "form": "ṭai",
+      "gloss": "from",
+      "literal_result": "agrees_with_original",
+      "analysis_result": "source_scope_supported",
+      "evidence": [
+        {
+          "path": "tmp/kui-outside-623-comparands-case-goat.png",
+          "sha256": "58947cbca3186f7ddb9b713f4d2ad431976e7ac4047e99a3e90ed99be5b38af0"
+        }
+      ],
+      "uncertainty": null
+    },
+    {
+      "source_unit_key": "grierson1906kui:p623:outside:goat",
+      "form": "oḍā",
+      "gloss": "a goat",
+      "literal_result": "agrees_with_original",
+      "analysis_result": "source_scope_supported",
+      "evidence": [
+        {
+          "path": "tmp/kui-outside-623-comparands-case-goat.png",
+          "sha256": "58947cbca3186f7ddb9b713f4d2ad431976e7ac4047e99a3e90ed99be5b38af0"
+        }
+      ],
+      "uncertainty": null
+    },
+    {
+      "source_unit_key": "grierson1906kui:p623:outside:genitive-1",
+      "form": "i",
+      "gloss": "",
+      "literal_result": "agrees_with_original",
+      "analysis_result": "source_scope_supported",
+      "evidence": [
+        {
+          "path": "tmp/kui-outside-623-comparands-case-goat.png",
+          "sha256": "58947cbca3186f7ddb9b713f4d2ad431976e7ac4047e99a3e90ed99be5b38af0"
+        }
+      ],
+      "uncertainty": null
+    },
+    {
+      "source_unit_key": "grierson1906kui:p623:outside:genitive-2",
+      "form": "ni",
+      "gloss": "",
+      "literal_result": "agrees_with_original",
+      "analysis_result": "source_scope_supported",
+      "evidence": [
+        {
+          "path": "tmp/kui-outside-623-comparands-case-goat.png",
+          "sha256": "58947cbca3186f7ddb9b713f4d2ad431976e7ac4047e99a3e90ed99be5b38af0"
+        }
+      ],
+      "uncertainty": null
+    },
+    {
+      "source_unit_key": "grierson1906kui:p623:outside:locative",
+      "form": "ta",
+      "gloss": "",
+      "literal_result": "agrees_with_original",
+      "analysis_result": "source_scope_supported",
+      "evidence": [
+        {
+          "path": "tmp/kui-outside-623-comparands-case-goat.png",
+          "sha256": "58947cbca3186f7ddb9b713f4d2ad431976e7ac4047e99a3e90ed99be5b38af0"
+        }
+      ],
+      "uncertainty": null
+    },
+    {
+      "source_unit_key": "grierson1906kui:p624:outside:that-base",
+      "form": "ē",
+      "gloss": "that",
+      "literal_result": "agrees_with_original",
+      "analysis_result": "source_scope_supported",
+      "evidence": [
+        {
+          "path": "tmp/kui-outside-alternate645.jpg",
+          "sha256": "fde82a7f6d16ad0c68ac7af2bcf562d06aee2ed8c4243e77c735259b37decf5e"
+        },
+        {
+          "path": "tmp/kui-outside-alternate645-bottom.png",
+          "sha256": "209db3cd7b5ff8c3bd4f3bf3805341ab70a49b7106a442b87f5490a728f683e0"
+        }
+      ],
+      "uncertainty": null
+    },
+    {
+      "source_unit_key": "grierson1906kui:p624:outside:beat",
+      "form": "pāgiĩ",
+      "gloss": "I beat",
+      "literal_result": "agrees_with_original",
+      "analysis_result": "source_scope_supported",
+      "evidence": [
+        {
+          "path": "tmp/kui-outside-alternate645.jpg",
+          "sha256": "fde82a7f6d16ad0c68ac7af2bcf562d06aee2ed8c4243e77c735259b37decf5e"
+        },
+        {
+          "path": "tmp/kui-outside-alternate645-bottom.png",
+          "sha256": "209db3cd7b5ff8c3bd4f3bf3805341ab70a49b7106a442b87f5490a728f683e0"
+        }
+      ],
+      "uncertainty": {
+        "type": "source-mark-encoding",
+        "reason": "Final curved upper i-mark encoded provisionally as tilde consistently with table. No extra length or phonemic nasal inference."
+      },
+      "note": "Distinct final curved mark versus the preceding dotted i is visible; source grapheme encoding remains provisional, without phonemic assertion."
+    },
+    {
+      "source_unit_key": "grierson1906kui:p624:outside:do",
+      "form": "giĩ",
+      "gloss": "I do",
+      "literal_result": "agrees_with_original",
+      "analysis_result": "source_scope_supported",
+      "evidence": [
+        {
+          "path": "tmp/kui-outside-alternate645.jpg",
+          "sha256": "fde82a7f6d16ad0c68ac7af2bcf562d06aee2ed8c4243e77c735259b37decf5e"
+        },
+        {
+          "path": "tmp/kui-outside-alternate645-bottom.png",
+          "sha256": "209db3cd7b5ff8c3bd4f3bf3805341ab70a49b7106a442b87f5490a728f683e0"
+        }
+      ],
+      "uncertainty": {
+        "type": "source-mark-encoding",
+        "reason": "Final curved upper i-mark encoded provisionally as tilde consistently with table. No extra length or phonemic nasal inference."
+      },
+      "note": "Distinct final curved mark versus the preceding dotted i is visible; source grapheme encoding remains provisional, without phonemic assertion."
+    }
+  ],
+  "kolami_reference": {
+    "printed_page": 570,
+    "evidence": [
+      {
+        "path": "tmp/kui-outside-570-comparands-pronouns.png",
+        "sha256": "29ec049c03c183a130c6214abf55565dfc184b619f8d91dab40ee04d27beb0de"
+      }
+    ],
+    "verbatim_reference": "The same forms are usual in Kōlāmī.",
+    "nearest_context": "A full Naiki personal-pronoun table is followed by Compare Kui ānu, I; āmu, we; īnu, thou, etc. The same-forms sentence then follows.",
+    "decision": "documentary_unresolved_reference_no_literal_expansion",
+    "reason": "The immediately preceding Kui examples are a plausible antecedent, but the main paragraph discusses regular Naiki pronoun forms and its complete table. The comparison clause ends etc., so the reference does not unambiguously specify precisely these three literals. Do not manufacture three certain independently attested Kolami rows from that ambiguity.",
+    "affected_source_unit_keys": [
+      "grierson1906kui:p570:outside-comparand:12",
+      "grierson1906kui:p570:outside-comparand:13",
+      "grierson1906kui:p570:outside-comparand:14"
+    ],
+    "candidate_expansions_preserved_as_audit_only": [
+      {
+        "form": "ānu",
+        "gloss": "I"
+      },
+      {
+        "form": "āmu",
+        "gloss": "we"
+      },
+      {
+        "form": "īnu",
+        "gloss": "thou"
+      }
+    ],
+    "recommended_representation": "Retain one physical documentary reference, exact wording and locus, linking both plausible antecedent groups. Keep all candidate expansion keys in audit as not emitted, not deleted. Explicit Kui literals and exact Naiki canonical reuses are unaffected."
+  },
+  "limits": "No independent phonetic interpretation of the source notation key; existing attribution and curved-mark uncertainties remain explicit. No canonical output or frozen owner inputs changed."
+}

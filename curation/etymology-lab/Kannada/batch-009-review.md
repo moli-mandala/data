@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Kannada · Dravidian surveys, 2026-09-21 · batch 009. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Kannada | Proposed etymology | Evidence |
+|---|---|---|---|
+| 41 | **tin** ‘Eat’, **ṭīnnu** ‘eat’, **ṭinu** ‘eat’, **tinnu** ‘eat’ | Proposed reflex of [**DEDR 3263**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=284) | DEDR 3263(a) lists Tamil tiṉ, Kannada tin/tinu/tinnu and the widespread cognate eating verb; Kannada past stem tind- and related inflection belong here. Causatives, food derivatives and subsection (b) right-hand expressions are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (4 records.) |
+| 42 | **sāy** ‘Die’, **saṭṭu** ‘die’, **sattu** ‘die’, **sāyi** ‘die’ | Proposed reflex of [**DEDR 2426**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=212) | DEDR 2426 explicitly compares Tamil cā, Kannada sāy (past sattu), Gondi hā-/sāy-, Kurux khē’enā (keccas), Malto keye and Brahui kahing die. Only the intransitive verb is proposed here; derived causative kill responses require a distinct relation analysis. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (6 records.) |
+| 43 | **vɔsaḍu** ‘new’, **vosaḍu** ‘new’, **vosa** ‘new’ | Proposed reflex of [**DEDR 4275**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=378) | DEDR 4275 gives Tamil putu/putiya, Malayalam putu, Kodagu pudiyë, Kannada posa/hosa/hosadu and Tulu posa/posatu new; Konda pūni and Malto pune belong to the same family. These simple stems and adjectival inflections are selected; new-person nouns and loan-looking alternative stems remain unassigned. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (6 records.) |
+| 44 | **pūvu** ‘flower’ | Proposed reflex of [**DEDR 4345**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=384) | DEDR 4345 records Tamil pū, Malayalam pū/pūvu, Kannada pūvu, Gadaba pū/puvvu, Parji pū, Gondi puŋgar and Kurux pūmp flower. The selected simple flower forms fit these comparanda; Indo-Aryan-looking phul and uncertain responses are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 45 | **mīnu** ‘star’, **mīn** ‘star’, **mīnɨ** ‘star’, **minu** ‘star’ | Proposed reflex of [**DEDR 4876**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=435) | DEDR 4876 attests Tamil, Malayalam, Kota, Toda and Kannada mīn star, and Kurux bīnkō star. These simple survey star forms belong to the shining family; compound veḷḷi-mīn responses require separate component analysis. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (5 records.) |
+
+Proposed assignment rows: **22**. Affected records: **22**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-009.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Kannada/batch-009.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

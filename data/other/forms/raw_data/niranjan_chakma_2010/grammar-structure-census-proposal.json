@@ -1,0 +1,887 @@
+{
+  "reviewer": "asur_finish",
+  "date": "2026-09-27",
+  "status": "Independent whole grammar structure census proposal; not extraction completion or canonical installation",
+  "source_pdf": "tmp/pdfs/chakma-discovery/niranjan-2010.pdf",
+  "source_sha256": "f022a2a448445cdc9840891478bd5864e2ded1ae98985332b51f0938c075842d",
+  "pdf_pages_reviewed": [
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20
+  ],
+  "printed_pages_reviewed": [
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18
+  ],
+  "page_offset": "PDF one-based = printed +2",
+  "method": "All14 originals viewed sequentially, PDFs7–8 using existing original renders and9–20 using PDFium2.2x. One overwritten PNG retained; no OCR rerun. OCR lines are retrieval hints only, not accepted transcription.",
+  "count_policy": "Counts refer to physical blocks/cells/quoted occurrences, not unique lexemes or final emitted rows. Repeated source quotations, base/suffix/output columns, slash alternatives and whole expressions require separate accounting. Counts with ambiguous column role are explicitly labelled; final glyph extraction must preserve that uncertainty. No total word count is inferred by adding heterogeneous measures.",
+  "pages": [
+    {
+      "pdf_page": 7,
+      "printed_page": 5,
+      "original_visually_reviewed": true,
+      "ocr_lines_for_retrieval_only": 28,
+      "blocks": [
+        {
+          "id": "grammar:pdf7:block1",
+          "label": "Introduction and bibliographic source of grammar",
+          "physical_counts": {
+            "prose_sections": 2
+          },
+          "scope": "Bengali editorial context; grammar adaptation attributed to earlier Chakma-language teaching material. Do not emit author names or Bengali metalinguistic exposition as Chakma lexemes.",
+          "source_claims_to_preserve": ""
+        },
+        {
+          "id": "grammar:pdf7:block2",
+          "label": "Definitions of letter, word, sentence and language",
+          "physical_counts": {
+            "definition_blocks": 4,
+            "explicit_target_sentence_examples": 1
+          },
+          "scope": "Mixed Chakma definitions with explicitly labelled Bengali renderings. Recover each target definition as a complete expression, not only the short example; retain letter/word/sentence/language labels by role.",
+          "source_claims_to_preserve": "The sentence example মুই ভাত হেম has a Bengali parallel; word/letter illustrations ক, ঙ and আশা require scope checking because they occur inside Bengali explanation."
+        }
+      ],
+      "layout_or_attribution_cautions": [
+        "The language definition continues in Bengali at the top of PDF8; do not assign that continuation to Chakma. Definitions are not a reason to omit target-language explanatory expressions."
+      ]
+    },
+    {
+      "pdf_page": 8,
+      "printed_page": 6,
+      "original_visually_reviewed": true,
+      "ocr_lines_for_retrieval_only": 32,
+      "blocks": [
+        {
+          "id": "grammar:pdf8:block1",
+          "label": "POS example lists",
+          "physical_counts": {
+            "noun_items": 6,
+            "adjective_items": 5,
+            "pronoun_items": 7,
+            "indeclinable_items": 4,
+            "verb_items": 9,
+            "total_target_list_items": 31
+          },
+          "scope": "Chakma item followed by parenthetical Bengali meaning; Bengali POS headings provide explicit role scope.",
+          "source_claims_to_preserve": "Keep all glossed items and the grammatical class. Parenthetical Bengali is not a second Chakma alternate."
+        },
+        {
+          "id": "grammar:pdf8:block2",
+          "label": "Classifier overview and animal restriction",
+          "physical_counts": {
+            "overview_paragraphs": 1,
+            "animal_usage_note": 1
+          },
+          "scope": "Explicit Chakma marker lists contrasted with Bengali classifiers; inventory all overt target marker spellings and alternatives, not the Bengali comparison markers.",
+          "source_claims_to_preserve": "Vowel/consonant-final conditioning and animal-word usage are source restrictions, not generic encyclopedia prose."
+        },
+        {
+          "id": "grammar:pdf8:block3",
+          "label": "Vowel-final classifier examples",
+          "physical_counts": {
+            "rows": 3,
+            "target_columns_per_row": 3,
+            "target_cell_occurrences": 9
+          },
+          "scope": "Each row has base, separately printed suffix and complete resulting form, plus Bengali gloss.",
+          "source_claims_to_preserve": ""
+        },
+        {
+          "id": "grammar:pdf8:block4",
+          "label": "Consonant-final classifier examples",
+          "physical_counts": {
+            "rows": 3,
+            "target_columns_per_row": 3,
+            "target_cell_occurrences": 9
+          },
+          "scope": "Same three-part structure; do not recover only the completed output.",
+          "source_claims_to_preserve": ""
+        },
+        {
+          "id": "grammar:pdf8:block5",
+          "label": "r-final special examples",
+          "physical_counts": {
+            "rows": 2,
+            "target_columns_per_row": 3,
+            "target_cell_occurrences": 6
+          },
+          "scope": "Two further base + marker + output examples; one wraps across lines.",
+          "source_claims_to_preserve": ""
+        }
+      ],
+      "layout_or_attribution_cautions": []
+    },
+    {
+      "pdf_page": 9,
+      "printed_page": 7,
+      "original_visually_reviewed": true,
+      "ocr_lines_for_retrieval_only": 31,
+      "blocks": [
+        {
+          "id": "grammar:pdf9:block1",
+          "label": "Classifier আন examples",
+          "physical_counts": {
+            "rows": 3,
+            "target_cell_occurrences": 9
+          },
+          "scope": "Three base/suffix/output derivations; Bengali gloss controls.",
+          "source_claims_to_preserve": ""
+        },
+        {
+          "id": "grammar:pdf9:block2",
+          "label": "Vowel-final খান examples",
+          "physical_counts": {
+            "rows": 2,
+            "target_cell_occurrences": 6
+          },
+          "scope": "Two base/suffix/output derivations.",
+          "source_claims_to_preserve": ""
+        },
+        {
+          "id": "grammar:pdf9:block3",
+          "label": "Plural/classifier গুন/উন/আনি/ঘানি examples",
+          "physical_counts": {
+            "rows": 6,
+            "target_cell_occurrences": 18
+          },
+          "scope": "Six base/suffix/output derivations.",
+          "source_claims_to_preserve": "Do not collapse all marker spellings as free variants without source conditioning."
+        },
+        {
+          "id": "grammar:pdf9:block4",
+          "label": "Number introduction",
+          "physical_counts": {
+            "number_categories": 2,
+            "listed_chakma_marker_occurrences": 6
+          },
+          "scope": "Bengali explanation contrasts Bengali plurals with a six-item Chakma marker list; retain target markers as morphology.",
+          "source_claims_to_preserve": ""
+        },
+        {
+          "id": "grammar:pdf9:block5",
+          "label": "First singular/plural pair table",
+          "physical_counts": {
+            "rows": 4,
+            "target_columns": 2,
+            "target_cells": 8
+          },
+          "scope": "Singular and plural Chakma entries each have parenthetical Bengali gloss.",
+          "source_claims_to_preserve": ""
+        },
+        {
+          "id": "grammar:pdf9:block6",
+          "label": "Collective লক heading",
+          "physical_counts": {
+            "explicit_marker_occurrences": 1
+          },
+          "scope": "Rule begins at bottom and examples continue on PDF10.",
+          "source_claims_to_preserve": "Keep collective group interpretation, not only generic plural."
+        }
+      ],
+      "layout_or_attribution_cautions": []
+    },
+    {
+      "pdf_page": 10,
+      "printed_page": 8,
+      "original_visually_reviewed": true,
+      "ocr_lines_for_retrieval_only": 31,
+      "blocks": [
+        {
+          "id": "grammar:pdf10:block1",
+          "label": "Collective singular/plural continuation",
+          "physical_counts": {
+            "rows": 4,
+            "target_cells": 8
+          },
+          "scope": "Fourth right cell is a complete multiword expression, not one token.",
+          "source_claims_to_preserve": ""
+        },
+        {
+          "id": "grammar:pdf10:block2",
+          "label": "Honorific plural table",
+          "physical_counts": {
+            "rows": 3,
+            "target_cells": 6,
+            "usage_explanations": 3,
+            "explicit_marker_occurrences": 1
+          },
+          "scope": "Three singular/plural pairs with longer Bengali honorific/kinship usage explanations.",
+          "source_claims_to_preserve": "Preserve honorific address and respectful reference restrictions; no unqualified plural-only treatment."
+        },
+        {
+          "id": "grammar:pdf10:block3",
+          "label": "Four gender-class lists",
+          "physical_counts": {
+            "masculine_items": 5,
+            "feminine_items": 5,
+            "neuter_items": 6,
+            "common_gender_items": 6,
+            "target_items": 22
+          },
+          "scope": "Four labelled target lists; glosses/explanations are Bengali.",
+          "source_claims_to_preserve": "Common-gender serving-person gloss contains a slash between Bengali gendered descriptions; do not misclassify it as two target forms."
+        },
+        {
+          "id": "grammar:pdf10:block4",
+          "label": "Ordinary lexical masculine/feminine pairs",
+          "physical_counts": {
+            "rows": 4,
+            "target_cells": 8
+          },
+          "scope": "Continues for three more rows on PDF11.",
+          "source_claims_to_preserve": ""
+        }
+      ],
+      "layout_or_attribution_cautions": []
+    },
+    {
+      "pdf_page": 11,
+      "printed_page": 9,
+      "original_visually_reviewed": true,
+      "ocr_lines_for_retrieval_only": 29,
+      "blocks": [
+        {
+          "id": "grammar:pdf11:block1",
+          "label": "Ordinary gender pair continuation",
+          "physical_counts": {
+            "rows": 3,
+            "target_cells": 6
+          },
+          "scope": "Completes the seven-row table begun PDF10.",
+          "source_claims_to_preserve": ""
+        },
+        {
+          "id": "grammar:pdf11:block2",
+          "label": "o/a versus i gender formation",
+          "physical_counts": {
+            "rows": 5,
+            "target_cells": 10,
+            "heading_marker_occurrences": 3
+          },
+          "scope": "Two target columns with Bengali glosses; explicit source vowel/ending rule.",
+          "source_claims_to_preserve": ""
+        },
+        {
+          "id": "grammar:pdf11:block3",
+          "label": "yā versus ni gender formation",
+          "physical_counts": {
+            "rows": 5,
+            "target_cells": 10,
+            "heading_marker_occurrences": 2,
+            "additional_usage_notes": 1
+          },
+          "scope": "Five pairs plus honorific masculine name-ending usage note.",
+          "source_claims_to_preserve": ""
+        },
+        {
+          "id": "grammar:pdf11:block4",
+          "label": "Personal-name gender endings",
+          "physical_counts": {
+            "rows": 6,
+            "physical_target_cells": 12,
+            "target_forms_including_slash_alternates": 18,
+            "heading_marker_occurrences": 4
+          },
+          "scope": "Each male cell has one form and each female cell has two slash-separated forms. No lexical name meanings supplied; retain name/gender source scope without invented glosses.",
+          "source_claims_to_preserve": ""
+        },
+        {
+          "id": "grammar:pdf11:block5",
+          "label": "bana/bani gender formation",
+          "physical_counts": {
+            "rows": 3,
+            "target_cells": 6,
+            "heading_marker_occurrences": 2
+          },
+          "scope": "Three pairs with Bengali meanings.",
+          "source_claims_to_preserve": ""
+        }
+      ],
+      "layout_or_attribution_cautions": []
+    },
+    {
+      "pdf_page": 12,
+      "printed_page": 10,
+      "original_visually_reviewed": true,
+      "ocr_lines_for_retrieval_only": 35,
+      "blocks": [
+        {
+          "id": "grammar:pdf12:block1",
+          "label": "Gender distinguished by preceding word",
+          "physical_counts": {
+            "rows": 5,
+            "target_cells": 10
+          },
+          "scope": "Ten complete target phrases; Bengali parenthetical glosses can themselves contain alternatives.",
+          "source_claims_to_preserve": "Preserve full compounds/phrases; do not fabricate independently glossed constituents."
+        },
+        {
+          "id": "grammar:pdf12:block2",
+          "label": "Agent case",
+          "physical_counts": {
+            "whole_target_examples": 3,
+            "overt_marker_occurrences": 2,
+            "zero_marker_controls": 1
+          },
+          "scope": "Three Chakma expressions; second Bengali gloss is a ditto symbol.",
+          "source_claims_to_preserve": "Preserve zero morphology as control and expand the explicit Bengali ditto only with its scope retained."
+        },
+        {
+          "id": "grammar:pdf12:block3",
+          "label": "Object case",
+          "physical_counts": {
+            "whole_target_examples": 1,
+            "overt_marker_occurrences": 1
+          },
+          "scope": "Explicit case-marker heading and Chakma/Bengali sentence pair.",
+          "source_claims_to_preserve": ""
+        },
+        {
+          "id": "grammar:pdf12:block4",
+          "label": "Instrumental case",
+          "physical_counts": {
+            "whole_target_examples": 2,
+            "overt_marker_occurrences": 2
+          },
+          "scope": "Two markers separated by slash; two complete example sentences.",
+          "source_claims_to_preserve": ""
+        },
+        {
+          "id": "grammar:pdf12:block5",
+          "label": "Recipient case",
+          "physical_counts": {
+            "whole_target_examples": 1,
+            "overt_marker_occurrences": 1
+          },
+          "scope": "One complete example and marker; source Bengali translation includes culturally specific referent.",
+          "source_claims_to_preserve": ""
+        }
+      ],
+      "layout_or_attribution_cautions": []
+    },
+    {
+      "pdf_page": 13,
+      "printed_page": 11,
+      "original_visually_reviewed": true,
+      "ocr_lines_for_retrieval_only": 31,
+      "blocks": [
+        {
+          "id": "grammar:pdf13:block1",
+          "label": "Ablative",
+          "physical_counts": {
+            "whole_target_examples": 1,
+            "marker_occurrences": 1
+          },
+          "scope": "Chakma example with Bengali translation.",
+          "source_claims_to_preserve": ""
+        },
+        {
+          "id": "grammar:pdf13:block2",
+          "label": "Genitive relation",
+          "physical_counts": {
+            "whole_target_examples": 1,
+            "marker_occurrences": 1
+          },
+          "scope": "Chakma example with Bengali translation.",
+          "source_claims_to_preserve": ""
+        },
+        {
+          "id": "grammar:pdf13:block3",
+          "label": "Locative",
+          "physical_counts": {
+            "whole_target_examples": 2,
+            "marker_occurrences": 2
+          },
+          "scope": "Two alternative markers; two whole expressions.",
+          "source_claims_to_preserve": ""
+        },
+        {
+          "id": "grammar:pdf13:block4",
+          "label": "Root explanation",
+          "physical_counts": {
+            "whole_target_examples": 1,
+            "standalone_finite_form_occurrences": 4,
+            "root_occurrences": 5
+          },
+          "scope": "One complete example, a repeated quoted verb, three further quoted finite verbs, and repeated খা plus three subsequent roots. Root sign is notation, not part of the lexical form.",
+          "source_claims_to_preserve": "All target quotations inside Bengali prose must be recovered; root-to-form links are source claims, not inferred from resemblance."
+        },
+        {
+          "id": "grammar:pdf13:block5",
+          "label": "Finite/nonfinite explanation",
+          "physical_counts": {
+            "whole_target_examples": 2,
+            "repeated_quoted_form_mentions": 3
+          },
+          "scope": "Two whole examples plus one repeated finite and two repeated nonfinite verb mentions in explanatory prose.",
+          "source_claims_to_preserve": ""
+        },
+        {
+          "id": "grammar:pdf13:block6",
+          "label": "Nonfinite endings and conditional examples",
+          "physical_counts": {
+            "overview_marker_occurrences": 5,
+            "repeated_heading_marker_occurrences": 2,
+            "whole_target_examples": 2
+          },
+          "scope": "List লে/ইলে, দে/ইদে, ইনে; two complete examples under first pair. Continued PDF14.",
+          "source_claims_to_preserve": ""
+        }
+      ],
+      "layout_or_attribution_cautions": []
+    },
+    {
+      "pdf_page": 14,
+      "printed_page": 12,
+      "original_visually_reviewed": true,
+      "ocr_lines_for_retrieval_only": 32,
+      "blocks": [
+        {
+          "id": "grammar:pdf14:block1",
+          "label": "Nonfinite examples continued",
+          "physical_counts": {
+            "whole_target_examples": 3,
+            "heading_marker_occurrences": 3
+          },
+          "scope": "Two clauses under দে/ইদে and one under ইনে; first two are separate target/Bengali paired expressions even when same physical paragraph.",
+          "source_claims_to_preserve": ""
+        },
+        {
+          "id": "grammar:pdf14:block2",
+          "label": "Three basic tenses",
+          "physical_counts": {
+            "whole_target_examples": 3,
+            "tense_headings": 3
+          },
+          "scope": "Three complete forms of the eat expression with Bengali translations.",
+          "source_claims_to_preserve": ""
+        },
+        {
+          "id": "grammar:pdf14:block3",
+          "label": "Detailed tense/mood inventory and examples",
+          "physical_counts": {
+            "labelled_categories": 8,
+            "whole_target_examples": 8
+          },
+          "scope": "Includes source English Past Substantial and Present Imperative labels; later explanation provides intended semantics.",
+          "source_claims_to_preserve": "Preserve source terminology and qualification rather than force a modern analysis from English tense names alone."
+        },
+        {
+          "id": "grammar:pdf14:block4",
+          "label": "Root-ending classes and first analysed example",
+          "physical_counts": {
+            "abstract_vowel_class_mentions": 3,
+            "whole_target_examples": 1,
+            "root_plus_ending_analyses": 1
+          },
+          "scope": "First analysed root example continues across next page; abstract vowel labels are contextual, explicit root and endings are morphological evidence.",
+          "source_claims_to_preserve": ""
+        }
+      ],
+      "layout_or_attribution_cautions": []
+    },
+    {
+      "pdf_page": 15,
+      "printed_page": 13,
+      "original_visually_reviewed": true,
+      "ocr_lines_for_retrieval_only": 32,
+      "blocks": [
+        {
+          "id": "grammar:pdf15:block1",
+          "label": "Root classes continued",
+          "physical_counts": {
+            "labelled_example_rows": 4,
+            "finite_target_alternates_in_first_three_rows": 4,
+            "incomplete_expression_rows": 1,
+            "printed_root_plus_ending_analyses": 4
+          },
+          "scope": "One top-row slash alternate, two further complete examples, and an ellipsis-bearing derived-root example. Keep incomplete source expression as such, not reconstructed full verb.",
+          "source_claims_to_preserve": ""
+        },
+        {
+          "id": "grammar:pdf15:block2",
+          "label": "Four roots introducing all paradigms",
+          "physical_counts": {
+            "explicit_roots": 4,
+            "english_glosses": 4
+          },
+          "scope": "Take/eat/do/give roots; following paradigms are four-root columns compressed by slash notation.",
+          "source_claims_to_preserve": ""
+        },
+        {
+          "id": "grammar:pdf15:block3",
+          "label": "Present indefinite table",
+          "physical_counts": {
+            "person_number_rows": 6,
+            "predicate_forms": 24,
+            "suffix_column_marker_occurrences": 7
+          },
+          "scope": "Six groups each have four printed verbal alternatives and shared pronoun; third-singular suffix cell has two alternatives.",
+          "source_claims_to_preserve": "উত্তম is first person, মধ্যম second, প্রথম third in this Bengali grammar terminology."
+        },
+        {
+          "id": "grammar:pdf15:block4",
+          "label": "Present continuous start",
+          "physical_counts": {
+            "person_number_rows_with_forms": 3,
+            "predicate_forms": 12,
+            "suffix_column_cells": 3,
+            "trailing_continuation_heading_only": 1
+          },
+          "scope": "First singular/plural and second-singular groups printed; second-plural heading continues PDF16.",
+          "source_claims_to_preserve": "Second-singular heading contains printed te rather than expected tui; retain literal source pronoun and source-heading conflict."
+        }
+      ],
+      "layout_or_attribution_cautions": []
+    },
+    {
+      "pdf_page": 16,
+      "printed_page": 14,
+      "original_visually_reviewed": true,
+      "ocr_lines_for_retrieval_only": 30,
+      "blocks": [
+        {
+          "id": "grammar:pdf16:block1",
+          "label": "Present continuous continuation",
+          "physical_counts": {
+            "person_number_rows": 3,
+            "predicate_forms": 12,
+            "suffix_column_cells": 3
+          },
+          "scope": "Second plural and third singular/plural; first row inherits previous page heading.",
+          "source_claims_to_preserve": ""
+        },
+        {
+          "id": "grammar:pdf16:block2",
+          "label": "Present perfect table",
+          "physical_counts": {
+            "person_number_rows": 5,
+            "predicate_forms_in_main_column": 18,
+            "repeated_full_forms_in_suffix_column": 2,
+            "suffix_marker_cells": 5,
+            "unprinted_third_plural_cells": 1
+          },
+          "scope": "Main first-singular cell wraps four forms; its suffix column also prints two complete forms. First plural prints only two forms. Third plural is absent, not to be completed by analogy.",
+          "source_claims_to_preserve": ""
+        },
+        {
+          "id": "grammar:pdf16:block3",
+          "label": "Present imperative start",
+          "physical_counts": {
+            "person_number_rows": 4,
+            "rows_with_predicates": 3,
+            "main_predicate_forms": 12,
+            "blank_first_singular_row": 1,
+            "overt_suffix_cells": 2,
+            "zero_suffix_control_cells": 1,
+            "trailing_third_person_heading_only": 1
+          },
+          "scope": "First-singular pronoun is printed but no verb; second-singular includes zero marker; third-singular heading continues PDF17.",
+          "source_claims_to_preserve": ""
+        }
+      ],
+      "layout_or_attribution_cautions": []
+    },
+    {
+      "pdf_page": 17,
+      "printed_page": 15,
+      "original_visually_reviewed": true,
+      "ocr_lines_for_retrieval_only": 54,
+      "blocks": [
+        {
+          "id": "grammar:pdf17:block1",
+          "label": "Present imperative continuation",
+          "physical_counts": {
+            "person_number_rows": 2,
+            "ordinary_predicate_forms": 8,
+            "additional_parenthetical_form_in_main_column": 1,
+            "right_column_misplaced_pronoun_cells": 1,
+            "ordinary_suffix_cells": 1
+          },
+          "scope": "Third singular/plural. Parenthetical ওক occurs inside first verbal group while right column prints তারা; preserve placement and typed uncertainty rather than silently swap columns.",
+          "source_claims_to_preserve": ""
+        },
+        {
+          "id": "grammar:pdf17:block2",
+          "label": "Past indefinite table",
+          "physical_counts": {
+            "person_number_rows": 6,
+            "predicate_forms": 24,
+            "suffix_cells": 6
+          },
+          "scope": "Four roots per row; third-singular first two items separated by space rather than slash. Preserve source sequence and delimiters.",
+          "source_claims_to_preserve": ""
+        },
+        {
+          "id": "grammar:pdf17:block3",
+          "label": "Past habitual start",
+          "physical_counts": {
+            "person_number_rows_with_forms": 1,
+            "predicate_forms": 4,
+            "suffix_cells": 1,
+            "trailing_first_plural_heading_only": 1
+          },
+          "scope": "First plural continues next page.",
+          "source_claims_to_preserve": ""
+        }
+      ],
+      "layout_or_attribution_cautions": []
+    },
+    {
+      "pdf_page": 18,
+      "printed_page": 16,
+      "original_visually_reviewed": true,
+      "ocr_lines_for_retrieval_only": 56,
+      "blocks": [
+        {
+          "id": "grammar:pdf18:block1",
+          "label": "Past habitual continuation",
+          "physical_counts": {
+            "person_number_rows": 5,
+            "predicate_forms": 20,
+            "nonblank_suffix_cells": 4,
+            "blank_suffix_cells": 1
+          },
+          "scope": "Third-plural suffix column blank; do not derive one from finite forms.",
+          "source_claims_to_preserve": ""
+        },
+        {
+          "id": "grammar:pdf18:block2",
+          "label": "Past Substantial table start",
+          "physical_counts": {
+            "physical_person_number_rows": 6,
+            "predicate_forms": 22,
+            "suffix_cells": 6,
+            "repeated_second_person_rows": 2,
+            "incomplete_two_form_second_plural_row": 1,
+            "trailing_third_person_heading_only": 1
+          },
+          "scope": "First sg/pl, second sg/pl, then repeated second sg/pl. Earlier second-plural row has only two predicates; later repeated row has four. These are physical source attestations, not OCR duplicates.",
+          "source_claims_to_preserve": "Preserve source English Past Substantial label and earlier would-take explanation. Do not silently deduplicate repeated groups or invent absent predicates."
+        }
+      ],
+      "layout_or_attribution_cautions": []
+    },
+    {
+      "pdf_page": 19,
+      "printed_page": 17,
+      "original_visually_reviewed": true,
+      "ocr_lines_for_retrieval_only": 31,
+      "blocks": [
+        {
+          "id": "grammar:pdf19:block1",
+          "label": "Past Substantial continuation",
+          "physical_counts": {
+            "person_number_rows": 2,
+            "predicate_forms": 8,
+            "suffix_cells": 2
+          },
+          "scope": "Third singular/plural continue PDF18.",
+          "source_claims_to_preserve": ""
+        },
+        {
+          "id": "grammar:pdf19:block2",
+          "label": "Future indefinite table",
+          "physical_counts": {
+            "person_number_rows": 6,
+            "predicate_forms": 24,
+            "suffix_cells": 6
+          },
+          "scope": "Four verbal alternatives per group; line wraps and missing slash delimiters must not change physical scope.",
+          "source_claims_to_preserve": "Bengali heading says সাধারণ অতীত (ordinary past) while English says Future Indefinite. Preserve explicit conflicting labels; do not silently emend."
+        },
+        {
+          "id": "grammar:pdf19:block3",
+          "label": "Sentence word order",
+          "physical_counts": {
+            "abstract_order_skeletons": 1,
+            "whole_target_examples": 1,
+            "aligned_target_constituents": 3
+          },
+          "scope": "First affirmative S-O-V expression; Bengali translation is control. Skeleton labels are metalinguistic, not target lexical forms.",
+          "source_claims_to_preserve": ""
+        }
+      ],
+      "layout_or_attribution_cautions": []
+    },
+    {
+      "pdf_page": 20,
+      "printed_page": 18,
+      "original_visually_reviewed": true,
+      "ocr_lines_for_retrieval_only": 25,
+      "blocks": [
+        {
+          "id": "grammar:pdf20:block1",
+          "label": "Affirmative continuation",
+          "physical_counts": {
+            "whole_target_examples": 2,
+            "aligned_target_constituents": 6
+          },
+          "scope": "Completes three examples begun PDF19.",
+          "source_claims_to_preserve": ""
+        },
+        {
+          "id": "grammar:pdf20:block2",
+          "label": "Interrogative word order",
+          "physical_counts": {
+            "whole_target_examples": 3,
+            "abstract_order_skeletons": 1
+          },
+          "scope": "Two tabular and one running example; preserve interrogative particles and question punctuation with source scope.",
+          "source_claims_to_preserve": ""
+        },
+        {
+          "id": "grammar:pdf20:block3",
+          "label": "Negative word order",
+          "physical_counts": {
+            "whole_target_examples": 3,
+            "abstract_order_skeletons": 1,
+            "explicit_preverbal_negative_form": 1
+          },
+          "scope": "Quoted negative ন plus its three example occurrences; Bengali negative-control sentence must not be emitted as target.",
+          "source_claims_to_preserve": "Source explicitly contrasts preverbal Chakma negative position with Bengali; preserve complete sentences and target marker."
+        },
+        {
+          "id": "grammar:pdf20:block4",
+          "label": "Locative constituent order",
+          "physical_counts": {
+            "whole_target_examples": 3,
+            "abstract_order_skeletons": 1
+          },
+          "scope": "Three complete expressions with Bengali translations.",
+          "source_claims_to_preserve": ""
+        },
+        {
+          "id": "grammar:pdf20:block5",
+          "label": "Nonfinite constituent order",
+          "physical_counts": {
+            "whole_target_examples": 3,
+            "abstract_order_skeletons": 1
+          },
+          "scope": "Three complete expressions; nonfinite placement explicitly scoped between locative and object.",
+          "source_claims_to_preserve": ""
+        }
+      ],
+      "layout_or_attribution_cautions": []
+    }
+  ],
+  "cross_page_tables": [
+    {
+      "table": "ordinary lexical gender pairs",
+      "pdf_pages": [
+        10,
+        11
+      ],
+      "rows": 7,
+      "target_cells": 14
+    },
+    {
+      "table": "present indefinite",
+      "pdf_pages": [
+        15
+      ],
+      "groups": 6,
+      "main_predicate_forms": 24
+    },
+    {
+      "table": "present continuous",
+      "pdf_pages": [
+        15,
+        16
+      ],
+      "groups": 6,
+      "main_predicate_forms": 24
+    },
+    {
+      "table": "present perfect",
+      "pdf_pages": [
+        16
+      ],
+      "groups": 5,
+      "main_predicate_forms": 18,
+      "additional_suffix_column_full_forms": 2
+    },
+    {
+      "table": "present imperative",
+      "pdf_pages": [
+        16,
+        17
+      ],
+      "printed_person_number_groups": 6,
+      "nonblank_groups": 5,
+      "ordinary_predicate_forms": 20,
+      "additional_mixed_parenthetical_form": 1
+    },
+    {
+      "table": "past indefinite",
+      "pdf_pages": [
+        17
+      ],
+      "groups": 6,
+      "main_predicate_forms": 24
+    },
+    {
+      "table": "past habitual",
+      "pdf_pages": [
+        17,
+        18
+      ],
+      "groups": 6,
+      "main_predicate_forms": 24
+    },
+    {
+      "table": "Past Substantial",
+      "pdf_pages": [
+        18,
+        19
+      ],
+      "physical_groups_including_repetitions": 8,
+      "main_predicate_forms": 30
+    },
+    {
+      "table": "future indefinite",
+      "pdf_pages": [
+        19
+      ],
+      "groups": 6,
+      "main_predicate_forms": 24
+    }
+  ],
+  "mandatory_recovery_rules": [
+    "Recover target-language definitions and examples embedded in Bengali prose, not only large tables.",
+    "Recover every explicit bound marker and root as morphology; zero markers and abstract grammatical variables remain typed controls.",
+    "Retain both the complete source expression and explicitly printed analytical components; do not invent absent stems or spread whole translations onto every component.",
+    "Parenthetical Bengali and English usually provide glosses/control; slash-separated Bengali glosses are not target variants.",
+    "Resolve across-page headings before assigning person, number, tense or case; keep literal pronouns when source headings conflict.",
+    "Preserve repeated groups, missing cells, duplicated side-column forms and irregular label placements as physical evidence before any exact-analysis reuse.",
+    "Affix combinations and grammatical restrictions should be represented source-specifically; comparison/format similarity does not justify variant or derivation edges.",
+    "Every original glyph still needs extraction/review; this structure census is not a complete lexical transcript."
+  ],
+  "canonical_changed": false,
+  "heavy_jobs_or_ocr_run": false
+}

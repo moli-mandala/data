@@ -1,0 +1,46 @@
+{
+  "status": "installed_source_stage_full_pipeline_deferred",
+  "rows": 648,
+  "audit_units": 546,
+  "file_counts": {
+    "20260927-peterson-turi-grammar.csv": 370,
+    "20260921-peterson-turi.csv": 246,
+    "20260927-peterson-turi-historical.csv": 32
+  },
+  "uncertain_rows": 16,
+  "audit_status_counts": {
+    "ingested": 224,
+    "unelicited": 51,
+    "emitted": 229,
+    "zero_morphology_evidence_only": 2,
+    "structural_blank": 2,
+    "documentary_name": 5,
+    "foreign_control": 20,
+    "historical_editorial_evidence": 2,
+    "comparison_unassigned": 4,
+    "reconstructed_analysis": 2,
+    "phonological_inventory": 5
+  },
+  "exact_reuses": 69,
+  "frozen_manifest_sha256": "43b2458b907665d70637735c652f523712e51fb47e67b12fbad458f6a99a848d",
+  "overlay_manifest_sha256": "f05351b2ee7f3adaf6c3231b18b277aa9714f82460bd30a31d91e923405d9a57",
+  "canonical_sha256": {
+    "data/data/other/forms/20260927-peterson-turi-grammar.csv": "3b2dd08a92a7fe345d6b00ba599eb502682f665046b77dbaef79f95afd696938",
+    "data/data/other/forms/20260921-peterson-turi.csv": "d52266cf0b0f40a4ae2d73699b3be808ff815de5a0f2a1a5923cbeb7c7a6b9f8",
+    "data/data/other/forms/20260927-peterson-turi-historical.csv": "f8f2a6628aa341b7047d2cd586d2882a0e7d0a077c1d82051337718b02fb16da",
+    "data/conversion/peterson-turi-grammar.txt": "2fc14fbd5fa0cd59804e1e65cf7f5b336dfd3981cba926606e9418296e606911",
+    "data/conversion/peterson-turi-historical.txt": "96591b19cc3da36124e330157349a77d93afbac08aa449aba033efeab84fa790",
+    "data/data/other/forms/20260921-peterson-turi.yaml": "63724a5de24559ad51afd0eaf83c9d7385c70efd5afa8682378afcc96a67828d",
+    "data/data/other/forms/20260927-peterson-turi-grammar.yaml": "1a5e61e44effff97f8625be9e8b004100979131703faf4cc01f073bb82fe532f",
+    "data/data/other/forms/20260927-peterson-turi-historical.yaml": "f5fc3498e0f3eef4250386976a5e4f4c6d6d650cb249df63a58d11755448943c"
+  },
+  "tests": "................................                                         [100%]\n32 passed in 6.46s\n",
+  "tests_log_sha256": "4acbb393975261f020597c34f6bd9f3a6775694d1613244973d11d7faa31ab69",
+  "deferred": [
+    "full CLDF",
+    "full suite",
+    "compiled reference/graph refresh",
+    "database",
+    "browser QA"
+  ]
+}

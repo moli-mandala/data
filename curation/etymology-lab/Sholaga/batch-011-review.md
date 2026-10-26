@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Sholaga · Dravidian surveys, 2026-09-21 · batch 011. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Sholaga | Proposed etymology | Evidence |
+|---|---|---|---|
+| 51 | **hɔḷa** ‘river’ | Proposed reflex of [**DEDR 4318**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=382) | DEDR4318 explicitly gives Malayalam puḻa, Kannada poḻe and Kodagu poḷe river. These southern poḷ-/hoḷ-/puya river responses retain the comparative river stem, including initial p/h and the Paniya lateral-to-glide correspondence; the source forms are not normalized. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 52 | **inte** ‘behind’ | Proposed reflex of [**DEDR 4205**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=373) | DEDR4205 gives Tamil piṉ, Malayalam pimpu, Kota pibal/piga·r and Kannada pinde/him behind. These southern pin-/pimp-/pih-/in(d)- survey responses retain the documented back/behind stem with ordinary locative extensions and regular Kannada-area loss of initial p/h. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 53 | **ēnu** ‘louse’ | Proposed reflex of [**DEDR 4449**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=393) | DEDR4449 gives the widespread southern pēn/pēnu louse family, including Kannada pēn, Malayalam pēn and Telugu pēnu. These survey pyānu/pēnə/yɛ̄ñu/ēnu forms retain the louse stem with ordinary final vowels or Kannada-area initial weakening; survey palatalization is preserved. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 54 | **kōcu** ‘child’ | Proposed reflex of [**DEDR 1873**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=171) | DEDR1873 explicitly gives Kannada kūsu infant/babe and Toda kūx girl/daughter. Survey Irula kusu, Badaga kūśu and Sholaga kōcu child compare with the Nilgiri/southern infant noun; the questioned Gondi aunt comparison is not used. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 55 | **cinnā** ‘gold’ | Proposed reflex of [**DEDR 2596**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=225) | DEDR2596 gives Tamil ciṉṉam gold coin, Kota cinm gold, Toda sin gold/ear-ring and Kannada/Tulu cinna gold. Survey Nilgiri/southern cinnā/śinnā/sīnnā/sinum forms retain this specific gold noun, including Kota final nasal expansion; no connection to the homonymous small adjective is proposed. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+
+Proposed assignment rows: **5**. Affected records: **5**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-011.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Sholaga/batch-011.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

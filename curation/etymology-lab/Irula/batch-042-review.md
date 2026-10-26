@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Irula · Dravidian surveys, 2026-09-21 · batch 042. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Irula | Proposed etymology | Evidence |
+|---|---|---|---|
+| 206 | **tema** ‘wet’ | Proposed reflex of [**DEDR 2539**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=221) | DEDR2539 gives Telugu temma wetness/moisture, Tulu śima moistness and Tamil cemmal water. Survey tēma wet is a comparative southern moisture-family response with its source consonant and vowel spelling preserved; no immediate Telugu donor is inferred from resemblance alone. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 207 | **kɔnja** ‘few’, **konca** ‘few’, **koncam** ‘few’, **koñjam** ‘few’, **kɔñja** ‘few’, **koñjo** ‘few’ | Proposed reflex of [**DEDR 2041**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=184) | DEDR2041 explicitly gives Tamil/Malayalam koñcam a little, Kannada koñca/koñce and Telugu koncemu a little/few. These koñca/koñjam/koñjo/kocca survey few responses retain that specific little-quantity family with source affricate/nasal notation and ordinary endings. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (9 records.) |
+| 208 | **koravɨ** ‘few’ | Proposed reflex of [**DEDR 1851**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=168) | DEDR1851 gives Malayalam kuṟaccal scarcity, kuṟavu deficiency and kuṟaya/kuṟē little, with Tamil kuṟaivu small quantity. Survey kuracɨ/kurac/koravu few is a comparative reduced-quantity use of that family, retaining source vowels and final consonants. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 209 | **silɛ** ‘few’ | Proposed reflex of [**DEDR 1571**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=144) | DEDR1571 gives Tamil cila/cil few and Kannada kelavu a few. Survey sile/silaðe/kelabu retains this few/some family with ordinary endings and source labial/fricative notation; it is distinct from the broader small adjective family with unresolved parent d1594. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 210 | **cīnnaḍu** ‘few’, **cīnnaḍɨ** ‘few’ | Proposed reflex of [**DEDR 2594**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=225) | DEDR2594 gives Tamil/Malayalam cinna small/little and Kannada cinna smallness. Irula cinnadɨ few is a comparative quantity use of that small adjective with its ordinary neuter ending; the source few gloss is preserved. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (2 records.) |
+
+Proposed assignment rows: **14**. Affected records: **14**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-042.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Irula/batch-042.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

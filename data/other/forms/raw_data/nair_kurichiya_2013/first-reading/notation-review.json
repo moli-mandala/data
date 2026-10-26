@@ -1,0 +1,43 @@
+{
+  "status": "source-wide literal review pending; do not emit normalized forms",
+  "source_pdf_sha256": "4d2588987dab5d15c62ecc95330ccf7e925a9bce80d08068b91ca3f48c8cc5af",
+  "original_pages_viewed": [34, 35, 36],
+  "enlarged_crops": [
+    "pdf34-initial-table-crop.png",
+    "pdf35-first-tables-crop.png",
+    "pdf36-pronouns-crop.png"
+  ],
+  "verified_notation_classes": [
+    {
+      "extracted": "U+F019 legacy glyph after a letter",
+      "visible": "tilde above preceding letter",
+      "unicode_preservation_candidate": "U+0303 combining tilde",
+      "crosscheck": "Same pinned Nair PDF, independently reviewed Aranadan chapter notation report; Kurichiya page 34 e-nasal and page 36 pronouns visibly agree"
+    },
+    {
+      "extracted": "U+F02C legacy glyph after a letter",
+      "visible": "round dot below preceding letter",
+      "unicode_preservation_candidate": "U+0323 combining dot below",
+      "crosscheck": "Same pinned Nair PDF, independently reviewed Aranadan notation report; Kurichiya page 34 retroflex-looking letters and page 36 pronouns visibly agree"
+    },
+    {
+      "extracted": "no character for drawn underline",
+      "visible": "selective horizontal underline under letters in both Malayalam and Kurichiya forms",
+      "unicode_preservation_candidate": "U+0332 combining low line only on exact visually confirmed source letters",
+      "examples": [
+        "PDF34 first table: line 'a measure', underline under l before final i in both columns",
+        "PDF34 i-to-y-or-v table: Malayalam mala, vali, kaluttŭ and kaluvuka have underlined l; no corresponding Kurichiya underline is inferred",
+        "PDF35 first table: 'to destroy', underline under initial n in both columns",
+        "PDF35 medial-elision table: 'tax', underline under initial n of Malayalam nikuti",
+        "PDF36 pronoun table: singular naa(n) and first forms of second-person singular/plural have selective underlines"
+      ],
+      "warning": "All twelve source-drawn low-line rectangles on the three pages are geometrically enumerated in underline-vector-census.json. Exact target/control letter decisions still need independent visual review; no blanket n/l replacement is justified"
+    }
+  ],
+  "other_unresolved_notation": [
+    "Spacing acute-like mark in s´ and the curled accents near vis´/bes´ require literal-versus-font analysis before normalization",
+    "Parenthesized n in naa(n) is source notation, not a license to mint two forms",
+    "Source-doubled vowels and u-breve must remain distinct; no phonemic conversion key is provided"
+  ],
+  "next_gate": "Complete per-occurrence original-page crop census, then independently review a frozen Unicode repair table before CSV emission"
+}

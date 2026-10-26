@@ -1,0 +1,49 @@
+# Review-only canonical settings fixture; installation remains approval-guarded.
+file: 20260927-grierson-kui.csv
+defaults:
+  importer:
+    commands:
+      - [data/other/forms/raw_data/grierson_kui_1906/import_source.py, --install]
+    note: Complete reviewed Kui chapter, Khondmals column and bounded attributed comparisons.
+  transcription:
+    profile: grierson-kui-1906
+    input: form
+    preserve_hyphens: true
+  identity:
+    dedupe_by_entry_key: true
+  forms:
+    split_alternates: false
+  gloss:
+    grammar_tags: false
+sources:
+  grierson1906kui:
+    identity:
+      dedupe_by_entry_key: true
+    forms:
+      split_alternates: false
+    gloss:
+      grammar_tags: false
+    reference:
+      editor: OpenAI Codex
+      ocr: true
+      etymology_provenance: source
+  letchmajee1902kui:
+    reference:
+      editor: OpenAI Codex
+      ocr: true
+      etymology_provenance: none
+  smith1876khond:
+    reference:
+      editor: OpenAI Codex
+      ocr: true
+      etymology_provenance: none
+  frye1851kondh:
+    reference:
+      editor: OpenAI Codex
+      ocr: true
+      etymology_provenance: none
+  friendpereira1902khonds:
+    reference:
+      editor: OpenAI Codex
+      ocr: true
+      etymology_provenance: none

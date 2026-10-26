@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Gondi · Dravidian surveys, 2026-09-21 · batch 033. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Gondi | Proposed etymology | Evidence |
+|---|---|---|---|
+| 141 | **koronj** ‘fat’, **kodovōs** ‘fat’ | Proposed reflex of [**DEDR 2146**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=193) | DEDR2146 gives Gondi koṛvonj/koṛvos and koduvasaka fat, and Toda kwaḷp fat. Survey Gondi koronj/kodovōs and Toda koɻəppə retain their medial consonant and vowel differences. Source cognacy identifies the family; these remain comparative correspondences rather than literal dictionary spellings. The questioned Kota comparison is excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (2 records.) |
+| 142 | **niṇḍ** ‘full’ | Proposed reflex of [**DEDR 3682**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=326) | DEDR3682 directly gives Gondi ninḍ-/nind-, Kolami ninḍ-, Kurukh nind-/nīnd- and Malto ninde/nindgre fill/be full. Survey niṇḍ, ninḍu, nindka and nindpā retain their inflectional/adjectival endings and full gloss. Source cognacy identifies the same family; no source response is shortened to a bare stem. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 143 | **miṇḍsi** ‘lie’, **mīṇḍa** ‘sleep’ | Proposed reflex of [**DEDR 4652**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=411) | DEDR4652 explicitly gives Gondi minḍ-/mīnḍ- sleep and lie on one side. Survey miṇḍsi lie and mīṇḍa sleep retain their inflected endings and match the documented semantic pair; source cognacy identifies the article. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (2 records.) |
+| 144 | **huḍa** ‘see’ | Proposed reflex of [**DEDR 2735**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=238) | DEDR2735 gives Gondi hūṛ-/huṛānā see and Telugu cūcu with stem cūḍ-. Survey huḍa/cūḍu preserve their endings and stop/flap transcription. Source cognacy independently identifies the same seeing family. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 145 | **udda** ‘sit’ | Proposed reflex of [**DEDR 725**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=71) | DEDR725 explicitly gives Gondi ud-/uddānā, Kolami ud- and Ollari Gadaba unḍ- sit. Survey udda, udə and undu preserve their final vowels and retroflex transcription; source cognacy identifies the same article. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+
+Proposed assignment rows: **7**. Affected records: **7**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-033.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Gondi/batch-033.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

@@ -1,0 +1,54 @@
+{
+  "status": "passed bounded donor classification review; fresh whole-output original sample remains required",
+  "claims_reread": 830,
+  "method": "All830 claim lines read sequentially in four blocks, including full named donor, Sanskrit ancestry, unknown, comparison and component claims. Checked current actual classified rows and explicit variant provenance programmatically, without source/head-string propagation. Original-source literal certification remains the separate sample/audit gate.",
+  "classified_rows": 317,
+  "direct_claim_rows": 311,
+  "explicit_variant_propagations": [
+    {
+      "key": "kholosi:pdf:p1:c1:u2:sense:1",
+      "form": "avr",
+      "parent_key": "kholosi:pdf:p1:c1:u1:sense:1",
+      "parent_form": "aber"
+    },
+    {
+      "key": "kholosi:pdf:p1:c1:u19:sense:1",
+      "form": "avr",
+      "parent_key": "kholosi:pdf:p1:c1:u1:sense:1",
+      "parent_form": "aber"
+    },
+    {
+      "key": "kholosi:pdf:p9:c2:u5:sense:1",
+      "form": "valem",
+      "parent_key": "kholosi:pdf:p9:c2:u4:sense:1",
+      "parent_form": "valm"
+    },
+    {
+      "key": "kholosi:pdf:p9:c2:u5:sense:2",
+      "form": "valem",
+      "parent_key": "kholosi:pdf:p9:c2:u4:sense:2",
+      "parent_form": "valm"
+    },
+    {
+      "key": "kholosi:pdf:p9:c2:u6:sense:1",
+      "form": "valemte",
+      "parent_key": "kholosi:pdf:p9:c2:u4:sense:1",
+      "parent_form": "valm"
+    },
+    {
+      "key": "kholosi:pdf:p9:c2:u6:sense:2",
+      "form": "valemte",
+      "parent_key": "kholosi:pdf:p9:c2:u4:sense:2",
+      "parent_form": "valm"
+    }
+  ],
+  "resolved_findings": "Two PDF donor omissions and three prayer-compound overextensions corrected; additional repository153 component-only correction verified. Distinct repository/PDF full-phrase versus component attribution preserved.",
+  "additional_concrete_errors": [],
+  "hashes": {
+    "graph-reconciliation-r3/donor-classification-proposal.json": "c2971b82bd5053ffc3a02f855f5b3f8e167132c387e69958fac2ffdf204c99a0",
+    "graph-reconciliation-r3/whole-proposed.csv": "97ebfb4fc673ca06b805736030340bf2206b53e73af3cd76ed065b02bbd1f2bd",
+    "graph-reconciliation-r2/claim-review-queue.jsonl": "98629a310ea91369032cd1dfaf78236f6630ff5081b2475aa1aa45806e9bf314"
+  },
+  "caveat": "This certifies represented donor classification and propagation scope, not independent truth of the source etymologies or comprehensive literal rereading of the source.",
+  "canonical_or_frozen_mutations": false
+}

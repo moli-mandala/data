@@ -49,7 +49,7 @@ FROZEN_HASHES = {
     "staged_audit.tsv": "4bc5aa3bf41e79622494fea7426b6c77532ab4600c263a32179aa6c248b9c302",
     "unresolved_readings.tsv": "c3ab989d0d9d0403d4f60c2edab6ecd5276b8ab583da2536d042752467a18f6c",
     "list_registry.tsv": "635b57460fb9b5a6fa682941ae39a857ef26542271c6e73bf5cbeb7c3631dc62",
-    "conversion_profile.tsv": "0bad99e5f48d262be3484d5895c7435579420ad7f83cd3c4fa2374227e527c94",
+    "conversion_profile.tsv": "af5bd0387f3078cc716715e6a2d003f170df37600f4bfb528e1d46bb1e1623bc",
 }
 PDF_HASH = "edeeeda98cb76624df1a0d70c765cc816ea463d75bc79ec20883c62e6fc1c482"
 NOIRA_RECONCILIATION_HASH = "fe0a636c70a7979921b7f5f107a84a7279a1654f24a9aeb964a1be26f0960ee1"

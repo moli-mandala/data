@@ -1,0 +1,37 @@
+{
+  "reviewer": "root",
+  "method": "Visual review of high-resolution original pages 226 and 227, then comparison to kinship-reviewed-candidate-20260927.jsonl",
+  "source_images": ["tmp/fawcett-saora-review/detail-pages/p226.jpg", "tmp/fawcett-saora-review/detail-pages/p227.jpg"],
+  "checks": [
+    {
+      "source_unit_key": "fawcett1888saora:p227:kinship:03",
+      "decision": "confirmed literal correction",
+      "reading": "Main kakona awobyan onnu thon,am,ba",
+      "note": "Final n in thon is clear; not thop. Footnote gives accent on second syllable of last word. Two initial Saora ditto marks recover Main kakona."
+    },
+    {
+      "source_unit_key": "fawcett1888saora:p227:kinship:06",
+      "decision": "confirmed literal correction",
+      "reading": "Main obayana balarn vulengo",
+      "note": "Printed balarn, not bakara; initial two ditto marks recover Main obayana from previous row."
+    },
+    {
+      "source_unit_key": "fawcett1888saora:p227:kinship:08",
+      "decision": "confirmed literal correction",
+      "reading": "Main kakeyan ayyi navonu",
+      "note": "Printed navonu clearly begins n; no initial ar sequence."
+    },
+    {
+      "source_unit_key": "fawcett1888saora:p226:kinship:32",
+      "decision": "confirmed explicit alternatives with gloss uncertainty",
+      "readings": ["Mian akeyan oba onnu", "Mian woba wanno"],
+      "note": "Printed English or separates two Saora alternatives, with initial ditto Mian shared. English cell ends brother’s son’s with possessive apostrophe-s; do not silently rewrite to brother’s son."
+    }
+  ],
+  "scope_notes": [
+    "Page226 explicitly prints Mian, whereas p227 prints Main; do not normalize these to one spelling.",
+    "Nested English ditto marks in226:08,226:09 and227:07 do not justify inventing a precise additional kinship generation; retain literal source evidence and typed uncertainty.",
+    "The p227 note says an Uriya wrote the tables, Fawcett checked pronunciation with a Saora, and exact pronunciation cannot be conveyed; preserve those qualifications.",
+    "This is a targeted review of four corrections and the specified uncertainty class, not a whole-output acceptance audit."
+  ]
+}

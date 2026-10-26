@@ -1,0 +1,143 @@
+{
+  "status": "failed; class repair and fresh disjoint sample required before installation",
+  "reviewer": "root",
+  "sample_sha256": "279b7546b4b2a1f79c6d4c78235bb54ce089349802b45fbf7d2ab7a636ca8fb1",
+  "input_sha256": {
+    "whole-proposed.csv": "715264c505eef2c73fb21864e38e7c701d0c3452d9768c684e1de8ef3a47d656",
+    "whole-proposed-audit.jsonl": "818654960d97a6ef1149be3dbd978aa52bb10e38af7ec321cf4219a0cd3f10e9",
+    "whole-proposed-profile.txt": "3774144744ae38dc3c6d9e2e7fcff788e88812a9ad0fb6920170e1b080bfe440",
+    "whole-grammar-metadata-proposal-20260927.jsonl": "d35fbd84597959c2ef759e318b3579276b1c84943386a29c77f41fa6b7d3bb8c",
+    "whole-expansion-draft-20260927.jsonl": "87aab5ef89878e6360be2298da9f5ef041a4ccadcca8941abfab40a592cb509c",
+    "independent-whole-second-reading-20260927.json": "c425e52cb0cf9715ccd88126f4947a6834e7e1d87dd51c22185b410118e560b3",
+    "independent-expansion-metadata-review-20260927.json": "7b5c00d16119ba7c8276c759ce50288a2340666572bfd8550cc63e33f807acf1"
+  },
+  "units_reviewed": 20,
+  "output_rows_reviewed": 32,
+  "material_errors": 1,
+  "form_transcription_errors": 0,
+  "method": "Original Bailey PDF page images, printed pages232,233,235–244; each sampled source unit checked against all actual emitted rows, glosses, tags and Notes. Review spans consecutive root turns.",
+  "results": [
+    {
+      "source_unit_key": "bailey1920bilaspuri:grammar:232:intro-nouns:2",
+      "output_rows": 2,
+      "result": "pass",
+      "observation": "Printed masculine singular -ē and agent plural -ē̃ match forms and tags."
+    },
+    {
+      "source_unit_key": "bailey1920bilaspuri:grammar:233:intro-future:4",
+      "output_rows": 1,
+      "result": "material metadata failure",
+      "observation": "Form matches, but explicit indeclinability and shared Bilaspuri/Sasi scope are absent from actual row Notes/tags. Source p233 states the indeclinable form is shared by both dialects."
+    },
+    {
+      "source_unit_key": "bailey1920bilaspuri:grammar:235:horse:2",
+      "output_rows": 2,
+      "result": "pass",
+      "observation": "Printed genitive suffixes correctly expanded with explicit ghōṛ stem; number/case correct."
+    },
+    {
+      "source_unit_key": "bailey1920bilaspuri:grammar:236:first-person:3",
+      "output_rows": 2,
+      "result": "pass",
+      "observation": "Dative/accusative forms, person and number match source; I retained as printed paradigm gloss."
+    },
+    {
+      "source_unit_key": "bailey1920bilaspuri:grammar:236:girl:1",
+      "output_rows": 2,
+      "result": "pass",
+      "observation": "Explicit stem/suffix expansions and feminine singular/plural nominative/accusative tags match."
+    },
+    {
+      "source_unit_key": "bailey1920bilaspuri:grammar:237:who:1",
+      "output_rows": 2,
+      "result": "pass",
+      "observation": "Both nominative/accusative columns print kŭṇ; interrogative and number tags agree."
+    },
+    {
+      "source_unit_key": "bailey1920bilaspuri:grammar:238:cardinal:18",
+      "output_rows": 1,
+      "result": "pass",
+      "observation": "ṭhārā matches printed 18, including retroflex dot and macrons."
+    },
+    {
+      "source_unit_key": "bailey1920bilaspuri:grammar:238:cardinal:3",
+      "output_rows": 1,
+      "result": "pass",
+      "observation": "tĭnn matches printed 3."
+    },
+    {
+      "source_unit_key": "bailey1920bilaspuri:grammar:238:cardinal:8",
+      "output_rows": 1,
+      "result": "pass",
+      "observation": "ăṭṭh matches printed 8, including two retroflex dots."
+    },
+    {
+      "source_unit_key": "bailey1920bilaspuri:grammar:238:time-adverb:3",
+      "output_rows": 1,
+      "result": "pass",
+      "observation": "kāhṇ matches printed when? under Time."
+    },
+    {
+      "source_unit_key": "bailey1920bilaspuri:grammar:239:substantive:1",
+      "output_rows": 4,
+      "result": "pass",
+      "observation": "All four masculine/feminine singular/plural copula forms match first row and English am/are."
+    },
+    {
+      "source_unit_key": "bailey1920bilaspuri:grammar:240:be:4",
+      "output_rows": 1,
+      "result": "pass",
+      "observation": "hŭndā matches; Notes explicitly preserve alternative present indicative/past conditional functions."
+    },
+    {
+      "source_unit_key": "bailey1920bilaspuri:grammar:240:come:3",
+      "output_rows": 2,
+      "result": "pass",
+      "observation": "Both printed future alternatives match and alternative edge stays inside source unit."
+    },
+    {
+      "source_unit_key": "bailey1920bilaspuri:grammar:241:beat:3",
+      "output_rows": 4,
+      "result": "pass",
+      "observation": "All four gender/number forms match; anomalous printed fut. plur. is explicitly retained with editorial feminine interpretation."
+    },
+    {
+      "source_unit_key": "bailey1920bilaspuri:grammar:241:drink:2",
+      "output_rows": 1,
+      "result": "pass",
+      "observation": "pīttā matches printed Past of drink."
+    },
+    {
+      "source_unit_key": "bailey1920bilaspuri:grammar:241:take:1",
+      "output_rows": 1,
+      "result": "pass",
+      "observation": "laiṇā matches printed take heading."
+    },
+    {
+      "source_unit_key": "bailey1920bilaspuri:grammar:242:strike:3",
+      "output_rows": 1,
+      "result": "pass",
+      "observation": "Entire clause and literal English match source, preserving stacked marks on plural words and single tilde on maĩ."
+    },
+    {
+      "source_unit_key": "bailey1920bilaspuri:sentences:243:3",
+      "output_rows": 1,
+      "result": "pass",
+      "observation": "Entire source sentence and literal English match, including underlined sh transliteration."
+    },
+    {
+      "source_unit_key": "bailey1920bilaspuri:sentences:243:8",
+      "output_rows": 1,
+      "result": "pass",
+      "observation": "Entire sentence and literal English match, including pĭṭṭhī/kāṭṭhī and bŭnnhī dē."
+    },
+    {
+      "source_unit_key": "bailey1920bilaspuri:grammar:244:sentence-note:3",
+      "output_rows": 1,
+      "result": "pass",
+      "observation": "Compound verb matches note and sentence8; comparison to other languages remains attributed, not a borrowing claim."
+    }
+  ],
+  "repair_scope": "All new source-unit residual grammatical analysis, specifically indeclinability, must survive in canonical tags or attributed Notes. Do not fix only sampled row.",
+  "installation": "not accepted; canonical unchanged"
+}

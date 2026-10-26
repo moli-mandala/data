@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Koraga · Bhat 1971 Koraga records, 2026-09-25 · batch 108. Pending user review; autonomous research continues.
+
+| # | Koraga | Proposed etymology | Evidence |
+|---|---|---|---|
+| 321 | **sappu** ‘leaf’ | Proposed reflex of [**DEDR 2673**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=231) | DEDR 2673 full article (p. 231) gives 2673 Ta. cuppal, cuppi twigs; uval, uvalai twigs and sprays, dried leaves. Ma. cappu leaf, esp. plantain leaf; tōl green leaves, small branches, shrubs. Kurub. (LSB 1.11) tovli leaves. Ko. Bhat sappu “leaf” matches Lindgren Koraga sappu “leaf” in form and sense; this cross-source match is a candidate lead, with the full DEDR article defining the family. Both source identities and dialect tags are preserved. (1 record.) |
+| 322 | **sī** ‘sweet’ | Proposed reflex of [**DEDR 3268**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=285) | DEDR 3268 full article (p. 285) gives Kor. (M.) jigin tuppu id. Te. tēne id.; tē̃ṭi a large black humble-bee, Bombinatrix glabra (-i < ī fly). Kol. te·ne honey. Nk. tēne id. Pa. tīn ney id.; tīn pinda, tīni (-i < ī fly) bee. Ga. (O Bhat sī “sweet” matches Lindgren Koraga sī “sweet” in form and sense; this cross-source match is a candidate lead, with the full DEDR article defining the family. Both source identities and dialect tags are preserved. (1 record.) |
+| 323 | **sutta** ‘to wear’ | Proposed reflex of [**DEDR 3319**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=290) | DEDR 3319 full article (p. 290) gives Kor. (T.) tūndi to wear. Pa. tund- to wear (jacket, etc.); caus. tundip- (tundit-) . DED 2721. Bhat sutta “to wear” matches Lindgren Koraga sutta “wear” in form and sense; this cross-source match is a candidate lead, with the full DEDR article defining the family. Both source identities and dialect tags are preserved. (1 record.) |
+| 324 | **sumbu** ‘to carry on the head’ | Proposed reflex of [**DEDR 2677**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=232) | DEDR 2677 full article (p. 232) gives 2677 Ta. cuma (-pp-, -nt-) to become heavy as debt or interest, be burdened; bear, support, carry a burden, take upon oneself, bear in the womb; (Tinn.) cema to carry; cummaṭu burden, load, Bhat sumbu “to carry on the head” matches Lindgren Koraga sumbu “carry” in form and sense; this cross-source match is a candidate lead, with the full DEDR article defining the family. Both source identities and dialect tags are preserved. (1 record.) |
+| 325 | **suḷe** ‘pulp of jackfruit’ | Proposed reflex of [**DEDR 2704**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=235) | DEDR 2704 full article (p. 235) gives Kor. (T.) suḷe , (M.) soḷa id. Bhat suḷe “pulp of jackfruit” is the same cited Koraga form and sense; its original dialect:Koraga:tappu:Tappu uncertain dialect tag is retained. The article is used as family classification, not an independent second attestation of Bhat. (1 record.) |
+
+Proposed assignment rows: **5**. Affected records: **5**. Relation kinds: **reflex**. Multi-part responses retain their source order.
+
+Exact persistent IDs and complete source records: [batch-108.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Koraga/batch-108.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../koraga-bhat-20260925/research-holds.json). No new lexical material or donor nodes are introduced.

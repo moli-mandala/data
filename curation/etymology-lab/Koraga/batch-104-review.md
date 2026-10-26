@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Koraga · Bhat 1971 Koraga records, 2026-09-25 · batch 104. Pending user review; autonomous research continues.
+
+| # | Koraga | Proposed etymology | Evidence |
+|---|---|---|---|
+| 301 | **miṭṭe** ‘tender bud’ | Proposed reflex of [**DEDR 5113**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=462) | DEDR 5113 full article (p. 462) gives Kor. miṭṭe (O.) tender bud, (T.) flower-bud. Bhat miṭṭe “tender bud” is the same cited Koraga form and sense; its original dialect:Koraga:onti:Onti uncertain dialect tag is retained. The article is used as family classification, not an independent second attestation of Bhat. (1 record.) |
+| 302 | **miṭṭe** ‘flower bud’ | Proposed reflex of [**DEDR 5113**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=462) | DEDR 5113 full article (p. 462) gives Kor. miṭṭe (O.) tender bud, (T.) flower-bud. Bhat miṭṭe “flower bud” is the same cited Koraga form and sense; its original dialect:Koraga:tappu:Tappu uncertain dialect tag is retained. The article is used as family classification, not an independent second attestation of Bhat. (1 record.) |
+| 303 | **mitarɨ** ‘to climb’ | Proposed reflex of [**DEDR 4841**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=431) | DEDR 4841 full article (p. 431) gives 4841 Ta. micai eminence, elevation, elevated place, hill, mound, sky, front, a locative ending; mī top, surface, height, elevation, eminence, loftiness, sky, heavens, greatness, dignity; mīc Bhat mitarɨ “to climb” matches Lindgren Koraga mitārɨ “climb” in form and sense; this cross-source match is a candidate lead, with the full DEDR article defining the family. Both source identities and dialect tags are preserved. (1 record.) |
+| 304 | **mire** ‘breast’ | Proposed reflex of [**DEDR 4985**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=448) | DEDR 4985 full article (p. 448) gives 4985 Ta. mulai woman's breast, teat. Ma. mula id., udder. Ko. mel breast; mol id. (in a proverb; < Badaga), pointed end of anvil. To. mïs̱ nipple, teat, breast, udder; mil breast ( TS , p. 8 Bhat mire “breast” matches Lindgren Koraga mire “breast” in form and sense; this cross-source match is a candidate lead, with the full DEDR article defining the family. Both source identities and dialect tags are preserved. (1 record.) |
+| 305 | **mī** ‘to bathe’ | Proposed reflex of [**DEDR 4878**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=435) | DEDR 4878 full article (p. 435) gives 4878 To. mi·y- (mi·d-) to bathe (used of the priest of the ti·, i.e. the most sacred grade of dairy). Ka. mī, mīyu (mind-, mīd-) to take a bath, bathe; cause to bathe, wash, bathe, pour over Bhat mī “to bathe” matches Lindgren Koraga mī “bathe” in form and sense; this cross-source match is a candidate lead, with the full DEDR article defining the family. Both source identities and dialect tags are preserved. (1 record.) |
+
+Proposed assignment rows: **5**. Affected records: **5**. Relation kinds: **reflex**. Multi-part responses retain their source order.
+
+Exact persistent IDs and complete source records: [batch-104.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Koraga/batch-104.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../koraga-bhat-20260925/research-holds.json). No new lexical material or donor nodes are introduced.

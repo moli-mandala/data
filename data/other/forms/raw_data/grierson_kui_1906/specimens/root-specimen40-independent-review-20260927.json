@@ -1,0 +1,29 @@
+{
+  "status": "full physical page independently compared; keyed corrections and fine-mark questions await owner reconciliation",
+  "reviewer": "root",
+  "specimen": 40,
+  "printed_page": 464,
+  "source_image": "tmp/kui-specimens/alternate-n485.jpg",
+  "source_image_sha256": "25dfe4a4745cc85b147cf0dcd83212c39a3ac328c43230384551c75585bc1a85",
+  "input": "p464-first-reading.tsv",
+  "input_sha256": "73cc0fb8e51c669df351472a53152890a5f9c1ef3601e9aae1ae55c9c0b0a2cb",
+  "coverage": {"title_atoms":3,"interlinear_atoms":121,"physical_interlinear_lines":16,"full_form_and_gloss_comparison":true},
+  "corrections": [
+    {"source_unit_key":"grierson1906kui:p464:specimen40:line9:word8","old":"vivānē","proposed":"kogāñjū","field":"raw_source_form","evidence":"Final word on physical line9 visibly begins kogā, aligned to the-boy. The preceding word supplies throwing-from; the draft accidentally duplicates that different word."},
+    {"source_unit_key":"grierson1906kui:p464:specimen40:line7:word7","old":"ārā","proposed":"ārū","field":"raw_source_form","evidence":"Word glossed that ends in open-top u with an upper bar, not a."},
+    {"source_unit_key":"grierson1906kui:p464:specimen40:line14:word1","old":"deri","proposed":"dēri","field":"raw_source_form","evidence":"First big word shows an upper stroke on e like the following repeated word; confirm at narrower crop before final acceptance."},
+    {"source_unit_key":"grierson1906kui:p464:specimen40:line7:word4","old":"‘ever","proposed":"ever","field":"raw_gloss","evidence":"No opening quote is printed before this English gloss. Closing dialogue quote belongs after the next predicate."}
+  ],
+  "questions": [
+    {"source_unit_key":"grierson1906kui:p464:specimen40:line12:word8","current":"āā-ātē;","issue":"First vowel body of not-becoming-is appears u-like in original. Inspect a narrower native-resolution crop; do not substitute a grammatical negative from context."},
+    {"source_unit_key":"grierson1906kui:p464:specimen40:line6:word3","current_gloss":"what-ever","issue":"Printed English appears whatever without hyphen. Resolve exact source punctuation from narrower crop."}
+  ],
+  "retained_caveats": [
+    "Smith nasal upper-mark shape remains provisional ñ, with source-specific uncertainty; this review does not resolve the encoding convention.",
+    "Stacked e length and curved nasalization marks remain literal source marks, not phonemic analysis.",
+    "Line5/6 old-one and line7/8 having-heard continuations must retain both physical keys when joined.",
+    "Grierson explicitly qualifies his supplied interlinear translation; no extra token glosses or inferred etymological edges added."
+  ],
+  "remaining": ["owner reconciliation", "free-translation page465 independent check", "expression span reconciliation after corrections", "whole-source audit"],
+  "canonical_changes": false
+}

@@ -1,0 +1,24 @@
+{
+  "status": "eight_isolated_transaction_core_tests_passed_final_source_assets_pending",
+  "coordinator_sha256": "7555b324b0af2010cebe931f5ba2d3cce8ae445e0c0d6bab3cdbd1a391d9ef3b",
+  "fixture_sha256": "f5f0fd8d695f54ca9e1660c60f2acda1de5a2ebaa0dd74f2f44bc2573e36cdaa",
+  "log": "tmp/jambu-next-source/kolami-installer-core-fixtures.log",
+  "log_sha256": "657efc051bed88e47ad53601a015657c60f950aedd2d4a89cb6b0505d09d2738",
+  "passed": 8,
+  "failed": 0,
+  "seconds": 0.28,
+  "scope": "Miniature isolated six-target transaction payloads. Actual source asset validation intentionally separate; no installed rows or shared canonical assets are altered.",
+  "checks": [
+    "Clean six-target installation and read-only repeat after unrelated shared contributions/identity build",
+    "Own profile byte drift rejected",
+    "Unexpected shared baseline drift prevents journal creation",
+    "Interruption after bibliography write recovers remaining exact approved assets",
+    "Atomic receipt interruption resumes safely",
+    "Post-write drift cannot be receipted or overwritten by rollback",
+    "Rollback restores all six exact original baselines",
+    "Real disabled coordinator cannot install without root approval"
+  ],
+  "installation_approved": false,
+  "canonical_mutations": false,
+  "pending": ["Accepted final whole-source assets and source-specific staged validation", "Independent final integrated-output audit", "Root exact activation and reserved shared window"]
+}

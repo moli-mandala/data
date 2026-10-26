@@ -1,0 +1,38 @@
+{
+  "status": "whole-chapter source-stage installed; compiled gates deferred",
+  "source": "nair2013aranadan",
+  "installed_csv": "data/other/forms/20260927-nair-aranadan.csv",
+  "rows": 102,
+  "languages": {"Aranadan": 81, "Malayalam": 20, "Kannada": 1},
+  "audit_units": 97,
+  "physical_witness_slots": 105,
+  "whole_expressions": 10,
+  "verb_paradigm_cells": 32,
+  "variant_edges": 2,
+  "exclusions": "Sixteen documentary units: four community-name occurrences with unresolved lexical-language attribution, plus twelve context/prose/notation units. All retain raw evidence. One Malayalam future-suffix witness shares an existing physical token; no duplicate printed token is invented.",
+  "unresolved_cases": "Community-name language attribution remains unresolved and documentary. Printed prose/example discrepancies are retained as source claims; no inferred donor words, regularized paradigms or geographic derivation are asserted.",
+  "transcription": "Native PDF and visual reconciliation without OCR; dot below, tilde and drawn low lines preserved distinctly, with source doubled vowels/case/hyphens. Literal convert:false route, blank Native and Phonemic. All rows retain source keys and exact source locators.",
+  "metadata": "Three existing bases, no new dialects or coordinates. Nair is primary; Usha1992 is reported background bibliography. Prior Aranadan numeral-source rows remain untouched.",
+  "validation": {
+    "full_original_reading": "97/97 units and105/105 physical witnesses independently reviewed; no literal/gloss corrections",
+    "integrated_output": "102 rows and all90 metadata changes, two variants, shared suffix and documentary dispositions independently verified",
+    "fresh_original_audit": "20/20 passed, zero material errors; seed20260927401",
+    "actual_parser": "102/102 in NFC and NFD; all15 fields and ordered keys retained, no PUA/replacement characters or unwanted splitting",
+    "metadata_and_references": "Actual SourceMeta and production-style Pybtex formatting passed for both source records, including verified importer command and no-OCR flags",
+    "installer": "20 isolated tests passed; interruption recovery, drift guards and malformed input cases covered",
+    "installed_source_tests": "5 passed in0.73s; tmp/aranadan-installed-tests.log",
+    "repeat_installation": "All approved inputs, outputs and durable identity state unchanged; tmp/aranadan-install-repeat.log"
+  },
+  "csv_sha256": "d7479dff8846d69095766bae90b10abf837bbe8f5d989d38a635e2e52a90de42",
+  "installed_audit_sha256": "338948c407f99d92f81556257b45c7671586fab8ae62c6edf863f374d4ad981c",
+  "installation_evidence": "installation-receipt.json and root-installation-approval.json",
+  "representative_source_keys": [
+    "nair2013aranadan:p9:nasalization:2:w1",
+    "nair2013aranadan:p9:medial-consonant:3:w2",
+    "nair2013aranadan:p10:pronoun-examples:1:w1",
+    "nair2013aranadan:p10:tense-suffixes:1:malayalam"
+  ],
+  "representative_app_entries": "Deferred until user-requested browser refresh; stable source keys supplied above",
+  "inapplicable": ["New base/dialect registration", "IPA/native-script creation", "Website pagination"],
+  "deferred": ["Full CLDF/database build", "Compiled graph and identity verification", "Full repository suite", "Browser refresh and QA", "Publication"]
+}

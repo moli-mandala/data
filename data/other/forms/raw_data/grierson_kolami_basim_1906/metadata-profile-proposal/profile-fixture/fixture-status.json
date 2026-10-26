@@ -1,0 +1,31 @@
+{
+  "status": "preliminary coverage fixture only; inputs unaccepted and final corrected candidate must refresh this fixture",
+  "input_hashes": {
+    "data/data/other/forms/raw_data/grierson_kolami_basim_1906/specimens/p564-first-reading.jsonl": "9231c09556f8e658f823363bfbf408bc57651ec053677f8a02e75e19ce1974b7",
+    "data/data/other/forms/raw_data/grierson_kolami_basim_1906/specimens/p565-first-reading.jsonl": "be018c7f7826a0f24fdcd7f2de67230a213665f3dc5bc0eaf3b8a30726ce0323",
+    "data/data/other/forms/raw_data/grierson_kolami_basim_1906/specimens/p568-first-reading.jsonl": "7ac1c77dbb6f03e2f530ef13ce18eb0a2212fa173f97165418ec8d02ce54c2fd",
+    "data/data/other/forms/raw_data/grierson_kolami_basim_1906/specimens/p569-first-reading.jsonl": "a831c8b55fca88ff9c3a1c44f937c3c844932e03a1a2343ab34b0fff15a71f36",
+    "data/data/other/forms/raw_data/grierson_kolami_basim_1906/independent-grammar-review/independent-child-witnesses.jsonl": "16e4cf88d224a0528449d538f61f713dc13b93f51cbb0be9864468f2cb7b0050",
+    "data/data/other/forms/raw_data/grierson_kolami_basim_1906/outside-review/scope-decisions.json": "709ecd3dba7b0fea695e030c1ca9bf61a1a42bd08d6b5a3c68c26bf847455aec"
+  },
+  "counts": {
+    "specimen_physical_atom": 561,
+    "grammar_child": 224,
+    "outside_candidate": 5,
+    "outside_alternative": 1
+  },
+  "synthetic_controls": 14,
+  "total_fixture_cases": 805,
+  "profile_rules": 95,
+  "inventoried_clusters": 95,
+  "inventoried_codepoints": 72,
+  "policy": "NFC lowercase and ṅ/Ṅ to ŋ only; all other quantities, optional notation, punctuation, ñ, ch, w, spaces and hyphens retained",
+  "boundary_policy": "Direct production segments.Tokenizer API tested. Generic parser independently strips normal boundary punctuation; this fixture makes no parser-boundary approval claim.",
+  "original_policy": "coverage-corpus original field copied exactly; display is separate, no input mutation",
+  "canonical_changes": false,
+  "output_hashes": {
+    "coverage-corpus.jsonl": "8a7a8dd5ff899bf59b9be43ee041c98a189eab3736bcd9c1b6e0ed919747f616",
+    "unicode-inventory.json": "c8cc03aee90132b22ba509e3eb3dca4bbd3e21884eaa9ed14265a8a92a516d7b",
+    "grierson-kolami-basim-1906-preliminary.txt": "00c946673ca99838d1b1220d8f376ebe0ede7c40dbda0c3e309724df204fb043"
+  }
+}

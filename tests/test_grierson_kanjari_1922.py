@@ -3,6 +3,7 @@ import csv,importlib.util,io,json,sys,unicodedata
 from collections import Counter
 from pathlib import Path
 from segments import Tokenizer
+from profile_policy import hunterian_display  # Hunterian ch/chh/Ch → house spelling
 DATA=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(DATA))
 PACKAGE=DATA/'data/other/forms/raw_data/grierson_kanjari_1922'
@@ -45,7 +46,7 @@ def test_source_profile_and_registered_dialects():
         assert len(r)==15 and r[0]=='Kanjari'
         assert all(not r[i] for i in [1,4,5,11,12,13])
         actual=tokenizer(r[2],column='IPA').replace(' ','').replace('#',' ').strip()
-        expected=r[2].lower().replace('w','v').replace('ṅ','ŋ').replace('d̲z̲','ʣ')
+        expected=hunterian_display(r[2].lower().replace('w','v').replace('ṅ','ŋ').replace('d̲z̲','ʣ'))
         for c in '?[]':expected=expected.replace(c,'')
         assert actual==expected,r[10]
         for tag in r[14].split():

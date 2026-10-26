@@ -1,0 +1,15 @@
+# Zargari: shadow and additive teens
+
+Seven source-defined records under standing autonomous authorization. Original PDF printed pp. 127 and 137, glyph audit and exact installed keys, compiled rank-1 ancestry and full Turner articles/addenda were checked. No lexical import or rebuild.
+
+| Zargari forms and meanings | Proposed etymology | Evidence |
+|---|---|---|
+| **cʰal** ‘shadow’ | **\*ōjjhalla**, CDIAL **2542** (Turner also indexes the Romani form at **763**) | The source prints Zargari čhal 'shadow' and explicitly compares Early Romani učhal > čal while discussing merger of aspirates and voiced affricates (p. 127 §2.3.1). Turner 2542 *ōjjhalla 'shade, screen, veil' cites European Romani učhal and Welsh Romani učal 'shade', probably from *avacchāda-. Turner 763 also indexes those same Romani comparanda under the deeper *avacchāda-; 2542 is the nearer formation for this inherited stem. The source's čh is retained. |
+| **deś-yek** ‘eleven’ | Components: source **deś** ‘ten’ (CDIAL **6227**) + **yek** (CDIAL **2462-2**) | Source p. 137 explicitly lists deš-jek as eleven; the two source numerals are independently installed and already linked to the cited Turner branches. |
+| **deś-duy** ‘twelve’ | Components: source **deś** ‘ten’ (CDIAL **6227**) + **duy** (CDIAL **6648**) | Source p. 137 explicitly lists deš-duj as twelve; the two source numerals are independently installed and already linked to the cited Turner branches. |
+| **deś-terin** ‘thirteen’ | Components: source **deś** ‘ten’ (CDIAL **6227**) + **terin** (CDIAL **5994-3**) | Source p. 137 explicitly lists deš-terin as thirteen; the two source numerals are independently installed and already linked to the cited Turner branches. |
+| **deś-iśtār** ‘fourteen’ | Components: source **deś** ‘ten’ (CDIAL **6227**) + **iśtār** (CDIAL **4655**) | Source p. 137 explicitly lists deš-ištār as fourteen; the two source numerals are independently installed and already linked to the cited Turner branches. |
+| **deś-pānj** ‘fifteen’ | Components: source **deś** ‘ten’ (CDIAL **6227**) + **pānj** (CDIAL **7655**) | Source p. 137 explicitly lists deš-pāndž as fifteen; the two source numerals are independently installed and already linked to the cited Turner branches. |
+| **deś-śov** ‘sixteen’ | Components: source **deś** ‘ten’ (CDIAL **6227**) + **śov** (CDIAL **12803-2**) | Source p. 137 explicitly lists deš-šov as sixteen; the two source numerals are independently installed and already linked to the cited Turner branches. |
+
+Thirteen assignment rows affect seven records: one reflex and twelve ordered component rows. The source's Greek-derived seven/eight/nine remain excluded from 17–19 until immediate-donor representation is settled. Discovery: `zargari-primary033`, PDF images and `pass152-source-audit.json`. Check-pass, save-pass and check-sources passed. All thirteen rows match the exact owner sidecar, including component positions 1 and 2. Second application changes zero rows; protected CSV hashes are unchanged. No rebuild. Zargari linked 262→269 of 522, leaving 253 unlinked; diversity Zargari additions now 190 records.

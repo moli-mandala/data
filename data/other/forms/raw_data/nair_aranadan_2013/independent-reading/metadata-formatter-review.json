@@ -1,0 +1,24 @@
+{
+  "status": "passed isolated real SourceMeta and production-style formatter",
+  "hashes": {
+    "root-review/proposed-settings.yaml": "fc3f8fd4f49e1adea048bd6e3bd4525b84ad7d973988f91e8e223a9c375c6f07",
+    "root-review/proposed-references.bib": "0204f11de8cb5083ea0b6b8c677fcc5095e722e0f7645283cc213f7833676e19"
+  },
+  "fixture": "independent-reading/metadata-fixture/20260927-nair-aranadan.yaml",
+  "checks": [
+    "Actual source_meta.load isolated via yaml_files override, declared filename preserved",
+    "All3language routes return profileNone convertFalse with preserve_hyphensTrue",
+    "ImmutableEntryKey dedupe and no alternate splitting",
+    "Both citations actual editor OpenAI Codex, OCR false, source/none etymology enum",
+    "No canonical YAML source-key or Bib collisions",
+    "Both records formatted through production Pybtex plain/markdown engine without exception"
+  ],
+  "formatted": {
+    "nair2013aranadan": "[1] Ravi Sankar S\\. Nair\\.\nTribal languages of kerala\\.\n*Language in India*, 13\\(7\\):9–11, July 2013\\.\nChapter in Tribal Languages of Kerala\\. The preface describes compiled material and incomplete fieldwork in some languages; item\\-level elicitation provenance is not specified\\. Source Roman notation is preserved after visually verified native\\-font repair; no independent phonemic transcription is asserted\\.\nURL: [https://languageinindia\\.com/july2013/ravisankarkeralatriballanguages\\.html](https://languageinindia.com/july2013/ravisankarkeralatriballanguages.html)\\.  \n",
+    "usha1992aranadanmar": "[1] S\\. Usha\\.\nKeralathile aranadanmar \\(aranadars of kerala\\)\\.\nAugust 1992\\.\nReported in Nair 2013, p\\. 11: Vijinana Kairali, Kerala Bhasha Institute, Trivandrum 23\\-8\\. Original article not independently consulted; the printed 23\\-8 is retained without an inferred volume or issue interpretation\\.  \n"
+  },
+  "original_attribution_review": "Nair author/title/journal13(7)July2013/pp9–11 match original page headers/footers and previously read source. Usha is reported bibliography only; unknown23-8 edition/volume interpretation is not invented. NoOCR is accurate for nativePDF glyph recovery plus visual reading.",
+  "literal_preservation_limit": "convert:false is verified metadata routing, not a claim that every downstream generic parser punctuation operation is bypassed; actual final output field tests remain required. No distinct IPA layer claimed.",
+  "importer_gate": "declared; not executed",
+  "canonical_writes": false
+}

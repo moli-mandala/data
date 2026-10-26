@@ -1,0 +1,117 @@
+--- /dev/null
++++ b/data/other/forms/raw_data/dhakal_darai_2011/whole_legacy_baseline.py
+@@ -0,0 +1,23 @@
++"""Immutable pre-expansion inputs; never read live installed output as baseline."""
++import csv
++import hashlib
++import io
++from pathlib import Path
++P=Path(__file__).resolve().parent
++HASHES={'legacy-before-whole-recovery.csv': '89a59e3b08583b16c7b115f5e22422b0f798e7e7577f3059ffcbbf12f9080aa0', 'legacy-before-whole-recovery-profile.txt': 'c9ac1963856810b3bef56db905b5daac8d34bf66929382e3e0b91b0ba009116e'}
++
++
++def checked_bytes(name):
++    content=(P/name).read_bytes()
++    assert hashlib.sha256(content).hexdigest()==HASHES[name], name
++    return content
++
++
++def legacy_rows():
++    rows=list(csv.reader(io.StringIO(checked_bytes('legacy-before-whole-recovery.csv').decode())))
++    assert len(rows)==485 and len({row[10] for row in rows})==485
++    return rows
++
++
++def legacy_profile():
++    return checked_bytes('legacy-before-whole-recovery-profile.txt').decode()
+--- a/data/other/forms/raw_data/dhakal_darai_2011/prepare_whole_csv_preview.py
++++ b/data/other/forms/raw_data/dhakal_darai_2011/prepare_whole_csv_preview.py
+@@ -9,6 +9,8 @@
+ import json
+ import re
+ from pathlib import Path
++
++from whole_legacy_baseline import legacy_rows, legacy_profile
+ 
+ P = Path(__file__).resolve().parent
+ LECTS = {name: f'dialect:Darai:darai_{name.lower()}:{name}'
+@@ -75,8 +77,7 @@
+ 
+ 
+ def build():
+-    with (P.parents[1] / '20260921-dhakal-darai.csv').open(newline='') as stream:
+-        old={r[10]:r for r in csv.reader(stream)}
++    old={r[10]:r for r in legacy_rows()}
+     routes={r['source_unit_key']:r for r in map(json.loads,(P/'whole-transcription-proposal.jsonl').open())}
+     evidence_cache={}
+     metadata=[json.loads(line) for line in (P/'whole-expanded-metadata-review.jsonl').open()]
+--- a/data/other/forms/raw_data/dhakal_darai_2011/prepare_whole_reuse_candidates.py
++++ b/data/other/forms/raw_data/dhakal_darai_2011/prepare_whole_reuse_candidates.py
+@@ -4,6 +4,8 @@
+ import hashlib
+ import json
+ from pathlib import Path
++
++from whole_legacy_baseline import legacy_rows, legacy_profile
+ 
+ P = Path(__file__).resolve().parent
+ PROVENANCE_ONLY = {'text_id', 'text_ids', 'source_reference'}
+@@ -47,8 +49,7 @@
+             continue
+         exported, route = exports[row['source_unit_key']]
+         groups[fingerprint(row, exported, route)].append(row)
+-    with (P.parents[1] / '20260921-dhakal-darai.csv').open(newline='') as stream:
+-        installed_keys={row[10] for row in csv.reader(stream)}
++    installed_keys={row[10] for row in legacy_rows()}
+     output=[]
+     for key, rows in groups.items():
+         if len(rows)<2:
+--- a/data/other/forms/raw_data/dhakal_darai_2011/prepare_whole_staging.py
++++ b/data/other/forms/raw_data/dhakal_darai_2011/prepare_whole_staging.py
+@@ -9,6 +9,8 @@
+ from pathlib import Path
+ 
+ from prepare_whole_reuse_candidates import build as reuse_candidates
++
++from whole_legacy_baseline import legacy_rows, legacy_profile
+ 
+ P = Path(__file__).resolve().parent
+ 
+@@ -23,8 +25,7 @@
+         with (P / ('whole-preview-' + route + '.csv')).open(newline='') as stream:
+             for row in csv.reader(stream):
+                 rows[row[10]], routes[row[10]] = row, route
+-    with (P.parents[1] / '20260921-dhakal-darai.csv').open(newline='') as stream:
+-        legacy = {row[10] for row in csv.reader(stream)}
++    legacy = {row[10] for row in legacy_rows()}
+     original_rows = {key: row[:] for key, row in rows.items()}
+     reuse, reasons = {}, {}
+     physical = json.loads((P / 'chapter3-expression-reuse-alignment.json').read_text())['records']
+--- a/data/other/forms/raw_data/dhakal_darai_2011/prepare_whole_transcription.py
++++ b/data/other/forms/raw_data/dhakal_darai_2011/prepare_whole_transcription.py
+@@ -6,12 +6,13 @@
+ import unicodedata
+ from pathlib import Path
+ 
++from whole_legacy_baseline import legacy_rows, legacy_profile
++
+ P = Path(__file__).resolve().parent
+ 
+ 
+ def build():
+-    with (P.parents[1] / '20260921-dhakal-darai.csv').open(newline='') as stream:
+-        old = {r[10]: r for r in csv.reader(stream)}
++    old = {r[10]: r for r in legacy_rows()}
+     with (P / 'chapters12-roman-preservation.csv').open(newline='') as stream:
+         roman = {r[10] for r in csv.reader(stream)}
+     output = []
+@@ -50,8 +51,7 @@
+     rows = build()
+     out = P / 'whole-transcription-proposal.jsonl'
+     out.write_text(''.join(json.dumps(r, ensure_ascii=False) + '\n' for r in rows))
+-    source = P.parents[4] / 'conversion/dhakal-darai.txt'
+-    profile = source.read_text()
++    profile = legacy_profile()
+     assert '\ng\tg\n' not in profile
+     profile += 'g\tg\n'
+     rules=list(csv.reader(profile.splitlines(),delimiter='\t'))

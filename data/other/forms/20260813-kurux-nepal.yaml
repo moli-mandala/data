@@ -1,10 +1,27 @@
 file: 20260813-kurux-nepal.csv
 defaults:
+  importer:
+    commands:
+      - [data/other/forms/raw_data/kurux_nepal_2022/whole-source-recovery/import_source.py, --install]
+    note: Complete reviewed source; immutable baseline and approved revision 2 hashes.
   transcription:
-  - profile: kurux-nepal
+    profile: kurux-nepal-whole-phonetic
+    preserve_hyphens: true
+  identity:
+    dedupe_by_entry_key: true
+  forms:
+    split_alternates: false
   gloss:
-    grammar_tags: true
+    grammar_tags: false
 sources:
   shackelford-swenson-chaudhary-maggard2022kurux:
-    transcription:
-    - profile: kurux-nepal
+    forms:
+      split_alternates: false
+    gloss:
+      grammar_tags: false
+    identity:
+      dedupe_by_entry_key: true
+    reference:
+      editor: Aryaman Arora; OpenAI Codex
+      ocr: false
+      etymology_provenance: none

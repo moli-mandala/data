@@ -1,0 +1,30 @@
+{
+  "status": "Full specimen atomic/expression review proposals; no accepted final export",
+  "inputs": {
+    "p564-first-reading.jsonl": "9231c09556f8e658f823363bfbf408bc57651ec053677f8a02e75e19ce1974b7",
+    "p565-first-reading.jsonl": "be018c7f7826a0f24fdcd7f2de67230a213665f3dc5bc0eaf3b8a30726ce0323",
+    "p568-first-reading.jsonl": "7ac1c77dbb6f03e2f530ef13ce18eb0a2212fa173f97165418ec8d02ce54c2fd",
+    "p569-first-reading.jsonl": "a831c8b55fca88ff9c3a1c44f937c3c844932e03a1a2343ab34b0fff15a71f36"
+  },
+  "correction_proposal_sha256": "2b978f4e955f91eb6b1bd1172577f39b15b596103a3c47f17b893a50b6d2463f",
+  "physical_atoms": 561,
+  "atomic_emissions": 560,
+  "explicit_line_break_joins": 1,
+  "expression_proposals": 51,
+  "per_specimen_expressions": {
+    "75": 27,
+    "76": 24
+  },
+  "conservation": "Every physical atom occurs exactly once in the ordered expression partition and in physical atom audit; explicit join tail maps to first key.",
+  "outputs": {
+    "atomic-emission-proposal.jsonl": "e8978fdb780931de15d18ffda68e097877f6f79fe842a118f82a1f57cdd9af4d",
+    "physical-atom-emission-audit.jsonl": "efedac08545e5195c12e7321e36f0811254c015c706537f5b43525926d341a5b",
+    "expression-emission-proposal.jsonl": "ac88963a557430dc31f92ce0720d57e6b8a40be92b05f086a0fde44084659362"
+  },
+  "pending": [
+    "Original expression boundary/alignment and sentence/phrase metadata review",
+    "Root remaining specimen glyph controls",
+    "Final combined-output independent audit and all later source-stage/full-build gates"
+  ],
+  "canonical_changes": false
+}

@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Muduga · Dravidian surveys, 2026-09-21 · batch 008. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Muduga | Proposed etymology | Evidence |
+|---|---|---|---|
+| 36 | **uppɨ** ‘salt’ | Proposed reflex of [**DEDR 2674**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=231) | DEDR 2674(a) lists Tamil/Malayalam/Kannada uppu, Kolami sup and Parji cup ‘salt’; subsection (b) gives Gondi havar/ovor, Konda sōru and Kuvi hāru. The article supports the family but keeps the two stem series explicit; multiword salt responses are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (2 records.) |
+| 37 | **ombatɨ** ‘nine’, **ombadɨ** ‘nine’ | Proposed reflex of [**DEDR 1025**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=98) | DEDR 1025 gives Tamil oṉpatu/ompatu, Malayalam ompatu, Kannada ombattu/ombhattu, Kodagu oymbadi, Kota orbād, Tulu ormba and Gondi unmā nine. The retained variants preserve this numeral stem; Indo-Aryan nau/no and Telugu-type tommidi responses belong elsewhere. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (2 records.) |
+| 38 | **paḷɛyatɨ** ‘old’, **paḷiya** ‘old’ | Proposed reflex of [**DEDR 3999**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=355) | DEDR 3999 gives Tamil paẓa/paẓacu/paẓaiya, Malayalam paẓaya, Kannada paẓa, Gondi paḍana/paṛana, Konda paṛay and Kurux paccā old. The selected simple adjective forms follow these comparanda; old-person responses and compounds are kept out. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (4 records.) |
+| 39 | **sūḍɨ** ‘hot’, **tsūḍɨ** ‘hot’ | Proposed reflex of [**DEDR 2654**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=229) | DEDR 2654 gives Tamil cuṭu/cūṭu burn/heat, Malayalam cūṭu, Kannada suḍu/sūḍu and Tulu cūḍu hot. The selected survey forms retain this stem with the palatal/sibilant and stop spelling variants; compounds and unrelated heat families remain outside this proposal. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (2 records.) |
+| 40 | **putiyatɨ** ‘new’, **putiya** ‘new’ | Proposed reflex of [**DEDR 4275**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=378) | DEDR 4275 gives Tamil putu/putiya, Malayalam putu, Kodagu pudiyë, Kannada posa/hosa/hosadu and Tulu posa/posatu new; Konda pūni and Malto pune belong to the same family. These simple stems and adjectival inflections are selected; new-person nouns and loan-looking alternative stems remain unassigned. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (2 records.) |
+
+Proposed assignment rows: **12**. Affected records: **12**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-008.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Muduga/batch-008.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

@@ -1,0 +1,47 @@
+earlier,later,earlier_rule,later_rule,i,j,delta_ned,words
+@deaspiration @deaspiration,@int-stop-loss @v-loss @int-stop-loss @v-loss,Asp > $1-asp,{k g t d y v b} > ∅ / V _ V,11,13,0.00264,42
+@deaspiration @deaspiration,@nasal-cluster @nur-innovation @nasal-cluster @nur-innovation,Asp > $1-asp,n > ∅ / V _ {t tʰ ṭ ṭʰ},11,16,0.00264,13
+@int-stop-loss @v-loss @int-stop-loss @v-loss,@nasal-cluster @nur-innovation @nasal-cluster @nur-innovation,{k g t d y v b} > ∅ / V _ V,n > ∅ / V _ {t tʰ ṭ ṭʰ},13,16,0.00611,35
+@final-cons-loss @final-cons-loss,@final-vowel-loss @final-vowel-loss,{n s t d} > ∅ / V _ #,{a ā ē ō} > ∅ / V (C) C _ # | V C C C _ #,1,17,0.00903,75
+@deaspiration @deaspiration,@final-vowel-loss @final-vowel-loss,Asp > $1-asp,{a ā ē ō} > ∅ / V (C) C _ # | V C C C _ #,11,17,0.00264,75
+@int-stop-loss @v-loss @int-stop-loss @v-loss,@final-vowel-loss @final-vowel-loss,{k g t d y v b} > ∅ / V _ V,{a ā ē ō} > ∅ / V (C) C _ # | V C C C _ #,13,17,0.01667,81
+@anusvara-loss @anusvara-vowel @anusvara-vowel,@final-vowel-loss @final-vowel-loss,ṁ > ∅,{a ā ē ō} > ∅ / V (C) C _ # | V C C C _ #,14,17,0.00083,63
+@final-cons-loss @final-cons-loss,@cluster-simplify @degem-plain @degem-plain,{n s t d} > ∅ / V _ #,G $1 > $2,1,18,0.00167,15
+@deaspiration @deaspiration,@cluster-simplify @degem-plain @degem-plain,Asp > $1-asp,G $1 > $2,11,18,0.00167,12
+@int-p-v @int-p-v,@cluster-simplify @degem-plain @degem-plain,p > v / V _ V,G $1 > $2,12,18,0.00167,4
+@final-cons-loss @final-cons-loss,@cluster-simplify @cluster-simplify,{n s t d} > ∅ / V _ #,C {y v} > $1,1,19,0.00417,19
+@nur-innovation @x-nur-s-sh @x-nur-s-sh @nur-innovation,@cluster-simplify @cluster-simplify,s > ś / _ C,C {y v} > $1,10,19,0.00417,9
+@final-cons-loss @final-cons-loss,@cluster-simplify @cluster-simplify,{n s t d} > ∅ / V _ #,{k p} {t ṭ} > $2,1,20,0.00663,16
+@nur-innovation @x-nur-s-sh @x-nur-s-sh @nur-innovation,@cluster-simplify @cluster-simplify,s > ś / _ C,{k p} {t ṭ} > $2,10,20,0.00417,7
+@deaspiration @deaspiration,@cluster-simplify @cluster-simplify,Asp > $1-asp,{k p} {t ṭ} > $2,11,20,0.00264,14
+@int-p-v @int-p-v,@cluster-simplify @cluster-simplify,p > v / V _ V,{k p} {t ṭ} > $2,12,20,0.00167,5
+@int-stop-loss @v-loss @int-stop-loss @v-loss,@cluster-simplify @cluster-simplify,{k g t d y v b} > ∅ / V _ V,{k p} {t ṭ} > $2,13,20,0.00663,35
+@final-cons-loss @final-cons-loss,@hiatus @hiatus,{n s t d} > ∅ / V _ #,{a ā} > ∅ / V _,1,22,0.01319,39
+@nur-innovation @x-nur-s-sh @x-nur-s-sh @nur-innovation,@hiatus @hiatus,s > ś / _ C,{a ā} > ∅ / V _,10,22,0.00417,31
+@deaspiration @deaspiration,@hiatus @hiatus,Asp > $1-asp,{a ā} > ∅ / V _,11,22,0.00264,37
+@int-p-v @int-p-v,@hiatus @hiatus,p > v / V _ V,{a ā} > ∅ / V _,12,22,0.00167,28
+@int-stop-loss @v-loss @int-stop-loss @v-loss,@hiatus @hiatus,{k g t d y v b} > ∅ / V _ V,{a ā} > ∅ / V _,13,22,0.02006,34
+@final-vowel-loss @final-vowel-loss,@hiatus @hiatus,{a ā ē ō} > ∅ / V (C) C _ # | V C C C _ #,{a ā} > ∅ / V _,17,22,-0.00069,77
+@final-cons-loss @final-cons-loss,@hiatus @nur-innovation @hiatus @nur-innovation,{n s t d} > ∅ / V _ #,a > ∅ / _ V,1,23,0.00331,18
+@nur-innovation @x-nur-s-sh @x-nur-s-sh @nur-innovation,@hiatus @nur-innovation @hiatus @nur-innovation,s > ś / _ C,a > ∅ / _ V,10,23,0.00331,8
+@deaspiration @deaspiration,@hiatus @nur-innovation @hiatus @nur-innovation,Asp > $1-asp,a > ∅ / _ V,11,23,0.00264,15
+@int-p-v @int-p-v,@hiatus @nur-innovation @hiatus @nur-innovation,p > v / V _ V,a > ∅ / _ V,12,23,0.00167,6
+@int-stop-loss @v-loss @int-stop-loss @v-loss,@hiatus @nur-innovation @hiatus @nur-innovation,{k g t d y v b} > ∅ / V _ V,a > ∅ / _ V,13,23,0.00331,34
+@final-vowel-loss @final-vowel-loss,@hiatus @nur-innovation @hiatus @nur-innovation,{a ā ē ō} > ∅ / V (C) C _ # | V C C C _ #,a > ∅ / _ V,17,23,-0.00069,72
+@final-cons-loss @final-cons-loss,@metathesis @nur-innovation @metathesis @nur-innovation,{n s t d} > ∅ / V _ #,C V r > $1 r $2 / # _ C,1,25,0.00981,22
+@assim-r @assim-r,@metathesis @nur-innovation @metathesis @nur-innovation,r {ś ṣ} > ṣ,C V r > $1 r $2 / # _ C,8,25,0.00333,9
+@assim-r @cluster-simplify @assim-r @cluster-simplify,@metathesis @nur-innovation @metathesis @nur-innovation,ṇ > ∅ / r _,C V r > $1 r $2 / # _ C,9,25,0.00556,9
+@nur-innovation @x-nur-s-sh @x-nur-s-sh @nur-innovation,@metathesis @nur-innovation @metathesis @nur-innovation,s > ś / _ C,C V r > $1 r $2 / # _ C,10,25,0.00162,10
+@deaspiration @deaspiration,@metathesis @nur-innovation @metathesis @nur-innovation,Asp > $1-asp,C V r > $1 r $2 / # _ C,11,25,0.00023,15
+@int-p-v @int-p-v,@metathesis @nur-innovation @metathesis @nur-innovation,p > v / V _ V,C V r > $1 r $2 / # _ C,12,25,0.00023,8
+@int-stop-loss @v-loss @int-stop-loss @v-loss,@metathesis @nur-innovation @metathesis @nur-innovation,{k g t d y v b} > ∅ / V _ V,C V r > $1 r $2 / # _ C,13,25,0.00023,40
+@final-cons-loss @final-cons-loss,@nur-innovation @vowel-shift @nur-innovation @vowel-shift,{n s t d} > ∅ / V _ #,o > u,1,27,0.00216,27
+@final-cons-loss @final-cons-loss,@nur-innovation @x-nur-ts-sh @nur-innovation @x-nur-ts-sh,{n s t d} > ∅ / V _ #,ʦ > ś / V _,1,29,0.0125,28
+@affrication @nur-archaism @nur-archaism @affrication,@nur-innovation @x-nur-ts-sh @nur-innovation @x-nur-ts-sh,ś > ʦ / V _ | V ṁ _,ʦ > ś / V _,6,29,0.01716,14
+@assim-r @assim-r,@nur-innovation @x-nur-ts-sh @nur-innovation @x-nur-ts-sh,r {ś ṣ} > ṣ,ʦ > ś / V _,8,29,0.00333,13
+@assim-r @cluster-simplify @assim-r @cluster-simplify,@nur-innovation @x-nur-ts-sh @nur-innovation @x-nur-ts-sh,ṇ > ∅ / r _,ʦ > ś / V _,9,29,0.00375,15
+@nur-innovation @x-nur-s-sh @x-nur-s-sh @nur-innovation,@nur-innovation @x-nur-ts-sh @nur-innovation @x-nur-ts-sh,s > ś / _ C,ʦ > ś / V _,10,29,0.00375,16
+@deaspiration @deaspiration,@nur-innovation @x-nur-ts-sh @nur-innovation @x-nur-ts-sh,Asp > $1-asp,ʦ > ś / V _,11,29,0.00264,23
+@int-p-v @int-p-v,@nur-innovation @x-nur-ts-sh @nur-innovation @x-nur-ts-sh,p > v / V _ V,ʦ > ś / V _,12,29,0.00167,13
+@int-stop-loss @v-loss @int-stop-loss @v-loss,@nur-innovation @x-nur-ts-sh @nur-innovation @x-nur-ts-sh,{k g t d y v b} > ∅ / V _ V,ʦ > ś / V _,13,29,0.00375,38
+@anusvara-loss @anusvara-vowel @anusvara-vowel,@nur-innovation @x-nur-ts-sh @nur-innovation @x-nur-ts-sh,ṁ > ∅,ʦ > ś / V _,14,29,0.00375,13

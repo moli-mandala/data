@@ -1,0 +1,1946 @@
+{
+  "status": "complete bounded original review; source qualifications need reconciliation",
+  "reviewer": "norton_finish",
+  "scope": "Only VERBS, ADJECTIVES, ADVERBS constants in specimen_context.py; not the noun/conjunction/relational inventories or whole-source acceptance.",
+  "method": "Viewed complete original grayscale pages572–575 and each selected occurrence in aligned-clause context; consulted original571 for explicit morphological cautions. No tense/person/voice inference from English translation.",
+  "pair_count": 113,
+  "occurrence_count": 151,
+  "input_hashes": {
+    "specimen_context.py": "477cc43b434c3edc4d1a25ed51e203be9ad3ad5c7efe19171d6ee5618ca08cce",
+    "specimens-second-reading.jsonl": "74e19f4d032a46f1320788c54244fd0f0a21d33887fb52d9ef9d5ec2abbcb5c6",
+    "specimen-grammatical-proposal.jsonl": "81a74bcab2e25b7225257c9c352f1138837cf4bc9624184636b91f2a2840e42f"
+  },
+  "original_hashes": {
+    "571": "b8c20e3b9eea64003e97d015dd79abcce7613d71e8c8ab82d308791584e3a169",
+    "572": "366ea3425ac3ef494f6c7a567d3f1b99338e458b214631045f7dc43e1fc9f3b5",
+    "573": "bd585ecd22f530d4a694481612d215803b5928addc07b477da8d151672adf364",
+    "574": "675afc1b02618fe01eab2ea78cc94130d70faf9fb9035d37e4d971267f20ed8f",
+    "575": "d1bd93ce41bfad4fdab776bb30adc3f496f100a654337a7cbd9228cfcc7a97e8"
+  },
+  "findings": [
+    {
+      "source_unit_key": "grierson1906naiki:p572:specimen:line5:word1",
+      "form": "kharcha-kaktēn",
+      "gloss": "expenditure-made",
+      "severity": "source-analysis qualification required",
+      "type": "source-analysis",
+      "finding": "Original p571 says Kaktēn in kaktēn anlēn and similar forms are apparently nouns of agency. Specimen translations made/madest/expenditure-made justify predicate function but do not settle lexical noun versus verb analysis.",
+      "recommendation": "Preserve contextual reading and printed gloss, attach typed source-analysis uncertainty and agency-noun caveat; do not force a certain noun replacement from another construction."
+    },
+    {
+      "source_unit_key": "grierson1906naiki:p573:specimen:line12:word4",
+      "form": "kaktēn",
+      "gloss": "made",
+      "severity": "source-analysis qualification required",
+      "type": "source-analysis",
+      "finding": "Original p571 says Kaktēn in kaktēn anlēn and similar forms are apparently nouns of agency. Specimen translations made/madest/expenditure-made justify predicate function but do not settle lexical noun versus verb analysis.",
+      "recommendation": "Preserve contextual reading and printed gloss, attach typed source-analysis uncertainty and agency-noun caveat; do not force a certain noun replacement from another construction."
+    },
+    {
+      "source_unit_key": "grierson1906naiki:p573:specimen:line18:word6",
+      "form": "kaktēn",
+      "gloss": "madest",
+      "severity": "source-analysis qualification required",
+      "type": "source-analysis",
+      "finding": "Original p571 says Kaktēn in kaktēn anlēn and similar forms are apparently nouns of agency. Specimen translations made/madest/expenditure-made justify predicate function but do not settle lexical noun versus verb analysis.",
+      "recommendation": "Preserve contextual reading and printed gloss, attach typed source-analysis uncertainty and agency-noun caveat; do not force a certain noun replacement from another construction."
+    },
+    {
+      "source_unit_key": "grierson1906naiki:p573:specimen:line20:word8",
+      "form": "antēr",
+      "gloss": "was",
+      "severity": "source-analysis qualification required",
+      "type": "source-analysis",
+      "finding": "Original p571 explicitly calls r-ending forms properly plural while translating aṇḍur/antēr with singular was. The specimen also prints singular was.",
+      "recommendation": "Keep the specimen gloss and broad verb POS; retain source plural-analysis versus translation caveat. Do not infer source singular morphology from English."
+    },
+    {
+      "source_unit_key": "grierson1906naiki:p574:specimen:line2:word7",
+      "form": "aṇḍur",
+      "gloss": "was",
+      "severity": "source-analysis qualification required",
+      "type": "source-analysis",
+      "finding": "Original p571 explicitly calls r-ending forms properly plural while translating aṇḍur/antēr with singular was. The specimen also prints singular was.",
+      "recommendation": "Keep the specimen gloss and broad verb POS; retain source plural-analysis versus translation caveat. Do not infer source singular morphology from English."
+    },
+    {
+      "source_unit_key": "grierson1906naiki:p574:specimen:line2:word10",
+      "form": "aṇḍur",
+      "gloss": "was",
+      "severity": "source-analysis qualification required",
+      "type": "source-analysis",
+      "finding": "Original p571 explicitly calls r-ending forms properly plural while translating aṇḍur/antēr with singular was. The specimen also prints singular was.",
+      "recommendation": "Keep the specimen gloss and broad verb POS; retain source plural-analysis versus translation caveat. Do not infer source singular morphology from English."
+    },
+    {
+      "source_unit_key": "grierson1906naiki:p574:specimen:line6:word5",
+      "form": "iūn",
+      "gloss": "said",
+      "severity": "material missing source qualification",
+      "type": "source-transcription",
+      "finding": "Original p571 explicitly says Iūn, he said, is probably wrong. Current exact specimen occurrence is tagged verb with no qualification.",
+      "recommendation": "Keep printed iūn and said; add uncertain plus the attributed source warning. Do not silently correct the letters or replace the gloss."
+    }
+  ],
+  "edge_decisions": [
+    {
+      "pairs": [
+        "indēn|saying",
+        "mhūn|saying"
+      ],
+      "decision": "Printed saying introduces the represented content. Broad nonfinite verbal contextual classification is defensible; the source does not here prove a distinct lexical quotative particle or tense. Do not add either without analysis evidence."
+    },
+    {
+      "pairs": [
+        "iūn-sāṭin|therefore"
+      ],
+      "decision": "Printed therefore in573 functions adverbially; keep separate from simple iūn said. Do not propagate the questioned-reading warning by substring."
+    },
+    {
+      "pairs": [
+        "lakkā|the-younger",
+        "lakkā|small",
+        "yaug|fit"
+      ],
+      "decision": "Adjectival contextual reading supported. Keep separate from yaug fitness, which belongs to the noun list and is outside this bounded change."
+    },
+    {
+      "pairs": [
+        "davḍiltēn|lost",
+        "harpiltēn|lost"
+      ],
+      "decision": "Occur with following copula was; broad verbal/participial contextual class is defensible but no source morphological tense, passive or lexical adjective claim is established."
+    },
+    {
+      "pairs": [
+        "sukhāchā|safely",
+        "pharī|very",
+        "phari|big"
+      ],
+      "decision": "Aligned clause supports manner/degree adverb versus attributive adjective respectively; preserve their exact form/gloss-pair scope."
+    },
+    {
+      "pairs": [
+        "karūktu|calling",
+        "āḍsīn|playing"
+      ],
+      "decision": "Broad verb compatible with nonfinite/participle function; original571 additionally identifies these forms among participles. No new tense inferred."
+    }
+  ],
+  "coverage": [
+    {
+      "key": "grierson1906naiki:p572:specimen:line1:word5",
+      "form": "aṇḍēn",
+      "gloss": "were",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p572:specimen:line1:word7",
+      "form": "lakkā",
+      "gloss": "the-younger",
+      "class": "ADJECTIVES",
+      "actual_tags": [
+        "adj"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p572:specimen:line2:word7",
+      "form": "varlēn",
+      "gloss": "comes",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p572:specimen:line2:word10",
+      "form": "Māṅg",
+      "gloss": "Then",
+      "class": "ADVERBS",
+      "actual_tags": [
+        "adv"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p572:specimen:line3:word4",
+      "form": "vāṭā-kāktun",
+      "gloss": "share-making",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p572:specimen:line3:word5",
+      "form": "sītēn",
+      "gloss": "gave",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p572:specimen:line3:word6",
+      "form": "Māṅg",
+      "gloss": "Then",
+      "class": "ADVERBS",
+      "actual_tags": [
+        "adv"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p572:specimen:line3:word9",
+      "form": "eddūn",
+      "gloss": "having-become",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p572:specimen:line4:word1",
+      "form": "lakkā",
+      "gloss": "the-younger",
+      "class": "ADJECTIVES",
+      "actual_tags": [
+        "adj"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p572:specimen:line4:word5",
+      "form": "khōmbāḍ",
+      "gloss": "far",
+      "class": "ADVERBS",
+      "actual_tags": [
+        "adv"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p572:specimen:line4:word9",
+      "form": "attān",
+      "gloss": "there",
+      "class": "ADVERBS",
+      "actual_tags": [
+        "adv"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p572:specimen:line4:word10",
+      "form": "bēnāk",
+      "gloss": "evil",
+      "class": "ADJECTIVES",
+      "actual_tags": [
+        "adj"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p572:specimen:line5:word1",
+      "form": "kharcha-kaktēn",
+      "gloss": "expenditure-made",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "source qualification required"
+    },
+    {
+      "key": "grierson1906naiki:p572:specimen:line5:word4",
+      "form": "uḍāptēn",
+      "gloss": "squandered",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p572:specimen:line5:word5",
+      "form": "Māṅg",
+      "gloss": "Then",
+      "class": "ADVERBS",
+      "actual_tags": [
+        "adv"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p572:specimen:line5:word8",
+      "form": "kharchiptēn",
+      "gloss": "spent",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p572:specimen:line6:word3",
+      "form": "phari",
+      "gloss": "big",
+      "class": "ADJECTIVES",
+      "actual_tags": [
+        "adj"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p572:specimen:line8:word1",
+      "form": "aṇḍēn",
+      "gloss": "remained",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p572:specimen:line8:word8",
+      "form": "sōrtān",
+      "gloss": "sent",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p572:specimen:line8:word9",
+      "form": "Atrō",
+      "gloss": "Then",
+      "class": "ADVERBS",
+      "actual_tags": [
+        "adv"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p572:specimen:line9:word3",
+      "form": "tīñchināntē",
+      "gloss": "eating-were",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p572:specimen:line9:word8",
+      "form": "indutpēn",
+      "gloss": "will-fill",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p572:specimen:line9:word9",
+      "form": "indēn",
+      "gloss": "saying",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p572:specimen:line10:word2",
+      "form": "vāṭāytun",
+      "gloss": "it-appeared",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p572:specimen:line10:word8",
+      "form": "Māṅg",
+      "gloss": "Then",
+      "class": "ADVERBS",
+      "actual_tags": [
+        "adv"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p572:specimen:line11:word1",
+      "form": "vāttēn",
+      "gloss": "came",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p572:specimen:line11:word7",
+      "form": "bharpūr",
+      "gloss": "sufficient",
+      "class": "ADJECTIVES",
+      "actual_tags": [
+        "adj"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p572:specimen:line12:word4",
+      "form": "tīkēntān",
+      "gloss": "am-dying",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p572:specimen:line12:word6",
+      "form": "suyitēn",
+      "gloss": "arising",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p572:specimen:line12:word9",
+      "form": "sērtān",
+      "gloss": "go",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p572:specimen:line13:word2",
+      "form": "entān",
+      "gloss": "say",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p572:specimen:line14:word2",
+      "form": "Indiṭlā",
+      "gloss": "Henceforward",
+      "class": "ADVERBS",
+      "actual_tags": [
+        "adv"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p572:specimen:line15:word4",
+      "form": "Māṅg",
+      "gloss": "Then",
+      "class": "ADVERBS",
+      "actual_tags": [
+        "adv"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p572:specimen:line15:word6",
+      "form": "suyitēn",
+      "gloss": "arising",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p572:specimen:line15:word10",
+      "form": "Atrō",
+      "gloss": "Then",
+      "class": "ADVERBS",
+      "actual_tags": [
+        "adv"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p572:specimen:line16:word2",
+      "form": "khōmbāḍ",
+      "gloss": "far",
+      "class": "ADVERBS",
+      "actual_tags": [
+        "adv"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p572:specimen:line16:word8",
+      "form": "aiktēn",
+      "gloss": "saw",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p572:specimen:line17:word1",
+      "form": "ṭuṭēn",
+      "gloss": "ran",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p572:specimen:line17:word5",
+      "form": "tāptēn",
+      "gloss": "struck",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p572:specimen:line17:word9",
+      "form": "ēktēn",
+      "gloss": "took",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p573:specimen:line1:word1",
+      "form": "Māṅg",
+      "gloss": "Then",
+      "class": "ADVERBS",
+      "actual_tags": [
+        "adv"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p573:specimen:line1:word4",
+      "form": "eṇḍēn",
+      "gloss": "said",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p573:specimen:line2:word6",
+      "form": "indiṭlā",
+      "gloss": "Henceforth",
+      "class": "ADVERBS",
+      "actual_tags": [
+        "adv"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p573:specimen:line3:word7",
+      "form": "iḍuktēn",
+      "gloss": "said",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p573:specimen:line3:word8",
+      "form": "chāṅglē",
+      "gloss": "good",
+      "class": "ADJECTIVES",
+      "actual_tags": [
+        "adj"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p573:specimen:line3:word10",
+      "form": "kōttun",
+      "gloss": "bringing",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p573:specimen:line4:word2",
+      "form": "tāpp",
+      "gloss": "put",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p573:specimen:line4:word10",
+      "form": "tāpp",
+      "gloss": "put",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p573:specimen:line5:word1",
+      "form": "Māṅg",
+      "gloss": "Then",
+      "class": "ADVERBS",
+      "actual_tags": [
+        "adv"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p573:specimen:line5:word5",
+      "form": "kaknām",
+      "gloss": "shall-make",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p573:specimen:line6:word1",
+      "form": "aṇḍēn",
+      "gloss": "was",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p573:specimen:line6:word3",
+      "form": "maltun",
+      "gloss": "again",
+      "class": "ADVERBS",
+      "actual_tags": [
+        "adv"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p573:specimen:line6:word4",
+      "form": "jitē",
+      "gloss": "alive",
+      "class": "ADJECTIVES",
+      "actual_tags": [
+        "adj"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p573:specimen:line6:word5",
+      "form": "eddēn",
+      "gloss": "became",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p573:specimen:line6:word7",
+      "form": "davḍiltēn",
+      "gloss": "lost",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p573:specimen:line6:word8",
+      "form": "aṇḍēn",
+      "gloss": "was",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p573:specimen:line6:word10",
+      "form": "sāpḍiltēn",
+      "gloss": "was-found",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p573:specimen:line7:word1",
+      "form": "Atrō",
+      "gloss": "Then",
+      "class": "ADVERBS",
+      "actual_tags": [
+        "adv"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p573:specimen:line7:word5",
+      "form": "lagtēn",
+      "gloss": "began",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p573:specimen:line8:word4",
+      "form": "vaḍil",
+      "gloss": "big",
+      "class": "ADJECTIVES",
+      "actual_tags": [
+        "adj"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p573:specimen:line8:word7",
+      "form": "aṇḍēn",
+      "gloss": "was",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p573:specimen:line8:word8",
+      "form": "Māṅg",
+      "gloss": "Then",
+      "class": "ADVERBS",
+      "actual_tags": [
+        "adv"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p573:specimen:line8:word10",
+      "form": "vattēn",
+      "gloss": "came",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p573:specimen:line9:word2",
+      "form": "vattēn",
+      "gloss": "came",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p573:specimen:line9:word7",
+      "form": "vēṇḍēn",
+      "gloss": "heard",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p573:specimen:line9:word8",
+      "form": "Atrō",
+      "gloss": "Then",
+      "class": "ADVERBS",
+      "actual_tags": [
+        "adv"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p573:specimen:line10:word2",
+      "form": "karūktu",
+      "gloss": "calling",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p573:specimen:line10:word4",
+      "form": "pusāyitēn",
+      "gloss": "asked",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p573:specimen:line10:word9",
+      "form": "iḍuktēn",
+      "gloss": "said",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p573:specimen:line11:word3",
+      "form": "vattēn",
+      "gloss": "came",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p573:specimen:line11:word8",
+      "form": "sukhāchā",
+      "gloss": "safely",
+      "class": "ADVERBS",
+      "actual_tags": [
+        "adv"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p573:specimen:line11:word9",
+      "form": "mirāitun",
+      "gloss": "having-met",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p573:specimen:line12:word2",
+      "form": "phar",
+      "gloss": "big",
+      "class": "ADJECTIVES",
+      "actual_tags": [
+        "adj"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p573:specimen:line12:word4",
+      "form": "kaktēn",
+      "gloss": "made",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "source qualification required"
+    },
+    {
+      "key": "grierson1906naiki:p573:specimen:line12:word5",
+      "form": "Atrō",
+      "gloss": "Then",
+      "class": "ADVERBS",
+      "actual_tags": [
+        "adv"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p573:specimen:line12:word8",
+      "form": "vattēn",
+      "gloss": "came",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p573:specimen:line12:word9",
+      "form": "lōpul",
+      "gloss": "inside",
+      "class": "ADVERBS",
+      "actual_tags": [
+        "adv"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p573:specimen:line13:word1",
+      "form": "Iūn-sāṭin",
+      "gloss": "Therefore",
+      "class": "ADVERBS",
+      "actual_tags": [
+        "adv"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p573:specimen:line13:word4",
+      "form": "bāhēr",
+      "gloss": "outside",
+      "class": "ADVERBS",
+      "actual_tags": [
+        "adv"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p573:specimen:line13:word5",
+      "form": "vattēn",
+      "gloss": "came",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p573:specimen:line13:word7",
+      "form": "samjiptēn",
+      "gloss": "entreated",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p573:specimen:line14:word2",
+      "form": "sītēn",
+      "gloss": "gave",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p573:specimen:line14:word10",
+      "form": "kākēntān",
+      "gloss": "do",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p573:specimen:line15:word4",
+      "form": "etrōs",
+      "gloss": "ever",
+      "class": "ADVERBS",
+      "actual_tags": [
+        "adv"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p573:specimen:line15:word5",
+      "form": "mōḍāpēttān",
+      "gloss": "broke-not",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p573:specimen:line15:word6",
+      "form": "yetrō",
+      "gloss": "still",
+      "class": "ADVERBS",
+      "actual_tags": [
+        "adv"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p573:specimen:line16:word1",
+      "form": "kakkēn",
+      "gloss": "might-make",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p573:specimen:line16:word2",
+      "form": "mhūn",
+      "gloss": "saying",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p573:specimen:line16:word5",
+      "form": "etrō",
+      "gloss": "ever",
+      "class": "ADVERBS",
+      "actual_tags": [
+        "adv"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p573:specimen:line16:word7",
+      "form": "siyētun",
+      "gloss": "gavest-not",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p573:specimen:line17:word5",
+      "form": "surtē",
+      "gloss": "squandered",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p573:specimen:line17:word10",
+      "form": "vattēn",
+      "gloss": "came",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p573:specimen:line18:word1",
+      "form": "atrō",
+      "gloss": "then",
+      "class": "ADVERBS",
+      "actual_tags": [
+        "adv"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p573:specimen:line18:word4",
+      "form": "phar",
+      "gloss": "great",
+      "class": "ADJECTIVES",
+      "actual_tags": [
+        "adj"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p573:specimen:line18:word6",
+      "form": "kaktēn",
+      "gloss": "madest",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "source qualification required"
+    },
+    {
+      "key": "grierson1906naiki:p573:specimen:line18:word7",
+      "form": "Atrō",
+      "gloss": "Then",
+      "class": "ADVERBS",
+      "actual_tags": [
+        "adv"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p573:specimen:line18:word10",
+      "form": "aṇḍēn",
+      "gloss": "said",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p573:specimen:line19:word2",
+      "form": "hamēśā",
+      "gloss": "always",
+      "class": "ADVERBS",
+      "actual_tags": [
+        "adv"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p573:specimen:line20:word7",
+      "form": "yaug",
+      "gloss": "fit",
+      "class": "ADJECTIVES",
+      "actual_tags": [
+        "adj"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p573:specimen:line20:word8",
+      "form": "antēr",
+      "gloss": "was",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "source qualification required"
+    },
+    {
+      "key": "grierson1906naiki:p573:specimen:line21:word2",
+      "form": "aṇḍēn",
+      "gloss": "was",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p573:specimen:line21:word4",
+      "form": "partun",
+      "gloss": "again",
+      "class": "ADVERBS",
+      "actual_tags": [
+        "adv"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p573:specimen:line21:word5",
+      "form": "jitē",
+      "gloss": "alive",
+      "class": "ADJECTIVES",
+      "actual_tags": [
+        "adj"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p573:specimen:line21:word6",
+      "form": "yeddēn",
+      "gloss": "became",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p573:specimen:line21:word8",
+      "form": "harpiltēn",
+      "gloss": "lost",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p573:specimen:line21:word9",
+      "form": "aṇḍēn",
+      "gloss": "was",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p573:specimen:line21:word11",
+      "form": "sāpḍiltēn",
+      "gloss": "was-found",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p574:specimen:line1:word4",
+      "form": "lakkā",
+      "gloss": "small",
+      "class": "ADJECTIVES",
+      "actual_tags": [
+        "adj"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p574:specimen:line1:word6",
+      "form": "aṇḍēn",
+      "gloss": "were",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p574:specimen:line2:word5",
+      "form": "pharī",
+      "gloss": "very",
+      "class": "ADVERBS",
+      "actual_tags": [
+        "adv"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p574:specimen:line2:word6",
+      "form": "chokkōṭ",
+      "gloss": "good",
+      "class": "ADJECTIVES",
+      "actual_tags": [
+        "adj"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p574:specimen:line2:word7",
+      "form": "aṇḍur",
+      "gloss": "was",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "source qualification required"
+    },
+    {
+      "key": "grierson1906naiki:p574:specimen:line2:word9",
+      "form": "sāvatāṅg",
+      "gloss": "common",
+      "class": "ADJECTIVES",
+      "actual_tags": [
+        "adj"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p574:specimen:line2:word10",
+      "form": "aṇḍur",
+      "gloss": "was",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "source qualification required"
+    },
+    {
+      "key": "grierson1906naiki:p574:specimen:line3:word7",
+      "form": "āḍsīn",
+      "gloss": "playing",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p574:specimen:line3:word8",
+      "form": "aṇḍēr",
+      "gloss": "were",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p574:specimen:line4:word2",
+      "form": "yantēr",
+      "gloss": "said",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p574:specimen:line4:word7",
+      "form": "āykēkād",
+      "gloss": "will-see",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p574:specimen:line4:word8",
+      "form": "chokkōṭ",
+      "gloss": "handsome",
+      "class": "ADJECTIVES",
+      "actual_tags": [
+        "adj"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p574:specimen:line5:word1",
+      "form": "chōvāylēn",
+      "gloss": "appears",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p574:specimen:line5:word4",
+      "form": "kharāb",
+      "gloss": "bad",
+      "class": "ADJECTIVES",
+      "actual_tags": [
+        "adj"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p574:specimen:line5:word7",
+      "form": "samjiltum",
+      "gloss": "it-appeared",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p574:specimen:line6:word5",
+      "form": "iūn",
+      "gloss": "said",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "source qualification required"
+    },
+    {
+      "key": "grierson1906naiki:p574:specimen:line6:word6",
+      "form": "Māṅg",
+      "gloss": "Then",
+      "class": "ADVERBS",
+      "actual_tags": [
+        "adv"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p574:specimen:line6:word10",
+      "form": "sēdun",
+      "gloss": "having-gone",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p574:specimen:line7:word3",
+      "form": "iḍuktēn",
+      "gloss": "said",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p574:specimen:line7:word4",
+      "form": "enlēn",
+      "gloss": "says",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p574:specimen:line7:word8",
+      "form": "aiktān",
+      "gloss": "seeing",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p574:specimen:line8:word2",
+      "form": "pāvāytunē",
+      "gloss": "is-felt",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p574:specimen:line9:word1",
+      "form": "tābgārē",
+      "gloss": "should-not-put",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p574:specimen:line9:word5",
+      "form": "sumtēn",
+      "gloss": "took",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p574:specimen:line9:word7",
+      "form": "samjiptēn",
+      "gloss": "entreated",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p574:specimen:line10:word2",
+      "form": "eṇḍēn",
+      "gloss": "said",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p574:specimen:line10:word6",
+      "form": "Inēṭlā",
+      "gloss": "Hence",
+      "class": "ADVERBS",
+      "actual_tags": [
+        "adv"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p574:specimen:line10:word9",
+      "form": "rōjjā",
+      "gloss": "daily",
+      "class": "ADVERBS",
+      "actual_tags": [
+        "adv"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p574:specimen:line11:word2",
+      "form": "āik",
+      "gloss": "look",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p574:specimen:line12:word6",
+      "form": "sumtun",
+      "gloss": "taking",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p574:specimen:line12:word7",
+      "form": "kōtēn",
+      "gloss": "bringing",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p574:specimen:line12:word8",
+      "form": "antēn",
+      "gloss": "was",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p574:specimen:line13:word1",
+      "form": "yantēn",
+      "gloss": "said",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p574:specimen:line13:word4",
+      "form": "sīyān",
+      "gloss": "shall-give",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p574:specimen:line14:word4",
+      "form": "iḍuk",
+      "gloss": "say",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p574:specimen:line14:word6",
+      "form": "inēn",
+      "gloss": "to-day",
+      "class": "ADVERBS",
+      "actual_tags": [
+        "adv"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p574:specimen:line15:word1",
+      "form": "vēgēn",
+      "gloss": "to-morrow",
+      "class": "ADVERBS",
+      "actual_tags": [
+        "adv"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p574:specimen:line15:word5",
+      "form": "vā",
+      "gloss": "come",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p575:specimen:line1:word5",
+      "form": "yadāḍin",
+      "gloss": "whence",
+      "class": "ADVERBS",
+      "actual_tags": [
+        "adv"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p575:specimen:line1:word6",
+      "form": "kōrtēn",
+      "gloss": "brought",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p575:specimen:line2:word9",
+      "form": "antē",
+      "gloss": "are",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p575:specimen:line3:word1",
+      "form": "antē",
+      "gloss": "are",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p575:specimen:line3:word4",
+      "form": "pustun",
+      "gloss": "drawing",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    },
+    {
+      "key": "grierson1906naiki:p575:specimen:line3:word6",
+      "form": "kōrtēn",
+      "gloss": "brought",
+      "class": "VERBS",
+      "actual_tags": [
+        "verb"
+      ],
+      "source_caveat": "",
+      "uncertainty": null,
+      "review_result": "contextual POS compatible with original aligned clause"
+    }
+  ],
+  "owner_inputs_modified": false,
+  "canonical_changed": false
+}

@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Muthuvan · Dravidian surveys, 2026-09-21 · batch 018. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Muthuvan | Proposed etymology | Evidence |
+|---|---|---|---|
+| 76 | **vɛliyaōḍa** ‘river’, **vɛliyōḍa** ‘river’ | Compound: [**DEDR 5276**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=476) + [**DEDR 1041**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=99) | Ordered big + watercourse components: DEDR5276 explicitly gives Malayalam valiya great/big and1041 ōṭa watercourse. Muthuvan veliya-ōḍa/veliyōḍa river expresses a large watercourse, retaining the source contraction and vowels. (3 records.) |
+| 77 | **ɛṇṇa** ‘oil’ | Compound: [**DEDR 854**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=83) + [**DEDR 3746**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=334) | Ordered sesame + oil: DEDR854 explicitly gives Tamil eṇ ṇey gingelly oil and related Malayalam eṇṇa/Kannada eṇṇe, while3746 gives ney oil. These lexicalized eṇṇey/eṇṇa/eṇṇe survey responses are analysed with both historical constituents; their generalized survey gloss oil and all dialect transcriptions remain unchanged. (8 records.) |
+| 78 | **nilakaḍalai** ‘groundnut’, **nɛlakaḍala** ‘groundnut’, **nilakaḍala** ‘groundnut’ | Compound: [**DEDR 3676**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=326) + [**DEDR 1120**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=105) | Ordered ground + gram: DEDR3676 nilam/nela earth/ground and1120 kaṭalai/kaṭala gram. Survey nila-/nela-kaḍala(i) groundnut transparently contains both constituents; its modern groundnut designation is retained as a compound, not conflated with the botanical gram referent of1120. (4 records.) |
+| 79 | **uraṇḍakɛ̄ŋŋɨ** ‘potato’, **uraṇḍakɛyaŋŋɨ** ‘potato’, **uraṇḍakiyaŋŋɨ** ‘potato’, **uraḷakiyaŋgɨ** ‘potato’ | Compound: [**DEDR 664**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=64) + [**DEDR 1578**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=145) | Ordered round + tuber: DEDR664(a) gives uruḷai/uruḷa anything round and uruṇṭa round;1578 gives kiẓaṅku/kiẓaṅṅu esculent tuber, explicitly including potato. These survey uruḷa-/uraṇḍa- plus kiyaṅgu/kisaṅgu/keŋgu/kaŋgu potato compounds retain both lexical constituents, with source dialect consonants and vowels preserved. (8 records.) |
+| 80 | **muḷakay** ‘chili’ | Compound: [**DEDR 4867**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=434) + [**DEDR 1459**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=136) | Ordered pepper + fruit/pod: DEDR4867 miḷaku/muḷaku pepper/chilli and1459 kāy fruit. Survey muḷakay/moḷakay chilli retains both historical lexical constituents and its source crop meaning. (1 records.) |
+
+Proposed assignment rows: **48**. Affected records: **24**. Relation kinds: **component**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-018.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Muthuvan/batch-018.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

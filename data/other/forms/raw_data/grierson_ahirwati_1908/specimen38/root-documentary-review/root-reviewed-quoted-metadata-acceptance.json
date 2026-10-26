@@ -1,0 +1,78 @@
+{
+  "status": "pass",
+  "scope": "All nine separately printed p237 quotation groups; protected 18-emission derivative and conservative metadata",
+  "counts": {
+    "quotation_groups": 9,
+    "physical_lexical_atoms": 16,
+    "whole_quotes": 2,
+    "metadata_repairs": 3,
+    "literal_changes": 0
+  },
+  "inputs": {
+    "specimen38/root-documentary-review/quoted-emission-proposal.jsonl": "a44c8283965644a80e87600a59776432c441efca95d5c1e251dbf9dbc7603936",
+    "specimen38/native-review/quoted-emissions-reviewed-derivative.jsonl": "5df106db55b64d578dbf149bfdade8622b3aef974dea528716a5f80904697d24",
+    "specimen38/native-review/independent-quoted-comparison-review.json": "a27a57a8bf9040561ea0a91aeaa0ce93fde18c7ca6ee66c71029d52edde2c5b4",
+    "specimen38/root-documentary-review/p237-linguistic-commentary-native.png": "033bc17569873466afa381de5beddd133cd27baca3886f22a7a4ee3c47716461"
+  },
+  "decisions": [
+    {
+      "key": "lsi9.2:p237:analysis-quotation:5:word:1",
+      "old_form": "bōlā",
+      "old_gloss": "",
+      "old_tags": [
+        "verb",
+        "participle",
+        "pret"
+      ],
+      "proposed_tags": [
+        "verb"
+      ],
+      "old_notes": "Explicit Bangaru comparator; occurrence-specific mixed-source comparison.",
+      "proposed_notes": "Explicit Bangaru comparator; occurrence-specific mixed-source comparison. The explicit past-participle/y-dropping analysis scopes bōlō/bōlyō; no participle or past tag inferred for this Bangaru comparison."
+    },
+    {
+      "key": "lsi9.2:p237:analysis-quotation:8:word:1",
+      "old_form": "aĩh",
+      "old_gloss": "",
+      "old_tags": [
+        "pron",
+        "dem",
+        "obl"
+      ],
+      "proposed_tags": [
+        "pron",
+        "demonstrative",
+        "obl"
+      ],
+      "old_notes": "Source says this oblique form is used in place of nominative yō, this; the exact lexical Gloss is not separately printed here.",
+      "proposed_notes": "Source says this oblique form is used in place of nominative yō, this; the exact lexical Gloss is not separately printed here."
+    },
+    {
+      "key": "lsi9.2:p237:analysis-quotation:9:word:1",
+      "old_form": "yō",
+      "old_gloss": "this",
+      "old_tags": [
+        "pron",
+        "dem",
+        "nom"
+      ],
+      "proposed_tags": [
+        "pron",
+        "demonstrative",
+        "nom"
+      ],
+      "old_notes": "Explicit nominative comparator, directly glossed this.",
+      "proposed_notes": "Explicit nominative comparator, directly glossed this."
+    }
+  ],
+  "raw_forms_glosses_languages_locators_preserved": true,
+  "qualifications": [
+    "Only yō has directly printed this; other quotation Gloss values intentionally blank.",
+    "Bangaru bōlā remains verb-only; local bōlō/bōlyō past-participle scope is explicit.",
+    "Roman quotations on p237 do not certify the 194 Persian specimen atoms.",
+    "Inventory component keys do not authorize morphological component edges; source y-dropping relation awaits final graph review."
+  ],
+  "installation_approved": false,
+  "full_ingestion_complete": false,
+  "canonical_changes": false
+}

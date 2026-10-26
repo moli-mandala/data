@@ -1,0 +1,36 @@
+{
+  "status": "three complete component sets approved for candidate graph serialization; final edge validation required",
+  "independent_report_sha256": "08e946f05391d5916cba8c3135c8810ba53da0325188b4ecbe70825e4c740748",
+  "original_images_reviewed": ["tmp/kui-independent-grammar-484-lower.png", "tmp/kui-independent-grammar-leaf484-bottom.png", "tmp/kui-independent-grammar-leaf483-bottom.png"],
+  "accepted": [
+    {
+      "child_key": "grierson1906kui:p463:negative-conjunctive-example:1",
+      "child_form": "pāgār-aṅgā",
+      "ordered_parent_keys": ["grierson1906kui:p462:principal-conjunctive-past-c1:1", "grierson1906kui:p463:negative-conjunctive-morphology:1"],
+      "parent_forms": ["pāga", "ār-aṅgā"],
+      "basis": "Source explicitly adds the negative element to the past conjunctive participle. The selected pāga is the participle witness, not its homographic verbal noun."
+    },
+    {
+      "child_key": "grierson1906kui:p463:compound-example:4",
+      "child_form": "gia-maĩ",
+      "ordered_parent_keys": ["grierson1906kui:p462:principal-conjunctive-past-c5:1", "grierson1906kui:p463:copula-1-excl-c1:1"],
+      "parent_forms": ["gia", "maĩ"],
+      "basis": "Compound-tense paragraph explicitly combines the conjunctive participle with the inflected copula. Exact components and compatible source lect/person are independently attested."
+    },
+    {
+      "child_key": "grierson1906kui:p463:passive-example:1",
+      "child_form": "giwa-āti",
+      "ordered_parent_keys": ["grierson1906kui:p462:principal-verbal-noun-c5:1:v1", "grierson1906kui:p462:principal-relative-past-c4:1"],
+      "parent_forms": ["giwa", "āti"],
+      "basis": "Source explicitly combines verbal noun and become for passive formation. giwa has approved comma-alternative emission; āti is an attested inflected form of the stated auxiliary. Preserve the source qualification that this passive is uncommon."
+    }
+  ],
+  "component_edge_count": 6,
+  "held": [
+    "Two gipki compounds await a separately reviewed interpretation of gi(pk)i; no automatic optional-parenthesis expansion approved.",
+    "Adjective dāṭā-gaṭṭa lacks an independently attested complete noun base endpoint.",
+    "Two verbal-noun derivations lack the exact relative-participle base endpoints; do not substitute tinba simply because its meaning is related."
+  ],
+  "validation_requirements": ["assert every endpoint exists and has its approved literal form", "preserve component order and source provenance", "classify as component, not variant/reflex/borrowing", "retain source prose and all five held analyses in audit"],
+  "canonical_changes": false
+}

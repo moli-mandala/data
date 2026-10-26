@@ -1,0 +1,93 @@
+{
+  "status": "frozen for independent actual-output source audit; not installed",
+  "source_pdf": "tmp/pdfs/bailey1920/bailey1920.pdf",
+  "source_pdf_sha256": "7a1577a2d2a24eca8b95e9b1ed700ef01f716d1069e4468f36a673611d093b39",
+  "page_mapping": "Printed n = one-based PDF n+26 = zero-based PDF n+25",
+  "source_scope": "Shared113–115; heading-scoped116–117; paired grammar131–140;44complete responses141–142; commentary142–143; complete glossary144–147; boundary controls115–118,130,148",
+  "source_groups": {
+    "frozen_supplementary_groups": 393,
+    "additional_lexical_headings": 2,
+    "reviewed_supplementary_groups": 395,
+    "grammar": 305,
+    "sentences": 44,
+    "commentary": 19,
+    "introduction": 27,
+    "context_or_control_groups": 23
+  },
+  "packages": {
+    "rampur": {
+      "rows": 647,
+      "legacy_rows_preserved": 288,
+      "added_rows": 359,
+      "recovered_glossary_holds": 1,
+      "generic_kochi_rows": 4,
+      "audit_units": 640,
+      "uncertain_rows": 16,
+      "variant_rows": 10,
+      "files": {
+        "whole-proposed.csv": "5e236fafd8dab2360ed584157248fd0cbbcdf2fa90a23b1187565f0cd5c3c3e3",
+        "whole-proposed-audit.jsonl": "67c6a2a593b8a51cef845bb4b1639475b77015adebc4232c602ca50f9078d828",
+        "whole-proposed-profile.txt": "4956fe9a0bae7e2912595a34d1eb8594200f74d5b74a2e272f85869a2cb4852b",
+        "whole-parser-validation-20260927.json": "fe9d9a1a81b284e04ade51ebe51973b3442d105250019456fc9d96b1250a0d9c",
+        "whole-profile-validation-20260927.json": "672352743eba2dc34f6f3ceb47e0fbca03c92ea2e798d2d749e8d3fcf3ae7bfd"
+      }
+    },
+    "baghi": {
+      "rows": 698,
+      "legacy_rows_preserved": 296,
+      "added_rows": 402,
+      "recovered_glossary_holds": 0,
+      "generic_kochi_rows": 0,
+      "audit_units": 640,
+      "uncertain_rows": 7,
+      "variant_rows": 21,
+      "files": {
+        "whole-proposed.csv": "37d3015845c7995c9d5c0826868d49a832a54ff5abd1fe37660bcc97bfefdc3e",
+        "whole-proposed-audit.jsonl": "c2f1ff56045c0b11e19877d3284afc64a7b24779ef02c9eefdb3a556afc12f27",
+        "whole-proposed-profile.txt": "975fb32b76eece2271b3c2b4d79eb7ac154c0957bcf42b21316e913efa300b86",
+        "whole-parser-validation-20260927.json": "e9d78e6fb35e198d08ac74eb81c74590a31dfa60508e07e08dcdac5e585e354b",
+        "whole-profile-validation-20260927.json": "8db71813d1ffe2698e8400debc751670930cebac1b469c2804732057cb76819e"
+      }
+    }
+  },
+  "input_sha256": {
+    "whole-paired-grammar-first-reading-20260927.tsv": "54b95aecc7a2b86fc490bb8d530add63fdbdd8165ab2b21b0204072812632b6e",
+    "whole-paired-sentences-first-reading-20260927.tsv": "a2cce004b8c23c96287877a7d871d2ed00e8aead2242775881d7f4f24e071bd7",
+    "whole-paired-commentary-first-reading-20260927.jsonl": "1473cb58fc78ca9b2a1f8c97f2656b97405a7f816689425c87dad9fb1348b001",
+    "whole-paired-introduction-first-reading-20260927.jsonl": "7a24e966cd0ac24538ae33e3328b007a4ecd8985ded56c02a09c94c7365c57a1",
+    "whole-paired-second-reading-20260927.json": "f2ccab900a491cfea31f80aade79b959b3575e1f71d41b588e2fad5233ca7294",
+    "whole-paired-grammar-reviewed-20260927.jsonl": "e71e629b1c7459b736179cea4c7c5999fc4e4fa36711c9ad17a812f567865aa7",
+    "whole-paired-sentences-reviewed-20260927.jsonl": "84aeb590b40dd50fad6f7521baf53622ed5cf5089817781e0dfc64f03be94c37",
+    "whole-paired-commentary-reviewed-20260927.jsonl": "e742ad9b0d83a7211a7f84bd5039463fef829dbf314704a93382bc866ff46e37",
+    "whole-paired-introduction-reviewed-20260927.jsonl": "795d66f82673b94ba8ed15083ae966f9be101d8995f2c96c7c3078d28aee0e8b",
+    "whole-paired-expansion-draft-20260927.jsonl": "b9808654967fb2d4b58753d96f41ad4a90740542a59eb34eb6588c861e4e6d59",
+    "whole-glossary-hold-recovery-20260927.json": "fc103d2b2fc8518f14f0ea43c7a7d6a75976eb121e9a650228dd7ff5a04b8b0c",
+    "prepare_paired_reviewed.py": "76eccec34bc9d4641eb417ce824ee067f981c6a1668eb5108ab65570b3e80472",
+    "prepare_paired_expansion.py": "74a705cef9a29c2e7343979e297c473e9fe18a2e5a677650453a1bf0f7b15c4f",
+    "prepare_paired_proposals.py": "3e62bd49bc49799076ebf8d0862e6b9fc7ff40232b3ae97b8f61e6599e863c88"
+  },
+  "source_decisions": [
+    "GenericKochi4examples emitted once under kc in Rampuri carrier, with explicit attribution scope and blank glosses.",
+    "Explicit suffixes and ditto replacements expanded only from printed stems/context; raw physical cells retained.",
+    "Same-as paradigm statements have exact candidate-key reuse accounting; no arbitrary unprinted paradigms generated.",
+    "Baghi water-word alternate emits2complete responses; all44physical responses retained.",
+    "Future3pl unpunctuated ōā auī split into2tentative alternatives with root-supported segmentation uncertainty and no confident variant edge.",
+    "Formerly held glossary body jĕā́ recovered after root original-image confirmation; historical hold retained and interpretation uncertainty explicit."
+  ],
+  "validation": {
+    "focused_test_file": "tests/test_bailey_rampur_baghi_whole_recovery.py",
+    "focused_tests": "6 passed",
+    "parser_rows": 1345,
+    "normalizations": [
+      "NFC",
+      "NFD"
+    ],
+    "profile_policy": "zero violations",
+    "legacy_rows_exact": 584
+  },
+  "remaining": [
+    "independent actual-output source audit and adjudication",
+    "guarded canonical importer/metadata/reference/checklist installation and canonical parser checks",
+    "fullCLDF/database/build/browser gates explicitly deferred; no remote work authorized"
+  ]
+}

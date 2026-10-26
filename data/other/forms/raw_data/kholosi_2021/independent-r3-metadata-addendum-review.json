@@ -1,0 +1,36 @@
+{
+  "status": "passed independent metadata-only review",
+  "exact_change": "sources.kholosi.reference.etymology_provenance: jambu → mixed",
+  "reason": "Directly attributed source ancestry plus retained historical editorial alternatives requires mixed provenance.",
+  "validation_sha256": "6f321e5d06958edbdf0e258218bd81aa35494b2be18d11c71fd23631a47d0e21",
+  "hashes_verified": {
+    "status": "validated metadata-only proposal; independent approval pending",
+    "changes": [
+      {
+        "path": "sources.kholosi.reference.etymology_provenance",
+        "before": "jambu",
+        "after": "mixed"
+      }
+    ],
+    "reason": "The same citation contains historical Jambu alternatives plus validated direct/qualified source ancestry and components; neither source-only nor Jambu-only describes the full graph provenance.",
+    "frozen_manifest_sha256": "72c5a580541c1594f773d32e6304b28a9d071796f22ee1aa564fcf8776997315",
+    "csv_sha256": "97ebfb4fc673ca06b805736030340bf2206b53e73af3cd76ed065b02bbd1f2bd",
+    "profile_sha256": "1fcdabf0a57b03e70499591a6f2271edf5f1e7fef5d2250fb02b28728cb9369a",
+    "yaml_sha256": "106fc7657ac912dbc2c52384f218c6ed60fdb3f75e9498983344c1b05cb5257b",
+    "actual_parser_checks": {
+      "NFC": {
+        "rows": 1135,
+        "parser_errors": 0,
+        "exact_literal_and_graph_fields": true
+      },
+      "NFD": {
+        "rows": 1135,
+        "parser_errors": 0,
+        "exact_literal_and_graph_fields": true
+      }
+    },
+    "canonical_writes": false
+  },
+  "parser_scope": "Owner actual-parser1135 NFC/NFD report inspected; independent reviewer verified exact one-field diff and hash continuity, did not rerun parser.",
+  "frozen_or_canonical_mutations": false
+}

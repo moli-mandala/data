@@ -176,11 +176,16 @@ def grammatical_tags(parameter: dict[str, str]) -> list[str]:
     return [BASIC_POS.get(parameter["Name"], "noun")]
 
 
-def clade(language: dict[str, str]) -> str:
+def clade(language: dict[str, str], parent_clade: str | None = None) -> str:
     """Map the upstream family/subgroup to Jambu's display taxonomy."""
     if language["Family"] == "Burushaski":
         return "Burushaski"
-    if language["SubGroup"] == "Iranian" or language["Family"] in {"Sino-Tibetan", "Turkic"}:
+    if language["SubGroup"] == "Iranian":
+        # Iranian varieties take their Jambu base language's Iranian clade (Pamir, E. Iranian, …).
+        if not parent_clade:
+            raise ValueError(f"Iranian lect {language['ID']} needs its base language's clade")
+        return parent_clade
+    if language["Family"] in {"Sino-Tibetan", "Turkic"}:
         return "Other"
     if language["SubGroup"] == "Nuristani":
         # Jambu follows the established regional classification for Dameli.
@@ -193,7 +198,9 @@ def clade(language: dict[str, str]) -> str:
 def import_dialects(cldf_dir: Path) -> Iterable[list[str]]:
     """Yield rows for Jambu's explicit dialect registry."""
     with (DATA_ROOT / "cldf/languages.csv").open(encoding="utf-8", newline="") as stream:
-        parent_ids = {row["Name"]: row["ID"] for row in csv.DictReader(stream)}
+        parent_rows = list(csv.DictReader(stream))
+    parent_ids = {row["Name"]: row["ID"] for row in parent_rows}
+    parent_clades = {row["ID"]: row["Clade"] for row in parent_rows}
     with (cldf_dir / "languages.csv").open(encoding="utf-8", newline="") as stream:
         for row in csv.DictReader(stream):
             source_id = language_id(row["ID"])
@@ -208,7 +215,7 @@ def import_dialects(cldf_dir: Path) -> Iterable[list[str]]:
                 row["Glottocode"],
                 row["Latitude"],
                 row["Longitude"],
-                clade(row),
+                clade(row, parent_clades[parent_id]),
                 row["Location"],
                 "A",  # directly elicited and geographically identified upstream
             ]

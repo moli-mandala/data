@@ -111,8 +111,9 @@ def test_dhule_crosswalk_is_complete_but_not_a_reading_authority() -> None:
 
 def test_profile_and_render_contracts_are_complete() -> None:
     profile = read_dicts(HERE / "profile_inventory.tsv", "\t")
-    # Includes the explicit aː, oː and ɑː sequences in the reviewed profile.
-    assert len(profile) == 57
+    # Includes the explicit aː, oː and ɑː sequences in the reviewed profile, and the 16
+    # attested aspirate sequences (kh ph ʈh …, breathy dɦ bɦ gɦ ɖɦ dʒɦ).
+    assert len(profile) == 73
     # Longest-match tokenization consumes every length mark inside those sequences.
     assert {row["Grapheme"] for row in profile
             if row["Present_In_Staged_Targets"] != "yes"} == {"ː"}

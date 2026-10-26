@@ -2,13 +2,22 @@ file: 20260925-bailey-rampur.csv
 defaults:
   transcription:
     profile: bailey-rampur-1920
+    input: form
+    preserve_hyphens: true
   identity:
     legacy_ids: stem
     append_order: 73
   importer:
     commands:
-      - [data/other/forms/raw_data/bailey_rampur_1920/import_source.py, --install]
-    note: Full245-cell Rampur glossary pp144–147;242accepted→288rows,2crossrefs,1specific unresolved body-vowel stack. Breves, underdots and underlined digraphs preserved literally; Baghi controls excluded.
+    - - data/other/forms/raw_data/bailey_rampur_1920/install_reviewed_whole.py
+      - --install
+    note: Shared introduction pp.113–115; lect-specific introduction pp.116; grammar
+      pp.131–140; 22 complete translated responses pp.141–142; commentary pp.142–143;
+      glossary pp.144–147. 647 rows retain all 288 legacy keys; 67 legacy rows have
+      explicit reviewed field corrections, 221 remain unchanged; 359 additional rows
+      recover the full source scope. Four generic Kochi witnesses are carried once
+      under existing kc with explicit attribution uncertainty. Literal notation, source-qualified
+      uncertainties and full expressions are retained.
 sources:
   bailey1920rampur:
     identity:

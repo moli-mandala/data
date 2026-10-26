@@ -1,0 +1,50 @@
+{
+  "status": "pass: read-only current canonical baseline/config readiness; not lexical acceptance or installation",
+  "freeze_sha256": "f60b146688ce20e0d922f23caedefa320b733336a8779c294cff131af01433fd",
+  "csv_sha256": "e091d6665b36fb0a770d62955382e30c73d97f186e9f2e833e785c73939c7127",
+  "audit_sha256": "707e2c010082a4902b07849cf6601d30f06e25f7a586fef0569261ff2d0e163a",
+  "legacy_sources": [
+    {
+      "file": "20260912-muduga.csv",
+      "rows": 109,
+      "sha256": "85087ff21ebb2a75ab890cbd59472c0ff4c6ef462faa5df663cc3edca039f718"
+    },
+    {
+      "file": "20260925-kuriakose-muduga-numerals.csv",
+      "rows": 42,
+      "sha256": "de2a7908cb45b9dbb37ed20bad57919e4e7eadc1242494f5772edd133418186b"
+    }
+  ],
+  "legacy_keys": 151,
+  "registered_languages": [
+    "Malayalam",
+    "Muduga"
+  ],
+  "combined_source_meta": "canonical YAML plus draft passes without duplicate declaration",
+  "reference_keys": [
+    "nair2013muduga",
+    "rajendran1986muduga"
+  ],
+  "proposed_lect": {
+    "ID": "nair2013_muduga_attapady",
+    "Tag": "dialect:Muduga:nair2013-muduga:Muduga%20%28Attapady%29",
+    "Language_ID": "Muduga",
+    "Source_Language_ID": "nair2013-muduga",
+    "Name": "Muduga (Attapady)",
+    "Glottocode": "",
+    "Latitude": "",
+    "Longitude": "",
+    "Clade": "S. Dravidian I",
+    "Location": "Attapady; source describes Wayanad district and Bhavani river settlements; not a verified elicitation coordinate",
+    "Quality": ""
+  },
+  "installation_disabled": true,
+  "frozen_files_unchanged": true,
+  "gaps": [
+    "Independent root lexical acceptance",
+    "Exact approved report, audit acceptance fields and final input/baseline hashes",
+    "Actual canonical parser/meta/ref/lect and repeat verification after approved transaction",
+    "Full compiled/build/browser gates"
+  ],
+  "canonical_changes": false
+}

@@ -1,0 +1,27 @@
+{
+  "status": "Whole reviewed source stage installed; compiled/build/browser gates deferred.",
+  "rows": 694,
+  "audit_units": 699,
+  "canonical_sha256": "a0547a5e0aee057074ee4daf1a40ca4efbb89de194e55094185fa64724ce5932",
+  "profile_sha256": "49c3c0320836ddfe57c8ae16bb52b5e1037b96c47b4b9a0c60a44316e261b2c1",
+  "audit_sha256": "526cbc19e74b6124138b55bef2bc6416011ca7fc26fa5abd7007435d8effd68e",
+  "durable_identity_sha256_unchanged": "4977c4e205f66233366ee1c00a9c938c9c78e3c087b63e02a94832647525c28a",
+  "unrelated_bibliography_entries_unchanged": 579,
+  "independent_review": "independent-r2-original-review.json",
+  "notes_approval": "metadata-addendum/root-installation-approval.json",
+  "graph_policy": "Explicit incomplete affix-only components retained as typed audit and source Notes; generic derived edges not fabricated.",
+  "deferred": [
+    "Full CLDF/database build",
+    "Compiled identity/graph/reference checks",
+    "Full test suite",
+    "Browser QA"
+  ],
+  "validation": {
+    "focused_tests": "15 passed in 1.39s",
+    "test_log_sha256": "ceb14e568b2208905170dc05efb48a7070b581771eab4729854c80db11092779",
+    "registered_source_metadata": "287 source files with settings; 271 citation keys",
+    "canonical_parser": "694 unique rows; exact source Original, Native, Phonemic and Notes; explicit tags retained; no replacement characters or citation omissions",
+    "reference": "Installed exact approved bibliography entry formats through Pybtex plain Markdown",
+    "reproduction": "Approved addendum CSV, audit, YAML and receipt regenerate byte-identically; r2 frozen hashes unchanged"
+  }
+}

@@ -1,0 +1,977 @@
+{
+  "status": "Actual unmodified parser and source-local graph closure pass; final output acceptance still pending",
+  "candidate_sha256": "c81089759ddeb215f00208662413de1e855ea8d25120a12becaf9ff664e4b13f",
+  "profile_sha256": "89ae32f7df58cc3298cdd62bab1e106a7842cfdb02debc2efaabca34c6fc979f",
+  "code_pins": {
+    "make_cldf.py": "1a1ded9eff5b8607174aa37981efb4358824be8ffffdfaa7128c0cea53dac5a8",
+    "source_meta.py": "1c3147843d6c9f2489155b633db55fd1374e6f3b1a59b7051a3642fdbd2c7a4c",
+    "form_grammar.py": "8b509a13a5ac30731288d849ffbd1701d282c930546e55e764088fae437a5d05"
+  },
+  "checks": {
+    "NFC": {
+      "rows": 827,
+      "all15fields_exact": true,
+      "orderedkeys": true,
+      "initial_dedupe_keys": 827,
+      "unintended_splits": 0,
+      "phonemic_native_blank": true
+    },
+    "NFD": {
+      "rows": 827,
+      "all15fields_exact": true,
+      "orderedkeys": true,
+      "initial_dedupe_keys": 827,
+      "unintended_splits": 0,
+      "phonemic_native_blank": true
+    }
+  },
+  "source_local_graph": {
+    "variant_links": 15,
+    "component_sets": 2,
+    "ordered_component_links": 4,
+    "closed": true,
+    "acyclic": true
+  },
+  "all_emitted_keys_in_audit": true,
+  "terminal_display_deltas": [
+    {
+      "entry_key": "grierson1906kolamibasim:p564:specimen75-line:1:word:3",
+      "Original": "āṇḍen.",
+      "display": "āṇḍen",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p564:specimen75-line:1:word:7",
+      "Original": "āṇḍēr.",
+      "display": "āṇḍēr",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p564:specimen75-line:2:word:2",
+      "Original": "enten,",
+      "display": "enten",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p564:specimen75-line:2:word:3",
+      "Original": "‘bā,",
+      "display": "‘bā",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p564:specimen75-line:3:word:3",
+      "Original": "siten.",
+      "display": "siten",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p564:specimen75-line:4:word:5",
+      "Original": "seden.",
+      "display": "seden",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p564:specimen75-line:5:word:2",
+      "Original": "uḍāpten.",
+      "display": "uḍāpten",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p564:specimen75-line:5:word:6",
+      "Original": "kharchipten,",
+      "display": "kharchipten",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p564:specimen75-line:6:word:1",
+      "Original": "paṭṭīn.",
+      "display": "paṭṭīn",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p564:specimen75-line:6:word:5",
+      "Original": "paṭṭīn.",
+      "display": "paṭṭīn",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p564:specimen75-line:7:word:5",
+      "Original": "tākten.",
+      "display": "tākten",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p564:specimen75-line:8:word:4",
+      "Original": "pānākten.",
+      "display": "pānākten",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p564:specimen75-line:9:word:7",
+      "Original": "vāṭīltīn.",
+      "display": "vāṭīltīn",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p564:specimen75-line:10:word:1",
+      "Original": "siyeten.",
+      "display": "siyeten",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p564:specimen75-line:10:word:5",
+      "Original": "enten,",
+      "display": "enten",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p564:specimen75-line:11:word:3",
+      "Original": "aṇḍā,",
+      "display": "aṇḍā",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p564:specimen75-line:11:word:6",
+      "Original": "tikhātūn.",
+      "display": "tikhātūn",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p564:specimen75-line:12:word:3",
+      "Original": "yenātūn,",
+      "display": "yenātūn",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p564:specimen75-line:12:word:4",
+      "Original": "“bā,",
+      "display": "“bā",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p564:specimen75-line:13:word:1",
+      "Original": "kāktān.",
+      "display": "kāktān",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p564:specimen75-line:13:word:7",
+      "Original": "tōten.",
+      "display": "tōten",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p564:specimen75-line:14:word:8",
+      "Original": "sedden.",
+      "display": "sedden",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p564:specimen75-line:15:word:7",
+      "Original": "ōltnā,",
+      "display": "ōltnā",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p564:specimen75-line:15:word:9",
+      "Original": "vāttīn,",
+      "display": "vāttīn",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p564:specimen75-line:16:word:7",
+      "Original": "samnet.",
+      "display": "samnet",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p564:specimen75-line:17:word:1",
+      "Original": "enten,",
+      "display": "enten",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p564:specimen75-line:17:word:8",
+      "Original": "kāktān.",
+      "display": "kāktān",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p565:specimen75-line:1:word:7",
+      "Original": "iṭten,",
+      "display": "iṭten",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p565:specimen75-line:2:word:3",
+      "Original": "tōḍeṅg,",
+      "display": "tōḍeŋg",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p565:specimen75-line:2:word:6",
+      "Original": "mundī,",
+      "display": "mundī",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p565:specimen75-line:2:word:9",
+      "Original": "tōḍūr.",
+      "display": "tōḍūr",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p565:specimen75-line:3:word:4",
+      "Original": "kākātūn.",
+      "display": "kākātūn",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p565:specimen75-line:3:word:9",
+      "Original": "tikt-āṇḍen,",
+      "display": "tikt-āṇḍen",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p565:specimen75-line:4:word:2",
+      "Original": "pānām-edden;",
+      "display": "pānām-edden",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p565:specimen75-line:4:word:3",
+      "Original": "bhulīlta-āṇḍen,",
+      "display": "bhulīlta-āṇḍen",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p565:specimen75-line:5:word:2",
+      "Original": "utten.",
+      "display": "utten",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p565:specimen75-line:6:word:7",
+      "Original": "āṇḍen.",
+      "display": "āṇḍen",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p565:specimen75-line:7:word:2",
+      "Original": "vātten.",
+      "display": "vātten",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p565:specimen75-line:7:word:6",
+      "Original": "vintēr.",
+      "display": "vintēr",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p565:specimen75-line:8:word:4",
+      "Original": "veltōlten,",
+      "display": "veltōlten",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p565:specimen75-line:8:word:9",
+      "Original": "iṭten,",
+      "display": "iṭten",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p565:specimen75-line:9:word:2",
+      "Original": "vāttāṇḍān.",
+      "display": "vāttāṇḍān",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p565:specimen75-line:9:word:7",
+      "Original": "miḷālten.",
+      "display": "miḷālten",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p565:specimen75-line:10:word:10",
+      "Original": "seren.",
+      "display": "seren",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p565:specimen75-line:11:word:7",
+      "Original": "lāgten.",
+      "display": "lāgten",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p565:specimen75-line:12:word:1",
+      "Original": "enten,",
+      "display": "enten",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p565:specimen75-line:12:word:2",
+      "Original": "‘ōlūr,",
+      "display": "‘ōlūr",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p565:specimen75-line:12:word:8",
+      "Original": "kākātūn.",
+      "display": "kākātūn",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p565:specimen75-line:13:word:2",
+      "Original": "mōḍīp-tōten.",
+      "display": "mōḍīp-tōten",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p565:specimen75-line:14:word:2",
+      "Original": "si-tōten.",
+      "display": "si-tōten",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p565:specimen75-line:14:word:7",
+      "Original": "tintaruśiten,",
+      "display": "tintaruśiten",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p565:specimen75-line:16:word:2",
+      "Original": "enten,",
+      "display": "enten",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p565:specimen75-line:16:word:3",
+      "Original": "‘bālā,",
+      "display": "‘bālā",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p565:specimen75-line:16:word:7",
+      "Original": "āṇḍātīv;",
+      "display": "āṇḍātīv",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p565:specimen75-line:17:word:2",
+      "Original": "āṇḍāt.",
+      "display": "āṇḍāt",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p565:specimen75-line:17:word:6",
+      "Original": "barōbar.",
+      "display": "barōbar",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p565:specimen75-line:18:word:1",
+      "Original": "tikt-āṇḍen,",
+      "display": "tikt-āṇḍen",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p565:specimen75-line:18:word:4",
+      "Original": "pānām-eden;",
+      "display": "pānām-eden",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p565:specimen75-line:18:word:6",
+      "Original": "āṇḍen,",
+      "display": "āṇḍen",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p568:specimen76-line:1:word:5",
+      "Original": "aṇḍēr.",
+      "display": "aṇḍēr",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p568:specimen76-line:2:word:1",
+      "Original": "muṭten,",
+      "display": "muṭten",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p568:specimen76-line:2:word:2",
+      "Original": "‘bā,",
+      "display": "‘bā",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p568:specimen76-line:3:word:3",
+      "Original": "miḷāpten,",
+      "display": "miḷāpten",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p568:specimen76-line:3:word:7",
+      "Original": "sedden,",
+      "display": "sedden",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p568:specimen76-line:4:word:2",
+      "Original": "nās-gakten.",
+      "display": "nās-gakten",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p568:specimen76-line:4:word:4",
+      "Original": "paṭṭīn,",
+      "display": "paṭṭīn",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p568:specimen76-line:4:word:7",
+      "Original": "puṭṭed.",
+      "display": "puṭṭed",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p568:specimen76-line:5:word:4",
+      "Original": "dhandā-takten.",
+      "display": "dhandā-takten",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p568:specimen76-line:6:word:1",
+      "Original": "kōstel.",
+      "display": "kōstel",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p568:specimen76-line:6:word:6",
+      "Original": "uttel,",
+      "display": "uttel",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p568:specimen76-line:6:word:7",
+      "Original": "avande,",
+      "display": "avande",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p568:specimen76-line:7:word:5",
+      "Original": "siyaṅg-tōdī.",
+      "display": "siyaŋg-tōdī",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p568:specimen76-line:8:word:1",
+      "Original": "vattīn,",
+      "display": "vattīn",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p568:specimen76-line:8:word:8",
+      "Original": "puṭtād.",
+      "display": "puṭtād",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p568:specimen76-line:9:word:2",
+      "Original": "tiksātan.",
+      "display": "tiksātan",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p568:specimen76-line:9:word:7",
+      "Original": "moḍātūn,",
+      "display": "moḍātūn",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p568:specimen76-line:10:word:1",
+      "Original": "“bā,",
+      "display": "“bā",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p568:specimen76-line:10:word:6",
+      "Original": "puṭtān,",
+      "display": "puṭtān",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p568:specimen76-line:10:word:8",
+      "Original": "aktān.",
+      "display": "aktān",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p568:specimen76-line:11:word:4",
+      "Original": "vahā.",
+      "display": "vahā",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p568:specimen76-line:12:word:2",
+      "Original": "śedden.",
+      "display": "śedden",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p568:specimen76-line:12:word:6",
+      "Original": "dhāvād,",
+      "display": "dhāvād",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p568:specimen76-line:13:word:1",
+      "Original": "vattīn.",
+      "display": "vattīn",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p568:specimen76-line:13:word:5",
+      "Original": "paṭṭen,",
+      "display": "paṭṭen",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p568:specimen76-line:13:word:8",
+      "Original": "samten.",
+      "display": "samten",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p568:specimen76-line:14:word:2",
+      "Original": "muṭten,",
+      "display": "muṭten",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p568:specimen76-line:14:word:3",
+      "Original": "‘bā,",
+      "display": "‘bā",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p568:specimen76-line:14:word:8",
+      "Original": "puṭtān,",
+      "display": "puṭtān",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p568:specimen76-line:14:word:10",
+      "Original": "aktān.",
+      "display": "aktān",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p568:specimen76-line:16:word:1",
+      "Original": "kōkten,",
+      "display": "kōkten",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p568:specimen76-line:16:word:3",
+      "Original": "iṭten,",
+      "display": "iṭten",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p568:specimen76-line:16:word:8",
+      "Original": "tepp.",
+      "display": "tepp",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p568:specimen76-line:17:word:3",
+      "Original": "tapp,",
+      "display": "tapp",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p569:specimen76-line:1:word:1",
+      "Original": "ukatten,",
+      "display": "ukatten",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p569:specimen76-line:1:word:5",
+      "Original": "prānām-etten;",
+      "display": "prānām-etten",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p569:specimen76-line:1:word:7",
+      "Original": "gavāṭ-aṇḍen,",
+      "display": "gavāṭ-aṇḍen",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p569:specimen76-line:2:word:5",
+      "Original": "uttēr.",
+      "display": "uttēr",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p569:specimen76-line:3:word:4",
+      "Original": "aṇḍen.",
+      "display": "aṇḍen",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p569:specimen76-line:3:word:6",
+      "Original": "vatten,",
+      "display": "vatten",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p569:specimen76-line:3:word:9",
+      "Original": "vintān.",
+      "display": "vintān",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p569:specimen76-line:4:word:2",
+      "Original": "kōkten,",
+      "display": "kōkten",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p569:specimen76-line:4:word:4",
+      "Original": "veltel-ōlten,",
+      "display": "veltel-ōlten",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p569:specimen76-line:4:word:8",
+      "Original": "iṭten,",
+      "display": "iṭten",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p569:specimen76-line:5:word:2",
+      "Original": "vatten;",
+      "display": "vatten",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p569:specimen76-line:5:word:5",
+      "Original": "vatten;",
+      "display": "vatten",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p569:specimen76-line:6:word:2",
+      "Original": "vattīn;",
+      "display": "vattīn",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p569:specimen76-line:6:word:4",
+      "Original": "varen.",
+      "display": "varen",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p569:specimen76-line:7:word:1",
+      "Original": "samjipsān.",
+      "display": "samjipsān",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p569:specimen76-line:7:word:4",
+      "Original": "muṭten,",
+      "display": "muṭten",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p569:specimen76-line:8:word:1",
+      "Original": "gaksātan;",
+      "display": "gaksātan",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p569:specimen76-line:8:word:4",
+      "Original": "murken.",
+      "display": "murken",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p569:specimen76-line:9:word:2",
+      "Original": "siyaṅg-tōdī.",
+      "display": "siyaŋg-tōdī",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p569:specimen76-line:9:word:6",
+      "Original": "nās-gakten,",
+      "display": "nās-gakten",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p569:specimen76-line:10:word:1",
+      "Original": "seiten,",
+      "display": "seiten",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p569:specimen76-line:10:word:3",
+      "Original": "vatten,",
+      "display": "vatten",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p569:specimen76-line:10:word:9",
+      "Original": "muṭten,",
+      "display": "muṭten",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p569:specimen76-line:11:word:3",
+      "Original": "aṇḍātīv.",
+      "display": "aṇḍātīv",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p569:specimen76-line:11:word:7",
+      "Original": "yandīn.",
+      "display": "yandīn",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p569:specimen76-line:12:word:1",
+      "Original": "pāijē.",
+      "display": "pāijē",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p569:specimen76-line:12:word:4",
+      "Original": "tiktānden,",
+      "display": "tiktānden",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p569:specimen76-line:12:word:5",
+      "Original": "pānām-etten;",
+      "display": "pānām-etten",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p569:specimen76-line:12:word:7",
+      "Original": "gavāṭ-aṇḍen,",
+      "display": "gavāṭ-aṇḍen",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p564:specimen75-line:1:word:1:expression",
+      "Original": "Ōkkōn mās āṇḍen.",
+      "display": "ōkkōn mās āṇḍen",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p564:specimen75-line:1:word:4:expression",
+      "Original": "Amnuṅg iddar bālākōl āṇḍēr.",
+      "display": "amnuŋg iddar bālākōl āṇḍēr",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p564:specimen75-line:2:word:8:expression",
+      "Original": "Mārī amd avaruṅg dhan pāyāknā siten.",
+      "display": "mārī amd avaruŋg dhan pāyāknā siten",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p564:specimen75-line:3:word:4:expression",
+      "Original": "Mārī kōnnūṅg divasānī tsinnām bālā attānā ghumkāknā laya dhāv seden.",
+      "display": "mārī kōnnūŋg divasānī tsinnām bālā attānā ghumkāknā laya dhāv seden",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p564:specimen75-line:4:word:6:expression",
+      "Original": "Attīn amd mājiltālā tān jiṅgī uḍāpten.",
+      "display": "attīn amd mājiltālā tān jiŋgī uḍāpten",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p564:specimen75-line:5:word:3:expression",
+      "Original": "Mārī amd attānā kharchipten, add muluk mahāg paṭṭīn.",
+      "display": "mārī amd attānā kharchipten, add muluk mahāg paṭṭīn",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p564:specimen75-line:6:word:2:expression",
+      "Original": "Ad-muḷ amnuṅg aḍchan paṭṭīn.",
+      "display": "ad-muḷ amnuŋg aḍchan paṭṭīn",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p564:specimen75-line:6:word:6:expression",
+      "Original": "Addī vakhōt amd ad muluk ōkōn māsan-āttin setnā tākten.",
+      "display": "addī vakhōt amd ad muluk ōkōn māsan-āttin setnā tākten",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p564:specimen75-line:7:word:6:expression",
+      "Original": "Amd amnuṅg turel kāyeṅg tānet vegāḍuṅg pānākten.",
+      "display": "amd amnuŋg turel kāyeŋg tānet vegāḍuŋg pānākten",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p564:specimen75-line:8:word:5:expression",
+      "Original": "Addī vakhōt turel sōse tinhā ādnāḍ amd pōṭā niḍinā anāṅg amnun vāṭīltīn.",
+      "display": "addī vakhōt turel sōse tinhā ādnāḍ amd pōṭā niḍinā anāŋg amnun vāṭīltīn",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p564:specimen75-line:9:word:8:expression",
+      "Original": "Amnuṅg yēnā siyeten.",
+      "display": "amnuŋg yēnā siyeten",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p564:specimen75-line:14:word:3:expression",
+      "Original": "Mārī amd sūltnā tān bānāṅg sedden.",
+      "display": "mārī amd sūltnā tān bānāŋg sedden",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p564:specimen75-line:14:word:9:expression",
+      "Original": "Mārī amd dhāv aṇḍān ittet amnet tāk ōltnā, lōbha vāttīn, amd tūltnā amne mākkun ārāgā-paṭṭīn amnet mukā samnet.",
+      "display": "mārī amd dhāv aṇḍān ittet amnet tāk ōltnā, lōbha vāttīn, amd tūltnā amne mākkun ārāgā-paṭṭīn amnet mukā samnet",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p565:specimen75-line:4:word:6:expression",
+      "Original": "Mārī amd anand kākeṅg utten.",
+      "display": "mārī amd anand kākeŋg utten",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p565:specimen75-line:6:word:1:expression",
+      "Original": "Id vakhōt amnet vaḍlāk bālā vegāṭ āṇḍen.",
+      "display": "id vakhōt amnet vaḍlāk bālā vegāṭ āṇḍen",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p565:specimen75-line:6:word:8:expression",
+      "Original": "Mārī amd vātnā ellā-merāt vātten.",
+      "display": "mārī amd vātnā ellā-merāt vātten",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p565:specimen75-line:7:word:3:expression",
+      "Original": "Amd mōrapākād endākād vintēr.",
+      "display": "amd mōrapākād endākād vintēr",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p565:specimen75-line:10:word:5:expression",
+      "Original": "Mārī amd kātiṅg vātnā ōpāl seren.",
+      "display": "mārī amd kātiŋg vātnā ōpāl seren",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p565:specimen75-line:11:word:1:expression",
+      "Original": "Mārī bān vākāl vātnā amnu kārapeṅg lāgten.",
+      "display": "mārī bān vākāl vātnā amnu kārapeŋg lāgten",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p568:specimen76-line:1:word:1:expression",
+      "Original": "Ōkōn mās iddar bālā aṇḍēr.",
+      "display": "ōkōn mās iddar bālā aṇḍēr",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p568:specimen76-line:2:word:7:expression",
+      "Original": "Sinnām bālā jiṅgānī miḷāpten, dusrē ūru dhāu sedden, udhaḷvārī jiṅgānī attēk nās-gakten.",
+      "display": "sinnām bālā jiŋgānī miḷāpten, dusrē ūru dhāu sedden, udhaḷvārī jiŋgānī attēk nās-gakten",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p568:specimen76-line:4:word:3:expression",
+      "Original": "Dukaḷ paṭṭīn, paisā kharsipen puṭṭed.",
+      "display": "dukaḷ paṭṭīn, paisā kharsipen puṭṭed",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p568:specimen76-line:5:word:1:expression",
+      "Original": "Dōḍhā mās avandē dhandā-takten.",
+      "display": "dōḍhā mās avandē dhandā-takten",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p568:specimen76-line:5:word:5:expression",
+      "Original": "Avan turel mipen kēnut kōstel.",
+      "display": "avan turel mipen kēnut kōstel",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p568:specimen76-line:7:word:2:expression",
+      "Original": "Yēna-nā avandu tāna siyaṅg-tōdī.",
+      "display": "yēna-nā avandu tāna siyaŋg-tōdī",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p568:specimen76-line:11:word:8:expression",
+      "Original": "Bāp-phōkān śedden.",
+      "display": "bāp-phōkān śedden",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p568:specimen76-line:12:word:3:expression",
+      "Original": "Bāp keiken ōlten dhāvād, avadūn mayā vattīn.",
+      "display": "bāp keiken ōlten dhāvād, avadūn mayā vattīn",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p568:specimen76-line:13:word:2:expression",
+      "Original": "Saddan keiken mākad paṭṭen, avande mukkā samten.",
+      "display": "saddan keiken mākad paṭṭen, avande mukkā samten",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p569:specimen76-line:2:word:1:expression",
+      "Original": "Sagḷē lōkuḷ ānand ākīn uttēr.",
+      "display": "sagḷē lōkuḷ ānand ākīn uttēr",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p569:specimen76-line:3:word:1:expression",
+      "Original": "Dōḍhā bālā kēynut aṇḍen.",
+      "display": "dōḍhā bālā kēynut aṇḍen",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p569:specimen76-line:3:word:5:expression",
+      "Original": "Yallāṅg vatten, nāch ḍhōḍagī vintān.",
+      "display": "yallāŋg vatten, nāch ḍhōḍagī vintān",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p569:specimen76-line:5:word:8:expression",
+      "Original": "Avan rāg vattīn; yallat varen.",
+      "display": "avan rāg vattīn; yallat varen",
+      "terminal_punctuation_only_before_approved_profile": true
+    },
+    {
+      "entry_key": "grierson1906kolamibasim:p569:specimen76-line:6:word:5:expression",
+      "Original": "Avande bāp vākāl kurten bālān samjipsān.",
+      "display": "avande bāp vākāl kurten bālān samjipsān",
+      "terminal_punctuation_only_before_approved_profile": true
+    }
+  ],
+  "terminal_display_delta_count": 155,
+  "current_source_literals_not_mutated": true,
+  "monkeypatch": false,
+  "canonical_changes": false,
+  "limits": [
+    "Proposed dialects remain source-local; canonical registry installation is deferred.",
+    "Source-stage independent final actual-row audit and metadata acceptance remain required.",
+    "No compiled graph/build/browser validation invoked."
+  ]
+}

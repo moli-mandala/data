@@ -28,7 +28,7 @@ GRAMMATICAL_TAGS = {
     # number
     "sg", "pl", "du", "double-plural",
     # part of speech
-    "noun", "adj", "adv", "pron", "num", "postp", "prep", "conj", "interj", "part", "indecl", "ord",
+    "noun", "adj", "adv", "pron", "num", "postp", "prep", "adposition", "conj", "interj", "part", "indecl", "ord",
     # case
     "nom", "acc", "dat", "gen", "loc", "abl", "instr", "voc", "obl",
     # verb forms
@@ -37,7 +37,7 @@ GRAMMATICAL_TAGS = {
     "subj", "obj", "direct-object", "indirect-object",
     "abs", "erg", "ade", "ine", "ess",
     "prox", "dist", "indef", "finalis",
-    "poss", "conditional", "prefix", "suffix", "infix", "affix", "completive", "emph", "interr", "dir", "uncertain",
+    "poss", "conditional", "prefix", "suffix", "infix", "affix", "clitic", "completive", "emph", "interr", "dir", "uncertain",
     # Boretzky & Igla mark weather, sensation and modal verbs "impers"; the category is
     # printed by other dictionaries too and has no existing equivalent above.
     "impersonal",
@@ -82,6 +82,18 @@ GRAMMATICAL_TAGS = {
     "appropriate-place", "first-person", "second-person", "third-person",
     "prospective", "non-past", "classifier", "high-honorific",
     "quotative", "filler",
+    # Exact source-defined functions in Dhakal's Darai grammar. These are
+    # structured labels, not triggers for scanning ordinary prose.
+    "habitual", "hortative", "hearsay", "inferential", "mirative",
+    "desiderative", "dubitative", "obligation", "possibility", "purposive",
+    "sequential-converb", "simultaneous-converb", "counterfactual",
+    "adjectivizer", "adverbializer", "nominalizer",
+    "imminent", "frustrative", "hypothetical",
+    # Source-marked Irula functions: permission and a suggested action,
+    # distinguished from optative, hortative and imperative commands.
+    "permissive", "injunctive", "concessive", "polite",
+    # Iranian dictionaries: OAD's `pvb.` word class and Cheung's inchoative stem formations.
+    "preverb", "inchoative",
 }
 
 # CDIAL abbreviations normalized into the shared schema. They are applied only when the complete

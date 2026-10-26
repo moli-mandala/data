@@ -1,0 +1,32 @@
+{
+  "status": "Root verified installed source-stage evidence; compiled gates deferred",
+  "approval_sha256": "1cf4b6d5c8cc42c9a80c2c1381d847bcb1fe60394b7272b44e3eb9816df390d0",
+  "rows": 135,
+  "audit_groups": 65,
+  "scoped_witness_records": 164,
+  "exact_commentary_reuses": 6,
+  "audit_only_witness_records": 23,
+  "variants": 11,
+  "independent_original_output_sample": "20/20 passed in final r2 review",
+  "actual_canonical_checks": {
+    "verifier_code_independently_read": true,
+    "actual_source_meta_without_monkeypatch": true,
+    "all_15_fields_NFC_and_NFD": 135,
+    "initial_unique_dedupe_keys": 135,
+    "conversion_errors": 0,
+    "prior_bibliography_entries_preserved_semantically": 630,
+    "new_references_formatted": 2,
+    "repeat_install": "no-op",
+    "install_exit": 0,
+    "canonical_validation_exit": 0
+  },
+  "canonical_hashes_independently_checked_against_receipt": {
+    "csv": "242e05bd375e4b6962bf30629046ca498eb247f5d04f3f4c1392968d7e2e1224",
+    "yaml": "99155b48f4de487dca4731f9a189e9589b756cd659b8308e32071385e960f68e",
+    "audit": "5098c19e459bd4ade5100a79169d564288a2af1e33a0d8b69b13dfe38a5a0105",
+    "bibliography_at_review": "af76f24c4a29cbe3822ac94aef8c4b753e16ed04d79de62415f06bc554285dc2"
+  },
+  "durable_identity_sha256_reported_by_streaming_check": "4977c4e205f66233366ee1c00a9c938c9c78e3c087b63e02a94832647525c28a",
+  "deferred": ["full CLDF/database build", "compiled identity/graph/reference survival", "full suite", "browser QA"],
+  "scope": "Source-stage evidence only. Final owner handoff and ledger append are separate. No end-to-end ingestion or release claim."
+}

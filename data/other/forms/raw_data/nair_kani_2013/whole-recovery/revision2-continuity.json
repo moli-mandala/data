@@ -1,0 +1,30 @@
+{
+  "status": "source-literal correction applied; independent fresh output review still pending",
+  "independent_report_sha256": "d7ab126926c49cd6e27e96f4b467cc4f1e23b6e66f384d8f618395b0b985ef4f",
+  "changed_source_unit_keys": [
+    "nair2013kani:p33:negative:0"
+  ],
+  "changed_entry_keys": [
+    "nair2013kani:p33:negative:0:w1"
+  ],
+  "old_form": "-aa",
+  "new_form": "aa",
+  "interpretation": "Printed plain aa remains tagged suffix neg because the source calls it a negative suffix; no punctuation is supplied in Form.",
+  "counts": {
+    "physical_units": 42,
+    "witness_slots": 66,
+    "candidate_rows": 36
+  },
+  "old_sha256": {
+    "physical-units-first-reading.jsonl": "8b8e7a0f75f86018d43e29e60a5b3e3d6915baef5420b0df1f7fd28917ffb38e",
+    "review-candidate.csv": "f52c0bbb070fd3c25a2db26536c4f4900c26d72d4857516d89d9485f668d7e48",
+    "review-audit.jsonl": "4f82ac6f666de59da4ec6b379a8d16d3c857305022c40695acdbb7e39399fd34"
+  },
+  "new_sha256": {
+    "physical-units-first-reading.jsonl": "8e95ee28fe33b393477f9a2474f3e348ba1a1d6799302982e04146bb5f9023e3",
+    "review-candidate.csv": "008927fd95809d423ac9d8b913ff690c4c398fee0da940fe96838117caeb0e85",
+    "review-audit.jsonl": "798ca2ae93e9783a1a6313786ba4a4e530a0d044a3e92df29d78e30c57414582",
+    "actual-parser-review.json": "cc8334c38b328fed9bc62820c78502c907d983fc3af8e3b7b02baa5b8882daba"
+  },
+  "checks": "source-local candidate and actual parser NFC/NFD passed; all noncorrected rows exact"
+}

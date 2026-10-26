@@ -1,0 +1,117 @@
+{
+  "status": "complete independent-review reconciliation; not canonical approval",
+  "physical_rows": 96,
+  "main_witnesses": 192,
+  "changed_witness_proposals": 32,
+  "proposal_events_including_repeated_evidence": 47,
+  "superseded_proposals": [],
+  "complete_addendum_residual_evidence": {
+    "date": "2026-09-27",
+    "reviewer": "norton_finish",
+    "status": "complete four-page class sweep; keyed proposals not applied",
+    "coverage": "All96 rows/192 target cells visually reinspected in original half-pages, with narrowed7x strips on PDF96 both halves,97 both halves,98 both halves,99upper. Lower99 ordinary words also checked in original image.",
+    "remaining_class_exceptions": [
+      {
+        "pdf_page": 97,
+        "row": 7,
+        "field": "both",
+        "note": "গাড়হা/গাহড়া lower strokes intersect other glyph parts; preserve typed uncertainty pending owner narrow comparison."
+      },
+      {
+        "pdf_page": 97,
+        "row": 25,
+        "field": "both",
+        "note": "Complex final glyphs not safely resolved to current ডিঙ্কি/ধিঙ্গি; do not convert uncertainty into confident form."
+      },
+      {
+        "pdf_page": 98,
+        "row": 14,
+        "field": "chakma",
+        "note": "Visible lower sign in firstalternative; exact গ্/ঙ্ distinction remains unresolved."
+      },
+      {
+        "pdf_page": 98,
+        "row": 22,
+        "field": "both",
+        "note": "Both slashalternatives contain nasal/consonant boundary notation; exact ন্+ঝ/ঞ্জ shape and first-versus-second alternative distinction require owner adjudication. No wholesale replacement supplied."
+      },
+      {
+        "pdf_page": 99,
+        "row": 2,
+        "field": "both",
+        "note": "হ plus nasal/stop cluster compressed; preserve exact raw image uncertainty."
+      },
+      {
+        "pdf_page": 99,
+        "row": 8,
+        "field": "santali",
+        "note": "Source includes extra consonantal/hasanta fragment between এ and তি; সীএতি not safely certified. Candidate সীএন্‌তি needs further adjudication."
+      }
+    ],
+    "resolved_prior_uncertainty": {
+      "PDF98row7": "Narrow original supports থুনি in both witnesses; earlier খ suspicion withdrawn."
+    },
+    "controls": [
+      "PDF96row6 Chakma আঙারা has no matching separated hasanta",
+      "PDF97row17 Chakma জু has real u loop; do not change it with left witness",
+      "PDF98row2 তাম্বু/তাম্বল are joined clusters; no ZWNJ automatically added",
+      "Ordinary joined Bengali clusters retain ordinary spelling; no global consonant substitution"
+    ],
+    "owner_files_modified": false
+  },
+  "base_scope_and_notation_evidence": {
+    "meaning_scopes": {
+      "status": "All explicit language splits agree with source; no new meaning-scope error found",
+      "checked": {
+        "96": [
+          1,
+          17,
+          20,
+          21
+        ],
+        "97": [
+          4,
+          10,
+          11,
+          16,
+          24
+        ],
+        "98": [
+          1,
+          15,
+          19,
+          22
+        ],
+        "99": [
+          5,
+          16
+        ]
+      },
+      "qualifications": [
+        "PDF96row24 প্রা. বাং.-খিল is source comparative evidence, not a lexical gloss of both targets; abbreviation identity remains pending",
+        "PDF98row22 slash gender gloss does not by itself warrant forced alternative-to-gender pairing",
+        "Shared sense plus explicitly labelled additional sense correctly preserved in PDF97rows16/24 and PDF98row1"
+      ]
+    },
+    "systematic_class": {
+      "observation": "Visible lower diagonal marks after separated consonants are absent from several literal strings. Need distinguish deliberate hasanta from intrinsic glyph contours using original font/page exemplars before applying automatic changes.",
+      "proposal_encoding": "Virama U09CD with ZWNJ U200C provisionally preserves separated source appearance. This is a typographic proposal, not phonological interpretation; root adjudication required.",
+      "scope": "All96 rows reviewed for this class; do not blindly add virama after every consonant tail."
+    }
+  },
+  "inputs": {
+    "santali-first-reading.jsonl": "77ba6e49132e56f68ee60a0c04ae8bcf951f73bc4f6fa988bd1a704d98c9cf84",
+    "santali-manual-first-reading.tsv": "6553c7c97da94d9c9fe0447898b207a114be5bf0fed34b3beeacf64a1287d8cd",
+    "independent-santali-complete-review-20260927.json": "3367f5eb193e6c183c7d237ffaf3c437bf7bc481502ee72613397ddbbe227721",
+    "independent-santali-hasanta-class-addendum-20260927.json": "d761135493b8d052793d3ed2c4013d85aefa5e4dfa18189a239ae71fc68df389"
+  },
+  "output": {
+    "santali-reviewed-reading-proposal.jsonl": "5f88a09fbe7c8a53d85082a704811325028ba36cde66939e011a739ec3adedfa"
+  },
+  "installed_rows_changed": 0,
+  "pending": [
+    "root glyph adjudication with all unresolved readings retained",
+    "whole-book integration and metadata/profile checks",
+    "authorized compiled gates"
+  ]
+}

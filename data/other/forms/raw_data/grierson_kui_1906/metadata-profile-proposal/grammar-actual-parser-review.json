@@ -1,0 +1,70 @@
+{
+  "status": "all resolved nonblank grammar candidates passed isolated actual parser",
+  "input_sha256": "2806561d2a09c15db6a98ff921c799c932301f4f0427a0a18ec334f779a5050f",
+  "mapping_sha256": "e237a6d5bff1d73c0bacbf6aebd313bd5eaf646ae0afd9df485326bb7c118538",
+  "profile_sha256": "dc338bdb81ebccc7f4c61891ab304e1fde92a4f851a11c2c52327a53fbf805d5",
+  "code_sha256": {
+    "make_cldf.py": "1a1ded9eff5b8607174aa37981efb4358824be8ffffdfaa7128c0cea53dac5a8",
+    "source_meta.py": "1c3147843d6c9f2489155b633db55fd1374e6f3b1a59b7051a3642fdbd2c7a4c",
+    "tags.py": "f03b4c2295dae956c4cfa212968eeff437a96cbc838fccdc409214fa5b25b67f"
+  },
+  "counts": {
+    "parser_fixture_emission": 413,
+    "held_unresolved_route": 3,
+    "documentary_blank": 16
+  },
+  "language_counts": {
+    "Kui": 402,
+    "Telugu": 2,
+    "Kannada": 2,
+    "Gondi": 5,
+    "Tamil": 2
+  },
+  "checks": {
+    "NFC": {
+      "rows": 413,
+      "converted": 413,
+      "errors": 0,
+      "no_splits": true,
+      "ordered_keys_and_all_fields": true
+    },
+    "NFD": {
+      "rows": 413,
+      "converted": 413,
+      "errors": 0,
+      "no_splits": true,
+      "ordered_keys_and_all_fields": true
+    }
+  },
+  "verified_single_tag_delta": [
+    {
+      "key": "grierson1906kui:p469:chinna-negative-participle:1",
+      "field": "tags",
+      "old": [
+        "multiword-expression",
+        "verb",
+        "participle",
+        "neg"
+      ],
+      "new": [
+        "multiword-expression",
+        "verb",
+        "participle",
+        "neg",
+        "conjunctive-participle"
+      ]
+    }
+  ],
+  "previous_accounting_sha256": "3e152ae540600d86b0cd0a40f8a681cfc7105a1ab217a84c518e02e8c8ecd162",
+  "held_keys": [
+    "grierson1906kui:p457:name-comparison:1",
+    "grierson1906kui:p460:plural-comparison:1",
+    "grierson1906kui:p460:plural-comparison:2"
+  ],
+  "limitations": [
+    "Proposed dialect IDs stay in keyed accounting until canonical registration, not fabricated registered tags.",
+    "This is a parser/identity-route fixture, not authorization to install comparator rows or adjudication of unresolved glyphs.",
+    "Full build/database/browser not run."
+  ],
+  "canonical_changes": false
+}

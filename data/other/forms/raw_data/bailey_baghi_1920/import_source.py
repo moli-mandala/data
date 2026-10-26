@@ -99,6 +99,16 @@ def main() -> None:
     parser.add_argument("--check-pdf", action="store_true")
     parser.add_argument("--audit-sample", action="store_true")
     args = parser.parse_args()
+    if args.install:
+        # Both packages share the independently reviewed whole-source installer.
+        import subprocess
+        import sys
+        installer = PACKAGE.parent / 'bailey_rampur_1920' / 'install_reviewed_whole.py'
+        command = [sys.executable, str(installer), '--install']
+        if args.check_pdf:
+            command.append('--check-pdf')
+        subprocess.run(command, check=True)
+        return
     if args.check_pdf:
         digest = hashlib.sha256()
         with PDF.open("rb") as stream:

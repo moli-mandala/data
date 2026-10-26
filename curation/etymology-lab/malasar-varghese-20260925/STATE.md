@@ -1,0 +1,9 @@
+# Malasar Varghese residual research — initial assessment
+
+The Varghese 2015 Palakkad source has **446 compiled Malasar records**. Earlier review covered 285 unique pending records in batches 001–030 and 17 holds. This pass assessed all **144 remaining records**: 63 new pending records in batches 031–038, producing 66 assignment rows, plus 81 new holds. Zero records remain unexamined. The [whole-source audit](source-coverage-001.json) confirms unique ownership of all 446 records.
+
+Candidate discovery used the existing Jambu homepage `fetchLemmaList` implementation over its read-only browser database. The 144 exact source-form requests returned 299 rows in five retained chunks; 25 targeted global-comparanda requests returned 112 rows. The [full cached DEDR articles](primary-evidence.json) were checked for dialect-specific comparanda. A DEDR parent ID identifies a whole article; its displayed reconstruction need not match every reflex.
+
+The [eight review batches](REVIEW.md) preserve each source record's persistent ID, original form and gloss, proposed parent or ordered components, and primary evidence. The pestle form `koḷavikallɨ` has ordered tool and stone components; the two eleven forms have ten and one components. The holds include contact vocabulary with unresolved immediate donors and elicitation clauses needing segmentation. The targeted global search did not establish secure additional ancestry for those holds.
+
+The canonical read-only `make check-pass PY=.venv/bin/python DECISIONS=curation/etymology-lab/malasar-varghese-20260925/proposed-decisions.json PASS=malasar-varghese-20260925-001` passed for 63 records and 66 assignment rows, with `secondApplicationChanges=0`. The independent [checkpoint verifier](checkpoint-001-validation.json) confirmed exact residual coverage and agreement with all eight pending manifests. No `save-pass`, accepted sidecar write, source reparse, rebuild, commit, push or deployment was performed.

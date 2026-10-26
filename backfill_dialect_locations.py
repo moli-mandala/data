@@ -36,7 +36,7 @@ EXACT = {
     "wel": "Wales, United Kingdom (comparative-language label in the Romani source)",
     "SEeur": "Balkans (regional comparative-language label in the Romani source)",
     "serb": "Serbia (comparative-language label in the Romani source)",
-    "kar": "Karachi, Pakistan (source label; stored coordinate is inconsistent)",
+    "kar": "Azerbaijan (Turner's Karači, a Transcaucasian comparative-language label in the Domari source)",
     "pal": "Palestine (comparative-language label in the Domari source)",
     "pers": "Iran (Persian comparative-language label in the Domari source)",
     "lowerperak": "Lower Perak, Malaysia",

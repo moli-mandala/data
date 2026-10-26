@@ -1,0 +1,55 @@
+{
+  "status": "passed canonical source-stage checks; compiled/browser gates deferred",
+  "rows": 256,
+  "physical_units": 261,
+  "audit_only": 16,
+  "variants": 12,
+  "derived": 4,
+  "checks": {
+    "canonical": {
+      "rows": 256,
+      "all15fields_exact": true,
+      "form_preserved": true,
+      "unique_source_entry_dedupe_keys": 256,
+      "zero_conversion": true
+    },
+    "NFC": {
+      "rows": 256,
+      "all15fields_exact": true,
+      "form_preserved": true,
+      "unique_source_entry_dedupe_keys": 256,
+      "zero_conversion": true
+    },
+    "NFD": {
+      "rows": 256,
+      "all15fields_exact": true,
+      "form_preserved": true,
+      "unique_source_entry_dedupe_keys": 256,
+      "zero_conversion": true
+    }
+  },
+  "canonical_sha256": {
+    "csv": "0ef113a2ef62bdd0a8a0c767104a604db5af07033bda42f880e871fb1864900e",
+    "yaml": "a308dd3d83159bcf7864223c3c9630621e06631e22eea93d538cae6f8fe2d9d5",
+    "audit": "17e8954286dcc6e5997dd8cdc813d1d04b36d1acc2009df1aa3924fbfcfbeb47",
+    "bib": "13d183d0479219f8f9a4d94c2d006e8f9fd52779da62ac3a4e434e4423547367"
+  },
+  "durable_identity_sha256": "4977c4e205f66233366ee1c00a9c938c9c78e3c087b63e02a94832647525c28a",
+  "actual_registered_SourceMeta": true,
+  "parser_monkeypatch": false,
+  "repeat_install": "exact no-op",
+  "reference_flags": 3,
+  "formatted_references": {
+    "nair2013irula": "Ravi Sankar S\\. Nair\\.\nTribal Languages of Kerala\\.\n*Language in India*, 13\\(7\\):22–27, July 2013\\.\nLiteral source Roman notation with no independent phonemic tier or invented IPA\\. Explicit Old Tamil comparisons, zero exponents, documentary contexts and an explicitly rejected noun compound remain audit\\-only\\. Source\\-transcription disagreements and separately drawn lowlines are preserved\\. No explicit reuse licence is supplied in the PDF\\.\nURL: [https://languageinindia\\.com/july2013/ravisankarkeralatriballanguages\\.html](https://languageinindia.com/july2013/ravisankarkeralatriballanguages.html)\\.",
+    "zvelebil1982irulapart3": "Kamil V\\. Zvelebil\\.\nThe Irula \\(Erla\\) Language Part III\\.\nOtto Harrassowitz, Wiesbaden, 1982\\.",
+    "perialwar1978irula": "R\\. Perialwar\\.\nA Grammar of the Irula Language\\.\nAnnamalai University, Annamalai Nagar, 1978\\."
+  },
+  "unrelated_bibliography_members_unchanged": 627,
+  "verifier_corrections": "Initial checks used an invalid file_flag accessor for normalized transcription rules, copies without the manual other/forms path marker, and omitted an explicit BibTeX format for the .asset baseline. Only verifier code changed; canonical inputs remained exact. All three 256-row parser checks passed before bibliography format refinement. Failed attempts preserved separately.",
+  "deferred": [
+    "full CLDF/DB build",
+    "compiled identities/graphs/reference survival",
+    "full suite",
+    "browser QA"
+  ]
+}

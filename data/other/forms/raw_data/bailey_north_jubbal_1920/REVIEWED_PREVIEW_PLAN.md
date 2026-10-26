@@ -1,0 +1,9 @@
+# Reviewed North Jubbal revision, 2026-09-27
+
+`prepare_reviewed_preview.py` applies the SHA-bound independent review to the preserved historical preview. It verifies every before-value and generates `whole-reviewed-preview-20260927.csv`, its audit, profile, and report. The historical preview, first readings, canonical CSV, YAML, and profile remain unchanged.
+
+The revision contains 837 rows and 688 audit units: all 330 legacy keys and 507 added rows. Two sentence vowel-length readings change; six complete commands gain imperative tags; 43 approved legacy metadata deltas preserve all legacy literal forms. The source-only above cross-reference is also resolved in the audit. Every change retains its original evidence and key. The profile is copied byte-for-byte from the already validated preservation profile.
+
+Validate the revision with `validate_whole_preview.py --preview whole-reviewed-preview-20260927.csv --profile whole-reviewed-preview-20260927-profile.txt --report whole-reviewed-preview-20260927-parser-validation.json`. This exercises the actual parser in an isolated source tree, for NFC and NFD, using proposed `input: form` and `preserve_hyphens: true` settings. It does not generate CLDF or a database.
+
+The existing `whole-metadata-plan.json` still governs language, reference, coordinate, identity, OCR and transcription settings. Final provenance must cite `whole-reviewed-output-freeze-20260927.json` and `root-whole-output-audit-20260927-pass1.json`. The seeded original-versus-output audit passed all20 units (21 exact emitted rows), covering glossary, grammar/introduction, complete sentences and commentary; narrow10x crops resolve selected diacritics. Guarded importer/canonical installation, installed focused checks and all deferred full-build/browser gates remain pending. No release or remote work is authorized by this source-local revision.

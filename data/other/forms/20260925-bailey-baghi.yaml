@@ -2,13 +2,22 @@ file: 20260925-bailey-baghi.csv
 defaults:
   transcription:
     profile: bailey-baghi-1920
+    input: form
+    preserve_hyphens: true
   identity:
     legacy_ids: stem
     append_order: 51
   importer:
     commands:
-      - [data/other/forms/raw_data/bailey_baghi_1920/import_source.py, --install]
-    note: Full 245-cell Baghi glossary pp. 144–147; 240 accepted cells yield 296 forms, three unpaired Rampur controls and two cross-references excluded. All 96 legacy keys retained; fresh audit 0/20.
+    - - data/other/forms/raw_data/bailey_rampur_1920/install_reviewed_whole.py
+      - --install
+    note: Shared introduction pp.113–115; lect-specific introduction pp.116–117; grammar
+      pp.131–140; 22 complete translated responses pp.141–142; commentary pp.142–143;
+      glossary pp.144–147. 698 rows retain all 296 legacy keys; 57 legacy rows have
+      explicit reviewed field corrections, 239 remain unchanged; 402 additional rows
+      recover the full source scope. Generic Kochi witnesses are carried in the companion
+      Rampuri package only. Literal notation, source-qualified uncertainties and full
+      expressions are retained.
 sources:
   bailey1920baghi:
     identity:

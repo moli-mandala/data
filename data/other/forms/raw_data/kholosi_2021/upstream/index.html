@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="HandheldFriendly" content="true" />
+<title>Kholosi</title>
+<script src="https://d3js.org/d3.v5.js"></script>
+<script src="https://unpkg.com/topojson@3"></script>
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400italic,600italic,700italic,200,300,400,600,700,900">
+<!--CSS-->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--JS-->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/versor"></script><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-52207113-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-52207113-1');
+</script>
+
+<!-- CSS -->
+<style>
+ 
+body, h1, h2, h3, p {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1em;
+  color: #333;
+  font-weight: 400;
+}
+
+#content {
+  margin: 5px;
+  padding: 20px;
+  width: 805px;
+  border: 1px solid #ccc;
+}
+
+#map {
+  margin: 0px 0px 0px 0px;
+  padding: 0px;
+}
+
+h1, h2 {
+  line-height: 1em;
+  font-size: 1.75em;
+}
+
+h2.date {
+  margin: 10px 0px 0px 0px;
+  font-size: 1.3em;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 1.25em;
+  margin: 0px 0px 0px 0px;
+  font-weight: 900;
+}
+
+p {
+  margin: 10px 0px 0px 0px;
+}
+
+.card {
+  line-height: 110%;
+}
+
+.counties {
+  position: absolute;
+}
+
+.label {
+  font-variant: small-caps;
+}
+
+
+.states {
+  fill: none;
+  stroke: black;
+  stroke-width: 0.5px;
+  stroke-linejoin: round;
+}
+
+input {
+  display: block;
+  width: 200px;
+  margin: 10px 0px 0px 0px;
+}
+
+#legend text {
+  font-size: 0.9em;
+  color: #333;
+  font-weight: 400;
+}
+
+.tooltip {
+  position: absolute;
+}
+
+.tooltip p {
+  margin: 0;
+  padding: 0;
+}
+
+.tooltip table {
+  margin: 0;
+  padding: 0;
+  border-collapse: collapse;
+}
+
+.wide {
+  width: 140px;
+}
+
+.title {
+  position: absolute;
+}
+</style>
+</head>
+<body>
+    <div class="container mt-5 mb-5 text-center">
+        <h1 style="font-size: 50px;">Kholosi</h1>
+        <p class="text-justify"><a href="https://en.wikipedia.org/wiki/Kholosi_language">Kholosi</a> is an underdocumented Indo-Aryan language spoken in two villages (Kholus and Gotav) in Hormozgan, Iran. This portal is meant to present, in an accessible format, some of the fieldwork I (<a href="https://aryamanarora.github.io/">Aryaman Arora</a>) have done on Kholosi for the class LING-001 at Georgetown University for Fall 2020. My informant was Ahmed Etebari, a 29-year-old native speaker from Kholus living in Bandar Abbas.</p>
+        <p class="text-justify">The purpose of this work is to compare Kholosi with other Indo-Aryan languages, and examine its diachronic development (most of that work is yet to be published, and will be put up here once it is). Past work on Kholosi was done by <a href="https://www.academia.edu/download/51233821/Anonby_MB_Kholosi_Academia.pdf">Anonby and Bahmani (2016)</a>, and we can expect a synchronic grammatical description in the coming years based on extensive fieldwork done recently by Maryam Nourzaei at Uppsala University.</p>
+        <br>
+        <div class="card-deck mb-4">
+          <div class="card btn-light shadow-sm">
+              <div class="card-body">
+                  <h1 class="card-title"><a href="./Kholosi.pdf" class="stretched-link"></a>Paper</h1>
+                  <p class="card-text">The paper covers all of the analysis of Kholosi I have done so far. (Mostly phonology.) Almost all of it, however, is new and original scholarship, especially in regards to diachronic analysis of Kholosi.</p>
+              </div>
+          </div>
+        </div>
+        <div class="card-deck mb-4">
+            <div class="card btn-light shadow-sm">
+                <div class="card-body">
+                    <h1 class="card-title"><a href="./Kholosi_Dictionary.pdf" class="stretched-link"></a>Dictionary</h1>
+                </div>
+            </div>
+            <div class="card btn-light shadow-sm">
+                <div class="card-body">
+                    <h1 class="card-title"><a href="./sentences.html" class="stretched-link"></a>Sentences</h1>
+                </div>
+            </div>
+            <div class="card btn-light shadow-sm">
+                <div class="card-body">
+                    <h1 class="card-title"><a href="./vowels.html" class="stretched-link"></a>Vowels</h1>
+                </div>
+            </div>
+            <div class="card btn-light shadow-sm">
+                <div class="card-body">
+                    <h1 class="card-title"><a href="./maps.html" class="stretched-link"></a>Maps</h1>
+                </div>
+            </div>
+        </div>
+        <div class="card-deck mb-4">
+          <div class="card btn-light shadow-sm">
+              <div class="card-body">
+                  <h1 class="card-title"><a href="./audio/song.ogg" class="stretched-link"></a>Song</h1>
+                  <p class="card-text">A song about the village of Kholos in the spring.</p>
+              </div>
+          </div>
+          <div class="card btn-light shadow-sm">
+              <div class="card-body">
+                  <h1 class="card-title"><a href="./audio/story.ogg" class="stretched-link"></a>Story</h1>
+                  <p class="card-text">A story about Ahmed Etebari's grandfather (<em>nôno</em>), who got lost in the mountains (<em>tʰal</em>) at a very young age.</p>
+              </div>
+          </div>
+        </div>
+    </div>
+</body>
+</html>

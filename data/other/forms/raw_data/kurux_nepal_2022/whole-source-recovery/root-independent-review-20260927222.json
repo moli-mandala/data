@@ -1,0 +1,840 @@
+{
+  "seed": 20260927222,
+  "reviewer": "asur_finish, independent of Kurux source owner and previous root reviewer",
+  "result": "pass",
+  "reviewed_units": 20,
+  "reviewed_output_rows": 27,
+  "material_errors": 0,
+  "additional_controls_reviewed": 5,
+  "control_errors": 0,
+  "manifest_sha256": "2f0d35d32a8ec09cd724df61ed281c6ff86715fcffad126f3128167ab24f5e5b",
+  "sample_sha256": "32bb1db0e70c88e2bf2ae2526ee59caf88a10c59a91802b6a0e8980e0edf21a5",
+  "source_pdf_sha256": "aedf47151ebea80852cb7ed66d085fc18310aa3f4d35e189c698b624f3cbef5a",
+  "verified_frozen_files": {
+    "wordlist-reviewed.jsonl": "90cfef82ecb3b74f5f2f792d8ca79ecb29c6aed3d8bd62bc949773d4eaedffb5",
+    "morphology-reviewed.jsonl": "ad16354291e2403a60ad860713609d7a3e05cb190254eff88d9d07037de66ec2",
+    "narrative-first-reading.jsonl": "9e92c690bba2238690c93708c2b02b14cc4980948b19b796ad3e2c0e0b360cc7",
+    "narrative-owner-original-review-20260927.json": "d87f03dcacd6109d2c8d3a90bf968b58bc75ae0151ceac1a1454de54966c808c",
+    "orthography-p75-reviewed.json": "665ffe99ba11b48c8e40a6a118642c0f158d0abbfe6b9c4421f7b91407db52ba",
+    "prose-reviewed.jsonl": "4705a52a84e069d29bca6a52f431377f8854aebd0d5699d725edef91c12db2dc",
+    "prose-owner-review-20260927.json": "62c01ddbe4fb70fd607a1952691659bce311f1838b15d92d67b2cc9df3cd6dbf",
+    "whole-page-decisions.json": "75751444a17e54697ec1bd88c53600021d0a0707d8ee0716d4000469cdd129d1",
+    "shared-metadata-plan.json": "c4d3be9e0585a9fe71ce2b0490543bb059c2961dc2cc62daaf8a5c551ef1c378",
+    "proposed-dialects.csv": "61cf925d85d36007a3157dc9c8ddb44cd428c5abc5d526c2b19a78f6bbad2416",
+    "build_whole_proposal.py": "f5a17190657d2c9f9fd86fbec0cf885984f2307815d70f0a2dd33b3e2c93b16e",
+    "prepare_proposal_profiles.py": "724a545574f8319c6ebcf56820c4fb5c8769427abf62f9c00203a80f8e2e4519",
+    "revision2-affix-reconciliation.json": "b4921c394941177726b7bcf131a8c96e8fded92bba56a39fe6fd4dc498dce621",
+    "proposal/audit.jsonl": "9aa147deb909b2c3d6715f3dc38f69d9ee6d8f2a611bbbdcd77e6fc29e33a210",
+    "proposal/grammar.csv": "87555b70917eed88cac784138949a945dcd2bc93a5882ed776894ca8e7f39fb7",
+    "proposal/grammar.yaml": "bde506f348df233bfeb6eb5b39fad9afba2d4d3eb2534352727de2b0a7046202",
+    "proposal/kurux-nepal-whole-native.txt": "985d0ab0e047589a5bad7a416615dd37b5a3971d45848648b363f562219b0440",
+    "proposal/kurux-nepal-whole-phonetic.txt": "b0e880756397fec08e5ede041941e7bbe6345d3282ec39b30240672c0fe8d24e",
+    "proposal/kurux-nepal-whole-roman.txt": "72592f868509460453f20a661ffa226095a5c241690800af56e2714880c6f364",
+    "proposal/legacy-before-after.json": "5d7535fce757029b5f30706ba72fe9905fb02d9c8505429b0682e243efd06896",
+    "proposal/native.csv": "ecbb826fbcebd97971375017005012cfbed6094980aec865a9a2fe5c3c534a91",
+    "proposal/native.yaml": "1f635773568d19ddf5924bbef210f8da872bd6089f4ede1f09ddf14fc2872cb4",
+    "proposal/profile-decisions.json": "eb6ecbc61059116f37a6bc414b8ccb5a90f0558c4aec70e52423d056a5bf1617",
+    "proposal/roman.csv": "c45b9bbb472433547f7be39bc3aa32399f310ba3b9234fec02b9e65f79f80da1",
+    "proposal/roman.yaml": "1de825c4fef4d53302a7eae94d0a517b0d0b6dd41c8ceb68c0cd48358167462e",
+    "proposal/wordlist.csv": "56638ca9d62620239fcbc162ae4a94cd85c26ef3f86c68ba937b43aeace9a655",
+    "proposal/wordlist.yaml": "b87d729db87676560281242b4a80aa43a71a3e62bcb4d8d4c430988f65fac76a"
+  },
+  "method": "Verified all 27 frozen file hashes, original PDF hash, and exact sampled rows against all four actual proposal CSVs. Visually compared every sampled form/gloss and all five controls against original PDF renders. Used one overwritten local review sheet; source images were not replaced by decoded text. Source column headings, negative elicitation scope and narrative locality/date were also inspected.",
+  "source_context_checks": [
+    "Printed p44 confirms site order, phonetic-only field-transcription caveat, and meaning of dashed cells.",
+    "Printed p41 explicitly defines 3SG simple past versus 2SG negative imperative and disclaims detailed morphological analysis.",
+    "Printed p60 §C.5 confirms Lohardaga, Jharkhand, India and 5 January 2018 narrative recording.",
+    "Printed p61 defines the aligned/free translation distinction and grammatical abbreviations."
+  ],
+  "affix_class_check": {
+    "current_marker_rows": 182,
+    "marker_rows_with_unsupported_verb_tag": 0,
+    "sampled_affix_output_rows": 10,
+    "scope": "Mechanical all-marker check plus original-page verification of the four freshly sampled morphology units; not a claim of new exhaustive visual rereading."
+  },
+  "findings": [
+    {
+      "sample": 1,
+      "stratum": "wordlist",
+      "source_unit_key": "kurux-nepal:78:kurux_siddhapur",
+      "printed_page": 46,
+      "entry_keys": [
+        "kurux-nepal:78:kurux_siddhapur:1"
+      ],
+      "actual_output_rows": [
+        [
+          "Kurux",
+          "",
+          "ɸula",
+          "flower",
+          "",
+          "ɸula",
+          "Phonetic field transcription as printed; source warns of speaker/transcriber variation. Source conventions omit some onset/dental distinctions and use h broadly. Raised vowels remain raised; no narrower phonology inferred.",
+          "shackelford-swenson-chaudhary-maggard2022kurux[p. 46, wordlist 78]",
+          "",
+          "",
+          "kurux-nepal:78:kurux_siddhapur:1",
+          "",
+          "",
+          "",
+          "dialect:Kurux:kurux_siddhapur:Siddhapur"
+        ]
+      ],
+      "result": "pass",
+      "finding": "Flower row78: Siddhapur ɸula matches the source cell, gloss and site column."
+    },
+    {
+      "sample": 2,
+      "stratum": "wordlist",
+      "source_unit_key": "kurux-nepal:41:kurux_tokla",
+      "printed_page": 45,
+      "entry_keys": [
+        "kurux-nepal:41:kurux_tokla:1"
+      ],
+      "actual_output_rows": [
+        [
+          "Kurux",
+          "",
+          "tãtʌɽ͡r",
+          "sickle",
+          "",
+          "tãtʌɽ͡r",
+          "Phonetic field transcription as printed; source warns of speaker/transcriber variation. Source conventions omit some onset/dental distinctions and use h broadly. Raised vowels remain raised; no narrower phonology inferred.",
+          "shackelford-swenson-chaudhary-maggard2022kurux[p. 45, wordlist 41]",
+          "",
+          "",
+          "kurux-nepal:41:kurux_tokla:1",
+          "",
+          "",
+          "",
+          "dialect:Kurux:kurux_tokla:Tokla"
+        ]
+      ],
+      "result": "pass",
+      "finding": "Sickle row41: Tokla tãtʌɽ͡r retains nasal vowel and tied rhotic sequence as printed."
+    },
+    {
+      "sample": 3,
+      "stratum": "wordlist",
+      "source_unit_key": "kurux-nepal:17:kurux_siddhapur",
+      "printed_page": 44,
+      "entry_keys": [
+        "kurux-nepal:17:kurux_siddhapur:1"
+      ],
+      "actual_output_rows": [
+        [
+          "Kurux",
+          "",
+          "ʈʰihuna",
+          "elbow",
+          "",
+          "ʈʰihuna",
+          "Phonetic field transcription as printed; source warns of speaker/transcriber variation. Source conventions omit some onset/dental distinctions and use h broadly. Raised vowels remain raised; no narrower phonology inferred.",
+          "shackelford-swenson-chaudhary-maggard2022kurux[p. 44, wordlist 17]",
+          "",
+          "",
+          "kurux-nepal:17:kurux_siddhapur:1",
+          "",
+          "",
+          "",
+          "dialect:Kurux:kurux_siddhapur:Siddhapur"
+        ]
+      ],
+      "result": "pass",
+      "finding": "Elbow row17: Siddhapur ʈʰihuna and its aspiration/retroflex notation agree with the original."
+    },
+    {
+      "sample": 4,
+      "stratum": "wordlist",
+      "source_unit_key": "kurux-nepal:299:kurux_lochani",
+      "printed_page": 55,
+      "entry_keys": [
+        "kurux-nepal:299:kurux_lochani:1"
+      ],
+      "actual_output_rows": [
+        [
+          "Kurux",
+          "",
+          "amaʔona",
+          "don’t drink",
+          "",
+          "amaʔona",
+          "Phonetic field transcription as printed; source warns of speaker/transcriber variation. Source conventions omit some onset/dental distinctions and use h broadly. Raised vowels remain raised; no narrower phonology inferred. Source p41 explicitly defines negative elicitation as second-person singular imperative.",
+          "shackelford-swenson-chaudhary-maggard2022kurux[p. 55, wordlist 299]",
+          "",
+          "",
+          "kurux-nepal:299:kurux_lochani:1",
+          "",
+          "",
+          "",
+          "dialect:Kurux:kurux_lochani:Lochani verb neg impv second-person sg 2sg"
+        ]
+      ],
+      "result": "pass",
+      "finding": "Negative drink row299: Lochani amaʔona agrees; p41 explicitly defines negative elicitation as second-person singular imperative."
+    },
+    {
+      "sample": 5,
+      "stratum": "wordlist",
+      "source_unit_key": "kurux-nepal:79:kurux_tokla",
+      "printed_page": 46,
+      "entry_keys": [
+        "kurux-nepal:79:kurux_tokla:1"
+      ],
+      "actual_output_rows": [
+        [
+          "Kurux",
+          "",
+          "bãs",
+          "bamboo tree",
+          "",
+          "bãs",
+          "Phonetic field transcription as printed; source warns of speaker/transcriber variation. Source conventions omit some onset/dental distinctions and use h broadly. Raised vowels remain raised; no narrower phonology inferred.",
+          "shackelford-swenson-chaudhary-maggard2022kurux[p. 46, wordlist 79]",
+          "",
+          "",
+          "kurux-nepal:79:kurux_tokla:1",
+          "",
+          "",
+          "",
+          "dialect:Kurux:kurux_tokla:Tokla"
+        ]
+      ],
+      "result": "pass",
+      "finding": "Bamboo tree row79: Tokla bãs, nasal vowel and lexical gloss agree."
+    },
+    {
+      "sample": 6,
+      "stratum": "wordlist",
+      "source_unit_key": "kurux-nepal:202:kurux_bhokraha",
+      "printed_page": 51,
+      "entry_keys": [
+        "kurux-nepal:202:kurux_bhokraha:1"
+      ],
+      "actual_output_rows": [
+        [
+          "Kurux",
+          "",
+          "b̤innɪm",
+          "different",
+          "",
+          "b̤innɪm",
+          "Phonetic field transcription as printed; source warns of speaker/transcriber variation. Source conventions omit some onset/dental distinctions and use h broadly. Raised vowels remain raised; no narrower phonology inferred.",
+          "shackelford-swenson-chaudhary-maggard2022kurux[p. 51, wordlist 202]",
+          "",
+          "",
+          "kurux-nepal:202:kurux_bhokraha:1",
+          "",
+          "",
+          "",
+          "dialect:Kurux:kurux_bhokraha:Bhokraha"
+        ]
+      ],
+      "result": "pass",
+      "finding": "Different row202: Bhokraha b̤innɪm agrees, including the under-mark on b and short raised-quality vowel symbol."
+    },
+    {
+      "sample": 7,
+      "stratum": "wordlist",
+      "source_unit_key": "kurux-nepal:269:kurux_ranchi",
+      "printed_page": 53,
+      "entry_keys": [
+        "kurux-nepal:269:kurux_ranchi:1"
+      ],
+      "actual_output_rows": [
+        [
+          "Kurux",
+          "",
+          "onᵊka saɾʌs",
+          "be thirsty",
+          "",
+          "onᵊka saɾʌs",
+          "Phonetic field transcription as printed; source warns of speaker/transcriber variation. Source conventions omit some onset/dental distinctions and use h broadly. Raised vowels remain raised; no narrower phonology inferred.",
+          "shackelford-swenson-chaudhary-maggard2022kurux[p. 53, wordlist 269]",
+          "",
+          "",
+          "kurux-nepal:269:kurux_ranchi:1",
+          "",
+          "",
+          "",
+          "dialect:Kurux:kurux_ranchi:Ranchi verb multiword-expression"
+        ]
+      ],
+      "result": "pass",
+      "finding": "Be thirsty row269: Ranchi onᵊka saɾʌs agrees, including raised vowel and two-word boundary."
+    },
+    {
+      "sample": 8,
+      "stratum": "wordlist",
+      "source_unit_key": "kurux-nepal:334:kurux_ranchi",
+      "printed_page": 56,
+      "entry_keys": [
+        "kurux-nepal:334:kurux_ranchi:1"
+      ],
+      "actual_output_rows": [
+        [
+          "Kurux",
+          "",
+          "adᵊ",
+          "he",
+          "",
+          "adᵊ",
+          "Phonetic field transcription as printed; source warns of speaker/transcriber variation. Source conventions omit some onset/dental distinctions and use h broadly. Raised vowels remain raised; no narrower phonology inferred. Source labels this prompt informal; no honorific system inferred.",
+          "shackelford-swenson-chaudhary-maggard2022kurux[p. 56, wordlist 334]",
+          "",
+          "",
+          "kurux-nepal:334:kurux_ranchi:1",
+          "",
+          "",
+          "",
+          "dialect:Kurux:kurux_ranchi:Ranchi pron personal third-person sg 3sg informal"
+        ]
+      ],
+      "result": "pass",
+      "finding": "He row334: Ranchi adᵊ agrees; the prompt explicitly says informal."
+    },
+    {
+      "sample": 9,
+      "stratum": "morphology",
+      "source_unit_key": "kurux-nepal-2022:p41:B2:siddhapur:negative:group:1",
+      "printed_page": 41,
+      "entry_keys": [
+        "kurux-nepal-2022:p41:B2:siddhapur:negative:group:1:prefix:1",
+        "kurux-nepal-2022:p41:B2:siddhapur:negative:group:1:suffix:1"
+      ],
+      "actual_output_rows": [
+        [
+          "Kurux",
+          "",
+          "ama-",
+          "",
+          "",
+          "ama-",
+          "Source Table B.2 is a dataset-specific analysis; the author explicitly disclaims detailed morphology. Prefix and suffix lists matched by logical group order after line wrapping. Printed cooccurrence group: ama- with -a. Alternative-specific pairing is not asserted. Source analysis: second-person singular negative-imperative prefix.",
+          "shackelford-swenson-chaudhary-maggard2022kurux[p. 41, Table B.2]",
+          "",
+          "",
+          "kurux-nepal-2022:p41:B2:siddhapur:negative:group:1:prefix:1",
+          "",
+          "",
+          "",
+          "dialect:Kurux:kurux_siddhapur:Siddhapur prefix neg impv second-person sg 2sg"
+        ],
+        [
+          "Kurux",
+          "",
+          "-a",
+          "",
+          "",
+          "-a",
+          "Source Table B.2 is a dataset-specific analysis; the author explicitly disclaims detailed morphology. Prefix and suffix lists matched by logical group order after line wrapping. Printed cooccurrence group: ama- with -a. Alternative-specific pairing is not asserted. Source analysis: second-person singular negative-imperative suffix.",
+          "shackelford-swenson-chaudhary-maggard2022kurux[p. 41, Table B.2]",
+          "",
+          "",
+          "kurux-nepal-2022:p41:B2:siddhapur:negative:group:1:suffix:1",
+          "",
+          "",
+          "",
+          "dialect:Kurux:kurux_siddhapur:Siddhapur suffix neg impv second-person sg 2sg"
+        ]
+      ],
+      "result": "pass",
+      "finding": "Table B.2 Siddhapur negative group1: ama- and -a agree; prefix/suffix function and 2SG negative imperative are preserved without verb POS."
+    },
+    {
+      "sample": 10,
+      "stratum": "morphology",
+      "source_unit_key": "kurux-nepal-2022:p41:B2:siddhapur:past:suffix:2",
+      "printed_page": 41,
+      "entry_keys": [
+        "kurux-nepal-2022:p41:B2:siddhapur:past:suffix:2:v1",
+        "kurux-nepal-2022:p41:B2:siddhapur:past:suffix:2:v2",
+        "kurux-nepal-2022:p41:B2:siddhapur:past:suffix:2:v3"
+      ],
+      "actual_output_rows": [
+        [
+          "Kurux",
+          "",
+          "-as",
+          "",
+          "",
+          "-as",
+          "Source Table B.2 is a dataset-specific analysis; the author explicitly disclaims detailed morphology.  Source analysis: third-person singular simple-past suffix.",
+          "shackelford-swenson-chaudhary-maggard2022kurux[p. 41, Table B.2]",
+          "",
+          "",
+          "kurux-nepal-2022:p41:B2:siddhapur:past:suffix:2:v1",
+          "",
+          "",
+          "",
+          "dialect:Kurux:kurux_siddhapur:Siddhapur suffix pret third-person sg 3sg"
+        ],
+        [
+          "Kurux",
+          "",
+          "-ʌs",
+          "",
+          "",
+          "-ʌs",
+          "Source Table B.2 is a dataset-specific analysis; the author explicitly disclaims detailed morphology.  Source analysis: third-person singular simple-past suffix.",
+          "shackelford-swenson-chaudhary-maggard2022kurux[p. 41, Table B.2]",
+          "",
+          "",
+          "kurux-nepal-2022:p41:B2:siddhapur:past:suffix:2:v2",
+          "",
+          "",
+          "",
+          "dialect:Kurux:kurux_siddhapur:Siddhapur suffix pret third-person sg 3sg"
+        ],
+        [
+          "Kurux",
+          "",
+          "-ɑs",
+          "",
+          "",
+          "-ɑs",
+          "Source Table B.2 is a dataset-specific analysis; the author explicitly disclaims detailed morphology.  Source analysis: third-person singular simple-past suffix.",
+          "shackelford-swenson-chaudhary-maggard2022kurux[p. 41, Table B.2]",
+          "",
+          "",
+          "kurux-nepal-2022:p41:B2:siddhapur:past:suffix:2:v3",
+          "",
+          "",
+          "",
+          "dialect:Kurux:kurux_siddhapur:Siddhapur suffix pret third-person sg 3sg"
+        ]
+      ],
+      "result": "pass",
+      "finding": "Table B.2 Siddhapur past suffix group2: -as/-ʌs/-ɑs alternatives all agree; each is a suffix with third-person singular past function, not a lexical verb."
+    },
+    {
+      "sample": 11,
+      "stratum": "morphology",
+      "source_unit_key": "kurux-nepal-2022:p41:B2:siddhapur:past:suffix:3",
+      "printed_page": 41,
+      "entry_keys": [
+        "kurux-nepal-2022:p41:B2:siddhapur:past:suffix:3:v1"
+      ],
+      "actual_output_rows": [
+        [
+          "Kurux",
+          "",
+          "-ia",
+          "",
+          "",
+          "-ia",
+          "Source Table B.2 is a dataset-specific analysis; the author explicitly disclaims detailed morphology.  Source analysis: third-person singular simple-past suffix.",
+          "shackelford-swenson-chaudhary-maggard2022kurux[p. 41, Table B.2]",
+          "",
+          "",
+          "kurux-nepal-2022:p41:B2:siddhapur:past:suffix:3:v1",
+          "",
+          "",
+          "",
+          "dialect:Kurux:kurux_siddhapur:Siddhapur suffix pret third-person sg 3sg"
+        ]
+      ],
+      "result": "pass",
+      "finding": "Table B.2 Siddhapur past suffix group3: -ia agrees and remains a suffix with source-defined tense/person function."
+    },
+    {
+      "sample": 12,
+      "stratum": "morphology",
+      "source_unit_key": "kurux-nepal-2022:p41:B2:tokla:negative:group:3",
+      "printed_page": 41,
+      "entry_keys": [
+        "kurux-nepal-2022:p41:B2:tokla:negative:group:3:prefix:1",
+        "kurux-nepal-2022:p41:B2:tokla:negative:group:3:suffix:1",
+        "kurux-nepal-2022:p41:B2:tokla:negative:group:3:suffix:2",
+        "kurux-nepal-2022:p41:B2:tokla:negative:group:3:suffix:3"
+      ],
+      "actual_output_rows": [
+        [
+          "Kurux",
+          "",
+          "amaʔ-",
+          "",
+          "",
+          "amaʔ-",
+          "Source Table B.2 is a dataset-specific analysis; the author explicitly disclaims detailed morphology. Prefix and suffix lists matched by logical group order after line wrapping. Printed cooccurrence group: amaʔ- with -a ; -aʔa/-ʌʔa. Alternative-specific pairing is not asserted. Source analysis: second-person singular negative-imperative prefix.",
+          "shackelford-swenson-chaudhary-maggard2022kurux[p. 41, Table B.2]",
+          "",
+          "",
+          "kurux-nepal-2022:p41:B2:tokla:negative:group:3:prefix:1",
+          "",
+          "",
+          "",
+          "dialect:Kurux:kurux_tokla:Tokla prefix neg impv second-person sg 2sg"
+        ],
+        [
+          "Kurux",
+          "",
+          "-a",
+          "",
+          "",
+          "-a",
+          "Source Table B.2 is a dataset-specific analysis; the author explicitly disclaims detailed morphology. Prefix and suffix lists matched by logical group order after line wrapping. Printed cooccurrence group: amaʔ- with -a ; -aʔa/-ʌʔa. Alternative-specific pairing is not asserted. Source analysis: second-person singular negative-imperative suffix.",
+          "shackelford-swenson-chaudhary-maggard2022kurux[p. 41, Table B.2]",
+          "",
+          "",
+          "kurux-nepal-2022:p41:B2:tokla:negative:group:3:suffix:1",
+          "",
+          "",
+          "",
+          "dialect:Kurux:kurux_tokla:Tokla suffix neg impv second-person sg 2sg"
+        ],
+        [
+          "Kurux",
+          "",
+          "-aʔa",
+          "",
+          "",
+          "-aʔa",
+          "Source Table B.2 is a dataset-specific analysis; the author explicitly disclaims detailed morphology. Prefix and suffix lists matched by logical group order after line wrapping. Printed cooccurrence group: amaʔ- with -a ; -aʔa/-ʌʔa. Alternative-specific pairing is not asserted. Source analysis: second-person singular negative-imperative suffix.",
+          "shackelford-swenson-chaudhary-maggard2022kurux[p. 41, Table B.2]",
+          "",
+          "",
+          "kurux-nepal-2022:p41:B2:tokla:negative:group:3:suffix:2",
+          "",
+          "",
+          "",
+          "dialect:Kurux:kurux_tokla:Tokla suffix neg impv second-person sg 2sg"
+        ],
+        [
+          "Kurux",
+          "",
+          "-ʌʔa",
+          "",
+          "",
+          "-ʌʔa",
+          "Source Table B.2 is a dataset-specific analysis; the author explicitly disclaims detailed morphology. Prefix and suffix lists matched by logical group order after line wrapping. Printed cooccurrence group: amaʔ- with -a ; -aʔa/-ʌʔa. Alternative-specific pairing is not asserted. Source analysis: second-person singular negative-imperative suffix.",
+          "shackelford-swenson-chaudhary-maggard2022kurux[p. 41, Table B.2]",
+          "",
+          "",
+          "kurux-nepal-2022:p41:B2:tokla:negative:group:3:suffix:3",
+          "",
+          "",
+          "",
+          "dialect:Kurux:kurux_tokla:Tokla suffix neg impv second-person sg 2sg"
+        ]
+      ],
+      "result": "pass",
+      "finding": "Table B.2 Tokla negative group3: amaʔ- and -a, -aʔa, -ʌʔa agree; source grouping retained without inventing pair-specific forms or verb POS."
+    },
+    {
+      "sample": 13,
+      "stratum": "narrative",
+      "source_unit_key": "kurux-nepal:p66:narrative:29:word10",
+      "printed_page": 66,
+      "entry_keys": [
+        "kurux-nepal:p66:narrative:29:word10"
+      ],
+      "actual_output_rows": [
+        [
+          "Kurux",
+          "",
+          "एसेरओ",
+          "broken",
+          "एसेरओ",
+          "",
+          "Lohardaga, Jharkhand narrative, recorded 5 January 2018. No unprinted phonemic form or lemma inferred.",
+          "shackelford-swenson-chaudhary-maggard2022kurux[p. 66, narrative 29 aligned group 10]",
+          "",
+          "",
+          "kurux-nepal:p66:narrative:29:word10",
+          "",
+          "",
+          "",
+          "dialect:Kurux:kurux_lohardaga:Lohardaga"
+        ]
+      ],
+      "result": "pass",
+      "finding": "Narrative29 aligned group10: एसेरओ and broken agree; Native equals literal source, Phonemic remains blank."
+    },
+    {
+      "sample": 14,
+      "stratum": "narrative",
+      "source_unit_key": "kurux-nepal:p62:narrative:5:whole",
+      "printed_page": 62,
+      "entry_keys": [
+        "kurux-nepal:p62:narrative:5:whole"
+      ],
+      "actual_output_rows": [
+        [
+          "Kurux",
+          "",
+          "एन आर गे बेड़ा ‘खुटुचकचकन’ और लेड़ा खंदचका लेसे उन्दुल एंग अज्जी खीरी तेंगा उन्दुल एंग अज्जोस खीरी तेंगा लगियस",
+          "I had fixed a time for them, and according to the set time, one day my grandmother would tell a story and another day my grandfather would.",
+          "एन आर गे बेड़ा ‘खुटुचकचकन’ और लेड़ा खंदचका लेसे उन्दुल एंग अज्जी खीरी तेंगा उन्दुल एंग अज्जोस खीरी तेंगा लगियस",
+          "",
+          "Lohardaga, Jharkhand narrative, recorded 5 January 2018. No unprinted phonemic form or lemma inferred. Complete source segment and its free English translation.",
+          "shackelford-swenson-chaudhary-maggard2022kurux[p. 62, narrative 5 whole]",
+          "",
+          "",
+          "kurux-nepal:p62:narrative:5:whole",
+          "",
+          "",
+          "",
+          "dialect:Kurux:kurux_lohardaga:Lohardaga sentential multiword-expression"
+        ]
+      ],
+      "result": "pass",
+      "finding": "Narrative5 whole: both physical native rows and the complete free translation agree; no word or line continuation is omitted."
+    },
+    {
+      "sample": 15,
+      "stratum": "narrative",
+      "source_unit_key": "kurux-nepal:p67:narrative:35:word3",
+      "printed_page": 67,
+      "entry_keys": [
+        "kurux-nepal:p67:narrative:35:word2:combined"
+      ],
+      "actual_output_rows": [
+        [
+          "Kurux",
+          "",
+          "आ उल्ला तिम",
+          "since that day",
+          "आ उल्ला तिम",
+          "",
+          "Lohardaga, Jharkhand narrative, recorded 5 January 2018. No unprinted phonemic form or lemma inferred. Three adjacent physical glosses are preserved jointly because the printed individual alignment is inconsistent; no reordering or POS inference.",
+          "shackelford-swenson-chaudhary-maggard2022kurux[p. 67, narrative 35 aligned groups 2–4]",
+          "",
+          "",
+          "kurux-nepal:p67:narrative:35:word2:combined",
+          "",
+          "",
+          "",
+          "dialect:Kurux:kurux_lohardaga:Lohardaga uncertain multiword-expression"
+        ]
+      ],
+      "result": "pass",
+      "finding": "Narrative35 groups2–4: आ उल्ला तिम and the combined gloss since that day preserve the inconsistent individual columns; uncertainty and grouping Notes are explicit."
+    },
+    {
+      "sample": 16,
+      "stratum": "narrative",
+      "source_unit_key": "kurux-nepal:p66:narrative:28:word1",
+      "printed_page": 66,
+      "entry_keys": [
+        "kurux-nepal:p66:narrative:28:word1"
+      ],
+      "actual_output_rows": [
+        [
+          "Kurux",
+          "",
+          "पिंंटकाय",
+          "killed",
+          "पिंंटकाय",
+          "",
+          "Lohardaga, Jharkhand narrative, recorded 5 January 2018. No unprinted phonemic form or lemma inferred. Printed aligned analysis: killed-2P. Source 2P label retained without guessing singular/plural. Both adjacent nasal dots certified by isolated embedded-font glyphs, original14x crop and independent root direction; do not collapse either mark. Literal पिंंटकाय retained with typed typography uncertainty.",
+          "shackelford-swenson-chaudhary-maggard2022kurux[p. 66, narrative 28 aligned group 1]",
+          "",
+          "",
+          "kurux-nepal:p66:narrative:28:word1",
+          "",
+          "",
+          "",
+          "dialect:Kurux:kurux_lohardaga:Lohardaga verb second-person uncertain"
+        ]
+      ],
+      "result": "pass",
+      "finding": "Narrative28 group1: two adjacent printed nasal dots are visible above पिंंटकाय. Literal double marking and typed typography uncertainty are retained. The printed killed-2P analysis supplies second-person, not invented number."
+    },
+    {
+      "sample": 17,
+      "stratum": "narrative",
+      "source_unit_key": "kurux-nepal:p62:narrative:6:word10",
+      "printed_page": 62,
+      "entry_keys": [
+        "kurux-nepal:p62:narrative:2:word4"
+      ],
+      "actual_output_rows": [
+        [
+          "Kurux",
+          "",
+          "मल",
+          "not",
+          "मल",
+          "",
+          "Lohardaga, Jharkhand narrative, recorded 5 January 2018. No unprinted phonemic form or lemma inferred. Explicit aligned negation gloss; no unprinted imperative/person analysis inferred.",
+          "shackelford-swenson-chaudhary-maggard2022kurux[p. 62, narrative 2 aligned group 4];shackelford-swenson-chaudhary-maggard2022kurux[p. 62, narrative 2 aligned group 7];shackelford-swenson-chaudhary-maggard2022kurux[p. 62, narrative 6 aligned group 10];shackelford-swenson-chaudhary-maggard2022kurux[p. 63, narrative 8 aligned group 2];shackelford-swenson-chaudhary-maggard2022kurux[p. 63, narrative 8 aligned group 15];shackelford-swenson-chaudhary-maggard2022kurux[p. 63, narrative 8 aligned group 21]",
+          "",
+          "",
+          "kurux-nepal:p62:narrative:2:word4",
+          "",
+          "",
+          "",
+          "dialect:Kurux:kurux_lohardaga:Lohardaga neg"
+        ]
+      ],
+      "result": "pass",
+      "finding": "Narrative6 group10: मल aligns with not. Exact-analysis reuse retains this occurrence citation alongside the other cited attestations."
+    },
+    {
+      "sample": 18,
+      "stratum": "narrative",
+      "source_unit_key": "kurux-nepal:p63:narrative:7:word10",
+      "printed_page": 63,
+      "entry_keys": [
+        "kurux-nepal:p63:narrative:7:word10"
+      ],
+      "actual_output_rows": [
+        [
+          "Kurux",
+          "",
+          "ख़न्द्रआ",
+          "sleep",
+          "ख़न्द्रआ",
+          "",
+          "Lohardaga, Jharkhand narrative, recorded 5 January 2018. No unprinted phonemic form or lemma inferred.",
+          "shackelford-swenson-chaudhary-maggard2022kurux[p. 63, narrative 7 aligned group 10]",
+          "",
+          "",
+          "kurux-nepal:p63:narrative:7:word10",
+          "",
+          "",
+          "",
+          "dialect:Kurux:kurux_lohardaga:Lohardaga"
+        ]
+      ],
+      "result": "pass",
+      "finding": "Narrative7 group10: ख़न्द्रआ and sleep agree, including the printed dot below the initial consonant."
+    },
+    {
+      "sample": 19,
+      "stratum": "prose",
+      "source_unit_key": "kurux-nepal:p15:prose:autonym-phonetic",
+      "printed_page": 15,
+      "entry_keys": [
+        "kurux-nepal:p15:prose:autonym-phonetic:v1",
+        "kurux-nepal:p15:prose:autonym-phonetic:v2"
+      ],
+      "actual_output_rows": [
+        [
+          "Kurux",
+          "",
+          "kuɽukʰa",
+          "internal name for the language and ethnic group",
+          "",
+          "kuɽukʰa",
+          "Explicit Nepal autoglottonym. Two phonetic alternatives and three native alternatives are not individually paired by the source.",
+          "shackelford-swenson-chaudhary-maggard2022kurux[p. 15, prose attestation]",
+          "",
+          "",
+          "kurux-nepal:p15:prose:autonym-phonetic:v1",
+          "",
+          "",
+          "",
+          "proper-noun"
+        ],
+        [
+          "Kurux",
+          "",
+          "kuɽkʰa",
+          "internal name for the language and ethnic group",
+          "",
+          "kuɽkʰa",
+          "Explicit Nepal autoglottonym. Two phonetic alternatives and three native alternatives are not individually paired by the source.",
+          "shackelford-swenson-chaudhary-maggard2022kurux[p. 15, prose attestation]",
+          "",
+          "",
+          "kurux-nepal:p15:prose:autonym-phonetic:v2",
+          "",
+          "",
+          "",
+          "proper-noun"
+        ]
+      ],
+      "result": "pass",
+      "finding": "Prose p15: both phonetic autonyms kuɽukʰa and kuɽkʰa agree. No unsupported one-to-one pairing with the three native spellings is supplied."
+    },
+    {
+      "sample": 20,
+      "stratum": "prose",
+      "source_unit_key": "kurux-nepal:p15:prose:kurux-phonetic",
+      "printed_page": 15,
+      "entry_keys": [
+        "kurux-nepal:p15:prose:kurux-phonetic:v1"
+      ],
+      "actual_output_rows": [
+        [
+          "Kurux",
+          "",
+          "kuɽuχ",
+          "Kurux language or ethnic-group name",
+          "कुड़ुख़",
+          "kuɽuχ",
+          "Explicit bracketed phonetic quotation; native spelling explicitly paired in same sentence.",
+          "shackelford-swenson-chaudhary-maggard2022kurux[p. 15, prose attestation]",
+          "",
+          "",
+          "kurux-nepal:p15:prose:kurux-phonetic:v1",
+          "",
+          "",
+          "",
+          "proper-noun"
+        ]
+      ],
+      "result": "pass",
+      "finding": "Prose p15: bracketed kuɽuχ and its explicitly paired native कुड़ुख़ agree."
+    }
+  ],
+  "controls": [
+    {
+      "source_unit_key": "kurux-nepal:157:kurux_ranchi",
+      "printed_page": 49,
+      "result": "pass",
+      "finding": "Ranchi row157 prints dashes, with no target form supplied; nonemission is correct.",
+      "entry_keys": []
+    },
+    {
+      "source_unit_key": "kurux-nepal:p15:prose:uranw-roman",
+      "printed_page": 15,
+      "result": "pass",
+      "finding": "Prose p15 and footnote15 list these as conventional Roman community-name spellings; documentary-only treatment is explicit and the spellings remain in audit.",
+      "entry_keys": []
+    },
+    {
+      "source_unit_key": "kurux-nepal:37:kurux_ranchi",
+      "printed_page": 45,
+      "result": "pass",
+      "finding": "Ranchi row37 prints dashes, with no target form supplied; nonemission is correct.",
+      "entry_keys": []
+    },
+    {
+      "source_unit_key": "kurux-nepal:322:kurux_siddhapur",
+      "printed_page": 56,
+      "result": "pass",
+      "finding": "Siddhapur row322 prints dashes; no negative-imperative form is invented.",
+      "entry_keys": []
+    },
+    {
+      "source_unit_key": "kurux-nepal-2022:p41:B2:tokla:past:zero:1",
+      "printed_page": 41,
+      "result": "pass",
+      "finding": "Table B.2 Tokla past prefix cell explicitly prints ∅-; zero marker remains documentary morphology, not an empty lexical form.",
+      "entry_keys": []
+    }
+  ],
+  "source_pages_visually_inspected": [
+    15,
+    41,
+    44,
+    45,
+    46,
+    49,
+    51,
+    53,
+    55,
+    56,
+    60,
+    61,
+    62,
+    63,
+    66,
+    67
+  ],
+  "reproduction_helper": "tmp/kurux-independent-asur/review.py",
+  "scope_limit": "Independent sampled source-stage audit only. No canonical files, frozen inputs, database, compiled data or release changed. Installation, full build and browser gates are separate."
+}

@@ -1,0 +1,19 @@
+{
+  "reviewer": "root",
+  "date": "2026-09-27",
+  "input": "reviewed-whole-utterances.jsonl",
+  "input_sha256": "2455d1295ba6352b9760f463268616ae49664ce441da92faba0f9f2247ab2126",
+  "original_pages_reviewed": [572, 573, 574, 575],
+  "method": "Compared all recovered spans and seven free-translation blocks with original four-page specimens. Complete clauses cross physical lines; semicolons do not independently end utterances. Six dialogue labels are retained as provenance. No free translations invented for specimen I or for the constituent sentences within a larger translated block.",
+  "utterances": 51,
+  "translated_blocks": 7,
+  "physical_token_occurrences": 537,
+  "result": "Approved for integration into unfrozen review proposal",
+  "integration_decisions": [
+    "Retain utterance and translation-block evidence separately, even when a block consists of one utterance, because their analyses differ.",
+    "Keep concatenated interlinear English in the audit with its explicit type; never substitute it for a printed free translation.",
+    "Propagate all token transcription and grammatical uncertainties to the full expression audit and general uncertainty tag.",
+    "Preserve the seven standalone free-translation evidence units as contextual records, with no additional invented lexical emissions."
+  ],
+  "deferred": ["Fresh frozen whole-output audit", "Canonical metadata and source installation", "Full compiled and browser checks"]
+}

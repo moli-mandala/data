@@ -1,0 +1,46 @@
+{
+  "installation_approved": true,
+  "result": "pass",
+  "source_stage_only": true,
+  "authorization": "Root delegated guarded canonical Kani source-stage installation following independent sample and corrected-control addendum on 2026-09-27.",
+  "rows": 36,
+  "audit_units": 42,
+  "witness_slots": 66,
+  "files": {
+    "whole-recovery/review-candidate.csv": "008927fd95809d423ac9d8b913ff690c4c398fee0da940fe96838117caeb0e85",
+    "whole-recovery/review-audit.jsonl": "798ca2ae93e9783a1a6313786ba4a4e530a0d044a3e92df29d78e30c57414582",
+    "whole-recovery/physical-units-first-reading.jsonl": "8e95ee28fe33b393477f9a2474f3e348ba1a1d6799302982e04146bb5f9023e3",
+    "whole-recovery/independent-sample/independent-original-review-pass1.json": "d7ab126926c49cd6e27e96f4b467cc4f1e23b6e66f384d8f618395b0b985ef4f",
+    "whole-recovery/independent-sample/independent-original-review-pass2-addendum.json": "c1c659a5caaa5c79df4aa3c2de4de20999f6c8ee0bc03dd1476826f621665a4e",
+    "whole-recovery/prepare_first_reading.py": "500835316ad2dfbadf6cae6e1ae1e506fd6bda860eb20b5ac82f520fcbdcf8cf",
+    "whole-recovery/prepare_review_candidate.py": "91d6bf693409219cae701a6d2c346c1c6f2d6351e1648ab1854160b75a3bd415",
+    "whole-recovery/regeneration-check.json": "89e93fac5bb17600f5e67e6ed71b9153945d78726d3f1c19891401c70475e87c",
+    "whole-recovery/verify_regeneration.py": "6149ef92e16ec40e16b205bcef83cfa2c10646764b5afbd5608f916205e8bdd7",
+    "whole-recovery/actual-parser-review.json": "cc8334c38b328fed9bc62820c78502c907d983fc3af8e3b7b02baa5b8882daba",
+    "whole-recovery/identity-and-profile-proposal.json": "d9eb38d6a66d04af7c3de5cc780bf3c9302d52ee1a29d28eb950b724c3acb37b",
+    "whole-recovery/revision2-continuity.json": "544dc78a6ccdf5f220a019fce2175cae9266c29a79cd8e1b3aab60561e1ec66e",
+    "accepted-audit-proposal.jsonl": "453759d7c580b8dee813ec79fb6ec7e92e4650901f484e4591782a0d05c43440",
+    "20260927-nair-kani.yaml": "65574805f0cac7a0ecd6f91618aca6c4e012d36f52ff84e1b23b28674a7220c6",
+    "proposed-references.bib": "4d4cde06399e913e4e092f97e0f24bb60c9a791946de2d595c9cebccd4a94833",
+    "proposed-language.csv": "c69ef1c32f7dc30c0715f7d0c2d3f3832cb59a3d860db030c8ec4bd8161ea625",
+    "proposed-dialect.csv": "c6e85d50e5582f445b91fc0e6b2409064048203fd55b9237416642fecb278aa3",
+    "import_source.py": "b9cb773294864b3d32b4cea4dbfd9f814170dac58d24016b4795814ca3577b12"
+  },
+  "canonical_baselines": {
+    "data/other/forms/20260927-nair-kani.csv": null,
+    "data/other/forms/20260927-nair-kani.yaml": null,
+    "data/other/forms/raw_data/nair_kani_2013/installed-audit.jsonl": null,
+    "cldf/languages.csv": "e2e4dac9626ec323d11f239d1f5a67d647691210e54a6eeb17f6d939dbf42c23",
+    "cldf/dialects.csv": "77a384f40eb3a4132d77ca6f2b3fdbaa8153de628f971af6c3079ac710b71904",
+    "cldf/sources.bib": "2d93214320d1020d003ac62911b76d73925bfb92ae5ea5f9fee45302760d1d7b"
+  },
+  "durable_identity_sha256": "4977c4e205f66233366ee1c00a9c938c9c78e3c087b63e02a94832647525c28a",
+  "source_pdf_sha256": "4d2588987dab5d15c62ecc95330ccf7e925a9bce80d08068b91ca3f48c8cc5af",
+  "deferred": [
+    "full CLDF build",
+    "full test suite",
+    "compiled source-key/ID/graph checks",
+    "browser database and QA",
+    "publication"
+  ]
+}

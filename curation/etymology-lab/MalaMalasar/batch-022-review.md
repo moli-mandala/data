@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Mala Malasar · Dravidian surveys, 2026-09-21 · batch 022. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Mala Malasar | Proposed etymology | Evidence |
+|---|---|---|---|
+| 106 | **okka** ‘whole’ | Proposed reflex of [**DEDR 990**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=94) | DEDR990(b) explicitly gives Malayalam okka together/all. These okka all/whole responses match that particular subgroup, which fits the current *okk- parent. They are distinguished from or-/on-/oṇṭ- forms assigned to other subsections of the article. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 107 | **kāttɨ** ‘wind’ | Proposed reflex of [**DEDR 1481**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=138) | DEDR1481 explicitly gives Tamil/Malayalam kāṟṟu wind, Kota kāṯ, Toda kōṯ and Kodagu kātï. These southern survey kāṟṟ-/kātt-/kāṯ- wind forms compare with that specific wind family; source vowel differences, stop notation and final vowels are preserved. Longer qualified phrases are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 108 | **cutti** ‘hammer’ | Proposed reflex of [**DEDR 2668**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=231) | DEDR2668 gives Tamil cutti/cuttiyal, Malayalam cutti/cuttika, Kannada suttige, Tulu sutti/suttè, Telugu sutte and Gondi sutte hammer. These survey cut-/sut- hammer responses retain the attested family and ordinary suffixes. The article also compares Marathi sutkī; this external comparison is retained as a caveat and does not establish an immediate donor for these forms. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 109 | **nūlu** ‘thread’ | Proposed reflex of [**DEDR 3726**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=332) | DEDR3726 explicitly gives Tamil/Malayalam/Kannada nūl, Tulu/Telugu nūlu, Gadaba/Parji nūl, Gondi nūl and Konda nūlu thread. The survey nūl/nūlu/nol/nōḷ/noolɨ responses are narrowly selected thread reflexes with source vowels and laterals retained; the unrelated crush/broken-rice article3728 is not used. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 110 | **ta ːyɨ** ‘mother’ | Proposed reflex of [**DEDR 364**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=34) | DEDR364 gives Tamil tāy and Malayalam tāyi mother. Mala Malasar tāyɨ mother is a direct southern maternal-term comparison. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+
+Proposed assignment rows: **5**. Affected records: **5**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-022.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/MalaMalasar/batch-022.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

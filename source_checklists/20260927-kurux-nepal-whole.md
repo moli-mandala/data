@@ -1,0 +1,15 @@
+# Kurux Nepal and India: complete reviewed source stage
+
+The 2022 Shackelford, Swenson, Chaudhary and Maggard report is installed as 2,465 rows: 1,984 wordlist alternatives, 186 phonetic grammar/prose rows, 286 native-script rows and nine conventional Roman rows. All 1,336 legacy keys survive; durable form identities are unchanged. All 137 PDF pages have explicit scope decisions.
+
+The 2,542-unit audit accounts for all 338 prompts in six columns, source morphology, 35 complete Lohardaga narrative segments and 377 aligned groups, the 11-line Jharkhand quotation and explicitly attributed prose forms. It retains 74 wordlist blanks, zero-morphology/documentary controls and physical lines; no unprinted word alignment is invented for the quoted passage. Exact repeated analyses reuse rows with all citations retained. Non-target questionnaire labels and administrative content remain controls.
+
+Source phonetic conventions are preserved rather than reconstructed. Raised vowels, visibly repeated nasal marks, source gloss conflicts and the jointly translated segment 35 span remain documented. Native and conventional Roman routes are literal, with blank source Phonemic where none is supplied. Four reviewed Indian locality records have blank coordinates. Secondary authorities named in the report are identified in shared-metadata-plan.json without claiming independent consultation.
+
+Independent revision 2 audit: 20 units / 27 output rows and five controls passed with zero material errors; all 182 emitted marker rows were checked against erroneous verb POS. All approved CSV, audit, profile and proposed YAML bytes reproduce exactly after installation. Eleven focused tests pass, including the actual canonical parser, legacy coverage, source citation/variant closure, profile normalization, exact Native/Original/Phonemic and formatted bibliography. Historical 1,336-row pilot tests use the immutable baseline.
+
+Reproduce source files with `python data/other/forms/raw_data/kurux_nepal_2022/whole-source-recovery/import_source.py`; add `--install` only to install the independently approved hashes and source metadata. Neither command builds a database. The frozen manifest is historical; the sole frozen generator dependency change is explained in dependency-repair-20260927.json.
+
+Full CLDF/database build, compiled identity/graph/reference verification, full test suite and browser QA remain deferred under the user's no-build instruction. This is source-stage completion, not end-to-end ingestion certification. Representative source keys are `kurux-nepal:1:kurux_lochani:1`, `kurux-nepal:181:kurux_pathibari:1` and `kurux-nepal:p66:narrative:28:word1`; app entries await the authorized build.
+
+Evidence: `data/other/forms/raw_data/kurux_nepal_2022/whole-source-recovery/{whole-page-decisions.json,root-independent-review-20260927222.json,installation-report-20260927.json,installed-audit.jsonl}`.

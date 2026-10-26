@@ -13,7 +13,7 @@ PACKAGE = ROOT / "data/other/forms/raw_data/sil_noira_2015"
 INSTALLED = ROOT / "data/other/forms/20260829-sil-noira.csv"
 PROFILE = ROOT / "conversion/sil-noira.txt"
 STAGED_SHA256 = "c82983a319d6d6fbf5c07063f0655ae3e4e8e3890d625e1bfc2a38f95c811746"
-PROFILE_SHA256 = "0053f962da609cdb61c8a7b692bb8fdd2c4ebc7d476cae58ce2850df52939f3b"
+PROFILE_SHA256 = "aa989b1553054f49c340ef094319f134904f298cc260e62fb60328e934010c0c"
 
 
 def dict_rows(path: Path, delimiter: str = ",") -> list[dict[str, str]]:
@@ -83,7 +83,8 @@ def test_noira_profile_is_exact_and_routed_by_source_key() -> None:
     # Shared house-profile review adds attested aː/oː/ɑː sequences; check the
     # full mapping and occurrence evidence rather than the old 54-rule count.
     profile_rows = dict_rows(PACKAGE / "conversion_profile.tsv", "\t")
-    assert len(inventory) == len(profile_rows) == 57
+    # 57 rules plus the 16 attested aspirate sequences (kh ph ʈh … and breathy dɦ bɦ gɦ ɖɦ dʒɦ)
+    assert len(inventory) == len(profile_rows) == 73
     assert {(r["Grapheme"], r["IPA"]) for r in inventory} == {
         (r["Grapheme"], r["IPA"]) for r in profile_rows
     }

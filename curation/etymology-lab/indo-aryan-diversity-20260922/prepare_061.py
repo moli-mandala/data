@@ -1,0 +1,26 @@
+import csv,json,unicodedata
+from pathlib import Path
+from etymology_assignments import read_assignments
+P=Path('curation/etymology-lab/indo-aryan-diversity-20260922')
+linked={r['Form_ID'] for r in read_assignments() if r['Status']=='accepted'};linked.update(r['Child_ID'] for r in csv.DictReader(open('cldf/edges.csv')) if r['Rank']=='1')
+rs=[r for r in json.loads((P/'schmidt-poguli-siraji-remaining057.json').read_text()) if r['ID'] not in linked]
+groups=[('seed', ['bijə'], '9261', 'bījya', 'Turner9261 gives Bhadrawahi bīj̈ and Jaunsari bīj seed, preserving the affricate through bījya. Siraji bijə fits this retained-j family, unlike the neighbouring bī-type outcomes grouped under bīja9250. Preserve its final ə and unmarked vowel length.'), ('cloud', ['badəló'], '11567', 'vārdala', 'Turner11567 gives neighbouring Bhalessi badlu rain and Pahari badəḷ cloud, alongside bādal and MIA vaddala. Siraji badəló shares the regional bad-l stem; retain the medial vowel, final o and marked final stress. The gloss remains cloud, without importing the rainy-weather or cloudy senses of other comparanda.'), ('grass/fodder', ['gás'], '4471', 'ghāsa', 'Turner4471 gives Kashmiri gāsa, Poguli gās and Pahari ghās grass/fodder, through MIA ghāsa. Siraji gás fits this regional s-retaining family; preserve the source unaspirated g and short marked vowel, without confusing it with grāsa cooked-rice comparisons.'), ('root', ['mūl'], '10250', 'mūla', 'Turner10250 section1 explicitly gives Kashmiri mūl/mōl root and regional mūl, matching Poguli mūl. Select the lateral-retaining mūla branch rather than mūḍa or the similarly shaped head-word family. Turner proposes a possibly non-Aryan deeper origin; this does not identify a modern borrowing route.'), ('cedar', ['diyár'], '6531', 'devadāru', 'Turner6531 gives Kashmiri dīār, Punjabi diār and Pahari dyār cedar under devadāru. Siraji diyár matches that contracted regional cedar word; preserve its marked final stress and unmarked vowel lengths.')]
+a=[];audit=[];source=list(csv.DictReader(open('data/other/forms/raw_data/schmidt_kashmiri.csv')));raw=list(csv.reader(open('data/other/forms/20260725-schmidt-kashmiri.csv')))
+lines=['# Schmidt and Kaul: Poguli and Siraji further nature and plant vocabulary','','Five reflex records across five families; standing autonomous authorization. Table 3, printed pp. 288 and 295 (PDF pp. 58 and 65), visually checked.','','| # | Poguli / Siraji forms and meaning | Proposed etymology | Evidence |','|---|---|---|---|']
+for i,(g,fs,parent,label,ev) in enumerate(groups,1):
+ hits=[r for r in rs if r['Gloss']==g and r['Form'] in fs];assert len(hits)==len(fs),(g,len(hits))
+ for r in hits:
+  rr=[z for z in raw if z[0]==r['Language_ID'] and z[2]==r['Original'] and z[3]==g and z[6]==r['Description']];assert len(rr)==1,(r,rr)
+  item=r['Description'].split()[-1];sr=next(z for z in source if z['Item']==item)
+  col={'pog':'Poguli','sir':'Siraji'}[r['Language_ID']];assert unicodedata.normalize('NFC',sr[col])==r['Original']
+  page=int(sr['Page'])+230
+  citation=f'schmidt[p. {page}, Table 3, item {item}];CDIAL[{parent} and addenda]'
+  a.append(dict(record={k:r[k] for k in ['ID','Language_ID','Form','Gloss','Source','Tags']},parent=parent,kind='reflex',citation=citation,evidence=ev+' Source image and reviewed import row checked; no source transcription or identity changes.'))
+  audit.append(dict(record_id=r['ID'],reviewed_source_row=sr,import_row=rr[0],printed_page=page,image=f'../tmp/pdfs/schmidt_kaul_2008/etymology/page-{sr["Page"]}.png',visual_check='confirmed'))
+ label=label.replace('*',r'\*');lines.append(f'| {i} | **{" / ".join(fs)}** ‘{g}’ ({len(hits)}) | **{label}**, CDIAL **{parent}** | {ev} |')
+reasons={'dārim':'Both dāḍima6254 and dāḍimba6254-2 contain regional dārim-like outcomes. Resolve the local branch before choosing; an exact Nepali match does not decide Poguli history.','darmṓli':'The additional -moli formation needs source morphology; do not strip it to a generic pomegranate root.','g3ː3S':'Compiled grass response contains numeric/capital characters inconsistent with an ordinary phonological form; source-profile review needed, no repair performed.','œil':'The printed root response appears to begin with dz, unlike compiled œ. Resolve the transcription/profile discrepancy before an etymological assignment.','dóvdā́r':'The compound-shaped cedar form needs local evidence distinguishing inheritance from later learned or contact transmission; do not copy the contracted Siraji analysis.'}
+h=[dict(record=r,reason=reasons[r['Form']]) for r in rs if r['Form'] in reasons]
+assert len(a)==5 and len(h)==5
+
+for name,val in [('decisions',dict(accepted=a,held=h)),('source-audit',audit)]: (P/f'pass061-{name}.json').write_text(json.dumps(val,ensure_ascii=False,indent=2)+'\n')
+lines+=['','Five records held:']+[f'- **{x["record"]["Form"]}** ‘{x["record"]["Gloss"]}’: {x["reason"]}' for x in h]+['','Discovery: schmidt-search009 and 013–016; full primary prose/addenda: schmidt-primary011,014–018. Selected source images and reviewed import rows checked. No rebuild.','','Save and validation pending.'];(P/'pass061-review.md').write_text('\n'.join(lines)+'\n');print(len(a),'accepted',len(h),'held')

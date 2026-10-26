@@ -1,0 +1,18 @@
+import csv,json
+from pathlib import Path
+from etymology_assignments import read_assignments
+P=Path('curation/etymology-lab/indo-aryan-diversity-20260922')
+linked={r['Form_ID'] for r in read_assignments() if r['Status']=='accepted'};linked.update(r['Child_ID'] for r in csv.DictReader(open('cldf/edges.csv')) if r['Rank']=='1')
+rs=[r for r in csv.DictReader(open('cldf/forms.csv')) if 'buddruss-grangali1979[' in r['Source'] and r['ID'] not in linked]
+groups=[('bis','sit down','2245','upaviśati','Turner2245 gives regional biś-/beś- sit forms and explains initial b through early MIA *uba-, while retaining possible contamination with vasati. Grangali bis is the s-stem rather than the ṭṭh past-derived stem; that broader historical uncertainty is retained.'),('nis','sit down','7467-2','*nisīdati','Turner7467 section2 explicitly gives Shumashti nisī sitting under *nisīdati, distinct from section1 niṣīdati with regional ś. The source Shumashti imperative/root nis agrees with this specifically identified non-retroflex branch.'),('darī́','beard','6250','*dāṁṣṭra','Turner6250 gives Shumashti dāṛi and regional Pashai dāṛī, Wotapuri deāṛ and Gawri dāṛī beard through the dāṭhikā/dāḍhiā family. Grangali darī agrees with that regional family. Preserve the source plain r, accent and unmarked initial length. Turner’s deeper fang/tusk/beard reconstruction and possible substrate influence remain uncertain.'),('darí','beard','6250','*dāṁṣṭra','Turner6250 explicitly gives Shumashti dāṛi beard in the dāṭhikā/dāḍhiā family. Preserve the installed source darí and its accent/length rather than silently normalizing to Turner. The entry’s deeper fang/tusk/beard derivation and possible substrate influence remain uncertain.')]
+a=[];lines=['# Grangali survey: distinct sitting verbs and beard','','Four proposed reflex records under standing autonomous authorization.','','| # | Language form and meaning | Proposed etymology | Evidence |','|---|---|---|---|']
+for i,(f,g,parent,label,ev) in enumerate(groups,1):
+ hits=[r for r in rs if r['Form']==f and r['Gloss']==g];assert len(hits)==1,(f,hits)
+ r=hits[0];a.append(dict(record={k:r[k] for k in ['ID','Language_ID','Form','Gloss','Source','Tags']},parent=parent,kind='reflex',citation=r['Source']+';CDIAL['+parent+' and addenda]',evidence=ev+' Existing manual source collation reports Material_Error=no; no transcription or identity repair.'))
+ lines.append(f'| {i} | {r["Language_ID"]} **{f}** ‘{g}’ | **{label}**, CDIAL **{parent}** | {ev} |')
+h=[dict(record={k:r[k] for k in ['ID','Language_ID','Form','Gloss','Source','Tags']},reason='The source audit marks Grangali kaśirə as borrowed; Turner3116 treats Nuristani forms as borrowed from Dardic and suggests the reverse route for Ningalam. Resolve the actual immediate donor for this source form; do not assign a reflex solely from shared shape.') for r in rs if r['Gloss']=='white']
+(P/'pass045-decisions.json').write_text(json.dumps(dict(accepted=a,held=h),ensure_ascii=False,indent=2)+'\n')
+sources={x['record']['Source'] for x in a+h};audit=[r for r in csv.DictReader(open('data/other/forms/raw_data/20260819-buddruss-grangali-audit.csv')) if r['Source'] in sources];assert all(r['Material_Error']=='no' for r in audit)
+(P/'pass045-source-audit.json').write_text(json.dumps(audit,ensure_ascii=False,indent=2)+'\n')
+lines+=['',f'{len(h)} white records held for immediate-donor research. Source evidence: full existing manual image collation, p26 items15/19/21. Research: homepage grangali-search009–010; full dictionary articles/addenda grangali-primary006–007.','Validation: pending.']
+(P/'pass045-review.md').write_text('\n'.join(lines)+'\n');print(len(a),'accepted',len(h),'held')

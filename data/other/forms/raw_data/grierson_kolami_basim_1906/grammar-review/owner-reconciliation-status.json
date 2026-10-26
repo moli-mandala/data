@@ -1,0 +1,67 @@
+{
+  "status": "Complete owner original reconciliation; source-stage candidate only, no final acceptance",
+  "inputs": {
+    "independent-grammar-review/independent-child-witnesses.jsonl": "16e4cf88d224a0528449d538f61f713dc13b93f51cbb0be9864468f2cb7b0050",
+    "independent-grammar-review/independent-parent-coverage.jsonl": "4b08a534fc9ebaa8bbf0ca69e4f69536e8c12af393aa597ea4b860949881912f",
+    "scope/physical-unit-census.jsonl": "4a4ba94662e25b66ead735bfbd8061332c530c359f194bcb2225bbc9ebc314cd"
+  },
+  "physical_parents": 103,
+  "paradigm_cells": 58,
+  "child_witnesses": 224,
+  "disposition_counts": {
+    "eligible_review_candidate": 213,
+    "audit_only_notation_symbol": 10,
+    "audit_only_hypothesized_source_form": 1
+  },
+  "per_page": {
+    "562": 80,
+    "563": 32,
+    "566": 78,
+    "567": 34
+  },
+  "corrections": [
+    {
+      "witness_key": "grierson1906kolamibasim:p567:conjunctive-participle:1:independent:w5",
+      "physical_parent_key": "grierson1906kolamibasim:p567:conjunctive-participle:1",
+      "field": "form",
+      "old": "innekatānān",
+      "new": "innekādān",
+      "evidence": "Owner isolated original shows k ā d ā n; independent reader Norton agrees. Earlier extra segments preserved only in historical input.",
+      "original_evidence": {
+        "page": 567,
+        "rect": [
+          200,
+          1150,
+          820,
+          1240
+        ],
+        "scale": 2,
+        "source": "data/data/other/forms/raw_data/grierson_kolami_basim_1906/independent-grammar-review/original-controls/printed-567-top.png",
+        "source_sha256": "431d0232434f8567d81b2ab0b1aff9e8b927e18655471bfe8faba8c6014311ad",
+        "crop": "tmp/jambu-next-source/kolami-grammar-original-controls/p567-conjunctive-last-owner-control.png",
+        "crop_sha256": "833babe05cb7f1905f4ac9ebaac89f942b10867395257954108df694fe651a40"
+      }
+    }
+  ],
+  "source_caveats": [
+    "Grierson supplied interlinear translation; other mentioned materials are not printed here.",
+    "Plural forms used in singular and vice versa; do not apply number globally from English.",
+    "No feminine noun examples; qualified inferred gender system remains source claim.",
+    "Optional letters literal; no unattested optional expansions.",
+    "Basim copula printed2.m. conflicts with adjoining2/3n labels; retain typed conflict.",
+    "Negative tense/agency interpretation explicitly tentative; no definitive subtype inferred."
+  ],
+  "outputs": {
+    "reviewed-child-witnesses.jsonl": "ce78a459c1102d2b6e6376ea953f23dae4ebf9a5888daa63c9c72eae38c59ed2",
+    "owner-child-coverage.jsonl": "3a66548179229e82e9ac28904e9c4e1bb3b93aa04ff6065aa564a8433e5ebd4f",
+    "owner-parent-coverage.jsonl": "9e540baed5a789c5ffe6fccf192616f637ae3040d5af3027899efb0348c5ab09"
+  },
+  "gates_pending": [
+    "Root final reconciliation approval",
+    "Complete specimen glyph reconciliation/atomic and expression accounting",
+    "Asur outside-chapter closure",
+    "Combined metadata/graph/profile/source-output independent audit",
+    "Canonical installation and all full-build/browser gates"
+  ],
+  "canonical_changes": false
+}

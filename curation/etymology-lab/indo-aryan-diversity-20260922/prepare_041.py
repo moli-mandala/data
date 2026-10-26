@@ -1,0 +1,19 @@
+import csv,json
+from pathlib import Path
+from etymology_assignments import read_assignments
+P=Path('curation/etymology-lab/indo-aryan-diversity-20260922');linked={r['Form_ID'] for r in read_assignments()};linked.update(r['Child_ID'] for r in csv.DictReader(open('cldf/edges.csv')) if r['Rank']=='1');rs=[r for r in csv.DictReader(open('cldf/forms.csv')) if 'dhakal2011darai[' in r['Source'] and r['ID'] not in linked]
+groups=[('kakra','cucumber','2817','karkaṭa²','Turner2817 gives Kumaoni kākṛo, Nepali kā̃kro and Bihari kakri cucumber via Prakrit kakkaḍa. Darai kakra belongs to this contracted regional cucumber family. Source p59 explicitly prints /kak.ra/ cucumber; retain its unmarked length and non-nasal vowel.'),('lamʰo','long','10951','lamba','Turner10951 gives Prakrit laṁba long and regional Kumaoni lāmo, Nepali lāmu alongside lambā/lammā. Dhakal p55 explicitly identifies lamʰo as a lexeme with intervocalic breathy nasal; retain that feature rather than treating it as a typo or an independent h segment. This is a family assignment, not a claim that Turner documents the Darai breathiness.'),('syar','jackal','12578','śṛgāla','Turner12578 gives Nepali siyāl and Bihari/Bhojpuri/Awadhi siyār. Dhakal pp65–66 explicitly uses /sjar/ jackal to illustrate a consonant-plus-glide onset. The source r-final form follows the eastern siyār comparison, not an assumed correction to Nepali -l.'),('aŋna','yard','118','aṅgana','Turner118 gives Bihari/Hindi ãgnā and Bhojpuri/Nepali āṅan courtyard. Dhakal pp61,69 explicitly syllabifies /aŋ.na/ yard, supporting medial vowel loss with retained velar nasal. Both installed source occurrences are preserved.')]
+a=[];lines=['# Darai: additional descriptive and household vocabulary','','Six proposed reflex records across four families; standing autonomous authorization.','','| # | Darai | Proposed etymology | Evidence |','|---|---|---|---|']
+for i,(form,gloss,parent,head,ev) in enumerate(groups,1):
+ hits=[r for r in rs if r['Form']==form and r['Gloss']==gloss];assert hits
+ for r in hits:a.append(dict(record={k:r[k] for k in ['ID','Language_ID','Form','Gloss','Source','Tags']},parent=parent,kind='reflex',citation=r['Source']+f';CDIAL[{parent} and addenda]',evidence=ev+' No immediate recent donor is established by these sources; no source transcription or identity is altered.'))
+ lines.append(f'| {i} | **{form}** ‘{gloss}’ ({len(hits)} records) | **{head}**, CDIAL **{parent}** | {ev} |')
+assert len(a)==6,len(a)
+held=[]
+for r in rs:
+ if r['Form'] in ['əndʰa','amlə','pittə','aŋṭʰi']:
+  reason={'əndʰa':'CDIAL385 identifies Nepali andhā as borrowed from Hindi. Darai form could be inherited or borrowed; do not infer its route from the Nepali comparator alone.','amlə':'Amla579 comparison is available, but retained ml needs inherited versus learned/contact history checked.','pittə':'Candidate8181 is involved in the already documented compiled ancestry cycle with8230/8233/8184; cannot pass shared ancestry validation without separate graph correction.','aŋṭʰi':'Ring-specific parent subsection not yet verified against full primary entry for this Darai form.'}[r['Form']]
+  held.append(dict(record={k:r[k] for k in ['ID','Language_ID','Form','Gloss','Source','Tags']},reason=reason))
+(P/'pass041-decisions.json').write_text(json.dumps(dict(accepted=a,held=held),ensure_ascii=False,indent=2)+'\n')
+lines+=['',f'{len(held)} candidates held with reasons in decisions. Research: homepage darai-search008–010; full dictionary articles/addenda darai-primary007.json. Source verification: existing primary decoded pages055,059,061,065,066,069, with phonological prose read around the selected examples. No ingestion, source edits or rebuild.','Validation: pending.']
+(P/'pass041-review.md').write_text('\n'.join(lines)+'\n');print(len(a),'accepted',len(held),'held')

@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import csv
 import hashlib
+import importlib.util
 import json
 import unicodedata
 from collections import Counter
@@ -40,7 +41,7 @@ def read_source() -> list[dict[str, str]]:
     return rows
 
 
-def generate() -> tuple[list[list[str]], list[dict[str, object]]]:
+def generate_glossary() -> tuple[list[list[str]], list[dict[str, object]]]:
     installed: list[list[str]] = []
     audit: list[dict[str, object]] = []
     for row in read_source():
@@ -97,6 +98,25 @@ def generate() -> tuple[list[list[str]], list[dict[str, object]]]:
     return installed, audit
 
 
+def generate() -> tuple[list[list[str]], list[dict[str, object]]]:
+    """Regenerate and verify the complete independently approved source."""
+    review = json.loads((PACKAGE / 'root-whole-output-audit-20260927-pass3.json').read_text())
+    assert review['material_errors'] == 0 and review['units_reviewed'] == 20
+    for name, expected in review['input_sha256'].items():
+        assert hashlib.sha256((PACKAGE / name).read_bytes()).hexdigest() == expected, name
+    spec = importlib.util.spec_from_file_location('bilaspuri_whole_builder', PACKAGE / 'prepare_whole_proposal.py')
+    builder = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(builder)
+    builder.main()
+    for name, expected in review['input_sha256'].items():
+        assert hashlib.sha256((PACKAGE / name).read_bytes()).hexdigest() == expected, name
+    rows = list(csv.reader((PACKAGE / 'whole-proposed.csv').open()))
+    audit = [json.loads(s) for s in (PACKAGE / 'whole-proposed-audit.jsonl').read_text().splitlines()]
+    assert len(rows) == 678 and len(audit) == 546
+    assert rows[:288] == list(csv.reader((PACKAGE / 'legacy-before-whole-recovery.csv').open()))
+    return rows, audit
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--install", action="store_true")
@@ -110,13 +130,16 @@ def main() -> None:
         if digest.hexdigest() != PDF_SHA256:
             raise SystemExit(f"Missing or changed original scan: {PDF}")
     rows, audit = generate()
-    print(f"{len(audit)} source units, {len(rows)} installed rows, decisions={dict(Counter(x['status'] for x in audit))}")
+    print(f"{len(audit)} source units, {len(rows)} installed rows")
     if args.install:
+        legacy = list(csv.reader((PACKAGE / 'legacy-before-whole-recovery.csv').open()))
+        assert list(csv.reader(OUTPUT.open())) in (legacy, rows), 'Unexpected canonical changes'
         with OUTPUT.open("w", encoding="utf-8", newline="") as stream:
             csv.writer(stream).writerows(rows)
         with AUDIT.open("w", encoding="utf-8") as stream:
             for item in audit:
                 stream.write(json.dumps(item, ensure_ascii=False, sort_keys=True) + "\n")
+        (DATA / 'conversion/bailey-bilaspuri-1920.txt').write_bytes((PACKAGE / 'whole-proposed-profile.txt').read_bytes())
 
 
 if __name__ == "__main__":

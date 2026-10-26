@@ -1,0 +1,44 @@
+{
+  "status": "frozen for independent whole-output review; no canonical installation",
+  "row_count": 128,
+  "unit_count": 164,
+  "audit_schema": "One JSON object per source_unit_key, with printed_page, section, forms, gloss, scope, notes, tags and entry_keys. Empty entry_keys are explicit controls/documentary evidence. CSV has the standard 15 source columns; Entry_Key is column 11.",
+  "hashes": {
+    "full-reviewed-inventory.jsonl": "f2613368a8aa85ea97788ead3f239bd05d57a801c3aa4bebaa0c4d6d36ada011",
+    "proposal.csv": "22228f7f37976525caa93a25a2f0b4811098932c9868ced89e8cbc9db1743db6",
+    "proposal-audit.jsonl": "10af88365982b7af6af2289e6742ae948505731d92bc2afd4013b5c4aa1580d1",
+    "proposal-profile.txt": "5e749e21a5f4eeac8ce5dff907cbbb286af6a305b4bcef415ca5c692db81398a",
+    "article-page-census-first-reading-20260927.jsonl": "382206a1d24461a862c1256cc14aade4b279d03b8e0ef11e223acf22f3073a1f",
+    "owner-reconciliation-20260927.json": "0ac4bbbb211f3e523d7d46260ea248566c58e94be33c14fe436c5aff43620b48",
+    "kinship-owner-reconciliation-20260927.json": "e50ff8fa847e78e9ff2796a25cc200e58f0e8b63f7860a48781245a7727d66ec",
+    "20260927-fawcett-saora.yaml": "4592b4db829d322a33fc92794d8d5688365feaa3f02ea9e2fa01b51e372297b3",
+    "reference-proposal.bib": "57f5babeb1f7d2f8a428bb7c6d1c138df00205e58acdf1458a4655ea431860f1",
+    "root-numerals-second-reading-20260927.json": "609892856c605fb9e547535e5294725b6ad736da199ccc0ee228e508e5416680",
+    "root-kinship-targeted-review-20260927.json": "0d68eb47a90a2040d580fef16fb058ef3070c938a77fadba5925bd53e422bace",
+    "prepare_reviewed.py": "79d10392f4fbe523225ca7dc17559612f303cff6a286e9085d47a86b4474eda9",
+    "prepare_proposal.py": "364f54a79aa1940ccd038d84cd7938523b544a28fc34ed5c5727eda5acd9598d",
+    "validate_freeze.py": "f05f5ff8840683ad27670640a3178b34ff8b56ad2012ec913662d1ac8f1d46fc",
+    "article-original-acquisition-20260927.json": "c93247b12471fde8069063741447755c5680c6c5a3e50d8a9df980667c8c84fd",
+    "article-page-census-reviewed-20260927.jsonl": "47662de0c4d161e965e0f8967dc100e7d0735803b6f90aa7c4f444f736634061",
+    "whole-article-validation-20260927.json": "cfc200535ac95fad19fffa0db6606ccb492e07a4d8590ea3da6f33144a9e06f2",
+    "proposal-summary.json": "b109e7404d7c4ca47349dd64b533d4e1b230e3f2003b153d14a0287efdfeb994",
+    "import_source.py": "7583f71104ddd74a18784f1d9480453cb53186c70ab80981ca5d27a0eedd8763",
+    "secondary-reference-scope-20260927.json": "58a6688cd27524e5692530d4b9fc6f786328284531d8e128e3d95b4060e06157",
+    "root-whole-output-audit-20260927-pass1.json": "eae5f8ccf73798adb7719d99794d988a961cf5a84c213517d4356c85765dbbad",
+    "profile-at-first-independent-audit.txt": "38625a7e2d52fe03d3ebdc9384409aa6fd11e8afa7b859a540d1266cbf77a3cb",
+    "post-review-continuity-20260927.json": "275d749dd0f8205aadc10160ed866f15d9a9f0704fad820c61a10f27a0f3f66b",
+    "installation-plan-20260927.json": "782aff2d7486a87ebeadbd2de3e1eab2b41dd21e451e0b2d7896486610f39abd"
+  },
+  "focused_tests": {
+    "path": "tests/test_fawcett_saora_1888.py",
+    "sha256": "676f883196ecd6e3ad5f9d9c7e1a1ba4437f167be6c8c65e0c6a1ae2a27d4e10"
+  },
+  "originals": "tmp/fawcett-saora-review/article-pages/p{printed_page}.jpg; selected higher-resolution originals in detail-pages/. Acquisition manifest records original URLs/hashes.",
+  "deferred": [
+    "independent final output audit",
+    "canonical source/profile/YAML/bibliography installation",
+    "post-install focused checks",
+    "full CLDF/database build",
+    "browser QA"
+  ]
+}

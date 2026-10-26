@@ -1,0 +1,669 @@
+{
+  "status": "accepted independent source-output audit; full ingestion gates deferred",
+  "reviewer": "root",
+  "date": "2026-09-27",
+  "seed": 20260927319,
+  "manifest_sha256": "1d220e49a1c33e752944825ef8767f29b746bd39937055e37817e7f710d46a6c",
+  "selection_sha256": "041921fbb3020da8075aee67ab398af43d8b1a5e483d7982ec1e1cc74c8009ff",
+  "source_pdf": "tmp/pdfs/koya/JLSR2021_029.pdf",
+  "source_pdf_sha256": "a6541e0d2397849ce7c36961b3849f3b2c1f1c267036cfa1a3f6025796e14e7d",
+  "method": "Root visually compared exact frozen CSV rows against original 2x page renders and six 6x handwritten-detail crops; decisions recorded after visual review, not inferred by this script.",
+  "source_units": 20,
+  "actual_rows": 20,
+  "material_errors": 0,
+  "known_systematic_error_classes": [],
+  "checks": [
+    "literal form",
+    "gloss scope",
+    "grammatical tags",
+    "lect",
+    "citation",
+    "graph claim"
+  ],
+  "excluded_prior_source_units": [
+    "devagnanavaram2021:whole:3.1.4:p6:salt:2",
+    "devagnanavaram2021:whole:3.1.4:p6:salt:5",
+    "devagnanavaram2021:whole:3.1.4:p7:different:2",
+    "devagnanavaram2021:whole:3.1.4:p7:six:2",
+    "devagnanavaram2021:whole:3.1.4:p7:six:5",
+    "devagnanavaram2021:whole:3.1.4:p7:village:3",
+    "devagnanavaram2021:whole:B.1:p17:13",
+    "devagnanavaram2021:whole:B.1:p18:9",
+    "devagnanavaram2021:whole:B.1:p19:3",
+    "devagnanavaram2021:whole:B.2:p20:14",
+    "devagnanavaram2021:whole:B.2:p20:8",
+    "devagnanavaram2021:whole:B.2:p20:parsi-definition",
+    "devagnanavaram2021:whole:B.3:p22:14",
+    "devagnanavaram2021:whole:B.4:p24:1",
+    "devagnanavaram2021:whole:B.4:p24:15",
+    "devagnanavaram2021:whole:B.4:p24:18",
+    "devagnanavaram2021:whole:B.4:p24:lanton-context",
+    "devagnanavaram2021:whole:B.4:p25:1",
+    "devagnanavaram2021:whole:B.4:p25:5",
+    "devagnanavaram2021:whole:B.5:p26:4",
+    "devagnanavaram2021:whole:B.5:p26:6",
+    "devagnanavaram2021:whole:B.5:p26:7",
+    "devagnanavaram2021:whole:B.5:p26:9",
+    "devagnanavaram2021:whole:B.5:p26:jaw-context",
+    "devagnanavaram2021:whole:B.6:p28:13",
+    "devagnanavaram2021:whole:B.6:p28:15",
+    "devagnanavaram2021:whole:B.6:p28:Vija-context",
+    "devagnanavaram2021:whole:B.6:p28:Zoma-context",
+    "devagnanavaram2021:whole:B.6:p29:1",
+    "devagnanavaram2021:whole:B.6:p29:4",
+    "devagnanavaram2021:whole:B.6:p29:6",
+    "devagnanavaram2021:whole:B.6:p29:perrama-context",
+    "devagnanavaram2021:whole:B.7:p30:1",
+    "devagnanavaram2021:whole:B.7:p30:5",
+    "devagnanavaram2021:whole:B.7:p31:13",
+    "wordlist:BHM:166",
+    "wordlist:CHI:107",
+    "wordlist:CHI:127",
+    "wordlist:CHI:155",
+    "wordlist:CHI:199",
+    "wordlist:CHI:74",
+    "wordlist:JAG:118",
+    "wordlist:JAG:160",
+    "wordlist:JAG:165",
+    "wordlist:JAG:188",
+    "wordlist:JAG:78",
+    "wordlist:MAL:124",
+    "wordlist:MAL:39",
+    "wordlist:UTN:126",
+    "wordlist:UTN:144",
+    "wordlist:UTN:33"
+  ],
+  "per_unit": [
+    {
+      "source_unit_key": "wordlist:BHG:65",
+      "kind": "wordlist",
+      "actual_rows": [
+        [
+          "Gondi",
+          "",
+          "put̪·a",
+          "flower",
+          "",
+          "",
+          "",
+          "devagnanavaram-et-al2021koya[Appendix E, printed p. 90, item 65, Bhamani Gondi]",
+          "",
+          "",
+          "silkoya1985:bhg:i065:v1",
+          "",
+          "",
+          "",
+          "dialect:Gondi:sil-koya-1985-bhamani-gondi:Bhamani%20Gondi"
+        ]
+      ],
+      "pdf_page": 95,
+      "printed_page": 90,
+      "verdict": "pass",
+      "material_errors": [],
+      "observation": "Dental mark and single medial length dot confirmed in 6x detail.",
+      "image_evidence": "tmp/koya-whole/koya-r2-pdf95.png"
+    },
+    {
+      "source_unit_key": "wordlist:POD:60",
+      "kind": "wordlist",
+      "actual_rows": [
+        [
+          "Gondi",
+          "",
+          "so·ne",
+          "gold",
+          "",
+          "",
+          "",
+          "devagnanavaram-et-al2021koya[Appendix E, printed p. 79, item 60, Podia Koya]",
+          "",
+          "",
+          "silkoya1985:pod:i060:v1",
+          "",
+          "",
+          "",
+          "dialect:Gondi:sil-koya-1985-podia:Podia%20Koya"
+        ]
+      ],
+      "pdf_page": 84,
+      "printed_page": 79,
+      "verdict": "pass",
+      "material_errors": [],
+      "observation": "Handwritten o and single medial dot confirmed in 6x detail.",
+      "image_evidence": "tmp/koya-whole/koya-r2-pdf84.png"
+    },
+    {
+      "source_unit_key": "wordlist:UTN:106",
+      "kind": "wordlist",
+      "actual_rows": [
+        [
+          "Gondi",
+          "",
+          "bʌi:ɛ",
+          "mother",
+          "",
+          "",
+          "",
+          "devagnanavaram-et-al2021koya[Appendix E, printed p. 92, item 106, Utnoor Gondi]",
+          "",
+          "",
+          "silkoya1985:utn:i106:v1",
+          "",
+          "",
+          "",
+          "dialect:Gondi:sil-koya-1985-utnoor:Utnoor%20Gondi"
+        ]
+      ],
+      "pdf_page": 97,
+      "printed_page": 92,
+      "verdict": "pass",
+      "material_errors": [],
+      "observation": "Wedge vowel, colon, and epsilon confirmed in 6x detail.",
+      "image_evidence": "tmp/koya-whole/koya-r2-pdf97.png"
+    },
+    {
+      "source_unit_key": "wordlist:BHG:153",
+      "kind": "wordlist",
+      "actual_rows": [
+        [
+          "Gondi",
+          "",
+          "mund̪u",
+          "three",
+          "",
+          "",
+          "",
+          "devagnanavaram-et-al2021koya[Appendix E, printed p. 94, item 153, Bhamani Gondi]",
+          "",
+          "",
+          "silkoya1985:bhg:i153:v1",
+          "",
+          "",
+          "",
+          "dialect:Gondi:sil-koya-1985-bhamani-gondi:Bhamani%20Gondi num"
+        ]
+      ],
+      "pdf_page": 99,
+      "printed_page": 94,
+      "verdict": "pass",
+      "material_errors": [],
+      "observation": "Dental mark confirmed in 6x detail; numeral tag matches prompt.",
+      "image_evidence": "tmp/koya-whole/koya-r2-pdf99.png"
+    },
+    {
+      "source_unit_key": "wordlist:MAL:165",
+      "kind": "wordlist",
+      "actual_rows": [
+        [
+          "Gondi",
+          "",
+          "be·non",
+          "who?",
+          "",
+          "",
+          "",
+          "devagnanavaram-et-al2021koya[Appendix E, printed p. 105, item 165, Malakanagiri Koya]",
+          "",
+          "",
+          "silkoya1985:mal:i165:v1",
+          "",
+          "",
+          "",
+          "dialect:Gondi:sil-koya-1985-malakanagiri:Malakanagiri%20Koya interr"
+        ]
+      ],
+      "pdf_page": 110,
+      "printed_page": 105,
+      "verdict": "pass",
+      "material_errors": [],
+      "observation": "Both n letters and medial dot match; interrogative tag retained.",
+      "image_evidence": "tmp/koya-whole/koya-r2-pdf110.png"
+    },
+    {
+      "source_unit_key": "wordlist:UTN:167",
+      "kind": "wordlist",
+      "actual_rows": [
+        [
+          "Gondi",
+          "",
+          "bag:ʌ",
+          "where?",
+          "",
+          "",
+          "",
+          "devagnanavaram-et-al2021koya[Appendix E, printed p. 95, item 167, Utnoor Gondi]",
+          "",
+          "",
+          "silkoya1985:utn:i167:v1",
+          "",
+          "",
+          "",
+          "dialect:Gondi:sil-koya-1985-utnoor:Utnoor%20Gondi interr"
+        ]
+      ],
+      "pdf_page": 100,
+      "printed_page": 95,
+      "verdict": "pass",
+      "material_errors": [],
+      "observation": "Colon and final wedge match; interrogative tag retained.",
+      "image_evidence": "tmp/koya-whole/koya-r2-pdf100.png"
+    },
+    {
+      "source_unit_key": "wordlist:UTN:70",
+      "kind": "wordlist",
+      "actual_rows": [
+        [
+          "Gondi",
+          "",
+          "dʒon:ʌ",
+          "millet",
+          "",
+          "",
+          "",
+          "devagnanavaram-et-al2021koya[Appendix E, printed p. 90, item 70, Utnoor Gondi]",
+          "",
+          "",
+          "silkoya1985:utn:i070:v1",
+          "",
+          "",
+          "",
+          "dialect:Gondi:sil-koya-1985-utnoor:Utnoor%20Gondi"
+        ]
+      ],
+      "pdf_page": 95,
+      "printed_page": 90,
+      "verdict": "pass",
+      "material_errors": [],
+      "observation": "Affricate, doubled length notation, and final wedge match.",
+      "image_evidence": "tmp/koya-whole/koya-r2-pdf95.png"
+    },
+    {
+      "source_unit_key": "wordlist:UTN:13",
+      "kind": "wordlist",
+      "actual_rows": [
+        [
+          "Gondi",
+          "",
+          "kaⁱ",
+          "arm",
+          "",
+          "",
+          "",
+          "devagnanavaram-et-al2021koya[Appendix E, printed p. 87, item 13, Utnoor Gondi]",
+          "",
+          "",
+          "silkoya1985:utn:i013:v1",
+          "",
+          "",
+          "",
+          "dialect:Gondi:sil-koya-1985-utnoor:Utnoor%20Gondi"
+        ]
+      ],
+      "pdf_page": 92,
+      "printed_page": 87,
+      "verdict": "pass",
+      "material_errors": [],
+      "observation": "Raised i confirmed in 6x detail, not a baseline sequence.",
+      "image_evidence": "tmp/koya-whole/koya-r2-pdf92.png"
+    },
+    {
+      "source_unit_key": "wordlist:POD:55",
+      "kind": "wordlist",
+      "actual_rows": [
+        [
+          "Gondi",
+          "",
+          "kisu",
+          "fire",
+          "",
+          "",
+          "",
+          "devagnanavaram-et-al2021koya[Appendix E, printed p. 79, item 55, Podia Koya]",
+          "",
+          "",
+          "silkoya1985:pod:i055:v1",
+          "",
+          "",
+          "",
+          "dialect:Gondi:sil-koya-1985-podia:Podia%20Koya"
+        ]
+      ],
+      "pdf_page": 84,
+      "printed_page": 79,
+      "verdict": "pass",
+      "material_errors": [],
+      "observation": "Literal kisu and fire prompt match the Podia column.",
+      "image_evidence": "tmp/koya-whole/koya-r2-pdf84.png"
+    },
+    {
+      "source_unit_key": "wordlist:POD:34",
+      "kind": "wordlist",
+      "actual_rows": [
+        [
+          "Gondi",
+          "",
+          "kasaɾi",
+          "knife",
+          "",
+          "",
+          "",
+          "devagnanavaram-et-al2021koya[Appendix E, printed p. 78, item 34, Podia Koya]",
+          "",
+          "",
+          "silkoya1985:pod:i034:v1",
+          "",
+          "",
+          "",
+          "dialect:Gondi:sil-koya-1985-podia:Podia%20Koya"
+        ]
+      ],
+      "pdf_page": 83,
+      "printed_page": 78,
+      "verdict": "pass",
+      "material_errors": [],
+      "observation": "Literal kasaɾi and knife prompt match the Podia column.",
+      "image_evidence": "tmp/koya-whole/koya-r2-pdf83.png"
+    },
+    {
+      "source_unit_key": "wordlist:JAG:127",
+      "kind": "wordlist",
+      "actual_rows": [
+        [
+          "Gondi",
+          "",
+          "iadad̪i",
+          "year",
+          "",
+          "",
+          "",
+          "devagnanavaram-et-al2021koya[Appendix E, printed p. 83, item 127, Jaganathapuram Koya]",
+          "",
+          "",
+          "silkoya1985:jag:i127:v1",
+          "",
+          "",
+          "",
+          "dialect:Gondi:sil-koya-1985-jaganathapuram:Jaganathapuram%20Koya"
+        ]
+      ],
+      "pdf_page": 88,
+      "printed_page": 83,
+      "verdict": "pass",
+      "material_errors": [],
+      "observation": "Second d has dental mark, confirmed in 6x detail.",
+      "image_evidence": "tmp/koya-whole/koya-r2-pdf88.png"
+    },
+    {
+      "source_unit_key": "wordlist:BHM:128",
+      "kind": "wordlist",
+      "actual_rows": [
+        [
+          "Gondi",
+          "",
+          "pant̪a",
+          "old",
+          "",
+          "",
+          "",
+          "devagnanavaram-et-al2021koya[Appendix E, printed p. 93, item 128, Bhamani Madia]",
+          "",
+          "",
+          "silkoya1985:bhm:i128:v1",
+          "",
+          "",
+          "",
+          "dialect:Gondi:sil-koya-1985-bhamani-madia:Bhamani%20Madia"
+        ]
+      ],
+      "pdf_page": 98,
+      "printed_page": 93,
+      "verdict": "pass",
+      "material_errors": [],
+      "observation": "Dental mark and old prompt match the Bhamani Madia column.",
+      "image_evidence": "tmp/koya-whole/koya-r2-pdf98.png"
+    },
+    {
+      "source_unit_key": "devagnanavaram2021:whole:B.6:p29:2",
+      "kind": "narrative",
+      "actual_rows": [
+        [
+          "Gondi",
+          "",
+          "Muns gu kallmata bopar raws mirtal.",
+          "There we met monkeys, but they ran away quickly.",
+          "",
+          "",
+          "Source pairs this printed text segment with a free English translation; no word-level alignment is asserted.",
+          "devagnanavaram-et-al2021koya[Appendix B.6, p. 29, text unit 2]",
+          "",
+          "",
+          "devagnanavaram2021:whole:B.6:p29:2",
+          "",
+          "",
+          "",
+          "dialect:Gondi:sil-koya-1985-chintoor:Chintoor%20Koya sentential"
+        ]
+      ],
+      "pdf_page": 34,
+      "printed_page": 29,
+      "verdict": "pass",
+      "material_errors": [],
+      "observation": "Complete printed sentence and free translation match; sentential scope appropriate.",
+      "image_evidence": "tmp/koya-whole/koya-r2-pdf34.png"
+    },
+    {
+      "source_unit_key": "devagnanavaram2021:whole:B.7:p30:9",
+      "kind": "narrative",
+      "actual_rows": [
+        [
+          "Gondi",
+          "",
+          "Garr garr injore mandaanalti nayku kanukunji mirrta naykini germitaccon.",
+          "The dogs were growling grrr, and we ran after the dogs.",
+          "",
+          "",
+          "Source pairs this printed text segment with a free English translation; no word-level alignment is asserted.",
+          "devagnanavaram-et-al2021koya[Appendix B.7, p. 30, text unit 9]",
+          "",
+          "",
+          "devagnanavaram2021:whole:B.7:p30:9",
+          "",
+          "",
+          "",
+          "dialect:Gondi:sil-koya-1985-jaganathapuram:Jaganathapuram%20Koya sentential"
+        ]
+      ],
+      "pdf_page": 35,
+      "printed_page": 30,
+      "verdict": "pass",
+      "material_errors": [],
+      "observation": "Complete printed sentence and free translation match; sentential scope appropriate.",
+      "image_evidence": "tmp/koya-whole/koya-r2-pdf35.png"
+    },
+    {
+      "source_unit_key": "devagnanavaram2021:whole:B.4:p24:19",
+      "kind": "narrative",
+      "actual_rows": [
+        [
+          "Gondi",
+          "",
+          "Duko bakitne esit mirtan.",
+          "Seeing the tigers, he threw the goat and ran.",
+          "",
+          "",
+          "Source pairs this printed text segment with a free English translation; no word-level alignment is asserted.",
+          "devagnanavaram-et-al2021koya[Appendix B.4, p. 24, text unit 19]",
+          "",
+          "",
+          "devagnanavaram2021:whole:B.4:p24:19",
+          "",
+          "",
+          "",
+          "dialect:Gondi:sil-koya-1985-malakanagiri:Malakanagiri%20Koya sentential"
+        ]
+      ],
+      "pdf_page": 29,
+      "printed_page": 24,
+      "verdict": "pass",
+      "material_errors": [],
+      "observation": "Complete printed sentence and free translation match; sentential scope appropriate.",
+      "image_evidence": "tmp/koya-whole/koya-r2-pdf29.png"
+    },
+    {
+      "source_unit_key": "devagnanavaram2021:whole:B.5:p26:8",
+      "kind": "narrative",
+      "actual_rows": [
+        [
+          "Gondi",
+          "",
+          "Eduzk dorske gubbur tetka na pooro vasarrta ondinku kadde vadastanu",
+          "The bear suddenly came near me, and I shot an arrow.",
+          "",
+          "",
+          "Source pairs this printed text segment with a free English translation; no word-level alignment is asserted.",
+          "devagnanavaram-et-al2021koya[Appendix B.5, p. 26, text unit 8]",
+          "",
+          "",
+          "devagnanavaram2021:whole:B.5:p26:8",
+          "",
+          "",
+          "",
+          "dialect:Gondi:sil-koya-1985-podia:Podia%20Koya multiword-expression"
+        ]
+      ],
+      "pdf_page": 31,
+      "printed_page": 26,
+      "verdict": "pass",
+      "material_errors": [],
+      "observation": "Source segment continues into next unit; multiword-expression scope correctly avoids standalone sentence claim.",
+      "image_evidence": "tmp/koya-whole/koya-r2-pdf31.png"
+    },
+    {
+      "source_unit_key": "devagnanavaram2021:whole:B.4:p24:5",
+      "kind": "narrative",
+      "actual_rows": [
+        [
+          "Gondi",
+          "",
+          "Ur bar wetta dadtor?",
+          "Why will they go hunting?",
+          "",
+          "",
+          "Source pairs this printed text segment with a free English translation; no word-level alignment is asserted.",
+          "devagnanavaram-et-al2021koya[Appendix B.4, p. 24, text unit 5]",
+          "",
+          "",
+          "devagnanavaram2021:whole:B.4:p24:5",
+          "",
+          "",
+          "",
+          "dialect:Gondi:sil-koya-1985-malakanagiri:Malakanagiri%20Koya interr sentential"
+        ]
+      ],
+      "pdf_page": 29,
+      "printed_page": 24,
+      "verdict": "pass",
+      "material_errors": [],
+      "observation": "Question label and answer hint correctly separated; interr sentential tags match.",
+      "image_evidence": "tmp/koya-whole/koya-r2-pdf29.png"
+    },
+    {
+      "source_unit_key": "devagnanavaram2021:whole:B.6:p28:5",
+      "kind": "narrative",
+      "actual_rows": [
+        [
+          "Gondi",
+          "",
+          "Gorrengku batta tungtoru?",
+          "What did they do to the goat?",
+          "",
+          "",
+          "Source pairs this printed text segment with a free English translation; no word-level alignment is asserted.",
+          "devagnanavaram-et-al2021koya[Appendix B.6, p. 28, text unit 5]",
+          "",
+          "",
+          "devagnanavaram2021:whole:B.6:p28:5",
+          "",
+          "",
+          "",
+          "dialect:Gondi:sil-koya-1985-chintoor:Chintoor%20Koya interr sentential"
+        ]
+      ],
+      "pdf_page": 33,
+      "printed_page": 28,
+      "verdict": "pass",
+      "material_errors": [],
+      "observation": "Question label and answer hint correctly separated; interr sentential tags match.",
+      "image_evidence": "tmp/koya-whole/koya-r2-pdf33.png"
+    },
+    {
+      "source_unit_key": "devagnanavaram2021:whole:3.1.4:p7:village:4",
+      "kind": "comparative",
+      "actual_rows": [
+        [
+          "Gondi",
+          "",
+          "naru",
+          "village",
+          "",
+          "",
+          "Source compares dialect sound correspondences; no etymological relationship is asserted.",
+          "devagnanavaram-et-al2021koya[section 3.1.4, p. 7, village]",
+          "",
+          "",
+          "devagnanavaram2021:whole:3.1.4:p7:village:4",
+          "",
+          "",
+          "",
+          "dialect:Gondi:sil-koya-1985-utnoor:Utnoor%20Gondi"
+        ]
+      ],
+      "pdf_page": 12,
+      "printed_page": 7,
+      "verdict": "pass",
+      "material_errors": [],
+      "observation": "Utnoor village comparison naru matches; no inferred etymology edge.",
+      "image_evidence": "tmp/koya-whole/koya-r2-pdf12.png"
+    },
+    {
+      "source_unit_key": "devagnanavaram2021:whole:3.1.4:p6:salt:3",
+      "kind": "comparative",
+      "actual_rows": [
+        [
+          "Gondi",
+          "",
+          "ovori",
+          "salt",
+          "",
+          "",
+          "Source compares dialect sound correspondences; no etymological relationship is asserted.",
+          "devagnanavaram-et-al2021koya[section 3.1.4, p. 6, salt]",
+          "",
+          "",
+          "devagnanavaram2021:whole:3.1.4:p6:salt:3",
+          "",
+          "",
+          "",
+          "dialect:Gondi:sil-koya-1985-bhamani-madia:Bhamani%20Madia"
+        ]
+      ],
+      "pdf_page": 11,
+      "printed_page": 6,
+      "verdict": "pass",
+      "material_errors": [],
+      "observation": "Bhamani Madia salt comparison ovori matches; no inferred etymology edge.",
+      "image_evidence": "tmp/koya-whole/koya-r2-pdf11.png"
+    }
+  ],
+  "additional_edge_checks": [
+    "PDF12: all four different comparisons retain printed spaces (veGe veGe, vere vere, vere vere, vera vera) and multiword-expression tags.",
+    "Numeral comparison rows retain num tags.",
+    "Narrative free translations remain segment-level; no fabricated word alignment."
+  ],
+  "deferred": [
+    "canonical installation and focused installed checks",
+    "full CLDF build and suite",
+    "compiled durable-ID and graph verification",
+    "user-triggered browser database refresh and QA"
+  ]
+}

@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Gondi · Devagnanavaram et al. 2021 Gondi Koya residual records, 2026-09-25 · batch 082. Pending user review; autonomous research continues.
+
+| # | Gondi | Proposed etymology | Evidence |
+|---|---|---|---|
+| 36 | **ovari** ‘salt’ | Proposed reflex of [**DEDR 2674**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=231) | DEDR 2674 full article (p. 231): Go. (Tr.) sawwor, sawwar , (M.) havar , (L.) hovar, ovar , (Ma. Ko.) ovor salt ( Voc. 3360). Konḍa sōru id. Pe. sōr id. Manḍ. jār id. Kui sāru id. Kuwi (F.) hārū , (S. Su.) hāru id. Cf. Ta. cavar , s.v. 2386 Ta. cavaṭu . / Cf. Nahali copo sa Source ovari “salt” continues the Gondi family named in the article; regional transcription or inflection is retained. (1 record.) |
+| 37 | **koŋku** ‘horns’ | Proposed reflex of [**DEDR 2115**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=190) | DEDR 2115 full article (p. 190): Go. (Ko.) koma branch of tree ( Voc. 912). Konḍa koma ( pl. komeŋ ) branch of tree; komu ( pl. komku ) horn. Pe. koma, komo id. Manḍ. kumu id. Kui (Mah., p. 103) gopkā branches. Kuwi (Su.) komma ( pl. -ŋa ), (F.) kōma ( pl. kōmanga ), (S.) k Source koŋku “horns” continues the Gondi family named in the article; regional transcription or inflection is retained. (1 record.) |
+| 38 | **teke** ‘tail’ | Proposed reflex of [**DEDR 3538**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=311) | DEDR 3538 full article (p. 311): Go. (Tr. W. Ph.) tōkār , (A.) tōkor , (Ch. G. Mu.) tōkar , (Ma.) tōkar̥(i) ( pl. tōkahku) , (M. Ko.) tōka tail, (Mu. also) portion of men's cloth dangling behind ( Voc. 1813). Konḍa tōka tail. Cf. 2875 Ka. sōge . DED 2916. Source teke “tail” continues the Gondi family named in the article; regional transcription or inflection is retained. (1 record.) |
+| 39 | **pila** ‘child; girl’ | Proposed reflex of [**DEDR 4198**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=372) | DEDR 4198 full article (p. 372): Go. (A.) pilla , (Y.) pila , (Driberg) pilal young of animal; (Mu.) pīla girl, young one of animals; (Ma.) pīla , (Ko.) pilla child; (L.) pilā id., young of an animal ( Voc. 2253). Konḍa pila child, a small one. Pe. pilka young shoot of tree. The article explicitly gives Gondi pila “girl” and Koya pilla “child”; both source glosses fit. (1 record.) |
+| 40 | **nanta(du)** ‘wet’ | Proposed reflex of [**DEDR 3630**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=320) | DEDR 3630 full article (p. 320): Go. (Tr. W. Ph. M.) nāndānā , (S. Ko.) nānd- , (Y.) nān- to be or get wet; caus. (Tr. W. Ph.) nāhtānā , (Tr.) nāndstānā , (SR.) nāhānā to wet, soak; (Y. G. Mu. MaS. S.) nāh- , (Ma.) nāˀ - , (Ko.) nā(h)- to make wet ( Voc. 1960). Kui nenja (nen The article gives Gondi nānd- “get wet”; source nanta(du) retains the wet stem. (1 record.) |
+
+Proposed assignment rows: **5**. Affected records: **5**. Relation kinds: **reflex**. Multi-part responses retain their source order.
+
+Exact persistent IDs and complete source records: [batch-082.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Gondi/batch-082.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../gondi-koya-devagnanavaram-20260925/research-holds.json). No new lexical material or donor nodes are introduced.

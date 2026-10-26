@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Koraga · Bhat 1971 Koraga records, 2026-09-25 · batch 084. Pending user review; autonomous research continues.
+
+| # | Koraga | Proposed etymology | Evidence |
+|---|---|---|---|
+| 201 | **darla** ‘dried leaves’ | Proposed reflex of [**DEDR 3192**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=277) | DEDR 3192 full article (p. 277) gives Kor. (M.) darla dried leaves. Bhat darla “dried leaves” is the same cited Koraga form and sense; its original dialect:Koraga:mudu:Mudu uncertain dialect tag is retained. The article is used as family classification, not an independent second attestation of Bhat. (1 record.) |
+| 202 | **dāŋgɨ** ‘to bend’ | Proposed reflex of [**DEDR 3178**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=276) | DEDR 3178 full article (p. 276) gives 3178 Ta. tār̤ (-v-, -nt-) to fall low, be lowered, be low (as a roof), flow down, descend, decline as the sun, sink in water, sink in circumstances or repute, decrease, decay, degenerate, de Bhat dāŋgɨ “to bend” matches Lindgren Koraga daŋgɨ “bend” in form and sense; this cross-source match is a candidate lead, with the full DEDR article defining the family. Both source identities and dialect tags are preserved. (1 record.) |
+| 203 | **dibbaṇa** ‘marriage’ | Proposed reflex of [**DEDR 3230**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=280) | DEDR 3230 full article (p. 280) gives 3230 Ka. dibbaṇa a nuptial procession, esp. of the friends and relatives of the bridegroom; nibbaṇa a marriage festival with all its display, esp. with its processions and gifts, the display Bhat dibbaṇa “marriage” matches Lindgren Koraga dibbaṇa “marriage” in form and sense; this cross-source match is a candidate lead, with the full DEDR article defining the family. Both source identities and dialect tags are preserved. (1 record.) |
+| 204 | **dibbana** ‘marriage procession’ | Proposed reflex of [**DEDR 3230**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=280) | DEDR 3230 full article (p. 280) gives 3230 Ka. dibbaṇa a nuptial procession, esp. of the friends and relatives of the bridegroom; nibbaṇa a marriage festival with all its display, esp. with its processions and gifts, the display Bhat dibbana “marriage procession” matches Lindgren Koraga dibbaṇa “marriage” in form and sense; this cross-source match is a candidate lead, with the full DEDR article defining the family. Both source identities and dialect tags are preserved. (1 record.) |
+| 205 | **durmbu** ‘to drizzle’ | Proposed reflex of [**DEDR 3398**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=297) | DEDR 3398 full article (p. 297) gives Kor. (T.) durmbu to drizzle. Bhat durmbu “to drizzle” is the same cited Koraga form and sense; its original dialect:Koraga:tappu:Tappu uncertain dialect tag is retained. The article is used as family classification, not an independent second attestation of Bhat. (1 record.) |
+
+Proposed assignment rows: **5**. Affected records: **5**. Relation kinds: **reflex**. Multi-part responses retain their source order.
+
+Exact persistent IDs and complete source records: [batch-084.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Koraga/batch-084.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../koraga-bhat-20260925/research-holds.json). No new lexical material or donor nodes are introduced.

@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Kodagu · Dravidian surveys, 2026-09-21 · batch 004. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Kodagu | Proposed etymology | Evidence |
+|---|---|---|---|
+| 16 | **tin** ‘Eat’ | Proposed reflex of [**DEDR 3263**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=284) | DEDR 3263(a) lists Tamil tiṉ, Kannada tin/tinu/tinnu and the widespread cognate eating verb; Kannada past stem tind- and related inflection belong here. Causatives, food derivatives and subsection (b) right-hand expressions are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 17 | **cā** ‘Die’ | Proposed reflex of [**DEDR 2426**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=212) | DEDR 2426 explicitly compares Tamil cā, Kannada sāy (past sattu), Gondi hā-/sāy-, Kurux khē’enā (keccas), Malto keye and Brahui kahing die. Only the intransitive verb is proposed here; derived causative kill responses require a distinct relation analysis. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 18 | **pudiya** ‘new’ | Proposed reflex of [**DEDR 4275**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=378) | DEDR 4275 gives Tamil putu/putiya, Malayalam putu, Kodagu pudiyë, Kannada posa/hosa/hosadu and Tulu posa/posatu new; Konda pūni and Malto pune belong to the same family. These simple stems and adjectival inflections are selected; new-person nouns and loan-looking alternative stems remain unassigned. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 19 | **maṇa** ‘sand’ | Proposed reflex of [**DEDR 4666**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=413) | DEDR 4666(b), distinct from earth/soil in (a), explicitly lists Tamil and Malayalam maṇal, Kannada maṇal/maḷal/maral, Kodagu maṇa and Parji/Gadaba man sand. Only this sand branch is selected; the Toda compound er-moḷṇ and earth responses under the sand prompt are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 20 | **oṇangina** ‘dry’ | Proposed reflex of [**DEDR 601**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=59) | DEDR 601 attests Tamil uṇaṅku, Malayalam uṇaṅṅuka, Kannada oṇagu/oṇa/oṇagilu and Kodagu oṇaŋg- dry or wither; Malayalam uṇakku also means dryness. These simple dry stems and ordinary inflections are selected; causative verb phrases and the distinctive Toda forms require separate analysis. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+
+Proposed assignment rows: **5**. Affected records: **5**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-004.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Kodagu/batch-004.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

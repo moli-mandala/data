@@ -1,0 +1,17 @@
+{
+  "status": "six comma-alternative cells independently checked; explicit emission expansion approved",
+  "grammar_input_sha256": "2806561d2a09c15db6a98ff921c799c932301f4f0427a0a18ec334f779a5050f",
+  "images": ["tmp/kui-independent-grammar-leaf483-top.png", "tmp/kui-independent-grammar-leaf483-bottom.png", "tmp/kui-independent-grammar-leaf484-top.png"],
+  "decisions": [
+    {"source_unit_key":"grierson1906kui:p462:pronoun-table1-gen-c1:1","old":"nā, naĩ","forms":["nā","naĩ"]},
+    {"source_unit_key":"grierson1906kui:p462:pronoun-table1-gen-c3:1","old":"mā, maĩ","forms":["mā","maĩ"]},
+    {"source_unit_key":"grierson1906kui:p462:pronoun-table2-nom-c2:1","old":"ēri, ērā","forms":["ēri","ērā"]},
+    {"source_unit_key":"grierson1906kui:p462:pronoun-table2-nom-c4:1","old":"ēwi, ēwa (-skā)","forms":["ēwi","ēwa (-skā)"],"note":"Retain the printed parenthetical suffix notation with the second alternative and the complete original cell in audit; do not manufacture an expanded ēwaskā form or infer its scope on the first alternative."},
+    {"source_unit_key":"grierson1906kui:p462:principal-verbal-noun-c5:1","old":"giwa, gipka","forms":["giwa","gipka"]},
+    {"source_unit_key":"grierson1906kui:p463:principal-verbal-noun-c5:1","old":"giwa, gipka","forms":["giwa","gipka"]}
+  ],
+  "identity_policy": "Use deterministic :v1/:v2 emission-key suffixes, preserving the original physical cell key and full cell text in audit. Retain each repeated page witness. Do not merge alternatives or infer variant edges merely from shared gloss.",
+  "metadata_policy": "Inherit reviewed cell grammar, provenance and typed uncertainties. Genitive rows retain genitive tags even where the English column heading is I/we; source headings are contextual, not a new nominative analysis.",
+  "coverage": "All six comma-containing grammar form cells found by exhaustive candidate scan; punctuation elsewhere and optional parentheses are not automatically split.",
+  "canonical_changes": false
+}

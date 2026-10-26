@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Paliya · Dravidian surveys, 2026-09-21 · batch 013. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Paliya | Proposed etymology | Evidence |
+|---|---|---|---|
+| 56 | **uḷḷamkai** ‘palm’ | Compound: [**DEDR 698**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=68) + [**DEDR 2023**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=183) | Propose ordered inside + hand: DEDR698 explicitly gives Malayalam uḷḷam inside/mind, matching the current *uḷḷ-am parent, and DEDR2023 gives kai/kay/kayyi hand. Survey uḷḷam-kai and assimilated uḷḷaŋ-kai/uḷḷaŋ-gai retain both constituents. This uses the actual uḷḷam formation; it does not override the separate hold on house words under this narrower parent. (1 records.) |
+| 57 | **irupatɨ** ‘twenty’ | Compound: [**DEDR 474**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=46) + [**DEDR 3918**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=349) | DEDR474 and3918 explicitly document Tamil/Malayalam iru-patu/iru-vatu twenty, Kannada irpattu/ippattu, Kodagu iru-vadï and Kota irvād. Propose ordered two × ten components for the selected southern survey forms, preserving assimilated pp/bb, initial-glide variants and final vowels. Minority-lect forms are comparative extensions; neighbouring Gondi/Gadaba/Konda contact-sensitive numeral sets are excluded. (1 records.) |
+| 58 | **pannaṇḍɨ** ‘twelve’ | Compound: [**DEDR 3918**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=349) + [**DEDR 474**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=46) | DEDR3918 explicitly gives Tamil paṉṉ-iraṇṭu/paṉṉaṇṭu twelve, the Kannada pann- combining form of ten and Kodagu panneraṇḍï; DEDR474 supplies two and the corresponding numeral formations. Propose ordered ten + two, retaining assimilation, Kannada h-/zero-initial variants and the survey vowel notation. These are whole-numeral comparative analyses, with no truncation of source responses; contact-sensitive Gondi/Gadaba/Konda sets are excluded. (1 records.) |
+| 59 | **kaimuṭṭɨ** ‘elbow’ | Compound: [**DEDR 2023**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=183) + [**DEDR 4935**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=442) | DEDR2023 supplies kai hand and DEDR4935 muṭṭu elbow/joint. Analyse survey kai-muṭṭɨ/kɛi-muṭṭɨ elbow as ordered hand + joint, preserving the source hand vowel. (1 records.) |
+| 60 | **ta lamuḍi** ‘hair’ | Compound: [**DEDR 3103**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=269) + [**DEDR 4921**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=440) | DEDR3103 Tamil talai/Malayalam tala head plus DEDR4921 muṭi hair of head supports ordered head + hair in the complete survey tala-muḍi responses; retain source spaces and vowel notation. (1 records.) |
+
+Proposed assignment rows: **10**. Affected records: **5**. Relation kinds: **component**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-013.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Paliya/batch-013.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

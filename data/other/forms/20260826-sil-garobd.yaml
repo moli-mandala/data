@@ -2,6 +2,10 @@ file: 20260826-sil-garobd.csv
 sources:
   kim-kim-sangma2012garo:
     transcription:
+    # Bengali control rows: C+h is the Bengali aspirate (bhat, dhula, mɛgh); the Tibeto-Burman
+    # lists keep the shared profile until their C+h is reviewed.
+    - profile: sil-bangladesh-bengali
+      languages: [B]
     - profile: sil-bangladesh
     identity:
       dedupe_by_entry_key: true

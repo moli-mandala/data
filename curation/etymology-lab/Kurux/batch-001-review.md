@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Kurux · Dravidian surveys, 2026-09-21 · batch 001. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Kurux | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **xann** ‘Eye’, **xānn** ‘eye’, **xann** ‘eye’, **xan** ‘eye’ | Proposed reflex of [**DEDR 1159**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=109) | DEDR 1159(a) gives Tamil kaṇ, Malayalam/Kannada kaṇ(ṇu), Gadaba kaṇ/kanu, Kurukh xann, Malto qanu and Brahui xan ‘eye’. These simple eye responses select subsection (a); the tears compounds in subsection (b) are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (6 records.) |
+| 2 | **bai** ‘Mouth’, **baī̯** ‘mouth’, **bāī̯** ‘mouth’, **bai** ‘mouth’, **bayi** ‘mouth’, **bāī** ‘mouth’ | Proposed reflex of [**DEDR 5352**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=484) | DEDR 5352 gives Tamil vāy, Malayalam vāy/vā, Kannada/Tulu bāyi, Toda pōy, Konda veyu, Kurukh baī and Brahui bā ‘mouth’. Initial v-/b-/Toda p- is directly represented by the article; the distinct nōru and toḍḍi families are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (6 records.) |
+| 3 | **pall** ‘Tooth’, **pall** ‘tooth’, **pāll** ‘tooth’, **pɛl** ‘tooth’, **pallɛ** ‘tooth’ | Proposed reflex of [**DEDR 3986**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=355) | DEDR 3986(a) gives Tamil pal, Malayalam pallu, Parji pel, Gadaba pallū, Gondi pal, Kurukh pall, Malto palu and Telugu pannu ‘tooth’. The toothstick compounds of subsection (b) are excluded; source singular/plural elicitation labels are preserved. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (11 records.) |
+| 4 | **mann** ‘tree’ | Proposed reflex of [**DEDR 4711**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=416) | DEDR 4711(a) gives Tamil/Malayalam maram, Kannada/Tulu mara, Kota marm, Kolami māk, Parji meri, Gadaba māren, Gondi mara and Kurukh mann ‘tree’. Only simple tree/wood responses are selected; the animal compounds in subsection (b) are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (4 records.) |
+| 5 | **pɛ̄n** ‘louse’, **pēn** ‘louse’ | Proposed reflex of [**DEDR 4449**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=393) | DEDR 4449 gives Tamil/Malayalam/Kannada pēn, Kodagu pēni, Telugu pēnu, Parji pēni and Kurukh nasalized pēn ‘louse’. The source’s flea compounds and Kui flea sense are distinguished; only louse responses are selected. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (5 records.) |
+
+Proposed assignment rows: **32**. Affected records: **32**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-001.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Kurux/batch-001.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

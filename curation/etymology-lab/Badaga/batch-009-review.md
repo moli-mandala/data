@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Badaga · Dravidian surveys, 2026-09-21 · batch 009. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Badaga | Proposed etymology | Evidence |
+|---|---|---|---|
+| 41 | **ni** ‘Thou’, **ni** ‘thou’, **ni** ‘you’ | Proposed reflex of [**DEDR 3684**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=327) | DEDR 3684 records singular Tamil nī, Kannada nīnu, Kodagu nīnï, Gondi immā/nimma, Kui īnu, Kurux/Malto nīn and Tulu ī. Only singular paradigm members are selected; plural nīm/nīvu and overt plurals are excluded even where the prompt simply says you. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (3 records.) |
+| 42 | **koḍ** ‘Give’, **koḍu** ‘give’ | Proposed reflex of [**DEDR 2053**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=185) | DEDR 2053 attests Tamil koṭu, Malayalam koṭukka, Kannada koḍu/kuḍu and Kodagu koḍï give. The survey simple verbs belong to this stem; give-away compounds and the separate tā-/ī- giving stems are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (2 records.) |
+| 43 | **nōḍə** ‘see’ | Proposed reflex of [**DEDR 3794**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=339) | DEDR 3794 attests Kannada nōḍu, Kota/Kodagu nōṭ- and Tamil/Malayalam nōkku see or look. These simple survey verbs retain that stem; causatives and longer verb phrases are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 44 | **selandi** ‘spider’ | Proposed reflex of [**DEDR 2562**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=223) | DEDR2562 compares Tamil cilanti/cilampi, Malayalam cilanni and Kannada seladi/selandi spider. The selected survey cil-/sel-/sol- plus nasal-stop forms fit this complete lexical family; the precise regional transmission remains open, and the explicitly questioned Toda comparison and transparent eight-legged compounds are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 45 | **ibbattu** ‘twenty’ | Compound: [**DEDR 474**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=46) + [**DEDR 3918**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=349) | DEDR474 and3918 explicitly document Tamil/Malayalam iru-patu/iru-vatu twenty, Kannada irpattu/ippattu, Kodagu iru-vadï and Kota irvād. Propose ordered two × ten components for the selected southern survey forms, preserving assimilated pp/bb, initial-glide variants and final vowels. Minority-lect forms are comparative extensions; neighbouring Gondi/Gadaba/Konda contact-sensitive numeral sets are excluded. (1 records.) |
+
+Proposed assignment rows: **9**. Affected records: **8**. Relation kinds: **component, reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-009.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Badaga/batch-009.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

@@ -1,0 +1,40 @@
+{
+  "status": "Reviewed whole-source stage installed; full build and browser gates deferred.",
+  "rows": {
+    "wordlist": 1984,
+    "grammar": 186,
+    "native": 286,
+    "roman": 9
+  },
+  "total_rows": 2465,
+  "audit_units": 2542,
+  "legacy_keys_preserved": 1336,
+  "canonical_sha256": {
+    "data/other/forms/20260813-kurux-nepal.csv": "56638ca9d62620239fcbc162ae4a94cd85c26ef3f86c68ba937b43aeace9a655",
+    "data/other/forms/20260927-kurux-nepal-grammar.csv": "87555b70917eed88cac784138949a945dcd2bc93a5882ed776894ca8e7f39fb7",
+    "data/other/forms/20260927-kurux-nepal-native.csv": "ecbb826fbcebd97971375017005012cfbed6094980aec865a9a2fe5c3c534a91",
+    "data/other/forms/20260927-kurux-nepal-roman.csv": "c45b9bbb472433547f7be39bc3aa32399f310ba3b9234fec02b9e65f79f80da1",
+    "conversion/kurux-nepal-whole-phonetic.txt": "b0e880756397fec08e5ede041941e7bbe6345d3282ec39b30240672c0fe8d24e",
+    "conversion/kurux-nepal-whole-native.txt": "985d0ab0e047589a5bad7a416615dd37b5a3971d45848648b363f562219b0440",
+    "conversion/kurux-nepal-whole-roman.txt": "72592f868509460453f20a661ffa226095a5c241690800af56e2714880c6f364"
+  },
+  "audit_sha256": "9aa147deb909b2c3d6715f3dc38f69d9ee6d8f2a611bbbdcd77e6fc29e33a210",
+  "durable_identity_sha256_unchanged": "4977c4e205f66233366ee1c00a9c938c9c78e3c087b63e02a94832647525c28a",
+  "unrelated_bibliography_entries_unchanged": 578,
+  "dialects_added": [],
+  "independent_review": "root-independent-review-20260927222.json",
+  "deferred": [
+    "Full CLDF/database build",
+    "Compiled identity and graph verification",
+    "Full test suite",
+    "Browser QA"
+  ],
+  "validation": {
+    "focused_tests": "11 passed in 1.08s; tests/test_kurux_nepal.py, test_kurux_nepal_whole_proposal.py, test_kurux_nepal_whole_installation.py",
+    "test_log_sha256": "f012b349eb95123a52981462df0d64fdca4dfedc59050d02b7b637d01bb1b738",
+    "registered_source_metadata": "286 source files with settings; 270 citation keys",
+    "regeneration": "Byte-identical approved CSV/audit/profile/YAML outputs before and after canonical installation; immutable 1336-row dependency.",
+    "actual_parser": "All 2465 installed rows parse with exact Original, Native and source Phonemic; all explicit tags retained; NFC/NFD proposal profile equivalence; unique keys and closed variant/reference targets.",
+    "reference": "Actual bibliography entry formats through Pybtex plain Markdown; S2022; compiled references deliberately not regenerated."
+  }
+}

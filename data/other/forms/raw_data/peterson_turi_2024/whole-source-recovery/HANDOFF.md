@@ -1,0 +1,17 @@
+# Peterson et al. (2024), whole Turi article recovery
+
+Source-stage proposal only. No canonical installation, CLDF/database build, full suite or browser validation has occurred for this recovery.
+
+The pinned publisher PDF has 42 pages, printed 261–302. The page census accounts for the complete article, all six linguistic tables, numbered examples 1–62 including lettered contrasts, both complete texts, inline forms/morphemes, historical quotations and explicitly foreign comparison evidence. Appendix 1's existing 275 records / 246 installed forms and stable keys are preserved byte-for-byte; its prior immutable source audit is reused, not represented as a new all-cell visual reread.
+
+The proposal has 648 rows: 246 retained Appendix 1 rows, 369 contemporary grammar/text rows and 33 historical quotation rows. Its 546 audit units retain all alignments and 69 exact-analysis reuses. Foreign/control forms, documentary names, reconstructed underlying analyses, phoneme charts, zero markers and structural blanks are accounted explicitly; no target lexical attestation is excluded for being multiword, inflected or ambiguous. Historical editor-reported `noɽ`/proposed `hoɽ` remain evidence around the actually quoted `[h]oɽ` expression.
+
+Original source spellings, including a/ɑ, c/tʃ/ʧ, h versus superscript aspiration, segmented =/- marks and literal historical transcription, remain distinct. The new contemporary route performs only declared house-grapheme conversion and retains the author's plain h convention; the historical route preserves literal transcription. Both new routes have blank Phonemic. The old Appendix 1 IPA route is unchanged. NFC and NFD conversions agree in the focused actual-parser tests.
+
+Default lect is Odisha only where the source's p.266 rule applies. Explicit Jharkhandi data use the proposed new tag in dialect-proposal.json. Historical Ranchi/Jashpur/Sarangarh records use existing LSI dialect tags; unlocalized historical forms get no invented locality. Shared Odisha/Jharkhandi statements retain both tags. No coordinates are inferred.
+
+Source inconsistencies remain explicit, notably example15b's see/3pl versus he went; example19b's negative form with positive English translation; example45's i/1 interlinear typography; example46's exclusive pronoun versus inclusive verb; example54's omitted FIN analysis; and the editorial historical `[h]` correction. No COG similarity tree or tentative copula derivation is promoted to a definitive etymological edge. Twelve source-explicit alternative links are closed within the proposed rows.
+
+Auxiliary works are bibliographically identified in auxiliary-reference-review.json. New rows cite Peterson's actual quotation/transcription, not an unseen primary reading. No independent consultation of those auxiliary originals is claimed by this recovery. OCR was not used: native PDF glyph spans and original-page images supplied evidence.
+
+Five focused tests pass, covering unchanged baseline keys/bytes, numbered and aligned-word coverage, reuse/citation/variant closure, lect/control boundaries, known inconsistencies, tag validity and actual metadata-driven parser/profile behavior. Parent independent source/output audit and installation approval remain required. The guarded install_proposal.py validates all frozen artifacts and requires an exact-manifest root approval before copying only the two additional CSV/YAML/profile routes. Shared dialect registration and bibliography scope/provenance update remain coordinated parent work.

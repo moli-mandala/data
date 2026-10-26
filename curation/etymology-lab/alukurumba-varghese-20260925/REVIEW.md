@@ -1,0 +1,13 @@
+# Alu Kurumba Varghese 2015 residual records — research review
+
+**Pending review. No new assignments have been saved. No rebuild has been run.**
+
+All **100 residual records** have an initial research disposition: **51 proposed records**, producing **54 assignment rows**, and **49 research holds**. Zero residual records remain unexamined. Unresolved loan donors and multiword elicitation responses are held for further analysis.
+
+New pending batches: [030](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/AluKurumba/batch-030-review.md), [031](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/AluKurumba/batch-031-review.md), [032](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/AluKurumba/batch-032-review.md), [033](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/AluKurumba/batch-033-review.md), [034](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/AluKurumba/batch-034-review.md), [035](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/AluKurumba/batch-035-review.md), [036](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/AluKurumba/batch-036-review.md), [037](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/AluKurumba/batch-037-review.md), [038](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/AluKurumba/batch-038-review.md), [039](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/AluKurumba/batch-039-review.md), [040](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/AluKurumba/batch-040-review.md).
+
+The [exact-form homepage search](discovery-001-030-results.json) covered all 100 source records in four chunks using the existing Jambu query code; 31 [global comparative searches](discovery-global-results.json) supplied additional same-form and same-gloss evidence. The [cached full DEDR articles](primary-evidence.json), [draft decisions](proposed-decisions.json), [holds](research-holds.json), and [exact residual coverage](record-coverage-001.json) preserve the research basis.
+
+[Full-source ownership](source-coverage-001.json) reconciles all 227 compiled Alu Kurumba Varghese records: 118 proposals in earlier batches 001–029, 9 earlier research holds, and the 100 records assessed here. The earlier holds are unchanged.
+
+Ambiguous source spellings and contact forms with unresolved immediate donors remain held. DEDR entries are whole articles: a survey reflex may occur within an article whose displayed head differs. Existing source records, dictionary heads, and accepted sidecars remain unchanged.

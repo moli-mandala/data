@@ -1,0 +1,9 @@
+{
+  "status":"whole proposal profile pending final output audit",
+  "input":"Literal source Roman forms, with source case and accents retained in raw Form/Original; no source IPA or native script supplied.",
+  "changed_rules":{"á":"á","é":"é","í":"í","ó":"ó","ú":"ú","ñ":"ñ","N":"n","T":"t"},
+  "rationale":"Original full preface and local chapter/table introductions supply no basis to erase acute marks or reinterpret them as length/stress. Keep them literal. Final marked n remains literal ñ with typed mark-shape uncertainty. Capitals are normalized only in house Form, never raw Original.",
+  "inherited_rules":"Retain previously reviewed Indic Roman digraph house mappings bh→bʰ, ch→c, gh→gʰ, kh→kʰ, th→tʰ and house w→v; j and y remain distinct. Do not fabricate source Phonemic fields from these mappings.",
+  "boundaries":"Printed hyphens and word spaces retained, no silent segmentation, no stripping of source accents. Punctuation used as source uncertainty/annotation is retained in Notes and audit rather than interpreted as a phoneme.",
+  "validation":"Corpus NFC/NFD tokenizer parity passes with literal combining acute and tilde support. Actual metadata-routed parser preserves all226 Original/Notes/Source/Gloss fields and tags, zero conversion errors. Guarded install_whole_source.py implemented; whole-output independent approval still required."
+}

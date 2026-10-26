@@ -408,6 +408,21 @@ def test_overlay_components_roundtrip_and_require_all_bases(tmp_path):
         validate_assignments(forms, bad)
 
 
+def test_same_fingerprint_nodes_keep_their_ids_when_a_row_above_them_is_removed():
+    # DEDR 2628 prints Gondi rēka 'chironji' for two dialects: two nodes, one fingerprint.
+    # Dropping a misparsed row above them shifts both generated positions down by one.
+    before = [form("d1-6", "Roxb", gloss="]"), form("d1-7", "rēka"), form("d1-8", "rēka")]
+    initial_mapping, registry = assign_ids(before, [])
+
+    after = [form("d1-6", "rēka"), form("d1-7", "rēka")]
+    mapping, next_registry = assign_ids(after, registry)
+
+    assert mapping["d1-6"] == initial_mapping["d1-7"]
+    assert mapping["d1-7"] == initial_mapping["d1-8"]
+    status = {row["Form_ID"]: row["Status"] for row in next_registry}
+    assert status[initial_mapping["d1-6"]] == "retired"
+
+
 def test_a_folded_survey_node_keeps_its_id_when_a_profile_change_splits_it():
     # make_cldf folds two survey sites with the same display form into one node whose
     # Original joins their source forms; the node's legacy ID is the first site's

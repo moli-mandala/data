@@ -1,0 +1,61 @@
+{
+  "date": "2026-09-27",
+  "reviewer": "root",
+  "status": "five proposed changes accepted at transcription stage; two h-class approvals withdrawn after font-control challenge; four other residual readings held",
+  "reviewed_proposal_sha256": "47b399e04c8dd59d24ff0634c82a8bceee4c8bef7d00c6292be968bb0b2bf506",
+  "source_pdf_sha256": "f022a2a448445cdc9840891478bd5864e2ded1ae98985332b51f0938c075842d",
+  "method": "Root independently inspected all six existing original 3x half-page images in brokskat-detail. This adjudicates the keyed proposals, not blanket acceptance of the entire book.",
+  "decisions": [
+    {
+      "witness_key": "niranjan2010chakma:p91:brokskat-comparison:row23:chakma",
+      "old": "তক্তক্কা", "accepted_reading": "তক্‌তক্যা",
+      "image": "brokskat-detail/p93-2.jpg",
+      "basis": "First ক carries detached lower diagonal before separate ত. Final cluster shows ক with attached য-ফলা and long-a, supporting ক্যা over ক্কা. This supersedes the intermediate তক্তক্যা proposal."
+    },
+    {
+      "witness_key": "niranjan2010chakma:p91:brokskat-comparison:row23:brokskat",
+      "old": "তক্পক", "accepted_reading": "তক্‌পক",
+      "image": "brokskat-detail/p93-2.jpg",
+      "basis": "Lower hasanta under separate ক before প; preserve disjoining."
+    },
+    {
+      "witness_key": "niranjan2010chakma:p91:brokskat-comparison:row24:chakma",
+      "old": "তাক্সি", "accepted_reading": "তাক্‌সি",
+      "image": "brokskat-detail/p93-2.jpg",
+      "basis": "Separate ক has a descending hasanta stroke before সি."
+    },
+    {
+      "witness_key": "niranjan2010chakma:p91:brokskat-comparison:row24:brokskat",
+      "old": "থাক্সি", "accepted_reading": "থাক্‌সি",
+      "image": "brokskat-detail/p93-2.jpg",
+      "basis": "Same explicit hasanta and disjoining as the Chakma cell."
+    },
+    {
+      "witness_key": "niranjan2010chakma:p92:brokskat-comparison:row11:chakma",
+      "old": "গোহর", "accepted_reading": null, "held_proposal": "গোহ্‌র",
+      "image": "brokskat-detail/p94-1.jpg",
+      "basis": "Earlier approval withdrawn: descending stroke may belong to ordinary হ. PDF99 row17 হাগা provides a counterexample to treating this stroke alone as hasanta; exact font control required."
+    },
+    {
+      "witness_key": "niranjan2010chakma:p92:brokskat-comparison:row17:chakma",
+      "old": "যুহু", "accepted_reading": null, "held_proposal": "যুহ্",
+      "image": "brokskat-detail/p94-2.jpg",
+      "basis": "Earlier approval withdrawn: reject automatic u-sign reading, but ordinary হ versus হ্ still requires font-control adjudication. The descending stroke alone does not prove hasanta."
+    },
+    {
+      "witness_key": "niranjan2010chakma:p93:brokskat-comparison:row20:brokskat",
+      "old": "দুনিয়া’", "accepted_reading": "দুনিয়া",
+      "image": "brokskat-detail/p95-2.jpg",
+      "basis": "Detached small point after the word is not an apostrophe-shaped glyph. Preserve the point in this audit, outside the lexical form; its origin as ink or scanning artifact is undetermined."
+    }
+  ],
+  "residual_holds": [
+    {"witness_key": "niranjan2010chakma:p91:brokskat-comparison:row11:chakma", "provisional": "হাত", "reason": "Additional lower stroke differs from comparator হাত; exact segmentation remains unresolved."},
+    {"witness_key": "niranjan2010chakma:p91:brokskat-comparison:row13:chakma", "provisional": "তভ", "reason": "Dense final shape remains provisional; do not infer from meaning or comparator."},
+    {"witness_key": "niranjan2010chakma:p92:brokskat-comparison:row25:chakma", "provisional": "মাল(-মাত্তা)", "reason": "Preserve parenthetical form and hold exact final conjunct."},
+    {"witness_key": "niranjan2010chakma:p93:brokskat-comparison:row7:chakma", "provisional": "গল্থ", "reason": "Stacked medial shape differs from unclustered comparator; hold exact consonant segmentation."}
+  ],
+  "accepted_for_installation": false,
+  "canonical_rows_changed": 0,
+  "pending": ["resolve h-class typography using ordinary হ controls", "resolve or explicitly encode residual transcription uncertainties", "whole-book integration and all remaining ingestion gates"]
+}

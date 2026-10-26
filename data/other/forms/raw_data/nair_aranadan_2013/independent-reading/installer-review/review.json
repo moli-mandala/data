@@ -1,0 +1,22 @@
+{
+  "status": "passed scoped independent installer review",
+  "installer_sha256": "ae37e5aa4440a0f6e6fd2168270502677aa5661bf8c0dac749435568c6ce8142",
+  "tests": "....................                                                     [100%]\n20 passed in 0.38s",
+  "test_script_sha256": "81195454c1b5233dc9df2b155441bb0994171594d824b477ac8919d0ab2a9d05",
+  "scope": [
+    "prepare approval/input/self hashes and exact102row97auditconstraints",
+    "four-target dry-run preserves fixture bytes",
+    "all1\u20134partialwrite states recover read-only from pinned journal",
+    "staged/canonical/identity drift rejects",
+    "complete receipt idempotent; incomplete receipt rejects",
+    "interrupted receipt temporary cannot mask journal",
+    "eight reapproved malformed CSV/audit classes rejected"
+  ],
+  "inspection": [
+    "Transaction uses staged pinnedbytes, atomic per-file replace, journal before writes, terminal atomic receipt; no wholetransaction filesystem atomicity claimed.",
+    "prepare forbids bibliography key overwrite and verifies previousentries remain equal.",
+    "Frozen approval pins evidence; source-specific semantics still rely on independently reviewed hash-approved candidate."
+  ],
+  "canonical_install_executed": false,
+  "installed_source_tests": "Prepared data/tests/test_nair_aranadan_source.py; not run pending root signal."
+}

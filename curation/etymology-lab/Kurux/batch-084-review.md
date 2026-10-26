@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Kurux · Shackelford et al. 2022 source records · batch 084. Pending user review.
+
+| # | Kurux | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **ībɔṛan** ‘these’ | Proposed reflex of [**DEDR 410**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=38) | The full DEDR 410 article gives Kurux: īs, īr/ibṛar, īd, ibṛā this man, these persons, this woman or thing, these things; adj. ī; ībīrī at this moment (previously mentioned); idā, isan, hisan here; istī from here; idim just at present; idnā this year; īge therefore; ijgō in this direction; innū in this direction, by…. Shackelford records ībɔṛan ‘these’; DEDR Kurux ibṛā ‘this man, these persons, this woman or thing, these things’.  (1 record.) |
+| 2 | **ībaraṛ** ‘these’ | Proposed reflex of [**DEDR 410**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=38) | The full DEDR 410 article gives Kurux: īs, īr/ibṛar, īd, ibṛā this man, these persons, this woman or thing, these things; adj. ī; ībīrī at this moment (previously mentioned); idā, isan, hisan here; istī from here; idim just at present; idnā this year; īge therefore; ijgō in this direction; innū in this direction, by…. Shackelford records ībaraṛ ‘these’; DEDR Kurux ibṛar ‘this man, these persons, this woman or thing, these things’.  (1 record.) |
+| 3 | **ībaṛa** ‘these’ | Proposed reflex of [**DEDR 410**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=38) | The full DEDR 410 article gives Kurux: īs, īr/ibṛar, īd, ibṛā this man, these persons, this woman or thing, these things; adj. ī; ībīrī at this moment (previously mentioned); idā, isan, hisan here; istī from here; idim just at present; idnā this year; īge therefore; ijgō in this direction; innū in this direction, by…. Shackelford records ībaṛa ‘these’; DEDR Kurux ibṛā ‘this man, these persons, this woman or thing, these things’.  (1 record.) |
+| 4 | **abaṛan** ‘those’ | Proposed reflex of [**DEDR 1**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=1) | The full DEDR 1 article gives Kurux: a- that most remote (contrast 557 hu- that intermediate); ās, ār/abṛar, ād, abṛā that man, those persons, that woman or thing, those things; adj. ā; ābīrī then, at that moment; adā, ahāy there!; ajgō in that direction, on that spot; annē such; adv. so; annū, ānū by that way;…. Shackelford records abaṛan ‘those’; DEDR Kurux abṛā ‘that man, those persons, that woman or thing, those things’.  (1 record.) |
+| 5 | **abɔṛan** ‘those’ | Proposed reflex of [**DEDR 1**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=1) | The full DEDR 1 article gives Kurux: a- that most remote (contrast 557 hu- that intermediate); ās, ār/abṛar, ād, abṛā that man, those persons, that woman or thing, those things; adj. ā; ābīrī then, at that moment; adā, ahāy there!; ajgō in that direction, on that spot; annē such; adv. so; annū, ānū by that way;…. Shackelford records abɔṛan ‘those’; DEDR Kurux abṛā ‘that man, those persons, that woman or thing, those things’.  (1 record.) |
+
+Proposed assignment rows: **5**. Affected records: **5**. Relation kinds: **reflex**.
+
+Exact persistent IDs, source locators and ordered assignments: [batch-084.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Kurux/batch-084.json).
+
+Excluded uncertain responses are documented in [research holds](../kurux-shackelford-20260925/research-holds.json). No new lexical material or donor nodes are proposed.

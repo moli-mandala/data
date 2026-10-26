@@ -1,0 +1,36 @@
+{
+  "status": "original-layout census; literal-cell transcription and independent audit pending",
+  "reviewer": "root",
+  "date": "2026-09-27",
+  "source": "tmp/pdfs/LSI-V4.djvu",
+  "physical_page_count": 701,
+  "target_header": "Kui (Khondmals)",
+  "target_column": "middle, between Malto and Gondi (Mandla)",
+  "prompt_count": 241,
+  "blocks": [
+    {"target_physical":668,"target_printed":648,"english_physical":669,"english_printed":649,"first_prompt":1,"last_prompt":25},
+    {"target_physical":672,"target_printed":652,"english_physical":673,"english_printed":653,"first_prompt":26,"last_prompt":52,"root_english_evidence":"equivalent English column on physical670; paired673 pending independent review"},
+    {"target_physical":676,"target_printed":656,"english_physical":677,"english_printed":657,"first_prompt":53,"last_prompt":79},
+    {"target_physical":680,"target_printed":660,"english_physical":681,"english_printed":661,"first_prompt":80,"last_prompt":106},
+    {"target_physical":684,"target_printed":664,"english_physical":685,"english_printed":665,"first_prompt":107,"last_prompt":133},
+    {"target_physical":688,"target_printed":668,"english_physical":689,"english_printed":669,"first_prompt":134,"last_prompt":160},
+    {"target_physical":692,"target_printed":672,"english_physical":693,"english_printed":673,"first_prompt":161,"last_prompt":187},
+    {"target_physical":696,"target_printed":676,"english_physical":697,"english_printed":677,"first_prompt":188,"last_prompt":214},
+    {"target_physical":700,"target_printed":680,"english_physical":701,"english_printed":681,"first_prompt":215,"last_prompt":241}
+  ],
+  "structural_controls": [
+    {"prompts":[133],"english":"Better","physical":684,"finding":"printed blank (dotted leaders in sharper alternate scan; earlier low-resolution dash description superseded); account explicitly rather than inventing a comparative"},
+    {"prompts":[136],"english":"Higher","physical":688,"finding":"printed blank (dotted leaders in sharper alternate scan; earlier low-resolution dash description superseded); account explicitly rather than inventing a comparative"},
+    {"prompts":[195,196,197,198,199,200],"physical":696,"finding":"bracketed As the present tense; one explicit source cross-reference scopes over six future-person prompts, not six printed repeated forms","resolution":"pending explicit source-local cross-reference treatment"},
+    {"prompts":[49,50],"finding":"elder/younger qualifiers apply to separate kinship witnesses; do not flatten into unqualified alternates"}
+  ],
+  "transcription_requirements": [
+    "Preserve every prompt ID, including blanks and cross-reference scope.",
+    "Record exact source alternates and qualifiers before expansion.",
+    "Do not infer segmentation or phonemic values from compounds or parentheses.",
+    "Literal-glyph acceptance requires enlarged original review; this census establishes coverage only.",
+    "Use source-qualified Khondmals dialect under existing Kui; no synthetic coordinates."
+  ],
+  "render_recipe": "ddjvu -format=ppm -page=N -size=2800x4000; target-column crops x=.405w..59w, top=.17h..56h and bottom=.54h..91h; one page at a time; transient PPM deleted",
+  "canonical_installation": false
+}

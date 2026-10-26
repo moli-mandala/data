@@ -1,5 +1,53 @@
 # Niranjan Chakma (2010): source preparation
 
+**Current state, 2026-09-27:** whole-source files are installed: **3,662 rows**,
+**5,232 accounting records**, all **742 historical keys** preserved, and **486
+typed-uncertain rows**. A fresh independent 20-unit original-output review
+passed; 40 focused tests and the actual canonical parser pass. Two consecutive
+guarded installations produced identical bytes. Evidence and exact hashes are
+in `whole-installation/source-stage-handoff.json`. The canonical route is
+`whole-installation/install_whole_source.py --install`; it reproduces revision 2
+from the immutable historical baseline and requires hash-bound acceptance.
+
+Known-language forms with defensible provisional glyph encodings are retained
+with uncertainty. Unresolved language identities, specifically damaged readings,
+explicit blanks and controls remain fully audited. Three source-analysis records
+preserve their entire printed component/origin prose but do not receive inferred
+language assignments or ancestry edges. Main reference etymology provenance is
+`source`; auxiliary works are separately registered as secondary references.
+
+Full CLDF/database, compiled identity/graph/reference, full-suite and browser
+gates remain deferred. No database build or publication was performed.
+
+## Earlier preview and historical-stage evidence
+
+**2026-09-27 whole-source preview:** the full 110-page source is now accounted
+for in `whole-source-assembly-preview.jsonl` and `whole-source-export-audit.jsonl`.
+The frozen fifteen-column preview has 3,660 rows, preserves all 742 installed
+keys, and includes grammar, reverse vocabulary, homophones, named varieties,
+all comparative sections and the final basic list. Documentary pages and
+unresolved/control witnesses remain explicitly accounted for. See
+`WHOLE_EXPORT_READINESS.md` for exact exclusions, accepted uncertainty policy,
+validation and remaining gates. Independent integrated review is in progress;
+the canonical CSV still contains the historical 742-row stage.
+
+Revision 2 in `whole-export-r2/` contains **3,662 rows**: the independently
+verified Prakrit and Vedic comparisons omitted by the first identity mapping
+are now included, with explicit unspecified-variety/stage notes. All 3,660
+earlier rows are unchanged. The original freeze and its failed accounting
+review are preserved. Revision 2 also passes the actual generic parser with
+no field differences; independent original-output review remains required.
+
+The new route `whole-installation/install_whole_source.py --check` reproduces
+the frozen CSV/audit from an immutable 742-row baseline. Its `--install` mode
+requires a hash-bound root approval and matching independent review. The
+original `import_source.py` and the reproduction instructions below describe
+the historical thematic stage; do not use that installer to overwrite a
+future whole-source installation. Full database/build/browser gates remain
+deferred under the current source-stage scope.
+
+## Historical thematic-stage record
+
 **Main-wordlist source files installed; broader source review and compiled validation remain incomplete.** This package does
 not run a CLDF or browser database build.
 

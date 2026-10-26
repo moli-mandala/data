@@ -1,0 +1,87 @@
+{
+  "status": "pre-freeze metadata and sampling setup; source owner candidate in revision",
+  "scope": "All 32 physical blocks and 115 source form mentions on original pp19–21 inventoried; this is not literal-glyph acceptance or installation approval.",
+  "input_hashes": {
+    "first_reading": "ddcf9dd7a6e6cb53ee5030f94487216a323ab0d3adb2639461c4a6656ef8da7b",
+    "source_pdf": "4d2588987dab5d15c62ecc95330ccf7e925a9bce80d08068b91ca3f48c8cc5af",
+    "original_page_images": {
+      "19": "8e8ff27afdb9a7f5240795d23a0692d9f629809e5841e85c8d321e728e7912bb",
+      "20": "87081d4135ac64154d8d6f4272c46d448f69f7ec5cb5c8491ca1540308756c05",
+      "21": "f6fbb8ebe586321fd8e68e727f70ff98866bc2ac90f13eba5cb82e493e50ef11"
+    }
+  },
+  "coverage": {
+    "physical_blocks": 32,
+    "form_mentions": 115,
+    "target_mentions_in_first_reading": 111,
+    "comparison_mentions": 1,
+    "ethnonym_documentary_mentions": 3,
+    "blocks_by_page": {
+      "19": 13,
+      "20": 11,
+      "21": 8
+    }
+  },
+  "keyed_metadata_findings": [
+    {
+      "key": "nair2013cholanaickan:p20:feminine-markers:form8",
+      "source_form": "-tti",
+      "decision": "audit-only comparison; reconstructed South Dravidian marker, not separately Cholanaickan",
+      "severity": "material source scope"
+    },
+    {
+      "key": "nair2013cholanaickan:p20:feminine-markers:form9",
+      "source_form": "-cci",
+      "decision": "audit-only Tamil/Kodagu/Kannada comparison, not separately Cholanaickan",
+      "severity": "material source scope"
+    },
+    {
+      "key": "nair2013cholanaickan:p19:ablative-examples:form2",
+      "source_form": "maraliddu",
+      "decision": "remove blanket adv POS; source gloss from the tree has noun base; retain ablative",
+      "severity": "metadata"
+    },
+    {
+      "key": "nair2013cholanaickan:p19:locative-examples:form2",
+      "source_form": "ennukaḍe",
+      "decision": "remove blanket noun POS; source gloss with me and printed ennu pronominal base; retain locative",
+      "severity": "metadata"
+    },
+    {
+      "key": "nair2013cholanaickan:p19:accusative-markers:form3",
+      "source_form": "-in-",
+      "decision": "source calls inflectional increment, not accusative marker or securely infix; preserve exact claim in audit and avoid unsupported infix tag",
+      "severity": "metadata"
+    },
+    {
+      "key": "nair2013cholanaickan:p19:plural-example:form1",
+      "source_form": "ondu mara",
+      "decision": "one multiword-expression tag, not duplicate; source explicitly lacks plural marker",
+      "severity": "tag hygiene"
+    },
+    {
+      "key": "nair2013cholanaickan:p19:plural-example:form2",
+      "source_form": "eeḍu mara",
+      "decision": "one multiword-expression tag, not duplicate; source explicitly lacks plural marker",
+      "severity": "tag hygiene"
+    },
+    {
+      "key": "nair2013cholanaickan:p20:interrogatives",
+      "source_form": "12-cell paradigm",
+      "decision": "all are source-labeled interrogatives; do not force pron POS on where/when/which side/in which manner/how many without source support; remove duplicate interr token",
+      "severity": "metadata class"
+    }
+  ],
+  "sampling_design_after_stable_revision": {
+    "seed": 20260927333,
+    "target_count": 20,
+    "strata": "4 p19 case examples and bound markers; 9 p20 pronoun/interrogative/gender/future including slash alternatives; 5 p21 negative/causative/hortative/glossary; 2 documentary controls including Tamil or ethnonyms. Draw actual emitted rows and audit-only controls after keyed corrections and parser check; pin candidate and source-image hashes before reviewing."
+  },
+  "audit_boundaries": [
+    "Stem-condition -annu and zero exponents remain audit-only, not lexical strings.",
+    "One Tamil va+nt+aann comparison and three ethnonyms have distinct attribution.",
+    "The printed -indu variant pair is visually indistinguishable and retains typography uncertainty.",
+    "Future -adu is explicitly common to past/present and absent after future markers; no invented future -adu form."
+  ],
+  "canonical_changes": false
+}

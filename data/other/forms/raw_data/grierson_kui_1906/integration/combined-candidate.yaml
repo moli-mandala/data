@@ -1,0 +1,33 @@
+{
+  "file": "combined-candidate.csv",
+  "defaults": {
+    "transcription": {
+      "profile": "kui-integration-preservation",
+      "input": "form",
+      "preserve_hyphens": true
+    },
+    "identity": {
+      "dedupe_by_entry_key": true
+    },
+    "forms": {
+      "split_alternates": false
+    },
+    "gloss": {
+      "grammar_tags": false
+    }
+  },
+  "sources": {
+    "grierson1906kui": {
+      "reference": {
+        "etymology_provenance": "source",
+        "ocr": true
+      },
+      "forms": {
+        "split_alternates": false
+      },
+      "gloss": {
+        "grammar_tags": false
+      }
+    }
+  }
+}

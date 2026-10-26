@@ -1,0 +1,77 @@
+{
+  "reviewer": "/root/asur_finish",
+  "status": "historical_layout_pass_now_requires_sharper_boundary_revision",
+  "input_snapshot_sha256": "925a6668ba6476821d00f0d08216dcce4301afa70c5c940c813184abfedf736b",
+  "visual_review": {
+    "all_original_pages": [
+      564,
+      565,
+      568,
+      569
+    ],
+    "physical_lines": 64,
+    "physical_atoms": 561,
+    "candidate_expression_spans": 51,
+    "method": "Read all retained original top/middle/bottom crops against ordered atom and whole-expression proposals. Confirm physical target/English cell order and punctuation spans. No new renders or translation paraphrases."
+  },
+  "source_supported_decisions": [
+    {
+      "scope": "All 64 physical lines",
+      "decision": "Each target token has the directly aligned printed English cell retained. Hyphenated multiword English cells remain one source gloss, not independently realigned or translated."
+    },
+    {
+      "scope": "Specimen75 expression16, pp564–565",
+      "decision": "A printed quotation starts on p564 and closes with tōten on p565. Running Bhili ofBasim header does not change the continuing Kolami/Wun specimen attribution. Preserve one complete source span."
+    },
+    {
+      "scope": "Specimen76 expression16, pp568–569",
+      "decision": "Quote begins after ukatten on p569 following the p568 frame; expression includes cross-page frame+quote without a synthetic page boundary."
+    },
+    {
+      "scope": "Specimen76 p568 physical line11word8 and line12word1",
+      "decision": "Printed Bāp- / phōkān and aligned Father- / near visibly continue across the compositor line. One joined atomic Bāp-phōkān / Father-near with both immutable physical keys retained, not two independently glossed emitted words."
+    },
+    {
+      "scope": "All quoted expressions",
+      "decision": "Internal sentence-like periods/semicolons in a still-open quotation do not split its whole span. Do not tag every printed physical line as a sentence."
+    },
+    {
+      "scope": "Specimen76 expressions3 and17",
+      "decision": "Target and English punctuation differ: miḷāpten has target fullstop but gathered English comma; uttēr lacks target fullstop while English began has one. Preserve exact target-bounded spans and printed aligned English; do not invent harmonizing punctuation or semantic segmentation."
+    },
+    {
+      "scope": "All repeated tokens",
+      "decision": "Current proposal retains separate occurrence keys, not implicit lexical dedup. Any later exact-analysis reuse must list all physical aliases and citations, with same identity/analysis/gloss checks."
+    }
+  ],
+  "material_structural_errors": [],
+  "fine_glyph_acceptance": false,
+  "fine_glyph_limit": "Root/owner are still resolving quantities/underdots. This report certifies paired source layout and expression/continuation scope, not replacement of their complete literal review.",
+  "p566_overlap_guard": "Physical overlap does not assert and/amd literal equality. Retain one p566 physical occurrence with correction history; do not install duplicate and and amd attestations.",
+  "image_sha256": {
+    "tmp/jambu-next-source/kolami-specimen-originals/printed-564-top.png": "8d9d047b9e6a0803b743c94e0caa84f2762ad251881629e704f93359abe86f52",
+    "tmp/jambu-next-source/kolami-specimen-originals/printed-564-middle.png": "dd6fc97169a029a2a6edf85ce4fe92c09fd7dedff45dd183c7ec924bedf026d4",
+    "tmp/jambu-next-source/kolami-specimen-originals/printed-564-bottom.png": "72de2900cd5bb91185cd27720e78a16097e87b354dc281d2f5a928c07db765b8",
+    "tmp/jambu-next-source/kolami-specimen-originals/printed-565-top.png": "9f08f036ff68efddd6d19a3d00aae13c0022d416e1969b206219d57f44d234bd",
+    "tmp/jambu-next-source/kolami-specimen-originals/printed-565-middle.png": "74fd142d193a616dc6d851baec74c6f997fca1d8b30b657dd4f432f413de94d4",
+    "tmp/jambu-next-source/kolami-specimen-originals/printed-565-bottom.png": "3f4db07f5ebeb10f81a0e50b9cd7be69d44b3289df8bcdf8f60c0dcb5ec64473",
+    "tmp/jambu-next-source/kolami-specimen-originals/printed-568-top.png": "9199872461e36b766aac040a741eb4a3d75b15ed711d98b741137cbbf42d14a5",
+    "tmp/jambu-next-source/kolami-specimen-originals/printed-568-middle.png": "4ddd3d39c06adc32bf4197c7e9664e81106c36be92f81fd2b0a2473312bd9894",
+    "tmp/jambu-next-source/kolami-specimen-originals/printed-568-bottom.png": "09b00ac220d39687d3d2e1b705ac77a4689128366a70ff1fd13bd1a955990868",
+    "tmp/jambu-next-source/kolami-specimen-originals/printed-569-top.png": "98899b6c435022bb485198d6cb0b88728bb16ac2ff23c4968519932e1b7082e5",
+    "tmp/jambu-next-source/kolami-specimen-originals/printed-569-middle.png": "418134c84ee8a419a5dde8bb9b1404246ce8d0b03b6e74871e96c7f5c520a46b",
+    "tmp/jambu-next-source/kolami-specimen-originals/printed-569-bottom.png": "3d0db087cf0b15733b106051976c2f6eefa8fa03de5b437055d7b998c000e95a"
+  },
+  "canonical_changes": false,
+  "pending_literal_controls": [
+    {
+      "physical_key": "grierson1906kolamibasim:p564:specimen75-line:2:word:3",
+      "field": "raw_interlinear_gloss",
+      "current": "‘father.",
+      "candidate": "‘father,",
+      "status": "Source punctuation requires sharper primary-page adjudication; current proposal not final literal acceptance."
+    }
+  ],
+  "expression_identity_policy": "Each of 51 expression keys equals immutable first contributing physical atom key plus :expression; last key and exact contributor sequence conserved. display_sequence is not identity.",
+  "new_material_boundary_finding": "Sharp p568 miḷāpten comma invalidates current expression3 boundary; see sharper-punctuation-correction-proposal.json. Historical paired-cell layout/count checks remain applicable, not current final acceptance."
+}

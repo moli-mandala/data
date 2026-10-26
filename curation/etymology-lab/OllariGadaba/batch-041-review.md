@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Ollari Gadaba · Bhattacharya 1957 Ollari Gadaba residual records, 2026-09-25 · batch 041. Pending user review; autonomous research continues.
+
+| # | Ollari Gadaba | Proposed etymology | Evidence |
+|---|---|---|---|
+| 161 | **pēp-** ‘to appear, come out; (sun, moon) to arise’ | Proposed reflex of [**DEDR 4382**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=387) | DEDR 4382 full article opens “4382 Pa. pēp- (pēt-) to appear, (sun) to rise; pēpip- (pēpit-) to cause to come out, vomit. Ga. (Oll.) pēp- (pēt-) to appear, come out, (sun,…”; its Ga. (Oll.) passage gives “Ga. (Oll.) pēp- (pēt-) to appear, come out, (sun, moon) rise; (S.) pēk- (pēt-) (sun) to rise; (S. 3 ) pēp- to start to go out; caus. p”. The source form and sense match this Ollari entry within the whole article. (1 record.) |
+| 162 | **pēn** ‘louse’ | Proposed reflex of [**DEDR 4449**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=393) | DEDR 4449 full article opens “4449 Ta. pēṉ louse. Ma. pēn id. Ko. pe·n head-louse. To. pö·n louse. Ka. pēn id.; vb. (lice) to increase or grow greatly. Koḍ. pe·nï louse. Tu.…”; its Ga. (Oll.) passage gives “Ga. (Oll.) pēn ( pl. pēnil) id.”. The source form and sense match this Ollari entry within the whole article. (1 record.) |
+| 163 | **pok-** ‘to speak’ | Proposed reflex of [**DEDR 4233**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=375) | DEDR 4233 full article opens “4233 Ta. pukal (pukalv-, pukaṉṟ-) to say, state, sound; n. word, mode of singing. Ma. pukaluka to speak. ? To. po· Q - (only 2nd stem, recorded…”; its Ga. (Oll.) passage gives “Ga. (Oll.) pok- to say; (S.) pokk- to say, tell.”. The source form and sense match this Ollari entry within the whole article. (1 record.) |
+| 164 | **pog** ‘smoke’ | Proposed reflex of [**DEDR 4240**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=375) | DEDR 4240 full article opens “4240 Ta. pukai smoke, mist, vapour, steam; ( -v-, -nt- ) to smoke, emit vapour or steam; ( -pp- -tt- ) to cause to smoke; pukaiccal smoke;…”; its Ga. (Oll.) passage gives “Ga. (Oll.) pog , (S.) pōgu id.; (S. 2 ) pogasur soot (see 2686 Te. cūru ); (S. 3 ) pōgu smoke; pōga tobacco; pogḍ- (poguḍ-) to fill”. The source form and sense match this Ollari entry within the whole article. (1 record.) |
+| 165 | **poŋor** ‘act of floating’ | Proposed reflex of [**DEDR 4471**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=396) | DEDR 4471 full article opens “4471 Ma. poṅṅu a float, raft, buoy, boat; poṅṅuka to rise, as out of the water. Tu. poṅguni, puṅguni to rock, reel, toss (as a boat); poṅgelů…”; its Ga. (Oll.) passage gives “Ga. (Oll.) poŋor act of floating; poŋor er- to swim, float.”. The source form and sense match this Ollari entry within the whole article. (1 record.) |
+
+Proposed assignment rows: **5**. Affected records: **5**. Relation kinds: **reflex**. Multi-part responses retain their source order.
+
+Exact persistent IDs and complete source records: [batch-041.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/OllariGadaba/batch-041.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../ollari-bhattacharya-20260925/research-holds.json). No new lexical material or donor nodes are introduced.

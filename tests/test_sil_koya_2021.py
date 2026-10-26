@@ -1,4 +1,4 @@
-"""Focused checks for the manually transcribed SIL Koya survey wordlists."""
+"""Historical wordlist reconstruction plus current installed whole-report checks."""
 
 import csv
 import io
@@ -13,7 +13,8 @@ from segments.tokenizer import Tokenizer
 
 ROOT = Path(__file__).parents[1]
 PACKAGE = ROOT / "data/other/forms/raw_data/sil_koya_2021"
-INSTALLED = ROOT / "data/other/forms/20260828-sil-koya.csv"
+INSTALLED = PACKAGE / "historical-wordlist-installation/20260828-sil-koya.csv"
+CURRENT = ROOT / "data/other/forms/20260828-sil-koya.csv"
 AUDIT = ROOT / "data/other/forms/raw_data/20260828-sil-koya-audit.csv"
 MANIFEST = ROOT / "data/other/forms/raw_data/20260828-sil-koya-manifest.json"
 PROFILE = ROOT / "conversion/sil-koya.txt"
@@ -149,11 +150,11 @@ def test_shared_profile_routing_and_metadata_registration():
     from make_cldf import parse_file
 
     errors = io.StringIO()
-    parsed, stats = parse_file(str(INSTALLED), errors)
-    assert stats == {"converted": 1438, "for_conversion": 1438}
+    parsed, stats = parse_file(str(CURRENT), errors)
+    assert stats == {"converted": 1437, "for_conversion": 1437}
     assert errors.getvalue() == ""
-    assert len(parsed) == 1438
-    assert all(row.ipa == row.old_form and "�" not in row.form for row in parsed)
+    assert len(parsed) == 1437
+    assert all(row.ipa == "" and "�" not in row.form for row in parsed)
 
     with (ROOT / "cldf/dialects.csv").open(encoding="utf-8", newline="") as stream:
         dialects = [
@@ -167,7 +168,7 @@ def test_shared_profile_routing_and_metadata_registration():
         assert_reviewed_point(row)
     bib = (ROOT / "cldf/sources.bib").read_text(encoding="utf-8")
     assert f"@techreport{{{SOURCE_KEY}," in bib
-    assert "No installed form originates from OCR" in bib.split(
+    assert "Total 1,665 source rows" in bib.split(
         f"@techreport{{{SOURCE_KEY},", 1
     )[1].split("\n}", 1)[0]
 

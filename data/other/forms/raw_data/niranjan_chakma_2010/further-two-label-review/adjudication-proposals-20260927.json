@@ -1,0 +1,55 @@
+{
+  "date": "2026-09-27",
+  "reviewer": "norton_finish",
+  "status": "bounded original/context/registry review; two identity holds remain, no automatic promotion",
+  "inputs": {
+    "further-reviewed-reading-proposal.jsonl": "ee6a9766bcb8f7556098e552bfa4f01dac58cfee69bac3e951883205cdec03e1",
+    "further-language-mapping-review.json": "27f4b29f1f8b6209b0f1ceb08d757f383b558642814b114f0509b23809dca748",
+    "abbreviations-first-reading.jsonl": "3b5edc8a03c4400498906b84035e135069144f1d5bff2c6e519a450e3f3aae7c"
+  },
+  "original_pdf_sha256": "f022a2a448445cdc9840891478bd5864e2ded1ae98985332b51f0938c075842d",
+  "decisions": [
+    {
+      "source_unit_key": "niranjan2010chakma:p99:further-comparison:row26:comparison",
+      "literal_label": "গুজরাট",
+      "form": "তর্কু",
+      "gloss_bn": "মাকু",
+      "context": "Printed comparison column is headed তুলনীয় ভিন্ন ভাষার শব্দ. Label reads Gujarat, not Gujarati. Elsewhere printed103/PDF105 documentary language table explicitly lists গুজরাটি, alongside গুজরি and কাচ্চি. No explicit equation of the geographical shorthand to Gujarati was located.",
+      "candidate_language_id": "G",
+      "accepted_language_id": null,
+      "decision": "Retain source-attributed geographic-language uncertainty. Gujarati is plausible but not established by exact source declaration; do not assign solely from familiar regional name or the form.",
+      "required_evidence": "An explicit source use equating this label with Gujarati or a separately reviewed primary attribution of this exact witness.",
+      "images": [
+        "tmp/pdfs/chakma-discovery/further-detail/p101-2.jpg",
+        "tmp/pdfs/chakma-discovery/further-detail/p102-2.jpg",
+        "tmp/pdfs/chakma-discovery/documentary-review/p105.jpg"
+      ]
+    },
+    {
+      "source_unit_key": "niranjan2010chakma:p100:further-comparison:row22:comparison",
+      "literal_label": "বাংজবংশী",
+      "form": "ডলা",
+      "gloss_bn": "মালিশ করা",
+      "context": "Seven-times original crop PDF102 Rect145,495,198,527 confirms initial ব, anusvara and following জ: বাংজবংশী. It does not read রাজবংশী, রাংজবংশী or রংবংশী. Same original page separately has clear রাজবংশী twice; abbreviation list রাজ expands রাজবংশী. Thus the source distinguishes the printed spellings, but gives no equation/correction for this anomalous label.",
+      "candidate_language_id": "MH",
+      "accepted_language_id": null,
+      "decision": "Retain anomalous printed label and possible typographical-error uncertainty. No silent Rajbanshi normalization or invented Rangbangshi language.",
+      "required_evidence": "Authorial erratum or explicit identification of this anomalous label; resemblance alone is insufficient.",
+      "crop": "further-two-label-review/printed100-row22-label.png",
+      "crop_sha256": "bf251100ffa92415ba0ad2fb1cd177bba8bcc793c7445bcc8175339dec3c6587"
+    }
+  ],
+  "registry_evidence": {
+    "G": {
+      "Name": "Gujarati",
+      "Glottocode": "guja1252"
+    },
+    "MH": {
+      "Name": "Rajbanshi",
+      "Glottocode": "rajb1243"
+    },
+    "languages_csv_sha256": "f2dead310c035388298b90ecaee078710a598fbd073a014a85ddc30566c0d0f4"
+  },
+  "search_scope": "All available source OCR lines searched for these label stems, then relevant originals inspected. OCR absence is not asserted as exhaustive glyph-level book proof. No suitable label equivalence in reviewed abbreviation inventory.",
+  "preservation": "Frozen preview and owner inputs unchanged; lexical values remain available in full audit despite identity hold."
+}

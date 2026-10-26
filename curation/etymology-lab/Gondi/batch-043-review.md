@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Gondi · Dravidian surveys, 2026-09-21 · batch 043. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Gondi | Proposed etymology | Evidence |
+|---|---|---|---|
+| 191 | **kellku** ‘hair’, **kelku** ‘hair’, **kelˑku** ‘hair’, **kello** ‘hair’, **kɛlk** ‘hair’, **kelk** ‘hair’ | Proposed reflex of [**DEDR 1973**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=179) | DEDR1973 explicitly gives Gondi kel hair/feather, plural -k. Survey kelk/kelku/kellku and kello retain that same-language hair family with source number/final-vowel and consonant-length notation. Ordinary plural morphology is not a separate derivation. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (6 records.) |
+| 192 | **neturu** ‘blood’, **netˑuru** ‘blood’, **nɛtu̯ru** ‘blood’ | Proposed reflex of [**DEDR 3748**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=335) | DEDR3748 gives Kannada nettar(u)/nettara/nettra, Tulu netterů and Gondi nettur/netur/nattur blood. Selected netter-/nettr-/naṭṭr-type survey responses preserve that stem with vowel variation or syncope; opaque Gondi naktur/naktar responses are excluded pending stronger consonant evidence. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (3 records.) |
+| 193 | **tollka** ‘skin’ | Proposed reflex of [**DEDR 3559**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=312) | DEDR3559 gives Kannada tōl(u) skin and Gondi tōl/tōla/tōlu, plural tōlku and Ko. tolka. Badaga tōlə and Gondi tollka retain the skin/hide family; the Gondi number/length notation is preserved as ordinary inflection. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 194 | **markai** ‘mango’, **marke** ‘mango’, **marka** ‘mango’, **makˑa** ‘mango’ | Proposed reflex of [**DEDR 4772**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=424) | DEDR4772 explicitly gives Gondi markā/marka/maẖka, Konda maRka, Parji medi and Gadaba maygil/mayggā mango. These survey mark-/mahk-/mak-, medi and maige responses match that specific mango family, retaining consonant weakening and final-vowel notation; the distinct southern mā-m family is not substituted. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (4 records.) |
+| 195 | **arati** ‘banana’ | Borrowed from **Telugu araṭi**, [DEDR 205](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=19) | DEDR205 explicitly labels Gondi arti/arṭi banana as borrowed from Telugu and lists Telugu araṭi. Survey arati matches that loan; point to the existing Telugu araṭi attestation as immediate donor, rather than directly to the reconstructed family. (1 records.) |
+
+Proposed assignment rows: **15**. Affected records: **15**. Relation kinds: **borrowed, reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-043.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Gondi/batch-043.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

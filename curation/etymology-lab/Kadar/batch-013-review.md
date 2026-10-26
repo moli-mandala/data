@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Kadar · Dravidian surveys, 2026-09-21 · batch 013. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Kadar | Proposed etymology | Evidence |
+|---|---|---|---|
+| 56 | **paṇṇɨkunci** ‘girl’ | Compound: [**DEDR 4395**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=388) + [**DEDR 1646**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=150) | DEDR4395 supplies peṇ female and DEDR1646 supplies Malayalam kuññu/kuñci child. Survey peŋguñci/paṇṇu-kuñci girl is an ordered female + child compound with ordinary nasal assimilation and source consonant/vowel notation preserved. (1 records.) |
+| 57 | **kanamilla** ‘light’, **kanamillaḷatɨ** ‘light’ | Compound: [**DEDR 1404**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=130) + [**DEDR 2559**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=222) | Ordered weight + absence components: DEDR1404 supplies kaṉam heaviness and DEDR2559 supplies illa/illā not existing, including ordinary negative adjectival forms. The survey whole expressions mean light, literally without weight; their source contractions and endings are preserved. DEDR1404 expressly notes influence from Sanskrit ghana on the kaṉa heavy family; that contact qualification is retained, and no unsupported immediate donor is asserted. (2 records.) |
+| 58 | **ɛṇṇa** ‘oil’ | Compound: [**DEDR 854**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=83) + [**DEDR 3746**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=334) | Ordered sesame + oil: DEDR854 explicitly gives Tamil eṇ ṇey gingelly oil and related Malayalam eṇṇa/Kannada eṇṇe, while3746 gives ney oil. These lexicalized eṇṇey/eṇṇa/eṇṇe survey responses are analysed with both historical constituents; their generalized survey gloss oil and all dialect transcriptions remain unchanged. (2 records.) |
+| 59 | **nilakaḍala** ‘groundnut’ | Compound: [**DEDR 3676**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=326) + [**DEDR 1120**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=105) | Ordered ground + gram: DEDR3676 nilam/nela earth/ground and1120 kaṭalai/kaṭala gram. Survey nila-/nela-kaḍala(i) groundnut transparently contains both constituents; its modern groundnut designation is retained as a compound, not conflated with the botanical gram referent of1120. (1 records.) |
+| 60 | **uruḷakiyaŋgɨ** ‘potato’ | Compound: [**DEDR 664**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=64) + [**DEDR 1578**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=145) | Ordered round + tuber: DEDR664(a) gives uruḷai/uruḷa anything round and uruṇṭa round;1578 gives kiẓaṅku/kiẓaṅṅu esculent tuber, explicitly including potato. These survey uruḷa-/uraṇḍa- plus kiyaṅgu/kisaṅgu/keŋgu/kaŋgu potato compounds retain both lexical constituents, with source dialect consonants and vowels preserved. (1 records.) |
+
+Proposed assignment rows: **14**. Affected records: **7**. Relation kinds: **component**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-013.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Kadar/batch-013.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

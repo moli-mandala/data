@@ -1,0 +1,180 @@
+{
+  "status": "complete raw published snapshot acquired; source-stage interpretation and installation deferred",
+  "snapshot_sha256": "ea5178108325f961ae5e34484ea6cafef267862e142377e16b49c553e7b95b00",
+  "lexical_export_sha256": "8999ed134b13a54bf7780098635ec1c6e07a6f142736ee372278cf793c387764",
+  "expected_live_entry_count": 446,
+  "raw_entries": 446,
+  "raw_senses": 446,
+  "exported_entry_keys": 446,
+  "distinct_sense_ids": 446,
+  "all_entry_sense_foreign_keys_resolve": true,
+  "all_annotation_foreign_keys_resolve": true,
+  "pagination": "Not applicable: complete public SQLite export, not a paginated subset. Every source table counted, every entry and sense exported; count matches independently saved live dictionary metadata.",
+  "table_dispositions": {
+    "audio": {
+      "count": 445,
+      "disposition": "media/account provenance retained only in public original; no media binaries or personal metadata exported"
+    },
+    "audio_speakers": {
+      "count": 445,
+      "disposition": "media/account provenance retained only in public original; no media binaries or personal metadata exported"
+    },
+    "clause_slots": {
+      "count": 0,
+      "disposition": "fully exported additional lexical/context table; empty in this snapshot"
+    },
+    "db_metadata": {
+      "count": 4,
+      "disposition": "administrative/synchronization or UI table; original retained and count accounted"
+    },
+    "deletes": {
+      "count": 0,
+      "disposition": "administrative/synchronization or UI table; original retained and count accounted"
+    },
+    "dialects": {
+      "count": 3,
+      "disposition": "fully exported lexical records or annotation labels"
+    },
+    "entries": {
+      "count": 446,
+      "disposition": "fully exported lexical records or annotation labels"
+    },
+    "entry_dialects": {
+      "count": 28,
+      "disposition": "fully exported lexical records or annotation labels"
+    },
+    "entry_relationships": {
+      "count": 0,
+      "disposition": "fully exported additional lexical/context table; empty in this snapshot"
+    },
+    "entry_tags": {
+      "count": 0,
+      "disposition": "fully exported additional lexical/context table; empty in this snapshot"
+    },
+    "featured_entries": {
+      "count": 3,
+      "disposition": "administrative/synchronization or UI table; original retained and count accounted"
+    },
+    "glossing_abbreviations": {
+      "count": 0,
+      "disposition": "fully exported additional lexical/context table; empty in this snapshot"
+    },
+    "grammar_sections": {
+      "count": 0,
+      "disposition": "fully exported additional lexical/context table; empty in this snapshot"
+    },
+    "ignored_forms": {
+      "count": 0,
+      "disposition": "fully exported additional lexical/context table; empty in this snapshot"
+    },
+    "migrations": {
+      "count": 9,
+      "disposition": "administrative/synchronization or UI table; original retained and count accounted"
+    },
+    "photos": {
+      "count": 0,
+      "disposition": "media/account provenance retained only in public original; no media binaries or personal metadata exported"
+    },
+    "relationship_types": {
+      "count": 0,
+      "disposition": "fully exported additional lexical/context table; empty in this snapshot"
+    },
+    "section_sentences": {
+      "count": 0,
+      "disposition": "fully exported additional lexical/context table; empty in this snapshot"
+    },
+    "sense_photos": {
+      "count": 0,
+      "disposition": "media/account provenance retained only in public original; no media binaries or personal metadata exported"
+    },
+    "sense_videos": {
+      "count": 0,
+      "disposition": "media/account provenance retained only in public original; no media binaries or personal metadata exported"
+    },
+    "senses": {
+      "count": 446,
+      "disposition": "fully exported lexical records or annotation labels"
+    },
+    "senses_in_sentences": {
+      "count": 0,
+      "disposition": "fully exported additional lexical/context table; empty in this snapshot"
+    },
+    "sentence_photos": {
+      "count": 0,
+      "disposition": "media/account provenance retained only in public original; no media binaries or personal metadata exported"
+    },
+    "sentence_videos": {
+      "count": 0,
+      "disposition": "media/account provenance retained only in public original; no media binaries or personal metadata exported"
+    },
+    "sentences": {
+      "count": 0,
+      "disposition": "fully exported additional lexical/context table; empty in this snapshot"
+    },
+    "server_seq_counter": {
+      "count": 1,
+      "disposition": "administrative/synchronization or UI table; original retained and count accounted"
+    },
+    "sources": {
+      "count": 0,
+      "disposition": "fully exported additional lexical/context table; empty in this snapshot"
+    },
+    "speakers": {
+      "count": 2,
+      "disposition": "media/account provenance retained only in public original; no media binaries or personal metadata exported"
+    },
+    "tags": {
+      "count": 0,
+      "disposition": "fully exported additional lexical/context table; empty in this snapshot"
+    },
+    "text_dialects": {
+      "count": 0,
+      "disposition": "fully exported additional lexical/context table; empty in this snapshot"
+    },
+    "text_tags": {
+      "count": 0,
+      "disposition": "fully exported additional lexical/context table; empty in this snapshot"
+    },
+    "texts": {
+      "count": 0,
+      "disposition": "fully exported additional lexical/context table; empty in this snapshot"
+    },
+    "video_speakers": {
+      "count": 0,
+      "disposition": "media/account provenance retained only in public original; no media binaries or personal metadata exported"
+    },
+    "videos": {
+      "count": 0,
+      "disposition": "media/account provenance retained only in public original; no media binaries or personal metadata exported"
+    }
+  },
+  "nonempty_fields": {
+    "entries": {
+      "id": 446,
+      "lexeme": 446,
+      "notes": 440,
+      "created_at": 446,
+      "updated_at": 446,
+      "server_seq": 446
+    },
+    "senses": {
+      "id": 446,
+      "entry_id": 446,
+      "glosses": 446,
+      "parts_of_speech": 443,
+      "semantic_domains": 446,
+      "created_at": 446,
+      "updated_at": 446,
+      "server_seq": 446
+    }
+  },
+  "source_label_semantics": "The three dialect-table labels are loan-origin annotations, not varieties. Preserve certainty distinctions and do not register them as geographic dialects.",
+  "review_required": [
+    "All lexical/POS/native/phonetic fields and notes",
+    "Source abbreviation provenance (e.g. AN, HU) and contributors",
+    "Borrowing labels versus explicit donor edges",
+    "Kera variety registration under mu; no Kurux merge",
+    "House transcription policy, complete parser and independent audit"
+  ],
+  "canonical_installation": false
+}

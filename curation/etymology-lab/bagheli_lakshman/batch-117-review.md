@@ -1,0 +1,13 @@
+# bagheli_lakshman: survey etymology review, batch 117
+
+**Saved under the autonomous-work authorization of 2026-09-21.** 3 proposals; exact IDs and source attestations are in the [manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/bagheli_lakshman/batch-117.json).
+
+| # | Language form and meaning | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **ber ṛeha he** ‘it burns, it burned’ | Component: **\*dvalati** + **\*rahati** + **ā́kṣēti**; [CDIAL 6654](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=380);[CDIAL 10666](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=617);[CDIAL 1031](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=46) | All three components of the progressive predicate are linked: intransitive burn (\*dvalati), remain (\*rahati) and the present h-/ch- copula (ākṣeti). Turner explicitly covers Hindi hai and Gujarati che in the copula article. Regional rī/ry- reductions are retained, and the whole response is analysed. (1 records.) |
+| 2 | **jel ṛeyhe** ‘it burns, it burned’, **jelrēhahe** ‘it burns, it burned’ | Component: **jválati** + **\*rahati** + **ā́kṣēti**; [CDIAL 5306](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=292);[CDIAL 10666](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=617);[CDIAL 1031](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=46) | The full progressive is burn + remain + is, represented by jvalati, \*rahati and ākṣeti. The last article explicitly discusses regional hai/che copulas; the fused source spelling and local vowels are retained. (2 records.) |
+| 3 | **jeleṭ he** ‘it burns, it burned’, **jeletī he** ‘it burns, it burned’, **jereṭ he** ‘it burns, it burned’, **jaraṭʰ he** ‘it burns, it burned’ | Component: **jválati** + **ā́kṣēti**; [CDIAL 5306](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=292);[CDIAL 1031](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=46) | This complete finite predicate contains the jal-/jar- burn verb with its t-participle, plus an h-present copula. Both lexical members are linked; t is treated as participial morphology rather than a separate verb. (4 records.) |
+
+17 assignment rows on 7 records. Relation kinds: {'component': 17}.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-surveys-20260921/pass071-validation.json). No compiled or browser rebuild. Excluded and competing analyses are tracked in the [run review](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-surveys-20260921/REVIEW.md).

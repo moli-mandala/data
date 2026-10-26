@@ -1,0 +1,107 @@
+{
+  "status": "source claims preserved; no graph mutations",
+  "claim_count": 830,
+  "numeric_citations": 353,
+  "missing_targets": [],
+  "known_legacy_conflicts": [
+    {
+      "claim_key": "kholosi:pdf:p1:c1:u24:etymology",
+      "source_unit_key": "kholosi:pdf:p1:c1:u24",
+      "source_form": "ānen",
+      "source_gloss": "to bring",
+      "literal_claim": "Sanskrit Ā́NAYATI (11714).",
+      "provenance": "printed author dictionary",
+      "locator": {
+        "printed_page": 1,
+        "column": 1,
+        "unit": "kholosi:pdf:p1:c1:u24"
+      },
+      "qualifier_words": [],
+      "cited_target_ids": [
+        {
+          "cdial_id": "11714",
+          "exists": true,
+          "target_head": "viḍaṅga"
+        }
+      ],
+      "graph_disposition": "Attributed source claim only; no automatic Jambu graph assignment.",
+      "legacy_conflict": {
+        "entry_key": "legacy:20220913-kholosi:row:9",
+        "historical_form": "ānen",
+        "historical_phonemic": "ɔnen",
+        "historical_jambu_parameter_id": "1174",
+        "printed_target_id": "11714",
+        "status": "unresolved competing attributions; historical assignment preserved",
+        "resolution": "No winner selected; printed claim and historical editorial assignment remain distinct."
+      }
+    },
+    {
+      "claim_key": "kholosi:pdf:p8:c1:u7:etymology",
+      "source_unit_key": "kholosi:pdf:p8:c1:u7",
+      "source_form": "sāl",
+      "source_gloss": "rice",
+      "literal_claim": "probably Sanskrit ŚĀLI (12415).",
+      "provenance": "printed author dictionary",
+      "locator": {
+        "printed_page": 8,
+        "column": 1,
+        "unit": "kholosi:pdf:p8:c1:u7"
+      },
+      "qualifier_words": [
+        "probably"
+      ],
+      "cited_target_ids": [
+        {
+          "cdial_id": "12415",
+          "exists": true,
+          "target_head": "śāli"
+        }
+      ],
+      "graph_disposition": "Attributed source claim only; no automatic Jambu graph assignment.",
+      "legacy_conflict": {
+        "entry_key": "legacy:20220913-kholosi:row:147",
+        "historical_form": "sāl",
+        "historical_phonemic": "sɔl",
+        "historical_jambu_parameter_id": "4749",
+        "printed_target_id": "12415",
+        "status": "unresolved competing attributions; historical assignment preserved",
+        "resolution": "No winner selected; printed claim and historical editorial assignment remain distinct."
+      }
+    },
+    {
+      "claim_key": "kholosi:pdf:p8:c1:u19:etymology",
+      "source_unit_key": "kholosi:pdf:p8:c1:u19",
+      "source_form": "sino",
+      "source_gloss": "thin",
+      "literal_claim": "Sanskrit ŚLAKṢṆÁ (12372), cf. Sindhi sanho.",
+      "provenance": "printed author dictionary",
+      "locator": {
+        "printed_page": 8,
+        "column": 1,
+        "unit": "kholosi:pdf:p8:c1:u19"
+      },
+      "qualifier_words": [],
+      "cited_target_ids": [
+        {
+          "cdial_id": "12372",
+          "exists": true,
+          "target_head": "*śākara"
+        }
+      ],
+      "graph_disposition": "Attributed source claim only; no automatic Jambu graph assignment.",
+      "legacy_conflict": {
+        "entry_key": "legacy:20220913-kholosi:row:154",
+        "historical_form": "sīno",
+        "historical_phonemic": "sino",
+        "historical_jambu_parameter_id": "12732",
+        "printed_target_id": "12372",
+        "status": "unresolved competing attributions; historical assignment preserved",
+        "resolution": "No winner selected; printed claim and historical editorial assignment remain distinct."
+      }
+    }
+  ],
+  "target_inventory": "data/cdial/params.csv",
+  "target_inventory_sha256": "f375be2b786375e14ea94df551dffe1f31ed98cccc0f6f71cb6b15870809a8c6",
+  "claims_sha256": "8f53a1f880684e0be0651d593090d3f0710587a0aeba361b702a46a765deb89d",
+  "method": "Check cited numeric CDIAL identifiers against tracked params.csv; existence does not establish that a printed number is semantically correct."
+}

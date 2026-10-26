@@ -1,0 +1,13 @@
+# Hajong: survey etymology review, batch 115
+
+**Saved under the autonomous-work authorization of 2026-09-21.** 3 proposals; exact IDs and source attestations are in the [manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Hajong/batch-115.json).
+
+| # | Language form and meaning | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **dipʰur** ‘noon’ | Component: **dva** + **prahara**; [CDIAL 6648](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=380);[CDIAL 8900](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=499);[Platts do, do-pahar](https://www.rekhta.org/urdudictionary?keyword=.doe) | The noon word is analysed as two + watch/time-period, matching Platts do-pahar noon (dvi-prahara). Turner documents regional do/du/be two and pahar/pɔr/par watch, supporting the western bapor and eastern diphur contractions as qualified comparative members. Both components are represented; Turner’s suggestion that prahara may Sanskritize Persian pahra is retained as uncertainty about its deeper origin, not asserted as an established Sanskrit inheritance. (8 records.) |
+| 2 | **ḍźʰala** ‘spicy, hot’, **jala** ‘spicy, hot’ | Reflex of **\*jʰāla**; [CDIAL 5379](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=297) | Turner \*jhāla burning/pungent explicitly gives Assamese zāl and Bengali jhāl hot/pungent. These Hajong/Bengali forms match that eastern family; aspiration and the final vowel are preserved. Bishnupriya forms with an additional copula or other ending are not silently shortened. (10 records.) |
+| 3 | **bela** ‘sun’, **bila** ‘sun’, **bula** ‘sun’ | Reflex of **vḗlā**; [CDIAL 12115](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=702) | Qualified members of the regional velā time/daylight family: Turner gives Assamese beli time, Oriya beḷa daytime and eastern ber/beri forms, while noting a probable Dravidian background with sun/daytime meanings. The surveys themselves attest the sun sense. This is a comparative family assignment with a daylight-to-sun semantic extension; regional contact and the exact transmission path remain open, especially in Hajong/Bishnupriya. Retroflex beṛ/beḍ forms are excluded because Turner also separates a \*veḍā branch. (11 records.) |
+
+37 assignment rows on 29 records. Relation kinds: {'component': 16, 'reflex': 21}.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-surveys-20260921/pass074-validation.json). No compiled or browser rebuild. Excluded and competing analyses are tracked in the [run review](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-surveys-20260921/REVIEW.md).

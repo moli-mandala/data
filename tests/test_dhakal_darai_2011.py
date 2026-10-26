@@ -182,50 +182,69 @@ def test_transcription_preserves_source_contrasts_and_literal_originals():
         assert house_output(grapheme, output, rules, 'dhakal-darai') == output
 
 
-def test_installed_darai_rich_rows_and_actual_pipeline_conversion():
+def test_historical_chapter3_baseline_preserves_accepted_evidence():
+    import csv
+    import sys
+    from collections import Counter
+    spec=importlib.util.spec_from_file_location('dhakal_legacy_import', RAW/'import_chapter3_legacy.py')
+    module=importlib.util.module_from_spec(spec)
+    sys.path.insert(0,str(RAW))
+    try:
+        spec.loader.exec_module(module)
+        expected,audit=module.build()
+    finally:
+        sys.path.pop(0)
+    path=RAW/'legacy-before-whole-recovery.csv'
+    with path.open() as stream:
+        assert list(csv.reader(stream))==expected
+    assert len(expected)==485 and len(audit)==502
+    assert Counter(a['status'] for a in audit)=={'proposed':485,'excluded':17}
+    result=json.loads((RAW/'acceptance-results.json').read_text())
+    assert result['material_errors']==0 and len(result['review'])==20
+    assert hashlib.sha256(path.read_bytes()).hexdigest()==result['sample']['csv_sha256']
+    for relative,digest in result['input_hashes'].items():
+        target=RAW/'legacy-before-whole-recovery-profile.txt' if relative=='conversion/dhakal-darai.txt' else module.ROOT/relative
+        assert hashlib.sha256(target.read_bytes()).hexdigest()==digest
+
+
+def test_installed_whole_darai_exact_output_actual_parser_and_local_graph():
     import csv
     import io
     import sys
-    from collections import Counter
     from make_cldf import parse_file
-    spec = importlib.util.spec_from_file_location('dhakal_import', RAW / 'import_source.py')
-    module = importlib.util.module_from_spec(spec)
-    sys.path.insert(0, str(RAW))
-    try:
-        spec.loader.exec_module(module)
-        expected, audit = module.build()
-    finally:
-        sys.path.pop(0)
-    path = module.ROOT / f'data/other/forms/{module.STEM}.csv'
-    with path.open() as stream:
-        assert list(csv.reader(stream)) == expected
-    assert len(expected) == 485 and len(audit) == 502
-    assert Counter(a['status'] for a in audit) == {'proposed': 485, 'excluded': 17}
-    errors = io.StringIO()
-    parsed, stats = parse_file(str(path), errors=errors)
-    assert len(parsed) == 485 and not errors.getvalue()
-    assert stats == {'converted': 485, 'for_conversion': 485}
-    with (RAW / 'transcription-preview.csv').open() as stream:
-        preview = {r['Source_Key']: r for r in csv.DictReader(stream)}
-    original = {r[10]: r for r in expected}
-    for row in parsed:
-        assert row.form == preview[row.entry_key]['Form']
-        assert row.old_form == original[row.entry_key][2]
-        assert row.ipa == original[row.entry_key][5]
-        assert row.source.startswith('dhakal2011darai[p. ')
-        assert not row.native and not row.param and not row.notes
-    assert sum(bool(r.variant_of_key) for r in parsed) == 4
-    assert sum('uncertain' in r.tags.split() for r in parsed) == 6
-    assert sum('dialect:Darai:darai_pidrahani:Pidrahani' in r.tags.split() for r in parsed) == 6
-    completeness = json.loads((RAW / 'completeness-review.json').read_text())
-    assert Counter(r['printed_page'] for r in audit if r['output']) == Counter({
-        r['printed_page']: r['expected_lexical_occurrences'] for r in completeness['pages']})
-    result = json.loads((RAW / 'acceptance-results.json').read_text())
-    assert result['material_errors'] == 0 and len(result['review']) == 20
-    assert hashlib.sha256(path.read_bytes()).hexdigest() == result['sample']['csv_sha256']
-    assert hashlib.sha256((RAW / 'preview/audit.json').read_bytes()).hexdigest() == result['sample']['audit_sha256']
-    for relative, digest in result['input_hashes'].items():
-        assert hashlib.sha256((module.ROOT / relative).read_bytes()).hexdigest() == digest
+    spec=importlib.util.spec_from_file_location('dhakal_whole_import',RAW/'import_source.py')
+    module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+    expected,audit=module.build()
+    assert len(expected)==8373 and len(audit)==11304
+    rows={row[10]:row for row in expected}
+    parsed_all=[]
+    for route,stem in module.ROUTES.items():
+        path=module.ROOT/f'data/other/forms/{stem}.csv'
+        assert path.read_bytes()==(RAW/f'whole-proposed-{route}.csv').read_bytes()
+        errors=io.StringIO();parsed,stats=parse_file(str(path),errors=errors)
+        assert not errors.getvalue()
+        parsed_all.extend(parsed)
+        for row in parsed:
+            original=rows[row.entry_key]
+            assert row.old_form==original[2] and row.ipa==original[5]
+            assert row.source==original[7]
+            assert set(original[14].split())<=set(row.tags.split())
+            assert row.notes==original[6]
+            assert not row.native and not row.param
+            assert '\ufffd' not in row.form
+            if route=='literal-preservation':assert row.form==original[2] and not row.ipa
+    assert {r.entry_key for r in parsed_all}==rows.keys()
+    with (RAW/'legacy-before-whole-recovery.csv').open() as stream:
+        old=list(csv.reader(stream))
+    assert len(old)==485
+    for row in old:
+        assert all(rows[row[10]][i]==row[i] for i in [2,5,8,9,10,11,12,13])
+    assert sum(bool(r[11]) for r in expected)==12
+    assert sum(bool(r[13]) for r in expected)==18
+    assert all(parent in rows for row in expected for col in [11,12,13] for parent in row[col].split('|') if parent)
+    assert (RAW/'whole-installed-audit.jsonl').read_bytes()==(RAW/'whole-proposed-audit.jsonl').read_bytes()
+    result=json.loads((RAW/'root-whole-independent-review-20260927206.json').read_text())
+    assert result['material_errors']==0 and result['reviewed']==20
 
 
 def test_darai_metadata_registry_and_formatted_bibliography():
@@ -236,6 +255,8 @@ def test_darai_metadata_registry_and_formatted_bibliography():
     metadata = json.loads((RAW / 'metadata-review.json').read_text())
     with (root / 'cldf/dialects.csv').open() as stream:
         dialects = {r['ID']: r for r in csv.DictReader(stream)}
+    with (RAW/'whole-dialects-proposed.csv').open() as stream:
+        metadata['dialects'] += list(csv.DictReader(stream))
     for dialect in metadata['dialects']:
         assert dialects[dialect['ID']] == dialect
         assert not dialect['Latitude'] and not dialect['Longitude']
@@ -245,6 +266,7 @@ def test_darai_metadata_registry_and_formatted_bibliography():
     installed = parse_file(str(root / 'cldf/sources.bib')).entries
     proposed = parse_file(str(RAW / 'source.bib')).entries
     assert len(proposed) == 7
+    proposed.update(parse_file(str(RAW / 'whole-source-proposed.bib')).entries)
     for key, entry in proposed.items():
         assert installed[key] == entry
         assert pybtex.PybtexEngine().format_from_string(entry.to_string('bibtex'), 'plain', output_backend='markdown')
@@ -252,7 +274,10 @@ def test_darai_metadata_registry_and_formatted_bibliography():
 
 def test_compiled_darai_source_survival():
     import csv
-    expected = {r['key'] for r in json.loads((RAW / 'proposal.json').read_text())['candidates']}
+    expected = set()
+    for route in ['author-transcription','literal-preservation']:
+        with (RAW/f'whole-proposed-{route}.csv').open() as stream:
+            expected.update(r[10] for r in csv.reader(stream))
     with (RAW.parents[4] / 'cldf/form-source-keys.csv').open() as stream:
         found = {r['Source_Key'] for r in csv.DictReader(stream) if r['Source_Key'] in expected}
     assert found == expected, f'{len(found)}/{len(expected)} Darai source keys survived the full build'

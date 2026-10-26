@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Malasar · Dravidian surveys, 2026-09-21 · batch 012. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Malasar | Proposed etymology | Evidence |
+|---|---|---|---|
+| 56 | **karuppɨ** ‘black’ | Proposed reflex of [**DEDR 1395**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=130) | DEDR 1395 attests Tamil kaṟuppu, Malayalam kaṟuppu, Kannada/Tulu kappu blackness and Kodagu karatë black. The selected simple colour stems and past-adjectival forms fit that family; divergent or compound responses remain outside it. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 57 | **pērɨ** ‘name’ | Proposed reflex of [**DEDR 4410**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=389) | DEDR 4410 explicitly attests Tamil/Malayalam pēr, Kota pēr, Telugu pēru, Gadaba/Parji pidir, Gondi peder/porol, Tulu pudaru and Konda/Kuvi dōru name. The selected simple name nouns fit these branches; Indo-Aryan nām forms and potentially contact-mediated Kannada pēru are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (2 records.) |
+| 58 | **arisi** ‘rice’ | Proposed reflex of [**DEDR 215**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=20) | DEDR 215 compares Tamil arici husked rice, Malayalam ari, Kannada/Kodagu akki and Kota aky husked grain. The selected simple survey rice nouns fit these branches; ari-maṇi and other combined responses require separate components. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (2 records.) |
+| 59 | **vɛrakɨ** ‘firewood’, **virakɨ** ‘firewood’ | Proposed reflex of [**DEDR 5440**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=494) | DEDR5440 compares Tamil viṟaku and Malayalam viṟuku firewood. These neighbouring survey lects show the same full v/b-initial, r-medial firewood stem, with voiced, unvoiced or weakened medial stop and source-final central vowel preserved; this is a comparative placement, with local inheritance versus contact still open for review. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (2 records.) |
+| 60 | **minnal** ‘lightning’ | Proposed reflex of [**DEDR 4876**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=435) | DEDR4876 explicitly gives Tamil and Malayalam miṉṉal/minnal lightning. The selected neighbouring survey forms preserve the full minnal noun (and Muduga minna with no final lateral recorded); longer finite responses such as minnalarena are excluded rather than shortened. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (2 records.) |
+
+Proposed assignment rows: **9**. Affected records: **9**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-012.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Malasar/batch-012.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

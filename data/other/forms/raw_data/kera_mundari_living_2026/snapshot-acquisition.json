@@ -1,0 +1,586 @@
+{
+  "retrieved_utc": "2026-09-27T18:58:20.137058+00:00",
+  "responses": [
+    {
+      "url": "https://livingdictionaries.app/kera-mundari",
+      "file": "snapshot/dictionary.html",
+      "status": "retained prior exact response body",
+      "bytes": 69194,
+      "sha256": "1b5742bc1fc0e489f133c444c47c1284f2b2742e351a0ff31b51b25dd47c1143",
+      "headers": {},
+      "body_saved_utc": "2026-09-27T18:57:12.888915+00:00"
+    },
+    {
+      "url": "https://livingdictionaries.app/kera-mundari/about",
+      "file": "snapshot/about.html",
+      "status": "retained prior exact response body",
+      "bytes": 45998,
+      "sha256": "330aeea9c4fe0b79d9d8e5ab9d00edcb13484d46f4c02ad12046652f5657ec8b",
+      "headers": {},
+      "body_saved_utc": "2026-09-27T18:57:13.212884+00:00"
+    },
+    {
+      "url": "https://livingdictionaries.app/dictionaries",
+      "file": "snapshot/catalogue.html",
+      "status": "retained prior exact response body",
+      "bytes": 208159,
+      "sha256": "31655ac0270393fd37f744c7b6c17b084721506859646f11a1417dc6818e2fa1",
+      "headers": {},
+      "body_saved_utc": "2026-09-27T18:57:13.654693+00:00"
+    },
+    {
+      "url": "https://livingdictionaries.app/terms",
+      "file": "snapshot/terms.html",
+      "status": "retained prior exact response body",
+      "bytes": 57023,
+      "sha256": "9d6eaf98b9f3dd7d3c2dc2a736573ebb3b0fbda45848f509e6d2adfd607861e1",
+      "headers": {},
+      "body_saved_utc": "2026-09-27T18:57:13.811289+00:00"
+    },
+    {
+      "url": "https://snapshots.livingdictionaries.app/dictionaries/kera-mundari.db.gz",
+      "file": "snapshot/kera-mundari.db.gz",
+      "status": "retained prior exact response body",
+      "bytes": 1572864,
+      "sha256": "ea5178108325f961ae5e34484ea6cafef267862e142377e16b49c553e7b95b00",
+      "headers": {},
+      "body_saved_utc": "2026-09-27T18:57:14.245513+00:00"
+    }
+  ],
+  "authorization": "User explicitly confirmed Living Dictionaries is permitted per Sarva, reiterated 2026-09-27.",
+  "license": "No blanket Creative Commons licence inferred. Source terms and dictionary metadata preserved; reuse rests on the explicit user-confirmed permission.",
+  "scope": "Complete published dictionary snapshot and documentary metadata; media binaries not downloaded.",
+  "sqlite": {
+    "file": "snapshot/kera-mundari.db",
+    "bytes": 1572864,
+    "sha256": "ea5178108325f961ae5e34484ea6cafef267862e142377e16b49c553e7b95b00",
+    "response_encoding": "endpoint response body already SQLite despite .gz URL; retained exact received bytes and hardlinked reader path",
+    "integrity_check": "ok",
+    "tables": {
+      "audio": {
+        "count": 445,
+        "columns": [
+          "id",
+          "entry_id",
+          "sentence_id",
+          "text_id",
+          "storage_path",
+          "source",
+          "dirty",
+          "created_by_user_id",
+          "created_at",
+          "updated_by_user_id",
+          "updated_at",
+          "timings",
+          "server_seq"
+        ]
+      },
+      "audio_speakers": {
+        "count": 445,
+        "columns": [
+          "id",
+          "audio_id",
+          "speaker_id",
+          "dirty",
+          "created_by_user_id",
+          "created_at",
+          "updated_by_user_id",
+          "updated_at",
+          "server_seq"
+        ]
+      },
+      "clause_slots": {
+        "count": 0,
+        "columns": [
+          "id",
+          "sort_key",
+          "name",
+          "code",
+          "dirty",
+          "server_seq",
+          "created_by_user_id",
+          "created_at",
+          "updated_by_user_id",
+          "updated_at"
+        ]
+      },
+      "db_metadata": {
+        "count": 4,
+        "columns": [
+          "key",
+          "value"
+        ]
+      },
+      "deletes": {
+        "count": 0,
+        "columns": [
+          "table_name",
+          "id",
+          "updated_at",
+          "server_seq"
+        ]
+      },
+      "dialects": {
+        "count": 3,
+        "columns": [
+          "id",
+          "name",
+          "dirty",
+          "created_by_user_id",
+          "created_at",
+          "updated_by_user_id",
+          "updated_at",
+          "server_seq",
+          "coordinates"
+        ]
+      },
+      "entries": {
+        "count": 446,
+        "columns": [
+          "id",
+          "lexeme",
+          "phonetic",
+          "interlinearization",
+          "morphology",
+          "notes",
+          "linguistic_history",
+          "sources",
+          "scientific_names",
+          "coordinates",
+          "unsupported_fields",
+          "elicitation_id",
+          "dirty",
+          "created_by_user_id",
+          "created_at",
+          "updated_by_user_id",
+          "updated_at",
+          "server_seq",
+          "homograph",
+          "citations"
+        ]
+      },
+      "entry_dialects": {
+        "count": 28,
+        "columns": [
+          "id",
+          "entry_id",
+          "dialect_id",
+          "dirty",
+          "created_by_user_id",
+          "created_at",
+          "updated_by_user_id",
+          "updated_at",
+          "server_seq"
+        ]
+      },
+      "entry_relationships": {
+        "count": 0,
+        "columns": [
+          "id",
+          "from_entry_id",
+          "from_sense_id",
+          "to_entry_id",
+          "to_sense_id",
+          "type",
+          "custom_type_id",
+          "note",
+          "sources",
+          "dirty",
+          "created_by_user_id",
+          "created_at",
+          "updated_by_user_id",
+          "updated_at",
+          "server_seq"
+        ]
+      },
+      "entry_tags": {
+        "count": 0,
+        "columns": [
+          "id",
+          "entry_id",
+          "tag_id",
+          "dirty",
+          "created_by_user_id",
+          "created_at",
+          "updated_by_user_id",
+          "updated_at",
+          "server_seq"
+        ]
+      },
+      "featured_entries": {
+        "count": 3,
+        "columns": [
+          "id",
+          "entry_id",
+          "sort_key",
+          "dirty",
+          "created_by_user_id",
+          "created_at",
+          "updated_by_user_id",
+          "updated_at",
+          "server_seq"
+        ]
+      },
+      "glossing_abbreviations": {
+        "count": 0,
+        "columns": [
+          "id",
+          "code",
+          "name",
+          "category",
+          "dirty",
+          "server_seq",
+          "created_by_user_id",
+          "created_at",
+          "updated_by_user_id",
+          "updated_at"
+        ]
+      },
+      "grammar_sections": {
+        "count": 0,
+        "columns": [
+          "id",
+          "parent_id",
+          "sort_key",
+          "number_label",
+          "title",
+          "body",
+          "usage_conditions",
+          "slot_id",
+          "entry_id",
+          "sense_id",
+          "dirty",
+          "server_seq",
+          "created_by_user_id",
+          "created_at",
+          "updated_by_user_id",
+          "updated_at"
+        ]
+      },
+      "ignored_forms": {
+        "count": 0,
+        "columns": [
+          "id",
+          "form",
+          "dirty",
+          "server_seq",
+          "created_by_user_id",
+          "created_at",
+          "updated_by_user_id",
+          "updated_at"
+        ]
+      },
+      "migrations": {
+        "count": 9,
+        "columns": [
+          "id",
+          "name",
+          "run_on"
+        ]
+      },
+      "photos": {
+        "count": 0,
+        "columns": [
+          "id",
+          "storage_path",
+          "serving_url",
+          "source",
+          "photographer",
+          "dirty",
+          "created_by_user_id",
+          "created_at",
+          "updated_by_user_id",
+          "updated_at",
+          "server_seq"
+        ]
+      },
+      "relationship_types": {
+        "count": 0,
+        "columns": [
+          "id",
+          "name",
+          "inverse_name",
+          "symmetric",
+          "dirty",
+          "created_by_user_id",
+          "created_at",
+          "updated_by_user_id",
+          "updated_at",
+          "server_seq"
+        ]
+      },
+      "section_sentences": {
+        "count": 0,
+        "columns": [
+          "id",
+          "section_id",
+          "sentence_id",
+          "sort_key",
+          "dirty",
+          "server_seq",
+          "created_by_user_id",
+          "created_at",
+          "updated_by_user_id",
+          "updated_at"
+        ]
+      },
+      "sense_photos": {
+        "count": 0,
+        "columns": [
+          "id",
+          "sense_id",
+          "photo_id",
+          "dirty",
+          "created_by_user_id",
+          "created_at",
+          "updated_by_user_id",
+          "updated_at",
+          "server_seq"
+        ]
+      },
+      "sense_videos": {
+        "count": 0,
+        "columns": [
+          "id",
+          "sense_id",
+          "video_id",
+          "dirty",
+          "created_by_user_id",
+          "created_at",
+          "updated_by_user_id",
+          "updated_at",
+          "server_seq"
+        ]
+      },
+      "senses": {
+        "count": 446,
+        "columns": [
+          "id",
+          "entry_id",
+          "definition",
+          "glosses",
+          "parts_of_speech",
+          "semantic_domains",
+          "write_in_semantic_domains",
+          "noun_class",
+          "plural_form",
+          "variant",
+          "dirty",
+          "created_by_user_id",
+          "created_at",
+          "updated_by_user_id",
+          "updated_at",
+          "server_seq",
+          "sources"
+        ]
+      },
+      "senses_in_sentences": {
+        "count": 0,
+        "columns": [
+          "id",
+          "sense_id",
+          "sentence_id",
+          "dirty",
+          "created_by_user_id",
+          "created_at",
+          "updated_by_user_id",
+          "updated_at",
+          "server_seq"
+        ]
+      },
+      "sentence_photos": {
+        "count": 0,
+        "columns": [
+          "id",
+          "sentence_id",
+          "photo_id",
+          "dirty",
+          "created_by_user_id",
+          "created_at",
+          "updated_by_user_id",
+          "updated_at",
+          "server_seq"
+        ]
+      },
+      "sentence_videos": {
+        "count": 0,
+        "columns": [
+          "id",
+          "sentence_id",
+          "video_id",
+          "dirty",
+          "created_by_user_id",
+          "created_at",
+          "updated_by_user_id",
+          "updated_at",
+          "server_seq"
+        ]
+      },
+      "sentences": {
+        "count": 0,
+        "columns": [
+          "id",
+          "text",
+          "translation",
+          "text_id",
+          "sort_key",
+          "ends_paragraph",
+          "dirty",
+          "created_by_user_id",
+          "created_at",
+          "updated_by_user_id",
+          "updated_at",
+          "sources",
+          "tokens",
+          "server_seq",
+          "discourse_role",
+          "example_label",
+          "citations"
+        ]
+      },
+      "server_seq_counter": {
+        "count": 1,
+        "columns": [
+          "seq"
+        ]
+      },
+      "sources": {
+        "count": 0,
+        "columns": [
+          "id",
+          "slug",
+          "citation",
+          "abbreviation",
+          "author",
+          "year",
+          "url",
+          "license",
+          "type",
+          "dirty",
+          "created_by_user_id",
+          "created_at",
+          "updated_by_user_id",
+          "updated_at",
+          "server_seq",
+          "orthography"
+        ]
+      },
+      "speakers": {
+        "count": 2,
+        "columns": [
+          "id",
+          "name",
+          "decade",
+          "gender",
+          "birthplace",
+          "user_id",
+          "dirty",
+          "created_by_user_id",
+          "created_at",
+          "updated_by_user_id",
+          "updated_at",
+          "server_seq"
+        ]
+      },
+      "tags": {
+        "count": 0,
+        "columns": [
+          "id",
+          "name",
+          "private",
+          "dirty",
+          "created_by_user_id",
+          "created_at",
+          "updated_by_user_id",
+          "updated_at",
+          "server_seq",
+          "kind",
+          "code"
+        ]
+      },
+      "text_dialects": {
+        "count": 0,
+        "columns": [
+          "id",
+          "text_id",
+          "dialect_id",
+          "dirty",
+          "server_seq",
+          "created_by_user_id",
+          "created_at",
+          "updated_by_user_id",
+          "updated_at"
+        ]
+      },
+      "text_tags": {
+        "count": 0,
+        "columns": [
+          "id",
+          "text_id",
+          "tag_id",
+          "dirty",
+          "server_seq",
+          "created_by_user_id",
+          "created_at",
+          "updated_by_user_id",
+          "updated_at"
+        ]
+      },
+      "texts": {
+        "count": 0,
+        "columns": [
+          "id",
+          "title",
+          "dirty",
+          "created_by_user_id",
+          "created_at",
+          "updated_by_user_id",
+          "updated_at",
+          "sources",
+          "server_seq",
+          "citations",
+          "summary",
+          "work_id"
+        ]
+      },
+      "video_speakers": {
+        "count": 0,
+        "columns": [
+          "id",
+          "video_id",
+          "speaker_id",
+          "dirty",
+          "created_by_user_id",
+          "created_at",
+          "updated_by_user_id",
+          "updated_at",
+          "server_seq"
+        ]
+      },
+      "videos": {
+        "count": 0,
+        "columns": [
+          "id",
+          "storage_path",
+          "hosted_elsewhere",
+          "source",
+          "videographer",
+          "text_id",
+          "dirty",
+          "created_by_user_id",
+          "created_at",
+          "updated_by_user_id",
+          "updated_at",
+          "timings",
+          "server_seq",
+          "hosted_metadata"
+        ]
+      }
+    }
+  },
+  "pagination": {
+    "method": "complete public SQLite snapshot, not a paginated result endpoint",
+    "proof": "Single complete snapshot response; SQLite integrity checked; every physical table enumerated and counted. Lexical export must reconcile to all entries/senses/sentences before source-stage completion.",
+    "page_truncation_possible": false
+  }
+}

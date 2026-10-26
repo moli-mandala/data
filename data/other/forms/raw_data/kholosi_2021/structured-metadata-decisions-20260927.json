@@ -1,0 +1,222 @@
+{
+  "status": "source-grounded metadata decisions awaiting independent output review",
+  "sentence_conflicts": {
+    "28": {
+      "reason": "Free translation says will be; source interlinear says be.PST??.",
+      "uncertainty_type": "source interlinear/free-translation tense conflict"
+    },
+    "32": {
+      "reason": "Free translation says don't go; source interlinear says go.PST.",
+      "uncertainty_type": "source interlinear/free-translation tense conflict"
+    },
+    "49": {
+      "reason": "Free translation says are buying; source interlinear says buy-PST.PFV.3.PL.",
+      "uncertainty_type": "source interlinear/free-translation tense conflict"
+    },
+    "50": {
+      "reason": "Free translation says are washing; source interlinear says wash-PST.PFV.3.PL.",
+      "uncertainty_type": "source interlinear/free-translation tense conflict"
+    }
+  },
+  "lexicon_gloss_decisions": {
+    "44": {
+      "gloss": "mother",
+      "notes": "The source tentatively characterizes this as affectionate.",
+      "uncertainty_type": "source usage qualifier uncertain"
+    },
+    "47": {
+      "gloss": "child; family",
+      "notes": "The family sense is tentatively associated with the plural in the source.",
+      "uncertainty_type": "source number/sense scope uncertain"
+    },
+    "211": {
+      "gloss": "to read; to sing",
+      "notes": "The source questions the to sing sense.",
+      "uncertainty_type": "source secondary sense uncertain"
+    },
+    "214": {
+      "gloss": "to float",
+      "notes": "The source tentatively gives the literal analysis to stand on the water.",
+      "uncertainty_type": "source literal analysis uncertain"
+    },
+    "331": {
+      "gloss": "which one",
+      "add_tags": [
+        "interr"
+      ],
+      "reason": "Final question mark belongs to an interrogative definition, not an uncertainty assertion."
+    },
+    "370": {
+      "gloss": "to put",
+      "notes": "The source questions the headword and this meaning.",
+      "uncertainty_type": "source headword and gloss uncertain"
+    },
+    "380": {
+      "gloss": "each",
+      "notes": "The source questions the meaning and gives no established part of speech.",
+      "uncertainty_type": "source gloss and POS uncertain"
+    }
+  },
+  "lexicon_head_uncertainty_rows": [
+    76,
+    78,
+    252,
+    359,
+    370,
+    375,
+    377
+  ],
+  "lexicon_notes_to_etymology_rows": [
+    12,
+    16,
+    23,
+    102
+  ],
+  "lexicon_notes_with_transcription_or_lexical_uncertainty_rows": [
+    18,
+    58,
+    62,
+    83,
+    84,
+    100
+  ],
+  "other_decisions": {
+    "sentences.csv:18": "Prs. xudā hāfiz is etymological information: move exact prose to Etymology, not Notes. Greeting is interj, not automatically a sentential clause.",
+    "sentences.csv:77": "Source free translation explicitly questions robe; retain exact wording/uncertainty and do not replace the garment.",
+    "lexicon.csv:85": "The explicitly translated note ji jolo mā is a separate whole-expression witness; no inferred component glosses.",
+    "IPA 2": "Preserve original speaker/pronunciation labels literally; do not infer the identity of M. or make it a dialect.",
+    "IPA (OLD)": "Historical transcription state retained in the source audit; not automatically asserted as an independently attested current pronunciation.",
+    "sentence question marks": "Question punctuation marks interrogative function. Do not mark all questions as uncertain.",
+    "gloss-only question mark": "Unknown interlinear analysis is not itself an unknown free translation or an unreadable source form. Preserve field distinctions.",
+    "optional/slash alternatives": "Expand only explicitly printed material in the unchanged whole-response frame; preserve source notation and exact source row. Do not split the remaining sentence into inferred word lemmata."
+  },
+  "lexicon_function_decisions": {
+    "7": {
+      "gloss": "you",
+      "add_tags": [
+        "personal",
+        "second-person",
+        "sg"
+      ]
+    },
+    "8": {
+      "gloss": "this",
+      "add_tags": [
+        "third-person",
+        "sg",
+        "prox",
+        "demonstrative"
+      ]
+    },
+    "9": {
+      "gloss": "that",
+      "add_tags": [
+        "third-person",
+        "sg",
+        "dist",
+        "demonstrative"
+      ]
+    },
+    "10": {
+      "gloss": "they",
+      "add_tags": [
+        "personal",
+        "third-person",
+        "pl"
+      ]
+    },
+    "11": {
+      "gloss": "they",
+      "add_tags": [
+        "personal",
+        "third-person",
+        "pl"
+      ]
+    },
+    "12": {
+      "gloss": "I",
+      "add_tags": [
+        "personal",
+        "first-person",
+        "sg"
+      ]
+    },
+    "13": {
+      "gloss": "we",
+      "add_tags": [
+        "personal",
+        "first-person",
+        "pl"
+      ]
+    },
+    "53": {
+      "gloss": "",
+      "add_tags": [
+        "definite",
+        "acc",
+        "dat"
+      ],
+      "reason": "Only grammatical functions supplied; no invented to/of translation."
+    },
+    "57": {
+      "gloss": "at, in",
+      "add_tags": [
+        "loc"
+      ]
+    },
+    "60": {
+      "gloss": "to",
+      "add_tags": [
+        "instr"
+      ],
+      "notes": "The source also describes allative and stimulus marking."
+    },
+    "97": {
+      "gloss": "from",
+      "add_tags": [
+        "abl"
+      ],
+      "notes": "Also marks some stimuli."
+    },
+    "253": {
+      "gloss": "with",
+      "add_tags": [
+        "comitative"
+      ]
+    },
+    "304": {
+      "gloss": "what",
+      "add_tags": [
+        "interr"
+      ]
+    },
+    "367": {
+      "gloss": "that",
+      "add_tags": [
+        "complementizer"
+      ]
+    },
+    "391": {
+      "gloss": "",
+      "add_tags": [
+        "gen"
+      ],
+      "reason": "The source gloss s (genitive) is a grammatical notation, not an independently defined lexical sense."
+    },
+    "393": {
+      "gloss": "my",
+      "add_tags": [
+        "first-person",
+        "sg",
+        "poss"
+      ]
+    },
+    "398": {
+      "gloss": "you",
+      "add_tags": [
+        "second-person",
+        "pl"
+      ]
+    }
+  }
+}

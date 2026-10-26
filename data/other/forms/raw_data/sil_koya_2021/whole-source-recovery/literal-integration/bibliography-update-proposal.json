@@ -1,0 +1,28 @@
+{
+  "status": "coverage update prepared; apply with accepted whole-source installation",
+  "citation_key": "devagnanavaram-et-al2021koya",
+  "fields": {
+    "included": "Whole-report lexical scope reconciled across all 124 PDF pages: Appendix E, printed pages 75--118, contributes 1,437 manually transcribed lexical variants from 1,401 responsive cells; Appendix B.1--B.7, printed pages 17--31, contributes 205 narrative/question units and five explicitly named terms; section 3.1.4, printed pages 6--7, contributes 18 comparative attestations. Total 1,665 source rows across seven Koya, Gondi and Madia lects. Sixty-nine missing wordlist target slots, 420 Telugu/Oriya wordlist controls, Telugu test narratives, English questionnaires, numeric scores, a festival name without lexical definition, and documentary matter remain accounted for outside target output",
+    "provenance": "Official SIL publisher PDF, SHA-256 a6541e0d2397849ce7c36961b3849f3b2c1f1c267036cfa1a3f6025796e14e7d, retained locally and not redistributed. Source-local wordlist ledger, native-layout narrative extractor, comparative extractor, all-page census, raw-versus-output evidence and guarded installation records are under data/other/forms/raw_data/sil_koya_2021. Source outputs: data/other/forms/20260828-sil-koya.csv, data/other/forms/20260927-sil-koya-narrative.csv and data/other/forms/20260927-sil-koya-comparative.csv. Complete wordlist rereading and source-key reconciliation evidence: data/other/forms/raw_data/sil_koya_2021/whole-source-recovery/literal-integration; one historical erroneous alternative key is proposed as an alias of the same source attestation",
+    "ocr": "Yes, comparison scaffolding for historical wordlists only; wordlist readings manually reviewed against images. Recovered narratives and comparative examples use native PDF text, checked against original pages",
+    "note": "Survey fieldwork 1985--1986. Seven lects retain canonical Gondi and their registered locality tags. Narrative spelling is preserved without invented phonemic interpretation; section3.1.4 G maps to voiced velar fricative following its explicit definition. Wordlists preserve literal single-dot versus colon length, raised vowels and consonant marks in a separate source-notation profile; Phonemic remains blank. Unresolved handwritten glyphs and question-shaped signs retain explicit interpretation uncertainty. Source free translations remain paired at printed segment boundaries, without inferred word alignment. Expected comprehension answers are audit evidence rather than lexical gloss content. Explicitly named but undefined terms retain blank glosses and context. No cognate edges inferred from sound comparisons. Wordlist uncertainty remains in Notes, audit and tags; no new coordinates inferred"
+  },
+  "unchanged_fields": [
+    "author",
+    "title",
+    "institution",
+    "series",
+    "number",
+    "year",
+    "pages",
+    "url",
+    "etymology_provenance",
+    "jambu_editor",
+    "license"
+  ],
+  "required_before_apply": [
+    "independent frozen-output acceptance",
+    "registered dialect/reference validation",
+    "guarded source-stage installation"
+  ]
+}

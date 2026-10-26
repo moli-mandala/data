@@ -1,0 +1,25 @@
+{
+  "status": "Whole-source staging; independent audit and parser validation pending",
+  "files": {
+    "whole-proposed-literal-preservation.csv": {
+      "rows": 12,
+      "sha256": "4645f38115177714489d922e4c82544a91598348964029bd059c7061619fe6da"
+    },
+    "whole-proposed-author-transcription.csv": {
+      "rows": 8361,
+      "sha256": "4c0151607f67b0c181b445899cd1dc7a5d701ea15a8763143f37c4d47787d58a"
+    },
+    "whole-proposed-audit.jsonl": {
+      "rows": 11304,
+      "sha256": "cf77517556fed68f5961e03a29b4310ce744d0fa22af065172da59b48017bb4d"
+    }
+  },
+  "dispositions": {
+    "emit": 8373,
+    "audit-only": 500,
+    "reuse": 2431
+  },
+  "legacy_keys_retained": 485,
+  "canonical_changed": false,
+  "policy": "Every physical/editorial unit retained in audit, including occurrence citation and pre-reuse row; exact-analysis reuse only, with eighteen reviewed Chapter 3 physical alignments."
+}

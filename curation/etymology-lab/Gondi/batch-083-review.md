@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Gondi · Devagnanavaram et al. 2021 Gondi Koya residual records, 2026-09-25 · batch 083. Pending user review; autonomous research continues.
+
+| # | Gondi | Proposed etymology | Evidence |
+|---|---|---|---|
+| 41 | **u̯atˑta(du)** ‘dry’ | Proposed reflex of [**DEDR 5320**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=481) | DEDR 5320 full article (p. 481): Go. (Tr.) wattānā to be dry, wither (of a tree); (W. Ph.) vattānā to dry up; caus. (Ph.) vacahtānā , (W.) wahcahtānā ; (A. Y. Ch. G. Mu.) vatt- to dry up; caus. (Mu.) vatth-/vattih- ; (Ma. S. Ko.) vat- , (M.) vatānā to dry up ( Voc. 3165); (Ko The article gives Gondi vatt- “dry”; source u̯atˑta(du) retains that stem. (1 record.) |
+| 42 | **rndu** ‘two’ | Proposed reflex of [**DEDR 474**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=46) | DEDR 474 full article (p. 46): Go. (Tr. and most dialects) ranḍ , (S.) ranḍu , (Ma. Ko.) renḍ two ( non-masc. ); (Tr. Ph.) rahk rahk two each; (W. Ch.) ranṭe both, pair; (Tr.) rancē two or so ( Voc. 3013); (Mu. Ma.) irvur , (Ko.) irvuṛ , (Tr.) iruṛ , (M.) irū(r) , (SR.) ive Source rndu “two” continues the Gondi family named in the article; regional transcription or inflection is retained. (1 record.) |
+| 43 | **nalui** ‘four’ | Proposed reflex of [**DEDR 3655**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=323) | DEDR 3655 full article (p. 323): Go. (Tr.) nālung four; nālk four each; (Y.) nālvir , (G. Mu. Ma.) nālvur , (S.) nālgur , (Mand.) lālur (jhan) four (men); (Y. Mu. Ma. S.) nāluŋ , (SR.) nālung , (W. L.) nālūng , (Pat.) nalung , (Mand.) lālũ four (non-masc.) ( Voc. 1972). Konḍ Source nalui “four” continues the Gondi family named in the article; regional transcription or inflection is retained. (1 record.) |
+| 44 | **arun** ‘six’ | Proposed reflex of [**DEDR 2485**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=217) | DEDR 2485 full article (p. 217): Go. (Tr.) sāṟung six; sārk six each; (W.) sārūṅg , (Pat.) harung, (M.) ārū, hārūṃ , (L.) hārūṅg six; (Y.) sārvir , (G.) sārvur , (Mu.) hārvur, hāruṛ , (Ma.) ār̥vur six (masc.) (Voc. 3372); sarne (W.) fourth day after tomorrow, (Ph.) sixth day Source arun “six” continues the Gondi family named in the article; regional transcription or inflection is retained. (1 record.) |
+| 45 | **edun** ‘seven’ | Proposed reflex of [**DEDR 910**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=87) | DEDR 910 full article (p. 87): Go. (Y. Ch. Ma.) ēṛuŋ, (Tr. W.) yēṛung , (SR.) yeḍung , (S.) ēṛū̃ seven (usually non-masc. ); (Y.) ēṛvir , (Mand.) ērur , (S.) ēṛur , (Ma.) ēṛvur seven (masc.) (Voc. 396); (Tr.) yēṛk seven each. Konḍa ēṛu seven. Kui (Letchmajee) odgi seven; o Source edun “seven” continues the Gondi family named in the article; regional transcription or inflection is retained. (1 record.) |
+
+Proposed assignment rows: **5**. Affected records: **5**. Relation kinds: **reflex**. Multi-part responses retain their source order.
+
+Exact persistent IDs and complete source records: [batch-083.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Gondi/batch-083.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../gondi-koya-devagnanavaram-20260925/research-holds.json). No new lexical material or donor nodes are introduced.

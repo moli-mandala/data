@@ -1,0 +1,46 @@
+{
+  "status": "Canonical source-stage checks pass; full compiled/browser gates deferred",
+  "checks": {
+    "NFC": {
+      "rows": 135,
+      "all15fields_exact": true,
+      "initial_dedupe_keys": 135,
+      "zero_conversion": true
+    },
+    "NFD": {
+      "rows": 135,
+      "all15fields_exact": true,
+      "initial_dedupe_keys": 135,
+      "zero_conversion": true
+    }
+  },
+  "rows": 135,
+  "audit_groups": 65,
+  "scoped_witness_records": 164,
+  "commentary_reuses": 6,
+  "variants": 11,
+  "source_reference_flags": 2,
+  "canonical_sha256": {
+    "csv": "242e05bd375e4b6962bf30629046ca498eb247f5d04f3f4c1392968d7e2e1224",
+    "yaml": "99155b48f4de487dca4731f9a189e9589b756cd659b8308e32071385e960f68e",
+    "audit": "5098c19e459bd4ade5100a79169d564288a2af1e33a0d8b69b13dfe38a5a0105"
+  },
+  "actual_canonical_source_meta": true,
+  "parser_monkeypatch": false,
+  "repeat_install": "no-op; current own assets and shared membership verified",
+  "prior_bibliography_entries": 630,
+  "all_prior_bibliography_semantics_unchanged": true,
+  "new_references_rendered": {
+    "nair2013mullukurumba": "Ravi Sankar S. Nair. Tribal Languages of Kerala. Language in India, 13(7):55\u201358, July 2013. Native-PDF text and original visual reading; no OCR. Existing Mullu Kurumba identity is retained, with no invented elicitation site or coordinates. Reported Malayalam-dialect and independent-language positions remain attributed source claims. Shared suffix comparisons do not imply a second physical printing; morphological arrows are retained as analyses rather than automatically converted into ancestry or variant links. The chapter prints no numerals. URL: https://languageinindia.com/july2013/ravisankarkeralatriballanguages.html.",
+    "robertsathyajoseph1982mullukurumba": "D. Robert Sathya Joseph. A Descriptive Study of Mullu Kurumba. Centre of Advanced Study in Linguistics, Annamalai University, Annamalai Nagar, 1982. Reported by Nair 2013, pp. 55 and 58, with author printed as Robert Sathya Joseph, D. Original not independently collated. Nair describes a study of Nilgiris speech but does not state a thesis type or exact example elicitation location; none is supplied here."
+  },
+  "durable_identity_sha256": "4977c4e205f66233366ee1c00a9c938c9c78e3c087b63e02a94832647525c28a",
+  "identity_unchanged_during_check": true,
+  "initial_identity_check": false,
+  "deferred": [
+    "full compiled build",
+    "full suite",
+    "compiled identity/graph/reference checks",
+    "browser QA"
+  ]
+}

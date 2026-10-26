@@ -1,0 +1,902 @@
+{
+  "status": "passed",
+  "reviewer": "independent agent norton_finish",
+  "scope": "Every cell in p95-first-reading.tsv and p96-first-reading.tsv,93units including every printed alternative; original Bailey1920 PDFpages121/122 one-based.",
+  "units": 93,
+  "forms": 98,
+  "material_errors": 0,
+  "corrections": [],
+  "input_hashes": {
+    "p95-first-reading.tsv": "a8ff3a5f74d46d1e1a2d6c038ac88889192d02bd7f5a76871cbf97ceae1aa4c5",
+    "p96-first-reading.tsv": "1d9d7b691fb35ec214a0238a666ddb934c3fcae34eb6e70ef81e50371a1793ea"
+  },
+  "original": {
+    "path": "tmp/pdfs/bailey1920/bailey1920.pdf",
+    "sha256": "7a1577a2d2a24eca8b95e9b1ed700ef01f716d1069e4468f36a673611d093b39"
+  },
+  "method": "Viewed both complete original page images plus all6x crops p95-top,p95-numerals,p95-bottom,p96-place,p96-other; reopened originalPDF121 at12x Rect(28,84,92,108) to independently confirm dot over n in căṅai. Preposition cells also checked in full originalpage122.",
+  "edges": [
+    {
+      "case": "comparison second alternative",
+      "result": "Printed sārĕā̃ thī căṅai lacks initial ē; current transcription correctly avoids supplying it."
+    },
+    {
+      "case": "unused counterexample",
+      "form": "săwā",
+      "result": "Printed explicitly is not used; retain documentary negative attestation only, with no inferred quarter/one-and-quarter lexical gloss. Adjacent pā explicitly means quarter."
+    },
+    {
+      "case": "length and nasal",
+      "result": "Stacked macron+nasal in numerals11–19 and both vowels kī̃ā̃ confirmed; short/breve contrasts retained."
+    },
+    {
+      "case": "place-limit variants",
+      "result": "Left column tānū̃ plainn/longā contrasts with right tăṇū̃ breveă/dottedṇ. Do not harmonize."
+    },
+    {
+      "case": "underline",
+      "result": "hămēs̲h̲a retains printed underline beneath sh; not an inferred retroflex or deleted typography."
+    },
+    {
+      "case": "quickly POS",
+      "result": "Source explicitly says adj.; current adj tag correct despite English adverb gloss."
+    },
+    {
+      "case": "source governance",
+      "result": "All g genitive-governance labels retained in source_analysis; labels do not inflect the preposition itself."
+    },
+    {
+      "case": "currency",
+      "result": "Literal historical Rs.3–4–0/R.1–4–0 values match; no monetary reinterpretation."
+    },
+    {
+      "case": "scope",
+      "result": "End-of-list etc. and source accent-on-second note retained; no invented continuation."
+    }
+  ],
+  "coverage": [
+    {
+      "key": "p95:comparison:prose:1",
+      "forms": [
+        "thī",
+        "kōlo"
+      ],
+      "gloss": "than",
+      "result": "literal_and_scope_match",
+      "source_analysis": "Source explicitly identifies these as comparison markers."
+    },
+    {
+      "key": "p95:comparison:prose:2",
+      "forms": [
+        "ē căṅai"
+      ],
+      "gloss": "this is good",
+      "result": "literal_and_scope_match",
+      "source_analysis": ""
+    },
+    {
+      "key": "p95:comparison:prose:3",
+      "forms": [
+        "ē ĕs thī căṅai"
+      ],
+      "gloss": "this is better than this",
+      "result": "literal_and_scope_match",
+      "source_analysis": ""
+    },
+    {
+      "key": "p95:comparison:prose:4",
+      "forms": [
+        "ē sārĕā̃ kōlo căṅai",
+        "sārĕā̃ thī căṅai"
+      ],
+      "gloss": "this is better than all, this is best",
+      "result": "literal_and_scope_match",
+      "source_analysis": "Second printed alternative lacks initial ē; no initial word supplied editorially."
+    },
+    {
+      "key": "p95:numerals:left:1",
+      "forms": [
+        "hĭkk"
+      ],
+      "gloss": "one",
+      "result": "literal_and_scope_match",
+      "source_analysis": ""
+    },
+    {
+      "key": "p95:numerals:left:2",
+      "forms": [
+        "dō"
+      ],
+      "gloss": "two",
+      "result": "literal_and_scope_match",
+      "source_analysis": ""
+    },
+    {
+      "key": "p95:numerals:left:3",
+      "forms": [
+        "trē"
+      ],
+      "gloss": "three",
+      "result": "literal_and_scope_match",
+      "source_analysis": ""
+    },
+    {
+      "key": "p95:numerals:left:4",
+      "forms": [
+        "cār"
+      ],
+      "gloss": "four",
+      "result": "literal_and_scope_match",
+      "source_analysis": ""
+    },
+    {
+      "key": "p95:numerals:left:5",
+      "forms": [
+        "pănj"
+      ],
+      "gloss": "five",
+      "result": "literal_and_scope_match",
+      "source_analysis": ""
+    },
+    {
+      "key": "p95:numerals:left:6",
+      "forms": [
+        "chē"
+      ],
+      "gloss": "six",
+      "result": "literal_and_scope_match",
+      "source_analysis": ""
+    },
+    {
+      "key": "p95:numerals:left:7",
+      "forms": [
+        "sătt"
+      ],
+      "gloss": "seven",
+      "result": "literal_and_scope_match",
+      "source_analysis": ""
+    },
+    {
+      "key": "p95:numerals:left:8",
+      "forms": [
+        "ăṭṭh"
+      ],
+      "gloss": "eight",
+      "result": "literal_and_scope_match",
+      "source_analysis": ""
+    },
+    {
+      "key": "p95:numerals:left:9",
+      "forms": [
+        "nō̃"
+      ],
+      "gloss": "nine",
+      "result": "literal_and_scope_match",
+      "source_analysis": ""
+    },
+    {
+      "key": "p95:numerals:left:10",
+      "forms": [
+        "dăs"
+      ],
+      "gloss": "ten",
+      "result": "literal_and_scope_match",
+      "source_analysis": ""
+    },
+    {
+      "key": "p95:numerals:right:11",
+      "forms": [
+        "yāhrā̃"
+      ],
+      "gloss": "eleven",
+      "result": "literal_and_scope_match",
+      "source_analysis": ""
+    },
+    {
+      "key": "p95:numerals:right:12",
+      "forms": [
+        "bāhrā̃"
+      ],
+      "gloss": "twelve",
+      "result": "literal_and_scope_match",
+      "source_analysis": ""
+    },
+    {
+      "key": "p95:numerals:right:13",
+      "forms": [
+        "tēhrā̃"
+      ],
+      "gloss": "thirteen",
+      "result": "literal_and_scope_match",
+      "source_analysis": ""
+    },
+    {
+      "key": "p95:numerals:right:14",
+      "forms": [
+        "cōhdā̃"
+      ],
+      "gloss": "fourteen",
+      "result": "literal_and_scope_match",
+      "source_analysis": ""
+    },
+    {
+      "key": "p95:numerals:right:15",
+      "forms": [
+        "păndhrā̃"
+      ],
+      "gloss": "fifteen",
+      "result": "literal_and_scope_match",
+      "source_analysis": ""
+    },
+    {
+      "key": "p95:numerals:right:16",
+      "forms": [
+        "sōhlā̃"
+      ],
+      "gloss": "sixteen",
+      "result": "literal_and_scope_match",
+      "source_analysis": ""
+    },
+    {
+      "key": "p95:numerals:right:17",
+      "forms": [
+        "sătāhrā̃"
+      ],
+      "gloss": "seventeen",
+      "result": "literal_and_scope_match",
+      "source_analysis": ""
+    },
+    {
+      "key": "p95:numerals:right:18",
+      "forms": [
+        "ăṭhāhrā̃"
+      ],
+      "gloss": "eighteen",
+      "result": "literal_and_scope_match",
+      "source_analysis": ""
+    },
+    {
+      "key": "p95:numerals:right:19",
+      "forms": [
+        "ŭnnhī̃"
+      ],
+      "gloss": "nineteen",
+      "result": "literal_and_scope_match",
+      "source_analysis": ""
+    },
+    {
+      "key": "p95:numerals:right:20",
+      "forms": [
+        "bīh"
+      ],
+      "gloss": "twenty",
+      "result": "literal_and_scope_match",
+      "source_analysis": ""
+    },
+    {
+      "key": "p95:halves:left:1",
+      "forms": [
+        "ḍēḍh"
+      ],
+      "gloss": "one and a half",
+      "result": "literal_and_scope_match",
+      "source_analysis": ""
+    },
+    {
+      "key": "p95:halves:left:2",
+      "forms": [
+        "ḍhāī"
+      ],
+      "gloss": "two and a half",
+      "result": "literal_and_scope_match",
+      "source_analysis": ""
+    },
+    {
+      "key": "p95:halves:right:1",
+      "forms": [
+        "sāḍhe trai"
+      ],
+      "gloss": "three and a half",
+      "result": "literal_and_scope_match",
+      "source_analysis": ""
+    },
+    {
+      "key": "p95:halves:right:2",
+      "forms": [
+        "sāḍhe cār"
+      ],
+      "gloss": "four and a half",
+      "result": "literal_and_scope_match",
+      "source_analysis": "Source ends with etc.; no unprinted continuation generated."
+    },
+    {
+      "key": "p95:fractions:prose:2",
+      "forms": [
+        "pā"
+      ],
+      "gloss": "quarter",
+      "result": "literal_and_scope_match",
+      "source_analysis": "Source says this is common; preceding explicitly unused form remains a control."
+    },
+    {
+      "key": "p95:currency:prose:1",
+      "forms": [
+        "trai rŭpŭe hĭkk pā"
+      ],
+      "gloss": "Rs. 3–4–0",
+      "result": "literal_and_scope_match",
+      "source_analysis": "Source currency notation retained; no conversion to a modern currency value."
+    },
+    {
+      "key": "p95:currency:prose:2",
+      "forms": [
+        "pănj pā"
+      ],
+      "gloss": "R. 1–4–0",
+      "result": "literal_and_scope_match",
+      "source_analysis": "Source currency notation retained; no conversion to a modern currency value."
+    },
+    {
+      "key": "p95:frequency:prose:1",
+      "forms": [
+        "hĭkk wārī"
+      ],
+      "gloss": "once",
+      "result": "literal_and_scope_match",
+      "source_analysis": ""
+    },
+    {
+      "key": "p95:frequency:prose:2",
+      "forms": [
+        "dō wārī"
+      ],
+      "gloss": "twice",
+      "result": "literal_and_scope_match",
+      "source_analysis": ""
+    },
+    {
+      "key": "p95:frequency:prose:3",
+      "forms": [
+        "dōṇe"
+      ],
+      "gloss": "both",
+      "result": "literal_and_scope_match",
+      "source_analysis": ""
+    },
+    {
+      "key": "p95:time:left:1",
+      "forms": [
+        "ĭs wele",
+        "hŭṇ"
+      ],
+      "gloss": "now",
+      "result": "literal_and_scope_match",
+      "source_analysis": "Two printed answers retain one shared gloss; no variant edge inferred."
+    },
+    {
+      "key": "p95:time:left:2",
+      "forms": [
+        "ŭs wele"
+      ],
+      "gloss": "then",
+      "result": "literal_and_scope_match",
+      "source_analysis": ""
+    },
+    {
+      "key": "p95:time:left:3",
+      "forms": [
+        "kădū̃"
+      ],
+      "gloss": "when?",
+      "result": "literal_and_scope_match",
+      "source_analysis": ""
+    },
+    {
+      "key": "p95:time:left:4",
+      "forms": [
+        "jī-kăde"
+      ],
+      "gloss": "whenever",
+      "result": "literal_and_scope_match",
+      "source_analysis": "Meaningful printed hyphen retained."
+    },
+    {
+      "key": "p95:time:left:5",
+      "forms": [
+        "jĕs wele"
+      ],
+      "gloss": "when",
+      "result": "literal_and_scope_match",
+      "source_analysis": "Source explicitly marks (rel.)."
+    },
+    {
+      "key": "p95:time:left:6",
+      "forms": [
+        "jăzrā"
+      ],
+      "gloss": "in the morning",
+      "result": "literal_and_scope_match",
+      "source_analysis": ""
+    },
+    {
+      "key": "p95:time:left:7",
+      "forms": [
+        "rātī̃"
+      ],
+      "gloss": "at night",
+      "result": "literal_and_scope_match",
+      "source_analysis": ""
+    },
+    {
+      "key": "p95:time:left:8",
+      "forms": [
+        "pĭrū dā bărs"
+      ],
+      "gloss": "last year",
+      "result": "literal_and_scope_match",
+      "source_analysis": ""
+    },
+    {
+      "key": "p95:time:left:9",
+      "forms": [
+        "jŭldā bărs"
+      ],
+      "gloss": "the present year",
+      "result": "literal_and_scope_match",
+      "source_analysis": ""
+    },
+    {
+      "key": "p95:time:left:10",
+      "forms": [
+        "dūā̃ ghăṛīā̃ tāṇū̃"
+      ],
+      "gloss": "up to two hours, as long as two hours",
+      "result": "literal_and_scope_match",
+      "source_analysis": ""
+    },
+    {
+      "key": "p95:time:right:1",
+      "forms": [
+        "ăj"
+      ],
+      "gloss": "to-day",
+      "result": "literal_and_scope_match",
+      "source_analysis": ""
+    },
+    {
+      "key": "p95:time:right:2",
+      "forms": [
+        "săbāh"
+      ],
+      "gloss": "to-morrow",
+      "result": "literal_and_scope_match",
+      "source_analysis": "Source says accent on second syllable."
+    },
+    {
+      "key": "p95:time:right:3",
+      "forms": [
+        "ătrū̃"
+      ],
+      "gloss": "day after to-morrow",
+      "result": "literal_and_scope_match",
+      "source_analysis": ""
+    },
+    {
+      "key": "p95:time:right:4",
+      "forms": [
+        "cauthe",
+        "cōthe"
+      ],
+      "gloss": "on fourth day",
+      "result": "literal_and_scope_match",
+      "source_analysis": ""
+    },
+    {
+      "key": "p95:time:right:5",
+      "forms": [
+        "kăll"
+      ],
+      "gloss": "yesterday",
+      "result": "literal_and_scope_match",
+      "source_analysis": ""
+    },
+    {
+      "key": "p95:time:right:6",
+      "forms": [
+        "ăjā̃"
+      ],
+      "gloss": "yet",
+      "result": "literal_and_scope_match",
+      "source_analysis": "Source restricts sense to yet as in not yet."
+    },
+    {
+      "key": "p95:time:right:7",
+      "forms": [
+        "ēndā bărs"
+      ],
+      "gloss": "the coming year",
+      "result": "literal_and_scope_match",
+      "source_analysis": ""
+    },
+    {
+      "key": "p95:time:right:8",
+      "forms": [
+        "ăje tāṇū̃"
+      ],
+      "gloss": "yet, up to now",
+      "result": "literal_and_scope_match",
+      "source_analysis": ""
+    },
+    {
+      "key": "p96:place:left:1",
+      "forms": [
+        "ēhthe"
+      ],
+      "gloss": "here",
+      "result": "literal_and_scope_match",
+      "source_analysis": ""
+    },
+    {
+      "key": "p96:place:left:2",
+      "forms": [
+        "ōhthe"
+      ],
+      "gloss": "there",
+      "result": "literal_and_scope_match",
+      "source_analysis": ""
+    },
+    {
+      "key": "p96:place:left:3",
+      "forms": [
+        "kŭhthe"
+      ],
+      "gloss": "where?",
+      "result": "literal_and_scope_match",
+      "source_analysis": ""
+    },
+    {
+      "key": "p96:place:left:4",
+      "forms": [
+        "kŭr"
+      ],
+      "gloss": "whither?",
+      "result": "literal_and_scope_match",
+      "source_analysis": ""
+    },
+    {
+      "key": "p96:place:left:5",
+      "forms": [
+        "ōhthe tānū̃"
+      ],
+      "gloss": "up to there",
+      "result": "literal_and_scope_match",
+      "source_analysis": "Printed first vowel of tānū̃ has macron and n lacks underdot here; other expressions in the right column differ."
+    },
+    {
+      "key": "p96:place:left:6",
+      "forms": [
+        "ŭtā̃"
+      ],
+      "gloss": "upwards",
+      "result": "literal_and_scope_match",
+      "source_analysis": ""
+    },
+    {
+      "key": "p96:place:left:7",
+      "forms": [
+        "ŭrār"
+      ],
+      "gloss": "on this side",
+      "result": "literal_and_scope_match",
+      "source_analysis": ""
+    },
+    {
+      "key": "p96:place:left:8",
+      "forms": [
+        "bhī̃"
+      ],
+      "gloss": "again",
+      "result": "literal_and_scope_match",
+      "source_analysis": "Printed under Place; gloss does not assert spatial meaning."
+    },
+    {
+      "key": "p96:place:left:9",
+      "forms": [
+        "fĭr"
+      ],
+      "gloss": "again",
+      "result": "literal_and_scope_match",
+      "source_analysis": "Printed under Place; gloss does not assert spatial meaning."
+    },
+    {
+      "key": "p96:place:left:10",
+      "forms": [
+        "bĭṛe"
+      ],
+      "gloss": "outside",
+      "result": "literal_and_scope_match",
+      "source_analysis": ""
+    },
+    {
+      "key": "p96:place:left:11",
+      "forms": [
+        "nēṛe"
+      ],
+      "gloss": "near",
+      "result": "literal_and_scope_match",
+      "source_analysis": ""
+    },
+    {
+      "key": "p96:place:right:1",
+      "forms": [
+        "ēhtho"
+      ],
+      "gloss": "hence",
+      "result": "literal_and_scope_match",
+      "source_analysis": ""
+    },
+    {
+      "key": "p96:place:right:2",
+      "forms": [
+        "ōhtho"
+      ],
+      "gloss": "thence",
+      "result": "literal_and_scope_match",
+      "source_analysis": ""
+    },
+    {
+      "key": "p96:place:right:3",
+      "forms": [
+        "kŭhtho"
+      ],
+      "gloss": "whence?",
+      "result": "literal_and_scope_match",
+      "source_analysis": ""
+    },
+    {
+      "key": "p96:place:right:4",
+      "forms": [
+        "kŭhthe tăṇū̃"
+      ],
+      "gloss": "up to where?",
+      "result": "literal_and_scope_match",
+      "source_analysis": "Printed tăṇū̃ differs from left-column tānū̃; preserved literally."
+    },
+    {
+      "key": "p96:place:right:5",
+      "forms": [
+        "ēhthe tăṇū̃"
+      ],
+      "gloss": "up to here",
+      "result": "literal_and_scope_match",
+      "source_analysis": "Printed tăṇū̃ differs from left-column tānū̃; preserved literally."
+    },
+    {
+      "key": "p96:place:right:6",
+      "forms": [
+        "tŭlā̃"
+      ],
+      "gloss": "downwards",
+      "result": "literal_and_scope_match",
+      "source_analysis": ""
+    },
+    {
+      "key": "p96:place:right:7",
+      "forms": [
+        "pār"
+      ],
+      "gloss": "on the far side",
+      "result": "literal_and_scope_match",
+      "source_analysis": ""
+    },
+    {
+      "key": "p96:place:right:8",
+      "forms": [
+        "ăndăr"
+      ],
+      "gloss": "inside",
+      "result": "literal_and_scope_match",
+      "source_analysis": ""
+    },
+    {
+      "key": "p96:place:right:9",
+      "forms": [
+        "dūr"
+      ],
+      "gloss": "far",
+      "result": "literal_and_scope_match",
+      "source_analysis": ""
+    },
+    {
+      "key": "p96:place:right:10",
+      "forms": [
+        "hămēs̲h̲a"
+      ],
+      "gloss": "always",
+      "result": "literal_and_scope_match",
+      "source_analysis": "Printed under Place; gloss does not assert spatial meaning."
+    },
+    {
+      "key": "p96:others:left:1",
+      "forms": [
+        "bailā"
+      ],
+      "gloss": "quickly",
+      "result": "literal_and_scope_match",
+      "source_analysis": "Source explicitly prints (adj.) despite the adverbial English gloss and section heading."
+    },
+    {
+      "key": "p96:others:left:2",
+      "forms": [
+        "kī̃ā̃"
+      ],
+      "gloss": "why?",
+      "result": "literal_and_scope_match",
+      "source_analysis": ""
+    },
+    {
+      "key": "p96:others:left:3",
+      "forms": [
+        "ĭs tŭre"
+      ],
+      "gloss": "in this way",
+      "result": "literal_and_scope_match",
+      "source_analysis": ""
+    },
+    {
+      "key": "p96:others:left:4",
+      "forms": [
+        "ŭs tŭre"
+      ],
+      "gloss": "in that way",
+      "result": "literal_and_scope_match",
+      "source_analysis": ""
+    },
+    {
+      "key": "p96:others:right:1",
+      "forms": [
+        "nī̃h",
+        "na"
+      ],
+      "gloss": "not, no",
+      "result": "literal_and_scope_match",
+      "source_analysis": "Two printed alternatives; no lexical variant relationship inferred."
+    },
+    {
+      "key": "p96:others:right:2",
+      "forms": [
+        "hōlĕā̃"
+      ],
+      "gloss": "slowly",
+      "result": "literal_and_scope_match",
+      "source_analysis": ""
+    },
+    {
+      "key": "p96:others:right:3",
+      "forms": [
+        "kŭs tăre"
+      ],
+      "gloss": "in what way?",
+      "result": "literal_and_scope_match",
+      "source_analysis": "Source prints tăre here, contrasting with tŭre in adjoining expressions."
+    },
+    {
+      "key": "p96:others:right:4",
+      "forms": [
+        "jĕs tŭre"
+      ],
+      "gloss": "in which way",
+      "result": "literal_and_scope_match",
+      "source_analysis": "Source explicitly marks (rel.)."
+    },
+    {
+      "key": "p96:prepositions:left:1",
+      "forms": [
+        "kōl"
+      ],
+      "gloss": "near, beside",
+      "result": "literal_and_scope_match",
+      "source_analysis": "Source marks (g): governs genitive."
+    },
+    {
+      "key": "p96:prepositions:left:2",
+      "forms": [
+        "kōlo"
+      ],
+      "gloss": "from, from beside, than",
+      "result": "literal_and_scope_match",
+      "source_analysis": "Source marks (g): governs genitive."
+    },
+    {
+      "key": "p96:prepositions:left:3",
+      "forms": [
+        "nāl"
+      ],
+      "gloss": "along with, with",
+      "result": "literal_and_scope_match",
+      "source_analysis": "Source qualifies with as of instrument; marks (g): governs genitive."
+    },
+    {
+      "key": "p96:prepositions:left:4",
+      "forms": [
+        "thī"
+      ],
+      "gloss": "from, than",
+      "result": "literal_and_scope_match",
+      "source_analysis": ""
+    },
+    {
+      "key": "p96:prepositions:left:5",
+      "forms": [
+        "ŭtte"
+      ],
+      "gloss": "upon",
+      "result": "literal_and_scope_match",
+      "source_analysis": "Source marks (g): governs genitive."
+    },
+    {
+      "key": "p96:prepositions:left:6",
+      "forms": [
+        "ŭrār"
+      ],
+      "gloss": "on this side of",
+      "result": "literal_and_scope_match",
+      "source_analysis": "Source marks (g): governs genitive."
+    },
+    {
+      "key": "p96:prepositions:right:1",
+      "forms": [
+        "wāse"
+      ],
+      "gloss": "for sake of",
+      "result": "literal_and_scope_match",
+      "source_analysis": "Source marks (g): governs genitive."
+    },
+    {
+      "key": "p96:prepositions:right:2",
+      "forms": [
+        "ko"
+      ],
+      "gloss": "to",
+      "result": "literal_and_scope_match",
+      "source_analysis": ""
+    },
+    {
+      "key": "p96:prepositions:right:3",
+      "forms": [
+        "dā"
+      ],
+      "gloss": "of",
+      "result": "literal_and_scope_match",
+      "source_analysis": ""
+    },
+    {
+      "key": "p96:prepositions:right:4",
+      "forms": [
+        "bĭcc"
+      ],
+      "gloss": "in, among",
+      "result": "literal_and_scope_match",
+      "source_analysis": "Source marks (g): governs genitive."
+    },
+    {
+      "key": "p96:prepositions:right:5",
+      "forms": [
+        "bĭcco"
+      ],
+      "gloss": "from among, from in",
+      "result": "literal_and_scope_match",
+      "source_analysis": "Source marks (g): governs genitive."
+    },
+    {
+      "key": "p96:prepositions:right:6",
+      "forms": [
+        "pār"
+      ],
+      "gloss": "on that side of",
+      "result": "literal_and_scope_match",
+      "source_analysis": "Source marks (g): governs genitive."
+    }
+  ],
+  "limits": "This validates the two first-reading inputs, not final importer/profile/output or independent approval for whole Kagani source."
+}

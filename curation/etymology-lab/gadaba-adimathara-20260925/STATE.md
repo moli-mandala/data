@@ -1,0 +1,7 @@
+# Adimathara 2019 Mudhili Gadaba residual research — checkpoint 001
+
+The compiled source has **1,538** Gadaba records. Earlier pending decisions and holds cover **635** exact IDs; this pass assesses the remaining **903**. It proposes **118** pending whole-article DEDR assignments and records **785** explicit research holds, with zero unexamined records. Original source forms, glosses, locators, dialect tags and identities are preserved. No older review manifest owns a residual ID.
+
+All 903 residual forms were searched through the homepage `fetchLemmaList` against the read-only local database in twenty-six bounded chunks. The searches returned **2,728** rows, with no capped query. Same-item/same-sense comparisons to earlier accepted source decisions and direct Gadaba passages were checked against **30 complete DEDR articles**, retained verbatim in `primary-evidence.json`. The **ten** pending Gadaba review batches, **024–033**, agree exactly with the decisions. Compounds, semantic homographs and uncertain forms remain explicit holds.
+
+Canonical read-only `make check-pass PY=.venv/bin/python` passed at checkpoint **001**, with **zero** second-application changes. `checkpoint-001-validation.json` independently verifies exact review-manifest agreement. The source-wide ownership and older-review overlap audits passed. No `save-pass`, accepted sidecar edit, rebuild, commit, push or deployment was performed for this pass.

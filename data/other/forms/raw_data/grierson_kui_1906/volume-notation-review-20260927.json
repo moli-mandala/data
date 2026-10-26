@@ -1,0 +1,25 @@
+{
+  "status": "original front-matter key read; source-specific profile still pending",
+  "reviewer": "root",
+  "source": {
+    "path": "tmp/pdfs/LSI-V4.djvu",
+    "sha256": "33e9aaa220db22fcde712705581a69f7edcfc7e20b3e7a09347dc969768020f1"
+  },
+  "pages": [
+    {"printed": "xiii (inferred preceding xiv; no visible folio)", "physical": 16, "title": "System of Transliteration Adopted", "image": "tmp/kui-root-outside-xiii.png", "sha256": "e5f45938bf91063d78dcd9b4618c7cf4943e3270b9ebeed18a7956faf57b92b2"},
+    {"printed": "xiv", "physical": 17, "folio_verified": true, "image": "tmp/kui-root-outside-xiv.png", "sha256": "55804e6bb54549bc754c3f36177ed1b0e3614997d359560b8318468cb672541f"}
+  ],
+  "observations": [
+    "Part A describes a curved/tilde upper mark over a nasalized letter for Anunasika/Chandra-bindu. Part B repeats an upper nasalization sign for nun ghunna. This supports an available nasalization convention but does not identify every damaged Kui mark.",
+    "Part C explicitly reserves special language-specific letters for the relevant language sections. A general Sanskrit/Arabic transliteration value must not override the Kui chapter or the quoted Smith witness.",
+    "Part D distinguishes additional phonetic vowel symbols; it also identifies an apostrophe as the notation for Munda semi-consonants. Neither statement warrants reinterpretation of Kui punctuation without local evidence.",
+    "Part E uses acute accents to mark an accented syllable. A straight/slanted nasal-consonant upper mark in specimen40 cannot therefore be silently interpreted as stress or changed to a vowel accent.",
+    "The key distinguishes omitted vowels from raised small characters for silent or weakly pronounced medial/final vowels. Any raised characters encountered must be recorded as printed rather than silently flattened or deleted."
+  ],
+  "decisions": [
+    "Keep curved upper-i marks provisionally encoded with tilde when supported by the individual image, preserving source-mark-encoding uncertainty until chapter and repeated-glyph review settle them.",
+    "Do not resolve the marked consonant in the to-see paradigm by importing the general visarga value of dotted h. The image-only meḥpa proposal remains distinct from a phonological interpretation.",
+    "Preserve specimen-specific mark-shape observations for Smith40 rather than harmonizing all nasal marks to the other specimens."
+  ],
+  "limits": ["No canonical rows or phonemic output changed", "General key does not settle all Kui-specific glyphs", "Complete source symbol inventory and independently reviewed sound profile still required"]
+}

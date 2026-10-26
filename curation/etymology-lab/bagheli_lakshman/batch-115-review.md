@@ -1,0 +1,12 @@
+# bagheli_lakshman: survey etymology review, batch 115
+
+**Saved under the autonomous-work authorization of 2026-09-21.** 2 proposals; exact IDs and source attestations are in the [manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/bagheli_lakshman/batch-115.json).
+
+| # | Language form and meaning | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **bʰuk legahe** ‘he is, he was hungry’, **bʰuk legī he** ‘he is, he was hungry’, **bʰuk legṭī he** ‘he is, he was hungry’, **bʰuk lagaṭ he** ‘he is, he was hungry’ | Component: **bubʰukṣā** + **lagyati** + **ā́kṣēti**; [CDIAL 9286](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=526);[CDIAL 10895](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=630);[CDIAL 1031](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=46) | All three words are analysed: hunger (bubhukṣā), be felt/strike (lagyati), and the h-/hai present copula. Turner 1031 explicitly discusses Hindi hai and the weakened h- copulas under ākṣeti. The verbal t-participle or past ending belongs to lag-; no r-progressive forms are included. (4 records.) |
+| 2 | **pīyas legīhe** ‘he is, he was thirsty’, **pīyas legahe** ‘he is, he was thirsty’, **pīyas legehe** ‘he is, he was thirsty’, **pīyas legṭī hey** ‘he is, he was thirsty’, **pīyas lage he** ‘he is, he was thirsty’, **pīyas lagaṭ he** ‘he is, he was thirsty’, **pīyas lagī he** ‘he is, he was thirsty’, **pyas legīhe** ‘he is, he was thirsty’ | Component: **pipāsā́** + **lagyati** + **ā́kṣēti**; [CDIAL 8199](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=463);[CDIAL 10895](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=630);[CDIAL 1031](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=46) | The whole predicate has thirst + be felt + is. Turner pipāsā supplies piās, lagyati supplies the lag-/leg- verbal paradigm, and ākṣeti explicitly includes Hindi hai and regional h-copulas. All three lexical constituents are linked in order, retaining local inflection and source word spacing. (8 records.) |
+
+36 assignment rows on 12 records. Relation kinds: {'component': 36}.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-surveys-20260921/pass069-validation.json). No compiled or browser rebuild. Excluded and competing analyses are tracked in the [run review](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-surveys-20260921/REVIEW.md).

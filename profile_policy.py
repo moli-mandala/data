@@ -59,8 +59,88 @@ CONSONANTS = {
     "ɲ": "ñ", "ṅ": "ŋ", "ɡ": "g", "ɾ": "r", "ʋ": "v", "w": "v",
     "ts": "ʦ", "dz": "ʣ", "ʦ": "ʦ", "ʣ": "ʣ",
     "ʱ": "ʰ", "ɦ": "h", "ṃ": "ṁ", "ʲ": "ʸ", "ɟ": "j", "ǝ": "ə",
+    # the voiced velar/uvular fricative is Turner's ɣ (Berger's Burushaski ġ, IPA ʁ)
+    "ġ": "ɣ", "ʁ": "ɣ",
+    # Turner's CDIAL prints Greek ε for the open e every other source writes ɛ
+    "ε": "ɛ",
 }
 _SUBST = sorted(CONSONANTS.items(), key=lambda kv: -len(kv[0]))
+
+# Source letters with no single house value: ``ċ`` is Turner's and Zoller's ʦ but Berger's
+# retroflex ʦ̣, so every profile that outputs it must decide in OVERRIDES (or KEEP it).
+UNRESOLVED = {"ċ"}
+
+# Sources that write aspiration as a plain h after the stop (``kh``, ``t̪h``, ``tʃh``): the
+# digraph is the house aspirate ``Cʰ``.  ``fix`` adds a ``Ch`` rule beside every stop rule.
+# Only sources where stop + h is aspiration are listed: Indo-Aryan transcriptions, the Indo-Aryan
+# SIL surveys, and Berger's Burushaski.  Not listed until reviewed per source: Munda (Pinnow,
+# proto-Kherwarian, Kharia) and the SIL Bangladesh TB/Khasian lists, which also write Cʰ, so a
+# plain C+h there may be a genuine sequence (Kuki-Chin əthɔu̯).
+ASPIRATE_H = {
+    "house",  # Tulpule's Old Marathi, Paranavitana's Sigiri and the other IAST-style sources
+    "berger",  # Burushaski aspirates kh th ph ch ċh čh
+    "zoller-2023", "strand", "kannauji", "sil-bareli-pauri", "sil-jaunsari",
+    "sil-eastern-gujari", "dadra-varli", "census-danuwar",
+    # Tulpule's Old Marathi (every C+h checked against the Devanagari column), Weinreich's
+    # Domaaki (kh ph ċh), and the Bengali rows of the SIL Bangladesh lists (bhat, dhula).
+    "tulpule-old-marathi", "weinreich-domaaki", "sil-bangladesh-bengali",
+    # sil-noira and sil-northern-dhule-bhils also write aspirates as Ch (and breathy stops as
+    # Cɦ). They carry hand-added rules for exactly the sequences their lists attest, because
+    # their frozen source packages require every profile rule to occur in the staged forms.
+}
+# Hunterian romanizations (Grierson's single-dialect LSI volumes, Roy, Hislop): ``ch`` is the
+# plain palatal c and ``chh`` its aspirate (chār 'four', chhē 'six'); the other stops take a
+# plain h for aspiration.  Mirrors the reviewed grierson-korvi-1906 and cust-norton-korku rules.
+HUNTERIAN = {
+    "grierson-sansi-1922", "grierson-kanjari-1922", "grierson-malvi-rangri-1908",
+    "grierson-sikalgari-1922", "grierson-sodochi-1916", "grierson-shoracholi-1916",
+    "grierson-handuri-1916", "grierson-suketi-1916", "grierson-simla-siraji-1916",
+    "grierson-kaikadi-1906", "grierson-holiya-1906", "grierson-haijong-1903",
+    "grierson-korvi-1906",
+    # Deferred with the other Munda sources: Grierson's Koda and Turi, Roy's Birhor and
+    # Hislop's Kuri/Muasi keep their literal spelling until Munda C+h is decided.
+}
+
+
+def hunterian_display(form: str) -> str:
+    """The Hunterian letters of a lowercased literal form in house spelling (for tests that
+    check a literal display profile): ``chh`` → ``cʰ``, ``ch`` → ``c``, stop + h → ``Cʰ``.
+    Underlined Perso-Arabic digraphs (``k̲h̲``) are untouched."""
+    form = form.replace("chh", "cʰ").replace("ch", "c")
+    return re.sub(r"([kgjtdṭḍpb])h(?!\u0332)", r"\1ʰ", form)
+_STOP_OUT = re.compile(r"^[kgcjtdṭḍpbʦʣ][\u0300-\u036f]*$")
+
+
+def aspirate_rules(profile: str, outputs: dict[str, str], seen=()) -> dict[str, str]:
+    """The ``Ch`` → ``Cʰ`` rules an ASPIRATE_H profile still lacks: one beside every stop rule,
+    plus one for each stop + diacritic sequence (``t̪h``, ``t̺h``) the routed sources contain,
+    whose letter and marks the profile otherwise tokenizes separately."""
+    hunterian = profile in HUNTERIAN
+    if profile not in ASPIRATE_H and not hunterian:
+        return {}
+    missing = {}
+    for g, o in outputs.items():
+        # underlined letters (Grierson's k̲h̲ x, g̲h̲ ɣ) are Perso-Arabic sounds, not aspirates
+        if not _STOP_OUT.match(nfc(o)) or g.endswith("h") or "\u0332" in ud.normalize("NFD", g):
+            continue
+        if hunterian and nfc(o) == "c":
+            wanted = {nfc(g + "h"): "c", nfc(g + "hh"): "cʰ"}
+        else:
+            wanted = {nfc(g + "h"): nfc(o + "ʰ")}
+        for key, out in wanted.items():
+            if key not in outputs:
+                missing[key] = out
+    for seq in seen:
+        key = nfc(seq + "h")
+        if key in outputs or key in missing or nfc(seq) in outputs:
+            continue
+        letter, marks = base_and_marks(seq)
+        if len(letter) != 1 or letter not in outputs or any(m not in outputs for m in marks):
+            continue
+        out = nfc(outputs[letter] + "".join(outputs[m] for m in marks))
+        if _STOP_OUT.match(out):
+            missing[key] = nfc(out + "ʰ")
+    return missing
 
 # House vowels (with any combining marks they carry).
 HOUSE_VOWELS = set("aāəʌæɪiīʊuūeēɛoōɔɨ")
@@ -121,6 +201,8 @@ SCHWA = {
     "zoller-2023", "merriam-reconstruction", "muduga", "keed",
     # scholarly Dravidian transcriptions: Kodagu, Toda, Kota, Badaga ə is a phoneme
     "ia-dravidian-ipa", "census-dravidian", "dedr", "toda", "badaga-hockings", "kudiya",
+    # Iranian: ə is a distinct vowel in Iranist transcription and an Avestan letter.
+    "cheung-ediv", "uesugi-oad",
 }
 # Scholarly Munda transcriptions where ʌ is a distinct phoneme (Zide's Sora), kept as is.
 KEEP_WEDGE = {"zide-sora-juray", "pinnow-munda"}
@@ -149,7 +231,12 @@ _ASPIRATE_OUT = re.compile(r"^([kgcjtdṭḍpbmnlrvṛḷʦʣ])h$")
 # front rounded vowel that the Toda profile writes ``y``.
 # Bailey Padari and LSI Simla Siraji retain literal historical Roman notation, not reconstructed IPA.
 # Rangri original distinguishes literal v/w, including table-initial W; preserve both.
-KEEP = {("grierson-malvi-rangri-1908", "w"), ("grierson-malvi-rangri-1908", "W"), ("grierson-simla-siraji-1916", "w"), ("bailey-padari-1908", "w"), ("dedr", "è"), ("dedr", "ḕ"), ("keed", "è"), ("toda", "üː"), ("toda", "ü"),
+KEEP = {("uesugi-oad", "š"), ("uesugi-oad", "š́"), ("uesugi-oad", "ž"),  # Avestan transliteration letters
+        ("grierson-malvi-rangri-1908", "w"), ("grierson-malvi-rangri-1908", "W"), ("grierson-simla-siraji-1916", "w"), ("bailey-padari-1908", "w"), ("dedr", "è"), ("dedr", "ḕ"), ("keed", "è"), ("toda", "üː"), ("toda", "ü"),
+        # grierson_kui_1906/root-display-profile-review-20260927.json:
+        # heterogeneous historical witnesses preserve literal w; no shared
+        # phonemic w/v equivalence is asserted. Capital W is lowercased only.
+        ("grierson-kui-1906", "w"), ("grierson-kui-1906", "W"),
         # Bailey Bhalesi p75 sentence22 prints a marked c in kaṇčā, alongside
         # plain c elsewhere. Preserve the reviewed historical glyph without
         # assigning an unsupported IPA value or erasing its visible mark.
@@ -165,7 +252,15 @@ KEEP = {("grierson-malvi-rangri-1908", "w"), ("grierson-malvi-rangri-1908", "W")
         ("sil-gutob-gorum", "ɪː"), ("sil-gutob-gorum", "ʊː"),
         ("sil-gutob-gorum", "əː"), ("sil-gutob-gorum", "ʌ"),
         ("sil-gutob-gorum", "ə"), ("sil-gutob-gorum", "ɪ"),
-        ("sil-gutob-gorum", "ʊ"), ("sil-gutob-gorum", "ɕ")}
+        ("sil-gutob-gorum", "ʊ"), ("sil-gutob-gorum", "ɕ"),
+        # Unresolved 2026-09-28: Hockings' Badaga ġ (Me:lna:ġu 'Mēlnāḍu') is not clearly a
+        # fricative, and nured's ċ (Ash. aċë̃́ beside Kt. ac̣ǘ) has no documented value yet.
+        ("badaga-hockings", "ġ"), ("nured", "ċ"),
+        # Tagin/Puroik ʁ may be a genuine uvular in these Tibeto-Burman lists; not merged
+        # into the house ɣ until the sources' inventories are checked.
+        ("tagin-puroik", "ʁ"),
+        # Ghatage's ċ occurs only in two OCR-garbled cells (Konkani pərvu:ċč); left for source review.
+        ("ghatage-western", "ċ")}
 
 # Marathi sources that write the dental affricates as c/j against palatal č/ǰ (SDML's stated
 # convention; Ghatage's survey vocabularies): the dental pair is the house ʦ/ʣ, so the contrast
@@ -192,6 +287,16 @@ OVERRIDES["more-ipa"] = {"ɑ": "ā", **{c: c.lower() for c in "ABDFIKMNPSTU"}}
 OVERRIDES["sil-ho"] = {"|": "-"}
 OVERRIDES["selected-orissa"] = {"R": "ṛ"}   # the 2002 Orissa key: R is the retroflex flap
 OVERRIDES["dadra-varli"] = {"L": "ḷ"}
+# Berger's Burushaski ċ is the retroflex affricate (Lorimer's c̣; ċhil 'water'), which the
+# profile already writes ʦ̣ for the few image-reviewed c̣ rows.
+OVERRIDES["berger"] = {"ċ": "ʦ̣", "ċh": "ʦ̣ʰ"}
+# Zoller's ċ is the dental affricate and c̣ the retroflex one, as in his 2005 Indus Kohistani
+# profile (and CDIAL for ċ).
+OVERRIDES["zoller-2023"] = {"ċ": "ʦ", "ċh": "ʦʰ", "c̣": "ʦ̣"}
+# Kullui's homonym indices (¹ ²) stay in Original, not in the display form. Bashir's Khowar keeps
+# them in Form: its importer gives homonyms one entry key (baṣ¹ 'share', baṣ³ 'river fork'), so the
+# printed number is all that keeps them from merging (test_cldf.py).
+OVERRIDES["kullui"] = {d: "" for d in "¹²³⁴"}
 
 LENGTH_MARKS = ("ː", ":")  # half-length ˑ is a source distinction and is carried over
 MACRON = "̄"
@@ -319,7 +424,7 @@ def source_inventory() -> dict[str, dict]:
     import source_meta
 
     meta = source_meta.load()
-    inv: dict[str, dict] = defaultdict(lambda: {"long": Counter(), "marks": set(), "affricate": 0, "j": 0, "y": 0, "forms": 0})
+    inv: dict[str, dict] = defaultdict(lambda: {"long": Counter(), "marks": set(), "before_h": set(), "affricate": 0, "j": 0, "y": 0, "forms": 0})
     patterns: dict[str, re.Pattern] = {}
     for path in sorted(glob.glob(str(ROOT / "data/other/forms/*.csv"))):
         rel = str(Path(path).relative_to(ROOT))
@@ -342,6 +447,8 @@ def source_inventory() -> dict[str, dict]:
                 for m in patterns[profile].finditer(form):
                     d["long"][m.group(1)] += 1
                     d["marks"].add(m.group(2))
+                for m in re.finditer(r"(.[\u0300-\u036f]+)h", ud.normalize("NFD", form)):
+                    d["before_h"].add(nfc(m.group(1)))
                 if "dʒ" in form or "ʤ" in form or "tʃ" in form:
                     d["affricate"] += 1
                 d["j"] += "j" in form
@@ -396,6 +503,10 @@ def audit(inv: dict) -> dict[str, list[tuple[str, str, str]]]:
             want = OVERRIDES.get(path.stem, {}).get(nfc(g), want)
             if want != nfc(o):
                 out.append((g, o, want))
+            elif (path.stem, nfc(g)) not in KEEP and any(u in want for u in UNRESOLVED):
+                out.append((g, o, "(unresolved: decide in OVERRIDES)"))
+        for g, want in aspirate_rules(path.stem, rules, inv.get(path.stem, {}).get("before_h", ())).items():
+            out.append((g, "(missing)", want))
         # length bigrams present in the sources but not covered by an explicit rule
         have = {nfc(r[0]) for r in body}
         for base in inv.get(path.stem, {}).get("long", {}):
@@ -438,6 +549,15 @@ def fix(inv: dict) -> dict[str, int]:
                 body.append(new)
                 rules[nfc(g_)] = new
                 n += 1
+        # plain-h aspirates: a Ch rule beside every stop rule
+        outputs = {nfc(r[0]): (r[col] if len(r) > col else "") for r in body}
+        for g_, out_ in aspirate_rules(path.stem, outputs, inv.get(path.stem, {}).get("before_h", ())).items():
+            base = rules.get(nfc(g_[:-1])) or rules[base_and_marks(g_[:-1])[0]]
+            new = [g_] + [(v + "ʰ" if v else "") for v in base[1:]] + [""] * (len(header) - len(base))
+            new[col] = out_
+            body.append(new)
+            rules[g_] = new
+            n += 1
         # IPA affricate digraphs must not fall apart into t + ś
         if inv.get(path.stem, {}).get("affricate", 0):
             for digraph, out in (("tʃ", "c"), ("dʒ", "j"), ("ʧ", "c"), ("ʤ", "j")):

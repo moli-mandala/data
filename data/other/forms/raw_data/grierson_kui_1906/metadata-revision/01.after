@@ -1,0 +1,83 @@
+"""Review-only install configuration fixtures; never installs or builds."""
+import csv,hashlib,json
+from pathlib import Path
+from urllib.parse import quote
+HERE=Path(__file__).resolve().parent
+Q=HERE.parent
+def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+
+def main():
+    mapping=Q/'source-lect-mapping-approved-20260927.json'
+    routes=json.loads(mapping.read_text())['mappings']
+    seen=set();rows=[]
+    for r in routes:
+        d=r.get('proposed_dialect_id')
+        if not d or d in seen:continue
+        seen.add(d)
+        tag='dialect:'+':'.join(quote(x,safe='') for x in ['Kui',d,r['proposed_name']])
+        rows.append([d,tag,'Kui',d,r['proposed_name'],'','','','S. Dravidian II',r['proposed_name'] + '; historical source region, precise site not supplied',''])
+    with (HERE/'proposed-dialects.csv').open('w',newline='') as f:
+        w=csv.writer(f);w.writerow(['ID','Tag','Language_ID','Source_Language_ID','Name','Glottocode','Latitude','Longitude','Clade','Location','Quality']);w.writerows(rows)
+    assert (Q/'import_source.py').exists(), 'Guarded importer must exist before its command is declared.'
+    (HERE/'install-settings-proposed.yaml').write_text('''# Review-only canonical settings fixture; installation remains approval-guarded.
+file: 20260927-grierson-kui.csv
+defaults:
+  importer:
+    commands:
+      - [data/other/forms/raw_data/grierson_kui_1906/import_source.py, --install]
+    note: Complete reviewed Kui chapter, Khondmals column and bounded attributed comparisons.
+  transcription:
+    profile: grierson-kui-1906
+    input: form
+    preserve_hyphens: true
+  identity:
+    dedupe_by_entry_key: true
+  forms:
+    split_alternates: false
+  gloss:
+    grammar_tags: false
+sources:
+  grierson1906kui:
+    identity:
+      dedupe_by_entry_key: true
+    forms:
+      split_alternates: false
+    gloss:
+      grammar_tags: false
+    reference:
+      editor: OpenAI Codex
+      ocr: true
+      etymology_provenance: source
+  letchmajee1902kui:
+    reference:
+      editor: OpenAI Codex
+      ocr: true
+      etymology_provenance: none
+  smith1876khond:
+    reference:
+      editor: OpenAI Codex
+      ocr: true
+      etymology_provenance: none
+  frye1851kondh:
+    reference:
+      editor: OpenAI Codex
+      ocr: true
+      etymology_provenance: none
+  friendpereira1902khonds:
+    reference:
+      editor: OpenAI Codex
+      ocr: true
+      etymology_provenance: none
+''')
+    report={'status':'review-only install configuration; no canonical writes or regeneration registration',
+        'mapping_sha256':sha(mapping),'proposed_dialect_count':len(rows),
+        'dialect_policy':'Four source-qualified historical Kui lects; coordinates and unsupported lect-specific Glottocodes blank. Kalahandi modern identity conflict remains in per-row Notes/audit.',
+        'profile_mapping':{'proposal':'literal-preservation.txt','canonical_target':'conversion/grierson-kui-1906.txt'},
+        'scope':'Complete chapter and Khondmals standard column, with bounded attributed comparisons.',
+        'installer':'Guarded source-local import_source.py exists; proposed regeneration command remains subject to exact approval freeze.',
+        'reference_policy':'One primary source definition. Root-owned proposed-references.bib remains independently reviewed before installation.',
+        'outputs':{n:sha(HERE/n) for n in ['install-settings-proposed.yaml','proposed-dialects.csv']}}
+    (HERE/'install-fixture-status.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
+    print(json.dumps(report,indent=2))
+
+if __name__=='__main__':main()

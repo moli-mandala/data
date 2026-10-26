@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Muduga · Dravidian surveys, 2026-09-21 · batch 011. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Muduga | Proposed etymology | Evidence |
+|---|---|---|---|
+| 51 | **pērɨ** ‘name’ | Proposed reflex of [**DEDR 4410**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=389) | DEDR 4410 explicitly attests Tamil/Malayalam pēr, Kota pēr, Telugu pēru, Gadaba/Parji pidir, Gondi peder/porol, Tulu pudaru and Konda/Kuvi dōru name. The selected simple name nouns fit these branches; Indo-Aryan nām forms and potentially contact-mediated Kannada pēru are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (2 records.) |
+| 52 | **ari** ‘rice’ | Proposed reflex of [**DEDR 215**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=20) | DEDR 215 compares Tamil arici husked rice, Malayalam ari, Kannada/Kodagu akki and Kota aky husked grain. The selected simple survey rice nouns fit these branches; ari-maṇi and other combined responses require separate components. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (2 records.) |
+| 53 | **śilandi** ‘spider’, **sulandi** ‘spider’ | Proposed reflex of [**DEDR 2562**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=223) | DEDR2562 compares Tamil cilanti/cilampi, Malayalam cilanni and Kannada seladi/selandi spider. The selected survey cil-/sel-/sol- plus nasal-stop forms fit this complete lexical family; the precise regional transmission remains open, and the explicitly questioned Toda comparison and transparent eight-legged compounds are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (2 records.) |
+| 54 | **minna** ‘lightning’, **minnal** ‘lightning’ | Proposed reflex of [**DEDR 4876**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=435) | DEDR4876 explicitly gives Tamil and Malayalam miṉṉal/minnal lightning. The selected neighbouring survey forms preserve the full minnal noun (and Muduga minna with no final lateral recorded); longer finite responses such as minnalarena are excluded rather than shortened. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (2 records.) |
+| 55 | **maga** ‘daughter’ | Proposed reflex of [**DEDR 4616**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=407) | DEDR 4616 gives Kannada magaḷu ‘daughter’, magu ‘child’, Tamil makaḷ ‘daughter’ and Gondi mīār ‘daughter’. Only the corresponding simple son/daughter records are selected; Gadaba maginḍ sinḍ and other compound responses are excluded. (2 records.) |
+
+Proposed assignment rows: **10**. Affected records: **10**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-011.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Muduga/batch-011.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

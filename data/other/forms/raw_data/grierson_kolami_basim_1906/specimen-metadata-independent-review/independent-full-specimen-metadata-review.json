@@ -1,0 +1,120 @@
+{
+  "reviewer": "/root/asur_finish",
+  "status": "complete_structured_metadata_review_repair_required",
+  "scope": "All 560 atomic emissions, all 291 distinct exact raw gloss/current-tag classes, all 51 source-bounded expressions, every original specimen page 564/565/568/569 and retained body crops.",
+  "input_pins": {
+    "integration/specimen-metadata-proposal.jsonl": "61cba0010f2ea47878a4278b4261586eaee363c01e66288f1fc694e4620f78ca",
+    "specimens/sharp-reviewed-revision/expression-emission-proposal.jsonl": "fecc6462f86e2713bbf78e9fb8deab3061cd597cf34681d5bc86e31e6c42c43c",
+    "integration/combined-review-candidate.csv": "d70237705abcb7bcdb59a32f1898ebb0007ad9d83cbedcdab85d2473f6fa0509",
+    "prepare_combined_candidate.py": "30a89cd43339422b9fd7f41fe23230a410aafb1554376f12462bab7b7776f1d9"
+  },
+  "source_evidence": [
+    {
+      "path": "tmp/jambu-next-source/kolami-specimen-originals/owner-sharp-p564-body0.png",
+      "sha256": "5472936e65c332ca3b2ebbae7a7162e69db62c9d1ab6d61b11182c6e0fde86b9"
+    },
+    {
+      "path": "tmp/jambu-next-source/kolami-specimen-originals/owner-sharp-p564-body1.png",
+      "sha256": "9307824cbec8ec21fb04fc966faf603ddf9e7b22f31a2fe26fc69956596de744"
+    },
+    {
+      "path": "tmp/jambu-next-source/kolami-specimen-originals/owner-sharp-p564-body2.png",
+      "sha256": "0f16989b8b2de8b1012f23a501ca9843f086f55fbb6dbc6cc0916cbfb828ac6b"
+    },
+    {
+      "path": "tmp/jambu-next-source/kolami-specimen-originals/owner-sharp-p564-body3.png",
+      "sha256": "5ad9e91f9c8562fb4b136f7e2b87ea373a4d31ab2c506abb2dd415fd2dc38045"
+    },
+    {
+      "path": "tmp/jambu-next-source/kolami-specimen-originals/owner-sharp-p565-body0.png",
+      "sha256": "01a4410e597ecc1b356514e6da951c694ad2fde4eef6df1f5cd77bc3c62d8306"
+    },
+    {
+      "path": "tmp/jambu-next-source/kolami-specimen-originals/owner-sharp-p565-body1.png",
+      "sha256": "653250131add6a074a2ca7da4ab1d52a9eaccfb769ed639ae8fded9ae3af5d9d"
+    },
+    {
+      "path": "tmp/jambu-next-source/kolami-specimen-originals/owner-sharp-p565-body2.png",
+      "sha256": "d965ffd293f749c343552705c85bf09b3fad1c2d6529691809fa0a5ca464acfd"
+    },
+    {
+      "path": "tmp/jambu-next-source/kolami-specimen-originals/owner-sharp-p565-body3.png",
+      "sha256": "6bb96104a26f82c93d167adabf1d5d241cece11a10d359d874270762c94c36c3"
+    },
+    {
+      "path": "tmp/jambu-next-source/kolami-specimen-originals/owner-sharp-p568-body0.png",
+      "sha256": "e91966460d8619d454d15e77232e34ce7fb3b9f8b1c30ad8ae7b62dd16a216cf"
+    },
+    {
+      "path": "tmp/jambu-next-source/kolami-specimen-originals/owner-sharp-p568-body1.png",
+      "sha256": "39476155b1b636d1cbc4c689a604ad5bca9f760b344ca70a9efd659a8c7a7348"
+    },
+    {
+      "path": "tmp/jambu-next-source/kolami-specimen-originals/owner-sharp-p568-body2.png",
+      "sha256": "6fae3dcbe5d79132ffb31b6d4c1699bec563b4c5b5776bb9f9519f242fd0c0a6"
+    },
+    {
+      "path": "tmp/jambu-next-source/kolami-specimen-originals/owner-sharp-p568-body3.png",
+      "sha256": "4e84ff74f580cd23479e18a65722e3370922530afc7769cc81434dc13f30bfec"
+    },
+    {
+      "path": "tmp/jambu-next-source/kolami-specimen-originals/owner-sharp-p569-body0.png",
+      "sha256": "f1921c86206d1fb6bc4b72956ddb83139ac12145ed2354f60b41d144cce9b87a"
+    },
+    {
+      "path": "tmp/jambu-next-source/kolami-specimen-originals/owner-sharp-p569-body1.png",
+      "sha256": "8bad148c72b7704164be72055c55869f4b403dec44c4b03c39b556b319af9a60"
+    },
+    {
+      "path": "tmp/jambu-next-source/kolami-specimen-originals/owner-sharp-p569-body2.png",
+      "sha256": "24d462af8c39b9601d4203caf5a3fa46d8868ceec8959e293e61265f869a5cdd"
+    },
+    {
+      "path": "tmp/jambu-next-source/kolami-specimen-originals/owner-sharp-p569-body3.png",
+      "sha256": "f39644e7b213e3f6189e993daf8ea29f7a25ad56a0a1792249415f3a888fd8a3"
+    }
+  ],
+  "counts": {
+    "atomic_rows_reviewed": 560,
+    "distinct_raw_gloss_current_tag_classes": 291,
+    "expressions_reviewed": 51,
+    "keyed_tag_recommendations": 138
+  },
+  "recommendation_files": {
+    "all-560-keyed-review.jsonl": "7e0747ec2b9dd5e34bf2dbc4d4789c25711b2f04792f94fed768896dc3d74ee9",
+    "keyed-tag-recommendations.jsonl": "1d6f91a3616ba874627aa7c32447a17e4c227f91f9e61e70cf39dbb142183257",
+    "all-51-expression-scope-review.jsonl": "da7b19624b59c778f4cfe95aa4f2a4e644921c9337e0fbe8f1b3306710d962d1"
+  },
+  "class_findings": [
+    "Missing source-glossed lexical noun/verb POS, including finite multiword English glosses aligned to one source token.",
+    "Inconsistent infinitive handling: to-make parsed, but five other explicitly to-verb gloss classes unparsed.",
+    "False locative and past from English put-on/put; source quotation is directive.",
+    "Clear adjective/adverb/indefinite-pronoun meanings left without POS; proposed only exact reviewed classes, not generic English suffix scans.",
+    "Dancing in the music/dancing/heard object list cannot receive confident verb solely from English -ing.",
+    "Literal source fields, source keys, boundaries, dialects, uncertainty and approved source history remain unchanged by these recommendations."
+  ],
+  "remaining_scope_adjudications": [
+    {
+      "class": "obj from English me/him/them/thee",
+      "decision": "Review target grammatical role before accepting blanket obj: English pronoun case alone does not prove target object function, particularly Them-of and existential Him-to two sons were. Keep source-stated gen/dat and person; do not invent direct/indirect object roles.",
+      "automatic_change": false
+    },
+    {
+      "class": "English prepositions/case tags",
+      "decision": "Where printed English -to/-from/-in/-of matches explicit chapter morphology, current dat/abl/loc/gen may be retained as source analysis; do not extend CASE suffix matching to English phrasal verbs or for/near based on parser alone.",
+      "automatic_change": false
+    },
+    {
+      "class": "to-say-proper / dead-man / so-many / all / some / far / much / very / because / and",
+      "decision": "Preserve exact gloss and source context; these residual combined, quantificational or syntactic scopes need an explicit owner decision rather than blanket morphology or inferred token splitting.",
+      "automatic_change": false
+    },
+    {
+      "class": "English -ing / having-",
+      "decision": "Verb function can be recorded for clearly verbal adjuncts, but no participle/gerund/perfect subtype from English alone. Existing having-gone/saying is conservatively verb only; no automatic -ing subtype.",
+      "automatic_change": false
+    }
+  ],
+  "prior_conservation_evidence": "specimen-conservation-review/sharp-revised-conservation-review.json independently validates all 561 physical atoms, one join, 560 atomic rows and source-derived 51 boundaries against separately root-approved ledger. This report does not replace a fresh final-output sample.",
+  "limits": "No canonical mutations or owner edits. This is metadata review, not a new full literal acceptance, source-stage installation approval, compiled build or browser check."
+}

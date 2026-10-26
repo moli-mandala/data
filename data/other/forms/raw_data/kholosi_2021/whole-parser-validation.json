@@ -1,0 +1,35 @@
+{
+  "status": "passed actual source parser; independent editorial acceptance still pending",
+  "checks": {
+    "NFC": {
+      "rows": 1135,
+      "parser_errors": 0,
+      "original_phonemic_notes_sources_preserved": true,
+      "keys_order_preserved": true
+    },
+    "NFD": {
+      "rows": 1135,
+      "parser_errors": 0,
+      "original_phonemic_notes_sources_preserved": true,
+      "keys_order_preserved": true
+    }
+  },
+  "preserved_legacy_keys": 198,
+  "preserved_legacy_assignments": 198,
+  "unknown_tags": [],
+  "closed_graph": true,
+  "code_sha256": {
+    "make_cldf.py": "1a1ded9eff5b8607174aa37981efb4358824be8ffffdfaa7128c0cea53dac5a8",
+    "source_meta.py": "1c3147843d6c9f2489155b633db55fd1374e6f3b1a59b7051a3642fdbd2c7a4c"
+  },
+  "proposal_sha256": "c21945e2e67a071d70220a4c1a65a44bd77ca3d185bd66ae52dbc3596b1c07bc",
+  "profile_sha256": "1fcdabf0a57b03e70499591a6f2271edf5f1e7fef5d2250fb02b28728cb9369a",
+  "method": "Unmodified parser and metadata loader copied into bounded source tree; no monkeypatch, no canonical writes or database generation.",
+  "deferred": [
+    "Independent source/output audit",
+    "Canonical installation",
+    "Compiled identity/graph",
+    "Full suite",
+    "Browser QA"
+  ]
+}

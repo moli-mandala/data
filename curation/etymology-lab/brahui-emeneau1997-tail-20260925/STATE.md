@@ -1,0 +1,5 @@
+# Emeneau 1997 Brahui — holds-only checkpoint
+
+The six unresolved forms are fully reviewed in [REVIEW.md](REVIEW.md) and [research-holds.json](research-holds.json). Their author-supplied analyses are deliberately qualified: four have existing ranked article hypotheses, one has a tentative CDIAL borrowing hypothesis, and the sour-milk *taṛifing* sense is explicitly unetymologized. DEDR 3029 belongs to the separate slaughtered *taṛifing* record. No additional direct reflex meets the threshold for a pending proposal.
+
+The [source audit](source-coverage-001.json) partitions all 19 compiled `emeneau1997brahui` IDs into 13 prior rank-one assigned records and six current holds, with zero overlap and zero unexamined records. [Primary DEDR evidence](primary-evidence.json) records the eight articles relevant to the held comparisons. Because there are zero proposed assignment rows, no canonical `check-pass` was run. No `save-pass`, accepted sidecar write, rebuild, source reparse, commit, push, or deployment has been performed.

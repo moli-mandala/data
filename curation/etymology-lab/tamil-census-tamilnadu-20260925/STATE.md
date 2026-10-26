@@ -1,0 +1,7 @@
+# Census Tamil Nadu Tamil residual research — checkpoint 001
+
+The compiled Census Tamil Nadu Tamil source has **502** records. Earlier pending research owns **153**; this pass assesses the remaining **349** exact source IDs. It proposes **111** DEDR whole-article assignment rows affecting **110** records, including ordered components for the maternal-uncle’s-daughter response. Another **239** records are explicit research holds; none remain unexamined. Original source forms, glosses, locators and identities are preserved. No earlier review manifest owns any residual ID.
+
+All 349 forms were searched using the homepage `fetchLemmaList` against the read-only local database in ten bounded chunks, returning **8,001** rows. The broad `vā` search reported 1,372 results and returned the first 1,000; the full DEDR 5270 article explicitly gives Tamil imperative `vā` “come.” The full text of **82** shortlisted DEDR articles is retained in `primary-evidence.json`. Seventeen current review batches, **Tamil 102–118**, agree exactly with the proposed decisions. Loan candidates, ambiguous glosses, multi-part responses and uncertain transcription remain on explicit hold.
+
+Canonical `make check-pass PY=.venv/bin/python` passed at checkpoint **001**, with **zero** second-application changes. `checkpoint-001-validation.json` independently verifies manifest agreement. Exact source/prior-pass coverage and older-review overlap checks passed. No `save-pass`, accepted sidecar edit, rebuild, commit, push or deployment was performed for this pass.

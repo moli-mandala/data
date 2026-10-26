@@ -1,0 +1,34 @@
+{
+  "status": "All routed comparison rows pass isolated actual parser",
+  "inputs": {
+    "integration-proposal/comparison-rows.csv": "677940a05c36cc24fbe4b8ddbde64f8471450b9de9b2370d36c0341b854ae04a",
+    "routing-proposal/20260828-sil-korwa-kodaku.yaml": "589929f47ccc0d82275f13bcbfd1785e782a72c0854dca8e1424b52df17e89e8",
+    "routing-proposal/20260927-behera-whole-additions.yaml": "36fa2d7f5ed80799b5c8465db4722ce82efa59d787add5a86298209adb93b154"
+  },
+  "parser_sha256": "1a1ded9eff5b8607174aa37981efb4358824be8ffffdfaa7128c0cea53dac5a8",
+  "checks": {
+    "NFC": {
+      "rows": 1370,
+      "all_15_fields_exact": true,
+      "ordered_keys_preserved": true,
+      "unlinked_rows_retained": true,
+      "unwanted_splits": 0,
+      "errors": 0
+    },
+    "NFD": {
+      "rows": 1370,
+      "all_15_fields_exact": true,
+      "ordered_keys_preserved": true,
+      "unlinked_rows_retained": true,
+      "unwanted_splits": 0,
+      "errors": 0
+    }
+  },
+  "canonical_changes": false,
+  "not_proven": [
+    "Final literal review",
+    "Language/dialect registry installation",
+    "Whole-source assembly",
+    "Full compiled identity/graph behavior"
+  ]
+}

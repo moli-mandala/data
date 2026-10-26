@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Kurux · Dravidian surveys, 2026-09-21 · batch 003. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Kurux | Proposed etymology | Evidence |
+|---|---|---|---|
+| 11 | **balī** ‘door’, **bɛli** ‘door’, **bali** ‘door’ | Proposed reflex of [**DEDR 5277**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=477) | DEDR 5277 explicitly lists Kurux balī door or bamboo screen, Malto bali door screen, Parji vel doorway and Gadaba val door. The Kurux survey noun matches this family directly. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (9 records.) |
+| 12 | **kɛtcas** ‘die’, **kɛtcʰas** ‘die’, **kɛtcās** ‘die’, **kʰena** ‘die’, **kʰēnā** ‘die’ | Proposed reflex of [**DEDR 2426**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=212) | DEDR 2426 explicitly compares Tamil cā, Kannada sāy (past sattu), Gondi hā-/sāy-, Kurux khē’enā (keccas), Malto keye and Brahui kahing die. Only the intransitive verb is proposed here; derived causative kill responses require a distinct relation analysis. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (6 records.) |
+| 13 | **puna** ‘new’, **pūna** ‘new’ | Proposed reflex of [**DEDR 4275**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=378) | DEDR 4275 gives Tamil putu/putiya, Malayalam putu, Kodagu pudiyë, Kannada posa/hosa/hosadu and Tulu posa/posatu new; Konda pūni and Malto pune belong to the same family. These simple stems and adjectival inflections are selected; new-person nouns and loan-looking alternative stems remain unassigned. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (5 records.) |
+| 14 | **pōmp** ‘flower’ | Proposed reflex of [**DEDR 4345**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=384) | DEDR 4345 records Tamil pū, Malayalam pū/pūvu, Kannada pūvu, Gadaba pū/puvvu, Parji pū, Gondi puŋgar and Kurux pūmp flower. The selected simple flower forms fit these comparanda; Indo-Aryan-looking phul and uncertain responses are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 15 | **benko** ‘star’ | Proposed reflex of [**DEDR 4876**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=435) | DEDR 4876 attests Tamil, Malayalam, Kota, Toda and Kannada mīn star, and Kurux bīnkō star. These simple survey star forms belong to the shining family; compound veḷḷi-mīn responses require separate component analysis. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+
+Proposed assignment rows: **22**. Affected records: **22**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-003.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Kurux/batch-003.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

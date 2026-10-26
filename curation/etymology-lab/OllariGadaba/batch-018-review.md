@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Ollari Gadaba · Bhattacharya 1957 Ollari Gadaba residual records, 2026-09-25 · batch 018. Pending user review; autonomous research continues.
+
+| # | Ollari Gadaba | Proposed etymology | Evidence |
+|---|---|---|---|
+| 46 | **kanḍ** ‘stone’ | Proposed reflex of [**DEDR 1298**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=121) | DEDR 1298 full article opens “1298 Ta. kal (kaṟ-, kaṉ-) stone, pebble, boulder, precious stone, milestone; kallaṉ hard-hearted fellow. Ma. kal, kallu stone, rock, precious…”; its Ga. (Oll.) passage gives “Ga. (Oll.) kanḍ , (S.) kanḍu ( pl. kanḍkil) id.”. The source form and sense match this Ollari entry within the whole article. (1 record.) |
+| 47 | **kanḍp-** ‘to search’ | Proposed reflex of [**DEDR 1443**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=134) | DEDR 1443 full article opens “1443 Ta. kāṇ (kāṇp-, kaṇṭ-) to see, consider, investigate, appear, become visible; n. sight, beauty; kāṇkai knowledge; kāṇpu seeing, sight;…”; its Ga. (Oll.) passage gives “Ga. (Oll.) kanḍp- (kanḍt-) to search.”. The source form and sense match this Ollari entry within the whole article. (1 record.) |
+| 48 | **kat-** ‘to cut; to sacrifice’ | Proposed reflex of [**DEDR 1208**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=113) | DEDR 1208 full article opens “1208 Kol. katk- (katakt-) to strike down (man), break down (tree). Nk. (Ch.) katuk-/ katk- to cut with axe. Pa. katt- to cut down (tree),…”; its Ga. (Oll.) passage gives “Ga. (Oll.) kat- to cut, sacrifice.”. The full article gives Ollari kat- “cut, sacrifice”; no separate sacrificial donor is proposed. (1 record.) |
+| 49 | **kar-** ‘auxiliary verb used to denote a sense of completeness’ | Proposed reflex of [**DEDR 1109**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=104) | DEDR 1109 full article opens “1109 Ta. kaṭa (-pp-, -nt-) to pass through, traverse, cross, exceed, excel, win, overcome, transgress; go, proceed, pass (as time, water,…”; its Ga. (Oll.) passage gives “Ga. (Oll.) karp- (kart-) to cross; kar- aux. vb. denoting completeness; (S.) karr- to yean; (P.) kar- to give birth to; (S. 3 ) kar- (kaṭ-) to drop, give birt”. The source form and sense match this Ollari entry within the whole article. (1 record.) |
+| 50 | **karke** ‘unripe mango’ | Proposed reflex of [**DEDR 1281**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=119) | DEDR 1281 full article opens “1281 Ta. karukkāy young and immature fruit. Ma. karikku an unripe coconut. Ka. (Gowda) kərki tender, unripe fruit. Tu. gargayi half-ripe,…”; its Ga. (Oll.) passage gives “Ga. (Oll.) karke unripe mango; (S.) karke mango. Cf. 1279 Ta. karu . DED(S) 1076.”. The primary Ga. (Oll.) sense is “unripe mango”; the same source form also occurs as a month name and that record is held. (1 record.) |
+
+Proposed assignment rows: **5**. Affected records: **5**. Relation kinds: **reflex**. Multi-part responses retain their source order.
+
+Exact persistent IDs and complete source records: [batch-018.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/OllariGadaba/batch-018.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../ollari-bhattacharya-20260925/research-holds.json). No new lexical material or donor nodes are introduced.

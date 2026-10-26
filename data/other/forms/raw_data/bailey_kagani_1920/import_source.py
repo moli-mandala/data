@@ -109,6 +109,12 @@ def main() -> None:
                 digest.update(chunk)
         if digest.hexdigest() != PDF_SHA256:
             raise SystemExit(f"Missing or changed original scan: {PDF}")
+    # Historical glossary generation remains available as evidence, but live writes
+    # always use the accepted whole-source coordinator.
+    if args.install:
+        from install_whole_source import install
+        install()
+        return
     rows, audit = generate()
     print(f"{len(audit)} source units, {len(rows)} installed rows, decisions={dict(Counter(x['status'] for x in audit))}")
     if args.audit_sample:

@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Kannada · Dravidian surveys, 2026-09-21 · batch 037. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Kannada | Proposed etymology | Evidence |
+|---|---|---|---|
+| 176 | **kūtuko** ‘sit’ | Compound: [**DEDR 1728**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=157) + [**DEDR 2151**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=194) | Ordered sit + reflexive auxiliary: DEDR1728 Kannada kūtu having sat down and2151 koḷḷu, modern imperative kō, reflexive auxiliary. Survey kūtuko retains both constituents. (1 records.) |
+| 177 | **nīḷṭuko** ‘stand’, **nintiko** ‘stand’ | Compound: [**DEDR 3675**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=325) + [**DEDR 2151**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=194) | Ordered stand + reflexive auxiliary: DEDR3675 Kannada nil with nilt-/nind- stems and2151 koḷḷu, modern imperative kō, reflexive auxiliary. Survey nīḷṭuko/nintiko preserve the standing stem plus kō, with source dental/retroflex spellings retained. (2 records.) |
+| 178 | **nānu** ‘I’ | Proposed reflex of [**DEDR 5160**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=468) | DEDR 5160 directly groups the first-person singular forms in these languages. The source cognacy annotation explicitly identifies this article; full-article checking confirms the same pronoun family. Survey aēn and hēnu retain their differences from dictionary Kurukh ēn and Malto én; these are comparative proposals, not spelling corrections. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 179 | **nāvu** ‘we’ | Proposed reflex of [**DEDR 3647**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=322) | DEDR 3647 directly groups Brahui nan, Kannada nāvu, Kurukh nām, Malto nám, Tamil nām and Telugu manamu as the inclusive/general first-person plural series. The survey cognacy annotation identifies this article. The survey gloss remains simply we; no inclusive label is inserted into source data. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 180 | **yēnu** ‘what’ | Proposed reflex of [**DEDR 5151**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=465) | DEDR 5151 gives Brahui ant, Gondi batal/bāta, Kannada ēn, Kurukh endr/endrā, Kuwi ena, Malayalam entu, Parji nāto and Tamil eṉṉa. The source cognacy annotations identify the same interrogative family. Survey endings and vowel differences are preserved; no claim of literal dictionary identity is made. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+
+Proposed assignment rows: **9**. Affected records: **6**. Relation kinds: **component, reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-037.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Kannada/batch-037.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

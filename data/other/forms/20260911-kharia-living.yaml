@@ -2,9 +2,20 @@ file: 20260911-kharia-living.csv
 defaults:
   transcription:
   - profile: kharia-living
+    preserve_hyphens: true
+  importer:
+    commands:
+    - [data/other/forms/raw_data/kharia_living_2026/whole-source-recovery/install_proposal.py, --install]
 sources:
   living-kharia2026:
     transcription:
     - profile: kharia-living
+      preserve_hyphens: true
     identity:
       dedupe_by_entry_key: true
+    forms:
+      split_alternates: false
+    reference:
+      editor: Aryaman Arora; OpenAI Codex
+      ocr: false
+      etymology_provenance: none

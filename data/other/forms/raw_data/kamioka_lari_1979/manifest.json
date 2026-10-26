@@ -1,0 +1,107 @@
+{
+  "bibliography": "Kamioka, Kōji & Minoru Yamada. 1979. Lārestāni Studies 1: Lari Basic Vocabulary. Tokyo: Institute for the Study of Languages and Cultures of Asia and Africa (ILCAA), Tokyo University of Foreign Studies.",
+  "scan": {
+    "file": "[Lārestāni studies] Kōji Kamioka_ _ Minoru Yamada - Lari basic vocabulary, (1979, Institute for the study of Languages and Cultures of Asia and Africa) - libgen.li.pdf",
+    "sha256": "9196621ac485cbbe60cd302712a0d5289e7b2c3ad118446d74361cde0710c569",
+    "pdf_pages": 232,
+    "redistributed": false,
+    "format": "image-only CCITT 300 dpi, /Rotate 270, each PDF page a two-page spread (left: Persian prompts; right: English/Lari)"
+  },
+  "rights": "Copyrighted; scan not checked in. Extracted lexical facts with locators only.",
+  "page_ranges": {
+    "front_matter_pdf": [
+      1,
+      9
+    ],
+    "vocabulary_pdf": [
+      10,
+      186
+    ],
+    "vocabulary_printed": [
+      1,
+      177
+    ],
+    "printed_offset": 9,
+    "excluded_indexes_pdf": [
+      187,
+      232
+    ],
+    "excluded": "Lari, English and Persian indexes (printed pp. 179–227+) and the Persian left-hand pages (OCR kept in the audit only)"
+  },
+  "ocr": {
+    "runner": "data/other/forms/raw_data/kamioka_lari_1979/ocr_runner.py",
+    "params": {
+      "version": 4,
+      "dpi": 300,
+      "split": "half",
+      "threshold": 140,
+      "underline_min_run": 40,
+      "underline_max_thickness": 7,
+      "mark_max_h": 16,
+      "mark_max_w": 32,
+      "mark_min_area": 8,
+      "mark_gap": [
+        1,
+        18
+      ],
+      "letter_min_h": 12,
+      "margin": [
+        110,
+        120
+      ],
+      "text_box": [
+        100,
+        1950
+      ],
+      "right_cmd": [
+        "-l",
+        "eng",
+        "--psm",
+        "6",
+        "-c",
+        "preserve_interword_spaces=1"
+      ],
+      "left_cmd": [
+        "-l",
+        "fas",
+        "--psm",
+        "6"
+      ]
+    },
+    "params_hash": "6c4280893fdb4253",
+    "marks_version": 4,
+    "alt_pass": [
+      "-l",
+      "eng",
+      "--psm",
+      "4"
+    ],
+    "pitch_px": 22.5
+  },
+  "counts": {
+    "entries_expected": 1000,
+    "entries_found": 1000,
+    "missing_entry_numbers": [],
+    "audit_units": 2446,
+    "audit_status": {
+      "cross_reference_only": 3,
+      "editorial_note": 2,
+      "example_sentence": 632,
+      "installed": 1527,
+      "no_head_form": 23,
+      "ocr_noise": 115,
+      "page_number": 144
+    },
+    "installed_rows": 1946,
+    "variant_rows": 71,
+    "folios_read": 144,
+    "folios_disagreeing": 1,
+    "corrections_applied": 14
+  },
+  "outputs": {
+    "forms": "data/other/forms/20261025-kamioka-lari.csv",
+    "audit": "data/other/forms/raw_data/kamioka_lari_1979/audit.csv",
+    "sample": "data/other/forms/raw_data/kamioka_lari_1979/sample.csv",
+    "forms_sha256": "224a20c2dca553665b56c62c20393d26caa823a268c3c07d85041d417177db30"
+  }
+}

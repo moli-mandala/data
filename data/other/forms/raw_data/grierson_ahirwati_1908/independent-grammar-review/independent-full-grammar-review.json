@@ -1,0 +1,176 @@
+{
+  "reviewer": "/root/asur_finish",
+  "status": "complete_original_review_corrections_required",
+  "review_date": "2026-09-27",
+  "scope": "Every native original page 49–51, all 51 physical census parents and all 95 owner child interpretations; not a sample audit.",
+  "inputs": {
+    "data/data/other/forms/raw_data/grierson_ahirwati_1908/grammar/child-witnesses-first-reading.jsonl": "96ccc5261f3ddca49a5fe96b08675f800d64173c7d590a7eda4048882cb6f6d7",
+    "data/data/other/forms/raw_data/grierson_ahirwati_1908/grammar/parent-coverage-first-reading.jsonl": "53ab13bfe22a064db76cb551ceae2e61e850abc6163ebf9c346773098f0e7f22",
+    "data/data/other/forms/raw_data/grierson_ahirwati_1908/scope/native-grammar-image-manifest.json": "3523974b550e699492c2ecbe4179bc3cd81869fbebde455e5dddab2c5d50e73d",
+    "data/data/other/forms/raw_data/grierson_ahirwati_1908/grammar/first-reading-crop-provenance.json": "937dfdcbb4886bf72cdc4a0a8a41fc0b1e818f156a91dd1d930cb76f8248c5a4"
+  },
+  "native_evidence": [
+    {
+      "path": "tmp/jambu-next-source/ahirwati-native-grammar-20260927/printed-49-pdf-66-Im66.png",
+      "sha256": "88260de1fad9e94e041acc79639ea4dda6f19680247140b8fa6a4237f3ef6c43"
+    },
+    {
+      "path": "tmp/jambu-next-source/ahirwati-native-grammar-20260927/printed-50-pdf-67-Im67.png",
+      "sha256": "1612c1da60979c592b4d344bf70325b588024318c128656b2ed91fe04b230bce"
+    },
+    {
+      "path": "tmp/jambu-next-source/ahirwati-native-grammar-20260927/printed-51-pdf-68-Im68.png",
+      "sha256": "69c9e42b7d20e25ef7e2c69dd6c2078e02a21713f1b8417aa6f0791ce503322e"
+    },
+    {
+      "path": "tmp/jambu-next-source/ahirwati-native-grammar-20260927/p51-first-reading-nominals.png",
+      "sha256": "d28d83d3192799aa1a5358024040af7e4cd9b61506b997fdfdd1a8042ca9f720"
+    },
+    {
+      "path": "tmp/jambu-next-source/ahirwati-native-grammar-20260927/p51-first-reading-pronouns.png",
+      "sha256": "7c739a3b28b02176fce7312669b1331614e4cdccd609d92b011365e4d9880da9"
+    },
+    {
+      "path": "tmp/jambu-next-source/ahirwati-native-grammar-20260927/p51-first-reading-copulas.png",
+      "sha256": "62dd80c29d2bd3f86a66317a62465ff0b8e06b466f73757b28bf239d207eb5a4"
+    },
+    {
+      "path": "tmp/jambu-next-source/ahirwati-native-grammar-20260927/p51-first-reading-passive-detail.png",
+      "sha256": "82d47d09957083a1a3761b14ec38703b97512e497e7ace46d6d6f1861f22ced6"
+    },
+    {
+      "path": "tmp/jambu-next-source/ahirwati-native-grammar-20260927/p51-first-reading-hypothesis-detail.png",
+      "sha256": "daa47fae2c74d960550063ff57ca8f3299ecb1b197dd2867da3d58439ab60c6e"
+    },
+    {
+      "path": "tmp/jambu-next-source/ahirwati-native-grammar-20260927/p51-first-reading-own-correct-span.png",
+      "sha256": "ac358592c55debb832abf84da83a58aa5372894b0e808690acdf40c3264127df"
+    },
+    {
+      "path": "tmp/jambu-next-source/ahirwati-native-grammar-20260927/peer-p50-nominal-ending-native.png",
+      "sha256": "07d6d3ccec441bc206a391106ca91addc4ce9671e84129df2e36c4f662d6a70d"
+    },
+    {
+      "path": "tmp/jambu-next-source/ahirwati-native-grammar-20260927/peer-p49-greek-name-native.png",
+      "sha256": "120de5fdeab02195c34e7c6fdb7d89f2f75e6ad7d6e95febc56a0f6b277adb03"
+    },
+    {
+      "path": "tmp/jambu-next-source/ahirwati-native-grammar-20260927/peer-p51-neuter-native.png",
+      "sha256": "11956e0ca1cfcc68aa703c08c87143c2b6a14a8c159abc28881bd4041f30b74f"
+    }
+  ],
+  "counts": {
+    "parents": 51,
+    "child_interpretations": 95,
+    "literal_corrections": 2,
+    "language_label_corrections": 2,
+    "unchanged_literal_and_attribution_agreements": 90,
+    "documentary_greek_typography_holds": 1,
+    "explicit_unattested_obliques": 4,
+    "recommended_shared_comparator_interpretations": 3
+  },
+  "dispositions_as_received": {
+    "documentary": 19,
+    "eligible": 66,
+    "eligible_comparator": 6,
+    "unattested_source_hypothesis": 4
+  },
+  "corrections": [
+    {
+      "key": "lsi9.2:p50:nominal-ending-comparison-continuation:w3",
+      "field": "source_form",
+      "old": "ē",
+      "new": "ā",
+      "evidence": "peer-p50-nominal-ending-native.png",
+      "reason": "Native p50 explicitly prints an oblique singular in ā, contrasted with Bangaru ē. This is not the locative ē on p51.",
+      "context_repair": "Correct this parent source_context and its child source_quote summaries from Ahirwati oblique ē to ā; preserve first-reading history.",
+      "evidence_sha256": "07d6d3ccec441bc206a391106ca91addc4ce9671e84129df2e36c4f662d6a70d"
+    },
+    {
+      "key": "lsi9.2:p51:qualified-oblique-relative-interrogative:w2",
+      "field": "source_form",
+      "old": "kaun",
+      "new": "kauṇ",
+      "evidence": "p51-first-reading-hypothesis-detail.png",
+      "reason": "Separate underdot is visible below the final n. The base word is printed; the following four obliques are explicitly unattested hypotheses.",
+      "context_repair": "Correct kaun to kauṇ in the parent and child context summaries without changing hypothetical dispositions.",
+      "evidence_sha256": "daa47fae2c74d960550063ff57ca8f3299ecb1b197dd2867da3d58439ab60c6e"
+    },
+    {
+      "key": "lsi9.2:p50:nominal-ending-comparison-continuation:w4",
+      "field": "language_label",
+      "old": "Bagri",
+      "new": "Bangaru",
+      "evidence": "peer-p50-nominal-ending-native.png",
+      "reason": "Original label is Bāṅgarū, with ṅ and medial ar sequence. This is distinct from the explicitly Bāgrī borrowing claim on p51.",
+      "context_repair": "Replace Bagri with Bangaru only in the p50 nominal-ending parent and its child summaries.",
+      "evidence_sha256": "07d6d3ccec441bc206a391106ca91addc4ce9671e84129df2e36c4f662d6a70d"
+    },
+    {
+      "key": "lsi9.2:p50:nominal-ending-comparison-continuation:w5",
+      "field": "language_label",
+      "old": "Bagri",
+      "new": "Bangaru",
+      "evidence": "peer-p50-nominal-ending-native.png",
+      "reason": "Original label is Bāṅgarū, with ṅ and medial ar sequence. This is distinct from the explicitly Bāgrī borrowing claim on p51.",
+      "context_repair": "Replace Bagri with Bangaru only in the p50 nominal-ending parent and its child summaries.",
+      "evidence_sha256": "07d6d3ccec441bc206a391106ca91addc4ce9671e84129df2e36c4f662d6a70d"
+    }
+  ],
+  "completeness_recommendations": [
+    {
+      "parent_key": "lsi9.2:p50:nominal-ending-comparison-continuation",
+      "source_form": "ō",
+      "language_label": "Mewati",
+      "source_analysis": "strong masculine noun nominative singular ending",
+      "physical_token": "shared with existing w2",
+      "source_evidence": "thus agreeing with Mēwātī",
+      "decision": "Add explicitly shared comparator interpretation, with blank lexical gloss."
+    },
+    {
+      "parent_key": "lsi9.2:p50:nominal-ending-comparison-continuation",
+      "source_form": "ā",
+      "language_label": "Mewati",
+      "source_analysis": "strong masculine noun oblique singular ending",
+      "physical_token": "shared with corrected existing w3",
+      "source_evidence": "thus agreeing with Mēwātī",
+      "decision": "Add explicitly shared comparator interpretation, with blank lexical gloss."
+    },
+    {
+      "parent_key": "lsi9.2:p51:genitive-suffix",
+      "source_form": "kō",
+      "language_label": "Mewati",
+      "source_analysis": "genitive suffix",
+      "physical_token": "shared with existing w1",
+      "source_evidence": "The genitive suffix is kō, as in Mēwātī.",
+      "decision": "Add explicitly shared comparator interpretation, with blank lexical gloss."
+    }
+  ],
+  "resolved_transcription_holds": {
+    "lsi9.2:p51:occasional-neuter-example:w1": "Separate round dot over initial i supports diṇū̃; retain occasional-neuter source qualification, archive the former quantity-review hold.",
+    "lsi9.2:p51:demonstrative-this-oblique:w1": "Printed aĩh has the nasal mark over i and no separate length bar over first a.",
+    "lsi9.2:p51:demonstrative-that-oblique:w1": "Printed waĩh has the nasal mark over i and no separate length bar over a.",
+    "lsi9.2:p51:qualified-oblique-relative-interrogative:w3": "Printed jaĩh supported as a source hypothesis only; retain unattested disposition.",
+    "lsi9.2:p51:qualified-oblique-relative-interrogative:w5": "Printed kaĩh supported as a source hypothesis only; retain unattested disposition."
+  },
+  "retained_hold": {
+    "key": "lsi9.2:p49:Ahir-history-6:w1",
+    "reason": "Ptolemy Greek ethnonym stays documentary with typography uncertainty; no target lexical routing or variant edge."
+  },
+  "source_claims": [
+    "Historical Abhira/Bhil etymology is explicitly tentative; retain documentary attribution, no modern genealogy or borrowed edge inferred.",
+    "Gurgaon is the grammatical standard; Bawal/Kot Kasam regional sō/sī/sā must preserve locality qualification without guessed gender associations.",
+    "Personal pronouns and conjugation generally as in Mewati do not license copying an unprinted Mewati paradigm.",
+    "Four proposed jaĩh/jā̃h/kaĩh/kā̃h are explicitly unencountered by the author and must remain audit-only.",
+    "Past thō and the future-passive construction share a form but have distinct source occurrence/function scope.",
+    "Second-plural saĩ is explicitly said to be borrowed from Bagri. Preserve source-attributed borrowing; any donor occurrence or edge needs exact identified endpoint. The source claim is not a new separately printed donor token.",
+    "gō/gā and sai-gō/hai-gā are explicit Ahirwati/Panjabi comparisons, not automatic borrowing edges.",
+    "Bound endings ē/ō/ai/i/nai/nē̃/kō are source-attested morphology, not abstract a-base notation; keep appropriate structured functions.",
+    "Whole mhārē ghari and tū-nē̃ karᵃṇō thō and their atom interpretations share printed spans; do not count them as separately printed occurrences.",
+    "No invented English person translations for the present paradigm; printed person/number labels are analysis, not lexical gloss.",
+    "Population, ethnographic names, bibliography absence and unprinted Gurmukhi specimens remain documentary; parent closure covers all source blocks."
+  ],
+  "review_limits": "This first-reading review does not certify final CSV tags, profiles, identity routing, graph implementation, parser, full build or browser gates. No owner inputs or canonical files changed.",
+  "keyed_review_path": "data/data/other/forms/raw_data/grierson_ahirwati_1908/independent-grammar-review/all-95-keyed-review.jsonl",
+  "keyed_review_sha256": "f5f512ee877cad067c5bc6c4c4f4ced733f5bf02ffb810dabb12b5df8c9db416"
+}

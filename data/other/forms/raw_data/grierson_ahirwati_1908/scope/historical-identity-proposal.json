@@ -1,0 +1,65 @@
+{
+  "stage": "Proposed, root source decision incorporated; no registration",
+  "base": {
+    "ID": "mewati_jhambaus",
+    "Name": "Ahirwadi",
+    "Glottocode": "mewa1250",
+    "Latitude": "28.235628",
+    "Longitude": "76.927847",
+    "Clade": "Rajasthanic",
+    "Location": "",
+    "Quality": "C"
+  },
+  "Bangaru_comparator_base": {
+    "ID": "kaithal",
+    "Name": "Haryanvi",
+    "Glottocode": "hary1238",
+    "Latitude": "28.91568",
+    "Longitude": "76.37168",
+    "Clade": "W. Hindi",
+    "Location": "",
+    "Quality": "C"
+  },
+  "new_lects": [
+    {
+      "ID": "lsi1908_ahirwati_gurgaon",
+      "Language_ID": "mewati_jhambaus",
+      "Name": "Ahirwati (Gurgaon, LSI1908)",
+      "Location": "District Gurgaon, historical survey",
+      "Latitude": "",
+      "Longitude": "",
+      "Glottocode": "",
+      "source_scope": "Specimen37; grammar follows explicit Gurgaon-standard rule on50, unless individually differently attributed."
+    },
+    {
+      "ID": "lsi1908_ahirwati_rohtak_jhajjar",
+      "Language_ID": "mewati_jhambaus",
+      "Name": "Ahirwati (Jhajjar/Rohtak, mixed LSI1908)",
+      "Location": "Jhajjar Tahsil, district Rohtak, historical survey",
+      "Latitude": "",
+      "Longitude": "",
+      "Glottocode": "",
+      "source_scope": "Specimen38 historically mixed with Bangaru; preserve qualification, do not guess per-token genealogy."
+    }
+  ],
+  "policy": [
+    "No Jhambaus coordinates inherited",
+    "No modern lect Glottocode inferred",
+    "Explicitly quoted Bangaru comparator to existing kaithal/Haryanvi",
+    "Bagri outside quotes retain Bagri identity",
+    "Whole mixed Rohtak specimen retains qualified historical Ahirwadi routing",
+    "No donor/borrowing edges from mixture or historical influence alone"
+  ],
+  "evidence": [
+    {
+      "path": "data/data/other/forms/raw_data/grierson_ahirwati_1908/scope/ROOT_IDENTITY_DECISION.md",
+      "sha256": "71cf12229cece8e2b300fabc0f2ed5ea388174c6ca09e1452772e2d5f06646a1"
+    }
+  ],
+  "existing_raw_coverage": {
+    "20230521-rajasthani.csv": 220,
+    "20260913-zoller-linguistic-data.csv": 1,
+    "generic_LSI_Ahirwadi_rows": 0,
+    "count_type": "Canonical raw rows in current discovery, not compiled unique forms."
+  }
+}

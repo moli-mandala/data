@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Malayalam · Dravidian surveys, 2026-09-21 · batch 016. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Malayalam | Proposed etymology | Evidence |
+|---|---|---|---|
+| 76 | **valudə** ‘big’ | Proposed reflex of [**DEDR 5276**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=476) | DEDR5276 directly gives Kodagu ballyë great, Malayalam valiya strong/great and Brahui balun big. Survey balyadə, valudə and ballun preserve their endings and consonant spellings; source cognacy identifies this same strength/bigness family. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 77 | **nāya** ‘dog’ | Proposed reflex of [**DEDR 3650**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=322) | DEDR3650 directly gives Malayalam nāy and Toda nōy dog. Survey nāya and noi retain their final-vowel/diphthong transcriptions; source cognacy identifies the same family. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 78 | **tē** ‘fire’ | Proposed reflex of [**DEDR 3266**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=285) | DEDR3266 directly gives Tamil and Malayalam tī fire. The survey tē forms are comparative vowel variants assigned to this article by the source, preserved without normalizing them to tī. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 79 | **kiḍakkuga** ‘lie’ | Proposed reflex of [**DEDR 1524**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=141) | Full DEDR1524 explicitly gives Malayalam kiṭakka lie/rest and kiṭattuka lay down. Survey kiḍakkuga preserves its voiced-stop transcription. Actual homepage lie and kiṭak searches supplied the dictionary attestation; the upstream /cognate/93/ is not an article citation. The existing parent *kōḍ- (?) remains an uncertain reconstruction; no uncertainty is erased, and the article’s questioned Malto comparison is not included. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 80 | **ñān** ‘I’ | Proposed reflex of [**DEDR 5160**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=468) | DEDR 5160 directly gives Tamil nāṉ, Malayalam ñān, Kannada nān, Telugu nēnu, Gondi nannā/nanā/nana, Brahui ī and Toda ōn ‘I’. Each selected simple first-person pronoun is compared with its own language branch, retaining the survey’s final vowels and length notation. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+
+Proposed assignment rows: **5**. Affected records: **5**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-016.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Malayalam/batch-016.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

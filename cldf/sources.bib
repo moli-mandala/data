@@ -164,7 +164,11 @@
   year      = {2021},
   publisher = {Zenodo},
   doi       = {10.5281/zenodo.7901554},
-  included  = {Yes}
+  version   = {v1, 13 April 2021},
+  url       = {https://zenodo.org/records/7901554},
+  included  = {Yes; complete printed dictionary pp. 1–10 and preface, plus separately attributed lexical CSV, translated examples, explicit morphology and an untranslated text from the author repository at commit 18b43f982efad92f35e4054561f2e0fc519f4eb7. 1135 source-stage rows preserve all 198 historical keys, with five independently reviewed erroneous ancestry assignments corrected. Source claims, printed-number conflicts and historical editorial alternatives are distinguished in the source audit},
+  ocr       = {No},
+  etymology_provenance = {mixed}
 }
 
 @article{liljegren,
@@ -2653,9 +2657,11 @@
   note         = {Research completed in 2019},
   publisher    = {SIL International},
   url          = {https://nepal.sil.org/resources/archives/93057},
-  included     = {Lochani, Bhokraha, Siddhapur, and Tokla Nepal Kurux target wordlists; Pathibari, West Bengal, and Ranchi, Jharkhand, comparison lists excluded},
-  provenance   = {data/other/forms/20260813-kurux-nepal.csv},
-  jambu_editor = {OpenAI Codex}
+  included     = {Complete lexical scope: all 338 prompts in six Nepal and India columns, quoted morphology, 35 Lohardaga narrative segments and their aligned groups, Jharkhand passage, and explicitly attributed prose names. Documentary controls and non-target questionnaire labels audited},
+  provenance   = {Four source CSV routes: 20260813-kurux-nepal and 20260927-kurux-nepal-grammar/native/roman; whole-source-recovery/installed-audit.jsonl preserves 2542 source units and independent revision 2 review},
+  jambu_editor = {Aryaman Arora; OpenAI Codex},
+  jambu_ocr = {No: native PDF extraction with original-page visual review},
+  jambu_etymology_provenance = {None; lexical similarity is not asserted as cognacy}
 }
 
 @article{webster2022north-gorkha,
@@ -3665,10 +3671,13 @@
   address      = {Leiden and Boston},
   year         = {2007},
   url          = {https://archive.org/details/etymological-dictionary-of-the-iranian-verb},
-  included     = {No; cited indirectly for 76 installed etyma},
-  provenance   = {Cited through data/other/params/20260827-wiktionary-piir.csv},
+  isbn         = {978-90-04-15496-7},
+  included     = {Dictionary body pp. 1--475 complete: 701 Proto-Iranian verbal roots (etymon layer), 12,960 attested Iranian forms (Old, Middle and modern Iranian), 3,817 typed prose blocks (Sanskrit, PIE and IE cognates, miscellaneous comparanda, commentary, references); inflected-form paradigms, non-Iranian comparanda and preverb-only senses are accounted for in the audit},
+  provenance   = {Publisher PDF (625 pp., SHA-256 in the manifest; not redistributed), born-digital text layer with custom glyph encodings decoded from the embedded fonts: data/other/forms/raw_data/cheung_ediv_2007/ (import_source.py, glyphs.csv, audit.csv, sample.csv, manifest.json); installed data/other/forms/20261025-cheung-ediv.csv, data/other/params/20261025-cheung-ediv.csv and data/other/entry_texts/20261025-cheung-ediv.csv; also cited through data/other/params/20260827-wiktionary-piir.csv},
+  ocr          = {No},
   etymology_provenance = {source},
   jambu_editor = {Aryaman Arora and Anthropic Claude},
+  license      = {Copyrighted; extracted linguistic facts used for scholarship and research},
   note         = {Every root entry gives the Proto-Iranian reconstruction together with its Sanskrit and Proto-Indo-European counterparts, so it reaches Indo-Aryan through the verbal root}
 }
 
@@ -3690,10 +3699,13 @@
   publisher    = {Vosto\v{c}naja literatura},
   address      = {Moscow},
   year         = {2000--2015},
-  included     = {No; cited indirectly for 45 installed etyma},
-  provenance   = {Cited through data/other/params/20260827-wiktionary-piir.csv},
+  volume       = {1--3 used (a--\={a}, 2000; b, \v{c}, d, 2003; f, g, h, 2007)},
+  included     = {Partial: the reconstructed Proto-Iranian lemma layer of vols. 1--3 (printed dictionary pp. 63--327, 40--502 and 44--493), 587 of the 589 printed article headwords (2 left out as illegible; 168 see-reference entries kept in the audit); English glosses are an editorial translation of the opening Russian gloss; the reflex citations and comparative prose are not installed (deferred: the Latin-script citations are not recoverable from the Russian-mode OCR layer at the required accuracy)},
+  provenance   = {Scan with ABBYY FineReader 10 Russian text layer (1324 PDF pages, SHA-256 in the manifest; not redistributed). Headword lines re-read with Tesseract script/Latin plus glyph geometry (346 rows) or by manual collation of headword crops (241 rows), 2026-10-26: data/other/forms/raw_data/esija_2000/ (import_source.py, esija_ocr.py, manual-lemmas.csv, glosses_en.csv, 20261025-esija-audit.csv, 20261025-esija-manifest.json); installed data/other/params/20261025-esija.csv; also cited through data/other/params/20260827-wiktionary-piir.csv},
+  ocr          = {Yes},
   etymology_provenance = {source},
-  jambu_editor = {Aryaman Arora and Anthropic Claude}
+  jambu_editor = {Aryaman Arora and Anthropic Claude (OCR repair, manual collation, English translation of glosses)},
+  license      = {Copyrighted scan not redistributed; extracted linguistic facts used for scholarship and research}
 }
 
 @book{rix2001liv,
@@ -4112,13 +4124,13 @@
   year         = {2021},
   pages        = {124},
   url          = {https://www.sil.org/resources/archives/88873},
-  included     = {Appendix E, printed pages 75--118: 1,438 manually transcribed lexical variants from 1,401 responsive cells in seven Koya, Gondi and Madia locality lists. Sixty-nine missing target slots and 420 Telugu and Oriya comparison cells are audit-only},
-  provenance   = {Official SIL publisher PDF downloaded 2026-08-28, SHA-256 a6541e0d2397849ce7c36961b3849f3b2c1f1c267036cfa1a3f6025796e14e7d; the PDF is not redistributed. Reproducible raster extraction, OCR comparison evidence, frozen manual cell transcriptions, source-local importer, complete 1,890-slot audit and manifest are in data/other/forms/raw_data/sil_koya_2021; installed rows are data/other/forms/20260828-sil-koya.csv},
-  ocr          = {Yes, for comparison scaffolding only. Every one of the 1,840 printed cells and every installed IPA form was manually read from the source images. No installed form originates from OCR},
+  included     = {Whole-report lexical scope reconciled across all 124 PDF pages: Appendix E, printed pages 75--118, contributes 1,437 manually transcribed lexical variants from 1,401 responsive cells; Appendix B.1--B.7, printed pages 17--31, contributes 205 narrative/question units and five explicitly named terms; section 3.1.4, printed pages 6--7, contributes 18 comparative attestations. Total 1,665 source rows across seven Koya, Gondi and Madia lects. Sixty-nine missing wordlist target slots, 420 Telugu/Oriya wordlist controls, Telugu test narratives, English questionnaires, numeric scores, a festival name without lexical definition, and documentary matter remain accounted for outside target output},
+  provenance   = {Official SIL publisher PDF, SHA-256 a6541e0d2397849ce7c36961b3849f3b2c1f1c267036cfa1a3f6025796e14e7d, retained locally and not redistributed. Source-local wordlist ledger, native-layout narrative extractor, comparative extractor, all-page census, raw-versus-output evidence and guarded installation records are under data/other/forms/raw_data/sil_koya_2021. Source outputs: data/other/forms/20260828-sil-koya.csv, data/other/forms/20260927-sil-koya-narrative.csv and data/other/forms/20260927-sil-koya-comparative.csv. Complete wordlist rereading and source-key reconciliation evidence: data/other/forms/raw_data/sil_koya_2021/whole-source-recovery/literal-integration; one historical erroneous alternative key is proposed as an alias of the same source attestation},
+  ocr          = {Yes, comparison scaffolding for historical wordlists only; wordlist readings manually reviewed against images. Recovered narratives and comparative examples use native PDF text, checked against original pages},
   etymology_provenance = {none},
   jambu_editor = {OpenAI Codex},
   license      = {Copyright 2021 SIL International. The report permits research or instructional copying under fair-use guidelines and prohibits republication or commercial use without written consent; the PDF is not redistributed and only extracted linguistic facts are installed},
-  note         = {Survey fieldwork was conducted in 1985--1986. The report treats Koya as the southernmost Gondi variety, so the seven survey lects attach to canonical Gondi. Source phonetic-similarity analysis is not treated as historical cognacy. One Malakanagiri item has an explicitly flagged unclear medial source symbol; no reading was silently guessed. The report supplies locality names but no point coordinates}
+  note         = {Survey fieldwork 1985--1986. Seven lects retain canonical Gondi and their registered locality tags. Narrative spelling is preserved without invented phonemic interpretation; section3.1.4 G maps to voiced velar fricative following its explicit definition. Wordlists preserve literal single-dot versus colon length, raised vowels and consonant marks in a separate source-notation profile; Phonemic remains blank. Unresolved handwritten glyphs and question-shaped signs retain explicit interpretation uncertainty. Source free translations remain paired at printed segment boundaries, without inferred word alignment. Expected comprehension answers are audit evidence rather than lexical gloss content. Explicitly named but undefined terms retain blank glosses and context. No cognate edges inferred from sound comparisons. Wordlist uncertainty remains in Notes, audit and tags; no new coordinates inferred}
 }
 
 @techreport{blair2021kullu,
@@ -4158,21 +4170,21 @@
 }
 
 @techreport{behera2022korwakodaku,
-  author       = {Behera, Gangadhar},
-  title        = {A Sociolinguistic Profile of Korwa and Kodaku Tribes in Chhattisgarh and Jharkhand, India},
-  institution  = {SIL International},
-  series       = {Journal of Language Survey Reports},
-  number       = {2022-014},
-  year         = {2022},
-  pages        = {115},
-  url          = {https://www.sil.org/resources/publications/entry/94564},
-  included     = {Appendix B.5, printed pages 56--80: 4,458 target rows from nine Korwa and nine Kodaku locality lists, derived from 3,730 attested target cells after within-cell deduplication and one slash-alternative expansion. Fifty blank or unlisted target cells, 1,453 attested comparison-control cells, seventeen blank or unlisted control cells, and two responses carrying undefined source site codes are audit-only},
-  provenance   = {Official SIL publisher PDF recovered from the Internet Archive capture dated 2024-06-17 because the current publisher endpoint challenges automated clients; SHA-256 a8efbe88405e27024a7a6ec786cd6fde3e382f0eaf0d0081197d3880ed97eb0c. The PDF is not redistributed. Reproducible text and OCR scaffolds, frozen 2,900-line manual review ledger, twenty-five-page completion ledger, unresolved-code ledger, source-local importer, complete 6,135-record audit and manifest are in data/other/forms/raw_data/sil_korwa_kodaku_2022; installed rows are data/other/forms/20260828-sil-korwa-kodaku.csv},
-  ocr          = {No. Appendix B.5 is typeset with an embedded Unicode text layer. OCR is retained only as independent comparison evidence, and every one of the 2,900 printed response rows was visually checked across all twenty-five rendered pages before the full 5,250-cell matrix was audited},
-  etymology_provenance = {none},
-  jambu_editor = {OpenAI Codex},
-  license      = {Copyright 2022 SIL International. The report permits scholarly research and instructional copying under fair-use guidelines and prohibits republication or commercial use without written consent; the PDF is not redistributed and only extracted linguistic facts are installed},
-  note         = {Survey fieldwork was conducted in 2004--2005. Korwa attaches to canonical kw; Kodaku is registered separately following the report and ISO 639-3 ksz. Source similarity-group labels remain notes and are not treated as historical cognacy. Undefined lowercase codes u at item 83 and n at item 173 are transcribed in the audit but excluded rather than reassigned. No ambiguous, clipped, illegible, or OCR-derived form is installed}
+    author = "Behera, Gangadhar",
+    title = "A Sociolinguistic Profile of {Korwa} and {Kodaku} Tribes in {Chhattisgarh} and {Jharkhand}, {India}",
+    institution = "SIL International",
+    series = "Journal of Language Survey Reports",
+    number = "2022-014",
+    year = "2022",
+    pages = "115",
+    url = "https://www.sil.org/resources/publications/entry/94564",
+    included = "Whole-report coverage: 6,864 rows comprising 4,459 repaired legacy Korwa/Kodaku rows and 2,405 additions from six language bases. All 25 Appendix B.5 lists, four Appendix C texts and outside lexical evidence are accounted for. Tanmai identity conflicts, 66 internal text-alignment spans, 20 outside language-attribution holds, documentary material, blank responses and two undefined site codes remain explicitly audited; their evidence is not silently discarded",
+    provenance = "Pinned SIL PDF SHA-256 a8efbe88405e27024a7a6ec786cd6fde3e382f0eaf0d0081197d3880ed97eb0c; 115 physical pages, recovered from the archived publisher PDF. The original PDF is not redistributed. Source evidence, reviewed transcriptions, per-record decisions and reproducible preparation scripts are under data/other/forms/raw\_data/sil\_korwa\_kodaku\_2022/whole-recovery. Source CSVs: data/other/forms/20260828-sil-korwa-kodaku.csv and data/other/forms/20260927-behera-whole-additions.csv. Whole-source audit: data/other/forms/raw\_data/sil\_korwa\_kodaku\_2022/whole-source-audit.jsonl",
+    ocr = "No",
+    etymology_provenance = "source",
+    jambu_editor = "OpenAI Codex",
+    license = "Copyright 2022 SIL International. The report permits scholarly research and instructional copying under fair-use guidelines and prohibits republication or commercial use without written consent; the PDF is not redistributed and only extracted linguistic facts are installed",
+    note = "Fieldwork 2004--2005. Source-specific language and locality identities remain separate from speakers and test audiences. The Standard Sadri Brave Hunter text is reported from Abraham 1995 Appendix C-11, not independently collated. Birjia remains distinct from Birhor/Asuri/Korwa. Literal additions preserve field-transcription distinctions without inferred phonemic analysis; the legacy profile remains separate. New literal evidence uses the embedded text layer and original-page review; older OCR was a comparison aid, not installed transcription. Qualified introductory word-origin claims remain attributed commentary, not historical edges. Source conflicts and uncertain alignments are explicitly recorded"
 }
 
 @techreport{abraham-daimary2021amrikarbi,
@@ -4559,12 +4571,12 @@
   title = {Kharia Living Dictionary},
   year = {2026},
   url = {https://livingdictionaries.app/kharia},
-  urldate = {2026-09-11},
-  version = {Public SQLite snapshot 2026-08-20},
+  urldate = {2026-09-27},
+  version = {Public SQLite snapshot modified2026-09-18, downloaded2026-09-27; historical2026-08-20 headword evidence compared},
   note = {Content revised in 2022 by Anuranjan Kiro in collaboration with Gregory D. S. Anderson and Anna Luisa Daigneault; subsequent entry updates retained by upstream IDs. Separate from Peterson's 2009 lexicon.},
-  license = {Used with permission; user confirmed all selected-source reuse permissions on 2026-09-11},
-  included = {All 452 lexical entries and senses, expanded to 521 rows with 68 variant links and one extra numbered sense. 446 source phonetic transcriptions; six native-script-only additions retained without invented pronunciation. Media and example-sentence collections excluded.},
-  provenance = {data/other/forms/20260911-kharia-living.csv; data/other/forms/raw_data/20260911-kharia-living-audit.jsonl; data/other/forms/raw_data/kharia_living.py},
+  license = {Used with permission; user confirmed all selected-source reuse permissions2026-09-11 and Living Dictionaries reuse per Sarva2026-09-27},
+  included = {Complete452 lexical entries/senses plus all3example sentences:524rows,68source variant links, one extra numbered sense. All521legacy keys and literal/Native/Phonemic fields preserved. Six legacy native-only heads and three native-only sentences retained without invented pronunciation. Automatic token matching remains audit-only; media/personal/administrative tables excluded.},
+  provenance = {data/other/forms/20260911-kharia-living.csv; data/other/forms/raw_data/kharia_living_2026/whole-source-recovery/proposal/whole-audit.jsonl; data/other/forms/raw_data/kharia_living_2026/whole-source-recovery/snapshot-lexical-comparison-20260927.json},
   jambu_editor = {Aryaman Arora; OpenAI Codex},
   ocr = {No}
 }
@@ -5603,8 +5615,8 @@
   doi = {10.30687/bhasha/2785-5953/2024/02/005},
   url = {https://edizionicafoscari.unive.it/media/pdf/article/bhasha/2024/2/art-10.30687-bhasha-2785-5953-2024-02-005.pdf},
   license = {CC-BY-4.0},
-  included = {Appendix 1, pp. 291--297: 275 numbered Odisha Turi records, 224 attested responses yielding 246 forms; 51 unelicited cells retained only in the audit. Excludes grammatical examples and the two texts. Canonical publisher PDF snapshot 2026-09-21; source annotations about likely Indo-Aryan borrowing retained without inferred donor links},
-  provenance = {data/other/forms/20260921-peterson-turi.csv; data/other/forms/raw_data/peterson_turi_2024/manifest.json; data/other/forms/raw_data/peterson_turi_2024/20260921-peterson-turi-audit.json},
+  included = {Whole article, pp. 261--302: all 275 Appendix 1 records (246 attested forms and 51 unelicited cells), grammar and prose examples 1--43, whole texts 44--62 and their aligned words, plus explicitly attributed historical evidence. Total 648 source-stage rows: 246 Appendix forms, 370 grammar/text forms, 32 historical forms. Foreign controls, unattested analyses and documentary-only evidence remain audit-only. Printed analysis conflicts and transcription uncertainties retained; no inferred donor links. Full compiled build and browser validation deferred.},
+  provenance = {data/other/forms/20260921-peterson-turi.csv; data/other/forms/20260927-peterson-turi-grammar.csv; data/other/forms/20260927-peterson-turi-historical.csv; data/other/forms/raw_data/peterson_turi_2024/whole-source-recovery/revision4/proposal/whole-audit.jsonl; data/other/forms/raw_data/peterson_turi_2024/whole-source-recovery/revision4/root-independent-output-audit-20260927.json},
   jambu_editor = {Aryaman Arora; OpenAI Codex},
   ocr = {No}
 }
@@ -5790,20 +5802,19 @@
 }
 
 @phdthesis{dhakal2011darai,
-    author = "Dhakal, Dubi Nanda",
-    title = "The {Darai} Language",
-    year = "2011",
-    school = "Tribhuvan University",
-    address = "Kathmandu",
-    url = "https://elibrary.tucl.edu.np/items/4c2a3db9-8d61-4dc4-8906-60db09180a1e",
-    included = "Chapter 3, printed pp. 42--76: 485 lexical occurrences, including explicit grammatical morphemes; 16 multiword interlinear clauses and one English metalinguistic term excluded. Phoneme labels, acoustic measurements and unglossed diagram segments excluded.",
-    provenance = "data/other/forms/20260921-dhakal-darai.csv; data/other/forms/raw_data/dhakal_darai_2011/; exact 486-page university PDF SHA256 6ca12ee82a22a16b0394b08e319afd5a94f075111fb8a994ee10d59da234bebf",
-    jambu_editor = "Aryaman Arora; OpenAI Codex",
-    ocr = "No",
-    license = "No open licence asserted; attributed linguistic facts extracted, full PDF not redistributed",
-    note = "University catalogue supplies 2011. Native PDF legacy-font decoding, not OCR. Source superscript h and conflicting printed glosses preserved."
+  author = {Dhakal, Dubi Nanda},
+  title = {The {Darai} Language},
+  year = {2011},
+  school = {Tribhuvan University},
+  address = {Kathmandu},
+  url = {https://elibrary.tucl.edu.np/items/4c2a3db9-8d61-4dc4-8906-60db09180a1e},
+  included = {Whole thesis, printed pp. 1--450 plus front-matter lexical mentions; all chapters, explicit paradigms and morphemes, and five interlinear narratives. 8,373 source-stage entries; 2,431 repeated occurrence mappings and 500 controls retained in the source audit. Independent original-page audit passed 0/20; full compiled and browser integration remain deferred.},
+  provenance = {data/other/forms/20260921-dhakal-darai.csv; data/other/forms/20260927-dhakal-darai-literal.csv; data/other/forms/raw_data/dhakal_darai_2011/whole-installed-audit.jsonl; data/other/forms/raw_data/dhakal_darai_2011/; exact 486-page university PDF SHA256 6ca12ee82a22a16b0394b08e319afd5a94f075111fb8a994ee10d59da234bebf},
+  jambu_editor = {Aryaman Arora; OpenAI Codex},
+  ocr = {No},
+  license = {No open licence asserted; attributed linguistic facts extracted, full PDF not redistributed},
+  note = {University catalogue supplies 2011. Native PDF legacy-font decoding, not OCR. Source superscript h and conflicting printed glosses preserved.}
 }
-
 
 @book{kotapish1973phonemic,
     author = "Kotapish, Carl and Kotapish, Sharon",
@@ -5884,8 +5895,8 @@
   isbn = {978-93-82172-08-6},
   url = {https://chakmamaadi.wordpress.com/wp-content/uploads/2022/05/2010-the-chakma-vocabulary-terminology.pdf},
   note = {First published February 2, 2010; 500 copies. Introduction describes the June 9--12, 2009 workshop. Chakma source spelling in Bengali script is preserved without inferred Roman or phonemic transcription.},
-  included = {Source extraction of the Chakma column of the main thematic wordlist, printed pp. 19--46 (PDF pp. 21--48): 733 source cells, 742 forms, two withheld cells. Later lexical and comparative chapters remain pending. Bengali is a control/gloss column.},
-  provenance = {data/other/forms/raw_data/niranjan_chakma_2010/; scan SHA256 f022a2a448445cdc9840891478bd5864e2ded1ae98985332b51f0938c075842d},
+  included = {Whole 110-page scan accounted: grammar, thematic and reverse vocabulary, homophones, named groups, numbered comparisons, Kokborok/Brok-Skad/Santali comparisons, further comparisons and basic vocabulary. Source-stage export contains 3662 forms from 5232 audited units, preserving all 742 historical keys. Target-family comparison witnesses are separately attributed; other-family controls, documentary material, unresolved identities and damaged readings remain explicitly audited. 486 emitted rows retain typed uncertainty. Full compiled-data validation remains deferred.},
+  provenance = {data/other/forms/20260921-niranjan-chakma.csv; data/other/forms/raw_data/niranjan_chakma_2010/whole-installed-audit.jsonl; whole-export-r2/whole-source-export-status.json; scan SHA256 f022a2a448445cdc9840891478bd5864e2ded1ae98985332b51f0938c075842d},
   license = {No open licence asserted; attributed lexical facts transcribed; full PDF and page renders not redistributed},
   jambu_editor = {Aryaman Arora; OpenAI Codex},
   ocr = {Yes}
@@ -6041,8 +6052,8 @@
   url          = {https://archive.org/details/linguisticstudie00bailrich},
   license      = {Public domain; original 1920 edition},
   note         = {Original Koci dialect comparison, with Rampur before and Baghi after a colon. Bailey places Baghi in a small district around Baghi on p. 113. LSI IX(IV) addenda cite this later account. Wikimedia-hosted Internet Archive scan, 310 PDF pages, SHA256 7a1577a2d2a24eca8b95e9b1ed700ef01f716d1069e4468f36a673611d093b39.},
-  included     = {Full Baghi answers in printed pp. 144–147 glossary: 245 cells, 240 accepted cells expanded to 296 forms; three unpaired Rampur controls and two English cross-references excluded. No unresolved Baghi readings.},
-  provenance   = {data/other/forms/20260925-bailey-baghi.csv; data/other/forms/raw_data/bailey_baghi_1920/full-transcription.tsv; data/other/forms/raw_data/bailey_baghi_1920/audit.jsonl},
+  included     = {Shared introduction pp.113–115; lect-specific introduction pp.116–117; grammar pp.131–140; 22 complete translated responses pp.141–142; commentary pp.142–143; glossary pp.144–147. 698 rows retain all 296 legacy keys; 57 legacy rows have explicit reviewed field corrections, 239 remain unchanged; 402 additional rows recover the full source scope. Generic Kochi witnesses are carried in the companion Rampuri package only. Literal notation, source-qualified uncertainties and full expressions are retained.},
+  provenance   = {data/other/forms/20260925-bailey-baghi.csv; data/other/forms/raw_data/bailey_baghi_1920/audit.jsonl; data/other/forms/raw_data/bailey_rampur_1920/whole-paired-pass4-freeze-20260927.json; data/other/forms/raw_data/bailey_rampur_1920/root-independent-whole-output-audit-20260927-pass4.json; data/other/forms/raw_data/bailey_rampur_1920/whole-legacy-full-rereading-20260927.json},
   jambu_editor = {OpenAI Codex},
   ocr          = {Yes}
 }
@@ -6058,8 +6069,8 @@
   url          = {https://archive.org/details/linguisticstudie00bailrich},
   license      = {Public domain; original 1920 edition},
   note         = {The p. 113 introduction locates the Rampur Koci dialect north of Rohru; p. 144 assigns first, pre-colon answers to Rampur and post-colon answers to Baghi. The Baghi column is separately represented by bailey1920baghi, but both are paired in the same primary printed table; no independent field-event claim is made. Wikimedia-hosted Internet Archive scan, 310 PDF pages, SHA256 7a1577a2d2a24eca8b95e9b1ed700ef01f716d1069e4468f36a673611d093b39.},
-  included     = {Full Rampur glossary, printed pp. 144--147: 245 source units, 242 accepted cells yielding 288 rows, two cross-reference-only exclusions, and one unresolved body-vowel stack held. Readable macrons, breves, underdots, and underlined digraphs preserved. Baghi controls, grammar, and other lects excluded.},
-  provenance   = {data/other/forms/20260925-bailey-rampur.csv; data/other/forms/raw_data/bailey_rampur_1920/full-transcription.tsv; data/other/forms/raw_data/bailey_rampur_1920/audit.jsonl},
+  included     = {Shared introduction pp.113–115; lect-specific introduction pp.116; grammar pp.131–140; 22 complete translated responses pp.141–142; commentary pp.142–143; glossary pp.144–147. 647 rows retain all 288 legacy keys; 67 legacy rows have explicit reviewed field corrections, 221 remain unchanged; 359 additional rows recover the full source scope. Four generic Kochi witnesses are carried once under existing kc with explicit attribution uncertainty. Literal notation, source-qualified uncertainties and full expressions are retained.},
+  provenance   = {data/other/forms/20260925-bailey-rampur.csv; data/other/forms/raw_data/bailey_rampur_1920/audit.jsonl; data/other/forms/raw_data/bailey_rampur_1920/whole-paired-pass4-freeze-20260927.json; data/other/forms/raw_data/bailey_rampur_1920/root-independent-whole-output-audit-20260927-pass4.json; data/other/forms/raw_data/bailey_rampur_1920/whole-legacy-full-rereading-20260927.json},
   jambu_editor = {OpenAI Codex},
   ocr          = {Yes}
 }
@@ -6090,8 +6101,8 @@
   url          = {https://archive.org/details/linguisticstudie00bailrich},
   license      = {Public domain; original 1920 edition},
   note         = {Bailey's North Jubbal or Barari lexical section maps to canonical Barari and is distinct from the Koci chapters. The LSI IX(IV) account of Barari on pp. 599--601 has a prose specimen, not this vocabulary. Zoller 2023 Barari citations to Bailey p. 185 are derivative attestations of the same printed evidence, not independent field elicitation. Wikimedia-hosted Internet Archive scan, 310 PDF pages, SHA256 7a1577a2d2a24eca8b95e9b1ed700ef01f716d1069e4468f36a673611d093b39.},
-  included     = {Complete North Jubbal/Barari glossary, printed pp. 185–188: 243 cells, 242 accepted cells expanded to 330 forms and one English cross-reference. No unresolved source readings.},
-  provenance   = {data/other/forms/20260925-bailey-north-jubbal.csv; data/other/forms/raw_data/bailey_north_jubbal_1920/full-transcription.tsv; data/other/forms/raw_data/bailey_north_jubbal_1920/audit.jsonl},
+  included     = {North Jubbal/Barari introduction, grammar, paradigms and complete translated responses, printed pp. 172–184; complete glossary pp. 185–188; explicitly North and South Jubbal suffix comparison on p. 143; applicable vowel-notation guidance on p. 114. The currency discussion on p. 184 refers to p. 167, note 13, whose uncertainty is retained. Other named lects remain separately attributed controls. 837 forms, 688 audit units, all 330 prior glossary keys retained.},
+  provenance   = {data/other/forms/20260925-bailey-north-jubbal.csv; data/other/forms/raw_data/bailey_north_jubbal_1920/whole-source-recovery; data/other/forms/raw_data/bailey_north_jubbal_1920/audit.jsonl; data/other/forms/raw_data/bailey_north_jubbal_1920/root-whole-output-audit-20260927-pass1.json; data/other/forms/raw_data/bailey_north_jubbal_1920/whole-installation-result-20260927.json},
   jambu_editor = {OpenAI Codex},
   ocr          = {Yes}
 }
@@ -6189,7 +6200,7 @@
   url          = {https://archive.org/details/linguisticstudie00bailrich},
   license      = {Public domain; original 1920 edition},
   note         = {Bailey's primary Bilaspuri or Kahluri vocabulary is distinct from the Koci and Jubbal chapters. Wikimedia-hosted Internet Archive scan, 310 PDF pages, SHA256 7a1577a2d2a24eca8b95e9b1ed700ef01f716d1069e4468f36a673611d093b39.},
-  included     = {Complete printed pp. 245–248 Bilaspuri alphabetical glossary, about through you: 237 accepted printed headword cells expanded to 288 installed forms; no unresolved cells.},
+  included     = {Whole Bilaspuri source pp. 231–248: attributed introductory examples, grammar and morphology, all 22 translated sentences, and complete glossary. 678 source forms; 288 prior rows retained exactly. One numeral glyph uncertainty preserved; other-lect controls remain audit-only.},
   provenance   = {data/other/forms/20260925-bailey-bilaspuri.csv; data/other/forms/raw_data/bailey_bilaspuri_1920/full-transcription.tsv; data/other/forms/raw_data/bailey_bilaspuri_1920/audit.jsonl},
   jambu_editor = {OpenAI Codex},
   ocr          = {Yes}
@@ -6606,8 +6617,8 @@
   url          = {https://archive.org/details/linguisticstudie00bailrich},
   license      = {Public domain; original 1920 edition},
   note         = {Bailey identifies Rohru as a Koci dialect spoken around Rohru on printed p. 113. The first vocabulary page follows the Rohru sketch; LSI IX(IV) addenda cite Bailey's later work and are derivative comparators rather than separate field evidence. Internet Archive scan, 310 PDF pages, SHA256 7a1577a2d2a24eca8b95e9b1ed700ef01f716d1069e4468f36a673611d093b39.},
-  included     = {Full Rohru glossary, printed pp. 127--130: 255 source cells, 250 accepted cells yielding 309 installed rows, two specifically unresolved vowel-stack holds, and three cross-reference-only exclusions. Grammar, examples, and other Koci lects excluded.},
-  provenance   = {data/other/forms/20260925-bailey-rohru.csv; data/other/forms/raw_data/bailey_rohru_1920/full-transcription.tsv; data/other/forms/raw_data/bailey_rohru_1920/completion.tsv; data/other/forms/raw_data/bailey_rohru_1920/audit.jsonl},
+  included     = {Whole Rohru source: target-attributed shared introduction pp. 113--118 and main pp. 118--130, including grammar, 22 translated sentences, lexical notes and all 255 glossary cells. 671 audit units yield 723 rows, preserving all 309 historical glossary rows. Seventeen rows retain explicit transcription uncertainty; three cross-reference-only cells, shared unattributed examples and other-lect controls remain accounted in the audit.},
+  provenance   = {data/other/forms/20260925-bailey-rohru.csv; data/other/forms/raw_data/bailey_rohru_1920/full-transcription.tsv; data/other/forms/raw_data/bailey_rohru_1920/whole-second-reading-20260927.json; data/other/forms/raw_data/bailey_rohru_1920/root-whole-output-audit-20260927-pass2.json; data/other/forms/raw_data/bailey_rohru_1920/audit.jsonl},
   jambu_editor = {OpenAI Codex},
   ocr          = {Yes}
 }
@@ -6785,18 +6796,18 @@
 }
 
 @book{dalton1872haldarjuang,
-  author       = {Dalton, Edward Tuite},
-  title        = {Descriptive Ethnology of Bengal},
-  publisher    = {Office of the Superintendent of Government Printing},
-  address      = {Calcutta},
-  year         = {1872},
-  url          = {https://commons.wikimedia.org/wiki/File:Descriptive_Ethnology_of_Bengal.pdf},
-  license      = {Public-domain original 1872 edition; Wikimedia Commons identifies the exact scan as public domain. The PDF and rendered pages are local review cache, not installed assets},
-  included     = {Complete Juanga target column of Haldar's comparative table on printed pp. 235--241 and the separate Juang vocabulary on pp. 241--242: 361 source cells audited, 189 accepted cells yielding 196 forms, 19 transcription holds and 153 printed blanks. Eight other comparison-language columns are controls, not installed},
-  provenance   = {data/other/forms/20260925-dalton-haldar-juang.csv; data/other/forms/raw_data/dalton_haldar_juang_1872/reviewed_inventory.tsv; data/other/forms/raw_data/dalton_haldar_juang_1872/comparative-extension.tsv; data/other/forms/raw_data/dalton_haldar_juang_1872/separate-list-inventory.tsv; data/other/forms/raw_data/dalton_haldar_juang_1872/audit.jsonl; source-page images and raw OCR preserved in source package; Internet Archive scan SHA256 38dda30a06f7c56df34311328c36d3fdf8cb9835a5420aea4453fbb1b76008b1},
-  note         = {Printed p. 235 credits Babu Rakhal Das Haldar, Assistant Commissioner in Chutia Nagpur, with compiling these tables for Dalton; it does not say he personally elicited each Juanga form or identify speakers/sites. Dalton 1866 Appendix F is a probable partial predecessor of the same Juang list and is not registered as an independent lexical source. Samuells 1856 is a materially different direct collection. Original acute accents and literal (s.) source labels are retained; no donor or etymology edge is inferred.},
+  author = {Dalton, Edward Tuite},
+  title = {Descriptive Ethnology of Bengal},
+  publisher = {Office of the Superintendent of Government Printing},
+  address = {Calcutta},
+  year = {1872},
+  url = {https://commons.wikimedia.org/wiki/File:Descriptive_Ethnology_of_Bengal.pdf},
+  license = {Public-domain original 1872 edition; original scan and regenerable review images are local evidence, not installed assets},
+  included = {Whole Juang chapter pp.152--158, Haldar-compiled comparison column pp.235--241, separate vocabulary pp.241--242 and explicit grammatical markers. All361 table cells accounted:208 nonblank cells recovered and153 printed blanks.226 forms retain all196 earlier keys, including19 formerly held cells. Four chapter attestations and three grammatical markers are included; five chapter documentary/control terms remain audit-only. Outside-chapter indexed mentions are documentary comparisons, not extra target attestations},
+  provenance = {data/other/forms/20260925-dalton-haldar-juang.csv; data/other/forms/raw_data/dalton_haldar_juang_1872/whole-source-recovery/installed-audit.jsonl; data/other/forms/raw_data/dalton_haldar_juang_1872/whole-source-recovery/owner-table-second-reading-20260927.json; data/other/forms/raw_data/dalton_haldar_juang_1872/whole-source-recovery/outside-chapter-index-review-20260927.json; original scan SHA25638dda30a06f7c56df34311328c36d3fdf8cb9835a5420aea4453fbb1b76008b1},
+  note = {P.235 credits Babu Rakhal Das Haldar with compiling the tables, without identifying individual Juang speakers or elicitation sites. Dalton chapter prose is separately attributed and does not receive the Haldar table dialect tag. Dalton1866 AppendixF is a probable earlier partial witness, not a separately installed independent elicitation. Samuells1856 is a distinct collection. Acute accents and marked n are preserved literally, without inferring phonetic length or stress. Residual (s.) and source question marks remain in Notes; no donor edge is inferred. Tumba retains qualified language attribution. Original typography uncertainties remain explicit.},
   jambu_editor = {OpenAI Codex},
-  ocr          = {Yes; Tesseract sequencing aid checked against original scan}
+  ocr = {Yes; historical Tesseract sequencing aid and retained full-volume OCR locator, all recovered readings checked against original page images}
 }
 
 @misc{riezen2013easternmuria,
@@ -6840,8 +6851,8 @@
   url          = {https://archive.org/details/linguisticstudie00bailrich},
   license      = {Public domain; original 1920 edition},
   note         = {Printed p. 87 identifies Kagani as the Kagan Valley speech known as Hindko. The source is registered to Northern Hindko rather than Jambu's older Avankari/Southern Hindko record. The 310-page original scan has SHA256 7a1577a2d2a24eca8b95e9b1ed700ef01f716d1069e4468f36a673611d093b39.},
-  included     = {Complete Kāgānī vocabulary on printed pp.106–109: 261 cells, 258 accepted, 329 forms; three English cross-references excluded; zero unresolved readings.},
-  provenance   = {data/other/forms/20260925-bailey-kagani.csv; data/other/forms/raw_data/bailey_kagani_1920/full-transcription.tsv; source-local per-cell audit and independent literal audit.},
+  included     = {Whole Kāgānī chapter printed pp.87–90 and92–109; p91 Bahramgala introduction recorded as an other-lect context control. All grammar, identifiable bound morphology, both interlinear narratives, complete expression spans, narrative notes and glossary retained. 1306 proposed forms,1217 audited units;329 historical keys retained with explicit independently reviewed corrections.},
+  provenance   = {Canonical source CSV and whole-source-recovery frozen proposal, keyed input/review records, literal preservation profile, parser validation and fresh independent output audit.},
   jambu_editor = {OpenAI Codex},
   ocr          = {Yes}
 }
@@ -7059,4 +7070,831 @@
   provenance = {data/other/forms/raw_data/grierson_korvi_1906/whole-source-scope-20260926.json; data/other/forms/raw_data/grierson_korvi_1906/facsimile-provenance-20260926.json; data/other/forms/raw_data/grierson_korvi_1906/audit.jsonl},
   jambu_editor = {OpenAI Codex},
   ocr = {No}
+}
+
+@article{fawcett1888saora,
+    author = {Fawcett, Frederick},
+    title = {On the Saoras (or Savaras), an Aboriginal Hill People of the Eastern Ghats of the Madras Presidency},
+    journal = {Journal of the Anthropological Society of Bombay},
+    volume = {1},
+    number = {4},
+    year = {1888},
+    pages = {206--272},
+    url = {https://books.google.com/books?id=-Y84AAAAMAAJ&pg=PA206},
+    included = {Complete article lexical evidence: weekday and personal-name table, kinship expressions, numerals, and explicitly named or glossed prose terms. Documentary labels and foreign controls remain in the source audit.},
+    transcription = {Literal historical Roman notation; source vowel marks and syllable commas retained. Fawcett identifies the Missionary alphabet and warns that exact pronunciation cannot be conveyed.},
+    provenance = {Primary page-image transcription, with independent source review. OCR was used only to locate passages, not as installed transcription input. Kinship tables were first written by an unnamed Uriya speaker knowing Saora and checked by Fawcett with an unnamed Saora speaker. Installed source: data/other/forms/20260927-fawcett-saora.csv. Source audit: data/other/forms/raw_data/fawcett_saora_1888/audit.jsonl},
+    jambu_editor = {OpenAI Codex},
+    ocr = {false}
+}
+
+@misc{living-birhor2026,
+  author = {Anderson, Gregory D. S. and Jora, Bikram and Lakra, Sashi Kant},
+  title = {Birhor Living Dictionary},
+  year = {2026},
+  publisher = {Living Tongues Institute for Endangered Languages},
+  url = {https://livingdictionaries.app/birhor},
+  version = {Snapshot last modified 2026-08-08T12:21:29.991Z; acquired 2026-09-22},
+  included = {Whole pinned snapshot proposal: 3,480 rows from all 2,746 head records plus explicitly glossed annotation attestations; 610 exact repeated note attestations reused with all citations retained},
+  provenance = {Pinned public snapshot SHA-256 f52cb1314d54ed313a9dffa70f78b57dc19f384d6830995cf29c8b165c6535d4; lexical snapshot SHA-256 9b377c42300e406c10d1571dab998a7ea7f924be8cf912e2b98ecaf0a2bae666; canonical CSV data/other/forms/20260927-birhor-living.csv; whole-snapshot audit and reproducible source inputs in data/other/forms/raw_data/birhor_living_2026/whole-snapshot-recovery},
+  note = {Lexical fieldwork 2018--2021. Snapshot includes subsequent ethnobotanical additions. Not identical to the 2021 printed dictionary. No media copied. Reuse authorized by the user on 2026-09-27: living dictionary is allowed per sarva. Conventional explanatory prose labels without secure target attribution remain documentary evidence},
+  jambu_editor = {OpenAI Codex},
+  ocr = {No},
+  etymology_provenance = {none}
+}
+
+@book{lakra-etal2022birhor-ethnobotany,
+  author = {Lakra, S. and Jora, B. and Anderson, G. D. S.},
+  title = {A Survey of the Ethnobotanical Knowledge of the Birhoɽ People of India},
+  year = {2022},
+  publisher = {Living Tongues Institute for Endangered Languages},
+  series = {Living Tongues Indigenous Language Publications: Munda Languages Initiative},
+  number = {2},
+  address = {Ranchi, India},
+  included = {Secondary citation: ethnobotanical information attributed by the Birhor Living Dictionary},
+  provenance = {Bibliographic details transcribed from the pinned Birhor source-reference record; this work was not independently extracted},
+  etymology_provenance = {none}
+}
+
+@misc{tropicos,
+  author = {{Missouri Botanical Garden}},
+  title = {Tropicos},
+  url = {https://www.tropicos.org/},
+  included = {Secondary botanical-identification citations in the Birhor Living Dictionary; individual name IDs retained as locators},
+  provenance = {89 source URL records preserved in birhor_living_2026/source-references.json; no new botanical or lexical readings independently imported},
+  etymology_provenance = {none}
+}
+@incollection{grierson1906naiki,
+  author = {Grierson, George Abraham},
+  title = {{Naikī} dialect},
+  booktitle = {Linguistic Survey of India. Volume IV: Munda and Dravidian Languages},
+  year = {1906},
+  pages = {570--575, 623},
+  address = {Calcutta},
+  publisher = {Office of the Superintendent of Government Printing, India},
+  url = {https://dsal.uchicago.edu/books/lsi/lsi.php?volume=4&pages=701},
+  included = {Complete Naiki of Chanda chapter: grammar, bound morphology, personal-pronoun table and both complete interlinear specimens; additional explicit genitive witness on p. 623. Comparative Telugu, Tamil and Kui forms excluded. 694 rows include 51 complete utterances and seven complete source blocks carrying the printed free English translations as Gloss. Ambiguously collective aund attribution on p. 285 remains contextual evidence},
+  note = {Original Roman transcription retained with typed transcription and source-analysis uncertainty. The Norwegian keyed OCR is a prose extraction aid; the missing pronoun table and all specimen pages were recovered from original images. Exact village coordinates are not asserted},
+  provenance = {data/other/forms/20260927-grierson-naiki.csv; data/other/forms/raw_data/grierson_naiki_1906/installed-audit.jsonl; data/other/forms/raw_data/grierson_naiki_1906/dsal-originals-manifest.json; independently reviewed revision 2 with source morphology Notes addendum},
+  jambu_editor = {OpenAI Codex},
+  ocr = {Yes}
+}
+
+@misc{taittiriya_aranyaka_work,
+  title = {Taittirīya Āraṇyaka},
+  url = {https://vedicheritage.gov.in/hi/aranyakas/taittiriya-aranyaka/},
+  note = {Work-level identification cited secondarily in Niranjan Chakma (2010), numbered comparison group 48. Edition, date and passage unspecified; primary passage not independently collated. Authority URL supports work identity only},
+  included = {Auxiliary work identification only; no independent lexical ingestion},
+  provenance = {data/other/forms/raw_data/niranjan_chakma_2010/numbered-reference-mapping-20260927.json},
+  jambu_editor = {OpenAI Codex},
+  etymology_provenance = {none}
+}
+
+@misc{caryapada_work,
+  title = {Caryāpada},
+  url = {https://ci.nii.ac.jp/ncid/BA76055138},
+  note = {Work-level identification cited secondarily in Niranjan Chakma (2010), numbered comparison groups 4, 52 and 53. Edition, date and passage unspecified; primary passages not independently collated. Catalogue URL supports work identity only; its edition is not asserted to be Niranjan's source},
+  included = {Auxiliary work identification only; no independent lexical ingestion},
+  provenance = {data/other/forms/raw_data/niranjan_chakma_2010/numbered-reference-mapping-20260927.json},
+  jambu_editor = {OpenAI Codex},
+  etymology_provenance = {none}
+}
+
+@misc{srikrsnakirtana_work,
+  author = {Baṛu Caṇḍīdāsa},
+  title = {Śrīkr̥ṣṇakīrtana},
+  url = {https://search.worldcat.org/it/title/singing-the-glory-of-lord-krishna-the-srikrsnakirtana-transl-and-ann-by-mh-klaiman/oclc/251584825},
+  note = {Work-level identification cited secondarily in Niranjan Chakma (2010), numbered comparison group 65. Expansion of printed abbreviation শ্রী.কৃ. কী. is editorial. Edition, date and passage unspecified; primary passage not independently collated. Catalogue URL supports work and author identity only; its translation is not asserted to be Niranjan's source},
+  included = {Auxiliary work identification only; no independent lexical ingestion},
+  provenance = {data/other/forms/raw_data/niranjan_chakma_2010/numbered-reference-mapping-20260927.json},
+  jambu_editor = {OpenAI Codex},
+  etymology_provenance = {none}
+}
+
+@misc{ksemendra_brhatkathamanjari_work,
+  author = {Kṣemendra},
+  title = {Bṛhatkathāmañjarī},
+  url = {https://search.worldcat.org/title/The-Brihatkathamanjari-of-Kshemendra/oclc/25877968},
+  note = {Work-level identification cited secondarily in Niranjan Chakma (2010), numbered comparison group 87. Edition, date and passage unspecified; primary passage not independently collated. Catalogue URL supports work identity only; its edition is not asserted to be Niranjan's source},
+  included = {Auxiliary work identification only; no independent lexical ingestion},
+  provenance = {data/other/forms/raw_data/niranjan_chakma_2010/numbered-reference-mapping-20260927.json},
+  jambu_editor = {OpenAI Codex},
+  etymology_provenance = {none}
+}
+
+@article{dewan_chakma2003chakma_first_lesson,
+  author = {{বঙ্কিম চন্দ্র দেওয়ান} and {সুগত চাক্মা}},
+  title = {চাক্মা ভাষা শিক্ষার প্রথম পাঠ},
+  journal = {সদরক},
+  year = {2003},
+  note = {Article-level identification from the adaptation credit in Niranjan Chakma (2010), printed p. 5 (PDF p. 7). That source jointly credits the two named authors and describes the magazine as published by SCERT Tripura Language Cell in 2003. Original article not independently consulted; issue, volume and article pagination unspecified. Niranjan describes adaptation and incorporation of principal portions, not a certified verbatim reprint},
+  provenance = {data/other/forms/raw_data/niranjan_chakma_2010/grammar-bibliography-review/grammar-adaptation-reference-mapping-20260927.json},
+  included = {Auxiliary adaptation reference only; no independent lexical ingestion or original-article collation},
+  jambu_editor = {OpenAI Codex},
+  etymology_provenance = {none}
+}
+
+@misc{living-kera-mundari2026,
+    author = "Anderson, Gregory D. S.",
+    title = "KeraɁ Mundari Living Dictionary",
+    year = "2026",
+    publisher = "Living Tongues Institute for Endangered Languages",
+    url = "https://livingdictionaries.app/kera-mundari",
+    urldate = "2026-09-27",
+    note = "Public snapshot last modified 2026-07-23; 446 entries and 446 senses. Compiler credited on the about page; speakers Kamlesh Tirkey and Magan Tirkey; technical assistance Anna Luisa Daigneault, Jacob Bowdoin and Diego Córdova Nieto. About-page description by Alex Mussomeli attributes its background to Kobayashi and Murmu (2008).",
+    license = "Used with permission: user-confirmed Living Dictionaries reuse authorization per Sarva; no Creative Commons or public-domain license inferred.",
+    included = "Whole pinned dictionary: 446 entries and 446 senses, 462 readings; complete about-page target-family evidence, 17 further readings; total 479 forms",
+    provenance = "data/other/forms/20260927-kera-mundari-living.csv; data/other/forms/raw\_data/kera\_mundari\_living\_2026/installed-audit.jsonl",
+    jambu_editor = "OpenAI Codex",
+    etymology_provenance = "source"
+}
+
+
+@incollection{kobayashi_murmu2008kera,
+    author = "Kobayashi, Masato and Murmu, Ganesh",
+    editor = "Anderson, Gregory D. S.",
+    title = "Keraʔ Mundari",
+    booktitle = "The Munda Languages",
+    pages = "165--194",
+    address = "London and New York",
+    publisher = "Routledge",
+    year = "2008",
+    note = "Auxiliary source cited by the Living Dictionary about page; original chapter not directly inspected for this ingestion.",
+    jambu_editor = "OpenAI Codex",
+    etymology_provenance = "none",
+    included = "Auxiliary background attribution only; original chapter not independently consulted"
+}
+
+@incollection{grierson1906kui,
+  author = {Grierson, George Abraham},
+  title = {Kui, Kandhi, or Khond},
+  booktitle = {Linguistic Survey of India. Volume IV: Munda and Dravidian Languages},
+  year = {1906},
+  pages = {457--471},
+  address = {Calcutta},
+  publisher = {Office of the Superintendent of Government Printing, India},
+  url = {https://commons.wikimedia.org/wiki/File:Linguistic_Survey_of_India_Vol_4.djvu},
+  included = {Complete chapter, the 241-prompt Khondmals comparison column, and explicitly attributed outside-chapter Kui comparisons with their bounded comparative context. Blank cells, exact existing Naiki occurrences, unresolved language identities, and documentary hypotheses are accounted for separately in the source audit},
+  note = {Original 1906 edition. Source spellings and historical lect distinctions are preserved; source-specific display normalization is separate from Original. Smith's tale and Letchmajee's analyses are quoted through Grierson. Later bound-in addenda retain their separate undated source identity},
+  provenance = {data/other/forms/20260927-grierson-kui.csv; data/other/forms/raw_data/grierson_kui_1906/installed-audit.jsonl; data/other/forms/raw_data/grierson_kui_1906/installation-receipt.json; data/other/forms/raw_data/grierson_kui_1906/SCOPE.md},
+  jambu_editor = {OpenAI Codex},
+  ocr = {Yes},
+  etymology_provenance = {source}
+}
+
+@misc{letchmajee1902kui,
+  author = {Letchmajee, Lingum},
+  title = {An Introduction to the Grammar of the Kui or Kandh Language},
+  edition = {2},
+  year = {1902},
+  address = {Calcutta},
+  note = {Bibliographic authority reported in Grierson (1906), p. 459. Revised and corrected by J. M. Descombes and G. A. Grierson. First published in the Calcutta Christian Observer, May and June 1853. Not independently collated for this ingestion},
+  included = {Auxiliary quoted authority; no independent lexical ingestion}
+}
+
+@misc{smith1876khond,
+  author = {Smith, J. McD.},
+  title = {A Practical Handbook of the Khond Language},
+  year = {1876},
+  address = {Cuttack},
+  note = {Bibliographic authority and tale provenance reported in Grierson (1906), pp. 459--460 and 464. Grierson added the interlinear translation and noted uncertain interpretations. The original handbook was not independently collated for this ingestion},
+  included = {Auxiliary quoted authority; no independent lexical ingestion}
+}
+
+@misc{frye1851kondh,
+  author = {Frye, John Percival},
+  title = {A Grammar and Progressive Reading Lessons in the Kondh Language with an English Translation},
+  year = {1851},
+  address = {Cuttack},
+  note = {Authority listed in Grierson (1906), p. 458; not independently collated for this ingestion},
+  included = {Auxiliary bibliographic authority only; no independent lexical ingestion}
+}
+
+@article{friendpereira1902khonds,
+  author = {Friend-Pereira, J. E.},
+  title = {Marriage Customs of the Khonds},
+  journal = {Journal of the Asiatic Society of Bengal},
+  volume = {71},
+  year = {1902},
+  note = {Part iii, pp. 18 ff., as reported in Grierson (1906), p. 459, which notes a Kui invocation with translation. Not independently collated for this ingestion; final page not supplied in that citation},
+  included = {Auxiliary bibliographic authority only; no independent lexical ingestion}
+}
+
+@article{nair2013aranadan,
+  author = {Nair, Ravi Sankar S.},
+  title = {Tribal Languages of Kerala},
+  journal = {Language in India},
+  year = {2013},
+  volume = {13},
+  number = {7},
+  month = {July},
+  pages = {9--11},
+  issn = {1930-2940},
+  url = {https://languageinindia.com/july2013/ravisankarkeralatriballanguages.html},
+  included = {Complete Aranadan chapter, with explicitly attributed Malayalam and Kannada comparisons. Whole-volume attribution census retained. Documentary community names and notation-only contexts are accounted for separately},
+  note = {Chapter in Tribal Languages of Kerala. The preface describes compiled material and incomplete fieldwork in some languages; item-level elicitation provenance is not specified. Source Roman notation is preserved after visually verified native-font repair; no independent phonemic transcription is asserted},
+  provenance = {data/other/forms/20260927-nair-aranadan.csv; data/other/forms/raw_data/nair_aranadan_2013/installed-audit.jsonl; data/other/forms/raw_data/nair_aranadan_2013/root-review/transcription-and-provenance.json},
+  jambu_editor = {OpenAI Codex},
+  ocr = {No},
+  etymology_provenance = {source}
+}
+
+@misc{usha1992aranadanmar,
+  author = {Usha, S.},
+  title = {Keralathile Aranadanmar (Aranadars of Kerala)},
+  year = {1992},
+  month = {August},
+  note = {Reported in Nair 2013, p. 11: Vijinana Kairali, Kerala Bhasha Institute, Trivandrum 23-8. Original article not independently consulted; the printed 23-8 is retained without an inferred volume or issue interpretation},
+  included = {Reported background authority; no independent lexical ingestion},
+  jambu_editor = {OpenAI Codex},
+  ocr = {No},
+  etymology_provenance = {none}
+}
+
+
+@misc{abraham1995sadri,
+  author = {Abraham, Liju},
+  title = {A sociolinguistic survey of the {Sadri}-speaking people of {India}},
+  year = {1995},
+  address = {Calcutta},
+  howpublished = {Manuscript},
+  note = {Bibliographic details reported by Behera 2022, printed page 104. Behera printed page 18 attributes the Standard Sadri Brave Hunter text to Appendix C-11 of this manuscript. The manuscript has not been independently collated},
+  provenance = {Secondary attribution in Behera 2022, printed pages 18 and 104; reproduced text in Appendix C.5, printed pages 95--98},
+  included = {Reported source attribution only; no independent ingestion of this manuscript},
+  jambu_editor = {OpenAI Codex}
+}
+
+@misc{ctdp2002hillkorwa,
+  author = {{Chhattisgarh Tribal Development Programme}},
+  title = {Major tribes: {Hill-Korwa} ({Pahari Korwa})},
+  year = {2002},
+  url = {http://cjtdp.nic.in/tribes.htm},
+  note = {Bibliographic details and historical URL reported by Behera 2022, printed page 104, which records access on 30 June 2006. The original website has not been independently collated},
+  provenance = {Reported authority in Behera 2022; lexical attribution requires per-occurrence review},
+  included = {Reported source attribution only; no independent ingestion of the website},
+  jambu_editor = {OpenAI Codex}
+}
+
+
+@misc{powercity_korba_ndc,
+  author = {{Powercity Korba}},
+  title = {The people of {Korba}: Hilly {Korwa}},
+  url = {http://www.powercitykorba.com/people.html},
+  note = {Undated authority labeled n.d.c by Behera 2022. Bibliographic details and historical URL are reported on printed page 104, with access dated June 30, 2006. Behera printed page 1 attributes the Kora womb origin myth to this source. The website has not been independently collated},
+  provenance = {Secondary citation through Behera 2022, printed pages 1 and 104; distinguish the singular people.html URL from the separate peoples.html authority labeled n.d.a},
+  included = {Reported authority only; no independent lexical ingestion},
+  jambu_editor = {OpenAI Codex}
+}
+
+@book{singh1994scheduledtribes,
+  author = {Singh, K. Suresh},
+  title = {The scheduled tribes},
+  series = {People of {India}},
+  volume = {3},
+  year = {1994},
+  address = {Delhi},
+  publisher = {Anthropological Survey of India; Oxford University Press},
+  note = {Bibliographic details reported by Behera 2022, printed page 104. Behera printed page 1 cites page 1826 for kor man and a plausible connection with the name Korwa, page 613 for dodawas earth diggers, and page 546 for Kodwa digger of the soil. The book has not been independently collated},
+  provenance = {Secondary authority through Behera 2022; page numbers are those attributed by Behera and have not been independently verified},
+  included = {Reported authority only; no independent lexical ingestion},
+  jambu_editor = {OpenAI Codex}
+}
+
+@article{nair2013cholanaickan,
+  author = {Nair, Ravi Sankar S.},
+  title = {{Tribal Languages of Kerala}},
+  year = {2013},
+  journal = {Language in India},
+  volume = {13},
+  number = {7},
+  month = {July},
+  issn = {1930-2940},
+  pages = {19--21},
+  url = {https://languageinindia.com/july2013/ravisankarkeralatriballanguages.html},
+  included = {Complete source-defined Cholanaickan chapter on printed and PDF pages 19--21: grammatical examples, paradigms, markers, and final glossary; documentary ethnonyms and Tamil comparison retained in audit},
+  provenance = {data/other/forms/20260927-nair-cholanaickan.csv; data/other/forms/raw_data/nair_cholanaickan_2013/installed-audit.jsonl; physical-units-first-reading.jsonl and pinned original PDF/render evidence. This is the same 58-page volume used by the separately cited nair2013aranadan chapter, not a second edition},
+  jambu_editor = {OpenAI Codex},
+  ocr = {No},
+  etymology_provenance = {source},
+  note = {The chapter reports some analysis from Muralidharan 1988; that thesis has not been independently consulted. No explicit reuse licence is printed in the PDF.}
+}
+@misc{muralidharan1988cholanaikka,
+  author = {Muralidharan, R.},
+  title = {{A Descriptive Study of Cholanaikka}},
+  year = {1988},
+  howpublished = {Unpublished PhD thesis, Annamalai University, Annamalainagar},
+  included = {Cited by Nair 2013 on printed page 21 and attributed in discussion; documentary auxiliary reference only},
+  provenance = {Reported in Nair 2013; original thesis not independently consulted},
+  jambu_editor = {OpenAI Codex},
+  ocr = {No},
+  etymology_provenance = {none}
+}
+
+@article{nair2013kurichiya,
+  author = {Nair, Ravi Sankar S.},
+  title = {{Tribal Languages of Kerala}},
+  year = {2013},
+  journal = {Language in India},
+  volume = {13},
+  number = {7},
+  month = {July},
+  issn = {1930-2940},
+  pages = {34--36},
+  url = {https://languageinindia.com/july2013/ravisankarkeralatriballanguages.html},
+  included = {Complete Kurichiya chapter on printed and PDF pages 34--36: Malayalam comparison tables, pronoun paradigm, past-tense forms, particles and whole utterances; documentary bibliography retained in audit},
+  provenance = {Source-local nair_kurichiya_2013 physical-unit ledger and pinned original PDF/render evidence; source-stage proposal only, not installed. The same 58-page volume supplies separately cited chapters},
+  jambu_editor = {OpenAI Codex},
+  ocr = {No},
+  etymology_provenance = {source},
+  note = {Nair calls Kurichiya a dialect of Malayalam. The comparison is attributed to this source; no independent cognacy or phonemic reconstruction is asserted. No explicit reuse licence is printed in the PDF.}
+}
+
+@misc{vayaleri1992kurichiya,
+  author = {Vayaleri, Kumaran},
+  title = {{Kurichiarude jivithavum samskaravum}},
+  year = {1992},
+  howpublished = {Unpublished PhD thesis, Department of Malayalam, Calicut University},
+  included = {Bibliographic item cited by Nair 2013 on printed page 36; documentary auxiliary reference only},
+  provenance = {Reported in Nair 2013; original thesis not independently consulted},
+  jambu_editor = {OpenAI Codex},
+  ocr = {No},
+  etymology_provenance = {none}
+}
+
+@article{nair2013kani,
+  author = {Nair, Ravi Sankar S.},
+  title = {{Tribal Languages of Kerala}},
+  journal = {Language in India},
+  year = {2013},
+  volume = {13},
+  number = {7},
+  month = {July},
+  pages = {32--33},
+  issn = {1930-2940},
+  url = {https://languageinindia.com/july2013/ravisankarkeralatriballanguages.html},
+  included = {Complete Kerala Kani chapter, printed pages 32--33: 36 target rows, 42 audited source units and 66 printed witnesses; 30 control or documentary witnesses remain audit-only},
+  note = {The preface describes compiled material and incomplete fieldwork. The chapter lists southern Kerala settlement regions but gives no exact elicitation site or consultant. Source Roman forms preserve written doubled vowels and distinctive marks},
+  provenance = {data/other/forms/20260927-nair-kani.csv; data/other/forms/raw_data/nair_kani_2013/installed-audit.jsonl},
+  jambu_editor = {OpenAI Codex},
+  ocr = {No},
+  etymology_provenance = {none}
+}
+
+@misc{somasekharannairkanikkarude,
+  author = {Nair, P. Somasekharan},
+  title = {{Kanikkarude Samsarabhasha} (The speech of Kanikkar)},
+  howpublished = {Samsakara Keralam},
+  note = {Reported by Nair 2013, p. 33. The printed bibliography gives no year, volume, issue or pages; original not independently collated},
+  included = {Auxiliary reported authority only; no separately sourced lexical forms},
+  jambu_editor = {OpenAI Codex},
+  ocr = {No},
+  etymology_provenance = {none}
+}
+
+@article{nair2013malamuthan,
+  author = {Nair, Ravi Sankar S.},
+  title = {{Tribal Languages of Kerala}},
+  year = {2013},
+  journal = {Language in India},
+  volume = {13},
+  number = {7},
+  month = {July},
+  issn = {1930-2940},
+  pages = {37--39},
+  url = {https://languageinindia.com/july2013/ravisankarkeralatriballanguages.html},
+  included = {Full Malamuthan chapter on printed and PDF pages 37--39: lexical pairs, pronoun and demonstrative sets, case and tense morphology, negatives, and documentary comparison controls},
+  provenance = {Source-stage proposal at data/other/forms/raw_data/nair_malamuthan_2013/proposed.csv and proposal-audit.jsonl; source PDF pinned in render-manifest.json. This is the same physical volume used by separately cited Nair 2013 chapters, not a second edition},
+  jambu_editor = {OpenAI Codex},
+  ocr = {No},
+  etymology_provenance = {none},
+  note = {Source transliteration is retained literally as printed where recoverable; phonemic values are not inferred. No explicit reuse licence is printed in the PDF.}
+}
+@misc{somasekharannair1981malamuthan,
+  author = {Nair, P. Somasekharan},
+  title = {{Malamuthante Malayalam (Malayalam of Malamuthan)}},
+  year = {1981},
+  howpublished = {Samskarakeralam, January--March, Trivandrum},
+  included = {Reported auxiliary bibliography at the end of Nair 2013, p. 39; no claim of direct collation},
+  provenance = {Cited by Nair 2013; original publication not independently consulted},
+  jambu_editor = {OpenAI Codex},
+  ocr = {No},
+  etymology_provenance = {none}
+}
+
+@article{nair2013adiya,
+  author = {Nair, Ravi Sankar S.},
+  title = {{Tribal Languages of Kerala}},
+  journal = {Language in India},
+  year = {2013},
+  volume = {13},
+  number = {7},
+  month = {July},
+  pages = {4--8},
+  issn = {1930-2940},
+  url = {https://languageinindia.com/july2013/ravisankarkeralatriballanguages.html},
+  included = {Complete Adiya chapter, with explicitly attributed Malayalam and Kannada comparison forms. Documentary community names and reported bibliography are retained in the source audit},
+  note = {A chapter in the same physical 2013 volume separately cited for Aranadan and Cholanaickan. The preface describes compiled material and fieldwork of unspecified item-level provenance. Literal Roman forms are preserved without an inferred IPA transcription},
+  provenance = {data/other/forms/20260927-nair-adiya.csv; data/other/forms/raw_data/nair_adiya_2013/installed-audit.jsonl},
+  jambu_editor = {OpenAI Codex},
+  ocr = {No},
+  etymology_provenance = {source}
+}
+
+@misc{sankarankutty1978adiya,
+  author = {Sankarankutty, D.},
+  title = {{Phonology of the Adiya Language}},
+  year = {1978},
+  note = {Unpublished M.A. thesis, Department of Linguistics, University of Kerala, Thiruvananthapuram. Reported in Nair 2013, p. 8; not independently consulted or used for a lexical attestation},
+  included = {Reported auxiliary authority only},
+  jambu_editor = {OpenAI Codex},
+  ocr = {No},
+  etymology_provenance = {none}
+}
+
+@misc{syama1978adiya,
+  author = {Syama, G. S.},
+  title = {{Verb Morphology of the Adiya Language}},
+  year = {1978},
+  note = {Unpublished M.A. thesis, Department of Linguistics, University of Kerala, Thiruvananthapuram. Reported in Nair 2013, p. 8; not independently consulted or used for a lexical attestation},
+  included = {Reported auxiliary authority only},
+  jambu_editor = {OpenAI Codex},
+  ocr = {No},
+  etymology_provenance = {none}
+}
+
+@misc{sarala1978adiya,
+  author = {Sarala, S.},
+  title = {{A Fragment of Syntax of Adiya Language}},
+  year = {1978},
+  note = {Unpublished M.A. thesis, Department of Linguistics, University of Kerala, Thiruvananthapuram. Reported in Nair 2013, p. 8; not independently consulted or used for a lexical attestation},
+  included = {Reported auxiliary authority only},
+  jambu_editor = {OpenAI Codex},
+  ocr = {No},
+  etymology_provenance = {none}
+}
+
+@misc{davidson1978adiya,
+  author = {Davidson, Esther Daisy},
+  title = {{Noun Morphology of Adiya}},
+  year = {1978},
+  note = {Unpublished M.A. thesis, Department of Linguistics, University of Kerala, Thiruvananthapuram. Reported in Nair 2013, p. 8; not independently consulted or used for a lexical attestation},
+  included = {Reported auxiliary authority only},
+  jambu_editor = {OpenAI Codex},
+  ocr = {No},
+  etymology_provenance = {none}
+}
+
+@article{nair2013bettakurumba,
+  author = {Nair, Ravi Sankar S.},
+  title = {{Tribal Languages of Kerala}},
+  year = {2013},
+  journal = {Language in India},
+  volume = {13},
+  number = {7},
+  month = {July},
+  issn = {1930-2940},
+  pages = {12--18},
+  url = {https://languageinindia.com/july2013/ravisankarkeralatriballanguages.html},
+  included = {Full Betta Kurumba chapter on printed and PDF pages 12--18: ethnographic controls, noun and case paradigms, numerals, pronouns, verb paradigms, participles, modal and aspectual expressions, and the complete personal-suffix table},
+  provenance = {Source-stage proposal at data/other/forms/raw_data/nair_betta_kurumba_2013/proposed.csv and proposal-audit.jsonl; source PDF pinned in original-review/render-manifest.json. This is the same physical volume cited for other Nair 2013 chapters, not a second edition},
+  jambu_editor = {OpenAI Codex},
+  ocr = {No},
+  etymology_provenance = {none},
+  note = {The source's Roman transcription, segmentation and diacritic variation are preserved literally where recoverable. No independent phonemic tier or explicit reuse licence is supplied in the PDF.}
+}
+@misc{jayapal1978kurumba,
+  author = {Jayapal, S.},
+  title = {{Descriptive Grammar of Kurumba}},
+  year = {1978},
+  howpublished = {Unpublished PhD thesis, Centre for Advanced Studies in Linguistics, Annamalai University, Annamalainagar},
+  included = {Reported source in Nair 2013, pp. 12 and 18, for classification and Betta Kurumba diagnostics; no direct collation of the dissertation},
+  provenance = {Bibliographic and analytic attribution as printed by Nair 2013; original dissertation not independently consulted},
+  jambu_editor = {OpenAI Codex},
+  ocr = {No},
+  etymology_provenance = {none}
+}
+
+@article{nair2013malaveda,
+  author = {Nair, Ravi Sankar S.},
+  title = {{Tribal Languages of Kerala}},
+  journal = {Language in India},
+  year = {2013},
+  volume = {13},
+  number = {7},
+  month = {July},
+  pages = {40--44},
+  issn = {1930-2940},
+  url = {https://languageinindia.com/july2013/ravisankarkeralatriballanguages.pdf},
+  included = {Complete Malaveda/Veda chapter target forms, including morphology, paradigms, clauses, vocabulary and community terms. Ten comparison forms and five documentary labels are accounted for in the audit and excluded from canonical rows},
+  note = {Original chapter heading prints MALADEVA/VEDA; contents prints Malaveda/Veda. Source warns that Veda/Malaveda/Vettuvar communities may differ and contrasts Pathanamthitta 1977 speech with Kollam 1991 speech. Individual examples are not explicitly assigned to a locality. No explicit reuse licence stated. Literal Roman transcription retained without inferred IPA},
+  provenance = {data/other/forms/20260927-nair-malaveda.csv; data/other/forms/raw_data/nair_malaveda_2013/proposal-audit.jsonl},
+  jambu_editor = {OpenAI Codex},
+  ocr = {No},
+  etymology_provenance = {source}
+}
+
+@misc{vimalakumari1977veda,
+  author = {Vimalakumari, V. S.},
+  title = {{Syntactic Analysis of Veda}},
+  year = {1977},
+  note = {Unpublished M.A. thesis, Department of Linguistics, University of Kerala. Reported in Nair 2013, p. 44; not independently consulted or used as a lexical attestation},
+  included = {Reported auxiliary authority only},
+  jambu_editor = {OpenAI Codex},
+  ocr = {No},
+  etymology_provenance = {none}
+}
+
+@misc{vimala1984malaveda,
+  author = {Vimala, M.},
+  title = {{Noun Morphology of Malaveda}},
+  year = {1984},
+  note = {Unpublished M.A. thesis, Department of Linguistics, University of Kerala. Reported in Nair 2013, p. 44; not independently consulted or used as a lexical attestation},
+  included = {Reported auxiliary authority only},
+  jambu_editor = {OpenAI Codex},
+  ocr = {No},
+  etymology_provenance = {none}
+}
+
+@misc{kumarinirmala1977veda,
+  author = {Kumari Nirmala, B.},
+  title = {{Internal Reconstruction of Veda Language}},
+  year = {1977},
+  note = {Unpublished M.A. thesis, Department of Linguistics, University of Kerala. Reported in Nair 2013, p. 44; not independently consulted or used as a lexical attestation. Nair's printed title is Internal Recounstruction of Veda Language; the display title records an editorial spelling correction, not independent verification of the original thesis title},
+  included = {Reported auxiliary authority only},
+  jambu_editor = {OpenAI Codex},
+  ocr = {No},
+  etymology_provenance = {none}
+}
+
+@misc{thankachi1977veda,
+  author = {Thankachi, R.},
+  title = {{Noun Morphology of Veda Language}},
+  year = {1977},
+  note = {Unpublished M.A. thesis, Department of Linguistics, University of Kerala. Reported in Nair 2013, p. 44; not independently consulted or used as a lexical attestation. Nair's printed title is Noun Morophology of Veda Language; the display title records an editorial spelling correction, not independent verification of the original thesis title},
+  included = {Reported auxiliary authority only},
+  jambu_editor = {OpenAI Codex},
+  ocr = {No},
+  etymology_provenance = {none}
+}
+
+@misc{radhakrishnan1977veda,
+  author = {Radhakrishnan, S.},
+  title = {{Verb Morphology of Veda Language}},
+  year = {1977},
+  note = {Unpublished M.A. thesis, Department of Linguistics, University of Kerala. Reported in Nair 2013, p. 44; not independently consulted or used as a lexical attestation},
+  included = {Reported auxiliary authority only},
+  jambu_editor = {OpenAI Codex},
+  ocr = {No},
+  etymology_provenance = {none}
+}
+
+@misc{hyrunnisabeegam1991malaveda,
+  author = {Hyrunnisa Beegam, A.},
+  title = {{Language of Malavedas}},
+  year = {1991},
+  note = {Unpublished Ph.D. thesis, Department of Linguistics, University of Kerala. Reported in Nair 2013, p. 44; not independently consulted or used as a lexical attestation},
+  included = {Reported auxiliary authority only},
+  jambu_editor = {OpenAI Codex},
+  ocr = {No},
+  etymology_provenance = {none}
+}
+
+
+@article{nair2013kakkala,
+  author = {Nair, Ravi Sankar S.},
+  title = {{Tribal Languages of Kerala}},
+  journal = {Language in India},
+  year = {2013},
+  volume = {13},
+  number = {7},
+  month = {July},
+  pages = {28--31},
+  issn = {1930-2940},
+  url = {https://languageinindia.com/july2013/ravisankarkeralatriballanguages.html},
+  included = {Complete Kakkala chapter: pronouns, numerals and fractionals, grammatical analyses and examples, personal suffixes and lexical list, plus explicitly attributed Malayalam and Tamil comparisons. Documentary and unresolved witnesses remain in the audit},
+  note = {The same physical 2013 volume separately cited for other complete chapters; not a separate edition. The preface describes compiled material and fieldwork with unspecified item-level provenance. Source Roman notation is preserved, including dot below, drawn lowline, tilde, separate acute and macrons; no inferred IPA. The detached Tea, water gloss and zero exponent remain documentary evidence},
+  provenance = {data/other/forms/20260927-nair-kakkala.csv; data/other/forms/raw_data/nair_kakkala_2013/installed-audit.jsonl},
+  jambu_editor = {OpenAI Codex},
+  ocr = {No},
+  etymology_provenance = {source}
+}
+@misc{azad1980kakkala,
+  author = {Abdul Kalam Azad, M.},
+  title = {{Syntactic Analysis of Kakkala Language}},
+  year = {1980},
+  note = {Unpublished M.A. thesis, Department of Linguistics, University of Kerala, Thiruvananthapuram. Reported in Nair 2013, p. 31; not independently consulted and not a direct lexical attestation},
+  included = {Reported auxiliary authority only},
+  jambu_editor = {OpenAI Codex},
+  ocr = {No},
+  etymology_provenance = {none}
+}
+@misc{sheela1980kakkala,
+  author = {Sheela, V.},
+  title = {{Verb Morphology of Kakkala Language}},
+  year = {1980},
+  note = {Unpublished M.A. thesis, Department of Linguistics, University of Kerala, Thiruvananthapuram. Reported in Nair 2013, p. 31; not independently consulted and not a direct lexical attestation},
+  included = {Reported auxiliary authority only},
+  jambu_editor = {OpenAI Codex},
+  ocr = {No},
+  etymology_provenance = {none}
+}
+
+@article{nair2013mannan,
+  author = {Nair, Ravi Sankar S.},
+  title = {{Tribal Languages of Kerala}},
+  journal = {Language in India},
+  year = {2013},
+  volume = {13},
+  number = {7},
+  month = {July},
+  pages = {45--49},
+  issn = {1930-2940},
+  url = {https://languageinindia.com/july2013/ravisankarkeralatriballanguages.html},
+  included = {Complete Mannan chapter, printed pages 45--49, with phonological comparison controls, grammar, whole utterances, vocabulary and kinship definitions; adjacent page 50 commentary retained in audit},
+  note = {Nair describes Mannan speech as closely related to Malayalam and a possible dialect, while documenting distinctive features. The chapter lists four taluks in Idukki but no exact elicitation site or speaker. A tentative relationship between plural kaaṭ-u and a generic Dravidian plural suffix is preserved as an attributed source claim without an ancestry edge. Traditional personal names and the community name remain documentary evidence},
+  provenance = {data/other/forms/20260927-nair-mannan.csv; data/other/forms/raw_data/nair_mannan_2013/installed-audit.jsonl; data/other/forms/raw_data/nair_mannan_2013/physical-units-first-reading.jsonl; data/other/forms/raw_data/nair_mannan_2013/proposal-audit.jsonl},
+  jambu_editor = {OpenAI Codex},
+  ocr = {No},
+  etymology_provenance = {source}
+}
+
+@phdthesis{joseph1980devikolam,
+  author = {Joseph, Annie},
+  title = {{Description of the Tribal dialects of Devikolam}},
+  school = {Department of Linguistics, University of Kerala},
+  year = {1980},
+  note = {Unpublished Ph.D. thesis reported by Nair 2013, p. 49. Original thesis not independently collated; no thesis page references supplied in Nair},
+  included = {Auxiliary reported authority only; no independently sourced lexical citations},
+  jambu_editor = {OpenAI Codex},
+  ocr = {No},
+  etymology_provenance = {none}
+}
+
+@article{nair2013muduga,
+  author = {Nair, Ravi Sankar S.},
+  title = {{Tribal Languages of Kerala}},
+  journal = {Language in India},
+  year = {2013},
+  volume = {13},
+  number = {7},
+  month = {July},
+  pages = {50--54},
+  issn = {1930-2940},
+  url = {https://languageinindia.com/july2013/ravisankarkeralatriballanguages.html},
+  included = {Complete Muduga chapter: reported distinctive features, phonological comparison tables, case and pronoun paradigms, transitive analyses, TAM and mood examples, and personal suffixes; explicit Malayalam comparators retained},
+  note = {The same physical volume separately cited for other complete chapters; not another edition. Nair attributes distinctive-feature discussion to Rajendran and lists the 1986 book. Item-level fieldwork provenance is not supplied. Source Roman notation is preserved, including underdots, drawn lowlines, tilde, zero within expressions, literal dash differences and source spelling inconsistencies; no inferred IPA. Source geography calls Attapady part of Wayanad; retained as an attributed historical statement rather than an alteration of the base language registry},
+  provenance = {data/other/forms/20260927-nair-muduga.csv; data/other/forms/raw_data/nair_muduga_2013/installed-audit.jsonl},
+  jambu_editor = {OpenAI Codex},
+  ocr = {No},
+  etymology_provenance = {source}
+}
+@book{rajendran1986muduga,
+  author = {Rajendran, N.},
+  title = {{Muduga Language}},
+  publisher = {Ennes Publications},
+  address = {Quilon},
+  year = {1986},
+  note = {Reported in Nair 2013, pp. 50 and 54; not independently consulted and not a direct lexical attestation. Bibliographic identification is limited to the details printed by Nair},
+  included = {Reported auxiliary authority only},
+  jambu_editor = {OpenAI Codex},
+  ocr = {No},
+  etymology_provenance = {none}
+}
+
+@article{nair2013irula,
+  author = {Nair, Ravi Sankar S.},
+  title = {{Tribal Languages of Kerala}},
+  journal = {Language in India},
+  volume = {13},
+  number = {7},
+  month = {July},
+  year = {2013},
+  pages = {22--27},
+  issn = {1930-2940},
+  url = {https://languageinindia.com/july2013/ravisankarkeralatriballanguages.html},
+  included = {Complete Irula chapter on printed/PDF pages 22--27, including all nominal and verbal morphology, pronouns, cases, complete examples, contextual comparisons and reported bibliography},
+  provenance = {Canonical data/other/forms/20260927-nair-irula.csv; accepted source audit data/other/forms/raw_data/nair_irula_2013/installed-audit.jsonl; source-stage receipt installation/installation-receipt.json and frozen revision2 within that package. All 261 physical units accounted: 256 target readings, 16 audit-only units, 12 local variant pointers and four source-supported derived links. Same pinned 58-page PDF as separately cited Nair chapters, not a separate edition},
+  jambu_editor = {OpenAI Codex},
+  ocr = {No},
+  etymology_provenance = {source},
+  note = {Literal source Roman notation with no independent phonemic tier or invented IPA. Explicit Old Tamil comparisons, zero exponents, documentary contexts and an explicitly rejected noun compound remain audit-only. Source-transcription disagreements and separately drawn lowlines are preserved. No explicit reuse licence is supplied in the PDF.}
+}
+@misc{zvelebil1982irulapart3,
+  author = {Zvelebil, Kamil V.},
+  title = {{The Irula (Erla) Language Part III}},
+  year = {1982},
+  howpublished = {Otto Harrassowitz, Wiesbaden},
+  included = {Source-reported background and qualified modal/temporal analysis as attributed by Nair 2013, including pages 202 and 204; original work not independently collated},
+  provenance = {Nair 2013 Irula chapter, pages 22 and 26--27, and bibliography on page 27},
+  jambu_editor = {OpenAI Codex},
+  ocr = {No},
+  etymology_provenance = {none}
+}
+@misc{perialwar1978irula,
+  author = {Perialwar, R.},
+  title = {{A Grammar of the Irula Language}},
+  year = {1978},
+  howpublished = {Annamalai University, Annamalai Nagar},
+  included = {Reported bibliography in Nair 2013, page 27; original work not independently collated},
+  provenance = {Nair 2013 Irula chapter, page 27},
+  jambu_editor = {OpenAI Codex},
+  ocr = {No},
+  etymology_provenance = {none}
+}
+
+@article{nair2013mullukurumba,
+  author = {Nair, Ravi Sankar S.},
+  title = {{Tribal Languages of Kerala}},
+  journal = {Language in India},
+  year = {2013},
+  volume = {13},
+  number = {7},
+  month = {July},
+  pages = {55--58},
+  issn = {1930-2940},
+  url = {https://languageinindia.com/july2013/ravisankarkeralatriballanguages.html},
+  included = {Complete Mullu Kurumba chapter pp. 55--58: gender and number morphology, cross-page Malayalam comparison case table, personal and interrogative pronouns, tense and participle examples and pronominal suffix table. Outside contents and shared classification mentions pp. 3 and 12 are documentary audit records},
+  note = {Native-PDF text and original visual reading; no OCR. Existing Mullu Kurumba identity is retained, with no invented elicitation site or coordinates. Reported Malayalam-dialect and independent-language positions remain attributed source claims. Shared suffix comparisons do not imply a second physical printing; morphological arrows are retained as analyses rather than automatically converted into ancestry or variant links. The chapter prints no numerals},
+  provenance = {data/other/forms/20260927-nair-mullu-kurumba.csv; data/other/forms/raw_data/nair_mullu_kurumba_2013/installed-audit.jsonl; data/other/forms/raw_data/nair_mullu_kurumba_2013/physical-units-first-reading.jsonl; data/other/forms/raw_data/nair_mullu_kurumba_2013/proposal-audit.jsonl},
+  jambu_editor = {OpenAI Codex},
+  ocr = {No},
+  etymology_provenance = {source}
+}
+
+@misc{robertsathyajoseph1982mullukurumba,
+  author = {Robert Sathya Joseph, D.},
+  title = {{A Descriptive Study of Mullu Kurumba}},
+  year = {1982},
+  howpublished = {Centre of Advanced Study in Linguistics, Annamalai University, Annamalai Nagar},
+  note = {Reported by Nair 2013, pp. 55 and 58, with author printed as Robert Sathya Joseph, D. Original not independently collated. Nair describes a study of Nilgiris speech but does not state a thesis type or exact example elicitation location; none is supplied here},
+  included = {Auxiliary reported authority only; no independently sourced lexical citations},
+  jambu_editor = {OpenAI Codex},
+  ocr = {No},
+  etymology_provenance = {none}
+}
+
+@incollection{grierson1906kolamibasim,
+  author = {Grierson, George Abraham},
+  title = {{Kōlāmī}, {Naikī}, etc.},
+  booktitle = {{Linguistic Survey of India}. Volume IV: {Munda} and {Dravidian} Languages},
+  year = {1906},
+  pages = {561--569},
+  address = {Calcutta},
+  publisher = {Office of the Superintendent of Government Printing, India},
+  url = {https://dsal.uchicago.edu/books/lsi/lsi.php?volume=4&pages=701},
+  note = {Wun Kolami and historical Basim Naikri are distinct source-qualified routes; the latter identification follows DEDR bibliography section 27. Grierson supplied the Kolami interlinear translation. Separate higher-resolution page witnesses resolve degraded glyphs without an asserted textual-edition difference. The adjacent Chanda Naiki portion is represented separately under grierson1906naiki; later addenda remain separate witnesses},
+  included = {Complete printed pp. 561--569: grammar, paradigms and both interlinear specimens, plus source-attributed comparisons on pp. 182, 623, 626 and 627. Three existing canonical rows represent reuse of two physical printings; the p. 623 suffix is explicitly shared by Naiki and Kolami},
+  provenance = {Canonical source-stage data/other/forms/20260927-grierson-kolami-basim.csv; accepted audit data/other/forms/raw_data/grierson_kolami_basim_1906/installed-audit.jsonl; guarded importer data/other/forms/raw_data/grierson_kolami_basim_1906/installation/install_source.py. Current review CSV and audit are integration/revision6/combined-review-candidate.csv and combined-review-audit.jsonl within that package. Primary snapshot locator scope/snapshot-status.json and source-edition-and-reuse-review.json pin the 1906 Commons volume; separate sharper-page manifests retain their individual URLs and hashes},
+  licence = {Public-domain 1906 source volume, independently verified against the Commons edition catalogue; later alternate page images are separate reproduction witnesses},
+  jambu_editor = {OpenAI Codex},
+  ocr = {Yes},
+  etymology_provenance = {source}
+}
+
+@article{haig1897gondi_kolami,
+  author = {Haig, Wolseley},
+  title = {A Comparative Vocabulary of the {Gondi} and {Kolami} Languages},
+  journal = {Journal of the Asiatic Society of Bengal},
+  volume = {66},
+  number = {1},
+  pages = {185--191},
+  year = {1897},
+  note = {Reported authority in Grierson 1906, p. 562. Full page range corroborated by DEDR bibliography section 26. This work has not been independently collated for lexical ingestion; no direct lexical citation is asserted},
+  jambu_editor = {OpenAI Codex},
+  ocr = {No},
+  etymology_provenance = {none}
+}
+
+@book{uesugi-catt2024oad,
+  shorthand    = {OAD},
+  title        = {Old {A}vestan Dictionary},
+  editor       = {Uesugi, Heindio and Catt, Adam Alvah},
+  note         = {Edited by the Old Avestan Dictionary editorial team; Heindio Uesugi (editor), Adam Alvah Catt (editorial supervisor). Part I: Dictionary; Part II: Text and Translation},
+  year         = {2024},
+  series       = {Asian and African Lexicon},
+  number       = {67},
+  address      = {Fuchu, Tokyo},
+  publisher    = {Research Institute for Languages and Cultures of Asia and Africa (ILCAA), Tokyo University of Foreign Studies},
+  isbn         = {978-4-86337-542-0},
+  license      = {CC BY 4.0 (Creative Commons Attribution 4.0 International), stated on the copyright page},
+  included     = {Part I Dictionary, printed pp. 1--404: all 1199 printed lemmata (997 non-verb, 202 verb-root articles); 1198 installed as Old Avestan (Av) rows plus 164 printed alternant headwords as variants; inflected attestations, passage citations, F cross-references and verb-stem sub-headings are kept in the audit; Part II (Yasna 27.13--15, Gāthās Y28--53, 54.1 text and translation) is excluded},
+  provenance   = {Publisher PDF B542_AAL67_OldAvestan.pdf (558 pp., SHA-256 7bb39fa3f87a5bc1400bc7243ad6da4d203ea8bad10765d13fe8a8045851b5f9), born-digital text layer read with pdfplumber; importer and audit: data/other/forms/raw_data/uesugi_oad_2024/ (import_source.py, audit.csv, editorial.csv, sample.csv, manifest.json); installed data/other/forms/20261025-uesugi-oad.csv and data/other/entry_texts/20261025-uesugi-oad.csv},
+  ocr          = {No},
+  etymology_provenance = {source},
+  jambu_editor = {Aryaman Arora and Anthropic}
+}
+
+@book{kamioka-yamada1979lari,
+  title        = {L{\=a}rest{\=a}ni Studies 1: Lari Basic Vocabulary},
+  author       = {Kamioka, K{\=o}ji and Yamada, Minoru},
+  year         = {1979},
+  address      = {Tokyo},
+  publisher    = {Institute for the Study of Languages and Cultures of Asia and Africa (ILCAA), Tokyo University of Foreign Studies},
+  pagetotal    = {xvii + 227},
+  included     = {Vocabulary part, printed pp. 1--177: all 1000 numbered questionnaire entries (0001--1000). Head forms and sub-forms with their own printed glosses are installed (1946 rows, 71 of them printed ~ or / alternates); 632 Lari example sentences, the Persian medium-language prompts (left-hand pages), cross-references and the authors' bracketed notes are kept in the audit only; the Lari, English and Persian indexes (pp. 179ff.) and the introduction are excluded},
+  provenance   = {Image-only ILCAA scan (232 PDF pages, each a two-page spread; SHA-256 9196621ac485cbbe60cd302712a0d5289e7b2c3ad118446d74361cde0710c569; not redistributed). Reproducible Tesseract OCR with geometric re-attachment of the typewriter overstrike diacritics and an independent second reading, 2026-10-25/26: data/other/forms/raw_data/kamioka_lari_1979/ (ocr_runner.py, import_source.py, audit.csv, sample_review.csv, corrections.csv, manifest.json); installed data/other/forms/20261025-kamioka-lari.csv},
+  ocr          = {Yes},
+  etymology_provenance = {none},
+  jambu_editor = {Aryaman Arora and Anthropic},
+  license      = {Copyrighted scan not redistributed; extracted linguistic facts used for scholarship and research}
 }

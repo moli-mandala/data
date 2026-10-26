@@ -1,10 +1,11 @@
-"""Import the complete Bailey 1920 Rohru glossary, pp. 127–130."""
+"""Import Bailey's whole Rohru source; retain the historical glossary reader."""
 
 from __future__ import annotations
 
 import argparse
 import csv
 import hashlib
+import importlib.util
 import json
 import unicodedata
 from collections import Counter
@@ -40,7 +41,7 @@ def read_source() -> list[dict[str, str]]:
     return rows
 
 
-def generate() -> tuple[list[list[str]], list[dict[str, object]]]:
+def generate_glossary() -> tuple[list[list[str]], list[dict[str, object]]]:
     installed: list[list[str]] = []
     audit: list[dict[str, object]] = []
     for row in read_source():
@@ -95,6 +96,27 @@ def generate() -> tuple[list[list[str]], list[dict[str, object]]]:
     return installed, audit
 
 
+def generate() -> tuple[list[list[str]], list[dict[str, object]]]:
+    review = json.loads((PACKAGE / 'root-whole-output-audit-20260927-pass2.json').read_text())
+    assert review['material_errors'] == 0 and review['source_units_reviewed'] == 20
+    for name, expected in review['input_sha256'].items():
+        # Profile-only Unicode-equivalence repair is pinned separately below.
+        if name != 'whole-proposed-profile.txt':
+            assert hashlib.sha256((PACKAGE / name).read_bytes()).hexdigest() == expected, name
+    profile_review = json.loads((PACKAGE / 'whole-profile-nfd-review-20260927.json').read_text())
+    assert profile_review['old_sha256'] == review['input_sha256']['whole-proposed-profile.txt']
+    assert hashlib.sha256((PACKAGE / 'whole-proposed-profile.txt').read_bytes()).hexdigest() == profile_review['new_sha256']
+    spec = importlib.util.spec_from_file_location('rohru_whole_builder', PACKAGE / 'prepare_whole_source.py')
+    builder = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(builder)
+    rows, audit = builder.prepare()
+    proposed_rows = list(csv.reader((PACKAGE / 'whole-proposed.csv').open()))
+    proposed_audit = [json.loads(s) for s in (PACKAGE / 'whole-proposed-audit.jsonl').read_text().splitlines()]
+    assert rows == proposed_rows and audit == proposed_audit, 'Regeneration differs from independently audited proposal'
+    assert len(rows) == 723 and len(audit) == 671
+    return rows, audit
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--install", action="store_true")
@@ -110,11 +132,17 @@ def main() -> None:
     rows, audit = generate()
     print(f"{len(audit)} units, {len(rows)} rows, decisions={dict(Counter(x['status'] for x in audit))}")
     if args.install:
+        # Only the reviewed legacy input or this complete output may be replaced.
+        if OUTPUT.exists():
+            existing = list(csv.reader(OUTPUT.open()))
+            legacy = list(csv.reader((PACKAGE / 'legacy-before-whole-recovery.csv').open()))
+            assert existing in (legacy, rows), 'Unexpected canonical changes; inspect before installation'
         with OUTPUT.open("w", encoding="utf-8", newline="") as stream:
             csv.writer(stream).writerows(rows)
         with AUDIT.open("w", encoding="utf-8") as stream:
             for item in audit:
                 stream.write(json.dumps(item, ensure_ascii=False, sort_keys=True) + "\n")
+        (DATA / 'conversion/bailey-rohru-1920.txt').write_bytes((PACKAGE / 'whole-proposed-profile.txt').read_bytes())
 
 
 if __name__ == "__main__":

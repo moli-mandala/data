@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Urali · Dravidian surveys, 2026-09-21 · batch 025. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Urali | Proposed etymology | Evidence |
+|---|---|---|---|
+| 116 | **koñja** ‘few’ | Proposed reflex of [**DEDR 2041**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=184) | DEDR2041 explicitly gives Tamil/Malayalam koñcam a little, Kannada koñca/koñce and Telugu koncemu a little/few. These koñca/koñjam/koñjo/kocca survey few responses retain that specific little-quantity family with source affricate/nasal notation and ordinary endings. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 117 | **kuracɨ** ‘few’ | Proposed reflex of [**DEDR 1851**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=168) | DEDR1851 gives Malayalam kuṟaccal scarcity, kuṟavu deficiency and kuṟaya/kuṟē little, with Tamil kuṟaivu small quantity. Survey kuracɨ/kurac/koravu few is a comparative reduced-quantity use of that family, retaining source vowels and final consonants. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 118 | **aḷæ** ‘husband’ | Proposed reflex of [**DEDR 399**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=36) | DEDR399 gives Tamil āḷ man/husband and āḷaṉ husband, Malayalam āḷ person and Kota āḷ husband. Survey āl-/āḷ-/ālan/ālin responses retain that person/husband stem with ordinary nominal endings and source vowels; longer compounds are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 119 | **pənḍrə** ‘woman’ | Proposed reflex of [**DEDR 4395**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=388) | DEDR4395(a) gives Tamil peṇ/peṇṭu woman/wife, Malayalam peṇ/peṇṭi girl, Kannada peṇṇu, peṇḍir, peṇḍati and heṅgasu female, and Tulu poṇṇu girl. These simple peṇ/peṇḍ-/heṇ/engas-type responses are comparative members of that female family with ordinary endings and source vowels/aspiration retained. Larger person/child compounds are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 120 | **ta mbi** ‘younger brother’ | Proposed reflex of [**DEDR 3085**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=268) | DEDR3085 explicitly gives Tamil/Malayalam tampi younger brother, with Kannada tamma and Telugu tammuḍu. These simple tampi/tambi survey responses continue the specific younger-brother kinship noun, retaining source intervocalic voicing and final vowels. The correct article is3085, not3485 (enclosure). This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (2 records.) |
+
+Proposed assignment rows: **6**. Affected records: **6**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-025.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Urali/batch-025.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

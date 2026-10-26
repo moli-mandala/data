@@ -1,0 +1,475 @@
+{
+  "status": "independent read-only chapter evidence review; discrepancies reported separately",
+  "source_pdf_sha256": "4d2588987dab5d15c62ecc95330ccf7e925a9bce80d08068b91ca3f48c8cc5af",
+  "chapter_generator_sha256": "885c00c6ae992aa90cdbce7878022f7e07b7f2d9f8ebe3b6e6b91b6cb8ca8896",
+  "chapter_generator_review": "Correct 13 contiguous chapter ranges cover printed/PDF 4–58. Generator inventories CSV/YAML presence and raw counts only; it intentionally does not prove audit/acceptance/integration gates and writes a shared report, so this peer script independently reads the same ranges without invoking it.",
+  "stored_coverage_sha256": "963f117306fbe2fb3fd243d2b2ab3fcd6c47b7f922a28223f74daab20a25eea5",
+  "chapters": [
+    {
+      "chapter": "adiya",
+      "printed_pages": [
+        4,
+        8
+      ],
+      "installed": true,
+      "handoff_evidence": {
+        "source_checklists/20260927-nair-adiya-source-stage.md": "f88bc2e084e7b387f3573bb0ceece4169fe6ec06257ce3b0c4ed6db31fa9a2cc"
+      },
+      "rows": 171,
+      "target_rows": 136,
+      "comparison_rows": 35,
+      "by_language": {
+        "Malayalam": 31,
+        "Ravula": 136,
+        "Kannada": 4
+      },
+      "csv_sha256": "3e52cbdfe68505abb3411eebbda74eb031938d38a5baeb60163811c1311dcc27",
+      "yaml_sha256": "3fda284eadaabbc41a38bf9773b0da487f2db52c8b2410e9e971b8cb622e8476",
+      "audit_sha256": "cdaf676deb5f62312ec6f304212b5cd907bcb7c65cb79204aef25f0b32205650",
+      "audit_records": 29,
+      "audit_key_appearances": 171,
+      "variant_edges": 12,
+      "derived_parent_edges": 0,
+      "references": [
+        "davidson1978adiya",
+        "nair2013adiya",
+        "sankarankutty1978adiya",
+        "sarala1978adiya",
+        "syama1978adiya"
+      ],
+      "receipt_evidence": {
+        "data/other/forms/raw_data/nair_adiya_2013/installation-receipt.json": "6c8b7f80f5a8e0002303316f75b15f9ffde32d7e062d821580ae434f582fb071"
+      }
+    },
+    {
+      "chapter": "aranadan",
+      "printed_pages": [
+        9,
+        11
+      ],
+      "installed": true,
+      "handoff_evidence": {
+        "data/other/forms/raw_data/nair_aranadan_2013/source-stage-handoff.json": "22f839f1d68ca63b5fb6132b1a1d6d3e307ec46fe80dc61df564a67c25be8d3f"
+      },
+      "rows": 102,
+      "target_rows": 81,
+      "comparison_rows": 21,
+      "by_language": {
+        "Aranadan": 81,
+        "Malayalam": 20,
+        "Kannada": 1
+      },
+      "csv_sha256": "d7479dff8846d69095766bae90b10abf837bbe8f5d989d38a635e2e52a90de42",
+      "yaml_sha256": "fc3f8fd4f49e1adea048bd6e3bd4525b84ad7d973988f91e8e223a9c375c6f07",
+      "audit_sha256": "338948c407f99d92f81556257b45c7671586fab8ae62c6edf863f374d4ad981c",
+      "audit_records": 97,
+      "audit_key_appearances": 102,
+      "variant_edges": 2,
+      "derived_parent_edges": 0,
+      "references": [
+        "nair2013aranadan",
+        "usha1992aranadanmar"
+      ],
+      "receipt_evidence": {
+        "data/other/forms/raw_data/nair_aranadan_2013/installation-receipt.json": "b5f9c66a6979060e859311865d9dbf84a65b2c976ebb8b5db8d6a74b5e113537"
+      }
+    },
+    {
+      "chapter": "betta-kurumba",
+      "printed_pages": [
+        12,
+        18
+      ],
+      "installed": true,
+      "handoff_evidence": {
+        "data/other/forms/raw_data/nair_betta_kurumba_2013/SOURCE_STAGE_HANDOFF.md": "9d9009f9c7a0412fc57e2d77865b23745be5bb91157e4980b62110bb72ae6a59",
+        "data/other/forms/raw_data/nair_betta_kurumba_2013/metadata-amendment/HANDOFF.md": "1656d59d6270c27f5d0feb08a2fcc3eda9b0451490b0c9bd18f1d22693a641dd"
+      },
+      "rows": 206,
+      "target_rows": 206,
+      "comparison_rows": 0,
+      "by_language": {
+        "BettaKurumba": 206
+      },
+      "csv_sha256": "a5df733b3122dfa932163c0b66a2a2c5b60bccd0b12844a42203ce9f88ea28ec",
+      "yaml_sha256": "8f074036358521353846cd18d7a37b33c4a7edaf96e463d1e00746a42bdc3218",
+      "audit_sha256": "0747586a31452e40506e52a622ecf5f90bf9847893ff5c63677e67ac9581a793",
+      "audit_records": 225,
+      "audit_key_appearances": 206,
+      "variant_edges": 3,
+      "derived_parent_edges": 0,
+      "references": [
+        "jayapal1978kurumba",
+        "nair2013bettakurumba"
+      ],
+      "receipt_evidence": {
+        "data/other/forms/raw_data/nair_betta_kurumba_2013/installation-receipt.json": "eef77c7ebf7b38ca67322bc2f3d74e9808c97e22239d5c887c0e81b5a2036a33",
+        "data/other/forms/raw_data/nair_betta_kurumba_2013/metadata-amendment/receipt.json": "b509f238bc87ca116fc5bc6a24c1895ff6f151a6cd3d45101c2a41a59c6e5f06"
+      }
+    },
+    {
+      "chapter": "cholanaickan",
+      "printed_pages": [
+        19,
+        21
+      ],
+      "installed": true,
+      "handoff_evidence": {
+        "data/other/forms/raw_data/nair_cholanaickan_2013/SOURCE_STAGE_HANDOFF.md": "d119b08909e406c66aa3d9ddf11dc064f118a2ebe6396885dbe7ad4fdb6b4c31"
+      },
+      "rows": 104,
+      "target_rows": 104,
+      "comparison_rows": 0,
+      "by_language": {
+        "Cholanaickan": 104
+      },
+      "csv_sha256": "771abcdfe9f6e0c25198397c8afd37e4d592ab982b34e3d8be8781eaa582c308",
+      "yaml_sha256": "0663c898fd96aa3191b8af97183c3bbfceed9f22d6bb3efbe2d5f9a4c79fe334",
+      "audit_sha256": "47549bb702fe62387e49978a3fe6cde5748d42a17ca22e297dd9e5c452c51654",
+      "audit_records": 117,
+      "audit_key_appearances": 104,
+      "variant_edges": 11,
+      "derived_parent_edges": 0,
+      "references": [
+        "nair2013cholanaickan"
+      ],
+      "receipt_evidence": {
+        "data/other/forms/raw_data/nair_cholanaickan_2013/installation-receipt.json": "f60d81a7aa3e8e46a4f5b9c2139c0e89965f3079c89cb6fe08591a5fa7234086"
+      }
+    },
+    {
+      "chapter": "irula",
+      "printed_pages": [
+        22,
+        27
+      ],
+      "installed": true,
+      "handoff_evidence": {
+        "data/other/forms/raw_data/nair_irula_2013/SOURCE_STAGE_HANDOFF.md": "a5d96d50ef06321588741edbbac55a6923d68667bb363f568660faa8516268c6",
+        "source_checklists/20260927-nair-irula-source-stage.md": "d80dd871bbdfeffab0e160e225cb48b2db049a53561c90e248afe79d70e01394"
+      },
+      "rows": 256,
+      "target_rows": 256,
+      "comparison_rows": 0,
+      "by_language": {
+        "Irula": 256
+      },
+      "csv_sha256": "0ef113a2ef62bdd0a8a0c767104a604db5af07033bda42f880e871fb1864900e",
+      "yaml_sha256": "a308dd3d83159bcf7864223c3c9630621e06631e22eea93d538cae6f8fe2d9d5",
+      "audit_sha256": "17e8954286dcc6e5997dd8cdc813d1d04b36d1acc2009df1aa3924fbfcfbeb47",
+      "audit_records": 261,
+      "audit_key_appearances": 256,
+      "variant_edges": 12,
+      "derived_parent_edges": 4,
+      "references": [
+        "nair2013irula",
+        "perialwar1978irula",
+        "zvelebil1982irulapart3"
+      ],
+      "receipt_evidence": {
+        "data/other/forms/raw_data/nair_irula_2013/installation/installation-receipt.json": "047a4a808a3d0e4cd80c2469fe4c8dcaac649d90b6dd10184854ec7cd12feaf5"
+      }
+    },
+    {
+      "chapter": "kakkala",
+      "printed_pages": [
+        28,
+        31
+      ],
+      "installed": true,
+      "handoff_evidence": {
+        "source_checklists/20260927-nair-kakkala-source-stage.md": "b21b510c623bbd5e36e56fe0bfa6891f04e470efe11518b4c6cce974e27bb4ac"
+      },
+      "rows": 202,
+      "target_rows": 196,
+      "comparison_rows": 6,
+      "by_language": {
+        "Kakkala": 196,
+        "Malayalam": 5,
+        "Tamil": 1
+      },
+      "csv_sha256": "9939c1f14763cd7b591c56c2d0909b6736185383acbd080011b6f4c8d230cd50",
+      "yaml_sha256": "7c62afe8fa9b62e2dc86aab6648ec2c6c15f191be932b04f419b88a95e7ab453",
+      "audit_sha256": "49e2bf812deb658b4a1953a68fdb6774021d8b753c2c2ced435b3b0e05995502",
+      "audit_records": 41,
+      "audit_key_appearances": 204,
+      "variant_edges": 2,
+      "derived_parent_edges": 0,
+      "references": [
+        "azad1980kakkala",
+        "nair2013kakkala",
+        "sheela1980kakkala"
+      ],
+      "receipt_evidence": {
+        "data/other/forms/raw_data/nair_kakkala_2013/installation-receipt.json": "76ac44a455864f992e03689de92cb27eafabe631b7e328263912a437736ebc23"
+      }
+    },
+    {
+      "chapter": "kani",
+      "printed_pages": [
+        32,
+        33
+      ],
+      "installed": true,
+      "handoff_evidence": {
+        "source_checklists/20260927-nair-kani-source-stage.md": "53a83ee900899430b13df60f493ffb812c913123bff457402b404548335c332c",
+        "data/other/forms/raw_data/nair_kani_2013/source-stage-handoff.json": "a53acd6eb79b1920f2f8fb1a3f9d25d10336cb7900e1b4893471454887982133"
+      },
+      "rows": 36,
+      "target_rows": 36,
+      "comparison_rows": 0,
+      "by_language": {
+        "Kanikkaran": 36
+      },
+      "csv_sha256": "008927fd95809d423ac9d8b913ff690c4c398fee0da940fe96838117caeb0e85",
+      "yaml_sha256": "65574805f0cac7a0ecd6f91618aca6c4e012d36f52ff84e1b23b28674a7220c6",
+      "audit_sha256": "453759d7c580b8dee813ec79fb6ec7e92e4650901f484e4591782a0d05c43440",
+      "audit_records": 42,
+      "audit_key_appearances": 36,
+      "variant_edges": 0,
+      "derived_parent_edges": 0,
+      "references": [
+        "nair2013kani",
+        "somasekharannairkanikkarude"
+      ],
+      "receipt_evidence": {
+        "data/other/forms/raw_data/nair_kani_2013/installation-receipt.json": "aa91cbb8949ed16b2410a992506e74b9fb4a63c824501feeeea0bf1a347e2c80"
+      }
+    },
+    {
+      "chapter": "kurichiya",
+      "printed_pages": [
+        34,
+        36
+      ],
+      "installed": true,
+      "handoff_evidence": {
+        "data/other/forms/raw_data/nair_kurichiya_2013/SOURCE_STAGE_HANDOFF.md": "8a91395d3947e39cdc3ef4860d0809797d5f8458bd808c4731662a35eb840b08"
+      },
+      "rows": 118,
+      "target_rows": 71,
+      "comparison_rows": 47,
+      "by_language": {
+        "Malayalam": 47,
+        "Kurichiya": 71
+      },
+      "csv_sha256": "ef3956895f096896757dc2209cf872718a838fa9ec8ee2caf3246bfce5822210",
+      "yaml_sha256": "52c1f1b204b33436a97ad3f5ec9b184c6167cf2e7836ea3ded39258a0debdd6b",
+      "audit_sha256": "e02d5a2c6f6f8637136f28849db9c08a5d9c99160537cb265bb1e3edb277b8f8",
+      "audit_records": 117,
+      "audit_key_appearances": 118,
+      "variant_edges": 8,
+      "derived_parent_edges": 0,
+      "references": [
+        "nair2013kurichiya"
+      ],
+      "receipt_evidence": {
+        "data/other/forms/raw_data/nair_kurichiya_2013/installation-receipt.json": "9f92c578cd5767888b22e3a270afd998040c1043438d22b1e4045917d185aa7f"
+      }
+    },
+    {
+      "chapter": "malamuthan",
+      "printed_pages": [
+        37,
+        39
+      ],
+      "installed": true,
+      "handoff_evidence": {
+        "data/other/forms/raw_data/nair_malamuthan_2013/SOURCE_STAGE_HANDOFF.md": "e5f64e2076f7bcc83d5a4dd5ac28a1de047038cdd1fa8747a1fb504148319ebd"
+      },
+      "rows": 67,
+      "target_rows": 67,
+      "comparison_rows": 0,
+      "by_language": {
+        "Malamuthan": 67
+      },
+      "csv_sha256": "4f5fb77e4d66ca2b15c7e68ad0192d7b89e82bcd8519f23bd5d5ff9d33399faa",
+      "yaml_sha256": "c9e619f22d7a14c2f25b1211f45c7df2ed98cd7c55f3e886cb813ab36e9f882a",
+      "audit_sha256": "c65863393c9df0f27dde455f1a46ab5e7bd72fde3946bdd77a2f86c14d628f2a",
+      "audit_records": 79,
+      "audit_key_appearances": 67,
+      "variant_edges": 2,
+      "derived_parent_edges": 0,
+      "references": [
+        "nair2013malamuthan"
+      ],
+      "receipt_evidence": {
+        "data/other/forms/raw_data/nair_malamuthan_2013/installation-receipt.json": "8c75a11788aaeb43e3c47c1ece58a1840b0b4c13d51e0c0c8500abf26e5097cd"
+      }
+    },
+    {
+      "chapter": "malaveda",
+      "printed_pages": [
+        40,
+        44
+      ],
+      "installed": true,
+      "handoff_evidence": {
+        "data/other/forms/raw_data/nair_malaveda_2013/SOURCE_STAGE_HANDOFF.md": "faa636afda6c3fd7ce0aa536d87524fed48d2cee173e1ed1373e30e9e1709620",
+        "source_checklists/20260927-nair-malaveda-source-stage.md": "42c14c76baf5f41baab169ee06472f2390c274ce942cfd9a509db89a55b27abe"
+      },
+      "rows": 223,
+      "target_rows": 223,
+      "comparison_rows": 0,
+      "by_language": {
+        "Malaveda": 223
+      },
+      "csv_sha256": "ee7fb5625bc4532815e64ae3755cd3ab76ec80c42d5b34fee25462af12e912c1",
+      "yaml_sha256": "a7e720e29add3ab712975ffdf6b584ca5f64a77e0430a89e8561bea4dae502b7",
+      "audit_sha256": "cccddbb2fba5aacb04399e59d82ea594c894d3d1755e11747829e6d1a646118f",
+      "audit_records": 240,
+      "audit_key_appearances": 223,
+      "variant_edges": 12,
+      "derived_parent_edges": 0,
+      "references": [
+        "hyrunnisabeegam1991malaveda",
+        "kumarinirmala1977veda",
+        "nair2013malaveda",
+        "radhakrishnan1977veda",
+        "thankachi1977veda",
+        "vimala1984malaveda",
+        "vimalakumari1977veda"
+      ],
+      "receipt_evidence": {
+        "data/other/forms/raw_data/nair_malaveda_2013/installation/installation-receipt.json": "ba5feefdba94925abe6461f2acf09fe9a03c4b5ad6b5d222d122bf7d10955134"
+      }
+    },
+    {
+      "chapter": "mannan",
+      "printed_pages": [
+        45,
+        49
+      ],
+      "installed": true,
+      "handoff_evidence": {
+        "data/other/forms/raw_data/nair_mannan_2013/SOURCE_STAGE_HANDOFF.md": "8896b696e40814edbc53792354c1d1a01f6c3022c05a71332db2deaf5648bfcb",
+        "source_checklists/20260927-nair-mannan-source-stage.md": "a414498e268ea5e8e7279004d80f33ab71aae6ce4afe918de017e62c0262b5a4"
+      },
+      "rows": 154,
+      "target_rows": 123,
+      "comparison_rows": 31,
+      "by_language": {
+        "Malayalam": 31,
+        "Mannan": 123
+      },
+      "csv_sha256": "e14969d61a067d45143e4c842c9bc495d70f76a0fda76820f3d140a9e85bdbde",
+      "yaml_sha256": "2797b923e8fc28b2cd6efbf8770e40625373ac40937d1d8f52b87720cf571207",
+      "audit_sha256": "7d1b3d11321945d641fed582ae25f2e697f777228d5be31cccc7095bb969c834",
+      "audit_records": 140,
+      "audit_key_appearances": 154,
+      "variant_edges": 0,
+      "derived_parent_edges": 0,
+      "references": [
+        "joseph1980devikolam",
+        "nair2013mannan"
+      ],
+      "receipt_evidence": {
+        "data/other/forms/raw_data/nair_mannan_2013/installation/installation-receipt.json": "40cf9ba0bcc7a40ba92fcb7b284044d7e60319b6cf0a9732c8b3c17a576c1435"
+      }
+    },
+    {
+      "chapter": "muduga",
+      "printed_pages": [
+        50,
+        54
+      ],
+      "installed": true,
+      "handoff_evidence": {
+        "data/other/forms/raw_data/nair_muduga_2013/SOURCE_STAGE_HANDOFF.md": "b34863159be2a42783a0566d4172bac5040a3821407aaaa0d153f63e50108852",
+        "source_checklists/20260927-nair-muduga-source-stage.md": "1d6046790b491900615ba560cd3a21f37f553bfab903ff6514264df49c9ee0b9"
+      },
+      "rows": 204,
+      "target_rows": 183,
+      "comparison_rows": 21,
+      "by_language": {
+        "Muduga": 183,
+        "Malayalam": 21
+      },
+      "csv_sha256": "e091d6665b36fb0a770d62955382e30c73d97f186e9f2e833e785c73939c7127",
+      "yaml_sha256": "74ebd6464f06beb6c9e7ceb88c3c7a0a69063ca2050566c28aba4f2405a5214b",
+      "audit_sha256": "288db948e0acb9464744d591318e85b0d84b1fabdf6f9b67f0e8055556a4ea0e",
+      "audit_records": 128,
+      "audit_key_appearances": 204,
+      "variant_edges": 0,
+      "derived_parent_edges": 0,
+      "references": [
+        "nair2013muduga",
+        "rajendran1986muduga"
+      ],
+      "receipt_evidence": {
+        "data/other/forms/raw_data/nair_muduga_2013/installation-receipt.json": "1d0ec985ff6d45691b07a1758e2b32af158fb7cd483be79eb17630b830884236"
+      }
+    },
+    {
+      "chapter": "mullu-kurumba",
+      "printed_pages": [
+        55,
+        58
+      ],
+      "installed": true,
+      "handoff_evidence": {
+        "data/other/forms/raw_data/nair_mullu_kurumba_2013/SOURCE_STAGE_HANDOFF.md": "df1d21f531187c69ccf2ba6411aa1239c7a7d9e6dfdb7904987b9d4d9d80e779",
+        "data/other/forms/raw_data/nair_mullu_kurumba_2013/canonical-source-stage-validation.json": "73cf8644f5993b2adc65ee173ead56fdd45edc9ddc84d912e0fb148d54970463"
+      },
+      "rows": 135,
+      "target_rows": 110,
+      "comparison_rows": 25,
+      "by_language": {
+        "Mullu Kurumba": 110,
+        "Malayalam": 25
+      },
+      "csv_sha256": "242e05bd375e4b6962bf30629046ca498eb247f5d04f3f4c1392968d7e2e1224",
+      "yaml_sha256": "99155b48f4de487dca4731f9a189e9589b756cd659b8308e32071385e960f68e",
+      "audit_sha256": "5098c19e459bd4ade5100a79169d564288a2af1e33a0d8b69b13dfe38a5a0105",
+      "audit_records": 65,
+      "audit_key_appearances": 141,
+      "variant_edges": 11,
+      "derived_parent_edges": 0,
+      "references": [
+        "nair2013mullukurumba",
+        "robertsathyajoseph1982mullukurumba"
+      ],
+      "receipt_evidence": {
+        "data/other/forms/raw_data/nair_mullu_kurumba_2013/installation/installation-receipt.json": "2f6ac7584f77e3dea322f0fd3666b83e08ea3fc9efd8970c8ac7eae8f1f999df"
+      }
+    }
+  ],
+  "aggregate": {
+    "installed_chapters": 13,
+    "installed_rows": 1978,
+    "target_rows": 1792,
+    "emitted_comparison_rows": 186,
+    "by_language": {
+      "Malayalam": 180,
+      "Ravula": 136,
+      "Kannada": 5,
+      "Aranadan": 81,
+      "BettaKurumba": 206,
+      "Cholanaickan": 104,
+      "Irula": 256,
+      "Kakkala": 196,
+      "Tamil": 1,
+      "Kanikkaran": 36,
+      "Kurichiya": 71,
+      "Malamuthan": 67,
+      "Malaveda": 223,
+      "Mannan": 123,
+      "Muduga": 183,
+      "Mullu Kurumba": 110
+    },
+    "variants": 75,
+    "derived_parent_edges": 4,
+    "distinct_chapter_reference_keys": 33
+  },
+  "discrepancies": [],
+  "accounting_qualification": "Per-chapter physical blocks, editorial units and witness slots have different definitions and are not summed as a single physical-token count. Deliberately excluded controls remain audited; included comparison rows are reported separately. Shared-attribution expansion, slash expansion and exact commentary reuse change row counts without inventing physical source tokens.",
+  "common_deferred_gates": [
+    "coordinated full CLDF/database build",
+    "compiled ID/source-key/graph/reference survival",
+    "full test suite",
+    "browser/app QA and representative entries",
+    "publication"
+  ],
+  "review_limits": "Handoffs/checklists and installed audit/hash/config closure reviewed; this does not repeat all original-page literal audits, execute tests, parse compiled CLDF or certify browser results. Current shared bibliography may legitimately exceed historical receipt whole-file hashes.",
+  "shared_mutations": false
+}

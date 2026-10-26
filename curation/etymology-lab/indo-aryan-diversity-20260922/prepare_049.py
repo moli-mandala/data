@@ -1,0 +1,17 @@
+import csv,json
+from pathlib import Path
+from etymology_assignments import read_assignments
+P=Path('curation/etymology-lab/indo-aryan-diversity-20260922');linked={r['Form_ID'] for r in read_assignments() if r['Status']=='accepted'};linked.update(r['Child_ID'] for r in csv.DictReader(open('cldf/edges.csv')) if r['Rank']=='1')
+rs=[r for r in csv.DictReader(open('cldf/forms.csv')) if 'lehr' in r['Source'].split(';') and r['ID'] not in linked]
+groups=[('pē','meat','8243','pīvas','Turner8217 explicitly questions piśita as the source of Pashai meat forms. The separately numbered addendum14695 assigns Pashai pəī/pīeu/pōi/pī meat to pīvas rather than piśita. Lehr Darrai pē belongs to this contracted regional meat family. Target the live pīvas8243 node;14695 redirects to it, and no donor or source record is created.','CDIAL[8217];CDIAL[8243];CDIAL[14695]'),('at-','enter','227-2','*atiyēti','Turner227 section2 explicitly gives Pashai at enter under *atiyēti, distinct from section1 atyeti with affricate forms. Lehr at- is the same Pashai verbal stem. Preserve the source infinitive-style gloss and select the existing numbered subsection.','CDIAL[227, section 2 and addenda]')]
+a=[];lines=['# Pashai: meat addendum and entering verb','','Two proposed reflex records, under standing autonomous authorization.','','| # | Pashai form and meaning | Proposed etymology | Evidence |','|---|---|---|---|']
+for i,(f,g,parent,label,ev,cite) in enumerate(groups,1):
+ hits=[r for r in rs if r['Form']==f and r['Gloss']==g];assert len(hits)==1,(f,hits)
+ r=hits[0];a.append(dict(record={k:r[k] for k in ['ID','Language_ID','Form','Gloss','Source','Tags']},parent=parent,kind='reflex',citation=r['Source']+';'+cite,evidence=ev+' The Darrai source row and its transcription are unchanged.'))
+ lines.append(f'| {i} | **{f}** ‘{g}’ | **{label}**, CDIAL **{parent}** | {ev} |')
+reasons={'sos-':'Turner12559 reports an Indic-loan analysis of Pashai sus but also allows a genuine Pashai development with sibilant assimilation. Source Darrai sos requires route discrimination; do not silently select reflex or borrowed.','e-':'Turner232 adati itself questions the Pashai analysis and points instead to908 aśati; Lehr e- needs specific phonological evidence before choosing.','dur':'Homepage identifies6495 dūra but inherited versus contact history has not been resolved for this Pashai form; full entry and donor comparisons still required.'}
+h=[dict(record={k:r[k] for k in ['ID','Language_ID','Form','Gloss','Source','Tags']},reason=reasons[r['Form']]) for r in rs if r['Form'] in reasons]
+(P/'pass049-decisions.json').write_text(json.dumps(dict(accepted=a,held=h),ensure_ascii=False,indent=2)+'\n')
+selected={x['record']['Form'] for x in a+h};audit=[r for r in csv.reader(open('data/other/forms/20230705-pashai.csv')) if len(r)>3 and r[2] in selected]
+(P/'pass049-source-audit.json').write_text(json.dumps(audit,ensure_ascii=False,indent=2)+'\n')
+lines+=['',f'{len(h)} candidates held: dry route, eat stem, far history. Previous meat hold resolved by the separately numbered addendum. Source lehr has no page locator; none invented.','Research: homepage pashai-search010–012; full primary008–009 and preceding primary006–007. Addendum discovery retained in pivas-addendum-research.json; number14695 and its redirect were verified.','Validation: pending.'];(P/'pass049-review.md').write_text('\n'.join(lines)+'\n');print(len(a),'accepted',len(h),'held')

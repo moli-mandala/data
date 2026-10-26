@@ -1,0 +1,942 @@
+<meta charset="utf-8">
+<title>Indo-Aryan Sound Chains</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400&family=Noto+Sans:wght@400;600&family=Noto+Sans+Mono:wght@400;600&display=swap">
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6.16/dist/plot.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
+<style>
+:root {
+  --paper: #f3f5f4; --panel: #ffffff; --ink: #18212b; --muted: #58636e; --rule: #d3d9dd;
+  --accent: #2e4b8f; --accent-soft: #e4eaf6; --ochre: #9a5a1c; --ochre-soft: #f6ead9;
+  --land: #e8ebe6; --water: #dfe8ef; --border: #b9c0c4; --good: #2f6b45; --bad: #a1362f;
+  --absent: #aab2b9; --absent2: #d2d7db;
+  --serif: "Gentium Book Plus", "Gentium Plus", "Noto Serif", Georgia, serif;
+  --sans: "Noto Sans", "Helvetica Neue", Arial, sans-serif;
+  --mono: "Noto Sans Mono", "DejaVu Sans Mono", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --paper: #12161b; --panel: #1a2027; --ink: #e5e8eb; --muted: #9ba5af; --rule: #2c343d;
+    --accent: #9db3ea; --accent-soft: #1f2a40; --ochre: #e0a466; --ochre-soft: #33261a;
+    --land: #232a31; --water: #161c22; --border: #45505a; --good: #7cc596; --bad: #ef8a80;
+    --absent: #5c6670; --absent2: #3d454d;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --paper: #12161b; --panel: #1a2027; --ink: #e5e8eb; --muted: #9ba5af; --rule: #2c343d;
+  --accent: #9db3ea; --accent-soft: #1f2a40; --ochre: #e0a466; --ochre-soft: #33261a;
+  --land: #232a31; --water: #161c22; --border: #45505a; --good: #7cc596; --bad: #ef8a80;
+  --absent: #5c6670; --absent2: #3d454d;
+}
+* { box-sizing: border-box; }
+body { background: var(--paper); color: var(--ink); font: 17px/1.6 var(--serif); margin: 0; padding-inline: 16px; }
+.wrap { max-width: 1240px; margin: 0 auto; padding-block: 40px 80px; display: grid; grid-template-columns: 210px minmax(0, 1fr); gap: 44px; }
+@media (max-width: 960px) { .wrap { grid-template-columns: minmax(0, 1fr); gap: 20px; } details.tree details { margin-left: 8px; padding-left: 8px; } nav.toc { position: static !important; } }
+nav.toc { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 24px); align-self: start; font: 13px/1.5 var(--sans); }
+nav.toc p { text-transform: uppercase; letter-spacing: .08em; color: var(--muted); font-size: 11px; margin: 0 0 8px; }
+nav.toc ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 3px; }
+nav.toc a { color: var(--ink); text-decoration: none; border-left: 2px solid var(--rule); padding-left: 10px; display: block; }
+nav.toc a:hover, nav.toc a:focus-visible { border-color: var(--accent); color: var(--accent); }
+main { min-width: 0; }
+.prose { max-width: 72ch; }
+header.top { border-bottom: 1px solid var(--rule); padding-bottom: 24px; margin-bottom: 28px; }
+.eyebrow { font: 600 12px/1.4 var(--sans); letter-spacing: .1em; text-transform: uppercase; color: var(--ochre); margin: 0 0 12px; }
+h1 { font-size: clamp(34px, 5vw, 52px); line-height: 1.05; margin: 0 0 14px; text-wrap: balance; letter-spacing: -.01em; }
+.dek { font-size: 20px; color: var(--muted); margin: 0; max-width: 64ch; text-wrap: pretty; }
+h2 { font-size: 28px; line-height: 1.2; margin: 56px 0 12px; text-wrap: balance; padding-top: 12px; border-top: 1px solid var(--rule); }
+h3 { font: 600 17px/1.35 var(--sans); margin: 26px 0 8px; }
+p { margin: 0 0 14px; }
+a { color: var(--accent); }
+code, .mono { font-family: var(--mono); font-size: .86em; }
+code { background: var(--accent-soft); padding: 1px 4px; border-radius: 3px; }
+.small { font: 13px/1.5 var(--sans); color: var(--muted); }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(160px, 100%), 1fr)); gap: 12px; margin: 24px 0 8px; }
+.stat { background: var(--panel); border: 1px solid var(--rule); padding: 14px 16px; }
+.stat b { display: block; font: 600 26px/1.1 var(--sans); font-variant-numeric: tabular-nums; }
+.stat span { font: 13px/1.4 var(--sans); color: var(--muted); }
+ul.findings { padding-left: 1.1em; }
+ul.findings li { margin-bottom: 10px; }
+ul.findings li::marker { color: var(--ochre); }
+.callout { background: var(--ochre-soft); border-left: 3px solid var(--ochre); padding: 12px 16px; margin: 16px 0; max-width: 72ch; }
+.callout p:last-child { margin: 0; }
+.panel { background: var(--panel); border: 1px solid var(--rule); padding: 16px; margin: 14px 0 22px; }
+.controls { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; font: 14px var(--sans); margin-bottom: 12px; }
+.controls label { color: var(--muted); }
+select, input[type=search] { font: 14px var(--sans); padding: 5px 8px; border: 1px solid var(--rule); background: var(--paper); color: var(--ink); border-radius: 3px; max-width: 100%; }
+.chart { width: 100%; overflow-x: auto; }
+.chart svg { max-width: 100%; height: auto; font-family: var(--sans); }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 8px; font: 13px/1.3 var(--sans); margin: 10px 0 0; }
+.legend button { font: inherit; display: inline-flex; align-items: center; gap: 6px; background: var(--paper); color: var(--ink); border: 1px solid var(--rule); padding: 3px 8px; border-radius: 3px; cursor: pointer; }
+.legend button[aria-pressed="false"] { opacity: .45; }
+.legend i { width: 11px; height: 11px; border-radius: 50%; display: inline-block; flex: none; }
+.legend small { color: var(--muted); font-variant-numeric: tabular-nums; }
+.maprow { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); gap: 18px; align-items: start; }
+@media (max-width: 1100px) { .maprow { grid-template-columns: minmax(0, 1fr); } }
+.dist { font: 13px/1.45 var(--sans); max-height: 520px; overflow: auto; }
+.dist h4 { font: 600 13px/1.3 var(--sans); margin: 12px 0 4px; display: flex; gap: 6px; align-items: center; }
+.dist h4:first-child { margin-top: 0; }
+.dist p { margin: 0 0 4px; color: var(--muted); }
+.dist .lectlist { color: var(--ink); }
+.multiples { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(260px, 100%), 1fr)); gap: 14px; }
+.multiples figure { margin: 0; }
+.multiples figcaption { font: 600 13px/1.3 var(--sans); margin-bottom: 4px; }
+.tablewrap { overflow: auto; border: 1px solid var(--rule); background: var(--panel); margin: 10px 0 18px; }
+table { border-collapse: collapse; width: 100%; font: 12.5px/1.4 var(--sans); }
+th, td { text-align: left; padding: 5px 8px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+th { font-weight: 600; background: var(--accent-soft); position: sticky; top: 0; z-index: 1; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+tr.grouprow td { background: var(--paper); font-weight: 600; color: var(--accent); }
+#matrix td.v { white-space: nowrap; font-size: 11.5px; border-left: 1px solid var(--rule); }
+#matrix td.v span { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 5px; vertical-align: -1px; }
+#lects th { cursor: pointer; user-select: none; }
+.tall { max-height: 620px; }
+.orders { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: 18px; }
+.orders h4 { font: 600 13px var(--sans); margin: 0 0 8px; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
+.bar { display: grid; grid-template-columns: minmax(0, 11em) minmax(0, 1fr) 4.5em; gap: 8px; align-items: center; font: 12.5px/1.3 var(--sans); padding: 3px 0; border-bottom: 1px dotted var(--rule); }
+.bar code { background: none; padding: 0; font-size: 12px; overflow-wrap: anywhere; }
+.bar .track { height: 10px; display: flex; background: var(--paper); }
+.bar .track .s { background: var(--accent); }
+.bar .track .c { background: var(--bad); }
+.bar .n { text-align: right; font-variant-numeric: tabular-nums; color: var(--muted); }
+.stages { display: grid; gap: 8px; }
+.stage { display: grid; grid-template-columns: 38px minmax(0, 1fr); gap: 10px; align-items: start; }
+.stage-n { font: 600 20px/1.3 var(--sans); color: var(--accent); text-align: right; }
+.chips { display: flex; flex-wrap: wrap; gap: 5px; }
+.chip { font: 12.5px/1.3 var(--mono); background: var(--panel); border: 1px solid var(--rule); padding: 3px 7px; border-radius: 3px; cursor: pointer; color: var(--ink); }
+.chip small { font-family: var(--sans); color: var(--muted); margin-left: 5px; font-size: 11px; }
+.chip:hover, .chip:focus-visible { border-color: var(--accent); }
+details.tree { font: 14.5px/1.55 var(--sans); }
+details.tree details { margin-left: 18px; border-left: 1px solid var(--rule); padding-left: 12px; }
+details.tree summary { cursor: pointer; padding: 2px 0; overflow-wrap: anywhere; }
+details.tree .badge { display: inline-block; }
+details.tree summary b { font-weight: 600; }
+.badge { font: 600 10.5px/1 var(--sans); text-transform: uppercase; letter-spacing: .05em; padding: 3px 6px; border-radius: 3px; margin-left: 6px; vertical-align: 1px; }
+.b-firm { background: #d8eadf; color: #1f5134; }
+.b-mod { background: #f3e6c9; color: #6e4a10; }
+.b-weak { background: #f1d6d3; color: #7d2a23; }
+.b-areal { background: #e3e1f2; color: #423a7a; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .b-firm { background: #1f3a2a; color: #9fd8b3; } :root:not([data-theme="light"]) .b-mod { background: #3a2f18; color: #e6c47f; } :root:not([data-theme="light"]) .b-weak { background: #3e2220; color: #f0a59c; } :root:not([data-theme="light"]) .b-areal { background: #2a2745; color: #bdb5f0; } }
+:root[data-theme="dark"] .b-firm { background: #1f3a2a; color: #9fd8b3; } :root[data-theme="dark"] .b-mod { background: #3a2f18; color: #e6c47f; } :root[data-theme="dark"] .b-weak { background: #3e2220; color: #f0a59c; } :root[data-theme="dark"] .b-areal { background: #2a2745; color: #bdb5f0; }
+.tree .ev { color: var(--muted); font-size: 13.5px; }
+.groups { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: 14px; }
+.group { background: var(--panel); border: 1px solid var(--rule); padding: 14px 16px; }
+.group h3 { margin-top: 0; }
+.group ul { padding-left: 1.1em; margin: 0; font-size: 15.5px; }
+.group .meta { font: 12.5px/1.4 var(--sans); color: var(--muted); margin-bottom: 8px; }
+ol.novel li { margin-bottom: 9px; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.ptree { font: 13px/1.45 var(--sans); max-height: 640px; overflow: auto; }
+.ptree details { margin-left: 12px; border-left: 1px solid var(--rule); padding-left: 8px; }
+.ptree > details { margin-left: 0; border: 0; padding: 0; }
+.ptree summary { cursor: pointer; padding: 2px 0; }
+.ptree summary[aria-current="true"] { background: var(--accent-soft); }
+.ptree .pd { font-variant-numeric: tabular-nums; color: var(--accent); font-weight: 600; }
+.ptree .pn { color: var(--muted); }
+.ptree .leaves { color: var(--muted); margin: 2px 0 4px 12px; }
+.cladelist { display: grid; gap: 2px; max-height: 560px; overflow: auto; font: 12.5px/1.35 var(--sans); }
+.clade { display: grid; grid-template-columns: 3.2em minmax(0, 1fr) 2.6em; gap: 8px; align-items: center; text-align: left; background: none; border: 0; border-bottom: 1px dotted var(--rule); padding: 5px 4px; color: var(--ink); font: inherit; cursor: pointer; }
+.clade:hover, .clade[aria-pressed="true"] { background: var(--accent-soft); }
+.clade .sup { height: 8px; background: var(--paper); position: relative; }
+.clade .sup i { position: absolute; inset: 0 auto 0 0; background: var(--accent); }
+.clade .nm { overflow-wrap: anywhere; }
+.clade .n { text-align: right; color: var(--muted); font-variant-numeric: tabular-nums; }
+.diag { font: 12.5px/1.4 var(--sans); margin-top: 10px; }
+.diag .row { display: grid; grid-template-columns: minmax(0, 11em) minmax(60px, 1fr) 5.8em; gap: 8px; align-items: center; padding: 3px 0; border-bottom: 1px dotted var(--rule); }
+.diag .axis { position: relative; height: 12px; background: linear-gradient(to right, var(--rule) 1px, transparent 1px) 0 0 / 25% 100%; }
+.diag .axis .ln { position: absolute; top: 5px; height: 2px; background: var(--muted); }
+.diag .axis .o, .diag .axis .i { position: absolute; top: 1px; width: 10px; height: 10px; border-radius: 50%; margin-left: -5px; }
+.diag .axis .o { background: var(--absent); }
+.diag .axis .i { background: var(--accent); }
+.agrid td.c { text-align: center; font: 600 14px/1 var(--sans); cursor: pointer; min-width: 3.2em; }
+.agrid td.c[data-v="+"] { background: #d8eadf; color: #1f5134; }
+.agrid td.c[data-v="~"] { background: #f3e6c9; color: #6e4a10; }
+.agrid td.c[data-v="-"] { background: #f1d6d3; color: #7d2a23; }
+.agrid td.c[data-v="0"] { background: var(--accent-soft); color: var(--muted); }
+.agrid td.c[aria-selected="true"] { outline: 2px solid var(--accent); outline-offset: -2px; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .agrid td.c[data-v="+"] { background: #1f3a2a; color: #9fd8b3; } :root:not([data-theme="light"]) .agrid td.c[data-v="~"] { background: #3a2f18; color: #e6c47f; } :root:not([data-theme="light"]) .agrid td.c[data-v="-"] { background: #3e2220; color: #f0a59c; } }
+:root[data-theme="dark"] .agrid td.c[data-v="+"] { background: #1f3a2a; color: #9fd8b3; } :root[data-theme="dark"] .agrid td.c[data-v="~"] { background: #3a2f18; color: #e6c47f; } :root[data-theme="dark"] .agrid td.c[data-v="-"] { background: #3e2220; color: #f0a59c; }
+.agrid th.h { min-width: 10em; max-width: 16em; }
+.agrid th.g { writing-mode: vertical-rl; transform: rotate(180deg); white-space: nowrap; font-size: 11.5px; padding: 8px 4px; vertical-align: bottom; }
+.anote { font: 13.5px/1.5 var(--sans); min-height: 3em; margin-top: 10px; }
+[data-chg], [data-rule] { cursor: help; }
+.chg { border-bottom: 1px dotted var(--accent); cursor: help; }
+.ctip { position: fixed; z-index: 50; max-width: min(430px, calc(100vw - 24px)); background: var(--panel); color: var(--ink); border: 1px solid var(--border); box-shadow: 0 6px 24px rgba(0,0,0,.18); padding: 10px 12px; font: 13px/1.45 var(--sans); pointer-events: none; }
+.ctip[hidden] { display: none; }
+.ctip .ct-h { display: flex; justify-content: space-between; gap: 10px; align-items: baseline; }
+.ctip .ct-h b { font-family: var(--mono); font-size: 12.5px; color: var(--accent); }
+.ctip .ct-m { color: var(--muted); margin: 2px 0 6px; }
+.ctip code { display: block; background: var(--accent-soft); padding: 3px 6px; margin: 2px 0; font-size: 12px; white-space: pre-wrap; overflow-wrap: anywhere; }
+.ctip code small { font-family: var(--sans); color: var(--muted); margin-left: 6px; }
+.ctip .ex { border-top: 1px solid var(--rule); margin-top: 8px; padding-top: 6px; }
+.ctip .ex-cap { font-size: 11.5px; color: var(--muted); margin-bottom: 4px; }
+.ctip .segs { display: flex; flex-wrap: wrap; align-items: center; gap: 3px; }
+.ctip .sg { font: 13px/1 var(--serif); min-width: 20px; padding: 4px 4px 3px; text-align: center; border: 1px solid var(--rule); background: var(--paper); }
+.ctip .sg.hb { background: var(--accent-soft); border-color: var(--accent); font-weight: 700; }
+.ctip .sg.ha { background: var(--ochre-soft); border-color: var(--ochre); font-weight: 700; }
+.ctip .arr { color: var(--muted); margin: 0 4px; font-size: 15px; }
+.ctip .fin { font-size: 11.5px; color: var(--muted); margin-top: 4px; }
+.ctip .fin i { font-family: var(--serif); font-style: normal; color: var(--ink); }
+.noscript { color: var(--bad); font: 14px var(--sans); }
+</style>
+
+<div class="wrap">
+<nav class="toc" aria-label="Contents">
+  <p>Contents</p>
+  <ol>
+    <li><a href="#findings">Key findings</a></li>
+    <li><a href="#tree">Proposed subgrouping</a></li>
+    <li><a href="#innov">Subgroups from shared prefixes</a></li>
+    <li><a href="#maps">Isogloss explorer</a></li>
+    <li><a href="#matrix-sec">Change matrix</a></li>
+    <li><a href="#chronology">Relative chronology</a></li>
+    <li><a href="#round2">Round 2: vowels and accent</a></li>
+    <li><a href="#scores">Scores</a></li>
+    <li><a href="#groups">Group by group</a></li>
+    <li><a href="#special">Nuristani and Romani</a></li>
+    <li><a href="#curation">Data problems</a></li>
+    <li><a href="#method">Method and limits</a></li>
+  </ol>
+</nav>
+
+<main>
+<header class="top">
+  <p class="eyebrow">Jambu · OIA → daughter sound-change chains · {{DATE}}</p>
+  <h1>Indo-Aryan Sound Chains</h1>
+  <p class="dek">Ordered sound-change lists from Old Indo-Aryan to 144 Indo-Aryan lects and 7 Nuristani ones, hill-climbed against the reflexes in Jambu, and what they say about the chronology, geography and subgrouping of the family.</p>
+  <div class="stats" id="stats"></div>
+  <noscript><p class="noscript">The charts on this page need JavaScript.</p></noscript>
+</header>
+
+<section id="findings" class="prose">
+<h2>Key findings</h2>
+<ul class="findings">
+{{FINDINGS}}
+</ul>
+</section>
+
+<section id="tree">
+<h2>Proposed subgrouping</h2>
+<div class="prose">
+<p>Nodes are defined by shared <em>innovations</em> in the rule chains (with the evidence and a confidence level); shared retentions and changes that look areal are marked as such. Expand a node for its evidence.</p>
+</div>
+<div class="panel">
+{{TREE}}
+</div>
+</section>
+
+<section id="innov">
+<h2>Subgroups from shared rule-list prefixes</h2>
+<div class="prose">
+<p>Every rule in a chain is an innovation, a change away from OIA; a retention is only the absence of a rule, so nothing here can group lects by what they kept. Each lect's phonological rules (notation, morphology, accent-loss and accent-placement rules left out) are its innovations, each identified by the exact rule: nothing is pooled by tag, so s &gt; h and s &gt; h / V _ V, or kṣ &gt; kkʰ and kṣ &gt; ʦ̣ʰ, are different innovations. All chains are put in one canonical order, the innovations shared by more lects first (the order in which a perfect phylogeny branches), and the tree is built from how long a prefix of that list two lects share.</p>
+<p>A strict prefix breaks a lect off at the first widespread innovation it lacks, and with {{PT_NSHARED}} shared innovations {{PT_HOMO}} of them end up on more than one branch, so the strict tree cannot be read. The tree below lets a prefix survive {{PT_TOL}} disagreements and clusters lects by the length of the prefix they share (average linkage). Each node lists its <b>defining innovations</b>: present in ≥ 70% of its lects and ≤ 20% of the others. <b>Caveat:</b> below the top levels the tree largely reproduces the twelve agent groups, whose chains share wording as well as history; read the structure between groups, not within them.</p>
+</div>
+<div class="panel">
+  <div class="maprow">
+    <div class="ptree" id="ptree"></div>
+    <div><div class="chart" id="clademap"></div><div id="cladeinfo" class="small"></div><div class="diag" id="cladediag"></div></div>
+  </div>
+  <p class="small">Numbers are the shared-prefix length (innovations) at each split and the number of lects. Click a node to map its lects; each defining innovation shows the share of its lects (blue) and of other lects (grey) that have it.</p>
+</div>
+<h3>One correspondence across the family (descriptive)</h3>
+<div class="panel">
+  <div class="controls"><label for="ichar">Correspondence</label><select id="ichar"></select><span class="small" id="icharinfo"></span></div>
+  <div class="maprow">
+    <div><div class="chart" id="charmap"></div><div class="legend" id="charlegend"></div></div>
+    <div class="dist" id="chardist"></div>
+  </div>
+</div>
+</section>
+
+<section id="maps">
+<h2>Isogloss explorer</h2>
+<div class="prose">
+<p>Each lect's rule chain is read for what a change <em>does</em> there, not just whether it is present: the output of vocalic r̩ or kṣ, where compensatory lengthening falls, which final vowels are lost. Choose a feature to map it; hover a lect for its rule. Click legend entries to hide or show values. The six migratory lects (Romani, Domari, Lomavren, Zargari) lie outside the map but are counted in the lists.</p>
+</div>
+<div class="panel">
+  <div class="controls">
+    <label for="feat">Feature</label>
+    <select id="feat"></select>
+    <label for="mapgroup">Group</label>
+    <select id="mapgroup"><option value="">All groups</option></select>
+  </div>
+  <div class="maprow">
+    <div><div class="chart" id="map"></div><div class="legend" id="maplegend"></div></div>
+    <div class="dist" id="mapdist"></div>
+  </div>
+</div>
+<h3>Six defining features at a glance</h3>
+<div class="multiples" id="multiples"></div>
+</section>
+
+<section id="matrix-sec">
+<h2>Change matrix</h2>
+<div class="prose">
+<p>The same features for every lect, grouped by the agent group that built its chain. Hover a cell for the rule behind it.</p>
+</div>
+<div class="controls">
+  <label for="mxgroup">Group</label>
+  <select id="mxgroup"><option value="">All groups</option></select>
+</div>
+<div class="tablewrap tall"><table id="matrix"></table></div>
+</section>
+
+<section id="chronology">
+<h2>Relative chronology</h2>
+<div class="prose">
+<p>For every pair of rules in a chain, both single-rule moves that reverse them were tried on the training data. When both made the fit worse, that lect counts as evidence for the order; when both made it better, as evidence against. A change here is one definition in the central file <code>changes.sc</code>, used verbatim by every lect that has it (or, for a rule found in one lect only, that exact rule). Nothing is pooled by tag, so s &gt; h and s &gt; h / V _ V are different changes; differently written rules were merged only when they behave identically on every word. Pick a rule to see what the data say must come before and after it across all 151 chains.</p>
+</div>
+<div class="panel">
+  <div class="controls"><label for="otag">Change</label><select id="otag"></select><span class="small" id="osum"></span></div>
+  <div class="orders">
+    <div><h4>Must come after</h4><div id="opre"></div></div>
+    <div><h4>Must come before</h4><div id="opost"></div></div>
+  </div>
+  <p class="small">Blue: lects where the order is required. Red: lects where the reverse order fits better. Hover a bar for the lects.</p>
+</div>
+<h3>Consensus stages</h3>
+<div class="prose"><p>Orders supported by at least 20 lects with at most 15% contradicting form an acyclic graph; layering it gives the earliest stage each change can occupy. Click a change to load it in the explorer above.</p></div>
+<div class="stages" id="stages"></div>
+<h3>Where each change sits in the chains</h3>
+<div class="panel"><div class="chart" id="chronoplot"></div></div>
+<div class="prose">
+{{STAGED}}
+</div>
+</section>
+
+<section id="round2">
+<h2>Round 2: vowels and the Vedic accent</h2>
+<div class="prose">
+{{R2_TEXT}}
+</div>
+<h3>What the Vedic accent does and does not condition</h3>
+<div class="prose"><p>Every group tested the same questions: is the accent a better conditioner than syllable position or weight? A cell is <b>+</b> when an accent rule was adopted because it beat the accent-blind control on held-out training words, <b>~</b> when the effect is partial or tiny, <b>−</b> when every accent version was worse, <b>0</b> when rates were flat. Click a cell for the numbers.</p></div>
+<div class="panel">
+  <div class="tablewrap" style="margin:0"><table class="agrid" id="agrid"></table></div>
+  <div class="anote" id="anote"></div>
+</div>
+<h3>Where does the modern accent come from?</h3>
+<div class="prose"><p>A second score, <b>accent NED</b>, keeps the accent. It is computed only on attested forms whose source marks one, reading acute, grave, circumflex and caron alike as "this vowel carries the accent": the ordinary edit distance plus half an edit when the accent is missing or misplaced. In the engine the accent lives on a separate tier that no rule can see, so placing it never changes the ordinary NED. The chain's accent-loss rule hides the Vedic accent instead of deleting it, and the accent then travels with its vowel through every later change. That makes a direct test possible: does the Vedic accent, carried through each lect's own derivation, predict the modern accent better than a positional rule?</p>
+<p>Six group agents hill-climbed the accent score for every lect with accent-marked forms. The answer is the same everywhere. Carrying the Vedic accent through beats no accent by at most 0.01; a positional rule beats it by 0.03–0.12. The rules adopted are the old penult placed before apocope, or the last syllable after it (often the same syllable), in Shina, Palula, Kalasha, Khowar, Kohistani, Pashai, Nuristani and Domari; the first syllable in Kotgarhi, Bhalesi and Bashkarik; the first heavy syllable in Hindko. Aspiration shifts the accent rightward in the raw Palula and Shina data (56% vs 45% and 55% vs 36% on σ2 after an initial voiced aspirate), but after apocope the shift has nothing left to act on. The Vedic accent's one clear trace is segmental: Palula first-syllable ā becomes o/ō in 52% of barytones but 12% of oxytones.</p></div>
+<div class="panel">
+  <div class="controls"><label for="achsplit">Split</label><select id="achsplit"><option value="0">train (rules chosen here)</option><option value="1">test</option></select><span class="small" id="achsum"></span></div>
+  <div class="tablewrap" style="margin:0"><table class="agrid" id="achtab"></table></div>
+</div>
+<h3>Score change per lect</h3>
+<div class="panel"><div class="chart" id="r2plot"></div><p class="small" id="r2note"></p></div>
+</section>
+
+<section id="scores">
+<h2>Scores</h2>
+<div class="prose">
+<p>Test NED (normalised edit distance to the attested form; lower is better) for every lect, with no rules, with the hand-written chain, and with the chain scored extension-aware.</p>
+</div>
+<div class="panel"><div class="chart" id="scoreplot"></div></div>
+<h3>Extension-aware score</h3>
+<div class="prose"><p>More than half of the remaining error sits in the word ending, and most of it is the choice of MIA stem extension or gender ending (-∅ vs -ā/-ī/-o, -ṛā/-lā/-rā). The <b>extension-aware NED</b> also runs each headword through the chain with every extension on a fixed menu (-aka, -akka, -ikā, -ikka, -iyaka, -uka, -aḍaka, -allaka, -araka, neuter -akam, replacing the final vowel); verbs instead get a menu of OIA verb formations on the root (present -ati, verbal nouns -anaka/-aṇa/-anīya, gerundive -tavya, participle -ita, infinitive -itum, bare root), so that the chain must derive each lect's citation form and scores each attested form against its closest variant, one choice per reflex since several endings coexist. No cost is charged for an extension, so it is an optimistic score, shown next to the plain NED above (orange-red dots) and never instead of it. The chart shows which endings the reflexes choose.</p></div>
+<div class="panel">
+  <div class="controls"><label for="extgroup">Show</label><select id="extgroup"><option value="">all groups</option></select><label for="extkind">Menu</label><select id="extkind"><option value="n">noun extensions</option><option value="v">verb forms</option></select><span class="small" id="extinfo"></span></div>
+  <div class="chart" id="extplot"></div>
+</div>
+<h3>All lects</h3>
+<div class="controls"><label for="q">Search</label><input id="q" type="search" placeholder="Lect or code"><label for="tgroup">Group</label><select id="tgroup"><option value="">All groups</option></select><span id="count" class="small"></span></div>
+<div class="tablewrap tall"><table id="lects"></table></div>
+</section>
+
+<section id="groups">
+<h2>Group by group</h2>
+<div class="groups">
+{{GROUPS_HTML}}
+</div>
+<h3>Things worth a closer look</h3>
+<div class="prose"><ol class="novel">
+{{NOVEL}}
+</ol></div>
+</section>
+
+<section id="special" class="prose">
+<h2>Nuristani and Romani</h2>
+{{SPECIAL}}
+</section>
+
+<section id="curation" class="prose">
+<h2>Data problems for curation</h2>
+{{CURATION}}
+</section>
+
+<section id="method" class="prose">
+<h2>Method and limits</h2>
+{{METHOD}}
+</section>
+</main>
+</div>
+
+<script id="data-lects" type="application/json">/*{{LECTS}}*/null</script>
+<script id="data-feats" type="application/json">/*{{FEATS}}*/null</script>
+<script id="data-orders" type="application/json">/*{{ORDERS}}*/null</script>
+<script id="data-chrono" type="application/json">/*{{CHRONO}}*/null</script>
+<script id="data-stages" type="application/json">/*{{STAGES}}*/null</script>
+<script id="data-groups" type="application/json">/*{{GROUPS}}*/null</script>
+<script id="data-world" type="application/json">/*{{WORLD}}*/null</script>
+<script id="data-innov" type="application/json">/*{{INNOV}}*/null</script>
+<script id="data-ptree" type="application/json">/*{{PTREE}}*/null</script>
+<script id="data-changes" type="application/json">/*{{CHANGES}}*/null</script>
+<div class="ctip" id="ctip" role="tooltip" hidden></div>
+<script id="data-accent" type="application/json">/*{{ACCENT}}*/null</script>
+<script id="data-acchyp" type="application/json">/*{{ACCHYP}}*/null</script>
+<script>
+(function () {
+  const J = id => JSON.parse(document.getElementById(id).textContent);
+  const LECTS = J("data-lects"), FEATS = J("data-feats"), 
+        ORDERS = J("data-orders"), CHRONO = J("data-chrono"), STAGES = J("data-stages"),
+        GROUPS = J("data-groups"), WORLD = J("data-world"), INNOV = J("data-innov"), ACCENT = J("data-accent"), ACCHYP = J("data-acchyp"), PTREE = J("data-ptree"), CHG = J("data-changes"), CHANGES = CHG.changes, RAW2ID = CHG.raw2id;
+  const byId = Object.fromEntries(LECTS.map(l => [l.id, l]));
+  const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+  const PAL = ["#2e6fbd", "#e0892f", "#2f9a6d", "#c9404f", "#8a5cc4", "#1f9fb3", "#b8912a", "#d465a8", "#6d8f2a", "#9c5b3a"];
+  const ABSENT = /^(no|none|kept|v- kept|l kept|no rule|three kept \/ no rule|cluster kept|ḍ kept \/ no rule|no geminates|no lengthening)$/;
+  const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"}[c]));
+  const fmt = (v, d = 3) => v == null ? "" : Number(v).toFixed(d);
+  const short = (t, n = 38) => t.length > n ? t.slice(0, n - 1) + "…" : t;
+  // a change id is "=name" for a central change (changes.sc) or the canonical rule text for a local one
+  const ruleOf = id => (CHANGES[id] && CHANGES[id].rule) || id.replace(/^=/, "");
+  const label = id => id.startsWith("=") ? `${id.slice(1)}: ${ruleOf(id)}` : id;
+  const groupKeys = Object.keys(GROUPS);
+
+  // ── stats strip
+  const med = a => { const s = a.filter(x => x != null).sort((x, y) => x - y); return s[Math.floor(s.length / 2)]; };
+  const r2 = LECTS.filter(l => l.r1 != null);
+  document.getElementById("stats").innerHTML = [
+    [LECTS.length, "lects with a tuned chain"],
+    [d3.sum(LECTS, l => l.rules).toLocaleString(), "rules, every one tagged with a shared change label"],
+    [`${fmt(med(LECTS.map(l => l.null)))} → ${fmt(med(LECTS.map(l => l.hand)))}`, "median test NED, no rules → final chain"],
+    [`${fmt(med(r2.map(l => l.r1)))} → ${fmt(med(r2.map(l => l.hand)))}`, "median test NED, round 1 → round 2"],
+  ].map(([b, s]) => `<div class="stat"><b>${b}</b><span>${s}</span></div>`).join("");
+
+  // ── geography
+  const land = topojson.feature(WORLD, WORLD.objects.land);
+  const borders = topojson.mesh(WORLD, WORLD.objects.countries, (a, b) => a !== b);
+  const inMap = l => l.lon != null && l.lon >= 58 && l.lon <= 99 && l.lat >= 4 && l.lat <= 38;
+  const DOMAIN = {type: "MultiPoint", coordinates: [[61, 6], [97.5, 6], [97.5, 37.5], [61, 37.5]]};
+
+  function featValues(key) {
+    const isChg = key.startsWith("chg:"), cid = key.slice(4);
+    const val = l => isChg ? (l.changes.includes(cid) ? "present" : "absent") : (l.f[key] ? l.f[key][0] : "n/a");
+    const rule = l => isChg ? (l.changes.includes(cid) ? ruleOf(cid) : "") : (l.f[key] ? l.f[key][1] : "");
+    const counts = d3.rollup(LECTS, v => v.length, val);
+    const values = [...counts.keys()].sort((a, b) => {
+      const ab = ABSENT.test(a) || a === "absent", bb = ABSENT.test(b) || b === "absent";
+      return ab - bb || counts.get(b) - counts.get(a);
+    });
+    let k = 0, g = 0;
+    const GREYS = [css("--absent"), css("--absent2")];
+    const colour = new Map(values.map(v => [v, (ABSENT.test(v) || v === "absent") ? GREYS[g++ % 2] : PAL[k++ % PAL.length]]));
+    return {val, rule, values, counts, colour};
+  }
+
+  function mapPlot({key, width, height, hidden = new Set(), group = "", tips = true, labels = true}) {
+    const F = featValues(key);
+    const pts = LECTS.filter(inMap).filter(l => !group || l.group === group).filter(l => !hidden.has(F.val(l)));
+    const big = new Set(["H", "B", "M", "G", "P", "S", "N", "Or", "A", "K", "Sh", "Si", "Pa", "Kho", "Mth", "L"]);
+    return Plot.plot({
+      width, height, projection: {type: "conic-equal-area", parallels: [12, 32], rotate: [-80, 0], domain: DOMAIN, inset: 6},
+      style: {background: "transparent", color: css("--ink"), fontFamily: css("--sans")},
+      marks: [
+        Plot.sphere({fill: css("--water"), stroke: "none"}),
+        Plot.graticule({stroke: css("--border"), strokeOpacity: 0.35, strokeWidth: 0.5}),
+        Plot.geo(land, {fill: css("--land"), stroke: css("--border"), strokeWidth: 0.6}),
+        Plot.geo(borders, {stroke: css("--border"), strokeWidth: 0.5, strokeDasharray: "2,2"}),
+        Plot.dot(pts, {x: "lon", y: "lat", r: width > 400 ? 5 : 3.2, fill: l => F.colour.get(F.val(l)),
+          stroke: css("--panel"), strokeWidth: 1, sort: l => (ABSENT.test(F.val(l)) || F.val(l) === "absent") ? 0 : 1}),
+        labels ? Plot.text(pts.filter(l => big.has(l.id)), {x: "lon", y: "lat", text: "name", dy: -10, fontSize: 10,
+          fill: css("--ink"), stroke: css("--paper"), strokeWidth: 3}) : null,
+        tips ? Plot.tip(pts, Plot.pointer({x: "lon", y: "lat", title: l =>
+          `${l.name} (${l.id})\n${l.glabel}\n${FEATS[key] ? FEATS[key].label : label(key.slice(4))}: ${F.val(l)}` +
+          (F.rule(l) ? `\n${F.rule(l)}` : "")})) : null,
+      ],
+    });
+  }
+
+  const featSel = document.getElementById("feat");
+  const tagCounts = d3.rollup(LECTS.flatMap(l => l.changes), v => v.length, t => t);
+  featSel.innerHTML = `<optgroup label="Outcome features">` +
+    Object.entries(FEATS).map(([k, v]) => `<option value="${k}">${esc(v.label)}</option>`).join("") + `</optgroup>` +
+    `<optgroup label="Any single rule (present / absent)">` +
+    [...tagCounts].filter(([t, n]) => n >= 5)
+      .sort((a, b) => b[1] - a[1]).map(([t, n]) => `<option value="chg:${esc(t)}">${esc(short(label(t), 60))} (${n})</option>`).join("") +
+    `</optgroup>`;
+  const mapGroupSel = document.getElementById("mapgroup");
+  for (const sel of ["mapgroup", "mxgroup", "tgroup"]) document.getElementById(sel).innerHTML += groupKeys.map(k => `<option value="${k}">${esc(GROUPS[k])}</option>`).join("");
+  let hidden = new Set();
+  function drawMap() {
+    const key = featSel.value, el = document.getElementById("map");
+    const w = Math.max(300, Math.min(760, el.clientWidth || 700));
+    el.replaceChildren(mapPlot({key, width: w, height: Math.round(w * 0.86), hidden, group: mapGroupSel.value}));
+    const F = featValues(key);
+    const leg = document.getElementById("maplegend");
+    leg.innerHTML = F.values.map(v => `<button type="button" data-v="${esc(v)}" aria-pressed="${!hidden.has(v)}"><i style="background:${F.colour.get(v)}"></i>${esc(v)} <small>${F.counts.get(v)}</small></button>`).join("");
+    leg.querySelectorAll("button").forEach(b => b.addEventListener("click", () => {
+      const v = b.dataset.v; hidden.has(v) ? hidden.delete(v) : hidden.add(v); drawMap();
+    }));
+    const note = FEATS[key] ? `<p>${esc(FEATS[key].note)}</p>` : "";
+    document.getElementById("mapdist").innerHTML = note + F.values.map(v => {
+      const ls = LECTS.filter(l => F.val(l) === v && (!mapGroupSel.value || l.group === mapGroupSel.value));
+      if (!ls.length) return "";
+      const byG = d3.groups(ls, l => l.glabel).map(([g, xs]) => `<b>${esc(g)}</b>: ${xs.map(l => esc(l.name)).join(", ")}`).join("; ");
+      return `<h4><i style="width:10px;height:10px;border-radius:50%;background:${F.colour.get(v)};display:inline-block"></i>${esc(v)} <span class="small">${ls.length}</span></h4><p class="lectlist">${byG}</p>`;
+    }).join("");
+  }
+  featSel.addEventListener("change", () => { hidden = new Set(); drawMap(); });
+  mapGroupSel.addEventListener("change", drawMap);
+  featSel.value = "cl";
+
+  const MULT = [["cl", "Compensatory lengthening"], ["nasvoice", "Post-nasal voicing"], ["sib", "Sibilants"],
+                ["flap", "Intervocalic ḍ"], ["sh", "s > h"], ["apocope", "Final short vowels"]];
+  function drawMultiples() {
+    const el = document.getElementById("multiples");
+    el.replaceChildren(...MULT.map(([k, lab]) => {
+      const fig = document.createElement("figure");
+      const F = featValues(k);
+      fig.innerHTML = `<figcaption>${esc(lab)}</figcaption>`;
+      fig.append(mapPlot({key: k, width: 300, height: 258, tips: false, labels: false}));
+      const leg = document.createElement("div"); leg.className = "legend";
+      leg.innerHTML = F.values.map(v => `<span style="display:inline-flex;gap:5px;align-items:center"><i style="background:${F.colour.get(v)}"></i>${esc(v)} <small>${F.counts.get(v)}</small></span>`).join("");
+      fig.append(leg);
+      return fig;
+    }));
+  }
+
+  // ── change matrix
+  const FK = Object.keys(FEATS);
+  function drawMatrix() {
+    const g = document.getElementById("mxgroup").value;
+    const cols = FK.map(k => featValues(k));
+    let html = `<thead><tr><th>Lect</th>${FK.map(k => `<th>${esc(FEATS[k].label)}</th>`).join("")}</tr></thead><tbody>`;
+    for (const gk of groupKeys) {
+      if (g && g !== gk) continue;
+      const ls = LECTS.filter(l => l.group === gk).sort((a, b) => b.etyma - a.etyma);
+      if (!ls.length) continue;
+      html += `<tr class="grouprow"><td colspan="${FK.length + 1}">${esc(GROUPS[gk])}</td></tr>`;
+      for (const l of ls) {
+        html += `<tr><td>${esc(l.name)} <span class="small">${esc(l.id)}</span></td>` + FK.map((k, i) => {
+          const v = cols[i].val(l);
+          return `<td class="v" title="${esc(cols[i].rule(l) || v)}"><span style="background:${cols[i].colour.get(v)}"></span>${esc(v)}</td>`;
+        }).join("") + `</tr>`;
+      }
+    }
+    document.getElementById("matrix").innerHTML = html + "</tbody>";
+  }
+  document.getElementById("mxgroup").addEventListener("change", drawMatrix);
+
+  // ── order explorer
+  const otag = document.getElementById("otag");
+  const orderTags = [...new Set(ORDERS.flatMap(o => [o.a, o.b]))]
+    .sort((a, b) => (tagCounts.get(b) || 0) - (tagCounts.get(a) || 0));
+  otag.innerHTML = orderTags.map(t => `<option value="${esc(t)}">${esc(short(label(t), 60))} (${tagCounts.get(t) || 0} lects)</option>`).join("");
+  function barRows(rows, other) {
+    const max = d3.max(rows, r => r.s + r.c) || 1;
+    return rows.map(r => {
+      const tip = `${r.s} lects require this order: ${r.sl.map(x => byId[x] ? byId[x].name : x).join(", ")}` +
+        (r.c ? `\n${r.c} fit the reverse better: ${r.cl.map(x => byId[x] ? byId[x].name : x).join(", ")}` : "");
+      return `<div class="bar" title="${esc(tip)}"><code data-chg="${esc(other(r))}" tabindex="0">${esc(label(other(r)))}</code>` +
+        `<div class="track"><div class="s" style="width:${100 * r.s / max}%"></div><div class="c" style="width:${100 * r.c / max}%"></div></div>` +
+        `<span class="n">${r.s}${r.c ? ` / ${r.c}` : ""}</span></div>`;
+    }).join("") || `<p class="small">No order with this change reaches the evidence threshold.</p>`;
+  }
+  function drawOrders() {
+    const t = otag.value;
+    const pre = ORDERS.filter(o => o.b === t && o.s >= 3).sort((a, b) => b.s - a.s).slice(0, 18);
+    const post = ORDERS.filter(o => o.a === t && o.s >= 3).sort((a, b) => b.s - a.s).slice(0, 18);
+    document.getElementById("opre").innerHTML = barRows(pre, r => r.a);
+    document.getElementById("opost").innerHTML = barRows(post, r => r.b);
+    const c = CHRONO.find(x => x.tag === t);
+    document.getElementById("osum").textContent = c ? `median position ${fmt(c.med, 2)} of the chain (0 = first, 1 = last)` : "";
+  }
+  otag.addEventListener("change", drawOrders);
+  otag.value = orderTags.filter(t => / > ∅ \/ V _ V$/.test(ruleOf(t))).sort((a, b) => (tagCounts.get(b) || 0) - (tagCounts.get(a) || 0))[0] || orderTags[0];
+
+  // ── stages
+  const st = d3.groups(STAGES, s => s.stage).sort((a, b) => a[0] - b[0]);
+  document.getElementById("stages").innerHTML = st.map(([n, xs]) =>
+    `<div class="stage"><div class="stage-n">${n}</div><div class="chips">` +
+    xs.sort((a, b) => b.lects - a.lects).map(s => `<button type="button" class="chip" data-t="${esc(s.tag)}" data-chg="${esc(s.tag)}">${esc(short(label(s.tag), 34))}<small>${s.lects}</small></button>`).join("") +
+    `</div></div>`).join("");
+  document.querySelectorAll("#stages .chip").forEach(b => b.addEventListener("click", () => {
+    if ([...otag.options].some(o => o.value === b.dataset.t)) { otag.value = b.dataset.t; drawOrders(); document.getElementById("chronology").scrollIntoView({behavior: "smooth"}); }
+  }));
+
+  // ── chronology dot plot
+  function drawChrono() {
+    const el = document.getElementById("chronoplot");
+    const data = CHRONO.filter(c => c.lects >= 8).sort((a, b) => a.med - b.med);
+    const w = Math.max(320, Math.min(880, el.clientWidth || 800));
+    el.replaceChildren(Plot.plot({
+      width: w, height: 16 * data.length + 50, marginLeft: 250, x: {domain: [0, 1], label: "Relative position in the chain (0 = first rule, 1 = last)", grid: true},
+      y: {domain: data.map(d => d.tag), label: null, tickFormat: t => short(label(t), 34)},
+      style: {background: "transparent", color: css("--ink"), fontFamily: css("--sans"), fontSize: "11px"},
+      marks: [
+        Plot.ruleY(data, {y: d => d.tag, x1: "q1", x2: "q3", stroke: css("--accent"), strokeOpacity: 0.55, strokeWidth: 3}),
+        Plot.dot(data, {y: d => d.tag, x: "med", r: d => 2 + Math.sqrt(d.lects) / 2, fill: css("--ochre")}),
+        Plot.tip(data, Plot.pointerY({y: d => d.tag, x: "med", title: d => `${label(d.tag)}\n${d.lects} lects\nmedian ${fmt(d.med, 2)}, IQR ${fmt(d.q1, 2)}–${fmt(d.q3, 2)}`})),
+      ],
+    }));
+  }
+
+  // ── round 2 change plot
+  function drawR2() {
+    const el = document.getElementById("r2plot");
+    const data = LECTS.filter(l => l.r1 != null && Math.abs(l.hand - l.r1) >= 0.0005)
+      .map(l => ({...l, d: l.hand - l.r1})).sort((a, b) => a.d - b.d);
+    document.getElementById("r2note").textContent = `${data.length} lects changed by at least 0.0005 test NED in round 2; ` +
+      `${data.filter(d => d.d < 0).length} improved. Arrows run from the round-1 to the round-2 chain.`;
+    if (!data.length) { el.textContent = ""; return; }
+    const w = Math.max(320, Math.min(880, el.clientWidth || 800));
+    el.replaceChildren(Plot.plot({
+      width: w, height: 14 * data.length + 60, marginLeft: 170, x: {label: "Test NED", grid: true},
+      y: {domain: data.map(d => d.name), label: null}, color: {domain: groupKeys.map(k => GROUPS[k]), range: PAL.concat(["#555", "#999"]), legend: true},
+      style: {background: "transparent", color: css("--ink"), fontFamily: css("--sans"), fontSize: "11px"},
+      marks: [
+        Plot.arrow(data, {y: "name", x1: "r1", x2: "hand", stroke: "glabel", strokeWidth: 1.6, headLength: 5}),
+        Plot.tip(data, Plot.pointerY({y: "name", x: "hand", title: d => `${d.name} (${d.glabel})\nround 1 ${fmt(d.r1)} (${d.r1rules} rules) → round 2 ${fmt(d.hand)} (${d.rules} rules)\nexact ${fmt(100 * d.r1exact, 1)}% → ${fmt(100 * d.exact, 1)}%`})),
+      ],
+    }));
+  }
+
+  // ── score strip plot
+  function drawScores() {
+    const el = document.getElementById("scoreplot");
+    const long = LECTS.flatMap(l => [
+      {l, sys: "No rules", v: l.null}, {l, sys: "Hand-written chain", v: l.hand},
+      {l, sys: "Chain, extension-aware", v: l.ext}]).filter(d => d.v != null);
+    const w = Math.max(320, Math.min(880, el.clientWidth || 800));
+    el.replaceChildren(Plot.plot({
+      width: w, height: 40 * groupKeys.length + 70, marginLeft: 150, x: {label: "Test NED (lower is better)", grid: true, domain: [0, 0.85]},
+      y: {domain: groupKeys.map(k => GROUPS[k]), label: null},
+      color: {domain: ["No rules", "Hand-written chain", "Chain, extension-aware"], range: [css("--absent"), "#2e6fbd", "#c9404f"], legend: true},
+      style: {background: "transparent", color: css("--ink"), fontFamily: css("--sans"), fontSize: "11px"},
+      marks: [
+        Plot.dot(long, {x: "v", y: d => d.l.glabel, fill: "sys", r: 3, fillOpacity: 0.85,
+          dy: d => ({"No rules": -9, "Hand-written chain": 0, "Chain, extension-aware": 9}[d.sys])}),
+        Plot.tip(long, Plot.pointer({x: "v", y: d => d.l.glabel, dy: d => ({"No rules": -9, "Hand-written chain": 0, "Chain, extension-aware": 9}[d.sys]),
+          title: d => `${d.l.name} (${d.l.id})\n${d.sys}: ${fmt(d.v)}\n${d.l.rules} rules, ${d.l.test} test pairs`})),
+      ],
+    }));
+  }
+
+  // ── lect table
+  const COLS = [["name", "Lect"], ["glabel", "Group"], ["etyma", "Etyma", 1], ["test", "Test pairs", 1], ["rules", "Rules", 1],
+    ["null", "NED no rules", 1], ["r1", "NED round 1", 1], ["hand", "NED final", 1], ["ext", "NED ext-aware", 1], ["exact", "Exact %", 1],
+    ["excl", "Excluded sources"]];
+  let sortKey = "hand", sortDir = 1;
+  function drawTable() {
+    const q = document.getElementById("q").value.trim().toLowerCase(), g = document.getElementById("tgroup").value;
+    const rows = LECTS.filter(l => (!g || l.group === g) && (!q || l.name.toLowerCase().includes(q) || l.id.toLowerCase().includes(q)))
+      .sort((a, b) => { const x = a[sortKey], y = b[sortKey]; return x == null ? 1 : y == null ? -1 : (x > y ? 1 : x < y ? -1 : 0) * sortDir; });
+    document.getElementById("lects").innerHTML = `<thead><tr>${COLS.map(([k, lab, n]) => `<th class="${n ? "num" : ""}" data-k="${k}" tabindex="0" aria-sort="${k === sortKey ? (sortDir > 0 ? "ascending" : "descending") : "none"}">${lab}</th>`).join("")}</tr></thead><tbody>` +
+      rows.map(l => `<tr>${COLS.map(([k, , n]) => {
+        let v = l[k];
+        if (k === "exact") v = fmt(100 * v, 1); else if (["null", "r1", "hand", "ext"].includes(k)) v = fmt(v);
+        const cls = "";
+        return `<td class="${n ? "num" : ""}"${cls}>${esc(v)}${k === "name" ? ` <span class="small">${esc(l.id)}</span>` : ""}</td>`;
+      }).join("")}</tr>`).join("") + "</tbody>";
+    document.getElementById("count").textContent = `${rows.length} of ${LECTS.length} lects`;
+    document.querySelectorAll("#lects th").forEach(th => {
+      const go = () => { const k = th.dataset.k; if (k === sortKey) sortDir = -sortDir; else { sortKey = k; sortDir = 1; } drawTable(); };
+      th.addEventListener("click", go);
+      th.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); go(); } });
+    });
+  }
+  document.getElementById("q").addEventListener("input", drawTable);
+  document.getElementById("tgroup").addEventListener("change", drawTable);
+
+
+  // ── shared-prefix tree
+  const baseMap = () => [
+    Plot.sphere({fill: css("--water"), stroke: "none"}),
+    Plot.graticule({stroke: css("--border"), strokeOpacity: 0.35, strokeWidth: 0.5}),
+    Plot.geo(land, {fill: css("--land"), stroke: css("--border"), strokeWidth: 0.6}),
+    Plot.geo(borders, {stroke: css("--border"), strokeWidth: 0.5, strokeDasharray: "2,2"})];
+  const proj = {type: "conic-equal-area", parallels: [12, 32], rotate: [-80, 0], domain: DOMAIN, inset: 6};
+  const lname = id => byId[id] ? byId[id].name : id;
+  let curNode = null;
+  function nodeLabel(n) {
+    if (n.members.length <= 4) return n.members.map(lname).join(", ");
+    const gs = d3.rollups(n.members, v => v.length, id => byId[id] ? byId[id].glabel : "?").sort((x, y) => y[1] - x[1]);
+    return gs.slice(0, 3).map(([g, k]) => `${g} ${k}`).join(", ") + (gs.length > 3 ? `, +${gs.length - 3} groups` : "");
+  }
+  function drawPTree() {
+    const el = document.getElementById("ptree");
+    const nodes = [];
+    const render = (n, lvl) => {
+      if (n.members.length < 2) return `<div class="leaves">${esc(lname(n.members[0]))}</div>`;
+      const k = nodes.push(n) - 1;
+      const big = n.kids.filter(c => c.members.length >= 2), leaves = n.kids.filter(c => c.members.length < 2);
+      return `<details${lvl < 3 ? " open" : ""}><summary data-k="${k}"><span class="pd">${fmt(n.depth, 1)}</span> <span class="pn">· ${n.members.length}</span> ${esc(nodeLabel(n))}</summary>` +
+        big.map(c => render(c, lvl + 1)).join("") + (leaves.length ? `<div class="leaves">${leaves.map(c => esc(lname(c.members[0]))).join(", ")}</div>` : "") + `</details>`;
+    };
+    el.innerHTML = render(PTREE.tree, 0);
+    el.querySelectorAll("summary").forEach(sm => sm.addEventListener("click", () => { curNode = nodes[+sm.dataset.k]; drawNode(); }));
+    if (!curNode) curNode = PTREE.tree.kids.slice().sort((a, b) => b.members.length - a.members.length)[0];
+    drawNode();
+  }
+  function drawNode() {
+    document.querySelectorAll("#ptree summary").forEach(sm => sm.setAttribute("aria-current", "false"));
+    const el = document.getElementById("clademap");
+    if (!curNode) return;
+    const mem = new Set(curNode.members);
+    const pts = LECTS.filter(inMap).filter(l => l.group !== "nuristani");
+    const w = Math.max(300, Math.min(520, el.clientWidth || 480));
+    el.replaceChildren(Plot.plot({
+      width: w, height: Math.round(w * 0.86), projection: proj,
+      style: {background: "transparent", color: css("--ink"), fontFamily: css("--sans")},
+      marks: [...baseMap(),
+        Plot.dot(pts, {x: "lon", y: "lat", r: 3.4, fill: l => mem.has(l.id) ? css("--accent") : css("--absent2"),
+          stroke: css("--panel"), strokeWidth: 0.8, sort: l => mem.has(l.id) ? 1 : 0}),
+        Plot.tip(pts, Plot.pointer({x: "lon", y: "lat", title: l => `${l.name} (${l.glabel})${mem.has(l.id) ? "\nin this node" : ""}`}))],
+    }));
+    const off = curNode.members.filter(id => !byId[id] || !inMap(byId[id]));
+    document.getElementById("cladeinfo").textContent = `Shared prefix ${fmt(curNode.depth, 1)} · ${curNode.members.length} lects: ${curNode.members.map(lname).join(", ")}` +
+      (off.length ? ` (off the map: ${off.map(lname).join(", ")})` : "");
+    document.getElementById("cladediag").innerHTML = (curNode.diag.length ? curNode.diag.slice(0, 8) : [["no innovation is present in ≥ 70% of these lects and ≤ 20% of others", null, null]]).map(([c, i, o]) =>
+      i == null ? `<p class="small">${esc(c)}</p>` :
+      `<div class="row"><span>${esc(c)}</span><span class="axis"><span class="ln" style="left:${100 * o}%;width:${100 * Math.max(0, i - o)}%"></span>` +
+      `<span class="o" style="left:${100 * o}%"></span><span class="i" style="left:${100 * i}%"></span></span>` +
+      `<span class="small">${Math.round(100 * i)}% / ${Math.round(100 * o)}%</span></div>`).join("");
+  }
+
+  // ── one correspondence on the map (rate per lect)
+  const ichar = document.getElementById("ichar");
+  const charN = c => Object.values(INNOV.rates).filter(r => r[c] && r[c][1] >= 6).length;
+  ichar.innerHTML = INNOV.chars.filter(c => charN(c) >= 10 && !/kept/.test(c)).map(c => `<option value="${esc(c)}">${esc(c)}</option>`).join("");
+  ichar.value = INNOV.chars.includes("int. l > r") ? "int. l > r" : ichar.options[0].value;
+  function drawChar() {
+    const c = ichar.value, el = document.getElementById("charmap");
+    const rate = l => { const r = INNOV.rates[l.id] && INNOV.rates[l.id][c]; return r && r[1] >= 6 ? r[0] / r[1] : null; };
+    const pts = LECTS.filter(inMap).filter(l => INNOV.rates[l.id]);
+    const col = d3.scaleSequential([0, 1], d3.interpolateRgb(css("--absent2"), css("--accent")));
+    const w = Math.max(300, Math.min(760, el.clientWidth || 700));
+    el.replaceChildren(Plot.plot({
+      width: w, height: Math.round(w * 0.86), projection: proj,
+      style: {background: "transparent", color: css("--ink"), fontFamily: css("--sans")},
+      marks: [...baseMap(),
+        Plot.dot(pts.filter(l => rate(l) == null), {x: "lon", y: "lat", r: 3, fill: "none", stroke: css("--absent"), strokeWidth: 1}),
+        Plot.dot(pts.filter(l => rate(l) != null), {x: "lon", y: "lat", r: w > 400 ? 5 : 3.2, fill: l => col(rate(l)),
+          stroke: css("--panel"), strokeWidth: 1, sort: l => rate(l)}),
+        Plot.tip(pts, Plot.pointer({x: "lon", y: "lat", title: l => { const r = INNOV.rates[l.id][c];
+          return `${l.name} (${l.glabel})\n${c}: ` + (r ? `${r[0]} of ${r[1]} cases (${Math.round(100 * r[0] / r[1])}%)` : "no cases") + (r && r[1] < 6 ? " — too few" : ""); }}))],
+    }));
+    document.getElementById("charlegend").innerHTML = [0, 0.2, 0.5, 0.8, 1].map(v => `<span style="display:inline-flex;gap:5px;align-items:center"><i style="background:${col(v)}"></i>${Math.round(100 * v)}%</span>`).join("") +
+      `<span style="display:inline-flex;gap:5px;align-items:center"><i style="border:1px solid ${css("--absent")};background:none"></i>&lt; 6 cases</span>`;
+    const all = LECTS.filter(l => INNOV.rates[l.id]).map(l => ({l, r: rate(l)})).filter(x => x.r != null);
+    const bands = [["Present (≥ 50%)", x => x.r >= 0.5], ["Variable (20–50%)", x => x.r > 0.2 && x.r < 0.5], ["Absent (≤ 20%)", x => x.r <= 0.2]];
+    document.getElementById("icharinfo").textContent = `${all.filter(x => x.r >= 0.5).length} of ${all.length} measurable lects have it`;
+    document.getElementById("chardist").innerHTML = bands.map(([lab, f]) => {
+      const xs = all.filter(f).sort((a, b) => b.r - a.r);
+      if (!xs.length) return "";
+      const byG = d3.groups(xs, x => x.l.glabel).map(([g, ys]) => `<b>${esc(g)}</b>: ${ys.map(x => `${esc(x.l.name)} <span class="small">${Math.round(100 * x.r)}</span>`).join(", ")}`).join("; ");
+      return `<h4>${esc(lab)} <span class="small">${xs.length}</span></h4><p class="lectlist">${byG}</p>`;
+    }).join("");
+  }
+  ichar.addEventListener("change", drawChar);
+
+  // ── accent grid
+  function drawAccent() {
+    const gk = groupKeys.filter(g => ACCENT.cells[g]);
+    const sym = {"+": "+", "~": "~", "-": "−", "0": "0", "": ""};
+    let html = `<thead><tr><th class="h">Hypothesis</th>${gk.map(g => `<th class="g">${esc(GROUPS[g])}</th>`).join("")}<th class="num">+ / ~ / −</th></tr></thead><tbody>`;
+    for (const h of ACCENT.hyps) {
+      const vs = gk.map(g => (ACCENT.cells[g][h.id] || ["", ""])[0]);
+      html += `<tr><th class="h" scope="row" title="${esc(h.q)}">${esc(h.label)}</th>` +
+        gk.map((g, i) => `<td class="c" data-v="${vs[i]}" data-g="${g}" data-h="${h.id}" tabindex="0">${sym[vs[i]]}</td>`).join("") +
+        `<td class="num">${vs.filter(v => v === "+").length} / ${vs.filter(v => v === "~").length} / ${vs.filter(v => v === "-").length}</td></tr>`;
+    }
+    const t = document.getElementById("agrid");
+    t.innerHTML = html + "</tbody>";
+    const show = td => {
+      t.querySelectorAll("td.c").forEach(x => x.setAttribute("aria-selected", String(x === td)));
+      const h = ACCENT.hyps.find(x => x.id === td.dataset.h), [v, note] = ACCENT.cells[td.dataset.g][td.dataset.h] || ["", ""];
+      const word = {"+": "adopted", "~": "partial / weak", "-": "rejected", "0": "no signal", "": "not tested"}[v];
+      document.getElementById("anote").innerHTML = `<b>${esc(GROUPS[td.dataset.g])} · ${esc(h.label)}</b>: ${word}. ${esc(note)}`;
+    };
+    t.querySelectorAll("td.c").forEach(td => { td.addEventListener("click", () => show(td)); td.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); show(td); } }); });
+    const first = t.querySelector('td.c[data-g="hindi"][data-h="final"]');
+    if (first) show(first);
+  }
+
+  // ── accent score per lect: no accent / Vedic accent carried / final chain
+  function drawAccHyp() {
+    const H = [["none", "No accent"], ["vedic-only", "Vedic accent, carried"], ["chain", "Chain's placement rules"]];
+    const k = +document.getElementById("achsplit").value;
+    const rows = ACCHYP.filter(r => byId[r.id]).sort((a, b) => groupKeys.indexOf(byId[a.id].group) - groupKeys.indexOf(byId[b.id].group) || b.n - a.n);
+    let html = `<thead><tr><th class="h">Lect</th><th class="num" title="accent-marked attested forms (train + test)">pairs</th>${H.map(([, l]) => `<th class="num">${esc(l)}</th>`).join("")}<th>Placement rule(s)</th></tr></thead><tbody>`;
+    let chainBest = 0, vedicBeatsNone = 0;
+    for (const r of rows) {
+      const v = H.map(([h]) => r.v[h] ? r.v[h][k] : null), best = Math.min(...v.filter(x => x != null));
+      chainBest += v[2] === best; vedicBeatsNone += v[1] < v[0];
+      html += `<tr><th class="h" scope="row">${esc(byId[r.id].name)} <span class="small">${esc(byId[r.id].glabel)}</span></th><td class="num">${r.n}</td>` +
+        v.map((x, i) => { if (x == null) return "<td></td>"; const d = x - best, a = Math.max(0, 0.55 - d * 8);
+          return `<td class="num" title="${esc(H[i][1])}: ${fmt(x, 4)} (${d ? "+" + fmt(d, 4) : "best"})" style="background:color-mix(in srgb, var(--accent) ${Math.round(a * 100)}%, transparent);${d === 0 ? "outline:2px solid var(--ochre);outline-offset:-2px;font-weight:600" : ""}">${fmt(x, 3)}</td>`; }).join("") +
+        `<td><code style="background:none;font-size:11.5px">${r.rules.map(esc).join("<br>")}</code></td></tr>`;
+    }
+    document.getElementById("achtab").innerHTML = html + "</tbody>";
+    document.getElementById("achsum").textContent = `${rows.length} lects · chain placement best in ${chainBest} · Vedic accent beats no accent in ${vedicBeatsNone}`;
+  }
+  document.getElementById("achsplit").addEventListener("change", drawAccHyp);
+
+  // ── extension choices
+  const EXTN = ["aka", "akka", "ikā", "ikka", "iyaka", "uka", "aḍaka", "allaka", "araka", "akam"];
+  const EXTV = ["v:ati", "v:ami", "v:ayāmi", "v:anaka", "v:anakam", "v:aṇa", "v:anīya", "v:tavya", "v:tavyakam", "v:itavya", "v:itavyakam", "v:ita", "v:itum", "v:ikka", "v:root"];
+  document.getElementById("extgroup").innerHTML += groupKeys.map(k => `<option value="${k}">${esc(GROUPS[k])}</option>`).join("");
+  function drawExt() {
+    const g = document.getElementById("extgroup").value, el = document.getElementById("extplot");
+    const EXTK = document.getElementById("extkind").value === "v" ? EXTV : EXTN;
+    const ls = LECTS.filter(l => l.ext != null && (!g || l.group === g));
+    let rows;
+    if (!g) {
+      rows = groupKeys.flatMap(gk => { const xs = ls.filter(l => l.group === gk); if (!xs.length) return [];
+        return EXTK.map(e => ({y: GROUPS[gk], e, v: d3.mean(xs, l => l.extch[e] || 0)})); });
+    } else {
+      rows = ls.sort((a, b) => b.etyma - a.etyma).flatMap(l => EXTK.map(e => ({y: l.name, e, v: l.extch[e] || 0})));
+    }
+    const ys = [...new Set(rows.map(r => r.y))];
+    const w = Math.max(320, Math.min(880, el.clientWidth || 800));
+    el.replaceChildren(Plot.plot({
+      width: w, height: 22 * ys.length + 70, marginLeft: 150, x: {label: document.getElementById("extkind").value === "v" ? "Test reflexes choosing a verb form" : "Test reflexes choosing an extension", tickFormat: "%", grid: true},
+      y: {domain: ys, label: null}, color: {domain: EXTK.map(e => "-" + e.replace("v:", "")), range: PAL, legend: true},
+      style: {background: "transparent", color: css("--ink"), fontFamily: css("--sans"), fontSize: "11px"},
+      marks: [Plot.barX(rows, Plot.stackX({y: "y", x: "v", fill: d => "-" + d.e.replace("v:", ""), title: d => `${d.y}\n-${d.e.replace("v:", "")}: ${fmt(100 * d.v, 1)}%`})), Plot.ruleX([0])],
+    }));
+    const m = d3.median(ls, l => l.hand), me = d3.median(ls, l => l.ext);
+    document.getElementById("extinfo").textContent = `median test NED ${fmt(m)} plain → ${fmt(me)} extension-aware (${ls.length} lects)`;
+  }
+  document.getElementById("extgroup").addEventListener("change", drawExt);
+  document.getElementById("extkind").addEventListener("change", drawExt);
+
+  // ── change tooltips: every mention of a sound change shows its rule and a worked example
+  const toks = side => side.trim().split(/\s+/).filter(Boolean).map(t => {
+    t = t.replace(/@\d+$/, "");
+    if (t === "∅" || t === "0") return [""];
+    if (t.startsWith("{")) return t.slice(1, -1).trim().split(/\s+/);
+    if (/^\$\d/.test(t)) return {ref: +t[1] - 1};
+    return /^[A-Z]/.test(t) ? null : [t];            // class names: not expandable here
+  });
+  function pairs(rule) {
+    const code = rule.replace(/^((repeat:|if:\S+)\s+)+/, "").split(" / ")[0].split(" // ")[0];
+    const [L, R = ""] = code.split(" > ");
+    const lt = toks(L), rt = toks(R);
+    if (lt.some(t => t === null) || rt.some(t => t === null)) return [];
+    const n = Math.max(1, ...lt.map(t => t.length), ...rt.filter(t => Array.isArray(t)).map(t => t.length));
+    const out = [];
+    for (let i = 0; i < n; i++) {
+      const pick = t => t.length === n ? t[i] : t[0];
+      const ls = lt.map(pick), rs = rt.map(t => Array.isArray(t) ? pick(t) : (ls[t.ref] || "").replace(/[ʰ]/g, ""));
+      out.push([ls.join(""), rs.join("")]);
+    }
+    return out;
+  }
+  const PAIRIDX = new Map();   // "lhs>rhs" -> [change ids], most widespread first
+  for (const [id, c] of Object.entries(CHANGES)) for (const [l, r] of pairs(ruleOf(id))) {
+    const k = l + ">" + r;
+    if (!PAIRIDX.has(k)) PAIRIDX.set(k, []);
+    PAIRIDX.get(k).push(id);
+  }
+  for (const v of PAIRIDX.values()) v.sort((a, b) => CHANGES[b].n - CHANGES[a].n);
+  function lookup(lhs, rhs) {
+    const R = rhs.replace(/\s+/g, "");
+    let hit = PAIRIDX.get(lhs.replace(/\s+/g, "") + ">" + R);
+    if (!hit && /\s/.test(lhs)) hit = PAIRIDX.get(lhs.trim().split(/\s+/)[0] + ">" + R);   // "c j > ʦ z": first pair
+    return hit || null;
+  }
+  const segs = (xs, hi, cls) => `<span class="segs">${xs.map((x, i) => `<span class="sg${hi.includes(i) ? " " + cls : ""}">${esc(x)}</span>`).join("")}</span>`;
+  const exHTML = e => `<div class="ex"><div class="ex-cap">${esc(e.lect)} · <i>${esc(e.etymon)}</i> · rule ${e.step} of ${e.steps}</div>` +
+    `<div class="segs">${segs(e.before, e.hb, "hb")}<span class="arr">→</span>${segs(e.after, e.ha, "ha")}</div>` +
+    `<div class="fin">final prediction <i>${esc(e.pred)}</i> · attested <i>${esc(e.gold)}</i>${e.ok ? " ✓" : ""}</div></div>`;
+  function tipOne(id) {
+    const c = CHANGES[id];
+    if (!c) return `<code>${esc(id)}</code><div class="ct-m">(not a phonological rule shared across the chains)</div>`;
+    return (c.name ? `<div class="ct-h"><b>${esc(c.name)}</b><span class="small">central change</span></div>` : "") + `<code>${esc(c.rule)}</code><div class="ct-h"><span class="small">${esc(c.tags.join(" "))}</span><span class="small">in ${c.n} lect${c.n > 1 ? "s" : ""}</span></div>` +
+      `<div class="ct-m">${esc(c.meaning)}${c.meaning ? " · " : ""}${esc(c.lects.slice(0, 8).join(", "))}${c.n > 8 ? ", …" : ""}</div>` + c.examples.map(exHTML).join("");
+  }
+  function tipMany(ids, text) {
+    const top = ids.slice(0, 6);
+    return `<div class="ct-h"><b>${esc(text)}</b><span class="small">${ids.length} distinct rule${ids.length > 1 ? "s" : ""}</span></div>` +
+      `<div class="ct-m">Rules are not pooled: each conditioning is a separate change.</div>` +
+      top.map(id => `<code>${esc(label(id))}<small>${CHANGES[id].n} lects</small></code>`).join("") +
+      (ids.length > 6 ? `<div class="ct-m">… and ${ids.length - 6} more</div>` : "") +
+      (CHANGES[top[0]].examples[0] ? exHTML(CHANGES[top[0]].examples[0]) : "");
+  }
+  const tip = document.getElementById("ctip");
+  function showTip(el) {
+    let html = "";
+    if (el.dataset.chgs) { const ids = el.dataset.chgs.split("\u001f"); html = ids.length > 1 ? tipMany(ids, el.textContent) : tipOne(ids[0]); }
+    else if (el.dataset.chg) html = tipOne(el.dataset.chg);
+    else if (el.dataset.rule) html = RAW2ID[el.dataset.rule] ? tipOne(RAW2ID[el.dataset.rule]) : `<code>${esc(el.dataset.rule)}</code>`;
+    if (!html) return;
+    tip.innerHTML = html; tip.hidden = false;
+    const r = el.getBoundingClientRect(), tw = tip.offsetWidth, th = tip.offsetHeight;
+    let x = Math.min(Math.max(12, r.left), window.innerWidth - tw - 12), y = r.bottom + 8;
+    if (y + th > window.innerHeight - 8) y = Math.max(8, r.top - th - 8);
+    tip.style.left = x + "px"; tip.style.top = y + "px";
+  }
+  const hideTip = () => { tip.hidden = true; };
+  const tipTarget = e => e.target.closest && e.target.closest("[data-chg], [data-chgs], [data-rule]");
+  document.addEventListener("mouseover", e => { const t = tipTarget(e); if (t) showTip(t); });
+  document.addEventListener("mouseout", e => { const t = tipTarget(e); if (t && !t.contains(e.relatedTarget)) hideTip(); });
+  document.addEventListener("focusin", e => { const t = tipTarget(e); if (t) showTip(t); });
+  document.addEventListener("focusout", hideTip);
+  window.addEventListener("scroll", hideTip, {passive: true});
+  document.addEventListener("keydown", e => { if (e.key === "Escape") hideTip(); });
+
+  // prose: wrap "X > Y" mentions that resolve to a known change
+  const CHG_RE = /(^|[\s(\[,;:“"])((?:[^\s(),;:<>\[\]“”"]{1,7} ){0,1}[^\s(),;:<>\[\]“”"]{1,7}) > ([^\s(),;:<>\[\]“”".]{1,8})/g;
+  function annotate(root) {
+    if (!root) return;
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {acceptNode: n =>
+      n.parentElement.closest("code, pre, script, style, .chg, [data-chg], [data-chgs], [data-rule], svg, select, option") ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT});
+    const nodes = [];
+    while (walker.nextNode()) if (/ > /.test(walker.currentNode.nodeValue)) nodes.push(walker.currentNode);
+    for (const n of nodes) {
+      const t = n.nodeValue; let out = "", last = 0, hit = false, m;
+      CHG_RE.lastIndex = 0;
+      while ((m = CHG_RE.exec(t))) {
+        const lhs = m[2], rhs = m[3].replace(/[.]+$/, "");
+        if (!/\p{L}/u.test(lhs + rhs) || /^\d/.test(lhs)) continue;
+        const ids = lookup(lhs, rhs);
+        if (!ids) continue;
+        const s0 = m.index + m[1].length, s1 = s0 + m[2].length + 3 + m[3].length;
+        out += esc(t.slice(last, s0)) + `<span class="chg" tabindex="0" data-chgs="${esc(ids.join(""))}">${esc(t.slice(s0, s1))}</span>`;
+        last = s1; hit = true;
+      }
+      if (!hit) continue;
+      const span = document.createElement("span");
+      span.innerHTML = out + esc(t.slice(last));
+      n.replaceWith(...span.childNodes);
+    }
+  }
+  function tagChips() {
+    document.querySelectorAll("#cladediag .row > span:first-child").forEach(sp => { if (!sp.dataset.chg) { sp.dataset.chg = sp.textContent.trim(); sp.textContent = label(sp.dataset.chg); sp.tabIndex = 0; } });
+    document.querySelectorAll("#achtab code").forEach(c => c.querySelector("[data-rule]") || (c.innerHTML = c.innerHTML.split("<br>").map(r => `<span data-rule="${r.replace(/"/g, "&quot;")}" tabindex="0">${r}</span>`).join("<br>")));
+    document.querySelectorAll("#matrix td.v[title]").forEach(td => { const r = td.getAttribute("title"); if (RAW2ID[r]) { td.dataset.rule = r; td.removeAttribute("title"); } });
+    const ch = document.querySelector("#chronoplot svg");
+    if (ch) {
+      const dom = CHRONO.filter(c => c.lects >= 8).sort((a, b) => a.med - b.med).map(c => c.tag);
+      const ticks = [...ch.querySelectorAll('[aria-label="y-axis tick label"] text')];
+      ticks.forEach((tx, i) => { if (dom[i] && CHANGES[dom[i]]) { tx.dataset.chg = dom[i]; tx.style.cursor = "help"; } });
+    }
+  }
+
+  function drawAll() { drawExt(); drawAccHyp(); drawPTree(); drawChar(); drawAccent(); drawMap(); drawMultiples(); drawMatrix(); drawOrders(); drawChrono(); drawR2(); drawScores(); drawTable(); tagChips(); }
+  drawAll();
+  annotate(document.querySelector("main"));
+  // redraws (selects, clicks, resizes) replace DOM: re-tag after each one
+  let tq;
+  new MutationObserver(() => { clearTimeout(tq); tq = setTimeout(() => { tagChips(); annotate(document.getElementById("anote")); annotate(document.getElementById("mapdist")); }, 60); })
+    .observe(document.querySelector("main"), {childList: true, subtree: true});
+  let rt; window.addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(() => { drawExt(); drawNode(); drawChar(); drawMap(); drawChrono(); drawR2(); drawScores(); }, 200); });
+  const mq = window.matchMedia("(prefers-color-scheme: dark)");
+  mq.addEventListener && mq.addEventListener("change", drawAll);
+  new MutationObserver(drawAll).observe(document.documentElement, {attributes: true, attributeFilter: ["data-theme"]});
+})();
+</script>

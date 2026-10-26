@@ -1,0 +1,46 @@
+{
+  "status": "FROZEN r2 awaiting independent actual-output audit; not installed",
+  "rows": 1306,
+  "audit_units": 1217,
+  "prior_freeze": "whole-proposal-r1",
+  "prior_failed_audit": "whole-proposal-r1/root-output-review-20260927.json",
+  "all_keys_and_literal_forms_unchanged_from_r1": true,
+  "changed_rows": 181,
+  "delta_evidence": "revision-manifest.json",
+  "class_review_checks": 96,
+  "output_sha256": {
+    "proposal-audit.jsonl": "c93208f1e07d6bc1edd62f088cf4d56fa3be978db4296c131a5beb4369a82d8d",
+    "revision-manifest.json": "52b4804b094cef26ce1488142db273e4f8596ed6edc5b5c4c17f085e39adbabb",
+    "proposal.csv": "793ea77e9e448ba2c5ed7436a6f6b9cbe1370168b87ed25c18b46ce81691b166",
+    "profile-policy-validation.json": "c192acc7c0c2fbf83cd51e9eb8a75c6c1aee926b54cf406723d508cd6a0e53e8",
+    "parser-validation.json": "85a279b02054fedfe684721ee97c29507a12c5d03aef097fe353ba7dea470d24",
+    "interlinear-metadata-class-review.json": "5693c71cf6759b75b6acc84758d8ee6d04c91849e25aa92d159703abe8d1d645",
+    "whole-metadata-plan-20260927.json": "08faac81c6a97e4bf4cc5355b2f8dd74e1f4971ec69ab238e88a5028672c7688",
+    "profile-proposal.txt": "1c06a83e464622fcb000aab9313458a25c1052d21e13218595f04dc636801936"
+  },
+  "input_sha256": {
+    "prepare_revision2.py": "b6ef4288ec0fefbf36d17ca9e04799a4a5cf90833edfb494302c0bc0e8d0c249",
+    "prepare_r2_metadata_review.py": "8a5990a691539ec0e7b4c84d9383b0d960236c41c7b0d144754cd8e25271df8a",
+    "validate_revision2_parser.py": "bafbac8f6bbd0d1c61b2301b18e7c2fb2156de71830d403ff57f522fd7698529",
+    "revision2-preparation/interlinear-metadata-class-review.json": "5693c71cf6759b75b6acc84758d8ee6d04c91849e25aa92d159703abe8d1d645",
+    "whole-proposal-r1/review-manifest.json": "6a5db688b0e4e301a68d4d0d172943bfd4f4fe4d82e2b6a48a9e360d8e2953fb",
+    "whole-proposal-r1/root-output-review-20260927.json": "19935e51e6371b7f06f339e994a786969a075181ec7102dbd257a44198954d02"
+  },
+  "tests": {
+    "test_bailey_kagani_revision2.py": {
+      "sha256": "deb548318eaf26ace04464b7d61d583ed5f31c7b2e43e2ba45afeacd3f9df1d2",
+      "result": "3 passed in0.08s"
+    },
+    "test_bailey_kagani_whole_proposal.py": {
+      "sha256": "d1f899c3c149fbe6229e7e1f1da44ba4ef9a7b233ce1511cb9ff7646938131e7",
+      "prior_r1_structural_result": "4 passed; not acceptance of failed r1 metadata"
+    }
+  },
+  "deferred": [
+    "Canonical installation pending accepted fresh audit",
+    "Full DB/CLDF build",
+    "Full suite",
+    "Compiled ID verification",
+    "Browser QA"
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "status": "Stable intermediate metadata review packet; not a final install freeze",
+  "counts": {
+    "review_units": 1328,
+    "proposed_attestations": 1282,
+    "audit_only": 46
+  },
+  "files": {
+    "chapter4-adjudicated-records.jsonl": "240e0517fa83b67e95fd934f8f202724c5691afa106ff5b284a5a79c08f60977",
+    "chapter4-interlinear-reviewed.jsonl": "767e8e994d9c82cc86f1f09083641aa39ba20ca41db65bc1cd6187f9ea2b0690",
+    "chapter4-metadata-proposal.jsonl": "34f95445ebed124bdfa2fe114f4688d987cba4e8f2e8e05c3e10277ee1ed5fde",
+    "chapter4_editorial_notes.py": "6e7342c3dafcc56ef92ed585d72cbcae56f7191b854c38e2c3a196ec7c23df27",
+    "interlinear_grammar.py": "2058b2d4fbbaacad5f19e6d5d25acb680202bc491fb9ab91c85aaeb5563cec6a"
+  },
+  "review_scope": "All original pages 77–124 compared, including all geometric interlinear candidates. Source-only review, no canonical installation.",
+  "unresolved": [
+    {
+      "key": "dhakal2011:p92:ch4:prose:l31:a1",
+      "form": "-otạ",
+      "reason": "The original places the underdot beneath a in -otạ; its intended interpretation is uncertain."
+    }
+  ],
+  "source_labels_without_exact_registered_mapping": {
+    "SIM": 13,
+    "SEQ": 9,
+    "HOR": 2,
+    "MIR": 3,
+    "OBLIG": 2,
+    "PVF": 1,
+    "ALL": 2,
+    "BEN": 1,
+    "INFR": 2,
+    "HORT": 1,
+    "IINF": 1,
+    "nP": 1,
+    "HS": 2,
+    "HAB": 2,
+    "POSB": 1,
+    "FOC": 1
+  },
+  "focused_validation": "7 focused tests passed in 0.17 seconds; tmp/release-20260926/darai-recovery-focused.log",
+  "pending": [
+    "Independent source/output audit",
+    "Final source commentary completeness and grammar metadata review",
+    "Proposed CSV/YAML and profile validation",
+    "Whole-thesis remaining chapters and appendices",
+    "Canonical installation and all downstream gates only when authorized"
+  ],
+  "canonical_changed": false
+}

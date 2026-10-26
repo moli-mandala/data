@@ -1,0 +1,5 @@
+# Kuvi numeral page — diversity screen, no installation
+
+The [numeralbank/channumerals v1.0.1 CC-BY archive](https://doi.org/10.5281/zenodo.15649312) contains `raw/Kuvi.htm` (52,770 bytes, SHA256 `63c3b582ac14fbe595a46af25f4c8ede1180b183fd110cf3b62e2a3397dfc6fa`; raw download 12 February 2019). Its first 40-cell table is credited to Sam Robert, 5 September 2018. The later 40-cell table is separately attributed to Joy Reddy's 1979 *Kuvi Grammar*; the two must not be blended. Both have numbered-cell boundaries in 20 rows × two cells; the first table has compound prompts sharing printed cells at 100/200 and 400/800 that need careful inventory before any import.
+
+The source spells the name `Kuvi`, but Jambu's existing canonical is **`Kuwi`**, with exact Glottocode [`kuvi1243`](https://glottolog.org/resource/languoid/id/kuvi1243) and about **3,517 compiled forms**. A naive exact-name check for `Kuvi` would falsely report zero coverage and create a duplicate canonical. This candidate was deprioritized for the sparse-language diversity pass; no CSV/YAML/Bib/profile/registry entry was installed. It remains rights-clear source material for a later separate, full audit.

@@ -1,0 +1,7 @@
+# Varghese Muduga residual research — checkpoint 001
+
+The compiled Varghese Muduga source has **449** records. Earlier pending research owns **304**; this pass assesses the other **145** exact source IDs. It proposes **65** DEDR whole-article assignment rows affecting **63** records under **27** parent nodes, and places **82** records on explicit research hold. No record remains unexamined. The two eleven responses receive ordered ten-plus-one components. Source spellings, glosses, locators and identities are preserved. There is no overlap with earlier review manifests; the current seven numbered manifests agree exactly with the decision rows.
+
+All 145 forms were searched through the existing homepage `fetchLemmaList` against the read-only local database in five bounded chunks, returning **303** rows with no capped searches. Shortlisted full DEDR articles are retained in `primary-evidence.json`. Uncertain compounds, loans, transcription and sense conflicts are held rather than assigned.
+
+Canonical `make check-pass PY=.venv/bin/python` passed, with **63** affected records, **65** assignment rows and **zero** second-application changes. The full dry-run hash ledger is in `check-pass-001.log`; `checkpoint-001-validation.json` confirms manifest agreement. Exact source/prior-pass coverage and older-review overlap checks passed. No `save-pass`, accepted sidecar edit, source ingestion, rebuild, database refresh, commit, push or deployment was performed. Muduga review batches **030–036** await user review.

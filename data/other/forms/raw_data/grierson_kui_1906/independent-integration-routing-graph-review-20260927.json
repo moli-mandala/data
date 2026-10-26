@@ -1,0 +1,194 @@
+{
+  "reviewer": "/root/asur_finish",
+  "date": "2026-09-27",
+  "status": "Source interpretation/configuration proposal review; final CSV/YAML not yet available. Not installation approval.",
+  "input_sha256": {
+    "grammar-metadata-candidate.jsonl": "2806561d2a09c15db6a98ff921c799c932301f4f0427a0a18ec334f779a5050f",
+    "source-lect-mapping-approved-20260927.json": "e237a6d5bff1d73c0bacbf6aebd313bd5eaf646ae0afd9df485326bb7c118538",
+    "outside-comparands-reviewed-candidate-20260927.jsonl": "ad3e8a363be81e7b05cf8eafdf76c3ac138a24437e9aca3316b324dff9e92957",
+    "outside-comparands-routing-reuse-review-20260927.json": "c1f432ddf80a6262dfeaea575dacf68539b01b2863b04ac27276fc617a2b04ca",
+    "metadata-profile-proposal/metadata-proposal.json": "9700600ccd301a1f9646a57b3850e5ec4f61020efd3168bf10d39a0466f4f95f",
+    "integration/prepare_scaffold.py": "0c510cffbd848196237468b7c259ded6cd54f7a6ec48c1b823a1470bb059790d",
+    "integration/scaffold-status.json": "7497f6de562a268ea51d720da7da504bd6dae28fc065f9b9ff46daf1e6550115"
+  },
+  "routes": {
+    "historical_Kalahandi": "Kui + grierson1906_kui_kalahandi; retain conflicting modern Kuvi identification as source-specific uncertainty, never a global mapping.",
+    "standard_table": "Kui + grierson1906_kui_khondmals, from the explicit table header.",
+    "literary Telugu": {
+      "language_id": "Telugu",
+      "dialect": null,
+      "note": "Preserve source literary qualifier; no inferred chronological variety."
+    },
+    "Malayalam": {
+      "language_id": "Malayalam",
+      "dialect": null
+    },
+    "Tamil dialects": {
+      "language_id": "Tamil",
+      "dialect": null,
+      "note": "Unspecified source varieties; preserve grapheme holds and do not use a geographic dialect by guess."
+    },
+    "Kaikadi of Berar": {
+      "language_id": "Kaikadi",
+      "dialect_id": "lsi1906_kaikadi_berar",
+      "tag": "dialect:Kaikadi:lsi1906-kaikadi:Berar"
+    },
+    "Tulu": {
+      "language_id": "Tulu",
+      "dialect": null
+    },
+    "Kōi": "Never Kui. Proposed historical Gondi/koya route is explicitly historical and must not alter global modern Koya identity.",
+    "Bhili of Basim": "Hold historical identity; neither Parji nor northern Kolami/Naiki nor modern Bhili follows from a similarity claim.",
+    "Burgandi": "Hold identity; source closely related to Kaikadi does not establish identity.",
+    "Korava unlocalized": "Hold identity; do not apply the separately reviewed locality-specific Yerukula route to generic labels.",
+    "p570 Kolami same forms": "Documentary unresolved reference; three formerly expanded keys must not emit guessed Kolami attestations.",
+    "generalized comparisons": "Documentary hypotheses rather than reconstructed language records or graph edges."
+  },
+  "configuration_findings": [
+    {
+      "item": "etymology_provenance",
+      "required": "Serialize source, an allowed enum, with descriptive scope explanation separate. Current metadata-proposal descriptive value is not directly valid."
+    },
+    {
+      "item": "sound profile",
+      "required": "Regenerate coverage from final emitted forms including accepted supplements/alternates. Existing first-reading profile inventory is not final coverage evidence."
+    },
+    {
+      "item": "scope isolation",
+      "finding": "Current scaffold writes only integration files; no broad language pronunciation/default mutation found. Actual final YAML is pending.",
+      "required": "Route literal preservation only in this source YAML/profile; no global Kui/Kuwi/Koya profile change."
+    },
+    {
+      "item": "parser flags",
+      "required": "Verify actual generic parser with source-level split_alternates false, exact Original punctuation/case/hyphens and chosen explicit alternate keys. No invented Phonemic from uncertain graphemes."
+    },
+    {
+      "item": "references",
+      "required": "Resolve explicit keys for auxiliary quoted authorities when their claims are cited: Letchmajee, Smith, Frye, Friend-Pereira. Mark reported through Grierson, not independently collated. Check each emitted citation and SourceMeta/Bib formatting."
+    },
+    {
+      "item": "reuse",
+      "finding": "Earlier independent routing report verifies 12 Naiki same-source canonical rows exactly; preserve their existing keys, full analyses and citations."
+    },
+    {
+      "item": "holds",
+      "required": "Keep literal typography holds distinct from unresolved language identity and documentary scope. No blank source cell becomes a guessed word."
+    }
+  ],
+  "graph_decisions": [
+    {
+      "child_key": "grierson1906kui:p463:negative-conjunctive-example:1",
+      "parent_keys": [
+        "grierson1906kui:p462:principal-conjunctive-past-c1:1",
+        "grierson1906kui:p463:negative-conjunctive-morphology:1"
+      ],
+      "disposition": "accept_ordered_components",
+      "source_claim_and_decision": "Original p463 explicitly forms the negative conjunctive compound by adding ār-aṅgā to the past conjunctive participle. The independently attested past conjunctive pāga is the correct first endpoint, not the homographic verbal noun. Keep source analysis and its literal fused boundary; this is not a variant edge.",
+      "child_form": "pāgār-aṅgā",
+      "parent_forms": [
+        "pāga",
+        "ār-aṅgā"
+      ]
+    },
+    {
+      "child_key": "grierson1906kui:p463:compound-example:4",
+      "parent_keys": [
+        "grierson1906kui:p462:principal-conjunctive-past-c5:1",
+        "grierson1906kui:p463:copula-1-excl-c1:1"
+      ],
+      "disposition": "accept_ordered_components",
+      "source_claim_and_decision": "Original p463 explicitly forms compound tenses from conjunctive participles and manba; gia-maĩ contains independently attested gia and maĩ, with compatible standard lect and person. Preserve the perfect construction rather than treating it as ordinary spelling variation.",
+      "child_form": "gia-maĩ",
+      "parent_forms": [
+        "gia",
+        "maĩ"
+      ]
+    },
+    {
+      "child_key": "grierson1906kui:p463:passive-example:1",
+      "parent_keys": [
+        "grierson1906kui:p462:principal-verbal-noun-c5:1",
+        "grierson1906kui:p462:principal-relative-past-c4:1"
+      ],
+      "disposition": "accept_after_approved_alternate_emission",
+      "source_claim_and_decision": "Original p463 explicitly adds āwa to the verbal noun and gives giwa-āti. āti is independently present as the past relative form of āwa. First parent is currently the literal grouped cell giwa, gipka: select its reviewed giwa emission key, never point to the whole comma group as a component. Then two ordered component edges are supported. Preserve the source qualification that the passive is not in common use.",
+      "child_form": "giwa-āti",
+      "parent_forms": [
+        "giwa, gipka",
+        "āti"
+      ],
+      "approved_emission_parent_keys": [
+        "grierson1906kui:p462:principal-verbal-noun-c5:1:v1",
+        "grierson1906kui:p462:principal-relative-past-c4:1"
+      ],
+      "parent_approval": "Root message confirms root-grammar-alternative-emission-review-20260927.json approves giwa as :v1. Exporter must assert this key has literal giwa before installing the two-component relationship."
+    },
+    {
+      "child_key": "grierson1906kui:p463:compound-example:1",
+      "parent_keys": [
+        "grierson1906kui:p462:principal-conjunctive-present-c5:1",
+        "grierson1906kui:p463:copula-1-excl-c1:1"
+      ],
+      "disposition": "conditional_on_reviewed_optional_endpoint",
+      "source_claim_and_decision": "Explicit compound-tense construction. First parent is gi(pk)i; select a reviewed gipki optional-form emission before linking gipki-maĩ. Do not point to the notation group or invent an unattested new base.",
+      "child_form": "gipki-maĩ",
+      "parent_forms": [
+        "gi(pk)i",
+        "maĩ"
+      ]
+    },
+    {
+      "child_key": "grierson1906kui:p463:compound-example:2",
+      "parent_keys": [
+        "grierson1906kui:p462:principal-conjunctive-present-c5:1",
+        "grierson1906kui:p463:copula-1-excl-c3:1"
+      ],
+      "disposition": "conditional_on_reviewed_optional_endpoint",
+      "source_claim_and_decision": "Same explicit construction; use reviewed gipki and the first-person singular past massē endpoint, not homographic third-person massē.",
+      "child_form": "gipki-massē",
+      "parent_forms": [
+        "gi(pk)i",
+        "massē"
+      ]
+    },
+    {
+      "child_key": "grierson1906kui:p462:adjective-example:1",
+      "parent_keys": [
+        "grierson1906kui:p462:adjective-morphology:1"
+      ],
+      "disposition": "incomplete_component_set_hold",
+      "source_claim_and_decision": "Original p462 explicitly derives the adjective by adding gaṭṭa to a noun. Suffix endpoint exists; no independently attested dāṭā noun endpoint was found in the reviewed grammar. Do not serialize a single suffix as a complete derivational base or invent a dāṭā row. Retain the exact claim and incomplete component candidate.",
+      "child_form": "dāṭā-gaṭṭa",
+      "parent_forms": [
+        "gaṭṭa"
+      ]
+    },
+    {
+      "child_key": "grierson1906kui:p463:verbal-noun-example:1",
+      "parent_keys": [],
+      "disposition": "unmatched_relative_participle_base",
+      "source_claim_and_decision": "Original p463 explicitly derives tinañju from a relative participle plus third-person pronoun ending. No independently attested matching tin(a) relative-participle endpoint occurs in the reviewed grammar. tinba to eat is not the stated immediate base; eñju has its own quantity uncertainty. Retain the derivation claim without fabricated endpoints.",
+      "child_form": "tinañju",
+      "parent_forms": []
+    },
+    {
+      "child_key": "grierson1906kui:p463:verbal-noun-example:2",
+      "parent_keys": [
+        "grierson1906kui:p462:noun-prose:14"
+      ],
+      "disposition": "incomplete_component_set_hold",
+      "source_claim_and_decision": "Explicit verbal-noun derivation; āri is attested but the matching relative-participle base is absent. Ordinary third-person pronoun āri is not automatically the isolated suffix analysis. Keep incomplete-component evidence, not a lone derived edge to the suffix.",
+      "child_form": "tināri",
+      "parent_forms": [
+        "āri"
+      ]
+    }
+  ],
+  "graph_serialization": "Use ordered Derivation_Parent_Keys only for complete accepted two-parent component sets. Existing unify_cldf feeds ordered section edges to edges_build, which classifies two non-root parents as components. Verify source-local edge output and endpoint existence before installation. No full build performed.",
+  "ordinary_inflection": "No blanket derived/variant edges between all paradigm cells. Gender/number/case/tense contrasts are not free variants. Source comparisons and conjectural historical analyses remain attributed prose unless a specific relation with unambiguous endpoints is reviewed.",
+  "limits": [
+    "This bounded graph review covers the named derivation/compound classes on original pp462–463; it is not a claim to have accepted every potential graph in the whole book.",
+    "Final emitted keys may differ after reviewed expansion/reuse; map physical keys explicitly and validate each target, never fuzzy-match."
+  ],
+  "canonical_changes": false
+}

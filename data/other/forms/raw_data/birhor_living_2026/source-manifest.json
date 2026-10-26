@@ -1,0 +1,53 @@
+{
+  "status": "Draft source package reviewed; awaiting Birhor reuse clarification before installation",
+  "acquired_date": "2026-09-22",
+  "source_url": "https://livingdictionaries.app/birhor",
+  "snapshot_url": "https://snapshots.livingdictionaries.app/dictionaries/birhor.db.gz",
+  "compressed_sha256": "7da393db9f8d745dd6924c3bb3e7cd54c5a32b406b2d2fa45c4b96ad924ddb78",
+  "sqlite_sha256": "f52cb1314d54ed313a9dffa70f78b57dc19f384d6830995cf29c8b165c6535d4",
+  "canonical_language": "Birhor",
+  "selection_reason": "Existing compiled snapshot has323 Birhor entries; no Birhor-specific dictionary source YAML or bibliography entry found. Live source has2746 entries, richer than a previously considered20-word sample.",
+  "representation_comparison": {
+    "archived_2021_csv": "https://digital.library.unt.edu/ark:/67531/metadc2356113/",
+    "archived_2021_pdf": "https://digital.library.unt.edu/ark:/67531/metadc2356114/",
+    "pdf_acquisition": "Download returned HTML challenge, not PDF; retained as scratch evidence only. No challenge bypass attempted.",
+    "live_selection": "Public site identifies ongoing revisions. Pinned snapshot last_modified_at2026-08-08; includes98 annotations and91 source-reference records requiring explicit treatment. Do not conflate with2021 edition."
+  },
+  "checklist_addenda": [
+    "Dictionary or glossary",
+    "Website/API or external CLDF"
+  ],
+  "rights_review": {
+    "terms_url": "https://livingdictionaries.app/terms",
+    "terms_date": "2026-06-12",
+    "notes": "Research/educational downloads permitted; terms also condition systematic compilation on written permission. Do not infer that the prior Kharia-specific permissions record establishes Birhor rights. Resolve reuse basis before source installation/publication.",
+    "archived_dataset_note": "UNT record specifies educational, non-commercial use."
+  },
+  "scope": "Public lexical entries/senses and bibliographic references; no media downloads or speaker/account metadata in the lexical snapshot.",
+  "remaining": [
+    "User clarification whether existing Living Dictionaries reuse permission covers Birhor",
+    "Source-file installation and registration after reuse basis is established"
+  ],
+  "user_deferred": [
+    "Remote execution",
+    "Database/data builds",
+    "Full compiled checks and browser refresh"
+  ],
+  "proposed_rows": 3100,
+  "prepared_files": [
+    "import_source.py",
+    "audit.jsonl",
+    "summary.json",
+    "reference-roles.json",
+    "birhor-living.txt",
+    "profile-review.json",
+    "20260922-birhor-living.yaml"
+  ],
+  "focused_checks": "6 passed (1.09s), including actual parser on3100 draft rows",
+  "acceptance_audit": {
+    "file": "output-audit-2026092201.json",
+    "sample_size": 20,
+    "material_errors": 0
+  },
+  "bibliography": "sources.bib: three keys; every proposed citation resolves; all three formatted successfully without modifying generated references"
+}

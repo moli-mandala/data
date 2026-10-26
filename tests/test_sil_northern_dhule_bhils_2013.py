@@ -341,7 +341,7 @@ def test_shared_source_specific_installation_is_exact_and_fully_routed():
     )
     assert profile.read_bytes() == (PACKAGE / "conversion_profile.tsv").read_bytes()
     assert hashlib.sha256(profile.read_bytes()).hexdigest() == (
-        "0bad99e5f48d262be3484d5895c7435579420ad7f83cd3c4fa2374227e527c94"
+        "af5bd0387f3078cc716715e6a2d003f170df37600f4bfb528e1d46bb1e1623bc"
     )
 
     with installed.open(encoding="utf-8", newline="") as stream:

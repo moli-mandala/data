@@ -1,0 +1,235 @@
+{
+  "status": "FAIL isolated actual parser compatibility",
+  "source_acceptance": "Pending grammar/No37 metadata decisions, final graph/lect registration and whole-output audit; this compatibility result is not scholarly acceptance.",
+  "input_hashes": {
+    "data/data/other/forms/raw_data/grierson_ahirwati_1908/integration/review-assembly-r1/status.json": "1425af7d188c00fb5370ce03eb758174c66b98618a5183b1bb2b8eb8058d8f28",
+    "data/data/other/forms/raw_data/grierson_ahirwati_1908/integration/review-assembly-r1/grierson-ahirwati-1908-literal-preliminary.txt": "cb2002cb65ed17c62510cb9a98751aebe04587d3d6dc75a368b8e11a1150a5ff",
+    "data/data/other/forms/raw_data/grierson_ahirwati_1908/integration/review-assembly-r1/combined-review-candidate.yaml": "e05425b4fa9862a6aea0ede79e21f985590ecab6899fb3dbc81d5db45475c7fb",
+    "data/data/other/forms/raw_data/grierson_ahirwati_1908/integration/review-assembly-r1/combined-review-audit.jsonl": "21b170054f90785e6e16ed21fe1139d9e6fa2a45d9e240bc23eee474ec4233e8",
+    "data/data/other/forms/raw_data/grierson_ahirwati_1908/integration/review-assembly-r1/combined-review-candidate.csv": "24dccdeb2fed636a87203815a5aeeb740fe164b471e59bbbccc025cbae9558c9"
+  },
+  "production_module_hashes": {
+    "make_cldf.py": "1a1ded9eff5b8607174aa37981efb4358824be8ffffdfaa7128c0cea53dac5a8",
+    "source_meta.py": "1c3147843d6c9f2489155b633db55fd1374e6f3b1a59b7051a3642fdbd2c7a4c"
+  },
+  "method": "Byte-identical production modules copied into isolated filesystem root. SourceMeta.load/yaml discovery and profile loading run normally; no parser, conversion, metadata-provider or tokenizer monkeypatch. All653 rows checked in NFC and NFD.",
+  "counts": {
+    "input_rows": 653,
+    "normalization_cases": 1306,
+    "field_or_conversion_issues": 0,
+    "unknown_tags": 0,
+    "unregistered_base_routes": 14,
+    "display_deltas": 177,
+    "used_unregistered_lect_tags": 5,
+    "regional_route_pending_rows": 4,
+    "phonemic_nonblank": 0,
+    "graph_fields_nonblank": 0
+  },
+  "cases": [
+    {
+      "normalization": "NFC",
+      "raw_rows": 653,
+      "parsed_rows": 653,
+      "statistics": {
+        "converted": 653,
+        "for_conversion": 653
+      },
+      "unique_cleanup_keys": 653,
+      "splits_or_drops": 0
+    },
+    {
+      "normalization": "NFD",
+      "raw_rows": 653,
+      "parsed_rows": 653,
+      "statistics": {
+        "converted": 653,
+        "for_conversion": 653
+      },
+      "unique_cleanup_keys": 653,
+      "splits_or_drops": 0
+    }
+  ],
+  "reference_flags": {
+    "editor": "OpenAI Codex",
+    "ocr": false,
+    "etymology_provenance": "source"
+  },
+  "canonical_plus_staged_sourceMeta_valid": true,
+  "unknown_tags": [],
+  "base_route_errors": [
+    {
+      "key": "lsi9.2:p50:nominal-ending-comparison-continuation:w4",
+      "raw_language": "Haryanvi",
+      "normalized": "Haryanvi"
+    },
+    {
+      "key": "lsi9.2:p50:nominal-ending-comparison-continuation:w5",
+      "raw_language": "Haryanvi",
+      "normalized": "Haryanvi"
+    },
+    {
+      "key": "lsi9.2:p51:Bawal-Kot-Kasam-regional-copulas:w1",
+      "raw_language": "Ahirwadi",
+      "normalized": "Ahirwadi"
+    },
+    {
+      "key": "lsi9.2:p51:Bawal-Kot-Kasam-regional-copulas:w2",
+      "raw_language": "Ahirwadi",
+      "normalized": "Ahirwadi"
+    },
+    {
+      "key": "lsi9.2:p51:Bawal-Kot-Kasam-regional-copulas:w3",
+      "raw_language": "Ahirwadi",
+      "normalized": "Ahirwadi"
+    },
+    {
+      "key": "lsi9.2:p51:Bawal-Kot-Kasam-regional-copulas:w4",
+      "raw_language": "Ahirwadi",
+      "normalized": "Ahirwadi"
+    },
+    {
+      "key": "lsi9.2:p51:Panjabi-comparison-whole-copulas:w2",
+      "raw_language": "Punjabi",
+      "normalized": "Punjabi"
+    },
+    {
+      "key": "lsi9.2:p51:Panjabi-comparison-whole-copulas:w4",
+      "raw_language": "Punjabi",
+      "normalized": "Punjabi"
+    },
+    {
+      "key": "lsi9.2:p237:analysis-quotation:2:word:1",
+      "raw_language": "Haryanvi",
+      "normalized": "Haryanvi"
+    },
+    {
+      "key": "lsi9.2:p237:analysis-quotation:2:word:2",
+      "raw_language": "Haryanvi",
+      "normalized": "Haryanvi"
+    },
+    {
+      "key": "lsi9.2:p237:analysis-quotation:2:word:3",
+      "raw_language": "Haryanvi",
+      "normalized": "Haryanvi"
+    },
+    {
+      "key": "lsi9.2:p237:analysis-quotation:2:word:4",
+      "raw_language": "Haryanvi",
+      "normalized": "Haryanvi"
+    },
+    {
+      "key": "lsi9.2:p237:analysis-quotation:2",
+      "raw_language": "Haryanvi",
+      "normalized": "Haryanvi"
+    },
+    {
+      "key": "lsi9.2:p237:analysis-quotation:5:word:1",
+      "raw_language": "Haryanvi",
+      "normalized": "Haryanvi"
+    }
+  ],
+  "lect_registration_needed": {
+    "dialect:mewati_jhambaus:lsi1908_ahirwati_gurgaon:Ahirwati%20%28Gurgaon%2C%20LSI1908%29": {
+      "proposed_registry_row": {
+        "ID": "lsi1908_ahirwati_gurgaon",
+        "Tag": "dialect:mewati_jhambaus:lsi1908_ahirwati_gurgaon:Ahirwati%20%28Gurgaon%2C%20LSI1908%29",
+        "Language_ID": "mewati_jhambaus",
+        "Source_Language_ID": "lsi1908_ahirwati_gurgaon",
+        "Name": "Ahirwati (Gurgaon, LSI1908)",
+        "Glottocode": "",
+        "Latitude": "",
+        "Longitude": "",
+        "Clade": "Rajasthanic",
+        "Location": "District Gurgaon, historical survey",
+        "Quality": ""
+      },
+      "example_key": "lsi9.2:p50:history-continuation-and-Khandeshi-comparison:w6",
+      "rows": 452
+    },
+    "dialect:mewati_jhambaus:lsi1908_ahirwati_rohtak_jhajjar:Ahirwati%20%28Jhajjar%2FRohtak%2C%20mixed%20LSI1908%29": {
+      "proposed_registry_row": {
+        "ID": "lsi1908_ahirwati_rohtak_jhajjar",
+        "Tag": "dialect:mewati_jhambaus:lsi1908_ahirwati_rohtak_jhajjar:Ahirwati%20%28Jhajjar%2FRohtak%2C%20mixed%20LSI1908%29",
+        "Language_ID": "mewati_jhambaus",
+        "Source_Language_ID": "lsi1908_ahirwati_rohtak_jhajjar",
+        "Name": "Ahirwati (Jhajjar/Rohtak, mixed LSI1908)",
+        "Glottocode": "",
+        "Latitude": "",
+        "Longitude": "",
+        "Clade": "Rajasthanic",
+        "Location": "Jhajjar Tahsil, district Rohtak, historical survey",
+        "Quality": ""
+      },
+      "example_key": "lsi9.2:p238:aligned-line:1:word:1",
+      "rows": 167
+    },
+    "dialect:bagri_fatehabad:lsi1908_bagri_bikaner:Bikaner%20%28LSI1908%20Bagri%29": {
+      "proposed_registry_row": {
+        "ID": "lsi1908_bagri_bikaner",
+        "Tag": "dialect:bagri_fatehabad:lsi1908_bagri_bikaner:Bikaner%20%28LSI1908%20Bagri%29",
+        "Language_ID": "bagri_fatehabad",
+        "Source_Language_ID": "lsi1908_bagri_bikaner",
+        "Name": "Bikaner (LSI1908 Bagri)",
+        "Glottocode": "",
+        "Latitude": "",
+        "Longitude": "",
+        "Clade": "Rajasthanic",
+        "Location": "Historical Bikaner, LSI 1908 survey",
+        "Quality": ""
+      },
+      "example_key": "lsi9.2:p149:outside-lead-scope:b-w-pronoun:w1",
+      "rows": 2
+    },
+    "dialect:bagri_fatehabad:lsi1908_bagri_sirsa:Sirsa%20%28LSI1908%20Bagri%29": {
+      "proposed_registry_row": {
+        "ID": "lsi1908_bagri_sirsa",
+        "Tag": "dialect:bagri_fatehabad:lsi1908_bagri_sirsa:Sirsa%20%28LSI1908%20Bagri%29",
+        "Language_ID": "bagri_fatehabad",
+        "Source_Language_ID": "lsi1908_bagri_sirsa",
+        "Name": "Sirsa (LSI1908 Bagri)",
+        "Glottocode": "",
+        "Latitude": "",
+        "Longitude": "",
+        "Clade": "Rajasthanic",
+        "Location": "Historical Sirsa, LSI 1908 survey",
+        "Quality": ""
+      },
+      "example_key": "lsi9.2:p151:outside-Bagri-present:p1:sg:w1",
+      "rows": 8
+    },
+    "dialect:bagri_fatehabad:lsi1908_bagri_hissar:Hissar%20%28LSI1908%20Bagri%29": {
+      "proposed_registry_row": {
+        "ID": "lsi1908_bagri_hissar",
+        "Tag": "dialect:bagri_fatehabad:lsi1908_bagri_hissar:Hissar%20%28LSI1908%20Bagri%29",
+        "Language_ID": "bagri_fatehabad",
+        "Source_Language_ID": "lsi1908_bagri_hissar",
+        "Name": "Hissar (LSI1908 Bagri)",
+        "Glottocode": "",
+        "Latitude": "",
+        "Longitude": "",
+        "Clade": "Rajasthanic",
+        "Location": "Historical Hissar, LSI 1908 survey",
+        "Quality": ""
+      },
+      "example_key": "lsi9.2:p151:outside-Bagri-past-group:w1",
+      "rows": 5
+    }
+  },
+  "regional_routing_pending": {
+    "keys": [
+      "lsi9.2:p51:Bawal-Kot-Kasam-regional-copulas:w1",
+      "lsi9.2:p51:Bawal-Kot-Kasam-regional-copulas:w2",
+      "lsi9.2:p51:Bawal-Kot-Kasam-regional-copulas:w3",
+      "lsi9.2:p51:Bawal-Kot-Kasam-regional-copulas:w4"
+    ],
+    "requirement": "Two source-qualified historical Bawal/Kot Kasam contributions jointly attribute these four physical witnesses; blank geo/glotto; no Gurgaon tag. Final root-approved registry contribution not yet in this assembly."
+  },
+  "profile_symbols": 58,
+  "profile_source_only": true,
+  "output_hashes": {
+    "all-display-deltas.jsonl": "123da9be02e696bc99f108a1472662c7701acb2db442b4c50295e9948236b8ce",
+    "field-or-conversion-issues.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "unicode-inventory.jsonl": "4a826b602e545854c442d6fe64ba5aab30ec0aa3e3fe383ec71b49980f10874b"
+  },
+  "canonical_changes": false
+}

@@ -84,19 +84,18 @@ def test_complete_inventory_and_draft_preservation_settings():
     assert all(r[7].startswith("niranjan2010chakma[") for r in rows)
 
 
-def test_installed_source_and_lightweight_parser_preserve_spelling():
+def test_historical_stage_and_lightweight_parser_preserve_spelling():
     import csv
     import io
     from make_cldf import parse_file
     from pybtex.database import parse_file as parse_bib
     module = importer()
     expected, _ = module.prepare()
-    forms = ROOT.parent.parent
-    path = forms / f"{module.STEM}.csv"
+    path = ROOT / "whole-installation/legacy-742.csv"
     with path.open() as stream:
         assert list(csv.reader(stream)) == expected
     errors = io.StringIO()
-    parsed, stats = parse_file(str(path), errors=errors)
+    parsed, stats = parse_file(str(path), errors=errors, name=module.STEM)
     assert not errors.getvalue()
     assert len(parsed) == 742 and stats == {"converted": 0, "for_conversion": 0}
     originals = {row[10]: row for row in expected}

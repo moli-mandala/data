@@ -1,0 +1,27 @@
+{
+  "status": "pass2 frozen for fresh independent output audit; not installed",
+  "rows": 678,
+  "new_rows": 390,
+  "legacy_rows_exact": 288,
+  "source_groups_reviewed": 309,
+  "audit_units": 546,
+  "field_corrections": 45,
+  "uncertain_rows": 1,
+  "variant_links": 15,
+  "input_sha256": {
+    "whole-proposed.csv": "e0df107bbbfc14c0ba96fd0916b180f4f5e5d3af5b585b5308046edb9524d470",
+    "whole-proposed-audit.jsonl": "38e973f55e924d43db0747ebd7e090759bf4384eb87f2ebd4c2014e91a23b2d0",
+    "whole-proposed-profile.txt": "3774144744ae38dc3c6d9e2e7fcff788e88812a9ad0fb6920170e1b080bfe440",
+    "whole-grammar-metadata-proposal-20260927.jsonl": "0d14326cfa58cf58629db27b81e5e13cfc8a729631f88a11326183f6565eea99",
+    "whole-expansion-draft-20260927.jsonl": "f50131737ac5f9a691b346e47707159ae378b6e3a9a2803225f51aad441d0e04",
+    "independent-whole-second-reading-20260927.json": "5017c3c5e07f55c44c02e391ca0ef647fee7ffb2071827383ee6cac02f37c3df",
+    "independent-expansion-metadata-review-20260927.json": "7b5c00d16119ba7c8276c759ce50288a2340666572bfd8550cc63e33f807acf1",
+    "source-label-class-remediation-20260927.json": "b924da78f0c43e70973b0da4145c87498120533dc39a151d639c57da4e57608e"
+  },
+  "validation": "Exact keys, legacy preservation, registered tags and closed variant keys pass; actual parser/profile gate by root must be rerun against this final metadata candidate.",
+  "remaining": [
+    "Independent output audit",
+    "Canonical installation and canonical parser checks",
+    "Full database/build/browser gates deferred"
+  ]
+}

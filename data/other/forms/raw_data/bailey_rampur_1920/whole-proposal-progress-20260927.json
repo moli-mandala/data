@@ -1,0 +1,31 @@
+{
+  "package": "bailey_rampur_1920",
+  "status": "complete-scope proposal; not installed",
+  "rows": 647,
+  "legacy_rows_preserved": 288,
+  "added_rows": 359,
+  "recovered_glossary_holds": 1,
+  "audit_units": 640,
+  "generic_kochi_rows": 4,
+  "uncertain_rows": 16,
+  "variant_rows": 10,
+  "input_expansion_sha256": "b9808654967fb2d4b58753d96f41ad4a90740542a59eb34eb6588c861e4e6d59",
+  "files": {
+    "whole-proposed.csv": "848c4e6e652bea79d14f270327bd3e7e3d293d6fb6abe1384c8da786ed16eebb",
+    "whole-proposed-audit.jsonl": "146b284f877bc6a5b9d19977728c30ff2c21810e826ea6a3b1b74504de48c72c",
+    "whole-proposed-profile.txt": "4956fe9a0bae7e2912595a34d1eb8594200f74d5b74a2e272f85869a2cb4852b",
+    "legacy-before-whole-recovery.csv": "d60e537b0a6a9a9d5856a2149c55e8adf4579b07e8437264edc877fe612f3ec2",
+    "legacy-before-whole-recovery-profile.txt": "dc1a098804f007dadfc201521e8e3bffa6a528c0064348d3ca0cbb255f33d0ea"
+  },
+  "required_yaml": {
+    "defaults.transcription": "inputform",
+    "preserve_hyphens": true
+  },
+  "remaining": [
+    "owner expansion/metadata review",
+    "focused regressions and actual parser checks",
+    "independent complete-output audit",
+    "metadata and source-stage installation",
+    "full DB/CLDF/build/browser gates explicitly deferred"
+  ]
+}

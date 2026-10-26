@@ -1,0 +1,138 @@
+{
+  "source_id": "uesugi-catt2024oad",
+  "bibliography": "Uesugi, Heindio (ed.) & Adam Alvah Catt (editorial supervisor). 2024. Old Avestan Dictionary. (Asian and African Lexicon 67.) Tokyo: Research Institute for Languages and Cultures of Asia and Africa (ILCAA), Tokyo University of Foreign Studies. ISBN 978-4-86337-542-0.",
+  "licence": "CC BY 4.0 (http://creativecommons.org/licenses/by/4.0/), PDF p. 3",
+  "pdf": {
+    "filename": "B542_AAL67_OldAvestan.pdf",
+    "sha256": "7bb39fa3f87a5bc1400bc7243ad6da4d203ea8bad10765d13fe8a8045851b5f9",
+    "pages": 558,
+    "redistributed": false,
+    "producer": "Adobe Acrobat Pro 24.5 (born-digital text layer)"
+  },
+  "page_ranges": {
+    "front_matter_pdf": [
+      1,
+      29
+    ],
+    "dictionary_pdf": [
+      30,
+      433
+    ],
+    "dictionary_printed": [
+      1,
+      404
+    ],
+    "printed_equals_pdf_minus": 29,
+    "part_ii_first_pdf": 434,
+    "assertions": "404 dictionary pages; every running head except printed p. 1 carries printed page = PDF page - 29"
+  },
+  "scope": {
+    "included": "Part I Dictionary, printed pp. 1-404: every ◊ and ♣ lemma",
+    "excluded": [
+      "Part II Text and Translation (PDF pp. 434-558): Yasna 27.13-15, Gāθās Y28-53, 54.1 with interlinear glosses",
+      "front matter (acknowledgements, preface, abbreviations, introduction, references)",
+      "inflected attestations, passage citations and translations (audit only)",
+      "F cross-references from inflected forms to lemmata (audit only)",
+      "verb-stem sub-headings (audit only)",
+      "Vedic, Sanskrit, Young Avestan and other comparanda inside entries (prose only)"
+    ]
+  },
+  "extraction": {
+    "method": "pdfplumber character layer: two columns split at the page midpoint, lines clustered by top (±5 pt), combining marks re-attached to their stream/geometric base, NFC; font classes mark headwords (bold), F-line forms (bold italic), and the Wingdings/Verdana structural markers",
+    "extractor_version": "2026-10-25.5",
+    "ocr": false,
+    "editorial_table": "data/other/forms/raw_data/uesugi_oad_2024/editorial.csv"
+  },
+  "language_model": "all rows Language_ID Av; Old Avestan lemmata carry the proposed dialect tag dialect:Av:OAv:Old%20Avestan; lemmata printed in square brackets (non-Old-Avestan material, e.g. Y27.15, Y42) carry no dialect tag",
+  "outputs": {
+    "forms": "data/other/forms/20261025-uesugi-oad.csv",
+    "entry_texts": "data/other/entry_texts/20261025-uesugi-oad.csv",
+    "audit": "data/other/forms/raw_data/uesugi_oad_2024/audit.csv",
+    "sample": "data/other/forms/raw_data/uesugi_oad_2024/sample.csv",
+    "editorial": "data/other/forms/raw_data/uesugi_oad_2024/editorial.csv"
+  },
+  "counts": {
+    "unit_kinds": {
+      "attestation": 2274,
+      "lemma": 997,
+      "section": 29,
+      "stem": 243,
+      "verb": 202,
+      "xref": 331
+    },
+    "audit_statuses": {
+      "audit_attestation": 2274,
+      "audit_cross_reference": 331,
+      "audit_section_heading": 29,
+      "audit_stem_heading": 243,
+      "audit_subsection": 1,
+      "audit_variant_not_installed": 11,
+      "installed_lemma": 1154,
+      "installed_lemma_editorial": 44,
+      "installed_variant": 164
+    },
+    "form_count": 1362,
+    "lemma_rows": 1198,
+    "variant_rows": 164,
+    "root_linked_rows": 171,
+    "entry_text_blocks": 1177,
+    "audit_count": 4251
+  },
+  "seeded_sample_history": [
+    {
+      "seed": "uesugi-oad-2026-10-25",
+      "material_errors": 1,
+      "classes": [
+        "unquoted primary definition before the quoted gloss (haoma-): 8 entries fixed in editorial.csv"
+      ]
+    },
+    {
+      "seed": "uesugi-oad-2026-10-26-r2",
+      "material_errors": 1,
+      "classes": [
+        "printed unclosed parenthesis hid a noun sense (arədra-): editorial fix; all 7 unbalanced headers flagged in the audit",
+        "non-material: spaced label '(rel. adv.)' not tagged; parser fixed"
+      ]
+    },
+    {
+      "seed": "uesugi-oad-2026-10-26-r3",
+      "material_errors": 1,
+      "classes": [
+        "quotes glossing a word cited in unparenthesised prose were taken as senses (maidiiōi.mā̊ŋha-): parser now stops at prose citing a bold word"
+      ]
+    },
+    {
+      "seed": "uesugi-oad-2026-10-26-r4",
+      "material_errors": 0,
+      "classes": []
+    }
+  ],
+  "seeded_sample": {
+    "seed": "uesugi-oad-2026-10-26-r4",
+    "size": 20,
+    "unit_ids": [
+      "p136c1y645",
+      "p094c2y209",
+      "p336c2y444",
+      "p222c1y569",
+      "p026c1y487",
+      "p049c1y126",
+      "p062c1y661",
+      "p313c1y570",
+      "p287c1y186",
+      "p113c1y362",
+      "p313c2y283",
+      "p311c1y339",
+      "p098c2y223",
+      "p376c1y458",
+      "p065c1y478",
+      "p215c2y223",
+      "p003c1y485",
+      "p055c1y355",
+      "p155c2y126",
+      "p042c1y154"
+    ],
+    "material_errors": 0,
+    "unreviewed": 0
+  }
+}

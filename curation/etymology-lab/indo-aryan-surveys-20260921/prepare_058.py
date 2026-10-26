@@ -1,0 +1,18 @@
+import json
+from pathlib import Path
+P=Path(__file__).resolve().parent
+rs=json.loads((P/'remaining-initial.json').read_text());done={x['Form_ID'] for f in P.glob('pass*-saved-assignments.json') for x in json.loads(f.read_text())}
+groups=[{'parent': '3727', 'gloss': ['knife', 'knife (small)', 'knife (to cut meat)'], 'forms': ['sūrī', 'suri', 'sur', 'suru', 'curi', 'tʃhuɾi', 'curī', 'cʰūrīyā'], 'citation': 'CDIAL[3727]', 'evidence': 'Turner places Marathi surā/surī, Assamese suri, Bengali churi and the widespread northern churī knife family under kṣura, explicitly noting that the ch- knife forms cross dialect boundaries. The western sūrī/suri and eastern/northern curī responses fit those regional comparisons; this identifies the lexical family without claiming that contact has played no role.'}, {'parent': '2858', 'gloss': ['knife'], 'forms': ['kaṭra', 'katra', 'katrī', 'kɔḍrī', 'kɔdrī', 'kadrī', 'kəṛṛi', 'kʌṛṛi', 'kəṛri', 'kəḍri'], 'languages': ['AdivasiOriya', 'Bhatri', 'hal'], 'citation': 'CDIAL[2858]', 'evidence': 'Turner explicitly lists Oriya kaṭri knife under kartari, alongside kaṭari billhook. The Adivasi Oriya and adjoining Bhatri/Halbi short-vowel katri/kadri responses fit that regional family, including voiced and retroflex cluster variants; this comparison is qualified for the more reduced kəṛṛi forms, rather than identifying them with long-vowel kaṭār dagger.'}, {'parent': '7', 'gloss': ['knife'], 'forms': ['hasīyā', 'hasiyā'], 'languages': ['Rana', 'Dang'], 'citation': 'CDIAL[7]', 'evidence': 'Turner lists Nepali hā̃siyo and Hindi hãsiyā/hasiyā sickle under aṁsiya, shaped like a shoulder-blade. The Tharu hasiyā/hasīyā cutting-tool responses match this family; the source’s broader knife gloss is preserved.'}, {'parent': '6260', 'gloss': ['knife (to cut meat)'], 'forms': ['dau'], 'languages': ['Hajong'], 'citation': 'CDIAL[6260,1]', 'evidence': 'Turner gives Assamese dā large knife and Bengali dā/dāo sickle, bill, chopper under dātra. Hajong dau meat-cutting knife matches the eastern dāo form and tool sense.'}, {'parent': '2860', 'gloss': ['knife'], 'forms': ['kūṭɛr', 'kātār'], 'languages': ['Kho', 'Chil'], 'citation': 'CDIAL[2860]', 'evidence': 'Turner directly gives Khowar kutér knife/dagger and neighbouring Bashkarik kāṭer, Shina kaṭār under *karttāra. Khowar kūṭɛr matches the cited donor-free comparison; Chilisso kātār is qualified by the neighbouring Kohistani forms.'}, {'parent': '10875-2', 'gloss': ['firewood'], 'forms': ['ḷokṛī', 'lakado', 'lakhḍa', 'lakkhaḍ', 'lakṛe', 'lūkrī', 'lākarū'], 'citation': 'CDIAL[10875,2 and addenda]', 'evidence': 'Turner’s second *lakkuṭa branch explicitly includes Awankari lukṛī, Lahnda/Punjabi lakkaṛ, Hindi lakṛī, Gujarati lākṛũ and Marathi lākaḍ wood/firewood. These retained-k survey forms match the regional branch; Pothwari lūkrī also matches Turner’s specific Awankari vowel form.'}]
+a=[]
+for i,g in enumerate(groups):
+ for r in rs:
+  if r['ID'] not in done and r['Gloss'] in g['gloss'] and r['Form'] in g['forms'] and ('languages' not in g or r['Language_ID'] in g['languages']):
+   x=dict(record=r,citation=g['citation'],evidence=g['evidence'],family=i)
+   if 'components' in g:x['components']=g['components']
+   else:x.update(parent=g['parent'],kind=g.get('kind','reflex'))
+   a.append(x)
+assert len(a)==len({x['record']['ID'] for x in a})
+h=[]
+(P/'pass058-decisions.json').write_text(json.dumps(dict(accepted=a,held=h),ensure_ascii=False,indent=1)+'\n')
+(P/'pass058-rules.json').write_text(json.dumps(groups,ensure_ascii=False,indent=1)+'\n')
+print(len(a),'accepted',len(h),'held',[(g.get('parent',g.get('components')),sum(x['family']==i for x in a)) for i,g in enumerate(groups)])

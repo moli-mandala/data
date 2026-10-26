@@ -1,0 +1,52 @@
+{
+  "status": "Complete first-page comparison performed; repairs and unresolved controls prevent literal acceptance",
+  "reviewer": "/root",
+  "printed_page": 564,
+  "specimen": 75,
+  "physical_lines_reviewed": 17,
+  "physical_atoms_in_reviewed_reading": 153,
+  "first_reading": "specimens/p564-first-reading.jsonl",
+  "first_reading_sha256": "9231c09556f8e658f823363bfbf408bc57651ec053677f8a02e75e19ce1974b7",
+  "original_image": "tmp/jambu-next-source/kolami-specimen-originals/printed-564-2800.png",
+  "original_image_sha256": "42480304f41951f5b4a9e1851a76712eefe54abd2386e0b903d6a0436f4d0b50",
+  "original_controls": ["printed-564-top.png", "printed-564-middle.png", "printed-564-bottom.png"],
+  "strong_repair_proposals": [
+    {
+      "source_unit_key": "grierson1906kolamibasim:p564:specimen75-line:6:word:4",
+      "first_reading_form": "aṇchan",
+      "proposed_original_reading": "aḍchan",
+      "basis": "Original middle crop has an ascender and underdot on the second consonant, consistent with printed ḍ rather than ṇ; independent owner confirmation required."
+    },
+    {
+      "source_unit_key": "grierson1906kolamibasim:p564:specimen75-line:11:word:3",
+      "first_reading_form": "anḍā,",
+      "proposed_original_reading": "aṇḍā,",
+      "basis": "Original shows a separate underdot on n before ḍ; repair is literal glyph recovery, not nasal-place harmonization."
+    },
+    {
+      "source_unit_key": "grierson1906kolamibasim:p564:specimen75-line:15:word:3",
+      "first_reading_form": "anḍān",
+      "proposed_original_reading": "aṇḍān",
+      "basis": "Original bottom crop shows separate n and d underdots."
+    }
+  ],
+  "unresolved_controls": [
+    {
+      "source_unit_key": "grierson1906kolamibasim:p564:specimen75-line:7:word:4",
+      "first_reading_form": "actnā",
+      "question": "Initial original glyph resembles e rather than a. Require a sharp or alternate original control; do not choose from grammatical analogy."
+    },
+    {
+      "source_unit_key": "grierson1906kolamibasim:p564:specimen75-line:2:word:3",
+      "question": "Confirm exact English punctuation after the printed quoted father gloss; original raw target comma is already retained."
+    }
+  ],
+  "boundary_and_punctuation_controls": [
+    "Line3 isolated dash after dhan is layout punctuation and remains accounted separately rather than as an invented lexical head",
+    "Line12 opens a nested quote; line14 closes it with both quotation levels",
+    "Line17 ends in inn et/thy material continuing into printed565; whole-expression scope must cross the physical page boundary",
+    "Fine quantity/consonant marks, source case and target punctuation remain literal; no global harmonization follows from these proposals"
+  ],
+  "review_limits": "This is the independent review of an immutable first reading, not final candidate acceptance or a fresh seeded output audit. Final row/gloss/tag/expression/metadata/profile review remains required.",
+  "canonical_changes": false
+}

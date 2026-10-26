@@ -1,0 +1,35 @@
+{
+  "status": "existing wordlist regeneration reconciled",
+  "checks": {
+    "canonical_rows_equal_regeneration": true,
+    "canonical_audit_equal_regeneration": true,
+    "manifest_equal_regeneration": true,
+    "all_existing_keys_unique": true,
+    "expected_counts": true,
+    "printed_wordlist_pages_covered": true
+  },
+  "counts": {
+    "conceptual_list_slots": 1890,
+    "source_image_cells_manually_reviewed": 1840,
+    "omitted_slots_accounted_for": 50,
+    "installed_rows": 1438,
+    "status": {
+      "installed": 1401,
+      "missing": 69,
+      "excluded": 420
+    },
+    "uncertainty": {
+      "confirmed ruled blank": 24,
+      "first variant has an illegible medial source character": 1,
+      "collector/source question mark": 2,
+      "source annotates eight as atʰo between rows": 1,
+      "item 200 absent/clipped between source pages": 1
+    }
+  },
+  "canonical_sha256": "f772a688af3e26f853a4bcbc4f5792eda6b9fdfc9b91c086e5219ad687ef48c2",
+  "audit_sha256": "cd3d328d78b3a85b470d51afa600820892adb29707d8bf75591c2f56625ae8d8",
+  "manual_ledger_sha256": "53498476a74373a719e8e0592eb193aea97a1e014257a36ea761c91692871e55",
+  "source_sha256": "a6541e0d2397849ce7c36961b3849f3b2c1f1c267036cfa1a3f6025796e14e7d",
+  "scope": "Appendix E printed wordlist cells PDF82–123. PDF80–81 alphabet and introductions require separate whole-scope review.",
+  "limits": "Reuses historical source-image ledger; not a fresh image audit or full-source installation approval. No canonical files changed."
+}

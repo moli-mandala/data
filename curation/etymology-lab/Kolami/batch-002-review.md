@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Kolami · Dravidian surveys, 2026-09-21 · batch 002. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Kolami | Proposed etymology | Evidence |
+|---|---|---|---|
+| 6 | **gōr** ‘claw’ | Proposed reflex of [**DEDR 561**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=55) | DEDR 561 gives Tamil/Malayalam ukir, Kannada/Tulu ugur(u), Telugu/Konda gōru, Parji gēri and Kodagu oy ‘nail/claw’. The article expressly corrects Kurukh oṛox to orox; rhotic-nail responses requiring that transcription judgment are held separately, as are Sanskrit nakha loans. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 7 | **tōl** ‘skin’ | Proposed reflex of [**DEDR 3559**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=312) | DEDR 3559 explicitly groups Tamil/Malayalam tōl/toli/tokku, Kannada tōl/togal/toval, Telugu tōlu/tokka and Gondi tōl/tolka ‘skin, hide, rind’. These simple skin forms fit the printed family; carma-type Indo-Aryan loans are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 8 | **pōṭṭā** ‘Belly’ | Proposed reflex of [**DEDR 4494**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=397) | DEDR 4494 explicitly lists Kannada poṭṭe, Telugu/Parji poṭṭa, Gondi poṭa/poṭṭa and Konda poṭa ‘belly/stomach’. It compares Prakrit poṭṭa without settling direction; the proposed Dravidian family placement retains that contact question and excludes unrelated vayir-/bairu forms. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 9 | **pog** ‘smoke’ | Proposed reflex of [**DEDR 4240**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=375) | DEDR 4240 gives Tamil pukai, Malayalam puka, Kannada poge, Telugu poga, Gadaba pōgu, Gondi poya/poyo/poī and Kuvi bōyi ‘smoke’. The article itself documents the medial g/y variation; tobacco and longer verbal elicitation responses are outside this simple-noun selection. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 10 | **nela** ‘Moon’, **nela** ‘moon’ | Proposed reflex of [**DEDR 3754**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=335) | DEDR 3754 gives Tamil/Malayalam nilā/nilavu, Telugu/Kolami nela, Parji neliñ, Gadaba neliŋ and Gondi/Konda lēnj/lēnz ‘moon/month’. These forms belong to the nil-/nel-/lenj family rather than tiṅkaḷ or Indo-Aryan candra. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (2 records.) |
+
+Proposed assignment rows: **6**. Affected records: **6**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-002.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Kolami/batch-002.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

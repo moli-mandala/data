@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Malto · Dravidian surveys, 2026-09-21 · batch 007. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Malto | Proposed etymology | Evidence |
+|---|---|---|---|
+| 26 | **āndu** ‘eye’ | Proposed reflex of [**DEDR 1159**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=109) | DEDR1159(a) gives Kurukh xann and Malto qanu eye. Survey Kurukh kʰann retains its fricative/aspirate transcription. The Malto annotation explicitly notes that Andronov initial q corresponds to zero or a possible glottal stop in this list, supporting a comparative āndu proposal while retaining the unexplained-looking final material for review. No source spelling is repaired. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 27 | **margadu** ‘horn’ | Proposed reflex of [**DEDR 4720**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=417) | DEDR4720 directly gives Brahui marg̠ẖ, Kurukh marag and Malto margu horn. Survey margʰ, marag and margadu preserve their aspiration and suffix transcription; source cognacy independently identifies this article. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 28 | **mōha** ‘smoke’ | Proposed reflex of [**DEDR 5131**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=464) | DEDR5131 directly groups Brahui mōḻẖ smoke, Kurukh mōjxā/mōsgā smoke and Malto mog̣e emit smoke. Survey mōś, mosaga and mōha preserve their fricative and vowel transcriptions. Source cognacy identifies the article; the Malto noun/verb elicitation difference remains visible for review. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 29 | **paniyā** ‘cold’ | Proposed reflex of [**DEDR 4035**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=360) | DEDR 4035 explicitly gives Malto panye ‘cold’ and pany-panyre ‘feel cold’. Survey paniyā is a comparative variant of that Malto stem; final vowel and syllabification differences are preserved for review. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 30 | **kukudu** ‘head’ | Proposed reflex of [**DEDR 1630**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=149) | DEDR1630 directly gives Malto kuku ‘head’, alongside Kurukh kukk. Survey kukudu ‘head’ is a comparative form with the final -du retained; the proposed link concerns the kuku- stem rather than inventing a new parent. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+
+Proposed assignment rows: **5**. Affected records: **5**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-007.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Malto/batch-007.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

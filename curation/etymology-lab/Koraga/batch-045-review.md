@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Koraga · Bhat 1971 Koraga records, 2026-09-25 · batch 045. Pending user review; autonomous research continues.
+
+| # | Koraga | Proposed etymology | Evidence |
+|---|---|---|---|
+| 6 | **ari** ‘rice’ | Proposed reflex of [**DEDR 215**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=20) | DEDR 215 full article (p. 20) gives 215 Ta. ari rice, paddy, ear of paddy; arici rice without husk, any husked grain. Ma. ari grain of rice freed from chaff, seed, grain; (Kauṭ.) arici rice. Ko. aky grain of any grain food whe Bhat ari “rice” matches Lindgren Koraga ari “rice” in form and sense; this cross-source match is a candidate lead, with the full DEDR article defining the family. Both source identities and dialect tags are preserved. (3 records.) |
+| 7 | **armbi** ‘mushroom’ | Proposed reflex of [**DEDR 300**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=28) | DEDR 300 full article (p. 28) gives Kor. (T.) armbi id. / Bhat armbi “mushroom” is the same cited Koraga form and sense; its original dialect:Koraga:tappu:Tappu uncertain dialect tag is retained. The article is used as family classification, not an independent second attestation of Bhat. (1 record.) |
+| 8 | **alpa** ‘there’ | Proposed reflex of [**DEDR 1**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=1) | DEDR 1 full article (p. 1) gives 1 Ta. a demonstr. base expr. the remoter person or thing; pref. to nouns, expr. remoteness [ a before consonant, avv before vowel]; avaṉ/avvōṉ, avaḷ, avar/avarkaḷ, atu (before consonant)/ a Bhat alpa “there” matches Lindgren Koraga alpa “there” in form and sense; this cross-source match is a candidate lead, with the full DEDR article defining the family. Both source identities and dialect tags are preserved. (1 record.) |
+| 9 | **albu** ‘to wash cloth’ | Proposed reflex of [**DEDR 246**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=24) | DEDR 246 full article (p. 24) gives 246 Ta. alampu (alampi-) to wash, rinse; alacu (alaci-) to rinse; alaicu (alaici-) to wash, rinse; (RS, p. 128, item 47) alaittal to wash clothes by moving them about in water. Ma. alakkuka Bhat albu “to wash cloth” matches Lindgren Koraga albu “wash” in form and sense; this cross-source match is a candidate lead, with the full DEDR article defining the family. Both source identities and dialect tags are preserved. (1 record.) |
+| 10 | **alla** ‘there’ | Proposed reflex of [**DEDR 1**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=1) | DEDR 1 full article (p. 1) gives 1 Ta. a demonstr. base expr. the remoter person or thing; pref. to nouns, expr. remoteness [ a before consonant, avv before vowel]; avaṉ/avvōṉ, avaḷ, avar/avarkaḷ, atu (before consonant)/ a Bhat alla “there” matches Lindgren Koraga alla “there” in form and sense; this cross-source match is a candidate lead, with the full DEDR article defining the family. Both source identities and dialect tags are preserved. (1 record.) |
+
+Proposed assignment rows: **7**. Affected records: **7**. Relation kinds: **reflex**. Multi-part responses retain their source order.
+
+Exact persistent IDs and complete source records: [batch-045.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Koraga/batch-045.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../koraga-bhat-20260925/research-holds.json). No new lexical material or donor nodes are introduced.

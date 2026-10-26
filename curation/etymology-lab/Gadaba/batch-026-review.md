@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Gadaba · Adimathara 2019 Mudhili Gadaba residual records, 2026-09-25 · batch 026. Pending user review; autonomous research continues.
+
+| # | Gadaba | Proposed etymology | Evidence |
+|---|---|---|---|
+| 11 | **sullu** ‘mouth’ | Proposed reflex of [**DEDR 2664**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=231) | DEDR 2664 full article (p. 231): Ga. (S. 2 ) sollu , (S. 3 ) sol(lu) mouth; (P.) sonḍi beak. Go. (Ko.) sonḍe lip ( Voc. 3494). Pe. conḍi beak of bird. Kui suḍa mouth, beak, brim. Kuwi (Ḍ.) honḍi mouth. Kur. colō pointed (said of the mouth of animals). Cf. The source sullu “mouth” is a same-item, same-sense dialectal form beside previously reviewed sollu; the full article includes that Gadaba family. Its inflection and dialect label remain in the source record. (1 record.) |
+| 12 | **palkīl** ‘teeth’ | Proposed reflex of [**DEDR 3986**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=355) | DEDR 3986 full article (p. 355) gives Ga. (Oll.) pal id., sharp edge (usually pl.); (S.) pallū ( pl. palkīl ) tooth. The source palkīl “teeth” fits this Gadaba whole-article family; the article passage was checked for sense as well as form. Dialect and inflection remain in the source record. (6 records.) |
+| 13 | **kālgīl** ‘leg’ | Proposed reflex of [**DEDR 1479**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=138) | DEDR 1479 full article (p. 138): Ga. (Oll.) kāl ( pl. kālgil) id. Go. (many dialects) kāl id. ( Voc. 652). Konḍa kāl id. Pe. kāl id. Manḍ. kāl id. Kui kāḍu leg, foot. Kuwi (P.) kāl ( pl. -ka) leg. ? Br. trikkal tripod of three sticks on which tent is hung. The source kālgīl “leg” is a same-item, same-sense dialectal form beside previously reviewed kal; the full article includes that Gadaba family. Its inflection and dialect label remain in the source record. (3 records.) |
+| 14 | **kalgīl** ‘leg’ | Proposed reflex of [**DEDR 1479**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=138) | DEDR 1479 full article (p. 138): Ga. (Oll.) kāl ( pl. kālgil) id. Go. (many dialects) kāl id. ( Voc. 652). Konḍa kāl id. Pe. kāl id. Manḍ. kāl id. Kui kāḍu leg, foot. Kuwi (P.) kāl ( pl. -ka) leg. ? Br. trikkal tripod of three sticks on which tent is hung. The source kalgīl “leg” is a same-item, same-sense dialectal form beside previously reviewed kal; the full article includes that Gadaba family. Its inflection and dialect label remain in the source record. (1 record.) |
+| 15 | **pollup** ‘village’ | Proposed reflex of [**DEDR 4303**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=380) | DEDR 4303 full article (p. 380): Ga. (Oll.) polub , (S.) pollūb id. DED(S) 3529. The source pollup “village” is a same-item, same-sense dialectal form beside previously reviewed pollub; the full article includes that Gadaba family. Its inflection and dialect label remain in the source record. (4 records.) |
+
+Proposed assignment rows: **15**. Affected records: **15**. Relation kinds: **reflex**. Multi-part responses retain their source order.
+
+Exact persistent IDs and complete source records: [batch-026.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Gadaba/batch-026.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../gadaba-adimathara-20260925/research-holds.json). No new lexical material or donor nodes are introduced.

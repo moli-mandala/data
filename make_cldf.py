@@ -6,6 +6,7 @@ from segments.tokenizer import Tokenizer, Profile
 import unicodedata
 from tqdm import tqdm
 import os
+from collections import Counter
 from copy import copy
 
 from utils import mapping, superscript, change
@@ -20,6 +21,7 @@ from dedr_variants import (
     expand_attached_sound_variants,
     expand_length_variants,
     normalize_dedr_marks,
+    split_editorial_notes,
 )
 from data.dedr.cleanup import is_footer_misparse
 
@@ -203,6 +205,39 @@ from source_files import (  # noqa: E402  (re-exported: tests import these names
     legacy_prefix,
     ordered_source_files,
 )
+
+
+_SPACED_SLASH = re.compile(r"\s/|/\s")
+
+
+def expand_slash_alternates(form):
+    """The full forms listed by a slash, for sources whose YAML sets `forms.slash_alternates`.
+
+    ``ser / sɪr`` (a slash with space on either side) lists alternate whole responses. An unspaced
+    slash alternates one word: ``vr̆ẽč ku-/bu-`` is ``vr̆ẽč ku-`` and ``vr̆ẽč bu-``. A later
+    alternative that is only an ending (nured ``malín̆/-i``, ``puṇḍrë́/-í``) names a form that
+    cannot be spelled out without a morphological analysis, so it stays in Original and adds no
+    row. Empty alternatives (a dangling ``ke kʊder/``) are dropped. Anything else is returned
+    unchanged."""
+    if "/" not in form:
+        return [form]
+    if _SPACED_SLASH.search(form):
+        parts = [part.strip() for part in re.split(r"\s*/\s*", form)]
+        return [part for part in parts if part] or [form]
+    words = form.split(" ")
+    slashed = [n for n, word in enumerate(words) if "/" in word]
+    if len(slashed) != 1:
+        return [form]
+    n = slashed[0]
+    choices = words[n].split("/")
+    out = []
+    for choice in choices:
+        if not choice:
+            continue
+        if out and choice.startswith("-") and not choices[0].startswith("-"):
+            continue
+        out.append(" ".join(words[:n] + [choice] + words[n + 1:]))
+    return out or [form]
 
 
 def _append_distinct(primary, secondary, separator="; "):
@@ -455,6 +490,7 @@ def parse_file(file: str, errors, name=None, file_num=0, param_counter=None):
     lines = fin.readlines()
     read = csv.reader(lines)
     result = []
+    deferred_alternates = []
 
     i = 0
     for row in tqdm(read, total=len(lines)):
@@ -557,15 +593,57 @@ def parse_file(file: str, errors, name=None, file_num=0, param_counter=None):
             or meta.flag(source_key, "forms", "split_alternates", True) is False
             else list(row.form.split(","))
         )
+        # Slash-listed alternates ("ser / sɪr", nured "vr̆ẽč ku-/bu-") are separate attested forms
+        # when the source's YAML declares `forms.slash_alternates`. Each alternate becomes its
+        # own row, but Original keeps the whole source cell (so the first alternate keeps its
+        # durable identity) and the later alternates take non-consuming ids `<id>.<n>`, which
+        # leave every following row's positional legacy id unchanged.
+        slash_alternates = bool(meta.flag(
+            source_key, "forms", "slash_alternates",
+            meta.file_flag(settings_file, "forms", "slash_alternates", False),
+        ))
+        pieces = [
+            (fj, form, alternate, alt_k)
+            for fj, form in enumerate(forms)
+            for alt_k, alternate in enumerate(
+                expand_slash_alternates(form) if slash_alternates else [form]
+            )
+        ]
+        alternate_count = Counter(fj for fj, _, _, _ in pieces)
+        # The Phonemic analysis splits in parallel when it lists the same alternates.
+        ipa_alternates = (
+            expand_slash_alternates(row.ipa)
+            if slash_alternates and len(forms) == 1 and row.ipa else []
+        )
+        base_ipa = row.ipa
+        base_entry_key, base_variant_of_key = row.entry_key, row.variant_of_key
         main_id = None
-        for fj, form in enumerate(forms):
+        piece_id = None
+        base_notes = row.notes
+        for fj, piece, form, alt_k in pieces:
             reformed = form
             if not is_merriam_reconstruction:
                 if uses_dedr_transcription:
                     row.old_form = source_form if len(forms) > 1 else dedr_variants[fj]
                 else:
-                    row.old_form = form
+                    row.old_form = piece
             row.form = form
+            if slash_alternates:
+                row.ipa = (
+                    ipa_alternates[alt_k]
+                    if len(ipa_alternates) == alternate_count[fj] > 1 else base_ipa
+                )
+            # Editorial notes inside a cited form -- DEDR's citations and usage notes, Merriam's
+            # "(< *…)" derivations -- move to the row's notes before conversion; Original (and
+            # so the identity fingerprint) keeps the source text.
+            form_note = ""
+            if uses_dedr_transcription:
+                reformed, form_note = split_editorial_notes(reformed)
+            elif is_merriam_reconstruction:
+                derivation = re.search(r"\s*\((<[^()]*)\)\s*$", reformed)
+                if derivation:
+                    reformed, form_note = reformed[:derivation.start()], derivation.group(1)
+            row.notes = append_note(base_notes, form_note) if form_note else base_notes
             # Forms on a CDIAL-style numeric etymon (CDIAL itself, plus other-source additions that
             # hang reflexes on a CDIAL entry by its number) keep <file>-<row> ids, so the <etymon>-<n>
             # space stays free for promoted section forms. Every other source (Munda m1, Dravidian d1,
@@ -579,16 +657,27 @@ def parse_file(file: str, errors, name=None, file_num=0, param_counter=None):
             stable_manual_id = (
                 is_manual and meta.flag(source_key, "identity", "legacy_ids") == "file-order"
             )
-            if is_cdial or stable_manual_id or not epid or re.fullmatch(r"\d+[a-z]?", epid):
-                row.id = f"{file_num}-{i}"
+            if alt_k:
+                # a later slash alternate: a child of the first alternate of its cell, with a
+                # stable child key when the source has immutable record keys
+                row.id = f"{piece_id}.{alt_k + 1}"
+                row.variant_of = piece_id
+                if base_entry_key:
+                    row.entry_key = f"{base_entry_key}:variant:{alt_k + 1}"
+                    row.variant_of_key = base_entry_key
             else:
-                param_counter[epid] = param_counter.get(epid, 0) + 1
-                row.id = f"{epid}-{param_counter[epid]}"
-            if fj == 0:
-                main_id = row.id
-                row.variant_of = ""
-            else:
-                row.variant_of = main_id
+                if is_cdial or stable_manual_id or not epid or re.fullmatch(r"\d+[a-z]?", epid):
+                    row.id = f"{file_num}-{i}"
+                else:
+                    param_counter[epid] = param_counter.get(epid, 0) + 1
+                    row.id = f"{epid}-{param_counter[epid]}"
+                piece_id = row.id
+                row.entry_key, row.variant_of_key = base_entry_key, base_variant_of_key
+                if fj == 0:
+                    main_id = row.id
+                    row.variant_of = ""
+                else:
+                    row.variant_of = main_id
 
             # convert IPA
             if row.input_file == "20260910-dameli-donors.csv":
@@ -775,11 +864,17 @@ def parse_file(file: str, errors, name=None, file_num=0, param_counter=None):
 
             # add the result
             # Row holds only scalars; a shallow copy is equivalent and ~20x cheaper
-            result.append(copy(row))
-            i += 1
+            if alt_k:
+                # Later slash alternates follow all of the file's ordinary rows, so the identity
+                # pass reaches every existing record first and a new alternate can never take the
+                # registry identity of a later site's identical record.
+                deferred_alternates.append(copy(row))
+            else:
+                result.append(copy(row))
+                i += 1
 
     fin.close()
-    return result, stats
+    return result + deferred_alternates, stats
 
 
 def source_entry_dedupe_key(row, meta):

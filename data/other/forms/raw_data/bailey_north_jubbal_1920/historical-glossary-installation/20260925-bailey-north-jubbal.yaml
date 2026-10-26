@@ -1,0 +1,21 @@
+file: 20260925-bailey-north-jubbal.csv
+defaults:
+  transcription:
+    profile: bailey-north-jubbal-1920
+  identity:
+    legacy_ids: stem
+    append_order: 53
+  importer:
+    commands:
+      - [data/other/forms/raw_data/bailey_north_jubbal_1920/import_source.py, --install]
+    note: Full pp. 185–188 North Jubbal glossary; 243 cells, 242 accepted yielding 330 forms and one cross-reference. All 98 legacy keys retained, no unresolved readings; fresh independent audit 0/20.
+sources:
+  bailey1920northjubbal:
+    identity:
+      dedupe_by_entry_key: true
+    forms:
+      split_alternates: false
+    reference:
+      editor: OpenAI Codex
+      ocr: true
+      etymology_provenance: none

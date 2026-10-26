@@ -1,0 +1,38 @@
+{
+  "status": "whole-source source-stage installed; compiled gates deferred",
+  "rows": 3662,
+  "audited_units": 5232,
+  "legacy_keys_preserved": 742,
+  "additional_rows": 2920,
+  "uncertain_rows": 486,
+  "languages": 31,
+  "new_bases": {
+    "Tanchangya": 3,
+    "Chenchu": 4
+  },
+  "independent_fresh_audit": "20/20 output units passed;19physical cells because two witnesses share one comparison row. Report independent-whole-output-r2-review-20260927.json.",
+  "scoped_tests": {
+    "passed": 40,
+    "seconds": 5.64,
+    "log": "tmp/chakma-independent/canonical-tests.log"
+  },
+  "repeat_installation": "Two consecutive guarded installations produced identical CSV/audit/YAML hashes.",
+  "canonical_parser": "3662/3662 rows; all fields and tags exact; no unknown languages/tags/references; no conversion or unwanted splits.",
+  "transcription": "Bengali-script preservation, convert:false, preserve_hyphens:true; all forms NFC and no replacement characters; Phonemic empty.",
+  "source_claims": "Attributed origins/components retained in exact keyed audit; main provenance=source. No ancestry, donor, variant or component edge inferred from ambiguous language attribution.",
+  "exclusions": "See complete keyed audit: out-of-family controls;142 numbered and24 further unresolved identities; blanks,1numbered segmentation,2basic damaged readings,2thematic holds; documentary/abbreviation data. Three individually reviewed source analyses remain unresolved-language audit records.",
+  "deferred": [
+    "Full data/CLDF build",
+    "Compiled identity/graph and formatted-reference outputs",
+    "Full repository test suite",
+    "Browser database refresh and QA",
+    "Publication"
+  ],
+  "hashes": {
+    "data/data/other/forms/20260921-niranjan-chakma.csv": "4a2e1086f9f6d4af50751f577c226a757dd1d92b514e5821dd415981c4e9a35c",
+    "data/data/other/forms/20260921-niranjan-chakma.yaml": "4f0a3062677527f293ebcecf8ac5f1ab55519858220624fa7e74381a55aa9b0f",
+    "data/data/other/forms/raw_data/niranjan_chakma_2010/whole-installed-audit.jsonl": "d582df615b8044778cdaff7976a51fc47d936790455b661a18a1cb55f233a18c",
+    "data/data/other/forms/raw_data/niranjan_chakma_2010/whole-installation/root-installation-approval.json": "3c96d76b23b8e419bd717a5ab5d5471781aa0191e6724c1554f64b002a544106",
+    "data/data/other/forms/raw_data/niranjan_chakma_2010/whole-installation/whole-source-export-parser-validation.json": "5839ac68175df1f5e4cd5da100c04d0514bb0d05a657fcb24d66596e5227a131"
+  }
+}

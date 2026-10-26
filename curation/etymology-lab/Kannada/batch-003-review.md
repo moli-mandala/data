@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Kannada · Dravidian surveys, 2026-09-21 · batch 003. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Kannada | Proposed etymology | Evidence |
+|---|---|---|---|
+| 11 | **moḷe** ‘breast’ | Proposed reflex of [**DEDR 4985**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=448) | DEDR 4985 gives Tamil mulai, Malayalam mula, Kannada/Kodagu mole and Kota mel ‘breast’. The article specifically identifies Kota mol as borrowed from Badaga, so that exact Kota variant is held rather than treated as inherited. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 12 | **kāllu** ‘stone’, **kallu** ‘stone’, **kallɨ** ‘stone’, **kaḷ** ‘stone’, **kal** ‘stone’, **kəllu** ‘stone’ | Proposed reflex of [**DEDR 1298**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=121) | DEDR 1298 gives Tamil kal, Malayalam/Kannada kallu, Parji kel, Gadaba kanḍ(u), Gondi kal/kalli and Brahui xal ‘stone’. The matching forms are restricted by the stone sense, preventing confusion with kāl ‘leg’. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (14 records.) |
+| 13 | **ele** ‘leaf’ | Proposed reflex of [**DEDR 497**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=48) | DEDR 497 gives Tamil ilai, Malayalam ila, Kannada ele/ela, Kota el and Tulu ele/ire ‘leaf’. Only this simple leaf stem is selected; the article's Gondi koṛk-ila ‘new leaf’ is a compound and is not reduced to a single inherited stem here. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (3 records.) |
+| 14 | **bēru** ‘root’, **beru** ‘root’, **ber** ‘root’, **berɨ** ‘root’, **bērū** ‘root’ | Proposed reflex of [**DEDR 5535**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=505) | DEDR 5535 explicitly gives Tamil/Malayalam vēr, Kannada/Tulu bēr(u), Telugu vēru, Parji vār and Konda vēla ‘root’. The survey root senses and rhotic/lateral stems fit these comparanda; source forms are preserved without imposing one language's spelling on another. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (14 records.) |
+| 15 | **poge** ‘smoke’ | Proposed reflex of [**DEDR 4240**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=375) | DEDR 4240 gives Tamil pukai, Malayalam puka, Kannada poge, Telugu poga, Gadaba pōgu, Gondi poya/poyo/poī and Kuvi bōyi ‘smoke’. The article itself documents the medial g/y variation; tobacco and longer verbal elicitation responses are outside this simple-noun selection. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+
+Proposed assignment rows: **33**. Affected records: **33**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-003.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Kannada/batch-003.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

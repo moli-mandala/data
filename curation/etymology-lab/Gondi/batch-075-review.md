@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Gondi · Devagnanavaram et al. 2021 Gondi Koya residual records, 2026-09-25 · batch 075. Pending user review; autonomous research continues.
+
+| # | Gondi | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **talakaia** ‘head’ | Proposed reflex of [**DEDR 3103**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=269) | DEDR 3103 full article (p. 269): Go. (A. Y. G. Mu.) talla ( pl. -ŋ) , (Tr.) talā ( pl. -hk) , (W.) talā , (S.) talla , (M. Ko.) tala id. ( Voc. 1688); (Tr.) tallā ( pl. tallāng) the part of the comb in which honey is stored; (Ma.) talla honeycomb ( Voc. 1689). Konḍa tala head Koya talakaia retains the tala head stem, with additional material left unanalyzed. (1 record.) |
+| 2 | **talakai** ‘head’ | Proposed reflex of [**DEDR 3103**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=269) | DEDR 3103 full article (p. 269): Go. (A. Y. G. Mu.) talla ( pl. -ŋ) , (Tr.) talā ( pl. -hk) , (W.) talā , (S.) talla , (M. Ko.) tala id. ( Voc. 1688); (Tr.) tallā ( pl. tallāng) the part of the comb in which honey is stored; (Ma.) talla honeycomb ( Voc. 1689). Konḍa tala head Koya talakai retains the tala head stem, with additional material left unanalyzed. (1 record.) |
+| 3 | **kave** ‘ear’ | Proposed reflex of [**DEDR 1977**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=179) | DEDR 1977 full article (p. 179): Go. (A. G. Ma.) kevi ( pl. kevk) , (Tr.) kawī ( pl. kauk) , (W.) kawī , (Ph.) kavvī ( pl. kauk/kavk) , (Mu.) kavi ( pl. -ŋ) , (M.) kev , (S.) kevvu ( pl. kevku) , (Ko.) kev ( pl. kevk) id. ( Voc. 848). Konḍa gibi , (Gūṛi dial.) kibi, (Sova dia Source kave “ear” continues the Gondi family named in the article; regional transcription or inflection is retained. (1 record.) |
+| 4 | **kevuk** ‘ear’ | Proposed reflex of [**DEDR 1977**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=179) | DEDR 1977 full article (p. 179): Go. (A. G. Ma.) kevi ( pl. kevk) , (Tr.) kawī ( pl. kauk) , (W.) kawī , (Ph.) kavvī ( pl. kauk/kavk) , (Mu.) kavi ( pl. -ŋ) , (M.) kev , (S.) kevvu ( pl. kevku) , (Ko.) kev ( pl. kevk) id. ( Voc. 848). Konḍa gibi , (Gūṛi dial.) kibi, (Sova dia Source kevuk “ear” continues the Gondi family named in the article; regional transcription or inflection is retained. (1 record.) |
+| 5 | **lonu** ‘house’ | Proposed reflex of [**DEDR 698**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=68) | DEDR 698 full article (p. 68): Go. (Tr. W. Ph. A.) rōn ( obl. rōt-) , (Mu. Ma. M. Ko.) lōn house; (Mu.) lōta wife; (S.) lōtad ( pl. lōtav) female member of a house; lōtur male member of a house; (Tr.) rōpā within; (Ph.) ropā, roppā, roppāṭe, rappoṛ inside; (W.) ropā Source lonu “house” continues the Gondi family named in the article; regional transcription or inflection is retained. (1 record.) |
+
+Proposed assignment rows: **5**. Affected records: **5**. Relation kinds: **reflex**. Multi-part responses retain their source order.
+
+Exact persistent IDs and complete source records: [batch-075.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Gondi/batch-075.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../gondi-koya-devagnanavaram-20260925/research-holds.json). No new lexical material or donor nodes are introduced.

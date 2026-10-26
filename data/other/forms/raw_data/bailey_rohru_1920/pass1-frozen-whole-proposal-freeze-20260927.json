@@ -1,0 +1,38 @@
+{
+  "status": "frozen_for_independent_audit_not_installed",
+  "scope": "shared introduction113–118; main Rohru118–130; all grammar,22translated sentences,lexicalnotes and255glossarycells",
+  "rows": 723,
+  "legacy_rows_preserved_byte_fields": 309,
+  "audit_units": 671,
+  "status_counts": {
+    "ingested": 639,
+    "exclude_crossref": 3,
+    "ingested_uncertain": 16,
+    "source_context": 2,
+    "shared_lect_context": 1,
+    "excluded_other_lect": 8,
+    "reused_exact_attestation": 2
+  },
+  "uncertain_rows": 17,
+  "input_sha256": {
+    "whole-proposed.csv": "31888a74ea2b6afcfb45a9ae9bc863052b77f34ff52de3499dce97b2074d2f52",
+    "whole-proposed-audit.jsonl": "5f85d9ecba341eecdd9032a4a5a28f49d6b9cfe89297af70785b058ae59e3124",
+    "whole-proposed-profile.txt": "bbc5cda350b2562e20fbdc9ff0cfbc45e0cc6c3549729f3e2b7165aa0fa3f866",
+    "prepare_whole_source.py": "0cdbf55bc4bf62fb987d615a491b81c0dcb26d77eef516f844f4a8f594686a20",
+    "whole-second-reading-20260927.json": "59907b334e73d5f293987544d7e32c8b0a1d27c8215149719d60acbe692d4577",
+    "legacy-before-whole-recovery.csv": "b548b5e2f8d5298a701a2686c6050ab23e42b2102433fa399b648233637dc4dd",
+    "legacy-before-whole-recovery-audit.jsonl": "fdf79a85cc36b3805e9ba2a19511e7045b2959b54e3a35efe693543e8aa11dca",
+    "whole-grammar-first-reading.jsonl": "99fe792b885f848dab763d8a0e11d621a3e05d9f955822bbc471463209499cbf",
+    "whole-sentences-first-reading.jsonl": "848887e659cf7b768b08271023cc9ba3e92a5273fe06794a536d4cbc0d297c23",
+    "whole-commentary-first-reading.jsonl": "42b2a5a35115ce56f54523f9ed9a6d9c8f20ea9702c732cbacd09d77f506bdbd",
+    "whole-source-context-census.jsonl": "37cff08ce9325d5564ca4c5014d8a1173e324387854d2ba9bcf029a549b1d818",
+    "whole-source-text-inventory.jsonl": "b9f51d228fe9ba67eea7fbfb65affccf2a2ae1380897baf2c9f1c0f58b96de18"
+  },
+  "focused_validation": "5passed in0.34s; complete regeneration/legacykeys/sourcefidelity/uncertainty/tagprofile/graph checks",
+  "deferred": [
+    "independent whole-output audit",
+    "canonicalinstallation and real canonical parser/profile routing",
+    "sharedYAML preserve_hyphens and scope metadata",
+    "fullCLDF/DBbuild and browserQA explicitly unauthorized"
+  ]
+}

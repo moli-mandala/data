@@ -1,0 +1,198 @@
+earlier,later,earlier_rule,later_rule,i,j,delta_ned,words
+@sibilant-ś @sibilant-ś,@ks @ks,Sib > ś,{k t p} ś > {k c c} {kʰ cʰ cʰ}@1,3,5,0.01121,19
+@sibilant-ś @sibilant-ś,@s-stop-aspirate @s-stop-aspirate,Sib > ś,ś Stop > $2-asp $2+asp,3,6,0.00747,19
+@ks @ks,@assim-sonorant @assim-sonorant,{k t p} ś > {k c c} {kʰ cʰ cʰ}@1,ś Son > ś ś,5,7,-0.00076,6
+@sibilant-ś @sibilant-ś,@assim-sonorant @assim-sonorant,Sib > ś,Stop {r y v l Nasal} > $1-asp $1,3,12,0.00227,28
+@palatal-Cy @palatal-Cy,@assim-sonorant @assim-sonorant,{t tʰ d dʰ} y > {c c j j} {c cʰ j jʰ}@1,Stop {r y v l Nasal} > $1-asp $1,4,12,0.00227,12
+@ks @ks,@assim-sonorant @assim-sonorant,{k t p} ś > {k c c} {kʰ cʰ cʰ}@1,Stop {r y v l Nasal} > $1-asp $1,5,12,-0.00076,15
+@sibilant-ś @sibilant-ś,@initial-degem @initial-degem,Sib > ś,C C > $2 / # _,3,17,0.00303,22
+@palatal-Cy @palatal-Cy,@initial-degem @initial-degem,{t tʰ d dʰ} y > {c c j j} {c cʰ j jʰ}@1,C C > $2 / # _,4,17,0.00303,6
+@sibilant-ś @sibilant-ś,@v-loss @v-loss,Sib > ś,v > ∅ / V _ V,3,25,0.00667,27
+@palatal-Cy @palatal-Cy,@v-loss @v-loss,{t tʰ d dʰ} y > {c c j j} {c cʰ j jʰ}@1,v > ∅ / V _ V,4,25,0.00303,10
+@int-p-v @int-p-v,@v-loss @v-loss,p > v / V _ V,v > ∅ / V _ V,21,25,0.00136,9
+@aya-e @aya-e,@v-loss @v-loss,a v a > ō,v > ∅ / V _ V,24,25,0.0053,9
+@sibilant-ś @sibilant-ś,@degem-lengthen @degem-lengthen,Sib > ś,V G2 $2 > $1+long $3,3,27,0.01868,54
+@palatal-Cy @palatal-Cy,@degem-lengthen @degem-lengthen,{t tʰ d dʰ} y > {c c j j} {c cʰ j jʰ}@1,V G2 $2 > $1+long $3,4,27,0.00303,49
+@ks @ks,@degem-lengthen @degem-lengthen,{k t p} ś > {k c c} {kʰ cʰ cʰ}@1,V G2 $2 > $1+long $3,5,27,0.00455,49
+@s-stop-aspirate @s-stop-aspirate,@degem-lengthen @degem-lengthen,ś Stop > $2-asp $2+asp,V G2 $2 > $1+long $3,6,27,0.00758,49
+@nasal-assim @nasal-assim,@degem-lengthen @degem-lengthen,{ŋ m} {g gʰ b bʰ} > $1 $1,V G2 $2 > $1+long $3,9,27,0.00303,49
+@assim-r @assim-r,@degem-lengthen @degem-lengthen,{r ḣ} C > $2-asp $2,V G2 $2 > $1+long $3,11,27,0.01091,49
+@assim-sonorant @assim-sonorant,@degem-lengthen @degem-lengthen,Stop {r y v l Nasal} > $1-asp $1,V G2 $2 > $1+long $3,12,27,0.00606,53
+@assim-sonorant @assim-sonorant,@degem-lengthen @degem-lengthen,l {y v} > l l,V G2 $2 > $1+long $3,13,27,0.00227,49
+@assim-stop @assim-stop,@degem-lengthen @degem-lengthen,Stop Stop > $2-asp $2,V G2 $2 > $1+long $3,15,27,0.00121,49
+@final-a-short @final-shortening @final-vowel-loss @vowel-shift @final-a-short,@degem-lengthen @degem-lengthen,ā > a / _ #,V G2 $2 > $1+long $3,18,27,0.00455,54
+@int-aspirate-h @int-aspirate-h,@degem-lengthen @degem-lengthen,{kʰ gʰ tʰ dʰ pʰ bʰ} > h / V _ V,V G2 $2 > $1+long $3,19,27,0.01212,51
+@int-retroflex @int-retroflex,@degem-lengthen @degem-lengthen,{ṭ ṭʰ} > {ḍ ḍʰ} / V _ V,V G2 $2 > $1+long $3,20,27,0.00939,49
+@int-p-v @int-p-v,@degem-lengthen @degem-lengthen,p > v / V _ V,V G2 $2 > $1+long $3,21,27,0.00288,50
+@int-stop-loss @int-stop-loss,@degem-lengthen @degem-lengthen,{k g c j t d y} > ∅ / V _ V,V G2 $2 > $1+long $3,22,27,0.03348,64
+@aya-e @aya-e,@degem-lengthen @degem-lengthen,a v a > ō,V G2 $2 > $1+long $3,24,27,0.00182,53
+@v-loss @v-loss,@degem-lengthen @degem-lengthen,v > ∅ / V _ V,V G2 $2 > $1+long $3,25,27,0.00182,53
+@sibilant-ś @sibilant-ś,@cluster-simplify @degem-plain @degem-plain,Sib > ś,G $1 > $2,3,28,0.01868,30
+@palatal-Cy @palatal-Cy,@cluster-simplify @degem-plain @degem-plain,{t tʰ d dʰ} y > {c c j j} {c cʰ j jʰ}@1,G $1 > $2,4,28,0.00303,14
+@ks @ks,@cluster-simplify @degem-plain @degem-plain,{k t p} ś > {k c c} {kʰ cʰ cʰ}@1,G $1 > $2,5,28,0.00636,18
+@s-stop-aspirate @s-stop-aspirate,@cluster-simplify @degem-plain @degem-plain,ś Stop > $2-asp $2+asp,G $1 > $2,6,28,0.00444,24
+@nasal-assim @nasal-assim,@cluster-simplify @degem-plain @degem-plain,{ŋ m} {g gʰ b bʰ} > $1 $1,G $1 > $2,9,28,0.00667,30
+@assim-r @assim-r,@cluster-simplify @degem-plain @degem-plain,{r ḣ} C > $2-asp $2,G $1 > $2,11,28,0.00909,40
+@assim-sonorant @assim-sonorant,@cluster-simplify @degem-plain @degem-plain,Stop {r y v l Nasal} > $1-asp $1,G $1 > $2,12,28,0.0105,49
+@assim-stop @assim-stop,@cluster-simplify @degem-plain @degem-plain,Stop Stop > $2-asp $2,G $1 > $2,15,28,0.00227,53
+@final-a-short @final-shortening @final-vowel-loss @vowel-shift @final-a-short,@cluster-simplify @degem-plain @degem-plain,ā > a / _ #,G $1 > $2,18,28,0.00455,54
+@int-aspirate-h @int-aspirate-h,@cluster-simplify @degem-plain @degem-plain,{kʰ gʰ tʰ dʰ pʰ bʰ} > h / V _ V,G $1 > $2,19,28,0.01212,51
+@int-retroflex @int-retroflex,@cluster-simplify @degem-plain @degem-plain,{ṭ ṭʰ} > {ḍ ḍʰ} / V _ V,G $1 > $2,20,28,0.00939,49
+@int-p-v @int-p-v,@cluster-simplify @degem-plain @degem-plain,p > v / V _ V,G $1 > $2,21,28,0.00288,50
+@int-stop-loss @int-stop-loss,@cluster-simplify @degem-plain @degem-plain,{k g c j t d y} > ∅ / V _ V,G $1 > $2,22,28,0.03348,64
+@aya-e @aya-e,@cluster-simplify @degem-plain @degem-plain,a v a > ō,G $1 > $2,24,28,0.0053,53
+@v-loss @v-loss,@cluster-simplify @degem-plain @degem-plain,v > ∅ / V _ V,G $1 > $2,25,28,0.00182,53
+@degem-lengthen @degem-lengthen,@cluster-simplify @degem-plain @degem-plain,V G2 $2 > $1+long $3,G $1 > $2,27,28,0.03939,49
+@sibilant-ś @sibilant-ś,@anusvara-vowel @anusvara-vowel,Sib > ś,V ṁ > $1+long / _ C,3,29,0.00894,26
+@palatal-Cy @palatal-Cy,@anusvara-vowel @anusvara-vowel,{t tʰ d dʰ} y > {c c j j} {c cʰ j jʰ}@1,V ṁ > $1+long / _ C,4,29,0.00303,10
+@ks @ks,@anusvara-vowel @anusvara-vowel,{k t p} ś > {k c c} {kʰ cʰ cʰ}@1,V ṁ > $1+long / _ C,5,29,0.00636,15
+@s-stop-aspirate @s-stop-aspirate,@anusvara-vowel @anusvara-vowel,ś Stop > $2-asp $2+asp,V ṁ > $1+long / _ C,6,29,0.00444,15
+@nasal-cluster @nasal-cluster,@anusvara-vowel @anusvara-vowel,Nasal {k kʰ c cʰ ṭ ṭʰ t tʰ p pʰ j jʰ ḍ ḍʰ d dʰ} > ṁ $2,V ṁ > $1+long / _ C,8,29,0.00894,9
+@nasal-assim @nasal-assim,@anusvara-vowel @anusvara-vowel,{ŋ m} {g gʰ b bʰ} > $1 $1,V ṁ > $1+long / _ C,9,29,0.00667,16
+@assim-r @assim-r,@anusvara-vowel @anusvara-vowel,{r ḣ} C > $2-asp $2,V ṁ > $1+long / _ C,11,29,0.00909,19
+@assim-sonorant @assim-sonorant,@anusvara-vowel @anusvara-vowel,Stop {r y v l Nasal} > $1-asp $1,V ṁ > $1+long / _ C,12,29,0.0105,20
+@assim-stop @assim-stop,@anusvara-vowel @anusvara-vowel,Stop Stop > $2-asp $2,V ṁ > $1+long / _ C,15,29,0.00227,12
+@final-a-short @final-shortening @final-vowel-loss @vowel-shift @final-a-short,@anusvara-vowel @anusvara-vowel,ā > a / _ #,V ṁ > $1+long / _ C,18,29,0.00455,19
+@int-aspirate-h @int-aspirate-h,@anusvara-vowel @anusvara-vowel,{kʰ gʰ tʰ dʰ pʰ bʰ} > h / V _ V,V ṁ > $1+long / _ C,19,29,0.01212,21
+@int-retroflex @int-retroflex,@anusvara-vowel @anusvara-vowel,{ṭ ṭʰ} > {ḍ ḍʰ} / V _ V,V ṁ > $1+long / _ C,20,29,0.01167,15
+@int-p-v @int-p-v,@anusvara-vowel @anusvara-vowel,p > v / V _ V,V ṁ > $1+long / _ C,21,29,0.00288,11
+@int-stop-loss @int-stop-loss,@anusvara-vowel @anusvara-vowel,{k g c j t d y} > ∅ / V _ V,V ṁ > $1+long / _ C,22,29,0.01136,39
+@sibilant-ś @sibilant-ś,@flap @flap,Sib > ś,{ḍ ḍʰ} > {r rʰ} / V _,3,30,0.00864,27
+@palatal-Cy @palatal-Cy,@flap @flap,{t tʰ d dʰ} y > {c c j j} {c cʰ j jʰ}@1,{ḍ ḍʰ} > {r rʰ} / V _,4,30,0.00303,10
+@ks @ks,@flap @flap,{k t p} ś > {k c c} {kʰ cʰ cʰ}@1,{ḍ ḍʰ} > {r rʰ} / V _,5,30,0.00636,15
+@s-stop-aspirate @s-stop-aspirate,@flap @flap,ś Stop > $2-asp $2+asp,{ḍ ḍʰ} > {r rʰ} / V _,6,30,0.00444,14
+@nasal-cluster @nasal-cluster,@flap @flap,Nasal {k kʰ c cʰ ṭ ṭʰ t tʰ p pʰ j jʰ ḍ ḍʰ d dʰ} > ṁ $2,{ḍ ḍʰ} > {r rʰ} / V _,8,30,0.00864,14
+@nasal-assim @nasal-assim,@flap @flap,{ŋ m} {g gʰ b bʰ} > $1 $1,{ḍ ḍʰ} > {r rʰ} / V _,9,30,0.00667,16
+@assim-r @assim-r,@flap @flap,{r ḣ} C > $2-asp $2,{ḍ ḍʰ} > {r rʰ} / V _,11,30,0.00864,17
+@assim-sonorant @assim-sonorant,@flap @flap,Stop {r y v l Nasal} > $1-asp $1,{ḍ ḍʰ} > {r rʰ} / V _,12,30,0.00636,19
+@assim-stop @assim-stop,@flap @flap,Stop Stop > $2-asp $2,{ḍ ḍʰ} > {r rʰ} / V _,15,30,0.00227,12
+@final-a-short @final-shortening @final-vowel-loss @vowel-shift @final-a-short,@flap @flap,ā > a / _ #,{ḍ ḍʰ} > {r rʰ} / V _,18,30,0.00455,19
+@int-aspirate-h @int-aspirate-h,@flap @flap,{kʰ gʰ tʰ dʰ pʰ bʰ} > h / V _ V,{ḍ ḍʰ} > {r rʰ} / V _,19,30,0.00636,20
+@int-retroflex @int-retroflex,@flap @flap,{ṭ ṭʰ} > {ḍ ḍʰ} / V _ V,{ḍ ḍʰ} > {r rʰ} / V _,20,30,0.00636,13
+@int-p-v @int-p-v,@flap @flap,p > v / V _ V,{ḍ ḍʰ} > {r rʰ} / V _,21,30,0.00152,10
+@int-stop-loss @int-stop-loss,@flap @flap,{k g c j t d y} > ∅ / V _ V,{ḍ ḍʰ} > {r rʰ} / V _,22,30,0.00152,42
+@aya-e @aya-e,@flap @flap,a v a > ō,{ḍ ḍʰ} > {r rʰ} / V _,24,30,0.00152,13
+@v-loss @v-loss,@flap @flap,v > ∅ / V _ V,{ḍ ḍʰ} > {r rʰ} / V _,25,30,0.00152,15
+@degem-lengthen @degem-lengthen,@flap @flap,V G2 $2 > $1+long $3,{ḍ ḍʰ} > {r rʰ} / V _,27,30,0.00152,51
+@sibilant-ś @sibilant-ś,@a-rounding,Sib > ś,a > o / _ C a #,3,31,0.00303,38
+@palatal-Cy @palatal-Cy,@a-rounding,{t tʰ d dʰ} y > {c c j j} {c cʰ j jʰ}@1,a > o / _ C a #,4,31,0.00303,21
+@ks @ks,@a-rounding,{k t p} ś > {k c c} {kʰ cʰ cʰ}@1,a > o / _ C a #,5,31,0.00303,25
+@s-stop-aspirate @s-stop-aspirate,@a-rounding,ś Stop > $2-asp $2+asp,a > o / _ C a #,6,31,0.00303,26
+@nasal-cluster @nasal-cluster,@a-rounding,Nasal {k kʰ c cʰ ṭ ṭʰ t tʰ p pʰ j jʰ ḍ ḍʰ d dʰ} > ṁ $2,a > o / _ C a #,8,31,0.00303,24
+@nasal-assim @nasal-assim,@a-rounding,{ŋ m} {g gʰ b bʰ} > $1 $1,a > o / _ C a #,9,31,0.00303,26
+@assim-r @assim-r,@a-rounding,{r ḣ} C > $2-asp $2,a > o / _ C a #,11,31,0.00303,28
+@assim-sonorant @assim-sonorant,@a-rounding,Stop {r y v l Nasal} > $1-asp $1,a > o / _ C a #,12,31,0.00303,30
+@assim-stop @assim-stop,@a-rounding,Stop Stop > $2-asp $2,a > o / _ C a #,15,31,0.00227,23
+@final-a-short @final-shortening @final-vowel-loss @vowel-shift @final-a-short,@a-rounding,ā > a / _ #,a > o / _ C a #,18,31,0.00303,28
+@int-aspirate-h @int-aspirate-h,@a-rounding,{kʰ gʰ tʰ dʰ pʰ bʰ} > h / V _ V,a > o / _ C a #,19,31,0.00303,32
+@int-retroflex @int-retroflex,@a-rounding,{ṭ ṭʰ} > {ḍ ḍʰ} / V _ V,a > o / _ C a #,20,31,0.00303,25
+@int-p-v @int-p-v,@a-rounding,p > v / V _ V,a > o / _ C a #,21,31,0.00288,22
+@int-stop-loss @int-stop-loss,@a-rounding,{k g c j t d y} > ∅ / V _ V,a > o / _ C a #,22,31,0.00303,49
+@aya-e @aya-e,@a-rounding,a v a > ō,a > o / _ C a #,24,31,0.00303,17
+@sibilant-ś @sibilant-ś,@final-vowel-loss @final-vowel-loss,Sib > ś,a > ∅ / _ #,3,32,0.01868,86
+@palatal-Cy @palatal-Cy,@final-vowel-loss @final-vowel-loss,{t tʰ d dʰ} y > {c c j j} {c cʰ j jʰ}@1,a > ∅ / _ #,4,32,0.00303,83
+@ks @ks,@final-vowel-loss @final-vowel-loss,{k t p} ś > {k c c} {kʰ cʰ cʰ}@1,a > ∅ / _ #,5,32,0.00636,84
+@s-stop-aspirate @s-stop-aspirate,@final-vowel-loss @final-vowel-loss,ś Stop > $2-asp $2+asp,a > ∅ / _ #,6,32,0.00444,84
+@nasal-cluster @nasal-cluster,@final-vowel-loss @final-vowel-loss,Nasal {k kʰ c cʰ ṭ ṭʰ t tʰ p pʰ j jʰ ḍ ḍʰ d dʰ} > ṁ $2,a > ∅ / _ #,8,32,0.00894,83
+@nasal-assim @nasal-assim,@final-vowel-loss @final-vowel-loss,{ŋ m} {g gʰ b bʰ} > $1 $1,a > ∅ / _ #,9,32,0.00667,84
+@assim-r @assim-r,@final-vowel-loss @final-vowel-loss,{r ḣ} C > $2-asp $2,a > ∅ / _ #,11,32,0.00909,83
+@assim-sonorant @assim-sonorant,@final-vowel-loss @final-vowel-loss,Stop {r y v l Nasal} > $1-asp $1,a > ∅ / _ #,12,32,0.0105,86
+@assim-stop @assim-stop,@final-vowel-loss @final-vowel-loss,Stop Stop > $2-asp $2,a > ∅ / _ #,15,32,0.00227,83
+@final-a-short @final-shortening @final-vowel-loss @vowel-shift @final-a-short,@final-vowel-loss @final-vowel-loss,ā > a / _ #,a > ∅ / _ #,18,32,0.00874,83
+@int-retroflex @int-retroflex,@final-vowel-loss @final-vowel-loss,{ṭ ṭʰ} > {ḍ ḍʰ} / V _ V,a > ∅ / _ #,20,32,0.00894,83
+@int-p-v @int-p-v,@final-vowel-loss @final-vowel-loss,p > v / V _ V,a > ∅ / _ #,21,32,0.00288,83
+@int-stop-loss @int-stop-loss,@final-vowel-loss @final-vowel-loss,{k g c j t d y} > ∅ / V _ V,a > ∅ / _ #,22,32,0.01803,92
+@final-cons-loss @final-cons-loss,@final-vowel-loss @final-vowel-loss,C > ∅ / V (C) (C) V _ #,a > ∅ / _ #,23,32,0.03985,86
+@aya-e @aya-e,@final-vowel-loss @final-vowel-loss,a v a > ō,a > ∅ / _ #,24,32,0.0053,83
+@v-loss @v-loss,@final-vowel-loss @final-vowel-loss,v > ∅ / V _ V,a > ∅ / _ #,25,32,0.00136,82
+@degem-lengthen @degem-lengthen,@final-vowel-loss @final-vowel-loss,V G2 $2 > $1+long $3,a > ∅ / _ #,27,32,0.01742,81
+@a-rounding,@final-vowel-loss @final-vowel-loss,a > o / _ C a #,a > ∅ / _ #,31,32,0.01742,77
+@sibilant-ś @sibilant-ś,@length-loss @nur-innovation @vowel-shift @length-loss,Sib > ś,{ī ū ī̃ ū̃} > {i u ĩ ũ},3,33,0.01868,39
+@palatal-Cy @palatal-Cy,@length-loss @nur-innovation @vowel-shift @length-loss,{t tʰ d dʰ} y > {c c j j} {c cʰ j jʰ}@1,{ī ū ī̃ ū̃} > {i u ĩ ũ},4,33,0.00303,24
+@ks @ks,@length-loss @nur-innovation @vowel-shift @length-loss,{k t p} ś > {k c c} {kʰ cʰ cʰ}@1,{ī ū ī̃ ū̃} > {i u ĩ ũ},5,33,0.00636,29
+@s-stop-aspirate @s-stop-aspirate,@length-loss @nur-innovation @vowel-shift @length-loss,ś Stop > $2-asp $2+asp,{ī ū ī̃ ū̃} > {i u ĩ ũ},6,33,0.00444,26
+@nasal-cluster @nasal-cluster,@length-loss @nur-innovation @vowel-shift @length-loss,Nasal {k kʰ c cʰ ṭ ṭʰ t tʰ p pʰ j jʰ ḍ ḍʰ d dʰ} > ṁ $2,{ī ū ī̃ ū̃} > {i u ĩ ũ},8,33,0.00894,27
+@nasal-assim @nasal-assim,@length-loss @nur-innovation @vowel-shift @length-loss,{ŋ m} {g gʰ b bʰ} > $1 $1,{ī ū ī̃ ū̃} > {i u ĩ ũ},9,33,0.00667,27
+@assim-r @assim-r,@length-loss @nur-innovation @vowel-shift @length-loss,{r ḣ} C > $2-asp $2,{ī ū ī̃ ū̃} > {i u ĩ ũ},11,33,0.00909,30
+@assim-sonorant @assim-sonorant,@length-loss @nur-innovation @vowel-shift @length-loss,Stop {r y v l Nasal} > $1-asp $1,{ī ū ī̃ ū̃} > {i u ĩ ũ},12,33,0.0105,32
+@assim-stop @assim-stop,@length-loss @nur-innovation @vowel-shift @length-loss,Stop Stop > $2-asp $2,{ī ū ī̃ ū̃} > {i u ĩ ũ},15,33,0.00227,25
+@final-a-short @final-shortening @final-vowel-loss @vowel-shift @final-a-short,@length-loss @nur-innovation @vowel-shift @length-loss,ā > a / _ #,{ī ū ī̃ ū̃} > {i u ĩ ũ},18,33,0.00874,33
+@int-retroflex @int-retroflex,@length-loss @nur-innovation @vowel-shift @length-loss,{ṭ ṭʰ} > {ḍ ḍʰ} / V _ V,{ī ū ī̃ ū̃} > {i u ĩ ũ},20,33,0.00894,26
+@int-p-v @int-p-v,@length-loss @nur-innovation @vowel-shift @length-loss,p > v / V _ V,{ī ū ī̃ ū̃} > {i u ĩ ũ},21,33,0.00288,23
+@int-stop-loss @int-stop-loss,@length-loss @nur-innovation @vowel-shift @length-loss,{k g c j t d y} > ∅ / V _ V,{ī ū ī̃ ū̃} > {i u ĩ ũ},22,33,0.01803,41
+@final-cons-loss @final-cons-loss,@length-loss @nur-innovation @vowel-shift @length-loss,C > ∅ / V (C) (C) V _ #,{ī ū ī̃ ū̃} > {i u ĩ ũ},23,33,0.01909,41
+@aya-e @aya-e,@length-loss @nur-innovation @vowel-shift @length-loss,a v a > ō,{ī ū ī̃ ū̃} > {i u ĩ ũ},24,33,0.0053,27
+@v-loss @v-loss,@length-loss @nur-innovation @vowel-shift @length-loss,v > ∅ / V _ V,{ī ū ī̃ ū̃} > {i u ĩ ũ},25,33,0.00136,27
+@degem-lengthen @degem-lengthen,@length-loss @nur-innovation @vowel-shift @length-loss,V G2 $2 > $1+long $3,{ī ū ī̃ ū̃} > {i u ĩ ũ},27,33,0.01909,58
+@anusvara-vowel @anusvara-vowel,@length-loss @nur-innovation @vowel-shift @length-loss,V ṁ > $1+long / _ C,{ī ū ī̃ ū̃} > {i u ĩ ũ},29,33,0.00227,30
+@sibilant-ś @sibilant-ś,@v-b @v-b,Sib > ś,v > b,3,35,0.00727,36
+@palatal-Cy @palatal-Cy,@v-b @v-b,{t tʰ d dʰ} y > {c c j j} {c cʰ j jʰ}@1,v > b,4,35,0.00303,21
+@ks @ks,@v-b @v-b,{k t p} ś > {k c c} {kʰ cʰ cʰ}@1,v > b,5,35,0.00636,25
+@s-stop-aspirate @s-stop-aspirate,@v-b @v-b,ś Stop > $2-asp $2+asp,v > b,6,35,0.00444,26
+@nasal-cluster @nasal-cluster,@v-b @v-b,Nasal {k kʰ c cʰ ṭ ṭʰ t tʰ p pʰ j jʰ ḍ ḍʰ d dʰ} > ṁ $2,v > b,8,35,0.00727,25
+@nasal-assim @nasal-assim,@v-b @v-b,{ŋ m} {g gʰ b bʰ} > $1 $1,v > b,9,35,0.00667,26
+@assim-r @assim-r,@v-b @v-b,{r ḣ} C > $2-asp $2,v > b,11,35,0.00727,28
+@assim-sonorant @assim-sonorant,@v-b @v-b,Stop {r y v l Nasal} > $1-asp $1,v > b,12,35,0.00727,28
+@assim-stop @assim-stop,@v-b @v-b,Stop Stop > $2-asp $2,v > b,15,35,0.00227,20
+@final-a-short @final-shortening @final-vowel-loss @vowel-shift @final-a-short,@v-b @v-b,ā > a / _ #,v > b,18,35,0.00652,26
+@int-retroflex @int-retroflex,@v-b @v-b,{ṭ ṭʰ} > {ḍ ḍʰ} / V _ V,v > b,20,35,0.00652,22
+@int-p-v @int-p-v,@v-b @v-b,p > v / V _ V,v > b,21,35,0.00288,19
+@int-stop-loss @int-stop-loss,@v-b @v-b,{k g c j t d y} > ∅ / V _ V,v > b,22,35,0.00788,37
+@final-cons-loss @final-cons-loss,@v-b @v-b,C > ∅ / V (C) (C) V _ #,v > b,23,35,0.00788,38
+@aya-e @aya-e,@v-b @v-b,a v a > ō,v > b,24,35,0.0053,18
+@v-loss @v-loss,@v-b @v-b,v > ∅ / V _ V,v > b,25,35,0.00394,14
+@sibilant-ś @sibilant-ś,@s-h @s-h,Sib > ś,ś > h / # _,3,37,0.00409,21
+@sibilant-ś @sibilant-ś,@length-loss @length-loss,Sib > ś,{ā ā̃} > {a ã},3,38,0.02277,65
+@palatal-Cy @palatal-Cy,@length-loss @length-loss,{t tʰ d dʰ} y > {c c j j} {c cʰ j jʰ}@1,{ā ā̃} > {a ã},4,38,0.00303,62
+@ks @ks,@length-loss @length-loss,{k t p} ś > {k c c} {kʰ cʰ cʰ}@1,{ā ā̃} > {a ã},5,38,0.00636,62
+@s-stop-aspirate @s-stop-aspirate,@length-loss @length-loss,ś Stop > $2-asp $2+asp,{ā ā̃} > {a ã},6,38,0.00444,63
+@nasal-cluster @nasal-cluster,@length-loss @length-loss,Nasal {k kʰ c cʰ ṭ ṭʰ t tʰ p pʰ j jʰ ḍ ḍʰ d dʰ} > ṁ $2,{ā ā̃} > {a ã},8,38,0.00894,63
+@nasal-assim @nasal-assim,@length-loss @length-loss,{ŋ m} {g gʰ b bʰ} > $1 $1,{ā ā̃} > {a ã},9,38,0.00667,64
+@assim-r @assim-r,@length-loss @length-loss,{r ḣ} C > $2-asp $2,{ā ā̃} > {a ã},11,38,0.00909,65
+@assim-sonorant @assim-sonorant,@length-loss @length-loss,Stop {r y v l Nasal} > $1-asp $1,{ā ā̃} > {a ã},12,38,0.0105,67
+@assim-stop @assim-stop,@length-loss @length-loss,Stop Stop > $2-asp $2,{ā ā̃} > {a ã},15,38,0.00227,63
+@final-a-short @final-shortening @final-vowel-loss @vowel-shift @final-a-short,@length-loss @length-loss,ā > a / _ #,{ā ā̃} > {a ã},18,38,0.00874,62
+@int-retroflex @int-retroflex,@length-loss @length-loss,{ṭ ṭʰ} > {ḍ ḍʰ} / V _ V,{ā ā̃} > {a ã},20,38,0.00894,59
+@int-p-v @int-p-v,@length-loss @length-loss,p > v / V _ V,{ā ā̃} > {a ã},21,38,0.00288,61
+@int-stop-loss @int-stop-loss,@length-loss @length-loss,{k g c j t d y} > ∅ / V _ V,{ā ā̃} > {a ã},22,38,0.01803,65
+@final-cons-loss @final-cons-loss,@length-loss @length-loss,C > ∅ / V (C) (C) V _ #,{ā ā̃} > {a ã},23,38,0.03985,68
+@aya-e @aya-e,@length-loss @length-loss,a v a > ō,{ā ā̃} > {a ã},24,38,0.0053,63
+@v-loss @v-loss,@length-loss @length-loss,v > ∅ / V _ V,{ā ā̃} > {a ã},25,38,0.00394,60
+@aka @hiatus @hiatus,@length-loss @length-loss,{a ā} {a ā} > ā,{ā ā̃} > {a ã},26,38,0.00227,59
+@degem-lengthen @degem-lengthen,@length-loss @length-loss,V G2 $2 > $1+long $3,{ā ā̃} > {a ã},27,38,0.04242,74
+@anusvara-vowel @anusvara-vowel,@length-loss @length-loss,V ṁ > $1+long / _ C,{ā ā̃} > {a ã},29,38,0.01773,61
+@a-rounding,@length-loss @length-loss,a > o / _ C a #,{ā ā̃} > {a ã},31,38,0.02197,63
+@final-vowel-loss @final-vowel-loss,@length-loss @length-loss,a > ∅ / _ #,{ā ā̃} > {a ã},32,38,0.00455,91
+@sibilant-ś @sibilant-ś,@deaspiration @deaspiration,Sib > ś,Stop > $1-asp / _ #,3,39,0.01212,22
+@palatal-Cy @palatal-Cy,@deaspiration @deaspiration,{t tʰ d dʰ} y > {c c j j} {c cʰ j jʰ}@1,Stop > $1-asp / _ #,4,39,0.00303,11
+@ks @ks,@deaspiration @deaspiration,{k t p} ś > {k c c} {kʰ cʰ cʰ}@1,Stop > $1-asp / _ #,5,39,0.00636,12
+@s-stop-aspirate @s-stop-aspirate,@deaspiration @deaspiration,ś Stop > $2-asp $2+asp,Stop > $1-asp / _ #,6,39,0.00444,13
+@nasal-cluster @nasal-cluster,@deaspiration @deaspiration,Nasal {k kʰ c cʰ ṭ ṭʰ t tʰ p pʰ j jʰ ḍ ḍʰ d dʰ} > ṁ $2,Stop > $1-asp / _ #,8,39,0.00894,15
+@nasal-assim @nasal-assim,@deaspiration @deaspiration,{ŋ m} {g gʰ b bʰ} > $1 $1,Stop > $1-asp / _ #,9,39,0.00667,17
+@assim-r @assim-r,@deaspiration @deaspiration,{r ḣ} C > $2-asp $2,Stop > $1-asp / _ #,11,39,0.00909,19
+@assim-sonorant @assim-sonorant,@deaspiration @deaspiration,Stop {r y v l Nasal} > $1-asp $1,Stop > $1-asp / _ #,12,39,0.00823,18
+@assim-stop @assim-stop,@deaspiration @deaspiration,Stop Stop > $2-asp $2,Stop > $1-asp / _ #,15,39,0.00227,13
+@final-a-short @final-shortening @final-vowel-loss @vowel-shift @final-a-short,@deaspiration @deaspiration,ā > a / _ #,Stop > $1-asp / _ #,18,39,0.00874,14
+@int-retroflex @int-retroflex,@deaspiration @deaspiration,{ṭ ṭʰ} > {ḍ ḍʰ} / V _ V,Stop > $1-asp / _ #,20,39,0.00894,15
+@int-p-v @int-p-v,@deaspiration @deaspiration,p > v / V _ V,Stop > $1-asp / _ #,21,39,0.00288,12
+@int-stop-loss @int-stop-loss,@deaspiration @deaspiration,{k g c j t d y} > ∅ / V _ V,Stop > $1-asp / _ #,22,39,0.01212,34
+@final-cons-loss @final-cons-loss,@deaspiration @deaspiration,C > ∅ / V (C) (C) V _ #,Stop > $1-asp / _ #,23,39,0.01212,35
+@aya-e @aya-e,@deaspiration @deaspiration,a v a > ō,Stop > $1-asp / _ #,24,39,0.0053,14
+@v-loss @v-loss,@deaspiration @deaspiration,v > ∅ / V _ V,Stop > $1-asp / _ #,25,39,0.00394,15
+@aka @hiatus @hiatus,@deaspiration @deaspiration,{a ā} {a ā} > ā,Stop > $1-asp / _ #,26,39,0.00227,19
+@degem-lengthen @degem-lengthen,@deaspiration @deaspiration,V G2 $2 > $1+long $3,Stop > $1-asp / _ #,27,39,0.01212,49
+@anusvara-vowel @anusvara-vowel,@deaspiration @deaspiration,V ṁ > $1+long / _ C,Stop > $1-asp / _ #,29,39,0.01212,19
+@a-rounding,@deaspiration @deaspiration,a > o / _ C a #,Stop > $1-asp / _ #,31,39,0.01212,22
+@final-vowel-loss @final-vowel-loss,@deaspiration @deaspiration,a > ∅ / _ #,Stop > $1-asp / _ #,32,39,0.01212,81
+@sibilant-ś @sibilant-ś,@deretroflexion,Sib > ś,{ṭ ṭʰ} > {t tʰ},3,40,0.00727,23
+@palatal-Cy @palatal-Cy,@deretroflexion,{t tʰ d dʰ} y > {c c j j} {c cʰ j jʰ}@1,{ṭ ṭʰ} > {t tʰ},4,40,0.00303,8
+@ks @ks,@deretroflexion,{k t p} ś > {k c c} {kʰ cʰ cʰ}@1,{ṭ ṭʰ} > {t tʰ},5,40,0.00636,13
+@s-stop-aspirate @s-stop-aspirate,@deretroflexion,ś Stop > $2-asp $2+asp,{ṭ ṭʰ} > {t tʰ},6,40,0.00444,10
+@nasal-cluster @nasal-cluster,@deretroflexion,Nasal {k kʰ c cʰ ṭ ṭʰ t tʰ p pʰ j jʰ ḍ ḍʰ d dʰ} > ṁ $2,{ṭ ṭʰ} > {t tʰ},8,40,0.00727,11
+@nasal-assim @nasal-assim,@deretroflexion,{ŋ m} {g gʰ b bʰ} > $1 $1,{ṭ ṭʰ} > {t tʰ},9,40,0.00667,13
+@assim-r @assim-r,@deretroflexion,{r ḣ} C > $2-asp $2,{ṭ ṭʰ} > {t tʰ},11,40,0.00727,16
+@assim-sonorant @assim-sonorant,@deretroflexion,Stop {r y v l Nasal} > $1-asp $1,{ṭ ṭʰ} > {t tʰ},12,40,0.00727,18
+@assim-stop @assim-stop,@deretroflexion,Stop Stop > $2-asp $2,{ṭ ṭʰ} > {t tʰ},15,40,0.00227,10
+@final-a-short @final-shortening @final-vowel-loss @vowel-shift @final-a-short,@deretroflexion,ā > a / _ #,{ṭ ṭʰ} > {t tʰ},18,40,0.00727,12
+@int-aspirate-h @int-aspirate-h,@deretroflexion,{kʰ gʰ tʰ dʰ pʰ bʰ} > h / V _ V,{ṭ ṭʰ} > {t tʰ},19,40,0.00182,11
+@int-retroflex @int-retroflex,@deretroflexion,{ṭ ṭʰ} > {ḍ ḍʰ} / V _ V,{ṭ ṭʰ} > {t tʰ},20,40,0.00485,7

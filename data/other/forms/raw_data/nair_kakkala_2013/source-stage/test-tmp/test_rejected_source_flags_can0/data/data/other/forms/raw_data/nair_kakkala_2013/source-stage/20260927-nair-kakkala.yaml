@@ -1,0 +1,37 @@
+file: 20260927-nair-kakkala.csv
+defaults:
+  transcription:
+    convert: false
+    preserve_hyphens: true
+  identity:
+    dedupe_by_entry_key: true
+  forms:
+    split_alternates: false
+  gloss:
+    grammar_tags: false
+  importer:
+    commands:
+    - - data/other/forms/raw_data/nair_kakkala_2013/import_source.py
+      - --install
+sources:
+  nair2013kakkala:
+    reference:
+      editor: OpenAI Codex
+      ocr: true
+      etymology_provenance: source
+    identity:
+      dedupe_by_entry_key: true
+    forms:
+      split_alternates: false
+    gloss:
+      grammar_tags: false
+  azad1980kakkala:
+    reference:
+      editor: OpenAI Codex
+      ocr: true
+      etymology_provenance: none
+  sheela1980kakkala:
+    reference:
+      editor: OpenAI Codex
+      ocr: true
+      etymology_provenance: none

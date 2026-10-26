@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Mannan · Dravidian surveys, 2026-09-21 · batch 032. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Mannan | Proposed etymology | Evidence |
+|---|---|---|---|
+| 156 | **uḷḷi** ‘onion’ | Proposed reflex of [**DEDR 705**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=69) | DEDR705 explicitly gives the widespread uḷḷi/ulli onion family, including Gondi ulli, Konda uli and southern uḷḷi. Survey ulli/uḷḷi/ul onion are direct lexical comparisons; the article also compares Sanskrit ūlī and Oriya uli, but does not specify an immediate borrowing route for these records. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 157 | **muḷakɨ** ‘chili’, **moḷakɨ** ‘chili’ | Proposed reflex of [**DEDR 4867**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=434) | DEDR4867 gives Tamil miḷaku, Malayalam miḷaku/muḷaku pepper, Kota meḷg chilli and Kodagu maḷu chillies. These southern survey forms preserve the pepper-to-chilli lexical extension explicitly attested within the family; the source chilli gloss is not changed to black pepper. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (7 records.) |
+| 158 | **ta ḷḷa** ‘mother’ | Proposed reflex of [**DEDR 3136**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=273) | DEDR3136 explicitly gives Malayalam taḷḷa mother and Tamil taḷḷai. Survey Mannan taḷḷa mother is a direct southern comparison. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (3 records.) |
+| 159 | **coḷam** ‘millet’ | Proposed reflex of [**DEDR 2896**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=251) | DEDR2896 attests Tamil/Malayalam cōḷam, Kannada/Kodagu/Tulu jōḷa, Telugu/Gondi jonna/jona and Gadaba jonnēl for great millet/jowar/maize. Survey forms retain the southern lateral versus central nasal branches, with Muthuvan -kam/-ku expansion. The source generic millet gloss is preserved; DEDR’s comparison with similar IA words (CDIAL10434) remains an origin/contact caveat, not an asserted loan route. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (7 records.) |
+| 160 | **nei** ‘fat’ | Proposed reflex of [**DEDR 3746**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=334) | DEDR3746 gives Tamil/Malayalam ney grease/fat/oil, Tulu nēyi grease/fat and Malto neṉya animal fat. Survey ney/nei/nay and Malto nejja fat retain this unctuous-substance family; source noun/adjective prompt scope is retained. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+
+Proposed assignment rows: **19**. Affected records: **19**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-032.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Mannan/batch-032.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

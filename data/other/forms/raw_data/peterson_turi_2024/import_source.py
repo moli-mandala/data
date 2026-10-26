@@ -80,6 +80,14 @@ if __name__ == '__main__':
     args = parser.parse_args()
     if not args.output_dir and not args.install:
         parser.error('Pass --output-dir for a proposal or --install for canonical output')
+    if args.install:
+        # The historical Appendix-only writer must not erase the independently
+        # reviewed whole-source metadata. Proposal-only historical use remains.
+        import runpy
+        coordinator = runpy.run_path(str(HERE / 'whole-source-recovery/install_whole_source.py'))
+        result = coordinator['install']()
+        print(json.dumps({'status': 'installed', 'rows': result['rows'], 'audit_units': result['audit_units']}))
+        raise SystemExit(0)
     rows, audit = build(json.loads((HERE / 'records.json').read_text()))
     if args.output_dir:
         write(args.output_dir, rows, audit)

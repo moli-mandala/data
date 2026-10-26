@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Urali · Dravidian surveys, 2026-09-21 · batch 024. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Urali | Proposed etymology | Evidence |
+|---|---|---|---|
+| 111 | **vekkɨ** ‘hot’ | Proposed reflex of [**DEDR 5517**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=502) | DEDR5517 gives Tamil vē/vēvu heat, vemmai/veppam heat, Malayalam vēvu/vemma, Kannada beccage hot and beṅki/bisi heat, Kota vek hot, and Konda vesni hot. Selected vevan/bevan/vamman/vekku/bejattu/vesnika/biṅgi/veppum responses are comparative heat-family nouns or adjectives with ordinary endings and source consonants retained. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (2 records.) |
+| 112 | **suṛu** ‘hot’ | Proposed reflex of [**DEDR 2654**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=229) | DEDR2654 gives Tamil cūṭu heat and cuṭu be hot, Kannada sūḍu/suḍu and Tulu cūḍu hot. Survey džūḍɨ/jūḍɨ, Urali sūrɨ and Irula sūḍānatɨ retain the heat stem with source affricate or rhotic notation and ordinary adjective ending; opaque longer responses are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 113 | **oṇatəgadu** ‘dry’ | Proposed reflex of [**DEDR 601**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=59) | DEDR601 gives Tamil uṇaṅku, Malayalam uṇaṅṅuka, Kannada oṇagu, Tulu oṇuṅgelu/uṇuṅgu/nuṅgu dry and dry up. These unag-/oṇag-/voṇag-/nuṅg- survey responses preserve that drying stem, ordinary adjectival endings and initial glide; potentially competing nānt-/nan- readings are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 114 | **tu vanta dɨ** ‘dry’, **tu vantu** ‘dry’ | Proposed reflex of [**DEDR 3351**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=292) | DEDR3351 gives Tamil tuvar dry/become dry with past -nt- and Malayalam tuvaruka grow dry. Survey tuvantadu/tuvantu/tuvarda are comparative dried adjectives from this moisture-removal family, preserving source rhotic and nasal-stop variants. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (2 records.) |
+| 115 | **tema** ‘wet’ | Proposed reflex of [**DEDR 2539**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=221) | DEDR2539 gives Telugu temma wetness/moisture, Tulu śima moistness and Tamil cemmal water. Survey tēma wet is a comparative southern moisture-family response with its source consonant and vowel spelling preserved; no immediate Telugu donor is inferred from resemblance alone. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+
+Proposed assignment rows: **7**. Affected records: **7**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-024.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Urali/batch-024.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

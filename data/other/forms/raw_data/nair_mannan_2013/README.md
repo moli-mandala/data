@@ -1,0 +1,23 @@
+# Nair 2013 Mannan complete-chapter proposal
+
+Source-local only; no canonical source installation or compiled build has occurred. The complete ingestion checklist is active, including PDF/native-font, grammar and comparative-source gates.
+
+The pinned 58-page Nair book supplies printed/PDF pages 45–49. All five original pages were read. Page 50 supplies additional attributed phonological commentary about Mannan but no new Mannan lexical forms; its examples belong to Muduga. Contents page 3 and adjacent page 44 are documentary/boundary evidence.
+
+`physical-units-first-reading.jsonl` preserves 140 source audit groups and 208 witness records, including 123 proposed Mannan attestations and 31 explicitly labelled Malayalam comparisons. The remaining 54 records are documentary community/personal names, context phoneme symbols, or an unlocated generic Dravidian suffix comparison. One printed accusative –e is explicitly shared by Mannan and Malayalam, so it has two scoped witness records. The context-symbol inventory records notation rather than every repeated printed symbol: these counts must not be described as 208 separately printed lexical tokens.
+
+All 28 lexical correspondence pairs, bound morphology, personal/demonstrative tables, five whole sentences, 36 vocabulary entries, and seven kinship heads with both printed definitions are retained. No roots or regular paradigms were invented. Plain aa and kaaṭ-u retain their printed lack of a leading dash. Source –laam and other en-dash-led suffixes retain literal punctuation. Distinct kooci/koocci and uḷantaari/ulantaaricci remain occurrence-specific. The English typo “calling a bor” remains explicit and uncertain; the source's malformed quote/comma typography is preserved in audit.
+
+Private font dotbelow/tilde marks have literal Unicode shape encodings. Eleven source-drawn lowlines, including full nn spans, are preserved with U+0332. `scope/native-text-crosscheck.json` finds all 208 records in their original lines after documented font decoding; that is owner evidence, not independent acceptance. Form and Original preserve written doubled vowels and glyphs with conversion disabled; Native and Phonemic are blank. The actual generic parser retains all 15 source fields for every 154 proposed row under NFC and NFD. Four focused tests cover counts/key closure, source typography and occurrence distinctions, morphology/whole clauses, and the actual parser.
+
+Existing Mannan and Malayalam registry routes are proposed; no new base, village dialect or coordinates are needed. Nair's possible Malayalam-dialect classification stays an attributed claim, not a registry merge. No ancestry/borrowing/variant edges are proposed from sound correspondences. His tentative kaaṭ-u/-kaḷ relationship is an attributed Etymology claim with its unlocated comparator held in audit. Annie Joseph's 1980 Devikolam thesis is a reported auxiliary authority, not independently collated.
+
+`review-freeze.json` pins the source readings, outputs, metadata proposals and evidence. Independent original/output review, root acceptance, guarded canonical installation and canonical SourceMeta/parser checks remain pending. Full CLDF/full tests, compiled identity/reference/graph checks, database/browser QA and publication are explicitly deferred. This is not complete ingestion.
+
+## Reviewed metadata revision
+
+The complete independent original review covered all 140 groups, 208 witness records, 154 actual rows and 11 lowline vectors with no literal or scope corrections. Root's first sample passed all 20 literals/glosses but found five sampled kinship tag omissions. `revision1/` preserves that exact failed freeze and its scripts, outputs, root report and historical test source.
+
+`apply_metadata_review.py` validates the independent report and every exact prior tag/form before applying 19 keyed additions (11 kinship, seven non-past and one verb). The complete source class also adds kinship to the explicitly kinship-restricted –laam marker and two explicitly glossed daughter comparisons. `metadata-repair-continuity.json` proves exactly 22 Tags fields changed, all prior tags survived and every other field and ordered key remained unchanged. The immutable first reading is retained. Regeneration must run the historical literal exporter followed by this guarded metadata reconciler; the literal exporter alone is not the reviewed final route.
+
+Five focused checks and the actual NFC/NFD parser pass the repaired proposal. Independent fresh output acceptance and canonical source-stage installation remain pending; the full compiled/browser gates remain deferred as above.

@@ -1,0 +1,34 @@
+{
+  "status": "two explicit continuations joined; no separate fragment heads",
+  "input_sha256": "d6960e5336320d539b83be14010b57fdf4b0183640c21e2936d64649843aee5d",
+  "join_input_sha256": "fc8632961dbf4142cd9a925dd2cab9828b985cdbf7d19fde17a55287a3ab33f2",
+  "physical_atoms": 890,
+  "atomic_emissions": 888,
+  "title_atoms": 6,
+  "non_title_emissions": 882,
+  "all_physical_keys_accounted_once": true,
+  "joined_units": [
+    {
+      "emission_key": "grierson1906kui:p464:specimen40:line5:word7",
+      "physical_keys": [
+        "grierson1906kui:p464:specimen40:line5:word7",
+        "grierson1906kui:p464:specimen40:line6:word1"
+      ],
+      "form": "būdā-gāṭāndi"
+    },
+    {
+      "emission_key": "grierson1906kui:p464:specimen40:line7:word8",
+      "physical_keys": [
+        "grierson1906kui:p464:specimen40:line7:word8",
+        "grierson1906kui:p464:specimen40:line8:word1"
+      ],
+      "form": "vēñjā-nāi,"
+    }
+  ],
+  "outputs": {
+    "atomic-emissions-reviewed.jsonl": "794f83f01fd09711b543a0aee03f06a0058a0049ca4a1b2fd0b632b5446d3aef",
+    "atomic-emission-accounting.jsonl": "468c393346f4f83472c3407ed98fef389cdad7e1f93944d37f0f64b188f93314"
+  },
+  "parser_fixture_note": "Earlier1225-row fixture tested890 physical atoms plus258table and77expression candidates; not final lexical inventory. Use888atomic emissions in integrated export.",
+  "canonical_changes": false
+}

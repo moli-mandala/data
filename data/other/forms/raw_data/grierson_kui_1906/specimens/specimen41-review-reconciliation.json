@@ -1,0 +1,68 @@
+{
+  "status": "all890 atoms independently reviewed and reconciled; final output/metadata and expression audit pending",
+  "inputs": {
+    "interlinear-specimens40_42_43-reviewed.jsonl": "97230e4f43cfe65165be9102cdd686ce44d61b275989d736eee73fa369c999a4",
+    "independent-specimen41-full-review-20260927.json": "9ed667f404c959146096ce0e54ca7400299cfa7814109bb71965e2f20ab9f281"
+  },
+  "corrections": [
+    {
+      "source_unit_key": "grierson1906kui:p466:specimen41:line3:word7",
+      "field": "raw_source_form",
+      "before": "rāāni-kē",
+      "proposed_after": "raāni-kē",
+      "severity": "material_transcription",
+      "evidence": "Only the second a carries a macron. The first a is plain, independently visible in the full-resolution original crop.",
+      "original_pixel_clip": [
+        3030,
+        930,
+        4360,
+        1210
+      ],
+      "affected_expressions": [
+        "grierson1906kui:specimen41:expression7"
+      ]
+    },
+    {
+      "source_unit_key": "grierson1906kui:p466:specimen41:line3:word8",
+      "field": "raw_gloss",
+      "before": "staying-become.",
+      "proposed_after": "staying-became.",
+      "severity": "material_transcription",
+      "evidence": "Printed English is staying-became., with a, not o. Do not regularize the source tense.",
+      "original_pixel_clip": [
+        3030,
+        930,
+        4360,
+        1210
+      ],
+      "affected_expressions": [
+        "grierson1906kui:specimen41:expression7"
+      ]
+    },
+    {
+      "source_unit_key": "grierson1906kui:p466:specimen41:line18:word4",
+      "field": "raw_source_form",
+      "before": "Dāōkē",
+      "proposed_after": "Dāōke",
+      "severity": "material_transcription",
+      "evidence": "Final e has no upper quantity stroke. Macron over a and o remains explicit.",
+      "original_pixel_clip": [
+        2400,
+        5040,
+        2910,
+        5370
+      ],
+      "affected_expressions": [
+        "grierson1906kui:specimen41:expression19"
+      ]
+    }
+  ],
+  "original_key_equality": true,
+  "original_key_count": 890,
+  "outputs": {
+    "interlinear-reviewed.jsonl": "d6960e5336320d539b83be14010b57fdf4b0183640c21e2936d64649843aee5d",
+    "physical-lines-reviewed.jsonl": "b0668790b3fe151fdc1c63fcda239ba2a875cda61c28b83f5061af509eea1922",
+    "expression-spans-reviewed.jsonl": "a40817f15279ed8be6bf3c78841d4d7986bdc3caf36ca51d734cb2d3722d9bef"
+  },
+  "canonical_changes": false
+}

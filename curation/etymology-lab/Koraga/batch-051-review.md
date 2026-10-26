@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Koraga · Bhat 1971 Koraga records, 2026-09-25 · batch 051. Pending user review; autonomous research continues.
+
+| # | Koraga | Proposed etymology | Evidence |
+|---|---|---|---|
+| 36 | **elkade** ‘bone’ | Proposed reflex of [**DEDR 839**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=81) | DEDR 839 full article (p. 81) gives Kor. (M.) elkaḷi , (T.) elkade id. Bhat elkade “bone” is the same cited Koraga form and sense; its original dialect:Koraga:tappu:Tappu uncertain dialect tag is retained. The article is used as family classification, not an independent second attestation of Bhat. (1 record.) |
+| 37 | **elkiri** ‘to weep’ | Proposed reflex of [**DEDR 835**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=81) | DEDR 835 full article (p. 81) gives Kor. (O.) elkiri to weep. DED(S) 711. Bhat elkiri “to weep” is the same cited Koraga form and sense; its original dialect:Koraga:onti:Onti uncertain dialect tag is retained. The article is used as family classification, not an independent second attestation of Bhat. (1 record.) |
+| 38 | **elli** ‘where’ | Proposed reflex of [**DEDR 5151**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=465) | DEDR 5151 full article (p. 465) gives 5151 Ta. yā, yāvai what or which things; yāvum, yāvaiyum all, whole; yāvatu, yātu what; how; yāvatum even a little; yāvaṉ which man; yāvaḷ, yāraḷ which woman; yār, yāvar, ār, āvar what perso Bhat elli “where” matches Lindgren Koraga elli “where” in form and sense; this cross-source match is a candidate lead, with the full DEDR article defining the family. Both source identities and dialect tags are preserved. (2 records.) |
+| 39 | **ēnɨ** ‘I’ | Proposed reflex of [**DEDR 5160**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=468) | DEDR 5160 full article (p. 468) gives 5160 Ta. yāṉ, nāṉ ( obl. eṉ- ) I; yāṉmai egoism; eṉavaṉ one who is mine; eṉava mine (neut. pl. ). Ma. ñān ( obl. en- ) I. Ko. a·n ( obl. en-; e- with some relationship terms). To. o·n ( obl. Bhat ēnɨ “I” matches Lindgren Koraga ēnɨ “i” in form and sense; this cross-source match is a candidate lead, with the full DEDR article defining the family. Both source identities and dialect tags are preserved. (2 records.) |
+| 40 | **ēlɨ** ‘seven’ | Proposed reflex of [**DEDR 910**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=87) | DEDR 910 full article (p. 87) gives 910 Ta. ēr̤u seven; ēr̤mai id.; er̤u-patu seventy; er̤u-nūṟu 700; er̤umai seven successive births; er̤uvar seven persons; evv-ēr̤u seven each. Ma. ēr̤u seven; er̤u-patu seventy; er̤unnūṟu 70 Bhat ēlɨ “seven” matches Lindgren Koraga ēlɨ “seven” in form and sense; this cross-source match is a candidate lead, with the full DEDR article defining the family. Both source identities and dialect tags are preserved. (1 record.) |
+
+Proposed assignment rows: **7**. Affected records: **7**. Relation kinds: **reflex**. Multi-part responses retain their source order.
+
+Exact persistent IDs and complete source records: [batch-051.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Koraga/batch-051.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../koraga-bhat-20260925/research-holds.json). No new lexical material or donor nodes are introduced.

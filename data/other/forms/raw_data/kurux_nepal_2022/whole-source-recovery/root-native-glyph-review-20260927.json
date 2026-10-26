@@ -1,0 +1,34 @@
+{
+  "reviewer": "root",
+  "status": "two targeted legacy-font glyph mappings independently confirmed",
+  "source_pdf_sha256": "aedf47151ebea80852cb7ed66d085fc18310aa3f4d35e189c698b624f3cbef5a",
+  "method": "Viewed original PDF crops rendered at 12x, independently of the extracted Unicode value. This approves literal native-script recovery only, not a phonological conversion or the full narrative.",
+  "readings": [
+    {
+      "extracted_codepoint": "U+1CBB",
+      "printed_page": 64,
+      "pdf_page_index": 71,
+      "segment": 17,
+      "group": 6,
+      "crop_bbox": [359, 329, 393, 359],
+      "raw_extraction": "खे̣᲻",
+      "approved_replacement": "ड्ड",
+      "literal_recovered_token": "खे̣ड्ड",
+      "finding": "Two stacked unaspirated retroflex ड shapes. The crop supports ड्ड, not ढ्ढ. Preserve the separately printed underdot on the preceding cluster exactly; do not infer its phonological meaning."
+    },
+    {
+      "extracted_codepoint": "U+1BA2",
+      "printed_page": 65,
+      "pdf_page_index": 72,
+      "segment": 23,
+      "group": 4,
+      "crop_bbox": [263, 277, 301, 307],
+      "raw_extraction": "पेᮢस",
+      "approved_replacement": "त्र",
+      "literal_recovered_token": "पेत्रस",
+      "finding": "The original has the त्र conjunct between पे and स. Preserve that printed conjunct without phonological reinterpretation."
+    }
+  ],
+  "canonical_changed": false,
+  "remaining_gate": "Reconcile all narrative glyph mappings and compare final emitted native strings against original pages."
+}

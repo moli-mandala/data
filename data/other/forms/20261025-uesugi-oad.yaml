@@ -1,0 +1,24 @@
+file: 20261025-uesugi-oad.csv
+defaults:
+  transcription:
+    profile: uesugi-oad
+  identity:
+    legacy_ids: stem
+    append_order: 113
+  importer:
+    commands:
+      - [data/other/forms/raw_data/uesugi_oad_2024/import_source.py, --install]
+    note: >-
+      Needs the publisher PDF B542_AAL67_OldAvestan.pdf (CC BY 4.0, not redistributed;
+      --pdf or OAD_PDF). Part I lemmata only; attestations, F pointers and stem headings
+      are audit-only.
+sources:
+  uesugi-catt2024oad:
+    identity:
+      dedupe_by_entry_key: true
+    forms:
+      split_alternates: false
+    reference:
+      editor: Aryaman Arora and Anthropic
+      ocr: false
+      etymology_provenance: source

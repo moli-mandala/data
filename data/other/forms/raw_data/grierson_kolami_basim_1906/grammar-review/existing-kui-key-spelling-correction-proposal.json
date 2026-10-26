@@ -1,0 +1,80 @@
+{
+  "status": "Exact old-key correction proposal; no canonical mutation or activated importer change",
+  "source_csv": "data/data/other/forms/20260927-grierson-kui.csv",
+  "source_csv_sha256": "b3869cae1a515ae745f00e99edb9344c73939f54a941fc7a9dc241f4c4b8a133",
+  "row_number": 1777,
+  "entry_key": "grierson1906kui:p566:outside-comparand:06",
+  "old_row": [
+    "Kolami",
+    "",
+    "and",
+    "he",
+    "",
+    "",
+    "He supplied by immediately surrounding pronoun comparison; source labels the preceding-to-this derivation as must be derived, not independently established here. Source language label: Kolami.",
+    "grierson1906kui[p. 566, outside comparative occurrence 06]",
+    "",
+    "",
+    "grierson1906kui:p566:outside-comparand:06",
+    "",
+    "",
+    "",
+    "pron 3sg"
+  ],
+  "proposed_row": [
+    "Kolami",
+    "",
+    "amd",
+    "he",
+    "",
+    "",
+    "He supplied by immediately surrounding pronoun comparison; source labels the preceding-to-this derivation as must be derived, not independently established here. Source language label: Kolami.",
+    "grierson1906kui[p. 566, outside comparative occurrence 06]",
+    "",
+    "",
+    "grierson1906kui:p566:outside-comparand:06",
+    "",
+    "",
+    "",
+    "pron 3sg"
+  ],
+  "changed_fields": [
+    {
+      "column": 2,
+      "field": "Form / literal transcription",
+      "old": "and",
+      "new": "amd"
+    }
+  ],
+  "evidence": {
+    "page": 566,
+    "rect": [
+      210,
+      780,
+      1550,
+      905
+    ],
+    "scale": 2,
+    "source": "data/data/other/forms/raw_data/grierson_kolami_basim_1906/independent-grammar-review/original-controls/printed-566-top.png",
+    "source_sha256": "3c9c296c9b47f5c4210354acbdb03b26c4d1470c4c5b5bd598599813b7a0f0f3",
+    "crop": "tmp/jambu-next-source/kolami-grammar-original-controls/p566-kolami-amd-avnd-owner-control.png",
+    "crop_sha256": "25521380c1e3f9361fe68c88b11ce83ce04e430556cca3f79e3c629bc45f78d7"
+  },
+  "adjudication": "Printed m has two shoulders; source hypothetical avnd retains plain n. Same physical occurrence as new chapter inventory, different old transcription.",
+  "new_chapter_witness_key": "grierson1906kolamibasim:p566:pronunciation-n-nd-d:1:independent:w10",
+  "accounting": "Same-occurrence reuse pending reviewed canonical spelling addendum, never exact-spelling reuse at current baseline; do not emit a duplicate chapter key.",
+  "importer_recovery_plan": {
+    "required": "A separately approved Kui correction addendum routed through its existing guarded coordinator, preserving previous installer/frozen candidate history.",
+    "guards": [
+      "Current15fieldoldrow exact",
+      "CurrentCSVhash",
+      "Rootapproval ofamdwith crop hash",
+      "Existingdurableentrykey unchanged",
+      "All other1831rows and all14other fields unchanged",
+      "Repeat canonical import retains the approved correction instead of restoring historicaland"
+    ],
+    "canonical_writes": false,
+    "current_scripts_unchanged": true
+  },
+  "accepted_for_installation": false
+}

@@ -1,0 +1,19 @@
+earlier,later,earlier_rule,later_rule,i,j,delta_ned,words
+@s-h,@h-loss @h-loss,{ś ṣ s} Stop > h $2,h > ∅ / # _,9,10,0.00284,10
+@r-vocalic @r-vocalic,@hiatus @hiatus,r̩ > i,{a i} > ∅ / _ V,7,14,0.00463,19
+@s-h,@hiatus @hiatus,{ś ṣ s} Stop > h $2,{a i} > ∅ / _ V,9,14,0.00284,21
+@int-stop-loss @v-loss @h-loss,@hiatus @hiatus,{k g t d c j y v h b} > ∅ / V _ V,{a i} > ∅ / _ V,13,14,0.01972,18
+@r-vocalic @r-vocalic,@cluster-simplify @degem-plain @cluster-simplify @degem-plain,r̩ > i,Stop Stop > $2,7,15,0.00463,13
+@s-h,@cluster-simplify @degem-plain @cluster-simplify @degem-plain,{ś ṣ s} Stop > h $2,Stop Stop > $2,9,15,0.00284,13
+@flap @int-retroflex @int-retroflex @flap,@cluster-simplify @degem-plain @cluster-simplify @degem-plain,{ṭ ḍ} > r / V _ V,Stop Stop > $2,12,15,0.0037,11
+@int-stop-loss @v-loss @h-loss,@cluster-simplify @degem-plain @cluster-simplify @degem-plain,{k g t d c j y v h b} > ∅ / V _ V,Stop Stop > $2,13,15,0.01111,24
+@r-vocalic @r-vocalic,@cluster-simplify @cluster-simplify,r̩ > i,C {y v} > $1,7,17,0.00172,15
+@s-h,@cluster-simplify @cluster-simplify,{ś ṣ s} Stop > h $2,C {y v} > $1,9,17,0.00172,16
+@flap @int-retroflex @int-retroflex @flap,@cluster-simplify @cluster-simplify,{ṭ ḍ} > r / V _ V,C {y v} > $1,12,17,0.00172,16
+@int-stop-loss @v-loss @h-loss,@cluster-simplify @cluster-simplify,{k g t d c j y v h b} > ∅ / V _ V,C {y v} > $1,13,17,0.00172,33
+@final-cons-loss @final-cons-loss,@final-vowel-loss,ḣ > ∅,V > ∅ / C _ # // C n _,4,19,0.00278,62
+@r-vocalic @r-vocalic,@final-vowel-loss,r̩ > i,V > ∅ / C _ # // C n _,7,19,0.00463,65
+@s-h,@final-vowel-loss,{ś ṣ s} Stop > h $2,V > ∅ / C _ # // C n _,9,19,0.00284,64
+@int-stop-loss @v-loss @h-loss,@final-vowel-loss,{k g t d c j y v h b} > ∅ / V _ V,V > ∅ / C _ # // C n _,13,19,0.00897,65
+@hiatus @hiatus,@final-vowel-loss,{a i} > ∅ / _ V,V > ∅ / C _ # // C n _,14,19,0.00222,62
+@assim-r @cluster-simplify @cluster-simplify @assim-r,@final-vowel-loss,r > ∅ / V _ C,V > ∅ / C _ # // C n _,16,19,0.00167,61

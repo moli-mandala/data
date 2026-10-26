@@ -1,0 +1,390 @@
+{
+  "status": "complete independent grammar tag proposal; owner/root output reconciliation required",
+  "input_path": "data/data/other/forms/raw_data/grierson_kolami_basim_1906/grammar-review/reviewed-child-witnesses.jsonl",
+  "input_sha256": "ce78a459c1102d2b6e6376ea953f23dae4ebf9a5888daa63c9c72eae38c59ed2",
+  "registered_tags_sha256": "26dc8078ec8e1446e9073af4eb234dc5b4a40debbda0742d6ece9907541d3b1a",
+  "all224keys_exact": true,
+  "counts": {
+    "source-morphological-element": 33,
+    "lexical-form": 174,
+    "whole-noun-phrase": 5,
+    "documentary-symbol": 10,
+    "documentary-hypothesis": 1,
+    "quoted-embedded-analysis-component": 1
+  },
+  "tag_usage": {
+    "affix": 31,
+    "suffix": 27,
+    "pl": 50,
+    "noun": 19,
+    "dat": 14,
+    "uncertain": 8,
+    "acc": 3,
+    "gen": 7,
+    "loc": 3,
+    "multiword-expression": 8,
+    "num": 23,
+    "m": 28,
+    "pron": 59,
+    "personal": 41,
+    "1sg": 22,
+    "sg": 78,
+    "first-person": 31,
+    "obj": 9,
+    "poss": 17,
+    "1pl": 9,
+    "2sg": 15,
+    "second-person": 24,
+    "2pl": 9,
+    "3sg": 38,
+    "third-person": 49,
+    "n": 15,
+    "3pl": 10,
+    "demonstrative": 6,
+    "interr": 5,
+    "verb": 66,
+    "copula": 23,
+    "pres": 25,
+    "pret": 34,
+    "fut": 10,
+    "impv": 4,
+    "neg": 13,
+    "nominalizer": 1,
+    "participle": 10,
+    "conjunctive-participle": 9,
+    "f": 2,
+    "part": 1,
+    "negator": 1
+  },
+  "typed_metadata_cases": [
+    {
+      "witness_key": "grierson1906kolamibasim:p562:noun-plural:1:independent:w12",
+      "physical_parent_key": "grierson1906kolamibasim:p562:noun-plural:1",
+      "exact_before_guard": {
+        "form": "ur",
+        "gloss": "",
+        "language_label": "Kolami",
+        "printed_label": "plural suffix"
+      },
+      "proposed_tags": [
+        "affix",
+        "suffix",
+        "pl",
+        "uncertain"
+      ],
+      "source_scope_rationale": "Source explicitly calls this a plural suffix or its directly labelled plural comparator.",
+      "interpretation_class": "source-morphological-element",
+      "typed_metadata_uncertainties": [
+        {
+          "type": "source-analysis",
+          "detail": "Source says apparently ur/r; retain qualified segmentation, not a certain standalone stem."
+        }
+      ],
+      "original_literal_uncertainties_retained": [],
+      "original_evidence": {
+        "printed_page": 562,
+        "image": "tmp/jambu-next-source/basim-identity-originals/printed-562.png",
+        "image_sha256": "d28d40354420cda921e9c029a6b5633cc3b83a1ac76a06b8062238426385d82f"
+      },
+      "source_gloss_unchanged": true,
+      "accepted_for_installation": false
+    },
+    {
+      "witness_key": "grierson1906kolamibasim:p562:noun-plural:1:independent:w13",
+      "physical_parent_key": "grierson1906kolamibasim:p562:noun-plural:1",
+      "exact_before_guard": {
+        "form": "r",
+        "gloss": "",
+        "language_label": "Kolami",
+        "printed_label": "plural suffix"
+      },
+      "proposed_tags": [
+        "affix",
+        "suffix",
+        "pl",
+        "uncertain"
+      ],
+      "source_scope_rationale": "Source explicitly calls this a plural suffix or its directly labelled plural comparator.",
+      "interpretation_class": "source-morphological-element",
+      "typed_metadata_uncertainties": [
+        {
+          "type": "source-analysis",
+          "detail": "Source says apparently ur/r; retain qualified segmentation, not a certain standalone stem."
+        }
+      ],
+      "original_literal_uncertainties_retained": [],
+      "original_evidence": {
+        "printed_page": 562,
+        "image": "tmp/jambu-next-source/basim-identity-originals/printed-562.png",
+        "image_sha256": "d28d40354420cda921e9c029a6b5633cc3b83a1ac76a06b8062238426385d82f"
+      },
+      "source_gloss_unchanged": true,
+      "accepted_for_installation": false
+    },
+    {
+      "witness_key": "grierson1906kolamibasim:p563:finite-verbs:1:independent:w10",
+      "physical_parent_key": "grierson1906kolamibasim:p563:finite-verbs:1",
+      "exact_before_guard": {
+        "form": "d",
+        "gloss": "",
+        "language_label": "Kolami",
+        "printed_label": "another future form seems to add d"
+      },
+      "proposed_tags": [
+        "affix",
+        "fut",
+        "uncertain"
+      ],
+      "source_scope_rationale": "Source says another future seems to add d; tentative morphological element, not lexical verb or proven suffix location.",
+      "interpretation_class": "source-morphological-element",
+      "typed_metadata_uncertainties": [
+        {
+          "type": "source-analysis",
+          "detail": "Source's seems-to-add-d qualification retained."
+        }
+      ],
+      "original_literal_uncertainties_retained": [],
+      "original_evidence": {
+        "printed_page": 563,
+        "image": "tmp/jambu-next-source/basim-identity-originals/printed-563.png",
+        "image_sha256": "6b2e6f2174ae1ba39ad30edf15d2b8e9c872b0ecea3b42335a7ddbb6b3016cce"
+      },
+      "source_gloss_unchanged": true,
+      "accepted_for_installation": false
+    },
+    {
+      "witness_key": "grierson1906kolamibasim:p563:negative:1:independent:w3",
+      "physical_parent_key": "grierson1906kolamibasim:p563:negative:1",
+      "exact_before_guard": {
+        "form": "si-tōten",
+        "gloss": "(thou) gavest not, (he) gave not",
+        "language_label": "Kolami",
+        "printed_label": "negative example"
+      },
+      "proposed_tags": [
+        "verb",
+        "neg",
+        "pret",
+        "sg"
+      ],
+      "source_scope_rationale": "Printed negative finite example and explicit past English translation; source person scopes kept separately.",
+      "interpretation_class": "lexical-form",
+      "typed_metadata_uncertainties": [
+        {
+          "type": "source-interpretation-scope",
+          "detail": "One form given with thou/he alternatives; retain shared singular, withhold conflicting person and gender."
+        }
+      ],
+      "original_literal_uncertainties_retained": [],
+      "original_evidence": {
+        "printed_page": 563,
+        "image": "tmp/jambu-next-source/basim-identity-originals/printed-563.png",
+        "image_sha256": "6b2e6f2174ae1ba39ad30edf15d2b8e9c872b0ecea3b42335a7ddbb6b3016cce"
+      },
+      "source_gloss_unchanged": true,
+      "accepted_for_installation": false
+    },
+    {
+      "witness_key": "grierson1906kolamibasim:p563:verbal-nouns:1:independent:w1",
+      "physical_parent_key": "grierson1906kolamibasim:p563:verbal-nouns:1",
+      "exact_before_guard": {
+        "form": "enet-lāṅg",
+        "gloss": "saying-of-worthy",
+        "language_label": "Kolami",
+        "printed_label": "base seems used as verbal noun"
+      },
+      "proposed_tags": [
+        "noun",
+        "uncertain"
+      ],
+      "source_scope_rationale": "Source says base seems used as verbal noun; preserve tentative nominal analysis, no inf/participle inferred from English.",
+      "interpretation_class": "lexical-form",
+      "typed_metadata_uncertainties": [
+        {
+          "type": "source-analysis",
+          "detail": "Source verbal-noun interpretation is explicitly qualified by seems."
+        }
+      ],
+      "original_literal_uncertainties_retained": [],
+      "original_evidence": {
+        "printed_page": 563,
+        "image": "tmp/jambu-next-source/basim-identity-originals/printed-563.png",
+        "image_sha256": "6b2e6f2174ae1ba39ad30edf15d2b8e9c872b0ecea3b42335a7ddbb6b3016cce"
+      },
+      "source_gloss_unchanged": true,
+      "accepted_for_installation": false
+    },
+    {
+      "witness_key": "grierson1906kolamibasim:p563:verbal-nouns:1:independent:w2",
+      "physical_parent_key": "grierson1906kolamibasim:p563:verbal-nouns:1",
+      "exact_before_guard": {
+        "form": "kāk-eṅg",
+        "gloss": "in order to do",
+        "language_label": "Kolami",
+        "printed_label": "base seems used as verbal noun"
+      },
+      "proposed_tags": [
+        "noun",
+        "uncertain"
+      ],
+      "source_scope_rationale": "Source says base seems used as verbal noun; preserve tentative nominal analysis, no inf/participle inferred from English.",
+      "interpretation_class": "lexical-form",
+      "typed_metadata_uncertainties": [
+        {
+          "type": "source-analysis",
+          "detail": "Source verbal-noun interpretation is explicitly qualified by seems."
+        }
+      ],
+      "original_literal_uncertainties_retained": [],
+      "original_evidence": {
+        "printed_page": 563,
+        "image": "tmp/jambu-next-source/basim-identity-originals/printed-563.png",
+        "image_sha256": "6b2e6f2174ae1ba39ad30edf15d2b8e9c872b0ecea3b42335a7ddbb6b3016cce"
+      },
+      "source_gloss_unchanged": true,
+      "accepted_for_installation": false
+    },
+    {
+      "witness_key": "grierson1906kolamibasim:p566:present-copula:3:independent:w1",
+      "physical_parent_key": "grierson1906kolamibasim:p566:present-copula:3",
+      "exact_before_guard": {
+        "form": "āṇḍān",
+        "gloss": "",
+        "language_label": "Basim / so-called Bhili",
+        "printed_label": "Sing. 2. m. present verb substantive"
+      },
+      "proposed_tags": [
+        "verb",
+        "copula",
+        "pres",
+        "sg",
+        "m",
+        "uncertain"
+      ],
+      "source_scope_rationale": "Complete present verb-substantive forms, not isolated affixes.",
+      "interpretation_class": "lexical-form",
+      "typed_metadata_uncertainties": [
+        {
+          "type": "source-numbering",
+          "detail": "Printed Sing.2.m. duplicates previous 2 and precedes3.n.; withhold both2sg and3sg, no silent correction."
+        }
+      ],
+      "original_literal_uncertainties_retained": [
+        {
+          "type": "source-numbering",
+          "detail": "Printed 2.m. conflicts with previous2 and following3.n.; no silent person correction"
+        }
+      ],
+      "original_evidence": {
+        "printed_page": 566,
+        "image": "tmp/jambu-next-source/basim-identity-originals/printed-566.png",
+        "image_sha256": "0a98bba14cdc76224d6ac3c17184fe3699413259652c5350740cbde19e62b395"
+      },
+      "source_gloss_unchanged": true,
+      "accepted_for_installation": false
+    },
+    {
+      "witness_key": "grierson1906kolamibasim:p566:past-copula:1:independent:w3",
+      "physical_parent_key": "grierson1906kolamibasim:p566:past-copula:1",
+      "exact_before_guard": {
+        "form": "tiktānden",
+        "gloss": "he was dead",
+        "language_label": "Basim / so-called Bhili",
+        "printed_label": "past context"
+      },
+      "proposed_tags": [
+        "uncertain"
+      ],
+      "source_scope_rationale": "Printed 'he was dead' is alternatively analyzed by the author as perhaps an agency noun 'one who is dead'; no confident verb/noun POS or intrinsic tense tag.",
+      "interpretation_class": "lexical-form",
+      "typed_metadata_uncertainties": [
+        {
+          "type": "source-analysis",
+          "detail": "Source offers conflicting finite-past versus agent-noun analyses; preserve both in Notes, do not infer a derivation."
+        }
+      ],
+      "original_literal_uncertainties_retained": [],
+      "original_evidence": {
+        "printed_page": 566,
+        "image": "tmp/jambu-next-source/basim-identity-originals/printed-566.png",
+        "image_sha256": "0a98bba14cdc76224d6ac3c17184fe3699413259652c5350740cbde19e62b395"
+      },
+      "source_gloss_unchanged": true,
+      "accepted_for_installation": false
+    },
+    {
+      "witness_key": "grierson1906kolamibasim:p566:past-copula:1:independent:w4",
+      "physical_parent_key": "grierson1906kolamibasim:p566:past-copula:1",
+      "exact_before_guard": {
+        "form": "anden",
+        "gloss": "",
+        "language_label": "Basim / so-called Bhili",
+        "printed_label": "seems contained for aṇḍen"
+      },
+      "proposed_tags": [
+        "uncertain"
+      ],
+      "source_scope_rationale": "Author says anden seems contained for aṇḍen; quoted embedded component, not independently attested lexical stem.",
+      "interpretation_class": "quoted-embedded-analysis-component",
+      "typed_metadata_uncertainties": [
+        {
+          "type": "source-analysis",
+          "detail": "Proposed contained copula versus alternative agency-noun analysis is tentative."
+        }
+      ],
+      "original_literal_uncertainties_retained": [],
+      "original_evidence": {
+        "printed_page": 566,
+        "image": "tmp/jambu-next-source/basim-identity-originals/printed-566.png",
+        "image_sha256": "0a98bba14cdc76224d6ac3c17184fe3699413259652c5350740cbde19e62b395"
+      },
+      "source_gloss_unchanged": true,
+      "accepted_for_installation": false
+    },
+    {
+      "witness_key": "grierson1906kolamibasim:p567:negative:1:independent:w5",
+      "physical_parent_key": "grierson1906kolamibasim:p567:negative:1",
+      "exact_before_guard": {
+        "form": "sīyōṅg-tōdā",
+        "gloss": "thou gavest-not, he gave-not",
+        "language_label": "Basim / so-called Bhili",
+        "printed_label": "negative example"
+      },
+      "proposed_tags": [
+        "verb",
+        "neg",
+        "pret",
+        "sg"
+      ],
+      "source_scope_rationale": "Printed negative finite example; source says formed without tense suffixes, so pret denotes its explicit translated past use, not a claimed tense marker.",
+      "interpretation_class": "lexical-form",
+      "typed_metadata_uncertainties": [
+        {
+          "type": "source-interpretation-scope",
+          "detail": "Same negative form receives thou/he alternatives; no forced unique person or gender."
+        }
+      ],
+      "original_literal_uncertainties_retained": [],
+      "original_evidence": {
+        "printed_page": 567,
+        "image": "tmp/jambu-next-source/basim-identity-originals/printed-567.png",
+        "image_sha256": "8a26513c678c620e5edcfae3e33dd6f7135dc74f2c72c8c5b18479f93a1cf01d"
+      },
+      "source_gloss_unchanged": true,
+      "accepted_for_installation": false
+    }
+  ],
+  "output_sha256": "b63f855c1e5753edac98a2c561e81e3e73ebdd8fab5e529d6fcf7775b7f5cfd2",
+  "explicit_policies": [
+    "No new canonical tags or shared code changes.",
+    "No generic scanning of contextual prose; decisions scoped to reviewed source parent/rank.",
+    "Pure person/TAM table labels remain blank lexical Gloss and become Tags.",
+    "Isolated morphology never receives lexical verb/noun POS.",
+    "Printed2.m. retains masculine singular/present/copula plus typed conflict, withholds2sg and3sg.",
+    "Shared thou/he forms keep common singular only, conflicting person/gender interpretations retained as typed alternatives.",
+    "Quoted symbols and unstarred hypothetical avnd stay documentary.",
+    "Person/number on complete examples describes source glossed use, not an invented suffix analysis.",
+    "No sentential inference from physical line segmentation; multiword examples retain only multiword-expression unless separately source-boundary reviewed."
+  ],
+  "canonical_changes": false
+}

@@ -1,0 +1,22 @@
+file: combined-review-candidate.csv
+defaults:
+  transcription:
+    profile: grierson-ahirwati-1908-literal-preliminary
+    input: form
+    preserve_hyphens: true
+  identity:
+    dedupe_by_entry_key: true
+  forms:
+    split_alternates: false
+  gloss:
+    grammar_tags: false
+sources:
+  grierson1908ahirwati:
+    reference:
+      editor: OpenAI Codex
+      ocr: false
+      etymology_provenance: source
+    forms:
+      split_alternates: false
+    gloss:
+      grammar_tags: false

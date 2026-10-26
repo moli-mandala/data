@@ -1,0 +1,12 @@
+# Dotyali: survey etymology review, batch 112
+
+**Saved under the autonomous-work authorization of 2026-09-21.** 2 proposals; exact IDs and source attestations are in the [manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Dotyali/batch-112.json).
+
+| # | Language form and meaning | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **kʰolā** ‘small river’, **kʰolo** ‘small river’ | Reflex of **\*kʰōla**; [CDIAL 3943](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=210) | Turner \*khola cavity/hollow explicitly gives Nepali kholo small river/valley and Churahi khoḷ stream in the first branch. The Nepal survey khola/kholo forms match this river-valley family, not the geminate \*kholla hollow adjective or \*khola cap homonym. (4 records.) |
+| 2 | **jāḍi** ‘cold (weather)’ | Reflex of **jā́ḍya**; [CDIAL 5180](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=285);[CDIAL 5090](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=281) | Turner jāḍya explicitly gives Nepali jāṛo and Bengali/Bhojpuri jāṛ as coldness/winter, with Hindi jāṛā. These weather-cold responses are compared with that coldness noun family; the related jaḍa/\*jaḍḍa adjectives overlap formally, so this is a sense-based choice rather than an exclusive phonological proof. (2 records.) |
+
+6 assignment rows on 6 records. Relation kinds: {'reflex': 6}.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-surveys-20260921/pass099-validation.json). No compiled or browser rebuild. Excluded and competing analyses are tracked in the [run review](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-surveys-20260921/REVIEW.md).

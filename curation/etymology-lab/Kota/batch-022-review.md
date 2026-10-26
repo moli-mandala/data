@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Kota · Dravidian surveys, 2026-09-21 · batch 022. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Kota | Proposed etymology | Evidence |
+|---|---|---|---|
+| 106 | **nar** ‘rope’ | Proposed reflex of [**DEDR 3651**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=322) | DEDR3651 explicitly gives Kota nār thin rope. Survey nar rope is the same-language fibre/rope noun, retaining the unmarked vowel length of the source. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 107 | **gelusum** ‘potato’ | Proposed reflex of [**DEDR 1578**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=145) | DEDR1578 gives Tamil kiẓaṅku esculent/bulbous root, explicitly including potato, and Kannada geṇasu/geẓasu, Tulu kereṅg- and related tuber names. These bare survey kaŋgɨ/kalaŋgɨ/gelusum/ghāśu potato responses compare with that root/tuber family. Botanical application to potato is retained, without equating potato and yam as species. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 108 | **au** ‘mother’ | Proposed reflex of [**DEDR 273**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=25) | DEDR273 explicitly gives Kota av and Toda af/afuf mother, alongside Kannada avva. Survey Badaga həvvə, Kota au and Toda avopʰ mother preserve corresponding Nilgiri maternal forms and their source labial/aspirated notation. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 109 | **ain** ‘father’ | Proposed reflex of [**DEDR 196**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=19) | DEDR196(a) explicitly gives Tamil/Malayalam ayya(n), Kota ayṇ and Toda eyi· father. These survey ayya/ain/eieiye father forms compare with the paternal noun, not subsection(b) interjections. Retain the article’s questioned comparison with Indo-Aryan ārya-/ayya-, without asserting an immediate borrowing route. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 110 | **sinum** ‘gold’ | Proposed reflex of [**DEDR 2596**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=225) | DEDR2596 gives Tamil ciṉṉam gold coin, Kota cinm gold, Toda sin gold/ear-ring and Kannada/Tulu cinna gold. Survey Nilgiri/southern cinnā/śinnā/sīnnā/sinum forms retain this specific gold noun, including Kota final nasal expansion; no connection to the homonymous small adjective is proposed. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+
+Proposed assignment rows: **5**. Affected records: **5**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-022.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Kota/batch-022.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Ollari Gadaba · Bhattacharya 1957 Ollari Gadaba residual records, 2026-09-25 · batch 043. Pending user review; autonomous research continues.
+
+| # | Ollari Gadaba | Proposed etymology | Evidence |
+|---|---|---|---|
+| 171 | **polub** ‘village’ | Proposed reflex of [**DEDR 4303**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=380) | DEDR 4303 full article opens “4303 Ta. pulam arable land, rice field; place, region, quarter; pulaṉ, pulavu arable land; ? pulampaṉ chief or lord of a maritime tract [prob.…”; its Ga. (Oll.) passage gives “Ga. (Oll.) polub , (S.) pollūb id. DED(S) 3529.”. The source form and sense match this Ollari entry within the whole article. (1 record.) |
+| 172 | **bām** ‘snake’ | Proposed reflex of [**DEDR 4085**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=362) | DEDR 4085 full article opens “4085 Ta. pāmpu snake; pāppu , in: pāppuppakai Garuḍa, the enemy of serpents (cf. 3808); ( lex. ) pā snake. Ma. pāmpu id. Ko. pa·b id. To. po·b…”; its Ga. (Oll.) passage gives “Ga. (Oll.) bām , (S.) bāmu , (P.) bāmb id. / Cf. Pkt. ( DNM ) pāva- snake. DED(S) 3361.”. The source form and sense match this Ollari entry within the whole article. (1 record.) |
+| 173 | **berit** ‘big’ | Proposed reflex of [**DEDR 4411**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=389) | DEDR 4411 full article opens “4411 Ta. peru, perum, pēr great; peritu that which is great, big, large; greatly; periya large, great, elder, important; periyār, periyōr the…”; its Ga. (Oll.) passage gives “Ga. (Oll.) pernonḍ ( masc. ), berit ( fem. and neut. ) big; berpul tiger; (S) berbullū id.; (S. 2 ) beŋgiḍ much, more; beŋgurtul many; (P.) ber bereṭ big r”. The source form and sense match this Ollari entry within the whole article. (1 record.) |
+| 174 | **bere** ‘female calf’ | Proposed reflex of [**DEDR 3881**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=346) | DEDR 3881 full article opens “3881 Ka. paḍḍe maturity, fitness for breeding. Te. paḍḍa female buffalo or cow fit for breeding, ( VPK , communicated by K.) female buffalo…”; its Ga. (Oll.) passage gives “Ga. (Oll.) bere , (P.) beḍe/ beṛe female calf; (S. 3 ) beḍḍe peyye calf.”. The source form and sense match this Ollari entry within the whole article. (1 record.) |
+| 175 | **bod-** ‘to swell’ | Proposed reflex of [**DEDR 4505**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=398) | DEDR 4505 full article opens “4505 Ma. potirkka to soak, steep (as fibres, cloth); pūval dampness, moisture. Ka. (UNR) hudilu a marshy ground. Tu. boduluni, bodoluni to soak,…”; its Ga. (Oll.) passage gives “Ga. (Oll.) pondonḍi adj. wet; bod- to swell; (S.) pōc- to be soaked; pōdk- (pōdt-) to soak; (P.) pod- to be wet; podup- to make wet; (S. 3 ) pōd- to”. The source form and sense match this Ollari entry within the whole article. (1 record.) |
+
+Proposed assignment rows: **5**. Affected records: **5**. Relation kinds: **reflex**. Multi-part responses retain their source order.
+
+Exact persistent IDs and complete source records: [batch-043.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/OllariGadaba/batch-043.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../ollari-bhattacharya-20260925/research-holds.json). No new lexical material or donor nodes are introduced.

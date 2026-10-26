@@ -1,0 +1,9 @@
+# Betta Kurumba DravLex residual research, 2026-09-25
+
+All 66 original unetymologised `kolipakam2018dravlex` BettaKurumba records were assessed without editing source records. Forty-three records have pending review proposals (50 ordered rank-one assignment rows); 23 are explicit holds; zero remain unexamined. Eight review batches were rendered under `../BettaKurumba/`, with complete source records and exact IDs. No accepted sidecar has been saved.
+
+Candidate discovery used the actual homepage `fetchLemmaList` implementation against the existing read-only database: 66 form searches (106 rows), 37 comparative searches (2,076 rows), and 26 focused Betta/DEDR gloss searches (zero rows). One broad Tamil `vā` comparative query had 1,210 hits and returned the first 1,000; the relevant DEDR 5270 article was checked in full. The 50 complete DEDR article objects consulted are in `primary-evidence.json`. DravLex cognacy rows, compiled cognacy context, cross-pass proposals, and the independent SIL Betta Kurumba wordlist are retained separately as discovery/evidence files.
+
+High-value adjudications: both `naṇgə` and `yaṇgə` “we” are held because DEDR 5154 is exclusive and DEDR 3647 inclusive, while the DravLex gloss does not mark clusivity. The independent SIL list labels `jeŋgʌ` inclusive. Three source-loan-flagged words (`pikki`, `mardōg`, `būmi`) are held because their immediate donors remain unidentified. Multi-part responses preserve ordered components, including `gott uṇḍi`, `gottāg`, `bāṭṇu īr`, and `əddənu īr`.
+
+Canonical `make check-pass` (`PASS=bettakurumba-dravlex-001`) succeeded: 43 affected records, 50 assignment rows under 42 parent nodes, 93 first-application changes and zero second-application changes, with `dryRun=true`. The input hashes were stable during this check. Exact inventory and review-manifest agreement passed in `inventory-counts.json`. No accepted sidecar write, rebuild, importer, commit, push, or deployment was run.

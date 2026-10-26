@@ -117,9 +117,13 @@ def test_distinct_affricates_and_undefined_codes_are_not_conflated():
     assert convert('ghatage-western','čə cə ǰə jə')=='ca ʦa ja ʣa'  # palatal/dental affricates stay distinct as c/ʦ, j/ʣ
     assert convert('ghatage-western','aK aC laK')=='āK āC lāK'
     assert convert('ghatage-western','ka:ḷmi:ri')=='kāḷmīri'
-    assert convert('dadra-varli','DhOg')=='ḍhɔg'
+    # Ch is the aspirate in the Dadra transcription (DhOg, daRhi 'beard'); phul|har 'garland'
+    # keeps its compound boundary
+    assert convert('dadra-varli','DhOg')=='ḍʰɔg'
+    assert convert('dadra-varli','daRhi')=='daṛʰi'
+    assert convert('dadra-varli','hamhi phulhar')=='hamʰi pʰulhar'
     assert convert('dadra-varli','pã:c')=='pā̃c'
-    assert convert('dadra-varli','patOL phukoCO')=='patɔḷ phukoCɔ'
+    assert convert('dadra-varli','patOL phukoCO')=='patɔḷ pʰukoCɔ'
 
 def test_language_dialect_assignment_and_no_invented_map_points():
     dialects={r['Tag']:r for r in csv.DictReader((ROOT/'cldf/dialects.csv').open())}

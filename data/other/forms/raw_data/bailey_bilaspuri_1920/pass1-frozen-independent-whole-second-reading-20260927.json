@@ -1,0 +1,562 @@
+{
+  "status": "complete_independent_second_reading_corrections_pending_reconciliation",
+  "reviewer": "rohru_finish",
+  "method": "Independent original-image reading, printed page +26 one-based PDF; narrow crops for fine marks; first readings unchanged.",
+  "source": "tmp/pdfs/bailey1920/bailey1920.pdf",
+  "input_sha256": {
+    "whole-grammar-first-reading-20260927.tsv": "01a3ffd94a8fd1d20ff947a5bc5eac6385bdf9db1fd4c6d5acd7e6fffbe7b8b8",
+    "whole-sentences-first-reading-20260927.tsv": "78bf8532f0637b3d2334d178248541b9cf6692cf0e7cf1d416c75b418ecf5cbb",
+    "whole-context-controls-first-reading-20260927.tsv": "9a02adb8283ac0231b10a3bd9d70bb389cd53a1200d567d55a6617bfc9cc3dfb"
+  },
+  "coverage": [
+    {
+      "page": 231,
+      "grammar": 0,
+      "sentences": 0,
+      "context": 1,
+      "result": "pass"
+    },
+    {
+      "page": 232,
+      "grammar": 7,
+      "sentences": 0,
+      "context": 5,
+      "result": "pass; enlarged masculine plural agent e confirms macron+tilde stack"
+    },
+    {
+      "page": 233,
+      "grammar": 8,
+      "sentences": 0,
+      "context": 10,
+      "result": "two target corrections; future table otherwise agrees"
+    },
+    {
+      "page": 234,
+      "grammar": 0,
+      "sentences": 0,
+      "context": 8,
+      "result": "Western -ṛā corrected; Northern -īrā and Southern -ūrā plain r confirmed at8x"
+    },
+    {
+      "page": 235,
+      "grammar": 6,
+      "sentences": 0,
+      "context": 6,
+      "result": "horse paradigm agrees; Handuri insertion vowel correction; Handuri stative -ūrā plain r confirmed"
+    },
+    {
+      "page": 236,
+      "grammar": 35,
+      "sentences": 0,
+      "context": 0,
+      "result": "All noun and pronoun cells checked; 12 field corrections in nasal/quantity class. Agent tīhnī has separate damaged ink after punctuation; no added letter inferred."
+    },
+    {
+      "page": 237,
+      "grammar": 33,
+      "sentences": 0,
+      "context": 0,
+      "result": "All pronouns/pronominal adjectives/adjective examples/comparison read; one u/i correction. Narrow8x confirms ăpṇĕā̃ bhāyyā̃ nū̃ source marks."
+    },
+    {
+      "page": 238,
+      "grammar": 60,
+      "sentences": 0,
+      "context": 0,
+      "result": "Complete numeral/ordinal/time-adverb page checked. Two corrections; numeral47 mark uncertainty retained. Narrow crop confirms time părsū macron u."
+    },
+    {
+      "page": 239,
+      "grammar": 37,
+      "sentences": 0,
+      "context": 0,
+      "result": "Complete adverbs/prepositions/copula/fall paradigms checked. Future nasal/r underdots corrected in three fields. Narrow crop confirms conditional plural -īye."
+    },
+    {
+      "page": 240,
+      "grammar": 29,
+      "sentences": 0,
+      "context": 0,
+      "result": "Complete fall continuation/be/come/go/remain/sit paradigms checked; four stative ū corrections independently verified in narrow crops."
+    },
+    {
+      "page": 241,
+      "grammar": 27,
+      "sentences": 0,
+      "context": 0,
+      "result": "All verbs/passive agreement/ability examples checked. One stative ū correction. Narrow crop confirms leī jāṇā has plain first e; printed fut. plur. anomaly retained."
+    },
+    {
+      "page": 242,
+      "grammar": 12,
+      "sentences": 0,
+      "context": 0,
+      "result": "All complete expressions and morphology/commentary checked; four literal corrections. Original little example nasal stacks retained."
+    },
+    {
+      "page": 243,
+      "grammar": 0,
+      "sentences": 16,
+      "context": 0,
+      "result": "All16 complete expressions and full printed translations checked; eight literal corrections. Sentence2 final kēḍḍi plain i retained; sentence5 pătāhṇā plain t retained."
+    },
+    {
+      "page": 244,
+      "grammar": 3,
+      "sentences": 6,
+      "context": 0,
+      "result": "All final sentences and commentary checked; four field corrections. Sentence21 tŭsẽ retains single visible tilde, unlike stacked ē̃ in earlier paradigm. Compound-verb source claim retained as attribution."
+    }
+  ],
+  "corrections": [
+    {
+      "file": "whole-grammar-first-reading-20260927.tsv",
+      "page": "233",
+      "group": "intro-stative",
+      "item": "1",
+      "field": "singular_or_form",
+      "old": "-ādā",
+      "new": "-ūda",
+      "reason": "Original7x crop PDF259 Rect132,230,168,240: clear open ū with macron; final a lacks a flat macron. Root independently concurs; final small spur is not interpreted as phonological marking."
+    },
+    {
+      "file": "whole-grammar-first-reading-20260927.tsv",
+      "page": "233",
+      "group": "intro-ability",
+      "item": "2",
+      "field": "singular_or_form",
+      "old": "mēre nēh caul khāī hŭnde",
+      "new": "mēre nĕh caul khāī hŭnde",
+      "reason": "Original negative e bears a breve, not a macron."
+    },
+    {
+      "file": "whole-context-controls-first-reading-20260927.tsv",
+      "page": "234",
+      "unit": "western-future",
+      "field": "literal_forms_or_scope",
+      "old": "h; -rā",
+      "new": "h; -ṛā",
+      "reason": "Printed future ending r has a compact underdot."
+    },
+    {
+      "file": "whole-context-controls-first-reading-20260927.tsv",
+      "page": "235",
+      "unit": "handuri-future",
+      "field": "literal_forms_or_scope",
+      "old": "-gā; -ū̃; ṅ",
+      "new": "-gā; -ā̃; ṅ",
+      "reason": "Original6x crop shows closed a bowl with macron+tilde, not u; only Handuri control attribution."
+    },
+    {
+      "file": "whole-grammar-first-reading-20260927.tsv",
+      "page": "236",
+      "group": "first-person",
+      "item": "1",
+      "field": "singular_or_form",
+      "old": "haū",
+      "new": "haũ",
+      "reason": "Independent original PDF262 at6x, Rect25,300,300,523: haũ/maĩ each single tilde; sē plain macron; tīh series macron i contrasts with breve i in tĭs. No analogous harmonization."
+    },
+    {
+      "file": "whole-grammar-first-reading-20260927.tsv",
+      "page": "236",
+      "group": "first-person",
+      "item": "5",
+      "field": "singular_or_form",
+      "old": "maī",
+      "new": "maĩ",
+      "reason": "Independent original PDF262 at6x, Rect25,300,300,523: haũ/maĩ each single tilde; sē plain macron; tīh series macron i contrasts with breve i in tĭs. No analogous harmonization."
+    },
+    {
+      "file": "whole-grammar-first-reading-20260927.tsv",
+      "page": "236",
+      "group": "third-person",
+      "item": "1",
+      "field": "singular_or_form",
+      "old": "sē̃",
+      "new": "sē",
+      "reason": "Independent original PDF262 at6x, Rect25,300,300,523: haũ/maĩ each single tilde; sē plain macron; tīh series macron i contrasts with breve i in tĭs. No analogous harmonization."
+    },
+    {
+      "file": "whole-grammar-first-reading-20260927.tsv",
+      "page": "236",
+      "group": "third-person",
+      "item": "1",
+      "field": "plural",
+      "old": "sē̃",
+      "new": "sē",
+      "reason": "Independent original PDF262 at6x, Rect25,300,300,523: haũ/maĩ each single tilde; sē plain macron; tīh series macron i contrasts with breve i in tĭs. No analogous harmonization."
+    },
+    {
+      "file": "whole-grammar-first-reading-20260927.tsv",
+      "page": "236",
+      "group": "third-person",
+      "item": "2",
+      "field": "singular_or_form",
+      "old": "tĭh dā;tĭs dā",
+      "new": "tīh dā;tĭs dā",
+      "reason": "Independent original PDF262 at6x, Rect25,300,300,523: haũ/maĩ each single tilde; sē plain macron; tīh series macron i contrasts with breve i in tĭs. No analogous harmonization."
+    },
+    {
+      "file": "whole-grammar-first-reading-20260927.tsv",
+      "page": "236",
+      "group": "third-person",
+      "item": "2",
+      "field": "plural",
+      "old": "tĭhnā̃ dā",
+      "new": "tīhnā̃ dā",
+      "reason": "Independent original PDF262 at6x, Rect25,300,300,523: haũ/maĩ each single tilde; sē plain macron; tīh series macron i contrasts with breve i in tĭs. No analogous harmonization."
+    },
+    {
+      "file": "whole-grammar-first-reading-20260927.tsv",
+      "page": "236",
+      "group": "third-person",
+      "item": "3",
+      "field": "singular_or_form",
+      "old": "tĭh nū̃;tĭs nū̃",
+      "new": "tīh nū̃;tĭs nū̃",
+      "reason": "Independent original PDF262 at6x, Rect25,300,300,523: haũ/maĩ each single tilde; sē plain macron; tīh series macron i contrasts with breve i in tĭs. No analogous harmonization."
+    },
+    {
+      "file": "whole-grammar-first-reading-20260927.tsv",
+      "page": "236",
+      "group": "third-person",
+      "item": "3",
+      "field": "plural",
+      "old": "tĭhnā̃ nū̃",
+      "new": "tīhnā̃ nū̃",
+      "reason": "Independent original PDF262 at6x, Rect25,300,300,523: haũ/maĩ each single tilde; sē plain macron; tīh series macron i contrasts with breve i in tĭs. No analogous harmonization."
+    },
+    {
+      "file": "whole-grammar-first-reading-20260927.tsv",
+      "page": "236",
+      "group": "third-person",
+      "item": "4",
+      "field": "singular_or_form",
+      "old": "tĭh te;tĭs te",
+      "new": "tīh te;tĭs te",
+      "reason": "Independent original PDF262 at6x, Rect25,300,300,523: haũ/maĩ each single tilde; sē plain macron; tīh series macron i contrasts with breve i in tĭs. No analogous harmonization."
+    },
+    {
+      "file": "whole-grammar-first-reading-20260927.tsv",
+      "page": "236",
+      "group": "third-person",
+      "item": "4",
+      "field": "plural",
+      "old": "tĭhnā̃ te",
+      "new": "tīhnā̃ te",
+      "reason": "Independent original PDF262 at6x, Rect25,300,300,523: haũ/maĩ each single tilde; sē plain macron; tīh series macron i contrasts with breve i in tĭs. No analogous harmonization."
+    },
+    {
+      "file": "whole-grammar-first-reading-20260927.tsv",
+      "page": "236",
+      "group": "third-person",
+      "item": "5",
+      "field": "singular_or_form",
+      "old": "tĭhnī",
+      "new": "tīhnī",
+      "reason": "Independent original PDF262 at6x, Rect25,300,300,523: haũ/maĩ each single tilde; sē plain macron; tīh series macron i contrasts with breve i in tĭs. No analogous harmonization."
+    },
+    {
+      "file": "whole-grammar-first-reading-20260927.tsv",
+      "page": "236",
+      "group": "third-person",
+      "item": "5",
+      "field": "plural",
+      "old": "tĭhnē",
+      "new": "tīhnē",
+      "reason": "Independent original PDF262 at6x, Rect25,300,300,523: haũ/maĩ each single tilde; sē plain macron; tīh series macron i contrasts with breve i in tĭs. No analogous harmonization."
+    },
+    {
+      "file": "whole-grammar-first-reading-20260927.tsv",
+      "page": "237",
+      "group": "indefinite",
+      "item": "1",
+      "field": "singular_or_form",
+      "old": "kĭcch",
+      "new": "kŭcch",
+      "reason": "Original8x PDF263 Rect29,212,77,226 has u bowl/two strokes under breve, not i."
+    },
+    {
+      "file": "whole-grammar-first-reading-20260927.tsv",
+      "page": "238",
+      "group": "cardinal",
+      "item": "47",
+      "field": "singular_or_form",
+      "old": "sătāḷī",
+      "new": "saītāḷī",
+      "reason": "Printed extra i after sa is clear. Short irregular upper mark differs from deep U-shaped breve on same-page tĭnn; ī is provisional. Root independently confirms extra i but cannot securely distinguish macron/breve/tilde. Preserve typed glyph uncertainty; no confident phonological quantity claim. PDF264 Rect222,105,260,116 at8x.",
+      "typed_uncertainty": "transcription: extra i is secure; its compact upper mark is provisionally macron, but breve/tilde identity remains unresolved."
+    },
+    {
+      "file": "whole-grammar-first-reading-20260927.tsv",
+      "page": "238",
+      "group": "cardinal",
+      "item": "99",
+      "field": "singular_or_form",
+      "old": "nēṛŭnue",
+      "new": "nĕṛĭnue",
+      "reason": "PDF264 Rect222,314,272,325 at8x clearly has breve e and breve i, not macron e and u."
+    },
+    {
+      "file": "whole-grammar-first-reading-20260927.tsv",
+      "page": "239",
+      "group": "fall",
+      "item": "6",
+      "field": "singular_or_form",
+      "old": "rŭṛhăngrā;rŭṛhăngrī",
+      "new": "rŭṛhăṅgṛā;rŭṛhăṅgṛī",
+      "reason": "Original7x PDF265 Rect18,450,294,485: dotted ṅ and underdotted ṛ clearly printed in full future forms; short future also has dotted ṅ."
+    },
+    {
+      "file": "whole-grammar-first-reading-20260927.tsv",
+      "page": "239",
+      "group": "fall",
+      "item": "6",
+      "field": "plural",
+      "old": "rŭṛhăngre;rŭṛhăngrīā̃",
+      "new": "rŭṛhăṅgṛe;rŭṛhăṅgṛīā̃",
+      "reason": "Original7x PDF265 Rect18,450,294,485: dotted ṅ and underdotted ṛ clearly printed in full future forms; short future also has dotted ṅ."
+    },
+    {
+      "file": "whole-grammar-first-reading-20260927.tsv",
+      "page": "239",
+      "group": "fall",
+      "item": "7",
+      "field": "singular_or_form",
+      "old": "rŭṛhăng",
+      "new": "rŭṛhăṅg",
+      "reason": "Original7x PDF265 Rect18,450,294,485: dotted ṅ and underdotted ṛ clearly printed in full future forms; short future also has dotted ṅ."
+    },
+    {
+      "file": "whole-grammar-first-reading-20260927.tsv",
+      "page": "240",
+      "group": "fall",
+      "item": "15",
+      "field": "singular_or_form",
+      "old": "rŭṛhādā",
+      "new": "rŭṛhūdā",
+      "reason": "Original7x PDF266 Rect95,178,147,188 clearly shows open ū with flat macron, followed by dā. Each occurrence independently cropped; not analogy. Fall confirms parent targeted reading."
+    },
+    {
+      "file": "whole-grammar-first-reading-20260927.tsv",
+      "page": "240",
+      "group": "be",
+      "item": "6",
+      "field": "singular_or_form",
+      "old": "hōādā",
+      "new": "hōūdā",
+      "reason": "Original7x PDF266 Rect96,293,128,302 clearly shows open ū with flat macron, followed by dā. Each occurrence independently cropped; not analogy. Fall confirms parent targeted reading."
+    },
+    {
+      "file": "whole-grammar-first-reading-20260927.tsv",
+      "page": "240",
+      "group": "come",
+      "item": "5",
+      "field": "singular_or_form",
+      "old": "āādā",
+      "new": "āūdā",
+      "reason": "Original7x PDF266 Rect97,361,125,370 clearly shows open ū with flat macron, followed by dā. Each occurrence independently cropped; not analogy. Fall confirms parent targeted reading."
+    },
+    {
+      "file": "whole-grammar-first-reading-20260927.tsv",
+      "page": "240",
+      "group": "sit",
+      "item": "3",
+      "field": "singular_or_form",
+      "old": "baiṭhādā",
+      "new": "baiṭhūdā",
+      "reason": "Original7x PDF266 Rect97,503,147,514 clearly shows open ū with flat macron, followed by dā. Each occurrence independently cropped; not analogy. Fall confirms parent targeted reading."
+    },
+    {
+      "file": "whole-grammar-first-reading-20260927.tsv",
+      "page": "241",
+      "group": "do",
+      "item": "3",
+      "field": "singular_or_form",
+      "old": "kĭttādā",
+      "new": "kĭttūdā",
+      "reason": "Original7x PDF267 Rect78,341,115,351 has clear open ū under macron, followed by dā."
+    },
+    {
+      "file": "whole-grammar-first-reading-20260927.tsv",
+      "page": "242",
+      "group": "ability",
+      "item": "6",
+      "field": "singular_or_form",
+      "old": "haū nēh păṛhī săkdā",
+      "new": "haũ nēh păṛhī săkdā",
+      "reason": "Original page and7x PDF268 Rect47,291,258,325: maĩ single tilde, tīh macron, păūdā open u with macron. Ability haũ also single tilde as independently observed on this page."
+    },
+    {
+      "file": "whole-grammar-first-reading-20260927.tsv",
+      "page": "242",
+      "group": "strike",
+      "item": "2",
+      "field": "singular_or_form",
+      "old": "maī tĭh nū̃ bāhī",
+      "new": "maĩ tīh nū̃ bāhī",
+      "reason": "Original page and7x PDF268 Rect47,291,258,325: maĩ single tilde, tīh macron, păūdā open u with macron. Ability haũ also single tilde as independently observed on this page."
+    },
+    {
+      "file": "whole-grammar-first-reading-20260927.tsv",
+      "page": "242",
+      "group": "strike",
+      "item": "3",
+      "field": "singular_or_form",
+      "old": "maī căpēṛā̃ dīā̃ bāhīā̃",
+      "new": "maĩ căpēṛā̃ dīā̃ bāhīā̃",
+      "reason": "Original page and7x PDF268 Rect47,291,258,325: maĩ single tilde, tīh macron, păūdā open u with macron. Ability haũ also single tilde as independently observed on this page."
+    },
+    {
+      "file": "whole-grammar-first-reading-20260927.tsv",
+      "page": "242",
+      "group": "lie",
+      "item": "2",
+      "field": "singular_or_form",
+      "old": "păādā",
+      "new": "păūdā",
+      "reason": "Original page and7x PDF268 Rect47,291,258,325: maĩ single tilde, tīh macron, păūdā open u with macron. Ability haũ also single tilde as independently observed on this page."
+    },
+    {
+      "file": "whole-sentences-first-reading-20260927.tsv",
+      "page": "243",
+      "item": "1",
+      "field": "form",
+      "old": "Tērā naū kyā hā",
+      "new": "Tērā naũ kyā hā",
+      "reason": "Independent complete-page reading with6x original PDF269 crops: single tilde naũ/Haũ/maĩ; sentence3 final hā; stative ū; house ē+tilde; sentence14 only one dotted ḍ before h. Exact sentence occurrence retained."
+    },
+    {
+      "file": "whole-sentences-first-reading-20260927.tsv",
+      "page": "243",
+      "item": "3",
+      "field": "form",
+      "old": "Ĭtthe te Kăs̱ẖmīr kĭtṇe dūr hī",
+      "new": "Ĭtthe te Kăs̱ẖmīr kĭtṇe dūr hā",
+      "reason": "Independent complete-page reading with6x original PDF269 crops: single tilde naũ/Haũ/maĩ; sentence3 final hā; stative ū; house ē+tilde; sentence14 only one dotted ḍ before h. Exact sentence occurrence retained."
+    },
+    {
+      "file": "whole-sentences-first-reading-20260927.tsv",
+      "page": "243",
+      "item": "5",
+      "field": "form",
+      "old": "Haū băṛe dūre te pătāhṇā āyā",
+      "new": "Haũ băṛe dūre te pătāhṇā āyā",
+      "reason": "Independent complete-page reading with6x original PDF269 crops: single tilde naũ/Haũ/maĩ; sentence3 final hā; stative ū; house ē+tilde; sentence14 only one dotted ḍ before h. Exact sentence occurrence retained."
+    },
+    {
+      "file": "whole-sentences-first-reading-20260927.tsv",
+      "page": "243",
+      "item": "6",
+      "field": "form",
+      "old": "Mēre cācce dā pŭtt ĭs dīā baihṇā kăne bĭāh kĭttādā",
+      "new": "Mēre cācce dā pŭtt ĭs dīā baihṇā kăne bĭāh kĭttūdā",
+      "reason": "Independent complete-page reading with6x original PDF269 crops: single tilde naũ/Haũ/maĩ; sentence3 final hā; stative ū; house ē+tilde; sentence14 only one dotted ḍ before h. Exact sentence occurrence retained."
+    },
+    {
+      "file": "whole-sentences-first-reading-20260927.tsv",
+      "page": "243",
+      "item": "7",
+      "field": "form",
+      "old": "Ghărẽ sŭfēd ghōṛe dī kāṭṭhī hī",
+      "new": "Ghărē̃ sŭfēd ghōṛe dī kāṭṭhī hī",
+      "reason": "Independent complete-page reading with6x original PDF269 crops: single tilde naũ/Haũ/maĩ; sentence3 final hā; stative ū; house ē+tilde; sentence14 only one dotted ḍ before h. Exact sentence occurrence retained."
+    },
+    {
+      "file": "whole-sentences-first-reading-20260927.tsv",
+      "page": "243",
+      "item": "9",
+      "field": "form",
+      "old": "Tĭs de pŭtte nū̃ maī bauht mārĕā",
+      "new": "Tĭs de pŭtte nū̃ maĩ bauht mārĕā",
+      "reason": "Independent complete-page reading with6x original PDF269 crops: single tilde naũ/Haũ/maĩ; sentence3 final hā; stative ū; house ē+tilde; sentence14 only one dotted ḍ before h. Exact sentence occurrence retained."
+    },
+    {
+      "file": "whole-sentences-first-reading-20260927.tsv",
+      "page": "243",
+      "item": "11",
+      "field": "form",
+      "old": "Ohje ŭs ḍāḷe hēṭh ghōṛe păr baiṭhādā",
+      "new": "Ohje ŭs ḍāḷe hēṭh ghōṛe păr baiṭhūdā",
+      "reason": "Independent complete-page reading with6x original PDF269 crops: single tilde naũ/Haũ/maĩ; sentence3 final hā; stative ū; house ē+tilde; sentence14 only one dotted ḍ before h. Exact sentence occurrence retained."
+    },
+    {
+      "file": "whole-sentences-first-reading-20260927.tsv",
+      "page": "243",
+      "item": "14",
+      "field": "form",
+      "old": "Mērā bŭḍḍhā chōṭe ghăre raihndā",
+      "new": "Mērā bŭḍhā chōṭe ghăre raihndā",
+      "reason": "Independent complete-page reading with6x original PDF269 crops: single tilde naũ/Haũ/maĩ; sentence3 final hā; stative ū; house ē+tilde; sentence14 only one dotted ḍ before h. Exact sentence occurrence retained."
+    },
+    {
+      "file": "whole-sentences-first-reading-20260927.tsv",
+      "page": "244",
+      "item": "17",
+      "field": "form",
+      "old": "Tĭh nū̃ khăre mārĭke rŭsse kăne bŭnnhī dēo",
+      "new": "Tīh nū̃ khăre mārīke rŭsse kăne bŭnnhī dēo",
+      "reason": "Original7x PDF270 Rect69,56,276,67 and68,108,254,168: macron ī in Tīh/mārīke; dot below r in lăṛkā; joined călūdā with ū; single tilde in Gaũe."
+    },
+    {
+      "file": "whole-sentences-first-reading-20260927.tsv",
+      "page": "244",
+      "item": "20",
+      "field": "form",
+      "old": "Kĭs dā lărkā hā tŭsā̃ de pĭcche călā dā",
+      "new": "Kĭs dā lăṛkā hā tŭsā̃ de pĭcche călūdā",
+      "reason": "Original7x PDF270 Rect69,56,276,67 and68,108,254,168: macron ī in Tīh/mārīke; dot below r in lăṛkā; joined călūdā with ū; single tilde in Gaũe."
+    },
+    {
+      "file": "whole-sentences-first-reading-20260927.tsv",
+      "page": "244",
+      "item": "22",
+      "field": "form",
+      "old": "Gaūe de ēkk dŭkāndāre te leī",
+      "new": "Gaũe de ēkk dŭkāndāre te leī",
+      "reason": "Original7x PDF270 Rect69,56,276,67 and68,108,254,168: macron ī in Tīh/mārīke; dot below r in lăṛkā; joined călūdā with ū; single tilde in Gaũe."
+    },
+    {
+      "file": "whole-grammar-first-reading-20260927.tsv",
+      "page": "244",
+      "group": "sentence-note",
+      "item": "2",
+      "field": "singular_or_form",
+      "old": "kĭttādā",
+      "new": "kĭttūdā",
+      "reason": "Printed note6 repeats stative with visible ū, not ā; checked independently on full original page."
+    }
+  ],
+  "scope_findings": [],
+  "rejected_initial_hypotheses": [
+    {
+      "file": "whole-context-controls-first-reading-20260927.tsv",
+      "page": "234",
+      "unit": "northern-verbs",
+      "field": "literal_forms_or_scope",
+      "old": "-ṅghā; -ṅg; -īrā; -ā̃",
+      "new": "-ṅghā; -ṅg; -īṛā; -ā̃",
+      "reason": "Printed stative suffix r has an underdot.",
+      "resolution": "Original8x crop shows plain r, unlike Western -ṛā. First reading retained; initial full-page speck interpretation rejected."
+    },
+    {
+      "file": "whole-context-controls-first-reading-20260927.tsv",
+      "page": "234",
+      "unit": "southern-verbs",
+      "field": "literal_forms_or_scope",
+      "old": "-gā; ṅ; -ūrā",
+      "new": "-gā; ṅ; -ūṛā",
+      "reason": "Printed stative suffix r has an underdot.",
+      "resolution": "Original8x crop shows plain r, unlike Western -ṛā. First reading retained; initial full-page speck interpretation rejected."
+    }
+  ],
+  "summary": {
+    "grammar_groups": 257,
+    "sentences": 22,
+    "context_groups": 30,
+    "total_groups": 309,
+    "field_corrections": 43,
+    "unresolved": "Numeral47 upper mark provisionally ī; extra i secure. All source units reviewed, first readings unchanged."
+  }
+}

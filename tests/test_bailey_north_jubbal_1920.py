@@ -1,4 +1,4 @@
-"""Focused source-input checks for Bailey's complete North Jubbal glossary."""
+"""Whole-source installation and explicitly historical glossary evidence."""
 
 import csv
 import importlib.util
@@ -17,6 +17,7 @@ DATA = Path(__file__).resolve().parents[1]
 PACKAGE = DATA / "data/other/forms/raw_data/bailey_north_jubbal_1920"
 CSV = DATA / "data/other/forms/20260925-bailey-north-jubbal.csv"
 PROFILE = DATA / "conversion/bailey-north-jubbal-1920.txt"
+HISTORICAL = PACKAGE / "historical-glossary-installation"
 spec = importlib.util.spec_from_file_location("bailey_north_jubbal_1920", PACKAGE / "import_source.py")
 source = importlib.util.module_from_spec(spec)
 sys.modules[spec.name] = source
@@ -34,8 +35,9 @@ def audited():
 
 def test_exact_page_scope_and_regeneration():
     rows, audit = source.generate()
-    assert rows == installed()
-    assert audit == audited()
+    # Historical importer is deliberately never run with --install here.
+    assert rows == list(csv.reader((HISTORICAL/CSV.name).open(newline='')))
+    assert audit == [json.loads(s) for s in (HISTORICAL/'audit.jsonl').read_text().splitlines()]
     assert len(audit) == 243 and len(rows) == 330
     assert Counter(a["status"] for a in audit) == {
         "ingested": 242,
@@ -86,7 +88,7 @@ def test_profile_language_metadata_and_bibliography():
         assert row[1] == row[4] == row[5] == row[8] == row[9] == row[11] == row[12] == row[13] == ""
         assert row[2] and "�" not in row[2]
         original = unicodedata.normalize("NFC", row[2])
-        assert unicodedata.normalize("NFC", tokenizer(original, column="IPA").replace(" ", "").replace("#", " ")) == original.replace("w", "v").replace("ṅ", "ŋ")
+        assert unicodedata.normalize("NFC", tokenizer(original, column="IPA").replace(" ", "").replace("#", " ")) == original.lower().replace("w", "v").replace("ṅ", "ŋ")
         assert set(row[14].split()) <= set(GRAMMATICAL_TAGS) | set(GENDER_TAGS)
     assert source_meta.SourceMeta().transcription("bailey1920northjubbal", CSV, "Barari")[0] == "bailey-north-jubbal-1920"
     assert "bailey-north-jubbal-1920" not in profile_policy.audit({})
@@ -102,9 +104,10 @@ def test_cldf_parse_preserves_originals():
     rows, stats = make_cldf.parse_file(str(CSV), errors, name="20260925-bailey-north-jubbal")
     raw = {r[10]: r for r in installed()}
     assert not errors.getvalue()
-    assert len(rows) == stats["converted"] == 330
+    assert len(rows) == stats["converted"] == 837
     assert {r.entry_key for r in rows} == set(raw)
     assert all(r.old_form == raw[r.entry_key][2] for r in rows)
+    assert all((r.notes,r.source,r.tags)==(raw[r.entry_key][6],raw[r.entry_key][7],raw[r.entry_key][14]) for r in rows)
 
 
 def test_pilot_corrections_and_answer_glosses():
@@ -124,4 +127,27 @@ def test_fresh_full_literal_audit_pins_install():
     assert report["material_errors"] == 0
     assert Counter(e["page"] for e in report["entries"]) == {str(p):5 for p in range(185,189)}
     assert hashlib.sha256((PACKAGE / "full-transcription.tsv").read_bytes()).hexdigest() == report["hashes"]["full-transcription-staged.tsv"]
-    assert hashlib.sha256(CSV.read_bytes()).hexdigest() == report["hashes"]["literal-staged.csv"]
+    assert hashlib.sha256((HISTORICAL/CSV.name).read_bytes()).hexdigest() == report["hashes"]["literal-staged.csv"]
+
+
+def test_approved_whole_freeze_installed_and_metadata_routed():
+    import hashlib
+    import yaml
+    rows=installed()
+    approved=PACKAGE/'whole-reviewed-preview-20260927.csv'
+    assert CSV.read_bytes()==approved.read_bytes()
+    assert (PACKAGE/'audit.jsonl').read_bytes()==(PACKAGE/'whole-reviewed-preview-20260927-audit.jsonl').read_bytes()
+    assert PROFILE.read_bytes()==(PACKAGE/'whole-reviewed-preview-20260927-profile.txt').read_bytes()
+    assert len(rows)==837 and len(audited())==688
+    old=list(csv.reader((HISTORICAL/CSV.name).open(newline='')))
+    assert [r[10] for r in rows[:330]]==[r[10] for r in old]
+    assert [r[2] for r in rows[:330]]==[r[2] for r in old]
+    assert all(not r[11] or r[11] in {a[10] for a in rows} for r in rows)
+    meta=yaml.safe_load(CSV.with_suffix('.yaml').read_text())
+    assert meta['defaults']['transcription']['input']=='form'
+    assert meta['defaults']['transcription']['preserve_hyphens'] is True
+    assert meta['defaults']['identity']=={'legacy_ids':'stem','append_order':53}
+    assert meta['defaults']['importer']['commands'][0][0].endswith('/install_whole_source.py')
+    accepted=json.loads((PACKAGE/'root-whole-output-audit-20260927-pass1.json').read_text())
+    assert accepted['sample_size']==20 and accepted['material_errors']==0
+    assert accepted['freeze_sha256']==hashlib.sha256((PACKAGE/'whole-reviewed-output-freeze-20260927.json').read_bytes()).hexdigest()

@@ -1,0 +1,1413 @@
+{
+  "status": "actual parser fixture passed; integration and canonical registration remain pending",
+  "inputs": {
+    "table-metadata-candidate.json": "90862e3004171589c05f49051bfd61a3e822f7518115eebcd13b54aa9255248b",
+    "metadata-profile-proposal/literal-preservation-proposed.txt": "dc338bdb81ebccc7f4c61891ab304e1fde92a4f851a11c2c52327a53fbf805d5",
+    "specimens/interlinear-reviewed.jsonl": "d6960e5336320d539b83be14010b57fdf4b0183640c21e2936d64649843aee5d",
+    "specimens/expression-spans-reviewed.jsonl": "a40817f15279ed8be6bf3c78841d4d7986bdc3caf36ca51d734cb2d3722d9bef"
+  },
+  "parser_code_sha256": {
+    "make_cldf.py": "1a1ded9eff5b8607174aa37981efb4358824be8ffffdfaa7128c0cea53dac5a8",
+    "source_meta.py": "1c3147843d6c9f2489155b633db55fd1374e6f3b1a59b7051a3642fdbd2c7a4c"
+  },
+  "checks": {
+    "NFC": {
+      "rows": 1225,
+      "converted": 1225,
+      "errors": 0,
+      "ordered_keys": true,
+      "original_and_all_supplied_fields_preserved": true
+    },
+    "NFD": {
+      "rows": 1225,
+      "converted": 1225,
+      "errors": 0,
+      "ordered_keys": true,
+      "original_and_all_supplied_fields_preserved": true
+    }
+  },
+  "display_changes": 223,
+  "display_delta_records": [
+    {
+      "key": "grierson1906kui:p680:khondmals-table:prompt224:answer1",
+      "original": "Ānu nēñju dēhā pāhēri trejā-māĩ.",
+      "display": "Ānu nēñju dēhā pāhēri trejā-māĩ",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p680:khondmals-table:prompt225:answer1",
+      "original": "Nāi koku mriēñju tāna āṅgini bihā ājā māsēñju.",
+      "display": "Nāi koku mriēñju tāna āṅgini bihā ājā māsēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p680:khondmals-table:prompt226:answer1",
+      "original": "Sukāli goṛākāri jini iḍulāiṭi mānē.",
+      "display": "Sukāli goṛākāri jini iḍulāiṭi mānē",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p680:khondmals-table:prompt228:answer1",
+      "original": "Ānu tānā mriēni dēhā māḍā siā-māĩ.",
+      "display": "Ānu tānā mriēni dēhā māḍā siā-māĩ",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p680:khondmals-table:prompt229:answer1",
+      "original": "Soru sēṇḍo ēbāñju koḍi kopāi-mānēñju.",
+      "display": "Soru sēṇḍo ēbāñju koḍi kopāi-mānēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p680:khondmals-table:prompt230:answer1",
+      "original": "O mrāhnu-lāiṭi ēbāñju ro goṛā kuiṭi kokā-mānēñju.",
+      "display": "O mrāhnu-lāiṭi ēbāñju ro goṛā kuiṭi kokā-mānēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p680:khondmals-table:prompt231:answer1",
+      "original": "Tānā dādā tānā āṅgi-bāhā-ṭākā ikē ḍeṅgā-gāṭāñju.",
+      "display": "Tānā dādā tānā āṅgi-bāhā-ṭākā ikē ḍeṅgā-gāṭāñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p680:khondmals-table:prompt232:answer1",
+      "original": "Tānā krēu ri ṭākā oḍoli āi-mānē.",
+      "display": "Tānā krēu ri ṭākā oḍoli āi-mānē",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p680:khondmals-table:prompt233:answer1",
+      "original": "Nāi ābā o kopāri iḍutā rāhi ānēñju.",
+      "display": "Nāi ābā o kopāri iḍutā rāhi ānēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p680:khondmals-table:prompt233:answer2",
+      "original": "Nāi ābā o kopāri iḍutā rāhi lohonēñju.",
+      "display": "Nāi ābā o kopāri iḍutā rāhi lohonēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p680:khondmals-table:prompt235:answer1",
+      "original": "Tānā bāhā-ṭākā irā ṭākā gule omu.",
+      "display": "Tānā bāhā-ṭākā irā ṭākā gule omu",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p680:khondmals-table:prompt236:answer1",
+      "original": "Tānāki negi bāṅgā māḍā simu, oṭē ḍoro-ḍāi tohmu.",
+      "display": "Tānāki negi bāṅgā māḍā simu, oṭē ḍoro-ḍāi tohmu",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p680:khondmals-table:prompt239:answer1",
+      "original": "Ni bētoṭi umbēri mriēñju bāi-mānēñju.",
+      "display": "Ni bētoṭi umbēri mriēñju bāi-mānēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p464:specimen40:linetitle:word3",
+      "original": "MĀHĀ-MRĀNŪ-GĀṬĀÑJŪ.",
+      "display": "MĀHĀ-MRĀNŪ-GĀṬĀÑJŪ",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p464:specimen40:line1:word3",
+      "original": "prēk-ātēñjū.",
+      "display": "prēk-ātēñjū",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p464:specimen40:line2:word2",
+      "original": "tiñjisēñjū.",
+      "display": "tiñjisēñjū",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p464:specimen40:line3:word2",
+      "original": "pēski-wātēñjū.",
+      "display": "pēski-wātēñjū",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p464:specimen40:line3:word6",
+      "original": "mēhitēñju;",
+      "display": "mēhitēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p464:specimen40:line4:word2",
+      "original": "mādē,",
+      "display": "mādē",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p464:specimen40:line4:word9",
+      "original": "wāmū,",
+      "display": "wāmū",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p464:specimen40:line5:word5",
+      "original": "vēstēñjū.",
+      "display": "vēstēñjū",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p464:specimen40:line6:word2",
+      "original": "dē,",
+      "display": "dē",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p464:specimen40:line6:word6",
+      "original": "wāēnū;",
+      "display": "wāēnū",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p464:specimen40:line7:word1",
+      "original": "wāē̃,",
+      "display": "wāē̃",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p464:specimen40:line8:word1",
+      "original": "nāi,",
+      "display": "nāi",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p464:specimen40:line9:word6",
+      "original": "vitēñjū;",
+      "display": "vitēñjū",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p464:specimen40:line10:word2",
+      "original": "āwāniki,",
+      "display": "āwāniki",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p464:specimen40:line10:word3",
+      "original": "‘vivi-dūmū,",
+      "display": "‘vivi-dūmū",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p464:specimen40:line10:word6",
+      "original": "dē,",
+      "display": "dē",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p464:specimen40:line11:word6",
+      "original": "ēsitēñjū;",
+      "display": "ēsitēñjū",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p464:specimen40:line12:word4",
+      "original": "jēdātā,",
+      "display": "jēdātā",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p464:specimen40:line12:word8",
+      "original": "ūā-ātē;",
+      "display": "ūā-ātē",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p464:specimen40:line14:word8",
+      "original": "vitēñjū;",
+      "display": "vitēñjū",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p464:specimen40:line15:word2",
+      "original": "pātū,",
+      "display": "pātū",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p464:specimen40:line15:word7",
+      "original": "ditēñjū,",
+      "display": "ditēñjū",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p464:specimen40:line16:word5",
+      "original": "sāhātēñjū.",
+      "display": "sāhātēñjū",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p465:specimen41:line1:word4",
+      "original": "māsēru.",
+      "display": "māsēru",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p465:specimen41:line1:word9",
+      "original": "bēstēñju,",
+      "display": "bēstēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p465:specimen41:line2:word1",
+      "original": "‘ābā,",
+      "display": "‘ābā",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p465:specimen41:line3:word6",
+      "original": "sitēñju.",
+      "display": "sitēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p465:specimen41:line4:word5",
+      "original": "uspā-māsēñju,",
+      "display": "uspā-māsēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p466:specimen41:line1:word1",
+      "original": "māsēñju.",
+      "display": "māsēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p466:specimen41:line1:word7",
+      "original": "uḍi-gitēñju.",
+      "display": "uḍi-gitēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p466:specimen41:line2:word5",
+      "original": "diātē;",
+      "display": "diātē",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p466:specimen41:line3:word1",
+      "original": "ditēñju.",
+      "display": "ditēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p466:specimen41:line3:word8",
+      "original": "rāhi-ātēñju.",
+      "display": "rāhi-ātēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p466:specimen41:line4:word7",
+      "original": "paṇḍitēñju.",
+      "display": "paṇḍitēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p466:specimen41:line5:word5",
+      "original": "bēstēñju,",
+      "display": "bēstēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p466:specimen41:line6:word6",
+      "original": "sārāi-mānē;",
+      "display": "sārāi-mānē",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p466:specimen41:line6:word9",
+      "original": "sāi-māĩ.",
+      "display": "sāi-māĩ",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p466:specimen41:line7:word7",
+      "original": "bēsĩ,",
+      "display": "bēsĩ",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p466:specimen41:line7:word8",
+      "original": "“ābā,",
+      "display": "“ābā",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p466:specimen41:line8:word8",
+      "original": "māĩ.",
+      "display": "māĩ",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p466:specimen41:line9:word5",
+      "original": "siḍēnu.",
+      "display": "siḍēnu",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p466:specimen41:line10:word6",
+      "original": "sāsēñju.",
+      "display": "sāsēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p466:specimen41:line11:word1",
+      "original": "mānēñju,",
+      "display": "mānēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p466:specimen41:line11:word8",
+      "original": "ātēñju;",
+      "display": "ātēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p466:specimen41:line12:word7",
+      "original": "nañjitēñju.",
+      "display": "nañjitēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p466:specimen41:line13:word2",
+      "original": "bēstēñju,",
+      "display": "bēstēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p466:specimen41:line13:word3",
+      "original": "‘ābā,",
+      "display": "‘ābā",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p466:specimen41:line13:word10",
+      "original": "māĩ.",
+      "display": "māĩ",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p466:specimen41:line15:word2",
+      "original": "bēstēñju,",
+      "display": "bēstēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p466:specimen41:line15:word8",
+      "original": "ṭāṭā-gidu,",
+      "display": "ṭāṭā-gidu",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p466:specimen41:line16:word3",
+      "original": "sidu,",
+      "display": "sidu",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p466:specimen41:line16:word6",
+      "original": "sidu.",
+      "display": "sidu",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p466:specimen41:line16:word7",
+      "original": "Bādu,",
+      "display": "Bādu",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p466:specimen41:line17:word2",
+      "original": "ginā;",
+      "display": "ginā",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p466:specimen41:line17:word8",
+      "original": "māsēru,",
+      "display": "māsēru",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p466:specimen41:line17:word9",
+      "original": "ēj-gitēñju;",
+      "display": "ēj-gitēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p466:specimen41:line18:word2",
+      "original": "māsēñju,",
+      "display": "māsēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p466:specimen41:line18:word7",
+      "original": "gibātiki,",
+      "display": "gibātiki",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p466:specimen41:line19:word1",
+      "original": "lāgi-ātēru.",
+      "display": "lāgi-ātēru",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p466:specimen41:line20:word7",
+      "original": "māsēñju.",
+      "display": "māsēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p466:specimen41:line21:word6",
+      "original": "bēsēñju.",
+      "display": "bēsēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p467:specimen41:line1:word4",
+      "original": "bēñjātēñju,",
+      "display": "bēñjātēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p467:specimen41:line2:word2",
+      "original": "bēstēñju,",
+      "display": "bēstēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p467:specimen41:line2:word5",
+      "original": "bātēñju;",
+      "display": "bātēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p467:specimen41:line5:word1",
+      "original": "ātēñju.",
+      "display": "ātēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p467:specimen41:line6:word2",
+      "original": "gitēñju.",
+      "display": "gitēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p467:specimen41:line6:word6",
+      "original": "bēstēñju,",
+      "display": "bēstēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p467:specimen41:line6:word7",
+      "original": "‘mēhimu,",
+      "display": "‘mēhimu",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p467:specimen41:line6:word9",
+      "original": "ābā,",
+      "display": "ābā",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p467:specimen41:line7:word6",
+      "original": "gitē;",
+      "display": "gitē",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p467:specimen41:line8:word1",
+      "original": "dēgā-ātēnu.",
+      "display": "dēgā-ātēnu",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p467:specimen41:line9:word5",
+      "original": "siḍāi.",
+      "display": "siḍāi",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p467:specimen41:line10:word4",
+      "original": "uḍi-giā-mānēñju,",
+      "display": "uḍi-giā-mānēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p467:specimen41:line11:word6",
+      "original": "bēstēñju,",
+      "display": "bēstēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p467:specimen41:line11:word8",
+      "original": "mriēnti,",
+      "display": "mriēnti",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p467:specimen41:line12:word3",
+      "original": "māñji.",
+      "display": "māñji",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p467:specimen41:line12:word6",
+      "original": "mānē,",
+      "display": "mānē",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p467:specimen41:line12:word9",
+      "original": "nindā.",
+      "display": "nindā",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p467:specimen41:line13:word2",
+      "original": "sājānākā,",
+      "display": "sājānākā",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p467:specimen41:line13:word3",
+      "original": "ējgitēñju;",
+      "display": "ējgitēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p467:specimen41:line13:word4",
+      "original": "bānā-ājānākā,",
+      "display": "bānā-ājānākā",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p467:specimen41:line13:word5",
+      "original": "pānpā-sāsēñju;",
+      "display": "pānpā-sāsēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p468:specimen42:linetitle:word3",
+      "original": "KORUKĀ.",
+      "display": "KORUKĀ",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p468:specimen42:line1:word2",
+      "original": "tiñji-māsu.",
+      "display": "tiñji-māsu",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p468:specimen42:line1:word5",
+      "original": "suṛā-nāi,",
+      "display": "suṛā-nāi",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p468:specimen42:line2:word4",
+      "original": "sāsē.",
+      "display": "sāsē",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p468:specimen42:line2:word8",
+      "original": "pēkitu.",
+      "display": "pēkitu",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p468:specimen42:line3:word4",
+      "original": "muātē.",
+      "display": "muātē",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p468:specimen42:line4:word1",
+      "original": "isē,",
+      "display": "isē",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p468:specimen42:line4:word7",
+      "original": "māĩ;",
+      "display": "māĩ",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p468:specimen42:line6:word8",
+      "original": "suṛitē;",
+      "display": "suṛitē",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p468:specimen42:line8:word2",
+      "original": "mānē.",
+      "display": "mānē",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p468:specimen42:line9:word4",
+      "original": "guhitē.",
+      "display": "guhitē",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p468:specimen42:line10:word5",
+      "original": "bēstē,",
+      "display": "bēstē",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p468:specimen42:line10:word7",
+      "original": "bāti,",
+      "display": "bāti",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p468:specimen42:line11:word6",
+      "original": "bēstē,",
+      "display": "bēstē",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p468:specimen42:line12:word3",
+      "original": "pānbā-sāji-mānē.",
+      "display": "pānbā-sāji-mānē",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p468:specimen42:line13:word3",
+      "original": "āē,",
+      "display": "āē",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p468:specimen42:line14:word3",
+      "original": "guhitē.",
+      "display": "guhitē",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p470:specimen43:line1:word4",
+      "original": "māchēru.",
+      "display": "māchēru",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p470:specimen43:line2:word1",
+      "original": "bēstēñju,",
+      "display": "bēstēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p470:specimen43:line2:word3",
+      "original": "ābā,",
+      "display": "ābā",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p470:specimen43:line3:word7",
+      "original": "sitēñju.",
+      "display": "sitēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p470:specimen43:line5:word6",
+      "original": "mutēñju.",
+      "display": "mutēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p470:specimen43:line6:word3",
+      "original": "pāṭēru,",
+      "display": "pāṭēru",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p470:specimen43:line6:word7",
+      "original": "pāṭēñju.",
+      "display": "pāṭēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p470:specimen43:line7:word6",
+      "original": "bāhātā,",
+      "display": "bāhātā",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p470:specimen43:line8:word3",
+      "original": "pāṇḍitēñju.",
+      "display": "pāṇḍitēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p470:specimen43:line8:word9",
+      "original": "siātēru.",
+      "display": "siātēru",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p470:specimen43:line9:word4",
+      "original": "māchā,",
+      "display": "māchā",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p470:specimen43:line9:word9",
+      "original": "gitēñju.",
+      "display": "gitēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p470:specimen43:line10:word4",
+      "original": "bēstēñju,",
+      "display": "bēstēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p470:specimen43:line10:word5",
+      "original": "‘āhā,",
+      "display": "‘āhā",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p470:specimen43:line11:word5",
+      "original": "pāḍpi-mānēru,",
+      "display": "pāḍpi-mānēru",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p470:specimen43:line11:word9",
+      "original": "sāi-mānāmu.",
+      "display": "sāi-mānāmu",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p470:specimen43:line12:word5",
+      "original": "bēsĩ,",
+      "display": "bēsĩ",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p470:specimen43:line12:word7",
+      "original": "ābā,",
+      "display": "ābā",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p470:specimen43:line13:word3",
+      "original": "gitāmu.",
+      "display": "gitāmu",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p470:specimen43:line13:word8",
+      "original": "siḍāmu;",
+      "display": "siḍāmu",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p470:specimen43:line15:word2",
+      "original": "sāchēñju.",
+      "display": "sāchēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p470:specimen43:line16:word7",
+      "original": "murkitēñju.",
+      "display": "murkitēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p471:specimen43:line1:word1",
+      "original": "bēstēñju,",
+      "display": "bēstēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p471:specimen43:line1:word3",
+      "original": "ābā,",
+      "display": "ābā",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p471:specimen43:line1:word7",
+      "original": "gitāmu,",
+      "display": "gitāmu",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p471:specimen43:line2:word8",
+      "original": "bēstēñju,",
+      "display": "bēstēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p471:specimen43:line3:word4",
+      "original": "ṭāṭā-sidu;",
+      "display": "ṭāṭā-sidu",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p471:specimen43:line3:word8",
+      "original": "sidu,",
+      "display": "sidu",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p471:specimen43:line4:word2",
+      "original": "sidu.",
+      "display": "sidu",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p471:specimen43:line4:word8",
+      "original": "ānāmu;",
+      "display": "ānāmu",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p471:specimen43:line5:word2",
+      "original": "sājā-māchēñju,",
+      "display": "sājā-māchēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p471:specimen43:line5:word4",
+      "original": "ējgitēñju;",
+      "display": "ējgitēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p471:specimen43:line5:word7",
+      "original": "māchēñju,",
+      "display": "māchēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p471:specimen43:line6:word5",
+      "original": "gitēru.",
+      "display": "gitēru",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p471:specimen43:line7:word6",
+      "original": "māchēñju.",
+      "display": "māchēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p471:specimen43:line8:word2",
+      "original": "bātēñju.",
+      "display": "bātēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p471:specimen43:line9:word1",
+      "original": "bēñjā-mistēñju,",
+      "display": "bēñjā-mistēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p471:specimen43:line9:word7",
+      "original": "bēstēñju,",
+      "display": "bēstēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p471:specimen43:line10:word2",
+      "original": "bātēñju,",
+      "display": "bātēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p471:specimen43:line11:word9",
+      "original": "kutēñju.",
+      "display": "kutēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p471:specimen43:line12:word8",
+      "original": "bēstēñju.",
+      "display": "bēstēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p471:specimen43:line13:word2",
+      "original": "bēstēñju,",
+      "display": "bēstēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p471:specimen43:line13:word3",
+      "original": "‘mēhēndu,",
+      "display": "‘mēhēndu",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p471:specimen43:line14:word4",
+      "original": "gipki-māĩ.",
+      "display": "gipki-māĩ",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p471:specimen43:line15:word6",
+      "original": "siā-silāi.",
+      "display": "siā-silāi",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p471:specimen43:line16:word3",
+      "original": "sājā-māchēñju,",
+      "display": "sājā-māchēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p471:specimen43:line16:word7",
+      "original": "mũtēñju,",
+      "display": "mũtēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p471:specimen43:line17:word9",
+      "original": "bēstēñju,",
+      "display": "bēstēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p471:specimen43:line18:word1",
+      "original": "mrēñju,",
+      "display": "mrēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p471:specimen43:line18:word4",
+      "original": "mañji,",
+      "display": "mañji",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p471:specimen43:line19:word3",
+      "original": "mindē.",
+      "display": "mindē",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p471:specimen43:line19:word9",
+      "original": "māchēñju,",
+      "display": "māchēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p471:specimen43:line19:word10",
+      "original": "ējgitēñju;",
+      "display": "ējgitēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p471:specimen43:line20:word3",
+      "original": "māchēñju,",
+      "display": "māchēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:p471:specimen43:line20:word4",
+      "original": "pātēñju;",
+      "display": "pātēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:specimen40:expression1",
+      "original": "Kogāñjū māhā prēk-ātēñjū.",
+      "display": "Kogāñjū māhā prēk-ātēñjū",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:specimen40:expression2",
+      "original": "Mrānū dēgatānni koksānāikā jēdā jilli-ḍāi tiñjisēñjū.",
+      "display": "Mrānū dēgatānni koksānāikā jēdā jilli-ḍāi tiñjisēñjū",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:specimen40:expression3",
+      "original": "Tiñjisāwā mrānū-gāṭāñjū būdā-gāṭāñjū roāñjū tānā māhā pēski-wātēñjū.",
+      "display": "Tiñjisāwā mrānū-gāṭāñjū būdā-gāṭāñjū roāñjū tānā māhā pēski-wātēñjū",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:specimen40:expression5",
+      "original": "dāndē wāmū, wāātēkā issingātēkā wāwā-giē̃,’ iñji vēstēñjū.",
+      "display": "dāndē wāmū, wāātēkā issingātēkā wāwā-giē̃,’ iñji vēstēñjū",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:specimen40:expression8",
+      "original": "Būdā-gāṭāñjū ārū vēñjā- nāi, ‘ānū āspā gitēkā vānēñjū ginnā vaēñjū sūḍiē̃,’ iñji kogi-kogi dējālkā āhānāi ikkē vitēñjū; vivānē kogāñjū kāksānāi āwāniki, ‘vivi-dūmū, vivi-dūmū būdā-gāṭānthi dē, ivī pātēkā annāri ān?-imbānē kopki-dūē̃,’ iñji ēsitēñjū; ēsānē būdā-gāṭāñjū tānā jēdātā, ‘dējālkā vitēkā ānni-vē ūā-ātē; idē vāddlingā vitēkā ānni ānē ginnā āē sūḍiē̃,’ iñji dēri dēri dāddingā āhānāi dātā-ḍāi dāndē dāndē vitēñjū; vivānē dēhānē pātū, pānpānē kogāñjū riānāi mrānū-ṭikā ditēñjū, divā-dāndē būdāgāṭāñjū āhānāi dūrā-ḍāi dēhānē sāhātēñjū.",
+      "display": "Būdā-gāṭāñjū ārū vēñjā- nāi, ‘ānū āspā gitēkā vānēñjū ginnā vaēñjū sūḍiē̃,’ iñji kogi-kogi dējālkā āhānāi ikkē vitēñjū; vivānē kogāñjū kāksānāi āwāniki, ‘vivi-dūmū, vivi-dūmū būdā-gāṭānthi dē, ivī pātēkā annāri ān?-imbānē kopki-dūē̃,’ iñji ēsitēñjū; ēsānē būdā-gāṭāñjū tānā jēdātā, ‘dējālkā vitēkā ānni-vē ūā-ātē; idē vāddlingā vitēkā ānni ānē ginnā āē sūḍiē̃,’ iñji dēri dēri dāddingā āhānāi dātā-ḍāi dāndē dāndē vitēñjū; vivānē dēhānē pātū, pānpānē kogāñjū riānāi mrānū-ṭikā ditēñjū, divā-dāndē būdāgāṭāñjū āhānāi dūrā-ḍāi dēhānē sāhātēñjū",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:specimen41:expression1",
+      "original": "Raāni ri mrikā māsēru.",
+      "display": "Raāni ri mrikā māsēru",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:specimen41:expression3",
+      "original": "Ēhēṅgā ēbāñju tānā dana ēbārki bāgā-giā sitēñju.",
+      "display": "Ēhēṅgā ēbāñju tānā dana ēbārki bāgā-giā sitēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:specimen41:expression4",
+      "original": "Ikali dinā sāsēkā kogēri mriēñju gulē dana uspā-māsēñju, ēhēṅgā durā dēsāki sājā māsēñju.",
+      "display": "Ikali dinā sāsēkā kogēri mriēñju gulē dana uspā-māsēñju, ēhēṅgā durā dēsāki sājā māsēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:specimen41:expression5",
+      "original": "Ēmbā ṛai buditā gulē dana uḍi-gitēñju.",
+      "display": "Ēmbā ṛai buditā gulē dana uḍi-gitēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:specimen41:expression6",
+      "original": "Ēsti-bēlā gulē uḍi-gitēñju ēmbā raṭā jugā diātē; ēi-gēli ēbāñju dehā kalabalatā ditēñju.",
+      "display": "Ēsti-bēlā gulē uḍi-gitēñju ēmbā raṭā jugā diātē; ēi-gēli ēbāñju dehā kalabalatā ditēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:specimen41:expression7",
+      "original": "Irā-ṭā ēbāñju sājā-nāi ē dēsā raāni-kē rāhi-ātēñju.",
+      "display": "Irā-ṭā ēbāñju sājā-nāi ē dēsā raāni-kē rāhi-ātēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:specimen41:expression8",
+      "original": "Ēi lōku ēbāni-ki pāji-biḍā kapā-tiṅgi kētā-tāṅgi paṇḍitēñju.",
+      "display": "Ēi lōku ēbāni-ki pāji-biḍā kapā-tiṅgi kētā-tāṅgi paṇḍitēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:specimen41:expression9",
+      "original": "Ēsti-bēlā ēbāñju ēlu pātēñju ēbāñju bēstēñju, ‘nāi ābāri āliā-lōkuṅgā isē tinārā pānpi mānēru jē ērā tiñjānākā sārāi-mānē; ānu sākiṭā sāi-māĩ.",
+      "display": "Ēsti-bēlā ēbāñju ēlu pātēñju ēbāñju bēstēñju, ‘nāi ābāri āliā-lōkuṅgā isē tinārā pānpi mānēru jē ērā tiñjānākā sārāi-mānē; ānu sākiṭā sāi-māĩ",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:specimen41:expression10",
+      "original": "Ānu niṅgānāi ābā saḍiki sāĩ ēbāniki bēsĩ, “ābā, ānu raṭāpēnu bāgāritā aṭē nī saṛiṭi pāpa giā māĩ.",
+      "display": "Ānu niṅgānāi ābā saḍiki sāĩ ēbāniki bēsĩ, “ābā, ānu raṭāpēnu bāgāritā aṭē nī saṛiṭi pāpa giā māĩ",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:specimen41:expression11",
+      "original": "Nī mriēñju ilbātiṅgi aṭē ānu sāñjai siḍēnu.",
+      "display": "Nī mriēñju ilbātiṅgi aṭē ānu sāñjai siḍēnu",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:specimen41:expression13",
+      "original": "Ēbāñju niṅgitēñju ēhēṅgā ābā saṛiki sāsēñju.",
+      "display": "Ēbāñju niṅgitēñju ēhēṅgā ābā saṛiki sāsēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:specimen41:expression14",
+      "original": "Ēbāñju ikē duratā mānēñju, ēi-bēlā tānā ābā ēbāniki mēhānāĩ lālaki ātēñju; ēhēṅgā piñjānākā sājānāi tāndā dakā āhtēñju ēhēṅgā nañjitēñju.",
+      "display": "Ēbāñju ikē duratā mānēñju, ēi-bēlā tānā ābā ēbāniki mēhānāĩ lālaki ātēñju; ēhēṅgā piñjānākā sājānāi tāndā dakā āhtēñju ēhēṅgā nañjitēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:specimen41:expression15",
+      "original": "Mriēñju ēbāniki bēstēñju, ‘ābā, raṭāpēnu bāgāritā nī saṛiṭi pāpa giā māĩ.",
+      "display": "Mriēñju ēbāniki bēstēñju, ‘ābā, raṭāpēnu bāgāritā nī saṛiṭi pāpa giā māĩ",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:specimen41:expression17",
+      "original": "Tānā ābā āliā-lōkurki bēstēñju, ‘nēgi siṇḍā tādu ēhēṅgā ibāniki ṭāṭā-gidu, aṭē mudi bāñjutā sidu, satēnii kādutā sidu.",
+      "display": "Tānā ābā āliā-lōkurki bēstēñju, ‘nēgi siṇḍā tādu ēhēṅgā ibāniki ṭāṭā-gidu, aṭē mudi bāñjutā sidu, satēnii kādutā sidu",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:specimen41:expression19",
+      "original": "Dāōke ēbāru jēḍā gibātiki, lāgi-ātēru.",
+      "display": "Dāōke ēbāru jēḍā gibātiki, lāgi-ātēru",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:specimen41:expression20",
+      "original": "Ēi bēlātā tānā raṭā mriēñju kētātā māsēñju.",
+      "display": "Ēi bēlātā tānā raṭā mriēñju kētātā māsēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:specimen41:expression21",
+      "original": "Ēhēṅgā ēbāñju iḍu-saṛitā ānābā ēṇḍā aṭē gāni bēsēñju.",
+      "display": "Ēhēṅgā ēbāñju iḍu-saṛitā ānābā ēṇḍā aṭē gāni bēsēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:specimen41:expression24",
+      "original": "Irā bēñjānākā ēbāñju saḍāṅgi ājānāi iḍutāṅgi sālbātiki maṅgiā ātēñju.",
+      "display": "Irā bēñjānākā ēbāñju saḍāṅgi ājānāi iḍutāṅgi sālbātiki maṅgiā ātēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:specimen41:expression25",
+      "original": "Ēigēli tānā ābā rāhātāṅgi bājānāi tāṅgē jāti buji gitēñju.",
+      "display": "Ēigēli tānā ābā rāhātāṅgi bājānāi tāṅgē jāti buji gitēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:specimen41:expression26",
+      "original": "Ēbāñju tānā ābāki bēstēñju, ‘mēhimu, ē ābā, ānu isē bāsāri ātē ni kāmā gitē; ēsēkābē nidā hukum dēgā-ātēnu.",
+      "display": "Ēbāñju tānā ābāki bēstēñju, ‘mēhimu, ē ābā, ānu isē bāsāri ātē ni kāmā gitē; ēsēkābē nidā hukum dēgā-ātēnu",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:specimen41:expression27",
+      "original": "Irā ātēkā-bē nāṅgē tanēlōkurki boji gibātiki ēsēkābē raṇḍā aḍā siā siḍāi.",
+      "display": "Irā ātēkā-bē nāṅgē tanēlōkurki boji gibātiki ēsēkābē raṇḍā aḍā siā siḍāi",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:specimen41:expression29",
+      "original": "Tānā ābā bēstēñju, ‘ē mriēnti, inu ṛāliāna nākē māñji.",
+      "display": "Tānā ābā bēstēñju, ‘ē mriēnti, inu ṛāliāna nākē māñji",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:specimen41:expression30",
+      "original": "Nāndē jāhā mānē, ērā gulē nindā.",
+      "display": "Nāndē jāhā mānē, ērā gulē nindā",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:specimen42:expression1",
+      "original": "Korukā tiñji-māsu.",
+      "display": "Korukā tiñji-māsu",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:specimen42:expression2",
+      "original": "Raṇḍā krāṇḍi suṛā-nāi, ‘raṇḍāni tinĩ,’ iñji ēbāskāni bāhāki sāsē.",
+      "display": "Raṇḍā krāṇḍi suṛā-nāi, ‘raṇḍāni tinĩ,’ iñji ēbāskāni bāhāki sāsē",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:specimen42:expression3",
+      "original": "Korukā koskā-ṛāi āskānāi pēkitu.",
+      "display": "Korukā koskā-ṛāi āskānāi pēkitu",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:specimen42:expression4",
+      "original": "Eigēli ēri āhāppā muātē.",
+      "display": "Eigēli ēri āhāppā muātē",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:specimen42:expression6",
+      "original": "Raṇḍē koru ēmbāki sājānāi gulē bēnōṭi suṛitē; ēmbā dēhānē bējgu dēri dēri bājā-tēki gāra muhntā iṭā-ājā mānē.",
+      "display": "Raṇḍē koru ēmbāki sājānāi gulē bēnōṭi suṛitē; ēmbā dēhānē bējgu dēri dēri bājā-tēki gāra muhntā iṭā-ājā mānē",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:specimen42:expression7",
+      "original": "Erā gulē suṛānāi koru kiṇḍri-ājānāi sājā-māsi bājānāi pāturitā guhitē.",
+      "display": "Erā gulē suṛānāi koru kiṇḍri-ājānāi sājā-māsi bājānāi pāturitā guhitē",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:specimen42:expression9",
+      "original": "I koru krāṇḍini bēstē, ‘ni ṛai budi klārnā pānbā-sāji-mānē.",
+      "display": "I koru krāṇḍini bēstē, ‘ni ṛai budi klārnā pānbā-sāji-mānē",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:specimen42:expression10",
+      "original": "I bējgu bājātēki oḍā bājā-tiki āē, nāi dēhiṅgi roṭā janta bājātiṅgi dāhā-māñji,’ inji guhitē.",
+      "display": "I bējgu bājātēki oḍā bājā-tiki āē, nāi dēhiṅgi roṭā janta bājātiṅgi dāhā-māñji,’ inji guhitē",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:specimen43:expression1",
+      "original": "Rañji ri mrēñju māchēru.",
+      "display": "Rañji ri mrēñju māchēru",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:specimen43:expression3",
+      "original": "Embā ēāñju trā mālā bāgā-giānā ēāri sitēñju.",
+      "display": "Embā ēāñju trā mālā bāgā-giānā ēāri sitēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:specimen43:expression4",
+      "original": "Likē dinā māñjānā ē kagāñju mrēñju gulē radāḍā-giānā atēñju sēkā dinā sājānā nēgi buddhi siḍānā gulē mālā ēmbā mutēñju.",
+      "display": "Likē dinā māñjānā ē kagāñju mrēñju gulē radāḍā-giānā atēñju sēkā dinā sājānā nēgi buddhi siḍānā gulē mālā ēmbā mutēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:specimen43:expression5",
+      "original": "Gulē muti bētaṭi ē dinātā bāḍā sākhi pāṭēru, ēāñju bāḍā dukhā pāṭēñju.",
+      "display": "Gulē muti bētaṭi ē dinātā bāḍā sākhi pāṭēru, ēāñju bāḍā dukhā pāṭēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:specimen43:expression6",
+      "original": "E dinātā ēāñju sājānā ē dinātā ra-lōku ēāñju bāhātā, ē mētēñju ēāñji pāñjiṅgā kapātikā kētātā pāṇḍitēñju.",
+      "display": "E dinātā ēāñju sājānā ē dinātā ra-lōku ēāñju bāhātā, ē mētēñju ēāñji pāñjiṅgā kapātikā kētātā pāṇḍitēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:specimen43:expression7",
+      "original": "Embā ēāñji amēñju inā tinbātiki siātēru.",
+      "display": "Embā ēāñji amēñju inā tinbātiki siātēru",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:specimen43:expression8",
+      "original": "E pājiṅgā tiñji māchā, mēhānā ṭuṭu pāñjātiki mana gitēñju.",
+      "display": "E pājiṅgā tiñji māchā, mēhānā ṭuṭu pāñjātiki mana gitēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:specimen43:expression9",
+      "original": "Dāḍā ēāñju puñjānā puchēñju bēstēñju, ‘āhā, nā ābā-bāhātā ēohē guti-lōku nāṭēkā ēāru gāmā tinbātiki pāḍpi-mānēru, aṭē āmu sākitā sāi-mānāmu.",
+      "display": "Dāḍā ēāñju puñjānā puchēñju bēstēñju, ‘āhā, nā ābā-bāhātā ēohē guti-lōku nāṭēkā ēāru gāmā tinbātiki pāḍpi-mānēru, aṭē āmu sākitā sāi-mānāmu",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:specimen43:expression10",
+      "original": "Āmu niṅgānā ābā-bāhātā sājānā bēsĩ, “āhē ābā, ānu Īśvara-bāhātā mi-bāhātā pāpa gitāmu.",
+      "display": "Āmu niṅgānā ābā-bāhātā sājānā bēsĩ, “āhē ābā, ānu Īśvara-bāhātā mi-bāhātā pāpa gitāmu",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:specimen43:expression12",
+      "original": "Aṭē ēāñju niṅgānā trā ābā tāḍā sāchēñju.",
+      "display": "Aṭē ēāñju niṅgānā trā ābā tāḍā sāchēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:specimen43:expression13",
+      "original": "Aṭē trā ābā sēkaṭi trānāi mēhānā śōka gitēñju aṭē piñjānā sājānā trā haṭā āhānā murkitēñju.",
+      "display": "Aṭē trā ābā sēkaṭi trānāi mēhānā śōka gitēñju aṭē piñjānā sājānā trā haṭā āhānā murkitēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:specimen43:expression15",
+      "original": "Trā ābā trā kulilōku-tiki bēstēñju, ‘gulē-ṭēkā nēgi jirā tāchānā ṭāṭā-sidu; ibāñjā kājutā mudiṅgā sidu, ēāñju kālutā pāṇḍāṅgā sidu.",
+      "display": "Trā ābā trā kulilōku-tiki bēstēñju, ‘gulē-ṭēkā nēgi jirā tāchānā ṭāṭā-sidu; ibāñjā kājutā mudiṅgā sidu, ēāñju kālutā pāṇḍāṅgā sidu",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:specimen43:expression17",
+      "original": "Embā ēāru uḍuṅgu gibātiki gitēru.",
+      "display": "Embā ēāru uḍuṅgu gibātiki gitēru",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:specimen43:expression18",
+      "original": "Echē-bēlā trā ḍrēi mrēñju kētātā māchēñju.",
+      "display": "Echē-bēlā trā ḍrēi mrēñju kētātā māchēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:specimen43:expression19",
+      "original": "Eāñju bātā-biā ilutāṅgi bātēñju.",
+      "display": "Eāñju bātā-biā ilutāṅgi bātēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:specimen43:expression22",
+      "original": "Embā salāṅga ājānā lāiki sālbātiki kutēñju.",
+      "display": "Embā salāṅga ājānā lāiki sālbātiki kutēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:specimen43:expression23",
+      "original": "Embā trā ābā dārāti sāchānā ēāñji gāmā bēstēñju.",
+      "display": "Embā trā ābā dārāti sāchānā ēāñji gāmā bēstēñju",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:specimen43:expression24",
+      "original": "Ehāṅgā trā ābā(-i) bēstēñju, ‘mēhēndu, mi ini kāthā bēndānā gāmā dinā-ātē mi kāmā gipki-māĩ.",
+      "display": "Ehāṅgā trā ābā(-i) bēstēñju, ‘mēhēndu, mi ini kāthā bēndānā gāmā dinā-ātē mi kāmā gipki-māĩ",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:specimen43:expression25",
+      "original": "Echētābē taṇē gāspātiki uḍuṅgu ājānā ēchētābē raṇḍā aḍā māṅgē siā-silāi.",
+      "display": "Echētābē taṇē gāspātiki uḍuṅgu ājānā ēchētābē raṇḍā aḍā māṅgē siā-silāi",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    },
+    {
+      "key": "grierson1906kui:specimen43:expression27",
+      "original": "Trā tāñji bēstēñju, ‘āhē mrēñju, inu nātāḍā mañji, aṭē mā-bāhātā ēchē mālā mānē ē gulē mindē.",
+      "display": "Trā tāñji bēstēñju, ‘āhē mrēñju, inu nātāḍā mañji, aṭē mā-bāhātā ēchē mālā mānē ē gulē mindē",
+      "reason": "Generic parser strips boundary punctuation/digits before profile; Original remains exact."
+    }
+  ],
+  "expression_accounting": {
+    "expressions": 77,
+    "non_title_atoms": 884,
+    "exact_partition": true,
+    "continuation_issues": [
+      {
+        "expression_key": "grierson1906kui:specimen40:expression6",
+        "physical_keys": [
+          "grierson1906kui:p464:specimen40:line5:word7",
+          "grierson1906kui:p464:specimen40:line6:word1"
+        ],
+        "issue": "Current span joins every physical atom with a space, yielding a space inside this printed continued word.",
+        "required_emission": "būdā-gāṭāndi",
+        "disposition": "Keep physical atoms in audit; exporter must use explicit joined lexical form and both locators."
+      },
+      {
+        "expression_key": "grierson1906kui:specimen40:expression8",
+        "physical_keys": [
+          "grierson1906kui:p464:specimen40:line7:word8",
+          "grierson1906kui:p464:specimen40:line8:word1"
+        ],
+        "issue": "Current span joins every physical atom with a space, yielding a space inside this printed continued word.",
+        "required_emission": "vēñjā-nāi,",
+        "disposition": "Keep physical atoms in audit; exporter must use explicit joined lexical form and both locators."
+      }
+    ]
+  },
+  "metadata_checks": {
+    "table_written_cells": 233,
+    "table_rows": 258,
+    "nonfinite_subtypes_not_inferred": true,
+    "fragment241_not_sentential": true
+  },
+  "pending": [
+    "Apply two explicit continued-word joins in lexical/expression emission; retain all physical keys and locators.",
+    "Type all77 expressions from source syntax/translation: punctuation segmentation alone does not prove sentential status.",
+    "Decide how standalone interlinear atoms with source punctuation enter final display, retaining exact Original; tested generic route strips only its existing boundary set.",
+    "Resolve final auxiliary bibliography, source claims, approved dialect registration and field-level uncertainty propagation.",
+    "Integrate latest grammar/outside-comparison revisions, then refresh inventory/profile and run full integrated actual-parser/fresh audit.",
+    "Canonical install/fullbuild/database/browser are not performed by this fixture."
+  ],
+  "fixture_scope": "Only table and four specimens,1225 rows. Grammar/comparands retain tokenizer coverage only; no invented control-language mappings.",
+  "canonical_changes": false
+}

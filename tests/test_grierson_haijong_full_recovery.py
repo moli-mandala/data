@@ -8,6 +8,7 @@ from pathlib import Path
 
 import pytest
 from segments import Tokenizer
+from profile_policy import hunterian_display  # Hunterian ch/chh/Ch → house spelling
 
 DATA = Path(__file__).resolve().parents[1]
 PACKAGE = DATA / 'data/other/forms/raw_data/grierson_haijong_1903'
@@ -144,13 +145,13 @@ def test_full_profile_coverage_and_consequential_mapping(assembly):
         return unicodedata.normalize('NFC',tok(unicodedata.normalize('NFC',s), column='IPA').replace(' ','').replace('#',' '))
     for r in assembly[0]:
         assert not any(c in r[2][:-1] for c in '.?')
-        expected = unicodedata.normalize('NFC',r[2].lower().replace('ṅ','ŋ').replace('w','v').rstrip('.?'))
+        expected = hunterian_display(unicodedata.normalize('NFC',r[2].lower().replace('ṅ','ŋ').replace('w','v').rstrip('.?')))
         assert convert(r[2]) == expected and '�' not in convert(r[2])
     for s in ['sāikkhˢāt','shāikkhˢāt','khˢēttra-ni','thākkʸā','t̲s̲ārābāk','un̲g̲kāni','gaïnyai','uriyā-phĕlālē']:
-        assert convert(s) == s
-    assert convert('Īshᵛar-ṭhāi') == 'īshᵛar-ṭhāi'
+        assert convert(s) == hunterian_display(s)
+    assert convert('Īshᵛar-ṭhāi') == 'īshᵛar-ṭʰāi'
     assert convert('Hē̃') == 'hē̃'
     assert convert('Ăk') != convert('Āk')
     assert convert('jiṅgiyāsē') == 'jiŋgiyāsē'
-    assert convert('khāwālē-dāwālē') == 'khāvālē-dāvālē'
+    assert convert('khāwālē-dāwālē') == 'kʰāvālē-dāvālē'
     assert convert('Talāk ki nām?') == 'talāk ki nām'

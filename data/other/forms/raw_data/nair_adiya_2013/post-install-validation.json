@@ -1,0 +1,28 @@
+{
+  "status": "pass: five canonical assets byte-equal guarded receipt; five installed-source focused tests pass",
+  "rows": 171,
+  "audit_units": 29,
+  "physical_witnesses": 174,
+  "target_rows": 136,
+  "comparison_rows": 35,
+  "documentary_holds": 3,
+  "variant_edges": 12,
+  "canonical_asset_hashes": {
+    "data/other/forms/20260927-nair-adiya.csv": "3e52cbdfe68505abb3411eebbda74eb031938d38a5baeb60163811c1311dcc27",
+    "data/other/forms/20260927-nair-adiya.yaml": "3fda284eadaabbc41a38bf9773b0da487f2db52c8b2410e9e971b8cb622e8476",
+    "data/other/forms/raw_data/nair_adiya_2013/installed-audit.jsonl": "cdaf676deb5f62312ec6f304212b5cd907bcb7c65cb79204aef25f0b32205650",
+    "cldf/dialects.csv": "29031266534d81ff93e0e9a24b0e25748fa060008df04447e234eefa799c01b2",
+    "cldf/sources.bib": "827307769010dd21b7fcecf84e81920acafefbab7cae6a0b3985a1df6c80089d"
+  },
+  "durable_identity_sha256": "4977c4e205f66233366ee1c00a9c938c9c78e3c087b63e02a94832647525c28a",
+  "test_log_sha256": "bc532a42c150373e7d6eff27dc29a2ad9a7f5de61e0a6223b708e5f3a14a2022",
+  "tests": "5 passed in 0.73s",
+  "scope": "local source-stage only; no compiled/publication validation",
+  "deferred": [
+    "full CLDF/database build",
+    "compiled graph/identity tests",
+    "full suite",
+    "browser QA",
+    "release"
+  ]
+}

@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Gadaba · Adimathara 2019 Mudhili Gadaba residual records, 2026-09-25 · batch 028. Pending user review; autonomous research continues.
+
+| # | Gadaba | Proposed etymology | Evidence |
+|---|---|---|---|
+| 21 | **mare** ‘tree’ | Proposed reflex of [**DEDR 4711**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=416) | DEDR 4711 full article (p. 416): Ga. (Oll.) mar, marin ( pl. markil) , (S.) māren ( pl. markīl) id. Go. (Tr.) maṛā, (most other dialects) mara, maṛa , (Ko.) māra, māṛa, (Ma.) marnu, mārnu id. ( Voc. 2712); (Koya Su.) māra id.; (LuS.) muranoo id. Konḍa mara The source mare “tree” is a same-item, same-sense dialectal form beside previously reviewed maren; the full article includes that Gadaba family. Its inflection and dialect label remain in the source record. (2 records.) |
+| 22 | **mɛre** ‘tree’ | Proposed reflex of [**DEDR 4711**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=416) | DEDR 4711 full article (p. 416): Ga. (Oll.) mar, marin ( pl. markil) , (S.) māren ( pl. markīl) id. Go. (Tr.) maṛā, (most other dialects) mara, maṛa , (Ko.) māra, māṛa, (Ma.) marnu, mārnu id. ( Voc. 2712); (Koya Su.) māra id.; (LuS.) muranoo id. Konḍa mara The source mɛre “tree” is a same-item, same-sense dialectal form beside previously reviewed maren; the full article includes that Gadaba family. Its inflection and dialect label remain in the source record. (1 record.) |
+| 23 | **egu** ‘leaf’ | Proposed reflex of [**DEDR 775**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=76) | DEDR 775 full article (p. 76) gives Ga. (Oll.) eg , (S.) egu , S. 3 ) ēg id. DED(S) 662. The source egu “leaf” fits this Gadaba whole-article family; the article passage was checked for sense as well as form. Dialect and inflection remain in the source record. (4 records.) |
+| 24 | **verkīl** ‘root’ | Proposed reflex of [**DEDR 5535**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=505) | DEDR 5535 full article (p. 505): Ga. (Oll.) vēr id. Konḍa vela , (BB) vēla id. Kuwi (F.) vē'la root (of large tree); (Isr.) vēˀ la large root of trees. DED 4554. The source verkīl “root” is a same-item, same-sense dialectal form beside previously reviewed veru; the full article includes that Gadaba family. Its inflection and dialect label remain in the source record. (2 records.) |
+| 25 | **pʰul** ‘flower’ | Proposed reflex of [**DEDR 4345**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=384) | DEDR 4345 full article (p. 384): Ga. (Oll.) pū ( pl. pūl ) flower; pūp- (pūt-) to flower; (S) puvvu flower; pūk- (pūt-) to flower, blossom; (S.²) būm pinḍake bumble bee. Go. (Tr. W. Ph.) pungār , (A. D. G. Ko.) puŋgar , (Mu.) puŋar , (Ma.) puŋgar̥ flower ( The source pʰul “flower” is a same-item, same-sense dialectal form beside previously reviewed pū; the full article includes that Gadaba family. Its inflection and dialect label remain in the source record. (1 record.) |
+
+Proposed assignment rows: **10**. Affected records: **10**. Relation kinds: **reflex**. Multi-part responses retain their source order.
+
+Exact persistent IDs and complete source records: [batch-028.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Gadaba/batch-028.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../gadaba-adimathara-20260925/research-holds.json). No new lexical material or donor nodes are introduced.

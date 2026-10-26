@@ -1,6 +1,18 @@
 # SIL Korwa and Kodaku survey (JLSR 2022-014)
 
-This package installs the Korwa and Kodaku target lists in Gangadhar Behera's
+The scope and counts below document the original target-wordlist import.
+Whole-report recovery is being reviewed in
+[`whole-recovery/README.md`](whole-recovery/README.md), including the formerly
+excluded comparison lists, narratives, and introductory lexical evidence.
+`import_korwa_kodaku.py` remains the historical Appendix B.5 preview. Its
+`--install` mode is archival: it refuses an approved, in-progress, or installed
+whole-report recovery, and refuses a canonical CSV that differs from its pinned
+4,458-row historical output. Future source-stage regeneration must use the
+reviewed, guarded `whole-recovery/installation/install_source.py` with an exact
+root-acceptance manifest. No whole-report installation has occurred merely by
+preparing this proposal.
+
+The historical import covered the Korwa and Kodaku target lists in Gangadhar Behera's
 *A Sociolinguistic Profile of Korwa and Kodaku Tribes in Chhattisgarh and
 Jharkhand, India*. The report is SIL's *Journal of Language Survey Reports*
 2022-014. Fieldwork took place in 2004–2005; the report was published in 2022.
@@ -58,8 +70,10 @@ row therefore leaves `Parameter_ID`, `Cognateset`, and `Etymology` blank.
 sh data/other/forms/raw_data/sil_korwa_kodaku_2022/render_wordlist.sh
 python data/other/forms/raw_data/sil_korwa_kodaku_2022/extract_scaffolds.py
 # Do not run build_review_scaffold.py without repeating the complete visual review.
-python data/other/forms/raw_data/sil_korwa_kodaku_2022/import_korwa_kodaku.py --verify-pdf --install
-UV_CACHE_DIR=/tmp/uv-cache uv run pytest -q tests/test_sil_korwa_kodaku_2022.py
+python data/other/forms/raw_data/sil_korwa_kodaku_2022/import_korwa_kodaku.py --verify-pdf
+# After independent approval of exact whole-report assets, the guarded
+# source-stage installer is:
+# python data/other/forms/raw_data/sil_korwa_kodaku_2022/whole-recovery/installation/install_source.py --install
 ```
 
 Shared bibliography, language/dialect registration, profile routing, full

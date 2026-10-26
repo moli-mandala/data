@@ -32,7 +32,12 @@ def convert(text):
 def test_complete_source_accounting_and_reproduction():
     actual = rows()
     rebuilt, audit = IMPORTER.build(records())
-    assert actual == rebuilt
+    historical = RAW / 'whole-source-recovery/proposal' / f'{STEM}.csv'
+    assert list(csv.reader(historical.open())) == rebuilt
+    approved = RAW / 'whole-source-recovery/revision4/proposal' / f'{STEM}.csv'
+    assert actual == list(csv.reader(approved.open()))
+    assert all(a[:14] == b[:14] and set(b[14].split()) <= set(a[14].split())
+               for a, b in zip(actual, rebuilt))
     assert audit == json.loads((RAW / f'{STEM}-audit.json').read_text())
     assert len(records()) == len(audit) == 275
     assert sum(a['status'] == 'unelicited' for a in audit) == 51

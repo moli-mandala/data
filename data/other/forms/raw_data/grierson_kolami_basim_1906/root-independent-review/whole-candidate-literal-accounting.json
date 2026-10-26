@@ -1,0 +1,51 @@
+{
+  "reviewer": "/root",
+  "status": "passed_full_literal_projection_and_source_unit_accounting_on_review_scaffold",
+  "candidate_sha256": "d70237705abcb7bcdb59a32f1898ebb0007ad9d83cbedcdab85d2473f6fa0509",
+  "source_input_sha256": {
+    "grammar-review/sharp-reviewed-revision2/reviewed-child-witnesses.jsonl": "c17d355aa870971bbb2433a7f9115fa5ce6deeac3ddc34911451d42534393814",
+    "specimens/sharp-reviewed-revision/atomic-emission-proposal.jsonl": "73b4bcc64ed4dc94e5c47cd6782a2cf64ae580f28963e5eb7784213f61795e89",
+    "specimens/sharp-reviewed-revision/expression-emission-proposal.jsonl": "fecc6462f86e2713bbf78e9fb8deab3061cd597cf34681d5bc86e31e6c42c43c",
+    "outside-review/outside-census-review.json": "771e371345e45b37a0df0d611ac209446adebfd0bb3e583ab161b7d161bd174f"
+  },
+  "exact_projected_new_rows": 827,
+  "section_counts": {
+    "grammar": 212,
+    "atomic": 560,
+    "expression": 51,
+    "outside": 4
+  },
+  "canonical_reuses": [
+    {
+      "new_scope_key": "grierson1906kolamibasim:p566:pronunciation-n-nd-d:1:independent:w10",
+      "existing_key": "grierson1906kui:p566:outside-comparand:06",
+      "canonical_path": "data/data/other/forms/20260927-grierson-kui.csv",
+      "scope_gloss": "",
+      "existing_gloss": "he",
+      "qualification": "Same physical printing. New source-local comparison has no invented standalone gloss; existing approved contextual he gloss retained unchanged."
+    },
+    {
+      "new_scope_key": "grierson1906kolamibasim:p623:outside:kolami-genitive",
+      "existing_key": "grierson1906kui:p623:outside-comparand:15",
+      "canonical_path": "data/data/other/forms/20260927-grierson-kui.csv"
+    },
+    {
+      "new_scope_key": "grierson1906kolamibasim:p623:outside:kolami-genitive",
+      "existing_key": "grierson1906naiki:p623:genitive-comparison:naiki",
+      "canonical_path": "data/data/other/forms/20260927-grierson-naiki.csv"
+    }
+  ],
+  "canonical_input_sha256": {
+    "data/data/other/forms/20260927-grierson-kui.csv": "a37c47777742b845818963a724173014d84adb111f94e46e165a829447adf066",
+    "data/data/other/forms/20260927-grierson-naiki.csv": "a0547a5e0aee057074ee4daf1a40ca4efbb89de194e55094185fa64724ce5932"
+  },
+  "audited_structural_parents": 169,
+  "audited_grammar_children": 224,
+  "audit_records": 1570,
+  "limits": [
+    "Current metadata scaffold only: later tag changes must rebase candidate hash and repeat or prove all protected literal fields unchanged.",
+    "Source-local approved-derivative continuity is not a substitute for final frozen original-vs-output glyph audit.",
+    "Three reused physical attestations verified as existing rows, not duplicated new rows.",
+    "No compiled build/identity/dedup/production or canonical installation approval."
+  ]
+}

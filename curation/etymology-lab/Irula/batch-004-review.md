@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Irula · Dravidian surveys, 2026-09-21 · batch 004. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Irula | Proposed etymology | Evidence |
+|---|---|---|---|
+| 16 | **nilāvɨ** ‘moon’, **nilā** ‘moon’, **nīlavɨ** ‘moon’, **nīla** ‘moon’ | Proposed reflex of [**DEDR 3754**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=335) | DEDR 3754 gives Tamil/Malayalam nilā/nilavu, Telugu/Kolami nela, Parji neliñ, Gadaba neliŋ and Gondi/Konda lēnj/lēnz ‘moon/month’. These forms belong to the nil-/nel-/lenj family rather than tiṅkaḷ or Indo-Aryan candra. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (20 records.) |
+| 17 | **mara** ‘tree’, **mara m** ‘tree’, **mərə** ‘tree’ | Proposed reflex of [**DEDR 4711**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=416) | DEDR 4711(a) gives Tamil/Malayalam maram, Kannada/Tulu mara, Kota marm, Kolami māk, Parji meri, Gadaba māren, Gondi mara and Kurukh mann ‘tree’. Only simple tree/wood responses are selected; the animal compounds in subsection (b) are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (21 records.) |
+| 18 | **oḍambɨ** ‘body’, **oḍalɨ** ‘body’, **oḍambu** ‘body’ | Proposed reflex of [**DEDR 586**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=57) | DEDR 586 explicitly gives Tamil uṭal/uṭampu, Malayalam uṭal/uṭampu, Kannada oḍal/oḍambi and Konda oṛol ‘body’. This is printed entry 586; the existing reconstruction at d585 has a mismatched body gloss and is deliberately not used. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (18 records.) |
+| 19 | **ūru** ‘village’, **ūrɨ** ‘village’, **uru** ‘village’, **urɨ** ‘village’ | Proposed reflex of [**DEDR 752**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=73) | DEDR 752 gives Tamil/Malayalam ūr, Kannada ūr, Kodagu ūri, Tulu/Telugu ūru and Kolami ūr ‘village’. These simple village terms select the attested family; Brahui urā ‘house’ has a competing comparison in the article and is excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (20 records.) |
+| 20 | **mana** ‘house’ | Proposed reflex of [**DEDR 4776**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=424) | DEDR 4776 gives Tamil maṉai, Malayalam mana, Kannada mane, Kodagu mane and Tulu mane ‘house’. The matching house responses preserve the simple stem; wife/household derivatives are not included. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+
+Proposed assignment rows: **80**. Affected records: **80**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-004.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Irula/batch-004.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

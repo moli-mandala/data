@@ -6,5 +6,9 @@ sources:
   nured:
     identity:
       dedupe_by_entry_key: true
+    forms:
+      # "vr̆ẽč ku-/bu-", "púċën̆ tẽ/tavë̃": a slash alternates one word; an ending-only
+      # alternative ("malín̆/-i", the feminine) stays in Original and adds no row.
+      slash_alternates: true
     reference:
       etymology_provenance: source-mapped

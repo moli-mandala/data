@@ -1,0 +1,41 @@
+{
+  "status": "pass: approved local source-stage installation and actual canonical validation; no compiled completion claim",
+  "rows": 204,
+  "target_rows": 183,
+  "comparison_rows": 21,
+  "audit_units": 128,
+  "physical_witness_records": 229,
+  "audit_only": 25,
+  "component_variant_borrowing_edges": 0,
+  "parser": "Direct canonical CSV parse plus real registered all-YAML SourceMeta NFC/NFD checks, no monkeypatch: all15 fields and Form exact, zero conversion/errors,204 source_entry_dedupe_key values.",
+  "metadata": "Two reference flags pass: Codex editor/OCRfalse; primary source etymology vs reported auxiliary none. Muduga/mudu1239 reused; source-qualified Attapady lect has blank Glottocode/coordinates/Quality.",
+  "legacy_preservation": "Existing109+42 rows/keys remain exact; no key overlap.",
+  "installed_tests": {
+    "passed": 3,
+    "seconds": 1.11,
+    "log": "source-stage/installed-tests.log",
+    "test_file": "tests/test_nair_muduga_installed.py",
+    "test_file_sha256": "1d715bb2a87bf129e46b56c0f82f82f5ecb9c54f34dfaa5816d795c4556e0a2d"
+  },
+  "transaction_tests": {
+    "passed": 10,
+    "seconds": 0.36
+  },
+  "repeat_install": "Verified same-source no-op, all five output hashes stable.",
+  "all_approval_pins": "36 exact files unchanged after installation, including historical/final freeze and README",
+  "canonical_sha256": {
+    "data/other/forms/20260927-nair-muduga.csv": "e091d6665b36fb0a770d62955382e30c73d97f186e9f2e833e785c73939c7127",
+    "data/other/forms/20260927-nair-muduga.yaml": "74ebd6464f06beb6c9e7ceb88c3c7a0a69063ca2050566c28aba4f2405a5214b",
+    "data/other/forms/raw_data/nair_muduga_2013/installed-audit.jsonl": "288db948e0acb9464744d591318e85b0d84b1fabdf6f9b67f0e8055556a4ea0e",
+    "cldf/dialects.csv": "f4baf66ce8c60985faf49e561b7254e890f3da5d05a954aaf10bc99a493a89de",
+    "cldf/sources.bib": "c9070c41c113643881a5d3aab3139b5152a2ed18dd41b70561fb6928dfd1d6b7"
+  },
+  "durable_identity_sha256": "4977c4e205f66233366ee1c00a9c938c9c78e3c087b63e02a94832647525c28a",
+  "approval_sha256": "a37b0e5b8b88c6db7607009b61a80c9060fc94bc7ffa1f0dd1fdf4f4899d975f",
+  "deferred": [
+    "Full CLDF/database/full suite",
+    "Compiled graph/reference/identity checks",
+    "Browser/publication"
+  ],
+  "historical_test_copy": "source-stage/test_nair_muduga_source.py is immutable approval evidence of the original data/tests proposal test, not a runnable module at the copied scaffold location. No pinned proposal validator rerun."
+}

@@ -1,0 +1,13 @@
+# Independent source identity review
+
+Source-only recommendation; no registry or canonical changes. Reviewed the original PDF page 40 image and its native text from the pinned Nair PDF (`4d2588987dab5d15c62ecc95330ccf7e925a9bce80d08068b91ca3f48c8cc5af`), and the chapter's pp40–44 scope/bibliography records.
+
+The proposed **source-named Malaveda base with blank Glottocode and coordinates** is defensible. Nair expressly warns that Veda/Malaveda/Vettuvar may denote different communities sharing only their names. He distinguishes the Pathanamthitta 1977 material, which he argues deserves separate Southern Dravidian language status, from seven Kollam settlements studied in 1991 whose speech he says differs only marginally from Malayalam. Those are attributed author claims, not proof that all named communities constitute a single genealogical language.
+
+The following examples are labelled generically Veda. Their presentation follows the discussion of both bodies of research without individual example-to-settlement attribution. Retain source-wide Pathanamthitta/Kollam context and the six reported authorities, but do not assign each example to Kollam, a precise Pathanamthitta site, or an exact 1977 thesis unless a new primary witness establishes that mapping. Broad place names are not elicitation coordinates.
+
+[Glottolog Malavedan](https://glottolog.org/resource/languoid/id/mala1463), independently read 2026-09-27, establishes a separately catalogued language with Glottocode `mala1463` and ISO `mjr`. Its similar name does not independently establish equivalence to Nair's unlocated example corpus. The page's subclassification comment references Bhattacharya 1976, whereas this chapter names different studies. A forced `mala1463` mapping would therefore exceed the evidence reviewed here. Conversely, a source-specific base must not be described as proof of a newly discovered language or permanently exclude future reconciliation.
+
+The root's report that Nair reference 320019 leaves Malaveda unresolved remains corroborating evidence supplied by root, not a fresh independent verification: attempts to open the primary reference page and JSON endpoint failed in this review. The ISO endpoint also returned 403. Do not turn those access failures into scholarly evidence.
+
+Keep `S. Dravidian I` only as the existing broad house clade if this accommodates Nair's explicitly Southern Dravidian claim; retain uncertainty about the exact taxonomic relationship and the potentially heterogeneous named communities in provenance. No narrower subgroup, dialect, coordinates, autonym equivalence, or ancestry edge follows from this review.

@@ -1,0 +1,40 @@
+{
+  "status": "complete source-local emission/metadata proposal; independent metadata and final-output audit required",
+  "counts": {
+    "candidate_rows": 390,
+    "Roman_lexical_emissions": 363,
+    "shared_native_groups": 1,
+    "whole_expressions": 27,
+    "Roman_physical_atoms": 367,
+    "Native_physical_atoms": 365,
+    "aliases": 732,
+    "joins": 4,
+    "grammar_interpretations_consulted": 98
+  },
+  "generator_sha256": "4f48dd521356167ca21663b5635b09434d95ed3015893860a22c353541f09e1d",
+  "input_hashes": {
+    "specimens/specimen37/first-reading-freeze.json": "b6aeabbf7ac9e36172bbb493e6e6c1119352d541881a88364a8ff5233052e60a",
+    "specimens/specimen37/independent-review/independent-full-original-review.json": "25edc7bb45e9240f1ff6a8789f1ab0c12b56c754ddfde923c52159c40932577f",
+    "grammar/child-witnesses-reviewed.jsonl": "5ac645b13ae1a3132ac094431fbce9376037705f93c0c59d9861e6e7ef999ee7",
+    "scope/historical-identity-proposal.json": "cba0fb403f6a5882684d0537d4bf228b9817863704d78009a70cb4d91dd1ebfa"
+  },
+  "outputs": {
+    "unforced-lexical-function-scope.jsonl": "1e954f74caab06207aedb54e2f96a294b9d37af206b3d30499a492a1c1869dec",
+    "all-390-metadata-proposal.jsonl": "8cdafe6ff7be1930aded5ce8ee72b7a35a61c8f559882ebc345adae5dcd2eae5",
+    "candidate-audit.jsonl": "df30840857b1e5899af75ecc436d91a29ed99904ace2624d768abbbef000af3f",
+    "candidate.csv": "fcd708e8edb9e164f28e8813bf69026bda262fa56b739fdde36814cd09862075",
+    "physical-key-aliases.jsonl": "69c8b668db65d1380bec7255d7e7c907738c4f15e0c77e70419d94302972e7e0",
+    "reviewed-printer-continuations.jsonl": "2d3a5df98c2a4bd7bcab92217494ccdc1aaa7bab383750cb488a98f3c8b4565f",
+    "literal-symbol-inventory.tsv": "db7b98877dfe742a3619a51267c1a9685b90330c45b9c93b8699a2c3f2cec17e",
+    "routing-and-literal-policy-proposal.json": "fce81da7ce810cc4146dc81919a20cdc2833f0b372aa75aba0cba4abef879666",
+    "shared-native-groups.jsonl": "90d561aa4da0610b5aee2944ffdcf030ef130626eac76d7c613110c6f4279e57"
+  },
+  "policies": [
+    "Every Roman physical atom maps exactly once to a lexical emission; every Native physical atom maps exactly once to a lexical emission or explicit shared group; nested whole speech adds source expressions, not duplicated physical attestations.",
+    "All27 expression keys anchor first immutable physical atom; prior ordinal proposal keys retained only as audit history.",
+    "Full group Native preserved without guessed perword alignment; all four reviewed printer joins and segmentation exceptions retained.",
+    "No graph edges, inferred roots, English object-case tags, or automatic -ing/participle extraction.",
+    "Source identity follows proposed Ahirwadi/Gurgaon historical route; source lect registration and final source key remain integration decisions.",
+    "No canonical writes or phonemic inference; literal-profile inventory is preliminary source policy evidence."
+  ]
+}

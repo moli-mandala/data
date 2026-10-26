@@ -1,0 +1,25 @@
+file: 20260927-nair-betta-kurumba.csv
+defaults:
+  transcription:
+    convert: false
+    preserve_hyphens: true
+  identity:
+    dedupe_by_entry_key: true
+  importer:
+    commands:
+    - - data/other/forms/raw_data/nair_betta_kurumba_2013/metadata-amendment/import_source.py
+      - --install
+    note: Guarded complete pp12–18 source-stage import; source-local approval required.
+sources:
+  nair2013bettakurumba:
+    forms:
+      split_alternates: false
+    reference:
+      editor: OpenAI Codex
+      ocr: 'No'
+      etymology_provenance: none
+  jayapal1978kurumba:
+    reference:
+      editor: OpenAI Codex
+      ocr: false
+      etymology_provenance: none

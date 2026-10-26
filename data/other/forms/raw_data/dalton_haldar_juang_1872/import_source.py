@@ -150,6 +150,8 @@ def build():
 
 
 def write(install=False):
+    if (ROOT / 'whole-source-recovery/root-installation-approval-20260927.json').exists():
+        raise RuntimeError('Whole-source recovery supersedes this historical writer. Use install_whole_source.py --install; build() remains available for historical comparison.')
     rows, audit = build()
     with (ROOT / f"{STEM}.csv").open("w", encoding="utf-8", newline="") as handle:
         csv.writer(handle).writerows(rows)

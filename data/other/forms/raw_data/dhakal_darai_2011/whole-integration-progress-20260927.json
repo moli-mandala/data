@@ -1,0 +1,48 @@
+{
+  "status": "Whole-thesis metadata reconciliation in progress; canonical unchanged",
+  "physical_index_units": 11226,
+  "expanded_review_records": 11300,
+  "audit_only_controls": 500,
+  "source_agreement_role_records": 548,
+  "specific_conflicting_tag_decisions": 37,
+  "retained_literal_notation_groups": 4,
+  "multi_statement_source_ids": 1,
+  "statement_child_alignments_verified": 16,
+  "independent_reviews": [
+    "root-p376-notation-review-20260927.json",
+    "root-appendix5-targeted-review-20260927.json"
+  ],
+  "focused_tests": {
+    "passed": 32,
+    "seconds": 1.85,
+    "file": "tests/test_dhakal_darai_whole_thesis_recovery.py"
+  },
+  "hashes": {
+    "whole-evidence-index.jsonl": "5daa00f5e6403170b8c95092d9aa782ccc5df43ac9ed97c2393fc180393b3df4",
+    "whole-expanded-metadata-review.jsonl": "9f077fe17317748b800aa5a1258e6aab3c48d4c06c701fba268196462fac8b18",
+    "whole-conflicting-tag-decisions.json": "ed922d146d3739410404d7ee9691dfdd31500324b009d011f912b5a765f0f261",
+    "root-p376-notation-review-20260927.json": "948941a63ddfea70b3608c210c2e3570c279db296216b6eaacb13bc187b2ceed",
+    "root-appendix5-targeted-review-20260927.json": "ae90f1391688c77ececd3c8a93eb6658d15260601b0bd055cd0a2d7f051707a6",
+    "whole-exact-reuse-candidates.json": "d3ec87d070e812feeb174b667a79158a9e6fd19a04664022f8808efb638cc2f5",
+    "whole_attribution.py": "b1e30bb7610d3fa40c2acc97b177eb2ced9cffe28fdeb0f97e987ba1b9521b52"
+  },
+  "remaining": [
+    "Complete per-attestation source-claim, function and dialect reconciliation",
+    "Citation-preserving reuse decisions and original key retention",
+    "Whole-source CSV and sound-profile review proposal",
+    "Independent whole-output original-page audit",
+    "Authorized source-stage installation only after independent review"
+  ],
+  "deferred_by_instruction": [
+    "Full CLDF/database build",
+    "Full test suite",
+    "Browser QA"
+  ],
+  "canonical_rows_unchanged": 485,
+  "attribution_policy": "Explicit other lects and historical witnesses override the author Chitwan default. Narrative recording places are retained without creating new dialects.",
+  "provisional_exact_reuse_census": {
+    "group_count": 1132,
+    "candidate_repeated_occurrences": 3364,
+    "accepted": false
+  }
+}

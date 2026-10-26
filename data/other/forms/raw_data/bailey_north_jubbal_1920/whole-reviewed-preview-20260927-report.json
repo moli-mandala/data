@@ -1,0 +1,1003 @@
+{
+  "status": "reviewed revision; independent final-output audit pending; not installed",
+  "rows": 837,
+  "audit_units": 688,
+  "legacy_keys_preserved": 330,
+  "new_rows": 507,
+  "literal_corrections": 2,
+  "command_metadata_corrections": 6,
+  "legacy_metadata_corrections": 43,
+  "input_sha256": {
+    "whole-unfrozen-preview.csv": "6230b9c02c111a350d37f094b2eafa6413e71c20bfd7fe7029a8462a132fb422",
+    "whole-unfrozen-preview-audit.jsonl": "ed9d2985a222865df1b64897e8b9898958eb09e2218043255809df7ffd23b8d8",
+    "whole-unfrozen-preview-report.json": "f15e75cf50c8d01f072e7cc82d9b65b68ddd6b5fb57fb603c5cd60a72dfd9abd",
+    "whole-preview-profile.txt": "78a9842686f80fc27f4a7719f381ae29d454224b05c62d7b9d2c17e7423c5d72",
+    "whole-source-recovery/independent-sentences-context-review-20260927.json": "6e7be24e6d6bac14c609a68d7086f2087c2118978fa6f32c3c666d158094f373",
+    "whole-source-recovery/legacy-metadata-review-20260927.json": "e1165e5db53a6b5336b4199a2d7b06b5183911aee55487f352d71bade900e970",
+    "prepare_reviewed_preview.py": "4b542783b7ec4fe9cbc9929d99ccc77a184328f514e8cce8c40bd547b7963eaf"
+  },
+  "changes": [
+    {
+      "entry_key": "bailey1920northjubbal:p183:sentence:12",
+      "kind": "literal",
+      "delta": {
+        "source_unit_key": "bailey1920northjubbal:p183:sentence:12",
+        "field": "forms",
+        "before": [
+          "Ēh rā bā’i ăpṇī bauhṇī du jēṭhā"
+        ],
+        "after": [
+          "Ēh rā bā’ī ăpṇī bauhṇī du jēṭhā"
+        ],
+        "reason": "Final i has a clear flat macron.",
+        "original_clip": [
+          85,
+          348,
+          105,
+          362
+        ],
+        "scale": 16
+      }
+    },
+    {
+      "entry_key": "bailey1920northjubbal:p183:sentence:17",
+      "kind": "literal",
+      "delta": {
+        "source_unit_key": "bailey1920northjubbal:p183:sentence:17",
+        "field": "forms",
+        "before": [
+          "Ĕs khūb pīṭĕau rŏs̲h̲io dā baunho"
+        ],
+        "after": [
+          "Ĕs khūb pīṭĕau rŏs̲h̲īo dā baunho"
+        ],
+        "reason": "The i following underlined sh has a clear flat macron.",
+        "original_clip": [
+          131,
+          465,
+          161,
+          480
+        ],
+        "scale": 16
+      }
+    },
+    {
+      "entry_key": "bailey1920northjubbal:p183:sentence:8",
+      "kind": "whole-command-metadata",
+      "delta": {
+        "source_unit_key": "bailey1920northjubbal:p183:sentence:8",
+        "add_tags": [
+          "impv"
+        ],
+        "reason": "Complete printed command and English imperative translation; classify whole construction, not inferred internal morphology."
+      }
+    },
+    {
+      "entry_key": "bailey1920northjubbal:p183:sentence:15",
+      "kind": "whole-command-metadata",
+      "delta": {
+        "source_unit_key": "bailey1920northjubbal:p183:sentence:15",
+        "add_tags": [
+          "impv"
+        ],
+        "reason": "Complete printed command and English imperative translation; classify whole construction, not inferred internal morphology."
+      }
+    },
+    {
+      "entry_key": "bailey1920northjubbal:p183:sentence:16",
+      "kind": "whole-command-metadata",
+      "delta": {
+        "source_unit_key": "bailey1920northjubbal:p183:sentence:16",
+        "add_tags": [
+          "impv"
+        ],
+        "reason": "Complete printed command and English imperative translation; classify whole construction, not inferred internal morphology."
+      }
+    },
+    {
+      "entry_key": "bailey1920northjubbal:p183:sentence:17",
+      "kind": "whole-command-metadata",
+      "delta": {
+        "source_unit_key": "bailey1920northjubbal:p183:sentence:17",
+        "add_tags": [
+          "impv"
+        ],
+        "reason": "Complete printed command and English imperative translation; classify whole construction, not inferred internal morphology."
+      }
+    },
+    {
+      "entry_key": "bailey1920northjubbal:p183:sentence:18",
+      "kind": "whole-command-metadata",
+      "delta": {
+        "source_unit_key": "bailey1920northjubbal:p183:sentence:18",
+        "add_tags": [
+          "impv"
+        ],
+        "reason": "Complete printed command and English imperative translation; classify whole construction, not inferred internal morphology."
+      }
+    },
+    {
+      "entry_key": "bailey1920northjubbal:p184:sentence:19",
+      "kind": "whole-command-metadata",
+      "delta": {
+        "source_unit_key": "bailey1920northjubbal:p184:sentence:19",
+        "add_tags": [
+          "impv"
+        ],
+        "reason": "Complete printed command and English imperative translation; classify whole construction, not inferred internal morphology."
+      }
+    },
+    {
+      "entry_key": "bailey1920northjubbal:p185:item:35:answer2",
+      "kind": "legacy-metadata",
+      "delta": {
+        "entry_key": "bailey1920northjubbal:p185:item:35:answer2",
+        "before": {
+          "gloss": "cattle",
+          "notes": "",
+          "tags": ""
+        },
+        "proposed": {
+          "gloss": "cattle",
+          "notes": "",
+          "tags": "collective"
+        },
+        "reasons": [
+          "Printed col., cattle explicitly qualifies second answer."
+        ]
+      }
+    },
+    {
+      "entry_key": "bailey1920northjubbal:p186:item:51:answer3",
+      "kind": "legacy-metadata",
+      "delta": {
+        "entry_key": "bailey1920northjubbal:p186:item:51:answer3",
+        "before": {
+          "gloss": "so much",
+          "notes": "",
+          "tags": ""
+        },
+        "proposed": {
+          "gloss": "so much",
+          "notes": "",
+          "tags": "correlative"
+        },
+        "reasons": [
+          "Printed correl. explicitly qualifies tētī."
+        ]
+      }
+    },
+    {
+      "entry_key": "bailey1920northjubbal:p186:item:1:answer2",
+      "kind": "legacy-metadata",
+      "delta": {
+        "entry_key": "bailey1920northjubbal:p186:item:1:answer2",
+        "before": {
+          "gloss": "go (in composition)",
+          "notes": "",
+          "tags": ""
+        },
+        "proposed": {
+          "gloss": "go",
+          "notes": "Source restricts this form to use in composition.",
+          "tags": ""
+        },
+        "reasons": [
+          "Usage restriction belongs in source commentary rather than lexical gloss."
+        ]
+      }
+    },
+    {
+      "entry_key": "bailey1920northjubbal:p185:item:28",
+      "kind": "legacy-metadata",
+      "delta": {
+        "entry_key": "bailey1920northjubbal:p185:item:28",
+        "before": {
+          "gloss": "call",
+          "notes": "",
+          "tags": ""
+        },
+        "proposed": {
+          "gloss": "call",
+          "notes": "Source explicitly contrasts its printed ending with -no.",
+          "tags": ""
+        },
+        "reasons": [
+          "Retain source notation warning beside the accepted form."
+        ]
+      }
+    },
+    {
+      "entry_key": "bailey1920northjubbal:p186:item:7",
+      "kind": "legacy-metadata",
+      "delta": {
+        "entry_key": "bailey1920northjubbal:p186:item:7",
+        "before": {
+          "gloss": "hasten",
+          "notes": "",
+          "tags": ""
+        },
+        "proposed": {
+          "gloss": "hasten",
+          "notes": "Source explicitly contrasts the final dental n with retroflex ṇ.",
+          "tags": "multiword-expression"
+        },
+        "reasons": [
+          "Preserve source parenthetical spelling distinction.",
+          "Retain scope of the complete printed multiword expression."
+        ]
+      }
+    },
+    {
+      "entry_key": "bailey1920northjubbal:p186:item:51",
+      "kind": "legacy-metadata",
+      "delta": {
+        "entry_key": "bailey1920northjubbal:p186:item:51",
+        "before": {
+          "gloss": "much (a lot)",
+          "notes": "",
+          "tags": ""
+        },
+        "proposed": {
+          "gloss": "much (a lot)",
+          "notes": "Source explicitly warns that the printed plain r is not retroflex ṛ.",
+          "tags": ""
+        },
+        "reasons": [
+          "Preserve source parenthetical rhotic distinction."
+        ]
+      }
+    },
+    {
+      "entry_key": "bailey1920northjubbal:p188:item:9",
+      "kind": "legacy-metadata",
+      "delta": {
+        "entry_key": "bailey1920northjubbal:p188:item:9",
+        "before": {
+          "gloss": "very",
+          "notes": "",
+          "tags": ""
+        },
+        "proposed": {
+          "gloss": "very",
+          "notes": "Source explicitly warns that the printed plain r is not retroflex ṛ.",
+          "tags": ""
+        },
+        "reasons": [
+          "Preserve source parenthetical rhotic distinction."
+        ]
+      }
+    },
+    {
+      "entry_key": "bailey1920northjubbal:p187:item:2",
+      "kind": "legacy-metadata",
+      "delta": {
+        "entry_key": "bailey1920northjubbal:p187:item:2",
+        "before": {
+          "gloss": "peach",
+          "notes": "",
+          "tags": ""
+        },
+        "proposed": {
+          "gloss": "peach",
+          "notes": "Source explicitly contrasts plain r with retroflex ṛ.",
+          "tags": ""
+        },
+        "reasons": [
+          "Preserve source parenthetical rhotic distinction."
+        ]
+      }
+    },
+    {
+      "entry_key": "bailey1920northjubbal:p185:item:62",
+      "kind": "legacy-metadata",
+      "delta": {
+        "entry_key": "bailey1920northjubbal:p185:item:62",
+        "before": {
+          "gloss": "foot",
+          "notes": "",
+          "tags": ""
+        },
+        "proposed": {
+          "gloss": "foot",
+          "notes": "Source cross-reference: see leg (p. 186, vocabulary item 34).",
+          "tags": ""
+        },
+        "reasons": [
+          "Recover explicit foot-to-leg reference; not a synonym or variant edge."
+        ]
+      }
+    },
+    {
+      "entry_key": "bailey1920northjubbal:p187:item:33",
+      "kind": "legacy-metadata",
+      "delta": {
+        "entry_key": "bailey1920northjubbal:p187:item:33",
+        "before": {
+          "gloss": "older sister",
+          "notes": "",
+          "tags": ""
+        },
+        "proposed": {
+          "gloss": "older sister",
+          "notes": "Age is relative to the person referred to.",
+          "tags": ""
+        },
+        "reasons": [
+          "Retain explicit scope of older/younger sister distinction."
+        ]
+      }
+    },
+    {
+      "entry_key": "bailey1920northjubbal:p187:item:33:answer2",
+      "kind": "legacy-metadata",
+      "delta": {
+        "entry_key": "bailey1920northjubbal:p187:item:33:answer2",
+        "before": {
+          "gloss": "younger sister",
+          "notes": "",
+          "tags": ""
+        },
+        "proposed": {
+          "gloss": "younger sister",
+          "notes": "Age is relative to the person referred to.",
+          "tags": ""
+        },
+        "reasons": [
+          "Retain explicit scope of older/younger sister distinction."
+        ]
+      }
+    },
+    {
+      "entry_key": "bailey1920northjubbal:p185:item:48:answer2",
+      "kind": "legacy-metadata",
+      "delta": {
+        "entry_key": "bailey1920northjubbal:p185:item:48:answer2",
+        "before": {
+          "gloss": "eighth",
+          "notes": "",
+          "tags": "ord"
+        },
+        "proposed": {
+          "gloss": "eighth",
+          "notes": "",
+          "tags": "ord num"
+        },
+        "reasons": [
+          "Printed cardinal/fraction/ordinal sense explicitly identifies numeral category."
+        ]
+      }
+    },
+    {
+      "entry_key": "bailey1920northjubbal:p185:item:49",
+      "kind": "legacy-metadata",
+      "delta": {
+        "entry_key": "bailey1920northjubbal:p185:item:49",
+        "before": {
+          "gloss": "eighteen",
+          "notes": "",
+          "tags": ""
+        },
+        "proposed": {
+          "gloss": "eighteen",
+          "notes": "",
+          "tags": "num"
+        },
+        "reasons": [
+          "Printed cardinal/fraction/ordinal sense explicitly identifies numeral category."
+        ]
+      }
+    },
+    {
+      "entry_key": "bailey1920northjubbal:p185:item:51",
+      "kind": "legacy-metadata",
+      "delta": {
+        "entry_key": "bailey1920northjubbal:p185:item:51",
+        "before": {
+          "gloss": "eleven",
+          "notes": "",
+          "tags": ""
+        },
+        "proposed": {
+          "gloss": "eleven",
+          "notes": "",
+          "tags": "num"
+        },
+        "reasons": [
+          "Printed cardinal/fraction/ordinal sense explicitly identifies numeral category."
+        ]
+      }
+    },
+    {
+      "entry_key": "bailey1920northjubbal:p185:item:58",
+      "kind": "legacy-metadata",
+      "delta": {
+        "entry_key": "bailey1920northjubbal:p185:item:58",
+        "before": {
+          "gloss": "fifteen",
+          "notes": "",
+          "tags": ""
+        },
+        "proposed": {
+          "gloss": "fifteen",
+          "notes": "",
+          "tags": "num"
+        },
+        "reasons": [
+          "Printed cardinal/fraction/ordinal sense explicitly identifies numeral category."
+        ]
+      }
+    },
+    {
+      "entry_key": "bailey1920northjubbal:p185:item:61:answer2",
+      "kind": "legacy-metadata",
+      "delta": {
+        "entry_key": "bailey1920northjubbal:p185:item:61:answer2",
+        "before": {
+          "gloss": "fifth",
+          "notes": "",
+          "tags": "ord"
+        },
+        "proposed": {
+          "gloss": "fifth",
+          "notes": "",
+          "tags": "ord num"
+        },
+        "reasons": [
+          "Printed cardinal/fraction/ordinal sense explicitly identifies numeral category."
+        ]
+      }
+    },
+    {
+      "entry_key": "bailey1920northjubbal:p185:item:63:answer2",
+      "kind": "legacy-metadata",
+      "delta": {
+        "entry_key": "bailey1920northjubbal:p185:item:63:answer2",
+        "before": {
+          "gloss": "fourth",
+          "notes": "",
+          "tags": "ord"
+        },
+        "proposed": {
+          "gloss": "fourth",
+          "notes": "",
+          "tags": "ord num"
+        },
+        "reasons": [
+          "Printed cardinal/fraction/ordinal sense explicitly identifies numeral category."
+        ]
+      }
+    },
+    {
+      "entry_key": "bailey1920northjubbal:p185:item:64",
+      "kind": "legacy-metadata",
+      "delta": {
+        "entry_key": "bailey1920northjubbal:p185:item:64",
+        "before": {
+          "gloss": "fourteen",
+          "notes": "",
+          "tags": ""
+        },
+        "proposed": {
+          "gloss": "fourteen",
+          "notes": "",
+          "tags": "num"
+        },
+        "reasons": [
+          "Printed cardinal/fraction/ordinal sense explicitly identifies numeral category."
+        ]
+      }
+    },
+    {
+      "entry_key": "bailey1920northjubbal:p186:item:13:answer4",
+      "kind": "legacy-metadata",
+      "delta": {
+        "entry_key": "bailey1920northjubbal:p186:item:13:answer4",
+        "before": {
+          "gloss": "up to here",
+          "notes": "",
+          "tags": ""
+        },
+        "proposed": {
+          "gloss": "up to here",
+          "notes": "",
+          "tags": "multiword-expression"
+        },
+        "reasons": [
+          "Retain scope of the complete printed multiword expression."
+        ]
+      }
+    },
+    {
+      "entry_key": "bailey1920northjubbal:p186:item:19",
+      "kind": "legacy-metadata",
+      "delta": {
+        "entry_key": "bailey1920northjubbal:p186:item:19",
+        "before": {
+          "gloss": "hundred",
+          "notes": "",
+          "tags": ""
+        },
+        "proposed": {
+          "gloss": "hundred",
+          "notes": "",
+          "tags": "num"
+        },
+        "reasons": [
+          "Printed cardinal/fraction/ordinal sense explicitly identifies numeral category."
+        ]
+      }
+    },
+    {
+      "entry_key": "bailey1920northjubbal:p186:item:29:answer2",
+      "kind": "legacy-metadata",
+      "delta": {
+        "entry_key": "bailey1920northjubbal:p186:item:29:answer2",
+        "before": {
+          "gloss": "kick",
+          "notes": "",
+          "tags": "verb"
+        },
+        "proposed": {
+          "gloss": "kick",
+          "notes": "",
+          "tags": "verb multiword-expression"
+        },
+        "reasons": [
+          "Retain scope of the complete printed multiword expression."
+        ]
+      }
+    },
+    {
+      "entry_key": "bailey1920northjubbal:p186:item:44",
+      "kind": "legacy-metadata",
+      "delta": {
+        "entry_key": "bailey1920northjubbal:p186:item:44",
+        "before": {
+          "gloss": "be married",
+          "notes": "",
+          "tags": ""
+        },
+        "proposed": {
+          "gloss": "be married",
+          "notes": "",
+          "tags": "multiword-expression"
+        },
+        "reasons": [
+          "Retain scope of the complete printed multiword expression."
+        ]
+      }
+    },
+    {
+      "entry_key": "bailey1920northjubbal:p186:item:54",
+      "kind": "legacy-metadata",
+      "delta": {
+        "entry_key": "bailey1920northjubbal:p186:item:54",
+        "before": {
+          "gloss": "never",
+          "notes": "",
+          "tags": ""
+        },
+        "proposed": {
+          "gloss": "never",
+          "notes": "",
+          "tags": "multiword-expression"
+        },
+        "reasons": [
+          "Retain scope of the complete printed multiword expression."
+        ]
+      }
+    },
+    {
+      "entry_key": "bailey1920northjubbal:p186:item:56:answer2",
+      "kind": "legacy-metadata",
+      "delta": {
+        "entry_key": "bailey1920northjubbal:p186:item:56:answer2",
+        "before": {
+          "gloss": "ninth",
+          "notes": "",
+          "tags": "ord"
+        },
+        "proposed": {
+          "gloss": "ninth",
+          "notes": "",
+          "tags": "ord num"
+        },
+        "reasons": [
+          "Printed cardinal/fraction/ordinal sense explicitly identifies numeral category."
+        ]
+      }
+    },
+    {
+      "entry_key": "bailey1920northjubbal:p186:item:57",
+      "kind": "legacy-metadata",
+      "delta": {
+        "entry_key": "bailey1920northjubbal:p186:item:57",
+        "before": {
+          "gloss": "nineteen",
+          "notes": "",
+          "tags": ""
+        },
+        "proposed": {
+          "gloss": "nineteen",
+          "notes": "",
+          "tags": "num"
+        },
+        "reasons": [
+          "Printed cardinal/fraction/ordinal sense explicitly identifies numeral category."
+        ]
+      }
+    },
+    {
+      "entry_key": "bailey1920northjubbal:p186:item:61",
+      "kind": "legacy-metadata",
+      "delta": {
+        "entry_key": "bailey1920northjubbal:p186:item:61",
+        "before": {
+          "gloss": "nothing",
+          "notes": "",
+          "tags": ""
+        },
+        "proposed": {
+          "gloss": "nothing",
+          "notes": "",
+          "tags": "multiword-expression"
+        },
+        "reasons": [
+          "Retain scope of the complete printed multiword expression."
+        ]
+      }
+    },
+    {
+      "entry_key": "bailey1920northjubbal:p186:item:67:answer2",
+      "kind": "legacy-metadata",
+      "delta": {
+        "entry_key": "bailey1920northjubbal:p186:item:67:answer2",
+        "before": {
+          "gloss": "first",
+          "notes": "",
+          "tags": "ord"
+        },
+        "proposed": {
+          "gloss": "first",
+          "notes": "",
+          "tags": "ord num"
+        },
+        "reasons": [
+          "Printed cardinal/fraction/ordinal sense explicitly identifies numeral category."
+        ]
+      }
+    },
+    {
+      "entry_key": "bailey1920northjubbal:p187:item:7",
+      "kind": "legacy-metadata",
+      "delta": {
+        "entry_key": "bailey1920northjubbal:p187:item:7",
+        "before": {
+          "gloss": "plough",
+          "notes": "",
+          "tags": ""
+        },
+        "proposed": {
+          "gloss": "plough",
+          "notes": "",
+          "tags": "multiword-expression"
+        },
+        "reasons": [
+          "Retain scope of the complete printed multiword expression."
+        ]
+      }
+    },
+    {
+      "entry_key": "bailey1920northjubbal:p187:item:15",
+      "kind": "legacy-metadata",
+      "delta": {
+        "entry_key": "bailey1920northjubbal:p187:item:15",
+        "before": {
+          "gloss": "return",
+          "notes": "",
+          "tags": ""
+        },
+        "proposed": {
+          "gloss": "return",
+          "notes": "",
+          "tags": "multiword-expression"
+        },
+        "reasons": [
+          "Retain scope of the complete printed multiword expression."
+        ]
+      }
+    },
+    {
+      "entry_key": "bailey1920northjubbal:p187:item:24:answer2",
+      "kind": "legacy-metadata",
+      "delta": {
+        "entry_key": "bailey1920northjubbal:p187:item:24:answer2",
+        "before": {
+          "gloss": "seventh",
+          "notes": "",
+          "tags": "ord"
+        },
+        "proposed": {
+          "gloss": "seventh",
+          "notes": "",
+          "tags": "ord num"
+        },
+        "reasons": [
+          "Printed cardinal/fraction/ordinal sense explicitly identifies numeral category."
+        ]
+      }
+    },
+    {
+      "entry_key": "bailey1920northjubbal:p187:item:25",
+      "kind": "legacy-metadata",
+      "delta": {
+        "entry_key": "bailey1920northjubbal:p187:item:25",
+        "before": {
+          "gloss": "seventeen",
+          "notes": "",
+          "tags": ""
+        },
+        "proposed": {
+          "gloss": "seventeen",
+          "notes": "",
+          "tags": "num"
+        },
+        "reasons": [
+          "Printed cardinal/fraction/ordinal sense explicitly identifies numeral category."
+        ]
+      }
+    },
+    {
+      "entry_key": "bailey1920northjubbal:p187:item:35:answer2",
+      "kind": "legacy-metadata",
+      "delta": {
+        "entry_key": "bailey1920northjubbal:p187:item:35:answer2",
+        "before": {
+          "gloss": "sixth",
+          "notes": "",
+          "tags": "ord"
+        },
+        "proposed": {
+          "gloss": "sixth",
+          "notes": "",
+          "tags": "ord num"
+        },
+        "reasons": [
+          "Printed cardinal/fraction/ordinal sense explicitly identifies numeral category."
+        ]
+      }
+    },
+    {
+      "entry_key": "bailey1920northjubbal:p187:item:36",
+      "kind": "legacy-metadata",
+      "delta": {
+        "entry_key": "bailey1920northjubbal:p187:item:36",
+        "before": {
+          "gloss": "sixteen",
+          "notes": "",
+          "tags": ""
+        },
+        "proposed": {
+          "gloss": "sixteen",
+          "notes": "",
+          "tags": "num"
+        },
+        "reasons": [
+          "Printed cardinal/fraction/ordinal sense explicitly identifies numeral category."
+        ]
+      }
+    },
+    {
+      "entry_key": "bailey1920northjubbal:p187:item:39:answer2",
+      "kind": "legacy-metadata",
+      "delta": {
+        "entry_key": "bailey1920northjubbal:p187:item:39:answer2",
+        "before": {
+          "gloss": "sometimes",
+          "notes": "",
+          "tags": ""
+        },
+        "proposed": {
+          "gloss": "sometimes",
+          "notes": "",
+          "tags": "multiword-expression"
+        },
+        "reasons": [
+          "Retain scope of the complete printed multiword expression."
+        ]
+      }
+    },
+    {
+      "entry_key": "bailey1920northjubbal:p187:item:43",
+      "kind": "legacy-metadata",
+      "delta": {
+        "entry_key": "bailey1920northjubbal:p187:item:43",
+        "before": {
+          "gloss": "stand",
+          "notes": "",
+          "tags": ""
+        },
+        "proposed": {
+          "gloss": "stand",
+          "notes": "",
+          "tags": "multiword-expression"
+        },
+        "reasons": [
+          "Retain scope of the complete printed multiword expression."
+        ]
+      }
+    },
+    {
+      "entry_key": "bailey1920northjubbal:p187:item:52:answer2",
+      "kind": "legacy-metadata",
+      "delta": {
+        "entry_key": "bailey1920northjubbal:p187:item:52:answer2",
+        "before": {
+          "gloss": "tenth",
+          "notes": "",
+          "tags": "ord"
+        },
+        "proposed": {
+          "gloss": "tenth",
+          "notes": "",
+          "tags": "ord num"
+        },
+        "reasons": [
+          "Printed cardinal/fraction/ordinal sense explicitly identifies numeral category."
+        ]
+      }
+    },
+    {
+      "entry_key": "bailey1920northjubbal:p187:item:56:answer4",
+      "kind": "legacy-metadata",
+      "delta": {
+        "entry_key": "bailey1920northjubbal:p187:item:56:answer4",
+        "before": {
+          "gloss": "up to there",
+          "notes": "",
+          "tags": ""
+        },
+        "proposed": {
+          "gloss": "up to there",
+          "notes": "",
+          "tags": "multiword-expression"
+        },
+        "reasons": [
+          "Retain scope of the complete printed multiword expression."
+        ]
+      }
+    },
+    {
+      "entry_key": "bailey1920northjubbal:p187:item:59",
+      "kind": "legacy-metadata",
+      "delta": {
+        "entry_key": "bailey1920northjubbal:p187:item:59",
+        "before": {
+          "gloss": "thirteen",
+          "notes": "",
+          "tags": ""
+        },
+        "proposed": {
+          "gloss": "thirteen",
+          "notes": "",
+          "tags": "num"
+        },
+        "reasons": [
+          "Printed cardinal/fraction/ordinal sense explicitly identifies numeral category."
+        ]
+      }
+    },
+    {
+      "entry_key": "bailey1920northjubbal:p187:item:62:answer2",
+      "kind": "legacy-metadata",
+      "delta": {
+        "entry_key": "bailey1920northjubbal:p187:item:62:answer2",
+        "before": {
+          "gloss": "third",
+          "notes": "",
+          "tags": "ord"
+        },
+        "proposed": {
+          "gloss": "third",
+          "notes": "",
+          "tags": "ord num"
+        },
+        "reasons": [
+          "Printed cardinal/fraction/ordinal sense explicitly identifies numeral category."
+        ]
+      }
+    },
+    {
+      "entry_key": "bailey1920northjubbal:p188:item:2",
+      "kind": "legacy-metadata",
+      "delta": {
+        "entry_key": "bailey1920northjubbal:p188:item:2",
+        "before": {
+          "gloss": "twelve",
+          "notes": "",
+          "tags": ""
+        },
+        "proposed": {
+          "gloss": "twelve",
+          "notes": "",
+          "tags": "num"
+        },
+        "reasons": [
+          "Printed cardinal/fraction/ordinal sense explicitly identifies numeral category."
+        ]
+      }
+    },
+    {
+      "entry_key": "bailey1920northjubbal:p188:item:3",
+      "kind": "legacy-metadata",
+      "delta": {
+        "entry_key": "bailey1920northjubbal:p188:item:3",
+        "before": {
+          "gloss": "twenty",
+          "notes": "",
+          "tags": ""
+        },
+        "proposed": {
+          "gloss": "twenty",
+          "notes": "",
+          "tags": "num"
+        },
+        "reasons": [
+          "Printed cardinal/fraction/ordinal sense explicitly identifies numeral category."
+        ]
+      }
+    },
+    {
+      "entry_key": "bailey1920northjubbal:p188:item:4:answer3",
+      "kind": "legacy-metadata",
+      "delta": {
+        "entry_key": "bailey1920northjubbal:p188:item:4:answer3",
+        "before": {
+          "gloss": "second",
+          "notes": "",
+          "tags": "ord"
+        },
+        "proposed": {
+          "gloss": "second",
+          "notes": "",
+          "tags": "ord num"
+        },
+        "reasons": [
+          "Printed cardinal/fraction/ordinal sense explicitly identifies numeral category."
+        ]
+      }
+    },
+    {
+      "entry_key": "bailey1920northjubbal:p188:item:4:answer4",
+      "kind": "legacy-metadata",
+      "delta": {
+        "entry_key": "bailey1920northjubbal:p188:item:4:answer4",
+        "before": {
+          "gloss": "second",
+          "notes": "",
+          "tags": "ord"
+        },
+        "proposed": {
+          "gloss": "second",
+          "notes": "",
+          "tags": "ord num"
+        },
+        "reasons": [
+          "Printed cardinal/fraction/ordinal sense explicitly identifies numeral category."
+        ]
+      }
+    }
+  ],
+  "output_sha256": {
+    "whole-reviewed-preview-20260927.csv": "d3570bdfffe4a8e96859c5f460efcb4b4c102cfbfee72dd9fa0f0a9c7929d5d7",
+    "whole-reviewed-preview-20260927-audit.jsonl": "4c574751077810c0ca8a91afbc6a0b382b63025b26ce5ba047caaf30826527a3",
+    "whole-reviewed-preview-20260927-profile.txt": "78a9842686f80fc27f4a7719f381ae29d454224b05c62d7b9d2c17e7423c5d72"
+  },
+  "pending": [
+    "Independent final-output audit",
+    "Guarded installer and canonical metadata integration",
+    "Focused installed validation",
+    "User-deferred full build and browser QA"
+  ]
+}

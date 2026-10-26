@@ -1,0 +1,21 @@
+{
+  "reviewer": "root",
+  "stage": "targeted source evidence review before final proposal freeze",
+  "sqlite_sha256_verified": "bc4ab203e8f6edc902cda41171c9feed602fe854ea34aee3869b610199167f93",
+  "method": "Read-only SQLite SELECT id,text,translation FROM sentences; compare every sentence to proposal CSV by persistent upstream ID.",
+  "source_sentence_count": 3,
+  "reviewed_sentence_ids": [
+    "0847607e-dc37-406d-b151-8ed93133122f",
+    "eaa2b406-b613-4532-aefb-b37e74901cfb",
+    "f53687a6-0547-484d-8420-94f359f5b91c"
+  ],
+  "findings": {
+    "all_native_strings_equal_source_and_proposed_form": true,
+    "all_english_translations_equal_source": true,
+    "all_phonemic_fields_blank": true,
+    "source_apostrophes_and_hyphen_preserved": true
+  },
+  "alignment_review": "Exported automatic token links split meaningful apostrophes and sometimes contain multiple candidate entry IDs. Whole-expression preservation with no invented word alignment is appropriate.",
+  "metadata_code_review": "Reviewed explicit clause and infinitival English-gloss classes and their actual emitted examples. No source infinitive morphology should be inferred merely from English to.",
+  "limits": "Does not approve installation or replace fresh seeded audit of the frozen whole proposal. Canonical output unchanged by this review."
+}

@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Koraga · Bhat 1971 Koraga records, 2026-09-25 · batch 068. Pending user review; autonomous research continues.
+
+| # | Koraga | Proposed etymology | Evidence |
+|---|---|---|---|
+| 121 | **koḷnci** ‘hoof’ | Proposed reflex of [**DEDR 1829**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=165) | DEDR 1829 full article (p. 165) gives Kor. (O.) kolanci , (T.) koḷnci , (M.) koḷci id. DED(N) 1519. Bhat koḷnci “hoof” is the same cited Koraga form and sense; its original dialect:Koraga:tappu:Tappu uncertain dialect tag is retained. The article is used as family classification, not an independent second attestation of Bhat. (1 record.) |
+| 122 | **koḷci** ‘hoof’ | Proposed reflex of [**DEDR 1829**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=165) | DEDR 1829 full article (p. 165) gives Kor. (O.) kolanci , (T.) koḷnci , (M.) koḷci id. DED(N) 1519. Bhat koḷci “hoof” is the same cited Koraga form and sense; its original dialect:Koraga:mudu:Mudu uncertain dialect tag is retained. The article is used as family classification, not an independent second attestation of Bhat. (1 record.) |
+| 123 | **kōji** ‘boy’ | Proposed reflex of [**DEDR 1873**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=171) | DEDR 1873 full article (p. 171) gives Kor. (O. T.) kūje small boy; kūji girl; (M.) kōji boy. Te. kūsu low, base, trifling, insignificant; kū̃turu , (B. also) kūtu, (inscr.) kuntuṟ daugher; (Inscr.) kūvita id. ? Go. (Tr.) kūcō , ( Bhat kōji “boy” matches Lindgren Koraga kōji “boy” in form and sense; this cross-source match is a candidate lead, with the full DEDR article defining the family. Both source identities and dialect tags are preserved. (1 record.) |
+| 124 | **kōḍo** ‘horn’ | Proposed reflex of [**DEDR 2200**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=197) | DEDR 2200 full article (p. 197) gives 2200 Ta. kōṭu ( in cpds. kōṭṭu-) horn, tusk, branch of tree, cluster, bunch, coil of hair, line, diagram, bank of stream or pool; kuvaṭu branch of a tree; kōṭṭāṉ, kōṭṭuvāṉ rock horned-ow Bhat kōḍo “horn” matches Lindgren Koraga kōḍo “horn (anatomy)” in form and sense; this cross-source match is a candidate lead, with the full DEDR article defining the family. Both source identities and dialect tags are preserved. (1 record.) |
+| 125 | **kōru** ‘to give to III person’ | Proposed reflex of [**DEDR 2053**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=185) | DEDR 2053 full article (p. 185) gives 2053 Ta. koṭu (-pp-, -tt-) to give (to 3rd person; Tolk. Coll. 30), bring forth, allow; koṭuppu giving; koṭai giving away as a gift; koṭaimai munificence; koṭaiyōṉ munificent person. Ma. ko Bhat kōru “to give to III person” matches Lindgren Koraga kōru “give” in form and sense; this cross-source match is a candidate lead, with the full DEDR article defining the family. Both source identities and dialect tags are preserved. (2 records.) |
+
+Proposed assignment rows: **6**. Affected records: **6**. Relation kinds: **reflex**. Multi-part responses retain their source order.
+
+Exact persistent IDs and complete source records: [batch-068.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Koraga/batch-068.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../koraga-bhat-20260925/research-holds.json). No new lexical material or donor nodes are introduced.

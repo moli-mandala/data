@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Muthuvan · Dravidian surveys, 2026-09-21 · batch 032. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Muthuvan | Proposed etymology | Evidence |
+|---|---|---|---|
+| 146 | **kātrɨ** ‘wind’, **kāttɨ** ‘wind’ | Proposed reflex of [**DEDR 1481**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=138) | DEDR1481 explicitly gives Tamil/Malayalam kāṟṟu wind, Kota kāṯ, Toda kōṯ and Kodagu kātï. These southern survey kāṟṟ-/kātt-/kāṯ- wind forms compare with that specific wind family; source vowel differences, stop notation and final vowels are preserved. Longer qualified phrases are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (8 records.) |
+| 147 | **minakkɨ** ‘lightning’ | Proposed reflex of [**DEDR 4876**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=435) | DEDR4876 explicitly groups Tamil/Malayalam miṉṉal lightning and miṉukku glitter/polish with Kota minc-, Toda mic- and Kannada miñcu flash/lightning. These southern survey mic-/minak- lightning responses compare with that documented shining/flashing family and retain ordinary inflection and source consonant notation; longer auxiliary phrases are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 148 | **ōḍa** ‘river’ | Proposed reflex of [**DEDR 1041**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=99) | DEDR1041 explicitly gives Malayalam ōṭa watercourse and Tamil ōṭai large watercourse. These simple ōḍa river responses compare with that lexical watercourse noun; longer big-river compounds and river-bank expressions are excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (2 records.) |
+| 149 | **badi** ‘mud’, **bedi** ‘mud’ | Proposed reflex of [**DEDR 5245**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=473) | DEDR5245 explicitly gives Kannada badi mud/mire and Tamil vati mire. Survey Muthuvan baḍi/beḍi mud compares with this southern mud noun; source voicing and vowel variation are preserved. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (3 records.) |
+| 150 | **mindan** ‘above’, **midan** ‘above’, **mita i** ‘above’ | Proposed reflex of [**DEDR 4841**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=431) | DEDR4841 gives Tamil mītu upper surface/on/above and Malayalam mītu/mītil top/above. These Muthuvan mida-/minda-/mita- responses compare with that spatial stem, with source nasal and locative endings retained; the uncertain mudanɨ response is excluded. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (7 records.) |
+
+Proposed assignment rows: **21**. Affected records: **21**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-032.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Muthuvan/batch-032.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

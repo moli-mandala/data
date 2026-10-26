@@ -1,0 +1,49 @@
+{
+  "status": "frozen revision2; fresh independent acceptance required",
+  "rows": 1135,
+  "audit_units": 1110,
+  "legacy_keys_preserved": 198,
+  "legacy_assignments_preserved": 198,
+  "changed_rows": 267,
+  "input_sha256": {
+    "whole-proposal-r1/review-manifest.json": "f721ebd51354f259898d2b6c08aeda4d1988658d68df9d89cbec4fb5c9209af5",
+    "whole-proposal-r1/whole-proposed.csv": "c21945e2e67a071d70220a4c1a65a44bd77ca3d185bd66ae52dbc3596b1c07bc",
+    "whole-proposal-r1/whole-proposed-audit.jsonl": "37ed182802da015e452365488ea91bcd121cc7e8fd03a96df42710b6cfd09f86",
+    "source-etymology-claims.jsonl": "8f53a1f880684e0be0651d593090d3f0710587a0aeba361b702a46a765deb89d",
+    "graph-reconciliation-r2/actual-parser-validation.json": "fb76388e47a92e01fa9f077cd652ef4d7e8ebe3ef6023817c0e6662a9cbd9b2f",
+    "graph-reconciliation-r2/claim-review-queue.jsonl": "98629a310ea91369032cd1dfaf78236f6630ff5081b2475aa1aa45806e9bf314",
+    "graph-reconciliation-r2/complete-source-claim-dispositions.jsonl": "39e3de13d0aa11c6a297e72f26dfa26377c03830bec0ceecb0e4b97eb1373cdc",
+    "graph-reconciliation-r2/draft-status.json": "c8b94157729af415ea1a45638fb15cd81db9193acda93264ed6b29693f7d74fe",
+    "graph-reconciliation-r2/local-component-decisions.json": "edb228f1fa6ce12ff1fab47bfb2f1450580aa14c164372fb2b9d4d846b536bbf",
+    "graph-reconciliation-r2/local-component-review-queue.json": "fa37ad979052ac8224cf60b5684f366253b524b228e7d883fb56e7aa610fc4ac",
+    "graph-reconciliation-r2/numeric-claim-decisions.jsonl": "1bf3aadcbee3f433922d0f1b7d2514f51a41b9ef1949c03ee005fa79e715e14b",
+    "graph-reconciliation-r2/numeric-head-screen.txt": "592a1275d87241ca8d6704ca04f1acb784ca3ae7b272d91463cbf9d2997d0f24",
+    "graph-reconciliation-r2/review-inputs.json": "9eda57520647b0a03e924cc7028d45129bf9898307b2611ee84dbf901e25e37f",
+    "graph-reconciliation-r2/row-graph-actions.jsonl": "020a75b1c677747ee49744987db9b56c058f8a6a74959d8f369d8641fb347106",
+    "graph-reconciliation-r2/whole-graph-draft.csv": "6487035d3cb5d19d8e20487fa3af4f2c138d5251a1773936cc072ae74db64a5c",
+    "prepare_graph_claim_review_r2.py": "5cc1293b8b5aac00a94b348eee1b312bbc8e079c15731c3d401c1e6762d72c33",
+    "review_numeric_claims_r2.py": "c7e5eb5b0b7a626adc25959a55bf1703a735170cbb5a6d4f16589ed6e9f7059d",
+    "prepare_local_components_r2.py": "b26db943a030072ad0bb49773a82c6bbab83b875e845d2dd209922f44d0035ad",
+    "review_local_components_r2.py": "32bc3e62f213a54b8a76656191b2076e07f35d6c5320b0e79c680a266645b100",
+    "complete_claim_census_r2.py": "2d5ade8cb8995c82146c4e8a520a19d97cf8e69873618fba302e65caa4b565d9",
+    "prepare_graph_output_draft_r2.py": "85a1f87e2b30bdde34a6bf4cb53cd9345501427c1946d7d330b6bfd76c0a1dd0",
+    "validate_graph_draft_r2.py": "0959961704e39cd44b73f5b641858f1839029fcfeb0a15c7016c6c342994bea0",
+    "freeze_graph_revision_r2.py": "d32ee4fbf82e15e45c225e2d6dd2baf9a485dafea1174bb10fd9280ce2a62c7f"
+  },
+  "output_sha256": {
+    "r1-to-r2-delta.json": "7effd9c3b5f7d4cc44c7bbede302637c156e44630379c97c745a57daa1f9c5f3",
+    "whole-metadata-proposed.yaml": "c2eeb18dfa49fc65c97a38b0ea37be135409b6a8ce72b6ab949acb8e5d20105c",
+    "whole-parser-validation.json": "fb76388e47a92e01fa9f077cd652ef4d7e8ebe3ef6023817c0e6662a9cbd9b2f",
+    "whole-profile-proposed.txt": "1fcdabf0a57b03e70499591a6f2271edf5f1e7fef5d2250fb02b28728cb9369a",
+    "whole-proposed-audit.jsonl": "07be097eacb458517f9bea6d4a97013523f4c8d07badb61c934c0dbfad68e578",
+    "whole-proposed.csv": "6487035d3cb5d19d8e20487fa3af4f2c138d5251a1773936cc072ae74db64a5c"
+  },
+  "method": "Immutable r1 plus explicit source-claim graph overlay; all lexical fields, IPA, source citations and keys remain exact. No canonical installation.",
+  "deferred": [
+    "Fresh independent r2 output/source audit",
+    "Canonical installation",
+    "Compiled graph and identity",
+    "Full build/test suite",
+    "Browser QA"
+  ]
+}

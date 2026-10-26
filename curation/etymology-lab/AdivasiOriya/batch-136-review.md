@@ -1,0 +1,14 @@
+# AdivasiOriya: survey etymology review, batch 136
+
+**Saved under the autonomous-work authorization of 2026-09-21.** 4 proposals; exact IDs and source attestations are in the [manifest](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/AdivasiOriya/batch-136.json).
+
+| # | Language form and meaning | Proposed etymology | Evidence |
+|---|---|---|---|
+| 1 | **pūtlata** ‘broken’, **pūtɨla** ‘broken’, **pʰūtlata** ‘broken’, **pūṭlata** ‘broken’, **pʰatla** ‘broken’ | Reflex of **\*spʰuṭyati**; [CDIAL 13845](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=800) | Turner \*sphuṭyati explicitly records the regional phuṭ-/phūṭ- break/burst verb, including Oriya phuṭibā, Gujarati phuṭvũ and Marathi phuṭṇẽ. These broken-state responses are its ordinary participial/past forms, retaining regional deaspiration and l-past or -ta endings. Both alternatives in the selected paired responses express the same verb family. (5 records.) |
+| 2 | **baŋgla** ‘broken’, **baŋglaṭa** ‘broken’, **bʰaŋglaṭa** ‘broken’, **bʰaŋglata** ‘broken’, **baŋglī** ‘broken’, **bʰaŋlata** ‘broken’, **bʰŋgla ta** ‘broken’, **baŋglata** ‘broken’, **bʰaŋgla** ‘broken’ | Reflex of **bʰaŋgá**; [CDIAL 9353](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=531) | Turner bhaṅga explicitly gives Bengali bhāṅā to be broken, Oriya bhāṅgibā to break and Gujarati bhā̃gũ broken to pieces. These eastern and western broken-state forms are compared with that nasal bhaṅg- family, with ordinary past/stative suffixes and local reductions preserved. They are kept distinct from the unnasalized bhagna branch of bhajyate. (9 records.) |
+| 3 | **pʰūtīgɔla** ‘broken’, **pūṭī gala** ‘broken’ | Component: **\*spʰuṭyati** + **gatá**; [CDIAL 13845](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=800);[CDIAL 4008](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=214) | The whole completed-action phrase is break/burst + gone, phuṭ-/phūṭ- plus gay-/gal-. Turner \*sphuṭyati and gata provide both lexical members; regional inflection and fusion are retained. (2 records.) |
+| 4 | **bɔŋgīgala** ‘broken’ | Component: **bʰaŋgá** + **gatá**; [CDIAL 9353](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=531);[CDIAL 4008](https://dsal.uchicago.edu/cgi-bin/app/soas_query.py?page=214) | The full phrase is the eastern bhaṅg- break verb plus gal-/gone. Turner bhaṅga and gata supply the members, with the ordinary eastern participial construction represented in full. (1 records.) |
+
+20 assignment rows on 17 records. Relation kinds: {'reflex': 14, 'component': 6}.
+
+[Validation](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-surveys-20260921/pass085-validation.json). No compiled or browser rebuild. Excluded and competing analyses are tracked in the [run review](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/indo-aryan-surveys-20260921/REVIEW.md).

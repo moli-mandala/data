@@ -1,0 +1,24 @@
+{
+  "status": "Dependency-only patch applied with parent authorization; all four frozen output hashes reproduced exactly. Canonical remains unchanged.",
+  "baseline_rows": 485,
+  "files": {
+    "legacy-before-whole-recovery.csv": {
+      "source": "data/data/other/forms/20260921-dhakal-darai.csv",
+      "bytes": 59971,
+      "sha256": "89a59e3b08583b16c7b115f5e22422b0f798e7e7577f3059ffcbbf12f9080aa0"
+    },
+    "legacy-before-whole-recovery-profile.txt": {
+      "source": "data/conversion/dhakal-darai.txt",
+      "bytes": 188,
+      "sha256": "c9ac1963856810b3bef56db905b5daac8d34bf66929382e3e0b91b0ba009116e"
+    }
+  },
+  "frozen_output_hashes": {
+    "whole-proposed-author-transcription.csv": "4c0151607f67b0c181b445899cd1dc7a5d701ea15a8763143f37c4d47787d58a",
+    "whole-proposed-literal-preservation.csv": "4645f38115177714489d922e4c82544a91598348964029bd059c7061619fe6da",
+    "whole-proposed-audit.jsonl": "cf77517556fed68f5961e03a29b4310ce744d0fa22af065172da59b48017bb4d",
+    "whole-profile-proposed.txt": "0cd4b3396c56fc8183f763b278b606d99ac2e37a858613f119ff494fd3d04b31"
+  },
+  "patch": "whole-legacy-dependency-proposed.patch",
+  "scope": "Bind four generators to immutable old CSV and original sound profile, avoiding live installed-output feedback. No lexical or interpretation changes."
+}

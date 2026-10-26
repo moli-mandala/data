@@ -1,0 +1,50 @@
+{
+  "reviewer": "/root/asur_finish",
+  "status": "revision2_literal_history_separation_passes_display_commentary_repairs_required",
+  "pins": {
+    "grammar-review/sharp-reviewed-revision/reviewed-child-witnesses.jsonl": "3b0621fd4ed10d80758ec9f448bd4e49a466be25fd89e45ed412a568223d1b13",
+    "grammar-review/sharp-reviewed-revision2/reviewed-child-witnesses.jsonl": "c17d355aa870971bbb2433a7f9115fa5ce6deeac3ddc34911451d42534393814",
+    "grammar-review/sharp-reviewed-revision2/grammar-tag-proposal.jsonl": "64ab32db4063d05c139d619503cd19f5cae9b600ad2ef7c6cc59d08870d03d16",
+    "grammar-review/sharp-reviewed-revision2/grammar-graph-proposal.jsonl": "77b84f9058c97745bcdd2f49c8ca4de30e7ccf99cdf8b4c0ee7e1c239284401c"
+  },
+  "counts": {
+    "children": 224,
+    "invariant_fields_per_child": 8,
+    "historical_caution_rows": 14,
+    "current_literal_hold_rows": 7,
+    "current_uncertain_tag_rows": 16,
+    "variants": 15,
+    "components": 2
+  },
+  "checks": [
+    "Every old/new key and literal/gloss/label/raw record/disposition invariant matches.",
+    "All 224 current native image paths/folios and hashes match retained originals.",
+    "Old 2.m. policy is historical; current owner policy reflects 3.m.",
+    "Six upper-u encoding holds and one numeral-mark hold remain explicit; no forced phonology."
+  ],
+  "keyed_display_findings": [
+    {
+      "key": "grierson1906kolamibasim:p567:conjunctive-participle:1:independent:w5",
+      "field": "qualification",
+      "old": "Middle/final quantity provisional; needs narrow original comparison",
+      "new": "The compact upper mark on final u remains ambiguous between ū, ü and plain u; source segments are retained without phonological interpretation.",
+      "reason": "Current typed hold is only final-u mark encoding, a closed editorial source-preservation decision. Earlier middle-quantity/narrow-review wording is historical, not an outstanding new review task."
+    },
+    {
+      "key": "grierson1906kolamibasim:p567:conjunctive-participle:1:independent:w4",
+      "field": "source_claim",
+      "old": "Source prints vāttān and vaddan together with the shared having-gone interpretation in its conjunctive-participle paragraph.",
+      "new": "The source lists sāhādūn and saddan together as having-gone examples in its conjunctive-participle paragraph.",
+      "reason": "Literal endpoints were corrected against the sharp original, but source_claim still names the rejected vāttān/vaddan readings. Keep old claim only in history; retain the already approved local Variant pointer."
+    },
+    {
+      "key": "grierson1906kolamibasim:p566:present-copula-comparison:1:independent:w1",
+      "field": "scope_caveat",
+      "old": "Pointer targets the actual third-person neuter row āṇḍād, never disputed2.m. āṇḍān; retain source spelling and quantity inconsistency.",
+      "new": "Pointer targets the actual third-person singular neuter row āṇḍād. Retain the source spelling and quantity difference; do not link to masculine āṇḍān.",
+      "reason": "The low-resolution 2.m. misreading is historical; sharp original explicitly reads 3.m. Current graph commentary must not call it a disputed source label."
+    }
+  ],
+  "canonical_changes": false,
+  "limits": "Independent metadata-history continuity review; does not replace earlier full 224 original reading or final combined-output sample."
+}

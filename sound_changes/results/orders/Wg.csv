@@ -1,0 +1,106 @@
+earlier,later,earlier_rule,later_rule,i,j,delta_ned,words
+@final-vowel-loss @stress @final-vowel-loss,@ai-au @ai-au,a > ă / Acc !#* C _ #,{ai au} > {e o},0,5,0.00039,119
+@final-vowel-loss @stress @final-vowel-loss,@ai-au @ai-au,if:!verb i > ĭ / Acc !#* C _ #,{ai au} > {e o},1,5,0.00039,48
+@final-vowel-loss @stress @final-vowel-loss,@affrication @nur-archaism @nur-archaism @affrication,a > ă / Acc !#* C _ #,ś > ʦ / V _ | V ṁ _,0,11,0.00054,148
+@final-vowel-loss @stress @final-vowel-loss,@affrication @nur-archaism @nur-archaism @affrication,if:!verb i > ĭ / Acc !#* C _ #,ś > ʦ / V _ | V ṁ _,1,11,0.00054,87
+@cluster-simplify @nur-archaism @nur-archaism @cluster-simplify,@affrication @nur-archaism @nur-archaism @affrication,ś r > ṣ,ś > ʦ / V _ | V ṁ _,10,11,0.00054,58
+@cluster-simplify @nur-archaism @nur-archaism @cluster-simplify,@nur-innovation @x-nur-s-sh @x-nur-s-sh @nur-innovation,ś r > ṣ,s > ś / _ C,10,14,-0.00085,60
+@final-vowel-loss @stress @final-vowel-loss,@deaspiration @deaspiration,a > ă / Acc !#* C _ #,Asp > $1-asp,0,18,0.0003,271
+@final-vowel-loss @stress @final-vowel-loss,@deaspiration @deaspiration,if:!verb i > ĭ / Acc !#* C _ #,Asp > $1-asp,1,18,0.0003,203
+@final-vowel-loss @stress @final-vowel-loss,@int-stop-loss @v-loss @int-stop-loss @v-loss,a > ă / Acc !#* C _ #,{k g t d y v b} > ∅ / V _ V,0,21,0.00174,447
+@final-vowel-loss @stress @final-vowel-loss,@int-stop-loss @v-loss @int-stop-loss @v-loss,if:!verb i > ĭ / Acc !#* C _ #,{k g t d y v b} > ∅ / V _ V,1,21,0.00078,386
+@deaspiration @deaspiration,@int-stop-loss @v-loss @int-stop-loss @v-loss,Asp > $1-asp,{k g t d y v b} > ∅ / V _ V,18,21,0.0013,425
+@int-p-v @int-p-v,@int-stop-loss @v-loss @int-stop-loss @v-loss,p > v / V _ V,{k g t d y v b} > ∅ / V _ V,20,21,-0.00176,319
+@final-vowel-loss @stress @final-vowel-loss,@anusvara-loss @anusvara-vowel @anusvara-vowel,a > ă / Acc !#* C _ #,ṁ > ∅,0,22,0.00052,129
+@final-vowel-loss @stress @final-vowel-loss,@anusvara-loss @anusvara-vowel @anusvara-vowel,if:!verb i > ĭ / Acc !#* C _ #,ṁ > ∅,1,22,0.00052,56
+@deaspiration @deaspiration,@anusvara-loss @anusvara-vowel @anusvara-vowel,Asp > $1-asp,ṁ > ∅,18,22,0.00052,185
+@int-stop-loss @v-loss @int-stop-loss @v-loss,@anusvara-loss @anusvara-vowel @anusvara-vowel,{k g t d y v b} > ∅ / V _ V,ṁ > ∅,21,22,0.00022,332
+@final-vowel-loss @stress @final-vowel-loss,@nasal-cluster @nur-innovation @nasal-cluster @nur-innovation,a > ă / Acc !#* C _ #,n > ∅ / V _ {t tʰ ṭ ṭʰ},0,24,0.00174,135
+@final-vowel-loss @stress @final-vowel-loss,@nasal-cluster @nur-innovation @nasal-cluster @nur-innovation,if:!verb i > ĭ / Acc !#* C _ #,n > ∅ / V _ {t tʰ ṭ ṭʰ},1,24,0.00078,63
+@final-cons-loss @final-cons-loss,@nasal-cluster @nur-innovation @nasal-cluster @nur-innovation,{n s t d} > ∅ / V _ #,n > ∅ / V _ {t tʰ ṭ ṭʰ},4,24,0.00048,51
+@deaspiration @deaspiration,@nasal-cluster @nur-innovation @nasal-cluster @nur-innovation,Asp > $1-asp,n > ∅ / V _ {t tʰ ṭ ṭʰ},18,24,0.00341,187
+@int-stop-loss @v-loss @int-stop-loss @v-loss,@nasal-cluster @nur-innovation @nasal-cluster @nur-innovation,{k g t d y v b} > ∅ / V _ V,n > ∅ / V _ {t tʰ ṭ ṭʰ},21,24,0.00684,333
+@final-vowel-loss @stress @final-vowel-loss,@final-vowel-loss @final-vowel-loss,a > ă / Acc !#* C _ #,ā > ∅ / C _ #,0,25,0.00095,150
+@final-vowel-loss @stress @final-vowel-loss,@final-vowel-loss @final-vowel-loss,if:!verb i > ĭ / Acc !#* C _ #,ā > ∅ / C _ #,1,25,0.00078,76
+@final-cons-loss @final-cons-loss,@final-vowel-loss @final-vowel-loss,{n s t d} > ∅ / V _ #,ā > ∅ / C _ #,4,25,0.00155,74
+@deaspiration @deaspiration,@final-vowel-loss @final-vowel-loss,Asp > $1-asp,ā > ∅ / C _ #,18,25,0.00192,205
+@int-stop-loss @v-loss @int-stop-loss @v-loss,@final-vowel-loss @final-vowel-loss,{k g t d y v b} > ∅ / V _ V,ā > ∅ / C _ #,21,25,0.0017,354
+@final-vowel-loss @stress @final-vowel-loss,@final-vowel-loss @final-vowel-loss @stress,a > ă / Acc !#* C _ #,ă > ∅ / C _ #,0,26,0.00174,113
+@final-vowel-loss @stress @final-vowel-loss,@final-vowel-loss @final-vowel-loss @stress,if:!verb i > ĭ / Acc !#* C _ #,ă > ∅ / C _ #,1,26,0.00078,152
+@final-cons-loss @final-cons-loss,@final-vowel-loss @final-vowel-loss @stress,{n s t d} > ∅ / V _ #,ă > ∅ / C _ #,4,26,0.00409,148
+@deaspiration @deaspiration,@final-vowel-loss @final-vowel-loss @stress,Asp > $1-asp,ă > ∅ / C _ #,18,26,0.00217,268
+@flap @int-retroflex @int-retroflex @flap,@final-vowel-loss @final-vowel-loss @stress,{ṭ ḍ} > ṛ / V _ V,ă > ∅ / C _ #,19,26,0.00021,143
+@int-stop-loss @v-loss @int-stop-loss @v-loss,@final-vowel-loss @final-vowel-loss @stress,{k g t d y v b} > ∅ / V _ V,ă > ∅ / C _ #,21,26,0.00196,398
+@final-vowel-loss @stress @final-vowel-loss,@final-vowel-loss @final-vowel-loss @stress,a > ă / Acc !#* C _ #,ĭ > ∅ / C _ #,0,28,0.00075,125
+@final-vowel-loss @stress @final-vowel-loss,@final-vowel-loss @final-vowel-loss @stress,if:!verb i > ĭ / Acc !#* C _ #,ĭ > ∅ / C _ #,1,28,0.00075,39
+@deaspiration @deaspiration,@final-vowel-loss @final-vowel-loss @stress,Asp > $1-asp,ĭ > ∅ / C _ #,18,28,0.00262,199
+@flap @int-retroflex @int-retroflex @flap,@final-vowel-loss @final-vowel-loss @stress,{ṭ ḍ} > ṛ / V _ V,ĭ > ∅ / C _ #,19,28,0.00021,72
+@int-stop-loss @v-loss @int-stop-loss @v-loss,@final-vowel-loss @final-vowel-loss @stress,{k g t d y v b} > ∅ / V _ V,ĭ > ∅ / C _ #,21,28,0.00262,338
+@final-vowel-loss @stress @final-vowel-loss,@cluster-simplify @degem-plain @degem-plain,a > ă / Acc !#* C _ #,G $1 > $2,0,30,0.00174,210
+@final-vowel-loss @stress @final-vowel-loss,@cluster-simplify @degem-plain @degem-plain,if:!verb i > ĭ / Acc !#* C _ #,G $1 > $2,1,30,0.00078,140
+@final-cons-loss @final-cons-loss,@cluster-simplify @degem-plain @degem-plain,{n s t d} > ∅ / V _ #,G $1 > $2,4,30,0.00546,147
+@assim-r @assim-r,@cluster-simplify @degem-plain @degem-plain,r {t tʰ d dʰ} > {ṭ ṭ ḍ ḍ}@2 {ṭ ṭ ḍ ḍ}@2,G $1 > $2,15,30,0.00133,99
+@deaspiration @deaspiration,@cluster-simplify @degem-plain @degem-plain,Asp > $1-asp,G $1 > $2,18,30,0.00341,241
+@flap @int-retroflex @int-retroflex @flap,@cluster-simplify @degem-plain @degem-plain,{ṭ ḍ} > ṛ / V _ V,G $1 > $2,19,30,0.00422,128
+@int-stop-loss @v-loss @int-stop-loss @v-loss,@cluster-simplify @degem-plain @degem-plain,{k g t d y v b} > ∅ / V _ V,G $1 > $2,21,30,0.00945,416
+@final-vowel-loss @stress @final-vowel-loss,@cluster-simplify @cluster-simplify,a > ă / Acc !#* C _ #,C {y v} > $1,0,31,0.00174,182
+@final-vowel-loss @stress @final-vowel-loss,@cluster-simplify @cluster-simplify,if:!verb i > ĭ / Acc !#* C _ #,C {y v} > $1,1,31,0.00078,116
+@final-cons-loss @final-cons-loss,@cluster-simplify @cluster-simplify,{n s t d} > ∅ / V _ #,C {y v} > $1,4,31,0.00562,131
+@nur-archaism @nur-archaism,@cluster-simplify @cluster-simplify,ś v > ś p,C {y v} > $1,9,31,0.00043,83
+@affrication @nur-archaism @nur-archaism @affrication,@cluster-simplify @cluster-simplify,j > ʣ / _ {a ā},C {y v} > $1,13,31,0.00045,108
+@assim-r @assim-r,@cluster-simplify @cluster-simplify,r {t tʰ d dʰ} > {ṭ ṭ ḍ ḍ}@2 {ṭ ṭ ḍ ḍ}@2,C {y v} > $1,15,31,0.00133,91
+@deaspiration @deaspiration,@cluster-simplify @cluster-simplify,Asp > $1-asp,C {y v} > $1,18,31,0.00341,232
+@flap @int-retroflex @int-retroflex @flap,@cluster-simplify @cluster-simplify,{ṭ ḍ} > ṛ / V _ V,C {y v} > $1,19,31,0.00455,136
+@int-stop-loss @v-loss @int-stop-loss @v-loss,@cluster-simplify @cluster-simplify,{k g t d y v b} > ∅ / V _ V,C {y v} > $1,21,31,0.00344,404
+@final-vowel-loss @stress @final-vowel-loss,@cluster-simplify @cluster-simplify,a > ă / Acc !#* C _ #,{k p} {t ṭ} > $2,0,32,0.00174,125
+@final-vowel-loss @stress @final-vowel-loss,@cluster-simplify @cluster-simplify,if:!verb i > ĭ / Acc !#* C _ #,{k p} {t ṭ} > $2,1,32,0.00078,53
+@final-cons-loss @final-cons-loss,@cluster-simplify @cluster-simplify,{n s t d} > ∅ / V _ #,{k p} {t ṭ} > $2,4,32,0.00336,63
+@nur-archaism @nur-archaism,@cluster-simplify @cluster-simplify,ś v > ś p,{k p} {t ṭ} > $2,9,32,0.00043,21
+@affrication @nur-archaism @nur-archaism @affrication,@cluster-simplify @cluster-simplify,j > ʣ / _ {a ā},{k p} {t ṭ} > $2,13,32,0.00045,53
+@assim-r @assim-r,@cluster-simplify @cluster-simplify,r {t tʰ d dʰ} > {ṭ ṭ ḍ ḍ}@2 {ṭ ṭ ḍ ḍ}@2,{k p} {t ṭ} > $2,15,32,0.00133,30
+@deaspiration @deaspiration,@cluster-simplify @cluster-simplify,Asp > $1-asp,{k p} {t ṭ} > $2,18,32,0.00336,181
+@flap @int-retroflex @int-retroflex @flap,@cluster-simplify @cluster-simplify,{ṭ ḍ} > ṛ / V _ V,{k p} {t ṭ} > $2,19,32,0.00352,77
+@int-stop-loss @v-loss @int-stop-loss @v-loss,@cluster-simplify @cluster-simplify,{k g t d y v b} > ∅ / V _ V,{k p} {t ṭ} > $2,21,32,0.00352,376
+@final-vowel-loss @stress @final-vowel-loss,@length-loss @nur-innovation @vowel-shift @nur-innovation @vowel-shift,a > ă / Acc !#* C _ #,{ī ū ī̃ ū̃} > {i u ĩ ũ},0,33,0.00095,191
+@final-vowel-loss @stress @final-vowel-loss,@length-loss @nur-innovation @vowel-shift @nur-innovation @vowel-shift,if:!verb i > ĭ / Acc !#* C _ #,{ī ū ī̃ ū̃} > {i u ĩ ũ},1,33,0.00078,127
+@final-vowel-loss @stress @final-vowel-loss,@hiatus,a > ă / Acc !#* C _ #,{a ā i u} > ∅ / V _,0,34,0.00174,383
+@final-vowel-loss @stress @final-vowel-loss,@hiatus,if:!verb i > ĭ / Acc !#* C _ #,{a ā i u} > ∅ / V _,1,34,0.00078,322
+@final-cons-loss @final-cons-loss,@hiatus,{n s t d} > ∅ / V _ #,{a ā i u} > ∅ / V _,4,34,0.00572,352
+@nur-archaism @nur-archaism,@hiatus,ś v > ś p,{a ā i u} > ∅ / V _,9,34,0.00043,316
+@affrication @nur-archaism @nur-archaism @affrication,@hiatus,j > ʣ / _ {a ā},{a ā i u} > ∅ / V _,13,34,0.00045,339
+@assim-r @assim-r,@hiatus,r {t tʰ d dʰ} > {ṭ ṭ ḍ ḍ}@2 {ṭ ṭ ḍ ḍ}@2,{a ā i u} > ∅ / V _,15,34,0.00133,323
+@deaspiration @deaspiration,@hiatus,Asp > $1-asp,{a ā i u} > ∅ / V _,18,34,0.00359,417
+@flap @int-retroflex @int-retroflex @flap,@hiatus,{ṭ ḍ} > ṛ / V _ V,{a ā i u} > ∅ / V _,19,34,0.00455,368
+@int-stop-loss @v-loss @int-stop-loss @v-loss,@hiatus,{k g t d y v b} > ∅ / V _ V,{a ā i u} > ∅ / V _,21,34,0.02409,375
+@final-vowel-loss @final-vowel-loss,@hiatus,ā > ∅ / C _ #,{a ā i u} > ∅ / V _,25,34,0.0043,337
+@final-vowel-loss @final-vowel-loss @stress,@hiatus,ă > ∅ / C _ #,{a ā i u} > ∅ / V _,26,34,0.00174,383
+@final-vowel-loss @final-vowel-loss @stress,@hiatus,ĭ > ∅ / C _ #,{a ā i u} > ∅ / V _,28,34,0.00075,322
+@length-loss @nur-innovation @vowel-shift @nur-innovation @vowel-shift,@hiatus,{ī ū ī̃ ū̃} > {i u ĩ ũ},{a ā i u} > ∅ / V _,33,34,0.00038,357
+@final-vowel-loss @stress @final-vowel-loss,@metathesis @nur-innovation @metathesis @nur-innovation,a > ă / Acc !#* C _ #,C V r > $1 r $2 / # _ C,0,36,0.00174,150
+@final-vowel-loss @stress @final-vowel-loss,@metathesis @nur-innovation @metathesis @nur-innovation,if:!verb i > ĭ / Acc !#* C _ #,C V r > $1 r $2 / # _ C,1,36,0.00078,85
+@umlaut @vowel-shift @vowel-shift @umlaut,@metathesis @nur-innovation @metathesis @nur-innovation,ā > a / _ C* {i u},C V r > $1 r $2 / # _ C,3,36,0.00024,94
+@final-cons-loss @final-cons-loss,@metathesis @nur-innovation @metathesis @nur-innovation,{n s t d} > ∅ / V _ #,C V r > $1 r $2 / # _ C,4,36,0.00572,97
+@nur-archaism @nur-archaism,@metathesis @nur-innovation @metathesis @nur-innovation,ś v > ś p,C V r > $1 r $2 / # _ C,9,36,0.00043,53
+@affrication @nur-archaism @nur-archaism @affrication,@metathesis @nur-innovation @metathesis @nur-innovation,j > ʣ / _ {a ā},C V r > $1 r $2 / # _ C,13,36,0.00034,83
+@assim-r @assim-r,@metathesis @nur-innovation @metathesis @nur-innovation,r {t tʰ d dʰ} > {ṭ ṭ ḍ ḍ}@2 {ṭ ṭ ḍ ḍ}@2,C V r > $1 r $2 / # _ C,15,36,0.00177,49
+@assim-r @assim-r,@metathesis @nur-innovation @metathesis @nur-innovation,r {ś ṣ} > ṣ,C V r > $1 r $2 / # _ C,16,36,0.00039,35
+@assim-r @cluster-simplify @assim-r @cluster-simplify,@metathesis @nur-innovation @metathesis @nur-innovation,ṇ > ∅ / r _,C V r > $1 r $2 / # _ C,17,36,0.00067,29
+@deaspiration @deaspiration,@metathesis @nur-innovation @metathesis @nur-innovation,Asp > $1-asp,C V r > $1 r $2 / # _ C,18,36,0.00255,188
+@flap @int-retroflex @int-retroflex @flap,@metathesis @nur-innovation @metathesis @nur-innovation,{ṭ ḍ} > ṛ / V _ V,C V r > $1 r $2 / # _ C,19,36,0.00255,82
+@int-p-v @int-p-v,@metathesis @nur-innovation @metathesis @nur-innovation,p > v / V _ V,C V r > $1 r $2 / # _ C,20,36,0.00057,78
+@int-stop-loss @v-loss @int-stop-loss @v-loss,@metathesis @nur-innovation @metathesis @nur-innovation,{k g t d y v b} > ∅ / V _ V,C V r > $1 r $2 / # _ C,21,36,0.00186,397
+@final-vowel-loss @stress @final-vowel-loss,@nur-innovation @x-nur-dz-z @nur-innovation @x-nur-dz-z,a > ă / Acc !#* C _ #,ʣ > z,0,37,0.00174,159
+@final-vowel-loss @stress @final-vowel-loss,@nur-innovation @x-nur-dz-z @nur-innovation @x-nur-dz-z,if:!verb i > ĭ / Acc !#* C _ #,ʣ > z,1,37,0.00078,88
+@umlaut @vowel-shift @vowel-shift @umlaut,@nur-innovation @x-nur-dz-z @nur-innovation @x-nur-dz-z,ā > a / _ C* {i u},ʣ > z,3,37,0.00024,97
+@final-cons-loss @final-cons-loss,@nur-innovation @x-nur-dz-z @nur-innovation @x-nur-dz-z,{n s t d} > ∅ / V _ #,ʣ > z,4,37,0.00572,99
+@nur-archaism @nur-archaism,@nur-innovation @x-nur-dz-z @nur-innovation @x-nur-dz-z,ś v > ś p,ʣ > z,9,37,0.00043,60
+@affrication @nur-archaism @nur-archaism @affrication,@nur-innovation @x-nur-dz-z @nur-innovation @x-nur-dz-z,h > ʣ,ʣ > z,12,37,0.00185,53
+@affrication @nur-archaism @nur-archaism @affrication,@nur-innovation @x-nur-dz-z @nur-innovation @x-nur-dz-z,j > ʣ / _ {a ā},ʣ > z,13,37,0.00387,62
+@final-vowel-loss @stress @final-vowel-loss,@nur-innovation @vowel-shift @nur-innovation @vowel-shift,a > ă / Acc !#* C _ #,o > u,0,39,0.00139,154
+@final-vowel-loss @stress @final-vowel-loss,@nur-innovation @vowel-shift @nur-innovation @vowel-shift,if:!verb i > ĭ / Acc !#* C _ #,o > u,1,39,0.00078,86
+@final-cons-loss @final-cons-loss,@nur-innovation @vowel-shift @nur-innovation @vowel-shift,{n s t d} > ∅ / V _ #,o > u,4,39,0.00139,100
+@final-vowel-loss @stress @final-vowel-loss,@nur-innovation @x-nur-ts-sh @nur-innovation @x-nur-ts-sh,a > ă / Acc !#* C _ #,ʦ > ś / V _,0,40,0.00174,142
+@final-vowel-loss @stress @final-vowel-loss,@nur-innovation @x-nur-ts-sh @nur-innovation @x-nur-ts-sh,if:!verb i > ĭ / Acc !#* C _ #,ʦ > ś / V _,1,40,0.00078,81
+@final-cons-loss @final-cons-loss,@nur-innovation @x-nur-ts-sh @nur-innovation @x-nur-ts-sh,{n s t d} > ∅ / V _ #,ʦ > ś / V _,4,40,0.00343,94
+@nur-archaism @nur-archaism,@nur-innovation @x-nur-ts-sh @nur-innovation @x-nur-ts-sh,ś v > ś p,ʦ > ś / V _,9,40,0.00043,49
+@affrication @nur-archaism @nur-archaism @affrication,@nur-innovation @x-nur-ts-sh @nur-innovation @x-nur-ts-sh,ś > ʦ / V _ | V ṁ _,ʦ > ś / V _,11,40,0.00343,62

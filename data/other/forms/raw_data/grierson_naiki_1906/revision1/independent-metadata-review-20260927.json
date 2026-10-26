@@ -1,0 +1,34 @@
+{
+  "reviewer": "asur_finish",
+  "date": "2026-09-27",
+  "stage": "Independent metadata and scope review before final freeze; not output acceptance",
+  "input_sha256": {
+    "ROOT_SCOPE_REVIEW.md": "8bdf3b3583b4c93da42e95f02b6507a6a544a5bdfed085c0d3293b9f7a290e83",
+    "proposed-reference.bib": "1522b95758613d3d6463b2b840e149c61a6cb9f1565571304790e80c7ef0ff99",
+    "proposed-dialect.csv": "e47f1e2c7f8577eacb64baa8fbbf8a1b7c04c52504414aca1e6ab950369631b3",
+    "language-mapping-review.json": "828c50170a3b8a4e1cfa96d90021f33aad8fd239de06e57994303f25fffbcdd6",
+    "proposal-profile.txt": "f028ac8de4fb4bade8d216f0e1054cf8863ebf9ecbbc58b6f33ff4ec35d067ff",
+    "whole-review-proposal.yaml": "088d5cfdc0873a6c8aae9eb4b86e6ce93b57772595a1390643f2052402781d68"
+  },
+  "findings": [
+    {
+      "class": "whole-expression punctuation",
+      "severity": "material before freeze",
+      "finding": "build_whole_utterances.py strips .,;:? from every source token before joining whole utterance and translation blocks; internal source punctuation is lost from Original. Raw source tokens retain it.",
+      "resolution": "Root acknowledged and is repairing before freeze. No frozen sample has been accepted."
+    }
+  ],
+  "accepted_metadata": [
+    "Existing Naiki (Chanda) identity is reused; broader Naiki/Naikri classification conflict is documented, not resolved by unreviewed merger.",
+    "Historical Chanda dialect has no fabricated exact coordinates.",
+    "Source is 1906 volume IV, chapter 570–575 with explicitly attributed genitive witness 623. Shared Kolami forms and collectively scoped aund on 285 remain separately accounted controls/context.",
+    "Profile conservatively lowercases display initials and maps printed velar nasal ṅ to house ŋ, with source spelling preserved as Original and no asserted IPA. NFC/NFD aliases are explicit.",
+    "Source-scoped OCR/editor and no-etymology metadata are declared. Secondary Hislop mention is not represented as independently exhausted.",
+    "Original grayscale p570 visually confirms heading, historical district, quantity caveat and source-qualified grammatical statements represented in proposal Notes."
+  ],
+  "installation_only_gates": [
+    "Update historical draft/status wording to final accepted installation status without rewriting historical audit verdicts.",
+    "Register approved profile, dialect and source reference only after full independent output review.",
+    "Full compiled/build/browser gates remain deferred."
+  ]
+}

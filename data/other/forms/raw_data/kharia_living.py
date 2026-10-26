@@ -141,10 +141,20 @@ def propose(database, output):
 
 if __name__ == '__main__':
     p = argparse.ArgumentParser(description=__doc__)
-    p.add_argument('--database',type=Path,required=True)
+    p.add_argument('--database',type=Path)
     p.add_argument('--output',type=Path,default=ROOT/'tmp/kharia-living-proposal-20260911')
     p.add_argument('--install',action='store_true')
     a=p.parse_args()
+    if a.install:
+        # Whole-snapshot recovery supersedes the historical headword-only writer.
+        # Keep propose() available for reproducible historical research only.
+        import runpy
+        coordinator = runpy.run_path(str(Path(__file__).parent/'kharia_living_2026/whole-source-recovery/install_proposal.py'))
+        result = coordinator['install']()
+        print(json.dumps({'status':'installed','rows':result['rows']}))
+        raise SystemExit(0)
+    if not a.database:
+        p.error('--database is required for historical proposal generation')
     report=propose(a.database,a.output)
     if a.install:
         shutil.copyfile(a.output/'proposed.csv',ROOT/f'data/other/forms/{STEM}.csv')

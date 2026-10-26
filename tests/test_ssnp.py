@@ -143,9 +143,16 @@ def test_all_import_rows_survive_cldf_ingestion():
         (row["Language_ID"], row["Phonemic"], row["Gloss"])
         for row in ingested_rows
     }
+    # A slash cell ("ser / sɪr") is one node per alternate, each with its own Phonemic piece.
+    from make_cldf import expand_slash_alternates
+
     source = {
-        (canonical.get(row[0], row[0]), row[5], row[3])
+        (canonical.get(row[0], row[0]), phonemic, row[3])
         for row in source_rows
+        for phonemic in (
+            expand_slash_alternates(row[5]) if len(expand_slash_alternates(row[2])) > 1
+            else [row[5]]
+        )
     }
     assert len(ingested & source) >= 0.99 * len(source)
     assert all("[" in row["Source"] for row in ingested_rows)

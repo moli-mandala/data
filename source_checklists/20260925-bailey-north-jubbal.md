@@ -1,3 +1,5 @@
+> Current source-stage update (2026-09-27): **837 installed rows / 688 audit units**. The generated assessment below describes the historical330-row compiled release, not the new source files. See [whole-source installation gates](20260927-bailey-north-jubbal-whole.md); full rebuild/browser gates remain deferred.
+
 # Source ingestion checklist — 20260925-bailey-north-jubbal
 
 - Installed input: `data/other/forms/20260925-bailey-north-jubbal.csv`

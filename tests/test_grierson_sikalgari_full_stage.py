@@ -2,6 +2,7 @@
 import csv,hashlib,importlib.util,json,unicodedata
 from pathlib import Path
 from segments.tokenizer import Tokenizer
+from profile_policy import hunterian_display  # Hunterian ch/chh/Ch → house spelling
 DATA=Path(__file__).resolve().parents[1]
 P=DATA/'data/other/forms/raw_data/grierson_sikalgari_1922'
 spec=importlib.util.spec_from_file_location('sikalgari_full',P/'import_source_full.py')
@@ -53,7 +54,7 @@ def test_profile_coverage_and_literal_symbol_layer():
   assert '�' not in t(r[2],column='IPA')
  for form in ['Ṇau','Mạ̄tū','Ti-kántā','Āk̲h̲ṭal','t̲s̲ākrī','Ayyᵃyyō','nikartaū̃']:
   assert '�' not in t(unicodedata.normalize('NFC',form),column='IPA')
- assert t('thauṅgā',column='IPA').replace(' ','')=='thauŋgā'
+ assert t('thauṅgā',column='IPA').replace(' ','')=='tʰauŋgā'
 
 def test_source_construction_metadata_and_qualified_dialect():
  from tags import GRAMMATICAL_TAGS,GENDER_TAGS

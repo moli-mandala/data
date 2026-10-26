@@ -1,0 +1,32 @@
+{
+  "status": "failed_main_reference_metadata_before_activation",
+  "reviewer": "rohru_finish",
+  "read_only": true,
+  "passing_scope": [
+    "Legacy YAML retains its existing sil-korwa-kodaku transcription profile in file defaults; new additions use convert:false and preserve_hyphens:true.",
+    "One source-level behera2022korwakodaku declaration preserves split_alternates:false, notes.audit_only:true and dedupe_by_entry_key:true across both files; the new file does not redeclare the citation key.",
+    "Both YAMLs route to the same guarded installer; authorial Form remains literal for new records while the legacy profile is retained.",
+    "The bibliography retains all unrelated entries and introduces four explicitly secondary authorities: Abraham 1995, CTDP 2002, Powercity Korba n.d.c and Singh 1994. Their provisional source relationships and noncollated status are stated."
+  ],
+  "material_corrections": [
+    {
+      "key": "behera2022korwakodaku",
+      "field": "etymology_provenance",
+      "issue": "Current value is explanatory prose, whereas the repository metadata field is an enum: source, source-mapped, jambu, mixed or none.",
+      "recommendation": "Use source for the two qualified source-attributed Kora/kor Etymology cells; retain exact uncertainty and secondary-authority explanation in provenance or note. Do not fabricate ancestry edges."
+    },
+    {
+      "key": "behera2022korwakodaku",
+      "field": "ocr",
+      "issue": "Current value is prose beginning 'No.' rather than the established No/Yes flag.",
+      "recommendation": "Use No; preserve the text-layer and earlier comparative OCR explanation in provenance or note."
+    },
+    {
+      "key": "behera2022korwakodaku",
+      "field": "title",
+      "issue": "Unbraced proper names render lowercase in the bibliography-draft formatted citation.",
+      "recommendation": "Brace Korwa, Kodaku, Chhattisgarh, Jharkhand and India in the title."
+    }
+  ],
+  "activation_condition": "Regenerate the bibliography asset, focused metadata check and disabled acceptance draft with new SHA pins before root approval; no canonical or installation writes performed."
+}

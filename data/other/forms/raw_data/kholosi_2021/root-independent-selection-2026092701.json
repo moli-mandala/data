@@ -1,0 +1,2623 @@
+{
+  "seed": 2026092701,
+  "method": "Uniform random 20 actual emitted rows sorted by stable entry key; additional targeted strata review required.",
+  "manifest": {
+    "status": "frozen for independent source/output audit; not approved for installation",
+    "source_commit": "18b43f982efad92f35e4054561f2e0fc519f4eb7",
+    "output_sha256": {
+      "whole-proposed.csv": "c21945e2e67a071d70220a4c1a65a44bd77ca3d185bd66ae52dbc3596b1c07bc",
+      "whole-proposed-audit.jsonl": "37ed182802da015e452365488ea91bcd121cc7e8fd03a96df42710b6cfd09f86",
+      "whole-profile-proposed.txt": "1fcdabf0a57b03e70499591a6f2271edf5f1e7fef5d2250fb02b28728cb9369a",
+      "whole-metadata-proposed.yaml": "c2eeb18dfa49fc65c97a38b0ea37be135409b6a8ce72b6ab949acb8e5d20105c",
+      "whole-proposed-summary.json": "bcfcd7e1d1992d43d41d14d19cabeaa9480bb2cbf443fda3bfca05efac7024df",
+      "whole-parser-validation.json": "f8de98bbc946edee68a845fd7d6f3b7ea932c8ab25c68448823f91f4db75ef05",
+      "whole-profile-validation.json": "a7187bbfab4bbfe9ce39b36c4dc46021ab6da060620b9a177932427691847a78",
+      "legacy-identity-review.json": "5753e38d494e6a8b2b612031a493ea50f797ccbba1988ec26257c479cdfa995e",
+      "source-etymology-claims.jsonl": "8f53a1f880684e0be0651d593090d3f0710587a0aeba361b702a46a765deb89d",
+      "source-etymology-claim-validation.json": "674bc7d89cd79e914d7840d1598f5bc9f7af8ac4c283c20492a0799609b87e7e",
+      "owner-second-reading-decisions.json": "104a2dd72c80c84535ddae2b8a88814355ef1afe9143a987df3d612fc21dee54",
+      "source-metadata-plan-20260927.json": "70a98d6f4c1845958d8b7983725ce8156ca1c2a46c7d9a096da73acd2623c795"
+    },
+    "input_sha256": {
+      "pdf-first-reading.jsonl": "10633abd5bef841e9a30bfad2ea1b59decc540de0319aee7d83399fa2c0ccefc",
+      "structured-first-reading.jsonl": "a23872b444767a9cec4d63991fa8d2b634b0b36d93dc6cc18ef6babddbed8646",
+      "pdf-metadata-decisions-20260927.json": "d1ac85526fa4fe4b026f9693c8f8045de8383ec35216b0b15b539094c323d7e3",
+      "structured-metadata-decisions-20260927.json": "54511df72360b0a46acfc95f9ca2eef29eb401323a5bd412c0a31ecc28668378",
+      "supplemental-annotation-occurrences.jsonl": "d5cdf08729b8789d892221232a3478f12494d7bab832b04164f3a1d89404d999",
+      "bound-morphology-review-20260927.json": "261b582ddeb9388235ecf6aa3de084c1bf247e1888b33fb1670e2e678208f217",
+      "owner-second-reading-decisions.json": "104a2dd72c80c84535ddae2b8a88814355ef1afe9143a987df3d612fc21dee54",
+      "legacy-concordance-candidates.json": "5de178700bba90d9855cacdd9a29b0baf83f197e31a3564ccb0e853163a57ae6",
+      "legacy-baseline/20220913-kholosi.csv": "5cf1498f427646214542909e8b10619cfdd399652f141de78a9d84950009e741",
+      "legacy-baseline/20220913-kholosi.yaml": "b1d4213588020277e2cb78ede4685eb200fd6c9e7cbd5352dbbbeaf144aaad7b",
+      "source-metadata-plan-20260927.json": "70a98d6f4c1845958d8b7983725ce8156ca1c2a46c7d9a096da73acd2623c795",
+      "upstream/Kholosi_Dictionary.pdf": "a87222552e2561a6961aef3cda7a6a178ab033870a558ea64d297cf5417e09dc",
+      "upstream/acquisition.json": "f41f19d560f17c45a71cfee9764c249a088145e4664d3aa6c5d946de8952c3ab",
+      "upstream/data.txt": "6b6c1aa4c6c1f78df7074df868a51a32294d0b01af4fe79d96a5e6cd4265fe25",
+      "upstream/data2.txt": "6ed4235ce7d938708d03fef38d89160a8cb1e73f256df5234467c6b8633378af",
+      "upstream/data3.txt": "c55c4e0a0c4cc3084c1b5720f3e2eea78395cf0270c2aeb95c346c7d1a832c89",
+      "upstream/dictionary.html": "395d59c3d2f2f989dc66b3e0dd6151987030f829e86d950776555be98eba6627",
+      "upstream/index.html": "6642a105edf9ed9d39f22f63ddaf245a5b26e03904a82113a1e9b8361d85c0be",
+      "upstream/lexicon.csv": "940cd0d0d6963065c67e4244ee0323f7046383b578503825fa44d20a7d32881f",
+      "upstream/main.js": "8f3e20fc2197bef1db46060fe2eda0aa712a1d8c46ecba5ef650f42c476418e7",
+      "upstream/sentences.csv": "61d9121693c0432f31a23c2c81b8bc02b85511cb2b029b5760e1ba03d004f159",
+      "upstream/sentences.html": "51b6e43a788a90e4071ce599cf5c3eced01fe8974cf4a4df1e580ab2097b4c93",
+      "upstream/sentences.txt": "a5267192d260fac01f7f0b4a7e16ef262b366ce224e0726fe03620b264c0f40a",
+      "upstream/zenodo-record.json": "dd7b5d433569711a540f5f3105a64c8db8285b94797c909a1da9ed8b56dce6ee"
+    },
+    "script_sha256": {
+      "prepare_witnesses.py": "07e88d7188f61c6c5d4e8a8c4ad11824474f26480d0bb12bc8813905af4c669a",
+      "resolve_source_relations.py": "8282158a503ac7aceb01e45cf3a8a9f8acf792d4e4661337fea85a6f64df6932",
+      "expand_explicit_alternates.py": "599f79c511d0ce19483b449cbf0b2ef5a1d08507bab596c3b5c8e7193a2c59fd",
+      "apply_structured_metadata.py": "4788536cfb6b02403e86bd80ddba212bc473dd94cbb248fb77c817f6b35ff9fa",
+      "prepare_etymology_claims.py": "5783586dae1be70775b06126f920ab62a081599d152f5df597d31e62e455395a",
+      "prepare_legacy_identity_review.py": "cd7afac986e398dc83235ca438dd8fdd48af38f29a2fd32497623f613eed324d",
+      "prepare_whole_proposal.py": "c6fd82f522a62d0598a73caf19a03fbd8361fcc99fb8d02ded7038a29429d188",
+      "prepare_profile.py": "7e4150c5c4b906ad143ad7ca295e482658147c736609b4453ee52417d86f9b79",
+      "validate_whole_proposal.py": "2836c9941e5f42873a3bc95ec1bce59fe021670d227d6ab0c9195ea41167a0a6"
+    },
+    "reproducible_byte_identical": true,
+    "canonical_writes": false,
+    "audit_request": "Fresh >=20 stratified source units, actual emitted rows, all source layers including PDF lexical/senses/examples, CSV paradigms/sentences/alternates, historical identity and source-claim conflicts, bound morphology, unglossed text and controls.",
+    "deferred": [
+      "Independent audit acceptance",
+      "Guarded installation",
+      "Full CLDF/DB build",
+      "Full suite",
+      "Compiled identity/graph",
+      "Browser QA"
+    ]
+  },
+  "records": [
+    {
+      "sample": 1,
+      "entry_key": "kholosi:github:18b43f982efa:lexicon.csv:row37",
+      "row": [
+        "Khol",
+        "",
+        "tʰāṛgo",
+        "tall, long",
+        "",
+        "tʰɔɽ.go",
+        "Source citation: Anonby (taɽgo). Source record date: October 1, 2020.",
+        "kholosi[repository 18b43f982efa, lexicon.csv, row 37]",
+        "",
+        "Skt. dīrghá (CDIAL 6368) Source comparison: Sd. ḍigho.",
+        "kholosi:github:18b43f982efa:lexicon.csv:row37",
+        "",
+        "",
+        "",
+        "adj"
+      ],
+      "audit_records": [
+        {
+          "source_unit_key": "kholosi:github:18b43f982efa:lexicon.csv:row37",
+          "representation": "author repository CSV",
+          "source_record": {
+            "source_unit_key": "kholosi:github:18b43f982efa:lexicon.csv:row37",
+            "source_file": "lexicon.csv",
+            "physical_csv_row": 37,
+            "raw_fields": [
+              "tʰāṛgo",
+              "tʰɔɽ.go",
+              "",
+              "2",
+              "t̪ʰɔ̀ːɽ.gô",
+              "tall, long",
+              "",
+              "adjective",
+              "<f> tʰergi",
+              "Skt. dīrghá (CDIAL 6368)",
+              "Sd. ḍigho",
+              "Anonby (taɽgo)",
+              "October 1, 2020",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "October 26, 2020",
+              "0"
+            ],
+            "raw_column_names": [
+              "Transcription",
+              "Phonetic IPA",
+              "IPA 2",
+              "Syllables",
+              "IPA (OLD)",
+              "Meaning",
+              "Persian Meaning",
+              "Part of Speech",
+              "Form",
+              "Etymology",
+              "Cognates",
+              "Citations",
+              "Date",
+              "Notes",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            "review_status": "pending independent complete-output review",
+            "status": "target",
+            "form": "tʰāṛgo",
+            "phonetic": "tʰɔɽ.go",
+            "gloss": "tall, long",
+            "tags": [
+              "adj"
+            ],
+            "etymology": "Skt. dīrghá (CDIAL 6368)",
+            "comparison": "Sd. ḍigho",
+            "notes": "",
+            "source_qualifier": "Anonby (taɽgo)",
+            "paradigm_raw": "<f> tʰergi",
+            "recorded": "October 1, 2020",
+            "pronunciation_evidence": {
+              "IPA (OLD)": "t̪ʰɔ̀ːɽ.gô",
+              "Syllables": "2"
+            },
+            "persian_prompt": "",
+            "nonlexical_trailing_columns": [
+              "",
+              "",
+              "",
+              "",
+              "October 26, 2020",
+              "0"
+            ],
+            "paradigm_candidates": [
+              {
+                "source_unit_key": "kholosi:github:18b43f982efa:lexicon.csv:row37:paradigm:1",
+                "form": "tʰergi",
+                "source_grammar": "f",
+                "tags": [
+                  "adj",
+                  "f"
+                ],
+                "gloss": "tall, long",
+                "notes": "",
+                "relationship": "inflected form under source head; exact relation awaiting review"
+              }
+            ]
+          },
+          "candidates": [
+            {
+              "form": "tʰāṛgo",
+              "gloss": "tall, long",
+              "phonetic": "tʰɔɽ.go",
+              "etymology": "Skt. dīrghá (CDIAL 6368) Source comparison: Sd. ḍigho.",
+              "comparison": "Sd. ḍigho",
+              "notes": "Source citation: Anonby (taɽgo). Source record date: October 1, 2020.",
+              "tags": [
+                "adj"
+              ],
+              "entry_key": "kholosi:github:18b43f982efa:lexicon.csv:row37",
+              "status": "candidate"
+            },
+            {
+              "entry_key": "kholosi:github:18b43f982efa:lexicon.csv:row37:paradigm:1",
+              "form": "tʰergi",
+              "gloss": "tall, long",
+              "phonetic": "",
+              "tags": [
+                "adj",
+                "f"
+              ],
+              "notes": "Source citation: Anonby (taɽgo). Source record date: October 1, 2020.",
+              "status": "source relation proposed",
+              "derivation_parent_keys": [
+                "kholosi:github:18b43f982efa:lexicon.csv:row37"
+              ]
+            }
+          ],
+          "status": "editorial review pending",
+          "citation": "kholosi[repository 18b43f982efa, lexicon.csv, row 37]",
+          "owner_second_reading_decision": {},
+          "emitted_entry_keys": [
+            "kholosi:github:18b43f982efa:lexicon.csv:row37",
+            "kholosi:github:18b43f982efa:lexicon.csv:row37:paradigm:1"
+          ],
+          "disposition": "emitted",
+          "source_etymology_claim": {
+            "claim_key": "kholosi:github:18b43f982efa:lexicon.csv:row37:etymology",
+            "source_unit_key": "kholosi:github:18b43f982efa:lexicon.csv:row37",
+            "source_form": "tʰāṛgo",
+            "source_gloss": "tall, long",
+            "literal_claim": "Skt. dīrghá (CDIAL 6368)",
+            "provenance": "pinned author repository lexicon",
+            "locator": {
+              "file": "lexicon.csv",
+              "physical_csv_row": 37
+            },
+            "qualifier_words": [],
+            "cited_target_ids": [
+              {
+                "cdial_id": "6368",
+                "exists": true,
+                "target_head": "dīrghá"
+              }
+            ],
+            "graph_disposition": "Attributed source claim only; no automatic Jambu graph assignment."
+          }
+        }
+      ]
+    },
+    {
+      "sample": 2,
+      "entry_key": "kholosi:github:18b43f982efa:lexicon.csv:row6:quoted-anonby",
+      "row": [
+        "Khol",
+        "",
+        "puni",
+        "water",
+        "",
+        "",
+        "Source citation: Anonby (puni).",
+        "kholosi[repository 18b43f982efa, lexicon.csv, row 6]",
+        "",
+        "",
+        "kholosi:github:18b43f982efa:lexicon.csv:row6:quoted-anonby",
+        "",
+        "",
+        "",
+        "noun"
+      ],
+      "audit_records": [
+        {
+          "source_unit_key": "kholosi:github:18b43f982efa:lexicon.csv:row6:quoted-anonby",
+          "representation": "quoted target attestation in author repository",
+          "source_record": {
+            "source_unit_key": "kholosi:github:18b43f982efa:lexicon.csv:row6:quoted-anonby",
+            "parent_key": "kholosi:github:18b43f982efa:lexicon.csv:row6",
+            "form": "puni",
+            "gloss": "water",
+            "source_authority": "Anonby, quoted by author spreadsheet",
+            "raw_source": "Anonby (puni)",
+            "source_scope": "Kholosi alternate attestation; not foreign-language control",
+            "tags": [],
+            "uncertainty_type": "",
+            "relation_status": "no automatic variant edge; cited witness need not be same lexical/morphological form",
+            "review_status": "pending independent review"
+          },
+          "citation": "kholosi[repository 18b43f982efa, lexicon.csv, row 6]",
+          "candidates": [
+            {
+              "entry_key": "kholosi:github:18b43f982efa:lexicon.csv:row6:quoted-anonby",
+              "form": "puni",
+              "gloss": "water",
+              "phonetic": "",
+              "tags": [
+                "noun"
+              ],
+              "notes": "Source citation: Anonby (puni).",
+              "etymology": ""
+            }
+          ],
+          "emitted_entry_keys": [
+            "kholosi:github:18b43f982efa:lexicon.csv:row6:quoted-anonby"
+          ],
+          "disposition": "emitted"
+        }
+      ]
+    },
+    {
+      "sample": 3,
+      "entry_key": "kholosi:github:18b43f982efa:lexicon.csv:row17",
+      "row": [
+        "Khol",
+        "",
+        "dazerā",
+        "ten",
+        "",
+        "da.ze.ro",
+        "Source citation: Anonby (dad-)?. Source record date: September 29, 2020.",
+        "kholosi[repository 18b43f982efa, lexicon.csv, row 17]",
+        "",
+        "Skt. dáśa (CDIAL 6227) Source comparison: Sd. ḍ̈aha.",
+        "kholosi:github:18b43f982efa:lexicon.csv:row17",
+        "",
+        "",
+        "",
+        "num"
+      ],
+      "audit_records": [
+        {
+          "source_unit_key": "kholosi:github:18b43f982efa:lexicon.csv:row17",
+          "representation": "author repository CSV",
+          "source_record": {
+            "source_unit_key": "kholosi:github:18b43f982efa:lexicon.csv:row17",
+            "source_file": "lexicon.csv",
+            "physical_csv_row": 17,
+            "raw_fields": [
+              "dazerā",
+              "da.ze.ro",
+              "",
+              "3",
+              "dɜ́.zɛ̂.ɾɔ̂",
+              "ten",
+              "",
+              "numeral",
+              "",
+              "Skt. dáśa (CDIAL 6227)",
+              "Sd. ḍ̈aha",
+              "Anonby (dad-)?",
+              "September 29, 2020",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "October 7, 2020",
+              "13"
+            ],
+            "raw_column_names": [
+              "Transcription",
+              "Phonetic IPA",
+              "IPA 2",
+              "Syllables",
+              "IPA (OLD)",
+              "Meaning",
+              "Persian Meaning",
+              "Part of Speech",
+              "Form",
+              "Etymology",
+              "Cognates",
+              "Citations",
+              "Date",
+              "Notes",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            "review_status": "pending independent complete-output review",
+            "status": "target",
+            "form": "dazerā",
+            "phonetic": "da.ze.ro",
+            "gloss": "ten",
+            "tags": [
+              "num"
+            ],
+            "etymology": "Skt. dáśa (CDIAL 6227)",
+            "comparison": "Sd. ḍ̈aha",
+            "notes": "",
+            "source_qualifier": "Anonby (dad-)?",
+            "paradigm_raw": "",
+            "recorded": "September 29, 2020",
+            "pronunciation_evidence": {
+              "IPA (OLD)": "dɜ́.zɛ̂.ɾɔ̂",
+              "Syllables": "3"
+            },
+            "persian_prompt": "",
+            "nonlexical_trailing_columns": [
+              "",
+              "",
+              "",
+              "",
+              "October 7, 2020",
+              "13"
+            ]
+          },
+          "candidates": [
+            {
+              "form": "dazerā",
+              "gloss": "ten",
+              "phonetic": "da.ze.ro",
+              "etymology": "Skt. dáśa (CDIAL 6227) Source comparison: Sd. ḍ̈aha.",
+              "comparison": "Sd. ḍ̈aha",
+              "notes": "Source citation: Anonby (dad-)?. Source record date: September 29, 2020.",
+              "tags": [
+                "num"
+              ],
+              "entry_key": "kholosi:github:18b43f982efa:lexicon.csv:row17",
+              "status": "candidate"
+            }
+          ],
+          "status": "editorial review pending",
+          "citation": "kholosi[repository 18b43f982efa, lexicon.csv, row 17]",
+          "owner_second_reading_decision": {},
+          "emitted_entry_keys": [
+            "kholosi:github:18b43f982efa:lexicon.csv:row17"
+          ],
+          "disposition": "emitted",
+          "source_etymology_claim": {
+            "claim_key": "kholosi:github:18b43f982efa:lexicon.csv:row17:etymology",
+            "source_unit_key": "kholosi:github:18b43f982efa:lexicon.csv:row17",
+            "source_form": "dazerā",
+            "source_gloss": "ten",
+            "literal_claim": "Skt. dáśa (CDIAL 6227)",
+            "provenance": "pinned author repository lexicon",
+            "locator": {
+              "file": "lexicon.csv",
+              "physical_csv_row": 17
+            },
+            "qualifier_words": [],
+            "cited_target_ids": [
+              {
+                "cdial_id": "6227",
+                "exists": true,
+                "target_head": "dáśa"
+              }
+            ],
+            "graph_disposition": "Attributed source claim only; no automatic Jambu graph assignment."
+          }
+        }
+      ]
+    },
+    {
+      "sample": 4,
+      "entry_key": "legacy:20220913-kholosi:row:143",
+      "row": [
+        "Khol",
+        "13139",
+        "saterā",
+        "seven",
+        "",
+        "saterɔ",
+        "",
+        "kholosi[p. 8, col. 1, u2]",
+        "",
+        "Sanskrit SAPTÁ (13139), cf. Sindhi sata.",
+        "legacy:20220913-kholosi:row:143",
+        "",
+        "",
+        "",
+        "num"
+      ],
+      "audit_records": [
+        {
+          "source_unit_key": "kholosi:pdf:p8:c1:u2",
+          "representation": "published PDF",
+          "source_locator": "kholosi[p. 8, col. 1, u2]",
+          "source_record": {
+            "source_unit_key": "kholosi:pdf:p8:c1:u2",
+            "kind": "head",
+            "printed_page": 8,
+            "pdf_page": 10,
+            "column": 1,
+            "raw_text": "saterā [saterɔ] num. seven. Etym: Sanskrit\nSAPTÁ (13139), cf. Sindhi sata.",
+            "review_status": "pending independent source and segmentation review",
+            "joined_text": "saterā [saterɔ] num. seven. Etym: Sanskrit SAPTÁ (13139), cf. Sindhi sata.",
+            "layout_evidence": [
+              {
+                "baseline": 119.475,
+                "raw_text": "saterā [saterɔ] num. seven. Etym: Sanskrit"
+              },
+              {
+                "baseline": 131.431,
+                "raw_text": "SAPTÁ (13139), cf. Sindhi sata."
+              }
+            ],
+            "form": "saterā",
+            "phonetic": "saterɔ",
+            "source_qualifiers": [],
+            "etymology": "Sanskrit SAPTÁ (13139), cf. Sindhi sata.",
+            "source_analysis": "num. seven.",
+            "source_pos": "num",
+            "gloss": "seven",
+            "tags": [
+              "num"
+            ]
+          },
+          "metadata_decision": {},
+          "candidates": [
+            {
+              "form": "saterā",
+              "gloss": "seven",
+              "phonetic": "saterɔ",
+              "etymology": "Sanskrit SAPTÁ (13139), cf. Sindhi sata.",
+              "notes": "",
+              "tags": [
+                "num"
+              ],
+              "source_qualifiers": [],
+              "entry_key": "kholosi:pdf:p8:c1:u2:sense:1",
+              "status": "candidate"
+            }
+          ],
+          "status": "editorial review pending",
+          "citation": "kholosi[p. 8, col. 1, u2]",
+          "owner_second_reading_decision": {},
+          "emitted_entry_keys": [
+            "legacy:20220913-kholosi:row:143"
+          ],
+          "disposition": "emitted",
+          "source_etymology_claim": {
+            "claim_key": "kholosi:pdf:p8:c1:u2:etymology",
+            "source_unit_key": "kholosi:pdf:p8:c1:u2",
+            "source_form": "saterā",
+            "source_gloss": "seven",
+            "literal_claim": "Sanskrit SAPTÁ (13139), cf. Sindhi sata.",
+            "provenance": "printed author dictionary",
+            "locator": {
+              "printed_page": 8,
+              "column": 1,
+              "unit": "kholosi:pdf:p8:c1:u2"
+            },
+            "qualifier_words": [],
+            "cited_target_ids": [
+              {
+                "cdial_id": "13139",
+                "exists": true,
+                "target_head": "saptá"
+              }
+            ],
+            "graph_disposition": "Attributed source claim only; no automatic Jambu graph assignment."
+          }
+        }
+      ]
+    },
+    {
+      "sample": 5,
+      "entry_key": "kholosi:github:18b43f982efa:sentences.csv:row61:answer3",
+      "row": [
+        "Khol",
+        "",
+        "šorko gazzi=ke karčax=te vaddayi",
+        "The boy cut the rope with a knife.",
+        "",
+        "",
+        "Source record date: October 16, 2020. Source interlinear analysis: ?.",
+        "kholosi[repository 18b43f982efa, sentences.csv, row 61]",
+        "",
+        "",
+        "kholosi:github:18b43f982efa:sentences.csv:row61:answer3",
+        "kholosi:github:18b43f982efa:sentences.csv:row61:answer1",
+        "",
+        "",
+        "sentential multiword-expression alternate"
+      ],
+      "audit_records": [
+        {
+          "source_unit_key": "kholosi:github:18b43f982efa:sentences.csv:row61",
+          "representation": "author repository CSV",
+          "source_record": {
+            "source_unit_key": "kholosi:github:18b43f982efa:sentences.csv:row61",
+            "source_file": "sentences.csv",
+            "physical_csv_row": 61,
+            "raw_fields": [
+              "viyôw/hôrro/šorko/kelak gazzi=ke karčax=te vaddayi",
+              "",
+              "?",
+              "The boy cut the rope with a knife.",
+              "",
+              "October 16, 2020"
+            ],
+            "raw_column_names": [
+              "Transcription",
+              "Phonetic IPA",
+              "Gloss",
+              "Meaning",
+              "Notes",
+              "Date"
+            ],
+            "review_status": "pending independent complete-output review",
+            "status": "target",
+            "form": "viyôw/hôrro/šorko/kelak gazzi=ke karčax=te vaddayi",
+            "phonetic": "",
+            "gloss": "The boy cut the rope with a knife.",
+            "interlinear_analysis": "?",
+            "notes": "",
+            "recorded": "October 16, 2020",
+            "tags": [
+              "sentential"
+            ],
+            "alternate_segmentation_pending": true
+          },
+          "candidates": [
+            {
+              "form": "viyôw gazzi=ke karčax=te vaddayi",
+              "gloss": "The boy cut the rope with a knife.",
+              "phonetic": "",
+              "etymology": "",
+              "comparison": "",
+              "notes": "Source record date: October 16, 2020. Source interlinear analysis: ?.",
+              "tags": [
+                "sentential",
+                "multiword-expression"
+              ],
+              "entry_key": "kholosi:github:18b43f982efa:sentences.csv:row61:answer1",
+              "status": "source alternate proposed",
+              "source_interlinear_analysis": "?"
+            },
+            {
+              "form": "hôrro gazzi=ke karčax=te vaddayi",
+              "gloss": "The boy cut the rope with a knife.",
+              "phonetic": "",
+              "etymology": "",
+              "comparison": "",
+              "notes": "Source record date: October 16, 2020. Source interlinear analysis: ?.",
+              "tags": [
+                "sentential",
+                "multiword-expression",
+                "alternate"
+              ],
+              "entry_key": "kholosi:github:18b43f982efa:sentences.csv:row61:answer2",
+              "status": "source alternate proposed",
+              "variant_of_key": "kholosi:github:18b43f982efa:sentences.csv:row61:answer1",
+              "source_interlinear_analysis": "?"
+            },
+            {
+              "form": "šorko gazzi=ke karčax=te vaddayi",
+              "gloss": "The boy cut the rope with a knife.",
+              "phonetic": "",
+              "etymology": "",
+              "comparison": "",
+              "notes": "Source record date: October 16, 2020. Source interlinear analysis: ?.",
+              "tags": [
+                "sentential",
+                "multiword-expression",
+                "alternate"
+              ],
+              "entry_key": "kholosi:github:18b43f982efa:sentences.csv:row61:answer3",
+              "status": "source alternate proposed",
+              "variant_of_key": "kholosi:github:18b43f982efa:sentences.csv:row61:answer1",
+              "source_interlinear_analysis": "?"
+            },
+            {
+              "form": "kelak gazzi=ke karčax=te vaddayi",
+              "gloss": "The boy cut the rope with a knife.",
+              "phonetic": "",
+              "etymology": "",
+              "comparison": "",
+              "notes": "Source record date: October 16, 2020. Source interlinear analysis: ?.",
+              "tags": [
+                "sentential",
+                "multiword-expression",
+                "alternate"
+              ],
+              "entry_key": "kholosi:github:18b43f982efa:sentences.csv:row61:answer4",
+              "status": "source alternate proposed",
+              "variant_of_key": "kholosi:github:18b43f982efa:sentences.csv:row61:answer1",
+              "source_interlinear_analysis": "?"
+            }
+          ],
+          "status": "editorial review pending",
+          "citation": "kholosi[repository 18b43f982efa, sentences.csv, row 61]",
+          "owner_second_reading_decision": {},
+          "emitted_entry_keys": [
+            "kholosi:github:18b43f982efa:sentences.csv:row61:answer1",
+            "kholosi:github:18b43f982efa:sentences.csv:row61:answer2",
+            "kholosi:github:18b43f982efa:sentences.csv:row61:answer3",
+            "kholosi:github:18b43f982efa:sentences.csv:row61:answer4"
+          ],
+          "disposition": "emitted"
+        }
+      ]
+    },
+    {
+      "sample": 6,
+      "entry_key": "kholosi:github:18b43f982efa:lexicon.csv:row56",
+      "row": [
+        "Khol",
+        "",
+        "minibus",
+        "bus",
+        "",
+        "mi.ni.bus",
+        "Source record date: October 3, 2020.",
+        "kholosi[repository 18b43f982efa, lexicon.csv, row 56]",
+        "",
+        "Eng. minibus",
+        "kholosi:github:18b43f982efa:lexicon.csv:row56",
+        "",
+        "",
+        "",
+        "noun"
+      ],
+      "audit_records": [
+        {
+          "source_unit_key": "kholosi:github:18b43f982efa:lexicon.csv:row56",
+          "representation": "author repository CSV",
+          "source_record": {
+            "source_unit_key": "kholosi:github:18b43f982efa:lexicon.csv:row56",
+            "source_file": "lexicon.csv",
+            "physical_csv_row": 56,
+            "raw_fields": [
+              "minibus",
+              "mi.ni.bus",
+              "",
+              "3",
+              "",
+              "bus",
+              "",
+              "noun",
+              "",
+              "Eng. minibus",
+              "",
+              "",
+              "October 3, 2020",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "November 12, 2020",
+              "0"
+            ],
+            "raw_column_names": [
+              "Transcription",
+              "Phonetic IPA",
+              "IPA 2",
+              "Syllables",
+              "IPA (OLD)",
+              "Meaning",
+              "Persian Meaning",
+              "Part of Speech",
+              "Form",
+              "Etymology",
+              "Cognates",
+              "Citations",
+              "Date",
+              "Notes",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            "review_status": "pending independent complete-output review",
+            "status": "target",
+            "form": "minibus",
+            "phonetic": "mi.ni.bus",
+            "gloss": "bus",
+            "tags": [
+              "noun"
+            ],
+            "etymology": "Eng. minibus",
+            "comparison": "",
+            "notes": "",
+            "source_qualifier": "",
+            "paradigm_raw": "",
+            "recorded": "October 3, 2020",
+            "pronunciation_evidence": {
+              "Syllables": "3"
+            },
+            "persian_prompt": "",
+            "nonlexical_trailing_columns": [
+              "",
+              "",
+              "",
+              "",
+              "November 12, 2020",
+              "0"
+            ]
+          },
+          "candidates": [
+            {
+              "form": "minibus",
+              "gloss": "bus",
+              "phonetic": "mi.ni.bus",
+              "etymology": "Eng. minibus",
+              "comparison": "",
+              "notes": "Source record date: October 3, 2020.",
+              "tags": [
+                "noun"
+              ],
+              "entry_key": "kholosi:github:18b43f982efa:lexicon.csv:row56",
+              "status": "candidate"
+            }
+          ],
+          "status": "editorial review pending",
+          "citation": "kholosi[repository 18b43f982efa, lexicon.csv, row 56]",
+          "owner_second_reading_decision": {},
+          "emitted_entry_keys": [
+            "kholosi:github:18b43f982efa:lexicon.csv:row56"
+          ],
+          "disposition": "emitted",
+          "source_etymology_claim": {
+            "claim_key": "kholosi:github:18b43f982efa:lexicon.csv:row56:etymology",
+            "source_unit_key": "kholosi:github:18b43f982efa:lexicon.csv:row56",
+            "source_form": "minibus",
+            "source_gloss": "bus",
+            "literal_claim": "Eng. minibus",
+            "provenance": "pinned author repository lexicon",
+            "locator": {
+              "file": "lexicon.csv",
+              "physical_csv_row": 56
+            },
+            "qualifier_words": [],
+            "cited_target_ids": [],
+            "graph_disposition": "Attributed source claim only; no automatic Jambu graph assignment."
+          }
+        }
+      ]
+    },
+    {
+      "sample": 7,
+      "entry_key": "kholosi:github:18b43f982efa:lexicon.csv:row389",
+      "row": [
+        "Khol",
+        "",
+        "deðā",
+        "older sister",
+        "",
+        "de.ðɔ",
+        "Additional pronunciation as labelled in the source: M: [de̞.zɔ ~ de̞.ðɔ].",
+        "kholosi[repository 18b43f982efa, lexicon.csv, row 389]",
+        "",
+        "",
+        "kholosi:github:18b43f982efa:lexicon.csv:row389",
+        "",
+        "",
+        "",
+        "noun"
+      ],
+      "audit_records": [
+        {
+          "source_unit_key": "kholosi:github:18b43f982efa:lexicon.csv:row389",
+          "representation": "author repository CSV",
+          "source_record": {
+            "source_unit_key": "kholosi:github:18b43f982efa:lexicon.csv:row389",
+            "source_file": "lexicon.csv",
+            "physical_csv_row": 389,
+            "raw_fields": [
+              "deðā",
+              "de.ðɔ",
+              "M: [de̞.zɔ ~ de̞.ðɔ]",
+              "2",
+              "",
+              "older sister",
+              "",
+              "noun",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            "raw_column_names": [
+              "Transcription",
+              "Phonetic IPA",
+              "IPA 2",
+              "Syllables",
+              "IPA (OLD)",
+              "Meaning",
+              "Persian Meaning",
+              "Part of Speech",
+              "Form",
+              "Etymology",
+              "Cognates",
+              "Citations",
+              "Date",
+              "Notes",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            "review_status": "pending independent complete-output review",
+            "status": "target",
+            "form": "deðā",
+            "phonetic": "de.ðɔ",
+            "gloss": "older sister",
+            "tags": [
+              "noun"
+            ],
+            "etymology": "",
+            "comparison": "",
+            "notes": "",
+            "source_qualifier": "",
+            "paradigm_raw": "",
+            "recorded": "",
+            "pronunciation_evidence": {
+              "IPA 2": "M: [de̞.zɔ ~ de̞.ðɔ]",
+              "Syllables": "2"
+            },
+            "persian_prompt": "",
+            "nonlexical_trailing_columns": [
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ]
+          },
+          "candidates": [
+            {
+              "form": "deðā",
+              "gloss": "older sister",
+              "phonetic": "de.ðɔ",
+              "etymology": "",
+              "comparison": "",
+              "notes": "Additional pronunciation as labelled in the source: M: [de̞.zɔ ~ de̞.ðɔ].",
+              "tags": [
+                "noun"
+              ],
+              "entry_key": "kholosi:github:18b43f982efa:lexicon.csv:row389",
+              "status": "candidate"
+            }
+          ],
+          "status": "editorial review pending",
+          "citation": "kholosi[repository 18b43f982efa, lexicon.csv, row 389]",
+          "owner_second_reading_decision": {},
+          "emitted_entry_keys": [
+            "kholosi:github:18b43f982efa:lexicon.csv:row389"
+          ],
+          "disposition": "emitted"
+        }
+      ]
+    },
+    {
+      "sample": 8,
+      "entry_key": "kholosi:github:18b43f982efa:lexicon.csv:row131",
+      "row": [
+        "Khol",
+        "",
+        "čeman",
+        "grass",
+        "",
+        "t͡ʃe.man",
+        "Source record date: October 9, 2020.",
+        "kholosi[repository 18b43f982efa, lexicon.csv, row 131]",
+        "",
+        "Prs. čaman",
+        "kholosi:github:18b43f982efa:lexicon.csv:row131",
+        "",
+        "",
+        "",
+        "noun"
+      ],
+      "audit_records": [
+        {
+          "source_unit_key": "kholosi:github:18b43f982efa:lexicon.csv:row131",
+          "representation": "author repository CSV",
+          "source_record": {
+            "source_unit_key": "kholosi:github:18b43f982efa:lexicon.csv:row131",
+            "source_file": "lexicon.csv",
+            "physical_csv_row": 131,
+            "raw_fields": [
+              "čeman",
+              "t͡ʃe.man",
+              "",
+              "2",
+              "",
+              "grass",
+              "",
+              "noun",
+              "",
+              "Prs. čaman",
+              "",
+              "",
+              "October 9, 2020",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            "raw_column_names": [
+              "Transcription",
+              "Phonetic IPA",
+              "IPA 2",
+              "Syllables",
+              "IPA (OLD)",
+              "Meaning",
+              "Persian Meaning",
+              "Part of Speech",
+              "Form",
+              "Etymology",
+              "Cognates",
+              "Citations",
+              "Date",
+              "Notes",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            "review_status": "pending independent complete-output review",
+            "status": "target",
+            "form": "čeman",
+            "phonetic": "t͡ʃe.man",
+            "gloss": "grass",
+            "tags": [
+              "noun"
+            ],
+            "etymology": "Prs. čaman",
+            "comparison": "",
+            "notes": "",
+            "source_qualifier": "",
+            "paradigm_raw": "",
+            "recorded": "October 9, 2020",
+            "pronunciation_evidence": {
+              "Syllables": "2"
+            },
+            "persian_prompt": "",
+            "nonlexical_trailing_columns": [
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ]
+          },
+          "candidates": [
+            {
+              "form": "čeman",
+              "gloss": "grass",
+              "phonetic": "t͡ʃe.man",
+              "etymology": "Prs. čaman",
+              "comparison": "",
+              "notes": "Source record date: October 9, 2020.",
+              "tags": [
+                "noun"
+              ],
+              "entry_key": "kholosi:github:18b43f982efa:lexicon.csv:row131",
+              "status": "candidate"
+            }
+          ],
+          "status": "editorial review pending",
+          "citation": "kholosi[repository 18b43f982efa, lexicon.csv, row 131]",
+          "owner_second_reading_decision": {},
+          "emitted_entry_keys": [
+            "kholosi:github:18b43f982efa:lexicon.csv:row131"
+          ],
+          "disposition": "emitted",
+          "source_etymology_claim": {
+            "claim_key": "kholosi:github:18b43f982efa:lexicon.csv:row131:etymology",
+            "source_unit_key": "kholosi:github:18b43f982efa:lexicon.csv:row131",
+            "source_form": "čeman",
+            "source_gloss": "grass",
+            "literal_claim": "Prs. čaman",
+            "provenance": "pinned author repository lexicon",
+            "locator": {
+              "file": "lexicon.csv",
+              "physical_csv_row": 131
+            },
+            "qualifier_words": [],
+            "cited_target_ids": [],
+            "graph_disposition": "Attributed source claim only; no automatic Jambu graph assignment."
+          }
+        }
+      ]
+    },
+    {
+      "sample": 9,
+      "entry_key": "kholosi:github:18b43f982efa:lexicon.csv:row347",
+      "row": [
+        "Khol",
+        "",
+        "olu",
+        "plum",
+        "",
+        "o.lu",
+        "Source record date: December 9, 2020.",
+        "kholosi[repository 18b43f982efa, lexicon.csv, row 347]",
+        "",
+        "Prs. ālu",
+        "kholosi:github:18b43f982efa:lexicon.csv:row347",
+        "",
+        "",
+        "",
+        "noun"
+      ],
+      "audit_records": [
+        {
+          "source_unit_key": "kholosi:github:18b43f982efa:lexicon.csv:row347",
+          "representation": "author repository CSV",
+          "source_record": {
+            "source_unit_key": "kholosi:github:18b43f982efa:lexicon.csv:row347",
+            "source_file": "lexicon.csv",
+            "physical_csv_row": 347,
+            "raw_fields": [
+              "olu",
+              "o.lu",
+              "",
+              "2",
+              "",
+              "plum",
+              "",
+              "noun",
+              "",
+              "Prs. ālu",
+              "",
+              "",
+              "December 9, 2020",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            "raw_column_names": [
+              "Transcription",
+              "Phonetic IPA",
+              "IPA 2",
+              "Syllables",
+              "IPA (OLD)",
+              "Meaning",
+              "Persian Meaning",
+              "Part of Speech",
+              "Form",
+              "Etymology",
+              "Cognates",
+              "Citations",
+              "Date",
+              "Notes",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            "review_status": "pending independent complete-output review",
+            "status": "target",
+            "form": "olu",
+            "phonetic": "o.lu",
+            "gloss": "plum",
+            "tags": [
+              "noun"
+            ],
+            "etymology": "Prs. ālu",
+            "comparison": "",
+            "notes": "",
+            "source_qualifier": "",
+            "paradigm_raw": "",
+            "recorded": "December 9, 2020",
+            "pronunciation_evidence": {
+              "Syllables": "2"
+            },
+            "persian_prompt": "",
+            "nonlexical_trailing_columns": [
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ]
+          },
+          "candidates": [
+            {
+              "form": "olu",
+              "gloss": "plum",
+              "phonetic": "o.lu",
+              "etymology": "Prs. ālu",
+              "comparison": "",
+              "notes": "Source record date: December 9, 2020.",
+              "tags": [
+                "noun"
+              ],
+              "entry_key": "kholosi:github:18b43f982efa:lexicon.csv:row347",
+              "status": "candidate"
+            }
+          ],
+          "status": "editorial review pending",
+          "citation": "kholosi[repository 18b43f982efa, lexicon.csv, row 347]",
+          "owner_second_reading_decision": {},
+          "emitted_entry_keys": [
+            "kholosi:github:18b43f982efa:lexicon.csv:row347"
+          ],
+          "disposition": "emitted",
+          "source_etymology_claim": {
+            "claim_key": "kholosi:github:18b43f982efa:lexicon.csv:row347:etymology",
+            "source_unit_key": "kholosi:github:18b43f982efa:lexicon.csv:row347",
+            "source_form": "olu",
+            "source_gloss": "plum",
+            "literal_claim": "Prs. ālu",
+            "provenance": "pinned author repository lexicon",
+            "locator": {
+              "file": "lexicon.csv",
+              "physical_csv_row": 347
+            },
+            "qualifier_words": [],
+            "cited_target_ids": [],
+            "graph_disposition": "Attributed source claim only; no automatic Jambu graph assignment."
+          }
+        }
+      ]
+    },
+    {
+      "sample": 10,
+      "entry_key": "kholosi:pdf:p8:c1:u10:sense:1",
+      "row": [
+        "Khol",
+        "",
+        "hinki sānda",
+        "together",
+        "",
+        "",
+        "",
+        "kholosi[p. 8, col. 1, u10]",
+        "",
+        "",
+        "kholosi:pdf:p8:c1:u10:sense:1",
+        "",
+        "",
+        "",
+        "multiword-expression"
+      ],
+      "audit_records": [
+        {
+          "source_unit_key": "kholosi:pdf:p8:c1:u10",
+          "representation": "published PDF",
+          "source_locator": "kholosi[p. 8, col. 1, u10]",
+          "source_record": {
+            "source_unit_key": "kholosi:pdf:p8:c1:u10",
+            "kind": "subentry",
+            "printed_page": 8,
+            "pdf_page": 10,
+            "column": 1,
+            "raw_text": "▷ hinki sānda ‘together’",
+            "review_status": "pending independent source and segmentation review",
+            "joined_text": "hinki sānda ‘together’",
+            "parent_head_key": "kholosi:pdf:p8:c1:u9",
+            "layout_evidence": [
+              {
+                "baseline": 314.7,
+                "raw_text": "▷ hinki sānda ‘together’"
+              }
+            ],
+            "form": "hinki sānda",
+            "gloss": "together",
+            "tags": [],
+            "expression_classification_pending": true
+          },
+          "metadata_decision": {},
+          "candidates": [
+            {
+              "form": "hinki sānda",
+              "gloss": "together",
+              "phonetic": "",
+              "etymology": "",
+              "notes": "",
+              "tags": [
+                "multiword-expression"
+              ],
+              "source_qualifiers": [],
+              "entry_key": "kholosi:pdf:p8:c1:u10:sense:1",
+              "status": "candidate"
+            }
+          ],
+          "status": "editorial review pending",
+          "citation": "kholosi[p. 8, col. 1, u10]",
+          "owner_second_reading_decision": {},
+          "emitted_entry_keys": [
+            "kholosi:pdf:p8:c1:u10:sense:1"
+          ],
+          "disposition": "emitted"
+        }
+      ]
+    },
+    {
+      "sample": 11,
+      "entry_key": "kholosi:github:18b43f982efa:lexicon.csv:row267",
+      "row": [
+        "Khol",
+        "",
+        "xallo",
+        "barley",
+        "",
+        "xal.lo",
+        "Source record date: October 18, 2020.",
+        "kholosi[repository 18b43f982efa, lexicon.csv, row 267]",
+        "",
+        "Skt. khála (CDIAL 3834) 'threshing floor'?? probably not",
+        "kholosi:github:18b43f982efa:lexicon.csv:row267",
+        "",
+        "",
+        "",
+        "noun"
+      ],
+      "audit_records": [
+        {
+          "source_unit_key": "kholosi:github:18b43f982efa:lexicon.csv:row267",
+          "representation": "author repository CSV",
+          "source_record": {
+            "source_unit_key": "kholosi:github:18b43f982efa:lexicon.csv:row267",
+            "source_file": "lexicon.csv",
+            "physical_csv_row": 267,
+            "raw_fields": [
+              "xallo",
+              "xal.lo",
+              "",
+              "2",
+              "",
+              "barley",
+              "",
+              "noun",
+              "",
+              "Skt. khála (CDIAL 3834) 'threshing floor'?? probably not",
+              "",
+              "",
+              "October 18, 2020",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            "raw_column_names": [
+              "Transcription",
+              "Phonetic IPA",
+              "IPA 2",
+              "Syllables",
+              "IPA (OLD)",
+              "Meaning",
+              "Persian Meaning",
+              "Part of Speech",
+              "Form",
+              "Etymology",
+              "Cognates",
+              "Citations",
+              "Date",
+              "Notes",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            "review_status": "pending independent complete-output review",
+            "status": "target",
+            "form": "xallo",
+            "phonetic": "xal.lo",
+            "gloss": "barley",
+            "tags": [
+              "noun"
+            ],
+            "etymology": "Skt. khála (CDIAL 3834) 'threshing floor'?? probably not",
+            "comparison": "",
+            "notes": "",
+            "source_qualifier": "",
+            "paradigm_raw": "",
+            "recorded": "October 18, 2020",
+            "pronunciation_evidence": {
+              "Syllables": "2"
+            },
+            "persian_prompt": "",
+            "nonlexical_trailing_columns": [
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ]
+          },
+          "candidates": [
+            {
+              "form": "xallo",
+              "gloss": "barley",
+              "phonetic": "xal.lo",
+              "etymology": "Skt. khála (CDIAL 3834) 'threshing floor'?? probably not",
+              "comparison": "",
+              "notes": "Source record date: October 18, 2020.",
+              "tags": [
+                "noun"
+              ],
+              "entry_key": "kholosi:github:18b43f982efa:lexicon.csv:row267",
+              "status": "candidate"
+            }
+          ],
+          "status": "editorial review pending",
+          "citation": "kholosi[repository 18b43f982efa, lexicon.csv, row 267]",
+          "owner_second_reading_decision": {},
+          "emitted_entry_keys": [
+            "kholosi:github:18b43f982efa:lexicon.csv:row267"
+          ],
+          "disposition": "emitted",
+          "source_etymology_claim": {
+            "claim_key": "kholosi:github:18b43f982efa:lexicon.csv:row267:etymology",
+            "source_unit_key": "kholosi:github:18b43f982efa:lexicon.csv:row267",
+            "source_form": "xallo",
+            "source_gloss": "barley",
+            "literal_claim": "Skt. khála (CDIAL 3834) 'threshing floor'?? probably not",
+            "provenance": "pinned author repository lexicon",
+            "locator": {
+              "file": "lexicon.csv",
+              "physical_csv_row": 267
+            },
+            "qualifier_words": [
+              "probably"
+            ],
+            "cited_target_ids": [
+              {
+                "cdial_id": "3834",
+                "exists": true,
+                "target_head": "khála"
+              }
+            ],
+            "graph_disposition": "Attributed source claim only; no automatic Jambu graph assignment."
+          }
+        }
+      ]
+    },
+    {
+      "sample": 12,
+      "entry_key": "kholosi:github:18b43f982efa:lexicon.csv:row12",
+      "row": [
+        "Khol",
+        "",
+        "māy",
+        "I",
+        "",
+        "mɔj",
+        "Source record date: September 27, 2020.",
+        "kholosi[repository 18b43f982efa, lexicon.csv, row 12]",
+        "",
+        "Skt. ma (CDIAL 9691) Sindhi interestingly uses āūn, which is probably from ahám. Northern (non-Vicholi) dialects of Sindhi have mān.",
+        "kholosi:github:18b43f982efa:lexicon.csv:row12",
+        "",
+        "",
+        "",
+        "pron personal first-person sg"
+      ],
+      "audit_records": [
+        {
+          "source_unit_key": "kholosi:github:18b43f982efa:lexicon.csv:row12",
+          "representation": "author repository CSV",
+          "source_record": {
+            "source_unit_key": "kholosi:github:18b43f982efa:lexicon.csv:row12",
+            "source_file": "lexicon.csv",
+            "physical_csv_row": 12,
+            "raw_fields": [
+              "māy",
+              "mɔj",
+              "",
+              "1",
+              "mɑ̂i̯",
+              "I",
+              "",
+              "pronoun",
+              "",
+              "Skt. ma (CDIAL 9691)",
+              "",
+              "",
+              "September 27, 2020",
+              "Sindhi interestingly uses āūn, which is probably from ahám. Northern (non-Vicholi) dialects of Sindhi have mān.",
+              "",
+              "Unknown",
+              "54",
+              "0.137755102",
+              "October 2, 2020",
+              "10"
+            ],
+            "raw_column_names": [
+              "Transcription",
+              "Phonetic IPA",
+              "IPA 2",
+              "Syllables",
+              "IPA (OLD)",
+              "Meaning",
+              "Persian Meaning",
+              "Part of Speech",
+              "Form",
+              "Etymology",
+              "Cognates",
+              "Citations",
+              "Date",
+              "Notes",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            "review_status": "pending independent complete-output review",
+            "status": "target",
+            "form": "māy",
+            "phonetic": "mɔj",
+            "gloss": "I",
+            "tags": [
+              "pron",
+              "f"
+            ],
+            "etymology": "Skt. ma (CDIAL 9691)",
+            "comparison": "",
+            "notes": "Sindhi interestingly uses āūn, which is probably from ahám. Northern (non-Vicholi) dialects of Sindhi have mān.",
+            "source_qualifier": "",
+            "paradigm_raw": "",
+            "recorded": "September 27, 2020",
+            "pronunciation_evidence": {
+              "IPA (OLD)": "mɑ̂i̯",
+              "Syllables": "1"
+            },
+            "persian_prompt": "",
+            "nonlexical_trailing_columns": [
+              "",
+              "Unknown",
+              "54",
+              "0.137755102",
+              "October 2, 2020",
+              "10"
+            ]
+          },
+          "candidates": [
+            {
+              "form": "māy",
+              "gloss": "I",
+              "phonetic": "mɔj",
+              "etymology": "Skt. ma (CDIAL 9691) Sindhi interestingly uses āūn, which is probably from ahám. Northern (non-Vicholi) dialects of Sindhi have mān.",
+              "comparison": "",
+              "notes": "Source record date: September 27, 2020.",
+              "tags": [
+                "pron",
+                "personal",
+                "first-person",
+                "sg"
+              ],
+              "entry_key": "kholosi:github:18b43f982efa:lexicon.csv:row12",
+              "status": "candidate"
+            }
+          ],
+          "status": "editorial review pending",
+          "citation": "kholosi[repository 18b43f982efa, lexicon.csv, row 12]",
+          "owner_second_reading_decision": {},
+          "emitted_entry_keys": [
+            "kholosi:github:18b43f982efa:lexicon.csv:row12"
+          ],
+          "disposition": "emitted",
+          "source_etymology_claim": {
+            "claim_key": "kholosi:github:18b43f982efa:lexicon.csv:row12:etymology",
+            "source_unit_key": "kholosi:github:18b43f982efa:lexicon.csv:row12",
+            "source_form": "māy",
+            "source_gloss": "I",
+            "literal_claim": "Skt. ma (CDIAL 9691)",
+            "provenance": "pinned author repository lexicon",
+            "locator": {
+              "file": "lexicon.csv",
+              "physical_csv_row": 12
+            },
+            "qualifier_words": [],
+            "cited_target_ids": [
+              {
+                "cdial_id": "9691",
+                "exists": true,
+                "target_head": "ma"
+              }
+            ],
+            "graph_disposition": "Attributed source claim only; no automatic Jambu graph assignment."
+          }
+        }
+      ]
+    },
+    {
+      "sample": 13,
+      "entry_key": "kholosi:pdf:p3:c1:u7:sense:1",
+      "row": [
+        "Khol",
+        "",
+        "fut karen",
+        "to breathe",
+        "",
+        "fut karen",
+        "",
+        "kholosi[p. 3, col. 1, u7]",
+        "",
+        "Persian fūt kardan.",
+        "kholosi:pdf:p3:c1:u7:sense:1",
+        "",
+        "",
+        "",
+        "verb multiword-expression"
+      ],
+      "audit_records": [
+        {
+          "source_unit_key": "kholosi:pdf:p3:c1:u7",
+          "representation": "published PDF",
+          "source_locator": "kholosi[p. 3, col. 1, u7]",
+          "source_record": {
+            "source_unit_key": "kholosi:pdf:p3:c1:u7",
+            "kind": "head",
+            "printed_page": 3,
+            "pdf_page": 5,
+            "column": 1,
+            "raw_text": "fut karen [fut karen] v. to breathe. Etym:\nPersian fūt kardan.",
+            "review_status": "pending independent source and segmentation review",
+            "joined_text": "fut karen [fut karen] v. to breathe. Etym: Persian fūt kardan.",
+            "layout_evidence": [
+              {
+                "baseline": 301.551,
+                "raw_text": "fut karen [fut karen] v. to breathe. Etym:"
+              },
+              {
+                "baseline": 313.506,
+                "raw_text": "Persian fūt kardan."
+              }
+            ],
+            "form": "fut karen",
+            "phonetic": "fut karen",
+            "source_qualifiers": [],
+            "etymology": "Persian fūt kardan.",
+            "source_analysis": "v. to breathe.",
+            "source_pos": "v",
+            "gloss": "to breathe",
+            "tags": [
+              "verb"
+            ]
+          },
+          "metadata_decision": {},
+          "candidates": [
+            {
+              "form": "fut karen",
+              "gloss": "to breathe",
+              "phonetic": "fut karen",
+              "etymology": "Persian fūt kardan.",
+              "notes": "",
+              "tags": [
+                "verb",
+                "multiword-expression"
+              ],
+              "source_qualifiers": [],
+              "entry_key": "kholosi:pdf:p3:c1:u7:sense:1",
+              "status": "candidate"
+            }
+          ],
+          "status": "editorial review pending",
+          "citation": "kholosi[p. 3, col. 1, u7]",
+          "owner_second_reading_decision": {},
+          "emitted_entry_keys": [
+            "kholosi:pdf:p3:c1:u7:sense:1"
+          ],
+          "disposition": "emitted",
+          "source_etymology_claim": {
+            "claim_key": "kholosi:pdf:p3:c1:u7:etymology",
+            "source_unit_key": "kholosi:pdf:p3:c1:u7",
+            "source_form": "fut karen",
+            "source_gloss": "to breathe",
+            "literal_claim": "Persian fūt kardan.",
+            "provenance": "printed author dictionary",
+            "locator": {
+              "printed_page": 3,
+              "column": 1,
+              "unit": "kholosi:pdf:p3:c1:u7"
+            },
+            "qualifier_words": [],
+            "cited_target_ids": [],
+            "graph_disposition": "Attributed source claim only; no automatic Jambu graph assignment."
+          }
+        }
+      ]
+    },
+    {
+      "sample": 14,
+      "entry_key": "kholosi:pdf:p1:c1:u4:sense:1",
+      "row": [
+        "Khol",
+        "",
+        "ačānen",
+        "to blow",
+        "",
+        "at͡ʃɔnen",
+        "",
+        "kholosi[p. 1, col. 1, u4]",
+        "",
+        "unknown.",
+        "kholosi:pdf:p1:c1:u4:sense:1",
+        "",
+        "",
+        "",
+        "verb"
+      ],
+      "audit_records": [
+        {
+          "source_unit_key": "kholosi:pdf:p1:c1:u4",
+          "representation": "published PDF",
+          "source_locator": "kholosi[p. 1, col. 1, u4]",
+          "source_record": {
+            "source_unit_key": "kholosi:pdf:p1:c1:u4",
+            "kind": "head",
+            "printed_page": 1,
+            "pdf_page": 3,
+            "column": 1,
+            "raw_text": "ačānen [at͡ʃɔnen] v. to blow. Etym: un-\nknown.",
+            "review_status": "pending independent source and segmentation review",
+            "joined_text": "ačānen [at͡ʃɔnen] v. to blow. Etym: unknown.",
+            "layout_evidence": [
+              {
+                "baseline": 173.054,
+                "raw_text": "ačānen [at͡ʃɔnen] v. to blow. Etym: un-"
+              },
+              {
+                "baseline": 185.009,
+                "raw_text": "known."
+              }
+            ],
+            "form": "ačānen",
+            "phonetic": "at͡ʃɔnen",
+            "source_qualifiers": [],
+            "etymology": "unknown.",
+            "source_analysis": "v. to blow.",
+            "source_pos": "v",
+            "gloss": "to blow",
+            "tags": [
+              "verb"
+            ]
+          },
+          "metadata_decision": {},
+          "candidates": [
+            {
+              "form": "ačānen",
+              "gloss": "to blow",
+              "phonetic": "at͡ʃɔnen",
+              "etymology": "unknown.",
+              "notes": "",
+              "tags": [
+                "verb"
+              ],
+              "source_qualifiers": [],
+              "entry_key": "kholosi:pdf:p1:c1:u4:sense:1",
+              "status": "candidate"
+            }
+          ],
+          "status": "editorial review pending",
+          "citation": "kholosi[p. 1, col. 1, u4]",
+          "owner_second_reading_decision": {},
+          "emitted_entry_keys": [
+            "kholosi:pdf:p1:c1:u4:sense:1"
+          ],
+          "disposition": "emitted",
+          "source_etymology_claim": {
+            "claim_key": "kholosi:pdf:p1:c1:u4:etymology",
+            "source_unit_key": "kholosi:pdf:p1:c1:u4",
+            "source_form": "ačānen",
+            "source_gloss": "to blow",
+            "literal_claim": "unknown.",
+            "provenance": "printed author dictionary",
+            "locator": {
+              "printed_page": 1,
+              "column": 1,
+              "unit": "kholosi:pdf:p1:c1:u4"
+            },
+            "qualifier_words": [
+              "unknown"
+            ],
+            "cited_target_ids": [],
+            "graph_disposition": "Attributed source claim only; no automatic Jambu graph assignment."
+          }
+        }
+      ]
+    },
+    {
+      "sample": 15,
+      "entry_key": "kholosi:github:18b43f982efa:lexicon.csv:row254",
+      "row": [
+        "Khol",
+        "",
+        "atto",
+        "flour",
+        "",
+        "at.to",
+        "Source record date: October 18, 2020.",
+        "kholosi[repository 18b43f982efa, lexicon.csv, row 254]",
+        "",
+        "Skt. *ārta (CDIAL 1338)",
+        "kholosi:github:18b43f982efa:lexicon.csv:row254",
+        "",
+        "",
+        "",
+        "noun"
+      ],
+      "audit_records": [
+        {
+          "source_unit_key": "kholosi:github:18b43f982efa:lexicon.csv:row254",
+          "representation": "author repository CSV",
+          "source_record": {
+            "source_unit_key": "kholosi:github:18b43f982efa:lexicon.csv:row254",
+            "source_file": "lexicon.csv",
+            "physical_csv_row": 254,
+            "raw_fields": [
+              "atto",
+              "at.to",
+              "",
+              "2",
+              "",
+              "flour",
+              "",
+              "noun",
+              "",
+              "Skt. *ārta (CDIAL 1338)",
+              "",
+              "",
+              "October 18, 2020",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            "raw_column_names": [
+              "Transcription",
+              "Phonetic IPA",
+              "IPA 2",
+              "Syllables",
+              "IPA (OLD)",
+              "Meaning",
+              "Persian Meaning",
+              "Part of Speech",
+              "Form",
+              "Etymology",
+              "Cognates",
+              "Citations",
+              "Date",
+              "Notes",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            "review_status": "pending independent complete-output review",
+            "status": "target",
+            "form": "atto",
+            "phonetic": "at.to",
+            "gloss": "flour",
+            "tags": [
+              "noun"
+            ],
+            "etymology": "Skt. *ārta (CDIAL 1338)",
+            "comparison": "",
+            "notes": "",
+            "source_qualifier": "",
+            "paradigm_raw": "",
+            "recorded": "October 18, 2020",
+            "pronunciation_evidence": {
+              "Syllables": "2"
+            },
+            "persian_prompt": "",
+            "nonlexical_trailing_columns": [
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ]
+          },
+          "candidates": [
+            {
+              "form": "atto",
+              "gloss": "flour",
+              "phonetic": "at.to",
+              "etymology": "Skt. *ārta (CDIAL 1338)",
+              "comparison": "",
+              "notes": "Source record date: October 18, 2020.",
+              "tags": [
+                "noun"
+              ],
+              "entry_key": "kholosi:github:18b43f982efa:lexicon.csv:row254",
+              "status": "candidate"
+            }
+          ],
+          "status": "editorial review pending",
+          "citation": "kholosi[repository 18b43f982efa, lexicon.csv, row 254]",
+          "owner_second_reading_decision": {},
+          "emitted_entry_keys": [
+            "kholosi:github:18b43f982efa:lexicon.csv:row254"
+          ],
+          "disposition": "emitted",
+          "source_etymology_claim": {
+            "claim_key": "kholosi:github:18b43f982efa:lexicon.csv:row254:etymology",
+            "source_unit_key": "kholosi:github:18b43f982efa:lexicon.csv:row254",
+            "source_form": "atto",
+            "source_gloss": "flour",
+            "literal_claim": "Skt. *ārta (CDIAL 1338)",
+            "provenance": "pinned author repository lexicon",
+            "locator": {
+              "file": "lexicon.csv",
+              "physical_csv_row": 254
+            },
+            "qualifier_words": [],
+            "cited_target_ids": [
+              {
+                "cdial_id": "1338",
+                "exists": true,
+                "target_head": "*ārta"
+              }
+            ],
+            "graph_disposition": "Attributed source claim only; no automatic Jambu graph assignment."
+          }
+        }
+      ]
+    },
+    {
+      "sample": 16,
+      "entry_key": "kholosi:github:18b43f982efa:lexicon.csv:row6",
+      "row": [
+        "Khol",
+        "",
+        "poni",
+        "water",
+        "",
+        "po.ni",
+        "Source citation: Anonby (puni). Source record date: September 26, 2020.",
+        "kholosi[repository 18b43f982efa, lexicon.csv, row 6]",
+        "",
+        "Skt. pānī́ya (CDIAL 8082)",
+        "kholosi:github:18b43f982efa:lexicon.csv:row6",
+        "",
+        "",
+        "",
+        "noun"
+      ],
+      "audit_records": [
+        {
+          "source_unit_key": "kholosi:github:18b43f982efa:lexicon.csv:row6",
+          "representation": "author repository CSV",
+          "source_record": {
+            "source_unit_key": "kholosi:github:18b43f982efa:lexicon.csv:row6",
+            "source_file": "lexicon.csv",
+            "physical_csv_row": 6,
+            "raw_fields": [
+              "poni",
+              "po.ni",
+              "",
+              "2",
+              "põ̀.nîː",
+              "water",
+              "",
+              "noun",
+              "",
+              "Skt. pānī́ya (CDIAL 8082)",
+              "",
+              "Anonby (puni)",
+              "September 26, 2020",
+              "",
+              "",
+              "Larestani",
+              "16",
+              "0.04020100503",
+              "September 26, 2020",
+              "5"
+            ],
+            "raw_column_names": [
+              "Transcription",
+              "Phonetic IPA",
+              "IPA 2",
+              "Syllables",
+              "IPA (OLD)",
+              "Meaning",
+              "Persian Meaning",
+              "Part of Speech",
+              "Form",
+              "Etymology",
+              "Cognates",
+              "Citations",
+              "Date",
+              "Notes",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            "review_status": "pending independent complete-output review",
+            "status": "target",
+            "form": "poni",
+            "phonetic": "po.ni",
+            "gloss": "water",
+            "tags": [
+              "noun"
+            ],
+            "etymology": "Skt. pānī́ya (CDIAL 8082)",
+            "comparison": "",
+            "notes": "",
+            "source_qualifier": "Anonby (puni)",
+            "paradigm_raw": "",
+            "recorded": "September 26, 2020",
+            "pronunciation_evidence": {
+              "IPA (OLD)": "põ̀.nîː",
+              "Syllables": "2"
+            },
+            "persian_prompt": "",
+            "nonlexical_trailing_columns": [
+              "",
+              "Larestani",
+              "16",
+              "0.04020100503",
+              "September 26, 2020",
+              "5"
+            ]
+          },
+          "candidates": [
+            {
+              "form": "poni",
+              "gloss": "water",
+              "phonetic": "po.ni",
+              "etymology": "Skt. pānī́ya (CDIAL 8082)",
+              "comparison": "",
+              "notes": "Source citation: Anonby (puni). Source record date: September 26, 2020.",
+              "tags": [
+                "noun"
+              ],
+              "entry_key": "kholosi:github:18b43f982efa:lexicon.csv:row6",
+              "status": "candidate"
+            }
+          ],
+          "status": "editorial review pending",
+          "citation": "kholosi[repository 18b43f982efa, lexicon.csv, row 6]",
+          "owner_second_reading_decision": {},
+          "emitted_entry_keys": [
+            "kholosi:github:18b43f982efa:lexicon.csv:row6"
+          ],
+          "disposition": "emitted",
+          "source_etymology_claim": {
+            "claim_key": "kholosi:github:18b43f982efa:lexicon.csv:row6:etymology",
+            "source_unit_key": "kholosi:github:18b43f982efa:lexicon.csv:row6",
+            "source_form": "poni",
+            "source_gloss": "water",
+            "literal_claim": "Skt. pānī́ya (CDIAL 8082)",
+            "provenance": "pinned author repository lexicon",
+            "locator": {
+              "file": "lexicon.csv",
+              "physical_csv_row": 6
+            },
+            "qualifier_words": [],
+            "cited_target_ids": [
+              {
+                "cdial_id": "8082",
+                "exists": true,
+                "target_head": "pānī́ya"
+              }
+            ],
+            "graph_disposition": "Attributed source claim only; no automatic Jambu graph assignment."
+          }
+        }
+      ]
+    },
+    {
+      "sample": 17,
+      "entry_key": "kholosi:github:18b43f982efa:lexicon.csv:row155",
+      "row": [
+        "Khol",
+        "",
+        "hite čʰiyen",
+        "to vomit",
+        "",
+        "hi.te t͡ʃʰi.jen",
+        "Source record date: October 10, 2020.",
+        "kholosi[repository 18b43f982efa, lexicon.csv, row 155]",
+        "",
+        "Native",
+        "kholosi:github:18b43f982efa:lexicon.csv:row155",
+        "",
+        "",
+        "",
+        "verb multiword-expression"
+      ],
+      "audit_records": [
+        {
+          "source_unit_key": "kholosi:github:18b43f982efa:lexicon.csv:row155",
+          "representation": "author repository CSV",
+          "source_record": {
+            "source_unit_key": "kholosi:github:18b43f982efa:lexicon.csv:row155",
+            "source_file": "lexicon.csv",
+            "physical_csv_row": 155,
+            "raw_fields": [
+              "hite čʰiyen",
+              "hi.te t͡ʃʰi.jen",
+              "",
+              "4",
+              "",
+              "to vomit",
+              "بالا آوردن",
+              "verb",
+              "",
+              "Native",
+              "",
+              "",
+              "October 10, 2020",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            "raw_column_names": [
+              "Transcription",
+              "Phonetic IPA",
+              "IPA 2",
+              "Syllables",
+              "IPA (OLD)",
+              "Meaning",
+              "Persian Meaning",
+              "Part of Speech",
+              "Form",
+              "Etymology",
+              "Cognates",
+              "Citations",
+              "Date",
+              "Notes",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            "review_status": "pending independent complete-output review",
+            "status": "target",
+            "form": "hite čʰiyen",
+            "phonetic": "hi.te t͡ʃʰi.jen",
+            "gloss": "to vomit",
+            "tags": [
+              "verb"
+            ],
+            "etymology": "Native",
+            "comparison": "",
+            "notes": "",
+            "source_qualifier": "",
+            "paradigm_raw": "",
+            "recorded": "October 10, 2020",
+            "pronunciation_evidence": {
+              "Syllables": "4"
+            },
+            "persian_prompt": "بالا آوردن",
+            "nonlexical_trailing_columns": [
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ]
+          },
+          "candidates": [
+            {
+              "form": "hite čʰiyen",
+              "gloss": "to vomit",
+              "phonetic": "hi.te t͡ʃʰi.jen",
+              "etymology": "Native",
+              "comparison": "",
+              "notes": "Source record date: October 10, 2020.",
+              "tags": [
+                "verb",
+                "multiword-expression"
+              ],
+              "entry_key": "kholosi:github:18b43f982efa:lexicon.csv:row155",
+              "status": "candidate"
+            }
+          ],
+          "status": "editorial review pending",
+          "citation": "kholosi[repository 18b43f982efa, lexicon.csv, row 155]",
+          "owner_second_reading_decision": {},
+          "emitted_entry_keys": [
+            "kholosi:github:18b43f982efa:lexicon.csv:row155"
+          ],
+          "disposition": "emitted",
+          "source_etymology_claim": {
+            "claim_key": "kholosi:github:18b43f982efa:lexicon.csv:row155:etymology",
+            "source_unit_key": "kholosi:github:18b43f982efa:lexicon.csv:row155",
+            "source_form": "hite čʰiyen",
+            "source_gloss": "to vomit",
+            "literal_claim": "Native",
+            "provenance": "pinned author repository lexicon",
+            "locator": {
+              "file": "lexicon.csv",
+              "physical_csv_row": 155
+            },
+            "qualifier_words": [],
+            "cited_target_ids": [],
+            "graph_disposition": "Attributed source claim only; no automatic Jambu graph assignment."
+          }
+        }
+      ]
+    },
+    {
+      "sample": 18,
+      "entry_key": "kholosi:pdf:p2:c2:u19:sense:1",
+      "row": [
+        "Khol",
+        "",
+        "derāz kadden",
+        "to lie down",
+        "",
+        "derɔz kadden",
+        "",
+        "kholosi[p. 2, col. 2, u19]",
+        "",
+        "kadden ‘to pull’; calque of Persian derāz kašidan.",
+        "kholosi:pdf:p2:c2:u19:sense:1",
+        "",
+        "",
+        "",
+        "verb multiword-expression"
+      ],
+      "audit_records": [
+        {
+          "source_unit_key": "kholosi:pdf:p2:c2:u19",
+          "representation": "published PDF",
+          "source_locator": "kholosi[p. 2, col. 2, u19]",
+          "source_record": {
+            "source_unit_key": "kholosi:pdf:p2:c2:u19",
+            "kind": "subentry",
+            "printed_page": 2,
+            "pdf_page": 4,
+            "column": 2,
+            "raw_text": "▷ derāz kadden [derɔz kadden] v. to lie\ndown. Etym: kadden ‘to pull’; calque of Per-\nsian derāz kašidan.",
+            "review_status": "pending independent source and segmentation review",
+            "joined_text": "derāz kadden [derɔz kadden] v. to lie down. Etym: kadden ‘to pull’; calque of Persian derāz kašidan.",
+            "parent_head_key": "kholosi:pdf:p2:c2:u18",
+            "layout_evidence": [
+              {
+                "baseline": 514.635,
+                "raw_text": "▷ derāz kadden [derɔz kadden] v. to lie"
+              },
+              {
+                "baseline": 526.59,
+                "raw_text": "down. Etym: kadden ‘to pull’; calque of Per-"
+              },
+              {
+                "baseline": 538.545,
+                "raw_text": "sian derāz kašidan."
+              }
+            ],
+            "form": "derāz kadden",
+            "phonetic": "derɔz kadden",
+            "source_qualifiers": [],
+            "etymology": "kadden ‘to pull’; calque of Persian derāz kašidan.",
+            "source_analysis": "v. to lie down.",
+            "source_pos": "v",
+            "gloss": "to lie down",
+            "tags": [
+              "verb"
+            ]
+          },
+          "metadata_decision": {},
+          "candidates": [
+            {
+              "form": "derāz kadden",
+              "gloss": "to lie down",
+              "phonetic": "derɔz kadden",
+              "etymology": "kadden ‘to pull’; calque of Persian derāz kašidan.",
+              "notes": "",
+              "tags": [
+                "verb",
+                "multiword-expression"
+              ],
+              "source_qualifiers": [],
+              "entry_key": "kholosi:pdf:p2:c2:u19:sense:1",
+              "status": "candidate"
+            }
+          ],
+          "status": "editorial review pending",
+          "citation": "kholosi[p. 2, col. 2, u19]",
+          "owner_second_reading_decision": {},
+          "emitted_entry_keys": [
+            "kholosi:pdf:p2:c2:u19:sense:1"
+          ],
+          "disposition": "emitted",
+          "source_etymology_claim": {
+            "claim_key": "kholosi:pdf:p2:c2:u19:etymology",
+            "source_unit_key": "kholosi:pdf:p2:c2:u19",
+            "source_form": "derāz kadden",
+            "source_gloss": "to lie down",
+            "literal_claim": "kadden ‘to pull’; calque of Persian derāz kašidan.",
+            "provenance": "printed author dictionary",
+            "locator": {
+              "printed_page": 2,
+              "column": 2,
+              "unit": "kholosi:pdf:p2:c2:u19"
+            },
+            "qualifier_words": [],
+            "cited_target_ids": [],
+            "graph_disposition": "Attributed source claim only; no automatic Jambu graph assignment."
+          }
+        }
+      ]
+    },
+    {
+      "sample": 19,
+      "entry_key": "kholosi:github:18b43f982efa:lexicon.csv:row60",
+      "row": [
+        "Khol",
+        "",
+        "te",
+        "to",
+        "",
+        "te",
+        "The source also describes allative and stimulus marking. Source record date: October 3, 2020.",
+        "kholosi[repository 18b43f982efa, lexicon.csv, row 60]",
+        "",
+        "Skt. Source comparison: (Sd. equivalent khā̃).",
+        "kholosi:github:18b43f982efa:lexicon.csv:row60",
+        "",
+        "",
+        "",
+        "postp instr"
+      ],
+      "audit_records": [
+        {
+          "source_unit_key": "kholosi:github:18b43f982efa:lexicon.csv:row60",
+          "representation": "author repository CSV",
+          "source_record": {
+            "source_unit_key": "kholosi:github:18b43f982efa:lexicon.csv:row60",
+            "source_file": "lexicon.csv",
+            "physical_csv_row": 60,
+            "raw_fields": [
+              "te",
+              "te",
+              "",
+              "1",
+              "",
+              "to (allative), also stimulus; instrumental",
+              "",
+              "postposition",
+              "",
+              "Skt.",
+              "(Sd. equivalent khā̃)",
+              "",
+              "October 3, 2020",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "November 16, 2020",
+              "0"
+            ],
+            "raw_column_names": [
+              "Transcription",
+              "Phonetic IPA",
+              "IPA 2",
+              "Syllables",
+              "IPA (OLD)",
+              "Meaning",
+              "Persian Meaning",
+              "Part of Speech",
+              "Form",
+              "Etymology",
+              "Cognates",
+              "Citations",
+              "Date",
+              "Notes",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            "review_status": "pending independent complete-output review",
+            "status": "target",
+            "form": "te",
+            "phonetic": "te",
+            "gloss": "to (allative), also stimulus; instrumental",
+            "tags": [
+              "postp"
+            ],
+            "etymology": "Skt.",
+            "comparison": "(Sd. equivalent khā̃)",
+            "notes": "",
+            "source_qualifier": "",
+            "paradigm_raw": "",
+            "recorded": "October 3, 2020",
+            "pronunciation_evidence": {
+              "Syllables": "1"
+            },
+            "persian_prompt": "",
+            "nonlexical_trailing_columns": [
+              "",
+              "",
+              "",
+              "",
+              "November 16, 2020",
+              "0"
+            ]
+          },
+          "candidates": [
+            {
+              "form": "te",
+              "gloss": "to",
+              "phonetic": "te",
+              "etymology": "Skt. Source comparison: (Sd. equivalent khā̃).",
+              "comparison": "(Sd. equivalent khā̃)",
+              "notes": "The source also describes allative and stimulus marking. Source record date: October 3, 2020.",
+              "tags": [
+                "postp",
+                "instr"
+              ],
+              "entry_key": "kholosi:github:18b43f982efa:lexicon.csv:row60",
+              "status": "candidate"
+            }
+          ],
+          "status": "editorial review pending",
+          "citation": "kholosi[repository 18b43f982efa, lexicon.csv, row 60]",
+          "owner_second_reading_decision": {},
+          "emitted_entry_keys": [
+            "kholosi:github:18b43f982efa:lexicon.csv:row60"
+          ],
+          "disposition": "emitted",
+          "source_etymology_claim": {
+            "claim_key": "kholosi:github:18b43f982efa:lexicon.csv:row60:etymology",
+            "source_unit_key": "kholosi:github:18b43f982efa:lexicon.csv:row60",
+            "source_form": "te",
+            "source_gloss": "to (allative), also stimulus; instrumental",
+            "literal_claim": "Skt.",
+            "provenance": "pinned author repository lexicon",
+            "locator": {
+              "file": "lexicon.csv",
+              "physical_csv_row": 60
+            },
+            "qualifier_words": [],
+            "cited_target_ids": [],
+            "graph_disposition": "Attributed source claim only; no automatic Jambu graph assignment."
+          }
+        }
+      ]
+    },
+    {
+      "sample": 20,
+      "entry_key": "kholosi:github:18b43f982efa:lexicon.csv:row112",
+      "row": [
+        "Khol",
+        "",
+        "mato",
+        "head",
+        "",
+        "ma.to",
+        "Source record date: October 6, 2020. Additional pronunciation as labelled in the source: M: [mä.tʰo].",
+        "kholosi[repository 18b43f982efa, lexicon.csv, row 112]",
+        "",
+        "Skt. mastaka (CDIAL 9926) Source comparison: Sd. matho.",
+        "kholosi:github:18b43f982efa:lexicon.csv:row112",
+        "",
+        "",
+        "",
+        "noun"
+      ],
+      "audit_records": [
+        {
+          "source_unit_key": "kholosi:github:18b43f982efa:lexicon.csv:row112",
+          "representation": "author repository CSV",
+          "source_record": {
+            "source_unit_key": "kholosi:github:18b43f982efa:lexicon.csv:row112",
+            "source_file": "lexicon.csv",
+            "physical_csv_row": 112,
+            "raw_fields": [
+              "mato",
+              "ma.to",
+              "M: [mä.tʰo]",
+              "2",
+              "mà.t̪ô",
+              "head",
+              "",
+              "noun",
+              "",
+              "Skt. mastaka (CDIAL 9926)",
+              "Sd. matho",
+              "",
+              "October 6, 2020",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            "raw_column_names": [
+              "Transcription",
+              "Phonetic IPA",
+              "IPA 2",
+              "Syllables",
+              "IPA (OLD)",
+              "Meaning",
+              "Persian Meaning",
+              "Part of Speech",
+              "Form",
+              "Etymology",
+              "Cognates",
+              "Citations",
+              "Date",
+              "Notes",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            "review_status": "pending independent complete-output review",
+            "status": "target",
+            "form": "mato",
+            "phonetic": "ma.to",
+            "gloss": "head",
+            "tags": [
+              "noun"
+            ],
+            "etymology": "Skt. mastaka (CDIAL 9926)",
+            "comparison": "Sd. matho",
+            "notes": "",
+            "source_qualifier": "",
+            "paradigm_raw": "",
+            "recorded": "October 6, 2020",
+            "pronunciation_evidence": {
+              "IPA 2": "M: [mä.tʰo]",
+              "IPA (OLD)": "mà.t̪ô",
+              "Syllables": "2"
+            },
+            "persian_prompt": "",
+            "nonlexical_trailing_columns": [
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ]
+          },
+          "candidates": [
+            {
+              "form": "mato",
+              "gloss": "head",
+              "phonetic": "ma.to",
+              "etymology": "Skt. mastaka (CDIAL 9926) Source comparison: Sd. matho.",
+              "comparison": "Sd. matho",
+              "notes": "Source record date: October 6, 2020. Additional pronunciation as labelled in the source: M: [mä.tʰo].",
+              "tags": [
+                "noun"
+              ],
+              "entry_key": "kholosi:github:18b43f982efa:lexicon.csv:row112",
+              "status": "candidate"
+            }
+          ],
+          "status": "editorial review pending",
+          "citation": "kholosi[repository 18b43f982efa, lexicon.csv, row 112]",
+          "owner_second_reading_decision": {},
+          "emitted_entry_keys": [
+            "kholosi:github:18b43f982efa:lexicon.csv:row112"
+          ],
+          "disposition": "emitted",
+          "source_etymology_claim": {
+            "claim_key": "kholosi:github:18b43f982efa:lexicon.csv:row112:etymology",
+            "source_unit_key": "kholosi:github:18b43f982efa:lexicon.csv:row112",
+            "source_form": "mato",
+            "source_gloss": "head",
+            "literal_claim": "Skt. mastaka (CDIAL 9926)",
+            "provenance": "pinned author repository lexicon",
+            "locator": {
+              "file": "lexicon.csv",
+              "physical_csv_row": 112
+            },
+            "qualifier_words": [],
+            "cited_target_ids": [
+              {
+                "cdial_id": "9926",
+                "exists": true,
+                "target_head": "masta"
+              }
+            ],
+            "graph_disposition": "Attributed source claim only; no automatic Jambu graph assignment."
+          }
+        }
+      ]
+    }
+  ],
+  "review_status": "Selected; not audited"
+}

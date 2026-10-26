@@ -1,0 +1,54 @@
+{
+  "status": "Frozen for independent whole-source original-versus-output audit; not installed",
+  "files": {
+    "whole-proposed-author-transcription.csv": "4c0151607f67b0c181b445899cd1dc7a5d701ea15a8763143f37c4d47787d58a",
+    "whole-proposed-literal-preservation.csv": "4645f38115177714489d922e4c82544a91598348964029bd059c7061619fe6da",
+    "whole-proposed-audit.jsonl": "cf77517556fed68f5961e03a29b4310ce744d0fa22af065172da59b48017bb4d",
+    "whole-profile-proposed.txt": "0cd4b3396c56fc8183f763b278b606d99ac2e37a858613f119ff494fd3d04b31",
+    "whole-source-graph-decisions.json": "6196c948b3c34ca3dffa68441fb17c082b0e22e6e806579789d02f7fac9f6509",
+    "whole-source-tag-reconciliation-20260927.json": "53077c303520f4466043635abab0972958d92c565776d26d0644b691df0bf7e3",
+    "whole-heading-scope-review-draft.json": "5e230ac5946e170f0b7c3706f1dbcfe06a6225e9c40408b80124584bfb20d212",
+    "whole-heading-repair-report-20260927.json": "47760a2c10d3aa9c4b7b6e9d802476eb26eba58609ad19ad4b12b952fe7762c7",
+    "whole-root-boundary-review-20260927.json": "75939e7162e686dfb5bb5d4c108bea22f46f2927f76a0be89dd9ba56d6ba0b14",
+    "whole-role-repair-report-20260927.json": "eb175d0ce115f8585aebe0e1508973a48a0da14bf6fbcdcbe6168642944ac641",
+    "whole-proposed-author-transcription.yaml": "9f0db31376c113751ac4414bb0f0407d2ed90d489fc73a77492548276106a654",
+    "whole-proposed-literal-preservation.yaml": "e8885165681d783062b8104f5039afbbca81dbf29d47787c5ad0acb4caa2f619",
+    "whole-interlinear-scope-decisions-20260927.json": "6263b9ececaca7572ef00eeed98fda4189a1030f2184ea961acee549768660c9",
+    "whole-interlinear-repair-report-20260927.json": "57d4e6b6b2582847fb297425c74dbfb8f4f103e51192033577f9afd21b83d947",
+    "interlinear_grammar.py": "bfd6fcd796f7a1025cdc1c071d7455d63b70920338d095b3fca693fcd0c4db51",
+    "prepare_whole_metadata.py": "1807f12cd73ce5d4f5ffda32a42ea364a0ab9a3117a4d40d375e98a45569d8bf",
+    "prepare_interlinear_scope_review.py": "985a39de4684ba6619439569dd138200d04a17d4b608e8e99b2bb4967ed4ebcf",
+    "expand_whole_notation.py": "5cef232d24d0044ed210e39a3a82d2dfe8b6d4a3e5e879cfda5fe58ed142f33c",
+    "prepare_whole_csv_preview.py": "f80e0ed5e072da17b0d1235f543e6ae5519edec9f913d54b7280c4b5a84e9336",
+    "prepare_whole_staging.py": "9c85f6166eff7117d4ad0f3dac22352fe8d862eadc39178c5514ea0faa9afdb2"
+  },
+  "counts": {
+    "expanded_source_units": 11304,
+    "emitted_entries": 8373,
+    "author_transcription": 8361,
+    "literal_preservation": 12,
+    "exact_reuse": 2431,
+    "controls": 500,
+    "existing_keys_preserved": 485
+  },
+  "validation": "53 focused tests passed in 4.36 seconds, including actual proposed YAML parsing, source labels and resolved alignment, particle/marker POS negatives, every occurrence/citation, and preservation of original spellings and legacy keys.",
+  "canonical_changed": false,
+  "deferred": [
+    "Independent original-versus-output audit",
+    "Final metadata/importer installation and canonical validation",
+    "User-authorized full build and browser QA"
+  ],
+  "targeted_review": [
+    "Three literal unresolved slash groups on p376 (root reviewed).",
+    "Two separately translated statements on p343, example16b, with6+3children.",
+    "Literal and idiomatic proverb senses onp190/327/328.",
+    "Eighteen Chapter3 physical attestations reuse historical keys while preserving complete translations and source citations.",
+    "Source-explicit imminent p156, hypothetical p164, frustrative p170, counterfactual distinct.",
+    "Heading repair: adjective p126, agreement suffix p178, full derived ADVZ word p220, explicit clitic p222.",
+    "Fourteen explicit derivation pairs on p138 and pp277–278.",
+    "Appendix 3: all 49 verb roots and 555 verb inflections; 37 restored printed terminal root hyphens, with unmarked p376 pəḍʰə unchanged.",
+    "Comparative personal pronouns p352; adjective versus possessive comparison p145; isolated TAM markers without lexical verb POS.",
+    "Resolved original-page alignment decisions override stale geometry flags; 100 residual label cases classified; 23 conditional particles retain conditional/part without unsupported verb POS."
+  ],
+  "previous_freeze": "whole-freeze-before-interlinear-repair/manifest.json"
+}

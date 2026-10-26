@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Gondi · Dravidian surveys, 2026-09-21 · batch 032. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Gondi | Proposed etymology | Evidence |
+|---|---|---|---|
+| 136 | **va** ‘come’ | Proposed reflex of [**DEDR 5270**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=475) | DEDR 5270 explicitly gives Brahui banning, Gondi vā-, Kolami var-/va-, Gadaba var- with imperative vā, Malto bare and Telugu rā- come. The survey cognacy annotation identifies this article and full-article comparison verifies these stems/allomorphs; the short imperative responses are not silently expanded to citation forms. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 137 | **nil** ‘stand’ | Proposed reflex of [**DEDR 3675**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=325) | DEDR 3675 directly gives Gondi nil-, Kota nil-/nin- and Kurukh ijnā stand. Source cognacy identifies the same article; survey Kota ninnatukə and Kurukh ijjna retain their inflection and consonant transcription rather than being rewritten as dictionary stems. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 138 | **gork** ‘claw’, **gōrk** ‘claw’ | Proposed reflex of [**DEDR 561**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=55) | DEDR 561 documents Kannada ugur, Kodagu oy, Gondi gōr, Kurukh orox, Kuwi gōru with plural gōrka, Malto orgu and Toda ǖr as the nail/claw family. Survey final vowels and plural-looking material remain unchanged. Badaga ugilə is a comparative extension explicitly described as a look-alike in the source; Kodagu voyi and Toda yūr retain their initial glide/transcription differences. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (2 records.) |
+| 139 | **kāsta** ‘warm’ | Proposed reflex of [**DEDR 1458**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=135) | DEDR 1458 directly records Gondi (M.) kāsta hot in the kās- become hot family. The survey kāsta warm agrees in form and meaning; source cognacy independently identifies 1458. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 140 | **helle** ‘not’ | Proposed reflex of [**DEDR 2559**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=222) | DEDR2559 directly documents Gondi hille, Kodagu ille, Kota il-, Tamil illai and Telugu lēdu in the negative existential family. Survey helle/ille/illa/lēdu preserve their attested endings and generic not gloss, without replacing them by an invented common citation form. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+
+Proposed assignment rows: **6**. Affected records: **6**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-032.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Gondi/batch-032.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

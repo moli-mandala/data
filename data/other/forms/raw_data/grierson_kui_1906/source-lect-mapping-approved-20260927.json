@@ -1,0 +1,187 @@
+{
+  "status": "Root-approved source-specific mapping; no canonical registry installation",
+  "source": "Grierson 1906, Linguistic Survey of India IV, printed 457–471",
+  "registry_bases": {
+    "Kui": "kuii1252",
+    "Kuwi": "kuvi1243"
+  },
+  "coordinates_policy": "Blank for all historical source lects; do not inherit a modern language centroid or the erroneous Nordic snapshot point.",
+  "evidence_report": "identity-evidence-review-20260927.md",
+  "mappings": [
+    {
+      "key": "gumsur-bod-standard",
+      "raw_labels": [
+        "Gumsur",
+        "Bod",
+        "Standard"
+      ],
+      "scope": "Unqualified chapter grammar459–460, skeleton grammar462–463 and standard comparanda except explicitly named overrides",
+      "proposed_base": "Kui",
+      "proposed_dialect_id": "grierson1906_kui_gumsur_bod",
+      "proposed_name": "Gumsur and Bod (LSI 1906)",
+      "authority": "Original460; keyed459; Burrow/Bhattacharya1961 p118",
+      "provenance_rule": "Principal grammatical authority Lingum Letchmajee; separate bibliographic witness variants retained, not normalized.",
+      "accepted": true
+    },
+    {
+      "key": "smith-tale40",
+      "raw_labels": [
+        "Major J. McD. Smith, 1876",
+        "Kui, Kandhi or Khond"
+      ],
+      "scope": "Specimen40 p464, translation465",
+      "proposed_base": "Kui",
+      "proposed_dialect_id": "grierson1906_kui_gumsur_bod",
+      "proposed_name": "Gumsur and Bod (LSI 1906)",
+      "authority": "Original460 explicit standard attribution plus original464 source header",
+      "provenance_rule": "Quoted Smith1876 tale with Grierson interlinear translation; not a newly received field specimen. Preserve translation uncertainty.",
+      "accepted": true
+    },
+    {
+      "key": "khondmals",
+      "raw_labels": [
+        "District Khondmals",
+        "Kui of Khondmals"
+      ],
+      "scope": "Specimen41 pp465–467; specimen42 p468 and translation469; explicitly named comparisons459–460",
+      "proposed_base": "Kui",
+      "proposed_dialect_id": "grierson1906_kui_khondmals",
+      "proposed_name": "Khondmals (LSI 1906)",
+      "authority": "Original465 introductory comparison and465/468 headers; primary1961 paper p118",
+      "provenance_rule": "Separate supplied specimens; retain their own spellings despite source identifying broad dialect agreement with standard.",
+      "accepted": true
+    },
+    {
+      "key": "chinna-kimedi",
+      "raw_labels": [
+        "Chinna Kimedi"
+      ],
+      "scope": "Named prose examples459,462 marginal pronouns,469 commentary",
+      "proposed_base": "Kui",
+      "proposed_dialect_id": "grierson1906_kui_chinna_kimedi",
+      "proposed_name": "Chinna Kimedi (LSI 1906)",
+      "authority": "Original462/469; primary1961 paper pp118,121",
+      "provenance_rule": "Letchmajee-derived comparison; source explicitly has no continuous specimen. Never infer Kuvi from western locality alone.",
+      "accepted": true
+    },
+    {
+      "key": "kalahandi",
+      "raw_labels": [
+        "State Kalahandi",
+        "Kui of Kalahandi"
+      ],
+      "scope": "Named comparisons459–460,469–470; specimen43 pp470–471",
+      "proposed_base": "Kui",
+      "proposed_dialect_id": "grierson1906_kui_kalahandi",
+      "proposed_name": "Historical Kui of Kalahandi (LSI 1906)",
+      "authority": "Original469–471 and Burrow/Bhattacharya1961 pp118–121 discussion of these LSI forms",
+      "alternative_modern_base": "Kuwi",
+      "alternative_authority": "Glottolog reference304344 explicitly maps Kui Kalahandi to Kuvi[kxv]",
+      "uncertainty_type": "conflicting-modern-language-identification",
+      "provenance_rule": "Retain historical Kui route as a separately qualified source lect, flag the conflicting Glottolog coding. Not a general claim about all Kalahandi speech. Root approved this source-specific route; the identification conflict remains explicit.",
+      "accepted": true
+    },
+    {
+      "key": "orissa-central-provinces",
+      "raw_labels": [
+        "Orissa and the Central Provinces"
+      ],
+      "scope": "Broadly attributed phonological examples on459",
+      "proposed_base": "Kui",
+      "proposed_dialect_id": null,
+      "proposed_name": null,
+      "authority": "Keyed459, original glyph/attribution recheck required during transcription",
+      "provenance_rule": "Preserve broad regional attribution in Notes/audit. Do not assign one of the named lects without a narrower source statement.",
+      "accepted": true
+    },
+    {
+      "key": "unlocalized-kui",
+      "raw_labels": [
+        "Kui",
+        "Kandhi",
+        "Khond"
+      ],
+      "scope": "Source-wide explicitly Kui comparisons outside a named chapter sub-scope",
+      "proposed_base": "Kui",
+      "proposed_dialect_id": null,
+      "proposed_name": null,
+      "authority": "Own occurrence context required",
+      "provenance_rule": "No site inherited merely from chapter or common ethnonym; ambiguous comparative labels held for occurrence-level review.",
+      "accepted": true
+    },
+    {
+      "key": "standard-word-column",
+      "raw_labels": [
+        "Kui (Khondmals)"
+      ],
+      "scope": "Comparative foldout Kui column, printed648–680, paired English leaves649–681; physical668–701",
+      "proposed_base": "Kui",
+      "proposed_dialect_id": "grierson1906_kui_khondmals",
+      "proposed_name": "Khondmals (LSI 1906)",
+      "authority": "Root independently inspected physical668 header and footers648/649; final pair physical700/701 footers680/681",
+      "provenance_rule": "Explicit column heading establishes Khondmals; preserve every leaf locator and verify each aligned prompt before extraction.",
+      "accepted": true
+    },
+    {
+      "key": "patna-control",
+      "raw_labels": [
+        "Patna State"
+      ],
+      "scope": "Documentary submission description457",
+      "proposed_base": null,
+      "proposed_dialect_id": null,
+      "disposition": "documentary non-Kui submission, not lexical rows here",
+      "authority": "Keyed457 describes Oriya with slight Chhattisgarhi admixture",
+      "accepted": true
+    },
+    {
+      "key": "konda-census-control",
+      "raw_labels": [
+        "Konda",
+        "Kondadora",
+        "Kondakapu"
+      ],
+      "scope": "Census claim457",
+      "proposed_base": null,
+      "proposed_dialect_id": null,
+      "disposition": "untested census classification; no lexical mapping",
+      "authority": "Source explicitly says no new material to test the reported classification",
+      "accepted": true
+    },
+    {
+      "key": "koi-gondi-control",
+      "raw_labels": [
+        "Koi dialect of Gondi"
+      ],
+      "scope": "Contrast457 and chapter cross-reference545ff",
+      "proposed_base": null,
+      "proposed_dialect_id": null,
+      "disposition": "explicitly distinguished from Kui; resolve its own source separately",
+      "authority": "Keyed457",
+      "accepted": true
+    }
+  ],
+  "page_accounting": {
+    "457": "Names, area, dialect distinctions and documentary controls",
+    "458": "Population and authorities; no locality inference from population table",
+    "459": "Authorities and standard/named-dialect pronunciation contrasts",
+    "460": "Standard grammar, named contrasts and quoted-tale provenance",
+    "461": "Physically blank leaf confirmed by parent original review",
+    "462": "Standard skeleton grammar with named marginal overrides",
+    "463": "Standard skeleton grammar continuation",
+    "464": "Smith1876 specimen40",
+    "465": "Translation40, Khondmals context and beginning specimen41",
+    "466": "Khondmals specimen41 continuation",
+    "467": "Khondmals specimen41 ending",
+    "468": "Khondmals specimen42",
+    "469": "Translation42, Chinna Kimedi notes and Kalahandi context",
+    "470": "Kalahandi context and specimen43 beginning",
+    "471": "Kalahandi specimen43 ending"
+  },
+  "approval": {
+    "reviewer": "root",
+    "date": "2026-09-27",
+    "basis": "Independent original and primary 1961 prose pp118–121 review; explicit approval communicated to asur_finish",
+    "proposal_sha256": "bd8cc3e26d55796a13b05e4d91a28effc08dd645c6c966f9444f3d9fddef13ce"
+  }
+}

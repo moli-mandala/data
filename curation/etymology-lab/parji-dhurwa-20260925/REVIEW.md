@@ -1,0 +1,13 @@
+# Parji Joseph–Michael Dhurwa residual records — research review
+
+**Pending review. No new assignments have been saved. No rebuild has been run.**
+
+The exact source inventory has **809 records**: **295 earlier pending**, **19 earlier held**, and **495 previously unexamined**. Of the latter, **101 records** now have proposals producing **101 assignment rows**, and **394** have explicit research holds. Zero remain unexamined.
+
+New pending batches: [028](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Parji/batch-028-review.md), [029](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Parji/batch-029-review.md), [030](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Parji/batch-030-review.md), [031](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Parji/batch-031-review.md), [032](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Parji/batch-032-review.md), [033](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Parji/batch-033-review.md).
+
+The 15 [exact-form homepage search chunks](discovery-001-035-results.json) covered all 495 residual records using the current Jambu query implementation; [discovery coverage](discovery-coverage.json) confirms 2,674 returned rows and exact query alignment. A further seven [global-comparison chunks](global-001-030-results.json) queried 195 distinct forms without a linked Parji hit and returned 5,298 rows. The first two global chunks retain all result pages; the last five retain the first page after larger cross-language result sets slowed the search. [Global coverage](global-coverage.json) records exact query alignment. The [full cached DEDR articles](primary-evidence.json), [draft decisions](proposed-decisions.json), [holds](research-holds.json), and [source-wide coverage](source-coverage-001.json) preserve the evidence and exact ownership.
+
+Appendix B repeats elicitation prompts across its TIR, NET, DHA, and KUK lists. Distinct village responses and duplicate source records retain separate exact IDs. Strongly attested list variants are proposed together only when the full DEDR article supports their form and sense.
+
+The source's **belley [sic]** spelling is preserved while its **poṭṭā** form is compared with DEDR 4494. The isolated **kekōl** ‘car’ resembles the DEDR 1977 ear word and is held as a source form–gloss conflict. Other uncertain compounds, probable loans without an attested immediate donor, and competing regional senses remain held. A DEDR ID denotes an entire article; its displayed head may differ from the attested comparison inside the article. Existing source records and accepted sidecars remain unchanged.

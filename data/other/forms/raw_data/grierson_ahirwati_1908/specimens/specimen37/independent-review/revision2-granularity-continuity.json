@@ -1,0 +1,52 @@
+{
+  "status": "passed source-local granularity refinement; not canonical installation",
+  "counts": {
+    "Roman_physical_atoms": 367,
+    "reviewed_printer_joins": 4,
+    "Roman_lexical_emissions": 363,
+    "whole_expressions": 27,
+    "candidate_rows": 390,
+    "Native_physical_atoms": 365,
+    "physical_aliases": 732
+  },
+  "continuity": {
+    "historical_rows": 389,
+    "removed_keys": [],
+    "added_keys": [
+      "lsi9.2:p234:aligned-line:4:word:4"
+    ],
+    "changed_common_keys": [
+      "lsi9.2:p234:aligned-line:4:word:3"
+    ],
+    "unchanged_common_rows": 388,
+    "whole_expression_rows_unchanged": 27
+  },
+  "script_segmentation_decisions": [
+    {
+      "Roman": "bā̃ṭ + diyō.",
+      "Roman_emissions": 2,
+      "Native": "बाँट-दियो।",
+      "policy": "Both lexical Native fields blank; full one-word Native span retained in shared group audit."
+    },
+    {
+      "Roman": "‘achchhā- + taĩ-achchhā",
+      "Roman_emissions": 1,
+      "policy": "Independent fourth printer continuation; full two-token Native span retained."
+    },
+    {
+      "Roman": "jamā-kar-kē",
+      "Roman_emissions": 1,
+      "policy": "One printed Roman word; full two-token Native span retained."
+    }
+  ],
+  "hashes": {
+    "metadata-proposal/candidate.csv": "97380267c11c0cc28def90ebc13e326a9b86f922a38ca77c1040ae01d978e401",
+    "metadata-proposal/candidate-audit.jsonl": "593422efc8c3cb2cc782496a4a19d342673fb9afcdab15c42ab0cc37ebb12ce3",
+    "metadata-proposal-revision2/candidate.csv": "fcd708e8edb9e164f28e8813bf69026bda262fa56b739fdde36814cd09862075",
+    "metadata-proposal-revision2/candidate-audit.jsonl": "df30840857b1e5899af75ecc436d91a29ed99904ace2624d768abbbef000af3f",
+    "metadata-proposal-revision2/status.json": "f34cd45bd24c841ae5e889c0c6226f90664ccf1f6523ddc9289461194772aed8",
+    "fourth-printer-continuation-review.json": "f63f030e7b415aa4071b1a835803cd28c9691e906d9bbb7bf11864b64c5682d7",
+    "verify_revision2_granularity.py": "116308bc5a3a46f9348a31ebd5a44a40d59e655a756b398105cf0293d25a0668"
+  },
+  "limits": "Metadata remains proposed for parent review; no canonical/shared changes, phonemic inference, or new graph links."
+}

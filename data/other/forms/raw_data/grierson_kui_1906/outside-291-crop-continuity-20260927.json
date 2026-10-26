@@ -1,0 +1,15 @@
+{
+  "status": "Explicit scratch-witness replacement; historical report unchanged",
+  "historical_crop": "tmp/kui-outside-291-detail.png",
+  "historical_sha256": "ddf97f5dafd77a086c6b8c78e85eb60ffe3b85abf031c150d7e889d476d8e635",
+  "incident": "The old helper reused the per-page scratch filename for a new plural-suffix crop. The original DjVu and prior independent root decision are unchanged. Exact prior crop bounds were not recovered, so the historical crop hash is not claimed to match the replacement.",
+  "replacement_crop": "tmp/kui-outside-291-young-man-restored-v2.png",
+  "replacement_sha256": "f70aaa9c237136d3d54b4328b8f60b04f734cfb6bd99e84dfc08bc1f0dc13a0a",
+  "replacement_bounds_normalized": [0.15, 0.355, 0.9, 0.403],
+  "source": "tmp/pdfs/LSI-V4.djvu",
+  "source_sha256": "33e9aaa220db22fcde712705581a69f7edcfc7e20b3e7a09347dc969768020f1",
+  "printed_page": 291,
+  "physical_page": 311,
+  "continuity_review": "New original crop visibly retains the same young-man lāvēñju and dative lāvēni-ki witnesses, alongside the Telugu comparison. This is new evidence continuity, not retroactive alteration of the root report.",
+  "preventive_change": "Helper now accepts unique scope labels and refuses overwriting any existing named evidence output. Only active full-page render remains intentionally overwriteable."
+}

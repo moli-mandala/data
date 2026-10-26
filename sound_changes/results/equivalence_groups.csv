@@ -1,0 +1,29 @@
+size,lects,groups,representative,members,tags
+3,110,bihari-tharu central-east-pahari-romani dardic-north dardic-south eastern hindi marathi-bhil mia-insular northwest nuristani west-pahari,G $1 > $2,G $1 > $2 ‖ C $1 > $1 ‖ C $1 > $2,@cluster-simplify @degem-plain
+2,89,bihari-tharu central-east-pahari-romani hindi marathi-bhil mia-insular northwest rajasthani-gujarati west-pahari,Sib > s,Sib > s ‖ {ś ṣ} > s,@sibilant-s
+2,53,central-east-pahari-romani dardic-north dardic-south marathi-bhil mia-insular northwest nuristani west-pahari,ṁ > ∅,ṁ > ∅ ‖ ṁ > ∅ / _ C,@anusvara-loss @anusvara-vowel
+2,40,bihari-tharu marathi-bhil rajasthani-gujarati,{l m n v ṇ} y > $1 $1,{l m n v ṇ} y > $1 $1 ‖ {l m n v ñ ŋ ṇ} y > $1 $1,@assim-sonorant
+2,39,bihari-tharu central-east-pahari-romani hindi marathi-bhil mia-insular northwest rajasthani-gujarati,Nasal Stop > ṁ $2,Nasal Stop > ṁ $2 ‖ {m n ñ ŋ ṇ} > ṁ / _ Stop,@nasal-cluster
+3,26,central-east-pahari-romani dardic-north dardic-south marathi-bhil northwest west-pahari,{bʰ dʰ gʰ jʰ ḍʰ} > {b d g j ḍ},{bʰ dʰ gʰ jʰ ḍʰ} > {b d g j ḍ} ‖ VAsp > {b d g j ḍ} ‖ {bʰ dʰ gʰ jʰ ʣʰ ḍʰ} > {b d g j ʣ ḍ},@deaspiration @tone
+2,25,dardic-south mia-insular west-pahari,y > ∅ / C _,y > ∅ / C _ ‖ C y > $1,@cluster-simplify
+2,17,central-east-pahari-romani dardic-south west-pahari,ṣ > ś,ṣ > ś ‖ {ś ṣ} > ś,@sibilant-keep @sibilant-ś
+2,16,bihari-tharu west-pahari,a > ∅ / _ ā,a > ∅ / _ ā ‖ a ā > ā,@hiatus
+2,16,central-east-pahari-romani dardic-south,r > ∅ / _ C,r > ∅ / _ C ‖ r C > $2,@assim-r @cluster-simplify
+2,10,mia-insular nuristani,Asp > $1-asp,Asp > $1-asp ‖ {bʰ cʰ dʰ gʰ jʰ kʰ pʰ tʰ ḍʰ ṭʰ} > {b c d g j k p t ḍ ṭ},@deaspiration
+2,9,mia-insular rajasthani-gujarati west-pahari,r {d dʰ t tʰ} > {ḍ ḍ ṭ ṭ}@2 {ḍ ḍʰ ṭ ṭʰ},r {d dʰ t tʰ} > {ḍ ḍ ṭ ṭ}@2 {ḍ ḍʰ ṭ ṭʰ} ‖ r {d dʰ t tʰ} > {ḍ ḍ ṭ ṭ}@2 {ḍ ḍʰ ṭ ṭʰ}@2,@assim-r @rt-retroflex
+2,8,hindi marathi-bhil mia-insular,Nasal Nasal > $2 $2,Nasal Nasal > $2 $2 ‖ {n ṇ} m > m m,@assim-sonorant
+2,7,hindi marathi-bhil,u > ū / C _ #,u > ū / C _ # ‖ u > ū / _ #,@vowel-shift @x-hindi-final-u
+2,7,rajasthani-gujarati west-pahari,{bʰ dʰ gʰ jʰ ḍʰ} > {b d g j ḍ} / !# _,{bʰ dʰ gʰ jʰ ḍʰ} > {b d g j ḍ} / !# _ ‖ {bʰ dʰ gʰ jʰ ʣʰ ḍʰ} > {b d g j ʣ ḍ} // # _,@deaspiration @tone
+2,6,dardic-south rajasthani-gujarati west-pahari,u a > ū / _ #,u a > ū / _ # ‖ u {a ā} > ū / _ #,@aka @hiatus
+2,5,dardic-north mia-insular,Sib Stop > $2+asp / # _,Sib Stop > $2+asp / # _ ‖ s Stop > $2+asp / # _,@initial-degem @s-stop-aspirate
+2,5,eastern marathi-bhil rajasthani-gujarati,{bʰ cʰ dʰ gʰ jʰ kʰ pʰ tʰ ḍʰ ṭʰ} > {b c d g j k p t ḍ ṭ} / !# _,{bʰ cʰ dʰ gʰ jʰ kʰ pʰ tʰ ḍʰ ṭʰ} > {b c d g j k p t ḍ ṭ} / !# _ ‖ Stop > $1-asp // # _,@deaspiration
+2,5,northwest west-pahari,a {i u} > {e o}@2,a {i u} > {e o}@2 ‖ {a a} {i u} > {e o}@2,@ai-au
+2,5,dardic-north dardic-south,s C > $2 / # _,s C > $2 / # _ ‖ s > ∅ / # _ C,@initial-degem
+2,5,dardic-north nuristani,{a ā ē ō} > ∅ / V (C) C _ # | V C C C _ #,{a ā ē ō} > ∅ / V (C) C _ # | V C C C _ # ‖ {a ā} > ∅ / V C* C _ #,@final-vowel-loss
+2,4,bihari-tharu nuristani,if:!verb i > ĭ / Acc !#* C _ #,if:!verb i > ĭ / Acc !#* C _ # ‖ if:!verb i > ĭ / Acc !#* _ #,@final-vowel-loss
+2,4,dardic-north,r̩ > r i / C _,r̩ > r i / C _ ‖ {r̩ ŕ̩} > r i / C _,@r-vocalic-ri
+2,3,northwest rajasthani-gujarati,C CnoR > $2 / # _,C CnoR > $2 / # _ ‖ C NR > $2 / # _,@initial-degem
+2,2,rajasthani-gujarati,V G $2 > $1+long $3 / # C* _ C* V (C) # | # C* _ C* Short C V,V G $2 > $1+long $3 / # C* _ C* V (C) # | # C* _ C* Short C V ‖ V G $2 > $1+long $3 / # C* _ C* V # | # C* _ C* Short C V,@degem-lengthen @x-rg-weight
+2,2,central-east-pahari-romani northwest,{bʰ dʰ gʰ jʰ ḍʰ} > {pʰ tʰ kʰ cʰ ṭʰ},{bʰ dʰ gʰ jʰ ḍʰ} > {pʰ tʰ kʰ cʰ ṭʰ} ‖ VAsp > {cʰ kʰ pʰ tʰ ṭʰ},@asp-devoicing
+2,2,central-east-pahari-romani dardic-north,ā > ∅ / {i u} _ #,ā > ∅ / {i u} _ # ‖ {i ī} {a ā} > i / _ #,@aka @hiatus
+2,2,dardic-north,{n ṇ} {d dʰ ḍ} > n,{n ṇ} {d dʰ ḍ} > n ‖ {n ṇ} {d dʰ ḍ ḍʰ} > $1,@cluster-simplify @nc-simplify

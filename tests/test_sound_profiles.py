@@ -125,6 +125,14 @@ CHECKED_PROFILE_FILES = {
     "kusunda-aaley-bodt": ["20260901-aaley-bodt-kusunda.csv"],
     "kusunda-watters": ["20260901-watters-kusunda.csv"],
     "kusunda-gipan": ["20260901-aaley-kusunda-gipan.csv"],
+    "cheung-ediv": [(
+        "20261025-cheung-ediv.csv",
+        {"Asht", "Bakht", "Bal", "Bashk", "Gazic", "Gil", "Gur", "Ishk", "JHam", "Kavir", "Khuns",
+         "Kumz", "Kurd", "Lasg", "Lur", "Maz", "Mj", "Natz", "Nayin", "Orm", "Oss", "Par", "Pers",
+         "Psht", "Rosh", "Sang", "Sangs", "Sar", "Semn", "Shgh", "Shmz", "Siv", "Soic", "SorkhA",
+         "Taj", "Tal", "Tati", "Vafsi", "Wj", "Wkh", "X", "Yazgh", "Yghn", "Yid", "Zaza", "ZorYzd",
+         "wne"},
+    )],
 }
 
 
@@ -278,6 +286,10 @@ def test_every_installed_source_has_an_explicit_sound_profile():
             profile = "kusunda-watters"
         elif source_key == "aaley2021kusundagipan":
             profile = "kusunda-gipan"
+        elif source_key == "cheung2007ediv":
+            # Old/Middle Iranian rows keep their transliteration; modern rows (YAML
+            # `languages:`) use the Cheung display profile.
+            profile = "cheung-ediv"
         else:
             profile = mapping.get(key, key)
         assert profile in profiles, f"{basename} has no sound profile"
@@ -286,7 +298,8 @@ def test_every_installed_source_has_an_explicit_sound_profile():
 def test_preservation_profile_repairs_only_known_legacy_notation():
     assert convert("house", "iⁿdо̄li") == "iⁿdōli"
     assert convert("house", "ic̣ī") == "iʦ̣ī"
-    assert convert("house", "nat̪he") == "nathe"
+    # plain h after a stop is aspiration in the house-routed IAST sources (ASPIRATE_H)
+    assert convert("house", "nat̪he") == "natʰe"
     assert convert("house", "-abi (obl.)") == "-abi (obl.)"
 
 
@@ -421,10 +434,11 @@ def test_new_source_profiles_cover_source_specific_transcription():
     assert convert("sil-kurumba-2012", "na':") == "nā':"
     assert convert("sil-northern-dhule-bhils", "ɖil") == "ḍil"
     assert convert("sil-northern-dhule-bhils", "tʃju") == "cyu"
-    assert convert("sil-northern-dhule-bhils", "t̪s̪hoʈipʌr-ɖahaɖu") == "tshoṭipar-ḍāhāḍu"
+    # aspiration: plain h after a voiceless stop or affricate, ɦ after a voiced stop
+    assert convert("sil-northern-dhule-bhils", "t̪s̪hoʈipʌr-ɖahaɖu") == "ʦʰoṭipar-ḍāhāḍu"
     assert convert("sil-northern-dhule-bhils", "kʌlɪχ") == "kalix"
     assert convert("sil-noira", "tʃʌvi") == "cavi"
-    assert convert("sil-noira", "ɑːkhɔ") == "ākhɔ"
+    assert convert("sil-noira", "ɑːkhɔ") == "ākʰɔ"
     assert convert("sil-noira", "oʔõ") == "oʔõ"
     assert convert("sil-adi", "t̪aləŋ") == "taləŋ"
     assert convert("sil-adi", "dʒadʒi") == "jaji"
@@ -440,7 +454,7 @@ def test_new_source_profiles_cover_source_specific_transcription():
     assert convert("sil-jaunsari", "çʌɾiɾ") == "çarir"
     assert convert("sil-jaunsari", "d̪ant̪") == "dant"
     assert convert("sil-jaunsari", "jɛ dʒɛ") == "yɛ jɛ"
-    assert convert("sil-bareli-pauri", "bɦuklu tʃe, bɦuklu hʌtɔ̪") == "bhūklū ce, bhūklū hatɔ"
+    assert convert("sil-bareli-pauri", "bɦuklu tʃe, bɦuklu hʌtɔ̪") == "bʰūklū ce, bʰūklū hatɔ"
     assert convert("sil-bareli-pauri", "pats̪[") == "pats["
     assert convert("sil-bareli-pauri", "βid̪zʌ̪we") == "βīdzave"
     assert convert("sil-nimadi", "bʱuklʌgi, bʱuklʌgti̪tʰ̪i") == "bʰūklagi, bʰūklagtitʰi"

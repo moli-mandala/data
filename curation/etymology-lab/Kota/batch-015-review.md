@@ -1,0 +1,17 @@
+**Next 5 proposals, ready for review. Nothing in this batch saved yet.**
+
+Kota · Dravidian surveys, 2026-09-21 · batch 015. Review is deferred until the end of the user’s autonomous research window.
+
+| # | Kota | Proposed etymology | Evidence |
+|---|---|---|---|
+| 71 | **naḍvu** ‘walk’ | Proposed reflex of [**DEDR 3582**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=315) | DEDR3582 gives Kota naṛv- walk, with past naṛd-. Survey naḍvu preserves its stop versus flap transcription and final vowel; the source cognacy annotation identifies the walking family. This is a comparative morphological correspondence, not a literal quoted form. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 72 | **pegu** ‘smoke’ | Proposed reflex of [**DEDR 4240**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=375) | DEDR4240 directly gives Kota peg and Ollari Gadaba pog smoke, alongside Kannada poge and the wider pukai family. Survey pegu/poāg retain their final-vowel and vowel-sequence differences. Betta Kurumba pəggi is a comparative extension explicitly only a look-alike in the source, not a literal dictionary attestation. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 73 | **ān** ‘I’ | Proposed reflex of [**DEDR 5160**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=468) | The upstream3160 is a misreference: current3160 concerns grandfather, while full DEDR5160 explicitly gives Kota ān I. Actual prior pronoun discovery and full article support this first-person singular proposal. The erroneous annotation remains preserved in the source record; it is not treated as etymological evidence for3160. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 74 | **korvə** ‘cold’ | Proposed reflex of [**DEDR 2168**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=195) | DEDR 2168 explicitly gives Kota korv- ‘be cold’ and kor/korv ‘coldness’, supporting survey korvə. The dictionary also notes a possible alternative connection of the Kannada comparandum with DEDR1859; the proposed family link does not settle that deeper comparison. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+| 75 | **tāvə** ‘die’ | Proposed reflex of [**DEDR 3068**](https://dsal.uchicago.edu/cgi-bin/app/burrow_query.py?page=266) | DEDR 3068 directly gives Kota tav- (tat-) ‘die’ and tāv ‘death, corpse, funeral’. Survey tāvə ‘die’ belongs to this Kota family; the long vowel suggests an elicited nominal/stem form and the original gloss is retained without silently deciding its part of speech. This is a comparative family proposal; inheritance versus local transmission in this survey lect remains subject to review. (1 records.) |
+
+Proposed assignment rows: **5**. Affected records: **5**. Relation kinds: **reflex**. Compound components retain their source order.
+
+Exact persistent IDs and complete source records: [batch-015.json](/Users/aryamanarora/Documents/Code/jambu-all/data/curation/etymology-lab/Kota/batch-015.json).
+
+Known ambiguous loans, questioned dictionary comparisons and unresolved parent labels are excluded; see the [research holds](../dravidian-surveys-20260921/research-holds.json). No new lexical material or donor nodes are introduced.

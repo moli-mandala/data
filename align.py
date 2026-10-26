@@ -48,6 +48,11 @@ PROTO_LANGS = {
 # Segmentation — longest-match over the curated grapheme inventory
 # ─────────────────────────────────────────────────────────────────────────────
 
+# Forms under CDIAL (Indo-Aryan) headwords are aligned by the rule chains in sound_changes/
+# (derive.py runs after this script and appends their rows), not by Needleman–Wunsch.
+RULE_FAMILY = "Indo-Aryan"
+
+
 def load_graphemes(path: str) -> list[str]:
     gs: set[str] = set()
     with open(path, encoding="utf-8") as f:
@@ -124,6 +129,7 @@ V = {
     "o": ("mid", "back", 1), "u": ("high", "back", 1), "ə": ("mid", "central", 0),
     "ɛ": ("mid-low", "front", 0), "ε": ("mid-low", "front", 0), "ɔ": ("mid-low", "back", 1),
     "æ": ("low", "front", 0), "ɐ": ("low", "central", 0), "ʌ": ("mid", "central", 0),
+    "ɨ": ("high", "central", 0), "ʉ": ("high", "central", 1), "ɯ": ("high", "back", 0),
     "ʊ": ("high", "back", 1), "ɪ": ("high", "front", 0),
 }
 
@@ -173,7 +179,7 @@ class Seg:
         elif self.retroflex and base in RETRO:
             base = RETRO[base]
 
-        if (base in V or base in "aeiouəɛεɔæɐʌʊɪ" or syllabic) and not nonsyllabic:
+        if (base in V or base in "aeiouəɛεɔæɐʌʊɪɨʉɯøœɤɒ" or syllabic) and not nonsyllabic:
             self.kind = "V"
             self.height, self.back, rnd = V.get(base, ("mid", "central", 0))
             self.voice = True
@@ -383,6 +389,8 @@ def main():
                 continue
             if efam not in PROTO_LANGS:
                 continue  # only align where the parameter head is a real proto-form
+            if efam == RULE_FAMILY and not keep_family:
+                continue  # Indo-Aryan: rule-based derivations (sound_changes/derive.py) write these rows
             if args.limit and origin not in seen_origins and len(seen_origins) >= args.limit:
                 continue
             seen_origins.add(origin)
